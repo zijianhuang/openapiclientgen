@@ -1803,7 +1803,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-76.989626")]
-		Minus76_989626 = 0,
+		_Minus76_989626 = 0,
 	}
 	
 	public enum StopsGetByLatAndLonAndRadiusRadius
@@ -1862,7 +1862,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-76.989626")]
-		Minus76_989626 = 0,
+		_Minus76_989626 = 0,
 	}
 	
 	public enum JsonJStopsGetByLatAndLonAndRadiusRadius

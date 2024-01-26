@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Controls certain runtime behaviors of the streaming job. */
-	export enum CompatibilityLevel { '1.0' = 0 }
+	export enum CompatibilityLevel { _1_0 = 0 }
 
 
 	/** Indicates the policy to apply to events that arrive out of order in the input event stream. */

@@ -889,7 +889,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_wowza_com_1()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wowza.com\1");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wowza.com\1", CodeGenSettings.DefaultEnumToString);
 		}
 
 		[Fact]

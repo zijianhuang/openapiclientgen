@@ -363,7 +363,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					//MS operapi parser intepret NaN as double and then double.NaN
 					string memberName = NameFunc.RefineEnumMemberName(doubleMember.Value.ToString());
 					double doubleValue = doubleMember.Value;
-					CodeMemberField clientField = memberName == "NaN" ?
+					CodeMemberField clientField = doubleMember.Value.ToString() == "NaN" ?
 						new()
 						{
 							Name = memberName,

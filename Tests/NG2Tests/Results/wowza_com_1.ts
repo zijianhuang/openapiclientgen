@@ -914,9 +914,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoblockState { requested = 0, activated = 1, update_requested = 2, delete_requested = 3, failed = 4 }
+	export enum GeoblockState { requested = 'requested', activated = 'activated', update_requested = 'update_requested', delete_requested = 'delete_requested', failed = 'failed' }
 
-	export enum GeoblockType { disabled = 0, allow = 1, deny = 2 }
+	export enum GeoblockType { disabled = 'disabled', allow = 'allow', deny = 'deny' }
 
 	export interface Geoblock_create_input {
 	}
@@ -1330,11 +1330,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Index_stream_targetChunk_size { _2 = 0, _4 = 1, _6 = 2, _8 = 3, _10 = 4 }
+	export enum Index_stream_targetChunk_size { _2 = '2', _4 = '4', _6 = '6', _8 = '8', _10 = '10' }
 
-	export enum Index_stream_targetLocation { asia_pacific_australia = 0, asia_pacific_japan = 1, asia_pacific_singapore = 2, asia_pacific_taiwan = 3, eu_belgium = 4, eu_germany = 5, eu_ireland = 6, south_america_brazil = 7, us_central_iowa = 8, us_east_s_carolina = 9, us_east_virginia = 10, us_west_california = 11, us_west_oregon = 12 }
+	export enum Index_stream_targetLocation { asia_pacific_australia = 'asia_pacific_australia', asia_pacific_japan = 'asia_pacific_japan', asia_pacific_singapore = 'asia_pacific_singapore', asia_pacific_taiwan = 'asia_pacific_taiwan', eu_belgium = 'eu_belgium', eu_germany = 'eu_germany', eu_ireland = 'eu_ireland', south_america_brazil = 'south_america_brazil', us_central_iowa = 'us_central_iowa', us_east_s_carolina = 'us_east_s_carolina', us_east_virginia = 'us_east_virginia', us_west_california = 'us_west_california', us_west_oregon = 'us_west_oregon' }
 
-	export enum Index_stream_targetType { WowzaStreamTarget = 0, UltraLowLatencyStreamTarget = 1, CustomStreamTarget = 2 }
+	export enum Index_stream_targetType { WowzaStreamTarget = 'WowzaStreamTarget', UltraLowLatencyStreamTarget = 'UltraLowLatencyStreamTarget', CustomStreamTarget = 'CustomStreamTarget' }
 
 	export interface Keyframe_interval_metric {
 
@@ -1680,15 +1680,15 @@ export namespace MyNS {
 
 	}
 
-	export enum Live_streamBilling_mode { pay_as_you_go = 0, twentyfour_seven = 1 }
+	export enum Live_streamBilling_mode { pay_as_you_go = 'pay_as_you_go', twentyfour_seven = 'twentyfour_seven' }
 
-	export enum Live_streamClosed_caption_type { none = 0, cea = 1, on_text = 2, both = 3 }
+	export enum Live_streamClosed_caption_type { none = 'none', cea = 'cea', on_text = 'on_text', both = 'both' }
 
-	export enum Live_streamDelivery_method { pull = 0, cdn = 1, push = 2 }
+	export enum Live_streamDelivery_method { pull = 'pull', cdn = 'cdn', push = 'push' }
 
-	export enum Live_streamDelivery_protocol { 'hls-https' = 0, 'hls-hds' = 1 }
+	export enum Live_streamDelivery_protocol { 'hls-https' = 'hls-https', 'hls-hds' = 'hls-hds' }
 
-	export enum Live_streamDelivery_type { 'single-bitrate' = 0, 'multi-bitrate' = 1 }
+	export enum Live_streamDelivery_type { 'single-bitrate' = 'single-bitrate', 'multi-bitrate' = 'multi-bitrate' }
 
 	export interface Live_streamDirect_playback_urls {
 
@@ -1721,9 +1721,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Live_streamEncoder { wowza_streaming_engine = 0, wowza_gocoder = 1, media_ds = 2, axis = 3, epiphan = 4, hauppauge = 5, jvc = 6, live_u = 7, matrox = 8, newtek_tricaster = 9, osprey = 10, sony = 11, telestream_wirecast = 12, teradek_cube = 13, vmix = 14, x_split = 15, ipcamera = 16, other_rtmp = 17, other_rtsp = 18 }
+	export enum Live_streamEncoder { wowza_streaming_engine = 'wowza_streaming_engine', wowza_gocoder = 'wowza_gocoder', media_ds = 'media_ds', axis = 'axis', epiphan = 'epiphan', hauppauge = 'hauppauge', jvc = 'jvc', live_u = 'live_u', matrox = 'matrox', newtek_tricaster = 'newtek_tricaster', osprey = 'osprey', sony = 'sony', telestream_wirecast = 'telestream_wirecast', teradek_cube = 'teradek_cube', vmix = 'vmix', x_split = 'x_split', ipcamera = 'ipcamera', other_rtmp = 'other_rtmp', other_rtsp = 'other_rtsp' }
 
-	export enum Live_streamPlayer_logo_position { 'top-left' = 0, 'top-right' = 1, 'bottom-left' = 2, 'bottom-right' = 3 }
+	export enum Live_streamPlayer_logo_position { 'top-left' = 'top-left', 'top-right' = 'top-right', 'bottom-left' = 'bottom-left', 'bottom-right' = 'bottom-right' }
 
 	export interface Live_streamStream_targets {
 
@@ -1742,7 +1742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Live_streamTranscoder_type { transcoded = 0, passthrough = 1 }
+	export enum Live_streamTranscoder_type { transcoded = 'transcoded', passthrough = 'passthrough' }
 
 	export interface Live_stream_create_input {
 
@@ -2439,11 +2439,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputFramerate_reduction { _0 = 0, '1/2' = 1, '1/4' = 2, '1/25' = 3, '1/30' = 4, '1/50' = 5, '1/60' = 6 }
+	export enum OutputFramerate_reduction { _0 = '0', '1/2' = '1/2', '1/4' = '1/4', '1/25' = '1/25', '1/30' = '1/30', '1/50' = '1/50', '1/60' = '1/60' }
 
-	export enum OutputH264_profile { main = 0, baseline = 1, high = 2 }
+	export enum OutputH264_profile { main = 'main', baseline = 'baseline', high = 'high' }
 
-	export enum OutputKeyframes { follow_source = 0, _25 = 1, _30 = 2, _50 = 3, _60 = 4, _100 = 5, _120 = 6 }
+	export enum OutputKeyframes { follow_source = 'follow_source', _25 = '25', _30 = '30', _50 = '50', _60 = '60', _100 = '100', _120 = '120' }
 
 	export interface Output_stream_target {
 
@@ -2734,11 +2734,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Stream_targetRegion_override { 'azure-westus' = 0, 'azure-eastus2' = 1, 'azure-northeurope' = 2, null = 3 }
+	export enum Stream_targetRegion_override { 'azure-westus' = 'azure-westus', 'azure-eastus2' = 'azure-eastus2', 'azure-northeurope' = 'azure-northeurope', null = 'null' }
 
-	export enum Stream_targetSource_delivery_method { push = 0, pull = 1 }
+	export enum Stream_targetSource_delivery_method { push = 'push', pull = 'pull' }
 
-	export enum OutputStream_format { audiovideo = 0, videoonly = 1, audioonly = 2 }
+	export enum OutputStream_format { audiovideo = 'audiovideo', videoonly = 'videoonly', audioonly = 'audioonly' }
 
 	export interface Output_add_stream_target_input {
 
@@ -3433,7 +3433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordingState { uploading = 0, converting = 1, removing = 2, completed = 3, failed = 4 }
+	export enum RecordingState { uploading = 'uploading', converting = 'converting', removing = 'removing', completed = 'completed', failed = 'failed' }
 
 	export interface Recordings {
 
@@ -3556,13 +3556,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleAction_type { start = 0, stop = 1, start_stop = 2 }
+	export enum ScheduleAction_type { start = 'start', stop = 'stop', start_stop = 'start_stop' }
 
-	export enum ScheduleRecurrence_data { sunday = 0, monday = 1, tuesday = 2, wednesday = 3, thursday = 4, friday = 5, saturday = 6 }
+	export enum ScheduleRecurrence_data { sunday = 'sunday', monday = 'monday', tuesday = 'tuesday', wednesday = 'wednesday', thursday = 'thursday', friday = 'friday', saturday = 'saturday' }
 
-	export enum ScheduleRecurrence_type { once = 0, recur = 1 }
+	export enum ScheduleRecurrence_type { once = 'once', recur = 'recur' }
 
-	export enum ScheduleState { enabled = 0, disabled = 1, expired = 2 }
+	export enum ScheduleState { enabled = 'enabled', disabled = 'disabled', expired = 'expired' }
 
 	export interface Schedule_create_input {
 
@@ -4095,7 +4095,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Stream_sourceLocation_method { region = 0, ip_address = 1 }
+	export enum Stream_sourceLocation_method { region = 'region', ip_address = 'ip_address' }
 
 	export interface Stream_source_create_input {
 
@@ -4435,7 +4435,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Stream_target_inputStream_targetRegion_override { 'azure-westus' = 0, 'azure-eastus2' = 1, 'azure-northeurope' = 2 }
+	export enum Stream_target_inputStream_targetRegion_override { 'azure-westus' = 'azure-westus', 'azure-eastus2' = 'azure-eastus2', 'azure-northeurope' = 'azure-northeurope' }
 
 	export interface Stream_target_metrics {
 
@@ -4547,11 +4547,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Stream_target_propertyKey { chunkSize = 0, playSSL = 1, relativePlaylists = 2, sendSSL = 3 }
+	export enum Stream_target_propertyKey { chunkSize = 'chunkSize', playSSL = 'playSSL', relativePlaylists = 'relativePlaylists', sendSSL = 'sendSSL' }
 
-	export enum Stream_target_propertySection { hls = 0, playlist = 1 }
+	export enum Stream_target_propertySection { hls = 'hls', playlist = 'playlist' }
 
-	export enum Stream_target_propertyValue { _2 = 0, _4 = 1, _6 = 2, _8 = 3, _10 = 4, true = 5, false = 6 }
+	export enum Stream_target_propertyValue { _2 = '2', _4 = '4', _6 = '6', _8 = '8', _10 = '10', true = 'true', false = 'false' }
 
 	export interface Stream_target_property_create_input {
 
@@ -5175,7 +5175,7 @@ export namespace MyNS {
 
 	export enum TranscoderPlay_maximum_connections { _10 = 0, _11 = 1, _12 = 2, _13 = 3, _14 = 4, _15 = 5, _16 = 6, _17 = 7, _18 = 8, _19 = 9, _20 = 10, _21 = 11, _22 = 12, _23 = 13, _24 = 14, _25 = 15, _26 = 16, _27 = 17, _28 = 18, _29 = 19, _30 = 20, _31 = 21, _32 = 22, _33 = 23, _34 = 24, _35 = 25, _36 = 26, _37 = 27, _38 = 28, _39 = 29, _40 = 30, _41 = 31, _42 = 32, _43 = 33, _44 = 34, _45 = 35, _46 = 36, _47 = 37, _48 = 38, _49 = 39, _50 = 40, _51 = 41, _52 = 42, _53 = 43, _54 = 44, _55 = 45, _56 = 46, _57 = 47, _58 = 48, _59 = 49, _60 = 50, _61 = 51, _62 = 52, _63 = 53, _64 = 54, _65 = 55, _66 = 56, _67 = 57, _68 = 58, _69 = 59, _70 = 60, _71 = 61, _72 = 62, _73 = 63, _74 = 64, _75 = 65, _76 = 66, _77 = 67, _78 = 68, _79 = 69, _80 = 70, _81 = 71, _82 = 72, _83 = 73, _84 = 74, _85 = 75, _86 = 76, _87 = 77, _88 = 78, _89 = 79, _90 = 80, _91 = 81, _92 = 82, _93 = 83, _94 = 84, _95 = 85, _96 = 86, _97 = 87, _98 = 88, _99 = 89, _100 = 90 }
 
-	export enum TranscoderProtocol { rtmp = 0, rtsp = 1 }
+	export enum TranscoderProtocol { rtmp = 'rtmp', rtsp = 'rtsp' }
 
 	export enum TranscoderWatermark_opacity { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4, _5 = 5, _6 = 6, _7 = 7, _8 = 8, _9 = 9, _10 = 10, _11 = 11, _12 = 12, _13 = 13, _14 = 14, _15 = 15, _16 = 16, _17 = 17, _18 = 18, _19 = 19, _20 = 20, _21 = 21, _22 = 22, _23 = 23, _24 = 24, _25 = 25, _26 = 26, _27 = 27, _28 = 28, _29 = 29, _30 = 30, _31 = 31, _32 = 32, _33 = 33, _34 = 34, _35 = 35, _36 = 36, _37 = 37, _38 = 38, _39 = 39, _40 = 40, _41 = 41, _42 = 42, _43 = 43, _44 = 44, _45 = 45, _46 = 46, _47 = 47, _48 = 48, _49 = 49, _50 = 50, _51 = 51, _52 = 52, _53 = 53, _54 = 54, _55 = 55, _56 = 56, _57 = 57, _58 = 58, _59 = 59, _60 = 60, _61 = 61, _62 = 62, _63 = 63, _64 = 64, _65 = 65, _66 = 66, _67 = 67, _68 = 68, _69 = 69, _70 = 70, _71 = 71, _72 = 72, _73 = 73, _74 = 74, _75 = 75, _76 = 76, _77 = 77, _78 = 78, _79 = 79, _80 = 80, _81 = 81, _82 = 82, _83 = 83, _84 = 84, _85 = 85, _86 = 86, _87 = 87, _88 = 88, _89 = 89, _90 = 90, _91 = 91, _92 = 92, _93 = 93, _94 = 94, _95 = 95, _96 = 96, _97 = 97, _98 = 98, _99 = 99, _100 = 100 }
 
@@ -8411,7 +8411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResetLiveStreamReturnLive_streamState { started = 0, stopped = 1, starting = 2, stopping = 3, resetting = 4 }
+	export enum ResetLiveStreamReturnLive_streamState { started = 'started', stopped = 'stopped', starting = 'starting', stopping = 'stopping', resetting = 'resetting' }
 
 	export interface StartLiveStreamReturn {
 
@@ -8602,7 +8602,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestPlayerRebuildReturnPlayerState { requested = 0, already_requested = 1, activated = 2, archived = 3 }
+	export enum RequestPlayerRebuildReturnPlayerState { requested = 'requested', already_requested = 'already_requested', activated = 'activated', archived = 'archived' }
 
 	export interface ShowPlayerStateReturn {
 
@@ -8967,7 +8967,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShowStreamTargetMetricsHistoricInterval { second = 0, minute = 1, hour = 2, day = 3, month = 4, '#s' = 5, '#m' = 6, '#h' = 7, '#d' = 8 }
+	export enum ShowStreamTargetMetricsHistoricInterval { second = 'second', minute = 'minute', hour = 'hour', day = 'day', month = 'month', '#s' = '#s', '#m' = '#m', '#h' = '#h', '#d' = '#d' }
 
 	export interface ShowStreamTargetMetricsHistoricReturn {
 
@@ -9210,7 +9210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisableAllStreamTargetsTranscoderReturnTranscoderStream_targetsState { enabled = 0, disabled = 1 }
+	export enum DisableAllStreamTargetsTranscoderReturnTranscoderStream_targetsState { enabled = 'enabled', disabled = 'disabled' }
 
 	export interface EnableAllStreamTargetsTranscoderReturn {
 
@@ -9311,7 +9311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResetTranscoderReturnTranscoderState { starting = 0, stopping = 1, started = 2, stopped = 3, resetting = 4 }
+	export enum ResetTranscoderReturnTranscoderState { starting = 'starting', stopping = 'stopping', started = 'started', stopped = 'stopped', resetting = 'resetting' }
 
 	export interface ListTranscoderSchedulesReturn {
 
@@ -9621,7 +9621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisableTranscoderOutputOutputStreamTargetReturnStream_targetState { enabled = 0, disabled = 1, restarted = 2 }
+	export enum DisableTranscoderOutputOutputStreamTargetReturnStream_targetState { enabled = 'enabled', disabled = 'disabled', restarted = 'restarted' }
 
 	export interface EnableTranscoderOutputOutputStreamTargetReturn {
 

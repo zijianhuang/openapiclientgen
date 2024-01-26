@@ -9326,7 +9326,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\microsoft.com\cognitiveservices-Training\3.2\");
 		}
 
-		[Fact()] //takes around 15 seconds to generate and compiler
+		[Fact(Skip ="Though the codegen generates codes that pass compiler, the some function prototypes are incorrect, because ms openapi parser could not read parameters of in-path in this instance")]
 		public void Test_microsoft_com_graph_1_0_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\microsoft.com\graph\1.0.1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));

@@ -673,7 +673,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (enumMember is OpenApiString stringMember)
 				{
 #if DEBUG
-					if (stringMember.Value== "-1")
+					if (stringMember.Value== "15.10")
 					{
 						Debug.WriteLine("haha");
 					}
@@ -696,7 +696,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiInteger intMember)
 				{
-					string memberName = "_" + NameFunc.RefineEnumMemberName(intMember.Value.ToString());
+					string memberName = NameFunc.RefineEnumMemberName(intMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -709,7 +709,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiLong longMember)
 				{
-					string memberName = "_" + NameFunc.RefineEnumMemberName(longMember.Value.ToString());
+					string memberName = NameFunc.RefineEnumMemberName(longMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -737,7 +737,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = NameFunc.RefineEnumMemberName(doubleMember.Value.ToString());
 					double doubleValue = doubleMember.Value;
-					CodeMemberField clientField = memberName == "NaN" ?
+					CodeMemberField clientField = doubleMember.Value.ToString() == "NaN" ?
 						new()
 						{
 							Name = memberName,

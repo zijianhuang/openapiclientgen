@@ -691,7 +691,7 @@ export namespace MyNS {
 
 	export enum SearchApisOrder { ASC = 0, DESC = 1 }
 
-	export enum SaveDefinitionOas { '2.0' = 0, '3.0.0' = 1, '3.0.1' = 2 }
+	export enum SaveDefinitionOas { _2_0 = 0, '3.0.0' = 1, '3.0.1' = 2 }
 
 	export enum SearchApisAndDomainsSpecType { API = 0, DOMAIN = 1, ANY = 2 }
 

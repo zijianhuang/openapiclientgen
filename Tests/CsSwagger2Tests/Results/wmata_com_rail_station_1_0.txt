@@ -2330,7 +2330,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-77.0404246")]
-		Minus77_0404246 = 0,
+		_Minus77_0404246 = 0,
 	}
 	
 	public enum StationEntrancesGetByLatAndLonAndRadiusRadius
@@ -2390,7 +2390,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-77.0404246")]
-		Minus77_0404246 = 0,
+		_Minus77_0404246 = 0,
 	}
 	
 	public enum JsonJStationEntrancesGetByLatAndLonAndRadiusRadius

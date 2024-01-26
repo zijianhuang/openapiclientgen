@@ -238,7 +238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentParametersOsVersionValue { '12.04.5-LTS' = 0, '14.04.2-LTS' = 1, '15.10' = 2 }
+	export enum DeploymentParametersOsVersionValue { '12.04.5-LTS' = 0, '14.04.2-LTS' = 1, _15_10 = 2 }
 
 
 	/** Deployment properties. */
