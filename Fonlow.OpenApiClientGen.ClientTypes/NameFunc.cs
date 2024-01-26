@@ -65,7 +65,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public static string RefineEnumMemberName(string s, ISettings settings = null)
 		{
 #if DEBUG
-			if (s == "1.0")
+			if (s == "-1")
 			{
 				Debug.WriteLine("ccc");
 			}
@@ -209,7 +209,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			var ok1 = !(s.Contains('.') || s.Contains('$') || s.Contains(':') || s.Contains('-') || s.Contains('.') || s.Contains('[') || s.Contains(']')
-				|| s.Contains('/') || s.Contains('#') || s.Contains(' ') || s.Contains(',') || s.Contains('+') || s.Contains('(') || s.Contains(')'));
+				|| s.Contains('/') || s.Contains('#') || s.Contains(' ') || s.Contains(',') || s.Contains('+') || s.Contains('(') || s.Contains(')') || s.Contains('%'));
 			var ok2 = Char.IsLetter(s[0]) || s[0] == '_';
 			return ok1 && ok2;
 		}

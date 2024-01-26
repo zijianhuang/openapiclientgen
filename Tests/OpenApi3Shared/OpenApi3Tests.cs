@@ -9413,7 +9413,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_ndhm_gov_in_ndhm_cm_0_5()
 		{
-			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\ndhm.gov.in\ndhm-cm\0.5\");
+			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\ndhm.gov.in\ndhm-cm\0.5\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -9536,7 +9536,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\nexmo.com\dispatch\0.3.4\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml. duplicated property names in inheritance")]
 		public void Test_nexmo_com_external_accounts_0_1_5()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\nexmo.com\external-accounts\0.1.5\");
@@ -9548,7 +9548,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\nexmo.com\media\1.0.2\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml. duplicated property names in inheritance")]
 		public void Test_nexmo_com_messages_olympus_1_4_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\nexmo.com\messages-olympus\1.4.0\");
@@ -10085,7 +10085,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_pdfbroker_io_v1()
 		{
-			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\pdfbroker.io\v1\");
+			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\pdfbroker.io\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -10106,13 +10106,13 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\peoplegeneratorapi.live\v0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml. duplicated properties in inheritance.")]
 		public void Test_personio_de_authentication_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\personio.de\authentication\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml. duplicated properties in inheritance.")]
 		public void Test_personio_de_personnel_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\personio.de\personnel\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -10346,7 +10346,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\ritekit.com\1.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml. duplicated properties in inheritance.")]
 		public void Test_rubrikinc_github_io_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\rubrikinc.github.io\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -10466,7 +10466,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\simplivpn.net\1.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml, apparently with a typo double quote in property name")]
 		public void Test_sinao_app_1_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\sinao.app\1.1.0\");
@@ -10502,7 +10502,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\sms77.io\1.0.0\");
 		}
 
-		[Fact()]
+		[Fact(Skip = "doggy yaml, FunctionId/className? what question mark?")]
 		public void Test_snyk_io_1_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\snyk.io\1.0.0\");
@@ -11351,7 +11351,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_velopayments_com_2_35_57()
 		{
-			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\velopayments.com\2.35.57\");
+			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\velopayments.com\2.35.57\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact(Skip = "3.1")]

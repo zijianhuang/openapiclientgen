@@ -89,14 +89,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
+#if DEBUG
+			if (refId == "ScriptInstanceInfoRuntimeStatus")
+			{
+				Debug.WriteLine("bbb");
+			}
+#endif
 			if (isForClass)
 			{
-#if DEBUG
-				if (refId== "code-frequency-stat")
-				{
-					Debug.WriteLine("bbb");
-				}
-#endif
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
 					if (FindCodeTypeDeclarationInNamespaces(currentTypeName, ns) != null)
@@ -166,8 +166,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(itemsRef.Id) : string.Empty;
-					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
-					var existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
+					string itemsRefTypeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
+					var existing = FindCodeTypeDeclarationInNamespaces(itemsRefTypeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
 						AddTypeToCodeDom(itemsRef.Id, FindSchema(itemsRef.Id)); // add type recursively
@@ -177,12 +177,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					//Array type with ref to the other type
 					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
-						TypeAliasDic.Add(refId, $"{arrayTypeAlias}[]");
+						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(arrayTypeAlias, ArrayAsIEnumerableDerived.Array);
+						TypeAliasDic.Add(refId, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
-						TypeAliasDic.Add(refId, $"{itemsRef.Id}[]");
+						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(itemsRefTypeName, settings.ArrayAs);
+						TypeAliasDic.Add(refId, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {itemsRef.Id}[])");
 					}
 				}
@@ -476,7 +478,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (d is OpenApiPrimitive<string> dString)
 				{
 #if DEBUG
-					if (dString.Value== "1.1")
+					if (dString.Value== "-1")
 					{
 						Debug.WriteLine("hahhaah");
 					}
@@ -694,7 +696,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiInteger intMember)
 				{
-					string memberName = "_" + intMember.Value.ToString();
+					string memberName = "_" + NameFunc.RefineEnumMemberName(intMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -707,7 +709,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiLong longMember)
 				{
-					string memberName = "_" + longMember.Value.ToString();
+					string memberName = "_" + NameFunc.RefineEnumMemberName(longMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -753,7 +755,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiFloat floatMember)
 				{
-					string memberName = "_" + floatMember.Value.ToString();
+					string memberName = "_" + NameFunc.RefineEnumMemberName(floatMember.Value.ToString());
 					double floatValue = floatMember.Value;
 					CodeMemberField clientField = new()
 					{
