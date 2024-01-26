@@ -6,7 +6,7 @@ Each ng guild upon generated codes of a definition file may take around 15 secon
 
 The Results folder should contains codes generated, the total number of files should be equal to the total number of test cases. After a full run, copy the generated codes from bin/Debug/Netx.0/Results to Results. 
 
-Since the whole tests could run around 96 minutes for 1024 cases, this test should be running only after new and sigificant development changes and after SwagTsTests is OK.
+Since the whole tests could run around 65 minutes for 621 cases, this test should be running only after new and sigificant development changes and after SwagTsTests is OK.
 
 Only after making sigificant changes and other test suites have become green, you run this suite. And then run with the NG Build on.
 

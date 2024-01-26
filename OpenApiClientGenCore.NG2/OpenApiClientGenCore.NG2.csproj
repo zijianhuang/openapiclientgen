@@ -10,7 +10,7 @@
     <Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
     <Authors>Zijian Huang</Authors>
     <RootNamespace>Fonlow.OpenApiClientGen.NG2</RootNamespace>
-    <Version>1.7</Version>
+    <Version>2</Version>
   </PropertyGroup>
 
   <ItemGroup>

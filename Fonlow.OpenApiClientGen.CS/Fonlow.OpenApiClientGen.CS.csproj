@@ -7,7 +7,7 @@
     <Authors>Zijian Huang</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
-    <Version>2.1.2</Version>
+    <Version>3</Version>
     <Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
     <Description>Generate C# client API codes</Description>
     <PackageReleaseNotes>.NET 7</PackageReleaseNotes>
