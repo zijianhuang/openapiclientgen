@@ -169,7 +169,7 @@
 		public bool UseSystemTextJson { get; set; }
 
 		/// <summary>
-		/// For date type, generate DateOnly property. Default true. If false, generate DateTimeOffset decorated by System.ComponentModel.DataAnnotations.DataTypeAttribute(System.ComponentModel.DataAnnotationsDataType.Date)
+		/// For date type, generate DateOnly property. Default true. If false, generate DateTimeOffset decorated by System.ComponentModel.DataAnnotations.DataTypeAttribute(System.ComponentModel.DataAnnotations.DataType.Date)
 		/// </summary>
 		public bool DateToDateOnly { get; set; } = true;
 

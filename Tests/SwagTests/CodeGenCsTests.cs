@@ -477,14 +477,5 @@ namespace SwagTests
 			GenerateAndAssertAndBuild("SwagMock\\webhook31.yaml", "Results\\webhook31.txt");
 		}
 
-
-
-		//[Fact]
-		//public void TestXero_projects() in getTasks, parameter chargeType has no in field which is required.
-		//{
-		//	helper.GenerateFromOpenApiAndBuild("SwagMock\\Xero-projects.yaml", "Results\\Xero-projects.txt");
-		//}
-
-
 	}
 }

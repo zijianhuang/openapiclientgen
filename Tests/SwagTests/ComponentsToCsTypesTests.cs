@@ -197,7 +197,7 @@ namespace MyNS
 		/// </summary>
 		public string PetType { get; set; }//;
 		
-		[System.ComponentModel.DataAnnotations.DataTypeAttribute(System.ComponentModel.DataAnnotationsDataType.Date)]
+		[System.ComponentModel.DataAnnotations.DataTypeAttribute(System.ComponentModel.DataAnnotations.DataType.Date)]
 		public System.Nullable<System.DateTimeOffset> BirthDate { get; set; }//;
 		
 		/// <summary>
