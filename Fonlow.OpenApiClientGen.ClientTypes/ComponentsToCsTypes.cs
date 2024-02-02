@@ -614,7 +614,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (isDateOnly)
 					{
-						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.DataTypeAttribute", new CodeAttributeArgument(new CodeSnippetExpression("System.ComponentModel.DataAnnotationsDataType.Date"))));
+						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.DataTypeAttribute", new CodeAttributeArgument(new CodeSnippetExpression("System.ComponentModel.DataAnnotations.DataType.Date"))));
 					}
 				}
 				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for string enum
