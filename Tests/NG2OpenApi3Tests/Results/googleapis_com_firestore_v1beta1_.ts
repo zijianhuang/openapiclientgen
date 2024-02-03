@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValueNullValue { NULL_VALUE = 0 }
+	export enum ValueNullValue { NULL_VALUE = 'NULL_VALUE' }
 
 
 	/** The request for Firestore.BatchGetDocuments. */
@@ -624,7 +624,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldTransformSetToServerValue { SERVER_VALUE_UNSPECIFIED = 0, REQUEST_TIME = 1 }
+	export enum FieldTransformSetToServerValue { SERVER_VALUE_UNSPECIFIED = 'SERVER_VALUE_UNSPECIFIED', REQUEST_TIME = 'REQUEST_TIME' }
 
 
 	/** The response from Firestore.BatchWrite. */
@@ -941,7 +941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldFilterOp { OPERATOR_UNSPECIFIED = 0, LESS_THAN = 1, LESS_THAN_OR_EQUAL = 2, GREATER_THAN = 3, GREATER_THAN_OR_EQUAL = 4, EQUAL = 5, NOT_EQUAL = 6, ARRAY_CONTAINS = 7, IN = 8, ARRAY_CONTAINS_ANY = 9, NOT_IN = 10 }
+	export enum FieldFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL', EQUAL = 'EQUAL', NOT_EQUAL = 'NOT_EQUAL', ARRAY_CONTAINS = 'ARRAY_CONTAINS', IN = 'IN', ARRAY_CONTAINS_ANY = 'ARRAY_CONTAINS_ANY', NOT_IN = 'NOT_IN' }
 
 
 	/** A filter with a single operand. */
@@ -967,9 +967,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UnaryFilterOp { OPERATOR_UNSPECIFIED = 0, IS_NAN = 1, IS_NULL = 2, IS_NOT_NAN = 3, IS_NOT_NULL = 4 }
+	export enum UnaryFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', IS_NAN = 'IS_NAN', IS_NULL = 'IS_NULL', IS_NOT_NAN = 'IS_NOT_NAN', IS_NOT_NULL = 'IS_NOT_NULL' }
 
-	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 0, AND = 1, OR = 2 }
+	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', AND = 'AND', OR = 'OR' }
 
 
 	/** A position in a query result set. */
@@ -1250,7 +1250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1RestoreDatabaseMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 0, INITIALIZING = 1, PROCESSING = 2, CANCELLING = 3, FINALIZING = 4, SUCCESSFUL = 5, FAILED = 6, CANCELLED = 7 }
+	export enum GoogleFirestoreAdminV1RestoreDatabaseMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 'OPERATION_STATE_UNSPECIFIED', INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', CANCELLING = 'CANCELLING', FINALIZING = 'FINALIZING', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** Metadata related to the update database operation. */
@@ -1317,7 +1317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1beta1ExportDocumentsMetadataOperationState { STATE_UNSPECIFIED = 0, INITIALIZING = 1, PROCESSING = 2, CANCELLING = 3, FINALIZING = 4, SUCCESSFUL = 5, FAILED = 6, CANCELLED = 7 }
+	export enum GoogleFirestoreAdminV1beta1ExportDocumentsMetadataOperationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', CANCELLING = 'CANCELLING', FINALIZING = 'FINALIZING', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** Measures the progress of a particular metric. */
@@ -1533,9 +1533,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1beta1IndexFieldMode { MODE_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2, ARRAY_CONTAINS = 3 }
+	export enum GoogleFirestoreAdminV1beta1IndexFieldMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING', ARRAY_CONTAINS = 'ARRAY_CONTAINS' }
 
-	export enum GoogleFirestoreAdminV1beta1IndexState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, ERROR = 3 }
+	export enum GoogleFirestoreAdminV1beta1IndexState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', ERROR = 'ERROR' }
 
 
 	/** Metadata for index operations. This metadata populates the metadata field of google.longrunning.Operation. */
@@ -1589,7 +1589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1beta1IndexOperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, CREATING_INDEX = 1 }
+	export enum GoogleFirestoreAdminV1beta1IndexOperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', CREATING_INDEX = 'CREATING_INDEX' }
 
 
 	/** The response for FirestoreAdmin.ListIndexes. */
@@ -1937,7 +1937,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderDirection { DIRECTION_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum OrderDirection { DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** The projection of document's fields to return. */
@@ -2026,7 +2026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetChangeTargetChangeType { NO_CHANGE = 0, ADD = 1, REMOVE = 2, CURRENT = 3, RESET = 4 }
+	export enum TargetChangeTargetChangeType { NO_CHANGE = 'NO_CHANGE', ADD = 'ADD', REMOVE = 'REMOVE', CURRENT = 'CURRENT', RESET = 'RESET' }
 
 
 	/** The request for Firestore.PartitionQuery. */

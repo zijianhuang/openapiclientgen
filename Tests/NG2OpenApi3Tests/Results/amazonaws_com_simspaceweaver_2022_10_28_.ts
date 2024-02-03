@@ -168,9 +168,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SimulationAppStatus { STARTING = 0, STARTED = 1, STOPPING = 2, STOPPED = 3, ERROR = 4, UNKNOWN = 5 }
+	export enum SimulationAppStatus { STARTING = 'STARTING', STARTED = 'STARTED', STOPPING = 'STOPPING', STOPPED = 'STOPPED', ERROR = 'ERROR', UNKNOWN = 'UNKNOWN' }
 
-	export enum SimulationAppTargetStatus { UNKNOWN = 0, STARTED = 1, STOPPED = 2 }
+	export enum SimulationAppTargetStatus { UNKNOWN = 'UNKNOWN', STARTED = 'STARTED', STOPPED = 'STOPPED' }
 
 	export interface DescribeSimulationOutput {
 		Arn?: string;
@@ -257,7 +257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClockStatus { UNKNOWN = 0, STARTING = 1, STARTED = 2, STOPPING = 3, STOPPED = 4 }
+	export enum ClockStatus { UNKNOWN = 'UNKNOWN', STARTING = 'STARTING', STARTED = 'STARTED', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** <p>A collection of app instances that run the same executable app code and have the same launch options and commands.</p> <p>For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p> */
@@ -279,7 +279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LifecycleManagementStrategy { Unknown = 0, PerWorker = 1, BySpatialSubdivision = 2, ByRequest = 3 }
+	export enum LifecycleManagementStrategy { Unknown = 'Unknown', PerWorker = 'PerWorker', BySpatialSubdivision = 'BySpatialSubdivision', ByRequest = 'ByRequest' }
 
 
 	/** The logging configuration for a simulation. */
@@ -348,9 +348,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SimulationStatus { UNKNOWN = 0, STARTING = 1, STARTED = 2, STOPPING = 3, STOPPED = 4, FAILED = 5, DELETING = 6, DELETED = 7, SNAPSHOT_IN_PROGRESS = 8 }
+	export enum SimulationStatus { UNKNOWN = 'UNKNOWN', STARTING = 'STARTING', STARTED = 'STARTED', STOPPING = 'STOPPING', STOPPED = 'STOPPED', FAILED = 'FAILED', DELETING = 'DELETING', DELETED = 'DELETED', SNAPSHOT_IN_PROGRESS = 'SNAPSHOT_IN_PROGRESS' }
 
-	export enum SimulationTargetStatus { UNKNOWN = 0, STARTED = 1, STOPPED = 2, DELETED = 3 }
+	export enum SimulationTargetStatus { UNKNOWN = 'UNKNOWN', STARTED = 'STARTED', STOPPED = 'STOPPED', DELETED = 'DELETED' }
 
 	export interface ListAppsOutput {
 		Apps?: Array<SimulationAppMetadata>;
@@ -577,7 +577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClockTargetStatus { UNKNOWN = 0, STARTED = 1, STOPPED = 2 }
+	export enum ClockTargetStatus { UNKNOWN = 'UNKNOWN', STARTED = 'STARTED', STOPPED = 'STOPPED' }
 
 
 	/** An Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates a file. */

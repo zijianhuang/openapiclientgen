@@ -105,7 +105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountAccessPermission { accountPermissionUnspecified = 0, noAccess = 1, user = 2, admin = 3 }
+	export enum AccountAccessPermission { accountPermissionUnspecified = 'accountPermissionUnspecified', noAccess = 'noAccess', user = 'user', admin = 'admin' }
 
 
 	/** Built-in variables are a special category of variables that are pre-created and non-customizable. They provide common functionality like accessing properties of the gtm data layer, monitoring clicks, or accessing elements of a page URL. */
@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuiltInVariableType { builtInVariableTypeUnspecified = 0, pageUrl = 1, pageHostname = 2, pagePath = 3, referrer = 4, event = 5, clickElement = 6, clickClasses = 7, clickId = 8, clickTarget = 9, clickUrl = 10, clickText = 11, firstPartyServingUrl = 12, formElement = 13, formClasses = 14, formId = 15, formTarget = 16, formUrl = 17, formText = 18, errorMessage = 19, errorUrl = 20, errorLine = 21, newHistoryUrl = 22, oldHistoryUrl = 23, newHistoryFragment = 24, oldHistoryFragment = 25, newHistoryState = 26, oldHistoryState = 27, historySource = 28, containerVersion = 29, debugMode = 30, randomNumber = 31, containerId = 32, appId = 33, appName = 34, appVersionCode = 35, appVersionName = 36, language = 37, osVersion = 38, platform = 39, sdkVersion = 40, deviceName = 41, resolution = 42, advertiserId = 43, advertisingTrackingEnabled = 44, htmlId = 45, environmentName = 46, ampBrowserLanguage = 47, ampCanonicalPath = 48, ampCanonicalUrl = 49, ampCanonicalHost = 50, ampReferrer = 51, ampTitle = 52, ampClientId = 53, ampClientTimezone = 54, ampClientTimestamp = 55, ampClientScreenWidth = 56, ampClientScreenHeight = 57, ampClientScrollX = 58, ampClientScrollY = 59, ampClientMaxScrollX = 60, ampClientMaxScrollY = 61, ampTotalEngagedTime = 62, ampPageViewId = 63, ampPageLoadTime = 64, ampPageDownloadTime = 65, ampGtmEvent = 66, eventName = 67, firebaseEventParameterCampaign = 68, firebaseEventParameterCampaignAclid = 69, firebaseEventParameterCampaignAnid = 70, firebaseEventParameterCampaignClickTimestamp = 71, firebaseEventParameterCampaignContent = 72, firebaseEventParameterCampaignCp1 = 73, firebaseEventParameterCampaignGclid = 74, firebaseEventParameterCampaignSource = 75, firebaseEventParameterCampaignTerm = 76, firebaseEventParameterCurrency = 77, firebaseEventParameterDynamicLinkAcceptTime = 78, firebaseEventParameterDynamicLinkLinkid = 79, firebaseEventParameterNotificationMessageDeviceTime = 80, firebaseEventParameterNotificationMessageId = 81, firebaseEventParameterNotificationMessageName = 82, firebaseEventParameterNotificationMessageTime = 83, firebaseEventParameterNotificationTopic = 84, firebaseEventParameterPreviousAppVersion = 85, firebaseEventParameterPreviousOsVersion = 86, firebaseEventParameterPrice = 87, firebaseEventParameterProductId = 88, firebaseEventParameterQuantity = 89, firebaseEventParameterValue = 90, videoProvider = 91, videoUrl = 92, videoTitle = 93, videoDuration = 94, videoPercent = 95, videoVisible = 96, videoStatus = 97, videoCurrentTime = 98, scrollDepthThreshold = 99, scrollDepthUnits = 100, scrollDepthDirection = 101, elementVisibilityRatio = 102, elementVisibilityTime = 103, elementVisibilityFirstTime = 104, elementVisibilityRecentTime = 105, requestPath = 106, requestMethod = 107, clientName = 108, queryString = 109, serverPageLocationUrl = 110, serverPageLocationPath = 111, serverPageLocationHostname = 112, visitorRegion = 113 }
+	export enum BuiltInVariableType { builtInVariableTypeUnspecified = 'builtInVariableTypeUnspecified', pageUrl = 'pageUrl', pageHostname = 'pageHostname', pagePath = 'pagePath', referrer = 'referrer', event = 'event', clickElement = 'clickElement', clickClasses = 'clickClasses', clickId = 'clickId', clickTarget = 'clickTarget', clickUrl = 'clickUrl', clickText = 'clickText', firstPartyServingUrl = 'firstPartyServingUrl', formElement = 'formElement', formClasses = 'formClasses', formId = 'formId', formTarget = 'formTarget', formUrl = 'formUrl', formText = 'formText', errorMessage = 'errorMessage', errorUrl = 'errorUrl', errorLine = 'errorLine', newHistoryUrl = 'newHistoryUrl', oldHistoryUrl = 'oldHistoryUrl', newHistoryFragment = 'newHistoryFragment', oldHistoryFragment = 'oldHistoryFragment', newHistoryState = 'newHistoryState', oldHistoryState = 'oldHistoryState', historySource = 'historySource', containerVersion = 'containerVersion', debugMode = 'debugMode', randomNumber = 'randomNumber', containerId = 'containerId', appId = 'appId', appName = 'appName', appVersionCode = 'appVersionCode', appVersionName = 'appVersionName', language = 'language', osVersion = 'osVersion', platform = 'platform', sdkVersion = 'sdkVersion', deviceName = 'deviceName', resolution = 'resolution', advertiserId = 'advertiserId', advertisingTrackingEnabled = 'advertisingTrackingEnabled', htmlId = 'htmlId', environmentName = 'environmentName', ampBrowserLanguage = 'ampBrowserLanguage', ampCanonicalPath = 'ampCanonicalPath', ampCanonicalUrl = 'ampCanonicalUrl', ampCanonicalHost = 'ampCanonicalHost', ampReferrer = 'ampReferrer', ampTitle = 'ampTitle', ampClientId = 'ampClientId', ampClientTimezone = 'ampClientTimezone', ampClientTimestamp = 'ampClientTimestamp', ampClientScreenWidth = 'ampClientScreenWidth', ampClientScreenHeight = 'ampClientScreenHeight', ampClientScrollX = 'ampClientScrollX', ampClientScrollY = 'ampClientScrollY', ampClientMaxScrollX = 'ampClientMaxScrollX', ampClientMaxScrollY = 'ampClientMaxScrollY', ampTotalEngagedTime = 'ampTotalEngagedTime', ampPageViewId = 'ampPageViewId', ampPageLoadTime = 'ampPageLoadTime', ampPageDownloadTime = 'ampPageDownloadTime', ampGtmEvent = 'ampGtmEvent', eventName = 'eventName', firebaseEventParameterCampaign = 'firebaseEventParameterCampaign', firebaseEventParameterCampaignAclid = 'firebaseEventParameterCampaignAclid', firebaseEventParameterCampaignAnid = 'firebaseEventParameterCampaignAnid', firebaseEventParameterCampaignClickTimestamp = 'firebaseEventParameterCampaignClickTimestamp', firebaseEventParameterCampaignContent = 'firebaseEventParameterCampaignContent', firebaseEventParameterCampaignCp1 = 'firebaseEventParameterCampaignCp1', firebaseEventParameterCampaignGclid = 'firebaseEventParameterCampaignGclid', firebaseEventParameterCampaignSource = 'firebaseEventParameterCampaignSource', firebaseEventParameterCampaignTerm = 'firebaseEventParameterCampaignTerm', firebaseEventParameterCurrency = 'firebaseEventParameterCurrency', firebaseEventParameterDynamicLinkAcceptTime = 'firebaseEventParameterDynamicLinkAcceptTime', firebaseEventParameterDynamicLinkLinkid = 'firebaseEventParameterDynamicLinkLinkid', firebaseEventParameterNotificationMessageDeviceTime = 'firebaseEventParameterNotificationMessageDeviceTime', firebaseEventParameterNotificationMessageId = 'firebaseEventParameterNotificationMessageId', firebaseEventParameterNotificationMessageName = 'firebaseEventParameterNotificationMessageName', firebaseEventParameterNotificationMessageTime = 'firebaseEventParameterNotificationMessageTime', firebaseEventParameterNotificationTopic = 'firebaseEventParameterNotificationTopic', firebaseEventParameterPreviousAppVersion = 'firebaseEventParameterPreviousAppVersion', firebaseEventParameterPreviousOsVersion = 'firebaseEventParameterPreviousOsVersion', firebaseEventParameterPrice = 'firebaseEventParameterPrice', firebaseEventParameterProductId = 'firebaseEventParameterProductId', firebaseEventParameterQuantity = 'firebaseEventParameterQuantity', firebaseEventParameterValue = 'firebaseEventParameterValue', videoProvider = 'videoProvider', videoUrl = 'videoUrl', videoTitle = 'videoTitle', videoDuration = 'videoDuration', videoPercent = 'videoPercent', videoVisible = 'videoVisible', videoStatus = 'videoStatus', videoCurrentTime = 'videoCurrentTime', scrollDepthThreshold = 'scrollDepthThreshold', scrollDepthUnits = 'scrollDepthUnits', scrollDepthDirection = 'scrollDepthDirection', elementVisibilityRatio = 'elementVisibilityRatio', elementVisibilityTime = 'elementVisibilityTime', elementVisibilityFirstTime = 'elementVisibilityFirstTime', elementVisibilityRecentTime = 'elementVisibilityRecentTime', requestPath = 'requestPath', requestMethod = 'requestMethod', clientName = 'clientName', queryString = 'queryString', serverPageLocationUrl = 'serverPageLocationUrl', serverPageLocationPath = 'serverPageLocationPath', serverPageLocationHostname = 'serverPageLocationHostname', visitorRegion = 'visitorRegion' }
 
 	export interface Client {
 
@@ -310,7 +310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterType { typeUnspecified = 0, template = 1, integer = 2, boolean = 3, list = 4, map = 5, triggerReference = 6, tagReference = 7 }
+	export enum ParameterType { typeUnspecified = 'typeUnspecified', template = 'template', integer = 'integer', boolean = 'boolean', list = 'list', map = 'map', triggerReference = 'triggerReference', tagReference = 'tagReference' }
 
 
 	/** Represents a predicate. */
@@ -336,7 +336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionType { conditionTypeUnspecified = 0, equals = 1, contains = 2, startsWith = 3, endsWith = 4, matchRegex = 5, greater = 6, greaterOrEquals = 7, less = 8, lessOrEquals = 9, cssSelector = 10, urlMatches = 11 }
+	export enum ConditionType { conditionTypeUnspecified = 'conditionTypeUnspecified', equals = 'equals', contains = 'contains', startsWith = 'startsWith', endsWith = 'endsWith', matchRegex = 'matchRegex', greater = 'greater', greaterOrEquals = 'greaterOrEquals', less = 'less', lessOrEquals = 'lessOrEquals', cssSelector = 'cssSelector', urlMatches = 'urlMatches' }
 
 
 	/** Represents a Google Tag Manager Container, which specifies the platform tags will run on, manages workspaces, and retains container versions. */
@@ -557,7 +557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerAccessPermission { containerPermissionUnspecified = 0, noAccess = 1, read = 2, edit = 3, approve = 4, publish = 5 }
+	export enum ContainerAccessPermission { containerPermissionUnspecified = 'containerPermissionUnspecified', noAccess = 'noAccess', read = 'read', edit = 'edit', approve = 'approve', publish = 'publish' }
 
 
 	/** Represents a Google Tag Manager Container Version. */
@@ -1136,7 +1136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagConsentSettingConsentStatus { notSet = 0, notNeeded = 1, needed = 2 }
+	export enum TagConsentSettingConsentStatus { notSet = 'notSet', notNeeded = 'notNeeded', needed = 'needed' }
 
 
 	/** Represents a reference to atag that fires before another tag in order to set up dependencies. */
@@ -1166,7 +1166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagTagFiringOption { tagFiringOptionUnspecified = 0, unlimited = 1, oncePerEvent = 2, oncePerLoad = 3 }
+	export enum TagTagFiringOption { tagFiringOptionUnspecified = 'tagFiringOptionUnspecified', unlimited = 'unlimited', oncePerEvent = 'oncePerEvent', oncePerLoad = 'oncePerLoad' }
 
 
 	/** Represents a tag that fires after another tag in order to tear down dependencies. */
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerType { eventTypeUnspecified = 0, pageview = 1, domReady = 2, windowLoaded = 3, customEvent = 4, triggerGroup = 5, init = 6, consentInit = 7, serverPageview = 8, always = 9, firebaseAppException = 10, firebaseAppUpdate = 11, firebaseCampaign = 12, firebaseFirstOpen = 13, firebaseInAppPurchase = 14, firebaseNotificationDismiss = 15, firebaseNotificationForeground = 16, firebaseNotificationOpen = 17, firebaseNotificationReceive = 18, firebaseOsUpdate = 19, firebaseSessionStart = 20, firebaseUserEngagement = 21, formSubmission = 22, click = 23, linkClick = 24, jsError = 25, historyChange = 26, timer = 27, ampClick = 28, ampTimer = 29, ampScroll = 30, ampVisibility = 31, youTubeVideo = 32, scrollDepth = 33, elementVisibility = 34 }
+	export enum TriggerType { eventTypeUnspecified = 'eventTypeUnspecified', pageview = 'pageview', domReady = 'domReady', windowLoaded = 'windowLoaded', customEvent = 'customEvent', triggerGroup = 'triggerGroup', init = 'init', consentInit = 'consentInit', serverPageview = 'serverPageview', always = 'always', firebaseAppException = 'firebaseAppException', firebaseAppUpdate = 'firebaseAppUpdate', firebaseCampaign = 'firebaseCampaign', firebaseFirstOpen = 'firebaseFirstOpen', firebaseInAppPurchase = 'firebaseInAppPurchase', firebaseNotificationDismiss = 'firebaseNotificationDismiss', firebaseNotificationForeground = 'firebaseNotificationForeground', firebaseNotificationOpen = 'firebaseNotificationOpen', firebaseNotificationReceive = 'firebaseNotificationReceive', firebaseOsUpdate = 'firebaseOsUpdate', firebaseSessionStart = 'firebaseSessionStart', firebaseUserEngagement = 'firebaseUserEngagement', formSubmission = 'formSubmission', click = 'click', linkClick = 'linkClick', jsError = 'jsError', historyChange = 'historyChange', timer = 'timer', ampClick = 'ampClick', ampTimer = 'ampTimer', ampScroll = 'ampScroll', ampVisibility = 'ampVisibility', youTubeVideo = 'youTubeVideo', scrollDepth = 'scrollDepth', elementVisibility = 'elementVisibility' }
 
 
 	/** Represents a Google Tag Manager Variable. */
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VariableFormatValueCaseConversionType { none = 0, lowercase = 1, uppercase = 2 }
+	export enum VariableFormatValueCaseConversionType { none = 'none', lowercase = 'lowercase', uppercase = 'uppercase' }
 
 
 	/** Represents a Google Tag Manager Zone's contents. */
@@ -2098,7 +2098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityChangeStatus { changeStatusUnspecified = 0, none = 1, added = 2, deleted = 3, updated = 4 }
+	export enum EntityChangeStatus { changeStatusUnspecified = 'changeStatusUnspecified', none = 'none', added = 'added', deleted = 'deleted', updated = 'updated' }
 
 
 	/** Represents a Google Tag Manager Environment. Note that a user can create, delete and update environments of type USER, but can only update the enable_debug and url fields of environments of other types. */
@@ -2219,7 +2219,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentType { user = 0, live = 1, latest = 2, workspace = 3 }
+	export enum EnvironmentType { user = 'user', live = 'live', latest = 'latest', workspace = 'workspace' }
 
 
 	/** Represents a Google Tag Manager Folder's contents. */
@@ -3615,7 +3615,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Tagmanager_accounts_containers_combineSettingSource { settingSourceUnspecified = 0, current = 1, other = 2 }
+	export enum Tagmanager_accounts_containers_combineSettingSource { settingSourceUnspecified = 'settingSourceUnspecified', current = 'current', other = 'other' }
 
 }
 

@@ -149,9 +149,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlOperationType { ENABLE_CONTROL = 0, DISABLE_CONTROL = 1 }
+	export enum ControlOperationType { ENABLE_CONTROL = 'ENABLE_CONTROL', DISABLE_CONTROL = 'DISABLE_CONTROL' }
 
-	export enum ControlOperationStatus { SUCCEEDED = 0, FAILED = 1, IN_PROGRESS = 2 }
+	export enum ControlOperationStatus { SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS' }
 
 	export interface ListEnabledControlsOutput {
 

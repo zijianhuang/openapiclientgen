@@ -57,9 +57,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlanDataPlan { STARTER = 0, SFDC_1M_EDITION = 1, BRONZE = 2, SILVER = 3, GOLD = 4, DATASET_DOWNLOAD = 5 }
+	export enum PlanDataPlan { STARTER = 'STARTER', SFDC_1M_EDITION = 'SFDC_1M_EDITION', BRONZE = 'BRONZE', SILVER = 'SILVER', GOLD = 'GOLD', DATASET_DOWNLOAD = 'DATASET_DOWNLOAD' }
 
-	export enum PlanDataSource { SALESFORCE = 0, HEROKU = 1, SF_AUTO_PROVISION = 2, SF_AUTO_PROVISION_BOUND = 3 }
+	export enum PlanDataSource { SALESFORCE = 'SALESFORCE', HEROKU = 'HEROKU', SF_AUTO_PROVISION = 'SF_AUTO_PROVISION', SF_AUTO_PROVISION_BOUND = 'SF_AUTO_PROVISION_BOUND' }
 
 	export interface ApiUsageList {
 		data?: Array<ApiUsage>;
@@ -377,9 +377,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletionResponseStatus { QUEUED = 0, RUNNING = 1, SUCCEEDED_WAITING_FOR_CACHE_REMOVAL = 2, SUCCEEDED = 3, KILLED = 4, FAILED = 5, RETRY = 6 }
+	export enum DeletionResponseStatus { QUEUED = 'QUEUED', RUNNING = 'RUNNING', SUCCEEDED_WAITING_FOR_CACHE_REMOVAL = 'SUCCEEDED_WAITING_FOR_CACHE_REMOVAL', SUCCEEDED = 'SUCCEEDED', KILLED = 'KILLED', FAILED = 'FAILED', RETRY = 'RETRY' }
 
-	export enum DeletionResponseType { DATASET = 0, MODEL = 1 }
+	export enum DeletionResponseType { DATASET = 'DATASET', MODEL = 'MODEL' }
 
 
 	/** label */
@@ -918,7 +918,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelStatus { QUEUED = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, KILLED = 4, FAILED_WITH_RETRIES = 5 }
+	export enum ModelStatus { QUEUED = 'QUEUED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', KILLED = 'KILLED', FAILED_WITH_RETRIES = 'FAILED_WITH_RETRIES' }
 
 	export interface ModelList {
 		data?: Array<Model>;
@@ -1726,7 +1726,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetExamplesSource { all = 0, feedback = 1, upload = 2 }
+	export enum GetExamplesSource { all = 'all', feedback = 'feedback', upload = 'upload' }
 
 }
 

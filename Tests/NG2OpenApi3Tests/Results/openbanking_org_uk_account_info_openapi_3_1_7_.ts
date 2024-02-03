@@ -310,9 +310,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBAccount4AccountSubType { ChargeCard = 0, CreditCard = 1, CurrentAccount = 2, EMoney = 3, Loan = 4, Mortgage = 5, PrePaidCard = 6, Savings = 7 }
+	export enum OBAccount4AccountSubType { ChargeCard = 'ChargeCard', CreditCard = 'CreditCard', CurrentAccount = 'CurrentAccount', EMoney = 'EMoney', Loan = 'Loan', Mortgage = 'Mortgage', PrePaidCard = 'PrePaidCard', Savings = 'Savings' }
 
-	export enum OBAccount4AccountType { Business = 0, Personal = 1 }
+	export enum OBAccount4AccountType { Business = 'Business', Personal = 'Personal' }
 
 
 	/** Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account. */
@@ -358,7 +358,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBAccount4Status { Deleted = 0, Disabled = 1, Enabled = 2, Pending = 3, ProForma = 4 }
+	export enum OBAccount4Status { Deleted = 'Deleted', Disabled = 'Disabled', Enabled = 'Enabled', Pending = 'Pending', ProForma = 'ProForma' }
 
 
 	/** Unambiguous identification of the account to which credit and debit entries are made. */
@@ -1339,7 +1339,7 @@ export namespace MyNS {
 
 
 	/** Specifies the status of account resource in code form. */
-	export enum OBAccountStatus1Code { Deleted = 0, Disabled = 1, Enabled = 2, Pending = 3, ProForma = 4 }
+	export enum OBAccountStatus1Code { Deleted = 'Deleted', Disabled = 'Disabled', Enabled = 'Enabled', Pending = 'Pending', ProForma = 'ProForma' }
 
 
 	/** The amount of the most recent direct debit collection. */
@@ -1829,7 +1829,7 @@ export namespace MyNS {
 
 
 	/** Identifies the nature of the postal address. */
-	export enum OBAddressTypeCode { Business = 0, Correspondence = 1, DeliveryTo = 2, MailTo = 3, POBox = 4, Postal = 5, Residential = 6, Statement = 7 }
+	export enum OBAddressTypeCode { Business = 'Business', Correspondence = 'Correspondence', DeliveryTo = 'DeliveryTo', MailTo = 'MailTo', POBox = 'POBox', Postal = 'Postal', Residential = 'Residential', Statement = 'Statement' }
 
 	export interface OBBCAData1 {
 
@@ -1933,9 +1933,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1CreditInterestTierBandSetCalculationMethod { Compound = 0, SimpleInterest = 1 }
+	export enum OBBCAData1CreditInterestTierBandSetCalculationMethod { Compound = 'Compound', SimpleInterest = 'SimpleInterest' }
 
-	export enum OBBCAData1CreditInterestTierBandSetDestination { PayAway = 0, SelfCredit = 1 }
+	export enum OBBCAData1CreditInterestTierBandSetDestination { PayAway = 'PayAway', SelfCredit = 'SelfCredit' }
 
 	export interface OBBCAData1CreditInterestTierBandSetTierBand {
 
@@ -2063,13 +2063,13 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1CreditInterestTierBandSetTierBandApplicationFrequency { Daily = 0, HalfYearly = 1, Monthly = 2, Other = 3, Quarterly = 4, PerStatementDate = 5, Weekly = 6, Yearly = 7 }
+	export enum OBBCAData1CreditInterestTierBandSetTierBandApplicationFrequency { Daily = 'Daily', HalfYearly = 'HalfYearly', Monthly = 'Monthly', Other = 'Other', Quarterly = 'Quarterly', PerStatementDate = 'PerStatementDate', Weekly = 'Weekly', Yearly = 'Yearly' }
 
-	export enum OBBCAData1CreditInterestTierBandSetTierBandBankInterestRateType { Gross = 0, Other = 1 }
+	export enum OBBCAData1CreditInterestTierBandSetTierBandBankInterestRateType { Gross = 'Gross', Other = 'Other' }
 
-	export enum OBBCAData1CreditInterestTierBandSetTierBandDepositInterestAppliedCoverage { Banded = 0, Tiered = 1, Whole = 2 }
+	export enum OBBCAData1CreditInterestTierBandSetTierBandDepositInterestAppliedCoverage { Banded = 'Banded', Tiered = 'Tiered', Whole = 'Whole' }
 
-	export enum OBBCAData1CreditInterestTierBandSetTierBandFixedVariableInterestRateType { Fixed = 0, Variable = 1 }
+	export enum OBBCAData1CreditInterestTierBandSetTierBandFixedVariableInterestRateType { Fixed = 'Fixed', Variable = 'Variable' }
 
 	export interface OBBCAData1CreditInterestTierBandSetTierBandOtherApplicationFrequency {
 
@@ -2350,9 +2350,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1OtherFeesChargesFeeChargeCapCappingPeriod { Day = 0, 'Half Year' = 1, Month = 2, Quarter = 3, Week = 4, Year = 5 }
+	export enum OBBCAData1OtherFeesChargesFeeChargeCapCappingPeriod { Day = 'Day', 'Half Year' = 'Half Year', Month = 'Month', Quarter = 'Quarter', Week = 'Week', Year = 'Year' }
 
-	export enum OBBCAData1OtherFeesChargesFeeChargeCapMinMaxType { Minimum = 0, Maximum = 1 }
+	export enum OBBCAData1OtherFeesChargesFeeChargeCapMinMaxType { Minimum = 'Minimum', Maximum = 'Maximum' }
 
 	export interface OBBCAData1OtherFeesChargesFeeChargeCapOtherFeeType {
 
@@ -2519,7 +2519,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1OtherFeesChargesFeeChargeDetailApplicationFrequency { OnClosing = 0, OnOpening = 1, ChargingPeriod = 2, Daily = 3, PerItem = 4, Monthly = 5, OnAnniversary = 6, Other = 7, PerHundredPounds = 8, PerHour = 9, PerOccurrence = 10, PerSheet = 11, PerTransaction = 12, PerTransactionAmount = 13, PerTransactionPercentage = 14, Quarterly = 15, SixMonthly = 16, StatementMonthly = 17, Weekly = 18, Yearly = 19 }
+	export enum OBBCAData1OtherFeesChargesFeeChargeDetailApplicationFrequency { OnClosing = 'OnClosing', OnOpening = 'OnOpening', ChargingPeriod = 'ChargingPeriod', Daily = 'Daily', PerItem = 'PerItem', Monthly = 'Monthly', OnAnniversary = 'OnAnniversary', Other = 'Other', PerHundredPounds = 'PerHundredPounds', PerHour = 'PerHour', PerOccurrence = 'PerOccurrence', PerSheet = 'PerSheet', PerTransaction = 'PerTransaction', PerTransactionAmount = 'PerTransactionAmount', PerTransactionPercentage = 'PerTransactionPercentage', Quarterly = 'Quarterly', SixMonthly = 'SixMonthly', StatementMonthly = 'StatementMonthly', Weekly = 'Weekly', Yearly = 'Yearly' }
 
 	export interface OBBCAData1OtherFeesChargesFeeChargeDetailFeeApplicableRange {
 
@@ -2559,7 +2559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1OtherFeesChargesFeeChargeDetailFeeCategory { Other = 0, Servicing = 1 }
+	export enum OBBCAData1OtherFeesChargesFeeChargeDetailFeeCategory { Other = 'Other', Servicing = 'Servicing' }
 
 	export interface OBBCAData1OtherFeesChargesFeeChargeDetailFeeChargeCap {
 
@@ -2677,7 +2677,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1OtherFeesChargesFeeChargeDetailFeeType { Other = 0, ServiceCAccountFee = 1, ServiceCAccountFeeMonthly = 2, ServiceCAccountFeeQuarterly = 3, ServiceCFixedTariff = 4, ServiceCBusiDepAccBreakage = 5, ServiceCMinimumMonthlyFee = 6, ServiceCOther = 7 }
+	export enum OBBCAData1OtherFeesChargesFeeChargeDetailFeeType { Other = 'Other', ServiceCAccountFee = 'ServiceCAccountFee', ServiceCAccountFeeMonthly = 'ServiceCAccountFeeMonthly', ServiceCAccountFeeQuarterly = 'ServiceCAccountFeeQuarterly', ServiceCFixedTariff = 'ServiceCFixedTariff', ServiceCBusiDepAccBreakage = 'ServiceCBusiDepAccBreakage', ServiceCMinimumMonthlyFee = 'ServiceCMinimumMonthlyFee', ServiceCOther = 'ServiceCOther' }
 
 	export interface OBBCAData1OtherFeesChargesFeeChargeDetailOtherApplicationFrequency {
 
@@ -3046,7 +3046,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1OtherFeesChargesTariffType { Electronic = 0, Mixed = 1, Other = 2 }
+	export enum OBBCAData1OtherFeesChargesTariffType { Electronic = 'Electronic', Mixed = 'Mixed', Other = 'Other' }
 
 	export interface OBBCAData1Overdraft {
 
@@ -3385,7 +3385,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType { ArrangedOverdraft = 0, AnnualReview = 1, EmergencyBorrowing = 2, BorrowingItem = 3, OverdraftRenewal = 4, OverdraftSetup = 5, Surcharge = 6, TempOverdraft = 7, UnauthorisedBorrowing = 8, UnauthorisedPaidTrans = 9, Other = 10, UnauthorisedUnpaidTrans = 11 }
+	export enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType { ArrangedOverdraft = 'ArrangedOverdraft', AnnualReview = 'AnnualReview', EmergencyBorrowing = 'EmergencyBorrowing', BorrowingItem = 'BorrowingItem', OverdraftRenewal = 'OverdraftRenewal', OverdraftSetup = 'OverdraftSetup', Surcharge = 'Surcharge', TempOverdraft = 'TempOverdraft', UnauthorisedBorrowing = 'UnauthorisedBorrowing', UnauthorisedPaidTrans = 'UnauthorisedPaidTrans', Other = 'Other', UnauthorisedUnpaidTrans = 'UnauthorisedUnpaidTrans' }
 
 	export interface OBBCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOtherApplicationFrequency {
 
@@ -4436,7 +4436,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftType { Committed = 0, OnDemand = 1 }
+	export enum OBBCAData1OverdraftOverdraftTierBandSetOverdraftType { Committed = 'Committed', OnDemand = 'OnDemand' }
 
 	export interface OBBCAData1ProductDetails {
 
@@ -4474,7 +4474,7 @@ export namespace MyNS {
 
 
 	/** Balance type, in a coded form. */
-	export enum OBBalanceType1Code { ClosingAvailable = 0, ClosingBooked = 1, ClosingCleared = 2, Expected = 3, ForwardAvailable = 4, Information = 5, InterimAvailable = 6, InterimBooked = 7, InterimCleared = 8, OpeningAvailable = 9, OpeningBooked = 10, OpeningCleared = 11, PreviouslyClosedBooked = 12 }
+	export enum OBBalanceType1Code { ClosingAvailable = 'ClosingAvailable', ClosingBooked = 'ClosingBooked', ClosingCleared = 'ClosingCleared', Expected = 'Expected', ForwardAvailable = 'ForwardAvailable', Information = 'Information', InterimAvailable = 'InterimAvailable', InterimBooked = 'InterimBooked', InterimCleared = 'InterimCleared', OpeningAvailable = 'OpeningAvailable', OpeningBooked = 'OpeningBooked', OpeningCleared = 'OpeningCleared', PreviouslyClosedBooked = 'PreviouslyClosedBooked' }
 
 
 	/** Set of elements used to fully identify the type of underlying transaction resulting in an entry. */
@@ -4594,7 +4594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBBeneficiary5BeneficiaryType { Trusted = 0, Ordinary = 1 }
+	export enum OBBeneficiary5BeneficiaryType { Trusted = 'Trusted', Ordinary = 'Ordinary' }
 
 
 	/** Provides the details to identify the beneficiary account. */
@@ -5039,7 +5039,7 @@ export namespace MyNS {
 
 
 	/** Specifies the Beneficiary Type. */
-	export enum OBBeneficiaryType1Code { Trusted = 0, Ordinary = 1 }
+	export enum OBBeneficiaryType1Code { Trusted = 'Trusted', Ordinary = 'Ordinary' }
 
 
 	/**
@@ -5422,18 +5422,18 @@ export namespace MyNS {
 	 * Indicates whether the amount is a credit or a debit. 
 	 * Usage: A zero amount is considered to be a credit amount.
 	 */
-	export enum OBCreditDebitCode_0 { Credit = 0, Debit = 1 }
+	export enum OBCreditDebitCode_0 { Credit = 'Credit', Debit = 'Debit' }
 
 
 	/** Indicates whether the transaction is a credit or a debit entry. */
-	export enum OBCreditDebitCode_1 { Credit = 0, Debit = 1 }
+	export enum OBCreditDebitCode_1 { Credit = 'Credit', Debit = 'Debit' }
 
 
 	/**
 	 * Indicates whether the balance is a credit or a debit balance. 
 	 * Usage: A zero balance is considered to be a credit balance.
 	 */
-	export enum OBCreditDebitCode_2 { Credit = 0, Debit = 1 }
+	export enum OBCreditDebitCode_2 { Credit = 'Credit', Debit = 'Debit' }
 
 
 	/** Set of elements used to provide details on the currency exchange. */
@@ -5562,7 +5562,7 @@ export namespace MyNS {
 
 
 	/** Status of a transaction entry on the books of the account servicer. */
-	export enum OBEntryStatus1Code { Booked = 0, Pending = 1 }
+	export enum OBEntryStatus1Code { Booked = 'Booked', Pending = 'Pending' }
 
 	export interface OBError1 {
 
@@ -5699,31 +5699,31 @@ export namespace MyNS {
 
 
 	/** Specifies the sub type of account (product family group). */
-	export enum OBExternalAccountSubType1Code { ChargeCard = 0, CreditCard = 1, CurrentAccount = 2, EMoney = 3, Loan = 4, Mortgage = 5, PrePaidCard = 6, Savings = 7 }
+	export enum OBExternalAccountSubType1Code { ChargeCard = 'ChargeCard', CreditCard = 'CreditCard', CurrentAccount = 'CurrentAccount', EMoney = 'EMoney', Loan = 'Loan', Mortgage = 'Mortgage', PrePaidCard = 'PrePaidCard', Savings = 'Savings' }
 
 
 	/** Specifies the type of account (personal or business). */
-	export enum OBExternalAccountType1Code { Business = 0, Personal = 1 }
+	export enum OBExternalAccountType1Code { Business = 'Business', Personal = 'Personal' }
 
 
 	/** Specifies the status of the direct debit in code form. */
-	export enum OBExternalDirectDebitStatus1Code { Active = 0, Inactive = 1 }
+	export enum OBExternalDirectDebitStatus1Code { Active = 'Active', Inactive = 'Inactive' }
 
 
 	/** Party type, in a coded form. */
-	export enum OBExternalPartyType1Code { Delegate = 0, Joint = 1, Sole = 2 }
+	export enum OBExternalPartyType1Code { Delegate = 'Delegate', Joint = 'Joint', Sole = 'Sole' }
 
 
 	/** Specifies the scheduled payment date type requested */
-	export enum OBExternalScheduleType1Code { Arrival = 0, Execution = 1 }
+	export enum OBExternalScheduleType1Code { Arrival = 'Arrival', Execution = 'Execution' }
 
 
 	/** Specifies the status of the standing order in code form. */
-	export enum OBExternalStandingOrderStatus1Code { Active = 0, Inactive = 1 }
+	export enum OBExternalStandingOrderStatus1Code { Active = 'Active', Inactive = 'Inactive' }
 
 
 	/** Statement type, in a coded form. */
-	export enum OBExternalStatementType1Code { AccountClosure = 0, AccountOpening = 1, Annual = 2, Interim = 3, RegularPeriodic = 4 }
+	export enum OBExternalStatementType1Code { AccountClosure = 'AccountClosure', AccountOpening = 'AccountOpening', Annual = 'Annual', Interim = 'Interim', RegularPeriodic = 'RegularPeriodic' }
 
 
 	/** Details of the merchant involved in the transaction. */
@@ -5991,11 +5991,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OBPCAData1CreditInterestTierBandSetTierBandApplicationFrequency { PerAcademicTerm = 0, Daily = 1, HalfYearly = 2, Monthly = 3, Other = 4, Quarterly = 5, PerStatementDate = 6, Weekly = 7, Yearly = 8 }
+	export enum OBPCAData1CreditInterestTierBandSetTierBandApplicationFrequency { PerAcademicTerm = 'PerAcademicTerm', Daily = 'Daily', HalfYearly = 'HalfYearly', Monthly = 'Monthly', Other = 'Other', Quarterly = 'Quarterly', PerStatementDate = 'PerStatementDate', Weekly = 'Weekly', Yearly = 'Yearly' }
 
-	export enum OBPCAData1CreditInterestTierBandSetTierBandBankInterestRateType { LinkedBaseRate = 0, Gross = 1, Net = 2, Other = 3 }
+	export enum OBPCAData1CreditInterestTierBandSetTierBandBankInterestRateType { LinkedBaseRate = 'LinkedBaseRate', Gross = 'Gross', Net = 'Net', Other = 'Other' }
 
-	export enum OBPCAData1CreditInterestTierBandSetTierBandDepositInterestAppliedCoverage { Tiered = 0, Whole = 1 }
+	export enum OBPCAData1CreditInterestTierBandSetTierBandDepositInterestAppliedCoverage { Tiered = 'Tiered', Whole = 'Whole' }
 
 	export interface OBPCAData1CreditInterestTierBandSetTierBandOtherApplicationFrequency {
 
@@ -6251,7 +6251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBPCAData1OtherFeesChargesFeeChargeCapCappingPeriod { AcademicTerm = 0, Day = 1, 'Half Year' = 2, Month = 3, Quarter = 4, Week = 5, Year = 6 }
+	export enum OBPCAData1OtherFeesChargesFeeChargeCapCappingPeriod { AcademicTerm = 'AcademicTerm', Day = 'Day', 'Half Year' = 'Half Year', Month = 'Month', Quarter = 'Quarter', Week = 'Week', Year = 'Year' }
 
 	export interface OBPCAData1OtherFeesChargesFeeChargeCapOtherFeeType {
 
@@ -6411,7 +6411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBPCAData1OtherFeesChargesFeeChargeDetailApplicationFrequency { AccountClosing = 0, AccountOpening = 1, AcademicTerm = 2, ChargingPeriod = 3, Daily = 4, PerItem = 5, Monthly = 6, OnAccountAnniversary = 7, Other = 8, PerHour = 9, PerOccurrence = 10, PerSheet = 11, PerTransaction = 12, PerTransactionAmount = 13, PerTransactionPercentage = 14, Quarterly = 15, SixMonthly = 16, StatementMonthly = 17, Weekly = 18, Yearly = 19 }
+	export enum OBPCAData1OtherFeesChargesFeeChargeDetailApplicationFrequency { AccountClosing = 'AccountClosing', AccountOpening = 'AccountOpening', AcademicTerm = 'AcademicTerm', ChargingPeriod = 'ChargingPeriod', Daily = 'Daily', PerItem = 'PerItem', Monthly = 'Monthly', OnAccountAnniversary = 'OnAccountAnniversary', Other = 'Other', PerHour = 'PerHour', PerOccurrence = 'PerOccurrence', PerSheet = 'PerSheet', PerTransaction = 'PerTransaction', PerTransactionAmount = 'PerTransactionAmount', PerTransactionPercentage = 'PerTransactionPercentage', Quarterly = 'Quarterly', SixMonthly = 'SixMonthly', StatementMonthly = 'StatementMonthly', Weekly = 'Weekly', Yearly = 'Yearly' }
 
 	export interface OBPCAData1OtherFeesChargesFeeChargeDetailFeeApplicableRange {
 
@@ -6567,7 +6567,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBPCAData1OtherFeesChargesFeeChargeDetailFeeType { ServiceCAccountFee = 0, ServiceCAccountFeeMonthly = 1, ServiceCOther = 2, Other = 3 }
+	export enum OBPCAData1OtherFeesChargesFeeChargeDetailFeeType { ServiceCAccountFee = 'ServiceCAccountFee', ServiceCAccountFeeMonthly = 'ServiceCAccountFeeMonthly', ServiceCOther = 'ServiceCOther', Other = 'Other' }
 
 	export interface OBPCAData1OtherFeesChargesFeeChargeDetailOtherApplicationFrequency {
 
@@ -7214,7 +7214,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType { ArrangedOverdraft = 0, EmergencyBorrowing = 1, BorrowingItem = 2, OverdraftRenewal = 3, AnnualReview = 4, OverdraftSetup = 5, Surcharge = 6, TempOverdraft = 7, UnauthorisedBorrowing = 8, UnauthorisedPaidTrans = 9, Other = 10, UnauthorisedUnpaidTrans = 11 }
+	export enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType { ArrangedOverdraft = 'ArrangedOverdraft', EmergencyBorrowing = 'EmergencyBorrowing', BorrowingItem = 'BorrowingItem', OverdraftRenewal = 'OverdraftRenewal', AnnualReview = 'AnnualReview', OverdraftSetup = 'OverdraftSetup', Surcharge = 'Surcharge', TempOverdraft = 'TempOverdraft', UnauthorisedBorrowing = 'UnauthorisedBorrowing', UnauthorisedPaidTrans = 'UnauthorisedPaidTrans', Other = 'Other', UnauthorisedUnpaidTrans = 'UnauthorisedUnpaidTrans' }
 
 	export interface OBPCAData1OverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailOtherApplicationFrequency {
 
@@ -8258,9 +8258,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftType { Committed = 0, OnDemand = 1, Other = 2 }
+	export enum OBPCAData1OverdraftOverdraftTierBandSetOverdraftType { Committed = 'Committed', OnDemand = 'OnDemand', Other = 'Other' }
 
-	export enum OBPCAData1OverdraftOverdraftTierBandSetTierBandMethod { Tiered = 0, Whole = 1, Banded = 2 }
+	export enum OBPCAData1OverdraftOverdraftTierBandSetTierBandMethod { Tiered = 'Tiered', Whole = 'Whole', Banded = 'Banded' }
 
 	export interface OBPCAData1ProductDetails {
 
@@ -8837,7 +8837,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadBalance1DataBalanceCreditLineType { Available = 0, Credit = 1, Emergency = 2, 'Pre-Agreed' = 3, Temporary = 4 }
+	export enum OBReadBalance1DataBalanceCreditLineType { Available = 'Available', Credit = 'Credit', Emergency = 'Emergency', 'Pre-Agreed' = 'Pre-Agreed', Temporary = 'Temporary' }
 
 	export interface OBReadBeneficiary5 {
 
@@ -9125,7 +9125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadConsentResponse1DataStatus { Authorised = 0, AwaitingAuthorisation = 1, Rejected = 2, Revoked = 3 }
+	export enum OBReadConsentResponse1DataStatus { Authorised = 'Authorised', AwaitingAuthorisation = 'AwaitingAuthorisation', Rejected = 'Rejected', Revoked = 'Revoked' }
 
 	export interface OBReadDataStatement2 {
 		Statement?: Array<OBStatement2>;
@@ -9986,9 +9986,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBTransactionCardInstrument1AuthorisationType { ConsumerDevice = 0, Contactless = 1, None = 2, PIN = 3 }
+	export enum OBTransactionCardInstrument1AuthorisationType { ConsumerDevice = 'ConsumerDevice', Contactless = 'Contactless', None = 'None', PIN = 'PIN' }
 
-	export enum OBTransactionCardInstrument1CardSchemeName { AmericanExpress = 0, Diners = 1, Discover = 2, MasterCard = 3, VISA = 4 }
+	export enum OBTransactionCardInstrument1CardSchemeName { AmericanExpress = 'AmericanExpress', Diners = 'Diners', Discover = 'Discover', MasterCard = 'MasterCard', VISA = 'VISA' }
 
 
 	/** Set of elements to fully identify a proprietary bank transaction code. */
@@ -10036,7 +10036,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBTransaction6TransactionMutability { Mutable = 0, Immutable = 1 }
+	export enum OBTransaction6TransactionMutability { Mutable = 'Mutable', Immutable = 'Immutable' }
 
 	export interface OBReadDirectDebit2 {
 
@@ -10422,7 +10422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadOffer1DataOfferOfferType { BalanceTransfer = 0, LimitIncrease = 1, MoneyTransfer = 2, Other = 3, PromotionalRate = 4 }
+	export enum OBReadOffer1DataOfferOfferType { BalanceTransfer = 'BalanceTransfer', LimitIncrease = 'LimitIncrease', MoneyTransfer = 'MoneyTransfer', Other = 'Other', PromotionalRate = 'PromotionalRate' }
 
 	export interface OBReadParty2 {
 
@@ -10767,9 +10767,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetCalculationMethod { ITCO = 0, ITOT = 1, ITSI = 2 }
+	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetCalculationMethod { ITCO = 'ITCO', ITOT = 'ITOT', ITSI = 'ITSI' }
 
-	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetDestination { INOT = 0, INPA = 1, INSC = 2 }
+	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetDestination { INOT = 'INOT', INPA = 'INPA', INSC = 'INSC' }
 
 	export interface OB_OtherCodeType1_0 {
 
@@ -10946,13 +10946,13 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandApplicationFrequency { FQAT = 0, FQDY = 1, FQHY = 2, FQMY = 3, FQOT = 4, FQQY = 5, FQSD = 6, FQWY = 7, FQYY = 8 }
+	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandApplicationFrequency { FQAT = 'FQAT', FQDY = 'FQDY', FQHY = 'FQHY', FQMY = 'FQMY', FQOT = 'FQOT', FQQY = 'FQQY', FQSD = 'FQSD', FQWY = 'FQWY', FQYY = 'FQYY' }
 
-	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandBankInterestRateType { INBB = 0, INFR = 1, INGR = 2, INLR = 3, INNE = 4, INOT = 5 }
+	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandBankInterestRateType { INBB = 'INBB', INFR = 'INFR', INGR = 'INGR', INLR = 'INLR', INNE = 'INNE', INOT = 'INOT' }
 
-	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandDepositInterestAppliedCoverage { INBA = 0, INTI = 1, INWH = 2 }
+	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandDepositInterestAppliedCoverage { INBA = 'INBA', INTI = 'INTI', INWH = 'INWH' }
 
-	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandFixedVariableInterestRateType { INFI = 0, INVA = 1 }
+	export enum OBReadProduct2DataProductOtherProductTypeCreditInterestTierBandSetTierBandFixedVariableInterestRateType { INFI = 'INFI', INVA = 'INVA' }
 
 
 	/** Other application frequencies that are not available in the standard code list */
@@ -11273,9 +11273,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapCappingPeriod { FEAC = 0, FEAO = 1, FECP = 2, FEDA = 3, FEHO = 4, FEI = 5, FEMO = 6, FEOA = 7, FEOT = 8, FEPC = 9, FEPH = 10, FEPO = 11, FEPS = 12, FEPT = 13, FEPTA = 14, FEPTP = 15, FEQU = 16, FESM = 17, FEST = 18, FEWE = 19, FEYE = 20 }
+	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapCappingPeriod { FEAC = 'FEAC', FEAO = 'FEAO', FECP = 'FECP', FEDA = 'FEDA', FEHO = 'FEHO', FEI = 'FEI', FEMO = 'FEMO', FEOA = 'FEOA', FEOT = 'FEOT', FEPC = 'FEPC', FEPH = 'FEPH', FEPO = 'FEPO', FEPS = 'FEPS', FEPT = 'FEPT', FEPTA = 'FEPTA', FEPTP = 'FEPTP', FEQU = 'FEQU', FESM = 'FESM', FEST = 'FEST', FEWE = 'FEWE', FEYE = 'FEYE' }
 
-	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapMinMaxType { FMMN = 0, FMMX = 1 }
+	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapMinMaxType { FMMN = 'FMMN', FMMX = 'FMMX' }
 
 	export interface OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeCapOtherFeeType {
 
@@ -11418,7 +11418,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeDetailFeeType { FEPF = 0, FTOT = 1, FYAF = 2, FYAM = 3, FYAQ = 4, FYCP = 5, FYDB = 6, FYMI = 7, FYXX = 8 }
+	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesChargesLoanInterestFeeChargeDetailFeeType { FEPF = 'FEPF', FTOT = 'FTOT', FYAF = 'FYAF', FYAM = 'FYAM', FYAQ = 'FYAQ', FYCP = 'FYCP', FYDB = 'FYDB', FYMI = 'FYMI', FYXX = 'FYXX' }
 
 
 	/** Other application frequencies not covered in the standard code list */
@@ -11653,7 +11653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OB_OtherFeeChargeDetailTypeFeeCategory { FCOT = 0, FCRE = 1, FCSV = 2 }
+	export enum OB_OtherFeeChargeDetailTypeFeeCategory { FCOT = 'FCOT', FCRE = 'FCRE', FCSV = 'FCSV' }
 
 	export interface OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestTierBand {
 
@@ -11997,7 +11997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestTierBandMaxTermPeriod { PACT = 0, PDAY = 1, PHYR = 2, PMTH = 3, PQTR = 4, PWEK = 5, PYER = 6 }
+	export enum OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestTierBandMaxTermPeriod { PACT = 'PACT', PDAY = 'PDAY', PHYR = 'PHYR', PMTH = 'PMTH', PQTR = 'PQTR', PWEK = 'PWEK', PYER = 'PYER' }
 
 	export interface OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestTierBandOtherLoanProviderInterestRateType {
 
@@ -12544,7 +12544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeOtherFeesChargesTariffType { TTEL = 0, TTMX = 1, TTOT = 2 }
+	export enum OBReadProduct2DataProductOtherProductTypeOtherFeesChargesTariffType { TTEL = 'TTEL', TTMX = 'TTMX', TTOT = 'TTOT' }
 
 	export interface OBReadProduct2DataProductOtherProductTypeOverdraft {
 		Notes?: Array<string>;
@@ -12855,7 +12855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType { FBAO = 0, FBAR = 1, FBEB = 2, FBIT = 3, FBOR = 4, FBOS = 5, FBSC = 6, FBTO = 7, FBUB = 8, FBUT = 9, FTOT = 10, FTUT = 11 }
+	export enum OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftFeesChargesOverdraftFeeChargeDetailFeeType { FBAO = 'FBAO', FBAR = 'FBAR', FBEB = 'FBEB', FBIT = 'FBIT', FBOR = 'FBOR', FBOS = 'FBOS', FBSC = 'FBSC', FBTO = 'FBTO', FBUB = 'FBUB', FBUT = 'FBUT', FTOT = 'FTOT', FTUT = 'FTUT' }
 
 
 	/** Other fee rate type code which is not available in the standard code set */
@@ -13487,7 +13487,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftType { OVCO = 0, OVOD = 1, OVOT = 2 }
+	export enum OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftType { OVCO = 'OVCO', OVOD = 'OVOD', OVOT = 'OVOT' }
 
 	export interface OBReadProduct2DataProductOtherProductTypeProductDetails {
 
@@ -13568,7 +13568,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeRepaymentAmountType { RABD = 0, RABL = 1, RACI = 2, RAFC = 3, RAIO = 4, RALT = 5, USOT = 6 }
+	export enum OBReadProduct2DataProductOtherProductTypeRepaymentAmountType { RABD = 'RABD', RABL = 'RABL', RACI = 'RACI', RAFC = 'RAFC', RAIO = 'RAIO', RALT = 'RALT', USOT = 'USOT' }
 
 	export interface OBReadProduct2DataProductOtherProductTypeRepaymentOtherAmountType {
 
@@ -13933,7 +13933,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentFrequency { SMDA = 0, SMFL = 1, SMFO = 2, SMHY = 3, SMMO = 4, SMOT = 5, SMQU = 6, SMWE = 7, SMYE = 8 }
+	export enum OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentFrequency { SMDA = 'SMDA', SMFL = 'SMFL', SMFO = 'SMFO', SMHY = 'SMHY', SMMO = 'SMMO', SMOT = 'SMOT', SMQU = 'SMQU', SMWE = 'SMWE', SMYE = 'SMYE' }
 
 	export interface OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentHoliday {
 
@@ -13960,9 +13960,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentType { USBA = 0, USBU = 1, USCI = 2, USCS = 3, USER = 4, USFA = 5, USFB = 6, USFI = 7, USIO = 8, USOT = 9, USPF = 10, USRW = 11, USSL = 12 }
+	export enum OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentType { USBA = 'USBA', USBU = 'USBU', USCI = 'USCI', USCS = 'USCS', USER = 'USER', USFA = 'USFA', USFB = 'USFB', USFI = 'USFI', USIO = 'USIO', USOT = 'USOT', USPF = 'USPF', USRW = 'USRW', USSL = 'USSL' }
 
-	export enum OBReadProduct2DataProductProductType { BusinessCurrentAccount = 0, CommercialCreditCard = 1, Other = 2, PersonalCurrentAccount = 3, SMELoan = 4 }
+	export enum OBReadProduct2DataProductProductType { BusinessCurrentAccount = 'BusinessCurrentAccount', CommercialCreditCard = 'CommercialCreditCard', Other = 'Other', PersonalCurrentAccount = 'PersonalCurrentAccount', SMELoan = 'SMELoan' }
 
 	export interface OBReadScheduledPayment3 {
 
@@ -16442,63 +16442,63 @@ export namespace MyNS {
 
 
 	/** Specifies the Mutability of the Transaction record. */
-	export enum OBTransactionMutability1Code { Mutable = 0, Immutable = 1 }
+	export enum OBTransactionMutability1Code { Mutable = 'Mutable', Immutable = 'Immutable' }
 
 
 	/** Categorisation of fees and charges into standard categories. */
-	export enum OB_FeeCategory1Code { FCOT = 0, FCRE = 1, FCSV = 2 }
+	export enum OB_FeeCategory1Code { FCOT = 'FCOT', FCRE = 'FCRE', FCSV = 'FCSV' }
 
 
 	/** Frequency at which the overdraft charge is applied to the account */
-	export enum OB_FeeFrequency1Code_0 { FEAC = 0, FEAO = 1, FECP = 2, FEDA = 3, FEHO = 4, FEI = 5, FEMO = 6, FEOA = 7, FEOT = 8, FEPC = 9, FEPH = 10, FEPO = 11, FEPS = 12, FEPT = 13, FEPTA = 14, FEPTP = 15, FEQU = 16, FESM = 17, FEST = 18, FEWE = 19, FEYE = 20 }
+	export enum OB_FeeFrequency1Code_0 { FEAC = 'FEAC', FEAO = 'FEAO', FECP = 'FECP', FEDA = 'FEDA', FEHO = 'FEHO', FEI = 'FEI', FEMO = 'FEMO', FEOA = 'FEOA', FEOT = 'FEOT', FEPC = 'FEPC', FEPH = 'FEPH', FEPO = 'FEPO', FEPS = 'FEPS', FEPT = 'FEPT', FEPTA = 'FEPTA', FEPTP = 'FEPTP', FEQU = 'FEQU', FESM = 'FESM', FEST = 'FEST', FEWE = 'FEWE', FEYE = 'FEYE' }
 
 
 	/** How often is the overdraft fee/charge calculated for the account. */
-	export enum OB_FeeFrequency1Code_1 { FEAC = 0, FEAO = 1, FECP = 2, FEDA = 3, FEHO = 4, FEI = 5, FEMO = 6, FEOA = 7, FEOT = 8, FEPC = 9, FEPH = 10, FEPO = 11, FEPS = 12, FEPT = 13, FEPTA = 14, FEPTP = 15, FEQU = 16, FESM = 17, FEST = 18, FEWE = 19, FEYE = 20 }
+	export enum OB_FeeFrequency1Code_1 { FEAC = 'FEAC', FEAO = 'FEAO', FECP = 'FECP', FEDA = 'FEDA', FEHO = 'FEHO', FEI = 'FEI', FEMO = 'FEMO', FEOA = 'FEOA', FEOT = 'FEOT', FEPC = 'FEPC', FEPH = 'FEPH', FEPO = 'FEPO', FEPS = 'FEPS', FEPT = 'FEPT', FEPTA = 'FEPTA', FEPTP = 'FEPTP', FEQU = 'FEQU', FESM = 'FESM', FEST = 'FEST', FEWE = 'FEWE', FEYE = 'FEYE' }
 
 
 	/** How frequently the fee/charge is applied to the account */
-	export enum OB_FeeFrequency1Code_2 { FEAC = 0, FEAO = 1, FECP = 2, FEDA = 3, FEHO = 4, FEI = 5, FEMO = 6, FEOA = 7, FEOT = 8, FEPC = 9, FEPH = 10, FEPO = 11, FEPS = 12, FEPT = 13, FEPTA = 14, FEPTP = 15, FEQU = 16, FESM = 17, FEST = 18, FEWE = 19, FEYE = 20 }
+	export enum OB_FeeFrequency1Code_2 { FEAC = 'FEAC', FEAO = 'FEAO', FECP = 'FECP', FEDA = 'FEDA', FEHO = 'FEHO', FEI = 'FEI', FEMO = 'FEMO', FEOA = 'FEOA', FEOT = 'FEOT', FEPC = 'FEPC', FEPH = 'FEPH', FEPO = 'FEPO', FEPS = 'FEPS', FEPT = 'FEPT', FEPTA = 'FEPTA', FEPTP = 'FEPTP', FEQU = 'FEQU', FESM = 'FESM', FEST = 'FEST', FEWE = 'FEWE', FEYE = 'FEYE' }
 
 
 	/** How frequently the fee/charge is calculated */
-	export enum OB_FeeFrequency1Code_3 { FEAC = 0, FEAO = 1, FECP = 2, FEDA = 3, FEHO = 4, FEI = 5, FEMO = 6, FEOA = 7, FEOT = 8, FEPC = 9, FEPH = 10, FEPO = 11, FEPS = 12, FEPT = 13, FEPTA = 14, FEPTP = 15, FEQU = 16, FESM = 17, FEST = 18, FEWE = 19, FEYE = 20 }
+	export enum OB_FeeFrequency1Code_3 { FEAC = 'FEAC', FEAO = 'FEAO', FECP = 'FECP', FEDA = 'FEDA', FEHO = 'FEHO', FEI = 'FEI', FEMO = 'FEMO', FEOA = 'FEOA', FEOT = 'FEOT', FEPC = 'FEPC', FEPH = 'FEPH', FEPO = 'FEPO', FEPS = 'FEPS', FEPT = 'FEPT', FEPTA = 'FEPTA', FEPTP = 'FEPTP', FEQU = 'FEQU', FESM = 'FESM', FEST = 'FEST', FEWE = 'FEWE', FEYE = 'FEYE' }
 
 
 	/** Period e.g. day, week, month etc. for which the fee/charge is capped */
-	export enum OB_FeeFrequency1Code_4 { FEAC = 0, FEAO = 1, FECP = 2, FEDA = 3, FEHO = 4, FEI = 5, FEMO = 6, FEOA = 7, FEOT = 8, FEPC = 9, FEPH = 10, FEPO = 11, FEPS = 12, FEPT = 13, FEPTA = 14, FEPTP = 15, FEQU = 16, FESM = 17, FEST = 18, FEWE = 19, FEYE = 20 }
+	export enum OB_FeeFrequency1Code_4 { FEAC = 'FEAC', FEAO = 'FEAO', FECP = 'FECP', FEDA = 'FEDA', FEHO = 'FEHO', FEI = 'FEI', FEMO = 'FEMO', FEOA = 'FEOA', FEOT = 'FEOT', FEPC = 'FEPC', FEPH = 'FEPH', FEPO = 'FEPO', FEPS = 'FEPS', FEPT = 'FEPT', FEPTA = 'FEPTA', FEPTP = 'FEPTP', FEQU = 'FEQU', FESM = 'FESM', FEST = 'FEST', FEWE = 'FEWE', FEYE = 'FEYE' }
 
 
 	/** Fee/Charge Type */
-	export enum OB_FeeType1Code { FEPF = 0, FTOT = 1, FYAF = 2, FYAM = 3, FYAQ = 4, FYCP = 5, FYDB = 6, FYMI = 7, FYXX = 8 }
+	export enum OB_FeeType1Code { FEPF = 'FEPF', FTOT = 'FTOT', FYAF = 'FYAF', FYAM = 'FYAM', FYAQ = 'FYAQ', FYCP = 'FYCP', FYDB = 'FYDB', FYMI = 'FYMI', FYXX = 'FYXX' }
 
 
 	/** Methods of calculating interest */
-	export enum OB_InterestCalculationMethod1Code { ITCO = 0, ITOT = 1, ITSI = 2 }
+	export enum OB_InterestCalculationMethod1Code { ITCO = 'ITCO', ITOT = 'ITOT', ITSI = 'ITSI' }
 
 
 	/** Type of interest rate, Fixed or Variable */
-	export enum OB_InterestFixedVariableType1Code { INFI = 0, INVA = 1 }
+	export enum OB_InterestFixedVariableType1Code { INFI = 'INFI', INVA = 'INVA' }
 
 
 	/** Rate type for overdraft fee/charge (where it is charged in terms of a rate rather than an amount) */
-	export enum OB_InterestRateType1Code_0 { INBB = 0, INFR = 1, INGR = 2, INLR = 3, INNE = 4, INOT = 5 }
+	export enum OB_InterestRateType1Code_0 { INBB = 'INBB', INFR = 'INFR', INGR = 'INGR', INLR = 'INLR', INNE = 'INNE', INOT = 'INOT' }
 
 
 	/** Rate type for Fee/Charge (where it is charged in terms of a rate rather than an amount) */
-	export enum OB_InterestRateType1Code_1 { INBB = 0, INFR = 1, INGR = 2, INLR = 3, INNE = 4, INOT = 5 }
+	export enum OB_InterestRateType1Code_1 { INBB = 'INBB', INFR = 'INFR', INGR = 'INGR', INLR = 'INLR', INNE = 'INNE', INOT = 'INOT' }
 
 
 	/** Min Max type */
-	export enum OB_MinMaxType1Code { FMMN = 0, FMMX = 1 }
+	export enum OB_MinMaxType1Code { FMMN = 'FMMN', FMMX = 'FMMX' }
 
 
 	/** Overdraft fee type */
-	export enum OB_OverdraftFeeType1Code { FBAO = 0, FBAR = 1, FBEB = 2, FBIT = 3, FBOR = 4, FBOS = 5, FBSC = 6, FBTO = 7, FBUB = 8, FBUT = 9, FTOT = 10, FTUT = 11 }
+	export enum OB_OverdraftFeeType1Code { FBAO = 'FBAO', FBAR = 'FBAR', FBEB = 'FBEB', FBIT = 'FBIT', FBOR = 'FBOR', FBOS = 'FBOS', FBSC = 'FBSC', FBTO = 'FBTO', FBUB = 'FBUB', FBUT = 'FBUT', FTOT = 'FTOT', FTUT = 'FTUT' }
 
 
 	/** Period e.g. day, week, month etc. for which the fee/charge is capped */
-	export enum OB_Period1Code { PACT = 0, PDAY = 1, PHYR = 2, PMTH = 3, PQTR = 4, PWEK = 5, PYER = 6 }
+	export enum OB_Period1Code { PACT = 'PACT', PDAY = 'PDAY', PHYR = 'PHYR', PMTH = 'PMTH', PQTR = 'PQTR', PWEK = 'PWEK', PYER = 'PYER' }
 
 	@Injectable()
 	export class MyClient {

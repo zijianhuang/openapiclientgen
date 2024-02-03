@@ -1337,7 +1337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslcrPostBodyFormat { pdf = 0 }
+	export enum SslcrPostBodyFormat { pdf = 'pdf' }
 
 }
 

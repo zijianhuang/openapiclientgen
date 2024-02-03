@@ -65,9 +65,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationHealthStatus { HEALTHY = 0, LAGGING = 1, ERROR = 2 }
+	export enum ApplicationHealthStatus { HEALTHY = 'HEALTHY', LAGGING = 'LAGGING', ERROR = 'ERROR' }
 
-	export enum ApplicationProgressStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
+	export enum ApplicationProgressStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 	export interface TagsMap {
 	}
@@ -289,7 +289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataReplicationErrorString { AGENT_NOT_SEEN = 0, SNAPSHOTS_FAILURE = 1, NOT_CONVERGING = 2, UNSTABLE_NETWORK = 3, FAILED_TO_CREATE_SECURITY_GROUP = 4, FAILED_TO_LAUNCH_REPLICATION_SERVER = 5, FAILED_TO_BOOT_REPLICATION_SERVER = 6, FAILED_TO_AUTHENTICATE_WITH_SERVICE = 7, FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE = 8, FAILED_TO_CREATE_STAGING_DISKS = 9, FAILED_TO_ATTACH_STAGING_DISKS = 10, FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT = 11, FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER = 12, FAILED_TO_START_DATA_TRANSFER = 13, UNSUPPORTED_VM_CONFIGURATION = 14, LAST_SNAPSHOT_JOB_FAILED = 15 }
+	export enum DataReplicationErrorString { AGENT_NOT_SEEN = 'AGENT_NOT_SEEN', SNAPSHOTS_FAILURE = 'SNAPSHOTS_FAILURE', NOT_CONVERGING = 'NOT_CONVERGING', UNSTABLE_NETWORK = 'UNSTABLE_NETWORK', FAILED_TO_CREATE_SECURITY_GROUP = 'FAILED_TO_CREATE_SECURITY_GROUP', FAILED_TO_LAUNCH_REPLICATION_SERVER = 'FAILED_TO_LAUNCH_REPLICATION_SERVER', FAILED_TO_BOOT_REPLICATION_SERVER = 'FAILED_TO_BOOT_REPLICATION_SERVER', FAILED_TO_AUTHENTICATE_WITH_SERVICE = 'FAILED_TO_AUTHENTICATE_WITH_SERVICE', FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE = 'FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE', FAILED_TO_CREATE_STAGING_DISKS = 'FAILED_TO_CREATE_STAGING_DISKS', FAILED_TO_ATTACH_STAGING_DISKS = 'FAILED_TO_ATTACH_STAGING_DISKS', FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT = 'FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT', FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER = 'FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER', FAILED_TO_START_DATA_TRANSFER = 'FAILED_TO_START_DATA_TRANSFER', UNSUPPORTED_VM_CONFIGURATION = 'UNSUPPORTED_VM_CONFIGURATION', LAST_SNAPSHOT_JOB_FAILED = 'LAST_SNAPSHOT_JOB_FAILED' }
 
 
 	/** Data replication initiation. */
@@ -332,11 +332,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DataReplicationInitiationStepName { WAIT = 0, CREATE_SECURITY_GROUP = 1, LAUNCH_REPLICATION_SERVER = 2, BOOT_REPLICATION_SERVER = 3, AUTHENTICATE_WITH_SERVICE = 4, DOWNLOAD_REPLICATION_SOFTWARE = 5, CREATE_STAGING_DISKS = 6, ATTACH_STAGING_DISKS = 7, PAIR_REPLICATION_SERVER_WITH_AGENT = 8, CONNECT_AGENT_TO_REPLICATION_SERVER = 9, START_DATA_TRANSFER = 10 }
+	export enum DataReplicationInitiationStepName { WAIT = 'WAIT', CREATE_SECURITY_GROUP = 'CREATE_SECURITY_GROUP', LAUNCH_REPLICATION_SERVER = 'LAUNCH_REPLICATION_SERVER', BOOT_REPLICATION_SERVER = 'BOOT_REPLICATION_SERVER', AUTHENTICATE_WITH_SERVICE = 'AUTHENTICATE_WITH_SERVICE', DOWNLOAD_REPLICATION_SOFTWARE = 'DOWNLOAD_REPLICATION_SOFTWARE', CREATE_STAGING_DISKS = 'CREATE_STAGING_DISKS', ATTACH_STAGING_DISKS = 'ATTACH_STAGING_DISKS', PAIR_REPLICATION_SERVER_WITH_AGENT = 'PAIR_REPLICATION_SERVER_WITH_AGENT', CONNECT_AGENT_TO_REPLICATION_SERVER = 'CONNECT_AGENT_TO_REPLICATION_SERVER', START_DATA_TRANSFER = 'START_DATA_TRANSFER' }
 
-	export enum DataReplicationInitiationStepStatus { NOT_STARTED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, SKIPPED = 4 }
+	export enum DataReplicationInitiationStepStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', SKIPPED = 'SKIPPED' }
 
-	export enum DataReplicationState { STOPPED = 0, INITIATING = 1, INITIAL_SYNC = 2, BACKLOG = 3, CREATING_SNAPSHOT = 4, CONTINUOUS = 5, PAUSED = 6, RESCAN = 7, STALLED = 8, DISCONNECTED = 9, PENDING_SNAPSHOT_SHIPPING = 10, SHIPPING_SNAPSHOT = 11 }
+	export enum DataReplicationState { STOPPED = 'STOPPED', INITIATING = 'INITIATING', INITIAL_SYNC = 'INITIAL_SYNC', BACKLOG = 'BACKLOG', CREATING_SNAPSHOT = 'CREATING_SNAPSHOT', CONTINUOUS = 'CONTINUOUS', PAUSED = 'PAUSED', RESCAN = 'RESCAN', STALLED = 'STALLED', DISCONNECTED = 'DISCONNECTED', PENDING_SNAPSHOT_SHIPPING = 'PENDING_SNAPSHOT_SHIPPING', SHIPPING_SNAPSHOT = 'SHIPPING_SNAPSHOT' }
 
 
 	/** Request to query disks replicated. */
@@ -390,7 +390,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirstBoot { WAITING = 0, SUCCEEDED = 1, UNKNOWN = 2, STOPPED = 3 }
+	export enum FirstBoot { WAITING = 'WAITING', SUCCEEDED = 'SUCCEEDED', UNKNOWN = 'UNKNOWN', STOPPED = 'STOPPED' }
 
 
 	/** Lifecycle. */
@@ -565,9 +565,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LifeCycleState { STOPPED = 0, NOT_READY = 1, READY_FOR_TEST = 2, TESTING = 3, READY_FOR_CUTOVER = 4, CUTTING_OVER = 5, CUTOVER = 6, DISCONNECTED = 7, DISCOVERED = 8, PENDING_INSTALLATION = 9 }
+	export enum LifeCycleState { STOPPED = 'STOPPED', NOT_READY = 'NOT_READY', READY_FOR_TEST = 'READY_FOR_TEST', TESTING = 'TESTING', READY_FOR_CUTOVER = 'READY_FOR_CUTOVER', CUTTING_OVER = 'CUTTING_OVER', CUTOVER = 'CUTOVER', DISCONNECTED = 'DISCONNECTED', DISCOVERED = 'DISCOVERED', PENDING_INSTALLATION = 'PENDING_INSTALLATION' }
 
-	export enum ReplicationType { AGENT_BASED = 0, SNAPSHOT_SHIPPING = 1 }
+	export enum ReplicationType { AGENT_BASED = 'AGENT_BASED', SNAPSHOT_SHIPPING = 'SNAPSHOT_SHIPPING' }
 
 
 	/** Source server properties. */
@@ -704,7 +704,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeServerLifeCycleStateSourceServerLifecycleState { READY_FOR_TEST = 0, READY_FOR_CUTOVER = 1, CUTOVER = 2 }
+	export enum ChangeServerLifeCycleStateSourceServerLifecycleState { READY_FOR_TEST = 'READY_FOR_TEST', READY_FOR_CUTOVER = 'READY_FOR_CUTOVER', CUTOVER = 'CUTOVER' }
 
 	export interface ValidationException {
 	}
@@ -773,7 +773,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BootMode { LEGACY_BIOS = 0, UEFI = 1 }
+	export enum BootMode { LEGACY_BIOS = 'LEGACY_BIOS', UEFI = 'UEFI' }
 
 
 	/** Launch template disk configuration. */
@@ -798,9 +798,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeType { io1 = 0, io2 = 1, gp3 = 2, gp2 = 3, st1 = 4, sc1 = 5, standard = 6 }
+	export enum VolumeType { io1 = 'io1', io2 = 'io2', gp3 = 'gp3', gp2 = 'gp2', st1 = 'st1', sc1 = 'sc1', standard = 'standard' }
 
-	export enum LaunchDisposition { STOPPED = 0, STARTED = 1 }
+	export enum LaunchDisposition { STOPPED = 'STOPPED', STARTED = 'STARTED' }
 
 
 	/** Configure Licensing. */
@@ -846,7 +846,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostLaunchActionsDeploymentType { TEST_AND_CUTOVER = 0, CUTOVER_ONLY = 1, TEST_ONLY = 2 }
+	export enum PostLaunchActionsDeploymentType { TEST_AND_CUTOVER = 'TEST_AND_CUTOVER', CUTOVER_ONLY = 'CUTOVER_ONLY', TEST_ONLY = 'TEST_ONLY' }
 
 
 	/** AWS Systems Manager Document. */
@@ -904,7 +904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetInstanceTypeRightSizingMethod { NONE = 0, BASIC = 1 }
+	export enum TargetInstanceTypeRightSizingMethod { NONE = 'NONE', BASIC = 'BASIC' }
 
 	export interface AccessDeniedException {
 	}
@@ -972,11 +972,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationConfigurationDataPlaneRouting { PRIVATE_IP = 0, PUBLIC_IP = 1 }
+	export enum ReplicationConfigurationDataPlaneRouting { PRIVATE_IP = 'PRIVATE_IP', PUBLIC_IP = 'PUBLIC_IP' }
 
-	export enum ReplicationConfigurationDefaultLargeStagingDiskType { GP2 = 0, ST1 = 1, GP3 = 2 }
+	export enum ReplicationConfigurationDefaultLargeStagingDiskType { GP2 = 'GP2', ST1 = 'ST1', GP3 = 'GP3' }
 
-	export enum ReplicationConfigurationEbsEncryption { DEFAULT = 0, CUSTOM = 1 }
+	export enum ReplicationConfigurationEbsEncryption { DEFAULT = 'DEFAULT', CUSTOM = 'CUSTOM' }
 
 	export interface DeleteApplicationResponse {
 	}
@@ -1073,7 +1073,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobLogEvent { JOB_START = 0, SERVER_SKIPPED = 1, CLEANUP_START = 2, CLEANUP_END = 3, CLEANUP_FAIL = 4, SNAPSHOT_START = 5, SNAPSHOT_END = 6, SNAPSHOT_FAIL = 7, USING_PREVIOUS_SNAPSHOT = 8, CONVERSION_START = 9, CONVERSION_END = 10, CONVERSION_FAIL = 11, LAUNCH_START = 12, LAUNCH_FAILED = 13, JOB_CANCEL = 14, JOB_END = 15 }
+	export enum JobLogEvent { JOB_START = 'JOB_START', SERVER_SKIPPED = 'SERVER_SKIPPED', CLEANUP_START = 'CLEANUP_START', CLEANUP_END = 'CLEANUP_END', CLEANUP_FAIL = 'CLEANUP_FAIL', SNAPSHOT_START = 'SNAPSHOT_START', SNAPSHOT_END = 'SNAPSHOT_END', SNAPSHOT_FAIL = 'SNAPSHOT_FAIL', USING_PREVIOUS_SNAPSHOT = 'USING_PREVIOUS_SNAPSHOT', CONVERSION_START = 'CONVERSION_START', CONVERSION_END = 'CONVERSION_END', CONVERSION_FAIL = 'CONVERSION_FAIL', LAUNCH_START = 'LAUNCH_START', LAUNCH_FAILED = 'LAUNCH_FAILED', JOB_CANCEL = 'JOB_CANCEL', JOB_END = 'JOB_END' }
 
 
 	/** Job log data */
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InitiatedBy { START_TEST = 0, START_CUTOVER = 1, DIAGNOSTIC = 2, TERMINATE = 3 }
+	export enum InitiatedBy { START_TEST = 'START_TEST', START_CUTOVER = 'START_CUTOVER', DIAGNOSTIC = 'DIAGNOSTIC', TERMINATE = 'TERMINATE' }
 
 
 	/** Server participating in Job. */
@@ -1186,7 +1186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LaunchStatus { PENDING = 0, IN_PROGRESS = 1, LAUNCHED = 2, FAILED = 3, TERMINATED = 4 }
+	export enum LaunchStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', LAUNCHED = 'LAUNCHED', FAILED = 'FAILED', TERMINATED = 'TERMINATED' }
 
 
 	/** Status of the Post Launch Actions running on the Test or Cutover instance. */
@@ -1233,13 +1233,13 @@ export namespace MyNS {
 
 	}
 
-	export enum PostLaunchActionExecutionStatus { IN_PROGRESS = 0, SUCCESS = 1, FAILED = 2 }
+	export enum PostLaunchActionExecutionStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
-	export enum SsmDocumentType { AUTOMATION = 0, COMMAND = 1 }
+	export enum SsmDocumentType { AUTOMATION = 'AUTOMATION', COMMAND = 'COMMAND' }
 
-	export enum JobStatus { PENDING = 0, STARTED = 1, COMPLETED = 2 }
+	export enum JobStatus { PENDING = 'PENDING', STARTED = 'STARTED', COMPLETED = 'COMPLETED' }
 
-	export enum JobType { LAUNCH = 0, TERMINATE = 1 }
+	export enum JobType { LAUNCH = 'LAUNCH', TERMINATE = 'TERMINATE' }
 
 	export interface DescribeLaunchConfigurationTemplatesResponse {
 		items?: Array<LaunchConfigurationTemplate>;
@@ -1476,7 +1476,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationConfigurationReplicatedDiskStagingDiskType { AUTO = 0, GP2 = 1, IO1 = 2, SC1 = 3, ST1 = 4, STANDARD = 5, GP3 = 6, IO2 = 7 }
+	export enum ReplicationConfigurationReplicatedDiskStagingDiskType { AUTO = 'AUTO', GP2 = 'GP2', IO1 = 'IO1', SC1 = 'SC1', ST1 = 'ST1', STANDARD = 'STANDARD', GP3 = 'GP3', IO2 = 'IO2' }
 
 	export interface InitializeServiceResponse {
 	}
@@ -1612,7 +1612,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportStatus { PENDING = 0, STARTED = 1, FAILED = 2, SUCCEEDED = 3 }
+	export enum ExportStatus { PENDING = 'PENDING', STARTED = 'STARTED', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** Export task summary. */
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportErrorType { VALIDATION_ERROR = 0, PROCESSING_ERROR = 1 }
+	export enum ImportErrorType { VALIDATION_ERROR = 'VALIDATION_ERROR', PROCESSING_ERROR = 'PROCESSING_ERROR' }
 
 
 	/** List import response. */
@@ -1963,7 +1963,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionCategory { DISASTER_RECOVERY = 0, OPERATING_SYSTEM = 1, LICENSE_AND_SUBSCRIPTION = 2, VALIDATION = 3, OBSERVABILITY = 4, SECURITY = 5, NETWORKING = 6, CONFIGURATION = 7, BACKUP = 8, OTHER = 9 }
+	export enum ActionCategory { DISASTER_RECOVERY = 'DISASTER_RECOVERY', OPERATING_SYSTEM = 'OPERATING_SYSTEM', LICENSE_AND_SUBSCRIPTION = 'LICENSE_AND_SUBSCRIPTION', VALIDATION = 'VALIDATION', OBSERVABILITY = 'OBSERVABILITY', SECURITY = 'SECURITY', NETWORKING = 'NETWORKING', CONFIGURATION = 'CONFIGURATION', BACKUP = 'BACKUP', OTHER = 'OTHER' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagsMap;
@@ -2114,7 +2114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SsmParameterStoreParameterType { STRING = 0 }
+	export enum SsmParameterStoreParameterType { STRING = 'STRING' }
 
 	export interface RemoveSourceServerActionResponse {
 	}
@@ -2916,7 +2916,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportStatus { PENDING = 0, STARTED = 1, FAILED = 2, SUCCEEDED = 3 }
+	export enum ImportStatus { PENDING = 'PENDING', STARTED = 'STARTED', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
 	export interface InitializeServiceRequest {
 	}
@@ -4007,9 +4007,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WaveHealthStatus { HEALTHY = 0, LAGGING = 1, ERROR = 2 }
+	export enum WaveHealthStatus { HEALTHY = 'HEALTHY', LAGGING = 'LAGGING', ERROR = 'ERROR' }
 
-	export enum WaveProgressStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
+	export enum WaveProgressStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 	@Injectable()
 	export class MyClient {

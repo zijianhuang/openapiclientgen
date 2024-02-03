@@ -289,7 +289,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum FileServices_GetServicePropertiesFileServicesName { default = 0 }
+	export enum FileServices_GetServicePropertiesFileServicesName { default = 'default' }
 
 }
 

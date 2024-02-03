@@ -76,7 +76,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharePropertiesHealthStatus { Unknown = 0, Healthy = 1, Warning = 2, Critical = 3 }
+	export enum SharePropertiesHealthStatus { Unknown = 'Unknown', Healthy = 'Healthy', Warning = 'Warning', Critical = 'Critical' }
 
 	@Injectable()
 	export class MyClient {
@@ -237,9 +237,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Shares_ListMetricDefinitionsReturnValuePrimaryAggregationType { None = 0, Average = 1, Total = 2, Minimum = 3, Maximum = 4, Last = 5 }
+	export enum Shares_ListMetricDefinitionsReturnValuePrimaryAggregationType { None = 'None', Average = 'Average', Total = 'Total', Minimum = 'Minimum', Maximum = 'Maximum', Last = 'Last' }
 
-	export enum Shares_ListMetricDefinitionsReturnValueUnit { Count = 0, Bytes = 1, Seconds = 2, CountPerSecond = 3, BytesPerSecond = 4 }
+	export enum Shares_ListMetricDefinitionsReturnValueUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 	export interface Shares_ListMetricsReturn {
 

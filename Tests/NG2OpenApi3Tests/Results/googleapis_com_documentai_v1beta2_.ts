@@ -79,7 +79,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiUiv1beta3CommonOperationMetadataState { STATE_UNSPECIFIED = 0, RUNNING = 1, CANCELLING = 2, SUCCEEDED = 3, FAILED = 4, CANCELLED = 5 }
+	export enum GoogleCloudDocumentaiUiv1beta3CommonOperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', CANCELLING = 'CANCELLING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** The status of individual documents in the auto-labeling process. */
@@ -187,7 +187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiUiv1beta3RevisionRefRevisionCase { REVISION_CASE_UNSPECIFIED = 0, LATEST_HUMAN_REVIEW = 1, LATEST_TIMESTAMP = 2, BASE_OCR_REVISION = 3 }
+	export enum GoogleCloudDocumentaiUiv1beta3RevisionRefRevisionCase { REVISION_CASE_UNSPECIFIED = 'REVISION_CASE_UNSPECIFIED', LATEST_HUMAN_REVIEW = 'LATEST_HUMAN_REVIEW', LATEST_TIMESTAMP = 'LATEST_TIMESTAMP', BASE_OCR_REVISION = 'BASE_OCR_REVISION' }
 
 
 	/** Identifies a document uniquely within the scope of a dataset in unmanaged option. */
@@ -349,7 +349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataDestDatasetType { DATASET_SPLIT_TYPE_UNSPECIFIED = 0, DATASET_SPLIT_TRAIN = 1, DATASET_SPLIT_TEST = 2, DATASET_SPLIT_UNASSIGNED = 3 }
+	export enum GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataDestDatasetType { DATASET_SPLIT_TYPE_UNSPECIFIED = 'DATASET_SPLIT_TYPE_UNSPECIFIED', DATASET_SPLIT_TRAIN = 'DATASET_SPLIT_TRAIN', DATASET_SPLIT_TEST = 'DATASET_SPLIT_TEST', DATASET_SPLIT_UNASSIGNED = 'DATASET_SPLIT_UNASSIGNED' }
 
 
 	/** The status of each individual document in the batch move process. */
@@ -951,7 +951,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { DATASET_INCONSISTENCY_TYPE_UNSPECIFIED = 0, DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER = 1 }
+	export enum GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { DATASET_INCONSISTENCY_TYPE_UNSPECIFIED = 'DATASET_INCONSISTENCY_TYPE_UNSPECIFIED', DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER = 'DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER' }
 
 
 	/** Resync status for each document per inconsistency type. */
@@ -980,7 +980,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED = 0, DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO = 1, DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA = 2, DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE = 3 }
+	export enum GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED = 'DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED', DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO = 'DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO', DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA = 'DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA', DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE = 'DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE' }
 
 
 	/** The response proto of ResyncDataset method. */
@@ -1354,9 +1354,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1HumanReviewStatusState { STATE_UNSPECIFIED = 0, SKIPPED = 1, VALIDATION_PASSED = 2, IN_PROGRESS = 3, ERROR = 4 }
+	export enum GoogleCloudDocumentaiV1HumanReviewStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', SKIPPED = 'SKIPPED', VALIDATION_PASSED = 'VALIDATION_PASSED', IN_PROGRESS = 'IN_PROGRESS', ERROR = 'ERROR' }
 
-	export enum GoogleCloudDocumentaiV1BatchProcessMetadataState { STATE_UNSPECIFIED = 0, WAITING = 1, RUNNING = 2, SUCCEEDED = 3, CANCELLING = 4, CANCELLED = 5, FAILED = 6 }
+	export enum GoogleCloudDocumentaiV1BatchProcessMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', WAITING = 'WAITING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 
 	/** Response message for BatchProcessDocuments. */
@@ -1645,7 +1645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1ReviewDocumentResponseState { STATE_UNSPECIFIED = 0, REJECTED = 1, SUCCEEDED = 2 }
+	export enum GoogleCloudDocumentaiV1ReviewDocumentResponseState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', REJECTED = 'REJECTED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** The long-running operation metadata for the SetDefaultProcessorVersion method. */
@@ -2524,7 +2524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1beta1DocumentPageAnchorPageRefLayoutType { LAYOUT_TYPE_UNSPECIFIED = 0, BLOCK = 1, PARAGRAPH = 2, LINE = 3, TOKEN = 4, VISUAL_ELEMENT = 5, TABLE = 6, FORM_FIELD = 7 }
+	export enum GoogleCloudDocumentaiV1beta1DocumentPageAnchorPageRefLayoutType { LAYOUT_TYPE_UNSPECIFIED = 'LAYOUT_TYPE_UNSPECIFIED', BLOCK = 'BLOCK', PARAGRAPH = 'PARAGRAPH', LINE = 'LINE', TOKEN = 'TOKEN', VISUAL_ELEMENT = 'VISUAL_ELEMENT', TABLE = 'TABLE', FORM_FIELD = 'FORM_FIELD' }
 
 
 	/** Structure to identify provenance relationships between annotations in different revisions. */
@@ -2599,7 +2599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1beta1DocumentProvenanceType { OPERATION_TYPE_UNSPECIFIED = 0, ADD = 1, REMOVE = 2, UPDATE = 3, REPLACE = 4, EVAL_REQUESTED = 5, EVAL_APPROVED = 6, EVAL_SKIPPED = 7 }
+	export enum GoogleCloudDocumentaiV1beta1DocumentProvenanceType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', ADD = 'ADD', REMOVE = 'REMOVE', UPDATE = 'UPDATE', REPLACE = 'REPLACE', EVAL_REQUESTED = 'EVAL_REQUESTED', EVAL_APPROVED = 'EVAL_APPROVED', EVAL_SKIPPED = 'EVAL_SKIPPED' }
 
 
 	/** Text reference indexing into the Document.text. */
@@ -2842,7 +2842,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1beta1DocumentPageLayoutOrientation { ORIENTATION_UNSPECIFIED = 0, PAGE_UP = 1, PAGE_RIGHT = 2, PAGE_DOWN = 3, PAGE_LEFT = 4 }
+	export enum GoogleCloudDocumentaiV1beta1DocumentPageLayoutOrientation { ORIENTATION_UNSPECIFIED = 'ORIENTATION_UNSPECIFIED', PAGE_UP = 'PAGE_UP', PAGE_RIGHT = 'PAGE_RIGHT', PAGE_DOWN = 'PAGE_DOWN', PAGE_LEFT = 'PAGE_LEFT' }
 
 
 	/** A detected barcode. */
@@ -3239,7 +3239,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1beta1DocumentPageTokenDetectedBreakType { TYPE_UNSPECIFIED = 0, SPACE = 1, WIDE_SPACE = 2, HYPHEN = 3 }
+	export enum GoogleCloudDocumentaiV1beta1DocumentPageTokenDetectedBreakType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', SPACE = 'SPACE', WIDE_SPACE = 'WIDE_SPACE', HYPHEN = 'HYPHEN' }
 
 
 	/** Font and other text style attributes. */
@@ -3728,7 +3728,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1beta1OperationMetadataState { STATE_UNSPECIFIED = 0, ACCEPTED = 1, WAITING = 2, RUNNING = 3, SUCCEEDED = 4, CANCELLED = 5, FAILED = 6 }
+	export enum GoogleCloudDocumentaiV1beta1OperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACCEPTED = 'ACCEPTED', WAITING = 'WAITING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 
 	/** Parameters to control AutoML model prediction behavior. */
@@ -6132,7 +6132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDocumentaiV1beta3DatasetState { STATE_UNSPECIFIED = 0, UNINITIALIZED = 1, INITIALIZING = 2, INITIALIZED = 3 }
+	export enum GoogleCloudDocumentaiV1beta3DatasetState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UNINITIALIZED = 'UNINITIALIZED', INITIALIZING = 'INITIALIZING', INITIALIZED = 'INITIALIZED' }
 
 
 	/** Configuration specific to an unmanaged dataset. */

@@ -195,7 +195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeprecationStatusState { ACTIVE = 0, DELETED = 1, DEPRECATED = 2, OBSOLETE = 3 }
+	export enum DeprecationStatusState { ACTIVE = 'ACTIVE', DELETED = 'DELETED', DEPRECATED = 'DEPRECATED', OBSOLETE = 'OBSOLETE' }
 
 	export interface AcceleratorTypeAggregatedList {
 
@@ -291,7 +291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceleratorTypesScopedListWarningCode { CLEANUP_FAILED = 0, DEPRECATED_RESOURCE_USED = 1, DEPRECATED_TYPE_USED = 2, DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 3, EXPERIMENTAL_TYPE_USED = 4, EXTERNAL_API_WARNING = 5, FIELD_VALUE_OVERRIDEN = 6, INJECTED_KERNELS_DEPRECATED = 7, INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 8, LARGE_DEPLOYMENT_WARNING = 9, LIST_OVERHEAD_QUOTA_EXCEED = 10, MISSING_TYPE_DEPENDENCY = 11, NEXT_HOP_ADDRESS_NOT_ASSIGNED = 12, NEXT_HOP_CANNOT_IP_FORWARD = 13, NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 14, NEXT_HOP_INSTANCE_NOT_FOUND = 15, NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 16, NEXT_HOP_NOT_RUNNING = 17, NOT_CRITICAL_ERROR = 18, NO_RESULTS_ON_PAGE = 19, PARTIAL_SUCCESS = 20, REQUIRED_TOS_AGREEMENT = 21, RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 22, RESOURCE_NOT_DELETED = 23, SCHEMA_VALIDATION_IGNORED = 24, SINGLE_INSTANCE_PROPERTY_TEMPLATE = 25, UNDECLARED_PROPERTIES = 26, UNREACHABLE = 27 }
+	export enum AcceleratorTypesScopedListWarningCode { CLEANUP_FAILED = 'CLEANUP_FAILED', DEPRECATED_RESOURCE_USED = 'DEPRECATED_RESOURCE_USED', DEPRECATED_TYPE_USED = 'DEPRECATED_TYPE_USED', DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 'DISK_SIZE_LARGER_THAN_IMAGE_SIZE', EXPERIMENTAL_TYPE_USED = 'EXPERIMENTAL_TYPE_USED', EXTERNAL_API_WARNING = 'EXTERNAL_API_WARNING', FIELD_VALUE_OVERRIDEN = 'FIELD_VALUE_OVERRIDEN', INJECTED_KERNELS_DEPRECATED = 'INJECTED_KERNELS_DEPRECATED', INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 'INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB', LARGE_DEPLOYMENT_WARNING = 'LARGE_DEPLOYMENT_WARNING', LIST_OVERHEAD_QUOTA_EXCEED = 'LIST_OVERHEAD_QUOTA_EXCEED', MISSING_TYPE_DEPENDENCY = 'MISSING_TYPE_DEPENDENCY', NEXT_HOP_ADDRESS_NOT_ASSIGNED = 'NEXT_HOP_ADDRESS_NOT_ASSIGNED', NEXT_HOP_CANNOT_IP_FORWARD = 'NEXT_HOP_CANNOT_IP_FORWARD', NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 'NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE', NEXT_HOP_INSTANCE_NOT_FOUND = 'NEXT_HOP_INSTANCE_NOT_FOUND', NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 'NEXT_HOP_INSTANCE_NOT_ON_NETWORK', NEXT_HOP_NOT_RUNNING = 'NEXT_HOP_NOT_RUNNING', NOT_CRITICAL_ERROR = 'NOT_CRITICAL_ERROR', NO_RESULTS_ON_PAGE = 'NO_RESULTS_ON_PAGE', PARTIAL_SUCCESS = 'PARTIAL_SUCCESS', REQUIRED_TOS_AGREEMENT = 'REQUIRED_TOS_AGREEMENT', RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 'RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING', RESOURCE_NOT_DELETED = 'RESOURCE_NOT_DELETED', SCHEMA_VALIDATION_IGNORED = 'SCHEMA_VALIDATION_IGNORED', SINGLE_INSTANCE_PROPERTY_TEMPLATE = 'SINGLE_INSTANCE_PROPERTY_TEMPLATE', UNDECLARED_PROPERTIES = 'UNDECLARED_PROPERTIES', UNREACHABLE = 'UNREACHABLE' }
 
 	export interface AcceleratorTypesScopedListWarningData {
 
@@ -551,9 +551,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessConfigNetworkTier { FIXED_STANDARD = 0, PREMIUM = 1, STANDARD = 2, STANDARD_OVERRIDES_FIXED_STANDARD = 3 }
+	export enum AccessConfigNetworkTier { FIXED_STANDARD = 'FIXED_STANDARD', PREMIUM = 'PREMIUM', STANDARD = 'STANDARD', STANDARD_OVERRIDES_FIXED_STANDARD = 'STANDARD_OVERRIDES_FIXED_STANDARD' }
 
-	export enum AccessConfigType { DIRECT_IPV6 = 0, ONE_TO_ONE_NAT = 1 }
+	export enum AccessConfigType { DIRECT_IPV6 = 'DIRECT_IPV6', ONE_TO_ONE_NAT = 'ONE_TO_ONE_NAT' }
 
 
 	/** Represents an IP Address resource. Google Compute Engine has two IP Address resources: * [Global (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/globalAddresses) * [Regional (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/addresses) For more information, see Reserving a static external IP address. */
@@ -705,15 +705,15 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressAddressType { EXTERNAL = 0, INTERNAL = 1, UNSPECIFIED_TYPE = 2 }
+	export enum AddressAddressType { EXTERNAL = 'EXTERNAL', INTERNAL = 'INTERNAL', UNSPECIFIED_TYPE = 'UNSPECIFIED_TYPE' }
 
-	export enum AddressIpVersion { IPV4 = 0, IPV6 = 1, UNSPECIFIED_VERSION = 2 }
+	export enum AddressIpVersion { IPV4 = 'IPV4', IPV6 = 'IPV6', UNSPECIFIED_VERSION = 'UNSPECIFIED_VERSION' }
 
-	export enum AddressIpv6EndpointType { NETLB = 0, VM = 1 }
+	export enum AddressIpv6EndpointType { NETLB = 'NETLB', VM = 'VM' }
 
-	export enum AddressPurpose { DNS_RESOLVER = 0, GCE_ENDPOINT = 1, IPSEC_INTERCONNECT = 2, NAT_AUTO = 3, PRIVATE_SERVICE_CONNECT = 4, SERVERLESS = 5, SHARED_LOADBALANCER_VIP = 6, VPC_PEERING = 7 }
+	export enum AddressPurpose { DNS_RESOLVER = 'DNS_RESOLVER', GCE_ENDPOINT = 'GCE_ENDPOINT', IPSEC_INTERCONNECT = 'IPSEC_INTERCONNECT', NAT_AUTO = 'NAT_AUTO', PRIVATE_SERVICE_CONNECT = 'PRIVATE_SERVICE_CONNECT', SERVERLESS = 'SERVERLESS', SHARED_LOADBALANCER_VIP = 'SHARED_LOADBALANCER_VIP', VPC_PEERING = 'VPC_PEERING' }
 
-	export enum AddressStatus { IN_USE = 0, RESERVED = 1, RESERVING = 2 }
+	export enum AddressStatus { IN_USE = 'IN_USE', RESERVED = 'RESERVED', RESERVING = 'RESERVING' }
 
 	export interface AddressAggregatedList {
 
@@ -1122,9 +1122,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AllocationAggregateReservationVmFamily { VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L = 0, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP = 1, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P = 2 }
+	export enum AllocationAggregateReservationVmFamily { VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L = 'VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L', VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP = 'VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP', VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P = 'VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P' }
 
-	export enum AllocationAggregateReservationWorkloadType { BATCH = 0, SERVING = 1, UNSPECIFIED = 2 }
+	export enum AllocationAggregateReservationWorkloadType { BATCH = 'BATCH', SERVING = 'SERVING', UNSPECIFIED = 'UNSPECIFIED' }
 
 
 	/** [Output Only] Contains output only fields. */
@@ -1188,7 +1188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDiskInterface { NVME = 0, SCSI = 1 }
+	export enum AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDiskInterface { NVME = 'NVME', SCSI = 'SCSI' }
 
 
 	/** Properties of the SKU instances being reserved. Next ID: 9 */
@@ -1394,7 +1394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachedDiskArchitecture { ARCHITECTURE_UNSPECIFIED = 0, ARM64 = 1, X86_64 = 2 }
+	export enum AttachedDiskArchitecture { ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED', ARM64 = 'ARM64', X86_64 = 'X86_64' }
 
 	export interface CustomerEncryptionKey {
 
@@ -1462,7 +1462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GuestOsFeatureType { FEATURE_TYPE_UNSPECIFIED = 0, GVNIC = 1, IDPF = 2, MULTI_IP_SUBNET = 3, SECURE_BOOT = 4, SEV_CAPABLE = 5, SEV_LIVE_MIGRATABLE = 6, SEV_LIVE_MIGRATABLE_V2 = 7, SEV_SNP_CAPABLE = 8, UEFI_COMPATIBLE = 9, VIRTIO_SCSI_MULTIQUEUE = 10, WINDOWS = 11 }
+	export enum GuestOsFeatureType { FEATURE_TYPE_UNSPECIFIED = 'FEATURE_TYPE_UNSPECIFIED', GVNIC = 'GVNIC', IDPF = 'IDPF', MULTI_IP_SUBNET = 'MULTI_IP_SUBNET', SECURE_BOOT = 'SECURE_BOOT', SEV_CAPABLE = 'SEV_CAPABLE', SEV_LIVE_MIGRATABLE = 'SEV_LIVE_MIGRATABLE', SEV_LIVE_MIGRATABLE_V2 = 'SEV_LIVE_MIGRATABLE_V2', SEV_SNP_CAPABLE = 'SEV_SNP_CAPABLE', UEFI_COMPATIBLE = 'UEFI_COMPATIBLE', VIRTIO_SCSI_MULTIQUEUE = 'VIRTIO_SCSI_MULTIQUEUE', WINDOWS = 'WINDOWS' }
 
 
 	/** [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This field is persisted and returned for instanceTemplate and not returned in the context of instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both. */
@@ -1580,11 +1580,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachedDiskInitializeParamsOnUpdateAction { RECREATE_DISK = 0, RECREATE_DISK_IF_SOURCE_CHANGED = 1, USE_EXISTING_DISK = 2 }
+	export enum AttachedDiskInitializeParamsOnUpdateAction { RECREATE_DISK = 'RECREATE_DISK', RECREATE_DISK_IF_SOURCE_CHANGED = 'RECREATE_DISK_IF_SOURCE_CHANGED', USE_EXISTING_DISK = 'USE_EXISTING_DISK' }
 
-	export enum AttachedDiskMode { READ_ONLY = 0, READ_WRITE = 1 }
+	export enum AttachedDiskMode { READ_ONLY = 'READ_ONLY', READ_WRITE = 'READ_WRITE' }
 
-	export enum AttachedDiskSavedState { DISK_SAVED_STATE_UNSPECIFIED = 0, PRESERVED = 1 }
+	export enum AttachedDiskSavedState { DISK_SAVED_STATE_UNSPECIFIED = 'DISK_SAVED_STATE_UNSPECIFIED', PRESERVED = 'PRESERVED' }
 
 
 	/** Initial State for shielded instance, these are public keys which are safe to store in public */
@@ -1634,9 +1634,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FileContentBufferFileType { BIN = 0, UNDEFINED = 1, X509 = 2 }
+	export enum FileContentBufferFileType { BIN = 'BIN', UNDEFINED = 'UNDEFINED', X509 = 'X509' }
 
-	export enum AttachedDiskType { PERSISTENT = 0, SCRATCH = 1 }
+	export enum AttachedDiskType { PERSISTENT = 'PERSISTENT', SCRATCH = 'SCRATCH' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts jose@example.com from DATA_READ logging, and aliya@example.com from DATA_WRITE logging. */
@@ -1696,7 +1696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { ADMIN_READ = 0, DATA_READ = 1, DATA_WRITE = 2, LOG_TYPE_UNSPECIFIED = 3 }
+	export enum AuditLogConfigLogType { ADMIN_READ = 'ADMIN_READ', DATA_READ = 'DATA_READ', DATA_WRITE = 'DATA_WRITE', LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED' }
 
 
 	/** This is deprecated and has no effect. Do not use. */
@@ -1719,7 +1719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationLoggingOptionsPermissionType { ADMIN_READ = 0, ADMIN_WRITE = 1, DATA_READ = 2, DATA_WRITE = 3, PERMISSION_TYPE_UNSPECIFIED = 4 }
+	export enum AuthorizationLoggingOptionsPermissionType { ADMIN_READ = 'ADMIN_READ', ADMIN_WRITE = 'ADMIN_WRITE', DATA_READ = 'DATA_READ', DATA_WRITE = 'DATA_WRITE', PERMISSION_TYPE_UNSPECIFIED = 'PERMISSION_TYPE_UNSPECIFIED' }
 
 
 	/** Represents an Autoscaler resource. Google Compute Engine has two Autoscaler resources: * [Zonal](/compute/docs/reference/rest/v1/autoscalers) * [Regional](/compute/docs/reference/rest/v1/regionAutoscalers) Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances. For zonal managed instance groups resource, use the autoscaler resource. For regional managed instance groups, use the regionAutoscalers resource. */
@@ -1914,7 +1914,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoscalingPolicyCpuUtilizationPredictiveMethod { NONE = 0, OPTIMIZE_AVAILABILITY = 1 }
+	export enum AutoscalingPolicyCpuUtilizationPredictiveMethod { NONE = 'NONE', OPTIMIZE_AVAILABILITY = 'OPTIMIZE_AVAILABILITY' }
 
 
 	/** Custom utilization metric policy. */
@@ -1965,7 +1965,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoscalingPolicyCustomMetricUtilizationUtilizationTargetType { DELTA_PER_MINUTE = 0, DELTA_PER_SECOND = 1, GAUGE = 2 }
+	export enum AutoscalingPolicyCustomMetricUtilizationUtilizationTargetType { DELTA_PER_MINUTE = 'DELTA_PER_MINUTE', DELTA_PER_SECOND = 'DELTA_PER_SECOND', GAUGE = 'GAUGE' }
 
 
 	/** Configuration parameters of autoscaling based on load balancing. */
@@ -1988,7 +1988,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoscalingPolicyMode { OFF = 0, ON = 1, ONLY_SCALE_OUT = 2, ONLY_UP = 3 }
+	export enum AutoscalingPolicyMode { OFF = 'OFF', ON = 'ON', ONLY_SCALE_OUT = 'ONLY_SCALE_OUT', ONLY_UP = 'ONLY_UP' }
 
 
 	/** Configuration that allows for slower scale in so that even if Autoscaler recommends an abrupt scale in of a MIG, it will be throttled as specified by the parameters below. */
@@ -2136,9 +2136,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingScheduleStatusState { ACTIVE = 0, DISABLED = 1, OBSOLETE = 2, READY = 3 }
+	export enum ScalingScheduleStatusState { ACTIVE = 'ACTIVE', DISABLED = 'DISABLED', OBSOLETE = 'OBSOLETE', READY = 'READY' }
 
-	export enum AutoscalerStatus { ACTIVE = 0, DELETING = 1, ERROR = 2, PENDING = 3 }
+	export enum AutoscalerStatus { ACTIVE = 'ACTIVE', DELETING = 'DELETING', ERROR = 'ERROR', PENDING = 'PENDING' }
 
 	export interface AutoscalerStatusDetails {
 
@@ -2164,7 +2164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoscalerStatusDetailsType { ALL_INSTANCES_UNHEALTHY = 0, BACKEND_SERVICE_DOES_NOT_EXIST = 1, CAPPED_AT_MAX_NUM_REPLICAS = 2, CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 3, CUSTOM_METRIC_INVALID = 4, MIN_EQUALS_MAX = 5, MISSING_CUSTOM_METRIC_DATA_POINTS = 6, MISSING_LOAD_BALANCING_DATA_POINTS = 7, MODE_OFF = 8, MODE_ONLY_SCALE_OUT = 9, MODE_ONLY_UP = 10, MORE_THAN_ONE_BACKEND_SERVICE = 11, NOT_ENOUGH_QUOTA_AVAILABLE = 12, REGION_RESOURCE_STOCKOUT = 13, SCALING_TARGET_DOES_NOT_EXIST = 14, SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX = 15, SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN = 16, UNKNOWN = 17, UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 18, ZONE_RESOURCE_STOCKOUT = 19 }
+	export enum AutoscalerStatusDetailsType { ALL_INSTANCES_UNHEALTHY = 'ALL_INSTANCES_UNHEALTHY', BACKEND_SERVICE_DOES_NOT_EXIST = 'BACKEND_SERVICE_DOES_NOT_EXIST', CAPPED_AT_MAX_NUM_REPLICAS = 'CAPPED_AT_MAX_NUM_REPLICAS', CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 'CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE', CUSTOM_METRIC_INVALID = 'CUSTOM_METRIC_INVALID', MIN_EQUALS_MAX = 'MIN_EQUALS_MAX', MISSING_CUSTOM_METRIC_DATA_POINTS = 'MISSING_CUSTOM_METRIC_DATA_POINTS', MISSING_LOAD_BALANCING_DATA_POINTS = 'MISSING_LOAD_BALANCING_DATA_POINTS', MODE_OFF = 'MODE_OFF', MODE_ONLY_SCALE_OUT = 'MODE_ONLY_SCALE_OUT', MODE_ONLY_UP = 'MODE_ONLY_UP', MORE_THAN_ONE_BACKEND_SERVICE = 'MORE_THAN_ONE_BACKEND_SERVICE', NOT_ENOUGH_QUOTA_AVAILABLE = 'NOT_ENOUGH_QUOTA_AVAILABLE', REGION_RESOURCE_STOCKOUT = 'REGION_RESOURCE_STOCKOUT', SCALING_TARGET_DOES_NOT_EXIST = 'SCALING_TARGET_DOES_NOT_EXIST', SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX = 'SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX', SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN = 'SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN', UNKNOWN = 'UNKNOWN', UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 'UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION', ZONE_RESOURCE_STOCKOUT = 'ZONE_RESOURCE_STOCKOUT' }
 
 	export interface AutoscalerAggregatedList {
 
@@ -2532,7 +2532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendBalancingMode { CONNECTION = 0, RATE = 1, UTILIZATION = 2 }
+	export enum BackendBalancingMode { CONNECTION = 'CONNECTION', RATE = 'RATE', UTILIZATION = 'UTILIZATION' }
 
 
 	/** Represents a Cloud Storage Bucket resource. This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets. */
@@ -2747,7 +2747,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendBucketCdnPolicyCacheMode { CACHE_ALL_STATIC = 0, FORCE_CACHE_ALL = 1, INVALID_CACHE_MODE = 2, USE_ORIGIN_HEADERS = 3 }
+	export enum BackendBucketCdnPolicyCacheMode { CACHE_ALL_STATIC = 'CACHE_ALL_STATIC', FORCE_CACHE_ALL = 'FORCE_CACHE_ALL', INVALID_CACHE_MODE = 'INVALID_CACHE_MODE', USE_ORIGIN_HEADERS = 'USE_ORIGIN_HEADERS' }
 
 
 	/** Specify CDN TTLs for response error codes. */
@@ -2777,7 +2777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendBucketCompressionMode { AUTOMATIC = 0, DISABLED = 1 }
+	export enum BackendBucketCompressionMode { AUTOMATIC = 'AUTOMATIC', DISABLED = 'DISABLED' }
 
 
 	/** Contains a list of BackendBucket resources. */
@@ -3391,9 +3391,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendServiceConnectionTrackingPolicyConnectionPersistenceOnUnhealthyBackends { ALWAYS_PERSIST = 0, DEFAULT_FOR_PROTOCOL = 1, NEVER_PERSIST = 2 }
+	export enum BackendServiceConnectionTrackingPolicyConnectionPersistenceOnUnhealthyBackends { ALWAYS_PERSIST = 'ALWAYS_PERSIST', DEFAULT_FOR_PROTOCOL = 'DEFAULT_FOR_PROTOCOL', NEVER_PERSIST = 'NEVER_PERSIST' }
 
-	export enum BackendServiceConnectionTrackingPolicyTrackingMode { INVALID_TRACKING_MODE = 0, PER_CONNECTION = 1, PER_SESSION = 2 }
+	export enum BackendServiceConnectionTrackingPolicyTrackingMode { INVALID_TRACKING_MODE = 'INVALID_TRACKING_MODE', PER_CONNECTION = 'PER_CONNECTION', PER_SESSION = 'PER_SESSION' }
 
 
 	/** This message defines settings for a consistent hash style load balancer. */
@@ -3562,7 +3562,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendServiceLoadBalancingScheme { EXTERNAL = 0, EXTERNAL_MANAGED = 1, INTERNAL = 2, INTERNAL_MANAGED = 3, INTERNAL_SELF_MANAGED = 4, INVALID_LOAD_BALANCING_SCHEME = 5 }
+	export enum BackendServiceLoadBalancingScheme { EXTERNAL = 'EXTERNAL', EXTERNAL_MANAGED = 'EXTERNAL_MANAGED', INTERNAL = 'INTERNAL', INTERNAL_MANAGED = 'INTERNAL_MANAGED', INTERNAL_SELF_MANAGED = 'INTERNAL_SELF_MANAGED', INVALID_LOAD_BALANCING_SCHEME = 'INVALID_LOAD_BALANCING_SCHEME' }
 
 
 	/** Container for either a built-in LB policy supported by gRPC or Envoy or a custom one implemented by the end user. */
@@ -3633,7 +3633,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendServiceLocalityLoadBalancingPolicyConfigPolicyName { INVALID_LB_POLICY = 0, LEAST_REQUEST = 1, MAGLEV = 2, ORIGINAL_DESTINATION = 3, RANDOM = 4, RING_HASH = 5, ROUND_ROBIN = 6, WEIGHTED_MAGLEV = 7 }
+	export enum BackendServiceLocalityLoadBalancingPolicyConfigPolicyName { INVALID_LB_POLICY = 'INVALID_LB_POLICY', LEAST_REQUEST = 'LEAST_REQUEST', MAGLEV = 'MAGLEV', ORIGINAL_DESTINATION = 'ORIGINAL_DESTINATION', RANDOM = 'RANDOM', RING_HASH = 'RING_HASH', ROUND_ROBIN = 'ROUND_ROBIN', WEIGHTED_MAGLEV = 'WEIGHTED_MAGLEV' }
 
 
 	/** The available logging options for the load balancer traffic served by this backend service. */
@@ -3673,7 +3673,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendServiceLogConfigOptionalMode { CUSTOM = 0, EXCLUDE_ALL_OPTIONAL = 1, INCLUDE_ALL_OPTIONAL = 2 }
+	export enum BackendServiceLogConfigOptionalMode { CUSTOM = 'CUSTOM', EXCLUDE_ALL_OPTIONAL = 'EXCLUDE_ALL_OPTIONAL', INCLUDE_ALL_OPTIONAL = 'INCLUDE_ALL_OPTIONAL' }
 
 
 	/** Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. */
@@ -3758,7 +3758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendServiceProtocol { GRPC = 0, HTTP = 1, HTTP2 = 2, HTTPS = 3, SSL = 4, TCP = 5, UDP = 6, UNSPECIFIED = 7 }
+	export enum BackendServiceProtocol { GRPC = 'GRPC', HTTP = 'HTTP', HTTP2 = 'HTTP2', HTTPS = 'HTTPS', SSL = 'SSL', TCP = 'TCP', UDP = 'UDP', UNSPECIFIED = 'UNSPECIFIED' }
 
 
 	/** The authentication and authorization settings for a BackendService. */
@@ -3787,7 +3787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendServiceSessionAffinity { CLIENT_IP = 0, CLIENT_IP_NO_DESTINATION = 1, CLIENT_IP_PORT_PROTO = 2, CLIENT_IP_PROTO = 3, GENERATED_COOKIE = 4, HEADER_FIELD = 5, HTTP_COOKIE = 6, NONE = 7 }
+	export enum BackendServiceSessionAffinity { CLIENT_IP = 'CLIENT_IP', CLIENT_IP_NO_DESTINATION = 'CLIENT_IP_NO_DESTINATION', CLIENT_IP_PORT_PROTO = 'CLIENT_IP_PORT_PROTO', CLIENT_IP_PROTO = 'CLIENT_IP_PROTO', GENERATED_COOKIE = 'GENERATED_COOKIE', HEADER_FIELD = 'HEADER_FIELD', HTTP_COOKIE = 'HTTP_COOKIE', NONE = 'NONE' }
 
 
 	/** Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing, Internal HTTP(S) load balancing and Traffic Director. */
@@ -3806,7 +3806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubsettingPolicy { CONSISTENT_HASH_SUBSETTING = 0, NONE = 1 }
+	export enum SubsettingPolicy { CONSISTENT_HASH_SUBSETTING = 'CONSISTENT_HASH_SUBSETTING', NONE = 'NONE' }
 
 	export interface BackendServiceUsedBy {
 		reference?: string | null;
@@ -4086,9 +4086,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthStatusHealthState { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum HealthStatusHealthState { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
-	export enum HealthStatusWeightError { INVALID_WEIGHT = 0, MISSING_WEIGHT = 1, UNAVAILABLE_WEIGHT = 2, WEIGHT_NONE = 3 }
+	export enum HealthStatusWeightError { INVALID_WEIGHT = 'INVALID_WEIGHT', MISSING_WEIGHT = 'MISSING_WEIGHT', UNAVAILABLE_WEIGHT = 'UNAVAILABLE_WEIGHT', WEIGHT_NONE = 'WEIGHT_NONE' }
 
 
 	/** Contains a list of BackendService resources. */
@@ -4423,9 +4423,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BfdPacketDiagnostic { ADMINISTRATIVELY_DOWN = 0, CONCATENATED_PATH_DOWN = 1, CONTROL_DETECTION_TIME_EXPIRED = 2, DIAGNOSTIC_UNSPECIFIED = 3, ECHO_FUNCTION_FAILED = 4, FORWARDING_PLANE_RESET = 5, NEIGHBOR_SIGNALED_SESSION_DOWN = 6, NO_DIAGNOSTIC = 7, PATH_DOWN = 8, REVERSE_CONCATENATED_PATH_DOWN = 9 }
+	export enum BfdPacketDiagnostic { ADMINISTRATIVELY_DOWN = 'ADMINISTRATIVELY_DOWN', CONCATENATED_PATH_DOWN = 'CONCATENATED_PATH_DOWN', CONTROL_DETECTION_TIME_EXPIRED = 'CONTROL_DETECTION_TIME_EXPIRED', DIAGNOSTIC_UNSPECIFIED = 'DIAGNOSTIC_UNSPECIFIED', ECHO_FUNCTION_FAILED = 'ECHO_FUNCTION_FAILED', FORWARDING_PLANE_RESET = 'FORWARDING_PLANE_RESET', NEIGHBOR_SIGNALED_SESSION_DOWN = 'NEIGHBOR_SIGNALED_SESSION_DOWN', NO_DIAGNOSTIC = 'NO_DIAGNOSTIC', PATH_DOWN = 'PATH_DOWN', REVERSE_CONCATENATED_PATH_DOWN = 'REVERSE_CONCATENATED_PATH_DOWN' }
 
-	export enum BfdPacketState { ADMIN_DOWN = 0, DOWN = 1, INIT = 2, STATE_UNSPECIFIED = 3, UP = 4 }
+	export enum BfdPacketState { ADMIN_DOWN = 'ADMIN_DOWN', DOWN = 'DOWN', INIT = 'INIT', STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UP = 'UP' }
 
 
 	/** Next free: 15 */
@@ -4489,7 +4489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BfdStatusBfdSessionInitializationMode { ACTIVE = 0, DISABLED = 1, PASSIVE = 2 }
+	export enum BfdStatusBfdSessionInitializationMode { ACTIVE = 'ACTIVE', DISABLED = 'DISABLED', PASSIVE = 'PASSIVE' }
 
 	export interface BfdStatusPacketCounts {
 
@@ -4585,9 +4585,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PacketIntervalsDuration { DURATION_UNSPECIFIED = 0, HOUR = 1, MAX = 2, MINUTE = 3 }
+	export enum PacketIntervalsDuration { DURATION_UNSPECIFIED = 'DURATION_UNSPECIFIED', HOUR = 'HOUR', MAX = 'MAX', MINUTE = 'MINUTE' }
 
-	export enum PacketIntervalsType { LOOPBACK = 0, RECEIVE = 1, TRANSMIT = 2, TYPE_UNSPECIFIED = 3 }
+	export enum PacketIntervalsType { LOOPBACK = 'LOOPBACK', RECEIVE = 'RECEIVE', TRANSMIT = 'TRANSMIT', TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -4863,7 +4863,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancePropertiesKeyRevocationActionType { KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED = 0, NONE = 1, STOP = 2 }
+	export enum InstancePropertiesKeyRevocationActionType { KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED = 'KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED', NONE = 'NONE', STOP = 'STOP' }
 
 
 	/** A metadata key/value entry. */
@@ -5034,11 +5034,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkInterfaceIpv6AccessType { EXTERNAL = 0, INTERNAL = 1 }
+	export enum NetworkInterfaceIpv6AccessType { EXTERNAL = 'EXTERNAL', INTERNAL = 'INTERNAL' }
 
-	export enum NetworkInterfaceNicType { GVNIC = 0, UNSPECIFIED_NIC_TYPE = 1, VIRTIO_NET = 2 }
+	export enum NetworkInterfaceNicType { GVNIC = 'GVNIC', UNSPECIFIED_NIC_TYPE = 'UNSPECIFIED_NIC_TYPE', VIRTIO_NET = 'VIRTIO_NET' }
 
-	export enum NetworkInterfaceStackType { IPV4_IPV6 = 0, IPV4_ONLY = 1 }
+	export enum NetworkInterfaceStackType { IPV4_IPV6 = 'IPV4_IPV6', IPV4_ONLY = 'IPV4_ONLY' }
 
 	export interface NetworkPerformanceConfig {
 		totalEgressBandwidthTier?: NetworkPerformanceConfigTotalEgressBandwidthTier | null;
@@ -5053,9 +5053,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkPerformanceConfigTotalEgressBandwidthTier { DEFAULT = 0, TIER_1 = 1 }
+	export enum NetworkPerformanceConfigTotalEgressBandwidthTier { DEFAULT = 'DEFAULT', TIER_1 = 'TIER_1' }
 
-	export enum InstancePropertiesPrivateIpv6GoogleAccess { ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 0, ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 1, INHERIT_FROM_SUBNETWORK = 2 }
+	export enum InstancePropertiesPrivateIpv6GoogleAccess { ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 'ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE', ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 'ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE', INHERIT_FROM_SUBNETWORK = 'INHERIT_FROM_SUBNETWORK' }
 
 
 	/** Specifies the reservations that this instance can consume from. */
@@ -5088,7 +5088,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservationAffinityConsumeReservationType { ANY_RESERVATION = 0, NO_RESERVATION = 1, SPECIFIC_RESERVATION = 2, UNSPECIFIED = 3 }
+	export enum ReservationAffinityConsumeReservationType { ANY_RESERVATION = 'ANY_RESERVATION', NO_RESERVATION = 'NO_RESERVATION', SPECIFIC_RESERVATION = 'SPECIFIC_RESERVATION', UNSPECIFIED = 'UNSPECIFIED' }
 
 
 	/** Sets the scheduling options for an Instance. */
@@ -5159,7 +5159,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchedulingInstanceTerminationAction { DELETE = 0, INSTANCE_TERMINATION_ACTION_UNSPECIFIED = 1, STOP = 2 }
+	export enum SchedulingInstanceTerminationAction { DELETE = 'DELETE', INSTANCE_TERMINATION_ACTION_UNSPECIFIED = 'INSTANCE_TERMINATION_ACTION_UNSPECIFIED', STOP = 'STOP' }
 
 
 	/** Node Affinity: the configuration of desired nodes onto which this Instance could be scheduled. */
@@ -5192,11 +5192,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SchedulingNodeAffinityOperator { IN = 0, NOT_IN = 1, OPERATOR_UNSPECIFIED = 2 }
+	export enum SchedulingNodeAffinityOperator { IN = 'IN', NOT_IN = 'NOT_IN', OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED' }
 
-	export enum SchedulingOnHostMaintenance { MIGRATE = 0, TERMINATE = 1 }
+	export enum SchedulingOnHostMaintenance { MIGRATE = 'MIGRATE', TERMINATE = 'TERMINATE' }
 
-	export enum SchedulingProvisioningModel { SPOT = 0, STANDARD = 1 }
+	export enum SchedulingProvisioningModel { SPOT = 'SPOT', STANDARD = 'STANDARD' }
 
 
 	/** A service account. */
@@ -5350,9 +5350,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationPolicyLocationPreference { ALLOW = 0, DENY = 1, PREFERENCE_UNSPECIFIED = 2 }
+	export enum LocationPolicyLocationPreference { ALLOW = 'ALLOW', DENY = 'DENY', PREFERENCE_UNSPECIFIED = 'PREFERENCE_UNSPECIFIED' }
 
-	export enum LocationPolicyTargetShape { ANY = 0, ANY_SINGLE_ZONE = 1, BALANCED = 2 }
+	export enum LocationPolicyTargetShape { ANY = 'ANY', ANY_SINGLE_ZONE = 'ANY_SINGLE_ZONE', BALANCED = 'BALANCED' }
 
 
 	/** Per-instance properties to be set on individual instances. To be extended in the future. */
@@ -5427,7 +5427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BulkInsertOperationStatusStatus { CREATING = 0, DONE = 1, ROLLING_BACK = 2, STATUS_UNSPECIFIED = 3 }
+	export enum BulkInsertOperationStatusStatus { CREATING = 'CREATING', DONE = 'DONE', ROLLING_BACK = 'ROLLING_BACK', STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED' }
 
 	export interface CacheInvalidationRule {
 
@@ -5590,7 +5590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommitmentCategory { CATEGORY_UNSPECIFIED = 0, LICENSE = 1, MACHINE = 2 }
+	export enum CommitmentCategory { CATEGORY_UNSPECIFIED = 'CATEGORY_UNSPECIFIED', LICENSE = 'LICENSE', MACHINE = 'MACHINE' }
 
 
 	/** Commitment for a particular license resource. */
@@ -5627,7 +5627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommitmentPlan { INVALID = 0, THIRTY_SIX_MONTH = 1, TWELVE_MONTH = 2 }
+	export enum CommitmentPlan { INVALID = 'INVALID', THIRTY_SIX_MONTH = 'THIRTY_SIX_MONTH', TWELVE_MONTH = 'TWELVE_MONTH' }
 
 
 	/** Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read Reserving zonal resources. */
@@ -5788,9 +5788,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareSettingsShareType { LOCAL = 0, ORGANIZATION = 1, SHARE_TYPE_UNSPECIFIED = 2, SPECIFIC_PROJECTS = 3 }
+	export enum ShareSettingsShareType { LOCAL = 'LOCAL', ORGANIZATION = 'ORGANIZATION', SHARE_TYPE_UNSPECIFIED = 'SHARE_TYPE_UNSPECIFIED', SPECIFIC_PROJECTS = 'SPECIFIC_PROJECTS' }
 
-	export enum ReservationStatus { CREATING = 0, DELETING = 1, INVALID = 2, READY = 3, UPDATING = 4 }
+	export enum ReservationStatus { CREATING = 'CREATING', DELETING = 'DELETING', INVALID = 'INVALID', READY = 'READY', UPDATING = 'UPDATING' }
 
 
 	/** Commitment for a particular resource (a Commitment is composed of one or more of these). */
@@ -5827,11 +5827,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceCommitmentType { ACCELERATOR = 0, LOCAL_SSD = 1, MEMORY = 2, UNSPECIFIED = 3, VCPU = 4 }
+	export enum ResourceCommitmentType { ACCELERATOR = 'ACCELERATOR', LOCAL_SSD = 'LOCAL_SSD', MEMORY = 'MEMORY', UNSPECIFIED = 'UNSPECIFIED', VCPU = 'VCPU' }
 
-	export enum CommitmentStatus { ACTIVE = 0, CANCELLED = 1, CREATING = 2, EXPIRED = 3, NOT_YET_ACTIVE = 4 }
+	export enum CommitmentStatus { ACTIVE = 'ACTIVE', CANCELLED = 'CANCELLED', CREATING = 'CREATING', EXPIRED = 'EXPIRED', NOT_YET_ACTIVE = 'NOT_YET_ACTIVE' }
 
-	export enum CommitmentType { ACCELERATOR_OPTIMIZED = 0, ACCELERATOR_OPTIMIZED_A3 = 1, COMPUTE_OPTIMIZED = 2, COMPUTE_OPTIMIZED_C2D = 3, COMPUTE_OPTIMIZED_C3 = 4, COMPUTE_OPTIMIZED_C3D = 5, COMPUTE_OPTIMIZED_H3 = 6, GENERAL_PURPOSE = 7, GENERAL_PURPOSE_E2 = 8, GENERAL_PURPOSE_N2 = 9, GENERAL_PURPOSE_N2D = 10, GENERAL_PURPOSE_T2D = 11, GRAPHICS_OPTIMIZED = 12, MEMORY_OPTIMIZED = 13, MEMORY_OPTIMIZED_M3 = 14, TYPE_UNSPECIFIED = 15 }
+	export enum CommitmentType { ACCELERATOR_OPTIMIZED = 'ACCELERATOR_OPTIMIZED', ACCELERATOR_OPTIMIZED_A3 = 'ACCELERATOR_OPTIMIZED_A3', COMPUTE_OPTIMIZED = 'COMPUTE_OPTIMIZED', COMPUTE_OPTIMIZED_C2D = 'COMPUTE_OPTIMIZED_C2D', COMPUTE_OPTIMIZED_C3 = 'COMPUTE_OPTIMIZED_C3', COMPUTE_OPTIMIZED_C3D = 'COMPUTE_OPTIMIZED_C3D', COMPUTE_OPTIMIZED_H3 = 'COMPUTE_OPTIMIZED_H3', GENERAL_PURPOSE = 'GENERAL_PURPOSE', GENERAL_PURPOSE_E2 = 'GENERAL_PURPOSE_E2', GENERAL_PURPOSE_N2 = 'GENERAL_PURPOSE_N2', GENERAL_PURPOSE_N2D = 'GENERAL_PURPOSE_N2D', GENERAL_PURPOSE_T2D = 'GENERAL_PURPOSE_T2D', GRAPHICS_OPTIMIZED = 'GRAPHICS_OPTIMIZED', MEMORY_OPTIMIZED = 'MEMORY_OPTIMIZED', MEMORY_OPTIMIZED_M3 = 'MEMORY_OPTIMIZED_M3', TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED' }
 
 	export interface CommitmentAggregatedList {
 
@@ -6146,11 +6146,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionIam { APPROVER = 0, ATTRIBUTION = 1, AUTHORITY = 2, CREDENTIALS_TYPE = 3, CREDS_ASSERTION = 4, JUSTIFICATION_TYPE = 5, NO_ATTR = 6, SECURITY_REALM = 7 }
+	export enum ConditionIam { APPROVER = 'APPROVER', ATTRIBUTION = 'ATTRIBUTION', AUTHORITY = 'AUTHORITY', CREDENTIALS_TYPE = 'CREDENTIALS_TYPE', CREDS_ASSERTION = 'CREDS_ASSERTION', JUSTIFICATION_TYPE = 'JUSTIFICATION_TYPE', NO_ATTR = 'NO_ATTR', SECURITY_REALM = 'SECURITY_REALM' }
 
-	export enum ConditionOp { DISCHARGED = 0, EQUALS = 1, IN = 2, NOT_EQUALS = 3, NOT_IN = 4, NO_OP = 5 }
+	export enum ConditionOp { DISCHARGED = 'DISCHARGED', EQUALS = 'EQUALS', IN = 'IN', NOT_EQUALS = 'NOT_EQUALS', NOT_IN = 'NOT_IN', NO_OP = 'NO_OP' }
 
-	export enum ConditionSys { IP = 0, NAME = 1, NO_ATTR = 2, REGION = 3, SERVICE = 4 }
+	export enum ConditionSys { IP = 'IP', NAME = 'NAME', NO_ATTR = 'NO_ATTR', REGION = 'REGION', SERVICE = 'SERVICE' }
 
 
 	/** The specification for allowing client-side cross-origin requests. For more information about the W3C recommendation for cross-origin resource sharing (CORS), see Fetch API Living Standard. */
@@ -6599,9 +6599,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskResourceStatusAsyncReplicationStatusState { ACTIVE = 0, CREATED = 1, STARTING = 2, STATE_UNSPECIFIED = 3, STOPPED = 4, STOPPING = 5 }
+	export enum DiskResourceStatusAsyncReplicationStatusState { ACTIVE = 'ACTIVE', CREATED = 'CREATED', STARTING = 'STARTING', STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STOPPED = 'STOPPED', STOPPING = 'STOPPING' }
 
-	export enum DiskStatus { CREATING = 0, DELETING = 1, FAILED = 2, READY = 3, RESTORING = 4 }
+	export enum DiskStatus { CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', READY = 'READY', RESTORING = 'RESTORING' }
 
 	export interface DiskAggregatedList {
 
@@ -6814,7 +6814,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskInstantiationConfigInstantiateFrom { ATTACH_READ_ONLY = 0, BLANK = 1, CUSTOM_IMAGE = 2, DEFAULT = 3, DO_NOT_INCLUDE = 4, SOURCE_IMAGE = 5, SOURCE_IMAGE_FAMILY = 6 }
+	export enum DiskInstantiationConfigInstantiateFrom { ATTACH_READ_ONLY = 'ATTACH_READ_ONLY', BLANK = 'BLANK', CUSTOM_IMAGE = 'CUSTOM_IMAGE', DEFAULT = 'DEFAULT', DO_NOT_INCLUDE = 'DO_NOT_INCLUDE', SOURCE_IMAGE = 'SOURCE_IMAGE', SOURCE_IMAGE_FAMILY = 'SOURCE_IMAGE_FAMILY' }
 
 
 	/** A list of Disk resources. */
@@ -7416,7 +7416,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DistributionPolicyTargetShape { ANY = 0, ANY_SINGLE_ZONE = 1, BALANCED = 2, EVEN = 3 }
+	export enum DistributionPolicyTargetShape { ANY = 'ANY', ANY_SINGLE_ZONE = 'ANY_SINGLE_ZONE', BALANCED = 'BALANCED', EVEN = 'EVEN' }
 
 	export interface DistributionPolicyZoneConfiguration {
 
@@ -7515,7 +7515,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExchangedPeeringRouteType { DYNAMIC_PEERING_ROUTE = 0, STATIC_PEERING_ROUTE = 1, SUBNET_PEERING_ROUTE = 2 }
+	export enum ExchangedPeeringRouteType { DYNAMIC_PEERING_ROUTE = 'DYNAMIC_PEERING_ROUTE', STATIC_PEERING_ROUTE = 'STATIC_PEERING_ROUTE', SUBNET_PEERING_ROUTE = 'SUBNET_PEERING_ROUTE' }
 
 	export interface ExchangedPeeringRoutesList {
 
@@ -7720,7 +7720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalVpnGatewayRedundancyType { FOUR_IPS_REDUNDANCY = 0, SINGLE_IP_INTERNALLY_REDUNDANT = 1, TWO_IPS_REDUNDANCY = 2 }
+	export enum ExternalVpnGatewayRedundancyType { FOUR_IPS_REDUNDANCY = 'FOUR_IPS_REDUNDANCY', SINGLE_IP_INTERNALLY_REDUNDANT = 'SINGLE_IP_INTERNALLY_REDUNDANT', TWO_IPS_REDUNDANCY = 'TWO_IPS_REDUNDANCY' }
 
 
 	/** Response to the list request, and contains a list of externalVpnGateways. */
@@ -7975,7 +7975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallDirection { EGRESS = 0, INGRESS = 1 }
+	export enum FirewallDirection { EGRESS = 'EGRESS', INGRESS = 'INGRESS' }
 
 
 	/** The available logging options for a firewall rule. */
@@ -8005,7 +8005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallLogConfigMetadata { EXCLUDE_ALL_METADATA = 0, INCLUDE_ALL_METADATA = 1 }
+	export enum FirewallLogConfigMetadata { EXCLUDE_ALL_METADATA = 'EXCLUDE_ALL_METADATA', INCLUDE_ALL_METADATA = 'INCLUDE_ALL_METADATA' }
 
 
 	/** Contains a list of firewalls. */
@@ -8465,7 +8465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyRuleSecureTagState { EFFECTIVE = 0, INEFFECTIVE = 1 }
+	export enum FirewallPolicyRuleSecureTagState { EFFECTIVE = 'EFFECTIVE', INEFFECTIVE = 'INEFFECTIVE' }
 
 	export interface FirewallPolicyList {
 
@@ -8787,9 +8787,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ForwardingRuleIPProtocol { AH = 0, ESP = 1, ICMP = 2, L3_DEFAULT = 3, SCTP = 4, TCP = 5, UDP = 6 }
+	export enum ForwardingRuleIPProtocol { AH = 'AH', ESP = 'ESP', ICMP = 'ICMP', L3_DEFAULT = 'L3_DEFAULT', SCTP = 'SCTP', TCP = 'TCP', UDP = 'UDP' }
 
-	export enum ForwardingRuleLoadBalancingScheme { EXTERNAL = 0, EXTERNAL_MANAGED = 1, INTERNAL = 2, INTERNAL_MANAGED = 3, INTERNAL_SELF_MANAGED = 4, INVALID = 5 }
+	export enum ForwardingRuleLoadBalancingScheme { EXTERNAL = 'EXTERNAL', EXTERNAL_MANAGED = 'EXTERNAL_MANAGED', INTERNAL = 'INTERNAL', INTERNAL_MANAGED = 'INTERNAL_MANAGED', INTERNAL_SELF_MANAGED = 'INTERNAL_SELF_MANAGED', INVALID = 'INVALID' }
 
 
 	/** Opaque filter criteria used by load balancers to restrict routing configuration to a limited set of load balancing proxies. Proxies and sidecars involved in load balancing would typically present metadata to the load balancers that need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. An example for using metadataFilters would be: if load balancing involves Envoys, they receive routing configuration when values in metadataFilters match values supplied in of their XDS requests to loadbalancers. */
@@ -8843,9 +8843,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetadataFilterFilterMatchCriteria { MATCH_ALL = 0, MATCH_ANY = 1, NOT_SET = 2 }
+	export enum MetadataFilterFilterMatchCriteria { MATCH_ALL = 'MATCH_ALL', MATCH_ANY = 'MATCH_ANY', NOT_SET = 'NOT_SET' }
 
-	export enum ForwardingRulePscConnectionStatus { ACCEPTED = 0, CLOSED = 1, NEEDS_ATTENTION = 2, PENDING = 3, REJECTED = 4, STATUS_UNSPECIFIED = 5 }
+	export enum ForwardingRulePscConnectionStatus { ACCEPTED = 'ACCEPTED', CLOSED = 'CLOSED', NEEDS_ATTENTION = 'NEEDS_ATTENTION', PENDING = 'PENDING', REJECTED = 'REJECTED', STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED' }
 
 
 	/** Describes the auto-registration of the forwarding rule to Service Directory. The region and project of the Service Directory resource generated from this registration will be the same as this forwarding rule. */
@@ -9201,7 +9201,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GRPCHealthCheckPortSpecification { USE_FIXED_PORT = 0, USE_NAMED_PORT = 1, USE_SERVING_PORT = 2 }
+	export enum GRPCHealthCheckPortSpecification { USE_FIXED_PORT = 'USE_FIXED_PORT', USE_NAMED_PORT = 'USE_NAMED_PORT', USE_SERVING_PORT = 'USE_SERVING_PORT' }
 
 	export interface GlobalAddressesMoveRequest {
 
@@ -9405,7 +9405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleAction { ALLOW = 0, ALLOW_WITH_LOG = 1, DENY = 2, DENY_WITH_LOG = 3, LOG = 4, NO_ACTION = 5 }
+	export enum RuleAction { ALLOW = 'ALLOW', ALLOW_WITH_LOG = 'ALLOW_WITH_LOG', DENY = 'DENY', DENY_WITH_LOG = 'DENY_WITH_LOG', LOG = 'LOG', NO_ACTION = 'NO_ACTION' }
 
 
 	/** This is deprecated and has no effect. Do not use. */
@@ -9454,7 +9454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogConfigCloudAuditOptionsLogName { ADMIN_ACTIVITY = 0, DATA_ACCESS = 1, UNSPECIFIED_LOG_NAME = 2 }
+	export enum LogConfigCloudAuditOptionsLogName { ADMIN_ACTIVITY = 'ADMIN_ACTIVITY', DATA_ACCESS = 'DATA_ACCESS', UNSPECIFIED_LOG_NAME = 'UNSPECIFIED_LOG_NAME' }
 
 
 	/** This is deprecated and has no effect. Do not use. */
@@ -9536,7 +9536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogConfigDataAccessOptionsLogMode { LOG_FAIL_CLOSED = 0, LOG_MODE_UNSPECIFIED = 1 }
+	export enum LogConfigDataAccessOptionsLogMode { LOG_FAIL_CLOSED = 'LOG_FAIL_CLOSED', LOG_MODE_UNSPECIFIED = 'LOG_MODE_UNSPECIFIED' }
 
 	export interface GlobalSetLabelsRequest {
 
@@ -9746,7 +9746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HTTP2HealthCheckProxyHeader { NONE = 0, PROXY_V1 = 1 }
+	export enum HTTP2HealthCheckProxyHeader { NONE = 'NONE', PROXY_V1 = 'PROXY_V1' }
 
 	export interface HTTPHealthCheck {
 
@@ -10098,7 +10098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckType { GRPC = 0, HTTP = 1, HTTP2 = 2, HTTPS = 3, INVALID = 4, SSL = 5, TCP = 6 }
+	export enum HealthCheckType { GRPC = 'GRPC', HTTP = 'HTTP', HTTP2 = 'HTTP2', HTTPS = 'HTTPS', INVALID = 'INVALID', SSL = 'SSL', TCP = 'TCP' }
 
 
 	/** Contains a list of HealthCheck resources. */
@@ -10302,7 +10302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckServiceHealthStatusAggregationPolicy { AND = 0, NO_AGGREGATION = 1 }
+	export enum HealthCheckServiceHealthStatusAggregationPolicy { AND = 'AND', NO_AGGREGATION = 'NO_AGGREGATION' }
 
 
 	/** A full or valid partial URL to a health check service. For example, the following are valid URLs: - https://www.googleapis.com/compute/beta/projects/project-id/regions/us-west1/healthCheckServices/health-check-service - projects/project-id/regions/us-west1/healthCheckServices/health-check-service - regions/us-west1/healthCheckServices/health-check-service  */
@@ -10610,7 +10610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthStatusForNetworkEndpointHealthState { DRAINING = 0, HEALTHY = 1, UNHEALTHY = 2, UNKNOWN = 3 }
+	export enum HealthStatusForNetworkEndpointHealthState { DRAINING = 'DRAINING', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Provides links to documentation or for performing an out of band action. For example, if a quota check failed with an error indicating the calling project hasn't enabled the accessed service, this can contain a URL pointing directly to the right place in the developer console to flip the bit. */
@@ -11217,7 +11217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpRedirectActionRedirectResponseCode { FOUND = 0, MOVED_PERMANENTLY_DEFAULT = 1, PERMANENT_REDIRECT = 2, SEE_OTHER = 3, TEMPORARY_REDIRECT = 4 }
+	export enum HttpRedirectActionRedirectResponseCode { FOUND = 'FOUND', MOVED_PERMANENTLY_DEFAULT = 'MOVED_PERMANENTLY_DEFAULT', PERMANENT_REDIRECT = 'PERMANENT_REDIRECT', SEE_OTHER = 'SEE_OTHER', TEMPORARY_REDIRECT = 'TEMPORARY_REDIRECT' }
 
 
 	/** The retry policy associates with HttpRouteRule */
@@ -11905,11 +11905,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageRawDiskContainerType { TAR = 0 }
+	export enum ImageRawDiskContainerType { TAR = 'TAR' }
 
-	export enum ImageSourceType { RAW = 0 }
+	export enum ImageSourceType { RAW = 'RAW' }
 
-	export enum ImageStatus { DELETING = 0, FAILED = 1, PENDING = 2, READY = 3 }
+	export enum ImageStatus { DELETING = 'DELETING', FAILED = 'FAILED', PENDING = 'PENDING', READY = 'READY' }
 
 	export interface ImageFamilyView {
 
@@ -12374,9 +12374,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpcomingMaintenanceMaintenanceStatus { ONGOING = 0, PENDING = 1, UNKNOWN = 2 }
+	export enum UpcomingMaintenanceMaintenanceStatus { ONGOING = 'ONGOING', PENDING = 'PENDING', UNKNOWN = 'UNKNOWN' }
 
-	export enum UpcomingMaintenanceType { SCHEDULED = 0, UNKNOWN_TYPE = 1, UNSCHEDULED = 2 }
+	export enum UpcomingMaintenanceType { SCHEDULED = 'SCHEDULED', UNKNOWN_TYPE = 'UNKNOWN_TYPE', UNSCHEDULED = 'UNSCHEDULED' }
 
 
 	/** The policy describes the baseline against which Instance boot integrity is measured. */
@@ -12399,7 +12399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceStatus { DEPROVISIONING = 0, PROVISIONING = 1, REPAIRING = 2, RUNNING = 3, STAGING = 4, STOPPED = 5, STOPPING = 6, SUSPENDED = 7, SUSPENDING = 8, TERMINATED = 9 }
+	export enum InstanceStatus { DEPROVISIONING = 'DEPROVISIONING', PROVISIONING = 'PROVISIONING', REPAIRING = 'REPAIRING', RUNNING = 'RUNNING', STAGING = 'STAGING', STOPPED = 'STOPPED', STOPPING = 'STOPPING', SUSPENDED = 'SUSPENDED', SUSPENDING = 'SUSPENDING', TERMINATED = 'TERMINATED' }
 
 	export interface InstanceAggregatedList {
 
@@ -13295,9 +13295,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceGroupManagerInstanceLifecyclePolicyForceUpdateOnRepair { NO = 0, YES = 1 }
+	export enum InstanceGroupManagerInstanceLifecyclePolicyForceUpdateOnRepair { NO = 'NO', YES = 'YES' }
 
-	export enum InstanceGroupManagerListManagedInstancesResults { PAGELESS = 0, PAGINATED = 1 }
+	export enum InstanceGroupManagerListManagedInstancesResults { PAGELESS = 'PAGELESS', PAGINATED = 'PAGINATED' }
 
 	export interface StatefulPolicy {
 
@@ -13364,7 +13364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatefulPolicyPreservedStateDiskDeviceAutoDelete { NEVER = 0, ON_PERMANENT_INSTANCE_DELETION = 1 }
+	export enum StatefulPolicyPreservedStateDiskDeviceAutoDelete { NEVER = 'NEVER', ON_PERMANENT_INSTANCE_DELETION = 'ON_PERMANENT_INSTANCE_DELETION' }
 
 	export interface StatefulPolicyPreservedStateNetworkIp {
 
@@ -13512,13 +13512,13 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceGroupManagerUpdatePolicyInstanceRedistributionType { NONE = 0, PROACTIVE = 1 }
+	export enum InstanceGroupManagerUpdatePolicyInstanceRedistributionType { NONE = 'NONE', PROACTIVE = 'PROACTIVE' }
 
-	export enum InstanceGroupManagerUpdatePolicyMinimalAction { NONE = 0, REFRESH = 1, REPLACE = 2, RESTART = 3 }
+	export enum InstanceGroupManagerUpdatePolicyMinimalAction { NONE = 'NONE', REFRESH = 'REFRESH', REPLACE = 'REPLACE', RESTART = 'RESTART' }
 
-	export enum InstanceGroupManagerUpdatePolicyReplacementMethod { RECREATE = 0, SUBSTITUTE = 1 }
+	export enum InstanceGroupManagerUpdatePolicyReplacementMethod { RECREATE = 'RECREATE', SUBSTITUTE = 'SUBSTITUTE' }
 
-	export enum InstanceGroupManagerUpdatePolicyType { OPPORTUNISTIC = 0, PROACTIVE = 1 }
+	export enum InstanceGroupManagerUpdatePolicyType { OPPORTUNISTIC = 'OPPORTUNISTIC', PROACTIVE = 'PROACTIVE' }
 
 	export interface InstanceGroupManagerVersion {
 
@@ -14032,7 +14032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PerInstanceConfigStatus { APPLYING = 0, DELETING = 1, EFFECTIVE = 2, NONE = 3, UNAPPLIED = 4, UNAPPLIED_DELETION = 5 }
+	export enum PerInstanceConfigStatus { APPLYING = 'APPLYING', DELETING = 'DELETING', EFFECTIVE = 'EFFECTIVE', NONE = 'NONE', UNAPPLIED = 'UNAPPLIED', UNAPPLIED_DELETION = 'UNAPPLIED_DELETION' }
 
 	export interface InstanceGroupManagersDeleteInstancesRequest {
 
@@ -14159,7 +14159,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceManagedByIgmErrorInstanceActionDetailsAction { ABANDONING = 0, CREATING = 1, CREATING_WITHOUT_RETRIES = 2, DELETING = 3, NONE = 4, RECREATING = 5, REFRESHING = 6, RESTARTING = 7, RESUMING = 8, STARTING = 9, STOPPING = 10, SUSPENDING = 11, VERIFYING = 12 }
+	export enum InstanceManagedByIgmErrorInstanceActionDetailsAction { ABANDONING = 'ABANDONING', CREATING = 'CREATING', CREATING_WITHOUT_RETRIES = 'CREATING_WITHOUT_RETRIES', DELETING = 'DELETING', NONE = 'NONE', RECREATING = 'RECREATING', REFRESHING = 'REFRESHING', RESTARTING = 'RESTARTING', RESUMING = 'RESUMING', STARTING = 'STARTING', STOPPING = 'STOPPING', SUSPENDING = 'SUSPENDING', VERIFYING = 'VERIFYING' }
 
 	export interface ManagedInstanceVersion {
 
@@ -14289,7 +14289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedInstanceInstanceHealthDetailedHealthState { DRAINING = 0, HEALTHY = 1, TIMEOUT = 2, UNHEALTHY = 3, UNKNOWN = 4 }
+	export enum ManagedInstanceInstanceHealthDetailedHealthState { DRAINING = 'DRAINING', HEALTHY = 'HEALTHY', TIMEOUT = 'TIMEOUT', UNHEALTHY = 'UNHEALTHY', UNKNOWN = 'UNKNOWN' }
 
 	export interface ManagedInstanceLastAttempt {
 
@@ -14457,7 +14457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuotaExceededInfoRolloutStatus { IN_PROGRESS = 0, ROLLOUT_STATUS_UNSPECIFIED = 1 }
+	export enum QuotaExceededInfoRolloutStatus { IN_PROGRESS = 'IN_PROGRESS', ROLLOUT_STATUS_UNSPECIFIED = 'ROLLOUT_STATUS_UNSPECIFIED' }
 
 	export interface InstanceGroupManagersListPerInstanceConfigsResp {
 
@@ -14786,7 +14786,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceGroupsListInstancesRequestInstanceState { ALL = 0, RUNNING = 1 }
+	export enum InstanceGroupsListInstancesRequestInstanceState { ALL = 'ALL', RUNNING = 'RUNNING' }
 
 	export interface InstanceGroupsRemoveInstancesRequest {
 
@@ -15532,7 +15532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyType { HIERARCHY = 0, NETWORK = 1, NETWORK_REGIONAL = 2, UNSPECIFIED = 3 }
+	export enum InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyType { HIERARCHY = 'HIERARCHY', NETWORK = 'NETWORK', NETWORK_REGIONAL = 'NETWORK_REGIONAL', UNSPECIFIED = 'UNSPECIFIED' }
 
 	export interface InstancesRemoveResourcePoliciesRequest {
 
@@ -15992,15 +15992,15 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectOutageNotificationIssueType { IT_OUTAGE = 0, IT_PARTIAL_OUTAGE = 1, OUTAGE = 2, PARTIAL_OUTAGE = 3 }
+	export enum InterconnectOutageNotificationIssueType { IT_OUTAGE = 'IT_OUTAGE', IT_PARTIAL_OUTAGE = 'IT_PARTIAL_OUTAGE', OUTAGE = 'OUTAGE', PARTIAL_OUTAGE = 'PARTIAL_OUTAGE' }
 
-	export enum InterconnectOutageNotificationSource { GOOGLE = 0, NSRC_GOOGLE = 1 }
+	export enum InterconnectOutageNotificationSource { GOOGLE = 'GOOGLE', NSRC_GOOGLE = 'NSRC_GOOGLE' }
 
-	export enum InterconnectOutageNotificationState { ACTIVE = 0, CANCELLED = 1, COMPLETED = 2, NS_ACTIVE = 3, NS_CANCELED = 4 }
+	export enum InterconnectOutageNotificationState { ACTIVE = 'ACTIVE', CANCELLED = 'CANCELLED', COMPLETED = 'COMPLETED', NS_ACTIVE = 'NS_ACTIVE', NS_CANCELED = 'NS_CANCELED' }
 
-	export enum InterconnectInterconnectType { DEDICATED = 0, IT_PRIVATE = 1, PARTNER = 2 }
+	export enum InterconnectInterconnectType { DEDICATED = 'DEDICATED', IT_PRIVATE = 'IT_PRIVATE', PARTNER = 'PARTNER' }
 
-	export enum InterconnectLinkType { LINK_TYPE_ETHERNET_100G_LR = 0, LINK_TYPE_ETHERNET_10G_LR = 1 }
+	export enum InterconnectLinkType { LINK_TYPE_ETHERNET_100G_LR = 'LINK_TYPE_ETHERNET_100G_LR', LINK_TYPE_ETHERNET_10G_LR = 'LINK_TYPE_ETHERNET_10G_LR' }
 
 
 	/** Configuration information for enabling Media Access Control security (MACsec) on this Cloud Interconnect connection between Google and your on-premises router. */
@@ -16054,9 +16054,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectOperationalStatus { OS_ACTIVE = 0, OS_UNPROVISIONED = 1 }
+	export enum InterconnectOperationalStatus { OS_ACTIVE = 'OS_ACTIVE', OS_UNPROVISIONED = 'OS_UNPROVISIONED' }
 
-	export enum InterconnectState { ACTIVE = 0, UNPROVISIONED = 1 }
+	export enum InterconnectState { ACTIVE = 'ACTIVE', UNPROVISIONED = 'UNPROVISIONED' }
 
 
 	/** Represents an Interconnect Attachment (VLAN) resource. You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to your on-premises networks through an Interconnect. For more information, read Creating VLAN Attachments. */
@@ -16326,7 +16326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectAttachmentBandwidth { BPS_100M = 0, BPS_10G = 1, BPS_1G = 2, BPS_200M = 3, BPS_20G = 4, BPS_2G = 5, BPS_300M = 6, BPS_400M = 7, BPS_500M = 8, BPS_50G = 9, BPS_50M = 10, BPS_5G = 11 }
+	export enum InterconnectAttachmentBandwidth { BPS_100M = 'BPS_100M', BPS_10G = 'BPS_10G', BPS_1G = 'BPS_1G', BPS_200M = 'BPS_200M', BPS_20G = 'BPS_20G', BPS_2G = 'BPS_2G', BPS_300M = 'BPS_300M', BPS_400M = 'BPS_400M', BPS_500M = 'BPS_500M', BPS_50G = 'BPS_50G', BPS_50M = 'BPS_50M', BPS_5G = 'BPS_5G' }
 
 	export interface InterconnectAttachmentConfigurationConstraints {
 
@@ -16348,7 +16348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectAttachmentConfigurationConstraintsBgpMd5 { MD5_OPTIONAL = 0, MD5_REQUIRED = 1, MD5_UNSUPPORTED = 2 }
+	export enum InterconnectAttachmentConfigurationConstraintsBgpMd5 { MD5_OPTIONAL = 'MD5_OPTIONAL', MD5_REQUIRED = 'MD5_REQUIRED', MD5_UNSUPPORTED = 'MD5_UNSUPPORTED' }
 
 	export interface InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange {
 		max?: number | null;
@@ -16366,9 +16366,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectAttachmentEdgeAvailabilityDomain { AVAILABILITY_DOMAIN_1 = 0, AVAILABILITY_DOMAIN_2 = 1, AVAILABILITY_DOMAIN_ANY = 2 }
+	export enum InterconnectAttachmentEdgeAvailabilityDomain { AVAILABILITY_DOMAIN_1 = 'AVAILABILITY_DOMAIN_1', AVAILABILITY_DOMAIN_2 = 'AVAILABILITY_DOMAIN_2', AVAILABILITY_DOMAIN_ANY = 'AVAILABILITY_DOMAIN_ANY' }
 
-	export enum InterconnectAttachmentEncryption { IPSEC = 0, NONE = 1 }
+	export enum InterconnectAttachmentEncryption { IPSEC = 'IPSEC', NONE = 'NONE' }
 
 
 	/** Informational metadata about Partner attachments from Partners to display to customers. These fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER attachments. */
@@ -16426,9 +16426,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectAttachmentState { ACTIVE = 0, DEFUNCT = 1, PARTNER_REQUEST_RECEIVED = 2, PENDING_CUSTOMER = 3, PENDING_PARTNER = 4, STATE_UNSPECIFIED = 5, UNPROVISIONED = 6 }
+	export enum InterconnectAttachmentState { ACTIVE = 'ACTIVE', DEFUNCT = 'DEFUNCT', PARTNER_REQUEST_RECEIVED = 'PARTNER_REQUEST_RECEIVED', PENDING_CUSTOMER = 'PENDING_CUSTOMER', PENDING_PARTNER = 'PENDING_PARTNER', STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UNPROVISIONED = 'UNPROVISIONED' }
 
-	export enum InterconnectAttachmentType { DEDICATED = 0, PARTNER = 1, PARTNER_PROVIDER = 2 }
+	export enum InterconnectAttachmentType { DEDICATED = 'DEDICATED', PARTNER = 'PARTNER', PARTNER_PROVIDER = 'PARTNER_PROVIDER' }
 
 	export interface InterconnectAttachmentAggregatedList {
 
@@ -16767,9 +16767,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectDiagnosticsBundleAggregationType { BUNDLE_AGGREGATION_TYPE_LACP = 0, BUNDLE_AGGREGATION_TYPE_STATIC = 1 }
+	export enum InterconnectDiagnosticsBundleAggregationType { BUNDLE_AGGREGATION_TYPE_LACP = 'BUNDLE_AGGREGATION_TYPE_LACP', BUNDLE_AGGREGATION_TYPE_STATIC = 'BUNDLE_AGGREGATION_TYPE_STATIC' }
 
-	export enum InterconnectDiagnosticsBundleOperationalStatus { BUNDLE_OPERATIONAL_STATUS_DOWN = 0, BUNDLE_OPERATIONAL_STATUS_UP = 1 }
+	export enum InterconnectDiagnosticsBundleOperationalStatus { BUNDLE_OPERATIONAL_STATUS_DOWN = 'BUNDLE_OPERATIONAL_STATUS_DOWN', BUNDLE_OPERATIONAL_STATUS_UP = 'BUNDLE_OPERATIONAL_STATUS_UP' }
 
 	export interface InterconnectDiagnosticsLinkStatus {
 
@@ -16842,7 +16842,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectDiagnosticsLinkLACPStatusState { ACTIVE = 0, DETACHED = 1 }
+	export enum InterconnectDiagnosticsLinkLACPStatusState { ACTIVE = 'ACTIVE', DETACHED = 'DETACHED' }
 
 
 	/** Describes the status of MACsec encryption on the link. */
@@ -16872,7 +16872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectDiagnosticsLinkStatusOperationalStatus { LINK_OPERATIONAL_STATUS_DOWN = 0, LINK_OPERATIONAL_STATUS_UP = 1 }
+	export enum InterconnectDiagnosticsLinkStatusOperationalStatus { LINK_OPERATIONAL_STATUS_DOWN = 'LINK_OPERATIONAL_STATUS_DOWN', LINK_OPERATIONAL_STATUS_UP = 'LINK_OPERATIONAL_STATUS_UP' }
 
 	export interface InterconnectDiagnosticsLinkOpticalPower {
 
@@ -16898,7 +16898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectDiagnosticsLinkOpticalPowerState { HIGH_ALARM = 0, HIGH_WARNING = 1, LOW_ALARM = 2, LOW_WARNING = 3, OK = 4 }
+	export enum InterconnectDiagnosticsLinkOpticalPowerState { HIGH_ALARM = 'HIGH_ALARM', HIGH_WARNING = 'HIGH_WARNING', LOW_ALARM = 'LOW_ALARM', LOW_WARNING = 'LOW_WARNING', OK = 'OK' }
 
 
 	/** Response to the list request, and contains a list of interconnects. */
@@ -17127,7 +17127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectLocationContinent { AFRICA = 0, ASIA_PAC = 1, C_AFRICA = 2, C_ASIA_PAC = 3, C_EUROPE = 4, C_NORTH_AMERICA = 5, C_SOUTH_AMERICA = 6, EUROPE = 7, NORTH_AMERICA = 8, SOUTH_AMERICA = 9 }
+	export enum InterconnectLocationContinent { AFRICA = 'AFRICA', ASIA_PAC = 'ASIA_PAC', C_AFRICA = 'C_AFRICA', C_ASIA_PAC = 'C_ASIA_PAC', C_EUROPE = 'C_EUROPE', C_NORTH_AMERICA = 'C_NORTH_AMERICA', C_SOUTH_AMERICA = 'C_SOUTH_AMERICA', EUROPE = 'EUROPE', NORTH_AMERICA = 'NORTH_AMERICA', SOUTH_AMERICA = 'SOUTH_AMERICA' }
 
 
 	/** Information about any potential InterconnectAttachments between an Interconnect at a specific InterconnectLocation, and a specific Cloud Region. */
@@ -17164,9 +17164,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectLocationRegionInfoLocationPresence { GLOBAL = 0, LOCAL_REGION = 1, LP_GLOBAL = 2, LP_LOCAL_REGION = 3 }
+	export enum InterconnectLocationRegionInfoLocationPresence { GLOBAL = 'GLOBAL', LOCAL_REGION = 'LOCAL_REGION', LP_GLOBAL = 'LP_GLOBAL', LP_LOCAL_REGION = 'LP_LOCAL_REGION' }
 
-	export enum InterconnectLocationStatus { AVAILABLE = 0, CLOSED = 1 }
+	export enum InterconnectLocationStatus { AVAILABLE = 'AVAILABLE', CLOSED = 'CLOSED' }
 
 
 	/** Response to the list request, and contains a list of interconnect locations. */
@@ -17489,9 +17489,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectRemoteLocationConstraintsPortPairRemoteLocation { PORT_PAIR_MATCHING_REMOTE_LOCATION = 0, PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION = 1 }
+	export enum InterconnectRemoteLocationConstraintsPortPairRemoteLocation { PORT_PAIR_MATCHING_REMOTE_LOCATION = 'PORT_PAIR_MATCHING_REMOTE_LOCATION', PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION = 'PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION' }
 
-	export enum InterconnectRemoteLocationConstraintsPortPairVlan { PORT_PAIR_MATCHING_VLAN = 0, PORT_PAIR_UNCONSTRAINED_VLAN = 1 }
+	export enum InterconnectRemoteLocationConstraintsPortPairVlan { PORT_PAIR_MATCHING_VLAN = 'PORT_PAIR_MATCHING_VLAN', PORT_PAIR_UNCONSTRAINED_VLAN = 'PORT_PAIR_UNCONSTRAINED_VLAN' }
 
 	export interface InterconnectRemoteLocationConstraintsSubnetLengthRange {
 		max?: number | null;
@@ -17509,9 +17509,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InterconnectRemoteLocationContinent { AFRICA = 0, ASIA_PAC = 1, EUROPE = 2, NORTH_AMERICA = 3, SOUTH_AMERICA = 4 }
+	export enum InterconnectRemoteLocationContinent { AFRICA = 'AFRICA', ASIA_PAC = 'ASIA_PAC', EUROPE = 'EUROPE', NORTH_AMERICA = 'NORTH_AMERICA', SOUTH_AMERICA = 'SOUTH_AMERICA' }
 
-	export enum InterconnectRemoteLocationLacp { LACP_SUPPORTED = 0, LACP_UNSUPPORTED = 1 }
+	export enum InterconnectRemoteLocationLacp { LACP_SUPPORTED = 'LACP_SUPPORTED', LACP_UNSUPPORTED = 'LACP_UNSUPPORTED' }
 
 	export interface InterconnectRemoteLocationPermittedConnections {
 
@@ -17869,7 +17869,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseCodeState { DISABLED = 0, ENABLED = 1, RESTRICTED = 2, STATE_UNSPECIFIED = 3, TERMINATED = 4 }
+	export enum LicenseCodeState { DISABLED = 'DISABLED', ENABLED = 'ENABLED', RESTRICTED = 'RESTRICTED', STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', TERMINATED = 'TERMINATED' }
 
 	export interface LicensesListResponse {
 
@@ -18151,7 +18151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavedDiskStorageBytesStatus { UPDATING = 0, UP_TO_DATE = 1 }
+	export enum SavedDiskStorageBytesStatus { UPDATING = 'UPDATING', UP_TO_DATE = 'UP_TO_DATE' }
 
 	export interface SourceDiskEncryptionKey {
 		diskEncryptionKey?: CustomerEncryptionKey;
@@ -18367,7 +18367,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MachineImageStatus { CREATING = 0, DELETING = 1, INVALID = 2, READY = 3, UPLOADING = 4 }
+	export enum MachineImageStatus { CREATING = 'CREATING', DELETING = 'DELETING', INVALID = 'INVALID', READY = 'READY', UPLOADING = 'UPLOADING' }
 
 
 	/** A list of machine images. */
@@ -18950,9 +18950,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NatIpInfoNatIpInfoMappingMode { AUTO = 0, MANUAL = 1 }
+	export enum NatIpInfoNatIpInfoMappingMode { AUTO = 'AUTO', MANUAL = 'MANUAL' }
 
-	export enum NatIpInfoNatIpInfoMappingUsage { IN_USE = 0, UNUSED = 1 }
+	export enum NatIpInfoNatIpInfoMappingUsage { IN_USE = 'IN_USE', UNUSED = 'UNUSED' }
 
 	export interface NatIpInfoResponse {
 
@@ -19095,7 +19095,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkNetworkFirewallPolicyEnforcementOrder { AFTER_CLASSIC_FIREWALL = 0, BEFORE_CLASSIC_FIREWALL = 1 }
+	export enum NetworkNetworkFirewallPolicyEnforcementOrder { AFTER_CLASSIC_FIREWALL = 'AFTER_CLASSIC_FIREWALL', BEFORE_CLASSIC_FIREWALL = 'BEFORE_CLASSIC_FIREWALL' }
 
 
 	/** A network peering attached to a network resource. The message includes the peering name, peer network, peering state, and a flag indicating whether Google Compute Engine should automatically create routes for the peering. */
@@ -19195,7 +19195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkPeeringState { ACTIVE = 0, INACTIVE = 1 }
+	export enum NetworkPeeringState { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide. */
@@ -19218,7 +19218,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkRoutingConfigRoutingMode { GLOBAL = 0, REGIONAL = 1 }
+	export enum NetworkRoutingConfigRoutingMode { GLOBAL = 'GLOBAL', REGIONAL = 'REGIONAL' }
 
 
 	/** NetworkAttachments A network attachment resource ... */
@@ -19378,7 +19378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkAttachmentConnectionPreference { ACCEPT_AUTOMATIC = 0, ACCEPT_MANUAL = 1, INVALID = 2 }
+	export enum NetworkAttachmentConnectionPreference { ACCEPT_AUTOMATIC = 'ACCEPT_AUTOMATIC', ACCEPT_MANUAL = 'ACCEPT_MANUAL', INVALID = 'INVALID' }
 
 
 	/** Contains a list of NetworkAttachmentsScopedList. */
@@ -20122,7 +20122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkEndpointGroupNetworkEndpointType { GCE_VM_IP = 0, GCE_VM_IP_PORT = 1, INTERNET_FQDN_PORT = 2, INTERNET_IP_PORT = 3, NON_GCP_PRIVATE_IP_PORT = 4, PRIVATE_SERVICE_CONNECT = 5, SERVERLESS = 6 }
+	export enum NetworkEndpointGroupNetworkEndpointType { GCE_VM_IP = 'GCE_VM_IP', GCE_VM_IP_PORT = 'GCE_VM_IP_PORT', INTERNET_FQDN_PORT = 'INTERNET_FQDN_PORT', INTERNET_IP_PORT = 'INTERNET_IP_PORT', NON_GCP_PRIVATE_IP_PORT = 'NON_GCP_PRIVATE_IP_PORT', PRIVATE_SERVICE_CONNECT = 'PRIVATE_SERVICE_CONNECT', SERVERLESS = 'SERVERLESS' }
 
 
 	/** All data that is specifically relevant to only network endpoint groups of type PRIVATE_SERVICE_CONNECT. */
@@ -20466,7 +20466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkEndpointGroupsListEndpointsRequestHealthStatus { SHOW = 0, SKIP = 1 }
+	export enum NetworkEndpointGroupsListEndpointsRequestHealthStatus { SHOW = 'SHOW', SKIP = 'SKIP' }
 
 	export interface NetworkEndpointGroupsListNetworkEndpoints {
 
@@ -20762,7 +20762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyType { HIERARCHY = 0, NETWORK = 1, UNSPECIFIED = 2 }
+	export enum NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyType { HIERARCHY = 'HIERARCHY', NETWORK = 'NETWORK', UNSPECIFIED = 'UNSPECIFIED' }
 
 	export interface NetworksRemovePeeringRequest {
 
@@ -20929,9 +20929,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeGroupAutoscalingPolicyMode { MODE_UNSPECIFIED = 0, OFF = 1, ON = 2, ONLY_SCALE_OUT = 3 }
+	export enum NodeGroupAutoscalingPolicyMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', OFF = 'OFF', ON = 'ON', ONLY_SCALE_OUT = 'ONLY_SCALE_OUT' }
 
-	export enum NodeGroupMaintenancePolicy { DEFAULT = 0, MAINTENANCE_POLICY_UNSPECIFIED = 1, MIGRATE_WITHIN_NODE_GROUP = 2, RESTART_IN_PLACE = 3 }
+	export enum NodeGroupMaintenancePolicy { DEFAULT = 'DEFAULT', MAINTENANCE_POLICY_UNSPECIFIED = 'MAINTENANCE_POLICY_UNSPECIFIED', MIGRATE_WITHIN_NODE_GROUP = 'MIGRATE_WITHIN_NODE_GROUP', RESTART_IN_PLACE = 'RESTART_IN_PLACE' }
 
 
 	/** Time window specified for daily maintenance operations. GCE's internal maintenance will be performed within this window. */
@@ -20957,7 +20957,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeGroupStatus { CREATING = 0, DELETING = 1, INVALID = 2, READY = 3 }
+	export enum NodeGroupStatus { CREATING = 'CREATING', DELETING = 'DELETING', INVALID = 'INVALID', READY = 'READY' }
 
 	export interface NodeGroupAggregatedList {
 
@@ -21290,7 +21290,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeGroupNodeCpuOvercommitType { CPU_OVERCOMMIT_TYPE_UNSPECIFIED = 0, ENABLED = 1, NONE = 2 }
+	export enum NodeGroupNodeCpuOvercommitType { CPU_OVERCOMMIT_TYPE_UNSPECIFIED = 'CPU_OVERCOMMIT_TYPE_UNSPECIFIED', ENABLED = 'ENABLED', NONE = 'NONE' }
 
 	export interface ServerBinding {
 		type?: ServerBindingType | null;
@@ -21305,9 +21305,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerBindingType { RESTART_NODE_ON_ANY_SERVER = 0, RESTART_NODE_ON_MINIMAL_SERVERS = 1, SERVER_BINDING_TYPE_UNSPECIFIED = 2 }
+	export enum ServerBindingType { RESTART_NODE_ON_ANY_SERVER = 'RESTART_NODE_ON_ANY_SERVER', RESTART_NODE_ON_MINIMAL_SERVERS = 'RESTART_NODE_ON_MINIMAL_SERVERS', SERVER_BINDING_TYPE_UNSPECIFIED = 'SERVER_BINDING_TYPE_UNSPECIFIED' }
 
-	export enum NodeGroupNodeStatus { CREATING = 0, DELETING = 1, INVALID = 2, READY = 3, REPAIRING = 4 }
+	export enum NodeGroupNodeStatus { CREATING = 'CREATING', DELETING = 'DELETING', INVALID = 'INVALID', READY = 'READY', REPAIRING = 'REPAIRING' }
 
 	export interface NodeGroupsAddNodesRequest {
 
@@ -22741,9 +22741,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfoState { ABANDONED = 0, DONE = 1, FAILED = 2, PROPAGATED = 3, PROPAGATING = 4, UNSPECIFIED = 5 }
+	export enum SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfoState { ABANDONED = 'ABANDONED', DONE = 'DONE', FAILED = 'FAILED', PROPAGATED = 'PROPAGATED', PROPAGATING = 'PROPAGATING', UNSPECIFIED = 'UNSPECIFIED' }
 
-	export enum OperationStatus { DONE = 0, PENDING = 1, RUNNING = 2 }
+	export enum OperationStatus { DONE = 'DONE', PENDING = 'PENDING', RUNNING = 'RUNNING' }
 
 	export interface OperationWarnings {
 
@@ -23169,7 +23169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PacketMirroringEnable { FALSE = 0, TRUE = 1 }
+	export enum PacketMirroringEnable { FALSE = 'FALSE', TRUE = 'TRUE' }
 
 	export interface PacketMirroringFilter {
 
@@ -23194,7 +23194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PacketMirroringFilterDirection { BOTH = 0, EGRESS = 1, INGRESS = 2 }
+	export enum PacketMirroringFilterDirection { BOTH = 'BOTH', EGRESS = 'EGRESS', INGRESS = 'INGRESS' }
 
 	export interface PacketMirroringMirroredResourceInfo {
 
@@ -23833,7 +23833,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuotaMetric { A2_CPUS = 0, AFFINITY_GROUPS = 1, AUTOSCALERS = 2, BACKEND_BUCKETS = 3, BACKEND_SERVICES = 4, C2D_CPUS = 5, C2_CPUS = 6, C3_CPUS = 7, COMMITMENTS = 8, COMMITTED_A2_CPUS = 9, COMMITTED_C2D_CPUS = 10, COMMITTED_C2_CPUS = 11, COMMITTED_C3_CPUS = 12, COMMITTED_CPUS = 13, COMMITTED_E2_CPUS = 14, COMMITTED_LICENSES = 15, COMMITTED_LOCAL_SSD_TOTAL_GB = 16, COMMITTED_M3_CPUS = 17, COMMITTED_MEMORY_OPTIMIZED_CPUS = 18, COMMITTED_N2A_CPUS = 19, COMMITTED_N2D_CPUS = 20, COMMITTED_N2_CPUS = 21, COMMITTED_NVIDIA_A100_80GB_GPUS = 22, COMMITTED_NVIDIA_A100_GPUS = 23, COMMITTED_NVIDIA_H100_GPUS = 24, COMMITTED_NVIDIA_K80_GPUS = 25, COMMITTED_NVIDIA_L4_GPUS = 26, COMMITTED_NVIDIA_P100_GPUS = 27, COMMITTED_NVIDIA_P4_GPUS = 28, COMMITTED_NVIDIA_T4_GPUS = 29, COMMITTED_NVIDIA_V100_GPUS = 30, COMMITTED_T2A_CPUS = 31, COMMITTED_T2D_CPUS = 32, CPUS = 33, CPUS_ALL_REGIONS = 34, DISKS_TOTAL_GB = 35, E2_CPUS = 36, EXTERNAL_MANAGED_FORWARDING_RULES = 37, EXTERNAL_NETWORK_LB_FORWARDING_RULES = 38, EXTERNAL_PROTOCOL_FORWARDING_RULES = 39, EXTERNAL_VPN_GATEWAYS = 40, FIREWALLS = 41, FORWARDING_RULES = 42, GLOBAL_EXTERNAL_MANAGED_BACKEND_SERVICES = 43, GLOBAL_EXTERNAL_MANAGED_FORWARDING_RULES = 44, GLOBAL_EXTERNAL_PROXY_LB_BACKEND_SERVICES = 45, GLOBAL_INTERNAL_ADDRESSES = 46, GLOBAL_INTERNAL_MANAGED_BACKEND_SERVICES = 47, GLOBAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES = 48, GPUS_ALL_REGIONS = 49, HEALTH_CHECKS = 50, IMAGES = 51, INSTANCES = 52, INSTANCE_GROUPS = 53, INSTANCE_GROUP_MANAGERS = 54, INSTANCE_TEMPLATES = 55, INTERCONNECTS = 56, INTERCONNECT_ATTACHMENTS_PER_REGION = 57, INTERCONNECT_ATTACHMENTS_TOTAL_MBPS = 58, INTERCONNECT_TOTAL_GBPS = 59, INTERNAL_ADDRESSES = 60, INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES = 61, IN_PLACE_SNAPSHOTS = 62, IN_USE_ADDRESSES = 63, IN_USE_BACKUP_SCHEDULES = 64, IN_USE_SNAPSHOT_SCHEDULES = 65, LOCAL_SSD_TOTAL_GB = 66, M1_CPUS = 67, M2_CPUS = 68, M3_CPUS = 69, MACHINE_IMAGES = 70, N2A_CPUS = 71, N2D_CPUS = 72, N2_CPUS = 73, NETWORKS = 74, NETWORK_ATTACHMENTS = 75, NETWORK_ENDPOINT_GROUPS = 76, NETWORK_FIREWALL_POLICIES = 77, NET_LB_SECURITY_POLICIES_PER_REGION = 78, NET_LB_SECURITY_POLICY_RULES_PER_REGION = 79, NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION = 80, NODE_GROUPS = 81, NODE_TEMPLATES = 82, NVIDIA_A100_80GB_GPUS = 83, NVIDIA_A100_GPUS = 84, NVIDIA_K80_GPUS = 85, NVIDIA_L4_GPUS = 86, NVIDIA_P100_GPUS = 87, NVIDIA_P100_VWS_GPUS = 88, NVIDIA_P4_GPUS = 89, NVIDIA_P4_VWS_GPUS = 90, NVIDIA_T4_GPUS = 91, NVIDIA_T4_VWS_GPUS = 92, NVIDIA_V100_GPUS = 93, PACKET_MIRRORINGS = 94, PD_EXTREME_TOTAL_PROVISIONED_IOPS = 95, PREEMPTIBLE_CPUS = 96, PREEMPTIBLE_LOCAL_SSD_GB = 97, PREEMPTIBLE_NVIDIA_A100_80GB_GPUS = 98, PREEMPTIBLE_NVIDIA_A100_GPUS = 99, PREEMPTIBLE_NVIDIA_H100_GPUS = 100, PREEMPTIBLE_NVIDIA_K80_GPUS = 101, PREEMPTIBLE_NVIDIA_L4_GPUS = 102, PREEMPTIBLE_NVIDIA_P100_GPUS = 103, PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 104, PREEMPTIBLE_NVIDIA_P4_GPUS = 105, PREEMPTIBLE_NVIDIA_P4_VWS_GPUS = 106, PREEMPTIBLE_NVIDIA_T4_GPUS = 107, PREEMPTIBLE_NVIDIA_T4_VWS_GPUS = 108, PREEMPTIBLE_NVIDIA_V100_GPUS = 109, PREEMPTIBLE_TPU_LITE_DEVICE_V5 = 110, PREEMPTIBLE_TPU_LITE_PODSLICE_V5 = 111, PREEMPTIBLE_TPU_PODSLICE_V4 = 112, PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 113, PSC_INTERNAL_LB_FORWARDING_RULES = 114, PUBLIC_ADVERTISED_PREFIXES = 115, PUBLIC_DELEGATED_PREFIXES = 116, REGIONAL_AUTOSCALERS = 117, REGIONAL_EXTERNAL_MANAGED_BACKEND_SERVICES = 118, REGIONAL_EXTERNAL_NETWORK_LB_BACKEND_SERVICES = 119, REGIONAL_INSTANCE_GROUP_MANAGERS = 120, REGIONAL_INTERNAL_LB_BACKEND_SERVICES = 121, REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES = 122, RESERVATIONS = 123, RESOURCE_POLICIES = 124, ROUTERS = 125, ROUTES = 126, SECURITY_POLICIES = 127, SECURITY_POLICIES_PER_REGION = 128, SECURITY_POLICY_ADVANCED_RULES_PER_REGION = 129, SECURITY_POLICY_CEVAL_RULES = 130, SECURITY_POLICY_RULES = 131, SECURITY_POLICY_RULES_PER_REGION = 132, SERVICE_ATTACHMENTS = 133, SNAPSHOTS = 134, SSD_TOTAL_GB = 135, SSL_CERTIFICATES = 136, STATIC_ADDRESSES = 137, STATIC_BYOIP_ADDRESSES = 138, STATIC_EXTERNAL_IPV6_ADDRESS_RANGES = 139, SUBNETWORKS = 140, T2A_CPUS = 141, T2D_CPUS = 142, TARGET_HTTPS_PROXIES = 143, TARGET_HTTP_PROXIES = 144, TARGET_INSTANCES = 145, TARGET_POOLS = 146, TARGET_SSL_PROXIES = 147, TARGET_TCP_PROXIES = 148, TARGET_VPN_GATEWAYS = 149, TPU_LITE_DEVICE_V5 = 150, TPU_LITE_PODSLICE_V5 = 151, TPU_PODSLICE_V4 = 152, URL_MAPS = 153, VPN_GATEWAYS = 154, VPN_TUNNELS = 155, XPN_SERVICE_PROJECTS = 156 }
+	export enum QuotaMetric { A2_CPUS = 'A2_CPUS', AFFINITY_GROUPS = 'AFFINITY_GROUPS', AUTOSCALERS = 'AUTOSCALERS', BACKEND_BUCKETS = 'BACKEND_BUCKETS', BACKEND_SERVICES = 'BACKEND_SERVICES', C2D_CPUS = 'C2D_CPUS', C2_CPUS = 'C2_CPUS', C3_CPUS = 'C3_CPUS', COMMITMENTS = 'COMMITMENTS', COMMITTED_A2_CPUS = 'COMMITTED_A2_CPUS', COMMITTED_C2D_CPUS = 'COMMITTED_C2D_CPUS', COMMITTED_C2_CPUS = 'COMMITTED_C2_CPUS', COMMITTED_C3_CPUS = 'COMMITTED_C3_CPUS', COMMITTED_CPUS = 'COMMITTED_CPUS', COMMITTED_E2_CPUS = 'COMMITTED_E2_CPUS', COMMITTED_LICENSES = 'COMMITTED_LICENSES', COMMITTED_LOCAL_SSD_TOTAL_GB = 'COMMITTED_LOCAL_SSD_TOTAL_GB', COMMITTED_M3_CPUS = 'COMMITTED_M3_CPUS', COMMITTED_MEMORY_OPTIMIZED_CPUS = 'COMMITTED_MEMORY_OPTIMIZED_CPUS', COMMITTED_N2A_CPUS = 'COMMITTED_N2A_CPUS', COMMITTED_N2D_CPUS = 'COMMITTED_N2D_CPUS', COMMITTED_N2_CPUS = 'COMMITTED_N2_CPUS', COMMITTED_NVIDIA_A100_80GB_GPUS = 'COMMITTED_NVIDIA_A100_80GB_GPUS', COMMITTED_NVIDIA_A100_GPUS = 'COMMITTED_NVIDIA_A100_GPUS', COMMITTED_NVIDIA_H100_GPUS = 'COMMITTED_NVIDIA_H100_GPUS', COMMITTED_NVIDIA_K80_GPUS = 'COMMITTED_NVIDIA_K80_GPUS', COMMITTED_NVIDIA_L4_GPUS = 'COMMITTED_NVIDIA_L4_GPUS', COMMITTED_NVIDIA_P100_GPUS = 'COMMITTED_NVIDIA_P100_GPUS', COMMITTED_NVIDIA_P4_GPUS = 'COMMITTED_NVIDIA_P4_GPUS', COMMITTED_NVIDIA_T4_GPUS = 'COMMITTED_NVIDIA_T4_GPUS', COMMITTED_NVIDIA_V100_GPUS = 'COMMITTED_NVIDIA_V100_GPUS', COMMITTED_T2A_CPUS = 'COMMITTED_T2A_CPUS', COMMITTED_T2D_CPUS = 'COMMITTED_T2D_CPUS', CPUS = 'CPUS', CPUS_ALL_REGIONS = 'CPUS_ALL_REGIONS', DISKS_TOTAL_GB = 'DISKS_TOTAL_GB', E2_CPUS = 'E2_CPUS', EXTERNAL_MANAGED_FORWARDING_RULES = 'EXTERNAL_MANAGED_FORWARDING_RULES', EXTERNAL_NETWORK_LB_FORWARDING_RULES = 'EXTERNAL_NETWORK_LB_FORWARDING_RULES', EXTERNAL_PROTOCOL_FORWARDING_RULES = 'EXTERNAL_PROTOCOL_FORWARDING_RULES', EXTERNAL_VPN_GATEWAYS = 'EXTERNAL_VPN_GATEWAYS', FIREWALLS = 'FIREWALLS', FORWARDING_RULES = 'FORWARDING_RULES', GLOBAL_EXTERNAL_MANAGED_BACKEND_SERVICES = 'GLOBAL_EXTERNAL_MANAGED_BACKEND_SERVICES', GLOBAL_EXTERNAL_MANAGED_FORWARDING_RULES = 'GLOBAL_EXTERNAL_MANAGED_FORWARDING_RULES', GLOBAL_EXTERNAL_PROXY_LB_BACKEND_SERVICES = 'GLOBAL_EXTERNAL_PROXY_LB_BACKEND_SERVICES', GLOBAL_INTERNAL_ADDRESSES = 'GLOBAL_INTERNAL_ADDRESSES', GLOBAL_INTERNAL_MANAGED_BACKEND_SERVICES = 'GLOBAL_INTERNAL_MANAGED_BACKEND_SERVICES', GLOBAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES = 'GLOBAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES', GPUS_ALL_REGIONS = 'GPUS_ALL_REGIONS', HEALTH_CHECKS = 'HEALTH_CHECKS', IMAGES = 'IMAGES', INSTANCES = 'INSTANCES', INSTANCE_GROUPS = 'INSTANCE_GROUPS', INSTANCE_GROUP_MANAGERS = 'INSTANCE_GROUP_MANAGERS', INSTANCE_TEMPLATES = 'INSTANCE_TEMPLATES', INTERCONNECTS = 'INTERCONNECTS', INTERCONNECT_ATTACHMENTS_PER_REGION = 'INTERCONNECT_ATTACHMENTS_PER_REGION', INTERCONNECT_ATTACHMENTS_TOTAL_MBPS = 'INTERCONNECT_ATTACHMENTS_TOTAL_MBPS', INTERCONNECT_TOTAL_GBPS = 'INTERCONNECT_TOTAL_GBPS', INTERNAL_ADDRESSES = 'INTERNAL_ADDRESSES', INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES = 'INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES', IN_PLACE_SNAPSHOTS = 'IN_PLACE_SNAPSHOTS', IN_USE_ADDRESSES = 'IN_USE_ADDRESSES', IN_USE_BACKUP_SCHEDULES = 'IN_USE_BACKUP_SCHEDULES', IN_USE_SNAPSHOT_SCHEDULES = 'IN_USE_SNAPSHOT_SCHEDULES', LOCAL_SSD_TOTAL_GB = 'LOCAL_SSD_TOTAL_GB', M1_CPUS = 'M1_CPUS', M2_CPUS = 'M2_CPUS', M3_CPUS = 'M3_CPUS', MACHINE_IMAGES = 'MACHINE_IMAGES', N2A_CPUS = 'N2A_CPUS', N2D_CPUS = 'N2D_CPUS', N2_CPUS = 'N2_CPUS', NETWORKS = 'NETWORKS', NETWORK_ATTACHMENTS = 'NETWORK_ATTACHMENTS', NETWORK_ENDPOINT_GROUPS = 'NETWORK_ENDPOINT_GROUPS', NETWORK_FIREWALL_POLICIES = 'NETWORK_FIREWALL_POLICIES', NET_LB_SECURITY_POLICIES_PER_REGION = 'NET_LB_SECURITY_POLICIES_PER_REGION', NET_LB_SECURITY_POLICY_RULES_PER_REGION = 'NET_LB_SECURITY_POLICY_RULES_PER_REGION', NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION = 'NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION', NODE_GROUPS = 'NODE_GROUPS', NODE_TEMPLATES = 'NODE_TEMPLATES', NVIDIA_A100_80GB_GPUS = 'NVIDIA_A100_80GB_GPUS', NVIDIA_A100_GPUS = 'NVIDIA_A100_GPUS', NVIDIA_K80_GPUS = 'NVIDIA_K80_GPUS', NVIDIA_L4_GPUS = 'NVIDIA_L4_GPUS', NVIDIA_P100_GPUS = 'NVIDIA_P100_GPUS', NVIDIA_P100_VWS_GPUS = 'NVIDIA_P100_VWS_GPUS', NVIDIA_P4_GPUS = 'NVIDIA_P4_GPUS', NVIDIA_P4_VWS_GPUS = 'NVIDIA_P4_VWS_GPUS', NVIDIA_T4_GPUS = 'NVIDIA_T4_GPUS', NVIDIA_T4_VWS_GPUS = 'NVIDIA_T4_VWS_GPUS', NVIDIA_V100_GPUS = 'NVIDIA_V100_GPUS', PACKET_MIRRORINGS = 'PACKET_MIRRORINGS', PD_EXTREME_TOTAL_PROVISIONED_IOPS = 'PD_EXTREME_TOTAL_PROVISIONED_IOPS', PREEMPTIBLE_CPUS = 'PREEMPTIBLE_CPUS', PREEMPTIBLE_LOCAL_SSD_GB = 'PREEMPTIBLE_LOCAL_SSD_GB', PREEMPTIBLE_NVIDIA_A100_80GB_GPUS = 'PREEMPTIBLE_NVIDIA_A100_80GB_GPUS', PREEMPTIBLE_NVIDIA_A100_GPUS = 'PREEMPTIBLE_NVIDIA_A100_GPUS', PREEMPTIBLE_NVIDIA_H100_GPUS = 'PREEMPTIBLE_NVIDIA_H100_GPUS', PREEMPTIBLE_NVIDIA_K80_GPUS = 'PREEMPTIBLE_NVIDIA_K80_GPUS', PREEMPTIBLE_NVIDIA_L4_GPUS = 'PREEMPTIBLE_NVIDIA_L4_GPUS', PREEMPTIBLE_NVIDIA_P100_GPUS = 'PREEMPTIBLE_NVIDIA_P100_GPUS', PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 'PREEMPTIBLE_NVIDIA_P100_VWS_GPUS', PREEMPTIBLE_NVIDIA_P4_GPUS = 'PREEMPTIBLE_NVIDIA_P4_GPUS', PREEMPTIBLE_NVIDIA_P4_VWS_GPUS = 'PREEMPTIBLE_NVIDIA_P4_VWS_GPUS', PREEMPTIBLE_NVIDIA_T4_GPUS = 'PREEMPTIBLE_NVIDIA_T4_GPUS', PREEMPTIBLE_NVIDIA_T4_VWS_GPUS = 'PREEMPTIBLE_NVIDIA_T4_VWS_GPUS', PREEMPTIBLE_NVIDIA_V100_GPUS = 'PREEMPTIBLE_NVIDIA_V100_GPUS', PREEMPTIBLE_TPU_LITE_DEVICE_V5 = 'PREEMPTIBLE_TPU_LITE_DEVICE_V5', PREEMPTIBLE_TPU_LITE_PODSLICE_V5 = 'PREEMPTIBLE_TPU_LITE_PODSLICE_V5', PREEMPTIBLE_TPU_PODSLICE_V4 = 'PREEMPTIBLE_TPU_PODSLICE_V4', PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 'PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK', PSC_INTERNAL_LB_FORWARDING_RULES = 'PSC_INTERNAL_LB_FORWARDING_RULES', PUBLIC_ADVERTISED_PREFIXES = 'PUBLIC_ADVERTISED_PREFIXES', PUBLIC_DELEGATED_PREFIXES = 'PUBLIC_DELEGATED_PREFIXES', REGIONAL_AUTOSCALERS = 'REGIONAL_AUTOSCALERS', REGIONAL_EXTERNAL_MANAGED_BACKEND_SERVICES = 'REGIONAL_EXTERNAL_MANAGED_BACKEND_SERVICES', REGIONAL_EXTERNAL_NETWORK_LB_BACKEND_SERVICES = 'REGIONAL_EXTERNAL_NETWORK_LB_BACKEND_SERVICES', REGIONAL_INSTANCE_GROUP_MANAGERS = 'REGIONAL_INSTANCE_GROUP_MANAGERS', REGIONAL_INTERNAL_LB_BACKEND_SERVICES = 'REGIONAL_INTERNAL_LB_BACKEND_SERVICES', REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES = 'REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES', RESERVATIONS = 'RESERVATIONS', RESOURCE_POLICIES = 'RESOURCE_POLICIES', ROUTERS = 'ROUTERS', ROUTES = 'ROUTES', SECURITY_POLICIES = 'SECURITY_POLICIES', SECURITY_POLICIES_PER_REGION = 'SECURITY_POLICIES_PER_REGION', SECURITY_POLICY_ADVANCED_RULES_PER_REGION = 'SECURITY_POLICY_ADVANCED_RULES_PER_REGION', SECURITY_POLICY_CEVAL_RULES = 'SECURITY_POLICY_CEVAL_RULES', SECURITY_POLICY_RULES = 'SECURITY_POLICY_RULES', SECURITY_POLICY_RULES_PER_REGION = 'SECURITY_POLICY_RULES_PER_REGION', SERVICE_ATTACHMENTS = 'SERVICE_ATTACHMENTS', SNAPSHOTS = 'SNAPSHOTS', SSD_TOTAL_GB = 'SSD_TOTAL_GB', SSL_CERTIFICATES = 'SSL_CERTIFICATES', STATIC_ADDRESSES = 'STATIC_ADDRESSES', STATIC_BYOIP_ADDRESSES = 'STATIC_BYOIP_ADDRESSES', STATIC_EXTERNAL_IPV6_ADDRESS_RANGES = 'STATIC_EXTERNAL_IPV6_ADDRESS_RANGES', SUBNETWORKS = 'SUBNETWORKS', T2A_CPUS = 'T2A_CPUS', T2D_CPUS = 'T2D_CPUS', TARGET_HTTPS_PROXIES = 'TARGET_HTTPS_PROXIES', TARGET_HTTP_PROXIES = 'TARGET_HTTP_PROXIES', TARGET_INSTANCES = 'TARGET_INSTANCES', TARGET_POOLS = 'TARGET_POOLS', TARGET_SSL_PROXIES = 'TARGET_SSL_PROXIES', TARGET_TCP_PROXIES = 'TARGET_TCP_PROXIES', TARGET_VPN_GATEWAYS = 'TARGET_VPN_GATEWAYS', TPU_LITE_DEVICE_V5 = 'TPU_LITE_DEVICE_V5', TPU_LITE_PODSLICE_V5 = 'TPU_LITE_PODSLICE_V5', TPU_PODSLICE_V4 = 'TPU_PODSLICE_V4', URL_MAPS = 'URL_MAPS', VPN_GATEWAYS = 'VPN_GATEWAYS', VPN_TUNNELS = 'VPN_TUNNELS', XPN_SERVICE_PROJECTS = 'XPN_SERVICE_PROJECTS' }
 
 
 	/** The location in Cloud Storage and naming method of the daily usage report. Contains bucket_name and report_name prefix. */
@@ -23863,9 +23863,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectVmDnsSetting { GLOBAL_DEFAULT = 0, UNSPECIFIED_VM_DNS_SETTING = 1, ZONAL_DEFAULT = 2, ZONAL_ONLY = 3 }
+	export enum ProjectVmDnsSetting { GLOBAL_DEFAULT = 'GLOBAL_DEFAULT', UNSPECIFIED_VM_DNS_SETTING = 'UNSPECIFIED_VM_DNS_SETTING', ZONAL_DEFAULT = 'ZONAL_DEFAULT', ZONAL_ONLY = 'ZONAL_ONLY' }
 
-	export enum ProjectXpnProjectStatus { HOST = 0, UNSPECIFIED_XPN_PROJECT_STATUS = 1 }
+	export enum ProjectXpnProjectStatus { HOST = 'HOST', UNSPECIFIED_XPN_PROJECT_STATUS = 'UNSPECIFIED_XPN_PROJECT_STATUS' }
 
 	export interface ProjectsDisableXpnResourceRequest {
 
@@ -23908,7 +23908,7 @@ export namespace MyNS {
 
 	}
 
-	export enum XpnResourceIdType { PROJECT = 0, XPN_RESOURCE_TYPE_UNSPECIFIED = 1 }
+	export enum XpnResourceIdType { PROJECT = 'PROJECT', XPN_RESOURCE_TYPE_UNSPECIFIED = 'XPN_RESOURCE_TYPE_UNSPECIFIED' }
 
 	export interface ProjectsEnableXpnResourceRequest {
 
@@ -24092,9 +24092,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PublicAdvertisedPrefixByoipApiVersion { V1 = 0, V2 = 1 }
+	export enum PublicAdvertisedPrefixByoipApiVersion { V1 = 'V1', V2 = 'V2' }
 
-	export enum PublicAdvertisedPrefixPdpScope { GLOBAL = 0, GLOBAL_AND_REGIONAL = 1, REGIONAL = 2 }
+	export enum PublicAdvertisedPrefixPdpScope { GLOBAL = 'GLOBAL', GLOBAL_AND_REGIONAL = 'GLOBAL_AND_REGIONAL', REGIONAL = 'REGIONAL' }
 
 
 	/** Represents a CIDR range which can be used to assign addresses. */
@@ -24145,7 +24145,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublicAdvertisedPrefixStatus { ANNOUNCED_TO_INTERNET = 0, INITIAL = 1, PREFIX_CONFIGURATION_COMPLETE = 2, PREFIX_CONFIGURATION_IN_PROGRESS = 3, PREFIX_REMOVAL_IN_PROGRESS = 4, PTR_CONFIGURED = 5, READY_TO_ANNOUNCE = 6, REVERSE_DNS_LOOKUP_FAILED = 7, VALIDATED = 8 }
+	export enum PublicAdvertisedPrefixStatus { ANNOUNCED_TO_INTERNET = 'ANNOUNCED_TO_INTERNET', INITIAL = 'INITIAL', PREFIX_CONFIGURATION_COMPLETE = 'PREFIX_CONFIGURATION_COMPLETE', PREFIX_CONFIGURATION_IN_PROGRESS = 'PREFIX_CONFIGURATION_IN_PROGRESS', PREFIX_REMOVAL_IN_PROGRESS = 'PREFIX_REMOVAL_IN_PROGRESS', PTR_CONFIGURED = 'PTR_CONFIGURED', READY_TO_ANNOUNCE = 'READY_TO_ANNOUNCE', REVERSE_DNS_LOOKUP_FAILED = 'REVERSE_DNS_LOOKUP_FAILED', VALIDATED = 'VALIDATED' }
 
 	export interface PublicAdvertisedPrefixList {
 
@@ -24413,7 +24413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublicDelegatedPrefixStatus { ANNOUNCED = 0, ANNOUNCED_TO_GOOGLE = 1, ANNOUNCED_TO_INTERNET = 2, DELETING = 3, INITIALIZING = 4, READY_TO_ANNOUNCE = 5 }
+	export enum PublicDelegatedPrefixStatus { ANNOUNCED = 'ANNOUNCED', ANNOUNCED_TO_GOOGLE = 'ANNOUNCED_TO_GOOGLE', ANNOUNCED_TO_INTERNET = 'ANNOUNCED_TO_INTERNET', DELETING = 'DELETING', INITIALIZING = 'INITIALIZING', READY_TO_ANNOUNCE = 'READY_TO_ANNOUNCE' }
 
 	export interface PublicDelegatedPrefixAggregatedList {
 
@@ -24758,7 +24758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionStatus { DOWN = 0, UP = 1 }
+	export enum RegionStatus { DOWN = 'DOWN', UP = 'UP' }
 
 	export interface RegionAddressesMoveRequest {
 
@@ -26550,7 +26550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourcePolicyGroupPlacementPolicyCollocation { COLLOCATED = 0, UNSPECIFIED_COLLOCATION = 1 }
+	export enum ResourcePolicyGroupPlacementPolicyCollocation { COLLOCATED = 'COLLOCATED', UNSPECIFIED_COLLOCATION = 'UNSPECIFIED_COLLOCATION' }
 
 
 	/** An InstanceSchedulePolicy specifies when and how frequent certain operations are performed on the instance. */
@@ -26704,7 +26704,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourcePolicySnapshotSchedulePolicyRetentionPolicyOnSourceDiskDelete { APPLY_RETENTION_POLICY = 0, KEEP_AUTO_SNAPSHOTS = 1, UNSPECIFIED_ON_SOURCE_DISK_DELETE = 2 }
+	export enum ResourcePolicySnapshotSchedulePolicyRetentionPolicyOnSourceDiskDelete { APPLY_RETENTION_POLICY = 'APPLY_RETENTION_POLICY', KEEP_AUTO_SNAPSHOTS = 'KEEP_AUTO_SNAPSHOTS', UNSPECIFIED_ON_SOURCE_DISK_DELETE = 'UNSPECIFIED_ON_SOURCE_DISK_DELETE' }
 
 
 	/** A schedule for disks where the schedueled operations are performed. */
@@ -26847,7 +26847,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourcePolicyWeeklyCycleDayOfWeekDay { FRIDAY = 0, INVALID = 1, MONDAY = 2, SATURDAY = 3, SUNDAY = 4, THURSDAY = 5, TUESDAY = 6, WEDNESDAY = 7 }
+	export enum ResourcePolicyWeeklyCycleDayOfWeekDay { FRIDAY = 'FRIDAY', INVALID = 'INVALID', MONDAY = 'MONDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY', THURSDAY = 'THURSDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY' }
 
 
 	/** Specified snapshot properties for scheduled snapshots created by this policy. */
@@ -26887,7 +26887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourcePolicyStatus { CREATING = 0, DELETING = 1, EXPIRED = 2, INVALID = 3, READY = 4 }
+	export enum ResourcePolicyStatus { CREATING = 'CREATING', DELETING = 'DELETING', EXPIRED = 'EXPIRED', INVALID = 'INVALID', READY = 'READY' }
 
 	export interface ResourcePoliciesScopedListWarning {
 
@@ -27323,11 +27323,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteAsPathPathSegmentType { AS_CONFED_SEQUENCE = 0, AS_CONFED_SET = 1, AS_SEQUENCE = 2, AS_SET = 3 }
+	export enum RouteAsPathPathSegmentType { AS_CONFED_SEQUENCE = 'AS_CONFED_SEQUENCE', AS_CONFED_SET = 'AS_CONFED_SET', AS_SEQUENCE = 'AS_SEQUENCE', AS_SET = 'AS_SET' }
 
-	export enum RouteRouteStatus { ACTIVE = 0, DROPPED = 1, INACTIVE = 2, PENDING = 3 }
+	export enum RouteRouteStatus { ACTIVE = 'ACTIVE', DROPPED = 'DROPPED', INACTIVE = 'INACTIVE', PENDING = 'PENDING' }
 
-	export enum RouteRouteType { BGP = 0, STATIC = 1, SUBNET = 2, TRANSIT = 3 }
+	export enum RouteRouteType { BGP = 'BGP', STATIC = 'STATIC', SUBNET = 'SUBNET', TRANSIT = 'TRANSIT' }
 
 	export interface RouteWarnings {
 
@@ -27606,7 +27606,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouterBgpAdvertiseMode { CUSTOM = 0, DEFAULT = 1 }
+	export enum RouterBgpAdvertiseMode { CUSTOM = 'CUSTOM', DEFAULT = 'DEFAULT' }
 
 
 	/** Description-tagged IP ranges for the router to advertise. */
@@ -27816,7 +27816,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouterBgpPeerManagementType { MANAGED_BY_ATTACHMENT = 0, MANAGED_BY_USER = 1 }
+	export enum RouterBgpPeerManagementType { MANAGED_BY_ATTACHMENT = 'MANAGED_BY_ATTACHMENT', MANAGED_BY_USER = 'MANAGED_BY_USER' }
 
 	export interface RouterInterface {
 
@@ -28062,9 +28062,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RouterNatLogConfigFilter { ALL = 0, ERRORS_ONLY = 1, TRANSLATIONS_ONLY = 2 }
+	export enum RouterNatLogConfigFilter { ALL = 'ALL', ERRORS_ONLY = 'ERRORS_ONLY', TRANSLATIONS_ONLY = 'TRANSLATIONS_ONLY' }
 
-	export enum RouterNatNatIpAllocateOption { AUTO_ONLY = 0, MANUAL_ONLY = 1 }
+	export enum RouterNatNatIpAllocateOption { AUTO_ONLY = 'AUTO_ONLY', MANUAL_ONLY = 'MANUAL_ONLY' }
 
 	export interface RouterNatRule {
 		action?: RouterNatRuleAction;
@@ -28120,7 +28120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouterNatSourceSubnetworkIpRangesToNat { ALL_SUBNETWORKS_ALL_IP_RANGES = 0, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES = 1, LIST_OF_SUBNETWORKS = 2 }
+	export enum RouterNatSourceSubnetworkIpRangesToNat { ALL_SUBNETWORKS_ALL_IP_RANGES = 'ALL_SUBNETWORKS_ALL_IP_RANGES', ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES = 'ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES', LIST_OF_SUBNETWORKS = 'LIST_OF_SUBNETWORKS' }
 
 
 	/** Defines the IP ranges that want to use NAT for a subnetwork. */
@@ -28149,7 +28149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouterNatType { PRIVATE = 0, PUBLIC = 1 }
+	export enum RouterNatType { PRIVATE = 'PRIVATE', PUBLIC = 'PUBLIC' }
 
 
 	/** Contains a list of routers. */
@@ -28569,9 +28569,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RouterStatusBgpPeerStatusStatus { DOWN = 0, UNKNOWN = 1, UP = 2 }
+	export enum RouterStatusBgpPeerStatusStatus { DOWN = 'DOWN', UNKNOWN = 'UNKNOWN', UP = 'UP' }
 
-	export enum RouterStatusBgpPeerStatusStatusReason { MD5_AUTH_INTERNAL_PROBLEM = 0, STATUS_REASON_UNSPECIFIED = 1 }
+	export enum RouterStatusBgpPeerStatusStatusReason { MD5_AUTH_INTERNAL_PROBLEM = 'MD5_AUTH_INTERNAL_PROBLEM', STATUS_REASON_UNSPECIFIED = 'STATUS_REASON_UNSPECIFIED' }
 
 
 	/** Status of a NAT contained in this router. */
@@ -28947,7 +28947,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigRuleVisibility { PREMIUM = 0, STANDARD = 1 }
+	export enum SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigRuleVisibility { PREMIUM = 'PREMIUM', STANDARD = 'STANDARD' }
 
 	export interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig {
 		autoDeployConfidenceThreshold?: number | null;
@@ -29011,9 +29011,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyAdvancedOptionsConfigJsonParsing { DISABLED = 0, STANDARD = 1, STANDARD_WITH_GRAPHQL = 2 }
+	export enum SecurityPolicyAdvancedOptionsConfigJsonParsing { DISABLED = 'DISABLED', STANDARD = 'STANDARD', STANDARD_WITH_GRAPHQL = 'STANDARD_WITH_GRAPHQL' }
 
-	export enum SecurityPolicyAdvancedOptionsConfigLogLevel { NORMAL = 0, VERBOSE = 1 }
+	export enum SecurityPolicyAdvancedOptionsConfigLogLevel { NORMAL = 'NORMAL', VERBOSE = 'VERBOSE' }
 
 	export interface SecurityPolicyDdosProtectionConfig {
 		ddosProtection?: SecurityPolicyDdosProtectionConfigDdosProtection | null;
@@ -29028,7 +29028,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyDdosProtectionConfigDdosProtection { ADVANCED = 0, STANDARD = 1 }
+	export enum SecurityPolicyDdosProtectionConfigDdosProtection { ADVANCED = 'ADVANCED', STANDARD = 'STANDARD' }
 
 	export interface SecurityPolicyRecaptchaOptionsConfig {
 
@@ -29209,7 +29209,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyRuleMatcherVersionedExpr { SRC_IPS_V1 = 0 }
+	export enum SecurityPolicyRuleMatcherVersionedExpr { SRC_IPS_V1 = 'SRC_IPS_V1' }
 
 
 	/** Represents a match condition that incoming network traffic is evaluated against. */
@@ -29338,7 +29338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOp { CONTAINS = 0, ENDS_WITH = 1, EQUALS = 2, EQUALS_ANY = 3, STARTS_WITH = 4 }
+	export enum SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOp { CONTAINS = 'CONTAINS', ENDS_WITH = 'ENDS_WITH', EQUALS = 'EQUALS', EQUALS_ANY = 'EQUALS_ANY', STARTS_WITH = 'STARTS_WITH' }
 
 	export interface SecurityPolicyRuleRateLimitOptions {
 
@@ -29415,7 +29415,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyRuleRateLimitOptionsEnforceOnKey { ALL = 0, HTTP_COOKIE = 1, HTTP_HEADER = 2, HTTP_PATH = 3, IP = 4, REGION_CODE = 5, SNI = 6, TLS_JA3_FINGERPRINT = 7, USER_IP = 8, XFF_IP = 9 }
+	export enum SecurityPolicyRuleRateLimitOptionsEnforceOnKey { ALL = 'ALL', HTTP_COOKIE = 'HTTP_COOKIE', HTTP_HEADER = 'HTTP_HEADER', HTTP_PATH = 'HTTP_PATH', IP = 'IP', REGION_CODE = 'REGION_CODE', SNI = 'SNI', TLS_JA3_FINGERPRINT = 'TLS_JA3_FINGERPRINT', USER_IP = 'USER_IP', XFF_IP = 'XFF_IP' }
 
 	export interface SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig {
 
@@ -29465,9 +29465,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyRuleRedirectOptionsType { EXTERNAL_302 = 0, GOOGLE_RECAPTCHA = 1 }
+	export enum SecurityPolicyRuleRedirectOptionsType { EXTERNAL_302 = 'EXTERNAL_302', GOOGLE_RECAPTCHA = 'GOOGLE_RECAPTCHA' }
 
-	export enum SecurityPolicyType { CLOUD_ARMOR = 0, CLOUD_ARMOR_EDGE = 1, CLOUD_ARMOR_NETWORK = 2 }
+	export enum SecurityPolicyType { CLOUD_ARMOR = 'CLOUD_ARMOR', CLOUD_ARMOR_EDGE = 'CLOUD_ARMOR_EDGE', CLOUD_ARMOR_NETWORK = 'CLOUD_ARMOR_NETWORK' }
 
 	export interface SecurityPolicyUserDefinedField {
 
@@ -29514,7 +29514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyUserDefinedFieldBase { IPV4 = 0, IPV6 = 1, TCP = 2, UDP = 3 }
+	export enum SecurityPolicyUserDefinedFieldBase { IPV4 = 'IPV4', IPV6 = 'IPV6', TCP = 'TCP', UDP = 'UDP' }
 
 	export interface SecurityPoliciesScopedListWarning {
 
@@ -29953,7 +29953,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceAttachmentConnectionPreference { ACCEPT_AUTOMATIC = 0, ACCEPT_MANUAL = 1, CONNECTION_PREFERENCE_UNSPECIFIED = 2 }
+	export enum ServiceAttachmentConnectionPreference { ACCEPT_AUTOMATIC = 'ACCEPT_AUTOMATIC', ACCEPT_MANUAL = 'ACCEPT_MANUAL', CONNECTION_PREFERENCE_UNSPECIFIED = 'CONNECTION_PREFERENCE_UNSPECIFIED' }
 
 	export interface ServiceAttachmentConsumerProjectLimit {
 
@@ -30570,9 +30570,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotSnapshotType { ARCHIVE = 0, STANDARD = 1 }
+	export enum SnapshotSnapshotType { ARCHIVE = 'ARCHIVE', STANDARD = 'STANDARD' }
 
-	export enum SnapshotStatus { CREATING = 0, DELETING = 1, FAILED = 2, READY = 3, UPLOADING = 4 }
+	export enum SnapshotStatus { CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', READY = 'READY', UPLOADING = 'UPLOADING' }
 
 
 	/** Contains a list of Snapshot resources. */
@@ -30729,7 +30729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotSettingsStorageLocationSettingsPolicy { LOCAL_REGION = 0, NEAREST_MULTI_REGION = 1, SPECIFIC_LOCATIONS = 2, STORAGE_LOCATION_POLICY_UNSPECIFIED = 3 }
+	export enum SnapshotSettingsStorageLocationSettingsPolicy { LOCAL_REGION = 'LOCAL_REGION', NEAREST_MULTI_REGION = 'NEAREST_MULTI_REGION', SPECIFIC_LOCATIONS = 'SPECIFIC_LOCATIONS', STORAGE_LOCATION_POLICY_UNSPECIFIED = 'STORAGE_LOCATION_POLICY_UNSPECIFIED' }
 
 
 	/** Represents an SSL certificate resource. Google Compute Engine has two SSL certificate resources: * [Global](/compute/docs/reference/rest/v1/sslCertificates) * [Regional](/compute/docs/reference/rest/v1/regionSslCertificates) The global SSL certificates (sslCertificates) are used by: - Global external Application Load Balancers - Classic Application Load Balancers - Proxy Network Load Balancers (with target SSL proxies) The regional SSL certificates (regionSslCertificates) are used by: - Regional external Application Load Balancers - Regional internal Application Load Balancers Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read Creating and using SSL certificates, SSL certificates quotas and limits, and Troubleshooting SSL certificates. */
@@ -30862,9 +30862,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SslCertificateManagedSslCertificateDomainStatus { ACTIVE = 0, DOMAIN_STATUS_UNSPECIFIED = 1, FAILED_CAA_CHECKING = 2, FAILED_CAA_FORBIDDEN = 3, FAILED_NOT_VISIBLE = 4, FAILED_RATE_LIMITED = 5, PROVISIONING = 6 }
+	export enum SslCertificateManagedSslCertificateDomainStatus { ACTIVE = 'ACTIVE', DOMAIN_STATUS_UNSPECIFIED = 'DOMAIN_STATUS_UNSPECIFIED', FAILED_CAA_CHECKING = 'FAILED_CAA_CHECKING', FAILED_CAA_FORBIDDEN = 'FAILED_CAA_FORBIDDEN', FAILED_NOT_VISIBLE = 'FAILED_NOT_VISIBLE', FAILED_RATE_LIMITED = 'FAILED_RATE_LIMITED', PROVISIONING = 'PROVISIONING' }
 
-	export enum SslCertificateManagedSslCertificateStatus { ACTIVE = 0, MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 1, PROVISIONING = 2, PROVISIONING_FAILED = 3, PROVISIONING_FAILED_PERMANENTLY = 4, RENEWAL_FAILED = 5 }
+	export enum SslCertificateManagedSslCertificateStatus { ACTIVE = 'ACTIVE', MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 'MANAGED_CERTIFICATE_STATUS_UNSPECIFIED', PROVISIONING = 'PROVISIONING', PROVISIONING_FAILED = 'PROVISIONING_FAILED', PROVISIONING_FAILED_PERMANENTLY = 'PROVISIONING_FAILED_PERMANENTLY', RENEWAL_FAILED = 'RENEWAL_FAILED' }
 
 
 	/** Configuration and status of a self-managed SSL certificate. */
@@ -30894,7 +30894,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslCertificateType { MANAGED = 0, SELF_MANAGED = 1, TYPE_UNSPECIFIED = 2 }
+	export enum SslCertificateType { MANAGED = 'MANAGED', SELF_MANAGED = 'SELF_MANAGED', TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED' }
 
 	export interface SslCertificateAggregatedList {
 
@@ -31327,9 +31327,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SslPolicyMinTlsVersion { TLS_1_0 = 0, TLS_1_1 = 1, TLS_1_2 = 2 }
+	export enum SslPolicyMinTlsVersion { TLS_1_0 = 'TLS_1_0', TLS_1_1 = 'TLS_1_1', TLS_1_2 = 'TLS_1_2' }
 
-	export enum SslPolicyProfile { COMPATIBLE = 0, CUSTOM = 1, MODERN = 2, RESTRICTED = 3 }
+	export enum SslPolicyProfile { COMPATIBLE = 'COMPATIBLE', CUSTOM = 'CUSTOM', MODERN = 'MODERN', RESTRICTED = 'RESTRICTED' }
 
 	export interface SslPolicyWarnings {
 
@@ -31840,15 +31840,15 @@ export namespace MyNS {
 
 	}
 
-	export enum SubnetworkLogConfigAggregationInterval { INTERVAL_10_MIN = 0, INTERVAL_15_MIN = 1, INTERVAL_1_MIN = 2, INTERVAL_30_SEC = 3, INTERVAL_5_MIN = 4, INTERVAL_5_SEC = 5 }
+	export enum SubnetworkLogConfigAggregationInterval { INTERVAL_10_MIN = 'INTERVAL_10_MIN', INTERVAL_15_MIN = 'INTERVAL_15_MIN', INTERVAL_1_MIN = 'INTERVAL_1_MIN', INTERVAL_30_SEC = 'INTERVAL_30_SEC', INTERVAL_5_MIN = 'INTERVAL_5_MIN', INTERVAL_5_SEC = 'INTERVAL_5_SEC' }
 
-	export enum SubnetworkLogConfigMetadata { CUSTOM_METADATA = 0, EXCLUDE_ALL_METADATA = 1, INCLUDE_ALL_METADATA = 2 }
+	export enum SubnetworkLogConfigMetadata { CUSTOM_METADATA = 'CUSTOM_METADATA', EXCLUDE_ALL_METADATA = 'EXCLUDE_ALL_METADATA', INCLUDE_ALL_METADATA = 'INCLUDE_ALL_METADATA' }
 
-	export enum SubnetworkPrivateIpv6GoogleAccess { DISABLE_GOOGLE_ACCESS = 0, ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 1, ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 2 }
+	export enum SubnetworkPrivateIpv6GoogleAccess { DISABLE_GOOGLE_ACCESS = 'DISABLE_GOOGLE_ACCESS', ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 'ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE', ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 'ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE' }
 
-	export enum SubnetworkPurpose { GLOBAL_MANAGED_PROXY = 0, INTERNAL_HTTPS_LOAD_BALANCER = 1, PRIVATE = 2, PRIVATE_NAT = 3, PRIVATE_RFC_1918 = 4, PRIVATE_SERVICE_CONNECT = 5, REGIONAL_MANAGED_PROXY = 6 }
+	export enum SubnetworkPurpose { GLOBAL_MANAGED_PROXY = 'GLOBAL_MANAGED_PROXY', INTERNAL_HTTPS_LOAD_BALANCER = 'INTERNAL_HTTPS_LOAD_BALANCER', PRIVATE = 'PRIVATE', PRIVATE_NAT = 'PRIVATE_NAT', PRIVATE_RFC_1918 = 'PRIVATE_RFC_1918', PRIVATE_SERVICE_CONNECT = 'PRIVATE_SERVICE_CONNECT', REGIONAL_MANAGED_PROXY = 'REGIONAL_MANAGED_PROXY' }
 
-	export enum SubnetworkRole { ACTIVE = 0, BACKUP = 1 }
+	export enum SubnetworkRole { ACTIVE = 'ACTIVE', BACKUP = 'BACKUP' }
 
 
 	/** Represents a secondary IP range of a subnetwork. */
@@ -31885,7 +31885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubnetworkState { DRAINING = 0, READY = 1 }
+	export enum SubnetworkState { DRAINING = 'DRAINING', READY = 'READY' }
 
 	export interface SubnetworkAggregatedList {
 
@@ -32814,7 +32814,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetHttpsProxyQuicOverride { DISABLE = 0, ENABLE = 1, NONE = 2 }
+	export enum TargetHttpsProxyQuicOverride { DISABLE = 'DISABLE', ENABLE = 'ENABLE', NONE = 'NONE' }
 
 	export interface TargetHttpsProxiesScopedListWarning {
 
@@ -33206,7 +33206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetInstanceNatPolicy { NO_NAT = 0 }
+	export enum TargetInstanceNatPolicy { NO_NAT = 'NO_NAT' }
 
 	export interface TargetInstanceAggregatedList {
 
@@ -34657,7 +34657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetVpnGatewayStatus { CREATING = 0, DELETING = 1, FAILED = 2, READY = 3 }
+	export enum TargetVpnGatewayStatus { CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', READY = 'READY' }
 
 	export interface TargetVpnGatewayAggregatedList {
 
@@ -36250,9 +36250,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VpnGatewayStatusHighAvailabilityRequirementStateState { CONNECTION_REDUNDANCY_MET = 0, CONNECTION_REDUNDANCY_NOT_MET = 1 }
+	export enum VpnGatewayStatusHighAvailabilityRequirementStateState { CONNECTION_REDUNDANCY_MET = 'CONNECTION_REDUNDANCY_MET', CONNECTION_REDUNDANCY_NOT_MET = 'CONNECTION_REDUNDANCY_NOT_MET' }
 
-	export enum VpnGatewayStatusHighAvailabilityRequirementStateUnsatisfiedReason { INCOMPLETE_TUNNELS_COVERAGE = 0 }
+	export enum VpnGatewayStatusHighAvailabilityRequirementStateUnsatisfiedReason { INCOMPLETE_TUNNELS_COVERAGE = 'INCOMPLETE_TUNNELS_COVERAGE' }
 
 
 	/** Contains some information about a VPN tunnel. */
@@ -36474,7 +36474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpnTunnelStatus { ALLOCATING_RESOURCES = 0, AUTHORIZATION_ERROR = 1, DEPROVISIONING = 2, ESTABLISHED = 3, FAILED = 4, FIRST_HANDSHAKE = 5, NEGOTIATION_FAILURE = 6, NETWORK_ERROR = 7, NO_INCOMING_PACKETS = 8, PROVISIONING = 9, REJECTED = 10, STOPPED = 11, WAITING_FOR_FULL_CONFIG = 12 }
+	export enum VpnTunnelStatus { ALLOCATING_RESOURCES = 'ALLOCATING_RESOURCES', AUTHORIZATION_ERROR = 'AUTHORIZATION_ERROR', DEPROVISIONING = 'DEPROVISIONING', ESTABLISHED = 'ESTABLISHED', FAILED = 'FAILED', FIRST_HANDSHAKE = 'FIRST_HANDSHAKE', NEGOTIATION_FAILURE = 'NEGOTIATION_FAILURE', NETWORK_ERROR = 'NETWORK_ERROR', NO_INCOMING_PACKETS = 'NO_INCOMING_PACKETS', PROVISIONING = 'PROVISIONING', REJECTED = 'REJECTED', STOPPED = 'STOPPED', WAITING_FOR_FULL_CONFIG = 'WAITING_FOR_FULL_CONFIG' }
 
 	export interface VpnTunnelAggregatedList {
 
@@ -46667,9 +46667,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Compute_networks_listPeeringRoutesDirection { INCOMING = 0, OUTGOING = 1 }
+	export enum Compute_networks_listPeeringRoutesDirection { INCOMING = 'INCOMING', OUTGOING = 'OUTGOING' }
 
-	export enum Compute_instances_updateMinimalAction { INVALID = 0, NO_EFFECT = 1, REFRESH = 2, RESTART = 3 }
+	export enum Compute_instances_updateMinimalAction { INVALID = 'INVALID', NO_EFFECT = 'NO_EFFECT', REFRESH = 'REFRESH', RESTART = 'RESTART' }
 
 }
 

@@ -106,11 +106,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MatchFieldType { URI = 0, QUERY_STRING = 1, HEADER = 2, METHOD = 3, BODY = 4, SINGLE_QUERY_ARG = 5, ALL_QUERY_ARGS = 6 }
+	export enum MatchFieldType { URI = 'URI', QUERY_STRING = 'QUERY_STRING', HEADER = 'HEADER', METHOD = 'METHOD', BODY = 'BODY', SINGLE_QUERY_ARG = 'SINGLE_QUERY_ARG', ALL_QUERY_ARGS = 'ALL_QUERY_ARGS' }
 
-	export enum TextTransformation { NONE = 0, COMPRESS_WHITE_SPACE = 1, HTML_ENTITY_DECODE = 2, LOWERCASE = 3, CMD_LINE = 4, URL_DECODE = 5 }
+	export enum TextTransformation { NONE = 'NONE', COMPRESS_WHITE_SPACE = 'COMPRESS_WHITE_SPACE', HTML_ENTITY_DECODE = 'HTML_ENTITY_DECODE', LOWERCASE = 'LOWERCASE', CMD_LINE = 'CMD_LINE', URL_DECODE = 'URL_DECODE' }
 
-	export enum PositionalConstraint { EXACTLY = 0, STARTS_WITH = 1, ENDS_WITH = 2, CONTAINS = 3, CONTAINS_WORD = 4 }
+	export enum PositionalConstraint { EXACTLY = 'EXACTLY', STARTS_WITH = 'STARTS_WITH', ENDS_WITH = 'ENDS_WITH', CONTAINS = 'CONTAINS', CONTAINS_WORD = 'CONTAINS_WORD' }
 
 	export interface CreateByteMatchSetRequest {
 
@@ -265,9 +265,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoMatchConstraintType { Country = 0 }
+	export enum GeoMatchConstraintType { Country = 'Country' }
 
-	export enum GeoMatchConstraintValue { AF = 0, AX = 1, AL = 2, DZ = 3, AS = 4, AD = 5, AO = 6, AI = 7, AQ = 8, AG = 9, AR = 10, AM = 11, AW = 12, AU = 13, AT = 14, AZ = 15, BS = 16, BH = 17, BD = 18, BB = 19, BY = 20, BE = 21, BZ = 22, BJ = 23, BM = 24, BT = 25, BO = 26, BQ = 27, BA = 28, BW = 29, BV = 30, BR = 31, IO = 32, BN = 33, BG = 34, BF = 35, BI = 36, KH = 37, CM = 38, CA = 39, CV = 40, KY = 41, CF = 42, TD = 43, CL = 44, CN = 45, CX = 46, CC = 47, CO = 48, KM = 49, CG = 50, CD = 51, CK = 52, CR = 53, CI = 54, HR = 55, CU = 56, CW = 57, CY = 58, CZ = 59, DK = 60, DJ = 61, DM = 62, DO = 63, EC = 64, EG = 65, SV = 66, GQ = 67, ER = 68, EE = 69, ET = 70, FK = 71, FO = 72, FJ = 73, FI = 74, FR = 75, GF = 76, PF = 77, TF = 78, GA = 79, GM = 80, GE = 81, DE = 82, GH = 83, GI = 84, GR = 85, GL = 86, GD = 87, GP = 88, GU = 89, GT = 90, GG = 91, GN = 92, GW = 93, GY = 94, HT = 95, HM = 96, VA = 97, HN = 98, HK = 99, HU = 100, IS = 101, IN = 102, ID = 103, IR = 104, IQ = 105, IE = 106, IM = 107, IL = 108, IT = 109, JM = 110, JP = 111, JE = 112, JO = 113, KZ = 114, KE = 115, KI = 116, KP = 117, KR = 118, KW = 119, KG = 120, LA = 121, LV = 122, LB = 123, LS = 124, LR = 125, LY = 126, LI = 127, LT = 128, LU = 129, MO = 130, MK = 131, MG = 132, MW = 133, MY = 134, MV = 135, ML = 136, MT = 137, MH = 138, MQ = 139, MR = 140, MU = 141, YT = 142, MX = 143, FM = 144, MD = 145, MC = 146, MN = 147, ME = 148, MS = 149, MA = 150, MZ = 151, MM = 152, NA = 153, NR = 154, NP = 155, NL = 156, NC = 157, NZ = 158, NI = 159, NE = 160, NG = 161, NU = 162, NF = 163, MP = 164, NO = 165, OM = 166, PK = 167, PW = 168, PS = 169, PA = 170, PG = 171, PY = 172, PE = 173, PH = 174, PN = 175, PL = 176, PT = 177, PR = 178, QA = 179, RE = 180, RO = 181, RU = 182, RW = 183, BL = 184, SH = 185, KN = 186, LC = 187, MF = 188, PM = 189, VC = 190, WS = 191, SM = 192, ST = 193, SA = 194, SN = 195, RS = 196, SC = 197, SL = 198, SG = 199, SX = 200, SK = 201, SI = 202, SB = 203, SO = 204, ZA = 205, GS = 206, SS = 207, ES = 208, LK = 209, SD = 210, SR = 211, SJ = 212, SZ = 213, SE = 214, CH = 215, SY = 216, TW = 217, TJ = 218, TZ = 219, TH = 220, TL = 221, TG = 222, TK = 223, TO = 224, TT = 225, TN = 226, TR = 227, TM = 228, TC = 229, TV = 230, UG = 231, UA = 232, AE = 233, GB = 234, US = 235, UM = 236, UY = 237, UZ = 238, VU = 239, VE = 240, VN = 241, VG = 242, VI = 243, WF = 244, EH = 245, YE = 246, ZM = 247, ZW = 248 }
+	export enum GeoMatchConstraintValue { AF = 'AF', AX = 'AX', AL = 'AL', DZ = 'DZ', AS = 'AS', AD = 'AD', AO = 'AO', AI = 'AI', AQ = 'AQ', AG = 'AG', AR = 'AR', AM = 'AM', AW = 'AW', AU = 'AU', AT = 'AT', AZ = 'AZ', BS = 'BS', BH = 'BH', BD = 'BD', BB = 'BB', BY = 'BY', BE = 'BE', BZ = 'BZ', BJ = 'BJ', BM = 'BM', BT = 'BT', BO = 'BO', BQ = 'BQ', BA = 'BA', BW = 'BW', BV = 'BV', BR = 'BR', IO = 'IO', BN = 'BN', BG = 'BG', BF = 'BF', BI = 'BI', KH = 'KH', CM = 'CM', CA = 'CA', CV = 'CV', KY = 'KY', CF = 'CF', TD = 'TD', CL = 'CL', CN = 'CN', CX = 'CX', CC = 'CC', CO = 'CO', KM = 'KM', CG = 'CG', CD = 'CD', CK = 'CK', CR = 'CR', CI = 'CI', HR = 'HR', CU = 'CU', CW = 'CW', CY = 'CY', CZ = 'CZ', DK = 'DK', DJ = 'DJ', DM = 'DM', DO = 'DO', EC = 'EC', EG = 'EG', SV = 'SV', GQ = 'GQ', ER = 'ER', EE = 'EE', ET = 'ET', FK = 'FK', FO = 'FO', FJ = 'FJ', FI = 'FI', FR = 'FR', GF = 'GF', PF = 'PF', TF = 'TF', GA = 'GA', GM = 'GM', GE = 'GE', DE = 'DE', GH = 'GH', GI = 'GI', GR = 'GR', GL = 'GL', GD = 'GD', GP = 'GP', GU = 'GU', GT = 'GT', GG = 'GG', GN = 'GN', GW = 'GW', GY = 'GY', HT = 'HT', HM = 'HM', VA = 'VA', HN = 'HN', HK = 'HK', HU = 'HU', IS = 'IS', IN = 'IN', ID = 'ID', IR = 'IR', IQ = 'IQ', IE = 'IE', IM = 'IM', IL = 'IL', IT = 'IT', JM = 'JM', JP = 'JP', JE = 'JE', JO = 'JO', KZ = 'KZ', KE = 'KE', KI = 'KI', KP = 'KP', KR = 'KR', KW = 'KW', KG = 'KG', LA = 'LA', LV = 'LV', LB = 'LB', LS = 'LS', LR = 'LR', LY = 'LY', LI = 'LI', LT = 'LT', LU = 'LU', MO = 'MO', MK = 'MK', MG = 'MG', MW = 'MW', MY = 'MY', MV = 'MV', ML = 'ML', MT = 'MT', MH = 'MH', MQ = 'MQ', MR = 'MR', MU = 'MU', YT = 'YT', MX = 'MX', FM = 'FM', MD = 'MD', MC = 'MC', MN = 'MN', ME = 'ME', MS = 'MS', MA = 'MA', MZ = 'MZ', MM = 'MM', NA = 'NA', NR = 'NR', NP = 'NP', NL = 'NL', NC = 'NC', NZ = 'NZ', NI = 'NI', NE = 'NE', NG = 'NG', NU = 'NU', NF = 'NF', MP = 'MP', NO = 'NO', OM = 'OM', PK = 'PK', PW = 'PW', PS = 'PS', PA = 'PA', PG = 'PG', PY = 'PY', PE = 'PE', PH = 'PH', PN = 'PN', PL = 'PL', PT = 'PT', PR = 'PR', QA = 'QA', RE = 'RE', RO = 'RO', RU = 'RU', RW = 'RW', BL = 'BL', SH = 'SH', KN = 'KN', LC = 'LC', MF = 'MF', PM = 'PM', VC = 'VC', WS = 'WS', SM = 'SM', ST = 'ST', SA = 'SA', SN = 'SN', RS = 'RS', SC = 'SC', SL = 'SL', SG = 'SG', SX = 'SX', SK = 'SK', SI = 'SI', SB = 'SB', SO = 'SO', ZA = 'ZA', GS = 'GS', SS = 'SS', ES = 'ES', LK = 'LK', SD = 'SD', SR = 'SR', SJ = 'SJ', SZ = 'SZ', SE = 'SE', CH = 'CH', SY = 'SY', TW = 'TW', TJ = 'TJ', TZ = 'TZ', TH = 'TH', TL = 'TL', TG = 'TG', TK = 'TK', TO = 'TO', TT = 'TT', TN = 'TN', TR = 'TR', TM = 'TM', TC = 'TC', TV = 'TV', UG = 'UG', UA = 'UA', AE = 'AE', GB = 'GB', US = 'US', UM = 'UM', UY = 'UY', UZ = 'UZ', VU = 'VU', VE = 'VE', VN = 'VN', VG = 'VG', VI = 'VI', WF = 'WF', EH = 'EH', YE = 'YE', ZM = 'ZM', ZW = 'ZW' }
 
 	export interface CreateGeoMatchSetRequest {
 
@@ -362,7 +362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPSetDescriptorType { IPV4 = 0, IPV6 = 1 }
+	export enum IPSetDescriptorType { IPV4 = 'IPV4', IPV6 = 'IPV6' }
 
 	export interface CreateIPSetRequest {
 
@@ -481,9 +481,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PredicateType { IPMatch = 0, ByteMatch = 1, SqlInjectionMatch = 2, GeoMatch = 3, SizeConstraint = 4, XssMatch = 5, RegexMatch = 6 }
+	export enum PredicateType { IPMatch = 'IPMatch', ByteMatch = 'ByteMatch', SqlInjectionMatch = 'SqlInjectionMatch', GeoMatch = 'GeoMatch', SizeConstraint = 'SizeConstraint', XssMatch = 'XssMatch', RegexMatch = 'RegexMatch' }
 
-	export enum RateKey { IP = 0 }
+	export enum RateKey { IP = 'IP' }
 
 	export interface CreateRateBasedRuleRequest {
 
@@ -972,7 +972,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { EQ = 0, NE = 1, LE = 2, LT = 3, GE = 4, GT = 5 }
+	export enum ComparisonOperator { EQ = 'EQ', NE = 'NE', LE = 'LE', LT = 'LT', GE = 'GE', GT = 'GT' }
 
 	export interface CreateSizeConstraintSetRequest {
 
@@ -1166,7 +1166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WafActionType { BLOCK = 0, ALLOW = 1, COUNT = 2 }
+	export enum WafActionType { BLOCK = 'BLOCK', ALLOW = 'ALLOW', COUNT = 'COUNT' }
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p> <p>To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.</p> */
@@ -1223,9 +1223,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WafOverrideActionType { NONE = 0, COUNT = 1 }
+	export enum WafOverrideActionType { NONE = 'NONE', COUNT = 'COUNT' }
 
-	export enum WafRuleType { REGULAR = 0, RATE_BASED = 1, GROUP = 2 }
+	export enum WafRuleType { REGULAR = 'REGULAR', RATE_BASED = 'RATE_BASED', GROUP = 'GROUP' }
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The rule to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>. The rule must belong to the <code>RuleGroup</code> that is specified by the <code>ActivatedRule</code>. </p> */
@@ -2056,7 +2056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeTokenStatus { PROVISIONED = 0, PENDING = 1, INSYNC = 2 }
+	export enum ChangeTokenStatus { PROVISIONED = 'PROVISIONED', PENDING = 'PENDING', INSYNC = 'INSYNC' }
 
 	export interface GetChangeTokenStatusRequest {
 
@@ -3745,7 +3745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeAction { INSERT = 0, DELETE = 1 }
+	export enum ChangeAction { INSERT = 'INSERT', DELETE = 'DELETE' }
 
 	export interface WAFNonexistentContainerException {
 	}
@@ -5182,159 +5182,159 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateByteMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateByteMatchSet' = 0 }
+	export enum CreateByteMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateByteMatchSet' = 'AWSWAF_20150824.CreateByteMatchSet' }
 
-	export enum CreateGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateGeoMatchSet' = 0 }
+	export enum CreateGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateGeoMatchSet' = 'AWSWAF_20150824.CreateGeoMatchSet' }
 
-	export enum CreateIPSetX_Amz_Target { 'AWSWAF_20150824.CreateIPSet' = 0 }
+	export enum CreateIPSetX_Amz_Target { 'AWSWAF_20150824.CreateIPSet' = 'AWSWAF_20150824.CreateIPSet' }
 
-	export enum CreateRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.CreateRateBasedRule' = 0 }
+	export enum CreateRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.CreateRateBasedRule' = 'AWSWAF_20150824.CreateRateBasedRule' }
 
-	export enum CreateRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateRegexMatchSet' = 0 }
+	export enum CreateRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateRegexMatchSet' = 'AWSWAF_20150824.CreateRegexMatchSet' }
 
-	export enum CreateRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.CreateRegexPatternSet' = 0 }
+	export enum CreateRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.CreateRegexPatternSet' = 'AWSWAF_20150824.CreateRegexPatternSet' }
 
-	export enum CreateRuleX_Amz_Target { 'AWSWAF_20150824.CreateRule' = 0 }
+	export enum CreateRuleX_Amz_Target { 'AWSWAF_20150824.CreateRule' = 'AWSWAF_20150824.CreateRule' }
 
-	export enum CreateRuleGroupX_Amz_Target { 'AWSWAF_20150824.CreateRuleGroup' = 0 }
+	export enum CreateRuleGroupX_Amz_Target { 'AWSWAF_20150824.CreateRuleGroup' = 'AWSWAF_20150824.CreateRuleGroup' }
 
-	export enum CreateSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.CreateSizeConstraintSet' = 0 }
+	export enum CreateSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.CreateSizeConstraintSet' = 'AWSWAF_20150824.CreateSizeConstraintSet' }
 
-	export enum CreateSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateSqlInjectionMatchSet' = 0 }
+	export enum CreateSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateSqlInjectionMatchSet' = 'AWSWAF_20150824.CreateSqlInjectionMatchSet' }
 
-	export enum CreateWebACLX_Amz_Target { 'AWSWAF_20150824.CreateWebACL' = 0 }
+	export enum CreateWebACLX_Amz_Target { 'AWSWAF_20150824.CreateWebACL' = 'AWSWAF_20150824.CreateWebACL' }
 
-	export enum CreateWebACLMigrationStackX_Amz_Target { 'AWSWAF_20150824.CreateWebACLMigrationStack' = 0 }
+	export enum CreateWebACLMigrationStackX_Amz_Target { 'AWSWAF_20150824.CreateWebACLMigrationStack' = 'AWSWAF_20150824.CreateWebACLMigrationStack' }
 
-	export enum CreateXssMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateXssMatchSet' = 0 }
+	export enum CreateXssMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateXssMatchSet' = 'AWSWAF_20150824.CreateXssMatchSet' }
 
-	export enum DeleteByteMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteByteMatchSet' = 0 }
+	export enum DeleteByteMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteByteMatchSet' = 'AWSWAF_20150824.DeleteByteMatchSet' }
 
-	export enum DeleteGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteGeoMatchSet' = 0 }
+	export enum DeleteGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteGeoMatchSet' = 'AWSWAF_20150824.DeleteGeoMatchSet' }
 
-	export enum DeleteIPSetX_Amz_Target { 'AWSWAF_20150824.DeleteIPSet' = 0 }
+	export enum DeleteIPSetX_Amz_Target { 'AWSWAF_20150824.DeleteIPSet' = 'AWSWAF_20150824.DeleteIPSet' }
 
-	export enum DeleteLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.DeleteLoggingConfiguration' = 0 }
+	export enum DeleteLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.DeleteLoggingConfiguration' = 'AWSWAF_20150824.DeleteLoggingConfiguration' }
 
-	export enum DeletePermissionPolicyX_Amz_Target { 'AWSWAF_20150824.DeletePermissionPolicy' = 0 }
+	export enum DeletePermissionPolicyX_Amz_Target { 'AWSWAF_20150824.DeletePermissionPolicy' = 'AWSWAF_20150824.DeletePermissionPolicy' }
 
-	export enum DeleteRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.DeleteRateBasedRule' = 0 }
+	export enum DeleteRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.DeleteRateBasedRule' = 'AWSWAF_20150824.DeleteRateBasedRule' }
 
-	export enum DeleteRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteRegexMatchSet' = 0 }
+	export enum DeleteRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteRegexMatchSet' = 'AWSWAF_20150824.DeleteRegexMatchSet' }
 
-	export enum DeleteRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.DeleteRegexPatternSet' = 0 }
+	export enum DeleteRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.DeleteRegexPatternSet' = 'AWSWAF_20150824.DeleteRegexPatternSet' }
 
-	export enum DeleteRuleX_Amz_Target { 'AWSWAF_20150824.DeleteRule' = 0 }
+	export enum DeleteRuleX_Amz_Target { 'AWSWAF_20150824.DeleteRule' = 'AWSWAF_20150824.DeleteRule' }
 
-	export enum DeleteRuleGroupX_Amz_Target { 'AWSWAF_20150824.DeleteRuleGroup' = 0 }
+	export enum DeleteRuleGroupX_Amz_Target { 'AWSWAF_20150824.DeleteRuleGroup' = 'AWSWAF_20150824.DeleteRuleGroup' }
 
-	export enum DeleteSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.DeleteSizeConstraintSet' = 0 }
+	export enum DeleteSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.DeleteSizeConstraintSet' = 'AWSWAF_20150824.DeleteSizeConstraintSet' }
 
-	export enum DeleteSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteSqlInjectionMatchSet' = 0 }
+	export enum DeleteSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteSqlInjectionMatchSet' = 'AWSWAF_20150824.DeleteSqlInjectionMatchSet' }
 
-	export enum DeleteWebACLX_Amz_Target { 'AWSWAF_20150824.DeleteWebACL' = 0 }
+	export enum DeleteWebACLX_Amz_Target { 'AWSWAF_20150824.DeleteWebACL' = 'AWSWAF_20150824.DeleteWebACL' }
 
-	export enum DeleteXssMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteXssMatchSet' = 0 }
+	export enum DeleteXssMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteXssMatchSet' = 'AWSWAF_20150824.DeleteXssMatchSet' }
 
-	export enum GetByteMatchSetX_Amz_Target { 'AWSWAF_20150824.GetByteMatchSet' = 0 }
+	export enum GetByteMatchSetX_Amz_Target { 'AWSWAF_20150824.GetByteMatchSet' = 'AWSWAF_20150824.GetByteMatchSet' }
 
-	export enum GetChangeTokenX_Amz_Target { 'AWSWAF_20150824.GetChangeToken' = 0 }
+	export enum GetChangeTokenX_Amz_Target { 'AWSWAF_20150824.GetChangeToken' = 'AWSWAF_20150824.GetChangeToken' }
 
-	export enum GetChangeTokenStatusX_Amz_Target { 'AWSWAF_20150824.GetChangeTokenStatus' = 0 }
+	export enum GetChangeTokenStatusX_Amz_Target { 'AWSWAF_20150824.GetChangeTokenStatus' = 'AWSWAF_20150824.GetChangeTokenStatus' }
 
-	export enum GetGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.GetGeoMatchSet' = 0 }
+	export enum GetGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.GetGeoMatchSet' = 'AWSWAF_20150824.GetGeoMatchSet' }
 
-	export enum GetIPSetX_Amz_Target { 'AWSWAF_20150824.GetIPSet' = 0 }
+	export enum GetIPSetX_Amz_Target { 'AWSWAF_20150824.GetIPSet' = 'AWSWAF_20150824.GetIPSet' }
 
-	export enum GetLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.GetLoggingConfiguration' = 0 }
+	export enum GetLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.GetLoggingConfiguration' = 'AWSWAF_20150824.GetLoggingConfiguration' }
 
-	export enum GetPermissionPolicyX_Amz_Target { 'AWSWAF_20150824.GetPermissionPolicy' = 0 }
+	export enum GetPermissionPolicyX_Amz_Target { 'AWSWAF_20150824.GetPermissionPolicy' = 'AWSWAF_20150824.GetPermissionPolicy' }
 
-	export enum GetRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.GetRateBasedRule' = 0 }
+	export enum GetRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.GetRateBasedRule' = 'AWSWAF_20150824.GetRateBasedRule' }
 
-	export enum GetRateBasedRuleManagedKeysX_Amz_Target { 'AWSWAF_20150824.GetRateBasedRuleManagedKeys' = 0 }
+	export enum GetRateBasedRuleManagedKeysX_Amz_Target { 'AWSWAF_20150824.GetRateBasedRuleManagedKeys' = 'AWSWAF_20150824.GetRateBasedRuleManagedKeys' }
 
-	export enum GetRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.GetRegexMatchSet' = 0 }
+	export enum GetRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.GetRegexMatchSet' = 'AWSWAF_20150824.GetRegexMatchSet' }
 
-	export enum GetRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.GetRegexPatternSet' = 0 }
+	export enum GetRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.GetRegexPatternSet' = 'AWSWAF_20150824.GetRegexPatternSet' }
 
-	export enum GetRuleX_Amz_Target { 'AWSWAF_20150824.GetRule' = 0 }
+	export enum GetRuleX_Amz_Target { 'AWSWAF_20150824.GetRule' = 'AWSWAF_20150824.GetRule' }
 
-	export enum GetRuleGroupX_Amz_Target { 'AWSWAF_20150824.GetRuleGroup' = 0 }
+	export enum GetRuleGroupX_Amz_Target { 'AWSWAF_20150824.GetRuleGroup' = 'AWSWAF_20150824.GetRuleGroup' }
 
-	export enum GetSampledRequestsX_Amz_Target { 'AWSWAF_20150824.GetSampledRequests' = 0 }
+	export enum GetSampledRequestsX_Amz_Target { 'AWSWAF_20150824.GetSampledRequests' = 'AWSWAF_20150824.GetSampledRequests' }
 
-	export enum GetSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.GetSizeConstraintSet' = 0 }
+	export enum GetSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.GetSizeConstraintSet' = 'AWSWAF_20150824.GetSizeConstraintSet' }
 
-	export enum GetSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.GetSqlInjectionMatchSet' = 0 }
+	export enum GetSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.GetSqlInjectionMatchSet' = 'AWSWAF_20150824.GetSqlInjectionMatchSet' }
 
-	export enum GetWebACLX_Amz_Target { 'AWSWAF_20150824.GetWebACL' = 0 }
+	export enum GetWebACLX_Amz_Target { 'AWSWAF_20150824.GetWebACL' = 'AWSWAF_20150824.GetWebACL' }
 
-	export enum GetXssMatchSetX_Amz_Target { 'AWSWAF_20150824.GetXssMatchSet' = 0 }
+	export enum GetXssMatchSetX_Amz_Target { 'AWSWAF_20150824.GetXssMatchSet' = 'AWSWAF_20150824.GetXssMatchSet' }
 
-	export enum ListActivatedRulesInRuleGroupX_Amz_Target { 'AWSWAF_20150824.ListActivatedRulesInRuleGroup' = 0 }
+	export enum ListActivatedRulesInRuleGroupX_Amz_Target { 'AWSWAF_20150824.ListActivatedRulesInRuleGroup' = 'AWSWAF_20150824.ListActivatedRulesInRuleGroup' }
 
-	export enum ListByteMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListByteMatchSets' = 0 }
+	export enum ListByteMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListByteMatchSets' = 'AWSWAF_20150824.ListByteMatchSets' }
 
-	export enum ListGeoMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListGeoMatchSets' = 0 }
+	export enum ListGeoMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListGeoMatchSets' = 'AWSWAF_20150824.ListGeoMatchSets' }
 
-	export enum ListIPSetsX_Amz_Target { 'AWSWAF_20150824.ListIPSets' = 0 }
+	export enum ListIPSetsX_Amz_Target { 'AWSWAF_20150824.ListIPSets' = 'AWSWAF_20150824.ListIPSets' }
 
-	export enum ListLoggingConfigurationsX_Amz_Target { 'AWSWAF_20150824.ListLoggingConfigurations' = 0 }
+	export enum ListLoggingConfigurationsX_Amz_Target { 'AWSWAF_20150824.ListLoggingConfigurations' = 'AWSWAF_20150824.ListLoggingConfigurations' }
 
-	export enum ListRateBasedRulesX_Amz_Target { 'AWSWAF_20150824.ListRateBasedRules' = 0 }
+	export enum ListRateBasedRulesX_Amz_Target { 'AWSWAF_20150824.ListRateBasedRules' = 'AWSWAF_20150824.ListRateBasedRules' }
 
-	export enum ListRegexMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListRegexMatchSets' = 0 }
+	export enum ListRegexMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListRegexMatchSets' = 'AWSWAF_20150824.ListRegexMatchSets' }
 
-	export enum ListRegexPatternSetsX_Amz_Target { 'AWSWAF_20150824.ListRegexPatternSets' = 0 }
+	export enum ListRegexPatternSetsX_Amz_Target { 'AWSWAF_20150824.ListRegexPatternSets' = 'AWSWAF_20150824.ListRegexPatternSets' }
 
-	export enum ListRuleGroupsX_Amz_Target { 'AWSWAF_20150824.ListRuleGroups' = 0 }
+	export enum ListRuleGroupsX_Amz_Target { 'AWSWAF_20150824.ListRuleGroups' = 'AWSWAF_20150824.ListRuleGroups' }
 
-	export enum ListRulesX_Amz_Target { 'AWSWAF_20150824.ListRules' = 0 }
+	export enum ListRulesX_Amz_Target { 'AWSWAF_20150824.ListRules' = 'AWSWAF_20150824.ListRules' }
 
-	export enum ListSizeConstraintSetsX_Amz_Target { 'AWSWAF_20150824.ListSizeConstraintSets' = 0 }
+	export enum ListSizeConstraintSetsX_Amz_Target { 'AWSWAF_20150824.ListSizeConstraintSets' = 'AWSWAF_20150824.ListSizeConstraintSets' }
 
-	export enum ListSqlInjectionMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListSqlInjectionMatchSets' = 0 }
+	export enum ListSqlInjectionMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListSqlInjectionMatchSets' = 'AWSWAF_20150824.ListSqlInjectionMatchSets' }
 
-	export enum ListSubscribedRuleGroupsX_Amz_Target { 'AWSWAF_20150824.ListSubscribedRuleGroups' = 0 }
+	export enum ListSubscribedRuleGroupsX_Amz_Target { 'AWSWAF_20150824.ListSubscribedRuleGroups' = 'AWSWAF_20150824.ListSubscribedRuleGroups' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSWAF_20150824.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSWAF_20150824.ListTagsForResource' = 'AWSWAF_20150824.ListTagsForResource' }
 
-	export enum ListWebACLsX_Amz_Target { 'AWSWAF_20150824.ListWebACLs' = 0 }
+	export enum ListWebACLsX_Amz_Target { 'AWSWAF_20150824.ListWebACLs' = 'AWSWAF_20150824.ListWebACLs' }
 
-	export enum ListXssMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListXssMatchSets' = 0 }
+	export enum ListXssMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListXssMatchSets' = 'AWSWAF_20150824.ListXssMatchSets' }
 
-	export enum PutLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.PutLoggingConfiguration' = 0 }
+	export enum PutLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.PutLoggingConfiguration' = 'AWSWAF_20150824.PutLoggingConfiguration' }
 
-	export enum PutPermissionPolicyX_Amz_Target { 'AWSWAF_20150824.PutPermissionPolicy' = 0 }
+	export enum PutPermissionPolicyX_Amz_Target { 'AWSWAF_20150824.PutPermissionPolicy' = 'AWSWAF_20150824.PutPermissionPolicy' }
 
-	export enum TagResourceX_Amz_Target { 'AWSWAF_20150824.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSWAF_20150824.TagResource' = 'AWSWAF_20150824.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSWAF_20150824.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSWAF_20150824.UntagResource' = 'AWSWAF_20150824.UntagResource' }
 
-	export enum UpdateByteMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateByteMatchSet' = 0 }
+	export enum UpdateByteMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateByteMatchSet' = 'AWSWAF_20150824.UpdateByteMatchSet' }
 
-	export enum UpdateGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateGeoMatchSet' = 0 }
+	export enum UpdateGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateGeoMatchSet' = 'AWSWAF_20150824.UpdateGeoMatchSet' }
 
-	export enum UpdateIPSetX_Amz_Target { 'AWSWAF_20150824.UpdateIPSet' = 0 }
+	export enum UpdateIPSetX_Amz_Target { 'AWSWAF_20150824.UpdateIPSet' = 'AWSWAF_20150824.UpdateIPSet' }
 
-	export enum UpdateRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.UpdateRateBasedRule' = 0 }
+	export enum UpdateRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.UpdateRateBasedRule' = 'AWSWAF_20150824.UpdateRateBasedRule' }
 
-	export enum UpdateRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateRegexMatchSet' = 0 }
+	export enum UpdateRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateRegexMatchSet' = 'AWSWAF_20150824.UpdateRegexMatchSet' }
 
-	export enum UpdateRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.UpdateRegexPatternSet' = 0 }
+	export enum UpdateRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.UpdateRegexPatternSet' = 'AWSWAF_20150824.UpdateRegexPatternSet' }
 
-	export enum UpdateRuleX_Amz_Target { 'AWSWAF_20150824.UpdateRule' = 0 }
+	export enum UpdateRuleX_Amz_Target { 'AWSWAF_20150824.UpdateRule' = 'AWSWAF_20150824.UpdateRule' }
 
-	export enum UpdateRuleGroupX_Amz_Target { 'AWSWAF_20150824.UpdateRuleGroup' = 0 }
+	export enum UpdateRuleGroupX_Amz_Target { 'AWSWAF_20150824.UpdateRuleGroup' = 'AWSWAF_20150824.UpdateRuleGroup' }
 
-	export enum UpdateSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.UpdateSizeConstraintSet' = 0 }
+	export enum UpdateSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.UpdateSizeConstraintSet' = 'AWSWAF_20150824.UpdateSizeConstraintSet' }
 
-	export enum UpdateSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateSqlInjectionMatchSet' = 0 }
+	export enum UpdateSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateSqlInjectionMatchSet' = 'AWSWAF_20150824.UpdateSqlInjectionMatchSet' }
 
-	export enum UpdateWebACLX_Amz_Target { 'AWSWAF_20150824.UpdateWebACL' = 0 }
+	export enum UpdateWebACLX_Amz_Target { 'AWSWAF_20150824.UpdateWebACL' = 'AWSWAF_20150824.UpdateWebACL' }
 
-	export enum UpdateXssMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateXssMatchSet' = 0 }
+	export enum UpdateXssMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateXssMatchSet' = 'AWSWAF_20150824.UpdateXssMatchSet' }
 
 }
 

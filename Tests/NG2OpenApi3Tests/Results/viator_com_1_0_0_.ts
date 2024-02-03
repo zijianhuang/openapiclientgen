@@ -39,9 +39,9 @@ export namespace MyNS {
 
 	}
 
-	export enum _401_UNAUTHORIZEDCode { UNAUTHORIZED = 0 }
+	export enum _401_UNAUTHORIZEDCode { UNAUTHORIZED = 'UNAUTHORIZED' }
 
-	export enum _401_UNAUTHORIZEDMessage { 'Invalid API key' = 0 }
+	export enum _401_UNAUTHORIZEDMessage { 'Invalid API key' = 'Invalid API key' }
 
 	export interface _406_NOT_ACCEPTABLE {
 		code?: _406_NOT_ACCEPTABLECode | null;
@@ -83,7 +83,7 @@ export namespace MyNS {
 
 	}
 
-	export enum _406_NOT_ACCEPTABLECode { INVALID_HEADER_VALUE = 0 }
+	export enum _406_NOT_ACCEPTABLECode { INVALID_HEADER_VALUE = 'INVALID_HEADER_VALUE' }
 
 	export interface _500_INTERNAL_SERVER_ERROR {
 		code?: _500_INTERNAL_SERVER_ERRORCode | null;
@@ -121,9 +121,9 @@ export namespace MyNS {
 
 	}
 
-	export enum _500_INTERNAL_SERVER_ERRORCode { INTERNAL_SERVER_ERROR = 0 }
+	export enum _500_INTERNAL_SERVER_ERRORCode { INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR' }
 
-	export enum _500_INTERNAL_SERVER_ERRORMessage { 'Internal server error' = 0 }
+	export enum _500_INTERNAL_SERVER_ERRORMessage { 'Internal server error' = 'Internal server error' }
 
 	export interface _503_SERVICE_UNAVAILABLE {
 		code?: _503_SERVICE_UNAVAILABLECode | null;
@@ -161,7 +161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum _503_SERVICE_UNAVAILABLECode { SERVICE_UNAVAILABLE = 0 }
+	export enum _503_SERVICE_UNAVAILABLECode { SERVICE_UNAVAILABLE = 'SERVICE_UNAVAILABLE' }
 
 	export interface CancelBookingQuoteResponse {
 
@@ -251,7 +251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelBookingQuoteResponseStatus { CANCELLABLE = 0, CANCELLED = 1, NOT_CANCELLABLE = 2 }
+	export enum CancelBookingQuoteResponseStatus { CANCELLABLE = 'CANCELLABLE', CANCELLED = 'CANCELLED', NOT_CANCELLABLE = 'NOT_CANCELLABLE' }
 
 	export interface CancelBookingResponse {
 
@@ -288,9 +288,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelBookingResponseReason { ALREADY_CANCELLED = 0, NOT_CANCELLABLE = 1 }
+	export enum CancelBookingResponseReason { ALREADY_CANCELLED = 'ALREADY_CANCELLED', NOT_CANCELLABLE = 'NOT_CANCELLABLE' }
 
-	export enum CancelBookingResponseStatus { ACCEPTED = 0, DECLINED = 1 }
+	export enum CancelBookingResponseStatus { ACCEPTED = 'ACCEPTED', DECLINED = 'DECLINED' }
 
 	export interface CancellationReason {
 
@@ -382,7 +382,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchFreetextResponseSearchType { PRODUCT = 0, DESTINATION = 1, ATTRACTION = 2, RECOMMENDATION = 3 }
+	export enum SearchFreetextResponseSearchType { PRODUCT = 'PRODUCT', DESTINATION = 'DESTINATION', ATTRACTION = 'ATTRACTION', RECOMMENDATION = 'RECOMMENDATION' }
 
 	export interface SearchFreetextResponseAttraction extends SearchFreetextResponse {
 
@@ -800,7 +800,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchFreetextResponseDestinationDataDestinationType { CITY = 0, COUNTRY = 1, REGION = 2 }
+	export enum SearchFreetextResponseDestinationDataDestinationType { CITY = 'CITY', COUNTRY = 'COUNTRY', REGION = 'REGION' }
 
 	export interface SearchFreetextResponseProduct extends SearchFreetextResponse {
 
@@ -1268,7 +1268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchFreetextResponseProductDataBookingEngineId { FreesaleBE = 0, UnconditionalBE = 1, DeferredCRMBE = 2, FreesaleOnRequestBE = 3 }
+	export enum SearchFreetextResponseProductDataBookingEngineId { FreesaleBE = 'FreesaleBE', UnconditionalBE = 'UnconditionalBE', DeferredCRMBE = 'DeferredCRMBE', FreesaleOnRequestBE = 'FreesaleOnRequestBE' }
 
 
 	/**
@@ -1657,7 +1657,7 @@ export namespace MyNS {
 	 * - `"FreesaleOnRequestBE"` - *this* product is freesale up until a certain number of days before the travel date, referred to as the *on-request period*.
 	 * If a booking is made within the on-request period, *this* product will be an on-request product. Once the booking has been made, the `bookingEngineId` will change to either `"FreesaleOnRequestBE:OnRequest"` or `"FreesaleOnRequestBE:Freesold"` depending on the travel date and the on-request period                        
 	 */
-	export enum BookingEngineId { FreesaleBE = 0, UnconditionalBE = 1, DeferredCRMBE = 2, FreesaleOnRequestBE = 3 }
+	export enum BookingEngineId { FreesaleBE = 'FreesaleBE', UnconditionalBE = 'UnconditionalBE', DeferredCRMBE = 'DeferredCRMBE', FreesaleOnRequestBE = 'FreesaleOnRequestBE' }
 
 
 	/**
@@ -1667,7 +1667,7 @@ export namespace MyNS {
 	 * - `"OR"` (DeferredCRMBE) – the booked product is an on-request product, will not be confirmed immediately and will have a `PENDING` status after it is booked, to be confirmed by the supplier within the time specified in the `hoursConfirmed` field available in the booking response and post-booking services
 	 * - `"FO"` (FreesaleOnRequestBE) – the booked product is freesale up until a certain number of days before the travel date, referred to as the *on-request period*.
 	 */
-	export enum BookingEngineId_response { UF = 0, OR = 1, FO = 2 }
+	export enum BookingEngineId_response { UF = 'UF', OR = 'OR', FO = 'FO' }
 
 
 	/** **object** containing item booking status information */
@@ -1752,9 +1752,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BookingStatus_itemLevel { ITEM = 0, ITINERARY = 1 }
+	export enum BookingStatus_itemLevel { ITEM = 'ITEM', ITINERARY = 'ITINERARY' }
 
-	export enum BookingStatus_itemType { WAITING = 0, CONFIRMED = 1, UNAVAILABLE = 2, PENDING = 3, FAILED = 4, CANCELLED = 5, EXPIRED = 6, AMENDED = 7, PENDING_AMEND = 8, REJECTED = 9, ON_HOLD = 10 }
+	export enum BookingStatus_itemType { WAITING = 'WAITING', CONFIRMED = 'CONFIRMED', UNAVAILABLE = 'UNAVAILABLE', PENDING = 'PENDING', FAILED = 'FAILED', CANCELLED = 'CANCELLED', EXPIRED = 'EXPIRED', AMENDED = 'AMENDED', PENDING_AMEND = 'PENDING_AMEND', REJECTED = 'REJECTED', ON_HOLD = 'ON_HOLD' }
 
 
 	/** **object** containing itinerary booking status information */
@@ -1839,7 +1839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BookingStatus_itineraryType { WAITING = 0, CONFIRMED = 1, PENDING = 2, FAILED = 3, CANCELLED = 4, AMENDED = 5, PENDING_AMEND = 6 }
+	export enum BookingStatus_itineraryType { WAITING = 'WAITING', CONFIRMED = 'CONFIRMED', PENDING = 'PENDING', FAILED = 'FAILED', CANCELLED = 'CANCELLED', AMENDED = 'AMENDED', PENDING_AMEND = 'PENDING_AMEND' }
 
 
 	/**
@@ -1848,7 +1848,7 @@ export namespace MyNS {
 	 * - `"REGION"`: destination is a recognized region of a country, such as a state, island within a country, stretch of coastline, etc.
 	 * - `"CITY"`: destination is a city
 	 */
-	export enum DestinationType { CITY = 0, COUNTRY = 1, REGION = 2 }
+	export enum DestinationType { CITY = 'CITY', COUNTRY = 'COUNTRY', REGION = 'REGION' }
 
 
 	/** **object** detailing a single photo from a user */
@@ -2194,7 +2194,7 @@ export namespace MyNS {
 	 *   - `'PRICE_FROM_A'`: ascending by price (low -&gt; high)
 	 *   - `'PRICE_FROM_D'`: descending by price (high -&gt; low)
 	 */
-	export enum SortOrder { TOP_SELLERS = 0, REVIEW_AVG_RATING_A = 1, REVIEW_AVG_RATING_D = 2, PRICE_FROM_A = 3, PRICE_FROM_D = 4 }
+	export enum SortOrder { TOP_SELLERS = 'TOP_SELLERS', REVIEW_AVG_RATING_A = 'REVIEW_AVG_RATING_A', REVIEW_AVG_RATING_D = 'REVIEW_AVG_RATING_D', PRICE_FROM_A = 'PRICE_FROM_A', PRICE_FROM_D = 'PRICE_FROM_D' }
 
 	@Injectable()
 	export class MyClient {
@@ -3651,9 +3651,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductSortOrder { REVIEW_RATING_A = 0, REVIEW_RATING_D = 1, REVIEW_RATING_SUBMISSION_DATE_D = 2 }
+	export enum ProductSortOrder { REVIEW_RATING_A = 'REVIEW_RATING_A', REVIEW_RATING_D = 'REVIEW_RATING_D', REVIEW_RATING_SUBMISSION_DATE_D = 'REVIEW_RATING_SUBMISSION_DATE_D' }
 
-	export enum ProductVoucherOption { VOUCHER_PAPER_ONLY = 0, VOUCHER_E = 1 }
+	export enum ProductVoucherOption { VOUCHER_PAPER_ONLY = 'VOUCHER_PAPER_ONLY', VOUCHER_E = 'VOUCHER_E' }
 
 	export interface SearchFreetextPostBody {
 
@@ -3959,7 +3959,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaxonomyAttractionsPostBodySortOrder { SEO_PUBLISHED_DATE_D = 0, SEO_PUBLISHED_DATE_A = 1, SEO_REVIEW_AVG_RATING_D = 2, SEO_REVIEW_AVG_RATING_A = 3, SEO_ALPHABETICAL = 4 }
+	export enum TaxonomyAttractionsPostBodySortOrder { SEO_PUBLISHED_DATE_D = 'SEO_PUBLISHED_DATE_D', SEO_PUBLISHED_DATE_A = 'SEO_PUBLISHED_DATE_A', SEO_REVIEW_AVG_RATING_D = 'SEO_REVIEW_AVG_RATING_D', SEO_REVIEW_AVG_RATING_A = 'SEO_REVIEW_AVG_RATING_A', SEO_ALPHABETICAL = 'SEO_ALPHABETICAL' }
 
 }
 

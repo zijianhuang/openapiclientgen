@@ -64,7 +64,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IncrementalRunType { IMMEDIATE = 0 }
+	export enum IncrementalRunType { IMMEDIATE = 'IMMEDIATE' }
 
 
 	/** An object containing <code>InputSourceARN</code>, <code>SchemaName</code>, and <code>ApplyNormalization</code>. */
@@ -169,7 +169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolutionType { RULE_MATCHING = 0, ML_MATCHING = 1 }
+	export enum ResolutionType { RULE_MATCHING = 'RULE_MATCHING', ML_MATCHING = 'ML_MATCHING' }
 
 
 	/** An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects. */
@@ -195,7 +195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeMatchingModel { ONE_TO_ONE = 0, MANY_TO_MANY = 1 }
+	export enum AttributeMatchingModel { ONE_TO_ONE = 'ONE_TO_ONE', MANY_TO_MANY = 'MANY_TO_MANY' }
 
 
 	/** An object containing <code>RuleName</code>, and <code>MatchingKeys</code>. */
@@ -349,7 +349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaAttributeType { NAME = 0, NAME_FIRST = 1, NAME_MIDDLE = 2, NAME_LAST = 3, ADDRESS = 4, ADDRESS_STREET1 = 5, ADDRESS_STREET2 = 6, ADDRESS_STREET3 = 7, ADDRESS_CITY = 8, ADDRESS_STATE = 9, ADDRESS_COUNTRY = 10, ADDRESS_POSTALCODE = 11, PHONE = 12, PHONE_NUMBER = 13, PHONE_COUNTRYCODE = 14, EMAIL_ADDRESS = 15, UNIQUE_ID = 16, DATE = 17, STRING = 18 }
+	export enum SchemaAttributeType { NAME = 'NAME', NAME_FIRST = 'NAME_FIRST', NAME_MIDDLE = 'NAME_MIDDLE', NAME_LAST = 'NAME_LAST', ADDRESS = 'ADDRESS', ADDRESS_STREET1 = 'ADDRESS_STREET1', ADDRESS_STREET2 = 'ADDRESS_STREET2', ADDRESS_STREET3 = 'ADDRESS_STREET3', ADDRESS_CITY = 'ADDRESS_CITY', ADDRESS_STATE = 'ADDRESS_STATE', ADDRESS_COUNTRY = 'ADDRESS_COUNTRY', ADDRESS_POSTALCODE = 'ADDRESS_POSTALCODE', PHONE = 'PHONE', PHONE_NUMBER = 'PHONE_NUMBER', PHONE_COUNTRYCODE = 'PHONE_COUNTRYCODE', EMAIL_ADDRESS = 'EMAIL_ADDRESS', UNIQUE_ID = 'UNIQUE_ID', DATE = 'DATE', STRING = 'STRING' }
 
 	export interface DeleteMatchingWorkflowOutput {
 
@@ -487,7 +487,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, QUEUED = 3 }
+	export enum JobStatus { RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', QUEUED = 'QUEUED' }
 
 	export interface GetMatchingWorkflowOutput {
 

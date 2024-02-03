@@ -181,7 +181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceIssueModelIssuePriority { Low = 0, Medium = 1, High = 2 }
+	export enum MaintenanceIssueModelIssuePriority { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 	export interface Object {
 	}

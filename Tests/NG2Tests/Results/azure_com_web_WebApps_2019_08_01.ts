@@ -44,13 +44,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiKVReferenceIdentityType { None = 0, SystemAssigned = 1, UserAssigned = 2 }
+	export enum ApiKVReferenceIdentityType { None = 'None', SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned' }
 
-	export enum ApiKVReferenceLocation { ApplicationSetting = 0 }
+	export enum ApiKVReferenceLocation { ApplicationSetting = 'ApplicationSetting' }
 
-	export enum ApiKVReferenceSource { KeyVault = 0 }
+	export enum ApiKVReferenceSource { KeyVault = 'KeyVault' }
 
-	export enum ApiKVReferenceStatus { Initialized = 0, Resolved = 1, InvalidSyntax = 2, MSINotEnabled = 3, VaultNotFound = 4, SecretNotFound = 5, SecretVersionNotFound = 6, AccessToKeyVaultDenied = 7, OtherReasons = 8 }
+	export enum ApiKVReferenceStatus { Initialized = 'Initialized', Resolved = 'Resolved', InvalidSyntax = 'InvalidSyntax', MSINotEnabled = 'MSINotEnabled', VaultNotFound = 'VaultNotFound', SecretNotFound = 'SecretNotFound', SecretVersionNotFound = 'SecretVersionNotFound', AccessToKeyVaultDenied = 'AccessToKeyVaultDenied', OtherReasons = 'OtherReasons' }
 
 
 	/** Application logs configuration. */
@@ -118,7 +118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureBlobStorageApplicationLogsConfigLevel { Off = 0, Verbose = 1, Information = 2, Warning = 3, Error = 4 }
+	export enum AzureBlobStorageApplicationLogsConfigLevel { Off = 'Off', Verbose = 'Verbose', Information = 'Information', Warning = 'Warning', Error = 'Error' }
 
 
 	/** Application logs to Azure table storage configuration. */
@@ -274,9 +274,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureStorageInfoValueState { Ok = 0, InvalidCredentials = 1, InvalidShare = 2 }
+	export enum AzureStorageInfoValueState { Ok = 'Ok', InvalidCredentials = 'InvalidCredentials', InvalidShare = 'InvalidShare' }
 
-	export enum AzureStorageInfoValueType { AzureFiles = 0, AzureBlob = 1 }
+	export enum AzureStorageInfoValueType { AzureFiles = 'AzureFiles', AzureBlob = 'AzureBlob' }
 
 
 	/** AzureStorageInfo dictionary resource. */
@@ -448,7 +448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupScheduleFrequencyUnit { Day = 0, Hour = 1 }
+	export enum BackupScheduleFrequencyUnit { Day = 'Day', Hour = 'Hour' }
 
 
 	/** Database connection string value to type pair. */
@@ -490,7 +490,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnStringValueTypePairType { MySql = 0, SQLServer = 1, SQLAzure = 2, Custom = 3, NotificationHub = 4, ServiceBus = 5, EventHub = 6, ApiHub = 7, DocDb = 8, RedisCache = 9, PostgreSQL = 10 }
+	export enum ConnStringValueTypePairType { MySql = 'MySql', SQLServer = 'SQLServer', SQLAzure = 'SQLAzure', Custom = 'Custom', NotificationHub = 'NotificationHub', ServiceBus = 'ServiceBus', EventHub = 'EventHub', ApiHub = 'ApiHub', DocDb = 'DocDb', RedisCache = 'RedisCache', PostgreSQL = 'PostgreSQL' }
 
 
 	/** String dictionary resource. */
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsmCopySlotEntitySiteConfigAutoHealRulesActionsActionType { Recycle = 0, LogEvent = 1, CustomAction = 2 }
+	export enum CsmCopySlotEntitySiteConfigAutoHealRulesActionsActionType { Recycle = 'Recycle', LogEvent = 'LogEvent', CustomAction = 'CustomAction' }
 
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesActionsCustomAction {
 
@@ -1485,7 +1485,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsmCopySlotEntitySiteConfigFtpsState { AllAllowed = 0, FtpsOnly = 1, Disabled = 2 }
+	export enum CsmCopySlotEntitySiteConfigFtpsState { AllAllowed = 'AllAllowed', FtpsOnly = 'FtpsOnly', Disabled = 'Disabled' }
 
 	export interface CsmCopySlotEntitySiteConfigHandlerMappings {
 
@@ -1608,7 +1608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsmCopySlotEntitySiteConfigIpSecurityRestrictionsTag { Default = 0, XffProxy = 1 }
+	export enum CsmCopySlotEntitySiteConfigIpSecurityRestrictionsTag { Default = 'Default', XffProxy = 'XffProxy' }
 
 	export interface CsmCopySlotEntitySiteConfigLimits {
 
@@ -1641,7 +1641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsmCopySlotEntitySiteConfigLoadBalancing { WeightedRoundRobin = 0, LeastRequests = 1, LeastResponseTime = 2, WeightedTotalTraffic = 3, RequestHash = 4 }
+	export enum CsmCopySlotEntitySiteConfigLoadBalancing { WeightedRoundRobin = 'WeightedRoundRobin', LeastRequests = 'LeastRequests', LeastResponseTime = 'LeastResponseTime', WeightedTotalTraffic = 'WeightedTotalTraffic', RequestHash = 'RequestHash' }
 
 	export interface CsmCopySlotEntitySiteConfigMachineKey {
 
@@ -1681,9 +1681,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CsmCopySlotEntitySiteConfigManagedPipelineMode { Integrated = 0, Classic = 1 }
+	export enum CsmCopySlotEntitySiteConfigManagedPipelineMode { Integrated = 'Integrated', Classic = 'Classic' }
 
-	export enum CsmCopySlotEntitySiteConfigMinTlsVersion { _1_0 = 0, _1_1 = 1, _1_2 = 2 }
+	export enum CsmCopySlotEntitySiteConfigMinTlsVersion { _1_0 = '1.0', _1_1 = '1.1', _1_2 = '1.2' }
 
 	export interface CsmCopySlotEntitySiteConfigPush {
 
@@ -1792,7 +1792,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsmCopySlotEntitySiteConfigScmType { None = 0, Dropbox = 1, Tfs = 2, LocalGit = 3, GitHub = 4, CodePlexGit = 5, CodePlexHg = 6, BitbucketGit = 7, BitbucketHg = 8, ExternalGit = 9, ExternalHg = 10, OneDrive = 11, VSO = 12, VSTSRM = 13 }
+	export enum CsmCopySlotEntitySiteConfigScmType { None = 'None', Dropbox = 'Dropbox', Tfs = 'Tfs', LocalGit = 'LocalGit', GitHub = 'GitHub', CodePlexGit = 'CodePlexGit', CodePlexHg = 'CodePlexHg', BitbucketGit = 'BitbucketGit', BitbucketHg = 'BitbucketHg', ExternalGit = 'ExternalGit', ExternalHg = 'ExternalHg', OneDrive = 'OneDrive', VSO = 'VSO', VSTSRM = 'VSTSRM' }
 
 	export interface CsmCopySlotEntitySiteConfigVirtualApplications {
 
@@ -1890,7 +1890,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsmPublishingProfileOptionsFormat { FileZilla3 = 0, WebDeploy = 1, Ftp = 2 }
+	export enum CsmPublishingProfileOptionsFormat { FileZilla3 = 'FileZilla3', WebDeploy = 'WebDeploy', Ftp = 'Ftp' }
 
 
 	/** Deployment slot parameters. */
@@ -2003,7 +2003,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseBackupSettingDatabaseType { SqlAzure = 0, MySql = 1, LocalMySql = 2, PostgreSql = 3 }
+	export enum DatabaseBackupSettingDatabaseType { SqlAzure = 'SqlAzure', MySql = 'MySql', LocalMySql = 'LocalMySql', PostgreSql = 'PostgreSql' }
 
 
 	/** Details about restoring a deleted app. */
@@ -2550,7 +2550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MSDeployLogEntryType { Message = 0, Warning = 1, Error = 2 }
+	export enum MSDeployLogEntryType { Message = 'Message', Warning = 'Warning', Error = 'Error' }
 
 
 	/** MSDeploy ARM response */
@@ -3254,7 +3254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteCloneabilityResult { Cloneable = 0, PartiallyCloneable = 1, NotCloneable = 2 }
+	export enum SiteCloneabilityResult { Cloneable = 'Cloneable', PartiallyCloneable = 'PartiallyCloneable', NotCloneable = 'NotCloneable' }
 
 
 	/** Web app configuration ARM resource. */
@@ -11717,7 +11717,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebApps_MigrateMySqlReturnStatus { InProgress = 0, Failed = 1, Succeeded = 2, TimedOut = 3, Created = 4 }
+	export enum WebApps_MigrateMySqlReturnStatus { InProgress = 'InProgress', Failed = 'Failed', Succeeded = 'Succeeded', TimedOut = 'TimedOut', Created = 'Created' }
 
 	export interface WebApps_ListSlotsReturn {
 

@@ -1139,7 +1139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientGetByClient_idAndKindKind { '\'registration\'' = 0, '\'selfie\'' = 1, '\'plain\'' = 2 }
+	export enum ClientGetByClient_idAndKindKind { '\'registration\'' = '\'registration\'', '\'selfie\'' = '\'selfie\'', '\'plain\'' = '\'plain\'' }
 
 	export interface DomainGetByDomainnameReturn {
 
@@ -1982,7 +1982,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserGetByUsernameAndKindAndScopeKind { '\'access\'' = 0, '\'refresh\'' = 1, '\'authorization\'' = 2, '\'id\'' = 3, '\'selfie\'' = 4, '\'plain\'' = 5 }
+	export enum UserGetByUsernameAndKindAndScopeKind { '\'access\'' = '\'access\'', '\'refresh\'' = '\'refresh\'', '\'authorization\'' = '\'authorization\'', '\'id\'' = '\'id\'', '\'selfie\'' = '\'selfie\'', '\'plain\'' = '\'plain\'' }
 
 }
 

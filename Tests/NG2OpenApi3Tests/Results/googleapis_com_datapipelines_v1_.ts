@@ -69,7 +69,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatapipelinesV1SdkVersionSdkSupportStatus { UNKNOWN = 0, SUPPORTED = 1, STALE = 2, DEPRECATED = 3, UNSUPPORTED = 4 }
+	export enum GoogleCloudDatapipelinesV1SdkVersionSdkSupportStatus { UNKNOWN = 'UNKNOWN', SUPPORTED = 'SUPPORTED', STALE = 'STALE', DEPRECATED = 'DEPRECATED', UNSUPPORTED = 'UNSUPPORTED' }
 
 
 	/** The environment values to be set at runtime for a Flex Template. */
@@ -193,9 +193,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironmentFlexrsGoal { FLEXRS_UNSPECIFIED = 0, FLEXRS_SPEED_OPTIMIZED = 1, FLEXRS_COST_OPTIMIZED = 2 }
+	export enum GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironmentFlexrsGoal { FLEXRS_UNSPECIFIED = 'FLEXRS_UNSPECIFIED', FLEXRS_SPEED_OPTIMIZED = 'FLEXRS_SPEED_OPTIMIZED', FLEXRS_COST_OPTIMIZED = 'FLEXRS_COST_OPTIMIZED' }
 
-	export enum GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironmentIpConfiguration { WORKER_IP_UNSPECIFIED = 0, WORKER_IP_PUBLIC = 1, WORKER_IP_PRIVATE = 2 }
+	export enum GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironmentIpConfiguration { WORKER_IP_UNSPECIFIED = 'WORKER_IP_UNSPECIFIED', WORKER_IP_PUBLIC = 'WORKER_IP_PUBLIC', WORKER_IP_PRIVATE = 'WORKER_IP_PRIVATE' }
 
 
 	/** Definition of the job information maintained by the pipeline. Fields in this entity are retrieved from the executor API (e.g. Dataflow API). */
@@ -252,7 +252,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatapipelinesV1JobState { STATE_UNSPECIFIED = 0, STATE_PENDING = 1, STATE_RUNNING = 2, STATE_DONE = 3, STATE_FAILED = 4, STATE_CANCELLED = 5 }
+	export enum GoogleCloudDatapipelinesV1JobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STATE_PENDING = 'STATE_PENDING', STATE_RUNNING = 'STATE_RUNNING', STATE_DONE = 'STATE_DONE', STATE_FAILED = 'STATE_FAILED', STATE_CANCELLED = 'STATE_CANCELLED' }
 
 
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -760,9 +760,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatapipelinesV1PipelineState { STATE_UNSPECIFIED = 0, STATE_RESUMING = 1, STATE_ACTIVE = 2, STATE_STOPPING = 3, STATE_ARCHIVED = 4, STATE_PAUSED = 5 }
+	export enum GoogleCloudDatapipelinesV1PipelineState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STATE_RESUMING = 'STATE_RESUMING', STATE_ACTIVE = 'STATE_ACTIVE', STATE_STOPPING = 'STATE_STOPPING', STATE_ARCHIVED = 'STATE_ARCHIVED', STATE_PAUSED = 'STATE_PAUSED' }
 
-	export enum GoogleCloudDatapipelinesV1PipelineType { PIPELINE_TYPE_UNSPECIFIED = 0, PIPELINE_TYPE_BATCH = 1, PIPELINE_TYPE_STREAMING = 2 }
+	export enum GoogleCloudDatapipelinesV1PipelineType { PIPELINE_TYPE_UNSPECIFIED = 'PIPELINE_TYPE_UNSPECIFIED', PIPELINE_TYPE_BATCH = 'PIPELINE_TYPE_BATCH', PIPELINE_TYPE_STREAMING = 'PIPELINE_TYPE_STREAMING' }
 
 
 	/** Workload details for creating the pipeline jobs. */

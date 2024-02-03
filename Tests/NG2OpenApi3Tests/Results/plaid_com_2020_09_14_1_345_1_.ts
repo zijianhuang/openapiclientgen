@@ -11,7 +11,7 @@ export namespace MyNS {
 	 * `"tel"` - Telephone-Initiated Entry
 	 * `"web"` - Internet-Initiated Entry - debits from a consumer’s account where their authorization is obtained over the Internet
 	 */
-	export enum ACHClass { ccd = 0, ppd = 1, tel = 2, web = 3 }
+	export enum ACHClass { ccd = 'ccd', ppd = 'ppd', tel = 'tel', web = 'web' }
 
 
 	/** Information about the APR on the account. */
@@ -79,7 +79,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APRApr_type { balance_transfer_apr = 0, cash_apr = 1, purchase_apr = 2, special = 3 }
+	export enum APRApr_type { balance_transfer_apr = 'balance_transfer_apr', cash_apr = 'cash_apr', purchase_apr = 'purchase_apr', special = 'special' }
 
 
 	/** Allow or disallow product access by account. Unlisted (e.g. missing) accounts will be considered `new_accounts`. */
@@ -447,7 +447,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmailType { primary = 0, secondary = 1, other = 2 }
+	export enum EmailType { primary = 'primary', secondary = 'secondary', other = 'other' }
 
 
 	/** A phone number */
@@ -502,7 +502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { home = 0, work = 1, office = 2, mobile = 3, mobile1 = 4, other = 5 }
+	export enum PhoneNumberType { home = 'home', work = 'work', office = 'office', mobile = 'mobile', mobile1 = 'mobile1', other = 'other' }
 
 
 	/** A transaction on the asset report */
@@ -858,11 +858,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountBaseSubtype { '401a' = 0, '401k' = 1, '403B' = 2, '457b' = 3, _529 = 4, brokerage = 5, 'cash isa' = 6, 'crypto exchange' = 7, 'education savings account' = 8, ebt = 9, 'fixed annuity' = 10, gic = 11, 'health reimbursement arrangement' = 12, hsa = 13, isa = 14, ira = 15, lif = 16, 'life insurance' = 17, lira = 18, lrif = 19, lrsp = 20, 'non-custodial wallet' = 21, 'non-taxable brokerage account' = 22, other = 23, 'other insurance' = 24, 'other annuity' = 25, prif = 26, rdsp = 27, resp = 28, rlif = 29, rrif = 30, pension = 31, 'profit sharing plan' = 32, retirement = 33, roth = 34, 'roth 401k' = 35, rrsp = 36, 'sep ira' = 37, 'simple ira' = 38, sipp = 39, 'stock plan' = 40, 'thrift savings plan' = 41, tfsa = 42, trust = 43, ugma = 44, utma = 45, 'variable annuity' = 46, 'credit card' = 47, paypal = 48, cd = 49, checking = 50, savings = 51, 'money market' = 52, prepaid = 53, auto = 54, business = 55, commercial = 56, construction = 57, consumer = 58, 'home equity' = 59, loan = 60, mortgage = 61, overdraft = 62, 'line of credit' = 63, student = 64, 'cash management' = 65, keogh = 66, 'mutual fund' = 67, recurring = 68, rewards = 69, 'safe deposit' = 70, sarsep = 71, payroll = 72, _null = 73 }
+	export enum AccountBaseSubtype { '401a' = '401a', '401k' = '401k', '403B' = '403B', '457b' = '457b', _529 = '529', brokerage = 'brokerage', 'cash isa' = 'cash isa', 'crypto exchange' = 'crypto exchange', 'education savings account' = 'education savings account', ebt = 'ebt', 'fixed annuity' = 'fixed annuity', gic = 'gic', 'health reimbursement arrangement' = 'health reimbursement arrangement', hsa = 'hsa', isa = 'isa', ira = 'ira', lif = 'lif', 'life insurance' = 'life insurance', lira = 'lira', lrif = 'lrif', lrsp = 'lrsp', 'non-custodial wallet' = 'non-custodial wallet', 'non-taxable brokerage account' = 'non-taxable brokerage account', other = 'other', 'other insurance' = 'other insurance', 'other annuity' = 'other annuity', prif = 'prif', rdsp = 'rdsp', resp = 'resp', rlif = 'rlif', rrif = 'rrif', pension = 'pension', 'profit sharing plan' = 'profit sharing plan', retirement = 'retirement', roth = 'roth', 'roth 401k' = 'roth 401k', rrsp = 'rrsp', 'sep ira' = 'sep ira', 'simple ira' = 'simple ira', sipp = 'sipp', 'stock plan' = 'stock plan', 'thrift savings plan' = 'thrift savings plan', tfsa = 'tfsa', trust = 'trust', ugma = 'ugma', utma = 'utma', 'variable annuity' = 'variable annuity', 'credit card' = 'credit card', paypal = 'paypal', cd = 'cd', checking = 'checking', savings = 'savings', 'money market' = 'money market', prepaid = 'prepaid', auto = 'auto', business = 'business', commercial = 'commercial', construction = 'construction', consumer = 'consumer', 'home equity' = 'home equity', loan = 'loan', mortgage = 'mortgage', overdraft = 'overdraft', 'line of credit' = 'line of credit', student = 'student', 'cash management' = 'cash management', keogh = 'keogh', 'mutual fund' = 'mutual fund', recurring = 'recurring', rewards = 'rewards', 'safe deposit' = 'safe deposit', sarsep = 'sarsep', payroll = 'payroll', _null = 73 }
 
-	export enum AccountBaseType { investment = 0, credit = 1, depository = 2, loan = 3, brokerage = 4, other = 5 }
+	export enum AccountBaseType { investment = 'investment', credit = 'credit', depository = 'depository', loan = 'loan', brokerage = 'brokerage', other = 'other' }
 
-	export enum AccountBaseVerification_status { automatically_verified = 0, pending_automatic_verification = 1, pending_manual_verification = 2, manually_verified = 3, verification_expired = 4, verification_failed = 5 }
+	export enum AccountBaseVerification_status { automatically_verified = 'automatically_verified', pending_automatic_verification = 'pending_automatic_verification', pending_manual_verification = 'pending_manual_verification', manually_verified = 'manually_verified', verification_expired = 'verification_expired', verification_failed = 'verification_failed' }
 
 
 	/** Enumerates the account subtypes that the application wishes for the user to be able to select from. For more details refer to Plaid documentation on account filters. */
@@ -942,7 +942,7 @@ export namespace MyNS {
 
 
 	/** Valid account subtypes for credit accounts. For a list containing descriptions of each subtype, see [Account schemas](https://plaid.com/docs/api/accounts/#StandaloneAccountType-credit). */
-	export enum CreditAccountSubtype { 'credit card' = 0, paypal = 1, all = 2 }
+	export enum CreditAccountSubtype { 'credit card' = 'credit card', paypal = 'paypal', all = 'all' }
 
 
 	/** A filter to apply to `depository`-type accounts */
@@ -966,7 +966,7 @@ export namespace MyNS {
 
 
 	/** Valid account subtypes for depository accounts. For a list containing descriptions of each subtype, see [Account schemas](https://plaid.com/docs/api/accounts/#StandaloneAccountType-depository). */
-	export enum DepositoryAccountSubtype { checking = 0, savings = 1, hsa = 2, cd = 3, 'money market' = 4, paypal = 5, prepaid = 6, 'cash management' = 7, ebt = 8, all = 9 }
+	export enum DepositoryAccountSubtype { checking = 'checking', savings = 'savings', hsa = 'hsa', cd = 'cd', 'money market' = 'money market', paypal = 'paypal', prepaid = 'prepaid', 'cash management' = 'cash management', ebt = 'ebt', all = 'all' }
 
 
 	/** A filter to apply to `investment`-type accounts (or `brokerage`-type accounts for API versions 2018-05-22 and earlier). */
@@ -990,7 +990,7 @@ export namespace MyNS {
 
 
 	/** Valid account subtypes for investment accounts. For a list containing descriptions of each subtype, see [Account schemas](https://plaid.com/docs/api/accounts/#StandaloneAccountType-investment). */
-	export enum InvestmentAccountSubtype { _529 = 0, '401a' = 1, '401k' = 2, '403B' = 3, '457b' = 4, brokerage = 5, 'cash isa' = 6, 'crypto exchange' = 7, 'education savings account' = 8, 'fixed annuity' = 9, gic = 10, 'health reimbursement arrangement' = 11, hsa = 12, ira = 13, isa = 14, keogh = 15, lif = 16, 'life insurance' = 17, lira = 18, lrif = 19, lrsp = 20, 'mutual fund' = 21, 'non-custodial wallet' = 22, 'non-taxable brokerage account' = 23, other = 24, 'other annuity' = 25, 'other insurance' = 26, pension = 27, prif = 28, 'profit sharing plan' = 29, qshr = 30, rdsp = 31, resp = 32, retirement = 33, rlif = 34, roth = 35, 'roth 401k' = 36, rrif = 37, rrsp = 38, sarsep = 39, 'sep ira' = 40, 'simple ira' = 41, sipp = 42, 'stock plan' = 43, tfsa = 44, trust = 45, ugma = 46, utma = 47, 'variable annuity' = 48, all = 49 }
+	export enum InvestmentAccountSubtype { _529 = '529', '401a' = '401a', '401k' = '401k', '403B' = '403B', '457b' = '457b', brokerage = 'brokerage', 'cash isa' = 'cash isa', 'crypto exchange' = 'crypto exchange', 'education savings account' = 'education savings account', 'fixed annuity' = 'fixed annuity', gic = 'gic', 'health reimbursement arrangement' = 'health reimbursement arrangement', hsa = 'hsa', ira = 'ira', isa = 'isa', keogh = 'keogh', lif = 'lif', 'life insurance' = 'life insurance', lira = 'lira', lrif = 'lrif', lrsp = 'lrsp', 'mutual fund' = 'mutual fund', 'non-custodial wallet' = 'non-custodial wallet', 'non-taxable brokerage account' = 'non-taxable brokerage account', other = 'other', 'other annuity' = 'other annuity', 'other insurance' = 'other insurance', pension = 'pension', prif = 'prif', 'profit sharing plan' = 'profit sharing plan', qshr = 'qshr', rdsp = 'rdsp', resp = 'resp', retirement = 'retirement', rlif = 'rlif', roth = 'roth', 'roth 401k' = 'roth 401k', rrif = 'rrif', rrsp = 'rrsp', sarsep = 'sarsep', 'sep ira' = 'sep ira', 'simple ira' = 'simple ira', sipp = 'sipp', 'stock plan' = 'stock plan', tfsa = 'tfsa', trust = 'trust', ugma = 'ugma', utma = 'utma', 'variable annuity' = 'variable annuity', all = 'all' }
 
 
 	/** A filter to apply to `loan`-type accounts */
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 
 
 	/** Valid account subtypes for loan accounts. For a list containing descriptions of each subtype, see [Account schemas](https://plaid.com/docs/api/accounts/#StandaloneAccountType-loan). */
-	export enum LoanAccountSubtype { auto = 0, business = 1, commercial = 2, construction = 3, consumer = 4, 'home equity' = 5, loan = 6, mortgage = 7, 'line of credit' = 8, student = 9, other = 10, all = 11 }
+	export enum LoanAccountSubtype { auto = 'auto', business = 'business', commercial = 'commercial', construction = 'construction', consumer = 'consumer', 'home equity' = 'home equity', loan = 'loan', mortgage = 'mortgage', 'line of credit' = 'line of credit', student = 'student', other = 'other', all = 'all' }
 
 
 	/** Identity information about an account */
@@ -1269,11 +1269,11 @@ export namespace MyNS {
 	 * `SINGLE_SELECT`: indicates that the user should be allowed to pick only a single account.
 	 * `ALL`: indicates that the user must share all of their accounts and should not be given the opportunity to de-select
 	 */
-	export enum AccountSelectionCardinality { SINGLE_SELECT = 0, MULTI_SELECT = 1, ALL = 2 }
+	export enum AccountSelectionCardinality { SINGLE_SELECT = 'SINGLE_SELECT', MULTI_SELECT = 'MULTI_SELECT', ALL = 'ALL' }
 
 
 	/** See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-schema) for a full listing of account types and corresponding subtypes. */
-	export enum AccountSubtype { '401a' = 0, '401k' = 1, '403B' = 2, '457b' = 3, _529 = 4, brokerage = 5, 'cash isa' = 6, 'crypto exchange' = 7, 'education savings account' = 8, ebt = 9, 'fixed annuity' = 10, gic = 11, 'health reimbursement arrangement' = 12, hsa = 13, isa = 14, ira = 15, lif = 16, 'life insurance' = 17, lira = 18, lrif = 19, lrsp = 20, 'non-custodial wallet' = 21, 'non-taxable brokerage account' = 22, other = 23, 'other insurance' = 24, 'other annuity' = 25, prif = 26, rdsp = 27, resp = 28, rlif = 29, rrif = 30, pension = 31, 'profit sharing plan' = 32, retirement = 33, roth = 34, 'roth 401k' = 35, rrsp = 36, 'sep ira' = 37, 'simple ira' = 38, sipp = 39, 'stock plan' = 40, 'thrift savings plan' = 41, tfsa = 42, trust = 43, ugma = 44, utma = 45, 'variable annuity' = 46, 'credit card' = 47, paypal = 48, cd = 49, checking = 50, savings = 51, 'money market' = 52, prepaid = 53, auto = 54, business = 55, commercial = 56, construction = 57, consumer = 58, 'home equity' = 59, loan = 60, mortgage = 61, overdraft = 62, 'line of credit' = 63, student = 64, 'cash management' = 65, keogh = 66, 'mutual fund' = 67, recurring = 68, rewards = 69, 'safe deposit' = 70, sarsep = 71, payroll = 72, _null = 73 }
+	export enum AccountSubtype { '401a' = '401a', '401k' = '401k', '403B' = '403B', '457b' = '457b', _529 = '529', brokerage = 'brokerage', 'cash isa' = 'cash isa', 'crypto exchange' = 'crypto exchange', 'education savings account' = 'education savings account', ebt = 'ebt', 'fixed annuity' = 'fixed annuity', gic = 'gic', 'health reimbursement arrangement' = 'health reimbursement arrangement', hsa = 'hsa', isa = 'isa', ira = 'ira', lif = 'lif', 'life insurance' = 'life insurance', lira = 'lira', lrif = 'lrif', lrsp = 'lrsp', 'non-custodial wallet' = 'non-custodial wallet', 'non-taxable brokerage account' = 'non-taxable brokerage account', other = 'other', 'other insurance' = 'other insurance', 'other annuity' = 'other annuity', prif = 'prif', rdsp = 'rdsp', resp = 'resp', rlif = 'rlif', rrif = 'rrif', pension = 'pension', 'profit sharing plan' = 'profit sharing plan', retirement = 'retirement', roth = 'roth', 'roth 401k' = 'roth 401k', rrsp = 'rrsp', 'sep ira' = 'sep ira', 'simple ira' = 'simple ira', sipp = 'sipp', 'stock plan' = 'stock plan', 'thrift savings plan' = 'thrift savings plan', tfsa = 'tfsa', trust = 'trust', ugma = 'ugma', utma = 'utma', 'variable annuity' = 'variable annuity', 'credit card' = 'credit card', paypal = 'paypal', cd = 'cd', checking = 'checking', savings = 'savings', 'money market' = 'money market', prepaid = 'prepaid', auto = 'auto', business = 'business', commercial = 'commercial', construction = 'construction', consumer = 'consumer', 'home equity' = 'home equity', loan = 'loan', mortgage = 'mortgage', overdraft = 'overdraft', 'line of credit' = 'line of credit', student = 'student', 'cash management' = 'cash management', keogh = 'keogh', 'mutual fund' = 'mutual fund', recurring = 'recurring', rewards = 'rewards', 'safe deposit' = 'safe deposit', sarsep = 'sarsep', payroll = 'payroll', _null = 73 }
 
 
 	/**
@@ -1284,7 +1284,7 @@ export namespace MyNS {
 	 * `other:` Non-specified account type
 	 * See the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.
 	 */
-	export enum AccountType { investment = 0, credit = 1, depository = 2, loan = 3, brokerage = 4, other = 5 }
+	export enum AccountType { investment = 'investment', credit = 'credit', depository = 'depository', loan = 'loan', brokerage = 'brokerage', other = 'other' }
 
 
 	/** AccountsBalanceGetRequest defines the request schema for `/accounts/balance/get` */
@@ -1575,7 +1575,7 @@ export namespace MyNS {
 
 
 	/** A list of products that an institution can support. All Items must be initialized with at least one product. The Balance product is always available and does not need to be specified during initialization. */
-	export enum Products { assets = 0, auth = 1, balance = 2, identity = 3, investments = 4, liabilities = 5, payment_initiation = 6, identity_verification = 7, transactions = 8, credit_details = 9, income = 10, income_verification = 11, deposit_switch = 12, standing_orders = 13, transfer = 14, employment = 15, recurring_transactions = 16, signal = 17 }
+	export enum Products { assets = 'assets', auth = 'auth', balance = 'balance', identity = 'identity', investments = 'investments', liabilities = 'liabilities', payment_initiation = 'payment_initiation', identity_verification = 'identity_verification', transactions = 'transactions', credit_details = 'credit_details', income = 'income', income_verification = 'income_verification', deposit_switch = 'deposit_switch', standing_orders = 'standing_orders', transfer = 'transfer', employment = 'employment', recurring_transactions = 'recurring_transactions', signal = 'signal' }
 
 
 	/** We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead. */
@@ -1679,13 +1679,13 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaidErrorError_type { INVALID_REQUEST = 0, INVALID_RESULT = 1, INVALID_INPUT = 2, INSTITUTION_ERROR = 3, RATE_LIMIT_EXCEEDED = 4, API_ERROR = 5, ITEM_ERROR = 6, ASSET_REPORT_ERROR = 7, RECAPTCHA_ERROR = 8, OAUTH_ERROR = 9, PAYMENT_ERROR = 10, BANK_TRANSFER_ERROR = 11, INCOME_VERIFICATION_ERROR = 12, MICRODEPOSITS_ERROR = 13 }
+	export enum PlaidErrorError_type { INVALID_REQUEST = 'INVALID_REQUEST', INVALID_RESULT = 'INVALID_RESULT', INVALID_INPUT = 'INVALID_INPUT', INSTITUTION_ERROR = 'INSTITUTION_ERROR', RATE_LIMIT_EXCEEDED = 'RATE_LIMIT_EXCEEDED', API_ERROR = 'API_ERROR', ITEM_ERROR = 'ITEM_ERROR', ASSET_REPORT_ERROR = 'ASSET_REPORT_ERROR', RECAPTCHA_ERROR = 'RECAPTCHA_ERROR', OAUTH_ERROR = 'OAUTH_ERROR', PAYMENT_ERROR = 'PAYMENT_ERROR', BANK_TRANSFER_ERROR = 'BANK_TRANSFER_ERROR', INCOME_VERIFICATION_ERROR = 'INCOME_VERIFICATION_ERROR', MICRODEPOSITS_ERROR = 'MICRODEPOSITS_ERROR' }
 
-	export enum ItemUpdate_type { background = 0, user_present_required = 1 }
+	export enum ItemUpdate_type { background = 'background', user_present_required = 'user_present_required' }
 
 
 	/** Enum representing the state of the action/activity. */
-	export enum ActionState { UNKNOWN = 0, ATTEMPT = 1, SUCCESS = 2, FAILURE = 3, SKIPPED = 4 }
+	export enum ActionState { UNKNOWN = 'UNKNOWN', ATTEMPT = 'ATTEMPT', SUCCESS = 'SUCCESS', FAILURE = 'FAILURE', SKIPPED = 'SKIPPED' }
 
 
 	/** Describes a consent activity. */
@@ -1776,11 +1776,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityActivity { UNKNOWN = 0, ITEM_CREATE = 1, ITEM_IMPORT = 2, ITEM_UPDATE = 3, ITEM_UNLINK = 4, PORTAL_UNLINK = 5, PORTAL_ITEMS_DELETE = 6, ITEM_REMOVE = 7, INVARIANT_CHECKER_DELETION = 8, SCOPES_UPDATE = 9 }
+	export enum ActivityActivity { UNKNOWN = 'UNKNOWN', ITEM_CREATE = 'ITEM_CREATE', ITEM_IMPORT = 'ITEM_IMPORT', ITEM_UPDATE = 'ITEM_UPDATE', ITEM_UNLINK = 'ITEM_UNLINK', PORTAL_UNLINK = 'PORTAL_UNLINK', PORTAL_ITEMS_DELETE = 'PORTAL_ITEMS_DELETE', ITEM_REMOVE = 'ITEM_REMOVE', INVARIANT_CHECKER_DELETION = 'INVARIANT_CHECKER_DELETION', SCOPES_UPDATE = 'SCOPES_UPDATE' }
 
 
 	/** Types of consent activities */
-	export enum ActivityType { UNKNOWN = 0, ITEM_CREATE = 1, ITEM_IMPORT = 2, ITEM_UPDATE = 3, ITEM_UNLINK = 4, PORTAL_UNLINK = 5, PORTAL_ITEMS_DELETE = 6, ITEM_REMOVE = 7, INVARIANT_CHECKER_DELETION = 8, SCOPES_UPDATE = 9 }
+	export enum ActivityType { UNKNOWN = 'UNKNOWN', ITEM_CREATE = 'ITEM_CREATE', ITEM_IMPORT = 'ITEM_IMPORT', ITEM_UPDATE = 'ITEM_UPDATE', ITEM_UNLINK = 'ITEM_UNLINK', PORTAL_UNLINK = 'PORTAL_UNLINK', PORTAL_ITEMS_DELETE = 'PORTAL_ITEMS_DELETE', ITEM_REMOVE = 'ITEM_REMOVE', INVARIANT_CHECKER_DELETION = 'INVARIANT_CHECKER_DELETION', SCOPES_UPDATE = 'SCOPES_UPDATE' }
 
 
 	/** Data about the components comprising an address. */
@@ -1821,7 +1821,7 @@ export namespace MyNS {
 	 * Field describing whether the associated address is being used for commercial or residential purposes.
 	 * Note: This value will be `no_data` when Plaid does not have sufficient data to determine the address's use.
 	 */
-	export enum AddressPurposeLabel { residential = 0, commercial = 1, no_data = 2 }
+	export enum AddressPurposeLabel { residential = 'residential', commercial = 'commercial', no_data = 'no_data' }
 
 
 	/** Metadata about the application */
@@ -2280,7 +2280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetDetailAssetType { CheckingAccount = 0, SavingsAccount = 1, Investment = 2, MoneyMarketFund = 3, Other = 4 }
+	export enum AssetDetailAssetType { CheckingAccount = 'CheckingAccount', SavingsAccount = 'SavingsAccount', Investment = 'Investment', MoneyMarketFund = 'MoneyMarketFund', Other = 'Other' }
 
 
 	/** Documentation not found in the MISMO model viewer and not provided by Freddie Mac. */
@@ -2577,9 +2577,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetTransactionDetailAssetTransactionCategoryType { ATMFee = 0, Advertising = 1, AirTravel = 2, AlcoholBars = 3, Allowance = 4, Amusement = 5, Arts = 6, AutoTransport = 7, AutoInsurance = 8, AutoPayment = 9, BabySupplies = 10, BabysitterDaycare = 11, BankFee = 12, BillsUtilities = 13, Bonus = 14, BooksSupplies = 15, 'Business Services' = 16, Buy = 17, CashATM = 18, Charity = 19, Check = 20, ChildSupport = 21, Clothing = 22, CoffeeShops = 23, CreditCardPayment = 24, Dentist = 25, Doctor = 26, Education = 27, ElectronicsSoftware = 28, Entertainment = 29, Eyecare = 30, FastFood = 31, FederalTax = 32, FeesCharges = 33, FinanceCharge = 34, Financial = 35, FinancialAdvisor = 36, FoodDining = 37, Furnishings = 38, GasFuel = 39, GiftsDonations = 40, Groceries = 41, Gym = 42, Hair = 43, HealthFitness = 44, HealthInsurance = 45, Hobbies = 46, Home = 47, HomeImprovement = 48, HomeInsurance = 49, HomePhone = 50, HomeServices = 51, HomeSupplies = 52, Hotel = 53, Income = 54, InterestIncome = 55, Internet = 56, Investments = 57, Kids = 58, KidsActivities = 59, LateFee = 60, Laundry = 61, LawnGarden = 62, Legal = 63, LifeInsurance = 64, LoanInsurance = 65, LoanPayment = 66, Loans = 67, MobilePhone = 68, MortgageRent = 69, MoviesDVDs = 70, Music = 71, NewspapersMagazines = 72, OfficeSupplies = 73, Parking = 74, Paycheck = 75, PersonalCare = 76, PetFoodSupplies = 77, PetGrooming = 78, Pets = 79, Pharmacy = 80, Printing = 81, 'Property Tax' = 82, 'Public Transportation' = 83, Reimbursement = 84, RentalCarTaxi = 85, Restaurants = 86, SalesTax = 87, ServiceParts = 88, ServiceFee = 89, Shipping = 90, Shopping = 91, SpaMassage = 92, SportingGoods = 93, Sports = 94, StateTax = 95, 'Student Loan' = 96, Taxes = 97, Television = 98, Toys = 99, Transfer = 100, Travel = 101, Tuition = 102, Uncategorized = 103, Utilities = 104, Vacation = 105, Veterinary = 106 }
+	export enum AssetTransactionDetailAssetTransactionCategoryType { ATMFee = 'ATMFee', Advertising = 'Advertising', AirTravel = 'AirTravel', AlcoholBars = 'AlcoholBars', Allowance = 'Allowance', Amusement = 'Amusement', Arts = 'Arts', AutoTransport = 'AutoTransport', AutoInsurance = 'AutoInsurance', AutoPayment = 'AutoPayment', BabySupplies = 'BabySupplies', BabysitterDaycare = 'BabysitterDaycare', BankFee = 'BankFee', BillsUtilities = 'BillsUtilities', Bonus = 'Bonus', BooksSupplies = 'BooksSupplies', 'Business Services' = 'Business Services', Buy = 'Buy', CashATM = 'CashATM', Charity = 'Charity', Check = 'Check', ChildSupport = 'ChildSupport', Clothing = 'Clothing', CoffeeShops = 'CoffeeShops', CreditCardPayment = 'CreditCardPayment', Dentist = 'Dentist', Doctor = 'Doctor', Education = 'Education', ElectronicsSoftware = 'ElectronicsSoftware', Entertainment = 'Entertainment', Eyecare = 'Eyecare', FastFood = 'FastFood', FederalTax = 'FederalTax', FeesCharges = 'FeesCharges', FinanceCharge = 'FinanceCharge', Financial = 'Financial', FinancialAdvisor = 'FinancialAdvisor', FoodDining = 'FoodDining', Furnishings = 'Furnishings', GasFuel = 'GasFuel', GiftsDonations = 'GiftsDonations', Groceries = 'Groceries', Gym = 'Gym', Hair = 'Hair', HealthFitness = 'HealthFitness', HealthInsurance = 'HealthInsurance', Hobbies = 'Hobbies', Home = 'Home', HomeImprovement = 'HomeImprovement', HomeInsurance = 'HomeInsurance', HomePhone = 'HomePhone', HomeServices = 'HomeServices', HomeSupplies = 'HomeSupplies', Hotel = 'Hotel', Income = 'Income', InterestIncome = 'InterestIncome', Internet = 'Internet', Investments = 'Investments', Kids = 'Kids', KidsActivities = 'KidsActivities', LateFee = 'LateFee', Laundry = 'Laundry', LawnGarden = 'LawnGarden', Legal = 'Legal', LifeInsurance = 'LifeInsurance', LoanInsurance = 'LoanInsurance', LoanPayment = 'LoanPayment', Loans = 'Loans', MobilePhone = 'MobilePhone', MortgageRent = 'MortgageRent', MoviesDVDs = 'MoviesDVDs', Music = 'Music', NewspapersMagazines = 'NewspapersMagazines', OfficeSupplies = 'OfficeSupplies', Parking = 'Parking', Paycheck = 'Paycheck', PersonalCare = 'PersonalCare', PetFoodSupplies = 'PetFoodSupplies', PetGrooming = 'PetGrooming', Pets = 'Pets', Pharmacy = 'Pharmacy', Printing = 'Printing', 'Property Tax' = 'Property Tax', 'Public Transportation' = 'Public Transportation', Reimbursement = 'Reimbursement', RentalCarTaxi = 'RentalCarTaxi', Restaurants = 'Restaurants', SalesTax = 'SalesTax', ServiceParts = 'ServiceParts', ServiceFee = 'ServiceFee', Shipping = 'Shipping', Shopping = 'Shopping', SpaMassage = 'SpaMassage', SportingGoods = 'SportingGoods', Sports = 'Sports', StateTax = 'StateTax', 'Student Loan' = 'Student Loan', Taxes = 'Taxes', Television = 'Television', Toys = 'Toys', Transfer = 'Transfer', Travel = 'Travel', Tuition = 'Tuition', Uncategorized = 'Uncategorized', Utilities = 'Utilities', Vacation = 'Vacation', Veterinary = 'Veterinary' }
 
-	export enum AssetTransactionDetailAssetTransactionType { Credit = 0, Debit = 1 }
+	export enum AssetTransactionDetailAssetTransactionType { Credit = 'Credit', Debit = 'Debit' }
 
 
 	/** Documentation not found in the MISMO model viewer and not provided by Freddie Mac. */
@@ -2866,7 +2866,7 @@ export namespace MyNS {
 	 * `fast_assets`: When Fast Assets is requested, Plaid will create two versions of the Asset Report: the Fast Asset Report, which will contain only Identity and Balance information, and the Full Asset Report, which will also contain Transactions information. A `PRODUCT_READY` webhook will be fired for each Asset Report when it is ready, and the `report_type` field will indicate whether the webhook is firing for the `full` or `fast` Asset Report. To retrieve the Fast Asset Report, call `/asset_report/get` with `fast_report` set to `true`. There is no additional charge for using Fast Assets.
 	 * `investments`: Request an Asset Report with Investments. This add-on is in closed beta and not generally available.
 	 */
-	export enum AssetReportAddOns { investments = 0, fast_assets = 1 }
+	export enum AssetReportAddOns { investments = 'investments', fast_assets = 'fast_assets' }
 
 
 	/** AssetReportAuditCopyCreateRequest defines the request schema for `/asset_report/audit_copy/get` */
@@ -3471,7 +3471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoanIdentifierLoanIdentifierType { LenderLoan = 0, UniversalLoan = 1 }
+	export enum LoanIdentifierLoanIdentifierType { LenderLoan = 'LenderLoan', UniversalLoan = 'UniversalLoan' }
 
 
 	/** A collection of objects that define specific parties to a deal. This includes the direct participating parties, such as borrower and seller and the indirect parties such as the credit report provider. */
@@ -3649,7 +3649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleDetailPartyRoleType { Borrower = 0 }
+	export enum RoleDetailPartyRoleType { Borrower = 'Borrower' }
 
 
 	/** The collection of TAXPAYER_IDENTIFICATION elements */
@@ -3711,7 +3711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaxpayerIdentifierTaxpayerIdentifierType { IndividualTaxpayerIdentificationNumber = 0, SocialSecurityNumber = 1 }
+	export enum TaxpayerIdentifierTaxpayerIdentifierType { IndividualTaxpayerIdentificationNumber = 'IndividualTaxpayerIdentificationNumber', SocialSecurityNumber = 'SocialSecurityNumber' }
 
 
 	/** A collection of objects that describe requests and responses for services. */
@@ -3938,7 +3938,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceProductFulfillmentDetailServiceProductFulfillmentIdentifier { VOA = 0, VOETRANSACTIONS = 1 }
+	export enum ServiceProductFulfillmentDetailServiceProductFulfillmentIdentifier { VOA = 'VOA', VOETRANSACTIONS = 'VOETRANSACTIONS' }
 
 
 	/** Documentation not found in the MISMO model viewer and not provided by Freddie Mac. */
@@ -4253,7 +4253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WarningWarning_code { OWNERS_UNAVAILABLE = 0, INVESTMENTS_UNAVAILABLE = 1, TRANSACTIONS_UNAVAILABLE = 2 }
+	export enum WarningWarning_code { OWNERS_UNAVAILABLE = 'OWNERS_UNAVAILABLE', INVESTMENTS_UNAVAILABLE = 'INVESTMENTS_UNAVAILABLE', TRANSACTIONS_UNAVAILABLE = 'TRANSACTIONS_UNAVAILABLE' }
 
 
 	/** AssetReportPDFGetRequest defines the request schema for `/asset_report/pdf/get` */
@@ -4554,15 +4554,15 @@ export namespace MyNS {
 
 
 	/** Asset Transaction Category Type Enumerated derived by Vendor. */
-	export enum AssetTransactionCategoryType { ATMFee = 0, Advertising = 1, AirTravel = 2, AlcoholBars = 3, Allowance = 4, Amusement = 5, Arts = 6, AutoTransport = 7, AutoInsurance = 8, AutoPayment = 9, BabySupplies = 10, BabysitterDaycare = 11, BankFee = 12, BillsUtilities = 13, Bonus = 14, BooksSupplies = 15, 'Business Services' = 16, Buy = 17, CashATM = 18, Charity = 19, Check = 20, ChildSupport = 21, Clothing = 22, CoffeeShops = 23, CreditCardPayment = 24, Dentist = 25, Doctor = 26, Education = 27, ElectronicsSoftware = 28, Entertainment = 29, Eyecare = 30, FastFood = 31, FederalTax = 32, FeesCharges = 33, FinanceCharge = 34, Financial = 35, FinancialAdvisor = 36, FoodDining = 37, Furnishings = 38, GasFuel = 39, GiftsDonations = 40, Groceries = 41, Gym = 42, Hair = 43, HealthFitness = 44, HealthInsurance = 45, Hobbies = 46, Home = 47, HomeImprovement = 48, HomeInsurance = 49, HomePhone = 50, HomeServices = 51, HomeSupplies = 52, Hotel = 53, Income = 54, InterestIncome = 55, Internet = 56, Investments = 57, Kids = 58, KidsActivities = 59, LateFee = 60, Laundry = 61, LawnGarden = 62, Legal = 63, LifeInsurance = 64, LoanInsurance = 65, LoanPayment = 66, Loans = 67, MobilePhone = 68, MortgageRent = 69, MoviesDVDs = 70, Music = 71, NewspapersMagazines = 72, OfficeSupplies = 73, Parking = 74, Paycheck = 75, PersonalCare = 76, PetFoodSupplies = 77, PetGrooming = 78, Pets = 79, Pharmacy = 80, Printing = 81, 'Property Tax' = 82, 'Public Transportation' = 83, Reimbursement = 84, RentalCarTaxi = 85, Restaurants = 86, SalesTax = 87, ServiceParts = 88, ServiceFee = 89, Shipping = 90, Shopping = 91, SpaMassage = 92, SportingGoods = 93, Sports = 94, StateTax = 95, 'Student Loan' = 96, Taxes = 97, Television = 98, Toys = 99, Transfer = 100, Travel = 101, Tuition = 102, Uncategorized = 103, Utilities = 104, Vacation = 105, Veterinary = 106 }
+	export enum AssetTransactionCategoryType { ATMFee = 'ATMFee', Advertising = 'Advertising', AirTravel = 'AirTravel', AlcoholBars = 'AlcoholBars', Allowance = 'Allowance', Amusement = 'Amusement', Arts = 'Arts', AutoTransport = 'AutoTransport', AutoInsurance = 'AutoInsurance', AutoPayment = 'AutoPayment', BabySupplies = 'BabySupplies', BabysitterDaycare = 'BabysitterDaycare', BankFee = 'BankFee', BillsUtilities = 'BillsUtilities', Bonus = 'Bonus', BooksSupplies = 'BooksSupplies', 'Business Services' = 'Business Services', Buy = 'Buy', CashATM = 'CashATM', Charity = 'Charity', Check = 'Check', ChildSupport = 'ChildSupport', Clothing = 'Clothing', CoffeeShops = 'CoffeeShops', CreditCardPayment = 'CreditCardPayment', Dentist = 'Dentist', Doctor = 'Doctor', Education = 'Education', ElectronicsSoftware = 'ElectronicsSoftware', Entertainment = 'Entertainment', Eyecare = 'Eyecare', FastFood = 'FastFood', FederalTax = 'FederalTax', FeesCharges = 'FeesCharges', FinanceCharge = 'FinanceCharge', Financial = 'Financial', FinancialAdvisor = 'FinancialAdvisor', FoodDining = 'FoodDining', Furnishings = 'Furnishings', GasFuel = 'GasFuel', GiftsDonations = 'GiftsDonations', Groceries = 'Groceries', Gym = 'Gym', Hair = 'Hair', HealthFitness = 'HealthFitness', HealthInsurance = 'HealthInsurance', Hobbies = 'Hobbies', Home = 'Home', HomeImprovement = 'HomeImprovement', HomeInsurance = 'HomeInsurance', HomePhone = 'HomePhone', HomeServices = 'HomeServices', HomeSupplies = 'HomeSupplies', Hotel = 'Hotel', Income = 'Income', InterestIncome = 'InterestIncome', Internet = 'Internet', Investments = 'Investments', Kids = 'Kids', KidsActivities = 'KidsActivities', LateFee = 'LateFee', Laundry = 'Laundry', LawnGarden = 'LawnGarden', Legal = 'Legal', LifeInsurance = 'LifeInsurance', LoanInsurance = 'LoanInsurance', LoanPayment = 'LoanPayment', Loans = 'Loans', MobilePhone = 'MobilePhone', MortgageRent = 'MortgageRent', MoviesDVDs = 'MoviesDVDs', Music = 'Music', NewspapersMagazines = 'NewspapersMagazines', OfficeSupplies = 'OfficeSupplies', Parking = 'Parking', Paycheck = 'Paycheck', PersonalCare = 'PersonalCare', PetFoodSupplies = 'PetFoodSupplies', PetGrooming = 'PetGrooming', Pets = 'Pets', Pharmacy = 'Pharmacy', Printing = 'Printing', 'Property Tax' = 'Property Tax', 'Public Transportation' = 'Public Transportation', Reimbursement = 'Reimbursement', RentalCarTaxi = 'RentalCarTaxi', Restaurants = 'Restaurants', SalesTax = 'SalesTax', ServiceParts = 'ServiceParts', ServiceFee = 'ServiceFee', Shipping = 'Shipping', Shopping = 'Shopping', SpaMassage = 'SpaMassage', SportingGoods = 'SportingGoods', Sports = 'Sports', StateTax = 'StateTax', 'Student Loan' = 'Student Loan', Taxes = 'Taxes', Television = 'Television', Toys = 'Toys', Transfer = 'Transfer', Travel = 'Travel', Tuition = 'Tuition', Uncategorized = 'Uncategorized', Utilities = 'Utilities', Vacation = 'Vacation', Veterinary = 'Veterinary' }
 
 
 	/** Asset Transaction Type. */
-	export enum AssetTransactionType { Credit = 0, Debit = 1 }
+	export enum AssetTransactionType { Credit = 'Credit', Debit = 'Debit' }
 
 
 	/** A value from a MISMO prescribed list that specifies financial assets in a mortgage loan transaction. Assets may be either liquid or fixed and are associated with a corresponding asset amount. */
-	export enum AssetType { CheckingAccount = 0, SavingsAccount = 1, Investment = 2, MoneyMarketFund = 3, Other = 4 }
+	export enum AssetType { CheckingAccount = 'CheckingAccount', SavingsAccount = 'SavingsAccount', Investment = 'Investment', MoneyMarketFund = 'MoneyMarketFund', Other = 'Other' }
 
 
 	/** Fired when Asset Report generation has failed. The resulting `error` will have an `error_type` of `ASSET_REPORT_ERROR`. */
@@ -4636,7 +4636,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetsErrorWebhookEnvironment { development = 0, sandbox = 1, production = 2 }
+	export enum AssetsErrorWebhookEnvironment { development = 'development', sandbox = 'sandbox', production = 'production' }
 
 
 	/** Fired when the Asset Report has been generated and `/asset_report/get` is ready to be called.  If you attempt to retrieve an Asset Report before this webhook has fired, you’ll receive a response with the HTTP status code 400 and a Plaid error code of `PRODUCT_NOT_READY`. */
@@ -5555,7 +5555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BankTransferDirection { outbound = 0, inbound = 1, _null = 2 }
+	export enum BankTransferDirection { outbound = 'outbound', inbound = 'inbound', _null = 2 }
 
 
 	/** The failure reason if the type of this transfer is `"failed"` or `"reversed"`. Null value otherwise. */
@@ -5613,11 +5613,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BankTransferNetwork { ach = 0, 'same-day-ach' = 1, wire = 2 }
+	export enum BankTransferNetwork { ach = 'ach', 'same-day-ach' = 'same-day-ach', wire = 'wire' }
 
-	export enum BankTransferStatus { pending = 0, posted = 1, cancelled = 2, failed = 3, reversed = 4 }
+	export enum BankTransferStatus { pending = 'pending', posted = 'posted', cancelled = 'cancelled', failed = 'failed', reversed = 'reversed' }
 
-	export enum BankTransferType { debit = 0, credit = 1 }
+	export enum BankTransferType { debit = 'debit', credit = 'credit' }
 
 
 	/** The legal name and other information for the account holder. */
@@ -6237,20 +6237,20 @@ export namespace MyNS {
 
 	}
 
-	export enum BankTransferEventDirection { outbound = 0, inbound = 1, _null = 2 }
+	export enum BankTransferEventDirection { outbound = 'outbound', inbound = 'inbound', _null = 2 }
 
-	export enum BankTransferEventEvent_type { pending = 0, cancelled = 1, failed = 2, posted = 3, reversed = 4 }
+	export enum BankTransferEventEvent_type { pending = 'pending', cancelled = 'cancelled', failed = 'failed', posted = 'posted', reversed = 'reversed' }
 
 
 	/** The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into your origination account; a `credit` indicates a transfer of money out of your origination account. */
-	export enum BankTransferEventListBankTransferType { debit = 0, credit = 1, _null = 2 }
+	export enum BankTransferEventListBankTransferType { debit = 'debit', credit = 'credit', _null = 2 }
 
 
 	/**
 	 * Indicates the direction of the transfer: `outbound`: for API-initiated transfers
 	 * `inbound`: for payments received by the FBO account.
 	 */
-	export enum BankTransferEventListDirection { inbound = 0, outbound = 1, _null = 2 }
+	export enum BankTransferEventListDirection { inbound = 'inbound', outbound = 'outbound', _null = 2 }
 
 
 	/** Defines the request schema for `/bank_transfer/event/list` */
@@ -6366,9 +6366,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BankTransferEventListRequestBank_transfer_type { debit = 0, credit = 1, _null = 2 }
+	export enum BankTransferEventListRequestBank_transfer_type { debit = 'debit', credit = 'credit', _null = 2 }
 
-	export enum BankTransferEventListRequestDirection { inbound = 0, outbound = 1, _null = 2 }
+	export enum BankTransferEventListRequestDirection { inbound = 'inbound', outbound = 'outbound', _null = 2 }
 
 
 	/**
@@ -6379,7 +6379,7 @@ export namespace MyNS {
 	 * `posted`: The transfer has been successfully submitted to the payment network.
 	 * `reversed`: A posted transfer was reversed.
 	 */
-	export enum BankTransferEventType { pending = 0, cancelled = 1, failed = 2, posted = 3, reversed = 4 }
+	export enum BankTransferEventType { pending = 'pending', cancelled = 'cancelled', failed = 'failed', posted = 'posted', reversed = 'reversed' }
 
 
 	/** Defines the response schema for `/bank_transfer/event/list` */
@@ -6657,7 +6657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BankTransferListRequestDirection { outbound = 0, inbound = 1, _null = 2 }
+	export enum BankTransferListRequestDirection { outbound = 'outbound', inbound = 'inbound', _null = 2 }
 
 
 	/** Defines the response schema for `/bank_transfer/list` */
@@ -7506,7 +7506,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CounterpartyType { merchant = 0, financial_institution = 1, payment_app = 2, marketplace = 3, payment_terminal = 4 }
+	export enum CounterpartyType { merchant = 'merchant', financial_institution = 'financial_institution', payment_app = 'payment_app', marketplace = 'marketplace', payment_terminal = 'payment_terminal' }
 
 
 	/** A representation of where a transaction took place */
@@ -7626,7 +7626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnhancementsPayment_channel { online = 0, 'in store' = 1, other = 2 }
+	export enum EnhancementsPayment_channel { online = 'online', 'in store' = 'in store', other = 'other' }
 
 
 	/**
@@ -7761,7 +7761,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientProvidedEnrichedTransactionDirection { INFLOW = 0, OUTFLOW = 1 }
+	export enum ClientProvidedEnrichedTransactionDirection { INFLOW = 'INFLOW', OUTFLOW = 'OUTFLOW' }
 
 
 	/** A grouping of the Plaid produced transaction enrichment fields. */
@@ -8250,7 +8250,7 @@ export namespace MyNS {
 
 
 	/** ISO-3166-1 alpha-2 country code standard. */
-	export enum CountryCode { US = 0, GB = 1, ES = 2, NL = 3, FR = 4, IE = 5, CA = 6, DE = 7, IT = 8, PL = 9, DK = 10, NO = 11, SE = 12, EE = 13, LT = 14, LV = 15, PT = 16 }
+	export enum CountryCode { US = 'US', GB = 'GB', ES = 'ES', NL = 'NL', FR = 'FR', IE = 'IE', CA = 'CA', DE = 'DE', IT = 'IT', PL = 'PL', DK = 'DK', NO = 'NO', SE = 'SE', EE = 'EE', LT = 'LT', LV = 'LV', PT = 'PT' }
 
 
 	/** An object representing an end user's 1099 tax form */
@@ -8825,7 +8825,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Credit1099Form_1099_type { FORM_1099_TYPE_UNKNOWN = 0, FORM_1099_TYPE_MISC = 1, FORM_1099_TYPE_K = 2 }
+	export enum Credit1099Form_1099_type { FORM_1099_TYPE_UNKNOWN = 'FORM_1099_TYPE_UNKNOWN', FORM_1099_TYPE_MISC = 'FORM_1099_TYPE_MISC', FORM_1099_TYPE_K = 'FORM_1099_TYPE_K' }
 
 
 	/** An object representing a payer used by 1099-MISC tax documents. */
@@ -9656,7 +9656,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditBankIncomeAccountType { depository = 0 }
+	export enum CreditBankIncomeAccountType { depository = 'depository' }
 
 
 	/** The warning associated with the data that was unavailable for the Bank Employment Report. */
@@ -9795,15 +9795,15 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditBankIncomeCauseError_type { INTERNAL_SERVER_ERROR = 0, INSUFFICIENT_CREDENTIALS = 1, ITEM_LOCKED = 2, USER_SETUP_REQUIRED = 3, COUNTRY_NOT_SUPPORTED = 4, INSTITUTION_DOWN = 5, INSTITUTION_NO_LONGER_SUPPORTED = 6, INSTITUTION_NOT_RESPONDING = 7, INVALID_CREDENTIALS = 8, INVALID_MFA = 9, INVALID_SEND_METHOD = 10, ITEM_LOGIN_REQUIRED = 11, MFA_NOT_SUPPORTED = 12, NO_ACCOUNTS = 13, ITEM_NOT_SUPPORTED = 14, ACCESS_NOT_GRANTED = 15 }
+	export enum CreditBankIncomeCauseError_type { INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR', INSUFFICIENT_CREDENTIALS = 'INSUFFICIENT_CREDENTIALS', ITEM_LOCKED = 'ITEM_LOCKED', USER_SETUP_REQUIRED = 'USER_SETUP_REQUIRED', COUNTRY_NOT_SUPPORTED = 'COUNTRY_NOT_SUPPORTED', INSTITUTION_DOWN = 'INSTITUTION_DOWN', INSTITUTION_NO_LONGER_SUPPORTED = 'INSTITUTION_NO_LONGER_SUPPORTED', INSTITUTION_NOT_RESPONDING = 'INSTITUTION_NOT_RESPONDING', INVALID_CREDENTIALS = 'INVALID_CREDENTIALS', INVALID_MFA = 'INVALID_MFA', INVALID_SEND_METHOD = 'INVALID_SEND_METHOD', ITEM_LOGIN_REQUIRED = 'ITEM_LOGIN_REQUIRED', MFA_NOT_SUPPORTED = 'MFA_NOT_SUPPORTED', NO_ACCOUNTS = 'NO_ACCOUNTS', ITEM_NOT_SUPPORTED = 'ITEM_NOT_SUPPORTED', ACCESS_NOT_GRANTED = 'ACCESS_NOT_GRANTED' }
 
-	export enum CreditBankEmploymentWarningWarning_code { IDENTITY_UNAVAILABLE = 0, TRANSACTIONS_UNAVAILABLE = 1, ITEM_UNAPPROVED = 2, REPORT_DELETED = 3, DATA_UNAVAILABLE = 4 }
+	export enum CreditBankEmploymentWarningWarning_code { IDENTITY_UNAVAILABLE = 'IDENTITY_UNAVAILABLE', TRANSACTIONS_UNAVAILABLE = 'TRANSACTIONS_UNAVAILABLE', ITEM_UNAPPROVED = 'ITEM_UNAPPROVED', REPORT_DELETED = 'REPORT_DELETED', DATA_UNAVAILABLE = 'DATA_UNAVAILABLE' }
 
-	export enum CreditBankEmploymentWarningWarning_type { BANK_EMPLOYMENT_WARNING = 0 }
+	export enum CreditBankEmploymentWarningWarning_type { BANK_EMPLOYMENT_WARNING = 'BANK_EMPLOYMENT_WARNING' }
 
 
 	/** The warning type which will always be `BANK_EMPLOYMENT_WARNING`. */
-	export enum CreditBankEmploymentWarningType { BANK_EMPLOYMENT_WARNING = 0 }
+	export enum CreditBankEmploymentWarningType { BANK_EMPLOYMENT_WARNING = 'BANK_EMPLOYMENT_WARNING' }
 
 
 	/** The report of the Bank Income data for an end user. */
@@ -10295,9 +10295,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditBankIncomeSourceIncome_category { SALARY = 0, UNEMPLOYMENT = 1, CASH = 2, GIG_ECONOMY = 3, RENTAL = 4, CHILD_SUPPORT = 5, MILITARY = 6, RETIREMENT = 7, LONG_TERM_DISABILITY = 8, BANK_INTEREST = 9, CASH_DEPOSIT = 10, TRANSFER_FROM_APPLICATION = 11, TAX_REFUND = 12, OTHER = 13 }
+	export enum CreditBankIncomeSourceIncome_category { SALARY = 'SALARY', UNEMPLOYMENT = 'UNEMPLOYMENT', CASH = 'CASH', GIG_ECONOMY = 'GIG_ECONOMY', RENTAL = 'RENTAL', CHILD_SUPPORT = 'CHILD_SUPPORT', MILITARY = 'MILITARY', RETIREMENT = 'RETIREMENT', LONG_TERM_DISABILITY = 'LONG_TERM_DISABILITY', BANK_INTEREST = 'BANK_INTEREST', CASH_DEPOSIT = 'CASH_DEPOSIT', TRANSFER_FROM_APPLICATION = 'TRANSFER_FROM_APPLICATION', TAX_REFUND = 'TAX_REFUND', OTHER = 'OTHER' }
 
-	export enum CreditBankIncomeSourcePay_frequency { WEEKLY = 0, BIWEEKLY = 1, SEMI_MONTHLY = 2, MONTHLY = 3, DAILY = 4, UNKNOWN = 5 }
+	export enum CreditBankIncomeSourcePay_frequency { WEEKLY = 'WEEKLY', BIWEEKLY = 'BIWEEKLY', SEMI_MONTHLY = 'SEMI_MONTHLY', MONTHLY = 'MONTHLY', DAILY = 'DAILY', UNKNOWN = 'UNKNOWN' }
 
 
 	/** The warning associated with the data that was unavailable for the Bank Income Report. */
@@ -10344,15 +10344,15 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditBankIncomeWarningWarning_type { BANK_INCOME_WARNING = 0 }
+	export enum CreditBankIncomeWarningWarning_type { BANK_INCOME_WARNING = 'BANK_INCOME_WARNING' }
 
 
 	/** The income category. */
-	export enum CreditBankIncomeCategory { SALARY = 0, UNEMPLOYMENT = 1, CASH = 2, GIG_ECONOMY = 3, RENTAL = 4, CHILD_SUPPORT = 5, MILITARY = 6, RETIREMENT = 7, LONG_TERM_DISABILITY = 8, BANK_INTEREST = 9, CASH_DEPOSIT = 10, TRANSFER_FROM_APPLICATION = 11, TAX_REFUND = 12, OTHER = 13 }
+	export enum CreditBankIncomeCategory { SALARY = 'SALARY', UNEMPLOYMENT = 'UNEMPLOYMENT', CASH = 'CASH', GIG_ECONOMY = 'GIG_ECONOMY', RENTAL = 'RENTAL', CHILD_SUPPORT = 'CHILD_SUPPORT', MILITARY = 'MILITARY', RETIREMENT = 'RETIREMENT', LONG_TERM_DISABILITY = 'LONG_TERM_DISABILITY', BANK_INTEREST = 'BANK_INTEREST', CASH_DEPOSIT = 'CASH_DEPOSIT', TRANSFER_FROM_APPLICATION = 'TRANSFER_FROM_APPLICATION', TAX_REFUND = 'TAX_REFUND', OTHER = 'OTHER' }
 
 
 	/** A broad categorization of the error. Safe for programmatic use. */
-	export enum CreditBankIncomeErrorType { INTERNAL_SERVER_ERROR = 0, INSUFFICIENT_CREDENTIALS = 1, ITEM_LOCKED = 2, USER_SETUP_REQUIRED = 3, COUNTRY_NOT_SUPPORTED = 4, INSTITUTION_DOWN = 5, INSTITUTION_NO_LONGER_SUPPORTED = 6, INSTITUTION_NOT_RESPONDING = 7, INVALID_CREDENTIALS = 8, INVALID_MFA = 9, INVALID_SEND_METHOD = 10, ITEM_LOGIN_REQUIRED = 11, MFA_NOT_SUPPORTED = 12, NO_ACCOUNTS = 13, ITEM_NOT_SUPPORTED = 14, ACCESS_NOT_GRANTED = 15 }
+	export enum CreditBankIncomeErrorType { INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR', INSUFFICIENT_CREDENTIALS = 'INSUFFICIENT_CREDENTIALS', ITEM_LOCKED = 'ITEM_LOCKED', USER_SETUP_REQUIRED = 'USER_SETUP_REQUIRED', COUNTRY_NOT_SUPPORTED = 'COUNTRY_NOT_SUPPORTED', INSTITUTION_DOWN = 'INSTITUTION_DOWN', INSTITUTION_NO_LONGER_SUPPORTED = 'INSTITUTION_NO_LONGER_SUPPORTED', INSTITUTION_NOT_RESPONDING = 'INSTITUTION_NOT_RESPONDING', INVALID_CREDENTIALS = 'INVALID_CREDENTIALS', INVALID_MFA = 'INVALID_MFA', INVALID_SEND_METHOD = 'INVALID_SEND_METHOD', ITEM_LOGIN_REQUIRED = 'ITEM_LOGIN_REQUIRED', MFA_NOT_SUPPORTED = 'MFA_NOT_SUPPORTED', NO_ACCOUNTS = 'NO_ACCOUNTS', ITEM_NOT_SUPPORTED = 'ITEM_NOT_SUPPORTED', ACCESS_NOT_GRANTED = 'ACCESS_NOT_GRANTED' }
 
 
 	/** CreditBankIncomeGetRequest defines the request schema for `/credit/bank_income/get`. */
@@ -10484,7 +10484,7 @@ export namespace MyNS {
 
 
 	/** The income pay frequency. */
-	export enum CreditBankIncomePayFrequency { WEEKLY = 0, BIWEEKLY = 1, SEMI_MONTHLY = 2, MONTHLY = 3, DAILY = 4, UNKNOWN = 5 }
+	export enum CreditBankIncomePayFrequency { WEEKLY = 'WEEKLY', BIWEEKLY = 'BIWEEKLY', SEMI_MONTHLY = 'SEMI_MONTHLY', MONTHLY = 'MONTHLY', DAILY = 'DAILY', UNKNOWN = 'UNKNOWN' }
 
 
 	/** CreditBankIncomeRefreshRequest defines the request schema for `/credit/bank_income/refresh`. */
@@ -10594,11 +10594,11 @@ export namespace MyNS {
 	 * `REPORT_DELETED`: Report deleted due to customer or consumer request
 	 * `DATA_UNAVAILABLE`: No relevant data was found for the Item
 	 */
-	export enum CreditBankIncomeWarningCode { IDENTITY_UNAVAILABLE = 0, TRANSACTIONS_UNAVAILABLE = 1, ITEM_UNAPPROVED = 2, REPORT_DELETED = 3, DATA_UNAVAILABLE = 4 }
+	export enum CreditBankIncomeWarningCode { IDENTITY_UNAVAILABLE = 'IDENTITY_UNAVAILABLE', TRANSACTIONS_UNAVAILABLE = 'TRANSACTIONS_UNAVAILABLE', ITEM_UNAPPROVED = 'ITEM_UNAPPROVED', REPORT_DELETED = 'REPORT_DELETED', DATA_UNAVAILABLE = 'DATA_UNAVAILABLE' }
 
 
 	/** The warning type which will always be `BANK_INCOME_WARNING`. */
-	export enum CreditBankIncomeWarningType { BANK_INCOME_WARNING = 0 }
+	export enum CreditBankIncomeWarningType { BANK_INCOME_WARNING = 'BANK_INCOME_WARNING' }
 
 
 	/** An object representing a credit card account. */
@@ -13034,11 +13034,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PayStubPayPeriodDetailsPay_basis { SALARY = 0, HOURLY = 1, COMMISSION = 2 }
+	export enum PayStubPayPeriodDetailsPay_basis { SALARY = 'SALARY', HOURLY = 'HOURLY', COMMISSION = 'COMMISSION' }
 
 
 	/** The explicit pay basis on the paystub (if present). */
-	export enum CreditPayStubPayBasisType { SALARY = 0, HOURLY = 1, COMMISSION = 2 }
+	export enum CreditPayStubPayBasisType { SALARY = 'SALARY', HOURLY = 'HOURLY', COMMISSION = 'COMMISSION' }
 
 
 	/** CreditPayrollIncomeGetRequest defines the request schema for `/credit/payroll_income/get`. */
@@ -13906,7 +13906,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditPayrollIncomePrecheckResponseConfidence { HIGH = 0, LOW = 1, UNKNOWN = 2 }
+	export enum CreditPayrollIncomePrecheckResponseConfidence { HIGH = 'HIGH', LOW = 'LOW', UNKNOWN = 'UNKNOWN' }
 
 
 	/** CreditPayrollIncomeRefreshRequest defines the request schema for `/credit/payroll_income/refresh` */
@@ -14564,7 +14564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditRelayGetRequestReport_type { assets = 0, income = 1 }
+	export enum CreditRelayGetRequestReport_type { assets = 'assets', income = 'income' }
 
 
 	/** CreditRelayRefreshRequest defines the request schema for `/credit/relay/refresh` */
@@ -14899,7 +14899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditSessionBankEmploymentResultStatus { APPROVED = 0, NO_EMPLOYERS_FOUND = 1, EMPLOYER_NOT_LISTED = 2 }
+	export enum CreditSessionBankEmploymentResultStatus { APPROVED = 'APPROVED', NO_EMPLOYERS_FOUND = 'NO_EMPLOYERS_FOUND', EMPLOYER_NOT_LISTED = 'EMPLOYER_NOT_LISTED' }
 
 
 	/** The details of a bank income verification in Link */
@@ -14946,7 +14946,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditSessionBankIncomeResultStatus { APPROVED = 0, NO_DEPOSITS_FOUND = 1, USER_REPORTED_NO_INCOME = 2 }
+	export enum CreditSessionBankIncomeResultStatus { APPROVED = 'APPROVED', NO_DEPOSITS_FOUND = 'NO_DEPOSITS_FOUND', USER_REPORTED_NO_INCOME = 'USER_REPORTED_NO_INCOME' }
 
 
 	/** The details of a document income verification in Link */
@@ -15072,7 +15072,7 @@ export namespace MyNS {
 	 * `NO_EMPLOYMENTS_FOUND`: We attempted, but were unable to find any employment in the connected account.
 	 * `EMPLOYER_NOT_LISTED`: The user explicitly indicated that they did not see their current or previous employer in the list of employer names found.
 	 */
-	export enum CreditSessionBankEmploymentStatus { APPROVED = 0, NO_EMPLOYERS_FOUND = 1, EMPLOYER_NOT_LISTED = 2 }
+	export enum CreditSessionBankEmploymentStatus { APPROVED = 'APPROVED', NO_EMPLOYERS_FOUND = 'NO_EMPLOYERS_FOUND', EMPLOYER_NOT_LISTED = 'EMPLOYER_NOT_LISTED' }
 
 
 	/**
@@ -15081,7 +15081,7 @@ export namespace MyNS {
 	 * `NO_DEPOSITS_FOUND`: We attempted, but were unable to find any income in the connected account.
 	 * `USER_REPORTED_NO_INCOME`: The user explicitly indicated that they don't receive income in the connected account.
 	 */
-	export enum CreditSessionBankIncomeStatus { APPROVED = 0, NO_DEPOSITS_FOUND = 1, USER_REPORTED_NO_INCOME = 2 }
+	export enum CreditSessionBankIncomeStatus { APPROVED = 'APPROVED', NO_DEPOSITS_FOUND = 'NO_DEPOSITS_FOUND', USER_REPORTED_NO_INCOME = 'USER_REPORTED_NO_INCOME' }
 
 
 	/** CreditSessionsGetRequest defines the request schema for `/credit/sessions/get` */
@@ -15280,7 +15280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DashboardUserStatus { invited = 0, active = 1, deactivated = 2 }
+	export enum DashboardUserStatus { invited = 'invited', active = 'active', deactivated = 'deactivated' }
 
 
 	/** Request input for fetching a dashboard user */
@@ -15637,7 +15637,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TotalCanonical_description { BONUS = 0, COMMISSION = 1, OVERTIME = 2, 'PAID TIME OFF' = 3, 'REGULAR PAY' = 4, VACATION = 5, 'EMPLOYEE MEDICARE' = 6, FICA = 7, 'SOCIAL SECURITY EMPLOYEE TAX' = 8, MEDICAL = 9, VISION = 10, DENTAL = 11, 'NET PAY' = 12, TAXES = 13, NOT_FOUND = 14, OTHER = 15, _null = 16 }
+	export enum TotalCanonical_description { BONUS = 'BONUS', COMMISSION = 'COMMISSION', OVERTIME = 'OVERTIME', 'PAID TIME OFF' = 'PAID TIME OFF', 'REGULAR PAY' = 'REGULAR PAY', VACATION = 'VACATION', 'EMPLOYEE MEDICARE' = 'EMPLOYEE MEDICARE', FICA = 'FICA', 'SOCIAL SECURITY EMPLOYEE TAX' = 'SOCIAL SECURITY EMPLOYEE TAX', MEDICAL = 'MEDICAL', VISION = 'VISION', DENTAL = 'DENTAL', 'NET PAY' = 'NET PAY', TAXES = 'TAXES', NOT_FOUND = 'NOT_FOUND', OTHER = 'OTHER', _null = 16 }
 
 
 	/** An object representing a monetary amount. */
@@ -15936,7 +15936,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DepositSwitchAltCreateRequestCountry_code { US = 0, CA = 1 }
+	export enum DepositSwitchAltCreateRequestCountry_code { US = 'US', CA = 'CA' }
 
 
 	/** Options to configure the `/deposit_switch/create` request. If provided, cannot be `null`. */
@@ -16036,7 +16036,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DepositSwitchTargetAccountAccount_subtype { checking = 0, savings = 1 }
+	export enum DepositSwitchTargetAccountAccount_subtype { checking = 'checking', savings = 'savings' }
 
 
 	/** The deposit switch target user */
@@ -16509,9 +16509,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DepositSwitchGetResponseState { initialized = 0, processing = 1, completed = 2, error = 3 }
+	export enum DepositSwitchGetResponseState { initialized = 'initialized', processing = 'processing', completed = 'completed', error = 'error' }
 
-	export enum DepositSwitchGetResponseSwitch_method { instant = 0, mail = 1, pdf = 2, _null = 3 }
+	export enum DepositSwitchGetResponseSwitch_method { instant = 'instant', mail = 'mail', pdf = 'pdf', _null = 3 }
 
 
 	/** Fired when the status of a deposit switch request has changed. */
@@ -16848,7 +16848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetailedOriginatorTransfer_diligence_status { under_review = 0, approved = 1, denied = 2 }
+	export enum DetailedOriginatorTransfer_diligence_status { under_review = 'under_review', approved = 'approved', denied = 'denied' }
 
 
 	/** Information about the accounts that the payment was distributed to. */
@@ -16936,7 +16936,7 @@ export namespace MyNS {
 	 * `DOCUMENT_TYPE_PLAID_GENERATED_PAYSTUB_PDF`: Used to indicate that the PDF for the paystub was generated by Plaid.
 	 * `UNKNOWN`: Document type could not be determined.
 	 */
-	export enum DocType { UNKNOWN = 0, DOCUMENT_TYPE_PAYSTUB = 1, DOCUMENT_TYPE_BANK_STATEMENT = 2, DOCUMENT_TYPE_US_TAX_W2 = 3, DOCUMENT_TYPE_US_MILITARY_ERAS = 4, DOCUMENT_TYPE_US_MILITARY_LES = 5, DOCUMENT_TYPE_US_MILITARY_CLES = 6, DOCUMENT_TYPE_GIG = 7, DOCUMENT_TYPE_NONE = 8, DOCUMENT_TYPE_US_TAX_1099_MISC = 9, DOCUMENT_TYPE_US_TAX_1099_K = 10, DOCUMENT_TYPE_PLAID_GENERATED_PAYSTUB_PDF = 11 }
+	export enum DocType { UNKNOWN = 'UNKNOWN', DOCUMENT_TYPE_PAYSTUB = 'DOCUMENT_TYPE_PAYSTUB', DOCUMENT_TYPE_BANK_STATEMENT = 'DOCUMENT_TYPE_BANK_STATEMENT', DOCUMENT_TYPE_US_TAX_W2 = 'DOCUMENT_TYPE_US_TAX_W2', DOCUMENT_TYPE_US_MILITARY_ERAS = 'DOCUMENT_TYPE_US_MILITARY_ERAS', DOCUMENT_TYPE_US_MILITARY_LES = 'DOCUMENT_TYPE_US_MILITARY_LES', DOCUMENT_TYPE_US_MILITARY_CLES = 'DOCUMENT_TYPE_US_MILITARY_CLES', DOCUMENT_TYPE_GIG = 'DOCUMENT_TYPE_GIG', DOCUMENT_TYPE_NONE = 'DOCUMENT_TYPE_NONE', DOCUMENT_TYPE_US_TAX_1099_MISC = 'DOCUMENT_TYPE_US_TAX_1099_MISC', DOCUMENT_TYPE_US_TAX_1099_K = 'DOCUMENT_TYPE_US_TAX_1099_K', DOCUMENT_TYPE_PLAID_GENERATED_PAYSTUB_PDF = 'DOCUMENT_TYPE_PLAID_GENERATED_PAYSTUB_PDF' }
 
 
 	/** High level descriptions of how the associated document was processed. If a document fails verification, the details in the `analysis` object should help clarify why the document was rejected. */
@@ -17000,7 +17000,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentAnalysisAuthenticity { match = 0, partial_match = 1, no_match = 2, no_data = 3 }
+	export enum DocumentAnalysisAuthenticity { match = 'match', partial_match = 'partial_match', no_match = 'no_match', no_data = 'no_data' }
 
 
 	/** Analysis of the data extracted from the submitted document. */
@@ -17072,13 +17072,13 @@ export namespace MyNS {
 
 	}
 
-	export enum PhysicalDocumentExtractedDataAnalysisDate_of_birth { match = 0, partial_match = 1, no_match = 2 }
+	export enum PhysicalDocumentExtractedDataAnalysisDate_of_birth { match = 'match', partial_match = 'partial_match', no_match = 'no_match' }
 
-	export enum PhysicalDocumentExtractedDataAnalysisExpiration_date { not_expired = 0, expired = 1, no_data = 2 }
+	export enum PhysicalDocumentExtractedDataAnalysisExpiration_date { not_expired = 'not_expired', expired = 'expired', no_data = 'no_data' }
 
-	export enum PhysicalDocumentExtractedDataAnalysisIssuing_country { match = 0, no_match = 1 }
+	export enum PhysicalDocumentExtractedDataAnalysisIssuing_country { match = 'match', no_match = 'no_match' }
 
-	export enum DocumentAnalysisImage_quality { high = 0, medium = 1, low = 2 }
+	export enum DocumentAnalysisImage_quality { high = 'high', medium = 'medium', low = 'low' }
 
 
 	/**
@@ -17090,11 +17090,11 @@ export namespace MyNS {
 	 * Security features like watermarks and background patterns must be present
 	 * So a `match` status for this field indicates that the document in the provided image seems to conform to the various formatting and security rules associated with the detected document.
 	 */
-	export enum DocumentAuthenticityMatchCode { match = 0, partial_match = 1, no_match = 2, no_data = 3 }
+	export enum DocumentAuthenticityMatchCode { match = 'match', partial_match = 'partial_match', no_match = 'no_match', no_data = 'no_data' }
 
 
 	/** A match summary describing the cross comparison between the subject's date of birth, extracted from the document image, and the date of birth they separately provided to the identity verification attempt. */
-	export enum DocumentDateOfBirthMatchCode { match = 0, partial_match = 1, no_match = 2 }
+	export enum DocumentDateOfBirthMatchCode { match = 'match', partial_match = 'partial_match', no_match = 'no_match' }
 
 
 	/** An object representing metadata from the end user's uploaded document. */
@@ -17174,11 +17174,11 @@ export namespace MyNS {
 
 
 	/** A match summary describing the cross comparison between the subject's name, extracted from the document image, and the name they separately provided to identity verification attempt. */
-	export enum DocumentNameMatchCode { match = 0, partial_match = 1, no_match = 2 }
+	export enum DocumentNameMatchCode { match = 'match', partial_match = 'partial_match', no_match = 'no_match' }
 
 
 	/** An outcome status for this specific document submission. Distinct from the overall `documentary_verification.status` that summarizes the verification outcome from one or more documents. */
-	export enum DocumentStatus { success = 0, failed = 1, manually_approved = 2 }
+	export enum DocumentStatus { success = 'success', failed = 'failed', manually_approved = 'manually_approved' }
 
 
 	/** Data, images, analysis, and results from the `documentary_verification` step. This field will be `null` unless `steps.documentary_verification` has reached a terminal state of either `success` or `failed`. */
@@ -17378,7 +17378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhysicalDocumentExtractedDataCategory { drivers_license = 0, id_card = 1, passport = 2, residence_permit_card = 3, resident_card = 4 }
+	export enum PhysicalDocumentExtractedDataCategory { drivers_license = 'drivers_license', id_card = 'id_card', passport = 'passport', residence_permit_card = 'residence_permit_card', resident_card = 'resident_card' }
 
 
 	/** URLs for downloading original and cropped images for this document submission. The URLs are designed to only allow downloading, not hot linking, so the URL will only serve the document image for 60 seconds before expiring. The expiration time is 60 seconds after the `GET` request for the associated Identity Verification attempt. A new expiring URL is generated with each request, so you can always rerequest the Identity Verification attempt if one of your URLs expires. */
@@ -17555,7 +17555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EarningsBreakdownCanonical_description { BONUS = 0, COMMISSION = 1, OVERTIME = 2, 'PAID TIME OFF' = 3, 'REGULAR PAY' = 4, VACATION = 5, 'BASIC ALLOWANCE HOUSING' = 6, 'BASIC ALLOWANCE SUBSISTENCE' = 7, OTHER = 8, _null = 9 }
+	export enum EarningsBreakdownCanonical_description { BONUS = 'BONUS', COMMISSION = 'COMMISSION', OVERTIME = 'OVERTIME', 'PAID TIME OFF' = 'PAID TIME OFF', 'REGULAR PAY' = 'REGULAR PAY', VACATION = 'VACATION', 'BASIC ALLOWANCE HOUSING' = 'BASIC ALLOWANCE HOUSING', 'BASIC ALLOWANCE SUBSISTENCE' = 'BASIC ALLOWANCE SUBSISTENCE', OTHER = 'OTHER', _null = 9 }
 
 
 	/** An object representing both the current pay period and year to date amount for an earning category. */
@@ -17620,7 +17620,7 @@ export namespace MyNS {
 
 
 	/** Commonly used term to describe the earning line item. */
-	export enum EarningsBreakdownCanonicalDescription { BONUS = 0, COMMISSION = 1, OVERTIME = 2, 'PAID TIME OFF' = 3, 'REGULAR PAY' = 4, VACATION = 5, 'BASIC ALLOWANCE HOUSING' = 6, 'BASIC ALLOWANCE SUBSISTENCE' = 7, OTHER = 8, _null = 9 }
+	export enum EarningsBreakdownCanonicalDescription { BONUS = 'BONUS', COMMISSION = 'COMMISSION', OVERTIME = 'OVERTIME', 'PAID TIME OFF' = 'PAID TIME OFF', 'REGULAR PAY' = 'REGULAR PAY', VACATION = 'VACATION', 'BASIC ALLOWANCE HOUSING' = 'BASIC ALLOWANCE HOUSING', 'BASIC ALLOWANCE SUBSISTENCE' = 'BASIC ALLOWANCE SUBSISTENCE', OTHER = 'OTHER', _null = 9 }
 
 
 	/** Data about the employee. */
@@ -18008,7 +18008,7 @@ export namespace MyNS {
 
 
 	/** The types of source employment data that users should be able to share */
-	export enum EmploymentSourceType { bank = 0, payroll = 1 }
+	export enum EmploymentSourceType { bank = 'bank', payroll = 'payroll' }
 
 
 	/** An object containing proof of employment data for an individual */
@@ -18093,7 +18093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmploymentVerificationStatus { EMPLOYMENT_STATUS_ACTIVE = 0, EMPLOYMENT_STATUS_INACTIVE = 1, _null = 2 }
+	export enum EmploymentVerificationStatus { EMPLOYMENT_STATUS_ACTIVE = 'EMPLOYMENT_STATUS_ACTIVE', EMPLOYMENT_STATUS_INACTIVE = 'EMPLOYMENT_STATUS_INACTIVE', _null = 2 }
 
 
 	/** EmploymentVerificationGetRequest defines the request schema for `/employment/verification/get`. */
@@ -18175,7 +18175,7 @@ export namespace MyNS {
 	 * `OUTFLOW` - Includes outgoing transfers, purchases, and fees. (Typically represented as a negative value on checking accounts and debit cards and a positive value on credit cards.)
 	 * `INFLOW` - Includes incoming transfers, refunds, and income. (Typically represented as a positive value on checking accounts and debit cards and a negative value on credit cards.)
 	 */
-	export enum EnrichTransactionDirection { INFLOW = 0, OUTFLOW = 1 }
+	export enum EnrichTransactionDirection { INFLOW = 'INFLOW', OUTFLOW = 'OUTFLOW' }
 
 
 	/** An official document, usually issued by a governing body or institution, with an associated identifier. */
@@ -18231,7 +18231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityDocumentType { bik = 0, business_number = 1, imo = 2, other = 3, swift = 4, tax_id = 5 }
+	export enum EntityDocumentType { bik = 'bik', business_number = 'business_number', imo = 'imo', other = 'other', swift = 'swift', tax_id = 'tax_id' }
 
 
 	/** Analysis information describing why a screening hit matched the provided entity information */
@@ -18386,7 +18386,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityScreeningHitAnalysisDocuments { match = 0, partial_match = 1, no_match = 2, no_data = 3, no_input = 4 }
+	export enum EntityScreeningHitAnalysisDocuments { match = 'match', partial_match = 'partial_match', no_match = 'no_match', no_data = 'no_data', no_input = 'no_input' }
 
 
 	/** Information associated with the entity watchlist hit */
@@ -18659,7 +18659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityScreeningHitNamesWeak_alias_determination { none = 0, source = 1, plaid = 2 }
+	export enum EntityScreeningHitNamesWeak_alias_determination { none = 'none', source = 'source', plaid = 'plaid' }
 
 
 	/** Analyzed phone numbers for the associated hit */
@@ -18721,7 +18721,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityScreeningHitPhoneNumbersType { phone = 0, fax = 1 }
+	export enum EntityScreeningHitPhoneNumbersType { phone = 'phone', fax = 'fax' }
 
 
 	/** Analyzed URLs for the associated hit */
@@ -18838,7 +18838,7 @@ export namespace MyNS {
 
 
 	/** Shorthand identifier for a specific screening list for entities. */
-	export enum EntityWatchlistCode { CA_CON = 0, EU_CON = 1, IZ_SOE = 2, IZ_UNC = 3, IZ_WBK = 4, US_CAP = 5, US_FSE = 6, US_MBS = 7, US_SDN = 8, US_SSI = 9, US_CMC = 10, US_UVL = 11, AU_CON = 12, UK_HMC = 13 }
+	export enum EntityWatchlistCode { CA_CON = 'CA_CON', EU_CON = 'EU_CON', IZ_SOE = 'IZ_SOE', IZ_UNC = 'IZ_UNC', IZ_WBK = 'IZ_WBK', US_CAP = 'US_CAP', US_FSE = 'US_FSE', US_MBS = 'US_MBS', US_SDN = 'US_SDN', US_SSI = 'US_SSI', US_CMC = 'US_CMC', US_UVL = 'US_UVL', AU_CON = 'AU_CON', UK_HMC = 'UK_HMC' }
 
 
 	/** A program that configures the active lists, search parameters, and other behavior for initial and ongoing screening of entities. */
@@ -19007,9 +19007,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WatchlistScreeningAuditTrailSource { dashboard = 0, link = 1, api = 2, system = 3 }
+	export enum WatchlistScreeningAuditTrailSource { dashboard = 'dashboard', link = 'link', api = 'api', system = 'system' }
 
-	export enum EntityWatchlistProgramName_sensitivity { coarse = 0, balanced = 1, strict = 2, exact = 3 }
+	export enum EntityWatchlistProgramName_sensitivity { coarse = 'coarse', balanced = 'balanced', strict = 'strict', exact = 'exact' }
 
 
 	/** The entity screening object allows you to represent an entity in your system, update its profile, and search for it on various watchlists. Note: Rejected entity screenings will not receive new hits, regardless of entity program configuration. */
@@ -19215,7 +19215,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityWatchlistScreeningStatus { rejected = 0, pending_review = 1, cleared = 2 }
+	export enum EntityWatchlistScreeningStatus { rejected = 'rejected', pending_review = 'pending_review', cleared = 'cleared' }
 
 
 	/** Data from a government watchlist that has been attached to the screening. */
@@ -19343,7 +19343,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityWatchlistScreeningHitReview_status { confirmed = 0, pending_review = 1, dismissed = 2 }
+	export enum EntityWatchlistScreeningHitReview_status { confirmed = 'confirmed', pending_review = 'pending_review', dismissed = 'dismissed' }
 
 
 	/**
@@ -19505,7 +19505,7 @@ export namespace MyNS {
 	 * A description of whether the associated document was expired when the verification was performed.
 	 * Note: In the case where an expiration date is not present on the document or failed to be extracted, this value will be `no_data`.
 	 */
-	export enum ExpirationDate { not_expired = 0, expired = 1, no_data = 2 }
+	export enum ExpirationDate { not_expired = 'not_expired', expired = 'expired', no_data = 'no_data' }
 
 
 	/** Additional payment consent options */
@@ -19604,7 +19604,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalPaymentOptionsScheme { _null = 0, LOCAL_DEFAULT = 1, LOCAL_INSTANT = 2, SEPA_CREDIT_TRANSFER = 3, SEPA_CREDIT_TRANSFER_INSTANT = 4 }
+	export enum ExternalPaymentOptionsScheme { _null = 0, LOCAL_DEFAULT = 'LOCAL_DEFAULT', LOCAL_INSTANT = 'LOCAL_INSTANT', SEPA_CREDIT_TRANSFER = 'SEPA_CREDIT_TRANSFER', SEPA_CREDIT_TRANSFER_INSTANT = 'SEPA_CREDIT_TRANSFER_INSTANT' }
 
 
 	/** Details about external payment refund */
@@ -19727,7 +19727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalPaymentScheduleBaseInterval { WEEKLY = 0, MONTHLY = 1 }
+	export enum ExternalPaymentScheduleBaseInterval { WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 
 	/** The schedule that the payment will be executed on. If a schedule is provided, the payment is automatically set up as a standing order. If no schedule is specified, the payment will be executed only once. */
@@ -19769,7 +19769,7 @@ export namespace MyNS {
 
 
 	/** Types of document formats. (Suggested values) */
-	export enum FDXContentTypes { 'application/pdf' = 0, 'image/gif' = 1, 'image/jpeg' = 2, 'image/tiff' = 3, 'image/png' = 4, 'application/json' = 5 }
+	export enum FDXContentTypes { 'application/pdf' = 'application/pdf', 'image/gif' = 'image/gif', 'image/jpeg' = 'image/jpeg', 'image/tiff' = 'image/tiff', 'image/png' = 'image/png', 'application/json' = 'application/json' }
 
 
 	/** Financial Institution provider-specific attribute */
@@ -19843,7 +19843,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FDXHateoasLinkAction { GET = 0, POST = 1, PATCH = 2, DELETE = 3, PUT = 4 }
+	export enum FDXHateoasLinkAction { GET = 'GET', POST = 'POST', PATCH = 'PATCH', DELETE = 'DELETE', PUT = 'PUT' }
 
 
 	/** Provides the base fields of a notification. Clients will read the `type` property to determine the expected notification payload */
@@ -19943,7 +19943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FDXNotificationCategory { SECURITY = 0, MAINTENANCE = 1, FRAUD = 2, CONSENT = 3, NEW_DATA = 4 }
+	export enum FDXNotificationCategory { SECURITY = 'SECURITY', MAINTENANCE = 'MAINTENANCE', FRAUD = 'FRAUD', CONSENT = 'CONSENT', NEW_DATA = 'NEW_DATA' }
 
 
 	/** Custom key-value pairs payload for a notification */
@@ -19976,9 +19976,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FDXNotificationPayloadIdType { ACCOUNT = 0, CUSTOMER = 1, PARTY = 2, MAINTENANCE = 3, CONSENT = 4 }
+	export enum FDXNotificationPayloadIdType { ACCOUNT = 'ACCOUNT', CUSTOMER = 'CUSTOMER', PARTY = 'PARTY', MAINTENANCE = 'MAINTENANCE', CONSENT = 'CONSENT' }
 
-	export enum FDXNotificationPriority { HIGH = 0, MEDIUM = 1, LOW = 2 }
+	export enum FDXNotificationPriority { HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW' }
 
 
 	/** FDX Participant - an entity or person that is a part of a FDX API transaction */
@@ -20055,13 +20055,13 @@ export namespace MyNS {
 
 	}
 
-	export enum FDXPartyRegistry { FDX = 0, GLEIF = 1, ICANN = 2, PRIVATE = 3 }
+	export enum FDXPartyRegistry { FDX = 'FDX', GLEIF = 'GLEIF', ICANN = 'ICANN', PRIVATE = 'PRIVATE' }
 
-	export enum FDXPartyType { DATA_ACCESS_PLATFORM = 0, DATA_PROVIDER = 1, DATA_RECIPIENT = 2, INDIVIDUAL = 3, MERCHANT = 4, VENDOR = 5 }
+	export enum FDXPartyType { DATA_ACCESS_PLATFORM = 'DATA_ACCESS_PLATFORM', DATA_PROVIDER = 'DATA_PROVIDER', DATA_RECIPIENT = 'DATA_RECIPIENT', INDIVIDUAL = 'INDIVIDUAL', MERCHANT = 'MERCHANT', VENDOR = 'VENDOR' }
 
-	export enum FDXNotificationSeverity { EMERGENCY = 0, ALERT = 1, WARNING = 2, NOTICE = 3, INFO = 4 }
+	export enum FDXNotificationSeverity { EMERGENCY = 'EMERGENCY', ALERT = 'ALERT', WARNING = 'WARNING', NOTICE = 'NOTICE', INFO = 'INFO' }
 
-	export enum FDXNotificationType { CONSENT_REVOKED = 0, CONSENT_UPDATED = 1, CUSTOM = 2, SERVICE = 3, BALANCE = 4, PLANNED_OUTAGE = 5 }
+	export enum FDXNotificationType { CONSENT_REVOKED = 'CONSENT_REVOKED', CONSENT_UPDATED = 'CONSENT_UPDATED', CUSTOM = 'CUSTOM', SERVICE = 'SERVICE', BALANCE = 'BALANCE', PLANNED_OUTAGE = 'PLANNED_OUTAGE' }
 
 
 	/** Fires when an account is automatically verified using micro-deposits */
@@ -20237,7 +20237,7 @@ export namespace MyNS {
 
 
 	/** Form 1099 Type */
-	export enum Form1099Type { FORM_1099_TYPE_UNKNOWN = 0, FORM_1099_TYPE_MISC = 1, FORM_1099_TYPE_K = 2 }
+	export enum Form1099Type { FORM_1099_TYPE_UNKNOWN = 'FORM_1099_TYPE_UNKNOWN', FORM_1099_TYPE_MISC = 'FORM_1099_TYPE_MISC', FORM_1099_TYPE_K = 'FORM_1099_TYPE_K' }
 
 
 	/** A status health incident */
@@ -20327,7 +20327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IncidentUpdateStatus { INVESTIGATING = 0, IDENTIFIED = 1, SCHEDULED = 2, RESOLVED = 3, UNKNOWN = 4 }
+	export enum IncidentUpdateStatus { INVESTIGATING = 'INVESTIGATING', IDENTIFIED = 'IDENTIFIED', SCHEDULED = 'SCHEDULED', RESOLVED = 'RESOLVED', UNKNOWN = 'UNKNOWN' }
 
 
 	/**
@@ -20783,7 +20783,7 @@ export namespace MyNS {
 
 
 	/** A globally unique and human readable ID type, specific to the country and document category. For more context on this field, see [Hybrid Input Validation](https://plaid.com/docs/identity-verification/hybrid-input-validation). */
-	export enum IDNumberType { ar_dni = 0, au_drivers_license = 1, au_passport = 2, br_cpf = 3, ca_sin = 4, cl_run = 5, cn_resident_card = 6, co_nit = 7, dk_cpr = 8, eg_national_id = 9, es_dni = 10, es_nie = 11, hk_hkid = 12, in_pan = 13, it_cf = 14, jo_civil_id = 15, jp_my_number = 16, ke_huduma_namba = 17, kw_civil_id = 18, mx_curp = 19, mx_rfc = 20, my_nric = 21, ng_nin = 22, nz_drivers_license = 23, om_civil_id = 24, ph_psn = 25, pl_pesel = 26, ro_cnp = 27, sa_national_id = 28, se_pin = 29, sg_nric = 30, tr_tc_kimlik = 31, us_ssn = 32, us_ssn_last_4 = 33, za_smart_id = 34 }
+	export enum IDNumberType { ar_dni = 'ar_dni', au_drivers_license = 'au_drivers_license', au_passport = 'au_passport', br_cpf = 'br_cpf', ca_sin = 'ca_sin', cl_run = 'cl_run', cn_resident_card = 'cn_resident_card', co_nit = 'co_nit', dk_cpr = 'dk_cpr', eg_national_id = 'eg_national_id', es_dni = 'es_dni', es_nie = 'es_nie', hk_hkid = 'hk_hkid', in_pan = 'in_pan', it_cf = 'it_cf', jo_civil_id = 'jo_civil_id', jp_my_number = 'jp_my_number', ke_huduma_namba = 'ke_huduma_namba', kw_civil_id = 'kw_civil_id', mx_curp = 'mx_curp', mx_rfc = 'mx_rfc', my_nric = 'my_nric', ng_nin = 'ng_nin', nz_drivers_license = 'nz_drivers_license', om_civil_id = 'om_civil_id', ph_psn = 'ph_psn', pl_pesel = 'pl_pesel', ro_cnp = 'ro_cnp', sa_national_id = 'sa_national_id', se_pin = 'se_pin', sg_nric = 'sg_nric', tr_tc_kimlik = 'tr_tc_kimlik', us_ssn = 'us_ssn', us_ssn_last_4 = 'us_ssn_last_4', za_smart_id = 'za_smart_id' }
 
 
 	/** Fired when a change to identity data has been detected on an Item. Items are checked for identity updates every 30-90 days. We recommend that upon receiving this webhook you make another call to `/identity/get` to fetch the user's latest identity data. */
@@ -21117,7 +21117,7 @@ export namespace MyNS {
 
 
 	/** The possible types of identity data that may have changed. */
-	export enum IdentityUpdateTypes { PHONES = 0, ADDRESSES = 1, EMAILS = 2, NAMES = 3 }
+	export enum IdentityUpdateTypes { PHONES = 'PHONES', ADDRESSES = 'ADDRESSES', EMAILS = 'EMAILS', NAMES = 'NAMES' }
 
 
 	/** A identity verification attempt represents a customer's attempt to verify their identity, reflecting the required steps for completing the session, the results for each step, and information collected in the process. */
@@ -21433,7 +21433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KYCCheckAddressSummaryPo_box { yes = 0, no = 1, no_data = 2 }
+	export enum KYCCheckAddressSummaryPo_box { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/** Result summary object specifying how the `date_of_birth` field matched. */
@@ -21707,7 +21707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RiskCheckBehaviorUser_interactions { genuine = 0, neutral = 1, risky = 2, no_data = 3 }
+	export enum RiskCheckBehaviorUser_interactions { genuine = 'genuine', neutral = 'neutral', risky = 'risky', no_data = 'no_data' }
 
 
 	/** Result summary object specifying values for `device` attributes of risk check. */
@@ -21772,7 +21772,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RiskCheckDeviceIp_proxy_type { none_detected = 0, tor = 1, vpn = 2, web_proxy = 3, public_proxy = 4 }
+	export enum RiskCheckDeviceIp_proxy_type { none_detected = 'none_detected', tor = 'tor', vpn = 'vpn', web_proxy = 'web_proxy', public_proxy = 'public_proxy' }
 
 
 	/** Result summary object specifying values for `email` attributes of risk check. */
@@ -21910,7 +21910,7 @@ export namespace MyNS {
 
 
 	/** An enum indicating the type of a linked service. */
-	export enum RiskCheckLinkedService { apple = 0, ebay = 1, facebook = 2, flickr = 3, foursquare = 4, github = 5, google = 6, gravatar = 7, instagram = 8, lastfm = 9, linkedin = 10, microsoft = 11, myspace = 12, pinterest = 13, skype = 14, spotify = 15, telegram = 16, tumblr = 17, twitter = 18, viber = 19, vimeo = 20, weibo = 21, whatsapp = 22, yahoo = 23, airbnb = 24, amazon = 25, booking = 26, discord = 27, kakao = 28, ok = 29, qzone = 30, line = 31, snapchat = 32, zalo = 33 }
+	export enum RiskCheckLinkedService { apple = 'apple', ebay = 'ebay', facebook = 'facebook', flickr = 'flickr', foursquare = 'foursquare', github = 'github', google = 'google', gravatar = 'gravatar', instagram = 'instagram', lastfm = 'lastfm', linkedin = 'linkedin', microsoft = 'microsoft', myspace = 'myspace', pinterest = 'pinterest', skype = 'skype', spotify = 'spotify', telegram = 'telegram', tumblr = 'tumblr', twitter = 'twitter', viber = 'viber', vimeo = 'vimeo', weibo = 'weibo', whatsapp = 'whatsapp', yahoo = 'yahoo', airbnb = 'airbnb', amazon = 'amazon', booking = 'booking', discord = 'discord', kakao = 'kakao', ok = 'ok', qzone = 'qzone', line = 'line', snapchat = 'snapchat', zalo = 'zalo' }
 
 
 	/** Result summary object specifying values for `phone` attributes of risk check. */
@@ -21929,9 +21929,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RiskCheckDetailsStatus { success = 0, active = 1, failed = 2, waiting_for_prerequisite = 3, not_applicable = 4, skipped = 5, expired = 6, canceled = 7, pending_review = 8, manually_approved = 9, manually_rejected = 10 }
+	export enum RiskCheckDetailsStatus { success = 'success', active = 'active', failed = 'failed', waiting_for_prerequisite = 'waiting_for_prerequisite', not_applicable = 'not_applicable', skipped = 'skipped', expired = 'expired', canceled = 'canceled', pending_review = 'pending_review', manually_approved = 'manually_approved', manually_rejected = 'manually_rejected' }
 
-	export enum IdentityVerificationStatus { active = 0, success = 1, failed = 2, expired = 3, canceled = 4, pending_review = 5 }
+	export enum IdentityVerificationStatus { active = 'active', success = 'success', failed = 'failed', expired = 'expired', canceled = 'canceled', pending_review = 'pending_review' }
 
 
 	/**
@@ -23468,7 +23468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityVerificationRetryRequestStrategy { reset = 0, incomplete = 1, infer = 2, custom = 3 }
+	export enum IdentityVerificationRetryRequestStrategy { reset = 'reset', incomplete = 'incomplete', infer = 'infer', custom = 'custom' }
 
 
 	/** A identity verification attempt represents a customer's attempt to verify their identity, reflecting the required steps for completing the session, the results for each step, and information collected in the process. */
@@ -23743,7 +23743,7 @@ export namespace MyNS {
 
 
 	/** The status of a step in the identity verification process. */
-	export enum IdentityVerificationStepStatus { success = 0, active = 1, failed = 2, waiting_for_prerequisite = 3, not_applicable = 4, skipped = 5, expired = 6, canceled = 7, pending_review = 8, manually_approved = 9, manually_rejected = 10 }
+	export enum IdentityVerificationStepStatus { success = 'success', active = 'active', failed = 'failed', waiting_for_prerequisite = 'waiting_for_prerequisite', not_applicable = 'not_applicable', skipped = 'skipped', expired = 'expired', canceled = 'canceled', pending_review = 'pending_review', manually_approved = 'manually_approved', manually_rejected = 'manually_rejected' }
 
 
 	/** Fired when an end user has completed a step of the Identity Verification process. */
@@ -23817,7 +23817,7 @@ export namespace MyNS {
 	 * For example, an image that is blurry, distorted by glare from a nearby light source, or improperly framed might be marked as low or medium quality. Poor quality images are more likely to fail OCR and/or template conformity checks.
 	 * Note: By default, Plaid will let a user recapture document images twice before failing the entire session if we attribute the failure to low image quality.
 	 */
-	export enum ImageQuality { high = 0, medium = 1, low = 2 }
+	export enum ImageQuality { high = 'high', medium = 'medium', low = 'low' }
 
 
 	/** An object representing a breakdown of the different income types on the paystub. */
@@ -23891,7 +23891,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IncomeBreakdownType { bonus = 0, overtime = 1, regular = 2, _null = 3 }
+	export enum IncomeBreakdownType { bonus = 'bonus', overtime = 'overtime', regular = 'regular', _null = 3 }
 
 
 	/** Specify payroll data on the account. */
@@ -24104,7 +24104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PayPeriodDetailsPay_frequency { PAY_FREQUENCY_UNKNOWN = 0, PAY_FREQUENCY_WEEKLY = 1, PAY_FREQUENCY_BIWEEKLY = 2, PAY_FREQUENCY_SEMIMONTHLY = 3, PAY_FREQUENCY_MONTHLY = 4, _null = 5 }
+	export enum PayPeriodDetailsPay_frequency { PAY_FREQUENCY_UNKNOWN = 'PAY_FREQUENCY_UNKNOWN', PAY_FREQUENCY_WEEKLY = 'PAY_FREQUENCY_WEEKLY', PAY_FREQUENCY_BIWEEKLY = 'PAY_FREQUENCY_BIWEEKLY', PAY_FREQUENCY_SEMIMONTHLY = 'PAY_FREQUENCY_SEMIMONTHLY', PAY_FREQUENCY_MONTHLY = 'PAY_FREQUENCY_MONTHLY', _null = 5 }
 
 
 	/** The verified fields from a paystub verification. All fields are provided as reported on the paystub. */
@@ -24212,9 +24212,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PayFrequencyValue { monthly = 0, semimonthly = 1, weekly = 2, biweekly = 3, unknown = 4, _null = 5 }
+	export enum PayFrequencyValue { monthly = 'monthly', semimonthly = 'semimonthly', weekly = 'weekly', biweekly = 'biweekly', unknown = 'unknown', _null = 5 }
 
-	export enum PayFrequencyVerification_status { VERIFIED = 0, UNVERIFIED = 1, NEEDS_INFO = 2, UNABLE_TO_VERIFY = 3, UNKNOWN = 4 }
+	export enum PayFrequencyVerification_status { VERIFIED = 'VERIFIED', UNVERIFIED = 'UNVERIFIED', NEEDS_INFO = 'NEEDS_INFO', UNABLE_TO_VERIFY = 'UNABLE_TO_VERIFY', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Information about the matched direct deposit transaction used to verify a user's payroll information. */
@@ -24554,7 +24554,7 @@ export namespace MyNS {
 
 
 	/** Flow types to retrieve payroll income data */
-	export enum IncomeVerificationPayrollFlowType { payroll_digital_income = 0, payroll_document_income = 1 }
+	export enum IncomeVerificationPayrollFlowType { payroll_digital_income = 'payroll_digital_income', payroll_document_income = 'payroll_document_income' }
 
 
 	/** IncomeVerificationPaystubsGetRequest defines the request schema for `/income/verification/paystubs/get`. */
@@ -24844,7 +24844,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaystubDetailsPay_frequency { MONTHLY = 0, 'BI-WEEKLY' = 1, WEEKLY = 2, 'SEMI-MONTHLY' = 3, _null = 4 }
+	export enum PaystubDetailsPay_frequency { MONTHLY = 'MONTHLY', 'BI-WEEKLY' = 'BI-WEEKLY', WEEKLY = 'WEEKLY', 'SEMI-MONTHLY' = 'SEMI-MONTHLY', _null = 4 }
 
 
 	/** The amount of income earned year to date, as based on paystub data. */
@@ -24881,7 +24881,7 @@ export namespace MyNS {
 	 * "`LOW`": It is unlikely that this user can use the digital income verification flow.
 	 * `"UNKNOWN"`: It was not possible to determine if the user is supportable with the information passed.
 	 */
-	export enum IncomeVerificationPrecheckConfidence { HIGH = 0, LOW = 1, UNKNOWN = 2 }
+	export enum IncomeVerificationPrecheckConfidence { HIGH = 'HIGH', LOW = 'LOW', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Data about the components comprising an address. */
@@ -25150,7 +25150,7 @@ export namespace MyNS {
 
 
 	/** The types of source income data that users should be able to share */
-	export enum IncomeVerificationSourceType { bank = 0, payroll = 1 }
+	export enum IncomeVerificationSourceType { bank = 'bank', payroll = 'payroll' }
 
 
 	/** Fired when the status of an income verification instance has changed. It will typically take several minutes for this webhook to fire after the end user has uploaded their documents in the Document Income flow. */
@@ -25571,7 +25571,7 @@ export namespace MyNS {
 
 
 	/** Shorthand identifier for a specific screening list for individuals. */
-	export enum IndividualWatchlistCode { AU_CON = 0, CA_CON = 1, EU_CON = 2, IZ_CIA = 3, IZ_IPL = 4, IZ_PEP = 5, IZ_UNC = 6, IZ_WBK = 7, UK_HMC = 8, US_DPL = 9, US_DTC = 10, US_FBI = 11, US_FSE = 12, US_ISN = 13, US_MBS = 14, US_PLC = 15, US_SDN = 16, US_SSI = 17, SG_SOF = 18, TR_TWL = 19, TR_DFD = 20, TR_FOR = 21, TR_WMD = 22, TR_CMB = 23 }
+	export enum IndividualWatchlistCode { AU_CON = 'AU_CON', CA_CON = 'CA_CON', EU_CON = 'EU_CON', IZ_CIA = 'IZ_CIA', IZ_IPL = 'IZ_IPL', IZ_PEP = 'IZ_PEP', IZ_UNC = 'IZ_UNC', IZ_WBK = 'IZ_WBK', UK_HMC = 'UK_HMC', US_DPL = 'US_DPL', US_DTC = 'US_DTC', US_FBI = 'US_FBI', US_FSE = 'US_FSE', US_ISN = 'US_ISN', US_MBS = 'US_MBS', US_PLC = 'US_PLC', US_SDN = 'US_SDN', US_SSI = 'US_SSI', SG_SOF = 'SG_SOF', TR_TWL = 'TR_TWL', TR_DFD = 'TR_DFD', TR_FOR = 'TR_FOR', TR_WMD = 'TR_WMD', TR_CMB = 'TR_CMB' }
 
 
 	/** A program that configures the active lists, search parameters, and other behavior for initial and ongoing screening of individuals. */
@@ -26107,7 +26107,7 @@ export namespace MyNS {
 
 
 	/** The frequency interval of the payment. */
-	export enum PaymentScheduleInterval { WEEKLY = 0, MONTHLY = 1 }
+	export enum PaymentScheduleInterval { WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 
 	/**
@@ -26268,9 +26268,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductStatusBreakdownRefresh_interval { NORMAL = 0, DELAYED = 1, STOPPED = 2 }
+	export enum ProductStatusBreakdownRefresh_interval { NORMAL = 'NORMAL', DELAYED = 'DELAYED', STOPPED = 'STOPPED' }
 
-	export enum ProductStatusStatus { HEALTHY = 0, DEGRADED = 1, DOWN = 2 }
+	export enum ProductStatusStatus { HEALTHY = 'HEALTHY', DEGRADED = 'DEGRADED', DOWN = 'DOWN' }
 
 
 	/** Contains the RTP network and types supported by the linked Item's institution. */
@@ -27677,9 +27677,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InvestmentTransactionSubtype { 'account fee' = 0, adjustment = 1, assignment = 2, buy = 3, 'buy to cover' = 4, contribution = 5, deposit = 6, distribution = 7, dividend = 8, 'dividend reinvestment' = 9, exercise = 10, expire = 11, 'fund fee' = 12, interest = 13, 'interest receivable' = 14, 'interest reinvestment' = 15, 'legal fee' = 16, 'loan payment' = 17, 'long-term capital gain' = 18, 'long-term capital gain reinvestment' = 19, 'management fee' = 20, 'margin expense' = 21, merger = 22, 'miscellaneous fee' = 23, 'non-qualified dividend' = 24, 'non-resident tax' = 25, 'pending credit' = 26, 'pending debit' = 27, 'qualified dividend' = 28, rebalance = 29, 'return of principal' = 30, request = 31, sell = 32, 'sell short' = 33, send = 34, 'short-term capital gain' = 35, 'short-term capital gain reinvestment' = 36, 'spin off' = 37, split = 38, 'stock distribution' = 39, tax = 40, 'tax withheld' = 41, trade = 42, transfer = 43, 'transfer fee' = 44, 'trust fee' = 45, 'unqualified gain' = 46, withdrawal = 47 }
+	export enum InvestmentTransactionSubtype { 'account fee' = 'account fee', adjustment = 'adjustment', assignment = 'assignment', buy = 'buy', 'buy to cover' = 'buy to cover', contribution = 'contribution', deposit = 'deposit', distribution = 'distribution', dividend = 'dividend', 'dividend reinvestment' = 'dividend reinvestment', exercise = 'exercise', expire = 'expire', 'fund fee' = 'fund fee', interest = 'interest', 'interest receivable' = 'interest receivable', 'interest reinvestment' = 'interest reinvestment', 'legal fee' = 'legal fee', 'loan payment' = 'loan payment', 'long-term capital gain' = 'long-term capital gain', 'long-term capital gain reinvestment' = 'long-term capital gain reinvestment', 'management fee' = 'management fee', 'margin expense' = 'margin expense', merger = 'merger', 'miscellaneous fee' = 'miscellaneous fee', 'non-qualified dividend' = 'non-qualified dividend', 'non-resident tax' = 'non-resident tax', 'pending credit' = 'pending credit', 'pending debit' = 'pending debit', 'qualified dividend' = 'qualified dividend', rebalance = 'rebalance', 'return of principal' = 'return of principal', request = 'request', sell = 'sell', 'sell short' = 'sell short', send = 'send', 'short-term capital gain' = 'short-term capital gain', 'short-term capital gain reinvestment' = 'short-term capital gain reinvestment', 'spin off' = 'spin off', split = 'split', 'stock distribution' = 'stock distribution', tax = 'tax', 'tax withheld' = 'tax withheld', trade = 'trade', transfer = 'transfer', 'transfer fee' = 'transfer fee', 'trust fee' = 'trust fee', 'unqualified gain' = 'unqualified gain', withdrawal = 'withdrawal' }
 
-	export enum InvestmentTransactionType { buy = 0, sell = 1, cancel = 2, cash = 3, fee = 4, transfer = 5 }
+	export enum InvestmentTransactionType { buy = 'buy', sell = 'sell', cancel = 'cancel', cash = 'cash', fee = 'fee', transfer = 'transfer' }
 
 
 	/** Fired when new transactions have been detected on an investment account. */
@@ -28407,7 +28407,7 @@ export namespace MyNS {
 	 * A binary match indicator specifying whether the country that issued the provided document matches the country that the user separately provided to Plaid.
 	 * Note: You can configure whether a `no_match` on `issuing_country` fails the `documentary_verification` by editing your Plaid Template.
 	 */
-	export enum IssuingCountry { match = 0, no_match = 1 }
+	export enum IssuingCountry { match = 'match', no_match = 'no_match' }
 
 
 	/** ItemAccessTokenInvalidateRequest defines the request schema for `/item/access_token/invalidate` */
@@ -28886,7 +28886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemApplicationScopesUpdateRequestContext { ENROLLMENT = 0, PORTAL = 1 }
+	export enum ItemApplicationScopesUpdateRequestContext { ENROLLMENT = 'ENROLLMENT', PORTAL = 'PORTAL' }
 
 
 	/** The scopes object */
@@ -31014,7 +31014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StudentLoanStatusType { cancelled = 0, 'charged off' = 1, claim = 2, consolidated = 3, deferment = 4, delinquent = 5, discharged = 6, extension = 7, forbearance = 8, 'in grace' = 9, 'in military' = 10, 'in school' = 11, 'not fully disbursed' = 12, other = 13, 'paid in full' = 14, refunded = 15, repayment = 16, transferred = 17 }
+	export enum StudentLoanStatusType { cancelled = 'cancelled', 'charged off' = 'charged off', claim = 'claim', consolidated = 'consolidated', deferment = 'deferment', delinquent = 'delinquent', discharged = 'discharged', extension = 'extension', forbearance = 'forbearance', 'in grace' = 'in grace', 'in military' = 'in military', 'in school' = 'in school', 'not fully disbursed' = 'not fully disbursed', other = 'other', 'paid in full' = 'paid in full', refunded = 'refunded', repayment = 'repayment', transferred = 'transferred' }
 
 
 	/** Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is FedLoan (`ins_116527`).  */
@@ -31109,7 +31109,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StudentRepaymentPlanType { 'extended graduated' = 0, 'extended standard' = 1, graduated = 2, 'income-contingent repayment' = 3, 'income-based repayment' = 4, 'interest-only' = 5, other = 6, 'pay as you earn' = 7, 'revised pay as you earn' = 8, standard = 9, _null = 10 }
+	export enum StudentRepaymentPlanType { 'extended graduated' = 'extended graduated', 'extended standard' = 'extended standard', graduated = 'graduated', 'income-contingent repayment' = 'income-contingent repayment', 'income-based repayment' = 'income-based repayment', 'interest-only' = 'interest-only', other = 'other', 'pay as you earn' = 'pay as you earn', 'revised pay as you earn' = 'revised pay as you earn', standard = 'standard', _null = 10 }
 
 
 	/** The address of the student loan servicer. This is generally the remittance address to which payments should be sent. */
@@ -31663,9 +31663,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkCallbackMetadataCallback_type { ON_SUCCESS = 0, ON_EVENT = 1, ON_EXIT = 2 }
+	export enum LinkCallbackMetadataCallback_type { ON_SUCCESS = 'ON_SUCCESS', ON_EVENT = 'ON_EVENT', ON_EXIT = 'ON_EXIT' }
 
-	export enum LinkCallbackMetadataEvent_name { BANK_INCOME_INSIGHTS_COMPLETED = 0, CLOSE_OAUTH = 1, ERROR = 2, EXIT = 3, FAIL_OAUTH = 4, HANDOFF = 5, OPEN = 6, OPEN_MY_PLAID = 7, OPEN_OAUTH = 8, SEARCH_INSTITUTION = 9, SELECT_AUTH_TYPE = 10, SELECT_BRAND = 11, SELECT_DEGRADED_INSTITUTION = 12, SELECT_DOWN_INSTITUTION = 13, SELECT_INSTITUTION = 14, SUBMIT_ACCOUNT_NUMBER = 15, SUBMIT_CREDENTIALS = 16, SUBMIT_DOCUMENTS = 17, SUBMIT_DOCUMENTS_ERROR = 18, SUBMIT_DOCUMENTS_SUCCESS = 19, SUBMIT_MFA = 20, SUBMIT_ROUTING_NUMBER = 21, TRANSITION_VIEW = 22, VIEW_DATA_TYPES = 23 }
+	export enum LinkCallbackMetadataEvent_name { BANK_INCOME_INSIGHTS_COMPLETED = 'BANK_INCOME_INSIGHTS_COMPLETED', CLOSE_OAUTH = 'CLOSE_OAUTH', ERROR = 'ERROR', EXIT = 'EXIT', FAIL_OAUTH = 'FAIL_OAUTH', HANDOFF = 'HANDOFF', OPEN = 'OPEN', OPEN_MY_PLAID = 'OPEN_MY_PLAID', OPEN_OAUTH = 'OPEN_OAUTH', SEARCH_INSTITUTION = 'SEARCH_INSTITUTION', SELECT_AUTH_TYPE = 'SELECT_AUTH_TYPE', SELECT_BRAND = 'SELECT_BRAND', SELECT_DEGRADED_INSTITUTION = 'SELECT_DEGRADED_INSTITUTION', SELECT_DOWN_INSTITUTION = 'SELECT_DOWN_INSTITUTION', SELECT_INSTITUTION = 'SELECT_INSTITUTION', SUBMIT_ACCOUNT_NUMBER = 'SUBMIT_ACCOUNT_NUMBER', SUBMIT_CREDENTIALS = 'SUBMIT_CREDENTIALS', SUBMIT_DOCUMENTS = 'SUBMIT_DOCUMENTS', SUBMIT_DOCUMENTS_ERROR = 'SUBMIT_DOCUMENTS_ERROR', SUBMIT_DOCUMENTS_SUCCESS = 'SUBMIT_DOCUMENTS_SUCCESS', SUBMIT_MFA = 'SUBMIT_MFA', SUBMIT_ROUTING_NUMBER = 'SUBMIT_ROUTING_NUMBER', TRANSITION_VIEW = 'TRANSITION_VIEW', VIEW_DATA_TYPES = 'VIEW_DATA_TYPES' }
 
 
 	/** Information related to the financial institution. */
@@ -31806,7 +31806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkDeliveryCommunicationMethodMethod { SMS = 0, EMAIL = 1 }
+	export enum LinkDeliveryCommunicationMethodMethod { SMS = 'SMS', EMAIL = 'EMAIL' }
 
 
 	/** LinkDeliveryCreateRequest defines the request schema for `/link_delivery/create` */
@@ -31952,7 +31952,7 @@ export namespace MyNS {
 	 * `SMS`: The URL will be delivered through SMS
 	 * `EMAIL`: The URL will be delivered through email
 	 */
-	export enum LinkDeliveryDeliveryMethod { SMS = 0, EMAIL = 1 }
+	export enum LinkDeliveryDeliveryMethod { SMS = 'SMS', EMAIL = 'EMAIL' }
 
 
 	/** LinkDeliveryGetRequest defines the request schema for `/link_delivery/get` */
@@ -32069,7 +32069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkDeliveryGetResponseStatus { CREATED = 0, OPENED = 1, COMPLETED = 2, EXPIRED = 3 }
+	export enum LinkDeliveryGetResponseStatus { CREATED = 'CREATED', OPENED = 'OPENED', COMPLETED = 'COMPLETED', EXPIRED = 'EXPIRED' }
 
 
 	/** Information related to the related to the delivery of the link session to users */
@@ -32099,9 +32099,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkDeliveryMetadataCommunication_method { sms = 0, email = 1 }
+	export enum LinkDeliveryMetadataCommunication_method { sms = 'sms', email = 'email' }
 
-	export enum LinkDeliveryMetadataDelivery_status { succeeded = 0, failed = 1 }
+	export enum LinkDeliveryMetadataDelivery_status { succeeded = 'succeeded', failed = 'failed' }
 
 
 	/**
@@ -32111,27 +32111,27 @@ export namespace MyNS {
 	 * `COMPLETED`: The session has been completed by the user
 	 * `EXPIRED`: The session has expired
 	 */
-	export enum LinkDeliverySessionStatus { CREATED = 0, OPENED = 1, COMPLETED = 2, EXPIRED = 3 }
+	export enum LinkDeliverySessionStatus { CREATED = 'CREATED', OPENED = 'OPENED', COMPLETED = 'COMPLETED', EXPIRED = 'EXPIRED' }
 
 
 	/** Indicates an Item's micro-deposit-based verification status. */
-	export enum LinkDeliveryVerificationStatus { automatically_verified = 0, pending_automatic_verification = 1, pending_manual_verification = 2, manually_verified = 3, verification_expired = 4, verification_failed = 5 }
+	export enum LinkDeliveryVerificationStatus { automatically_verified = 'automatically_verified', pending_automatic_verification = 'pending_automatic_verification', pending_manual_verification = 'pending_manual_verification', manually_verified = 'manually_verified', verification_expired = 'verification_expired', verification_failed = 'verification_failed' }
 
 
 	/** The type of Link callback event */
-	export enum LinkDeliveryWebhookCallbackType { ON_SUCCESS = 0, ON_EVENT = 1, ON_EXIT = 2 }
+	export enum LinkDeliveryWebhookCallbackType { ON_SUCCESS = 'ON_SUCCESS', ON_EVENT = 'ON_EVENT', ON_EXIT = 'ON_EXIT' }
 
 
 	/** The communication method used to deliver the hosted link session */
-	export enum LinkDeliveryWebhookCommunicationMethod { sms = 0, email = 1 }
+	export enum LinkDeliveryWebhookCommunicationMethod { sms = 'sms', email = 'email' }
 
 
 	/** The status of the delivery of the hosted link to the user */
-	export enum LinkDeliveryWebhookDeliveryStatus { succeeded = 0, failed = 1 }
+	export enum LinkDeliveryWebhookDeliveryStatus { succeeded = 'succeeded', failed = 'failed' }
 
 
 	/** A string representing the event that has just occurred in the Link flow. */
-	export enum LinkEventName { BANK_INCOME_INSIGHTS_COMPLETED = 0, CLOSE_OAUTH = 1, ERROR = 2, EXIT = 3, FAIL_OAUTH = 4, HANDOFF = 5, OPEN = 6, OPEN_MY_PLAID = 7, OPEN_OAUTH = 8, SEARCH_INSTITUTION = 9, SELECT_AUTH_TYPE = 10, SELECT_BRAND = 11, SELECT_DEGRADED_INSTITUTION = 12, SELECT_DOWN_INSTITUTION = 13, SELECT_INSTITUTION = 14, SUBMIT_ACCOUNT_NUMBER = 15, SUBMIT_CREDENTIALS = 16, SUBMIT_DOCUMENTS = 17, SUBMIT_DOCUMENTS_ERROR = 18, SUBMIT_DOCUMENTS_SUCCESS = 19, SUBMIT_MFA = 20, SUBMIT_ROUTING_NUMBER = 21, TRANSITION_VIEW = 22, VIEW_DATA_TYPES = 23 }
+	export enum LinkEventName { BANK_INCOME_INSIGHTS_COMPLETED = 'BANK_INCOME_INSIGHTS_COMPLETED', CLOSE_OAUTH = 'CLOSE_OAUTH', ERROR = 'ERROR', EXIT = 'EXIT', FAIL_OAUTH = 'FAIL_OAUTH', HANDOFF = 'HANDOFF', OPEN = 'OPEN', OPEN_MY_PLAID = 'OPEN_MY_PLAID', OPEN_OAUTH = 'OPEN_OAUTH', SEARCH_INSTITUTION = 'SEARCH_INSTITUTION', SELECT_AUTH_TYPE = 'SELECT_AUTH_TYPE', SELECT_BRAND = 'SELECT_BRAND', SELECT_DEGRADED_INSTITUTION = 'SELECT_DEGRADED_INSTITUTION', SELECT_DOWN_INSTITUTION = 'SELECT_DOWN_INSTITUTION', SELECT_INSTITUTION = 'SELECT_INSTITUTION', SUBMIT_ACCOUNT_NUMBER = 'SUBMIT_ACCOUNT_NUMBER', SUBMIT_CREDENTIALS = 'SUBMIT_CREDENTIALS', SUBMIT_DOCUMENTS = 'SUBMIT_DOCUMENTS', SUBMIT_DOCUMENTS_ERROR = 'SUBMIT_DOCUMENTS_ERROR', SUBMIT_DOCUMENTS_SUCCESS = 'SUBMIT_DOCUMENTS_SUCCESS', SUBMIT_MFA = 'SUBMIT_MFA', SUBMIT_ROUTING_NUMBER = 'SUBMIT_ROUTING_NUMBER', TRANSITION_VIEW = 'TRANSITION_VIEW', VIEW_DATA_TYPES = 'VIEW_DATA_TYPES' }
 
 
 	/** LinkOAuthCorrelationIdExchangeRequest defines the request schema for `/link/oauth/correlation_id/exchange` */
@@ -32593,7 +32593,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkTokenCreateRequestAuthFlow_type { FLEXIBLE_AUTH = 0 }
+	export enum LinkTokenCreateRequestAuthFlow_type { FLEXIBLE_AUTH = 'FLEXIBLE_AUTH' }
 
 
 	/** Specifies options for initializing Link for use with the Deposit Switch (beta) product. This field is required if `deposit_switch` is included in the `products` array. */
@@ -32911,11 +32911,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkTokenCreateRequestUserStatedIncomeSourceCategory { OTHER = 0, SALARY = 1, UNEMPLOYMENT = 2, CASH = 3, GIG_ECONOMY = 4, RENTAL = 5, CHILD_SUPPORT = 6, MILITARY = 7, RETIREMENT = 8, LONG_TERM_DISABILITY = 9, BANK_INTEREST = 10 }
+	export enum LinkTokenCreateRequestUserStatedIncomeSourceCategory { OTHER = 'OTHER', SALARY = 'SALARY', UNEMPLOYMENT = 'UNEMPLOYMENT', CASH = 'CASH', GIG_ECONOMY = 'GIG_ECONOMY', RENTAL = 'RENTAL', CHILD_SUPPORT = 'CHILD_SUPPORT', MILITARY = 'MILITARY', RETIREMENT = 'RETIREMENT', LONG_TERM_DISABILITY = 'LONG_TERM_DISABILITY', BANK_INTEREST = 'BANK_INTEREST' }
 
-	export enum LinkTokenCreateRequestUserStatedIncomeSourcePay_frequency { UNKNOWN = 0, WEEKLY = 1, BIWEEKLY = 2, SEMI_MONTHLY = 3, MONTHLY = 4 }
+	export enum LinkTokenCreateRequestUserStatedIncomeSourcePay_frequency { UNKNOWN = 'UNKNOWN', WEEKLY = 'WEEKLY', BIWEEKLY = 'BIWEEKLY', SEMI_MONTHLY = 'SEMI_MONTHLY', MONTHLY = 'MONTHLY' }
 
-	export enum LinkTokenCreateRequestUserStatedIncomeSourcePay_type { UNKNOWN = 0, GROSS = 1, NET = 2 }
+	export enum LinkTokenCreateRequestUserStatedIncomeSourcePay_type { UNKNOWN = 'UNKNOWN', GROSS = 'GROSS', NET = 'NET' }
 
 
 	/** Configuration parameters for the Investments product */
@@ -33644,7 +33644,7 @@ export namespace MyNS {
 
 
 	/** A value from a MISMO prescribed list that specifies the type of loan identifier. */
-	export enum LoanIdentifierType { LenderLoan = 0, UniversalLoan = 1 }
+	export enum LoanIdentifierType { LenderLoan = 'LenderLoan', UniversalLoan = 'UniversalLoan' }
 
 
 	/** Specifies the multi-factor authentication settings to use with this test account */
@@ -33740,7 +33740,7 @@ export namespace MyNS {
 	 * `no_data` indicates that Plaid was unable to find external data to compare against the provided input data.
 	 * `no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.
 	 */
-	export enum MatchSummaryCode { match = 0, partial_match = 1, no_match = 2, no_data = 3, no_input = 4 }
+	export enum MatchSummaryCode { match = 'match', partial_match = 'partial_match', no_match = 'no_match', no_data = 'no_data', no_input = 'no_input' }
 
 
 	/** Allows specifying the metadata of the test account */
@@ -34097,7 +34097,7 @@ export namespace MyNS {
 	 * `other:` Non-specified account type
 	 * See the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.
 	 */
-	export enum OverrideAccountType { investment = 0, credit = 1, depository = 2, loan = 3, payroll = 4, other = 5 }
+	export enum OverrideAccountType { investment = 'investment', credit = 'credit', depository = 'depository', loan = 'loan', payroll = 'payroll', other = 'other' }
 
 
 	/** Data to use to set values of test accounts. Some values cannot be specified in the schema and will instead will be calculated from other test data in order to achieve more consistent, realistic test data. */
@@ -34273,7 +34273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OverrideAccountsSubtype { '401a' = 0, '401k' = 1, '403B' = 2, '457b' = 3, _529 = 4, brokerage = 5, 'cash isa' = 6, 'crypto exchange' = 7, 'education savings account' = 8, ebt = 9, 'fixed annuity' = 10, gic = 11, 'health reimbursement arrangement' = 12, hsa = 13, isa = 14, ira = 15, lif = 16, 'life insurance' = 17, lira = 18, lrif = 19, lrsp = 20, 'non-custodial wallet' = 21, 'non-taxable brokerage account' = 22, other = 23, 'other insurance' = 24, 'other annuity' = 25, prif = 26, rdsp = 27, resp = 28, rlif = 29, rrif = 30, pension = 31, 'profit sharing plan' = 32, retirement = 33, roth = 34, 'roth 401k' = 35, rrsp = 36, 'sep ira' = 37, 'simple ira' = 38, sipp = 39, 'stock plan' = 40, 'thrift savings plan' = 41, tfsa = 42, trust = 43, ugma = 44, utma = 45, 'variable annuity' = 46, 'credit card' = 47, paypal = 48, cd = 49, checking = 50, savings = 51, 'money market' = 52, prepaid = 53, auto = 54, business = 55, commercial = 56, construction = 57, consumer = 58, 'home equity' = 59, loan = 60, mortgage = 61, overdraft = 62, 'line of credit' = 63, student = 64, 'cash management' = 65, keogh = 66, 'mutual fund' = 67, recurring = 68, rewards = 69, 'safe deposit' = 70, sarsep = 71, payroll = 72, _null = 73 }
+	export enum OverrideAccountsSubtype { '401a' = '401a', '401k' = '401k', '403B' = '403B', '457b' = '457b', _529 = '529', brokerage = 'brokerage', 'cash isa' = 'cash isa', 'crypto exchange' = 'crypto exchange', 'education savings account' = 'education savings account', ebt = 'ebt', 'fixed annuity' = 'fixed annuity', gic = 'gic', 'health reimbursement arrangement' = 'health reimbursement arrangement', hsa = 'hsa', isa = 'isa', ira = 'ira', lif = 'lif', 'life insurance' = 'life insurance', lira = 'lira', lrif = 'lrif', lrsp = 'lrsp', 'non-custodial wallet' = 'non-custodial wallet', 'non-taxable brokerage account' = 'non-taxable brokerage account', other = 'other', 'other insurance' = 'other insurance', 'other annuity' = 'other annuity', prif = 'prif', rdsp = 'rdsp', resp = 'resp', rlif = 'rlif', rrif = 'rrif', pension = 'pension', 'profit sharing plan' = 'profit sharing plan', retirement = 'retirement', roth = 'roth', 'roth 401k' = 'roth 401k', rrsp = 'rrsp', 'sep ira' = 'sep ira', 'simple ira' = 'simple ira', sipp = 'sipp', 'stock plan' = 'stock plan', 'thrift savings plan' = 'thrift savings plan', tfsa = 'tfsa', trust = 'trust', ugma = 'ugma', utma = 'utma', 'variable annuity' = 'variable annuity', 'credit card' = 'credit card', paypal = 'paypal', cd = 'cd', checking = 'checking', savings = 'savings', 'money market' = 'money market', prepaid = 'prepaid', auto = 'auto', business = 'business', commercial = 'commercial', construction = 'construction', consumer = 'consumer', 'home equity' = 'home equity', loan = 'loan', mortgage = 'mortgage', overdraft = 'overdraft', 'line of credit' = 'line of credit', student = 'student', 'cash management' = 'cash management', keogh = 'keogh', 'mutual fund' = 'mutual fund', recurring = 'recurring', rewards = 'rewards', 'safe deposit' = 'safe deposit', sarsep = 'sarsep', payroll = 'payroll', _null = 73 }
 
 
 	/** Data to populate as test transaction data. If not specified, random transactions will be generated instead. */
@@ -34356,11 +34356,11 @@ export namespace MyNS {
 	 * `joint`: Joint ownership by multiple parties.
 	 * `trust`: Ownership by a revocable or irrevocable trust.
 	 */
-	export enum OwnershipType { _null = 0, individual = 1, joint = 2, association = 3, trust = 4 }
+	export enum OwnershipType { _null = 0, individual = 'individual', joint = 'joint', association = 'association', trust = 'trust' }
 
 
 	/** Field describing whether the associated address is a post office box. Will be `yes` when a P.O. box is detected, `no` when Plaid confirmed the address is not a P.O. box, and `no_data` when Plaid was not able to determine if the address is a P.O. box. */
-	export enum POBoxStatus { yes = 0, no = 1, no_data = 2 }
+	export enum POBoxStatus { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/** Request schema for `/partner/customer/create`. */
@@ -34841,7 +34841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartnerEndCustomerStatus { UNDER_REVIEW = 0, PENDING_ENABLEMENT = 1, ACTIVE = 2, DENIED = 3 }
+	export enum PartnerEndCustomerStatus { UNDER_REVIEW = 'UNDER_REVIEW', PENDING_ENABLEMENT = 'PENDING_ENABLEMENT', ACTIVE = 'ACTIVE', DENIED = 'DENIED' }
 
 
 	/** Request schema for `/partner/customer/oauth_institutions/get`. */
@@ -34916,7 +34916,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartnerCustomerOAuthInstitutionsGetResponseFlowdown_status { NOT_STARTED = 0, IN_REVIEW = 1, NEGOTIATION = 2, COMPLETE = 3 }
+	export enum PartnerCustomerOAuthInstitutionsGetResponseFlowdown_status { NOT_STARTED = 'NOT_STARTED', IN_REVIEW = 'IN_REVIEW', NEGOTIATION = 'NEGOTIATION', COMPLETE = 'COMPLETE' }
 
 
 	/** The OAuth registration information for an institution. */
@@ -34983,9 +34983,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PartnerEndCustomerOAuthInstitutionEnvironmentsDevelopment { NOT_STARTED = 0, PROCESSING = 1, APPROVED = 2, ENABLED = 3, ATTENTION_REQUIRED = 4 }
+	export enum PartnerEndCustomerOAuthInstitutionEnvironmentsDevelopment { NOT_STARTED = 'NOT_STARTED', PROCESSING = 'PROCESSING', APPROVED = 'APPROVED', ENABLED = 'ENABLED', ATTENTION_REQUIRED = 'ATTENTION_REQUIRED' }
 
-	export enum PartnerCustomerOAuthInstitutionsGetResponseQuestionnaire_status { NOT_STARTED = 0, RECEIVED = 1, COMPLETE = 2 }
+	export enum PartnerCustomerOAuthInstitutionsGetResponseQuestionnaire_status { NOT_STARTED = 'NOT_STARTED', RECEIVED = 'RECEIVED', COMPLETE = 'COMPLETE' }
 
 
 	/** Request schema for `/partner/customer/remove`. */
@@ -35045,15 +35045,15 @@ export namespace MyNS {
 
 
 	/** The status of the addendum to the Plaid MSA ("flowdown") for the end customer. */
-	export enum PartnerEndCustomerFlowdownStatus { NOT_STARTED = 0, IN_REVIEW = 1, NEGOTIATION = 2, COMPLETE = 3 }
+	export enum PartnerEndCustomerFlowdownStatus { NOT_STARTED = 'NOT_STARTED', IN_REVIEW = 'IN_REVIEW', NEGOTIATION = 'NEGOTIATION', COMPLETE = 'COMPLETE' }
 
 
 	/** The registration status for the end customer's application. */
-	export enum PartnerEndCustomerOAuthInstitutionApplicationStatus { NOT_STARTED = 0, PROCESSING = 1, APPROVED = 2, ENABLED = 3, ATTENTION_REQUIRED = 4 }
+	export enum PartnerEndCustomerOAuthInstitutionApplicationStatus { NOT_STARTED = 'NOT_STARTED', PROCESSING = 'PROCESSING', APPROVED = 'APPROVED', ENABLED = 'ENABLED', ATTENTION_REQUIRED = 'ATTENTION_REQUIRED' }
 
 
 	/** The OAuth status of the update */
-	export enum PartnerEndCustomerOAuthStatusUpdatedValues { 'not-started' = 0, processing = 1, approved = 2, enabled = 3, 'attention-required' = 4 }
+	export enum PartnerEndCustomerOAuthStatusUpdatedValues { 'not-started' = 'not-started', processing = 'processing', approved = 'approved', enabled = 'enabled', 'attention-required' = 'attention-required' }
 
 
 	/** The webhook of type `PARTNER` and code `END_CUSTOMER_OAUTH_STATUS_UPDATED` will be fired when a partner's end customer has an update on their OAuth registration status with an institution. */
@@ -35162,7 +35162,7 @@ export namespace MyNS {
 
 
 	/** The status of the end customer's security questionnaire. */
-	export enum PartnerEndCustomerQuestionnaireStatus { NOT_STARTED = 0, RECEIVED = 1, COMPLETE = 2 }
+	export enum PartnerEndCustomerQuestionnaireStatus { NOT_STARTED = 'NOT_STARTED', RECEIVED = 'RECEIVED', COMPLETE = 'COMPLETE' }
 
 
 	/** The secrets for the newly created end customer in non-Production environments. */
@@ -35194,7 +35194,7 @@ export namespace MyNS {
 
 
 	/** A value from a MISMO defined list that identifies the role that the party plays in the transaction. Parties may be either a person or legal entity. A party may play multiple roles in a transaction.A value from a MISMO defined list that identifies the role that the party plays in the transaction. Parties may be either a person or legal entity. A party may play multiple roles in a transaction. */
-	export enum PartyRoleType { Borrower = 0 }
+	export enum PartyRoleType { Borrower = 'Borrower' }
 
 
 	/** The amount and currency of a payment */
@@ -35240,7 +35240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentAmountCurrency { GBP = 0, EUR = 1, PLN = 2, SEK = 3, DKK = 4, NOK = 5 }
+	export enum PaymentAmountCurrency { GBP = 'GBP', EUR = 'EUR', PLN = 'PLN', SEK = 'SEK', DKK = 'DKK', NOK = 'NOK' }
 
 
 	/** The amount and currency of a payment */
@@ -35327,7 +35327,7 @@ export namespace MyNS {
 	 * `in store:` transactions that were made at a physical location.
 	 * `other:` transactions that relate to banks, e.g. fees or deposits.
 	 */
-	export enum PaymentChannel { online = 0, 'in store' = 1, other = 2 }
+	export enum PaymentChannel { online = 'online', 'in store' = 'in store', other = 'other' }
 
 
 	/** Maximum amount of a single payment initiated using the payment consent. */
@@ -35349,7 +35349,7 @@ export namespace MyNS {
 	 * `CALENDAR`: line up with a calendar.
 	 * `CONSENT`: on the date of consent creation.
 	 */
-	export enum PaymentConsentPeriodicAlignment { CALENDAR = 0, CONSENT = 1 }
+	export enum PaymentConsentPeriodicAlignment { CALENDAR = 'CALENDAR', CONSENT = 'CONSENT' }
 
 
 	/** Defines consent payments limitations per period. */
@@ -35401,7 +35401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentConsentPeriodicAmountInterval { DAY = 0, WEEK = 1, MONTH = 2, YEAR = 3 }
+	export enum PaymentConsentPeriodicAmountInterval { DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH', YEAR = 'YEAR' }
 
 
 	/** Maximum cumulative amount for all payments in the specified interval. */
@@ -35419,7 +35419,7 @@ export namespace MyNS {
 
 
 	/** Payment consent periodic interval. */
-	export enum PaymentConsentPeriodicInterval { DAY = 0, WEEK = 1, MONTH = 2, YEAR = 3 }
+	export enum PaymentConsentPeriodicInterval { DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH', YEAR = 'YEAR' }
 
 
 	/** Life span for the payment consent. After the `to` date the payment consent expires and can no longer be used for payment initiation. */
@@ -35662,9 +35662,9 @@ export namespace MyNS {
 	 * `ME_TO_ME`: Allows moving money between accounts owned by the same user.
 	 * `EXTERNAL`: Allows initiating payments from the user's account to third parties.
 	 */
-	export enum PaymentInitiationConsentScope { ME_TO_ME = 0, EXTERNAL = 1 }
+	export enum PaymentInitiationConsentScope { ME_TO_ME = 'ME_TO_ME', EXTERNAL = 'EXTERNAL' }
 
-	export enum PaymentInitiationConsentStatus { UNAUTHORISED = 0, AUTHORISED = 1, REVOKED = 2, REJECTED = 3, EXPIRED = 4 }
+	export enum PaymentInitiationConsentStatus { UNAUTHORISED = 'UNAUTHORISED', AUTHORISED = 'AUTHORISED', REVOKED = 'REVOKED', REJECTED = 'REJECTED', EXPIRED = 'EXPIRED' }
 
 
 	/** PaymentInitiationConsentCreateRequest defines the request schema for `/payment_initiation/consent/create` */
@@ -36009,7 +36009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentInitiationConsentPaymentExecuteResponseStatus { PAYMENT_STATUS_INPUT_NEEDED = 0, PAYMENT_STATUS_PROCESSING = 1, PAYMENT_STATUS_INITIATED = 2, PAYMENT_STATUS_COMPLETED = 3, PAYMENT_STATUS_INSUFFICIENT_FUNDS = 4, PAYMENT_STATUS_FAILED = 5, PAYMENT_STATUS_BLOCKED = 6, PAYMENT_STATUS_UNKNOWN = 7, PAYMENT_STATUS_EXECUTED = 8, PAYMENT_STATUS_SETTLED = 9, PAYMENT_STATUS_AUTHORISING = 10, PAYMENT_STATUS_CANCELLED = 11, PAYMENT_STATUS_ESTABLISHED = 12, PAYMENT_STATUS_REJECTED = 13 }
+	export enum PaymentInitiationConsentPaymentExecuteResponseStatus { PAYMENT_STATUS_INPUT_NEEDED = 'PAYMENT_STATUS_INPUT_NEEDED', PAYMENT_STATUS_PROCESSING = 'PAYMENT_STATUS_PROCESSING', PAYMENT_STATUS_INITIATED = 'PAYMENT_STATUS_INITIATED', PAYMENT_STATUS_COMPLETED = 'PAYMENT_STATUS_COMPLETED', PAYMENT_STATUS_INSUFFICIENT_FUNDS = 'PAYMENT_STATUS_INSUFFICIENT_FUNDS', PAYMENT_STATUS_FAILED = 'PAYMENT_STATUS_FAILED', PAYMENT_STATUS_BLOCKED = 'PAYMENT_STATUS_BLOCKED', PAYMENT_STATUS_UNKNOWN = 'PAYMENT_STATUS_UNKNOWN', PAYMENT_STATUS_EXECUTED = 'PAYMENT_STATUS_EXECUTED', PAYMENT_STATUS_SETTLED = 'PAYMENT_STATUS_SETTLED', PAYMENT_STATUS_AUTHORISING = 'PAYMENT_STATUS_AUTHORISING', PAYMENT_STATUS_CANCELLED = 'PAYMENT_STATUS_CANCELLED', PAYMENT_STATUS_ESTABLISHED = 'PAYMENT_STATUS_ESTABLISHED', PAYMENT_STATUS_REJECTED = 'PAYMENT_STATUS_REJECTED' }
 
 
 	/** PaymentInitiationConsentRevokeRequest defines the request schema for `/payment_initiation/consent/revoke` */
@@ -36303,9 +36303,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentInitiationPaymentAdjusted_scheme { _null = 0, LOCAL_DEFAULT = 1, LOCAL_INSTANT = 2, SEPA_CREDIT_TRANSFER = 3, SEPA_CREDIT_TRANSFER_INSTANT = 4 }
+	export enum PaymentInitiationPaymentAdjusted_scheme { _null = 0, LOCAL_DEFAULT = 'LOCAL_DEFAULT', LOCAL_INSTANT = 'LOCAL_INSTANT', SEPA_CREDIT_TRANSFER = 'SEPA_CREDIT_TRANSFER', SEPA_CREDIT_TRANSFER_INSTANT = 'SEPA_CREDIT_TRANSFER_INSTANT' }
 
-	export enum PaymentInitiationPaymentScheme { _null = 0, LOCAL_DEFAULT = 1, LOCAL_INSTANT = 2, SEPA_CREDIT_TRANSFER = 3, SEPA_CREDIT_TRANSFER_INSTANT = 4 }
+	export enum PaymentInitiationPaymentScheme { _null = 0, LOCAL_DEFAULT = 'LOCAL_DEFAULT', LOCAL_INSTANT = 'LOCAL_INSTANT', SEPA_CREDIT_TRANSFER = 'SEPA_CREDIT_TRANSFER', SEPA_CREDIT_TRANSFER_INSTANT = 'SEPA_CREDIT_TRANSFER_INSTANT' }
 
 
 	/** PaymentInitiationPaymentCreateRequest defines the request schema for `/payment_initiation/payment/create` */
@@ -36436,14 +36436,14 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentInitiationPaymentCreateResponseStatus { PAYMENT_STATUS_INPUT_NEEDED = 0 }
+	export enum PaymentInitiationPaymentCreateResponseStatus { PAYMENT_STATUS_INPUT_NEEDED = 'PAYMENT_STATUS_INPUT_NEEDED' }
 
 
 	/**
 	 * For a payment returned by this endpoint, there is only one possible value:
 	 * `PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment
 	 */
-	export enum PaymentInitiationPaymentCreateStatus { PAYMENT_STATUS_INPUT_NEEDED = 0 }
+	export enum PaymentInitiationPaymentCreateStatus { PAYMENT_STATUS_INPUT_NEEDED = 'PAYMENT_STATUS_INPUT_NEEDED' }
 
 
 	/** PaymentInitiationPaymentGetRequest defines the request schema for `/payment_initiation/payment/get` */
@@ -36767,7 +36767,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentInitiationPaymentReverseResponseStatus { AUTHORISING = 0, INITIATED = 1, EXECUTED = 2, SETTLED = 3, BLOCKED = 4, FAILED = 5 }
+	export enum PaymentInitiationPaymentReverseResponseStatus { AUTHORISING = 'AUTHORISING', INITIATED = 'INITIATED', EXECUTED = 'EXECUTED', SETTLED = 'SETTLED', BLOCKED = 'BLOCKED', FAILED = 'FAILED' }
 
 
 	/**
@@ -36789,7 +36789,7 @@ export namespace MyNS {
 	 * `PAYMENT_STATUS_PROCESSING`: The payment is currently being processed. The payment will automatically exit this state when processing is complete.
 	 * `PAYMENT_STATUS_COMPLETED`: Indicates that the standing order has been successfully established. This state is only used for standing orders.
 	 */
-	export enum PaymentInitiationPaymentStatus { PAYMENT_STATUS_INPUT_NEEDED = 0, PAYMENT_STATUS_PROCESSING = 1, PAYMENT_STATUS_INITIATED = 2, PAYMENT_STATUS_COMPLETED = 3, PAYMENT_STATUS_INSUFFICIENT_FUNDS = 4, PAYMENT_STATUS_FAILED = 5, PAYMENT_STATUS_BLOCKED = 6, PAYMENT_STATUS_UNKNOWN = 7, PAYMENT_STATUS_EXECUTED = 8, PAYMENT_STATUS_SETTLED = 9, PAYMENT_STATUS_AUTHORISING = 10, PAYMENT_STATUS_CANCELLED = 11, PAYMENT_STATUS_ESTABLISHED = 12, PAYMENT_STATUS_REJECTED = 13 }
+	export enum PaymentInitiationPaymentStatus { PAYMENT_STATUS_INPUT_NEEDED = 'PAYMENT_STATUS_INPUT_NEEDED', PAYMENT_STATUS_PROCESSING = 'PAYMENT_STATUS_PROCESSING', PAYMENT_STATUS_INITIATED = 'PAYMENT_STATUS_INITIATED', PAYMENT_STATUS_COMPLETED = 'PAYMENT_STATUS_COMPLETED', PAYMENT_STATUS_INSUFFICIENT_FUNDS = 'PAYMENT_STATUS_INSUFFICIENT_FUNDS', PAYMENT_STATUS_FAILED = 'PAYMENT_STATUS_FAILED', PAYMENT_STATUS_BLOCKED = 'PAYMENT_STATUS_BLOCKED', PAYMENT_STATUS_UNKNOWN = 'PAYMENT_STATUS_UNKNOWN', PAYMENT_STATUS_EXECUTED = 'PAYMENT_STATUS_EXECUTED', PAYMENT_STATUS_SETTLED = 'PAYMENT_STATUS_SETTLED', PAYMENT_STATUS_AUTHORISING = 'PAYMENT_STATUS_AUTHORISING', PAYMENT_STATUS_CANCELLED = 'PAYMENT_STATUS_CANCELLED', PAYMENT_STATUS_ESTABLISHED = 'PAYMENT_STATUS_ESTABLISHED', PAYMENT_STATUS_REJECTED = 'PAYMENT_STATUS_REJECTED' }
 
 
 	/** PaymentInitiationPaymentTokenCreateRequest defines the request schema for `/payment_initiation/payment/token/create` */
@@ -37486,7 +37486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentProfileGetResponseStatus { PENDING = 0, READY = 1, REMOVED = 2 }
+	export enum PaymentProfileGetResponseStatus { PENDING = 'PENDING', READY = 'READY', REMOVED = 'REMOVED' }
 
 
 	/** PaymentProfileRemoveRequest defines the request schema for `/payment_profile/remove` */
@@ -37563,7 +37563,7 @@ export namespace MyNS {
 	 * `PENDING`: This Payment Profile is not ready to be used. You’ll need to call `/link/token/create` and provide the `payment_profile_token` in the `transfer.payment_profile_token` field to initiate the account linking experience.
 	 * `REMOVED`: This Payment Profile has been removed.
 	 */
-	export enum PaymentProfileStatus { PENDING = 0, READY = 1, REMOVED = 2 }
+	export enum PaymentProfileStatus { PENDING = 'PENDING', READY = 'READY', REMOVED = 'REMOVED' }
 
 
 	/**
@@ -37573,7 +37573,7 @@ export namespace MyNS {
 	 * `SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.
 	 * `SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.
 	 */
-	export enum PaymentScheme { _null = 0, LOCAL_DEFAULT = 1, LOCAL_INSTANT = 2, SEPA_CREDIT_TRANSFER = 3, SEPA_CREDIT_TRANSFER_INSTANT = 4 }
+	export enum PaymentScheme { _null = 0, LOCAL_DEFAULT = 'LOCAL_DEFAULT', LOCAL_INSTANT = 'LOCAL_INSTANT', SEPA_CREDIT_TRANSFER = 'SEPA_CREDIT_TRANSFER', SEPA_CREDIT_TRANSFER_INSTANT = 'SEPA_CREDIT_TRANSFER_INSTANT' }
 
 
 	/** Fired when the status of a payment has changed. */
@@ -37855,7 +37855,7 @@ export namespace MyNS {
 
 
 	/** The frequency at which the employee is paid. Possible values: `MONTHLY`, `BI-WEEKLY`, `WEEKLY`, `SEMI-MONTHLY`. */
-	export enum PaystubPayFrequency { MONTHLY = 0, 'BI-WEEKLY' = 1, WEEKLY = 2, 'SEMI-MONTHLY' = 3, _null = 4 }
+	export enum PaystubPayFrequency { MONTHLY = 'MONTHLY', 'BI-WEEKLY' = 'BI-WEEKLY', WEEKLY = 'WEEKLY', 'SEMI-MONTHLY' = 'SEMI-MONTHLY', _null = 4 }
 
 
 	/** Fired when an Item’s access consent is expiring in 7 days. Some Items have explicit expiration times and we try to relay this when possible to reduce service disruption. This can be resolved by having the user go through Link’s update mode. */
@@ -37938,7 +37938,7 @@ export namespace MyNS {
 
 
 	/** An enum indicating whether a phone number is a phone line or a fax line. */
-	export enum PhoneType { phone = 0, fax = 1 }
+	export enum PhoneType { phone = 'phone', fax = 'fax' }
 
 
 	/**
@@ -37950,11 +37950,11 @@ export namespace MyNS {
 	 *   `resident_card` - An identity document permitting a foreign citizen to <em>permanently</em> reside in the associated country
 	 * Note: This value may be different from the ID type that the user selects within Link. For example, if they select "Driver's License" but then submit a picture of a passport, this field will say `passport`
 	 */
-	export enum PhysicalDocumentCategory { drivers_license = 0, id_card = 1, passport = 2, residence_permit_card = 3, resident_card = 4 }
+	export enum PhysicalDocumentCategory { drivers_license = 'drivers_license', id_card = 'id_card', passport = 'passport', residence_permit_card = 'residence_permit_card', resident_card = 'resident_card' }
 
 
 	/** A broad categorization of the error. Safe for programmatic use. */
-	export enum PlaidErrorType { INVALID_REQUEST = 0, INVALID_RESULT = 1, INVALID_INPUT = 2, INSTITUTION_ERROR = 3, RATE_LIMIT_EXCEEDED = 4, API_ERROR = 5, ITEM_ERROR = 6, ASSET_REPORT_ERROR = 7, RECAPTCHA_ERROR = 8, OAUTH_ERROR = 9, PAYMENT_ERROR = 10, BANK_TRANSFER_ERROR = 11, INCOME_VERIFICATION_ERROR = 12, MICRODEPOSITS_ERROR = 13 }
+	export enum PlaidErrorType { INVALID_REQUEST = 'INVALID_REQUEST', INVALID_RESULT = 'INVALID_RESULT', INVALID_INPUT = 'INVALID_INPUT', INSTITUTION_ERROR = 'INSTITUTION_ERROR', RATE_LIMIT_EXCEEDED = 'RATE_LIMIT_EXCEEDED', API_ERROR = 'API_ERROR', ITEM_ERROR = 'ITEM_ERROR', ASSET_REPORT_ERROR = 'ASSET_REPORT_ERROR', RECAPTCHA_ERROR = 'RECAPTCHA_ERROR', OAUTH_ERROR = 'OAUTH_ERROR', PAYMENT_ERROR = 'PAYMENT_ERROR', BANK_TRANSFER_ERROR = 'BANK_TRANSFER_ERROR', INCOME_VERIFICATION_ERROR = 'INCOME_VERIFICATION_ERROR', MICRODEPOSITS_ERROR = 'MICRODEPOSITS_ERROR' }
 
 
 	/** ProcessorApexProcessorTokenCreateRequest defines the request schema for `/processor/apex/processor_token/create` */
@@ -38652,9 +38652,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessorSignalDecisionReportRequestDecision_outcome { APPROVE = 0, REVIEW = 1, REJECT = 2, TAKE_OTHER_RISK_MEASURES = 3, NOT_EVALUATED = 4 }
+	export enum ProcessorSignalDecisionReportRequestDecision_outcome { APPROVE = 'APPROVE', REVIEW = 'REVIEW', REJECT = 'REJECT', TAKE_OTHER_RISK_MEASURES = 'TAKE_OTHER_RISK_MEASURES', NOT_EVALUATED = 'NOT_EVALUATED' }
 
-	export enum ProcessorSignalDecisionReportRequestPayment_method { SAME_DAY_ACH = 0, NEXT_DAY_ACH = 1, STANDARD_ACH = 2, REAL_TIME_PAYMENTS = 3, DEBIT_CARD = 4, MULTIPLE_PAYMENT_METHODS = 5 }
+	export enum ProcessorSignalDecisionReportRequestPayment_method { SAME_DAY_ACH = 'SAME_DAY_ACH', NEXT_DAY_ACH = 'NEXT_DAY_ACH', STANDARD_ACH = 'STANDARD_ACH', REAL_TIME_PAYMENTS = 'REAL_TIME_PAYMENTS', DEBIT_CARD = 'DEBIT_CARD', MULTIPLE_PAYMENT_METHODS = 'MULTIPLE_PAYMENT_METHODS' }
 
 
 	/** ProcessorSignalDecisionReportResponse defines the response schema for `/processor/signal/decision/report` */
@@ -39740,7 +39740,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessorTokenCreateRequestProcessor { dwolla = 0, galileo = 1, modern_treasury = 2, ocrolus = 3, prime_trust = 4, vesta = 5, drivewealth = 6, vopay = 7, achq = 8, check = 9, checkbook = 10, circle = 11, sila_money = 12, rize = 13, svb_api = 14, unit = 15, wyre = 16, lithic = 17, alpaca = 18, astra = 19, moov = 20, treasury_prime = 21, marqeta = 22, checkout = 23, solid = 24, highnote = 25, apex_clearing = 26, gusto = 27, adyen = 28, atomic = 29, i2c = 30, wepay = 31, riskified = 32, utb = 33, adp_roll = 34, fortress_trust = 35 }
+	export enum ProcessorTokenCreateRequestProcessor { dwolla = 'dwolla', galileo = 'galileo', modern_treasury = 'modern_treasury', ocrolus = 'ocrolus', prime_trust = 'prime_trust', vesta = 'vesta', drivewealth = 'drivewealth', vopay = 'vopay', achq = 'achq', check = 'check', checkbook = 'checkbook', circle = 'circle', sila_money = 'sila_money', rize = 'rize', svb_api = 'svb_api', unit = 'unit', wyre = 'wyre', lithic = 'lithic', alpaca = 'alpaca', astra = 'astra', moov = 'moov', treasury_prime = 'treasury_prime', marqeta = 'marqeta', checkout = 'checkout', solid = 'solid', highnote = 'highnote', apex_clearing = 'apex_clearing', gusto = 'gusto', adyen = 'adyen', atomic = 'atomic', i2c = 'i2c', wepay = 'wepay', riskified = 'riskified', utb = 'utb', adp_roll = 'adp_roll', fortress_trust = 'fortress_trust' }
 
 
 	/** ProcessorTokenCreateResponse defines the response schema for `/processor/token/create` and `/processor/apex/processor_token/create` */
@@ -39790,7 +39790,7 @@ export namespace MyNS {
 	 * `strict` - Aggressive false positive reduction. This sensitivity will require names to be more similar than `coarse` and `balanced` settings, relying less on phonetics, while still accounting for character transpositions, missing tokens, and other common permutations.
 	 * `exact` - Matches must be nearly exact. This sensitivity will only show hits with exact or nearly exact name matches with only basic correction such as extraneous symbols and capitalization. This setting is generally not recommended unless you have a very specific use case.
 	 */
-	export enum ProgramNameSensitivity { coarse = 0, balanced = 1, strict = 2, exact = 3 }
+	export enum ProgramNameSensitivity { coarse = 'coarse', balanced = 'balanced', strict = 'strict', exact = 'exact' }
 
 
 	/** The employee's estimated annual salary, as derived from information reported on the paystub. */
@@ -39817,7 +39817,7 @@ export namespace MyNS {
 	 * `web_proxy` indicates the user is on a web proxy server, which may allow them to conceal information such as their IP address or other identifying information.
 	 * `public_proxy` indicates the user is on a public web proxy server, which is similar to a web proxy but can be shared by multiple users. This may allow multiple users to appear as if they have the same IP address for instance.
 	 */
-	export enum ProxyType { none_detected = 0, tor = 1, vpn = 2, web_proxy = 3, public_proxy = 4 }
+	export enum ProxyType { none_detected = 'none_detected', tor = 'tor', vpn = 'vpn', web_proxy = 'web_proxy', public_proxy = 'public_proxy' }
 
 
 	/** The request was flagged by Plaid's fraud system, and requires additional verification to ensure they are not a bot. */
@@ -40135,7 +40135,7 @@ export namespace MyNS {
 	 * `ANNUALLY`: Assigned to a transaction stream that occurs approximately every year.
 	 * `UNKNOWN`: Assigned to a transaction stream that does not fit any of the pre-defined frequencies.
 	 */
-	export enum RecurringTransactionFrequency { UNKNOWN = 0, WEEKLY = 1, BIWEEKLY = 2, SEMI_MONTHLY = 3, MONTHLY = 4, ANNUALLY = 5 }
+	export enum RecurringTransactionFrequency { UNKNOWN = 'UNKNOWN', WEEKLY = 'WEEKLY', BIWEEKLY = 'BIWEEKLY', SEMI_MONTHLY = 'SEMI_MONTHLY', MONTHLY = 'MONTHLY', ANNUALLY = 'ANNUALLY' }
 
 
 	/**
@@ -40436,7 +40436,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecurringTransferNetwork { ach = 0, 'same-day-ach' = 1, rtp = 2 }
+	export enum RecurringTransferNetwork { ach = 'ach', 'same-day-ach' = 'same-day-ach', rtp = 'rtp' }
 
 
 	/** The schedule that the recurring transfer will be executed on. */
@@ -40529,9 +40529,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferRecurringScheduleInterval_unit { week = 0, month = 1 }
+	export enum TransferRecurringScheduleInterval_unit { week = 'week', month = 'month' }
 
-	export enum RecurringTransferStatus { active = 0, cancelled = 1, expired = 2 }
+	export enum RecurringTransferStatus { active = 'active', cancelled = 'cancelled', expired = 'expired' }
 
 
 	/** The legal name and other information for the account holder. */
@@ -40808,9 +40808,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RecurringTransferSkippedWebhookAuthorization_decision { approved = 0, declined = 1 }
+	export enum RecurringTransferSkippedWebhookAuthorization_decision { approved = 'approved', declined = 'declined' }
 
-	export enum RecurringTransferSkippedWebhookAuthorization_decision_rationale_code { NSF = 0, RISK = 1, TRANSFER_LIMIT_REACHED = 2, MANUALLY_VERIFIED_ITEM = 3, ITEM_LOGIN_REQUIRED = 4, PAYMENT_PROFILE_LOGIN_REQUIRED = 5, ERROR = 6, MIGRATED_ACCOUNT_ITEM = 7 }
+	export enum RecurringTransferSkippedWebhookAuthorization_decision_rationale_code { NSF = 'NSF', RISK = 'RISK', TRANSFER_LIMIT_REACHED = 'TRANSFER_LIMIT_REACHED', MANUALLY_VERIFIED_ITEM = 'MANUALLY_VERIFIED_ITEM', ITEM_LOGIN_REQUIRED = 'ITEM_LOGIN_REQUIRED', PAYMENT_PROFILE_LOGIN_REQUIRED = 'PAYMENT_PROFILE_LOGIN_REQUIRED', ERROR = 'ERROR', MIGRATED_ACCOUNT_ITEM = 'MIGRATED_ACCOUNT_ITEM' }
 
 
 	/** A representation of a removed transaction */
@@ -40835,7 +40835,7 @@ export namespace MyNS {
 
 
 	/** The report type. It can be `assets` or `income`. */
-	export enum ReportType { assets = 0, income = 1 }
+	export enum ReportType { assets = 'assets', income = 'income' }
 
 
 	/**
@@ -40844,7 +40844,7 @@ export namespace MyNS {
 	 * `no` indicates that automated activity was not detected.
 	 * `no_data` indicates there was not enough information available to give an accurate signal.
 	 */
-	export enum RiskCheckBehaviorBotDetectedLabel { yes = 0, no = 1, no_data = 2 }
+	export enum RiskCheckBehaviorBotDetectedLabel { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/**
@@ -40853,7 +40853,7 @@ export namespace MyNS {
 	 * `no` indicates that fraud ring activity was not detected.
 	 * `no_data` indicates there was not enough information available to give an accurate signal.
 	 */
-	export enum RiskCheckBehaviorFraudRingDetectedLabel { yes = 0, no = 1, no_data = 2 }
+	export enum RiskCheckBehaviorFraudRingDetectedLabel { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/**
@@ -40863,27 +40863,27 @@ export namespace MyNS {
 	 * `risky` indicates the user has low familiarity with the data they are providing, and that fraud is likely.
 	 * `no_data` indicates there is not sufficient information to give an accurate signal.
 	 */
-	export enum RiskCheckBehaviorUserInteractionsLabel { genuine = 0, neutral = 1, risky = 2, no_data = 3 }
+	export enum RiskCheckBehaviorUserInteractionsLabel { genuine = 'genuine', neutral = 'neutral', risky = 'risky', no_data = 'no_data' }
 
 
 	/** Indicates whether the email address domain is custom if known, i.e. a company domain and not free or disposable. */
-	export enum RiskCheckEmailDomainIsCustom { yes = 0, no = 1, no_data = 2 }
+	export enum RiskCheckEmailDomainIsCustom { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/** Indicates whether the email domain is listed as disposable if known. Disposable domains are often used to create email addresses that are part of a fake set of user details. */
-	export enum RiskCheckEmailDomainIsDisposable { yes = 0, no = 1, no_data = 2 }
+	export enum RiskCheckEmailDomainIsDisposable { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/** Indicates whether the email address domain is a free provider such as Gmail or Hotmail if known. */
-	export enum RiskCheckEmailDomainIsFreeProvider { yes = 0, no = 1, no_data = 2 }
+	export enum RiskCheckEmailDomainIsFreeProvider { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/** SMTP-MX check to confirm the email address exists if known. */
-	export enum RiskCheckEmailIsDeliverableStatus { yes = 0, no = 1, no_data = 2 }
+	export enum RiskCheckEmailIsDeliverableStatus { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/** Indicates whether the email address top level domain, which is the last part of the domain, is fraudulent or risky if known. In most cases, a suspicious top level domain is also associated with a disposable or high-risk domain. */
-	export enum RiskCheckEmailTopLevelDomainIsSuspicious { yes = 0, no = 1, no_data = 2 }
+	export enum RiskCheckEmailTopLevelDomainIsSuspicious { yes = 'yes', no = 'no', no_data = 'no_data' }
 
 
 	/** Defines the request schema for `/sandbox/bank_transfer/fire_webhook` */
@@ -41123,7 +41123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SandboxIncomeFireWebhookRequestVerification_status { VERIFICATION_STATUS_PROCESSING_COMPLETE = 0, VERIFICATION_STATUS_PROCESSING_FAILED = 1, VERIFICATION_STATUS_PENDING_APPROVAL = 2 }
+	export enum SandboxIncomeFireWebhookRequestVerification_status { VERIFICATION_STATUS_PROCESSING_COMPLETE = 'VERIFICATION_STATUS_PROCESSING_COMPLETE', VERIFICATION_STATUS_PROCESSING_FAILED = 'VERIFICATION_STATUS_PROCESSING_FAILED', VERIFICATION_STATUS_PENDING_APPROVAL = 'VERIFICATION_STATUS_PENDING_APPROVAL' }
 
 
 	/** SandboxIncomeFireWebhookResponse defines the response schema for `/sandbox/income/fire_webhook` */
@@ -41213,9 +41213,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SandboxItemFireWebhookRequestWebhook_code { DEFAULT_UPDATE = 0, NEW_ACCOUNTS_AVAILABLE = 1, AUTH_DATA_UPDATE = 2, RECURRING_TRANSACTIONS_UPDATE = 3, SYNC_UPDATES_AVAILABLE = 4 }
+	export enum SandboxItemFireWebhookRequestWebhook_code { DEFAULT_UPDATE = 'DEFAULT_UPDATE', NEW_ACCOUNTS_AVAILABLE = 'NEW_ACCOUNTS_AVAILABLE', AUTH_DATA_UPDATE = 'AUTH_DATA_UPDATE', RECURRING_TRANSACTIONS_UPDATE = 'RECURRING_TRANSACTIONS_UPDATE', SYNC_UPDATES_AVAILABLE = 'SYNC_UPDATES_AVAILABLE' }
 
-	export enum SandboxItemFireWebhookRequestWebhook_type { AUTH = 0, HOLDINGS = 1, INVESTMENTS_TRANSACTIONS = 2, ITEM = 3, LIABILITIES = 4, TRANSACTIONS = 5 }
+	export enum SandboxItemFireWebhookRequestWebhook_type { AUTH = 'AUTH', HOLDINGS = 'HOLDINGS', INVESTMENTS_TRANSACTIONS = 'INVESTMENTS_TRANSACTIONS', ITEM = 'ITEM', LIABILITIES = 'LIABILITIES', TRANSACTIONS = 'TRANSACTIONS' }
 
 
 	/** SandboxItemFireWebhookResponse defines the response schema for `/sandbox/item/fire_webhook` */
@@ -41405,7 +41405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SandboxItemSetVerificationStatusRequestVerification_status { automatically_verified = 0, verification_expired = 1 }
+	export enum SandboxItemSetVerificationStatusRequestVerification_status { automatically_verified = 'automatically_verified', verification_expired = 'verification_expired' }
 
 
 	/** SandboxItemSetVerificationStatusResponse defines the response schema for `/sandbox/item/set_verification_status` */
@@ -42570,7 +42570,7 @@ export namespace MyNS {
 
 
 	/** An indicator for when scopes are being updated. When scopes are updated via enrollment (i.e. OAuth), the partner must send `ENROLLMENT`. When scopes are updated in a post-enrollment view, the partner must send `PORTAL`. */
-	export enum ScopesContext { ENROLLMENT = 0, PORTAL = 1 }
+	export enum ScopesContext { ENROLLMENT = 'ENROLLMENT', PORTAL = 'PORTAL' }
 
 
 	/** The scopes object */
@@ -42832,7 +42832,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WatchlistScreeningDocumentType { birth_certificate = 0, drivers_license = 1, immigration_number = 2, military_id = 3, other = 4, passport = 5, personal_identification = 6, ration_card = 7, ssn = 8, student_id = 9, tax_id = 10, travel_document = 11, voter_id = 12 }
+	export enum WatchlistScreeningDocumentType { birth_certificate = 'birth_certificate', drivers_license = 'drivers_license', immigration_number = 'immigration_number', military_id = 'military_id', other = 'other', passport = 'passport', personal_identification = 'personal_identification', ration_card = 'ration_card', ssn = 'ssn', student_id = 'student_id', tax_id = 'tax_id', travel_document = 'travel_document', voter_id = 'voter_id' }
 
 
 	/** Analyzed name information for the associated hit */
@@ -42938,7 +42938,7 @@ export namespace MyNS {
 
 
 	/** Documentation not found in the MISMO model viewer and not provided by Freddie Mac. */
-	export enum ServiceProductFulfillmentIdentifier { VOA = 0, VOETRANSACTIONS = 1 }
+	export enum ServiceProductFulfillmentIdentifier { VOA = 'VOA', VOETRANSACTIONS = 'VOETRANSACTIONS' }
 
 
 	/**
@@ -42950,7 +42950,7 @@ export namespace MyNS {
 	 * `NOT_EVALUATED`: if only logging the Signal results without using them
 	 * Possible values:  `APPROVE`, `REVIEW`, `REJECT`, `TAKE_OTHER_RISK_MEASURES`, `NOT_EVALUATED`
 	 */
-	export enum SignalDecisionOutcome { APPROVE = 0, REVIEW = 1, REJECT = 2, TAKE_OTHER_RISK_MEASURES = 3, NOT_EVALUATED = 4 }
+	export enum SignalDecisionOutcome { APPROVE = 'APPROVE', REVIEW = 'REVIEW', REJECT = 'REJECT', TAKE_OTHER_RISK_MEASURES = 'TAKE_OTHER_RISK_MEASURES', NOT_EVALUATED = 'NOT_EVALUATED' }
 
 
 	/** SignalDecisionReportRequest defines the request schema for `/signal/decision/report` */
@@ -43346,7 +43346,7 @@ export namespace MyNS {
 	 * `MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods
 	 * Possible values: `SAME_DAY_ACH`, `NEXT_DAY_ACH`, `STANDARD_ACH`, `REAL_TIME_PAYMENTS`, `DEBIT_CARD`, `MULTIPLE_PAYMENT_METHODS`
 	 */
-	export enum SignalPaymentMethod { SAME_DAY_ACH = 0, NEXT_DAY_ACH = 1, STANDARD_ACH = 2, REAL_TIME_PAYMENTS = 3, DEBIT_CARD = 4, MULTIPLE_PAYMENT_METHODS = 5 }
+	export enum SignalPaymentMethod { SAME_DAY_ACH = 'SAME_DAY_ACH', NEXT_DAY_ACH = 'NEXT_DAY_ACH', STANDARD_ACH = 'STANDARD_ACH', REAL_TIME_PAYMENTS = 'REAL_TIME_PAYMENTS', DEBIT_CARD = 'DEBIT_CARD', MULTIPLE_PAYMENT_METHODS = 'MULTIPLE_PAYMENT_METHODS' }
 
 
 	/** SignalPrepareRequest defines the request schema for `/signal/prepare` */
@@ -43512,7 +43512,7 @@ export namespace MyNS {
 
 
 	/** A type indicating whether a dashboard user, an API-based user, or Plaid last touched this object. */
-	export enum Source { dashboard = 0, link = 1, api = 2, system = 3 }
+	export enum Source { dashboard = 'dashboard', link = 'link', api = 'api', system = 'system' }
 
 
 	/** The schema below describes the various `types` and corresponding `subtypes` that Plaid recognizes and reports for financial institution accounts. */
@@ -44261,7 +44261,7 @@ export namespace MyNS {
 	 * The `incomplete` strategy cannot be applied if the session's failing step is `screening` or `risk_check`.
 	 * The `infer` strategy cannot be applied if the session's status is still `active`
 	 */
-	export enum Strategy { reset = 0, incomplete = 1, infer = 2, custom = 3 }
+	export enum Strategy { reset = 'reset', incomplete = 'incomplete', infer = 'infer', custom = 'custom' }
 
 
 	/**
@@ -44367,11 +44367,11 @@ export namespace MyNS {
 
 
 	/** A value from a MISMO prescribed list that classifies identification numbers used by the Internal Revenue Service (IRS) in the administration of tax laws. A Social Security number (SSN) is issued by the SSA; all other taxpayer identification numbers are issued by the IRS. */
-	export enum TaxpayerIdentifierType { IndividualTaxpayerIdentificationNumber = 0, SocialSecurityNumber = 1 }
+	export enum TaxpayerIdentifierType { IndividualTaxpayerIdentificationNumber = 'IndividualTaxpayerIdentificationNumber', SocialSecurityNumber = 'SocialSecurityNumber' }
 
 
 	/** Commonly used term to describe the line item. */
-	export enum TotalCanonicalDescription { BONUS = 0, COMMISSION = 1, OVERTIME = 2, 'PAID TIME OFF' = 3, 'REGULAR PAY' = 4, VACATION = 5, 'EMPLOYEE MEDICARE' = 6, FICA = 7, 'SOCIAL SECURITY EMPLOYEE TAX' = 8, MEDICAL = 9, VISION = 10, DENTAL = 11, 'NET PAY' = 12, TAXES = 13, NOT_FOUND = 14, OTHER = 15, _null = 16 }
+	export enum TotalCanonicalDescription { BONUS = 'BONUS', COMMISSION = 'COMMISSION', OVERTIME = 'OVERTIME', 'PAID TIME OFF' = 'PAID TIME OFF', 'REGULAR PAY' = 'REGULAR PAY', VACATION = 'VACATION', 'EMPLOYEE MEDICARE' = 'EMPLOYEE MEDICARE', FICA = 'FICA', 'SOCIAL SECURITY EMPLOYEE TAX' = 'SOCIAL SECURITY EMPLOYEE TAX', MEDICAL = 'MEDICAL', VISION = 'VISION', DENTAL = 'DENTAL', 'NET PAY' = 'NET PAY', TAXES = 'TAXES', NOT_FOUND = 'NOT_FOUND', OTHER = 'OTHER', _null = 16 }
 
 
 	/** A representation of a transaction */
@@ -44599,7 +44599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionTransaction_code { adjustment = 0, atm = 1, 'bank charge' = 2, 'bill payment' = 3, cash = 4, cashback = 5, cheque = 6, 'direct debit' = 7, interest = 8, purchase = 9, 'standing order' = 10, transfer = 11, _null = 12 }
+	export enum TransactionTransaction_code { adjustment = 'adjustment', atm = 'atm', 'bank charge' = 'bank charge', 'bill payment' = 'bill payment', cash = 'cash', cashback = 'cashback', cheque = 'cheque', 'direct debit' = 'direct debit', interest = 'interest', purchase = 'purchase', 'standing order' = 'standing order', transfer = 'transfer', _null = 12 }
 
 
 	/** A representation of a transaction */
@@ -44817,7 +44817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionBaseTransaction_type { digital = 0, place = 1, special = 2, unresolved = 3 }
+	export enum TransactionBaseTransaction_type { digital = 'digital', place = 'place', special = 'special', unresolved = 'unresolved' }
 
 
 	/**
@@ -44836,7 +44836,7 @@ export namespace MyNS {
 	 * `standing order:` Payment instructed by the account holder to a third party at a regular interval
 	 * `transfer:` Transfer of money between accounts
 	 */
-	export enum TransactionCode { adjustment = 0, atm = 1, 'bank charge' = 2, 'bill payment' = 3, cash = 4, cashback = 5, cheque = 6, 'direct debit' = 7, interest = 8, purchase = 9, 'standing order' = 10, transfer = 11, _null = 12 }
+	export enum TransactionCode { adjustment = 'adjustment', atm = 'atm', 'bank charge' = 'bank charge', 'bill payment' = 'bill payment', cash = 'cash', cashback = 'cashback', cheque = 'cheque', 'direct debit' = 'direct debit', interest = 'interest', purchase = 'purchase', 'standing order' = 'standing order', transfer = 'transfer', _null = 12 }
 
 
 	/** A grouping of related transactions */
@@ -45073,7 +45073,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionStreamStatus { UNKNOWN = 0, MATURE = 1, EARLY_DETECTION = 2, TOMBSTONED = 3 }
+	export enum TransactionStreamStatus { UNKNOWN = 'UNKNOWN', MATURE = 'MATURE', EARLY_DETECTION = 'EARLY_DETECTION', TOMBSTONED = 'TOMBSTONED' }
 
 
 	/** A representation of a transactions category rule. */
@@ -45185,9 +45185,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionsRuleDetailsField { TRANSACTION_ID = 0, NAME = 1 }
+	export enum TransactionsRuleDetailsField { TRANSACTION_ID = 'TRANSACTION_ID', NAME = 'NAME' }
 
-	export enum TransactionsRuleDetailsType { EXACT_MATCH = 0, SUBSTRING_MATCH = 1 }
+	export enum TransactionsRuleDetailsType { EXACT_MATCH = 'EXACT_MATCH', SUBSTRING_MATCH = 'SUBSTRING_MATCH' }
 
 
 	/** TransactionsEnhanceGetRequest defines the request schema for `/transactions/enhance`. */
@@ -45853,14 +45853,14 @@ export namespace MyNS {
 
 
 	/** Transaction field for which the rule is defined. */
-	export enum TransactionsRuleField { TRANSACTION_ID = 0, NAME = 1 }
+	export enum TransactionsRuleField { TRANSACTION_ID = 'TRANSACTION_ID', NAME = 'NAME' }
 
 
 	/**
 	 * Transaction rule's match type. For TRANSACTION_ID field, EXACT_MATCH is available.
 	 * Matches are case sensitive.
 	 */
-	export enum TransactionsRuleType { EXACT_MATCH = 0, SUBSTRING_MATCH = 1 }
+	export enum TransactionsRuleType { EXACT_MATCH = 'EXACT_MATCH', SUBSTRING_MATCH = 'SUBSTRING_MATCH' }
 
 
 	/** TransactionsRulesCreateRequest defines the request schema for `beta/transactions/rules/v1/create` */
@@ -46681,7 +46681,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferGuarantee_decision { GUARANTEED = 0, NOT_GUARANTEED = 1, _null = 2 }
+	export enum TransferGuarantee_decision { GUARANTEED = 'GUARANTEED', NOT_GUARANTEED = 'NOT_GUARANTEED', _null = 2 }
 
 
 	/** The rationale for Plaid's decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`. */
@@ -46733,7 +46733,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferAuthorizationGuaranteeDecisionRationaleCode { RETURN_BANK = 0, RETURN_CUSTOMER = 1, GUARANTEE_LIMIT_REACHED = 2, RISK_ESTIMATE_UNAVAILABLE = 3, REQUIRED_PARAM_MISSING = 4 }
+	export enum TransferAuthorizationGuaranteeDecisionRationaleCode { RETURN_BANK = 'RETURN_BANK', RETURN_CUSTOMER = 'RETURN_CUSTOMER', GUARANTEE_LIMIT_REACHED = 'GUARANTEE_LIMIT_REACHED', RISK_ESTIMATE_UNAVAILABLE = 'RISK_ESTIMATE_UNAVAILABLE', REQUIRED_PARAM_MISSING = 'REQUIRED_PARAM_MISSING' }
 
 
 	/**
@@ -46850,11 +46850,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferRefundStatus { pending = 0, posted = 1, cancelled = 2, failed = 3 }
+	export enum TransferRefundStatus { pending = 'pending', posted = 'posted', cancelled = 'cancelled', failed = 'failed' }
 
-	export enum TransferStatus { pending = 0, posted = 1, settled = 2, cancelled = 3, failed = 4, returned = 5 }
+	export enum TransferStatus { pending = 'pending', posted = 'posted', settled = 'settled', cancelled = 'cancelled', failed = 'failed', returned = 'returned' }
 
-	export enum TransferSweep_status { _null = 0, unswept = 1, swept = 2, swept_settled = 3, return_swept = 4 }
+	export enum TransferSweep_status { _null = 0, unswept = 'unswept', swept = 'swept', swept_settled = 'swept_settled', return_swept = 'return_swept' }
 
 
 	/** Contains the authorization decision for a proposed transfer. */
@@ -47000,7 +47000,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferAuthorizationGuarantee_decision { GUARANTEED = 0, NOT_GUARANTEED = 1, _null = 2 }
+	export enum TransferAuthorizationGuarantee_decision { GUARANTEED = 'GUARANTEED', NOT_GUARANTEED = 'NOT_GUARANTEED', _null = 2 }
 
 
 	/** Details regarding the proposed transfer. */
@@ -47485,7 +47485,7 @@ export namespace MyNS {
 	 * `approved` – The proposed transfer has received the end user's consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended (i.e., use Link in update to re-authenticate your user when `decision_rationale.code` is `ITEM_LOGIN_REQUIRED`). Refer to the `code` field in the `decision_rationale` object for details.
 	 * `declined` – Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.
 	 */
-	export enum TransferAuthorizationDecision { approved = 0, declined = 1 }
+	export enum TransferAuthorizationDecision { approved = 'approved', declined = 'declined' }
 
 
 	/**
@@ -47499,11 +47499,11 @@ export namespace MyNS {
 	 * `TRANSFER_LIMIT_REACHED` - One or several transfer limits are reached, e.g. monthly transfer limit. Plaid will offer `declined` as a transaction decision.
 	 * `MIGRATED_ACCOUNT_ITEM` - Item created via `/transfer/account_migration` endpoint, limited information available. Plaid will offer `approved` as a transaction decision.
 	 */
-	export enum TransferAuthorizationDecisionRationaleCode { NSF = 0, RISK = 1, TRANSFER_LIMIT_REACHED = 2, MANUALLY_VERIFIED_ITEM = 3, ITEM_LOGIN_REQUIRED = 4, PAYMENT_PROFILE_LOGIN_REQUIRED = 5, ERROR = 6, MIGRATED_ACCOUNT_ITEM = 7 }
+	export enum TransferAuthorizationDecisionRationaleCode { NSF = 'NSF', RISK = 'RISK', TRANSFER_LIMIT_REACHED = 'TRANSFER_LIMIT_REACHED', MANUALLY_VERIFIED_ITEM = 'MANUALLY_VERIFIED_ITEM', ITEM_LOGIN_REQUIRED = 'ITEM_LOGIN_REQUIRED', PAYMENT_PROFILE_LOGIN_REQUIRED = 'PAYMENT_PROFILE_LOGIN_REQUIRED', ERROR = 'ERROR', MIGRATED_ACCOUNT_ITEM = 'MIGRATED_ACCOUNT_ITEM' }
 
 
 	/** Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer. If the transfer is not guaranteed, additional information will be provided in the `guarantee_decision_rationale` field. Refer to the `code` field in `guarantee_decision_rationale` for details. */
-	export enum TransferAuthorizationGuaranteeDecision { GUARANTEED = 0, NOT_GUARANTEED = 1, _null = 2 }
+	export enum TransferAuthorizationGuaranteeDecision { GUARANTEED = 'GUARANTEED', NOT_GUARANTEED = 'NOT_GUARANTEED', _null = 2 }
 
 
 	/** Defines the request schema for `/transfer/cancel` */
@@ -48039,7 +48039,7 @@ export namespace MyNS {
 
 
 	/** Originator’s diligence status. */
-	export enum TransferDiligenceStatus { under_review = 0, approved = 1, denied = 2 }
+	export enum TransferDiligenceStatus { under_review = 'under_review', approved = 'approved', denied = 'denied' }
 
 
 	/** Represents an event in the Transfers API. */
@@ -48250,7 +48250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferEventEvent_type { pending = 0, cancelled = 1, failed = 2, posted = 3, settled = 4, returned = 5, swept = 6, swept_settled = 7, return_swept = 8 }
+	export enum TransferEventEvent_type { pending = 'pending', cancelled = 'cancelled', failed = 'failed', posted = 'posted', settled = 'settled', returned = 'returned', swept = 'swept', swept_settled = 'swept_settled', return_swept = 'return_swept' }
 
 
 	/** Defines the request schema for `/transfer/event/list` */
@@ -48387,9 +48387,9 @@ export namespace MyNS {
 	 * `swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer’s business checking account.
 	 * `return_swept`: Due to the transfer being returned, funds were pulled from or pushed back to the sweep account.
 	 */
-	export enum TransferEventType { pending = 0, cancelled = 1, failed = 2, posted = 3, settled = 4, returned = 5, swept = 6, swept_settled = 7, return_swept = 8 }
+	export enum TransferEventType { pending = 'pending', cancelled = 'cancelled', failed = 'failed', posted = 'posted', settled = 'settled', returned = 'returned', swept = 'swept', swept_settled = 'swept_settled', return_swept = 'return_swept' }
 
-	export enum TransferEventListRequestTransfer_type { debit = 0, credit = 1, _null = 2 }
+	export enum TransferEventListRequestTransfer_type { debit = 'debit', credit = 'credit', _null = 2 }
 
 
 	/** Defines the response schema for `/transfer/event/list` */
@@ -48423,7 +48423,7 @@ export namespace MyNS {
 
 
 	/** The type of transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into your origination account; a `credit` indicates a transfer of money out of your origination account. */
-	export enum TransferEventListTransferType { debit = 0, credit = 1, _null = 2 }
+	export enum TransferEventListTransferType { debit = 'debit', credit = 'credit', _null = 2 }
 
 
 	/** Defines the request schema for `/transfer/event/sync` */
@@ -48653,7 +48653,7 @@ export namespace MyNS {
 	 * `APPROVED` – The proposed transfer has received the end user's consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended (i.e., use Link in update to re-authenticate your user when `decision_rationale.code` is `ITEM_LOGIN_REQUIRED`). Refer to the `code` field in the `decision_rationale` object for details.
 	 * `DECLINED` – Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.
 	 */
-	export enum TransferIntentAuthorizationDecision { APPROVED = 0, DECLINED = 1 }
+	export enum TransferIntentAuthorizationDecision { APPROVED = 'APPROVED', DECLINED = 'DECLINED' }
 
 
 	/** Represents a transfer intent within Transfer UI. */
@@ -48858,11 +48858,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferIntentCreateMode { PAYMENT = 0, DISBURSEMENT = 1 }
+	export enum TransferIntentCreateMode { PAYMENT = 'PAYMENT', DISBURSEMENT = 'DISBURSEMENT' }
 
-	export enum TransferIntentCreateNetwork { ach = 0, 'same-day-ach' = 1 }
+	export enum TransferIntentCreateNetwork { ach = 'ach', 'same-day-ach' = 'same-day-ach' }
 
-	export enum TransferIntentCreateStatus { PENDING = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum TransferIntentCreateStatus { PENDING = 'PENDING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Defines the request schema for `/transfer/intent/create` */
@@ -49398,7 +49398,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferIntentGetGuarantee_decision { GUARANTEED = 0, NOT_GUARANTEED = 1, _null = 2 }
+	export enum TransferIntentGetGuarantee_decision { GUARANTEED = 'GUARANTEED', NOT_GUARANTEED = 'NOT_GUARANTEED', _null = 2 }
 
 
 	/** Defines the request schema for `/transfer/intent/get` */
@@ -49481,7 +49481,7 @@ export namespace MyNS {
 	 * `SUCCEEDED`: The transfer intent was successfully created.
 	 * `FAILED`: The transfer intent was unable to be created.
 	 */
-	export enum TransferIntentStatus { PENDING = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum TransferIntentStatus { PENDING = 'PENDING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Defines the request schema for `/transfer/list` */
@@ -49850,7 +49850,7 @@ export namespace MyNS {
 	 * The network or rails used for the transfer.
 	 * For transfers submitted as either `ach` or `same-day-ach` the cutoff for same-day is 9:30 AM Pacific Time and the cutoff for next-day transfers is 5:30 PM Pacific Time. It is recommended to submit a transfer at least 15 minutes before the cutoff time in order to ensure that it will be processed before the cutoff. Any transfer that is indicated as `same-day-ach` and that misses the same-day cutoff, but is submitted in time for the next-day cutoff, will be sent over next-day rails and will not incur same-day charges. Note that both legs of the transfer will be downgraded if applicable.
 	 */
-	export enum TransferNetwork { ach = 0, 'same-day-ach' = 1, rtp = 2 }
+	export enum TransferNetwork { ach = 'ach', 'same-day-ach' = 'same-day-ach', rtp = 'rtp' }
 
 
 	/** Defines the request schema for `/transfer/originator/create` */
@@ -50704,7 +50704,7 @@ export namespace MyNS {
 	 * `cancelled`: The recurring transfer was cancelled by the client or Plaid.
 	 * `expired`: The recurring transfer has completed all originations according to its recurring schedule.
 	 */
-	export enum TransferRecurringStatus { active = 0, cancelled = 1, expired = 2 }
+	export enum TransferRecurringStatus { active = 'active', cancelled = 'cancelled', expired = 'expired' }
 
 
 	/** Defines the request schema for `/transfer/refund/cancel` */
@@ -51293,7 +51293,7 @@ export namespace MyNS {
 
 
 	/** The unit of the recurring interval. */
-	export enum TransferScheduleIntervalUnit { week = 0, month = 1 }
+	export enum TransferScheduleIntervalUnit { week = 'week', month = 'month' }
 
 
 	/**
@@ -51599,11 +51599,11 @@ export namespace MyNS {
 	 * `return_swept`: The transfer was returned, funds were pulled back or pushed back to the sweep account.
 	 * `null`: The transfer will never be swept (e.g. if the transfer is cancelled or returned before being swept)
 	 */
-	export enum TransferSweepStatus { _null = 0, unswept = 1, swept = 2, swept_settled = 3, return_swept = 4 }
+	export enum TransferSweepStatus { _null = 0, unswept = 'unswept', swept = 'swept', swept_settled = 'swept_settled', return_swept = 'return_swept' }
 
 
 	/** The type of transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account. */
-	export enum TransferType { debit = 0, credit = 1 }
+	export enum TransferType { debit = 'debit', credit = 'credit' }
 
 
 	/** List of unofficial currency codes */
@@ -52335,15 +52335,15 @@ export namespace MyNS {
 
 
 	/** The income category for a specified income source */
-	export enum UserStatedIncomeSourceCategory { OTHER = 0, SALARY = 1, UNEMPLOYMENT = 2, CASH = 3, GIG_ECONOMY = 4, RENTAL = 5, CHILD_SUPPORT = 6, MILITARY = 7, RETIREMENT = 8, LONG_TERM_DISABILITY = 9, BANK_INTEREST = 10 }
+	export enum UserStatedIncomeSourceCategory { OTHER = 'OTHER', SALARY = 'SALARY', UNEMPLOYMENT = 'UNEMPLOYMENT', CASH = 'CASH', GIG_ECONOMY = 'GIG_ECONOMY', RENTAL = 'RENTAL', CHILD_SUPPORT = 'CHILD_SUPPORT', MILITARY = 'MILITARY', RETIREMENT = 'RETIREMENT', LONG_TERM_DISABILITY = 'LONG_TERM_DISABILITY', BANK_INTEREST = 'BANK_INTEREST' }
 
 
 	/** The pay frequency of a specified income source */
-	export enum UserStatedIncomeSourceFrequency { UNKNOWN = 0, WEEKLY = 1, BIWEEKLY = 2, SEMI_MONTHLY = 3, MONTHLY = 4 }
+	export enum UserStatedIncomeSourceFrequency { UNKNOWN = 'UNKNOWN', WEEKLY = 'WEEKLY', BIWEEKLY = 'BIWEEKLY', SEMI_MONTHLY = 'SEMI_MONTHLY', MONTHLY = 'MONTHLY' }
 
 
 	/** The pay type - `GROSS`, `NET`, or `UNKNOWN` for a specified income source */
-	export enum UserStatedIncomeSourcePayType { UNKNOWN = 0, GROSS = 1, NET = 2 }
+	export enum UserStatedIncomeSourcePayType { UNKNOWN = 'UNKNOWN', GROSS = 'GROSS', NET = 'NET' }
 
 
 	/** Fired when an Item was not verified via automated micro-deposits after seven days since the automated micro-deposit was made. */
@@ -52431,7 +52431,7 @@ export namespace MyNS {
 	 * `"VERIFICATION_REFRESH_SUCCESSFUL"` The income verification refresh was successful.
 	 * `"VERIFICATION_REFRESH_NOT_FOUND"` No new data was found after the income verification refresh.
 	 */
-	export enum VerificationRefreshStatus { VERIFICATION_REFRESH_STATUS_USER_PRESENCE_REQUIRED = 0, VERIFICATION_REFRESH_SUCCESSFUL = 1, VERIFICATION_REFRESH_NOT_FOUND = 2 }
+	export enum VerificationRefreshStatus { VERIFICATION_REFRESH_STATUS_USER_PRESENCE_REQUIRED = 'VERIFICATION_REFRESH_STATUS_USER_PRESENCE_REQUIRED', VERIFICATION_REFRESH_SUCCESSFUL = 'VERIFICATION_REFRESH_SUCCESSFUL', VERIFICATION_REFRESH_NOT_FOUND = 'VERIFICATION_REFRESH_NOT_FOUND' }
 
 
 	/**
@@ -52442,7 +52442,7 @@ export namespace MyNS {
 	 * "`UNABLE_TO_VERIFY`": The verification was performed and the information could not be verified.
 	 * `"UNKNOWN"`: The verification status is unknown.
 	 */
-	export enum VerificationStatus { VERIFIED = 0, UNVERIFIED = 1, NEEDS_INFO = 2, UNABLE_TO_VERIFY = 3, UNKNOWN = 4 }
+	export enum VerificationStatus { VERIFIED = 'VERIFIED', UNVERIFIED = 'UNVERIFIED', NEEDS_INFO = 'NEEDS_INFO', UNABLE_TO_VERIFY = 'UNABLE_TO_VERIFY', UNKNOWN = 'UNKNOWN' }
 
 
 	/** An object representing the e-wallet */
@@ -52569,7 +52569,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WalletStatus { UNKNOWN = 0, ACTIVE = 1, CLOSED = 2 }
+	export enum WalletStatus { UNKNOWN = 'UNKNOWN', ACTIVE = 'ACTIVE', CLOSED = 'CLOSED' }
 
 
 	/** WalletCreateRequest defines the request schema for `/wallet/create` */
@@ -52616,7 +52616,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WalletCreateRequestIso_currency_code { GBP = 0, EUR = 1 }
+	export enum WalletCreateRequestIso_currency_code { GBP = 'GBP', EUR = 'EUR' }
 
 
 	/** WalletCreateResponse defines the response schema for `/wallet/create` */
@@ -52691,7 +52691,7 @@ export namespace MyNS {
 
 
 	/** An ISO-4217 currency code, used with e-wallets and transactions. */
-	export enum WalletISOCurrencyCode { GBP = 0, EUR = 1 }
+	export enum WalletISOCurrencyCode { GBP = 'GBP', EUR = 'EUR' }
 
 
 	/** WalletListRequest defines the request schema for `/wallet/list` */
@@ -53080,7 +53080,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WalletTransactionType { BANK_TRANSFER = 0, PAYOUT = 1, PIS_PAY_IN = 2, REFUND = 3, FUNDS_SWEEP = 4 }
+	export enum WalletTransactionType { BANK_TRANSFER = 'BANK_TRANSFER', PAYOUT = 'PAYOUT', PIS_PAY_IN = 'PIS_PAY_IN', REFUND = 'REFUND', FUNDS_SWEEP = 'FUNDS_SWEEP' }
 
 
 	/** The account number and sort code of the counterparty's account */
@@ -53465,7 +53465,7 @@ export namespace MyNS {
 	 * `FAILED`: The transaction failed to process successfully. This is a terminal status.
 	 * `BLOCKED`: The transaction has been blocked for violating compliance rules. This is a terminal status.
 	 */
-	export enum WalletTransactionStatus { AUTHORISING = 0, INITIATED = 1, EXECUTED = 2, SETTLED = 3, BLOCKED = 4, FAILED = 5 }
+	export enum WalletTransactionStatus { AUTHORISING = 'AUTHORISING', INITIATED = 'INITIATED', EXECUTED = 'EXECUTED', SETTLED = 'SETTLED', BLOCKED = 'BLOCKED', FAILED = 'FAILED' }
 
 
 	/** Fired when the status of a wallet transaction has changed. */
@@ -54831,7 +54831,7 @@ export namespace MyNS {
 
 
 	/** The name of a field that can be reset back to null */
-	export enum WatchlistScreeningEntityUpdateRequestResettableField { assignee = 0 }
+	export enum WatchlistScreeningEntityUpdateRequestResettableField { assignee = 'assignee' }
 
 
 	/** The entity screening object allows you to represent an entity in your system, update its profile, and search for it on various watchlists. Note: Rejected entity screenings will not receive new hits, regardless of entity program configuration. */
@@ -55054,7 +55054,7 @@ export namespace MyNS {
 
 
 	/** The current state of review. All watchlist screening hits begin in a `pending_review` state but can be changed by creating a review. When a hit is in the `pending_review` state, it will always show the latest version of the watchlist data Plaid has available and be compared against the latest customer information saved in the watchlist screening. Once a hit has been marked as `confirmed` or `dismissed` it will no longer be updated so that the state is as it was when the review was first conducted. */
-	export enum WatchlistScreeningHitStatus { confirmed = 0, pending_review = 1, dismissed = 2 }
+	export enum WatchlistScreeningHitStatus { confirmed = 'confirmed', pending_review = 'pending_review', dismissed = 'dismissed' }
 
 
 	/** The screening object allows you to represent a customer in your system, update their profile, and search for them on various watchlists. Note: Rejected customers will not receive new hits, regardless of program configuration. */
@@ -56522,7 +56522,7 @@ export namespace MyNS {
 
 
 	/** The name of a field that can be reset back to null */
-	export enum WatchlistScreeningIndividualUpdateRequestResettableField { assignee = 0 }
+	export enum WatchlistScreeningIndividualUpdateRequestResettableField { assignee = 'assignee' }
 
 
 	/** The screening object allows you to represent a customer in your system, update their profile, and search for them on various watchlists. Note: Rejected customers will not receive new hits, regardless of program configuration. */
@@ -56619,19 +56619,19 @@ export namespace MyNS {
 
 
 	/** A status enum indicating whether a screening is still pending review, has been rejected, or has been cleared. */
-	export enum WatchlistScreeningStatus { rejected = 0, pending_review = 1, cleared = 2 }
+	export enum WatchlistScreeningStatus { rejected = 'rejected', pending_review = 'pending_review', cleared = 'cleared' }
 
 
 	/** Names that are explicitly marked as low quality either by their `source` list, or by `plaid` by a series of additional checks done by Plaid. Plaid does not ever surface a hit as a result of a weak name alone. If a name has no quality issues, this value will be `none`. */
-	export enum WeakAliasDetermination { none = 0, source = 1, plaid = 2 }
+	export enum WeakAliasDetermination { none = 'none', source = 'source', plaid = 'plaid' }
 
 
 	/** The Plaid environment the webhook was sent from */
-	export enum WebhookEnvironmentValues { development = 0, sandbox = 1, production = 2 }
+	export enum WebhookEnvironmentValues { development = 'development', sandbox = 'sandbox', production = 'production' }
 
 
 	/** The webhook types that can be fired by this test endpoint. */
-	export enum WebhookType { AUTH = 0, HOLDINGS = 1, INVESTMENTS_TRANSACTIONS = 2, ITEM = 3, LIABILITIES = 4, TRANSACTIONS = 5 }
+	export enum WebhookType { AUTH = 'AUTH', HOLDINGS = 'HOLDINGS', INVESTMENTS_TRANSACTIONS = 'INVESTMENTS_TRANSACTIONS', ITEM = 'ITEM', LIABILITIES = 'LIABILITIES', TRANSACTIONS = 'TRANSACTIONS' }
 
 
 	/** Fired when an Item's webhook is updated. This will be sent to the newly specified webhook. */

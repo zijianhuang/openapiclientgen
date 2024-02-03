@@ -253,7 +253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicySetDefinitionPropertiesPolicyType { NotSpecified = 0, BuiltIn = 1, Custom = 2, Static = 3 }
+	export enum PolicySetDefinitionPropertiesPolicyType { NotSpecified = 'NotSpecified', BuiltIn = 'BuiltIn', Custom = 'Custom', Static = 'Static' }
 
 	@Injectable()
 	export class MyClient {

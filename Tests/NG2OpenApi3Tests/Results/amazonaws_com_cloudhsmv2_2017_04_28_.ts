@@ -213,7 +213,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupPolicy { DEFAULT = 0 }
+	export enum BackupPolicy { DEFAULT = 'DEFAULT' }
 
 
 	/** A policy that defines the number of days to retain backups. */
@@ -235,7 +235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupRetentionType { DAYS = 0 }
+	export enum BackupRetentionType { DAYS = 'DAYS' }
 
 
 	/** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster. */
@@ -279,9 +279,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HsmState { CREATE_IN_PROGRESS = 0, ACTIVE = 1, DEGRADED = 2, DELETE_IN_PROGRESS = 3, DELETED = 4 }
+	export enum HsmState { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', ACTIVE = 'ACTIVE', DEGRADED = 'DEGRADED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETED = 'DELETED' }
 
-	export enum ClusterState { CREATE_IN_PROGRESS = 0, UNINITIALIZED = 1, INITIALIZE_IN_PROGRESS = 2, INITIALIZED = 3, ACTIVE = 4, UPDATE_IN_PROGRESS = 5, DELETE_IN_PROGRESS = 6, DELETED = 7, DEGRADED = 8 }
+	export enum ClusterState { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', UNINITIALIZED = 'UNINITIALIZED', INITIALIZE_IN_PROGRESS = 'INITIALIZE_IN_PROGRESS', INITIALIZED = 'INITIALIZED', ACTIVE = 'ACTIVE', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETED = 'DELETED', DEGRADED = 'DEGRADED' }
 
 	export interface ExternalSubnetMapping {
 	}
@@ -445,7 +445,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupState { CREATE_IN_PROGRESS = 0, READY = 1, DELETED = 2, PENDING_DELETION = 3 }
+	export enum BackupState { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', READY = 'READY', DELETED = 'DELETED', PENDING_DELETION = 'PENDING_DELETION' }
 
 	export interface DeleteBackupRequest {
 
@@ -997,35 +997,35 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CopyBackupToRegionX_Amz_Target { 'BaldrApiService.CopyBackupToRegion' = 0 }
+	export enum CopyBackupToRegionX_Amz_Target { 'BaldrApiService.CopyBackupToRegion' = 'BaldrApiService.CopyBackupToRegion' }
 
-	export enum CreateClusterX_Amz_Target { 'BaldrApiService.CreateCluster' = 0 }
+	export enum CreateClusterX_Amz_Target { 'BaldrApiService.CreateCluster' = 'BaldrApiService.CreateCluster' }
 
-	export enum CreateHsmX_Amz_Target { 'BaldrApiService.CreateHsm' = 0 }
+	export enum CreateHsmX_Amz_Target { 'BaldrApiService.CreateHsm' = 'BaldrApiService.CreateHsm' }
 
-	export enum DeleteBackupX_Amz_Target { 'BaldrApiService.DeleteBackup' = 0 }
+	export enum DeleteBackupX_Amz_Target { 'BaldrApiService.DeleteBackup' = 'BaldrApiService.DeleteBackup' }
 
-	export enum DeleteClusterX_Amz_Target { 'BaldrApiService.DeleteCluster' = 0 }
+	export enum DeleteClusterX_Amz_Target { 'BaldrApiService.DeleteCluster' = 'BaldrApiService.DeleteCluster' }
 
-	export enum DeleteHsmX_Amz_Target { 'BaldrApiService.DeleteHsm' = 0 }
+	export enum DeleteHsmX_Amz_Target { 'BaldrApiService.DeleteHsm' = 'BaldrApiService.DeleteHsm' }
 
-	export enum DescribeBackupsX_Amz_Target { 'BaldrApiService.DescribeBackups' = 0 }
+	export enum DescribeBackupsX_Amz_Target { 'BaldrApiService.DescribeBackups' = 'BaldrApiService.DescribeBackups' }
 
-	export enum DescribeClustersX_Amz_Target { 'BaldrApiService.DescribeClusters' = 0 }
+	export enum DescribeClustersX_Amz_Target { 'BaldrApiService.DescribeClusters' = 'BaldrApiService.DescribeClusters' }
 
-	export enum InitializeClusterX_Amz_Target { 'BaldrApiService.InitializeCluster' = 0 }
+	export enum InitializeClusterX_Amz_Target { 'BaldrApiService.InitializeCluster' = 'BaldrApiService.InitializeCluster' }
 
-	export enum ListTagsX_Amz_Target { 'BaldrApiService.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'BaldrApiService.ListTags' = 'BaldrApiService.ListTags' }
 
-	export enum ModifyBackupAttributesX_Amz_Target { 'BaldrApiService.ModifyBackupAttributes' = 0 }
+	export enum ModifyBackupAttributesX_Amz_Target { 'BaldrApiService.ModifyBackupAttributes' = 'BaldrApiService.ModifyBackupAttributes' }
 
-	export enum ModifyClusterX_Amz_Target { 'BaldrApiService.ModifyCluster' = 0 }
+	export enum ModifyClusterX_Amz_Target { 'BaldrApiService.ModifyCluster' = 'BaldrApiService.ModifyCluster' }
 
-	export enum RestoreBackupX_Amz_Target { 'BaldrApiService.RestoreBackup' = 0 }
+	export enum RestoreBackupX_Amz_Target { 'BaldrApiService.RestoreBackup' = 'BaldrApiService.RestoreBackup' }
 
-	export enum TagResourceX_Amz_Target { 'BaldrApiService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'BaldrApiService.TagResource' = 'BaldrApiService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'BaldrApiService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'BaldrApiService.UntagResource' = 'BaldrApiService.UntagResource' }
 
 }
 

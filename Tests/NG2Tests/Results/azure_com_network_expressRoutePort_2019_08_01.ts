@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteLinkMacSecConfigCipher { 'gcm-aes-128' = 0, 'gcm-aes-256' = 1 }
+	export enum ExpressRouteLinkMacSecConfigCipher { 'gcm-aes-128' = 'gcm-aes-128', 'gcm-aes-256' = 'gcm-aes-256' }
 
 
 	/** Properties specific to ExpressRouteLink resources. */
@@ -140,11 +140,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteLinkPropertiesFormatAdminState { Enabled = 0, Disabled = 1 }
+	export enum ExpressRouteLinkPropertiesFormatAdminState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum ExpressRouteLinkPropertiesFormatConnectorType { LC = 0, SC = 1 }
+	export enum ExpressRouteLinkPropertiesFormatConnectorType { LC = 'LC', SC = 'SC' }
 
-	export enum ExpressRouteLinkPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum ExpressRouteLinkPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 	export interface ExpressRoutePort {
 	}
@@ -280,7 +280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRoutePortPropertiesFormatEncapsulation { Dot1Q = 0, QinQ = 1 }
+	export enum ExpressRoutePortPropertiesFormatEncapsulation { Dot1Q = 'Dot1Q', QinQ = 'QinQ' }
 
 	export interface ExpressRoutePortsLocation {
 	}

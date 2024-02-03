@@ -1324,7 +1324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PmjayPostBodyFormat { pdf = 0 }
+	export enum PmjayPostBodyFormat { pdf = 'pdf' }
 
 }
 

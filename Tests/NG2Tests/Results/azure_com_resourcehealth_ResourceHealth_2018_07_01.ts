@@ -292,9 +292,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailabilityStatusPropertiesAvailabilityState { Available = 0, Unavailable = 1, Degraded = 2, Unknown = 3 }
+	export enum AvailabilityStatusPropertiesAvailabilityState { Available = 'Available', Unavailable = 'Unavailable', Degraded = 'Degraded', Unknown = 'Unknown' }
 
-	export enum AvailabilityStatusPropertiesReasonChronicity { Transient = 0, Persistent = 1 }
+	export enum AvailabilityStatusPropertiesReasonChronicity { Transient = 'Transient', Persistent = 'Persistent' }
 
 	export interface AvailabilityStatusPropertiesRecentlyResolved {
 
@@ -651,9 +651,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusActiveEventSeverity { Information = 0, Warning = 1, Error = 2 }
+	export enum StatusActiveEventSeverity { Information = 'Information', Warning = 'Warning', Error = 'Error' }
 
-	export enum StatusActiveEventStage { Active = 0, Resolve = 1, Archived = 2 }
+	export enum StatusActiveEventStage { Active = 'Active', Resolve = 'Resolve', Archived = 'Archived' }
 
 
 	/** Banner type of emerging issue. */
@@ -909,11 +909,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EventPropertiesEventLevel { Critical = 0, Warning = 1, Informational = 2 }
+	export enum EventPropertiesEventLevel { Critical = 'Critical', Warning = 'Warning', Informational = 'Informational' }
 
-	export enum EventPropertiesEventSource { ResourceHealth = 0, ServiceHealth = 1 }
+	export enum EventPropertiesEventSource { ResourceHealth = 'ResourceHealth', ServiceHealth = 'ServiceHealth' }
 
-	export enum EventPropertiesEventType { ServiceIssue = 0, PlannedMaintenance = 1, HealthAdvisory = 2, RCA = 3 }
+	export enum EventPropertiesEventType { ServiceIssue = 'ServiceIssue', PlannedMaintenance = 'PlannedMaintenance', HealthAdvisory = 'HealthAdvisory', RCA = 'RCA' }
 
 
 	/** Frequently asked question for the service health event */
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImpactedServiceRegionStatus { Active = 0, Resolved = 1 }
+	export enum ImpactedServiceRegionStatus { Active = 'Active', Resolved = 'Resolved' }
 
 
 	/** Update for service health event. */
@@ -1045,7 +1045,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventPropertiesLevel { Critical = 0, Warning = 1 }
+	export enum EventPropertiesLevel { Critical = 'Critical', Warning = 'Warning' }
 
 
 	/** Useful links for service health event. */
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkType { Button = 0, Hyperlink = 1 }
+	export enum LinkType { Button = 'Button', Hyperlink = 'Hyperlink' }
 
 	export interface EventPropertiesRecommendedActions {
 
@@ -1394,7 +1394,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum EmergingIssues_GetIssueName { default = 0 }
+	export enum EmergingIssues_GetIssueName { default = 'default' }
 
 }
 

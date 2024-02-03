@@ -19,7 +19,7 @@ export namespace MyNS {
 
 
 	/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established. */
-	export enum TlsPolicy { REQUIRE = 0, OPTIONAL = 1 }
+	export enum TlsPolicy { REQUIRE = 'REQUIRE', OPTIONAL = 'OPTIONAL' }
 
 
 	/** <p>An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p> <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li> <li> <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.</p> </li> </ul> */
@@ -125,7 +125,7 @@ export namespace MyNS {
 
 
 	/** An email sending event type. For example, email sends, opens, and bounces are all email events. */
-	export enum EventType { SEND = 0, REJECT = 1, BOUNCE = 2, COMPLAINT = 3, DELIVERY = 4, OPEN = 5, CLICK = 6, RENDERING_FAILURE = 7 }
+	export enum EventType { SEND = 'SEND', REJECT = 'REJECT', BOUNCE = 'BOUNCE', COMPLAINT = 'COMPLAINT', DELIVERY = 'DELIVERY', OPEN = 'OPEN', CLICK = 'CLICK', RENDERING_FAILURE = 'RENDERING_FAILURE' }
 
 
 	/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
@@ -209,7 +209,7 @@ export namespace MyNS {
 
 
 	/** The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>. */
-	export enum DimensionValueSource { MESSAGE_TAG = 0, EMAIL_HEADER = 1, LINK_TAG = 2 }
+	export enum DimensionValueSource { MESSAGE_TAG = 'MESSAGE_TAG', EMAIL_HEADER = 'EMAIL_HEADER', LINK_TAG = 'LINK_TAG' }
 
 
 	/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
@@ -293,7 +293,7 @@ export namespace MyNS {
 
 
 	/** The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test. */
-	export enum DeliverabilityTestStatus { IN_PROGRESS = 0, COMPLETED = 1 }
+	export enum DeliverabilityTestStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 
 	/** Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body. */
@@ -455,7 +455,7 @@ export namespace MyNS {
 
 
 	/** <p>The email identity type. The identity type can be one of the following:</p> <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> </ul> */
-	export enum IdentityType { EMAIL_ADDRESS = 0, DOMAIN = 1, MANAGED_DOMAIN = 2 }
+	export enum IdentityType { EMAIL_ADDRESS = 'EMAIL_ADDRESS', DOMAIN = 'DOMAIN', MANAGED_DOMAIN = 'MANAGED_DOMAIN' }
 
 
 	/** An object that contains information about the DKIM configuration for an email identity. */
@@ -480,7 +480,7 @@ export namespace MyNS {
 
 
 	/** <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> – The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> – The DKIM authentication process completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul> */
-	export enum DkimStatus { PENDING = 0, SUCCESS = 1, FAILED = 2, TEMPORARY_FAILURE = 3, NOT_STARTED = 4 }
+	export enum DkimStatus { PENDING = 'PENDING', SUCCESS = 'SUCCESS', FAILED = 'FAILED', TEMPORARY_FAILURE = 'TEMPORARY_FAILURE', NOT_STARTED = 'NOT_STARTED' }
 
 
 	/** An HTTP 200 response if the request succeeds, or an error message if the request fails. */
@@ -816,7 +816,7 @@ export namespace MyNS {
 
 
 	/** The warmup status of a dedicated IP. */
-	export enum WarmupStatus { IN_PROGRESS = 0, DONE = 1 }
+	export enum WarmupStatus { IN_PROGRESS = 'IN_PROGRESS', DONE = 'DONE' }
 
 
 	/** Information about the dedicated IP addresses that are associated with your Amazon Pinpoint account. */
@@ -867,7 +867,7 @@ export namespace MyNS {
 
 
 	/** The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month. */
-	export enum DeliverabilityDashboardAccountStatus { ACTIVE = 0, PENDING_EXPIRATION = 1, DISABLED = 2 }
+	export enum DeliverabilityDashboardAccountStatus { ACTIVE = 'ACTIVE', PENDING_EXPIRATION = 'PENDING_EXPIRATION', DISABLED = 'DISABLED' }
 
 
 	/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
@@ -1259,11 +1259,11 @@ export namespace MyNS {
 
 
 	/** <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> </ul> */
-	export enum MailFromDomainStatus { PENDING = 0, SUCCESS = 1, FAILED = 2, TEMPORARY_FAILURE = 3 }
+	export enum MailFromDomainStatus { PENDING = 'PENDING', SUCCESS = 'SUCCESS', FAILED = 'FAILED', TEMPORARY_FAILURE = 'TEMPORARY_FAILURE' }
 
 
 	/** <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p> */
-	export enum BehaviorOnMxFailure { USE_DEFAULT_VALUE = 0, REJECT_MESSAGE = 1 }
+	export enum BehaviorOnMxFailure { USE_DEFAULT_VALUE = 'USE_DEFAULT_VALUE', REJECT_MESSAGE = 'REJECT_MESSAGE' }
 
 
 	/** A list of configuration sets in your Amazon Pinpoint account in the current AWS Region. */

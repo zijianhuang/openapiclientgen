@@ -97,7 +97,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpAuthenticationType { NotSpecified = 0, ClientCertificate = 1, ActiveDirectoryOAuth = 2, Basic = 3 }
+	export enum HttpAuthenticationType { NotSpecified = 'NotSpecified', ClientCertificate = 'ClientCertificate', ActiveDirectoryOAuth = 'ActiveDirectoryOAuth', Basic = 'Basic' }
 
 	export interface HttpRequest {
 		authentication?: HttpAuthentication;
@@ -161,7 +161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobActionType { Http = 0, Https = 1, StorageQueue = 2, ServiceBusQueue = 3, ServiceBusTopic = 4 }
+	export enum JobActionType { Http = 'Http', Https = 'Https', StorageQueue = 'StorageQueue', ServiceBusQueue = 'ServiceBusQueue', ServiceBusTopic = 'ServiceBusTopic' }
 
 	export interface JobCollectionDefinition {
 
@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobCollectionPropertiesState { Enabled = 0, Disabled = 1, Suspended = 2, Deleted = 3 }
+	export enum JobCollectionPropertiesState { Enabled = 'Enabled', Disabled = 'Disabled', Suspended = 'Suspended', Deleted = 'Deleted' }
 
 	export interface JobCollectionQuota {
 
@@ -331,7 +331,7 @@ export namespace MyNS {
 
 
 	/** Gets the job execution status. */
-	export enum JobExecutionStatus { Completed = 0, Failed = 1, Postponed = 2 }
+	export enum JobExecutionStatus { Completed = 'Completed', Failed = 'Failed', Postponed = 'Postponed' }
 
 	export interface JobHistoryDefinition {
 
@@ -431,7 +431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobHistoryDefinitionPropertiesActionName { MainAction = 0, ErrorAction = 1 }
+	export enum JobHistoryDefinitionPropertiesActionName { MainAction = 'MainAction', ErrorAction = 'ErrorAction' }
 
 	export interface JobHistoryFilter {
 
@@ -514,7 +514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobMaxRecurrenceFrequency { Minute = 0, Hour = 1, Day = 2, Week = 3, Month = 4 }
+	export enum JobMaxRecurrenceFrequency { Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month' }
 
 	export interface JobProperties {
 		action?: JobAction;
@@ -543,7 +543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPropertiesState { Enabled = 0, Disabled = 1, Faulted = 2, Completed = 3 }
+	export enum JobPropertiesState { Enabled = 'Enabled', Disabled = 'Disabled', Faulted = 'Faulted', Completed = 'Completed' }
 
 	export interface JobRecurrence {
 
@@ -633,11 +633,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JobRecurrenceScheduleMonthlyOccurrenceDay { Monday = 0, Tuesday = 1, Wednesday = 2, Thursday = 3, Friday = 4, Saturday = 5, Sunday = 6 }
+	export enum JobRecurrenceScheduleMonthlyOccurrenceDay { Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Sunday = 'Sunday' }
 
 
 	/** Gets or set the job state. */
-	export enum JobState { Enabled = 0, Disabled = 1, Faulted = 2, Completed = 3 }
+	export enum JobState { Enabled = 'Enabled', Disabled = 'Disabled', Faulted = 'Faulted', Completed = 'Completed' }
 
 	export interface JobStateFilter {
 
@@ -742,7 +742,7 @@ export namespace MyNS {
 
 
 	/** Gets or sets the frequency of recurrence (minute, hour, day, week, month). */
-	export enum RecurrenceFrequency { Minute = 0, Hour = 1, Day = 2, Week = 3, Month = 4 }
+	export enum RecurrenceFrequency { Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month' }
 
 	export interface RetryPolicy {
 
@@ -775,7 +775,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RetryPolicyRetryType { None = 0, Fixed = 1 }
+	export enum RetryPolicyRetryType { None = 'None', Fixed = 'Fixed' }
 
 	export interface ServiceBusAuthentication {
 
@@ -808,7 +808,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceBusAuthenticationType { NotSpecified = 0, SharedAccessKey = 1 }
+	export enum ServiceBusAuthenticationType { NotSpecified = 'NotSpecified', SharedAccessKey = 'SharedAccessKey' }
 
 	export interface ServiceBusBrokeredMessageProperties {
 
@@ -951,7 +951,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceBusMessageTransportType { NotSpecified = 0, NetMessaging = 1, AMQP = 2 }
+	export enum ServiceBusMessageTransportType { NotSpecified = 'NotSpecified', NetMessaging = 'NetMessaging', AMQP = 'AMQP' }
 
 	export interface ServiceBusQueueMessage extends ServiceBusMessage {
 
@@ -1012,7 +1012,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { Standard = 0, Free = 1, P10Premium = 2, P20Premium = 3 }
+	export enum SkuName { Standard = 'Standard', Free = 'Free', P10Premium = 'P10Premium', P20Premium = 'P20Premium' }
 
 	export interface StorageQueueMessage {
 

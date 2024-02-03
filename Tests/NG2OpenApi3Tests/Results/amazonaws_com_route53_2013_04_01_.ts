@@ -57,7 +57,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeStatus { PENDING = 0, INSYNC = 1 }
+	export enum ChangeStatus { PENDING = 'PENDING', INSYNC = 'INSYNC' }
 
 	export interface ConcurrentModification {
 	}
@@ -136,7 +136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VPCRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'eu-west-1' = 4, 'eu-west-2' = 5, 'eu-west-3' = 6, 'eu-central-1' = 7, 'eu-central-2' = 8, 'ap-east-1' = 9, 'me-south-1' = 10, 'us-gov-west-1' = 11, 'us-gov-east-1' = 12, 'us-iso-east-1' = 13, 'us-iso-west-1' = 14, 'us-isob-east-1' = 15, 'me-central-1' = 16, 'ap-southeast-1' = 17, 'ap-southeast-2' = 18, 'ap-southeast-3' = 19, 'ap-south-1' = 20, 'ap-south-2' = 21, 'ap-northeast-1' = 22, 'ap-northeast-2' = 23, 'ap-northeast-3' = 24, 'eu-north-1' = 25, 'sa-east-1' = 26, 'ca-central-1' = 27, 'cn-north-1' = 28, 'af-south-1' = 29, 'eu-south-1' = 30, 'eu-south-2' = 31, 'ap-southeast-4' = 32, 'il-central-1' = 33 }
+	export enum VPCRegion { 'us-east-1' = 'us-east-1', 'us-east-2' = 'us-east-2', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'eu-west-3' = 'eu-west-3', 'eu-central-1' = 'eu-central-1', 'eu-central-2' = 'eu-central-2', 'ap-east-1' = 'ap-east-1', 'me-south-1' = 'me-south-1', 'us-gov-west-1' = 'us-gov-west-1', 'us-gov-east-1' = 'us-gov-east-1', 'us-iso-east-1' = 'us-iso-east-1', 'us-iso-west-1' = 'us-iso-west-1', 'us-isob-east-1' = 'us-isob-east-1', 'me-central-1' = 'me-central-1', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-southeast-3' = 'ap-southeast-3', 'ap-south-1' = 'ap-south-1', 'ap-south-2' = 'ap-south-2', 'ap-northeast-1' = 'ap-northeast-1', 'ap-northeast-2' = 'ap-northeast-2', 'ap-northeast-3' = 'ap-northeast-3', 'eu-north-1' = 'eu-north-1', 'sa-east-1' = 'sa-east-1', 'ca-central-1' = 'ca-central-1', 'cn-north-1' = 'cn-north-1', 'af-south-1' = 'af-south-1', 'eu-south-1' = 'eu-south-1', 'eu-south-2' = 'eu-south-2', 'ap-southeast-4' = 'ap-southeast-4', 'il-central-1' = 'il-central-1' }
 
 	export interface NoSuchHostedZone {
 	}
@@ -256,7 +256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CidrCollectionChangeAction { PUT = 0, DELETE_IF_EXISTS = 1 }
+	export enum CidrCollectionChangeAction { PUT = 'PUT', DELETE_IF_EXISTS = 'DELETE_IF_EXISTS' }
 
 	export interface NoSuchCidrCollectionException {
 	}
@@ -559,7 +559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckType { HTTP = 0, HTTPS = 1, HTTP_STR_MATCH = 2, HTTPS_STR_MATCH = 3, TCP = 4, CALCULATED = 5, CLOUDWATCH_METRIC = 6, RECOVERY_CONTROL = 7 }
+	export enum HealthCheckType { HTTP = 'HTTP', HTTPS = 'HTTPS', HTTP_STR_MATCH = 'HTTP_STR_MATCH', HTTPS_STR_MATCH = 'HTTPS_STR_MATCH', TCP = 'TCP', CALCULATED = 'CALCULATED', CLOUDWATCH_METRIC = 'CLOUDWATCH_METRIC', RECOVERY_CONTROL = 'RECOVERY_CONTROL' }
 
 
 	/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
@@ -589,9 +589,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudWatchRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'ca-central-1' = 4, 'eu-central-1' = 5, 'eu-central-2' = 6, 'eu-west-1' = 7, 'eu-west-2' = 8, 'eu-west-3' = 9, 'ap-east-1' = 10, 'me-south-1' = 11, 'me-central-1' = 12, 'ap-south-1' = 13, 'ap-south-2' = 14, 'ap-southeast-1' = 15, 'ap-southeast-2' = 16, 'ap-southeast-3' = 17, 'ap-northeast-1' = 18, 'ap-northeast-2' = 19, 'ap-northeast-3' = 20, 'eu-north-1' = 21, 'sa-east-1' = 22, 'cn-northwest-1' = 23, 'cn-north-1' = 24, 'af-south-1' = 25, 'eu-south-1' = 26, 'eu-south-2' = 27, 'us-gov-west-1' = 28, 'us-gov-east-1' = 29, 'us-iso-east-1' = 30, 'us-iso-west-1' = 31, 'us-isob-east-1' = 32, 'ap-southeast-4' = 33, 'il-central-1' = 34 }
+	export enum CloudWatchRegion { 'us-east-1' = 'us-east-1', 'us-east-2' = 'us-east-2', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'ca-central-1' = 'ca-central-1', 'eu-central-1' = 'eu-central-1', 'eu-central-2' = 'eu-central-2', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'eu-west-3' = 'eu-west-3', 'ap-east-1' = 'ap-east-1', 'me-south-1' = 'me-south-1', 'me-central-1' = 'me-central-1', 'ap-south-1' = 'ap-south-1', 'ap-south-2' = 'ap-south-2', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-southeast-3' = 'ap-southeast-3', 'ap-northeast-1' = 'ap-northeast-1', 'ap-northeast-2' = 'ap-northeast-2', 'ap-northeast-3' = 'ap-northeast-3', 'eu-north-1' = 'eu-north-1', 'sa-east-1' = 'sa-east-1', 'cn-northwest-1' = 'cn-northwest-1', 'cn-north-1' = 'cn-north-1', 'af-south-1' = 'af-south-1', 'eu-south-1' = 'eu-south-1', 'eu-south-2' = 'eu-south-2', 'us-gov-west-1' = 'us-gov-west-1', 'us-gov-east-1' = 'us-gov-east-1', 'us-iso-east-1' = 'us-iso-east-1', 'us-iso-west-1' = 'us-iso-west-1', 'us-isob-east-1' = 'us-isob-east-1', 'ap-southeast-4' = 'ap-southeast-4', 'il-central-1' = 'il-central-1' }
 
-	export enum InsufficientDataHealthStatus { Healthy = 0, Unhealthy = 1, LastKnownStatus = 2 }
+	export enum InsufficientDataHealthStatus { Healthy = 'Healthy', Unhealthy = 'Unhealthy', LastKnownStatus = 'LastKnownStatus' }
 
 
 	/** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check. */
@@ -657,9 +657,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
+	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 'GreaterThanOrEqualToThreshold', GreaterThanThreshold = 'GreaterThanThreshold', LessThanThreshold = 'LessThanThreshold', LessThanOrEqualToThreshold = 'LessThanOrEqualToThreshold' }
 
-	export enum Statistic { Average = 0, Sum = 1, SampleCount = 2, Maximum = 3, Minimum = 4 }
+	export enum Statistic { Average = 'Average', Sum = 'Sum', SampleCount = 'SampleCount', Maximum = 'Maximum', Minimum = 'Minimum' }
 
 	export interface TooManyHealthChecks {
 	}
@@ -1189,7 +1189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RRType { SOA = 0, A = 1, TXT = 2, NS = 3, CNAME = 4, MX = 5, NAPTR = 6, PTR = 7, SRV = 8, SPF = 9, AAAA = 10, CAA = 11, DS = 12 }
+	export enum RRType { SOA = 'SOA', A = 'A', TXT = 'TXT', NS = 'NS', CNAME = 'CNAME', MX = 'MX', NAPTR = 'NAPTR', PTR = 'PTR', SRV = 'SRV', SPF = 'SPF', AAAA = 'AAAA', CAA = 'CAA', DS = 'DS' }
 
 	export interface TooManyTrafficPolicies {
 	}
@@ -1796,7 +1796,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountLimitType { MAX_HEALTH_CHECKS_BY_OWNER = 0, MAX_HOSTED_ZONES_BY_OWNER = 1, MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = 2, MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = 3, MAX_TRAFFIC_POLICIES_BY_OWNER = 4 }
+	export enum AccountLimitType { MAX_HEALTH_CHECKS_BY_OWNER = 'MAX_HEALTH_CHECKS_BY_OWNER', MAX_HOSTED_ZONES_BY_OWNER = 'MAX_HOSTED_ZONES_BY_OWNER', MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = 'MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER', MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = 'MAX_REUSABLE_DELEGATION_SETS_BY_OWNER', MAX_TRAFFIC_POLICIES_BY_OWNER = 'MAX_TRAFFIC_POLICIES_BY_OWNER' }
 
 
 	/** A complex type that contains the <code>ChangeInfo</code> element. */
@@ -2111,7 +2111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HostedZoneLimitType { MAX_RRSETS_BY_ZONE = 0, MAX_VPCS_ASSOCIATED_BY_ZONE = 1 }
+	export enum HostedZoneLimitType { MAX_RRSETS_BY_ZONE = 'MAX_RRSETS_BY_ZONE', MAX_VPCS_ASSOCIATED_BY_ZONE = 'MAX_VPCS_ASSOCIATED_BY_ZONE' }
 
 	export interface HostedZoneNotPrivate {
 	}
@@ -2205,7 +2205,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReusableDelegationSetLimitType { MAX_ZONES_BY_REUSABLE_DELEGATION_SET = 0 }
+	export enum ReusableDelegationSetLimitType { MAX_ZONES_BY_REUSABLE_DELEGATION_SET = 'MAX_ZONES_BY_REUSABLE_DELEGATION_SET' }
 
 
 	/** A complex type that contains the response information for the request. */
@@ -2706,7 +2706,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagResourceType { healthcheck = 0, hostedzone = 1 }
+	export enum TagResourceType { healthcheck = 'healthcheck', hostedzone = 'hostedzone' }
 
 
 	/** A complex type containing tags for the specified resources. */
@@ -3014,9 +3014,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckRegion { 'us-east-1' = 0, 'us-west-1' = 1, 'us-west-2' = 2, 'eu-west-1' = 3, 'ap-southeast-1' = 4, 'ap-southeast-2' = 5, 'ap-northeast-1' = 6, 'sa-east-1' = 7 }
+	export enum HealthCheckRegion { 'us-east-1' = 'us-east-1', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'eu-west-1' = 'eu-west-1', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-northeast-1' = 'ap-northeast-1', 'sa-east-1' = 'sa-east-1' }
 
-	export enum ResettableElementName { FullyQualifiedDomainName = 0, Regions = 1, ResourcePath = 2, ChildHealthChecks = 3 }
+	export enum ResettableElementName { FullyQualifiedDomainName = 'FullyQualifiedDomainName', Regions = 'Regions', ResourcePath = 'ResourcePath', ChildHealthChecks = 'ChildHealthChecks' }
 
 	export interface HealthCheckVersionMismatch {
 	}
@@ -3154,7 +3154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeAction { CREATE = 0, DELETE = 1, UPSERT = 2 }
+	export enum ChangeAction { CREATE = 'CREATE', DELETE = 'DELETE', UPSERT = 'UPSERT' }
 
 
 	/** Information about the resource record set to create or delete. */
@@ -3214,7 +3214,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceRecordSetRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'ca-central-1' = 4, 'eu-west-1' = 5, 'eu-west-2' = 6, 'eu-west-3' = 7, 'eu-central-1' = 8, 'eu-central-2' = 9, 'ap-southeast-1' = 10, 'ap-southeast-2' = 11, 'ap-southeast-3' = 12, 'ap-northeast-1' = 13, 'ap-northeast-2' = 14, 'ap-northeast-3' = 15, 'eu-north-1' = 16, 'sa-east-1' = 17, 'cn-north-1' = 18, 'cn-northwest-1' = 19, 'ap-east-1' = 20, 'me-south-1' = 21, 'me-central-1' = 22, 'ap-south-1' = 23, 'ap-south-2' = 24, 'af-south-1' = 25, 'eu-south-1' = 26, 'eu-south-2' = 27, 'ap-southeast-4' = 28, 'il-central-1' = 29 }
+	export enum ResourceRecordSetRegion { 'us-east-1' = 'us-east-1', 'us-east-2' = 'us-east-2', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'ca-central-1' = 'ca-central-1', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'eu-west-3' = 'eu-west-3', 'eu-central-1' = 'eu-central-1', 'eu-central-2' = 'eu-central-2', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-southeast-3' = 'ap-southeast-3', 'ap-northeast-1' = 'ap-northeast-1', 'ap-northeast-2' = 'ap-northeast-2', 'ap-northeast-3' = 'ap-northeast-3', 'eu-north-1' = 'eu-north-1', 'sa-east-1' = 'sa-east-1', 'cn-north-1' = 'cn-north-1', 'cn-northwest-1' = 'cn-northwest-1', 'ap-east-1' = 'ap-east-1', 'me-south-1' = 'me-south-1', 'me-central-1' = 'me-central-1', 'ap-south-1' = 'ap-south-1', 'ap-south-2' = 'ap-south-2', 'af-south-1' = 'af-south-1', 'eu-south-1' = 'eu-south-1', 'eu-south-2' = 'eu-south-2', 'ap-southeast-4' = 'ap-southeast-4', 'il-central-1' = 'il-central-1' }
 
 
 	/** A complex type that contains information about a geographic location. */
@@ -3239,7 +3239,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceRecordSetFailover { PRIMARY = 0, SECONDARY = 1 }
+	export enum ResourceRecordSetFailover { PRIMARY = 'PRIMARY', SECONDARY = 'SECONDARY' }
 
 
 	/** <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p> */

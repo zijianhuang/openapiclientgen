@@ -120,7 +120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedCertificateStatus { UNSPECIFIED_STATUS = 0, OK = 1, PENDING = 2, FAILED_RETRYING_INTERNAL = 3, FAILED_RETRYING_NOT_VISIBLE = 4, FAILED_PERMANENTLY_NOT_VISIBLE = 5, FAILED_RETRYING_CAA_FORBIDDEN = 6, FAILED_RETRYING_CAA_CHECKING = 7 }
+	export enum ManagedCertificateStatus { UNSPECIFIED_STATUS = 'UNSPECIFIED_STATUS', OK = 'OK', PENDING = 'PENDING', FAILED_RETRYING_INTERNAL = 'FAILED_RETRYING_INTERNAL', FAILED_RETRYING_NOT_VISIBLE = 'FAILED_RETRYING_NOT_VISIBLE', FAILED_PERMANENTLY_NOT_VISIBLE = 'FAILED_PERMANENTLY_NOT_VISIBLE', FAILED_RETRYING_CAA_FORBIDDEN = 'FAILED_RETRYING_CAA_FORBIDDEN', FAILED_RETRYING_CAA_CHECKING = 'FAILED_RETRYING_CAA_CHECKING' }
 
 
 	/** A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via Search Console (https://search.google.com/search-console/welcome). */
@@ -203,15 +203,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ReasonsAbuse { ABUSE_UNKNOWN_REASON = 0, ABUSE_CONTROL_PLANE_SYNC = 1, SUSPEND = 2, REINSTATE = 3 }
+	export enum ReasonsAbuse { ABUSE_UNKNOWN_REASON = 'ABUSE_UNKNOWN_REASON', ABUSE_CONTROL_PLANE_SYNC = 'ABUSE_CONTROL_PLANE_SYNC', SUSPEND = 'SUSPEND', REINSTATE = 'REINSTATE' }
 
-	export enum ReasonsBilling { BILLING_UNKNOWN_REASON = 0, BILLING_CONTROL_PLANE_SYNC = 1, PROBATION = 2, CLOSE = 3, OPEN = 4 }
+	export enum ReasonsBilling { BILLING_UNKNOWN_REASON = 'BILLING_UNKNOWN_REASON', BILLING_CONTROL_PLANE_SYNC = 'BILLING_CONTROL_PLANE_SYNC', PROBATION = 'PROBATION', CLOSE = 'CLOSE', OPEN = 'OPEN' }
 
-	export enum ReasonsDataGovernance { DATA_GOVERNANCE_UNKNOWN_REASON = 0, DATA_GOVERNANCE_CONTROL_PLANE_SYNC = 1, HIDE = 2, UNHIDE = 3, PURGE = 4 }
+	export enum ReasonsDataGovernance { DATA_GOVERNANCE_UNKNOWN_REASON = 'DATA_GOVERNANCE_UNKNOWN_REASON', DATA_GOVERNANCE_CONTROL_PLANE_SYNC = 'DATA_GOVERNANCE_CONTROL_PLANE_SYNC', HIDE = 'HIDE', UNHIDE = 'UNHIDE', PURGE = 'PURGE' }
 
-	export enum ReasonsServiceManagement { SERVICE_MANAGEMENT_UNKNOWN_REASON = 0, SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC = 1, ACTIVATION = 2, PREPARE_DEACTIVATION = 3, ABORT_DEACTIVATION = 4, COMMIT_DEACTIVATION = 5 }
+	export enum ReasonsServiceManagement { SERVICE_MANAGEMENT_UNKNOWN_REASON = 'SERVICE_MANAGEMENT_UNKNOWN_REASON', SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC = 'SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC', ACTIVATION = 'ACTIVATION', PREPARE_DEACTIVATION = 'PREPARE_DEACTIVATION', ABORT_DEACTIVATION = 'ABORT_DEACTIVATION', COMMIT_DEACTIVATION = 'COMMIT_DEACTIVATION' }
 
-	export enum ContainerStateState { UNKNOWN_STATE = 0, ON = 1, OFF = 2, DELETED = 3 }
+	export enum ContainerStateState { UNKNOWN_STATE = 'UNKNOWN_STATE', ON = 'ON', OFF = 'OFF', DELETED = 'DELETED' }
 
 
 	/** Metadata for the given google.longrunning.Operation during a google.appengine.v1.CreateVersionRequest. */
@@ -345,7 +345,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceRecordType { A = 0, AAAA = 1, CNAME = 2 }
+	export enum ResourceRecordType { A = 'A', AAAA = 'AAAA', CNAME = 'CNAME' }
 
 
 	/** SSL configuration for a DomainMapping resource. */
@@ -920,7 +920,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectEventPhase { UNKNOWN = 0, BEFORE_RESOURCE_HANDLING = 1, AFTER_RESOURCE_HANDLING = 2 }
+	export enum ProjectEventPhase { UNKNOWN = 'UNKNOWN', BEFORE_RESOURCE_HANDLING = 'BEFORE_RESOURCE_HANDLING', AFTER_RESOURCE_HANDLING = 'AFTER_RESOURCE_HANDLING' }
 
 
 	/** ProjectsMetadata is the metadata CCFE stores about the all the relevant projects (tenant, consumer, producer). */
@@ -1225,9 +1225,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Appengine_apps_authorizedCertificates_listView { BASIC_CERTIFICATE = 0, FULL_CERTIFICATE = 1 }
+	export enum Appengine_apps_authorizedCertificates_listView { BASIC_CERTIFICATE = 'BASIC_CERTIFICATE', FULL_CERTIFICATE = 'FULL_CERTIFICATE' }
 
-	export enum Appengine_apps_domainMappings_createOverrideStrategy { UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY = 0, STRICT = 1, OVERRIDE = 2 }
+	export enum Appengine_apps_domainMappings_createOverrideStrategy { UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY = 'UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY', STRICT = 'STRICT', OVERRIDE = 'OVERRIDE' }
 
 }
 

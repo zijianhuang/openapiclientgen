@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoForwardingDisposition { dispositionUnspecified = 0, leaveInInbox = 1, archive = 2, trash = 3, markRead = 4 }
+	export enum AutoForwardingDisposition { dispositionUnspecified = 'dispositionUnspecified', leaveInInbox = 'leaveInInbox', archive = 'archive', trash = 'trash', markRead = 'markRead' }
 
 	export interface BatchDeleteMessagesRequest {
 
@@ -186,7 +186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CseKeyPairEnablementState { stateUnspecified = 0, enabled = 1, disabled = 2 }
+	export enum CseKeyPairEnablementState { stateUnspecified = 'stateUnspecified', enabled = 'enabled', disabled = 'disabled' }
 
 
 	/** Metadata for a private key instance. */
@@ -292,7 +292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DelegateVerificationStatus { verificationStatusUnspecified = 0, accepted = 1, pending = 2, rejected = 3, expired = 4 }
+	export enum DelegateVerificationStatus { verificationStatusUnspecified = 'verificationStatusUnspecified', accepted = 'accepted', pending = 'pending', rejected = 'rejected', expired = 'expired' }
 
 
 	/** Requests to turn off a client-side encryption key pair. */
@@ -649,7 +649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterCriteriaSizeComparison { unspecified = 0, smaller = 1, larger = 2 }
+	export enum FilterCriteriaSizeComparison { unspecified = 'unspecified', smaller = 'smaller', larger = 'larger' }
 
 
 	/** Settings for a forwarding address. */
@@ -679,7 +679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ForwardingAddressVerificationStatus { verificationStatusUnspecified = 0, accepted = 1, pending = 2 }
+	export enum ForwardingAddressVerificationStatus { verificationStatusUnspecified = 'verificationStatusUnspecified', accepted = 'accepted', pending = 'pending' }
 
 
 	/** A record of a change to the user's mailbox. Each history change may affect multiple messages in multiple ways. */
@@ -817,7 +817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImapSettingsExpungeBehavior { expungeBehaviorUnspecified = 0, archive = 1, trash = 2, deleteForever = 3 }
+	export enum ImapSettingsExpungeBehavior { expungeBehaviorUnspecified = 'expungeBehaviorUnspecified', archive = 'archive', trash = 'trash', deleteForever = 'deleteForever' }
 
 
 	/** Labels are used to categorize messages and threads within the user's mailbox. The maximum number of labels supported for a user's mailbox is 10,000. */
@@ -921,11 +921,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelLabelListVisibility { labelShow = 0, labelShowIfUnread = 1, labelHide = 2 }
+	export enum LabelLabelListVisibility { labelShow = 'labelShow', labelShowIfUnread = 'labelShowIfUnread', labelHide = 'labelHide' }
 
-	export enum LabelMessageListVisibility { show = 0, hide = 1 }
+	export enum LabelMessageListVisibility { show = 'show', hide = 'hide' }
 
-	export enum LabelType { system = 0, user = 1 }
+	export enum LabelType { system = 'system', user = 'user' }
 
 
 	/** Language settings for an account. These settings correspond to the "Language settings" feature in the web interface. */
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SmtpMsaSecurityMode { securityModeUnspecified = 0, none = 1, ssl = 2, starttls = 3 }
+	export enum SmtpMsaSecurityMode { securityModeUnspecified = 'securityModeUnspecified', none = 'none', ssl = 'ssl', starttls = 'starttls' }
 
 	export interface ListSmimeInfoResponse {
 
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PopSettingsAccessWindow { accessWindowUnspecified = 0, disabled = 1, fromNowOn = 2, allMail = 3 }
+	export enum PopSettingsAccessWindow { accessWindowUnspecified = 'accessWindowUnspecified', disabled = 'disabled', fromNowOn = 'fromNowOn', allMail = 'allMail' }
 
 
 	/** Profile for a Gmail user. */
@@ -1641,7 +1641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WatchRequestLabelFilterAction { include = 0, exclude = 1 }
+	export enum WatchRequestLabelFilterAction { include = 'include', exclude = 'exclude' }
 
 
 	/** Push notification watch response. */
@@ -2479,11 +2479,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Gmail_users_drafts_getFormat { minimal = 0, full = 1, raw = 2, metadata = 3 }
+	export enum Gmail_users_drafts_getFormat { minimal = 'minimal', full = 'full', raw = 'raw', metadata = 'metadata' }
 
-	export enum Gmail_users_messages_insertInternalDateSource { receivedTime = 0, dateHeader = 1 }
+	export enum Gmail_users_messages_insertInternalDateSource { receivedTime = 'receivedTime', dateHeader = 'dateHeader' }
 
-	export enum Gmail_users_threads_getFormat { full = 0, metadata = 1, minimal = 2 }
+	export enum Gmail_users_threads_getFormat { full = 'full', metadata = 'metadata', minimal = 'minimal' }
 
 }
 

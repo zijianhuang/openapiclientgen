@@ -58,7 +58,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountState { STATE_UNSPECIFIED = 0, READY = 1, NEEDS_ATTENTION = 2, CLOSED = 3 }
+	export enum AccountState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', NEEDS_ATTENTION = 'NEEDS_ATTENTION', CLOSED = 'CLOSED' }
 
 
 	/** Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones). */
@@ -158,7 +158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdClientState { STATE_UNSPECIFIED = 0, READY = 1, GETTING_READY = 2, REQUIRES_REVIEW = 3 }
+	export enum AdClientState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', GETTING_READY = 'GETTING_READY', REQUIRES_REVIEW = 'REQUIRES_REVIEW' }
 
 
 	/** Representation of the AdSense code for a given ad client. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634). */
@@ -268,9 +268,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentAdsSettingsType { TYPE_UNSPECIFIED = 0, DISPLAY = 1, FEED = 2, ARTICLE = 3, MATCHED_CONTENT = 4, LINK = 5 }
+	export enum ContentAdsSettingsType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DISPLAY = 'DISPLAY', FEED = 'FEED', ARTICLE = 'ARTICLE', MATCHED_CONTENT = 'MATCHED_CONTENT', LINK = 'LINK' }
 
-	export enum AdUnitState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ARCHIVED = 2 }
+	export enum AdUnitState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED' }
 
 
 	/** Representation of the ad unit code for a given ad unit. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634) and [Where to place the ad code in your HTML](https://support.google.com/adsense/answer/9190028). */
@@ -335,7 +335,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertSeverity { SEVERITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, SEVERE = 3 }
+	export enum AlertSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', INFO = 'INFO', WARNING = 'WARNING', SEVERE = 'SEVERE' }
 
 
 	/** Cell representation. */
@@ -484,7 +484,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HeaderType { HEADER_TYPE_UNSPECIFIED = 0, DIMENSION = 1, METRIC_TALLY = 2, METRIC_RATIO = 3, METRIC_CURRENCY = 4, METRIC_MILLISECONDS = 5, METRIC_DECIMAL = 6 }
+	export enum HeaderType { HEADER_TYPE_UNSPECIFIED = 'HEADER_TYPE_UNSPECIFIED', DIMENSION = 'DIMENSION', METRIC_TALLY = 'METRIC_TALLY', METRIC_RATIO = 'METRIC_RATIO', METRIC_CURRENCY = 'METRIC_CURRENCY', METRIC_MILLISECONDS = 'METRIC_MILLISECONDS', METRIC_DECIMAL = 'METRIC_DECIMAL' }
 
 
 	/** Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page. This message can be used both in streaming and non-streaming API methods in the request as well as the response. It can be used as a top-level request field, which is convenient if one wants to extract parameters from either the URL or HTTP template into the request fields and also want access to the raw HTTP body. Example: message GetResourceRequest { // A unique request id. string request_id = 1; // The raw HTTP body is bound to this field. google.api.HttpBody http_body = 2; } service ResourceService { rpc GetResource(GetResourceRequest) returns (google.api.HttpBody); rpc UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty); } Example with streaming methods: service CaldavService { rpc GetCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); rpc UpdateCalendar(stream google.api.HttpBody) returns (stream google.api.HttpBody); } Use of this type only changes how the request and response bodies are handled, all other features will continue to work unchanged. */
@@ -875,7 +875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteState { STATE_UNSPECIFIED = 0, REQUIRES_REVIEW = 1, GETTING_READY = 2, READY = 3, NEEDS_ATTENTION = 4 }
+	export enum SiteState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', REQUIRES_REVIEW = 'REQUIRES_REVIEW', GETTING_READY = 'GETTING_READY', READY = 'READY', NEEDS_ATTENTION = 'NEEDS_ATTENTION' }
 
 
 	/** Response definition for the url channels list rpc. */
@@ -1312,9 +1312,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Adsense_accounts_reports_generateDateRange { REPORTING_DATE_RANGE_UNSPECIFIED = 0, CUSTOM = 1, TODAY = 2, YESTERDAY = 3, MONTH_TO_DATE = 4, YEAR_TO_DATE = 5, LAST_7_DAYS = 6, LAST_30_DAYS = 7 }
+	export enum Adsense_accounts_reports_generateDateRange { REPORTING_DATE_RANGE_UNSPECIFIED = 'REPORTING_DATE_RANGE_UNSPECIFIED', CUSTOM = 'CUSTOM', TODAY = 'TODAY', YESTERDAY = 'YESTERDAY', MONTH_TO_DATE = 'MONTH_TO_DATE', YEAR_TO_DATE = 'YEAR_TO_DATE', LAST_7_DAYS = 'LAST_7_DAYS', LAST_30_DAYS = 'LAST_30_DAYS' }
 
-	export enum Adsense_accounts_reports_generateReportingTimeZone { REPORTING_TIME_ZONE_UNSPECIFIED = 0, ACCOUNT_TIME_ZONE = 1, GOOGLE_TIME_ZONE = 2 }
+	export enum Adsense_accounts_reports_generateReportingTimeZone { REPORTING_TIME_ZONE_UNSPECIFIED = 'REPORTING_TIME_ZONE_UNSPECIFIED', ACCOUNT_TIME_ZONE = 'ACCOUNT_TIME_ZONE', GOOGLE_TIME_ZONE = 'GOOGLE_TIME_ZONE' }
 
 }
 

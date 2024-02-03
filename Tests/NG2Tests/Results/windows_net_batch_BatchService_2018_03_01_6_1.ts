@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeAgentSkuOsType { linux = 0, windows = 1 }
+	export enum NodeAgentSkuOsType { linux = 'linux', windows = 'windows' }
 
 	export interface ImageReference {
 
@@ -220,7 +220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoPoolSpecificationPoolLifetimeOption { jobschedule = 0, job = 1 }
+	export enum AutoPoolSpecificationPoolLifetimeOption { jobschedule = 'jobschedule', job = 'job' }
 
 	export interface AutoScaleRun {
 		error?: AutoScaleRunError;
@@ -300,9 +300,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoUserSpecificationElevationLevel { nonadmin = 0, admin = 1 }
+	export enum AutoUserSpecificationElevationLevel { nonadmin = 'nonadmin', admin = 'admin' }
 
-	export enum AutoUserSpecificationScope { task = 0, pool = 1 }
+	export enum AutoUserSpecificationScope { task = 'task', pool = 'pool' }
 
 	export interface BatchError {
 		code?: string | null;
@@ -337,7 +337,7 @@ export namespace MyNS {
 
 
 	/** The default value for caching is none. For information about the caching options see: https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/27/exploring-windows-azure-drives-disks-and-images/. */
-	export enum CachingType { none = 0, readonly = 1, readwrite = 2 }
+	export enum CachingType { none = 'none', readonly = 'readonly', readwrite = 'readwrite' }
 
 
 	/** A certificate that can be installed on compute nodes and can be used to authenticate operations on the machine. */
@@ -382,7 +382,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificatePreviousState { active = 0, deleting = 1, deletefailed = 2 }
+	export enum CertificatePreviousState { active = 'active', deleting = 'deleting', deletefailed = 'deletefailed' }
 
 	export interface CertificateAddParameter {
 		certificateFormat?: CertificateAddParameterCertificateFormat | null;
@@ -425,7 +425,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateAddParameterCertificateFormat { pfx = 0, cer = 1 }
+	export enum CertificateAddParameterCertificateFormat { pfx = 'pfx', cer = 'cer' }
 
 	export interface CertificateListResult {
 		'odata.nextLink'?: string | null;
@@ -482,9 +482,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateReferenceStoreLocation { currentuser = 0, localmachine = 1 }
+	export enum CertificateReferenceStoreLocation { currentuser = 'currentuser', localmachine = 'localmachine' }
 
-	export enum CertificateState { active = 0, deleting = 1, deletefailed = 2 }
+	export enum CertificateState { active = 'active', deleting = 'deleting', deletefailed = 'deletefailed' }
 
 	export interface CloudJob {
 
@@ -629,11 +629,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudJobOnAllTasksComplete { noaction = 0, terminatejob = 1 }
+	export enum CloudJobOnAllTasksComplete { noaction = 'noaction', terminatejob = 'terminatejob' }
 
-	export enum CloudJobOnTaskFailure { noaction = 0, performexitoptionsjobaction = 1 }
+	export enum CloudJobOnTaskFailure { noaction = 'noaction', performexitoptionsjobaction = 'performexitoptionsjobaction' }
 
-	export enum CloudJobPreviousState { active = 0, disabling = 1, disabled = 2, enabling = 3, terminating = 4, completed = 5, deleting = 6 }
+	export enum CloudJobPreviousState { active = 'active', disabling = 'disabling', disabled = 'disabled', enabling = 'enabling', terminating = 'terminating', completed = 'completed', deleting = 'deleting' }
 
 	export interface CloudJobListPreparationAndReleaseTaskStatusResult {
 		'odata.nextLink'?: string | null;
@@ -743,7 +743,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudJobSchedulePreviousState { active = 0, completed = 1, disabled = 2, terminating = 3, deleting = 4 }
+	export enum CloudJobSchedulePreviousState { active = 'active', completed = 'completed', disabled = 'disabled', terminating = 'terminating', deleting = 'deleting' }
 
 	export interface CloudJobScheduleListResult {
 		'odata.nextLink'?: string | null;
@@ -899,7 +899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudPoolAllocationState { steady = 0, resizing = 1, stopping = 2 }
+	export enum CloudPoolAllocationState { steady = 'steady', resizing = 'resizing', stopping = 'stopping' }
 
 	export interface ResizeError {
 		code?: string | null;
@@ -918,7 +918,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudPoolState { active = 0, deleting = 1, upgrading = 2 }
+	export enum CloudPoolState { active = 'active', deleting = 'deleting', upgrading = 'upgrading' }
 
 	export interface UserAccount {
 		elevationLevel?: AutoUserSpecificationElevationLevel | null;
@@ -1120,7 +1120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudTaskPreviousState { active = 0, preparing = 1, running = 2, completed = 3 }
+	export enum CloudTaskPreviousState { active = 'active', preparing = 'preparing', running = 'running', completed = 'completed' }
 
 	export interface ResourceFile {
 
@@ -1236,9 +1236,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubtaskInformationPreviousState { preparing = 0, running = 1, completed = 2 }
+	export enum SubtaskInformationPreviousState { preparing = 'preparing', running = 'running', completed = 'completed' }
 
-	export enum SubtaskInformationResult { success = 0, failure = 1 }
+	export enum SubtaskInformationResult { success = 'success', failure = 'failure' }
 
 	export interface ComputeNode {
 
@@ -1375,13 +1375,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeNodeSchedulingState { enabled = 0, disabled = 1 }
+	export enum ComputeNodeSchedulingState { enabled = 'enabled', disabled = 'disabled' }
 
-	export enum ComputeNodeState { idle = 0, rebooting = 1, reimaging = 2, running = 3, unusable = 4, creating = 5, starting = 6, waitingforstarttask = 7, starttaskfailed = 8, unknown = 9, leavingpool = 10, offline = 11, preempted = 12 }
+	export enum ComputeNodeState { idle = 'idle', rebooting = 'rebooting', reimaging = 'reimaging', running = 'running', unusable = 'unusable', creating = 'creating', starting = 'starting', waitingforstarttask = 'waitingforstarttask', starttaskfailed = 'starttaskfailed', unknown = 'unknown', leavingpool = 'leavingpool', offline = 'offline', preempted = 'preempted' }
 
 
 	/** The default value is requeue. */
-	export enum ComputeNodeDeallocationOption { requeue = 0, terminate = 1, taskcompletion = 2, retaineddata = 3 }
+	export enum ComputeNodeDeallocationOption { requeue = 'requeue', terminate = 'terminate', taskcompletion = 'taskcompletion', retaineddata = 'retaineddata' }
 
 	export interface ComputeNodeEndpointConfiguration {
 
@@ -1448,7 +1448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InboundEndpointProtocol { tcp = 0, udp = 1 }
+	export enum InboundEndpointProtocol { tcp = 'tcp', udp = 'udp' }
 
 	export interface ComputeNodeGetRemoteLoginSettingsResult {
 
@@ -1615,7 +1615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerConfigurationType { docker = 0 }
+	export enum ContainerConfigurationType { docker = 'docker' }
 
 	export interface DataDisk {
 
@@ -1657,7 +1657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataDiskStorageAccountType { standard_lrs = 0, premium_lrs = 1 }
+	export enum DataDiskStorageAccountType { standard_lrs = 'standard_lrs', premium_lrs = 'premium_lrs' }
 
 	export interface DeleteCertificateError {
 		code?: string | null;
@@ -1678,9 +1678,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ElevationLevel { nonadmin = 0, admin = 1 }
+	export enum ElevationLevel { nonadmin = 'nonadmin', admin = 'admin' }
 
-	export enum ErrorCategory { usererror = 0, servererror = 1 }
+	export enum ErrorCategory { usererror = 'usererror', servererror = 'servererror' }
 
 	export interface ErrorMessage {
 		lang?: string | null;
@@ -1784,9 +1784,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExitOptionsDependencyAction { satisfy = 0, block = 1 }
+	export enum ExitOptionsDependencyAction { satisfy = 'satisfy', block = 'block' }
 
-	export enum ExitOptionsJobAction { none = 0, disable = 1, terminate = 2 }
+	export enum ExitOptionsJobAction { none = 'none', disable = 'disable', terminate = 'terminate' }
 
 	export interface FileProperties {
 
@@ -1944,7 +1944,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkSecurityGroupRuleAccess { allow = 0, deny = 1 }
+	export enum NetworkSecurityGroupRuleAccess { allow = 'allow', deny = 'deny' }
 
 	export interface JobAddParameter {
 
@@ -2056,7 +2056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobDisableParameterDisableTasks { requeue = 0, terminate = 1, wait = 2 }
+	export enum JobDisableParameterDisableTasks { requeue = 'requeue', terminate = 'terminate', wait = 'wait' }
 
 	export interface JobExecutionInformation {
 
@@ -2344,7 +2344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPreparationTaskExecutionInformationState { running = 0, completed = 1 }
+	export enum JobPreparationTaskExecutionInformationState { running = 'running', completed = 'completed' }
 
 
 	/** The Job Release task runs when the job ends, because of one of the following: The user calls the Terminate Job API, or the Delete Job API while the job is still active, the job's maximum wall clock time constraint is reached, and the job is still active, or the job's Job Manager task completed, and the job is configured to terminate when the Job Manager completes. The Job Release task runs on each compute node where tasks of the job have run and the Job Preparation task ran and completed. If you reimage a compute node after it has run the Job Preparation task, and the job ends without any further tasks of the job running on that compute node (and hence the Job Preparation task does not re-run), then the Job Release task does not run on that node. If a compute node reboots while the Job Release task is still running, the Job Release task runs again when the compute node starts up. The job is not marked as complete until all Job Release tasks have completed. The Job Release task runs in the background. It does not occupy a scheduling slot; that is, it does not count towards the maxTasksPerNode limit specified on the pool. */
@@ -2532,7 +2532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobScheduleState { active = 0, completed = 1, disabled = 2, terminating = 3, deleting = 4 }
+	export enum JobScheduleState { active = 'active', completed = 'completed', disabled = 'disabled', terminating = 'terminating', deleting = 'deleting' }
 
 	export interface JobScheduleStatistics {
 
@@ -2753,7 +2753,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobState { active = 0, disabling = 1, disabled = 2, enabling = 3, terminating = 4, completed = 5, deleting = 6 }
+	export enum JobState { active = 'active', disabling = 'disabling', disabled = 'disabled', enabling = 'enabling', terminating = 'terminating', completed = 'completed', deleting = 'deleting' }
 
 	export interface JobStatistics {
 
@@ -3142,7 +3142,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeDisableSchedulingParameterNodeDisableSchedulingOption { requeue = 0, terminate = 1, taskcompletion = 2 }
+	export enum NodeDisableSchedulingParameterNodeDisableSchedulingOption { requeue = 'requeue', terminate = 'terminate', taskcompletion = 'taskcompletion' }
 
 	export interface NodeFile {
 		isDirectory?: boolean | null;
@@ -3290,11 +3290,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OnAllTasksComplete { noaction = 0, terminatejob = 1 }
+	export enum OnAllTasksComplete { noaction = 'noaction', terminatejob = 'terminatejob' }
 
 
 	/** A task is considered to have failed if has a failureInfo. A failureInfo is set if the task completes with a non-zero exit code after exhausting its retry count, or if there was an error starting the task, for example due to a resource file download error. The default is noaction. */
-	export enum OnTaskFailure { noaction = 0, performexitoptionsjobaction = 1 }
+	export enum OnTaskFailure { noaction = 'noaction', performexitoptionsjobaction = 'performexitoptionsjobaction' }
 
 	export interface OutputFileBlobContainerDestination {
 
@@ -3337,7 +3337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputFileUploadCondition { tasksuccess = 0, taskfailure = 1, taskcompletion = 2 }
+	export enum OutputFileUploadCondition { tasksuccess = 'tasksuccess', taskfailure = 'taskfailure', taskcompletion = 'taskcompletion' }
 
 	export interface OutputFileUploadOptions {
 
@@ -4182,9 +4182,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageAccountType { standard_lrs = 0, premium_lrs = 1 }
+	export enum StorageAccountType { standard_lrs = 'standard_lrs', premium_lrs = 'premium_lrs' }
 
-	export enum SubtaskState { preparing = 0, running = 1, completed = 2 }
+	export enum SubtaskState { preparing = 'preparing', running = 'running', completed = 'completed' }
 
 	export interface TaskAddCollectionParameter {
 
@@ -4321,7 +4321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskAddResultStatus { success = 0, clienterror = 1, servererror = 2 }
+	export enum TaskAddResultStatus { success = 'success', clienterror = 'clienterror', servererror = 'servererror' }
 
 	export interface TaskConstraints {
 
@@ -4464,7 +4464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskCountsValidationStatus { validated = 0, unvalidated = 1 }
+	export enum TaskCountsValidationStatus { validated = 'validated', unvalidated = 'unvalidated' }
 
 	export interface TaskDependencies {
 		taskIdRanges?: Array<TaskIdRange>;
@@ -4584,7 +4584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskExecutionResult { success = 0, failure = 1 }
+	export enum TaskExecutionResult { success = 'success', failure = 'failure' }
 
 	export interface TaskFailureInformation {
 
@@ -4627,9 +4627,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskSchedulingPolicyNodeFillType { spread = 0, pack = 1 }
+	export enum TaskSchedulingPolicyNodeFillType { spread = 'spread', pack = 'pack' }
 
-	export enum TaskState { active = 0, preparing = 1, running = 2, completed = 3 }
+	export enum TaskState { active = 'active', preparing = 'preparing', running = 'running', completed = 'completed' }
 
 	export interface TaskStatistics {
 

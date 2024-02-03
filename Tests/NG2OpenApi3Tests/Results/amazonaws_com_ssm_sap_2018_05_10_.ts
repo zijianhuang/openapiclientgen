@@ -107,11 +107,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationType { HANA = 0 }
+	export enum ApplicationType { HANA = 'HANA' }
 
-	export enum ApplicationStatus { ACTIVATED = 0, STARTING = 1, STOPPED = 2, STOPPING = 3, FAILED = 4, REGISTERING = 5, DELETING = 6, UNKNOWN = 7 }
+	export enum ApplicationStatus { ACTIVATED = 'ACTIVATED', STARTING = 'STARTING', STOPPED = 'STOPPED', STOPPING = 'STOPPING', FAILED = 'FAILED', REGISTERING = 'REGISTERING', DELETING = 'DELETING', UNKNOWN = 'UNKNOWN' }
 
-	export enum ApplicationDiscoveryStatus { SUCCESS = 0, REGISTRATION_FAILED = 1, REFRESH_FAILED = 2, REGISTERING = 3, DELETING = 4 }
+	export enum ApplicationDiscoveryStatus { SUCCESS = 'SUCCESS', REGISTRATION_FAILED = 'REGISTRATION_FAILED', REFRESH_FAILED = 'REFRESH_FAILED', REGISTERING = 'REGISTERING', DELETING = 'DELETING' }
 
 	export interface TagMap {
 	}
@@ -187,9 +187,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentType { HANA = 0, HANA_NODE = 1 }
+	export enum ComponentType { HANA = 'HANA', HANA_NODE = 'HANA_NODE' }
 
-	export enum ComponentStatus { ACTIVATED = 0, STARTING = 1, STOPPED = 2, STOPPING = 3, RUNNING = 4, RUNNING_WITH_ERROR = 5, UNDEFINED = 6 }
+	export enum ComponentStatus { ACTIVATED = 'ACTIVATED', STARTING = 'STARTING', STOPPED = 'STOPPED', STOPPING = 'STOPPING', RUNNING = 'RUNNING', RUNNING_WITH_ERROR = 'RUNNING_WITH_ERROR', UNDEFINED = 'UNDEFINED' }
 
 
 	/** Details of the SAP HANA system replication for the instance. */
@@ -217,11 +217,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationMode { PRIMARY = 0, NONE = 1, SYNC = 2, SYNCMEM = 3, ASYNC = 4 }
+	export enum ReplicationMode { PRIMARY = 'PRIMARY', NONE = 'NONE', SYNC = 'SYNC', SYNCMEM = 'SYNCMEM', ASYNC = 'ASYNC' }
 
-	export enum OperationMode { PRIMARY = 0, LOGREPLAY = 1, DELTA_DATASHIPPING = 2, LOGREPLAY_READACCESS = 3, NONE = 4 }
+	export enum OperationMode { PRIMARY = 'PRIMARY', LOGREPLAY = 'LOGREPLAY', DELTA_DATASHIPPING = 'DELTA_DATASHIPPING', LOGREPLAY_READACCESS = 'LOGREPLAY_READACCESS', NONE = 'NONE' }
 
-	export enum ClusterStatus { ONLINE = 0, STANDBY = 1, MAINTENANCE = 2, OFFLINE = 3, NONE = 4 }
+	export enum ClusterStatus { ONLINE = 'ONLINE', STANDBY = 'STANDBY', MAINTENANCE = 'MAINTENANCE', OFFLINE = 'OFFLINE', NONE = 'NONE' }
 
 
 	/** Describes the properties of the associated host. */
@@ -278,7 +278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HostRole { LEADER = 0, WORKER = 1, STANDBY = 2, UNKNOWN = 3 }
+	export enum HostRole { LEADER = 'LEADER', WORKER = 'WORKER', STANDBY = 'STANDBY', UNKNOWN = 'UNKNOWN' }
 
 	export interface GetDatabaseOutput {
 		Database?: Database;
@@ -372,11 +372,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CredentialType { ADMIN = 0 }
+	export enum CredentialType { ADMIN = 'ADMIN' }
 
-	export enum DatabaseType { SYSTEM = 0, TENANT = 1 }
+	export enum DatabaseType { SYSTEM = 'SYSTEM', TENANT = 'TENANT' }
 
-	export enum DatabaseStatus { RUNNING = 0, STARTING = 1, STOPPED = 2, WARNING = 3, UNKNOWN = 4, ERROR = 5 }
+	export enum DatabaseStatus { RUNNING = 'RUNNING', STARTING = 'STARTING', STOPPED = 'STOPPED', WARNING = 'WARNING', UNKNOWN = 'UNKNOWN', ERROR = 'ERROR' }
 
 	export interface GetOperationOutput {
 		Operation?: Operation;
@@ -434,7 +434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStatus { INPROGRESS = 0, SUCCESS = 1, ERROR = 2 }
+	export enum OperationStatus { INPROGRESS = 'INPROGRESS', SUCCESS = 'SUCCESS', ERROR = 'ERROR' }
 
 	export interface OperationProperties {
 	}
@@ -631,7 +631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterOperator { Equals = 0, GreaterThanOrEquals = 1, LessThanOrEquals = 2 }
+	export enum FilterOperator { Equals = 'Equals', GreaterThanOrEquals = 'GreaterThanOrEquals', LessThanOrEquals = 'LessThanOrEquals' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagMap;
@@ -728,7 +728,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackintMode { AWSBackup = 0 }
+	export enum BackintMode { AWSBackup = 'AWSBackup' }
 
 
 	/** Configuration parameters for AWS Backint Agent for SAP HANA. You can backup your SAP HANA database with AWS Backup or Amazon S3. */
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionActionType { RESTORE = 0 }
+	export enum PermissionActionType { RESTORE = 'RESTORE' }
 
 	export interface DeleteResourcePermissionInput {
 		ActionType?: PermissionActionType;

@@ -80,7 +80,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AcquisitionStatus { Unknown = 0, NotAcquired = 1, Pending = 2, Success = 3, Failed = 4 }
+	export enum AcquisitionStatus { Unknown = 'Unknown', NotAcquired = 'NotAcquired', Pending = 'Pending', Success = 'Success', Failed = 'Failed' }
 
 
 	/** The list of page BLOB acquisitions. */

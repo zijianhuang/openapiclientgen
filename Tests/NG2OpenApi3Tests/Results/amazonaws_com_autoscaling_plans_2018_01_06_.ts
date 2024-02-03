@@ -151,9 +151,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceNamespace { autoscaling = 0, ecs = 1, ec2 = 2, rds = 3, dynamodb = 4 }
+	export enum ServiceNamespace { autoscaling = 'autoscaling', ecs = 'ecs', ec2 = 'ec2', rds = 'rds', dynamodb = 'dynamodb' }
 
-	export enum ScalableDimension { 'autoscaling:autoScalingGroup:DesiredCapacity' = 0, 'ecs:service:DesiredCount' = 1, 'ec2:spot-fleet-request:TargetCapacity' = 2, 'rds:cluster:ReadReplicaCount' = 3, 'dynamodb:table:ReadCapacityUnits' = 4, 'dynamodb:table:WriteCapacityUnits' = 5, 'dynamodb:index:ReadCapacityUnits' = 6, 'dynamodb:index:WriteCapacityUnits' = 7 }
+	export enum ScalableDimension { 'autoscaling:autoScalingGroup:DesiredCapacity' = 'autoscaling:autoScalingGroup:DesiredCapacity', 'ecs:service:DesiredCount' = 'ecs:service:DesiredCount', 'ec2:spot-fleet-request:TargetCapacity' = 'ec2:spot-fleet-request:TargetCapacity', 'rds:cluster:ReadReplicaCount' = 'rds:cluster:ReadReplicaCount', 'dynamodb:table:ReadCapacityUnits' = 'dynamodb:table:ReadCapacityUnits', 'dynamodb:table:WriteCapacityUnits' = 'dynamodb:table:WriteCapacityUnits', 'dynamodb:index:ReadCapacityUnits' = 'dynamodb:index:ReadCapacityUnits', 'dynamodb:index:WriteCapacityUnits' = 'dynamodb:index:WriteCapacityUnits' }
 
 
 	/** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>. */
@@ -214,7 +214,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingMetricType { ASGAverageCPUUtilization = 0, ASGAverageNetworkIn = 1, ASGAverageNetworkOut = 2, DynamoDBReadCapacityUtilization = 3, DynamoDBWriteCapacityUtilization = 4, ECSServiceAverageCPUUtilization = 5, ECSServiceAverageMemoryUtilization = 6, ALBRequestCountPerTarget = 7, RDSReaderAverageCPUUtilization = 8, RDSReaderAverageDatabaseConnections = 9, EC2SpotFleetRequestAverageCPUUtilization = 10, EC2SpotFleetRequestAverageNetworkIn = 11, EC2SpotFleetRequestAverageNetworkOut = 12 }
+	export enum ScalingMetricType { ASGAverageCPUUtilization = 'ASGAverageCPUUtilization', ASGAverageNetworkIn = 'ASGAverageNetworkIn', ASGAverageNetworkOut = 'ASGAverageNetworkOut', DynamoDBReadCapacityUtilization = 'DynamoDBReadCapacityUtilization', DynamoDBWriteCapacityUtilization = 'DynamoDBWriteCapacityUtilization', ECSServiceAverageCPUUtilization = 'ECSServiceAverageCPUUtilization', ECSServiceAverageMemoryUtilization = 'ECSServiceAverageMemoryUtilization', ALBRequestCountPerTarget = 'ALBRequestCountPerTarget', RDSReaderAverageCPUUtilization = 'RDSReaderAverageCPUUtilization', RDSReaderAverageDatabaseConnections = 'RDSReaderAverageDatabaseConnections', EC2SpotFleetRequestAverageCPUUtilization = 'EC2SpotFleetRequestAverageCPUUtilization', EC2SpotFleetRequestAverageNetworkIn = 'EC2SpotFleetRequestAverageNetworkIn', EC2SpotFleetRequestAverageNetworkOut = 'EC2SpotFleetRequestAverageNetworkOut' }
 
 
 	/** <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
@@ -283,7 +283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricStatistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }
+	export enum MetricStatistic { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', SampleCount = 'SampleCount', Sum = 'Sum' }
 
 
 	/** <p>Represents a predefined metric that can be used for predictive scaling.</p> <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p> */
@@ -309,7 +309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadMetricType { ASGTotalCPUUtilization = 0, ASGTotalNetworkIn = 1, ASGTotalNetworkOut = 2, ALBTargetGroupRequestCount = 3 }
+	export enum LoadMetricType { ASGTotalCPUUtilization = 'ASGTotalCPUUtilization', ASGTotalNetworkIn = 'ASGTotalNetworkIn', ASGTotalNetworkOut = 'ASGTotalNetworkOut', ALBTargetGroupRequestCount = 'ALBTargetGroupRequestCount' }
 
 
 	/** <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group. </p> <p>If you publish your own metrics, you can aggregate the data points at a given interval and then publish the aggregated data points to CloudWatch. Before AWS Auto Scaling generates the forecast, it sums up all the metric data points that occurred within each hour to match the granularity period that is used in the forecast (60 minutes).</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p> */
@@ -350,11 +350,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PredictiveScalingMaxCapacityBehavior { SetForecastCapacityToMaxCapacity = 0, SetMaxCapacityToForecastCapacity = 1, SetMaxCapacityAboveForecastCapacity = 2 }
+	export enum PredictiveScalingMaxCapacityBehavior { SetForecastCapacityToMaxCapacity = 'SetForecastCapacityToMaxCapacity', SetMaxCapacityToForecastCapacity = 'SetMaxCapacityToForecastCapacity', SetMaxCapacityAboveForecastCapacity = 'SetMaxCapacityAboveForecastCapacity' }
 
-	export enum PredictiveScalingMode { ForecastAndScale = 0, ForecastOnly = 1 }
+	export enum PredictiveScalingMode { ForecastAndScale = 'ForecastAndScale', ForecastOnly = 'ForecastOnly' }
 
-	export enum ScalingPolicyUpdateBehavior { KeepExternalPolicies = 0, ReplaceExternalPolicies = 1 }
+	export enum ScalingPolicyUpdateBehavior { KeepExternalPolicies = 'KeepExternalPolicies', ReplaceExternalPolicies = 'ReplaceExternalPolicies' }
 
 	export interface ValidationException {
 	}
@@ -543,9 +543,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyType { TargetTrackingScaling = 0 }
+	export enum PolicyType { TargetTrackingScaling = 'TargetTrackingScaling' }
 
-	export enum ScalingStatusCode { Inactive = 0, PartiallyActive = 1, Active = 2 }
+	export enum ScalingStatusCode { Inactive = 'Inactive', PartiallyActive = 'PartiallyActive', Active = 'Active' }
 
 	export interface DescribeScalingPlanResourcesRequest {
 
@@ -651,7 +651,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingPlanStatusCode { Active = 0, ActiveWithProblems = 1, CreationInProgress = 2, CreationFailed = 3, DeletionInProgress = 4, DeletionFailed = 5, UpdateInProgress = 6, UpdateFailed = 7 }
+	export enum ScalingPlanStatusCode { Active = 'Active', ActiveWithProblems = 'ActiveWithProblems', CreationInProgress = 'CreationInProgress', CreationFailed = 'CreationFailed', DeletionInProgress = 'DeletionInProgress', DeletionFailed = 'DeletionFailed', UpdateInProgress = 'UpdateInProgress', UpdateFailed = 'UpdateFailed' }
 
 	export interface DescribeScalingPlansRequest {
 		ScalingPlanNames?: Array<string>;
@@ -773,7 +773,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ForecastDataType { CapacityForecast = 0, LoadForecast = 1, ScheduledActionMinCapacity = 2, ScheduledActionMaxCapacity = 3 }
+	export enum ForecastDataType { CapacityForecast = 'CapacityForecast', LoadForecast = 'LoadForecast', ScheduledActionMinCapacity = 'ScheduledActionMinCapacity', ScheduledActionMaxCapacity = 'ScheduledActionMaxCapacity' }
 
 	export interface UpdateScalingPlanResponse {
 	}
@@ -871,17 +871,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.CreateScalingPlan' = 0 }
+	export enum CreateScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.CreateScalingPlan' = 'AnyScaleScalingPlannerFrontendService.CreateScalingPlan' }
 
-	export enum DeleteScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DeleteScalingPlan' = 0 }
+	export enum DeleteScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DeleteScalingPlan' = 'AnyScaleScalingPlannerFrontendService.DeleteScalingPlan' }
 
-	export enum DescribeScalingPlanResourcesX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources' = 0 }
+	export enum DescribeScalingPlanResourcesX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources' = 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources' }
 
-	export enum DescribeScalingPlansX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlans' = 0 }
+	export enum DescribeScalingPlansX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlans' = 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlans' }
 
-	export enum GetScalingPlanResourceForecastDataX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData' = 0 }
+	export enum GetScalingPlanResourceForecastDataX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData' = 'AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData' }
 
-	export enum UpdateScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.UpdateScalingPlan' = 0 }
+	export enum UpdateScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.UpdateScalingPlan' = 'AnyScaleScalingPlannerFrontendService.UpdateScalingPlan' }
 
 }
 

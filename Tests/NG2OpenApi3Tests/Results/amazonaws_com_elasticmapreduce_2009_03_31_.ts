@@ -75,7 +75,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceFleetType { MASTER = 0, CORE = 1, TASK = 2 }
+	export enum InstanceFleetType { MASTER = 'MASTER', CORE = 'CORE', TASK = 'TASK' }
 
 
 	/** <p>An instance type configuration for each instance type in an instance fleet, which determines the Amazon EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. When you use an allocation strategy, you can include a maximum of 30 instance type configurations for a fleet. For more information about how to use an allocation strategy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure Instance Fleets</a>. Without an allocation strategy, you may specify a maximum of five instance type configurations for a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
@@ -263,9 +263,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SpotProvisioningTimeoutAction { SWITCH_TO_ON_DEMAND = 0, TERMINATE_CLUSTER = 1 }
+	export enum SpotProvisioningTimeoutAction { SWITCH_TO_ON_DEMAND = 'SWITCH_TO_ON_DEMAND', TERMINATE_CLUSTER = 'TERMINATE_CLUSTER' }
 
-	export enum SpotProvisioningAllocationStrategy { 'capacity-optimized' = 0, 'price-capacity-optimized' = 1, 'lowest-price' = 2, diversified = 3 }
+	export enum SpotProvisioningAllocationStrategy { 'capacity-optimized' = 'capacity-optimized', 'price-capacity-optimized' = 'price-capacity-optimized', 'lowest-price' = 'lowest-price', diversified = 'diversified' }
 
 
 	/** <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p> </note> */
@@ -289,7 +289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OnDemandProvisioningAllocationStrategy { 'lowest-price' = 0 }
+	export enum OnDemandProvisioningAllocationStrategy { 'lowest-price' = 'lowest-price' }
 
 
 	/** Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. */
@@ -314,9 +314,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OnDemandCapacityReservationUsageStrategy { 'use-capacity-reservations-first' = 0 }
+	export enum OnDemandCapacityReservationUsageStrategy { 'use-capacity-reservations-first' = 'use-capacity-reservations-first' }
 
-	export enum OnDemandCapacityReservationPreference { open = 0, none = 1 }
+	export enum OnDemandCapacityReservationPreference { open = 'open', none = 'none' }
 
 
 	/** The resize specification for On-Demand and Spot Instances in the fleet. */
@@ -491,7 +491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MarketType { ON_DEMAND = 0, SPOT = 1 }
+	export enum MarketType { ON_DEMAND = 'ON_DEMAND', SPOT = 'SPOT' }
 
 
 	/** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>. */
@@ -618,7 +618,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdjustmentType { CHANGE_IN_CAPACITY = 0, PERCENT_CHANGE_IN_CAPACITY = 1, EXACT_CAPACITY = 2 }
+	export enum AdjustmentType { CHANGE_IN_CAPACITY = 'CHANGE_IN_CAPACITY', PERCENT_CHANGE_IN_CAPACITY = 'PERCENT_CHANGE_IN_CAPACITY', EXACT_CAPACITY = 'EXACT_CAPACITY' }
 
 
 	/** The conditions that trigger an automatic scaling activity. */
@@ -692,11 +692,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { GREATER_THAN_OR_EQUAL = 0, GREATER_THAN = 1, LESS_THAN = 2, LESS_THAN_OR_EQUAL = 3 }
+	export enum ComparisonOperator { GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL' }
 
-	export enum Statistic { SAMPLE_COUNT = 0, AVERAGE = 1, SUM = 2, MINIMUM = 3, MAXIMUM = 4 }
+	export enum Statistic { SAMPLE_COUNT = 'SAMPLE_COUNT', AVERAGE = 'AVERAGE', SUM = 'SUM', MINIMUM = 'MINIMUM', MAXIMUM = 'MAXIMUM' }
 
-	export enum Unit { NONE = 0, SECONDS = 1, MICRO_SECONDS = 2, MILLI_SECONDS = 3, BYTES = 4, KILO_BYTES = 5, MEGA_BYTES = 6, GIGA_BYTES = 7, TERA_BYTES = 8, BITS = 9, KILO_BITS = 10, MEGA_BITS = 11, GIGA_BITS = 12, TERA_BITS = 13, PERCENT = 14, COUNT = 15, BYTES_PER_SECOND = 16, KILO_BYTES_PER_SECOND = 17, MEGA_BYTES_PER_SECOND = 18, GIGA_BYTES_PER_SECOND = 19, TERA_BYTES_PER_SECOND = 20, BITS_PER_SECOND = 21, KILO_BITS_PER_SECOND = 22, MEGA_BITS_PER_SECOND = 23, GIGA_BITS_PER_SECOND = 24, TERA_BITS_PER_SECOND = 25, COUNT_PER_SECOND = 26 }
+	export enum Unit { NONE = 'NONE', SECONDS = 'SECONDS', MICRO_SECONDS = 'MICRO_SECONDS', MILLI_SECONDS = 'MILLI_SECONDS', BYTES = 'BYTES', KILO_BYTES = 'KILO_BYTES', MEGA_BYTES = 'MEGA_BYTES', GIGA_BYTES = 'GIGA_BYTES', TERA_BYTES = 'TERA_BYTES', BITS = 'BITS', KILO_BITS = 'KILO_BITS', MEGA_BITS = 'MEGA_BITS', GIGA_BITS = 'GIGA_BITS', TERA_BITS = 'TERA_BITS', PERCENT = 'PERCENT', COUNT = 'COUNT', BYTES_PER_SECOND = 'BYTES_PER_SECOND', KILO_BYTES_PER_SECOND = 'KILO_BYTES_PER_SECOND', MEGA_BYTES_PER_SECOND = 'MEGA_BYTES_PER_SECOND', GIGA_BYTES_PER_SECOND = 'GIGA_BYTES_PER_SECOND', TERA_BYTES_PER_SECOND = 'TERA_BYTES_PER_SECOND', BITS_PER_SECOND = 'BITS_PER_SECOND', KILO_BITS_PER_SECOND = 'KILO_BITS_PER_SECOND', MEGA_BITS_PER_SECOND = 'MEGA_BITS_PER_SECOND', GIGA_BITS_PER_SECOND = 'GIGA_BITS_PER_SECOND', TERA_BITS_PER_SECOND = 'TERA_BITS_PER_SECOND', COUNT_PER_SECOND = 'COUNT_PER_SECOND' }
 
 
 	/** A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available. */
@@ -797,7 +797,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionOnFailure { TERMINATE_JOB_FLOW = 0, TERMINATE_CLUSTER = 1, CANCEL_AND_WAIT = 2, CONTINUE = 3 }
+	export enum ActionOnFailure { TERMINATE_JOB_FLOW = 'TERMINATE_JOB_FLOW', TERMINATE_CLUSTER = 'TERMINATE_CLUSTER', CANCEL_AND_WAIT = 'CANCEL_AND_WAIT', CONTINUE = 'CONTINUE' }
 
 
 	/** A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
@@ -941,7 +941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelStepsRequestStatus { SUBMITTED = 0, FAILED = 1 }
+	export enum CancelStepsRequestStatus { SUBMITTED = 'SUBMITTED', FAILED = 'FAILED' }
 
 
 	/** The input argument to the <a>CancelSteps</a> operation. */
@@ -970,7 +970,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepCancellationOption { SEND_INTERRUPT = 0, TERMINATE_PROCESS = 1 }
+	export enum StepCancellationOption { SEND_INTERRUPT = 'SEND_INTERRUPT', TERMINATE_PROCESS = 'TERMINATE_PROCESS' }
 
 	export interface CreateSecurityConfigurationOutput {
 
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthMode { SSO = 0, IAM = 1 }
+	export enum AuthMode { SSO = 'SSO', IAM = 'IAM' }
 
 	export interface CreateStudioSessionMappingInput {
 
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { USER = 0, GROUP = 1 }
+	export enum IdentityType { USER = 'USER', GROUP = 'GROUP' }
 
 	export interface DeleteSecurityConfigurationOutput {
 	}
@@ -1354,7 +1354,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterState { STARTING = 0, BOOTSTRAPPING = 1, RUNNING = 2, WAITING = 3, TERMINATING = 4, TERMINATED = 5, TERMINATED_WITH_ERRORS = 6 }
+	export enum ClusterState { STARTING = 'STARTING', BOOTSTRAPPING = 'BOOTSTRAPPING', RUNNING = 'RUNNING', WAITING = 'WAITING', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', TERMINATED_WITH_ERRORS = 'TERMINATED_WITH_ERRORS' }
 
 
 	/** The reason that the cluster changed to its current state. */
@@ -1376,7 +1376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterStateChangeReasonCode { INTERNAL_ERROR = 0, VALIDATION_ERROR = 1, INSTANCE_FAILURE = 2, INSTANCE_FLEET_TIMEOUT = 3, BOOTSTRAP_FAILURE = 4, USER_REQUEST = 5, STEP_FAILURE = 6, ALL_STEPS_COMPLETED = 7 }
+	export enum ClusterStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', VALIDATION_ERROR = 'VALIDATION_ERROR', INSTANCE_FAILURE = 'INSTANCE_FAILURE', INSTANCE_FLEET_TIMEOUT = 'INSTANCE_FLEET_TIMEOUT', BOOTSTRAP_FAILURE = 'BOOTSTRAP_FAILURE', USER_REQUEST = 'USER_REQUEST', STEP_FAILURE = 'STEP_FAILURE', ALL_STEPS_COMPLETED = 'ALL_STEPS_COMPLETED' }
 
 
 	/** Represents the timeline of the cluster's lifecycle. */
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceCollectionType { INSTANCE_FLEET = 0, INSTANCE_GROUP = 1 }
+	export enum InstanceCollectionType { INSTANCE_FLEET = 'INSTANCE_FLEET', INSTANCE_GROUP = 'INSTANCE_GROUP' }
 
 
 	/** <p>With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p> <p>With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.</p> */
@@ -1485,9 +1485,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScaleDownBehavior { TERMINATE_AT_INSTANCE_HOUR = 0, TERMINATE_AT_TASK_COMPLETION = 1 }
+	export enum ScaleDownBehavior { TERMINATE_AT_INSTANCE_HOUR = 'TERMINATE_AT_INSTANCE_HOUR', TERMINATE_AT_TASK_COMPLETION = 'TERMINATE_AT_TASK_COMPLETION' }
 
-	export enum RepoUpgradeOnBoot { SECURITY = 0, NONE = 1 }
+	export enum RepoUpgradeOnBoot { SECURITY = 'SECURITY', NONE = 'NONE' }
 
 
 	/** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>. */
@@ -1550,7 +1550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementGroupStrategy { SPREAD = 0, PARTITION = 1, CLUSTER = 2, NONE = 3 }
+	export enum PlacementGroupStrategy { SPREAD = 'SPREAD', PARTITION = 'PARTITION', CLUSTER = 'CLUSTER', NONE = 'NONE' }
 
 
 	/** This input determines which cluster to describe. */
@@ -1691,7 +1691,7 @@ export namespace MyNS {
 
 
 	/** The type of instance. */
-	export enum JobFlowExecutionState { STARTING = 0, BOOTSTRAPPING = 1, RUNNING = 2, WAITING = 3, SHUTTING_DOWN = 4, TERMINATED = 5, COMPLETED = 6, FAILED = 7 }
+	export enum JobFlowExecutionState { STARTING = 'STARTING', BOOTSTRAPPING = 'BOOTSTRAPPING', RUNNING = 'RUNNING', WAITING = 'WAITING', SHUTTING_DOWN = 'SHUTTING_DOWN', TERMINATED = 'TERMINATED', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Specify the type of Amazon EC2 instances that the cluster (job flow) runs on. */
@@ -1841,7 +1841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceGroupState { PROVISIONING = 0, BOOTSTRAPPING = 1, RUNNING = 2, RECONFIGURING = 3, RESIZING = 4, SUSPENDED = 5, TERMINATING = 6, TERMINATED = 7, ARRESTED = 8, SHUTTING_DOWN = 9, ENDED = 10 }
+	export enum InstanceGroupState { PROVISIONING = 'PROVISIONING', BOOTSTRAPPING = 'BOOTSTRAPPING', RUNNING = 'RUNNING', RECONFIGURING = 'RECONFIGURING', RESIZING = 'RESIZING', SUSPENDED = 'SUSPENDED', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', ARRESTED = 'ARRESTED', SHUTTING_DOWN = 'SHUTTING_DOWN', ENDED = 'ENDED' }
 
 
 	/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
@@ -1918,7 +1918,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepExecutionState { PENDING = 0, RUNNING = 1, CONTINUE = 2, COMPLETED = 3, CANCELLED = 4, FAILED = 5, INTERRUPTED = 6 }
+	export enum StepExecutionState { PENDING = 'PENDING', RUNNING = 'RUNNING', CONTINUE = 'CONTINUE', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED', FAILED = 'FAILED', INTERRUPTED = 'INTERRUPTED' }
 
 
 	/** Reports the configuration of a bootstrap action in a cluster (job flow). */
@@ -2099,9 +2099,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionEngineType { EMR = 0 }
+	export enum ExecutionEngineType { EMR = 'EMR' }
 
-	export enum NotebookExecutionStatus { START_PENDING = 0, STARTING = 1, RUNNING = 2, FINISHING = 3, FINISHED = 4, FAILING = 5, FAILED = 6, STOP_PENDING = 7, STOPPING = 8, STOPPED = 9 }
+	export enum NotebookExecutionStatus { START_PENDING = 'START_PENDING', STARTING = 'STARTING', RUNNING = 'RUNNING', FINISHING = 'FINISHING', FINISHED = 'FINISHED', FAILING = 'FAILING', FAILED = 'FAILED', STOP_PENDING = 'STOP_PENDING', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** The Amazon S3 location that stores the notebook execution input. */
@@ -2143,7 +2143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputNotebookFormat { HTML = 0 }
+	export enum OutputNotebookFormat { HTML = 'HTML' }
 
 	export interface EnvironmentVariablesMap {
 	}
@@ -2367,7 +2367,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepState { PENDING = 0, CANCEL_PENDING = 1, RUNNING = 2, COMPLETED = 3, CANCELLED = 4, FAILED = 5, INTERRUPTED = 6 }
+	export enum StepState { PENDING = 'PENDING', CANCEL_PENDING = 'CANCEL_PENDING', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED', FAILED = 'FAILED', INTERRUPTED = 'INTERRUPTED' }
 
 
 	/** The details of the step state change reason. */
@@ -2389,7 +2389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepStateChangeReasonCode { NONE = 0 }
+	export enum StepStateChangeReasonCode { NONE = 'NONE' }
 
 
 	/** The details of the step failure. The service attempts to detect the root cause for many common failures. */
@@ -2839,7 +2839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeLimitsUnitType { InstanceFleetUnits = 0, Instances = 1, VCPU = 2 }
+	export enum ComputeLimitsUnitType { InstanceFleetUnits = 'InstanceFleetUnits', Instances = 'Instances', VCPU = 'VCPU' }
 
 	export interface GetManagedScalingPolicyInput {
 
@@ -3141,7 +3141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceFleetState { PROVISIONING = 0, BOOTSTRAPPING = 1, RUNNING = 2, RESIZING = 3, SUSPENDED = 4, TERMINATING = 5, TERMINATED = 6 }
+	export enum InstanceFleetState { PROVISIONING = 'PROVISIONING', BOOTSTRAPPING = 'BOOTSTRAPPING', RUNNING = 'RUNNING', RESIZING = 'RESIZING', SUSPENDED = 'SUSPENDED', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED' }
 
 
 	/** <p>Provides status change reason details for the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
@@ -3163,7 +3163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceFleetStateChangeReasonCode { INTERNAL_ERROR = 0, VALIDATION_ERROR = 1, INSTANCE_FAILURE = 2, CLUSTER_TERMINATED = 3 }
+	export enum InstanceFleetStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', VALIDATION_ERROR = 'VALIDATION_ERROR', INSTANCE_FAILURE = 'INSTANCE_FAILURE', CLUSTER_TERMINATED = 'CLUSTER_TERMINATED' }
 
 
 	/** <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
@@ -3468,7 +3468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoScalingPolicyState { PENDING = 0, ATTACHING = 1, ATTACHED = 2, DETACHING = 3, DETACHED = 4, FAILED = 5 }
+	export enum AutoScalingPolicyState { PENDING = 'PENDING', ATTACHING = 'ATTACHING', ATTACHED = 'ATTACHED', DETACHING = 'DETACHING', DETACHED = 'DETACHED', FAILED = 'FAILED' }
 
 
 	/** The reason for an <a>AutoScalingPolicyStatus</a> change. */
@@ -3490,7 +3490,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoScalingPolicyStateChangeReasonCode { USER_REQUEST = 0, PROVISION_FAILURE = 1, CLEANUP_FAILURE = 2 }
+	export enum AutoScalingPolicyStateChangeReasonCode { USER_REQUEST = 'USER_REQUEST', PROVISION_FAILURE = 'PROVISION_FAILURE', CLEANUP_FAILURE = 'CLEANUP_FAILURE' }
 
 
 	/** This input determines which instance groups to retrieve. */
@@ -3599,7 +3599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { AWAITING_FULFILLMENT = 0, PROVISIONING = 1, BOOTSTRAPPING = 2, RUNNING = 3, TERMINATED = 4 }
+	export enum InstanceState { AWAITING_FULFILLMENT = 'AWAITING_FULFILLMENT', PROVISIONING = 'PROVISIONING', BOOTSTRAPPING = 'BOOTSTRAPPING', RUNNING = 'RUNNING', TERMINATED = 'TERMINATED' }
 
 
 	/** The details of the status change reason for the instance. */
@@ -3621,7 +3621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceStateChangeReasonCode { INTERNAL_ERROR = 0, VALIDATION_ERROR = 1, INSTANCE_FAILURE = 2, BOOTSTRAP_FAILURE = 3, CLUSTER_TERMINATED = 4 }
+	export enum InstanceStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', VALIDATION_ERROR = 'VALIDATION_ERROR', INSTANCE_FAILURE = 'INSTANCE_FAILURE', BOOTSTRAP_FAILURE = 'BOOTSTRAP_FAILURE', CLUSTER_TERMINATED = 'CLUSTER_TERMINATED' }
 
 
 	/** The timeline of the instance lifecycle. */
@@ -3701,7 +3701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceGroupType { MASTER = 0, CORE = 1, TASK = 2 }
+	export enum InstanceGroupType { MASTER = 'MASTER', CORE = 'CORE', TASK = 'TASK' }
 
 	export interface ListNotebookExecutionsOutput {
 		NotebookExecutions?: Array<NotebookExecutionSummary>;
@@ -4285,7 +4285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReconfigurationType { OVERWRITE = 0, MERGE = 1 }
+	export enum ReconfigurationType { OVERWRITE = 'OVERWRITE', MERGE = 'MERGE' }
 
 	export interface PutAutoScalingPolicyOutput {
 		ClusterId?: string;
@@ -4958,9 +4958,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceRoleType { MASTER = 0, CORE = 1, TASK = 2 }
+	export enum InstanceRoleType { MASTER = 'MASTER', CORE = 'CORE', TASK = 'TASK' }
 
-	export enum InstanceGroupStateChangeReasonCode { INTERNAL_ERROR = 0, VALIDATION_ERROR = 1, INSTANCE_FAILURE = 2, CLUSTER_TERMINATED = 3 }
+	export enum InstanceGroupStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', VALIDATION_ERROR = 'VALIDATION_ERROR', INSTANCE_FAILURE = 'INSTANCE_FAILURE', CLUSTER_TERMINATED = 'CLUSTER_TERMINATED' }
 
 	@Injectable()
 	export class MyClient {
@@ -5467,113 +5467,113 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddInstanceFleetX_Amz_Target { 'ElasticMapReduce.AddInstanceFleet' = 0 }
+	export enum AddInstanceFleetX_Amz_Target { 'ElasticMapReduce.AddInstanceFleet' = 'ElasticMapReduce.AddInstanceFleet' }
 
-	export enum AddInstanceGroupsX_Amz_Target { 'ElasticMapReduce.AddInstanceGroups' = 0 }
+	export enum AddInstanceGroupsX_Amz_Target { 'ElasticMapReduce.AddInstanceGroups' = 'ElasticMapReduce.AddInstanceGroups' }
 
-	export enum AddJobFlowStepsX_Amz_Target { 'ElasticMapReduce.AddJobFlowSteps' = 0 }
+	export enum AddJobFlowStepsX_Amz_Target { 'ElasticMapReduce.AddJobFlowSteps' = 'ElasticMapReduce.AddJobFlowSteps' }
 
-	export enum AddTagsX_Amz_Target { 'ElasticMapReduce.AddTags' = 0 }
+	export enum AddTagsX_Amz_Target { 'ElasticMapReduce.AddTags' = 'ElasticMapReduce.AddTags' }
 
-	export enum CancelStepsX_Amz_Target { 'ElasticMapReduce.CancelSteps' = 0 }
+	export enum CancelStepsX_Amz_Target { 'ElasticMapReduce.CancelSteps' = 'ElasticMapReduce.CancelSteps' }
 
-	export enum CreateSecurityConfigurationX_Amz_Target { 'ElasticMapReduce.CreateSecurityConfiguration' = 0 }
+	export enum CreateSecurityConfigurationX_Amz_Target { 'ElasticMapReduce.CreateSecurityConfiguration' = 'ElasticMapReduce.CreateSecurityConfiguration' }
 
-	export enum CreateStudioX_Amz_Target { 'ElasticMapReduce.CreateStudio' = 0 }
+	export enum CreateStudioX_Amz_Target { 'ElasticMapReduce.CreateStudio' = 'ElasticMapReduce.CreateStudio' }
 
-	export enum CreateStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.CreateStudioSessionMapping' = 0 }
+	export enum CreateStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.CreateStudioSessionMapping' = 'ElasticMapReduce.CreateStudioSessionMapping' }
 
-	export enum DeleteSecurityConfigurationX_Amz_Target { 'ElasticMapReduce.DeleteSecurityConfiguration' = 0 }
+	export enum DeleteSecurityConfigurationX_Amz_Target { 'ElasticMapReduce.DeleteSecurityConfiguration' = 'ElasticMapReduce.DeleteSecurityConfiguration' }
 
-	export enum DeleteStudioX_Amz_Target { 'ElasticMapReduce.DeleteStudio' = 0 }
+	export enum DeleteStudioX_Amz_Target { 'ElasticMapReduce.DeleteStudio' = 'ElasticMapReduce.DeleteStudio' }
 
-	export enum DeleteStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.DeleteStudioSessionMapping' = 0 }
+	export enum DeleteStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.DeleteStudioSessionMapping' = 'ElasticMapReduce.DeleteStudioSessionMapping' }
 
-	export enum DescribeClusterX_Amz_Target { 'ElasticMapReduce.DescribeCluster' = 0 }
+	export enum DescribeClusterX_Amz_Target { 'ElasticMapReduce.DescribeCluster' = 'ElasticMapReduce.DescribeCluster' }
 
-	export enum DescribeJobFlowsX_Amz_Target { 'ElasticMapReduce.DescribeJobFlows' = 0 }
+	export enum DescribeJobFlowsX_Amz_Target { 'ElasticMapReduce.DescribeJobFlows' = 'ElasticMapReduce.DescribeJobFlows' }
 
-	export enum DescribeNotebookExecutionX_Amz_Target { 'ElasticMapReduce.DescribeNotebookExecution' = 0 }
+	export enum DescribeNotebookExecutionX_Amz_Target { 'ElasticMapReduce.DescribeNotebookExecution' = 'ElasticMapReduce.DescribeNotebookExecution' }
 
-	export enum DescribeReleaseLabelX_Amz_Target { 'ElasticMapReduce.DescribeReleaseLabel' = 0 }
+	export enum DescribeReleaseLabelX_Amz_Target { 'ElasticMapReduce.DescribeReleaseLabel' = 'ElasticMapReduce.DescribeReleaseLabel' }
 
-	export enum DescribeSecurityConfigurationX_Amz_Target { 'ElasticMapReduce.DescribeSecurityConfiguration' = 0 }
+	export enum DescribeSecurityConfigurationX_Amz_Target { 'ElasticMapReduce.DescribeSecurityConfiguration' = 'ElasticMapReduce.DescribeSecurityConfiguration' }
 
-	export enum DescribeStepX_Amz_Target { 'ElasticMapReduce.DescribeStep' = 0 }
+	export enum DescribeStepX_Amz_Target { 'ElasticMapReduce.DescribeStep' = 'ElasticMapReduce.DescribeStep' }
 
-	export enum DescribeStudioX_Amz_Target { 'ElasticMapReduce.DescribeStudio' = 0 }
+	export enum DescribeStudioX_Amz_Target { 'ElasticMapReduce.DescribeStudio' = 'ElasticMapReduce.DescribeStudio' }
 
-	export enum GetAutoTerminationPolicyX_Amz_Target { 'ElasticMapReduce.GetAutoTerminationPolicy' = 0 }
+	export enum GetAutoTerminationPolicyX_Amz_Target { 'ElasticMapReduce.GetAutoTerminationPolicy' = 'ElasticMapReduce.GetAutoTerminationPolicy' }
 
-	export enum GetBlockPublicAccessConfigurationX_Amz_Target { 'ElasticMapReduce.GetBlockPublicAccessConfiguration' = 0 }
+	export enum GetBlockPublicAccessConfigurationX_Amz_Target { 'ElasticMapReduce.GetBlockPublicAccessConfiguration' = 'ElasticMapReduce.GetBlockPublicAccessConfiguration' }
 
-	export enum GetClusterSessionCredentialsX_Amz_Target { 'ElasticMapReduce.GetClusterSessionCredentials' = 0 }
+	export enum GetClusterSessionCredentialsX_Amz_Target { 'ElasticMapReduce.GetClusterSessionCredentials' = 'ElasticMapReduce.GetClusterSessionCredentials' }
 
-	export enum GetManagedScalingPolicyX_Amz_Target { 'ElasticMapReduce.GetManagedScalingPolicy' = 0 }
+	export enum GetManagedScalingPolicyX_Amz_Target { 'ElasticMapReduce.GetManagedScalingPolicy' = 'ElasticMapReduce.GetManagedScalingPolicy' }
 
-	export enum GetStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.GetStudioSessionMapping' = 0 }
+	export enum GetStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.GetStudioSessionMapping' = 'ElasticMapReduce.GetStudioSessionMapping' }
 
-	export enum ListBootstrapActionsX_Amz_Target { 'ElasticMapReduce.ListBootstrapActions' = 0 }
+	export enum ListBootstrapActionsX_Amz_Target { 'ElasticMapReduce.ListBootstrapActions' = 'ElasticMapReduce.ListBootstrapActions' }
 
-	export enum ListClustersX_Amz_Target { 'ElasticMapReduce.ListClusters' = 0 }
+	export enum ListClustersX_Amz_Target { 'ElasticMapReduce.ListClusters' = 'ElasticMapReduce.ListClusters' }
 
-	export enum ListInstanceFleetsX_Amz_Target { 'ElasticMapReduce.ListInstanceFleets' = 0 }
+	export enum ListInstanceFleetsX_Amz_Target { 'ElasticMapReduce.ListInstanceFleets' = 'ElasticMapReduce.ListInstanceFleets' }
 
-	export enum ListInstanceGroupsX_Amz_Target { 'ElasticMapReduce.ListInstanceGroups' = 0 }
+	export enum ListInstanceGroupsX_Amz_Target { 'ElasticMapReduce.ListInstanceGroups' = 'ElasticMapReduce.ListInstanceGroups' }
 
-	export enum ListInstancesX_Amz_Target { 'ElasticMapReduce.ListInstances' = 0 }
+	export enum ListInstancesX_Amz_Target { 'ElasticMapReduce.ListInstances' = 'ElasticMapReduce.ListInstances' }
 
-	export enum ListNotebookExecutionsX_Amz_Target { 'ElasticMapReduce.ListNotebookExecutions' = 0 }
+	export enum ListNotebookExecutionsX_Amz_Target { 'ElasticMapReduce.ListNotebookExecutions' = 'ElasticMapReduce.ListNotebookExecutions' }
 
-	export enum ListReleaseLabelsX_Amz_Target { 'ElasticMapReduce.ListReleaseLabels' = 0 }
+	export enum ListReleaseLabelsX_Amz_Target { 'ElasticMapReduce.ListReleaseLabels' = 'ElasticMapReduce.ListReleaseLabels' }
 
-	export enum ListSecurityConfigurationsX_Amz_Target { 'ElasticMapReduce.ListSecurityConfigurations' = 0 }
+	export enum ListSecurityConfigurationsX_Amz_Target { 'ElasticMapReduce.ListSecurityConfigurations' = 'ElasticMapReduce.ListSecurityConfigurations' }
 
-	export enum ListStepsX_Amz_Target { 'ElasticMapReduce.ListSteps' = 0 }
+	export enum ListStepsX_Amz_Target { 'ElasticMapReduce.ListSteps' = 'ElasticMapReduce.ListSteps' }
 
-	export enum ListStudioSessionMappingsX_Amz_Target { 'ElasticMapReduce.ListStudioSessionMappings' = 0 }
+	export enum ListStudioSessionMappingsX_Amz_Target { 'ElasticMapReduce.ListStudioSessionMappings' = 'ElasticMapReduce.ListStudioSessionMappings' }
 
-	export enum ListStudiosX_Amz_Target { 'ElasticMapReduce.ListStudios' = 0 }
+	export enum ListStudiosX_Amz_Target { 'ElasticMapReduce.ListStudios' = 'ElasticMapReduce.ListStudios' }
 
-	export enum ListSupportedInstanceTypesX_Amz_Target { 'ElasticMapReduce.ListSupportedInstanceTypes' = 0 }
+	export enum ListSupportedInstanceTypesX_Amz_Target { 'ElasticMapReduce.ListSupportedInstanceTypes' = 'ElasticMapReduce.ListSupportedInstanceTypes' }
 
-	export enum ModifyClusterX_Amz_Target { 'ElasticMapReduce.ModifyCluster' = 0 }
+	export enum ModifyClusterX_Amz_Target { 'ElasticMapReduce.ModifyCluster' = 'ElasticMapReduce.ModifyCluster' }
 
-	export enum ModifyInstanceFleetX_Amz_Target { 'ElasticMapReduce.ModifyInstanceFleet' = 0 }
+	export enum ModifyInstanceFleetX_Amz_Target { 'ElasticMapReduce.ModifyInstanceFleet' = 'ElasticMapReduce.ModifyInstanceFleet' }
 
-	export enum ModifyInstanceGroupsX_Amz_Target { 'ElasticMapReduce.ModifyInstanceGroups' = 0 }
+	export enum ModifyInstanceGroupsX_Amz_Target { 'ElasticMapReduce.ModifyInstanceGroups' = 'ElasticMapReduce.ModifyInstanceGroups' }
 
-	export enum PutAutoScalingPolicyX_Amz_Target { 'ElasticMapReduce.PutAutoScalingPolicy' = 0 }
+	export enum PutAutoScalingPolicyX_Amz_Target { 'ElasticMapReduce.PutAutoScalingPolicy' = 'ElasticMapReduce.PutAutoScalingPolicy' }
 
-	export enum PutAutoTerminationPolicyX_Amz_Target { 'ElasticMapReduce.PutAutoTerminationPolicy' = 0 }
+	export enum PutAutoTerminationPolicyX_Amz_Target { 'ElasticMapReduce.PutAutoTerminationPolicy' = 'ElasticMapReduce.PutAutoTerminationPolicy' }
 
-	export enum PutBlockPublicAccessConfigurationX_Amz_Target { 'ElasticMapReduce.PutBlockPublicAccessConfiguration' = 0 }
+	export enum PutBlockPublicAccessConfigurationX_Amz_Target { 'ElasticMapReduce.PutBlockPublicAccessConfiguration' = 'ElasticMapReduce.PutBlockPublicAccessConfiguration' }
 
-	export enum PutManagedScalingPolicyX_Amz_Target { 'ElasticMapReduce.PutManagedScalingPolicy' = 0 }
+	export enum PutManagedScalingPolicyX_Amz_Target { 'ElasticMapReduce.PutManagedScalingPolicy' = 'ElasticMapReduce.PutManagedScalingPolicy' }
 
-	export enum RemoveAutoScalingPolicyX_Amz_Target { 'ElasticMapReduce.RemoveAutoScalingPolicy' = 0 }
+	export enum RemoveAutoScalingPolicyX_Amz_Target { 'ElasticMapReduce.RemoveAutoScalingPolicy' = 'ElasticMapReduce.RemoveAutoScalingPolicy' }
 
-	export enum RemoveAutoTerminationPolicyX_Amz_Target { 'ElasticMapReduce.RemoveAutoTerminationPolicy' = 0 }
+	export enum RemoveAutoTerminationPolicyX_Amz_Target { 'ElasticMapReduce.RemoveAutoTerminationPolicy' = 'ElasticMapReduce.RemoveAutoTerminationPolicy' }
 
-	export enum RemoveManagedScalingPolicyX_Amz_Target { 'ElasticMapReduce.RemoveManagedScalingPolicy' = 0 }
+	export enum RemoveManagedScalingPolicyX_Amz_Target { 'ElasticMapReduce.RemoveManagedScalingPolicy' = 'ElasticMapReduce.RemoveManagedScalingPolicy' }
 
-	export enum RemoveTagsX_Amz_Target { 'ElasticMapReduce.RemoveTags' = 0 }
+	export enum RemoveTagsX_Amz_Target { 'ElasticMapReduce.RemoveTags' = 'ElasticMapReduce.RemoveTags' }
 
-	export enum RunJobFlowX_Amz_Target { 'ElasticMapReduce.RunJobFlow' = 0 }
+	export enum RunJobFlowX_Amz_Target { 'ElasticMapReduce.RunJobFlow' = 'ElasticMapReduce.RunJobFlow' }
 
-	export enum SetTerminationProtectionX_Amz_Target { 'ElasticMapReduce.SetTerminationProtection' = 0 }
+	export enum SetTerminationProtectionX_Amz_Target { 'ElasticMapReduce.SetTerminationProtection' = 'ElasticMapReduce.SetTerminationProtection' }
 
-	export enum SetVisibleToAllUsersX_Amz_Target { 'ElasticMapReduce.SetVisibleToAllUsers' = 0 }
+	export enum SetVisibleToAllUsersX_Amz_Target { 'ElasticMapReduce.SetVisibleToAllUsers' = 'ElasticMapReduce.SetVisibleToAllUsers' }
 
-	export enum StartNotebookExecutionX_Amz_Target { 'ElasticMapReduce.StartNotebookExecution' = 0 }
+	export enum StartNotebookExecutionX_Amz_Target { 'ElasticMapReduce.StartNotebookExecution' = 'ElasticMapReduce.StartNotebookExecution' }
 
-	export enum StopNotebookExecutionX_Amz_Target { 'ElasticMapReduce.StopNotebookExecution' = 0 }
+	export enum StopNotebookExecutionX_Amz_Target { 'ElasticMapReduce.StopNotebookExecution' = 'ElasticMapReduce.StopNotebookExecution' }
 
-	export enum TerminateJobFlowsX_Amz_Target { 'ElasticMapReduce.TerminateJobFlows' = 0 }
+	export enum TerminateJobFlowsX_Amz_Target { 'ElasticMapReduce.TerminateJobFlows' = 'ElasticMapReduce.TerminateJobFlows' }
 
-	export enum UpdateStudioX_Amz_Target { 'ElasticMapReduce.UpdateStudio' = 0 }
+	export enum UpdateStudioX_Amz_Target { 'ElasticMapReduce.UpdateStudio' = 'ElasticMapReduce.UpdateStudio' }
 
-	export enum UpdateStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.UpdateStudioSessionMapping' = 0 }
+	export enum UpdateStudioSessionMappingX_Amz_Target { 'ElasticMapReduce.UpdateStudioSessionMapping' = 'ElasticMapReduce.UpdateStudioSessionMapping' }
 
 }
 

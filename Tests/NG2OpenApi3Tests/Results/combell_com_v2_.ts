@@ -254,7 +254,7 @@ export namespace MyNS {
 
 
 	/** Types of anti-spam scanning */
-	export enum AntiSpamTypes { none = 0, advanced = 1, basic = 2 }
+	export enum AntiSpamTypes { none = 'none', advanced = 'advanced', basic = 'basic' }
 
 
 	/** The application pool for the hosting account. */
@@ -289,7 +289,7 @@ export namespace MyNS {
 
 
 	/** Asset types */
-	export enum AssetType { domain = 0, linux_hosting = 1, mysql = 2, dns = 3, mailbox = 4, windows_hosting = 5 }
+	export enum AssetType { domain = 'domain', linux_hosting = 'linux_hosting', mysql = 'mysql', dns = 'dns', mailbox = 'mailbox', windows_hosting = 'windows_hosting' }
 
 	export interface AutoForward {
 
@@ -705,9 +705,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateSslCertificateRequestCertificate_type { standard = 0, multi_domain = 1, wildcard = 2 }
+	export enum CreateSslCertificateRequestCertificate_type { standard = 'standard', multi_domain = 'multi_domain', wildcard = 'wildcard' }
 
-	export enum CreateSslCertificateRequestValidation_level { domain_validated = 0, organization_validated = 1, extended_validated = 2 }
+	export enum CreateSslCertificateRequestValidation_level { domain_validated = 'domain_validated', organization_validated = 'organization_validated', extended_validated = 'extended_validated' }
 
 	export interface DnsRecord {
 
@@ -1416,7 +1416,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinuxHostingDetailIp_type { dedicated = 0, shared = 1 }
+	export enum LinuxHostingDetailIp_type { dedicated = 'dedicated', shared = 'shared' }
 
 	export interface LinuxSite {
 
@@ -1468,7 +1468,7 @@ export namespace MyNS {
 
 
 	/** Type of the hosting IP address (dedicated or shared) */
-	export enum LinuxIpType { dedicated = 0, shared = 1 }
+	export enum LinuxIpType { dedicated = 'dedicated', shared = 'shared' }
 
 	export interface MailZone {
 
@@ -1702,7 +1702,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MySqlUserRights { read_and_write = 0, read_only = 1 }
+	export enum MySqlUserRights { read_and_write = 'read_and_write', read_only = 'read_only' }
 
 	export interface PhpVersion {
 
@@ -1766,11 +1766,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisioningJobInfoStatus { ongoing = 0, cancelled = 1, failed = 2, finished = 3 }
+	export enum ProvisioningJobInfoStatus { ongoing = 'ongoing', cancelled = 'cancelled', failed = 'failed', finished = 'finished' }
 
 
 	/** Current job status */
-	export enum ProvisioningJobStatus { ongoing = 0, cancelled = 1, failed = 2, finished = 3 }
+	export enum ProvisioningJobStatus { ongoing = 'ongoing', cancelled = 'cancelled', failed = 'failed', finished = 'finished' }
 
 	export interface RegisterDomain {
 
@@ -2280,14 +2280,14 @@ export namespace MyNS {
 
 	}
 
-	export enum SslSubjectAltNameType { dns = 0, ip = 1 }
+	export enum SslSubjectAltNameType { dns = 'dns', ip = 'ip' }
 
 
 	/**
 	 * The file format of the returned file stream:
 	 * <ul><li>PFX: Also known as PKCS #12, is a single, password protected certificate archive that contains the entire certificate chain plus the matching private key.</li></ul>
 	 */
-	export enum SslCertificateFileFormat { pfx = 0 }
+	export enum SslCertificateFileFormat { pfx = 'pfx' }
 
 	export interface SslCertificateRequest {
 
@@ -2353,7 +2353,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslCertificateRequestVendor { sectigo = 0 }
+	export enum SslCertificateRequestVendor { sectigo = 'sectigo' }
 
 	export interface SslCertificateRequestDetail {
 
@@ -2490,25 +2490,25 @@ export namespace MyNS {
 
 	}
 
-	export enum SslCertificateRequestValidationType { dns = 0, file = 1, email = 2 }
+	export enum SslCertificateRequestValidationType { dns = 'dns', file = 'file', email = 'email' }
 
 
 	/**
 	 * The type of the certificate:
 	 * <ul><li>Standard: Certificate for a single domain.</li><li>Multi domain: Certificate for multiple (sub)domains belonging to the same owner.</li><li>Wildcard: Certificate for all the subdomains.</li></ul>
 	 */
-	export enum SslCertificateType { standard = 0, multi_domain = 1, wildcard = 2 }
+	export enum SslCertificateType { standard = 'standard', multi_domain = 'multi_domain', wildcard = 'wildcard' }
 
 
 	/**
 	 * The validation level of the certificate:
 	 * <ul><li>Domain validated: Basic check of the identity of the owner of the domain name.</li><li>Organization validated: Company details are verified and integrated in the certificate.</li><li>Extended validated: A thorough verification of your domain name and company details.</li></ul>
 	 */
-	export enum SslCertificateValidationLevel { domain_validated = 0, organization_validated = 1, extended_validated = 2 }
+	export enum SslCertificateValidationLevel { domain_validated = 'domain_validated', organization_validated = 'organization_validated', extended_validated = 'extended_validated' }
 
 
 	/** The vendor of the certificate. */
-	export enum SslCertificateVendor { sectigo = 0 }
+	export enum SslCertificateVendor { sectigo = 'sectigo' }
 
 	export interface TransferDomain {
 
@@ -2697,7 +2697,7 @@ export namespace MyNS {
 
 
 	/** User rights */
-	export enum UserRights { read_and_write = 0, read_only = 1 }
+	export enum UserRights { read_and_write = 'read_and_write', read_only = 'read_only' }
 
 	export interface WindowsHosting {
 
@@ -2820,7 +2820,7 @@ export namespace MyNS {
 
 
 	/** Type of the hosting IP address (dedicated or shared) */
-	export enum WindowsIpType { dedicated = 0, shared = 1 }
+	export enum WindowsIpType { dedicated = 'dedicated', shared = 'shared' }
 
 	@Injectable()
 	export class MyClient {

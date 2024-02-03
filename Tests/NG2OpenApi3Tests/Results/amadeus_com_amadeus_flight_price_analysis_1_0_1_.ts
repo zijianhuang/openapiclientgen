@@ -382,9 +382,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Itinerary_price_metricPriceMetricsQuartileRanking { MINIMUM = 0, FIRST = 1, MEDIUM = 2, THIRD = 3, MAXIMUM = 4 }
+	export enum Itinerary_price_metricPriceMetricsQuartileRanking { MINIMUM = 'MINIMUM', FIRST = 'FIRST', MEDIUM = 'MEDIUM', THIRD = 'THIRD', MAXIMUM = 'MAXIMUM' }
 
-	export enum Itinerary_price_metricTransportType { FLIGHT = 0 }
+	export enum Itinerary_price_metricTransportType { FLIGHT = 'FLIGHT' }
 
 	@Injectable()
 	export class MyClient {

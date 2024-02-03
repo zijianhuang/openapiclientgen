@@ -62,9 +62,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CollectionStatus { CREATING = 0, DELETING = 1, ACTIVE = 2, FAILED = 3 }
+	export enum CollectionStatus { CREATING = 'CREATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
-	export enum CollectionType { SEARCH = 0, TIMESERIES = 1, VECTORSEARCH = 2 }
+	export enum CollectionType { SEARCH = 'SEARCH', TIMESERIES = 'TIMESERIES', VECTORSEARCH = 'VECTORSEARCH' }
 
 
 	/** Error information for an OpenSearch Serverless request. */
@@ -167,7 +167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpcEndpointStatus { PENDING = 0, DELETING = 1, ACTIVE = 2, FAILED = 3 }
+	export enum VpcEndpointStatus { PENDING = 'PENDING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** Error information for a failed <code>BatchGetVpcEndpoint</code> request. */
@@ -259,7 +259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessPolicyType { data = 0 }
+	export enum AccessPolicyType { data = 'data' }
 
 	export interface CreateAccessPolicyRequest {
 		clientToken?: string;
@@ -509,7 +509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityConfigType { saml = 0 }
+	export enum SecurityConfigType { saml = 'saml' }
 
 	export interface CreateSecurityConfigRequest {
 		clientToken?: string;
@@ -586,7 +586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPolicyType { encryption = 0, network = 1 }
+	export enum SecurityPolicyType { encryption = 'encryption', network = 'network' }
 
 	export interface CreateSecurityPolicyRequest {
 		clientToken?: string;
@@ -2191,67 +2191,67 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchGetCollectionX_Amz_Target { 'OpenSearchServerless.BatchGetCollection' = 0 }
+	export enum BatchGetCollectionX_Amz_Target { 'OpenSearchServerless.BatchGetCollection' = 'OpenSearchServerless.BatchGetCollection' }
 
-	export enum BatchGetVpcEndpointX_Amz_Target { 'OpenSearchServerless.BatchGetVpcEndpoint' = 0 }
+	export enum BatchGetVpcEndpointX_Amz_Target { 'OpenSearchServerless.BatchGetVpcEndpoint' = 'OpenSearchServerless.BatchGetVpcEndpoint' }
 
-	export enum CreateAccessPolicyX_Amz_Target { 'OpenSearchServerless.CreateAccessPolicy' = 0 }
+	export enum CreateAccessPolicyX_Amz_Target { 'OpenSearchServerless.CreateAccessPolicy' = 'OpenSearchServerless.CreateAccessPolicy' }
 
-	export enum CreateCollectionX_Amz_Target { 'OpenSearchServerless.CreateCollection' = 0 }
+	export enum CreateCollectionX_Amz_Target { 'OpenSearchServerless.CreateCollection' = 'OpenSearchServerless.CreateCollection' }
 
-	export enum CreateSecurityConfigX_Amz_Target { 'OpenSearchServerless.CreateSecurityConfig' = 0 }
+	export enum CreateSecurityConfigX_Amz_Target { 'OpenSearchServerless.CreateSecurityConfig' = 'OpenSearchServerless.CreateSecurityConfig' }
 
-	export enum CreateSecurityPolicyX_Amz_Target { 'OpenSearchServerless.CreateSecurityPolicy' = 0 }
+	export enum CreateSecurityPolicyX_Amz_Target { 'OpenSearchServerless.CreateSecurityPolicy' = 'OpenSearchServerless.CreateSecurityPolicy' }
 
-	export enum CreateVpcEndpointX_Amz_Target { 'OpenSearchServerless.CreateVpcEndpoint' = 0 }
+	export enum CreateVpcEndpointX_Amz_Target { 'OpenSearchServerless.CreateVpcEndpoint' = 'OpenSearchServerless.CreateVpcEndpoint' }
 
-	export enum DeleteAccessPolicyX_Amz_Target { 'OpenSearchServerless.DeleteAccessPolicy' = 0 }
+	export enum DeleteAccessPolicyX_Amz_Target { 'OpenSearchServerless.DeleteAccessPolicy' = 'OpenSearchServerless.DeleteAccessPolicy' }
 
-	export enum DeleteCollectionX_Amz_Target { 'OpenSearchServerless.DeleteCollection' = 0 }
+	export enum DeleteCollectionX_Amz_Target { 'OpenSearchServerless.DeleteCollection' = 'OpenSearchServerless.DeleteCollection' }
 
-	export enum DeleteSecurityConfigX_Amz_Target { 'OpenSearchServerless.DeleteSecurityConfig' = 0 }
+	export enum DeleteSecurityConfigX_Amz_Target { 'OpenSearchServerless.DeleteSecurityConfig' = 'OpenSearchServerless.DeleteSecurityConfig' }
 
-	export enum DeleteSecurityPolicyX_Amz_Target { 'OpenSearchServerless.DeleteSecurityPolicy' = 0 }
+	export enum DeleteSecurityPolicyX_Amz_Target { 'OpenSearchServerless.DeleteSecurityPolicy' = 'OpenSearchServerless.DeleteSecurityPolicy' }
 
-	export enum DeleteVpcEndpointX_Amz_Target { 'OpenSearchServerless.DeleteVpcEndpoint' = 0 }
+	export enum DeleteVpcEndpointX_Amz_Target { 'OpenSearchServerless.DeleteVpcEndpoint' = 'OpenSearchServerless.DeleteVpcEndpoint' }
 
-	export enum GetAccessPolicyX_Amz_Target { 'OpenSearchServerless.GetAccessPolicy' = 0 }
+	export enum GetAccessPolicyX_Amz_Target { 'OpenSearchServerless.GetAccessPolicy' = 'OpenSearchServerless.GetAccessPolicy' }
 
-	export enum GetAccountSettingsX_Amz_Target { 'OpenSearchServerless.GetAccountSettings' = 0 }
+	export enum GetAccountSettingsX_Amz_Target { 'OpenSearchServerless.GetAccountSettings' = 'OpenSearchServerless.GetAccountSettings' }
 
-	export enum GetPoliciesStatsX_Amz_Target { 'OpenSearchServerless.GetPoliciesStats' = 0 }
+	export enum GetPoliciesStatsX_Amz_Target { 'OpenSearchServerless.GetPoliciesStats' = 'OpenSearchServerless.GetPoliciesStats' }
 
-	export enum GetSecurityConfigX_Amz_Target { 'OpenSearchServerless.GetSecurityConfig' = 0 }
+	export enum GetSecurityConfigX_Amz_Target { 'OpenSearchServerless.GetSecurityConfig' = 'OpenSearchServerless.GetSecurityConfig' }
 
-	export enum GetSecurityPolicyX_Amz_Target { 'OpenSearchServerless.GetSecurityPolicy' = 0 }
+	export enum GetSecurityPolicyX_Amz_Target { 'OpenSearchServerless.GetSecurityPolicy' = 'OpenSearchServerless.GetSecurityPolicy' }
 
-	export enum ListAccessPoliciesX_Amz_Target { 'OpenSearchServerless.ListAccessPolicies' = 0 }
+	export enum ListAccessPoliciesX_Amz_Target { 'OpenSearchServerless.ListAccessPolicies' = 'OpenSearchServerless.ListAccessPolicies' }
 
-	export enum ListCollectionsX_Amz_Target { 'OpenSearchServerless.ListCollections' = 0 }
+	export enum ListCollectionsX_Amz_Target { 'OpenSearchServerless.ListCollections' = 'OpenSearchServerless.ListCollections' }
 
-	export enum ListSecurityConfigsX_Amz_Target { 'OpenSearchServerless.ListSecurityConfigs' = 0 }
+	export enum ListSecurityConfigsX_Amz_Target { 'OpenSearchServerless.ListSecurityConfigs' = 'OpenSearchServerless.ListSecurityConfigs' }
 
-	export enum ListSecurityPoliciesX_Amz_Target { 'OpenSearchServerless.ListSecurityPolicies' = 0 }
+	export enum ListSecurityPoliciesX_Amz_Target { 'OpenSearchServerless.ListSecurityPolicies' = 'OpenSearchServerless.ListSecurityPolicies' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'OpenSearchServerless.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'OpenSearchServerless.ListTagsForResource' = 'OpenSearchServerless.ListTagsForResource' }
 
-	export enum ListVpcEndpointsX_Amz_Target { 'OpenSearchServerless.ListVpcEndpoints' = 0 }
+	export enum ListVpcEndpointsX_Amz_Target { 'OpenSearchServerless.ListVpcEndpoints' = 'OpenSearchServerless.ListVpcEndpoints' }
 
-	export enum TagResourceX_Amz_Target { 'OpenSearchServerless.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'OpenSearchServerless.TagResource' = 'OpenSearchServerless.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'OpenSearchServerless.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'OpenSearchServerless.UntagResource' = 'OpenSearchServerless.UntagResource' }
 
-	export enum UpdateAccessPolicyX_Amz_Target { 'OpenSearchServerless.UpdateAccessPolicy' = 0 }
+	export enum UpdateAccessPolicyX_Amz_Target { 'OpenSearchServerless.UpdateAccessPolicy' = 'OpenSearchServerless.UpdateAccessPolicy' }
 
-	export enum UpdateAccountSettingsX_Amz_Target { 'OpenSearchServerless.UpdateAccountSettings' = 0 }
+	export enum UpdateAccountSettingsX_Amz_Target { 'OpenSearchServerless.UpdateAccountSettings' = 'OpenSearchServerless.UpdateAccountSettings' }
 
-	export enum UpdateCollectionX_Amz_Target { 'OpenSearchServerless.UpdateCollection' = 0 }
+	export enum UpdateCollectionX_Amz_Target { 'OpenSearchServerless.UpdateCollection' = 'OpenSearchServerless.UpdateCollection' }
 
-	export enum UpdateSecurityConfigX_Amz_Target { 'OpenSearchServerless.UpdateSecurityConfig' = 0 }
+	export enum UpdateSecurityConfigX_Amz_Target { 'OpenSearchServerless.UpdateSecurityConfig' = 'OpenSearchServerless.UpdateSecurityConfig' }
 
-	export enum UpdateSecurityPolicyX_Amz_Target { 'OpenSearchServerless.UpdateSecurityPolicy' = 0 }
+	export enum UpdateSecurityPolicyX_Amz_Target { 'OpenSearchServerless.UpdateSecurityPolicy' = 'OpenSearchServerless.UpdateSecurityPolicy' }
 
-	export enum UpdateVpcEndpointX_Amz_Target { 'OpenSearchServerless.UpdateVpcEndpoint' = 0 }
+	export enum UpdateVpcEndpointX_Amz_Target { 'OpenSearchServerless.UpdateVpcEndpoint' = 'OpenSearchServerless.UpdateVpcEndpoint' }
 
 }
 

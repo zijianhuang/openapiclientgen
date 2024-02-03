@@ -315,9 +315,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BehaviorCountry { co = 0, ve = 1, cl = 2, mx = 3, pe = 4, do = 5, sv = 6, gt = 7, bo = 8, cr = 9, ec = 10, pa = 11, br = 12 }
+	export enum BehaviorCountry { co = 'co', ve = 've', cl = 'cl', mx = 'mx', pe = 'pe', do = 'do', sv = 'sv', gt = 'gt', bo = 'bo', cr = 'cr', ec = 'ec', pa = 'pa', br = 'br' }
 
-	export enum BehaviorDocument_type { 'national-id' = 0, passport = 1, 'foreign-id' = 2, nit = 3, 'diplomatic-id' = 4, 'civil-registration' = 5, 'identity-card' = 6, 'foreigner-card' = 7, 'professional-card' = 8, 'military-card' = 9, pep = 10, nis = 11, dni = 12, rui = 13, 'license-plate' = 14, query = 15, name = 16, rut = 17, nuip = 18, 'foreign-societies' = 19, escrow = 20, 'individual-registration' = 21, 'general-registration' = 22, curp = 23, dui = 24, 'driver-license' = 25, ruc = 26 }
+	export enum BehaviorDocument_type { 'national-id' = 'national-id', passport = 'passport', 'foreign-id' = 'foreign-id', nit = 'nit', 'diplomatic-id' = 'diplomatic-id', 'civil-registration' = 'civil-registration', 'identity-card' = 'identity-card', 'foreigner-card' = 'foreigner-card', 'professional-card' = 'professional-card', 'military-card' = 'military-card', pep = 'pep', nis = 'nis', dni = 'dni', rui = 'rui', 'license-plate' = 'license-plate', query = 'query', name = 'name', rut = 'rut', nuip = 'nuip', 'foreign-societies' = 'foreign-societies', escrow = 'escrow', 'individual-registration' = 'individual-registration', 'general-registration' = 'general-registration', curp = 'curp', dui = 'dui', 'driver-license' = 'driver-license', ruc = 'ruc' }
 
 
 	/** Represents behaviour search results */
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckCountry { ALL = 0, BR = 1, CL = 2, CO = 3, CR = 4, EC = 5, MX = 6, PE = 7, AR = 8 }
+	export enum CheckCountry { ALL = 'ALL', BR = 'BR', CL = 'CL', CO = 'CO', CR = 'CR', EC = 'EC', MX = 'MX', PE = 'PE', AR = 'AR' }
 
 
 	/** Represents dataset scores. A score is a number between 0 and 1 that indicates how trustworthy the person, vehicle, or company is accordig to the result of the background check. Severity represents the risk associated with each dataset according to the background check. Keep in mind that you should use either the score or the severity but not both */
@@ -907,19 +907,19 @@ export namespace MyNS {
 
 	}
 
-	export enum ScoreDetailResult { pending = 0, found = 1, not_found = 2, error = 3, delayed = 4, ignored = 5 }
+	export enum ScoreDetailResult { pending = 'pending', found = 'found', not_found = 'not_found', error = 'error', delayed = 'delayed', ignored = 'ignored' }
 
-	export enum ScoreDetailSeverity { unknown = 0, none = 1, very_low = 2, low = 3, medium = 4, high = 5, very_high = 6 }
+	export enum ScoreDetailSeverity { unknown = 'unknown', none = 'none', very_low = 'very_low', low = 'low', medium = 'medium', high = 'high', very_high = 'very_high' }
 
-	export enum ScoreData_set { affiliations_and_insurances = 0, alert_in_media = 1, behavior = 2, business_background = 3, criminal_record = 4, driving_licenses = 5, international_background = 6, legal_background = 7, personal_identity = 8, professional_background = 9, traffic_fines = 10, vehicle_information = 11, vehicle_permits = 12, taxes_and_finances = 13 }
+	export enum ScoreData_set { affiliations_and_insurances = 'affiliations_and_insurances', alert_in_media = 'alert_in_media', behavior = 'behavior', business_background = 'business_background', criminal_record = 'criminal_record', driving_licenses = 'driving_licenses', international_background = 'international_background', legal_background = 'legal_background', personal_identity = 'personal_identity', professional_background = 'professional_background', traffic_fines = 'traffic_fines', vehicle_information = 'vehicle_information', vehicle_permits = 'vehicle_permits', taxes_and_finances = 'taxes_and_finances' }
 
-	export enum ScoreSeverity { unknown = 0, none = 1, very_low = 2, low = 3, medium = 4, high = 5, very_high = 6 }
+	export enum ScoreSeverity { unknown = 'unknown', none = 'none', very_low = 'very_low', low = 'low', medium = 'medium', high = 'high', very_high = 'very_high' }
 
-	export enum CheckNative_country { ad = 0, ae = 1, af = 2, ag = 3, ai = 4, al = 5, am = 6, an = 7, ao = 8, aq = 9, ar = 10, as = 11, at = 12, au = 13, aw = 14, ax = 15, az = 16, ba = 17, bb = 18, bd = 19, be = 20, bf = 21, bg = 22, bh = 23, bi = 24, bj = 25, bm = 26, bn = 27, bo = 28, br = 29, bs = 30, bt = 31, bv = 32, bw = 33, by = 34, bz = 35, ca = 36, cc = 37, cd = 38, cf = 39, cg = 40, ch = 41, ci = 42, ck = 43, cl = 44, cm = 45, cn = 46, co = 47, cr = 48, cu = 49, cv = 50, cx = 51, cy = 52, cz = 53, de = 54, dj = 55, dk = 56, dm = 57, do = 58, dz = 59, ea = 60, ec = 61, ee = 62, eg = 63, eh = 64, er = 65, es = 66, et = 67, fi = 68, fj = 69, fk = 70, fm = 71, fo = 72, fr = 73, ga = 74, gb = 75, gd = 76, ge = 77, gf = 78, gg = 79, gh = 80, gi = 81, gl = 82, gm = 83, gn = 84, gp = 85, gq = 86, gr = 87, gs = 88, gt = 89, gu = 90, gw = 91, gy = 92, hk = 93, hm = 94, hn = 95, hr = 96, ht = 97, hu = 98, id = 99, ie = 100, il = 101, im = 102, in = 103, io = 104, iq = 105, ir = 106, is = 107, it = 108, je = 109, jm = 110, jo = 111, jp = 112, ke = 113, kg = 114, kh = 115, ki = 116, km = 117, kn = 118, kp = 119, kr = 120, kw = 121, ky = 122, kz = 123, la = 124, lb = 125, lc = 126, li = 127, lk = 128, lr = 129, ls = 130, lt = 131, lu = 132, lv = 133, ly = 134, ma = 135, mc = 136, md = 137, me = 138, mg = 139, mh = 140, mk = 141, ml = 142, mm = 143, mn = 144, mo = 145, mp = 146, mq = 147, mr = 148, ms = 149, mt = 150, mu = 151, mv = 152, mw = 153, mx = 154, my = 155, mz = 156, na = 157, nc = 158, ne = 159, nf = 160, ng = 161, ni = 162, nl = 163, no = 164, np = 165, nr = 166, nu = 167, nz = 168, om = 169, pa = 170, pe = 171, pf = 172, pg = 173, ph = 174, pk = 175, pl = 176, pm = 177, pn = 178, pr = 179, ps = 180, pt = 181, pw = 182, py = 183, qa = 184, re = 185, ro = 186, rs = 187, ru = 188, rw = 189, sa = 190, sb = 191, sc = 192, sd = 193, se = 194, sg = 195, sh = 196, si = 197, sj = 198, sk = 199, sl = 200, sm = 201, sn = 202, so = 203, sr = 204, st = 205, sv = 206, sy = 207, sz = 208, tc = 209, td = 210, tf = 211, tg = 212, th = 213, tj = 214, tk = 215, tl = 216, tm = 217, tn = 218, to = 219, tr = 220, tt = 221, tv = 222, tw = 223, tz = 224, ua = 225, ug = 226, um = 227, us = 228, uy = 229, uz = 230, va = 231, vc = 232, ve = 233, vg = 234, vi = 235, vn = 236, vu = 237, wf = 238, ws = 239, ye = 240, yt = 241, za = 242, zm = 243, zw = 244 }
+	export enum CheckNative_country { ad = 'ad', ae = 'ae', af = 'af', ag = 'ag', ai = 'ai', al = 'al', am = 'am', an = 'an', ao = 'ao', aq = 'aq', ar = 'ar', as = 'as', at = 'at', au = 'au', aw = 'aw', ax = 'ax', az = 'az', ba = 'ba', bb = 'bb', bd = 'bd', be = 'be', bf = 'bf', bg = 'bg', bh = 'bh', bi = 'bi', bj = 'bj', bm = 'bm', bn = 'bn', bo = 'bo', br = 'br', bs = 'bs', bt = 'bt', bv = 'bv', bw = 'bw', by = 'by', bz = 'bz', ca = 'ca', cc = 'cc', cd = 'cd', cf = 'cf', cg = 'cg', ch = 'ch', ci = 'ci', ck = 'ck', cl = 'cl', cm = 'cm', cn = 'cn', co = 'co', cr = 'cr', cu = 'cu', cv = 'cv', cx = 'cx', cy = 'cy', cz = 'cz', de = 'de', dj = 'dj', dk = 'dk', dm = 'dm', do = 'do', dz = 'dz', ea = 'ea', ec = 'ec', ee = 'ee', eg = 'eg', eh = 'eh', er = 'er', es = 'es', et = 'et', fi = 'fi', fj = 'fj', fk = 'fk', fm = 'fm', fo = 'fo', fr = 'fr', ga = 'ga', gb = 'gb', gd = 'gd', ge = 'ge', gf = 'gf', gg = 'gg', gh = 'gh', gi = 'gi', gl = 'gl', gm = 'gm', gn = 'gn', gp = 'gp', gq = 'gq', gr = 'gr', gs = 'gs', gt = 'gt', gu = 'gu', gw = 'gw', gy = 'gy', hk = 'hk', hm = 'hm', hn = 'hn', hr = 'hr', ht = 'ht', hu = 'hu', id = 'id', ie = 'ie', il = 'il', im = 'im', in = 'in', io = 'io', iq = 'iq', ir = 'ir', is = 'is', it = 'it', je = 'je', jm = 'jm', jo = 'jo', jp = 'jp', ke = 'ke', kg = 'kg', kh = 'kh', ki = 'ki', km = 'km', kn = 'kn', kp = 'kp', kr = 'kr', kw = 'kw', ky = 'ky', kz = 'kz', la = 'la', lb = 'lb', lc = 'lc', li = 'li', lk = 'lk', lr = 'lr', ls = 'ls', lt = 'lt', lu = 'lu', lv = 'lv', ly = 'ly', ma = 'ma', mc = 'mc', md = 'md', me = 'me', mg = 'mg', mh = 'mh', mk = 'mk', ml = 'ml', mm = 'mm', mn = 'mn', mo = 'mo', mp = 'mp', mq = 'mq', mr = 'mr', ms = 'ms', mt = 'mt', mu = 'mu', mv = 'mv', mw = 'mw', mx = 'mx', my = 'my', mz = 'mz', na = 'na', nc = 'nc', ne = 'ne', nf = 'nf', ng = 'ng', ni = 'ni', nl = 'nl', no = 'no', np = 'np', nr = 'nr', nu = 'nu', nz = 'nz', om = 'om', pa = 'pa', pe = 'pe', pf = 'pf', pg = 'pg', ph = 'ph', pk = 'pk', pl = 'pl', pm = 'pm', pn = 'pn', pr = 'pr', ps = 'ps', pt = 'pt', pw = 'pw', py = 'py', qa = 'qa', re = 're', ro = 'ro', rs = 'rs', ru = 'ru', rw = 'rw', sa = 'sa', sb = 'sb', sc = 'sc', sd = 'sd', se = 'se', sg = 'sg', sh = 'sh', si = 'si', sj = 'sj', sk = 'sk', sl = 'sl', sm = 'sm', sn = 'sn', so = 'so', sr = 'sr', st = 'st', sv = 'sv', sy = 'sy', sz = 'sz', tc = 'tc', td = 'td', tf = 'tf', tg = 'tg', th = 'th', tj = 'tj', tk = 'tk', tl = 'tl', tm = 'tm', tn = 'tn', to = 'to', tr = 'tr', tt = 'tt', tv = 'tv', tw = 'tw', tz = 'tz', ua = 'ua', ug = 'ug', um = 'um', us = 'us', uy = 'uy', uz = 'uz', va = 'va', vc = 'vc', ve = 've', vg = 'vg', vi = 'vi', vn = 'vn', vu = 'vu', wf = 'wf', ws = 'ws', ye = 'ye', yt = 'yt', za = 'za', zm = 'zm', zw = 'zw' }
 
-	export enum CheckRegion { DF = 0, AC = 1, AL = 2, AP = 3, AM = 4, BA = 5, CE = 6, ES = 7, GO = 8, MA = 9, MT = 10, MS = 11, MG = 12, PA = 13, PB = 14, PR = 15, PE = 16, PI = 17, RJ = 18, RN = 19, RS = 20, RO = 21, RR = 22, SC = 23, SP = 24, SE = 25, TO = 26 }
+	export enum CheckRegion { DF = 'DF', AC = 'AC', AL = 'AL', AP = 'AP', AM = 'AM', BA = 'BA', CE = 'CE', ES = 'ES', GO = 'GO', MA = 'MA', MT = 'MT', MS = 'MS', MG = 'MG', PA = 'PA', PB = 'PB', PR = 'PR', PE = 'PE', PI = 'PI', RJ = 'RJ', RN = 'RN', RS = 'RS', RO = 'RO', RR = 'RR', SC = 'SC', SP = 'SP', SE = 'SE', TO = 'TO' }
 
-	export enum CheckStatus { not_started = 0, in_progress = 1, completed = 2, error = 3, delayed = 4 }
+	export enum CheckStatus { not_started = 'not_started', in_progress = 'in_progress', completed = 'completed', error = 'error', delayed = 'delayed' }
 
 
 	/** Represents the status of databases used to generate background checks */
@@ -966,7 +966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusStatus { not_started = 0, completed = 1, expired = 2, error = 3, delayed = 4, skipped = 5 }
+	export enum StatusStatus { not_started = 'not_started', completed = 'completed', expired = 'expired', error = 'error', delayed = 'delayed', skipped = 'skipped' }
 
 
 	/** Represents a background check summary */
@@ -1037,11 +1037,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SummaryGender { male = 0, female = 1 }
+	export enum SummaryGender { male = 'male', female = 'female' }
 
-	export enum SummaryIdentity_status { found = 0, not_found = 1, dead = 2 }
+	export enum SummaryIdentity_status { found = 'found', not_found = 'not_found', dead = 'dead' }
 
-	export enum CheckType { company = 0, person = 1, vehicle = 2 }
+	export enum CheckType { company = 'company', person = 'person', vehicle = 'vehicle' }
 
 
 	/** Represents the summary of a vehicle background check */
@@ -1169,7 +1169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WrongInputInput { document_expedition_date = 0 }
+	export enum WrongInputInput { document_expedition_date = 'document_expedition_date' }
 
 
 	/** Represents background check details */
@@ -1282,9 +1282,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckDetailsGroup { profile = 0, legal = 1, affiliations = 2, vehicle = 3, global = 4, media = 5, unknown = 6 }
+	export enum CheckDetailsGroup { profile = 'profile', legal = 'legal', affiliations = 'affiliations', vehicle = 'vehicle', global = 'global', media = 'media', unknown = 'unknown' }
 
-	export enum CheckDetailsResult { pending = 0, found = 1, not_found = 2, error = 3 }
+	export enum CheckDetailsResult { pending = 'pending', found = 'found', not_found = 'not_found', error = 'error' }
 
 
 	/** Represents a table to lay out search results */
@@ -1852,7 +1852,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContinuousCheckContinuousCheckStatus { new = 0, up = 1, down = 2, same = 3 }
+	export enum ContinuousCheckContinuousCheckStatus { new = 'new', up = 'up', down = 'down', same = 'same' }
 
 
 	/** Represents to changelog entry of a continuous check */
@@ -2107,11 +2107,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateBehaviorInputCountry { co = 0, ve = 1, cl = 2, mx = 3, pe = 4, do = 5, sv = 6, gt = 7, bo = 8, cr = 9, ec = 10, pa = 11, br = 12 }
+	export enum CreateBehaviorInputCountry { co = 'co', ve = 've', cl = 'cl', mx = 'mx', pe = 'pe', do = 'do', sv = 'sv', gt = 'gt', bo = 'bo', cr = 'cr', ec = 'ec', pa = 'pa', br = 'br' }
 
-	export enum CreateBehaviorInputDocument_type { 'national-id' = 0, passport = 1, 'foreign-id' = 2, nit = 3, 'diplomatic-id' = 4, 'civil-registration' = 5, 'identity-card' = 6, 'foreigner-card' = 7, 'professional-card' = 8, 'military-card' = 9, pep = 10, nis = 11, dni = 12, rui = 13, 'license-plate' = 14, query = 15, name = 16, rut = 17, nuip = 18, 'foreign-societies' = 19, escrow = 20, 'individual-registration' = 21, 'general-registration' = 22, curp = 23, dui = 24, 'driver-license' = 25, ruc = 26 }
+	export enum CreateBehaviorInputDocument_type { 'national-id' = 'national-id', passport = 'passport', 'foreign-id' = 'foreign-id', nit = 'nit', 'diplomatic-id' = 'diplomatic-id', 'civil-registration' = 'civil-registration', 'identity-card' = 'identity-card', 'foreigner-card' = 'foreigner-card', 'professional-card' = 'professional-card', 'military-card' = 'military-card', pep = 'pep', nis = 'nis', dni = 'dni', rui = 'rui', 'license-plate' = 'license-plate', query = 'query', name = 'name', rut = 'rut', nuip = 'nuip', 'foreign-societies' = 'foreign-societies', escrow = 'escrow', 'individual-registration' = 'individual-registration', 'general-registration' = 'general-registration', curp = 'curp', dui = 'dui', 'driver-license' = 'driver-license', ruc = 'ruc' }
 
-	export enum CreateBehaviorInputReason { rape = 0, 'drug-dealer' = 1, 'sexual-harassment' = 2, theft = 3, fights = 4, 'aggressive-behaviour' = 5, 'identity-fraud' = 6, drunk = 7, 'drug-possession' = 8, absences = 9, tardiness = 10, 'confidentiality-breach' = 11, 'good-reputation' = 12 }
+	export enum CreateBehaviorInputReason { rape = 'rape', 'drug-dealer' = 'drug-dealer', 'sexual-harassment' = 'sexual-harassment', theft = 'theft', fights = 'fights', 'aggressive-behaviour' = 'aggressive-behaviour', 'identity-fraud' = 'identity-fraud', drunk = 'drunk', 'drug-possession' = 'drug-possession', absences = 'absences', tardiness = 'tardiness', 'confidentiality-breach' = 'confidentiality-breach', 'good-reputation' = 'good-reputation' }
 
 
 	/** Represents paramaters required to create a background check */
@@ -2363,7 +2363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateCheckInputType { person = 0, vehicle = 1, company = 2, custom_type_name = 3 }
+	export enum CreateCheckInputType { person = 'person', vehicle = 'vehicle', company = 'company', custom_type_name = 'custom_type_name' }
 
 
 	/** Represents paramaters required to create a comment */
@@ -2630,13 +2630,13 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateHookInputEvent_type { all = 0, check = 1, continuous_check = 2 }
+	export enum CreateHookInputEvent_type { all = 'all', check = 'check', continuous_check = 'continuous_check' }
 
-	export enum CreateHookInputStatus { enabled = 0, disabled = 1 }
+	export enum CreateHookInputStatus { enabled = 'enabled', disabled = 'disabled' }
 
-	export enum CreateHookInputSubscriber_language { af = 0, ar = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, fi = 9, fr = 10, he = 11, hi = 12, hr = 13, hu = 14, id = 15, it = 16, ja = 17, ko = 18, ms = 19, nb = 20, nl = 21, pl = 22, pt = 23, 'pr-BR' = 24, ro = 25, ru = 26, sv = 27, th = 28, tl = 29, tr = 30, vi = 31, zh = 32, 'zh-CN' = 33, 'zh-HK' = 34 }
+	export enum CreateHookInputSubscriber_language { af = 'af', ar = 'ar', ca = 'ca', cs = 'cs', da = 'da', de = 'de', el = 'el', en = 'en', es = 'es', fi = 'fi', fr = 'fr', he = 'he', hi = 'hi', hr = 'hr', hu = 'hu', id = 'id', it = 'it', ja = 'ja', ko = 'ko', ms = 'ms', nb = 'nb', nl = 'nl', pl = 'pl', pt = 'pt', 'pr-BR' = 'pr-BR', ro = 'ro', ru = 'ru', sv = 'sv', th = 'th', tl = 'tl', tr = 'tr', vi = 'vi', zh = 'zh', 'zh-CN' = 'zh-CN', 'zh-HK' = 'zh-HK' }
 
-	export enum CreateHookInputSubscriber_type { web = 0, email = 1 }
+	export enum CreateHookInputSubscriber_type { web = 'web', email = 'email' }
 
 
 	/** Represents paramaters required to create a report */
@@ -2731,9 +2731,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateRuleInputLevel { danger = 0, warning = 1, success = 2, info = 3 }
+	export enum CreateRuleInputLevel { danger = 'danger', warning = 'warning', success = 'success', info = 'info' }
 
-	export enum CreateRuleInputOperation { '==' = 0, '>=' = 1, '>' = 2, '<' = 3, '<=' = 4 }
+	export enum CreateRuleInputOperation { '==' = '==', '>=' = '>=', '>' = '>', '<' = '<', '<=' = '<=' }
 
 
 	/** Represents the inputs required to create a user for an API-key version */
@@ -3090,7 +3090,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HookEvent_type { all = 0, check = 1 }
+	export enum HookEvent_type { all = 'all', check = 'check' }
 
 
 	/** Represents the output of lists hooks request. */
@@ -3405,9 +3405,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleLevel { danger = 0, warning = 1, success = 2, info = 3 }
+	export enum RuleLevel { danger = 'danger', warning = 'warning', success = 'success', info = 'info' }
 
-	export enum RuleOperation { '==' = 0, '>=' = 1, '>' = 2, '<' = 3, '<=' = 4 }
+	export enum RuleOperation { '==' = '==', '>=' = '>=', '>' = '>', '<' = '<', '<=' = '<=' }
 
 
 	/** Represents the result of a rule search */
@@ -3635,7 +3635,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserUser_status { FORCE_CHANGE_PASSWORD = 0, CONFIRMED = 1 }
+	export enum UserUser_status { FORCE_CHANGE_PASSWORD = 'FORCE_CHANGE_PASSWORD', CONFIRMED = 'CONFIRMED' }
 
 	@Injectable()
 	export class MyClient {
@@ -3813,9 +3813,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateCheckTruora_Priority { low = 0, medium = 1, high = 2 }
+	export enum CreateCheckTruora_Priority { low = 'low', medium = 'medium', high = 'high' }
 
-	export enum DeleteCustomTypeCountry { BR = 0, CL = 1, CO = 2, CR = 3, EC = 4, MX = 5, PE = 6, ALL = 7 }
+	export enum DeleteCustomTypeCountry { BR = 'BR', CL = 'CL', CO = 'CO', CR = 'CR', EC = 'EC', MX = 'MX', PE = 'PE', ALL = 'ALL' }
 
 }
 

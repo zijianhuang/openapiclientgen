@@ -30,9 +30,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationInfoAggregationInterval { AGGREGATION_INTERVAL_UNSPECIFIED = 0, DAILY = 1, MONTHLY = 2 }
+	export enum AggregationInfoAggregationInterval { AGGREGATION_INTERVAL_UNSPECIFIED = 'AGGREGATION_INTERVAL_UNSPECIFIED', DAILY = 'DAILY', MONTHLY = 'MONTHLY' }
 
-	export enum AggregationInfoAggregationLevel { AGGREGATION_LEVEL_UNSPECIFIED = 0, ACCOUNT = 1, PROJECT = 2 }
+	export enum AggregationInfoAggregationLevel { AGGREGATION_LEVEL_UNSPECIFIED = 'AGGREGATION_LEVEL_UNSPECIFIED', ACCOUNT = 'ACCOUNT', PROJECT = 'PROJECT' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** A billing account in the [Google Cloud Console](https://console.cloud.google.com/). You can assign a billing account to one or more projects. */
@@ -268,7 +268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoTaxonomyType { TYPE_UNSPECIFIED = 0, GLOBAL = 1, REGIONAL = 2, MULTI_REGIONAL = 3 }
+	export enum GeoTaxonomyType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GLOBAL = 'GLOBAL', REGIONAL = 'REGIONAL', MULTI_REGIONAL = 'MULTI_REGIONAL' }
 
 
 	/** Response message for `ListBillingAccounts`. */

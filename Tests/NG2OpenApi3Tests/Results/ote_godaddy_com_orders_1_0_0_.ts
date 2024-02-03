@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressCountry { AC = 0, AD = 1, AE = 2, AF = 3, AG = 4, AI = 5, AL = 6, AM = 7, AO = 8, AQ = 9, AR = 10, AS = 11, AT = 12, AU = 13, AW = 14, AX = 15, AZ = 16, BA = 17, BB = 18, BD = 19, BE = 20, BF = 21, BG = 22, BH = 23, BI = 24, BJ = 25, BM = 26, BN = 27, BO = 28, BQ = 29, BR = 30, BS = 31, BT = 32, BV = 33, BW = 34, BY = 35, BZ = 36, CA = 37, CC = 38, CD = 39, CF = 40, CG = 41, CH = 42, CI = 43, CK = 44, CL = 45, CM = 46, CN = 47, CO = 48, CR = 49, CV = 50, CW = 51, CX = 52, CY = 53, CZ = 54, DE = 55, DJ = 56, DK = 57, DM = 58, DO = 59, DZ = 60, EC = 61, EE = 62, EG = 63, EH = 64, ER = 65, ES = 66, ET = 67, FI = 68, FJ = 69, FK = 70, FM = 71, FO = 72, FR = 73, GA = 74, GB = 75, GD = 76, GE = 77, GF = 78, GG = 79, GH = 80, GI = 81, GL = 82, GM = 83, GN = 84, GP = 85, GQ = 86, GR = 87, GS = 88, GT = 89, GU = 90, GW = 91, GY = 92, HK = 93, HM = 94, HN = 95, HR = 96, HT = 97, HU = 98, ID = 99, IE = 100, IL = 101, IM = 102, IN = 103, IO = 104, IQ = 105, IS = 106, IT = 107, JE = 108, JM = 109, JO = 110, JP = 111, KE = 112, KG = 113, KH = 114, KI = 115, KM = 116, KN = 117, KR = 118, KV = 119, KW = 120, KY = 121, KZ = 122, LA = 123, LB = 124, LC = 125, LI = 126, LK = 127, LR = 128, LS = 129, LT = 130, LU = 131, LV = 132, LY = 133, MA = 134, MC = 135, MD = 136, ME = 137, MG = 138, MH = 139, MK = 140, ML = 141, MM = 142, MN = 143, MO = 144, MP = 145, MQ = 146, MR = 147, MS = 148, MT = 149, MU = 150, MV = 151, MW = 152, MX = 153, MY = 154, MZ = 155, NA = 156, NC = 157, NE = 158, NF = 159, NG = 160, NI = 161, NL = 162, NO = 163, NP = 164, NR = 165, NU = 166, NZ = 167, OM = 168, PA = 169, PE = 170, PF = 171, PG = 172, PH = 173, PK = 174, PL = 175, PM = 176, PN = 177, PR = 178, PS = 179, PT = 180, PW = 181, PY = 182, QA = 183, RE = 184, RO = 185, RS = 186, RU = 187, RW = 188, SA = 189, SB = 190, SC = 191, SE = 192, SG = 193, SH = 194, SI = 195, SJ = 196, SK = 197, SL = 198, SM = 199, SN = 200, SO = 201, SR = 202, ST = 203, SV = 204, SX = 205, SZ = 206, TC = 207, TD = 208, TF = 209, TG = 210, TH = 211, TJ = 212, TK = 213, TL = 214, TM = 215, TN = 216, TO = 217, TP = 218, TR = 219, TT = 220, TV = 221, TW = 222, TZ = 223, UA = 224, UG = 225, UM = 226, US = 227, UY = 228, UZ = 229, VA = 230, VC = 231, VE = 232, VG = 233, VI = 234, VN = 235, VU = 236, WF = 237, WS = 238, YE = 239, YT = 240, ZA = 241, ZM = 242, ZW = 243 }
+	export enum AddressCountry { AC = 'AC', AD = 'AD', AE = 'AE', AF = 'AF', AG = 'AG', AI = 'AI', AL = 'AL', AM = 'AM', AO = 'AO', AQ = 'AQ', AR = 'AR', AS = 'AS', AT = 'AT', AU = 'AU', AW = 'AW', AX = 'AX', AZ = 'AZ', BA = 'BA', BB = 'BB', BD = 'BD', BE = 'BE', BF = 'BF', BG = 'BG', BH = 'BH', BI = 'BI', BJ = 'BJ', BM = 'BM', BN = 'BN', BO = 'BO', BQ = 'BQ', BR = 'BR', BS = 'BS', BT = 'BT', BV = 'BV', BW = 'BW', BY = 'BY', BZ = 'BZ', CA = 'CA', CC = 'CC', CD = 'CD', CF = 'CF', CG = 'CG', CH = 'CH', CI = 'CI', CK = 'CK', CL = 'CL', CM = 'CM', CN = 'CN', CO = 'CO', CR = 'CR', CV = 'CV', CW = 'CW', CX = 'CX', CY = 'CY', CZ = 'CZ', DE = 'DE', DJ = 'DJ', DK = 'DK', DM = 'DM', DO = 'DO', DZ = 'DZ', EC = 'EC', EE = 'EE', EG = 'EG', EH = 'EH', ER = 'ER', ES = 'ES', ET = 'ET', FI = 'FI', FJ = 'FJ', FK = 'FK', FM = 'FM', FO = 'FO', FR = 'FR', GA = 'GA', GB = 'GB', GD = 'GD', GE = 'GE', GF = 'GF', GG = 'GG', GH = 'GH', GI = 'GI', GL = 'GL', GM = 'GM', GN = 'GN', GP = 'GP', GQ = 'GQ', GR = 'GR', GS = 'GS', GT = 'GT', GU = 'GU', GW = 'GW', GY = 'GY', HK = 'HK', HM = 'HM', HN = 'HN', HR = 'HR', HT = 'HT', HU = 'HU', ID = 'ID', IE = 'IE', IL = 'IL', IM = 'IM', IN = 'IN', IO = 'IO', IQ = 'IQ', IS = 'IS', IT = 'IT', JE = 'JE', JM = 'JM', JO = 'JO', JP = 'JP', KE = 'KE', KG = 'KG', KH = 'KH', KI = 'KI', KM = 'KM', KN = 'KN', KR = 'KR', KV = 'KV', KW = 'KW', KY = 'KY', KZ = 'KZ', LA = 'LA', LB = 'LB', LC = 'LC', LI = 'LI', LK = 'LK', LR = 'LR', LS = 'LS', LT = 'LT', LU = 'LU', LV = 'LV', LY = 'LY', MA = 'MA', MC = 'MC', MD = 'MD', ME = 'ME', MG = 'MG', MH = 'MH', MK = 'MK', ML = 'ML', MM = 'MM', MN = 'MN', MO = 'MO', MP = 'MP', MQ = 'MQ', MR = 'MR', MS = 'MS', MT = 'MT', MU = 'MU', MV = 'MV', MW = 'MW', MX = 'MX', MY = 'MY', MZ = 'MZ', NA = 'NA', NC = 'NC', NE = 'NE', NF = 'NF', NG = 'NG', NI = 'NI', NL = 'NL', NO = 'NO', NP = 'NP', NR = 'NR', NU = 'NU', NZ = 'NZ', OM = 'OM', PA = 'PA', PE = 'PE', PF = 'PF', PG = 'PG', PH = 'PH', PK = 'PK', PL = 'PL', PM = 'PM', PN = 'PN', PR = 'PR', PS = 'PS', PT = 'PT', PW = 'PW', PY = 'PY', QA = 'QA', RE = 'RE', RO = 'RO', RS = 'RS', RU = 'RU', RW = 'RW', SA = 'SA', SB = 'SB', SC = 'SC', SE = 'SE', SG = 'SG', SH = 'SH', SI = 'SI', SJ = 'SJ', SK = 'SK', SL = 'SL', SM = 'SM', SN = 'SN', SO = 'SO', SR = 'SR', ST = 'ST', SV = 'SV', SX = 'SX', SZ = 'SZ', TC = 'TC', TD = 'TD', TF = 'TF', TG = 'TG', TH = 'TH', TJ = 'TJ', TK = 'TK', TL = 'TL', TM = 'TM', TN = 'TN', TO = 'TO', TP = 'TP', TR = 'TR', TT = 'TT', TV = 'TV', TW = 'TW', TZ = 'TZ', UA = 'UA', UG = 'UG', UM = 'UM', US = 'US', UY = 'UY', UZ = 'UZ', VA = 'VA', VC = 'VC', VE = 'VE', VG = 'VG', VI = 'VI', VN = 'VN', VU = 'VU', WF = 'WF', WS = 'WS', YE = 'YE', YT = 'YT', ZA = 'ZA', ZM = 'ZM', ZW = 'ZW' }
 
 	export interface BillTo {
 
@@ -345,7 +345,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineItemPeriodUnit { MONTH = 0, QUARTER = 1, SEMI_ANNUAL = 2, YEAR = 3, ONE_TIME = 4 }
+	export enum LineItemPeriodUnit { MONTH = 'MONTH', QUARTER = 'QUARTER', SEMI_ANNUAL = 'SEMI_ANNUAL', YEAR = 'YEAR', ONE_TIME = 'ONE_TIME' }
 
 	export interface LineItemPricing {
 
@@ -735,9 +735,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentCategory { CREDIT_CARD = 0, PAYPAL = 1, ACH = 2, GIFT_CARD = 3, IN_STORE_CREDIT = 4, PREPAID = 5 }
+	export enum PaymentCategory { CREDIT_CARD = 'CREDIT_CARD', PAYPAL = 'PAYPAL', ACH = 'ACH', GIFT_CARD = 'GIFT_CARD', IN_STORE_CREDIT = 'IN_STORE_CREDIT', PREPAID = 'PREPAID' }
 
-	export enum PaymentSubcategory { CHECKING_PERSONAL = 0, CHECKING_BUSINESS = 1, VISA = 2, MASTER_CARD = 3, AMEX = 4, JCB = 5, UNIONPAY = 6 }
+	export enum PaymentSubcategory { CHECKING_PERSONAL = 'CHECKING_PERSONAL', CHECKING_BUSINESS = 'CHECKING_BUSINESS', VISA = 'VISA', MASTER_CARD = 'MASTER_CARD', AMEX = 'AMEX', JCB = 'JCB', UNIONPAY = 'UNIONPAY' }
 
 	export interface OrderFee {
 
@@ -1060,7 +1060,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListSort { createdAt = 0, '-createdAt' = 1, orderId = 2, '-orderId' = 3, 'pricing.total' = 4, '-pricing.total' = 5 }
+	export enum ListSort { createdAt = 'createdAt', '-createdAt' = '-createdAt', orderId = 'orderId', '-orderId' = '-orderId', 'pricing.total' = 'pricing.total', '-pricing.total' = '-pricing.total' }
 
 }
 

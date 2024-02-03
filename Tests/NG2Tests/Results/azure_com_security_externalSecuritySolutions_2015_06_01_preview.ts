@@ -20,7 +20,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AadConnectivityStateConnectivityState { Discovered = 0, NotLicensed = 1, Connected = 2 }
+	export enum AadConnectivityStateConnectivityState { Discovered = 'Discovered', NotLicensed = 'NotLicensed', Connected = 'Connected' }
 
 
 	/** Represents an AAD identity protection solution which sends logs to an OMS workspace. */
@@ -161,7 +161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalSecuritySolutionKindKind { CEF = 0, ATA = 1, AAD = 2 }
+	export enum ExternalSecuritySolutionKindKind { CEF = 'CEF', ATA = 'ATA', AAD = 'AAD' }
 
 	export interface ExternalSecuritySolutionList {
 

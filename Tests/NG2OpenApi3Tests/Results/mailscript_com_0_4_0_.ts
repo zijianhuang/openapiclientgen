@@ -177,9 +177,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionAliasRequestConfigType { alias = 0 }
+	export enum AddActionAliasRequestConfigType { alias = 'alias' }
 
-	export enum AddActionAliasRequestType { 'mailscript-email' = 0 }
+	export enum AddActionAliasRequestType { 'mailscript-email' = 'mailscript-email' }
 
 	export interface AddActionCombineRequest {
 
@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionDaemonRequestType { daemon = 0 }
+	export enum AddActionDaemonRequestType { daemon = 'daemon' }
 
 	export interface AddActionForwardRequest {
 
@@ -315,7 +315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionForwardRequestConfigType { forward = 0 }
+	export enum AddActionForwardRequestConfigType { forward = 'forward' }
 
 	export interface AddActionReplyAllRequest {
 
@@ -381,7 +381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionReplyAllRequestConfigType { replyAll = 0 }
+	export enum AddActionReplyAllRequestConfigType { replyAll = 'replyAll' }
 
 	export interface AddActionReplyRequest {
 
@@ -447,7 +447,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionReplyRequestConfigType { reply = 0 }
+	export enum AddActionReplyRequestConfigType { reply = 'reply' }
 
 	export interface AddActionResponse {
 
@@ -536,7 +536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionSendRequestConfigType { send = 0 }
+	export enum AddActionSendRequestConfigType { send = 'send' }
 
 	export interface AddActionSmsRequest {
 
@@ -589,7 +589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionSmsRequestType { sms = 0 }
+	export enum AddActionSmsRequestType { sms = 'sms' }
 
 	export interface AddActionWebhookRequest {
 
@@ -669,9 +669,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AddActionWebhookRequestConfigOptsMethod { POST = 0, GET = 1, DELETE = 2 }
+	export enum AddActionWebhookRequestConfigOptsMethod { POST = 'POST', GET = 'GET', DELETE = 'DELETE' }
 
-	export enum AddActionWebhookRequestType { webhook = 0 }
+	export enum AddActionWebhookRequestType { webhook = 'webhook' }
 
 	export interface AddAddressRequest {
 
@@ -731,7 +731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddEmailVerificationRequestType { email = 0 }
+	export enum AddEmailVerificationRequestType { email = 'email' }
 
 	export interface AddKeyRequest {
 
@@ -1241,7 +1241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationType { google = 0 }
+	export enum IntegrationType { google = 'google' }
 
 	export interface Key {
 
@@ -1378,7 +1378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MailscriptEmailInputType { 'mailescript-email' = 0 }
+	export enum MailscriptEmailInputType { 'mailescript-email' = 'mailescript-email' }
 
 	export interface SendRequest {
 

@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** additional service type */
-	export enum AdditionalServiceType { CHECKED_BAGS = 0, MEALS = 1, SEATS = 2, OTHER_SERVICES = 3 }
+	export enum AdditionalServiceType { CHECKED_BAGS = 'CHECKED_BAGS', MEALS = 'MEALS', SEATS = 'SEATS', OTHER_SERVICES = 'OTHER_SERVICES' }
 
 	export interface AircraftEntry {
 		key?: string | null;
@@ -124,7 +124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Co2EmissionCabin { ECONOMY = 0, PREMIUM_ECONOMY = 1, BUSINESS = 2, FIRST = 3 }
+	export enum Co2EmissionCabin { ECONOMY = 'ECONOMY', PREMIUM_ECONOMY = 'PREMIUM_ECONOMY', BUSINESS = 'BUSINESS', FIRST = 'FIRST' }
 
 	export interface Collection_Meta {
 		count?: number | null;
@@ -172,7 +172,7 @@ export namespace MyNS {
 
 
 	/** part of the trip covered by the travel class restriction (ALL_SEGMENTS if ommited) */
-	export enum Coverage { MOST_SEGMENTS = 0, AT_LEAST_ONE_SEGMENT = 1, ALL_SEGMENTS = 2 }
+	export enum Coverage { MOST_SEGMENTS = 'MOST_SEGMENTS', AT_LEAST_ONE_SEGMENT = 'AT_LEAST_ONE_SEGMENT', ALL_SEGMENTS = 'ALL_SEGMENTS' }
 
 	export interface CurrencyEntry {
 
@@ -418,7 +418,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeeType { TICKETING = 0, FORM_OF_PAYMENT = 1, SUPPLIER = 2 }
+	export enum FeeType { TICKETING = 'TICKETING', FORM_OF_PAYMENT = 'FORM_OF_PAYMENT', SUPPLIER = 'SUPPLIER' }
 
 
 	/** departure or arrival information */
@@ -642,7 +642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlightOfferSource { GDS = 0 }
+	export enum FlightOfferSource { GDS = 'GDS' }
 
 	export interface FlightOfferTravelerPricings {
 
@@ -807,7 +807,7 @@ export namespace MyNS {
 
 
 	/** type of service */
-	export enum ServiceName { PRIORITY_BOARDING = 0, AIRPORT_CHECKIN = 1 }
+	export enum ServiceName { PRIORITY_BOARDING = 'PRIORITY_BOARDING', AIRPORT_CHECKIN = 'AIRPORT_CHECKIN' }
 
 	export interface FlightOfferTravelerPricingsFareDetailsBySegmentAllotmentDetails {
 		tourName?: string | null;
@@ -825,11 +825,11 @@ export namespace MyNS {
 
 	}
 
-	export enum FlightOfferTravelerPricingsFareDetailsBySegmentSliceDiceIndicator { LOCAL_AVAILABILITY = 0, SUB_OD_AVAILABILITY_1 = 1, SUB_OD_AVAILABILITY_2 = 2 }
+	export enum FlightOfferTravelerPricingsFareDetailsBySegmentSliceDiceIndicator { LOCAL_AVAILABILITY = 'LOCAL_AVAILABILITY', SUB_OD_AVAILABILITY_1 = 'SUB_OD_AVAILABILITY_1', SUB_OD_AVAILABILITY_2 = 'SUB_OD_AVAILABILITY_2' }
 
-	export enum FlightOfferTravelerPricingsFareOption { STANDARD = 0, INCLUSIVE_TOUR = 1, SPANISH_MELILLA_RESIDENT = 2, SPANISH_CEUTA_RESIDENT = 3, SPANISH_CANARY_RESIDENT = 4, SPANISH_BALEARIC_RESIDENT = 5, AIR_FRANCE_METROPOLITAN_DISCOUNT_PASS = 6, AIR_FRANCE_DOM_DISCOUNT_PASS = 7, AIR_FRANCE_COMBINED_DISCOUNT_PASS = 8, AIR_FRANCE_FAMILY = 9, ADULT_WITH_COMPANION = 10, COMPANION = 11 }
+	export enum FlightOfferTravelerPricingsFareOption { STANDARD = 'STANDARD', INCLUSIVE_TOUR = 'INCLUSIVE_TOUR', SPANISH_MELILLA_RESIDENT = 'SPANISH_MELILLA_RESIDENT', SPANISH_CEUTA_RESIDENT = 'SPANISH_CEUTA_RESIDENT', SPANISH_CANARY_RESIDENT = 'SPANISH_CANARY_RESIDENT', SPANISH_BALEARIC_RESIDENT = 'SPANISH_BALEARIC_RESIDENT', AIR_FRANCE_METROPOLITAN_DISCOUNT_PASS = 'AIR_FRANCE_METROPOLITAN_DISCOUNT_PASS', AIR_FRANCE_DOM_DISCOUNT_PASS = 'AIR_FRANCE_DOM_DISCOUNT_PASS', AIR_FRANCE_COMBINED_DISCOUNT_PASS = 'AIR_FRANCE_COMBINED_DISCOUNT_PASS', AIR_FRANCE_FAMILY = 'AIR_FRANCE_FAMILY', ADULT_WITH_COMPANION = 'ADULT_WITH_COMPANION', COMPANION = 'COMPANION' }
 
-	export enum FlightOfferTravelerPricingsTravelerType { ADULT = 0, CHILD = 1, SENIOR = 2, YOUNG = 3, HELD_INFANT = 4, SEATED_INFANT = 5, STUDENT = 6 }
+	export enum FlightOfferTravelerPricingsTravelerType { ADULT = 'ADULT', CHILD = 'CHILD', SENIOR = 'SENIOR', YOUNG = 'YOUNG', HELD_INFANT = 'HELD_INFANT', SEATED_INFANT = 'SEATED_INFANT', STUDENT = 'STUDENT' }
 
 
 	/** defining a flight segment; including both operating and marketing details when applicable */
@@ -1510,25 +1510,25 @@ export namespace MyNS {
 
 
 	/** slice and Dice indicator, such as Local Availability, Sub OnD(Origin and Destination) 1 Availability and Sub OnD 2 Availability */
-	export enum SliceDiceIndicator { LOCAL_AVAILABILITY = 0, SUB_OD_AVAILABILITY_1 = 1, SUB_OD_AVAILABILITY_2 = 2 }
+	export enum SliceDiceIndicator { LOCAL_AVAILABILITY = 'LOCAL_AVAILABILITY', SUB_OD_AVAILABILITY_1 = 'SUB_OD_AVAILABILITY_1', SUB_OD_AVAILABILITY_2 = 'SUB_OD_AVAILABILITY_2' }
 
 
 	/** quality of service offered in the cabin where the seat is located in this flight. Economy, premium economy, business or first class */
-	export enum TravelClass { ECONOMY = 0, PREMIUM_ECONOMY = 1, BUSINESS = 2, FIRST = 3 }
+	export enum TravelClass { ECONOMY = 'ECONOMY', PREMIUM_ECONOMY = 'PREMIUM_ECONOMY', BUSINESS = 'BUSINESS', FIRST = 'FIRST' }
 
 
 	/**
 	 * option specifying a group of fares, which may be valid under certain conditons
 	 * Can be used to specify special fare discount for a passenger
 	 */
-	export enum TravelerPricingFareOption { STANDARD = 0, INCLUSIVE_TOUR = 1, SPANISH_MELILLA_RESIDENT = 2, SPANISH_CEUTA_RESIDENT = 3, SPANISH_CANARY_RESIDENT = 4, SPANISH_BALEARIC_RESIDENT = 5, AIR_FRANCE_METROPOLITAN_DISCOUNT_PASS = 6, AIR_FRANCE_DOM_DISCOUNT_PASS = 7, AIR_FRANCE_COMBINED_DISCOUNT_PASS = 8, AIR_FRANCE_FAMILY = 9, ADULT_WITH_COMPANION = 10, COMPANION = 11 }
+	export enum TravelerPricingFareOption { STANDARD = 'STANDARD', INCLUSIVE_TOUR = 'INCLUSIVE_TOUR', SPANISH_MELILLA_RESIDENT = 'SPANISH_MELILLA_RESIDENT', SPANISH_CEUTA_RESIDENT = 'SPANISH_CEUTA_RESIDENT', SPANISH_CANARY_RESIDENT = 'SPANISH_CANARY_RESIDENT', SPANISH_BALEARIC_RESIDENT = 'SPANISH_BALEARIC_RESIDENT', AIR_FRANCE_METROPOLITAN_DISCOUNT_PASS = 'AIR_FRANCE_METROPOLITAN_DISCOUNT_PASS', AIR_FRANCE_DOM_DISCOUNT_PASS = 'AIR_FRANCE_DOM_DISCOUNT_PASS', AIR_FRANCE_COMBINED_DISCOUNT_PASS = 'AIR_FRANCE_COMBINED_DISCOUNT_PASS', AIR_FRANCE_FAMILY = 'AIR_FRANCE_FAMILY', ADULT_WITH_COMPANION = 'ADULT_WITH_COMPANION', COMPANION = 'COMPANION' }
 
 
 	/**
 	 * traveler type
 	 * age restrictions : CHILD < 12y, HELD_INFANT < 2y, SEATED_INFANT < 2y, SENIOR >=60y
 	 */
-	export enum TravelerType { ADULT = 0, CHILD = 1, SENIOR = 2, YOUNG = 3, HELD_INFANT = 4, SEATED_INFANT = 5, STUDENT = 6 }
+	export enum TravelerType { ADULT = 'ADULT', CHILD = 'CHILD', SENIOR = 'SENIOR', YOUNG = 'YOUNG', HELD_INFANT = 'HELD_INFANT', SEATED_INFANT = 'SEATED_INFANT', STUDENT = 'STUDENT' }
 
 	@Injectable()
 	export class MyClient {

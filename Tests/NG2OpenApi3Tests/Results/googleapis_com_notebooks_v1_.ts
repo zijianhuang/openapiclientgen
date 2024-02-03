@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceleratorConfigType { ACCELERATOR_TYPE_UNSPECIFIED = 0, NVIDIA_TESLA_K80 = 1, NVIDIA_TESLA_P100 = 2, NVIDIA_TESLA_V100 = 3, NVIDIA_TESLA_P4 = 4, NVIDIA_TESLA_T4 = 5, NVIDIA_TESLA_A100 = 6, NVIDIA_L4 = 7, NVIDIA_TESLA_T4_VWS = 8, NVIDIA_TESLA_P100_VWS = 9, NVIDIA_TESLA_P4_VWS = 10, TPU_V2 = 11, TPU_V3 = 12 }
+	export enum AcceleratorConfigType { ACCELERATOR_TYPE_UNSPECIFIED = 'ACCELERATOR_TYPE_UNSPECIFIED', NVIDIA_TESLA_K80 = 'NVIDIA_TESLA_K80', NVIDIA_TESLA_P100 = 'NVIDIA_TESLA_P100', NVIDIA_TESLA_V100 = 'NVIDIA_TESLA_V100', NVIDIA_TESLA_P4 = 'NVIDIA_TESLA_P4', NVIDIA_TESLA_T4 = 'NVIDIA_TESLA_T4', NVIDIA_TESLA_A100 = 'NVIDIA_TESLA_A100', NVIDIA_L4 = 'NVIDIA_L4', NVIDIA_TESLA_T4_VWS = 'NVIDIA_TESLA_T4_VWS', NVIDIA_TESLA_P100_VWS = 'NVIDIA_TESLA_P100_VWS', NVIDIA_TESLA_P4_VWS = 'NVIDIA_TESLA_P4_VWS', TPU_V2 = 'TPU_V2', TPU_V3 = 'TPU_V3' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -547,7 +547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { EVENT_TYPE_UNSPECIFIED = 0, IDLE = 1, HEARTBEAT = 2, HEALTH = 3, MAINTENANCE = 4 }
+	export enum EventType { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', IDLE = 'IDLE', HEARTBEAT = 'HEARTBEAT', HEALTH = 'HEALTH', MAINTENANCE = 'MAINTENANCE' }
 
 
 	/** The definition of a single executed notebook. */
@@ -757,11 +757,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SchedulerAcceleratorConfigType { SCHEDULER_ACCELERATOR_TYPE_UNSPECIFIED = 0, NVIDIA_TESLA_K80 = 1, NVIDIA_TESLA_P100 = 2, NVIDIA_TESLA_V100 = 3, NVIDIA_TESLA_P4 = 4, NVIDIA_TESLA_T4 = 5, NVIDIA_TESLA_A100 = 6, TPU_V2 = 7, TPU_V3 = 8 }
+	export enum SchedulerAcceleratorConfigType { SCHEDULER_ACCELERATOR_TYPE_UNSPECIFIED = 'SCHEDULER_ACCELERATOR_TYPE_UNSPECIFIED', NVIDIA_TESLA_K80 = 'NVIDIA_TESLA_K80', NVIDIA_TESLA_P100 = 'NVIDIA_TESLA_P100', NVIDIA_TESLA_V100 = 'NVIDIA_TESLA_V100', NVIDIA_TESLA_P4 = 'NVIDIA_TESLA_P4', NVIDIA_TESLA_T4 = 'NVIDIA_TESLA_T4', NVIDIA_TESLA_A100 = 'NVIDIA_TESLA_A100', TPU_V2 = 'TPU_V2', TPU_V3 = 'TPU_V3' }
 
-	export enum ExecutionTemplateJobType { JOB_TYPE_UNSPECIFIED = 0, VERTEX_AI = 1, DATAPROC = 2 }
+	export enum ExecutionTemplateJobType { JOB_TYPE_UNSPECIFIED = 'JOB_TYPE_UNSPECIFIED', VERTEX_AI = 'VERTEX_AI', DATAPROC = 'DATAPROC' }
 
-	export enum ExecutionTemplateScaleTier { SCALE_TIER_UNSPECIFIED = 0, BASIC = 1, STANDARD_1 = 2, PREMIUM_1 = 3, BASIC_GPU = 4, BASIC_TPU = 5, CUSTOM = 6 }
+	export enum ExecutionTemplateScaleTier { SCALE_TIER_UNSPECIFIED = 'SCALE_TIER_UNSPECIFIED', BASIC = 'BASIC', STANDARD_1 = 'STANDARD_1', PREMIUM_1 = 'PREMIUM_1', BASIC_GPU = 'BASIC_GPU', BASIC_TPU = 'BASIC_TPU', CUSTOM = 'CUSTOM' }
 
 
 	/** Parameters used in Vertex AI JobType executions. */
@@ -791,7 +791,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionState { STATE_UNSPECIFIED = 0, QUEUED = 1, PREPARING = 2, RUNNING = 3, SUCCEEDED = 4, FAILED = 5, CANCELLING = 6, CANCELLED = 7, EXPIRED = 8, INITIALIZING = 9 }
+	export enum ExecutionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', QUEUED = 'QUEUED', PREPARING = 'PREPARING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', EXPIRED = 'EXPIRED', INITIALIZING = 'INITIALIZING' }
 
 
 	/** Response for checking if a notebook instance is healthy. */
@@ -821,7 +821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetInstanceHealthResponseHealthState { HEALTH_STATE_UNSPECIFIED = 0, HEALTHY = 1, UNHEALTHY = 2, AGENT_NOT_INSTALLED = 3, AGENT_NOT_RUNNING = 4 }
+	export enum GetInstanceHealthResponseHealthState { HEALTH_STATE_UNSPECIFIED = 'HEALTH_STATE_UNSPECIFIED', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', AGENT_NOT_INSTALLED = 'AGENT_NOT_INSTALLED', AGENT_NOT_RUNNING = 'AGENT_NOT_RUNNING' }
 
 
 	/** The definition of a notebook instance. */
@@ -1059,9 +1059,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceBootDiskType { DISK_TYPE_UNSPECIFIED = 0, PD_STANDARD = 1, PD_SSD = 2, PD_BALANCED = 3, PD_EXTREME = 4 }
+	export enum InstanceBootDiskType { DISK_TYPE_UNSPECIFIED = 'DISK_TYPE_UNSPECIFIED', PD_STANDARD = 'PD_STANDARD', PD_SSD = 'PD_SSD', PD_BALANCED = 'PD_BALANCED', PD_EXTREME = 'PD_EXTREME' }
 
-	export enum InstanceDiskEncryption { DISK_ENCRYPTION_UNSPECIFIED = 0, GMEK = 1, CMEK = 2 }
+	export enum InstanceDiskEncryption { DISK_ENCRYPTION_UNSPECIFIED = 'DISK_ENCRYPTION_UNSPECIFIED', GMEK = 'GMEK', CMEK = 'CMEK' }
 
 
 	/** InstanceMigrationEligibility represents the feasibility information of a migration from UmN to WbI. */
@@ -1083,7 +1083,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceNicType { UNSPECIFIED_NIC_TYPE = 0, VIRTIO_NET = 1, GVNIC = 2 }
+	export enum InstanceNicType { UNSPECIFIED_NIC_TYPE = 'UNSPECIFIED_NIC_TYPE', VIRTIO_NET = 'VIRTIO_NET', GVNIC = 'GVNIC' }
 
 
 	/** Reservation Affinity for consuming Zonal reservation. */
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservationAffinityConsumeReservationType { TYPE_UNSPECIFIED = 0, NO_RESERVATION = 1, ANY_RESERVATION = 2, SPECIFIC_RESERVATION = 3 }
+	export enum ReservationAffinityConsumeReservationType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', NO_RESERVATION = 'NO_RESERVATION', ANY_RESERVATION = 'ANY_RESERVATION', SPECIFIC_RESERVATION = 'SPECIFIC_RESERVATION' }
 
 
 	/** A set of Shielded Instance options. See [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm). Not all combinations are valid. */
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, STARTING = 1, PROVISIONING = 2, ACTIVE = 3, STOPPING = 4, STOPPED = 5, DELETED = 6, UPGRADING = 7, INITIALIZING = 8, REGISTERING = 9, SUSPENDING = 10, SUSPENDED = 11 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTING = 'STARTING', PROVISIONING = 'PROVISIONING', ACTIVE = 'ACTIVE', STOPPING = 'STOPPING', STOPPED = 'STOPPED', DELETED = 'DELETED', UPGRADING = 'UPGRADING', INITIALIZING = 'INITIALIZING', REGISTERING = 'REGISTERING', SUSPENDING = 'SUSPENDING', SUSPENDED = 'SUSPENDED' }
 
 
 	/** The entry of VM image upgrade history. */
@@ -1239,9 +1239,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeHistoryEntryAction { ACTION_UNSPECIFIED = 0, UPGRADE = 1, ROLLBACK = 2 }
+	export enum UpgradeHistoryEntryAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', UPGRADE = 'UPGRADE', ROLLBACK = 'ROLLBACK' }
 
-	export enum UpgradeHistoryEntryState { STATE_UNSPECIFIED = 0, STARTED = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum UpgradeHistoryEntryState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTED = 'STARTED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Notebook instance configurations that can be updated. */
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeAccessConfigAccessType { RUNTIME_ACCESS_TYPE_UNSPECIFIED = 0, SINGLE_USER = 1, SERVICE_ACCOUNT = 2 }
+	export enum RuntimeAccessConfigAccessType { RUNTIME_ACCESS_TYPE_UNSPECIFIED = 'RUNTIME_ACCESS_TYPE_UNSPECIFIED', SINGLE_USER = 'SINGLE_USER', SERVICE_ACCOUNT = 'SERVICE_ACCOUNT' }
 
 
 	/** Contains runtime daemon metrics, such as OS and kernels and sessions stats. */
@@ -1851,9 +1851,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeSoftwareConfigPostStartupScriptBehavior { POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0, RUN_EVERY_START = 1, DOWNLOAD_AND_RUN_EVERY_START = 2 }
+	export enum RuntimeSoftwareConfigPostStartupScriptBehavior { POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 'POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED', RUN_EVERY_START = 'RUN_EVERY_START', DOWNLOAD_AND_RUN_EVERY_START = 'DOWNLOAD_AND_RUN_EVERY_START' }
 
-	export enum RuntimeState { STATE_UNSPECIFIED = 0, STARTING = 1, PROVISIONING = 2, ACTIVE = 3, STOPPING = 4, STOPPED = 5, DELETING = 6, UPGRADING = 7, INITIALIZING = 8 }
+	export enum RuntimeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTING = 'STARTING', PROVISIONING = 'PROVISIONING', ACTIVE = 'ACTIVE', STOPPING = 'STOPPING', STOPPED = 'STOPPED', DELETING = 'DELETING', UPGRADING = 'UPGRADING', INITIALIZING = 'INITIALIZING' }
 
 
 	/** Runtime using Virtual Machine for computing. */
@@ -2019,7 +2019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeAcceleratorConfigType { ACCELERATOR_TYPE_UNSPECIFIED = 0, NVIDIA_TESLA_K80 = 1, NVIDIA_TESLA_P100 = 2, NVIDIA_TESLA_V100 = 3, NVIDIA_TESLA_P4 = 4, NVIDIA_TESLA_T4 = 5, NVIDIA_TESLA_A100 = 6, NVIDIA_L4 = 7, TPU_V2 = 8, TPU_V3 = 9, NVIDIA_TESLA_T4_VWS = 10, NVIDIA_TESLA_P100_VWS = 11, NVIDIA_TESLA_P4_VWS = 12 }
+	export enum RuntimeAcceleratorConfigType { ACCELERATOR_TYPE_UNSPECIFIED = 'ACCELERATOR_TYPE_UNSPECIFIED', NVIDIA_TESLA_K80 = 'NVIDIA_TESLA_K80', NVIDIA_TESLA_P100 = 'NVIDIA_TESLA_P100', NVIDIA_TESLA_V100 = 'NVIDIA_TESLA_V100', NVIDIA_TESLA_P4 = 'NVIDIA_TESLA_P4', NVIDIA_TESLA_T4 = 'NVIDIA_TESLA_T4', NVIDIA_TESLA_A100 = 'NVIDIA_TESLA_A100', NVIDIA_L4 = 'NVIDIA_L4', TPU_V2 = 'TPU_V2', TPU_V3 = 'TPU_V3', NVIDIA_TESLA_T4_VWS = 'NVIDIA_TESLA_T4_VWS', NVIDIA_TESLA_P100_VWS = 'NVIDIA_TESLA_P100_VWS', NVIDIA_TESLA_P4_VWS = 'NVIDIA_TESLA_P4_VWS' }
 
 
 	/** A Local attached disk resource. */
@@ -2311,7 +2311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleState { STATE_UNSPECIFIED = 0, ENABLED = 1, PAUSED = 2, DISABLED = 3, UPDATE_FAILED = 4, INITIALIZING = 5, DELETING = 6 }
+	export enum ScheduleState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ENABLED = 'ENABLED', PAUSED = 'PAUSED', DISABLED = 'DISABLED', UPDATE_FAILED = 'UPDATE_FAILED', INITIALIZING = 'INITIALIZING', DELETING = 'DELETING' }
 
 
 	/** Request for migrating a User-Managed Notebook to Workbench Instances. */
@@ -2334,7 +2334,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrateInstanceRequestPostStartupScriptOption { POST_STARTUP_SCRIPT_OPTION_UNSPECIFIED = 0, POST_STARTUP_SCRIPT_OPTION_SKIP = 1, POST_STARTUP_SCRIPT_OPTION_RERUN = 2 }
+	export enum MigrateInstanceRequestPostStartupScriptOption { POST_STARTUP_SCRIPT_OPTION_UNSPECIFIED = 'POST_STARTUP_SCRIPT_OPTION_UNSPECIFIED', POST_STARTUP_SCRIPT_OPTION_SKIP = 'POST_STARTUP_SCRIPT_OPTION_SKIP', POST_STARTUP_SCRIPT_OPTION_RERUN = 'POST_STARTUP_SCRIPT_OPTION_RERUN' }
 
 
 	/** Request for migrating a Runtime to a Workbench Instance. */
@@ -3028,7 +3028,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeInstanceInternalRequestType { UPGRADE_TYPE_UNSPECIFIED = 0, UPGRADE_FRAMEWORK = 1, UPGRADE_OS = 2, UPGRADE_CUDA = 3, UPGRADE_ALL = 4 }
+	export enum UpgradeInstanceInternalRequestType { UPGRADE_TYPE_UNSPECIFIED = 'UPGRADE_TYPE_UNSPECIFIED', UPGRADE_FRAMEWORK = 'UPGRADE_FRAMEWORK', UPGRADE_OS = 'UPGRADE_OS', UPGRADE_CUDA = 'UPGRADE_CUDA', UPGRADE_ALL = 'UPGRADE_ALL' }
 
 
 	/** Request for upgrading a notebook instance */

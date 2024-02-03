@@ -1364,7 +1364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlimwPostBodyFormat { pdf = 0 }
+	export enum AlimwPostBodyFormat { pdf = 'pdf' }
 
 	export interface AlsblPostBody {
 		certificateParameters?: AlsblPostBodyCertificateParameters;

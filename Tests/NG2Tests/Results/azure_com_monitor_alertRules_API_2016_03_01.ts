@@ -220,7 +220,7 @@ export namespace MyNS {
 
 
 	/** Operators allowed in the rule condition. */
-	export enum ConditionOperator { GreaterThan = 0, GreaterThanOrEqual = 1, LessThan = 2, LessThanOrEqual = 3 }
+	export enum ConditionOperator { GreaterThan = 'GreaterThan', GreaterThanOrEqual = 'GreaterThanOrEqual', LessThan = 'LessThan', LessThanOrEqual = 'LessThanOrEqual' }
 
 
 	/** Describes the format of Error response. */
@@ -614,11 +614,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ThresholdRuleConditionTimeAggregation { Average = 0, Minimum = 1, Maximum = 2, Total = 3, Last = 4 }
+	export enum ThresholdRuleConditionTimeAggregation { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', Total = 'Total', Last = 'Last' }
 
 
 	/** Aggregation operators allowed in a rule. */
-	export enum TimeAggregationOperator { Average = 0, Minimum = 1, Maximum = 2, Total = 3, Last = 4 }
+	export enum TimeAggregationOperator { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', Total = 'Total', Last = 'Last' }
 
 	@Injectable()
 	export class MyClient {

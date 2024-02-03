@@ -137,9 +137,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrulesRulesPolicy { allow = 0, deny = 1 }
+	export enum UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrulesRulesPolicy { allow = 'allow', deny = 'deny' }
 
-	export enum UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrulesRulesProtocol { any = 0, icmp = 1, icmp6 = 2, tcp = 3, udp = 4 }
+	export enum UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrulesRulesProtocol { any = 'any', icmp = 'icmp', icmp6 = 'icmp6', tcp = 'tcp', udp = 'udp' }
 
 	@Injectable()
 	export class MyClient {
@@ -2909,7 +2909,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetDeviceCameraAnalyticsOverviewObjectType { person = 0, vehicle = 1 }
+	export enum GetDeviceCameraAnalyticsOverviewObjectType { person = 'person', vehicle = 'vehicle' }
 
 	export interface UpdateDeviceCameraVideoSettingsPutBody {
 
@@ -3566,7 +3566,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkBluetoothSettingsPutBodyMajorMinorAssignmentMode { 'Non-unique' = 0, Unique = 1 }
+	export enum UpdateNetworkBluetoothSettingsPutBodyMajorMinorAssignmentMode { 'Non-unique' = 'Non-unique', Unique = 'Unique' }
 
 	export interface UpdateNetworkBluetoothSettingsReturn {
 
@@ -3777,9 +3777,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV12SlashMV22SlashMV72_Quality { Enhanced = 0, High = 1, Standard = 2 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV12SlashMV22SlashMV72_Quality { Enhanced = 'Enhanced', High = 'High', Standard = 'Standard' }
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV12SlashMV22SlashMV72_Resolution { '1280x720' = 0, '1920x1080' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV12SlashMV22SlashMV72_Resolution { '1280x720' = '1280x720', '1920x1080' = '1920x1080' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV12WE {
 
@@ -3853,7 +3853,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV13Resolution { '1080x1080' = 0, '2688x1512' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV13Resolution { '1080x1080' = '1080x1080', '2688x1512' = '2688x1512' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV21SlashMV71_ {
 
@@ -3891,7 +3891,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV21SlashMV71_Resolution { '1280x720' = 0 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV21SlashMV71_Resolution { '1280x720' = '1280x720' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV22XSlashMV72X_ {
 
@@ -3929,7 +3929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV22XSlashMV72X_Resolution { '1280x720' = 0, '1920x1080' = 1, '2688x1512' = 2 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV22XSlashMV72X_Resolution { '1280x720' = '1280x720', '1920x1080' = '1920x1080', '2688x1512' = '2688x1512' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32 {
 
@@ -3967,7 +3967,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32Resolution { '1080x1080' = 0, '2058x2058' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32Resolution { '1080x1080' = '1080x1080', '2058x2058' = '2058x2058' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33 {
 
@@ -4005,7 +4005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33Resolution { '1080x1080' = 0, '2112x2112' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33Resolution { '1080x1080' = '1080x1080', '2112x2112' = '2112x2112' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52 {
 
@@ -4043,7 +4043,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52Resolution { '1280x720' = 0, '1920x1080' = 1, '2688x1512' = 2, '3840x2160' = 3 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52Resolution { '1280x720' = '1280x720', '1920x1080' = '1920x1080', '2688x1512' = '2688x1512', '3840x2160' = '3840x2160' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63 {
 
@@ -4081,7 +4081,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63Resolution { '1920x1080' = 0, '2688x1512' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63Resolution { '1920x1080' = '1920x1080', '2688x1512' = '2688x1512' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63X {
 
@@ -4119,7 +4119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63XResolution { '1920x1080' = 0, '2688x1512' = 1, '3840x2160' = 2 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63XResolution { '1920x1080' = '1920x1080', '2688x1512' = '2688x1512', '3840x2160' = '3840x2160' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93 {
 
@@ -4193,7 +4193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93XResolution { '1080x1080' = 0, '2112x2112' = 1, '2880x2880' = 2 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93XResolution { '1080x1080' = '1080x1080', '2112x2112' = '2112x2112', '2880x2880' = '2880x2880' }
 
 	export interface UpdateNetworkCameraQualityRetentionProfilePutBody {
 
@@ -5029,7 +5029,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkClientsReturnStatus { Offline = 0, Online = 1 }
+	export enum GetNetworkClientsReturnStatus { Offline = 'Offline', Online = 'Online' }
 
 	export interface GetNetworkClientsReturnUsage {
 
@@ -5055,7 +5055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkClientsConnectionStatsBand { _2_4 = 0, _5 = 1 }
+	export enum GetNetworkClientsConnectionStatsBand { _2_4 = '2.4', _5 = '5' }
 
 	export interface ProvisionNetworkClientsPostBody {
 
@@ -5113,7 +5113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionNetworkClientsPostBodyDevicePolicy { Allowed = 0, Blocked = 1, 'Group policy' = 2, Normal = 3, 'Per connection' = 4, Whitelisted = 5 }
+	export enum ProvisionNetworkClientsPostBodyDevicePolicy { Allowed = 'Allowed', Blocked = 'Blocked', 'Group policy' = 'Group policy', Normal = 'Normal', 'Per connection' = 'Per connection', Whitelisted = 'Whitelisted' }
 
 	export interface ProvisionNetworkClientsPostBodyPoliciesBySecurityAppliance {
 
@@ -5132,7 +5132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionNetworkClientsPostBodyPoliciesBySecurityApplianceDevicePolicy { Blocked = 0, Normal = 1, Whitelisted = 2 }
+	export enum ProvisionNetworkClientsPostBodyPoliciesBySecurityApplianceDevicePolicy { Blocked = 'Blocked', Normal = 'Normal', Whitelisted = 'Whitelisted' }
 
 	export interface ProvisionNetworkClientsPostBodyPoliciesBySsid {
 
@@ -5219,7 +5219,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionNetworkClientsPostBodyPoliciesBySsid_0_DevicePolicy { Blocked = 0, 'Group policy' = 1, Normal = 2, Whitelisted = 3 }
+	export enum ProvisionNetworkClientsPostBodyPoliciesBySsid_0_DevicePolicy { Blocked = 'Blocked', 'Group policy' = 'Group policy', Normal = 'Normal', Whitelisted = 'Whitelisted' }
 
 	export interface ProvisionNetworkClientsPostBodyPoliciesBySsid_1_ {
 
@@ -6023,7 +6023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkContentFilteringPutBodyUrlCategoryListSize { fullList = 0, topSites = 1 }
+	export enum UpdateNetworkContentFilteringPutBodyUrlCategoryListSize { fullList = 'fullList', topSites = 'topSites' }
 
 	export interface ClaimNetworkDevicesPostBody {
 
@@ -6118,7 +6118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkDeviceLossAndLatencyHistoryUplink { cellular = 0, wan1 = 1, wan2 = 2 }
+	export enum GetNetworkDeviceLossAndLatencyHistoryUplink { cellular = 'cellular', wan1 = 'wan1', wan2 = 'wan2' }
 
 	export interface CreateNetworkFloorPlanPostBody {
 
@@ -6494,9 +6494,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkL7FirewallRulesPutBodyRulesPolicy { deny = 0 }
+	export enum UpdateNetworkL7FirewallRulesPutBodyRulesPolicy { deny = 'deny' }
 
-	export enum UpdateNetworkL7FirewallRulesPutBodyRulesType { application = 0, applicationCategory = 1, host = 2, ipRange = 3, port = 4 }
+	export enum UpdateNetworkL7FirewallRulesPutBodyRulesType { application = 'application', applicationCategory = 'applicationCategory', host = 'host', ipRange = 'ipRange', port = 'port' }
 
 	export interface UpdateNetworkOneToManyNatRulesPutBody {
 
@@ -6604,9 +6604,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkOneToManyNatRulesPutBodyRulesPortRulesProtocol { tcp = 0, udp = 1 }
+	export enum UpdateNetworkOneToManyNatRulesPutBodyRulesPortRulesProtocol { tcp = 'tcp', udp = 'udp' }
 
-	export enum UpdateNetworkOneToManyNatRulesPutBodyRulesUplink { internet1 = 0, internet2 = 1 }
+	export enum UpdateNetworkOneToManyNatRulesPutBodyRulesUplink { internet1 = 'internet1', internet2 = 'internet2' }
 
 	export interface UpdateNetworkOneToOneNatRulesPutBody {
 
@@ -6694,7 +6694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkOneToOneNatRulesPutBodyRulesAllowedInboundProtocol { any = 0, 'icmp-ping' = 1, tcp = 2, udp = 3 }
+	export enum UpdateNetworkOneToOneNatRulesPutBodyRulesAllowedInboundProtocol { any = 'any', 'icmp-ping' = 'icmp-ping', tcp = 'tcp', udp = 'udp' }
 
 	export interface CreateNetworkPiiRequestPostBody {
 
@@ -6751,7 +6751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkPiiRequestPostBodyType { delete = 0, 'restrict processing' = 1 }
+	export enum CreateNetworkPiiRequestPostBodyType { delete = 'delete', 'restrict processing' = 'restrict processing' }
 
 	export interface UpdateNetworkPortForwardingRulesPutBody {
 
@@ -6851,7 +6851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkPortForwardingRulesPutBodyRulesUplink { both = 0, internet1 = 1, internet2 = 2 }
+	export enum UpdateNetworkPortForwardingRulesPutBodyRulesUplink { both = 'both', internet1 = 'internet1', internet2 = 'internet2' }
 
 	export interface UpdateNetworkSecurityIntrusionSettingsPutBody {
 
@@ -6880,9 +6880,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSecurityIntrusionSettingsPutBodyIdsRulesets { balanced = 0, connectivity = 1, security = 2 }
+	export enum UpdateNetworkSecurityIntrusionSettingsPutBodyIdsRulesets { balanced = 'balanced', connectivity = 'connectivity', security = 'security' }
 
-	export enum UpdateNetworkSecurityIntrusionSettingsPutBodyMode { detection = 0, disabled = 1, prevention = 2 }
+	export enum UpdateNetworkSecurityIntrusionSettingsPutBodyMode { detection = 'detection', disabled = 'disabled', prevention = 'prevention' }
 
 	export interface UpdateNetworkSecurityIntrusionSettingsPutBodyProtectedNetworks {
 
@@ -7008,7 +7008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSecurityMalwareSettingsPutBodyMode { disabled = 0, enabled = 1 }
+	export enum UpdateNetworkSecurityMalwareSettingsPutBodyMode { disabled = 'disabled', enabled = 'enabled' }
 
 	export interface UpdateNetworkSiteToSiteVpnPutBody {
 
@@ -7069,7 +7069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSiteToSiteVpnPutBodyMode { hub = 0, none = 1, spoke = 2 }
+	export enum UpdateNetworkSiteToSiteVpnPutBodyMode { hub = 'hub', none = 'none', spoke = 'spoke' }
 
 	export interface UpdateNetworkSiteToSiteVpnPutBodySubnets {
 
@@ -7538,11 +7538,11 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSsidPutBodyAuthMode { '8021x-google' = 0, '8021x-localradius' = 1, '8021x-meraki' = 2, '8021x-nac' = 3, '8021x-radius' = 4, 'ipsk-with-radius' = 5, 'ipsk-without-radius' = 6, open = 7, 'open-enhanced' = 8, 'open-with-nac' = 9, 'open-with-radius' = 10, psk = 11 }
+	export enum UpdateNetworkSsidPutBodyAuthMode { '8021x-google' = '8021x-google', '8021x-localradius' = '8021x-localradius', '8021x-meraki' = '8021x-meraki', '8021x-nac' = '8021x-nac', '8021x-radius' = '8021x-radius', 'ipsk-with-radius' = 'ipsk-with-radius', 'ipsk-without-radius' = 'ipsk-without-radius', open = 'open', 'open-enhanced' = 'open-enhanced', 'open-with-nac' = 'open-with-nac', 'open-with-radius' = 'open-with-radius', psk = 'psk' }
 
-	export enum UpdateNetworkSsidPutBodyEncryptionMode { wep = 0, wpa = 1 }
+	export enum UpdateNetworkSsidPutBodyEncryptionMode { wep = 'wep', wpa = 'wpa' }
 
-	export enum UpdateNetworkSsidPutBodyEnterpriseAdminAccess { 'access disabled' = 0, 'access enabled' = 1 }
+	export enum UpdateNetworkSsidPutBodyEnterpriseAdminAccess { 'access disabled' = 'access disabled', 'access enabled' = 'access enabled' }
 
 	export interface UpdateNetworkSsidPutBodyRadiusAccountingServers {
 
@@ -7581,9 +7581,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSsidPutBodyRadiusFailoverPolicy { 'Allow access' = 0, 'Deny access' = 1 }
+	export enum UpdateNetworkSsidPutBodyRadiusFailoverPolicy { 'Allow access' = 'Allow access', 'Deny access' = 'Deny access' }
 
-	export enum UpdateNetworkSsidPutBodyRadiusLoadBalancingPolicy { 'Round robin' = 0, 'Strict priority order' = 1 }
+	export enum UpdateNetworkSsidPutBodyRadiusLoadBalancingPolicy { 'Round robin' = 'Round robin', 'Strict priority order' = 'Strict priority order' }
 
 	export interface UpdateNetworkSsidPutBodyRadiusServers {
 
@@ -7622,9 +7622,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSsidPutBodySplashPage { Billing = 0, 'Cisco ISE' = 1, 'Click-through splash page' = 2, 'Facebook Wi-Fi' = 3, 'Google Apps domain' = 4, 'Google OAuth' = 5, None = 6, 'Password-protected with Active Directory' = 7, 'Password-protected with LDAP' = 8, 'Password-protected with Meraki RADIUS' = 9, 'Password-protected with custom RADIUS' = 10, 'SMS authentication' = 11, 'Sponsored guest' = 12, 'Systems Manager Sentry' = 13 }
+	export enum UpdateNetworkSsidPutBodySplashPage { Billing = 'Billing', 'Cisco ISE' = 'Cisco ISE', 'Click-through splash page' = 'Click-through splash page', 'Facebook Wi-Fi' = 'Facebook Wi-Fi', 'Google Apps domain' = 'Google Apps domain', 'Google OAuth' = 'Google OAuth', None = 'None', 'Password-protected with Active Directory' = 'Password-protected with Active Directory', 'Password-protected with LDAP' = 'Password-protected with LDAP', 'Password-protected with Meraki RADIUS' = 'Password-protected with Meraki RADIUS', 'Password-protected with custom RADIUS' = 'Password-protected with custom RADIUS', 'SMS authentication' = 'SMS authentication', 'Sponsored guest' = 'Sponsored guest', 'Systems Manager Sentry' = 'Systems Manager Sentry' }
 
-	export enum UpdateNetworkSsidPutBodyWpaEncryptionMode { 'WPA1 and WPA2' = 0, 'WPA1 only' = 1, 'WPA2 only' = 2, 'WPA3 192-bit Security' = 3, 'WPA3 Transition Mode' = 4, 'WPA3 only' = 5 }
+	export enum UpdateNetworkSsidPutBodyWpaEncryptionMode { 'WPA1 and WPA2' = 'WPA1 and WPA2', 'WPA1 only' = 'WPA1 only', 'WPA2 only' = 'WPA2 only', 'WPA3 192-bit Security' = 'WPA3 192-bit Security', 'WPA3 Transition Mode' = 'WPA3 Transition Mode', 'WPA3 only' = 'WPA3 only' }
 
 	export interface UpdateNetworkSsidL3FirewallRulesPutBody {
 
@@ -8668,7 +8668,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSwitchSettingsPutBodyPowerExceptionsPowerType { combined = 0, redundant = 1, useNetworkSetting = 2 }
+	export enum UpdateNetworkSwitchSettingsPutBodyPowerExceptionsPowerType { combined = 'combined', redundant = 'redundant', useNetworkSetting = 'useNetworkSetting' }
 
 	export interface UpdateNetworkSwitchSettingsMulticastPutBody {
 
@@ -8820,7 +8820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkSwitchSettingsQosRulePostBodyProtocol { ANY = 0, TCP = 1, UDP = 2 }
+	export enum CreateNetworkSwitchSettingsQosRulePostBodyProtocol { ANY = 'ANY', TCP = 'TCP', UDP = 'UDP' }
 
 	export interface UpdateNetworkSwitchSettingsQosRulesOrderPutBody {
 
@@ -8986,7 +8986,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkTrafficDeviceType { appliance = 0, combined = 1, switch = 2, wireless = 3 }
+	export enum GetNetworkTrafficDeviceType { appliance = 'appliance', combined = 'combined', switch = 'switch', wireless = 'wireless' }
 
 	export interface UpdateNetworkUplinkSettingsPutBody {
 
@@ -9264,9 +9264,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkVlanPutBodyDhcpHandling { 'Do not respond to DHCP requests' = 0, 'Relay DHCP to another server' = 1, 'Run a DHCP server' = 2 }
+	export enum UpdateNetworkVlanPutBodyDhcpHandling { 'Do not respond to DHCP requests' = 'Do not respond to DHCP requests', 'Relay DHCP to another server' = 'Relay DHCP to another server', 'Run a DHCP server' = 'Run a DHCP server' }
 
-	export enum UpdateNetworkVlanPutBodyDhcpLeaseTime { '1 day' = 0, '1 hour' = 1, '1 week' = 2, '12 hours' = 3, '30 minutes' = 4, '4 hours' = 5 }
+	export enum UpdateNetworkVlanPutBodyDhcpLeaseTime { '1 day' = '1 day', '1 hour' = '1 hour', '1 week' = '1 week', '12 hours' = '12 hours', '30 minutes' = '30 minutes', '4 hours' = '4 hours' }
 
 	export interface UpdateNetworkVlanPutBodyDhcpOptions {
 
@@ -9317,7 +9317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkVlanPutBodyDhcpOptionsType { hex = 0, integer = 1, ip = 2, text = 3 }
+	export enum UpdateNetworkVlanPutBodyDhcpOptionsType { hex = 'hex', integer = 'integer', ip = 'ip', text = 'text' }
 
 	export interface UpdateNetworkVlanPutBodyReservedIpRanges {
 
@@ -9525,9 +9525,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkWirelessRfProfilePostBodyApBandSettingsBandOperationMode { '2.4ghz' = 0, '5ghz' = 1, dual = 2 }
+	export enum CreateNetworkWirelessRfProfilePostBodyApBandSettingsBandOperationMode { '2.4ghz' = '2.4ghz', '5ghz' = '5ghz', dual = 'dual' }
 
-	export enum CreateNetworkWirelessRfProfilePostBodyBandSelectionType { ap = 0, ssid = 1 }
+	export enum CreateNetworkWirelessRfProfilePostBodyBandSelectionType { ap = 'ap', ssid = 'ssid' }
 
 	export interface CreateNetworkWirelessRfProfilePostBodyFiveGhzSettings {
 
@@ -9577,7 +9577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkWirelessRfProfilePostBodyMinBitrateType { band = 0, ssid = 1 }
+	export enum CreateNetworkWirelessRfProfilePostBodyMinBitrateType { band = 'band', ssid = 'ssid' }
 
 	export interface CreateNetworkWirelessRfProfilePostBodyTwoFourGhzSettings {
 
@@ -9839,7 +9839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSettingsPutBodyUpgradeStrategy { minimizeClientDowntime = 0, minimizeUpgradeTime = 1 }
+	export enum UpdateNetworkWirelessSettingsPutBodyUpgradeStrategy { minimizeClientDowntime = 'minimizeClientDowntime', minimizeUpgradeTime = 'minimizeUpgradeTime' }
 
 	export interface LockNetworkSmDevicesPutBody {
 
@@ -9886,7 +9886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationActionBatchesStatus { completed = 0, failed = 1, pending = 2 }
+	export enum GetOrganizationActionBatchesStatus { completed = 'completed', failed = 'failed', pending = 'pending' }
 
 	export interface CreateOrganizationActionBatchPostBody {
 
@@ -10047,7 +10047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAdminPostBodyAuthenticationMethod { 'Cisco SecureX Sign-On' = 0, Email = 1 }
+	export enum CreateOrganizationAdminPostBodyAuthenticationMethod { 'Cisco SecureX Sign-On' = 'Cisco SecureX Sign-On', Email = 'Email' }
 
 	export interface CreateOrganizationAdminPostBodyNetworks {
 
@@ -10085,7 +10085,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAdminPostBodyOrgAccess { enterprise = 0, full = 1, none = 2, 'read-only' = 3 }
+	export enum CreateOrganizationAdminPostBodyOrgAccess { enterprise = 'enterprise', full = 'full', none = 'none', 'read-only' = 'read-only' }
 
 	export interface CreateOrganizationAdminPostBodyTags {
 
@@ -10274,7 +10274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClaimIntoOrganizationPostBodyLicensesMode { addDevices = 0, renew = 1 }
+	export enum ClaimIntoOrganizationPostBodyLicensesMode { addDevices = 'addDevices', renew = 'renew' }
 
 	export interface CloneOrganizationPostBody {
 
@@ -10299,7 +10299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationLicensesState { active = 0, expired = 1, expiring = 2, recentlyQueued = 3, unused = 4, unusedActive = 5 }
+	export enum GetOrganizationLicensesState { active = 'active', expired = 'expired', expiring = 'expiring', recentlyQueued = 'recentlyQueued', unused = 'unused', unusedActive = 'unusedActive' }
 
 	export interface AssignOrganizationLicensesSeatsPostBody {
 
@@ -10902,7 +10902,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateOrganizationThirdPartyVPNPeersPutBodyPeersIkeVersion { _1 = 0, _2 = 1 }
+	export enum UpdateOrganizationThirdPartyVPNPeersPutBodyPeersIkeVersion { _1 = '1', _2 = '2' }
 
 	export interface UpdateOrganizationThirdPartyVPNPeersPutBodyPeersIpsecPolicies {
 

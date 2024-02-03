@@ -351,9 +351,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PromotionService_type { all = 0, backup = 1, blockstorage = 2, db_mysql = 3, ip_v4 = 4, linode = 5, linode_disk = 6, linode_memory = 7, longview = 8, managed = 9, nodebalancer = 10, objectstorage = 11, transfer_tx = 12 }
+	export enum PromotionService_type { all = 'all', backup = 'backup', blockstorage = 'blockstorage', db_mysql = 'db_mysql', ip_v4 = 'ip_v4', linode = 'linode', linode_disk = 'linode_disk', linode_memory = 'linode_memory', longview = 'longview', managed = 'managed', nodebalancer = 'nodebalancer', objectstorage = 'objectstorage', transfer_tx = 'transfer_tx' }
 
-	export enum AccountBilling_source { akamai = 0, linode = 1 }
+	export enum AccountBilling_source { akamai = 'akamai', linode = 'linode' }
 
 	export interface AccountCredit_card {
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountSettingsObject_storage { disabled = 0, suspended = 1, active = 2 }
+	export enum AccountSettingsObject_storage { disabled = 'disabled', suspended = 'suspended', active = 'active' }
 
 
 	/**
@@ -745,13 +745,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskFilesystem { raw = 0, swap = 1, ext3 = 2, ext4 = 3, initrd = 4 }
+	export enum DiskFilesystem { raw = 'raw', swap = 'swap', ext3 = 'ext3', ext4 = 'ext4', initrd = 'initrd' }
 
-	export enum DiskStatus { ready = 0, 'not ready' = 1, deleting = 2 }
+	export enum DiskStatus { ready = 'ready', 'not ready' = 'not ready', deleting = 'deleting' }
 
-	export enum BackupStatus { paused = 0, pending = 1, running = 2, needsPostProcessing = 3, successful = 4, failed = 5, userAborted = 6 }
+	export enum BackupStatus { paused = 'paused', pending = 'pending', running = 'running', needsPostProcessing = 'needsPostProcessing', successful = 'successful', failed = 'failed', userAborted = 'userAborted' }
 
-	export enum BackupType { auto = 0, snapshot = 1 }
+	export enum BackupType { auto = 'auto', snapshot = 'snapshot' }
 
 
 	/**
@@ -1023,7 +1023,7 @@ export namespace MyNS {
 
 	export enum DatabaseCluster_size { _1 = 0, _3 = 1 }
 
-	export enum DatabaseEngine { mongodb = 0, mysql = 1, postgresql = 2 }
+	export enum DatabaseEngine { mongodb = 'mongodb', mysql = 'mysql', postgresql = 'postgresql' }
 
 	export interface DatabaseHosts {
 
@@ -1057,7 +1057,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseStatus { provisioning = 0, active = 1, suspending = 2, suspended = 3, resuming = 4, restoring = 5, failed = 6, degraded = 7, updating = 8, backing_up = 9 }
+	export enum DatabaseStatus { provisioning = 'provisioning', active = 'active', suspending = 'suspending', suspended = 'suspended', resuming = 'resuming', restoring = 'restoring', failed = 'failed', degraded = 'degraded', updating = 'updating', backing_up = 'backing_up' }
 
 	export interface DatabaseUpdates {
 
@@ -1140,7 +1140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseUpdatesFrequency { weekly = 0, monthly = 1 }
+	export enum DatabaseUpdatesFrequency { weekly = 'weekly', monthly = 'monthly' }
 
 
 	/** A database backup object. */
@@ -1192,7 +1192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseBackupType { snapshot = 0, auto = 1 }
+	export enum DatabaseBackupType { snapshot = 'snapshot', auto = 'auto' }
 
 
 	/** Managed Database request object for snapshot backup. */
@@ -1242,7 +1242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseBackupSnapshotTarget { primary = 0, secondary = 1 }
+	export enum DatabaseBackupSnapshotTarget { primary = 'primary', secondary = 'secondary' }
 
 
 	/** Managed Database object for database credentials. */
@@ -1404,7 +1404,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseMongoDBCompression_type { none = 0, snappy = 1, zlip = 2 }
+	export enum DatabaseMongoDBCompression_type { none = 'none', snappy = 'snappy', zlip = 'zlip' }
 
 	export interface DatabaseMongoDBHosts {
 
@@ -1438,7 +1438,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseMongoDBStorage_engine { mmapv1 = 0, wiredtiger = 1 }
+	export enum DatabaseMongoDBStorage_engine { mmapv1 = 'mmapv1', wiredtiger = 'wiredtiger' }
 
 
 	/** Managed MongoDB Database request object. */
@@ -1607,7 +1607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseMySQLReplication_type { none = 0, asynch = 1, semi_synch = 2 }
+	export enum DatabaseMySQLReplication_type { none = 'none', asynch = 'asynch', semi_synch = 'semi_synch' }
 
 
 	/** Managed MySQL Database request object. */
@@ -1817,7 +1817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabasePostgreSQLReplication_commit_type { on = 0, local = 1, remote_write = 2, remote_apply = 3, off = 4 }
+	export enum DatabasePostgreSQLReplication_commit_type { on = 'on', local = 'local', remote_write = 'remote_write', remote_apply = 'remote_apply', off = 'off' }
 
 
 	/** Managed PostgreSQL Database request object. */
@@ -2449,9 +2449,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { disabled = 0, active = 1 }
+	export enum DomainStatus { disabled = 'disabled', active = 'active' }
 
-	export enum DomainType { master = 0, slave = 1 }
+	export enum DomainType { master = 'master', slave = 'slave' }
 
 
 	/**
@@ -2688,9 +2688,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainRecordTag { issue = 0, issuewild = 1, iodef = 2 }
+	export enum DomainRecordTag { issue = 'issue', issuewild = 'issuewild', iodef = 'iodef' }
 
-	export enum DomainRecordType { A = 0, AAAA = 1, NS = 2, MX = 3, CNAME = 4, TXT = 5, SRV = 6, PTR = 7, CAA = 8 }
+	export enum DomainRecordType { A = 'A', AAAA = 'AAAA', NS = 'NS', MX = 'MX', CNAME = 'CNAME', TXT = 'TXT', SRV = 'SRV', PTR = 'PTR', CAA = 'CAA' }
 
 
 	/**
@@ -2808,7 +2808,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityTransferStatus { accepted = 0, cancelled = 1, completed = 2, failed = 3, pending = 4, stale = 5 }
+	export enum EntityTransferStatus { accepted = 'accepted', cancelled = 'cancelled', completed = 'completed', failed = 'failed', pending = 'pending', stale = 'stale' }
 
 
 	/**
@@ -2995,7 +2995,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventAction { account_update = 0, account_settings_update = 1, backups_enable = 2, backups_cancel = 3, backups_restore = 4, community_question_reply = 5, community_like = 6, credit_card_updated = 7, disk_create = 8, disk_delete = 9, disk_update = 10, disk_duplicate = 11, disk_imagize = 12, disk_resize = 13, dns_record_create = 14, dns_record_delete = 15, dns_record_update = 16, dns_zone_create = 17, dns_zone_delete = 18, dns_zone_import = 19, dns_zone_update = 20, entity_transfer_accept = 21, entity_transfer_cancel = 22, entity_transfer_create = 23, entity_transfer_fail = 24, entity_transfer_stale = 25, firewall_create = 26, firewall_delete = 27, firewall_disable = 28, firewall_enable = 29, firewall_update = 30, firewall_device_add = 31, firewall_device_remove = 32, host_reboot = 33, image_delete = 34, image_update = 35, image_upload = 36, ipaddress_update = 37, lassie_reboot = 38, lish_boot = 39, linode_addip = 40, linode_boot = 41, linode_clone = 42, linode_create = 43, linode_delete = 44, linode_update = 45, linode_deleteip = 46, linode_migrate = 47, linode_migrate_datacenter = 48, linode_migrate_datacenter_create = 49, linode_mutate = 50, linode_mutate_create = 51, linode_reboot = 52, linode_rebuild = 53, linode_resize = 54, linode_resize_create = 55, linode_shutdown = 56, linode_snapshot = 57, linode_config_create = 58, linode_config_delete = 59, linode_config_update = 60, lke_node_create = 61, longviewclient_create = 62, longviewclient_delete = 63, longviewclient_update = 64, managed_disabled = 65, managed_enabled = 66, managed_service_create = 67, managed_service_delete = 68, nodebalancer_create = 69, nodebalancer_delete = 70, nodebalancer_update = 71, nodebalancer_config_create = 72, nodebalancer_config_delete = 73, nodebalancer_config_update = 74, nodebalancer_node_create = 75, nodebalancer_node_delete = 76, nodebalancer_node_update = 77, oauth_client_create = 78, oauth_client_delete = 79, oauth_client_secret_reset = 80, oauth_client_update = 81, password_reset = 82, payment_method_add = 83, payment_submitted = 84, profile_update = 85, stackscript_create = 86, stackscript_delete = 87, stackscript_update = 88, stackscript_publicize = 89, stackscript_revise = 90, tag_create = 91, tag_delete = 92, tfa_disabled = 93, tfa_enabled = 94, ticket_attachment_upload = 95, ticket_create = 96, ticket_update = 97, token_create = 98, token_delete = 99, token_update = 100, user_create = 101, user_update = 102, user_delete = 103, user_ssh_key_add = 104, user_ssh_key_delete = 105, user_ssh_key_update = 106, vlan_attach = 107, vlan_detach = 108, volume_attach = 109, volume_clone = 110, volume_create = 111, volume_delete = 112, volume_update = 113, volume_detach = 114, volume_resize = 115 }
+	export enum EventAction { account_update = 'account_update', account_settings_update = 'account_settings_update', backups_enable = 'backups_enable', backups_cancel = 'backups_cancel', backups_restore = 'backups_restore', community_question_reply = 'community_question_reply', community_like = 'community_like', credit_card_updated = 'credit_card_updated', disk_create = 'disk_create', disk_delete = 'disk_delete', disk_update = 'disk_update', disk_duplicate = 'disk_duplicate', disk_imagize = 'disk_imagize', disk_resize = 'disk_resize', dns_record_create = 'dns_record_create', dns_record_delete = 'dns_record_delete', dns_record_update = 'dns_record_update', dns_zone_create = 'dns_zone_create', dns_zone_delete = 'dns_zone_delete', dns_zone_import = 'dns_zone_import', dns_zone_update = 'dns_zone_update', entity_transfer_accept = 'entity_transfer_accept', entity_transfer_cancel = 'entity_transfer_cancel', entity_transfer_create = 'entity_transfer_create', entity_transfer_fail = 'entity_transfer_fail', entity_transfer_stale = 'entity_transfer_stale', firewall_create = 'firewall_create', firewall_delete = 'firewall_delete', firewall_disable = 'firewall_disable', firewall_enable = 'firewall_enable', firewall_update = 'firewall_update', firewall_device_add = 'firewall_device_add', firewall_device_remove = 'firewall_device_remove', host_reboot = 'host_reboot', image_delete = 'image_delete', image_update = 'image_update', image_upload = 'image_upload', ipaddress_update = 'ipaddress_update', lassie_reboot = 'lassie_reboot', lish_boot = 'lish_boot', linode_addip = 'linode_addip', linode_boot = 'linode_boot', linode_clone = 'linode_clone', linode_create = 'linode_create', linode_delete = 'linode_delete', linode_update = 'linode_update', linode_deleteip = 'linode_deleteip', linode_migrate = 'linode_migrate', linode_migrate_datacenter = 'linode_migrate_datacenter', linode_migrate_datacenter_create = 'linode_migrate_datacenter_create', linode_mutate = 'linode_mutate', linode_mutate_create = 'linode_mutate_create', linode_reboot = 'linode_reboot', linode_rebuild = 'linode_rebuild', linode_resize = 'linode_resize', linode_resize_create = 'linode_resize_create', linode_shutdown = 'linode_shutdown', linode_snapshot = 'linode_snapshot', linode_config_create = 'linode_config_create', linode_config_delete = 'linode_config_delete', linode_config_update = 'linode_config_update', lke_node_create = 'lke_node_create', longviewclient_create = 'longviewclient_create', longviewclient_delete = 'longviewclient_delete', longviewclient_update = 'longviewclient_update', managed_disabled = 'managed_disabled', managed_enabled = 'managed_enabled', managed_service_create = 'managed_service_create', managed_service_delete = 'managed_service_delete', nodebalancer_create = 'nodebalancer_create', nodebalancer_delete = 'nodebalancer_delete', nodebalancer_update = 'nodebalancer_update', nodebalancer_config_create = 'nodebalancer_config_create', nodebalancer_config_delete = 'nodebalancer_config_delete', nodebalancer_config_update = 'nodebalancer_config_update', nodebalancer_node_create = 'nodebalancer_node_create', nodebalancer_node_delete = 'nodebalancer_node_delete', nodebalancer_node_update = 'nodebalancer_node_update', oauth_client_create = 'oauth_client_create', oauth_client_delete = 'oauth_client_delete', oauth_client_secret_reset = 'oauth_client_secret_reset', oauth_client_update = 'oauth_client_update', password_reset = 'password_reset', payment_method_add = 'payment_method_add', payment_submitted = 'payment_submitted', profile_update = 'profile_update', stackscript_create = 'stackscript_create', stackscript_delete = 'stackscript_delete', stackscript_update = 'stackscript_update', stackscript_publicize = 'stackscript_publicize', stackscript_revise = 'stackscript_revise', tag_create = 'tag_create', tag_delete = 'tag_delete', tfa_disabled = 'tfa_disabled', tfa_enabled = 'tfa_enabled', ticket_attachment_upload = 'ticket_attachment_upload', ticket_create = 'ticket_create', ticket_update = 'ticket_update', token_create = 'token_create', token_delete = 'token_delete', token_update = 'token_update', user_create = 'user_create', user_update = 'user_update', user_delete = 'user_delete', user_ssh_key_add = 'user_ssh_key_add', user_ssh_key_delete = 'user_ssh_key_delete', user_ssh_key_update = 'user_ssh_key_update', vlan_attach = 'vlan_attach', vlan_detach = 'vlan_detach', volume_attach = 'volume_attach', volume_clone = 'volume_clone', volume_create = 'volume_create', volume_delete = 'volume_delete', volume_update = 'volume_update', volume_detach = 'volume_detach', volume_resize = 'volume_resize' }
 
 	export interface EventEntity {
 
@@ -3073,7 +3073,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventEntityType { account = 0, backups = 1, community = 2, disks = 3, domain = 4, entity_transfer = 5, firewall = 6, image = 7, ipaddress = 8, linode = 9, longview = 10, managed_service = 11, nodebalancer = 12, oauth_client = 13, profile = 14, stackscript = 15, tag = 16, ticket = 17, token = 18, user = 19, user_ssh_key = 20, volume = 21 }
+	export enum EventEntityType { account = 'account', backups = 'backups', community = 'community', disks = 'disks', domain = 'domain', entity_transfer = 'entity_transfer', firewall = 'firewall', image = 'image', ipaddress = 'ipaddress', linode = 'linode', longview = 'longview', managed_service = 'managed_service', nodebalancer = 'nodebalancer', oauth_client = 'oauth_client', profile = 'profile', stackscript = 'stackscript', tag = 'tag', ticket = 'ticket', token = 'token', user = 'user', user_ssh_key = 'user_ssh_key', volume = 'volume' }
 
 	export interface EventSecondary_entity {
 
@@ -3129,7 +3129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventStatus { failed = 0, finished = 1, notification = 2, scheduled = 3, started = 4 }
+	export enum EventStatus { failed = 'failed', finished = 'finished', notification = 'notification', scheduled = 'scheduled', started = 'started' }
 
 
 	/**
@@ -3377,7 +3377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallRuleConfigAction { ACCEPT = 0, DROP = 1 }
+	export enum FirewallRuleConfigAction { ACCEPT = 'ACCEPT', DROP = 'DROP' }
 
 	export interface FirewallRuleConfigAddresses {
 
@@ -3395,9 +3395,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallRuleConfigProtocol { TCP = 0, UDP = 1, ICMP = 2, IPENCAP = 3 }
+	export enum FirewallRuleConfigProtocol { TCP = 'TCP', UDP = 'UDP', ICMP = 'ICMP', IPENCAP = 'IPENCAP' }
 
-	export enum FirewallStatus { enabled = 0, disabled = 1, deleted = 2 }
+	export enum FirewallStatus { enabled = 'enabled', disabled = 'disabled', deleted = 'deleted' }
 
 
 	/**
@@ -3497,7 +3497,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallDevicesEntityType { linode = 0 }
+	export enum FirewallDevicesEntityType { linode = 'linode' }
 
 
 	/** Google Pay information. */
@@ -3585,7 +3585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GrantPermissions { read_only = 0, read_write = 1 }
+	export enum GrantPermissions { read_only = 'read_only', read_write = 'read_write' }
 
 
 	/**
@@ -3865,7 +3865,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPAddressType { ipv4 = 0, ipv6 = 1, 'ipv6/pool' = 2, 'ipv6/range' = 3 }
+	export enum IPAddressType { ipv4 = 'ipv4', ipv6 = 'ipv6', 'ipv6/pool' = 'ipv6/pool', 'ipv6/range' = 'ipv6/range' }
 
 
 	/**
@@ -4683,9 +4683,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageStatus { creating = 0, pending_upload = 1, available = 2 }
+	export enum ImageStatus { creating = 'creating', pending_upload = 'pending_upload', available = 'available' }
 
-	export enum ImageType { manual = 0, automatic = 1 }
+	export enum ImageType { manual = 'manual', automatic = 'automatic' }
 
 
 	/** Account Invoice object */
@@ -4847,7 +4847,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceItemType { hourly = 0, misc = 1 }
+	export enum InvoiceItemType { hourly = 'hourly', misc = 'misc' }
 
 
 	/** Linux kernel object */
@@ -4926,7 +4926,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KernelArchitecture { x86_64 = 0, i386 = 1 }
+	export enum KernelArchitecture { x86_64 = 'x86_64', i386 = 'i386' }
 
 
 	/** A Kubernetes cluster. */
@@ -5203,7 +5203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LKENodePoolDisksType { raw = 0, ext4 = 1 }
+	export enum LKENodePoolDisksType { raw = 'raw', ext4 = 'ext4' }
 
 
 	/**
@@ -5256,7 +5256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LKENodeStatusStatus { ready = 0, not_ready = 1 }
+	export enum LKENodeStatusStatus { ready = 'ready', not_ready = 'not_ready' }
 
 
 	/**
@@ -5736,11 +5736,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LinodeBackupsScheduleDay { Scheduling = 0, Sunday = 1, Monday = 2, Tuesday = 3, Wednesday = 4, Thursday = 5, Friday = 6, Saturday = 7 }
+	export enum LinodeBackupsScheduleDay { Scheduling = 'Scheduling', Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday' }
 
-	export enum LinodeBackupsScheduleWindow { Scheduling = 0, W0 = 1, W2 = 2, W4 = 3, W6 = 4, W8 = 5, W10 = 6, W12 = 7, W14 = 8, W16 = 9, W18 = 10, W20 = 11, W22 = 12 }
+	export enum LinodeBackupsScheduleWindow { Scheduling = 'Scheduling', W0 = 'W0', W2 = 'W2', W4 = 'W4', W6 = 'W6', W8 = 'W8', W10 = 'W10', W12 = 'W12', W14 = 'W14', W16 = 'W16', W18 = 'W18', W20 = 'W20', W22 = 'W22' }
 
-	export enum LinodeHypervisor { kvm = 0 }
+	export enum LinodeHypervisor { kvm = 'kvm' }
 
 	export interface LinodeSpecs {
 
@@ -5805,7 +5805,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinodeStatus { running = 0, offline = 1, booting = 2, rebooting = 3, shutting_down = 4, provisioning = 5, deleting = 6, migrating = 7, rebuilding = 8, cloning = 9, restoring = 10, stopped = 11 }
+	export enum LinodeStatus { running = 'running', offline = 'offline', booting = 'booting', rebooting = 'rebooting', shutting_down = 'shutting_down', provisioning = 'provisioning', deleting = 'deleting', migrating = 'migrating', rebuilding = 'rebuilding', cloning = 'cloning', restoring = 'restoring', stopped = 'stopped' }
 
 	export interface LinodeConfig {
 
@@ -6070,11 +6070,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LinodeConfigInterfacePurpose { public = 0, vlan = 1 }
+	export enum LinodeConfigInterfacePurpose { public = 'public', vlan = 'vlan' }
 
-	export enum LinodeConfigRun_level { default = 0, single = 1, binbash = 2 }
+	export enum LinodeConfigRun_level { default = 'default', single = 'single', binbash = 'binbash' }
 
-	export enum LinodeConfigVirt_mode { paravirt = 0, fullvirt = 1 }
+	export enum LinodeConfigVirt_mode { paravirt = 'paravirt', fullvirt = 'fullvirt' }
 
 
 	/** Common properties for creating and rebuilding Linodes. */
@@ -6444,7 +6444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinodeTypeClass { nanode = 0, standard = 1, dedicated = 2, gpu = 3, highmem = 4 }
+	export enum LinodeTypeClass { nanode = 'nanode', standard = 'standard', dedicated = 'dedicated', gpu = 'gpu', highmem = 'highmem' }
 
 	export interface LinodeTypePrice {
 
@@ -6554,7 +6554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoginStatus { successful = 0, failed = 1 }
+	export enum LoginStatus { successful = 'successful', failed = 'failed' }
 
 
 	/**
@@ -6731,7 +6731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LongviewPlanLongview_subscription { 'longview-3' = 0, 'longview-10' = 1, 'longview-40' = 2, 'longview-100' = 3 }
+	export enum LongviewPlanLongview_subscription { 'longview-3' = 'longview-3', 'longview-10' = 'longview-10', 'longview-40' = 'longview-40', 'longview-100' = 'longview-100' }
 
 
 	/**
@@ -6954,9 +6954,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceStatus { completed = 0, pending = 1, started = 2 }
+	export enum MaintenanceStatus { completed = 'completed', pending = 'pending', started = 'started' }
 
-	export enum MaintenanceType { reboot = 0, cold_migration = 1, live_migration = 2 }
+	export enum MaintenanceType { reboot = 'reboot', cold_migration = 'cold_migration', live_migration = 'live_migration' }
 
 
 	/**
@@ -7235,7 +7235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedIssueEntityType { ticket = 0 }
+	export enum ManagedIssueEntityType { ticket = 'ticket' }
 
 
 	/**
@@ -7538,9 +7538,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedServiceService_type { url = 0, tcp = 1 }
+	export enum ManagedServiceService_type { url = 'url', tcp = 'tcp' }
 
-	export enum ManagedServiceStatus { disabled = 0, pending = 1, ok = 2, problem = 3 }
+	export enum ManagedServiceStatus { disabled = 'disabled', pending = 'pending', ok = 'ok', problem = 'problem' }
 
 
 	/**
@@ -8032,11 +8032,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeBalancerConfigAlgorithm { roundrobin = 0, leastconn = 1, source = 2 }
+	export enum NodeBalancerConfigAlgorithm { roundrobin = 'roundrobin', leastconn = 'leastconn', source = 'source' }
 
-	export enum NodeBalancerConfigCheck { none = 0, connection = 1, http = 2, http_body = 3 }
+	export enum NodeBalancerConfigCheck { none = 'none', connection = 'connection', http = 'http', http_body = 'http_body' }
 
-	export enum NodeBalancerConfigCipher_suite { recommended = 0, legacy = 1 }
+	export enum NodeBalancerConfigCipher_suite { recommended = 'recommended', legacy = 'legacy' }
 
 	export interface NodeBalancerConfigNodes_status {
 
@@ -8070,11 +8070,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeBalancerConfigProtocol { http = 0, https = 1, tcp = 2 }
+	export enum NodeBalancerConfigProtocol { http = 'http', https = 'https', tcp = 'tcp' }
 
-	export enum NodeBalancerConfigProxy_protocol { none = 0, v1 = 1, v2 = 2 }
+	export enum NodeBalancerConfigProxy_protocol { none = 'none', v1 = 'v1', v2 = 'v2' }
 
-	export enum NodeBalancerConfigStickiness { none = 0, table = 1, http_cookie = 2 }
+	export enum NodeBalancerConfigStickiness { none = 'none', table = 'table', http_cookie = 'http_cookie' }
 
 
 	/**
@@ -8198,9 +8198,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeBalancerNodeMode { accept = 0, reject = 1, drain = 2, backup = 3 }
+	export enum NodeBalancerNodeMode { accept = 'accept', reject = 'reject', drain = 'drain', backup = 'backup' }
 
-	export enum NodeBalancerNodeStatus { unknown = 0, UP = 1, DOWN = 2 }
+	export enum NodeBalancerNodeStatus { unknown = 'unknown', UP = 'UP', DOWN = 'DOWN' }
 
 
 	/**
@@ -8416,9 +8416,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationSeverity { minor = 0, major = 1, critical = 2 }
+	export enum NotificationSeverity { minor = 'minor', major = 'major', critical = 'critical' }
 
-	export enum NotificationType { migration_scheduled = 0, migration_imminent = 1, migration_pending = 2, reboot_scheduled = 3, outage = 4, payment_due = 5, ticket_important = 6, ticket_abuse = 7, notice = 8, maintenance = 9, promotion = 10 }
+	export enum NotificationType { migration_scheduled = 'migration_scheduled', migration_imminent = 'migration_imminent', migration_pending = 'migration_pending', reboot_scheduled = 'reboot_scheduled', outage = 'outage', payment_due = 'payment_due', ticket_important = 'ticket_important', ticket_abuse = 'ticket_abuse', notice = 'notice', maintenance = 'maintenance', promotion = 'promotion' }
 
 
 	/**
@@ -8519,7 +8519,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OAuthClientStatus { active = 0, disabled = 1, suspended = 2 }
+	export enum OAuthClientStatus { active = 'active', disabled = 'disabled', suspended = 'suspended' }
 
 
 	/**
@@ -8638,7 +8638,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectStorageClusterStatus { available = 0, unavailable = 1 }
+	export enum ObjectStorageClusterStatus { available = 'available', unavailable = 'unavailable' }
 
 
 	/** A keypair used to communicate with the Object Storage S3 API. */
@@ -8731,7 +8731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectStorageKeyBucket_accessPermissions { read_write = 0, read_only = 1 }
+	export enum ObjectStorageKeyBucket_accessPermissions { read_write = 'read_write', read_only = 'read_only' }
 
 
 	/**
@@ -9151,7 +9151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentMethodType { credit_card = 0, google_pay = 1, paypal = 2 }
+	export enum PaymentMethodType { credit_card = 'credit_card', google_pay = 'google_pay', paypal = 'paypal' }
 
 
 	/** Payment object request. */
@@ -9476,9 +9476,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileAuthentication_type { password = 0, github = 1 }
+	export enum ProfileAuthentication_type { password = 'password', github = 'github' }
 
-	export enum ProfileLish_auth_method { password_keys = 0, keys_only = 1, disabled = 2 }
+	export enum ProfileLish_auth_method { password_keys = 'password_keys', keys_only = 'keys_only', disabled = 'disabled' }
 
 	export interface ProfileReferrals {
 
@@ -9640,7 +9640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionStatus { ok = 0, outage = 1 }
+	export enum RegionStatus { ok = 'ok', outage = 'outage' }
 
 	export interface RescueDevices {
 
@@ -10547,7 +10547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportTicketStatus { closed = 0, new = 1, open = 2 }
+	export enum SupportTicketStatus { closed = 'closed', new = 'new', open = 'open' }
 
 
 	/**
@@ -11245,9 +11245,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeHardware_type { hdd = 0, nvme = 1 }
+	export enum VolumeHardware_type { hdd = 'hdd', nvme = 'nvme' }
 
-	export enum VolumeStatus { creating = 0, active = 1, resizing = 2 }
+	export enum VolumeStatus { creating = 'creating', active = 'active', resizing = 'resizing' }
 
 
 	/**
@@ -15960,7 +15960,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreatePaymentMethodPostBodyType { credit_card = 0 }
+	export enum CreatePaymentMethodPostBodyType { credit_card = 'credit_card' }
 
 	export interface GetPaymentsReturn {
 		data?: Array<Payment>;
@@ -17526,7 +17526,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateFirewallPutBodyStatus { enabled = 0, disabled = 1 }
+	export enum UpdateFirewallPutBodyStatus { enabled = 'enabled', disabled = 'disabled' }
 
 	export interface GetFirewallDevicesReturn {
 		data?: Array<FirewallDevices>;
@@ -17875,7 +17875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateObjectStorageBucketPostBodyAcl { private = 0, 'public-read' = 1, 'authenticated-read' = 2, 'public-read-write' = 3 }
+	export enum CreateObjectStorageBucketPostBodyAcl { private = 'private', 'public-read' = 'public-read', 'authenticated-read' = 'authenticated-read', 'public-read-write' = 'public-read-write' }
 
 	export interface GetObjectStorageBucketinClusterReturn {
 		data?: Array<ObjectStorageBucket>;
@@ -17935,7 +17935,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ViewObjectStorageBucketACLReturnAcl { private = 0, 'public-read' = 1, 'authenticated-read' = 2, 'public-read-write' = 3, custom = 4 }
+	export enum ViewObjectStorageBucketACLReturnAcl { private = 'private', 'public-read' = 'public-read', 'authenticated-read' = 'authenticated-read', 'public-read-write' = 'public-read-write', custom = 'custom' }
 
 	export interface UpdateObjectStorageBucketACLReturn {
 

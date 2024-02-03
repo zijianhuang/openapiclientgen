@@ -1591,7 +1591,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCrawlStatisticsByFrequencyFrequency { '1mn' = 0, '5mn' = 1, '60mn' = 2 }
+	export enum GetCrawlStatisticsByFrequencyFrequency { '1mn' = '1mn', '5mn' = '5mn', '60mn' = '60mn' }
 
 	export interface GetGanalyticsOrphanURLsReturn {
 		count?: number | null;
@@ -1723,7 +1723,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetUrlsArea { current = 0, disappeared = 1, new = 2, search_engines_orphans = 3 }
+	export enum GetUrlsArea { current = 'current', disappeared = 'disappeared', new = 'new', search_engines_orphans = 'search_engines_orphans' }
 
 	export interface GetUrlsReturn {
 		count?: number | null;
@@ -1777,7 +1777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetUrlsSuggestedFiltersArea { current = 0, new = 1 }
+	export enum GetUrlsSuggestedFiltersArea { current = 'current', new = 'new' }
 
 	export interface GetUserProjectsReturn {
 		count?: number | null;
@@ -1831,7 +1831,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetProjectUrlsAggsArea { current = 0, disappeared = 1, new = 2 }
+	export enum GetProjectUrlsAggsArea { current = 'current', disappeared = 'disappeared', new = 'new' }
 
 }
 

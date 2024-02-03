@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetProductInfoReturnCodeType { UPC = 0, EAN = 1, ISBN = 2 }
+	export enum GetProductInfoReturnCodeType { UPC = 'UPC', EAN = 'EAN', ISBN = 'ISBN' }
 
 	export interface GetProductInfoReturnProduct {
 

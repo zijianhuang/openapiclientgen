@@ -56,7 +56,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceShareInvitationStatus { PENDING = 0, ACCEPTED = 1, REJECTED = 2, EXPIRED = 3 }
+	export enum ResourceShareInvitationStatus { PENDING = 'PENDING', ACCEPTED = 'ACCEPTED', REJECTED = 'REJECTED', EXPIRED = 'EXPIRED' }
 
 
 	/** Describes an association between a resource share and either a principal or a resource. */
@@ -99,9 +99,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceShareAssociationType { PRINCIPAL = 0, RESOURCE = 1 }
+	export enum ResourceShareAssociationType { PRINCIPAL = 'PRINCIPAL', RESOURCE = 'RESOURCE' }
 
-	export enum ResourceShareAssociationStatus { ASSOCIATING = 0, ASSOCIATED = 1, FAILED = 2, DISASSOCIATING = 3, DISASSOCIATED = 4 }
+	export enum ResourceShareAssociationStatus { ASSOCIATING = 'ASSOCIATING', ASSOCIATED = 'ASSOCIATED', FAILED = 'FAILED', DISASSOCIATING = 'DISASSOCIATING', DISASSOCIATED = 'DISASSOCIATED' }
 
 	export interface MalformedArnException {
 	}
@@ -345,9 +345,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionType { CUSTOMER_MANAGED = 0, AWS_MANAGED = 1 }
+	export enum PermissionType { CUSTOMER_MANAGED = 'CUSTOMER_MANAGED', AWS_MANAGED = 'AWS_MANAGED' }
 
-	export enum PermissionFeatureSet { CREATED_FROM_POLICY = 0, PROMOTING_TO_STANDARD = 1, STANDARD = 2 }
+	export enum PermissionFeatureSet { CREATED_FROM_POLICY = 'CREATED_FROM_POLICY', PROMOTING_TO_STANDARD = 'PROMOTING_TO_STANDARD', STANDARD = 'STANDARD' }
 
 
 	/** <p>A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p> */
@@ -476,7 +476,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionStatus { ATTACHABLE = 0, UNATTACHABLE = 1, DELETING = 2, DELETED = 3 }
+	export enum PermissionStatus { ATTACHABLE = 'ATTACHABLE', UNATTACHABLE = 'UNATTACHABLE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface PermissionVersionsLimitExceededException {
 	}
@@ -544,7 +544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceShareStatus { PENDING = 0, ACTIVE = 1, FAILED = 2, DELETING = 3, DELETED = 4 }
+	export enum ResourceShareStatus { PENDING = 'PENDING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface TagPolicyViolationException {
 	}
@@ -833,9 +833,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceStatus { AVAILABLE = 0, ZONAL_RESOURCE_INACCESSIBLE = 1, LIMIT_EXCEEDED = 2, UNAVAILABLE = 3, PENDING = 4 }
+	export enum ResourceStatus { AVAILABLE = 'AVAILABLE', ZONAL_RESOURCE_INACCESSIBLE = 'ZONAL_RESOURCE_INACCESSIBLE', LIMIT_EXCEEDED = 'LIMIT_EXCEEDED', UNAVAILABLE = 'UNAVAILABLE', PENDING = 'PENDING' }
 
-	export enum ResourceRegionScope { REGIONAL = 0, GLOBAL = 1 }
+	export enum ResourceRegionScope { REGIONAL = 'REGIONAL', GLOBAL = 'GLOBAL' }
 
 	export interface MissingRequiredParameterException {
 	}
@@ -1025,7 +1025,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplacePermissionAssociationsWorkStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
+	export enum ReplacePermissionAssociationsWorkStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface ListResourceSharePermissionsResponse {
 		permissions?: Array<ResourceSharePermissionSummary>;
@@ -1568,7 +1568,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceOwner { SELF = 0, 'OTHER-ACCOUNTS' = 1 }
+	export enum ResourceOwner { SELF = 'SELF', 'OTHER-ACCOUNTS' = 'OTHER-ACCOUNTS' }
 
 	export interface GetResourceSharesRequest {
 		resourceShareArns?: Array<string>;
@@ -1607,7 +1607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceRegionScopeFilter { ALL = 0, REGIONAL = 1, GLOBAL = 2 }
+	export enum ResourceRegionScopeFilter { ALL = 'ALL', REGIONAL = 'REGIONAL', GLOBAL = 'GLOBAL' }
 
 	export interface ListPendingInvitationResourcesRequest {
 
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionTypeFilter { ALL = 0, AWS_MANAGED = 1, CUSTOMER_MANAGED = 2 }
+	export enum PermissionTypeFilter { ALL = 'ALL', AWS_MANAGED = 'AWS_MANAGED', CUSTOMER_MANAGED = 'CUSTOMER_MANAGED' }
 
 	export interface ListPermissionsRequest {
 		resourceType?: string;
@@ -1930,7 +1930,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceShareFeatureSet { CREATED_FROM_POLICY = 0, PROMOTING_TO_STANDARD = 1, STANDARD = 2 }
+	export enum ResourceShareFeatureSet { CREATED_FROM_POLICY = 'CREATED_FROM_POLICY', PROMOTING_TO_STANDARD = 'PROMOTING_TO_STANDARD', STANDARD = 'STANDARD' }
 
 	export interface SetDefaultPermissionVersionRequest {
 

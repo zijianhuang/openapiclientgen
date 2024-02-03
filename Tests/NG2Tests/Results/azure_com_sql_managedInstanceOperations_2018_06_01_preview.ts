@@ -125,7 +125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedInstanceOperationPropertiesState { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, CancelInProgress = 4, Cancelled = 5 }
+	export enum ManagedInstanceOperationPropertiesState { Pending = 'Pending', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', CancelInProgress = 'CancelInProgress', Cancelled = 'Cancelled' }
 
 
 	/** The response to a list managed instance operations request */

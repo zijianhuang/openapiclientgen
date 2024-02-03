@@ -76,7 +76,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryMetricUnit { percentage = 0, KB = 1, microseconds = 2 }
+	export enum QueryMetricUnit { percentage = 'percentage', KB = 'KB', microseconds = 'microseconds' }
 
 
 	/** A database query. */
@@ -239,11 +239,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TopQueriesAggregationFunction { min = 0, max = 1, avg = 2, sum = 3 }
+	export enum TopQueriesAggregationFunction { min = 'min', max = 'max', avg = 'avg', sum = 'sum' }
 
-	export enum TopQueriesExecutionType { any = 0, regular = 1, irregular = 2, aborted = 3, exception = 4 }
+	export enum TopQueriesExecutionType { any = 'any', regular = 'regular', irregular = 'irregular', aborted = 'aborted', exception = 'exception' }
 
-	export enum TopQueriesObservedMetric { cpu = 0, io = 1, logio = 2, duration = 3, executionCount = 4 }
+	export enum TopQueriesObservedMetric { cpu = 'cpu', io = 'io', logio = 'logio', duration = 'duration', executionCount = 'executionCount' }
 
 
 	/** Represents the response to a get top queries request. */

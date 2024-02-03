@@ -32,7 +32,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscovererState { STARTED = 0, STOPPED = 1 }
+	export enum DiscovererState { STARTED = 'STARTED', STOPPED = 'STOPPED' }
 
 
 	/** Key-value pairs associated with a resource. */
@@ -192,7 +192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodeGenerationStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2 }
+	export enum CodeGenerationStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_COMPLETE = 'CREATE_COMPLETE', CREATE_FAILED = 'CREATE_FAILED' }
 
 	export interface TooManyRequestsException {
 	}
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { OpenApi3 = 0, JSONSchemaDraft4 = 1 }
+	export enum Type { OpenApi3 = 'OpenApi3', JSONSchemaDraft4 = 'JSONSchemaDraft4' }
 
 	export interface ListSchemasResponse {
 		NextToken?: string;

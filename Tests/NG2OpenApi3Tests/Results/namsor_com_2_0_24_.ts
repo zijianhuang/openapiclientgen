@@ -956,7 +956,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirstLastNameGenderedOutLikelyGender { male = 0, female = 1, unknown = 2 }
+	export enum FirstLastNameGenderedOutLikelyGender { male = 'male', female = 'female', unknown = 'unknown' }
 
 
 	/** Represents the output of inferring the LIKELY country of Origin from a personal name. */
@@ -1690,7 +1690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirstLastNameUSRaceEthnicityOutRaceEthnicity { W_NL = 0, HL = 1, A = 2, B_NL = 3, AI_AN = 4, PI = 5 }
+	export enum FirstLastNameUSRaceEthnicityOutRaceEthnicity { W_NL = 'W_NL', HL = 'HL', A = 'A', B_NL = 'B_NL', AI_AN = 'AI_AN', PI = 'PI' }
 
 	export interface BatchMatchPersonalFirstLastNameIn {
 		facts?: Array<FactIn>;
@@ -1936,7 +1936,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NameMatchedOutMatchStatus { Match = 0, Mismatch = 1 }
+	export enum NameMatchedOutMatchStatus { Match = 'Match', Mismatch = 'Mismatch' }
 
 	export interface BatchPersonalNameCastegroupOut {
 
@@ -2547,7 +2547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PersonalNameParsedOutNameParserType { FN1LN1 = 0, LN1FN1 = 1, FN1LN2 = 2, LN2FN1 = 3, FN1LNx = 4, LNxFN1 = 5, FN2LN1 = 6, LN1FN2 = 7, FN2LN2 = 8, LN2FN2 = 9, FN2LNx = 10, LNxFN2 = 11, FNxLN1 = 12, LN1FNx = 13, FNxLN2 = 14, LN2FNx = 15, FNxLNx = 16, LNxFNx = 17 }
+	export enum PersonalNameParsedOutNameParserType { FN1LN1 = 'FN1LN1', LN1FN1 = 'LN1FN1', FN1LN2 = 'FN1LN2', LN2FN1 = 'LN2FN1', FN1LNx = 'FN1LNx', LNxFN1 = 'LNxFN1', FN2LN1 = 'FN2LN1', LN1FN2 = 'LN1FN2', FN2LN2 = 'FN2LN2', LN2FN2 = 'LN2FN2', FN2LNx = 'FN2LNx', LNxFN2 = 'LNxFN2', FNxLN1 = 'FNxLN1', LN1FNx = 'LN1FNx', FNxLN2 = 'FNxLN2', LN2FNx = 'LN2FNx', FNxLNx = 'FNxLNx', LNxFNx = 'LNxFNx' }
 
 	export interface BatchPersonalNameReligionedOut {
 

@@ -123,7 +123,7 @@ export namespace MyNS {
 
 
 	/** The types of events that are sent to the event destination. */
-	export enum EventType { INITIATED_CALL = 0, RINGING = 1, ANSWERED = 2, COMPLETED_CALL = 3, BUSY = 4, FAILED = 5, NO_ANSWER = 6 }
+	export enum EventType { INITIATED_CALL = 'INITIATED_CALL', RINGING = 'RINGING', ANSWERED = 'ANSWERED', COMPLETED_CALL = 'COMPLETED_CALL', BUSY = 'BUSY', FAILED = 'FAILED', NO_ANSWER = 'NO_ANSWER' }
 
 
 	/** An object that contains information about an event destination that sends data to Amazon SNS. */

@@ -1095,13 +1095,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Sync_list_item_enum_query_from_bound_type { inclusive = 0, exclusive = 1 }
+	export enum Sync_list_item_enum_query_from_bound_type { inclusive = 'inclusive', exclusive = 'exclusive' }
 
-	export enum Sync_list_item_enum_query_result_order { asc = 0, desc = 1 }
+	export enum Sync_list_item_enum_query_result_order { asc = 'asc', desc = 'desc' }
 
-	export enum Sync_map_item_enum_query_from_bound_type { inclusive = 0, exclusive = 1 }
+	export enum Sync_map_item_enum_query_from_bound_type { inclusive = 'inclusive', exclusive = 'exclusive' }
 
-	export enum Sync_map_item_enum_query_result_order { asc = 0, desc = 1 }
+	export enum Sync_map_item_enum_query_result_order { asc = 'asc', desc = 'desc' }
 
 	@Injectable()
 	export class MyClient {

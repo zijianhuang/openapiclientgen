@@ -177,7 +177,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_GetPolicyName { default = 0 }
+	export enum ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_GetPolicyName { default = 'default' }
 
 }
 

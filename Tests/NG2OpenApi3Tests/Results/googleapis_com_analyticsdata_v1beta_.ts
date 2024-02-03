@@ -128,7 +128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudienceExportState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, FAILED = 3 }
+	export enum AudienceExportState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** This metadata is currently blank. */
@@ -369,7 +369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CohortsRangeGranularity { GRANULARITY_UNSPECIFIED = 0, DAILY = 1, WEEKLY = 2, MONTHLY = 3 }
+	export enum CohortsRangeGranularity { GRANULARITY_UNSPECIFIED = 'GRANULARITY_UNSPECIFIED', DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 
 	/** To express dimension or metric filters. The fields in the same FilterExpression need to be either all dimensions or all metrics. */
@@ -543,7 +543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumericFilterOperation { OPERATION_UNSPECIFIED = 0, EQUAL = 1, LESS_THAN = 2, LESS_THAN_OR_EQUAL = 3, GREATER_THAN = 4, GREATER_THAN_OR_EQUAL = 5 }
+	export enum NumericFilterOperation { OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED', EQUAL = 'EQUAL', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL' }
 
 
 	/** The filter for string */
@@ -580,7 +580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 0, EXACT = 1, BEGINS_WITH = 2, ENDS_WITH = 3, CONTAINS = 4, FULL_REGEXP = 5, PARTIAL_REGEXP = 6 }
+	export enum StringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 'MATCH_TYPE_UNSPECIFIED', EXACT = 'EXACT', BEGINS_WITH = 'BEGINS_WITH', ENDS_WITH = 'ENDS_WITH', CONTAINS = 'CONTAINS', FULL_REGEXP = 'FULL_REGEXP', PARTIAL_REGEXP = 'PARTIAL_REGEXP' }
 
 
 	/** Dimensions are attributes of your data. For example, the dimension city indicates the city from which an event originates. Dimension values in report responses are strings; for example, the city could be "Paris" or "New York". Requests are allowed up to 9 dimensions. */
@@ -804,7 +804,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionOrderByOrderType { ORDER_TYPE_UNSPECIFIED = 0, ALPHANUMERIC = 1, CASE_INSENSITIVE_ALPHANUMERIC = 2, NUMERIC = 3 }
+	export enum DimensionOrderByOrderType { ORDER_TYPE_UNSPECIFIED = 'ORDER_TYPE_UNSPECIFIED', ALPHANUMERIC = 'ALPHANUMERIC', CASE_INSENSITIVE_ALPHANUMERIC = 'CASE_INSENSITIVE_ALPHANUMERIC', NUMERIC = 'NUMERIC' }
 
 
 	/** Sorts by metric values. */
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricHeaderType { METRIC_TYPE_UNSPECIFIED = 0, TYPE_INTEGER = 1, TYPE_FLOAT = 2, TYPE_SECONDS = 3, TYPE_MILLISECONDS = 4, TYPE_MINUTES = 5, TYPE_HOURS = 6, TYPE_STANDARD = 7, TYPE_CURRENCY = 8, TYPE_FEET = 9, TYPE_MILES = 10, TYPE_METERS = 11, TYPE_KILOMETERS = 12 }
+	export enum MetricHeaderType { METRIC_TYPE_UNSPECIFIED = 'METRIC_TYPE_UNSPECIFIED', TYPE_INTEGER = 'TYPE_INTEGER', TYPE_FLOAT = 'TYPE_FLOAT', TYPE_SECONDS = 'TYPE_SECONDS', TYPE_MILLISECONDS = 'TYPE_MILLISECONDS', TYPE_MINUTES = 'TYPE_MINUTES', TYPE_HOURS = 'TYPE_HOURS', TYPE_STANDARD = 'TYPE_STANDARD', TYPE_CURRENCY = 'TYPE_CURRENCY', TYPE_FEET = 'TYPE_FEET', TYPE_MILES = 'TYPE_MILES', TYPE_METERS = 'TYPE_METERS', TYPE_KILOMETERS = 'TYPE_KILOMETERS' }
 
 
 	/** Dimensions' values in a single pivot. */
@@ -1465,7 +1465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckCompatibilityRequestCompatibilityFilter { COMPATIBILITY_UNSPECIFIED = 0, COMPATIBLE = 1, INCOMPATIBLE = 2 }
+	export enum CheckCompatibilityRequestCompatibilityFilter { COMPATIBILITY_UNSPECIFIED = 'COMPATIBILITY_UNSPECIFIED', COMPATIBLE = 'COMPATIBLE', INCOMPATIBLE = 'INCOMPATIBLE' }
 
 
 	/** The compatibility response with the compatibility of each dimension & metric. */

@@ -179,7 +179,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobEventType { JOB_EVENT_TYPE_UNSPECIFIED = 0, IMPRESSION = 1, VIEW = 2, VIEW_REDIRECT = 3, APPLICATION_START = 4, APPLICATION_FINISH = 5, APPLICATION_QUICK_SUBMISSION = 6, APPLICATION_REDIRECT = 7, APPLICATION_START_FROM_SEARCH = 8, APPLICATION_REDIRECT_FROM_SEARCH = 9, APPLICATION_COMPANY_SUBMIT = 10, BOOKMARK = 11, NOTIFICATION = 12, HIRED = 13, SENT_CV = 14, INTERVIEW_GRANTED = 15, NOT_INTERESTED = 16 }
+	export enum JobEventType { JOB_EVENT_TYPE_UNSPECIFIED = 'JOB_EVENT_TYPE_UNSPECIFIED', IMPRESSION = 'IMPRESSION', VIEW = 'VIEW', VIEW_REDIRECT = 'VIEW_REDIRECT', APPLICATION_START = 'APPLICATION_START', APPLICATION_FINISH = 'APPLICATION_FINISH', APPLICATION_QUICK_SUBMISSION = 'APPLICATION_QUICK_SUBMISSION', APPLICATION_REDIRECT = 'APPLICATION_REDIRECT', APPLICATION_START_FROM_SEARCH = 'APPLICATION_START_FROM_SEARCH', APPLICATION_REDIRECT_FROM_SEARCH = 'APPLICATION_REDIRECT_FROM_SEARCH', APPLICATION_COMPANY_SUBMIT = 'APPLICATION_COMPANY_SUBMIT', BOOKMARK = 'BOOKMARK', NOTIFICATION = 'NOTIFICATION', HIRED = 'HIRED', SENT_CV = 'SENT_CV', INTERVIEW_GRANTED = 'INTERVIEW_GRANTED', NOT_INTERESTED = 'NOT_INTERESTED' }
 
 
 	/** Input only. Parameters needed for commute search. */
@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommuteFilterCommuteMethod { COMMUTE_METHOD_UNSPECIFIED = 0, DRIVING = 1, TRANSIT = 2 }
+	export enum CommuteFilterCommuteMethod { COMMUTE_METHOD_UNSPECIFIED = 'COMMUTE_METHOD_UNSPECIFIED', DRIVING = 'DRIVING', TRANSIT = 'TRANSIT' }
 
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
@@ -273,7 +273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommuteFilterRoadTraffic { ROAD_TRAFFIC_UNSPECIFIED = 0, TRAFFIC_FREE = 1, BUSY_HOUR = 2 }
+	export enum CommuteFilterRoadTraffic { ROAD_TRAFFIC_UNSPECIFIED = 'ROAD_TRAFFIC_UNSPECIFIED', TRAFFIC_FREE = 'TRAFFIC_FREE', BUSY_HOUR = 'BUSY_HOUR' }
 
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
@@ -361,7 +361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationLocationType { LOCATION_TYPE_UNSPECIFIED = 0, COUNTRY = 1, ADMINISTRATIVE_AREA = 2, SUB_ADMINISTRATIVE_AREA = 3, LOCALITY = 4, POSTAL_CODE = 5, SUB_LOCALITY = 6, SUB_LOCALITY_1 = 7, SUB_LOCALITY_2 = 8, NEIGHBORHOOD = 9, STREET_ADDRESS = 10 }
+	export enum LocationLocationType { LOCATION_TYPE_UNSPECIFIED = 'LOCATION_TYPE_UNSPECIFIED', COUNTRY = 'COUNTRY', ADMINISTRATIVE_AREA = 'ADMINISTRATIVE_AREA', SUB_ADMINISTRATIVE_AREA = 'SUB_ADMINISTRATIVE_AREA', LOCALITY = 'LOCALITY', POSTAL_CODE = 'POSTAL_CODE', SUB_LOCALITY = 'SUB_LOCALITY', SUB_LOCALITY_1 = 'SUB_LOCALITY_1', SUB_LOCALITY_2 = 'SUB_LOCALITY_2', NEIGHBORHOOD = 'NEIGHBORHOOD', STREET_ADDRESS = 'STREET_ADDRESS' }
 
 
 	/** Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478 */
@@ -560,7 +560,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompanySize { COMPANY_SIZE_UNSPECIFIED = 0, MINI = 1, SMALL = 2, SMEDIUM = 3, MEDIUM = 4, BIG = 5, BIGGER = 6, GIANT = 7 }
+	export enum CompanySize { COMPANY_SIZE_UNSPECIFIED = 'COMPANY_SIZE_UNSPECIFIED', MINI = 'MINI', SMALL = 'SMALL', SMEDIUM = 'SMEDIUM', MEDIUM = 'MEDIUM', BIG = 'BIG', BIGGER = 'BIGGER', GIANT = 'GIANT' }
 
 
 	/** A compensation entry that represents one component of compensation, such as base pay, bonus, or other compensation type. Annualization: One compensation entry can be annualized if - it contains valid amount or range. - and its expected_units_per_year is set or can be derived. Its annualized range is determined as (amount or range) times expected_units_per_year. */
@@ -665,9 +665,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CompensationEntryType { COMPENSATION_TYPE_UNSPECIFIED = 0, BASE = 1, BONUS = 2, SIGNING_BONUS = 3, EQUITY = 4, PROFIT_SHARING = 5, COMMISSIONS = 6, TIPS = 7, OTHER_COMPENSATION_TYPE = 8 }
+	export enum CompensationEntryType { COMPENSATION_TYPE_UNSPECIFIED = 'COMPENSATION_TYPE_UNSPECIFIED', BASE = 'BASE', BONUS = 'BONUS', SIGNING_BONUS = 'SIGNING_BONUS', EQUITY = 'EQUITY', PROFIT_SHARING = 'PROFIT_SHARING', COMMISSIONS = 'COMMISSIONS', TIPS = 'TIPS', OTHER_COMPENSATION_TYPE = 'OTHER_COMPENSATION_TYPE' }
 
-	export enum CompensationEntryUnit { COMPENSATION_UNIT_UNSPECIFIED = 0, HOURLY = 1, DAILY = 2, WEEKLY = 3, MONTHLY = 4, YEARLY = 5, ONE_TIME = 6, OTHER_COMPENSATION_UNIT = 7 }
+	export enum CompensationEntryUnit { COMPENSATION_UNIT_UNSPECIFIED = 'COMPENSATION_UNIT_UNSPECIFIED', HOURLY = 'HOURLY', DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY', YEARLY = 'YEARLY', ONE_TIME = 'ONE_TIME', OTHER_COMPENSATION_UNIT = 'OTHER_COMPENSATION_UNIT' }
 
 
 	/** Input only. Filter on job compensation type and amount. */
@@ -703,7 +703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompensationFilterType { FILTER_TYPE_UNSPECIFIED = 0, UNIT_ONLY = 1, UNIT_AND_AMOUNT = 2, ANNUALIZED_BASE_AMOUNT = 3, ANNUALIZED_TOTAL_AMOUNT = 4 }
+	export enum CompensationFilterType { FILTER_TYPE_UNSPECIFIED = 'FILTER_TYPE_UNSPECIFIED', UNIT_ONLY = 'UNIT_ONLY', UNIT_AND_AMOUNT = 'UNIT_AND_AMOUNT', ANNUALIZED_BASE_AMOUNT = 'ANNUALIZED_BASE_AMOUNT', ANNUALIZED_TOTAL_AMOUNT = 'ANNUALIZED_TOTAL_AMOUNT' }
 
 
 	/** Input only. Compensation based histogram request. */
@@ -753,7 +753,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompensationHistogramRequestType { COMPENSATION_HISTOGRAM_REQUEST_TYPE_UNSPECIFIED = 0, BASE = 1, ANNUALIZED_BASE = 2, ANNUALIZED_TOTAL = 3 }
+	export enum CompensationHistogramRequestType { COMPENSATION_HISTOGRAM_REQUEST_TYPE_UNSPECIFIED = 'COMPENSATION_HISTOGRAM_REQUEST_TYPE_UNSPECIFIED', BASE = 'BASE', ANNUALIZED_BASE = 'ANNUALIZED_BASE', ANNUALIZED_TOTAL = 'ANNUALIZED_TOTAL' }
 
 
 	/** Output only. Compensation based histogram result. */
@@ -888,7 +888,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompletionResultType { COMPLETION_TYPE_UNSPECIFIED = 0, JOB_TITLE = 1, COMPANY_NAME = 2, COMBINED = 3 }
+	export enum CompletionResultType { COMPLETION_TYPE_UNSPECIFIED = 'COMPLETION_TYPE_UNSPECIFIED', JOB_TITLE = 'JOB_TITLE', COMPANY_NAME = 'COMPANY_NAME', COMBINED = 'COMBINED' }
 
 
 	/** Output only. Additional information returned to client, such as debugging information. */
@@ -1201,9 +1201,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobJobLevel { JOB_LEVEL_UNSPECIFIED = 0, ENTRY_LEVEL = 1, EXPERIENCED = 2, MANAGER = 3, DIRECTOR = 4, EXECUTIVE = 5 }
+	export enum JobJobLevel { JOB_LEVEL_UNSPECIFIED = 'JOB_LEVEL_UNSPECIFIED', ENTRY_LEVEL = 'ENTRY_LEVEL', EXPERIENCED = 'EXPERIENCED', MANAGER = 'MANAGER', DIRECTOR = 'DIRECTOR', EXECUTIVE = 'EXECUTIVE' }
 
-	export enum JobPostingRegion { POSTING_REGION_UNSPECIFIED = 0, ADMINISTRATIVE_AREA = 1, NATION = 2, TELECOMMUTE = 3 }
+	export enum JobPostingRegion { POSTING_REGION_UNSPECIFIED = 'POSTING_REGION_UNSPECIFIED', ADMINISTRATIVE_AREA = 'ADMINISTRATIVE_AREA', NATION = 'NATION', TELECOMMUTE = 'TELECOMMUTE' }
 
 
 	/** Input only. Options for job processing. */
@@ -1233,9 +1233,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessingOptionsHtmlSanitization { HTML_SANITIZATION_UNSPECIFIED = 0, HTML_SANITIZATION_DISABLED = 1, SIMPLE_FORMATTING_ONLY = 2 }
+	export enum ProcessingOptionsHtmlSanitization { HTML_SANITIZATION_UNSPECIFIED = 'HTML_SANITIZATION_UNSPECIFIED', HTML_SANITIZATION_DISABLED = 'HTML_SANITIZATION_DISABLED', SIMPLE_FORMATTING_ONLY = 'SIMPLE_FORMATTING_ONLY' }
 
-	export enum JobVisibility { VISIBILITY_UNSPECIFIED = 0, ACCOUNT_ONLY = 1, SHARED_WITH_GOOGLE = 2, SHARED_WITH_PUBLIC = 3 }
+	export enum JobVisibility { VISIBILITY_UNSPECIFIED = 'VISIBILITY_UNSPECIFIED', ACCOUNT_ONLY = 'ACCOUNT_ONLY', SHARED_WITH_GOOGLE = 'SHARED_WITH_GOOGLE', SHARED_WITH_PUBLIC = 'SHARED_WITH_PUBLIC' }
 
 
 	/** Custom attributes histogram request. An error is thrown if neither string_value_histogram or long_value_histogram_bucketing_option has been defined. */
@@ -1327,7 +1327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceInfoDeviceType { DEVICE_TYPE_UNSPECIFIED = 0, WEB = 1, MOBILE_WEB = 2, ANDROID = 3, IOS = 4, BOT = 5, OTHER = 6 }
+	export enum DeviceInfoDeviceType { DEVICE_TYPE_UNSPECIFIED = 'DEVICE_TYPE_UNSPECIFIED', WEB = 'WEB', MOBILE_WEB = 'MOBILE_WEB', ANDROID = 'ANDROID', IOS = 'IOS', BOT = 'BOT', OTHER = 'OTHER' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -1394,7 +1394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistogramResultSearchType { SEARCH_TYPE_UNSPECIFIED = 0, COMPANY_ID = 1, EMPLOYMENT_TYPE = 2, COMPANY_SIZE = 3, DATE_PUBLISHED = 4, EDUCATION_LEVEL = 5, EXPERIENCE_LEVEL = 6, ADMIN_1 = 7, COUNTRY = 8, CITY = 9, LOCALE = 10, LANGUAGE = 11, CATEGORY = 12, CITY_COORDINATE = 13, ADMIN_1_COUNTRY = 14, COMPANY_DISPLAY_NAME = 15, BASE_COMPENSATION_UNIT = 16 }
+	export enum HistogramResultSearchType { SEARCH_TYPE_UNSPECIFIED = 'SEARCH_TYPE_UNSPECIFIED', COMPANY_ID = 'COMPANY_ID', EMPLOYMENT_TYPE = 'EMPLOYMENT_TYPE', COMPANY_SIZE = 'COMPANY_SIZE', DATE_PUBLISHED = 'DATE_PUBLISHED', EDUCATION_LEVEL = 'EDUCATION_LEVEL', EXPERIENCE_LEVEL = 'EXPERIENCE_LEVEL', ADMIN_1 = 'ADMIN_1', COUNTRY = 'COUNTRY', CITY = 'CITY', LOCALE = 'LOCALE', LANGUAGE = 'LANGUAGE', CATEGORY = 'CATEGORY', CITY_COORDINATE = 'CITY_COORDINATE', ADMIN_1_COUNTRY = 'ADMIN_1_COUNTRY', COMPANY_DISPLAY_NAME = 'COMPANY_DISPLAY_NAME', BASE_COMPENSATION_UNIT = 'BASE_COMPENSATION_UNIT' }
 
 
 	/** Output only. Histogram results that match HistogramFacets specified in SearchJobsRequest. */
@@ -1533,7 +1533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationFilterTelecommutePreference { TELECOMMUTE_PREFERENCE_UNSPECIFIED = 0, TELECOMMUTE_EXCLUDED = 1, TELECOMMUTE_ALLOWED = 2, TELECOMMUTE_JOBS_EXCLUDED = 3 }
+	export enum LocationFilterTelecommutePreference { TELECOMMUTE_PREFERENCE_UNSPECIFIED = 'TELECOMMUTE_PREFERENCE_UNSPECIFIED', TELECOMMUTE_EXCLUDED = 'TELECOMMUTE_EXCLUDED', TELECOMMUTE_ALLOWED = 'TELECOMMUTE_ALLOWED', TELECOMMUTE_JOBS_EXCLUDED = 'TELECOMMUTE_JOBS_EXCLUDED' }
 
 
 	/** Message representing a period of time between two timestamps. */
@@ -1762,7 +1762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespacedDebugInputTestingMode { TESTING_MODE_UNSPECIFIED = 0, TESTING_MODE_ALL_OFF = 1, TESTING_MODE_ALL_ON = 2 }
+	export enum NamespacedDebugInputTestingMode { TESTING_MODE_UNSPECIFIED = 'TESTING_MODE_UNSPECIFIED', TESTING_MODE_ALL_OFF = 'TESTING_MODE_ALL_OFF', TESTING_MODE_ALL_ON = 'TESTING_MODE_ALL_ON' }
 
 
 	/** Input only. Meta information related to the job searcher or entity conducting the job search. This information is used to improve the performance of the service. */
@@ -1895,11 +1895,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchJobsRequestDiversificationLevel { DIVERSIFICATION_LEVEL_UNSPECIFIED = 0, DISABLED = 1, SIMPLE = 2 }
+	export enum SearchJobsRequestDiversificationLevel { DIVERSIFICATION_LEVEL_UNSPECIFIED = 'DIVERSIFICATION_LEVEL_UNSPECIFIED', DISABLED = 'DISABLED', SIMPLE = 'SIMPLE' }
 
-	export enum SearchJobsRequestJobView { JOB_VIEW_UNSPECIFIED = 0, JOB_VIEW_ID_ONLY = 1, JOB_VIEW_MINIMAL = 2, JOB_VIEW_SMALL = 3, JOB_VIEW_FULL = 4 }
+	export enum SearchJobsRequestJobView { JOB_VIEW_UNSPECIFIED = 'JOB_VIEW_UNSPECIFIED', JOB_VIEW_ID_ONLY = 'JOB_VIEW_ID_ONLY', JOB_VIEW_MINIMAL = 'JOB_VIEW_MINIMAL', JOB_VIEW_SMALL = 'JOB_VIEW_SMALL', JOB_VIEW_FULL = 'JOB_VIEW_FULL' }
 
-	export enum SearchJobsRequestSearchMode { SEARCH_MODE_UNSPECIFIED = 0, JOB_SEARCH = 1, FEATURED_JOB_SEARCH = 2 }
+	export enum SearchJobsRequestSearchMode { SEARCH_MODE_UNSPECIFIED = 'SEARCH_MODE_UNSPECIFIED', JOB_SEARCH = 'JOB_SEARCH', FEATURED_JOB_SEARCH = 'FEATURED_JOB_SEARCH' }
 
 
 	/** Output only. Response for SearchJob method. */
@@ -2174,7 +2174,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Jobs_projects_completeScope { COMPLETION_SCOPE_UNSPECIFIED = 0, TENANT = 1, PUBLIC = 2 }
+	export enum Jobs_projects_completeScope { COMPLETION_SCOPE_UNSPECIFIED = 'COMPLETION_SCOPE_UNSPECIFIED', TENANT = 'TENANT', PUBLIC = 'PUBLIC' }
 
 }
 

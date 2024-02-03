@@ -770,7 +770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ZonePropertiesZoneType { Public = 0, Private = 1 }
+	export enum ZonePropertiesZoneType { Public = 'Public', Private = 'Private' }
 
 
 	/** Describes a request to update a DNS zone. */
@@ -998,7 +998,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum RecordSets_ListByTypeRecordType { A = 0, AAAA = 1, CAA = 2, CNAME = 3, MX = 4, NS = 5, PTR = 6, SOA = 7, SRV = 8, TXT = 9 }
+	export enum RecordSets_ListByTypeRecordType { A = 'A', AAAA = 'AAAA', CAA = 'CAA', CNAME = 'CNAME', MX = 'MX', NS = 'NS', PTR = 'PTR', SOA = 'SOA', SRV = 'SRV', TXT = 'TXT' }
 
 }
 

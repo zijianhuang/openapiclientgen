@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainAvailability { AVAILABLE = 0, AVAILABLE_RESERVED = 1, AVAILABLE_PREORDER = 2, UNAVAILABLE = 3, UNAVAILABLE_PREMIUM = 4, UNAVAILABLE_RESTRICTED = 5, RESERVED = 6, DONT_KNOW = 7 }
+	export enum DomainAvailability { AVAILABLE = 'AVAILABLE', AVAILABLE_RESERVED = 'AVAILABLE_RESERVED', AVAILABLE_PREORDER = 'AVAILABLE_PREORDER', UNAVAILABLE = 'UNAVAILABLE', UNAVAILABLE_PREMIUM = 'UNAVAILABLE_PREMIUM', UNAVAILABLE_RESTRICTED = 'UNAVAILABLE_RESTRICTED', RESERVED = 'RESERVED', DONT_KNOW = 'DONT_KNOW' }
 
 
 	/** The CheckDomainAvailability request contains the following elements. */
@@ -291,7 +291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainTransferabilityTransferable { TRANSFERABLE = 0, UNTRANSFERABLE = 1, DONT_KNOW = 2, DOMAIN_IN_OWN_ACCOUNT = 3, DOMAIN_IN_ANOTHER_ACCOUNT = 4, PREMIUM_DOMAIN = 5 }
+	export enum DomainTransferabilityTransferable { TRANSFERABLE = 'TRANSFERABLE', UNTRANSFERABLE = 'UNTRANSFERABLE', DONT_KNOW = 'DONT_KNOW', DOMAIN_IN_OWN_ACCOUNT = 'DOMAIN_IN_OWN_ACCOUNT', DOMAIN_IN_ANOTHER_ACCOUNT = 'DOMAIN_IN_ANOTHER_ACCOUNT', PREMIUM_DOMAIN = 'PREMIUM_DOMAIN' }
 
 
 	/** The CheckDomainTransferability request contains the following elements. */
@@ -564,7 +564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReachabilityStatus { PENDING = 0, DONE = 1, EXPIRED = 2 }
+	export enum ReachabilityStatus { PENDING = 'PENDING', DONE = 'DONE', EXPIRED = 'EXPIRED' }
 
 	export interface GetContactReachabilityStatusRequest {
 		domainName?: string;
@@ -723,9 +723,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactType { PERSON = 0, COMPANY = 1, ASSOCIATION = 2, PUBLIC_BODY = 3, RESELLER = 4 }
+	export enum ContactType { PERSON = 'PERSON', COMPANY = 'COMPANY', ASSOCIATION = 'ASSOCIATION', PUBLIC_BODY = 'PUBLIC_BODY', RESELLER = 'RESELLER' }
 
-	export enum CountryCode { AC = 0, AD = 1, AE = 2, AF = 3, AG = 4, AI = 5, AL = 6, AM = 7, AN = 8, AO = 9, AQ = 10, AR = 11, AS = 12, AT = 13, AU = 14, AW = 15, AX = 16, AZ = 17, BA = 18, BB = 19, BD = 20, BE = 21, BF = 22, BG = 23, BH = 24, BI = 25, BJ = 26, BL = 27, BM = 28, BN = 29, BO = 30, BQ = 31, BR = 32, BS = 33, BT = 34, BV = 35, BW = 36, BY = 37, BZ = 38, CA = 39, CC = 40, CD = 41, CF = 42, CG = 43, CH = 44, CI = 45, CK = 46, CL = 47, CM = 48, CN = 49, CO = 50, CR = 51, CU = 52, CV = 53, CW = 54, CX = 55, CY = 56, CZ = 57, DE = 58, DJ = 59, DK = 60, DM = 61, DO = 62, DZ = 63, EC = 64, EE = 65, EG = 66, EH = 67, ER = 68, ES = 69, ET = 70, FI = 71, FJ = 72, FK = 73, FM = 74, FO = 75, FR = 76, GA = 77, GB = 78, GD = 79, GE = 80, GF = 81, GG = 82, GH = 83, GI = 84, GL = 85, GM = 86, GN = 87, GP = 88, GQ = 89, GR = 90, GS = 91, GT = 92, GU = 93, GW = 94, GY = 95, HK = 96, HM = 97, HN = 98, HR = 99, HT = 100, HU = 101, ID = 102, IE = 103, IL = 104, IM = 105, IN = 106, IO = 107, IQ = 108, IR = 109, IS = 110, IT = 111, JE = 112, JM = 113, JO = 114, JP = 115, KE = 116, KG = 117, KH = 118, KI = 119, KM = 120, KN = 121, KP = 122, KR = 123, KW = 124, KY = 125, KZ = 126, LA = 127, LB = 128, LC = 129, LI = 130, LK = 131, LR = 132, LS = 133, LT = 134, LU = 135, LV = 136, LY = 137, MA = 138, MC = 139, MD = 140, ME = 141, MF = 142, MG = 143, MH = 144, MK = 145, ML = 146, MM = 147, MN = 148, MO = 149, MP = 150, MQ = 151, MR = 152, MS = 153, MT = 154, MU = 155, MV = 156, MW = 157, MX = 158, MY = 159, MZ = 160, NA = 161, NC = 162, NE = 163, NF = 164, NG = 165, NI = 166, NL = 167, NO = 168, NP = 169, NR = 170, NU = 171, NZ = 172, OM = 173, PA = 174, PE = 175, PF = 176, PG = 177, PH = 178, PK = 179, PL = 180, PM = 181, PN = 182, PR = 183, PS = 184, PT = 185, PW = 186, PY = 187, QA = 188, RE = 189, RO = 190, RS = 191, RU = 192, RW = 193, SA = 194, SB = 195, SC = 196, SD = 197, SE = 198, SG = 199, SH = 200, SI = 201, SJ = 202, SK = 203, SL = 204, SM = 205, SN = 206, SO = 207, SR = 208, SS = 209, ST = 210, SV = 211, SX = 212, SY = 213, SZ = 214, TC = 215, TD = 216, TF = 217, TG = 218, TH = 219, TJ = 220, TK = 221, TL = 222, TM = 223, TN = 224, TO = 225, TP = 226, TR = 227, TT = 228, TV = 229, TW = 230, TZ = 231, UA = 232, UG = 233, US = 234, UY = 235, UZ = 236, VA = 237, VC = 238, VE = 239, VG = 240, VI = 241, VN = 242, VU = 243, WF = 244, WS = 245, YE = 246, YT = 247, ZA = 248, ZM = 249, ZW = 250 }
+	export enum CountryCode { AC = 'AC', AD = 'AD', AE = 'AE', AF = 'AF', AG = 'AG', AI = 'AI', AL = 'AL', AM = 'AM', AN = 'AN', AO = 'AO', AQ = 'AQ', AR = 'AR', AS = 'AS', AT = 'AT', AU = 'AU', AW = 'AW', AX = 'AX', AZ = 'AZ', BA = 'BA', BB = 'BB', BD = 'BD', BE = 'BE', BF = 'BF', BG = 'BG', BH = 'BH', BI = 'BI', BJ = 'BJ', BL = 'BL', BM = 'BM', BN = 'BN', BO = 'BO', BQ = 'BQ', BR = 'BR', BS = 'BS', BT = 'BT', BV = 'BV', BW = 'BW', BY = 'BY', BZ = 'BZ', CA = 'CA', CC = 'CC', CD = 'CD', CF = 'CF', CG = 'CG', CH = 'CH', CI = 'CI', CK = 'CK', CL = 'CL', CM = 'CM', CN = 'CN', CO = 'CO', CR = 'CR', CU = 'CU', CV = 'CV', CW = 'CW', CX = 'CX', CY = 'CY', CZ = 'CZ', DE = 'DE', DJ = 'DJ', DK = 'DK', DM = 'DM', DO = 'DO', DZ = 'DZ', EC = 'EC', EE = 'EE', EG = 'EG', EH = 'EH', ER = 'ER', ES = 'ES', ET = 'ET', FI = 'FI', FJ = 'FJ', FK = 'FK', FM = 'FM', FO = 'FO', FR = 'FR', GA = 'GA', GB = 'GB', GD = 'GD', GE = 'GE', GF = 'GF', GG = 'GG', GH = 'GH', GI = 'GI', GL = 'GL', GM = 'GM', GN = 'GN', GP = 'GP', GQ = 'GQ', GR = 'GR', GS = 'GS', GT = 'GT', GU = 'GU', GW = 'GW', GY = 'GY', HK = 'HK', HM = 'HM', HN = 'HN', HR = 'HR', HT = 'HT', HU = 'HU', ID = 'ID', IE = 'IE', IL = 'IL', IM = 'IM', IN = 'IN', IO = 'IO', IQ = 'IQ', IR = 'IR', IS = 'IS', IT = 'IT', JE = 'JE', JM = 'JM', JO = 'JO', JP = 'JP', KE = 'KE', KG = 'KG', KH = 'KH', KI = 'KI', KM = 'KM', KN = 'KN', KP = 'KP', KR = 'KR', KW = 'KW', KY = 'KY', KZ = 'KZ', LA = 'LA', LB = 'LB', LC = 'LC', LI = 'LI', LK = 'LK', LR = 'LR', LS = 'LS', LT = 'LT', LU = 'LU', LV = 'LV', LY = 'LY', MA = 'MA', MC = 'MC', MD = 'MD', ME = 'ME', MF = 'MF', MG = 'MG', MH = 'MH', MK = 'MK', ML = 'ML', MM = 'MM', MN = 'MN', MO = 'MO', MP = 'MP', MQ = 'MQ', MR = 'MR', MS = 'MS', MT = 'MT', MU = 'MU', MV = 'MV', MW = 'MW', MX = 'MX', MY = 'MY', MZ = 'MZ', NA = 'NA', NC = 'NC', NE = 'NE', NF = 'NF', NG = 'NG', NI = 'NI', NL = 'NL', NO = 'NO', NP = 'NP', NR = 'NR', NU = 'NU', NZ = 'NZ', OM = 'OM', PA = 'PA', PE = 'PE', PF = 'PF', PG = 'PG', PH = 'PH', PK = 'PK', PL = 'PL', PM = 'PM', PN = 'PN', PR = 'PR', PS = 'PS', PT = 'PT', PW = 'PW', PY = 'PY', QA = 'QA', RE = 'RE', RO = 'RO', RS = 'RS', RU = 'RU', RW = 'RW', SA = 'SA', SB = 'SB', SC = 'SC', SD = 'SD', SE = 'SE', SG = 'SG', SH = 'SH', SI = 'SI', SJ = 'SJ', SK = 'SK', SL = 'SL', SM = 'SM', SN = 'SN', SO = 'SO', SR = 'SR', SS = 'SS', ST = 'ST', SV = 'SV', SX = 'SX', SY = 'SY', SZ = 'SZ', TC = 'TC', TD = 'TD', TF = 'TF', TG = 'TG', TH = 'TH', TJ = 'TJ', TK = 'TK', TL = 'TL', TM = 'TM', TN = 'TN', TO = 'TO', TP = 'TP', TR = 'TR', TT = 'TT', TV = 'TV', TW = 'TW', TZ = 'TZ', UA = 'UA', UG = 'UG', US = 'US', UY = 'UY', UZ = 'UZ', VA = 'VA', VC = 'VC', VE = 'VE', VG = 'VG', VI = 'VI', VN = 'VN', VU = 'VU', WF = 'WF', WS = 'WS', YE = 'YE', YT = 'YT', ZA = 'ZA', ZM = 'ZM', ZW = 'ZW' }
 
 
 	/** ExtraParam includes the following elements. */
@@ -755,7 +755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExtraParamName { DUNS_NUMBER = 0, BRAND_NUMBER = 1, BIRTH_DEPARTMENT = 2, BIRTH_DATE_IN_YYYY_MM_DD = 3, BIRTH_COUNTRY = 4, BIRTH_CITY = 5, DOCUMENT_NUMBER = 6, AU_ID_NUMBER = 7, AU_ID_TYPE = 8, CA_LEGAL_TYPE = 9, CA_BUSINESS_ENTITY_TYPE = 10, CA_LEGAL_REPRESENTATIVE = 11, CA_LEGAL_REPRESENTATIVE_CAPACITY = 12, ES_IDENTIFICATION = 13, ES_IDENTIFICATION_TYPE = 14, ES_LEGAL_FORM = 15, FI_BUSINESS_NUMBER = 16, FI_ID_NUMBER = 17, FI_NATIONALITY = 18, FI_ORGANIZATION_TYPE = 19, IT_NATIONALITY = 20, IT_PIN = 21, IT_REGISTRANT_ENTITY_TYPE = 22, RU_PASSPORT_DATA = 23, SE_ID_NUMBER = 24, SG_ID_NUMBER = 25, VAT_NUMBER = 26, UK_CONTACT_TYPE = 27, UK_COMPANY_NUMBER = 28, EU_COUNTRY_OF_CITIZENSHIP = 29, AU_PRIORITY_TOKEN = 30 }
+	export enum ExtraParamName { DUNS_NUMBER = 'DUNS_NUMBER', BRAND_NUMBER = 'BRAND_NUMBER', BIRTH_DEPARTMENT = 'BIRTH_DEPARTMENT', BIRTH_DATE_IN_YYYY_MM_DD = 'BIRTH_DATE_IN_YYYY_MM_DD', BIRTH_COUNTRY = 'BIRTH_COUNTRY', BIRTH_CITY = 'BIRTH_CITY', DOCUMENT_NUMBER = 'DOCUMENT_NUMBER', AU_ID_NUMBER = 'AU_ID_NUMBER', AU_ID_TYPE = 'AU_ID_TYPE', CA_LEGAL_TYPE = 'CA_LEGAL_TYPE', CA_BUSINESS_ENTITY_TYPE = 'CA_BUSINESS_ENTITY_TYPE', CA_LEGAL_REPRESENTATIVE = 'CA_LEGAL_REPRESENTATIVE', CA_LEGAL_REPRESENTATIVE_CAPACITY = 'CA_LEGAL_REPRESENTATIVE_CAPACITY', ES_IDENTIFICATION = 'ES_IDENTIFICATION', ES_IDENTIFICATION_TYPE = 'ES_IDENTIFICATION_TYPE', ES_LEGAL_FORM = 'ES_LEGAL_FORM', FI_BUSINESS_NUMBER = 'FI_BUSINESS_NUMBER', FI_ID_NUMBER = 'FI_ID_NUMBER', FI_NATIONALITY = 'FI_NATIONALITY', FI_ORGANIZATION_TYPE = 'FI_ORGANIZATION_TYPE', IT_NATIONALITY = 'IT_NATIONALITY', IT_PIN = 'IT_PIN', IT_REGISTRANT_ENTITY_TYPE = 'IT_REGISTRANT_ENTITY_TYPE', RU_PASSPORT_DATA = 'RU_PASSPORT_DATA', SE_ID_NUMBER = 'SE_ID_NUMBER', SG_ID_NUMBER = 'SG_ID_NUMBER', VAT_NUMBER = 'VAT_NUMBER', UK_CONTACT_TYPE = 'UK_CONTACT_TYPE', UK_COMPANY_NUMBER = 'UK_COMPANY_NUMBER', EU_COUNTRY_OF_CITIZENSHIP = 'EU_COUNTRY_OF_CITIZENSHIP', AU_PRIORITY_TOKEN = 'AU_PRIORITY_TOKEN' }
 
 
 	/** <p>Information about the DNSSEC key.</p> <p>You get this from your DNS provider and then give it to Route 53 (by using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>) to pass it to the registry to establish the chain of trust.</p> */
@@ -913,11 +913,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStatus { SUBMITTED = 0, IN_PROGRESS = 1, ERROR = 2, SUCCESSFUL = 3, FAILED = 4 }
+	export enum OperationStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', ERROR = 'ERROR', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED' }
 
-	export enum OperationType { REGISTER_DOMAIN = 0, DELETE_DOMAIN = 1, TRANSFER_IN_DOMAIN = 2, UPDATE_DOMAIN_CONTACT = 3, UPDATE_NAMESERVER = 4, CHANGE_PRIVACY_PROTECTION = 5, DOMAIN_LOCK = 6, ENABLE_AUTORENEW = 7, DISABLE_AUTORENEW = 8, ADD_DNSSEC = 9, REMOVE_DNSSEC = 10, EXPIRE_DOMAIN = 11, TRANSFER_OUT_DOMAIN = 12, CHANGE_DOMAIN_OWNER = 13, RENEW_DOMAIN = 14, PUSH_DOMAIN = 15, INTERNAL_TRANSFER_OUT_DOMAIN = 16, INTERNAL_TRANSFER_IN_DOMAIN = 17 }
+	export enum OperationType { REGISTER_DOMAIN = 'REGISTER_DOMAIN', DELETE_DOMAIN = 'DELETE_DOMAIN', TRANSFER_IN_DOMAIN = 'TRANSFER_IN_DOMAIN', UPDATE_DOMAIN_CONTACT = 'UPDATE_DOMAIN_CONTACT', UPDATE_NAMESERVER = 'UPDATE_NAMESERVER', CHANGE_PRIVACY_PROTECTION = 'CHANGE_PRIVACY_PROTECTION', DOMAIN_LOCK = 'DOMAIN_LOCK', ENABLE_AUTORENEW = 'ENABLE_AUTORENEW', DISABLE_AUTORENEW = 'DISABLE_AUTORENEW', ADD_DNSSEC = 'ADD_DNSSEC', REMOVE_DNSSEC = 'REMOVE_DNSSEC', EXPIRE_DOMAIN = 'EXPIRE_DOMAIN', TRANSFER_OUT_DOMAIN = 'TRANSFER_OUT_DOMAIN', CHANGE_DOMAIN_OWNER = 'CHANGE_DOMAIN_OWNER', RENEW_DOMAIN = 'RENEW_DOMAIN', PUSH_DOMAIN = 'PUSH_DOMAIN', INTERNAL_TRANSFER_OUT_DOMAIN = 'INTERNAL_TRANSFER_OUT_DOMAIN', INTERNAL_TRANSFER_IN_DOMAIN = 'INTERNAL_TRANSFER_IN_DOMAIN' }
 
-	export enum StatusFlag { PENDING_ACCEPTANCE = 0, PENDING_CUSTOMER_ACTION = 1, PENDING_AUTHORIZATION = 2, PENDING_PAYMENT_VERIFICATION = 3, PENDING_SUPPORT_CASE = 4 }
+	export enum StatusFlag { PENDING_ACCEPTANCE = 'PENDING_ACCEPTANCE', PENDING_CUSTOMER_ACTION = 'PENDING_CUSTOMER_ACTION', PENDING_AUTHORIZATION = 'PENDING_AUTHORIZATION', PENDING_PAYMENT_VERIFICATION = 'PENDING_PAYMENT_VERIFICATION', PENDING_SUPPORT_CASE = 'PENDING_SUPPORT_CASE' }
 
 
 	/** The <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> request includes the following element. */
@@ -1037,9 +1037,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ListDomainsAttributeName { DomainName = 0, Expiry = 1 }
+	export enum ListDomainsAttributeName { DomainName = 'DomainName', Expiry = 'Expiry' }
 
-	export enum Operator { LE = 0, GE = 1, BEGINS_WITH = 2 }
+	export enum Operator { LE = 'LE', GE = 'GE', BEGINS_WITH = 'BEGINS_WITH' }
 
 
 	/** Information for sorting a list of domains. */
@@ -1069,7 +1069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASC = 0, DESC = 1 }
+	export enum SortOrder { ASC = 'ASC', DESC = 'DESC' }
 
 
 	/** The ListOperations response includes the following elements. */
@@ -1158,7 +1158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListOperationsSortAttributeName { SubmittedDate = 0 }
+	export enum ListOperationsSortAttributeName { SubmittedDate = 'SubmittedDate' }
 
 	export interface ListPricesResponse {
 		Prices?: Array<DomainPrice>;
@@ -1950,7 +1950,7 @@ export namespace MyNS {
 
 
 	/** <p>Whether the domain name can be transferred to Route 53.</p> <note> <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p> </note> <p>Valid values:</p> <dl> <dt>TRANSFERABLE</dt> <dd> <p>The domain name can be transferred to Route 53.</p> </dd> <dt>UNTRANSFERRABLE</dt> <dd> <p>The domain name can't be transferred to Route 53.</p> </dd> <dt>DONT_KNOW</dt> <dd> <p>Reserved for future use.</p> </dd> <dt>DOMAIN_IN_OWN_ACCOUNT</dt> <dd> <p>The domain already exists in the current Amazon Web Services account.</p> </dd> <dt>DOMAIN_IN_ANOTHER_ACCOUNT</dt> <dd> <p> the domain exists in another Amazon Web Services account.</p> </dd> <dt>PREMIUM_DOMAIN</dt> <dd> <p>Premium domain transfer is not supported.</p> </dd> </dl> */
-	export enum Transferable { TRANSFERABLE = 0, UNTRANSFERABLE = 1, DONT_KNOW = 2, DOMAIN_IN_OWN_ACCOUNT = 3, DOMAIN_IN_ANOTHER_ACCOUNT = 4, PREMIUM_DOMAIN = 5 }
+	export enum Transferable { TRANSFERABLE = 'TRANSFERABLE', UNTRANSFERABLE = 'UNTRANSFERABLE', DONT_KNOW = 'DONT_KNOW', DOMAIN_IN_OWN_ACCOUNT = 'DOMAIN_IN_OWN_ACCOUNT', DOMAIN_IN_ANOTHER_ACCOUNT = 'DOMAIN_IN_ANOTHER_ACCOUNT', PREMIUM_DOMAIN = 'PREMIUM_DOMAIN' }
 
 	@Injectable()
 	export class MyClient {
@@ -2272,73 +2272,73 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptDomainTransferFromAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.AcceptDomainTransferFromAnotherAwsAccount' = 0 }
+	export enum AcceptDomainTransferFromAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.AcceptDomainTransferFromAnotherAwsAccount' = 'Route53Domains_v20140515.AcceptDomainTransferFromAnotherAwsAccount' }
 
-	export enum AssociateDelegationSignerToDomainX_Amz_Target { 'Route53Domains_v20140515.AssociateDelegationSignerToDomain' = 0 }
+	export enum AssociateDelegationSignerToDomainX_Amz_Target { 'Route53Domains_v20140515.AssociateDelegationSignerToDomain' = 'Route53Domains_v20140515.AssociateDelegationSignerToDomain' }
 
-	export enum CancelDomainTransferToAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.CancelDomainTransferToAnotherAwsAccount' = 0 }
+	export enum CancelDomainTransferToAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.CancelDomainTransferToAnotherAwsAccount' = 'Route53Domains_v20140515.CancelDomainTransferToAnotherAwsAccount' }
 
-	export enum CheckDomainAvailabilityX_Amz_Target { 'Route53Domains_v20140515.CheckDomainAvailability' = 0 }
+	export enum CheckDomainAvailabilityX_Amz_Target { 'Route53Domains_v20140515.CheckDomainAvailability' = 'Route53Domains_v20140515.CheckDomainAvailability' }
 
-	export enum CheckDomainTransferabilityX_Amz_Target { 'Route53Domains_v20140515.CheckDomainTransferability' = 0 }
+	export enum CheckDomainTransferabilityX_Amz_Target { 'Route53Domains_v20140515.CheckDomainTransferability' = 'Route53Domains_v20140515.CheckDomainTransferability' }
 
-	export enum DeleteDomainX_Amz_Target { 'Route53Domains_v20140515.DeleteDomain' = 0 }
+	export enum DeleteDomainX_Amz_Target { 'Route53Domains_v20140515.DeleteDomain' = 'Route53Domains_v20140515.DeleteDomain' }
 
-	export enum DeleteTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.DeleteTagsForDomain' = 0 }
+	export enum DeleteTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.DeleteTagsForDomain' = 'Route53Domains_v20140515.DeleteTagsForDomain' }
 
-	export enum DisableDomainAutoRenewX_Amz_Target { 'Route53Domains_v20140515.DisableDomainAutoRenew' = 0 }
+	export enum DisableDomainAutoRenewX_Amz_Target { 'Route53Domains_v20140515.DisableDomainAutoRenew' = 'Route53Domains_v20140515.DisableDomainAutoRenew' }
 
-	export enum DisableDomainTransferLockX_Amz_Target { 'Route53Domains_v20140515.DisableDomainTransferLock' = 0 }
+	export enum DisableDomainTransferLockX_Amz_Target { 'Route53Domains_v20140515.DisableDomainTransferLock' = 'Route53Domains_v20140515.DisableDomainTransferLock' }
 
-	export enum DisassociateDelegationSignerFromDomainX_Amz_Target { 'Route53Domains_v20140515.DisassociateDelegationSignerFromDomain' = 0 }
+	export enum DisassociateDelegationSignerFromDomainX_Amz_Target { 'Route53Domains_v20140515.DisassociateDelegationSignerFromDomain' = 'Route53Domains_v20140515.DisassociateDelegationSignerFromDomain' }
 
-	export enum EnableDomainAutoRenewX_Amz_Target { 'Route53Domains_v20140515.EnableDomainAutoRenew' = 0 }
+	export enum EnableDomainAutoRenewX_Amz_Target { 'Route53Domains_v20140515.EnableDomainAutoRenew' = 'Route53Domains_v20140515.EnableDomainAutoRenew' }
 
-	export enum EnableDomainTransferLockX_Amz_Target { 'Route53Domains_v20140515.EnableDomainTransferLock' = 0 }
+	export enum EnableDomainTransferLockX_Amz_Target { 'Route53Domains_v20140515.EnableDomainTransferLock' = 'Route53Domains_v20140515.EnableDomainTransferLock' }
 
-	export enum GetContactReachabilityStatusX_Amz_Target { 'Route53Domains_v20140515.GetContactReachabilityStatus' = 0 }
+	export enum GetContactReachabilityStatusX_Amz_Target { 'Route53Domains_v20140515.GetContactReachabilityStatus' = 'Route53Domains_v20140515.GetContactReachabilityStatus' }
 
-	export enum GetDomainDetailX_Amz_Target { 'Route53Domains_v20140515.GetDomainDetail' = 0 }
+	export enum GetDomainDetailX_Amz_Target { 'Route53Domains_v20140515.GetDomainDetail' = 'Route53Domains_v20140515.GetDomainDetail' }
 
-	export enum GetDomainSuggestionsX_Amz_Target { 'Route53Domains_v20140515.GetDomainSuggestions' = 0 }
+	export enum GetDomainSuggestionsX_Amz_Target { 'Route53Domains_v20140515.GetDomainSuggestions' = 'Route53Domains_v20140515.GetDomainSuggestions' }
 
-	export enum GetOperationDetailX_Amz_Target { 'Route53Domains_v20140515.GetOperationDetail' = 0 }
+	export enum GetOperationDetailX_Amz_Target { 'Route53Domains_v20140515.GetOperationDetail' = 'Route53Domains_v20140515.GetOperationDetail' }
 
-	export enum ListDomainsX_Amz_Target { 'Route53Domains_v20140515.ListDomains' = 0 }
+	export enum ListDomainsX_Amz_Target { 'Route53Domains_v20140515.ListDomains' = 'Route53Domains_v20140515.ListDomains' }
 
-	export enum ListOperationsX_Amz_Target { 'Route53Domains_v20140515.ListOperations' = 0 }
+	export enum ListOperationsX_Amz_Target { 'Route53Domains_v20140515.ListOperations' = 'Route53Domains_v20140515.ListOperations' }
 
-	export enum ListPricesX_Amz_Target { 'Route53Domains_v20140515.ListPrices' = 0 }
+	export enum ListPricesX_Amz_Target { 'Route53Domains_v20140515.ListPrices' = 'Route53Domains_v20140515.ListPrices' }
 
-	export enum ListTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.ListTagsForDomain' = 0 }
+	export enum ListTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.ListTagsForDomain' = 'Route53Domains_v20140515.ListTagsForDomain' }
 
-	export enum PushDomainX_Amz_Target { 'Route53Domains_v20140515.PushDomain' = 0 }
+	export enum PushDomainX_Amz_Target { 'Route53Domains_v20140515.PushDomain' = 'Route53Domains_v20140515.PushDomain' }
 
-	export enum RegisterDomainX_Amz_Target { 'Route53Domains_v20140515.RegisterDomain' = 0 }
+	export enum RegisterDomainX_Amz_Target { 'Route53Domains_v20140515.RegisterDomain' = 'Route53Domains_v20140515.RegisterDomain' }
 
-	export enum RejectDomainTransferFromAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.RejectDomainTransferFromAnotherAwsAccount' = 0 }
+	export enum RejectDomainTransferFromAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.RejectDomainTransferFromAnotherAwsAccount' = 'Route53Domains_v20140515.RejectDomainTransferFromAnotherAwsAccount' }
 
-	export enum RenewDomainX_Amz_Target { 'Route53Domains_v20140515.RenewDomain' = 0 }
+	export enum RenewDomainX_Amz_Target { 'Route53Domains_v20140515.RenewDomain' = 'Route53Domains_v20140515.RenewDomain' }
 
-	export enum ResendContactReachabilityEmailX_Amz_Target { 'Route53Domains_v20140515.ResendContactReachabilityEmail' = 0 }
+	export enum ResendContactReachabilityEmailX_Amz_Target { 'Route53Domains_v20140515.ResendContactReachabilityEmail' = 'Route53Domains_v20140515.ResendContactReachabilityEmail' }
 
-	export enum ResendOperationAuthorizationX_Amz_Target { 'Route53Domains_v20140515.ResendOperationAuthorization' = 0 }
+	export enum ResendOperationAuthorizationX_Amz_Target { 'Route53Domains_v20140515.ResendOperationAuthorization' = 'Route53Domains_v20140515.ResendOperationAuthorization' }
 
-	export enum RetrieveDomainAuthCodeX_Amz_Target { 'Route53Domains_v20140515.RetrieveDomainAuthCode' = 0 }
+	export enum RetrieveDomainAuthCodeX_Amz_Target { 'Route53Domains_v20140515.RetrieveDomainAuthCode' = 'Route53Domains_v20140515.RetrieveDomainAuthCode' }
 
-	export enum TransferDomainX_Amz_Target { 'Route53Domains_v20140515.TransferDomain' = 0 }
+	export enum TransferDomainX_Amz_Target { 'Route53Domains_v20140515.TransferDomain' = 'Route53Domains_v20140515.TransferDomain' }
 
-	export enum TransferDomainToAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.TransferDomainToAnotherAwsAccount' = 0 }
+	export enum TransferDomainToAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.TransferDomainToAnotherAwsAccount' = 'Route53Domains_v20140515.TransferDomainToAnotherAwsAccount' }
 
-	export enum UpdateDomainContactX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainContact' = 0 }
+	export enum UpdateDomainContactX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainContact' = 'Route53Domains_v20140515.UpdateDomainContact' }
 
-	export enum UpdateDomainContactPrivacyX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainContactPrivacy' = 0 }
+	export enum UpdateDomainContactPrivacyX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainContactPrivacy' = 'Route53Domains_v20140515.UpdateDomainContactPrivacy' }
 
-	export enum UpdateDomainNameserversX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainNameservers' = 0 }
+	export enum UpdateDomainNameserversX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainNameservers' = 'Route53Domains_v20140515.UpdateDomainNameservers' }
 
-	export enum UpdateTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.UpdateTagsForDomain' = 0 }
+	export enum UpdateTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.UpdateTagsForDomain' = 'Route53Domains_v20140515.UpdateTagsForDomain' }
 
-	export enum ViewBillingX_Amz_Target { 'Route53Domains_v20140515.ViewBilling' = 0 }
+	export enum ViewBillingX_Amz_Target { 'Route53Domains_v20140515.ViewBilling' = 'Route53Domains_v20140515.ViewBilling' }
 
 }
 

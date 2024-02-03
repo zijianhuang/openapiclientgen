@@ -141,7 +141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileProfileType { PROFILE_TYPE_UNSPECIFIED = 0, CPU = 1, WALL = 2, HEAP = 3, THREADS = 4, CONTENTION = 5, PEAK_HEAP = 6, HEAP_ALLOC = 7 }
+	export enum ProfileProfileType { PROFILE_TYPE_UNSPECIFIED = 'PROFILE_TYPE_UNSPECIFIED', CPU = 'CPU', WALL = 'WALL', HEAP = 'HEAP', THREADS = 'THREADS', CONTENTION = 'CONTENTION', PEAK_HEAP = 'PEAK_HEAP', HEAP_ALLOC = 'HEAP_ALLOC' }
 
 	@Injectable()
 	export class MyClient {

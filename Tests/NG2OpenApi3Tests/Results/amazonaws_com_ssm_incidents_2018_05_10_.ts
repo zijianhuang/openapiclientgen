@@ -185,7 +185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SsmTargetAccount { RESPONSE_PLAN_OWNER_ACCOUNT = 0, IMPACTED_ACCOUNT = 1 }
+	export enum SsmTargetAccount { RESPONSE_PLAN_OWNER_ACCOUNT = 'RESPONSE_PLAN_OWNER_ACCOUNT', IMPACTED_ACCOUNT = 'IMPACTED_ACCOUNT' }
 
 
 	/** Used to remove the chat channel from an incident record or response plan. */
@@ -561,7 +561,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IncidentRecordStatus { OPEN = 0, RESOLVED = 1 }
+	export enum IncidentRecordStatus { OPEN = 'OPEN', RESOLVED = 'RESOLVED' }
 
 	export interface GetReplicationSetOutput {
 
@@ -648,7 +648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationSetStatus { ACTIVE = 0, CREATING = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
+	export enum ReplicationSetStatus { ACTIVE = 'ACTIVE', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface GetResourcePoliciesOutput {
 		nextToken?: string;
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemType { ANALYSIS = 0, INCIDENT = 1, METRIC = 2, PARENT = 3, ATTACHMENT = 4, OTHER = 5, AUTOMATION = 6, INVOLVED_RESOURCE = 7, TASK = 8 }
+	export enum ItemType { ANALYSIS = 'ANALYSIS', INCIDENT = 'INCIDENT', METRIC = 'METRIC', PARENT = 'PARENT', ATTACHMENT = 'ATTACHMENT', OTHER = 'OTHER', AUTOMATION = 'AUTOMATION', INVOLVED_RESOURCE = 'INVOLVED_RESOURCE', TASK = 'TASK' }
 
 
 	/** Describes a related item. */
@@ -1598,7 +1598,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VariableType { INCIDENT_RECORD_ARN = 0, INVOLVED_RESOURCES = 1 }
+	export enum VariableType { INCIDENT_RECORD_ARN = 'INCIDENT_RECORD_ARN', INVOLVED_RESOURCES = 'INVOLVED_RESOURCES' }
 
 
 	/** The dynamic SSM parameter value. */
@@ -1755,9 +1755,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TimelineEventSort { EVENT_TIME = 0 }
+	export enum TimelineEventSort { EVENT_TIME = 'EVENT_TIME' }
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListTimelineEventsInput {
 		filters?: Array<Filter>;
@@ -1813,7 +1813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionStatus { ACTIVE = 0, CREATING = 1, DELETING = 2, FAILED = 3 }
+	export enum RegionStatus { ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** Information about a Amazon Web Services Region in your replication set. */

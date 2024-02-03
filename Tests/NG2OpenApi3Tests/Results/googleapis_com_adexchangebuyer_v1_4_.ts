@@ -3403,9 +3403,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Adexchangebuyer_creatives_listDealsStatusFilter { approved = 0, conditionally_approved = 1, disapproved = 2, not_checked = 3 }
+	export enum Adexchangebuyer_creatives_listDealsStatusFilter { approved = 'approved', conditionally_approved = 'conditionally_approved', disapproved = 'disapproved', not_checked = 'not_checked' }
 
-	export enum Adexchangebuyer_proposals_patchUpdateAction { accept = 0, cancel = 1, propose = 2, proposeAndAccept = 3, unknownAction = 4, updateNonTerms = 5 }
+	export enum Adexchangebuyer_proposals_patchUpdateAction { accept = 'accept', cancel = 'cancel', propose = 'propose', proposeAndAccept = 'proposeAndAccept', unknownAction = 'unknownAction', updateNonTerms = 'updateNonTerms' }
 
 }
 

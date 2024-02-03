@@ -152,9 +152,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertRulePatchPropertiesSeverity { Sev0 = 0, Sev1 = 1, Sev2 = 2, Sev3 = 3, Sev4 = 4 }
+	export enum AlertRulePatchPropertiesSeverity { Sev0 = 'Sev0', Sev1 = 'Sev1', Sev2 = 'Sev2', Sev3 = 'Sev3', Sev4 = 'Sev4' }
 
-	export enum AlertRulePatchPropertiesState { Enabled = 0, Disabled = 1 }
+	export enum AlertRulePatchPropertiesState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** The alert rule properties. */

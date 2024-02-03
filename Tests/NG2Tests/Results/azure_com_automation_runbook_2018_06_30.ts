@@ -178,7 +178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStreamPropertiesStreamType { Progress = 0, Output = 1, Warning = 2, Error = 3, Debug = 4, Verbose = 5, Any = 6 }
+	export enum JobStreamPropertiesStreamType { Progress = 'Progress', Output = 'Output', Warning = 'Warning', Error = 'Error', Debug = 'Debug', Verbose = 'Verbose', Any = 'Any' }
 
 	export interface Runbook {
 	}
@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunbookCreateOrUpdateDraftPropertiesRunbookType { Script = 0, Graph = 1, PowerShellWorkflow = 2, PowerShell = 3, GraphPowerShellWorkflow = 4, GraphPowerShell = 5 }
+	export enum RunbookCreateOrUpdateDraftPropertiesRunbookType { Script = 'Script', Graph = 'Graph', PowerShellWorkflow = 'PowerShellWorkflow', PowerShell = 'PowerShell', GraphPowerShellWorkflow = 'GraphPowerShellWorkflow', GraphPowerShell = 'GraphPowerShell' }
 
 
 	/** The parameters supplied to the create or update runbook operation. */
@@ -441,7 +441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunbookDraftUndoEditResultStatusCode { Continue = 0, SwitchingProtocols = 1, OK = 2, Created = 3, Accepted = 4, NonAuthoritativeInformation = 5, NoContent = 6, ResetContent = 7, PartialContent = 8, MultipleChoices = 9, Ambiguous = 10, MovedPermanently = 11, Moved = 12, Found = 13, Redirect = 14, SeeOther = 15, RedirectMethod = 16, NotModified = 17, UseProxy = 18, Unused = 19, TemporaryRedirect = 20, RedirectKeepVerb = 21, BadRequest = 22, Unauthorized = 23, PaymentRequired = 24, Forbidden = 25, NotFound = 26, MethodNotAllowed = 27, NotAcceptable = 28, ProxyAuthenticationRequired = 29, RequestTimeout = 30, Conflict = 31, Gone = 32, LengthRequired = 33, PreconditionFailed = 34, RequestEntityTooLarge = 35, RequestUriTooLong = 36, UnsupportedMediaType = 37, RequestedRangeNotSatisfiable = 38, ExpectationFailed = 39, UpgradeRequired = 40, InternalServerError = 41, NotImplemented = 42, BadGateway = 43, ServiceUnavailable = 44, GatewayTimeout = 45, HttpVersionNotSupported = 46 }
+	export enum RunbookDraftUndoEditResultStatusCode { Continue = 'Continue', SwitchingProtocols = 'SwitchingProtocols', OK = 'OK', Created = 'Created', Accepted = 'Accepted', NonAuthoritativeInformation = 'NonAuthoritativeInformation', NoContent = 'NoContent', ResetContent = 'ResetContent', PartialContent = 'PartialContent', MultipleChoices = 'MultipleChoices', Ambiguous = 'Ambiguous', MovedPermanently = 'MovedPermanently', Moved = 'Moved', Found = 'Found', Redirect = 'Redirect', SeeOther = 'SeeOther', RedirectMethod = 'RedirectMethod', NotModified = 'NotModified', UseProxy = 'UseProxy', Unused = 'Unused', TemporaryRedirect = 'TemporaryRedirect', RedirectKeepVerb = 'RedirectKeepVerb', BadRequest = 'BadRequest', Unauthorized = 'Unauthorized', PaymentRequired = 'PaymentRequired', Forbidden = 'Forbidden', NotFound = 'NotFound', MethodNotAllowed = 'MethodNotAllowed', NotAcceptable = 'NotAcceptable', ProxyAuthenticationRequired = 'ProxyAuthenticationRequired', RequestTimeout = 'RequestTimeout', Conflict = 'Conflict', Gone = 'Gone', LengthRequired = 'LengthRequired', PreconditionFailed = 'PreconditionFailed', RequestEntityTooLarge = 'RequestEntityTooLarge', RequestUriTooLong = 'RequestUriTooLong', UnsupportedMediaType = 'UnsupportedMediaType', RequestedRangeNotSatisfiable = 'RequestedRangeNotSatisfiable', ExpectationFailed = 'ExpectationFailed', UpgradeRequired = 'UpgradeRequired', InternalServerError = 'InternalServerError', NotImplemented = 'NotImplemented', BadGateway = 'BadGateway', ServiceUnavailable = 'ServiceUnavailable', GatewayTimeout = 'GatewayTimeout', HttpVersionNotSupported = 'HttpVersionNotSupported' }
 
 
 	/** The response model for the list runbook operation. */
@@ -614,9 +614,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunbookPropertiesProvisioningState { Succeeded = 0 }
+	export enum RunbookPropertiesProvisioningState { Succeeded = 'Succeeded' }
 
-	export enum RunbookPropertiesState { New = 0, Edit = 1, Published = 2 }
+	export enum RunbookPropertiesState { New = 'New', Edit = 'Edit', Published = 'Published' }
 
 
 	/** The parameters supplied to the update runbook operation. */

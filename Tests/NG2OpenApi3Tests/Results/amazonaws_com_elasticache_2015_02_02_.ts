@@ -419,7 +419,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PendingAutomaticFailoverStatus { enabled = 0, disabled = 1 }
+	export enum PendingAutomaticFailoverStatus { enabled = 'enabled', disabled = 'disabled' }
 
 
 	/** The status of an online resharding operation. */
@@ -453,7 +453,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthTokenUpdateStatus { SETTING = 0, ROTATING = 1 }
+	export enum AuthTokenUpdateStatus { SETTING = 'SETTING', ROTATING = 'ROTATING' }
 
 
 	/** The status of the user group update. */
@@ -495,9 +495,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogType { 'slow-log' = 0, 'engine-log' = 1 }
+	export enum LogType { 'slow-log' = 'slow-log', 'engine-log' = 'engine-log' }
 
-	export enum DestinationType { 'cloudwatch-logs' = 0, 'kinesis-firehose' = 1 }
+	export enum DestinationType { 'cloudwatch-logs' = 'cloudwatch-logs', 'kinesis-firehose' = 'kinesis-firehose' }
 
 
 	/** Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination. */
@@ -549,13 +549,13 @@ export namespace MyNS {
 
 	}
 
-	export enum LogFormat { text = 0, json = 1 }
+	export enum LogFormat { text = 'text', json = 'json' }
 
-	export enum TransitEncryptionMode { preferred = 0, required = 1 }
+	export enum TransitEncryptionMode { preferred = 'preferred', required = 'required' }
 
-	export enum ClusterMode { enabled = 0, disabled = 1, compatible = 2 }
+	export enum ClusterMode { enabled = 'enabled', disabled = 'disabled', compatible = 'compatible' }
 
-	export enum AutomaticFailoverStatus { enabled = 0, disabled = 1, enabling = 2, disabling = 3 }
+	export enum AutomaticFailoverStatus { enabled = 'enabled', disabled = 'disabled', enabling = 'enabling', disabling = 'disabling' }
 
 
 	/** Represents the information required for client programs to connect to a cache node. */
@@ -577,9 +577,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkType { ipv4 = 0, ipv6 = 1, dual_stack = 2 }
+	export enum NetworkType { ipv4 = 'ipv4', ipv6 = 'ipv6', dual_stack = 'dual_stack' }
 
-	export enum IpDiscovery { ipv4 = 0, ipv6 = 1 }
+	export enum IpDiscovery { ipv4 = 'ipv4', ipv6 = 'ipv6' }
 
 	export interface ReplicationGroupNotUnderMigrationFault {
 	}
@@ -1482,9 +1482,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationType { password = 0, 'no-password' = 1, iam = 2 }
+	export enum AuthenticationType { password = 'password', 'no-password' = 'no-password', iam = 'iam' }
 
-	export enum InputAuthenticationType { password = 0, 'no-password-required' = 1, iam = 2 }
+	export enum InputAuthenticationType { password = 'password', 'no-password-required' = 'no-password-required', iam = 'iam' }
 
 	export interface UserAlreadyExistsFault {
 	}
@@ -1992,7 +1992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceUpdateStatus { available = 0, cancelled = 1, expired = 2 }
+	export enum ServiceUpdateStatus { available = 'available', cancelled = 'cancelled', expired = 'expired' }
 
 
 	/** Represents the output of a <code>DescribeSnapshots</code> operation. */
@@ -2026,7 +2026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateActionStatus { 'not-applied' = 0, 'waiting-to-start' = 1, 'in-progress' = 2, stopping = 3, stopped = 4, complete = 5, scheduling = 6, scheduled = 7, 'not-applicable' = 8 }
+	export enum UpdateActionStatus { 'not-applied' = 'not-applied', 'waiting-to-start' = 'waiting-to-start', 'in-progress' = 'in-progress', stopping = 'stopping', stopped = 'stopped', complete = 'complete', scheduling = 'scheduling', scheduled = 'scheduled', 'not-applicable' = 'not-applicable' }
 
 	export interface DescribeUserGroupsResult {
 		UserGroups?: Array<UserGroup>;
@@ -2548,7 +2548,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AZMode { 'single-az' = 0, 'cross-az' = 1 }
+	export enum AZMode { 'single-az' = 'single-az', 'cross-az' = 'cross-az' }
 
 
 	/** Represents the input of an AddTagsToResource operation. */
@@ -2574,7 +2574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthTokenUpdateStrategyType { SET = 0, ROTATE = 1, DELETE = 2 }
+	export enum AuthTokenUpdateStrategyType { SET = 'SET', ROTATE = 'ROTATE', DELETE = 'DELETE' }
 
 
 	/** Specifies the authentication mode to use. */
@@ -2749,7 +2749,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeType { immediate = 0, 'requires-reboot' = 1 }
+	export enum ChangeType { immediate = 'immediate', 'requires-reboot' = 'requires-reboot' }
 
 
 	/** A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type. */
@@ -2810,9 +2810,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeUpdateStatus { 'not-applied' = 0, 'waiting-to-start' = 1, 'in-progress' = 2, stopping = 3, stopped = 4, complete = 5 }
+	export enum NodeUpdateStatus { 'not-applied' = 'not-applied', 'waiting-to-start' = 'waiting-to-start', 'in-progress' = 'in-progress', stopping = 'stopping', stopped = 'stopped', complete = 'complete' }
 
-	export enum NodeUpdateInitiatedBy { system = 0, customer = 1 }
+	export enum NodeUpdateInitiatedBy { system = 'system', customer = 'customer' }
 
 
 	/** The status of the service update on the cache node */
@@ -2927,7 +2927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutpostMode { 'single-outpost' = 0, 'cross-outpost' = 1 }
+	export enum OutpostMode { 'single-outpost' = 'single-outpost', 'cross-outpost' = 'cross-outpost' }
 
 
 	/** Represents the input of a CreateCacheCluster operation. */
@@ -3368,7 +3368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataTieringStatus { enabled = 0, disabled = 1 }
+	export enum DataTieringStatus { enabled = 'enabled', disabled = 'disabled' }
 
 	export interface DecreaseNodeGroupsInGlobalReplicationGroupMessage {
 
@@ -3812,7 +3812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { 'cache-cluster' = 0, 'cache-parameter-group' = 1, 'cache-security-group' = 2, 'cache-subnet-group' = 3, 'replication-group' = 4, user = 5, 'user-group' = 6 }
+	export enum SourceType { 'cache-cluster' = 'cache-cluster', 'cache-parameter-group' = 'cache-parameter-group', 'cache-security-group' = 'cache-security-group', 'cache-subnet-group' = 'cache-subnet-group', 'replication-group' = 'replication-group', user = 'user', 'user-group' = 'user-group' }
 
 
 	/** Represents the input of a <code>DescribeEvents</code> operation. */
@@ -4375,7 +4375,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogDeliveryConfigurationStatus { active = 0, enabling = 1, modifying = 2, disabling = 3, error = 4 }
+	export enum LogDeliveryConfigurationStatus { active = 'active', enabling = 'enabling', modifying = 'modifying', disabling = 'disabling', error = 'error' }
 
 
 	/** Returns the destination, format and type of the logs.  */
@@ -4746,7 +4746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MultiAZStatus { enabled = 0, disabled = 1 }
+	export enum MultiAZStatus { enabled = 'enabled', disabled = 'disabled' }
 
 
 	/** Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes. */
@@ -5179,9 +5179,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceUpdateSeverity { critical = 0, important = 1, medium = 2, low = 3 }
+	export enum ServiceUpdateSeverity { critical = 'critical', important = 'important', medium = 'medium', low = 'low' }
 
-	export enum ServiceUpdateType { 'security-update' = 0 }
+	export enum ServiceUpdateType { 'security-update' = 'security-update' }
 
 
 	/** An update that you can apply to your Redis clusters. */
@@ -5233,7 +5233,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlaMet { yes = 0, no = 1, 'n/a' = 2 }
+	export enum SlaMet { yes = 'yes', no = 'no', 'n/a' = 'n/a' }
 
 	export interface StartMigrationMessage {
 
@@ -6336,33 +6336,33 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddTagsToResourceAction { AddTagsToResource = 0 }
+	export enum GET_AddTagsToResourceAction { AddTagsToResource = 'AddTagsToResource' }
 
-	export enum GET_AddTagsToResourceVersion { '2015-02-02' = 0 }
+	export enum GET_AddTagsToResourceVersion { '2015-02-02' = '2015-02-02' }
 
-	export enum GET_AuthorizeCacheSecurityGroupIngressAction { AuthorizeCacheSecurityGroupIngress = 0 }
+	export enum GET_AuthorizeCacheSecurityGroupIngressAction { AuthorizeCacheSecurityGroupIngress = 'AuthorizeCacheSecurityGroupIngress' }
 
-	export enum GET_BatchApplyUpdateActionAction { BatchApplyUpdateAction = 0 }
+	export enum GET_BatchApplyUpdateActionAction { BatchApplyUpdateAction = 'BatchApplyUpdateAction' }
 
-	export enum GET_BatchStopUpdateActionAction { BatchStopUpdateAction = 0 }
+	export enum GET_BatchStopUpdateActionAction { BatchStopUpdateAction = 'BatchStopUpdateAction' }
 
-	export enum GET_CompleteMigrationAction { CompleteMigration = 0 }
+	export enum GET_CompleteMigrationAction { CompleteMigration = 'CompleteMigration' }
 
-	export enum GET_CopySnapshotAction { CopySnapshot = 0 }
+	export enum GET_CopySnapshotAction { CopySnapshot = 'CopySnapshot' }
 
-	export enum GET_CreateCacheClusterAction { CreateCacheCluster = 0 }
+	export enum GET_CreateCacheClusterAction { CreateCacheCluster = 'CreateCacheCluster' }
 
-	export enum GET_CreateCacheParameterGroupAction { CreateCacheParameterGroup = 0 }
+	export enum GET_CreateCacheParameterGroupAction { CreateCacheParameterGroup = 'CreateCacheParameterGroup' }
 
-	export enum GET_CreateCacheSecurityGroupAction { CreateCacheSecurityGroup = 0 }
+	export enum GET_CreateCacheSecurityGroupAction { CreateCacheSecurityGroup = 'CreateCacheSecurityGroup' }
 
-	export enum GET_CreateCacheSubnetGroupAction { CreateCacheSubnetGroup = 0 }
+	export enum GET_CreateCacheSubnetGroupAction { CreateCacheSubnetGroup = 'CreateCacheSubnetGroup' }
 
-	export enum GET_CreateGlobalReplicationGroupAction { CreateGlobalReplicationGroup = 0 }
+	export enum GET_CreateGlobalReplicationGroupAction { CreateGlobalReplicationGroup = 'CreateGlobalReplicationGroup' }
 
-	export enum GET_CreateReplicationGroupAction { CreateReplicationGroup = 0 }
+	export enum GET_CreateReplicationGroupAction { CreateReplicationGroup = 'CreateReplicationGroup' }
 
-	export enum GET_CreateSnapshotAction { CreateSnapshot = 0 }
+	export enum GET_CreateSnapshotAction { CreateSnapshot = 'CreateSnapshot' }
 
 	export interface GET_CreateUserAuthenticationMode {
 		Type?: InputAuthenticationType;
@@ -6378,59 +6378,59 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateUserAction { CreateUser = 0 }
+	export enum GET_CreateUserAction { CreateUser = 'CreateUser' }
 
-	export enum GET_CreateUserGroupAction { CreateUserGroup = 0 }
+	export enum GET_CreateUserGroupAction { CreateUserGroup = 'CreateUserGroup' }
 
-	export enum GET_DecreaseNodeGroupsInGlobalReplicationGroupAction { DecreaseNodeGroupsInGlobalReplicationGroup = 0 }
+	export enum GET_DecreaseNodeGroupsInGlobalReplicationGroupAction { DecreaseNodeGroupsInGlobalReplicationGroup = 'DecreaseNodeGroupsInGlobalReplicationGroup' }
 
-	export enum GET_DecreaseReplicaCountAction { DecreaseReplicaCount = 0 }
+	export enum GET_DecreaseReplicaCountAction { DecreaseReplicaCount = 'DecreaseReplicaCount' }
 
-	export enum GET_DeleteCacheClusterAction { DeleteCacheCluster = 0 }
+	export enum GET_DeleteCacheClusterAction { DeleteCacheCluster = 'DeleteCacheCluster' }
 
-	export enum GET_DeleteCacheParameterGroupAction { DeleteCacheParameterGroup = 0 }
+	export enum GET_DeleteCacheParameterGroupAction { DeleteCacheParameterGroup = 'DeleteCacheParameterGroup' }
 
-	export enum GET_DeleteCacheSecurityGroupAction { DeleteCacheSecurityGroup = 0 }
+	export enum GET_DeleteCacheSecurityGroupAction { DeleteCacheSecurityGroup = 'DeleteCacheSecurityGroup' }
 
-	export enum GET_DeleteCacheSubnetGroupAction { DeleteCacheSubnetGroup = 0 }
+	export enum GET_DeleteCacheSubnetGroupAction { DeleteCacheSubnetGroup = 'DeleteCacheSubnetGroup' }
 
-	export enum GET_DeleteGlobalReplicationGroupAction { DeleteGlobalReplicationGroup = 0 }
+	export enum GET_DeleteGlobalReplicationGroupAction { DeleteGlobalReplicationGroup = 'DeleteGlobalReplicationGroup' }
 
-	export enum GET_DeleteReplicationGroupAction { DeleteReplicationGroup = 0 }
+	export enum GET_DeleteReplicationGroupAction { DeleteReplicationGroup = 'DeleteReplicationGroup' }
 
-	export enum GET_DeleteSnapshotAction { DeleteSnapshot = 0 }
+	export enum GET_DeleteSnapshotAction { DeleteSnapshot = 'DeleteSnapshot' }
 
-	export enum GET_DeleteUserAction { DeleteUser = 0 }
+	export enum GET_DeleteUserAction { DeleteUser = 'DeleteUser' }
 
-	export enum GET_DeleteUserGroupAction { DeleteUserGroup = 0 }
+	export enum GET_DeleteUserGroupAction { DeleteUserGroup = 'DeleteUserGroup' }
 
-	export enum GET_DescribeCacheClustersAction { DescribeCacheClusters = 0 }
+	export enum GET_DescribeCacheClustersAction { DescribeCacheClusters = 'DescribeCacheClusters' }
 
-	export enum GET_DescribeCacheEngineVersionsAction { DescribeCacheEngineVersions = 0 }
+	export enum GET_DescribeCacheEngineVersionsAction { DescribeCacheEngineVersions = 'DescribeCacheEngineVersions' }
 
-	export enum GET_DescribeCacheParameterGroupsAction { DescribeCacheParameterGroups = 0 }
+	export enum GET_DescribeCacheParameterGroupsAction { DescribeCacheParameterGroups = 'DescribeCacheParameterGroups' }
 
-	export enum GET_DescribeCacheParametersAction { DescribeCacheParameters = 0 }
+	export enum GET_DescribeCacheParametersAction { DescribeCacheParameters = 'DescribeCacheParameters' }
 
-	export enum GET_DescribeCacheSecurityGroupsAction { DescribeCacheSecurityGroups = 0 }
+	export enum GET_DescribeCacheSecurityGroupsAction { DescribeCacheSecurityGroups = 'DescribeCacheSecurityGroups' }
 
-	export enum GET_DescribeCacheSubnetGroupsAction { DescribeCacheSubnetGroups = 0 }
+	export enum GET_DescribeCacheSubnetGroupsAction { DescribeCacheSubnetGroups = 'DescribeCacheSubnetGroups' }
 
-	export enum GET_DescribeEngineDefaultParametersAction { DescribeEngineDefaultParameters = 0 }
+	export enum GET_DescribeEngineDefaultParametersAction { DescribeEngineDefaultParameters = 'DescribeEngineDefaultParameters' }
 
-	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
+	export enum GET_DescribeEventsAction { DescribeEvents = 'DescribeEvents' }
 
-	export enum GET_DescribeGlobalReplicationGroupsAction { DescribeGlobalReplicationGroups = 0 }
+	export enum GET_DescribeGlobalReplicationGroupsAction { DescribeGlobalReplicationGroups = 'DescribeGlobalReplicationGroups' }
 
-	export enum GET_DescribeReplicationGroupsAction { DescribeReplicationGroups = 0 }
+	export enum GET_DescribeReplicationGroupsAction { DescribeReplicationGroups = 'DescribeReplicationGroups' }
 
-	export enum GET_DescribeReservedCacheNodesAction { DescribeReservedCacheNodes = 0 }
+	export enum GET_DescribeReservedCacheNodesAction { DescribeReservedCacheNodes = 'DescribeReservedCacheNodes' }
 
-	export enum GET_DescribeReservedCacheNodesOfferingsAction { DescribeReservedCacheNodesOfferings = 0 }
+	export enum GET_DescribeReservedCacheNodesOfferingsAction { DescribeReservedCacheNodesOfferings = 'DescribeReservedCacheNodesOfferings' }
 
-	export enum GET_DescribeServiceUpdatesAction { DescribeServiceUpdates = 0 }
+	export enum GET_DescribeServiceUpdatesAction { DescribeServiceUpdates = 'DescribeServiceUpdates' }
 
-	export enum GET_DescribeSnapshotsAction { DescribeSnapshots = 0 }
+	export enum GET_DescribeSnapshotsAction { DescribeSnapshots = 'DescribeSnapshots' }
 
 	export interface GET_DescribeUpdateActionsServiceUpdateTimeRange {
 		StartTime?: Date;
@@ -6448,35 +6448,35 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DescribeUpdateActionsAction { DescribeUpdateActions = 0 }
+	export enum GET_DescribeUpdateActionsAction { DescribeUpdateActions = 'DescribeUpdateActions' }
 
-	export enum GET_DescribeUserGroupsAction { DescribeUserGroups = 0 }
+	export enum GET_DescribeUserGroupsAction { DescribeUserGroups = 'DescribeUserGroups' }
 
-	export enum GET_DescribeUsersAction { DescribeUsers = 0 }
+	export enum GET_DescribeUsersAction { DescribeUsers = 'DescribeUsers' }
 
-	export enum GET_DisassociateGlobalReplicationGroupAction { DisassociateGlobalReplicationGroup = 0 }
+	export enum GET_DisassociateGlobalReplicationGroupAction { DisassociateGlobalReplicationGroup = 'DisassociateGlobalReplicationGroup' }
 
-	export enum GET_FailoverGlobalReplicationGroupAction { FailoverGlobalReplicationGroup = 0 }
+	export enum GET_FailoverGlobalReplicationGroupAction { FailoverGlobalReplicationGroup = 'FailoverGlobalReplicationGroup' }
 
-	export enum GET_IncreaseNodeGroupsInGlobalReplicationGroupAction { IncreaseNodeGroupsInGlobalReplicationGroup = 0 }
+	export enum GET_IncreaseNodeGroupsInGlobalReplicationGroupAction { IncreaseNodeGroupsInGlobalReplicationGroup = 'IncreaseNodeGroupsInGlobalReplicationGroup' }
 
-	export enum GET_IncreaseReplicaCountAction { IncreaseReplicaCount = 0 }
+	export enum GET_IncreaseReplicaCountAction { IncreaseReplicaCount = 'IncreaseReplicaCount' }
 
-	export enum GET_ListAllowedNodeTypeModificationsAction { ListAllowedNodeTypeModifications = 0 }
+	export enum GET_ListAllowedNodeTypeModificationsAction { ListAllowedNodeTypeModifications = 'ListAllowedNodeTypeModifications' }
 
-	export enum GET_ListTagsForResourceAction { ListTagsForResource = 0 }
+	export enum GET_ListTagsForResourceAction { ListTagsForResource = 'ListTagsForResource' }
 
-	export enum GET_ModifyCacheClusterAction { ModifyCacheCluster = 0 }
+	export enum GET_ModifyCacheClusterAction { ModifyCacheCluster = 'ModifyCacheCluster' }
 
-	export enum GET_ModifyCacheParameterGroupAction { ModifyCacheParameterGroup = 0 }
+	export enum GET_ModifyCacheParameterGroupAction { ModifyCacheParameterGroup = 'ModifyCacheParameterGroup' }
 
-	export enum GET_ModifyCacheSubnetGroupAction { ModifyCacheSubnetGroup = 0 }
+	export enum GET_ModifyCacheSubnetGroupAction { ModifyCacheSubnetGroup = 'ModifyCacheSubnetGroup' }
 
-	export enum GET_ModifyGlobalReplicationGroupAction { ModifyGlobalReplicationGroup = 0 }
+	export enum GET_ModifyGlobalReplicationGroupAction { ModifyGlobalReplicationGroup = 'ModifyGlobalReplicationGroup' }
 
-	export enum GET_ModifyReplicationGroupAction { ModifyReplicationGroup = 0 }
+	export enum GET_ModifyReplicationGroupAction { ModifyReplicationGroup = 'ModifyReplicationGroup' }
 
-	export enum GET_ModifyReplicationGroupShardConfigurationAction { ModifyReplicationGroupShardConfiguration = 0 }
+	export enum GET_ModifyReplicationGroupShardConfigurationAction { ModifyReplicationGroupShardConfiguration = 'ModifyReplicationGroupShardConfiguration' }
 
 	export interface GET_ModifyUserAuthenticationMode {
 		Type?: InputAuthenticationType;
@@ -6492,25 +6492,25 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ModifyUserAction { ModifyUser = 0 }
+	export enum GET_ModifyUserAction { ModifyUser = 'ModifyUser' }
 
-	export enum GET_ModifyUserGroupAction { ModifyUserGroup = 0 }
+	export enum GET_ModifyUserGroupAction { ModifyUserGroup = 'ModifyUserGroup' }
 
-	export enum GET_PurchaseReservedCacheNodesOfferingAction { PurchaseReservedCacheNodesOffering = 0 }
+	export enum GET_PurchaseReservedCacheNodesOfferingAction { PurchaseReservedCacheNodesOffering = 'PurchaseReservedCacheNodesOffering' }
 
-	export enum GET_RebalanceSlotsInGlobalReplicationGroupAction { RebalanceSlotsInGlobalReplicationGroup = 0 }
+	export enum GET_RebalanceSlotsInGlobalReplicationGroupAction { RebalanceSlotsInGlobalReplicationGroup = 'RebalanceSlotsInGlobalReplicationGroup' }
 
-	export enum GET_RebootCacheClusterAction { RebootCacheCluster = 0 }
+	export enum GET_RebootCacheClusterAction { RebootCacheCluster = 'RebootCacheCluster' }
 
-	export enum GET_RemoveTagsFromResourceAction { RemoveTagsFromResource = 0 }
+	export enum GET_RemoveTagsFromResourceAction { RemoveTagsFromResource = 'RemoveTagsFromResource' }
 
-	export enum GET_ResetCacheParameterGroupAction { ResetCacheParameterGroup = 0 }
+	export enum GET_ResetCacheParameterGroupAction { ResetCacheParameterGroup = 'ResetCacheParameterGroup' }
 
-	export enum GET_RevokeCacheSecurityGroupIngressAction { RevokeCacheSecurityGroupIngress = 0 }
+	export enum GET_RevokeCacheSecurityGroupIngressAction { RevokeCacheSecurityGroupIngress = 'RevokeCacheSecurityGroupIngress' }
 
-	export enum GET_StartMigrationAction { StartMigration = 0 }
+	export enum GET_StartMigrationAction { StartMigration = 'StartMigration' }
 
-	export enum GET_TestFailoverAction { TestFailover = 0 }
+	export enum GET_TestFailoverAction { TestFailover = 'TestFailover' }
 
 }
 

@@ -459,7 +459,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Adexchangebuyer_creatives_listStatusFilter { approved = 0, disapproved = 1, not_checked = 2 }
+	export enum Adexchangebuyer_creatives_listStatusFilter { approved = 'approved', disapproved = 'disapproved', not_checked = 'not_checked' }
 
 }
 

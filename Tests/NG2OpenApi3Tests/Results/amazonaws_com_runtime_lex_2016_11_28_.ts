@@ -139,11 +139,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfirmationStatus { None = 0, Confirmed = 1, Denied = 2 }
+	export enum ConfirmationStatus { None = 'None', Confirmed = 'Confirmed', Denied = 'Denied' }
 
-	export enum DialogActionType { ElicitIntent = 0, ConfirmIntent = 1, ElicitSlot = 2, Close = 3, Delegate = 4 }
+	export enum DialogActionType { ElicitIntent = 'ElicitIntent', ConfirmIntent = 'ConfirmIntent', ElicitSlot = 'ElicitSlot', Close = 'Close', Delegate = 'Delegate' }
 
-	export enum FulfillmentState { Fulfilled = 0, Failed = 1, ReadyForFulfillment = 2 }
+	export enum FulfillmentState { Fulfilled = 'Fulfilled', Failed = 'Failed', ReadyForFulfillment = 'ReadyForFulfillment' }
 
 
 	/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
@@ -182,7 +182,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageFormatType { PlainText = 0, CustomPayload = 1, SSML = 2, Composite = 3 }
+	export enum MessageFormatType { PlainText = 'PlainText', CustomPayload = 'CustomPayload', SSML = 'SSML', Composite = 'Composite' }
 
 
 	/** A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation. */
@@ -408,7 +408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DialogState { ElicitIntent = 0, ConfirmIntent = 1, ElicitSlot = 2, Fulfilled = 3, ReadyForFulfillment = 4, Failed = 5 }
+	export enum DialogState { ElicitIntent = 'ElicitIntent', ConfirmIntent = 'ConfirmIntent', ElicitSlot = 'ElicitSlot', Fulfilled = 'Fulfilled', ReadyForFulfillment = 'ReadyForFulfillment', Failed = 'Failed' }
 
 
 	/** If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent). */
@@ -431,7 +431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentType { 'application/vnd.amazonaws.card.generic' = 0 }
+	export enum ContentType { 'application/vnd.amazonaws.card.generic' = 'application/vnd.amazonaws.card.generic' }
 
 
 	/** Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.  */

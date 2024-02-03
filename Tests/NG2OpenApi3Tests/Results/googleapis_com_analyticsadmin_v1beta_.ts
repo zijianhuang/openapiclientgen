@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaAccessNumericFilterOperation { OPERATION_UNSPECIFIED = 0, EQUAL = 1, LESS_THAN = 2, LESS_THAN_OR_EQUAL = 3, GREATER_THAN = 4, GREATER_THAN_OR_EQUAL = 5 }
+	export enum GoogleAnalyticsAdminV1betaAccessNumericFilterOperation { OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED', EQUAL = 'EQUAL', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL' }
 
 
 	/** The filter for strings. */
@@ -260,7 +260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaAccessStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 0, EXACT = 1, BEGINS_WITH = 2, ENDS_WITH = 3, CONTAINS = 4, FULL_REGEXP = 5, PARTIAL_REGEXP = 6 }
+	export enum GoogleAnalyticsAdminV1betaAccessStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 'MATCH_TYPE_UNSPECIFIED', EXACT = 'EXACT', BEGINS_WITH = 'BEGINS_WITH', ENDS_WITH = 'ENDS_WITH', CONTAINS = 'CONTAINS', FULL_REGEXP = 'FULL_REGEXP', PARTIAL_REGEXP = 'PARTIAL_REGEXP' }
 
 
 	/** Expresses dimension or metric filters. The fields in the same expression need to be either all dimensions or all metrics. */
@@ -423,7 +423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaAccessOrderByDimensionOrderByOrderType { ORDER_TYPE_UNSPECIFIED = 0, ALPHANUMERIC = 1, CASE_INSENSITIVE_ALPHANUMERIC = 2, NUMERIC = 3 }
+	export enum GoogleAnalyticsAdminV1betaAccessOrderByDimensionOrderByOrderType { ORDER_TYPE_UNSPECIFIED = 'ORDER_TYPE_UNSPECIFIED', ALPHANUMERIC = 'ALPHANUMERIC', CASE_INSENSITIVE_ALPHANUMERIC = 'CASE_INSENSITIVE_ALPHANUMERIC', NUMERIC = 'NUMERIC' }
 
 
 	/** Sorts by metric values. */
@@ -659,7 +659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaPropertySummaryPropertyType { PROPERTY_TYPE_UNSPECIFIED = 0, PROPERTY_TYPE_ORDINARY = 1, PROPERTY_TYPE_SUBPROPERTY = 2, PROPERTY_TYPE_ROLLUP = 3 }
+	export enum GoogleAnalyticsAdminV1betaPropertySummaryPropertyType { PROPERTY_TYPE_UNSPECIFIED = 'PROPERTY_TYPE_UNSPECIFIED', PROPERTY_TYPE_ORDINARY = 'PROPERTY_TYPE_ORDINARY', PROPERTY_TYPE_SUBPROPERTY = 'PROPERTY_TYPE_SUBPROPERTY', PROPERTY_TYPE_ROLLUP = 'PROPERTY_TYPE_ROLLUP' }
 
 
 	/** Request message for AcknowledgeUserDataCollection RPC. */
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaChangeHistoryChangeAction { ACTION_TYPE_UNSPECIFIED = 0, CREATED = 1, UPDATED = 2, DELETED = 3 }
+	export enum GoogleAnalyticsAdminV1betaChangeHistoryChangeAction { ACTION_TYPE_UNSPECIFIED = 'ACTION_TYPE_UNSPECIFIED', CREATED = 'CREATED', UPDATED = 'UPDATED', DELETED = 'DELETED' }
 
 
 	/** A snapshot of a resource as before or after the result of a change in change history. */
@@ -857,7 +857,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaConversionEventCountingMethod { CONVERSION_COUNTING_METHOD_UNSPECIFIED = 0, ONCE_PER_EVENT = 1, ONCE_PER_SESSION = 2 }
+	export enum GoogleAnalyticsAdminV1betaConversionEventCountingMethod { CONVERSION_COUNTING_METHOD_UNSPECIFIED = 'CONVERSION_COUNTING_METHOD_UNSPECIFIED', ONCE_PER_EVENT = 'ONCE_PER_EVENT', ONCE_PER_SESSION = 'ONCE_PER_SESSION' }
 
 
 	/** Defines a default value/currency for a conversion event. Both value and currency must be provided. */
@@ -922,7 +922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaDataRetentionSettingsEventDataRetention { RETENTION_DURATION_UNSPECIFIED = 0, TWO_MONTHS = 1, FOURTEEN_MONTHS = 2, TWENTY_SIX_MONTHS = 3, THIRTY_EIGHT_MONTHS = 4, FIFTY_MONTHS = 5 }
+	export enum GoogleAnalyticsAdminV1betaDataRetentionSettingsEventDataRetention { RETENTION_DURATION_UNSPECIFIED = 'RETENTION_DURATION_UNSPECIFIED', TWO_MONTHS = 'TWO_MONTHS', FOURTEEN_MONTHS = 'FOURTEEN_MONTHS', TWENTY_SIX_MONTHS = 'TWENTY_SIX_MONTHS', THIRTY_EIGHT_MONTHS = 'THIRTY_EIGHT_MONTHS', FIFTY_MONTHS = 'FIFTY_MONTHS' }
 
 
 	/** A resource message representing a data stream. */
@@ -1038,7 +1038,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaDataStreamType { DATA_STREAM_TYPE_UNSPECIFIED = 0, WEB_DATA_STREAM = 1, ANDROID_APP_DATA_STREAM = 2, IOS_APP_DATA_STREAM = 3 }
+	export enum GoogleAnalyticsAdminV1betaDataStreamType { DATA_STREAM_TYPE_UNSPECIFIED = 'DATA_STREAM_TYPE_UNSPECIFIED', WEB_DATA_STREAM = 'WEB_DATA_STREAM', ANDROID_APP_DATA_STREAM = 'ANDROID_APP_DATA_STREAM', IOS_APP_DATA_STREAM = 'IOS_APP_DATA_STREAM' }
 
 
 	/** Data specific to web streams. */
@@ -1313,9 +1313,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaPropertyIndustryCategory { INDUSTRY_CATEGORY_UNSPECIFIED = 0, AUTOMOTIVE = 1, BUSINESS_AND_INDUSTRIAL_MARKETS = 2, FINANCE = 3, HEALTHCARE = 4, TECHNOLOGY = 5, TRAVEL = 6, OTHER = 7, ARTS_AND_ENTERTAINMENT = 8, BEAUTY_AND_FITNESS = 9, BOOKS_AND_LITERATURE = 10, FOOD_AND_DRINK = 11, GAMES = 12, HOBBIES_AND_LEISURE = 13, HOME_AND_GARDEN = 14, INTERNET_AND_TELECOM = 15, LAW_AND_GOVERNMENT = 16, NEWS = 17, ONLINE_COMMUNITIES = 18, PEOPLE_AND_SOCIETY = 19, PETS_AND_ANIMALS = 20, REAL_ESTATE = 21, REFERENCE = 22, SCIENCE = 23, SPORTS = 24, JOBS_AND_EDUCATION = 25, SHOPPING = 26 }
+	export enum GoogleAnalyticsAdminV1betaPropertyIndustryCategory { INDUSTRY_CATEGORY_UNSPECIFIED = 'INDUSTRY_CATEGORY_UNSPECIFIED', AUTOMOTIVE = 'AUTOMOTIVE', BUSINESS_AND_INDUSTRIAL_MARKETS = 'BUSINESS_AND_INDUSTRIAL_MARKETS', FINANCE = 'FINANCE', HEALTHCARE = 'HEALTHCARE', TECHNOLOGY = 'TECHNOLOGY', TRAVEL = 'TRAVEL', OTHER = 'OTHER', ARTS_AND_ENTERTAINMENT = 'ARTS_AND_ENTERTAINMENT', BEAUTY_AND_FITNESS = 'BEAUTY_AND_FITNESS', BOOKS_AND_LITERATURE = 'BOOKS_AND_LITERATURE', FOOD_AND_DRINK = 'FOOD_AND_DRINK', GAMES = 'GAMES', HOBBIES_AND_LEISURE = 'HOBBIES_AND_LEISURE', HOME_AND_GARDEN = 'HOME_AND_GARDEN', INTERNET_AND_TELECOM = 'INTERNET_AND_TELECOM', LAW_AND_GOVERNMENT = 'LAW_AND_GOVERNMENT', NEWS = 'NEWS', ONLINE_COMMUNITIES = 'ONLINE_COMMUNITIES', PEOPLE_AND_SOCIETY = 'PEOPLE_AND_SOCIETY', PETS_AND_ANIMALS = 'PETS_AND_ANIMALS', REAL_ESTATE = 'REAL_ESTATE', REFERENCE = 'REFERENCE', SCIENCE = 'SCIENCE', SPORTS = 'SPORTS', JOBS_AND_EDUCATION = 'JOBS_AND_EDUCATION', SHOPPING = 'SHOPPING' }
 
-	export enum GoogleAnalyticsAdminV1betaPropertyServiceLevel { SERVICE_LEVEL_UNSPECIFIED = 0, GOOGLE_ANALYTICS_STANDARD = 1, GOOGLE_ANALYTICS_360 = 2 }
+	export enum GoogleAnalyticsAdminV1betaPropertyServiceLevel { SERVICE_LEVEL_UNSPECIFIED = 'SERVICE_LEVEL_UNSPECIFIED', GOOGLE_ANALYTICS_STANDARD = 'GOOGLE_ANALYTICS_STANDARD', GOOGLE_ANALYTICS_360 = 'GOOGLE_ANALYTICS_360' }
 
 
 	/** A set of changes within a Google Analytics account or its child properties that resulted from the same cause. Common causes would be updates made in the Google Analytics UI, changes from customer support, or automatic Google Analytics system changes. */
@@ -1369,7 +1369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaChangeHistoryEventActorType { ACTOR_TYPE_UNSPECIFIED = 0, USER = 1, SYSTEM = 2, SUPPORT = 3 }
+	export enum GoogleAnalyticsAdminV1betaChangeHistoryEventActorType { ACTOR_TYPE_UNSPECIFIED = 'ACTOR_TYPE_UNSPECIFIED', USER = 'USER', SYSTEM = 'SYSTEM', SUPPORT = 'SUPPORT' }
 
 
 	/** A definition for a CustomDimension. */
@@ -1427,7 +1427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaCustomDimensionScope { DIMENSION_SCOPE_UNSPECIFIED = 0, EVENT = 1, USER = 2, ITEM = 3 }
+	export enum GoogleAnalyticsAdminV1betaCustomDimensionScope { DIMENSION_SCOPE_UNSPECIFIED = 'DIMENSION_SCOPE_UNSPECIFIED', EVENT = 'EVENT', USER = 'USER', ITEM = 'ITEM' }
 
 
 	/** A definition for a custom metric. */
@@ -1488,9 +1488,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1betaCustomMetricMeasurementUnit { MEASUREMENT_UNIT_UNSPECIFIED = 0, STANDARD = 1, CURRENCY = 2, FEET = 3, METERS = 4, KILOMETERS = 5, MILES = 6, MILLISECONDS = 7, SECONDS = 8, MINUTES = 9, HOURS = 10 }
+	export enum GoogleAnalyticsAdminV1betaCustomMetricMeasurementUnit { MEASUREMENT_UNIT_UNSPECIFIED = 'MEASUREMENT_UNIT_UNSPECIFIED', STANDARD = 'STANDARD', CURRENCY = 'CURRENCY', FEET = 'FEET', METERS = 'METERS', KILOMETERS = 'KILOMETERS', MILES = 'MILES', MILLISECONDS = 'MILLISECONDS', SECONDS = 'SECONDS', MINUTES = 'MINUTES', HOURS = 'HOURS' }
 
-	export enum GoogleAnalyticsAdminV1betaCustomMetricScope { METRIC_SCOPE_UNSPECIFIED = 0, EVENT = 1 }
+	export enum GoogleAnalyticsAdminV1betaCustomMetricScope { METRIC_SCOPE_UNSPECIFIED = 'METRIC_SCOPE_UNSPECIFIED', EVENT = 'EVENT' }
 
 
 	/** A resource message representing data sharing settings of a Google Analytics account. */

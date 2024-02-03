@@ -27,7 +27,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionKeySource { 'Microsoft.KeyVault' = 0 }
+	export enum EncryptionKeySource { 'Microsoft.KeyVault' = 'Microsoft.KeyVault' }
 
 
 	/** Error response indicates ServiceBus service is not able to process the incoming request. The reason is provided in the error message. */
@@ -92,7 +92,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** Single item in a List or Get IpFilterRules operation */
@@ -198,7 +198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NWRuleSetIpRulesAction { Allow = 0 }
+	export enum NWRuleSetIpRulesAction { Allow = 'Allow' }
 
 
 	/** The response from the List namespace operation. */
@@ -432,7 +432,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SBSkuName { Basic = 0, Standard = 1, Premium = 2 }
+	export enum SBSkuName { Basic = 'Basic', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The response of the List Namespace operation. */

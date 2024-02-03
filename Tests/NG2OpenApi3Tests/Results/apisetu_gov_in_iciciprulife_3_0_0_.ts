@@ -1298,7 +1298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicerPostBodyFormat { pdf = 0 }
+	export enum LicerPostBodyFormat { pdf = 'pdf' }
 
 }
 

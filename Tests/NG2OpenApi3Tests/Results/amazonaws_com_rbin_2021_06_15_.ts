@@ -62,7 +62,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RetentionPeriodUnit { DAYS = 0 }
+	export enum RetentionPeriodUnit { DAYS = 'DAYS' }
 
 
 	/** Information about the tags to assign to the retention rule. */
@@ -92,7 +92,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { EBS_SNAPSHOT = 0, EC2_IMAGE = 1 }
+	export enum ResourceType { EBS_SNAPSHOT = 'EBS_SNAPSHOT', EC2_IMAGE = 'EC2_IMAGE' }
 
 
 	/** Information about the resource tags used to identify resources that are retained by the retention rule. */
@@ -118,7 +118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleStatus { pending = 0, available = 1 }
+	export enum RuleStatus { pending = 'pending', available = 'available' }
 
 
 	/** Information about a retention rule lock configuration. */
@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LockState { locked = 0, pending_unlock = 1, unlocked = 2 }
+	export enum LockState { locked = 'locked', pending_unlock = 'pending_unlock', unlocked = 'unlocked' }
 
 	export interface ValidationException {
 	}
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnlockDelayUnit { DAYS = 0 }
+	export enum UnlockDelayUnit { DAYS = 'DAYS' }
 
 	export interface UnlockRuleRequest {
 	}

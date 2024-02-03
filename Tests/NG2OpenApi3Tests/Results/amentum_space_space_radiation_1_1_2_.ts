@@ -148,11 +148,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum App_api_endpoints_TrappedRadiation_calculate_flux_meanModel { AE9 = 0, AP9 = 1, SPME = 2, SPMH = 3, SPMHE = 4, SPMO = 5 }
+	export enum App_api_endpoints_TrappedRadiation_calculate_flux_meanModel { AE9 = 'AE9', AP9 = 'AP9', SPME = 'SPME', SPMH = 'SPMH', SPMHE = 'SPMHE', SPMO = 'SPMO' }
 
-	export enum App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_sys { GDZ = 0, GEO = 1, GEI = 2 }
+	export enum App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_sys { GDZ = 'GDZ', GEO = 'GEO', GEI = 'GEI' }
 
-	export enum App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_units { KM = 0, RE = 1 }
+	export enum App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_units { KM = 'KM', RE = 'RE' }
 
 }
 

@@ -295,7 +295,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PersistentAppUI { ENABLED = 0, DISABLED = 1 }
+	export enum PersistentAppUI { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** A configuration for CloudWatch monitoring. You can configure your jobs to send log information to CloudWatch Logs. */
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerProviderType { EKS = 0 }
+	export enum ContainerProviderType { EKS = 'EKS' }
 
 
 	/** The information about the container used for a job run or a managed endpoint. */
@@ -534,7 +534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobRunState { PENDING = 0, SUBMITTED = 1, RUNNING = 2, FAILED = 3, CANCELLED = 4, CANCEL_PENDING = 5, COMPLETED = 6 }
+	export enum JobRunState { PENDING = 'PENDING', SUBMITTED = 'SUBMITTED', RUNNING = 'RUNNING', FAILED = 'FAILED', CANCELLED = 'CANCELLED', CANCEL_PENDING = 'CANCEL_PENDING', COMPLETED = 'COMPLETED' }
 
 
 	/** A configuration specification to be used to override existing configurations. */
@@ -552,7 +552,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailureReason { INTERNAL_ERROR = 0, USER_ERROR = 1, VALIDATION_ERROR = 2, CLUSTER_UNAVAILABLE = 3 }
+	export enum FailureReason { INTERNAL_ERROR = 'INTERNAL_ERROR', USER_ERROR = 'USER_ERROR', VALIDATION_ERROR = 'VALIDATION_ERROR', CLUSTER_UNAVAILABLE = 'CLUSTER_UNAVAILABLE' }
 
 
 	/** The configuration of the retry policy that the job runs on. */
@@ -754,7 +754,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointState { CREATING = 0, ACTIVE = 1, TERMINATING = 2, TERMINATED = 3, TERMINATED_WITH_ERRORS = 4 }
+	export enum EndpointState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', TERMINATED_WITH_ERRORS = 'TERMINATED_WITH_ERRORS' }
 
 
 	/** The entity representing certificate data generated for managed endpoint. */
@@ -818,7 +818,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualClusterState { RUNNING = 0, TERMINATING = 1, TERMINATED = 2, ARRESTED = 3 }
+	export enum VirtualClusterState { RUNNING = 'RUNNING', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', ARRESTED = 'ARRESTED' }
 
 
 	/** The information about the container provider. */
@@ -1341,7 +1341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateParameterDataType { NUMBER = 0, STRING = 1 }
+	export enum TemplateParameterDataType { NUMBER = 'NUMBER', STRING = 'STRING' }
 
 
 	/** The configuration of a job template parameter. */

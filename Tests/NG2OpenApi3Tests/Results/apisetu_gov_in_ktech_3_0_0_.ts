@@ -1335,7 +1335,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CocerPostBodyFormat { pdf = 0 }
+	export enum CocerPostBodyFormat { pdf = 'pdf' }
 
 	export interface RfcerPostBody {
 		certificateParameters?: RfcerPostBodyCertificateParameters;

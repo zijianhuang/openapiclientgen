@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentChunkMetadataSource { email = 0, web = 1, file = 2, chat = 3 }
+	export enum DocumentChunkMetadataSource { email = 'email', web = 'web', file = 'file', chat = 'chat' }
 
 	export interface DocumentChunkWithScore {
 		embedding?: Array<number>;
@@ -239,7 +239,7 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum Source { email = 0, web = 1, file = 2, chat = 3 }
+	export enum Source { email = 'email', web = 'web', file = 'file', chat = 'chat' }
 
 	@Injectable()
 	export class MyClient {

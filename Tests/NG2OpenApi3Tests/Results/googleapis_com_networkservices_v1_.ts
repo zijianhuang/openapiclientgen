@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -191,7 +191,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointMatcherMetadataLabelMatcherMetadataLabelMatchCriteria { METADATA_LABEL_MATCH_CRITERIA_UNSPECIFIED = 0, MATCH_ANY = 1, MATCH_ALL = 2 }
+	export enum EndpointMatcherMetadataLabelMatcherMetadataLabelMatchCriteria { METADATA_LABEL_MATCH_CRITERIA_UNSPECIFIED = 'METADATA_LABEL_MATCH_CRITERIA_UNSPECIFIED', MATCH_ANY = 'MATCH_ANY', MATCH_ALL = 'MATCH_ALL' }
 
 
 	/** Defines a name-pair value for a single label. */
@@ -321,7 +321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointPolicyType { ENDPOINT_POLICY_TYPE_UNSPECIFIED = 0, SIDECAR_PROXY = 1, GRPC_SERVER = 2 }
+	export enum EndpointPolicyType { ENDPOINT_POLICY_TYPE_UNSPECIFIED = 'ENDPOINT_POLICY_TYPE_UNSPECIFIED', SIDECAR_PROXY = 'SIDECAR_PROXY', GRPC_SERVER = 'GRPC_SERVER' }
 
 
 	/** Gateway represents the configuration for a proxy, typically a load balancer. It captures the ip:port over which the services are exposed by the proxy, along with any policy configurations. Routes have reference to to Gateways to dictate how requests should be routed by this Gateway. Next id: 29 */
@@ -444,11 +444,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayEnvoyHeaders { ENVOY_HEADERS_UNSPECIFIED = 0, NONE = 1, DEBUG_HEADERS = 2 }
+	export enum GatewayEnvoyHeaders { ENVOY_HEADERS_UNSPECIFIED = 'ENVOY_HEADERS_UNSPECIFIED', NONE = 'NONE', DEBUG_HEADERS = 'DEBUG_HEADERS' }
 
-	export enum GatewayIpVersion { IP_VERSION_UNSPECIFIED = 0, IPV4 = 1, IPV6 = 2 }
+	export enum GatewayIpVersion { IP_VERSION_UNSPECIFIED = 'IP_VERSION_UNSPECIFIED', IPV4 = 'IPV4', IPV6 = 'IPV6' }
 
-	export enum GatewayType { TYPE_UNSPECIFIED = 0, OPEN_MESH = 1, SECURE_WEB_GATEWAY = 2 }
+	export enum GatewayType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', OPEN_MESH = 'OPEN_MESH', SECURE_WEB_GATEWAY = 'SECURE_WEB_GATEWAY' }
 
 
 	/** GrpcRoute is the resource defining how gRPC traffic routed by a Mesh or Gateway resource is routed. */
@@ -782,7 +782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GrpcRouteHeaderMatchType { TYPE_UNSPECIFIED = 0, EXACT = 1, REGULAR_EXPRESSION = 2 }
+	export enum GrpcRouteHeaderMatchType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', EXACT = 'EXACT', REGULAR_EXPRESSION = 'REGULAR_EXPRESSION' }
 
 
 	/** Specifies a match against a method. */
@@ -1264,7 +1264,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpRouteRedirectResponseCode { RESPONSE_CODE_UNSPECIFIED = 0, MOVED_PERMANENTLY_DEFAULT = 1, FOUND = 2, SEE_OTHER = 3, TEMPORARY_REDIRECT = 4, PERMANENT_REDIRECT = 5 }
+	export enum HttpRouteRedirectResponseCode { RESPONSE_CODE_UNSPECIFIED = 'RESPONSE_CODE_UNSPECIFIED', MOVED_PERMANENTLY_DEFAULT = 'MOVED_PERMANENTLY_DEFAULT', FOUND = 'FOUND', SEE_OTHER = 'SEE_OTHER', TEMPORARY_REDIRECT = 'TEMPORARY_REDIRECT', PERMANENT_REDIRECT = 'PERMANENT_REDIRECT' }
 
 
 	/** Specifies the policy on how requests are shadowed to a separate mirrored destination service. The proxy does not wait for responses from the shadow service. Prior to sending traffic to the shadow service, the host/authority header is suffixed with -shadow. */

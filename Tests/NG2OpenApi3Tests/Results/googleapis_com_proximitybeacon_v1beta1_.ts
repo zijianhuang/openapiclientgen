@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvertisedIdType { TYPE_UNSPECIFIED = 0, EDDYSTONE = 1, IBEACON = 2, ALTBEACON = 3, EDDYSTONE_EID = 4 }
+	export enum AdvertisedIdType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', EDDYSTONE = 'EDDYSTONE', IBEACON = 'IBEACON', ALTBEACON = 'ALTBEACON', EDDYSTONE_EID = 'EDDYSTONE_EID' }
 
 
 	/** A subset of attachment information served via the `beaconinfo.getforobserved` method, used when your users encounter your beacons. */
@@ -199,7 +199,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BeaconExpectedStability { STABILITY_UNSPECIFIED = 0, STABLE = 1, PORTABLE = 2, MOBILE = 3, ROVING = 4 }
+	export enum BeaconExpectedStability { STABILITY_UNSPECIFIED = 'STABILITY_UNSPECIFIED', STABLE = 'STABLE', PORTABLE = 'PORTABLE', MOBILE = 'MOBILE', ROVING = 'ROVING' }
 
 
 	/** Indoor level, a human-readable string as returned by Google Maps APIs, useful to indicate which floor of a building a beacon is located on. */
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BeaconStatus { STATUS_UNSPECIFIED = 0, ACTIVE = 1, DECOMMISSIONED = 2, INACTIVE = 3 }
+	export enum BeaconStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', ACTIVE = 'ACTIVE', DECOMMISSIONED = 'DECOMMISSIONED', INACTIVE = 'INACTIVE' }
 
 
 	/** Project-specific data associated with a beacon. */
@@ -645,7 +645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespaceServingVisibility { VISIBILITY_UNSPECIFIED = 0, UNLISTED = 1, PUBLIC = 2 }
+	export enum NamespaceServingVisibility { VISIBILITY_UNSPECIFIED = 'VISIBILITY_UNSPECIFIED', UNLISTED = 'UNLISTED', PUBLIC = 'PUBLIC' }
 
 	@Injectable()
 	export class MyClient {
@@ -841,7 +841,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Proximitybeacon_beacons_diagnostics_listAlertFilter { ALERT_UNSPECIFIED = 0, WRONG_LOCATION = 1, LOW_BATTERY = 2, LOW_ACTIVITY = 3 }
+	export enum Proximitybeacon_beacons_diagnostics_listAlertFilter { ALERT_UNSPECIFIED = 'ALERT_UNSPECIFIED', WRONG_LOCATION = 'WRONG_LOCATION', LOW_BATTERY = 'LOW_BATTERY', LOW_ACTIVITY = 'LOW_ACTIVITY' }
 
 }
 

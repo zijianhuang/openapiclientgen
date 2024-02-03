@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Binding_enum_binding_type { apn = 0, gcm = 1, sms = 2, fcm = 3, 'facebook-messenger' = 4, alexa = 5 }
+	export enum Binding_enum_binding_type { apn = 'apn', gcm = 'gcm', sms = 'sms', fcm = 'fcm', 'facebook-messenger' = 'facebook-messenger', alexa = 'alexa' }
 
-	export enum Credential_enum_push_service { gcm = 0, apn = 1, fcm = 2 }
+	export enum Credential_enum_push_service { gcm = 'gcm', apn = 'apn', fcm = 'fcm' }
 
-	export enum Notification_enum_priority { high = 0, low = 1 }
+	export enum Notification_enum_priority { high = 'high', low = 'low' }
 
 	export interface Notifyv1credential {
 

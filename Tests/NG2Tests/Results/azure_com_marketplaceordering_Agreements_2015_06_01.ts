@@ -301,7 +301,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum MarketplaceAgreements_GetOfferType { virtualmachine = 0 }
+	export enum MarketplaceAgreements_GetOfferType { virtualmachine = 'virtualmachine' }
 
 }
 

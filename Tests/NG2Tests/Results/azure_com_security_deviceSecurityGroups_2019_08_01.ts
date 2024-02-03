@@ -30,7 +30,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowlistCustomAlertRuleRuleType { ConnectionToIpNotAllowed = 0, LocalUserNotAllowed = 1, ProcessNotAllowed = 2 }
+	export enum AllowlistCustomAlertRuleRuleType { ConnectionToIpNotAllowed = 'ConnectionToIpNotAllowed', LocalUserNotAllowed = 'LocalUserNotAllowed', ProcessNotAllowed = 'ProcessNotAllowed' }
 
 
 	/** A custom alert rule. */
@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeWindowCustomAlertRuleRuleType { ActiveConnectionsNotInAllowedRange = 0, AmqpC2DMessagesNotInAllowedRange = 1, MqttC2DMessagesNotInAllowedRange = 2, HttpC2DMessagesNotInAllowedRange = 3, AmqpC2DRejectedMessagesNotInAllowedRange = 4, MqttC2DRejectedMessagesNotInAllowedRange = 5, HttpC2DRejectedMessagesNotInAllowedRange = 6, AmqpD2CMessagesNotInAllowedRange = 7, MqttD2CMessagesNotInAllowedRange = 8, HttpD2CMessagesNotInAllowedRange = 9, DirectMethodInvokesNotInAllowedRange = 10, FailedLocalLoginsNotInAllowedRange = 11, FileUploadsNotInAllowedRange = 12, QueuePurgesNotInAllowedRange = 13, TwinUpdatesNotInAllowedRange = 14, UnauthorizedOperationsNotInAllowedRange = 15 }
+	export enum TimeWindowCustomAlertRuleRuleType { ActiveConnectionsNotInAllowedRange = 'ActiveConnectionsNotInAllowedRange', AmqpC2DMessagesNotInAllowedRange = 'AmqpC2DMessagesNotInAllowedRange', MqttC2DMessagesNotInAllowedRange = 'MqttC2DMessagesNotInAllowedRange', HttpC2DMessagesNotInAllowedRange = 'HttpC2DMessagesNotInAllowedRange', AmqpC2DRejectedMessagesNotInAllowedRange = 'AmqpC2DRejectedMessagesNotInAllowedRange', MqttC2DRejectedMessagesNotInAllowedRange = 'MqttC2DRejectedMessagesNotInAllowedRange', HttpC2DRejectedMessagesNotInAllowedRange = 'HttpC2DRejectedMessagesNotInAllowedRange', AmqpD2CMessagesNotInAllowedRange = 'AmqpD2CMessagesNotInAllowedRange', MqttD2CMessagesNotInAllowedRange = 'MqttD2CMessagesNotInAllowedRange', HttpD2CMessagesNotInAllowedRange = 'HttpD2CMessagesNotInAllowedRange', DirectMethodInvokesNotInAllowedRange = 'DirectMethodInvokesNotInAllowedRange', FailedLocalLoginsNotInAllowedRange = 'FailedLocalLoginsNotInAllowedRange', FileUploadsNotInAllowedRange = 'FileUploadsNotInAllowedRange', QueuePurgesNotInAllowedRange = 'QueuePurgesNotInAllowedRange', TwinUpdatesNotInAllowedRange = 'TwinUpdatesNotInAllowedRange', UnauthorizedOperationsNotInAllowedRange = 'UnauthorizedOperationsNotInAllowedRange' }
 
 
 	/** List of device security groups */
@@ -270,7 +270,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListCustomAlertRuleValueType { IpCidr = 0, String = 1 }
+	export enum ListCustomAlertRuleValueType { IpCidr = 'IpCidr', String = 'String' }
 
 	@Injectable()
 	export class MyClient {

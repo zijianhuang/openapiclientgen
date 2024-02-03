@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleSecuritySafebrowsingV5FullHashFullHashDetailThreatType { THREAT_TYPE_UNSPECIFIED = 0, MALWARE = 1, SOCIAL_ENGINEERING = 2, UNWANTED_SOFTWARE = 3, POTENTIALLY_HARMFUL_APPLICATION = 4 }
+	export enum GoogleSecuritySafebrowsingV5FullHashFullHashDetailThreatType { THREAT_TYPE_UNSPECIFIED = 'THREAT_TYPE_UNSPECIFIED', MALWARE = 'MALWARE', SOCIAL_ENGINEERING = 'SOCIAL_ENGINEERING', UNWANTED_SOFTWARE = 'UNWANTED_SOFTWARE', POTENTIALLY_HARMFUL_APPLICATION = 'POTENTIALLY_HARMFUL_APPLICATION' }
 
 
 	/** The response returned after searching threat hashes. Note that if nothing is found, the server will return an OK status (HTTP status code 200) with the `full_hashes` field empty, rather than returning a NOT_FOUND status (HTTP status code 404). */

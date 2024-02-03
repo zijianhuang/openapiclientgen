@@ -102,7 +102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateDeviceSwitchRoutingInterfaceCreatedeviceswitchroutinginterfaceMulticastRouting { 'IGMP snooping querier' = 0, disabled = 1, enabled = 2 }
+	export enum CreateDeviceSwitchRoutingInterfaceCreatedeviceswitchroutinginterfaceMulticastRouting { 'IGMP snooping querier' = 'IGMP snooping querier', disabled = 'disabled', enabled = 'enabled' }
 
 	export interface CreateDeviceSwitchRoutingInterfaceCreatedeviceswitchroutinginterfaceOspfSettings {
 
@@ -517,9 +517,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallCellularFirewallRulesUpdatenetworkappliancefirewallcellularfirewallrulesRulesPolicy { allow = 0, deny = 1 }
+	export enum UpdateNetworkApplianceFirewallCellularFirewallRulesUpdatenetworkappliancefirewallcellularfirewallrulesRulesPolicy { allow = 'allow', deny = 'deny' }
 
-	export enum UpdateNetworkApplianceFirewallCellularFirewallRulesUpdatenetworkappliancefirewallcellularfirewallrulesRulesProtocol { any = 0, icmp = 1, icmp6 = 2, tcp = 3, udp = 4 }
+	export enum UpdateNetworkApplianceFirewallCellularFirewallRulesUpdatenetworkappliancefirewallcellularfirewallrulesRulesProtocol { any = 'any', icmp = 'icmp', icmp6 = 'icmp6', tcp = 'tcp', udp = 'udp' }
 
 	export interface UpdateNetworkApplianceFirewallInboundFirewallRulesUpdatenetworkappliancefirewallinboundfirewallrules {
 
@@ -7786,7 +7786,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceApplianceUplinksSettingsReturnInterfacesWan1SvisIpv4AssignmentMode { dynamic = 0, static = 1 }
+	export enum GetDeviceApplianceUplinksSettingsReturnInterfacesWan1SvisIpv4AssignmentMode { dynamic = 'dynamic', static = 'static' }
 
 	export interface GetDeviceApplianceUplinksSettingsReturnInterfacesWan1SvisIpv4Nameservers {
 
@@ -8998,7 +8998,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceCameraAnalyticsOverviewObjectType { person = 0, vehicle = 1 }
+	export enum GetDeviceCameraAnalyticsOverviewObjectType { person = 'person', vehicle = 'vehicle' }
 
 	export interface UpdateDeviceCameraCustomAnalyticsPutBody {
 
@@ -9148,9 +9148,9 @@ export namespace MyNS {
 
 	export enum UpdateDeviceCameraQualityAndRetentionPutBodyMotionDetectorVersion { _1 = 0, _2 = 1 }
 
-	export enum UpdateDeviceCameraQualityAndRetentionPutBodyQuality { Enhanced = 0, High = 1, Standard = 2 }
+	export enum UpdateDeviceCameraQualityAndRetentionPutBodyQuality { Enhanced = 'Enhanced', High = 'High', Standard = 'Standard' }
 
-	export enum UpdateDeviceCameraQualityAndRetentionPutBodyResolution { '1080x1080' = 0, '1280x720' = 1, '1920x1080' = 2, '2058x2058' = 3, '2112x2112' = 4, '2688x1512' = 5, '2880x2880' = 6, '3840x2160' = 7 }
+	export enum UpdateDeviceCameraQualityAndRetentionPutBodyResolution { '1080x1080' = '1080x1080', '1280x720' = '1280x720', '1920x1080' = '1920x1080', '2058x2058' = '2058x2058', '2112x2112' = '2112x2112', '2688x1512' = '2688x1512', '2880x2880' = '2880x2880', '3840x2160' = '3840x2160' }
 
 	export interface UpdateDeviceCameraSensePutBody {
 
@@ -9390,9 +9390,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateDeviceCellularSimsPutBodySimsApnsAuthenticationType { chap = 0, none = 1, pap = 2 }
+	export enum UpdateDeviceCellularSimsPutBodySimsApnsAuthenticationType { chap = 'chap', none = 'none', pap = 'pap' }
 
-	export enum UpdateDeviceCellularSimsPutBodySimsSlot { sim1 = 0, sim2 = 1 }
+	export enum UpdateDeviceCellularSimsPutBodySimsSlot { sim1 = 'sim1', sim2 = 'sim2' }
 
 	export interface UpdateDeviceCellularGatewayLanPutBody {
 
@@ -10007,7 +10007,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceLossAndLatencyHistoryUplink { cellular = 0, wan1 = 1, wan2 = 2 }
+	export enum GetDeviceLossAndLatencyHistoryUplink { cellular = 'cellular', wan1 = 'wan1', wan2 = 'wan2' }
 
 	export interface UpdateDeviceManagementInterfacePutBody {
 
@@ -10080,7 +10080,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateDeviceManagementInterfacePutBodyWan1WanEnabled { disabled = 0, enabled = 1, 'not configured' = 2 }
+	export enum UpdateDeviceManagementInterfacePutBodyWan1WanEnabled { disabled = 'disabled', enabled = 'enabled', 'not configured' = 'not configured' }
 
 	export interface UpdateDeviceManagementInterfacePutBodyWan2 {
 
@@ -10187,7 +10187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceSensorRelationshipsReturnLivestreamRelatedDevicesProductType { camera = 0, sensor = 1 }
+	export enum GetDeviceSensorRelationshipsReturnLivestreamRelatedDevicesProductType { camera = 'camera', sensor = 'sensor' }
 
 	export interface UpdateDeviceSensorRelationshipsPutBody {
 
@@ -10467,7 +10467,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceSwitchPortsReturnAccessPolicyType { 'Custom access policy' = 0, 'MAC allow list' = 1, Open = 2, 'Sticky MAC allow list' = 3 }
+	export enum GetDeviceSwitchPortsReturnAccessPolicyType { 'Custom access policy' = 'Custom access policy', 'MAC allow list' = 'MAC allow list', Open = 'Open', 'Sticky MAC allow list' = 'Sticky MAC allow list' }
 
 	export interface GetDeviceSwitchPortsReturnProfile {
 
@@ -10500,11 +10500,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceSwitchPortsReturnStpGuard { 'bpdu guard' = 0, disabled = 1, 'loop guard' = 2, 'root guard' = 3 }
+	export enum GetDeviceSwitchPortsReturnStpGuard { 'bpdu guard' = 'bpdu guard', disabled = 'disabled', 'loop guard' = 'loop guard', 'root guard' = 'root guard' }
 
-	export enum GetDeviceSwitchPortsReturnType { access = 0, trunk = 1 }
+	export enum GetDeviceSwitchPortsReturnType { access = 'access', trunk = 'trunk' }
 
-	export enum GetDeviceSwitchPortsReturnUdld { 'Alert only' = 0, Enforce = 1 }
+	export enum GetDeviceSwitchPortsReturnUdld { 'Alert only' = 'Alert only', Enforce = 'Enforce' }
 
 	export interface CycleDeviceSwitchPortsPostBody {
 
@@ -10689,7 +10689,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceSwitchPortsStatusesReturnDuplex { '' = 0, full = 1, half = 2 }
+	export enum GetDeviceSwitchPortsStatusesReturnDuplex { '' = '', full = 'full', half = 'half' }
 
 	export interface GetDeviceSwitchPortsStatusesReturnLldp {
 
@@ -10798,7 +10798,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceSwitchPortsStatusesReturnSecurePortAuthenticationStatus { 'Authentication failure' = 0, 'Authentication in progress' = 1, 'Authentication successful' = 2, 'Authentication timed out' = 3, Disabled = 4, Enabled = 5 }
+	export enum GetDeviceSwitchPortsStatusesReturnSecurePortAuthenticationStatus { 'Authentication failure' = 'Authentication failure', 'Authentication in progress' = 'Authentication in progress', 'Authentication successful' = 'Authentication successful', 'Authentication timed out' = 'Authentication timed out', Disabled = 'Disabled', Enabled = 'Enabled' }
 
 	export interface GetDeviceSwitchPortsStatusesReturnSecurePortConfigOverrides {
 
@@ -10838,9 +10838,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceSwitchPortsStatusesReturnSpeed { '' = 0, '1 Gbps' = 1, '10 Gbps' = 2, '10 Mbps' = 3, '100 Gbps' = 4, '100 Mbps' = 5, '2.5 Gbps' = 6, '20 Gbps' = 7, '40 Gbps' = 8, '5 Gbps' = 9 }
+	export enum GetDeviceSwitchPortsStatusesReturnSpeed { '' = '', '1 Gbps' = '1 Gbps', '10 Gbps' = '10 Gbps', '10 Mbps' = '10 Mbps', '100 Gbps' = '100 Gbps', '100 Mbps' = '100 Mbps', '2.5 Gbps' = '2.5 Gbps', '20 Gbps' = '20 Gbps', '40 Gbps' = '40 Gbps', '5 Gbps' = '5 Gbps' }
 
-	export enum GetDeviceSwitchPortsStatusesReturnStatus { Connected = 0, Disabled = 1, Disconnected = 2 }
+	export enum GetDeviceSwitchPortsStatusesReturnStatus { Connected = 'Connected', Disabled = 'Disabled', Disconnected = 'Disconnected' }
 
 	export interface GetDeviceSwitchPortsStatusesReturnTrafficInKbps {
 
@@ -12095,9 +12095,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDhcpLeaseTime { '1 day' = 0, '1 hour' = 1, '1 week' = 2, '12 hours' = 3, '30 minutes' = 4, '4 hours' = 5 }
+	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDhcpLeaseTime { '1 day' = '1 day', '1 hour' = '1 hour', '1 week' = '1 week', '12 hours' = '12 hours', '30 minutes' = '30 minutes', '4 hours' = '4 hours' }
 
-	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDhcpMode { dhcpDisabled = 0, dhcpRelay = 1, dhcpServer = 2 }
+	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDhcpMode { dhcpDisabled = 'dhcpDisabled', dhcpRelay = 'dhcpRelay', dhcpServer = 'dhcpServer' }
 
 	export interface UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDhcpOptions {
 
@@ -12148,9 +12148,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDhcpOptionsType { hex = 0, integer = 1, ip = 2, text = 3 }
+	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDhcpOptionsType { hex = 'hex', integer = 'integer', ip = 'ip', text = 'text' }
 
-	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDnsNameserversOption { custom = 0, googlePublicDns = 1, openDns = 2 }
+	export enum UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyDnsNameserversOption { custom = 'custom', googlePublicDns = 'googlePublicDns', openDns = 'openDns' }
 
 	export interface UpdateDeviceSwitchRoutingInterfaceDhcpPutBodyFixedIpAssignments {
 
@@ -12431,7 +12431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceWirelessConnectionStatsBand { _2_4 = 0, _5 = 1, _6 = 2 }
+	export enum GetDeviceWirelessConnectionStatsBand { _2_4 = '2.4', _5 = '5', _6 = '6' }
 
 	export interface GetDeviceWirelessConnectionStatsReturn {
 
@@ -13034,7 +13034,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceClientSecurityEventsSortOrder { ascending = 0, descending = 1 }
+	export enum GetNetworkApplianceClientSecurityEventsSortOrder { ascending = 'ascending', descending = 'descending' }
 
 	export interface UpdateNetworkApplianceConnectivityMonitoringDestinationsPutBody {
 
@@ -13112,7 +13112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceContentFilteringPutBodyUrlCategoryListSize { fullList = 0, topSites = 1 }
+	export enum UpdateNetworkApplianceContentFilteringPutBodyUrlCategoryListSize { fullList = 'fullList', topSites = 'topSites' }
 
 	export interface UpdateNetworkApplianceFirewallFirewalledServicePutBody {
 
@@ -13140,7 +13140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallFirewalledServicePutBodyAccess { blocked = 0, restricted = 1, unrestricted = 2 }
+	export enum UpdateNetworkApplianceFirewallFirewalledServicePutBodyAccess { blocked = 'blocked', restricted = 'restricted', unrestricted = 'unrestricted' }
 
 	export interface UpdateNetworkApplianceFirewallL7FirewallRulesPutBody {
 
@@ -13186,9 +13186,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallL7FirewallRulesPutBodyRulesPolicy { deny = 0 }
+	export enum UpdateNetworkApplianceFirewallL7FirewallRulesPutBodyRulesPolicy { deny = 'deny' }
 
-	export enum UpdateNetworkApplianceFirewallL7FirewallRulesPutBodyRulesType { application = 0, applicationCategory = 1, host = 2, ipRange = 3, port = 4 }
+	export enum UpdateNetworkApplianceFirewallL7FirewallRulesPutBodyRulesType { application = 'application', applicationCategory = 'applicationCategory', host = 'host', ipRange = 'ipRange', port = 'port' }
 
 	export interface UpdateNetworkApplianceFirewallOneToManyNatRulesPutBody {
 
@@ -13296,9 +13296,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallOneToManyNatRulesPutBodyRulesPortRulesProtocol { tcp = 0, udp = 1 }
+	export enum UpdateNetworkApplianceFirewallOneToManyNatRulesPutBodyRulesPortRulesProtocol { tcp = 'tcp', udp = 'udp' }
 
-	export enum UpdateNetworkApplianceFirewallOneToManyNatRulesPutBodyRulesUplink { internet1 = 0, internet2 = 1 }
+	export enum UpdateNetworkApplianceFirewallOneToManyNatRulesPutBodyRulesUplink { internet1 = 'internet1', internet2 = 'internet2' }
 
 	export interface UpdateNetworkApplianceFirewallOneToOneNatRulesPutBody {
 
@@ -13386,7 +13386,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallOneToOneNatRulesPutBodyRulesAllowedInboundProtocol { any = 0, 'icmp-ping' = 1, tcp = 2, udp = 3 }
+	export enum UpdateNetworkApplianceFirewallOneToOneNatRulesPutBodyRulesAllowedInboundProtocol { any = 'any', 'icmp-ping' = 'icmp-ping', tcp = 'tcp', udp = 'udp' }
 
 	export interface UpdateNetworkApplianceFirewallPortForwardingRulesPutBody {
 
@@ -13486,7 +13486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallPortForwardingRulesPutBodyRulesUplink { both = 0, internet1 = 1, internet2 = 2 }
+	export enum UpdateNetworkApplianceFirewallPortForwardingRulesPutBodyRulesUplink { both = 'both', internet1 = 'internet1', internet2 = 'internet2' }
 
 	export interface UpdateNetworkApplianceFirewallSettingsPutBody {
 
@@ -13531,7 +13531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceFirewallSettingsPutBodySpoofingProtectionIpSourceGuardMode { block = 0, log = 1 }
+	export enum UpdateNetworkApplianceFirewallSettingsPutBodySpoofingProtectionIpSourceGuardMode { block = 'block', log = 'log' }
 
 	export interface GetNetworkAppliancePortsReturn {
 
@@ -13886,7 +13886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkAppliancePrefixesDelegatedStaticPostBodyOriginType { independent = 0, internet = 1 }
+	export enum CreateNetworkAppliancePrefixesDelegatedStaticPostBodyOriginType { independent = 'independent', internet = 'internet' }
 
 	export interface GetNetworkAppliancePrefixesDelegatedStaticReturn {
 
@@ -14030,9 +14030,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceSecurityIntrusionPutBodyIdsRulesets { balanced = 0, connectivity = 1, security = 2 }
+	export enum UpdateNetworkApplianceSecurityIntrusionPutBodyIdsRulesets { balanced = 'balanced', connectivity = 'connectivity', security = 'security' }
 
-	export enum UpdateNetworkApplianceSecurityIntrusionPutBodyMode { detection = 0, disabled = 1, prevention = 2 }
+	export enum UpdateNetworkApplianceSecurityIntrusionPutBodyMode { detection = 'detection', disabled = 'disabled', prevention = 'prevention' }
 
 	export interface UpdateNetworkApplianceSecurityIntrusionPutBodyProtectedNetworks {
 
@@ -14158,7 +14158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceSecurityMalwarePutBodyMode { disabled = 0, enabled = 1 }
+	export enum UpdateNetworkApplianceSecurityMalwarePutBodyMode { disabled = 'disabled', enabled = 'enabled' }
 
 	export interface GetNetworkApplianceSettingsReturn {
 
@@ -14187,9 +14187,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceSettingsReturnClientTrackingMethod { 'IP address' = 0, 'MAC address' = 1, 'Unique client identifier' = 2 }
+	export enum GetNetworkApplianceSettingsReturnClientTrackingMethod { 'IP address' = 'IP address', 'MAC address' = 'MAC address', 'Unique client identifier' = 'Unique client identifier' }
 
-	export enum GetNetworkApplianceSettingsReturnDeploymentMode { passthrough = 0, routed = 1 }
+	export enum GetNetworkApplianceSettingsReturnDeploymentMode { passthrough = 'passthrough', routed = 'routed' }
 
 	export interface GetNetworkApplianceSettingsReturnDynamicDns {
 
@@ -14958,7 +14958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceSsidPutBodyAuthMode { '8021x-meraki' = 0, '8021x-radius' = 1, open = 2, psk = 3 }
+	export enum UpdateNetworkApplianceSsidPutBodyAuthMode { '8021x-meraki' = '8021x-meraki', '8021x-radius' = '8021x-radius', open = 'open', psk = 'psk' }
 
 	export interface UpdateNetworkApplianceSsidPutBodyDhcpEnforcedDeauthentication {
 
@@ -14977,7 +14977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceSsidPutBodyEncryptionMode { wep = 0, wpa = 1 }
+	export enum UpdateNetworkApplianceSsidPutBodyEncryptionMode { wep = 'wep', wpa = 'wpa' }
 
 	export interface UpdateNetworkApplianceSsidPutBodyRadiusServers {
 
@@ -15010,7 +15010,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceSsidPutBodyWpaEncryptionMode { 'WPA1 and WPA2' = 0, 'WPA2 only' = 1, 'WPA3 Transition Mode' = 2, 'WPA3 only' = 3 }
+	export enum UpdateNetworkApplianceSsidPutBodyWpaEncryptionMode { 'WPA1 and WPA2' = 'WPA1 and WPA2', 'WPA2 only' = 'WPA2 only', 'WPA3 Transition Mode' = 'WPA3 Transition Mode', 'WPA3 only' = 'WPA3 only' }
 
 	export interface UpdateNetworkApplianceSsidReturn {
 
@@ -15505,7 +15505,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceTrafficShapingRulesPutBodyRulesDefinitionsType { application = 0, applicationCategory = 1, host = 2, ipRange = 3, localNet = 4, port = 5 }
+	export enum UpdateNetworkApplianceTrafficShapingRulesPutBodyRulesDefinitionsType { application = 'application', applicationCategory = 'applicationCategory', host = 'host', ipRange = 'ipRange', localNet = 'localNet', port = 'port' }
 
 	export interface UpdateNetworkApplianceTrafficShapingRulesPutBodyRulesPerClientBandwidthLimits {
 
@@ -15799,7 +15799,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnDefaultUplink { wan1 = 0, wan2 = 1 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnDefaultUplink { wan1 = 'wan1', wan2 = 'wan2' }
 
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnFailoverAndFailback {
 
@@ -15876,7 +15876,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesFailOverCriterion { poorPerformance = 0, uplinkDown = 1 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesFailOverCriterion { poorPerformance = 'poorPerformance', uplinkDown = 'uplinkDown' }
 
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesPerformanceClass {
 
@@ -15915,11 +15915,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesPerformanceClassBuiltinPerformanceClassName { VoIP = 0 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesPerformanceClassBuiltinPerformanceClassName { VoIP = 'VoIP' }
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesPerformanceClassType { builtin = 0, custom = 1 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesPerformanceClassType { builtin = 'builtin', custom = 'custom' }
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesPreferredUplink { bestForVoIP = 0, defaultUplink = 1, loadBalancing = 2, wan1 = 3, wan2 = 4 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesPreferredUplink { bestForVoIP = 'bestForVoIP', defaultUplink = 'defaultUplink', loadBalancing = 'loadBalancing', wan1 = 'wan1', wan2 = 'wan2' }
 
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFilters {
 
@@ -15950,7 +15950,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersType { application = 0, applicationCategory = 1, custom = 2 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersType { application = 'application', applicationCategory = 'applicationCategory', custom = 'custom' }
 
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnVpnTrafficUplinkPreferencesTrafficFiltersValue {
 
@@ -16137,7 +16137,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersType { custom = 0 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersType { custom = 'custom' }
 
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValue {
 
@@ -16192,7 +16192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValueProtocol { any = 0, icmp6 = 1, tcp = 2, udp = 3 }
+	export enum GetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValueProtocol { any = 'any', icmp6 = 'icmp6', tcp = 'tcp', udp = 'udp' }
 
 	export interface GetNetworkApplianceTrafficShapingUplinkSelectionReturnWanTrafficUplinkPreferencesTrafficFiltersValueSource {
 
@@ -17290,7 +17290,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceVlansReturnDhcpHandling { 'Do not respond to DHCP requests' = 0, 'Relay DHCP to another server' = 1, 'Run a DHCP server' = 2 }
+	export enum GetNetworkApplianceVlansReturnDhcpHandling { 'Do not respond to DHCP requests' = 'Do not respond to DHCP requests', 'Relay DHCP to another server' = 'Relay DHCP to another server', 'Run a DHCP server' = 'Run a DHCP server' }
 
 	export interface GetNetworkApplianceVlansReturnDhcpOptions {
 
@@ -17463,7 +17463,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkApplianceVlansReturnTemplateVlanType { same = 0, unique = 1 }
+	export enum GetNetworkApplianceVlansReturnTemplateVlanType { same = 'same', unique = 'unique' }
 
 	export interface CreateNetworkApplianceVlanPostBody {
 
@@ -18884,7 +18884,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkApplianceVpnSiteToSiteVpnPutBodyMode { hub = 0, none = 1, spoke = 2 }
+	export enum UpdateNetworkApplianceVpnSiteToSiteVpnPutBodyMode { hub = 'hub', none = 'none', spoke = 'spoke' }
 
 	export interface UpdateNetworkApplianceVpnSiteToSiteVpnPutBodySubnets {
 
@@ -19225,7 +19225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV12SlashMV22SlashMV72_Resolution { '1280x720' = 0, '1920x1080' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV12SlashMV22SlashMV72_Resolution { '1280x720' = '1280x720', '1920x1080' = '1920x1080' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV12WE {
 
@@ -19299,7 +19299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV13Resolution { '1080x1080' = 0, '2688x1512' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV13Resolution { '1080x1080' = '1080x1080', '2688x1512' = '2688x1512' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV21SlashMV71_ {
 
@@ -19337,7 +19337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV21SlashMV71_Resolution { '1280x720' = 0 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV21SlashMV71_Resolution { '1280x720' = '1280x720' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV22XSlashMV72X_ {
 
@@ -19375,7 +19375,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV22XSlashMV72X_Resolution { '1280x720' = 0, '1920x1080' = 1, '2688x1512' = 2 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettings_MV22XSlashMV72X_Resolution { '1280x720' = '1280x720', '1920x1080' = '1920x1080', '2688x1512' = '2688x1512' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32 {
 
@@ -19413,7 +19413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32Resolution { '1080x1080' = 0, '2058x2058' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV32Resolution { '1080x1080' = '1080x1080', '2058x2058' = '2058x2058' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33 {
 
@@ -19451,7 +19451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33Resolution { '1080x1080' = 0, '2112x2112' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV33Resolution { '1080x1080' = '1080x1080', '2112x2112' = '2112x2112' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52 {
 
@@ -19489,7 +19489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52Resolution { '1280x720' = 0, '1920x1080' = 1, '2688x1512' = 2, '3840x2160' = 3 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV52Resolution { '1280x720' = '1280x720', '1920x1080' = '1920x1080', '2688x1512' = '2688x1512', '3840x2160' = '3840x2160' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63 {
 
@@ -19527,7 +19527,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63Resolution { '1920x1080' = 0, '2688x1512' = 1 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63Resolution { '1920x1080' = '1920x1080', '2688x1512' = '2688x1512' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63X {
 
@@ -19565,7 +19565,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63XResolution { '1920x1080' = 0, '2688x1512' = 1, '3840x2160' = 2 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV63XResolution { '1920x1080' = '1920x1080', '2688x1512' = '2688x1512', '3840x2160' = '3840x2160' }
 
 	export interface CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93 {
 
@@ -19639,7 +19639,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93XResolution { '1080x1080' = 0, '2112x2112' = 1, '2880x2880' = 2 }
+	export enum CreateNetworkCameraQualityRetentionProfilePostBodyVideoSettingsMV93XResolution { '1080x1080' = '1080x1080', '2112x2112' = '2112x2112', '2880x2880' = '2880x2880' }
 
 	export interface UpdateNetworkCameraQualityRetentionProfilePutBody {
 
@@ -20282,7 +20282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkCameraWirelessProfilePostBodySsidAuthMode { '8021x-radius' = 0, psk = 1 }
+	export enum CreateNetworkCameraWirelessProfilePostBodySsidAuthMode { '8021x-radius' = '8021x-radius', psk = 'psk' }
 
 	export interface UpdateNetworkCameraWirelessProfilePutBody {
 
@@ -20446,7 +20446,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkCellularGatewayDhcpReturnDnsNameservers { custom = 0, google_dns = 1, opendns = 2, upstream_dns = 3 }
+	export enum GetNetworkCellularGatewayDhcpReturnDnsNameservers { custom = 'custom', google_dns = 'google_dns', opendns = 'opendns', upstream_dns = 'upstream_dns' }
 
 	export interface UpdateNetworkCellularGatewayDhcpPutBody {
 
@@ -20758,9 +20758,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkClientsReturnRecentDeviceConnection { Wired = 0, Wireless = 1 }
+	export enum GetNetworkClientsReturnRecentDeviceConnection { Wired = 'Wired', Wireless = 'Wireless' }
 
-	export enum GetNetworkClientsReturnStatus { Offline = 0, Online = 1 }
+	export enum GetNetworkClientsReturnStatus { Offline = 'Offline', Online = 'Online' }
 
 	export interface GetNetworkClientsReturnUsage {
 
@@ -20860,7 +20860,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionNetworkClientsPostBodyDevicePolicy { Allowed = 0, Blocked = 1, 'Group policy' = 2, Normal = 3, 'Per connection' = 4 }
+	export enum ProvisionNetworkClientsPostBodyDevicePolicy { Allowed = 'Allowed', Blocked = 'Blocked', 'Group policy' = 'Group policy', Normal = 'Normal', 'Per connection' = 'Per connection' }
 
 	export interface ProvisionNetworkClientsPostBodyPoliciesBySecurityAppliance {
 
@@ -20879,7 +20879,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionNetworkClientsPostBodyPoliciesBySecurityApplianceDevicePolicy { Allowed = 0, Blocked = 1, Normal = 2 }
+	export enum ProvisionNetworkClientsPostBodyPoliciesBySecurityApplianceDevicePolicy { Allowed = 'Allowed', Blocked = 'Blocked', Normal = 'Normal' }
 
 	export interface ProvisionNetworkClientsPostBodyPoliciesBySsid {
 
@@ -20966,7 +20966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionNetworkClientsPostBodyPoliciesBySsid_0_DevicePolicy { Allowed = 0, Blocked = 1, 'Group policy' = 2, Normal = 3 }
+	export enum ProvisionNetworkClientsPostBodyPoliciesBySsid_0_DevicePolicy { Allowed = 'Allowed', Blocked = 'Blocked', 'Group policy' = 'Group policy', Normal = 'Normal' }
 
 	export interface ProvisionNetworkClientsPostBodyPoliciesBySsid_1_ {
 
@@ -21954,7 +21954,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VmxNetworkDevicesClaimPostBodySize { _100 = 0, large = 1, medium = 2, small = 3 }
+	export enum VmxNetworkDevicesClaimPostBodySize { _100 = '100', large = 'large', medium = 'medium', small = 'small' }
 
 	export interface RemoveNetworkDevicesPostBody {
 
@@ -21979,7 +21979,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkEventsProductType { appliance = 0, camera = 1, cellularGateway = 2, switch = 3, systemsManager = 4, wireless = 5 }
+	export enum GetNetworkEventsProductType { appliance = 'appliance', camera = 'camera', cellularGateway = 'cellularGateway', switch = 'switch', systemsManager = 'systemsManager', wireless = 'wireless' }
 
 	export interface GetNetworkEventsReturn {
 
@@ -24052,9 +24052,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkFirmwareUpgradesReturnUpgradeWindowDayOfWeek { fri = 0, friday = 1, mon = 2, monday = 3, sat = 4, saturday = 5, sun = 6, sunday = 7, thu = 8, thursday = 9, tue = 10, tuesday = 11, wed = 12, wednesday = 13 }
+	export enum GetNetworkFirmwareUpgradesReturnUpgradeWindowDayOfWeek { fri = 'fri', friday = 'friday', mon = 'mon', monday = 'monday', sat = 'sat', saturday = 'saturday', sun = 'sun', sunday = 'sunday', thu = 'thu', thursday = 'thursday', tue = 'tue', tuesday = 'tuesday', wed = 'wed', wednesday = 'wednesday' }
 
-	export enum GetNetworkFirmwareUpgradesReturnUpgradeWindowHourOfDay { '0:00' = 0, '10:00' = 1, '11:00' = 2, '12:00' = 3, '13:00' = 4, '14:00' = 5, '15:00' = 6, '16:00' = 7, '17:00' = 8, '18:00' = 9, '19:00' = 10, '1:00' = 11, '20:00' = 12, '21:00' = 13, '22:00' = 14, '23:00' = 15, '2:00' = 16, '3:00' = 17, '4:00' = 18, '5:00' = 19, '6:00' = 20, '7:00' = 21, '8:00' = 22, '9:00' = 23 }
+	export enum GetNetworkFirmwareUpgradesReturnUpgradeWindowHourOfDay { '0:00' = '0:00', '10:00' = '10:00', '11:00' = '11:00', '12:00' = '12:00', '13:00' = '13:00', '14:00' = '14:00', '15:00' = '15:00', '16:00' = '16:00', '17:00' = '17:00', '18:00' = '18:00', '19:00' = '19:00', '1:00' = '1:00', '20:00' = '20:00', '21:00' = '21:00', '22:00' = '22:00', '23:00' = '23:00', '2:00' = '2:00', '3:00' = '3:00', '4:00' = '4:00', '5:00' = '5:00', '6:00' = '6:00', '7:00' = '7:00', '8:00' = '8:00', '9:00' = '9:00' }
 
 	export interface UpdateNetworkFirmwareUpgradesPutBody {
 
@@ -26363,7 +26363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkFirmwareUpgradesRollbackPostBodyProduct { appliance = 0, camera = 1, cellularGateway = 2, switch = 3, wireless = 4 }
+	export enum CreateNetworkFirmwareUpgradesRollbackPostBodyProduct { appliance = 'appliance', camera = 'camera', cellularGateway = 'cellularGateway', switch = 'switch', wireless = 'wireless' }
 
 	export interface CreateNetworkFirmwareUpgradesRollbackPostBodyReasons {
 
@@ -26401,7 +26401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkFirmwareUpgradesRollbackPostBodyReasonsCategory { 'broke old features' = 0, other = 1, performance = 2, stability = 3, testing = 4, 'unifying networks versions' = 5 }
+	export enum CreateNetworkFirmwareUpgradesRollbackPostBodyReasonsCategory { 'broke old features' = 'broke old features', other = 'other', performance = 'performance', stability = 'stability', testing = 'testing', 'unifying networks versions' = 'unifying networks versions' }
 
 	export interface CreateNetworkFirmwareUpgradesRollbackPostBodyToVersion {
 
@@ -26488,7 +26488,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkFirmwareUpgradesRollbackReturnStatus { canceled = 0, completed = 1, in_progress = 2, pending = 3 }
+	export enum CreateNetworkFirmwareUpgradesRollbackReturnStatus { canceled = 'canceled', completed = 'completed', in_progress = 'in_progress', pending = 'pending' }
 
 	export interface CreateNetworkFirmwareUpgradesRollbackReturnToVersion {
 
@@ -28638,7 +28638,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkGroupPolicyPostBodyBandwidthSettings { custom = 0, ignore = 1, 'network default' = 2 }
+	export enum CreateNetworkGroupPolicyPostBodyBandwidthSettings { custom = 'custom', ignore = 'ignore', 'network default' = 'network default' }
 
 	export interface CreateNetworkGroupPolicyPostBodyBonjourForwarding {
 
@@ -28735,7 +28735,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkGroupPolicyPostBodyContentFilteringAllowedUrlPatternsSettings { append = 0, 'network default' = 1, override = 2 }
+	export enum CreateNetworkGroupPolicyPostBodyContentFilteringAllowedUrlPatternsSettings { append = 'append', 'network default' = 'network default', override = 'override' }
 
 	export interface CreateNetworkGroupPolicyPostBodyContentFilteringBlockedUrlCategories {
 
@@ -29310,7 +29310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkGroupPolicyPostBodySplashAuthSettings { bypass = 0, 'network default' = 1 }
+	export enum CreateNetworkGroupPolicyPostBodySplashAuthSettings { bypass = 'bypass', 'network default' = 'network default' }
 
 	export interface CreateNetworkGroupPolicyPostBodyVlanTagging {
 
@@ -30333,7 +30333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkHealthAlertsReturnSeverity { error = 0, info = 1, warning = 2 }
+	export enum GetNetworkHealthAlertsReturnSeverity { error = 'error', info = 'info', warning = 'warning' }
 
 	export interface GetNetworkInsightApplicationHealthByTimeReturn {
 
@@ -30593,7 +30593,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkMerakiAuthUserPostBodyAccountType { '802.1X' = 0, 'Client VPN' = 1, Guest = 2 }
+	export enum CreateNetworkMerakiAuthUserPostBodyAccountType { '802.1X' = '802.1X', 'Client VPN' = 'Client VPN', Guest = 'Guest' }
 
 	export interface CreateNetworkMerakiAuthUserPostBodyAuthorizations {
 
@@ -31171,7 +31171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkPiiRequestPostBodyType { delete = 0, 'restrict processing' = 1 }
+	export enum CreateNetworkPiiRequestPostBodyType { delete = 'delete', 'restrict processing' = 'restrict processing' }
 
 	export interface GetNetworkPoliciesByClientReturn {
 
@@ -31534,7 +31534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkSensorAlertsProfilesReturnConditionsDirection { above = 0, below = 1 }
+	export enum GetNetworkSensorAlertsProfilesReturnConditionsDirection { above = 'above', below = 'below' }
 
 	export enum GetNetworkSensorAlertsProfilesReturnConditionsDuration { _0 = 0, _60 = 1, _120 = 2, _180 = 3, _240 = 4, _300 = 5, _600 = 6, _900 = 7, _1800 = 8, _3600 = 9 }
 
@@ -31619,7 +31619,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality { fair = 0, good = 1, inadequate = 2, poor = 3 }
+	export enum GetNetworkSensorAlertsProfilesReturnConditionsThresholdHumidityQuality { fair = 'fair', good = 'good', inadequate = 'inadequate', poor = 'poor' }
 
 	export interface GetNetworkSensorAlertsProfilesReturnConditionsThresholdIndoorAirQuality {
 
@@ -36028,7 +36028,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSnmpPutBodyAccess { community = 0, none = 1, users = 2 }
+	export enum UpdateNetworkSnmpPutBodyAccess { community = 'community', none = 'none', users = 'users' }
 
 	export interface UpdateNetworkSnmpPutBodyUsers {
 
@@ -36239,9 +36239,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkSwitchAccessControlListsReturnRulesIpVersion { any = 0, ipv4 = 1, ipv6 = 2 }
+	export enum GetNetworkSwitchAccessControlListsReturnRulesIpVersion { any = 'any', ipv4 = 'ipv4', ipv6 = 'ipv6' }
 
-	export enum GetNetworkSwitchAccessControlListsReturnRulesProtocol { any = 0, tcp = 1, udp = 2 }
+	export enum GetNetworkSwitchAccessControlListsReturnRulesProtocol { any = 'any', tcp = 'tcp', udp = 'udp' }
 
 	export interface UpdateNetworkSwitchAccessControlListsPutBody {
 
@@ -36551,7 +36551,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkSwitchAccessPoliciesReturnAccessPolicyType { '802.1x' = 0, 'Hybrid authentication' = 1, 'MAC authentication bypass' = 2 }
+	export enum GetNetworkSwitchAccessPoliciesReturnAccessPolicyType { '802.1x' = '802.1x', 'Hybrid authentication' = 'Hybrid authentication', 'MAC authentication bypass' = 'MAC authentication bypass' }
 
 	export interface GetNetworkSwitchAccessPoliciesReturnDot1x {
 
@@ -36570,9 +36570,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkSwitchAccessPoliciesReturnDot1xControlDirection { both = 0, inbound = 1 }
+	export enum GetNetworkSwitchAccessPoliciesReturnDot1xControlDirection { both = 'both', inbound = 'inbound' }
 
-	export enum GetNetworkSwitchAccessPoliciesReturnHostMode { 'Multi-Auth' = 0, 'Multi-Domain' = 1, 'Multi-Host' = 2, 'Single-Host' = 3 }
+	export enum GetNetworkSwitchAccessPoliciesReturnHostMode { 'Multi-Auth' = 'Multi-Auth', 'Multi-Domain' = 'Multi-Domain', 'Multi-Host' = 'Multi-Host', 'Single-Host' = 'Single-Host' }
 
 	export interface GetNetworkSwitchAccessPoliciesReturnRadius {
 
@@ -38438,7 +38438,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkSwitchDhcpV4ServersSeenReturnType { device = 0, discovered = 1, stack = 2 }
+	export enum GetNetworkSwitchDhcpV4ServersSeenReturnType { device = 'device', discovered = 'discovered', stack = 'stack' }
 
 	export interface UpdateNetworkSwitchDhcpServerPolicyPutBody {
 
@@ -38516,7 +38516,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSwitchDhcpServerPolicyPutBodyDefaultPolicy { allow = 0, block = 1 }
+	export enum UpdateNetworkSwitchDhcpServerPolicyPutBodyDefaultPolicy { allow = 'allow', block = 'block' }
 
 	export interface GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersReturn {
 
@@ -39719,7 +39719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkSwitchQosRulePostBodyProtocol { ANY = 0, TCP = 1, UDP = 2 }
+	export enum CreateNetworkSwitchQosRulePostBodyProtocol { ANY = 'ANY', TCP = 'TCP', UDP = 'UDP' }
 
 	export interface UpdateNetworkSwitchQosRulesOrderPutBody {
 
@@ -40049,7 +40049,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkSwitchRoutingOspfPutBodyAreasAreaType { normal = 0, nssa = 1, stub = 2 }
+	export enum UpdateNetworkSwitchRoutingOspfPutBodyAreasAreaType { normal = 'normal', nssa = 'nssa', stub = 'stub' }
 
 	export interface UpdateNetworkSwitchRoutingOspfPutBodyMd5AuthenticationKey {
 
@@ -40209,7 +40209,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkSwitchSettingsReturnPowerExceptionsPowerType { combined = 0, redundant = 1, useNetworkSetting = 2 }
+	export enum GetNetworkSwitchSettingsReturnPowerExceptionsPowerType { combined = 'combined', redundant = 'redundant', useNetworkSetting = 'useNetworkSetting' }
 
 	export interface UpdateNetworkSwitchSettingsPutBody {
 
@@ -41153,7 +41153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkTrafficDeviceType { appliance = 0, combined = 1, switch = 2, wireless = 3 }
+	export enum GetNetworkTrafficDeviceType { appliance = 'appliance', combined = 'combined', switch = 'switch', wireless = 'wireless' }
 
 	export interface UpdateNetworkTrafficAnalysisPutBody {
 
@@ -41232,9 +41232,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkTrafficAnalysisPutBodyCustomPieChartItemsType { host = 0, ipRange = 1, port = 2 }
+	export enum UpdateNetworkTrafficAnalysisPutBodyCustomPieChartItemsType { host = 'host', ipRange = 'ipRange', port = 'port' }
 
-	export enum UpdateNetworkTrafficAnalysisPutBodyMode { basic = 0, detailed = 1, disabled = 2 }
+	export enum UpdateNetworkTrafficAnalysisPutBodyMode { basic = 'basic', detailed = 'detailed', disabled = 'disabled' }
 
 	export interface UnbindNetworkPostBody {
 
@@ -42047,7 +42047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkWebhooksWebhookTestReturnStatus { abandoned = 0, delivered = 1, enqueued = 2, processing = 3, retrying = 4 }
+	export enum GetNetworkWebhooksWebhookTestReturnStatus { abandoned = 'abandoned', delivered = 'delivered', enqueued = 'enqueued', processing = 'processing', retrying = 'retrying' }
 
 	export interface UpdateNetworkWirelessAlternateManagementInterfacePutBody {
 
@@ -42236,7 +42236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessBillingPutBodyPlansTimeLimit { '1 day' = 0, '1 hour' = 1, '1 week' = 2, '30 days' = 3 }
+	export enum UpdateNetworkWirelessBillingPutBodyPlansTimeLimit { '1 day' = '1 day', '1 hour' = '1 hour', '1 week' = '1 week', '30 days' = '30 days' }
 
 	export interface GetNetworkWirelessBluetoothSettingsReturn {
 
@@ -42349,7 +42349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessBluetoothSettingsPutBodyMajorMinorAssignmentMode { 'Non-unique' = 0, Unique = 1 }
+	export enum UpdateNetworkWirelessBluetoothSettingsPutBodyMajorMinorAssignmentMode { 'Non-unique' = 'Non-unique', Unique = 'Unique' }
 
 	export interface UpdateNetworkWirelessBluetoothSettingsReturn {
 
@@ -42702,7 +42702,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkWirelessLatencyHistoryAccessCategory { backgroundTraffic = 0, bestEffortTraffic = 1, videoTraffic = 2, voiceTraffic = 3 }
+	export enum GetNetworkWirelessLatencyHistoryAccessCategory { backgroundTraffic = 'backgroundTraffic', bestEffortTraffic = 'bestEffortTraffic', videoTraffic = 'videoTraffic', voiceTraffic = 'voiceTraffic' }
 
 	export interface GetNetworkWirelessLatencyHistoryReturn {
 
@@ -42824,9 +42824,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkWirelessRfProfilePostBodyApBandSettingsBandOperationMode { '2.4ghz' = 0, '5ghz' = 1, dual = 2 }
+	export enum CreateNetworkWirelessRfProfilePostBodyApBandSettingsBandOperationMode { '2.4ghz' = '2.4ghz', '5ghz' = '5ghz', dual = 'dual' }
 
-	export enum CreateNetworkWirelessRfProfilePostBodyBandSelectionType { ap = 0, ssid = 1 }
+	export enum CreateNetworkWirelessRfProfilePostBodyBandSelectionType { ap = 'ap', ssid = 'ssid' }
 
 	export interface CreateNetworkWirelessRfProfilePostBodyFiveGhzSettings {
 
@@ -42876,7 +42876,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNetworkWirelessRfProfilePostBodyMinBitrateType { band = 0, ssid = 1 }
+	export enum CreateNetworkWirelessRfProfilePostBodyMinBitrateType { band = 'band', ssid = 'ssid' }
 
 	export interface CreateNetworkWirelessRfProfilePostBodyPerSsidSettings {
 
@@ -45087,7 +45087,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkWirelessSettingsReturnUpgradeStrategy { minimizeClientDowntime = 0, minimizeUpgradeTime = 1 }
+	export enum GetNetworkWirelessSettingsReturnUpgradeStrategy { minimizeClientDowntime = 'minimizeClientDowntime', minimizeUpgradeTime = 'minimizeUpgradeTime' }
 
 	export interface UpdateNetworkWirelessSettingsPutBody {
 
@@ -45703,7 +45703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidPutBodyAuthMode { '8021x-google' = 0, '8021x-localradius' = 1, '8021x-meraki' = 2, '8021x-nac' = 3, '8021x-radius' = 4, 'ipsk-with-radius' = 5, 'ipsk-without-radius' = 6, open = 7, 'open-enhanced' = 8, 'open-with-nac' = 9, 'open-with-radius' = 10, psk = 11 }
+	export enum UpdateNetworkWirelessSsidPutBodyAuthMode { '8021x-google' = '8021x-google', '8021x-localradius' = '8021x-localradius', '8021x-meraki' = '8021x-meraki', '8021x-nac' = '8021x-nac', '8021x-radius' = '8021x-radius', 'ipsk-with-radius' = 'ipsk-with-radius', 'ipsk-without-radius' = 'ipsk-without-radius', open = 'open', 'open-enhanced' = 'open-enhanced', 'open-with-nac' = 'open-with-nac', 'open-with-radius' = 'open-with-radius', psk = 'psk' }
 
 	export interface UpdateNetworkWirelessSsidPutBodyDnsRewrite {
 
@@ -45773,7 +45773,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidPutBodyEnterpriseAdminAccess { 'access disabled' = 0, 'access enabled' = 1 }
+	export enum UpdateNetworkWirelessSsidPutBodyEnterpriseAdminAccess { 'access disabled' = 'access disabled', 'access enabled' = 'access enabled' }
 
 	export interface UpdateNetworkWirelessSsidPutBodyGre {
 
@@ -46083,11 +46083,11 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidPutBodyRadiusAttributeForGroupPolicies { 'Airespace-ACL-Name' = 0, 'Aruba-User-Role' = 1, 'Filter-Id' = 2, 'Reply-Message' = 3 }
+	export enum UpdateNetworkWirelessSsidPutBodyRadiusAttributeForGroupPolicies { 'Airespace-ACL-Name' = 'Airespace-ACL-Name', 'Aruba-User-Role' = 'Aruba-User-Role', 'Filter-Id' = 'Filter-Id', 'Reply-Message' = 'Reply-Message' }
 
-	export enum UpdateNetworkWirelessSsidPutBodyRadiusFailoverPolicy { 'Allow access' = 0, 'Deny access' = 1 }
+	export enum UpdateNetworkWirelessSsidPutBodyRadiusFailoverPolicy { 'Allow access' = 'Allow access', 'Deny access' = 'Deny access' }
 
-	export enum UpdateNetworkWirelessSsidPutBodyRadiusLoadBalancingPolicy { 'Round robin' = 0, 'Strict priority order' = 1 }
+	export enum UpdateNetworkWirelessSsidPutBodyRadiusLoadBalancingPolicy { 'Round robin' = 'Round robin', 'Strict priority order' = 'Strict priority order' }
 
 	export interface UpdateNetworkWirelessSsidPutBodyRadiusServers {
 
@@ -46164,9 +46164,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidPutBodySplashPage { Billing = 0, 'Cisco ISE' = 1, 'Click-through splash page' = 2, 'Facebook Wi-Fi' = 3, 'Google Apps domain' = 4, 'Google OAuth' = 5, None = 6, 'Password-protected with Active Directory' = 7, 'Password-protected with LDAP' = 8, 'Password-protected with Meraki RADIUS' = 9, 'Password-protected with custom RADIUS' = 10, 'SMS authentication' = 11, 'Sponsored guest' = 12, 'Systems Manager Sentry' = 13 }
+	export enum UpdateNetworkWirelessSsidPutBodySplashPage { Billing = 'Billing', 'Cisco ISE' = 'Cisco ISE', 'Click-through splash page' = 'Click-through splash page', 'Facebook Wi-Fi' = 'Facebook Wi-Fi', 'Google Apps domain' = 'Google Apps domain', 'Google OAuth' = 'Google OAuth', None = 'None', 'Password-protected with Active Directory' = 'Password-protected with Active Directory', 'Password-protected with LDAP' = 'Password-protected with LDAP', 'Password-protected with Meraki RADIUS' = 'Password-protected with Meraki RADIUS', 'Password-protected with custom RADIUS' = 'Password-protected with custom RADIUS', 'SMS authentication' = 'SMS authentication', 'Sponsored guest' = 'Sponsored guest', 'Systems Manager Sentry' = 'Systems Manager Sentry' }
 
-	export enum UpdateNetworkWirelessSsidPutBodyWpaEncryptionMode { 'WPA1 and WPA2' = 0, 'WPA1 only' = 1, 'WPA2 only' = 2, 'WPA3 192-bit Security' = 3, 'WPA3 Transition Mode' = 4, 'WPA3 only' = 5 }
+	export enum UpdateNetworkWirelessSsidPutBodyWpaEncryptionMode { 'WPA1 and WPA2' = 'WPA1 and WPA2', 'WPA1 only' = 'WPA1 only', 'WPA2 only' = 'WPA2 only', 'WPA3 192-bit Security' = 'WPA3 192-bit Security', 'WPA3 Transition Mode' = 'WPA3 Transition Mode', 'WPA3 only' = 'WPA3 only' }
 
 	export interface UpdateNetworkWirelessSsidBonjourForwardingPutBody {
 
@@ -46287,9 +46287,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesDevicePolicy { Allowed = 0, Blocked = 1, 'Group policy' = 2 }
+	export enum UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesDevicePolicy { Allowed = 'Allowed', Blocked = 'Blocked', 'Group policy' = 'Group policy' }
 
-	export enum UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesDeviceType { Android = 0, 'B&N Nook' = 1, BlackBerry = 2, 'Chrome OS' = 3, 'Mac OS X' = 4, 'Other OS' = 5, Windows = 6, 'Windows Phone' = 7, iPad = 8, iPhone = 9, iPod = 10 }
+	export enum UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesPutBodyDeviceTypePoliciesDeviceType { Android = 'Android', 'B&N Nook' = 'B&N Nook', BlackBerry = 'BlackBerry', 'Chrome OS' = 'Chrome OS', 'Mac OS X' = 'Mac OS X', 'Other OS' = 'Other OS', Windows = 'Windows', 'Windows Phone' = 'Windows Phone', iPad = 'iPad', iPhone = 'iPhone', iPod = 'iPod' }
 
 	export interface GetNetworkWirelessSsidEapOverrideReturn {
 
@@ -46745,7 +46745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidHotspot20PutBodyNaiRealmsFormat { _0 = 0, _1 = 1 }
+	export enum UpdateNetworkWirelessSsidHotspot20PutBodyNaiRealmsFormat { _0 = '0', _1 = '1' }
 
 	export interface UpdateNetworkWirelessSsidHotspot20PutBodyNaiRealmsMethods {
 
@@ -46771,7 +46771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidHotspot20PutBodyNetworkAccessType { 'Chargeable public network' = 0, 'Emergency services only network' = 1, 'Free public network' = 2, 'Personal device network' = 3, 'Private network' = 4, 'Private network with guest access' = 5, 'Test or experimental' = 6, Wildcard = 7 }
+	export enum UpdateNetworkWirelessSsidHotspot20PutBodyNetworkAccessType { 'Chargeable public network' = 'Chargeable public network', 'Emergency services only network' = 'Emergency services only network', 'Free public network' = 'Free public network', 'Personal device network' = 'Personal device network', 'Private network' = 'Private network', 'Private network with guest access' = 'Private network with guest access', 'Test or experimental' = 'Test or experimental', Wildcard = 'Wildcard' }
 
 	export interface UpdateNetworkWirelessSsidHotspot20PutBodyOperator {
 
@@ -46814,7 +46814,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidHotspot20PutBodyVenueType { Airplane = 0, 'Alcohol and Drug Rehabilitation Center' = 1, Amphitheater = 2, 'Amusement Park' = 3, Arena = 4, 'Attorney Office' = 5, 'Automobile or Truck' = 6, 'Automotive Service Station' = 7, Bank = 8, Bar = 9, 'Boarding House' = 10, Bus = 11, 'Bus Stop' = 12, 'City Park' = 13, 'Coffee Shop' = 14, 'Convention Center' = 15, 'Doctor or Dentist office' = 16, Dormitory = 17, 'Emergency Coordination Center' = 18, Factory = 19, Ferry = 20, 'Fire Station' = 21, 'Gas Station' = 22, 'Grocery Market' = 23, 'Group Home' = 24, Hospital = 25, 'Hotel or Motel' = 26, Kiosk = 27, Library = 28, 'Long-Term Care Facility' = 29, 'Motor Bike' = 30, 'Muni-mesh Network' = 31, Museum = 32, 'Passenger Terminal' = 33, 'Place of Worship' = 34, 'Police Station' = 35, 'Post Office' = 36, 'Prison or Jail' = 37, 'Private Residence' = 38, 'Professional Office' = 39, 'Research and Development Facility' = 40, 'Rest Area' = 41, Restaurant = 42, 'Retail Store' = 43, 'School, Primary' = 44, 'School, Secondary' = 45, 'Ship or Boat' = 46, 'Shopping Mall' = 47, Stadium = 48, Theater = 49, 'Traffic Control' = 50, Train = 51, 'University or College' = 52, Unspecified = 53, 'Unspecified Assembly' = 54, 'Unspecified Business' = 55, 'Unspecified Educational' = 56, 'Unspecified Factory and Industrial' = 57, 'Unspecified Institutional' = 58, 'Unspecified Mercantile' = 59, 'Unspecified Outdoor' = 60, 'Unspecified Residential' = 61, 'Unspecified Storage' = 62, 'Unspecified Utility and Miscellaneous' = 63, 'Unspecified Vehicular' = 64, 'Zoo or Aquarium' = 65 }
+	export enum UpdateNetworkWirelessSsidHotspot20PutBodyVenueType { Airplane = 'Airplane', 'Alcohol and Drug Rehabilitation Center' = 'Alcohol and Drug Rehabilitation Center', Amphitheater = 'Amphitheater', 'Amusement Park' = 'Amusement Park', Arena = 'Arena', 'Attorney Office' = 'Attorney Office', 'Automobile or Truck' = 'Automobile or Truck', 'Automotive Service Station' = 'Automotive Service Station', Bank = 'Bank', Bar = 'Bar', 'Boarding House' = 'Boarding House', Bus = 'Bus', 'Bus Stop' = 'Bus Stop', 'City Park' = 'City Park', 'Coffee Shop' = 'Coffee Shop', 'Convention Center' = 'Convention Center', 'Doctor or Dentist office' = 'Doctor or Dentist office', Dormitory = 'Dormitory', 'Emergency Coordination Center' = 'Emergency Coordination Center', Factory = 'Factory', Ferry = 'Ferry', 'Fire Station' = 'Fire Station', 'Gas Station' = 'Gas Station', 'Grocery Market' = 'Grocery Market', 'Group Home' = 'Group Home', Hospital = 'Hospital', 'Hotel or Motel' = 'Hotel or Motel', Kiosk = 'Kiosk', Library = 'Library', 'Long-Term Care Facility' = 'Long-Term Care Facility', 'Motor Bike' = 'Motor Bike', 'Muni-mesh Network' = 'Muni-mesh Network', Museum = 'Museum', 'Passenger Terminal' = 'Passenger Terminal', 'Place of Worship' = 'Place of Worship', 'Police Station' = 'Police Station', 'Post Office' = 'Post Office', 'Prison or Jail' = 'Prison or Jail', 'Private Residence' = 'Private Residence', 'Professional Office' = 'Professional Office', 'Research and Development Facility' = 'Research and Development Facility', 'Rest Area' = 'Rest Area', Restaurant = 'Restaurant', 'Retail Store' = 'Retail Store', 'School, Primary' = 'School, Primary', 'School, Secondary' = 'School, Secondary', 'Ship or Boat' = 'Ship or Boat', 'Shopping Mall' = 'Shopping Mall', Stadium = 'Stadium', Theater = 'Theater', 'Traffic Control' = 'Traffic Control', Train = 'Train', 'University or College' = 'University or College', Unspecified = 'Unspecified', 'Unspecified Assembly' = 'Unspecified Assembly', 'Unspecified Business' = 'Unspecified Business', 'Unspecified Educational' = 'Unspecified Educational', 'Unspecified Factory and Industrial' = 'Unspecified Factory and Industrial', 'Unspecified Institutional' = 'Unspecified Institutional', 'Unspecified Mercantile' = 'Unspecified Mercantile', 'Unspecified Outdoor' = 'Unspecified Outdoor', 'Unspecified Residential' = 'Unspecified Residential', 'Unspecified Storage' = 'Unspecified Storage', 'Unspecified Utility and Miscellaneous' = 'Unspecified Utility and Miscellaneous', 'Unspecified Vehicular' = 'Unspecified Vehicular', 'Zoo or Aquarium' = 'Zoo or Aquarium' }
 
 	export interface GetNetworkWirelessSsidIdentityPsksReturn {
 
@@ -47336,7 +47336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkWirelessSsidSplashSettingsReturnSelfRegistrationAuthorizationType { admin = 0, auto = 1, self_email = 2 }
+	export enum GetNetworkWirelessSsidSplashSettingsReturnSelfRegistrationAuthorizationType { admin = 'admin', auto = 'auto', self_email = 'self_email' }
 
 	export interface GetNetworkWirelessSsidSplashSettingsReturnSentryEnrollment {
 
@@ -47361,7 +47361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetNetworkWirelessSsidSplashSettingsReturnSentryEnrollmentStrength { 'click-through' = 0, focused = 1, strict = 2 }
+	export enum GetNetworkWirelessSsidSplashSettingsReturnSentryEnrollmentStrength { 'click-through' = 'click-through', focused = 'focused', strict = 'strict' }
 
 	export interface GetNetworkWirelessSsidSplashSettingsReturnSentryEnrollmentSystemsManagerNetwork {
 
@@ -47594,7 +47594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidSplashSettingsPutBodyControllerDisconnectionBehavior { default = 0, open = 1, restricted = 2 }
+	export enum UpdateNetworkWirelessSsidSplashSettingsPutBodyControllerDisconnectionBehavior { default = 'default', open = 'open', restricted = 'restricted' }
 
 	export interface UpdateNetworkWirelessSsidSplashSettingsPutBodyGuestSponsorship {
 
@@ -47717,7 +47717,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidSplashSettingsPutBodySplashImageImageFormat { gif = 0, jpg = 1, png = 2 }
+	export enum UpdateNetworkWirelessSsidSplashSettingsPutBodySplashImageImageFormat { gif = 'gif', jpg = 'jpg', png = 'png' }
 
 	export interface UpdateNetworkWirelessSsidSplashSettingsPutBodySplashLogo {
 
@@ -48463,7 +48463,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateNetworkWirelessSsidVpnPutBodySplitTunnelRulesProtocol { Any = 0, TCP = 1, UDP = 2 }
+	export enum UpdateNetworkWirelessSsidVpnPutBodySplitTunnelRulesProtocol { Any = 'Any', TCP = 'TCP', UDP = 'UDP' }
 
 	export interface GetNetworkWirelessUsageHistoryReturn {
 
@@ -48617,7 +48617,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationsReturnLicensingModel { 'co-term' = 0, 'per-device' = 1, subscription = 2 }
+	export enum GetOrganizationsReturnLicensingModel { 'co-term' = 'co-term', 'per-device' = 'per-device', subscription = 'subscription' }
 
 	export interface GetOrganizationsReturnManagement {
 
@@ -49084,7 +49084,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationActionBatchesStatus { completed = 0, failed = 1, pending = 2 }
+	export enum GetOrganizationActionBatchesStatus { completed = 'completed', failed = 'failed', pending = 'pending' }
 
 	export interface CreateOrganizationActionBatchPostBody {
 
@@ -49422,7 +49422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAdaptivePolicyAclPostBodyRulesProtocol { any = 0, icmp = 1, tcp = 2, udp = 3 }
+	export enum CreateOrganizationAdaptivePolicyAclPostBodyRulesProtocol { any = 'any', icmp = 'icmp', tcp = 'tcp', udp = 'udp' }
 
 	export interface UpdateOrganizationAdaptivePolicyAclPutBody {
 
@@ -49836,7 +49836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAdaptivePolicyPolicyPostBodyLastEntryRule { allow = 0, default = 1, deny = 2 }
+	export enum CreateOrganizationAdaptivePolicyPolicyPostBodyLastEntryRule { allow = 'allow', default = 'default', deny = 'deny' }
 
 	export interface CreateOrganizationAdaptivePolicyPolicyPostBodySourceGroup {
 
@@ -50056,7 +50056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAdminPostBodyAuthenticationMethod { 'Cisco SecureX Sign-On' = 0, Email = 1 }
+	export enum CreateOrganizationAdminPostBodyAuthenticationMethod { 'Cisco SecureX Sign-On' = 'Cisco SecureX Sign-On', Email = 'Email' }
 
 	export interface CreateOrganizationAdminPostBodyNetworks {
 
@@ -50094,7 +50094,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAdminPostBodyOrgAccess { enterprise = 0, full = 1, none = 2, 'read-only' = 3 }
+	export enum CreateOrganizationAdminPostBodyOrgAccess { enterprise = 'enterprise', full = 'full', none = 'none', 'read-only' = 'read-only' }
 
 	export interface CreateOrganizationAdminPostBodyTags {
 
@@ -50132,7 +50132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAdminPostBodyTagsAccess { full = 0, 'guest-ambassador' = 1, 'monitor-only' = 2, 'read-only' = 3 }
+	export enum CreateOrganizationAdminPostBodyTagsAccess { full = 'full', 'guest-ambassador' = 'guest-ambassador', 'monitor-only' = 'monitor-only', 'read-only' = 'read-only' }
 
 	export interface UpdateOrganizationAdminPutBody {
 
@@ -50366,7 +50366,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationAlertsProfilePostBodyType { appOutage = 0, voipJitter = 1, voipMos = 2, voipPacketLoss = 3, wanLatency = 4, wanPacketLoss = 5, wanStatus = 6, wanUtilization = 7 }
+	export enum CreateOrganizationAlertsProfilePostBodyType { appOutage = 'appOutage', voipJitter = 'voipJitter', voipMos = 'voipMos', voipPacketLoss = 'voipPacketLoss', wanLatency = 'wanLatency', wanPacketLoss = 'wanPacketLoss', wanStatus = 'wanStatus', wanUtilization = 'wanUtilization' }
 
 	export interface UpdateOrganizationAlertsProfilePutBody {
 
@@ -50490,7 +50490,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationApiRequestsMethod { DELETE = 0, GET = 1, POST = 2, PUT = 3 }
+	export enum GetOrganizationApiRequestsMethod { DELETE = 'DELETE', GET = 'GET', POST = 'POST', PUT = 'PUT' }
 
 	export enum GetOrganizationApiRequestsVersion { _0 = 0, _1 = 1 }
 
@@ -51251,7 +51251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationBrandingPoliciesReturnAdminSettingsAppliesTo { 'All SAML admins' = 0, 'All admins' = 1, 'All admins of networks tagged...' = 2, 'All admins of networks...' = 3, 'All enterprise admins' = 4, 'All network admins' = 5, 'All organization admins' = 6, 'Specific admins...' = 7 }
+	export enum GetOrganizationBrandingPoliciesReturnAdminSettingsAppliesTo { 'All SAML admins' = 'All SAML admins', 'All admins' = 'All admins', 'All admins of networks tagged...' = 'All admins of networks tagged...', 'All admins of networks...' = 'All admins of networks...', 'All enterprise admins' = 'All enterprise admins', 'All network admins' = 'All network admins', 'All organization admins' = 'All organization admins', 'Specific admins...' = 'Specific admins...' }
 
 	export interface GetOrganizationBrandingPoliciesReturnCustomLogo {
 
@@ -51507,7 +51507,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationBrandingPoliciesReturnHelpSettingsApiDocsSubtab { 'default or inherit' = 0, hide = 1, show = 2 }
+	export enum GetOrganizationBrandingPoliciesReturnHelpSettingsApiDocsSubtab { 'default or inherit' = 'default or inherit', hide = 'hide', show = 'show' }
 
 	export interface CreateOrganizationBrandingPolicyPostBody {
 
@@ -53056,7 +53056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClaimIntoOrganizationPostBodyLicensesMode { addDevices = 0, renew = 1 }
+	export enum ClaimIntoOrganizationPostBodyLicensesMode { addDevices = 'addDevices', renew = 'renew' }
 
 	export interface GetOrganizationClientsBandwidthUsageHistoryReturn {
 
@@ -54069,7 +54069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationDevicesTagsFilterType { withAllTags = 0, withAnyTags = 1 }
+	export enum GetOrganizationDevicesTagsFilterType { withAllTags = 'withAllTags', withAnyTags = 'withAnyTags' }
 
 	export interface GetOrganizationDevicesReturn {
 
@@ -54236,9 +54236,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationDevicesAvailabilitiesReturnProductType { appliance = 0, camera = 1, cellularGateway = 2, sensor = 3, switch = 4, systemsManager = 5, wireless = 6 }
+	export enum GetOrganizationDevicesAvailabilitiesReturnProductType { appliance = 'appliance', camera = 'camera', cellularGateway = 'cellularGateway', sensor = 'sensor', switch = 'switch', systemsManager = 'systemsManager', wireless = 'wireless' }
 
-	export enum GetOrganizationDevicesAvailabilitiesReturnStatus { alerting = 0, dormant = 1, offline = 2, online = 3 }
+	export enum GetOrganizationDevicesAvailabilitiesReturnStatus { alerting = 'alerting', dormant = 'dormant', offline = 'offline', online = 'online' }
 
 	export interface GetOrganizationDevicesPowerModulesStatusesByDeviceReturn {
 
@@ -54344,7 +54344,7 @@ export namespace MyNS {
 
 	export enum GetOrganizationDevicesPowerModulesStatusesByDeviceReturnSlotsNumber { _0 = 0, _1 = 1, _2 = 2 }
 
-	export enum GetOrganizationDevicesPowerModulesStatusesByDeviceReturnSlotsStatus { connected = 0, 'not connected' = 1, powering = 2 }
+	export enum GetOrganizationDevicesPowerModulesStatusesByDeviceReturnSlotsStatus { connected = 'connected', 'not connected' = 'not connected', powering = 'powering' }
 
 	export interface GetOrganizationDevicesStatusesReturn {
 
@@ -54662,7 +54662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationDevicesUplinksAddressesByDeviceReturnUplinksAddressesProtocol { ipv4 = 0, ipv6 = 1 }
+	export enum GetOrganizationDevicesUplinksAddressesByDeviceReturnUplinksAddressesProtocol { ipv4 = 'ipv4', ipv6 = 'ipv6' }
 
 	export interface GetOrganizationDevicesUplinksAddressesByDeviceReturnUplinksAddressesPublic {
 
@@ -54681,7 +54681,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationDevicesUplinksAddressesByDeviceReturnUplinksInterface { cellular = 0, man1 = 1, man2 = 2, wan1 = 3, wan2 = 4 }
+	export enum GetOrganizationDevicesUplinksAddressesByDeviceReturnUplinksInterface { cellular = 'cellular', man1 = 'man1', man2 = 'man2', wan1 = 'wan1', wan2 = 'wan2' }
 
 	export interface GetOrganizationDevicesUplinksLossAndLatencyReturn {
 
@@ -55381,7 +55381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationInventoryDevicesUsedState { unused = 0, used = 1 }
+	export enum GetOrganizationInventoryDevicesUsedState { unused = 'unused', used = 'used' }
 
 	export interface GetOrganizationInventoryDevicesReturn {
 
@@ -55701,7 +55701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationInventoryOnboardingCloudMonitoringNetworksDeviceType { switch = 0, wireless_controller = 1 }
+	export enum GetOrganizationInventoryOnboardingCloudMonitoringNetworksDeviceType { switch = 'switch', wireless_controller = 'wireless_controller' }
 
 	export interface CreateOrganizationInventoryOnboardingCloudMonitoringPreparePostBody {
 
@@ -55969,7 +55969,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationLicensesState { active = 0, expired = 1, expiring = 2, recentlyQueued = 3, unused = 4, unusedActive = 5 }
+	export enum GetOrganizationLicensesState { active = 'active', expired = 'expired', expiring = 'expiring', recentlyQueued = 'recentlyQueued', unused = 'unused', unusedActive = 'unusedActive' }
 
 	export interface GetOrganizationLicensesReturn {
 
@@ -58618,7 +58618,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrganizationSamlRolePostBodyNetworksAccess { full = 0, 'guest-ambassador' = 1, 'monitor-only' = 2, 'read-only' = 3, 'ssid-admin' = 4 }
+	export enum CreateOrganizationSamlRolePostBodyNetworksAccess { full = 'full', 'guest-ambassador' = 'guest-ambassador', 'monitor-only' = 'monitor-only', 'read-only' = 'read-only', 'ssid-admin' = 'ssid-admin' }
 
 	export interface CreateOrganizationSamlRolePostBodyTags {
 
@@ -58941,7 +58941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationSensorReadingsHistoryReturnButtonPressType { long = 0, short = 1 }
+	export enum GetOrganizationSensorReadingsHistoryReturnButtonPressType { long = 'long', short = 'short' }
 
 	export interface GetOrganizationSensorReadingsHistoryReturnDoor {
 
@@ -58994,7 +58994,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationSensorReadingsHistoryReturnMetric { battery = 0, button = 1, door = 2, humidity = 3, indoorAirQuality = 4, noise = 5, pm25 = 6, temperature = 7, tvoc = 8, water = 9 }
+	export enum GetOrganizationSensorReadingsHistoryReturnMetric { battery = 'battery', button = 'button', door = 'door', humidity = 'humidity', indoorAirQuality = 'indoorAirQuality', noise = 'noise', pm25 = 'pm25', temperature = 'temperature', tvoc = 'tvoc', water = 'water' }
 
 	export interface GetOrganizationSensorReadingsHistoryReturnNetwork {
 
@@ -59536,9 +59536,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateOrganizationSnmpPutBodyV3AuthMode { MD5 = 0, SHA = 1 }
+	export enum UpdateOrganizationSnmpPutBodyV3AuthMode { MD5 = 'MD5', SHA = 'SHA' }
 
-	export enum UpdateOrganizationSnmpPutBodyV3PrivMode { AES128 = 0, DES = 1 }
+	export enum UpdateOrganizationSnmpPutBodyV3PrivMode { AES128 = 'AES128', DES = 'DES' }
 
 	export interface GetOrganizationSummaryTopAppliancesByUtilizationReturn {
 
@@ -60558,9 +60558,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetOrganizationUplinksStatusesReturnUplinksStatus { active = 0, connecting = 1, failed = 2, 'not connected' = 3, ready = 4 }
+	export enum GetOrganizationUplinksStatusesReturnUplinksStatus { active = 'active', connecting = 'connecting', failed = 'failed', 'not connected' = 'not connected', ready = 'ready' }
 
-	export enum GetOrganizationWebhooksAlertTypesProductType { appliance = 0, camera = 1, cellularGateway = 2, health = 3, platform = 4, sensor = 5, sm = 6, switch = 7, wireless = 8 }
+	export enum GetOrganizationWebhooksAlertTypesProductType { appliance = 'appliance', camera = 'camera', cellularGateway = 'cellularGateway', health = 'health', platform = 'platform', sensor = 'sensor', sm = 'sm', switch = 'switch', wireless = 'wireless' }
 
 	export interface GetOrganizationWebhooksLogsReturn {
 

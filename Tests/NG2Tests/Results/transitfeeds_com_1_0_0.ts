@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum API401ResponseStatus { INVALIDKEY = 0, PERMISSIONDENIED = 1 }
+	export enum API401ResponseStatus { INVALIDKEY = 'INVALIDKEY', PERMISSIONDENIED = 'PERMISSIONDENIED' }
 
 
 	/** This element contains information about a 404 File Not Found error. */
@@ -75,7 +75,7 @@ export namespace MyNS {
 
 	}
 
-	export enum API404ResponseStatus { INVALIDMETHOD = 0 }
+	export enum API404ResponseStatus { INVALIDMETHOD = 'INVALIDMETHOD' }
 
 
 	/** Contains the information about a single feed. */
@@ -258,7 +258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeedTy { gtfs = 0, gtfsrealtime = 1 }
+	export enum FeedTy { gtfs = 'gtfs', gtfsrealtime = 'gtfsrealtime' }
 
 	export interface FeedU {
 
@@ -555,7 +555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetFeedVersionsResponseStatus { OK = 0, DEPRECATED = 1, EMPTYKEY = 2, MISSINGINPUT = 3, INVALIDINPUT = 4 }
+	export enum GetFeedVersionsResponseStatus { OK = 'OK', DEPRECATED = 'DEPRECATED', EMPTYKEY = 'EMPTYKEY', MISSINGINPUT = 'MISSINGINPUT', INVALIDINPUT = 'INVALIDINPUT' }
 
 
 	/** This element contains the response for a `/getFeeds` request. */
@@ -667,7 +667,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetFeedsResponseStatus { OK = 0, EMPTYKEY = 1, MISSINGINPUT = 2, INVALIDINPUT = 3 }
+	export enum GetFeedsResponseStatus { OK = 'OK', EMPTYKEY = 'EMPTYKEY', MISSINGINPUT = 'MISSINGINPUT', INVALIDINPUT = 'INVALIDINPUT' }
 
 
 	/** This element contains the response for a `/getLatestFeedVersion` request. */
@@ -783,7 +783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetLatestFeedVersionResponseStatus { OK = 0, DEPRECATED = 1, EMPTYKEY = 2, MISSINGINPUT = 3, INVALIDINPUT = 4, OTHER = 5 }
+	export enum GetLatestFeedVersionResponseStatus { OK = 'OK', DEPRECATED = 'DEPRECATED', EMPTYKEY = 'EMPTYKEY', MISSINGINPUT = 'MISSINGINPUT', INVALIDINPUT = 'INVALIDINPUT', OTHER = 'OTHER' }
 
 
 	/** This element contains the response for a `/getLocations` request. */

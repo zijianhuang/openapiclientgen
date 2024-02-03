@@ -217,9 +217,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Eventsv1sinkSink_type { kinesis = 0, webhook = 1, segment = 2 }
+	export enum Eventsv1sinkSink_type { kinesis = 'kinesis', webhook = 'webhook', segment = 'segment' }
 
-	export enum Eventsv1sinkStatus { initialized = 0, validating = 1, active = 2, failed = 3 }
+	export enum Eventsv1sinkStatus { initialized = 'initialized', validating = 'validating', active = 'active', failed = 'failed' }
 
 	export interface Eventsv1sinksink_test {
 
@@ -406,9 +406,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Sink_enum_sink_type { kinesis = 0, webhook = 1, segment = 2 }
+	export enum Sink_enum_sink_type { kinesis = 'kinesis', webhook = 'webhook', segment = 'segment' }
 
-	export enum Sink_enum_status { initialized = 0, validating = 1, active = 2, failed = 3 }
+	export enum Sink_enum_status { initialized = 'initialized', validating = 'validating', active = 'active', failed = 'failed' }
 
 	@Injectable()
 	export class MyClient {

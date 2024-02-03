@@ -742,7 +742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailabilityAvailability_type { ondemand = 0, simulcast = 1, webcast = 2 }
+	export enum AvailabilityAvailability_type { ondemand = 'ondemand', simulcast = 'simulcast', webcast = 'webcast' }
 
 	export interface Scheduled_time {
 		end?: Date | null;
@@ -932,7 +932,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Availability_type { ondemand = 0, simulcast = 1, webcast = 2 }
+	export enum Availability_type { ondemand = 'ondemand', simulcast = 'simulcast', webcast = 'webcast' }
 
 	export interface Available_media_sets {
 		media_sets?: Available_media_setsMedia_sets;
@@ -1822,7 +1822,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BrandEmbargoed { true = 0, false = 1 }
+	export enum BrandEmbargoed { true = 'true', false = 'false' }
 
 	export interface GenreGroupingsType {
 		genre_group?: Array<Genre_group>;
@@ -2878,7 +2878,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipMedia_type { Video = 0, Audio = 1 }
+	export enum ClipMedia_type { Video = 'Video', Audio = 'Audio' }
 
 	export interface Original_version_duration {
 		version?: Original_version_durationVersion;
@@ -3629,7 +3629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Embargoed { true = 0, false = 1 }
+	export enum Embargoed { true = 'true', false = 'false' }
 
 	export interface Episode {
 
@@ -3817,7 +3817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorXquery_version { '1.0-ml' = 0, '0.9-ml' = 1, _1_0 = 2, XSLT = 3 }
+	export enum ErrorXquery_version { '1.0-ml' = '1.0-ml', '0.9-ml' = '0.9-ml', _1_0 = '1.0', XSLT = 'XSLT' }
 
 	export interface Errors {
 		error?: Error;
@@ -3986,7 +3986,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OptionRelease_status { alpha = 0, beta = 1, supported = 2, deprecated = 3 }
+	export enum OptionRelease_status { alpha = 'alpha', beta = 'beta', supported = 'supported', deprecated = 'deprecated' }
 
 	export interface Prohibits {
 		ProhibitsFilter?: Array<ProhibitsFilter>;
@@ -5075,7 +5075,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Media_type { Video = 0, Audio = 1 }
+	export enum Media_type { Video = 'Video', Audio = 'Audio' }
 
 	export interface Music {
 
@@ -6157,7 +6157,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Release_status_type { alpha = 0, beta = 1, supported = 2, deprecated = 3 }
+	export enum Release_status_type { alpha = 'alpha', beta = 'beta', supported = 'supported', deprecated = 'deprecated' }
 
 	export interface Season {
 		alternate_images_mixin?: Alternate_images_mixin;
@@ -6468,7 +6468,7 @@ export namespace MyNS {
 
 
 	/** The XQuery language version. */
-	export enum Xquery_version { '1.0-ml' = 0, '0.9-ml' = 1, _1_0 = 2, XSLT = 3 }
+	export enum Xquery_version { '1.0-ml' = '1.0-ml', '0.9-ml' = '0.9-ml', _1_0 = '1.0', XSLT = 'XSLT' }
 
 	@Injectable()
 	export class MyClient {
@@ -6979,25 +6979,25 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListAvailabilitySort { scheduled_start = 0 }
+	export enum ListAvailabilitySort { scheduled_start = 'scheduled_start' }
 
-	export enum ListAvailabilitySort_direction { ascending = 0, descending = 1 }
+	export enum ListAvailabilitySort_direction { ascending = 'ascending', descending = 'descending' }
 
-	export enum ListBroadcastsSort { start_date = 0 }
+	export enum ListBroadcastsSort { start_date = 'start_date' }
 
-	export enum ListGroupsSort { pid = 0 }
+	export enum ListGroupsSort { pid = 'pid' }
 
-	export enum ListGroupsSort_direction { descending = 0 }
+	export enum ListGroupsSort_direction { descending = 'descending' }
 
-	export enum ListGroupsEmbargoed { include = 0, exclude = 1, only = 2 }
+	export enum ListGroupsEmbargoed { include = 'include', exclude = 'exclude', only = 'only' }
 
-	export enum ListImagesSort { group_position = 0, pid = 1 }
+	export enum ListImagesSort { group_position = 'group_position', pid = 'pid' }
 
-	export enum ListMasterbrandsSort { mid = 0 }
+	export enum ListMasterbrandsSort { mid = 'mid' }
 
-	export enum ListMasterbrandsSort_direction { ascending = 0 }
+	export enum ListMasterbrandsSort_direction { ascending = 'ascending' }
 
-	export enum ListProgrammesSort { group_position = 0, pid = 1, position = 2, promotion = 3, release_date = 4, relevance = 5, scheduled_start = 6, strict_title = 7, title = 8, tree = 9 }
+	export enum ListProgrammesSort { group_position = 'group_position', pid = 'pid', position = 'position', promotion = 'promotion', release_date = 'release_date', relevance = 'relevance', scheduled_start = 'scheduled_start', strict_title = 'strict_title', title = 'title', tree = 'tree' }
 
 }
 

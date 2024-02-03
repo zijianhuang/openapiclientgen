@@ -128,7 +128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusType { InSync = 0, Failed = 1, InProgress = 2 }
+	export enum StatusType { InSync = 'InSync', Failed = 'Failed', InProgress = 'InProgress' }
 
 	export interface CreateSecretRequest {
 
@@ -778,9 +778,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterNameStringType { description = 0, name = 1, 'tag-key' = 2, 'tag-value' = 3, 'primary-region' = 4, 'owning-service' = 5, all = 6 }
+	export enum FilterNameStringType { description = 'description', name = 'name', 'tag-key' = 'tag-key', 'tag-value' = 'tag-value', 'primary-region' = 'primary-region', 'owning-service' = 'owning-service', all = 'all' }
 
-	export enum SortOrderType { asc = 0, desc = 1 }
+	export enum SortOrderType { asc = 'asc', desc = 'desc' }
 
 	export interface PutResourcePolicyResponse {
 		ARN?: string;
@@ -1461,49 +1461,49 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelRotateSecretX_Amz_Target { 'secretsmanager.CancelRotateSecret' = 0 }
+	export enum CancelRotateSecretX_Amz_Target { 'secretsmanager.CancelRotateSecret' = 'secretsmanager.CancelRotateSecret' }
 
-	export enum CreateSecretX_Amz_Target { 'secretsmanager.CreateSecret' = 0 }
+	export enum CreateSecretX_Amz_Target { 'secretsmanager.CreateSecret' = 'secretsmanager.CreateSecret' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'secretsmanager.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'secretsmanager.DeleteResourcePolicy' = 'secretsmanager.DeleteResourcePolicy' }
 
-	export enum DeleteSecretX_Amz_Target { 'secretsmanager.DeleteSecret' = 0 }
+	export enum DeleteSecretX_Amz_Target { 'secretsmanager.DeleteSecret' = 'secretsmanager.DeleteSecret' }
 
-	export enum DescribeSecretX_Amz_Target { 'secretsmanager.DescribeSecret' = 0 }
+	export enum DescribeSecretX_Amz_Target { 'secretsmanager.DescribeSecret' = 'secretsmanager.DescribeSecret' }
 
-	export enum GetRandomPasswordX_Amz_Target { 'secretsmanager.GetRandomPassword' = 0 }
+	export enum GetRandomPasswordX_Amz_Target { 'secretsmanager.GetRandomPassword' = 'secretsmanager.GetRandomPassword' }
 
-	export enum GetResourcePolicyX_Amz_Target { 'secretsmanager.GetResourcePolicy' = 0 }
+	export enum GetResourcePolicyX_Amz_Target { 'secretsmanager.GetResourcePolicy' = 'secretsmanager.GetResourcePolicy' }
 
-	export enum GetSecretValueX_Amz_Target { 'secretsmanager.GetSecretValue' = 0 }
+	export enum GetSecretValueX_Amz_Target { 'secretsmanager.GetSecretValue' = 'secretsmanager.GetSecretValue' }
 
-	export enum ListSecretVersionIdsX_Amz_Target { 'secretsmanager.ListSecretVersionIds' = 0 }
+	export enum ListSecretVersionIdsX_Amz_Target { 'secretsmanager.ListSecretVersionIds' = 'secretsmanager.ListSecretVersionIds' }
 
-	export enum ListSecretsX_Amz_Target { 'secretsmanager.ListSecrets' = 0 }
+	export enum ListSecretsX_Amz_Target { 'secretsmanager.ListSecrets' = 'secretsmanager.ListSecrets' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'secretsmanager.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'secretsmanager.PutResourcePolicy' = 'secretsmanager.PutResourcePolicy' }
 
-	export enum PutSecretValueX_Amz_Target { 'secretsmanager.PutSecretValue' = 0 }
+	export enum PutSecretValueX_Amz_Target { 'secretsmanager.PutSecretValue' = 'secretsmanager.PutSecretValue' }
 
-	export enum RemoveRegionsFromReplicationX_Amz_Target { 'secretsmanager.RemoveRegionsFromReplication' = 0 }
+	export enum RemoveRegionsFromReplicationX_Amz_Target { 'secretsmanager.RemoveRegionsFromReplication' = 'secretsmanager.RemoveRegionsFromReplication' }
 
-	export enum ReplicateSecretToRegionsX_Amz_Target { 'secretsmanager.ReplicateSecretToRegions' = 0 }
+	export enum ReplicateSecretToRegionsX_Amz_Target { 'secretsmanager.ReplicateSecretToRegions' = 'secretsmanager.ReplicateSecretToRegions' }
 
-	export enum RestoreSecretX_Amz_Target { 'secretsmanager.RestoreSecret' = 0 }
+	export enum RestoreSecretX_Amz_Target { 'secretsmanager.RestoreSecret' = 'secretsmanager.RestoreSecret' }
 
-	export enum RotateSecretX_Amz_Target { 'secretsmanager.RotateSecret' = 0 }
+	export enum RotateSecretX_Amz_Target { 'secretsmanager.RotateSecret' = 'secretsmanager.RotateSecret' }
 
-	export enum StopReplicationToReplicaX_Amz_Target { 'secretsmanager.StopReplicationToReplica' = 0 }
+	export enum StopReplicationToReplicaX_Amz_Target { 'secretsmanager.StopReplicationToReplica' = 'secretsmanager.StopReplicationToReplica' }
 
-	export enum TagResourceX_Amz_Target { 'secretsmanager.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'secretsmanager.TagResource' = 'secretsmanager.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'secretsmanager.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'secretsmanager.UntagResource' = 'secretsmanager.UntagResource' }
 
-	export enum UpdateSecretX_Amz_Target { 'secretsmanager.UpdateSecret' = 0 }
+	export enum UpdateSecretX_Amz_Target { 'secretsmanager.UpdateSecret' = 'secretsmanager.UpdateSecret' }
 
-	export enum UpdateSecretVersionStageX_Amz_Target { 'secretsmanager.UpdateSecretVersionStage' = 0 }
+	export enum UpdateSecretVersionStageX_Amz_Target { 'secretsmanager.UpdateSecretVersionStage' = 'secretsmanager.UpdateSecretVersionStage' }
 
-	export enum ValidateResourcePolicyX_Amz_Target { 'secretsmanager.ValidateResourcePolicy' = 0 }
+	export enum ValidateResourcePolicyX_Amz_Target { 'secretsmanager.ValidateResourcePolicy' = 'secretsmanager.ValidateResourcePolicy' }
 
 }
 

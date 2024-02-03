@@ -128,7 +128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageContentType { CustomPayload = 0, ImageResponseCard = 1, PlainText = 2, SSML = 3 }
+	export enum MessageContentType { CustomPayload = 'CustomPayload', ImageResponseCard = 'ImageResponseCard', PlainText = 'PlainText', SSML = 'SSML' }
 
 
 	/** <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p> */
@@ -240,7 +240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SentimentType { MIXED = 0, NEGATIVE = 1, NEUTRAL = 2, POSITIVE = 3 }
+	export enum SentimentType { MIXED = 'MIXED', NEGATIVE = 'NEGATIVE', NEUTRAL = 'NEUTRAL', POSITIVE = 'POSITIVE' }
 
 
 	/** The individual sentiment responses for the utterance. */
@@ -306,9 +306,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IntentState { Failed = 0, Fulfilled = 1, InProgress = 2, ReadyForFulfillment = 3, Waiting = 4, FulfillmentInProgress = 5 }
+	export enum IntentState { Failed = 'Failed', Fulfilled = 'Fulfilled', InProgress = 'InProgress', ReadyForFulfillment = 'ReadyForFulfillment', Waiting = 'Waiting', FulfillmentInProgress = 'FulfillmentInProgress' }
 
-	export enum ConfirmationState { Confirmed = 0, Denied = 1, None = 2 }
+	export enum ConfirmationState { Confirmed = 'Confirmed', Denied = 'Denied', None = 'None' }
 
 
 	/** The state of the user's session with Amazon Lex V2. */
@@ -360,9 +360,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DialogActionType { Close = 0, ConfirmIntent = 1, Delegate = 2, ElicitIntent = 3, ElicitSlot = 4, None = 5 }
+	export enum DialogActionType { Close = 'Close', ConfirmIntent = 'ConfirmIntent', Delegate = 'Delegate', ElicitIntent = 'ElicitIntent', ElicitSlot = 'ElicitSlot', None = 'None' }
 
-	export enum StyleType { Default = 0, SpellByLetter = 1, SpellByWord = 2 }
+	export enum StyleType { Default = 'Default', SpellByLetter = 'SpellByLetter', SpellByWord = 'SpellByWord' }
 
 
 	/** The specific constituent sub slot of the composite slot to elicit in dialog action. */
@@ -688,7 +688,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Shape { Scalar = 0, List = 1, Composite = 2 }
+	export enum Shape { Scalar = 'Scalar', List = 'List', Composite = 'Composite' }
 
 
 	/** The value of a slot. */

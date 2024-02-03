@@ -230,9 +230,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SendSSHPublicKeyX_Amz_Target { 'AWSEC2InstanceConnectService.SendSSHPublicKey' = 0 }
+	export enum SendSSHPublicKeyX_Amz_Target { 'AWSEC2InstanceConnectService.SendSSHPublicKey' = 'AWSEC2InstanceConnectService.SendSSHPublicKey' }
 
-	export enum SendSerialConsoleSSHPublicKeyX_Amz_Target { 'AWSEC2InstanceConnectService.SendSerialConsoleSSHPublicKey' = 0 }
+	export enum SendSerialConsoleSSHPublicKeyX_Amz_Target { 'AWSEC2InstanceConnectService.SendSerialConsoleSSHPublicKey' = 'AWSEC2InstanceConnectService.SendSerialConsoleSSHPublicKey' }
 
 }
 

@@ -190,9 +190,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1CloudSqlBigQueryConnectionSpecType { DATABASE_TYPE_UNSPECIFIED = 0, POSTGRES = 1, MYSQL = 2 }
+	export enum GoogleCloudDatacatalogV1CloudSqlBigQueryConnectionSpecType { DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED', POSTGRES = 'POSTGRES', MYSQL = 'MYSQL' }
 
-	export enum GoogleCloudDatacatalogV1BigQueryConnectionSpecConnectionType { CONNECTION_TYPE_UNSPECIFIED = 0, CLOUD_SQL = 1 }
+	export enum GoogleCloudDatacatalogV1BigQueryConnectionSpecConnectionType { CONNECTION_TYPE_UNSPECIFIED = 'CONNECTION_TYPE_UNSPECIFIED', CLOUD_SQL = 'CLOUD_SQL' }
 
 
 	/** Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding). */
@@ -280,7 +280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1BigQueryTableSpecTableSourceType { TABLE_SOURCE_TYPE_UNSPECIFIED = 0, BIGQUERY_VIEW = 1, BIGQUERY_TABLE = 2, BIGQUERY_MATERIALIZED_VIEW = 3 }
+	export enum GoogleCloudDatacatalogV1BigQueryTableSpecTableSourceType { TABLE_SOURCE_TYPE_UNSPECIFIED = 'TABLE_SOURCE_TYPE_UNSPECIFIED', BIGQUERY_VIEW = 'BIGQUERY_VIEW', BIGQUERY_TABLE = 'BIGQUERY_TABLE', BIGQUERY_MATERIALIZED_VIEW = 'BIGQUERY_MATERIALIZED_VIEW' }
 
 
 	/** Normal BigQuery table specification. */
@@ -566,7 +566,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1ColumnSchemaHighestIndexingType { INDEXING_TYPE_UNSPECIFIED = 0, INDEXING_TYPE_NONE = 1, INDEXING_TYPE_NON_UNIQUE = 2, INDEXING_TYPE_UNIQUE = 3, INDEXING_TYPE_PRIMARY_KEY = 4 }
+	export enum GoogleCloudDatacatalogV1ColumnSchemaHighestIndexingType { INDEXING_TYPE_UNSPECIFIED = 'INDEXING_TYPE_UNSPECIFIED', INDEXING_TYPE_NONE = 'INDEXING_TYPE_NONE', INDEXING_TYPE_NON_UNIQUE = 'INDEXING_TYPE_NON_UNIQUE', INDEXING_TYPE_UNIQUE = 'INDEXING_TYPE_UNIQUE', INDEXING_TYPE_PRIMARY_KEY = 'INDEXING_TYPE_PRIMARY_KEY' }
 
 
 	/** Column info specific to Looker System. */
@@ -589,7 +589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpecType { LOOKER_COLUMN_TYPE_UNSPECIFIED = 0, DIMENSION = 1, DIMENSION_GROUP = 2, FILTER = 3, MEASURE = 4, PARAMETER = 5 }
+	export enum GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpecType { LOOKER_COLUMN_TYPE_UNSPECIFIED = 'LOOKER_COLUMN_TYPE_UNSPECIFIED', DIMENSION = 'DIMENSION', DIMENSION_GROUP = 'DIMENSION_GROUP', FILTER = 'FILTER', MEASURE = 'MEASURE', PARAMETER = 'PARAMETER' }
 
 
 	/** Common statistics on the entry's usage. They can be set on any system. */
@@ -650,7 +650,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1DataSourceService { SERVICE_UNSPECIFIED = 0, CLOUD_STORAGE = 1, BIGQUERY = 2 }
+	export enum GoogleCloudDatacatalogV1DataSourceService { SERVICE_UNSPECIFIED = 'SERVICE_UNSPECIFIED', CLOUD_STORAGE = 'CLOUD_STORAGE', BIGQUERY = 'BIGQUERY' }
 
 
 	/** Details the properties of the underlying storage. */
@@ -755,7 +755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpecViewType { VIEW_TYPE_UNSPECIFIED = 0, STANDARD_VIEW = 1, MATERIALIZED_VIEW = 2 }
+	export enum GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpecViewType { VIEW_TYPE_UNSPECIFIED = 'VIEW_TYPE_UNSPECIFIED', STANDARD_VIEW = 'STANDARD_VIEW', MATERIALIZED_VIEW = 'MATERIALIZED_VIEW' }
 
 
 	/** Entry specification for a Dataplex table. */
@@ -1001,9 +1001,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1DataplexExternalTableSystem { INTEGRATED_SYSTEM_UNSPECIFIED = 0, BIGQUERY = 1, CLOUD_PUBSUB = 2, DATAPROC_METASTORE = 3, DATAPLEX = 4, CLOUD_SPANNER = 5, CLOUD_BIGTABLE = 6, CLOUD_SQL = 7, LOOKER = 8, VERTEX_AI = 9 }
+	export enum GoogleCloudDatacatalogV1DataplexExternalTableSystem { INTEGRATED_SYSTEM_UNSPECIFIED = 'INTEGRATED_SYSTEM_UNSPECIFIED', BIGQUERY = 'BIGQUERY', CLOUD_PUBSUB = 'CLOUD_PUBSUB', DATAPROC_METASTORE = 'DATAPROC_METASTORE', DATAPLEX = 'DATAPLEX', CLOUD_SPANNER = 'CLOUD_SPANNER', CLOUD_BIGTABLE = 'CLOUD_BIGTABLE', CLOUD_SQL = 'CLOUD_SQL', LOOKER = 'LOOKER', VERTEX_AI = 'VERTEX_AI' }
 
-	export enum GoogleCloudDatacatalogV1DatabaseTableSpecType { TABLE_TYPE_UNSPECIFIED = 0, NATIVE = 1, EXTERNAL = 2 }
+	export enum GoogleCloudDatacatalogV1DatabaseTableSpecType { TABLE_TYPE_UNSPECIFIED = 'TABLE_TYPE_UNSPECIFIED', NATIVE = 'NATIVE', EXTERNAL = 'EXTERNAL' }
 
 
 	/** Entry specyfication for a Dataplex fileset. */
@@ -1067,7 +1067,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1VertexDatasetSpecDataType { DATA_TYPE_UNSPECIFIED = 0, TABLE = 1, IMAGE = 2, TEXT = 3, VIDEO = 4, CONVERSATION = 5, TIME_SERIES = 6, DOCUMENT = 7, TEXT_TO_SPEECH = 8, TRANSLATION = 9, STORE_VISION = 10, ENTERPRISE_KNOWLEDGE_GRAPH = 11, TEXT_PROMPT = 12 }
+	export enum GoogleCloudDatacatalogV1VertexDatasetSpecDataType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', TABLE = 'TABLE', IMAGE = 'IMAGE', TEXT = 'TEXT', VIDEO = 'VIDEO', CONVERSATION = 'CONVERSATION', TIME_SERIES = 'TIME_SERIES', DOCUMENT = 'DOCUMENT', TEXT_TO_SPEECH = 'TEXT_TO_SPEECH', TRANSLATION = 'TRANSLATION', STORE_VISION = 'STORE_VISION', ENTERPRISE_KNOWLEDGE_GRAPH = 'ENTERPRISE_KNOWLEDGE_GRAPH', TEXT_PROMPT = 'TEXT_PROMPT' }
 
 
 	/** Wrapper for any item that can be contained in the dump. */
@@ -1631,7 +1631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1VertexModelSourceInfoSourceType { MODEL_SOURCE_TYPE_UNSPECIFIED = 0, AUTOML = 1, CUSTOM = 2, BQML = 3, MODEL_GARDEN = 4 }
+	export enum GoogleCloudDatacatalogV1VertexModelSourceInfoSourceType { MODEL_SOURCE_TYPE_UNSPECIFIED = 'MODEL_SOURCE_TYPE_UNSPECIFIED', AUTOML = 'AUTOML', CUSTOM = 'CUSTOM', BQML = 'BQML', MODEL_GARDEN = 'MODEL_GARDEN' }
 
 
 	/** Entry metadata relevant only to the user and private to them. */
@@ -1744,9 +1744,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1RoutineSpecArgumentMode { MODE_UNSPECIFIED = 0, IN = 1, OUT = 2, INOUT = 3 }
+	export enum GoogleCloudDatacatalogV1RoutineSpecArgumentMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', IN = 'IN', OUT = 'OUT', INOUT = 'INOUT' }
 
-	export enum GoogleCloudDatacatalogV1RoutineSpecRoutineType { ROUTINE_TYPE_UNSPECIFIED = 0, SCALAR_FUNCTION = 1, PROCEDURE = 2 }
+	export enum GoogleCloudDatacatalogV1RoutineSpecRoutineType { ROUTINE_TYPE_UNSPECIFIED = 'ROUTINE_TYPE_UNSPECIFIED', SCALAR_FUNCTION = 'SCALAR_FUNCTION', PROCEDURE = 'PROCEDURE' }
 
 
 	/** Represents a schema, for example, a BigQuery, GoogleSQL, or Avro schema. */
@@ -1817,7 +1817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1EntryType { ENTRY_TYPE_UNSPECIFIED = 0, TABLE = 1, MODEL = 2, DATA_STREAM = 3, FILESET = 4, CLUSTER = 5, DATABASE = 6, DATA_SOURCE_CONNECTION = 7, ROUTINE = 8, LAKE = 9, ZONE = 10, SERVICE = 11, DATABASE_SCHEMA = 12, DASHBOARD = 13, EXPLORE = 14, LOOK = 15 }
+	export enum GoogleCloudDatacatalogV1EntryType { ENTRY_TYPE_UNSPECIFIED = 'ENTRY_TYPE_UNSPECIFIED', TABLE = 'TABLE', MODEL = 'MODEL', DATA_STREAM = 'DATA_STREAM', FILESET = 'FILESET', CLUSTER = 'CLUSTER', DATABASE = 'DATABASE', DATA_SOURCE_CONNECTION = 'DATA_SOURCE_CONNECTION', ROUTINE = 'ROUTINE', LAKE = 'LAKE', ZONE = 'ZONE', SERVICE = 'SERVICE', DATABASE_SCHEMA = 'DATABASE_SCHEMA', DASHBOARD = 'DASHBOARD', EXPLORE = 'EXPLORE', LOOK = 'LOOK' }
 
 
 	/** The set of all usage signals that Data Catalog stores. Note: Usually, these signals are updated daily. In rare cases, an update may fail but will be performed again on the next day. */
@@ -1958,7 +1958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1ImportEntriesMetadataState { IMPORT_STATE_UNSPECIFIED = 0, IMPORT_QUEUED = 1, IMPORT_IN_PROGRESS = 2, IMPORT_DONE = 3, IMPORT_OBSOLETE = 4 }
+	export enum GoogleCloudDatacatalogV1ImportEntriesMetadataState { IMPORT_STATE_UNSPECIFIED = 'IMPORT_STATE_UNSPECIFIED', IMPORT_QUEUED = 'IMPORT_QUEUED', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS', IMPORT_DONE = 'IMPORT_DONE', IMPORT_OBSOLETE = 'IMPORT_OBSOLETE' }
 
 
 	/** Response message for long-running operation returned by the ImportEntries. */
@@ -2016,7 +2016,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1ReconcileTagsMetadataState { RECONCILIATION_STATE_UNSPECIFIED = 0, RECONCILIATION_QUEUED = 1, RECONCILIATION_IN_PROGRESS = 2, RECONCILIATION_DONE = 3 }
+	export enum GoogleCloudDatacatalogV1ReconcileTagsMetadataState { RECONCILIATION_STATE_UNSPECIFIED = 'RECONCILIATION_STATE_UNSPECIFIED', RECONCILIATION_QUEUED = 'RECONCILIATION_QUEUED', RECONCILIATION_IN_PROGRESS = 'RECONCILIATION_IN_PROGRESS', RECONCILIATION_DONE = 'RECONCILIATION_DONE' }
 
 
 	/** Long-running operation response message returned by ReconcileTags. */
@@ -2376,7 +2376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1beta1EntryIntegratedSystem { INTEGRATED_SYSTEM_UNSPECIFIED = 0, BIGQUERY = 1, CLOUD_PUBSUB = 2 }
+	export enum GoogleCloudDatacatalogV1beta1EntryIntegratedSystem { INTEGRATED_SYSTEM_UNSPECIFIED = 'INTEGRATED_SYSTEM_UNSPECIFIED', BIGQUERY = 'BIGQUERY', CLOUD_PUBSUB = 'CLOUD_PUBSUB' }
 
 
 	/** Represents a schema (e.g. BigQuery, GoogleSQL, Avro schema). */
@@ -2395,7 +2395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1beta1EntryType { ENTRY_TYPE_UNSPECIFIED = 0, TABLE = 1, MODEL = 2, DATA_STREAM = 3, FILESET = 4 }
+	export enum GoogleCloudDatacatalogV1beta1EntryType { ENTRY_TYPE_UNSPECIFIED = 'ENTRY_TYPE_UNSPECIFIED', TABLE = 'TABLE', MODEL = 'MODEL', DATA_STREAM = 'DATA_STREAM', FILESET = 'FILESET' }
 
 
 	/** The set of all usage signals that we store in Data Catalog. */
@@ -2640,7 +2640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1beta1FieldTypePrimitiveType { PRIMITIVE_TYPE_UNSPECIFIED = 0, DOUBLE = 1, STRING = 2, BOOL = 3, TIMESTAMP = 4 }
+	export enum GoogleCloudDatacatalogV1beta1FieldTypePrimitiveType { PRIMITIVE_TYPE_UNSPECIFIED = 'PRIMITIVE_TYPE_UNSPECIFIED', DOUBLE = 'DOUBLE', STRING = 'STRING', BOOL = 'BOOL', TIMESTAMP = 'TIMESTAMP' }
 
 
 	/** Request message for ImportTaxonomies. */
@@ -2772,7 +2772,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1beta1TaxonomyServiceName { MANAGING_SYSTEM_UNSPECIFIED = 0, MANAGING_SYSTEM_DATAPLEX = 1, MANAGING_SYSTEM_OTHER = 2 }
+	export enum GoogleCloudDatacatalogV1beta1TaxonomyServiceName { MANAGING_SYSTEM_UNSPECIFIED = 'MANAGING_SYSTEM_UNSPECIFIED', MANAGING_SYSTEM_DATAPLEX = 'MANAGING_SYSTEM_DATAPLEX', MANAGING_SYSTEM_OTHER = 'MANAGING_SYSTEM_OTHER' }
 
 
 	/** Response message for ListEntries. */
@@ -3268,7 +3268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogV1beta1SearchCatalogResultSearchResultType { SEARCH_RESULT_TYPE_UNSPECIFIED = 0, ENTRY = 1, TAG_TEMPLATE = 2, ENTRY_GROUP = 3 }
+	export enum GoogleCloudDatacatalogV1beta1SearchCatalogResultSearchResultType { SEARCH_RESULT_TYPE_UNSPECIFIED = 'SEARCH_RESULT_TYPE_UNSPECIFIED', ENTRY = 'ENTRY', TAG_TEMPLATE = 'TAG_TEMPLATE', ENTRY_GROUP = 'ENTRY_GROUP' }
 
 
 	/** A tag template defines a tag, which can have one or more typed fields. The template is used to create and attach the tag to Google Cloud resources. [Tag template roles](https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles) provide permissions to create, edit, and use the template. See, for example, the [TagTemplate User](https://cloud.google.com/data-catalog/docs/how-to/template-user) role, which includes permission to use the tag template to tag resources. */

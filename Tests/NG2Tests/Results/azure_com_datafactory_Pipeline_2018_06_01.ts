@@ -1074,7 +1074,7 @@ export namespace MyNS {
 
 
 	/** The list of HTTP methods supported by a AzureFunctionActivity. */
-	export enum AzureFunctionActivityMethod { GET = 0, POST = 1, PUT = 2, DELETE = 3, OPTIONS = 4, HEAD = 5, TRACE = 6 }
+	export enum AzureFunctionActivityMethod { GET = 'GET', POST = 'POST', PUT = 'PUT', DELETE = 'DELETE', OPTIONS = 'OPTIONS', HEAD = 'HEAD', TRACE = 'TRACE' }
 
 
 	/** Azure Function activity type properties. */
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureSearchIndexSinkWriteBehavior { Merge = 0, Upload = 1 }
+	export enum AzureSearchIndexSinkWriteBehavior { Merge = 'Merge', Upload = 'Upload' }
 
 
 	/** A copy activity Azure SQL sink. */
@@ -1625,7 +1625,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StoredProcedureParameterType { String = 0, Int = 1, Int64 = 2, Decimal = 3, Guid = 4, Boolean = 5, Date = 6 }
+	export enum StoredProcedureParameterType { String = 'String', Int = 'Int', Int64 = 'Int64', Decimal = 'Decimal', Guid = 'Guid', Boolean = 'Boolean', Date = 'Date' }
 
 
 	/** A copy activity Azure SQL source. */
@@ -1878,7 +1878,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CassandraSourceConsistencyLevel { ALL = 0, EACH_QUORUM = 1, QUORUM = 2, LOCAL_QUORUM = 3, ONE = 4, TWO = 5, THREE = 6, LOCAL_ONE = 7, SERIAL = 8, LOCAL_SERIAL = 9 }
+	export enum CassandraSourceConsistencyLevel { ALL = 'ALL', EACH_QUORUM = 'EACH_QUORUM', QUORUM = 'QUORUM', LOCAL_QUORUM = 'LOCAL_QUORUM', ONE = 'ONE', TWO = 'TWO', THREE = 'THREE', LOCAL_ONE = 'LOCAL_ONE', SERIAL = 'SERIAL', LOCAL_SERIAL = 'LOCAL_SERIAL' }
 
 
 	/** A copy activity Common Data Service for Apps sink. */
@@ -1921,7 +1921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommonDataServiceForAppsSinkWriteBehavior { Upsert = 0 }
+	export enum CommonDataServiceForAppsSinkWriteBehavior { Upsert = 'Upsert' }
 
 
 	/** A copy activity Common Data Service for Apps source. */
@@ -2052,7 +2052,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CopyActivityInputsType { DatasetReference = 0 }
+	export enum CopyActivityInputsType { DatasetReference = 'DatasetReference' }
 
 	export interface CopyActivityOutputs {
 
@@ -2357,7 +2357,7 @@ export namespace MyNS {
 
 
 	/** All available types of copy behavior. */
-	export enum CopyBehaviorType { PreserveHierarchy = 0, FlattenHierarchy = 1, MergeFiles = 2 }
+	export enum CopyBehaviorType { PreserveHierarchy = 'PreserveHierarchy', FlattenHierarchy = 'FlattenHierarchy', MergeFiles = 'MergeFiles' }
 
 
 	/** A copy activity translator. */
@@ -2694,7 +2694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomActivityReferenceObjectLinkedServicesType { LinkedServiceReference = 0 }
+	export enum CustomActivityReferenceObjectLinkedServicesType { LinkedServiceReference = 'LinkedServiceReference' }
 
 
 	/** Custom activity properties. */
@@ -3700,7 +3700,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecuteDataFlowActivityTypePropertiesComputeComputeType { General = 0, MemoryOptimized = 1, ComputeOptimized = 2 }
+	export enum ExecuteDataFlowActivityTypePropertiesComputeComputeType { General = 'General', MemoryOptimized = 'MemoryOptimized', ComputeOptimized = 'ComputeOptimized' }
 
 
 	/** Execute pipeline activity. */
@@ -3997,7 +3997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SSISLogLocationType { File = 0 }
+	export enum SSISLogLocationType { File = 'File' }
 
 
 	/** SSIS package execution log location properties. */
@@ -4137,7 +4137,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SSISPackageLocationType { SSISDB = 0, File = 1, InlinePackage = 2 }
+	export enum SSISPackageLocationType { SSISDB = 'SSISDB', File = 'File', InlinePackage = 'InlinePackage' }
 
 
 	/** SSIS package location properties. */
@@ -4549,7 +4549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterActivityTypePropertiesConditionType { Expression = 0 }
+	export enum FilterActivityTypePropertiesConditionType { Expression = 'Expression' }
 
 	export interface FilterActivityTypePropertiesItems {
 
@@ -4988,7 +4988,7 @@ export namespace MyNS {
 
 
 	/** The HDInsightActivityDebugInfoOption settings to use. */
-	export enum HDInsightActivityDebugInfoOption { None = 0, Always = 1, Failure = 2 }
+	export enum HDInsightActivityDebugInfoOption { None = 'None', Always = 'Always', Failure = 'Failure' }
 
 
 	/** HDInsight Hive activity type. */
@@ -6044,7 +6044,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JsonWriteSettingsFilePattern { setOfObjects = 0, arrayOfObjects = 1 }
+	export enum JsonWriteSettingsFilePattern { setOfObjects = 'setOfObjects', arrayOfObjects = 'arrayOfObjects' }
 
 
 	/** A copy activity Json source. */
@@ -6378,7 +6378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetezzaSourcePartitionOption { None = 0, DataSlice = 1, DynamicRange = 2 }
+	export enum NetezzaSourcePartitionOption { None = 'None', DataSlice = 'DataSlice', DynamicRange = 'DynamicRange' }
 
 
 	/** A copy activity source for OData source. */
@@ -6621,7 +6621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OracleSourcePartitionOption { None = 0, PhysicalPartitionsOfTable = 1, DynamicRange = 2 }
+	export enum OracleSourcePartitionOption { None = 'None', PhysicalPartitionsOfTable = 'PhysicalPartitionsOfTable', DynamicRange = 'DynamicRange' }
 
 
 	/** A copy activity ORC sink. */
@@ -6844,7 +6844,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineParametersType { Object = 0, String = 1, Int = 2, Float = 3, Bool = 4, Array = 5, SecureString = 6 }
+	export enum PipelineParametersType { Object = 'Object', String = 'String', Int = 'Int', Float = 'Float', Bool = 'Bool', Array = 'Array', SecureString = 'SecureString' }
 
 	export interface PipelineVariables {
 
@@ -6876,7 +6876,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineVariablesType { String = 0, Bool = 1, Array = 2 }
+	export enum PipelineVariablesType { String = 'String', Bool = 'Bool', Array = 'Array' }
 
 
 	/** PolyBase settings. */
@@ -6920,7 +6920,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolybaseSettingsRejectType { value = 0, percentage = 1 }
+	export enum PolybaseSettingsRejectType { value = 'value', percentage = 'percentage' }
 
 
 	/** A copy activity source for PostgreSQL databases. */
@@ -7139,7 +7139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesforceServiceCloudSinkWriteBehavior { Insert = 0, Upsert = 1 }
+	export enum SalesforceServiceCloudSinkWriteBehavior { Insert = 'Insert', Upsert = 'Upsert' }
 
 
 	/** A copy activity Salesforce Service Cloud source. */
@@ -7169,7 +7169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesforceServiceCloudSourceReadBehavior { Query = 0, QueryAll = 1 }
+	export enum SalesforceServiceCloudSourceReadBehavior { Query = 'Query', QueryAll = 'QueryAll' }
 
 
 	/** A copy activity Salesforce sink. */
@@ -7276,7 +7276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SapCloudForCustomerSinkWriteBehavior { Insert = 0, Update = 1 }
+	export enum SapCloudForCustomerSinkWriteBehavior { Insert = 'Insert', Update = 'Update' }
 
 
 	/** A copy activity source for SAP Cloud for Customer source. */
@@ -7379,7 +7379,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SapHanaSourcePartitionOption { None = 0, PhysicalPartitionsOfTable = 1, SapHanaDynamicRange = 2 }
+	export enum SapHanaSourcePartitionOption { None = 'None', PhysicalPartitionsOfTable = 'PhysicalPartitionsOfTable', SapHanaDynamicRange = 'SapHanaDynamicRange' }
 
 
 	/** A copy activity source for SAP Business Warehouse Open Hub Destination source. */
@@ -7517,7 +7517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SapTableSourcePartitionOption { None = 0, PartitionOnInt = 1, PartitionOnCalendarYear = 2, PartitionOnCalendarMonth = 3, PartitionOnCalendarDate = 4, PartitionOnTime = 5 }
+	export enum SapTableSourcePartitionOption { None = 'None', PartitionOnInt = 'PartitionOnInt', PartitionOnCalendarYear = 'PartitionOnCalendarYear', PartitionOnCalendarMonth = 'PartitionOnCalendarMonth', PartitionOnCalendarDate = 'PartitionOnCalendarDate', PartitionOnTime = 'PartitionOnTime' }
 
 
 	/** A copy activity ServiceNow server source. */
@@ -8412,7 +8412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TeradataSourcePartitionOption { None = 0, Hash = 1, DynamicRange = 2 }
+	export enum TeradataSourcePartitionOption { None = 'None', Hash = 'Hash', DynamicRange = 'DynamicRange' }
 
 
 	/** This activity executes inner activities until the specified boolean expression results to true or timeout is reached, whichever is earlier. */
@@ -8765,7 +8765,7 @@ export namespace MyNS {
 
 
 	/** The list of HTTP methods supported by a WebActivity. */
-	export enum WebActivityMethod { GET = 0, POST = 1, PUT = 2, DELETE = 3 }
+	export enum WebActivityMethod { GET = 'GET', POST = 'POST', PUT = 'PUT', DELETE = 'DELETE' }
 
 
 	/** Web activity type properties. */
@@ -8945,7 +8945,7 @@ export namespace MyNS {
 
 
 	/** The list of HTTP methods supported by a WebHook activity. */
-	export enum WebHookActivityMethod { POST = 0 }
+	export enum WebHookActivityMethod { POST = 'POST' }
 
 
 	/** WebHook activity type properties. */

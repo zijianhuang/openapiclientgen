@@ -118,11 +118,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AppGatewayHostType { HOST_TYPE_UNSPECIFIED = 0, GCP_REGIONAL_MIG = 1 }
+	export enum AppGatewayHostType { HOST_TYPE_UNSPECIFIED = 'HOST_TYPE_UNSPECIFIED', GCP_REGIONAL_MIG = 'GCP_REGIONAL_MIG' }
 
-	export enum AppGatewayState { STATE_UNSPECIFIED = 0, CREATING = 1, CREATED = 2, UPDATING = 3, DELETING = 4, DOWN = 5 }
+	export enum AppGatewayState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', CREATED = 'CREATED', UPDATING = 'UPDATING', DELETING = 'DELETING', DOWN = 'DOWN' }
 
-	export enum AppGatewayType { TYPE_UNSPECIFIED = 0, TCP_PROXY = 1 }
+	export enum AppGatewayType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TCP_PROXY = 'TCP_PROXY' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -500,7 +500,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGatewayType { TYPE_UNSPECIFIED = 0, GCP_REGIONAL_MIG = 1 }
+	export enum GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGatewayType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GCP_REGIONAL_MIG = 'GCP_REGIONAL_MIG' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -854,7 +854,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBeyondcorpAppconnectorsV1ResourceInfoStatus { HEALTH_STATUS_UNSPECIFIED = 0, HEALTHY = 1, UNHEALTHY = 2, UNRESPONSIVE = 3, DEGRADED = 4 }
+	export enum GoogleCloudBeyondcorpAppconnectorsV1ResourceInfoStatus { HEALTH_STATUS_UNSPECIFIED = 'HEALTH_STATUS_UNSPECIFIED', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', UNRESPONSIVE = 'UNRESPONSIVE', DEGRADED = 'DEGRADED' }
 
 
 	/** AppConnectorInstanceConfig defines the instance config of a AppConnector. */
@@ -1761,7 +1761,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */

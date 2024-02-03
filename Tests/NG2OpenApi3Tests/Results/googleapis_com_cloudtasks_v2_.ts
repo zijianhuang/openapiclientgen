@@ -90,7 +90,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppEngineHttpRequestHttpMethod { HTTP_METHOD_UNSPECIFIED = 0, POST = 1, GET = 2, HEAD = 3, PUT = 4, DELETE = 5, PATCH = 6, OPTIONS = 7 }
+	export enum AppEngineHttpRequestHttpMethod { HTTP_METHOD_UNSPECIFIED = 'HTTP_METHOD_UNSPECIFIED', POST = 'POST', GET = 'GET', HEAD = 'HEAD', PUT = 'PUT', DELETE = 'DELETE', PATCH = 'PATCH', OPTIONS = 'OPTIONS' }
 
 
 	/** The status of a task attempt. */
@@ -474,7 +474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskView { VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum TaskView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 
 	/** Describes the customer-managed encryption key (CMEK) configuration associated with a project and location. */
@@ -748,9 +748,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UriOverrideScheme { SCHEME_UNSPECIFIED = 0, HTTP = 1, HTTPS = 2 }
+	export enum UriOverrideScheme { SCHEME_UNSPECIFIED = 'SCHEME_UNSPECIFIED', HTTP = 'HTTP', HTTPS = 'HTTPS' }
 
-	export enum UriOverrideUriOverrideEnforceMode { URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED = 0, IF_NOT_EXISTS = 1, ALWAYS = 2 }
+	export enum UriOverrideUriOverrideEnforceMode { URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED = 'URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED', IF_NOT_EXISTS = 'IF_NOT_EXISTS', ALWAYS = 'ALWAYS' }
 
 
 	/** The response message for Locations.ListLocations. */
@@ -1004,7 +1004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueueState { STATE_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, DISABLED = 3 }
+	export enum QueueState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', DISABLED = 'DISABLED' }
 
 
 	/** Response message for listing tasks using ListTasks. */

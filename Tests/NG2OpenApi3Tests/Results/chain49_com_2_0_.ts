@@ -346,7 +346,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAddressV2Details { basic = 0, tokens = 1, tokenBalances = 2, txids = 3, txslight = 4, txs = 5 }
+	export enum GetAddressV2Details { basic = 'basic', tokens = 'tokens', tokenBalances = 'tokenBalances', txids = 'txids', txslight = 'txslight', txs = 'txs' }
 
 	export interface GetBalanceHistoryV2Return {
 		rates?: string | null;
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetXpubV2Tokens { nonzero = 0, used = 1, derived = 2 }
+	export enum GetXpubV2Tokens { nonzero = 'nonzero', used = 'used', derived = 'derived' }
 
 	export interface GetXpubV2Return {
 		address?: string | null;

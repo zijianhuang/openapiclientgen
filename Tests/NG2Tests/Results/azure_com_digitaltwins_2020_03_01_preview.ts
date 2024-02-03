@@ -43,7 +43,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameRequestType { 'Microsoft.DigitalTwins/digitalTwinsInstances' = 0 }
+	export enum CheckNameRequestType { 'Microsoft.DigitalTwins/digitalTwinsInstances' = 'Microsoft.DigitalTwins/digitalTwinsInstances' }
 
 
 	/** The result returned from a check name availability request. */
@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameResultReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameResultReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The description of the DigitalTwins service. */
@@ -148,7 +148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DigitalTwinsPropertiesProvisioningState { Provisioning = 0, Deleting = 1, Succeeded = 2, Failed = 3, Canceled = 4 }
+	export enum DigitalTwinsPropertiesProvisioningState { Provisioning = 'Provisioning', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** A list of DigitalTwins description objects with a next link. */
@@ -266,7 +266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DigitalTwinsEndpointResourcePropertiesEndpointType { EventHub = 0, EventGrid = 1, ServiceBus = 2 }
+	export enum DigitalTwinsEndpointResourcePropertiesEndpointType { EventHub = 'EventHub', EventGrid = 'EventGrid', ServiceBus = 'ServiceBus' }
 
 
 	/** A list of DigitalTwinsInstance IoTHubs with a next link. */
@@ -443,7 +443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DigitalTwinsSkuInfoName { F1 = 0 }
+	export enum DigitalTwinsSkuInfoName { F1 = 'F1' }
 
 
 	/** Error definition. */
@@ -977,7 +977,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Operations_ListApi_version { '2020-03-01-preview' = 0 }
+	export enum Operations_ListApi_version { '2020-03-01-preview' = '2020-03-01-preview' }
 
 }
 

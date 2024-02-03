@@ -160,7 +160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DistrictStatusState { running = 0, pending = 1, error = 2, paused = 3 }
+	export enum DistrictStatusState { running = 'running', pending = 'pending', error = 'error', paused = 'paused' }
 
 	export interface DistrictStatusResponse {
 		data?: DistrictStatus;
@@ -327,7 +327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchoolHigh_grade { _1 = 0, _2 = 1, _3 = 2, _4 = 3, _5 = 4, _6 = 5, _7 = 6, _8 = 7, _9 = 8, _10 = 9, _11 = 10, _12 = 11, PreKindergarten = 12, Kindergarten = 13, PostGraduate = 14, Other = 15 }
+	export enum SchoolHigh_grade { _1 = '1', _2 = '2', _3 = '3', _4 = '4', _5 = '5', _6 = '6', _7 = '7', _8 = '8', _9 = '9', _10 = '10', _11 = '11', _12 = '12', PreKindergarten = 'PreKindergarten', Kindergarten = 'Kindergarten', PostGraduate = 'PostGraduate', Other = 'Other' }
 
 	export interface SchoolAdmin {
 		credentials?: Credentials;
@@ -459,7 +459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SectionSubject { 'english/language arts' = 0, math = 1, science = 2, 'social studies' = 3, language = 4, 'homeroom/advisory' = 5, 'interventions/online learning' = 6, 'technology and engineering' = 7, 'PE and health' = 8, 'arts and music' = 9, other = 10 }
+	export enum SectionSubject { 'english/language arts' = 'english/language arts', math = 'math', science = 'science', 'social studies' = 'social studies', language = 'language', 'homeroom/advisory' = 'homeroom/advisory', 'interventions/online learning' = 'interventions/online learning', 'technology and engineering' = 'technology and engineering', 'PE and health' = 'PE and health', 'arts and music' = 'arts and music', other = 'other' }
 
 	export interface Term {
 		end_date?: string | null;
@@ -564,11 +564,11 @@ export namespace MyNS {
 
 	}
 
-	export enum StudentEll_status { Y = 0, N = 1, '' = 2 }
+	export enum StudentEll_status { Y = 'Y', N = 'N', '' = '' }
 
-	export enum StudentGender { M = 0, F = 1, '' = 2 }
+	export enum StudentGender { M = 'M', F = 'F', '' = '' }
 
-	export enum StudentRace { Caucasian = 0, Asian = 1, 'Black or African American' = 2, 'American Indian' = 3, 'Hawaiian or Other Pacific Islander' = 4, 'Two or More Races' = 5, Unknown = 6, '' = 7 }
+	export enum StudentRace { Caucasian = 'Caucasian', Asian = 'Asian', 'Black or African American' = 'Black or African American', 'American Indian' = 'American Indian', 'Hawaiian or Other Pacific Islander' = 'Hawaiian or Other Pacific Islander', 'Two or More Races' = 'Two or More Races', Unknown = 'Unknown', '' = '' }
 
 	export interface StudentContact {
 		district?: string | null;

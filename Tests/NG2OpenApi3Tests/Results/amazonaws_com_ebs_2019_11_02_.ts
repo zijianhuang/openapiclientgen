@@ -16,7 +16,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { completed = 0, pending = 1, error = 2 }
+	export enum Status { completed = 'completed', pending = 'pending', error = 'error' }
 
 	export interface AccessDeniedException {
 	}
@@ -251,7 +251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SSEType { 'sse-ebs' = 0, 'sse-kms' = 1, none = 2 }
+	export enum SSEType { 'sse-ebs' = 'sse-ebs', 'sse-kms' = 'sse-kms', none = 'none' }
 
 	export interface ConcurrentLimitExceededException {
 	}
@@ -273,9 +273,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChecksumAggregationMethod { LINEAR = 0 }
+	export enum ChecksumAggregationMethod { LINEAR = 'LINEAR' }
 
-	export enum ChecksumAlgorithm { SHA256 = 0 }
+	export enum ChecksumAlgorithm { SHA256 = 'SHA256' }
 
 	export interface CompleteSnapshotRequest {
 	}

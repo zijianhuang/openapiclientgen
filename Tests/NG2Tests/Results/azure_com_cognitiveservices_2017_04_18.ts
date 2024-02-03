@@ -468,7 +468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CognitiveServicesAccountPropertiesProvisioningState { Creating = 0, ResolvingDNS = 1, Moving = 2, Deleting = 3, Succeeded = 4, Failed = 5 }
+	export enum CognitiveServicesAccountPropertiesProvisioningState { Creating = 'Creating', ResolvingDNS = 'ResolvingDNS', Moving = 'Moving', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Cognitive Services error object. */
@@ -609,7 +609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkRuleSetDefaultAction { Allow = 0, Deny = 1 }
+	export enum NetworkRuleSetDefaultAction { Allow = 'Allow', Deny = 'Deny' }
 
 
 	/** A rule governing the accessibility from a specific virtual network. */
@@ -783,7 +783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateKeyParametersKeyName { Key1 = 0, Key2 = 1 }
+	export enum RegenerateKeyParametersKeyName { Key1 = 'Key1', Key2 = 'Key2' }
 
 
 	/** Describes an available Cognitive Services SKU. */
@@ -865,9 +865,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSkuRestrictionsReasonCode { QuotaId = 0, NotAvailableForSubscription = 1 }
+	export enum ResourceSkuRestrictionsReasonCode { QuotaId = 'QuotaId', NotAvailableForSubscription = 'NotAvailableForSubscription' }
 
-	export enum ResourceSkuRestrictionsType { Location = 0, Zone = 1 }
+	export enum ResourceSkuRestrictionsType { Location = 'Location', Zone = 'Zone' }
 
 	export interface ResourceSkuRestrictionInfo {
 
@@ -946,11 +946,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuTier { Free = 0, Standard = 1, Premium = 2 }
+	export enum SkuTier { Free = 'Free', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The unit of the metric. */
-	export enum UnitType { Count = 0, Bytes = 1, Seconds = 2, Percent = 3, CountPerSecond = 4, BytesPerSecond = 5, Milliseconds = 6 }
+	export enum UnitType { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', Percent = 'Percent', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond', Milliseconds = 'Milliseconds' }
 
 
 	/** The usage data for a usage request. */
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageStatus { Included = 0, Blocked = 1, InOverage = 2, Unknown = 3 }
+	export enum UsageStatus { Included = 'Included', Blocked = 'Blocked', InOverage = 'InOverage', Unknown = 'Unknown' }
 
 
 	/** The response to a list usage request. */

@@ -55,7 +55,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParticipantTokenCapability { PUBLISH = 0, SUBSCRIBE = 1 }
+	export enum ParticipantTokenCapability { PUBLISH = 'PUBLISH', SUBSCRIBE = 'SUBSCRIBE' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -260,7 +260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParticipantState { CONNECTED = 0, DISCONNECTED = 1 }
+	export enum ParticipantState { CONNECTED = 'CONNECTED', DISCONNECTED = 'DISCONNECTED' }
 
 	export interface GetStageResponse {
 		stage?: Stage;
@@ -352,9 +352,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EventErrorCode { INSUFFICIENT_CAPABILITIES = 0, QUOTA_EXCEEDED = 1, PUBLISHER_NOT_FOUND = 2 }
+	export enum EventErrorCode { INSUFFICIENT_CAPABILITIES = 'INSUFFICIENT_CAPABILITIES', QUOTA_EXCEEDED = 'QUOTA_EXCEEDED', PUBLISHER_NOT_FOUND = 'PUBLISHER_NOT_FOUND' }
 
-	export enum EventName { JOINED = 0, LEFT = 1, PUBLISH_STARTED = 2, PUBLISH_STOPPED = 3, SUBSCRIBE_STARTED = 4, SUBSCRIBE_STOPPED = 5, PUBLISH_ERROR = 6, SUBSCRIBE_ERROR = 7, JOIN_ERROR = 8 }
+	export enum EventName { JOINED = 'JOINED', LEFT = 'LEFT', PUBLISH_STARTED = 'PUBLISH_STARTED', PUBLISH_STOPPED = 'PUBLISH_STOPPED', SUBSCRIBE_STARTED = 'SUBSCRIBE_STARTED', SUBSCRIBE_STOPPED = 'SUBSCRIBE_STOPPED', PUBLISH_ERROR = 'PUBLISH_ERROR', SUBSCRIBE_ERROR = 'SUBSCRIBE_ERROR', JOIN_ERROR = 'JOIN_ERROR' }
 
 	export interface ListParticipantsResponse {
 		nextToken?: string;

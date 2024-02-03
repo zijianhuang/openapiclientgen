@@ -211,7 +211,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyType { STATIC = 0, TEMPLATE_LINKED = 1 }
+	export enum PolicyType { STATIC = 'STATIC', TEMPLATE_LINKED = 'TEMPLATE_LINKED' }
 
 
 	/** <p>Contains the identifier of an entity, including its ID and type.</p> <p>This data type is used as a request parameter for <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a> operation, and as a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a>, <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicy.html">GetPolicy</a>, and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicy.html">UpdatePolicy</a> operations.</p> <p>Example: <code>{"entityId":"<i>string</i>","entityType":"<i>string</i>"}</code> </p> */
@@ -402,7 +402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationMode { OFF = 0, STRICT = 1 }
+	export enum ValidationMode { OFF = 'OFF', STRICT = 'STRICT' }
 
 	export interface CreatePolicyTemplateOutput {
 
@@ -683,7 +683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenIdIssuer { COGNITO = 0 }
+	export enum OpenIdIssuer { COGNITO = 'COGNITO' }
 
 	export interface GetIdentitySourceInput {
 
@@ -1054,7 +1054,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Decision { ALLOW = 0, DENY = 1 }
+	export enum Decision { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** <p>Contains information about one of the policies that determined an authorization decision.</p> <p>This data type is used as an element in a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a> and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a> operations.</p> <p>Example: <code>"determiningPolicies":[{"policyId":"SPEXAMPLEabcdefg111111"}]</code> </p> */
@@ -2426,53 +2426,53 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateIdentitySourceX_Amz_Target { 'VerifiedPermissions.CreateIdentitySource' = 0 }
+	export enum CreateIdentitySourceX_Amz_Target { 'VerifiedPermissions.CreateIdentitySource' = 'VerifiedPermissions.CreateIdentitySource' }
 
-	export enum CreatePolicyX_Amz_Target { 'VerifiedPermissions.CreatePolicy' = 0 }
+	export enum CreatePolicyX_Amz_Target { 'VerifiedPermissions.CreatePolicy' = 'VerifiedPermissions.CreatePolicy' }
 
-	export enum CreatePolicyStoreX_Amz_Target { 'VerifiedPermissions.CreatePolicyStore' = 0 }
+	export enum CreatePolicyStoreX_Amz_Target { 'VerifiedPermissions.CreatePolicyStore' = 'VerifiedPermissions.CreatePolicyStore' }
 
-	export enum CreatePolicyTemplateX_Amz_Target { 'VerifiedPermissions.CreatePolicyTemplate' = 0 }
+	export enum CreatePolicyTemplateX_Amz_Target { 'VerifiedPermissions.CreatePolicyTemplate' = 'VerifiedPermissions.CreatePolicyTemplate' }
 
-	export enum DeleteIdentitySourceX_Amz_Target { 'VerifiedPermissions.DeleteIdentitySource' = 0 }
+	export enum DeleteIdentitySourceX_Amz_Target { 'VerifiedPermissions.DeleteIdentitySource' = 'VerifiedPermissions.DeleteIdentitySource' }
 
-	export enum DeletePolicyX_Amz_Target { 'VerifiedPermissions.DeletePolicy' = 0 }
+	export enum DeletePolicyX_Amz_Target { 'VerifiedPermissions.DeletePolicy' = 'VerifiedPermissions.DeletePolicy' }
 
-	export enum DeletePolicyStoreX_Amz_Target { 'VerifiedPermissions.DeletePolicyStore' = 0 }
+	export enum DeletePolicyStoreX_Amz_Target { 'VerifiedPermissions.DeletePolicyStore' = 'VerifiedPermissions.DeletePolicyStore' }
 
-	export enum DeletePolicyTemplateX_Amz_Target { 'VerifiedPermissions.DeletePolicyTemplate' = 0 }
+	export enum DeletePolicyTemplateX_Amz_Target { 'VerifiedPermissions.DeletePolicyTemplate' = 'VerifiedPermissions.DeletePolicyTemplate' }
 
-	export enum GetIdentitySourceX_Amz_Target { 'VerifiedPermissions.GetIdentitySource' = 0 }
+	export enum GetIdentitySourceX_Amz_Target { 'VerifiedPermissions.GetIdentitySource' = 'VerifiedPermissions.GetIdentitySource' }
 
-	export enum GetPolicyX_Amz_Target { 'VerifiedPermissions.GetPolicy' = 0 }
+	export enum GetPolicyX_Amz_Target { 'VerifiedPermissions.GetPolicy' = 'VerifiedPermissions.GetPolicy' }
 
-	export enum GetPolicyStoreX_Amz_Target { 'VerifiedPermissions.GetPolicyStore' = 0 }
+	export enum GetPolicyStoreX_Amz_Target { 'VerifiedPermissions.GetPolicyStore' = 'VerifiedPermissions.GetPolicyStore' }
 
-	export enum GetPolicyTemplateX_Amz_Target { 'VerifiedPermissions.GetPolicyTemplate' = 0 }
+	export enum GetPolicyTemplateX_Amz_Target { 'VerifiedPermissions.GetPolicyTemplate' = 'VerifiedPermissions.GetPolicyTemplate' }
 
-	export enum GetSchemaX_Amz_Target { 'VerifiedPermissions.GetSchema' = 0 }
+	export enum GetSchemaX_Amz_Target { 'VerifiedPermissions.GetSchema' = 'VerifiedPermissions.GetSchema' }
 
-	export enum IsAuthorizedX_Amz_Target { 'VerifiedPermissions.IsAuthorized' = 0 }
+	export enum IsAuthorizedX_Amz_Target { 'VerifiedPermissions.IsAuthorized' = 'VerifiedPermissions.IsAuthorized' }
 
-	export enum IsAuthorizedWithTokenX_Amz_Target { 'VerifiedPermissions.IsAuthorizedWithToken' = 0 }
+	export enum IsAuthorizedWithTokenX_Amz_Target { 'VerifiedPermissions.IsAuthorizedWithToken' = 'VerifiedPermissions.IsAuthorizedWithToken' }
 
-	export enum ListIdentitySourcesX_Amz_Target { 'VerifiedPermissions.ListIdentitySources' = 0 }
+	export enum ListIdentitySourcesX_Amz_Target { 'VerifiedPermissions.ListIdentitySources' = 'VerifiedPermissions.ListIdentitySources' }
 
-	export enum ListPoliciesX_Amz_Target { 'VerifiedPermissions.ListPolicies' = 0 }
+	export enum ListPoliciesX_Amz_Target { 'VerifiedPermissions.ListPolicies' = 'VerifiedPermissions.ListPolicies' }
 
-	export enum ListPolicyStoresX_Amz_Target { 'VerifiedPermissions.ListPolicyStores' = 0 }
+	export enum ListPolicyStoresX_Amz_Target { 'VerifiedPermissions.ListPolicyStores' = 'VerifiedPermissions.ListPolicyStores' }
 
-	export enum ListPolicyTemplatesX_Amz_Target { 'VerifiedPermissions.ListPolicyTemplates' = 0 }
+	export enum ListPolicyTemplatesX_Amz_Target { 'VerifiedPermissions.ListPolicyTemplates' = 'VerifiedPermissions.ListPolicyTemplates' }
 
-	export enum PutSchemaX_Amz_Target { 'VerifiedPermissions.PutSchema' = 0 }
+	export enum PutSchemaX_Amz_Target { 'VerifiedPermissions.PutSchema' = 'VerifiedPermissions.PutSchema' }
 
-	export enum UpdateIdentitySourceX_Amz_Target { 'VerifiedPermissions.UpdateIdentitySource' = 0 }
+	export enum UpdateIdentitySourceX_Amz_Target { 'VerifiedPermissions.UpdateIdentitySource' = 'VerifiedPermissions.UpdateIdentitySource' }
 
-	export enum UpdatePolicyX_Amz_Target { 'VerifiedPermissions.UpdatePolicy' = 0 }
+	export enum UpdatePolicyX_Amz_Target { 'VerifiedPermissions.UpdatePolicy' = 'VerifiedPermissions.UpdatePolicy' }
 
-	export enum UpdatePolicyStoreX_Amz_Target { 'VerifiedPermissions.UpdatePolicyStore' = 0 }
+	export enum UpdatePolicyStoreX_Amz_Target { 'VerifiedPermissions.UpdatePolicyStore' = 'VerifiedPermissions.UpdatePolicyStore' }
 
-	export enum UpdatePolicyTemplateX_Amz_Target { 'VerifiedPermissions.UpdatePolicyTemplate' = 0 }
+	export enum UpdatePolicyTemplateX_Amz_Target { 'VerifiedPermissions.UpdatePolicyTemplate' = 'VerifiedPermissions.UpdatePolicyTemplate' }
 
 }
 

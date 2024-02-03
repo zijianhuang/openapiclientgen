@@ -278,9 +278,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EbsVolumeType { standard = 0, io1 = 1, io2 = 2, gp2 = 3, gp3 = 4, sc1 = 5, st1 = 6 }
+	export enum EbsVolumeType { standard = 'standard', io1 = 'io1', io2 = 'io2', gp2 = 'gp2', gp3 = 'gp3', sc1 = 'sc1', st1 = 'st1' }
 
-	export enum ContainerRepositoryService { ECR = 0 }
+	export enum ContainerRepositoryService { ECR = 'ECR' }
 
 	export interface ResourceAlreadyExistsException {
 	}
@@ -506,7 +506,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskImageFormat { VMDK = 0, RAW = 1, VHD = 2 }
+	export enum DiskImageFormat { VMDK = 'VMDK', RAW = 'RAW', VHD = 'VHD' }
 
 
 	/** Define and configure faster launching for output Windows AMIs. */
@@ -633,7 +633,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineExecutionStartCondition { EXPRESSION_MATCH_ONLY = 0, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = 1 }
+	export enum PipelineExecutionStartCondition { EXPRESSION_MATCH_ONLY = 'EXPRESSION_MATCH_ONLY', EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = 'EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE' }
 
 	export interface CreateImageRecipeResponse {
 		requestId?: string;
@@ -906,9 +906,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentType { BUILD = 0, TEST = 1 }
+	export enum ComponentType { BUILD = 'BUILD', TEST = 'TEST' }
 
-	export enum Platform { Windows = 0, Linux = 1 }
+	export enum Platform { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/** A group of fields that describe the current status of components that are no longer active. */
@@ -930,7 +930,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentStatus { DEPRECATED = 0 }
+	export enum ComponentStatus { DEPRECATED = 'DEPRECATED' }
 
 
 	/** Defines a parameter that is used to provide configuration details for the component. */
@@ -1061,7 +1061,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerType { DOCKER = 0 }
+	export enum ContainerType { DOCKER = 'DOCKER' }
 
 
 	/** Defines a custom base AMI and block device mapping configurations of an instance used for building and testing container images. */
@@ -1223,7 +1223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageType { AMI = 0, DOCKER = 1 }
+	export enum ImageType { AMI = 'AMI', DOCKER = 'DOCKER' }
 
 
 	/** Image status and the reason for that status. */
@@ -1245,7 +1245,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageStatus { PENDING = 0, CREATING = 1, BUILDING = 2, TESTING = 3, DISTRIBUTING = 4, INTEGRATING = 5, AVAILABLE = 6, CANCELLED = 7, FAILED = 8, DEPRECATED = 9, DELETED = 10 }
+	export enum ImageStatus { PENDING = 'PENDING', CREATING = 'CREATING', BUILDING = 'BUILDING', TESTING = 'TESTING', DISTRIBUTING = 'DISTRIBUTING', INTEGRATING = 'INTEGRATING', AVAILABLE = 'AVAILABLE', CANCELLED = 'CANCELLED', FAILED = 'FAILED', DEPRECATED = 'DEPRECATED', DELETED = 'DELETED' }
 
 
 	/** An image recipe. */
@@ -1494,9 +1494,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildType { USER_INITIATED = 0, SCHEDULED = 1, IMPORT = 2 }
+	export enum BuildType { USER_INITIATED = 'USER_INITIATED', SCHEDULED = 'SCHEDULED', IMPORT = 'IMPORT' }
 
-	export enum ImageSource { AMAZON_MANAGED = 0, AWS_MARKETPLACE = 1, IMPORTED = 2, CUSTOM = 3 }
+	export enum ImageSource { AMAZON_MANAGED = 'AMAZON_MANAGED', AWS_MARKETPLACE = 'AWS_MARKETPLACE', IMPORTED = 'IMPORTED', CUSTOM = 'CUSTOM' }
 
 
 	/** Shows the vulnerability scan status for a specific image, and the reason for that status. */
@@ -1518,7 +1518,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageScanStatus { PENDING = 0, SCANNING = 1, COLLECTING = 2, COMPLETED = 3, ABANDONED = 4, FAILED = 5, TIMED_OUT = 6 }
+	export enum ImageScanStatus { PENDING = 'PENDING', SCANNING = 'SCANNING', COLLECTING = 'COLLECTING', COMPLETED = 'COMPLETED', ABANDONED = 'ABANDONED', FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT' }
 
 
 	/** Contains settings for Image Builder image resource and container image scans. */
@@ -1635,7 +1635,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineStatus { DISABLED = 0, ENABLED = 1 }
+	export enum PipelineStatus { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 	export interface GetImagePolicyResponse {
 		requestId?: string;
@@ -1750,9 +1750,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowType { BUILD = 0, TEST = 1, DISTRIBUTION = 2 }
+	export enum WorkflowType { BUILD = 'BUILD', TEST = 'TEST', DISTRIBUTION = 'DISTRIBUTION' }
 
-	export enum WorkflowExecutionStatus { PENDING = 0, SKIPPED = 1, RUNNING = 2, COMPLETED = 3, FAILED = 4, ROLLBACK_IN_PROGRESS = 5, ROLLBACK_COMPLETED = 6 }
+	export enum WorkflowExecutionStatus { PENDING = 'PENDING', SKIPPED = 'SKIPPED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', ROLLBACK_IN_PROGRESS = 'ROLLBACK_IN_PROGRESS', ROLLBACK_COMPLETED = 'ROLLBACK_COMPLETED' }
 
 	export interface GetWorkflowStepExecutionResponse {
 		requestId?: string;
@@ -1815,9 +1815,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowStepExecutionStatus { PENDING = 0, SKIPPED = 1, RUNNING = 2, COMPLETED = 3, FAILED = 4 }
+	export enum WorkflowStepExecutionStatus { PENDING = 'PENDING', SKIPPED = 'SKIPPED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
-	export enum WorkflowStepExecutionRollbackStatus { RUNNING = 0, COMPLETED = 1, SKIPPED = 2, FAILED = 3 }
+	export enum WorkflowStepExecutionRollbackStatus { RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', SKIPPED = 'SKIPPED', FAILED = 'FAILED' }
 
 	export interface ImportComponentResponse {
 		requestId?: string;
@@ -3199,7 +3199,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentFormat { SHELL = 0 }
+	export enum ComponentFormat { SHELL = 'SHELL' }
 
 	export interface CreateComponentRequest {
 
@@ -3902,7 +3902,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ownership { Self = 0, Shared = 1, Amazon = 2, ThirdParty = 3 }
+	export enum Ownership { Self = 'Self', Shared = 'Shared', Amazon = 'Amazon', ThirdParty = 'ThirdParty' }
 
 	export interface ListComponentsRequest {
 		owner?: Ownership;

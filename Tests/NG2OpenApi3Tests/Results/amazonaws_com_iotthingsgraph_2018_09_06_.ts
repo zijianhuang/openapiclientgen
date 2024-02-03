@@ -161,7 +161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DefinitionLanguage { GRAPHQL = 0 }
+	export enum DefinitionLanguage { GRAPHQL = 'GRAPHQL' }
 
 	export interface ResourceAlreadyExistsException {
 	}
@@ -235,9 +235,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SystemInstanceDeploymentStatus { NOT_DEPLOYED = 0, BOOTSTRAP = 1, DEPLOY_IN_PROGRESS = 2, DEPLOYED_IN_TARGET = 3, UNDEPLOY_IN_PROGRESS = 4, FAILED = 5, PENDING_DELETE = 6, DELETED_IN_TARGET = 7 }
+	export enum SystemInstanceDeploymentStatus { NOT_DEPLOYED = 'NOT_DEPLOYED', BOOTSTRAP = 'BOOTSTRAP', DEPLOY_IN_PROGRESS = 'DEPLOY_IN_PROGRESS', DEPLOYED_IN_TARGET = 'DEPLOYED_IN_TARGET', UNDEPLOY_IN_PROGRESS = 'UNDEPLOY_IN_PROGRESS', FAILED = 'FAILED', PENDING_DELETE = 'PENDING_DELETE', DELETED_IN_TARGET = 'DELETED_IN_TARGET' }
 
-	export enum DeploymentTarget { GREENGRASS = 0, CLOUD = 1 }
+	export enum DeploymentTarget { GREENGRASS = 'GREENGRASS', CLOUD = 'CLOUD' }
 
 	export interface CreateSystemInstanceRequest {
 		tags?: Array<Tag>;
@@ -644,7 +644,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityType { DEVICE = 0, SERVICE = 1, DEVICE_MODEL = 2, CAPABILITY = 3, STATE = 4, ACTION = 5, EVENT = 6, PROPERTY = 7, MAPPING = 8, ENUM = 9 }
+	export enum EntityType { DEVICE = 'DEVICE', SERVICE = 'SERVICE', DEVICE_MODEL = 'DEVICE_MODEL', CAPABILITY = 'CAPABILITY', STATE = 'STATE', ACTION = 'ACTION', EVENT = 'EVENT', PROPERTY = 'PROPERTY', MAPPING = 'MAPPING', ENUM = 'ENUM' }
 
 	export interface GetEntitiesResponse {
 		descriptions?: Array<EntityDescription>;
@@ -812,9 +812,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespaceDeletionStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum NamespaceDeletionStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
-	export enum NamespaceDeletionStatusErrorCodes { VALIDATION_FAILED = 0 }
+	export enum NamespaceDeletionStatusErrorCodes { VALIDATION_FAILED = 'VALIDATION_FAILED' }
 
 	export interface GetNamespaceDeletionStatusRequest {
 	}
@@ -1090,7 +1090,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlowExecutionEventType { EXECUTION_STARTED = 0, EXECUTION_FAILED = 1, EXECUTION_ABORTED = 2, EXECUTION_SUCCEEDED = 3, STEP_STARTED = 4, STEP_FAILED = 5, STEP_SUCCEEDED = 6, ACTIVITY_SCHEDULED = 7, ACTIVITY_STARTED = 8, ACTIVITY_FAILED = 9, ACTIVITY_SUCCEEDED = 10, START_FLOW_EXECUTION_TASK = 11, SCHEDULE_NEXT_READY_STEPS_TASK = 12, THING_ACTION_TASK = 13, THING_ACTION_TASK_FAILED = 14, THING_ACTION_TASK_SUCCEEDED = 15, ACKNOWLEDGE_TASK_MESSAGE = 16 }
+	export enum FlowExecutionEventType { EXECUTION_STARTED = 'EXECUTION_STARTED', EXECUTION_FAILED = 'EXECUTION_FAILED', EXECUTION_ABORTED = 'EXECUTION_ABORTED', EXECUTION_SUCCEEDED = 'EXECUTION_SUCCEEDED', STEP_STARTED = 'STEP_STARTED', STEP_FAILED = 'STEP_FAILED', STEP_SUCCEEDED = 'STEP_SUCCEEDED', ACTIVITY_SCHEDULED = 'ACTIVITY_SCHEDULED', ACTIVITY_STARTED = 'ACTIVITY_STARTED', ACTIVITY_FAILED = 'ACTIVITY_FAILED', ACTIVITY_SUCCEEDED = 'ACTIVITY_SUCCEEDED', START_FLOW_EXECUTION_TASK = 'START_FLOW_EXECUTION_TASK', SCHEDULE_NEXT_READY_STEPS_TASK = 'SCHEDULE_NEXT_READY_STEPS_TASK', THING_ACTION_TASK = 'THING_ACTION_TASK', THING_ACTION_TASK_FAILED = 'THING_ACTION_TASK_FAILED', THING_ACTION_TASK_SUCCEEDED = 'THING_ACTION_TASK_SUCCEEDED', ACKNOWLEDGE_TASK_MESSAGE = 'ACKNOWLEDGE_TASK_MESSAGE' }
 
 	export interface ListFlowExecutionMessagesRequest {
 
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityFilterName { NAME = 0, NAMESPACE = 1, SEMANTIC_TYPE_PATH = 2, REFERENCED_ENTITY_ID = 3 }
+	export enum EntityFilterName { NAME = 'NAME', NAMESPACE = 'NAMESPACE', SEMANTIC_TYPE_PATH = 'SEMANTIC_TYPE_PATH', REFERENCED_ENTITY_ID = 'REFERENCED_ENTITY_ID' }
 
 	export interface SearchFlowExecutionsResponse {
 		summaries?: Array<FlowExecutionSummary>;
@@ -1255,7 +1255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlowExecutionStatus { RUNNING = 0, ABORTED = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum FlowExecutionStatus { RUNNING = 'RUNNING', ABORTED = 'ABORTED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface SearchFlowExecutionsRequest {
 
@@ -1344,7 +1344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlowTemplateFilterName { DEVICE_MODEL_ID = 0 }
+	export enum FlowTemplateFilterName { DEVICE_MODEL_ID = 'DEVICE_MODEL_ID' }
 
 	export interface SearchSystemInstancesResponse {
 		summaries?: Array<SystemInstanceSummary>;
@@ -1395,7 +1395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SystemInstanceFilterName { SYSTEM_TEMPLATE_ID = 0, STATUS = 1, GREENGRASS_GROUP_NAME = 2 }
+	export enum SystemInstanceFilterName { SYSTEM_TEMPLATE_ID = 'SYSTEM_TEMPLATE_ID', STATUS = 'STATUS', GREENGRASS_GROUP_NAME = 'GREENGRASS_GROUP_NAME' }
 
 	export interface SearchSystemTemplatesResponse {
 		summaries?: Array<SystemTemplateSummary>;
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SystemTemplateFilterName { FLOW_TEMPLATE_ID = 0 }
+	export enum SystemTemplateFilterName { FLOW_TEMPLATE_ID = 'FLOW_TEMPLATE_ID' }
 
 	export interface SearchThingsResponse {
 		things?: Array<Thing>;
@@ -1700,7 +1700,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UploadStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum UploadStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	@Injectable()
 	export class MyClient {
@@ -2043,75 +2043,75 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateEntityToThingX_Amz_Target { 'IotThingsGraphFrontEndService.AssociateEntityToThing' = 0 }
+	export enum AssociateEntityToThingX_Amz_Target { 'IotThingsGraphFrontEndService.AssociateEntityToThing' = 'IotThingsGraphFrontEndService.AssociateEntityToThing' }
 
-	export enum CreateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.CreateFlowTemplate' = 0 }
+	export enum CreateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.CreateFlowTemplate' = 'IotThingsGraphFrontEndService.CreateFlowTemplate' }
 
-	export enum CreateSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.CreateSystemInstance' = 0 }
+	export enum CreateSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.CreateSystemInstance' = 'IotThingsGraphFrontEndService.CreateSystemInstance' }
 
-	export enum CreateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.CreateSystemTemplate' = 0 }
+	export enum CreateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.CreateSystemTemplate' = 'IotThingsGraphFrontEndService.CreateSystemTemplate' }
 
-	export enum DeleteFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteFlowTemplate' = 0 }
+	export enum DeleteFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteFlowTemplate' = 'IotThingsGraphFrontEndService.DeleteFlowTemplate' }
 
-	export enum DeleteNamespaceX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteNamespace' = 0 }
+	export enum DeleteNamespaceX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteNamespace' = 'IotThingsGraphFrontEndService.DeleteNamespace' }
 
-	export enum DeleteSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteSystemInstance' = 0 }
+	export enum DeleteSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteSystemInstance' = 'IotThingsGraphFrontEndService.DeleteSystemInstance' }
 
-	export enum DeleteSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteSystemTemplate' = 0 }
+	export enum DeleteSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteSystemTemplate' = 'IotThingsGraphFrontEndService.DeleteSystemTemplate' }
 
-	export enum DeploySystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.DeploySystemInstance' = 0 }
+	export enum DeploySystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.DeploySystemInstance' = 'IotThingsGraphFrontEndService.DeploySystemInstance' }
 
-	export enum DeprecateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeprecateFlowTemplate' = 0 }
+	export enum DeprecateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeprecateFlowTemplate' = 'IotThingsGraphFrontEndService.DeprecateFlowTemplate' }
 
-	export enum DeprecateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeprecateSystemTemplate' = 0 }
+	export enum DeprecateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeprecateSystemTemplate' = 'IotThingsGraphFrontEndService.DeprecateSystemTemplate' }
 
-	export enum DescribeNamespaceX_Amz_Target { 'IotThingsGraphFrontEndService.DescribeNamespace' = 0 }
+	export enum DescribeNamespaceX_Amz_Target { 'IotThingsGraphFrontEndService.DescribeNamespace' = 'IotThingsGraphFrontEndService.DescribeNamespace' }
 
-	export enum DissociateEntityFromThingX_Amz_Target { 'IotThingsGraphFrontEndService.DissociateEntityFromThing' = 0 }
+	export enum DissociateEntityFromThingX_Amz_Target { 'IotThingsGraphFrontEndService.DissociateEntityFromThing' = 'IotThingsGraphFrontEndService.DissociateEntityFromThing' }
 
-	export enum GetEntitiesX_Amz_Target { 'IotThingsGraphFrontEndService.GetEntities' = 0 }
+	export enum GetEntitiesX_Amz_Target { 'IotThingsGraphFrontEndService.GetEntities' = 'IotThingsGraphFrontEndService.GetEntities' }
 
-	export enum GetFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.GetFlowTemplate' = 0 }
+	export enum GetFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.GetFlowTemplate' = 'IotThingsGraphFrontEndService.GetFlowTemplate' }
 
-	export enum GetFlowTemplateRevisionsX_Amz_Target { 'IotThingsGraphFrontEndService.GetFlowTemplateRevisions' = 0 }
+	export enum GetFlowTemplateRevisionsX_Amz_Target { 'IotThingsGraphFrontEndService.GetFlowTemplateRevisions' = 'IotThingsGraphFrontEndService.GetFlowTemplateRevisions' }
 
-	export enum GetNamespaceDeletionStatusX_Amz_Target { 'IotThingsGraphFrontEndService.GetNamespaceDeletionStatus' = 0 }
+	export enum GetNamespaceDeletionStatusX_Amz_Target { 'IotThingsGraphFrontEndService.GetNamespaceDeletionStatus' = 'IotThingsGraphFrontEndService.GetNamespaceDeletionStatus' }
 
-	export enum GetSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemInstance' = 0 }
+	export enum GetSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemInstance' = 'IotThingsGraphFrontEndService.GetSystemInstance' }
 
-	export enum GetSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemTemplate' = 0 }
+	export enum GetSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemTemplate' = 'IotThingsGraphFrontEndService.GetSystemTemplate' }
 
-	export enum GetSystemTemplateRevisionsX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemTemplateRevisions' = 0 }
+	export enum GetSystemTemplateRevisionsX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemTemplateRevisions' = 'IotThingsGraphFrontEndService.GetSystemTemplateRevisions' }
 
-	export enum GetUploadStatusX_Amz_Target { 'IotThingsGraphFrontEndService.GetUploadStatus' = 0 }
+	export enum GetUploadStatusX_Amz_Target { 'IotThingsGraphFrontEndService.GetUploadStatus' = 'IotThingsGraphFrontEndService.GetUploadStatus' }
 
-	export enum ListFlowExecutionMessagesX_Amz_Target { 'IotThingsGraphFrontEndService.ListFlowExecutionMessages' = 0 }
+	export enum ListFlowExecutionMessagesX_Amz_Target { 'IotThingsGraphFrontEndService.ListFlowExecutionMessages' = 'IotThingsGraphFrontEndService.ListFlowExecutionMessages' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'IotThingsGraphFrontEndService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'IotThingsGraphFrontEndService.ListTagsForResource' = 'IotThingsGraphFrontEndService.ListTagsForResource' }
 
-	export enum SearchEntitiesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchEntities' = 0 }
+	export enum SearchEntitiesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchEntities' = 'IotThingsGraphFrontEndService.SearchEntities' }
 
-	export enum SearchFlowExecutionsX_Amz_Target { 'IotThingsGraphFrontEndService.SearchFlowExecutions' = 0 }
+	export enum SearchFlowExecutionsX_Amz_Target { 'IotThingsGraphFrontEndService.SearchFlowExecutions' = 'IotThingsGraphFrontEndService.SearchFlowExecutions' }
 
-	export enum SearchFlowTemplatesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchFlowTemplates' = 0 }
+	export enum SearchFlowTemplatesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchFlowTemplates' = 'IotThingsGraphFrontEndService.SearchFlowTemplates' }
 
-	export enum SearchSystemInstancesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchSystemInstances' = 0 }
+	export enum SearchSystemInstancesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchSystemInstances' = 'IotThingsGraphFrontEndService.SearchSystemInstances' }
 
-	export enum SearchSystemTemplatesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchSystemTemplates' = 0 }
+	export enum SearchSystemTemplatesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchSystemTemplates' = 'IotThingsGraphFrontEndService.SearchSystemTemplates' }
 
-	export enum SearchThingsX_Amz_Target { 'IotThingsGraphFrontEndService.SearchThings' = 0 }
+	export enum SearchThingsX_Amz_Target { 'IotThingsGraphFrontEndService.SearchThings' = 'IotThingsGraphFrontEndService.SearchThings' }
 
-	export enum TagResourceX_Amz_Target { 'IotThingsGraphFrontEndService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'IotThingsGraphFrontEndService.TagResource' = 'IotThingsGraphFrontEndService.TagResource' }
 
-	export enum UndeploySystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.UndeploySystemInstance' = 0 }
+	export enum UndeploySystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.UndeploySystemInstance' = 'IotThingsGraphFrontEndService.UndeploySystemInstance' }
 
-	export enum UntagResourceX_Amz_Target { 'IotThingsGraphFrontEndService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'IotThingsGraphFrontEndService.UntagResource' = 'IotThingsGraphFrontEndService.UntagResource' }
 
-	export enum UpdateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.UpdateFlowTemplate' = 0 }
+	export enum UpdateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.UpdateFlowTemplate' = 'IotThingsGraphFrontEndService.UpdateFlowTemplate' }
 
-	export enum UpdateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.UpdateSystemTemplate' = 0 }
+	export enum UpdateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.UpdateSystemTemplate' = 'IotThingsGraphFrontEndService.UpdateSystemTemplate' }
 
-	export enum UploadEntityDefinitionsX_Amz_Target { 'IotThingsGraphFrontEndService.UploadEntityDefinitions' = 0 }
+	export enum UploadEntityDefinitionsX_Amz_Target { 'IotThingsGraphFrontEndService.UploadEntityDefinitions' = 'IotThingsGraphFrontEndService.UploadEntityDefinitions' }
 
 }
 

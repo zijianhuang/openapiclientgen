@@ -169,7 +169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscriptMonologuesElementsType { text = 0, punct = 1, unknown = 2 }
+	export enum TranscriptMonologuesElementsType { text = 'text', punct = 'punct', unknown = 'unknown' }
 
 	@Injectable()
 	export class MyClient {
@@ -261,9 +261,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetCaptionsAccept { 'application/x-subrip' = 0, 'text/vtt' = 1 }
+	export enum GetCaptionsAccept { 'application/x-subrip' = 'application/x-subrip', 'text/vtt' = 'text/vtt' }
 
-	export enum GetTranscriptByIdAccept { 'application/vnd.rev.transcript.v1.0+json' = 0, 'text/plain' = 1 }
+	export enum GetTranscriptByIdAccept { 'application/vnd.rev.transcript.v1.0+json' = 'application/vnd.rev.transcript.v1.0+json', 'text/plain' = 'text/plain' }
 
 }
 

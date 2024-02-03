@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AliasLifecycle { AVAILABLE = 0, CREATING = 1, DELETING = 2, CREATE_FAILED = 3, DELETE_FAILED = 4 }
+	export enum AliasLifecycle { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', DELETING = 'DELETING', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED' }
 
 
 	/** The request object specifying one or more DNS alias names to associate with an Amazon FSx for Windows File Server file system. */
@@ -125,7 +125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataRepositoryTaskLifecycle { PENDING = 0, EXECUTING = 1, FAILED = 2, SUCCEEDED = 3, CANCELED = 4, CANCELING = 5 }
+	export enum DataRepositoryTaskLifecycle { PENDING = 'PENDING', EXECUTING = 'EXECUTING', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', CANCELED = 'CANCELED', CANCELING = 'CANCELING' }
 
 
 	/** Cancels a data repository task. */
@@ -301,7 +301,7 @@ export namespace MyNS {
 
 
 	/** <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new user-initiated backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file system.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li> </ul> */
-	export enum BackupLifecycle { AVAILABLE = 0, CREATING = 1, TRANSFERRING = 2, DELETED = 3, FAILED = 4, PENDING = 5, COPYING = 6 }
+	export enum BackupLifecycle { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', TRANSFERRING = 'TRANSFERRING', DELETED = 'DELETED', FAILED = 'FAILED', PENDING = 'PENDING', COPYING = 'COPYING' }
 
 
 	/** If backup creation fails, this structure contains the details of that failure. */
@@ -322,7 +322,7 @@ export namespace MyNS {
 
 
 	/** The type of the backup. */
-	export enum BackupType { AUTOMATIC = 0, USER_INITIATED = 1, AWS_BACKUP = 2 }
+	export enum BackupType { AUTOMATIC = 'AUTOMATIC', USER_INITIATED = 'USER_INITIATED', AWS_BACKUP = 'AWS_BACKUP' }
 
 
 	/** Specifies a key-value pair for a resource tag. */
@@ -417,11 +417,11 @@ export namespace MyNS {
 
 
 	/** The type of file system. */
-	export enum FileSystemType { WINDOWS = 0, LUSTRE = 1, ONTAP = 2, OPENZFS = 3 }
+	export enum FileSystemType { WINDOWS = 'WINDOWS', LUSTRE = 'LUSTRE', ONTAP = 'ONTAP', OPENZFS = 'OPENZFS' }
 
 
 	/** The lifecycle status of the file system. */
-	export enum FileSystemLifecycle { AVAILABLE = 0, CREATING = 1, FAILED = 2, DELETING = 3, MISCONFIGURED = 4, UPDATING = 5, MISCONFIGURED_UNAVAILABLE = 6 }
+	export enum FileSystemLifecycle { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', FAILED = 'FAILED', DELETING = 'DELETING', MISCONFIGURED = 'MISCONFIGURED', UPDATING = 'UPDATING', MISCONFIGURED_UNAVAILABLE = 'MISCONFIGURED_UNAVAILABLE' }
 
 
 	/** A structure providing details of any failures that occurred. */
@@ -442,7 +442,7 @@ export namespace MyNS {
 
 
 	/** Specifies the file system's storage type. */
-	export enum StorageType { SSD = 0, HDD = 1 }
+	export enum StorageType { SSD = 'SSD', HDD = 'HDD' }
 
 
 	/** The configuration for this Microsoft Windows file system. */
@@ -526,11 +526,11 @@ export namespace MyNS {
 
 	}
 
-	export enum WindowsDeploymentType { MULTI_AZ_1 = 0, SINGLE_AZ_1 = 1, SINGLE_AZ_2 = 2 }
+	export enum WindowsDeploymentType { MULTI_AZ_1 = 'MULTI_AZ_1', SINGLE_AZ_1 = 'SINGLE_AZ_1', SINGLE_AZ_2 = 'SINGLE_AZ_2' }
 
 
 	/** An enumeration specifying the currently ongoing maintenance operation. */
-	export enum FileSystemMaintenanceOperation { PATCHING = 0, BACKING_UP = 1 }
+	export enum FileSystemMaintenanceOperation { PATCHING = 'PATCHING', BACKING_UP = 'BACKING_UP' }
 
 
 	/** The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/file-access-auditing.html"> File access auditing</a>. */
@@ -563,7 +563,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WindowsAccessAuditLogLevel { DISABLED = 0, SUCCESS_ONLY = 1, FAILURE_ONLY = 2, SUCCESS_AND_FAILURE = 3 }
+	export enum WindowsAccessAuditLogLevel { DISABLED = 'DISABLED', SUCCESS_ONLY = 'SUCCESS_ONLY', FAILURE_ONLY = 'FAILURE_ONLY', SUCCESS_AND_FAILURE = 'SUCCESS_AND_FAILURE' }
 
 
 	/** The configuration for the Amazon FSx for Lustre file system. */
@@ -667,9 +667,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataRepositoryLifecycle { CREATING = 0, AVAILABLE = 1, MISCONFIGURED = 2, UPDATING = 3, DELETING = 4, FAILED = 5 }
+	export enum DataRepositoryLifecycle { CREATING = 'CREATING', AVAILABLE = 'AVAILABLE', MISCONFIGURED = 'MISCONFIGURED', UPDATING = 'UPDATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
-	export enum AutoImportPolicyType { NONE = 0, NEW = 1, NEW_CHANGED = 2, NEW_CHANGED_DELETED = 3 }
+	export enum AutoImportPolicyType { NONE = 'NONE', NEW = 'NEW', NEW_CHANGED = 'NEW_CHANGED', NEW_CHANGED_DELETED = 'NEW_CHANGED_DELETED' }
 
 
 	/** Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>. */
@@ -700,11 +700,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LustreDeploymentType { SCRATCH_1 = 0, SCRATCH_2 = 1, PERSISTENT_1 = 2, PERSISTENT_2 = 3 }
+	export enum LustreDeploymentType { SCRATCH_1 = 'SCRATCH_1', SCRATCH_2 = 'SCRATCH_2', PERSISTENT_1 = 'PERSISTENT_1', PERSISTENT_2 = 'PERSISTENT_2' }
 
-	export enum DriveCacheType { NONE = 0, READ = 1 }
+	export enum DriveCacheType { NONE = 'NONE', READ = 'READ' }
 
-	export enum DataCompressionType { NONE = 0, LZ4 = 1 }
+	export enum DataCompressionType { NONE = 'NONE', LZ4 = 'LZ4' }
 
 
 	/** The configuration for Lustre logging used to write the enabled logging events for your Amazon FSx for Lustre file system or Amazon File Cache resource to Amazon CloudWatch Logs. */
@@ -730,7 +730,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LustreAccessAuditLogLevel { DISABLED = 0, WARN_ONLY = 1, ERROR_ONLY = 2, WARN_ERROR = 3 }
+	export enum LustreAccessAuditLogLevel { DISABLED = 'DISABLED', WARN_ONLY = 'WARN_ONLY', ERROR_ONLY = 'ERROR_ONLY', WARN_ERROR = 'WARN_ERROR' }
 
 
 	/** <p>The configuration for Lustre root squash used to restrict root-level access from clients that try to access your FSx for Lustre file system as root. Use the <code>RootSquash</code> parameter to enable root squash. To learn more about Lustre root squash, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/root-squash.html">Lustre root squash</a>.</p> <p>You can also use the <code>NoSquashNids</code> parameter to provide an array of clients who are not affected by the root squash setting. These clients will access the file system as root, with unrestricted privileges.</p> */
@@ -790,9 +790,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AdministrativeActionAdministrativeActionType { FILE_SYSTEM_UPDATE = 0, STORAGE_OPTIMIZATION = 1, FILE_SYSTEM_ALIAS_ASSOCIATION = 2, FILE_SYSTEM_ALIAS_DISASSOCIATION = 3, VOLUME_UPDATE = 4, SNAPSHOT_UPDATE = 5, RELEASE_NFS_V3_LOCKS = 6, VOLUME_RESTORE = 7 }
+	export enum AdministrativeActionAdministrativeActionType { FILE_SYSTEM_UPDATE = 'FILE_SYSTEM_UPDATE', STORAGE_OPTIMIZATION = 'STORAGE_OPTIMIZATION', FILE_SYSTEM_ALIAS_ASSOCIATION = 'FILE_SYSTEM_ALIAS_ASSOCIATION', FILE_SYSTEM_ALIAS_DISASSOCIATION = 'FILE_SYSTEM_ALIAS_DISASSOCIATION', VOLUME_UPDATE = 'VOLUME_UPDATE', SNAPSHOT_UPDATE = 'SNAPSHOT_UPDATE', RELEASE_NFS_V3_LOCKS = 'RELEASE_NFS_V3_LOCKS', VOLUME_RESTORE = 'VOLUME_RESTORE' }
 
-	export enum Status { FAILED = 0, IN_PROGRESS = 1, PENDING = 2, COMPLETED = 3, UPDATED_OPTIMIZING = 4 }
+	export enum Status { FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS', PENDING = 'PENDING', COMPLETED = 'COMPLETED', UPDATED_OPTIMIZING = 'UPDATED_OPTIMIZING' }
 
 
 	/** Provides information about a failed administrative action. */
@@ -887,7 +887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeLifecycle { CREATING = 0, CREATED = 1, DELETING = 2, FAILED = 3, MISCONFIGURED = 4, PENDING = 5, AVAILABLE = 6 }
+	export enum VolumeLifecycle { CREATING = 'CREATING', CREATED = 'CREATED', DELETING = 'DELETING', FAILED = 'FAILED', MISCONFIGURED = 'MISCONFIGURED', PENDING = 'PENDING', AVAILABLE = 'AVAILABLE' }
 
 
 	/** The configuration of an Amazon FSx for NetApp ONTAP volume. */
@@ -938,9 +938,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FlexCacheEndpointType { NONE = 0, ORIGIN = 1, CACHE = 2 }
+	export enum FlexCacheEndpointType { NONE = 'NONE', ORIGIN = 'ORIGIN', CACHE = 'CACHE' }
 
-	export enum SecurityStyle { UNIX = 0, NTFS = 1, MIXED = 2 }
+	export enum SecurityStyle { UNIX = 'UNIX', NTFS = 'NTFS', MIXED = 'MIXED' }
 
 
 	/** <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p> <p>Valid tiering policies are the following:</p> <ul> <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li> </ul> <ul> <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li> </ul> <ul> <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li> </ul> <ul> <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li> </ul> */
@@ -962,9 +962,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TieringPolicyName { SNAPSHOT_ONLY = 0, AUTO = 1, ALL = 2, NONE = 3 }
+	export enum TieringPolicyName { SNAPSHOT_ONLY = 'SNAPSHOT_ONLY', AUTO = 'AUTO', ALL = 'ALL', NONE = 'NONE' }
 
-	export enum OntapVolumeType { RW = 0, DP = 1, LS = 2 }
+	export enum OntapVolumeType { RW = 'RW', DP = 'DP', LS = 'LS' }
 
 
 	/** Specifies the SnapLock configuration for an FSx for ONTAP SnapLock volume.  */
@@ -1018,9 +1018,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutocommitPeriodType { MINUTES = 0, HOURS = 1, DAYS = 2, MONTHS = 3, YEARS = 4, NONE = 5 }
+	export enum AutocommitPeriodType { MINUTES = 'MINUTES', HOURS = 'HOURS', DAYS = 'DAYS', MONTHS = 'MONTHS', YEARS = 'YEARS', NONE = 'NONE' }
 
-	export enum PrivilegedDelete { DISABLED = 0, ENABLED = 1, PERMANENTLY_DISABLED = 2 }
+	export enum PrivilegedDelete { DISABLED = 'DISABLED', ENABLED = 'ENABLED', PERMANENTLY_DISABLED = 'PERMANENTLY_DISABLED' }
 
 
 	/** The configuration to set the retention period of an FSx for ONTAP SnapLock volume. The retention period includes default, maximum, and minimum settings. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-retention.html">Working with the retention period in SnapLock</a>.  */
@@ -1069,11 +1069,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RetentionPeriodType { SECONDS = 0, MINUTES = 1, HOURS = 2, DAYS = 3, MONTHS = 4, YEARS = 5, INFINITE = 6, UNSPECIFIED = 7 }
+	export enum RetentionPeriodType { SECONDS = 'SECONDS', MINUTES = 'MINUTES', HOURS = 'HOURS', DAYS = 'DAYS', MONTHS = 'MONTHS', YEARS = 'YEARS', INFINITE = 'INFINITE', UNSPECIFIED = 'UNSPECIFIED' }
 
-	export enum SnaplockType { COMPLIANCE = 0, ENTERPRISE = 1 }
+	export enum SnaplockType { COMPLIANCE = 'COMPLIANCE', ENTERPRISE = 'ENTERPRISE' }
 
-	export enum VolumeType { ONTAP = 0, OPENZFS = 1 }
+	export enum VolumeType { ONTAP = 'ONTAP', OPENZFS = 'OPENZFS' }
 
 
 	/** Describes why a resource lifecycle state changed. */
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenZFSDataCompressionType { NONE = 0, ZSTD = 1, LZ4 = 2 }
+	export enum OpenZFSDataCompressionType { NONE = 'NONE', ZSTD = 'ZSTD', LZ4 = 'LZ4' }
 
 
 	/** The snapshot configuration to use when creating an OpenZFS volume from a snapshot. */
@@ -1188,7 +1188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenZFSCopyStrategy { CLONE = 0, FULL_COPY = 1 }
+	export enum OpenZFSCopyStrategy { CLONE = 'CLONE', FULL_COPY = 'FULL_COPY' }
 
 
 	/** The Network File System (NFS) configurations for mounting an Amazon FSx for OpenZFS file system.  */
@@ -1266,7 +1266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenZFSQuotaType { USER = 0, GROUP = 1 }
+	export enum OpenZFSQuotaType { USER = 'USER', GROUP = 'GROUP' }
 
 
 	/** A snapshot of an Amazon FSx for OpenZFS volume. */
@@ -1327,7 +1327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotLifecycle { PENDING = 0, CREATING = 1, DELETING = 2, AVAILABLE = 3 }
+	export enum SnapshotLifecycle { PENDING = 'PENDING', CREATING = 'CREATING', DELETING = 'DELETING', AVAILABLE = 'AVAILABLE' }
 
 
 	/** Configuration for the FSx for NetApp ONTAP file system. */
@@ -1430,7 +1430,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OntapDeploymentType { MULTI_AZ_1 = 0, SINGLE_AZ_1 = 1 }
+	export enum OntapDeploymentType { MULTI_AZ_1 = 'MULTI_AZ_1', SINGLE_AZ_1 = 'SINGLE_AZ_1' }
 
 
 	/** An Amazon FSx for NetApp ONTAP file system has the following endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. */
@@ -1498,7 +1498,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskIopsConfigurationMode { AUTOMATIC = 0, USER_PROVISIONED = 1 }
+	export enum DiskIopsConfigurationMode { AUTOMATIC = 'AUTOMATIC', USER_PROVISIONED = 'USER_PROVISIONED' }
 
 
 	/** The configuration for the Amazon FSx for OpenZFS file system.  */
@@ -1577,7 +1577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenZFSDeploymentType { SINGLE_AZ_1 = 0, SINGLE_AZ_2 = 1 }
+	export enum OpenZFSDeploymentType { SINGLE_AZ_1 = 'SINGLE_AZ_1', SINGLE_AZ_2 = 'SINGLE_AZ_2' }
 
 
 	/** The Microsoft Active Directory attributes of the Amazon FSx for Windows File Server file system. */
@@ -1614,7 +1614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { FILE_SYSTEM = 0, VOLUME = 1 }
+	export enum ResourceType { FILE_SYSTEM = 'FILE_SYSTEM', VOLUME = 'VOLUME' }
 
 	export interface CopyBackupRequest {
 
@@ -1945,7 +1945,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { NEW = 0, CHANGED = 1, DELETED = 2 }
+	export enum EventType { NEW = 'NEW', CHANGED = 'CHANGED', DELETED = 'DELETED' }
 
 
 	/** <p>Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once your application finishes modifying the file.</p> <p>The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository association.</p> */
@@ -1985,7 +1985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NfsVersion { NFS3 = 0 }
+	export enum NfsVersion { NFS3 = 'NFS3' }
 
 	export interface CreateDataRepositoryAssociationRequest {
 
@@ -2155,7 +2155,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataRepositoryTaskType { EXPORT_TO_REPOSITORY = 0, IMPORT_METADATA_FROM_REPOSITORY = 1, RELEASE_DATA_FROM_FILESYSTEM = 2, AUTO_RELEASE_DATA = 3 }
+	export enum DataRepositoryTaskType { EXPORT_TO_REPOSITORY = 'EXPORT_TO_REPOSITORY', IMPORT_METADATA_FROM_REPOSITORY = 'IMPORT_METADATA_FROM_REPOSITORY', RELEASE_DATA_FROM_FILESYSTEM = 'RELEASE_DATA_FROM_FILESYSTEM', AUTO_RELEASE_DATA = 'AUTO_RELEASE_DATA' }
 
 
 	/** Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>. */
@@ -2245,9 +2245,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportFormat { REPORT_CSV_20191124 = 0 }
+	export enum ReportFormat { REPORT_CSV_20191124 = 'REPORT_CSV_20191124' }
 
-	export enum ReportScope { FAILED_FILES_ONLY = 0 }
+	export enum ReportScope { FAILED_FILES_ONLY = 'FAILED_FILES_ONLY' }
 
 	export interface CreateDataRepositoryTaskRequest {
 
@@ -2445,9 +2445,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FileCacheType { LUSTRE = 0 }
+	export enum FileCacheType { LUSTRE = 'LUSTRE' }
 
-	export enum FileCacheLifecycle { AVAILABLE = 0, CREATING = 1, DELETING = 2, UPDATING = 3, FAILED = 4 }
+	export enum FileCacheLifecycle { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', DELETING = 'DELETING', UPDATING = 'UPDATING', FAILED = 'FAILED' }
 
 
 	/** A structure providing details of any failures that occurred. */
@@ -2506,7 +2506,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileCacheLustreDeploymentType { CACHE_1 = 0 }
+	export enum FileCacheLustreDeploymentType { CACHE_1 = 'CACHE_1' }
 
 
 	/** The configuration for a Lustre MDT (Metadata Target) storage volume. The metadata on Amazon File Cache is managed by a Lustre Metadata Server (MDS) while the actual metadata is persisted on an MDT. */
@@ -3537,9 +3537,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageVirtualMachineLifecycle { CREATED = 0, CREATING = 1, DELETING = 2, FAILED = 3, MISCONFIGURED = 4, PENDING = 5 }
+	export enum StorageVirtualMachineLifecycle { CREATED = 'CREATED', CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', MISCONFIGURED = 'MISCONFIGURED', PENDING = 'PENDING' }
 
-	export enum StorageVirtualMachineSubtype { DEFAULT = 0, DP_DESTINATION = 1, SYNC_DESTINATION = 2, SYNC_SOURCE = 3 }
+	export enum StorageVirtualMachineSubtype { DEFAULT = 'DEFAULT', DP_DESTINATION = 'DP_DESTINATION', SYNC_DESTINATION = 'SYNC_DESTINATION', SYNC_SOURCE = 'SYNC_SOURCE' }
 
 	export interface CreateStorageVirtualMachineRequest {
 		ActiveDirectoryConfiguration?: CreateSvmActiveDirectoryConfiguration;
@@ -3737,7 +3737,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputOntapVolumeType { RW = 0, DP = 1 }
+	export enum InputOntapVolumeType { RW = 'RW', DP = 'DP' }
 
 
 	/** Defines the SnapLock configuration when creating an FSx for ONTAP SnapLock volume.  */
@@ -4310,7 +4310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteFileSystemOpenZFSOption { DELETE_CHILD_VOLUMES_AND_SNAPSHOTS = 0 }
+	export enum DeleteFileSystemOpenZFSOption { DELETE_CHILD_VOLUMES_AND_SNAPSHOTS = 'DELETE_CHILD_VOLUMES_AND_SNAPSHOTS' }
 
 	export interface DeleteSnapshotResponse {
 		SnapshotId?: string;
@@ -4547,7 +4547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteOpenZFSVolumeOption { DELETE_CHILD_VOLUMES_AND_SNAPSHOTS = 0 }
+	export enum DeleteOpenZFSVolumeOption { DELETE_CHILD_VOLUMES_AND_SNAPSHOTS = 'DELETE_CHILD_VOLUMES_AND_SNAPSHOTS' }
 
 
 	/** Response object for the <code>DescribeBackups</code> operation. */
@@ -4609,7 +4609,7 @@ export namespace MyNS {
 
 
 	/** The name for a filter. */
-	export enum FilterName { 'file-system-id' = 0, 'backup-type' = 1, 'file-system-type' = 2, 'volume-id' = 3, 'data-repository-type' = 4, 'file-cache-id' = 5, 'file-cache-type' = 6 }
+	export enum FilterName { 'file-system-id' = 'file-system-id', 'backup-type' = 'backup-type', 'file-system-type' = 'file-system-type', 'volume-id' = 'volume-id', 'data-repository-type' = 'data-repository-type', 'file-cache-id' = 'file-cache-id', 'file-cache-type' = 'file-cache-type' }
 
 	export interface DescribeDataRepositoryAssociationsResponse {
 		Associations?: Array<DataRepositoryAssociation>;
@@ -4768,7 +4768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataRepositoryTaskFilterName { 'file-system-id' = 0, 'task-lifecycle' = 1, 'data-repository-association-id' = 2, 'file-cache-id' = 3 }
+	export enum DataRepositoryTaskFilterName { 'file-system-id' = 'file-system-id', 'task-lifecycle' = 'task-lifecycle', 'data-repository-association-id' = 'data-repository-association-id', 'file-cache-id' = 'file-cache-id' }
 
 	export interface DescribeFileCachesResponse {
 		FileCaches?: Array<FileCache>;
@@ -5124,7 +5124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotFilterName { 'file-system-id' = 0, 'volume-id' = 1 }
+	export enum SnapshotFilterName { 'file-system-id' = 'file-system-id', 'volume-id' = 'volume-id' }
 
 	export interface DescribeStorageVirtualMachinesResponse {
 		StorageVirtualMachines?: Array<StorageVirtualMachine>;
@@ -5212,7 +5212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageVirtualMachineFilterName { 'file-system-id' = 0 }
+	export enum StorageVirtualMachineFilterName { 'file-system-id' = 'file-system-id' }
 
 	export interface DescribeVolumesResponse {
 		Volumes?: Array<Volume>;
@@ -5300,7 +5300,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeFilterName { 'file-system-id' = 0, 'storage-virtual-machine-id' = 1 }
+	export enum VolumeFilterName { 'file-system-id' = 'file-system-id', 'storage-virtual-machine-id' = 'storage-virtual-machine-id' }
 
 
 	/** The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file system. Use the API operation to monitor the status of the aliases Amazon FSx is removing from the file system. */
@@ -5543,7 +5543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreOpenZFSVolumeOption { DELETE_INTERMEDIATE_SNAPSHOTS = 0, DELETE_CLONED_VOLUMES = 1 }
+	export enum RestoreOpenZFSVolumeOption { DELETE_INTERMEDIATE_SNAPSHOTS = 'DELETE_INTERMEDIATE_SNAPSHOTS', DELETE_CLONED_VOLUMES = 'DELETE_CLONED_VOLUMES' }
 
 
 	/** The response object for the <code>TagResource</code> operation. */
@@ -6290,9 +6290,9 @@ export namespace MyNS {
 
 
 	/** <p>Describes the type of administrative action, as follows:</p> <ul> <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li> <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p> <ul> <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li> <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li> </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li> <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li> <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li> <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li> <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li> <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li> <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li> </ul> */
-	export enum AdministrativeActionType { FILE_SYSTEM_UPDATE = 0, STORAGE_OPTIMIZATION = 1, FILE_SYSTEM_ALIAS_ASSOCIATION = 2, FILE_SYSTEM_ALIAS_DISASSOCIATION = 3, VOLUME_UPDATE = 4, SNAPSHOT_UPDATE = 5, RELEASE_NFS_V3_LOCKS = 6, VOLUME_RESTORE = 7 }
+	export enum AdministrativeActionType { FILE_SYSTEM_UPDATE = 'FILE_SYSTEM_UPDATE', STORAGE_OPTIMIZATION = 'STORAGE_OPTIMIZATION', FILE_SYSTEM_ALIAS_ASSOCIATION = 'FILE_SYSTEM_ALIAS_ASSOCIATION', FILE_SYSTEM_ALIAS_DISASSOCIATION = 'FILE_SYSTEM_ALIAS_DISASSOCIATION', VOLUME_UPDATE = 'VOLUME_UPDATE', SNAPSHOT_UPDATE = 'SNAPSHOT_UPDATE', RELEASE_NFS_V3_LOCKS = 'RELEASE_NFS_V3_LOCKS', VOLUME_RESTORE = 'VOLUME_RESTORE' }
 
-	export enum StorageVirtualMachineRootVolumeSecurityStyle { UNIX = 0, NTFS = 1, MIXED = 2 }
+	export enum StorageVirtualMachineRootVolumeSecurityStyle { UNIX = 'UNIX', NTFS = 'NTFS', MIXED = 'MIXED' }
 
 	@Injectable()
 	export class MyClient {
@@ -6689,87 +6689,87 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateFileSystemAliasesX_Amz_Target { 'AWSSimbaAPIService_v20180301.AssociateFileSystemAliases' = 0 }
+	export enum AssociateFileSystemAliasesX_Amz_Target { 'AWSSimbaAPIService_v20180301.AssociateFileSystemAliases' = 'AWSSimbaAPIService_v20180301.AssociateFileSystemAliases' }
 
-	export enum CancelDataRepositoryTaskX_Amz_Target { 'AWSSimbaAPIService_v20180301.CancelDataRepositoryTask' = 0 }
+	export enum CancelDataRepositoryTaskX_Amz_Target { 'AWSSimbaAPIService_v20180301.CancelDataRepositoryTask' = 'AWSSimbaAPIService_v20180301.CancelDataRepositoryTask' }
 
-	export enum CopyBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CopyBackup' = 0 }
+	export enum CopyBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CopyBackup' = 'AWSSimbaAPIService_v20180301.CopyBackup' }
 
-	export enum CreateBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateBackup' = 0 }
+	export enum CreateBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateBackup' = 'AWSSimbaAPIService_v20180301.CreateBackup' }
 
-	export enum CreateDataRepositoryAssociationX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateDataRepositoryAssociation' = 0 }
+	export enum CreateDataRepositoryAssociationX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateDataRepositoryAssociation' = 'AWSSimbaAPIService_v20180301.CreateDataRepositoryAssociation' }
 
-	export enum CreateDataRepositoryTaskX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateDataRepositoryTask' = 0 }
+	export enum CreateDataRepositoryTaskX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateDataRepositoryTask' = 'AWSSimbaAPIService_v20180301.CreateDataRepositoryTask' }
 
-	export enum CreateFileCacheX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileCache' = 0 }
+	export enum CreateFileCacheX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileCache' = 'AWSSimbaAPIService_v20180301.CreateFileCache' }
 
-	export enum CreateFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileSystem' = 0 }
+	export enum CreateFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileSystem' = 'AWSSimbaAPIService_v20180301.CreateFileSystem' }
 
-	export enum CreateFileSystemFromBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileSystemFromBackup' = 0 }
+	export enum CreateFileSystemFromBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileSystemFromBackup' = 'AWSSimbaAPIService_v20180301.CreateFileSystemFromBackup' }
 
-	export enum CreateSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateSnapshot' = 0 }
+	export enum CreateSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateSnapshot' = 'AWSSimbaAPIService_v20180301.CreateSnapshot' }
 
-	export enum CreateStorageVirtualMachineX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateStorageVirtualMachine' = 0 }
+	export enum CreateStorageVirtualMachineX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateStorageVirtualMachine' = 'AWSSimbaAPIService_v20180301.CreateStorageVirtualMachine' }
 
-	export enum CreateVolumeX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateVolume' = 0 }
+	export enum CreateVolumeX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateVolume' = 'AWSSimbaAPIService_v20180301.CreateVolume' }
 
-	export enum CreateVolumeFromBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateVolumeFromBackup' = 0 }
+	export enum CreateVolumeFromBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateVolumeFromBackup' = 'AWSSimbaAPIService_v20180301.CreateVolumeFromBackup' }
 
-	export enum DeleteBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteBackup' = 0 }
+	export enum DeleteBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteBackup' = 'AWSSimbaAPIService_v20180301.DeleteBackup' }
 
-	export enum DeleteDataRepositoryAssociationX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteDataRepositoryAssociation' = 0 }
+	export enum DeleteDataRepositoryAssociationX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteDataRepositoryAssociation' = 'AWSSimbaAPIService_v20180301.DeleteDataRepositoryAssociation' }
 
-	export enum DeleteFileCacheX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteFileCache' = 0 }
+	export enum DeleteFileCacheX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteFileCache' = 'AWSSimbaAPIService_v20180301.DeleteFileCache' }
 
-	export enum DeleteFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteFileSystem' = 0 }
+	export enum DeleteFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteFileSystem' = 'AWSSimbaAPIService_v20180301.DeleteFileSystem' }
 
-	export enum DeleteSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteSnapshot' = 0 }
+	export enum DeleteSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteSnapshot' = 'AWSSimbaAPIService_v20180301.DeleteSnapshot' }
 
-	export enum DeleteStorageVirtualMachineX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteStorageVirtualMachine' = 0 }
+	export enum DeleteStorageVirtualMachineX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteStorageVirtualMachine' = 'AWSSimbaAPIService_v20180301.DeleteStorageVirtualMachine' }
 
-	export enum DeleteVolumeX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteVolume' = 0 }
+	export enum DeleteVolumeX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteVolume' = 'AWSSimbaAPIService_v20180301.DeleteVolume' }
 
-	export enum DescribeBackupsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeBackups' = 0 }
+	export enum DescribeBackupsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeBackups' = 'AWSSimbaAPIService_v20180301.DescribeBackups' }
 
-	export enum DescribeDataRepositoryAssociationsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeDataRepositoryAssociations' = 0 }
+	export enum DescribeDataRepositoryAssociationsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeDataRepositoryAssociations' = 'AWSSimbaAPIService_v20180301.DescribeDataRepositoryAssociations' }
 
-	export enum DescribeDataRepositoryTasksX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks' = 0 }
+	export enum DescribeDataRepositoryTasksX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks' = 'AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks' }
 
-	export enum DescribeFileCachesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeFileCaches' = 0 }
+	export enum DescribeFileCachesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeFileCaches' = 'AWSSimbaAPIService_v20180301.DescribeFileCaches' }
 
-	export enum DescribeFileSystemAliasesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeFileSystemAliases' = 0 }
+	export enum DescribeFileSystemAliasesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeFileSystemAliases' = 'AWSSimbaAPIService_v20180301.DescribeFileSystemAliases' }
 
-	export enum DescribeFileSystemsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeFileSystems' = 0 }
+	export enum DescribeFileSystemsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeFileSystems' = 'AWSSimbaAPIService_v20180301.DescribeFileSystems' }
 
-	export enum DescribeSnapshotsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeSnapshots' = 0 }
+	export enum DescribeSnapshotsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeSnapshots' = 'AWSSimbaAPIService_v20180301.DescribeSnapshots' }
 
-	export enum DescribeStorageVirtualMachinesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeStorageVirtualMachines' = 0 }
+	export enum DescribeStorageVirtualMachinesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeStorageVirtualMachines' = 'AWSSimbaAPIService_v20180301.DescribeStorageVirtualMachines' }
 
-	export enum DescribeVolumesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeVolumes' = 0 }
+	export enum DescribeVolumesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeVolumes' = 'AWSSimbaAPIService_v20180301.DescribeVolumes' }
 
-	export enum DisassociateFileSystemAliasesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DisassociateFileSystemAliases' = 0 }
+	export enum DisassociateFileSystemAliasesX_Amz_Target { 'AWSSimbaAPIService_v20180301.DisassociateFileSystemAliases' = 'AWSSimbaAPIService_v20180301.DisassociateFileSystemAliases' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.ListTagsForResource' = 'AWSSimbaAPIService_v20180301.ListTagsForResource' }
 
-	export enum ReleaseFileSystemNfsV3LocksX_Amz_Target { 'AWSSimbaAPIService_v20180301.ReleaseFileSystemNfsV3Locks' = 0 }
+	export enum ReleaseFileSystemNfsV3LocksX_Amz_Target { 'AWSSimbaAPIService_v20180301.ReleaseFileSystemNfsV3Locks' = 'AWSSimbaAPIService_v20180301.ReleaseFileSystemNfsV3Locks' }
 
-	export enum RestoreVolumeFromSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.RestoreVolumeFromSnapshot' = 0 }
+	export enum RestoreVolumeFromSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.RestoreVolumeFromSnapshot' = 'AWSSimbaAPIService_v20180301.RestoreVolumeFromSnapshot' }
 
-	export enum TagResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.TagResource' = 'AWSSimbaAPIService_v20180301.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.UntagResource' = 'AWSSimbaAPIService_v20180301.UntagResource' }
 
-	export enum UpdateDataRepositoryAssociationX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateDataRepositoryAssociation' = 0 }
+	export enum UpdateDataRepositoryAssociationX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateDataRepositoryAssociation' = 'AWSSimbaAPIService_v20180301.UpdateDataRepositoryAssociation' }
 
-	export enum UpdateFileCacheX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateFileCache' = 0 }
+	export enum UpdateFileCacheX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateFileCache' = 'AWSSimbaAPIService_v20180301.UpdateFileCache' }
 
-	export enum UpdateFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateFileSystem' = 0 }
+	export enum UpdateFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateFileSystem' = 'AWSSimbaAPIService_v20180301.UpdateFileSystem' }
 
-	export enum UpdateSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateSnapshot' = 0 }
+	export enum UpdateSnapshotX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateSnapshot' = 'AWSSimbaAPIService_v20180301.UpdateSnapshot' }
 
-	export enum UpdateStorageVirtualMachineX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateStorageVirtualMachine' = 0 }
+	export enum UpdateStorageVirtualMachineX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateStorageVirtualMachine' = 'AWSSimbaAPIService_v20180301.UpdateStorageVirtualMachine' }
 
-	export enum UpdateVolumeX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateVolume' = 0 }
+	export enum UpdateVolumeX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateVolume' = 'AWSSimbaAPIService_v20180301.UpdateVolume' }
 
 }
 

@@ -209,7 +209,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Tasks_UpdateSubscriptionLevelTaskStateTaskUpdateActionType { Activate = 0, Dismiss = 1, Start = 2, Resolve = 3, Close = 4 }
+	export enum Tasks_UpdateSubscriptionLevelTaskStateTaskUpdateActionType { Activate = 'Activate', Dismiss = 'Dismiss', Start = 'Start', Resolve = 'Resolve', Close = 'Close' }
 
 }
 

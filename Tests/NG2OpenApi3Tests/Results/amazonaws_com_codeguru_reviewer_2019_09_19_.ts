@@ -63,9 +63,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProviderType { CodeCommit = 0, GitHub = 1, Bitbucket = 2, GitHubEnterpriseServer = 3, S3Bucket = 4 }
+	export enum ProviderType { CodeCommit = 'CodeCommit', GitHub = 'GitHub', Bitbucket = 'Bitbucket', GitHubEnterpriseServer = 'GitHubEnterpriseServer', S3Bucket = 'S3Bucket' }
 
-	export enum RepositoryAssociationState { Associated = 0, Associating = 1, Failed = 2, Disassociating = 3, Disassociated = 4 }
+	export enum RepositoryAssociationState { Associated = 'Associated', Associating = 'Associating', Failed = 'Failed', Disassociating = 'Disassociating', Disassociated = 'Disassociated' }
 
 
 	/** <p>An object that contains:</p> <ul> <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li> </ul> */
@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionOption { AWS_OWNED_CMK = 0, CUSTOMER_MANAGED_CMK = 1 }
+	export enum EncryptionOption { AWS_OWNED_CMK = 'AWS_OWNED_CMK', CUSTOMER_MANAGED_CMK = 'CUSTOMER_MANAGED_CMK' }
 
 
 	/** Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. */
@@ -344,9 +344,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobState { Completed = 0, Pending = 1, Failed = 2, Deleting = 3 }
+	export enum JobState { Completed = 'Completed', Pending = 'Pending', Failed = 'Failed', Deleting = 'Deleting' }
 
-	export enum Type { PullRequest = 0, RepositoryAnalysis = 1 }
+	export enum Type { PullRequest = 'PullRequest', RepositoryAnalysis = 'RepositoryAnalysis' }
 
 
 	/** Specifies the source code that is analyzed in a code review. */
@@ -507,7 +507,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VendorName { GitHub = 0, GitLab = 1, NativeS3 = 2 }
+	export enum VendorName { GitHub = 'GitHub', GitLab = 'GitLab', NativeS3 = 'NativeS3' }
 
 
 	/** Information about the statistics from the code review. */
@@ -532,9 +532,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisType { Security = 0, CodeQuality = 1 }
+	export enum AnalysisType { Security = 'Security', CodeQuality = 'CodeQuality' }
 
-	export enum ConfigFileState { Present = 0, Absent = 1, PresentWithErrors = 2 }
+	export enum ConfigFileState { Present = 'Present', Absent = 'Absent', PresentWithErrors = 'PresentWithErrors' }
 
 
 	/** A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>. */
@@ -616,7 +616,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Reaction { ThumbsUp = 0, ThumbsDown = 1 }
+	export enum Reaction { ThumbsUp = 'ThumbsUp', ThumbsDown = 'ThumbsDown' }
 
 	export interface DescribeRepositoryAssociationResponse {
 		RepositoryAssociation?: RepositoryAssociation;
@@ -822,7 +822,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationCategory { AWSBestPractices = 0, AWSCloudFormationIssues = 1, DuplicateCode = 2, CodeMaintenanceIssues = 3, ConcurrencyIssues = 4, InputValidations = 5, PythonBestPractices = 6, JavaBestPractices = 7, ResourceLeaks = 8, SecurityIssues = 9, CodeInconsistencies = 10 }
+	export enum RecommendationCategory { AWSBestPractices = 'AWSBestPractices', AWSCloudFormationIssues = 'AWSCloudFormationIssues', DuplicateCode = 'DuplicateCode', CodeMaintenanceIssues = 'CodeMaintenanceIssues', ConcurrencyIssues = 'ConcurrencyIssues', InputValidations = 'InputValidations', PythonBestPractices = 'PythonBestPractices', JavaBestPractices = 'JavaBestPractices', ResourceLeaks = 'ResourceLeaks', SecurityIssues = 'SecurityIssues', CodeInconsistencies = 'CodeInconsistencies' }
 
 
 	/** Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule. */
@@ -851,7 +851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Severity { Info = 0, Low = 1, Medium = 2, High = 3, Critical = 4 }
+	export enum Severity { Info = 'Info', Low = 'Low', Medium = 'Medium', High = 'High', Critical = 'Critical' }
 
 	export interface ListRepositoryAssociationsResponse {
 		RepositoryAssociationSummaries?: Array<RepositoryAssociationSummary>;

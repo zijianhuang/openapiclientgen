@@ -121,9 +121,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Phone_number_enum_validation_error { TOO_SHORT = 0, TOO_LONG = 1, INVALID_BUT_POSSIBLE = 2, INVALID_COUNTRY_CODE = 3, INVALID_LENGTH = 4, NOT_A_NUMBER = 5 }
+	export enum Phone_number_enum_validation_error { TOO_SHORT = 'TOO_SHORT', TOO_LONG = 'TOO_LONG', INVALID_BUT_POSSIBLE = 'INVALID_BUT_POSSIBLE', INVALID_COUNTRY_CODE = 'INVALID_COUNTRY_CODE', INVALID_LENGTH = 'INVALID_LENGTH', NOT_A_NUMBER = 'NOT_A_NUMBER' }
 
-	export enum Phone_number_enum_type { landline = 0, mobile = 1, voip = 2 }
+	export enum Phone_number_enum_type { landline = 'landline', mobile = 'mobile', voip = 'voip' }
 
 	@Injectable()
 	export class MyClient {

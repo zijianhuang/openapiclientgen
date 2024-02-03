@@ -1324,7 +1324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IlpmtPostBodyFormat { pdf = 0 }
+	export enum IlpmtPostBodyFormat { pdf = 'pdf' }
 
 }
 

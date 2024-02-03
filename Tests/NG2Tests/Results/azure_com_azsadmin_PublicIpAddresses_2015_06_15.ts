@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublicIPAddressPropertiesAllocationMethod { Dynamic = 0, Static = 1 }
+	export enum PublicIPAddressPropertiesAllocationMethod { Dynamic = 'Dynamic', Static = 'Static' }
 
 
 	/** This resource represents an IP Address. */

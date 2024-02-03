@@ -1337,7 +1337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VochsePostBodyFormat { pdf = 0 }
+	export enum VochsePostBodyFormat { pdf = 'pdf' }
 
 }
 

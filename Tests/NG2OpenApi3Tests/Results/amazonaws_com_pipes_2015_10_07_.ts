@@ -31,9 +31,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PipeState { RUNNING = 0, STOPPED = 1, CREATING = 2, UPDATING = 3, DELETING = 4, STARTING = 5, STOPPING = 6, CREATE_FAILED = 7, UPDATE_FAILED = 8, START_FAILED = 9, STOP_FAILED = 10 }
+	export enum PipeState { RUNNING = 'RUNNING', STOPPED = 'STOPPED', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', STARTING = 'STARTING', STOPPING = 'STOPPING', CREATE_FAILED = 'CREATE_FAILED', UPDATE_FAILED = 'UPDATE_FAILED', START_FAILED = 'START_FAILED', STOP_FAILED = 'STOP_FAILED' }
 
-	export enum RequestedPipeState { RUNNING = 0, STOPPED = 1 }
+	export enum RequestedPipeState { RUNNING = 'RUNNING', STOPPED = 'STOPPED' }
 
 
 	/** These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence. */
@@ -176,9 +176,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OnPartialBatchItemFailureStreams { AUTOMATIC_BISECT = 0 }
+	export enum OnPartialBatchItemFailureStreams { AUTOMATIC_BISECT = 'AUTOMATIC_BISECT' }
 
-	export enum DynamoDBStreamStartPosition { TRIM_HORIZON = 0, LATEST = 1 }
+	export enum DynamoDBStreamStartPosition { TRIM_HORIZON = 'TRIM_HORIZON', LATEST = 'LATEST' }
 
 
 	/** The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>. */
@@ -255,7 +255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KinesisStreamStartPosition { TRIM_HORIZON = 0, LATEST = 1, AT_TIMESTAMP = 2 }
+	export enum KinesisStreamStartPosition { TRIM_HORIZON = 'TRIM_HORIZON', LATEST = 'LATEST', AT_TIMESTAMP = 'AT_TIMESTAMP' }
 
 
 	/** The parameters for using an MSK stream as a source. */
@@ -563,7 +563,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchResourceRequirementType { GPU = 0, MEMORY = 1, VCPU = 2 }
+	export enum BatchResourceRequirementType { GPU = 'GPU', MEMORY = 'MEMORY', VCPU = 'VCPU' }
 
 
 	/** An object that represents an Batch job dependency. */
@@ -585,7 +585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchJobDependencyType { N_TO_N = 0, SEQUENTIAL = 1 }
+	export enum BatchJobDependencyType { N_TO_N = 'N_TO_N', SEQUENTIAL = 'SEQUENTIAL' }
 
 	export interface BatchParametersMap {
 	}
@@ -712,7 +712,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LaunchType { EC2 = 0, FARGATE = 1, EXTERNAL = 2 }
+	export enum LaunchType { EC2 = 'EC2', FARGATE = 'FARGATE', EXTERNAL = 'EXTERNAL' }
 
 
 	/** This structure specifies the network configuration for an Amazon ECS task. */
@@ -750,7 +750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignPublicIp { ENABLED = 0, DISABLED = 1 }
+	export enum AssignPublicIp { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** The overrides that are associated with a task. */
@@ -859,7 +859,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EcsEnvironmentFileType { s3 = 0 }
+	export enum EcsEnvironmentFileType { s3 = 's3' }
 
 
 	/** The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>  */
@@ -889,7 +889,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EcsResourceRequirementType { GPU = 0, InferenceAccelerator = 1 }
+	export enum EcsResourceRequirementType { GPU = 'GPU', InferenceAccelerator = 'InferenceAccelerator' }
 
 
 	/** <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note> <p>This parameter is only supported for tasks hosted on Fargate using Linux platform version <code>1.4.0</code> or later. This parameter is not supported for Windows containers on Fargate.</p> </note> */
@@ -952,7 +952,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementConstraintType { distinctInstance = 0, memberOf = 1 }
+	export enum PlacementConstraintType { distinctInstance = 'distinctInstance', memberOf = 'memberOf' }
 
 
 	/** The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Service Developer Guide. */
@@ -974,9 +974,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementStrategyType { random = 0, spread = 1, binpack = 2 }
+	export enum PlacementStrategyType { random = 'random', spread = 'spread', binpack = 'binpack' }
 
-	export enum PropagateTags { TASK_DEFINITION = 0 }
+	export enum PropagateTags { TASK_DEFINITION = 'TASK_DEFINITION' }
 
 
 	/** A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses support tagging. */
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipeTargetInvocationType { REQUEST_RESPONSE = 0, FIRE_AND_FORGET = 1 }
+	export enum PipeTargetInvocationType { REQUEST_RESPONSE = 'REQUEST_RESPONSE', FIRE_AND_FORGET = 'FIRE_AND_FORGET' }
 
 
 	/** These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement. */
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestedPipeStateDescribeResponse { RUNNING = 0, STOPPED = 1, DELETED = 2 }
+	export enum RequestedPipeStateDescribeResponse { RUNNING = 'RUNNING', STOPPED = 'STOPPED', DELETED = 'DELETED' }
 
 	export interface DescribePipeResponse {
 		Arn?: string;
@@ -1859,9 +1859,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MSKStartPosition { TRIM_HORIZON = 0, LATEST = 1 }
+	export enum MSKStartPosition { TRIM_HORIZON = 'TRIM_HORIZON', LATEST = 'LATEST' }
 
-	export enum SelfManagedKafkaStartPosition { TRIM_HORIZON = 0, LATEST = 1 }
+	export enum SelfManagedKafkaStartPosition { TRIM_HORIZON = 'TRIM_HORIZON', LATEST = 'LATEST' }
 
 	export interface StartPipeRequest {
 	}

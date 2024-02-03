@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlternateContactType { BILLING = 0, OPERATIONS = 1, SECURITY = 2 }
+	export enum AlternateContactType { BILLING = 'BILLING', OPERATIONS = 'OPERATIONS', SECURITY = 'SECURITY' }
 
 	export interface GetContactInformationResponse {
 		ContactInformation?: ContactInformation;
@@ -206,7 +206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionOptStatus { ENABLED = 0, ENABLING = 1, DISABLING = 2, DISABLED = 3, ENABLED_BY_DEFAULT = 4 }
+	export enum RegionOptStatus { ENABLED = 'ENABLED', ENABLING = 'ENABLING', DISABLING = 'DISABLING', DISABLED = 'DISABLED', ENABLED_BY_DEFAULT = 'ENABLED_BY_DEFAULT' }
 
 	export interface ListRegionsResponse {
 		NextToken?: string;

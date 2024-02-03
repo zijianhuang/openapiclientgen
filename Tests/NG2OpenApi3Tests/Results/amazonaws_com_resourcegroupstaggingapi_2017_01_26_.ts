@@ -118,7 +118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetIdType { ACCOUNT = 0, OU = 1, ROOT = 2 }
+	export enum TargetIdType { ACCOUNT = 'ACCOUNT', OU = 'OU', ROOT = 'ROOT' }
 
 	export interface GetComplianceSummaryInput {
 		TargetIdFilters?: Array<string>;
@@ -141,7 +141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupByAttribute { TARGET_ID = 0, REGION = 1, RESOURCE_TYPE = 2 }
+	export enum GroupByAttribute { TARGET_ID = 'TARGET_ID', REGION = 'REGION', RESOURCE_TYPE = 'RESOURCE_TYPE' }
 
 	export interface GetResourcesOutput {
 		PaginationToken?: string;
@@ -451,7 +451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { InternalServiceException = 0, InvalidParameterException = 1 }
+	export enum ErrorCode { InternalServiceException = 'InternalServiceException', InvalidParameterException = 'InvalidParameterException' }
 
 
 	/** <p>Information about the errors that are returned for each failed resource. This information can include <code>InternalServiceException</code> and <code>InvalidParameterException</code> errors. It can also include any valid error code returned by the Amazon Web Services service that hosts the resource that the ARN key represents.</p> <p>The following are common error codes that you might receive from other Amazon Web Services services:</p> <ul> <li> <p> <b>InternalServiceException</b> – This can mean that the Resource Groups Tagging API didn't receive a response from another Amazon Web Services service. It can also mean that the resource type in the request is not supported by the Resource Groups Tagging API. In these cases, it's safe to retry the request and then call <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> to verify the changes.</p> </li> <li> <p> <b>AccessDeniedException</b> – This can mean that you need permission to call the tagging operations in the Amazon Web Services service that contains the resource. For example, to use the Resource Groups Tagging API to tag a Amazon CloudWatch alarm resource, you need permission to call both <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"> <code>TagResources</code> </a> <i>and</i> <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> in the CloudWatch API. </p> </li> </ul> <p>For more information on errors that are generated from other Amazon Web Services services, see the documentation for that service. </p> */
@@ -560,21 +560,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeReportCreationX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.DescribeReportCreation' = 0 }
+	export enum DescribeReportCreationX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.DescribeReportCreation' = 'ResourceGroupsTaggingAPI_20170126.DescribeReportCreation' }
 
-	export enum GetComplianceSummaryX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetComplianceSummary' = 0 }
+	export enum GetComplianceSummaryX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetComplianceSummary' = 'ResourceGroupsTaggingAPI_20170126.GetComplianceSummary' }
 
-	export enum GetResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetResources' = 0 }
+	export enum GetResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetResources' = 'ResourceGroupsTaggingAPI_20170126.GetResources' }
 
-	export enum GetTagKeysX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetTagKeys' = 0 }
+	export enum GetTagKeysX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetTagKeys' = 'ResourceGroupsTaggingAPI_20170126.GetTagKeys' }
 
-	export enum GetTagValuesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetTagValues' = 0 }
+	export enum GetTagValuesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetTagValues' = 'ResourceGroupsTaggingAPI_20170126.GetTagValues' }
 
-	export enum StartReportCreationX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.StartReportCreation' = 0 }
+	export enum StartReportCreationX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.StartReportCreation' = 'ResourceGroupsTaggingAPI_20170126.StartReportCreation' }
 
-	export enum TagResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.TagResources' = 0 }
+	export enum TagResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.TagResources' = 'ResourceGroupsTaggingAPI_20170126.TagResources' }
 
-	export enum UntagResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.UntagResources' = 0 }
+	export enum UntagResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.UntagResources' = 'ResourceGroupsTaggingAPI_20170126.UntagResources' }
 
 }
 

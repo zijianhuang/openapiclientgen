@@ -1333,7 +1333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EpfscPostBodyFormat { pdf = 0 }
+	export enum EpfscPostBodyFormat { pdf = 'pdf' }
 
 	export interface PecerPostBody {
 		certificateParameters?: PecerPostBodyCertificateParameters;

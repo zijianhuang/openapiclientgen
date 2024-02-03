@@ -1263,7 +1263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataExporterConfigTyp { kafka = 0, pulsar = 1, file = 2, mailer = 3, elastic = 4, console = 5, custom = 6 }
+	export enum DataExporterConfigTyp { kafka = 'kafka', pulsar = 'pulsar', file = 'file', mailer = 'mailer', elastic = 'elastic', console = 'console', custom = 'custom' }
 
 	export interface Deleted {
 
@@ -4220,7 +4220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MailerConsoleExporterConfigType { generic = 0 }
+	export enum MailerConsoleExporterConfigType { generic = 'generic' }
 
 	export interface MailerGenericExporterConfig {
 
@@ -4309,7 +4309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MailerMailgunExporterConfigType { mailgun = 0 }
+	export enum MailerMailgunExporterConfigType { mailgun = 'mailgun' }
 
 	export interface MailerMailjetExporterConfig {
 
@@ -4351,7 +4351,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MailerMailjetExporterConfigType { mailjet = 0 }
+	export enum MailerMailjetExporterConfigType { mailjet = 'mailjet' }
 
 	export interface MailerSendgridExporterConfig {
 
@@ -4386,7 +4386,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MailerSendgridExporterConfigType { sendgrid = 0 }
+	export enum MailerSendgridExporterConfigType { sendgrid = 'sendgrid' }
 
 
 	/** The structure that represent current Otoroshi health */
@@ -4416,9 +4416,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OtoroshiHealthDatastore { healthy = 0, unhealthy = 1, unreachable = 2 }
+	export enum OtoroshiHealthDatastore { healthy = 'healthy', unhealthy = 'unhealthy', unreachable = 'unreachable' }
 
-	export enum OtoroshiHealthOtoroshi { healthy = 0, unhealthy = 1, down = 2 }
+	export enum OtoroshiHealthOtoroshi { healthy = 'healthy', unhealthy = 'unhealthy', down = 'down' }
 
 
 	/** An outage by the Snow Monkey on a service */
@@ -4486,7 +4486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutageStrategy { OneServicePerGroup = 0, AllServicesPerGroup = 1 }
+	export enum OutageStrategy { OneServicePerGroup = 'OneServicePerGroup', AllServicesPerGroup = 'AllServicesPerGroup' }
 
 	export interface PatchElement {
 
@@ -4515,7 +4515,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchElementOp { add = 0, replace = 1, remove = 2, copy = 3, test = 4 }
+	export enum PatchElementOp { add = 'add', replace = 'replace', remove = 'remove', copy = 'copy', test = 'test' }
 
 
 	/** The configuration for kafka access */
@@ -7222,7 +7222,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletebulkDataExporterConfigReturnStatus { _200 = 0 }
+	export enum DeletebulkDataExporterConfigReturnStatus { _200 = '200' }
 
 	export interface PatchDataExporterConfigPatchBody {
 

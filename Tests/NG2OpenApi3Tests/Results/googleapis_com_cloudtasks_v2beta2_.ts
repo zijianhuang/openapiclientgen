@@ -111,7 +111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppEngineHttpRequestHttpMethod { HTTP_METHOD_UNSPECIFIED = 0, POST = 1, GET = 2, HEAD = 3, PUT = 4, DELETE = 5, PATCH = 6, OPTIONS = 7 }
+	export enum AppEngineHttpRequestHttpMethod { HTTP_METHOD_UNSPECIFIED = 'HTTP_METHOD_UNSPECIFIED', POST = 'POST', GET = 'GET', HEAD = 'HEAD', PUT = 'PUT', DELETE = 'DELETE', PATCH = 'PATCH', OPTIONS = 'OPTIONS' }
 
 
 	/** App Engine HTTP target. The task will be delivered to the App Engine application hostname specified by its AppEngineHttpTarget and AppEngineHttpRequest. The documentation for AppEngineHttpRequest explains how the task's host URL is constructed. Using AppEngineHttpTarget requires [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control) Google IAM permission for the project and the following scope: `https://www.googleapis.com/auth/cloud-platform` */
@@ -553,7 +553,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskView { VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum TaskView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 
 	/** Request message for canceling a lease using CancelLease. */
@@ -855,9 +855,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UriOverrideScheme { SCHEME_UNSPECIFIED = 0, HTTP = 1, HTTPS = 2 }
+	export enum UriOverrideScheme { SCHEME_UNSPECIFIED = 'SCHEME_UNSPECIFIED', HTTP = 'HTTP', HTTPS = 'HTTPS' }
 
-	export enum UriOverrideUriOverrideEnforceMode { URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED = 0, IF_NOT_EXISTS = 1, ALWAYS = 2 }
+	export enum UriOverrideUriOverrideEnforceMode { URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED = 'URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED', IF_NOT_EXISTS = 'IF_NOT_EXISTS', ALWAYS = 'ALWAYS' }
 
 
 	/** Request message for leasing tasks using LeaseTasks. */
@@ -1187,7 +1187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueueState { STATE_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, DISABLED = 3 }
+	export enum QueueState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', DISABLED = 'DISABLED' }
 
 
 	/** Statistics for a queue. */

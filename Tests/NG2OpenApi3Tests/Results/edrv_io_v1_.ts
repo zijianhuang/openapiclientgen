@@ -759,7 +759,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetChargeStationsSort_order { desc = 0, asc = 1 }
+	export enum GetChargeStationsSort_order { desc = 'desc', asc = 'asc' }
 
 	export interface PatchChargeStationReturn {
 		message?: string | null;
@@ -907,7 +907,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchChargeStationVariablePatchBodyVariable { MeterValueSampleInterval = 0, HeartbeatInterval = 1, ConnectionTimeOut = 2, WebSocketPingInterval = 3, TransactionMessageRetryInterval = 4, TransactionMessageAttempts = 5 }
+	export enum PatchChargeStationVariablePatchBodyVariable { MeterValueSampleInterval = 'MeterValueSampleInterval', HeartbeatInterval = 'HeartbeatInterval', ConnectionTimeOut = 'ConnectionTimeOut', WebSocketPingInterval = 'WebSocketPingInterval', TransactionMessageRetryInterval = 'TransactionMessageRetryInterval', TransactionMessageAttempts = 'TransactionMessageAttempts' }
 
 	export interface PostConfigurationsPostBody {
 		key?: string | null;
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostDriversPostBodySource { physical = 0, slack = 1, telegram = 2, sms = 3 }
+	export enum PostDriversPostBodySource { physical = 'physical', slack = 'slack', telegram = 'telegram', sms = 'sms' }
 
 	export interface PostDriversReturn {
 		message?: string | null;
@@ -1792,7 +1792,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetTransactionsStatus { Started = 0, Ended = 1 }
+	export enum GetTransactionsStatus { Started = 'Started', Ended = 'Ended' }
 
 	export interface GetTransactionsReturn {
 		hasNext?: boolean | null;
@@ -1851,7 +1851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostChargePostBodyAction { START = 0, STOP = 1 }
+	export enum PostChargePostBodyAction { START = 'START', STOP = 'STOP' }
 
 	export interface PostChargeReturn {
 		message?: string | null;

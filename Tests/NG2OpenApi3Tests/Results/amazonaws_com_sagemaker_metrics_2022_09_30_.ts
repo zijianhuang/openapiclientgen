@@ -34,7 +34,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PutMetricsErrorCode { METRIC_LIMIT_EXCEEDED = 0, INTERNAL_ERROR = 1, VALIDATION_ERROR = 2, CONFLICT_ERROR = 3 }
+	export enum PutMetricsErrorCode { METRIC_LIMIT_EXCEEDED = 'METRIC_LIMIT_EXCEEDED', INTERNAL_ERROR = 'INTERNAL_ERROR', VALIDATION_ERROR = 'VALIDATION_ERROR', CONFLICT_ERROR = 'CONFLICT_ERROR' }
 
 
 	/** The raw metric data to associate with the resource. */

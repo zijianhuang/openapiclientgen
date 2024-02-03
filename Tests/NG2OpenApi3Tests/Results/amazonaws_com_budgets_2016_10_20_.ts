@@ -188,7 +188,7 @@ export namespace MyNS {
 
 
 	/**  The time unit of the budget, such as MONTHLY or QUARTERLY. */
-	export enum TimeUnit { DAILY = 0, MONTHLY = 1, QUARTERLY = 2, ANNUALLY = 3 }
+	export enum TimeUnit { DAILY = 'DAILY', MONTHLY = 'MONTHLY', QUARTERLY = 'QUARTERLY', ANNUALLY = 'ANNUALLY' }
 
 
 	/** The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.  */
@@ -230,7 +230,7 @@ export namespace MyNS {
 
 
 	/** <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p> */
-	export enum BudgetType { USAGE = 0, COST = 1, RI_UTILIZATION = 2, RI_COVERAGE = 3, SAVINGS_PLANS_UTILIZATION = 4, SAVINGS_PLANS_COVERAGE = 5 }
+	export enum BudgetType { USAGE = 'USAGE', COST = 'COST', RI_UTILIZATION = 'RI_UTILIZATION', RI_COVERAGE = 'RI_COVERAGE', SAVINGS_PLANS_UTILIZATION = 'SAVINGS_PLANS_UTILIZATION', SAVINGS_PLANS_COVERAGE = 'SAVINGS_PLANS_COVERAGE' }
 
 
 	/** The parameters that determine the budget amount for an auto-adjusting budget. */
@@ -257,7 +257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoAdjustType { HISTORICAL = 0, FORECAST = 1 }
+	export enum AutoAdjustType { HISTORICAL = 'HISTORICAL', FORECAST = 'FORECAST' }
 
 
 	/** The parameters that define or describe the historical data that your auto-adjusting budget is based on. */
@@ -346,17 +346,17 @@ export namespace MyNS {
 
 
 	/**  The type of a notification. It must be ACTUAL or FORECASTED. */
-	export enum NotificationType { ACTUAL = 0, FORECASTED = 1 }
+	export enum NotificationType { ACTUAL = 'ACTUAL', FORECASTED = 'FORECASTED' }
 
 
 	/** <p> The comparison operator of a notification. Currently, the service supports the following operators:</p> <p> <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code> </p> */
-	export enum ComparisonOperator { GREATER_THAN = 0, LESS_THAN = 1, EQUAL_TO = 2 }
+	export enum ComparisonOperator { GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN', EQUAL_TO = 'EQUAL_TO' }
 
 
 	/**  The type of threshold for a notification. */
-	export enum ThresholdType { PERCENTAGE = 0, ABSOLUTE_VALUE = 1 }
+	export enum ThresholdType { PERCENTAGE = 'PERCENTAGE', ABSOLUTE_VALUE = 'ABSOLUTE_VALUE' }
 
-	export enum NotificationState { OK = 0, ALARM = 1 }
+	export enum NotificationState { OK = 'OK', ALARM = 'ALARM' }
 
 
 	/** <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber has the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul> */
@@ -388,7 +388,7 @@ export namespace MyNS {
 
 
 	/**  The subscription type of the subscriber. It can be SMS or EMAIL. */
-	export enum SubscriptionType { SNS = 0, EMAIL = 1 }
+	export enum SubscriptionType { SNS = 'SNS', EMAIL = 'EMAIL' }
 
 	export interface InvalidParameterException {
 	}
@@ -599,7 +599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { APPLY_IAM_POLICY = 0, APPLY_SCP_POLICY = 1, RUN_SSM_DOCUMENTS = 2 }
+	export enum ActionType { APPLY_IAM_POLICY = 'APPLY_IAM_POLICY', APPLY_SCP_POLICY = 'APPLY_SCP_POLICY', RUN_SSM_DOCUMENTS = 'RUN_SSM_DOCUMENTS' }
 
 
 	/** The trigger threshold of the action.  */
@@ -741,9 +741,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionSubType { STOP_EC2_INSTANCES = 0, STOP_RDS_INSTANCES = 1 }
+	export enum ActionSubType { STOP_EC2_INSTANCES = 'STOP_EC2_INSTANCES', STOP_RDS_INSTANCES = 'STOP_RDS_INSTANCES' }
 
-	export enum ApprovalModel { AUTOMATIC = 0, MANUAL = 1 }
+	export enum ApprovalModel { AUTOMATIC = 'AUTOMATIC', MANUAL = 'MANUAL' }
 
 	export interface NotFoundException {
 	}
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionStatus { STANDBY = 0, PENDING = 1, EXECUTION_IN_PROGRESS = 2, EXECUTION_SUCCESS = 3, EXECUTION_FAILURE = 4, REVERSE_IN_PROGRESS = 5, REVERSE_SUCCESS = 6, REVERSE_FAILURE = 7, RESET_IN_PROGRESS = 8, RESET_FAILURE = 9 }
+	export enum ActionStatus { STANDBY = 'STANDBY', PENDING = 'PENDING', EXECUTION_IN_PROGRESS = 'EXECUTION_IN_PROGRESS', EXECUTION_SUCCESS = 'EXECUTION_SUCCESS', EXECUTION_FAILURE = 'EXECUTION_FAILURE', REVERSE_IN_PROGRESS = 'REVERSE_IN_PROGRESS', REVERSE_SUCCESS = 'REVERSE_SUCCESS', REVERSE_FAILURE = 'REVERSE_FAILURE', RESET_IN_PROGRESS = 'RESET_IN_PROGRESS', RESET_FAILURE = 'RESET_FAILURE' }
 
 	export interface DeleteBudgetActionRequest {
 
@@ -1405,7 +1405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { SYSTEM = 0, CREATE_ACTION = 1, DELETE_ACTION = 2, UPDATE_ACTION = 3, EXECUTE_ACTION = 4 }
+	export enum EventType { SYSTEM = 'SYSTEM', CREATE_ACTION = 'CREATE_ACTION', DELETE_ACTION = 'DELETE_ACTION', UPDATE_ACTION = 'UPDATE_ACTION', EXECUTE_ACTION = 'EXECUTE_ACTION' }
 
 
 	/** The description of the details for the event.  */
@@ -2209,7 +2209,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionType { APPROVE_BUDGET_ACTION = 0, RETRY_BUDGET_ACTION = 1, REVERSE_BUDGET_ACTION = 2, RESET_BUDGET_ACTION = 3 }
+	export enum ExecutionType { APPROVE_BUDGET_ACTION = 'APPROVE_BUDGET_ACTION', RETRY_BUDGET_ACTION = 'RETRY_BUDGET_ACTION', REVERSE_BUDGET_ACTION = 'REVERSE_BUDGET_ACTION', RESET_BUDGET_ACTION = 'RESET_BUDGET_ACTION' }
 
 	export interface ExecuteBudgetActionRequest {
 
@@ -2762,51 +2762,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateBudgetX_Amz_Target { 'AWSBudgetServiceGateway.CreateBudget' = 0 }
+	export enum CreateBudgetX_Amz_Target { 'AWSBudgetServiceGateway.CreateBudget' = 'AWSBudgetServiceGateway.CreateBudget' }
 
-	export enum CreateBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.CreateBudgetAction' = 0 }
+	export enum CreateBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.CreateBudgetAction' = 'AWSBudgetServiceGateway.CreateBudgetAction' }
 
-	export enum CreateNotificationX_Amz_Target { 'AWSBudgetServiceGateway.CreateNotification' = 0 }
+	export enum CreateNotificationX_Amz_Target { 'AWSBudgetServiceGateway.CreateNotification' = 'AWSBudgetServiceGateway.CreateNotification' }
 
-	export enum CreateSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.CreateSubscriber' = 0 }
+	export enum CreateSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.CreateSubscriber' = 'AWSBudgetServiceGateway.CreateSubscriber' }
 
-	export enum DeleteBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DeleteBudget' = 0 }
+	export enum DeleteBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DeleteBudget' = 'AWSBudgetServiceGateway.DeleteBudget' }
 
-	export enum DeleteBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.DeleteBudgetAction' = 0 }
+	export enum DeleteBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.DeleteBudgetAction' = 'AWSBudgetServiceGateway.DeleteBudgetAction' }
 
-	export enum DeleteNotificationX_Amz_Target { 'AWSBudgetServiceGateway.DeleteNotification' = 0 }
+	export enum DeleteNotificationX_Amz_Target { 'AWSBudgetServiceGateway.DeleteNotification' = 'AWSBudgetServiceGateway.DeleteNotification' }
 
-	export enum DeleteSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.DeleteSubscriber' = 0 }
+	export enum DeleteSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.DeleteSubscriber' = 'AWSBudgetServiceGateway.DeleteSubscriber' }
 
-	export enum DescribeBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudget' = 0 }
+	export enum DescribeBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudget' = 'AWSBudgetServiceGateway.DescribeBudget' }
 
-	export enum DescribeBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetAction' = 0 }
+	export enum DescribeBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetAction' = 'AWSBudgetServiceGateway.DescribeBudgetAction' }
 
-	export enum DescribeBudgetActionHistoriesX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetActionHistories' = 0 }
+	export enum DescribeBudgetActionHistoriesX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetActionHistories' = 'AWSBudgetServiceGateway.DescribeBudgetActionHistories' }
 
-	export enum DescribeBudgetActionsForAccountX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetActionsForAccount' = 0 }
+	export enum DescribeBudgetActionsForAccountX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetActionsForAccount' = 'AWSBudgetServiceGateway.DescribeBudgetActionsForAccount' }
 
-	export enum DescribeBudgetActionsForBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetActionsForBudget' = 0 }
+	export enum DescribeBudgetActionsForBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetActionsForBudget' = 'AWSBudgetServiceGateway.DescribeBudgetActionsForBudget' }
 
-	export enum DescribeBudgetNotificationsForAccountX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetNotificationsForAccount' = 0 }
+	export enum DescribeBudgetNotificationsForAccountX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetNotificationsForAccount' = 'AWSBudgetServiceGateway.DescribeBudgetNotificationsForAccount' }
 
-	export enum DescribeBudgetPerformanceHistoryX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory' = 0 }
+	export enum DescribeBudgetPerformanceHistoryX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory' = 'AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory' }
 
-	export enum DescribeBudgetsX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgets' = 0 }
+	export enum DescribeBudgetsX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgets' = 'AWSBudgetServiceGateway.DescribeBudgets' }
 
-	export enum DescribeNotificationsForBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeNotificationsForBudget' = 0 }
+	export enum DescribeNotificationsForBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeNotificationsForBudget' = 'AWSBudgetServiceGateway.DescribeNotificationsForBudget' }
 
-	export enum DescribeSubscribersForNotificationX_Amz_Target { 'AWSBudgetServiceGateway.DescribeSubscribersForNotification' = 0 }
+	export enum DescribeSubscribersForNotificationX_Amz_Target { 'AWSBudgetServiceGateway.DescribeSubscribersForNotification' = 'AWSBudgetServiceGateway.DescribeSubscribersForNotification' }
 
-	export enum ExecuteBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.ExecuteBudgetAction' = 0 }
+	export enum ExecuteBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.ExecuteBudgetAction' = 'AWSBudgetServiceGateway.ExecuteBudgetAction' }
 
-	export enum UpdateBudgetX_Amz_Target { 'AWSBudgetServiceGateway.UpdateBudget' = 0 }
+	export enum UpdateBudgetX_Amz_Target { 'AWSBudgetServiceGateway.UpdateBudget' = 'AWSBudgetServiceGateway.UpdateBudget' }
 
-	export enum UpdateBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.UpdateBudgetAction' = 0 }
+	export enum UpdateBudgetActionX_Amz_Target { 'AWSBudgetServiceGateway.UpdateBudgetAction' = 'AWSBudgetServiceGateway.UpdateBudgetAction' }
 
-	export enum UpdateNotificationX_Amz_Target { 'AWSBudgetServiceGateway.UpdateNotification' = 0 }
+	export enum UpdateNotificationX_Amz_Target { 'AWSBudgetServiceGateway.UpdateNotification' = 'AWSBudgetServiceGateway.UpdateNotification' }
 
-	export enum UpdateSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.UpdateSubscriber' = 0 }
+	export enum UpdateSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.UpdateSubscriber' = 'AWSBudgetServiceGateway.UpdateSubscriber' }
 
 }
 

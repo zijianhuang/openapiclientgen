@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionInformationActionType { OnOffAction = 0, AnalogAction = 1 }
+	export enum ActionInformationActionType { OnOffAction = 'OnOffAction', AnalogAction = 'AnalogAction' }
 
 
 	/** Container Class for an action to post */
@@ -244,7 +244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoExportSettingsExportInterval { NoExport = 0, Hourly = 1, Daily = 2, Weekly = 3, Monthly = 4, QuaterYearly = 5, HalfYearly = 6, Yearly = 7 }
+	export enum AutoExportSettingsExportInterval { NoExport = 'NoExport', Hourly = 'Hourly', Daily = 'Daily', Weekly = 'Weekly', Monthly = 'Monthly', QuaterYearly = 'QuaterYearly', HalfYearly = 'HalfYearly', Yearly = 'Yearly' }
 
 
 	/** Container Class for the Web API */
@@ -662,13 +662,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceChargingStationState { Booting = 0, ReadyNoCarConnected = 1, ReadyCarConnected = 2, StartedWaitForCar = 3, Charging = 4, Installation = 5, Authorize = 6, Offline = 7 }
+	export enum DeviceChargingStationState { Booting = 'Booting', ReadyNoCarConnected = 'ReadyNoCarConnected', ReadyCarConnected = 'ReadyCarConnected', StartedWaitForCar = 'StartedWaitForCar', Charging = 'Charging', Installation = 'Installation', Authorize = 'Authorize', Offline = 'Offline' }
 
-	export enum DeviceDeviceEnergyType { MeterTypeUnknown = 0, MeterTypeElectricity = 1, MeterTypeWater = 2, MeterTypeGas = 3, MeterTypeHeat = 4, MeterTypeHCA = 5, MeterTypeAllMeters = 6, MeterTypeTemperature = 7, MeterTypeMBusGateway = 8, MeterTypeRS485Gateway = 9, MeterTypeCustomDevice = 10, MeterTypeCompressedAir = 11, MeterTypeSolarLog = 12, MeterTypeVirtualMeter = 13, MeterTypeWMBusGateway = 14 }
+	export enum DeviceDeviceEnergyType { MeterTypeUnknown = 'MeterTypeUnknown', MeterTypeElectricity = 'MeterTypeElectricity', MeterTypeWater = 'MeterTypeWater', MeterTypeGas = 'MeterTypeGas', MeterTypeHeat = 'MeterTypeHeat', MeterTypeHCA = 'MeterTypeHCA', MeterTypeAllMeters = 'MeterTypeAllMeters', MeterTypeTemperature = 'MeterTypeTemperature', MeterTypeMBusGateway = 'MeterTypeMBusGateway', MeterTypeRS485Gateway = 'MeterTypeRS485Gateway', MeterTypeCustomDevice = 'MeterTypeCustomDevice', MeterTypeCompressedAir = 'MeterTypeCompressedAir', MeterTypeSolarLog = 'MeterTypeSolarLog', MeterTypeVirtualMeter = 'MeterTypeVirtualMeter', MeterTypeWMBusGateway = 'MeterTypeWMBusGateway' }
 
-	export enum DeviceFamilyType { MeterFamilyTypeUnknown = 0, MeterFamilyTypeSmartMeConnectV1 = 1, MeterFamiliyTypeSmartMeMeter = 2, MeterFamiliyTypeSmartMeMeterWithSwitch = 3, MeterFamilyTypeMBusGatewayV1 = 4, MeterFamilyTypeRS485GatewayV1 = 5, MeterFamilyTypeKamstrupModule = 6, MeterFamilyTypeSmartMe3PhaseMeter80A = 7, MeterFamilyTypeSmartMe3PhaseMeter32A = 8, MeterFamilyTypeSmartMe3PhaseTelstarTransformer = 9, MeterFamilyTypeLandisGyrModule = 10, MeterFamilyTypeFnnOpticalModule = 11, MeterFamilyTypeSmartMe3PhaseTelstar80AWiFi = 12, MeterFamilyTypeSmartMe3PhaseTelstar80AMobile = 13, MeterFamilyTypeSmartMe1PhaseMeter80AV2WiFi = 14, MeterFamilyTypeSmartMe1PhaseMeter32AV2WiFi = 15, MeterFamilyTypeSmartMe1PhaseMeter80AGprs = 16, MeterFamilyTypeSmartMe1PhaseMeter32AGprs = 17, MeterFamilyTypeWMBusGatewayV1 = 18, MeterFamilyTypeSmartMe3PhaseTelstarTransformerMobile = 19, MeterFamilyTypeMithralHallV1 = 20, MeterFamilyTypeRestApiMeter = 21, MeterFamilyTypeVirtualBillingMeter = 22 }
+	export enum DeviceFamilyType { MeterFamilyTypeUnknown = 'MeterFamilyTypeUnknown', MeterFamilyTypeSmartMeConnectV1 = 'MeterFamilyTypeSmartMeConnectV1', MeterFamiliyTypeSmartMeMeter = 'MeterFamiliyTypeSmartMeMeter', MeterFamiliyTypeSmartMeMeterWithSwitch = 'MeterFamiliyTypeSmartMeMeterWithSwitch', MeterFamilyTypeMBusGatewayV1 = 'MeterFamilyTypeMBusGatewayV1', MeterFamilyTypeRS485GatewayV1 = 'MeterFamilyTypeRS485GatewayV1', MeterFamilyTypeKamstrupModule = 'MeterFamilyTypeKamstrupModule', MeterFamilyTypeSmartMe3PhaseMeter80A = 'MeterFamilyTypeSmartMe3PhaseMeter80A', MeterFamilyTypeSmartMe3PhaseMeter32A = 'MeterFamilyTypeSmartMe3PhaseMeter32A', MeterFamilyTypeSmartMe3PhaseTelstarTransformer = 'MeterFamilyTypeSmartMe3PhaseTelstarTransformer', MeterFamilyTypeLandisGyrModule = 'MeterFamilyTypeLandisGyrModule', MeterFamilyTypeFnnOpticalModule = 'MeterFamilyTypeFnnOpticalModule', MeterFamilyTypeSmartMe3PhaseTelstar80AWiFi = 'MeterFamilyTypeSmartMe3PhaseTelstar80AWiFi', MeterFamilyTypeSmartMe3PhaseTelstar80AMobile = 'MeterFamilyTypeSmartMe3PhaseTelstar80AMobile', MeterFamilyTypeSmartMe1PhaseMeter80AV2WiFi = 'MeterFamilyTypeSmartMe1PhaseMeter80AV2WiFi', MeterFamilyTypeSmartMe1PhaseMeter32AV2WiFi = 'MeterFamilyTypeSmartMe1PhaseMeter32AV2WiFi', MeterFamilyTypeSmartMe1PhaseMeter80AGprs = 'MeterFamilyTypeSmartMe1PhaseMeter80AGprs', MeterFamilyTypeSmartMe1PhaseMeter32AGprs = 'MeterFamilyTypeSmartMe1PhaseMeter32AGprs', MeterFamilyTypeWMBusGatewayV1 = 'MeterFamilyTypeWMBusGatewayV1', MeterFamilyTypeSmartMe3PhaseTelstarTransformerMobile = 'MeterFamilyTypeSmartMe3PhaseTelstarTransformerMobile', MeterFamilyTypeMithralHallV1 = 'MeterFamilyTypeMithralHallV1', MeterFamilyTypeRestApiMeter = 'MeterFamilyTypeRestApiMeter', MeterFamilyTypeVirtualBillingMeter = 'MeterFamilyTypeVirtualBillingMeter' }
 
-	export enum DeviceMeterSubType { MeterSubTypeUnknown = 0, MeterSubTypeCold = 1, MeterSubTypeHeat = 2, MeterSubTypeChargingStation = 3, MeterSubTypeElectricity = 4, MeterSubTypeWater = 5, MeterSubTypeGas = 6, MeterSubTypeElectricityHeat = 7, MeterSubTypeTemperature = 8, MeterSubTypeVirtualBattery = 9 }
+	export enum DeviceMeterSubType { MeterSubTypeUnknown = 'MeterSubTypeUnknown', MeterSubTypeCold = 'MeterSubTypeCold', MeterSubTypeHeat = 'MeterSubTypeHeat', MeterSubTypeChargingStation = 'MeterSubTypeChargingStation', MeterSubTypeElectricity = 'MeterSubTypeElectricity', MeterSubTypeWater = 'MeterSubTypeWater', MeterSubTypeGas = 'MeterSubTypeGas', MeterSubTypeElectricityHeat = 'MeterSubTypeElectricityHeat', MeterSubTypeTemperature = 'MeterSubTypeTemperature', MeterSubTypeVirtualBattery = 'MeterSubTypeVirtualBattery' }
 
 
 	/** Container Class for the Web API. Conatinas the MeterValues in the Past */
@@ -1194,7 +1194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FolderMenuItemFolderType { Folder = 0, Location = 1, Factory = 2, House = 3, Office = 4, Machine = 5, VirtualMeter = 6, ElecticityFolder = 7, WaterFolder = 8, HeatFolder = 9, GasFolder = 10, TemperatureFolder = 11, Sun = 12, Light = 13, Ice = 14, Sofa = 15, Food = 16, Coffee = 17, Car = 18, ChargingStation = 19, Meter = 20, User = 21, Trash = 22, GridPhotovoltaicPowerSystem = 23 }
+	export enum FolderMenuItemFolderType { Folder = 'Folder', Location = 'Location', Factory = 'Factory', House = 'House', Office = 'Office', Machine = 'Machine', VirtualMeter = 'VirtualMeter', ElecticityFolder = 'ElecticityFolder', WaterFolder = 'WaterFolder', HeatFolder = 'HeatFolder', GasFolder = 'GasFolder', TemperatureFolder = 'TemperatureFolder', Sun = 'Sun', Light = 'Light', Ice = 'Ice', Sofa = 'Sofa', Food = 'Food', Coffee = 'Coffee', Car = 'Car', ChargingStation = 'ChargingStation', Meter = 'Meter', User = 'User', Trash = 'Trash', GridPhotovoltaicPowerSystem = 'GridPhotovoltaicPowerSystem' }
 
 
 	/** Container for the folder settings */
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConfigurationContainerType { TariffInput = 0, DigitalInput = 1 }
+	export enum InputConfigurationContainerType { TariffInput = 'TariffInput', DigitalInput = 'DigitalInput' }
 
 
 	/** Informations about the Inputs of a Meter or Folder */
@@ -1580,11 +1580,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputConfigurationContainerDigitalOutputNoConnectionAction { Nothing = 0, TurnOff = 1, TurnOn = 2, SetPwmValue = 3 }
+	export enum OutputConfigurationContainerDigitalOutputNoConnectionAction { Nothing = 'Nothing', TurnOff = 'TurnOff', TurnOn = 'TurnOn', SetPwmValue = 'SetPwmValue' }
 
-	export enum OutputConfigurationContainerS0PulseValue { PulseValue1000Kwh = 0, PulseValue10000Kwh = 1 }
+	export enum OutputConfigurationContainerS0PulseValue { PulseValue1000Kwh = 'PulseValue1000Kwh', PulseValue10000Kwh = 'PulseValue10000Kwh' }
 
-	export enum OutputConfigurationContainerType { ImpulseOutputActiveEnergy = 0, ImpulseOutputActiveEnergyImport = 1, ImpulseOutputActiveEnergyExport = 2, ImpulseOutputReactiveEnergy = 3, DigitalOutput = 4, AnalogPwmSignalOutput = 5, Disabled = 6 }
+	export enum OutputConfigurationContainerType { ImpulseOutputActiveEnergy = 'ImpulseOutputActiveEnergy', ImpulseOutputActiveEnergyImport = 'ImpulseOutputActiveEnergyImport', ImpulseOutputActiveEnergyExport = 'ImpulseOutputActiveEnergyExport', ImpulseOutputReactiveEnergy = 'ImpulseOutputReactiveEnergy', DigitalOutput = 'DigitalOutput', AnalogPwmSignalOutput = 'AnalogPwmSignalOutput', Disabled = 'Disabled' }
 
 
 	/** Container class for the pico charging station API */
@@ -1725,11 +1725,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PicoChargingDataConnectionMode { NetworkToCloudConnectionMode_NoConnection = 0, NetworkToCloudConnectionMode_DirectWiFiConnection = 1, NetworkToCloudConnectionMode_GPRSConnection = 2, NetworkToCloudConnectionMode_NBIotConnection = 3, NetworkToCloudConnectionMode_LteCatM1Connection = 4, NetworkToCloudConnectionMode_MeshWiFiConnection = 5, NetworkToCloudConnectionMode_MeshMobileConnection = 6 }
+	export enum PicoChargingDataConnectionMode { NetworkToCloudConnectionMode_NoConnection = 'NetworkToCloudConnectionMode_NoConnection', NetworkToCloudConnectionMode_DirectWiFiConnection = 'NetworkToCloudConnectionMode_DirectWiFiConnection', NetworkToCloudConnectionMode_GPRSConnection = 'NetworkToCloudConnectionMode_GPRSConnection', NetworkToCloudConnectionMode_NBIotConnection = 'NetworkToCloudConnectionMode_NBIotConnection', NetworkToCloudConnectionMode_LteCatM1Connection = 'NetworkToCloudConnectionMode_LteCatM1Connection', NetworkToCloudConnectionMode_MeshWiFiConnection = 'NetworkToCloudConnectionMode_MeshWiFiConnection', NetworkToCloudConnectionMode_MeshMobileConnection = 'NetworkToCloudConnectionMode_MeshMobileConnection' }
 
-	export enum PicoChargingDataLastWarningOrError { MeterDataloggerEvent = 0, MeterRestart = 1, PowerDown = 2, MissingPhaseL1 = 3, MissingPhaseL2 = 4, MissingPhaseL3 = 5, TamperDetectionCover = 6, MagneticFieldDetection = 7, ClockAdjusted = 8, Overvoltage = 9, Undervoltage = 10, OvervoltageL1 = 11, OvervoltageL2 = 12, OvervoltageL3 = 13, ChargingTransaction = 14, PicoErrorControllerPanic = 15, PicoErrorMidServicePanic = 16, PicoWarningRcdTriggered = 17, PicoWarningCableLockError = 18, PicoWarningDiodeFailure = 19, PicoWarningOverload = 20, PicoWarningHighTemperature = 21 }
+	export enum PicoChargingDataLastWarningOrError { MeterDataloggerEvent = 'MeterDataloggerEvent', MeterRestart = 'MeterRestart', PowerDown = 'PowerDown', MissingPhaseL1 = 'MissingPhaseL1', MissingPhaseL2 = 'MissingPhaseL2', MissingPhaseL3 = 'MissingPhaseL3', TamperDetectionCover = 'TamperDetectionCover', MagneticFieldDetection = 'MagneticFieldDetection', ClockAdjusted = 'ClockAdjusted', Overvoltage = 'Overvoltage', Undervoltage = 'Undervoltage', OvervoltageL1 = 'OvervoltageL1', OvervoltageL2 = 'OvervoltageL2', OvervoltageL3 = 'OvervoltageL3', ChargingTransaction = 'ChargingTransaction', PicoErrorControllerPanic = 'PicoErrorControllerPanic', PicoErrorMidServicePanic = 'PicoErrorMidServicePanic', PicoWarningRcdTriggered = 'PicoWarningRcdTriggered', PicoWarningCableLockError = 'PicoWarningCableLockError', PicoWarningDiodeFailure = 'PicoWarningDiodeFailure', PicoWarningOverload = 'PicoWarningOverload', PicoWarningHighTemperature = 'PicoWarningHighTemperature' }
 
-	export enum PicoChargingDataLoadSheddingState { MaxCurrent = 0, HalfCurrent = 1, MinCurrent = 2, NoCurrent = 3 }
+	export enum PicoChargingDataLoadSheddingState { MaxCurrent = 'MaxCurrent', HalfCurrent = 'HalfCurrent', MinCurrent = 'MinCurrent', NoCurrent = 'NoCurrent' }
 
 
 	/** Api container for the charging station history */
@@ -1769,7 +1769,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PicoChargingHistoryDataTransactionStopReason { Unknown = 0, CarDisconnected = 1, RemoteStop = 2, ErrorStop = 3, InstallationMode = 4, CableError = 5, DiodeError = 6, RcdError = 7, OverloadError = 8 }
+	export enum PicoChargingHistoryDataTransactionStopReason { Unknown = 'Unknown', CarDisconnected = 'CarDisconnected', RemoteStop = 'RemoteStop', ErrorStop = 'ErrorStop', InstallationMode = 'InstallationMode', CableError = 'CableError', DiodeError = 'DiodeError', RcdError = 'RcdError', OverloadError = 'OverloadError' }
 
 
 	/** DTO for the pico loadmanagement group */
@@ -1918,7 +1918,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PicoSettingsDtoAuthenticationType { None = 0, Backend = 1 }
+	export enum PicoSettingsDtoAuthenticationType { None = 'None', Backend = 'Backend' }
 
 
 	/** Container class for the register realtime API API */
@@ -1989,7 +1989,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegisterRealtimeApiDataRegistrationType { Disabled = 0, SingleMeterRegistration = 1, UserRegistration = 2 }
+	export enum RegisterRealtimeApiDataRegistrationType { Disabled = 'Disabled', SingleMeterRegistration = 'SingleMeterRegistration', UserRegistration = 'UserRegistration' }
 
 
 	/** API Container class for the meter configuration */
@@ -2063,7 +2063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SmartMeDeviceConfigurationContainerDnsUpdateState { NoUpdate = 0, DnsUpdatePublicIp = 1, DnsUpdateInternalIp = 2 }
+	export enum SmartMeDeviceConfigurationContainerDnsUpdateState { NoUpdate = 'NoUpdate', DnsUpdatePublicIp = 'DnsUpdatePublicIp', DnsUpdateInternalIp = 'DnsUpdateInternalIp' }
 
 
 	/** The configuration for a phase switch */
@@ -2093,7 +2093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SmartMeDeviceConfigurationContainerUploadInterval { UploadInterval_1s = 0, UploadInterval_5s = 1, UploadInterval_10s = 2, UploadInterval_30s = 3, UploadInterval_60s = 4, UploadInterval_5min = 5, UploadInterval_15min = 6, UploadInterval_30min = 7, UploadInterval_60min = 8, UploadInterval_6h = 9, UploadInterval_12h = 10, UploadInterval_24h = 11 }
+	export enum SmartMeDeviceConfigurationContainerUploadInterval { UploadInterval_1s = 'UploadInterval_1s', UploadInterval_5s = 'UploadInterval_5s', UploadInterval_10s = 'UploadInterval_10s', UploadInterval_30s = 'UploadInterval_30s', UploadInterval_60s = 'UploadInterval_60s', UploadInterval_5min = 'UploadInterval_5min', UploadInterval_15min = 'UploadInterval_15min', UploadInterval_30min = 'UploadInterval_30min', UploadInterval_60min = 'UploadInterval_60min', UploadInterval_6h = 'UploadInterval_6h', UploadInterval_12h = 'UploadInterval_12h', UploadInterval_24h = 'UploadInterval_24h' }
 
 
 	/** Container data for the sub user */
@@ -2158,7 +2158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubUserDataPermissionLevel { SelectedFolderAndSubfoldersMeters = 0, SelectedFolderOnly = 1 }
+	export enum SubUserDataPermissionLevel { SelectedFolderAndSubfoldersMeters = 'SelectedFolderAndSubfoldersMeters', SelectedFolderOnly = 'SelectedFolderOnly' }
 
 
 	/** Container Class for the Web API */
@@ -2360,7 +2360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualTariffType { Battery = 0, Solar = 1, Normal = 2 }
+	export enum VirtualTariffType { Battery = 'Battery', Solar = 'Solar', Normal = 'Normal' }
 
 
 	/** Container class for the virtual tariff consumption */

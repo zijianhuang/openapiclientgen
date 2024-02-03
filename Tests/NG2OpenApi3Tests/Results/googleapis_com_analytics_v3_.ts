@@ -6656,9 +6656,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Analytics_data_ga_getOutput { dataTable = 0, json = 1 }
+	export enum Analytics_data_ga_getOutput { dataTable = 'dataTable', json = 'json' }
 
-	export enum Analytics_data_ga_getSamplingLevel { DEFAULT = 0, FASTER = 1, HIGHER_PRECISION = 2 }
+	export enum Analytics_data_ga_getSamplingLevel { DEFAULT = 'DEFAULT', FASTER = 'FASTER', HIGHER_PRECISION = 'HIGHER_PRECISION' }
 
 }
 

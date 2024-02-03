@@ -1292,7 +1292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterApplyMethod { immediate = 0, 'pending-reboot' = 1 }
+	export enum ParameterApplyMethod { immediate = 'immediate', 'pending-reboot' = 'pending-reboot' }
 
 	export interface ModifyDBSubnetGroupResult {
 		DBSubnetGroup?: DBSubnetGroup;
@@ -1580,7 +1580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplyMethod { immediate = 0, 'pending-reboot' = 1 }
+	export enum ApplyMethod { immediate = 'immediate', 'pending-reboot' = 'pending-reboot' }
 
 	export interface AuthorizeDBSecurityGroupIngressMessage {
 
@@ -2387,7 +2387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { 'db-instance' = 0, 'db-parameter-group' = 1, 'db-security-group' = 2, 'db-snapshot' = 3 }
+	export enum SourceType { 'db-instance' = 'db-instance', 'db-parameter-group' = 'db-parameter-group', 'db-security-group' = 'db-security-group', 'db-snapshot' = 'db-snapshot' }
 
 	export interface DescribeEventsMessage {
 		SourceIdentifier?: string | null;
@@ -3690,107 +3690,107 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddSourceIdentifierToSubscriptionAction { AddSourceIdentifierToSubscription = 0 }
+	export enum GET_AddSourceIdentifierToSubscriptionAction { AddSourceIdentifierToSubscription = 'AddSourceIdentifierToSubscription' }
 
-	export enum GET_AddSourceIdentifierToSubscriptionVersion { '2013-01-10' = 0 }
+	export enum GET_AddSourceIdentifierToSubscriptionVersion { '2013-01-10' = '2013-01-10' }
 
-	export enum GET_AddTagsToResourceAction { AddTagsToResource = 0 }
+	export enum GET_AddTagsToResourceAction { AddTagsToResource = 'AddTagsToResource' }
 
-	export enum GET_AuthorizeDBSecurityGroupIngressAction { AuthorizeDBSecurityGroupIngress = 0 }
+	export enum GET_AuthorizeDBSecurityGroupIngressAction { AuthorizeDBSecurityGroupIngress = 'AuthorizeDBSecurityGroupIngress' }
 
-	export enum GET_CopyDBSnapshotAction { CopyDBSnapshot = 0 }
+	export enum GET_CopyDBSnapshotAction { CopyDBSnapshot = 'CopyDBSnapshot' }
 
-	export enum GET_CreateDBInstanceAction { CreateDBInstance = 0 }
+	export enum GET_CreateDBInstanceAction { CreateDBInstance = 'CreateDBInstance' }
 
-	export enum GET_CreateDBInstanceReadReplicaAction { CreateDBInstanceReadReplica = 0 }
+	export enum GET_CreateDBInstanceReadReplicaAction { CreateDBInstanceReadReplica = 'CreateDBInstanceReadReplica' }
 
-	export enum GET_CreateDBParameterGroupAction { CreateDBParameterGroup = 0 }
+	export enum GET_CreateDBParameterGroupAction { CreateDBParameterGroup = 'CreateDBParameterGroup' }
 
-	export enum GET_CreateDBSecurityGroupAction { CreateDBSecurityGroup = 0 }
+	export enum GET_CreateDBSecurityGroupAction { CreateDBSecurityGroup = 'CreateDBSecurityGroup' }
 
-	export enum GET_CreateDBSnapshotAction { CreateDBSnapshot = 0 }
+	export enum GET_CreateDBSnapshotAction { CreateDBSnapshot = 'CreateDBSnapshot' }
 
-	export enum GET_CreateDBSubnetGroupAction { CreateDBSubnetGroup = 0 }
+	export enum GET_CreateDBSubnetGroupAction { CreateDBSubnetGroup = 'CreateDBSubnetGroup' }
 
-	export enum GET_CreateEventSubscriptionAction { CreateEventSubscription = 0 }
+	export enum GET_CreateEventSubscriptionAction { CreateEventSubscription = 'CreateEventSubscription' }
 
-	export enum GET_CreateOptionGroupAction { CreateOptionGroup = 0 }
+	export enum GET_CreateOptionGroupAction { CreateOptionGroup = 'CreateOptionGroup' }
 
-	export enum GET_DeleteDBInstanceAction { DeleteDBInstance = 0 }
+	export enum GET_DeleteDBInstanceAction { DeleteDBInstance = 'DeleteDBInstance' }
 
-	export enum GET_DeleteDBParameterGroupAction { DeleteDBParameterGroup = 0 }
+	export enum GET_DeleteDBParameterGroupAction { DeleteDBParameterGroup = 'DeleteDBParameterGroup' }
 
-	export enum GET_DeleteDBSecurityGroupAction { DeleteDBSecurityGroup = 0 }
+	export enum GET_DeleteDBSecurityGroupAction { DeleteDBSecurityGroup = 'DeleteDBSecurityGroup' }
 
-	export enum GET_DeleteDBSnapshotAction { DeleteDBSnapshot = 0 }
+	export enum GET_DeleteDBSnapshotAction { DeleteDBSnapshot = 'DeleteDBSnapshot' }
 
-	export enum GET_DeleteDBSubnetGroupAction { DeleteDBSubnetGroup = 0 }
+	export enum GET_DeleteDBSubnetGroupAction { DeleteDBSubnetGroup = 'DeleteDBSubnetGroup' }
 
-	export enum GET_DeleteEventSubscriptionAction { DeleteEventSubscription = 0 }
+	export enum GET_DeleteEventSubscriptionAction { DeleteEventSubscription = 'DeleteEventSubscription' }
 
-	export enum GET_DeleteOptionGroupAction { DeleteOptionGroup = 0 }
+	export enum GET_DeleteOptionGroupAction { DeleteOptionGroup = 'DeleteOptionGroup' }
 
-	export enum GET_DescribeDBEngineVersionsAction { DescribeDBEngineVersions = 0 }
+	export enum GET_DescribeDBEngineVersionsAction { DescribeDBEngineVersions = 'DescribeDBEngineVersions' }
 
-	export enum GET_DescribeDBInstancesAction { DescribeDBInstances = 0 }
+	export enum GET_DescribeDBInstancesAction { DescribeDBInstances = 'DescribeDBInstances' }
 
-	export enum GET_DescribeDBParameterGroupsAction { DescribeDBParameterGroups = 0 }
+	export enum GET_DescribeDBParameterGroupsAction { DescribeDBParameterGroups = 'DescribeDBParameterGroups' }
 
-	export enum GET_DescribeDBParametersAction { DescribeDBParameters = 0 }
+	export enum GET_DescribeDBParametersAction { DescribeDBParameters = 'DescribeDBParameters' }
 
-	export enum GET_DescribeDBSecurityGroupsAction { DescribeDBSecurityGroups = 0 }
+	export enum GET_DescribeDBSecurityGroupsAction { DescribeDBSecurityGroups = 'DescribeDBSecurityGroups' }
 
-	export enum GET_DescribeDBSnapshotsAction { DescribeDBSnapshots = 0 }
+	export enum GET_DescribeDBSnapshotsAction { DescribeDBSnapshots = 'DescribeDBSnapshots' }
 
-	export enum GET_DescribeDBSubnetGroupsAction { DescribeDBSubnetGroups = 0 }
+	export enum GET_DescribeDBSubnetGroupsAction { DescribeDBSubnetGroups = 'DescribeDBSubnetGroups' }
 
-	export enum GET_DescribeEngineDefaultParametersAction { DescribeEngineDefaultParameters = 0 }
+	export enum GET_DescribeEngineDefaultParametersAction { DescribeEngineDefaultParameters = 'DescribeEngineDefaultParameters' }
 
-	export enum GET_DescribeEventCategoriesAction { DescribeEventCategories = 0 }
+	export enum GET_DescribeEventCategoriesAction { DescribeEventCategories = 'DescribeEventCategories' }
 
-	export enum GET_DescribeEventSubscriptionsAction { DescribeEventSubscriptions = 0 }
+	export enum GET_DescribeEventSubscriptionsAction { DescribeEventSubscriptions = 'DescribeEventSubscriptions' }
 
-	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
+	export enum GET_DescribeEventsAction { DescribeEvents = 'DescribeEvents' }
 
-	export enum GET_DescribeOptionGroupOptionsAction { DescribeOptionGroupOptions = 0 }
+	export enum GET_DescribeOptionGroupOptionsAction { DescribeOptionGroupOptions = 'DescribeOptionGroupOptions' }
 
-	export enum GET_DescribeOptionGroupsAction { DescribeOptionGroups = 0 }
+	export enum GET_DescribeOptionGroupsAction { DescribeOptionGroups = 'DescribeOptionGroups' }
 
-	export enum GET_DescribeOrderableDBInstanceOptionsAction { DescribeOrderableDBInstanceOptions = 0 }
+	export enum GET_DescribeOrderableDBInstanceOptionsAction { DescribeOrderableDBInstanceOptions = 'DescribeOrderableDBInstanceOptions' }
 
-	export enum GET_DescribeReservedDBInstancesAction { DescribeReservedDBInstances = 0 }
+	export enum GET_DescribeReservedDBInstancesAction { DescribeReservedDBInstances = 'DescribeReservedDBInstances' }
 
-	export enum GET_DescribeReservedDBInstancesOfferingsAction { DescribeReservedDBInstancesOfferings = 0 }
+	export enum GET_DescribeReservedDBInstancesOfferingsAction { DescribeReservedDBInstancesOfferings = 'DescribeReservedDBInstancesOfferings' }
 
-	export enum GET_ListTagsForResourceAction { ListTagsForResource = 0 }
+	export enum GET_ListTagsForResourceAction { ListTagsForResource = 'ListTagsForResource' }
 
-	export enum GET_ModifyDBInstanceAction { ModifyDBInstance = 0 }
+	export enum GET_ModifyDBInstanceAction { ModifyDBInstance = 'ModifyDBInstance' }
 
-	export enum GET_ModifyDBParameterGroupAction { ModifyDBParameterGroup = 0 }
+	export enum GET_ModifyDBParameterGroupAction { ModifyDBParameterGroup = 'ModifyDBParameterGroup' }
 
-	export enum GET_ModifyDBSubnetGroupAction { ModifyDBSubnetGroup = 0 }
+	export enum GET_ModifyDBSubnetGroupAction { ModifyDBSubnetGroup = 'ModifyDBSubnetGroup' }
 
-	export enum GET_ModifyEventSubscriptionAction { ModifyEventSubscription = 0 }
+	export enum GET_ModifyEventSubscriptionAction { ModifyEventSubscription = 'ModifyEventSubscription' }
 
-	export enum GET_ModifyOptionGroupAction { ModifyOptionGroup = 0 }
+	export enum GET_ModifyOptionGroupAction { ModifyOptionGroup = 'ModifyOptionGroup' }
 
-	export enum GET_PromoteReadReplicaAction { PromoteReadReplica = 0 }
+	export enum GET_PromoteReadReplicaAction { PromoteReadReplica = 'PromoteReadReplica' }
 
-	export enum GET_PurchaseReservedDBInstancesOfferingAction { PurchaseReservedDBInstancesOffering = 0 }
+	export enum GET_PurchaseReservedDBInstancesOfferingAction { PurchaseReservedDBInstancesOffering = 'PurchaseReservedDBInstancesOffering' }
 
-	export enum GET_RebootDBInstanceAction { RebootDBInstance = 0 }
+	export enum GET_RebootDBInstanceAction { RebootDBInstance = 'RebootDBInstance' }
 
-	export enum GET_RemoveSourceIdentifierFromSubscriptionAction { RemoveSourceIdentifierFromSubscription = 0 }
+	export enum GET_RemoveSourceIdentifierFromSubscriptionAction { RemoveSourceIdentifierFromSubscription = 'RemoveSourceIdentifierFromSubscription' }
 
-	export enum GET_RemoveTagsFromResourceAction { RemoveTagsFromResource = 0 }
+	export enum GET_RemoveTagsFromResourceAction { RemoveTagsFromResource = 'RemoveTagsFromResource' }
 
-	export enum GET_ResetDBParameterGroupAction { ResetDBParameterGroup = 0 }
+	export enum GET_ResetDBParameterGroupAction { ResetDBParameterGroup = 'ResetDBParameterGroup' }
 
-	export enum GET_RestoreDBInstanceFromDBSnapshotAction { RestoreDBInstanceFromDBSnapshot = 0 }
+	export enum GET_RestoreDBInstanceFromDBSnapshotAction { RestoreDBInstanceFromDBSnapshot = 'RestoreDBInstanceFromDBSnapshot' }
 
-	export enum GET_RestoreDBInstanceToPointInTimeAction { RestoreDBInstanceToPointInTime = 0 }
+	export enum GET_RestoreDBInstanceToPointInTimeAction { RestoreDBInstanceToPointInTime = 'RestoreDBInstanceToPointInTime' }
 
-	export enum GET_RevokeDBSecurityGroupIngressAction { RevokeDBSecurityGroupIngress = 0 }
+	export enum GET_RevokeDBSecurityGroupIngressAction { RevokeDBSecurityGroupIngress = 'RevokeDBSecurityGroupIngress' }
 
 }
 

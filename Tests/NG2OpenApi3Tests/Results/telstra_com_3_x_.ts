@@ -116,7 +116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorLocation { body = 0, path = 1, query = 2 }
+	export enum ErrorLocation { body = 'body', path = 'path', query = 'query' }
 
 	export interface Errors {
 
@@ -360,7 +360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageGetDirection { outgoing = 0, incoming = 1 }
+	export enum MessageGetDirection { outgoing = 'outgoing', incoming = 'incoming' }
 
 	export interface MultimediaGet {
 
@@ -406,7 +406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageGetStatus { queued = 0, sent = 1, delivered = 2, expired = 3, undeliverable = 4 }
+	export enum MessageGetStatus { queued = 'queued', sent = 'sent', delivered = 'delivered', expired = 'expired', undeliverable = 'undeliverable' }
 
 	export interface MessageSent {
 
@@ -1543,7 +1543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetMessagesStatus { queued = 0, sent = 1, delivered = 2, expired = 3 }
+	export enum GetMessagesStatus { queued = 'queued', sent = 'sent', delivered = 'delivered', expired = 'expired' }
 
 	export interface GetMessagesReturn {
 

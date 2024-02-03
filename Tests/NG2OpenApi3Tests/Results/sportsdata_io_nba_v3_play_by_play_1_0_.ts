@@ -350,7 +350,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum PlayByPlayFormat { XML = 0, JSON = 1 }
+	export enum PlayByPlayFormat { XML = 'XML', JSON = 'JSON' }
 
 }
 

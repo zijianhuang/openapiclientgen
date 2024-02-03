@@ -97,7 +97,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreativeAssetIdType { IMAGE = 0, FLASH = 1, VIDEO = 2, HTML = 3, HTML_IMAGE = 4, AUDIO = 5 }
+	export enum CreativeAssetIdType { IMAGE = 'IMAGE', FLASH = 'FLASH', VIDEO = 'VIDEO', HTML = 'HTML', HTML_IMAGE = 'HTML_IMAGE', AUDIO = 'AUDIO' }
 
 
 	/** CreativeAssets contains properties of a creative asset file which will be uploaded or has already been uploaded. Refer to the creative sample code for how to upload assets and insert a creative. */
@@ -240,9 +240,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreativeCustomEventAdvertiserCustomEventType { ADVERTISER_EVENT_TIMER = 0, ADVERTISER_EVENT_EXIT = 1, ADVERTISER_EVENT_COUNTER = 2 }
+	export enum CreativeCustomEventAdvertiserCustomEventType { ADVERTISER_EVENT_TIMER = 'ADVERTISER_EVENT_TIMER', ADVERTISER_EVENT_EXIT = 'ADVERTISER_EVENT_EXIT', ADVERTISER_EVENT_COUNTER = 'ADVERTISER_EVENT_COUNTER' }
 
-	export enum CreativeCustomEventArtworkType { ARTWORK_TYPE_FLASH = 0, ARTWORK_TYPE_HTML5 = 1, ARTWORK_TYPE_MIXED = 2, ARTWORK_TYPE_IMAGE = 3 }
+	export enum CreativeCustomEventArtworkType { ARTWORK_TYPE_FLASH = 'ARTWORK_TYPE_FLASH', ARTWORK_TYPE_HTML5 = 'ARTWORK_TYPE_HTML5', ARTWORK_TYPE_MIXED = 'ARTWORK_TYPE_MIXED', ARTWORK_TYPE_IMAGE = 'ARTWORK_TYPE_IMAGE' }
 
 
 	/** Popup Window Properties. */
@@ -390,9 +390,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PopupWindowPropertiesPositionType { CENTER = 0, COORDINATES = 1 }
+	export enum PopupWindowPropertiesPositionType { CENTER = 'CENTER', COORDINATES = 'COORDINATES' }
 
-	export enum CreativeCustomEventTargetType { TARGET_BLANK = 0, TARGET_TOP = 1, TARGET_SELF = 2, TARGET_PARENT = 3, TARGET_POPUP = 4 }
+	export enum CreativeCustomEventTargetType { TARGET_BLANK = 'TARGET_BLANK', TARGET_TOP = 'TARGET_TOP', TARGET_SELF = 'TARGET_SELF', TARGET_PARENT = 'TARGET_PARENT', TARGET_POPUP = 'TARGET_POPUP' }
 
 
 	/** Represents a DimensionValue resource. */
@@ -450,7 +450,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionValueMatchType { EXACT = 0, BEGINS_WITH = 1, CONTAINS = 2, WILDCARD_EXPRESSION = 3 }
+	export enum DimensionValueMatchType { EXACT = 'EXACT', BEGINS_WITH = 'BEGINS_WITH', CONTAINS = 'CONTAINS', WILDCARD_EXPRESSION = 'WILDCARD_EXPRESSION' }
 
 
 	/** Extra information added to operations that support Scotty media requests. */
@@ -529,7 +529,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaRequestInfoNotificationType { START = 0, PROGRESS = 1, END = 2, RESPONSE_SENT = 3, ERROR = 4 }
+	export enum MediaRequestInfoNotificationType { START = 'START', PROGRESS = 'PROGRESS', END = 'END', RESPONSE_SENT = 'RESPONSE_SENT', ERROR = 'ERROR' }
 
 
 	/** This message is for backends to pass their scotty media specific fields to ESF. Backend will include this in their response message to ESF. Example: ExportFile is an rpc defined for upload using scotty from ESF. rpc ExportFile(ExportFileRequest) returns (ExportFileResponse) Message ExportFileResponse will include apiserving.MediaResponseInfo to tell ESF about data like dynamic_dropzone it needs to pass to Scotty. message ExportFileResponse { optional gdata.Media blob = 1; optional apiserving.MediaResponseInfo media_response_info = 2 } */
@@ -608,9 +608,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaResponseInfoRequestClass { UNKNOWN_REQUEST_CLASS = 0, LATENCY_SENSITIVE = 1, PRODUCTION_BATCH = 2, BEST_EFFORT = 3 }
+	export enum MediaResponseInfoRequestClass { UNKNOWN_REQUEST_CLASS = 'UNKNOWN_REQUEST_CLASS', LATENCY_SENSITIVE = 'LATENCY_SENSITIVE', PRODUCTION_BATCH = 'PRODUCTION_BATCH', BEST_EFFORT = 'BEST_EFFORT' }
 
-	export enum MediaResponseInfoTrafficClassField { BE1 = 0, AF1 = 1, AF2 = 2, AF3 = 3, AF4 = 4, NC1 = 5, NC0 = 6, BE0 = 7, LLQ = 8, LLQ1 = 9, LLQ2 = 10 }
+	export enum MediaResponseInfoTrafficClassField { BE1 = 'BE1', AF1 = 'AF1', AF2 = 'AF2', AF3 = 'AF3', AF4 = 'AF4', NC1 = 'NC1', NC0 = 'NC0', BE0 = 'BE0', LLQ = 'LLQ', LLQ1 = 'LLQ1', LLQ2 = 'LLQ2' }
 
 	@Injectable()
 	export class MyClient {

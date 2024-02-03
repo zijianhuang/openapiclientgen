@@ -79,9 +79,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyAlgorithm { RSA_2048 = 0, RSA_4096 = 1, EC_prime256v1 = 2, EC_secp384r1 = 3 }
+	export enum KeyAlgorithm { RSA_2048 = 'RSA_2048', RSA_4096 = 'RSA_4096', EC_prime256v1 = 'EC_prime256v1', EC_secp384r1 = 'EC_secp384r1' }
 
-	export enum SigningAlgorithm { SHA256WITHECDSA = 0, SHA384WITHECDSA = 1, SHA512WITHECDSA = 2, SHA256WITHRSA = 3, SHA384WITHRSA = 4, SHA512WITHRSA = 5 }
+	export enum SigningAlgorithm { SHA256WITHECDSA = 'SHA256WITHECDSA', SHA384WITHECDSA = 'SHA384WITHECDSA', SHA512WITHECDSA = 'SHA512WITHECDSA', SHA256WITHRSA = 'SHA256WITHRSA', SHA384WITHRSA = 'SHA384WITHRSA', SHA512WITHRSA = 'SHA512WITHRSA' }
 
 
 	/** Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. */
@@ -265,7 +265,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessMethodType { CA_REPOSITORY = 0, RESOURCE_PKI_MANIFEST = 1, RESOURCE_PKI_NOTIFY = 2 }
+	export enum AccessMethodType { CA_REPOSITORY = 'CA_REPOSITORY', RESOURCE_PKI_MANIFEST = 'RESOURCE_PKI_MANIFEST', RESOURCE_PKI_NOTIFY = 'RESOURCE_PKI_NOTIFY' }
 
 
 	/** Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error. */
@@ -402,7 +402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3ObjectAcl { PUBLIC_READ = 0, BUCKET_OWNER_FULL_CONTROL = 1 }
+	export enum S3ObjectAcl { PUBLIC_READ = 'PUBLIC_READ', BUCKET_OWNER_FULL_CONTROL = 'BUCKET_OWNER_FULL_CONTROL' }
 
 
 	/** <p>Contains information to enable and configure Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p> <p>When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p> */
@@ -428,9 +428,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateAuthorityType { ROOT = 0, SUBORDINATE = 1 }
+	export enum CertificateAuthorityType { ROOT = 'ROOT', SUBORDINATE = 'SUBORDINATE' }
 
-	export enum KeyStorageSecurityStandard { FIPS_140_2_LEVEL_2_OR_HIGHER = 0, FIPS_140_2_LEVEL_3_OR_HIGHER = 1 }
+	export enum KeyStorageSecurityStandard { FIPS_140_2_LEVEL_2_OR_HIGHER = 'FIPS_140_2_LEVEL_2_OR_HIGHER', FIPS_140_2_LEVEL_3_OR_HIGHER = 'FIPS_140_2_LEVEL_3_OR_HIGHER' }
 
 
 	/** Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a> action. To remove a tag, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a> action.  */
@@ -456,7 +456,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateAuthorityUsageMode { GENERAL_PURPOSE = 0, SHORT_LIVED_CERTIFICATE = 1 }
+	export enum CertificateAuthorityUsageMode { GENERAL_PURPOSE = 'GENERAL_PURPOSE', SHORT_LIVED_CERTIFICATE = 'SHORT_LIVED_CERTIFICATE' }
 
 	export interface InvalidArgsException {
 	}
@@ -545,7 +545,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditReportResponseFormat { JSON = 0, CSV = 1 }
+	export enum AuditReportResponseFormat { JSON = 'JSON', CSV = 'CSV' }
 
 	export interface RequestInProgressException {
 	}
@@ -627,7 +627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { IssueCertificate = 0, GetCertificate = 1, ListPermissions = 2 }
+	export enum ActionType { IssueCertificate = 'IssueCertificate', GetCertificate = 'GetCertificate', ListPermissions = 'ListPermissions' }
 
 	export interface PermissionAlreadyExistsException {
 	}
@@ -789,9 +789,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateAuthorityStatus { CREATING = 0, PENDING_CERTIFICATE = 1, ACTIVE = 2, DELETED = 3, DISABLED = 4, EXPIRED = 5, FAILED = 6 }
+	export enum CertificateAuthorityStatus { CREATING = 'CREATING', PENDING_CERTIFICATE = 'PENDING_CERTIFICATE', ACTIVE = 'ACTIVE', DELETED = 'DELETED', DISABLED = 'DISABLED', EXPIRED = 'EXPIRED', FAILED = 'FAILED' }
 
-	export enum FailureReason { REQUEST_TIMED_OUT = 0, UNSUPPORTED_ALGORITHM = 1, OTHER = 2 }
+	export enum FailureReason { REQUEST_TIMED_OUT = 'REQUEST_TIMED_OUT', UNSUPPORTED_ALGORITHM = 'UNSUPPORTED_ALGORITHM', OTHER = 'OTHER' }
 
 	export interface DescribeCertificateAuthorityRequest {
 
@@ -832,7 +832,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditReportStatus { CREATING = 0, SUCCESS = 1, FAILED = 2 }
+	export enum AuditReportStatus { CREATING = 'CREATING', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
 	export interface DescribeCertificateAuthorityAuditReportRequest {
 
@@ -1188,7 +1188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyQualifierId { CPS = 0 }
+	export enum PolicyQualifierId { CPS = 'CPS' }
 
 
 	/** Defines a <code>PolicyInformation</code> qualifier. Amazon Web Services Private CA supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280.  */
@@ -1231,7 +1231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExtendedKeyUsageType { SERVER_AUTH = 0, CLIENT_AUTH = 1, CODE_SIGNING = 2, EMAIL_PROTECTION = 3, TIME_STAMPING = 4, OCSP_SIGNING = 5, SMART_CARD_LOGIN = 6, DOCUMENT_SIGNING = 7, CERTIFICATE_TRANSPARENCY = 8 }
+	export enum ExtendedKeyUsageType { SERVER_AUTH = 'SERVER_AUTH', CLIENT_AUTH = 'CLIENT_AUTH', CODE_SIGNING = 'CODE_SIGNING', EMAIL_PROTECTION = 'EMAIL_PROTECTION', TIME_STAMPING = 'TIME_STAMPING', OCSP_SIGNING = 'OCSP_SIGNING', SMART_CARD_LOGIN = 'SMART_CARD_LOGIN', DOCUMENT_SIGNING = 'DOCUMENT_SIGNING', CERTIFICATE_TRANSPARENCY = 'CERTIFICATE_TRANSPARENCY' }
 
 
 	/** <p/> <p>Specifies the X.509 extension information for a certificate.</p> <p>Extensions present in <code>CustomExtensions</code> follow the <code>ApiPassthrough</code> <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">template rules</a>. </p> */
@@ -1292,7 +1292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidityPeriodType { END_DATE = 0, ABSOLUTE = 1, DAYS = 2, MONTHS = 3, YEARS = 4 }
+	export enum ValidityPeriodType { END_DATE = 'END_DATE', ABSOLUTE = 'ABSOLUTE', DAYS = 'DAYS', MONTHS = 'MONTHS', YEARS = 'YEARS' }
 
 	export interface MalformedCSRException {
 	}
@@ -1337,7 +1337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
+	export enum ResourceOwner { SELF = 'SELF', OTHER_ACCOUNTS = 'OTHER_ACCOUNTS' }
 
 	export interface InvalidNextTokenException {
 	}
@@ -1525,7 +1525,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RevocationReason { UNSPECIFIED = 0, KEY_COMPROMISE = 1, CERTIFICATE_AUTHORITY_COMPROMISE = 2, AFFILIATION_CHANGED = 3, SUPERSEDED = 4, CESSATION_OF_OPERATION = 5, PRIVILEGE_WITHDRAWN = 6, A_A_COMPROMISE = 7 }
+	export enum RevocationReason { UNSPECIFIED = 'UNSPECIFIED', KEY_COMPROMISE = 'KEY_COMPROMISE', CERTIFICATE_AUTHORITY_COMPROMISE = 'CERTIFICATE_AUTHORITY_COMPROMISE', AFFILIATION_CHANGED = 'AFFILIATION_CHANGED', SUPERSEDED = 'SUPERSEDED', CESSATION_OF_OPERATION = 'CESSATION_OF_OPERATION', PRIVILEGE_WITHDRAWN = 'PRIVILEGE_WITHDRAWN', A_A_COMPROMISE = 'A_A_COMPROMISE' }
 
 	export interface RequestAlreadyProcessedException {
 	}
@@ -1827,51 +1827,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.CreateCertificateAuthority' = 0 }
+	export enum CreateCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.CreateCertificateAuthority' = 'ACMPrivateCA.CreateCertificateAuthority' }
 
-	export enum CreateCertificateAuthorityAuditReportX_Amz_Target { 'ACMPrivateCA.CreateCertificateAuthorityAuditReport' = 0 }
+	export enum CreateCertificateAuthorityAuditReportX_Amz_Target { 'ACMPrivateCA.CreateCertificateAuthorityAuditReport' = 'ACMPrivateCA.CreateCertificateAuthorityAuditReport' }
 
-	export enum CreatePermissionX_Amz_Target { 'ACMPrivateCA.CreatePermission' = 0 }
+	export enum CreatePermissionX_Amz_Target { 'ACMPrivateCA.CreatePermission' = 'ACMPrivateCA.CreatePermission' }
 
-	export enum DeleteCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.DeleteCertificateAuthority' = 0 }
+	export enum DeleteCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.DeleteCertificateAuthority' = 'ACMPrivateCA.DeleteCertificateAuthority' }
 
-	export enum DeletePermissionX_Amz_Target { 'ACMPrivateCA.DeletePermission' = 0 }
+	export enum DeletePermissionX_Amz_Target { 'ACMPrivateCA.DeletePermission' = 'ACMPrivateCA.DeletePermission' }
 
-	export enum DeletePolicyX_Amz_Target { 'ACMPrivateCA.DeletePolicy' = 0 }
+	export enum DeletePolicyX_Amz_Target { 'ACMPrivateCA.DeletePolicy' = 'ACMPrivateCA.DeletePolicy' }
 
-	export enum DescribeCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.DescribeCertificateAuthority' = 0 }
+	export enum DescribeCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.DescribeCertificateAuthority' = 'ACMPrivateCA.DescribeCertificateAuthority' }
 
-	export enum DescribeCertificateAuthorityAuditReportX_Amz_Target { 'ACMPrivateCA.DescribeCertificateAuthorityAuditReport' = 0 }
+	export enum DescribeCertificateAuthorityAuditReportX_Amz_Target { 'ACMPrivateCA.DescribeCertificateAuthorityAuditReport' = 'ACMPrivateCA.DescribeCertificateAuthorityAuditReport' }
 
-	export enum GetCertificateX_Amz_Target { 'ACMPrivateCA.GetCertificate' = 0 }
+	export enum GetCertificateX_Amz_Target { 'ACMPrivateCA.GetCertificate' = 'ACMPrivateCA.GetCertificate' }
 
-	export enum GetCertificateAuthorityCertificateX_Amz_Target { 'ACMPrivateCA.GetCertificateAuthorityCertificate' = 0 }
+	export enum GetCertificateAuthorityCertificateX_Amz_Target { 'ACMPrivateCA.GetCertificateAuthorityCertificate' = 'ACMPrivateCA.GetCertificateAuthorityCertificate' }
 
-	export enum GetCertificateAuthorityCsrX_Amz_Target { 'ACMPrivateCA.GetCertificateAuthorityCsr' = 0 }
+	export enum GetCertificateAuthorityCsrX_Amz_Target { 'ACMPrivateCA.GetCertificateAuthorityCsr' = 'ACMPrivateCA.GetCertificateAuthorityCsr' }
 
-	export enum GetPolicyX_Amz_Target { 'ACMPrivateCA.GetPolicy' = 0 }
+	export enum GetPolicyX_Amz_Target { 'ACMPrivateCA.GetPolicy' = 'ACMPrivateCA.GetPolicy' }
 
-	export enum ImportCertificateAuthorityCertificateX_Amz_Target { 'ACMPrivateCA.ImportCertificateAuthorityCertificate' = 0 }
+	export enum ImportCertificateAuthorityCertificateX_Amz_Target { 'ACMPrivateCA.ImportCertificateAuthorityCertificate' = 'ACMPrivateCA.ImportCertificateAuthorityCertificate' }
 
-	export enum IssueCertificateX_Amz_Target { 'ACMPrivateCA.IssueCertificate' = 0 }
+	export enum IssueCertificateX_Amz_Target { 'ACMPrivateCA.IssueCertificate' = 'ACMPrivateCA.IssueCertificate' }
 
-	export enum ListCertificateAuthoritiesX_Amz_Target { 'ACMPrivateCA.ListCertificateAuthorities' = 0 }
+	export enum ListCertificateAuthoritiesX_Amz_Target { 'ACMPrivateCA.ListCertificateAuthorities' = 'ACMPrivateCA.ListCertificateAuthorities' }
 
-	export enum ListPermissionsX_Amz_Target { 'ACMPrivateCA.ListPermissions' = 0 }
+	export enum ListPermissionsX_Amz_Target { 'ACMPrivateCA.ListPermissions' = 'ACMPrivateCA.ListPermissions' }
 
-	export enum ListTagsX_Amz_Target { 'ACMPrivateCA.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'ACMPrivateCA.ListTags' = 'ACMPrivateCA.ListTags' }
 
-	export enum PutPolicyX_Amz_Target { 'ACMPrivateCA.PutPolicy' = 0 }
+	export enum PutPolicyX_Amz_Target { 'ACMPrivateCA.PutPolicy' = 'ACMPrivateCA.PutPolicy' }
 
-	export enum RestoreCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.RestoreCertificateAuthority' = 0 }
+	export enum RestoreCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.RestoreCertificateAuthority' = 'ACMPrivateCA.RestoreCertificateAuthority' }
 
-	export enum RevokeCertificateX_Amz_Target { 'ACMPrivateCA.RevokeCertificate' = 0 }
+	export enum RevokeCertificateX_Amz_Target { 'ACMPrivateCA.RevokeCertificate' = 'ACMPrivateCA.RevokeCertificate' }
 
-	export enum TagCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.TagCertificateAuthority' = 0 }
+	export enum TagCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.TagCertificateAuthority' = 'ACMPrivateCA.TagCertificateAuthority' }
 
-	export enum UntagCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.UntagCertificateAuthority' = 0 }
+	export enum UntagCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.UntagCertificateAuthority' = 'ACMPrivateCA.UntagCertificateAuthority' }
 
-	export enum UpdateCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.UpdateCertificateAuthority' = 0 }
+	export enum UpdateCertificateAuthorityX_Amz_Target { 'ACMPrivateCA.UpdateCertificateAuthority' = 'ACMPrivateCA.UpdateCertificateAuthority' }
 
 }
 

@@ -61,7 +61,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualNetworkRulePropertiesState { Initializing = 0, InProgress = 1, Ready = 2, Deleting = 3, Unknown = 4 }
+	export enum VirtualNetworkRulePropertiesState { Initializing = 'Initializing', InProgress = 'InProgress', Ready = 'Ready', Deleting = 'Deleting', Unknown = 'Unknown' }
 
 
 	/** A list of virtual network rules. */

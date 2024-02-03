@@ -138,7 +138,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleSearchIdeahubV1alphaIdeaActivityType { TYPE_UNSPECIFIED = 0, POST_DRAFTED = 1, POST_PUBLISHED = 2, POST_DELETED = 3, POST_UNPUBLISHED = 4 }
+	export enum GoogleSearchIdeahubV1alphaIdeaActivityType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', POST_DRAFTED = 'POST_DRAFTED', POST_PUBLISHED = 'POST_PUBLISHED', POST_DELETED = 'POST_DELETED', POST_UNPUBLISHED = 'POST_UNPUBLISHED' }
 
 
 	/** Represents idea state specific to a web property. */

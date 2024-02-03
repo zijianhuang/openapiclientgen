@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AsyncOperationStatusState { NotStarted = 0, Running = 1, Cancelled = 2, Succeeded = 3, Failed = 4, TimedOut = 5 }
+	export enum AsyncOperationStatusState { NotStarted = 'NotStarted', Running = 'Running', Cancelled = 'Cancelled', Succeeded = 'Succeeded', Failed = 'Failed', TimedOut = 'TimedOut' }
 
 	export interface AuthKeys {
 
@@ -701,9 +701,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateServiceRequestComputeType { ACI = 0, AKS = 1, AMLCOMPUTE = 2, IOT = 3, AKSENDPOINT = 4, UNKNOWN = 5 }
+	export enum CreateServiceRequestComputeType { ACI = 'ACI', AKS = 'AKS', AMLCOMPUTE = 'AMLCOMPUTE', IOT = 'IOT', AKSENDPOINT = 'AKSENDPOINT', UNKNOWN = 'UNKNOWN' }
 
-	export enum CreateServiceRequestDeploymentType { GRPCRealtimeEndpoint = 0, HttpRealtimeEndpoint = 1, Batch = 2 }
+	export enum CreateServiceRequestDeploymentType { GRPCRealtimeEndpoint = 'GRPCRealtimeEndpoint', HttpRealtimeEndpoint = 'HttpRealtimeEndpoint', Batch = 'Batch' }
 
 
 	/** Request to create a Docker image based on Environment. */
@@ -1154,9 +1154,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageResponseBaseImageFlavor { WebApiContainer = 0, BatchContainer = 1, IoTContainer = 2, AccelContainer = 3, UserProvidedContainer = 4 }
+	export enum ImageResponseBaseImageFlavor { WebApiContainer = 'WebApiContainer', BatchContainer = 'BatchContainer', IoTContainer = 'IoTContainer', AccelContainer = 'AccelContainer', UserProvidedContainer = 'UserProvidedContainer' }
 
-	export enum ImageResponseBaseImageType { Docker = 0 }
+	export enum ImageResponseBaseImageType { Docker = 'Docker' }
 
 
 	/** An Azure Machine Learning Model. */
@@ -1816,7 +1816,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceResponseBaseState { Transitioning = 0, Healthy = 1, Unhealthy = 2, Failed = 3 }
+	export enum ServiceResponseBaseState { Transitioning = 'Transitioning', Healthy = 'Healthy', Unhealthy = 'Unhealthy', Failed = 'Failed' }
 
 
 	/** The request for creating a profile. */
@@ -1897,7 +1897,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateServiceKeysRequestKeyType { Primary = 0, Secondary = 1 }
+	export enum RegenerateServiceKeysRequestKeyType { Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** Contains registry information. */
@@ -1994,11 +1994,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetRuntimeOsType { Linux = 0, Windows = 1 }
+	export enum TargetRuntimeOsType { Linux = 'Linux', Windows = 'Windows' }
 
-	export enum TargetRuntimeRuntimeType { SparkPython = 0, Tlc37 = 1, Tlc38 = 2, Tlc310 = 3, Python = 4, PythonSlim = 5, PythonCustom = 6 }
+	export enum TargetRuntimeRuntimeType { SparkPython = 'SparkPython', Tlc37 = 'Tlc37', Tlc38 = 'Tlc38', Tlc310 = 'Tlc310', Python = 'Python', PythonSlim = 'PythonSlim', PythonCustom = 'PythonCustom' }
 
-	export enum TargetRuntimeTargetArchitecture { Amd64 = 0, Arm32v7 = 1 }
+	export enum TargetRuntimeTargetArchitecture { Amd64 = 'Amd64', Arm32v7 = 'Arm32v7' }
 
 
 	/**
@@ -2360,7 +2360,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Assets_ListQueryOrderby { CreatedAtDesc = 0, CreatedAtAsc = 1, UpdatedAtDesc = 2, UpdatedAtAsc = 3 }
+	export enum Assets_ListQueryOrderby { CreatedAtDesc = 'CreatedAtDesc', CreatedAtAsc = 'CreatedAtAsc', UpdatedAtDesc = 'UpdatedAtDesc', UpdatedAtAsc = 'UpdatedAtAsc' }
 
 }
 

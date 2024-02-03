@@ -434,7 +434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListenerProtocol { HTTP = 0, HTTPS = 1 }
+	export enum ListenerProtocol { HTTP = 'HTTP', HTTPS = 'HTTPS' }
 
 	export interface ServiceQuotaExceededException {
 	}
@@ -502,7 +502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthType { NONE = 0, AWS_IAM = 1 }
+	export enum AuthType { NONE = 'NONE', AWS_IAM = 'AWS_IAM' }
 
 
 	/** Describes the DNS information of a service. */
@@ -524,7 +524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceStatus { ACTIVE = 0, CREATE_IN_PROGRESS = 1, DELETE_IN_PROGRESS = 2, CREATE_FAILED = 3, DELETE_FAILED = 4 }
+	export enum ServiceStatus { ACTIVE = 'ACTIVE', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface CreateServiceNetworkResponse {
 		arn?: string;
@@ -574,7 +574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceNetworkServiceAssociationStatus { CREATE_IN_PROGRESS = 0, ACTIVE = 1, DELETE_IN_PROGRESS = 2, CREATE_FAILED = 3, DELETE_FAILED = 4 }
+	export enum ServiceNetworkServiceAssociationStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', ACTIVE = 'ACTIVE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface CreateServiceNetworkVpcAssociationResponse {
 		arn?: string;
@@ -599,7 +599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceNetworkVpcAssociationStatus { CREATE_IN_PROGRESS = 0, ACTIVE = 1, UPDATE_IN_PROGRESS = 2, DELETE_IN_PROGRESS = 3, CREATE_FAILED = 4, DELETE_FAILED = 5, UPDATE_FAILED = 6 }
+	export enum ServiceNetworkVpcAssociationStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', ACTIVE = 'ACTIVE', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface CreateTargetGroupResponse {
 		arn?: string;
@@ -728,15 +728,15 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckProtocolVersion { HTTP1 = 0, HTTP2 = 1 }
+	export enum HealthCheckProtocolVersion { HTTP1 = 'HTTP1', HTTP2 = 'HTTP2' }
 
-	export enum IpAddressType { IPV4 = 0, IPV6 = 1 }
+	export enum IpAddressType { IPV4 = 'IPV4', IPV6 = 'IPV6' }
 
-	export enum TargetGroupProtocolVersion { HTTP1 = 0, HTTP2 = 1, GRPC = 2 }
+	export enum TargetGroupProtocolVersion { HTTP1 = 'HTTP1', HTTP2 = 'HTTP2', GRPC = 'GRPC' }
 
-	export enum TargetGroupType { IP = 0, LAMBDA = 1, INSTANCE = 2, ALB = 3 }
+	export enum TargetGroupType { IP = 'IP', LAMBDA = 'LAMBDA', INSTANCE = 'INSTANCE', ALB = 'ALB' }
 
-	export enum TargetGroupProtocol { HTTP = 0, HTTPS = 1 }
+	export enum TargetGroupProtocol { HTTP = 'HTTP', HTTPS = 'HTTPS' }
 
 	export interface DeleteAccessLogSubscriptionResponse {
 	}
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthPolicyState { Active = 0, Inactive = 1 }
+	export enum AuthPolicyState { Active = 'Active', Inactive = 'Inactive' }
 
 	export interface GetListenerResponse {
 		arn?: string;
@@ -1857,7 +1857,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetStatus { DRAINING = 0, UNAVAILABLE = 1, HEALTHY = 2, UNHEALTHY = 3, INITIAL = 4, UNUSED = 5 }
+	export enum TargetStatus { DRAINING = 'DRAINING', UNAVAILABLE = 'UNAVAILABLE', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', INITIAL = 'INITIAL', UNUSED = 'UNUSED' }
 
 	export interface PutAuthPolicyResponse {
 		policy?: string;
@@ -2369,7 +2369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetGroupStatus { CREATE_IN_PROGRESS = 0, ACTIVE = 1, DELETE_IN_PROGRESS = 2, CREATE_FAILED = 3, DELETE_FAILED = 4 }
+	export enum TargetGroupStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', ACTIVE = 'ACTIVE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface DeleteAccessLogSubscriptionRequest {
 	}

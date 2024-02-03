@@ -141,11 +141,11 @@ export namespace MyNS {
 
 	}
 
-	export enum UserStatusType { ACTIVE = 0, INACTIVE = 1, PENDING = 2 }
+	export enum UserStatusType { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', PENDING = 'PENDING' }
 
-	export enum UserType { USER = 0, ADMIN = 1, POWERUSER = 2, MINIMALUSER = 3, WORKSPACESUSER = 4 }
+	export enum UserType { USER = 'USER', ADMIN = 'ADMIN', POWERUSER = 'POWERUSER', MINIMALUSER = 'MINIMALUSER', WORKSPACESUSER = 'WORKSPACESUSER' }
 
-	export enum LocaleType { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, default = 10 }
+	export enum LocaleType { en = 'en', fr = 'fr', ko = 'ko', de = 'de', es = 'es', ja = 'ja', ru = 'ru', zh_CN = 'zh_CN', zh_TW = 'zh_TW', pt_BR = 'pt_BR', default = 'default' }
 
 
 	/** Describes the storage for a user. */
@@ -185,7 +185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageType { UNLIMITED = 0, QUOTA = 1 }
+	export enum StorageType { UNLIMITED = 'UNLIMITED', QUOTA = 'QUOTA' }
 
 	export interface AddResourcePermissionsResponse {
 		ShareResults?: Array<ShareResult>;
@@ -230,9 +230,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleType { VIEWER = 0, CONTRIBUTOR = 1, OWNER = 2, COOWNER = 3 }
+	export enum RoleType { VIEWER = 'VIEWER', CONTRIBUTOR = 'CONTRIBUTOR', OWNER = 'OWNER', COOWNER = 'COOWNER' }
 
-	export enum ShareStatusType { SUCCESS = 0, FAILURE = 1 }
+	export enum ShareStatusType { SUCCESS = 'SUCCESS', FAILURE = 'FAILURE' }
 
 
 	/** Describes the recipient type and ID, if available. */
@@ -269,7 +269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrincipalType { USER = 0, GROUP = 1, INVITE = 2, ANONYMOUS = 3, ORGANIZATION = 4 }
+	export enum PrincipalType { USER = 'USER', GROUP = 'GROUP', INVITE = 'INVITE', ANONYMOUS = 'ANONYMOUS', ORGANIZATION = 'ORGANIZATION' }
 
 	export interface CreateCommentResponse {
 		Comment?: Comment;
@@ -325,9 +325,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CommentStatusType { DRAFT = 0, PUBLISHED = 1, DELETED = 2 }
+	export enum CommentStatusType { DRAFT = 'DRAFT', PUBLISHED = 'PUBLISHED', DELETED = 'DELETED' }
 
-	export enum CommentVisibilityType { PUBLIC = 0, PRIVATE = 1 }
+	export enum CommentVisibilityType { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE' }
 
 	export interface DocumentLockedForCommentsException {
 	}
@@ -425,7 +425,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceStateType { ACTIVE = 0, RESTORING = 1, RECYCLING = 2, RECYCLED = 3 }
+	export enum ResourceStateType { ACTIVE = 'ACTIVE', RESTORING = 'RESTORING', RECYCLING = 'RECYCLING', RECYCLED = 'RECYCLED' }
 
 	export interface EntityAlreadyExistsException {
 	}
@@ -511,7 +511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionProtocolType { HTTPS = 0, SQS = 1 }
+	export enum SubscriptionProtocolType { HTTPS = 'HTTPS', SQS = 'SQS' }
 
 	export interface TooManySubscriptionsException {
 	}
@@ -619,7 +619,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityType { DOCUMENT_CHECKED_IN = 0, DOCUMENT_CHECKED_OUT = 1, DOCUMENT_RENAMED = 2, DOCUMENT_VERSION_UPLOADED = 3, DOCUMENT_VERSION_DELETED = 4, DOCUMENT_VERSION_VIEWED = 5, DOCUMENT_VERSION_DOWNLOADED = 6, DOCUMENT_RECYCLED = 7, DOCUMENT_RESTORED = 8, DOCUMENT_REVERTED = 9, DOCUMENT_SHARED = 10, DOCUMENT_UNSHARED = 11, DOCUMENT_SHARE_PERMISSION_CHANGED = 12, DOCUMENT_SHAREABLE_LINK_CREATED = 13, DOCUMENT_SHAREABLE_LINK_REMOVED = 14, DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = 15, DOCUMENT_MOVED = 16, DOCUMENT_COMMENT_ADDED = 17, DOCUMENT_COMMENT_DELETED = 18, DOCUMENT_ANNOTATION_ADDED = 19, DOCUMENT_ANNOTATION_DELETED = 20, FOLDER_CREATED = 21, FOLDER_DELETED = 22, FOLDER_RENAMED = 23, FOLDER_RECYCLED = 24, FOLDER_RESTORED = 25, FOLDER_SHARED = 26, FOLDER_UNSHARED = 27, FOLDER_SHARE_PERMISSION_CHANGED = 28, FOLDER_SHAREABLE_LINK_CREATED = 29, FOLDER_SHAREABLE_LINK_REMOVED = 30, FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = 31, FOLDER_MOVED = 32 }
+	export enum ActivityType { DOCUMENT_CHECKED_IN = 'DOCUMENT_CHECKED_IN', DOCUMENT_CHECKED_OUT = 'DOCUMENT_CHECKED_OUT', DOCUMENT_RENAMED = 'DOCUMENT_RENAMED', DOCUMENT_VERSION_UPLOADED = 'DOCUMENT_VERSION_UPLOADED', DOCUMENT_VERSION_DELETED = 'DOCUMENT_VERSION_DELETED', DOCUMENT_VERSION_VIEWED = 'DOCUMENT_VERSION_VIEWED', DOCUMENT_VERSION_DOWNLOADED = 'DOCUMENT_VERSION_DOWNLOADED', DOCUMENT_RECYCLED = 'DOCUMENT_RECYCLED', DOCUMENT_RESTORED = 'DOCUMENT_RESTORED', DOCUMENT_REVERTED = 'DOCUMENT_REVERTED', DOCUMENT_SHARED = 'DOCUMENT_SHARED', DOCUMENT_UNSHARED = 'DOCUMENT_UNSHARED', DOCUMENT_SHARE_PERMISSION_CHANGED = 'DOCUMENT_SHARE_PERMISSION_CHANGED', DOCUMENT_SHAREABLE_LINK_CREATED = 'DOCUMENT_SHAREABLE_LINK_CREATED', DOCUMENT_SHAREABLE_LINK_REMOVED = 'DOCUMENT_SHAREABLE_LINK_REMOVED', DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = 'DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED', DOCUMENT_MOVED = 'DOCUMENT_MOVED', DOCUMENT_COMMENT_ADDED = 'DOCUMENT_COMMENT_ADDED', DOCUMENT_COMMENT_DELETED = 'DOCUMENT_COMMENT_DELETED', DOCUMENT_ANNOTATION_ADDED = 'DOCUMENT_ANNOTATION_ADDED', DOCUMENT_ANNOTATION_DELETED = 'DOCUMENT_ANNOTATION_DELETED', FOLDER_CREATED = 'FOLDER_CREATED', FOLDER_DELETED = 'FOLDER_DELETED', FOLDER_RENAMED = 'FOLDER_RENAMED', FOLDER_RECYCLED = 'FOLDER_RECYCLED', FOLDER_RESTORED = 'FOLDER_RESTORED', FOLDER_SHARED = 'FOLDER_SHARED', FOLDER_UNSHARED = 'FOLDER_UNSHARED', FOLDER_SHARE_PERMISSION_CHANGED = 'FOLDER_SHARE_PERMISSION_CHANGED', FOLDER_SHAREABLE_LINK_CREATED = 'FOLDER_SHAREABLE_LINK_CREATED', FOLDER_SHAREABLE_LINK_REMOVED = 'FOLDER_SHAREABLE_LINK_REMOVED', FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = 'FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED', FOLDER_MOVED = 'FOLDER_MOVED' }
 
 
 	/** Describes the metadata of the user. */
@@ -719,7 +719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { FOLDER = 0, DOCUMENT = 1 }
+	export enum ResourceType { FOLDER = 'FOLDER', DOCUMENT = 'DOCUMENT' }
 
 
 	/** Describes the metadata of a comment. */
@@ -828,7 +828,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentStatusType { INITIALIZED = 0, ACTIVE = 1 }
+	export enum DocumentStatusType { INITIALIZED = 'INITIALIZED', ACTIVE = 'ACTIVE' }
 
 	export interface DocumentThumbnailUrlMap {
 	}
@@ -992,7 +992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RolePermissionType { DIRECT = 0, INHERITED = 1 }
+	export enum RolePermissionType { DIRECT = 'DIRECT', INHERITED = 'INHERITED' }
 
 	export interface DescribeRootFoldersResponse {
 		Folders?: Array<FolderMetadata>;
@@ -1282,17 +1282,17 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseItemType { DOCUMENT = 0, FOLDER = 1, COMMENT = 2, DOCUMENT_VERSION = 3 }
+	export enum ResponseItemType { DOCUMENT = 'DOCUMENT', FOLDER = 'FOLDER', COMMENT = 'COMMENT', DOCUMENT_VERSION = 'DOCUMENT_VERSION' }
 
-	export enum SearchQueryScopeType { NAME = 0, CONTENT = 1 }
+	export enum SearchQueryScopeType { NAME = 'NAME', CONTENT = 'CONTENT' }
 
-	export enum AdditionalResponseFieldType { WEBURL = 0 }
+	export enum AdditionalResponseFieldType { WEBURL = 'WEBURL' }
 
-	export enum LanguageCodeType { AR = 0, BG = 1, BN = 2, DA = 3, DE = 4, CS = 5, EL = 6, EN = 7, ES = 8, FA = 9, FI = 10, FR = 11, HI = 12, HU = 13, ID = 14, IT = 15, JA = 16, KO = 17, LT = 18, LV = 19, NL = 20, NO = 21, PT = 22, RO = 23, RU = 24, SV = 25, SW = 26, TH = 27, TR = 28, ZH = 29, DEFAULT = 30 }
+	export enum LanguageCodeType { AR = 'AR', BG = 'BG', BN = 'BN', DA = 'DA', DE = 'DE', CS = 'CS', EL = 'EL', EN = 'EN', ES = 'ES', FA = 'FA', FI = 'FI', FR = 'FR', HI = 'HI', HU = 'HU', ID = 'ID', IT = 'IT', JA = 'JA', KO = 'KO', LT = 'LT', LV = 'LV', NL = 'NL', NO = 'NO', PT = 'PT', RO = 'RO', RU = 'RU', SV = 'SV', SW = 'SW', TH = 'TH', TR = 'TR', ZH = 'ZH', DEFAULT = 'DEFAULT' }
 
-	export enum ContentCategoryType { IMAGE = 0, DOCUMENT = 1, PDF = 2, SPREADSHEET = 3, PRESENTATION = 4, AUDIO = 5, VIDEO = 6, SOURCE_CODE = 7, OTHER = 8 }
+	export enum ContentCategoryType { IMAGE = 'IMAGE', DOCUMENT = 'DOCUMENT', PDF = 'PDF', SPREADSHEET = 'SPREADSHEET', PRESENTATION = 'PRESENTATION', AUDIO = 'AUDIO', VIDEO = 'VIDEO', SOURCE_CODE = 'SOURCE_CODE', OTHER = 'OTHER' }
 
-	export enum SearchResourceType { FOLDER = 0, DOCUMENT = 1, COMMENT = 2, DOCUMENT_VERSION = 3 }
+	export enum SearchResourceType { FOLDER = 'FOLDER', DOCUMENT = 'DOCUMENT', COMMENT = 'COMMENT', DOCUMENT_VERSION = 'DOCUMENT_VERSION' }
 
 
 	/** Filter based on UserIds or GroupIds. */
@@ -1316,9 +1316,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PrincipalRoleType { VIEWER = 0, CONTRIBUTOR = 1, OWNER = 2, COOWNER = 3 }
+	export enum PrincipalRoleType { VIEWER = 'VIEWER', CONTRIBUTOR = 'CONTRIBUTOR', OWNER = 'OWNER', COOWNER = 'COOWNER' }
 
-	export enum SearchCollectionType { OWNED = 0, SHARED_WITH_ME = 1 }
+	export enum SearchCollectionType { OWNED = 'OWNED', SHARED_WITH_ME = 'SHARED_WITH_ME' }
 
 
 	/** Filter based on size (in bytes). */
@@ -1380,9 +1380,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderByFieldType { RELEVANCE = 0, NAME = 1, SIZE = 2, CREATED_TIMESTAMP = 3, MODIFIED_TIMESTAMP = 4 }
+	export enum OrderByFieldType { RELEVANCE = 'RELEVANCE', NAME = 'NAME', SIZE = 'SIZE', CREATED_TIMESTAMP = 'CREATED_TIMESTAMP', MODIFIED_TIMESTAMP = 'MODIFIED_TIMESTAMP' }
 
-	export enum SortOrder { ASC = 0, DESC = 1 }
+	export enum SortOrder { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface UpdateUserResponse {
 		User?: User;
@@ -1469,7 +1469,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BooleanEnumType { TRUE = 0, FALSE = 1 }
+	export enum BooleanEnumType { TRUE = 'TRUE', FALSE = 'FALSE' }
 
 	export interface CreateCommentRequest {
 		ParentId?: string;
@@ -1546,7 +1546,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionType { ALL = 0 }
+	export enum SubscriptionType { ALL = 'ALL' }
 
 	export interface CreateNotificationSubscriptionRequest {
 
@@ -1757,11 +1757,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSortType { DATE = 0, NAME = 1 }
+	export enum ResourceSortType { DATE = 'DATE', NAME = 'NAME' }
 
-	export enum OrderType { ASCENDING = 0, DESCENDING = 1 }
+	export enum OrderType { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
-	export enum FolderContentType { ALL = 0, DOCUMENT = 1, FOLDER = 2 }
+	export enum FolderContentType { ALL = 'ALL', DOCUMENT = 'DOCUMENT', FOLDER = 'FOLDER' }
 
 	export interface DescribeFolderContentsRequest {
 	}
@@ -1813,9 +1813,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UserFilterType { ALL = 0, ACTIVE_PENDING = 1 }
+	export enum UserFilterType { ALL = 'ALL', ACTIVE_PENDING = 'ACTIVE_PENDING' }
 
-	export enum UserSortType { USER_NAME = 0, FULL_NAME = 1, STORAGE_LIMIT = 2, USER_STATUS = 3, STORAGE_USED = 4 }
+	export enum UserSortType { USER_NAME = 'USER_NAME', FULL_NAME = 'FULL_NAME', STORAGE_LIMIT = 'STORAGE_LIMIT', USER_STATUS = 'USER_STATUS', STORAGE_USED = 'STORAGE_USED' }
 
 	export interface DescribeUsersRequest {
 	}
@@ -1827,11 +1827,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentSourceType { ORIGINAL = 0, WITH_COMMENTS = 1 }
+	export enum DocumentSourceType { ORIGINAL = 'ORIGINAL', WITH_COMMENTS = 'WITH_COMMENTS' }
 
-	export enum DocumentThumbnailType { SMALL = 0, SMALL_HQ = 1, LARGE = 2 }
+	export enum DocumentThumbnailType { SMALL = 'SMALL', SMALL_HQ = 'SMALL_HQ', LARGE = 'LARGE' }
 
-	export enum DocumentVersionStatus { ACTIVE = 0 }
+	export enum DocumentVersionStatus { ACTIVE = 'ACTIVE' }
 
 
 	/** Filters results based on entity metadata. */
@@ -1917,7 +1917,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceCollectionType { SHARED_WITH_ME = 0 }
+	export enum ResourceCollectionType { SHARED_WITH_ME = 'SHARED_WITH_ME' }
 
 	export interface GetResourcesRequest {
 	}

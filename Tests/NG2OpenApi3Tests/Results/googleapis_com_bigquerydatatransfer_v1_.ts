@@ -170,9 +170,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceAuthorizationType { AUTHORIZATION_TYPE_UNSPECIFIED = 0, AUTHORIZATION_CODE = 1, GOOGLE_PLUS_AUTHORIZATION_CODE = 2, FIRST_PARTY_OAUTH = 3 }
+	export enum DataSourceAuthorizationType { AUTHORIZATION_TYPE_UNSPECIFIED = 'AUTHORIZATION_TYPE_UNSPECIFIED', AUTHORIZATION_CODE = 'AUTHORIZATION_CODE', GOOGLE_PLUS_AUTHORIZATION_CODE = 'GOOGLE_PLUS_AUTHORIZATION_CODE', FIRST_PARTY_OAUTH = 'FIRST_PARTY_OAUTH' }
 
-	export enum DataSourceDataRefreshType { DATA_REFRESH_TYPE_UNSPECIFIED = 0, SLIDING_WINDOW = 1, CUSTOM_SLIDING_WINDOW = 2 }
+	export enum DataSourceDataRefreshType { DATA_REFRESH_TYPE_UNSPECIFIED = 'DATA_REFRESH_TYPE_UNSPECIFIED', SLIDING_WINDOW = 'SLIDING_WINDOW', CUSTOM_SLIDING_WINDOW = 'CUSTOM_SLIDING_WINDOW' }
 
 
 	/** A parameter used to define custom fields in a data source definition. */
@@ -292,9 +292,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceParameterType { TYPE_UNSPECIFIED = 0, STRING = 1, INTEGER = 2, DOUBLE = 3, BOOLEAN = 4, RECORD = 5, PLUS_PAGE = 6, LIST = 7 }
+	export enum DataSourceParameterType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', STRING = 'STRING', INTEGER = 'INTEGER', DOUBLE = 'DOUBLE', BOOLEAN = 'BOOLEAN', RECORD = 'RECORD', PLUS_PAGE = 'PLUS_PAGE', LIST = 'LIST' }
 
-	export enum DataSourceTransferType { TRANSFER_TYPE_UNSPECIFIED = 0, BATCH = 1, STREAMING = 2 }
+	export enum DataSourceTransferType { TRANSFER_TYPE_UNSPECIFIED = 'TRANSFER_TYPE_UNSPECIFIED', BATCH = 'BATCH', STREAMING = 'STREAMING' }
 
 
 	/** Represents preferences for sending email notifications for transfer run events. */
@@ -670,7 +670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferConfigState { TRANSFER_STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4, CANCELLED = 5 }
+	export enum TransferConfigState { TRANSFER_STATE_UNSPECIFIED = 'TRANSFER_STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** The returned list transfer run messages. */
@@ -731,7 +731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferMessageSeverity { MESSAGE_SEVERITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ERROR = 3 }
+	export enum TransferMessageSeverity { MESSAGE_SEVERITY_UNSPECIFIED = 'MESSAGE_SEVERITY_UNSPECIFIED', INFO = 'INFO', WARNING = 'WARNING', ERROR = 'ERROR' }
 
 
 	/** The returned list of pipelines in the project. */
@@ -1171,7 +1171,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Bigquerydatatransfer_projects_transferConfigs_runs_listRunAttempt { RUN_ATTEMPT_UNSPECIFIED = 0, LATEST = 1 }
+	export enum Bigquerydatatransfer_projects_transferConfigs_runs_listRunAttempt { RUN_ATTEMPT_UNSPECIFIED = 'RUN_ATTEMPT_UNSPECIFIED', LATEST = 'LATEST' }
 
 }
 

@@ -191,7 +191,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class OfferClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 

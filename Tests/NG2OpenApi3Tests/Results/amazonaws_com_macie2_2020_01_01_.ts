@@ -257,11 +257,11 @@ export namespace MyNS {
 
 
 	/** The operator to use in a condition. Depending on the type of condition, possible values are: */
-	export enum JobComparator { EQ = 0, GT = 1, GTE = 2, LT = 3, LTE = 4, NE = 5, CONTAINS = 6, STARTS_WITH = 7 }
+	export enum JobComparator { EQ = 'EQ', GT = 'GT', GTE = 'GTE', LT = 'LT', LTE = 'LTE', NE = 'NE', CONTAINS = 'CONTAINS', STARTS_WITH = 'STARTS_WITH' }
 
 
 	/** The property to use in a condition that determines whether an S3 bucket is included or excluded from a classification job. Valid values are: */
-	export enum SimpleCriterionKeyForJob { ACCOUNT_ID = 0, S3_BUCKET_NAME = 1, S3_BUCKET_EFFECTIVE_PERMISSION = 2, S3_BUCKET_SHARED_ACCESS = 3 }
+	export enum SimpleCriterionKeyForJob { ACCOUNT_ID = 'ACCOUNT_ID', S3_BUCKET_NAME = 'S3_BUCKET_NAME', S3_BUCKET_EFFECTIVE_PERMISSION = 'S3_BUCKET_EFFECTIVE_PERMISSION', S3_BUCKET_SHARED_ACCESS = 'S3_BUCKET_SHARED_ACCESS' }
 
 
 	/** Specifies a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job. */
@@ -395,7 +395,7 @@ export namespace MyNS {
 
 
 	/** The property to use in a condition that determines whether an S3 object is included or excluded from a classification job. Valid values are: */
-	export enum ScopeFilterKey { OBJECT_EXTENSION = 0, OBJECT_LAST_MODIFIED_DATE = 1, OBJECT_SIZE = 2, OBJECT_KEY = 3 }
+	export enum ScopeFilterKey { OBJECT_EXTENSION = 'OBJECT_EXTENSION', OBJECT_LAST_MODIFIED_DATE = 'OBJECT_LAST_MODIFIED_DATE', OBJECT_SIZE = 'OBJECT_SIZE', OBJECT_KEY = 'OBJECT_KEY' }
 
 
 	/** Specifies a tag-based condition that determines whether an S3 object is included or excluded from a classification job. */
@@ -443,7 +443,7 @@ export namespace MyNS {
 
 
 	/** The type of object to apply a tag-based condition to. Valid values are: */
-	export enum TagTarget { S3_OBJECT = 0 }
+	export enum TagTarget { S3_OBJECT = 'S3_OBJECT' }
 
 
 	/** Specifies that a classification job runs once a day, every day. This is an empty object. */
@@ -493,7 +493,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayOfWeek { SUNDAY = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6 }
+	export enum DayOfWeek { SUNDAY = 'SUNDAY', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY' }
 
 	export interface CreateCustomDataIdentifierResponse {
 		customDataIdentifierId?: string;
@@ -538,7 +538,7 @@ export namespace MyNS {
 
 
 	/** The severity of a finding, ranging from LOW, for least severe, to HIGH, for most severe. Valid values are: */
-	export enum DataIdentifierSeverity { LOW = 0, MEDIUM = 1, HIGH = 2 }
+	export enum DataIdentifierSeverity { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 	export interface CreateFindingsFilterResponse {
 		arn?: string;
@@ -606,7 +606,7 @@ export namespace MyNS {
 
 
 	/** The source of an issue or delay. Possible values are: */
-	export enum ErrorCode { ClientError = 0, InternalError = 1 }
+	export enum ErrorCode { ClientError = 'ClientError', InternalError = 'InternalError' }
 
 	export interface CreateMemberResponse {
 		arn?: string;
@@ -633,7 +633,7 @@ export namespace MyNS {
 
 
 	/** The type of finding. For details about each type, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-types.html">Types of Amazon Macie findings</a> in the <i>Amazon Macie User Guide</i>. Possible values are: */
-	export enum FindingType { 'SensitiveData:S3Object/Multiple' = 0, 'SensitiveData:S3Object/Financial' = 1, 'SensitiveData:S3Object/Personal' = 2, 'SensitiveData:S3Object/Credentials' = 3, 'SensitiveData:S3Object/CustomIdentifier' = 4, 'Policy:IAMUser/S3BucketPublic' = 5, 'Policy:IAMUser/S3BucketSharedExternally' = 6, 'Policy:IAMUser/S3BucketReplicatedExternally' = 7, 'Policy:IAMUser/S3BucketEncryptionDisabled' = 8, 'Policy:IAMUser/S3BlockPublicAccessDisabled' = 9, 'Policy:IAMUser/S3BucketSharedWithCloudFront' = 10 }
+	export enum FindingType { 'SensitiveData:S3Object/Multiple' = 'SensitiveData:S3Object/Multiple', 'SensitiveData:S3Object/Financial' = 'SensitiveData:S3Object/Financial', 'SensitiveData:S3Object/Personal' = 'SensitiveData:S3Object/Personal', 'SensitiveData:S3Object/Credentials' = 'SensitiveData:S3Object/Credentials', 'SensitiveData:S3Object/CustomIdentifier' = 'SensitiveData:S3Object/CustomIdentifier', 'Policy:IAMUser/S3BucketPublic' = 'Policy:IAMUser/S3BucketPublic', 'Policy:IAMUser/S3BucketSharedExternally' = 'Policy:IAMUser/S3BucketSharedExternally', 'Policy:IAMUser/S3BucketReplicatedExternally' = 'Policy:IAMUser/S3BucketReplicatedExternally', 'Policy:IAMUser/S3BucketEncryptionDisabled' = 'Policy:IAMUser/S3BucketEncryptionDisabled', 'Policy:IAMUser/S3BlockPublicAccessDisabled' = 'Policy:IAMUser/S3BlockPublicAccessDisabled', 'Policy:IAMUser/S3BucketSharedWithCloudFront' = 'Policy:IAMUser/S3BucketSharedWithCloudFront' }
 
 	export interface DeclineInvitationsResponse {
 		unprocessedAccounts?: Array<UnprocessedAccount>;
@@ -787,11 +787,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowsUnencryptedObjectUploads { TRUE = 0, FALSE = 1, UNKNOWN = 2 }
+	export enum AllowsUnencryptedObjectUploads { TRUE = 'TRUE', FALSE = 'FALSE', UNKNOWN = 'UNKNOWN' }
 
 
 	/** The error code for an error that prevented Amazon Macie from retrieving and processing metadata from Amazon S3 for an S3 bucket and the bucket's objects. */
-	export enum BucketMetadataErrorCode { ACCESS_DENIED = 0 }
+	export enum BucketMetadataErrorCode { ACCESS_DENIED = 'ACCESS_DENIED' }
 
 
 	/** Specifies whether any one-time or recurring classification jobs are configured to analyze data in an S3 bucket, and, if so, the details of the job that ran most recently. */
@@ -866,7 +866,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EffectivePermission { PUBLIC = 0, NOT_PUBLIC = 1, UNKNOWN = 2 }
+	export enum EffectivePermission { PUBLIC = 'PUBLIC', NOT_PUBLIC = 'NOT_PUBLIC', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Provides information about the account-level and bucket-level permissions settings for an S3 bucket. */
@@ -1023,9 +1023,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { NONE = 0, AES256 = 1, 'aws:kms' = 2 }
+	export enum Type { NONE = 'NONE', AES256 = 'AES256', 'aws:kms' = 'aws:kms' }
 
-	export enum SharedAccess { EXTERNAL = 0, INTERNAL = 1, NOT_SHARED = 2, UNKNOWN = 3 }
+	export enum SharedAccess { EXTERNAL = 'EXTERNAL', INTERNAL = 'INTERNAL', NOT_SHARED = 'NOT_SHARED', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Provides information about the tags that are associated with an S3 bucket or object. Each tag consists of a required tag key and an associated tag value. */
@@ -1101,7 +1101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderBy { ASC = 0, DESC = 1 }
+	export enum OrderBy { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface DescribeClassificationJobResponse {
 		allowListIds?: Array<string>;
@@ -1160,11 +1160,11 @@ export namespace MyNS {
 
 
 	/** The status of a classification job. Possible values are: */
-	export enum JobStatus { RUNNING = 0, PAUSED = 1, CANCELLED = 2, COMPLETE = 3, IDLE = 4, USER_PAUSED = 5 }
+	export enum JobStatus { RUNNING = 'RUNNING', PAUSED = 'PAUSED', CANCELLED = 'CANCELLED', COMPLETE = 'COMPLETE', IDLE = 'IDLE', USER_PAUSED = 'USER_PAUSED' }
 
 
 	/** The schedule for running a classification job. Valid values are: */
-	export enum JobType { ONE_TIME = 0, SCHEDULED = 1 }
+	export enum JobType { ONE_TIME = 'ONE_TIME', SCHEDULED = 'SCHEDULED' }
 
 
 	/** Specifies whether any account- or bucket-level access errors occurred when a classification job ran. For information about using logging data to investigate these errors, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-monitor-cw-logs.html">Monitoring sensitive data discovery jobs</a> in the <i>Amazon Macie User Guide</i>. */
@@ -1185,11 +1185,11 @@ export namespace MyNS {
 
 
 	/** Specifies whether any account- or bucket-level access errors occurred during the run of a one-time classification job or the most recent run of a recurring classification job. Possible values are: */
-	export enum LastRunErrorStatusCode { NONE = 0, ERROR = 1 }
+	export enum LastRunErrorStatusCode { NONE = 'NONE', ERROR = 'ERROR' }
 
 
 	/** The selection type that determines which managed data identifiers a classification job uses to analyze data. Valid values are: */
-	export enum ManagedDataIdentifierSelector { ALL = 0, EXCLUDE = 1, INCLUDE = 2, NONE = 3, RECOMMENDED = 4 }
+	export enum ManagedDataIdentifierSelector { ALL = 'ALL', EXCLUDE = 'EXCLUDE', INCLUDE = 'INCLUDE', NONE = 'NONE', RECOMMENDED = 'RECOMMENDED' }
 
 
 	/** Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis. The bucket specification can be static (bucketDefinitions) or dynamic (bucketCriteria). If it's static, the job analyzes objects in the same predefined set of buckets each time the job runs. If it's dynamic, the job analyzes objects in any buckets that match the specified criteria each time the job starts to run. */
@@ -1407,7 +1407,7 @@ export namespace MyNS {
 
 
 	/** The current status of the relationship between an account and an associated Amazon Macie administrator account. Possible values are: */
-	export enum RelationshipStatus { Enabled = 0, Paused = 1, Invited = 2, Created = 3, Removed = 4, Resigned = 5, EmailVerificationInProgress = 6, EmailVerificationFailed = 7, RegionDisabled = 8, AccountSuspended = 9 }
+	export enum RelationshipStatus { Enabled = 'Enabled', Paused = 'Paused', Invited = 'Invited', Created = 'Created', Removed = 'Removed', Resigned = 'Resigned', EmailVerificationInProgress = 'EmailVerificationInProgress', EmailVerificationFailed = 'EmailVerificationFailed', RegionDisabled = 'RegionDisabled', AccountSuspended = 'AccountSuspended' }
 
 	export interface GetAllowListResponse {
 		arn?: string;
@@ -1484,7 +1484,7 @@ export namespace MyNS {
 
 
 	/** Indicates the current status of an allow list. Depending on the type of criteria that the list specifies, possible values are: */
-	export enum AllowListStatusCode { OK = 0, S3_OBJECT_NOT_FOUND = 1, S3_USER_ACCESS_DENIED = 2, S3_OBJECT_ACCESS_DENIED = 3, S3_THROTTLED = 4, S3_OBJECT_OVERSIZE = 5, S3_OBJECT_EMPTY = 6, UNKNOWN_ERROR = 7 }
+	export enum AllowListStatusCode { OK = 'OK', S3_OBJECT_NOT_FOUND = 'S3_OBJECT_NOT_FOUND', S3_USER_ACCESS_DENIED = 'S3_USER_ACCESS_DENIED', S3_OBJECT_ACCESS_DENIED = 'S3_OBJECT_ACCESS_DENIED', S3_THROTTLED = 'S3_THROTTLED', S3_OBJECT_OVERSIZE = 'S3_OBJECT_OVERSIZE', S3_OBJECT_EMPTY = 'S3_OBJECT_EMPTY', UNKNOWN_ERROR = 'UNKNOWN_ERROR' }
 
 	export interface GetAutomatedDiscoveryConfigurationResponse {
 		classificationScopeId?: string;
@@ -1516,7 +1516,7 @@ export namespace MyNS {
 
 
 	/** The status of the automated sensitive data discovery configuration for an Amazon Macie account. Valid values are: */
-	export enum AutomatedDiscoveryStatus { ENABLED = 0, DISABLED = 1 }
+	export enum AutomatedDiscoveryStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface GetBucketStatisticsResponse {
 		bucketCount?: number | null;
@@ -1880,7 +1880,7 @@ export namespace MyNS {
 
 
 	/** The grouping to sort the results by. Valid values are: */
-	export enum FindingStatisticsSortAttributeName { groupKey = 0, count = 1 }
+	export enum FindingStatisticsSortAttributeName { groupKey = 'groupKey', count = 'count' }
 
 	export interface GetFindingsResponse {
 		findings?: Array<Finding>;
@@ -1955,7 +1955,7 @@ export namespace MyNS {
 
 
 	/** The category of the finding. Possible values are: */
-	export enum FindingCategory { CLASSIFICATION = 0, POLICY = 1 }
+	export enum FindingCategory { CLASSIFICATION = 'CLASSIFICATION', POLICY = 'POLICY' }
 
 
 	/** Provides information about a sensitive data finding and the details of the finding. */
@@ -1986,7 +1986,7 @@ export namespace MyNS {
 
 
 	/** Specifies how Amazon Macie found the sensitive data that produced a finding. Possible values are: */
-	export enum OriginType { SENSITIVE_DATA_DISCOVERY_JOB = 0, AUTOMATED_SENSITIVE_DATA_DISCOVERY = 1 }
+	export enum OriginType { SENSITIVE_DATA_DISCOVERY_JOB = 'SENSITIVE_DATA_DISCOVERY_JOB', AUTOMATED_SENSITIVE_DATA_DISCOVERY = 'AUTOMATED_SENSITIVE_DATA_DISCOVERY' }
 
 
 	/** Provides the details of a sensitive data finding, including the types, number of occurrences, and locations of the sensitive data that was detected. */
@@ -2186,7 +2186,7 @@ export namespace MyNS {
 
 
 	/** For a finding, the category of sensitive data that was detected and produced the finding. For a managed data identifier, the category of sensitive data that the managed data identifier detects. Possible values are: */
-	export enum SensitiveDataItemCategory { FINANCIAL_INFORMATION = 0, PERSONAL_INFORMATION = 1, CREDENTIALS = 2, CUSTOM_IDENTIFIER = 3 }
+	export enum SensitiveDataItemCategory { FINANCIAL_INFORMATION = 'FINANCIAL_INFORMATION', PERSONAL_INFORMATION = 'PERSONAL_INFORMATION', CREDENTIALS = 'CREDENTIALS', CUSTOM_IDENTIFIER = 'CUSTOM_IDENTIFIER' }
 
 
 	/** Provides information about a type of sensitive data that was detected by a managed data identifier and produced a sensitive data finding. */
@@ -2265,7 +2265,7 @@ export namespace MyNS {
 
 
 	/** The type of action that occurred for the resource and produced the policy finding: */
-	export enum FindingActionType { AWS_API_CALL = 0 }
+	export enum FindingActionType { AWS_API_CALL = 'AWS_API_CALL' }
 
 
 	/** Provides information about an API operation that an entity invoked for an affected resource. */
@@ -2661,7 +2661,7 @@ export namespace MyNS {
 
 
 	/** The type of entity that performed the action on the affected resource. Possible values are: */
-	export enum UserIdentityType { AssumedRole = 0, IAMUser = 1, FederatedUser = 2, Root = 3, AWSAccount = 4, AWSService = 5 }
+	export enum UserIdentityType { AssumedRole = 'AssumedRole', IAMUser = 'IAMUser', FederatedUser = 'FederatedUser', Root = 'Root', AWSAccount = 'AWSAccount', AWSService = 'AWSService' }
 
 
 	/** Provides information about the resources that a finding applies to. */
@@ -2731,7 +2731,7 @@ export namespace MyNS {
 
 
 	/** The server-side encryption algorithm that was used to encrypt an S3 object or is used by default to encrypt objects that are added to an S3 bucket. Possible values are: */
-	export enum EncryptionType { NONE = 0, AES256 = 1, 'aws:kms' = 2, UNKNOWN = 3 }
+	export enum EncryptionType { NONE = 'NONE', AES256 = 'AES256', 'aws:kms' = 'aws:kms', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Provides information about the Amazon Web Services account that owns an S3 bucket. */
@@ -2801,7 +2801,7 @@ export namespace MyNS {
 
 
 	/** The storage class of the S3 object. Possible values are: */
-	export enum StorageClass { STANDARD = 0, REDUCED_REDUNDANCY = 1, STANDARD_IA = 2, INTELLIGENT_TIERING = 3, DEEP_ARCHIVE = 4, ONEZONE_IA = 5, GLACIER = 6, GLACIER_IR = 7, OUTPOSTS = 8 }
+	export enum StorageClass { STANDARD = 'STANDARD', REDUCED_REDUNDANCY = 'REDUCED_REDUNDANCY', STANDARD_IA = 'STANDARD_IA', INTELLIGENT_TIERING = 'INTELLIGENT_TIERING', DEEP_ARCHIVE = 'DEEP_ARCHIVE', ONEZONE_IA = 'ONEZONE_IA', GLACIER = 'GLACIER', GLACIER_IR = 'GLACIER_IR', OUTPOSTS = 'OUTPOSTS' }
 
 
 	/** Provides the numerical and qualitative representations of a finding's severity. */
@@ -2825,7 +2825,7 @@ export namespace MyNS {
 
 
 	/** The qualitative representation of the finding's severity. Possible values are: */
-	export enum SeverityDescription { Low = 0, Medium = 1, High = 2 }
+	export enum SeverityDescription { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 	export interface GetFindingsFilterResponse {
 		action?: FindingsFilterAction;
@@ -2859,7 +2859,7 @@ export namespace MyNS {
 
 
 	/** The action to perform on findings that match the filter criteria. To suppress (automatically archive) findings that match the criteria, set this value to ARCHIVE. Valid values are: */
-	export enum FindingsFilterAction { ARCHIVE = 0, NOOP = 1 }
+	export enum FindingsFilterAction { ARCHIVE = 'ARCHIVE', NOOP = 'NOOP' }
 
 
 	/** Specifies, as a map, one or more property-based conditions that filter the results of a query for findings. */
@@ -2955,11 +2955,11 @@ export namespace MyNS {
 
 
 	/** The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events). For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing findings</a> in the <i>Amazon Macie User Guide</i>. Valid values are: */
-	export enum FindingPublishingFrequency { FIFTEEN_MINUTES = 0, ONE_HOUR = 1, SIX_HOURS = 2 }
+	export enum FindingPublishingFrequency { FIFTEEN_MINUTES = 'FIFTEEN_MINUTES', ONE_HOUR = 'ONE_HOUR', SIX_HOURS = 'SIX_HOURS' }
 
 
 	/** The status of an Amazon Macie account. Valid values are: */
-	export enum MacieStatus { PAUSED = 0, ENABLED = 1 }
+	export enum MacieStatus { PAUSED = 'PAUSED', ENABLED = 'ENABLED' }
 
 	export interface GetMasterAccountResponse {
 		master?: Invitation;
@@ -3136,7 +3136,7 @@ export namespace MyNS {
 
 
 	/** The status of a request to retrieve occurrences of sensitive data reported by a finding. Possible values are: */
-	export enum RevealRequestStatus { SUCCESS = 0, PROCESSING = 1, ERROR = 2 }
+	export enum RevealRequestStatus { SUCCESS = 'SUCCESS', PROCESSING = 'PROCESSING', ERROR = 'ERROR' }
 
 	export interface UnprocessableEntityException {
 	}
@@ -3164,11 +3164,11 @@ export namespace MyNS {
 
 
 	/** Specifies whether occurrences of sensitive data can be retrieved for a finding. Possible values are: */
-	export enum AvailabilityCode { AVAILABLE = 0, UNAVAILABLE = 1 }
+	export enum AvailabilityCode { AVAILABLE = 'AVAILABLE', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** Specifies why occurrences of sensitive data can't be retrieved for a finding. Possible values are: */
-	export enum UnavailabilityReasonCode { OBJECT_EXCEEDS_SIZE_QUOTA = 0, UNSUPPORTED_OBJECT_TYPE = 1, UNSUPPORTED_FINDING_TYPE = 2, INVALID_CLASSIFICATION_RESULT = 3, OBJECT_UNAVAILABLE = 4 }
+	export enum UnavailabilityReasonCode { OBJECT_EXCEEDS_SIZE_QUOTA = 'OBJECT_EXCEEDS_SIZE_QUOTA', UNSUPPORTED_OBJECT_TYPE = 'UNSUPPORTED_OBJECT_TYPE', UNSUPPORTED_FINDING_TYPE = 'UNSUPPORTED_FINDING_TYPE', INVALID_CLASSIFICATION_RESULT = 'INVALID_CLASSIFICATION_RESULT', OBJECT_UNAVAILABLE = 'OBJECT_UNAVAILABLE' }
 
 	export interface GetSensitivityInspectionTemplateResponse {
 		description?: string;
@@ -3290,7 +3290,7 @@ export namespace MyNS {
 
 
 	/** The type of currency that the data for an Amazon Macie usage metric is reported in. Possible values are: */
-	export enum Currency { USD = 0 }
+	export enum Currency { USD = 'USD' }
 
 
 	/** Specifies a current quota for an Amazon Macie account. */
@@ -3315,15 +3315,15 @@ export namespace MyNS {
 
 	}
 
-	export enum Unit { TERABYTES = 0 }
+	export enum Unit { TERABYTES = 'TERABYTES' }
 
 
 	/** The name of an Amazon Macie usage metric for an account. Possible values are: */
-	export enum UsageType { DATA_INVENTORY_EVALUATION = 0, SENSITIVE_DATA_DISCOVERY = 1, AUTOMATED_SENSITIVE_DATA_DISCOVERY = 2, AUTOMATED_OBJECT_MONITORING = 3 }
+	export enum UsageType { DATA_INVENTORY_EVALUATION = 'DATA_INVENTORY_EVALUATION', SENSITIVE_DATA_DISCOVERY = 'SENSITIVE_DATA_DISCOVERY', AUTOMATED_SENSITIVE_DATA_DISCOVERY = 'AUTOMATED_SENSITIVE_DATA_DISCOVERY', AUTOMATED_OBJECT_MONITORING = 'AUTOMATED_OBJECT_MONITORING' }
 
 
 	/** An inclusive time period that Amazon Macie usage data applies to. Possible values are: */
-	export enum TimeRange { MONTH_TO_DATE = 0, PAST_30_DAYS = 1 }
+	export enum TimeRange { MONTH_TO_DATE = 'MONTH_TO_DATE', PAST_30_DAYS = 'PAST_30_DAYS' }
 
 
 	/** Specifies a condition for filtering the results of a query for quota and usage data for one or more Amazon Macie accounts. */
@@ -3348,15 +3348,15 @@ export namespace MyNS {
 
 
 	/** The operator to use in a condition that filters the results of a query for Amazon Macie account quotas and usage data. Valid values are: */
-	export enum UsageStatisticsFilterComparator { GT = 0, GTE = 1, LT = 2, LTE = 3, EQ = 4, NE = 5, CONTAINS = 6 }
+	export enum UsageStatisticsFilterComparator { GT = 'GT', GTE = 'GTE', LT = 'LT', LTE = 'LTE', EQ = 'EQ', NE = 'NE', CONTAINS = 'CONTAINS' }
 
 
 	/** The field to use in a condition that filters the results of a query for Amazon Macie account quotas and usage data. Valid values are: */
-	export enum UsageStatisticsFilterKey { accountId = 0, serviceLimit = 1, freeTrialStartDate = 2, total = 3 }
+	export enum UsageStatisticsFilterKey { accountId = 'accountId', serviceLimit = 'serviceLimit', freeTrialStartDate = 'freeTrialStartDate', total = 'total' }
 
 
 	/** The field to use to sort the results of a query for Amazon Macie account quotas and usage data. Valid values are: */
-	export enum UsageStatisticsSortKey { accountId = 0, total = 1, serviceLimitValue = 2, freeTrialStartDate = 3 }
+	export enum UsageStatisticsSortKey { accountId = 'accountId', total = 'total', serviceLimitValue = 'serviceLimitValue', freeTrialStartDate = 'freeTrialStartDate' }
 
 	export interface GetUsageTotalsResponse {
 		timeRange?: TimeRange;
@@ -3511,11 +3511,11 @@ export namespace MyNS {
 
 
 	/** The property to use to filter the results. Valid values are: */
-	export enum ListJobsFilterKey { jobType = 0, jobStatus = 1, createdAt = 2, name = 3 }
+	export enum ListJobsFilterKey { jobType = 'jobType', jobStatus = 'jobStatus', createdAt = 'createdAt', name = 'name' }
 
 
 	/** The property to sort the results by. Valid values are: */
-	export enum ListJobsSortAttributeName { createdAt = 0, jobStatus = 1, name = 2, jobType = 3 }
+	export enum ListJobsSortAttributeName { createdAt = 'createdAt', jobStatus = 'jobStatus', name = 'name', jobType = 'jobType' }
 
 	export interface ListClassificationScopesResponse {
 		classificationScopes?: Array<ClassificationScopeSummary>;
@@ -3786,7 +3786,7 @@ export namespace MyNS {
 
 
 	/** The current status of an account as the delegated Amazon Macie administrator account for an organization in Organizations. Possible values are: */
-	export enum AdminStatus { ENABLED = 0, DISABLING_IN_PROGRESS = 1 }
+	export enum AdminStatus { ENABLED = 'ENABLED', DISABLING_IN_PROGRESS = 'DISABLING_IN_PROGRESS' }
 
 	export interface ListResourceProfileArtifactsResponse {
 		artifacts?: Array<ResourceProfileArtifact>;
@@ -3881,7 +3881,7 @@ export namespace MyNS {
 
 
 	/** The type of data identifier that detected a specific type of sensitive data in an S3 bucket. Possible values are: */
-	export enum DataIdentifierType { CUSTOM = 0, MANAGED = 1 }
+	export enum DataIdentifierType { CUSTOM = 'CUSTOM', MANAGED = 'MANAGED' }
 
 	export interface ListSensitivityInspectionTemplatesResponse {
 		nextToken?: string;
@@ -4083,7 +4083,7 @@ export namespace MyNS {
 
 
 	/** The operator to use in a condition that filters the results of a query. Valid values are: */
-	export enum SearchResourcesComparator { EQ = 0, NE = 1 }
+	export enum SearchResourcesComparator { EQ = 'EQ', NE = 'NE' }
 
 
 	/** Specifies a tag-based filter condition that determines which Amazon Web Services resources are included or excluded from the query results. */
@@ -4125,7 +4125,7 @@ export namespace MyNS {
 
 
 	/** The property to sort the query results by. Valid values are: */
-	export enum SearchResourcesSortAttributeName { ACCOUNT_ID = 0, RESOURCE_NAME = 1, S3_CLASSIFIABLE_OBJECT_COUNT = 2, S3_CLASSIFIABLE_SIZE_IN_BYTES = 3 }
+	export enum SearchResourcesSortAttributeName { ACCOUNT_ID = 'ACCOUNT_ID', RESOURCE_NAME = 'RESOURCE_NAME', S3_CLASSIFIABLE_OBJECT_COUNT = 'S3_CLASSIFIABLE_OBJECT_COUNT', S3_CLASSIFIABLE_SIZE_IN_BYTES = 'S3_CLASSIFIABLE_SIZE_IN_BYTES' }
 
 	export interface TagResourceResponse {
 	}
@@ -4232,7 +4232,7 @@ export namespace MyNS {
 
 
 	/** Specifies how to apply changes to the S3 bucket exclusion list defined by the classification scope for an Amazon Macie account. Valid values are: */
-	export enum ClassificationScopeUpdateOperation { ADD = 0, REPLACE = 1, REMOVE = 2 }
+	export enum ClassificationScopeUpdateOperation { ADD = 'ADD', REPLACE = 'REPLACE', REMOVE = 'REMOVE' }
 
 	export interface UpdateFindingsFilterResponse {
 		arn?: string;
@@ -4333,7 +4333,7 @@ export namespace MyNS {
 
 
 	/** The status of the configuration for retrieving occurrences of sensitive data reported by findings. Valid values are: */
-	export enum RevealStatus { ENABLED = 0, DISABLED = 1 }
+	export enum RevealStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface UpdateSensitivityInspectionTemplateResponse {
 	}
@@ -4977,7 +4977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupBy { 'resourcesAffected.s3Bucket.name' = 0, type = 1, 'classificationDetails.jobId' = 2, 'severity.description' = 3 }
+	export enum GroupBy { 'resourcesAffected.s3Bucket.name' = 'resourcesAffected.s3Bucket.name', type = 'type', 'classificationDetails.jobId' = 'classificationDetails.jobId', 'severity.description' = 'severity.description' }
 
 	export interface GetFindingStatisticsRequest {
 		findingCriteria?: FindingCriteria;
@@ -5196,9 +5196,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IsDefinedInJob { TRUE = 0, FALSE = 1, UNKNOWN = 2 }
+	export enum IsDefinedInJob { TRUE = 'TRUE', FALSE = 'FALSE', UNKNOWN = 'UNKNOWN' }
 
-	export enum IsMonitoredByJob { TRUE = 0, FALSE = 1, UNKNOWN = 2 }
+	export enum IsMonitoredByJob { TRUE = 'TRUE', FALSE = 'FALSE', UNKNOWN = 'UNKNOWN' }
 
 	export interface ListAllowListsRequest {
 	}
@@ -5501,7 +5501,7 @@ export namespace MyNS {
 
 
 	/** The property to use in a condition that filters the query results. Valid values are: */
-	export enum SearchResourcesSimpleCriterionKey { ACCOUNT_ID = 0, S3_BUCKET_NAME = 1, S3_BUCKET_EFFECTIVE_PERMISSION = 2, S3_BUCKET_SHARED_ACCESS = 3 }
+	export enum SearchResourcesSimpleCriterionKey { ACCOUNT_ID = 'ACCOUNT_ID', S3_BUCKET_NAME = 'S3_BUCKET_NAME', S3_BUCKET_EFFECTIVE_PERMISSION = 'S3_BUCKET_EFFECTIVE_PERMISSION', S3_BUCKET_SHARED_ACCESS = 'S3_BUCKET_SHARED_ACCESS' }
 
 	export interface TagResourceRequest {
 

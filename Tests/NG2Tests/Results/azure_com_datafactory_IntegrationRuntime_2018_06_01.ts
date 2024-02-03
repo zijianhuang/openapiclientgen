@@ -220,7 +220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityReferenceType { IntegrationRuntimeReference = 0, LinkedServiceReference = 1 }
+	export enum EntityReferenceType { IntegrationRuntimeReference = 'IntegrationRuntimeReference', LinkedServiceReference = 'LinkedServiceReference' }
 
 
 	/** The custom setup of setting environment variable. */
@@ -316,7 +316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeType { Managed = 0, SelfHosted = 1 }
+	export enum IntegrationRuntimeType { Managed = 'Managed', SelfHosted = 'SelfHosted' }
 
 
 	/** The integration runtime authentication keys. */
@@ -348,7 +348,7 @@ export namespace MyNS {
 
 
 	/** The state of integration runtime auto update. */
-	export enum IntegrationRuntimeAutoUpdate { On = 0, Off = 1 }
+	export enum IntegrationRuntimeAutoUpdate { On = 'On', Off = 'Off' }
 
 
 	/** The compute resource properties for managed integration runtime. */
@@ -451,7 +451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeDataFlowPropertiesComputeType { General = 0, MemoryOptimized = 1, ComputeOptimized = 2 }
+	export enum IntegrationRuntimeDataFlowPropertiesComputeType { General = 'General', MemoryOptimized = 'MemoryOptimized', ComputeOptimized = 'ComputeOptimized' }
 
 
 	/** VNet properties for managed integration runtime. */
@@ -750,7 +750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeRegenerateKeyParametersKeyName { authKey1 = 0, authKey2 = 1 }
+	export enum IntegrationRuntimeRegenerateKeyParametersKeyName { authKey1 = 'authKey1', authKey2 = 'authKey2' }
 
 
 	/** Catalog information for managed dedicated integration runtime. */
@@ -821,7 +821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeSsisCatalogInfoCatalogPricingTier { Basic = 0, Standard = 1, Premium = 2, PremiumRS = 3 }
+	export enum IntegrationRuntimeSsisCatalogInfoCatalogPricingTier { Basic = 'Basic', Standard = 'Standard', Premium = 'Premium', PremiumRS = 'PremiumRS' }
 
 
 	/** SSIS properties for managed integration runtime. */
@@ -863,13 +863,13 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeSsisPropertiesEdition { Standard = 0, Enterprise = 1 }
+	export enum IntegrationRuntimeSsisPropertiesEdition { Standard = 'Standard', Enterprise = 'Enterprise' }
 
-	export enum IntegrationRuntimeSsisPropertiesLicenseType { BasePrice = 0, LicenseIncluded = 1 }
+	export enum IntegrationRuntimeSsisPropertiesLicenseType { BasePrice = 'BasePrice', LicenseIncluded = 'LicenseIncluded' }
 
 
 	/** The state of integration runtime. */
-	export enum IntegrationRuntimeState { Initial = 0, Stopped = 1, Started = 2, Starting = 3, Stopping = 4, NeedRegistration = 5, Online = 6, Limited = 7, Offline = 8, AccessDenied = 9 }
+	export enum IntegrationRuntimeState { Initial = 'Initial', Stopped = 'Stopped', Started = 'Started', Starting = 'Starting', Stopping = 'Stopping', NeedRegistration = 'NeedRegistration', Online = 'Online', Limited = 'Limited', Offline = 'Offline', AccessDenied = 'AccessDenied' }
 
 
 	/** Integration runtime status. */
@@ -1174,7 +1174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedIntegrationRuntimeNodeStatus { Starting = 0, Available = 1, Recycling = 2, Unavailable = 3 }
+	export enum ManagedIntegrationRuntimeNodeStatus { Starting = 'Starting', Available = 'Available', Recycling = 'Recycling', Unavailable = 'Unavailable' }
 
 
 	/** Properties of managed integration runtime operation result. */
@@ -1452,9 +1452,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SelfHostedIntegrationRuntimeNodeLastUpdateResult { None = 0, Succeed = 1, Fail = 2 }
+	export enum SelfHostedIntegrationRuntimeNodeLastUpdateResult { None = 'None', Succeed = 'Succeed', Fail = 'Fail' }
 
-	export enum SelfHostedIntegrationRuntimeNodeStatus { NeedRegistration = 0, Online = 1, Limited = 2, Offline = 3, Upgrading = 4, Initializing = 5, InitializeFailed = 6 }
+	export enum SelfHostedIntegrationRuntimeNodeStatus { NeedRegistration = 'NeedRegistration', Online = 'Online', Limited = 'Limited', Offline = 'Offline', Upgrading = 'Upgrading', Initializing = 'Initializing', InitializeFailed = 'InitializeFailed' }
 
 
 	/** Self-hosted integration runtime status. */
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SelfHostedIntegrationRuntimeStatusTypePropertiesInternalChannelEncryption { NotSet = 0, SslEncrypted = 1, NotEncrypted = 2 }
+	export enum SelfHostedIntegrationRuntimeStatusTypePropertiesInternalChannelEncryption { NotSet = 'NotSet', SslEncrypted = 'SslEncrypted', NotEncrypted = 'NotEncrypted' }
 
 
 	/** Ssis environment. */
@@ -1783,7 +1783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SsisObjectMetadataType { Folder = 0, Project = 1, Package = 2, Environment = 3 }
+	export enum SsisObjectMetadataType { Folder = 'Folder', Project = 'Project', Package = 'Package', Environment = 'Environment' }
 
 
 	/** A list of SSIS object metadata. */

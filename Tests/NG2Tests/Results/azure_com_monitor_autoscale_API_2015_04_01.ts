@@ -36,7 +36,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoscaleNotificationOperation { Scale = 0 }
+	export enum AutoscaleNotificationOperation { Scale = 'Scale' }
 
 
 	/** Webhook notification of an autoscale event. */
@@ -430,11 +430,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricTriggerOperator { Equals = 0, NotEquals = 1, GreaterThan = 2, GreaterThanOrEqual = 3, LessThan = 4, LessThanOrEqual = 5 }
+	export enum MetricTriggerOperator { Equals = 'Equals', NotEquals = 'NotEquals', GreaterThan = 'GreaterThan', GreaterThanOrEqual = 'GreaterThanOrEqual', LessThan = 'LessThan', LessThanOrEqual = 'LessThanOrEqual' }
 
-	export enum MetricTriggerStatistic { Average = 0, Min = 1, Max = 2, Sum = 3 }
+	export enum MetricTriggerStatistic { Average = 'Average', Min = 'Min', Max = 'Max', Sum = 'Sum' }
 
-	export enum MetricTriggerTimeAggregation { Average = 0, Minimum = 1, Maximum = 2, Total = 3, Count = 4, Last = 5 }
+	export enum MetricTriggerTimeAggregation { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', Total = 'Total', Count = 'Count', Last = 'Last' }
 
 
 	/** The repeating times at which this profile begins. This element is not used if the FixedDate element is used. */
@@ -469,7 +469,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecurrenceFrequency { None = 0, Second = 1, Minute = 2, Hour = 3, Day = 4, Week = 5, Month = 6, Year = 7 }
+	export enum RecurrenceFrequency { None = 'None', Second = 'Second', Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month', Year = 'Year' }
 
 
 	/** The scheduling constraints for when the profile begins. */
@@ -631,9 +631,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScaleActionDirection { None = 0, Increase = 1, Decrease = 2 }
+	export enum ScaleActionDirection { None = 'None', Increase = 'Increase', Decrease = 'Decrease' }
 
-	export enum ScaleActionType { ChangeCount = 0, PercentChangeCount = 1, ExactCount = 2 }
+	export enum ScaleActionType { ChangeCount = 'ChangeCount', PercentChangeCount = 'PercentChangeCount', ExactCount = 'ExactCount' }
 
 
 	/** The number of instances that can be used during this profile. */

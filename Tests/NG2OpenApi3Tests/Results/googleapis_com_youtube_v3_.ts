@@ -408,7 +408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityContentDetailsPromotedItemCtaType { ctaTypeUnspecified = 0, visitAdvertiserSite = 1 }
+	export enum ActivityContentDetailsPromotedItemCtaType { ctaTypeUnspecified = 'ctaTypeUnspecified', visitAdvertiserSite = 'visitAdvertiserSite' }
 
 
 	/** Information that identifies the recommended resource. */
@@ -437,7 +437,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityContentDetailsRecommendationReason { reasonUnspecified = 0, videoFavorited = 1, videoLiked = 2, videoWatched = 3 }
+	export enum ActivityContentDetailsRecommendationReason { reasonUnspecified = 'reasonUnspecified', videoFavorited = 'videoFavorited', videoLiked = 'videoLiked', videoWatched = 'videoWatched' }
 
 
 	/** Details about a social network post. */
@@ -484,7 +484,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityContentDetailsSocialType { unspecified = 0, googlePlus = 1, facebook = 2, twitter = 3 }
+	export enum ActivityContentDetailsSocialType { unspecified = 'unspecified', googlePlus = 'googlePlus', facebook = 'facebook', twitter = 'twitter' }
 
 
 	/** Information about a channel that a user subscribed to. */
@@ -651,7 +651,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivitySnippetType { typeUnspecified = 0, upload = 1, like = 2, favorite = 3, comment = 4, subscription = 5, playlistItem = 6, recommendation = 7, bulletin = 8, social = 9, channelItem = 10, promotedItem = 11 }
+	export enum ActivitySnippetType { typeUnspecified = 'typeUnspecified', upload = 'upload', like = 'like', favorite = 'favorite', comment = 'comment', subscription = 'subscription', playlistItem = 'playlistItem', recommendation = 'recommendation', bulletin = 'bulletin', social = 'social', channelItem = 'channelItem', promotedItem = 'promotedItem' }
 
 	export interface ActivityListResponse {
 
@@ -897,13 +897,13 @@ export namespace MyNS {
 
 	}
 
-	export enum CaptionSnippetAudioTrackType { unknown = 0, primary = 1, commentary = 2, descriptive = 3 }
+	export enum CaptionSnippetAudioTrackType { unknown = 'unknown', primary = 'primary', commentary = 'commentary', descriptive = 'descriptive' }
 
-	export enum CaptionSnippetFailureReason { unknownFormat = 0, unsupportedFormat = 1, processingFailed = 2 }
+	export enum CaptionSnippetFailureReason { unknownFormat = 'unknownFormat', unsupportedFormat = 'unsupportedFormat', processingFailed = 'processingFailed' }
 
-	export enum CaptionSnippetStatus { serving = 0, syncing = 1, failed = 2 }
+	export enum CaptionSnippetStatus { serving = 'serving', syncing = 'syncing', failed = 'failed' }
 
-	export enum CaptionSnippetTrackKind { standard = 0, ASR = 1, forced = 2 }
+	export enum CaptionSnippetTrackKind { standard = 'standard', ASR = 'ASR', forced = 'forced' }
 
 	export interface CaptionListResponse {
 
@@ -991,7 +991,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CdnSettingsFrameRate { '30fps' = 0, '60fps' = 1, variable = 2 }
+	export enum CdnSettingsFrameRate { '30fps' = '30fps', '60fps' = '60fps', variable = 'variable' }
 
 
 	/** Describes information necessary for ingesting an RTMP, HTTP, or SRT stream. */
@@ -1042,9 +1042,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CdnSettingsIngestionType { rtmp = 0, dash = 1, webrtc = 2, hls = 3 }
+	export enum CdnSettingsIngestionType { rtmp = 'rtmp', dash = 'dash', webrtc = 'webrtc', hls = 'hls' }
 
-	export enum CdnSettingsResolution { '240p' = 0, '360p' = 1, '480p' = 2, '720p' = 3, '1080p' = 4, '1440p' = 5, '2160p' = 6, variable = 7 }
+	export enum CdnSettingsResolution { '240p' = '240p', '360p' = '360p', '480p' = '480p', '720p' = '720p', '1080p' = '1080p', '1440p' = '1440p', '2160p' = '2160p', variable = 'variable' }
 
 
 	/** A *channel* resource contains information about a YouTube channel. */
@@ -1651,7 +1651,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelConversionPingContext { subscribe = 0, unsubscribe = 1, cview = 2 }
+	export enum ChannelConversionPingContext { subscribe = 'subscribe', unsubscribe = 'unsubscribe', cview = 'cview' }
 
 
 	/** Channel localization setting */
@@ -1833,9 +1833,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelStatusLongUploadsStatus { longUploadsUnspecified = 0, allowed = 1, eligible = 2, disallowed = 3 }
+	export enum ChannelStatusLongUploadsStatus { longUploadsUnspecified = 'longUploadsUnspecified', allowed = 'allowed', eligible = 'eligible', disallowed = 'disallowed' }
 
-	export enum ChannelStatusPrivacyStatus { public = 0, unlisted = 1, private = 2 }
+	export enum ChannelStatusPrivacyStatus { public = 'public', unlisted = 'unlisted', private = 'private' }
 
 
 	/** Freebase topic information related to the channel. */
@@ -2132,9 +2132,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelSectionSnippetStyle { channelsectionStyleUnspecified = 0, horizontalRow = 1, verticalList = 2 }
+	export enum ChannelSectionSnippetStyle { channelsectionStyleUnspecified = 'channelsectionStyleUnspecified', horizontalRow = 'horizontalRow', verticalList = 'verticalList' }
 
-	export enum ChannelSectionSnippetType { channelsectionTypeUndefined = 0, singlePlaylist = 1, multiplePlaylists = 2, popularUploads = 3, recentUploads = 4, likes = 5, allPlaylists = 6, likedPlaylists = 7, recentPosts = 8, recentActivity = 9, liveEvents = 10, upcomingEvents = 11, completedEvents = 12, multipleChannels = 13, postedVideos = 14, postedPlaylists = 15, subscriptions = 16 }
+	export enum ChannelSectionSnippetType { channelsectionTypeUndefined = 'channelsectionTypeUndefined', singlePlaylist = 'singlePlaylist', multiplePlaylists = 'multiplePlaylists', popularUploads = 'popularUploads', recentUploads = 'recentUploads', likes = 'likes', allPlaylists = 'allPlaylists', likedPlaylists = 'likedPlaylists', recentPosts = 'recentPosts', recentActivity = 'recentActivity', liveEvents = 'liveEvents', upcomingEvents = 'upcomingEvents', completedEvents = 'completedEvents', multipleChannels = 'multipleChannels', postedVideos = 'postedVideos', postedPlaylists = 'postedPlaylists', subscriptions = 'subscriptions' }
 
 
 	/** ChannelSection targeting setting. */
@@ -2405,9 +2405,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CommentSnippetModerationStatus { published = 0, heldForReview = 1, likelySpam = 2, rejected = 3 }
+	export enum CommentSnippetModerationStatus { published = 'published', heldForReview = 'heldForReview', likelySpam = 'likelySpam', rejected = 'rejected' }
 
-	export enum CommentSnippetViewerRating { none = 0, like = 1, dislike = 2 }
+	export enum CommentSnippetViewerRating { none = 'none', like = 'like', dislike = 'dislike' }
 
 	export interface CommentListResponse {
 
@@ -3130,143 +3130,143 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentRatingAcbRating { acbUnspecified = 0, acbE = 1, acbP = 2, acbC = 3, acbG = 4, acbPg = 5, acbM = 6, acbMa15plus = 7, acbR18plus = 8, acbUnrated = 9 }
+	export enum ContentRatingAcbRating { acbUnspecified = 'acbUnspecified', acbE = 'acbE', acbP = 'acbP', acbC = 'acbC', acbG = 'acbG', acbPg = 'acbPg', acbM = 'acbM', acbMa15plus = 'acbMa15plus', acbR18plus = 'acbR18plus', acbUnrated = 'acbUnrated' }
 
-	export enum ContentRatingAgcomRating { agcomUnspecified = 0, agcomT = 1, agcomVm14 = 2, agcomVm18 = 3, agcomUnrated = 4 }
+	export enum ContentRatingAgcomRating { agcomUnspecified = 'agcomUnspecified', agcomT = 'agcomT', agcomVm14 = 'agcomVm14', agcomVm18 = 'agcomVm18', agcomUnrated = 'agcomUnrated' }
 
-	export enum ContentRatingAnatelRating { anatelUnspecified = 0, anatelF = 1, anatelI = 2, anatelI7 = 3, anatelI10 = 4, anatelI12 = 5, anatelR = 6, anatelA = 7, anatelUnrated = 8 }
+	export enum ContentRatingAnatelRating { anatelUnspecified = 'anatelUnspecified', anatelF = 'anatelF', anatelI = 'anatelI', anatelI7 = 'anatelI7', anatelI10 = 'anatelI10', anatelI12 = 'anatelI12', anatelR = 'anatelR', anatelA = 'anatelA', anatelUnrated = 'anatelUnrated' }
 
-	export enum ContentRatingBbfcRating { bbfcUnspecified = 0, bbfcU = 1, bbfcPg = 2, bbfc12a = 3, bbfc12 = 4, bbfc15 = 5, bbfc18 = 6, bbfcR18 = 7, bbfcUnrated = 8 }
+	export enum ContentRatingBbfcRating { bbfcUnspecified = 'bbfcUnspecified', bbfcU = 'bbfcU', bbfcPg = 'bbfcPg', bbfc12a = 'bbfc12a', bbfc12 = 'bbfc12', bbfc15 = 'bbfc15', bbfc18 = 'bbfc18', bbfcR18 = 'bbfcR18', bbfcUnrated = 'bbfcUnrated' }
 
-	export enum ContentRatingBfvcRating { bfvcUnspecified = 0, bfvcG = 1, bfvcE = 2, bfvc13 = 3, bfvc15 = 4, bfvc18 = 5, bfvc20 = 6, bfvcB = 7, bfvcUnrated = 8 }
+	export enum ContentRatingBfvcRating { bfvcUnspecified = 'bfvcUnspecified', bfvcG = 'bfvcG', bfvcE = 'bfvcE', bfvc13 = 'bfvc13', bfvc15 = 'bfvc15', bfvc18 = 'bfvc18', bfvc20 = 'bfvc20', bfvcB = 'bfvcB', bfvcUnrated = 'bfvcUnrated' }
 
-	export enum ContentRatingBmukkRating { bmukkUnspecified = 0, bmukkAa = 1, bmukk6 = 2, bmukk8 = 3, bmukk10 = 4, bmukk12 = 5, bmukk14 = 6, bmukk16 = 7, bmukkUnrated = 8 }
+	export enum ContentRatingBmukkRating { bmukkUnspecified = 'bmukkUnspecified', bmukkAa = 'bmukkAa', bmukk6 = 'bmukk6', bmukk8 = 'bmukk8', bmukk10 = 'bmukk10', bmukk12 = 'bmukk12', bmukk14 = 'bmukk14', bmukk16 = 'bmukk16', bmukkUnrated = 'bmukkUnrated' }
 
-	export enum ContentRatingCatvRating { catvUnspecified = 0, catvC = 1, catvC8 = 2, catvG = 3, catvPg = 4, catv14plus = 5, catv18plus = 6, catvUnrated = 7, catvE = 8 }
+	export enum ContentRatingCatvRating { catvUnspecified = 'catvUnspecified', catvC = 'catvC', catvC8 = 'catvC8', catvG = 'catvG', catvPg = 'catvPg', catv14plus = 'catv14plus', catv18plus = 'catv18plus', catvUnrated = 'catvUnrated', catvE = 'catvE' }
 
-	export enum ContentRatingCatvfrRating { catvfrUnspecified = 0, catvfrG = 1, catvfr8plus = 2, catvfr13plus = 3, catvfr16plus = 4, catvfr18plus = 5, catvfrUnrated = 6, catvfrE = 7 }
+	export enum ContentRatingCatvfrRating { catvfrUnspecified = 'catvfrUnspecified', catvfrG = 'catvfrG', catvfr8plus = 'catvfr8plus', catvfr13plus = 'catvfr13plus', catvfr16plus = 'catvfr16plus', catvfr18plus = 'catvfr18plus', catvfrUnrated = 'catvfrUnrated', catvfrE = 'catvfrE' }
 
-	export enum ContentRatingCbfcRating { cbfcUnspecified = 0, cbfcU = 1, cbfcUA = 2, cbfcUA7plus = 3, cbfcUA13plus = 4, cbfcUA16plus = 5, cbfcA = 6, cbfcS = 7, cbfcUnrated = 8 }
+	export enum ContentRatingCbfcRating { cbfcUnspecified = 'cbfcUnspecified', cbfcU = 'cbfcU', cbfcUA = 'cbfcUA', cbfcUA7plus = 'cbfcUA7plus', cbfcUA13plus = 'cbfcUA13plus', cbfcUA16plus = 'cbfcUA16plus', cbfcA = 'cbfcA', cbfcS = 'cbfcS', cbfcUnrated = 'cbfcUnrated' }
 
-	export enum ContentRatingCccRating { cccUnspecified = 0, cccTe = 1, ccc6 = 2, ccc14 = 3, ccc18 = 4, ccc18v = 5, ccc18s = 6, cccUnrated = 7 }
+	export enum ContentRatingCccRating { cccUnspecified = 'cccUnspecified', cccTe = 'cccTe', ccc6 = 'ccc6', ccc14 = 'ccc14', ccc18 = 'ccc18', ccc18v = 'ccc18v', ccc18s = 'ccc18s', cccUnrated = 'cccUnrated' }
 
-	export enum ContentRatingCceRating { cceUnspecified = 0, cceM4 = 1, cceM6 = 2, cceM12 = 3, cceM16 = 4, cceM18 = 5, cceUnrated = 6, cceM14 = 7 }
+	export enum ContentRatingCceRating { cceUnspecified = 'cceUnspecified', cceM4 = 'cceM4', cceM6 = 'cceM6', cceM12 = 'cceM12', cceM16 = 'cceM16', cceM18 = 'cceM18', cceUnrated = 'cceUnrated', cceM14 = 'cceM14' }
 
-	export enum ContentRatingChfilmRating { chfilmUnspecified = 0, chfilm0 = 1, chfilm6 = 2, chfilm12 = 3, chfilm16 = 4, chfilm18 = 5, chfilmUnrated = 6 }
+	export enum ContentRatingChfilmRating { chfilmUnspecified = 'chfilmUnspecified', chfilm0 = 'chfilm0', chfilm6 = 'chfilm6', chfilm12 = 'chfilm12', chfilm16 = 'chfilm16', chfilm18 = 'chfilm18', chfilmUnrated = 'chfilmUnrated' }
 
-	export enum ContentRatingChvrsRating { chvrsUnspecified = 0, chvrsG = 1, chvrsPg = 2, chvrs14a = 3, chvrs18a = 4, chvrsR = 5, chvrsE = 6, chvrsUnrated = 7 }
+	export enum ContentRatingChvrsRating { chvrsUnspecified = 'chvrsUnspecified', chvrsG = 'chvrsG', chvrsPg = 'chvrsPg', chvrs14a = 'chvrs14a', chvrs18a = 'chvrs18a', chvrsR = 'chvrsR', chvrsE = 'chvrsE', chvrsUnrated = 'chvrsUnrated' }
 
-	export enum ContentRatingCicfRating { cicfUnspecified = 0, cicfE = 1, cicfKtEa = 2, cicfKntEna = 3, cicfUnrated = 4 }
+	export enum ContentRatingCicfRating { cicfUnspecified = 'cicfUnspecified', cicfE = 'cicfE', cicfKtEa = 'cicfKtEa', cicfKntEna = 'cicfKntEna', cicfUnrated = 'cicfUnrated' }
 
-	export enum ContentRatingCnaRating { cnaUnspecified = 0, cnaAp = 1, cna12 = 2, cna15 = 3, cna18 = 4, cna18plus = 5, cnaUnrated = 6 }
+	export enum ContentRatingCnaRating { cnaUnspecified = 'cnaUnspecified', cnaAp = 'cnaAp', cna12 = 'cna12', cna15 = 'cna15', cna18 = 'cna18', cna18plus = 'cna18plus', cnaUnrated = 'cnaUnrated' }
 
-	export enum ContentRatingCncRating { cncUnspecified = 0, cncT = 1, cnc10 = 2, cnc12 = 3, cnc16 = 4, cnc18 = 5, cncE = 6, cncInterdiction = 7, cncUnrated = 8 }
+	export enum ContentRatingCncRating { cncUnspecified = 'cncUnspecified', cncT = 'cncT', cnc10 = 'cnc10', cnc12 = 'cnc12', cnc16 = 'cnc16', cnc18 = 'cnc18', cncE = 'cncE', cncInterdiction = 'cncInterdiction', cncUnrated = 'cncUnrated' }
 
-	export enum ContentRatingCsaRating { csaUnspecified = 0, csaT = 1, csa10 = 2, csa12 = 3, csa16 = 4, csa18 = 5, csaInterdiction = 6, csaUnrated = 7 }
+	export enum ContentRatingCsaRating { csaUnspecified = 'csaUnspecified', csaT = 'csaT', csa10 = 'csa10', csa12 = 'csa12', csa16 = 'csa16', csa18 = 'csa18', csaInterdiction = 'csaInterdiction', csaUnrated = 'csaUnrated' }
 
-	export enum ContentRatingCscfRating { cscfUnspecified = 0, cscfAl = 1, cscfA = 2, cscf6 = 3, cscf9 = 4, cscf12 = 5, cscf16 = 6, cscf18 = 7, cscfUnrated = 8 }
+	export enum ContentRatingCscfRating { cscfUnspecified = 'cscfUnspecified', cscfAl = 'cscfAl', cscfA = 'cscfA', cscf6 = 'cscf6', cscf9 = 'cscf9', cscf12 = 'cscf12', cscf16 = 'cscf16', cscf18 = 'cscf18', cscfUnrated = 'cscfUnrated' }
 
-	export enum ContentRatingCzfilmRating { czfilmUnspecified = 0, czfilmU = 1, czfilm12 = 2, czfilm14 = 3, czfilm18 = 4, czfilmUnrated = 5 }
+	export enum ContentRatingCzfilmRating { czfilmUnspecified = 'czfilmUnspecified', czfilmU = 'czfilmU', czfilm12 = 'czfilm12', czfilm14 = 'czfilm14', czfilm18 = 'czfilm18', czfilmUnrated = 'czfilmUnrated' }
 
-	export enum ContentRatingDjctqRating { djctqUnspecified = 0, djctqL = 1, djctq10 = 2, djctq12 = 3, djctq14 = 4, djctq16 = 5, djctq18 = 6, djctqEr = 7, djctqL10 = 8, djctqL12 = 9, djctqL14 = 10, djctqL16 = 11, djctqL18 = 12, djctq1012 = 13, djctq1014 = 14, djctq1016 = 15, djctq1018 = 16, djctq1214 = 17, djctq1216 = 18, djctq1218 = 19, djctq1416 = 20, djctq1418 = 21, djctq1618 = 22, djctqUnrated = 23 }
+	export enum ContentRatingDjctqRating { djctqUnspecified = 'djctqUnspecified', djctqL = 'djctqL', djctq10 = 'djctq10', djctq12 = 'djctq12', djctq14 = 'djctq14', djctq16 = 'djctq16', djctq18 = 'djctq18', djctqEr = 'djctqEr', djctqL10 = 'djctqL10', djctqL12 = 'djctqL12', djctqL14 = 'djctqL14', djctqL16 = 'djctqL16', djctqL18 = 'djctqL18', djctq1012 = 'djctq1012', djctq1014 = 'djctq1014', djctq1016 = 'djctq1016', djctq1018 = 'djctq1018', djctq1214 = 'djctq1214', djctq1216 = 'djctq1216', djctq1218 = 'djctq1218', djctq1416 = 'djctq1416', djctq1418 = 'djctq1418', djctq1618 = 'djctq1618', djctqUnrated = 'djctqUnrated' }
 
-	export enum ContentRatingEcbmctRating { ecbmctUnspecified = 0, ecbmctG = 1, ecbmct7a = 2, ecbmct7plus = 3, ecbmct13a = 4, ecbmct13plus = 5, ecbmct15a = 6, ecbmct15plus = 7, ecbmct18plus = 8, ecbmctUnrated = 9 }
+	export enum ContentRatingEcbmctRating { ecbmctUnspecified = 'ecbmctUnspecified', ecbmctG = 'ecbmctG', ecbmct7a = 'ecbmct7a', ecbmct7plus = 'ecbmct7plus', ecbmct13a = 'ecbmct13a', ecbmct13plus = 'ecbmct13plus', ecbmct15a = 'ecbmct15a', ecbmct15plus = 'ecbmct15plus', ecbmct18plus = 'ecbmct18plus', ecbmctUnrated = 'ecbmctUnrated' }
 
-	export enum ContentRatingEefilmRating { eefilmUnspecified = 0, eefilmPere = 1, eefilmL = 2, eefilmMs6 = 3, eefilmK6 = 4, eefilmMs12 = 5, eefilmK12 = 6, eefilmK14 = 7, eefilmK16 = 8, eefilmUnrated = 9 }
+	export enum ContentRatingEefilmRating { eefilmUnspecified = 'eefilmUnspecified', eefilmPere = 'eefilmPere', eefilmL = 'eefilmL', eefilmMs6 = 'eefilmMs6', eefilmK6 = 'eefilmK6', eefilmMs12 = 'eefilmMs12', eefilmK12 = 'eefilmK12', eefilmK14 = 'eefilmK14', eefilmK16 = 'eefilmK16', eefilmUnrated = 'eefilmUnrated' }
 
-	export enum ContentRatingEgfilmRating { egfilmUnspecified = 0, egfilmGn = 1, egfilm18 = 2, egfilmBn = 3, egfilmUnrated = 4 }
+	export enum ContentRatingEgfilmRating { egfilmUnspecified = 'egfilmUnspecified', egfilmGn = 'egfilmGn', egfilm18 = 'egfilm18', egfilmBn = 'egfilmBn', egfilmUnrated = 'egfilmUnrated' }
 
-	export enum ContentRatingEirinRating { eirinUnspecified = 0, eirinG = 1, eirinPg12 = 2, eirinR15plus = 3, eirinR18plus = 4, eirinUnrated = 5 }
+	export enum ContentRatingEirinRating { eirinUnspecified = 'eirinUnspecified', eirinG = 'eirinG', eirinPg12 = 'eirinPg12', eirinR15plus = 'eirinR15plus', eirinR18plus = 'eirinR18plus', eirinUnrated = 'eirinUnrated' }
 
-	export enum ContentRatingFcbmRating { fcbmUnspecified = 0, fcbmU = 1, fcbmPg13 = 2, fcbmP13 = 3, fcbm18 = 4, fcbm18sx = 5, fcbm18pa = 6, fcbm18sg = 7, fcbm18pl = 8, fcbmUnrated = 9 }
+	export enum ContentRatingFcbmRating { fcbmUnspecified = 'fcbmUnspecified', fcbmU = 'fcbmU', fcbmPg13 = 'fcbmPg13', fcbmP13 = 'fcbmP13', fcbm18 = 'fcbm18', fcbm18sx = 'fcbm18sx', fcbm18pa = 'fcbm18pa', fcbm18sg = 'fcbm18sg', fcbm18pl = 'fcbm18pl', fcbmUnrated = 'fcbmUnrated' }
 
-	export enum ContentRatingFcoRating { fcoUnspecified = 0, fcoI = 1, fcoIia = 2, fcoIib = 3, fcoIi = 4, fcoIii = 5, fcoUnrated = 6 }
+	export enum ContentRatingFcoRating { fcoUnspecified = 'fcoUnspecified', fcoI = 'fcoI', fcoIia = 'fcoIia', fcoIib = 'fcoIib', fcoIi = 'fcoIi', fcoIii = 'fcoIii', fcoUnrated = 'fcoUnrated' }
 
-	export enum ContentRatingFmocRating { fmocUnspecified = 0, fmocU = 1, fmoc10 = 2, fmoc12 = 3, fmoc16 = 4, fmoc18 = 5, fmocE = 6, fmocUnrated = 7 }
+	export enum ContentRatingFmocRating { fmocUnspecified = 'fmocUnspecified', fmocU = 'fmocU', fmoc10 = 'fmoc10', fmoc12 = 'fmoc12', fmoc16 = 'fmoc16', fmoc18 = 'fmoc18', fmocE = 'fmocE', fmocUnrated = 'fmocUnrated' }
 
-	export enum ContentRatingFpbRating { fpbUnspecified = 0, fpbA = 1, fpbPg = 2, fpb79Pg = 3, fpb1012Pg = 4, fpb13 = 5, fpb16 = 6, fpb18 = 7, fpbX18 = 8, fpbXx = 9, fpbUnrated = 10, fpb10 = 11 }
+	export enum ContentRatingFpbRating { fpbUnspecified = 'fpbUnspecified', fpbA = 'fpbA', fpbPg = 'fpbPg', fpb79Pg = 'fpb79Pg', fpb1012Pg = 'fpb1012Pg', fpb13 = 'fpb13', fpb16 = 'fpb16', fpb18 = 'fpb18', fpbX18 = 'fpbX18', fpbXx = 'fpbXx', fpbUnrated = 'fpbUnrated', fpb10 = 'fpb10' }
 
-	export enum ContentRatingFskRating { fskUnspecified = 0, fsk0 = 1, fsk6 = 2, fsk12 = 3, fsk16 = 4, fsk18 = 5, fskUnrated = 6 }
+	export enum ContentRatingFskRating { fskUnspecified = 'fskUnspecified', fsk0 = 'fsk0', fsk6 = 'fsk6', fsk12 = 'fsk12', fsk16 = 'fsk16', fsk18 = 'fsk18', fskUnrated = 'fskUnrated' }
 
-	export enum ContentRatingGrfilmRating { grfilmUnspecified = 0, grfilmK = 1, grfilmE = 2, grfilmK12 = 3, grfilmK13 = 4, grfilmK15 = 5, grfilmK17 = 6, grfilmK18 = 7, grfilmUnrated = 8 }
+	export enum ContentRatingGrfilmRating { grfilmUnspecified = 'grfilmUnspecified', grfilmK = 'grfilmK', grfilmE = 'grfilmE', grfilmK12 = 'grfilmK12', grfilmK13 = 'grfilmK13', grfilmK15 = 'grfilmK15', grfilmK17 = 'grfilmK17', grfilmK18 = 'grfilmK18', grfilmUnrated = 'grfilmUnrated' }
 
-	export enum ContentRatingIcaaRating { icaaUnspecified = 0, icaaApta = 1, icaa7 = 2, icaa12 = 3, icaa13 = 4, icaa16 = 5, icaa18 = 6, icaaX = 7, icaaUnrated = 8 }
+	export enum ContentRatingIcaaRating { icaaUnspecified = 'icaaUnspecified', icaaApta = 'icaaApta', icaa7 = 'icaa7', icaa12 = 'icaa12', icaa13 = 'icaa13', icaa16 = 'icaa16', icaa18 = 'icaa18', icaaX = 'icaaX', icaaUnrated = 'icaaUnrated' }
 
-	export enum ContentRatingIfcoRating { ifcoUnspecified = 0, ifcoG = 1, ifcoPg = 2, ifco12 = 3, ifco12a = 4, ifco15 = 5, ifco15a = 6, ifco16 = 7, ifco18 = 8, ifcoUnrated = 9 }
+	export enum ContentRatingIfcoRating { ifcoUnspecified = 'ifcoUnspecified', ifcoG = 'ifcoG', ifcoPg = 'ifcoPg', ifco12 = 'ifco12', ifco12a = 'ifco12a', ifco15 = 'ifco15', ifco15a = 'ifco15a', ifco16 = 'ifco16', ifco18 = 'ifco18', ifcoUnrated = 'ifcoUnrated' }
 
-	export enum ContentRatingIlfilmRating { ilfilmUnspecified = 0, ilfilmAa = 1, ilfilm12 = 2, ilfilm14 = 3, ilfilm16 = 4, ilfilm18 = 5, ilfilmUnrated = 6 }
+	export enum ContentRatingIlfilmRating { ilfilmUnspecified = 'ilfilmUnspecified', ilfilmAa = 'ilfilmAa', ilfilm12 = 'ilfilm12', ilfilm14 = 'ilfilm14', ilfilm16 = 'ilfilm16', ilfilm18 = 'ilfilm18', ilfilmUnrated = 'ilfilmUnrated' }
 
-	export enum ContentRatingIncaaRating { incaaUnspecified = 0, incaaAtp = 1, incaaSam13 = 2, incaaSam16 = 3, incaaSam18 = 4, incaaC = 5, incaaUnrated = 6 }
+	export enum ContentRatingIncaaRating { incaaUnspecified = 'incaaUnspecified', incaaAtp = 'incaaAtp', incaaSam13 = 'incaaSam13', incaaSam16 = 'incaaSam16', incaaSam18 = 'incaaSam18', incaaC = 'incaaC', incaaUnrated = 'incaaUnrated' }
 
-	export enum ContentRatingKfcbRating { kfcbUnspecified = 0, kfcbG = 1, kfcbPg = 2, kfcb16plus = 3, kfcbR = 4, kfcbUnrated = 5 }
+	export enum ContentRatingKfcbRating { kfcbUnspecified = 'kfcbUnspecified', kfcbG = 'kfcbG', kfcbPg = 'kfcbPg', kfcb16plus = 'kfcb16plus', kfcbR = 'kfcbR', kfcbUnrated = 'kfcbUnrated' }
 
-	export enum ContentRatingKijkwijzerRating { kijkwijzerUnspecified = 0, kijkwijzerAl = 1, kijkwijzer6 = 2, kijkwijzer9 = 3, kijkwijzer12 = 4, kijkwijzer16 = 5, kijkwijzer18 = 6, kijkwijzerUnrated = 7 }
+	export enum ContentRatingKijkwijzerRating { kijkwijzerUnspecified = 'kijkwijzerUnspecified', kijkwijzerAl = 'kijkwijzerAl', kijkwijzer6 = 'kijkwijzer6', kijkwijzer9 = 'kijkwijzer9', kijkwijzer12 = 'kijkwijzer12', kijkwijzer16 = 'kijkwijzer16', kijkwijzer18 = 'kijkwijzer18', kijkwijzerUnrated = 'kijkwijzerUnrated' }
 
-	export enum ContentRatingKmrbRating { kmrbUnspecified = 0, kmrbAll = 1, kmrb12plus = 2, kmrb15plus = 3, kmrbTeenr = 4, kmrbR = 5, kmrbUnrated = 6 }
+	export enum ContentRatingKmrbRating { kmrbUnspecified = 'kmrbUnspecified', kmrbAll = 'kmrbAll', kmrb12plus = 'kmrb12plus', kmrb15plus = 'kmrb15plus', kmrbTeenr = 'kmrbTeenr', kmrbR = 'kmrbR', kmrbUnrated = 'kmrbUnrated' }
 
-	export enum ContentRatingLsfRating { lsfUnspecified = 0, lsfSu = 1, lsfA = 2, lsfBo = 3, lsf13 = 4, lsfR = 5, lsf17 = 6, lsfD = 7, lsf21 = 8, lsfUnrated = 9 }
+	export enum ContentRatingLsfRating { lsfUnspecified = 'lsfUnspecified', lsfSu = 'lsfSu', lsfA = 'lsfA', lsfBo = 'lsfBo', lsf13 = 'lsf13', lsfR = 'lsfR', lsf17 = 'lsf17', lsfD = 'lsfD', lsf21 = 'lsf21', lsfUnrated = 'lsfUnrated' }
 
-	export enum ContentRatingMccaaRating { mccaaUnspecified = 0, mccaaU = 1, mccaaPg = 2, mccaa12a = 3, mccaa12 = 4, mccaa14 = 5, mccaa15 = 6, mccaa16 = 7, mccaa18 = 8, mccaaUnrated = 9 }
+	export enum ContentRatingMccaaRating { mccaaUnspecified = 'mccaaUnspecified', mccaaU = 'mccaaU', mccaaPg = 'mccaaPg', mccaa12a = 'mccaa12a', mccaa12 = 'mccaa12', mccaa14 = 'mccaa14', mccaa15 = 'mccaa15', mccaa16 = 'mccaa16', mccaa18 = 'mccaa18', mccaaUnrated = 'mccaaUnrated' }
 
-	export enum ContentRatingMccypRating { mccypUnspecified = 0, mccypA = 1, mccyp7 = 2, mccyp11 = 3, mccyp15 = 4, mccypUnrated = 5 }
+	export enum ContentRatingMccypRating { mccypUnspecified = 'mccypUnspecified', mccypA = 'mccypA', mccyp7 = 'mccyp7', mccyp11 = 'mccyp11', mccyp15 = 'mccyp15', mccypUnrated = 'mccypUnrated' }
 
-	export enum ContentRatingMcstRating { mcstUnspecified = 0, mcstP = 1, mcst0 = 2, mcstC13 = 3, mcstC16 = 4, mcst16plus = 5, mcstC18 = 6, mcstGPg = 7, mcstUnrated = 8 }
+	export enum ContentRatingMcstRating { mcstUnspecified = 'mcstUnspecified', mcstP = 'mcstP', mcst0 = 'mcst0', mcstC13 = 'mcstC13', mcstC16 = 'mcstC16', mcst16plus = 'mcst16plus', mcstC18 = 'mcstC18', mcstGPg = 'mcstGPg', mcstUnrated = 'mcstUnrated' }
 
-	export enum ContentRatingMdaRating { mdaUnspecified = 0, mdaG = 1, mdaPg = 2, mdaPg13 = 3, mdaNc16 = 4, mdaM18 = 5, mdaR21 = 6, mdaUnrated = 7 }
+	export enum ContentRatingMdaRating { mdaUnspecified = 'mdaUnspecified', mdaG = 'mdaG', mdaPg = 'mdaPg', mdaPg13 = 'mdaPg13', mdaNc16 = 'mdaNc16', mdaM18 = 'mdaM18', mdaR21 = 'mdaR21', mdaUnrated = 'mdaUnrated' }
 
-	export enum ContentRatingMedietilsynetRating { medietilsynetUnspecified = 0, medietilsynetA = 1, medietilsynet6 = 2, medietilsynet7 = 3, medietilsynet9 = 4, medietilsynet11 = 5, medietilsynet12 = 6, medietilsynet15 = 7, medietilsynet18 = 8, medietilsynetUnrated = 9 }
+	export enum ContentRatingMedietilsynetRating { medietilsynetUnspecified = 'medietilsynetUnspecified', medietilsynetA = 'medietilsynetA', medietilsynet6 = 'medietilsynet6', medietilsynet7 = 'medietilsynet7', medietilsynet9 = 'medietilsynet9', medietilsynet11 = 'medietilsynet11', medietilsynet12 = 'medietilsynet12', medietilsynet15 = 'medietilsynet15', medietilsynet18 = 'medietilsynet18', medietilsynetUnrated = 'medietilsynetUnrated' }
 
-	export enum ContentRatingMekuRating { mekuUnspecified = 0, mekuS = 1, meku7 = 2, meku12 = 3, meku16 = 4, meku18 = 5, mekuUnrated = 6 }
+	export enum ContentRatingMekuRating { mekuUnspecified = 'mekuUnspecified', mekuS = 'mekuS', meku7 = 'meku7', meku12 = 'meku12', meku16 = 'meku16', meku18 = 'meku18', mekuUnrated = 'mekuUnrated' }
 
-	export enum ContentRatingMenaMpaaRating { menaMpaaUnspecified = 0, menaMpaaG = 1, menaMpaaPg = 2, menaMpaaPg13 = 3, menaMpaaR = 4, menaMpaaUnrated = 5 }
+	export enum ContentRatingMenaMpaaRating { menaMpaaUnspecified = 'menaMpaaUnspecified', menaMpaaG = 'menaMpaaG', menaMpaaPg = 'menaMpaaPg', menaMpaaPg13 = 'menaMpaaPg13', menaMpaaR = 'menaMpaaR', menaMpaaUnrated = 'menaMpaaUnrated' }
 
-	export enum ContentRatingMibacRating { mibacUnspecified = 0, mibacT = 1, mibacVap = 2, mibacVm6 = 3, mibacVm12 = 4, mibacVm14 = 5, mibacVm16 = 6, mibacVm18 = 7, mibacUnrated = 8 }
+	export enum ContentRatingMibacRating { mibacUnspecified = 'mibacUnspecified', mibacT = 'mibacT', mibacVap = 'mibacVap', mibacVm6 = 'mibacVm6', mibacVm12 = 'mibacVm12', mibacVm14 = 'mibacVm14', mibacVm16 = 'mibacVm16', mibacVm18 = 'mibacVm18', mibacUnrated = 'mibacUnrated' }
 
-	export enum ContentRatingMocRating { mocUnspecified = 0, mocE = 1, mocT = 2, moc7 = 3, moc12 = 4, moc15 = 5, moc18 = 6, mocX = 7, mocBanned = 8, mocUnrated = 9 }
+	export enum ContentRatingMocRating { mocUnspecified = 'mocUnspecified', mocE = 'mocE', mocT = 'mocT', moc7 = 'moc7', moc12 = 'moc12', moc15 = 'moc15', moc18 = 'moc18', mocX = 'mocX', mocBanned = 'mocBanned', mocUnrated = 'mocUnrated' }
 
-	export enum ContentRatingMoctwRating { moctwUnspecified = 0, moctwG = 1, moctwP = 2, moctwPg = 3, moctwR = 4, moctwUnrated = 5, moctwR12 = 6, moctwR15 = 7 }
+	export enum ContentRatingMoctwRating { moctwUnspecified = 'moctwUnspecified', moctwG = 'moctwG', moctwP = 'moctwP', moctwPg = 'moctwPg', moctwR = 'moctwR', moctwUnrated = 'moctwUnrated', moctwR12 = 'moctwR12', moctwR15 = 'moctwR15' }
 
-	export enum ContentRatingMpaaRating { mpaaUnspecified = 0, mpaaG = 1, mpaaPg = 2, mpaaPg13 = 3, mpaaR = 4, mpaaNc17 = 5, mpaaX = 6, mpaaUnrated = 7 }
+	export enum ContentRatingMpaaRating { mpaaUnspecified = 'mpaaUnspecified', mpaaG = 'mpaaG', mpaaPg = 'mpaaPg', mpaaPg13 = 'mpaaPg13', mpaaR = 'mpaaR', mpaaNc17 = 'mpaaNc17', mpaaX = 'mpaaX', mpaaUnrated = 'mpaaUnrated' }
 
-	export enum ContentRatingMpaatRating { mpaatUnspecified = 0, mpaatGb = 1, mpaatRb = 2 }
+	export enum ContentRatingMpaatRating { mpaatUnspecified = 'mpaatUnspecified', mpaatGb = 'mpaatGb', mpaatRb = 'mpaatRb' }
 
-	export enum ContentRatingMtrcbRating { mtrcbUnspecified = 0, mtrcbG = 1, mtrcbPg = 2, mtrcbR13 = 3, mtrcbR16 = 4, mtrcbR18 = 5, mtrcbX = 6, mtrcbUnrated = 7 }
+	export enum ContentRatingMtrcbRating { mtrcbUnspecified = 'mtrcbUnspecified', mtrcbG = 'mtrcbG', mtrcbPg = 'mtrcbPg', mtrcbR13 = 'mtrcbR13', mtrcbR16 = 'mtrcbR16', mtrcbR18 = 'mtrcbR18', mtrcbX = 'mtrcbX', mtrcbUnrated = 'mtrcbUnrated' }
 
-	export enum ContentRatingNbcRating { nbcUnspecified = 0, nbcG = 1, nbcPg = 2, nbc12plus = 3, nbc15plus = 4, nbc18plus = 5, nbc18plusr = 6, nbcPu = 7, nbcUnrated = 8 }
+	export enum ContentRatingNbcRating { nbcUnspecified = 'nbcUnspecified', nbcG = 'nbcG', nbcPg = 'nbcPg', nbc12plus = 'nbc12plus', nbc15plus = 'nbc15plus', nbc18plus = 'nbc18plus', nbc18plusr = 'nbc18plusr', nbcPu = 'nbcPu', nbcUnrated = 'nbcUnrated' }
 
-	export enum ContentRatingNbcplRating { nbcplUnspecified = 0, nbcplI = 1, nbcplIi = 2, nbcplIii = 3, nbcplIv = 4, nbcpl18plus = 5, nbcplUnrated = 6 }
+	export enum ContentRatingNbcplRating { nbcplUnspecified = 'nbcplUnspecified', nbcplI = 'nbcplI', nbcplIi = 'nbcplIi', nbcplIii = 'nbcplIii', nbcplIv = 'nbcplIv', nbcpl18plus = 'nbcpl18plus', nbcplUnrated = 'nbcplUnrated' }
 
-	export enum ContentRatingNfrcRating { nfrcUnspecified = 0, nfrcA = 1, nfrcB = 2, nfrcC = 3, nfrcD = 4, nfrcX = 5, nfrcUnrated = 6 }
+	export enum ContentRatingNfrcRating { nfrcUnspecified = 'nfrcUnspecified', nfrcA = 'nfrcA', nfrcB = 'nfrcB', nfrcC = 'nfrcC', nfrcD = 'nfrcD', nfrcX = 'nfrcX', nfrcUnrated = 'nfrcUnrated' }
 
-	export enum ContentRatingNfvcbRating { nfvcbUnspecified = 0, nfvcbG = 1, nfvcbPg = 2, nfvcb12 = 3, nfvcb12a = 4, nfvcb15 = 5, nfvcb18 = 6, nfvcbRe = 7, nfvcbUnrated = 8 }
+	export enum ContentRatingNfvcbRating { nfvcbUnspecified = 'nfvcbUnspecified', nfvcbG = 'nfvcbG', nfvcbPg = 'nfvcbPg', nfvcb12 = 'nfvcb12', nfvcb12a = 'nfvcb12a', nfvcb15 = 'nfvcb15', nfvcb18 = 'nfvcb18', nfvcbRe = 'nfvcbRe', nfvcbUnrated = 'nfvcbUnrated' }
 
-	export enum ContentRatingNkclvRating { nkclvUnspecified = 0, nkclvU = 1, nkclv7plus = 2, nkclv12plus = 3, nkclv16plus = 4, nkclv18plus = 5, nkclvUnrated = 6 }
+	export enum ContentRatingNkclvRating { nkclvUnspecified = 'nkclvUnspecified', nkclvU = 'nkclvU', nkclv7plus = 'nkclv7plus', nkclv12plus = 'nkclv12plus', nkclv16plus = 'nkclv16plus', nkclv18plus = 'nkclv18plus', nkclvUnrated = 'nkclvUnrated' }
 
-	export enum ContentRatingNmcRating { nmcUnspecified = 0, nmcG = 1, nmcPg = 2, nmcPg13 = 3, nmcPg15 = 4, nmc15plus = 5, nmc18plus = 6, nmc18tc = 7, nmcUnrated = 8 }
+	export enum ContentRatingNmcRating { nmcUnspecified = 'nmcUnspecified', nmcG = 'nmcG', nmcPg = 'nmcPg', nmcPg13 = 'nmcPg13', nmcPg15 = 'nmcPg15', nmc15plus = 'nmc15plus', nmc18plus = 'nmc18plus', nmc18tc = 'nmc18tc', nmcUnrated = 'nmcUnrated' }
 
-	export enum ContentRatingOflcRating { oflcUnspecified = 0, oflcG = 1, oflcPg = 2, oflcM = 3, oflcR13 = 4, oflcR15 = 5, oflcR16 = 6, oflcR18 = 7, oflcUnrated = 8, oflcRp13 = 9, oflcRp16 = 10, oflcRp18 = 11 }
+	export enum ContentRatingOflcRating { oflcUnspecified = 'oflcUnspecified', oflcG = 'oflcG', oflcPg = 'oflcPg', oflcM = 'oflcM', oflcR13 = 'oflcR13', oflcR15 = 'oflcR15', oflcR16 = 'oflcR16', oflcR18 = 'oflcR18', oflcUnrated = 'oflcUnrated', oflcRp13 = 'oflcRp13', oflcRp16 = 'oflcRp16', oflcRp18 = 'oflcRp18' }
 
-	export enum ContentRatingPefilmRating { pefilmUnspecified = 0, pefilmPt = 1, pefilmPg = 2, pefilm14 = 3, pefilm18 = 4, pefilmUnrated = 5 }
+	export enum ContentRatingPefilmRating { pefilmUnspecified = 'pefilmUnspecified', pefilmPt = 'pefilmPt', pefilmPg = 'pefilmPg', pefilm14 = 'pefilm14', pefilm18 = 'pefilm18', pefilmUnrated = 'pefilmUnrated' }
 
-	export enum ContentRatingRcnofRating { rcnofUnspecified = 0, rcnofI = 1, rcnofIi = 2, rcnofIii = 3, rcnofIv = 4, rcnofV = 5, rcnofVi = 6, rcnofUnrated = 7 }
+	export enum ContentRatingRcnofRating { rcnofUnspecified = 'rcnofUnspecified', rcnofI = 'rcnofI', rcnofIi = 'rcnofIi', rcnofIii = 'rcnofIii', rcnofIv = 'rcnofIv', rcnofV = 'rcnofV', rcnofVi = 'rcnofVi', rcnofUnrated = 'rcnofUnrated' }
 
-	export enum ContentRatingResorteviolenciaRating { resorteviolenciaUnspecified = 0, resorteviolenciaA = 1, resorteviolenciaB = 2, resorteviolenciaC = 3, resorteviolenciaD = 4, resorteviolenciaE = 5, resorteviolenciaUnrated = 6 }
+	export enum ContentRatingResorteviolenciaRating { resorteviolenciaUnspecified = 'resorteviolenciaUnspecified', resorteviolenciaA = 'resorteviolenciaA', resorteviolenciaB = 'resorteviolenciaB', resorteviolenciaC = 'resorteviolenciaC', resorteviolenciaD = 'resorteviolenciaD', resorteviolenciaE = 'resorteviolenciaE', resorteviolenciaUnrated = 'resorteviolenciaUnrated' }
 
-	export enum ContentRatingRtcRating { rtcUnspecified = 0, rtcAa = 1, rtcA = 2, rtcB = 3, rtcB15 = 4, rtcC = 5, rtcD = 6, rtcUnrated = 7 }
+	export enum ContentRatingRtcRating { rtcUnspecified = 'rtcUnspecified', rtcAa = 'rtcAa', rtcA = 'rtcA', rtcB = 'rtcB', rtcB15 = 'rtcB15', rtcC = 'rtcC', rtcD = 'rtcD', rtcUnrated = 'rtcUnrated' }
 
-	export enum ContentRatingRteRating { rteUnspecified = 0, rteGa = 1, rteCh = 2, rtePs = 3, rteMa = 4, rteUnrated = 5 }
+	export enum ContentRatingRteRating { rteUnspecified = 'rteUnspecified', rteGa = 'rteGa', rteCh = 'rteCh', rtePs = 'rtePs', rteMa = 'rteMa', rteUnrated = 'rteUnrated' }
 
-	export enum ContentRatingRussiaRating { russiaUnspecified = 0, russia0 = 1, russia6 = 2, russia12 = 3, russia16 = 4, russia18 = 5, russiaUnrated = 6 }
+	export enum ContentRatingRussiaRating { russiaUnspecified = 'russiaUnspecified', russia0 = 'russia0', russia6 = 'russia6', russia12 = 'russia12', russia16 = 'russia16', russia18 = 'russia18', russiaUnrated = 'russiaUnrated' }
 
-	export enum ContentRatingSkfilmRating { skfilmUnspecified = 0, skfilmG = 1, skfilmP2 = 2, skfilmP5 = 3, skfilmP8 = 4, skfilmUnrated = 5 }
+	export enum ContentRatingSkfilmRating { skfilmUnspecified = 'skfilmUnspecified', skfilmG = 'skfilmG', skfilmP2 = 'skfilmP2', skfilmP5 = 'skfilmP5', skfilmP8 = 'skfilmP8', skfilmUnrated = 'skfilmUnrated' }
 
-	export enum ContentRatingSmaisRating { smaisUnspecified = 0, smaisL = 1, smais7 = 2, smais12 = 3, smais14 = 4, smais16 = 5, smais18 = 6, smaisUnrated = 7 }
+	export enum ContentRatingSmaisRating { smaisUnspecified = 'smaisUnspecified', smaisL = 'smaisL', smais7 = 'smais7', smais12 = 'smais12', smais14 = 'smais14', smais16 = 'smais16', smais18 = 'smais18', smaisUnrated = 'smaisUnrated' }
 
-	export enum ContentRatingSmsaRating { smsaUnspecified = 0, smsaA = 1, smsa7 = 2, smsa11 = 3, smsa15 = 4, smsaUnrated = 5 }
+	export enum ContentRatingSmsaRating { smsaUnspecified = 'smsaUnspecified', smsaA = 'smsaA', smsa7 = 'smsa7', smsa11 = 'smsa11', smsa15 = 'smsa15', smsaUnrated = 'smsaUnrated' }
 
-	export enum ContentRatingTvpgRating { tvpgUnspecified = 0, tvpgY = 1, tvpgY7 = 2, tvpgY7Fv = 3, tvpgG = 4, tvpgPg = 5, pg14 = 6, tvpgMa = 7, tvpgUnrated = 8 }
+	export enum ContentRatingTvpgRating { tvpgUnspecified = 'tvpgUnspecified', tvpgY = 'tvpgY', tvpgY7 = 'tvpgY7', tvpgY7Fv = 'tvpgY7Fv', tvpgG = 'tvpgG', tvpgPg = 'tvpgPg', pg14 = 'pg14', tvpgMa = 'tvpgMa', tvpgUnrated = 'tvpgUnrated' }
 
-	export enum ContentRatingYtRating { ytUnspecified = 0, ytAgeRestricted = 1 }
+	export enum ContentRatingYtRating { ytUnspecified = 'ytUnspecified', ytAgeRestricted = 'ytAgeRestricted' }
 
 
 	/** Note that there may be a 5-second end-point resolution issue. For instance, if a cuepoint comes in for 22:03:27, we may stuff the cuepoint into 22:03:25 or 22:03:30, depending. This is an artifact of HLS. */
@@ -3316,7 +3316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CuepointCueType { cueTypeUnspecified = 0, cueTypeAd = 1 }
+	export enum CuepointCueType { cueTypeUnspecified = 'cueTypeUnspecified', cueTypeAd = 'cueTypeAd' }
 
 
 	/** Schedule to insert cuepoints into a broadcast by ads automator. */
@@ -3360,7 +3360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CuepointScheduleScheduleStrategy { scheduleStrategyUnspecified = 0, concurrent = 1, nonConcurrent = 2 }
+	export enum CuepointScheduleScheduleStrategy { scheduleStrategyUnspecified = 'scheduleStrategyUnspecified', concurrent = 'concurrent', nonConcurrent = 'nonConcurrent' }
 
 
 	/** Geographical coordinates of a point, in WGS84. */
@@ -3680,9 +3680,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InvideoPositionCornerPosition { topLeft = 0, topRight = 1, bottomLeft = 2, bottomRight = 3 }
+	export enum InvideoPositionCornerPosition { topLeft = 'topLeft', topRight = 'topRight', bottomLeft = 'bottomLeft', bottomRight = 'bottomRight' }
 
-	export enum InvideoPositionType { corner = 0 }
+	export enum InvideoPositionType { corner = 'corner' }
 
 
 	/** Describes a temporal position of a visual widget inside a video. */
@@ -3719,7 +3719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvideoTimingType { offsetFromStart = 0, offsetFromEnd = 1 }
+	export enum InvideoTimingType { offsetFromStart = 'offsetFromStart', offsetFromEnd = 'offsetFromEnd' }
 
 	export interface LevelDetails {
 
@@ -3913,9 +3913,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveBroadcastContentDetailsClosedCaptionsType { closedCaptionsTypeUnspecified = 0, closedCaptionsDisabled = 1, closedCaptionsHttpPost = 2, closedCaptionsEmbedded = 3 }
+	export enum LiveBroadcastContentDetailsClosedCaptionsType { closedCaptionsTypeUnspecified = 'closedCaptionsTypeUnspecified', closedCaptionsDisabled = 'closedCaptionsDisabled', closedCaptionsHttpPost = 'closedCaptionsHttpPost', closedCaptionsEmbedded = 'closedCaptionsEmbedded' }
 
-	export enum LiveBroadcastContentDetailsLatencyPreference { latencyPreferenceUnspecified = 0, normal = 1, low = 2, ultraLow = 3 }
+	export enum LiveBroadcastContentDetailsLatencyPreference { latencyPreferenceUnspecified = 'latencyPreferenceUnspecified', normal = 'normal', low = 'low', ultraLow = 'ultraLow' }
 
 
 	/** Settings and Info of the monitor stream */
@@ -3952,9 +3952,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveBroadcastContentDetailsProjection { projectionUnspecified = 0, rectangular = 1, _360 = 2, mesh = 3 }
+	export enum LiveBroadcastContentDetailsProjection { projectionUnspecified = 'projectionUnspecified', rectangular = 'rectangular', _360 = '360', mesh = 'mesh' }
 
-	export enum LiveBroadcastContentDetailsStereoLayout { stereoLayoutUnspecified = 0, mono = 1, leftRight = 2, topBottom = 3 }
+	export enum LiveBroadcastContentDetailsStereoLayout { stereoLayoutUnspecified = 'stereoLayoutUnspecified', mono = 'mono', leftRight = 'leftRight', topBottom = 'topBottom' }
 
 
 	/** Monetization settings of a broadcast. */
@@ -4137,11 +4137,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveBroadcastStatusLifeCycleStatus { lifeCycleStatusUnspecified = 0, created = 1, ready = 2, testing = 3, live = 4, complete = 5, revoked = 6, testStarting = 7, liveStarting = 8 }
+	export enum LiveBroadcastStatusLifeCycleStatus { lifeCycleStatusUnspecified = 'lifeCycleStatusUnspecified', created = 'created', ready = 'ready', testing = 'testing', live = 'live', complete = 'complete', revoked = 'revoked', testStarting = 'testStarting', liveStarting = 'liveStarting' }
 
-	export enum LiveBroadcastStatusLiveBroadcastPriority { liveBroadcastPriorityUnspecified = 0, low = 1, normal = 2, high = 3 }
+	export enum LiveBroadcastStatusLiveBroadcastPriority { liveBroadcastPriorityUnspecified = 'liveBroadcastPriorityUnspecified', low = 'low', normal = 'normal', high = 'high' }
 
-	export enum LiveBroadcastStatusRecordingStatus { liveBroadcastRecordingStatusUnspecified = 0, notRecording = 1, recording = 2, recorded = 3 }
+	export enum LiveBroadcastStatusRecordingStatus { liveBroadcastRecordingStatusUnspecified = 'liveBroadcastRecordingStatusUnspecified', notRecording = 'notRecording', recording = 'recording', recorded = 'recorded' }
 
 	export interface LiveBroadcastListResponse {
 
@@ -4272,7 +4272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveChatBanSnippetType { liveChatBanTypeUnspecified = 0, permanent = 1, temporary = 2 }
+	export enum LiveChatBanSnippetType { liveChatBanTypeUnspecified = 'liveChatBanTypeUnspecified', permanent = 'permanent', temporary = 'temporary' }
 
 	export interface LiveChatFanFundingEventDetails {
 
@@ -4748,7 +4748,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveChatMessageSnippetType { invalidType = 0, textMessageEvent = 1, tombstone = 2, fanFundingEvent = 3, chatEndedEvent = 4, sponsorOnlyModeStartedEvent = 5, sponsorOnlyModeEndedEvent = 6, newSponsorEvent = 7, memberMilestoneChatEvent = 8, membershipGiftingEvent = 9, giftMembershipReceivedEvent = 10, messageDeletedEvent = 11, messageRetractedEvent = 12, userBannedEvent = 13, superChatEvent = 14, superStickerEvent = 15 }
+	export enum LiveChatMessageSnippetType { invalidType = 'invalidType', textMessageEvent = 'textMessageEvent', tombstone = 'tombstone', fanFundingEvent = 'fanFundingEvent', chatEndedEvent = 'chatEndedEvent', sponsorOnlyModeStartedEvent = 'sponsorOnlyModeStartedEvent', sponsorOnlyModeEndedEvent = 'sponsorOnlyModeEndedEvent', newSponsorEvent = 'newSponsorEvent', memberMilestoneChatEvent = 'memberMilestoneChatEvent', membershipGiftingEvent = 'membershipGiftingEvent', giftMembershipReceivedEvent = 'giftMembershipReceivedEvent', messageDeletedEvent = 'messageDeletedEvent', messageRetractedEvent = 'messageRetractedEvent', userBannedEvent = 'userBannedEvent', superChatEvent = 'superChatEvent', superStickerEvent = 'superStickerEvent' }
 
 	export interface LiveChatUserBannedMessageDetails {
 
@@ -4775,7 +4775,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveChatUserBannedMessageDetailsBanType { permanent = 0, temporary = 1 }
+	export enum LiveChatUserBannedMessageDetailsBanType { permanent = 'permanent', temporary = 'temporary' }
 
 	export interface LiveChatMessageListResponse {
 
@@ -5151,13 +5151,13 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveStreamConfigurationIssueSeverity { info = 0, warning = 1, error = 2 }
+	export enum LiveStreamConfigurationIssueSeverity { info = 'info', warning = 'warning', error = 'error' }
 
-	export enum LiveStreamConfigurationIssueType { gopSizeOver = 0, gopSizeLong = 1, gopSizeShort = 2, openGop = 3, badContainer = 4, audioBitrateHigh = 5, audioBitrateLow = 6, audioSampleRate = 7, bitrateHigh = 8, bitrateLow = 9, audioCodec = 10, videoCodec = 11, noAudioStream = 12, noVideoStream = 13, multipleVideoStreams = 14, multipleAudioStreams = 15, audioTooManyChannels = 16, interlacedVideo = 17, frameRateHigh = 18, resolutionMismatch = 19, videoCodecMismatch = 20, videoInterlaceMismatch = 21, videoProfileMismatch = 22, videoBitrateMismatch = 23, framerateMismatch = 24, gopMismatch = 25, audioSampleRateMismatch = 26, audioStereoMismatch = 27, audioCodecMismatch = 28, audioBitrateMismatch = 29, videoResolutionSuboptimal = 30, videoResolutionUnsupported = 31, videoIngestionStarved = 32, videoIngestionFasterThanRealtime = 33 }
+	export enum LiveStreamConfigurationIssueType { gopSizeOver = 'gopSizeOver', gopSizeLong = 'gopSizeLong', gopSizeShort = 'gopSizeShort', openGop = 'openGop', badContainer = 'badContainer', audioBitrateHigh = 'audioBitrateHigh', audioBitrateLow = 'audioBitrateLow', audioSampleRate = 'audioSampleRate', bitrateHigh = 'bitrateHigh', bitrateLow = 'bitrateLow', audioCodec = 'audioCodec', videoCodec = 'videoCodec', noAudioStream = 'noAudioStream', noVideoStream = 'noVideoStream', multipleVideoStreams = 'multipleVideoStreams', multipleAudioStreams = 'multipleAudioStreams', audioTooManyChannels = 'audioTooManyChannels', interlacedVideo = 'interlacedVideo', frameRateHigh = 'frameRateHigh', resolutionMismatch = 'resolutionMismatch', videoCodecMismatch = 'videoCodecMismatch', videoInterlaceMismatch = 'videoInterlaceMismatch', videoProfileMismatch = 'videoProfileMismatch', videoBitrateMismatch = 'videoBitrateMismatch', framerateMismatch = 'framerateMismatch', gopMismatch = 'gopMismatch', audioSampleRateMismatch = 'audioSampleRateMismatch', audioStereoMismatch = 'audioStereoMismatch', audioCodecMismatch = 'audioCodecMismatch', audioBitrateMismatch = 'audioBitrateMismatch', videoResolutionSuboptimal = 'videoResolutionSuboptimal', videoResolutionUnsupported = 'videoResolutionUnsupported', videoIngestionStarved = 'videoIngestionStarved', videoIngestionFasterThanRealtime = 'videoIngestionFasterThanRealtime' }
 
-	export enum LiveStreamHealthStatusStatus { good = 0, ok = 1, bad = 2, noData = 3, revoked = 4 }
+	export enum LiveStreamHealthStatusStatus { good = 'good', ok = 'ok', bad = 'bad', noData = 'noData', revoked = 'revoked' }
 
-	export enum LiveStreamStatusStreamStatus { created = 0, ready = 1, active = 2, inactive = 3, error = 4 }
+	export enum LiveStreamStatusStreamStatus { created = 'created', ready = 'ready', active = 'active', inactive = 'inactive', error = 'error' }
 
 	export interface LiveStreamListResponse {
 
@@ -5771,7 +5771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaylistImageSnippetType { hero = 0 }
+	export enum PlaylistImageSnippetType { hero = 'hero' }
 
 	export interface PlaylistImageListResponse {
 		items?: Array<PlaylistImage>;
@@ -6274,7 +6274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchResultSnippetLiveBroadcastContent { none = 0, upcoming = 1, live = 2, completed = 3 }
+	export enum SearchResultSnippetLiveBroadcastContent { none = 'none', upcoming = 'upcoming', live = 'live', completed = 'completed' }
 
 
 	/** A *subscription* resource contains information about a YouTube user subscription. A subscription notifies a user when new videos are added to a channel or when another user takes one of several actions on YouTube, such as uploading a video, rating a video, or commenting on a video. */
@@ -6355,7 +6355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionContentDetailsActivityType { subscriptionActivityTypeUnspecified = 0, all = 1, uploads = 2 }
+	export enum SubscriptionContentDetailsActivityType { subscriptionActivityTypeUnspecified = 'subscriptionActivityTypeUnspecified', all = 'all', uploads = 'uploads' }
 
 
 	/** Basic details about a subscription, including title, description and thumbnails of the subscribed item. */
@@ -6764,7 +6764,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThirdPartyLinkSnippetType { linkUnspecified = 0, channelToStoreLink = 1 }
+	export enum ThirdPartyLinkSnippetType { linkUnspecified = 'linkUnspecified', channelToStoreLink = 'channelToStoreLink' }
 
 
 	/** The third-party link status object contains information about the status of the link. */
@@ -6783,7 +6783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThirdPartyLinkStatusLinkStatus { unknown = 0, failed = 1, pending = 2, linked = 3 }
+	export enum ThirdPartyLinkStatusLinkStatus { unknown = 'unknown', failed = 'failed', pending = 'pending', linked = 'linked' }
 
 	export interface ThirdPartyLinkListResponse {
 
@@ -6964,7 +6964,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoAgeGatingVideoGameRating { anyone = 0, m15Plus = 1, m16Plus = 2, m17Plus = 3 }
+	export enum VideoAgeGatingVideoGameRating { anyone = 'anyone', m15Plus = 'm15Plus', m16Plus = 'm16Plus', m17Plus = 'm17Plus' }
 
 
 	/** Details about the content of a YouTube Video. */
@@ -7038,11 +7038,11 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoContentDetailsCaption { true = 0, false = 1 }
+	export enum VideoContentDetailsCaption { true = 'true', false = 'false' }
 
-	export enum VideoContentDetailsDefinition { sd = 0, hd = 1 }
+	export enum VideoContentDetailsDefinition { sd = 'sd', hd = 'hd' }
 
-	export enum VideoContentDetailsProjection { rectangular = 0, _360 = 1 }
+	export enum VideoContentDetailsProjection { rectangular = 'rectangular', _360 = '360' }
 
 
 	/** DEPRECATED Region restriction of the video. */
@@ -7175,7 +7175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoFileDetailsFileType { video = 0, audio = 1, image = 2, archive = 3, document = 4, project = 5, other = 6 }
+	export enum VideoFileDetailsFileType { video = 'video', audio = 'audio', image = 'image', archive = 'archive', document = 'document', project = 'project', other = 'other' }
 
 
 	/** Information about a video stream. */
@@ -7247,7 +7247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoFileDetailsVideoStreamRotation { none = 0, clockwise = 1, upsideDown = 2, counterClockwise = 3, other = 4 }
+	export enum VideoFileDetailsVideoStreamRotation { none = 'none', clockwise = 'clockwise', upsideDown = 'upsideDown', counterClockwise = 'counterClockwise', other = 'other' }
 
 
 	/** Details about the live streaming metadata. */
@@ -7447,7 +7447,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoProcessingDetailsProcessingFailureReason { uploadFailed = 0, transcodeFailed = 1, streamingFailed = 2, other = 3 }
+	export enum VideoProcessingDetailsProcessingFailureReason { uploadFailed = 'uploadFailed', transcodeFailed = 'transcodeFailed', streamingFailed = 'streamingFailed', other = 'other' }
 
 
 	/** Video processing progress and completion time estimate. */
@@ -7484,7 +7484,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoProcessingDetailsProcessingStatus { processing = 0, succeeded = 1, failed = 2, terminated = 3 }
+	export enum VideoProcessingDetailsProcessingStatus { processing = 'processing', succeeded = 'succeeded', failed = 'failed', terminated = 'terminated' }
 
 
 	/** DEPRECATED. b/157517979: This part was never populated after it was added. However, it sees non-zero traffic because there is generated client code in the wild that refers to it [1]. We keep this field and do NOT remove it because otherwise V3 would return an error when this part gets requested [2]. [1] https://developers.google.com/resources/api-libraries/documentation/youtube/v3/csharp/latest/classGoogle_1_1Apis_1_1YouTube_1_1v3_1_1Data_1_1VideoProjectDetails.html [2] http://google3/video/youtube/src/python/servers/data_api/common.py?l=1565-1569&rcl=344141677 */
@@ -7742,13 +7742,13 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoStatusFailureReason { conversion = 0, invalidFile = 1, emptyFile = 2, tooSmall = 3, codec = 4, uploadAborted = 5 }
+	export enum VideoStatusFailureReason { conversion = 'conversion', invalidFile = 'invalidFile', emptyFile = 'emptyFile', tooSmall = 'tooSmall', codec = 'codec', uploadAborted = 'uploadAborted' }
 
-	export enum VideoStatusLicense { youtube = 0, creativeCommon = 1 }
+	export enum VideoStatusLicense { youtube = 'youtube', creativeCommon = 'creativeCommon' }
 
-	export enum VideoStatusRejectionReason { copyright = 0, inappropriate = 1, duplicate = 2, termsOfUse = 3, uploaderAccountSuspended = 4, length = 5, claim = 6, uploaderAccountClosed = 7, trademark = 8, legal = 9 }
+	export enum VideoStatusRejectionReason { copyright = 'copyright', inappropriate = 'inappropriate', duplicate = 'duplicate', termsOfUse = 'termsOfUse', uploaderAccountSuspended = 'uploaderAccountSuspended', length = 'length', claim = 'claim', uploaderAccountClosed = 'uploaderAccountClosed', trademark = 'trademark', legal = 'legal' }
 
-	export enum VideoStatusUploadStatus { uploaded = 0, processed = 1, failed = 2, rejected = 3, deleted = 4 }
+	export enum VideoStatusUploadStatus { uploaded = 'uploaded', processed = 'processed', failed = 'failed', rejected = 'rejected', deleted = 'deleted' }
 
 
 	/** Specifies suggestions on how to improve video content, including encoding hints, tag suggestions, and editor suggestions. */
@@ -9188,45 +9188,45 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Youtube_commentThreads_listOrder { orderUnspecified = 0, time = 1, relevance = 2 }
+	export enum Youtube_commentThreads_listOrder { orderUnspecified = 'orderUnspecified', time = 'time', relevance = 'relevance' }
 
-	export enum Youtube_commentThreads_listTextFormat { textFormatUnspecified = 0, html = 1, plainText = 2 }
+	export enum Youtube_commentThreads_listTextFormat { textFormatUnspecified = 'textFormatUnspecified', html = 'html', plainText = 'plainText' }
 
-	export enum Youtube_liveBroadcasts_listBroadcastStatus { broadcastStatusFilterUnspecified = 0, all = 1, active = 2, upcoming = 3, completed = 4 }
+	export enum Youtube_liveBroadcasts_listBroadcastStatus { broadcastStatusFilterUnspecified = 'broadcastStatusFilterUnspecified', all = 'all', active = 'active', upcoming = 'upcoming', completed = 'completed' }
 
-	export enum Youtube_liveBroadcasts_listBroadcastType { broadcastTypeFilterUnspecified = 0, all = 1, event = 2, persistent = 3 }
+	export enum Youtube_liveBroadcasts_listBroadcastType { broadcastTypeFilterUnspecified = 'broadcastTypeFilterUnspecified', all = 'all', event = 'event', persistent = 'persistent' }
 
-	export enum Youtube_liveBroadcasts_transitionBroadcastStatus { statusUnspecified = 0, testing = 1, live = 2, complete = 3 }
+	export enum Youtube_liveBroadcasts_transitionBroadcastStatus { statusUnspecified = 'statusUnspecified', testing = 'testing', live = 'live', complete = 'complete' }
 
-	export enum Youtube_members_listMode { listMembersModeUnknown = 0, updates = 1, all_current = 2 }
+	export enum Youtube_members_listMode { listMembersModeUnknown = 'listMembersModeUnknown', updates = 'updates', all_current = 'all_current' }
 
-	export enum Youtube_search_listChannelType { channelTypeUnspecified = 0, any = 1, show = 2 }
+	export enum Youtube_search_listChannelType { channelTypeUnspecified = 'channelTypeUnspecified', any = 'any', show = 'show' }
 
-	export enum Youtube_search_listOrder { searchSortUnspecified = 0, date = 1, rating = 2, viewCount = 3, relevance = 4, title = 5, videoCount = 6 }
+	export enum Youtube_search_listOrder { searchSortUnspecified = 'searchSortUnspecified', date = 'date', rating = 'rating', viewCount = 'viewCount', relevance = 'relevance', title = 'title', videoCount = 'videoCount' }
 
-	export enum Youtube_search_listSafeSearch { safeSearchSettingUnspecified = 0, none = 1, moderate = 2, strict = 3 }
+	export enum Youtube_search_listSafeSearch { safeSearchSettingUnspecified = 'safeSearchSettingUnspecified', none = 'none', moderate = 'moderate', strict = 'strict' }
 
-	export enum Youtube_search_listVideoCaption { videoCaptionUnspecified = 0, any = 1, closedCaption = 2, none = 3 }
+	export enum Youtube_search_listVideoCaption { videoCaptionUnspecified = 'videoCaptionUnspecified', any = 'any', closedCaption = 'closedCaption', none = 'none' }
 
-	export enum Youtube_search_listVideoDefinition { any = 0, standard = 1, high = 2 }
+	export enum Youtube_search_listVideoDefinition { any = 'any', standard = 'standard', high = 'high' }
 
-	export enum Youtube_search_listVideoDimension { any = 0, '2d' = 1, '3d' = 2 }
+	export enum Youtube_search_listVideoDimension { any = 'any', '2d' = '2d', '3d' = '3d' }
 
-	export enum Youtube_search_listVideoDuration { videoDurationUnspecified = 0, any = 1, short = 2, medium = 3, long = 4 }
+	export enum Youtube_search_listVideoDuration { videoDurationUnspecified = 'videoDurationUnspecified', any = 'any', short = 'short', medium = 'medium', long = 'long' }
 
-	export enum Youtube_search_listVideoEmbeddable { videoEmbeddableUnspecified = 0, any = 1, true = 2 }
+	export enum Youtube_search_listVideoEmbeddable { videoEmbeddableUnspecified = 'videoEmbeddableUnspecified', any = 'any', true = 'true' }
 
-	export enum Youtube_search_listVideoLicense { any = 0, youtube = 1, creativeCommon = 2 }
+	export enum Youtube_search_listVideoLicense { any = 'any', youtube = 'youtube', creativeCommon = 'creativeCommon' }
 
-	export enum Youtube_search_listVideoPaidProductPlacement { videoPaidProductPlacementUnspecified = 0, any = 1, true = 2 }
+	export enum Youtube_search_listVideoPaidProductPlacement { videoPaidProductPlacementUnspecified = 'videoPaidProductPlacementUnspecified', any = 'any', true = 'true' }
 
-	export enum Youtube_search_listVideoSyndicated { videoSyndicatedUnspecified = 0, any = 1, true = 2 }
+	export enum Youtube_search_listVideoSyndicated { videoSyndicatedUnspecified = 'videoSyndicatedUnspecified', any = 'any', true = 'true' }
 
-	export enum Youtube_search_listVideoType { videoTypeUnspecified = 0, any = 1, movie = 2, episode = 3 }
+	export enum Youtube_search_listVideoType { videoTypeUnspecified = 'videoTypeUnspecified', any = 'any', movie = 'movie', episode = 'episode' }
 
-	export enum Youtube_subscriptions_listOrder { subscriptionOrderUnspecified = 0, relevance = 1, unread = 2, alphabetical = 3 }
+	export enum Youtube_subscriptions_listOrder { subscriptionOrderUnspecified = 'subscriptionOrderUnspecified', relevance = 'relevance', unread = 'unread', alphabetical = 'alphabetical' }
 
-	export enum Youtube_videos_listChart { chartUnspecified = 0, mostPopular = 1 }
+	export enum Youtube_videos_listChart { chartUnspecified = 'chartUnspecified', mostPopular = 'mostPopular' }
 
 }
 

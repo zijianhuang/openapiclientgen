@@ -376,7 +376,7 @@ export namespace MyNS {
 
 
 	/** Documentation update needed */
-	export enum InputTimecodeSource { ZEROBASED = 0, EMBEDDED = 1 }
+	export enum InputTimecodeSource { ZEROBASED = 'ZEROBASED', EMBEDDED = 'EMBEDDED' }
 
 
 	/** Settings to identify the start of the clip. */
@@ -417,7 +417,7 @@ export namespace MyNS {
 
 
 	/** If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode. */
-	export enum LastFrameClippingBehavior { EXCLUDE_LAST_FRAME = 0, INCLUDE_LAST_FRAME = 1 }
+	export enum LastFrameClippingBehavior { EXCLUDE_LAST_FRAME = 'EXCLUDE_LAST_FRAME', INCLUDE_LAST_FRAME = 'INCLUDE_LAST_FRAME' }
 
 
 	/** Settings for the "switch input" action: to switch from ingesting one input to ingesting another input. */
@@ -520,7 +520,7 @@ export namespace MyNS {
 
 
 	/** Pipeline ID */
-	export enum PipelineId { PIPELINE_0 = 0, PIPELINE_1 = 1 }
+	export enum PipelineId { PIPELINE_0 = 'PIPELINE_0', PIPELINE_1 = 'PIPELINE_1' }
 
 
 	/** Scte35Input Schedule Action Settings */
@@ -548,7 +548,7 @@ export namespace MyNS {
 
 
 	/** Whether the SCTE-35 input should be the active input or a fixed input. */
-	export enum Scte35InputMode { FIXED = 0, FOLLOW_ACTIVE = 1 }
+	export enum Scte35InputMode { FIXED = 'FIXED', FOLLOW_ACTIVE = 'FOLLOW_ACTIVE' }
 
 
 	/** Settings for a SCTE-35 return_to_network message. */
@@ -743,23 +743,23 @@ export namespace MyNS {
 
 
 	/** Corresponds to the archive_allowed parameter. A value of ARCHIVE_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them. */
-	export enum Scte35ArchiveAllowedFlag { ARCHIVE_NOT_ALLOWED = 0, ARCHIVE_ALLOWED = 1 }
+	export enum Scte35ArchiveAllowedFlag { ARCHIVE_NOT_ALLOWED = 'ARCHIVE_NOT_ALLOWED', ARCHIVE_ALLOWED = 'ARCHIVE_ALLOWED' }
 
 
 	/** Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the "restriction" flags then you must include all four of them. */
-	export enum Scte35DeviceRestrictions { NONE = 0, RESTRICT_GROUP0 = 1, RESTRICT_GROUP1 = 2, RESTRICT_GROUP2 = 3 }
+	export enum Scte35DeviceRestrictions { NONE = 'NONE', RESTRICT_GROUP0 = 'RESTRICT_GROUP0', RESTRICT_GROUP1 = 'RESTRICT_GROUP1', RESTRICT_GROUP2 = 'RESTRICT_GROUP2' }
 
 
 	/** Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them. */
-	export enum Scte35NoRegionalBlackoutFlag { REGIONAL_BLACKOUT = 0, NO_REGIONAL_BLACKOUT = 1 }
+	export enum Scte35NoRegionalBlackoutFlag { REGIONAL_BLACKOUT = 'REGIONAL_BLACKOUT', NO_REGIONAL_BLACKOUT = 'NO_REGIONAL_BLACKOUT' }
 
 
 	/** Corresponds to the web_delivery_allowed_flag parameter. A value of WEB_DELIVERY_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them. */
-	export enum Scte35WebDeliveryAllowedFlag { WEB_DELIVERY_NOT_ALLOWED = 0, WEB_DELIVERY_ALLOWED = 1 }
+	export enum Scte35WebDeliveryAllowedFlag { WEB_DELIVERY_NOT_ALLOWED = 'WEB_DELIVERY_NOT_ALLOWED', WEB_DELIVERY_ALLOWED = 'WEB_DELIVERY_ALLOWED' }
 
 
 	/** Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel. */
-	export enum Scte35SegmentationCancelIndicator { SEGMENTATION_EVENT_NOT_CANCELED = 0, SEGMENTATION_EVENT_CANCELED = 1 }
+	export enum Scte35SegmentationCancelIndicator { SEGMENTATION_EVENT_NOT_CANCELED = 'SEGMENTATION_EVENT_NOT_CANCELED', SEGMENTATION_EVENT_CANCELED = 'SEGMENTATION_EVENT_CANCELED' }
 
 
 	/** Settings for the action to activate a static image. */
@@ -920,7 +920,7 @@ export namespace MyNS {
 
 
 	/** Follow reference point. */
-	export enum FollowPoint { END = 0, START = 1 }
+	export enum FollowPoint { END = 'END', START = 'START' }
 
 
 	/** Settings to configure an action so that it occurs as soon as possible. */
@@ -1065,11 +1065,11 @@ export namespace MyNS {
 	/**
 	 * Maximum CDI input resolution; SD is 480i and 576i up to 30 frames-per-second (fps), HD is 720p up to 60 fps / 1080i up to 30 fps, FHD is 1080p up to 60 fps, UHD is 2160p up to 60 fps
 	 */
-	export enum CdiInputResolution { SD = 0, HD = 1, FHD = 2, UHD = 3 }
+	export enum CdiInputResolution { SD = 'SD', HD = 'HD', FHD = 'FHD', UHD = 'UHD' }
 
 
 	/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-	export enum ChannelClass { STANDARD = 0, SINGLE_PIPELINE = 1 }
+	export enum ChannelClass { STANDARD = 'STANDARD', SINGLE_PIPELINE = 'SINGLE_PIPELINE' }
 
 
 	/** Placeholder documentation for OutputDestination */
@@ -1278,19 +1278,19 @@ export namespace MyNS {
 
 
 	/** Audio Normalization Algorithm */
-	export enum AudioNormalizationAlgorithm { ITU_1770_1 = 0, ITU_1770_2 = 1 }
+	export enum AudioNormalizationAlgorithm { ITU_1770_1 = 'ITU_1770_1', ITU_1770_2 = 'ITU_1770_2' }
 
 
 	/** Audio Normalization Algorithm Control */
-	export enum AudioNormalizationAlgorithmControl { CORRECT_AUDIO = 0 }
+	export enum AudioNormalizationAlgorithmControl { CORRECT_AUDIO = 'CORRECT_AUDIO' }
 
 
 	/** Audio Type */
-	export enum AudioType { CLEAN_EFFECTS = 0, HEARING_IMPAIRED = 1, UNDEFINED = 2, VISUAL_IMPAIRED_COMMENTARY = 3 }
+	export enum AudioType { CLEAN_EFFECTS = 'CLEAN_EFFECTS', HEARING_IMPAIRED = 'HEARING_IMPAIRED', UNDEFINED = 'UNDEFINED', VISUAL_IMPAIRED_COMMENTARY = 'VISUAL_IMPAIRED_COMMENTARY' }
 
 
 	/** Audio Description Audio Type Control */
-	export enum AudioDescriptionAudioTypeControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum AudioDescriptionAudioTypeControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Audio Watermark Settings */
@@ -1363,11 +1363,11 @@ export namespace MyNS {
 
 
 	/** Nielsen Watermarks Cbet Stepaside */
-	export enum NielsenWatermarksCbetStepaside { DISABLED = 0, ENABLED = 1 }
+	export enum NielsenWatermarksCbetStepaside { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Nielsen Watermarks Distribution Types */
-	export enum NielsenWatermarksDistributionTypes { FINAL_DISTRIBUTOR = 0, PROGRAM_CONTENT = 1 }
+	export enum NielsenWatermarksDistributionTypes { FINAL_DISTRIBUTOR = 'FINAL_DISTRIBUTOR', PROGRAM_CONTENT = 'PROGRAM_CONTENT' }
 
 
 	/** Nielsen Naes Ii Nw */
@@ -1402,7 +1402,7 @@ export namespace MyNS {
 
 
 	/** Nielsen Watermark Timezones */
-	export enum NielsenWatermarkTimezones { AMERICA_PUERTO_RICO = 0, US_ALASKA = 1, US_ARIZONA = 2, US_CENTRAL = 3, US_EASTERN = 4, US_HAWAII = 5, US_MOUNTAIN = 6, US_PACIFIC = 7, US_SAMOA = 8, UTC = 9 }
+	export enum NielsenWatermarkTimezones { AMERICA_PUERTO_RICO = 'AMERICA_PUERTO_RICO', US_ALASKA = 'US_ALASKA', US_ARIZONA = 'US_ARIZONA', US_CENTRAL = 'US_CENTRAL', US_EASTERN = 'US_EASTERN', US_HAWAII = 'US_HAWAII', US_MOUNTAIN = 'US_MOUNTAIN', US_PACIFIC = 'US_PACIFIC', US_SAMOA = 'US_SAMOA', UTC = 'UTC' }
 
 
 	/** Audio Codec Settings */
@@ -1468,31 +1468,31 @@ export namespace MyNS {
 
 
 	/** Aac Coding Mode */
-	export enum AacCodingMode { AD_RECEIVER_MIX = 0, CODING_MODE_1_0 = 1, CODING_MODE_1_1 = 2, CODING_MODE_2_0 = 3, CODING_MODE_5_1 = 4 }
+	export enum AacCodingMode { AD_RECEIVER_MIX = 'AD_RECEIVER_MIX', CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_1_1 = 'CODING_MODE_1_1', CODING_MODE_2_0 = 'CODING_MODE_2_0', CODING_MODE_5_1 = 'CODING_MODE_5_1' }
 
 
 	/** Aac Input Type */
-	export enum AacInputType { BROADCASTER_MIXED_AD = 0, NORMAL = 1 }
+	export enum AacInputType { BROADCASTER_MIXED_AD = 'BROADCASTER_MIXED_AD', NORMAL = 'NORMAL' }
 
 
 	/** Aac Profile */
-	export enum AacProfile { HEV1 = 0, HEV2 = 1, LC = 2 }
+	export enum AacProfile { HEV1 = 'HEV1', HEV2 = 'HEV2', LC = 'LC' }
 
 
 	/** Aac Rate Control Mode */
-	export enum AacRateControlMode { CBR = 0, VBR = 1 }
+	export enum AacRateControlMode { CBR = 'CBR', VBR = 'VBR' }
 
 
 	/** Aac Raw Format */
-	export enum AacRawFormat { LATM_LOAS = 0, NONE = 1 }
+	export enum AacRawFormat { LATM_LOAS = 'LATM_LOAS', NONE = 'NONE' }
 
 
 	/** Aac Spec */
-	export enum AacSpec { MPEG2 = 0, MPEG4 = 1 }
+	export enum AacSpec { MPEG2 = 'MPEG2', MPEG4 = 'MPEG4' }
 
 
 	/** Aac Vbr Quality */
-	export enum AacVbrQuality { HIGH = 0, LOW = 1, MEDIUM_HIGH = 2, MEDIUM_LOW = 3 }
+	export enum AacVbrQuality { HIGH = 'HIGH', LOW = 'LOW', MEDIUM_HIGH = 'MEDIUM_HIGH', MEDIUM_LOW = 'MEDIUM_LOW' }
 
 
 	/** Ac3 Settings */
@@ -1531,15 +1531,15 @@ export namespace MyNS {
 
 
 	/** Ac3 Bitstream Mode */
-	export enum Ac3BitstreamMode { COMMENTARY = 0, COMPLETE_MAIN = 1, DIALOGUE = 2, EMERGENCY = 3, HEARING_IMPAIRED = 4, MUSIC_AND_EFFECTS = 5, VISUALLY_IMPAIRED = 6, VOICE_OVER = 7 }
+	export enum Ac3BitstreamMode { COMMENTARY = 'COMMENTARY', COMPLETE_MAIN = 'COMPLETE_MAIN', DIALOGUE = 'DIALOGUE', EMERGENCY = 'EMERGENCY', HEARING_IMPAIRED = 'HEARING_IMPAIRED', MUSIC_AND_EFFECTS = 'MUSIC_AND_EFFECTS', VISUALLY_IMPAIRED = 'VISUALLY_IMPAIRED', VOICE_OVER = 'VOICE_OVER' }
 
 
 	/** Ac3 Coding Mode */
-	export enum Ac3CodingMode { CODING_MODE_1_0 = 0, CODING_MODE_1_1 = 1, CODING_MODE_2_0 = 2, CODING_MODE_3_2_LFE = 3 }
+	export enum Ac3CodingMode { CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_1_1 = 'CODING_MODE_1_1', CODING_MODE_2_0 = 'CODING_MODE_2_0', CODING_MODE_3_2_LFE = 'CODING_MODE_3_2_LFE' }
 
 
 	/** Ac3 Drc Profile */
-	export enum Ac3DrcProfile { FILM_STANDARD = 0, NONE = 1 }
+	export enum Ac3DrcProfile { FILM_STANDARD = 'FILM_STANDARD', NONE = 'NONE' }
 
 
 	/** Eac3 Atmos Settings */
@@ -1578,11 +1578,11 @@ export namespace MyNS {
 
 
 	/** Eac3 Atmos Coding Mode */
-	export enum Eac3AtmosCodingMode { CODING_MODE_5_1_4 = 0, CODING_MODE_7_1_4 = 1, CODING_MODE_9_1_6 = 2 }
+	export enum Eac3AtmosCodingMode { CODING_MODE_5_1_4 = 'CODING_MODE_5_1_4', CODING_MODE_7_1_4 = 'CODING_MODE_7_1_4', CODING_MODE_9_1_6 = 'CODING_MODE_9_1_6' }
 
 
 	/** Eac3 Atmos Drc Line */
-	export enum Eac3AtmosDrcLine { FILM_LIGHT = 0, FILM_STANDARD = 1, MUSIC_LIGHT = 2, MUSIC_STANDARD = 3, NONE = 4, SPEECH = 5 }
+	export enum Eac3AtmosDrcLine { FILM_LIGHT = 'FILM_LIGHT', FILM_STANDARD = 'FILM_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', NONE = 'NONE', SPEECH = 'SPEECH' }
 
 
 	/** Eac3 Settings */
@@ -1660,35 +1660,35 @@ export namespace MyNS {
 
 
 	/** Eac3 Attenuation Control */
-	export enum Eac3AttenuationControl { ATTENUATE_3_DB = 0, NONE = 1 }
+	export enum Eac3AttenuationControl { ATTENUATE_3_DB = 'ATTENUATE_3_DB', NONE = 'NONE' }
 
 
 	/** Eac3 Bitstream Mode */
-	export enum Eac3BitstreamMode { COMMENTARY = 0, COMPLETE_MAIN = 1, EMERGENCY = 2, HEARING_IMPAIRED = 3, VISUALLY_IMPAIRED = 4 }
+	export enum Eac3BitstreamMode { COMMENTARY = 'COMMENTARY', COMPLETE_MAIN = 'COMPLETE_MAIN', EMERGENCY = 'EMERGENCY', HEARING_IMPAIRED = 'HEARING_IMPAIRED', VISUALLY_IMPAIRED = 'VISUALLY_IMPAIRED' }
 
 
 	/** Eac3 Coding Mode */
-	export enum Eac3CodingMode { CODING_MODE_1_0 = 0, CODING_MODE_2_0 = 1, CODING_MODE_3_2 = 2 }
+	export enum Eac3CodingMode { CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_2_0 = 'CODING_MODE_2_0', CODING_MODE_3_2 = 'CODING_MODE_3_2' }
 
 
 	/** Eac3 Lfe Control */
-	export enum Eac3LfeControl { LFE = 0, NO_LFE = 1 }
+	export enum Eac3LfeControl { LFE = 'LFE', NO_LFE = 'NO_LFE' }
 
 
 	/** Eac3 Passthrough Control */
-	export enum Eac3PassthroughControl { NO_PASSTHROUGH = 0, WHEN_POSSIBLE = 1 }
+	export enum Eac3PassthroughControl { NO_PASSTHROUGH = 'NO_PASSTHROUGH', WHEN_POSSIBLE = 'WHEN_POSSIBLE' }
 
 
 	/** Eac3 Phase Control */
-	export enum Eac3PhaseControl { NO_SHIFT = 0, SHIFT_90_DEGREES = 1 }
+	export enum Eac3PhaseControl { NO_SHIFT = 'NO_SHIFT', SHIFT_90_DEGREES = 'SHIFT_90_DEGREES' }
 
 
 	/** Eac3 Stereo Downmix */
-	export enum Eac3StereoDownmix { DPL2 = 0, LO_RO = 1, LT_RT = 2, NOT_INDICATED = 3 }
+	export enum Eac3StereoDownmix { DPL2 = 'DPL2', LO_RO = 'LO_RO', LT_RT = 'LT_RT', NOT_INDICATED = 'NOT_INDICATED' }
 
 
 	/** Eac3 Surround Ex Mode */
-	export enum Eac3SurroundExMode { DISABLED = 0, ENABLED = 1, NOT_INDICATED = 2 }
+	export enum Eac3SurroundExMode { DISABLED = 'DISABLED', ENABLED = 'ENABLED', NOT_INDICATED = 'NOT_INDICATED' }
 
 
 	/** Mp2 Settings */
@@ -1715,7 +1715,7 @@ export namespace MyNS {
 
 
 	/** Mp2 Coding Mode */
-	export enum Mp2CodingMode { CODING_MODE_1_0 = 0, CODING_MODE_2_0 = 1 }
+	export enum Mp2CodingMode { CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_2_0 = 'CODING_MODE_2_0' }
 
 
 	/** Pass Through Settings */
@@ -1756,7 +1756,7 @@ export namespace MyNS {
 
 
 	/** Wav Coding Mode */
-	export enum WavCodingMode { CODING_MODE_1_0 = 0, CODING_MODE_2_0 = 1, CODING_MODE_4_0 = 2, CODING_MODE_8_0 = 3 }
+	export enum WavCodingMode { CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_2_0 = 'CODING_MODE_2_0', CODING_MODE_4_0 = 'CODING_MODE_4_0', CODING_MODE_8_0 = 'CODING_MODE_8_0' }
 
 
 	/** Remix Settings */
@@ -1948,7 +1948,7 @@ export namespace MyNS {
 
 
 	/** Scte35 Splice Insert No Regional Blackout Behavior */
-	export enum Scte35SpliceInsertNoRegionalBlackoutBehavior { FOLLOW = 0, IGNORE = 1 }
+	export enum Scte35SpliceInsertNoRegionalBlackoutBehavior { FOLLOW = 'FOLLOW', IGNORE = 'IGNORE' }
 
 
 	/** Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks. */
@@ -2038,7 +2038,7 @@ export namespace MyNS {
 
 
 	/** Accessibility Type */
-	export enum AccessibilityType { DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES = 0, IMPLEMENTS_ACCESSIBILITY_FEATURES = 1 }
+	export enum AccessibilityType { DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES = 'DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES', IMPLEMENTS_ACCESSIBILITY_FEATURES = 'IMPLEMENTS_ACCESSIBILITY_FEATURES' }
 
 
 	/** Caption Destination Settings */
@@ -2146,19 +2146,19 @@ export namespace MyNS {
 
 
 	/** Burn In Alignment */
-	export enum BurnInAlignment { CENTERED = 0, LEFT = 1, SMART = 2 }
+	export enum BurnInAlignment { CENTERED = 'CENTERED', LEFT = 'LEFT', SMART = 'SMART' }
 
 
 	/** Burn In Background Color */
-	export enum BurnInBackgroundColor { BLACK = 0, NONE = 1, WHITE = 2 }
+	export enum BurnInBackgroundColor { BLACK = 'BLACK', NONE = 'NONE', WHITE = 'WHITE' }
 
 
 	/** Burn In Font Color */
-	export enum BurnInFontColor { BLACK = 0, BLUE = 1, GREEN = 2, RED = 3, WHITE = 4, YELLOW = 5 }
+	export enum BurnInFontColor { BLACK = 'BLACK', BLUE = 'BLUE', GREEN = 'GREEN', RED = 'RED', WHITE = 'WHITE', YELLOW = 'YELLOW' }
 
 
 	/** Burn In Teletext Grid Control */
-	export enum BurnInTeletextGridControl { FIXED = 0, SCALED = 1 }
+	export enum BurnInTeletextGridControl { FIXED = 'FIXED', SCALED = 'SCALED' }
 
 
 	/** Dvb Sub Destination Settings */
@@ -2251,7 +2251,7 @@ export namespace MyNS {
 
 
 	/** Ebu Tt DDestination Style Control */
-	export enum EbuTtDDestinationStyleControl { EXCLUDE = 0, INCLUDE = 1 }
+	export enum EbuTtDDestinationStyleControl { EXCLUDE = 'EXCLUDE', INCLUDE = 'INCLUDE' }
 
 
 	/** Embedded Destination Settings */
@@ -2370,7 +2370,7 @@ export namespace MyNS {
 
 
 	/** Ttml Destination Style Control */
-	export enum TtmlDestinationStyleControl { PASSTHROUGH = 0, USE_CONFIGURED = 1 }
+	export enum TtmlDestinationStyleControl { PASSTHROUGH = 'PASSTHROUGH', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Webvtt Destination Settings */
@@ -2391,7 +2391,7 @@ export namespace MyNS {
 
 
 	/** Webvtt Destination Style Control */
-	export enum WebvttDestinationStyleControl { NO_STYLE_DATA = 0, PASSTHROUGH = 1 }
+	export enum WebvttDestinationStyleControl { NO_STYLE_DATA = 'NO_STYLE_DATA', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** Feature Activations */
@@ -2442,7 +2442,7 @@ export namespace MyNS {
 
 
 	/** Global Configuration Input End Action */
-	export enum GlobalConfigurationInputEndAction { NONE = 0, SWITCH_AND_LOOP_INPUTS = 1 }
+	export enum GlobalConfigurationInputEndAction { NONE = 'NONE', SWITCH_AND_LOOP_INPUTS = 'SWITCH_AND_LOOP_INPUTS' }
 
 
 	/** Input Loss Behavior */
@@ -2473,15 +2473,15 @@ export namespace MyNS {
 
 
 	/** Input Loss Image Type */
-	export enum InputLossImageType { COLOR = 0, SLATE = 1 }
+	export enum InputLossImageType { COLOR = 'COLOR', SLATE = 'SLATE' }
 
 
 	/** Global Configuration Output Locking Mode */
-	export enum GlobalConfigurationOutputLockingMode { EPOCH_LOCKING = 0, PIPELINE_LOCKING = 1 }
+	export enum GlobalConfigurationOutputLockingMode { EPOCH_LOCKING = 'EPOCH_LOCKING', PIPELINE_LOCKING = 'PIPELINE_LOCKING' }
 
 
 	/** Global Configuration Output Timing Source */
-	export enum GlobalConfigurationOutputTimingSource { INPUT_CLOCK = 0, SYSTEM_CLOCK = 1 }
+	export enum GlobalConfigurationOutputTimingSource { INPUT_CLOCK = 'INPUT_CLOCK', SYSTEM_CLOCK = 'SYSTEM_CLOCK' }
 
 
 	/** Motion Graphics Configuration */
@@ -2652,7 +2652,7 @@ export namespace MyNS {
 
 
 	/** S3 Canned Acl */
-	export enum S3CannedAcl { AUTHENTICATED_READ = 0, BUCKET_OWNER_FULL_CONTROL = 1, BUCKET_OWNER_READ = 2, PUBLIC_READ = 3 }
+	export enum S3CannedAcl { AUTHENTICATED_READ = 'AUTHENTICATED_READ', BUCKET_OWNER_FULL_CONTROL = 'BUCKET_OWNER_FULL_CONTROL', BUCKET_OWNER_READ = 'BUCKET_OWNER_READ', PUBLIC_READ = 'PUBLIC_READ' }
 
 
 	/** Reference to an OutputDestination ID defined in the channel */
@@ -2858,7 +2858,7 @@ export namespace MyNS {
 
 
 	/** Hls Ad Markers */
-	export enum HlsAdMarkers { ADOBE = 0, ELEMENTAL = 1, ELEMENTAL_SCTE35 = 2 }
+	export enum HlsAdMarkers { ADOBE = 'ADOBE', ELEMENTAL = 'ELEMENTAL', ELEMENTAL_SCTE35 = 'ELEMENTAL_SCTE35' }
 
 
 	/** Maps a caption channel to an ISO 693-2 language code (http://www.loc.gov/standards/iso639-2), with an optional description. */
@@ -2897,23 +2897,23 @@ export namespace MyNS {
 
 
 	/** Hls Caption Language Setting */
-	export enum HlsCaptionLanguageSetting { INSERT = 0, NONE = 1, OMIT = 2 }
+	export enum HlsCaptionLanguageSetting { INSERT = 'INSERT', NONE = 'NONE', OMIT = 'OMIT' }
 
 
 	/** Hls Codec Specification */
-	export enum HlsCodecSpecification { RFC_4281 = 0, RFC_6381 = 1 }
+	export enum HlsCodecSpecification { RFC_4281 = 'RFC_4281', RFC_6381 = 'RFC_6381' }
 
 
 	/** Hls Directory Structure */
-	export enum HlsDirectoryStructure { SINGLE_DIRECTORY = 0, SUBDIRECTORY_PER_STREAM = 1 }
+	export enum HlsDirectoryStructure { SINGLE_DIRECTORY = 'SINGLE_DIRECTORY', SUBDIRECTORY_PER_STREAM = 'SUBDIRECTORY_PER_STREAM' }
 
 
 	/** Hls Discontinuity Tags */
-	export enum HlsDiscontinuityTags { INSERT = 0, NEVER_INSERT = 1 }
+	export enum HlsDiscontinuityTags { INSERT = 'INSERT', NEVER_INSERT = 'NEVER_INSERT' }
 
 
 	/** Hls Encryption Type */
-	export enum HlsEncryptionType { AES128 = 0, SAMPLE_AES = 1 }
+	export enum HlsEncryptionType { AES128 = 'AES128', SAMPLE_AES = 'SAMPLE_AES' }
 
 
 	/** Hls Cdn Settings */
@@ -2971,7 +2971,7 @@ export namespace MyNS {
 
 
 	/** Hls Akamai Http Transfer Mode */
-	export enum HlsAkamaiHttpTransferMode { CHUNKED = 0, NON_CHUNKED = 1 }
+	export enum HlsAkamaiHttpTransferMode { CHUNKED = 'CHUNKED', NON_CHUNKED = 'NON_CHUNKED' }
 
 
 	/** Hls Basic Put Settings */
@@ -3030,7 +3030,7 @@ export namespace MyNS {
 
 
 	/** Hls Media Store Storage Class */
-	export enum HlsMediaStoreStorageClass { TEMPORAL = 0 }
+	export enum HlsMediaStoreStorageClass { TEMPORAL = 'TEMPORAL' }
 
 
 	/** Hls S3 Settings */
@@ -3080,19 +3080,19 @@ export namespace MyNS {
 
 
 	/** When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment. */
-	export enum IFrameOnlyPlaylistType { DISABLED = 0, STANDARD = 1 }
+	export enum IFrameOnlyPlaylistType { DISABLED = 'DISABLED', STANDARD = 'STANDARD' }
 
 
 	/** Hls Incomplete Segment Behavior */
-	export enum HlsIncompleteSegmentBehavior { AUTO = 0, SUPPRESS = 1 }
+	export enum HlsIncompleteSegmentBehavior { AUTO = 'AUTO', SUPPRESS = 'SUPPRESS' }
 
 
 	/** Input Loss Action For Hls Out */
-	export enum InputLossActionForHlsOut { EMIT_OUTPUT = 0, PAUSE_OUTPUT = 1 }
+	export enum InputLossActionForHlsOut { EMIT_OUTPUT = 'EMIT_OUTPUT', PAUSE_OUTPUT = 'PAUSE_OUTPUT' }
 
 
 	/** Hls Iv Source */
-	export enum HlsIvSource { EXPLICIT = 0, FOLLOWS_SEGMENT_NUMBER = 1 }
+	export enum HlsIvSource { EXPLICIT = 'EXPLICIT', FOLLOWS_SEGMENT_NUMBER = 'FOLLOWS_SEGMENT_NUMBER' }
 
 
 	/** Key Provider Settings */
@@ -3133,35 +3133,35 @@ export namespace MyNS {
 
 
 	/** Hls Manifest Compression */
-	export enum HlsManifestCompression { GZIP = 0, NONE = 1 }
+	export enum HlsManifestCompression { GZIP = 'GZIP', NONE = 'NONE' }
 
 
 	/** Hls Manifest Duration Format */
-	export enum HlsManifestDurationFormat { FLOATING_POINT = 0, INTEGER = 1 }
+	export enum HlsManifestDurationFormat { FLOATING_POINT = 'FLOATING_POINT', INTEGER = 'INTEGER' }
 
 
 	/** Hls Mode */
-	export enum HlsMode { LIVE = 0, VOD = 1 }
+	export enum HlsMode { LIVE = 'LIVE', VOD = 'VOD' }
 
 
 	/** Hls Output Selection */
-	export enum HlsOutputSelection { MANIFESTS_AND_SEGMENTS = 0, SEGMENTS_ONLY = 1, VARIANT_MANIFESTS_AND_SEGMENTS = 2 }
+	export enum HlsOutputSelection { MANIFESTS_AND_SEGMENTS = 'MANIFESTS_AND_SEGMENTS', SEGMENTS_ONLY = 'SEGMENTS_ONLY', VARIANT_MANIFESTS_AND_SEGMENTS = 'VARIANT_MANIFESTS_AND_SEGMENTS' }
 
 
 	/** Hls Program Date Time Clock */
-	export enum HlsProgramDateTimeClock { INITIALIZE_FROM_OUTPUT_TIMECODE = 0, SYSTEM_CLOCK = 1 }
+	export enum HlsProgramDateTimeClock { INITIALIZE_FROM_OUTPUT_TIMECODE = 'INITIALIZE_FROM_OUTPUT_TIMECODE', SYSTEM_CLOCK = 'SYSTEM_CLOCK' }
 
 
 	/** Hls Segmentation Mode */
-	export enum HlsSegmentationMode { USE_INPUT_SEGMENTATION = 0, USE_SEGMENT_DURATION = 1 }
+	export enum HlsSegmentationMode { USE_INPUT_SEGMENTATION = 'USE_INPUT_SEGMENTATION', USE_SEGMENT_DURATION = 'USE_SEGMENT_DURATION' }
 
 
 	/** Hls Timed Metadata Id3 Frame */
-	export enum HlsTimedMetadataId3Frame { NONE = 0, PRIV = 1, TDRL = 2 }
+	export enum HlsTimedMetadataId3Frame { NONE = 'NONE', PRIV = 'PRIV', TDRL = 'TDRL' }
 
 
 	/** Hls Ts File Mode */
-	export enum HlsTsFileMode { SEGMENTED_FILES = 0, SINGLE_FILE = 1 }
+	export enum HlsTsFileMode { SEGMENTED_FILES = 'SEGMENTED_FILES', SINGLE_FILE = 'SINGLE_FILE' }
 
 
 	/** Media Package Group Settings */
@@ -3253,31 +3253,31 @@ export namespace MyNS {
 
 
 	/** Smooth Group Audio Only Timecode Control */
-	export enum SmoothGroupAudioOnlyTimecodeControl { PASSTHROUGH = 0, USE_CONFIGURED_CLOCK = 1 }
+	export enum SmoothGroupAudioOnlyTimecodeControl { PASSTHROUGH = 'PASSTHROUGH', USE_CONFIGURED_CLOCK = 'USE_CONFIGURED_CLOCK' }
 
 
 	/** Smooth Group Certificate Mode */
-	export enum SmoothGroupCertificateMode { SELF_SIGNED = 0, VERIFY_AUTHENTICITY = 1 }
+	export enum SmoothGroupCertificateMode { SELF_SIGNED = 'SELF_SIGNED', VERIFY_AUTHENTICITY = 'VERIFY_AUTHENTICITY' }
 
 
 	/** Smooth Group Event Id Mode */
-	export enum SmoothGroupEventIdMode { NO_EVENT_ID = 0, USE_CONFIGURED = 1, USE_TIMESTAMP = 2 }
+	export enum SmoothGroupEventIdMode { NO_EVENT_ID = 'NO_EVENT_ID', USE_CONFIGURED = 'USE_CONFIGURED', USE_TIMESTAMP = 'USE_TIMESTAMP' }
 
 
 	/** Smooth Group Event Stop Behavior */
-	export enum SmoothGroupEventStopBehavior { NONE = 0, SEND_EOS = 1 }
+	export enum SmoothGroupEventStopBehavior { NONE = 'NONE', SEND_EOS = 'SEND_EOS' }
 
 
 	/** Smooth Group Sparse Track Type */
-	export enum SmoothGroupSparseTrackType { NONE = 0, SCTE_35 = 1, SCTE_35_WITHOUT_SEGMENTATION = 2 }
+	export enum SmoothGroupSparseTrackType { NONE = 'NONE', SCTE_35 = 'SCTE_35', SCTE_35_WITHOUT_SEGMENTATION = 'SCTE_35_WITHOUT_SEGMENTATION' }
 
 
 	/** Smooth Group Stream Manifest Behavior */
-	export enum SmoothGroupStreamManifestBehavior { DO_NOT_SEND = 0, SEND = 1 }
+	export enum SmoothGroupStreamManifestBehavior { DO_NOT_SEND = 'DO_NOT_SEND', SEND = 'SEND' }
 
 
 	/** Smooth Group Timestamp Offset Mode */
-	export enum SmoothGroupTimestampOffsetMode { USE_CONFIGURED_OFFSET = 0, USE_EVENT_START_DATE = 1 }
+	export enum SmoothGroupTimestampOffsetMode { USE_CONFIGURED_OFFSET = 'USE_CONFIGURED_OFFSET', USE_EVENT_START_DATE = 'USE_EVENT_START_DATE' }
 
 
 	/** Multiplex Group Settings */
@@ -3328,19 +3328,19 @@ export namespace MyNS {
 
 
 	/** Rtmp Ad Markers */
-	export enum RtmpAdMarkers { ON_CUE_POINT_SCTE35 = 0 }
+	export enum RtmpAdMarkers { ON_CUE_POINT_SCTE35 = 'ON_CUE_POINT_SCTE35' }
 
 
 	/** Authentication Scheme */
-	export enum AuthenticationScheme { AKAMAI = 0, COMMON = 1 }
+	export enum AuthenticationScheme { AKAMAI = 'AKAMAI', COMMON = 'COMMON' }
 
 
 	/** Rtmp Cache Full Behavior */
-	export enum RtmpCacheFullBehavior { DISCONNECT_IMMEDIATELY = 0, WAIT_FOR_SERVER = 1 }
+	export enum RtmpCacheFullBehavior { DISCONNECT_IMMEDIATELY = 'DISCONNECT_IMMEDIATELY', WAIT_FOR_SERVER = 'WAIT_FOR_SERVER' }
 
 
 	/** Rtmp Caption Data */
-	export enum RtmpCaptionData { ALL = 0, FIELD1_608 = 1, FIELD1_AND_FIELD2_608 = 2 }
+	export enum RtmpCaptionData { ALL = 'ALL', FIELD1_608 = 'FIELD1_608', FIELD1_AND_FIELD2_608 = 'FIELD1_AND_FIELD2_608' }
 
 
 	/** Udp Group Settings */
@@ -3367,7 +3367,7 @@ export namespace MyNS {
 
 
 	/** Input Loss Action For Udp Out */
-	export enum InputLossActionForUdpOut { DROP_PROGRAM = 0, DROP_TS = 1, EMIT_PROGRAM = 2 }
+	export enum InputLossActionForUdpOut { DROP_PROGRAM = 'DROP_PROGRAM', DROP_TS = 'DROP_TS', EMIT_PROGRAM = 'EMIT_PROGRAM' }
 
 
 	/** Output settings. There can be multiple outputs within a group. */
@@ -3609,19 +3609,19 @@ export namespace MyNS {
 
 
 	/** M2ts Absent Input Audio Behavior */
-	export enum M2tsAbsentInputAudioBehavior { DROP = 0, ENCODE_SILENCE = 1 }
+	export enum M2tsAbsentInputAudioBehavior { DROP = 'DROP', ENCODE_SILENCE = 'ENCODE_SILENCE' }
 
 
 	/** M2ts Arib Captions Pid Control */
-	export enum M2tsAribCaptionsPidControl { AUTO = 0, USE_CONFIGURED = 1 }
+	export enum M2tsAribCaptionsPidControl { AUTO = 'AUTO', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** M2ts Audio Buffer Model */
-	export enum M2tsAudioBufferModel { ATSC = 0, DVB = 1 }
+	export enum M2tsAudioBufferModel { ATSC = 'ATSC', DVB = 'DVB' }
 
 
 	/** M2ts Buffer Model */
-	export enum M2tsBufferModel { MULTIPLEX = 0, NONE = 1 }
+	export enum M2tsBufferModel { MULTIPLEX = 'MULTIPLEX', NONE = 'NONE' }
 
 
 	/** DVB Network Information Table (NIT) */
@@ -3682,7 +3682,7 @@ export namespace MyNS {
 
 
 	/** Dvb Sdt Output Sdt */
-	export enum DvbSdtOutputSdt { SDT_FOLLOW = 0, SDT_FOLLOW_IF_PRESENT = 1, SDT_MANUAL = 2, SDT_NONE = 3 }
+	export enum DvbSdtOutputSdt { SDT_FOLLOW = 'SDT_FOLLOW', SDT_FOLLOW_IF_PRESENT = 'SDT_FOLLOW_IF_PRESENT', SDT_MANUAL = 'SDT_MANUAL', SDT_NONE = 'SDT_NONE' }
 
 
 	/** DVB Time and Date Table (SDT) */
@@ -3703,31 +3703,31 @@ export namespace MyNS {
 
 
 	/** M2ts Ebif Control */
-	export enum M2tsEbifControl { NONE = 0, PASSTHROUGH = 1 }
+	export enum M2tsEbifControl { NONE = 'NONE', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** M2ts Audio Interval */
-	export enum M2tsAudioInterval { VIDEO_AND_FIXED_INTERVALS = 0, VIDEO_INTERVAL = 1 }
+	export enum M2tsAudioInterval { VIDEO_AND_FIXED_INTERVALS = 'VIDEO_AND_FIXED_INTERVALS', VIDEO_INTERVAL = 'VIDEO_INTERVAL' }
 
 
 	/** M2ts Ebp Placement */
-	export enum M2tsEbpPlacement { VIDEO_AND_AUDIO_PIDS = 0, VIDEO_PID = 1 }
+	export enum M2tsEbpPlacement { VIDEO_AND_AUDIO_PIDS = 'VIDEO_AND_AUDIO_PIDS', VIDEO_PID = 'VIDEO_PID' }
 
 
 	/** M2ts Nielsen Id3 Behavior */
-	export enum M2tsNielsenId3Behavior { NO_PASSTHROUGH = 0, PASSTHROUGH = 1 }
+	export enum M2tsNielsenId3Behavior { NO_PASSTHROUGH = 'NO_PASSTHROUGH', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** M2ts Pcr Control */
-	export enum M2tsPcrControl { CONFIGURED_PCR_PERIOD = 0, PCR_EVERY_PES_PACKET = 1 }
+	export enum M2tsPcrControl { CONFIGURED_PCR_PERIOD = 'CONFIGURED_PCR_PERIOD', PCR_EVERY_PES_PACKET = 'PCR_EVERY_PES_PACKET' }
 
 
 	/** M2ts Segmentation Markers */
-	export enum M2tsSegmentationMarkers { EBP = 0, EBP_LEGACY = 1, NONE = 2, PSI_SEGSTART = 3, RAI_ADAPT = 4, RAI_SEGSTART = 5 }
+	export enum M2tsSegmentationMarkers { EBP = 'EBP', EBP_LEGACY = 'EBP_LEGACY', NONE = 'NONE', PSI_SEGSTART = 'PSI_SEGSTART', RAI_ADAPT = 'RAI_ADAPT', RAI_SEGSTART = 'RAI_SEGSTART' }
 
 
 	/** M2ts Segmentation Style */
-	export enum M2tsSegmentationStyle { MAINTAIN_CADENCE = 0, RESET_CADENCE = 1 }
+	export enum M2tsSegmentationStyle { MAINTAIN_CADENCE = 'MAINTAIN_CADENCE', RESET_CADENCE = 'RESET_CADENCE' }
 
 
 	/** Raw Settings */
@@ -3788,7 +3788,7 @@ export namespace MyNS {
 
 
 	/** Hls H265 Packaging Type */
-	export enum HlsH265PackagingType { HEV1 = 0, HVC1 = 1 }
+	export enum HlsH265PackagingType { HEV1 = 'HEV1', HVC1 = 'HVC1' }
 
 
 	/** Hls Settings */
@@ -3834,11 +3834,11 @@ export namespace MyNS {
 
 
 	/** Audio Only Hls Track Type */
-	export enum AudioOnlyHlsTrackType { ALTERNATE_AUDIO_AUTO_SELECT = 0, ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 1, ALTERNATE_AUDIO_NOT_AUTO_SELECT = 2, AUDIO_ONLY_VARIANT_STREAM = 3 }
+	export enum AudioOnlyHlsTrackType { ALTERNATE_AUDIO_AUTO_SELECT = 'ALTERNATE_AUDIO_AUTO_SELECT', ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 'ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT', ALTERNATE_AUDIO_NOT_AUTO_SELECT = 'ALTERNATE_AUDIO_NOT_AUTO_SELECT', AUDIO_ONLY_VARIANT_STREAM = 'AUDIO_ONLY_VARIANT_STREAM' }
 
 
 	/** Audio Only Hls Segment Type */
-	export enum AudioOnlyHlsSegmentType { AAC = 0, FMP4 = 1 }
+	export enum AudioOnlyHlsSegmentType { AAC = 'AAC', FMP4 = 'FMP4' }
 
 
 	/** Fmp4 Hls Settings */
@@ -4103,7 +4103,7 @@ export namespace MyNS {
 
 
 	/** Fec Output Include Fec */
-	export enum FecOutputIncludeFec { COLUMN = 0, COLUMN_AND_ROW = 1 }
+	export enum FecOutputIncludeFec { COLUMN = 'COLUMN', COLUMN_AND_ROW = 'COLUMN_AND_ROW' }
 
 
 	/** Timecode Config */
@@ -4131,7 +4131,7 @@ export namespace MyNS {
 
 
 	/** Timecode Config Source */
-	export enum TimecodeConfigSource { EMBEDDED = 0, SYSTEMCLOCK = 1, ZEROBASED = 2 }
+	export enum TimecodeConfigSource { EMBEDDED = 'EMBEDDED', SYSTEMCLOCK = 'SYSTEMCLOCK', ZEROBASED = 'ZEROBASED' }
 
 
 	/** Video settings for this stream. */
@@ -4211,7 +4211,7 @@ export namespace MyNS {
 
 
 	/** Frame Capture Interval Unit */
-	export enum FrameCaptureIntervalUnit { MILLISECONDS = 0, SECONDS = 1 }
+	export enum FrameCaptureIntervalUnit { MILLISECONDS = 'MILLISECONDS', SECONDS = 'SECONDS' }
 
 
 	/** Timecode Burnin Settings */
@@ -4246,11 +4246,11 @@ export namespace MyNS {
 
 
 	/** Timecode Burnin Font Size */
-	export enum TimecodeBurninFontSize { EXTRA_SMALL_10 = 0, LARGE_48 = 1, MEDIUM_32 = 2, SMALL_16 = 3 }
+	export enum TimecodeBurninFontSize { EXTRA_SMALL_10 = 'EXTRA_SMALL_10', LARGE_48 = 'LARGE_48', MEDIUM_32 = 'MEDIUM_32', SMALL_16 = 'SMALL_16' }
 
 
 	/** Timecode Burnin Position */
-	export enum TimecodeBurninPosition { BOTTOM_CENTER = 0, BOTTOM_LEFT = 1, BOTTOM_RIGHT = 2, MIDDLE_CENTER = 3, MIDDLE_LEFT = 4, MIDDLE_RIGHT = 5, TOP_CENTER = 6, TOP_LEFT = 7, TOP_RIGHT = 8 }
+	export enum TimecodeBurninPosition { BOTTOM_CENTER = 'BOTTOM_CENTER', BOTTOM_LEFT = 'BOTTOM_LEFT', BOTTOM_RIGHT = 'BOTTOM_RIGHT', MIDDLE_CENTER = 'MIDDLE_CENTER', MIDDLE_LEFT = 'MIDDLE_LEFT', MIDDLE_RIGHT = 'MIDDLE_RIGHT', TOP_CENTER = 'TOP_CENTER', TOP_LEFT = 'TOP_LEFT', TOP_RIGHT = 'TOP_RIGHT' }
 
 
 	/** H264 Settings */
@@ -4388,15 +4388,15 @@ export namespace MyNS {
 
 
 	/** H264 Adaptive Quantization */
-	export enum H264AdaptiveQuantization { AUTO = 0, HIGH = 1, HIGHER = 2, LOW = 3, MAX = 4, MEDIUM = 5, OFF = 6 }
+	export enum H264AdaptiveQuantization { AUTO = 'AUTO', HIGH = 'HIGH', HIGHER = 'HIGHER', LOW = 'LOW', MAX = 'MAX', MEDIUM = 'MEDIUM', OFF = 'OFF' }
 
 
 	/** Afd Signaling */
-	export enum AfdSignaling { AUTO = 0, FIXED = 1, NONE = 2 }
+	export enum AfdSignaling { AUTO = 'AUTO', FIXED = 'FIXED', NONE = 'NONE' }
 
 
 	/** H264 Color Metadata */
-	export enum H264ColorMetadata { IGNORE = 0, INSERT = 1 }
+	export enum H264ColorMetadata { IGNORE = 'IGNORE', INSERT = 'INSERT' }
 
 
 	/** H264 Color Space Settings */
@@ -4459,7 +4459,7 @@ export namespace MyNS {
 
 
 	/** H264 Entropy Encoding */
-	export enum H264EntropyEncoding { CABAC = 0, CAVLC = 1 }
+	export enum H264EntropyEncoding { CABAC = 'CABAC', CAVLC = 'CAVLC' }
 
 
 	/** H264 Filter Settings */
@@ -4498,59 +4498,59 @@ export namespace MyNS {
 
 
 	/** Temporal Filter Post Filter Sharpening */
-	export enum TemporalFilterPostFilterSharpening { AUTO = 0, DISABLED = 1, ENABLED = 2 }
+	export enum TemporalFilterPostFilterSharpening { AUTO = 'AUTO', DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Temporal Filter Strength */
-	export enum TemporalFilterStrength { AUTO = 0, STRENGTH_1 = 1, STRENGTH_2 = 2, STRENGTH_3 = 3, STRENGTH_4 = 4, STRENGTH_5 = 5, STRENGTH_6 = 6, STRENGTH_7 = 7, STRENGTH_8 = 8, STRENGTH_9 = 9, STRENGTH_10 = 10, STRENGTH_11 = 11, STRENGTH_12 = 12, STRENGTH_13 = 13, STRENGTH_14 = 14, STRENGTH_15 = 15, STRENGTH_16 = 16 }
+	export enum TemporalFilterStrength { AUTO = 'AUTO', STRENGTH_1 = 'STRENGTH_1', STRENGTH_2 = 'STRENGTH_2', STRENGTH_3 = 'STRENGTH_3', STRENGTH_4 = 'STRENGTH_4', STRENGTH_5 = 'STRENGTH_5', STRENGTH_6 = 'STRENGTH_6', STRENGTH_7 = 'STRENGTH_7', STRENGTH_8 = 'STRENGTH_8', STRENGTH_9 = 'STRENGTH_9', STRENGTH_10 = 'STRENGTH_10', STRENGTH_11 = 'STRENGTH_11', STRENGTH_12 = 'STRENGTH_12', STRENGTH_13 = 'STRENGTH_13', STRENGTH_14 = 'STRENGTH_14', STRENGTH_15 = 'STRENGTH_15', STRENGTH_16 = 'STRENGTH_16' }
 
 
 	/** Fixed Afd */
-	export enum FixedAfd { AFD_0000 = 0, AFD_0010 = 1, AFD_0011 = 2, AFD_0100 = 3, AFD_1000 = 4, AFD_1001 = 5, AFD_1010 = 6, AFD_1011 = 7, AFD_1101 = 8, AFD_1110 = 9, AFD_1111 = 10 }
+	export enum FixedAfd { AFD_0000 = 'AFD_0000', AFD_0010 = 'AFD_0010', AFD_0011 = 'AFD_0011', AFD_0100 = 'AFD_0100', AFD_1000 = 'AFD_1000', AFD_1001 = 'AFD_1001', AFD_1010 = 'AFD_1010', AFD_1011 = 'AFD_1011', AFD_1101 = 'AFD_1101', AFD_1110 = 'AFD_1110', AFD_1111 = 'AFD_1111' }
 
 
 	/** H264 Framerate Control */
-	export enum H264FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum H264FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** H264 Gop Size Units */
-	export enum H264GopSizeUnits { FRAMES = 0, SECONDS = 1 }
+	export enum H264GopSizeUnits { FRAMES = 'FRAMES', SECONDS = 'SECONDS' }
 
 
 	/** H264 Level */
-	export enum H264Level { H264_LEVEL_1 = 0, H264_LEVEL_1_1 = 1, H264_LEVEL_1_2 = 2, H264_LEVEL_1_3 = 3, H264_LEVEL_2 = 4, H264_LEVEL_2_1 = 5, H264_LEVEL_2_2 = 6, H264_LEVEL_3 = 7, H264_LEVEL_3_1 = 8, H264_LEVEL_3_2 = 9, H264_LEVEL_4 = 10, H264_LEVEL_4_1 = 11, H264_LEVEL_4_2 = 12, H264_LEVEL_5 = 13, H264_LEVEL_5_1 = 14, H264_LEVEL_5_2 = 15, H264_LEVEL_AUTO = 16 }
+	export enum H264Level { H264_LEVEL_1 = 'H264_LEVEL_1', H264_LEVEL_1_1 = 'H264_LEVEL_1_1', H264_LEVEL_1_2 = 'H264_LEVEL_1_2', H264_LEVEL_1_3 = 'H264_LEVEL_1_3', H264_LEVEL_2 = 'H264_LEVEL_2', H264_LEVEL_2_1 = 'H264_LEVEL_2_1', H264_LEVEL_2_2 = 'H264_LEVEL_2_2', H264_LEVEL_3 = 'H264_LEVEL_3', H264_LEVEL_3_1 = 'H264_LEVEL_3_1', H264_LEVEL_3_2 = 'H264_LEVEL_3_2', H264_LEVEL_4 = 'H264_LEVEL_4', H264_LEVEL_4_1 = 'H264_LEVEL_4_1', H264_LEVEL_4_2 = 'H264_LEVEL_4_2', H264_LEVEL_5 = 'H264_LEVEL_5', H264_LEVEL_5_1 = 'H264_LEVEL_5_1', H264_LEVEL_5_2 = 'H264_LEVEL_5_2', H264_LEVEL_AUTO = 'H264_LEVEL_AUTO' }
 
 
 	/** H264 Look Ahead Rate Control */
-	export enum H264LookAheadRateControl { HIGH = 0, LOW = 1, MEDIUM = 2 }
+	export enum H264LookAheadRateControl { HIGH = 'HIGH', LOW = 'LOW', MEDIUM = 'MEDIUM' }
 
 
 	/** H264 Profile */
-	export enum H264Profile { BASELINE = 0, HIGH = 1, HIGH_10BIT = 2, HIGH_422 = 3, HIGH_422_10BIT = 4, MAIN = 5 }
+	export enum H264Profile { BASELINE = 'BASELINE', HIGH = 'HIGH', HIGH_10BIT = 'HIGH_10BIT', HIGH_422 = 'HIGH_422', HIGH_422_10BIT = 'HIGH_422_10BIT', MAIN = 'MAIN' }
 
 
 	/** H264 Quality Level */
-	export enum H264QualityLevel { ENHANCED_QUALITY = 0, STANDARD_QUALITY = 1 }
+	export enum H264QualityLevel { ENHANCED_QUALITY = 'ENHANCED_QUALITY', STANDARD_QUALITY = 'STANDARD_QUALITY' }
 
 
 	/** H264 Rate Control Mode */
-	export enum H264RateControlMode { CBR = 0, MULTIPLEX = 1, QVBR = 2, VBR = 3 }
+	export enum H264RateControlMode { CBR = 'CBR', MULTIPLEX = 'MULTIPLEX', QVBR = 'QVBR', VBR = 'VBR' }
 
 
 	/** H264 Scan Type */
-	export enum H264ScanType { INTERLACED = 0, PROGRESSIVE = 1 }
+	export enum H264ScanType { INTERLACED = 'INTERLACED', PROGRESSIVE = 'PROGRESSIVE' }
 
 
 	/** H264 Sub Gop Length */
-	export enum H264SubGopLength { DYNAMIC = 0, FIXED = 1 }
+	export enum H264SubGopLength { DYNAMIC = 'DYNAMIC', FIXED = 'FIXED' }
 
 
 	/** H264 Syntax */
-	export enum H264Syntax { DEFAULT = 0, RP2027 = 1 }
+	export enum H264Syntax { DEFAULT = 'DEFAULT', RP2027 = 'RP2027' }
 
 
 	/** H264 Timecode Insertion Behavior */
-	export enum H264TimecodeInsertionBehavior { DISABLED = 0, PIC_TIMING_SEI = 1 }
+	export enum H264TimecodeInsertionBehavior { DISABLED = 'DISABLED', PIC_TIMING_SEI = 'PIC_TIMING_SEI' }
 
 
 	/** H265 Settings */
@@ -4660,7 +4660,7 @@ export namespace MyNS {
 
 
 	/** H265 Alternative Transfer Function */
-	export enum H265AlternativeTransferFunction { INSERT = 0, OMIT = 1 }
+	export enum H265AlternativeTransferFunction { INSERT = 'INSERT', OMIT = 'OMIT' }
 
 
 	/** H265 Color Space Settings */
@@ -4732,19 +4732,19 @@ export namespace MyNS {
 
 
 	/** H265 Level */
-	export enum H265Level { H265_LEVEL_1 = 0, H265_LEVEL_2 = 1, H265_LEVEL_2_1 = 2, H265_LEVEL_3 = 3, H265_LEVEL_3_1 = 4, H265_LEVEL_4 = 5, H265_LEVEL_4_1 = 6, H265_LEVEL_5 = 7, H265_LEVEL_5_1 = 8, H265_LEVEL_5_2 = 9, H265_LEVEL_6 = 10, H265_LEVEL_6_1 = 11, H265_LEVEL_6_2 = 12, H265_LEVEL_AUTO = 13 }
+	export enum H265Level { H265_LEVEL_1 = 'H265_LEVEL_1', H265_LEVEL_2 = 'H265_LEVEL_2', H265_LEVEL_2_1 = 'H265_LEVEL_2_1', H265_LEVEL_3 = 'H265_LEVEL_3', H265_LEVEL_3_1 = 'H265_LEVEL_3_1', H265_LEVEL_4 = 'H265_LEVEL_4', H265_LEVEL_4_1 = 'H265_LEVEL_4_1', H265_LEVEL_5 = 'H265_LEVEL_5', H265_LEVEL_5_1 = 'H265_LEVEL_5_1', H265_LEVEL_5_2 = 'H265_LEVEL_5_2', H265_LEVEL_6 = 'H265_LEVEL_6', H265_LEVEL_6_1 = 'H265_LEVEL_6_1', H265_LEVEL_6_2 = 'H265_LEVEL_6_2', H265_LEVEL_AUTO = 'H265_LEVEL_AUTO' }
 
 
 	/** H265 Profile */
-	export enum H265Profile { MAIN = 0, MAIN_10BIT = 1 }
+	export enum H265Profile { MAIN = 'MAIN', MAIN_10BIT = 'MAIN_10BIT' }
 
 
 	/** H265 Rate Control Mode */
-	export enum H265RateControlMode { CBR = 0, MULTIPLEX = 1, QVBR = 2 }
+	export enum H265RateControlMode { CBR = 'CBR', MULTIPLEX = 'MULTIPLEX', QVBR = 'QVBR' }
 
 
 	/** H265 Tier */
-	export enum H265Tier { HIGH = 0, MAIN = 1 }
+	export enum H265Tier { HIGH = 'HIGH', MAIN = 'MAIN' }
 
 
 	/** Mpeg2 Settings */
@@ -4817,15 +4817,15 @@ export namespace MyNS {
 
 
 	/** Mpeg2 Adaptive Quantization */
-	export enum Mpeg2AdaptiveQuantization { AUTO = 0, HIGH = 1, LOW = 2, MEDIUM = 3, OFF = 4 }
+	export enum Mpeg2AdaptiveQuantization { AUTO = 'AUTO', HIGH = 'HIGH', LOW = 'LOW', MEDIUM = 'MEDIUM', OFF = 'OFF' }
 
 
 	/** Mpeg2 Color Space */
-	export enum Mpeg2ColorSpace { AUTO = 0, PASSTHROUGH = 1 }
+	export enum Mpeg2ColorSpace { AUTO = 'AUTO', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** Mpeg2 Display Ratio */
-	export enum Mpeg2DisplayRatio { DISPLAYRATIO16X9 = 0, DISPLAYRATIO4X3 = 1 }
+	export enum Mpeg2DisplayRatio { DISPLAYRATIO16X9 = 'DISPLAYRATIO16X9', DISPLAYRATIO4X3 = 'DISPLAYRATIO4X3' }
 
 
 	/** Mpeg2 Filter Settings */
@@ -4844,15 +4844,15 @@ export namespace MyNS {
 
 
 	/** Mpeg2 Timecode Insertion Behavior */
-	export enum Mpeg2TimecodeInsertionBehavior { DISABLED = 0, GOP_TIMECODE = 1 }
+	export enum Mpeg2TimecodeInsertionBehavior { DISABLED = 'DISABLED', GOP_TIMECODE = 'GOP_TIMECODE' }
 
 
 	/** Video Description Respond To Afd */
-	export enum VideoDescriptionRespondToAfd { NONE = 0, PASSTHROUGH = 1, RESPOND = 2 }
+	export enum VideoDescriptionRespondToAfd { NONE = 'NONE', PASSTHROUGH = 'PASSTHROUGH', RESPOND = 'RESPOND' }
 
 
 	/** Video Description Scaling Behavior */
-	export enum VideoDescriptionScalingBehavior { DEFAULT = 0, STRETCH_TO_OUTPUT = 1 }
+	export enum VideoDescriptionScalingBehavior { DEFAULT = 'DEFAULT', STRETCH_TO_OUTPUT = 'STRETCH_TO_OUTPUT' }
 
 
 	/** Thumbnail Configuration */
@@ -4877,7 +4877,7 @@ export namespace MyNS {
 
 
 	/** Thumbnail State */
-	export enum ThumbnailState { AUTO = 0, DISABLED = 1 }
+	export enum ThumbnailState { AUTO = 'AUTO', DISABLED = 'DISABLED' }
 
 
 	/** Placeholder documentation for InputAttachment */
@@ -5028,7 +5028,7 @@ export namespace MyNS {
 	 * If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
 	 * If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
 	 */
-	export enum InputPreference { EQUAL_INPUT_PREFERENCE = 0, PRIMARY_INPUT_PREFERRED = 1 }
+	export enum InputPreference { EQUAL_INPUT_PREFERENCE = 'EQUAL_INPUT_PREFERENCE', PRIMARY_INPUT_PREFERRED = 'PRIMARY_INPUT_PREFERRED' }
 
 
 	/** Live Event input parameters. There can be multiple inputs in a single Live Event. */
@@ -5163,7 +5163,7 @@ export namespace MyNS {
 
 
 	/** Audio Language Selection Policy */
-	export enum AudioLanguageSelectionPolicy { LOOSE = 0, STRICT = 1 }
+	export enum AudioLanguageSelectionPolicy { LOOSE = 'LOOSE', STRICT = 'STRICT' }
 
 
 	/** Audio Pid Selection */
@@ -5248,7 +5248,7 @@ export namespace MyNS {
 
 
 	/** Dolby EProgram Selection */
-	export enum DolbyEProgramSelection { ALL_CHANNELS = 0, PROGRAM_1 = 1, PROGRAM_2 = 2, PROGRAM_3 = 3, PROGRAM_4 = 4, PROGRAM_5 = 5, PROGRAM_6 = 6, PROGRAM_7 = 7, PROGRAM_8 = 8 }
+	export enum DolbyEProgramSelection { ALL_CHANNELS = 'ALL_CHANNELS', PROGRAM_1 = 'PROGRAM_1', PROGRAM_2 = 'PROGRAM_2', PROGRAM_3 = 'PROGRAM_3', PROGRAM_4 = 'PROGRAM_4', PROGRAM_5 = 'PROGRAM_5', PROGRAM_6 = 'PROGRAM_6', PROGRAM_7 = 'PROGRAM_7', PROGRAM_8 = 'PROGRAM_8' }
 
 
 	/** Caption Selector */
@@ -5349,7 +5349,7 @@ export namespace MyNS {
 
 
 	/** Dvb Sub Ocr Language */
-	export enum DvbSubOcrLanguage { DEU = 0, ENG = 1, FRA = 2, NLD = 3, POR = 4, SPA = 5 }
+	export enum DvbSubOcrLanguage { DEU = 'DEU', ENG = 'ENG', FRA = 'FRA', NLD = 'NLD', POR = 'POR', SPA = 'SPA' }
 
 
 	/** Embedded Source Settings */
@@ -5379,11 +5379,11 @@ export namespace MyNS {
 
 
 	/** Embedded Convert608 To708 */
-	export enum EmbeddedConvert608To708 { DISABLED = 0, UPCONVERT = 1 }
+	export enum EmbeddedConvert608To708 { DISABLED = 'DISABLED', UPCONVERT = 'UPCONVERT' }
 
 
 	/** Embedded Scte20 Detection */
-	export enum EmbeddedScte20Detection { AUTO = 0, OFF = 1 }
+	export enum EmbeddedScte20Detection { AUTO = 'AUTO', OFF = 'OFF' }
 
 
 	/** Scte20 Source Settings */
@@ -5487,7 +5487,7 @@ export namespace MyNS {
 
 
 	/** Input Filter */
-	export enum InputFilter { AUTO = 0, DISABLED = 1, FORCED = 2 }
+	export enum InputFilter { AUTO = 'AUTO', DISABLED = 'DISABLED', FORCED = 'FORCED' }
 
 
 	/** Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection. */
@@ -5538,19 +5538,19 @@ export namespace MyNS {
 
 
 	/** Hls Scte35 Source Type */
-	export enum HlsScte35SourceType { MANIFEST = 0, SEGMENTS = 1 }
+	export enum HlsScte35SourceType { MANIFEST = 'MANIFEST', SEGMENTS = 'SEGMENTS' }
 
 
 	/** Network Input Server Validation */
-	export enum NetworkInputServerValidation { CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME = 0, CHECK_CRYPTOGRAPHY_ONLY = 1 }
+	export enum NetworkInputServerValidation { CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME = 'CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME', CHECK_CRYPTOGRAPHY_ONLY = 'CHECK_CRYPTOGRAPHY_ONLY' }
 
 
 	/** Smpte2038 Data Preference */
-	export enum Smpte2038DataPreference { IGNORE = 0, PREFER = 1 }
+	export enum Smpte2038DataPreference { IGNORE = 'IGNORE', PREFER = 'PREFER' }
 
 
 	/** Input Source End Behavior */
-	export enum InputSourceEndBehavior { CONTINUE = 0, LOOP = 1 }
+	export enum InputSourceEndBehavior { CONTINUE = 'CONTINUE', LOOP = 'LOOP' }
 
 
 	/** Specifies a particular video stream within an input source. An input may have only a single video selector. */
@@ -5576,7 +5576,7 @@ export namespace MyNS {
 
 
 	/** Video Selector Color Space */
-	export enum VideoSelectorColorSpace { FOLLOW = 0, HDR10 = 1, HLG_2020 = 2, REC_601 = 3, REC_709 = 4 }
+	export enum VideoSelectorColorSpace { FOLLOW = 'FOLLOW', HDR10 = 'HDR10', HLG_2020 = 'HLG_2020', REC_601 = 'REC_601', REC_709 = 'REC_709' }
 
 
 	/** Video Selector Color Space Settings */
@@ -5595,7 +5595,7 @@ export namespace MyNS {
 
 
 	/** Video Selector Color Space Usage */
-	export enum VideoSelectorColorSpaceUsage { FALLBACK = 0, FORCE = 1 }
+	export enum VideoSelectorColorSpaceUsage { FALLBACK = 'FALLBACK', FORCE = 'FORCE' }
 
 
 	/** Video Selector Settings */
@@ -5672,21 +5672,21 @@ export namespace MyNS {
 
 
 	/** codec in increasing order of complexity */
-	export enum InputCodec { MPEG2 = 0, AVC = 1, HEVC = 2 }
+	export enum InputCodec { MPEG2 = 'MPEG2', AVC = 'AVC', HEVC = 'HEVC' }
 
 
 	/** Maximum input bitrate in megabits per second. Bitrates up to 50 Mbps are supported currently. */
-	export enum InputMaximumBitrate { MAX_10_MBPS = 0, MAX_20_MBPS = 1, MAX_50_MBPS = 2 }
+	export enum InputMaximumBitrate { MAX_10_MBPS = 'MAX_10_MBPS', MAX_20_MBPS = 'MAX_20_MBPS', MAX_50_MBPS = 'MAX_50_MBPS' }
 
 
 	/**
 	 * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
 	 */
-	export enum InputResolution { SD = 0, HD = 1, UHD = 2 }
+	export enum InputResolution { SD = 'SD', HD = 'HD', UHD = 'UHD' }
 
 
 	/** The log level the user wants for their channel. */
-	export enum LogLevel { ERROR = 0, WARNING = 1, INFO = 2, DEBUG = 3, DISABLED = 4 }
+	export enum LogLevel { ERROR = 'ERROR', WARNING = 'WARNING', INFO = 'INFO', DEBUG = 'DEBUG', DISABLED = 'DISABLED' }
 
 
 	/** Placeholder documentation for MaintenanceStatus */
@@ -5716,7 +5716,7 @@ export namespace MyNS {
 
 
 	/** The currently selected maintenance day. */
-	export enum MaintenanceDay { MONDAY = 0, TUESDAY = 1, WEDNESDAY = 2, THURSDAY = 3, FRIDAY = 4, SATURDAY = 5, SUNDAY = 6 }
+	export enum MaintenanceDay { MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Runtime details of a pipeline when a channel is running. */
@@ -5749,7 +5749,7 @@ export namespace MyNS {
 
 
 	/** Placeholder documentation for ChannelState */
-	export enum ChannelState { CREATING = 0, CREATE_FAILED = 1, IDLE = 2, STARTING = 3, RUNNING = 4, RECOVERING = 5, STOPPING = 6, DELETING = 7, DELETED = 8, UPDATING = 9, UPDATE_FAILED = 10 }
+	export enum ChannelState { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', IDLE = 'IDLE', STARTING = 'STARTING', RUNNING = 'RUNNING', RECOVERING = 'RECOVERING', STOPPING = 'STOPPING', DELETING = 'DELETING', DELETED = 'DELETED', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 
 	/** Placeholder documentation for Tags */
@@ -5915,7 +5915,7 @@ export namespace MyNS {
 	 * change the source url of the input dynamically using an input switch action. Currently, two input types
 	 * support a dynamic url at this time, MP4_FILE and TS_FILE. By default all input sources are static.
 	 */
-	export enum InputSourceType { STATIC = 0, DYNAMIC = 1 }
+	export enum InputSourceType { STATIC = 'STATIC', DYNAMIC = 'DYNAMIC' }
 
 
 	/** The settings for a MediaConnect Flow. */
@@ -5959,11 +5959,11 @@ export namespace MyNS {
 
 
 	/** Placeholder documentation for InputState */
-	export enum InputState { CREATING = 0, DETACHED = 1, ATTACHED = 2, DELETING = 3, DELETED = 4 }
+	export enum InputState { CREATING = 'CREATING', DETACHED = 'DETACHED', ATTACHED = 'ATTACHED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** The different types of inputs that AWS Elemental MediaLive supports. */
-	export enum InputType { UDP_PUSH = 0, RTP_PUSH = 1, RTMP_PUSH = 2, RTMP_PULL = 3, URL_PULL = 4, MP4_FILE = 5, MEDIACONNECT = 6, INPUT_DEVICE = 7, AWS_CDI = 8, TS_FILE = 9 }
+	export enum InputType { UDP_PUSH = 'UDP_PUSH', RTP_PUSH = 'RTP_PUSH', RTMP_PUSH = 'RTMP_PUSH', RTMP_PULL = 'RTMP_PULL', URL_PULL = 'URL_PULL', MP4_FILE = 'MP4_FILE', MEDIACONNECT = 'MEDIACONNECT', INPUT_DEVICE = 'INPUT_DEVICE', AWS_CDI = 'AWS_CDI', TS_FILE = 'TS_FILE' }
 
 
 	/** Endpoint settings for a PUSH type input. */
@@ -6065,7 +6065,7 @@ export namespace MyNS {
 
 
 	/** Placeholder documentation for InputSecurityGroupState */
-	export enum InputSecurityGroupState { IDLE = 0, IN_USE = 1, UPDATING = 2, DELETED = 3 }
+	export enum InputSecurityGroupState { IDLE = 'IDLE', IN_USE = 'IN_USE', UPDATING = 'UPDATING', DELETED = 'DELETED' }
 
 
 	/** Whitelist rule */
@@ -6220,7 +6220,7 @@ export namespace MyNS {
 
 
 	/** The current state of the multiplex. */
-	export enum MultiplexState { CREATING = 0, CREATE_FAILED = 1, IDLE = 2, STARTING = 3, RUNNING = 4, RECOVERING = 5, STOPPING = 6, DELETING = 7, DELETED = 8 }
+	export enum MultiplexState { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', IDLE = 'IDLE', STARTING = 'STARTING', RUNNING = 'RUNNING', RECOVERING = 'RECOVERING', STOPPING = 'STOPPING', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** Placeholder documentation for CreateMultiplexProgramResponse */
@@ -6294,7 +6294,7 @@ export namespace MyNS {
 	 * it will not switch back to the other pipeline based on it recovering to a healthy state,
 	 * it will only switch if the active pipeline becomes unhealthy.
 	 */
-	export enum PreferredChannelPipeline { CURRENTLY_ACTIVE = 0, PIPELINE_0 = 1, PIPELINE_1 = 2 }
+	export enum PreferredChannelPipeline { CURRENTLY_ACTIVE = 'CURRENTLY_ACTIVE', PIPELINE_0 = 'PIPELINE_0', PIPELINE_1 = 'PIPELINE_1' }
 
 
 	/** Transport stream service descriptor configuration for the Multiplex program. */
@@ -6647,11 +6647,11 @@ export namespace MyNS {
 
 
 	/** Units for duration, e.g. 'MONTHS' */
-	export enum OfferingDurationUnits { MONTHS = 0 }
+	export enum OfferingDurationUnits { MONTHS = 'MONTHS' }
 
 
 	/** Offering type, e.g. 'NO_UPFRONT' */
-	export enum OfferingType { NO_UPFRONT = 0 }
+	export enum OfferingType { NO_UPFRONT = 'NO_UPFRONT' }
 
 
 	/** The Renewal settings for Reservations */
@@ -6675,7 +6675,7 @@ export namespace MyNS {
 
 
 	/** Automatic Renewal Status for Reservation */
-	export enum ReservationAutomaticRenewal { DISABLED = 0, ENABLED = 1, UNAVAILABLE = 2 }
+	export enum ReservationAutomaticRenewal { DISABLED = 'DISABLED', ENABLED = 'ENABLED', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** Resource configuration (codec, resolution, bitrate, ...) */
@@ -6717,27 +6717,27 @@ export namespace MyNS {
 
 
 	/** Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO' */
-	export enum ReservationCodec { MPEG2 = 0, AVC = 1, HEVC = 2, AUDIO = 3, LINK = 4 }
+	export enum ReservationCodec { MPEG2 = 'MPEG2', AVC = 'AVC', HEVC = 'HEVC', AUDIO = 'AUDIO', LINK = 'LINK' }
 
 
 	/** Maximum framerate in frames per second (Outputs only) */
-	export enum ReservationMaximumFramerate { MAX_30_FPS = 0, MAX_60_FPS = 1 }
+	export enum ReservationMaximumFramerate { MAX_30_FPS = 'MAX_30_FPS', MAX_60_FPS = 'MAX_60_FPS' }
 
 
 	/** Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL' */
-	export enum ReservationResourceType { INPUT = 0, OUTPUT = 1, MULTIPLEX = 2, CHANNEL = 3 }
+	export enum ReservationResourceType { INPUT = 'INPUT', OUTPUT = 'OUTPUT', MULTIPLEX = 'MULTIPLEX', CHANNEL = 'CHANNEL' }
 
 
 	/** Special features, 'ADVANCED_AUDIO' 'AUDIO_NORMALIZATION' 'MGHD' or 'MGUHD' */
-	export enum ReservationSpecialFeature { ADVANCED_AUDIO = 0, AUDIO_NORMALIZATION = 1, MGHD = 2, MGUHD = 3 }
+	export enum ReservationSpecialFeature { ADVANCED_AUDIO = 'ADVANCED_AUDIO', AUDIO_NORMALIZATION = 'AUDIO_NORMALIZATION', MGHD = 'MGHD', MGUHD = 'MGUHD' }
 
 
 	/** Video quality, e.g. 'STANDARD' (Outputs only) */
-	export enum ReservationVideoQuality { STANDARD = 0, ENHANCED = 1, PREMIUM = 2 }
+	export enum ReservationVideoQuality { STANDARD = 'STANDARD', ENHANCED = 'ENHANCED', PREMIUM = 'PREMIUM' }
 
 
 	/** Current reservation state */
-	export enum ReservationState { ACTIVE = 0, EXPIRED = 1, CANCELED = 2, DELETED = 3 }
+	export enum ReservationState { ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED', CANCELED = 'CANCELED', DELETED = 'DELETED' }
 
 
 	/** Placeholder documentation for DeleteScheduleResponse */
@@ -6897,15 +6897,15 @@ export namespace MyNS {
 
 
 	/** The state of the connection between the input device and AWS. */
-	export enum InputDeviceConnectionState { DISCONNECTED = 0, CONNECTED = 1 }
+	export enum InputDeviceConnectionState { DISCONNECTED = 'DISCONNECTED', CONNECTED = 'CONNECTED' }
 
 
 	/** The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration. */
-	export enum DeviceSettingsSyncState { SYNCED = 0, SYNCING = 1 }
+	export enum DeviceSettingsSyncState { SYNCED = 'SYNCED', SYNCING = 'SYNCING' }
 
 
 	/** The status of software on the input device. */
-	export enum DeviceUpdateStatus { UP_TO_DATE = 0, NOT_UP_TO_DATE = 1, UPDATING = 2 }
+	export enum DeviceUpdateStatus { UP_TO_DATE = 'UP_TO_DATE', NOT_UP_TO_DATE = 'NOT_UP_TO_DATE', UPDATING = 'UPDATING' }
 
 
 	/** Settings that describe the active source from the input device, and the video characteristics of that source. */
@@ -6950,15 +6950,15 @@ export namespace MyNS {
 
 
 	/** The source at the input device that is currently active. */
-	export enum InputDeviceActiveInput { HDMI = 0, SDI = 1 }
+	export enum InputDeviceActiveInput { HDMI = 'HDMI', SDI = 'SDI' }
 
 
 	/** The source to activate (use) from the input device. */
-	export enum InputDeviceConfiguredInput { AUTO = 0, HDMI = 1, SDI = 2 }
+	export enum InputDeviceConfiguredInput { AUTO = 'AUTO', HDMI = 'HDMI', SDI = 'SDI' }
 
 
 	/** The state of the input device. */
-	export enum InputDeviceState { IDLE = 0, STREAMING = 1 }
+	export enum InputDeviceState { IDLE = 'IDLE', STREAMING = 'STREAMING' }
 
 
 	/** The network settings for the input device. */
@@ -6989,11 +6989,11 @@ export namespace MyNS {
 
 
 	/** Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address. */
-	export enum InputDeviceIpScheme { STATIC = 0, DHCP = 1 }
+	export enum InputDeviceIpScheme { STATIC = 'STATIC', DHCP = 'DHCP' }
 
 
 	/** The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD". */
-	export enum InputDeviceType { HD = 0, UHD = 1 }
+	export enum InputDeviceType { HD = 'HD', UHD = 'UHD' }
 
 
 	/** Settings that describe the active source from the input device, and the video characteristics of that source. */
@@ -7359,7 +7359,7 @@ export namespace MyNS {
 
 
 	/** Thumbnail type. */
-	export enum ThumbnailType { UNSPECIFIED = 0, CURRENT_ACTIVE = 1 }
+	export enum ThumbnailType { UNSPECIFIED = 'UNSPECIFIED', CURRENT_ACTIVE = 'CURRENT_ACTIVE' }
 
 
 	/** Placeholder documentation for ListChannelsResponse */
@@ -7471,7 +7471,7 @@ export namespace MyNS {
 
 
 	/** The type of device transfer. INCOMING for an input device that is being transferred to you, OUTGOING for an input device that you are transferring to another AWS account. */
-	export enum InputDeviceTransferType { OUTGOING = 0, INCOMING = 1 }
+	export enum InputDeviceTransferType { OUTGOING = 'OUTGOING', INCOMING = 'INCOMING' }
 
 
 	/** Placeholder documentation for ListInputDevicesResponse */
@@ -8270,11 +8270,11 @@ export namespace MyNS {
 
 
 	/** Ac3 Lfe Filter */
-	export enum Ac3LfeFilter { DISABLED = 0, ENABLED = 1 }
+	export enum Ac3LfeFilter { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Ac3 Metadata Control */
-	export enum Ac3MetadataControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum Ac3MetadataControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Placeholder documentation for AcceptInputDeviceTransferRequest */
@@ -8292,11 +8292,11 @@ export namespace MyNS {
 
 
 	/** Audio Description Language Code Control */
-	export enum AudioDescriptionLanguageCodeControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum AudioDescriptionLanguageCodeControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Avail Blanking State */
-	export enum AvailBlankingState { DISABLED = 0, ENABLED = 1 }
+	export enum AvailBlankingState { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** A request to delete resources */
@@ -8400,19 +8400,19 @@ export namespace MyNS {
 
 
 	/** Blackout Slate Network End Blackout */
-	export enum BlackoutSlateNetworkEndBlackout { DISABLED = 0, ENABLED = 1 }
+	export enum BlackoutSlateNetworkEndBlackout { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Blackout Slate State */
-	export enum BlackoutSlateState { DISABLED = 0, ENABLED = 1 }
+	export enum BlackoutSlateState { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Burn In Outline Color */
-	export enum BurnInOutlineColor { BLACK = 0, BLUE = 1, GREEN = 2, RED = 3, WHITE = 4, YELLOW = 5 }
+	export enum BurnInOutlineColor { BLACK = 'BLACK', BLUE = 'BLUE', GREEN = 'GREEN', RED = 'RED', WHITE = 'WHITE', YELLOW = 'YELLOW' }
 
 
 	/** Burn In Shadow Color */
-	export enum BurnInShadowColor { BLACK = 0, NONE = 1, WHITE = 2 }
+	export enum BurnInShadowColor { BLACK = 'BLACK', NONE = 'NONE', WHITE = 'WHITE' }
 
 
 	/** Placeholder documentation for CancelInputDeviceTransferRequest */
@@ -8848,7 +8848,7 @@ export namespace MyNS {
 
 
 	/** The HTTP Accept header. Indicates the requested type fothe thumbnail. */
-	export enum AcceptHeader { 'image/jpeg' = 0 }
+	export enum AcceptHeader { 'image/jpeg' = 'image/jpeg' }
 
 
 	/** Placeholder documentation for DescribeInputDeviceThumbnailRequest */
@@ -8866,7 +8866,7 @@ export namespace MyNS {
 
 
 	/** Specifies the media type of the thumbnail. */
-	export enum ContentType { 'image/jpeg' = 0 }
+	export enum ContentType { 'image/jpeg' = 'image/jpeg' }
 
 
 	/** Placeholder documentation for DescribeInputRequest */
@@ -8884,7 +8884,7 @@ export namespace MyNS {
 
 
 	/** A standard input has two sources and a single pipeline input only has one. */
-	export enum InputClass { STANDARD = 0, SINGLE_PIPELINE = 1 }
+	export enum InputClass { STANDARD = 'STANDARD', SINGLE_PIPELINE = 'SINGLE_PIPELINE' }
 
 
 	/** Placeholder documentation for DescribeInputSecurityGroupRequest */
@@ -8972,71 +8972,71 @@ export namespace MyNS {
 
 
 	/** Dvb Sub Destination Alignment */
-	export enum DvbSubDestinationAlignment { CENTERED = 0, LEFT = 1, SMART = 2 }
+	export enum DvbSubDestinationAlignment { CENTERED = 'CENTERED', LEFT = 'LEFT', SMART = 'SMART' }
 
 
 	/** Dvb Sub Destination Background Color */
-	export enum DvbSubDestinationBackgroundColor { BLACK = 0, NONE = 1, WHITE = 2 }
+	export enum DvbSubDestinationBackgroundColor { BLACK = 'BLACK', NONE = 'NONE', WHITE = 'WHITE' }
 
 
 	/** Dvb Sub Destination Font Color */
-	export enum DvbSubDestinationFontColor { BLACK = 0, BLUE = 1, GREEN = 2, RED = 3, WHITE = 4, YELLOW = 5 }
+	export enum DvbSubDestinationFontColor { BLACK = 'BLACK', BLUE = 'BLUE', GREEN = 'GREEN', RED = 'RED', WHITE = 'WHITE', YELLOW = 'YELLOW' }
 
 
 	/** Dvb Sub Destination Outline Color */
-	export enum DvbSubDestinationOutlineColor { BLACK = 0, BLUE = 1, GREEN = 2, RED = 3, WHITE = 4, YELLOW = 5 }
+	export enum DvbSubDestinationOutlineColor { BLACK = 'BLACK', BLUE = 'BLUE', GREEN = 'GREEN', RED = 'RED', WHITE = 'WHITE', YELLOW = 'YELLOW' }
 
 
 	/** Dvb Sub Destination Shadow Color */
-	export enum DvbSubDestinationShadowColor { BLACK = 0, NONE = 1, WHITE = 2 }
+	export enum DvbSubDestinationShadowColor { BLACK = 'BLACK', NONE = 'NONE', WHITE = 'WHITE' }
 
 
 	/** Dvb Sub Destination Teletext Grid Control */
-	export enum DvbSubDestinationTeletextGridControl { FIXED = 0, SCALED = 1 }
+	export enum DvbSubDestinationTeletextGridControl { FIXED = 'FIXED', SCALED = 'SCALED' }
 
 
 	/** Eac3 Atmos Drc Rf */
-	export enum Eac3AtmosDrcRf { FILM_LIGHT = 0, FILM_STANDARD = 1, MUSIC_LIGHT = 2, MUSIC_STANDARD = 3, NONE = 4, SPEECH = 5 }
+	export enum Eac3AtmosDrcRf { FILM_LIGHT = 'FILM_LIGHT', FILM_STANDARD = 'FILM_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', NONE = 'NONE', SPEECH = 'SPEECH' }
 
 
 	/** Eac3 Dc Filter */
-	export enum Eac3DcFilter { DISABLED = 0, ENABLED = 1 }
+	export enum Eac3DcFilter { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Eac3 Drc Line */
-	export enum Eac3DrcLine { FILM_LIGHT = 0, FILM_STANDARD = 1, MUSIC_LIGHT = 2, MUSIC_STANDARD = 3, NONE = 4, SPEECH = 5 }
+	export enum Eac3DrcLine { FILM_LIGHT = 'FILM_LIGHT', FILM_STANDARD = 'FILM_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', NONE = 'NONE', SPEECH = 'SPEECH' }
 
 
 	/** Eac3 Drc Rf */
-	export enum Eac3DrcRf { FILM_LIGHT = 0, FILM_STANDARD = 1, MUSIC_LIGHT = 2, MUSIC_STANDARD = 3, NONE = 4, SPEECH = 5 }
+	export enum Eac3DrcRf { FILM_LIGHT = 'FILM_LIGHT', FILM_STANDARD = 'FILM_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', NONE = 'NONE', SPEECH = 'SPEECH' }
 
 
 	/** Eac3 Lfe Filter */
-	export enum Eac3LfeFilter { DISABLED = 0, ENABLED = 1 }
+	export enum Eac3LfeFilter { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Eac3 Metadata Control */
-	export enum Eac3MetadataControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum Eac3MetadataControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Eac3 Surround Mode */
-	export enum Eac3SurroundMode { DISABLED = 0, ENABLED = 1, NOT_INDICATED = 2 }
+	export enum Eac3SurroundMode { DISABLED = 'DISABLED', ENABLED = 'ENABLED', NOT_INDICATED = 'NOT_INDICATED' }
 
 
 	/** Ebu Tt DFill Line Gap Control */
-	export enum EbuTtDFillLineGapControl { DISABLED = 0, ENABLED = 1 }
+	export enum EbuTtDFillLineGapControl { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Feature Activations Input Prepare Schedule Actions */
-	export enum FeatureActivationsInputPrepareScheduleActions { DISABLED = 0, ENABLED = 1 }
+	export enum FeatureActivationsInputPrepareScheduleActions { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Fmp4 Nielsen Id3 Behavior */
-	export enum Fmp4NielsenId3Behavior { NO_PASSTHROUGH = 0, PASSTHROUGH = 1 }
+	export enum Fmp4NielsenId3Behavior { NO_PASSTHROUGH = 'NO_PASSTHROUGH', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** Fmp4 Timed Metadata Behavior */
-	export enum Fmp4TimedMetadataBehavior { NO_PASSTHROUGH = 0, PASSTHROUGH = 1 }
+	export enum Fmp4TimedMetadataBehavior { NO_PASSTHROUGH = 'NO_PASSTHROUGH', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** Placeholder documentation for DescribeAccountConfigurationRequest */
@@ -9068,103 +9068,103 @@ export namespace MyNS {
 
 
 	/** Global Configuration Low Framerate Inputs */
-	export enum GlobalConfigurationLowFramerateInputs { DISABLED = 0, ENABLED = 1 }
+	export enum GlobalConfigurationLowFramerateInputs { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H264 Flicker Aq */
-	export enum H264FlickerAq { DISABLED = 0, ENABLED = 1 }
+	export enum H264FlickerAq { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H264 Force Field Pictures */
-	export enum H264ForceFieldPictures { DISABLED = 0, ENABLED = 1 }
+	export enum H264ForceFieldPictures { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H264 Gop BReference */
-	export enum H264GopBReference { DISABLED = 0, ENABLED = 1 }
+	export enum H264GopBReference { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H264 Par Control */
-	export enum H264ParControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum H264ParControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** H264 Scene Change Detect */
-	export enum H264SceneChangeDetect { DISABLED = 0, ENABLED = 1 }
+	export enum H264SceneChangeDetect { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H264 Spatial Aq */
-	export enum H264SpatialAq { DISABLED = 0, ENABLED = 1 }
+	export enum H264SpatialAq { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H264 Temporal Aq */
-	export enum H264TemporalAq { DISABLED = 0, ENABLED = 1 }
+	export enum H264TemporalAq { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H265 Adaptive Quantization */
-	export enum H265AdaptiveQuantization { AUTO = 0, HIGH = 1, HIGHER = 2, LOW = 3, MAX = 4, MEDIUM = 5, OFF = 6 }
+	export enum H265AdaptiveQuantization { AUTO = 'AUTO', HIGH = 'HIGH', HIGHER = 'HIGHER', LOW = 'LOW', MAX = 'MAX', MEDIUM = 'MEDIUM', OFF = 'OFF' }
 
 
 	/** H265 Color Metadata */
-	export enum H265ColorMetadata { IGNORE = 0, INSERT = 1 }
+	export enum H265ColorMetadata { IGNORE = 'IGNORE', INSERT = 'INSERT' }
 
 
 	/** H265 Flicker Aq */
-	export enum H265FlickerAq { DISABLED = 0, ENABLED = 1 }
+	export enum H265FlickerAq { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H265 Gop Size Units */
-	export enum H265GopSizeUnits { FRAMES = 0, SECONDS = 1 }
+	export enum H265GopSizeUnits { FRAMES = 'FRAMES', SECONDS = 'SECONDS' }
 
 
 	/** H265 Look Ahead Rate Control */
-	export enum H265LookAheadRateControl { HIGH = 0, LOW = 1, MEDIUM = 2 }
+	export enum H265LookAheadRateControl { HIGH = 'HIGH', LOW = 'LOW', MEDIUM = 'MEDIUM' }
 
 
 	/** H265 Scan Type */
-	export enum H265ScanType { INTERLACED = 0, PROGRESSIVE = 1 }
+	export enum H265ScanType { INTERLACED = 'INTERLACED', PROGRESSIVE = 'PROGRESSIVE' }
 
 
 	/** H265 Scene Change Detect */
-	export enum H265SceneChangeDetect { DISABLED = 0, ENABLED = 1 }
+	export enum H265SceneChangeDetect { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** H265 Timecode Insertion Behavior */
-	export enum H265TimecodeInsertionBehavior { DISABLED = 0, PIC_TIMING_SEI = 1 }
+	export enum H265TimecodeInsertionBehavior { DISABLED = 'DISABLED', PIC_TIMING_SEI = 'PIC_TIMING_SEI' }
 
 
 	/** Hls Client Cache */
-	export enum HlsClientCache { DISABLED = 0, ENABLED = 1 }
+	export enum HlsClientCache { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** State of HLS ID3 Segment Tagging */
-	export enum HlsId3SegmentTaggingState { DISABLED = 0, ENABLED = 1 }
+	export enum HlsId3SegmentTaggingState { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Hls Iv In Manifest */
-	export enum HlsIvInManifest { EXCLUDE = 0, INCLUDE = 1 }
+	export enum HlsIvInManifest { EXCLUDE = 'EXCLUDE', INCLUDE = 'INCLUDE' }
 
 
 	/** Hls Program Date Time */
-	export enum HlsProgramDateTime { EXCLUDE = 0, INCLUDE = 1 }
+	export enum HlsProgramDateTime { EXCLUDE = 'EXCLUDE', INCLUDE = 'INCLUDE' }
 
 
 	/** Hls Redundant Manifest */
-	export enum HlsRedundantManifest { DISABLED = 0, ENABLED = 1 }
+	export enum HlsRedundantManifest { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Hls Stream Inf Resolution */
-	export enum HlsStreamInfResolution { EXCLUDE = 0, INCLUDE = 1 }
+	export enum HlsStreamInfResolution { EXCLUDE = 'EXCLUDE', INCLUDE = 'INCLUDE' }
 
 
 	/** Hls Webdav Http Transfer Mode */
-	export enum HlsWebdavHttpTransferMode { CHUNKED = 0, NON_CHUNKED = 1 }
+	export enum HlsWebdavHttpTransferMode { CHUNKED = 'CHUNKED', NON_CHUNKED = 'NON_CHUNKED' }
 
 
 	/** Input Deblock Filter */
-	export enum InputDeblockFilter { DISABLED = 0, ENABLED = 1 }
+	export enum InputDeblockFilter { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Input Denoise Filter */
-	export enum InputDenoiseFilter { DISABLED = 0, ENABLED = 1 }
+	export enum InputDenoiseFilter { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Configurable settings for the input device. */
@@ -9191,15 +9191,15 @@ export namespace MyNS {
 
 
 	/** The scan type of the video source. */
-	export enum InputDeviceScanType { INTERLACED = 0, PROGRESSIVE = 1 }
+	export enum InputDeviceScanType { INTERLACED = 'INTERLACED', PROGRESSIVE = 'PROGRESSIVE' }
 
 
 	/** Input Loss Action For Ms Smooth Out */
-	export enum InputLossActionForMsSmoothOut { EMIT_OUTPUT = 0, PAUSE_OUTPUT = 1 }
+	export enum InputLossActionForMsSmoothOut { EMIT_OUTPUT = 'EMIT_OUTPUT', PAUSE_OUTPUT = 'PAUSE_OUTPUT' }
 
 
 	/** Input Loss Action For Rtmp Out */
-	export enum InputLossActionForRtmpOut { EMIT_OUTPUT = 0, PAUSE_OUTPUT = 1 }
+	export enum InputLossActionForRtmpOut { EMIT_OUTPUT = 'EMIT_OUTPUT', PAUSE_OUTPUT = 'PAUSE_OUTPUT' }
 
 
 	/** Placeholder documentation for ListChannelsRequest */
@@ -9343,51 +9343,51 @@ export namespace MyNS {
 
 
 	/** M2ts Arib */
-	export enum M2tsArib { DISABLED = 0, ENABLED = 1 }
+	export enum M2tsArib { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** M2ts Audio Stream Type */
-	export enum M2tsAudioStreamType { ATSC = 0, DVB = 1 }
+	export enum M2tsAudioStreamType { ATSC = 'ATSC', DVB = 'DVB' }
 
 
 	/** M2ts Cc Descriptor */
-	export enum M2tsCcDescriptor { DISABLED = 0, ENABLED = 1 }
+	export enum M2tsCcDescriptor { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** M2ts Es Rate In Pes */
-	export enum M2tsEsRateInPes { EXCLUDE = 0, INCLUDE = 1 }
+	export enum M2tsEsRateInPes { EXCLUDE = 'EXCLUDE', INCLUDE = 'INCLUDE' }
 
 
 	/** M2ts Klv */
-	export enum M2tsKlv { NONE = 0, PASSTHROUGH = 1 }
+	export enum M2tsKlv { NONE = 'NONE', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** M2ts Rate Mode */
-	export enum M2tsRateMode { CBR = 0, VBR = 1 }
+	export enum M2tsRateMode { CBR = 'CBR', VBR = 'VBR' }
 
 
 	/** M2ts Scte35 Control */
-	export enum M2tsScte35Control { NONE = 0, PASSTHROUGH = 1 }
+	export enum M2tsScte35Control { NONE = 'NONE', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** M2ts Timed Metadata Behavior */
-	export enum M2tsTimedMetadataBehavior { NO_PASSTHROUGH = 0, PASSTHROUGH = 1 }
+	export enum M2tsTimedMetadataBehavior { NO_PASSTHROUGH = 'NO_PASSTHROUGH', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** M3u8 Nielsen Id3 Behavior */
-	export enum M3u8NielsenId3Behavior { NO_PASSTHROUGH = 0, PASSTHROUGH = 1 }
+	export enum M3u8NielsenId3Behavior { NO_PASSTHROUGH = 'NO_PASSTHROUGH', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** M3u8 Pcr Control */
-	export enum M3u8PcrControl { CONFIGURED_PCR_PERIOD = 0, PCR_EVERY_PES_PACKET = 1 }
+	export enum M3u8PcrControl { CONFIGURED_PCR_PERIOD = 'CONFIGURED_PCR_PERIOD', PCR_EVERY_PES_PACKET = 'PCR_EVERY_PES_PACKET' }
 
 
 	/** M3u8 Scte35 Behavior */
-	export enum M3u8Scte35Behavior { NO_PASSTHROUGH = 0, PASSTHROUGH = 1 }
+	export enum M3u8Scte35Behavior { NO_PASSTHROUGH = 'NO_PASSTHROUGH', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** M3u8 Timed Metadata Behavior */
-	export enum M3u8TimedMetadataBehavior { NO_PASSTHROUGH = 0, PASSTHROUGH = 1 }
+	export enum M3u8TimedMetadataBehavior { NO_PASSTHROUGH = 'NO_PASSTHROUGH', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** Placeholder documentation for MaintenanceUpdateSettings */
@@ -9414,35 +9414,35 @@ export namespace MyNS {
 
 
 	/** Motion Graphics Insertion */
-	export enum MotionGraphicsInsertion { DISABLED = 0, ENABLED = 1 }
+	export enum MotionGraphicsInsertion { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Mpeg2 Color Metadata */
-	export enum Mpeg2ColorMetadata { IGNORE = 0, INSERT = 1 }
+	export enum Mpeg2ColorMetadata { IGNORE = 'IGNORE', INSERT = 'INSERT' }
 
 
 	/** Mpeg2 Gop Size Units */
-	export enum Mpeg2GopSizeUnits { FRAMES = 0, SECONDS = 1 }
+	export enum Mpeg2GopSizeUnits { FRAMES = 'FRAMES', SECONDS = 'SECONDS' }
 
 
 	/** Mpeg2 Scan Type */
-	export enum Mpeg2ScanType { INTERLACED = 0, PROGRESSIVE = 1 }
+	export enum Mpeg2ScanType { INTERLACED = 'INTERLACED', PROGRESSIVE = 'PROGRESSIVE' }
 
 
 	/** Mpeg2 Sub Gop Length */
-	export enum Mpeg2SubGopLength { DYNAMIC = 0, FIXED = 1 }
+	export enum Mpeg2SubGopLength { DYNAMIC = 'DYNAMIC', FIXED = 'FIXED' }
 
 
 	/** Smooth Group Segmentation Mode */
-	export enum SmoothGroupSegmentationMode { USE_INPUT_SEGMENTATION = 0, USE_SEGMENT_DURATION = 1 }
+	export enum SmoothGroupSegmentationMode { USE_INPUT_SEGMENTATION = 'USE_INPUT_SEGMENTATION', USE_SEGMENT_DURATION = 'USE_SEGMENT_DURATION' }
 
 
 	/** Ms Smooth H265 Packaging Type */
-	export enum MsSmoothH265PackagingType { HEV1 = 0, HVC1 = 1 }
+	export enum MsSmoothH265PackagingType { HEV1 = 'HEV1', HVC1 = 'HVC1' }
 
 
 	/** State of Nielsen PCM to ID3 tagging */
-	export enum NielsenPcmToId3TaggingState { DISABLED = 0, ENABLED = 1 }
+	export enum NielsenPcmToId3TaggingState { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Placeholder documentation for PurchaseOfferingRequest */
@@ -9478,7 +9478,7 @@ export namespace MyNS {
 
 
 	/** Whether or not to force reboot the input device. */
-	export enum RebootInputDeviceForce { NO = 0, YES = 1 }
+	export enum RebootInputDeviceForce { NO = 'NO', YES = 'YES' }
 
 
 	/** A request to reboot an AWS Elemental device. */
@@ -9513,37 +9513,37 @@ export namespace MyNS {
 
 
 	/** Maximum bitrate in megabits per second */
-	export enum ReservationMaximumBitrate { MAX_10_MBPS = 0, MAX_20_MBPS = 1, MAX_50_MBPS = 2 }
+	export enum ReservationMaximumBitrate { MAX_10_MBPS = 'MAX_10_MBPS', MAX_20_MBPS = 'MAX_20_MBPS', MAX_50_MBPS = 'MAX_50_MBPS' }
 
 
 	/**
 	 * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines
 	 */
-	export enum ReservationResolution { SD = 0, HD = 1, FHD = 2, UHD = 3 }
+	export enum ReservationResolution { SD = 'SD', HD = 'HD', FHD = 'FHD', UHD = 'UHD' }
 
 
 	/** Rtmp Output Certificate Mode */
-	export enum RtmpOutputCertificateMode { SELF_SIGNED = 0, VERIFY_AUTHENTICITY = 1 }
+	export enum RtmpOutputCertificateMode { SELF_SIGNED = 'SELF_SIGNED', VERIFY_AUTHENTICITY = 'VERIFY_AUTHENTICITY' }
 
 
 	/** Scte20 Convert608 To708 */
-	export enum Scte20Convert608To708 { DISABLED = 0, UPCONVERT = 1 }
+	export enum Scte20Convert608To708 { DISABLED = 'DISABLED', UPCONVERT = 'UPCONVERT' }
 
 
 	/** Scte27 Ocr Language */
-	export enum Scte27OcrLanguage { DEU = 0, ENG = 1, FRA = 2, NLD = 3, POR = 4, SPA = 5 }
+	export enum Scte27OcrLanguage { DEU = 'DEU', ENG = 'ENG', FRA = 'FRA', NLD = 'NLD', POR = 'POR', SPA = 'SPA' }
 
 
 	/** Scte35 Apos No Regional Blackout Behavior */
-	export enum Scte35AposNoRegionalBlackoutBehavior { FOLLOW = 0, IGNORE = 1 }
+	export enum Scte35AposNoRegionalBlackoutBehavior { FOLLOW = 'FOLLOW', IGNORE = 'IGNORE' }
 
 
 	/** Scte35 Apos Web Delivery Allowed Behavior */
-	export enum Scte35AposWebDeliveryAllowedBehavior { FOLLOW = 0, IGNORE = 1 }
+	export enum Scte35AposWebDeliveryAllowedBehavior { FOLLOW = 'FOLLOW', IGNORE = 'IGNORE' }
 
 
 	/** Scte35 Splice Insert Web Delivery Allowed Behavior */
-	export enum Scte35SpliceInsertWebDeliveryAllowedBehavior { FOLLOW = 0, IGNORE = 1 }
+	export enum Scte35SpliceInsertWebDeliveryAllowedBehavior { FOLLOW = 'FOLLOW', IGNORE = 'IGNORE' }
 
 
 	/** List of account configuration parameters to update. */
@@ -9655,7 +9655,7 @@ export namespace MyNS {
 
 
 	/** Udp Timed Metadata Id3 Frame */
-	export enum UdpTimedMetadataId3Frame { NONE = 0, PRIV = 1, TDRL = 2 }
+	export enum UdpTimedMetadataId3Frame { NONE = 'NONE', PRIV = 'PRIV', TDRL = 'TDRL' }
 
 
 	/** Channel class that the channel should be updated to. */

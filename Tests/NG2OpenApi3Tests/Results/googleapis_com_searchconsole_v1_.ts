@@ -69,9 +69,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AmpInspectionResultAmpIndexStatusVerdict { VERDICT_UNSPECIFIED = 0, PASS = 1, PARTIAL = 2, FAIL = 3, NEUTRAL = 4 }
+	export enum AmpInspectionResultAmpIndexStatusVerdict { VERDICT_UNSPECIFIED = 'VERDICT_UNSPECIFIED', PASS = 'PASS', PARTIAL = 'PARTIAL', FAIL = 'FAIL', NEUTRAL = 'NEUTRAL' }
 
-	export enum AmpInspectionResultIndexingState { AMP_INDEXING_STATE_UNSPECIFIED = 0, AMP_INDEXING_ALLOWED = 1, BLOCKED_DUE_TO_NOINDEX = 2, BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER = 3 }
+	export enum AmpInspectionResultIndexingState { AMP_INDEXING_STATE_UNSPECIFIED = 'AMP_INDEXING_STATE_UNSPECIFIED', AMP_INDEXING_ALLOWED = 'AMP_INDEXING_ALLOWED', BLOCKED_DUE_TO_NOINDEX = 'BLOCKED_DUE_TO_NOINDEX', BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER = 'BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER' }
 
 
 	/** AMP issue. */
@@ -101,11 +101,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AmpIssueSeverity { SEVERITY_UNSPECIFIED = 0, WARNING = 1, ERROR = 2 }
+	export enum AmpIssueSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', WARNING = 'WARNING', ERROR = 'ERROR' }
 
-	export enum AmpInspectionResultPageFetchState { PAGE_FETCH_STATE_UNSPECIFIED = 0, SUCCESSFUL = 1, SOFT_404 = 2, BLOCKED_ROBOTS_TXT = 3, NOT_FOUND = 4, ACCESS_DENIED = 5, SERVER_ERROR = 6, REDIRECT_ERROR = 7, ACCESS_FORBIDDEN = 8, BLOCKED_4XX = 9, INTERNAL_CRAWL_ERROR = 10, INVALID_URL = 11 }
+	export enum AmpInspectionResultPageFetchState { PAGE_FETCH_STATE_UNSPECIFIED = 'PAGE_FETCH_STATE_UNSPECIFIED', SUCCESSFUL = 'SUCCESSFUL', SOFT_404 = 'SOFT_404', BLOCKED_ROBOTS_TXT = 'BLOCKED_ROBOTS_TXT', NOT_FOUND = 'NOT_FOUND', ACCESS_DENIED = 'ACCESS_DENIED', SERVER_ERROR = 'SERVER_ERROR', REDIRECT_ERROR = 'REDIRECT_ERROR', ACCESS_FORBIDDEN = 'ACCESS_FORBIDDEN', BLOCKED_4XX = 'BLOCKED_4XX', INTERNAL_CRAWL_ERROR = 'INTERNAL_CRAWL_ERROR', INVALID_URL = 'INVALID_URL' }
 
-	export enum AmpInspectionResultRobotsTxtState { ROBOTS_TXT_STATE_UNSPECIFIED = 0, ALLOWED = 1, DISALLOWED = 2 }
+	export enum AmpInspectionResultRobotsTxtState { ROBOTS_TXT_STATE_UNSPECIFIED = 'ROBOTS_TXT_STATE_UNSPECIFIED', ALLOWED = 'ALLOWED', DISALLOWED = 'DISALLOWED' }
 
 	export interface ApiDataRow {
 		clicks?: number | null;
@@ -153,9 +153,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiDimensionFilterDimension { QUERY = 0, PAGE = 1, COUNTRY = 2, DEVICE = 3, SEARCH_APPEARANCE = 4 }
+	export enum ApiDimensionFilterDimension { QUERY = 'QUERY', PAGE = 'PAGE', COUNTRY = 'COUNTRY', DEVICE = 'DEVICE', SEARCH_APPEARANCE = 'SEARCH_APPEARANCE' }
 
-	export enum ApiDimensionFilterOperator { EQUALS = 0, NOT_EQUALS = 1, CONTAINS = 2, NOT_CONTAINS = 3, INCLUDING_REGEX = 4, EXCLUDING_REGEX = 5 }
+	export enum ApiDimensionFilterOperator { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS', INCLUDING_REGEX = 'INCLUDING_REGEX', EXCLUDING_REGEX = 'EXCLUDING_REGEX' }
 
 
 	/** A set of dimension value filters to test against each row. Only rows that pass all filter groups will be returned. All results within a filter group are either AND'ed or OR'ed together, depending on the group type selected. All filter groups are AND'ed together. */
@@ -175,7 +175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiDimensionFilterGroupGroupType { AND = 0 }
+	export enum ApiDimensionFilterGroupGroupType { AND = 'AND' }
 
 
 	/** Blocked resource. */
@@ -385,9 +385,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexStatusInspectionResultCrawledAs { CRAWLING_USER_AGENT_UNSPECIFIED = 0, DESKTOP = 1, MOBILE = 2 }
+	export enum IndexStatusInspectionResultCrawledAs { CRAWLING_USER_AGENT_UNSPECIFIED = 'CRAWLING_USER_AGENT_UNSPECIFIED', DESKTOP = 'DESKTOP', MOBILE = 'MOBILE' }
 
-	export enum IndexStatusInspectionResultIndexingState { INDEXING_STATE_UNSPECIFIED = 0, INDEXING_ALLOWED = 1, BLOCKED_BY_META_TAG = 2, BLOCKED_BY_HTTP_HEADER = 3, BLOCKED_BY_ROBOTS_TXT = 4 }
+	export enum IndexStatusInspectionResultIndexingState { INDEXING_STATE_UNSPECIFIED = 'INDEXING_STATE_UNSPECIFIED', INDEXING_ALLOWED = 'INDEXING_ALLOWED', BLOCKED_BY_META_TAG = 'BLOCKED_BY_META_TAG', BLOCKED_BY_HTTP_HEADER = 'BLOCKED_BY_HTTP_HEADER', BLOCKED_BY_ROBOTS_TXT = 'BLOCKED_BY_ROBOTS_TXT' }
 
 
 	/** Index inspection request. */
@@ -533,7 +533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MobileUsabilityIssueIssueType { MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED = 0, USES_INCOMPATIBLE_PLUGINS = 1, CONFIGURE_VIEWPORT = 2, FIXED_WIDTH_VIEWPORT = 3, SIZE_CONTENT_TO_VIEWPORT = 4, USE_LEGIBLE_FONT_SIZES = 5, TAP_TARGETS_TOO_CLOSE = 6 }
+	export enum MobileUsabilityIssueIssueType { MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED = 'MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED', USES_INCOMPATIBLE_PLUGINS = 'USES_INCOMPATIBLE_PLUGINS', CONFIGURE_VIEWPORT = 'CONFIGURE_VIEWPORT', FIXED_WIDTH_VIEWPORT = 'FIXED_WIDTH_VIEWPORT', SIZE_CONTENT_TO_VIEWPORT = 'SIZE_CONTENT_TO_VIEWPORT', USE_LEGIBLE_FONT_SIZES = 'USE_LEGIBLE_FONT_SIZES', TAP_TARGETS_TOO_CLOSE = 'TAP_TARGETS_TOO_CLOSE' }
 
 
 	/** Rich-Results inspection result, including any rich results found at this URL. */
@@ -580,7 +580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MobileFriendlyIssueRule { MOBILE_FRIENDLY_RULE_UNSPECIFIED = 0, USES_INCOMPATIBLE_PLUGINS = 1, CONFIGURE_VIEWPORT = 2, FIXED_WIDTH_VIEWPORT = 3, SIZE_CONTENT_TO_VIEWPORT = 4, USE_LEGIBLE_FONT_SIZES = 5, TAP_TARGETS_TOO_CLOSE = 6 }
+	export enum MobileFriendlyIssueRule { MOBILE_FRIENDLY_RULE_UNSPECIFIED = 'MOBILE_FRIENDLY_RULE_UNSPECIFIED', USES_INCOMPATIBLE_PLUGINS = 'USES_INCOMPATIBLE_PLUGINS', CONFIGURE_VIEWPORT = 'CONFIGURE_VIEWPORT', FIXED_WIDTH_VIEWPORT = 'FIXED_WIDTH_VIEWPORT', SIZE_CONTENT_TO_VIEWPORT = 'SIZE_CONTENT_TO_VIEWPORT', USE_LEGIBLE_FONT_SIZES = 'USE_LEGIBLE_FONT_SIZES', TAP_TARGETS_TOO_CLOSE = 'TAP_TARGETS_TOO_CLOSE' }
 
 
 	/** Information about a resource with issue. */
@@ -660,7 +660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunMobileFriendlyTestResponseMobileFriendliness { MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED = 0, MOBILE_FRIENDLY = 1, NOT_MOBILE_FRIENDLY = 2 }
+	export enum RunMobileFriendlyTestResponseMobileFriendliness { MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED = 'MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED', MOBILE_FRIENDLY = 'MOBILE_FRIENDLY', NOT_MOBILE_FRIENDLY = 'NOT_MOBILE_FRIENDLY' }
 
 
 	/** Final state of the test, including error details if necessary. */
@@ -690,7 +690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestStatusStatus { TEST_STATUS_UNSPECIFIED = 0, COMPLETE = 1, INTERNAL_ERROR = 2, PAGE_UNREACHABLE = 3 }
+	export enum TestStatusStatus { TEST_STATUS_UNSPECIFIED = 'TEST_STATUS_UNSPECIFIED', COMPLETE = 'COMPLETE', INTERNAL_ERROR = 'INTERNAL_ERROR', PAGE_UNREACHABLE = 'PAGE_UNREACHABLE' }
 
 	export interface SearchAnalyticsQueryRequest {
 
@@ -764,11 +764,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchAnalyticsQueryRequestAggregationType { AUTO = 0, BY_PROPERTY = 1, BY_PAGE = 2, BY_NEWS_SHOWCASE_PANEL = 3 }
+	export enum SearchAnalyticsQueryRequestAggregationType { AUTO = 'AUTO', BY_PROPERTY = 'BY_PROPERTY', BY_PAGE = 'BY_PAGE', BY_NEWS_SHOWCASE_PANEL = 'BY_NEWS_SHOWCASE_PANEL' }
 
-	export enum SearchAnalyticsQueryRequestDataState { DATA_STATE_UNSPECIFIED = 0, FINAL = 1, ALL = 2 }
+	export enum SearchAnalyticsQueryRequestDataState { DATA_STATE_UNSPECIFIED = 'DATA_STATE_UNSPECIFIED', FINAL = 'FINAL', ALL = 'ALL' }
 
-	export enum SearchAnalyticsQueryRequestSearchType { WEB = 0, IMAGE = 1, VIDEO = 2, NEWS = 3, DISCOVER = 4, GOOGLE_NEWS = 5 }
+	export enum SearchAnalyticsQueryRequestSearchType { WEB = 'WEB', IMAGE = 'IMAGE', VIDEO = 'VIDEO', NEWS = 'NEWS', DISCOVER = 'DISCOVER', GOOGLE_NEWS = 'GOOGLE_NEWS' }
 
 
 	/** A list of rows, one per result, grouped by key. Metrics in each row are aggregated for all data grouped by that key either by page or property, as specified by the aggregation type parameter. */
@@ -919,9 +919,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WmxSitemapContentType { WEB = 0, IMAGE = 1, VIDEO = 2, NEWS = 3, MOBILE = 4, ANDROID_APP = 5, PATTERN = 6, IOS_APP = 7, DATA_FEED_ELEMENT = 8 }
+	export enum WmxSitemapContentType { WEB = 'WEB', IMAGE = 'IMAGE', VIDEO = 'VIDEO', NEWS = 'NEWS', MOBILE = 'MOBILE', ANDROID_APP = 'ANDROID_APP', PATTERN = 'PATTERN', IOS_APP = 'IOS_APP', DATA_FEED_ELEMENT = 'DATA_FEED_ELEMENT' }
 
-	export enum WmxSitemapType { NOT_SITEMAP = 0, URL_LIST = 1, SITEMAP = 2, RSS_FEED = 3, ATOM_FEED = 4, PATTERN_SITEMAP = 5, OCEANFRONT = 6 }
+	export enum WmxSitemapType { NOT_SITEMAP = 'NOT_SITEMAP', URL_LIST = 'URL_LIST', SITEMAP = 'SITEMAP', RSS_FEED = 'RSS_FEED', ATOM_FEED = 'ATOM_FEED', PATTERN_SITEMAP = 'PATTERN_SITEMAP', OCEANFRONT = 'OCEANFRONT' }
 
 
 	/** List of sites with access level information. */
@@ -968,7 +968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WmxSitePermissionLevel { SITE_PERMISSION_LEVEL_UNSPECIFIED = 0, SITE_OWNER = 1, SITE_FULL_USER = 2, SITE_RESTRICTED_USER = 3, SITE_UNVERIFIED_USER = 4 }
+	export enum WmxSitePermissionLevel { SITE_PERMISSION_LEVEL_UNSPECIFIED = 'SITE_PERMISSION_LEVEL_UNSPECIFIED', SITE_OWNER = 'SITE_OWNER', SITE_FULL_USER = 'SITE_FULL_USER', SITE_RESTRICTED_USER = 'SITE_RESTRICTED_USER', SITE_UNVERIFIED_USER = 'SITE_UNVERIFIED_USER' }
 
 	@Injectable()
 	export class MyClient {

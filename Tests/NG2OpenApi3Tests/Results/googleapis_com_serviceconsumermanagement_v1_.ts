@@ -287,7 +287,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MethodSyntax { SYNTAX_PROTO2 = 0, SYNTAX_PROTO3 = 1, SYNTAX_EDITIONS = 2 }
+	export enum MethodSyntax { SYNTAX_PROTO2 = 'SYNTAX_PROTO2', SYNTAX_PROTO3 = 'SYNTAX_PROTO3', SYNTAX_EDITIONS = 'SYNTAX_EDITIONS' }
 
 
 	/** Declares an API Interface to be included in this interface. The including interface must redeclare all the methods from the included interface, but documentation and options are inherited as follows: - If after comment and whitespace stripping, the documentation string of the redeclared method is empty, it will be inherited from the original method. - Each annotation belonging to the service config (http, visibility) which is not set in the redeclared method will be inherited. - If an http annotation is inherited, the path pattern will be modified as follows. Any version prefix will be replaced by the version of the including interface plus the root path if specified. Example of a simple mixin: package google.acl.v1; service AccessControl { // Get the underlying ACL object. rpc GetAcl(GetAclRequest) returns (Acl) { option (google.api.http).get = "/v1/{resource=**}:getAcl"; } } package google.storage.v2; service Storage { // rpc GetAcl(GetAclRequest) returns (Acl); // Get a data record. rpc GetData(GetDataRequest) returns (Data) { option (google.api.http).get = "/v2/{resource=**}"; } } Example of a mixin configuration: apis: - name: google.storage.v2.Storage mixins: - name: google.acl.v1.AccessControl The mixin construct implies that all methods in `AccessControl` are also declared with same name and request/response types in `Storage`. A documentation generator or annotation processor will see the effective `Storage.GetAcl` method after inherting documentation and annotations as follows: service Storage { // Get the underlying ACL object. rpc GetAcl(GetAclRequest) returns (Acl) { option (google.api.http).get = "/v2/{resource=**}:getAcl"; } ... } Note how the version in the path pattern changed from `v1` to `v2`. If the `root` field in the mixin is specified, it should be a relative path under which inherited HTTP paths are placed. Example: apis: - name: google.storage.v2.Storage mixins: - name: google.acl.v1.AccessControl root: acls This implies the following inherited HTTP annotation: service Storage { // Get the underlying ACL object. rpc GetAcl(GetAclRequest) returns (Acl) { option (google.api.http).get = "/v2/acls/{resource=**}:getAcl"; } ... } */
@@ -691,7 +691,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendRulePathTranslation { PATH_TRANSLATION_UNSPECIFIED = 0, CONSTANT_ADDRESS = 1, APPEND_PATH_TO_ADDRESS = 2 }
+	export enum BackendRulePathTranslation { PATH_TRANSLATION_UNSPECIFIED = 'PATH_TRANSLATION_UNSPECIFIED', CONSTANT_ADDRESS = 'CONSTANT_ADDRESS', APPEND_PATH_TO_ADDRESS = 'APPEND_PATH_TO_ADDRESS' }
 
 
 	/** Billing related configuration of the service. The following example shows how to configure monitored resources and metrics for billing, `consumer_destinations` is the only supported destination and the monitored resources need at least one label key `cloud.googleapis.com/location` to indicate the location of the billing usage, using different monitored resources between monitoring and billing is recommended so they can be evolved independently: monitored_resources: - type: library.googleapis.com/billing_branch labels: - key: cloud.googleapis.com/location description: | Predefined label to support billing location restriction. - key: city description: | Custom label to define the city where the library branch is located in. - key: name description: Custom label to define the name of the library branch. metrics: - name: library.googleapis.com/book/borrowed_count metric_kind: DELTA value_type: INT64 unit: "1" billing: consumer_destinations: - monitored_resource: library.googleapis.com/billing_branch metrics: - library.googleapis.com/book/borrowed_count */
@@ -936,7 +936,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientLibrarySettingsLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 0, UNIMPLEMENTED = 1, PRELAUNCH = 2, EARLY_ACCESS = 3, ALPHA = 4, BETA = 5, GA = 6, DEPRECATED = 7 }
+	export enum ClientLibrarySettingsLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 'LAUNCH_STAGE_UNSPECIFIED', UNIMPLEMENTED = 'UNIMPLEMENTED', PRELAUNCH = 'PRELAUNCH', EARLY_ACCESS = 'EARLY_ACCESS', ALPHA = 'ALPHA', BETA = 'BETA', GA = 'GA', DEPRECATED = 'DEPRECATED' }
 
 
 	/** Settings for Node client libraries. */
@@ -1588,9 +1588,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldCardinality { CARDINALITY_UNKNOWN = 0, CARDINALITY_OPTIONAL = 1, CARDINALITY_REQUIRED = 2, CARDINALITY_REPEATED = 3 }
+	export enum FieldCardinality { CARDINALITY_UNKNOWN = 'CARDINALITY_UNKNOWN', CARDINALITY_OPTIONAL = 'CARDINALITY_OPTIONAL', CARDINALITY_REQUIRED = 'CARDINALITY_REQUIRED', CARDINALITY_REPEATED = 'CARDINALITY_REPEATED' }
 
-	export enum FieldKind { TYPE_UNKNOWN = 0, TYPE_DOUBLE = 1, TYPE_FLOAT = 2, TYPE_INT64 = 3, TYPE_UINT64 = 4, TYPE_INT32 = 5, TYPE_FIXED64 = 6, TYPE_FIXED32 = 7, TYPE_BOOL = 8, TYPE_STRING = 9, TYPE_GROUP = 10, TYPE_MESSAGE = 11, TYPE_BYTES = 12, TYPE_UINT32 = 13, TYPE_ENUM = 14, TYPE_SFIXED32 = 15, TYPE_SFIXED64 = 16, TYPE_SINT32 = 17, TYPE_SINT64 = 18 }
+	export enum FieldKind { TYPE_UNKNOWN = 'TYPE_UNKNOWN', TYPE_DOUBLE = 'TYPE_DOUBLE', TYPE_FLOAT = 'TYPE_FLOAT', TYPE_INT64 = 'TYPE_INT64', TYPE_UINT64 = 'TYPE_UINT64', TYPE_INT32 = 'TYPE_INT32', TYPE_FIXED64 = 'TYPE_FIXED64', TYPE_FIXED32 = 'TYPE_FIXED32', TYPE_BOOL = 'TYPE_BOOL', TYPE_STRING = 'TYPE_STRING', TYPE_GROUP = 'TYPE_GROUP', TYPE_MESSAGE = 'TYPE_MESSAGE', TYPE_BYTES = 'TYPE_BYTES', TYPE_UINT32 = 'TYPE_UINT32', TYPE_ENUM = 'TYPE_ENUM', TYPE_SFIXED32 = 'TYPE_SFIXED32', TYPE_SFIXED64 = 'TYPE_SFIXED64', TYPE_SINT32 = 'TYPE_SINT32', TYPE_SINT64 = 'TYPE_SINT64' }
 
 
 	/** Defines the HTTP configuration for an API service. It contains a list of HttpRule, each specifying the mapping of an RPC method to one or more HTTP REST API methods. */
@@ -1727,7 +1727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelDescriptorValueType { STRING = 0, BOOL = 1, INT64 = 2 }
+	export enum LabelDescriptorValueType { STRING = 'STRING', BOOL = 'BOOL', INT64 = 'INT64' }
 
 
 	/** The response message for Operations.ListOperations. */
@@ -1933,7 +1933,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TenantResourceStatus { STATUS_UNSPECIFIED = 0, PENDING_CREATE = 1, ACTIVE = 2, PENDING_DELETE = 3, FAILED = 4, DELETED = 5 }
+	export enum TenantResourceStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', PENDING_CREATE = 'PENDING_CREATE', ACTIVE = 'ACTIVE', PENDING_DELETE = 'PENDING_DELETE', FAILED = 'FAILED', DELETED = 'DELETED' }
 
 
 	/** A description of a log type. Example in YAML format: - name: library.googleapis.com/activity_history description: The history of borrowing and returning library items. display_name: Activity labels: - key: /customer_id description: Identifier of a library customer */
@@ -2200,9 +2200,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDescriptorMetricKind { METRIC_KIND_UNSPECIFIED = 0, GAUGE = 1, DELTA = 2, CUMULATIVE = 3 }
+	export enum MetricDescriptorMetricKind { METRIC_KIND_UNSPECIFIED = 'METRIC_KIND_UNSPECIFIED', GAUGE = 'GAUGE', DELTA = 'DELTA', CUMULATIVE = 'CUMULATIVE' }
 
-	export enum MetricDescriptorValueType { VALUE_TYPE_UNSPECIFIED = 0, BOOL = 1, INT64 = 2, DOUBLE = 3, STRING = 4, DISTRIBUTION = 5, MONEY = 6 }
+	export enum MetricDescriptorValueType { VALUE_TYPE_UNSPECIFIED = 'VALUE_TYPE_UNSPECIFIED', BOOL = 'BOOL', INT64 = 'INT64', DOUBLE = 'DOUBLE', STRING = 'STRING', DISTRIBUTION = 'DISTRIBUTION', MONEY = 'MONEY' }
 
 
 	/** Bind API methods to metrics. Binding a method to a metric causes that metric's configured quota behaviors to apply to the method call. */
@@ -2407,7 +2407,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublishingOrganization { CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED = 0, CLOUD = 1, ADS = 2, PHOTOS = 3, STREET_VIEW = 4, SHOPPING = 5, GEO = 6, GENERATIVE_AI = 7 }
+	export enum PublishingOrganization { CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED = 'CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED', CLOUD = 'CLOUD', ADS = 'ADS', PHOTOS = 'PHOTOS', STREET_VIEW = 'STREET_VIEW', SHOPPING = 'SHOPPING', GEO = 'GEO', GENERATIVE_AI = 'GENERATIVE_AI' }
 
 
 	/** Quota configuration helps to achieve fairness and budgeting in service usage. The metric based quota configuration works this way: - The service configuration defines a set of metrics. - For API calls, the quota.metric_rules maps methods to metrics with corresponding costs. - The quota.limits defines limits on the metrics, which will be used for quota checks at runtime. An example quota configuration in yaml format: quota: limits: - name: apiWriteQpsPerProject metric: library.googleapis.com/write_calls unit: "1/min/{project}" # rate limit for consumer projects values: STANDARD: 10000 (The metric rules bind all methods to the read_calls metric, except for the UpdateBook and DeleteBook methods. These two methods are mapped to the write_calls metric, with the UpdateBook method consuming at twice rate as the DeleteBook method.) metric_rules: - selector: "*" metric_costs: library.googleapis.com/read_calls: 1 - selector: google.example.library.v1.LibraryService.UpdateBook metric_costs: library.googleapis.com/write_calls: 2 - selector: google.example.library.v1.LibraryService.DeleteBook metric_costs: library.googleapis.com/write_calls: 1 Corresponding Metric definition: metrics: - name: library.googleapis.com/read_calls display_name: Read requests metric_kind: DELTA value_type: INT64 - name: library.googleapis.com/write_calls display_name: Write requests metric_kind: DELTA value_type: INT64  */
@@ -3281,7 +3281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1GenerateDefaultIdentityResponseAttachStatus { ATTACH_STATUS_UNSPECIFIED = 0, ATTACHED = 1, ATTACH_SKIPPED = 2, PREVIOUSLY_ATTACHED = 3, ATTACH_DENIED_BY_ORG_POLICY = 4 }
+	export enum V1GenerateDefaultIdentityResponseAttachStatus { ATTACH_STATUS_UNSPECIFIED = 'ATTACH_STATUS_UNSPECIFIED', ATTACHED = 'ATTACHED', ATTACH_SKIPPED = 'ATTACH_SKIPPED', PREVIOUSLY_ATTACHED = 'PREVIOUSLY_ATTACHED', ATTACH_DENIED_BY_ORG_POLICY = 'ATTACH_DENIED_BY_ORG_POLICY' }
 
 
 	/** Response message for the `GenerateServiceAccount` method. This response message is assigned to the `response` field of the returned Operation when that operation is done. */

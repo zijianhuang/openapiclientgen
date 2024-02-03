@@ -383,7 +383,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CpuManufacturer { intel = 0, amd = 1, 'amazon-web-services' = 2 }
+	export enum CpuManufacturer { intel = 'intel', amd = 'amd', 'amazon-web-services' = 'amazon-web-services' }
 
 
 	/** Specifies the minimum and maximum for the <code>MemoryGiBPerVCpu</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group. */
@@ -405,9 +405,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceGeneration { current = 0, previous = 1 }
+	export enum InstanceGeneration { current = 'current', previous = 'previous' }
 
-	export enum BareMetal { included = 0, excluded = 1, required = 2 }
+	export enum BareMetal { included = 'included', excluded = 'excluded', required = 'required' }
 
 
 	/** Specifies the minimum and maximum for the <code>NetworkInterfaceCount</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group. */
@@ -429,7 +429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocalStorageType { hdd = 0, ssd = 1 }
+	export enum LocalStorageType { hdd = 'hdd', ssd = 'ssd' }
 
 
 	/** Specifies the minimum and maximum for the <code>TotalLocalStorageGB</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group. */
@@ -471,7 +471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceleratorType { gpu = 0, fpga = 1, inference = 2 }
+	export enum AcceleratorType { gpu = 'gpu', fpga = 'fpga', inference = 'inference' }
 
 
 	/** Specifies the minimum and maximum for the <code>AcceleratorCount</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group. */
@@ -493,9 +493,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceleratorManufacturer { nvidia = 0, amd = 1, 'amazon-web-services' = 2, xilinx = 3 }
+	export enum AcceleratorManufacturer { nvidia = 'nvidia', amd = 'amd', 'amazon-web-services' = 'amazon-web-services', xilinx = 'xilinx' }
 
-	export enum AcceleratorName { a100 = 0, v100 = 1, k80 = 2, t4 = 3, m60 = 4, 'radeon-pro-v520' = 5, vu9p = 6 }
+	export enum AcceleratorName { a100 = 'a100', v100 = 'v100', k80 = 'k80', t4 = 't4', m60 = 'm60', 'radeon-pro-v520' = 'radeon-pro-v520', vu9p = 'vu9p' }
 
 
 	/** Specifies the minimum and maximum for the <code>AcceleratorTotalMemoryMiB</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group. */
@@ -708,9 +708,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceMetadataHttpTokensState { optional = 0, required = 1 }
+	export enum InstanceMetadataHttpTokensState { optional = 'optional', required = 'required' }
 
-	export enum InstanceMetadataEndpointState { disabled = 0, enabled = 1 }
+	export enum InstanceMetadataEndpointState { disabled = 'disabled', enabled = 'enabled' }
 
 	export interface ResourceInUseFault {
 	}
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LifecycleState { Pending = 0, 'Pending:Wait' = 1, 'Pending:Proceed' = 2, Quarantined = 3, InService = 4, Terminating = 5, 'Terminating:Wait' = 6, 'Terminating:Proceed' = 7, Terminated = 8, Detaching = 9, Detached = 10, EnteringStandby = 11, Standby = 12, 'Warmed:Pending' = 13, 'Warmed:Pending:Wait' = 14, 'Warmed:Pending:Proceed' = 15, 'Warmed:Terminating' = 16, 'Warmed:Terminating:Wait' = 17, 'Warmed:Terminating:Proceed' = 18, 'Warmed:Terminated' = 19, 'Warmed:Stopped' = 20, 'Warmed:Running' = 21, 'Warmed:Hibernated' = 22 }
+	export enum LifecycleState { Pending = 'Pending', 'Pending:Wait' = 'Pending:Wait', 'Pending:Proceed' = 'Pending:Proceed', Quarantined = 'Quarantined', InService = 'InService', Terminating = 'Terminating', 'Terminating:Wait' = 'Terminating:Wait', 'Terminating:Proceed' = 'Terminating:Proceed', Terminated = 'Terminated', Detaching = 'Detaching', Detached = 'Detached', EnteringStandby = 'EnteringStandby', Standby = 'Standby', 'Warmed:Pending' = 'Warmed:Pending', 'Warmed:Pending:Wait' = 'Warmed:Pending:Wait', 'Warmed:Pending:Proceed' = 'Warmed:Pending:Proceed', 'Warmed:Terminating' = 'Warmed:Terminating', 'Warmed:Terminating:Wait' = 'Warmed:Terminating:Wait', 'Warmed:Terminating:Proceed' = 'Warmed:Terminating:Proceed', 'Warmed:Terminated' = 'Warmed:Terminated', 'Warmed:Stopped' = 'Warmed:Stopped', 'Warmed:Running' = 'Warmed:Running', 'Warmed:Hibernated' = 'Warmed:Hibernated' }
 
 
 	/** <p>Describes an auto scaling process that has been suspended.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
@@ -1113,9 +1113,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WarmPoolState { Stopped = 0, Running = 1, Hibernated = 2 }
+	export enum WarmPoolState { Stopped = 'Stopped', Running = 'Running', Hibernated = 'Hibernated' }
 
-	export enum WarmPoolStatus { PendingDelete = 0 }
+	export enum WarmPoolStatus { PendingDelete = 'PendingDelete' }
 
 
 	/** <p>Describes an instance reuse policy for a warm pool. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
@@ -1309,7 +1309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceRefreshStatus { Pending = 0, InProgress = 1, Successful = 2, Failed = 3, Cancelling = 4, Cancelled = 5, RollbackInProgress = 6, RollbackFailed = 7, RollbackSuccessful = 8 }
+	export enum InstanceRefreshStatus { Pending = 'Pending', InProgress = 'InProgress', Successful = 'Successful', Failed = 'Failed', Cancelling = 'Cancelling', Cancelled = 'Cancelled', RollbackInProgress = 'RollbackInProgress', RollbackFailed = 'RollbackFailed', RollbackSuccessful = 'RollbackSuccessful' }
 
 
 	/** Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool). */
@@ -1404,9 +1404,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScaleInProtectedInstances { Refresh = 0, Ignore = 1, Wait = 2 }
+	export enum ScaleInProtectedInstances { Refresh = 'Refresh', Ignore = 'Ignore', Wait = 'Wait' }
 
-	export enum StandbyInstances { Terminate = 0, Ignore = 1, Wait = 2 }
+	export enum StandbyInstances { Terminate = 'Terminate', Ignore = 'Ignore', Wait = 'Wait' }
 
 
 	/** Specifies the CloudWatch alarm specification to use in an instance refresh. */
@@ -1983,7 +1983,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricType { ASGAverageCPUUtilization = 0, ASGAverageNetworkIn = 1, ASGAverageNetworkOut = 2, ALBRequestCountPerTarget = 3 }
+	export enum MetricType { ASGAverageCPUUtilization = 'ASGAverageCPUUtilization', ASGAverageNetworkIn = 'ASGAverageNetworkIn', ASGAverageNetworkOut = 'ASGAverageNetworkOut', ALBRequestCountPerTarget = 'ALBRequestCountPerTarget' }
 
 
 	/** <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required property from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.</p> </li> </ul> <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a>.</p> <note> <p>Each individual service provides information about the metrics, namespace, and dimensions they use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </note> */
@@ -2041,7 +2041,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricStatistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }
+	export enum MetricStatistic { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', SampleCount = 'SampleCount', Sum = 'Sum' }
 
 
 	/** The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp. */
@@ -2210,7 +2210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PredefinedMetricPairType { ASGCPUUtilization = 0, ASGNetworkIn = 1, ASGNetworkOut = 2, ALBRequestCount = 3 }
+	export enum PredefinedMetricPairType { ASGCPUUtilization = 'ASGCPUUtilization', ASGNetworkIn = 'ASGNetworkIn', ASGNetworkOut = 'ASGNetworkOut', ALBRequestCount = 'ALBRequestCount' }
 
 
 	/** <p>Describes a scaling metric for a predictive scaling policy.</p> <p>When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.</p> */
@@ -2260,7 +2260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PredefinedLoadMetricType { ASGTotalCPUUtilization = 0, ASGTotalNetworkIn = 1, ASGTotalNetworkOut = 2, ALBTargetGroupRequestCount = 3 }
+	export enum PredefinedLoadMetricType { ASGTotalCPUUtilization = 'ASGTotalCPUUtilization', ASGTotalNetworkIn = 'ASGTotalNetworkIn', ASGTotalNetworkOut = 'ASGTotalNetworkOut', ALBTargetGroupRequestCount = 'ALBTargetGroupRequestCount' }
 
 
 	/** Describes a custom scaling metric for a predictive scaling policy. */
@@ -2371,9 +2371,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PredictiveScalingMode { ForecastAndScale = 0, ForecastOnly = 1 }
+	export enum PredictiveScalingMode { ForecastAndScale = 'ForecastAndScale', ForecastOnly = 'ForecastOnly' }
 
-	export enum PredictiveScalingMaxCapacityBreachBehavior { HonorMaxCapacity = 0, IncreaseMaxCapacity = 1 }
+	export enum PredictiveScalingMaxCapacityBreachBehavior { HonorMaxCapacity = 'HonorMaxCapacity', IncreaseMaxCapacity = 'IncreaseMaxCapacity' }
 
 	export interface ActivitiesType {
 
@@ -2461,7 +2461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingActivityStatusCode { PendingSpotBidPlacement = 0, WaitingForSpotInstanceRequestId = 1, WaitingForSpotInstanceId = 2, WaitingForInstanceId = 3, PreInService = 4, InProgress = 5, WaitingForELBConnectionDraining = 6, MidLifecycleAction = 7, WaitingForInstanceWarmup = 8, Successful = 9, Failed = 10, Cancelled = 11, WaitingForConnectionDraining = 12 }
+	export enum ScalingActivityStatusCode { PendingSpotBidPlacement = 'PendingSpotBidPlacement', WaitingForSpotInstanceRequestId = 'WaitingForSpotInstanceRequestId', WaitingForSpotInstanceId = 'WaitingForSpotInstanceId', WaitingForInstanceId = 'WaitingForInstanceId', PreInService = 'PreInService', InProgress = 'InProgress', WaitingForELBConnectionDraining = 'WaitingForELBConnectionDraining', MidLifecycleAction = 'MidLifecycleAction', WaitingForInstanceWarmup = 'WaitingForInstanceWarmup', Successful = 'Successful', Failed = 'Failed', Cancelled = 'Cancelled', WaitingForConnectionDraining = 'WaitingForConnectionDraining' }
 
 	export interface ProcessesType {
 		Processes?: Array<ProcessType>;
@@ -3016,7 +3016,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BurstablePerformance { included = 0, excluded = 1, required = 2 }
+	export enum BurstablePerformance { included = 'included', excluded = 'excluded', required = 'required' }
 
 	export interface CancelInstanceRefreshType {
 
@@ -3872,7 +3872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocalStorage { included = 0, excluded = 1, required = 2 }
+	export enum LocalStorage { included = 'included', excluded = 'excluded', required = 'required' }
 
 	export interface LaunchConfigurationNameType {
 
@@ -3908,7 +3908,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PredefinedScalingMetricType { ASGAverageCPUUtilization = 0, ASGAverageNetworkIn = 1, ASGAverageNetworkOut = 2, ALBRequestCountPerTarget = 3 }
+	export enum PredefinedScalingMetricType { ASGAverageCPUUtilization = 'ASGAverageCPUUtilization', ASGAverageNetworkIn = 'ASGAverageNetworkIn', ASGAverageNetworkOut = 'ASGAverageNetworkOut', ALBRequestCountPerTarget = 'ALBRequestCountPerTarget' }
 
 	export interface PutLifecycleHookType {
 
@@ -4138,7 +4138,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RefreshStrategy { Rolling = 0 }
+	export enum RefreshStrategy { Rolling = 'Rolling' }
 
 	export interface RollbackInstanceRefreshType {
 
@@ -5268,23 +5268,23 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AttachInstancesAction { AttachInstances = 0 }
+	export enum GET_AttachInstancesAction { AttachInstances = 'AttachInstances' }
 
-	export enum GET_AttachInstancesVersion { '2011-01-01' = 0 }
+	export enum GET_AttachInstancesVersion { '2011-01-01' = '2011-01-01' }
 
-	export enum GET_AttachLoadBalancerTargetGroupsAction { AttachLoadBalancerTargetGroups = 0 }
+	export enum GET_AttachLoadBalancerTargetGroupsAction { AttachLoadBalancerTargetGroups = 'AttachLoadBalancerTargetGroups' }
 
-	export enum GET_AttachLoadBalancersAction { AttachLoadBalancers = 0 }
+	export enum GET_AttachLoadBalancersAction { AttachLoadBalancers = 'AttachLoadBalancers' }
 
-	export enum GET_AttachTrafficSourcesAction { AttachTrafficSources = 0 }
+	export enum GET_AttachTrafficSourcesAction { AttachTrafficSources = 'AttachTrafficSources' }
 
-	export enum GET_BatchDeleteScheduledActionAction { BatchDeleteScheduledAction = 0 }
+	export enum GET_BatchDeleteScheduledActionAction { BatchDeleteScheduledAction = 'BatchDeleteScheduledAction' }
 
-	export enum GET_BatchPutScheduledUpdateGroupActionAction { BatchPutScheduledUpdateGroupAction = 0 }
+	export enum GET_BatchPutScheduledUpdateGroupActionAction { BatchPutScheduledUpdateGroupAction = 'BatchPutScheduledUpdateGroupAction' }
 
-	export enum GET_CancelInstanceRefreshAction { CancelInstanceRefresh = 0 }
+	export enum GET_CancelInstanceRefreshAction { CancelInstanceRefresh = 'CancelInstanceRefresh' }
 
-	export enum GET_CompleteLifecycleActionAction { CompleteLifecycleAction = 0 }
+	export enum GET_CompleteLifecycleActionAction { CompleteLifecycleAction = 'CompleteLifecycleAction' }
 
 	export interface GET_CreateAutoScalingGroupLaunchTemplate {
 		LaunchTemplateId?: string;
@@ -5317,7 +5317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateAutoScalingGroupAction { CreateAutoScalingGroup = 0 }
+	export enum GET_CreateAutoScalingGroupAction { CreateAutoScalingGroup = 'CreateAutoScalingGroup' }
 
 	export interface GET_CreateLaunchConfigurationInstanceMonitoring {
 		Enabled?: boolean | null;
@@ -5351,91 +5351,91 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateLaunchConfigurationAction { CreateLaunchConfiguration = 0 }
+	export enum GET_CreateLaunchConfigurationAction { CreateLaunchConfiguration = 'CreateLaunchConfiguration' }
 
-	export enum GET_CreateOrUpdateTagsAction { CreateOrUpdateTags = 0 }
+	export enum GET_CreateOrUpdateTagsAction { CreateOrUpdateTags = 'CreateOrUpdateTags' }
 
-	export enum GET_DeleteAutoScalingGroupAction { DeleteAutoScalingGroup = 0 }
+	export enum GET_DeleteAutoScalingGroupAction { DeleteAutoScalingGroup = 'DeleteAutoScalingGroup' }
 
-	export enum GET_DeleteLaunchConfigurationAction { DeleteLaunchConfiguration = 0 }
+	export enum GET_DeleteLaunchConfigurationAction { DeleteLaunchConfiguration = 'DeleteLaunchConfiguration' }
 
-	export enum GET_DeleteLifecycleHookAction { DeleteLifecycleHook = 0 }
+	export enum GET_DeleteLifecycleHookAction { DeleteLifecycleHook = 'DeleteLifecycleHook' }
 
-	export enum GET_DeleteNotificationConfigurationAction { DeleteNotificationConfiguration = 0 }
+	export enum GET_DeleteNotificationConfigurationAction { DeleteNotificationConfiguration = 'DeleteNotificationConfiguration' }
 
-	export enum GET_DeletePolicyAction { DeletePolicy = 0 }
+	export enum GET_DeletePolicyAction { DeletePolicy = 'DeletePolicy' }
 
-	export enum GET_DeleteScheduledActionAction { DeleteScheduledAction = 0 }
+	export enum GET_DeleteScheduledActionAction { DeleteScheduledAction = 'DeleteScheduledAction' }
 
-	export enum GET_DeleteTagsAction { DeleteTags = 0 }
+	export enum GET_DeleteTagsAction { DeleteTags = 'DeleteTags' }
 
-	export enum GET_DeleteWarmPoolAction { DeleteWarmPool = 0 }
+	export enum GET_DeleteWarmPoolAction { DeleteWarmPool = 'DeleteWarmPool' }
 
-	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 0 }
+	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 'DescribeAccountLimits' }
 
-	export enum GET_DescribeAdjustmentTypesAction { DescribeAdjustmentTypes = 0 }
+	export enum GET_DescribeAdjustmentTypesAction { DescribeAdjustmentTypes = 'DescribeAdjustmentTypes' }
 
-	export enum GET_DescribeAutoScalingGroupsAction { DescribeAutoScalingGroups = 0 }
+	export enum GET_DescribeAutoScalingGroupsAction { DescribeAutoScalingGroups = 'DescribeAutoScalingGroups' }
 
-	export enum GET_DescribeAutoScalingInstancesAction { DescribeAutoScalingInstances = 0 }
+	export enum GET_DescribeAutoScalingInstancesAction { DescribeAutoScalingInstances = 'DescribeAutoScalingInstances' }
 
-	export enum GET_DescribeAutoScalingNotificationTypesAction { DescribeAutoScalingNotificationTypes = 0 }
+	export enum GET_DescribeAutoScalingNotificationTypesAction { DescribeAutoScalingNotificationTypes = 'DescribeAutoScalingNotificationTypes' }
 
-	export enum GET_DescribeInstanceRefreshesAction { DescribeInstanceRefreshes = 0 }
+	export enum GET_DescribeInstanceRefreshesAction { DescribeInstanceRefreshes = 'DescribeInstanceRefreshes' }
 
-	export enum GET_DescribeLaunchConfigurationsAction { DescribeLaunchConfigurations = 0 }
+	export enum GET_DescribeLaunchConfigurationsAction { DescribeLaunchConfigurations = 'DescribeLaunchConfigurations' }
 
-	export enum GET_DescribeLifecycleHookTypesAction { DescribeLifecycleHookTypes = 0 }
+	export enum GET_DescribeLifecycleHookTypesAction { DescribeLifecycleHookTypes = 'DescribeLifecycleHookTypes' }
 
-	export enum GET_DescribeLifecycleHooksAction { DescribeLifecycleHooks = 0 }
+	export enum GET_DescribeLifecycleHooksAction { DescribeLifecycleHooks = 'DescribeLifecycleHooks' }
 
-	export enum GET_DescribeLoadBalancerTargetGroupsAction { DescribeLoadBalancerTargetGroups = 0 }
+	export enum GET_DescribeLoadBalancerTargetGroupsAction { DescribeLoadBalancerTargetGroups = 'DescribeLoadBalancerTargetGroups' }
 
-	export enum GET_DescribeLoadBalancersAction { DescribeLoadBalancers = 0 }
+	export enum GET_DescribeLoadBalancersAction { DescribeLoadBalancers = 'DescribeLoadBalancers' }
 
-	export enum GET_DescribeMetricCollectionTypesAction { DescribeMetricCollectionTypes = 0 }
+	export enum GET_DescribeMetricCollectionTypesAction { DescribeMetricCollectionTypes = 'DescribeMetricCollectionTypes' }
 
-	export enum GET_DescribeNotificationConfigurationsAction { DescribeNotificationConfigurations = 0 }
+	export enum GET_DescribeNotificationConfigurationsAction { DescribeNotificationConfigurations = 'DescribeNotificationConfigurations' }
 
-	export enum GET_DescribePoliciesAction { DescribePolicies = 0 }
+	export enum GET_DescribePoliciesAction { DescribePolicies = 'DescribePolicies' }
 
-	export enum GET_DescribeScalingActivitiesAction { DescribeScalingActivities = 0 }
+	export enum GET_DescribeScalingActivitiesAction { DescribeScalingActivities = 'DescribeScalingActivities' }
 
-	export enum GET_DescribeScalingProcessTypesAction { DescribeScalingProcessTypes = 0 }
+	export enum GET_DescribeScalingProcessTypesAction { DescribeScalingProcessTypes = 'DescribeScalingProcessTypes' }
 
-	export enum GET_DescribeScheduledActionsAction { DescribeScheduledActions = 0 }
+	export enum GET_DescribeScheduledActionsAction { DescribeScheduledActions = 'DescribeScheduledActions' }
 
-	export enum GET_DescribeTagsAction { DescribeTags = 0 }
+	export enum GET_DescribeTagsAction { DescribeTags = 'DescribeTags' }
 
-	export enum GET_DescribeTerminationPolicyTypesAction { DescribeTerminationPolicyTypes = 0 }
+	export enum GET_DescribeTerminationPolicyTypesAction { DescribeTerminationPolicyTypes = 'DescribeTerminationPolicyTypes' }
 
-	export enum GET_DescribeTrafficSourcesAction { DescribeTrafficSources = 0 }
+	export enum GET_DescribeTrafficSourcesAction { DescribeTrafficSources = 'DescribeTrafficSources' }
 
-	export enum GET_DescribeWarmPoolAction { DescribeWarmPool = 0 }
+	export enum GET_DescribeWarmPoolAction { DescribeWarmPool = 'DescribeWarmPool' }
 
-	export enum GET_DetachInstancesAction { DetachInstances = 0 }
+	export enum GET_DetachInstancesAction { DetachInstances = 'DetachInstances' }
 
-	export enum GET_DetachLoadBalancerTargetGroupsAction { DetachLoadBalancerTargetGroups = 0 }
+	export enum GET_DetachLoadBalancerTargetGroupsAction { DetachLoadBalancerTargetGroups = 'DetachLoadBalancerTargetGroups' }
 
-	export enum GET_DetachLoadBalancersAction { DetachLoadBalancers = 0 }
+	export enum GET_DetachLoadBalancersAction { DetachLoadBalancers = 'DetachLoadBalancers' }
 
-	export enum GET_DetachTrafficSourcesAction { DetachTrafficSources = 0 }
+	export enum GET_DetachTrafficSourcesAction { DetachTrafficSources = 'DetachTrafficSources' }
 
-	export enum GET_DisableMetricsCollectionAction { DisableMetricsCollection = 0 }
+	export enum GET_DisableMetricsCollectionAction { DisableMetricsCollection = 'DisableMetricsCollection' }
 
-	export enum GET_EnableMetricsCollectionAction { EnableMetricsCollection = 0 }
+	export enum GET_EnableMetricsCollectionAction { EnableMetricsCollection = 'EnableMetricsCollection' }
 
-	export enum GET_EnterStandbyAction { EnterStandby = 0 }
+	export enum GET_EnterStandbyAction { EnterStandby = 'EnterStandby' }
 
-	export enum GET_ExecutePolicyAction { ExecutePolicy = 0 }
+	export enum GET_ExecutePolicyAction { ExecutePolicy = 'ExecutePolicy' }
 
-	export enum GET_ExitStandbyAction { ExitStandby = 0 }
+	export enum GET_ExitStandbyAction { ExitStandby = 'ExitStandby' }
 
-	export enum GET_GetPredictiveScalingForecastAction { GetPredictiveScalingForecast = 0 }
+	export enum GET_GetPredictiveScalingForecastAction { GetPredictiveScalingForecast = 'GetPredictiveScalingForecast' }
 
-	export enum GET_PutLifecycleHookAction { PutLifecycleHook = 0 }
+	export enum GET_PutLifecycleHookAction { PutLifecycleHook = 'PutLifecycleHook' }
 
-	export enum GET_PutNotificationConfigurationAction { PutNotificationConfiguration = 0 }
+	export enum GET_PutNotificationConfigurationAction { PutNotificationConfiguration = 'PutNotificationConfiguration' }
 
 	export interface GET_PutScalingPolicyTargetTrackingConfiguration {
 		PredefinedMetricSpecification?: PredefinedMetricSpecification;
@@ -5484,9 +5484,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_PutScalingPolicyAction { PutScalingPolicy = 0 }
+	export enum GET_PutScalingPolicyAction { PutScalingPolicy = 'PutScalingPolicy' }
 
-	export enum GET_PutScheduledUpdateGroupActionAction { PutScheduledUpdateGroupAction = 0 }
+	export enum GET_PutScheduledUpdateGroupActionAction { PutScheduledUpdateGroupAction = 'PutScheduledUpdateGroupAction' }
 
 	export interface GET_PutWarmPoolInstanceReusePolicy {
 		ReuseOnScaleIn?: boolean | null;
@@ -5501,19 +5501,19 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_PutWarmPoolAction { PutWarmPool = 0 }
+	export enum GET_PutWarmPoolAction { PutWarmPool = 'PutWarmPool' }
 
-	export enum GET_RecordLifecycleActionHeartbeatAction { RecordLifecycleActionHeartbeat = 0 }
+	export enum GET_RecordLifecycleActionHeartbeatAction { RecordLifecycleActionHeartbeat = 'RecordLifecycleActionHeartbeat' }
 
-	export enum GET_ResumeProcessesAction { ResumeProcesses = 0 }
+	export enum GET_ResumeProcessesAction { ResumeProcesses = 'ResumeProcesses' }
 
-	export enum GET_RollbackInstanceRefreshAction { RollbackInstanceRefresh = 0 }
+	export enum GET_RollbackInstanceRefreshAction { RollbackInstanceRefresh = 'RollbackInstanceRefresh' }
 
-	export enum GET_SetDesiredCapacityAction { SetDesiredCapacity = 0 }
+	export enum GET_SetDesiredCapacityAction { SetDesiredCapacity = 'SetDesiredCapacity' }
 
-	export enum GET_SetInstanceHealthAction { SetInstanceHealth = 0 }
+	export enum GET_SetInstanceHealthAction { SetInstanceHealth = 'SetInstanceHealth' }
 
-	export enum GET_SetInstanceProtectionAction { SetInstanceProtection = 0 }
+	export enum GET_SetInstanceProtectionAction { SetInstanceProtection = 'SetInstanceProtection' }
 
 	export interface GET_StartInstanceRefreshDesiredConfiguration {
 		LaunchTemplate?: LaunchTemplateSpecification;
@@ -5560,11 +5560,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_StartInstanceRefreshAction { StartInstanceRefresh = 0 }
+	export enum GET_StartInstanceRefreshAction { StartInstanceRefresh = 'StartInstanceRefresh' }
 
-	export enum GET_SuspendProcessesAction { SuspendProcesses = 0 }
+	export enum GET_SuspendProcessesAction { SuspendProcesses = 'SuspendProcesses' }
 
-	export enum GET_TerminateInstanceInAutoScalingGroupAction { TerminateInstanceInAutoScalingGroup = 0 }
+	export enum GET_TerminateInstanceInAutoScalingGroupAction { TerminateInstanceInAutoScalingGroup = 'TerminateInstanceInAutoScalingGroup' }
 
 	export interface GET_UpdateAutoScalingGroupLaunchTemplate {
 		LaunchTemplateId?: string;
@@ -5597,7 +5597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateAutoScalingGroupAction { UpdateAutoScalingGroup = 0 }
+	export enum GET_UpdateAutoScalingGroupAction { UpdateAutoScalingGroup = 'UpdateAutoScalingGroup' }
 
 }
 

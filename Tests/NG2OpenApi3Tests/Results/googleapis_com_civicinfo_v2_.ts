@@ -559,7 +559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElectoralDistrictScope { statewide = 0, congressional = 1, stateUpper = 2, stateLower = 3, countywide = 4, judicial = 5, schoolBoard = 6, citywide = 7, special = 8, countyCouncil = 9, township = 10, ward = 11, cityCouncil = 12, national = 13 }
+	export enum ElectoralDistrictScope { statewide = 'statewide', congressional = 'congressional', stateUpper = 'stateUpper', stateLower = 'stateLower', countywide = 'countywide', judicial = 'judicial', schoolBoard = 'schoolBoard', citywide = 'citywide', special = 'special', countyCouncil = 'countyCouncil', township = 'township', ward = 'ward', cityCouncil = 'cityCouncil', national = 'national' }
 
 
 	/** The result of a division search query. */
@@ -659,7 +659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElectionShapeLookupBehavior { shapeLookupDefault = 0, shapeLookupDisabled = 1, shapeLookupEnabled = 2 }
+	export enum ElectionShapeLookupBehavior { shapeLookupDefault = 'shapeLookupDefault', shapeLookupDisabled = 'shapeLookupDisabled', shapeLookupEnabled = 'shapeLookupEnabled' }
 
 
 	/** The list of elections available for this version of the API. */

@@ -178,7 +178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobResourceType { PACKAGE = 0 }
+	export enum JobResourceType { PACKAGE = 'PACKAGE' }
 
 	export interface TagMap {
 	}
@@ -438,7 +438,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationInstanceHealthStatus { RUNNING = 0, ERROR = 1, NOT_AVAILABLE = 2 }
+	export enum ApplicationInstanceHealthStatus { RUNNING = 'RUNNING', ERROR = 'ERROR', NOT_AVAILABLE = 'NOT_AVAILABLE' }
 
 
 	/** An application instance's state. */
@@ -482,11 +482,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DesiredState { RUNNING = 0, STOPPED = 1, REMOVED = 2 }
+	export enum DesiredState { RUNNING = 'RUNNING', STOPPED = 'STOPPED', REMOVED = 'REMOVED' }
 
-	export enum DeviceReportedStatus { STOPPING = 0, STOPPED = 1, STOP_ERROR = 2, REMOVAL_FAILED = 3, REMOVAL_IN_PROGRESS = 4, STARTING = 5, RUNNING = 6, INSTALL_ERROR = 7, LAUNCHED = 8, LAUNCH_ERROR = 9, INSTALL_IN_PROGRESS = 10 }
+	export enum DeviceReportedStatus { STOPPING = 'STOPPING', STOPPED = 'STOPPED', STOP_ERROR = 'STOP_ERROR', REMOVAL_FAILED = 'REMOVAL_FAILED', REMOVAL_IN_PROGRESS = 'REMOVAL_IN_PROGRESS', STARTING = 'STARTING', RUNNING = 'RUNNING', INSTALL_ERROR = 'INSTALL_ERROR', LAUNCHED = 'LAUNCHED', LAUNCH_ERROR = 'LAUNCH_ERROR', INSTALL_IN_PROGRESS = 'INSTALL_IN_PROGRESS' }
 
-	export enum ApplicationInstanceStatus { DEPLOYMENT_PENDING = 0, DEPLOYMENT_REQUESTED = 1, DEPLOYMENT_IN_PROGRESS = 2, DEPLOYMENT_ERROR = 3, DEPLOYMENT_SUCCEEDED = 4, REMOVAL_PENDING = 5, REMOVAL_REQUESTED = 6, REMOVAL_IN_PROGRESS = 7, REMOVAL_FAILED = 8, REMOVAL_SUCCEEDED = 9, DEPLOYMENT_FAILED = 10 }
+	export enum ApplicationInstanceStatus { DEPLOYMENT_PENDING = 'DEPLOYMENT_PENDING', DEPLOYMENT_REQUESTED = 'DEPLOYMENT_REQUESTED', DEPLOYMENT_IN_PROGRESS = 'DEPLOYMENT_IN_PROGRESS', DEPLOYMENT_ERROR = 'DEPLOYMENT_ERROR', DEPLOYMENT_SUCCEEDED = 'DEPLOYMENT_SUCCEEDED', REMOVAL_PENDING = 'REMOVAL_PENDING', REMOVAL_REQUESTED = 'REMOVAL_REQUESTED', REMOVAL_IN_PROGRESS = 'REMOVAL_IN_PROGRESS', REMOVAL_FAILED = 'REMOVAL_FAILED', REMOVAL_SUCCEEDED = 'REMOVAL_SUCCEEDED', DEPLOYMENT_FAILED = 'DEPLOYMENT_FAILED' }
 
 	export interface DescribeApplicationInstanceDetailsResponse {
 		ApplicationInstanceId?: string;
@@ -629,7 +629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceBrand { AWS_PANORAMA = 0, LENOVO = 1 }
+	export enum DeviceBrand { AWS_PANORAMA = 'AWS_PANORAMA', LENOVO = 'LENOVO' }
 
 
 	/** The network status of a device. */
@@ -674,7 +674,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConnectionStatus { CONNECTED = 0, NOT_CONNECTED = 1, CONNECTING = 2 }
+	export enum NetworkConnectionStatus { CONNECTED = 'CONNECTED', NOT_CONNECTED = 'NOT_CONNECTED', CONNECTING = 'CONNECTING' }
 
 
 	/** Details about an NTP server connection. */
@@ -699,9 +699,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceAggregatedStatus { ERROR = 0, AWAITING_PROVISIONING = 1, PENDING = 2, FAILED = 3, DELETING = 4, ONLINE = 5, OFFLINE = 6, LEASE_EXPIRED = 7, UPDATE_NEEDED = 8, REBOOTING = 9 }
+	export enum DeviceAggregatedStatus { ERROR = 'ERROR', AWAITING_PROVISIONING = 'AWAITING_PROVISIONING', PENDING = 'PENDING', FAILED = 'FAILED', DELETING = 'DELETING', ONLINE = 'ONLINE', OFFLINE = 'OFFLINE', LEASE_EXPIRED = 'LEASE_EXPIRED', UPDATE_NEEDED = 'UPDATE_NEEDED', REBOOTING = 'REBOOTING' }
 
-	export enum DeviceConnectionStatus { ONLINE = 0, OFFLINE = 1, AWAITING_CREDENTIALS = 2, NOT_AVAILABLE = 3, ERROR = 4 }
+	export enum DeviceConnectionStatus { ONLINE = 'ONLINE', OFFLINE = 'OFFLINE', AWAITING_CREDENTIALS = 'AWAITING_CREDENTIALS', NOT_AVAILABLE = 'NOT_AVAILABLE', ERROR = 'ERROR' }
 
 
 	/** Returns information about the latest device job. */
@@ -726,9 +726,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobType { OTA = 0, REBOOT = 1 }
+	export enum JobType { OTA = 'OTA', REBOOT = 'REBOOT' }
 
-	export enum UpdateProgress { PENDING = 0, IN_PROGRESS = 1, VERIFYING = 2, REBOOTING = 3, DOWNLOADING = 4, COMPLETED = 5, FAILED = 6 }
+	export enum UpdateProgress { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', VERIFYING = 'VERIFYING', REBOOTING = 'REBOOTING', DOWNLOADING = 'DOWNLOADING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** The network configuration for a device. */
@@ -769,7 +769,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionType { STATIC_IP = 0, DHCP = 1 }
+	export enum ConnectionType { STATIC_IP = 'STATIC_IP', DHCP = 'DHCP' }
 
 
 	/** A static IP configuration. */
@@ -826,9 +826,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceStatus { AWAITING_PROVISIONING = 0, PENDING = 1, SUCCEEDED = 2, FAILED = 3, ERROR = 4, DELETING = 5 }
+	export enum DeviceStatus { AWAITING_PROVISIONING = 'AWAITING_PROVISIONING', PENDING = 'PENDING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', ERROR = 'ERROR', DELETING = 'DELETING' }
 
-	export enum DeviceType { PANORAMA_APPLIANCE_DEVELOPER_KIT = 0, PANORAMA_APPLIANCE = 1 }
+	export enum DeviceType { PANORAMA_APPLIANCE_DEVELOPER_KIT = 'PANORAMA_APPLIANCE_DEVELOPER_KIT', PANORAMA_APPLIANCE = 'PANORAMA_APPLIANCE' }
 
 	export interface DescribeDeviceJobResponse {
 		CreatedTime?: Date;
@@ -963,7 +963,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeCategory { BUSINESS_LOGIC = 0, ML_MODEL = 1, MEDIA_SOURCE = 2, MEDIA_SINK = 3 }
+	export enum NodeCategory { BUSINESS_LOGIC = 'BUSINESS_LOGIC', ML_MODEL = 'ML_MODEL', MEDIA_SOURCE = 'MEDIA_SOURCE', MEDIA_SINK = 'MEDIA_SINK' }
 
 
 	/** A node interface. */
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortType { BOOLEAN = 0, STRING = 1, INT32 = 2, FLOAT32 = 3, MEDIA = 4 }
+	export enum PortType { BOOLEAN = 'BOOLEAN', STRING = 'STRING', INT32 = 'INT32', FLOAT32 = 'FLOAT32', MEDIA = 'MEDIA' }
 
 
 	/** A node output port. */
@@ -1119,7 +1119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeFromTemplateJobStatus { PENDING = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum NodeFromTemplateJobStatus { PENDING = 'PENDING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface TemplateParametersMap {
 	}
@@ -1131,7 +1131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateType { RTSP_CAMERA_STREAM = 0 }
+	export enum TemplateType { RTSP_CAMERA_STREAM = 'RTSP_CAMERA_STREAM' }
 
 	export interface DescribePackageResponse {
 
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageImportJobType { NODE_PACKAGE_VERSION = 0, MARKETPLACE_NODE_PACKAGE_VERSION = 1 }
+	export enum PackageImportJobType { NODE_PACKAGE_VERSION = 'NODE_PACKAGE_VERSION', MARKETPLACE_NODE_PACKAGE_VERSION = 'MARKETPLACE_NODE_PACKAGE_VERSION' }
 
 
 	/** Results of a package import job. */
@@ -1406,7 +1406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageVersionStatus { REGISTER_PENDING = 0, REGISTER_COMPLETED = 1, FAILED = 2, DELETING = 3 }
+	export enum PackageVersionStatus { REGISTER_PENDING = 'REGISTER_PENDING', REGISTER_COMPLETED = 'REGISTER_COMPLETED', FAILED = 'FAILED', DELETING = 'DELETING' }
 
 	export interface ListApplicationInstanceDependenciesResponse {
 		NextToken?: string;
@@ -1514,7 +1514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeInstanceStatus { RUNNING = 0, ERROR = 1, NOT_AVAILABLE = 2, PAUSED = 3 }
+	export enum NodeInstanceStatus { RUNNING = 'RUNNING', ERROR = 'ERROR', NOT_AVAILABLE = 'NOT_AVAILABLE', PAUSED = 'PAUSED' }
 
 	export interface ListApplicationInstancesResponse {
 		ApplicationInstances?: Array<ApplicationInstance>;
@@ -2023,7 +2023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeSignalValue { PAUSE = 0, RESUME = 1 }
+	export enum NodeSignalValue { PAUSE = 'PAUSE', RESUME = 'RESUME' }
 
 	export interface TagResourceResponse {
 	}
@@ -2322,7 +2322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageImportJobStatus { PENDING = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum PackageImportJobStatus { PENDING = 'PENDING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface DescribePackageRequest {
 	}
@@ -2364,7 +2364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusFilter { DEPLOYMENT_SUCCEEDED = 0, DEPLOYMENT_ERROR = 1, REMOVAL_SUCCEEDED = 2, REMOVAL_FAILED = 3, PROCESSING_DEPLOYMENT = 4, PROCESSING_REMOVAL = 5, DEPLOYMENT_FAILED = 6 }
+	export enum StatusFilter { DEPLOYMENT_SUCCEEDED = 'DEPLOYMENT_SUCCEEDED', DEPLOYMENT_ERROR = 'DEPLOYMENT_ERROR', REMOVAL_SUCCEEDED = 'REMOVAL_SUCCEEDED', REMOVAL_FAILED = 'REMOVAL_FAILED', PROCESSING_DEPLOYMENT = 'PROCESSING_DEPLOYMENT', PROCESSING_REMOVAL = 'PROCESSING_REMOVAL', DEPLOYMENT_FAILED = 'DEPLOYMENT_FAILED' }
 
 	export interface ListApplicationInstancesRequest {
 	}
@@ -2386,9 +2386,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ListDevicesSortBy { DEVICE_ID = 0, CREATED_TIME = 1, NAME = 2, DEVICE_AGGREGATED_STATUS = 3 }
+	export enum ListDevicesSortBy { DEVICE_ID = 'DEVICE_ID', CREATED_TIME = 'CREATED_TIME', NAME = 'NAME', DEVICE_AGGREGATED_STATUS = 'DEVICE_AGGREGATED_STATUS' }
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListDevicesRequest {
 	}

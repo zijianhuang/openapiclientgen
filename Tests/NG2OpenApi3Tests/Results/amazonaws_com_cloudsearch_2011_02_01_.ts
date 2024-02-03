@@ -262,7 +262,7 @@ export namespace MyNS {
 
 
 	/** The type of <code>IndexField</code>. */
-	export enum IndexFieldType { uint = 0, literal = 1, text = 2 }
+	export enum IndexFieldType { uint = 'uint', literal = 'literal', text = 'text' }
 
 
 	/** Options that define a <code>uint</code> field in the search index. */
@@ -357,7 +357,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceDataFunction { Copy = 0, TrimTitle = 1, Map = 2 }
+	export enum SourceDataFunction { Copy = 'Copy', TrimTitle = 'TrimTitle', Map = 'Map' }
 
 
 	/** The source attribute name and an optional default value to use if a document doesn't have an attribute of that name. */
@@ -495,7 +495,7 @@ export namespace MyNS {
 
 
 	/** The state of processing a change to an option. */
-	export enum OptionState { RequiresIndexDocuments = 0, Processing = 1, Active = 2 }
+	export enum OptionState { RequiresIndexDocuments = 'RequiresIndexDocuments', Processing = 'Processing', Active = 'Active' }
 
 
 	/** The request was rejected because it specified an invalid type definition. */
@@ -2040,9 +2040,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_CreateDomainAction { CreateDomain = 0 }
+	export enum GET_CreateDomainAction { CreateDomain = 'CreateDomain' }
 
-	export enum GET_CreateDomainVersion { '2011-02-01' = 0 }
+	export enum GET_CreateDomainVersion { '2011-02-01' = '2011-02-01' }
 
 	export interface GET_DefineIndexFieldIndexField {
 
@@ -2072,7 +2072,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DefineIndexFieldAction { DefineIndexField = 0 }
+	export enum GET_DefineIndexFieldAction { DefineIndexField = 'DefineIndexField' }
 
 	export interface GET_DefineRankExpressionRankExpression {
 
@@ -2098,45 +2098,45 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DefineRankExpressionAction { DefineRankExpression = 0 }
+	export enum GET_DefineRankExpressionAction { DefineRankExpression = 'DefineRankExpression' }
 
-	export enum GET_DeleteDomainAction { DeleteDomain = 0 }
+	export enum GET_DeleteDomainAction { DeleteDomain = 'DeleteDomain' }
 
-	export enum GET_DeleteIndexFieldAction { DeleteIndexField = 0 }
+	export enum GET_DeleteIndexFieldAction { DeleteIndexField = 'DeleteIndexField' }
 
-	export enum GET_DeleteRankExpressionAction { DeleteRankExpression = 0 }
+	export enum GET_DeleteRankExpressionAction { DeleteRankExpression = 'DeleteRankExpression' }
 
-	export enum GET_DescribeAvailabilityOptionsAction { DescribeAvailabilityOptions = 0 }
+	export enum GET_DescribeAvailabilityOptionsAction { DescribeAvailabilityOptions = 'DescribeAvailabilityOptions' }
 
-	export enum GET_DescribeDefaultSearchFieldAction { DescribeDefaultSearchField = 0 }
+	export enum GET_DescribeDefaultSearchFieldAction { DescribeDefaultSearchField = 'DescribeDefaultSearchField' }
 
-	export enum GET_DescribeDomainsAction { DescribeDomains = 0 }
+	export enum GET_DescribeDomainsAction { DescribeDomains = 'DescribeDomains' }
 
-	export enum GET_DescribeIndexFieldsAction { DescribeIndexFields = 0 }
+	export enum GET_DescribeIndexFieldsAction { DescribeIndexFields = 'DescribeIndexFields' }
 
-	export enum GET_DescribeRankExpressionsAction { DescribeRankExpressions = 0 }
+	export enum GET_DescribeRankExpressionsAction { DescribeRankExpressions = 'DescribeRankExpressions' }
 
-	export enum GET_DescribeServiceAccessPoliciesAction { DescribeServiceAccessPolicies = 0 }
+	export enum GET_DescribeServiceAccessPoliciesAction { DescribeServiceAccessPolicies = 'DescribeServiceAccessPolicies' }
 
-	export enum GET_DescribeStemmingOptionsAction { DescribeStemmingOptions = 0 }
+	export enum GET_DescribeStemmingOptionsAction { DescribeStemmingOptions = 'DescribeStemmingOptions' }
 
-	export enum GET_DescribeStopwordOptionsAction { DescribeStopwordOptions = 0 }
+	export enum GET_DescribeStopwordOptionsAction { DescribeStopwordOptions = 'DescribeStopwordOptions' }
 
-	export enum GET_DescribeSynonymOptionsAction { DescribeSynonymOptions = 0 }
+	export enum GET_DescribeSynonymOptionsAction { DescribeSynonymOptions = 'DescribeSynonymOptions' }
 
-	export enum GET_IndexDocumentsAction { IndexDocuments = 0 }
+	export enum GET_IndexDocumentsAction { IndexDocuments = 'IndexDocuments' }
 
-	export enum GET_UpdateAvailabilityOptionsAction { UpdateAvailabilityOptions = 0 }
+	export enum GET_UpdateAvailabilityOptionsAction { UpdateAvailabilityOptions = 'UpdateAvailabilityOptions' }
 
-	export enum GET_UpdateDefaultSearchFieldAction { UpdateDefaultSearchField = 0 }
+	export enum GET_UpdateDefaultSearchFieldAction { UpdateDefaultSearchField = 'UpdateDefaultSearchField' }
 
-	export enum GET_UpdateServiceAccessPoliciesAction { UpdateServiceAccessPolicies = 0 }
+	export enum GET_UpdateServiceAccessPoliciesAction { UpdateServiceAccessPolicies = 'UpdateServiceAccessPolicies' }
 
-	export enum GET_UpdateStemmingOptionsAction { UpdateStemmingOptions = 0 }
+	export enum GET_UpdateStemmingOptionsAction { UpdateStemmingOptions = 'UpdateStemmingOptions' }
 
-	export enum GET_UpdateStopwordOptionsAction { UpdateStopwordOptions = 0 }
+	export enum GET_UpdateStopwordOptionsAction { UpdateStopwordOptions = 'UpdateStopwordOptions' }
 
-	export enum GET_UpdateSynonymOptionsAction { UpdateSynonymOptions = 0 }
+	export enum GET_UpdateSynonymOptionsAction { UpdateSynonymOptions = 'UpdateSynonymOptions' }
 
 }
 

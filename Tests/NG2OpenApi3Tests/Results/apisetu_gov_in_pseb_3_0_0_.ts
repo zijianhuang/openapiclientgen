@@ -1368,7 +1368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CemstPostBodyFormat { pdf = 0 }
+	export enum CemstPostBodyFormat { pdf = 'pdf' }
 
 	export interface CfmstPostBody {
 		certificateParameters?: CfmstPostBodyCertificateParameters;

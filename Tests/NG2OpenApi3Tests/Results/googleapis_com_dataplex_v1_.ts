@@ -107,7 +107,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1ActionCategory { CATEGORY_UNSPECIFIED = 0, RESOURCE_MANAGEMENT = 1, SECURITY_POLICY = 2, DATA_DISCOVERY = 3 }
+	export enum GoogleCloudDataplexV1ActionCategory { CATEGORY_UNSPECIFIED = 'CATEGORY_UNSPECIFIED', RESOURCE_MANAGEMENT = 'RESOURCE_MANAGEMENT', SECURITY_POLICY = 'SECURITY_POLICY', DATA_DISCOVERY = 'DATA_DISCOVERY' }
 
 
 	/** Failed to apply security policy to the managed resource(s) under a lake, zone or an asset. For a lake or zone resource, one or more underlying assets has a failure applying security policy to the associated managed resource. */
@@ -175,7 +175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1ActionIncompatibleDataSchemaSchemaChange { SCHEMA_CHANGE_UNSPECIFIED = 0, INCOMPATIBLE = 1, MODIFIED = 2 }
+	export enum GoogleCloudDataplexV1ActionIncompatibleDataSchemaSchemaChange { SCHEMA_CHANGE_UNSPECIFIED = 'SCHEMA_CHANGE_UNSPECIFIED', INCOMPATIBLE = 'INCOMPATIBLE', MODIFIED = 'MODIFIED' }
 
 
 	/** Action details for invalid or unsupported data files detected by discovery. */
@@ -243,7 +243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1ActionInvalidDataPartitionExpectedStructure { PARTITION_STRUCTURE_UNSPECIFIED = 0, CONSISTENT_KEYS = 1, HIVE_STYLE_KEYS = 2 }
+	export enum GoogleCloudDataplexV1ActionInvalidDataPartitionExpectedStructure { PARTITION_STRUCTURE_UNSPECIFIED = 'PARTITION_STRUCTURE_UNSPECIFIED', CONSISTENT_KEYS = 'CONSISTENT_KEYS', HIVE_STYLE_KEYS = 'HIVE_STYLE_KEYS' }
 
 
 	/** Action details for absence of data detected by discovery. */
@@ -534,7 +534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1AssetDiscoveryStatusState { STATE_UNSPECIFIED = 0, SCHEDULED = 1, IN_PROGRESS = 2, PAUSED = 3, DISABLED = 4 }
+	export enum GoogleCloudDataplexV1AssetDiscoveryStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', SCHEDULED = 'SCHEDULED', IN_PROGRESS = 'IN_PROGRESS', PAUSED = 'PAUSED', DISABLED = 'DISABLED' }
 
 
 	/** The aggregated data statistics for the asset reported by discovery. */
@@ -613,9 +613,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1AssetResourceSpecReadAccessMode { ACCESS_MODE_UNSPECIFIED = 0, DIRECT = 1, MANAGED = 2 }
+	export enum GoogleCloudDataplexV1AssetResourceSpecReadAccessMode { ACCESS_MODE_UNSPECIFIED = 'ACCESS_MODE_UNSPECIFIED', DIRECT = 'DIRECT', MANAGED = 'MANAGED' }
 
-	export enum GoogleCloudDataplexV1AssetResourceSpecType { TYPE_UNSPECIFIED = 0, STORAGE_BUCKET = 1, BIGQUERY_DATASET = 2 }
+	export enum GoogleCloudDataplexV1AssetResourceSpecType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', STORAGE_BUCKET = 'STORAGE_BUCKET', BIGQUERY_DATASET = 'BIGQUERY_DATASET' }
 
 
 	/** Status of the resource referenced by an asset. */
@@ -659,7 +659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1AssetResourceStatusState { STATE_UNSPECIFIED = 0, READY = 1, ERROR = 2 }
+	export enum GoogleCloudDataplexV1AssetResourceStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', ERROR = 'ERROR' }
 
 
 	/** Security policy status of the asset. Data security policy, i.e., readers, writers & owners, should be specified in the lake/zone/asset IAM policy. */
@@ -696,9 +696,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1AssetSecurityStatusState { STATE_UNSPECIFIED = 0, READY = 1, APPLYING = 2, ERROR = 3 }
+	export enum GoogleCloudDataplexV1AssetSecurityStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', APPLYING = 'APPLYING', ERROR = 'ERROR' }
 
-	export enum GoogleCloudDataplexV1AssetState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, DELETING = 3, ACTION_REQUIRED = 4 }
+	export enum GoogleCloudDataplexV1AssetState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING', ACTION_REQUIRED = 'ACTION_REQUIRED' }
 
 
 	/** Aggregated status of the underlying assets of a lake or zone. */
@@ -846,7 +846,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1ContentNotebookKernelType { KERNEL_TYPE_UNSPECIFIED = 0, PYTHON3 = 1 }
+	export enum GoogleCloudDataplexV1ContentNotebookKernelType { KERNEL_TYPE_UNSPECIFIED = 'KERNEL_TYPE_UNSPECIFIED', PYTHON3 = 'PYTHON3' }
 
 
 	/** Configuration for the Sql Script content. */
@@ -869,7 +869,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1ContentSqlScriptEngine { QUERY_ENGINE_UNSPECIFIED = 0, SPARK = 1 }
+	export enum GoogleCloudDataplexV1ContentSqlScriptEngine { QUERY_ENGINE_UNSPECIFIED = 'QUERY_ENGINE_UNSPECIFIED', SPARK = 'SPARK' }
 
 
 	/** DataAccessSpec holds the access control configuration to be enforced on data stored within resources (eg: rows, columns in BigQuery Tables). When associated with data, the data is only accessible to principals explicitly granted access through the DataAccessSpec. Principals with access to the containing resource are not implicitly granted access. */
@@ -1183,7 +1183,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DataProfileResultPostScanActionsResultBigQueryExportResultState { STATE_UNSPECIFIED = 0, SUCCEEDED = 1, FAILED = 2, SKIPPED = 3 }
+	export enum GoogleCloudDataplexV1DataProfileResultPostScanActionsResultBigQueryExportResultState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', SKIPPED = 'SKIPPED' }
 
 
 	/** Contains name, type, mode and field type specific profile information. */
@@ -2062,7 +2062,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectationStatistic { STATISTIC_UNDEFINED = 0, MEAN = 1, MIN = 2, MAX = 3 }
+	export enum GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectationStatistic { STATISTIC_UNDEFINED = 'STATISTIC_UNDEFINED', MEAN = 'MEAN', MIN = 'MIN', MAX = 'MAX' }
 
 
 	/** Evaluates whether the provided expression is true.The SQL expression needs to use BigQuery standard SQL syntax and should produce a scalar boolean result.Example: MIN(col1) >= 0 */
@@ -2197,11 +2197,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DataQualityScanRuleResultEvalutionType { EVALUATION_TYPE_UNSPECIFIED = 0, PER_ROW = 1, AGGREGATE = 2 }
+	export enum GoogleCloudDataplexV1DataQualityScanRuleResultEvalutionType { EVALUATION_TYPE_UNSPECIFIED = 'EVALUATION_TYPE_UNSPECIFIED', PER_ROW = 'PER_ROW', AGGREGATE = 'AGGREGATE' }
 
-	export enum GoogleCloudDataplexV1DataQualityScanRuleResultResult { RESULT_UNSPECIFIED = 0, PASSED = 1, FAILED = 2 }
+	export enum GoogleCloudDataplexV1DataQualityScanRuleResultResult { RESULT_UNSPECIFIED = 'RESULT_UNSPECIFIED', PASSED = 'PASSED', FAILED = 'FAILED' }
 
-	export enum GoogleCloudDataplexV1DataQualityScanRuleResultRuleType { RULE_TYPE_UNSPECIFIED = 0, NON_NULL_EXPECTATION = 1, RANGE_EXPECTATION = 2, REGEX_EXPECTATION = 3, ROW_CONDITION_EXPECTATION = 4, SET_EXPECTATION = 5, STATISTIC_RANGE_EXPECTATION = 6, TABLE_CONDITION_EXPECTATION = 7, UNIQUENESS_EXPECTATION = 8 }
+	export enum GoogleCloudDataplexV1DataQualityScanRuleResultRuleType { RULE_TYPE_UNSPECIFIED = 'RULE_TYPE_UNSPECIFIED', NON_NULL_EXPECTATION = 'NON_NULL_EXPECTATION', RANGE_EXPECTATION = 'RANGE_EXPECTATION', REGEX_EXPECTATION = 'REGEX_EXPECTATION', ROW_CONDITION_EXPECTATION = 'ROW_CONDITION_EXPECTATION', SET_EXPECTATION = 'SET_EXPECTATION', STATISTIC_RANGE_EXPECTATION = 'STATISTIC_RANGE_EXPECTATION', TABLE_CONDITION_EXPECTATION = 'TABLE_CONDITION_EXPECTATION', UNIQUENESS_EXPECTATION = 'UNIQUENESS_EXPECTATION' }
 
 
 	/** DataQualityScan related setting. */
@@ -2508,7 +2508,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DataScanType { DATA_SCAN_TYPE_UNSPECIFIED = 0, DATA_QUALITY = 1, DATA_PROFILE = 2 }
+	export enum GoogleCloudDataplexV1DataScanType { DATA_SCAN_TYPE_UNSPECIFIED = 'DATA_SCAN_TYPE_UNSPECIFIED', DATA_QUALITY = 'DATA_QUALITY', DATA_PROFILE = 'DATA_PROFILE' }
 
 
 	/** These messages contain information about the execution of a datascan. The monitored resource is 'DataScan' Next ID: 13 */
@@ -2801,13 +2801,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DataScanEventScope { SCOPE_UNSPECIFIED = 0, FULL = 1, INCREMENTAL = 2 }
+	export enum GoogleCloudDataplexV1DataScanEventScope { SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED', FULL = 'FULL', INCREMENTAL = 'INCREMENTAL' }
 
-	export enum GoogleCloudDataplexV1DataScanEventState { STATE_UNSPECIFIED = 0, STARTED = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4, CREATED = 5 }
+	export enum GoogleCloudDataplexV1DataScanEventState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTED = 'STARTED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', CREATED = 'CREATED' }
 
-	export enum GoogleCloudDataplexV1DataScanEventTrigger { TRIGGER_UNSPECIFIED = 0, ON_DEMAND = 1, SCHEDULE = 2 }
+	export enum GoogleCloudDataplexV1DataScanEventTrigger { TRIGGER_UNSPECIFIED = 'TRIGGER_UNSPECIFIED', ON_DEMAND = 'ON_DEMAND', SCHEDULE = 'SCHEDULE' }
 
-	export enum GoogleCloudDataplexV1DataScanEventType { SCAN_TYPE_UNSPECIFIED = 0, DATA_PROFILE = 1, DATA_QUALITY = 2 }
+	export enum GoogleCloudDataplexV1DataScanEventType { SCAN_TYPE_UNSPECIFIED = 'SCAN_TYPE_UNSPECIFIED', DATA_PROFILE = 'DATA_PROFILE', DATA_QUALITY = 'DATA_QUALITY' }
 
 
 	/** A DataScanJob represents an instance of DataScan execution. */
@@ -2884,7 +2884,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DataScanJobState { STATE_UNSPECIFIED = 0, RUNNING = 1, CANCELING = 2, CANCELLED = 3, SUCCEEDED = 4, FAILED = 5, PENDING = 6 }
+	export enum GoogleCloudDataplexV1DataScanJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', CANCELING = 'CANCELING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', PENDING = 'PENDING' }
 
 
 	/** DataTaxonomy represents a set of hierarchical DataAttributes resources, grouped with a common theme Eg: 'SensitiveDataTaxonomy' can have attributes to manage PII data. It is defined at project level. */
@@ -3108,7 +3108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DiscoveryEventEntityDetailsType { ENTITY_TYPE_UNSPECIFIED = 0, TABLE = 1, FILESET = 2 }
+	export enum GoogleCloudDataplexV1DiscoveryEventEntityDetailsType { ENTITY_TYPE_UNSPECIFIED = 'ENTITY_TYPE_UNSPECIFIED', TABLE = 'TABLE', FILESET = 'FILESET' }
 
 
 	/** Details about the partition. */
@@ -3148,7 +3148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1DiscoveryEventType { EVENT_TYPE_UNSPECIFIED = 0, CONFIG = 1, ENTITY_CREATED = 2, ENTITY_UPDATED = 3, ENTITY_DELETED = 4, PARTITION_CREATED = 5, PARTITION_UPDATED = 6, PARTITION_DELETED = 7 }
+	export enum GoogleCloudDataplexV1DiscoveryEventType { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', CONFIG = 'CONFIG', ENTITY_CREATED = 'ENTITY_CREATED', ENTITY_UPDATED = 'ENTITY_UPDATED', ENTITY_DELETED = 'ENTITY_DELETED', PARTITION_CREATED = 'PARTITION_CREATED', PARTITION_UPDATED = 'PARTITION_UPDATED', PARTITION_DELETED = 'PARTITION_DELETED' }
 
 
 	/** Represents tables and fileset metadata contained within a zone. */
@@ -3387,7 +3387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1StorageFormatCompressionFormat { COMPRESSION_FORMAT_UNSPECIFIED = 0, GZIP = 1, BZIP2 = 2 }
+	export enum GoogleCloudDataplexV1StorageFormatCompressionFormat { COMPRESSION_FORMAT_UNSPECIFIED = 'COMPRESSION_FORMAT_UNSPECIFIED', GZIP = 'GZIP', BZIP2 = 'BZIP2' }
 
 
 	/** Describes CSV and similar semi-structured data formats. */
@@ -3431,7 +3431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1StorageFormatFormat { FORMAT_UNSPECIFIED = 0, PARQUET = 1, AVRO = 2, ORC = 3, CSV = 4, JSON = 5, IMAGE = 6, AUDIO = 7, VIDEO = 8, TEXT = 9, TFRECORD = 10, OTHER = 11, UNKNOWN = 12 }
+	export enum GoogleCloudDataplexV1StorageFormatFormat { FORMAT_UNSPECIFIED = 'FORMAT_UNSPECIFIED', PARQUET = 'PARQUET', AVRO = 'AVRO', ORC = 'ORC', CSV = 'CSV', JSON = 'JSON', IMAGE = 'IMAGE', AUDIO = 'AUDIO', VIDEO = 'VIDEO', TEXT = 'TEXT', TFRECORD = 'TFRECORD', OTHER = 'OTHER', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Describes Iceberg data format. */
@@ -3554,9 +3554,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1SchemaSchemaFieldMode { MODE_UNSPECIFIED = 0, REQUIRED = 1, NULLABLE = 2, REPEATED = 3 }
+	export enum GoogleCloudDataplexV1SchemaSchemaFieldMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', REQUIRED = 'REQUIRED', NULLABLE = 'NULLABLE', REPEATED = 'REPEATED' }
 
-	export enum GoogleCloudDataplexV1SchemaSchemaFieldType { TYPE_UNSPECIFIED = 0, BOOLEAN = 1, BYTE = 2, INT16 = 3, INT32 = 4, INT64 = 5, FLOAT = 6, DOUBLE = 7, DECIMAL = 8, STRING = 9, BINARY = 10, TIMESTAMP = 11, DATE = 12, TIME = 13, RECORD = 14, NULL = 15 }
+	export enum GoogleCloudDataplexV1SchemaSchemaFieldType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', BOOLEAN = 'BOOLEAN', BYTE = 'BYTE', INT16 = 'INT16', INT32 = 'INT32', INT64 = 'INT64', FLOAT = 'FLOAT', DOUBLE = 'DOUBLE', DECIMAL = 'DECIMAL', STRING = 'STRING', BINARY = 'BINARY', TIMESTAMP = 'TIMESTAMP', DATE = 'DATE', TIME = 'TIME', RECORD = 'RECORD', NULL = 'NULL' }
 
 
 	/** Represents a key field within the entity's partition structure. You could have up to 20 partition fields, but only the first 10 partitions have the filtering ability due to performance consideration. Note: Partition fields are immutable. */
@@ -3586,11 +3586,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1SchemaPartitionStyle { PARTITION_STYLE_UNSPECIFIED = 0, HIVE_COMPATIBLE = 1 }
+	export enum GoogleCloudDataplexV1SchemaPartitionStyle { PARTITION_STYLE_UNSPECIFIED = 'PARTITION_STYLE_UNSPECIFIED', HIVE_COMPATIBLE = 'HIVE_COMPATIBLE' }
 
-	export enum GoogleCloudDataplexV1EntitySystem { STORAGE_SYSTEM_UNSPECIFIED = 0, CLOUD_STORAGE = 1, BIGQUERY = 2 }
+	export enum GoogleCloudDataplexV1EntitySystem { STORAGE_SYSTEM_UNSPECIFIED = 'STORAGE_SYSTEM_UNSPECIFIED', CLOUD_STORAGE = 'CLOUD_STORAGE', BIGQUERY = 'BIGQUERY' }
 
-	export enum GoogleCloudDataplexV1EntityType { TYPE_UNSPECIFIED = 0, TABLE = 1, FILESET = 2 }
+	export enum GoogleCloudDataplexV1EntityType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TABLE = 'TABLE', FILESET = 'FILESET' }
 
 
 	/** Environment represents a user-visible compute infrastructure for analytics within a lake. */
@@ -3899,7 +3899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1GovernanceEventEventType { EVENT_TYPE_UNSPECIFIED = 0, RESOURCE_IAM_POLICY_UPDATE = 1, BIGQUERY_TABLE_CREATE = 2, BIGQUERY_TABLE_UPDATE = 3, BIGQUERY_TABLE_DELETE = 4, BIGQUERY_CONNECTION_CREATE = 5, BIGQUERY_CONNECTION_UPDATE = 6, BIGQUERY_CONNECTION_DELETE = 7, BIGQUERY_TAXONOMY_CREATE = 8, BIGQUERY_POLICY_TAG_CREATE = 9, BIGQUERY_POLICY_TAG_DELETE = 10, BIGQUERY_POLICY_TAG_SET_IAM_POLICY = 11, ACCESS_POLICY_UPDATE = 12, GOVERNANCE_RULE_MATCHED_RESOURCES = 13, GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS = 14, GOVERNANCE_RULE_ERRORS = 15, GOVERNANCE_RULE_PROCESSING = 16 }
+	export enum GoogleCloudDataplexV1GovernanceEventEventType { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', RESOURCE_IAM_POLICY_UPDATE = 'RESOURCE_IAM_POLICY_UPDATE', BIGQUERY_TABLE_CREATE = 'BIGQUERY_TABLE_CREATE', BIGQUERY_TABLE_UPDATE = 'BIGQUERY_TABLE_UPDATE', BIGQUERY_TABLE_DELETE = 'BIGQUERY_TABLE_DELETE', BIGQUERY_CONNECTION_CREATE = 'BIGQUERY_CONNECTION_CREATE', BIGQUERY_CONNECTION_UPDATE = 'BIGQUERY_CONNECTION_UPDATE', BIGQUERY_CONNECTION_DELETE = 'BIGQUERY_CONNECTION_DELETE', BIGQUERY_TAXONOMY_CREATE = 'BIGQUERY_TAXONOMY_CREATE', BIGQUERY_POLICY_TAG_CREATE = 'BIGQUERY_POLICY_TAG_CREATE', BIGQUERY_POLICY_TAG_DELETE = 'BIGQUERY_POLICY_TAG_DELETE', BIGQUERY_POLICY_TAG_SET_IAM_POLICY = 'BIGQUERY_POLICY_TAG_SET_IAM_POLICY', ACCESS_POLICY_UPDATE = 'ACCESS_POLICY_UPDATE', GOVERNANCE_RULE_MATCHED_RESOURCES = 'GOVERNANCE_RULE_MATCHED_RESOURCES', GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS = 'GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS', GOVERNANCE_RULE_ERRORS = 'GOVERNANCE_RULE_ERRORS', GOVERNANCE_RULE_PROCESSING = 'GOVERNANCE_RULE_PROCESSING' }
 
 
 	/** A job represents an instance of a task. */
@@ -4044,11 +4044,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1JobService { SERVICE_UNSPECIFIED = 0, DATAPROC = 1 }
+	export enum GoogleCloudDataplexV1JobService { SERVICE_UNSPECIFIED = 'SERVICE_UNSPECIFIED', DATAPROC = 'DATAPROC' }
 
-	export enum GoogleCloudDataplexV1JobState { STATE_UNSPECIFIED = 0, RUNNING = 1, CANCELLING = 2, CANCELLED = 3, SUCCEEDED = 4, FAILED = 5, ABORTED = 6 }
+	export enum GoogleCloudDataplexV1JobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', ABORTED = 'ABORTED' }
 
-	export enum GoogleCloudDataplexV1JobTrigger { TRIGGER_UNSPECIFIED = 0, TASK_CONFIG = 1, RUN_REQUEST = 2 }
+	export enum GoogleCloudDataplexV1JobTrigger { TRIGGER_UNSPECIFIED = 'TRIGGER_UNSPECIFIED', TASK_CONFIG = 'TASK_CONFIG', RUN_REQUEST = 'RUN_REQUEST' }
 
 
 	/** The payload associated with Job logs that contains events describing jobs that have run within a Lake. */
@@ -4134,11 +4134,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1JobEventExecutionTrigger { EXECUTION_TRIGGER_UNSPECIFIED = 0, TASK_CONFIG = 1, RUN_REQUEST = 2 }
+	export enum GoogleCloudDataplexV1JobEventExecutionTrigger { EXECUTION_TRIGGER_UNSPECIFIED = 'EXECUTION_TRIGGER_UNSPECIFIED', TASK_CONFIG = 'TASK_CONFIG', RUN_REQUEST = 'RUN_REQUEST' }
 
-	export enum GoogleCloudDataplexV1JobEventState { STATE_UNSPECIFIED = 0, SUCCEEDED = 1, FAILED = 2, CANCELLED = 3, ABORTED = 4 }
+	export enum GoogleCloudDataplexV1JobEventState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', ABORTED = 'ABORTED' }
 
-	export enum GoogleCloudDataplexV1JobEventType { TYPE_UNSPECIFIED = 0, SPARK = 1, NOTEBOOK = 2 }
+	export enum GoogleCloudDataplexV1JobEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', SPARK = 'SPARK', NOTEBOOK = 'NOTEBOOK' }
 
 
 	/** A lake is a centralized repository for managing enterprise data across the organization distributed across many cloud projects, and stored in a variety of storage services such as Google Cloud Storage and BigQuery. The resources attached to a lake are referred to as managed resources. Data within these managed resources can be structured or unstructured. A lake provides data admins with tools to organize, secure and manage their data at scale, and provides data scientists and data engineers an integrated experience to easily search, discover, analyze and transform data and associated metadata. */
@@ -4289,7 +4289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1LakeMetastoreStatusState { STATE_UNSPECIFIED = 0, NONE = 1, READY = 2, UPDATING = 3, ERROR = 4 }
+	export enum GoogleCloudDataplexV1LakeMetastoreStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NONE = 'NONE', READY = 'READY', UPDATING = 'UPDATING', ERROR = 'ERROR' }
 
 
 	/** List actions response. */
@@ -5111,7 +5111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1TaskTriggerSpecType { TYPE_UNSPECIFIED = 0, ON_DEMAND = 1, RECURRING = 2 }
+	export enum GoogleCloudDataplexV1TaskTriggerSpecType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ON_DEMAND = 'ON_DEMAND', RECURRING = 'RECURRING' }
 
 
 	/** List zones response. */
@@ -5354,9 +5354,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1ZoneResourceSpecLocationType { LOCATION_TYPE_UNSPECIFIED = 0, SINGLE_REGION = 1, MULTI_REGION = 2 }
+	export enum GoogleCloudDataplexV1ZoneResourceSpecLocationType { LOCATION_TYPE_UNSPECIFIED = 'LOCATION_TYPE_UNSPECIFIED', SINGLE_REGION = 'SINGLE_REGION', MULTI_REGION = 'MULTI_REGION' }
 
-	export enum GoogleCloudDataplexV1ZoneType { TYPE_UNSPECIFIED = 0, RAW = 1, CURATED = 2 }
+	export enum GoogleCloudDataplexV1ZoneType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', RAW = 'RAW', CURATED = 'CURATED' }
 
 
 	/** Represents the metadata of a long-running operation. */
@@ -5611,9 +5611,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDataplexV1SessionEventQueryDetailEngine { ENGINE_UNSPECIFIED = 0, SPARK_SQL = 1, BIGQUERY = 2 }
+	export enum GoogleCloudDataplexV1SessionEventQueryDetailEngine { ENGINE_UNSPECIFIED = 'ENGINE_UNSPECIFIED', SPARK_SQL = 'SPARK_SQL', BIGQUERY = 'BIGQUERY' }
 
-	export enum GoogleCloudDataplexV1SessionEventType { EVENT_TYPE_UNSPECIFIED = 0, START = 1, STOP = 2, QUERY = 3, CREATE = 4 }
+	export enum GoogleCloudDataplexV1SessionEventType { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', START = 'START', STOP = 'STOP', QUERY = 'QUERY', CREATE = 'CREATE' }
 
 
 	/** The response message for Locations.ListLocations. */
@@ -5736,7 +5736,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates members, or principals, with a role. */
@@ -6509,9 +6509,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Dataplex_projects_locations_operations_getView { ENTITY_VIEW_UNSPECIFIED = 0, BASIC = 1, SCHEMA = 2, FULL = 3 }
+	export enum Dataplex_projects_locations_operations_getView { ENTITY_VIEW_UNSPECIFIED = 'ENTITY_VIEW_UNSPECIFIED', BASIC = 'BASIC', SCHEMA = 'SCHEMA', FULL = 'FULL' }
 
-	export enum Dataplex_projects_locations_lakes_zones_entities_listView { ENTITY_VIEW_UNSPECIFIED = 0, TABLES = 1, FILESETS = 2 }
+	export enum Dataplex_projects_locations_lakes_zones_entities_listView { ENTITY_VIEW_UNSPECIFIED = 'ENTITY_VIEW_UNSPECIFIED', TABLES = 'TABLES', FILESETS = 'FILESETS' }
 
 }
 

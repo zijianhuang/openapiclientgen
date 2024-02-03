@@ -1311,7 +1311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DpcerPostBodyFormat { pdf = 0 }
+	export enum DpcerPostBodyFormat { pdf = 'pdf' }
 
 }
 

@@ -439,7 +439,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureStorageCredentialType { None = 0, Sas = 1, AccountKey = 2, ClientCredentials = 3 }
+	export enum AzureStorageCredentialType { None = 'None', Sas = 'Sas', AccountKey = 'AccountKey', ClientCredentials = 'ClientCredentials' }
 
 	export interface DataStore {
 		azureDataLakeSection?: AzureDataLake;
@@ -484,7 +484,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataStoreDataStoreType { AzureBlob = 0, AzureFile = 1, AzureDataLake = 2, AzureSqlDatabase = 3, AzurePostgreSql = 4, DBFS = 5, AzureDataLakeGen2 = 6, GlusterFs = 7 }
+	export enum DataStoreDataStoreType { AzureBlob = 'AzureBlob', AzureFile = 'AzureFile', AzureDataLake = 'AzureDataLake', AzureSqlDatabase = 'AzureSqlDatabase', AzurePostgreSql = 'AzurePostgreSql', DBFS = 'DBFS', AzureDataLakeGen2 = 'AzureDataLakeGen2', GlusterFs = 'GlusterFs' }
 
 	export interface GlusterFs {
 

@@ -80,7 +80,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckUpgradeResponseContainsPypiModulesConflict { CONFLICT_RESULT_UNSPECIFIED = 0, CONFLICT = 1, NO_CONFLICT = 2 }
+	export enum CheckUpgradeResponseContainsPypiModulesConflict { CONFLICT_RESULT_UNSPECIFIED = 'CONFLICT_RESULT_UNSPECIFIED', CONFLICT = 'CONFLICT', NO_CONFLICT = 'NO_CONFLICT' }
 
 
 	/** CIDR block with an optional name. */
@@ -169,7 +169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskLogsRetentionConfigStorageMode { TASK_LOGS_STORAGE_MODE_UNSPECIFIED = 0, CLOUD_LOGGING_AND_CLOUD_STORAGE = 1, CLOUD_LOGGING_ONLY = 2 }
+	export enum TaskLogsRetentionConfigStorageMode { TASK_LOGS_STORAGE_MODE_UNSPECIFIED = 'TASK_LOGS_STORAGE_MODE_UNSPECIFIED', CLOUD_LOGGING_AND_CLOUD_STORAGE = 'CLOUD_LOGGING_AND_CLOUD_STORAGE', CLOUD_LOGGING_ONLY = 'CLOUD_LOGGING_ONLY' }
 
 
 	/** The configuration of Cloud SQL instance that is used by the Apache Airflow software. */
@@ -465,7 +465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentConfigEnvironmentSize { ENVIRONMENT_SIZE_UNSPECIFIED = 0, ENVIRONMENT_SIZE_SMALL = 1, ENVIRONMENT_SIZE_MEDIUM = 2, ENVIRONMENT_SIZE_LARGE = 3 }
+	export enum EnvironmentConfigEnvironmentSize { ENVIRONMENT_SIZE_UNSPECIFIED = 'ENVIRONMENT_SIZE_UNSPECIFIED', ENVIRONMENT_SIZE_SMALL = 'ENVIRONMENT_SIZE_SMALL', ENVIRONMENT_SIZE_MEDIUM = 'ENVIRONMENT_SIZE_MEDIUM', ENVIRONMENT_SIZE_LARGE = 'ENVIRONMENT_SIZE_LARGE' }
 
 
 	/** The configuration settings for Cloud Composer maintenance window. The following example: ``` { "startTime":"2019-08-01T01:00:00Z" "endTime":"2019-08-01T07:00:00Z" "recurrence":"FREQ=WEEKLY;BYDAY=TU,WE" } ``` would define a maintenance window between 01 and 07 hours UTC during each Tuesday and Wednesday. */
@@ -744,7 +744,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkingConfigConnectionType { CONNECTION_TYPE_UNSPECIFIED = 0, VPC_PEERING = 1, PRIVATE_SERVICE_CONNECT = 2 }
+	export enum NetworkingConfigConnectionType { CONNECTION_TYPE_UNSPECIFIED = 'CONNECTION_TYPE_UNSPECIFIED', VPC_PEERING = 'VPC_PEERING', PRIVATE_SERVICE_CONNECT = 'PRIVATE_SERVICE_CONNECT' }
 
 
 	/** Configuration options for the private GKE cluster in a Cloud Composer environment. */
@@ -840,7 +840,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentConfigResilienceMode { RESILIENCE_MODE_UNSPECIFIED = 0, HIGH_RESILIENCE = 1 }
+	export enum EnvironmentConfigResilienceMode { RESILIENCE_MODE_UNSPECIFIED = 'RESILIENCE_MODE_UNSPECIFIED', HIGH_RESILIENCE = 'HIGH_RESILIENCE' }
 
 
 	/** Specifies the selection and configuration of software inside the environment. */
@@ -1126,7 +1126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentState { STATE_UNSPECIFIED = 0, CREATING = 1, RUNNING = 2, UPDATING = 3, DELETING = 4, ERROR = 5 }
+	export enum EnvironmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', RUNNING = 'RUNNING', UPDATING = 'UPDATING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** The configuration for data storage in the environment. */
@@ -1628,9 +1628,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationMetadataOperationType { TYPE_UNSPECIFIED = 0, CREATE = 1, DELETE = 2, UPDATE = 3, CHECK = 4, SAVE_SNAPSHOT = 5, LOAD_SNAPSHOT = 6, DATABASE_FAILOVER = 7 }
+	export enum OperationMetadataOperationType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CREATE = 'CREATE', DELETE = 'DELETE', UPDATE = 'UPDATE', CHECK = 'CHECK', SAVE_SNAPSHOT = 'SAVE_SNAPSHOT', LOAD_SNAPSHOT = 'LOAD_SNAPSHOT', DATABASE_FAILOVER = 'DATABASE_FAILOVER' }
 
-	export enum OperationMetadataState { STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, SUCCESSFUL = 4, FAILED = 5 }
+	export enum OperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED' }
 
 
 	/** Poll Airflow Command request. */

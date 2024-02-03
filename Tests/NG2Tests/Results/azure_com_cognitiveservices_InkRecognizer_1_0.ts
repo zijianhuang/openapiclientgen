@@ -56,7 +56,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlternatePatternElementCategory { inkDrawing = 0, inkBullet = 1, inkWord = 2, unknown = 3 }
+	export enum AlternatePatternElementCategory { inkDrawing = 'inkDrawing', inkBullet = 'inkBullet', inkWord = 'inkWord', unknown = 'unknown' }
 
 
 	/** This holds all the properties of one point */
@@ -160,7 +160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisRequestApplicationType { drawing = 0, writing = 1, mixed = 2 }
+	export enum AnalysisRequestApplicationType { drawing = 'drawing', writing = 'writing', mixed = 'mixed' }
 
 
 	/** A container for the attributes of a value contained in the ink point object. */
@@ -197,7 +197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisRequestInputDeviceKind { digitizer = 0, pen = 1, lightPen = 2, touchScreen = 3, touchPad = 4, whiteBoard = 5, '3dDigitizer' = 6, stereoPlotter = 7, articulatedArm = 8, armature = 9 }
+	export enum AnalysisRequestInputDeviceKind { digitizer = 'digitizer', pen = 'pen', lightPen = 'lightPen', touchScreen = 'touchScreen', touchPad = 'touchPad', whiteBoard = 'whiteBoard', '3dDigitizer' = '3dDigitizer', stereoPlotter = 'stereoPlotter', articulatedArm = 'articulatedArm', armature = 'armature' }
 
 	export interface Stroke {
 
@@ -335,11 +335,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DrawingAttributesPatternRasterOp { noOperation = 0, copyPen = 1, maskPen = 2 }
+	export enum DrawingAttributesPatternRasterOp { noOperation = 'noOperation', copyPen = 'copyPen', maskPen = 'maskPen' }
 
-	export enum DrawingAttributesPatternTip { ellipse = 0, rectangle = 1 }
+	export enum DrawingAttributesPatternTip { ellipse = 'ellipse', rectangle = 'rectangle' }
 
-	export enum StrokeKind { inkDrawing = 0, inkWriting = 1 }
+	export enum StrokeKind { inkDrawing = 'inkDrawing', inkWriting = 'inkWriting' }
 
 
 	/** An object containing the properties of an point in the path of an ink stroke. The main properties are the x and y values. Other include tip pressure, x tilt etc. For the coordinate values, it is recommended to have a precision of 8 digits after the decimal to obtain most accurate recognition results. The origin (0,0) of the canvas is assumed to be at the top left corner of the canvas */
@@ -472,7 +472,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisRequestUnit { mm = 0, cm = 1, in = 2 }
+	export enum AnalysisRequestUnit { mm = 'mm', cm = 'cm', in = 'in' }
 
 
 	/** This shows the expected contents of a response from the service */
@@ -667,23 +667,23 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisResponseRecognitionUnitsCategory { root = 0, writingRegion = 1, paragraph = 2, line = 3, inkBullet = 4, inkDrawing = 5, inkWord = 6, unknown = 7 }
+	export enum AnalysisResponseRecognitionUnitsCategory { root = 'root', writingRegion = 'writingRegion', paragraph = 'paragraph', line = 'line', inkBullet = 'inkBullet', inkDrawing = 'inkDrawing', inkWord = 'inkWord', unknown = 'unknown' }
 
-	export enum AnalysisResponseRecognitionUnitsClass { container = 0, leaf = 1 }
+	export enum AnalysisResponseRecognitionUnitsClass { container = 'container', leaf = 'leaf' }
 
-	export enum AnalysisResponseRecognitionUnitsRecognizedObject { drawing = 0, square = 1, rectangle = 2, circle = 3, ellipse = 4, triangle = 5, isoscelesTriangle = 6, equilateralTriangle = 7, rightTriangle = 8, quadrilateral = 9, diamond = 10, trapezoid = 11, parallelogram = 12, pentagon = 13, hexagon = 14, blockArrow = 15, heart = 16, starSimple = 17, starCrossed = 18, cloud = 19, line = 20, curve = 21, polyLine = 22 }
+	export enum AnalysisResponseRecognitionUnitsRecognizedObject { drawing = 'drawing', square = 'square', rectangle = 'rectangle', circle = 'circle', ellipse = 'ellipse', triangle = 'triangle', isoscelesTriangle = 'isoscelesTriangle', equilateralTriangle = 'equilateralTriangle', rightTriangle = 'rightTriangle', quadrilateral = 'quadrilateral', diamond = 'diamond', trapezoid = 'trapezoid', parallelogram = 'parallelogram', pentagon = 'pentagon', hexagon = 'hexagon', blockArrow = 'blockArrow', heart = 'heart', starSimple = 'starSimple', starCrossed = 'starCrossed', cloud = 'cloud', line = 'line', curve = 'curve', polyLine = 'polyLine' }
 
 
 	/** The category of a recognition unit represents the type of content for that unit. */
-	export enum CategoryPattern { root = 0, writingRegion = 1, paragraph = 2, line = 3, inkBullet = 4, inkDrawing = 5, inkWord = 6, unknown = 7 }
+	export enum CategoryPattern { root = 'root', writingRegion = 'writingRegion', paragraph = 'paragraph', line = 'line', inkBullet = 'inkBullet', inkDrawing = 'inkDrawing', inkWord = 'inkWord', unknown = 'unknown' }
 
 
 	/** The class represents the type of the recognition unit. A recognition unit can be a leaf node or a container node. Container nodes typically have leaf nodes as children. */
-	export enum ClassPattern { container = 0, leaf = 1 }
+	export enum ClassPattern { container = 'container', leaf = 'leaf' }
 
 
 	/** The category of recognition units that represent types that have children recognition units. */
-	export enum ContainerCategoryPattern { root = 0, writingRegion = 1, paragraph = 2, line = 3 }
+	export enum ContainerCategoryPattern { root = 'root', writingRegion = 'writingRegion', paragraph = 'paragraph', line = 'line' }
 
 	export interface ErrorModel {
 
@@ -764,7 +764,7 @@ export namespace MyNS {
 
 
 	/** The category of recognition units that represent types that don't have children recognition units. */
-	export enum LeafCategoryPattern { inkDrawing = 0, inkBullet = 1, inkWord = 2, unknown = 3 }
+	export enum LeafCategoryPattern { inkDrawing = 'inkDrawing', inkBullet = 'inkBullet', inkWord = 'inkWord', unknown = 'unknown' }
 
 
 	/** This identifies the recognized entity */
@@ -924,7 +924,7 @@ export namespace MyNS {
 
 
 	/** The category should be used to determines the field to read the recognition result. Recognized Object represents the shape that was recognized for the node with category as inkDrawing. For handwriting related nodes, recognizedText contains the actual recognition result. */
-	export enum ShapePattern { drawing = 0, square = 1, rectangle = 2, circle = 3, ellipse = 4, triangle = 5, isoscelesTriangle = 6, equilateralTriangle = 7, rightTriangle = 8, quadrilateral = 9, diamond = 10, trapezoid = 11, parallelogram = 12, pentagon = 13, hexagon = 14, blockArrow = 15, heart = 16, starSimple = 17, starCrossed = 18, cloud = 19, line = 20, curve = 21, polyLine = 22 }
+	export enum ShapePattern { drawing = 'drawing', square = 'square', rectangle = 'rectangle', circle = 'circle', ellipse = 'ellipse', triangle = 'triangle', isoscelesTriangle = 'isoscelesTriangle', equilateralTriangle = 'equilateralTriangle', rightTriangle = 'rightTriangle', quadrilateral = 'quadrilateral', diamond = 'diamond', trapezoid = 'trapezoid', parallelogram = 'parallelogram', pentagon = 'pentagon', hexagon = 'hexagon', blockArrow = 'blockArrow', heart = 'heart', starSimple = 'starSimple', starCrossed = 'starCrossed', cloud = 'cloud', line = 'line', curve = 'curve', polyLine = 'polyLine' }
 
 	@Injectable()
 	export class MyClient {

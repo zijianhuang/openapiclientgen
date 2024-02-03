@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AptRepositoryArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 0, DEB = 1, DEB_SRC = 2 }
+	export enum AptRepositoryArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 'ARCHIVE_TYPE_UNSPECIFIED', DEB = 'DEB', DEB_SRC = 'DEB_SRC' }
 
 
 	/** Apt patching is completed by executing `apt-get update && apt-get upgrade`. Additional options can be set to control how this is executed. */
@@ -77,7 +77,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AptSettingsType { TYPE_UNSPECIFIED = 0, DIST = 1, UPGRADE = 2 }
+	export enum AptSettingsType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DIST = 'DIST', UPGRADE = 'UPGRADE' }
 
 
 	/** An assignment represents the group or groups of VM instances that the policy applies to. If an assignment is empty, it applies to all VM instances. Otherwise, the targeted VM instances must meet all the criteria specified. So if both labels and zones are specified, the policy applies to VM instances with those labels and in those zones. */
@@ -414,9 +414,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageDesiredState { DESIRED_STATE_UNSPECIFIED = 0, INSTALLED = 1, UPDATED = 2, REMOVED = 3 }
+	export enum PackageDesiredState { DESIRED_STATE_UNSPECIFIED = 'DESIRED_STATE_UNSPECIFIED', INSTALLED = 'INSTALLED', UPDATED = 'UPDATED', REMOVED = 'REMOVED' }
 
-	export enum PackageManager { MANAGER_UNSPECIFIED = 0, ANY = 1, APT = 2, YUM = 3, ZYPPER = 4, GOO = 5 }
+	export enum PackageManager { MANAGER_UNSPECIFIED = 'MANAGER_UNSPECIFIED', ANY = 'ANY', APT = 'APT', YUM = 'YUM', ZYPPER = 'ZYPPER', GOO = 'GOO' }
 
 
 	/** A guest policy recipe including its source. */
@@ -653,7 +653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SoftwareRecipeStepExtractArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 0, TAR = 1, TAR_GZIP = 2, TAR_BZIP = 3, TAR_LZMA = 4, TAR_XZ = 5, ZIP = 6 }
+	export enum SoftwareRecipeStepExtractArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 'ARCHIVE_TYPE_UNSPECIFIED', TAR = 'TAR', TAR_GZIP = 'TAR_GZIP', TAR_BZIP = 'TAR_BZIP', TAR_LZMA = 'TAR_LZMA', TAR_XZ = 'TAR_XZ', ZIP = 'ZIP' }
 
 
 	/** Installs a deb via dpkg. */
@@ -831,7 +831,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SoftwareRecipeStepRunScriptInterpreter { INTERPRETER_UNSPECIFIED = 0, SHELL = 1, POWERSHELL = 2 }
+	export enum SoftwareRecipeStepRunScriptInterpreter { INTERPRETER_UNSPECIFIED = 'INTERPRETER_UNSPECIFIED', SHELL = 'SHELL', POWERSHELL = 'POWERSHELL' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -936,7 +936,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecStepConfigInterpreter { INTERPRETER_UNSPECIFIED = 0, NONE = 1, SHELL = 2, POWERSHELL = 3 }
+	export enum ExecStepConfigInterpreter { INTERPRETER_UNSPECIFIED = 'INTERPRETER_UNSPECIFIED', NONE = 'NONE', SHELL = 'SHELL', POWERSHELL = 'POWERSHELL' }
 
 
 	/** A request message to initiate patching across Compute Engine instances. */
@@ -1106,7 +1106,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchConfigRebootConfig { REBOOT_CONFIG_UNSPECIFIED = 0, DEFAULT = 1, ALWAYS = 2, NEVER = 3 }
+	export enum PatchConfigRebootConfig { REBOOT_CONFIG_UNSPECIFIED = 'REBOOT_CONFIG_UNSPECIFIED', DEFAULT = 'DEFAULT', ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
 
 	/** Windows patching is performed using the Windows Update Agent. */
@@ -1257,7 +1257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchRolloutMode { MODE_UNSPECIFIED = 0, ZONE_BY_ZONE = 1, CONCURRENT_ZONES = 2 }
+	export enum PatchRolloutMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', ZONE_BY_ZONE = 'ZONE_BY_ZONE', CONCURRENT_ZONES = 'CONCURRENT_ZONES' }
 
 
 	/** OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations. */
@@ -1308,9 +1308,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod { API_METHOD_UNSPECIFIED = 0, CREATE = 1, UPDATE = 2, DELETE = 3 }
+	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod { API_METHOD_UNSPECIFIED = 'API_METHOD_UNSPECIFIED', CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
-	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState { ROLLOUT_STATE_UNSPECIFIED = 0, IN_PROGRESS = 1, CANCELLING = 2, CANCELLED = 3, SUCCEEDED = 4 }
+	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState { ROLLOUT_STATE_UNSPECIFIED = 'ROLLOUT_STATE_UNSPECIFIED', IN_PROGRESS = 'IN_PROGRESS', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** An OS Config resource representing a guest configuration policy. These policies represent the desired state for VM instance guest environments including packages to install or remove, package repository configurations, and software to install. */
@@ -1581,7 +1581,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecurringScheduleFrequency { FREQUENCY_UNSPECIFIED = 0, WEEKLY = 1, MONTHLY = 2, DAILY = 3 }
+	export enum RecurringScheduleFrequency { FREQUENCY_UNSPECIFIED = 'FREQUENCY_UNSPECIFIED', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY', DAILY = 'DAILY' }
 
 
 	/** Represents a monthly schedule. An example of a valid monthly schedule is "on the third Tuesday of the month" or "on the 15th of the month". */
@@ -1642,7 +1642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WeekDayOfMonthDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum WeekDayOfMonthDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
@@ -1735,7 +1735,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchDeploymentState { STATE_UNSPECIFIED = 0, ACTIVE = 1, PAUSED = 2 }
+	export enum PatchDeploymentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', PAUSED = 'PAUSED' }
 
 
 	/** A response message for listing the instances details for a patch job. */
@@ -1810,7 +1810,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchJobInstanceDetailsState { PATCH_STATE_UNSPECIFIED = 0, PENDING = 1, INACTIVE = 2, NOTIFIED = 3, STARTED = 4, DOWNLOADING_PATCHES = 5, APPLYING_PATCHES = 6, REBOOTING = 7, SUCCEEDED = 8, SUCCEEDED_REBOOT_REQUIRED = 9, FAILED = 10, ACKED = 11, TIMED_OUT = 12, RUNNING_PRE_PATCH_STEP = 13, RUNNING_POST_PATCH_STEP = 14, NO_AGENT_DETECTED = 15 }
+	export enum PatchJobInstanceDetailsState { PATCH_STATE_UNSPECIFIED = 'PATCH_STATE_UNSPECIFIED', PENDING = 'PENDING', INACTIVE = 'INACTIVE', NOTIFIED = 'NOTIFIED', STARTED = 'STARTED', DOWNLOADING_PATCHES = 'DOWNLOADING_PATCHES', APPLYING_PATCHES = 'APPLYING_PATCHES', REBOOTING = 'REBOOTING', SUCCEEDED = 'SUCCEEDED', SUCCEEDED_REBOOT_REQUIRED = 'SUCCEEDED_REBOOT_REQUIRED', FAILED = 'FAILED', ACKED = 'ACKED', TIMED_OUT = 'TIMED_OUT', RUNNING_PRE_PATCH_STEP = 'RUNNING_PRE_PATCH_STEP', RUNNING_POST_PATCH_STEP = 'RUNNING_POST_PATCH_STEP', NO_AGENT_DETECTED = 'NO_AGENT_DETECTED' }
 
 
 	/** A response message for listing patch jobs. */
@@ -2058,7 +2058,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchJobState { STATE_UNSPECIFIED = 0, STARTED = 1, INSTANCE_LOOKUP = 2, PATCHING = 3, SUCCEEDED = 4, COMPLETED_WITH_ERRORS = 5, CANCELED = 6, TIMED_OUT = 7 }
+	export enum PatchJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTED = 'STARTED', INSTANCE_LOOKUP = 'INSTANCE_LOOKUP', PATCHING = 'PATCHING', SUCCEEDED = 'SUCCEEDED', COMPLETED_WITH_ERRORS = 'COMPLETED_WITH_ERRORS', CANCELED = 'CANCELED', TIMED_OUT = 'TIMED_OUT' }
 
 
 	/** A request message for getting the effective guest policy assigned to the instance. */

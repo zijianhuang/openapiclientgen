@@ -37,7 +37,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvancedFilterOperatorType { NumberIn = 0, NumberNotIn = 1, NumberLessThan = 2, NumberGreaterThan = 3, NumberLessThanOrEquals = 4, NumberGreaterThanOrEquals = 5, BoolEquals = 6, StringIn = 7, StringNotIn = 8, StringBeginsWith = 9, StringEndsWith = 10, StringContains = 11 }
+	export enum AdvancedFilterOperatorType { NumberIn = 'NumberIn', NumberNotIn = 'NumberNotIn', NumberLessThan = 'NumberLessThan', NumberGreaterThan = 'NumberGreaterThan', NumberLessThanOrEquals = 'NumberLessThanOrEquals', NumberGreaterThanOrEquals = 'NumberGreaterThanOrEquals', BoolEquals = 'BoolEquals', StringIn = 'StringIn', StringNotIn = 'StringNotIn', StringBeginsWith = 'StringBeginsWith', StringEndsWith = 'StringEndsWith', StringContains = 'StringContains' }
 
 
 	/** Information about the azure function destination for an event subscription. */
@@ -139,7 +139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeadLetterDestinationEndpointType { StorageBlob = 0 }
+	export enum DeadLetterDestinationEndpointType { StorageBlob = 'StorageBlob' }
 
 
 	/** EventGrid Domain. */
@@ -237,9 +237,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InboundIpRuleAction { Allow = 0 }
+	export enum InboundIpRuleAction { Allow = 'Allow' }
 
-	export enum DomainPropertiesInputSchema { EventGridSchema = 0, CustomEventSchema = 1, CloudEventSchemaV1_0 = 2 }
+	export enum DomainPropertiesInputSchema { EventGridSchema = 'EventGridSchema', CustomEventSchema = 'CustomEventSchema', CloudEventSchemaV1_0 = 'CloudEventSchemaV1_0' }
 
 
 	/** By default, Event Grid expects events to be in the Event Grid event schema. Specifying an input schema mapping enables publishing to Event Grid using a custom input schema. Currently, the only supported type of InputSchemaMapping is 'JsonInputSchemaMapping'. */
@@ -268,9 +268,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InputSchemaMappingInputSchemaMappingType { Json = 0 }
+	export enum InputSchemaMappingInputSchemaMappingType { Json = 'Json' }
 
-	export enum DomainPropertiesProvisioningState { Creating = 0, Updating = 1, Deleting = 2, Succeeded = 3, Canceled = 4, Failed = 5 }
+	export enum DomainPropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Canceled = 'Canceled', Failed = 'Failed' }
 
 
 	/** Domain regenerate share access key request. */
@@ -583,9 +583,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSubscriptionDestinationEndpointType { WebHook = 0, EventHub = 1, StorageQueue = 2, HybridConnection = 3, ServiceBusQueue = 4, ServiceBusTopic = 5, AzureFunction = 6 }
+	export enum EventSubscriptionDestinationEndpointType { WebHook = 'WebHook', EventHub = 'EventHub', StorageQueue = 'StorageQueue', HybridConnection = 'HybridConnection', ServiceBusQueue = 'ServiceBusQueue', ServiceBusTopic = 'ServiceBusTopic', AzureFunction = 'AzureFunction' }
 
-	export enum EventSubscriptionPropertiesEventDeliverySchema { EventGridSchema = 0, CustomInputSchema = 1, CloudEventSchemaV1_0 = 2 }
+	export enum EventSubscriptionPropertiesEventDeliverySchema { EventGridSchema = 'EventGridSchema', CustomInputSchema = 'CustomInputSchema', CloudEventSchemaV1_0 = 'CloudEventSchemaV1_0' }
 
 
 	/** Filter for the Event Subscription. */
@@ -648,7 +648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSubscriptionPropertiesProvisioningState { Creating = 0, Updating = 1, Deleting = 2, Succeeded = 3, Canceled = 4, Failed = 5, AwaitingManualAction = 6 }
+	export enum EventSubscriptionPropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Canceled = 'Canceled', Failed = 'Failed', AwaitingManualAction = 'AwaitingManualAction' }
 
 
 	/** Information about the retry policy for an event subscription. */
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicTypePropertiesResourceRegionType { RegionalResource = 0, GlobalResource = 1 }
+	export enum TopicTypePropertiesResourceRegionType { RegionalResource = 'RegionalResource', GlobalResource = 'GlobalResource' }
 
 
 	/** Result of the List Topic Types operation */

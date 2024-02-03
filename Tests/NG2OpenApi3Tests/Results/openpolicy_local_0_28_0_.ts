@@ -321,9 +321,9 @@ export namespace MyNS {
 
 	}
 
-	export enum _200ExplanationsExplanationOp { enter = 0, exit = 1, eval = 2, fail = 3, redo = 4 }
+	export enum _200ExplanationsExplanationOp { enter = 'enter', exit = 'exit', eval = 'eval', fail = 'fail', redo = 'redo' }
 
-	export enum _200ExplanationsExplanationType { expr = 0, rule = 1, body = 2 }
+	export enum _200ExplanationsExplanationType { expr = 'expr', rule = 'rule', body = 'body' }
 
 	export interface _200Metrics {
 		metrics?: _200MetricsMetrics;
@@ -650,7 +650,7 @@ export namespace MyNS {
 
 	}
 
-	export enum _200ResultResultAstPackagePathType { import = 0, package = 1 }
+	export enum _200ResultResultAstPackagePathType { import = 'import', package = 'package' }
 
 	export interface _200ResultResultAstRules {
 
@@ -1078,7 +1078,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchesSchemaElementOp { add = 0, remove = 1, replace = 2, move = 3, copy = 4, test = 5 }
+	export enum PatchesSchemaElementOp { add = 'add', remove = 'remove', replace = 'replace', move = 'move', copy = 'copy', test = 'test' }
 
 	export interface QSchema {
 	}

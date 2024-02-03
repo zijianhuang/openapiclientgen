@@ -4396,7 +4396,7 @@ export namespace MyNS {
 
 	export enum Directions_ForDirectionAndTypeRoute_type { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4 }
 
-	export enum Disruptions_GetAllDisruptionsDisruption_status { current = 0, planned = 1 }
+	export enum Disruptions_GetAllDisruptionsDisruption_status { current = 'current', planned = 'planned' }
 
 	export enum Patterns_GetPatternByRunRoute_type { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4 }
 

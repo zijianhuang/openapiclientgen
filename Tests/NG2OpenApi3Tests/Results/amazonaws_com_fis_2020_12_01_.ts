@@ -510,7 +510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentStatus { pending = 0, initiating = 1, running = 2, completed = 3, stopping = 4, stopped = 5, failed = 6 }
+	export enum ExperimentStatus { pending = 'pending', initiating = 'initiating', running = 'running', completed = 'completed', stopping = 'stopping', stopped = 'stopped', failed = 'failed' }
 
 	export interface ExperimentTargetMap {
 	}
@@ -1124,7 +1124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentActionStatus { pending = 0, initiating = 1, running = 2, completed = 3, cancelled = 4, stopping = 5, stopped = 6, failed = 7 }
+	export enum ExperimentActionStatus { pending = 'pending', initiating = 'initiating', running = 'running', completed = 'completed', cancelled = 'cancelled', stopping = 'stopping', stopped = 'stopped', failed = 'failed' }
 
 
 	/** Describes the action for an experiment. */

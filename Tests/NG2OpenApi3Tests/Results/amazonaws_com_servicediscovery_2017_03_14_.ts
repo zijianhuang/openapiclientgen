@@ -368,7 +368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutingPolicy { MULTIVALUE = 0, WEIGHTED = 1 }
+	export enum RoutingPolicy { MULTIVALUE = 'MULTIVALUE', WEIGHTED = 'WEIGHTED' }
 
 
 	/** A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance. */
@@ -398,9 +398,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordType { SRV = 0, A = 1, AAAA = 2, CNAME = 3 }
+	export enum RecordType { SRV = 'SRV', A = 'A', AAAA = 'AAAA', CNAME = 'CNAME' }
 
-	export enum ServiceType { HTTP = 0, DNS_HTTP = 1, DNS = 2 }
+	export enum ServiceType { HTTP = 'HTTP', DNS_HTTP = 'DNS_HTTP', DNS = 'DNS' }
 
 
 	/** <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> <p>Note the following about configuring health checks.</p> <dl> <dt>A and AAAA records</dt> <dd> <p>If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint tthat's specified by the IPv4 address is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy. </p> </dd> <dt>CNAME records</dt> <dd> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> </dd> <dt>Request interval</dt> <dd> <p>A Route 53 health checker in each health-checking Amazon Web Services Region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another. Therefore, you might sometimes see several requests in one second that's followed by a few seconds with no health checks at all.</p> </dd> <dt>Health checking regions</dt> <dd> <p>Health checkers perform checks from all Route 53 health-checking Regions. For a list of the current Regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> </dd> <dt>Alias records</dt> <dd> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Cloud Map creates a Route 53 alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced Amazon Web Services resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> </dd> <dt>Charges for health checks</dt> <dd> <p>Health checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> </dd> </dl> */
@@ -429,7 +429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckType { HTTP = 0, HTTPS = 1, TCP = 2 }
+	export enum HealthCheckType { HTTP = 'HTTP', HTTPS = 'HTTPS', TCP = 'TCP' }
 
 
 	/** <p>A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p> <ul> <li> <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health checker regardless of where your resources are located.</p> </li> </ul> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.</p> <p>Here's how custom health checks work:</p> <ol> <li> <p>You create a service.</p> </li> <li> <p>You register an instance.</p> </li> <li> <p>You configure a third-party health checker to monitor the resource that's associated with the new instance. </p> <note> <p>Cloud Map doesn't check the health of the resource directly. </p> </note> </li> <li> <p>The third-party health-checker determines that the resource is unhealthy and notifies your application.</p> </li> <li> <p>Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>Cloud Map waits for 30 seconds.</p> </li> <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, Cloud Map stops routing traffic to the resource.</p> </li> </ol> */
@@ -481,7 +481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceTypeOption { HTTP = 0 }
+	export enum ServiceTypeOption { HTTP = 'HTTP' }
 
 	export interface NamespaceNotFound {
 	}
@@ -665,7 +665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthStatus { HEALTHY = 0, UNHEALTHY = 1, UNKNOWN = 2 }
+	export enum HealthStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', UNKNOWN = 'UNKNOWN' }
 
 	export interface Attributes {
 	}
@@ -709,7 +709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthStatusFilter { HEALTHY = 0, UNHEALTHY = 1, ALL = 2, HEALTHY_OR_ELSE_ALL = 3 }
+	export enum HealthStatusFilter { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', ALL = 'ALL', HEALTHY_OR_ELSE_ALL = 'HEALTHY_OR_ELSE_ALL' }
 
 	export interface RequestLimitExceeded {
 	}
@@ -879,7 +879,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespaceType { DNS_PUBLIC = 0, DNS_PRIVATE = 1, HTTP = 2 }
+	export enum NamespaceType { DNS_PUBLIC = 'DNS_PUBLIC', DNS_PRIVATE = 'DNS_PRIVATE', HTTP = 'HTTP' }
 
 
 	/** A complex type that contains information that's specific to the namespace type. */
@@ -996,9 +996,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationType { CREATE_NAMESPACE = 0, DELETE_NAMESPACE = 1, UPDATE_NAMESPACE = 2, UPDATE_SERVICE = 3, REGISTER_INSTANCE = 4, DEREGISTER_INSTANCE = 5 }
+	export enum OperationType { CREATE_NAMESPACE = 'CREATE_NAMESPACE', DELETE_NAMESPACE = 'DELETE_NAMESPACE', UPDATE_NAMESPACE = 'UPDATE_NAMESPACE', UPDATE_SERVICE = 'UPDATE_SERVICE', REGISTER_INSTANCE = 'REGISTER_INSTANCE', DEREGISTER_INSTANCE = 'DEREGISTER_INSTANCE' }
 
-	export enum OperationStatus { SUBMITTED = 0, PENDING = 1, SUCCESS = 2, FAIL = 3 }
+	export enum OperationStatus { SUBMITTED = 'SUBMITTED', PENDING = 'PENDING', SUCCESS = 'SUCCESS', FAIL = 'FAIL' }
 
 	export interface OperationTargetsMap {
 	}
@@ -1214,9 +1214,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespaceFilterName { TYPE = 0, NAME = 1, HTTP_NAME = 2 }
+	export enum NamespaceFilterName { TYPE = 'TYPE', NAME = 'NAME', HTTP_NAME = 'HTTP_NAME' }
 
-	export enum FilterCondition { EQ = 0, IN = 1, BETWEEN = 2, BEGINS_WITH = 3 }
+	export enum FilterCondition { EQ = 'EQ', IN = 'IN', BETWEEN = 'BETWEEN', BEGINS_WITH = 'BEGINS_WITH' }
 
 	export interface ListOperationsResponse {
 		Operations?: Array<OperationSummary>;
@@ -1296,7 +1296,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationFilterName { NAMESPACE_ID = 0, SERVICE_ID = 1, STATUS = 2, TYPE = 3, UPDATE_DATE = 4 }
+	export enum OperationFilterName { NAMESPACE_ID = 'NAMESPACE_ID', SERVICE_ID = 'SERVICE_ID', STATUS = 'STATUS', TYPE = 'TYPE', UPDATE_DATE = 'UPDATE_DATE' }
 
 	export interface ListServicesResponse {
 		Services?: Array<ServiceSummary>;
@@ -1394,7 +1394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceFilterName { NAMESPACE_ID = 0 }
+	export enum ServiceFilterName { NAMESPACE_ID = 'NAMESPACE_ID' }
 
 	export interface ListTagsForResourceResponse {
 		Tags?: Array<Tag>;
@@ -1625,7 +1625,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomHealthStatus { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum CustomHealthStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
 	export interface CustomHealthNotFound {
 	}
@@ -1903,7 +1903,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationTargetType { NAMESPACE = 0, SERVICE = 1, INSTANCE = 2 }
+	export enum OperationTargetType { NAMESPACE = 'NAMESPACE', SERVICE = 'SERVICE', INSTANCE = 'INSTANCE' }
 
 	@Injectable()
 	export class MyClient {
@@ -2155,57 +2155,57 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateHttpNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreateHttpNamespace' = 0 }
+	export enum CreateHttpNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreateHttpNamespace' = 'Route53AutoNaming_v20170314.CreateHttpNamespace' }
 
-	export enum CreatePrivateDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreatePrivateDnsNamespace' = 0 }
+	export enum CreatePrivateDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreatePrivateDnsNamespace' = 'Route53AutoNaming_v20170314.CreatePrivateDnsNamespace' }
 
-	export enum CreatePublicDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreatePublicDnsNamespace' = 0 }
+	export enum CreatePublicDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreatePublicDnsNamespace' = 'Route53AutoNaming_v20170314.CreatePublicDnsNamespace' }
 
-	export enum CreateServiceX_Amz_Target { 'Route53AutoNaming_v20170314.CreateService' = 0 }
+	export enum CreateServiceX_Amz_Target { 'Route53AutoNaming_v20170314.CreateService' = 'Route53AutoNaming_v20170314.CreateService' }
 
-	export enum DeleteNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.DeleteNamespace' = 0 }
+	export enum DeleteNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.DeleteNamespace' = 'Route53AutoNaming_v20170314.DeleteNamespace' }
 
-	export enum DeleteServiceX_Amz_Target { 'Route53AutoNaming_v20170314.DeleteService' = 0 }
+	export enum DeleteServiceX_Amz_Target { 'Route53AutoNaming_v20170314.DeleteService' = 'Route53AutoNaming_v20170314.DeleteService' }
 
-	export enum DeregisterInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.DeregisterInstance' = 0 }
+	export enum DeregisterInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.DeregisterInstance' = 'Route53AutoNaming_v20170314.DeregisterInstance' }
 
-	export enum DiscoverInstancesX_Amz_Target { 'Route53AutoNaming_v20170314.DiscoverInstances' = 0 }
+	export enum DiscoverInstancesX_Amz_Target { 'Route53AutoNaming_v20170314.DiscoverInstances' = 'Route53AutoNaming_v20170314.DiscoverInstances' }
 
-	export enum GetInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.GetInstance' = 0 }
+	export enum GetInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.GetInstance' = 'Route53AutoNaming_v20170314.GetInstance' }
 
-	export enum GetInstancesHealthStatusX_Amz_Target { 'Route53AutoNaming_v20170314.GetInstancesHealthStatus' = 0 }
+	export enum GetInstancesHealthStatusX_Amz_Target { 'Route53AutoNaming_v20170314.GetInstancesHealthStatus' = 'Route53AutoNaming_v20170314.GetInstancesHealthStatus' }
 
-	export enum GetNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.GetNamespace' = 0 }
+	export enum GetNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.GetNamespace' = 'Route53AutoNaming_v20170314.GetNamespace' }
 
-	export enum GetOperationX_Amz_Target { 'Route53AutoNaming_v20170314.GetOperation' = 0 }
+	export enum GetOperationX_Amz_Target { 'Route53AutoNaming_v20170314.GetOperation' = 'Route53AutoNaming_v20170314.GetOperation' }
 
-	export enum GetServiceX_Amz_Target { 'Route53AutoNaming_v20170314.GetService' = 0 }
+	export enum GetServiceX_Amz_Target { 'Route53AutoNaming_v20170314.GetService' = 'Route53AutoNaming_v20170314.GetService' }
 
-	export enum ListInstancesX_Amz_Target { 'Route53AutoNaming_v20170314.ListInstances' = 0 }
+	export enum ListInstancesX_Amz_Target { 'Route53AutoNaming_v20170314.ListInstances' = 'Route53AutoNaming_v20170314.ListInstances' }
 
-	export enum ListNamespacesX_Amz_Target { 'Route53AutoNaming_v20170314.ListNamespaces' = 0 }
+	export enum ListNamespacesX_Amz_Target { 'Route53AutoNaming_v20170314.ListNamespaces' = 'Route53AutoNaming_v20170314.ListNamespaces' }
 
-	export enum ListOperationsX_Amz_Target { 'Route53AutoNaming_v20170314.ListOperations' = 0 }
+	export enum ListOperationsX_Amz_Target { 'Route53AutoNaming_v20170314.ListOperations' = 'Route53AutoNaming_v20170314.ListOperations' }
 
-	export enum ListServicesX_Amz_Target { 'Route53AutoNaming_v20170314.ListServices' = 0 }
+	export enum ListServicesX_Amz_Target { 'Route53AutoNaming_v20170314.ListServices' = 'Route53AutoNaming_v20170314.ListServices' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'Route53AutoNaming_v20170314.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Route53AutoNaming_v20170314.ListTagsForResource' = 'Route53AutoNaming_v20170314.ListTagsForResource' }
 
-	export enum RegisterInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.RegisterInstance' = 0 }
+	export enum RegisterInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.RegisterInstance' = 'Route53AutoNaming_v20170314.RegisterInstance' }
 
-	export enum TagResourceX_Amz_Target { 'Route53AutoNaming_v20170314.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Route53AutoNaming_v20170314.TagResource' = 'Route53AutoNaming_v20170314.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'Route53AutoNaming_v20170314.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Route53AutoNaming_v20170314.UntagResource' = 'Route53AutoNaming_v20170314.UntagResource' }
 
-	export enum UpdateHttpNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateHttpNamespace' = 0 }
+	export enum UpdateHttpNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateHttpNamespace' = 'Route53AutoNaming_v20170314.UpdateHttpNamespace' }
 
-	export enum UpdateInstanceCustomHealthStatusX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateInstanceCustomHealthStatus' = 0 }
+	export enum UpdateInstanceCustomHealthStatusX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateInstanceCustomHealthStatus' = 'Route53AutoNaming_v20170314.UpdateInstanceCustomHealthStatus' }
 
-	export enum UpdatePrivateDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdatePrivateDnsNamespace' = 0 }
+	export enum UpdatePrivateDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdatePrivateDnsNamespace' = 'Route53AutoNaming_v20170314.UpdatePrivateDnsNamespace' }
 
-	export enum UpdatePublicDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdatePublicDnsNamespace' = 0 }
+	export enum UpdatePublicDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdatePublicDnsNamespace' = 'Route53AutoNaming_v20170314.UpdatePublicDnsNamespace' }
 
-	export enum UpdateServiceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateService' = 0 }
+	export enum UpdateServiceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateService' = 'Route53AutoNaming_v20170314.UpdateService' }
 
 }
 

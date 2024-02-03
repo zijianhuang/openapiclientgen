@@ -307,7 +307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
+	export enum ApplicationStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 	export interface DescribeApplicationStateRequest {
 
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { NOT_STARTED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
+	export enum Status { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', COMPLETED = 'COMPLETED' }
 
 
 	/** <p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl> */
@@ -419,7 +419,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceAttributeType { IPV4_ADDRESS = 0, IPV6_ADDRESS = 1, MAC_ADDRESS = 2, FQDN = 3, VM_MANAGER_ID = 4, VM_MANAGED_OBJECT_REFERENCE = 5, VM_NAME = 6, VM_PATH = 7, BIOS_ID = 8, MOTHERBOARD_SERIAL_NUMBER = 9 }
+	export enum ResourceAttributeType { IPV4_ADDRESS = 'IPV4_ADDRESS', IPV6_ADDRESS = 'IPV6_ADDRESS', MAC_ADDRESS = 'MAC_ADDRESS', FQDN = 'FQDN', VM_MANAGER_ID = 'VM_MANAGER_ID', VM_MANAGED_OBJECT_REFERENCE = 'VM_MANAGED_OBJECT_REFERENCE', VM_NAME = 'VM_NAME', VM_PATH = 'VM_PATH', BIOS_ID = 'BIOS_ID', MOTHERBOARD_SERIAL_NUMBER = 'MOTHERBOARD_SERIAL_NUMBER' }
 
 	export interface DescribeMigrationTaskRequest {
 
@@ -1127,39 +1127,39 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateCreatedArtifactX_Amz_Target { 'AWSMigrationHub.AssociateCreatedArtifact' = 0 }
+	export enum AssociateCreatedArtifactX_Amz_Target { 'AWSMigrationHub.AssociateCreatedArtifact' = 'AWSMigrationHub.AssociateCreatedArtifact' }
 
-	export enum AssociateDiscoveredResourceX_Amz_Target { 'AWSMigrationHub.AssociateDiscoveredResource' = 0 }
+	export enum AssociateDiscoveredResourceX_Amz_Target { 'AWSMigrationHub.AssociateDiscoveredResource' = 'AWSMigrationHub.AssociateDiscoveredResource' }
 
-	export enum CreateProgressUpdateStreamX_Amz_Target { 'AWSMigrationHub.CreateProgressUpdateStream' = 0 }
+	export enum CreateProgressUpdateStreamX_Amz_Target { 'AWSMigrationHub.CreateProgressUpdateStream' = 'AWSMigrationHub.CreateProgressUpdateStream' }
 
-	export enum DeleteProgressUpdateStreamX_Amz_Target { 'AWSMigrationHub.DeleteProgressUpdateStream' = 0 }
+	export enum DeleteProgressUpdateStreamX_Amz_Target { 'AWSMigrationHub.DeleteProgressUpdateStream' = 'AWSMigrationHub.DeleteProgressUpdateStream' }
 
-	export enum DescribeApplicationStateX_Amz_Target { 'AWSMigrationHub.DescribeApplicationState' = 0 }
+	export enum DescribeApplicationStateX_Amz_Target { 'AWSMigrationHub.DescribeApplicationState' = 'AWSMigrationHub.DescribeApplicationState' }
 
-	export enum DescribeMigrationTaskX_Amz_Target { 'AWSMigrationHub.DescribeMigrationTask' = 0 }
+	export enum DescribeMigrationTaskX_Amz_Target { 'AWSMigrationHub.DescribeMigrationTask' = 'AWSMigrationHub.DescribeMigrationTask' }
 
-	export enum DisassociateCreatedArtifactX_Amz_Target { 'AWSMigrationHub.DisassociateCreatedArtifact' = 0 }
+	export enum DisassociateCreatedArtifactX_Amz_Target { 'AWSMigrationHub.DisassociateCreatedArtifact' = 'AWSMigrationHub.DisassociateCreatedArtifact' }
 
-	export enum DisassociateDiscoveredResourceX_Amz_Target { 'AWSMigrationHub.DisassociateDiscoveredResource' = 0 }
+	export enum DisassociateDiscoveredResourceX_Amz_Target { 'AWSMigrationHub.DisassociateDiscoveredResource' = 'AWSMigrationHub.DisassociateDiscoveredResource' }
 
-	export enum ImportMigrationTaskX_Amz_Target { 'AWSMigrationHub.ImportMigrationTask' = 0 }
+	export enum ImportMigrationTaskX_Amz_Target { 'AWSMigrationHub.ImportMigrationTask' = 'AWSMigrationHub.ImportMigrationTask' }
 
-	export enum ListApplicationStatesX_Amz_Target { 'AWSMigrationHub.ListApplicationStates' = 0 }
+	export enum ListApplicationStatesX_Amz_Target { 'AWSMigrationHub.ListApplicationStates' = 'AWSMigrationHub.ListApplicationStates' }
 
-	export enum ListCreatedArtifactsX_Amz_Target { 'AWSMigrationHub.ListCreatedArtifacts' = 0 }
+	export enum ListCreatedArtifactsX_Amz_Target { 'AWSMigrationHub.ListCreatedArtifacts' = 'AWSMigrationHub.ListCreatedArtifacts' }
 
-	export enum ListDiscoveredResourcesX_Amz_Target { 'AWSMigrationHub.ListDiscoveredResources' = 0 }
+	export enum ListDiscoveredResourcesX_Amz_Target { 'AWSMigrationHub.ListDiscoveredResources' = 'AWSMigrationHub.ListDiscoveredResources' }
 
-	export enum ListMigrationTasksX_Amz_Target { 'AWSMigrationHub.ListMigrationTasks' = 0 }
+	export enum ListMigrationTasksX_Amz_Target { 'AWSMigrationHub.ListMigrationTasks' = 'AWSMigrationHub.ListMigrationTasks' }
 
-	export enum ListProgressUpdateStreamsX_Amz_Target { 'AWSMigrationHub.ListProgressUpdateStreams' = 0 }
+	export enum ListProgressUpdateStreamsX_Amz_Target { 'AWSMigrationHub.ListProgressUpdateStreams' = 'AWSMigrationHub.ListProgressUpdateStreams' }
 
-	export enum NotifyApplicationStateX_Amz_Target { 'AWSMigrationHub.NotifyApplicationState' = 0 }
+	export enum NotifyApplicationStateX_Amz_Target { 'AWSMigrationHub.NotifyApplicationState' = 'AWSMigrationHub.NotifyApplicationState' }
 
-	export enum NotifyMigrationTaskStateX_Amz_Target { 'AWSMigrationHub.NotifyMigrationTaskState' = 0 }
+	export enum NotifyMigrationTaskStateX_Amz_Target { 'AWSMigrationHub.NotifyMigrationTaskState' = 'AWSMigrationHub.NotifyMigrationTaskState' }
 
-	export enum PutResourceAttributesX_Amz_Target { 'AWSMigrationHub.PutResourceAttributes' = 0 }
+	export enum PutResourceAttributesX_Amz_Target { 'AWSMigrationHub.PutResourceAttributes' = 'AWSMigrationHub.PutResourceAttributes' }
 
 }
 

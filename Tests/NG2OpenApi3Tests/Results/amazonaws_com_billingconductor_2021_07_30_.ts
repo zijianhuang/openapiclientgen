@@ -149,7 +149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociateResourceErrorReason { INVALID_ARN = 0, SERVICE_LIMIT_EXCEEDED = 1, ILLEGAL_CUSTOMLINEITEM = 2, INTERNAL_SERVER_EXCEPTION = 3, INVALID_BILLING_PERIOD_RANGE = 4 }
+	export enum AssociateResourceErrorReason { INVALID_ARN = 'INVALID_ARN', SERVICE_LIMIT_EXCEEDED = 'SERVICE_LIMIT_EXCEEDED', ILLEGAL_CUSTOMLINEITEM = 'ILLEGAL_CUSTOMLINEITEM', INTERNAL_SERVER_EXCEPTION = 'INTERNAL_SERVER_EXCEPTION', INVALID_BILLING_PERIOD_RANGE = 'INVALID_BILLING_PERIOD_RANGE' }
 
 	export interface BatchDisassociateResourcesFromCustomLineItemOutput {
 		SuccessfullyDisassociatedResources?: Array<DisassociateResourceResponseElement>;
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomLineItemType { CREDIT = 0, FEE = 1 }
+	export enum CustomLineItemType { CREDIT = 'CREDIT', FEE = 'FEE' }
 
 	export interface CreatePricingPlanOutput {
 		Arn?: string;
@@ -543,7 +543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BillingGroupStatus { ACTIVE = 0, PRIMARY_ACCOUNT_MISSING = 1 }
+	export enum BillingGroupStatus { ACTIVE = 'ACTIVE', PRIMARY_ACCOUNT_MISSING = 'PRIMARY_ACCOUNT_MISSING' }
 
 
 	/** Specifies if the billing group has the following features enabled. */
@@ -694,7 +694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CurrencyCode { USD = 0, CNY = 1 }
+	export enum CurrencyCode { USD = 'USD', CNY = 'CNY' }
 
 
 	/** A billing period filter that specifies the custom line item versions to retrieve. */
@@ -912,9 +912,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PricingRuleScope { GLOBAL = 0, SERVICE = 1, BILLING_ENTITY = 2, SKU = 3 }
+	export enum PricingRuleScope { GLOBAL = 'GLOBAL', SERVICE = 'SERVICE', BILLING_ENTITY = 'BILLING_ENTITY', SKU = 'SKU' }
 
-	export enum PricingRuleType { MARKUP = 0, DISCOUNT = 1, TIERING = 2 }
+	export enum PricingRuleType { MARKUP = 'MARKUP', DISCOUNT = 'DISCOUNT', TIERING = 'TIERING' }
 
 
 	/**  The set of tiering configurations for the pricing rule.  */
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomLineItemRelationship { PARENT = 0, CHILD = 1 }
+	export enum CustomLineItemRelationship { PARENT = 'PARENT', CHILD = 'CHILD' }
 
 	export interface ListTagsForResourceResponse {
 		Tags?: TagMap;

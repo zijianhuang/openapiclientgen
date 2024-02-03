@@ -177,7 +177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePlayDeveloperReportingV1alpha1TimelineSpecAggregationPeriod { AGGREGATION_PERIOD_UNSPECIFIED = 0, HOURLY = 1, DAILY = 2, FULL_RANGE = 3 }
+	export enum GooglePlayDeveloperReportingV1alpha1TimelineSpecAggregationPeriod { AGGREGATION_PERIOD_UNSPECIFIED = 'AGGREGATION_PERIOD_UNSPECIFIED', HOURLY = 'HOURLY', DAILY = 'DAILY', FULL_RANGE = 'FULL_RANGE' }
 
 
 	/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
@@ -614,7 +614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePlayDeveloperReportingV1alpha1ErrorIssueType { ERROR_TYPE_UNSPECIFIED = 0, APPLICATION_NOT_RESPONDING = 1, CRASH = 2 }
+	export enum GooglePlayDeveloperReportingV1alpha1ErrorIssueType { ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED', APPLICATION_NOT_RESPONDING = 'APPLICATION_NOT_RESPONDING', CRASH = 'CRASH' }
 
 
 	/** An error report received for an app. There reports are produced by the Android platform code when a (potentially fatal) error condition is detected. Identical reports from many users will be deduplicated and coalesced into a single ErrorReport. **Required permissions**: to access this resource, the calling user needs the _View app information (read-only)_ permission for the app. */
@@ -810,7 +810,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePlayDeveloperReportingV1alpha1QueryAnrRateMetricSetRequestUserCohort { USER_COHORT_UNSPECIFIED = 0, OS_PUBLIC = 1, OS_BETA = 2, APP_TESTERS = 3 }
+	export enum GooglePlayDeveloperReportingV1alpha1QueryAnrRateMetricSetRequestUserCohort { USER_COHORT_UNSPECIFIED = 'USER_COHORT_UNSPECIFIED', OS_PUBLIC = 'OS_PUBLIC', OS_BETA = 'OS_BETA', APP_TESTERS = 'APP_TESTERS' }
 
 
 	/** Response message for QueryAnrRateMetricSet. */

@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleDirection { Inbound = 0, Outbound = 1 }
+	export enum RuleDirection { Inbound = 'Inbound', Outbound = 'Outbound' }
 
 
 	/** Adaptive Network Hardening resource properties */
@@ -213,7 +213,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AdaptiveNetworkHardenings_EnforceAdaptiveNetworkHardeningEnforceAction { enforce = 0 }
+	export enum AdaptiveNetworkHardenings_EnforceAdaptiveNetworkHardeningEnforceAction { enforce = 'enforce' }
 
 }
 

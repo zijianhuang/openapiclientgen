@@ -104,7 +104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdministratorPropertiesAdministratorType { ActiveDirectory = 0 }
+	export enum AdministratorPropertiesAdministratorType { ActiveDirectory = 'ActiveDirectory' }
 
 
 	/** ARM proxy resource. */

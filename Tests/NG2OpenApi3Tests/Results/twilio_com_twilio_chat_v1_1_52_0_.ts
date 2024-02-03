@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Channel_enum_channel_type { public = 0, private = 1 }
+	export enum Channel_enum_channel_type { public = 'public', private = 'private' }
 
 	export interface Chatv1credential {
 
@@ -83,7 +83,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Chatv1credentialType { gcm = 0, apn = 1, fcm = 2 }
+	export enum Chatv1credentialType { gcm = 'gcm', apn = 'apn', fcm = 'fcm' }
 
 	export interface Chatv1service {
 
@@ -883,7 +883,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Chatv1serviceroleType { channel = 0, deployment = 1 }
+	export enum Chatv1serviceroleType { channel = 'channel', deployment = 'deployment' }
 
 	export interface Chatv1serviceuser {
 
@@ -1119,15 +1119,15 @@ export namespace MyNS {
 
 	}
 
-	export enum Chatv1serviceuseruser_channelStatus { joined = 0, invited = 1, not_participating = 2 }
+	export enum Chatv1serviceuseruser_channelStatus { joined = 'joined', invited = 'invited', not_participating = 'not_participating' }
 
-	export enum Credential_enum_push_service { gcm = 0, apn = 1, fcm = 2 }
+	export enum Credential_enum_push_service { gcm = 'gcm', apn = 'apn', fcm = 'fcm' }
 
-	export enum Message_enum_order_type { asc = 0, desc = 1 }
+	export enum Message_enum_order_type { asc = 'asc', desc = 'desc' }
 
-	export enum Role_enum_role_type { channel = 0, deployment = 1 }
+	export enum Role_enum_role_type { channel = 'channel', deployment = 'deployment' }
 
-	export enum User_channel_enum_channel_status { joined = 0, invited = 1, not_participating = 2 }
+	export enum User_channel_enum_channel_status { joined = 'joined', invited = 'invited', not_participating = 'not_participating' }
 
 	@Injectable()
 	export class MyClient {

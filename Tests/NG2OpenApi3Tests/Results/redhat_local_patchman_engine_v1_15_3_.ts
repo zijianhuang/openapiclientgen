@@ -1176,15 +1176,15 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListAdvisoriesSort { id = 0, name = 1, advisory_type = 2, synopsis = 3, public_date = 4, applicable_systems = 5 }
+	export enum ListAdvisoriesSort { id = 'id', name = 'name', advisory_type = 'advisory_type', synopsis = 'synopsis', public_date = 'public_date', applicable_systems = 'applicable_systems' }
 
-	export enum ListAdvisorySystemsSort { id = 0, display_name = 1, last_evaluation = 2, last_upload = 3, rhsa_count = 4, rhba_count = 5, rhea_count = 6, other_count = 7, stale = 8 }
+	export enum ListAdvisorySystemsSort { id = 'id', display_name = 'display_name', last_evaluation = 'last_evaluation', last_upload = 'last_upload', rhsa_count = 'rhsa_count', rhba_count = 'rhba_count', rhea_count = 'rhea_count', other_count = 'other_count', stale = 'stale' }
 
-	export enum ExportPackagesSort { id = 0, name = 1, systems_installed = 2, systems_updatable = 3 }
+	export enum ExportPackagesSort { id = 'id', name = 'name', systems_installed = 'systems_installed', systems_updatable = 'systems_updatable' }
 
-	export enum ListSystemsSort { id = 0, display_name = 1, last_evaluation = 2, last_upload = 3, rhsa_count = 4, rhba_count = 5, rhea_count = 6, other_count = 7, stale = 8, packages_installed = 9, packages_updatable = 10 }
+	export enum ListSystemsSort { id = 'id', display_name = 'display_name', last_evaluation = 'last_evaluation', last_upload = 'last_upload', rhsa_count = 'rhsa_count', rhba_count = 'rhba_count', rhea_count = 'rhea_count', other_count = 'other_count', stale = 'stale', packages_installed = 'packages_installed', packages_updatable = 'packages_updatable' }
 
-	export enum ListSystemAdvisoriesSort { id = 0, name = 1, type = 2, synopsis = 3, public_date = 4 }
+	export enum ListSystemAdvisoriesSort { id = 'id', name = 'name', type = 'type', synopsis = 'synopsis', public_date = 'public_date' }
 
 }
 

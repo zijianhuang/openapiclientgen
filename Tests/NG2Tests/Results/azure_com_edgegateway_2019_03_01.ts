@@ -242,7 +242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertPropertiesSeverity { Informational = 0, Warning = 1, Critical = 2 }
+	export enum AlertPropertiesSeverity { Informational = 'Informational', Warning = 'Warning', Critical = 'Critical' }
 
 
 	/** Collection of alerts. */
@@ -315,7 +315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AsymmetricEncryptedSecretEncryptionAlgorithm { None = 0, AES256 = 1, RSAES_PKCS1_v_1_5 = 2 }
+	export enum AsymmetricEncryptedSecretEncryptionAlgorithm { None = 'None', AES256 = 'AES256', RSAES_PKCS1_v_1_5 = 'RSAES_PKCS1_v_1_5' }
 
 
 	/** Authentication mechanism for IoT devices. */
@@ -404,7 +404,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureContainerInfoDataFormat { BlockBlob = 0, PageBlob = 1, AzureFile = 2 }
+	export enum AzureContainerInfoDataFormat { BlockBlob = 'BlockBlob', PageBlob = 'PageBlob', AzureFile = 'AzureFile' }
 
 
 	/** The bandwidth schedule details. */
@@ -549,7 +549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientAccessRightAccessPermission { NoAccess = 0, ReadOnly = 1, ReadWrite = 2 }
+	export enum ClientAccessRightAccessPermission { NoAccess = 'NoAccess', ReadOnly = 'ReadOnly', ReadWrite = 'ReadWrite' }
 
 
 	/** An error response from the service. */
@@ -806,9 +806,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataBoxEdgeDevicePropertiesDataBoxEdgeDeviceStatus { ReadyToSetup = 0, Online = 1, Offline = 2, NeedsAttention = 3, Disconnected = 4, PartiallyDisconnected = 5 }
+	export enum DataBoxEdgeDevicePropertiesDataBoxEdgeDeviceStatus { ReadyToSetup = 'ReadyToSetup', Online = 'Online', Offline = 'Offline', NeedsAttention = 'NeedsAttention', Disconnected = 'Disconnected', PartiallyDisconnected = 'PartiallyDisconnected' }
 
-	export enum DataBoxEdgeDevicePropertiesDeviceType { DataBoxEdgeDevice = 0 }
+	export enum DataBoxEdgeDevicePropertiesDeviceType { DataBoxEdgeDevice = 'DataBoxEdgeDevice' }
 
 
 	/** The SKU type. */
@@ -838,9 +838,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { Gateway = 0, Edge = 1 }
+	export enum SkuName { Gateway = 'Gateway', Edge = 'Edge' }
 
-	export enum SkuTier { Standard = 0 }
+	export enum SkuTier { Standard = 'Standard' }
 
 
 	/** The extended Info of the Data Box Edge/Gateway device. */
@@ -1203,9 +1203,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IoTRolePropertiesHostPlatform { Windows = 0, Linux = 1 }
+	export enum IoTRolePropertiesHostPlatform { Windows = 'Windows', Linux = 'Linux' }
 
-	export enum IoTRolePropertiesRoleStatus { Enabled = 0, Disabled = 1 }
+	export enum IoTRolePropertiesRoleStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** The share mount point. */
@@ -1255,7 +1255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MountPointMapRoleType { IOT = 0, ASA = 1, Functions = 2, Cognitive = 3 }
+	export enum MountPointMapRoleType { IOT = 'IOT', ASA = 'ASA', Functions = 'Functions', Cognitive = 'Cognitive' }
 
 
 	/** Details related to the IPv4 address configuration. */
@@ -1520,7 +1520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPropertiesCurrentStage { Unknown = 0, Initial = 1, ScanStarted = 2, ScanComplete = 3, ScanFailed = 4, DownloadStarted = 5, DownloadComplete = 6, DownloadFailed = 7, InstallStarted = 8, InstallComplete = 9, InstallFailed = 10, RebootInitiated = 11, Success = 12, Failure = 13, RescanStarted = 14, RescanComplete = 15, RescanFailed = 16 }
+	export enum JobPropertiesCurrentStage { Unknown = 'Unknown', Initial = 'Initial', ScanStarted = 'ScanStarted', ScanComplete = 'ScanComplete', ScanFailed = 'ScanFailed', DownloadStarted = 'DownloadStarted', DownloadComplete = 'DownloadComplete', DownloadFailed = 'DownloadFailed', InstallStarted = 'InstallStarted', InstallComplete = 'InstallComplete', InstallFailed = 'InstallFailed', RebootInitiated = 'RebootInitiated', Success = 'Success', Failure = 'Failure', RescanStarted = 'RescanStarted', RescanComplete = 'RescanComplete', RescanFailed = 'RescanFailed' }
 
 
 	/** Details about the download progress of update. */
@@ -1578,7 +1578,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateDownloadProgressDownloadPhase { Unknown = 0, Initializing = 1, Downloading = 2, Verifying = 3 }
+	export enum UpdateDownloadProgressDownloadPhase { Unknown = 'Unknown', Initializing = 'Initializing', Downloading = 'Downloading', Verifying = 'Verifying' }
 
 
 	/** Progress details during installation of updates. */
@@ -1615,9 +1615,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPropertiesJobType { Invalid = 0, ScanForUpdates = 1, DownloadUpdates = 2, InstallUpdates = 3, RefreshShare = 4 }
+	export enum JobPropertiesJobType { Invalid = 'Invalid', ScanForUpdates = 'ScanForUpdates', DownloadUpdates = 'DownloadUpdates', InstallUpdates = 'InstallUpdates', RefreshShare = 'RefreshShare' }
 
-	export enum JobStatus { Invalid = 0, Running = 1, Succeeded = 2, Failed = 3, Canceled = 4, Paused = 5, Scheduled = 6 }
+	export enum JobStatus { Invalid = 'Invalid', Running = 'Running', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', Paused = 'Paused', Scheduled = 'Scheduled' }
 
 
 	/** Metric Dimension v1. */
@@ -1733,11 +1733,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricSpecification_V1AggregationType { NotSpecified = 0, None = 1, Average = 2, Minimum = 3, Maximum = 4, Total = 5, Count = 6 }
+	export enum MetricSpecification_V1AggregationType { NotSpecified = 'NotSpecified', None = 'None', Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', Total = 'Total', Count = 'Count' }
 
-	export enum MetricSpecification_V1Category { Capacity = 0, Transaction = 1 }
+	export enum MetricSpecification_V1Category { Capacity = 'Capacity', Transaction = 'Transaction' }
 
-	export enum MetricSpecification_V1Unit { NotSpecified = 0, Percent = 1, Count = 2, Seconds = 3, Milliseconds = 4, Bytes = 5, BytesPerSecond = 6, CountPerSecond = 7 }
+	export enum MetricSpecification_V1Unit { NotSpecified = 'NotSpecified', Percent = 'Percent', Count = 'Count', Seconds = 'Seconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', BytesPerSecond = 'BytesPerSecond', CountPerSecond = 'CountPerSecond' }
 
 
 	/** Represents the networkAdapter on a device. */
@@ -1870,13 +1870,13 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkAdapterPositionNetworkGroup { None = 0, NonRDMA = 1, RDMA = 2 }
+	export enum NetworkAdapterPositionNetworkGroup { None = 'None', NonRDMA = 'NonRDMA', RDMA = 'RDMA' }
 
-	export enum NetworkAdapterDhcpStatus { Disabled = 0, Enabled = 1 }
+	export enum NetworkAdapterDhcpStatus { Disabled = 'Disabled', Enabled = 'Enabled' }
 
-	export enum NetworkAdapterRdmaStatus { Incapable = 0, Capable = 1 }
+	export enum NetworkAdapterRdmaStatus { Incapable = 'Incapable', Capable = 'Capable' }
 
-	export enum NetworkAdapterStatus { Inactive = 0, Active = 1 }
+	export enum NetworkAdapterStatus { Inactive = 'Inactive', Active = 'Active' }
 
 
 	/** The network settings of a device. */
@@ -2152,7 +2152,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderStatusStatus { Untracked = 0, AwaitingFulfilment = 1, AwaitingPreparation = 2, AwaitingShipment = 3, Shipped = 4, Arriving = 5, Delivered = 6, ReplacementRequested = 7, LostDevice = 8, Declined = 9, ReturnInitiated = 10, AwaitingReturnShipment = 11, ShippedBack = 12, CollectedAtMicrosoft = 13 }
+	export enum OrderStatusStatus { Untracked = 'Untracked', AwaitingFulfilment = 'AwaitingFulfilment', AwaitingPreparation = 'AwaitingPreparation', AwaitingShipment = 'AwaitingShipment', Shipped = 'Shipped', Arriving = 'Arriving', Delivered = 'Delivered', ReplacementRequested = 'ReplacementRequested', LostDevice = 'LostDevice', Declined = 'Declined', ReturnInitiated = 'ReturnInitiated', AwaitingReturnShipment = 'AwaitingReturnShipment', ShippedBack = 'ShippedBack', CollectedAtMicrosoft = 'CollectedAtMicrosoft' }
 
 
 	/** Tracking courier information. */
@@ -2375,7 +2375,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RawCertificateDataAuthenticationType { Invalid = 0, AzureActiveDirectory = 1 }
+	export enum RawCertificateDataAuthenticationType { Invalid = 'Invalid', AzureActiveDirectory = 'AzureActiveDirectory' }
 
 
 	/** Fields for tracking refresh job on the share. */
@@ -2612,11 +2612,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SharePropertiesAccessProtocol { SMB = 0, NFS = 1 }
+	export enum SharePropertiesAccessProtocol { SMB = 'SMB', NFS = 'NFS' }
 
-	export enum SharePropertiesDataPolicy { Cloud = 0, Local = 1 }
+	export enum SharePropertiesDataPolicy { Cloud = 'Cloud', Local = 'Local' }
 
-	export enum SharePropertiesShareStatus { Online = 0, Offline = 1 }
+	export enum SharePropertiesShareStatus { Online = 'Online', Offline = 'Offline' }
 
 
 	/** The mapping between a particular user and the access type on the SMB share. */
@@ -2658,7 +2658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserAccessRightAccessType { Change = 0, Read = 1, Custom = 2 }
+	export enum UserAccessRightAccessType { Change = 'Change', Read = 'Read', Custom = 'Custom' }
 
 
 	/** Specifies the mapping between this particular user and the type of access he has on shares on this device. */
@@ -2821,7 +2821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageAccountCredentialPropertiesAccountType { GeneralPurposeStorage = 0, BlobStorage = 1 }
+	export enum StorageAccountCredentialPropertiesAccountType { GeneralPurposeStorage = 'GeneralPurposeStorage', BlobStorage = 'BlobStorage' }
 
 
 	/** The collection of storage account credentials. */
@@ -2874,7 +2874,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerKind { FileEvent = 0, PeriodicTimerEvent = 1 }
+	export enum TriggerKind { FileEvent = 'FileEvent', PeriodicTimerEvent = 'PeriodicTimerEvent' }
 
 
 	/** Collection of all trigger on the data box edge device. */
@@ -3046,9 +3046,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateSummaryPropertiesOngoingUpdateOperation { None = 0, Scan = 1, Download = 2, Install = 3 }
+	export enum UpdateSummaryPropertiesOngoingUpdateOperation { None = 'None', Scan = 'Scan', Download = 'Download', Install = 'Install' }
 
-	export enum UpdateSummaryPropertiesRebootBehavior { NeverReboots = 0, RequiresReboot = 1, RequestReboot = 2 }
+	export enum UpdateSummaryPropertiesRebootBehavior { NeverReboots = 'NeverReboots', RequiresReboot = 'RequiresReboot', RequestReboot = 'RequestReboot' }
 
 
 	/** The upload certificate request. */

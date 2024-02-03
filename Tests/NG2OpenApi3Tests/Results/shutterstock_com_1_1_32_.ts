@@ -76,7 +76,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessTokenDetailsRealm { customer = 0, contributor = 1 }
+	export enum AccessTokenDetailsRealm { customer = 'customer', contributor = 'contributor' }
 
 
 	/** Album metadata */
@@ -798,9 +798,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioRenderResultPreset { MASTER_MP3 = 0, MASTER_WAV = 1, STEMS_WAV = 2 }
+	export enum AudioRenderResultPreset { MASTER_MP3 = 'MASTER_MP3', MASTER_WAV = 'MASTER_WAV', STEMS_WAV = 'STEMS_WAV' }
 
-	export enum AudioRenderResultStatus { WAITING_COMPOSE = 0, RUNNING_COMPOSE = 1, WAITING_RENDER = 2, RUNNING_RENDER = 3, CREATED = 4, FAILED_CREATE = 5 }
+	export enum AudioRenderResultStatus { WAITING_COMPOSE = 'WAITING_COMPOSE', RUNNING_COMPOSE = 'RUNNING_COMPOSE', WAITING_RENDER = 'WAITING_RENDER', RUNNING_RENDER = 'RUNNING_RENDER', CREATED = 'CREATED', FAILED_CREATE = 'FAILED_CREATE' }
 
 
 	/** A timeline object that represents either a request for music to be created or an entire music composition */
@@ -952,7 +952,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioRenderTimelineSpanInstrumentGroupStatusStatus { active = 0, inactive = 1 }
+	export enum AudioRenderTimelineSpanInstrumentGroupStatusStatus { active = 'active', inactive = 'inactive' }
 
 
 	/** A period of music or silence, measured in beats */
@@ -1075,9 +1075,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioRenderTimelineSpanRegionEnd_typeEvent { ending = 0, transition = 1 }
+	export enum AudioRenderTimelineSpanRegionEnd_typeEvent { ending = 'ending', transition = 'transition' }
 
-	export enum AudioRenderTimelineSpanRegionEnd_typeType { ringout = 0, cut = 1 }
+	export enum AudioRenderTimelineSpanRegionEnd_typeType { ringout = 'ringout', cut = 'cut' }
 
 	export interface AudioRenderTimelineSpanRegionKey {
 
@@ -1110,15 +1110,15 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioRenderTimelineSpanRegionKeyTonic_accidental { 'double flat' = 0, flat = 1, natural = 2, sharp = 3, 'double sharp' = 4 }
+	export enum AudioRenderTimelineSpanRegionKeyTonic_accidental { 'double flat' = 'double flat', flat = 'flat', natural = 'natural', sharp = 'sharp', 'double sharp' = 'double sharp' }
 
-	export enum AudioRenderTimelineSpanRegionKeyTonic_note { c = 0, d = 1, e = 2, f = 3, g = 4, a = 5, b = 6 }
+	export enum AudioRenderTimelineSpanRegionKeyTonic_note { c = 'c', d = 'd', e = 'e', f = 'f', g = 'g', a = 'a', b = 'b' }
 
-	export enum AudioRenderTimelineSpanRegionKeyTonic_quality { major = 0, natural_minor = 1, harmonic_minor = 2, melodic_minor = 3, ionian = 4, dorian = 5, phrygian = 6, lydian = 7, mixolydian = 8, aeolian = 9, locrian = 10 }
+	export enum AudioRenderTimelineSpanRegionKeyTonic_quality { major = 'major', natural_minor = 'natural_minor', harmonic_minor = 'harmonic_minor', melodic_minor = 'melodic_minor', ionian = 'ionian', dorian = 'dorian', phrygian = 'phrygian', lydian = 'lydian', mixolydian = 'mixolydian', aeolian = 'aeolian', locrian = 'locrian' }
 
-	export enum AudioRenderTimelineSpanRegionRegion { music = 0, silence = 1 }
+	export enum AudioRenderTimelineSpanRegionRegion { music = 'music', silence = 'silence' }
 
-	export enum AudioRenderTimelineSpanSpan_type { metered = 0, unmetered = 1 }
+	export enum AudioRenderTimelineSpanSpan_type { metered = 'metered', unmetered = 'unmetered' }
 
 
 	/** An inflection point in a tempo curve; the API creates the overall tempo by using a linear interpolation of the time between each tempo change */
@@ -1592,17 +1592,17 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchImageLanguage { ar = 0, bg = 1, bn = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, fi = 9, fr = 10, gu = 11, he = 12, hi = 13, hr = 14, hu = 15, id = 16, it = 17, ja = 18, kn = 19, ko = 20, ml = 21, mr = 22, nb = 23, nl = 24, or = 25, pl = 26, pt = 27, ro = 28, ru = 29, sk = 30, sl = 31, sv = 32, ta = 33, te = 34, th = 35, tr = 36, uk = 37, ur = 38, vi = 39, zh = 40, 'zh-Hant' = 41 }
+	export enum SearchImageLanguage { ar = 'ar', bg = 'bg', bn = 'bn', cs = 'cs', da = 'da', de = 'de', el = 'el', en = 'en', es = 'es', fi = 'fi', fr = 'fr', gu = 'gu', he = 'he', hi = 'hi', hr = 'hr', hu = 'hu', id = 'id', it = 'it', ja = 'ja', kn = 'kn', ko = 'ko', ml = 'ml', mr = 'mr', nb = 'nb', nl = 'nl', or = 'or', pl = 'pl', pt = 'pt', ro = 'ro', ru = 'ru', sk = 'sk', sl = 'sl', sv = 'sv', ta = 'ta', te = 'te', th = 'th', tr = 'tr', uk = 'uk', ur = 'ur', vi = 'vi', zh = 'zh', 'zh-Hant' = 'zh-Hant' }
 
-	export enum SearchImageOrientation { horizontal = 0, vertical = 1 }
+	export enum SearchImageOrientation { horizontal = 'horizontal', vertical = 'vertical' }
 
-	export enum SearchImagePeople_age { infants = 0, children = 1, teenagers = 2, '20s' = 3, '30s' = 4, '40s' = 5, '50s' = 6, '60s' = 7, older = 8 }
+	export enum SearchImagePeople_age { infants = 'infants', children = 'children', teenagers = 'teenagers', '20s' = '20s', '30s' = '30s', '40s' = '40s', '50s' = '50s', '60s' = '60s', older = 'older' }
 
-	export enum SearchImagePeople_gender { male = 0, female = 1, both = 2 }
+	export enum SearchImagePeople_gender { male = 'male', female = 'female', both = 'both' }
 
-	export enum SearchImageSort { newest = 0, popular = 1, relevance = 2, random = 3 }
+	export enum SearchImageSort { newest = 'newest', popular = 'popular', relevance = 'relevance', random = 'random' }
 
-	export enum SearchImageView { minimal = 0, full = 1 }
+	export enum SearchImageView { minimal = 'minimal', full = 'full' }
 
 
 	/** List of search results for each given query */
@@ -2232,7 +2232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogCollectionItemAssetType { image = 0, video = 1, audio = 2, 'editorial-image' = 3, 'editorial-video' = 4 }
+	export enum CatalogCollectionItemAssetType { image = 'image', video = 'video', audio = 'audio', 'editorial-image' = 'editorial-image', 'editorial-video' = 'editorial-video' }
 
 
 	/** List of role assignments for a catalog collection */
@@ -2306,9 +2306,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogCollectionRoleType { USER = 0 }
+	export enum CatalogCollectionRoleType { USER = 'USER' }
 
-	export enum CatalogCollectionVisibility { private = 0, public = 1 }
+	export enum CatalogCollectionVisibility { private = 'private', public = 'public' }
 
 
 	/** List of catalog collections */
@@ -3315,7 +3315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreviewContent_type { 'audio/mp3' = 0 }
+	export enum PreviewContent_type { 'audio/mp3' = 'audio/mp3' }
 
 
 	/** List Descriptors results */
@@ -4964,7 +4964,7 @@ export namespace MyNS {
 
 
 	/** Language code */
-	export enum Language { ar = 0, bg = 1, bn = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, fi = 9, fr = 10, gu = 11, he = 12, hi = 13, hr = 14, hu = 15, id = 16, it = 17, ja = 18, kn = 19, ko = 20, ml = 21, mr = 22, nb = 23, nl = 24, or = 25, pl = 26, pt = 27, ro = 28, ru = 29, sk = 30, sl = 31, sv = 32, ta = 33, te = 34, th = 35, tr = 36, uk = 37, ur = 38, vi = 39, zh = 40, 'zh-Hant' = 41 }
+	export enum Language { ar = 'ar', bg = 'bg', bn = 'bn', cs = 'cs', da = 'da', de = 'de', el = 'el', en = 'en', es = 'es', fi = 'fi', fr = 'fr', gu = 'gu', he = 'he', hi = 'hi', hr = 'hr', hu = 'hu', id = 'id', it = 'it', ja = 'ja', kn = 'kn', ko = 'ko', ml = 'ml', mr = 'mr', nb = 'nb', nl = 'nl', or = 'or', pl = 'pl', pt = 'pt', ro = 'ro', ru = 'ru', sk = 'sk', sl = 'sl', sv = 'sv', ta = 'ta', te = 'te', th = 'th', tr = 'tr', uk = 'uk', ur = 'ur', vi = 'vi', zh = 'zh', 'zh-Hant' = 'zh-Hant' }
 
 
 	/** An audio track in a licensing request */
@@ -5007,7 +5007,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseAudioLicense { audio_platform = 0, premier_music_basic = 1, premier_music_extended = 2, premier_music_pro = 3, premier_music_comp = 4, asset_all_music = 5 }
+	export enum LicenseAudioLicense { audio_platform = 'audio_platform', premier_music_basic = 'premier_music_basic', premier_music_extended = 'premier_music_extended', premier_music_pro = 'premier_music_pro', premier_music_comp = 'premier_music_comp', asset_all_music = 'asset_all_music' }
 
 
 	/** Audio license request data */
@@ -5193,7 +5193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseEditorialContentSize { small = 0, medium = 1, original = 2 }
+	export enum LicenseEditorialContentSize { small = 'small', medium = 'medium', original = 'original' }
 
 
 	/** License editorial content request */
@@ -5386,9 +5386,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseEditorialVideoContentLicense { premier_editorial_video_digital_only = 0, premier_editorial_video_all_media = 1, premier_editorial_video_all_media_single_territory = 2, premier_editorial_video_comp = 3 }
+	export enum LicenseEditorialVideoContentLicense { premier_editorial_video_digital_only = 'premier_editorial_video_digital_only', premier_editorial_video_all_media = 'premier_editorial_video_all_media', premier_editorial_video_all_media_single_territory = 'premier_editorial_video_all_media_single_territory', premier_editorial_video_comp = 'premier_editorial_video_comp' }
 
-	export enum LicenseEditorialVideoContentSize { original = 0 }
+	export enum LicenseEditorialVideoContentSize { original = 'original' }
 
 
 	/** License editorial video content request */
@@ -5465,7 +5465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseFormatMedia_type { image = 0, video = 1, audio = 2, editorial = 3 }
+	export enum LicenseFormatMedia_type { image = 'image', video = 'video', audio = 'audio', editorial = 'editorial' }
 
 
 	/** Data required to license an image */
@@ -5559,9 +5559,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseImageFormat { jpg = 0 }
+	export enum LicenseImageFormat { jpg = 'jpg' }
 
-	export enum LicenseImageSize { small = 0, medium = 1, huge = 2, custom = 3 }
+	export enum LicenseImageSize { small = 'small', medium = 'medium', huge = 'huge', custom = 'custom' }
 
 
 	/** Image license request data */
@@ -5803,9 +5803,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseImageVectorFormat { eps = 0 }
+	export enum LicenseImageVectorFormat { eps = 'eps' }
 
-	export enum LicenseImageVectorSize { vector = 0 }
+	export enum LicenseImageVectorSize { vector = 'vector' }
 
 	export interface LicenseSFX {
 		audio_layout?: LicenseSFXAudio_layout | null;
@@ -5856,9 +5856,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseSFXAudio_layout { ambisonic = 0, _5_1 = 1, stereo = 2 }
+	export enum LicenseSFXAudio_layout { ambisonic = 'ambisonic', _5_1 = '5.1', stereo = 'stereo' }
 
-	export enum LicenseSFXFormat { wav = 0, mp3 = 1 }
+	export enum LicenseSFXFormat { wav = 'wav', mp3 = 'mp3' }
 
 
 	/** License sounds effect asset request body */
@@ -6033,7 +6033,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseVideoSize { web = 0, sd = 1, hd = 2, '4k' = 3 }
+	export enum LicenseVideoSize { web = 'web', sd = 'sd', hd = 'hd', '4k' = '4k' }
 
 
 	/** List of videos to license */
@@ -6352,7 +6352,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RedownloadImageSize { small = 0, medium = 1, huge = 2, supersize = 3, vector = 4 }
+	export enum RedownloadImageSize { small = 'small', medium = 'medium', huge = 'huge', supersize = 'supersize', vector = 'vector' }
 
 
 	/** Data required to redownload a video */
@@ -9274,35 +9274,35 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetTrackCollectionItemsSort { newest = 0, oldest = 1 }
+	export enum GetTrackCollectionItemsSort { newest = 'newest', oldest = 'oldest' }
 
-	export enum GetTrackLicenseListDownload_availability { all = 0, downloadable = 1, non_downloadable = 2 }
+	export enum GetTrackLicenseListDownload_availability { all = 'all', downloadable = 'downloadable', non_downloadable = 'non_downloadable' }
 
-	export enum SearchTracksSort { score = 0, ranking_all = 1, artist = 2, title = 3, bpm = 4, freshness = 5, duration = 6 }
+	export enum SearchTracksSort { score = 'score', ranking_all = 'ranking_all', artist = 'artist', title = 'title', bpm = 'bpm', freshness = 'freshness', duration = 'duration' }
 
-	export enum SearchTracksSort_order { asc = 0, desc = 1 }
+	export enum SearchTracksSort_order { asc = 'asc', desc = 'desc' }
 
-	export enum SearchTracksLibrary { shutterstock = 0, premier = 1 }
+	export enum SearchTracksLibrary { shutterstock = 'shutterstock', premier = 'premier' }
 
-	export enum GetContributorCollectionsListSort { newest = 0, last_updated = 1, item_count = 2 }
+	export enum GetContributorCollectionsListSort { newest = 'newest', last_updated = 'last_updated', item_count = 'item_count' }
 
-	export enum SearchEditorialImagesSort { relevant = 0, newest = 1, oldest = 2 }
+	export enum SearchEditorialImagesSort { relevant = 'relevant', newest = 'newest', oldest = 'oldest' }
 
-	export enum GetUpdatedEditorialImagesType { edit = 0, addition = 1 }
+	export enum GetUpdatedEditorialImagesType { edit = 'edit', addition = 'addition' }
 
-	export enum SearchEditorialVideosResolution { '4k' = 0, high_definition = 1, standard_definition = 2 }
+	export enum SearchEditorialVideosResolution { '4k' = '4k', high_definition = 'high_definition', standard_definition = 'standard_definition' }
 
-	export enum GetFeaturedImageCollectionListEmbed { share_url = 0 }
+	export enum GetFeaturedImageCollectionListEmbed { share_url = 'share_url' }
 
-	export enum GetFeaturedImageCollectionListAsset_hint { '1x' = 0, '2x' = 1 }
+	export enum GetFeaturedImageCollectionListAsset_hint { '1x' = '1x', '2x' = '2x' }
 
-	export enum LicenseImagesFormat { eps = 0, jpg = 1 }
+	export enum LicenseImagesFormat { eps = 'eps', jpg = 'jpg' }
 
-	export enum LicenseImagesSize { small = 0, medium = 1, huge = 2, vector = 3, custom = 4 }
+	export enum LicenseImagesSize { small = 'small', medium = 'medium', huge = 'huge', vector = 'vector', custom = 'custom' }
 
-	export enum SearchImagesAi_industry { automotive = 0, cpg = 1, finance = 2, healthcare = 3, retail = 4, technology = 5 }
+	export enum SearchImagesAi_industry { automotive = 'automotive', cpg = 'cpg', finance = 'finance', healthcare = 'healthcare', retail = 'retail', technology = 'technology' }
 
-	export enum SearchImagesAi_objective { awareness = 0, traffic = 1, conversions = 2 }
+	export enum SearchImagesAi_objective { awareness = 'awareness', traffic = 'traffic', conversions = 'conversions' }
 
 	export interface CreateAccessTokenPostBody {
 
@@ -9375,17 +9375,17 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateAccessTokenPostBodyGrant_type { authorization_code = 0, client_credentials = 1, refresh_token = 2 }
+	export enum CreateAccessTokenPostBodyGrant_type { authorization_code = 'authorization_code', client_credentials = 'client_credentials', refresh_token = 'refresh_token' }
 
-	export enum AuthorizeResponse_type { code = 0 }
+	export enum AuthorizeResponse_type { code = 'code' }
 
-	export enum GetSfxListDetailsLibrary { shutterstock = 0, premier = 1, premiumbeat = 2 }
+	export enum GetSfxListDetailsLibrary { shutterstock = 'shutterstock', premier = 'premier', premiumbeat = 'premiumbeat' }
 
-	export enum SearchSFXSort { popular = 0, newest = 1, relevance = 2, random = 3, oldest = 4 }
+	export enum SearchSFXSort { popular = 'popular', newest = 'newest', relevance = 'relevance', random = 'random', oldest = 'oldest' }
 
-	export enum SearchVideosAspect_ratio { '4_3' = 0, '16_9' = 1, nonstandard = 2 }
+	export enum SearchVideosAspect_ratio { '4_3' = '4_3', '16_9' = '16_9', nonstandard = 'nonstandard' }
 
-	export enum SearchVideosResolution { '4k' = 0, standard_definition = 1, high_definition = 2 }
+	export enum SearchVideosResolution { '4k' = '4k', standard_definition = 'standard_definition', high_definition = 'high_definition' }
 
 }
 

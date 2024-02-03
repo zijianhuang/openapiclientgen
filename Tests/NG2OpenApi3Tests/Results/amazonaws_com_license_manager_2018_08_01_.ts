@@ -22,7 +22,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GrantStatus { PENDING_WORKFLOW = 0, PENDING_ACCEPT = 1, REJECTED = 2, ACTIVE = 3, FAILED_WORKFLOW = 4, DELETED = 5, PENDING_DELETE = 6, DISABLED = 7, WORKFLOW_COMPLETED = 8 }
+	export enum GrantStatus { PENDING_WORKFLOW = 'PENDING_WORKFLOW', PENDING_ACCEPT = 'PENDING_ACCEPT', REJECTED = 'REJECTED', ACTIVE = 'ACTIVE', FAILED_WORKFLOW = 'FAILED_WORKFLOW', DELETED = 'DELETED', PENDING_DELETE = 'PENDING_DELETE', DISABLED = 'DISABLED', WORKFLOW_COMPLETED = 'WORKFLOW_COMPLETED' }
 
 	export interface AcceptGrantRequest {
 
@@ -222,7 +222,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntitlementDataUnit { Count = 0, None = 1, Seconds = 2, Microseconds = 3, Milliseconds = 4, Bytes = 5, Kilobytes = 6, Megabytes = 7, Gigabytes = 8, Terabytes = 9, Bits = 10, Kilobits = 11, Megabits = 12, Gigabits = 13, Terabits = 14, Percent = 15, 'Bytes/Second' = 16, 'Kilobytes/Second' = 17, 'Megabytes/Second' = 18, 'Gigabytes/Second' = 19, 'Terabytes/Second' = 20, 'Bits/Second' = 21, 'Kilobits/Second' = 22, 'Megabits/Second' = 23, 'Gigabits/Second' = 24, 'Terabits/Second' = 25, 'Count/Second' = 26 }
+	export enum EntitlementDataUnit { Count = 'Count', None = 'None', Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second' }
 
 
 	/** Describes key/value pairs. */
@@ -282,7 +282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DigitalSignatureMethod { JWT_PS384 = 0 }
+	export enum DigitalSignatureMethod { JWT_PS384 = 'JWT_PS384' }
 
 	export interface NoEntitlementsAllowedException {
 	}
@@ -356,7 +356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckoutType { PROVISIONAL = 0, PERPETUAL = 1 }
+	export enum CheckoutType { PROVISIONAL = 'PROVISIONAL', PERPETUAL = 'PERPETUAL' }
 
 	export interface CheckoutLicenseRequest {
 
@@ -468,7 +468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowedOperation { CreateGrant = 0, CheckoutLicense = 1, CheckoutBorrowLicense = 2, CheckInLicense = 3, ExtendConsumptionLicense = 4, ListPurchasedLicenses = 5, CreateToken = 6 }
+	export enum AllowedOperation { CreateGrant = 'CreateGrant', CheckoutLicense = 'CheckoutLicense', CheckoutBorrowLicense = 'CheckoutBorrowLicense', CheckInLicense = 'CheckInLicense', ExtendConsumptionLicense = 'ExtendConsumptionLicense', ListPurchasedLicenses = 'ListPurchasedLicenses', CreateToken = 'CreateToken' }
 
 	export interface CreateGrantVersionResponse {
 		GrantArn?: string;
@@ -544,7 +544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivationOverrideBehavior { DISTRIBUTED_GRANTS_ONLY = 0, ALL_GRANTS_PERMITTED_BY_ISSUER = 1 }
+	export enum ActivationOverrideBehavior { DISTRIBUTED_GRANTS_ONLY = 'DISTRIBUTED_GRANTS_ONLY', ALL_GRANTS_PERMITTED_BY_ISSUER = 'ALL_GRANTS_PERMITTED_BY_ISSUER' }
 
 	export interface CreateLicenseResponse {
 		LicenseArn?: string;
@@ -565,7 +565,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseStatus { AVAILABLE = 0, PENDING_AVAILABLE = 1, DEACTIVATED = 2, SUSPENDED = 3, EXPIRED = 4, PENDING_DELETE = 5, DELETED = 6 }
+	export enum LicenseStatus { AVAILABLE = 'AVAILABLE', PENDING_AVAILABLE = 'PENDING_AVAILABLE', DEACTIVATED = 'DEACTIVATED', SUSPENDED = 'SUSPENDED', EXPIRED = 'EXPIRED', PENDING_DELETE = 'PENDING_DELETE', DELETED = 'DELETED' }
 
 	export interface CreateLicenseRequest {
 
@@ -739,7 +739,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RenewType { None = 0, Weekly = 1, Monthly = 2 }
+	export enum RenewType { None = 'None', Weekly = 'Weekly', Monthly = 'Monthly' }
 
 
 	/** Details about a provisional configuration. */
@@ -842,7 +842,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseCountingType { vCPU = 0, Instance = 1, Core = 2, Socket = 3 }
+	export enum LicenseCountingType { vCPU = 'vCPU', Instance = 'Instance', Core = 'Core', Socket = 'Socket' }
 
 
 	/** Details about a tag for a license configuration. */
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportType { LicenseConfigurationSummaryReport = 0, LicenseConfigurationUsageReport = 1 }
+	export enum ReportType { LicenseConfigurationSummaryReport = 'LicenseConfigurationSummaryReport', LicenseConfigurationUsageReport = 'LicenseConfigurationUsageReport' }
 
 
 	/** Details of the license configuration that this generator reports on. */
@@ -1059,7 +1059,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportFrequencyType { DAY = 0, WEEK = 1, MONTH = 2 }
+	export enum ReportFrequencyType { DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH' }
 
 	export interface CreateLicenseVersionResponse {
 		LicenseArn?: string;
@@ -1167,7 +1167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TokenType { REFRESH_TOKEN = 0 }
+	export enum TokenType { REFRESH_TOKEN = 'REFRESH_TOKEN' }
 
 	export interface CreateTokenRequest {
 
@@ -1260,7 +1260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseDeletionStatus { PENDING_DELETE = 0, DELETED = 1 }
+	export enum LicenseDeletionStatus { PENDING_DELETE = 'PENDING_DELETE', DELETED = 'DELETED' }
 
 	export interface DeleteLicenseRequest {
 
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { EC2_INSTANCE = 0, EC2_HOST = 1, EC2_AMI = 2, RDS = 3, SYSTEMS_MANAGER_MANAGED_INSTANCE = 4 }
+	export enum ResourceType { EC2_INSTANCE = 'EC2_INSTANCE', EC2_HOST = 'EC2_HOST', EC2_AMI = 'EC2_AMI', RDS = 'RDS', SYSTEMS_MANAGER_MANAGED_INSTANCE = 'SYSTEMS_MANAGER_MANAGED_INSTANCE' }
 
 
 	/** Summary information about a managed resource. */
@@ -1800,7 +1800,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseConversionTaskStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum LicenseConversionTaskStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface GetLicenseConversionTaskRequest {
 
@@ -2709,7 +2709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReceivedStatus { PENDING_WORKFLOW = 0, PENDING_ACCEPT = 1, REJECTED = 2, ACTIVE = 3, FAILED_WORKFLOW = 4, DELETED = 5, DISABLED = 6, WORKFLOW_COMPLETED = 7 }
+	export enum ReceivedStatus { PENDING_WORKFLOW = 'PENDING_WORKFLOW', PENDING_ACCEPT = 'PENDING_ACCEPT', REJECTED = 'REJECTED', ACTIVE = 'ACTIVE', FAILED_WORKFLOW = 'FAILED_WORKFLOW', DELETED = 'DELETED', DISABLED = 'DISABLED', WORKFLOW_COMPLETED = 'WORKFLOW_COMPLETED' }
 
 	export interface ListReceivedLicensesRequest {
 		LicenseArns?: Array<string>;
@@ -2854,7 +2854,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InventoryFilterCondition { EQUALS = 0, NOT_EQUALS = 1, BEGINS_WITH = 2, CONTAINS = 3 }
+	export enum InventoryFilterCondition { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS', BEGINS_WITH = 'BEGINS_WITH', CONTAINS = 'CONTAINS' }
 
 	export interface FailedDependencyException {
 	}
@@ -3170,7 +3170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseConfigurationStatus { AVAILABLE = 0, DISABLED = 1 }
+	export enum LicenseConfigurationStatus { AVAILABLE = 'AVAILABLE', DISABLED = 'DISABLED' }
 
 	export interface UpdateLicenseManagerReportGeneratorResponse {
 	}
@@ -3304,7 +3304,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntitlementUnit { Count = 0, None = 1, Seconds = 2, Microseconds = 3, Milliseconds = 4, Bytes = 5, Kilobytes = 6, Megabytes = 7, Gigabytes = 8, Terabytes = 9, Bits = 10, Kilobits = 11, Megabits = 12, Gigabits = 13, Terabits = 14, Percent = 15, 'Bytes/Second' = 16, 'Kilobytes/Second' = 17, 'Megabytes/Second' = 18, 'Gigabytes/Second' = 19, 'Terabytes/Second' = 20, 'Bits/Second' = 21, 'Kilobits/Second' = 22, 'Megabits/Second' = 23, 'Gigabits/Second' = 24, 'Terabits/Second' = 25, 'Count/Second' = 26 }
+	export enum EntitlementUnit { Count = 'Count', None = 'None', Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second' }
 
 	@Injectable()
 	export class MyClient {
@@ -3762,105 +3762,105 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptGrantX_Amz_Target { 'AWSLicenseManager.AcceptGrant' = 0 }
+	export enum AcceptGrantX_Amz_Target { 'AWSLicenseManager.AcceptGrant' = 'AWSLicenseManager.AcceptGrant' }
 
-	export enum CheckInLicenseX_Amz_Target { 'AWSLicenseManager.CheckInLicense' = 0 }
+	export enum CheckInLicenseX_Amz_Target { 'AWSLicenseManager.CheckInLicense' = 'AWSLicenseManager.CheckInLicense' }
 
-	export enum CheckoutBorrowLicenseX_Amz_Target { 'AWSLicenseManager.CheckoutBorrowLicense' = 0 }
+	export enum CheckoutBorrowLicenseX_Amz_Target { 'AWSLicenseManager.CheckoutBorrowLicense' = 'AWSLicenseManager.CheckoutBorrowLicense' }
 
-	export enum CheckoutLicenseX_Amz_Target { 'AWSLicenseManager.CheckoutLicense' = 0 }
+	export enum CheckoutLicenseX_Amz_Target { 'AWSLicenseManager.CheckoutLicense' = 'AWSLicenseManager.CheckoutLicense' }
 
-	export enum CreateGrantX_Amz_Target { 'AWSLicenseManager.CreateGrant' = 0 }
+	export enum CreateGrantX_Amz_Target { 'AWSLicenseManager.CreateGrant' = 'AWSLicenseManager.CreateGrant' }
 
-	export enum CreateGrantVersionX_Amz_Target { 'AWSLicenseManager.CreateGrantVersion' = 0 }
+	export enum CreateGrantVersionX_Amz_Target { 'AWSLicenseManager.CreateGrantVersion' = 'AWSLicenseManager.CreateGrantVersion' }
 
-	export enum CreateLicenseX_Amz_Target { 'AWSLicenseManager.CreateLicense' = 0 }
+	export enum CreateLicenseX_Amz_Target { 'AWSLicenseManager.CreateLicense' = 'AWSLicenseManager.CreateLicense' }
 
-	export enum CreateLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.CreateLicenseConfiguration' = 0 }
+	export enum CreateLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.CreateLicenseConfiguration' = 'AWSLicenseManager.CreateLicenseConfiguration' }
 
-	export enum CreateLicenseConversionTaskForResourceX_Amz_Target { 'AWSLicenseManager.CreateLicenseConversionTaskForResource' = 0 }
+	export enum CreateLicenseConversionTaskForResourceX_Amz_Target { 'AWSLicenseManager.CreateLicenseConversionTaskForResource' = 'AWSLicenseManager.CreateLicenseConversionTaskForResource' }
 
-	export enum CreateLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.CreateLicenseManagerReportGenerator' = 0 }
+	export enum CreateLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.CreateLicenseManagerReportGenerator' = 'AWSLicenseManager.CreateLicenseManagerReportGenerator' }
 
-	export enum CreateLicenseVersionX_Amz_Target { 'AWSLicenseManager.CreateLicenseVersion' = 0 }
+	export enum CreateLicenseVersionX_Amz_Target { 'AWSLicenseManager.CreateLicenseVersion' = 'AWSLicenseManager.CreateLicenseVersion' }
 
-	export enum CreateTokenX_Amz_Target { 'AWSLicenseManager.CreateToken' = 0 }
+	export enum CreateTokenX_Amz_Target { 'AWSLicenseManager.CreateToken' = 'AWSLicenseManager.CreateToken' }
 
-	export enum DeleteGrantX_Amz_Target { 'AWSLicenseManager.DeleteGrant' = 0 }
+	export enum DeleteGrantX_Amz_Target { 'AWSLicenseManager.DeleteGrant' = 'AWSLicenseManager.DeleteGrant' }
 
-	export enum DeleteLicenseX_Amz_Target { 'AWSLicenseManager.DeleteLicense' = 0 }
+	export enum DeleteLicenseX_Amz_Target { 'AWSLicenseManager.DeleteLicense' = 'AWSLicenseManager.DeleteLicense' }
 
-	export enum DeleteLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.DeleteLicenseConfiguration' = 0 }
+	export enum DeleteLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.DeleteLicenseConfiguration' = 'AWSLicenseManager.DeleteLicenseConfiguration' }
 
-	export enum DeleteLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.DeleteLicenseManagerReportGenerator' = 0 }
+	export enum DeleteLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.DeleteLicenseManagerReportGenerator' = 'AWSLicenseManager.DeleteLicenseManagerReportGenerator' }
 
-	export enum DeleteTokenX_Amz_Target { 'AWSLicenseManager.DeleteToken' = 0 }
+	export enum DeleteTokenX_Amz_Target { 'AWSLicenseManager.DeleteToken' = 'AWSLicenseManager.DeleteToken' }
 
-	export enum ExtendLicenseConsumptionX_Amz_Target { 'AWSLicenseManager.ExtendLicenseConsumption' = 0 }
+	export enum ExtendLicenseConsumptionX_Amz_Target { 'AWSLicenseManager.ExtendLicenseConsumption' = 'AWSLicenseManager.ExtendLicenseConsumption' }
 
-	export enum GetAccessTokenX_Amz_Target { 'AWSLicenseManager.GetAccessToken' = 0 }
+	export enum GetAccessTokenX_Amz_Target { 'AWSLicenseManager.GetAccessToken' = 'AWSLicenseManager.GetAccessToken' }
 
-	export enum GetGrantX_Amz_Target { 'AWSLicenseManager.GetGrant' = 0 }
+	export enum GetGrantX_Amz_Target { 'AWSLicenseManager.GetGrant' = 'AWSLicenseManager.GetGrant' }
 
-	export enum GetLicenseX_Amz_Target { 'AWSLicenseManager.GetLicense' = 0 }
+	export enum GetLicenseX_Amz_Target { 'AWSLicenseManager.GetLicense' = 'AWSLicenseManager.GetLicense' }
 
-	export enum GetLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.GetLicenseConfiguration' = 0 }
+	export enum GetLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.GetLicenseConfiguration' = 'AWSLicenseManager.GetLicenseConfiguration' }
 
-	export enum GetLicenseConversionTaskX_Amz_Target { 'AWSLicenseManager.GetLicenseConversionTask' = 0 }
+	export enum GetLicenseConversionTaskX_Amz_Target { 'AWSLicenseManager.GetLicenseConversionTask' = 'AWSLicenseManager.GetLicenseConversionTask' }
 
-	export enum GetLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.GetLicenseManagerReportGenerator' = 0 }
+	export enum GetLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.GetLicenseManagerReportGenerator' = 'AWSLicenseManager.GetLicenseManagerReportGenerator' }
 
-	export enum GetLicenseUsageX_Amz_Target { 'AWSLicenseManager.GetLicenseUsage' = 0 }
+	export enum GetLicenseUsageX_Amz_Target { 'AWSLicenseManager.GetLicenseUsage' = 'AWSLicenseManager.GetLicenseUsage' }
 
-	export enum GetServiceSettingsX_Amz_Target { 'AWSLicenseManager.GetServiceSettings' = 0 }
+	export enum GetServiceSettingsX_Amz_Target { 'AWSLicenseManager.GetServiceSettings' = 'AWSLicenseManager.GetServiceSettings' }
 
-	export enum ListAssociationsForLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.ListAssociationsForLicenseConfiguration' = 0 }
+	export enum ListAssociationsForLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.ListAssociationsForLicenseConfiguration' = 'AWSLicenseManager.ListAssociationsForLicenseConfiguration' }
 
-	export enum ListDistributedGrantsX_Amz_Target { 'AWSLicenseManager.ListDistributedGrants' = 0 }
+	export enum ListDistributedGrantsX_Amz_Target { 'AWSLicenseManager.ListDistributedGrants' = 'AWSLicenseManager.ListDistributedGrants' }
 
-	export enum ListFailuresForLicenseConfigurationOperationsX_Amz_Target { 'AWSLicenseManager.ListFailuresForLicenseConfigurationOperations' = 0 }
+	export enum ListFailuresForLicenseConfigurationOperationsX_Amz_Target { 'AWSLicenseManager.ListFailuresForLicenseConfigurationOperations' = 'AWSLicenseManager.ListFailuresForLicenseConfigurationOperations' }
 
-	export enum ListLicenseConfigurationsX_Amz_Target { 'AWSLicenseManager.ListLicenseConfigurations' = 0 }
+	export enum ListLicenseConfigurationsX_Amz_Target { 'AWSLicenseManager.ListLicenseConfigurations' = 'AWSLicenseManager.ListLicenseConfigurations' }
 
-	export enum ListLicenseConversionTasksX_Amz_Target { 'AWSLicenseManager.ListLicenseConversionTasks' = 0 }
+	export enum ListLicenseConversionTasksX_Amz_Target { 'AWSLicenseManager.ListLicenseConversionTasks' = 'AWSLicenseManager.ListLicenseConversionTasks' }
 
-	export enum ListLicenseManagerReportGeneratorsX_Amz_Target { 'AWSLicenseManager.ListLicenseManagerReportGenerators' = 0 }
+	export enum ListLicenseManagerReportGeneratorsX_Amz_Target { 'AWSLicenseManager.ListLicenseManagerReportGenerators' = 'AWSLicenseManager.ListLicenseManagerReportGenerators' }
 
-	export enum ListLicenseSpecificationsForResourceX_Amz_Target { 'AWSLicenseManager.ListLicenseSpecificationsForResource' = 0 }
+	export enum ListLicenseSpecificationsForResourceX_Amz_Target { 'AWSLicenseManager.ListLicenseSpecificationsForResource' = 'AWSLicenseManager.ListLicenseSpecificationsForResource' }
 
-	export enum ListLicenseVersionsX_Amz_Target { 'AWSLicenseManager.ListLicenseVersions' = 0 }
+	export enum ListLicenseVersionsX_Amz_Target { 'AWSLicenseManager.ListLicenseVersions' = 'AWSLicenseManager.ListLicenseVersions' }
 
-	export enum ListLicensesX_Amz_Target { 'AWSLicenseManager.ListLicenses' = 0 }
+	export enum ListLicensesX_Amz_Target { 'AWSLicenseManager.ListLicenses' = 'AWSLicenseManager.ListLicenses' }
 
-	export enum ListReceivedGrantsX_Amz_Target { 'AWSLicenseManager.ListReceivedGrants' = 0 }
+	export enum ListReceivedGrantsX_Amz_Target { 'AWSLicenseManager.ListReceivedGrants' = 'AWSLicenseManager.ListReceivedGrants' }
 
-	export enum ListReceivedGrantsForOrganizationX_Amz_Target { 'AWSLicenseManager.ListReceivedGrantsForOrganization' = 0 }
+	export enum ListReceivedGrantsForOrganizationX_Amz_Target { 'AWSLicenseManager.ListReceivedGrantsForOrganization' = 'AWSLicenseManager.ListReceivedGrantsForOrganization' }
 
-	export enum ListReceivedLicensesX_Amz_Target { 'AWSLicenseManager.ListReceivedLicenses' = 0 }
+	export enum ListReceivedLicensesX_Amz_Target { 'AWSLicenseManager.ListReceivedLicenses' = 'AWSLicenseManager.ListReceivedLicenses' }
 
-	export enum ListReceivedLicensesForOrganizationX_Amz_Target { 'AWSLicenseManager.ListReceivedLicensesForOrganization' = 0 }
+	export enum ListReceivedLicensesForOrganizationX_Amz_Target { 'AWSLicenseManager.ListReceivedLicensesForOrganization' = 'AWSLicenseManager.ListReceivedLicensesForOrganization' }
 
-	export enum ListResourceInventoryX_Amz_Target { 'AWSLicenseManager.ListResourceInventory' = 0 }
+	export enum ListResourceInventoryX_Amz_Target { 'AWSLicenseManager.ListResourceInventory' = 'AWSLicenseManager.ListResourceInventory' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSLicenseManager.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSLicenseManager.ListTagsForResource' = 'AWSLicenseManager.ListTagsForResource' }
 
-	export enum ListTokensX_Amz_Target { 'AWSLicenseManager.ListTokens' = 0 }
+	export enum ListTokensX_Amz_Target { 'AWSLicenseManager.ListTokens' = 'AWSLicenseManager.ListTokens' }
 
-	export enum ListUsageForLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.ListUsageForLicenseConfiguration' = 0 }
+	export enum ListUsageForLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.ListUsageForLicenseConfiguration' = 'AWSLicenseManager.ListUsageForLicenseConfiguration' }
 
-	export enum RejectGrantX_Amz_Target { 'AWSLicenseManager.RejectGrant' = 0 }
+	export enum RejectGrantX_Amz_Target { 'AWSLicenseManager.RejectGrant' = 'AWSLicenseManager.RejectGrant' }
 
-	export enum TagResourceX_Amz_Target { 'AWSLicenseManager.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSLicenseManager.TagResource' = 'AWSLicenseManager.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSLicenseManager.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSLicenseManager.UntagResource' = 'AWSLicenseManager.UntagResource' }
 
-	export enum UpdateLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.UpdateLicenseConfiguration' = 0 }
+	export enum UpdateLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.UpdateLicenseConfiguration' = 'AWSLicenseManager.UpdateLicenseConfiguration' }
 
-	export enum UpdateLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.UpdateLicenseManagerReportGenerator' = 0 }
+	export enum UpdateLicenseManagerReportGeneratorX_Amz_Target { 'AWSLicenseManager.UpdateLicenseManagerReportGenerator' = 'AWSLicenseManager.UpdateLicenseManagerReportGenerator' }
 
-	export enum UpdateLicenseSpecificationsForResourceX_Amz_Target { 'AWSLicenseManager.UpdateLicenseSpecificationsForResource' = 0 }
+	export enum UpdateLicenseSpecificationsForResourceX_Amz_Target { 'AWSLicenseManager.UpdateLicenseSpecificationsForResource' = 'AWSLicenseManager.UpdateLicenseSpecificationsForResource' }
 
-	export enum UpdateServiceSettingsX_Amz_Target { 'AWSLicenseManager.UpdateServiceSettings' = 0 }
+	export enum UpdateServiceSettingsX_Amz_Target { 'AWSLicenseManager.UpdateServiceSettings' = 'AWSLicenseManager.UpdateServiceSettings' }
 
 }
 

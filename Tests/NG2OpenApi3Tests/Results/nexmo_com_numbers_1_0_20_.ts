@@ -364,9 +364,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Number_details_updateMessagesCallbackType { app = 0 }
+	export enum Number_details_updateMessagesCallbackType { app = 'app' }
 
-	export enum Number_details_updateVoiceCallbackType { sip = 0, tel = 1, app = 2 }
+	export enum Number_details_updateVoiceCallbackType { sip = 'sip', tel = 'tel', app = 'app' }
 
 	export interface Response {
 
@@ -491,11 +491,11 @@ export namespace MyNS {
 
 	export enum GetOwnedNumbersSearch_pattern { _0 = 0, _1 = 1, _2 = 2 }
 
-	export enum GetAvailableNumbersType { landline = 0, 'mobile-lvn' = 1, 'landline-toll-free' = 2 }
+	export enum GetAvailableNumbersType { landline = 'landline', 'mobile-lvn' = 'mobile-lvn', 'landline-toll-free' = 'landline-toll-free' }
 
 	export enum GetAvailableNumbersSearch_pattern { _0 = 0, _1 = 1, _2 = 2 }
 
-	export enum GetAvailableNumbersFeatures { SMS = 0, VOICE = 1, 'SMS,VOICE' = 2, MMS = 3, 'SMS,MMS' = 4, 'VOICE,MMS' = 5, 'SMS,MMS,VOICE' = 6 }
+	export enum GetAvailableNumbersFeatures { SMS = 'SMS', VOICE = 'VOICE', 'SMS,VOICE' = 'SMS,VOICE', MMS = 'MMS', 'SMS,MMS' = 'SMS,MMS', 'VOICE,MMS' = 'VOICE,MMS', 'SMS,MMS,VOICE' = 'SMS,MMS,VOICE' }
 
 }
 

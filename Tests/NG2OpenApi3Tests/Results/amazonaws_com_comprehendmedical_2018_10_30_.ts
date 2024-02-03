@@ -66,7 +66,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, PARTIAL_SUCCESS = 3, FAILED = 4, STOP_REQUESTED = 5, STOPPED = 6 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', PARTIAL_SUCCESS = 'PARTIAL_SUCCESS', FAILED = 'FAILED', STOP_REQUESTED = 'STOP_REQUESTED', STOPPED = 'STOPPED' }
 
 
 	/** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.  */
@@ -116,7 +116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LanguageCode { en = 0 }
+	export enum LanguageCode { en = 'en' }
 
 	export interface DescribeEntitiesDetectionV2JobRequest {
 
@@ -350,9 +350,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityType { MEDICATION = 0, MEDICAL_CONDITION = 1, PROTECTED_HEALTH_INFORMATION = 2, TEST_TREATMENT_PROCEDURE = 3, ANATOMY = 4, TIME_EXPRESSION = 5, BEHAVIORAL_ENVIRONMENTAL_SOCIAL = 6 }
+	export enum EntityType { MEDICATION = 'MEDICATION', MEDICAL_CONDITION = 'MEDICAL_CONDITION', PROTECTED_HEALTH_INFORMATION = 'PROTECTED_HEALTH_INFORMATION', TEST_TREATMENT_PROCEDURE = 'TEST_TREATMENT_PROCEDURE', ANATOMY = 'ANATOMY', TIME_EXPRESSION = 'TIME_EXPRESSION', BEHAVIORAL_ENVIRONMENTAL_SOCIAL = 'BEHAVIORAL_ENVIRONMENTAL_SOCIAL' }
 
-	export enum EntitySubType { NAME = 0, DX_NAME = 1, DOSAGE = 2, ROUTE_OR_MODE = 3, FORM = 4, FREQUENCY = 5, DURATION = 6, GENERIC_NAME = 7, BRAND_NAME = 8, STRENGTH = 9, RATE = 10, ACUITY = 11, TEST_NAME = 12, TEST_VALUE = 13, TEST_UNITS = 14, TEST_UNIT = 15, PROCEDURE_NAME = 16, TREATMENT_NAME = 17, DATE = 18, AGE = 19, CONTACT_POINT = 20, PHONE_OR_FAX = 21, EMAIL = 22, IDENTIFIER = 23, ID = 24, URL = 25, ADDRESS = 26, PROFESSION = 27, SYSTEM_ORGAN_SITE = 28, DIRECTION = 29, QUALITY = 30, QUANTITY = 31, TIME_EXPRESSION = 32, TIME_TO_MEDICATION_NAME = 33, TIME_TO_DX_NAME = 34, TIME_TO_TEST_NAME = 35, TIME_TO_PROCEDURE_NAME = 36, TIME_TO_TREATMENT_NAME = 37, AMOUNT = 38, GENDER = 39, RACE_ETHNICITY = 40, ALLERGIES = 41, TOBACCO_USE = 42, ALCOHOL_CONSUMPTION = 43, REC_DRUG_USE = 44 }
+	export enum EntitySubType { NAME = 'NAME', DX_NAME = 'DX_NAME', DOSAGE = 'DOSAGE', ROUTE_OR_MODE = 'ROUTE_OR_MODE', FORM = 'FORM', FREQUENCY = 'FREQUENCY', DURATION = 'DURATION', GENERIC_NAME = 'GENERIC_NAME', BRAND_NAME = 'BRAND_NAME', STRENGTH = 'STRENGTH', RATE = 'RATE', ACUITY = 'ACUITY', TEST_NAME = 'TEST_NAME', TEST_VALUE = 'TEST_VALUE', TEST_UNITS = 'TEST_UNITS', TEST_UNIT = 'TEST_UNIT', PROCEDURE_NAME = 'PROCEDURE_NAME', TREATMENT_NAME = 'TREATMENT_NAME', DATE = 'DATE', AGE = 'AGE', CONTACT_POINT = 'CONTACT_POINT', PHONE_OR_FAX = 'PHONE_OR_FAX', EMAIL = 'EMAIL', IDENTIFIER = 'IDENTIFIER', ID = 'ID', URL = 'URL', ADDRESS = 'ADDRESS', PROFESSION = 'PROFESSION', SYSTEM_ORGAN_SITE = 'SYSTEM_ORGAN_SITE', DIRECTION = 'DIRECTION', QUALITY = 'QUALITY', QUANTITY = 'QUANTITY', TIME_EXPRESSION = 'TIME_EXPRESSION', TIME_TO_MEDICATION_NAME = 'TIME_TO_MEDICATION_NAME', TIME_TO_DX_NAME = 'TIME_TO_DX_NAME', TIME_TO_TEST_NAME = 'TIME_TO_TEST_NAME', TIME_TO_PROCEDURE_NAME = 'TIME_TO_PROCEDURE_NAME', TIME_TO_TREATMENT_NAME = 'TIME_TO_TREATMENT_NAME', AMOUNT = 'AMOUNT', GENDER = 'GENDER', RACE_ETHNICITY = 'RACE_ETHNICITY', ALLERGIES = 'ALLERGIES', TOBACCO_USE = 'TOBACCO_USE', ALCOHOL_CONSUMPTION = 'ALCOHOL_CONSUMPTION', REC_DRUG_USE = 'REC_DRUG_USE' }
 
 
 	/**  Provides contextual information about the extracted entity.  */
@@ -374,7 +374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeName { SIGN = 0, SYMPTOM = 1, DIAGNOSIS = 2, NEGATION = 3, PERTAINS_TO_FAMILY = 4, HYPOTHETICAL = 5, LOW_CONFIDENCE = 6, PAST_HISTORY = 7, FUTURE = 8 }
+	export enum AttributeName { SIGN = 'SIGN', SYMPTOM = 'SYMPTOM', DIAGNOSIS = 'DIAGNOSIS', NEGATION = 'NEGATION', PERTAINS_TO_FAMILY = 'PERTAINS_TO_FAMILY', HYPOTHETICAL = 'HYPOTHETICAL', LOW_CONFIDENCE = 'LOW_CONFIDENCE', PAST_HISTORY = 'PAST_HISTORY', FUTURE = 'FUTURE' }
 
 
 	/**  An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text.  */
@@ -418,7 +418,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationshipType { EVERY = 0, WITH_DOSAGE = 1, ADMINISTERED_VIA = 2, FOR = 3, NEGATIVE = 4, OVERLAP = 5, DOSAGE = 6, ROUTE_OR_MODE = 7, FORM = 8, FREQUENCY = 9, DURATION = 10, STRENGTH = 11, RATE = 12, ACUITY = 13, TEST_VALUE = 14, TEST_UNITS = 15, TEST_UNIT = 16, DIRECTION = 17, SYSTEM_ORGAN_SITE = 18, AMOUNT = 19, USAGE = 20, QUALITY = 21 }
+	export enum RelationshipType { EVERY = 'EVERY', WITH_DOSAGE = 'WITH_DOSAGE', ADMINISTERED_VIA = 'ADMINISTERED_VIA', FOR = 'FOR', NEGATIVE = 'NEGATIVE', OVERLAP = 'OVERLAP', DOSAGE = 'DOSAGE', ROUTE_OR_MODE = 'ROUTE_OR_MODE', FORM = 'FORM', FREQUENCY = 'FREQUENCY', DURATION = 'DURATION', STRENGTH = 'STRENGTH', RATE = 'RATE', ACUITY = 'ACUITY', TEST_VALUE = 'TEST_VALUE', TEST_UNITS = 'TEST_UNITS', TEST_UNIT = 'TEST_UNIT', DIRECTION = 'DIRECTION', SYSTEM_ORGAN_SITE = 'SYSTEM_ORGAN_SITE', AMOUNT = 'AMOUNT', USAGE = 'USAGE', QUALITY = 'QUALITY' }
 
 
 	/** An attribute that was extracted, but Amazon Comprehend Medical was unable to relate to an entity.  */
@@ -623,9 +623,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ICD10CMEntityCategory { MEDICAL_CONDITION = 0 }
+	export enum ICD10CMEntityCategory { MEDICAL_CONDITION = 'MEDICAL_CONDITION' }
 
-	export enum ICD10CMEntityType { DX_NAME = 0, TIME_EXPRESSION = 1 }
+	export enum ICD10CMEntityType { DX_NAME = 'DX_NAME', TIME_EXPRESSION = 'TIME_EXPRESSION' }
 
 
 	/** The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>. */
@@ -669,7 +669,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ICD10CMAttributeType { ACUITY = 0, DIRECTION = 1, SYSTEM_ORGAN_SITE = 2, QUALITY = 3, QUANTITY = 4, TIME_TO_DX_NAME = 5, TIME_EXPRESSION = 6 }
+	export enum ICD10CMAttributeType { ACUITY = 'ACUITY', DIRECTION = 'DIRECTION', SYSTEM_ORGAN_SITE = 'SYSTEM_ORGAN_SITE', QUALITY = 'QUALITY', QUANTITY = 'QUANTITY', TIME_TO_DX_NAME = 'TIME_TO_DX_NAME', TIME_EXPRESSION = 'TIME_EXPRESSION' }
 
 
 	/** Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>. */
@@ -691,9 +691,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ICD10CMTraitName { NEGATION = 0, DIAGNOSIS = 1, SIGN = 2, SYMPTOM = 3, PERTAINS_TO_FAMILY = 4, HYPOTHETICAL = 5, LOW_CONFIDENCE = 6 }
+	export enum ICD10CMTraitName { NEGATION = 'NEGATION', DIAGNOSIS = 'DIAGNOSIS', SIGN = 'SIGN', SYMPTOM = 'SYMPTOM', PERTAINS_TO_FAMILY = 'PERTAINS_TO_FAMILY', HYPOTHETICAL = 'HYPOTHETICAL', LOW_CONFIDENCE = 'LOW_CONFIDENCE' }
 
-	export enum ICD10CMRelationshipType { OVERLAP = 0, SYSTEM_ORGAN_SITE = 1, QUALITY = 2 }
+	export enum ICD10CMRelationshipType { OVERLAP = 'OVERLAP', SYSTEM_ORGAN_SITE = 'SYSTEM_ORGAN_SITE', QUALITY = 'QUALITY' }
 
 
 	/**  The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match. */
@@ -792,9 +792,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RxNormEntityCategory { MEDICATION = 0 }
+	export enum RxNormEntityCategory { MEDICATION = 'MEDICATION' }
 
-	export enum RxNormEntityType { BRAND_NAME = 0, GENERIC_NAME = 1 }
+	export enum RxNormEntityType { BRAND_NAME = 'BRAND_NAME', GENERIC_NAME = 'GENERIC_NAME' }
 
 
 	/** The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>. */
@@ -832,7 +832,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RxNormAttributeType { DOSAGE = 0, DURATION = 1, FORM = 2, FREQUENCY = 3, RATE = 4, ROUTE_OR_MODE = 5, STRENGTH = 6 }
+	export enum RxNormAttributeType { DOSAGE = 'DOSAGE', DURATION = 'DURATION', FORM = 'FORM', FREQUENCY = 'FREQUENCY', RATE = 'RATE', ROUTE_OR_MODE = 'ROUTE_OR_MODE', STRENGTH = 'STRENGTH' }
 
 
 	/** The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication.  */
@@ -854,7 +854,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RxNormTraitName { NEGATION = 0, PAST_HISTORY = 1 }
+	export enum RxNormTraitName { NEGATION = 'NEGATION', PAST_HISTORY = 'PAST_HISTORY' }
 
 
 	/** The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match. */
@@ -955,9 +955,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SNOMEDCTEntityCategory { MEDICAL_CONDITION = 0, ANATOMY = 1, TEST_TREATMENT_PROCEDURE = 2 }
+	export enum SNOMEDCTEntityCategory { MEDICAL_CONDITION = 'MEDICAL_CONDITION', ANATOMY = 'ANATOMY', TEST_TREATMENT_PROCEDURE = 'TEST_TREATMENT_PROCEDURE' }
 
-	export enum SNOMEDCTEntityType { DX_NAME = 0, TEST_NAME = 1, PROCEDURE_NAME = 2, TREATMENT_NAME = 3 }
+	export enum SNOMEDCTEntityType { DX_NAME = 'DX_NAME', TEST_NAME = 'TEST_NAME', PROCEDURE_NAME = 'PROCEDURE_NAME', TREATMENT_NAME = 'TREATMENT_NAME' }
 
 
 	/**  The extracted attributes that relate to an entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken.  */
@@ -1002,9 +1002,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SNOMEDCTAttributeType { ACUITY = 0, QUALITY = 1, DIRECTION = 2, SYSTEM_ORGAN_SITE = 3, TEST_VALUE = 4, TEST_UNIT = 5 }
+	export enum SNOMEDCTAttributeType { ACUITY = 'ACUITY', QUALITY = 'QUALITY', DIRECTION = 'DIRECTION', SYSTEM_ORGAN_SITE = 'SYSTEM_ORGAN_SITE', TEST_VALUE = 'TEST_VALUE', TEST_UNIT = 'TEST_UNIT' }
 
-	export enum SNOMEDCTRelationshipType { ACUITY = 0, QUALITY = 1, TEST_VALUE = 2, TEST_UNITS = 3, DIRECTION = 4, SYSTEM_ORGAN_SITE = 5, TEST_UNIT = 6 }
+	export enum SNOMEDCTRelationshipType { ACUITY = 'ACUITY', QUALITY = 'QUALITY', TEST_VALUE = 'TEST_VALUE', TEST_UNITS = 'TEST_UNITS', DIRECTION = 'DIRECTION', SYSTEM_ORGAN_SITE = 'SYSTEM_ORGAN_SITE', TEST_UNIT = 'TEST_UNIT' }
 
 
 	/**  Contextual information for an entity.  */
@@ -1026,7 +1026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SNOMEDCTTraitName { NEGATION = 0, DIAGNOSIS = 1, SIGN = 2, SYMPTOM = 3, PERTAINS_TO_FAMILY = 4, HYPOTHETICAL = 5, LOW_CONFIDENCE = 6, PAST_HISTORY = 7, FUTURE = 8 }
+	export enum SNOMEDCTTraitName { NEGATION = 'NEGATION', DIAGNOSIS = 'DIAGNOSIS', SIGN = 'SIGN', SYMPTOM = 'SYMPTOM', PERTAINS_TO_FAMILY = 'PERTAINS_TO_FAMILY', HYPOTHETICAL = 'HYPOTHETICAL', LOW_CONFIDENCE = 'LOW_CONFIDENCE', PAST_HISTORY = 'PAST_HISTORY', FUTURE = 'FUTURE' }
 
 
 	/**  The SNOMED-CT concepts that the entity could refer to, along with a score indicating the likelihood of the match.  */
@@ -1957,57 +1957,57 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.DescribeEntitiesDetectionV2Job' = 0 }
+	export enum DescribeEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.DescribeEntitiesDetectionV2Job' = 'ComprehendMedical_20181030.DescribeEntitiesDetectionV2Job' }
 
-	export enum DescribeICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeICD10CMInferenceJob' = 0 }
+	export enum DescribeICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeICD10CMInferenceJob' = 'ComprehendMedical_20181030.DescribeICD10CMInferenceJob' }
 
-	export enum DescribePHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.DescribePHIDetectionJob' = 0 }
+	export enum DescribePHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.DescribePHIDetectionJob' = 'ComprehendMedical_20181030.DescribePHIDetectionJob' }
 
-	export enum DescribeRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeRxNormInferenceJob' = 0 }
+	export enum DescribeRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeRxNormInferenceJob' = 'ComprehendMedical_20181030.DescribeRxNormInferenceJob' }
 
-	export enum DescribeSNOMEDCTInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeSNOMEDCTInferenceJob' = 0 }
+	export enum DescribeSNOMEDCTInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeSNOMEDCTInferenceJob' = 'ComprehendMedical_20181030.DescribeSNOMEDCTInferenceJob' }
 
-	export enum DetectEntitiesX_Amz_Target { 'ComprehendMedical_20181030.DetectEntities' = 0 }
+	export enum DetectEntitiesX_Amz_Target { 'ComprehendMedical_20181030.DetectEntities' = 'ComprehendMedical_20181030.DetectEntities' }
 
-	export enum DetectEntitiesV2X_Amz_Target { 'ComprehendMedical_20181030.DetectEntitiesV2' = 0 }
+	export enum DetectEntitiesV2X_Amz_Target { 'ComprehendMedical_20181030.DetectEntitiesV2' = 'ComprehendMedical_20181030.DetectEntitiesV2' }
 
-	export enum DetectPHIX_Amz_Target { 'ComprehendMedical_20181030.DetectPHI' = 0 }
+	export enum DetectPHIX_Amz_Target { 'ComprehendMedical_20181030.DetectPHI' = 'ComprehendMedical_20181030.DetectPHI' }
 
-	export enum InferICD10CMX_Amz_Target { 'ComprehendMedical_20181030.InferICD10CM' = 0 }
+	export enum InferICD10CMX_Amz_Target { 'ComprehendMedical_20181030.InferICD10CM' = 'ComprehendMedical_20181030.InferICD10CM' }
 
-	export enum InferRxNormX_Amz_Target { 'ComprehendMedical_20181030.InferRxNorm' = 0 }
+	export enum InferRxNormX_Amz_Target { 'ComprehendMedical_20181030.InferRxNorm' = 'ComprehendMedical_20181030.InferRxNorm' }
 
-	export enum InferSNOMEDCTX_Amz_Target { 'ComprehendMedical_20181030.InferSNOMEDCT' = 0 }
+	export enum InferSNOMEDCTX_Amz_Target { 'ComprehendMedical_20181030.InferSNOMEDCT' = 'ComprehendMedical_20181030.InferSNOMEDCT' }
 
-	export enum ListEntitiesDetectionV2JobsX_Amz_Target { 'ComprehendMedical_20181030.ListEntitiesDetectionV2Jobs' = 0 }
+	export enum ListEntitiesDetectionV2JobsX_Amz_Target { 'ComprehendMedical_20181030.ListEntitiesDetectionV2Jobs' = 'ComprehendMedical_20181030.ListEntitiesDetectionV2Jobs' }
 
-	export enum ListICD10CMInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListICD10CMInferenceJobs' = 0 }
+	export enum ListICD10CMInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListICD10CMInferenceJobs' = 'ComprehendMedical_20181030.ListICD10CMInferenceJobs' }
 
-	export enum ListPHIDetectionJobsX_Amz_Target { 'ComprehendMedical_20181030.ListPHIDetectionJobs' = 0 }
+	export enum ListPHIDetectionJobsX_Amz_Target { 'ComprehendMedical_20181030.ListPHIDetectionJobs' = 'ComprehendMedical_20181030.ListPHIDetectionJobs' }
 
-	export enum ListRxNormInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListRxNormInferenceJobs' = 0 }
+	export enum ListRxNormInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListRxNormInferenceJobs' = 'ComprehendMedical_20181030.ListRxNormInferenceJobs' }
 
-	export enum ListSNOMEDCTInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListSNOMEDCTInferenceJobs' = 0 }
+	export enum ListSNOMEDCTInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListSNOMEDCTInferenceJobs' = 'ComprehendMedical_20181030.ListSNOMEDCTInferenceJobs' }
 
-	export enum StartEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.StartEntitiesDetectionV2Job' = 0 }
+	export enum StartEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.StartEntitiesDetectionV2Job' = 'ComprehendMedical_20181030.StartEntitiesDetectionV2Job' }
 
-	export enum StartICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartICD10CMInferenceJob' = 0 }
+	export enum StartICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartICD10CMInferenceJob' = 'ComprehendMedical_20181030.StartICD10CMInferenceJob' }
 
-	export enum StartPHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.StartPHIDetectionJob' = 0 }
+	export enum StartPHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.StartPHIDetectionJob' = 'ComprehendMedical_20181030.StartPHIDetectionJob' }
 
-	export enum StartRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartRxNormInferenceJob' = 0 }
+	export enum StartRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartRxNormInferenceJob' = 'ComprehendMedical_20181030.StartRxNormInferenceJob' }
 
-	export enum StartSNOMEDCTInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartSNOMEDCTInferenceJob' = 0 }
+	export enum StartSNOMEDCTInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartSNOMEDCTInferenceJob' = 'ComprehendMedical_20181030.StartSNOMEDCTInferenceJob' }
 
-	export enum StopEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.StopEntitiesDetectionV2Job' = 0 }
+	export enum StopEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.StopEntitiesDetectionV2Job' = 'ComprehendMedical_20181030.StopEntitiesDetectionV2Job' }
 
-	export enum StopICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopICD10CMInferenceJob' = 0 }
+	export enum StopICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopICD10CMInferenceJob' = 'ComprehendMedical_20181030.StopICD10CMInferenceJob' }
 
-	export enum StopPHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.StopPHIDetectionJob' = 0 }
+	export enum StopPHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.StopPHIDetectionJob' = 'ComprehendMedical_20181030.StopPHIDetectionJob' }
 
-	export enum StopRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopRxNormInferenceJob' = 0 }
+	export enum StopRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopRxNormInferenceJob' = 'ComprehendMedical_20181030.StopRxNormInferenceJob' }
 
-	export enum StopSNOMEDCTInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopSNOMEDCTInferenceJob' = 0 }
+	export enum StopSNOMEDCTInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopSNOMEDCTInferenceJob' = 'ComprehendMedical_20181030.StopSNOMEDCTInferenceJob' }
 
 }
 

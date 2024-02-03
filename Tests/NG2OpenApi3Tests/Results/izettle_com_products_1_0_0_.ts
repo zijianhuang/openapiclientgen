@@ -313,7 +313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShippingShippingPricingModel { FREE = 0, STANDARD = 1 }
+	export enum ShippingShippingPricingModel { FREE = 'FREE', STANDARD = 'STANDARD' }
 
 	export interface Weight {
 
@@ -345,9 +345,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WeightUnit { kg = 0, g = 1, oz = 2, lb = 3 }
+	export enum WeightUnit { kg = 'kg', g = 'g', oz = 'oz', lb = 'lb' }
 
-	export enum OnlinePropertiesStatus { ACTIVE = 0, HIDDEN = 1 }
+	export enum OnlinePropertiesStatus { ACTIVE = 'ACTIVE', HIDDEN = 'HIDDEN' }
 
 	export interface PresentationDTO {
 		backgroundColor?: string | null;
@@ -576,7 +576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriceCurrencyId { AED = 0, AFA = 1, AFN = 2, ALL = 3, AMD = 4, ANG = 5, AOA = 6, ARS = 7, AUD = 8, AWG = 9, AZM = 10, AZN = 11, BAM = 12, BBD = 13, BDT = 14, BGN = 15, BHD = 16, BIF = 17, BMD = 18, BND = 19, BOB = 20, BRL = 21, BSD = 22, BTN = 23, BWP = 24, BYR = 25, BZD = 26, CAD = 27, CDF = 28, CHF = 29, CLP = 30, CNY = 31, COP = 32, CRC = 33, CSD = 34, CUC = 35, CUP = 36, CVE = 37, CYP = 38, CZK = 39, DJF = 40, DKK = 41, DOP = 42, DZD = 43, EEK = 44, EGP = 45, ERN = 46, ETB = 47, EUR = 48, FJD = 49, FKP = 50, GBP = 51, GEL = 52, GGP = 53, GHC = 54, GHS = 55, GIP = 56, GMD = 57, GNF = 58, GTQ = 59, GYD = 60, HKD = 61, HNL = 62, HRK = 63, HTG = 64, HUF = 65, IDR = 66, ILS = 67, IMP = 68, INR = 69, IQD = 70, IRR = 71, ISK = 72, JEP = 73, JMD = 74, JOD = 75, JPY = 76, KES = 77, KGS = 78, KHR = 79, KMF = 80, KPW = 81, KRW = 82, KWD = 83, KYD = 84, KZT = 85, LAK = 86, LBP = 87, LKR = 88, LRD = 89, LSL = 90, LTL = 91, LVL = 92, LYD = 93, MAD = 94, MDL = 95, MGA = 96, MKD = 97, MMK = 98, MNT = 99, MOP = 100, MRO = 101, MTL = 102, MUR = 103, MVR = 104, MWK = 105, MXN = 106, MYR = 107, MZM = 108, MZN = 109, NAD = 110, NGN = 111, NIO = 112, NOK = 113, NPR = 114, NZD = 115, OMR = 116, PAB = 117, PEN = 118, PGK = 119, PHP = 120, PKR = 121, PLN = 122, PYG = 123, QAR = 124, RON = 125, RSD = 126, RUB = 127, RWF = 128, SAR = 129, SBD = 130, SCR = 131, SDD = 132, SDG = 133, SEK = 134, SGD = 135, SHP = 136, SIT = 137, SKK = 138, SLL = 139, SOS = 140, SPL = 141, SRD = 142, SSP = 143, STD = 144, SVC = 145, SYP = 146, SZL = 147, THB = 148, TJS = 149, TMM = 150, TMT = 151, TND = 152, TOP = 153, TRL = 154, TRY = 155, TTD = 156, TVD = 157, TWD = 158, TZS = 159, UAH = 160, UGX = 161, USD = 162, UYU = 163, UZS = 164, VEB = 165, VEF = 166, VND = 167, VUV = 168, WST = 169, XAF = 170, XAG = 171, XAU = 172, XCD = 173, XDR = 174, XOF = 175, XPD = 176, XPF = 177, XPT = 178, YER = 179, ZAR = 180, ZMK = 181, ZMW = 182, ZWD = 183, ZWL = 184 }
+	export enum PriceCurrencyId { AED = 'AED', AFA = 'AFA', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZM = 'AZM', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHF = 'CHF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', CRC = 'CRC', CSD = 'CSD', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CYP = 'CYP', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EEK = 'EEK', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GGP = 'GGP', GHC = 'GHC', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', IMP = 'IMP', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JEP = 'JEP', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MTL = 'MTL', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MYR = 'MYR', MZM = 'MZM', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDD = 'SDD', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SIT = 'SIT', SKK = 'SKK', SLL = 'SLL', SOS = 'SOS', SPL = 'SPL', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMM = 'TMM', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRL = 'TRL', TRY = 'TRY', TTD = 'TTD', TVD = 'TVD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', UYU = 'UYU', UZS = 'UZS', VEB = 'VEB', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', ZWD = 'ZWD', ZWL = 'ZWL' }
 
 	export interface VariantOption {
 
@@ -656,7 +656,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConstraintViolationConstraintType { MUST_BE_FALSE = 0, MUST_BE_TRUE = 1, MUST_BE_LESS_THAN = 2, MUST_BE_GREATER_THAN = 3, DIGIT_OUT_OF_BOUNDS = 4, DATE_MUST_BE_IN_THE_FUTURE = 5, MUST_BE_LESS_OR_EQUAL_THAN = 6, MUST_BE_GREATER_OR_EQUAL_TO = 7, MUST_NOT_BE_NULL = 8, MUST_BE_NULL = 9, DATE_MUST_BE_IN_THE_PAST = 10, MUST_MATCH_PATTERN = 11, INVALID_SIZE = 12, INVALID_EMAIL = 13, MUST_NOT_BE_EMPTY = 14, INVALID_RANGE = 15, UNKNOWN = 16 }
+	export enum ConstraintViolationConstraintType { MUST_BE_FALSE = 'MUST_BE_FALSE', MUST_BE_TRUE = 'MUST_BE_TRUE', MUST_BE_LESS_THAN = 'MUST_BE_LESS_THAN', MUST_BE_GREATER_THAN = 'MUST_BE_GREATER_THAN', DIGIT_OUT_OF_BOUNDS = 'DIGIT_OUT_OF_BOUNDS', DATE_MUST_BE_IN_THE_FUTURE = 'DATE_MUST_BE_IN_THE_FUTURE', MUST_BE_LESS_OR_EQUAL_THAN = 'MUST_BE_LESS_OR_EQUAL_THAN', MUST_BE_GREATER_OR_EQUAL_TO = 'MUST_BE_GREATER_OR_EQUAL_TO', MUST_NOT_BE_NULL = 'MUST_NOT_BE_NULL', MUST_BE_NULL = 'MUST_BE_NULL', DATE_MUST_BE_IN_THE_PAST = 'DATE_MUST_BE_IN_THE_PAST', MUST_MATCH_PATTERN = 'MUST_MATCH_PATTERN', INVALID_SIZE = 'INVALID_SIZE', INVALID_EMAIL = 'INVALID_EMAIL', MUST_NOT_BE_EMPTY = 'MUST_NOT_BE_EMPTY', INVALID_RANGE = 'INVALID_RANGE', UNKNOWN = 'UNKNOWN' }
 
 	export interface CreateCategoriesRequest {
 
@@ -871,7 +871,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportResponseState { IMPORTING = 0, FINISHED_SUCCESS = 1, FINISHED_FAILED = 2 }
+	export enum ImportResponseState { IMPORTING = 'IMPORTING', FINISHED_SUCCESS = 'FINISHED_SUCCESS', FINISHED_FAILED = 'FINISHED_FAILED' }
 
 	export interface LibraryImagesResponse {
 		imageUrls?: Array<string>;
@@ -1313,9 +1313,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TaxSettingsResponseTaxationMode { EXCLUSIVE = 0, INCLUSIVE = 1 }
+	export enum TaxSettingsResponseTaxationMode { EXCLUSIVE = 'EXCLUSIVE', INCLUSIVE = 'INCLUSIVE' }
 
-	export enum TaxSettingsResponseTaxationType { NONE = 0, SALES_TAX = 1, VAT = 2 }
+	export enum TaxSettingsResponseTaxationType { NONE = 'NONE', SALES_TAX = 'SALES_TAX', VAT = 'VAT' }
 
 	export interface TaxSettingsUpdateRequest {
 

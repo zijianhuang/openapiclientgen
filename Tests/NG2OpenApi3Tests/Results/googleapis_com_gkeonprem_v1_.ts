@@ -243,7 +243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BinaryAuthorizationEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 0, DISABLED = 1, PROJECT_SINGLETON_POLICY_ENFORCE = 2 }
+	export enum BinaryAuthorizationEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 'EVALUATION_MODE_UNSPECIFIED', DISABLED = 'DISABLED', PROJECT_SINGLETON_POLICY_ENFORCE = 'PROJECT_SINGLETON_POLICY_ENFORCE' }
 
 
 	/** BareMetalAdminClusterOperationsConfig specifies the admin cluster's observability infrastructure. */
@@ -403,7 +403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BareMetalNodePoolConfigOperatingSystem { OPERATING_SYSTEM_UNSPECIFIED = 0, LINUX = 1 }
+	export enum BareMetalNodePoolConfigOperatingSystem { OPERATING_SYSTEM_UNSPECIFIED = 'OPERATING_SYSTEM_UNSPECIFIED', LINUX = 'LINUX' }
 
 
 	/** NodeTaint applied to every Kubernetes node in a node pool. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. Node taints are permanent. */
@@ -440,7 +440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeTaintEffect { EFFECT_UNSPECIFIED = 0, NO_SCHEDULE = 1, PREFER_NO_SCHEDULE = 2, NO_EXECUTE = 3 }
+	export enum NodeTaintEffect { EFFECT_UNSPECIFIED = 'EFFECT_UNSPECIFIED', NO_SCHEDULE = 'NO_SCHEDULE', PREFER_NO_SCHEDULE = 'PREFER_NO_SCHEDULE', NO_EXECUTE = 'NO_EXECUTE' }
 
 
 	/** Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ## */
@@ -793,7 +793,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BareMetalAdminClusterState { STATE_UNSPECIFIED = 0, PROVISIONING = 1, RUNNING = 2, RECONCILING = 3, STOPPING = 4, ERROR = 5, DEGRADED = 6 }
+	export enum BareMetalAdminClusterState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PROVISIONING = 'PROVISIONING', RUNNING = 'RUNNING', RECONCILING = 'RECONCILING', STOPPING = 'STOPPING', ERROR = 'ERROR', DEGRADED = 'DEGRADED' }
 
 
 	/** ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED). */
@@ -868,7 +868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceConditionState { STATE_UNSPECIFIED = 0, STATE_TRUE = 1, STATE_FALSE = 2, STATE_UNKNOWN = 3 }
+	export enum ResourceConditionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STATE_TRUE = 'STATE_TRUE', STATE_FALSE = 'STATE_FALSE', STATE_UNKNOWN = 'STATE_UNKNOWN' }
 
 
 	/** BareMetalAdminStorageConfig specifies the cluster storage configuration. */
@@ -973,9 +973,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationCheckOption { OPTIONS_UNSPECIFIED = 0, SKIP_VALIDATION_CHECK_BLOCKING = 1, SKIP_VALIDATION_ALL = 2 }
+	export enum ValidationCheckOption { OPTIONS_UNSPECIFIED = 'OPTIONS_UNSPECIFIED', SKIP_VALIDATION_CHECK_BLOCKING = 'SKIP_VALIDATION_CHECK_BLOCKING', SKIP_VALIDATION_ALL = 'SKIP_VALIDATION_ALL' }
 
-	export enum ValidationCheckScenario { SCENARIO_UNSPECIFIED = 0, CREATE = 1, UPDATE = 2 }
+	export enum ValidationCheckScenario { SCENARIO_UNSPECIFIED = 'SCENARIO_UNSPECIFIED', CREATE = 'CREATE', UPDATE = 'UPDATE' }
 
 
 	/** ValidationCheckStatus defines the detailed validation check status. */
@@ -1043,7 +1043,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationCheckResultState { STATE_UNKNOWN = 0, STATE_FAILURE = 1, STATE_SKIPPED = 2, STATE_FATAL = 3, STATE_WARNING = 4 }
+	export enum ValidationCheckResultState { STATE_UNKNOWN = 'STATE_UNKNOWN', STATE_FAILURE = 'STATE_FAILURE', STATE_SKIPPED = 'STATE_SKIPPED', STATE_FATAL = 'STATE_FATAL', STATE_WARNING = 'STATE_WARNING' }
 
 
 	/** Represents an arg name->value pair. Only a subset of customized flags are supported. For the exact format, refer to the [API server documentation](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/). */
@@ -1780,7 +1780,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BareMetalWorkloadNodeConfigContainerRuntime { CONTAINER_RUNTIME_UNSPECIFIED = 0, CONTAINERD = 1 }
+	export enum BareMetalWorkloadNodeConfigContainerRuntime { CONTAINER_RUNTIME_UNSPECIFIED = 'CONTAINER_RUNTIME_UNSPECIFIED', CONTAINERD = 'CONTAINERD' }
 
 
 	/** Specifies operating system settings for cluster provisioning. */
@@ -1885,7 +1885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BareMetalClusterUpgradePolicyPolicy { NODE_POOL_POLICY_UNSPECIFIED = 0, SERIAL = 1, CONCURRENT = 2 }
+	export enum BareMetalClusterUpgradePolicyPolicy { NODE_POOL_POLICY_UNSPECIFIED = 'NODE_POOL_POLICY_UNSPECIFIED', SERIAL = 'SERIAL', CONCURRENT = 'CONCURRENT' }
 
 
 	/** Resource that represents a bare metal node pool. */
@@ -4510,7 +4510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricMetric { METRIC_ID_UNSPECIFIED = 0, NODES_TOTAL = 1, NODES_DRAINING = 2, NODES_UPGRADING = 3, NODES_PENDING_UPGRADE = 4, NODES_UPGRADED = 5, NODES_FAILED = 6, NODES_HEALTHY = 7, NODES_RECONCILING = 8, NODES_IN_MAINTENANCE = 9, PREFLIGHTS_COMPLETED = 10, PREFLIGHTS_RUNNING = 11, PREFLIGHTS_FAILED = 12, PREFLIGHTS_TOTAL = 13 }
+	export enum MetricMetric { METRIC_ID_UNSPECIFIED = 'METRIC_ID_UNSPECIFIED', NODES_TOTAL = 'NODES_TOTAL', NODES_DRAINING = 'NODES_DRAINING', NODES_UPGRADING = 'NODES_UPGRADING', NODES_PENDING_UPGRADE = 'NODES_PENDING_UPGRADE', NODES_UPGRADED = 'NODES_UPGRADED', NODES_FAILED = 'NODES_FAILED', NODES_HEALTHY = 'NODES_HEALTHY', NODES_RECONCILING = 'NODES_RECONCILING', NODES_IN_MAINTENANCE = 'NODES_IN_MAINTENANCE', PREFLIGHTS_COMPLETED = 'PREFLIGHTS_COMPLETED', PREFLIGHTS_RUNNING = 'PREFLIGHTS_RUNNING', PREFLIGHTS_FAILED = 'PREFLIGHTS_FAILED', PREFLIGHTS_TOTAL = 'PREFLIGHTS_TOTAL' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -4654,11 +4654,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStageStage { STAGE_UNSPECIFIED = 0, PREFLIGHT_CHECK = 1, CONFIGURE = 2, DEPLOY = 3, HEALTH_CHECK = 4, UPDATE = 5 }
+	export enum OperationStageStage { STAGE_UNSPECIFIED = 'STAGE_UNSPECIFIED', PREFLIGHT_CHECK = 'PREFLIGHT_CHECK', CONFIGURE = 'CONFIGURE', DEPLOY = 'DEPLOY', HEALTH_CHECK = 'HEALTH_CHECK', UPDATE = 'UPDATE' }
 
-	export enum OperationStageState { STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum OperationStageState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
-	export enum OperationMetadataType { OPERATION_TYPE_UNSPECIFIED = 0, CREATE = 1, DELETE = 2, UPDATE = 3, UPGRADE = 4, PLATFORM_UPGRADE = 5 }
+	export enum OperationMetadataType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', CREATE = 'CREATE', DELETE = 'DELETE', UPDATE = 'UPDATE', UPGRADE = 'UPGRADE', PLATFORM_UPGRADE = 'PLATFORM_UPGRADE' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */
@@ -5191,9 +5191,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Gkeonprem_projects_locations_vmwareClusters_vmwareNodePools_operations_getView { NODE_POOL_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Gkeonprem_projects_locations_vmwareClusters_vmwareNodePools_operations_getView { NODE_POOL_VIEW_UNSPECIFIED = 'NODE_POOL_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum Gkeonprem_projects_locations_bareMetalAdminClusters_listView { CLUSTER_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Gkeonprem_projects_locations_bareMetalAdminClusters_listView { CLUSTER_VIEW_UNSPECIFIED = 'CLUSTER_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

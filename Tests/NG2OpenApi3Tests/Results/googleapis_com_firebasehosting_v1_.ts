@@ -164,9 +164,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsRecordRequiredAction { NONE = 0, ADD = 1, REMOVE = 2 }
+	export enum DnsRecordRequiredAction { NONE = 'NONE', ADD = 'ADD', REMOVE = 'REMOVE' }
 
-	export enum DnsRecordType { TYPE_UNSPECIFIED = 0, A = 1, CNAME = 2, TXT = 3, AAAA = 4, CAA = 5 }
+	export enum DnsRecordType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', A = 'A', CNAME = 'CNAME', TXT = 'TXT', AAAA = 'AAAA', CAA = 'CAA' }
 
 
 	/** A file you can add to your existing, non-Hosting hosting service that confirms your intent to allow Hosting's Certificate Authorities to create an SSL certificate for your domain. */
@@ -257,9 +257,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomDomainMetadataCertState { CERT_STATE_UNSPECIFIED = 0, CERT_PREPARING = 1, CERT_VALIDATING = 2, CERT_PROPAGATING = 3, CERT_ACTIVE = 4, CERT_EXPIRING_SOON = 5, CERT_EXPIRED = 6 }
+	export enum CustomDomainMetadataCertState { CERT_STATE_UNSPECIFIED = 'CERT_STATE_UNSPECIFIED', CERT_PREPARING = 'CERT_PREPARING', CERT_VALIDATING = 'CERT_VALIDATING', CERT_PROPAGATING = 'CERT_PROPAGATING', CERT_ACTIVE = 'CERT_ACTIVE', CERT_EXPIRING_SOON = 'CERT_EXPIRING_SOON', CERT_EXPIRED = 'CERT_EXPIRED' }
 
-	export enum CustomDomainMetadataHostState { HOST_STATE_UNSPECIFIED = 0, HOST_UNHOSTED = 1, HOST_UNREACHABLE = 2, HOST_MISMATCH = 3, HOST_CONFLICT = 4, HOST_ACTIVE = 5 }
+	export enum CustomDomainMetadataHostState { HOST_STATE_UNSPECIFIED = 'HOST_STATE_UNSPECIFIED', HOST_UNHOSTED = 'HOST_UNHOSTED', HOST_UNREACHABLE = 'HOST_UNREACHABLE', HOST_MISMATCH = 'HOST_MISMATCH', HOST_CONFLICT = 'HOST_CONFLICT', HOST_ACTIVE = 'HOST_ACTIVE' }
 
 
 	/** A set of updates including ACME challenges and DNS records that allow Hosting to create an SSL certificate and establish project ownership for your domain name before you direct traffic to Hosting servers. Use these updates to facilitate zero downtime migrations to Hosting from other services. After you've made the recommended updates, check your custom domain's `ownershipState` and `certState`. To avoid downtime, they should be `OWNERSHIP_ACTIVE` and `CERT_ACTIVE`, respectively, before you update your `A` and `AAAA` records. */
@@ -291,9 +291,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveMigrationStepState { STATE_UNSPECIFIED = 0, PREPARING = 1, PENDING = 2, INCOMPLETE = 3, PROCESSING = 4, COMPLETE = 5 }
+	export enum LiveMigrationStepState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PREPARING = 'PREPARING', PENDING = 'PENDING', INCOMPLETE = 'INCOMPLETE', PROCESSING = 'PROCESSING', COMPLETE = 'COMPLETE' }
 
-	export enum CustomDomainMetadataOwnershipState { OWNERSHIP_STATE_UNSPECIFIED = 0, OWNERSHIP_MISSING = 1, OWNERSHIP_UNREACHABLE = 2, OWNERSHIP_MISMATCH = 3, OWNERSHIP_CONFLICT = 4, OWNERSHIP_PENDING = 5, OWNERSHIP_ACTIVE = 6 }
+	export enum CustomDomainMetadataOwnershipState { OWNERSHIP_STATE_UNSPECIFIED = 'OWNERSHIP_STATE_UNSPECIFIED', OWNERSHIP_MISSING = 'OWNERSHIP_MISSING', OWNERSHIP_UNREACHABLE = 'OWNERSHIP_UNREACHABLE', OWNERSHIP_MISMATCH = 'OWNERSHIP_MISMATCH', OWNERSHIP_CONFLICT = 'OWNERSHIP_CONFLICT', OWNERSHIP_PENDING = 'OWNERSHIP_PENDING', OWNERSHIP_ACTIVE = 'OWNERSHIP_ACTIVE' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

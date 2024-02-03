@@ -637,7 +637,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityProviderType { SAML = 0, Facebook = 1, Google = 2, LoginWithAmazon = 3, SignInWithApple = 4, OIDC = 5 }
+	export enum IdentityProviderType { SAML = 'SAML', Facebook = 'Facebook', Google = 'Google', LoginWithAmazon = 'LoginWithAmazon', SignInWithApple = 'SignInWithApple', OIDC = 'OIDC' }
 
 	export interface GetIpAccessSettingsResponse {
 		ipAccessSettings?: IpAccessSettings;
@@ -790,13 +790,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationType { Standard = 0, IAM_Identity_Center = 1 }
+	export enum AuthenticationType { Standard = 'Standard', IAM_Identity_Center = 'IAM_Identity_Center' }
 
-	export enum BrowserType { Chrome = 0 }
+	export enum BrowserType { Chrome = 'Chrome' }
 
-	export enum PortalStatus { Incomplete = 0, Pending = 1, Active = 2 }
+	export enum PortalStatus { Incomplete = 'Incomplete', Pending = 'Pending', Active = 'Active' }
 
-	export enum RendererType { AppStream = 0 }
+	export enum RendererType { AppStream = 'AppStream' }
 
 	export interface GetPortalServiceProviderMetadataResponse {
 
@@ -983,7 +983,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnabledType { Disabled = 0, Enabled = 1 }
+	export enum EnabledType { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 	export interface ListBrowserSettingsResponse {
 		browserSettings?: Array<BrowserSettingsSummary>;

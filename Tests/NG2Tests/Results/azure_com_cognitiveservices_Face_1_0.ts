@@ -76,7 +76,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessoryType { headWear = 0, glasses = 1, mask = 2 }
+	export enum AccessoryType { headWear = 'headWear', glasses = 'glasses', mask = 'mask' }
 
 
 	/** Request body for applying snapshot operation. */
@@ -114,7 +114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplySnapshotRequestMode { CreateNew = 0 }
+	export enum ApplySnapshotRequestMode { CreateNew = 'CreateNew' }
 
 
 	/** Properties describing any presence of blur within the image. */
@@ -152,7 +152,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlurBlurLevel { Low = 0, Medium = 1, High = 2 }
+	export enum BlurBlurLevel { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** Coordinates within an image */
@@ -480,7 +480,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExposureExposureLevel { UnderExposure = 0, GoodExposure = 1, OverExposure = 2 }
+	export enum ExposureExposureLevel { UnderExposure = 'UnderExposure', GoodExposure = 'GoodExposure', OverExposure = 'OverExposure' }
 
 
 	/** Properties describing facial hair attributes. */
@@ -541,9 +541,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FaceAttributesGender { male = 0, female = 1 }
+	export enum FaceAttributesGender { male = 'male', female = 'female' }
 
-	export enum FaceAttributesGlasses { noGlasses = 0, readingGlasses = 1, sunglasses = 2, swimmingGoggles = 3 }
+	export enum FaceAttributesGlasses { noGlasses = 'noGlasses', readingGlasses = 'readingGlasses', sunglasses = 'sunglasses', swimmingGoggles = 'swimmingGoggles' }
 
 
 	/** Properties describing hair attributes. */
@@ -618,7 +618,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HairColorColor { unknown = 0, white = 1, gray = 2, blond = 3, brown = 4, red = 5, black = 6, other = 7 }
+	export enum HairColorColor { unknown = 'unknown', white = 'white', gray = 'gray', blond = 'blond', brown = 'brown', red = 'red', black = 'black', other = 'other' }
 
 
 	/** Properties indicating head pose of the face. */
@@ -903,7 +903,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectedFaceRecognitionModel { recognition_01 = 0, recognition_02 = 1 }
+	export enum DetectedFaceRecognitionModel { recognition_01 = 'recognition_01', recognition_02 = 'recognition_02' }
 
 
 	/** Face list object. */
@@ -1058,7 +1058,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindSimilarRequestMode { matchPerson = 0, matchFace = 1 }
+	export enum FindSimilarRequestMode { matchPerson = 'matchPerson', matchFace = 'matchFace' }
 
 
 	/** Request body for group request. */
@@ -1438,7 +1438,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStatusStatus { notstarted = 0, running = 1, succeeded = 2, failed = 3 }
+	export enum OperationStatusStatus { notstarted = 'notstarted', running = 'running', succeeded = 'succeeded', failed = 'failed' }
 
 
 	/** Person object. */
@@ -1501,7 +1501,7 @@ export namespace MyNS {
 
 
 	/** Name of recognition model. Recognition model is used when the face features are extracted and associated with detected faceIds, (Large)FaceList or (Large)PersonGroup. A recognition model name can be provided when performing Face - Detect or (Large)FaceList - Create or (Large)PersonGroup - Create. The default value is 'recognition_01', if latest model needed, please explicitly specify the model you need. */
-	export enum RecognitionModel { recognition_01 = 0, recognition_02 = 1 }
+	export enum RecognitionModel { recognition_01 = 'recognition_01', recognition_02 = 'recognition_02' }
 
 
 	/** Response body for find similar face operation. */
@@ -1646,7 +1646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotType { FaceList = 0, LargeFaceList = 1, LargePersonGroup = 2, PersonGroup = 3 }
+	export enum SnapshotType { FaceList = 'FaceList', LargeFaceList = 'LargeFaceList', LargePersonGroup = 'LargePersonGroup', PersonGroup = 'PersonGroup' }
 
 
 	/** Request body for taking snapshot operation. */
@@ -1770,7 +1770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingStatusStatus { nonstarted = 0, running = 1, succeeded = 2, failed = 3 }
+	export enum TrainingStatusStatus { nonstarted = 'nonstarted', running = 'running', succeeded = 'succeeded', failed = 'failed' }
 
 
 	/** Request to update face data. */
@@ -2872,7 +2872,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Face_DetectWithUrlDetectionModel { detection_01 = 0, detection_02 = 1 }
+	export enum Face_DetectWithUrlDetectionModel { detection_01 = 'detection_01', detection_02 = 'detection_02' }
 
 	export interface Face_DetectWithUrlPostBody {
 

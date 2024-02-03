@@ -85,7 +85,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MeshStatusCode { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
+	export enum MeshStatusCode { ACTIVE = 'ACTIVE', DELETED = 'DELETED', INACTIVE = 'INACTIVE' }
 
 	export interface BadRequestException {
 	}
@@ -468,7 +468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortProtocol { http = 0, tcp = 1 }
+	export enum PortProtocol { http = 'http', tcp = 'tcp' }
 
 
 	/** An object representing a virtual node listener port mapping. */
@@ -943,7 +943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteStatusCode { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
+	export enum RouteStatusCode { ACTIVE = 'ACTIVE', DELETED = 'DELETED', INACTIVE = 'INACTIVE' }
 
 	export interface ListMeshesInput {
 	}
@@ -955,7 +955,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualRouterStatusCode { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
+	export enum VirtualRouterStatusCode { ACTIVE = 'ACTIVE', DELETED = 'DELETED', INACTIVE = 'INACTIVE' }
 
 	export interface UpdateVirtualNodeInput {
 		clientToken?: string;
@@ -1049,7 +1049,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualNodeStatusCode { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
+	export enum VirtualNodeStatusCode { ACTIVE = 'ACTIVE', DELETED = 'DELETED', INACTIVE = 'INACTIVE' }
 
 	export interface DeleteVirtualRouterInput {
 	}

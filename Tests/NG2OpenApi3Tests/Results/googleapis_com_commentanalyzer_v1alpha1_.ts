@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextEntryType { TEXT_TYPE_UNSPECIFIED = 0, PLAIN_TEXT = 1, HTML = 2 }
+	export enum TextEntryType { TEXT_TYPE_UNSPECIFIED = 'TEXT_TYPE_UNSPECIFIED', PLAIN_TEXT = 'PLAIN_TEXT', HTML = 'HTML' }
 
 
 	/** Context is typically something that a Comment is referencing or replying to (such as an article, or previous comment). Note: Populate only ONE OF the following fields. The oneof syntax cannot be used because that would require nesting entries inside another message and breaking backwards compatibility. The server will return an error if more than one of the following fields is present. */
@@ -173,7 +173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeParametersScoreType { SCORE_TYPE_UNSPECIFIED = 0, PROBABILITY = 1, STD_DEV_SCORE = 2, PERCENTILE = 3, RAW = 4 }
+	export enum AttributeParametersScoreType { SCORE_TYPE_UNSPECIFIED = 'SCORE_TYPE_UNSPECIFIED', PROBABILITY = 'PROBABILITY', STD_DEV_SCORE = 'STD_DEV_SCORE', PERCENTILE = 'PERCENTILE', RAW = 'RAW' }
 
 
 	/** The comment analysis response message. */

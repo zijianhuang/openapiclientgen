@@ -247,7 +247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncStatus { SYNCING = 0, ACKNOWLEDGED = 1, IN_SYNC = 2, SYNC_FAILED = 3, DELETING = 4, DELETE_FAILED = 5, DELETING_ACKNOWLEDGED = 6 }
+	export enum SyncStatus { SYNCING = 'SYNCING', ACKNOWLEDGED = 'ACKNOWLEDGED', IN_SYNC = 'IN_SYNC', SYNC_FAILED = 'SYNC_FAILED', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED', DELETING_ACKNOWLEDGED = 'DELETING_ACKNOWLEDGED' }
 
 
 	/** A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise. */
@@ -321,7 +321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaUriType { RTSP_URI = 0, FILE_URI = 1 }
+	export enum MediaUriType { RTSP_URI = 'RTSP_URI', FILE_URI = 'FILE_URI' }
 
 
 	/** <p>This API enables you to specify the duration that the camera, or local media file, should record onto the Edge Agent. The <code>ScheduleConfig</code> consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> attributes. </p> <p>If the <code>ScheduleConfig</code> is not provided in the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p> <p>If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour).</p> */
@@ -409,7 +409,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StrategyOnFullSize { DELETE_OLDEST_MEDIA = 0, DENY_NEW_MEDIA = 1 }
+	export enum StrategyOnFullSize { DELETE_OLDEST_MEDIA = 'DELETE_OLDEST_MEDIA', DENY_NEW_MEDIA = 'DENY_NEW_MEDIA' }
 
 
 	/** An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent. */
@@ -453,7 +453,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecorderStatus { SUCCESS = 0, USER_ERROR = 1, SYSTEM_ERROR = 2 }
+	export enum RecorderStatus { SUCCESS = 'SUCCESS', USER_ERROR = 'USER_ERROR', SYSTEM_ERROR = 'SYSTEM_ERROR' }
 
 
 	/** The latest status of a stream’s edge to cloud uploader job. */
@@ -544,9 +544,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationStatus { ENABLED = 0, DISABLED = 1 }
+	export enum ConfigurationStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum ImageSelectorType { SERVER_TIMESTAMP = 0, PRODUCER_TIMESTAMP = 1 }
+	export enum ImageSelectorType { SERVER_TIMESTAMP = 'SERVER_TIMESTAMP', PRODUCER_TIMESTAMP = 'PRODUCER_TIMESTAMP' }
 
 
 	/** The structure that contains the information required to deliver images to a customer. */
@@ -576,7 +576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Format { JPEG = 0, PNG = 1 }
+	export enum Format { JPEG = 'JPEG', PNG = 'PNG' }
 
 	export interface FormatConfig {
 	}
@@ -757,9 +757,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { SINGLE_MASTER = 0, FULL_MESH = 1 }
+	export enum ChannelType { SINGLE_MASTER = 'SINGLE_MASTER', FULL_MESH = 'FULL_MESH' }
 
-	export enum Status { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3 }
+	export enum Status { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING' }
 
 
 	/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
@@ -874,9 +874,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelProtocol { WSS = 0, HTTPS = 1, WEBRTC = 2 }
+	export enum ChannelProtocol { WSS = 'WSS', HTTPS = 'HTTPS', WEBRTC = 'WEBRTC' }
 
-	export enum ChannelRole { MASTER = 0, VIEWER = 1 }
+	export enum ChannelRole { MASTER = 'MASTER', VIEWER = 'VIEWER' }
 
 	export interface ListEdgeAgentConfigurationsOutput {
 		EdgeConfigs?: Array<ListEdgeAgentConfigurationsEdgeConfig>;
@@ -941,7 +941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { BEGINS_WITH = 0 }
+	export enum ComparisonOperator { BEGINS_WITH = 'BEGINS_WITH' }
 
 	export interface ListStreamsOutput {
 		StreamInfoList?: Array<StreamInfo>;
@@ -1114,7 +1114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaStorageConfigurationStatus { ENABLED = 0, DISABLED = 1 }
+	export enum MediaStorageConfigurationStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface UpdateNotificationConfigurationOutput {
 	}
@@ -1146,7 +1146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIName { PUT_MEDIA = 0, GET_MEDIA = 1, LIST_FRAGMENTS = 2, GET_MEDIA_FOR_FRAGMENT_LIST = 3, GET_HLS_STREAMING_SESSION_URL = 4, GET_DASH_STREAMING_SESSION_URL = 5, GET_CLIP = 6, GET_IMAGES = 7 }
+	export enum APIName { PUT_MEDIA = 'PUT_MEDIA', GET_MEDIA = 'GET_MEDIA', LIST_FRAGMENTS = 'LIST_FRAGMENTS', GET_MEDIA_FOR_FRAGMENT_LIST = 'GET_MEDIA_FOR_FRAGMENT_LIST', GET_HLS_STREAMING_SESSION_URL = 'GET_HLS_STREAMING_SESSION_URL', GET_DASH_STREAMING_SESSION_URL = 'GET_DASH_STREAMING_SESSION_URL', GET_CLIP = 'GET_CLIP', GET_IMAGES = 'GET_IMAGES' }
 
 
 	/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
@@ -1394,7 +1394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FormatConfigKey { JPEGQuality = 0 }
+	export enum FormatConfigKey { JPEGQuality = 'JPEGQuality' }
 
 	export interface GetDataEndpointInput {
 		StreamName?: string;
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UploaderStatus { SUCCESS = 0, USER_ERROR = 1, SYSTEM_ERROR = 2 }
+	export enum UploaderStatus { SUCCESS = 'SUCCESS', USER_ERROR = 'USER_ERROR', SYSTEM_ERROR = 'SYSTEM_ERROR' }
 
 	export interface ListEdgeAgentConfigurationsInput {
 
@@ -1670,7 +1670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateDataRetentionOperation { INCREASE_DATA_RETENTION = 0, DECREASE_DATA_RETENTION = 1 }
+	export enum UpdateDataRetentionOperation { INCREASE_DATA_RETENTION = 'INCREASE_DATA_RETENTION', DECREASE_DATA_RETENTION = 'DECREASE_DATA_RETENTION' }
 
 	export interface UpdateDataRetentionInput {
 		StreamName?: string;

@@ -91,7 +91,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingsElementSeverity { info = 0, low = 1, medium = 2, high = 3 }
+	export enum FindingsElementSeverity { info = 'info', low = 'low', medium = 'medium', high = 'high' }
 
 	export interface ScanDefinition {
 		ScanDefinitionAssets?: Array<ScanDefinitionAssets>;
@@ -132,9 +132,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanDefinitionAssetsCriticity { low = 0, medium = 1, high = 2 }
+	export enum ScanDefinitionAssetsCriticity { low = 'low', medium = 'medium', high = 'high' }
 
-	export enum ScanDefinitionAssetsDatatype { ip = 0, 'ip-range' = 1, 'ip-subnet' = 2, fqdn = 3, domain = 4, url = 5, keyword = 6, person = 7, organisation = 8, path = 9, application = 10 }
+	export enum ScanDefinitionAssetsDatatype { ip = 'ip', 'ip-range' = 'ip-range', 'ip-subnet' = 'ip-subnet', fqdn = 'fqdn', domain = 'domain', url = 'url', keyword = 'keyword', person = 'person', organisation = 'organisation', path = 'path', application = 'application' }
 
 	@Injectable()
 	export class MyClient {

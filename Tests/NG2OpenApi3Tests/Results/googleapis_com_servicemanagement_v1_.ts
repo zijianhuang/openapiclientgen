@@ -158,7 +158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MethodSyntax { SYNTAX_PROTO2 = 0, SYNTAX_PROTO3 = 1, SYNTAX_EDITIONS = 2 }
+	export enum MethodSyntax { SYNTAX_PROTO2 = 'SYNTAX_PROTO2', SYNTAX_PROTO3 = 'SYNTAX_PROTO3', SYNTAX_EDITIONS = 'SYNTAX_EDITIONS' }
 
 
 	/** Declares an API Interface to be included in this interface. The including interface must redeclare all the methods from the included interface, but documentation and options are inherited as follows: - If after comment and whitespace stripping, the documentation string of the redeclared method is empty, it will be inherited from the original method. - Each annotation belonging to the service config (http, visibility) which is not set in the redeclared method will be inherited. - If an http annotation is inherited, the path pattern will be modified as follows. Any version prefix will be replaced by the version of the including interface plus the root path if specified. Example of a simple mixin: package google.acl.v1; service AccessControl { // Get the underlying ACL object. rpc GetAcl(GetAclRequest) returns (Acl) { option (google.api.http).get = "/v1/{resource=**}:getAcl"; } } package google.storage.v2; service Storage { // rpc GetAcl(GetAclRequest) returns (Acl); // Get a data record. rpc GetData(GetDataRequest) returns (Data) { option (google.api.http).get = "/v2/{resource=**}"; } } Example of a mixin configuration: apis: - name: google.storage.v2.Storage mixins: - name: google.acl.v1.AccessControl The mixin construct implies that all methods in `AccessControl` are also declared with same name and request/response types in `Storage`. A documentation generator or annotation processor will see the effective `Storage.GetAcl` method after inherting documentation and annotations as follows: service Storage { // Get the underlying ACL object. rpc GetAcl(GetAclRequest) returns (Acl) { option (google.api.http).get = "/v2/{resource=**}:getAcl"; } ... } Note how the version in the path pattern changed from `v1` to `v2`. If the `root` field in the mixin is specified, it should be a relative path under which inherited HTTP paths are placed. Example: apis: - name: google.storage.v2.Storage mixins: - name: google.acl.v1.AccessControl root: acls This implies the following inherited HTTP annotation: service Storage { // Get the underlying ACL object. rpc GetAcl(GetAclRequest) returns (Acl) { option (google.api.http).get = "/v2/acls/{resource=**}:getAcl"; } ... } */
@@ -257,7 +257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Configuration for an authentication provider, including support for [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32). */
@@ -553,7 +553,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendRulePathTranslation { PATH_TRANSLATION_UNSPECIFIED = 0, CONSTANT_ADDRESS = 1, APPEND_PATH_TO_ADDRESS = 2 }
+	export enum BackendRulePathTranslation { PATH_TRANSLATION_UNSPECIFIED = 'PATH_TRANSLATION_UNSPECIFIED', CONSTANT_ADDRESS = 'CONSTANT_ADDRESS', APPEND_PATH_TO_ADDRESS = 'APPEND_PATH_TO_ADDRESS' }
 
 
 	/** Billing related configuration of the service. The following example shows how to configure monitored resources and metrics for billing, `consumer_destinations` is the only supported destination and the monitored resources need at least one label key `cloud.googleapis.com/location` to indicate the location of the billing usage, using different monitored resources between monitoring and billing is recommended so they can be evolved independently: monitored_resources: - type: library.googleapis.com/billing_branch labels: - key: cloud.googleapis.com/location description: | Predefined label to support billing location restriction. - key: city description: | Custom label to define the city where the library branch is located in. - key: name description: Custom label to define the name of the library branch. metrics: - name: library.googleapis.com/book/borrowed_count metric_kind: DELTA value_type: INT64 unit: "1" billing: consumer_destinations: - monitored_resource: library.googleapis.com/billing_branch metrics: - library.googleapis.com/book/borrowed_count */
@@ -727,7 +727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigChangeChangeType { CHANGE_TYPE_UNSPECIFIED = 0, ADDED = 1, REMOVED = 2, MODIFIED = 3 }
+	export enum ConfigChangeChangeType { CHANGE_TYPE_UNSPECIFIED = 'CHANGE_TYPE_UNSPECIFIED', ADDED = 'ADDED', REMOVED = 'REMOVED', MODIFIED = 'MODIFIED' }
 
 
 	/** Details about how and where to publish client libraries. */
@@ -917,7 +917,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientLibrarySettingsLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 0, UNIMPLEMENTED = 1, PRELAUNCH = 2, EARLY_ACCESS = 3, ALPHA = 4, BETA = 5, GA = 6, DEPRECATED = 7 }
+	export enum ClientLibrarySettingsLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 'LAUNCH_STAGE_UNSPECIFIED', UNIMPLEMENTED = 'UNIMPLEMENTED', PRELAUNCH = 'PRELAUNCH', EARLY_ACCESS = 'EARLY_ACCESS', ALPHA = 'ALPHA', BETA = 'BETA', GA = 'GA', DEPRECATED = 'DEPRECATED' }
 
 
 	/** Settings for Node client libraries. */
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigFileFileType { FILE_TYPE_UNSPECIFIED = 0, SERVICE_CONFIG_YAML = 1, OPEN_API_JSON = 2, OPEN_API_YAML = 3, FILE_DESCRIPTOR_SET_PROTO = 4, PROTO_FILE = 5 }
+	export enum ConfigFileFileType { FILE_TYPE_UNSPECIFIED = 'FILE_TYPE_UNSPECIFIED', SERVICE_CONFIG_YAML = 'SERVICE_CONFIG_YAML', OPEN_API_JSON = 'OPEN_API_JSON', OPEN_API_YAML = 'OPEN_API_YAML', FILE_DESCRIPTOR_SET_PROTO = 'FILE_DESCRIPTOR_SET_PROTO', PROTO_FILE = 'PROTO_FILE' }
 
 
 	/** Represents a service configuration with its name and id. */
@@ -1327,7 +1327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticKind { WARNING = 0, ERROR = 1 }
+	export enum DiagnosticKind { WARNING = 'WARNING', ERROR = 'ERROR' }
 
 
 	/** `Documentation` provides the information for describing a service. Example: documentation: summary: > The Google Calendar API gives access to most calendar features. pages: - name: Overview content: (== include google/foo/overview.md ==) - name: Tutorial content: (== include google/foo/tutorial.md ==) subpages: - name: Java content: (== include google/foo/tutorial_java.md ==) rules: - selector: google.calendar.Calendar.Get description: > ... - selector: google.calendar.Calendar.Put description: > ... Documentation is provided in markdown syntax. In addition to standard markdown features, definition lists, tables and fenced code blocks are supported. Section headers can be provided and are interpreted relative to the section nesting of the context where a documentation fragment is embedded. Documentation from the IDL is merged with documentation defined via the config at normalization time, where documentation provided by config rules overrides IDL provided. A number of constructs specific to the API platform are supported in documentation text. In order to reference a proto element, the following notation can be used: [fully.qualified.proto.name][] To override the display text used for the link, this can be used: [display text][fully.qualified.proto.name] Text can be excluded from doc using the following notation: (-- internal comment --) A few directives are available in documentation. Note that directives must appear on a single line to be properly identified. The `include` directive includes a markdown file from an external source: (== include path/to/file ==) The `resource_for` directive marks a message to be the resource of a collection in REST view. If it is not specified, tools attempt to infer the resource from the operations in a collection: (== resource_for v1.shelves.books ==) The directive `suppress_warning` does not directly affect documentation and is documented together with service config validation. */
@@ -1660,9 +1660,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldCardinality { CARDINALITY_UNKNOWN = 0, CARDINALITY_OPTIONAL = 1, CARDINALITY_REQUIRED = 2, CARDINALITY_REPEATED = 3 }
+	export enum FieldCardinality { CARDINALITY_UNKNOWN = 'CARDINALITY_UNKNOWN', CARDINALITY_OPTIONAL = 'CARDINALITY_OPTIONAL', CARDINALITY_REQUIRED = 'CARDINALITY_REQUIRED', CARDINALITY_REPEATED = 'CARDINALITY_REPEATED' }
 
-	export enum FieldKind { TYPE_UNKNOWN = 0, TYPE_DOUBLE = 1, TYPE_FLOAT = 2, TYPE_INT64 = 3, TYPE_UINT64 = 4, TYPE_INT32 = 5, TYPE_FIXED64 = 6, TYPE_FIXED32 = 7, TYPE_BOOL = 8, TYPE_STRING = 9, TYPE_GROUP = 10, TYPE_MESSAGE = 11, TYPE_BYTES = 12, TYPE_UINT32 = 13, TYPE_ENUM = 14, TYPE_SFIXED32 = 15, TYPE_SFIXED64 = 16, TYPE_SINT32 = 17, TYPE_SINT64 = 18 }
+	export enum FieldKind { TYPE_UNKNOWN = 'TYPE_UNKNOWN', TYPE_DOUBLE = 'TYPE_DOUBLE', TYPE_FLOAT = 'TYPE_FLOAT', TYPE_INT64 = 'TYPE_INT64', TYPE_UINT64 = 'TYPE_UINT64', TYPE_INT32 = 'TYPE_INT32', TYPE_FIXED64 = 'TYPE_FIXED64', TYPE_FIXED32 = 'TYPE_FIXED32', TYPE_BOOL = 'TYPE_BOOL', TYPE_STRING = 'TYPE_STRING', TYPE_GROUP = 'TYPE_GROUP', TYPE_MESSAGE = 'TYPE_MESSAGE', TYPE_BYTES = 'TYPE_BYTES', TYPE_UINT32 = 'TYPE_UINT32', TYPE_ENUM = 'TYPE_ENUM', TYPE_SFIXED32 = 'TYPE_SFIXED32', TYPE_SFIXED64 = 'TYPE_SFIXED64', TYPE_SINT32 = 'TYPE_SINT32', TYPE_SINT64 = 'TYPE_SINT64' }
 
 
 	/** Encapsulation of flow-specific error details for debugging. Used as a details field on an error Status, not intended for external use. */
@@ -1927,7 +1927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelDescriptorValueType { STRING = 0, BOOL = 1, INT64 = 2 }
+	export enum LabelDescriptorValueType { STRING = 'STRING', BOOL = 'BOOL', INT64 = 'INT64' }
 
 
 	/** The response message for Operations.ListOperations. */
@@ -2367,9 +2367,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDescriptorMetricKind { METRIC_KIND_UNSPECIFIED = 0, GAUGE = 1, DELTA = 2, CUMULATIVE = 3 }
+	export enum MetricDescriptorMetricKind { METRIC_KIND_UNSPECIFIED = 'METRIC_KIND_UNSPECIFIED', GAUGE = 'GAUGE', DELTA = 'DELTA', CUMULATIVE = 'CUMULATIVE' }
 
-	export enum MetricDescriptorValueType { VALUE_TYPE_UNSPECIFIED = 0, BOOL = 1, INT64 = 2, DOUBLE = 3, STRING = 4, DISTRIBUTION = 5, MONEY = 6 }
+	export enum MetricDescriptorValueType { VALUE_TYPE_UNSPECIFIED = 'VALUE_TYPE_UNSPECIFIED', BOOL = 'BOOL', INT64 = 'INT64', DOUBLE = 'DOUBLE', STRING = 'STRING', DISTRIBUTION = 'DISTRIBUTION', MONEY = 'MONEY' }
 
 
 	/** An object that describes the schema of a MonitoredResource object using a type name and a set of labels. For example, the monitored resource descriptor for Google Compute Engine VM instances has a type of `"gce_instance"` and specifies the use of the labels `"instance_id"` and `"zone"` to identify particular VM instances. Different APIs can support different monitored resource types. APIs generally provide a `list` method that returns the monitored resource descriptors used by the API.  */
@@ -2615,7 +2615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublishingOrganization { CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED = 0, CLOUD = 1, ADS = 2, PHOTOS = 3, STREET_VIEW = 4, SHOPPING = 5, GEO = 6, GENERATIVE_AI = 7 }
+	export enum PublishingOrganization { CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED = 'CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED', CLOUD = 'CLOUD', ADS = 'ADS', PHOTOS = 'PHOTOS', STREET_VIEW = 'STREET_VIEW', SHOPPING = 'SHOPPING', GEO = 'GEO', GENERATIVE_AI = 'GENERATIVE_AI' }
 
 
 	/** Quota configuration helps to achieve fairness and budgeting in service usage. The metric based quota configuration works this way: - The service configuration defines a set of metrics. - For API calls, the quota.metric_rules maps methods to metrics with corresponding costs. - The quota.limits defines limits on the metrics, which will be used for quota checks at runtime. An example quota configuration in yaml format: quota: limits: - name: apiWriteQpsPerProject metric: library.googleapis.com/write_calls unit: "1/min/{project}" # rate limit for consumer projects values: STANDARD: 10000 (The metric rules bind all methods to the read_calls metric, except for the UpdateBook and DeleteBook methods. These two methods are mapped to the write_calls metric, with the UpdateBook method consuming at twice rate as the DeleteBook method.) metric_rules: - selector: "*" metric_costs: library.googleapis.com/read_calls: 1 - selector: google.example.library.v1.LibraryService.UpdateBook metric_costs: library.googleapis.com/write_calls: 2 - selector: google.example.library.v1.LibraryService.DeleteBook metric_costs: library.googleapis.com/write_calls: 1 Corresponding Metric definition: metrics: - name: library.googleapis.com/read_calls display_name: Read requests metric_kind: DELTA value_type: INT64 - name: library.googleapis.com/write_calls display_name: Write requests metric_kind: DELTA value_type: INT64  */
@@ -3030,7 +3030,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RolloutStatus { ROLLOUT_STATUS_UNSPECIFIED = 0, IN_PROGRESS = 1, SUCCESS = 2, CANCELLED = 3, FAILED = 4, PENDING = 5, FAILED_ROLLED_BACK = 6 }
+	export enum RolloutStatus { ROLLOUT_STATUS_UNSPECIFIED = 'ROLLOUT_STATUS_UNSPECIFIED', IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', CANCELLED = 'CANCELLED', FAILED = 'FAILED', PENDING = 'PENDING', FAILED_ROLLED_BACK = 'FAILED_ROLLED_BACK' }
 
 
 	/** Strategy that specifies how clients of Google Service Controller want to send traffic to use different config versions. This is generally used by API proxy to split traffic based on your configured percentage for each config version. One example of how to gradually rollout a new service configuration using this strategy: Day 1 Rollout { id: "example.googleapis.com/rollout_20160206" traffic_percent_strategy { percentages: { "example.googleapis.com/20160201": 70.00 "example.googleapis.com/20160206": 30.00 } } } Day 2 Rollout { id: "example.googleapis.com/rollout_20160207" traffic_percent_strategy: { percentages: { "example.googleapis.com/20160206": 100.00 } } } */
@@ -3195,7 +3195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepStatus { STATUS_UNSPECIFIED = 0, DONE = 1, NOT_STARTED = 2, IN_PROGRESS = 3, FAILED = 4, CANCELLED = 5 }
+	export enum StepStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', DONE = 'DONE', NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */
@@ -3585,7 +3585,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Servicemanagement_services_getConfigView { BASIC = 0, FULL = 1 }
+	export enum Servicemanagement_services_getConfigView { BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

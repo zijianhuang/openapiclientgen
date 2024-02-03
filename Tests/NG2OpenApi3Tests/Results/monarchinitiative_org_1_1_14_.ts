@@ -4206,21 +4206,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Get_disease_gene_associationsAssociation_type { causal = 0, non_causal = 1, both = 2 }
+	export enum Get_disease_gene_associationsAssociation_type { causal = 'causal', non_causal = 'non_causal', both = 'both' }
 
-	export enum Get_function_gene_associationsRelationship_type { involved_in = 0, involved_in_regulation_of = 1, acts_upstream_of_or_within = 2 }
+	export enum Get_function_gene_associationsRelationship_type { involved_in = 'involved_in', involved_in_regulation_of = 'involved_in_regulation_of', acts_upstream_of_or_within = 'acts_upstream_of_or_within' }
 
-	export enum Get_gene_homolog_associationsHomology_type { P = 0, O = 1, LDO = 2 }
+	export enum Get_gene_homolog_associationsHomology_type { P = 'P', O = 'O', LDO = 'LDO' }
 
-	export enum Get_entity_set_function_slimmerRelationship_type { involved_in = 0, acts_upstream_of_or_within = 1 }
+	export enum Get_entity_set_function_slimmerRelationship_type { involved_in = 'involved_in', acts_upstream_of_or_within = 'acts_upstream_of_or_within' }
 
-	export enum Get_edge_resourceDirection { INCOMING = 0, OUTGOING = 1, BOTH = 2 }
+	export enum Get_edge_resourceDirection { INCOMING = 'INCOMING', OUTGOING = 'OUTGOING', BOTH = 'BOTH' }
 
-	export enum Get_edge_resourceGraph { data = 0, ontology = 1 }
+	export enum Get_edge_resourceGraph { data = 'data', ontology = 'ontology' }
 
-	export enum Get_ontology_term_graphGraph_type { topology_graph = 0, regulates_transitivity_graph = 1, neighborhood_graph = 2, neighborhood_limited_graph = 3 }
+	export enum Get_ontology_term_graphGraph_type { topology_graph = 'topology_graph', regulates_transitivity_graph = 'regulates_transitivity_graph', neighborhood_graph = 'neighborhood_graph', neighborhood_limited_graph = 'neighborhood_limited_graph' }
 
-	export enum Get_sim_compareMetric { phenodigm = 0, jaccard = 1, simGIC = 2, resnik = 3, symmetric_resnik = 4 }
+	export enum Get_sim_compareMetric { phenodigm = 'phenodigm', jaccard = 'jaccard', simGIC = 'simGIC', resnik = 'resnik', symmetric_resnik = 'symmetric_resnik' }
 
 	export enum Get_variant_sets_collectionPer_page { _2 = 0, _10 = 1, _20 = 2, _30 = 3, _40 = 4, _50 = 5 }
 

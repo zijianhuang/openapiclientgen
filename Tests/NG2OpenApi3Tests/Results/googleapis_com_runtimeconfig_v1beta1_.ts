@@ -256,7 +256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VariableState { VARIABLE_STATE_UNSPECIFIED = 0, UPDATED = 1, DELETED = 2 }
+	export enum VariableState { VARIABLE_STATE_UNSPECIFIED = 'VARIABLE_STATE_UNSPECIFIED', UPDATED = 'UPDATED', DELETED = 'DELETED' }
 
 
 	/** Response for the `ListWaiters()` method. Order of returned waiter objects is arbitrary. */

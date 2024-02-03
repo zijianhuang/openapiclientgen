@@ -206,15 +206,15 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Filesystem_ListResource { account = 0 }
+	export enum Filesystem_ListResource { account = 'account' }
 
-	export enum Path_CreateResource { directory = 0, file = 1 }
+	export enum Path_CreateResource { directory = 'directory', file = 'file' }
 
-	export enum Path_CreateMode { legacy = 0, posix = 1 }
+	export enum Path_CreateMode { legacy = 'legacy', posix = 'posix' }
 
-	export enum Path_LeaseX_ms_lease_action { acquire = 0, break = 1, change = 2, renew = 3, release = 4 }
+	export enum Path_LeaseX_ms_lease_action { acquire = 'acquire', break = 'break', change = 'change', renew = 'renew', release = 'release' }
 
-	export enum Path_UpdateAction { append = 0, flush = 1, setProperties = 2, setAccessControl = 3 }
+	export enum Path_UpdateAction { append = 'append', flush = 'flush', setProperties = 'setProperties', setAccessControl = 'setAccessControl' }
 
 }
 

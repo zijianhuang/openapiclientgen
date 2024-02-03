@@ -171,7 +171,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AllowedConnections_GetConnectionType { Internal = 0, External = 1 }
+	export enum AllowedConnections_GetConnectionType { Internal = 'Internal', External = 'External' }
 
 }
 

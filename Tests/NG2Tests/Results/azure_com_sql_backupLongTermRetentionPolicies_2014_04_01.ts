@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupLongTermRetentionPolicyPropertiesState { Disabled = 0, Enabled = 1 }
+	export enum BackupLongTermRetentionPolicyPropertiesState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 	@Injectable()
 	export class MyClient {
@@ -126,7 +126,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BackupLongTermRetentionPolicies_GetBackupLongTermRetentionPolicyName { Default = 0 }
+	export enum BackupLongTermRetentionPolicies_GetBackupLongTermRetentionPolicyName { Default = 'Default' }
 
 }
 

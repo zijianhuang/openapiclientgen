@@ -246,7 +246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileAccess { PUBLIC_INDEXABLE = 0, PUBLIC_NOT_INDEXABLE = 1, HIDDEN_INDEXABLE = 2, HIDDEN_NOT_INDEXABLE = 3, HIDDEN_PRIVATE = 4, PRIVATE = 5 }
+	export enum FileAccess { PUBLIC_INDEXABLE = 'PUBLIC_INDEXABLE', PUBLIC_NOT_INDEXABLE = 'PUBLIC_NOT_INDEXABLE', HIDDEN_INDEXABLE = 'HIDDEN_INDEXABLE', HIDDEN_NOT_INDEXABLE = 'HIDDEN_NOT_INDEXABLE', HIDDEN_PRIVATE = 'HIDDEN_PRIVATE', PRIVATE = 'PRIVATE' }
 
 	export interface CollectionResponseFolder {
 		paging?: Paging;
@@ -619,7 +619,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileActionResponseStatus { PENDING = 0, PROCESSING = 1, CANCELED = 2, COMPLETE = 3 }
+	export enum FileActionResponseStatus { PENDING = 'PENDING', PROCESSING = 'PROCESSING', CANCELED = 'CANCELED', COMPLETE = 'COMPLETE' }
 
 	export interface FileStat {
 
@@ -993,9 +993,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportFromUrlInputDuplicateValidationScope { ENTIRE_PORTAL = 0, EXACT_FOLDER = 1 }
+	export enum ImportFromUrlInputDuplicateValidationScope { ENTIRE_PORTAL = 'ENTIRE_PORTAL', EXACT_FOLDER = 'EXACT_FOLDER' }
 
-	export enum ImportFromUrlInputDuplicateValidationStrategy { NONE = 0, REJECT = 1, RETURN_EXISTING = 2 }
+	export enum ImportFromUrlInputDuplicateValidationStrategy { NONE = 'NONE', REJECT = 'REJECT', RETURN_EXISTING = 'RETURN_EXISTING' }
 
 
 	/** Information on the task that has been started, and where to check it's status. */
@@ -1365,7 +1365,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlSize { thumb = 0, icon = 1, medium = 2, preview = 3 }
+	export enum Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlSize { thumb = 'thumb', icon = 'icon', medium = 'medium', preview = 'preview' }
 
 }
 

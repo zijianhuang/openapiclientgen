@@ -65,7 +65,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlockchainNodeBlockchainType { BLOCKCHAIN_TYPE_UNSPECIFIED = 0, ETHEREUM = 1 }
+	export enum BlockchainNodeBlockchainType { BLOCKCHAIN_TYPE_UNSPECIFIED = 'BLOCKCHAIN_TYPE_UNSPECIFIED', ETHEREUM = 'ETHEREUM' }
 
 
 	/** The connection information through which to interact with a blockchain node. */
@@ -219,9 +219,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EthereumDetailsConsensusClient { CONSENSUS_CLIENT_UNSPECIFIED = 0, LIGHTHOUSE = 1, ERIGON_EMBEDDED_CONSENSUS_LAYER = 2 }
+	export enum EthereumDetailsConsensusClient { CONSENSUS_CLIENT_UNSPECIFIED = 'CONSENSUS_CLIENT_UNSPECIFIED', LIGHTHOUSE = 'LIGHTHOUSE', ERIGON_EMBEDDED_CONSENSUS_LAYER = 'ERIGON_EMBEDDED_CONSENSUS_LAYER' }
 
-	export enum EthereumDetailsExecutionClient { EXECUTION_CLIENT_UNSPECIFIED = 0, GETH = 1, ERIGON = 2 }
+	export enum EthereumDetailsExecutionClient { EXECUTION_CLIENT_UNSPECIFIED = 'EXECUTION_CLIENT_UNSPECIFIED', GETH = 'GETH', ERIGON = 'ERIGON' }
 
 
 	/** Options for the Geth execution client. See [Command-line Options](https://geth.ethereum.org/docs/fundamentals/command-line-options) for more details. */
@@ -244,11 +244,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GethDetailsGarbageCollectionMode { GARBAGE_COLLECTION_MODE_UNSPECIFIED = 0, FULL = 1, ARCHIVE = 2 }
+	export enum GethDetailsGarbageCollectionMode { GARBAGE_COLLECTION_MODE_UNSPECIFIED = 'GARBAGE_COLLECTION_MODE_UNSPECIFIED', FULL = 'FULL', ARCHIVE = 'ARCHIVE' }
 
-	export enum EthereumDetailsNetwork { NETWORK_UNSPECIFIED = 0, MAINNET = 1, TESTNET_GOERLI_PRATER = 2, TESTNET_SEPOLIA = 3, TESTNET_HOLESKY = 4 }
+	export enum EthereumDetailsNetwork { NETWORK_UNSPECIFIED = 'NETWORK_UNSPECIFIED', MAINNET = 'MAINNET', TESTNET_GOERLI_PRATER = 'TESTNET_GOERLI_PRATER', TESTNET_SEPOLIA = 'TESTNET_SEPOLIA', TESTNET_HOLESKY = 'TESTNET_HOLESKY' }
 
-	export enum EthereumDetailsNodeType { NODE_TYPE_UNSPECIFIED = 0, LIGHT = 1, FULL = 2, ARCHIVE = 3 }
+	export enum EthereumDetailsNodeType { NODE_TYPE_UNSPECIFIED = 'NODE_TYPE_UNSPECIFIED', LIGHT = 'LIGHT', FULL = 'FULL', ARCHIVE = 'ARCHIVE' }
 
 
 	/** Configuration for validator-related parameters on the beacon client, and for any GCP-managed validator client. */
@@ -267,7 +267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlockchainNodeState { STATE_UNSPECIFIED = 0, CREATING = 1, DELETING = 2, RUNNING = 3, ERROR = 4, UPDATING = 5, REPAIRING = 6, RECONCILING = 7 }
+	export enum BlockchainNodeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', DELETING = 'DELETING', RUNNING = 'RUNNING', ERROR = 'ERROR', UPDATING = 'UPDATING', REPAIRING = 'REPAIRING', RECONCILING = 'RECONCILING' }
 
 
 	/** The request message for Operations.CancelOperation. */

@@ -657,7 +657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArmRollingUpgradeMonitoringPolicyFailureAction { Rollback = 0, Manual = 1 }
+	export enum ArmRollingUpgradeMonitoringPolicyFailureAction { Rollback = 'Rollback', Manual = 'Manual' }
 
 
 	/** Operation supported by the Service Fabric resource provider */
@@ -741,7 +741,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceCorrelationDescriptionScheme { Invalid = 0, Affinity = 1, AlignedAffinity = 2, NonAlignedAffinity = 3 }
+	export enum ServiceCorrelationDescriptionScheme { Invalid = 'Invalid', Affinity = 'Affinity', AlignedAffinity = 'AlignedAffinity', NonAlignedAffinity = 'NonAlignedAffinity' }
 
 
 	/** The structure of the error. */
@@ -790,7 +790,7 @@ export namespace MyNS {
 
 
 	/** Specifies the move cost for the service. */
-	export enum MoveCost { Zero = 0, Low = 1, Medium = 2, High = 3 }
+	export enum MoveCost { Zero = 'Zero', Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** Describes the named partition scheme of the service. */
@@ -890,7 +890,7 @@ export namespace MyNS {
 
 
 	/** Enumerates the ways that a service can be partitioned. */
-	export enum PartitionScheme { Invalid = 0, Singleton = 1, UniformInt64Range = 2, Named = 3 }
+	export enum PartitionScheme { Invalid = 'Invalid', Singleton = 'Singleton', UniformInt64Range = 'UniformInt64Range', Named = 'Named' }
 
 
 	/** Describes how the service is partitioned. */
@@ -977,11 +977,11 @@ export namespace MyNS {
 
 
 	/** The service correlation scheme. */
-	export enum ServiceCorrelationScheme { Invalid = 0, Affinity = 1, AlignedAffinity = 2, NonAlignedAffinity = 3 }
+	export enum ServiceCorrelationScheme { Invalid = 'Invalid', Affinity = 'Affinity', AlignedAffinity = 'AlignedAffinity', NonAlignedAffinity = 'NonAlignedAffinity' }
 
 
 	/** The kind of service (Stateless or Stateful). */
-	export enum ServiceKind { Invalid = 0, Stateless = 1, Stateful = 2 }
+	export enum ServiceKind { Invalid = 'Invalid', Stateless = 'Stateless', Stateful = 'Stateful' }
 
 
 	/** Specifies a metric to load balance a service during runtime. */
@@ -1040,7 +1040,7 @@ export namespace MyNS {
 
 
 	/** Determines the metric weight relative to the other metrics that are configured for this service. During runtime, if two metrics end up in conflict, the Cluster Resource Manager prefers the metric with the higher weight. */
-	export enum ServiceLoadMetricWeight { Zero = 0, Low = 1, Medium = 2, High = 3 }
+	export enum ServiceLoadMetricWeight { Zero = 'Zero', Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** Describes the policy to be used for placement of a Service Fabric service. */
@@ -1069,11 +1069,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ServicePlacementPolicyDescriptionType { Invalid = 0, InvalidDomain = 1, RequiredDomain = 2, PreferredPrimaryDomain = 3, RequiredDomainDistribution = 4, NonPartiallyPlaceService = 5 }
+	export enum ServicePlacementPolicyDescriptionType { Invalid = 'Invalid', InvalidDomain = 'InvalidDomain', RequiredDomain = 'RequiredDomain', PreferredPrimaryDomain = 'PreferredPrimaryDomain', RequiredDomainDistribution = 'RequiredDomainDistribution', NonPartiallyPlaceService = 'NonPartiallyPlaceService' }
 
 
 	/** The type of placement policy for a service fabric service. Following are the possible values. */
-	export enum ServicePlacementPolicyType { Invalid = 0, InvalidDomain = 1, RequiredDomain = 2, PreferredPrimaryDomain = 3, RequiredDomainDistribution = 4, NonPartiallyPlaceService = 5 }
+	export enum ServicePlacementPolicyType { Invalid = 'Invalid', InvalidDomain = 'InvalidDomain', RequiredDomain = 'RequiredDomain', PreferredPrimaryDomain = 'PreferredPrimaryDomain', RequiredDomainDistribution = 'RequiredDomainDistribution', NonPartiallyPlaceService = 'NonPartiallyPlaceService' }
 
 
 	/** The service resource. */
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceResourcePropertiesServicePackageActivationMode { SharedProcess = 0, ExclusiveProcess = 1 }
+	export enum ServiceResourcePropertiesServicePackageActivationMode { SharedProcess = 'SharedProcess', ExclusiveProcess = 'ExclusiveProcess' }
 
 
 	/** The common service resource properties. */
@@ -1836,7 +1836,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ApplicationTypes_ListApi_version { '2019-03-01' = 0 }
+	export enum ApplicationTypes_ListApi_version { '2019-03-01' = '2019-03-01' }
 
 }
 

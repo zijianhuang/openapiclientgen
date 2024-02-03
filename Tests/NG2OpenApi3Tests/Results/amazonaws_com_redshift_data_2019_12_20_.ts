@@ -260,7 +260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusString { SUBMITTED = 0, PICKED = 1, STARTED = 2, FINISHED = 3, ABORTED = 4, FAILED = 5, ALL = 6 }
+	export enum StatusString { SUBMITTED = 'SUBMITTED', PICKED = 'PICKED', STARTED = 'STARTED', FINISHED = 'FINISHED', ABORTED = 'ABORTED', FAILED = 'FAILED', ALL = 'ALL' }
 
 
 	/** Information about an SQL statement. */
@@ -313,7 +313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatementStatusString { SUBMITTED = 0, PICKED = 1, STARTED = 2, FINISHED = 3, ABORTED = 4, FAILED = 5 }
+	export enum StatementStatusString { SUBMITTED = 'SUBMITTED', PICKED = 'PICKED', STARTED = 'STARTED', FINISHED = 'FINISHED', ABORTED = 'ABORTED', FAILED = 'FAILED' }
 
 	export interface DescribeStatementRequest {
 
@@ -982,25 +982,25 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchExecuteStatementX_Amz_Target { 'RedshiftData.BatchExecuteStatement' = 0 }
+	export enum BatchExecuteStatementX_Amz_Target { 'RedshiftData.BatchExecuteStatement' = 'RedshiftData.BatchExecuteStatement' }
 
-	export enum CancelStatementX_Amz_Target { 'RedshiftData.CancelStatement' = 0 }
+	export enum CancelStatementX_Amz_Target { 'RedshiftData.CancelStatement' = 'RedshiftData.CancelStatement' }
 
-	export enum DescribeStatementX_Amz_Target { 'RedshiftData.DescribeStatement' = 0 }
+	export enum DescribeStatementX_Amz_Target { 'RedshiftData.DescribeStatement' = 'RedshiftData.DescribeStatement' }
 
-	export enum DescribeTableX_Amz_Target { 'RedshiftData.DescribeTable' = 0 }
+	export enum DescribeTableX_Amz_Target { 'RedshiftData.DescribeTable' = 'RedshiftData.DescribeTable' }
 
-	export enum ExecuteStatementX_Amz_Target { 'RedshiftData.ExecuteStatement' = 0 }
+	export enum ExecuteStatementX_Amz_Target { 'RedshiftData.ExecuteStatement' = 'RedshiftData.ExecuteStatement' }
 
-	export enum GetStatementResultX_Amz_Target { 'RedshiftData.GetStatementResult' = 0 }
+	export enum GetStatementResultX_Amz_Target { 'RedshiftData.GetStatementResult' = 'RedshiftData.GetStatementResult' }
 
-	export enum ListDatabasesX_Amz_Target { 'RedshiftData.ListDatabases' = 0 }
+	export enum ListDatabasesX_Amz_Target { 'RedshiftData.ListDatabases' = 'RedshiftData.ListDatabases' }
 
-	export enum ListSchemasX_Amz_Target { 'RedshiftData.ListSchemas' = 0 }
+	export enum ListSchemasX_Amz_Target { 'RedshiftData.ListSchemas' = 'RedshiftData.ListSchemas' }
 
-	export enum ListStatementsX_Amz_Target { 'RedshiftData.ListStatements' = 0 }
+	export enum ListStatementsX_Amz_Target { 'RedshiftData.ListStatements' = 'RedshiftData.ListStatements' }
 
-	export enum ListTablesX_Amz_Target { 'RedshiftData.ListTables' = 0 }
+	export enum ListTablesX_Amz_Target { 'RedshiftData.ListTables' = 'RedshiftData.ListTables' }
 
 }
 

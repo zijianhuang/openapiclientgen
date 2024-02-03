@@ -147,9 +147,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DelegationStatus { IN_PROGRESS = 0, UNDER_REVIEW = 1, COMPLETE = 2 }
+	export enum DelegationStatus { IN_PROGRESS = 'IN_PROGRESS', UNDER_REVIEW = 'UNDER_REVIEW', COMPLETE = 'COMPLETE' }
 
-	export enum RoleType { PROCESS_OWNER = 0, RESOURCE_OWNER = 1 }
+	export enum RoleType { PROCESS_OWNER = 'PROCESS_OWNER', RESOURCE_OWNER = 'RESOURCE_OWNER' }
 
 
 	/**  An error entity for the <code>BatchCreateDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message.  */
@@ -405,7 +405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum AssessmentStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/**  The location where Audit Manager saves assessment reports for the given assessment.  */
@@ -427,7 +427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentReportDestinationType { S3 = 0 }
+	export enum AssessmentReportDestinationType { S3 = 'S3' }
 
 
 	/**  The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment.  */
@@ -572,7 +572,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlSetStatus { ACTIVE = 0, UNDER_REVIEW = 1, REVIEWED = 2 }
+	export enum ControlSetStatus { ACTIVE = 'ACTIVE', UNDER_REVIEW = 'UNDER_REVIEW', REVIEWED = 'REVIEWED' }
 
 
 	/**  The control entity that represents a standard control or a custom control in an Audit Manager assessment.  */
@@ -611,9 +611,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlStatus { UNDER_REVIEW = 0, REVIEWED = 1, INACTIVE = 2 }
+	export enum ControlStatus { UNDER_REVIEW = 'UNDER_REVIEW', REVIEWED = 'REVIEWED', INACTIVE = 'INACTIVE' }
 
-	export enum ControlResponse { MANUAL = 0, AUTOMATE = 1, DEFER = 2, IGNORE = 3 }
+	export enum ControlResponse { MANUAL = 'MANUAL', AUTOMATE = 'AUTOMATE', DEFER = 'DEFER', IGNORE = 'IGNORE' }
 
 
 	/**  A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp.  */
@@ -721,7 +721,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FrameworkType { Standard = 0, Custom = 1 }
+	export enum FrameworkType { Standard = 'Standard', Custom = 'Custom' }
 
 
 	/**  A set of controls in Audit Manager.  */
@@ -837,9 +837,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceSetUpOption { System_Controls_Mapping = 0, Procedural_Controls_Mapping = 1 }
+	export enum SourceSetUpOption { System_Controls_Mapping = 'System_Controls_Mapping', Procedural_Controls_Mapping = 'Procedural_Controls_Mapping' }
 
-	export enum SourceType { AWS_Cloudtrail = 0, AWS_Config = 1, AWS_Security_Hub = 2, AWS_API_Call = 3, MANUAL = 4 }
+	export enum SourceType { AWS_Cloudtrail = 'AWS_Cloudtrail', AWS_Config = 'AWS_Config', AWS_Security_Hub = 'AWS_Security_Hub', AWS_API_Call = 'AWS_API_Call', MANUAL = 'MANUAL' }
 
 
 	/** <p>A keyword that relates to the control data source.</p> <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p> <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or Amazon Web Services API name. </p> <p> To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules supported by Audit Manager</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub controls supported by Audit Manager</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li> </ul> */
@@ -861,9 +861,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KeywordInputType { SELECT_FROM_LIST = 0, UPLOAD_FILE = 1, INPUT_TEXT = 2 }
+	export enum KeywordInputType { SELECT_FROM_LIST = 'SELECT_FROM_LIST', UPLOAD_FILE = 'UPLOAD_FILE', INPUT_TEXT = 'INPUT_TEXT' }
 
-	export enum SourceFrequency { DAILY = 0, WEEKLY = 1, MONTHLY = 2 }
+	export enum SourceFrequency { DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 
 	/**  A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID.  */
@@ -960,7 +960,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentReportStatus { COMPLETE = 0, IN_PROGRESS = 1, FAILED = 2 }
+	export enum AssessmentReportStatus { COMPLETE = 'COMPLETE', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED' }
 
 	export interface CreateControlResponse {
 		control?: Control;
@@ -1071,7 +1071,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountStatus { ACTIVE = 0, INACTIVE = 1, PENDING_ACTIVATION = 2 }
+	export enum AccountStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', PENDING_ACTIVATION = 'PENDING_ACTIVATION' }
 
 	export interface DeregisterOrganizationAdminAccountResponse {
 	}
@@ -1209,9 +1209,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectTypeEnum { ASSESSMENT = 0, CONTROL_SET = 1, CONTROL = 2, DELEGATION = 3, ASSESSMENT_REPORT = 4 }
+	export enum ObjectTypeEnum { ASSESSMENT = 'ASSESSMENT', CONTROL_SET = 'CONTROL_SET', CONTROL = 'CONTROL', DELEGATION = 'DELEGATION', ASSESSMENT_REPORT = 'ASSESSMENT_REPORT' }
 
-	export enum ActionEnum { CREATE = 0, UPDATE_METADATA = 1, ACTIVE = 2, INACTIVE = 3, DELETE = 4, UNDER_REVIEW = 5, REVIEWED = 6, IMPORT_EVIDENCE = 7 }
+	export enum ActionEnum { CREATE = 'CREATE', UPDATE_METADATA = 'UPDATE_METADATA', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETE = 'DELETE', UNDER_REVIEW = 'UNDER_REVIEW', REVIEWED = 'REVIEWED', IMPORT_EVIDENCE = 'IMPORT_EVIDENCE' }
 
 	export interface GetControlResponse {
 		control?: Control;
@@ -1716,9 +1716,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EvidenceFinderEnablementStatus { ENABLED = 0, DISABLED = 1, ENABLE_IN_PROGRESS = 2, DISABLE_IN_PROGRESS = 3 }
+	export enum EvidenceFinderEnablementStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED', ENABLE_IN_PROGRESS = 'ENABLE_IN_PROGRESS', DISABLE_IN_PROGRESS = 'DISABLE_IN_PROGRESS' }
 
-	export enum EvidenceFinderBackfillStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
+	export enum EvidenceFinderBackfillStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 
 	/** <p>The deregistration policy for the data that's stored in Audit Manager. You can use this attribute to determine how your data is handled when you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister Audit Manager</a>.</p> <p>By default, Audit Manager retains evidence data for two years from the time of its creation. Other Audit Manager resources (including assessments, custom controls, and custom frameworks) remain in Audit Manager indefinitely, and are available if you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register Audit Manager</a> in the future. For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the <i>Audit Manager User Guide</i>.</p> <important> <p>If you choose to delete all data, this action permanently deletes all evidence data in your account within seven days. It also deletes all of the Audit Manager resources that you created, including assessments, custom controls, and custom frameworks. Your data will not be available if you re-register Audit Manager in the future.</p> </important> */
@@ -1737,7 +1737,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteResources { ALL = 0, DEFAULT = 1 }
+	export enum DeleteResources { ALL = 'ALL', DEFAULT = 'DEFAULT' }
 
 
 	/** The default s3 bucket where Audit Manager saves the files that you export from evidence finder. */
@@ -1896,7 +1896,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareRequestStatus { ACTIVE = 0, REPLICATING = 1, SHARED = 2, EXPIRING = 3, FAILED = 4, EXPIRED = 5, DECLINED = 6, REVOKED = 7 }
+	export enum ShareRequestStatus { ACTIVE = 'ACTIVE', REPLICATING = 'REPLICATING', SHARED = 'SHARED', EXPIRING = 'EXPIRING', FAILED = 'FAILED', EXPIRED = 'EXPIRED', DECLINED = 'DECLINED', REVOKED = 'REVOKED' }
 
 	export interface ListAssessmentFrameworksResponse {
 		frameworkMetadataList?: Array<AssessmentFrameworkMetadata>;
@@ -2453,7 +2453,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportDestinationType { S3 = 0 }
+	export enum ExportDestinationType { S3 = 'S3' }
 
 	export interface ValidateAssessmentReportIntegrityResponse {
 		signatureValid?: boolean | null;
@@ -2574,7 +2574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlType { Standard = 0, Custom = 1 }
+	export enum ControlType { Standard = 'Standard', Custom = 'Custom' }
 
 	export interface CreateAssessmentFrameworkRequest {
 
@@ -2709,7 +2709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareRequestType { SENT = 0, RECEIVED = 1 }
+	export enum ShareRequestType { SENT = 'SENT', RECEIVED = 'RECEIVED' }
 
 	export interface DeleteAssessmentFrameworkShareRequest {
 	}
@@ -2961,7 +2961,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SettingAttribute { ALL = 0, IS_AWS_ORG_ENABLED = 1, SNS_TOPIC = 2, DEFAULT_ASSESSMENT_REPORTS_DESTINATION = 3, DEFAULT_PROCESS_OWNERS = 4, EVIDENCE_FINDER_ENABLEMENT = 5, DEREGISTRATION_POLICY = 6, DEFAULT_EXPORT_DESTINATION = 7 }
+	export enum SettingAttribute { ALL = 'ALL', IS_AWS_ORG_ENABLED = 'IS_AWS_ORG_ENABLED', SNS_TOPIC = 'SNS_TOPIC', DEFAULT_ASSESSMENT_REPORTS_DESTINATION = 'DEFAULT_ASSESSMENT_REPORTS_DESTINATION', DEFAULT_PROCESS_OWNERS = 'DEFAULT_PROCESS_OWNERS', EVIDENCE_FINDER_ENABLEMENT = 'EVIDENCE_FINDER_ENABLEMENT', DEREGISTRATION_POLICY = 'DEREGISTRATION_POLICY', DEFAULT_EXPORT_DESTINATION = 'DEFAULT_EXPORT_DESTINATION' }
 
 	export interface GetSettingsRequest {
 	}
@@ -3126,7 +3126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareRequestAction { ACCEPT = 0, DECLINE = 1, REVOKE = 2 }
+	export enum ShareRequestAction { ACCEPT = 'ACCEPT', DECLINE = 'DECLINE', REVOKE = 'REVOKE' }
 
 	export interface StartAssessmentFrameworkShareRequest {
 

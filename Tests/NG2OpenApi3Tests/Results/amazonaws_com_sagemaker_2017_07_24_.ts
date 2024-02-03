@@ -46,7 +46,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationEdgeType { ContributedTo = 0, AssociatedWith = 1, DerivedFrom = 2, Produced = 3 }
+	export enum AssociationEdgeType { ContributedTo = 'ContributedTo', AssociatedWith = 'AssociatedWith', DerivedFrom = 'DerivedFrom', Produced = 'Produced' }
 
 	export interface ResourceNotFound {
 	}
@@ -290,7 +290,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionStatus { Unknown = 0, InProgress = 1, Completed = 2, Failed = 3, Stopping = 4, Stopped = 5 }
+	export enum ActionStatus { Unknown = 'Unknown', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
 	export interface LineageEntityParameters {
 	}
@@ -451,7 +451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterType { Integer = 0, Continuous = 1, Categorical = 2, FreeText = 3 }
+	export enum ParameterType { Integer = 'Integer', Continuous = 'Continuous', Categorical = 'Categorical', FreeText = 'FreeText' }
 
 
 	/** Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm. */
@@ -543,7 +543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingInstanceType { 'ml.m4.xlarge' = 0, 'ml.m4.2xlarge' = 1, 'ml.m4.4xlarge' = 2, 'ml.m4.10xlarge' = 3, 'ml.m4.16xlarge' = 4, 'ml.g4dn.xlarge' = 5, 'ml.g4dn.2xlarge' = 6, 'ml.g4dn.4xlarge' = 7, 'ml.g4dn.8xlarge' = 8, 'ml.g4dn.12xlarge' = 9, 'ml.g4dn.16xlarge' = 10, 'ml.m5.large' = 11, 'ml.m5.xlarge' = 12, 'ml.m5.2xlarge' = 13, 'ml.m5.4xlarge' = 14, 'ml.m5.12xlarge' = 15, 'ml.m5.24xlarge' = 16, 'ml.c4.xlarge' = 17, 'ml.c4.2xlarge' = 18, 'ml.c4.4xlarge' = 19, 'ml.c4.8xlarge' = 20, 'ml.p2.xlarge' = 21, 'ml.p2.8xlarge' = 22, 'ml.p2.16xlarge' = 23, 'ml.p3.2xlarge' = 24, 'ml.p3.8xlarge' = 25, 'ml.p3.16xlarge' = 26, 'ml.p3dn.24xlarge' = 27, 'ml.p4d.24xlarge' = 28, 'ml.c5.xlarge' = 29, 'ml.c5.2xlarge' = 30, 'ml.c5.4xlarge' = 31, 'ml.c5.9xlarge' = 32, 'ml.c5.18xlarge' = 33, 'ml.c5n.xlarge' = 34, 'ml.c5n.2xlarge' = 35, 'ml.c5n.4xlarge' = 36, 'ml.c5n.9xlarge' = 37, 'ml.c5n.18xlarge' = 38, 'ml.g5.xlarge' = 39, 'ml.g5.2xlarge' = 40, 'ml.g5.4xlarge' = 41, 'ml.g5.8xlarge' = 42, 'ml.g5.16xlarge' = 43, 'ml.g5.12xlarge' = 44, 'ml.g5.24xlarge' = 45, 'ml.g5.48xlarge' = 46, 'ml.trn1.2xlarge' = 47, 'ml.trn1.32xlarge' = 48, 'ml.trn1n.32xlarge' = 49, 'ml.p5.48xlarge' = 50 }
+	export enum TrainingInstanceType { 'ml.m4.xlarge' = 'ml.m4.xlarge', 'ml.m4.2xlarge' = 'ml.m4.2xlarge', 'ml.m4.4xlarge' = 'ml.m4.4xlarge', 'ml.m4.10xlarge' = 'ml.m4.10xlarge', 'ml.m4.16xlarge' = 'ml.m4.16xlarge', 'ml.g4dn.xlarge' = 'ml.g4dn.xlarge', 'ml.g4dn.2xlarge' = 'ml.g4dn.2xlarge', 'ml.g4dn.4xlarge' = 'ml.g4dn.4xlarge', 'ml.g4dn.8xlarge' = 'ml.g4dn.8xlarge', 'ml.g4dn.12xlarge' = 'ml.g4dn.12xlarge', 'ml.g4dn.16xlarge' = 'ml.g4dn.16xlarge', 'ml.m5.large' = 'ml.m5.large', 'ml.m5.xlarge' = 'ml.m5.xlarge', 'ml.m5.2xlarge' = 'ml.m5.2xlarge', 'ml.m5.4xlarge' = 'ml.m5.4xlarge', 'ml.m5.12xlarge' = 'ml.m5.12xlarge', 'ml.m5.24xlarge' = 'ml.m5.24xlarge', 'ml.c4.xlarge' = 'ml.c4.xlarge', 'ml.c4.2xlarge' = 'ml.c4.2xlarge', 'ml.c4.4xlarge' = 'ml.c4.4xlarge', 'ml.c4.8xlarge' = 'ml.c4.8xlarge', 'ml.p2.xlarge' = 'ml.p2.xlarge', 'ml.p2.8xlarge' = 'ml.p2.8xlarge', 'ml.p2.16xlarge' = 'ml.p2.16xlarge', 'ml.p3.2xlarge' = 'ml.p3.2xlarge', 'ml.p3.8xlarge' = 'ml.p3.8xlarge', 'ml.p3.16xlarge' = 'ml.p3.16xlarge', 'ml.p3dn.24xlarge' = 'ml.p3dn.24xlarge', 'ml.p4d.24xlarge' = 'ml.p4d.24xlarge', 'ml.c5.xlarge' = 'ml.c5.xlarge', 'ml.c5.2xlarge' = 'ml.c5.2xlarge', 'ml.c5.4xlarge' = 'ml.c5.4xlarge', 'ml.c5.9xlarge' = 'ml.c5.9xlarge', 'ml.c5.18xlarge' = 'ml.c5.18xlarge', 'ml.c5n.xlarge' = 'ml.c5n.xlarge', 'ml.c5n.2xlarge' = 'ml.c5n.2xlarge', 'ml.c5n.4xlarge' = 'ml.c5n.4xlarge', 'ml.c5n.9xlarge' = 'ml.c5n.9xlarge', 'ml.c5n.18xlarge' = 'ml.c5n.18xlarge', 'ml.g5.xlarge' = 'ml.g5.xlarge', 'ml.g5.2xlarge' = 'ml.g5.2xlarge', 'ml.g5.4xlarge' = 'ml.g5.4xlarge', 'ml.g5.8xlarge' = 'ml.g5.8xlarge', 'ml.g5.16xlarge' = 'ml.g5.16xlarge', 'ml.g5.12xlarge' = 'ml.g5.12xlarge', 'ml.g5.24xlarge' = 'ml.g5.24xlarge', 'ml.g5.48xlarge' = 'ml.g5.48xlarge', 'ml.trn1.2xlarge' = 'ml.trn1.2xlarge', 'ml.trn1.32xlarge' = 'ml.trn1.32xlarge', 'ml.trn1n.32xlarge' = 'ml.trn1n.32xlarge', 'ml.p5.48xlarge' = 'ml.p5.48xlarge' }
 
 
 	/** Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. You can view these logs to understand how your training job performs and check for any errors encountered during training. SageMaker hyperparameter tuning captures all defined metrics. Specify one of the defined metrics to use as an objective metric using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-TuningObjective">TuningObjective</a> parameter in the <code>HyperParameterTrainingJobDefinition</code> API to evaluate job performance during hyperparameter tuning. */
@@ -607,11 +607,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CompressionType { None = 0, Gzip = 1 }
+	export enum CompressionType { None = 'None', Gzip = 'Gzip' }
 
 
 	/** <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p> <p> <b>Pipe mode</b> </p> <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p> <p> <b>File mode</b> </p> <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p> <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p> <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p> <p> <b>FastFile mode</b> </p> <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p> <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p> */
-	export enum TrainingInputMode { Pipe = 0, File = 1, FastFile = 2 }
+	export enum TrainingInputMode { Pipe = 'Pipe', File = 'File', FastFile = 'FastFile' }
 
 
 	/** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. */
@@ -641,7 +641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperParameterTuningJobObjectiveType { Maximize = 0, Minimize = 1 }
+	export enum HyperParameterTuningJobObjectiveType { Maximize = 'Maximize', Minimize = 'Minimize' }
 
 
 	/** Defines how to perform inference generation after a training job is run. */
@@ -743,9 +743,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransformInstanceType { 'ml.m4.xlarge' = 0, 'ml.m4.2xlarge' = 1, 'ml.m4.4xlarge' = 2, 'ml.m4.10xlarge' = 3, 'ml.m4.16xlarge' = 4, 'ml.c4.xlarge' = 5, 'ml.c4.2xlarge' = 6, 'ml.c4.4xlarge' = 7, 'ml.c4.8xlarge' = 8, 'ml.p2.xlarge' = 9, 'ml.p2.8xlarge' = 10, 'ml.p2.16xlarge' = 11, 'ml.p3.2xlarge' = 12, 'ml.p3.8xlarge' = 13, 'ml.p3.16xlarge' = 14, 'ml.c5.xlarge' = 15, 'ml.c5.2xlarge' = 16, 'ml.c5.4xlarge' = 17, 'ml.c5.9xlarge' = 18, 'ml.c5.18xlarge' = 19, 'ml.m5.large' = 20, 'ml.m5.xlarge' = 21, 'ml.m5.2xlarge' = 22, 'ml.m5.4xlarge' = 23, 'ml.m5.12xlarge' = 24, 'ml.m5.24xlarge' = 25, 'ml.g4dn.xlarge' = 26, 'ml.g4dn.2xlarge' = 27, 'ml.g4dn.4xlarge' = 28, 'ml.g4dn.8xlarge' = 29, 'ml.g4dn.12xlarge' = 30, 'ml.g4dn.16xlarge' = 31 }
+	export enum TransformInstanceType { 'ml.m4.xlarge' = 'ml.m4.xlarge', 'ml.m4.2xlarge' = 'ml.m4.2xlarge', 'ml.m4.4xlarge' = 'ml.m4.4xlarge', 'ml.m4.10xlarge' = 'ml.m4.10xlarge', 'ml.m4.16xlarge' = 'ml.m4.16xlarge', 'ml.c4.xlarge' = 'ml.c4.xlarge', 'ml.c4.2xlarge' = 'ml.c4.2xlarge', 'ml.c4.4xlarge' = 'ml.c4.4xlarge', 'ml.c4.8xlarge' = 'ml.c4.8xlarge', 'ml.p2.xlarge' = 'ml.p2.xlarge', 'ml.p2.8xlarge' = 'ml.p2.8xlarge', 'ml.p2.16xlarge' = 'ml.p2.16xlarge', 'ml.p3.2xlarge' = 'ml.p3.2xlarge', 'ml.p3.8xlarge' = 'ml.p3.8xlarge', 'ml.p3.16xlarge' = 'ml.p3.16xlarge', 'ml.c5.xlarge' = 'ml.c5.xlarge', 'ml.c5.2xlarge' = 'ml.c5.2xlarge', 'ml.c5.4xlarge' = 'ml.c5.4xlarge', 'ml.c5.9xlarge' = 'ml.c5.9xlarge', 'ml.c5.18xlarge' = 'ml.c5.18xlarge', 'ml.m5.large' = 'ml.m5.large', 'ml.m5.xlarge' = 'ml.m5.xlarge', 'ml.m5.2xlarge' = 'ml.m5.2xlarge', 'ml.m5.4xlarge' = 'ml.m5.4xlarge', 'ml.m5.12xlarge' = 'ml.m5.12xlarge', 'ml.m5.24xlarge' = 'ml.m5.24xlarge', 'ml.g4dn.xlarge' = 'ml.g4dn.xlarge', 'ml.g4dn.2xlarge' = 'ml.g4dn.2xlarge', 'ml.g4dn.4xlarge' = 'ml.g4dn.4xlarge', 'ml.g4dn.8xlarge' = 'ml.g4dn.8xlarge', 'ml.g4dn.12xlarge' = 'ml.g4dn.12xlarge', 'ml.g4dn.16xlarge' = 'ml.g4dn.16xlarge' }
 
-	export enum ProductionVariantInstanceType { 'ml.t2.medium' = 0, 'ml.t2.large' = 1, 'ml.t2.xlarge' = 2, 'ml.t2.2xlarge' = 3, 'ml.m4.xlarge' = 4, 'ml.m4.2xlarge' = 5, 'ml.m4.4xlarge' = 6, 'ml.m4.10xlarge' = 7, 'ml.m4.16xlarge' = 8, 'ml.m5.large' = 9, 'ml.m5.xlarge' = 10, 'ml.m5.2xlarge' = 11, 'ml.m5.4xlarge' = 12, 'ml.m5.12xlarge' = 13, 'ml.m5.24xlarge' = 14, 'ml.m5d.large' = 15, 'ml.m5d.xlarge' = 16, 'ml.m5d.2xlarge' = 17, 'ml.m5d.4xlarge' = 18, 'ml.m5d.12xlarge' = 19, 'ml.m5d.24xlarge' = 20, 'ml.c4.large' = 21, 'ml.c4.xlarge' = 22, 'ml.c4.2xlarge' = 23, 'ml.c4.4xlarge' = 24, 'ml.c4.8xlarge' = 25, 'ml.p2.xlarge' = 26, 'ml.p2.8xlarge' = 27, 'ml.p2.16xlarge' = 28, 'ml.p3.2xlarge' = 29, 'ml.p3.8xlarge' = 30, 'ml.p3.16xlarge' = 31, 'ml.c5.large' = 32, 'ml.c5.xlarge' = 33, 'ml.c5.2xlarge' = 34, 'ml.c5.4xlarge' = 35, 'ml.c5.9xlarge' = 36, 'ml.c5.18xlarge' = 37, 'ml.c5d.large' = 38, 'ml.c5d.xlarge' = 39, 'ml.c5d.2xlarge' = 40, 'ml.c5d.4xlarge' = 41, 'ml.c5d.9xlarge' = 42, 'ml.c5d.18xlarge' = 43, 'ml.g4dn.xlarge' = 44, 'ml.g4dn.2xlarge' = 45, 'ml.g4dn.4xlarge' = 46, 'ml.g4dn.8xlarge' = 47, 'ml.g4dn.12xlarge' = 48, 'ml.g4dn.16xlarge' = 49, 'ml.r5.large' = 50, 'ml.r5.xlarge' = 51, 'ml.r5.2xlarge' = 52, 'ml.r5.4xlarge' = 53, 'ml.r5.12xlarge' = 54, 'ml.r5.24xlarge' = 55, 'ml.r5d.large' = 56, 'ml.r5d.xlarge' = 57, 'ml.r5d.2xlarge' = 58, 'ml.r5d.4xlarge' = 59, 'ml.r5d.12xlarge' = 60, 'ml.r5d.24xlarge' = 61, 'ml.inf1.xlarge' = 62, 'ml.inf1.2xlarge' = 63, 'ml.inf1.6xlarge' = 64, 'ml.inf1.24xlarge' = 65, 'ml.c6i.large' = 66, 'ml.c6i.xlarge' = 67, 'ml.c6i.2xlarge' = 68, 'ml.c6i.4xlarge' = 69, 'ml.c6i.8xlarge' = 70, 'ml.c6i.12xlarge' = 71, 'ml.c6i.16xlarge' = 72, 'ml.c6i.24xlarge' = 73, 'ml.c6i.32xlarge' = 74, 'ml.g5.xlarge' = 75, 'ml.g5.2xlarge' = 76, 'ml.g5.4xlarge' = 77, 'ml.g5.8xlarge' = 78, 'ml.g5.12xlarge' = 79, 'ml.g5.16xlarge' = 80, 'ml.g5.24xlarge' = 81, 'ml.g5.48xlarge' = 82, 'ml.p4d.24xlarge' = 83, 'ml.c7g.large' = 84, 'ml.c7g.xlarge' = 85, 'ml.c7g.2xlarge' = 86, 'ml.c7g.4xlarge' = 87, 'ml.c7g.8xlarge' = 88, 'ml.c7g.12xlarge' = 89, 'ml.c7g.16xlarge' = 90, 'ml.m6g.large' = 91, 'ml.m6g.xlarge' = 92, 'ml.m6g.2xlarge' = 93, 'ml.m6g.4xlarge' = 94, 'ml.m6g.8xlarge' = 95, 'ml.m6g.12xlarge' = 96, 'ml.m6g.16xlarge' = 97, 'ml.m6gd.large' = 98, 'ml.m6gd.xlarge' = 99, 'ml.m6gd.2xlarge' = 100, 'ml.m6gd.4xlarge' = 101, 'ml.m6gd.8xlarge' = 102, 'ml.m6gd.12xlarge' = 103, 'ml.m6gd.16xlarge' = 104, 'ml.c6g.large' = 105, 'ml.c6g.xlarge' = 106, 'ml.c6g.2xlarge' = 107, 'ml.c6g.4xlarge' = 108, 'ml.c6g.8xlarge' = 109, 'ml.c6g.12xlarge' = 110, 'ml.c6g.16xlarge' = 111, 'ml.c6gd.large' = 112, 'ml.c6gd.xlarge' = 113, 'ml.c6gd.2xlarge' = 114, 'ml.c6gd.4xlarge' = 115, 'ml.c6gd.8xlarge' = 116, 'ml.c6gd.12xlarge' = 117, 'ml.c6gd.16xlarge' = 118, 'ml.c6gn.large' = 119, 'ml.c6gn.xlarge' = 120, 'ml.c6gn.2xlarge' = 121, 'ml.c6gn.4xlarge' = 122, 'ml.c6gn.8xlarge' = 123, 'ml.c6gn.12xlarge' = 124, 'ml.c6gn.16xlarge' = 125, 'ml.r6g.large' = 126, 'ml.r6g.xlarge' = 127, 'ml.r6g.2xlarge' = 128, 'ml.r6g.4xlarge' = 129, 'ml.r6g.8xlarge' = 130, 'ml.r6g.12xlarge' = 131, 'ml.r6g.16xlarge' = 132, 'ml.r6gd.large' = 133, 'ml.r6gd.xlarge' = 134, 'ml.r6gd.2xlarge' = 135, 'ml.r6gd.4xlarge' = 136, 'ml.r6gd.8xlarge' = 137, 'ml.r6gd.12xlarge' = 138, 'ml.r6gd.16xlarge' = 139, 'ml.p4de.24xlarge' = 140, 'ml.trn1.2xlarge' = 141, 'ml.trn1.32xlarge' = 142, 'ml.inf2.xlarge' = 143, 'ml.inf2.8xlarge' = 144, 'ml.inf2.24xlarge' = 145, 'ml.inf2.48xlarge' = 146 }
+	export enum ProductionVariantInstanceType { 'ml.t2.medium' = 'ml.t2.medium', 'ml.t2.large' = 'ml.t2.large', 'ml.t2.xlarge' = 'ml.t2.xlarge', 'ml.t2.2xlarge' = 'ml.t2.2xlarge', 'ml.m4.xlarge' = 'ml.m4.xlarge', 'ml.m4.2xlarge' = 'ml.m4.2xlarge', 'ml.m4.4xlarge' = 'ml.m4.4xlarge', 'ml.m4.10xlarge' = 'ml.m4.10xlarge', 'ml.m4.16xlarge' = 'ml.m4.16xlarge', 'ml.m5.large' = 'ml.m5.large', 'ml.m5.xlarge' = 'ml.m5.xlarge', 'ml.m5.2xlarge' = 'ml.m5.2xlarge', 'ml.m5.4xlarge' = 'ml.m5.4xlarge', 'ml.m5.12xlarge' = 'ml.m5.12xlarge', 'ml.m5.24xlarge' = 'ml.m5.24xlarge', 'ml.m5d.large' = 'ml.m5d.large', 'ml.m5d.xlarge' = 'ml.m5d.xlarge', 'ml.m5d.2xlarge' = 'ml.m5d.2xlarge', 'ml.m5d.4xlarge' = 'ml.m5d.4xlarge', 'ml.m5d.12xlarge' = 'ml.m5d.12xlarge', 'ml.m5d.24xlarge' = 'ml.m5d.24xlarge', 'ml.c4.large' = 'ml.c4.large', 'ml.c4.xlarge' = 'ml.c4.xlarge', 'ml.c4.2xlarge' = 'ml.c4.2xlarge', 'ml.c4.4xlarge' = 'ml.c4.4xlarge', 'ml.c4.8xlarge' = 'ml.c4.8xlarge', 'ml.p2.xlarge' = 'ml.p2.xlarge', 'ml.p2.8xlarge' = 'ml.p2.8xlarge', 'ml.p2.16xlarge' = 'ml.p2.16xlarge', 'ml.p3.2xlarge' = 'ml.p3.2xlarge', 'ml.p3.8xlarge' = 'ml.p3.8xlarge', 'ml.p3.16xlarge' = 'ml.p3.16xlarge', 'ml.c5.large' = 'ml.c5.large', 'ml.c5.xlarge' = 'ml.c5.xlarge', 'ml.c5.2xlarge' = 'ml.c5.2xlarge', 'ml.c5.4xlarge' = 'ml.c5.4xlarge', 'ml.c5.9xlarge' = 'ml.c5.9xlarge', 'ml.c5.18xlarge' = 'ml.c5.18xlarge', 'ml.c5d.large' = 'ml.c5d.large', 'ml.c5d.xlarge' = 'ml.c5d.xlarge', 'ml.c5d.2xlarge' = 'ml.c5d.2xlarge', 'ml.c5d.4xlarge' = 'ml.c5d.4xlarge', 'ml.c5d.9xlarge' = 'ml.c5d.9xlarge', 'ml.c5d.18xlarge' = 'ml.c5d.18xlarge', 'ml.g4dn.xlarge' = 'ml.g4dn.xlarge', 'ml.g4dn.2xlarge' = 'ml.g4dn.2xlarge', 'ml.g4dn.4xlarge' = 'ml.g4dn.4xlarge', 'ml.g4dn.8xlarge' = 'ml.g4dn.8xlarge', 'ml.g4dn.12xlarge' = 'ml.g4dn.12xlarge', 'ml.g4dn.16xlarge' = 'ml.g4dn.16xlarge', 'ml.r5.large' = 'ml.r5.large', 'ml.r5.xlarge' = 'ml.r5.xlarge', 'ml.r5.2xlarge' = 'ml.r5.2xlarge', 'ml.r5.4xlarge' = 'ml.r5.4xlarge', 'ml.r5.12xlarge' = 'ml.r5.12xlarge', 'ml.r5.24xlarge' = 'ml.r5.24xlarge', 'ml.r5d.large' = 'ml.r5d.large', 'ml.r5d.xlarge' = 'ml.r5d.xlarge', 'ml.r5d.2xlarge' = 'ml.r5d.2xlarge', 'ml.r5d.4xlarge' = 'ml.r5d.4xlarge', 'ml.r5d.12xlarge' = 'ml.r5d.12xlarge', 'ml.r5d.24xlarge' = 'ml.r5d.24xlarge', 'ml.inf1.xlarge' = 'ml.inf1.xlarge', 'ml.inf1.2xlarge' = 'ml.inf1.2xlarge', 'ml.inf1.6xlarge' = 'ml.inf1.6xlarge', 'ml.inf1.24xlarge' = 'ml.inf1.24xlarge', 'ml.c6i.large' = 'ml.c6i.large', 'ml.c6i.xlarge' = 'ml.c6i.xlarge', 'ml.c6i.2xlarge' = 'ml.c6i.2xlarge', 'ml.c6i.4xlarge' = 'ml.c6i.4xlarge', 'ml.c6i.8xlarge' = 'ml.c6i.8xlarge', 'ml.c6i.12xlarge' = 'ml.c6i.12xlarge', 'ml.c6i.16xlarge' = 'ml.c6i.16xlarge', 'ml.c6i.24xlarge' = 'ml.c6i.24xlarge', 'ml.c6i.32xlarge' = 'ml.c6i.32xlarge', 'ml.g5.xlarge' = 'ml.g5.xlarge', 'ml.g5.2xlarge' = 'ml.g5.2xlarge', 'ml.g5.4xlarge' = 'ml.g5.4xlarge', 'ml.g5.8xlarge' = 'ml.g5.8xlarge', 'ml.g5.12xlarge' = 'ml.g5.12xlarge', 'ml.g5.16xlarge' = 'ml.g5.16xlarge', 'ml.g5.24xlarge' = 'ml.g5.24xlarge', 'ml.g5.48xlarge' = 'ml.g5.48xlarge', 'ml.p4d.24xlarge' = 'ml.p4d.24xlarge', 'ml.c7g.large' = 'ml.c7g.large', 'ml.c7g.xlarge' = 'ml.c7g.xlarge', 'ml.c7g.2xlarge' = 'ml.c7g.2xlarge', 'ml.c7g.4xlarge' = 'ml.c7g.4xlarge', 'ml.c7g.8xlarge' = 'ml.c7g.8xlarge', 'ml.c7g.12xlarge' = 'ml.c7g.12xlarge', 'ml.c7g.16xlarge' = 'ml.c7g.16xlarge', 'ml.m6g.large' = 'ml.m6g.large', 'ml.m6g.xlarge' = 'ml.m6g.xlarge', 'ml.m6g.2xlarge' = 'ml.m6g.2xlarge', 'ml.m6g.4xlarge' = 'ml.m6g.4xlarge', 'ml.m6g.8xlarge' = 'ml.m6g.8xlarge', 'ml.m6g.12xlarge' = 'ml.m6g.12xlarge', 'ml.m6g.16xlarge' = 'ml.m6g.16xlarge', 'ml.m6gd.large' = 'ml.m6gd.large', 'ml.m6gd.xlarge' = 'ml.m6gd.xlarge', 'ml.m6gd.2xlarge' = 'ml.m6gd.2xlarge', 'ml.m6gd.4xlarge' = 'ml.m6gd.4xlarge', 'ml.m6gd.8xlarge' = 'ml.m6gd.8xlarge', 'ml.m6gd.12xlarge' = 'ml.m6gd.12xlarge', 'ml.m6gd.16xlarge' = 'ml.m6gd.16xlarge', 'ml.c6g.large' = 'ml.c6g.large', 'ml.c6g.xlarge' = 'ml.c6g.xlarge', 'ml.c6g.2xlarge' = 'ml.c6g.2xlarge', 'ml.c6g.4xlarge' = 'ml.c6g.4xlarge', 'ml.c6g.8xlarge' = 'ml.c6g.8xlarge', 'ml.c6g.12xlarge' = 'ml.c6g.12xlarge', 'ml.c6g.16xlarge' = 'ml.c6g.16xlarge', 'ml.c6gd.large' = 'ml.c6gd.large', 'ml.c6gd.xlarge' = 'ml.c6gd.xlarge', 'ml.c6gd.2xlarge' = 'ml.c6gd.2xlarge', 'ml.c6gd.4xlarge' = 'ml.c6gd.4xlarge', 'ml.c6gd.8xlarge' = 'ml.c6gd.8xlarge', 'ml.c6gd.12xlarge' = 'ml.c6gd.12xlarge', 'ml.c6gd.16xlarge' = 'ml.c6gd.16xlarge', 'ml.c6gn.large' = 'ml.c6gn.large', 'ml.c6gn.xlarge' = 'ml.c6gn.xlarge', 'ml.c6gn.2xlarge' = 'ml.c6gn.2xlarge', 'ml.c6gn.4xlarge' = 'ml.c6gn.4xlarge', 'ml.c6gn.8xlarge' = 'ml.c6gn.8xlarge', 'ml.c6gn.12xlarge' = 'ml.c6gn.12xlarge', 'ml.c6gn.16xlarge' = 'ml.c6gn.16xlarge', 'ml.r6g.large' = 'ml.r6g.large', 'ml.r6g.xlarge' = 'ml.r6g.xlarge', 'ml.r6g.2xlarge' = 'ml.r6g.2xlarge', 'ml.r6g.4xlarge' = 'ml.r6g.4xlarge', 'ml.r6g.8xlarge' = 'ml.r6g.8xlarge', 'ml.r6g.12xlarge' = 'ml.r6g.12xlarge', 'ml.r6g.16xlarge' = 'ml.r6g.16xlarge', 'ml.r6gd.large' = 'ml.r6gd.large', 'ml.r6gd.xlarge' = 'ml.r6gd.xlarge', 'ml.r6gd.2xlarge' = 'ml.r6gd.2xlarge', 'ml.r6gd.4xlarge' = 'ml.r6gd.4xlarge', 'ml.r6gd.8xlarge' = 'ml.r6gd.8xlarge', 'ml.r6gd.12xlarge' = 'ml.r6gd.12xlarge', 'ml.r6gd.16xlarge' = 'ml.r6gd.16xlarge', 'ml.p4de.24xlarge' = 'ml.p4de.24xlarge', 'ml.trn1.2xlarge' = 'ml.trn1.2xlarge', 'ml.trn1.32xlarge' = 'ml.trn1.32xlarge', 'ml.inf2.xlarge' = 'ml.inf2.xlarge', 'ml.inf2.8xlarge' = 'ml.inf2.8xlarge', 'ml.inf2.24xlarge' = 'ml.inf2.24xlarge', 'ml.inf2.48xlarge' = 'ml.inf2.48xlarge' }
 
 
 	/** Specifies configurations for one or more training jobs that SageMaker runs to test the algorithm. */
@@ -932,9 +932,9 @@ export namespace MyNS {
 
 	}
 
-	export enum S3DataType { ManifestFile = 0, S3Prefix = 1, AugmentedManifestFile = 2 }
+	export enum S3DataType { ManifestFile = 'ManifestFile', S3Prefix = 'S3Prefix', AugmentedManifestFile = 'AugmentedManifestFile' }
 
-	export enum S3DataDistribution { FullyReplicated = 0, ShardedByS3Key = 1 }
+	export enum S3DataDistribution { FullyReplicated = 'FullyReplicated', ShardedByS3Key = 'ShardedByS3Key' }
 
 
 	/** Specifies a file system data source for a channel. */
@@ -978,11 +978,11 @@ export namespace MyNS {
 
 	}
 
-	export enum FileSystemAccessMode { rw = 0, ro = 1 }
+	export enum FileSystemAccessMode { rw = 'rw', ro = 'ro' }
 
-	export enum FileSystemType { EFS = 0, FSxLustre = 1 }
+	export enum FileSystemType { EFS = 'EFS', FSxLustre = 'FSxLustre' }
 
-	export enum RecordWrapper { None = 0, RecordIO = 1 }
+	export enum RecordWrapper { None = 'None', RecordIO = 'RecordIO' }
 
 
 	/** <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p> <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p> */
@@ -1032,7 +1032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputCompressionType { GZIP = 0, NONE = 1 }
+	export enum OutputCompressionType { GZIP = 'GZIP', NONE = 'NONE' }
 
 
 	/** Describes the resources, including machine learning (ML) compute instances and ML storage volumes, to use for model training.  */
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchStrategy { MultiRecord = 0, SingleRecord = 1 }
+	export enum BatchStrategy { MultiRecord = 'MultiRecord', SingleRecord = 'SingleRecord' }
 
 	export interface TransformEnvironmentMap {
 	}
@@ -1239,7 +1239,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SplitType { None = 0, Line = 1, RecordIO = 2, TFRecord = 3 }
+	export enum SplitType { None = 'None', Line = 'Line', RecordIO = 'RecordIO', TFRecord = 'TFRecord' }
 
 
 	/** Describes the results of a transform job. */
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssemblyType { None = 0, Line = 1 }
+	export enum AssemblyType { None = 'None', Line = 'Line' }
 
 
 	/** Describes the resources, including ML instance types and ML instance count, to use for transform job. */
@@ -1356,7 +1356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppType { JupyterServer = 0, KernelGateway = 1, TensorBoard = 2, RStudioServerPro = 3, RSessionGateway = 4 }
+	export enum AppType { JupyterServer = 'JupyterServer', KernelGateway = 'KernelGateway', TensorBoard = 'TensorBoard', RStudioServerPro = 'RStudioServerPro', RSessionGateway = 'RSessionGateway' }
 
 
 	/** Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on. */
@@ -1384,7 +1384,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppInstanceType { system = 0, 'ml.t3.micro' = 1, 'ml.t3.small' = 2, 'ml.t3.medium' = 3, 'ml.t3.large' = 4, 'ml.t3.xlarge' = 5, 'ml.t3.2xlarge' = 6, 'ml.m5.large' = 7, 'ml.m5.xlarge' = 8, 'ml.m5.2xlarge' = 9, 'ml.m5.4xlarge' = 10, 'ml.m5.8xlarge' = 11, 'ml.m5.12xlarge' = 12, 'ml.m5.16xlarge' = 13, 'ml.m5.24xlarge' = 14, 'ml.m5d.large' = 15, 'ml.m5d.xlarge' = 16, 'ml.m5d.2xlarge' = 17, 'ml.m5d.4xlarge' = 18, 'ml.m5d.8xlarge' = 19, 'ml.m5d.12xlarge' = 20, 'ml.m5d.16xlarge' = 21, 'ml.m5d.24xlarge' = 22, 'ml.c5.large' = 23, 'ml.c5.xlarge' = 24, 'ml.c5.2xlarge' = 25, 'ml.c5.4xlarge' = 26, 'ml.c5.9xlarge' = 27, 'ml.c5.12xlarge' = 28, 'ml.c5.18xlarge' = 29, 'ml.c5.24xlarge' = 30, 'ml.p3.2xlarge' = 31, 'ml.p3.8xlarge' = 32, 'ml.p3.16xlarge' = 33, 'ml.p3dn.24xlarge' = 34, 'ml.g4dn.xlarge' = 35, 'ml.g4dn.2xlarge' = 36, 'ml.g4dn.4xlarge' = 37, 'ml.g4dn.8xlarge' = 38, 'ml.g4dn.12xlarge' = 39, 'ml.g4dn.16xlarge' = 40, 'ml.r5.large' = 41, 'ml.r5.xlarge' = 42, 'ml.r5.2xlarge' = 43, 'ml.r5.4xlarge' = 44, 'ml.r5.8xlarge' = 45, 'ml.r5.12xlarge' = 46, 'ml.r5.16xlarge' = 47, 'ml.r5.24xlarge' = 48, 'ml.g5.xlarge' = 49, 'ml.g5.2xlarge' = 50, 'ml.g5.4xlarge' = 51, 'ml.g5.8xlarge' = 52, 'ml.g5.16xlarge' = 53, 'ml.g5.12xlarge' = 54, 'ml.g5.24xlarge' = 55, 'ml.g5.48xlarge' = 56, 'ml.geospatial.interactive' = 57, 'ml.p4d.24xlarge' = 58, 'ml.p4de.24xlarge' = 59 }
+	export enum AppInstanceType { system = 'system', 'ml.t3.micro' = 'ml.t3.micro', 'ml.t3.small' = 'ml.t3.small', 'ml.t3.medium' = 'ml.t3.medium', 'ml.t3.large' = 'ml.t3.large', 'ml.t3.xlarge' = 'ml.t3.xlarge', 'ml.t3.2xlarge' = 'ml.t3.2xlarge', 'ml.m5.large' = 'ml.m5.large', 'ml.m5.xlarge' = 'ml.m5.xlarge', 'ml.m5.2xlarge' = 'ml.m5.2xlarge', 'ml.m5.4xlarge' = 'ml.m5.4xlarge', 'ml.m5.8xlarge' = 'ml.m5.8xlarge', 'ml.m5.12xlarge' = 'ml.m5.12xlarge', 'ml.m5.16xlarge' = 'ml.m5.16xlarge', 'ml.m5.24xlarge' = 'ml.m5.24xlarge', 'ml.m5d.large' = 'ml.m5d.large', 'ml.m5d.xlarge' = 'ml.m5d.xlarge', 'ml.m5d.2xlarge' = 'ml.m5d.2xlarge', 'ml.m5d.4xlarge' = 'ml.m5d.4xlarge', 'ml.m5d.8xlarge' = 'ml.m5d.8xlarge', 'ml.m5d.12xlarge' = 'ml.m5d.12xlarge', 'ml.m5d.16xlarge' = 'ml.m5d.16xlarge', 'ml.m5d.24xlarge' = 'ml.m5d.24xlarge', 'ml.c5.large' = 'ml.c5.large', 'ml.c5.xlarge' = 'ml.c5.xlarge', 'ml.c5.2xlarge' = 'ml.c5.2xlarge', 'ml.c5.4xlarge' = 'ml.c5.4xlarge', 'ml.c5.9xlarge' = 'ml.c5.9xlarge', 'ml.c5.12xlarge' = 'ml.c5.12xlarge', 'ml.c5.18xlarge' = 'ml.c5.18xlarge', 'ml.c5.24xlarge' = 'ml.c5.24xlarge', 'ml.p3.2xlarge' = 'ml.p3.2xlarge', 'ml.p3.8xlarge' = 'ml.p3.8xlarge', 'ml.p3.16xlarge' = 'ml.p3.16xlarge', 'ml.p3dn.24xlarge' = 'ml.p3dn.24xlarge', 'ml.g4dn.xlarge' = 'ml.g4dn.xlarge', 'ml.g4dn.2xlarge' = 'ml.g4dn.2xlarge', 'ml.g4dn.4xlarge' = 'ml.g4dn.4xlarge', 'ml.g4dn.8xlarge' = 'ml.g4dn.8xlarge', 'ml.g4dn.12xlarge' = 'ml.g4dn.12xlarge', 'ml.g4dn.16xlarge' = 'ml.g4dn.16xlarge', 'ml.r5.large' = 'ml.r5.large', 'ml.r5.xlarge' = 'ml.r5.xlarge', 'ml.r5.2xlarge' = 'ml.r5.2xlarge', 'ml.r5.4xlarge' = 'ml.r5.4xlarge', 'ml.r5.8xlarge' = 'ml.r5.8xlarge', 'ml.r5.12xlarge' = 'ml.r5.12xlarge', 'ml.r5.16xlarge' = 'ml.r5.16xlarge', 'ml.r5.24xlarge' = 'ml.r5.24xlarge', 'ml.g5.xlarge' = 'ml.g5.xlarge', 'ml.g5.2xlarge' = 'ml.g5.2xlarge', 'ml.g5.4xlarge' = 'ml.g5.4xlarge', 'ml.g5.8xlarge' = 'ml.g5.8xlarge', 'ml.g5.16xlarge' = 'ml.g5.16xlarge', 'ml.g5.12xlarge' = 'ml.g5.12xlarge', 'ml.g5.24xlarge' = 'ml.g5.24xlarge', 'ml.g5.48xlarge' = 'ml.g5.48xlarge', 'ml.geospatial.interactive' = 'ml.geospatial.interactive', 'ml.p4d.24xlarge' = 'ml.p4d.24xlarge', 'ml.p4de.24xlarge' = 'ml.p4de.24xlarge' }
 
 	export interface ResourceInUse {
 	}
@@ -1584,7 +1584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactSourceIdType { MD5Hash = 0, S3ETag = 1, S3Version = 2, Custom = 3 }
+	export enum ArtifactSourceIdType { MD5Hash = 'MD5Hash', S3ETag = 'S3ETag', S3Version = 'S3Version', Custom = 'Custom' }
 
 	export interface CreateAutoMLJobResponse {
 
@@ -1724,7 +1724,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoMLChannelType { training = 0, validation = 1 }
+	export enum AutoMLChannelType { training = 'training', validation = 'validation' }
 
 
 	/** The output data configuration. */
@@ -1750,7 +1750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProblemType { BinaryClassification = 0, MulticlassClassification = 1, Regression = 2 }
+	export enum ProblemType { BinaryClassification = 'BinaryClassification', MulticlassClassification = 'MulticlassClassification', Regression = 'Regression' }
 
 
 	/** Specifies a metric to minimize or maximize as the objective of a job. */
@@ -1773,7 +1773,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoMLMetricEnum { Accuracy = 0, MSE = 1, F1 = 2, F1macro = 3, AUC = 4, RMSE = 5, MAE = 6, R2 = 7, BalancedAccuracy = 8, Precision = 9, PrecisionMacro = 10, Recall = 11, RecallMacro = 12, MAPE = 13, MASE = 14, WAPE = 15, AverageWeightedQuantileLoss = 16 }
+	export enum AutoMLMetricEnum { Accuracy = 'Accuracy', MSE = 'MSE', F1 = 'F1', F1macro = 'F1macro', AUC = 'AUC', RMSE = 'RMSE', MAE = 'MAE', R2 = 'R2', BalancedAccuracy = 'BalancedAccuracy', Precision = 'Precision', PrecisionMacro = 'PrecisionMacro', Recall = 'Recall', RecallMacro = 'RecallMacro', MAPE = 'MAPE', MASE = 'MASE', WAPE = 'WAPE', AverageWeightedQuantileLoss = 'AverageWeightedQuantileLoss' }
 
 
 	/** A collection of settings used for an AutoML job. */
@@ -1912,9 +1912,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoMLAlgorithm { xgboost = 0, 'linear-learner' = 1, mlp = 2, lightgbm = 3, catboost = 4, randomforest = 5, 'extra-trees' = 6, 'nn-torch' = 7, fastai = 8 }
+	export enum AutoMLAlgorithm { xgboost = 'xgboost', 'linear-learner' = 'linear-learner', mlp = 'mlp', lightgbm = 'lightgbm', catboost = 'catboost', randomforest = 'randomforest', 'extra-trees' = 'extra-trees', 'nn-torch' = 'nn-torch', fastai = 'fastai' }
 
-	export enum AutoMLMode { AUTO = 0, ENSEMBLING = 1, HYPERPARAMETER_TUNING = 2 }
+	export enum AutoMLMode { AUTO = 'AUTO', ENSEMBLING = 'ENSEMBLING', HYPERPARAMETER_TUNING = 'HYPERPARAMETER_TUNING' }
 
 
 	/** Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment. */
@@ -2399,7 +2399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Framework { TENSORFLOW = 0, KERAS = 1, MXNET = 2, ONNX = 3, PYTORCH = 4, XGBOOST = 5, TFLITE = 6, DARKNET = 7, SKLEARN = 8 }
+	export enum Framework { TENSORFLOW = 'TENSORFLOW', KERAS = 'KERAS', MXNET = 'MXNET', ONNX = 'ONNX', PYTORCH = 'PYTORCH', XGBOOST = 'XGBOOST', TFLITE = 'TFLITE', DARKNET = 'DARKNET', SKLEARN = 'SKLEARN' }
 
 
 	/** Contains information about the output location for the compiled model and the target device that the model runs on. <code>TargetDevice</code> and <code>TargetPlatform</code> are mutually exclusive, so you need to choose one between the two to specify your target device or platform. If you cannot find your device you want to use from the <code>TargetDevice</code> list, use <code>TargetPlatform</code> to describe the platform of your edge device and <code>CompilerOptions</code> if there are specific settings that are required or recommended to use for particular TargetPlatform. */
@@ -2432,7 +2432,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetDevice { lambda = 0, ml_m4 = 1, ml_m5 = 2, ml_c4 = 3, ml_c5 = 4, ml_p2 = 5, ml_p3 = 6, ml_g4dn = 7, ml_inf1 = 8, ml_inf2 = 9, ml_trn1 = 10, ml_eia2 = 11, jetson_tx1 = 12, jetson_tx2 = 13, jetson_nano = 14, jetson_xavier = 15, rasp3b = 16, imx8qm = 17, deeplens = 18, rk3399 = 19, rk3288 = 20, aisage = 21, sbe_c = 22, qcs605 = 23, qcs603 = 24, sitara_am57x = 25, amba_cv2 = 26, amba_cv22 = 27, amba_cv25 = 28, x86_win32 = 29, x86_win64 = 30, coreml = 31, jacinto_tda4vm = 32, imx8mplus = 33 }
+	export enum TargetDevice { lambda = 'lambda', ml_m4 = 'ml_m4', ml_m5 = 'ml_m5', ml_c4 = 'ml_c4', ml_c5 = 'ml_c5', ml_p2 = 'ml_p2', ml_p3 = 'ml_p3', ml_g4dn = 'ml_g4dn', ml_inf1 = 'ml_inf1', ml_inf2 = 'ml_inf2', ml_trn1 = 'ml_trn1', ml_eia2 = 'ml_eia2', jetson_tx1 = 'jetson_tx1', jetson_tx2 = 'jetson_tx2', jetson_nano = 'jetson_nano', jetson_xavier = 'jetson_xavier', rasp3b = 'rasp3b', imx8qm = 'imx8qm', deeplens = 'deeplens', rk3399 = 'rk3399', rk3288 = 'rk3288', aisage = 'aisage', sbe_c = 'sbe_c', qcs605 = 'qcs605', qcs603 = 'qcs603', sitara_am57x = 'sitara_am57x', amba_cv2 = 'amba_cv2', amba_cv22 = 'amba_cv22', amba_cv25 = 'amba_cv25', x86_win32 = 'x86_win32', x86_win64 = 'x86_win64', coreml = 'coreml', jacinto_tda4vm = 'jacinto_tda4vm', imx8mplus = 'imx8mplus' }
 
 
 	/** Contains information about a target platform that you want your model to run on, such as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>. */
@@ -2465,11 +2465,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetPlatformOs { ANDROID = 0, LINUX = 1 }
+	export enum TargetPlatformOs { ANDROID = 'ANDROID', LINUX = 'LINUX' }
 
-	export enum TargetPlatformArch { X86_64 = 0, X86 = 1, ARM64 = 2, ARM_EABI = 3, ARM_EABIHF = 4 }
+	export enum TargetPlatformArch { X86_64 = 'X86_64', X86 = 'X86', ARM64 = 'ARM64', ARM_EABI = 'ARM_EABI', ARM_EABIHF = 'ARM_EABIHF' }
 
-	export enum TargetPlatformAccelerator { INTEL_GRAPHICS = 0, MALI = 1, NVIDIA = 2, NNA = 3 }
+	export enum TargetPlatformAccelerator { INTEL_GRAPHICS = 'INTEL_GRAPHICS', MALI = 'MALI', NVIDIA = 'NVIDIA', NNA = 'NNA' }
 
 
 	/** The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> configuration object that specifies the VPC that you want the compilation jobs to connect to. For more information on controlling access to your Amazon S3 buckets used for compilation job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Give Amazon SageMaker Compilation Jobs Access to Resources in Your Amazon VPC</a>. */
@@ -2795,7 +2795,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessingS3InputMode { Pipe = 0, File = 1 }
+	export enum ProcessingS3InputMode { Pipe = 'Pipe', File = 'File' }
 
 
 	/** Input object for the batch transform job. */
@@ -2985,7 +2985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessingS3UploadMode { Continuous = 0, EndOfJob = 1 }
+	export enum ProcessingS3UploadMode { Continuous = 'Continuous', EndOfJob = 'EndOfJob' }
 
 
 	/** Identifies the resources to deploy for a monitoring job. */
@@ -3042,7 +3042,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessingInstanceType { 'ml.t3.medium' = 0, 'ml.t3.large' = 1, 'ml.t3.xlarge' = 2, 'ml.t3.2xlarge' = 3, 'ml.m4.xlarge' = 4, 'ml.m4.2xlarge' = 5, 'ml.m4.4xlarge' = 6, 'ml.m4.10xlarge' = 7, 'ml.m4.16xlarge' = 8, 'ml.c4.xlarge' = 9, 'ml.c4.2xlarge' = 10, 'ml.c4.4xlarge' = 11, 'ml.c4.8xlarge' = 12, 'ml.p2.xlarge' = 13, 'ml.p2.8xlarge' = 14, 'ml.p2.16xlarge' = 15, 'ml.p3.2xlarge' = 16, 'ml.p3.8xlarge' = 17, 'ml.p3.16xlarge' = 18, 'ml.c5.xlarge' = 19, 'ml.c5.2xlarge' = 20, 'ml.c5.4xlarge' = 21, 'ml.c5.9xlarge' = 22, 'ml.c5.18xlarge' = 23, 'ml.m5.large' = 24, 'ml.m5.xlarge' = 25, 'ml.m5.2xlarge' = 26, 'ml.m5.4xlarge' = 27, 'ml.m5.12xlarge' = 28, 'ml.m5.24xlarge' = 29, 'ml.r5.large' = 30, 'ml.r5.xlarge' = 31, 'ml.r5.2xlarge' = 32, 'ml.r5.4xlarge' = 33, 'ml.r5.8xlarge' = 34, 'ml.r5.12xlarge' = 35, 'ml.r5.16xlarge' = 36, 'ml.r5.24xlarge' = 37, 'ml.g4dn.xlarge' = 38, 'ml.g4dn.2xlarge' = 39, 'ml.g4dn.4xlarge' = 40, 'ml.g4dn.8xlarge' = 41, 'ml.g4dn.12xlarge' = 42, 'ml.g4dn.16xlarge' = 43 }
+	export enum ProcessingInstanceType { 'ml.t3.medium' = 'ml.t3.medium', 'ml.t3.large' = 'ml.t3.large', 'ml.t3.xlarge' = 'ml.t3.xlarge', 'ml.t3.2xlarge' = 'ml.t3.2xlarge', 'ml.m4.xlarge' = 'ml.m4.xlarge', 'ml.m4.2xlarge' = 'ml.m4.2xlarge', 'ml.m4.4xlarge' = 'ml.m4.4xlarge', 'ml.m4.10xlarge' = 'ml.m4.10xlarge', 'ml.m4.16xlarge' = 'ml.m4.16xlarge', 'ml.c4.xlarge' = 'ml.c4.xlarge', 'ml.c4.2xlarge' = 'ml.c4.2xlarge', 'ml.c4.4xlarge' = 'ml.c4.4xlarge', 'ml.c4.8xlarge' = 'ml.c4.8xlarge', 'ml.p2.xlarge' = 'ml.p2.xlarge', 'ml.p2.8xlarge' = 'ml.p2.8xlarge', 'ml.p2.16xlarge' = 'ml.p2.16xlarge', 'ml.p3.2xlarge' = 'ml.p3.2xlarge', 'ml.p3.8xlarge' = 'ml.p3.8xlarge', 'ml.p3.16xlarge' = 'ml.p3.16xlarge', 'ml.c5.xlarge' = 'ml.c5.xlarge', 'ml.c5.2xlarge' = 'ml.c5.2xlarge', 'ml.c5.4xlarge' = 'ml.c5.4xlarge', 'ml.c5.9xlarge' = 'ml.c5.9xlarge', 'ml.c5.18xlarge' = 'ml.c5.18xlarge', 'ml.m5.large' = 'ml.m5.large', 'ml.m5.xlarge' = 'ml.m5.xlarge', 'ml.m5.2xlarge' = 'ml.m5.2xlarge', 'ml.m5.4xlarge' = 'ml.m5.4xlarge', 'ml.m5.12xlarge' = 'ml.m5.12xlarge', 'ml.m5.24xlarge' = 'ml.m5.24xlarge', 'ml.r5.large' = 'ml.r5.large', 'ml.r5.xlarge' = 'ml.r5.xlarge', 'ml.r5.2xlarge' = 'ml.r5.2xlarge', 'ml.r5.4xlarge' = 'ml.r5.4xlarge', 'ml.r5.8xlarge' = 'ml.r5.8xlarge', 'ml.r5.12xlarge' = 'ml.r5.12xlarge', 'ml.r5.16xlarge' = 'ml.r5.16xlarge', 'ml.r5.24xlarge' = 'ml.r5.24xlarge', 'ml.g4dn.xlarge' = 'ml.g4dn.xlarge', 'ml.g4dn.2xlarge' = 'ml.g4dn.2xlarge', 'ml.g4dn.4xlarge' = 'ml.g4dn.4xlarge', 'ml.g4dn.8xlarge' = 'ml.g4dn.8xlarge', 'ml.g4dn.12xlarge' = 'ml.g4dn.12xlarge', 'ml.g4dn.16xlarge' = 'ml.g4dn.16xlarge' }
 
 
 	/** The networking configuration for the monitoring job. */
@@ -3148,7 +3148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EdgePresetDeploymentType { GreengrassV2Component = 0 }
+	export enum EdgePresetDeploymentType { GreengrassV2Component = 'GreengrassV2Component' }
 
 	export interface CreateDomainResponse {
 		DomainArn?: string;
@@ -3218,7 +3218,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthMode { SSO = 0, IAM = 1 }
+	export enum AuthMode { SSO = 'SSO', IAM = 'IAM' }
 
 
 	/** <p>A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code> when the <code>CreateDomain</code> API is called.</p> <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p> */
@@ -3268,7 +3268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotebookOutputOption { Allowed = 0, Disabled = 1 }
+	export enum NotebookOutputOption { Allowed = 'Allowed', Disabled = 'Disabled' }
 
 
 	/** The JupyterServer app settings. */
@@ -3391,9 +3391,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RStudioServerProAccessStatus { ENABLED = 0, DISABLED = 1 }
+	export enum RStudioServerProAccessStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum RStudioServerProUserGroup { R_STUDIO_ADMIN = 0, R_STUDIO_USER = 1 }
+	export enum RStudioServerProUserGroup { R_STUDIO_ADMIN = 'R_STUDIO_ADMIN', R_STUDIO_USER = 'R_STUDIO_USER' }
 
 
 	/** A collection of settings that apply to an <code>RSessionGateway</code> app. */
@@ -3490,9 +3490,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AppNetworkAccessType { PublicInternetOnly = 0, VpcOnly = 1 }
+	export enum AppNetworkAccessType { PublicInternetOnly = 'PublicInternetOnly', VpcOnly = 'VpcOnly' }
 
-	export enum AppSecurityGroupManagement { Service = 0, Customer = 1 }
+	export enum AppSecurityGroupManagement { Service = 'Service', Customer = 'Customer' }
 
 
 	/** A collection of settings that apply to the <code>SageMaker Domain</code>. These settings are specified through the <code>CreateDomain</code> API call. */
@@ -3543,7 +3543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionRoleIdentityConfig { USER_PROFILE_NAME = 0, DISABLED = 1 }
+	export enum ExecutionRoleIdentityConfig { USER_PROFILE_NAME = 'USER_PROFILE_NAME', DISABLED = 'DISABLED' }
 
 
 	/** A collection of settings that apply to spaces created in the Domain. */
@@ -3696,7 +3696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceSubsetType { PERCENTAGE = 0, SELECTION = 1, NAMECONTAINS = 2 }
+	export enum DeviceSubsetType { PERCENTAGE = 'PERCENTAGE', SELECTION = 'SELECTION', NAMECONTAINS = 'NAMECONTAINS' }
 
 
 	/** Contains information about the configuration of a deployment. */
@@ -3719,7 +3719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailureHandlingPolicy { ROLLBACK_ON_FAILURE = 0, DO_NOTHING = 1 }
+	export enum FailureHandlingPolicy { ROLLBACK_ON_FAILURE = 'ROLLBACK_ON_FAILURE', DO_NOTHING = 'DO_NOTHING' }
 
 	export interface CreateEdgeDeploymentStageRequest {
 
@@ -3908,7 +3908,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrafficRoutingConfigType { ALL_AT_ONCE = 0, CANARY = 1, LINEAR = 2 }
+	export enum TrafficRoutingConfigType { ALL_AT_ONCE = 'ALL_AT_ONCE', CANARY = 'CANARY', LINEAR = 'LINEAR' }
 
 
 	/** <p>Specifies the type and size of the endpoint capacity to activate for a blue/green deployment, a rolling deployment, or a rollback strategy. You can specify your batches as either instance count or the overall percentage or your fleet.</p> <p>For a rollback strategy, if you don't specify the fields in this object, or if you set the <code>Value</code> to 100%, then SageMaker uses a blue/green rollback strategy and rolls all traffic back to the blue fleet.</p> */
@@ -3938,7 +3938,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacitySizeType { INSTANCE_COUNT = 0, CAPACITY_PERCENT = 1 }
+	export enum CapacitySizeType { INSTANCE_COUNT = 'INSTANCE_COUNT', CAPACITY_PERCENT = 'CAPACITY_PERCENT' }
 
 
 	/** Automatic rollback configuration for handling endpoint deployment failures and recovery. */
@@ -4101,7 +4101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductionVariantAcceleratorType { 'ml.eia1.medium' = 0, 'ml.eia1.large' = 1, 'ml.eia1.xlarge' = 2, 'ml.eia2.medium' = 3, 'ml.eia2.large' = 4, 'ml.eia2.xlarge' = 5 }
+	export enum ProductionVariantAcceleratorType { 'ml.eia1.medium' = 'ml.eia1.medium', 'ml.eia1.large' = 'ml.eia1.large', 'ml.eia1.xlarge' = 'ml.eia1.xlarge', 'ml.eia2.medium' = 'ml.eia2.medium', 'ml.eia2.large' = 'ml.eia2.large', 'ml.eia2.xlarge' = 'ml.eia2.xlarge' }
 
 
 	/** Specifies configuration for a core dump from the model container when the process crashes. */
@@ -4217,7 +4217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaptureMode { Input = 0, Output = 1 }
+	export enum CaptureMode { Input = 'Input', Output = 'Output' }
 
 
 	/** Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data. */
@@ -4315,7 +4315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AsyncNotificationTopicTypes { SUCCESS_NOTIFICATION_TOPIC = 0, ERROR_NOTIFICATION_TOPIC = 1 }
+	export enum AsyncNotificationTopicTypes { SUCCESS_NOTIFICATION_TOPIC = 'SUCCESS_NOTIFICATION_TOPIC', ERROR_NOTIFICATION_TOPIC = 'ERROR_NOTIFICATION_TOPIC' }
 
 
 	/** A parameter to activate explainers. */
@@ -4394,7 +4394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClarifyFeatureType { numerical = 0, categorical = 1, text = 2 }
+	export enum ClarifyFeatureType { numerical = 'numerical', categorical = 'categorical', text = 'text' }
 
 
 	/** The configuration for SHAP analysis using SageMaker Clarify Explainer. */
@@ -4474,9 +4474,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClarifyTextLanguage { af = 0, sq = 1, ar = 2, hy = 3, eu = 4, bn = 5, bg = 6, ca = 7, zh = 8, hr = 9, cs = 10, da = 11, nl = 12, en = 13, et = 14, fi = 15, fr = 16, de = 17, el = 18, gu = 19, he = 20, hi = 21, hu = 22, is = 23, id = 24, ga = 25, it = 26, kn = 27, ky = 28, lv = 29, lt = 30, lb = 31, mk = 32, ml = 33, mr = 34, ne = 35, nb = 36, fa = 37, pl = 38, pt = 39, ro = 40, ru = 41, sa = 42, sr = 43, tn = 44, si = 45, sk = 46, sl = 47, es = 48, sv = 49, tl = 50, ta = 51, tt = 52, te = 53, tr = 54, uk = 55, ur = 56, yo = 57, lij = 58, xx = 59 }
+	export enum ClarifyTextLanguage { af = 'af', sq = 'sq', ar = 'ar', hy = 'hy', eu = 'eu', bn = 'bn', bg = 'bg', ca = 'ca', zh = 'zh', hr = 'hr', cs = 'cs', da = 'da', nl = 'nl', en = 'en', et = 'et', fi = 'fi', fr = 'fr', de = 'de', el = 'el', gu = 'gu', he = 'he', hi = 'hi', hu = 'hu', is = 'is', id = 'id', ga = 'ga', it = 'it', kn = 'kn', ky = 'ky', lv = 'lv', lt = 'lt', lb = 'lb', mk = 'mk', ml = 'ml', mr = 'mr', ne = 'ne', nb = 'nb', fa = 'fa', pl = 'pl', pt = 'pt', ro = 'ro', ru = 'ru', sa = 'sa', sr = 'sr', tn = 'tn', si = 'si', sk = 'sk', sl = 'sl', es = 'es', sv = 'sv', tl = 'tl', ta = 'ta', tt = 'tt', te = 'te', tr = 'tr', uk = 'uk', ur = 'ur', yo = 'yo', lij = 'lij', xx = 'xx' }
 
-	export enum ClarifyTextGranularity { token = 0, sentence = 1, paragraph = 2 }
+	export enum ClarifyTextGranularity { token = 'token', sentence = 'sentence', paragraph = 'paragraph' }
 
 	export interface CreateExperimentResponse {
 		ExperimentArn?: string;
@@ -4595,7 +4595,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureType { Integral = 0, Fractional = 1, String = 2 }
+	export enum FeatureType { Integral = 'Integral', Fractional = 'Fractional', String = 'String' }
 
 
 	/** <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly.</p> <p>The default value is <code>False</code>.</p> */
@@ -4653,7 +4653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TtlDurationUnit { Seconds = 0, Minutes = 1, Hours = 2, Days = 3, Weeks = 4 }
+	export enum TtlDurationUnit { Seconds = 'Seconds', Minutes = 'Minutes', Hours = 'Hours', Days = 'Days', Weeks = 'Weeks' }
 
 
 	/** <p>The configuration of an <code>OfflineStore</code>.</p> <p>Provide an <code>OfflineStoreConfig</code> in a request to <code>CreateFeatureGroup</code> to create an <code>OfflineStore</code>.</p> <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon Web Services Key Management Service (KMS) key ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.</p> */
@@ -4741,7 +4741,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableFormat { Glue = 0, Iceberg = 1 }
+	export enum TableFormat { Glue = 'Glue', Iceberg = 'Iceberg' }
 
 	export interface CreateFlowDefinitionResponse {
 
@@ -4814,7 +4814,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsManagedHumanLoopRequestSource { 'AWS/Rekognition/DetectModerationLabels/Image/V3' = 0, 'AWS/Textract/AnalyzeDocument/Forms/V1' = 1 }
+	export enum AwsManagedHumanLoopRequestSource { 'AWS/Rekognition/DetectModerationLabels/Image/V3' = 'AWS/Rekognition/DetectModerationLabels/Image/V3', 'AWS/Textract/AnalyzeDocument/Forms/V1' = 'AWS/Textract/AnalyzeDocument/Forms/V1' }
 
 
 	/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
@@ -5179,7 +5179,7 @@ export namespace MyNS {
 
 
 	/** The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model.  */
-	export enum HyperParameterTuningJobStrategyType { Bayesian = 0, Random = 1, Hyperband = 2, Grid = 3 }
+	export enum HyperParameterTuningJobStrategyType { Bayesian = 'Bayesian', Random = 'Random', Hyperband = 'Hyperband', Grid = 'Grid' }
 
 
 	/** The configuration for a training job launched by a hyperparameter tuning job. Choose <code>Bayesian</code> for Bayesian optimization, and <code>Random</code> for random search optimization. For more advanced use cases, use <code>Hyperband</code>, which evaluates objective metrics for training jobs after every epoch. For more information about strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>. */
@@ -5299,7 +5299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperParameterScalingType { Auto = 0, Linear = 1, Logarithmic = 2, ReverseLogarithmic = 3 }
+	export enum HyperParameterScalingType { Auto = 'Auto', Linear = 'Linear', Logarithmic = 'Logarithmic', ReverseLogarithmic = 'ReverseLogarithmic' }
 
 
 	/** A list of continuous hyperparameters to tune. */
@@ -5391,7 +5391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingJobEarlyStoppingType { Off = 0, Auto = 1 }
+	export enum TrainingJobEarlyStoppingType { Off = 'Off', Auto = 'Auto' }
 
 
 	/** The job completion criteria. */
@@ -5446,7 +5446,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompleteOnConvergence { Disabled = 0, Enabled = 1 }
+	export enum CompleteOnConvergence { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Defines the training jobs launched by a hyperparameter tuning job. */
@@ -5615,7 +5615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperParameterTuningAllocationStrategy { Prioritized = 0 }
+	export enum HyperParameterTuningAllocationStrategy { Prioritized = 'Prioritized' }
 
 
 	/** The configuration for hyperparameter tuning resources for use in training jobs launched by the tuning job. These resources include compute instances and storage volumes. Specify one or more compute instance configurations and allocation strategies to select resources (optional). */
@@ -5703,7 +5703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperParameterTuningJobWarmStartType { IdenticalDataAndAlgorithm = 0, TransferLearning = 1 }
+	export enum HyperParameterTuningJobWarmStartType { IdenticalDataAndAlgorithm = 'IdenticalDataAndAlgorithm', TransferLearning = 'TransferLearning' }
 
 
 	/** <p>A flag to indicate if you want to use Autotune to automatically find optimal values for the following fields:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges">ParameterRanges</a>: The names and ranges of parameters that a hyperparameter tuning job can optimize.</p> </li> <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>: The maximum resources that can be used for a training job. These resources include the maximum number of training jobs, the maximum runtime of a tuning job, and the maximum number of training jobs to run at the same time.</p> </li> <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType">TrainingJobEarlyStoppingType</a>: A flag that specifies whether or not to use early stopping for training jobs launched by a hyperparameter tuning job.</p> </li> <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy">RetryStrategy</a>: The number of times to retry a training job.</p> </li> <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">Strategy</a>: Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training jobs that it launches.</p> </li> <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html">ConvergenceDetected</a>: A flag to indicate that Automatic model tuning (AMT) has detected model convergence.</p> </li> </ul> */
@@ -5726,7 +5726,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutotuneMode { Enabled = 0 }
+	export enum AutotuneMode { Enabled = 'Enabled' }
 
 	export interface CreateImageResponse {
 		ImageArn?: string;
@@ -5838,11 +5838,11 @@ export namespace MyNS {
 
 	}
 
-	export enum VendorGuidance { NOT_PROVIDED = 0, STABLE = 1, TO_BE_ARCHIVED = 2, ARCHIVED = 3 }
+	export enum VendorGuidance { NOT_PROVIDED = 'NOT_PROVIDED', STABLE = 'STABLE', TO_BE_ARCHIVED = 'TO_BE_ARCHIVED', ARCHIVED = 'ARCHIVED' }
 
-	export enum JobType { TRAINING = 0, INFERENCE = 1, NOTEBOOK_KERNEL = 2 }
+	export enum JobType { TRAINING = 'TRAINING', INFERENCE = 'INFERENCE', NOTEBOOK_KERNEL = 'NOTEBOOK_KERNEL' }
 
-	export enum Processor { CPU = 0, GPU = 1 }
+	export enum Processor { CPU = 'CPU', GPU = 'GPU' }
 
 	export interface CreateInferenceExperimentResponse {
 
@@ -5914,7 +5914,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InferenceExperimentType { ShadowMode = 0 }
+	export enum InferenceExperimentType { ShadowMode = 'ShadowMode' }
 
 
 	/** <p>The start and end times of an inference experiment.</p> <p>The maximum duration that you can set for an inference experiment is 30 days.</p> */
@@ -5991,7 +5991,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelInfrastructureType { RealTimeInference = 0 }
+	export enum ModelInfrastructureType { RealTimeInference = 'RealTimeInference' }
 
 
 	/** The infrastructure configuration for deploying the model to a real-time inference endpoint. */
@@ -6021,7 +6021,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceType { 'ml.t2.medium' = 0, 'ml.t2.large' = 1, 'ml.t2.xlarge' = 2, 'ml.t2.2xlarge' = 3, 'ml.t3.medium' = 4, 'ml.t3.large' = 5, 'ml.t3.xlarge' = 6, 'ml.t3.2xlarge' = 7, 'ml.m4.xlarge' = 8, 'ml.m4.2xlarge' = 9, 'ml.m4.4xlarge' = 10, 'ml.m4.10xlarge' = 11, 'ml.m4.16xlarge' = 12, 'ml.m5.xlarge' = 13, 'ml.m5.2xlarge' = 14, 'ml.m5.4xlarge' = 15, 'ml.m5.12xlarge' = 16, 'ml.m5.24xlarge' = 17, 'ml.m5d.large' = 18, 'ml.m5d.xlarge' = 19, 'ml.m5d.2xlarge' = 20, 'ml.m5d.4xlarge' = 21, 'ml.m5d.8xlarge' = 22, 'ml.m5d.12xlarge' = 23, 'ml.m5d.16xlarge' = 24, 'ml.m5d.24xlarge' = 25, 'ml.c4.xlarge' = 26, 'ml.c4.2xlarge' = 27, 'ml.c4.4xlarge' = 28, 'ml.c4.8xlarge' = 29, 'ml.c5.xlarge' = 30, 'ml.c5.2xlarge' = 31, 'ml.c5.4xlarge' = 32, 'ml.c5.9xlarge' = 33, 'ml.c5.18xlarge' = 34, 'ml.c5d.xlarge' = 35, 'ml.c5d.2xlarge' = 36, 'ml.c5d.4xlarge' = 37, 'ml.c5d.9xlarge' = 38, 'ml.c5d.18xlarge' = 39, 'ml.p2.xlarge' = 40, 'ml.p2.8xlarge' = 41, 'ml.p2.16xlarge' = 42, 'ml.p3.2xlarge' = 43, 'ml.p3.8xlarge' = 44, 'ml.p3.16xlarge' = 45, 'ml.p3dn.24xlarge' = 46, 'ml.g4dn.xlarge' = 47, 'ml.g4dn.2xlarge' = 48, 'ml.g4dn.4xlarge' = 49, 'ml.g4dn.8xlarge' = 50, 'ml.g4dn.12xlarge' = 51, 'ml.g4dn.16xlarge' = 52, 'ml.r5.large' = 53, 'ml.r5.xlarge' = 54, 'ml.r5.2xlarge' = 55, 'ml.r5.4xlarge' = 56, 'ml.r5.8xlarge' = 57, 'ml.r5.12xlarge' = 58, 'ml.r5.16xlarge' = 59, 'ml.r5.24xlarge' = 60, 'ml.g5.xlarge' = 61, 'ml.g5.2xlarge' = 62, 'ml.g5.4xlarge' = 63, 'ml.g5.8xlarge' = 64, 'ml.g5.16xlarge' = 65, 'ml.g5.12xlarge' = 66, 'ml.g5.24xlarge' = 67, 'ml.g5.48xlarge' = 68, 'ml.inf1.xlarge' = 69, 'ml.inf1.2xlarge' = 70, 'ml.inf1.6xlarge' = 71, 'ml.inf1.24xlarge' = 72, 'ml.p4d.24xlarge' = 73, 'ml.p4de.24xlarge' = 74 }
+	export enum InstanceType { 'ml.t2.medium' = 'ml.t2.medium', 'ml.t2.large' = 'ml.t2.large', 'ml.t2.xlarge' = 'ml.t2.xlarge', 'ml.t2.2xlarge' = 'ml.t2.2xlarge', 'ml.t3.medium' = 'ml.t3.medium', 'ml.t3.large' = 'ml.t3.large', 'ml.t3.xlarge' = 'ml.t3.xlarge', 'ml.t3.2xlarge' = 'ml.t3.2xlarge', 'ml.m4.xlarge' = 'ml.m4.xlarge', 'ml.m4.2xlarge' = 'ml.m4.2xlarge', 'ml.m4.4xlarge' = 'ml.m4.4xlarge', 'ml.m4.10xlarge' = 'ml.m4.10xlarge', 'ml.m4.16xlarge' = 'ml.m4.16xlarge', 'ml.m5.xlarge' = 'ml.m5.xlarge', 'ml.m5.2xlarge' = 'ml.m5.2xlarge', 'ml.m5.4xlarge' = 'ml.m5.4xlarge', 'ml.m5.12xlarge' = 'ml.m5.12xlarge', 'ml.m5.24xlarge' = 'ml.m5.24xlarge', 'ml.m5d.large' = 'ml.m5d.large', 'ml.m5d.xlarge' = 'ml.m5d.xlarge', 'ml.m5d.2xlarge' = 'ml.m5d.2xlarge', 'ml.m5d.4xlarge' = 'ml.m5d.4xlarge', 'ml.m5d.8xlarge' = 'ml.m5d.8xlarge', 'ml.m5d.12xlarge' = 'ml.m5d.12xlarge', 'ml.m5d.16xlarge' = 'ml.m5d.16xlarge', 'ml.m5d.24xlarge' = 'ml.m5d.24xlarge', 'ml.c4.xlarge' = 'ml.c4.xlarge', 'ml.c4.2xlarge' = 'ml.c4.2xlarge', 'ml.c4.4xlarge' = 'ml.c4.4xlarge', 'ml.c4.8xlarge' = 'ml.c4.8xlarge', 'ml.c5.xlarge' = 'ml.c5.xlarge', 'ml.c5.2xlarge' = 'ml.c5.2xlarge', 'ml.c5.4xlarge' = 'ml.c5.4xlarge', 'ml.c5.9xlarge' = 'ml.c5.9xlarge', 'ml.c5.18xlarge' = 'ml.c5.18xlarge', 'ml.c5d.xlarge' = 'ml.c5d.xlarge', 'ml.c5d.2xlarge' = 'ml.c5d.2xlarge', 'ml.c5d.4xlarge' = 'ml.c5d.4xlarge', 'ml.c5d.9xlarge' = 'ml.c5d.9xlarge', 'ml.c5d.18xlarge' = 'ml.c5d.18xlarge', 'ml.p2.xlarge' = 'ml.p2.xlarge', 'ml.p2.8xlarge' = 'ml.p2.8xlarge', 'ml.p2.16xlarge' = 'ml.p2.16xlarge', 'ml.p3.2xlarge' = 'ml.p3.2xlarge', 'ml.p3.8xlarge' = 'ml.p3.8xlarge', 'ml.p3.16xlarge' = 'ml.p3.16xlarge', 'ml.p3dn.24xlarge' = 'ml.p3dn.24xlarge', 'ml.g4dn.xlarge' = 'ml.g4dn.xlarge', 'ml.g4dn.2xlarge' = 'ml.g4dn.2xlarge', 'ml.g4dn.4xlarge' = 'ml.g4dn.4xlarge', 'ml.g4dn.8xlarge' = 'ml.g4dn.8xlarge', 'ml.g4dn.12xlarge' = 'ml.g4dn.12xlarge', 'ml.g4dn.16xlarge' = 'ml.g4dn.16xlarge', 'ml.r5.large' = 'ml.r5.large', 'ml.r5.xlarge' = 'ml.r5.xlarge', 'ml.r5.2xlarge' = 'ml.r5.2xlarge', 'ml.r5.4xlarge' = 'ml.r5.4xlarge', 'ml.r5.8xlarge' = 'ml.r5.8xlarge', 'ml.r5.12xlarge' = 'ml.r5.12xlarge', 'ml.r5.16xlarge' = 'ml.r5.16xlarge', 'ml.r5.24xlarge' = 'ml.r5.24xlarge', 'ml.g5.xlarge' = 'ml.g5.xlarge', 'ml.g5.2xlarge' = 'ml.g5.2xlarge', 'ml.g5.4xlarge' = 'ml.g5.4xlarge', 'ml.g5.8xlarge' = 'ml.g5.8xlarge', 'ml.g5.16xlarge' = 'ml.g5.16xlarge', 'ml.g5.12xlarge' = 'ml.g5.12xlarge', 'ml.g5.24xlarge' = 'ml.g5.24xlarge', 'ml.g5.48xlarge' = 'ml.g5.48xlarge', 'ml.inf1.xlarge' = 'ml.inf1.xlarge', 'ml.inf1.2xlarge' = 'ml.inf1.2xlarge', 'ml.inf1.6xlarge' = 'ml.inf1.6xlarge', 'ml.inf1.24xlarge' = 'ml.inf1.24xlarge', 'ml.p4d.24xlarge' = 'ml.p4d.24xlarge', 'ml.p4de.24xlarge' = 'ml.p4de.24xlarge' }
 
 
 	/** The Amazon S3 location and configuration for storing inference request and response data. */
@@ -6159,7 +6159,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationJobType { Default = 0, Advanced = 1 }
+	export enum RecommendationJobType { Default = 'Default', Advanced = 'Advanced' }
 
 
 	/** The input configuration of the recommendation job. */
@@ -6212,7 +6212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrafficType { PHASES = 0, STAIRS = 1 }
+	export enum TrafficType { PHASES = 'PHASES', STAIRS = 'STAIRS' }
 
 
 	/** Defines the traffic pattern. */
@@ -6398,7 +6398,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationJobSupportedEndpointType { RealTime = 0, Serverless = 1 }
+	export enum RecommendationJobSupportedEndpointType { RealTime = 'RealTime', Serverless = 'Serverless' }
 
 
 	/** Details about a customer endpoint that was compared in an Inference Recommender job. */
@@ -6482,7 +6482,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlatInvocations { Continue = 0, Stop = 1 }
+	export enum FlatInvocations { Continue = 'Continue', Stop = 'Stop' }
 
 
 	/** Provides information about the output configuration for the compiled model. */
@@ -6673,7 +6673,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
+	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 'FreeOfPersonallyIdentifiableInformation', FreeOfAdultContent = 'FreeOfAdultContent' }
 
 
 	/** Output configuration information for a labeling job. */
@@ -6985,7 +6985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryAccessMode { Platform = 0, Vpc = 1 }
+	export enum RepositoryAccessMode { Platform = 'Platform', Vpc = 'Vpc' }
 
 
 	/** Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field of the <code>ImageConfig</code> object that you passed to a call to <code>CreateModel</code> and the private Docker registry where the model image is hosted requires authentication. */
@@ -7008,7 +7008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerMode { SingleModel = 0, MultiModel = 1 }
+	export enum ContainerMode { SingleModel = 'SingleModel', MultiModel = 'MultiModel' }
 
 
 	/** Specifies additional configuration for hosting multi-model endpoints. */
@@ -7027,7 +7027,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelCacheSetting { Enabled = 0, Disabled = 1 }
+	export enum ModelCacheSetting { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Specifies the location of ML model data to deploy. If specified, you must specify one and only one of the available data sources. */
@@ -7081,7 +7081,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3ModelDataType { S3Prefix = 0, S3Object = 1 }
+	export enum S3ModelDataType { S3Prefix = 'S3Prefix', S3Object = 'S3Object' }
 
 
 	/** Specifies details about how containers in a multi-container endpoint are run. */
@@ -7104,7 +7104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InferenceExecutionMode { Serial = 0, Direct = 1 }
+	export enum InferenceExecutionMode { Serial = 'Serial', Direct = 'Direct' }
 
 	export interface CreateModelBiasJobDefinitionResponse {
 
@@ -7325,7 +7325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelCardStatus { Draft = 0, PendingReview = 1, Approved = 2, Archived = 3 }
+	export enum ModelCardStatus { Draft = 'Draft', PendingReview = 'PendingReview', Approved = 'Approved', Archived = 'Archived' }
 
 	export interface ConflictException {
 	}
@@ -7691,7 +7691,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelApprovalStatus { Approved = 0, Rejected = 1, PendingManualApproval = 2 }
+	export enum ModelApprovalStatus { Approved = 'Approved', Rejected = 'Rejected', PendingManualApproval = 'PendingManualApproval' }
 
 
 	/** Contains metrics captured from a model. */
@@ -8339,7 +8339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitoringType { DataQuality = 0, ModelQuality = 1, ModelBias = 2, ModelExplainability = 3 }
+	export enum MonitoringType { DataQuality = 'DataQuality', ModelQuality = 'ModelQuality', ModelBias = 'ModelBias', ModelExplainability = 'ModelExplainability' }
 
 	export interface CreateNotebookInstanceOutput {
 		NotebookInstanceArn?: string;
@@ -8414,7 +8414,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotebookInstanceAcceleratorType { 'ml.eia1.medium' = 0, 'ml.eia1.large' = 1, 'ml.eia1.xlarge' = 2, 'ml.eia2.medium' = 3, 'ml.eia2.large' = 4, 'ml.eia2.xlarge' = 5 }
+	export enum NotebookInstanceAcceleratorType { 'ml.eia1.medium' = 'ml.eia1.medium', 'ml.eia1.large' = 'ml.eia1.large', 'ml.eia1.xlarge' = 'ml.eia1.xlarge', 'ml.eia2.medium' = 'ml.eia2.medium', 'ml.eia2.large' = 'ml.eia2.large', 'ml.eia2.xlarge' = 'ml.eia2.xlarge' }
 
 
 	/** Information on the IMDS configuration of the notebook instance */
@@ -8795,7 +8795,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessingS3DataType { ManifestFile = 0, S3Prefix = 1 }
+	export enum ProcessingS3DataType { ManifestFile = 'ManifestFile', S3Prefix = 'S3Prefix' }
 
 
 	/** Configuration for Dataset Definition inputs. The Dataset Definition input must specify exactly one of either <code>AthenaDatasetDefinition</code> or <code>RedshiftDatasetDefinition</code> types. */
@@ -8936,9 +8936,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AthenaDatasetDefinitionOutputFormat { PARQUET = 0, ORC = 1, AVRO = 2, JSON = 3, TEXTFILE = 4 }
+	export enum AthenaDatasetDefinitionOutputFormat { PARQUET = 'PARQUET', ORC = 'ORC', AVRO = 'AVRO', JSON = 'JSON', TEXTFILE = 'TEXTFILE' }
 
-	export enum AthenaDatasetDefinitionOutputCompression { GZIP = 0, SNAPPY = 1, ZLIB = 2 }
+	export enum AthenaDatasetDefinitionOutputCompression { GZIP = 'GZIP', SNAPPY = 'SNAPPY', ZLIB = 'ZLIB' }
 
 
 	/** Configuration for Redshift Dataset Definition input. */
@@ -9059,9 +9059,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RedshiftDatasetDefinitionOutputFormat { PARQUET = 0, CSV = 1 }
+	export enum RedshiftDatasetDefinitionOutputFormat { PARQUET = 'PARQUET', CSV = 'CSV' }
 
-	export enum RedshiftDatasetDefinitionOutputCompression { None = 0, GZIP = 1, BZIP2 = 2, ZSTD = 3, SNAPPY = 4 }
+	export enum RedshiftDatasetDefinitionOutputCompression { None = 'None', GZIP = 'GZIP', BZIP2 = 'BZIP2', ZSTD = 'ZSTD', SNAPPY = 'SNAPPY' }
 
 
 	/** Configuration for uploading output from the processing container. */
@@ -9500,7 +9500,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StudioLifecycleConfigAppType { JupyterServer = 0, KernelGateway = 1 }
+	export enum StudioLifecycleConfigAppType { JupyterServer = 'JupyterServer', KernelGateway = 'KernelGateway' }
 
 	export interface CreateTrainingJobResponse {
 
@@ -10029,7 +10029,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JoinSource { Input = 0, None = 1 }
+	export enum JoinSource { Input = 'Input', None = 'None' }
 
 	export interface CreateTrialResponse {
 		TrialArn?: string;
@@ -10142,7 +10142,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrialComponentPrimaryStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }
+	export enum TrialComponentPrimaryStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
 	export interface TrialComponentParameters {
 	}
@@ -10798,7 +10798,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RetentionType { Retain = 0, Delete = 1 }
+	export enum RetentionType { Retain = 'Retain', Delete = 'Delete' }
 
 	export interface DeleteEdgeDeploymentPlanRequest {
 
@@ -11004,7 +11004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HubContentType { Model = 0, Notebook = 1 }
+	export enum HubContentType { Model = 'Model', Notebook = 'Notebook' }
 
 	export interface DeleteHumanTaskUiResponse {
 	}
@@ -11768,7 +11768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmStatus { Pending = 0, InProgress = 1, Completed = 2, Failed = 3, Deleting = 4 }
+	export enum AlgorithmStatus { Pending = 'Pending', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Deleting = 'Deleting' }
 
 
 	/** Specifies the validation and image scan statuses of the algorithm. */
@@ -11817,7 +11817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetailedAlgorithmStatus { NotStarted = 0, InProgress = 1, Completed = 2, Failed = 3 }
+	export enum DetailedAlgorithmStatus { NotStarted = 'NotStarted', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed' }
 
 	export interface DescribeAlgorithmInput {
 
@@ -11880,7 +11880,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStatus { Deleted = 0, Deleting = 1, Failed = 2, InService = 3, Pending = 4 }
+	export enum AppStatus { Deleted = 'Deleted', Deleting = 'Deleting', Failed = 'Failed', InService = 'InService', Pending = 'Pending' }
 
 	export interface DescribeAppRequest {
 
@@ -12215,7 +12215,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectiveStatus { Succeeded = 0, Pending = 1, Failed = 2 }
+	export enum ObjectiveStatus { Succeeded = 'Succeeded', Pending = 'Pending', Failed = 'Failed' }
 
 
 	/** Information about the steps for a candidate and what step it is working on. */
@@ -12252,9 +12252,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CandidateStepType { 'AWS::SageMaker::TrainingJob' = 0, 'AWS::SageMaker::TransformJob' = 1, 'AWS::SageMaker::ProcessingJob' = 2 }
+	export enum CandidateStepType { 'AWS::SageMaker::TrainingJob' = 'AWS::SageMaker::TrainingJob', 'AWS::SageMaker::TransformJob' = 'AWS::SageMaker::TransformJob', 'AWS::SageMaker::ProcessingJob' = 'AWS::SageMaker::ProcessingJob' }
 
-	export enum CandidateStatus { Completed = 0, InProgress = 1, Failed = 2, Stopped = 3, Stopping = 4 }
+	export enum CandidateStatus { Completed = 'Completed', InProgress = 'InProgress', Failed = 'Failed', Stopped = 'Stopped', Stopping = 'Stopping' }
 
 
 	/** A list of container definitions that describe the different containers that make up an AutoML candidate. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html"> ContainerDefinition</a>. */
@@ -12354,9 +12354,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricSetSource { Train = 0, Validation = 1, Test = 2 }
+	export enum MetricSetSource { Train = 'Train', Validation = 'Validation', Test = 'Test' }
 
-	export enum AutoMLMetricExtendedEnum { Accuracy = 0, MSE = 1, F1 = 2, F1macro = 3, AUC = 4, RMSE = 5, MAE = 6, R2 = 7, BalancedAccuracy = 8, Precision = 9, PrecisionMacro = 10, Recall = 11, RecallMacro = 12, LogLoss = 13, InferenceLatency = 14, MAPE = 15, MASE = 16, WAPE = 17, AverageWeightedQuantileLoss = 18 }
+	export enum AutoMLMetricExtendedEnum { Accuracy = 'Accuracy', MSE = 'MSE', F1 = 'F1', F1macro = 'F1macro', AUC = 'AUC', RMSE = 'RMSE', MAE = 'MAE', R2 = 'R2', BalancedAccuracy = 'BalancedAccuracy', Precision = 'Precision', PrecisionMacro = 'PrecisionMacro', Recall = 'Recall', RecallMacro = 'RecallMacro', LogLoss = 'LogLoss', InferenceLatency = 'InferenceLatency', MAPE = 'MAPE', MASE = 'MASE', WAPE = 'WAPE', AverageWeightedQuantileLoss = 'AverageWeightedQuantileLoss' }
 
 
 	/** The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>). */
@@ -12372,7 +12372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoMLJobSecondaryStatus { Starting = 0, AnalyzingData = 1, FeatureEngineering = 2, ModelTuning = 3, MaxCandidatesReached = 4, Failed = 5, Stopped = 6, MaxAutoMLJobRuntimeReached = 7, Stopping = 8, CandidateDefinitionsGenerated = 9, GeneratingExplainabilityReport = 10, Completed = 11, ExplainabilityError = 12, DeployingModel = 13, ModelDeploymentError = 14, GeneratingModelInsightsReport = 15, ModelInsightsError = 16, TrainingModels = 17, PreTraining = 18 }
+	export enum AutoMLJobSecondaryStatus { Starting = 'Starting', AnalyzingData = 'AnalyzingData', FeatureEngineering = 'FeatureEngineering', ModelTuning = 'ModelTuning', MaxCandidatesReached = 'MaxCandidatesReached', Failed = 'Failed', Stopped = 'Stopped', MaxAutoMLJobRuntimeReached = 'MaxAutoMLJobRuntimeReached', Stopping = 'Stopping', CandidateDefinitionsGenerated = 'CandidateDefinitionsGenerated', GeneratingExplainabilityReport = 'GeneratingExplainabilityReport', Completed = 'Completed', ExplainabilityError = 'ExplainabilityError', DeployingModel = 'DeployingModel', ModelDeploymentError = 'ModelDeploymentError', GeneratingModelInsightsReport = 'GeneratingModelInsightsReport', ModelInsightsError = 'ModelInsightsError', TrainingModels = 'TrainingModels', PreTraining = 'PreTraining' }
 
 
 	/** The artifacts that are generated during an AutoML job. */
@@ -12590,7 +12590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoMLProblemTypeConfigName { ImageClassification = 0, TextClassification = 1, Tabular = 2, TimeSeriesForecasting = 3 }
+	export enum AutoMLProblemTypeConfigName { ImageClassification = 'ImageClassification', TextClassification = 'TextClassification', Tabular = 'Tabular', TimeSeriesForecasting = 'TimeSeriesForecasting' }
 
 	export interface DescribeAutoMLJobV2Request {
 
@@ -12750,7 +12750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompilationJobStatus { INPROGRESS = 0, COMPLETED = 1, FAILED = 2, STARTING = 3, STOPPING = 4, STOPPED = 5 }
+	export enum CompilationJobStatus { INPROGRESS = 'INPROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', STARTING = 'STARTING', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model definition that describes how to compute inferences, and other metadata.</p> */
@@ -13187,7 +13187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { Deleting = 0, Failed = 1, InService = 2, Pending = 3, Updating = 4, Update_Failed = 5, Delete_Failed = 6 }
+	export enum DomainStatus { Deleting = 'Deleting', Failed = 'Failed', InService = 'InService', Pending = 'Pending', Updating = 'Updating', Update_Failed = 'Update_Failed', Delete_Failed = 'Delete_Failed' }
 
 	export interface DescribeDomainRequest {
 
@@ -13339,7 +13339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StageStatus { CREATING = 0, READYTODEPLOY = 1, STARTING = 2, INPROGRESS = 3, DEPLOYED = 4, FAILED = 5, STOPPING = 6, STOPPED = 7 }
+	export enum StageStatus { CREATING = 'CREATING', READYTODEPLOY = 'READYTODEPLOY', STARTING = 'STARTING', INPROGRESS = 'INPROGRESS', DEPLOYED = 'DEPLOYED', FAILED = 'FAILED', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 	export interface DescribeEdgeDeploymentPlanRequest {
 
@@ -13427,7 +13427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EdgePackagingJobStatus { STARTING = 0, INPROGRESS = 1, COMPLETED = 2, FAILED = 3, STOPPING = 4, STOPPED = 5 }
+	export enum EdgePackagingJobStatus { STARTING = 'STARTING', INPROGRESS = 'INPROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** The output of a SageMaker Edge Manager deployable resource. */
@@ -13459,7 +13459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EdgePresetDeploymentStatus { COMPLETED = 0, FAILED = 1 }
+	export enum EdgePresetDeploymentStatus { COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface DescribeEdgePackagingJobRequest {
 
@@ -13629,7 +13629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VariantStatus { Creating = 0, Updating = 1, Deleting = 2, ActivatingTraffic = 3, Baking = 4 }
+	export enum VariantStatus { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', ActivatingTraffic = 'ActivatingTraffic', Baking = 'Baking' }
 
 
 	/** The currently active data capture configuration used by your Endpoint. */
@@ -13680,9 +13680,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CaptureStatus { Started = 0, Stopped = 1 }
+	export enum CaptureStatus { Started = 'Started', Stopped = 'Stopped' }
 
-	export enum EndpointStatus { OutOfService = 0, Creating = 1, Updating = 2, SystemUpdating = 3, RollingBack = 4, InService = 5, Deleting = 6, Failed = 7, UpdateRollbackFailed = 8 }
+	export enum EndpointStatus { OutOfService = 'OutOfService', Creating = 'Creating', Updating = 'Updating', SystemUpdating = 'SystemUpdating', RollingBack = 'RollingBack', InService = 'InService', Deleting = 'Deleting', Failed = 'Failed', UpdateRollbackFailed = 'UpdateRollbackFailed' }
 
 
 	/** The summary of an in-progress deployment when an endpoint is creating or updating with a new endpoint configuration. */
@@ -13979,7 +13979,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureGroupStatus { Creating = 0, Created = 1, CreateFailed = 2, Deleting = 3, DeleteFailed = 4 }
+	export enum FeatureGroupStatus { Creating = 'Creating', Created = 'Created', CreateFailed = 'CreateFailed', Deleting = 'Deleting', DeleteFailed = 'DeleteFailed' }
 
 
 	/** The status of <code>OfflineStore</code>. */
@@ -14005,7 +14005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OfflineStoreStatusValue { Active = 0, Blocked = 1, Disabled = 2 }
+	export enum OfflineStoreStatusValue { Active = 'Active', Blocked = 'Blocked', Disabled = 'Disabled' }
 
 
 	/** A value that indicates whether the update was successful. */
@@ -14031,7 +14031,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LastUpdateStatusValue { Successful = 0, Failed = 1, InProgress = 2 }
+	export enum LastUpdateStatusValue { Successful = 'Successful', Failed = 'Failed', InProgress = 'InProgress' }
 
 	export interface DescribeFeatureGroupRequest {
 
@@ -14209,7 +14209,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlowDefinitionStatus { Initializing = 0, Active = 1, Failed = 2, Deleting = 3 }
+	export enum FlowDefinitionStatus { Initializing = 'Initializing', Active = 'Active', Failed = 'Failed', Deleting = 'Deleting' }
 
 	export interface DescribeFlowDefinitionRequest {
 
@@ -14284,7 +14284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HubStatus { InService = 0, Creating = 1, Updating = 2, Deleting = 3, CreateFailed = 4, UpdateFailed = 5, DeleteFailed = 6 }
+	export enum HubStatus { InService = 'InService', Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', CreateFailed = 'CreateFailed', UpdateFailed = 'UpdateFailed', DeleteFailed = 'DeleteFailed' }
 
 	export interface DescribeHubRequest {
 
@@ -14417,7 +14417,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HubContentStatus { Available = 0, Importing = 1, Deleting = 2, ImportFailed = 3, DeleteFailed = 4 }
+	export enum HubContentStatus { Available = 'Available', Importing = 'Importing', Deleting = 'Deleting', ImportFailed = 'ImportFailed', DeleteFailed = 'DeleteFailed' }
 
 	export interface DescribeHubContentRequest {
 
@@ -14493,7 +14493,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HumanTaskUiStatus { Active = 0, Deleting = 1 }
+	export enum HumanTaskUiStatus { Active = 'Active', Deleting = 'Deleting' }
 
 
 	/** Container for user interface template information. */
@@ -14836,7 +14836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageStatus { CREATING = 0, CREATED = 1, CREATE_FAILED = 2, UPDATING = 3, UPDATE_FAILED = 4, DELETING = 5, DELETE_FAILED = 6 }
+	export enum ImageStatus { CREATING = 'CREATING', CREATED = 'CREATED', CREATE_FAILED = 'CREATE_FAILED', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface DescribeImageRequest {
 
@@ -14913,7 +14913,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageVersionStatus { CREATING = 0, CREATED = 1, CREATE_FAILED = 2, DELETING = 3, DELETE_FAILED = 4 }
+	export enum ImageVersionStatus { CREATING = 'CREATING', CREATED = 'CREATED', CREATE_FAILED = 'CREATE_FAILED', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface DescribeImageVersionRequest {
 
@@ -15006,7 +15006,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InferenceExperimentStatus { Creating = 0, Created = 1, Updating = 2, Running = 3, Starting = 4, Stopping = 5, Completed = 6, Cancelled = 7 }
+	export enum InferenceExperimentStatus { Creating = 'Creating', Created = 'Created', Updating = 'Updating', Running = 'Running', Starting = 'Starting', Stopping = 'Stopping', Completed = 'Completed', Cancelled = 'Cancelled' }
 
 
 	/** The metadata of the endpoint. */
@@ -15076,7 +15076,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelVariantStatus { Creating = 0, Updating = 1, InService = 2, Deleting = 3, Deleted = 4 }
+	export enum ModelVariantStatus { Creating = 'Creating', Updating = 'Updating', InService = 'InService', Deleting = 'Deleting', Deleted = 'Deleted' }
 
 	export interface DescribeInferenceExperimentRequest {
 
@@ -15169,7 +15169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationJobStatus { PENDING = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3, STOPPING = 4, STOPPED = 5 }
+	export enum RecommendationJobStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** A list of recommendations made by Amazon SageMaker Inference Recommender. */
@@ -15499,7 +15499,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelingJobStatus { Initializing = 0, InProgress = 1, Completed = 2, Failed = 3, Stopping = 4, Stopped = 5 }
+	export enum LabelingJobStatus { Initializing = 'Initializing', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
 
 	/** Provides a breakdown of the number of objects labeled. */
@@ -15690,7 +15690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, NOT_APPLICABLE = 3 }
+	export enum RecommendationStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', NOT_APPLICABLE = 'NOT_APPLICABLE' }
 
 
 	/** The recommended configuration to use for Real-Time Inference. */
@@ -15884,7 +15884,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelCardProcessingStatus { DeleteInProgress = 0, DeletePending = 1, ContentDeleted = 2, ExportJobsDeleted = 3, DeleteCompleted = 4, DeleteFailed = 5 }
+	export enum ModelCardProcessingStatus { DeleteInProgress = 'DeleteInProgress', DeletePending = 'DeletePending', ContentDeleted = 'ContentDeleted', ExportJobsDeleted = 'ExportJobsDeleted', DeleteCompleted = 'DeleteCompleted', DeleteFailed = 'DeleteFailed' }
 
 	export interface DescribeModelCardRequest {
 
@@ -15972,7 +15972,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelCardExportJobStatus { InProgress = 0, Completed = 1, Failed = 2 }
+	export enum ModelCardExportJobStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed' }
 
 
 	/** The artifacts of the model card export job. */
@@ -16290,7 +16290,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelPackageGroupStatus { Pending = 0, InProgress = 1, Completed = 2, Failed = 3, Deleting = 4, DeleteFailed = 5 }
+	export enum ModelPackageGroupStatus { Pending = 'Pending', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Deleting = 'Deleting', DeleteFailed = 'DeleteFailed' }
 
 	export interface DescribeModelPackageGroupInput {
 
@@ -16445,7 +16445,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleStatus { Pending = 0, Failed = 1, Scheduled = 2, Stopped = 3 }
+	export enum ScheduleStatus { Pending = 'Pending', Failed = 'Failed', Scheduled = 'Scheduled', Stopped = 'Stopped' }
 
 
 	/** Summary of information about the last monitoring job to run. */
@@ -16511,7 +16511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStatus { Pending = 0, Completed = 1, CompletedWithViolations = 2, InProgress = 3, Failed = 4, Stopping = 5, Stopped = 6 }
+	export enum ExecutionStatus { Pending = 'Pending', Completed = 'Completed', CompletedWithViolations = 'CompletedWithViolations', InProgress = 'InProgress', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
 	export interface DescribeMonitoringScheduleRequest {
 
@@ -16598,7 +16598,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotebookInstanceStatus { Pending = 0, InService = 1, Stopping = 2, Stopped = 3, Failed = 4, Deleting = 5, Updating = 6 }
+	export enum NotebookInstanceStatus { Pending = 'Pending', InService = 'InService', Stopping = 'Stopping', Stopped = 'Stopped', Failed = 'Failed', Deleting = 'Deleting', Updating = 'Updating' }
 
 	export interface DescribeNotebookInstanceInput {
 
@@ -16705,7 +16705,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineStatus { Active = 0 }
+	export enum PipelineStatus { Active = 'Active' }
 
 	export interface DescribePipelineRequest {
 
@@ -16802,7 +16802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineExecutionStatus { Executing = 0, Stopping = 1, Stopped = 2, Failed = 3, Succeeded = 4 }
+	export enum PipelineExecutionStatus { Executing = 'Executing', Stopping = 'Stopping', Stopped = 'Stopped', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 
 	/** Specifies the names of the experiment and trial created by a pipeline. */
@@ -17061,7 +17061,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectStatus { Pending = 0, CreateInProgress = 1, CreateCompleted = 2, CreateFailed = 3, DeleteInProgress = 4, DeleteFailed = 5, DeleteCompleted = 6, UpdateInProgress = 7, UpdateCompleted = 8, UpdateFailed = 9 }
+	export enum ProjectStatus { Pending = 'Pending', CreateInProgress = 'CreateInProgress', CreateCompleted = 'CreateCompleted', CreateFailed = 'CreateFailed', DeleteInProgress = 'DeleteInProgress', DeleteFailed = 'DeleteFailed', DeleteCompleted = 'DeleteCompleted', UpdateInProgress = 'UpdateInProgress', UpdateCompleted = 'UpdateCompleted', UpdateFailed = 'UpdateFailed' }
 
 	export interface DescribeProjectInput {
 
@@ -17374,7 +17374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecondaryStatus { Starting = 0, LaunchingMLInstances = 1, PreparingTrainingStack = 2, Downloading = 3, DownloadingTrainingImage = 4, Training = 5, Uploading = 6, Stopping = 7, Stopped = 8, MaxRuntimeExceeded = 9, Completed = 10, Failed = 11, Interrupted = 12, MaxWaitTimeExceeded = 13, Updating = 14, Restarting = 15 }
+	export enum SecondaryStatus { Starting = 'Starting', LaunchingMLInstances = 'LaunchingMLInstances', PreparingTrainingStack = 'PreparingTrainingStack', Downloading = 'Downloading', DownloadingTrainingImage = 'DownloadingTrainingImage', Training = 'Training', Uploading = 'Uploading', Stopping = 'Stopping', Stopped = 'Stopped', MaxRuntimeExceeded = 'MaxRuntimeExceeded', Completed = 'Completed', Failed = 'Failed', Interrupted = 'Interrupted', MaxWaitTimeExceeded = 'MaxWaitTimeExceeded', Updating = 'Updating', Restarting = 'Restarting' }
 
 
 	/** <p>An array element of <code>SecondaryStatusTransitions</code> for <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status. </p> <p/> */
@@ -17462,7 +17462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleEvaluationStatus { InProgress = 0, NoIssuesFound = 1, IssuesFound = 2, Error = 3, Stopping = 4, Stopped = 5 }
+	export enum RuleEvaluationStatus { InProgress = 'InProgress', NoIssuesFound = 'NoIssuesFound', IssuesFound = 'IssuesFound', Error = 'Error', Stopping = 'Stopping', Stopped = 'Stopped' }
 
 
 	/** Information about the status of the rule evaluation. */
@@ -17520,7 +17520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WarmPoolResourceStatus { Available = 0, Terminated = 1, Reused = 2, InUse = 3 }
+	export enum WarmPoolResourceStatus { Available = 'Available', Terminated = 'Terminated', Reused = 'Reused', InUse = 'InUse' }
 
 	export interface DescribeTrainingJobRequest {
 
@@ -18034,7 +18034,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkforceStatus { Initializing = 0, Updating = 1, Deleting = 2, Failed = 3, Active = 4 }
+	export enum WorkforceStatus { Initializing = 'Initializing', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed', Active = 'Active' }
 
 	export interface DescribeWorkforceRequest {
 
@@ -18649,7 +18649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Statistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }
+	export enum Statistic { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', SampleCount = 'SampleCount', Sum = 'Sum' }
 
 	export interface GetScalingConfigurationRecommendationRequest {
 
@@ -18724,7 +18724,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { TrainingJob = 0, Experiment = 1, ExperimentTrial = 2, ExperimentTrialComponent = 3, Endpoint = 4, ModelPackage = 5, ModelPackageGroup = 6, Pipeline = 7, PipelineExecution = 8, FeatureGroup = 9, Project = 10, FeatureMetadata = 11, HyperParameterTuningJob = 12, ModelCard = 13, Model = 14 }
+	export enum ResourceType { TrainingJob = 'TrainingJob', Experiment = 'Experiment', ExperimentTrial = 'ExperimentTrial', ExperimentTrialComponent = 'ExperimentTrialComponent', Endpoint = 'Endpoint', ModelPackage = 'ModelPackage', ModelPackageGroup = 'ModelPackageGroup', Pipeline = 'Pipeline', PipelineExecution = 'PipelineExecution', FeatureGroup = 'FeatureGroup', Project = 'Project', FeatureMetadata = 'FeatureMetadata', HyperParameterTuningJob = 'HyperParameterTuningJob', ModelCard = 'ModelCard', Model = 'Model' }
 
 
 	/** Specified in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetSearchSuggestions.html">GetSearchSuggestions</a> request. Limits the property names that are included in the response. */
@@ -18926,9 +18926,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SortActionsBy { Name = 0, CreationTime = 1 }
+	export enum SortActionsBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum SortOrder { Ascending = 0, Descending = 1 }
+	export enum SortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 	export interface ListAlgorithmsOutput {
 
@@ -19143,7 +19143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppImageConfigSortKey { CreationTime = 0, LastModifiedTime = 1, Name = 2 }
+	export enum AppImageConfigSortKey { CreationTime = 'CreationTime', LastModifiedTime = 'LastModifiedTime', Name = 'Name' }
 
 	export interface ListAppsResponse {
 		Apps?: Array<AppDetails>;
@@ -19225,7 +19225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppSortKey { CreationTime = 0 }
+	export enum AppSortKey { CreationTime = 'CreationTime' }
 
 	export interface ListArtifactsResponse {
 		ArtifactSummaries?: Array<ArtifactSummary>;
@@ -19403,7 +19403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortAssociationsBy { SourceArn = 0, DestinationArn = 1, SourceType = 2, DestinationType = 3, CreationTime = 4 }
+	export enum SortAssociationsBy { SourceArn = 'SourceArn', DestinationArn = 'DestinationArn', SourceType = 'SourceType', DestinationType = 'DestinationType', CreationTime = 'CreationTime' }
 
 	export interface ListAutoMLJobsResponse {
 
@@ -19524,7 +19524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoMLSortBy { Name = 0, CreationTime = 1, Status = 2 }
+	export enum AutoMLSortBy { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
 	export interface ListCandidatesForAutoMLJobResponse {
 
@@ -19577,7 +19577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CandidateSortBy { CreationTime = 0, Status = 1, FinalObjectiveMetricValue = 2 }
+	export enum CandidateSortBy { CreationTime = 'CreationTime', Status = 'Status', FinalObjectiveMetricValue = 'FinalObjectiveMetricValue' }
 
 	export interface ListCodeRepositoriesOutput {
 
@@ -19675,7 +19675,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodeRepositorySortBy { Name = 0, CreationTime = 1, LastModifiedTime = 2 }
+	export enum CodeRepositorySortBy { Name = 'Name', CreationTime = 'CreationTime', LastModifiedTime = 'LastModifiedTime' }
 
 	export interface ListCompilationJobsResponse {
 
@@ -20053,7 +20053,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListDeviceFleetsSortBy { NAME = 0, CREATION_TIME = 1, LAST_MODIFIED_TIME = 2 }
+	export enum ListDeviceFleetsSortBy { NAME = 'NAME', CREATION_TIME = 'CREATION_TIME', LAST_MODIFIED_TIME = 'LAST_MODIFIED_TIME' }
 
 	export interface ListDevicesResponse {
 
@@ -20354,7 +20354,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListEdgeDeploymentPlansSortBy { NAME = 0, DEVICE_FLEET_NAME = 1, CREATION_TIME = 2, LAST_MODIFIED_TIME = 3 }
+	export enum ListEdgeDeploymentPlansSortBy { NAME = 'NAME', DEVICE_FLEET_NAME = 'DEVICE_FLEET_NAME', CREATION_TIME = 'CREATION_TIME', LAST_MODIFIED_TIME = 'LAST_MODIFIED_TIME' }
 
 	export interface ListEdgePackagingJobsResponse {
 
@@ -20465,7 +20465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListEdgePackagingJobsSortBy { NAME = 0, MODEL_NAME = 1, CREATION_TIME = 2, LAST_MODIFIED_TIME = 3, STATUS = 4 }
+	export enum ListEdgePackagingJobsSortBy { NAME = 'NAME', MODEL_NAME = 'MODEL_NAME', CREATION_TIME = 'CREATION_TIME', LAST_MODIFIED_TIME = 'LAST_MODIFIED_TIME', STATUS = 'STATUS' }
 
 	export interface ListEndpointConfigsOutput {
 
@@ -20824,7 +20824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureGroupSortBy { Name = 0, FeatureGroupStatus = 1, OfflineStoreStatus = 2, CreationTime = 3 }
+	export enum FeatureGroupSortBy { Name = 'Name', FeatureGroupStatus = 'FeatureGroupStatus', OfflineStoreStatus = 'OfflineStoreStatus', CreationTime = 'CreationTime' }
 
 	export interface ListFlowDefinitionsResponse {
 
@@ -21053,7 +21053,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HubContentSortBy { HubContentName = 0, CreationTime = 1, HubContentStatus = 2 }
+	export enum HubContentSortBy { HubContentName = 'HubContentName', CreationTime = 'CreationTime', HubContentStatus = 'HubContentStatus' }
 
 	export interface ListHubContentsResponse {
 
@@ -21228,7 +21228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HubSortBy { HubName = 0, CreationTime = 1, HubStatus = 2, AccountIdOwner = 3 }
+	export enum HubSortBy { HubName = 'HubName', CreationTime = 'CreationTime', HubStatus = 'HubStatus', AccountIdOwner = 'AccountIdOwner' }
 
 	export interface ListHumanTaskUisResponse {
 
@@ -21424,7 +21424,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperParameterTuningJobSortByOptions { Name = 0, Status = 1, CreationTime = 2 }
+	export enum HyperParameterTuningJobSortByOptions { Name = 'Name', Status = 'Status', CreationTime = 'CreationTime' }
 
 	export interface ListImageVersionsResponse {
 		ImageVersions?: Array<ImageVersion>;
@@ -21540,9 +21540,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageVersionSortBy { CREATION_TIME = 0, LAST_MODIFIED_TIME = 1, VERSION = 2 }
+	export enum ImageVersionSortBy { CREATION_TIME = 'CREATION_TIME', LAST_MODIFIED_TIME = 'LAST_MODIFIED_TIME', VERSION = 'VERSION' }
 
-	export enum ImageVersionSortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum ImageVersionSortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListImagesResponse {
 		Images?: Array<Image>;
@@ -21653,7 +21653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageSortBy { CREATION_TIME = 0, LAST_MODIFIED_TIME = 1, IMAGE_NAME = 2 }
+	export enum ImageSortBy { CREATION_TIME = 'CREATION_TIME', LAST_MODIFIED_TIME = 'LAST_MODIFIED_TIME', IMAGE_NAME = 'IMAGE_NAME' }
 
 	export interface ListInferenceExperimentsResponse {
 		InferenceExperiments?: Array<InferenceExperimentSummary>;
@@ -21824,7 +21824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationStepType { BENCHMARK = 0 }
+	export enum RecommendationStepType { BENCHMARK = 'BENCHMARK' }
 
 
 	/** The details for a specific benchmark from an Inference Recommender job. */
@@ -22637,7 +22637,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelCardVersionSortBy { Version = 0 }
+	export enum ModelCardVersionSortBy { Version = 'Version' }
 
 	export interface ListModelCardsResponse {
 
@@ -22909,7 +22909,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelMetadataFilterType { Domain = 0, Framework = 1, Task = 2, FrameworkVersion = 3 }
+	export enum ModelMetadataFilterType { Domain = 'Domain', Framework = 'Framework', Task = 'Task', FrameworkVersion = 'FrameworkVersion' }
 
 	export interface ListModelPackageGroupsOutput {
 
@@ -23113,7 +23113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelPackageType { Versioned = 0, Unversioned = 1, Both = 2 }
+	export enum ModelPackageType { Versioned = 'Versioned', Unversioned = 'Unversioned', Both = 'Both' }
 
 	export interface ListModelQualityJobDefinitionsResponse {
 
@@ -23303,7 +23303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitoringAlertStatus { InAlert = 0, OK = 1 }
+	export enum MonitoringAlertStatus { InAlert = 'InAlert', OK = 'OK' }
 
 	export interface ListMonitoringAlertHistoryRequest {
 		MonitoringScheduleName?: string;
@@ -23342,7 +23342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitoringAlertHistorySortKey { CreationTime = 0, Status = 1 }
+	export enum MonitoringAlertHistorySortKey { CreationTime = 'CreationTime', Status = 'Status' }
 
 	export interface ListMonitoringAlertsResponse {
 		MonitoringAlertSummaries?: Array<MonitoringAlertSummary>;
@@ -23543,7 +23543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitoringExecutionSortKey { CreationTime = 0, ScheduledTime = 1, Status = 2 }
+	export enum MonitoringExecutionSortKey { CreationTime = 'CreationTime', ScheduledTime = 'ScheduledTime', Status = 'Status' }
 
 	export interface ListMonitoringSchedulesResponse {
 
@@ -23921,7 +23921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepStatus { Starting = 0, Executing = 1, Stopping = 2, Stopped = 3, Failed = 4, Succeeded = 5 }
+	export enum StepStatus { Starting = 'Starting', Executing = 'Executing', Stopping = 'Stopping', Stopped = 'Stopped', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 
 	/** Details on the cache hit of a pipeline execution step. */
@@ -24087,7 +24087,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionOutcome { True = 0, False = 1 }
+	export enum ConditionOutcome { True = 'True', False = 'False' }
 
 
 	/** Metadata about a callback step. */
@@ -24418,7 +24418,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortPipelineExecutionsBy { CreationTime = 0, PipelineExecutionArn = 1 }
+	export enum SortPipelineExecutionsBy { CreationTime = 'CreationTime', PipelineExecutionArn = 'PipelineExecutionArn' }
 
 	export interface ListPipelineParametersForExecutionResponse {
 		PipelineParameters?: Array<Parameter>;
@@ -24935,7 +24935,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpaceSortKey { CreationTime = 0, LastModifiedTime = 1 }
+	export enum SpaceSortKey { CreationTime = 'CreationTime', LastModifiedTime = 'LastModifiedTime' }
 
 	export interface ListStageDevicesResponse {
 
@@ -25020,7 +25020,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceDeploymentStatus { READYTODEPLOY = 0, INPROGRESS = 1, DEPLOYED = 2, FAILED = 3, STOPPING = 4, STOPPED = 5 }
+	export enum DeviceDeploymentStatus { READYTODEPLOY = 'READYTODEPLOY', INPROGRESS = 'INPROGRESS', DEPLOYED = 'DEPLOYED', FAILED = 'FAILED', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 	export interface ListStageDevicesRequest {
 		NextToken?: string;
@@ -25366,7 +25366,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingJobSortByOptions { Name = 0, CreationTime = 1, Status = 2, FinalObjectiveMetricValue = 3 }
+	export enum TrainingJobSortByOptions { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status', FinalObjectiveMetricValue = 'FinalObjectiveMetricValue' }
 
 	export interface ListTransformJobsResponse {
 
@@ -25759,7 +25759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListWorkforcesSortByOptions { Name = 0, CreateDate = 1 }
+	export enum ListWorkforcesSortByOptions { Name = 'Name', CreateDate = 'CreateDate' }
 
 	export interface ListWorkteamsResponse {
 
@@ -25881,7 +25881,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineageType { TrialComponent = 0, Artifact = 1, Context = 2, Action = 3 }
+	export enum LineageType { TrialComponent = 'TrialComponent', Artifact = 'Artifact', Context = 'Context', Action = 'Action' }
 
 
 	/** A directed edge connecting two lineage entities. */
@@ -25933,7 +25933,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Direction { Both = 0, Ascendants = 1, Descendants = 2 }
+	export enum Direction { Both = 'Both', Ascendants = 'Ascendants', Descendants = 'Descendants' }
 
 
 	/** A set of filters to narrow the set of lineage entities connected to the <code>StartArn</code>(s) returned by the <code>QueryLineage</code> API action. */
@@ -27513,7 +27513,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator { Equals = 0, NotEquals = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, LessThan = 4, LessThanOrEqualTo = 5, Contains = 6, Exists = 7, NotExists = 8, In = 9 }
+	export enum Operator { Equals = 'Equals', NotEquals = 'NotEquals', GreaterThan = 'GreaterThan', GreaterThanOrEqualTo = 'GreaterThanOrEqualTo', LessThan = 'LessThan', LessThanOrEqualTo = 'LessThanOrEqualTo', Contains = 'Contains', Exists = 'Exists', NotExists = 'NotExists', In = 'In' }
 
 
 	/** <p>A list of nested <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Filter.html">Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.</p> <p>For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters:</p> <ul> <li> <p> <code>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</code> </p> </li> <li> <p> <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code> </p> </li> </ul> */
@@ -27539,9 +27539,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BooleanOperator { And = 0, Or = 1 }
+	export enum BooleanOperator { And = 'And', Or = 'Or' }
 
-	export enum CrossAccountFilterOption { SameAccount = 0, CrossAccount = 1 }
+	export enum CrossAccountFilterOption { SameAccount = 'SameAccount', CrossAccount = 'CrossAccount' }
 
 	export interface SendPipelineExecutionStepFailureResponse {
 		PipelineExecutionArn?: string;
@@ -27897,7 +27897,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InferenceExperimentStopDesiredState { Completed = 0, Cancelled = 1 }
+	export enum InferenceExperimentStopDesiredState { Completed = 'Completed', Cancelled = 'Cancelled' }
 
 	export interface StopInferenceRecommendationsJobRequest {
 
@@ -28450,7 +28450,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VariantPropertyType { DesiredInstanceCount = 0, DesiredWeight = 1, DataCaptureConfig = 2 }
+	export enum VariantPropertyType { DesiredInstanceCount = 'DesiredInstanceCount', DesiredWeight = 'DesiredWeight', DataCaptureConfig = 'DataCaptureConfig' }
 
 	export interface UpdateEndpointWeightsAndCapacitiesOutput {
 
@@ -29544,27 +29544,27 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationTransformationValue { sum = 0, avg = 1, first = 2, min = 3, max = 4 }
+	export enum AggregationTransformationValue { sum = 'sum', avg = 'avg', first = 'first', min = 'min', max = 'max' }
 
-	export enum AlgorithmSortBy { Name = 0, CreationTime = 1 }
+	export enum AlgorithmSortBy { Name = 'Name', CreationTime = 'CreationTime' }
 
 
 	/** The data storage format for Athena query results. */
-	export enum AthenaResultFormat { PARQUET = 0, ORC = 1, AVRO = 2, JSON = 3, TEXTFILE = 4 }
+	export enum AthenaResultFormat { PARQUET = 'PARQUET', ORC = 'ORC', AVRO = 'AVRO', JSON = 'JSON', TEXTFILE = 'TEXTFILE' }
 
 
 	/** The compression used for Athena query results. */
-	export enum AthenaResultCompressionType { GZIP = 0, SNAPPY = 1, ZLIB = 2 }
+	export enum AthenaResultCompressionType { GZIP = 'GZIP', SNAPPY = 'SNAPPY', ZLIB = 'ZLIB' }
 
-	export enum AutoMLJobObjectiveType { Maximize = 0, Minimize = 1 }
+	export enum AutoMLJobObjectiveType { Maximize = 'Maximize', Minimize = 'Minimize' }
 
-	export enum AutoMLJobStatus { Completed = 0, InProgress = 1, Failed = 2, Stopped = 3, Stopping = 4 }
+	export enum AutoMLJobStatus { Completed = 'Completed', InProgress = 'InProgress', Failed = 'Failed', Stopped = 'Stopped', Stopping = 'Stopping' }
 
-	export enum AutoMLProcessingUnit { CPU = 0, GPU = 1 }
+	export enum AutoMLProcessingUnit { CPU = 'CPU', GPU = 'GPU' }
 
-	export enum AutoMLS3DataType { ManifestFile = 0, S3Prefix = 1, AugmentedManifestFile = 2 }
+	export enum AutoMLS3DataType { ManifestFile = 'ManifestFile', S3Prefix = 'S3Prefix', AugmentedManifestFile = 'AugmentedManifestFile' }
 
-	export enum AutoMLSortOrder { Ascending = 0, Descending = 1 }
+	export enum AutoMLSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 
 	/** The error code and error description associated with the resource. */
@@ -29594,7 +29594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelPackageStatus { Pending = 0, InProgress = 1, Completed = 2, Failed = 3, Deleting = 4 }
+	export enum ModelPackageStatus { Pending = 'Pending', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Deleting = 'Deleting' }
 
 
 	/** Provides summary information about the model package. */
@@ -29653,41 +29653,41 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessingS3DataDistributionType { FullyReplicated = 0, ShardedByS3Key = 1 }
+	export enum ProcessingS3DataDistributionType { FullyReplicated = 'FullyReplicated', ShardedByS3Key = 'ShardedByS3Key' }
 
-	export enum CodeRepositorySortOrder { Ascending = 0, Descending = 1 }
+	export enum CodeRepositorySortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum DirectInternetAccess { Enabled = 0, Disabled = 1 }
+	export enum DirectInternetAccess { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum RootAccess { Enabled = 0, Disabled = 1 }
+	export enum RootAccess { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum DataDistributionType { FullyReplicated = 0, ShardedByS3Key = 1 }
+	export enum DataDistributionType { FullyReplicated = 'FullyReplicated', ShardedByS3Key = 'ShardedByS3Key' }
 
-	export enum InputMode { Pipe = 0, File = 1 }
+	export enum InputMode { Pipe = 'Pipe', File = 'File' }
 
-	export enum HyperParameterTuningJobStatus { Completed = 0, InProgress = 1, Failed = 2, Stopped = 3, Stopping = 4 }
+	export enum HyperParameterTuningJobStatus { Completed = 'Completed', InProgress = 'InProgress', Failed = 'Failed', Stopped = 'Stopped', Stopping = 'Stopping' }
 
-	export enum ProcessingJobStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }
+	export enum ProcessingJobStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
-	export enum SpaceStatus { Deleting = 0, Failed = 1, InService = 2, Pending = 3, Updating = 4, Update_Failed = 5, Delete_Failed = 6 }
+	export enum SpaceStatus { Deleting = 'Deleting', Failed = 'Failed', InService = 'InService', Pending = 'Pending', Updating = 'Updating', Update_Failed = 'Update_Failed', Delete_Failed = 'Delete_Failed' }
 
-	export enum TrainingJobStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }
+	export enum TrainingJobStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
-	export enum ProfilingStatus { Enabled = 0, Disabled = 1 }
+	export enum ProfilingStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum TransformJobStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }
+	export enum TransformJobStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
-	export enum UserProfileStatus { Deleting = 0, Failed = 1, InService = 2, Pending = 3, Updating = 4, Update_Failed = 5, Delete_Failed = 6 }
+	export enum UserProfileStatus { Deleting = 'Deleting', Failed = 'Failed', InService = 'InService', Pending = 'Pending', Updating = 'Updating', Update_Failed = 'Update_Failed', Delete_Failed = 'Delete_Failed' }
 
-	export enum DetailedModelPackageStatus { NotStarted = 0, InProgress = 1, Completed = 2, Failed = 3 }
+	export enum DetailedModelPackageStatus { NotStarted = 'NotStarted', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed' }
 
-	export enum EndpointConfigSortKey { Name = 0, CreationTime = 1 }
+	export enum EndpointConfigSortKey { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum EndpointSortKey { Name = 0, CreationTime = 1, Status = 2 }
+	export enum EndpointSortKey { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum FeatureGroupSortOrder { Ascending = 0, Descending = 1 }
+	export enum FeatureGroupSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum FeatureStatus { ENABLED = 0, DISABLED = 1 }
+	export enum FeatureStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface FillingTransformationMap {
 	}
@@ -29699,99 +29699,99 @@ export namespace MyNS {
 
 	}
 
-	export enum FillingType { frontfill = 0, middlefill = 1, backfill = 2, futurefill = 3, frontfill_value = 4, middlefill_value = 5, backfill_value = 6, futurefill_value = 7 }
+	export enum FillingType { frontfill = 'frontfill', middlefill = 'middlefill', backfill = 'backfill', futurefill = 'futurefill', frontfill_value = 'frontfill_value', middlefill_value = 'middlefill_value', backfill_value = 'backfill_value', futurefill_value = 'futurefill_value' }
 
-	export enum SagemakerServicecatalogStatus { Enabled = 0, Disabled = 1 }
+	export enum SagemakerServicecatalogStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum ImageSortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum ImageSortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
-	export enum SortArtifactsBy { CreationTime = 0 }
+	export enum SortArtifactsBy { CreationTime = 'CreationTime' }
 
-	export enum ListCompilationJobsSortBy { Name = 0, CreationTime = 1, Status = 2 }
+	export enum ListCompilationJobsSortBy { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum SortContextsBy { Name = 0, CreationTime = 1 }
+	export enum SortContextsBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum MonitoringJobDefinitionSortKey { Name = 0, CreationTime = 1 }
+	export enum MonitoringJobDefinitionSortKey { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum OrderKey { Ascending = 0, Descending = 1 }
+	export enum OrderKey { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum SortExperimentsBy { Name = 0, CreationTime = 1 }
+	export enum SortExperimentsBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum SortInferenceExperimentsBy { Name = 0, CreationTime = 1, Status = 2 }
+	export enum SortInferenceExperimentsBy { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum ListInferenceRecommendationsJobsSortBy { Name = 0, CreationTime = 1, Status = 2 }
+	export enum ListInferenceRecommendationsJobsSortBy { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum ListLabelingJobsForWorkteamSortByOptions { CreationTime = 0 }
+	export enum ListLabelingJobsForWorkteamSortByOptions { CreationTime = 'CreationTime' }
 
-	export enum SortBy { Name = 0, CreationTime = 1, Status = 2 }
+	export enum SortBy { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum SortLineageGroupsBy { Name = 0, CreationTime = 1 }
+	export enum SortLineageGroupsBy { Name = 'Name', CreationTime = 'CreationTime' }
 
 
 	/** Attribute by which to sort returned export jobs. */
-	export enum ModelCardExportJobSortBy { Name = 0, CreationTime = 1, Status = 2 }
+	export enum ModelCardExportJobSortBy { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum ModelCardExportJobSortOrder { Ascending = 0, Descending = 1 }
+	export enum ModelCardExportJobSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum ModelCardSortOrder { Ascending = 0, Descending = 1 }
+	export enum ModelCardSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum ModelCardSortBy { Name = 0, CreationTime = 1 }
+	export enum ModelCardSortBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum ModelPackageGroupSortBy { Name = 0, CreationTime = 1 }
+	export enum ModelPackageGroupSortBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum ModelPackageSortBy { Name = 0, CreationTime = 1 }
+	export enum ModelPackageSortBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum ModelSortKey { Name = 0, CreationTime = 1 }
+	export enum ModelSortKey { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum MonitoringScheduleSortKey { Name = 0, CreationTime = 1, Status = 2 }
+	export enum MonitoringScheduleSortKey { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum NotebookInstanceLifecycleConfigSortKey { Name = 0, CreationTime = 1, LastModifiedTime = 2 }
+	export enum NotebookInstanceLifecycleConfigSortKey { Name = 'Name', CreationTime = 'CreationTime', LastModifiedTime = 'LastModifiedTime' }
 
-	export enum NotebookInstanceLifecycleConfigSortOrder { Ascending = 0, Descending = 1 }
+	export enum NotebookInstanceLifecycleConfigSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum NotebookInstanceSortKey { Name = 0, CreationTime = 1, Status = 2 }
+	export enum NotebookInstanceSortKey { Name = 'Name', CreationTime = 'CreationTime', Status = 'Status' }
 
-	export enum NotebookInstanceSortOrder { Ascending = 0, Descending = 1 }
+	export enum NotebookInstanceSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum SortPipelinesBy { Name = 0, CreationTime = 1 }
+	export enum SortPipelinesBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum ProjectSortBy { Name = 0, CreationTime = 1 }
+	export enum ProjectSortBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum ProjectSortOrder { Ascending = 0, Descending = 1 }
+	export enum ProjectSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum ResourceCatalogSortOrder { Ascending = 0, Descending = 1 }
+	export enum ResourceCatalogSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum ResourceCatalogSortBy { CreationTime = 0 }
+	export enum ResourceCatalogSortBy { CreationTime = 'CreationTime' }
 
-	export enum StudioLifecycleConfigSortKey { CreationTime = 0, LastModifiedTime = 1, Name = 2 }
+	export enum StudioLifecycleConfigSortKey { CreationTime = 'CreationTime', LastModifiedTime = 'LastModifiedTime', Name = 'Name' }
 
-	export enum SortTrialComponentsBy { Name = 0, CreationTime = 1 }
+	export enum SortTrialComponentsBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum SortTrialsBy { Name = 0, CreationTime = 1 }
+	export enum SortTrialsBy { Name = 'Name', CreationTime = 'CreationTime' }
 
-	export enum UserProfileSortKey { CreationTime = 0, LastModifiedTime = 1 }
+	export enum UserProfileSortKey { CreationTime = 'CreationTime', LastModifiedTime = 'LastModifiedTime' }
 
-	export enum ListWorkteamsSortByOptions { Name = 0, CreateDate = 1 }
+	export enum ListWorkteamsSortByOptions { Name = 'Name', CreateDate = 'CreateDate' }
 
-	export enum ModelCompressionType { None = 0, Gzip = 1 }
+	export enum ModelCompressionType { None = 'None', Gzip = 'Gzip' }
 
-	export enum MonitoringProblemType { BinaryClassification = 0, MulticlassClassification = 1, Regression = 2 }
+	export enum MonitoringProblemType { BinaryClassification = 'BinaryClassification', MulticlassClassification = 'MulticlassClassification', Regression = 'Regression' }
 
-	export enum ModelVariantAction { Retain = 0, Remove = 1, Promote = 2 }
+	export enum ModelVariantAction { Retain = 'Retain', Remove = 'Remove', Promote = 'Promote' }
 
-	export enum ProcessingS3CompressionType { None = 0, Gzip = 1 }
+	export enum ProcessingS3CompressionType { None = 'None', Gzip = 'Gzip' }
 
 
 	/** The data storage format for Redshift query results. */
-	export enum RedshiftResultFormat { PARQUET = 0, CSV = 1 }
+	export enum RedshiftResultFormat { PARQUET = 'PARQUET', CSV = 'CSV' }
 
 
 	/** The compression used for Redshift query results. */
-	export enum RedshiftResultCompressionType { None = 0, GZIP = 1, BZIP2 = 2, ZSTD = 3, SNAPPY = 4 }
+	export enum RedshiftResultCompressionType { None = 'None', GZIP = 'GZIP', BZIP2 = 'BZIP2', ZSTD = 'ZSTD', SNAPPY = 'SNAPPY' }
 
-	export enum SearchSortOrder { Ascending = 0, Descending = 1 }
+	export enum SearchSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum TrainingRepositoryAccessMode { Platform = 0, Vpc = 1 }
+	export enum TrainingRepositoryAccessMode { Platform = 'Platform', Vpc = 'Vpc' }
 
 
 	/** <p>Represents an input or output artifact of a trial component. You specify <code>TrialComponentArtifact</code> as part of the <code>InputArtifacts</code> and <code>OutputArtifacts</code> parameters in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a> request.</p> <p>Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.</p> */
@@ -32721,613 +32721,613 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddAssociationX_Amz_Target { 'SageMaker.AddAssociation' = 0 }
+	export enum AddAssociationX_Amz_Target { 'SageMaker.AddAssociation' = 'SageMaker.AddAssociation' }
 
-	export enum AddTagsX_Amz_Target { 'SageMaker.AddTags' = 0 }
+	export enum AddTagsX_Amz_Target { 'SageMaker.AddTags' = 'SageMaker.AddTags' }
 
-	export enum AssociateTrialComponentX_Amz_Target { 'SageMaker.AssociateTrialComponent' = 0 }
+	export enum AssociateTrialComponentX_Amz_Target { 'SageMaker.AssociateTrialComponent' = 'SageMaker.AssociateTrialComponent' }
 
-	export enum BatchDescribeModelPackageX_Amz_Target { 'SageMaker.BatchDescribeModelPackage' = 0 }
+	export enum BatchDescribeModelPackageX_Amz_Target { 'SageMaker.BatchDescribeModelPackage' = 'SageMaker.BatchDescribeModelPackage' }
 
-	export enum CreateActionX_Amz_Target { 'SageMaker.CreateAction' = 0 }
+	export enum CreateActionX_Amz_Target { 'SageMaker.CreateAction' = 'SageMaker.CreateAction' }
 
-	export enum CreateAlgorithmX_Amz_Target { 'SageMaker.CreateAlgorithm' = 0 }
+	export enum CreateAlgorithmX_Amz_Target { 'SageMaker.CreateAlgorithm' = 'SageMaker.CreateAlgorithm' }
 
-	export enum CreateAppX_Amz_Target { 'SageMaker.CreateApp' = 0 }
+	export enum CreateAppX_Amz_Target { 'SageMaker.CreateApp' = 'SageMaker.CreateApp' }
 
-	export enum CreateAppImageConfigX_Amz_Target { 'SageMaker.CreateAppImageConfig' = 0 }
+	export enum CreateAppImageConfigX_Amz_Target { 'SageMaker.CreateAppImageConfig' = 'SageMaker.CreateAppImageConfig' }
 
-	export enum CreateArtifactX_Amz_Target { 'SageMaker.CreateArtifact' = 0 }
+	export enum CreateArtifactX_Amz_Target { 'SageMaker.CreateArtifact' = 'SageMaker.CreateArtifact' }
 
-	export enum CreateAutoMLJobX_Amz_Target { 'SageMaker.CreateAutoMLJob' = 0 }
+	export enum CreateAutoMLJobX_Amz_Target { 'SageMaker.CreateAutoMLJob' = 'SageMaker.CreateAutoMLJob' }
 
-	export enum CreateAutoMLJobV2X_Amz_Target { 'SageMaker.CreateAutoMLJobV2' = 0 }
+	export enum CreateAutoMLJobV2X_Amz_Target { 'SageMaker.CreateAutoMLJobV2' = 'SageMaker.CreateAutoMLJobV2' }
 
-	export enum CreateCodeRepositoryX_Amz_Target { 'SageMaker.CreateCodeRepository' = 0 }
+	export enum CreateCodeRepositoryX_Amz_Target { 'SageMaker.CreateCodeRepository' = 'SageMaker.CreateCodeRepository' }
 
-	export enum CreateCompilationJobX_Amz_Target { 'SageMaker.CreateCompilationJob' = 0 }
+	export enum CreateCompilationJobX_Amz_Target { 'SageMaker.CreateCompilationJob' = 'SageMaker.CreateCompilationJob' }
 
-	export enum CreateContextX_Amz_Target { 'SageMaker.CreateContext' = 0 }
+	export enum CreateContextX_Amz_Target { 'SageMaker.CreateContext' = 'SageMaker.CreateContext' }
 
-	export enum CreateDataQualityJobDefinitionX_Amz_Target { 'SageMaker.CreateDataQualityJobDefinition' = 0 }
+	export enum CreateDataQualityJobDefinitionX_Amz_Target { 'SageMaker.CreateDataQualityJobDefinition' = 'SageMaker.CreateDataQualityJobDefinition' }
 
-	export enum CreateDeviceFleetX_Amz_Target { 'SageMaker.CreateDeviceFleet' = 0 }
+	export enum CreateDeviceFleetX_Amz_Target { 'SageMaker.CreateDeviceFleet' = 'SageMaker.CreateDeviceFleet' }
 
-	export enum CreateDomainX_Amz_Target { 'SageMaker.CreateDomain' = 0 }
+	export enum CreateDomainX_Amz_Target { 'SageMaker.CreateDomain' = 'SageMaker.CreateDomain' }
 
-	export enum CreateEdgeDeploymentPlanX_Amz_Target { 'SageMaker.CreateEdgeDeploymentPlan' = 0 }
+	export enum CreateEdgeDeploymentPlanX_Amz_Target { 'SageMaker.CreateEdgeDeploymentPlan' = 'SageMaker.CreateEdgeDeploymentPlan' }
 
-	export enum CreateEdgeDeploymentStageX_Amz_Target { 'SageMaker.CreateEdgeDeploymentStage' = 0 }
+	export enum CreateEdgeDeploymentStageX_Amz_Target { 'SageMaker.CreateEdgeDeploymentStage' = 'SageMaker.CreateEdgeDeploymentStage' }
 
-	export enum CreateEdgePackagingJobX_Amz_Target { 'SageMaker.CreateEdgePackagingJob' = 0 }
+	export enum CreateEdgePackagingJobX_Amz_Target { 'SageMaker.CreateEdgePackagingJob' = 'SageMaker.CreateEdgePackagingJob' }
 
-	export enum CreateEndpointX_Amz_Target { 'SageMaker.CreateEndpoint' = 0 }
+	export enum CreateEndpointX_Amz_Target { 'SageMaker.CreateEndpoint' = 'SageMaker.CreateEndpoint' }
 
-	export enum CreateEndpointConfigX_Amz_Target { 'SageMaker.CreateEndpointConfig' = 0 }
+	export enum CreateEndpointConfigX_Amz_Target { 'SageMaker.CreateEndpointConfig' = 'SageMaker.CreateEndpointConfig' }
 
-	export enum CreateExperimentX_Amz_Target { 'SageMaker.CreateExperiment' = 0 }
+	export enum CreateExperimentX_Amz_Target { 'SageMaker.CreateExperiment' = 'SageMaker.CreateExperiment' }
 
-	export enum CreateFeatureGroupX_Amz_Target { 'SageMaker.CreateFeatureGroup' = 0 }
+	export enum CreateFeatureGroupX_Amz_Target { 'SageMaker.CreateFeatureGroup' = 'SageMaker.CreateFeatureGroup' }
 
-	export enum CreateFlowDefinitionX_Amz_Target { 'SageMaker.CreateFlowDefinition' = 0 }
+	export enum CreateFlowDefinitionX_Amz_Target { 'SageMaker.CreateFlowDefinition' = 'SageMaker.CreateFlowDefinition' }
 
-	export enum CreateHubX_Amz_Target { 'SageMaker.CreateHub' = 0 }
+	export enum CreateHubX_Amz_Target { 'SageMaker.CreateHub' = 'SageMaker.CreateHub' }
 
-	export enum CreateHumanTaskUiX_Amz_Target { 'SageMaker.CreateHumanTaskUi' = 0 }
+	export enum CreateHumanTaskUiX_Amz_Target { 'SageMaker.CreateHumanTaskUi' = 'SageMaker.CreateHumanTaskUi' }
 
-	export enum CreateHyperParameterTuningJobX_Amz_Target { 'SageMaker.CreateHyperParameterTuningJob' = 0 }
+	export enum CreateHyperParameterTuningJobX_Amz_Target { 'SageMaker.CreateHyperParameterTuningJob' = 'SageMaker.CreateHyperParameterTuningJob' }
 
-	export enum CreateImageX_Amz_Target { 'SageMaker.CreateImage' = 0 }
+	export enum CreateImageX_Amz_Target { 'SageMaker.CreateImage' = 'SageMaker.CreateImage' }
 
-	export enum CreateImageVersionX_Amz_Target { 'SageMaker.CreateImageVersion' = 0 }
+	export enum CreateImageVersionX_Amz_Target { 'SageMaker.CreateImageVersion' = 'SageMaker.CreateImageVersion' }
 
-	export enum CreateInferenceExperimentX_Amz_Target { 'SageMaker.CreateInferenceExperiment' = 0 }
+	export enum CreateInferenceExperimentX_Amz_Target { 'SageMaker.CreateInferenceExperiment' = 'SageMaker.CreateInferenceExperiment' }
 
-	export enum CreateInferenceRecommendationsJobX_Amz_Target { 'SageMaker.CreateInferenceRecommendationsJob' = 0 }
+	export enum CreateInferenceRecommendationsJobX_Amz_Target { 'SageMaker.CreateInferenceRecommendationsJob' = 'SageMaker.CreateInferenceRecommendationsJob' }
 
-	export enum CreateLabelingJobX_Amz_Target { 'SageMaker.CreateLabelingJob' = 0 }
+	export enum CreateLabelingJobX_Amz_Target { 'SageMaker.CreateLabelingJob' = 'SageMaker.CreateLabelingJob' }
 
-	export enum CreateModelX_Amz_Target { 'SageMaker.CreateModel' = 0 }
+	export enum CreateModelX_Amz_Target { 'SageMaker.CreateModel' = 'SageMaker.CreateModel' }
 
-	export enum CreateModelBiasJobDefinitionX_Amz_Target { 'SageMaker.CreateModelBiasJobDefinition' = 0 }
+	export enum CreateModelBiasJobDefinitionX_Amz_Target { 'SageMaker.CreateModelBiasJobDefinition' = 'SageMaker.CreateModelBiasJobDefinition' }
 
-	export enum CreateModelCardX_Amz_Target { 'SageMaker.CreateModelCard' = 0 }
+	export enum CreateModelCardX_Amz_Target { 'SageMaker.CreateModelCard' = 'SageMaker.CreateModelCard' }
 
-	export enum CreateModelCardExportJobX_Amz_Target { 'SageMaker.CreateModelCardExportJob' = 0 }
+	export enum CreateModelCardExportJobX_Amz_Target { 'SageMaker.CreateModelCardExportJob' = 'SageMaker.CreateModelCardExportJob' }
 
-	export enum CreateModelExplainabilityJobDefinitionX_Amz_Target { 'SageMaker.CreateModelExplainabilityJobDefinition' = 0 }
+	export enum CreateModelExplainabilityJobDefinitionX_Amz_Target { 'SageMaker.CreateModelExplainabilityJobDefinition' = 'SageMaker.CreateModelExplainabilityJobDefinition' }
 
-	export enum CreateModelPackageX_Amz_Target { 'SageMaker.CreateModelPackage' = 0 }
+	export enum CreateModelPackageX_Amz_Target { 'SageMaker.CreateModelPackage' = 'SageMaker.CreateModelPackage' }
 
-	export enum CreateModelPackageGroupX_Amz_Target { 'SageMaker.CreateModelPackageGroup' = 0 }
+	export enum CreateModelPackageGroupX_Amz_Target { 'SageMaker.CreateModelPackageGroup' = 'SageMaker.CreateModelPackageGroup' }
 
-	export enum CreateModelQualityJobDefinitionX_Amz_Target { 'SageMaker.CreateModelQualityJobDefinition' = 0 }
+	export enum CreateModelQualityJobDefinitionX_Amz_Target { 'SageMaker.CreateModelQualityJobDefinition' = 'SageMaker.CreateModelQualityJobDefinition' }
 
-	export enum CreateMonitoringScheduleX_Amz_Target { 'SageMaker.CreateMonitoringSchedule' = 0 }
+	export enum CreateMonitoringScheduleX_Amz_Target { 'SageMaker.CreateMonitoringSchedule' = 'SageMaker.CreateMonitoringSchedule' }
 
-	export enum CreateNotebookInstanceX_Amz_Target { 'SageMaker.CreateNotebookInstance' = 0 }
+	export enum CreateNotebookInstanceX_Amz_Target { 'SageMaker.CreateNotebookInstance' = 'SageMaker.CreateNotebookInstance' }
 
-	export enum CreateNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.CreateNotebookInstanceLifecycleConfig' = 0 }
+	export enum CreateNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.CreateNotebookInstanceLifecycleConfig' = 'SageMaker.CreateNotebookInstanceLifecycleConfig' }
 
-	export enum CreatePipelineX_Amz_Target { 'SageMaker.CreatePipeline' = 0 }
+	export enum CreatePipelineX_Amz_Target { 'SageMaker.CreatePipeline' = 'SageMaker.CreatePipeline' }
 
-	export enum CreatePresignedDomainUrlX_Amz_Target { 'SageMaker.CreatePresignedDomainUrl' = 0 }
+	export enum CreatePresignedDomainUrlX_Amz_Target { 'SageMaker.CreatePresignedDomainUrl' = 'SageMaker.CreatePresignedDomainUrl' }
 
-	export enum CreatePresignedNotebookInstanceUrlX_Amz_Target { 'SageMaker.CreatePresignedNotebookInstanceUrl' = 0 }
+	export enum CreatePresignedNotebookInstanceUrlX_Amz_Target { 'SageMaker.CreatePresignedNotebookInstanceUrl' = 'SageMaker.CreatePresignedNotebookInstanceUrl' }
 
-	export enum CreateProcessingJobX_Amz_Target { 'SageMaker.CreateProcessingJob' = 0 }
+	export enum CreateProcessingJobX_Amz_Target { 'SageMaker.CreateProcessingJob' = 'SageMaker.CreateProcessingJob' }
 
-	export enum CreateProjectX_Amz_Target { 'SageMaker.CreateProject' = 0 }
+	export enum CreateProjectX_Amz_Target { 'SageMaker.CreateProject' = 'SageMaker.CreateProject' }
 
-	export enum CreateSpaceX_Amz_Target { 'SageMaker.CreateSpace' = 0 }
+	export enum CreateSpaceX_Amz_Target { 'SageMaker.CreateSpace' = 'SageMaker.CreateSpace' }
 
-	export enum CreateStudioLifecycleConfigX_Amz_Target { 'SageMaker.CreateStudioLifecycleConfig' = 0 }
+	export enum CreateStudioLifecycleConfigX_Amz_Target { 'SageMaker.CreateStudioLifecycleConfig' = 'SageMaker.CreateStudioLifecycleConfig' }
 
-	export enum CreateTrainingJobX_Amz_Target { 'SageMaker.CreateTrainingJob' = 0 }
+	export enum CreateTrainingJobX_Amz_Target { 'SageMaker.CreateTrainingJob' = 'SageMaker.CreateTrainingJob' }
 
-	export enum CreateTransformJobX_Amz_Target { 'SageMaker.CreateTransformJob' = 0 }
+	export enum CreateTransformJobX_Amz_Target { 'SageMaker.CreateTransformJob' = 'SageMaker.CreateTransformJob' }
 
-	export enum CreateTrialX_Amz_Target { 'SageMaker.CreateTrial' = 0 }
+	export enum CreateTrialX_Amz_Target { 'SageMaker.CreateTrial' = 'SageMaker.CreateTrial' }
 
-	export enum CreateTrialComponentX_Amz_Target { 'SageMaker.CreateTrialComponent' = 0 }
+	export enum CreateTrialComponentX_Amz_Target { 'SageMaker.CreateTrialComponent' = 'SageMaker.CreateTrialComponent' }
 
-	export enum CreateUserProfileX_Amz_Target { 'SageMaker.CreateUserProfile' = 0 }
+	export enum CreateUserProfileX_Amz_Target { 'SageMaker.CreateUserProfile' = 'SageMaker.CreateUserProfile' }
 
-	export enum CreateWorkforceX_Amz_Target { 'SageMaker.CreateWorkforce' = 0 }
+	export enum CreateWorkforceX_Amz_Target { 'SageMaker.CreateWorkforce' = 'SageMaker.CreateWorkforce' }
 
-	export enum CreateWorkteamX_Amz_Target { 'SageMaker.CreateWorkteam' = 0 }
+	export enum CreateWorkteamX_Amz_Target { 'SageMaker.CreateWorkteam' = 'SageMaker.CreateWorkteam' }
 
-	export enum DeleteActionX_Amz_Target { 'SageMaker.DeleteAction' = 0 }
+	export enum DeleteActionX_Amz_Target { 'SageMaker.DeleteAction' = 'SageMaker.DeleteAction' }
 
-	export enum DeleteAlgorithmX_Amz_Target { 'SageMaker.DeleteAlgorithm' = 0 }
+	export enum DeleteAlgorithmX_Amz_Target { 'SageMaker.DeleteAlgorithm' = 'SageMaker.DeleteAlgorithm' }
 
-	export enum DeleteAppX_Amz_Target { 'SageMaker.DeleteApp' = 0 }
+	export enum DeleteAppX_Amz_Target { 'SageMaker.DeleteApp' = 'SageMaker.DeleteApp' }
 
-	export enum DeleteAppImageConfigX_Amz_Target { 'SageMaker.DeleteAppImageConfig' = 0 }
+	export enum DeleteAppImageConfigX_Amz_Target { 'SageMaker.DeleteAppImageConfig' = 'SageMaker.DeleteAppImageConfig' }
 
-	export enum DeleteArtifactX_Amz_Target { 'SageMaker.DeleteArtifact' = 0 }
+	export enum DeleteArtifactX_Amz_Target { 'SageMaker.DeleteArtifact' = 'SageMaker.DeleteArtifact' }
 
-	export enum DeleteAssociationX_Amz_Target { 'SageMaker.DeleteAssociation' = 0 }
+	export enum DeleteAssociationX_Amz_Target { 'SageMaker.DeleteAssociation' = 'SageMaker.DeleteAssociation' }
 
-	export enum DeleteCodeRepositoryX_Amz_Target { 'SageMaker.DeleteCodeRepository' = 0 }
+	export enum DeleteCodeRepositoryX_Amz_Target { 'SageMaker.DeleteCodeRepository' = 'SageMaker.DeleteCodeRepository' }
 
-	export enum DeleteContextX_Amz_Target { 'SageMaker.DeleteContext' = 0 }
+	export enum DeleteContextX_Amz_Target { 'SageMaker.DeleteContext' = 'SageMaker.DeleteContext' }
 
-	export enum DeleteDataQualityJobDefinitionX_Amz_Target { 'SageMaker.DeleteDataQualityJobDefinition' = 0 }
+	export enum DeleteDataQualityJobDefinitionX_Amz_Target { 'SageMaker.DeleteDataQualityJobDefinition' = 'SageMaker.DeleteDataQualityJobDefinition' }
 
-	export enum DeleteDeviceFleetX_Amz_Target { 'SageMaker.DeleteDeviceFleet' = 0 }
+	export enum DeleteDeviceFleetX_Amz_Target { 'SageMaker.DeleteDeviceFleet' = 'SageMaker.DeleteDeviceFleet' }
 
-	export enum DeleteDomainX_Amz_Target { 'SageMaker.DeleteDomain' = 0 }
+	export enum DeleteDomainX_Amz_Target { 'SageMaker.DeleteDomain' = 'SageMaker.DeleteDomain' }
 
-	export enum DeleteEdgeDeploymentPlanX_Amz_Target { 'SageMaker.DeleteEdgeDeploymentPlan' = 0 }
+	export enum DeleteEdgeDeploymentPlanX_Amz_Target { 'SageMaker.DeleteEdgeDeploymentPlan' = 'SageMaker.DeleteEdgeDeploymentPlan' }
 
-	export enum DeleteEdgeDeploymentStageX_Amz_Target { 'SageMaker.DeleteEdgeDeploymentStage' = 0 }
+	export enum DeleteEdgeDeploymentStageX_Amz_Target { 'SageMaker.DeleteEdgeDeploymentStage' = 'SageMaker.DeleteEdgeDeploymentStage' }
 
-	export enum DeleteEndpointX_Amz_Target { 'SageMaker.DeleteEndpoint' = 0 }
+	export enum DeleteEndpointX_Amz_Target { 'SageMaker.DeleteEndpoint' = 'SageMaker.DeleteEndpoint' }
 
-	export enum DeleteEndpointConfigX_Amz_Target { 'SageMaker.DeleteEndpointConfig' = 0 }
+	export enum DeleteEndpointConfigX_Amz_Target { 'SageMaker.DeleteEndpointConfig' = 'SageMaker.DeleteEndpointConfig' }
 
-	export enum DeleteExperimentX_Amz_Target { 'SageMaker.DeleteExperiment' = 0 }
+	export enum DeleteExperimentX_Amz_Target { 'SageMaker.DeleteExperiment' = 'SageMaker.DeleteExperiment' }
 
-	export enum DeleteFeatureGroupX_Amz_Target { 'SageMaker.DeleteFeatureGroup' = 0 }
+	export enum DeleteFeatureGroupX_Amz_Target { 'SageMaker.DeleteFeatureGroup' = 'SageMaker.DeleteFeatureGroup' }
 
-	export enum DeleteFlowDefinitionX_Amz_Target { 'SageMaker.DeleteFlowDefinition' = 0 }
+	export enum DeleteFlowDefinitionX_Amz_Target { 'SageMaker.DeleteFlowDefinition' = 'SageMaker.DeleteFlowDefinition' }
 
-	export enum DeleteHubX_Amz_Target { 'SageMaker.DeleteHub' = 0 }
+	export enum DeleteHubX_Amz_Target { 'SageMaker.DeleteHub' = 'SageMaker.DeleteHub' }
 
-	export enum DeleteHubContentX_Amz_Target { 'SageMaker.DeleteHubContent' = 0 }
+	export enum DeleteHubContentX_Amz_Target { 'SageMaker.DeleteHubContent' = 'SageMaker.DeleteHubContent' }
 
-	export enum DeleteHumanTaskUiX_Amz_Target { 'SageMaker.DeleteHumanTaskUi' = 0 }
+	export enum DeleteHumanTaskUiX_Amz_Target { 'SageMaker.DeleteHumanTaskUi' = 'SageMaker.DeleteHumanTaskUi' }
 
-	export enum DeleteImageX_Amz_Target { 'SageMaker.DeleteImage' = 0 }
+	export enum DeleteImageX_Amz_Target { 'SageMaker.DeleteImage' = 'SageMaker.DeleteImage' }
 
-	export enum DeleteImageVersionX_Amz_Target { 'SageMaker.DeleteImageVersion' = 0 }
+	export enum DeleteImageVersionX_Amz_Target { 'SageMaker.DeleteImageVersion' = 'SageMaker.DeleteImageVersion' }
 
-	export enum DeleteInferenceExperimentX_Amz_Target { 'SageMaker.DeleteInferenceExperiment' = 0 }
+	export enum DeleteInferenceExperimentX_Amz_Target { 'SageMaker.DeleteInferenceExperiment' = 'SageMaker.DeleteInferenceExperiment' }
 
-	export enum DeleteModelX_Amz_Target { 'SageMaker.DeleteModel' = 0 }
+	export enum DeleteModelX_Amz_Target { 'SageMaker.DeleteModel' = 'SageMaker.DeleteModel' }
 
-	export enum DeleteModelBiasJobDefinitionX_Amz_Target { 'SageMaker.DeleteModelBiasJobDefinition' = 0 }
+	export enum DeleteModelBiasJobDefinitionX_Amz_Target { 'SageMaker.DeleteModelBiasJobDefinition' = 'SageMaker.DeleteModelBiasJobDefinition' }
 
-	export enum DeleteModelCardX_Amz_Target { 'SageMaker.DeleteModelCard' = 0 }
+	export enum DeleteModelCardX_Amz_Target { 'SageMaker.DeleteModelCard' = 'SageMaker.DeleteModelCard' }
 
-	export enum DeleteModelExplainabilityJobDefinitionX_Amz_Target { 'SageMaker.DeleteModelExplainabilityJobDefinition' = 0 }
+	export enum DeleteModelExplainabilityJobDefinitionX_Amz_Target { 'SageMaker.DeleteModelExplainabilityJobDefinition' = 'SageMaker.DeleteModelExplainabilityJobDefinition' }
 
-	export enum DeleteModelPackageX_Amz_Target { 'SageMaker.DeleteModelPackage' = 0 }
+	export enum DeleteModelPackageX_Amz_Target { 'SageMaker.DeleteModelPackage' = 'SageMaker.DeleteModelPackage' }
 
-	export enum DeleteModelPackageGroupX_Amz_Target { 'SageMaker.DeleteModelPackageGroup' = 0 }
+	export enum DeleteModelPackageGroupX_Amz_Target { 'SageMaker.DeleteModelPackageGroup' = 'SageMaker.DeleteModelPackageGroup' }
 
-	export enum DeleteModelPackageGroupPolicyX_Amz_Target { 'SageMaker.DeleteModelPackageGroupPolicy' = 0 }
+	export enum DeleteModelPackageGroupPolicyX_Amz_Target { 'SageMaker.DeleteModelPackageGroupPolicy' = 'SageMaker.DeleteModelPackageGroupPolicy' }
 
-	export enum DeleteModelQualityJobDefinitionX_Amz_Target { 'SageMaker.DeleteModelQualityJobDefinition' = 0 }
+	export enum DeleteModelQualityJobDefinitionX_Amz_Target { 'SageMaker.DeleteModelQualityJobDefinition' = 'SageMaker.DeleteModelQualityJobDefinition' }
 
-	export enum DeleteMonitoringScheduleX_Amz_Target { 'SageMaker.DeleteMonitoringSchedule' = 0 }
+	export enum DeleteMonitoringScheduleX_Amz_Target { 'SageMaker.DeleteMonitoringSchedule' = 'SageMaker.DeleteMonitoringSchedule' }
 
-	export enum DeleteNotebookInstanceX_Amz_Target { 'SageMaker.DeleteNotebookInstance' = 0 }
+	export enum DeleteNotebookInstanceX_Amz_Target { 'SageMaker.DeleteNotebookInstance' = 'SageMaker.DeleteNotebookInstance' }
 
-	export enum DeleteNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.DeleteNotebookInstanceLifecycleConfig' = 0 }
+	export enum DeleteNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.DeleteNotebookInstanceLifecycleConfig' = 'SageMaker.DeleteNotebookInstanceLifecycleConfig' }
 
-	export enum DeletePipelineX_Amz_Target { 'SageMaker.DeletePipeline' = 0 }
+	export enum DeletePipelineX_Amz_Target { 'SageMaker.DeletePipeline' = 'SageMaker.DeletePipeline' }
 
-	export enum DeleteProjectX_Amz_Target { 'SageMaker.DeleteProject' = 0 }
+	export enum DeleteProjectX_Amz_Target { 'SageMaker.DeleteProject' = 'SageMaker.DeleteProject' }
 
-	export enum DeleteSpaceX_Amz_Target { 'SageMaker.DeleteSpace' = 0 }
+	export enum DeleteSpaceX_Amz_Target { 'SageMaker.DeleteSpace' = 'SageMaker.DeleteSpace' }
 
-	export enum DeleteStudioLifecycleConfigX_Amz_Target { 'SageMaker.DeleteStudioLifecycleConfig' = 0 }
+	export enum DeleteStudioLifecycleConfigX_Amz_Target { 'SageMaker.DeleteStudioLifecycleConfig' = 'SageMaker.DeleteStudioLifecycleConfig' }
 
-	export enum DeleteTagsX_Amz_Target { 'SageMaker.DeleteTags' = 0 }
+	export enum DeleteTagsX_Amz_Target { 'SageMaker.DeleteTags' = 'SageMaker.DeleteTags' }
 
-	export enum DeleteTrialX_Amz_Target { 'SageMaker.DeleteTrial' = 0 }
+	export enum DeleteTrialX_Amz_Target { 'SageMaker.DeleteTrial' = 'SageMaker.DeleteTrial' }
 
-	export enum DeleteTrialComponentX_Amz_Target { 'SageMaker.DeleteTrialComponent' = 0 }
+	export enum DeleteTrialComponentX_Amz_Target { 'SageMaker.DeleteTrialComponent' = 'SageMaker.DeleteTrialComponent' }
 
-	export enum DeleteUserProfileX_Amz_Target { 'SageMaker.DeleteUserProfile' = 0 }
+	export enum DeleteUserProfileX_Amz_Target { 'SageMaker.DeleteUserProfile' = 'SageMaker.DeleteUserProfile' }
 
-	export enum DeleteWorkforceX_Amz_Target { 'SageMaker.DeleteWorkforce' = 0 }
+	export enum DeleteWorkforceX_Amz_Target { 'SageMaker.DeleteWorkforce' = 'SageMaker.DeleteWorkforce' }
 
-	export enum DeleteWorkteamX_Amz_Target { 'SageMaker.DeleteWorkteam' = 0 }
+	export enum DeleteWorkteamX_Amz_Target { 'SageMaker.DeleteWorkteam' = 'SageMaker.DeleteWorkteam' }
 
-	export enum DeregisterDevicesX_Amz_Target { 'SageMaker.DeregisterDevices' = 0 }
+	export enum DeregisterDevicesX_Amz_Target { 'SageMaker.DeregisterDevices' = 'SageMaker.DeregisterDevices' }
 
-	export enum DescribeActionX_Amz_Target { 'SageMaker.DescribeAction' = 0 }
+	export enum DescribeActionX_Amz_Target { 'SageMaker.DescribeAction' = 'SageMaker.DescribeAction' }
 
-	export enum DescribeAlgorithmX_Amz_Target { 'SageMaker.DescribeAlgorithm' = 0 }
+	export enum DescribeAlgorithmX_Amz_Target { 'SageMaker.DescribeAlgorithm' = 'SageMaker.DescribeAlgorithm' }
 
-	export enum DescribeAppX_Amz_Target { 'SageMaker.DescribeApp' = 0 }
+	export enum DescribeAppX_Amz_Target { 'SageMaker.DescribeApp' = 'SageMaker.DescribeApp' }
 
-	export enum DescribeAppImageConfigX_Amz_Target { 'SageMaker.DescribeAppImageConfig' = 0 }
+	export enum DescribeAppImageConfigX_Amz_Target { 'SageMaker.DescribeAppImageConfig' = 'SageMaker.DescribeAppImageConfig' }
 
-	export enum DescribeArtifactX_Amz_Target { 'SageMaker.DescribeArtifact' = 0 }
+	export enum DescribeArtifactX_Amz_Target { 'SageMaker.DescribeArtifact' = 'SageMaker.DescribeArtifact' }
 
-	export enum DescribeAutoMLJobX_Amz_Target { 'SageMaker.DescribeAutoMLJob' = 0 }
+	export enum DescribeAutoMLJobX_Amz_Target { 'SageMaker.DescribeAutoMLJob' = 'SageMaker.DescribeAutoMLJob' }
 
-	export enum DescribeAutoMLJobV2X_Amz_Target { 'SageMaker.DescribeAutoMLJobV2' = 0 }
+	export enum DescribeAutoMLJobV2X_Amz_Target { 'SageMaker.DescribeAutoMLJobV2' = 'SageMaker.DescribeAutoMLJobV2' }
 
-	export enum DescribeCodeRepositoryX_Amz_Target { 'SageMaker.DescribeCodeRepository' = 0 }
+	export enum DescribeCodeRepositoryX_Amz_Target { 'SageMaker.DescribeCodeRepository' = 'SageMaker.DescribeCodeRepository' }
 
-	export enum DescribeCompilationJobX_Amz_Target { 'SageMaker.DescribeCompilationJob' = 0 }
+	export enum DescribeCompilationJobX_Amz_Target { 'SageMaker.DescribeCompilationJob' = 'SageMaker.DescribeCompilationJob' }
 
-	export enum DescribeContextX_Amz_Target { 'SageMaker.DescribeContext' = 0 }
+	export enum DescribeContextX_Amz_Target { 'SageMaker.DescribeContext' = 'SageMaker.DescribeContext' }
 
-	export enum DescribeDataQualityJobDefinitionX_Amz_Target { 'SageMaker.DescribeDataQualityJobDefinition' = 0 }
+	export enum DescribeDataQualityJobDefinitionX_Amz_Target { 'SageMaker.DescribeDataQualityJobDefinition' = 'SageMaker.DescribeDataQualityJobDefinition' }
 
-	export enum DescribeDeviceX_Amz_Target { 'SageMaker.DescribeDevice' = 0 }
+	export enum DescribeDeviceX_Amz_Target { 'SageMaker.DescribeDevice' = 'SageMaker.DescribeDevice' }
 
-	export enum DescribeDeviceFleetX_Amz_Target { 'SageMaker.DescribeDeviceFleet' = 0 }
+	export enum DescribeDeviceFleetX_Amz_Target { 'SageMaker.DescribeDeviceFleet' = 'SageMaker.DescribeDeviceFleet' }
 
-	export enum DescribeDomainX_Amz_Target { 'SageMaker.DescribeDomain' = 0 }
+	export enum DescribeDomainX_Amz_Target { 'SageMaker.DescribeDomain' = 'SageMaker.DescribeDomain' }
 
-	export enum DescribeEdgeDeploymentPlanX_Amz_Target { 'SageMaker.DescribeEdgeDeploymentPlan' = 0 }
+	export enum DescribeEdgeDeploymentPlanX_Amz_Target { 'SageMaker.DescribeEdgeDeploymentPlan' = 'SageMaker.DescribeEdgeDeploymentPlan' }
 
-	export enum DescribeEdgePackagingJobX_Amz_Target { 'SageMaker.DescribeEdgePackagingJob' = 0 }
+	export enum DescribeEdgePackagingJobX_Amz_Target { 'SageMaker.DescribeEdgePackagingJob' = 'SageMaker.DescribeEdgePackagingJob' }
 
-	export enum DescribeEndpointX_Amz_Target { 'SageMaker.DescribeEndpoint' = 0 }
+	export enum DescribeEndpointX_Amz_Target { 'SageMaker.DescribeEndpoint' = 'SageMaker.DescribeEndpoint' }
 
-	export enum DescribeEndpointConfigX_Amz_Target { 'SageMaker.DescribeEndpointConfig' = 0 }
+	export enum DescribeEndpointConfigX_Amz_Target { 'SageMaker.DescribeEndpointConfig' = 'SageMaker.DescribeEndpointConfig' }
 
-	export enum DescribeExperimentX_Amz_Target { 'SageMaker.DescribeExperiment' = 0 }
+	export enum DescribeExperimentX_Amz_Target { 'SageMaker.DescribeExperiment' = 'SageMaker.DescribeExperiment' }
 
-	export enum DescribeFeatureGroupX_Amz_Target { 'SageMaker.DescribeFeatureGroup' = 0 }
+	export enum DescribeFeatureGroupX_Amz_Target { 'SageMaker.DescribeFeatureGroup' = 'SageMaker.DescribeFeatureGroup' }
 
-	export enum DescribeFeatureMetadataX_Amz_Target { 'SageMaker.DescribeFeatureMetadata' = 0 }
+	export enum DescribeFeatureMetadataX_Amz_Target { 'SageMaker.DescribeFeatureMetadata' = 'SageMaker.DescribeFeatureMetadata' }
 
-	export enum DescribeFlowDefinitionX_Amz_Target { 'SageMaker.DescribeFlowDefinition' = 0 }
+	export enum DescribeFlowDefinitionX_Amz_Target { 'SageMaker.DescribeFlowDefinition' = 'SageMaker.DescribeFlowDefinition' }
 
-	export enum DescribeHubX_Amz_Target { 'SageMaker.DescribeHub' = 0 }
+	export enum DescribeHubX_Amz_Target { 'SageMaker.DescribeHub' = 'SageMaker.DescribeHub' }
 
-	export enum DescribeHubContentX_Amz_Target { 'SageMaker.DescribeHubContent' = 0 }
+	export enum DescribeHubContentX_Amz_Target { 'SageMaker.DescribeHubContent' = 'SageMaker.DescribeHubContent' }
 
-	export enum DescribeHumanTaskUiX_Amz_Target { 'SageMaker.DescribeHumanTaskUi' = 0 }
+	export enum DescribeHumanTaskUiX_Amz_Target { 'SageMaker.DescribeHumanTaskUi' = 'SageMaker.DescribeHumanTaskUi' }
 
-	export enum DescribeHyperParameterTuningJobX_Amz_Target { 'SageMaker.DescribeHyperParameterTuningJob' = 0 }
+	export enum DescribeHyperParameterTuningJobX_Amz_Target { 'SageMaker.DescribeHyperParameterTuningJob' = 'SageMaker.DescribeHyperParameterTuningJob' }
 
-	export enum DescribeImageX_Amz_Target { 'SageMaker.DescribeImage' = 0 }
+	export enum DescribeImageX_Amz_Target { 'SageMaker.DescribeImage' = 'SageMaker.DescribeImage' }
 
-	export enum DescribeImageVersionX_Amz_Target { 'SageMaker.DescribeImageVersion' = 0 }
+	export enum DescribeImageVersionX_Amz_Target { 'SageMaker.DescribeImageVersion' = 'SageMaker.DescribeImageVersion' }
 
-	export enum DescribeInferenceExperimentX_Amz_Target { 'SageMaker.DescribeInferenceExperiment' = 0 }
+	export enum DescribeInferenceExperimentX_Amz_Target { 'SageMaker.DescribeInferenceExperiment' = 'SageMaker.DescribeInferenceExperiment' }
 
-	export enum DescribeInferenceRecommendationsJobX_Amz_Target { 'SageMaker.DescribeInferenceRecommendationsJob' = 0 }
+	export enum DescribeInferenceRecommendationsJobX_Amz_Target { 'SageMaker.DescribeInferenceRecommendationsJob' = 'SageMaker.DescribeInferenceRecommendationsJob' }
 
-	export enum DescribeLabelingJobX_Amz_Target { 'SageMaker.DescribeLabelingJob' = 0 }
+	export enum DescribeLabelingJobX_Amz_Target { 'SageMaker.DescribeLabelingJob' = 'SageMaker.DescribeLabelingJob' }
 
-	export enum DescribeLineageGroupX_Amz_Target { 'SageMaker.DescribeLineageGroup' = 0 }
+	export enum DescribeLineageGroupX_Amz_Target { 'SageMaker.DescribeLineageGroup' = 'SageMaker.DescribeLineageGroup' }
 
-	export enum DescribeModelX_Amz_Target { 'SageMaker.DescribeModel' = 0 }
+	export enum DescribeModelX_Amz_Target { 'SageMaker.DescribeModel' = 'SageMaker.DescribeModel' }
 
-	export enum DescribeModelBiasJobDefinitionX_Amz_Target { 'SageMaker.DescribeModelBiasJobDefinition' = 0 }
+	export enum DescribeModelBiasJobDefinitionX_Amz_Target { 'SageMaker.DescribeModelBiasJobDefinition' = 'SageMaker.DescribeModelBiasJobDefinition' }
 
-	export enum DescribeModelCardX_Amz_Target { 'SageMaker.DescribeModelCard' = 0 }
+	export enum DescribeModelCardX_Amz_Target { 'SageMaker.DescribeModelCard' = 'SageMaker.DescribeModelCard' }
 
-	export enum DescribeModelCardExportJobX_Amz_Target { 'SageMaker.DescribeModelCardExportJob' = 0 }
+	export enum DescribeModelCardExportJobX_Amz_Target { 'SageMaker.DescribeModelCardExportJob' = 'SageMaker.DescribeModelCardExportJob' }
 
-	export enum DescribeModelExplainabilityJobDefinitionX_Amz_Target { 'SageMaker.DescribeModelExplainabilityJobDefinition' = 0 }
+	export enum DescribeModelExplainabilityJobDefinitionX_Amz_Target { 'SageMaker.DescribeModelExplainabilityJobDefinition' = 'SageMaker.DescribeModelExplainabilityJobDefinition' }
 
-	export enum DescribeModelPackageX_Amz_Target { 'SageMaker.DescribeModelPackage' = 0 }
+	export enum DescribeModelPackageX_Amz_Target { 'SageMaker.DescribeModelPackage' = 'SageMaker.DescribeModelPackage' }
 
-	export enum DescribeModelPackageGroupX_Amz_Target { 'SageMaker.DescribeModelPackageGroup' = 0 }
+	export enum DescribeModelPackageGroupX_Amz_Target { 'SageMaker.DescribeModelPackageGroup' = 'SageMaker.DescribeModelPackageGroup' }
 
-	export enum DescribeModelQualityJobDefinitionX_Amz_Target { 'SageMaker.DescribeModelQualityJobDefinition' = 0 }
+	export enum DescribeModelQualityJobDefinitionX_Amz_Target { 'SageMaker.DescribeModelQualityJobDefinition' = 'SageMaker.DescribeModelQualityJobDefinition' }
 
-	export enum DescribeMonitoringScheduleX_Amz_Target { 'SageMaker.DescribeMonitoringSchedule' = 0 }
+	export enum DescribeMonitoringScheduleX_Amz_Target { 'SageMaker.DescribeMonitoringSchedule' = 'SageMaker.DescribeMonitoringSchedule' }
 
-	export enum DescribeNotebookInstanceX_Amz_Target { 'SageMaker.DescribeNotebookInstance' = 0 }
+	export enum DescribeNotebookInstanceX_Amz_Target { 'SageMaker.DescribeNotebookInstance' = 'SageMaker.DescribeNotebookInstance' }
 
-	export enum DescribeNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.DescribeNotebookInstanceLifecycleConfig' = 0 }
+	export enum DescribeNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.DescribeNotebookInstanceLifecycleConfig' = 'SageMaker.DescribeNotebookInstanceLifecycleConfig' }
 
-	export enum DescribePipelineX_Amz_Target { 'SageMaker.DescribePipeline' = 0 }
+	export enum DescribePipelineX_Amz_Target { 'SageMaker.DescribePipeline' = 'SageMaker.DescribePipeline' }
 
-	export enum DescribePipelineDefinitionForExecutionX_Amz_Target { 'SageMaker.DescribePipelineDefinitionForExecution' = 0 }
+	export enum DescribePipelineDefinitionForExecutionX_Amz_Target { 'SageMaker.DescribePipelineDefinitionForExecution' = 'SageMaker.DescribePipelineDefinitionForExecution' }
 
-	export enum DescribePipelineExecutionX_Amz_Target { 'SageMaker.DescribePipelineExecution' = 0 }
+	export enum DescribePipelineExecutionX_Amz_Target { 'SageMaker.DescribePipelineExecution' = 'SageMaker.DescribePipelineExecution' }
 
-	export enum DescribeProcessingJobX_Amz_Target { 'SageMaker.DescribeProcessingJob' = 0 }
+	export enum DescribeProcessingJobX_Amz_Target { 'SageMaker.DescribeProcessingJob' = 'SageMaker.DescribeProcessingJob' }
 
-	export enum DescribeProjectX_Amz_Target { 'SageMaker.DescribeProject' = 0 }
+	export enum DescribeProjectX_Amz_Target { 'SageMaker.DescribeProject' = 'SageMaker.DescribeProject' }
 
-	export enum DescribeSpaceX_Amz_Target { 'SageMaker.DescribeSpace' = 0 }
+	export enum DescribeSpaceX_Amz_Target { 'SageMaker.DescribeSpace' = 'SageMaker.DescribeSpace' }
 
-	export enum DescribeStudioLifecycleConfigX_Amz_Target { 'SageMaker.DescribeStudioLifecycleConfig' = 0 }
+	export enum DescribeStudioLifecycleConfigX_Amz_Target { 'SageMaker.DescribeStudioLifecycleConfig' = 'SageMaker.DescribeStudioLifecycleConfig' }
 
-	export enum DescribeSubscribedWorkteamX_Amz_Target { 'SageMaker.DescribeSubscribedWorkteam' = 0 }
+	export enum DescribeSubscribedWorkteamX_Amz_Target { 'SageMaker.DescribeSubscribedWorkteam' = 'SageMaker.DescribeSubscribedWorkteam' }
 
-	export enum DescribeTrainingJobX_Amz_Target { 'SageMaker.DescribeTrainingJob' = 0 }
+	export enum DescribeTrainingJobX_Amz_Target { 'SageMaker.DescribeTrainingJob' = 'SageMaker.DescribeTrainingJob' }
 
-	export enum DescribeTransformJobX_Amz_Target { 'SageMaker.DescribeTransformJob' = 0 }
+	export enum DescribeTransformJobX_Amz_Target { 'SageMaker.DescribeTransformJob' = 'SageMaker.DescribeTransformJob' }
 
-	export enum DescribeTrialX_Amz_Target { 'SageMaker.DescribeTrial' = 0 }
+	export enum DescribeTrialX_Amz_Target { 'SageMaker.DescribeTrial' = 'SageMaker.DescribeTrial' }
 
-	export enum DescribeTrialComponentX_Amz_Target { 'SageMaker.DescribeTrialComponent' = 0 }
+	export enum DescribeTrialComponentX_Amz_Target { 'SageMaker.DescribeTrialComponent' = 'SageMaker.DescribeTrialComponent' }
 
-	export enum DescribeUserProfileX_Amz_Target { 'SageMaker.DescribeUserProfile' = 0 }
+	export enum DescribeUserProfileX_Amz_Target { 'SageMaker.DescribeUserProfile' = 'SageMaker.DescribeUserProfile' }
 
-	export enum DescribeWorkforceX_Amz_Target { 'SageMaker.DescribeWorkforce' = 0 }
+	export enum DescribeWorkforceX_Amz_Target { 'SageMaker.DescribeWorkforce' = 'SageMaker.DescribeWorkforce' }
 
-	export enum DescribeWorkteamX_Amz_Target { 'SageMaker.DescribeWorkteam' = 0 }
+	export enum DescribeWorkteamX_Amz_Target { 'SageMaker.DescribeWorkteam' = 'SageMaker.DescribeWorkteam' }
 
-	export enum DisableSagemakerServicecatalogPortfolioX_Amz_Target { 'SageMaker.DisableSagemakerServicecatalogPortfolio' = 0 }
+	export enum DisableSagemakerServicecatalogPortfolioX_Amz_Target { 'SageMaker.DisableSagemakerServicecatalogPortfolio' = 'SageMaker.DisableSagemakerServicecatalogPortfolio' }
 
-	export enum DisassociateTrialComponentX_Amz_Target { 'SageMaker.DisassociateTrialComponent' = 0 }
+	export enum DisassociateTrialComponentX_Amz_Target { 'SageMaker.DisassociateTrialComponent' = 'SageMaker.DisassociateTrialComponent' }
 
-	export enum EnableSagemakerServicecatalogPortfolioX_Amz_Target { 'SageMaker.EnableSagemakerServicecatalogPortfolio' = 0 }
+	export enum EnableSagemakerServicecatalogPortfolioX_Amz_Target { 'SageMaker.EnableSagemakerServicecatalogPortfolio' = 'SageMaker.EnableSagemakerServicecatalogPortfolio' }
 
-	export enum GetDeviceFleetReportX_Amz_Target { 'SageMaker.GetDeviceFleetReport' = 0 }
+	export enum GetDeviceFleetReportX_Amz_Target { 'SageMaker.GetDeviceFleetReport' = 'SageMaker.GetDeviceFleetReport' }
 
-	export enum GetLineageGroupPolicyX_Amz_Target { 'SageMaker.GetLineageGroupPolicy' = 0 }
+	export enum GetLineageGroupPolicyX_Amz_Target { 'SageMaker.GetLineageGroupPolicy' = 'SageMaker.GetLineageGroupPolicy' }
 
-	export enum GetModelPackageGroupPolicyX_Amz_Target { 'SageMaker.GetModelPackageGroupPolicy' = 0 }
+	export enum GetModelPackageGroupPolicyX_Amz_Target { 'SageMaker.GetModelPackageGroupPolicy' = 'SageMaker.GetModelPackageGroupPolicy' }
 
-	export enum GetSagemakerServicecatalogPortfolioStatusX_Amz_Target { 'SageMaker.GetSagemakerServicecatalogPortfolioStatus' = 0 }
+	export enum GetSagemakerServicecatalogPortfolioStatusX_Amz_Target { 'SageMaker.GetSagemakerServicecatalogPortfolioStatus' = 'SageMaker.GetSagemakerServicecatalogPortfolioStatus' }
 
-	export enum GetScalingConfigurationRecommendationX_Amz_Target { 'SageMaker.GetScalingConfigurationRecommendation' = 0 }
+	export enum GetScalingConfigurationRecommendationX_Amz_Target { 'SageMaker.GetScalingConfigurationRecommendation' = 'SageMaker.GetScalingConfigurationRecommendation' }
 
-	export enum GetSearchSuggestionsX_Amz_Target { 'SageMaker.GetSearchSuggestions' = 0 }
+	export enum GetSearchSuggestionsX_Amz_Target { 'SageMaker.GetSearchSuggestions' = 'SageMaker.GetSearchSuggestions' }
 
-	export enum ImportHubContentX_Amz_Target { 'SageMaker.ImportHubContent' = 0 }
+	export enum ImportHubContentX_Amz_Target { 'SageMaker.ImportHubContent' = 'SageMaker.ImportHubContent' }
 
-	export enum ListActionsX_Amz_Target { 'SageMaker.ListActions' = 0 }
+	export enum ListActionsX_Amz_Target { 'SageMaker.ListActions' = 'SageMaker.ListActions' }
 
-	export enum ListAlgorithmsX_Amz_Target { 'SageMaker.ListAlgorithms' = 0 }
+	export enum ListAlgorithmsX_Amz_Target { 'SageMaker.ListAlgorithms' = 'SageMaker.ListAlgorithms' }
 
-	export enum ListAliasesX_Amz_Target { 'SageMaker.ListAliases' = 0 }
+	export enum ListAliasesX_Amz_Target { 'SageMaker.ListAliases' = 'SageMaker.ListAliases' }
 
-	export enum ListAppImageConfigsX_Amz_Target { 'SageMaker.ListAppImageConfigs' = 0 }
+	export enum ListAppImageConfigsX_Amz_Target { 'SageMaker.ListAppImageConfigs' = 'SageMaker.ListAppImageConfigs' }
 
-	export enum ListAppsX_Amz_Target { 'SageMaker.ListApps' = 0 }
+	export enum ListAppsX_Amz_Target { 'SageMaker.ListApps' = 'SageMaker.ListApps' }
 
-	export enum ListArtifactsX_Amz_Target { 'SageMaker.ListArtifacts' = 0 }
+	export enum ListArtifactsX_Amz_Target { 'SageMaker.ListArtifacts' = 'SageMaker.ListArtifacts' }
 
-	export enum ListAssociationsX_Amz_Target { 'SageMaker.ListAssociations' = 0 }
+	export enum ListAssociationsX_Amz_Target { 'SageMaker.ListAssociations' = 'SageMaker.ListAssociations' }
 
-	export enum ListAutoMLJobsX_Amz_Target { 'SageMaker.ListAutoMLJobs' = 0 }
+	export enum ListAutoMLJobsX_Amz_Target { 'SageMaker.ListAutoMLJobs' = 'SageMaker.ListAutoMLJobs' }
 
-	export enum ListCandidatesForAutoMLJobX_Amz_Target { 'SageMaker.ListCandidatesForAutoMLJob' = 0 }
+	export enum ListCandidatesForAutoMLJobX_Amz_Target { 'SageMaker.ListCandidatesForAutoMLJob' = 'SageMaker.ListCandidatesForAutoMLJob' }
 
-	export enum ListCodeRepositoriesX_Amz_Target { 'SageMaker.ListCodeRepositories' = 0 }
+	export enum ListCodeRepositoriesX_Amz_Target { 'SageMaker.ListCodeRepositories' = 'SageMaker.ListCodeRepositories' }
 
-	export enum ListCompilationJobsX_Amz_Target { 'SageMaker.ListCompilationJobs' = 0 }
+	export enum ListCompilationJobsX_Amz_Target { 'SageMaker.ListCompilationJobs' = 'SageMaker.ListCompilationJobs' }
 
-	export enum ListContextsX_Amz_Target { 'SageMaker.ListContexts' = 0 }
+	export enum ListContextsX_Amz_Target { 'SageMaker.ListContexts' = 'SageMaker.ListContexts' }
 
-	export enum ListDataQualityJobDefinitionsX_Amz_Target { 'SageMaker.ListDataQualityJobDefinitions' = 0 }
+	export enum ListDataQualityJobDefinitionsX_Amz_Target { 'SageMaker.ListDataQualityJobDefinitions' = 'SageMaker.ListDataQualityJobDefinitions' }
 
-	export enum ListDeviceFleetsX_Amz_Target { 'SageMaker.ListDeviceFleets' = 0 }
+	export enum ListDeviceFleetsX_Amz_Target { 'SageMaker.ListDeviceFleets' = 'SageMaker.ListDeviceFleets' }
 
-	export enum ListDevicesX_Amz_Target { 'SageMaker.ListDevices' = 0 }
+	export enum ListDevicesX_Amz_Target { 'SageMaker.ListDevices' = 'SageMaker.ListDevices' }
 
-	export enum ListDomainsX_Amz_Target { 'SageMaker.ListDomains' = 0 }
+	export enum ListDomainsX_Amz_Target { 'SageMaker.ListDomains' = 'SageMaker.ListDomains' }
 
-	export enum ListEdgeDeploymentPlansX_Amz_Target { 'SageMaker.ListEdgeDeploymentPlans' = 0 }
+	export enum ListEdgeDeploymentPlansX_Amz_Target { 'SageMaker.ListEdgeDeploymentPlans' = 'SageMaker.ListEdgeDeploymentPlans' }
 
-	export enum ListEdgePackagingJobsX_Amz_Target { 'SageMaker.ListEdgePackagingJobs' = 0 }
+	export enum ListEdgePackagingJobsX_Amz_Target { 'SageMaker.ListEdgePackagingJobs' = 'SageMaker.ListEdgePackagingJobs' }
 
-	export enum ListEndpointConfigsX_Amz_Target { 'SageMaker.ListEndpointConfigs' = 0 }
+	export enum ListEndpointConfigsX_Amz_Target { 'SageMaker.ListEndpointConfigs' = 'SageMaker.ListEndpointConfigs' }
 
-	export enum ListEndpointsX_Amz_Target { 'SageMaker.ListEndpoints' = 0 }
+	export enum ListEndpointsX_Amz_Target { 'SageMaker.ListEndpoints' = 'SageMaker.ListEndpoints' }
 
-	export enum ListExperimentsX_Amz_Target { 'SageMaker.ListExperiments' = 0 }
+	export enum ListExperimentsX_Amz_Target { 'SageMaker.ListExperiments' = 'SageMaker.ListExperiments' }
 
-	export enum ListFeatureGroupsX_Amz_Target { 'SageMaker.ListFeatureGroups' = 0 }
+	export enum ListFeatureGroupsX_Amz_Target { 'SageMaker.ListFeatureGroups' = 'SageMaker.ListFeatureGroups' }
 
-	export enum ListFlowDefinitionsX_Amz_Target { 'SageMaker.ListFlowDefinitions' = 0 }
+	export enum ListFlowDefinitionsX_Amz_Target { 'SageMaker.ListFlowDefinitions' = 'SageMaker.ListFlowDefinitions' }
 
-	export enum ListHubContentVersionsX_Amz_Target { 'SageMaker.ListHubContentVersions' = 0 }
+	export enum ListHubContentVersionsX_Amz_Target { 'SageMaker.ListHubContentVersions' = 'SageMaker.ListHubContentVersions' }
 
-	export enum ListHubContentsX_Amz_Target { 'SageMaker.ListHubContents' = 0 }
+	export enum ListHubContentsX_Amz_Target { 'SageMaker.ListHubContents' = 'SageMaker.ListHubContents' }
 
-	export enum ListHubsX_Amz_Target { 'SageMaker.ListHubs' = 0 }
+	export enum ListHubsX_Amz_Target { 'SageMaker.ListHubs' = 'SageMaker.ListHubs' }
 
-	export enum ListHumanTaskUisX_Amz_Target { 'SageMaker.ListHumanTaskUis' = 0 }
+	export enum ListHumanTaskUisX_Amz_Target { 'SageMaker.ListHumanTaskUis' = 'SageMaker.ListHumanTaskUis' }
 
-	export enum ListHyperParameterTuningJobsX_Amz_Target { 'SageMaker.ListHyperParameterTuningJobs' = 0 }
+	export enum ListHyperParameterTuningJobsX_Amz_Target { 'SageMaker.ListHyperParameterTuningJobs' = 'SageMaker.ListHyperParameterTuningJobs' }
 
-	export enum ListImageVersionsX_Amz_Target { 'SageMaker.ListImageVersions' = 0 }
+	export enum ListImageVersionsX_Amz_Target { 'SageMaker.ListImageVersions' = 'SageMaker.ListImageVersions' }
 
-	export enum ListImagesX_Amz_Target { 'SageMaker.ListImages' = 0 }
+	export enum ListImagesX_Amz_Target { 'SageMaker.ListImages' = 'SageMaker.ListImages' }
 
-	export enum ListInferenceExperimentsX_Amz_Target { 'SageMaker.ListInferenceExperiments' = 0 }
+	export enum ListInferenceExperimentsX_Amz_Target { 'SageMaker.ListInferenceExperiments' = 'SageMaker.ListInferenceExperiments' }
 
-	export enum ListInferenceRecommendationsJobStepsX_Amz_Target { 'SageMaker.ListInferenceRecommendationsJobSteps' = 0 }
+	export enum ListInferenceRecommendationsJobStepsX_Amz_Target { 'SageMaker.ListInferenceRecommendationsJobSteps' = 'SageMaker.ListInferenceRecommendationsJobSteps' }
 
-	export enum ListInferenceRecommendationsJobsX_Amz_Target { 'SageMaker.ListInferenceRecommendationsJobs' = 0 }
+	export enum ListInferenceRecommendationsJobsX_Amz_Target { 'SageMaker.ListInferenceRecommendationsJobs' = 'SageMaker.ListInferenceRecommendationsJobs' }
 
-	export enum ListLabelingJobsX_Amz_Target { 'SageMaker.ListLabelingJobs' = 0 }
+	export enum ListLabelingJobsX_Amz_Target { 'SageMaker.ListLabelingJobs' = 'SageMaker.ListLabelingJobs' }
 
-	export enum ListLabelingJobsForWorkteamX_Amz_Target { 'SageMaker.ListLabelingJobsForWorkteam' = 0 }
+	export enum ListLabelingJobsForWorkteamX_Amz_Target { 'SageMaker.ListLabelingJobsForWorkteam' = 'SageMaker.ListLabelingJobsForWorkteam' }
 
-	export enum ListLineageGroupsX_Amz_Target { 'SageMaker.ListLineageGroups' = 0 }
+	export enum ListLineageGroupsX_Amz_Target { 'SageMaker.ListLineageGroups' = 'SageMaker.ListLineageGroups' }
 
-	export enum ListModelBiasJobDefinitionsX_Amz_Target { 'SageMaker.ListModelBiasJobDefinitions' = 0 }
+	export enum ListModelBiasJobDefinitionsX_Amz_Target { 'SageMaker.ListModelBiasJobDefinitions' = 'SageMaker.ListModelBiasJobDefinitions' }
 
-	export enum ListModelCardExportJobsX_Amz_Target { 'SageMaker.ListModelCardExportJobs' = 0 }
+	export enum ListModelCardExportJobsX_Amz_Target { 'SageMaker.ListModelCardExportJobs' = 'SageMaker.ListModelCardExportJobs' }
 
-	export enum ListModelCardVersionsX_Amz_Target { 'SageMaker.ListModelCardVersions' = 0 }
+	export enum ListModelCardVersionsX_Amz_Target { 'SageMaker.ListModelCardVersions' = 'SageMaker.ListModelCardVersions' }
 
-	export enum ListModelCardsX_Amz_Target { 'SageMaker.ListModelCards' = 0 }
+	export enum ListModelCardsX_Amz_Target { 'SageMaker.ListModelCards' = 'SageMaker.ListModelCards' }
 
-	export enum ListModelExplainabilityJobDefinitionsX_Amz_Target { 'SageMaker.ListModelExplainabilityJobDefinitions' = 0 }
+	export enum ListModelExplainabilityJobDefinitionsX_Amz_Target { 'SageMaker.ListModelExplainabilityJobDefinitions' = 'SageMaker.ListModelExplainabilityJobDefinitions' }
 
-	export enum ListModelMetadataX_Amz_Target { 'SageMaker.ListModelMetadata' = 0 }
+	export enum ListModelMetadataX_Amz_Target { 'SageMaker.ListModelMetadata' = 'SageMaker.ListModelMetadata' }
 
-	export enum ListModelPackageGroupsX_Amz_Target { 'SageMaker.ListModelPackageGroups' = 0 }
+	export enum ListModelPackageGroupsX_Amz_Target { 'SageMaker.ListModelPackageGroups' = 'SageMaker.ListModelPackageGroups' }
 
-	export enum ListModelPackagesX_Amz_Target { 'SageMaker.ListModelPackages' = 0 }
+	export enum ListModelPackagesX_Amz_Target { 'SageMaker.ListModelPackages' = 'SageMaker.ListModelPackages' }
 
-	export enum ListModelQualityJobDefinitionsX_Amz_Target { 'SageMaker.ListModelQualityJobDefinitions' = 0 }
+	export enum ListModelQualityJobDefinitionsX_Amz_Target { 'SageMaker.ListModelQualityJobDefinitions' = 'SageMaker.ListModelQualityJobDefinitions' }
 
-	export enum ListModelsX_Amz_Target { 'SageMaker.ListModels' = 0 }
+	export enum ListModelsX_Amz_Target { 'SageMaker.ListModels' = 'SageMaker.ListModels' }
 
-	export enum ListMonitoringAlertHistoryX_Amz_Target { 'SageMaker.ListMonitoringAlertHistory' = 0 }
+	export enum ListMonitoringAlertHistoryX_Amz_Target { 'SageMaker.ListMonitoringAlertHistory' = 'SageMaker.ListMonitoringAlertHistory' }
 
-	export enum ListMonitoringAlertsX_Amz_Target { 'SageMaker.ListMonitoringAlerts' = 0 }
+	export enum ListMonitoringAlertsX_Amz_Target { 'SageMaker.ListMonitoringAlerts' = 'SageMaker.ListMonitoringAlerts' }
 
-	export enum ListMonitoringExecutionsX_Amz_Target { 'SageMaker.ListMonitoringExecutions' = 0 }
+	export enum ListMonitoringExecutionsX_Amz_Target { 'SageMaker.ListMonitoringExecutions' = 'SageMaker.ListMonitoringExecutions' }
 
-	export enum ListMonitoringSchedulesX_Amz_Target { 'SageMaker.ListMonitoringSchedules' = 0 }
+	export enum ListMonitoringSchedulesX_Amz_Target { 'SageMaker.ListMonitoringSchedules' = 'SageMaker.ListMonitoringSchedules' }
 
-	export enum ListNotebookInstanceLifecycleConfigsX_Amz_Target { 'SageMaker.ListNotebookInstanceLifecycleConfigs' = 0 }
+	export enum ListNotebookInstanceLifecycleConfigsX_Amz_Target { 'SageMaker.ListNotebookInstanceLifecycleConfigs' = 'SageMaker.ListNotebookInstanceLifecycleConfigs' }
 
-	export enum ListNotebookInstancesX_Amz_Target { 'SageMaker.ListNotebookInstances' = 0 }
+	export enum ListNotebookInstancesX_Amz_Target { 'SageMaker.ListNotebookInstances' = 'SageMaker.ListNotebookInstances' }
 
-	export enum ListPipelineExecutionStepsX_Amz_Target { 'SageMaker.ListPipelineExecutionSteps' = 0 }
+	export enum ListPipelineExecutionStepsX_Amz_Target { 'SageMaker.ListPipelineExecutionSteps' = 'SageMaker.ListPipelineExecutionSteps' }
 
-	export enum ListPipelineExecutionsX_Amz_Target { 'SageMaker.ListPipelineExecutions' = 0 }
+	export enum ListPipelineExecutionsX_Amz_Target { 'SageMaker.ListPipelineExecutions' = 'SageMaker.ListPipelineExecutions' }
 
-	export enum ListPipelineParametersForExecutionX_Amz_Target { 'SageMaker.ListPipelineParametersForExecution' = 0 }
+	export enum ListPipelineParametersForExecutionX_Amz_Target { 'SageMaker.ListPipelineParametersForExecution' = 'SageMaker.ListPipelineParametersForExecution' }
 
-	export enum ListPipelinesX_Amz_Target { 'SageMaker.ListPipelines' = 0 }
+	export enum ListPipelinesX_Amz_Target { 'SageMaker.ListPipelines' = 'SageMaker.ListPipelines' }
 
-	export enum ListProcessingJobsX_Amz_Target { 'SageMaker.ListProcessingJobs' = 0 }
+	export enum ListProcessingJobsX_Amz_Target { 'SageMaker.ListProcessingJobs' = 'SageMaker.ListProcessingJobs' }
 
-	export enum ListProjectsX_Amz_Target { 'SageMaker.ListProjects' = 0 }
+	export enum ListProjectsX_Amz_Target { 'SageMaker.ListProjects' = 'SageMaker.ListProjects' }
 
-	export enum ListResourceCatalogsX_Amz_Target { 'SageMaker.ListResourceCatalogs' = 0 }
+	export enum ListResourceCatalogsX_Amz_Target { 'SageMaker.ListResourceCatalogs' = 'SageMaker.ListResourceCatalogs' }
 
-	export enum ListSpacesX_Amz_Target { 'SageMaker.ListSpaces' = 0 }
+	export enum ListSpacesX_Amz_Target { 'SageMaker.ListSpaces' = 'SageMaker.ListSpaces' }
 
-	export enum ListStageDevicesX_Amz_Target { 'SageMaker.ListStageDevices' = 0 }
+	export enum ListStageDevicesX_Amz_Target { 'SageMaker.ListStageDevices' = 'SageMaker.ListStageDevices' }
 
-	export enum ListStudioLifecycleConfigsX_Amz_Target { 'SageMaker.ListStudioLifecycleConfigs' = 0 }
+	export enum ListStudioLifecycleConfigsX_Amz_Target { 'SageMaker.ListStudioLifecycleConfigs' = 'SageMaker.ListStudioLifecycleConfigs' }
 
-	export enum ListSubscribedWorkteamsX_Amz_Target { 'SageMaker.ListSubscribedWorkteams' = 0 }
+	export enum ListSubscribedWorkteamsX_Amz_Target { 'SageMaker.ListSubscribedWorkteams' = 'SageMaker.ListSubscribedWorkteams' }
 
-	export enum ListTagsX_Amz_Target { 'SageMaker.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'SageMaker.ListTags' = 'SageMaker.ListTags' }
 
-	export enum ListTrainingJobsX_Amz_Target { 'SageMaker.ListTrainingJobs' = 0 }
+	export enum ListTrainingJobsX_Amz_Target { 'SageMaker.ListTrainingJobs' = 'SageMaker.ListTrainingJobs' }
 
-	export enum ListTrainingJobsForHyperParameterTuningJobX_Amz_Target { 'SageMaker.ListTrainingJobsForHyperParameterTuningJob' = 0 }
+	export enum ListTrainingJobsForHyperParameterTuningJobX_Amz_Target { 'SageMaker.ListTrainingJobsForHyperParameterTuningJob' = 'SageMaker.ListTrainingJobsForHyperParameterTuningJob' }
 
-	export enum ListTransformJobsX_Amz_Target { 'SageMaker.ListTransformJobs' = 0 }
+	export enum ListTransformJobsX_Amz_Target { 'SageMaker.ListTransformJobs' = 'SageMaker.ListTransformJobs' }
 
-	export enum ListTrialComponentsX_Amz_Target { 'SageMaker.ListTrialComponents' = 0 }
+	export enum ListTrialComponentsX_Amz_Target { 'SageMaker.ListTrialComponents' = 'SageMaker.ListTrialComponents' }
 
-	export enum ListTrialsX_Amz_Target { 'SageMaker.ListTrials' = 0 }
+	export enum ListTrialsX_Amz_Target { 'SageMaker.ListTrials' = 'SageMaker.ListTrials' }
 
-	export enum ListUserProfilesX_Amz_Target { 'SageMaker.ListUserProfiles' = 0 }
+	export enum ListUserProfilesX_Amz_Target { 'SageMaker.ListUserProfiles' = 'SageMaker.ListUserProfiles' }
 
-	export enum ListWorkforcesX_Amz_Target { 'SageMaker.ListWorkforces' = 0 }
+	export enum ListWorkforcesX_Amz_Target { 'SageMaker.ListWorkforces' = 'SageMaker.ListWorkforces' }
 
-	export enum ListWorkteamsX_Amz_Target { 'SageMaker.ListWorkteams' = 0 }
+	export enum ListWorkteamsX_Amz_Target { 'SageMaker.ListWorkteams' = 'SageMaker.ListWorkteams' }
 
-	export enum PutModelPackageGroupPolicyX_Amz_Target { 'SageMaker.PutModelPackageGroupPolicy' = 0 }
+	export enum PutModelPackageGroupPolicyX_Amz_Target { 'SageMaker.PutModelPackageGroupPolicy' = 'SageMaker.PutModelPackageGroupPolicy' }
 
-	export enum QueryLineageX_Amz_Target { 'SageMaker.QueryLineage' = 0 }
+	export enum QueryLineageX_Amz_Target { 'SageMaker.QueryLineage' = 'SageMaker.QueryLineage' }
 
-	export enum RegisterDevicesX_Amz_Target { 'SageMaker.RegisterDevices' = 0 }
+	export enum RegisterDevicesX_Amz_Target { 'SageMaker.RegisterDevices' = 'SageMaker.RegisterDevices' }
 
-	export enum RenderUiTemplateX_Amz_Target { 'SageMaker.RenderUiTemplate' = 0 }
+	export enum RenderUiTemplateX_Amz_Target { 'SageMaker.RenderUiTemplate' = 'SageMaker.RenderUiTemplate' }
 
-	export enum RetryPipelineExecutionX_Amz_Target { 'SageMaker.RetryPipelineExecution' = 0 }
+	export enum RetryPipelineExecutionX_Amz_Target { 'SageMaker.RetryPipelineExecution' = 'SageMaker.RetryPipelineExecution' }
 
-	export enum SearchX_Amz_Target { 'SageMaker.Search' = 0 }
+	export enum SearchX_Amz_Target { 'SageMaker.Search' = 'SageMaker.Search' }
 
-	export enum SendPipelineExecutionStepFailureX_Amz_Target { 'SageMaker.SendPipelineExecutionStepFailure' = 0 }
+	export enum SendPipelineExecutionStepFailureX_Amz_Target { 'SageMaker.SendPipelineExecutionStepFailure' = 'SageMaker.SendPipelineExecutionStepFailure' }
 
-	export enum SendPipelineExecutionStepSuccessX_Amz_Target { 'SageMaker.SendPipelineExecutionStepSuccess' = 0 }
+	export enum SendPipelineExecutionStepSuccessX_Amz_Target { 'SageMaker.SendPipelineExecutionStepSuccess' = 'SageMaker.SendPipelineExecutionStepSuccess' }
 
-	export enum StartEdgeDeploymentStageX_Amz_Target { 'SageMaker.StartEdgeDeploymentStage' = 0 }
+	export enum StartEdgeDeploymentStageX_Amz_Target { 'SageMaker.StartEdgeDeploymentStage' = 'SageMaker.StartEdgeDeploymentStage' }
 
-	export enum StartInferenceExperimentX_Amz_Target { 'SageMaker.StartInferenceExperiment' = 0 }
+	export enum StartInferenceExperimentX_Amz_Target { 'SageMaker.StartInferenceExperiment' = 'SageMaker.StartInferenceExperiment' }
 
-	export enum StartMonitoringScheduleX_Amz_Target { 'SageMaker.StartMonitoringSchedule' = 0 }
+	export enum StartMonitoringScheduleX_Amz_Target { 'SageMaker.StartMonitoringSchedule' = 'SageMaker.StartMonitoringSchedule' }
 
-	export enum StartNotebookInstanceX_Amz_Target { 'SageMaker.StartNotebookInstance' = 0 }
+	export enum StartNotebookInstanceX_Amz_Target { 'SageMaker.StartNotebookInstance' = 'SageMaker.StartNotebookInstance' }
 
-	export enum StartPipelineExecutionX_Amz_Target { 'SageMaker.StartPipelineExecution' = 0 }
+	export enum StartPipelineExecutionX_Amz_Target { 'SageMaker.StartPipelineExecution' = 'SageMaker.StartPipelineExecution' }
 
-	export enum StopAutoMLJobX_Amz_Target { 'SageMaker.StopAutoMLJob' = 0 }
+	export enum StopAutoMLJobX_Amz_Target { 'SageMaker.StopAutoMLJob' = 'SageMaker.StopAutoMLJob' }
 
-	export enum StopCompilationJobX_Amz_Target { 'SageMaker.StopCompilationJob' = 0 }
+	export enum StopCompilationJobX_Amz_Target { 'SageMaker.StopCompilationJob' = 'SageMaker.StopCompilationJob' }
 
-	export enum StopEdgeDeploymentStageX_Amz_Target { 'SageMaker.StopEdgeDeploymentStage' = 0 }
+	export enum StopEdgeDeploymentStageX_Amz_Target { 'SageMaker.StopEdgeDeploymentStage' = 'SageMaker.StopEdgeDeploymentStage' }
 
-	export enum StopEdgePackagingJobX_Amz_Target { 'SageMaker.StopEdgePackagingJob' = 0 }
+	export enum StopEdgePackagingJobX_Amz_Target { 'SageMaker.StopEdgePackagingJob' = 'SageMaker.StopEdgePackagingJob' }
 
-	export enum StopHyperParameterTuningJobX_Amz_Target { 'SageMaker.StopHyperParameterTuningJob' = 0 }
+	export enum StopHyperParameterTuningJobX_Amz_Target { 'SageMaker.StopHyperParameterTuningJob' = 'SageMaker.StopHyperParameterTuningJob' }
 
-	export enum StopInferenceExperimentX_Amz_Target { 'SageMaker.StopInferenceExperiment' = 0 }
+	export enum StopInferenceExperimentX_Amz_Target { 'SageMaker.StopInferenceExperiment' = 'SageMaker.StopInferenceExperiment' }
 
-	export enum StopInferenceRecommendationsJobX_Amz_Target { 'SageMaker.StopInferenceRecommendationsJob' = 0 }
+	export enum StopInferenceRecommendationsJobX_Amz_Target { 'SageMaker.StopInferenceRecommendationsJob' = 'SageMaker.StopInferenceRecommendationsJob' }
 
-	export enum StopLabelingJobX_Amz_Target { 'SageMaker.StopLabelingJob' = 0 }
+	export enum StopLabelingJobX_Amz_Target { 'SageMaker.StopLabelingJob' = 'SageMaker.StopLabelingJob' }
 
-	export enum StopMonitoringScheduleX_Amz_Target { 'SageMaker.StopMonitoringSchedule' = 0 }
+	export enum StopMonitoringScheduleX_Amz_Target { 'SageMaker.StopMonitoringSchedule' = 'SageMaker.StopMonitoringSchedule' }
 
-	export enum StopNotebookInstanceX_Amz_Target { 'SageMaker.StopNotebookInstance' = 0 }
+	export enum StopNotebookInstanceX_Amz_Target { 'SageMaker.StopNotebookInstance' = 'SageMaker.StopNotebookInstance' }
 
-	export enum StopPipelineExecutionX_Amz_Target { 'SageMaker.StopPipelineExecution' = 0 }
+	export enum StopPipelineExecutionX_Amz_Target { 'SageMaker.StopPipelineExecution' = 'SageMaker.StopPipelineExecution' }
 
-	export enum StopProcessingJobX_Amz_Target { 'SageMaker.StopProcessingJob' = 0 }
+	export enum StopProcessingJobX_Amz_Target { 'SageMaker.StopProcessingJob' = 'SageMaker.StopProcessingJob' }
 
-	export enum StopTrainingJobX_Amz_Target { 'SageMaker.StopTrainingJob' = 0 }
+	export enum StopTrainingJobX_Amz_Target { 'SageMaker.StopTrainingJob' = 'SageMaker.StopTrainingJob' }
 
-	export enum StopTransformJobX_Amz_Target { 'SageMaker.StopTransformJob' = 0 }
+	export enum StopTransformJobX_Amz_Target { 'SageMaker.StopTransformJob' = 'SageMaker.StopTransformJob' }
 
-	export enum UpdateActionX_Amz_Target { 'SageMaker.UpdateAction' = 0 }
+	export enum UpdateActionX_Amz_Target { 'SageMaker.UpdateAction' = 'SageMaker.UpdateAction' }
 
-	export enum UpdateAppImageConfigX_Amz_Target { 'SageMaker.UpdateAppImageConfig' = 0 }
+	export enum UpdateAppImageConfigX_Amz_Target { 'SageMaker.UpdateAppImageConfig' = 'SageMaker.UpdateAppImageConfig' }
 
-	export enum UpdateArtifactX_Amz_Target { 'SageMaker.UpdateArtifact' = 0 }
+	export enum UpdateArtifactX_Amz_Target { 'SageMaker.UpdateArtifact' = 'SageMaker.UpdateArtifact' }
 
-	export enum UpdateCodeRepositoryX_Amz_Target { 'SageMaker.UpdateCodeRepository' = 0 }
+	export enum UpdateCodeRepositoryX_Amz_Target { 'SageMaker.UpdateCodeRepository' = 'SageMaker.UpdateCodeRepository' }
 
-	export enum UpdateContextX_Amz_Target { 'SageMaker.UpdateContext' = 0 }
+	export enum UpdateContextX_Amz_Target { 'SageMaker.UpdateContext' = 'SageMaker.UpdateContext' }
 
-	export enum UpdateDeviceFleetX_Amz_Target { 'SageMaker.UpdateDeviceFleet' = 0 }
+	export enum UpdateDeviceFleetX_Amz_Target { 'SageMaker.UpdateDeviceFleet' = 'SageMaker.UpdateDeviceFleet' }
 
-	export enum UpdateDevicesX_Amz_Target { 'SageMaker.UpdateDevices' = 0 }
+	export enum UpdateDevicesX_Amz_Target { 'SageMaker.UpdateDevices' = 'SageMaker.UpdateDevices' }
 
-	export enum UpdateDomainX_Amz_Target { 'SageMaker.UpdateDomain' = 0 }
+	export enum UpdateDomainX_Amz_Target { 'SageMaker.UpdateDomain' = 'SageMaker.UpdateDomain' }
 
-	export enum UpdateEndpointX_Amz_Target { 'SageMaker.UpdateEndpoint' = 0 }
+	export enum UpdateEndpointX_Amz_Target { 'SageMaker.UpdateEndpoint' = 'SageMaker.UpdateEndpoint' }
 
-	export enum UpdateEndpointWeightsAndCapacitiesX_Amz_Target { 'SageMaker.UpdateEndpointWeightsAndCapacities' = 0 }
+	export enum UpdateEndpointWeightsAndCapacitiesX_Amz_Target { 'SageMaker.UpdateEndpointWeightsAndCapacities' = 'SageMaker.UpdateEndpointWeightsAndCapacities' }
 
-	export enum UpdateExperimentX_Amz_Target { 'SageMaker.UpdateExperiment' = 0 }
+	export enum UpdateExperimentX_Amz_Target { 'SageMaker.UpdateExperiment' = 'SageMaker.UpdateExperiment' }
 
-	export enum UpdateFeatureGroupX_Amz_Target { 'SageMaker.UpdateFeatureGroup' = 0 }
+	export enum UpdateFeatureGroupX_Amz_Target { 'SageMaker.UpdateFeatureGroup' = 'SageMaker.UpdateFeatureGroup' }
 
-	export enum UpdateFeatureMetadataX_Amz_Target { 'SageMaker.UpdateFeatureMetadata' = 0 }
+	export enum UpdateFeatureMetadataX_Amz_Target { 'SageMaker.UpdateFeatureMetadata' = 'SageMaker.UpdateFeatureMetadata' }
 
-	export enum UpdateHubX_Amz_Target { 'SageMaker.UpdateHub' = 0 }
+	export enum UpdateHubX_Amz_Target { 'SageMaker.UpdateHub' = 'SageMaker.UpdateHub' }
 
-	export enum UpdateImageX_Amz_Target { 'SageMaker.UpdateImage' = 0 }
+	export enum UpdateImageX_Amz_Target { 'SageMaker.UpdateImage' = 'SageMaker.UpdateImage' }
 
-	export enum UpdateImageVersionX_Amz_Target { 'SageMaker.UpdateImageVersion' = 0 }
+	export enum UpdateImageVersionX_Amz_Target { 'SageMaker.UpdateImageVersion' = 'SageMaker.UpdateImageVersion' }
 
-	export enum UpdateInferenceExperimentX_Amz_Target { 'SageMaker.UpdateInferenceExperiment' = 0 }
+	export enum UpdateInferenceExperimentX_Amz_Target { 'SageMaker.UpdateInferenceExperiment' = 'SageMaker.UpdateInferenceExperiment' }
 
-	export enum UpdateModelCardX_Amz_Target { 'SageMaker.UpdateModelCard' = 0 }
+	export enum UpdateModelCardX_Amz_Target { 'SageMaker.UpdateModelCard' = 'SageMaker.UpdateModelCard' }
 
-	export enum UpdateModelPackageX_Amz_Target { 'SageMaker.UpdateModelPackage' = 0 }
+	export enum UpdateModelPackageX_Amz_Target { 'SageMaker.UpdateModelPackage' = 'SageMaker.UpdateModelPackage' }
 
-	export enum UpdateMonitoringAlertX_Amz_Target { 'SageMaker.UpdateMonitoringAlert' = 0 }
+	export enum UpdateMonitoringAlertX_Amz_Target { 'SageMaker.UpdateMonitoringAlert' = 'SageMaker.UpdateMonitoringAlert' }
 
-	export enum UpdateMonitoringScheduleX_Amz_Target { 'SageMaker.UpdateMonitoringSchedule' = 0 }
+	export enum UpdateMonitoringScheduleX_Amz_Target { 'SageMaker.UpdateMonitoringSchedule' = 'SageMaker.UpdateMonitoringSchedule' }
 
-	export enum UpdateNotebookInstanceX_Amz_Target { 'SageMaker.UpdateNotebookInstance' = 0 }
+	export enum UpdateNotebookInstanceX_Amz_Target { 'SageMaker.UpdateNotebookInstance' = 'SageMaker.UpdateNotebookInstance' }
 
-	export enum UpdateNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.UpdateNotebookInstanceLifecycleConfig' = 0 }
+	export enum UpdateNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.UpdateNotebookInstanceLifecycleConfig' = 'SageMaker.UpdateNotebookInstanceLifecycleConfig' }
 
-	export enum UpdatePipelineX_Amz_Target { 'SageMaker.UpdatePipeline' = 0 }
+	export enum UpdatePipelineX_Amz_Target { 'SageMaker.UpdatePipeline' = 'SageMaker.UpdatePipeline' }
 
-	export enum UpdatePipelineExecutionX_Amz_Target { 'SageMaker.UpdatePipelineExecution' = 0 }
+	export enum UpdatePipelineExecutionX_Amz_Target { 'SageMaker.UpdatePipelineExecution' = 'SageMaker.UpdatePipelineExecution' }
 
-	export enum UpdateProjectX_Amz_Target { 'SageMaker.UpdateProject' = 0 }
+	export enum UpdateProjectX_Amz_Target { 'SageMaker.UpdateProject' = 'SageMaker.UpdateProject' }
 
-	export enum UpdateSpaceX_Amz_Target { 'SageMaker.UpdateSpace' = 0 }
+	export enum UpdateSpaceX_Amz_Target { 'SageMaker.UpdateSpace' = 'SageMaker.UpdateSpace' }
 
-	export enum UpdateTrainingJobX_Amz_Target { 'SageMaker.UpdateTrainingJob' = 0 }
+	export enum UpdateTrainingJobX_Amz_Target { 'SageMaker.UpdateTrainingJob' = 'SageMaker.UpdateTrainingJob' }
 
-	export enum UpdateTrialX_Amz_Target { 'SageMaker.UpdateTrial' = 0 }
+	export enum UpdateTrialX_Amz_Target { 'SageMaker.UpdateTrial' = 'SageMaker.UpdateTrial' }
 
-	export enum UpdateTrialComponentX_Amz_Target { 'SageMaker.UpdateTrialComponent' = 0 }
+	export enum UpdateTrialComponentX_Amz_Target { 'SageMaker.UpdateTrialComponent' = 'SageMaker.UpdateTrialComponent' }
 
-	export enum UpdateUserProfileX_Amz_Target { 'SageMaker.UpdateUserProfile' = 0 }
+	export enum UpdateUserProfileX_Amz_Target { 'SageMaker.UpdateUserProfile' = 'SageMaker.UpdateUserProfile' }
 
-	export enum UpdateWorkforceX_Amz_Target { 'SageMaker.UpdateWorkforce' = 0 }
+	export enum UpdateWorkforceX_Amz_Target { 'SageMaker.UpdateWorkforce' = 'SageMaker.UpdateWorkforce' }
 
-	export enum UpdateWorkteamX_Amz_Target { 'SageMaker.UpdateWorkteam' = 0 }
+	export enum UpdateWorkteamX_Amz_Target { 'SageMaker.UpdateWorkteam' = 'SageMaker.UpdateWorkteam' }
 
 }
 

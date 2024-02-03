@@ -84,7 +84,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoverySystemType { NetAppONTAP = 0 }
+	export enum DiscoverySystemType { NetAppONTAP = 'NetAppONTAP' }
 
 
 	/** A key-value pair representing a single tag that's been applied to an Amazon Web Services resource. */
@@ -287,7 +287,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureBlobAuthenticationType { SAS = 0 }
+	export enum AzureBlobAuthenticationType { SAS = 'SAS' }
 
 
 	/** <p>The shared access signature (SAS) configuration that allows DataSync to access your Microsoft Azure Blob Storage.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-sas-tokens">SAS tokens</a> for accessing your Azure Blob Storage.</p> */
@@ -310,9 +310,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureBlobType { BLOCK = 0 }
+	export enum AzureBlobType { BLOCK = 'BLOCK' }
 
-	export enum AzureAccessTier { HOT = 0, COOL = 1, ARCHIVE = 2 }
+	export enum AzureAccessTier { HOT = 'HOT', COOL = 'COOL', ARCHIVE = 'ARCHIVE' }
 
 
 	/** CreateLocationEfs */
@@ -392,7 +392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EfsInTransitEncryption { NONE = 0, TLS1_2 = 1 }
+	export enum EfsInTransitEncryption { NONE = 'NONE', TLS1_2 = 'TLS1_2' }
 
 	export interface CreateLocationFsxLustreResponse {
 		LocationArn?: string;
@@ -524,7 +524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NfsVersion { AUTOMATIC = 0, NFS3 = 1, NFS4_0 = 2, NFS4_1 = 3 }
+	export enum NfsVersion { AUTOMATIC = 'AUTOMATIC', NFS3 = 'NFS3', NFS4_0 = 'NFS4_0', NFS4_1 = 'NFS4_1' }
 
 
 	/** Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your Amazon FSx for NetApp ONTAP file system. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Accessing FSx for ONTAP file systems</a>. */
@@ -577,7 +577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SmbVersion { AUTOMATIC = 0, SMB2 = 1, SMB3 = 2, SMB1 = 3, SMB2_0 = 4 }
+	export enum SmbVersion { AUTOMATIC = 'AUTOMATIC', SMB2 = 'SMB2', SMB3 = 'SMB3', SMB1 = 'SMB1', SMB2_0 = 'SMB2_0' }
 
 	export interface CreateLocationFsxOpenZfsResponse {
 		LocationArn?: string;
@@ -783,9 +783,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HdfsRpcProtection { DISABLED = 0, AUTHENTICATION = 1, INTEGRITY = 2, PRIVACY = 3 }
+	export enum HdfsRpcProtection { DISABLED = 'DISABLED', AUTHENTICATION = 'AUTHENTICATION', INTEGRITY = 'INTEGRITY', PRIVACY = 'PRIVACY' }
 
-	export enum HdfsAuthenticationType { SIMPLE = 0, KERBEROS = 1 }
+	export enum HdfsAuthenticationType { SIMPLE = 'SIMPLE', KERBEROS = 'KERBEROS' }
 
 
 	/** CreateLocationNfsResponse */
@@ -921,7 +921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectStorageServerProtocol { HTTPS = 0, HTTP = 1 }
+	export enum ObjectStorageServerProtocol { HTTPS = 'HTTPS', HTTP = 'HTTP' }
 
 
 	/** CreateLocationS3Response */
@@ -975,7 +975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3StorageClass { STANDARD = 0, STANDARD_IA = 1, ONEZONE_IA = 2, INTELLIGENT_TIERING = 3, GLACIER = 4, DEEP_ARCHIVE = 5, OUTPOSTS = 6, GLACIER_INSTANT_RETRIEVAL = 7 }
+	export enum S3StorageClass { STANDARD = 'STANDARD', STANDARD_IA = 'STANDARD_IA', ONEZONE_IA = 'ONEZONE_IA', INTELLIGENT_TIERING = 'INTELLIGENT_TIERING', GLACIER = 'GLACIER', DEEP_ARCHIVE = 'DEEP_ARCHIVE', OUTPOSTS = 'OUTPOSTS', GLACIER_INSTANT_RETRIEVAL = 'GLACIER_INSTANT_RETRIEVAL' }
 
 
 	/** <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p> */
@@ -1180,27 +1180,27 @@ export namespace MyNS {
 
 	}
 
-	export enum VerifyMode { POINT_IN_TIME_CONSISTENT = 0, ONLY_FILES_TRANSFERRED = 1, NONE = 2 }
+	export enum VerifyMode { POINT_IN_TIME_CONSISTENT = 'POINT_IN_TIME_CONSISTENT', ONLY_FILES_TRANSFERRED = 'ONLY_FILES_TRANSFERRED', NONE = 'NONE' }
 
-	export enum OverwriteMode { ALWAYS = 0, NEVER = 1 }
+	export enum OverwriteMode { ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
-	export enum Atime { NONE = 0, BEST_EFFORT = 1 }
+	export enum Atime { NONE = 'NONE', BEST_EFFORT = 'BEST_EFFORT' }
 
-	export enum Mtime { NONE = 0, PRESERVE = 1 }
+	export enum Mtime { NONE = 'NONE', PRESERVE = 'PRESERVE' }
 
-	export enum Uid { NONE = 0, INT_VALUE = 1, NAME = 2, BOTH = 3 }
+	export enum Uid { NONE = 'NONE', INT_VALUE = 'INT_VALUE', NAME = 'NAME', BOTH = 'BOTH' }
 
-	export enum PreserveDeletedFiles { PRESERVE = 0, REMOVE = 1 }
+	export enum PreserveDeletedFiles { PRESERVE = 'PRESERVE', REMOVE = 'REMOVE' }
 
-	export enum TaskQueueing { ENABLED = 0, DISABLED = 1 }
+	export enum TaskQueueing { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum LogLevel { OFF = 0, BASIC = 1, TRANSFER = 2 }
+	export enum LogLevel { OFF = 'OFF', BASIC = 'BASIC', TRANSFER = 'TRANSFER' }
 
-	export enum TransferMode { CHANGED = 0, ALL = 1 }
+	export enum TransferMode { CHANGED = 'CHANGED', ALL = 'ALL' }
 
-	export enum SmbSecurityDescriptorCopyFlags { NONE = 0, OWNER_DACL = 1, OWNER_DACL_SACL = 2 }
+	export enum SmbSecurityDescriptorCopyFlags { NONE = 'NONE', OWNER_DACL = 'OWNER_DACL', OWNER_DACL_SACL = 'OWNER_DACL_SACL' }
 
-	export enum ObjectTags { PRESERVE = 0, NONE = 1 }
+	export enum ObjectTags { PRESERVE = 'PRESERVE', NONE = 'NONE' }
 
 
 	/** Specifies which files, folders, and objects to include or exclude when transferring files from source to destination. */
@@ -1222,7 +1222,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterType { SIMPLE_PATTERN = 0 }
+	export enum FilterType { SIMPLE_PATTERN = 'SIMPLE_PATTERN' }
 
 
 	/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
@@ -1371,9 +1371,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentStatus { ONLINE = 0, OFFLINE = 1 }
+	export enum AgentStatus { ONLINE = 'ONLINE', OFFLINE = 'OFFLINE' }
 
-	export enum EndpointType { PUBLIC = 0, PRIVATE_LINK = 1, FIPS = 2 }
+	export enum EndpointType { PUBLIC = 'PUBLIC', PRIVATE_LINK = 'PRIVATE_LINK', FIPS = 'FIPS' }
 
 
 	/** Specifies how your DataSync agent connects to Amazon Web Services using a virtual private cloud (VPC) service endpoint. An agent that uses a VPC endpoint isn't accessible over the public internet. */
@@ -1446,7 +1446,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryJobStatus { RUNNING = 0, WARNING = 1, TERMINATED = 2, FAILED = 3, STOPPED = 4, COMPLETED = 5, COMPLETED_WITH_ISSUES = 6 }
+	export enum DiscoveryJobStatus { RUNNING = 'RUNNING', WARNING = 'WARNING', TERMINATED = 'TERMINATED', FAILED = 'FAILED', STOPPED = 'STOPPED', COMPLETED = 'COMPLETED', COMPLETED_WITH_ISSUES = 'COMPLETED_WITH_ISSUES' }
 
 	export interface DescribeDiscoveryJobRequest {
 
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageSystemConnectivityStatus { PASS = 0, FAIL = 1, UNKNOWN = 2 }
+	export enum StorageSystemConnectivityStatus { PASS = 'PASS', FAIL = 'FAIL', UNKNOWN = 'UNKNOWN' }
 
 	export interface DescribeStorageSystemRequest {
 
@@ -2208,7 +2208,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryResourceType { SVM = 0, VOLUME = 1, CLUSTER = 2 }
+	export enum DiscoveryResourceType { SVM = 'SVM', VOLUME = 'VOLUME', CLUSTER = 'CLUSTER' }
 
 	export interface DescribeStorageSystemResourceMetricsRequest {
 
@@ -2412,7 +2412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationStatus { NONE = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3 }
+	export enum RecommendationStatus { NONE = 'NONE', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** The information that DataSync Discovery collects about a volume in your on-premises storage system. */
@@ -2607,7 +2607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatus { AVAILABLE = 0, CREATING = 1, QUEUED = 2, RUNNING = 3, UNAVAILABLE = 4 }
+	export enum TaskStatus { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', QUEUED = 'QUEUED', RUNNING = 'RUNNING', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** DescribeTaskRequest */
@@ -2677,7 +2677,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskExecutionStatus { QUEUED = 0, LAUNCHING = 1, PREPARING = 2, TRANSFERRING = 3, VERIFYING = 4, SUCCESS = 5, ERROR = 6 }
+	export enum TaskExecutionStatus { QUEUED = 'QUEUED', LAUNCHING = 'LAUNCHING', PREPARING = 'PREPARING', TRANSFERRING = 'TRANSFERRING', VERIFYING = 'VERIFYING', SUCCESS = 'SUCCESS', ERROR = 'ERROR' }
 
 
 	/** Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered. */
@@ -2720,7 +2720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhaseStatus { PENDING = 0, SUCCESS = 1, ERROR = 2 }
+	export enum PhaseStatus { PENDING = 'PENDING', SUCCESS = 'SUCCESS', ERROR = 'ERROR' }
 
 
 	/** DescribeTaskExecutionRequest */
@@ -2984,9 +2984,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationFilterName { LocationUri = 0, LocationType = 1, CreationTime = 2 }
+	export enum LocationFilterName { LocationUri = 'LocationUri', LocationType = 'LocationType', CreationTime = 'CreationTime' }
 
-	export enum Operator { Equals = 0, NotEquals = 1, In = 2, LessThanOrEqual = 3, LessThan = 4, GreaterThanOrEqual = 5, GreaterThan = 6, Contains = 7, NotContains = 8, BeginsWith = 9 }
+	export enum Operator { Equals = 'Equals', NotEquals = 'NotEquals', In = 'In', LessThanOrEqual = 'LessThanOrEqual', LessThan = 'LessThan', GreaterThanOrEqual = 'GreaterThanOrEqual', GreaterThan = 'GreaterThan', Contains = 'Contains', NotContains = 'NotContains', BeginsWith = 'BeginsWith' }
 
 	export interface ListStorageSystemsResponse {
 		StorageSystems?: Array<StorageSystemListEntry>;
@@ -3237,7 +3237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskFilterName { LocationId = 0, CreationTime = 1 }
+	export enum TaskFilterName { LocationId = 'LocationId', CreationTime = 'CreationTime' }
 
 	export interface RemoveStorageSystemResponse {
 	}
@@ -3853,15 +3853,15 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryResourceFilter { SVM = 0 }
+	export enum DiscoveryResourceFilter { SVM = 'SVM' }
 
-	export enum Gid { NONE = 0, INT_VALUE = 1, NAME = 2, BOTH = 3 }
+	export enum Gid { NONE = 'NONE', INT_VALUE = 'INT_VALUE', NAME = 'NAME', BOTH = 'BOTH' }
 
-	export enum HdfsDataTransferProtection { DISABLED = 0, AUTHENTICATION = 1, INTEGRITY = 2, PRIVACY = 3 }
+	export enum HdfsDataTransferProtection { DISABLED = 'DISABLED', AUTHENTICATION = 'AUTHENTICATION', INTEGRITY = 'INTEGRITY', PRIVACY = 'PRIVACY' }
 
-	export enum PreserveDevices { NONE = 0, PRESERVE = 1 }
+	export enum PreserveDevices { NONE = 'NONE', PRESERVE = 'PRESERVE' }
 
-	export enum PosixPermissions { NONE = 0, PRESERVE = 1 }
+	export enum PosixPermissions { NONE = 'NONE', PRESERVE = 'PRESERVE' }
 
 	@Injectable()
 	export class MyClient {
@@ -4427,125 +4427,125 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddStorageSystemX_Amz_Target { 'FmrsService.AddStorageSystem' = 0 }
+	export enum AddStorageSystemX_Amz_Target { 'FmrsService.AddStorageSystem' = 'FmrsService.AddStorageSystem' }
 
-	export enum CancelTaskExecutionX_Amz_Target { 'FmrsService.CancelTaskExecution' = 0 }
+	export enum CancelTaskExecutionX_Amz_Target { 'FmrsService.CancelTaskExecution' = 'FmrsService.CancelTaskExecution' }
 
-	export enum CreateAgentX_Amz_Target { 'FmrsService.CreateAgent' = 0 }
+	export enum CreateAgentX_Amz_Target { 'FmrsService.CreateAgent' = 'FmrsService.CreateAgent' }
 
-	export enum CreateLocationAzureBlobX_Amz_Target { 'FmrsService.CreateLocationAzureBlob' = 0 }
+	export enum CreateLocationAzureBlobX_Amz_Target { 'FmrsService.CreateLocationAzureBlob' = 'FmrsService.CreateLocationAzureBlob' }
 
-	export enum CreateLocationEfsX_Amz_Target { 'FmrsService.CreateLocationEfs' = 0 }
+	export enum CreateLocationEfsX_Amz_Target { 'FmrsService.CreateLocationEfs' = 'FmrsService.CreateLocationEfs' }
 
-	export enum CreateLocationFsxLustreX_Amz_Target { 'FmrsService.CreateLocationFsxLustre' = 0 }
+	export enum CreateLocationFsxLustreX_Amz_Target { 'FmrsService.CreateLocationFsxLustre' = 'FmrsService.CreateLocationFsxLustre' }
 
-	export enum CreateLocationFsxOntapX_Amz_Target { 'FmrsService.CreateLocationFsxOntap' = 0 }
+	export enum CreateLocationFsxOntapX_Amz_Target { 'FmrsService.CreateLocationFsxOntap' = 'FmrsService.CreateLocationFsxOntap' }
 
-	export enum CreateLocationFsxOpenZfsX_Amz_Target { 'FmrsService.CreateLocationFsxOpenZfs' = 0 }
+	export enum CreateLocationFsxOpenZfsX_Amz_Target { 'FmrsService.CreateLocationFsxOpenZfs' = 'FmrsService.CreateLocationFsxOpenZfs' }
 
-	export enum CreateLocationFsxWindowsX_Amz_Target { 'FmrsService.CreateLocationFsxWindows' = 0 }
+	export enum CreateLocationFsxWindowsX_Amz_Target { 'FmrsService.CreateLocationFsxWindows' = 'FmrsService.CreateLocationFsxWindows' }
 
-	export enum CreateLocationHdfsX_Amz_Target { 'FmrsService.CreateLocationHdfs' = 0 }
+	export enum CreateLocationHdfsX_Amz_Target { 'FmrsService.CreateLocationHdfs' = 'FmrsService.CreateLocationHdfs' }
 
-	export enum CreateLocationNfsX_Amz_Target { 'FmrsService.CreateLocationNfs' = 0 }
+	export enum CreateLocationNfsX_Amz_Target { 'FmrsService.CreateLocationNfs' = 'FmrsService.CreateLocationNfs' }
 
-	export enum CreateLocationObjectStorageX_Amz_Target { 'FmrsService.CreateLocationObjectStorage' = 0 }
+	export enum CreateLocationObjectStorageX_Amz_Target { 'FmrsService.CreateLocationObjectStorage' = 'FmrsService.CreateLocationObjectStorage' }
 
-	export enum CreateLocationS3X_Amz_Target { 'FmrsService.CreateLocationS3' = 0 }
+	export enum CreateLocationS3X_Amz_Target { 'FmrsService.CreateLocationS3' = 'FmrsService.CreateLocationS3' }
 
-	export enum CreateLocationSmbX_Amz_Target { 'FmrsService.CreateLocationSmb' = 0 }
+	export enum CreateLocationSmbX_Amz_Target { 'FmrsService.CreateLocationSmb' = 'FmrsService.CreateLocationSmb' }
 
-	export enum CreateTaskX_Amz_Target { 'FmrsService.CreateTask' = 0 }
+	export enum CreateTaskX_Amz_Target { 'FmrsService.CreateTask' = 'FmrsService.CreateTask' }
 
-	export enum DeleteAgentX_Amz_Target { 'FmrsService.DeleteAgent' = 0 }
+	export enum DeleteAgentX_Amz_Target { 'FmrsService.DeleteAgent' = 'FmrsService.DeleteAgent' }
 
-	export enum DeleteLocationX_Amz_Target { 'FmrsService.DeleteLocation' = 0 }
+	export enum DeleteLocationX_Amz_Target { 'FmrsService.DeleteLocation' = 'FmrsService.DeleteLocation' }
 
-	export enum DeleteTaskX_Amz_Target { 'FmrsService.DeleteTask' = 0 }
+	export enum DeleteTaskX_Amz_Target { 'FmrsService.DeleteTask' = 'FmrsService.DeleteTask' }
 
-	export enum DescribeAgentX_Amz_Target { 'FmrsService.DescribeAgent' = 0 }
+	export enum DescribeAgentX_Amz_Target { 'FmrsService.DescribeAgent' = 'FmrsService.DescribeAgent' }
 
-	export enum DescribeDiscoveryJobX_Amz_Target { 'FmrsService.DescribeDiscoveryJob' = 0 }
+	export enum DescribeDiscoveryJobX_Amz_Target { 'FmrsService.DescribeDiscoveryJob' = 'FmrsService.DescribeDiscoveryJob' }
 
-	export enum DescribeLocationAzureBlobX_Amz_Target { 'FmrsService.DescribeLocationAzureBlob' = 0 }
+	export enum DescribeLocationAzureBlobX_Amz_Target { 'FmrsService.DescribeLocationAzureBlob' = 'FmrsService.DescribeLocationAzureBlob' }
 
-	export enum DescribeLocationEfsX_Amz_Target { 'FmrsService.DescribeLocationEfs' = 0 }
+	export enum DescribeLocationEfsX_Amz_Target { 'FmrsService.DescribeLocationEfs' = 'FmrsService.DescribeLocationEfs' }
 
-	export enum DescribeLocationFsxLustreX_Amz_Target { 'FmrsService.DescribeLocationFsxLustre' = 0 }
+	export enum DescribeLocationFsxLustreX_Amz_Target { 'FmrsService.DescribeLocationFsxLustre' = 'FmrsService.DescribeLocationFsxLustre' }
 
-	export enum DescribeLocationFsxOntapX_Amz_Target { 'FmrsService.DescribeLocationFsxOntap' = 0 }
+	export enum DescribeLocationFsxOntapX_Amz_Target { 'FmrsService.DescribeLocationFsxOntap' = 'FmrsService.DescribeLocationFsxOntap' }
 
-	export enum DescribeLocationFsxOpenZfsX_Amz_Target { 'FmrsService.DescribeLocationFsxOpenZfs' = 0 }
+	export enum DescribeLocationFsxOpenZfsX_Amz_Target { 'FmrsService.DescribeLocationFsxOpenZfs' = 'FmrsService.DescribeLocationFsxOpenZfs' }
 
-	export enum DescribeLocationFsxWindowsX_Amz_Target { 'FmrsService.DescribeLocationFsxWindows' = 0 }
+	export enum DescribeLocationFsxWindowsX_Amz_Target { 'FmrsService.DescribeLocationFsxWindows' = 'FmrsService.DescribeLocationFsxWindows' }
 
-	export enum DescribeLocationHdfsX_Amz_Target { 'FmrsService.DescribeLocationHdfs' = 0 }
+	export enum DescribeLocationHdfsX_Amz_Target { 'FmrsService.DescribeLocationHdfs' = 'FmrsService.DescribeLocationHdfs' }
 
-	export enum DescribeLocationNfsX_Amz_Target { 'FmrsService.DescribeLocationNfs' = 0 }
+	export enum DescribeLocationNfsX_Amz_Target { 'FmrsService.DescribeLocationNfs' = 'FmrsService.DescribeLocationNfs' }
 
-	export enum DescribeLocationObjectStorageX_Amz_Target { 'FmrsService.DescribeLocationObjectStorage' = 0 }
+	export enum DescribeLocationObjectStorageX_Amz_Target { 'FmrsService.DescribeLocationObjectStorage' = 'FmrsService.DescribeLocationObjectStorage' }
 
-	export enum DescribeLocationS3X_Amz_Target { 'FmrsService.DescribeLocationS3' = 0 }
+	export enum DescribeLocationS3X_Amz_Target { 'FmrsService.DescribeLocationS3' = 'FmrsService.DescribeLocationS3' }
 
-	export enum DescribeLocationSmbX_Amz_Target { 'FmrsService.DescribeLocationSmb' = 0 }
+	export enum DescribeLocationSmbX_Amz_Target { 'FmrsService.DescribeLocationSmb' = 'FmrsService.DescribeLocationSmb' }
 
-	export enum DescribeStorageSystemX_Amz_Target { 'FmrsService.DescribeStorageSystem' = 0 }
+	export enum DescribeStorageSystemX_Amz_Target { 'FmrsService.DescribeStorageSystem' = 'FmrsService.DescribeStorageSystem' }
 
-	export enum DescribeStorageSystemResourceMetricsX_Amz_Target { 'FmrsService.DescribeStorageSystemResourceMetrics' = 0 }
+	export enum DescribeStorageSystemResourceMetricsX_Amz_Target { 'FmrsService.DescribeStorageSystemResourceMetrics' = 'FmrsService.DescribeStorageSystemResourceMetrics' }
 
-	export enum DescribeStorageSystemResourcesX_Amz_Target { 'FmrsService.DescribeStorageSystemResources' = 0 }
+	export enum DescribeStorageSystemResourcesX_Amz_Target { 'FmrsService.DescribeStorageSystemResources' = 'FmrsService.DescribeStorageSystemResources' }
 
-	export enum DescribeTaskX_Amz_Target { 'FmrsService.DescribeTask' = 0 }
+	export enum DescribeTaskX_Amz_Target { 'FmrsService.DescribeTask' = 'FmrsService.DescribeTask' }
 
-	export enum DescribeTaskExecutionX_Amz_Target { 'FmrsService.DescribeTaskExecution' = 0 }
+	export enum DescribeTaskExecutionX_Amz_Target { 'FmrsService.DescribeTaskExecution' = 'FmrsService.DescribeTaskExecution' }
 
-	export enum GenerateRecommendationsX_Amz_Target { 'FmrsService.GenerateRecommendations' = 0 }
+	export enum GenerateRecommendationsX_Amz_Target { 'FmrsService.GenerateRecommendations' = 'FmrsService.GenerateRecommendations' }
 
-	export enum ListAgentsX_Amz_Target { 'FmrsService.ListAgents' = 0 }
+	export enum ListAgentsX_Amz_Target { 'FmrsService.ListAgents' = 'FmrsService.ListAgents' }
 
-	export enum ListDiscoveryJobsX_Amz_Target { 'FmrsService.ListDiscoveryJobs' = 0 }
+	export enum ListDiscoveryJobsX_Amz_Target { 'FmrsService.ListDiscoveryJobs' = 'FmrsService.ListDiscoveryJobs' }
 
-	export enum ListLocationsX_Amz_Target { 'FmrsService.ListLocations' = 0 }
+	export enum ListLocationsX_Amz_Target { 'FmrsService.ListLocations' = 'FmrsService.ListLocations' }
 
-	export enum ListStorageSystemsX_Amz_Target { 'FmrsService.ListStorageSystems' = 0 }
+	export enum ListStorageSystemsX_Amz_Target { 'FmrsService.ListStorageSystems' = 'FmrsService.ListStorageSystems' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'FmrsService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'FmrsService.ListTagsForResource' = 'FmrsService.ListTagsForResource' }
 
-	export enum ListTaskExecutionsX_Amz_Target { 'FmrsService.ListTaskExecutions' = 0 }
+	export enum ListTaskExecutionsX_Amz_Target { 'FmrsService.ListTaskExecutions' = 'FmrsService.ListTaskExecutions' }
 
-	export enum ListTasksX_Amz_Target { 'FmrsService.ListTasks' = 0 }
+	export enum ListTasksX_Amz_Target { 'FmrsService.ListTasks' = 'FmrsService.ListTasks' }
 
-	export enum RemoveStorageSystemX_Amz_Target { 'FmrsService.RemoveStorageSystem' = 0 }
+	export enum RemoveStorageSystemX_Amz_Target { 'FmrsService.RemoveStorageSystem' = 'FmrsService.RemoveStorageSystem' }
 
-	export enum StartDiscoveryJobX_Amz_Target { 'FmrsService.StartDiscoveryJob' = 0 }
+	export enum StartDiscoveryJobX_Amz_Target { 'FmrsService.StartDiscoveryJob' = 'FmrsService.StartDiscoveryJob' }
 
-	export enum StartTaskExecutionX_Amz_Target { 'FmrsService.StartTaskExecution' = 0 }
+	export enum StartTaskExecutionX_Amz_Target { 'FmrsService.StartTaskExecution' = 'FmrsService.StartTaskExecution' }
 
-	export enum StopDiscoveryJobX_Amz_Target { 'FmrsService.StopDiscoveryJob' = 0 }
+	export enum StopDiscoveryJobX_Amz_Target { 'FmrsService.StopDiscoveryJob' = 'FmrsService.StopDiscoveryJob' }
 
-	export enum TagResourceX_Amz_Target { 'FmrsService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'FmrsService.TagResource' = 'FmrsService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'FmrsService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'FmrsService.UntagResource' = 'FmrsService.UntagResource' }
 
-	export enum UpdateAgentX_Amz_Target { 'FmrsService.UpdateAgent' = 0 }
+	export enum UpdateAgentX_Amz_Target { 'FmrsService.UpdateAgent' = 'FmrsService.UpdateAgent' }
 
-	export enum UpdateDiscoveryJobX_Amz_Target { 'FmrsService.UpdateDiscoveryJob' = 0 }
+	export enum UpdateDiscoveryJobX_Amz_Target { 'FmrsService.UpdateDiscoveryJob' = 'FmrsService.UpdateDiscoveryJob' }
 
-	export enum UpdateLocationAzureBlobX_Amz_Target { 'FmrsService.UpdateLocationAzureBlob' = 0 }
+	export enum UpdateLocationAzureBlobX_Amz_Target { 'FmrsService.UpdateLocationAzureBlob' = 'FmrsService.UpdateLocationAzureBlob' }
 
-	export enum UpdateLocationHdfsX_Amz_Target { 'FmrsService.UpdateLocationHdfs' = 0 }
+	export enum UpdateLocationHdfsX_Amz_Target { 'FmrsService.UpdateLocationHdfs' = 'FmrsService.UpdateLocationHdfs' }
 
-	export enum UpdateLocationNfsX_Amz_Target { 'FmrsService.UpdateLocationNfs' = 0 }
+	export enum UpdateLocationNfsX_Amz_Target { 'FmrsService.UpdateLocationNfs' = 'FmrsService.UpdateLocationNfs' }
 
-	export enum UpdateLocationObjectStorageX_Amz_Target { 'FmrsService.UpdateLocationObjectStorage' = 0 }
+	export enum UpdateLocationObjectStorageX_Amz_Target { 'FmrsService.UpdateLocationObjectStorage' = 'FmrsService.UpdateLocationObjectStorage' }
 
-	export enum UpdateLocationSmbX_Amz_Target { 'FmrsService.UpdateLocationSmb' = 0 }
+	export enum UpdateLocationSmbX_Amz_Target { 'FmrsService.UpdateLocationSmb' = 'FmrsService.UpdateLocationSmb' }
 
-	export enum UpdateStorageSystemX_Amz_Target { 'FmrsService.UpdateStorageSystem' = 0 }
+	export enum UpdateStorageSystemX_Amz_Target { 'FmrsService.UpdateStorageSystem' = 'FmrsService.UpdateStorageSystem' }
 
-	export enum UpdateTaskX_Amz_Target { 'FmrsService.UpdateTask' = 0 }
+	export enum UpdateTaskX_Amz_Target { 'FmrsService.UpdateTask' = 'FmrsService.UpdateTask' }
 
-	export enum UpdateTaskExecutionX_Amz_Target { 'FmrsService.UpdateTaskExecution' = 0 }
+	export enum UpdateTaskExecutionX_Amz_Target { 'FmrsService.UpdateTaskExecution' = 'FmrsService.UpdateTaskExecution' }
 
 }
 

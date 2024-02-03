@@ -279,7 +279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BulkPublishStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FAILED = 2, SUCCEEDED = 3 }
+	export enum BulkPublishStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** The response from the GetCognitoEvents request */
@@ -366,7 +366,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamingStatus { ENABLED = 0, DISABLED = 1 }
+	export enum StreamingStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Returned for a successful ListDatasets request. */
@@ -622,7 +622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operation { replace = 0, remove = 1 }
+	export enum Operation { replace = 'replace', remove = 'remove' }
 
 	export interface LimitExceededException {
 	}
@@ -808,7 +808,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Platform { APNS = 0, APNS_SANDBOX = 1, GCM = 2, ADM = 3 }
+	export enum Platform { APNS = 'APNS', APNS_SANDBOX = 'APNS_SANDBOX', GCM = 'GCM', ADM = 'ADM' }
 
 
 	/** A request to RegisterDevice. */

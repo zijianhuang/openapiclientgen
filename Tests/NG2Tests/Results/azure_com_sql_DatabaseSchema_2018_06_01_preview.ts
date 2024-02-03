@@ -41,7 +41,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseColumnPropertiesColumnType { image = 0, text = 1, uniqueidentifier = 2, date = 3, time = 4, datetime2 = 5, datetimeoffset = 6, tinyint = 7, smallint = 8, int = 9, smalldatetime = 10, real = 11, money = 12, datetime = 13, float = 14, sql_variant = 15, ntext = 16, bit = 17, decimal = 18, numeric = 19, smallmoney = 20, bigint = 21, hierarchyid = 22, geometry = 23, geography = 24, varbinary = 25, varchar = 26, binary = 27, char = 28, timestamp = 29, nvarchar = 30, nchar = 31, xml = 32, sysname = 33 }
+	export enum DatabaseColumnPropertiesColumnType { image = 'image', text = 'text', uniqueidentifier = 'uniqueidentifier', date = 'date', time = 'time', datetime2 = 'datetime2', datetimeoffset = 'datetimeoffset', tinyint = 'tinyint', smallint = 'smallint', int = 'int', smalldatetime = 'smalldatetime', real = 'real', money = 'money', datetime = 'datetime', float = 'float', sql_variant = 'sql_variant', ntext = 'ntext', bit = 'bit', decimal = 'decimal', numeric = 'numeric', smallmoney = 'smallmoney', bigint = 'bigint', hierarchyid = 'hierarchyid', geometry = 'geometry', geography = 'geography', varbinary = 'varbinary', varchar = 'varchar', binary = 'binary', char = 'char', timestamp = 'timestamp', nvarchar = 'nvarchar', nchar = 'nchar', xml = 'xml', sysname = 'sysname' }
 
 
 	/** A list of database columns. */

@@ -96,7 +96,7 @@ export namespace MyNS {
 
 
 	/** Status of an operation. */
-	export enum DeploymentStatus { None = 0, Bootstrapping = 1, BootstrapSucceeded = 2, BootstrapFailed = 3, Deploying = 4, DeploymentSucceeded = 5, DeploymentFailed = 6, Updating = 7, UpdateSucceeded = 8, UpdateFailed = 9, Removing = 10, RemoveFailed = 11, SecretRotationInProgress = 12, SecretRotationSucceeded = 13, SecretRotationFailed = 14, Migrated = 15 }
+	export enum DeploymentStatus { None = 'None', Bootstrapping = 'Bootstrapping', BootstrapSucceeded = 'BootstrapSucceeded', BootstrapFailed = 'BootstrapFailed', Deploying = 'Deploying', DeploymentSucceeded = 'DeploymentSucceeded', DeploymentFailed = 'DeploymentFailed', Updating = 'Updating', UpdateSucceeded = 'UpdateSucceeded', UpdateFailed = 'UpdateFailed', Removing = 'Removing', RemoveFailed = 'RemoveFailed', SecretRotationInProgress = 'SecretRotationInProgress', SecretRotationSucceeded = 'SecretRotationSucceeded', SecretRotationFailed = 'SecretRotationFailed', Migrated = 'Migrated' }
 
 	export interface ExtendedErrorInfo {
 	}

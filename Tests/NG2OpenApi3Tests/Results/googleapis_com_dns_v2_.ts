@@ -278,9 +278,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RRSetRoutingPolicyLoadBalancerTargetIpProtocol { UNDEFINED = 0, TCP = 1, UDP = 2 }
+	export enum RRSetRoutingPolicyLoadBalancerTargetIpProtocol { UNDEFINED = 'UNDEFINED', TCP = 'TCP', UDP = 'UDP' }
 
-	export enum RRSetRoutingPolicyLoadBalancerTargetLoadBalancerType { NONE = 0, GLOBAL_L7ILB = 1, REGIONAL_L4ILB = 2, REGIONAL_L7ILB = 3 }
+	export enum RRSetRoutingPolicyLoadBalancerTargetLoadBalancerType { NONE = 'NONE', GLOBAL_L7ILB = 'GLOBAL_L7ILB', REGIONAL_L4ILB = 'REGIONAL_L4ILB', REGIONAL_L7ILB = 'REGIONAL_L7ILB' }
 
 
 	/** Configures a RRSetRoutingPolicy such that all queries are responded with the primary_targets if they are healthy. And if all of them are unhealthy, then we fallback to a geo localized policy. */
@@ -361,7 +361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeStatus { PENDING = 0, DONE = 1 }
+	export enum ChangeStatus { PENDING = 'PENDING', DONE = 'DONE' }
 
 
 	/** The response to a request to enumerate Changes to a ResourceRecordSets collection. */
@@ -501,7 +501,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsKeyAlgorithm { RSASHA1 = 0, RSASHA256 = 1, RSASHA512 = 2, ECDSAP256SHA256 = 3, ECDSAP384SHA384 = 4 }
+	export enum DnsKeyAlgorithm { RSASHA1 = 'RSASHA1', RSASHA256 = 'RSASHA256', RSASHA512 = 'RSASHA512', ECDSAP256SHA256 = 'ECDSAP256SHA256', ECDSAP384SHA384 = 'ECDSAP384SHA384' }
 
 	export interface DnsKeyDigest {
 
@@ -527,9 +527,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsKeyDigestType { SHA1 = 0, SHA256 = 1, SHA384 = 2 }
+	export enum DnsKeyDigestType { SHA1 = 'SHA1', SHA256 = 'SHA256', SHA384 = 'SHA384' }
 
-	export enum DnsKeyType { KEY_SIGNING = 0, ZONE_SIGNING = 1 }
+	export enum DnsKeyType { KEY_SIGNING = 'KEY_SIGNING', ZONE_SIGNING = 'ZONE_SIGNING' }
 
 
 	/** Parameters for DnsKey key generation. Used for generating initial keys for a new ManagedZone and as default when adding a new DnsKey. */
@@ -693,7 +693,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -993,9 +993,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedZoneDnsSecConfigNonExistence { NSEC = 0, NSEC3 = 1 }
+	export enum ManagedZoneDnsSecConfigNonExistence { NSEC = 'NSEC', NSEC3 = 'NSEC3' }
 
-	export enum ManagedZoneDnsSecConfigState { OFF = 0, ON = 1, TRANSFER = 2 }
+	export enum ManagedZoneDnsSecConfigState { OFF = 'OFF', ON = 'ON', TRANSFER = 'TRANSFER' }
 
 	export interface ManagedZoneForwardingConfig {
 		kind?: string | null;
@@ -1047,7 +1047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedZoneForwardingConfigNameServerTargetForwardingPath { DEFAULT = 0, PRIVATE = 1 }
+	export enum ManagedZoneForwardingConfigNameServerTargetForwardingPath { DEFAULT = 'DEFAULT', PRIVATE = 'PRIVATE' }
 
 	export interface ManagedZonePeeringConfig {
 		kind?: string | null;
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedZoneVisibility { PUBLIC = 0, PRIVATE = 1 }
+	export enum ManagedZoneVisibility { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE' }
 
 	export interface ManagedZoneOperationsListResponse {
 
@@ -1962,7 +1962,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponsePolicyRuleBehavior { BEHAVIOR_UNSPECIFIED = 0, BYPASS_RESPONSE_POLICY = 1 }
+	export enum ResponsePolicyRuleBehavior { BEHAVIOR_UNSPECIFIED = 'BEHAVIOR_UNSPECIFIED', BYPASS_RESPONSE_POLICY = 'BYPASS_RESPONSE_POLICY' }
 
 	export interface ResponsePolicyRuleLocalData {
 
@@ -2567,9 +2567,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Dns_changes_listSortBy { CHANGE_SEQUENCE = 0 }
+	export enum Dns_changes_listSortBy { CHANGE_SEQUENCE = 'CHANGE_SEQUENCE' }
 
-	export enum Dns_managedZoneOperations_listSortBy { START_TIME = 0, ID = 1 }
+	export enum Dns_managedZoneOperations_listSortBy { START_TIME = 'START_TIME', ID = 'ID' }
 
 }
 

@@ -1666,7 +1666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplyMethod { immediate = 0, 'pending-reboot' = 1 }
+	export enum ApplyMethod { immediate = 'immediate', 'pending-reboot' = 'pending-reboot' }
 
 	export interface ModifyDBClusterSnapshotAttributeResult {
 
@@ -3011,7 +3011,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { 'db-instance' = 0, 'db-parameter-group' = 1, 'db-security-group' = 2, 'db-snapshot' = 3, 'db-cluster' = 4, 'db-cluster-snapshot' = 5 }
+	export enum SourceType { 'db-instance' = 'db-instance', 'db-parameter-group' = 'db-parameter-group', 'db-security-group' = 'db-security-group', 'db-snapshot' = 'db-snapshot', 'db-cluster' = 'db-cluster', 'db-cluster-snapshot' = 'db-cluster-snapshot' }
 
 
 	/** Represents the input to <a>DescribeEvents</a>. */
@@ -4623,81 +4623,81 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddSourceIdentifierToSubscriptionAction { AddSourceIdentifierToSubscription = 0 }
+	export enum GET_AddSourceIdentifierToSubscriptionAction { AddSourceIdentifierToSubscription = 'AddSourceIdentifierToSubscription' }
 
-	export enum GET_AddSourceIdentifierToSubscriptionVersion { '2014-10-31' = 0 }
+	export enum GET_AddSourceIdentifierToSubscriptionVersion { '2014-10-31' = '2014-10-31' }
 
-	export enum GET_AddTagsToResourceAction { AddTagsToResource = 0 }
+	export enum GET_AddTagsToResourceAction { AddTagsToResource = 'AddTagsToResource' }
 
-	export enum GET_ApplyPendingMaintenanceActionAction { ApplyPendingMaintenanceAction = 0 }
+	export enum GET_ApplyPendingMaintenanceActionAction { ApplyPendingMaintenanceAction = 'ApplyPendingMaintenanceAction' }
 
-	export enum GET_CopyDBClusterParameterGroupAction { CopyDBClusterParameterGroup = 0 }
+	export enum GET_CopyDBClusterParameterGroupAction { CopyDBClusterParameterGroup = 'CopyDBClusterParameterGroup' }
 
-	export enum GET_CopyDBClusterSnapshotAction { CopyDBClusterSnapshot = 0 }
+	export enum GET_CopyDBClusterSnapshotAction { CopyDBClusterSnapshot = 'CopyDBClusterSnapshot' }
 
-	export enum GET_CreateDBClusterAction { CreateDBCluster = 0 }
+	export enum GET_CreateDBClusterAction { CreateDBCluster = 'CreateDBCluster' }
 
-	export enum GET_CreateDBClusterParameterGroupAction { CreateDBClusterParameterGroup = 0 }
+	export enum GET_CreateDBClusterParameterGroupAction { CreateDBClusterParameterGroup = 'CreateDBClusterParameterGroup' }
 
-	export enum GET_CreateDBClusterSnapshotAction { CreateDBClusterSnapshot = 0 }
+	export enum GET_CreateDBClusterSnapshotAction { CreateDBClusterSnapshot = 'CreateDBClusterSnapshot' }
 
-	export enum GET_CreateDBInstanceAction { CreateDBInstance = 0 }
+	export enum GET_CreateDBInstanceAction { CreateDBInstance = 'CreateDBInstance' }
 
-	export enum GET_CreateDBSubnetGroupAction { CreateDBSubnetGroup = 0 }
+	export enum GET_CreateDBSubnetGroupAction { CreateDBSubnetGroup = 'CreateDBSubnetGroup' }
 
-	export enum GET_CreateEventSubscriptionAction { CreateEventSubscription = 0 }
+	export enum GET_CreateEventSubscriptionAction { CreateEventSubscription = 'CreateEventSubscription' }
 
-	export enum GET_CreateGlobalClusterAction { CreateGlobalCluster = 0 }
+	export enum GET_CreateGlobalClusterAction { CreateGlobalCluster = 'CreateGlobalCluster' }
 
-	export enum GET_DeleteDBClusterAction { DeleteDBCluster = 0 }
+	export enum GET_DeleteDBClusterAction { DeleteDBCluster = 'DeleteDBCluster' }
 
-	export enum GET_DeleteDBClusterParameterGroupAction { DeleteDBClusterParameterGroup = 0 }
+	export enum GET_DeleteDBClusterParameterGroupAction { DeleteDBClusterParameterGroup = 'DeleteDBClusterParameterGroup' }
 
-	export enum GET_DeleteDBClusterSnapshotAction { DeleteDBClusterSnapshot = 0 }
+	export enum GET_DeleteDBClusterSnapshotAction { DeleteDBClusterSnapshot = 'DeleteDBClusterSnapshot' }
 
-	export enum GET_DeleteDBInstanceAction { DeleteDBInstance = 0 }
+	export enum GET_DeleteDBInstanceAction { DeleteDBInstance = 'DeleteDBInstance' }
 
-	export enum GET_DeleteDBSubnetGroupAction { DeleteDBSubnetGroup = 0 }
+	export enum GET_DeleteDBSubnetGroupAction { DeleteDBSubnetGroup = 'DeleteDBSubnetGroup' }
 
-	export enum GET_DeleteEventSubscriptionAction { DeleteEventSubscription = 0 }
+	export enum GET_DeleteEventSubscriptionAction { DeleteEventSubscription = 'DeleteEventSubscription' }
 
-	export enum GET_DeleteGlobalClusterAction { DeleteGlobalCluster = 0 }
+	export enum GET_DeleteGlobalClusterAction { DeleteGlobalCluster = 'DeleteGlobalCluster' }
 
-	export enum GET_DescribeCertificatesAction { DescribeCertificates = 0 }
+	export enum GET_DescribeCertificatesAction { DescribeCertificates = 'DescribeCertificates' }
 
-	export enum GET_DescribeDBClusterParameterGroupsAction { DescribeDBClusterParameterGroups = 0 }
+	export enum GET_DescribeDBClusterParameterGroupsAction { DescribeDBClusterParameterGroups = 'DescribeDBClusterParameterGroups' }
 
-	export enum GET_DescribeDBClusterParametersAction { DescribeDBClusterParameters = 0 }
+	export enum GET_DescribeDBClusterParametersAction { DescribeDBClusterParameters = 'DescribeDBClusterParameters' }
 
-	export enum GET_DescribeDBClusterSnapshotAttributesAction { DescribeDBClusterSnapshotAttributes = 0 }
+	export enum GET_DescribeDBClusterSnapshotAttributesAction { DescribeDBClusterSnapshotAttributes = 'DescribeDBClusterSnapshotAttributes' }
 
-	export enum GET_DescribeDBClusterSnapshotsAction { DescribeDBClusterSnapshots = 0 }
+	export enum GET_DescribeDBClusterSnapshotsAction { DescribeDBClusterSnapshots = 'DescribeDBClusterSnapshots' }
 
-	export enum GET_DescribeDBClustersAction { DescribeDBClusters = 0 }
+	export enum GET_DescribeDBClustersAction { DescribeDBClusters = 'DescribeDBClusters' }
 
-	export enum GET_DescribeDBEngineVersionsAction { DescribeDBEngineVersions = 0 }
+	export enum GET_DescribeDBEngineVersionsAction { DescribeDBEngineVersions = 'DescribeDBEngineVersions' }
 
-	export enum GET_DescribeDBInstancesAction { DescribeDBInstances = 0 }
+	export enum GET_DescribeDBInstancesAction { DescribeDBInstances = 'DescribeDBInstances' }
 
-	export enum GET_DescribeDBSubnetGroupsAction { DescribeDBSubnetGroups = 0 }
+	export enum GET_DescribeDBSubnetGroupsAction { DescribeDBSubnetGroups = 'DescribeDBSubnetGroups' }
 
-	export enum GET_DescribeEngineDefaultClusterParametersAction { DescribeEngineDefaultClusterParameters = 0 }
+	export enum GET_DescribeEngineDefaultClusterParametersAction { DescribeEngineDefaultClusterParameters = 'DescribeEngineDefaultClusterParameters' }
 
-	export enum GET_DescribeEventCategoriesAction { DescribeEventCategories = 0 }
+	export enum GET_DescribeEventCategoriesAction { DescribeEventCategories = 'DescribeEventCategories' }
 
-	export enum GET_DescribeEventSubscriptionsAction { DescribeEventSubscriptions = 0 }
+	export enum GET_DescribeEventSubscriptionsAction { DescribeEventSubscriptions = 'DescribeEventSubscriptions' }
 
-	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
+	export enum GET_DescribeEventsAction { DescribeEvents = 'DescribeEvents' }
 
-	export enum GET_DescribeGlobalClustersAction { DescribeGlobalClusters = 0 }
+	export enum GET_DescribeGlobalClustersAction { DescribeGlobalClusters = 'DescribeGlobalClusters' }
 
-	export enum GET_DescribeOrderableDBInstanceOptionsAction { DescribeOrderableDBInstanceOptions = 0 }
+	export enum GET_DescribeOrderableDBInstanceOptionsAction { DescribeOrderableDBInstanceOptions = 'DescribeOrderableDBInstanceOptions' }
 
-	export enum GET_DescribePendingMaintenanceActionsAction { DescribePendingMaintenanceActions = 0 }
+	export enum GET_DescribePendingMaintenanceActionsAction { DescribePendingMaintenanceActions = 'DescribePendingMaintenanceActions' }
 
-	export enum GET_FailoverDBClusterAction { FailoverDBCluster = 0 }
+	export enum GET_FailoverDBClusterAction { FailoverDBCluster = 'FailoverDBCluster' }
 
-	export enum GET_ListTagsForResourceAction { ListTagsForResource = 0 }
+	export enum GET_ListTagsForResourceAction { ListTagsForResource = 'ListTagsForResource' }
 
 	export interface GET_ModifyDBClusterCloudwatchLogsExportConfiguration {
 		EnableLogTypes?: Array<string>;
@@ -4711,37 +4711,37 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ModifyDBClusterAction { ModifyDBCluster = 0 }
+	export enum GET_ModifyDBClusterAction { ModifyDBCluster = 'ModifyDBCluster' }
 
-	export enum GET_ModifyDBClusterParameterGroupAction { ModifyDBClusterParameterGroup = 0 }
+	export enum GET_ModifyDBClusterParameterGroupAction { ModifyDBClusterParameterGroup = 'ModifyDBClusterParameterGroup' }
 
-	export enum GET_ModifyDBClusterSnapshotAttributeAction { ModifyDBClusterSnapshotAttribute = 0 }
+	export enum GET_ModifyDBClusterSnapshotAttributeAction { ModifyDBClusterSnapshotAttribute = 'ModifyDBClusterSnapshotAttribute' }
 
-	export enum GET_ModifyDBInstanceAction { ModifyDBInstance = 0 }
+	export enum GET_ModifyDBInstanceAction { ModifyDBInstance = 'ModifyDBInstance' }
 
-	export enum GET_ModifyDBSubnetGroupAction { ModifyDBSubnetGroup = 0 }
+	export enum GET_ModifyDBSubnetGroupAction { ModifyDBSubnetGroup = 'ModifyDBSubnetGroup' }
 
-	export enum GET_ModifyEventSubscriptionAction { ModifyEventSubscription = 0 }
+	export enum GET_ModifyEventSubscriptionAction { ModifyEventSubscription = 'ModifyEventSubscription' }
 
-	export enum GET_ModifyGlobalClusterAction { ModifyGlobalCluster = 0 }
+	export enum GET_ModifyGlobalClusterAction { ModifyGlobalCluster = 'ModifyGlobalCluster' }
 
-	export enum GET_RebootDBInstanceAction { RebootDBInstance = 0 }
+	export enum GET_RebootDBInstanceAction { RebootDBInstance = 'RebootDBInstance' }
 
-	export enum GET_RemoveFromGlobalClusterAction { RemoveFromGlobalCluster = 0 }
+	export enum GET_RemoveFromGlobalClusterAction { RemoveFromGlobalCluster = 'RemoveFromGlobalCluster' }
 
-	export enum GET_RemoveSourceIdentifierFromSubscriptionAction { RemoveSourceIdentifierFromSubscription = 0 }
+	export enum GET_RemoveSourceIdentifierFromSubscriptionAction { RemoveSourceIdentifierFromSubscription = 'RemoveSourceIdentifierFromSubscription' }
 
-	export enum GET_RemoveTagsFromResourceAction { RemoveTagsFromResource = 0 }
+	export enum GET_RemoveTagsFromResourceAction { RemoveTagsFromResource = 'RemoveTagsFromResource' }
 
-	export enum GET_ResetDBClusterParameterGroupAction { ResetDBClusterParameterGroup = 0 }
+	export enum GET_ResetDBClusterParameterGroupAction { ResetDBClusterParameterGroup = 'ResetDBClusterParameterGroup' }
 
-	export enum GET_RestoreDBClusterFromSnapshotAction { RestoreDBClusterFromSnapshot = 0 }
+	export enum GET_RestoreDBClusterFromSnapshotAction { RestoreDBClusterFromSnapshot = 'RestoreDBClusterFromSnapshot' }
 
-	export enum GET_RestoreDBClusterToPointInTimeAction { RestoreDBClusterToPointInTime = 0 }
+	export enum GET_RestoreDBClusterToPointInTimeAction { RestoreDBClusterToPointInTime = 'RestoreDBClusterToPointInTime' }
 
-	export enum GET_StartDBClusterAction { StartDBCluster = 0 }
+	export enum GET_StartDBClusterAction { StartDBCluster = 'StartDBCluster' }
 
-	export enum GET_StopDBClusterAction { StopDBCluster = 0 }
+	export enum GET_StopDBClusterAction { StopDBCluster = 'StopDBCluster' }
 
 }
 

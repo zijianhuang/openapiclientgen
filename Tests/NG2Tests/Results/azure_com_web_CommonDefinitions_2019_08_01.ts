@@ -469,11 +469,11 @@ export namespace MyNS {
 
 	}
 
-	export enum StampCapacityComputeMode { Shared = 0, Dedicated = 1, Dynamic = 2 }
+	export enum StampCapacityComputeMode { Shared = 'Shared', Dedicated = 'Dedicated', Dynamic = 'Dynamic' }
 
-	export enum StampCapacityWorkerSize { Small = 0, Medium = 1, Large = 2, D1 = 3, D2 = 4, D3 = 5, NestedSmall = 6, Default = 7 }
+	export enum StampCapacityWorkerSize { Small = 'Small', Medium = 'Medium', Large = 'Large', D1 = 'D1', D2 = 'D2', D3 = 'D3', NestedSmall = 'NestedSmall', Default = 'Default' }
 
-	export enum AppServiceEnvironmentInternalLoadBalancingMode { None = 0, Web = 1, Publishing = 2 }
+	export enum AppServiceEnvironmentInternalLoadBalancingMode { None = 'None', Web = 'Web', Publishing = 'Publishing' }
 
 
 	/** Network access control entry. */
@@ -517,11 +517,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkAccessControlEntryAction { Permit = 0, Deny = 1 }
+	export enum NetworkAccessControlEntryAction { Permit = 'Permit', Deny = 'Deny' }
 
-	export enum AppServiceEnvironmentProvisioningState { Succeeded = 0, Failed = 1, Canceled = 2, InProgress = 3, Deleting = 4 }
+	export enum AppServiceEnvironmentProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', InProgress = 'InProgress', Deleting = 'Deleting' }
 
-	export enum AppServiceEnvironmentStatus { Preparing = 0, Ready = 1, Scaling = 2, Deleting = 3 }
+	export enum AppServiceEnvironmentStatus { Preparing = 'Preparing', Ready = 'Ready', Scaling = 'Scaling', Deleting = 'Deleting' }
 
 
 	/** Virtual IP mapping. */
@@ -885,7 +885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoHealActionsActionType { Recycle = 0, LogEvent = 1, CustomAction = 2 }
+	export enum AutoHealActionsActionType { Recycle = 'Recycle', LogEvent = 'LogEvent', CustomAction = 'CustomAction' }
 
 
 	/**
@@ -1237,7 +1237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnStringInfoType { MySql = 0, SQLServer = 1, SQLAzure = 2, Custom = 3, NotificationHub = 4, ServiceBus = 5, EventHub = 6, ApiHub = 7, DocDb = 8, RedisCache = 9, PostgreSQL = 10 }
+	export enum ConnStringInfoType { MySql = 'MySql', SQLServer = 'SQLServer', SQLAzure = 'SQLAzure', Custom = 'Custom', NotificationHub = 'NotificationHub', ServiceBus = 'ServiceBus', EventHub = 'EventHub', ApiHub = 'ApiHub', DocDb = 'DocDb', RedisCache = 'RedisCache', PostgreSQL = 'PostgreSQL' }
 
 
 	/** Cross-Origin Resource Sharing (CORS) settings for the app. */
@@ -1971,9 +1971,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HostNameSslStateHostType { Standard = 0, Repository = 1 }
+	export enum HostNameSslStateHostType { Standard = 'Standard', Repository = 'Repository' }
 
-	export enum HostNameSslStateSslState { Disabled = 0, SniEnabled = 1, IpBasedEnabled = 2 }
+	export enum HostNameSslStateSslState { Disabled = 'Disabled', SniEnabled = 'SniEnabled', IpBasedEnabled = 'IpBasedEnabled' }
 
 
 	/** Specification for an App Service Environment to use for this resource. */
@@ -2173,7 +2173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpSecurityRestrictionTag { Default = 0, XffProxy = 1 }
+	export enum IpSecurityRestrictionTag { Default = 'Default', XffProxy = 'XffProxy' }
 
 
 	/** Managed service identity. */
@@ -2217,7 +2217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedServiceIdentityType { None = 0, SystemAssigned = 1, UserAssigned = 2 }
+	export enum ManagedServiceIdentityType { None = 'None', SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned' }
 
 	export interface ManagedServiceIdentityUserAssignedIdentities {
 
@@ -2330,7 +2330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStatus { InProgress = 0, Failed = 1, Succeeded = 2, TimedOut = 3, Created = 4 }
+	export enum OperationStatus { InProgress = 'InProgress', Failed = 'Failed', Succeeded = 'Succeeded', TimedOut = 'TimedOut', Created = 'Created' }
 
 
 	/** Azure proxy only resource. This resource is not tracked by Azure Resource Manager. */
@@ -2823,7 +2823,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteConfigFtpsState { AllAllowed = 0, FtpsOnly = 1, Disabled = 2 }
+	export enum SiteConfigFtpsState { AllAllowed = 'AllAllowed', FtpsOnly = 'FtpsOnly', Disabled = 'Disabled' }
 
 
 	/** Metric limits set on an app. */
@@ -2860,7 +2860,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteConfigLoadBalancing { WeightedRoundRobin = 0, LeastRequests = 1, LeastResponseTime = 2, WeightedTotalTraffic = 3, RequestHash = 4 }
+	export enum SiteConfigLoadBalancing { WeightedRoundRobin = 'WeightedRoundRobin', LeastRequests = 'LeastRequests', LeastResponseTime = 'LeastResponseTime', WeightedTotalTraffic = 'WeightedTotalTraffic', RequestHash = 'RequestHash' }
 
 
 	/** MachineKey of an app. */
@@ -2904,11 +2904,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteConfigManagedPipelineMode { Integrated = 0, Classic = 1 }
+	export enum SiteConfigManagedPipelineMode { Integrated = 'Integrated', Classic = 'Classic' }
 
-	export enum SiteConfigMinTlsVersion { _1_0 = 0, _1_1 = 1, _1_2 = 2 }
+	export enum SiteConfigMinTlsVersion { _1_0 = '1.0', _1_1 = '1.1', _1_2 = '1.2' }
 
-	export enum SiteConfigScmType { None = 0, Dropbox = 1, Tfs = 2, LocalGit = 3, GitHub = 4, CodePlexGit = 5, CodePlexHg = 6, BitbucketGit = 7, BitbucketHg = 8, ExternalGit = 9, ExternalHg = 10, OneDrive = 11, VSO = 12, VSTSRM = 13 }
+	export enum SiteConfigScmType { None = 'None', Dropbox = 'Dropbox', Tfs = 'Tfs', LocalGit = 'LocalGit', GitHub = 'GitHub', CodePlexGit = 'CodePlexGit', CodePlexHg = 'CodePlexHg', BitbucketGit = 'BitbucketGit', BitbucketHg = 'BitbucketHg', ExternalGit = 'ExternalGit', ExternalHg = 'ExternalHg', OneDrive = 'OneDrive', VSO = 'VSO', VSTSRM = 'VSTSRM' }
 
 
 	/** Virtual application in an app. */

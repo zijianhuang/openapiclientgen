@@ -282,7 +282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationState { CREATING = 0, CREATED = 1, STARTING = 2, STARTED = 3, STOPPING = 4, STOPPED = 5, TERMINATED = 6 }
+	export enum ApplicationState { CREATING = 'CREATING', CREATED = 'CREATED', STARTING = 'STARTING', STARTED = 'STARTED', STOPPING = 'STOPPING', STOPPED = 'STOPPED', TERMINATED = 'TERMINATED' }
 
 	export interface InitialCapacityConfigMap {
 	}
@@ -388,7 +388,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Architecture { ARM64 = 0, X86_64 = 1 }
+	export enum Architecture { ARM64 = 'ARM64', X86_64 = 'X86_64' }
 
 
 	/** The applied image configuration. */
@@ -553,7 +553,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobRunState { SUBMITTED = 0, PENDING = 1, SCHEDULED = 2, RUNNING = 3, SUCCESS = 4, FAILED = 5, CANCELLING = 6, CANCELLED = 7 }
+	export enum JobRunState { SUBMITTED = 'SUBMITTED', PENDING = 'PENDING', SCHEDULED = 'SCHEDULED', RUNNING = 'RUNNING', SUCCESS = 'SUCCESS', FAILED = 'FAILED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
 
 	/** A configuration specification to be used to override existing configurations. */

@@ -222,7 +222,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterSort { newest = 0, oldest = 1 }
+	export enum StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterSort { newest = 'newest', oldest = 'oldest' }
 
 	export interface StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturn {
 		response?: StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturnResponse;

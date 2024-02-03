@@ -1331,7 +1331,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DelcsPostBodyFormat { pdf = 0 }
+	export enum DelcsPostBodyFormat { pdf = 'pdf' }
 
 	export interface MalcsPostBody {
 		certificateParameters?: MalcsPostBodyCertificateParameters;

@@ -1311,7 +1311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabrpPostBodyFormat { pdf = 0 }
+	export enum LabrpPostBodyFormat { pdf = 'pdf' }
 
 }
 

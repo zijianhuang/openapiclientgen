@@ -183,11 +183,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestPlatformType { PLATFORM_TYPE_UNSPECIFIED = 0, WINDOWS = 1, LINUX = 2, ANDROID = 3, OSX = 4, IOS = 5, ANY_PLATFORM = 6, ALL_PLATFORMS = 7, CHROME = 8 }
+	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestPlatformType { PLATFORM_TYPE_UNSPECIFIED = 'PLATFORM_TYPE_UNSPECIFIED', WINDOWS = 'WINDOWS', LINUX = 'LINUX', ANDROID = 'ANDROID', OSX = 'OSX', IOS = 'IOS', ANY_PLATFORM = 'ANY_PLATFORM', ALL_PLATFORMS = 'ALL_PLATFORMS', CHROME = 'CHROME' }
 
-	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatEntryType { THREAT_ENTRY_TYPE_UNSPECIFIED = 0, URL = 1, EXECUTABLE = 2, IP_RANGE = 3, CHROME_EXTENSION = 4, FILENAME = 5, CERT = 6 }
+	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatEntryType { THREAT_ENTRY_TYPE_UNSPECIFIED = 'THREAT_ENTRY_TYPE_UNSPECIFIED', URL = 'URL', EXECUTABLE = 'EXECUTABLE', IP_RANGE = 'IP_RANGE', CHROME_EXTENSION = 'CHROME_EXTENSION', FILENAME = 'FILENAME', CERT = 'CERT' }
 
-	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType { THREAT_TYPE_UNSPECIFIED = 0, MALWARE = 1, SOCIAL_ENGINEERING = 2, UNWANTED_SOFTWARE = 3, POTENTIALLY_HARMFUL_APPLICATION = 4, SOCIAL_ENGINEERING_INTERNAL = 5, API_ABUSE = 6, MALICIOUS_BINARY = 7, CSD_WHITELIST = 8, CSD_DOWNLOAD_WHITELIST = 9, CLIENT_INCIDENT = 10, CLIENT_INCIDENT_WHITELIST = 11, APK_MALWARE_OFFLINE = 12, SUBRESOURCE_FILTER = 13, SUSPICIOUS = 14, TRICK_TO_BILL = 15, HIGH_CONFIDENCE_ALLOWLIST = 16, ACCURACY_TIPS = 17 }
+	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType { THREAT_TYPE_UNSPECIFIED = 'THREAT_TYPE_UNSPECIFIED', MALWARE = 'MALWARE', SOCIAL_ENGINEERING = 'SOCIAL_ENGINEERING', UNWANTED_SOFTWARE = 'UNWANTED_SOFTWARE', POTENTIALLY_HARMFUL_APPLICATION = 'POTENTIALLY_HARMFUL_APPLICATION', SOCIAL_ENGINEERING_INTERNAL = 'SOCIAL_ENGINEERING_INTERNAL', API_ABUSE = 'API_ABUSE', MALICIOUS_BINARY = 'MALICIOUS_BINARY', CSD_WHITELIST = 'CSD_WHITELIST', CSD_DOWNLOAD_WHITELIST = 'CSD_DOWNLOAD_WHITELIST', CLIENT_INCIDENT = 'CLIENT_INCIDENT', CLIENT_INCIDENT_WHITELIST = 'CLIENT_INCIDENT_WHITELIST', APK_MALWARE_OFFLINE = 'APK_MALWARE_OFFLINE', SUBRESOURCE_FILTER = 'SUBRESOURCE_FILTER', SUSPICIOUS = 'SUSPICIOUS', TRICK_TO_BILL = 'TRICK_TO_BILL', HIGH_CONFIDENCE_ALLOWLIST = 'HIGH_CONFIDENCE_ALLOWLIST', ACCURACY_TIPS = 'ACCURACY_TIPS' }
 
 	export interface GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse {
 
@@ -300,7 +300,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleSecuritySafebrowsingV4ThreatEntrySetCompressionType { COMPRESSION_TYPE_UNSPECIFIED = 0, RAW = 1, RICE = 2 }
+	export enum GoogleSecuritySafebrowsingV4ThreatEntrySetCompressionType { COMPRESSION_TYPE_UNSPECIFIED = 'COMPRESSION_TYPE_UNSPECIFIED', RAW = 'RAW', RICE = 'RICE' }
 
 
 	/** The uncompressed threat entries in hash format of a particular prefix length. Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4 bytes, but some hashes are lengthened if they collide with the hash of a popular URL. Used for sending ThreatEntrySet to clients that do not support compression, or when sending non-4-byte hashes to clients that do support compression. */
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseResponseType { RESPONSE_TYPE_UNSPECIFIED = 0, PARTIAL_UPDATE = 1, FULL_UPDATE = 2 }
+	export enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseResponseType { RESPONSE_TYPE_UNSPECIFIED = 'RESPONSE_TYPE_UNSPECIFIED', PARTIAL_UPDATE = 'PARTIAL_UPDATE', FULL_UPDATE = 'FULL_UPDATE' }
 
 
 	/** Request to return full hashes matched by the provided hash prefixes. */
@@ -757,7 +757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleSecuritySafebrowsingV4ThreatHitThreatSourceType { THREAT_SOURCE_TYPE_UNSPECIFIED = 0, MATCHING_URL = 1, TAB_URL = 2, TAB_REDIRECT = 3, TAB_RESOURCE = 4 }
+	export enum GoogleSecuritySafebrowsingV4ThreatHitThreatSourceType { THREAT_SOURCE_TYPE_UNSPECIFIED = 'THREAT_SOURCE_TYPE_UNSPECIFIED', MATCHING_URL = 'MATCHING_URL', TAB_URL = 'TAB_URL', TAB_REDIRECT = 'TAB_REDIRECT', TAB_RESOURCE = 'TAB_RESOURCE' }
 
 
 	/** Details about the user that encountered the threat. */

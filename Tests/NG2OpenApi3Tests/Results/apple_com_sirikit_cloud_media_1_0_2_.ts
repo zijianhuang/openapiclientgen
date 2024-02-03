@@ -23,7 +23,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaIntentClass { AddMediaIntent = 0 }
+	export enum AddMediaIntentClass { AddMediaIntent = 'AddMediaIntent' }
 
 	export interface MediaDestination {
 
@@ -42,7 +42,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaDestinationMediaDestinationType { library = 0, playlist = 1 }
+	export enum MediaDestinationMediaDestinationType { library = 'library', playlist = 'playlist' }
 
 	export interface MediaItem {
 
@@ -88,7 +88,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaItemType { unknown = 0, song = 1, album = 2, artist = 3, genre = 4, playlist = 5, podcastShow = 6, podcastEpisode = 7, podcastPlaylist = 8, musicStation = 9, audioBook = 10, movie = 11, tvShow = 12, tvShowEpisode = 13, musicVideo = 14, podcastStation = 15, radioStation = 16, station = 17, music = 18, algorithmicRadioStation = 19, news = 20 }
+	export enum MediaItemType { unknown = 'unknown', song = 'song', album = 'album', artist = 'artist', genre = 'genre', playlist = 'playlist', podcastShow = 'podcastShow', podcastEpisode = 'podcastEpisode', podcastPlaylist = 'podcastPlaylist', musicStation = 'musicStation', audioBook = 'audioBook', movie = 'movie', tvShow = 'tvShow', tvShowEpisode = 'tvShowEpisode', musicVideo = 'musicVideo', podcastStation = 'podcastStation', radioStation = 'radioStation', station = 'station', music = 'music', algorithmicRadioStation = 'algorithmicRadioStation', news = 'news' }
 
 	export interface MediaSearch {
 		albumName?: string | null;
@@ -124,7 +124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaSearchReference { unknown = 0, currentlyPlaying = 1, my = 2 }
+	export enum MediaSearchReference { unknown = 'unknown', currentlyPlaying = 'currentlyPlaying', my = 'my' }
 
 	export interface DateComponentsRange {
 		endDateComponents?: DateComponents;
@@ -138,7 +138,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaSearchSortOrder { unknown = 0, newest = 1, oldest = 2, best = 3, worst = 4, popular = 5, unpopular = 6, trending = 7, recommended = 8 }
+	export enum MediaSearchSortOrder { unknown = 'unknown', newest = 'newest', oldest = 'oldest', best = 'best', worst = 'worst', popular = 'popular', unpopular = 'unpopular', trending = 'trending', recommended = 'recommended' }
 
 	export interface AddMediaIntentHandlingConfirmInvocationResponse {
 
@@ -160,7 +160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaIntentHandlingConfirmInvocationResponseMethod { 'AddMediaIntentHandling.confirm' = 0 }
+	export enum AddMediaIntentHandlingConfirmInvocationResponseMethod { 'AddMediaIntentHandling.confirm' = 'AddMediaIntentHandling.confirm' }
 
 	export interface AddMediaIntentHandlingConfirmInvocationResponseResult {
 
@@ -199,9 +199,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaIntentResponseClass { AddMediaIntentResponse = 0 }
+	export enum AddMediaIntentResponseClass { AddMediaIntentResponse = 'AddMediaIntentResponse' }
 
-	export enum AddMediaIntentResponseCode { unspecified = 0, ready = 1, inProgress = 2, success = 3, failure = 4, failureRequiringAppLaunch = 5 }
+	export enum AddMediaIntentResponseCode { unspecified = 'unspecified', ready = 'ready', inProgress = 'inProgress', success = 'success', failure = 'failure', failureRequiringAppLaunch = 'failureRequiringAppLaunch' }
 
 	export interface AddMediaIntentHandlingHandleInvocationResponse {
 
@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaIntentHandlingHandleInvocationResponseMethod { 'AddMediaIntentHandling.handle' = 0 }
+	export enum AddMediaIntentHandlingHandleInvocationResponseMethod { 'AddMediaIntentHandling.handle' = 'AddMediaIntentHandling.handle' }
 
 	export interface AddMediaIntentHandlingHandleInvocationResponseResult {
 
@@ -258,7 +258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaIntentHandlingInvocationMethod { 'AddMediaIntentHandling.resolveMediaItems' = 0, 'AddMediaIntentHandling.resolveMediaDestination' = 1, 'AddMediaIntentHandling.confirm' = 2, 'AddMediaIntentHandling.handle' = 3 }
+	export enum AddMediaIntentHandlingInvocationMethod { 'AddMediaIntentHandling.resolveMediaItems' = 'AddMediaIntentHandling.resolveMediaItems', 'AddMediaIntentHandling.resolveMediaDestination' = 'AddMediaIntentHandling.resolveMediaDestination', 'AddMediaIntentHandling.confirm' = 'AddMediaIntentHandling.confirm', 'AddMediaIntentHandling.handle' = 'AddMediaIntentHandling.handle' }
 
 	export interface AddMediaIntentHandlingInvocationParams {
 
@@ -303,7 +303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaIntentHandlingResolveMediaDestinationInvocationResponseMethod { 'AddMediaIntentHandling.resolveMediaDestination' = 0 }
+	export enum AddMediaIntentHandlingResolveMediaDestinationInvocationResponseMethod { 'AddMediaIntentHandling.resolveMediaDestination' = 'AddMediaIntentHandling.resolveMediaDestination' }
 
 	export interface AddMediaIntentHandlingResolveMediaDestinationInvocationResponseResult {
 		resolutionResult?: AddMediaMediaDestinationResolutionResult;
@@ -333,7 +333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaMediaDestinationResolutionResultClass { AddMediaMediaDestinationResolutionResult = 0 }
+	export enum AddMediaMediaDestinationResolutionResultClass { AddMediaMediaDestinationResolutionResult = 'AddMediaMediaDestinationResolutionResult' }
 
 	export interface AddMediaMediaDestinationResolutionResultConfirmationRequired {
 
@@ -390,7 +390,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaMediaDestinationResolutionResultUnsupportedReason { playlistNameNotFound = 0, playlistNotEditable = 1 }
+	export enum AddMediaMediaDestinationResolutionResultUnsupportedReason { playlistNameNotFound = 'playlistNameNotFound', playlistNotEditable = 'playlistNotEditable' }
 
 	export interface AddMediaIntentHandlingResolveMediaItemsInvocationResponse {
 
@@ -412,7 +412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaIntentHandlingResolveMediaItemsInvocationResponseMethod { 'AddMediaIntentHandling.resolveMediaItems' = 0 }
+	export enum AddMediaIntentHandlingResolveMediaItemsInvocationResponseMethod { 'AddMediaIntentHandling.resolveMediaItems' = 'AddMediaIntentHandling.resolveMediaItems' }
 
 	export interface AddMediaIntentHandlingResolveMediaItemsInvocationResponseResult {
 		resolutionResult?: Array<AddMediaMediaItemResolutionResult>;
@@ -442,7 +442,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaMediaItemResolutionResultClass { AddMediaMediaItemResolutionResult = 0 }
+	export enum AddMediaMediaItemResolutionResultClass { AddMediaMediaItemResolutionResult = 'AddMediaMediaItemResolutionResult' }
 
 	export interface AddMediaMediaItemResolutionResultConfirmationRequired {
 
@@ -499,11 +499,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AddMediaMediaItemResolutionResultUnsupportedReason { loginRequired = 0, subscriptionRequired = 1, unsupportedMediaType = 2, explicitContentSettings = 3, restrictedContent = 4, regionRestriction = 5 }
+	export enum AddMediaMediaItemResolutionResultUnsupportedReason { loginRequired = 'loginRequired', subscriptionRequired = 'subscriptionRequired', unsupportedMediaType = 'unsupportedMediaType', explicitContentSettings = 'explicitContentSettings', restrictedContent = 'restrictedContent', regionRestriction = 'regionRestriction' }
 
-	export enum AddMediaMediaDestinationUnsupportedReason { playlistNameNotFound = 0, playlistNotEditable = 1 }
+	export enum AddMediaMediaDestinationUnsupportedReason { playlistNameNotFound = 'playlistNameNotFound', playlistNotEditable = 'playlistNotEditable' }
 
-	export enum AddMediaMediaItemUnsupportedReason { loginRequired = 0, subscriptionRequired = 1, unsupportedMediaType = 2, explicitContentSettings = 3, restrictedContent = 4, regionRestriction = 5 }
+	export enum AddMediaMediaItemUnsupportedReason { loginRequired = 'loginRequired', subscriptionRequired = 'subscriptionRequired', unsupportedMediaType = 'unsupportedMediaType', explicitContentSettings = 'explicitContentSettings', restrictedContent = 'restrictedContent', regionRestriction = 'regionRestriction' }
 
 	export interface BooleanResolutionResult {
 		class?: BooleanResolutionResultClass | null;
@@ -520,7 +520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BooleanResolutionResultClass { BooleanResolutionResult = 0 }
+	export enum BooleanResolutionResultClass { BooleanResolutionResult = 'BooleanResolutionResult' }
 
 	export interface BooleanResolutionResultConfirmationRequired {
 
@@ -1234,7 +1234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaAffinityType { unknown = 0, like = 1, dislike = 2 }
+	export enum MediaAffinityType { unknown = 'unknown', like = 'like', dislike = 'dislike' }
 
 	export interface MediaAffinityTypeResolutionResult {
 		class?: MediaAffinityTypeResolutionResultClass | null;
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaAffinityTypeResolutionResultClass { MediaAffinityTypeResolutionResult = 0 }
+	export enum MediaAffinityTypeResolutionResultClass { MediaAffinityTypeResolutionResult = 'MediaAffinityTypeResolutionResult' }
 
 	export interface MediaAffinityTypeResolutionResultConfirmationRequired {
 
@@ -1304,7 +1304,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaDestinationLibraryMediaDestinationType { library = 0 }
+	export enum MediaDestinationLibraryMediaDestinationType { library = 'library' }
 
 	export interface MediaDestinationPlaylist {
 
@@ -1338,11 +1338,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaDestinationPlaylistMediaDestinationType { playlist = 0 }
+	export enum MediaDestinationPlaylistMediaDestinationType { playlist = 'playlist' }
 
-	export enum MediaReference { unknown = 0, currentlyPlaying = 1, my = 2 }
+	export enum MediaReference { unknown = 'unknown', currentlyPlaying = 'currentlyPlaying', my = 'my' }
 
-	export enum MediaSortOrder { unknown = 0, newest = 1, oldest = 2, best = 3, worst = 4, popular = 5, unpopular = 6, trending = 7, recommended = 8 }
+	export enum MediaSortOrder { unknown = 'unknown', newest = 'newest', oldest = 'oldest', best = 'best', worst = 'worst', popular = 'popular', unpopular = 'unpopular', trending = 'trending', recommended = 'recommended' }
 
 	export interface PlayMediaControl {
 		activity?: PlayMediaControlActivity;
@@ -1440,7 +1440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaControlScheme { custom = 0, onDemand = 1, internetRadio = 2, liveStreaming = 3, audioBook = 4, podcast = 5, advertisement = 6 }
+	export enum PlayMediaControlScheme { custom = 'custom', onDemand = 'onDemand', internetRadio = 'internetRadio', liveStreaming = 'liveStreaming', audioBook = 'audioBook', podcast = 'podcast', advertisement = 'advertisement' }
 
 	export interface PlayMediaIntent {
 		class?: PlayMediaIntentClass | null;
@@ -1472,11 +1472,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentClass { PlayMediaIntent = 0 }
+	export enum PlayMediaIntentClass { PlayMediaIntent = 'PlayMediaIntent' }
 
-	export enum PlayMediaIntentPlaybackQueueLocation { unknown = 0, now = 1, next = 2, later = 3 }
+	export enum PlayMediaIntentPlaybackQueueLocation { unknown = 'unknown', now = 'now', next = 'next', later = 'later' }
 
-	export enum PlayMediaIntentPlaybackRepeatMode { unknown = 0, none = 1, all = 2, one = 3 }
+	export enum PlayMediaIntentPlaybackRepeatMode { unknown = 'unknown', none = 'none', all = 'all', one = 'one' }
 
 	export interface PlayMediaIntentHandlingHandleInvocationResponse {
 
@@ -1498,7 +1498,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentHandlingHandleInvocationResponseMethod { 'PlayMediaIntentHandling.handle' = 0 }
+	export enum PlayMediaIntentHandlingHandleInvocationResponseMethod { 'PlayMediaIntentHandling.handle' = 'PlayMediaIntentHandling.handle' }
 
 	export interface PlayMediaIntentHandlingHandleInvocationResponseResult {
 
@@ -1537,9 +1537,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentResponseClass { PlayMediaIntentResponse = 0 }
+	export enum PlayMediaIntentResponseClass { PlayMediaIntentResponse = 'PlayMediaIntentResponse' }
 
-	export enum PlayMediaIntentResponseCode { unspecified = 0, success = 1, failure = 2, failureRequiringAppLaunch = 3, failureUnknownMediaType = 4, failureNoUnplayedContent = 5, failureRestrictedContent = 6 }
+	export enum PlayMediaIntentResponseCode { unspecified = 'unspecified', success = 'success', failure = 'failure', failureRequiringAppLaunch = 'failureRequiringAppLaunch', failureUnknownMediaType = 'failureUnknownMediaType', failureNoUnplayedContent = 'failureNoUnplayedContent', failureRestrictedContent = 'failureRestrictedContent' }
 
 	export interface PlayMediaIntentHandlingInvocation {
 
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentHandlingInvocationMethod { 'PlayMediaIntentHandling.resolveMediaItems' = 0, 'PlayMediaIntentHandling.resolvePlayShuffled' = 1, 'PlayMediaIntentHandling.resolvePlaybackQueueLocation' = 2, 'PlayMediaIntentHandling.resolvePlaybackRepeatMode' = 3, 'PlayMediaIntentHandling.resolveResumePlayback' = 4, 'PlayMediaIntentHandling.handle' = 5 }
+	export enum PlayMediaIntentHandlingInvocationMethod { 'PlayMediaIntentHandling.resolveMediaItems' = 'PlayMediaIntentHandling.resolveMediaItems', 'PlayMediaIntentHandling.resolvePlayShuffled' = 'PlayMediaIntentHandling.resolvePlayShuffled', 'PlayMediaIntentHandling.resolvePlaybackQueueLocation' = 'PlayMediaIntentHandling.resolvePlaybackQueueLocation', 'PlayMediaIntentHandling.resolvePlaybackRepeatMode' = 'PlayMediaIntentHandling.resolvePlaybackRepeatMode', 'PlayMediaIntentHandling.resolveResumePlayback' = 'PlayMediaIntentHandling.resolveResumePlayback', 'PlayMediaIntentHandling.handle' = 'PlayMediaIntentHandling.handle' }
 
 	export interface PlayMediaIntentHandlingInvocationParams {
 
@@ -1606,7 +1606,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentHandlingResolveMediaItemsInvocationResponseMethod { 'PlayMediaIntentHandling.resolveMediaItems' = 0 }
+	export enum PlayMediaIntentHandlingResolveMediaItemsInvocationResponseMethod { 'PlayMediaIntentHandling.resolveMediaItems' = 'PlayMediaIntentHandling.resolveMediaItems' }
 
 	export interface PlayMediaIntentHandlingResolveMediaItemsInvocationResponseResult {
 
@@ -1638,7 +1638,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaMediaItemResolutionResultClass { PlayMediaMediaItemResolutionResult = 0 }
+	export enum PlayMediaMediaItemResolutionResultClass { PlayMediaMediaItemResolutionResult = 'PlayMediaMediaItemResolutionResult' }
 
 	export interface PlayMediaMediaItemResolutionResultConfirmationRequired {
 
@@ -1715,7 +1715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseMethod { 'PlayMediaIntentHandling.resolvePlayShuffled' = 0 }
+	export enum PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseMethod { 'PlayMediaIntentHandling.resolvePlayShuffled' = 'PlayMediaIntentHandling.resolvePlayShuffled' }
 
 	export interface PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseResult {
 
@@ -1750,7 +1750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseMethod { 'PlayMediaIntentHandling.resolvePlaybackQueueLocation' = 0 }
+	export enum PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseMethod { 'PlayMediaIntentHandling.resolvePlaybackQueueLocation' = 'PlayMediaIntentHandling.resolvePlaybackQueueLocation' }
 
 	export interface PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseResult {
 
@@ -1780,7 +1780,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaybackQueueLocationResolutionResultClass { PlaybackQueueLocationResolutionResult = 0 }
+	export enum PlaybackQueueLocationResolutionResultClass { PlaybackQueueLocationResolutionResult = 'PlaybackQueueLocationResolutionResult' }
 
 	export interface PlaybackQueueLocationResolutionResultConfirmationRequired {
 
@@ -1836,7 +1836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseMethod { 'PlayMediaIntentHandling.resolvePlaybackRepeatMode' = 0 }
+	export enum PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseMethod { 'PlayMediaIntentHandling.resolvePlaybackRepeatMode' = 'PlayMediaIntentHandling.resolvePlaybackRepeatMode' }
 
 	export interface PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseResult {
 
@@ -1866,7 +1866,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaybackRepeatModeResolutionResultClass { PlaybackRepeatModeResolutionResult = 0 }
+	export enum PlaybackRepeatModeResolutionResultClass { PlaybackRepeatModeResolutionResult = 'PlaybackRepeatModeResolutionResult' }
 
 	export interface PlaybackRepeatModeResolutionResultConfirmationRequired {
 
@@ -1922,7 +1922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseMethod { 'PlayMediaIntentHandling.resolveResumePlayback' = 0 }
+	export enum PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseMethod { 'PlayMediaIntentHandling.resolveResumePlayback' = 'PlayMediaIntentHandling.resolveResumePlayback' }
 
 	export interface PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseResult {
 
@@ -1937,7 +1937,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayMediaMediaItemUnsupportedReason { loginRequired = 0, subscriptionRequired = 1, unsupportedMediaType = 2, explicitContentSettings = 3, restrictedContent = 4, regionRestriction = 5 }
+	export enum PlayMediaMediaItemUnsupportedReason { loginRequired = 'loginRequired', subscriptionRequired = 'subscriptionRequired', unsupportedMediaType = 'unsupportedMediaType', explicitContentSettings = 'explicitContentSettings', restrictedContent = 'restrictedContent', regionRestriction = 'regionRestriction' }
 
 	export interface PlayMediaRequest {
 
@@ -1962,9 +1962,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaybackQueueLocation { unknown = 0, now = 1, next = 2, later = 3 }
+	export enum PlaybackQueueLocation { unknown = 'unknown', now = 'now', next = 'next', later = 'later' }
 
-	export enum PlaybackRepeatMode { unknown = 0, none = 1, all = 2, one = 3 }
+	export enum PlaybackRepeatMode { unknown = 'unknown', none = 'none', all = 'all', one = 'one' }
 
 	export interface ProtocolException {
 		code?: number | null;
@@ -1998,7 +1998,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtocolExceptionReason { unsupported = 0, unauthorized = 1, unexpected = 2, invalid = 3, unparseable = 4, deprecated = 5, internal = 6, complex = 7, busy = 8 }
+	export enum ProtocolExceptionReason { unsupported = 'unsupported', unauthorized = 'unauthorized', unexpected = 'unexpected', invalid = 'invalid', unparseable = 'unparseable', deprecated = 'deprecated', internal = 'internal', complex = 'complex', busy = 'busy' }
 
 	export interface ProtocolExceptionInvocationResponse {
 
@@ -2020,7 +2020,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtocolExceptionInvocationResponseMethod { ProtocolException = 0 }
+	export enum ProtocolExceptionInvocationResponseMethod { ProtocolException = 'ProtocolException' }
 
 	export interface Queue {
 
@@ -2143,7 +2143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueueActivityReportEvent { 'local.playing.elapsed' = 0, 'local.playing.paused' = 1, 'local.playing.continued' = 2, 'local.playing.scrub' = 3, 'local.playing.fastForward' = 4, 'local.playing.fastRewind' = 5, 'local.playing.transitioned.naturally' = 6, 'local.playing.transitioned.skip_next' = 7, 'local.playing.transitioned.skip_previous' = 8, 'local.playing.transitioned.queue_replaced' = 9, 'local.stopped.naturally' = 10, 'local.stopped.skip_past_end' = 11, 'local.command.like' = 12, 'local.command.dislike' = 13, 'local.command.bookmark' = 14 }
+	export enum QueueActivityReportEvent { 'local.playing.elapsed' = 'local.playing.elapsed', 'local.playing.paused' = 'local.playing.paused', 'local.playing.continued' = 'local.playing.continued', 'local.playing.scrub' = 'local.playing.scrub', 'local.playing.fastForward' = 'local.playing.fastForward', 'local.playing.fastRewind' = 'local.playing.fastRewind', 'local.playing.transitioned.naturally' = 'local.playing.transitioned.naturally', 'local.playing.transitioned.skip_next' = 'local.playing.transitioned.skip_next', 'local.playing.transitioned.skip_previous' = 'local.playing.transitioned.skip_previous', 'local.playing.transitioned.queue_replaced' = 'local.playing.transitioned.queue_replaced', 'local.stopped.naturally' = 'local.stopped.naturally', 'local.stopped.skip_past_end' = 'local.stopped.skip_past_end', 'local.command.like' = 'local.command.like', 'local.command.dislike' = 'local.command.dislike', 'local.command.bookmark' = 'local.command.bookmark' }
 
 	export interface QueueInsertPointer {
 
@@ -2242,7 +2242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityIntentClass { UpdateMediaAffinityIntent = 0 }
+	export enum UpdateMediaAffinityIntentClass { UpdateMediaAffinityIntent = 'UpdateMediaAffinityIntent' }
 
 	export interface UpdateMediaAffinityIntentHandlingHandleInvocationResponse {
 
@@ -2264,7 +2264,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityIntentHandlingHandleInvocationResponseMethod { 'UpdateMediaAffinityIntentHandling.handle' = 0 }
+	export enum UpdateMediaAffinityIntentHandlingHandleInvocationResponseMethod { 'UpdateMediaAffinityIntentHandling.handle' = 'UpdateMediaAffinityIntentHandling.handle' }
 
 	export interface UpdateMediaAffinityIntentHandlingHandleInvocationResponseResult {
 
@@ -2303,9 +2303,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityIntentResponseClass { UpdateMediaAffinityIntentResponse = 0 }
+	export enum UpdateMediaAffinityIntentResponseClass { UpdateMediaAffinityIntentResponse = 'UpdateMediaAffinityIntentResponse' }
 
-	export enum UpdateMediaAffinityIntentResponseCode { unspecified = 0, inProgress = 1, success = 2, failure = 3, failureRequiringAppLaunch = 4 }
+	export enum UpdateMediaAffinityIntentResponseCode { unspecified = 'unspecified', inProgress = 'inProgress', success = 'success', failure = 'failure', failureRequiringAppLaunch = 'failureRequiringAppLaunch' }
 
 	export interface UpdateMediaAffinityIntentHandlingInvocation {
 
@@ -2327,7 +2327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityIntentHandlingInvocationMethod { 'UpdateMediaAffinityIntentHandling.resolveMediaItems' = 0, 'UpdateMediaAffinityIntentHandling.resolveAffinityType' = 1, 'UpdateMediaAffinityIntentHandling.handle' = 2 }
+	export enum UpdateMediaAffinityIntentHandlingInvocationMethod { 'UpdateMediaAffinityIntentHandling.resolveMediaItems' = 'UpdateMediaAffinityIntentHandling.resolveMediaItems', 'UpdateMediaAffinityIntentHandling.resolveAffinityType' = 'UpdateMediaAffinityIntentHandling.resolveAffinityType', 'UpdateMediaAffinityIntentHandling.handle' = 'UpdateMediaAffinityIntentHandling.handle' }
 
 	export interface UpdateMediaAffinityIntentHandlingInvocationParams {
 
@@ -2372,7 +2372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseMethod { 'UpdateMediaAffinityIntentHandling.resolveAffinityType' = 0 }
+	export enum UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseMethod { 'UpdateMediaAffinityIntentHandling.resolveAffinityType' = 'UpdateMediaAffinityIntentHandling.resolveAffinityType' }
 
 	export interface UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseResult {
 
@@ -2407,7 +2407,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseMethod { 'UpdateMediaAffinityIntentHandling.resolveMediaItems' = 0 }
+	export enum UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseMethod { 'UpdateMediaAffinityIntentHandling.resolveMediaItems' = 'UpdateMediaAffinityIntentHandling.resolveMediaItems' }
 
 	export interface UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseResult {
 
@@ -2439,7 +2439,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityMediaItemResolutionResultClass { UpdateMediaAffinityMediaItemResolutionResult = 0 }
+	export enum UpdateMediaAffinityMediaItemResolutionResultClass { UpdateMediaAffinityMediaItemResolutionResult = 'UpdateMediaAffinityMediaItemResolutionResult' }
 
 	export interface UpdateMediaAffinityMediaItemResolutionResultConfirmationRequired {
 
@@ -2496,9 +2496,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMediaAffinityMediaItemResolutionResultUnsupportedReason { loginRequired = 0, subscriptionRequired = 1, unsupportedMediaType = 2, explicitContentSettings = 3 }
+	export enum UpdateMediaAffinityMediaItemResolutionResultUnsupportedReason { loginRequired = 'loginRequired', subscriptionRequired = 'subscriptionRequired', unsupportedMediaType = 'unsupportedMediaType', explicitContentSettings = 'explicitContentSettings' }
 
-	export enum UpdateMediaAffinityMediaItemUnsupportedReason { loginRequired = 0, subscriptionRequired = 1, unsupportedMediaType = 2, explicitContentSettings = 3 }
+	export enum UpdateMediaAffinityMediaItemUnsupportedReason { loginRequired = 'loginRequired', subscriptionRequired = 'subscriptionRequired', unsupportedMediaType = 'unsupportedMediaType', explicitContentSettings = 'explicitContentSettings' }
 
 	@Injectable()
 	export class MyClient {

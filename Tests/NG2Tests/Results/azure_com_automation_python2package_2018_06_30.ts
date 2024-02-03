@@ -475,7 +475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModulePropertiesProvisioningState { Created = 0, Creating = 1, StartingImportModuleRunbook = 2, RunningImportModuleRunbook = 3, ContentRetrieved = 4, ContentDownloaded = 5, ContentValidated = 6, ConnectionTypeImported = 7, ContentStored = 8, ModuleDataStored = 9, ActivitiesStored = 10, ModuleImportRunbookComplete = 11, Succeeded = 12, Failed = 13, Cancelled = 14, Updating = 15 }
+	export enum ModulePropertiesProvisioningState { Created = 'Created', Creating = 'Creating', StartingImportModuleRunbook = 'StartingImportModuleRunbook', RunningImportModuleRunbook = 'RunningImportModuleRunbook', ContentRetrieved = 'ContentRetrieved', ContentDownloaded = 'ContentDownloaded', ContentValidated = 'ContentValidated', ConnectionTypeImported = 'ConnectionTypeImported', ContentStored = 'ContentStored', ModuleDataStored = 'ModuleDataStored', ActivitiesStored = 'ActivitiesStored', ModuleImportRunbookComplete = 'ModuleImportRunbookComplete', Succeeded = 'Succeeded', Failed = 'Failed', Cancelled = 'Cancelled', Updating = 'Updating' }
 
 
 	/** The parameters supplied to the create or update module operation. */

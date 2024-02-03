@@ -1335,7 +1335,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MicerPostBodyFormat { pdf = 0 }
+	export enum MicerPostBodyFormat { pdf = 'pdf' }
 
 	export interface PvcerPostBody {
 		certificateParameters?: PvcerPostBodyCertificateParameters;

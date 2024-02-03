@@ -121,7 +121,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartnerInfoReplicationRole { Primary = 0, Secondary = 1 }
+	export enum PartnerInfoReplicationRole { Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** Read-only endpoint of the failover group instance. */
@@ -144,7 +144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailoverGroupReadOnlyEndpointFailoverPolicy { Disabled = 0, Enabled = 1 }
+	export enum FailoverGroupReadOnlyEndpointFailoverPolicy { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Read-write endpoint of the failover group instance. */
@@ -180,7 +180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailoverGroupReadWriteEndpointFailoverPolicy { Manual = 0, Automatic = 1 }
+	export enum FailoverGroupReadWriteEndpointFailoverPolicy { Manual = 'Manual', Automatic = 'Automatic' }
 
 
 	/** A list of failover groups. */

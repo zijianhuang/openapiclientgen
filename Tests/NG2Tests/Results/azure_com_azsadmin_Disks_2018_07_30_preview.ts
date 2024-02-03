@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Disk Sku. */
-	export enum AccountType { Standard_LRS = 0, Standard_ZRS = 1, Standard_GRS = 2, Standard_RAGRS = 3, Premium_LRS = 4, StandardSSD_LRS = 5, UltraSSD_LRS = 6 }
+	export enum AccountType { Standard_LRS = 'Standard_LRS', Standard_ZRS = 'Standard_ZRS', Standard_GRS = 'Standard_GRS', Standard_RAGRS = 'Standard_RAGRS', Premium_LRS = 'Premium_LRS', StandardSSD_LRS = 'StandardSSD_LRS', UltraSSD_LRS = 'UltraSSD_LRS' }
 
 
 	/** Managed Disk. */
@@ -97,9 +97,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskPropertiesDiskType { Undefined = 0, Disk = 1, Snapshot = 2, RestorePoint = 3, ManagedBlob = 4 }
+	export enum DiskPropertiesDiskType { Undefined = 'Undefined', Disk = 'Disk', Snapshot = 'Snapshot', RestorePoint = 'RestorePoint', ManagedBlob = 'ManagedBlob' }
 
-	export enum DiskPropertiesStatus { Undefined = 0, Unattached = 1, Attached = 2, Reserved = 3, ActiveSAS = 4, Unknown = 5, All = 6, Recommended = 7, OfflineMigration = 8, OnlineMigration = 9 }
+	export enum DiskPropertiesStatus { Undefined = 'Undefined', Unattached = 'Unattached', Attached = 'Attached', Reserved = 'Reserved', ActiveSAS = 'ActiveSAS', Unknown = 'Unknown', All = 'All', Recommended = 'Recommended', OfflineMigration = 'OfflineMigration', OnlineMigration = 'OnlineMigration' }
 
 
 	/** List of disks. */
@@ -213,11 +213,11 @@ export namespace MyNS {
 
 
 	/** Disk resource type. */
-	export enum DiskResourceType { Undefined = 0, Disk = 1, Snapshot = 2, RestorePoint = 3, ManagedBlob = 4 }
+	export enum DiskResourceType { Undefined = 'Undefined', Disk = 'Disk', Snapshot = 'Snapshot', RestorePoint = 'RestorePoint', ManagedBlob = 'ManagedBlob' }
 
 
 	/** Disk State. */
-	export enum DiskState { Undefined = 0, Unattached = 1, Attached = 2, Reserved = 3, ActiveSAS = 4, Unknown = 5, All = 6, Recommended = 7, OfflineMigration = 8, OnlineMigration = 9 }
+	export enum DiskState { Undefined = 'Undefined', Unattached = 'Unattached', Attached = 'Attached', Reserved = 'Reserved', ActiveSAS = 'ActiveSAS', Unknown = 'Unknown', All = 'All', Recommended = 'Recommended', OfflineMigration = 'OfflineMigration', OnlineMigration = 'OnlineMigration' }
 
 	@Injectable()
 	export class MyClient {

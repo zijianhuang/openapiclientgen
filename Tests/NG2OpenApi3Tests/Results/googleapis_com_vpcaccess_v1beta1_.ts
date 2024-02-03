@@ -100,7 +100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorState { STATE_UNSPECIFIED = 0, READY = 1, CREATING = 2, DELETING = 3, ERROR = 4, UPDATING = 5 }
+	export enum ConnectorState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', CREATING = 'CREATING', DELETING = 'DELETING', ERROR = 'ERROR', UPDATING = 'UPDATING' }
 
 
 	/** The subnet in which to house the connector */

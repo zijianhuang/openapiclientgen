@@ -1285,7 +1285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RsbycPostBodyFormat { pdf = 0 }
+	export enum RsbycPostBodyFormat { pdf = 'pdf' }
 
 }
 

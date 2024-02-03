@@ -24,7 +24,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountActivityActivityLevel { ACTIVITY_LEVEL_UNSPECIFIED = 0, UNEVALUATED = 1, UNUSUAL = 2, UNKNOWN = 3, TYPICAL_BASIC = 4, TYPICAL_STRONG = 5 }
+	export enum AccountActivityActivityLevel { ACTIVITY_LEVEL_UNSPECIFIED = 'ACTIVITY_LEVEL_UNSPECIFIED', UNEVALUATED = 'UNEVALUATED', UNUSUAL = 'UNUSUAL', UNKNOWN = 'UNKNOWN', TYPICAL_BASIC = 'TYPICAL_BASIC', TYPICAL_STRONG = 'TYPICAL_STRONG' }
 
 
 	/** Contains the account information such as the licensing status for the user in the scope. */
@@ -50,7 +50,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountDetailsAppLicensingVerdict { UNKNOWN = 0, LICENSED = 1, UNLICENSED = 2, UNEVALUATED = 3 }
+	export enum AccountDetailsAppLicensingVerdict { UNKNOWN = 'UNKNOWN', LICENSED = 'LICENSED', UNLICENSED = 'UNLICENSED', UNEVALUATED = 'UNEVALUATED' }
 
 
 	/** Contains signals about others apps on the device which could be used to access or control the requesting app. */
@@ -80,7 +80,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppAccessRiskVerdictOtherApps { UNKNOWN = 0, UNEVALUATED = 1, NOT_INSTALLED = 2, INSTALLED = 3, CAPTURING = 4, CONTROLLING = 5 }
+	export enum AppAccessRiskVerdictOtherApps { UNKNOWN = 'UNKNOWN', UNEVALUATED = 'UNEVALUATED', NOT_INSTALLED = 'NOT_INSTALLED', INSTALLED = 'INSTALLED', CAPTURING = 'CAPTURING', CONTROLLING = 'CONTROLLING' }
 
 
 	/** Contains the application integrity information. */
@@ -120,7 +120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppIntegrityAppRecognitionVerdict { UNKNOWN = 0, PLAY_RECOGNIZED = 1, UNRECOGNIZED_VERSION = 2, UNEVALUATED = 3 }
+	export enum AppIntegrityAppRecognitionVerdict { UNKNOWN = 'UNKNOWN', PLAY_RECOGNIZED = 'PLAY_RECOGNIZED', UNRECOGNIZED_VERSION = 'UNRECOGNIZED_VERSION', UNEVALUATED = 'UNEVALUATED' }
 
 
 	/** Request to decode the integrity token. */
@@ -233,7 +233,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecentDeviceActivityDeviceActivityLevel { DEVICE_ACTIVITY_LEVEL_UNSPECIFIED = 0, UNEVALUATED = 1, LEVEL_1 = 2, LEVEL_2 = 3, LEVEL_3 = 4, LEVEL_4 = 5 }
+	export enum RecentDeviceActivityDeviceActivityLevel { DEVICE_ACTIVITY_LEVEL_UNSPECIFIED = 'DEVICE_ACTIVITY_LEVEL_UNSPECIFIED', UNEVALUATED = 'UNEVALUATED', LEVEL_1 = 'LEVEL_1', LEVEL_2 = 'LEVEL_2', LEVEL_3 = 'LEVEL_3', LEVEL_4 = 'LEVEL_4' }
 
 
 	/** Contains information about the environment Play Integrity API runs in, e.g. Play Protect verdict. */
@@ -259,7 +259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentDetailsPlayProtectVerdict { PLAY_PROTECT_VERDICT_UNSPECIFIED = 0, UNEVALUATED = 1, NO_ISSUES = 2, NO_DATA = 3, MEDIUM_RISK = 4, HIGH_RISK = 5, POSSIBLE_RISK = 6 }
+	export enum EnvironmentDetailsPlayProtectVerdict { PLAY_PROTECT_VERDICT_UNSPECIFIED = 'PLAY_PROTECT_VERDICT_UNSPECIFIED', UNEVALUATED = 'UNEVALUATED', NO_ISSUES = 'NO_ISSUES', NO_DATA = 'NO_DATA', MEDIUM_RISK = 'MEDIUM_RISK', HIGH_RISK = 'HIGH_RISK', POSSIBLE_RISK = 'POSSIBLE_RISK' }
 
 
 	/** Contains the integrity request information. */

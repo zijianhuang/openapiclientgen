@@ -363,7 +363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityType { translated = 0, proofread = 1 }
+	export enum ActivityType { translated = 'translated', proofread = 'proofread' }
 
 	export interface ActivityLinks extends LinksMeta {
 		comments?: Href;
@@ -529,9 +529,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AsyncOperationStatusStatus { sent = 0, started = 1, completed = 2, failed = 3 }
+	export enum AsyncOperationStatusStatus { sent = 'sent', started = 'started', completed = 'completed', failed = 'failed' }
 
-	export enum AsyncOperationStatusEnum { sent = 0, started = 1, completed = 2, failed = 3 }
+	export enum AsyncOperationStatusEnum { sent = 'sent', started = 'started', completed = 'completed', failed = 'failed' }
 
 	export interface AvailableVendorsFilter {
 
@@ -650,7 +650,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlogArticleAnnouncement_type { article = 0, case = 1, 'famous-translators' = 2, sales = 3 }
+	export enum BlogArticleAnnouncement_type { article = 'article', case = 'case', 'famous-translators' = 'famous-translators', sales = 'sales' }
 
 	export interface BlogArticleLinks extends LinksMeta {
 		android?: Href;
@@ -1392,11 +1392,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectRole { translator = 0, proofreader = 1, both = 2 }
+	export enum ProjectRole { translator = 'translator', proofreader = 'proofreader', both = 'both' }
 
-	export enum ProjectSource { api = 0, web = 1 }
+	export enum ProjectSource { api = 'api', web = 'web' }
 
-	export enum ProjectStatus { pending = 0, started = 1, completed = 2, translated = 3, proofread = 4 }
+	export enum ProjectStatus { pending = 'pending', started = 'started', completed = 'completed', translated = 'translated', proofread = 'proofread' }
 
 	export interface ProjectWord_count_analysis {
 		base?: string | null;
@@ -1809,7 +1809,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientStringTranslationState { Translated = 0, Approved = 1 }
+	export enum ClientStringTranslationState { Translated = 'Translated', Approved = 'Approved' }
 
 	export interface ClientStringWithTranslations {
 		content?: string | null;
@@ -1927,7 +1927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommissionStatus { completed = 0, unclaimed = 1, failed = 2, sent = 3, waiting = 4, waiting_invoice = 5 }
+	export enum CommissionStatus { completed = 'completed', unclaimed = 'unclaimed', failed = 'failed', sent = 'sent', waiting = 'waiting', waiting_invoice = 'waiting_invoice' }
 
 	export interface CommissionList {
 		commissions?: Array<Commission>;
@@ -2759,7 +2759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkedSourceDocumentSource { dropbox = 0, googledrive = 1, icloud = 2 }
+	export enum LinkedSourceDocumentSource { dropbox = 'dropbox', googledrive = 'googledrive', icloud = 'icloud' }
 
 	export interface DocumentUploadRequest {
 
@@ -2821,7 +2821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EarningStatus { paid = 0, pending = 1, failed = 2 }
+	export enum EarningStatus { paid = 'paid', pending = 'pending', failed = 'failed' }
 
 	export interface EarningWithTQS extends Earning {
 
@@ -3551,7 +3551,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListOrderType { asc = 0, desc = 1 }
+	export enum ListOrderType { asc = 'asc', desc = 'desc' }
 
 	export interface LocationUpdateContent {
 
@@ -3702,9 +3702,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationSubscriptionDevice { iOS = 0, Android = 1, Chrome = 2, Firefox = 3, Safari = 4, Edge = 5, Amazon = 6, WindowsPhone = 7, Windows = 8, MacOS = 9 }
+	export enum NotificationSubscriptionDevice { iOS = 'iOS', Android = 'Android', Chrome = 'Chrome', Firefox = 'Firefox', Safari = 'Safari', Edge = 'Edge', Amazon = 'Amazon', WindowsPhone = 'WindowsPhone', Windows = 'Windows', MacOS = 'MacOS' }
 
-	export enum NotificationSubscriptionType { OneSignal = 0 }
+	export enum NotificationSubscriptionType { OneSignal = 'OneSignal' }
 
 	export interface OperationStatus {
 		status?: OperationStatusStatus | null;
@@ -3719,9 +3719,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStatusStatus { success = 0, error = 1 }
+	export enum OperationStatusStatus { success = 'success', error = 'error' }
 
-	export enum OperationStatusEnum { success = 0, error = 1 }
+	export enum OperationStatusEnum { success = 'success', error = 'error' }
 
 	export interface Package extends PackageStatus {
 
@@ -3758,11 +3758,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageStatusStatus { started = 0, packaging = 1, completed = 2 }
+	export enum PackageStatusStatus { started = 'started', packaging = 'packaging', completed = 'completed' }
 
 
 	/** The status of translation packaging. Possible values are 'started', 'packaging', 'completed'. When completed, you can make a /download call to download the last translation package. */
-	export enum PackageStatusEnum { started = 0, packaging = 1, completed = 2 }
+	export enum PackageStatusEnum { started = 'started', packaging = 'packaging', completed = 'completed' }
 
 	export interface PagingLinksMeta extends LinksMeta {
 		next?: string | null;
@@ -4063,9 +4063,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectLaunchResponseStatus { started = 0 }
+	export enum ProjectLaunchResponseStatus { started = 'started' }
 
-	export enum ProjectLaunchResponseEnum { started = 0 }
+	export enum ProjectLaunchResponseEnum { started = 'started' }
 
 	export interface ProjectLinks extends LinksMeta {
 		documents?: Href;
@@ -4146,7 +4146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectPaymentPayment_method { corporate = 0, client = 1, app = 2, credit = 3, corporate_card = 4 }
+	export enum ProjectPaymentPayment_method { corporate = 'corporate', client = 'client', app = 'app', credit = 'credit', corporate_card = 'corporate_card' }
 
 	export interface ProjectTQS {
 
@@ -4472,7 +4472,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesActivityType { EMAIL = 0, NOTE = 1, INCOMING_EMAIL = 2, TASK = 3 }
+	export enum SalesActivityType { EMAIL = 'EMAIL', NOTE = 'NOTE', INCOMING_EMAIL = 'INCOMING_EMAIL', TASK = 'TASK' }
 
 	export interface SearchEverywhereResult {
 		meta?: PagingMeta;
@@ -4551,9 +4551,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StringInSearchStatus { Approved = 0, Translated = 1 }
+	export enum StringInSearchStatus { Approved = 'Approved', Translated = 'Translated' }
 
-	export enum StringInSearchType { LOCAL_PROJECT = 0, IMPORTED_TM = 1 }
+	export enum StringInSearchType { LOCAL_PROJECT = 'LOCAL_PROJECT', IMPORTED_TM = 'IMPORTED_TM' }
 
 	export interface SingleString {
 
@@ -4726,7 +4726,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StringTranslationState { Approved = 0, Translated = 1 }
+	export enum StringTranslationState { Approved = 'Approved', Translated = 'Translated' }
 
 	export interface StyleGuide {
 		id?: number | null;
@@ -4923,7 +4923,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TokenErrorAccount_status { registered = 0, email_confirmed = 1, deleted = 2, suspended = 3, rejected = 4, approved = 5, resume = 6, webinar = 7, course = 8 }
+	export enum TokenErrorAccount_status { registered = 'registered', email_confirmed = 'email_confirmed', deleted = 'deleted', suspended = 'suspended', rejected = 'rejected', approved = 'approved', resume = 'resume', webinar = 'webinar', course = 'course' }
 
 	export interface TokenRequest {
 
@@ -5281,7 +5281,7 @@ export namespace MyNS {
 
 
 	/** Currently authed vendor's role in this project. If vendor has already joined, this contains the role they joined the project with. If not joined yet, this is the role that they can join the project with. */
-	export enum VendorProjectRole { translator = 0, proofreader = 1, both = 2 }
+	export enum VendorProjectRole { translator = 'translator', proofreader = 'proofreader', both = 'both' }
 
 	export interface VendorTag {
 		color?: string | null;
@@ -7724,19 +7724,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetContinuousProjectsType { active = 0 }
+	export enum GetContinuousProjectsType { active = 'active' }
 
-	export enum GetDocumentsType_filter { ALL = 0, TEXT_DOCUMENTS = 1, PRESENTATIONS = 2, SPREADSHEETS = 3, PDFS = 4, IMAGES = 5, SUBTITLES = 6, DESIGNS = 7, LOCALIZATION = 8, WEB = 9, STYLE_GUIDES = 10, GLOSSARIES = 11 }
+	export enum GetDocumentsType_filter { ALL = 'ALL', TEXT_DOCUMENTS = 'TEXT_DOCUMENTS', PRESENTATIONS = 'PRESENTATIONS', SPREADSHEETS = 'SPREADSHEETS', PDFS = 'PDFS', IMAGES = 'IMAGES', SUBTITLES = 'SUBTITLES', DESIGNS = 'DESIGNS', LOCALIZATION = 'LOCALIZATION', WEB = 'WEB', STYLE_GUIDES = 'STYLE_GUIDES', GLOSSARIES = 'GLOSSARIES' }
 
-	export enum GetDocumentsOrder_by { id = 0, updated_at = 1, created_at = 2, name = 3 }
+	export enum GetDocumentsOrder_by { id = 'id', updated_at = 'updated_at', created_at = 'created_at', name = 'name' }
 
-	export enum GetProjectsOrder_by { id = 0, status = 1, delivery = 2, price = 3 }
+	export enum GetProjectsOrder_by { id = 'id', status = 'status', delivery = 'delivery', price = 'price' }
 
-	export enum TriggerCallbackActionType { translated = 0, proofread = 1, completed = 2 }
+	export enum TriggerCallbackActionType { translated = 'translated', proofread = 'proofread', completed = 'completed' }
 
-	export enum GetResponsivityPeriod { monthly = 0, weekly = 1 }
+	export enum GetResponsivityPeriod { monthly = 'monthly', weekly = 'weekly' }
 
-	export enum GetUsersUser_type { vendor = 0, all = 1 }
+	export enum GetUsersUser_type { vendor = 'vendor', all = 'all' }
 
 }
 

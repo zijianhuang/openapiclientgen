@@ -411,7 +411,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Topic_sentimentDomain { Ecom = 0, Employee = 1, Hotel = 2, Restaurant = 3 }
+	export enum Topic_sentimentDomain { Ecom = 'Ecom', Employee = 'Employee', Hotel = 'Hotel', Restaurant = 'Restaurant' }
 
 }
 

@@ -285,7 +285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { PENDING_VALIDATION = 0, SUCCESS = 1, FAILED = 2 }
+	export enum DomainStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
 
 	/** Contains a DNS record value that you can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.  */
@@ -322,19 +322,19 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordType { CNAME = 0 }
+	export enum RecordType { CNAME = 'CNAME' }
 
-	export enum ValidationMethod { EMAIL = 0, DNS = 1 }
+	export enum ValidationMethod { EMAIL = 'EMAIL', DNS = 'DNS' }
 
-	export enum CertificateStatus { PENDING_VALIDATION = 0, ISSUED = 1, INACTIVE = 2, EXPIRED = 3, VALIDATION_TIMED_OUT = 4, REVOKED = 5, FAILED = 6 }
+	export enum CertificateStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', ISSUED = 'ISSUED', INACTIVE = 'INACTIVE', EXPIRED = 'EXPIRED', VALIDATION_TIMED_OUT = 'VALIDATION_TIMED_OUT', REVOKED = 'REVOKED', FAILED = 'FAILED' }
 
-	export enum RevocationReason { UNSPECIFIED = 0, KEY_COMPROMISE = 1, CA_COMPROMISE = 2, AFFILIATION_CHANGED = 3, SUPERCEDED = 4, CESSATION_OF_OPERATION = 5, CERTIFICATE_HOLD = 6, REMOVE_FROM_CRL = 7, PRIVILEGE_WITHDRAWN = 8, A_A_COMPROMISE = 9 }
+	export enum RevocationReason { UNSPECIFIED = 'UNSPECIFIED', KEY_COMPROMISE = 'KEY_COMPROMISE', CA_COMPROMISE = 'CA_COMPROMISE', AFFILIATION_CHANGED = 'AFFILIATION_CHANGED', SUPERCEDED = 'SUPERCEDED', CESSATION_OF_OPERATION = 'CESSATION_OF_OPERATION', CERTIFICATE_HOLD = 'CERTIFICATE_HOLD', REMOVE_FROM_CRL = 'REMOVE_FROM_CRL', PRIVILEGE_WITHDRAWN = 'PRIVILEGE_WITHDRAWN', A_A_COMPROMISE = 'A_A_COMPROMISE' }
 
-	export enum KeyAlgorithm { RSA_1024 = 0, RSA_2048 = 1, RSA_3072 = 2, RSA_4096 = 3, EC_prime256v1 = 4, EC_secp384r1 = 5, EC_secp521r1 = 6 }
+	export enum KeyAlgorithm { RSA_1024 = 'RSA_1024', RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096', EC_prime256v1 = 'EC_prime256v1', EC_secp384r1 = 'EC_secp384r1', EC_secp521r1 = 'EC_secp521r1' }
 
-	export enum FailureReason { NO_AVAILABLE_CONTACTS = 0, ADDITIONAL_VERIFICATION_REQUIRED = 1, DOMAIN_NOT_ALLOWED = 2, INVALID_PUBLIC_DOMAIN = 3, DOMAIN_VALIDATION_DENIED = 4, CAA_ERROR = 5, PCA_LIMIT_EXCEEDED = 6, PCA_INVALID_ARN = 7, PCA_INVALID_STATE = 8, PCA_REQUEST_FAILED = 9, PCA_NAME_CONSTRAINTS_VALIDATION = 10, PCA_RESOURCE_NOT_FOUND = 11, PCA_INVALID_ARGS = 12, PCA_INVALID_DURATION = 13, PCA_ACCESS_DENIED = 14, SLR_NOT_FOUND = 15, OTHER = 16 }
+	export enum FailureReason { NO_AVAILABLE_CONTACTS = 'NO_AVAILABLE_CONTACTS', ADDITIONAL_VERIFICATION_REQUIRED = 'ADDITIONAL_VERIFICATION_REQUIRED', DOMAIN_NOT_ALLOWED = 'DOMAIN_NOT_ALLOWED', INVALID_PUBLIC_DOMAIN = 'INVALID_PUBLIC_DOMAIN', DOMAIN_VALIDATION_DENIED = 'DOMAIN_VALIDATION_DENIED', CAA_ERROR = 'CAA_ERROR', PCA_LIMIT_EXCEEDED = 'PCA_LIMIT_EXCEEDED', PCA_INVALID_ARN = 'PCA_INVALID_ARN', PCA_INVALID_STATE = 'PCA_INVALID_STATE', PCA_REQUEST_FAILED = 'PCA_REQUEST_FAILED', PCA_NAME_CONSTRAINTS_VALIDATION = 'PCA_NAME_CONSTRAINTS_VALIDATION', PCA_RESOURCE_NOT_FOUND = 'PCA_RESOURCE_NOT_FOUND', PCA_INVALID_ARGS = 'PCA_INVALID_ARGS', PCA_INVALID_DURATION = 'PCA_INVALID_DURATION', PCA_ACCESS_DENIED = 'PCA_ACCESS_DENIED', SLR_NOT_FOUND = 'SLR_NOT_FOUND', OTHER = 'OTHER' }
 
-	export enum CertificateType { IMPORTED = 0, AMAZON_ISSUED = 1, PRIVATE = 2 }
+	export enum CertificateType { IMPORTED = 'IMPORTED', AMAZON_ISSUED = 'AMAZON_ISSUED', PRIVATE = 'PRIVATE' }
 
 
 	/** Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>. */
@@ -370,7 +370,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RenewalStatus { PENDING_AUTO_RENEWAL = 0, PENDING_VALIDATION = 1, SUCCESS = 2, FAILED = 3 }
+	export enum RenewalStatus { PENDING_AUTO_RENEWAL = 'PENDING_AUTO_RENEWAL', PENDING_VALIDATION = 'PENDING_VALIDATION', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
 
 	/** The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. */
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyUsageName { DIGITAL_SIGNATURE = 0, NON_REPUDIATION = 1, KEY_ENCIPHERMENT = 2, DATA_ENCIPHERMENT = 3, KEY_AGREEMENT = 4, CERTIFICATE_SIGNING = 5, CRL_SIGNING = 6, ENCIPHER_ONLY = 7, DECIPHER_ONLY = 8, ANY = 9, CUSTOM = 10 }
+	export enum KeyUsageName { DIGITAL_SIGNATURE = 'DIGITAL_SIGNATURE', NON_REPUDIATION = 'NON_REPUDIATION', KEY_ENCIPHERMENT = 'KEY_ENCIPHERMENT', DATA_ENCIPHERMENT = 'DATA_ENCIPHERMENT', KEY_AGREEMENT = 'KEY_AGREEMENT', CERTIFICATE_SIGNING = 'CERTIFICATE_SIGNING', CRL_SIGNING = 'CRL_SIGNING', ENCIPHER_ONLY = 'ENCIPHER_ONLY', DECIPHER_ONLY = 'DECIPHER_ONLY', ANY = 'ANY', CUSTOM = 'CUSTOM' }
 
 
 	/** The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension.  */
@@ -411,9 +411,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExtendedKeyUsageName { TLS_WEB_SERVER_AUTHENTICATION = 0, TLS_WEB_CLIENT_AUTHENTICATION = 1, CODE_SIGNING = 2, EMAIL_PROTECTION = 3, TIME_STAMPING = 4, OCSP_SIGNING = 5, IPSEC_END_SYSTEM = 6, IPSEC_TUNNEL = 7, IPSEC_USER = 8, ANY = 9, NONE = 10, CUSTOM = 11 }
+	export enum ExtendedKeyUsageName { TLS_WEB_SERVER_AUTHENTICATION = 'TLS_WEB_SERVER_AUTHENTICATION', TLS_WEB_CLIENT_AUTHENTICATION = 'TLS_WEB_CLIENT_AUTHENTICATION', CODE_SIGNING = 'CODE_SIGNING', EMAIL_PROTECTION = 'EMAIL_PROTECTION', TIME_STAMPING = 'TIME_STAMPING', OCSP_SIGNING = 'OCSP_SIGNING', IPSEC_END_SYSTEM = 'IPSEC_END_SYSTEM', IPSEC_TUNNEL = 'IPSEC_TUNNEL', IPSEC_USER = 'IPSEC_USER', ANY = 'ANY', NONE = 'NONE', CUSTOM = 'CUSTOM' }
 
-	export enum RenewalEligibility { ELIGIBLE = 0, INELIGIBLE = 1 }
+	export enum RenewalEligibility { ELIGIBLE = 'ELIGIBLE', INELIGIBLE = 'INELIGIBLE' }
 
 
 	/** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.  */
@@ -432,7 +432,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateTransparencyLoggingPreference { ENABLED = 0, DISABLED = 1 }
+	export enum CertificateTransparencyLoggingPreference { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DescribeCertificateRequest {
 
@@ -736,9 +736,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SortBy { CREATED_AT = 0 }
+	export enum SortBy { CREATED_AT = 'CREATED_AT' }
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface InvalidArgsException {
 	}
@@ -1131,35 +1131,35 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToCertificateX_Amz_Target { 'CertificateManager.AddTagsToCertificate' = 0 }
+	export enum AddTagsToCertificateX_Amz_Target { 'CertificateManager.AddTagsToCertificate' = 'CertificateManager.AddTagsToCertificate' }
 
-	export enum DeleteCertificateX_Amz_Target { 'CertificateManager.DeleteCertificate' = 0 }
+	export enum DeleteCertificateX_Amz_Target { 'CertificateManager.DeleteCertificate' = 'CertificateManager.DeleteCertificate' }
 
-	export enum DescribeCertificateX_Amz_Target { 'CertificateManager.DescribeCertificate' = 0 }
+	export enum DescribeCertificateX_Amz_Target { 'CertificateManager.DescribeCertificate' = 'CertificateManager.DescribeCertificate' }
 
-	export enum ExportCertificateX_Amz_Target { 'CertificateManager.ExportCertificate' = 0 }
+	export enum ExportCertificateX_Amz_Target { 'CertificateManager.ExportCertificate' = 'CertificateManager.ExportCertificate' }
 
-	export enum GetAccountConfigurationX_Amz_Target { 'CertificateManager.GetAccountConfiguration' = 0 }
+	export enum GetAccountConfigurationX_Amz_Target { 'CertificateManager.GetAccountConfiguration' = 'CertificateManager.GetAccountConfiguration' }
 
-	export enum GetCertificateX_Amz_Target { 'CertificateManager.GetCertificate' = 0 }
+	export enum GetCertificateX_Amz_Target { 'CertificateManager.GetCertificate' = 'CertificateManager.GetCertificate' }
 
-	export enum ImportCertificateX_Amz_Target { 'CertificateManager.ImportCertificate' = 0 }
+	export enum ImportCertificateX_Amz_Target { 'CertificateManager.ImportCertificate' = 'CertificateManager.ImportCertificate' }
 
-	export enum ListCertificatesX_Amz_Target { 'CertificateManager.ListCertificates' = 0 }
+	export enum ListCertificatesX_Amz_Target { 'CertificateManager.ListCertificates' = 'CertificateManager.ListCertificates' }
 
-	export enum ListTagsForCertificateX_Amz_Target { 'CertificateManager.ListTagsForCertificate' = 0 }
+	export enum ListTagsForCertificateX_Amz_Target { 'CertificateManager.ListTagsForCertificate' = 'CertificateManager.ListTagsForCertificate' }
 
-	export enum PutAccountConfigurationX_Amz_Target { 'CertificateManager.PutAccountConfiguration' = 0 }
+	export enum PutAccountConfigurationX_Amz_Target { 'CertificateManager.PutAccountConfiguration' = 'CertificateManager.PutAccountConfiguration' }
 
-	export enum RemoveTagsFromCertificateX_Amz_Target { 'CertificateManager.RemoveTagsFromCertificate' = 0 }
+	export enum RemoveTagsFromCertificateX_Amz_Target { 'CertificateManager.RemoveTagsFromCertificate' = 'CertificateManager.RemoveTagsFromCertificate' }
 
-	export enum RenewCertificateX_Amz_Target { 'CertificateManager.RenewCertificate' = 0 }
+	export enum RenewCertificateX_Amz_Target { 'CertificateManager.RenewCertificate' = 'CertificateManager.RenewCertificate' }
 
-	export enum RequestCertificateX_Amz_Target { 'CertificateManager.RequestCertificate' = 0 }
+	export enum RequestCertificateX_Amz_Target { 'CertificateManager.RequestCertificate' = 'CertificateManager.RequestCertificate' }
 
-	export enum ResendValidationEmailX_Amz_Target { 'CertificateManager.ResendValidationEmail' = 0 }
+	export enum ResendValidationEmailX_Amz_Target { 'CertificateManager.ResendValidationEmail' = 'CertificateManager.ResendValidationEmail' }
 
-	export enum UpdateCertificateOptionsX_Amz_Target { 'CertificateManager.UpdateCertificateOptions' = 0 }
+	export enum UpdateCertificateOptionsX_Amz_Target { 'CertificateManager.UpdateCertificateOptions' = 'CertificateManager.UpdateCertificateOptions' }
 
 }
 

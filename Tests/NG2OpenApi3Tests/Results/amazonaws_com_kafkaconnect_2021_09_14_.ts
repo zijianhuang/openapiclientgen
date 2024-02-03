@@ -22,7 +22,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorState { RUNNING = 0, CREATING = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
+	export enum ConnectorState { RUNNING = 'RUNNING', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** Specifies how the connector scales. */
@@ -173,9 +173,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KafkaClusterClientAuthenticationType { NONE = 0, IAM = 1 }
+	export enum KafkaClusterClientAuthenticationType { NONE = 'NONE', IAM = 'IAM' }
 
-	export enum KafkaClusterEncryptionInTransitType { PLAINTEXT = 0, TLS = 1 }
+	export enum KafkaClusterEncryptionInTransitType { PLAINTEXT = 'PLAINTEXT', TLS = 'TLS' }
 
 
 	/** Workers can send worker logs to different destination types. This configuration specifies the details of these destinations. */
@@ -416,7 +416,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomPluginState { CREATING = 0, CREATE_FAILED = 1, ACTIVE = 2, UPDATING = 3, UPDATE_FAILED = 4, DELETING = 5 }
+	export enum CustomPluginState { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED', DELETING = 'DELETING' }
 
 
 	/** The location of an object in Amazon S3. */
@@ -980,7 +980,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomPluginContentType { JAR = 0, ZIP = 1 }
+	export enum CustomPluginContentType { JAR = 'JAR', ZIP = 'ZIP' }
 
 
 	/** Details about a custom plugin file. */

@@ -277,7 +277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueueAttributeName { All = 0, Policy = 1, VisibilityTimeout = 2, MaximumMessageSize = 3, MessageRetentionPeriod = 4, ApproximateNumberOfMessages = 5, ApproximateNumberOfMessagesNotVisible = 6, CreatedTimestamp = 7, LastModifiedTimestamp = 8, QueueArn = 9, ApproximateNumberOfMessagesDelayed = 10, DelaySeconds = 11, ReceiveMessageWaitTimeSeconds = 12, RedrivePolicy = 13, FifoQueue = 14, ContentBasedDeduplication = 15, KmsMasterKeyId = 16, KmsDataKeyReusePeriodSeconds = 17, DeduplicationScope = 18, FifoThroughputLimit = 19, RedriveAllowPolicy = 20, SqsManagedSseEnabled = 21 }
+	export enum QueueAttributeName { All = 'All', Policy = 'Policy', VisibilityTimeout = 'VisibilityTimeout', MaximumMessageSize = 'MaximumMessageSize', MessageRetentionPeriod = 'MessageRetentionPeriod', ApproximateNumberOfMessages = 'ApproximateNumberOfMessages', ApproximateNumberOfMessagesNotVisible = 'ApproximateNumberOfMessagesNotVisible', CreatedTimestamp = 'CreatedTimestamp', LastModifiedTimestamp = 'LastModifiedTimestamp', QueueArn = 'QueueArn', ApproximateNumberOfMessagesDelayed = 'ApproximateNumberOfMessagesDelayed', DelaySeconds = 'DelaySeconds', ReceiveMessageWaitTimeSeconds = 'ReceiveMessageWaitTimeSeconds', RedrivePolicy = 'RedrivePolicy', FifoQueue = 'FifoQueue', ContentBasedDeduplication = 'ContentBasedDeduplication', KmsMasterKeyId = 'KmsMasterKeyId', KmsDataKeyReusePeriodSeconds = 'KmsDataKeyReusePeriodSeconds', DeduplicationScope = 'DeduplicationScope', FifoThroughputLimit = 'FifoThroughputLimit', RedriveAllowPolicy = 'RedriveAllowPolicy', SqsManagedSseEnabled = 'SqsManagedSseEnabled' }
 
 	export interface InvalidAttributeName {
 	}
@@ -1107,9 +1107,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageSystemAttributeName { SenderId = 0, SentTimestamp = 1, ApproximateReceiveCount = 2, ApproximateFirstReceiveTimestamp = 3, SequenceNumber = 4, MessageDeduplicationId = 5, MessageGroupId = 6, AWSTraceHeader = 7, DeadLetterQueueSourceArn = 8 }
+	export enum MessageSystemAttributeName { SenderId = 'SenderId', SentTimestamp = 'SentTimestamp', ApproximateReceiveCount = 'ApproximateReceiveCount', ApproximateFirstReceiveTimestamp = 'ApproximateFirstReceiveTimestamp', SequenceNumber = 'SequenceNumber', MessageDeduplicationId = 'MessageDeduplicationId', MessageGroupId = 'MessageGroupId', AWSTraceHeader = 'AWSTraceHeader', DeadLetterQueueSourceArn = 'DeadLetterQueueSourceArn' }
 
-	export enum MessageSystemAttributeNameForSends { AWSTraceHeader = 0 }
+	export enum MessageSystemAttributeNameForSends { AWSTraceHeader = 'AWSTraceHeader' }
 
 
 	/** <p/> */
@@ -1678,53 +1678,53 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddPermissionAction { AddPermission = 0 }
+	export enum GET_AddPermissionAction { AddPermission = 'AddPermission' }
 
-	export enum GET_AddPermissionVersion { '2012-11-05' = 0 }
+	export enum GET_AddPermissionVersion { '2012-11-05' = '2012-11-05' }
 
-	export enum GET_CancelMessageMoveTaskAction { CancelMessageMoveTask = 0 }
+	export enum GET_CancelMessageMoveTaskAction { CancelMessageMoveTask = 'CancelMessageMoveTask' }
 
-	export enum GET_ChangeMessageVisibilityAction { ChangeMessageVisibility = 0 }
+	export enum GET_ChangeMessageVisibilityAction { ChangeMessageVisibility = 'ChangeMessageVisibility' }
 
-	export enum GET_ChangeMessageVisibilityBatchAction { ChangeMessageVisibilityBatch = 0 }
+	export enum GET_ChangeMessageVisibilityBatchAction { ChangeMessageVisibilityBatch = 'ChangeMessageVisibilityBatch' }
 
-	export enum GET_CreateQueueAction { CreateQueue = 0 }
+	export enum GET_CreateQueueAction { CreateQueue = 'CreateQueue' }
 
-	export enum GET_DeleteMessageAction { DeleteMessage = 0 }
+	export enum GET_DeleteMessageAction { DeleteMessage = 'DeleteMessage' }
 
-	export enum GET_DeleteMessageBatchAction { DeleteMessageBatch = 0 }
+	export enum GET_DeleteMessageBatchAction { DeleteMessageBatch = 'DeleteMessageBatch' }
 
-	export enum GET_DeleteQueueAction { DeleteQueue = 0 }
+	export enum GET_DeleteQueueAction { DeleteQueue = 'DeleteQueue' }
 
-	export enum GET_GetQueueAttributesAction { GetQueueAttributes = 0 }
+	export enum GET_GetQueueAttributesAction { GetQueueAttributes = 'GetQueueAttributes' }
 
-	export enum GET_GetQueueUrlAction { GetQueueUrl = 0 }
+	export enum GET_GetQueueUrlAction { GetQueueUrl = 'GetQueueUrl' }
 
-	export enum GET_ListDeadLetterSourceQueuesAction { ListDeadLetterSourceQueues = 0 }
+	export enum GET_ListDeadLetterSourceQueuesAction { ListDeadLetterSourceQueues = 'ListDeadLetterSourceQueues' }
 
-	export enum GET_ListMessageMoveTasksAction { ListMessageMoveTasks = 0 }
+	export enum GET_ListMessageMoveTasksAction { ListMessageMoveTasks = 'ListMessageMoveTasks' }
 
-	export enum GET_ListQueueTagsAction { ListQueueTags = 0 }
+	export enum GET_ListQueueTagsAction { ListQueueTags = 'ListQueueTags' }
 
-	export enum GET_ListQueuesAction { ListQueues = 0 }
+	export enum GET_ListQueuesAction { ListQueues = 'ListQueues' }
 
-	export enum GET_PurgeQueueAction { PurgeQueue = 0 }
+	export enum GET_PurgeQueueAction { PurgeQueue = 'PurgeQueue' }
 
-	export enum GET_ReceiveMessageAction { ReceiveMessage = 0 }
+	export enum GET_ReceiveMessageAction { ReceiveMessage = 'ReceiveMessage' }
 
-	export enum GET_RemovePermissionAction { RemovePermission = 0 }
+	export enum GET_RemovePermissionAction { RemovePermission = 'RemovePermission' }
 
-	export enum GET_SendMessageAction { SendMessage = 0 }
+	export enum GET_SendMessageAction { SendMessage = 'SendMessage' }
 
-	export enum GET_SendMessageBatchAction { SendMessageBatch = 0 }
+	export enum GET_SendMessageBatchAction { SendMessageBatch = 'SendMessageBatch' }
 
-	export enum GET_SetQueueAttributesAction { SetQueueAttributes = 0 }
+	export enum GET_SetQueueAttributesAction { SetQueueAttributes = 'SetQueueAttributes' }
 
-	export enum GET_StartMessageMoveTaskAction { StartMessageMoveTask = 0 }
+	export enum GET_StartMessageMoveTaskAction { StartMessageMoveTask = 'StartMessageMoveTask' }
 
-	export enum GET_TagQueueAction { TagQueue = 0 }
+	export enum GET_TagQueueAction { TagQueue = 'TagQueue' }
 
-	export enum GET_UntagQueueAction { UntagQueue = 0 }
+	export enum GET_UntagQueueAction { UntagQueue = 'UntagQueue' }
 
 }
 

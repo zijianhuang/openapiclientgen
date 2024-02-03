@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** State of the region in regard to update. */
-	export enum RegionUpdateState { Unknown = 0, AppliedSuccessfully = 1, AppliedUpdateAvailableSuccessfully = 2, UpdateInProgress = 3, UpdateFailed = 4 }
+	export enum RegionUpdateState { Unknown = 'Unknown', AppliedSuccessfully = 'AppliedSuccessfully', AppliedUpdateAvailableSuccessfully = 'AppliedUpdateAvailableSuccessfully', UpdateInProgress = 'UpdateInProgress', UpdateFailed = 'UpdateFailed' }
 
 
 	/** Information related to a location's update status. */

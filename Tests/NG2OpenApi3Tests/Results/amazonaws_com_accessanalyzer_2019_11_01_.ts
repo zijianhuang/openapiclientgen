@@ -236,7 +236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KmsGrantOperation { CreateGrant = 0, Decrypt = 1, DescribeKey = 2, Encrypt = 3, GenerateDataKey = 4, GenerateDataKeyPair = 5, GenerateDataKeyPairWithoutPlaintext = 6, GenerateDataKeyWithoutPlaintext = 7, GetPublicKey = 8, ReEncryptFrom = 9, ReEncryptTo = 10, RetireGrant = 11, Sign = 12, Verify = 13 }
+	export enum KmsGrantOperation { CreateGrant = 'CreateGrant', Decrypt = 'Decrypt', DescribeKey = 'DescribeKey', Encrypt = 'Encrypt', GenerateDataKey = 'GenerateDataKey', GenerateDataKeyPair = 'GenerateDataKeyPair', GenerateDataKeyPairWithoutPlaintext = 'GenerateDataKeyPairWithoutPlaintext', GenerateDataKeyWithoutPlaintext = 'GenerateDataKeyWithoutPlaintext', GetPublicKey = 'GetPublicKey', ReEncryptFrom = 'ReEncryptFrom', ReEncryptTo = 'ReEncryptTo', RetireGrant = 'RetireGrant', Sign = 'Sign', Verify = 'Verify' }
 
 
 	/** Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. You can specify only one type of encryption context. An empty map is treated as not specified. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html">GrantConstraints</a>. */
@@ -384,7 +384,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AclPermission { READ = 0, WRITE = 1, READ_ACP = 2, WRITE_ACP = 3, FULL_CONTROL = 4 }
+	export enum AclPermission { READ = 'READ', WRITE = 'WRITE', READ_ACP = 'READ_ACP', WRITE_ACP = 'WRITE_ACP', FULL_CONTROL = 'FULL_CONTROL' }
 
 
 	/** You specify each grantee as a type-value pair using one of these types. You can specify only one type of grantee. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html">PutBucketAcl</a>. */
@@ -638,7 +638,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessPreviewStatus { COMPLETED = 0, CREATING = 1, FAILED = 2 }
+	export enum AccessPreviewStatus { COMPLETED = 'COMPLETED', CREATING = 'CREATING', FAILED = 'FAILED' }
 
 
 	/** Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration. */
@@ -661,7 +661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessPreviewStatusReasonCode { INTERNAL_ERROR = 0, INVALID_CONFIGURATION = 1 }
+	export enum AccessPreviewStatusReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', INVALID_CONFIGURATION = 'INVALID_CONFIGURATION' }
 
 
 	/** The response to the request. */
@@ -749,9 +749,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { 'AWS::S3::Bucket' = 0, 'AWS::IAM::Role' = 1, 'AWS::SQS::Queue' = 2, 'AWS::Lambda::Function' = 3, 'AWS::Lambda::LayerVersion' = 4, 'AWS::KMS::Key' = 5, 'AWS::SecretsManager::Secret' = 6, 'AWS::EFS::FileSystem' = 7, 'AWS::EC2::Snapshot' = 8, 'AWS::ECR::Repository' = 9, 'AWS::RDS::DBSnapshot' = 10, 'AWS::RDS::DBClusterSnapshot' = 11, 'AWS::SNS::Topic' = 12 }
+	export enum ResourceType { 'AWS::S3::Bucket' = 'AWS::S3::Bucket', 'AWS::IAM::Role' = 'AWS::IAM::Role', 'AWS::SQS::Queue' = 'AWS::SQS::Queue', 'AWS::Lambda::Function' = 'AWS::Lambda::Function', 'AWS::Lambda::LayerVersion' = 'AWS::Lambda::LayerVersion', 'AWS::KMS::Key' = 'AWS::KMS::Key', 'AWS::SecretsManager::Secret' = 'AWS::SecretsManager::Secret', 'AWS::EFS::FileSystem' = 'AWS::EFS::FileSystem', 'AWS::EC2::Snapshot' = 'AWS::EC2::Snapshot', 'AWS::ECR::Repository' = 'AWS::ECR::Repository', 'AWS::RDS::DBSnapshot' = 'AWS::RDS::DBSnapshot', 'AWS::RDS::DBClusterSnapshot' = 'AWS::RDS::DBClusterSnapshot', 'AWS::SNS::Topic' = 'AWS::SNS::Topic' }
 
-	export enum FindingStatus { ACTIVE = 0, ARCHIVED = 1, RESOLVED = 2 }
+	export enum FindingStatus { ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED', RESOLVED = 'RESOLVED' }
 
 
 	/** The response to the request. */
@@ -827,7 +827,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { ACCOUNT = 0, ORGANIZATION = 1 }
+	export enum Type { ACCOUNT = 'ACCOUNT', ORGANIZATION = 'ORGANIZATION' }
 
 	export interface TagsMap {
 	}
@@ -839,7 +839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyzerStatus { ACTIVE = 0, CREATING = 1, DISABLED = 2, FAILED = 3 }
+	export enum AnalyzerStatus { ACTIVE = 'ACTIVE', CREATING = 'CREATING', DISABLED = 'DISABLED', FAILED = 'FAILED' }
 
 
 	/** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization. */
@@ -862,7 +862,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReasonCode { AWS_SERVICE_ACCESS_DISABLED = 0, DELEGATED_ADMINISTRATOR_DEREGISTERED = 1, ORGANIZATION_DELETED = 2, SERVICE_LINKED_ROLE_CREATION_FAILED = 3 }
+	export enum ReasonCode { AWS_SERVICE_ACCESS_DISABLED = 'AWS_SERVICE_ACCESS_DISABLED', DELEGATED_ADMINISTRATOR_DEREGISTERED = 'DELEGATED_ADMINISTRATOR_DEREGISTERED', ORGANIZATION_DELETED = 'ORGANIZATION_DELETED', SERVICE_LINKED_ROLE_CREATION_FAILED = 'SERVICE_LINKED_ROLE_CREATION_FAILED' }
 
 
 	/** The response to the request. */
@@ -1057,7 +1057,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingSourceType { POLICY = 0, BUCKET_ACL = 1, S3_ACCESS_POINT = 2, S3_ACCESS_POINT_ACCOUNT = 3 }
+	export enum FindingSourceType { POLICY = 'POLICY', BUCKET_ACL = 'BUCKET_ACL', S3_ACCESS_POINT = 'S3_ACCESS_POINT', S3_ACCESS_POINT_ACCOUNT = 'S3_ACCESS_POINT_ACCOUNT' }
 
 
 	/** Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings. */
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2, CANCELED = 3 }
+	export enum JobStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELED = 'CANCELED' }
 
 
 	/** Contains the details about the policy generation error. */
@@ -1164,7 +1164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobErrorCode { AUTHORIZATION_ERROR = 0, RESOURCE_NOT_FOUND_ERROR = 1, SERVICE_QUOTA_EXCEEDED_ERROR = 2, SERVICE_ERROR = 3 }
+	export enum JobErrorCode { AUTHORIZATION_ERROR = 'AUTHORIZATION_ERROR', RESOURCE_NOT_FOUND_ERROR = 'RESOURCE_NOT_FOUND_ERROR', SERVICE_QUOTA_EXCEEDED_ERROR = 'SERVICE_QUOTA_EXCEEDED_ERROR', SERVICE_ERROR = 'SERVICE_ERROR' }
 
 
 	/** Contains the text for the generated policy and its details. */
@@ -1306,7 +1306,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingChangeType { CHANGED = 0, NEW = 1, UNCHANGED = 2 }
+	export enum FindingChangeType { CHANGED = 'CHANGED', NEW = 'NEW', UNCHANGED = 'UNCHANGED' }
 
 	export interface ListAccessPreviewsResponse {
 
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderBy { ASC = 0, DESC = 1 }
+	export enum OrderBy { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface ListPolicyGenerationsResponse {
 
@@ -1771,7 +1771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidatePolicyFindingType { ERROR = 0, SECURITY_WARNING = 1, SUGGESTION = 2, WARNING = 3 }
+	export enum ValidatePolicyFindingType { ERROR = 'ERROR', SECURITY_WARNING = 'SECURITY_WARNING', SUGGESTION = 'SUGGESTION', WARNING = 'WARNING' }
 
 
 	/** A location in a policy that is represented as a path through the JSON representation and a corresponding span. */
@@ -2142,7 +2142,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingStatusUpdate { ACTIVE = 0, ARCHIVED = 1 }
+	export enum FindingStatusUpdate { ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED' }
 
 
 	/** Contains the generated policy details. */
@@ -2424,7 +2424,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Locale { DE = 0, EN = 1, ES = 2, FR = 3, IT = 4, JA = 5, KO = 6, PT_BR = 7, ZH_CN = 8, ZH_TW = 9 }
+	export enum Locale { DE = 'DE', EN = 'EN', ES = 'ES', FR = 'FR', IT = 'IT', JA = 'JA', KO = 'KO', PT_BR = 'PT_BR', ZH_CN = 'ZH_CN', ZH_TW = 'ZH_TW' }
 
 
 	/** The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>.  */
@@ -2486,7 +2486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyType { IDENTITY_POLICY = 0, RESOURCE_POLICY = 1, SERVICE_CONTROL_POLICY = 2 }
+	export enum PolicyType { IDENTITY_POLICY = 'IDENTITY_POLICY', RESOURCE_POLICY = 'RESOURCE_POLICY', SERVICE_CONTROL_POLICY = 'SERVICE_CONTROL_POLICY' }
 
 
 	/** The values for a manual Amazon RDS DB cluster snapshot attribute. */
@@ -2671,7 +2671,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidatePolicyResourceType { 'AWS::S3::Bucket' = 0, 'AWS::S3::AccessPoint' = 1, 'AWS::S3::MultiRegionAccessPoint' = 2, 'AWS::S3ObjectLambda::AccessPoint' = 3, 'AWS::IAM::AssumeRolePolicyDocument' = 4 }
+	export enum ValidatePolicyResourceType { 'AWS::S3::Bucket' = 'AWS::S3::Bucket', 'AWS::S3::AccessPoint' = 'AWS::S3::AccessPoint', 'AWS::S3::MultiRegionAccessPoint' = 'AWS::S3::MultiRegionAccessPoint', 'AWS::S3ObjectLambda::AccessPoint' = 'AWS::S3ObjectLambda::AccessPoint', 'AWS::IAM::AssumeRolePolicyDocument' = 'AWS::IAM::AssumeRolePolicyDocument' }
 
 	export interface ValidatePolicyRequest {
 		locale?: Locale;

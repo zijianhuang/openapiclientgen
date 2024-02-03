@@ -76,7 +76,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancePoolPropertiesLicenseType { LicenseIncluded = 0, BasePrice = 1 }
+	export enum InstancePoolPropertiesLicenseType { LicenseIncluded = 'LicenseIncluded', BasePrice = 'BasePrice' }
 
 	export interface InstancePoolSku {
 

@@ -190,7 +190,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Unit { DAYS = 0 }
+	export enum Unit { DAYS = 'DAYS' }
 
 
 	/** The threshold for the calculated attribute. */
@@ -220,9 +220,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator { EQUAL_TO = 0, GREATER_THAN = 1, LESS_THAN = 2, NOT_EQUAL_TO = 3 }
+	export enum Operator { EQUAL_TO = 'EQUAL_TO', GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN', NOT_EQUAL_TO = 'NOT_EQUAL_TO' }
 
-	export enum Statistic { FIRST_OCCURRENCE = 0, LAST_OCCURRENCE = 1, COUNT = 2, SUM = 3, MINIMUM = 4, MAXIMUM = 5, AVERAGE = 6, MAX_OCCURRENCE = 7 }
+	export enum Statistic { FIRST_OCCURRENCE = 'FIRST_OCCURRENCE', LAST_OCCURRENCE = 'LAST_OCCURRENCE', COUNT = 'COUNT', SUM = 'SUM', MINIMUM = 'MINIMUM', MAXIMUM = 'MAXIMUM', AVERAGE = 'AVERAGE', MAX_OCCURRENCE = 'MAX_OCCURRENCE' }
 
 	export interface TagMap {
 	}
@@ -329,7 +329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobScheduleDayOfTheWeek { SUNDAY = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6 }
+	export enum JobScheduleDayOfTheWeek { SUNDAY = 'SUNDAY', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY' }
 
 
 	/** Configuration settings for how to perform the auto-merging of profiles. */
@@ -398,7 +398,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConflictResolvingModel { RECENCY = 0, SOURCE = 1 }
+	export enum ConflictResolvingModel { RECENCY = 'RECENCY', SOURCE = 'SOURCE' }
 
 
 	/** <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note> <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p> </note> */
@@ -490,7 +490,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleBasedMatchingStatus { PENDING = 0, IN_PROGRESS = 1, ACTIVE = 2 }
+	export enum RuleBasedMatchingStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', ACTIVE = 'ACTIVE' }
 
 
 	/** <p>Configuration information about the <code>AttributeTypesSelector </code>where the rule-based identity resolution uses to match profiles. You can choose how profiles are compared across attribute types and which attribute to use for matching from each type. There are three attribute types you can configure:</p> <ul> <li> <p>Email type</p> <ul> <li> <p>You can choose from <code>Email</code>, <code>BusinessEmail</code>, and <code>PersonalEmail</code> </p> </li> </ul> </li> <li> <p>Phone number type</p> <ul> <li> <p>You can choose from <code>Phone</code>, <code>HomePhone</code>, and <code>MobilePhone</code> </p> </li> </ul> </li> <li> <p>Address type</p> <ul> <li> <p>You can choose from <code>Address</code>, <code>BusinessAddress</code>, <code>MaillingAddress</code>, and <code>ShippingAddress</code> </p> </li> </ul> </li> </ul> <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the <code>AttributeMatchingModel</code>. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the Email type.</p> */
@@ -516,7 +516,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeMatchingModel { ONE_TO_ONE = 0, MANY_TO_MANY = 1 }
+	export enum AttributeMatchingModel { ONE_TO_ONE = 'ONE_TO_ONE', MANY_TO_MANY = 'MANY_TO_MANY' }
 
 	export interface CreateEventStreamResponse {
 
@@ -649,7 +649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceConnectorType { Salesforce = 0, Marketo = 1, Zendesk = 2, Servicenow = 3, S3 = 4 }
+	export enum SourceConnectorType { Salesforce = 'Salesforce', Marketo = 'Marketo', Zendesk = 'Zendesk', Servicenow = 'Servicenow', S3 = 'S3' }
 
 
 	/** Specifies the configuration used when importing incremental records from the source. */
@@ -859,15 +859,15 @@ export namespace MyNS {
 
 	}
 
-	export enum MarketoConnectorOperator { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, BETWEEN = 3, ADDITION = 4, MULTIPLICATION = 5, DIVISION = 6, SUBTRACTION = 7, MASK_ALL = 8, MASK_FIRST_N = 9, MASK_LAST_N = 10, VALIDATE_NON_NULL = 11, VALIDATE_NON_ZERO = 12, VALIDATE_NON_NEGATIVE = 13, VALIDATE_NUMERIC = 14, NO_OP = 15 }
+	export enum MarketoConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum S3ConnectorOperator { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, BETWEEN = 3, LESS_THAN_OR_EQUAL_TO = 4, GREATER_THAN_OR_EQUAL_TO = 5, EQUAL_TO = 6, NOT_EQUAL_TO = 7, ADDITION = 8, MULTIPLICATION = 9, DIVISION = 10, SUBTRACTION = 11, MASK_ALL = 12, MASK_FIRST_N = 13, MASK_LAST_N = 14, VALIDATE_NON_NULL = 15, VALIDATE_NON_ZERO = 16, VALIDATE_NON_NEGATIVE = 17, VALIDATE_NUMERIC = 18, NO_OP = 19 }
+	export enum S3ConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum SalesforceConnectorOperator { PROJECTION = 0, LESS_THAN = 1, CONTAINS = 2, GREATER_THAN = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum SalesforceConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', CONTAINS = 'CONTAINS', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum ServiceNowConnectorOperator { PROJECTION = 0, CONTAINS = 1, LESS_THAN = 2, GREATER_THAN = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum ServiceNowConnectorOperator { PROJECTION = 'PROJECTION', CONTAINS = 'CONTAINS', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum ZendeskConnectorOperator { PROJECTION = 0, GREATER_THAN = 1, ADDITION = 2, MULTIPLICATION = 3, DIVISION = 4, SUBTRACTION = 5, MASK_ALL = 6, MASK_FIRST_N = 7, MASK_LAST_N = 8, VALIDATE_NON_NULL = 9, VALIDATE_NON_ZERO = 10, VALIDATE_NON_NEGATIVE = 11, VALIDATE_NUMERIC = 12, NO_OP = 13 }
+	export enum ZendeskConnectorOperator { PROJECTION = 'PROJECTION', GREATER_THAN = 'GREATER_THAN', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
 	export interface TaskPropertiesMap {
 	}
@@ -879,7 +879,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskType { Arithmetic = 0, Filter = 1, Map = 2, Mask = 3, Merge = 4, Truncate = 5, Validate = 6 }
+	export enum TaskType { Arithmetic = 'Arithmetic', Filter = 'Filter', Map = 'Map', Mask = 'Mask', Merge = 'Merge', Truncate = 'Truncate', Validate = 'Validate' }
 
 
 	/** The trigger settings that determine how and when Amazon AppFlow runs the specified flow. */
@@ -903,7 +903,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerType { Scheduled = 0, Event = 1, OnDemand = 2 }
+	export enum TriggerType { Scheduled = 'Scheduled', Event = 'Event', OnDemand = 'OnDemand' }
 
 
 	/** Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the Scheduled trigger type. */
@@ -959,7 +959,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataPullMode { Incremental = 0, Complete = 1 }
+	export enum DataPullMode { Incremental = 'Incremental', Complete = 'Complete' }
 
 
 	/** Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries. */
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventStreamState { RUNNING = 0, STOPPED = 1 }
+	export enum EventStreamState { RUNNING = 'RUNNING', STOPPED = 'STOPPED' }
 
 
 	/** Details of the destination being used for the EventStream. */
@@ -1356,7 +1356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventStreamDestinationStatus { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum EventStreamDestinationStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
 	export interface GetIdentityResolutionJobResponse {
 		DomainName?: string;
@@ -1395,7 +1395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityResolutionJobStatus { PENDING = 0, PREPROCESSING = 1, FIND_MATCHING = 2, MERGING = 3, COMPLETED = 4, PARTIAL_SUCCESS = 5, FAILED = 6 }
+	export enum IdentityResolutionJobStatus { PENDING = 'PENDING', PREPROCESSING = 'PREPROCESSING', FIND_MATCHING = 'FIND_MATCHING', MERGING = 'MERGING', COMPLETED = 'COMPLETED', PARTIAL_SUCCESS = 'PARTIAL_SUCCESS', FAILED = 'FAILED' }
 
 
 	/** The S3 location where Identity Resolution Jobs write result files. */
@@ -1676,7 +1676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MatchType { RULE_BASED_MATCHING = 0, ML_BASED_MATCHING = 1 }
+	export enum MatchType { RULE_BASED_MATCHING = 'RULE_BASED_MATCHING', ML_BASED_MATCHING = 'ML_BASED_MATCHING' }
 
 	export interface GetWorkflowResponse {
 		WorkflowId?: string;
@@ -1708,9 +1708,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowType { APPFLOW_INTEGRATION = 0 }
+	export enum WorkflowType { APPFLOW_INTEGRATION = 'APPFLOW_INTEGRATION' }
 
-	export enum Status { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETE = 2, FAILED = 3, SPLIT = 4, RETRY = 5, CANCELLED = 6 }
+	export enum Status { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', FAILED = 'FAILED', SPLIT = 'SPLIT', RETRY = 'RETRY', CANCELLED = 'CANCELLED' }
 
 
 	/** Structure to hold workflow attributes. */
@@ -2642,7 +2642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldContentType { STRING = 0, NUMBER = 1, PHONE_NUMBER = 2, EMAIL_ADDRESS = 3, NAME = 4 }
+	export enum FieldContentType { STRING = 'STRING', NUMBER = 'NUMBER', PHONE_NUMBER = 'PHONE_NUMBER', EMAIL_ADDRESS = 'EMAIL_ADDRESS', NAME = 'NAME' }
 
 
 	/** An object that defines the Key element of a ProfileObject. A Key is a special element that can be used to search for a customer profile. */
@@ -2660,7 +2660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StandardIdentifier { PROFILE = 0, ASSET = 1, CASE = 2, UNIQUE = 3, SECONDARY = 4, LOOKUP_ONLY = 5, NEW_ONLY = 6, ORDER = 7 }
+	export enum StandardIdentifier { PROFILE = 'PROFILE', ASSET = 'ASSET', CASE = 'CASE', UNIQUE = 'UNIQUE', SECONDARY = 'SECONDARY', LOOKUP_ONLY = 'LOOKUP_ONLY', NEW_ONLY = 'NEW_ONLY', ORDER = 'ORDER' }
 
 	export interface SearchProfilesResponse {
 		Items?: Array<Profile>;
@@ -2753,9 +2753,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PartyType { INDIVIDUAL = 0, BUSINESS = 1, OTHER = 2 }
+	export enum PartyType { INDIVIDUAL = 'INDIVIDUAL', BUSINESS = 'BUSINESS', OTHER = 'OTHER' }
 
-	export enum Gender { MALE = 0, FEMALE = 1, UNSPECIFIED = 2 }
+	export enum Gender { MALE = 'MALE', FEMALE = 'FEMALE', UNSPECIFIED = 'UNSPECIFIED' }
 
 
 	/** A generic address associated with the customer that is not mailing, shipping, or billing. */
@@ -3834,7 +3834,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatorPropertiesKeys { VALUE = 0, VALUES = 1, DATA_TYPE = 2, UPPER_BOUND = 3, LOWER_BOUND = 4, SOURCE_DATA_TYPE = 5, DESTINATION_DATA_TYPE = 6, VALIDATION_ACTION = 7, MASK_VALUE = 8, MASK_LENGTH = 9, TRUNCATE_LENGTH = 10, MATH_OPERATION_FIELDS_ORDER = 11, CONCAT_FORMAT = 12, SUBFIELD_CATEGORY_MAP = 13 }
+	export enum OperatorPropertiesKeys { VALUE = 'VALUE', VALUES = 'VALUES', DATA_TYPE = 'DATA_TYPE', UPPER_BOUND = 'UPPER_BOUND', LOWER_BOUND = 'LOWER_BOUND', SOURCE_DATA_TYPE = 'SOURCE_DATA_TYPE', DESTINATION_DATA_TYPE = 'DESTINATION_DATA_TYPE', VALIDATION_ACTION = 'VALIDATION_ACTION', MASK_VALUE = 'MASK_VALUE', MASK_LENGTH = 'MASK_LENGTH', TRUNCATE_LENGTH = 'TRUNCATE_LENGTH', MATH_OPERATION_FIELDS_ORDER = 'MATH_OPERATION_FIELDS_ORDER', CONCAT_FORMAT = 'CONCAT_FORMAT', SUBFIELD_CATEGORY_MAP = 'SUBFIELD_CATEGORY_MAP' }
 
 	export interface PutIntegrationRequest {
 		Uri?: string;
@@ -3914,7 +3914,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogicalOperator { AND = 0, OR = 1 }
+	export enum LogicalOperator { AND = 'AND', OR = 'OR' }
 
 	export interface SearchProfilesRequest {
 

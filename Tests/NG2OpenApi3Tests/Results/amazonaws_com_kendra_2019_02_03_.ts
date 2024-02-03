@@ -89,7 +89,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityType { USER = 0, GROUP = 1 }
+	export enum EntityType { USER = 'USER', GROUP = 'GROUP' }
 
 	export interface ValidationException {
 	}
@@ -217,7 +217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Persona { OWNER = 0, VIEWER = 1 }
+	export enum Persona { OWNER = 'OWNER', VIEWER = 'VIEWER' }
 
 	export interface BatchDeleteDocumentResponse {
 		FailedDocuments?: Array<BatchDeleteDocumentResponseFailedDocument>;
@@ -253,7 +253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { InternalError = 0, InvalidRequest = 1 }
+	export enum ErrorCode { InternalError = 'InternalError', InvalidRequest = 'InvalidRequest' }
 
 	export interface BatchDeleteDocumentRequest {
 
@@ -441,7 +441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentStatus { NOT_FOUND = 0, PROCESSING = 1, INDEXED = 2, UPDATED = 3, FAILED = 4, UPDATE_FAILED = 5 }
+	export enum DocumentStatus { NOT_FOUND = 'NOT_FOUND', PROCESSING = 'PROCESSING', INDEXED = 'INDEXED', UPDATED = 'UPDATED', FAILED = 'FAILED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface BatchGetDocumentStatusRequest {
 
@@ -696,7 +696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadAccessType { ALLOW = 0, DENY = 1 }
+	export enum ReadAccessType { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/**  Information to define the hierarchy for which documents users should have access to.  */
@@ -715,7 +715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentType { PDF = 0, HTML = 1, MS_WORD = 2, PLAIN_TEXT = 3, PPT = 4, RTF = 5, XML = 6, XSLT = 7, MS_EXCEL = 8, CSV = 9, JSON = 10, MD = 11 }
+	export enum ContentType { PDF = 'PDF', HTML = 'HTML', MS_WORD = 'MS_WORD', PLAIN_TEXT = 'PLAIN_TEXT', PPT = 'PPT', RTF = 'RTF', XML = 'XML', XSLT = 'XSLT', MS_EXCEL = 'MS_EXCEL', CSV = 'CSV', JSON = 'JSON', MD = 'MD' }
 
 
 	/** <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p> */
@@ -785,7 +785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionOperator { GreaterThan = 0, GreaterThanOrEquals = 1, LessThan = 2, LessThanOrEquals = 3, Equals = 4, NotEquals = 5, Contains = 6, NotContains = 7, Exists = 8, NotExists = 9, BeginsWith = 10 }
+	export enum ConditionOperator { GreaterThan = 'GreaterThan', GreaterThanOrEquals = 'GreaterThanOrEquals', LessThan = 'LessThan', LessThanOrEquals = 'LessThanOrEquals', Equals = 'Equals', NotEquals = 'NotEquals', Contains = 'Contains', NotContains = 'NotContains', Exists = 'Exists', NotExists = 'NotExists', BeginsWith = 'BeginsWith' }
 
 
 	/** <p>The target document attribute or metadata field you want to alter when ingesting documents into Amazon Kendra.</p> <p>For example, you can delete customer identification numbers associated with the documents, stored in the document metadata field called 'Customer_ID'. You set the target key as 'Customer_ID' and the deletion flag to <code>TRUE</code>. This removes all customer ID values in the field 'Customer_ID'. This would scrub personally identifiable information from each document's metadata.</p> <p>Amazon Kendra cannot create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your newly created metadata field to your index field.</p> <p>You can also use this with <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_DocumentAttributeCondition.html">DocumentAttributeCondition</a>.</p> */
@@ -980,7 +980,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceType { S3 = 0, SHAREPOINT = 1, DATABASE = 2, SALESFORCE = 3, ONEDRIVE = 4, SERVICENOW = 5, CUSTOM = 6, CONFLUENCE = 7, GOOGLEDRIVE = 8, WEBCRAWLER = 9, WORKDOCS = 10, FSX = 11, SLACK = 12, BOX = 13, QUIP = 14, JIRA = 15, GITHUB = 16, ALFRESCO = 17, TEMPLATE = 18 }
+	export enum DataSourceType { S3 = 'S3', SHAREPOINT = 'SHAREPOINT', DATABASE = 'DATABASE', SALESFORCE = 'SALESFORCE', ONEDRIVE = 'ONEDRIVE', SERVICENOW = 'SERVICENOW', CUSTOM = 'CUSTOM', CONFLUENCE = 'CONFLUENCE', GOOGLEDRIVE = 'GOOGLEDRIVE', WEBCRAWLER = 'WEBCRAWLER', WORKDOCS = 'WORKDOCS', FSX = 'FSX', SLACK = 'SLACK', BOX = 'BOX', QUIP = 'QUIP', JIRA = 'JIRA', GITHUB = 'GITHUB', ALFRESCO = 'ALFRESCO', TEMPLATE = 'TEMPLATE' }
 
 
 	/** Provides the configuration information for an Amazon Kendra data source. */
@@ -1130,7 +1130,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharePointVersion { SHAREPOINT_2013 = 0, SHAREPOINT_2016 = 1, SHAREPOINT_ONLINE = 2, SHAREPOINT_2019 = 3 }
+	export enum SharePointVersion { SHAREPOINT_2013 = 'SHAREPOINT_2013', SHAREPOINT_2016 = 'SHAREPOINT_2016', SHAREPOINT_ONLINE = 'SHAREPOINT_ONLINE', SHAREPOINT_2019 = 'SHAREPOINT_2019' }
 
 
 	/** Provides the configuration information to connect to an Amazon VPC. */
@@ -1183,7 +1183,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharePointOnlineAuthenticationType { HTTP_BASIC = 0, OAUTH2 = 1 }
+	export enum SharePointOnlineAuthenticationType { HTTP_BASIC = 'HTTP_BASIC', OAUTH2 = 'OAUTH2' }
 
 
 	/** Provides the configuration information for a web proxy to connect to website hosts. */
@@ -1248,7 +1248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseEngineType { RDS_AURORA_MYSQL = 0, RDS_AURORA_POSTGRESQL = 1, RDS_MYSQL = 2, RDS_POSTGRESQL = 3 }
+	export enum DatabaseEngineType { RDS_AURORA_MYSQL = 'RDS_AURORA_MYSQL', RDS_AURORA_POSTGRESQL = 'RDS_AURORA_POSTGRESQL', RDS_MYSQL = 'RDS_MYSQL', RDS_POSTGRESQL = 'RDS_POSTGRESQL' }
 
 
 	/** Provides the configuration information that's required to connect to a database. */
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryIdentifiersEnclosingOption { DOUBLE_QUOTES = 0, NONE = 1 }
+	export enum QueryIdentifiersEnclosingOption { DOUBLE_QUOTES = 'DOUBLE_QUOTES', NONE = 'NONE' }
 
 
 	/** Provides the configuration information to connect to Salesforce as your data source. */
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesforceStandardObjectName { ACCOUNT = 0, CAMPAIGN = 1, CASE = 2, CONTACT = 3, CONTRACT = 4, DOCUMENT = 5, GROUP = 6, IDEA = 7, LEAD = 8, OPPORTUNITY = 9, PARTNER = 10, PRICEBOOK = 11, PRODUCT = 12, PROFILE = 13, SOLUTION = 14, TASK = 15, USER = 16 }
+	export enum SalesforceStandardObjectName { ACCOUNT = 'ACCOUNT', CAMPAIGN = 'CAMPAIGN', CASE = 'CASE', CONTACT = 'CONTACT', CONTRACT = 'CONTRACT', DOCUMENT = 'DOCUMENT', GROUP = 'GROUP', IDEA = 'IDEA', LEAD = 'LEAD', OPPORTUNITY = 'OPPORTUNITY', PARTNER = 'PARTNER', PRICEBOOK = 'PRICEBOOK', PRODUCT = 'PRODUCT', PROFILE = 'PROFILE', SOLUTION = 'SOLUTION', TASK = 'TASK', USER = 'USER' }
 
 
 	/** Provides the configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both  */
@@ -1464,7 +1464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesforceKnowledgeArticleState { DRAFT = 0, PUBLISHED = 1, ARCHIVED = 2 }
+	export enum SalesforceKnowledgeArticleState { DRAFT = 'DRAFT', PUBLISHED = 'PUBLISHED', ARCHIVED = 'ARCHIVED' }
 
 
 	/** Provides the configuration information for standard Salesforce knowledge articles. */
@@ -1549,7 +1549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesforceChatterFeedIncludeFilterType { ACTIVE_USER = 0, STANDARD_USER = 1 }
+	export enum SalesforceChatterFeedIncludeFilterType { ACTIVE_USER = 'ACTIVE_USER', STANDARD_USER = 'STANDARD_USER' }
 
 
 	/** Provides the configuration information for processing attachments to Salesforce standard objects. */
@@ -1662,7 +1662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceNowBuildVersionType { LONDON = 0, OTHERS = 1 }
+	export enum ServiceNowBuildVersionType { LONDON = 'LONDON', OTHERS = 'OTHERS' }
 
 
 	/** Provides the configuration information for crawling knowledge articles in the ServiceNow site. */
@@ -1773,7 +1773,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfluenceVersion { CLOUD = 0, SERVER = 1 }
+	export enum ConfluenceVersion { CLOUD = 'CLOUD', SERVER = 'SERVER' }
 
 
 	/** Configuration information for indexing Confluence spaces. */
@@ -1821,7 +1821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfluenceSpaceFieldName { DISPLAY_URL = 0, ITEM_TYPE = 1, SPACE_KEY = 2, URL = 3 }
+	export enum ConfluenceSpaceFieldName { DISPLAY_URL = 'DISPLAY_URL', ITEM_TYPE = 'ITEM_TYPE', SPACE_KEY = 'SPACE_KEY', URL = 'URL' }
 
 
 	/** Configuration of the page settings for the Confluence data source. */
@@ -1861,7 +1861,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfluencePageFieldName { AUTHOR = 0, CONTENT_STATUS = 1, CREATED_DATE = 2, DISPLAY_URL = 3, ITEM_TYPE = 4, LABELS = 5, MODIFIED_DATE = 6, PARENT_ID = 7, SPACE_KEY = 8, SPACE_NAME = 9, URL = 10, VERSION = 11 }
+	export enum ConfluencePageFieldName { AUTHOR = 'AUTHOR', CONTENT_STATUS = 'CONTENT_STATUS', CREATED_DATE = 'CREATED_DATE', DISPLAY_URL = 'DISPLAY_URL', ITEM_TYPE = 'ITEM_TYPE', LABELS = 'LABELS', MODIFIED_DATE = 'MODIFIED_DATE', PARENT_ID = 'PARENT_ID', SPACE_KEY = 'SPACE_KEY', SPACE_NAME = 'SPACE_NAME', URL = 'URL', VERSION = 'VERSION' }
 
 
 	/** Configuration of blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> object. */
@@ -1901,7 +1901,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfluenceBlogFieldName { AUTHOR = 0, DISPLAY_URL = 1, ITEM_TYPE = 2, LABELS = 3, PUBLISH_DATE = 4, SPACE_KEY = 5, SPACE_NAME = 6, URL = 7, VERSION = 8 }
+	export enum ConfluenceBlogFieldName { AUTHOR = 'AUTHOR', DISPLAY_URL = 'DISPLAY_URL', ITEM_TYPE = 'ITEM_TYPE', LABELS = 'LABELS', PUBLISH_DATE = 'PUBLISH_DATE', SPACE_KEY = 'SPACE_KEY', SPACE_NAME = 'SPACE_NAME', URL = 'URL', VERSION = 'VERSION' }
 
 
 	/** Configuration of attachment settings for the Confluence data source. Attachment settings are optional, if you don't specify settings attachments, Amazon Kendra won't index them. */
@@ -1944,9 +1944,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfluenceAttachmentFieldName { AUTHOR = 0, CONTENT_TYPE = 1, CREATED_DATE = 2, DISPLAY_URL = 3, FILE_SIZE = 4, ITEM_TYPE = 5, PARENT_ID = 6, SPACE_KEY = 7, SPACE_NAME = 8, URL = 9, VERSION = 10 }
+	export enum ConfluenceAttachmentFieldName { AUTHOR = 'AUTHOR', CONTENT_TYPE = 'CONTENT_TYPE', CREATED_DATE = 'CREATED_DATE', DISPLAY_URL = 'DISPLAY_URL', FILE_SIZE = 'FILE_SIZE', ITEM_TYPE = 'ITEM_TYPE', PARENT_ID = 'PARENT_ID', SPACE_KEY = 'SPACE_KEY', SPACE_NAME = 'SPACE_NAME', URL = 'URL', VERSION = 'VERSION' }
 
-	export enum ConfluenceAuthenticationType { HTTP_BASIC = 0, PAT = 1 }
+	export enum ConfluenceAuthenticationType { HTTP_BASIC = 'HTTP_BASIC', PAT = 'PAT' }
 
 
 	/** Provides the configuration information to connect to Google Drive as your data source. */
@@ -2044,7 +2044,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebCrawlerMode { HOST_ONLY = 0, SUBDOMAINS = 1, EVERYTHING = 2 }
+	export enum WebCrawlerMode { HOST_ONLY = 'HOST_ONLY', SUBDOMAINS = 'SUBDOMAINS', EVERYTHING = 'EVERYTHING' }
 
 
 	/** <p>Provides the configuration information for the sitemap URLs to crawl.</p> <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p> */
@@ -2180,7 +2180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FsxFileSystemType { WINDOWS = 0 }
+	export enum FsxFileSystemType { WINDOWS = 'WINDOWS' }
 
 
 	/** Provides the configuration information to connect to Slack as your data source. */
@@ -2238,7 +2238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlackEntity { PUBLIC_CHANNEL = 0, PRIVATE_CHANNEL = 1, GROUP_MESSAGE = 2, DIRECT_MESSAGE = 3 }
+	export enum SlackEntity { PUBLIC_CHANNEL = 'PUBLIC_CHANNEL', PRIVATE_CHANNEL = 'PRIVATE_CHANNEL', GROUP_MESSAGE = 'GROUP_MESSAGE', DIRECT_MESSAGE = 'DIRECT_MESSAGE' }
 
 
 	/** Provides the configuration information to connect to Box as your data source. */
@@ -2374,7 +2374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IssueSubEntity { COMMENTS = 0, ATTACHMENTS = 1, WORKLOGS = 2 }
+	export enum IssueSubEntity { COMMENTS = 'COMMENTS', ATTACHMENTS = 'ATTACHMENTS', WORKLOGS = 'WORKLOGS' }
 
 
 	/** Provides the configuration information to connect to GitHub as your data source. */
@@ -2481,7 +2481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { SAAS = 0, ON_PREMISE = 1 }
+	export enum Type { SAAS = 'SAAS', ON_PREMISE = 'ON_PREMISE' }
 
 
 	/** Provides the configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments. */
@@ -2569,7 +2569,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlfrescoEntity { wiki = 0, blog = 1, documentLibrary = 2 }
+	export enum AlfrescoEntity { wiki = 'wiki', blog = 'blog', documentLibrary = 'documentLibrary' }
 
 
 	/** Provides a template for the configuration information to connect to your data source. */
@@ -2791,7 +2791,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FaqFileFormat { CSV = 0, CSV_WITH_HEADER = 1, JSON = 2 }
+	export enum FaqFileFormat { CSV = 'CSV', CSV_WITH_HEADER = 'CSV_WITH_HEADER', JSON = 'JSON' }
 
 	export interface CreateFeaturedResultsSetResponse {
 		FeaturedResultsSet?: FeaturedResultsSet;
@@ -2838,7 +2838,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeaturedResultsSetStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum FeaturedResultsSetStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** A featured document. This document is displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then the document is featured in the search results. */
@@ -2956,7 +2956,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexEdition { DEVELOPER_EDITION = 0, ENTERPRISE_EDITION = 1 }
+	export enum IndexEdition { DEVELOPER_EDITION = 'DEVELOPER_EDITION', ENTERPRISE_EDITION = 'ENTERPRISE_EDITION' }
 
 
 	/** Provides the identifier of the KMS key used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric keys. */
@@ -3030,7 +3030,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyLocation { URL = 0, SECRET_MANAGER = 1 }
+	export enum KeyLocation { URL = 'URL', SECRET_MANAGER = 'SECRET_MANAGER' }
 
 
 	/** Provides the configuration information for the JSON token type. */
@@ -3060,7 +3060,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserContextPolicy { ATTRIBUTE_FILTER = 0, USER_TOKEN = 1 }
+	export enum UserContextPolicy { ATTRIBUTE_FILTER = 'ATTRIBUTE_FILTER', USER_TOKEN = 'USER_TOKEN' }
 
 
 	/** <p>Provides the configuration information to get users and groups from an IAM Identity Center (successor to Single Sign-On) identity source. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents. You can also use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a> API to map users to their groups so that you only need to provide the user ID when you issue the query.</p> <p>To set up an IAM Identity Center identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>. You must also grant the required permissions to use IAM Identity Center with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for IAM Identity Center</a>.</p> <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your IAM Identity Center identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p> */
@@ -3083,7 +3083,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserGroupResolutionMode { AWS_SSO = 0, NONE = 1 }
+	export enum UserGroupResolutionMode { AWS_SSO = 'AWS_SSO', NONE = 'NONE' }
 
 	export interface CreateQuerySuggestionsBlockListResponse {
 		Id?: string;
@@ -3502,7 +3502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceStatus { CREATING = 0, DELETING = 1, FAILED = 2, UPDATING = 3, ACTIVE = 4 }
+	export enum DataSourceStatus { CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE' }
 
 	export interface DescribeDataSourceRequest {
 
@@ -3587,9 +3587,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointType { HOME = 0 }
+	export enum EndpointType { HOME = 'HOME' }
 
-	export enum ExperienceStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3 }
+	export enum ExperienceStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface DescribeExperienceRequest {
 
@@ -3661,7 +3661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FaqStatus { CREATING = 0, UPDATING = 1, ACTIVE = 2, DELETING = 3, FAILED = 4 }
+	export enum FaqStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface DescribeFaqRequest {
 
@@ -3828,7 +3828,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, UPDATING = 4, SYSTEM_UPDATING = 5 }
+	export enum IndexStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED', UPDATING = 'UPDATING', SYSTEM_UPDATING = 'SYSTEM_UPDATING' }
 
 
 	/** Specifies the properties, such as relevance tuning and searchability, of an index field. */
@@ -3860,7 +3860,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentAttributeValueType { STRING_VALUE = 0, STRING_LIST_VALUE = 1, LONG_VALUE = 2, DATE_VALUE = 3 }
+	export enum DocumentAttributeValueType { STRING_VALUE = 'STRING_VALUE', STRING_LIST_VALUE = 'STRING_LIST_VALUE', LONG_VALUE = 'LONG_VALUE', DATE_VALUE = 'DATE_VALUE' }
 
 
 	/** Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters. */
@@ -3889,7 +3889,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Order { ASCENDING = 0, DESCENDING = 1 }
+	export enum Order { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ValueImportanceMap {
 	}
@@ -4090,7 +4090,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrincipalMappingStatus { FAILED = 0, SUCCEEDED = 1, PROCESSING = 2, DELETING = 3, DELETED = 4 }
+	export enum PrincipalMappingStatus { FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', PROCESSING = 'PROCESSING', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface DescribePrincipalMappingRequest {
 
@@ -4163,7 +4163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuerySuggestionsBlockListStatus { ACTIVE = 0, CREATING = 1, DELETING = 2, UPDATING = 3, ACTIVE_BUT_UPDATE_FAILED = 4, FAILED = 5 }
+	export enum QuerySuggestionsBlockListStatus { ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING', UPDATING = 'UPDATING', ACTIVE_BUT_UPDATE_FAILED = 'ACTIVE_BUT_UPDATE_FAILED', FAILED = 'FAILED' }
 
 	export interface DescribeQuerySuggestionsBlockListRequest {
 
@@ -4227,9 +4227,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Mode { ENABLED = 0, LEARN_ONLY = 1 }
+	export enum Mode { ENABLED = 'ENABLED', LEARN_ONLY = 'LEARN_ONLY' }
 
-	export enum QuerySuggestionsStatus { ACTIVE = 0, UPDATING = 1 }
+	export enum QuerySuggestionsStatus { ACTIVE = 'ACTIVE', UPDATING = 'UPDATING' }
 
 
 	/** Gets information on the configuration of document fields/attributes that you want to base query suggestions on. To change your configuration, use <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_AttributeSuggestionsUpdateConfig.html">AttributeSuggestionsUpdateConfig</a> and then call <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>. */
@@ -4335,7 +4335,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThesaurusStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, UPDATING = 3, ACTIVE_BUT_UPDATE_FAILED = 4, FAILED = 5 }
+	export enum ThesaurusStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', UPDATING = 'UPDATING', ACTIVE_BUT_UPDATE_FAILED = 'ACTIVE_BUT_UPDATE_FAILED', FAILED = 'FAILED' }
 
 	export interface DescribeThesaurusRequest {
 
@@ -4571,7 +4571,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuggestionType { QUERY = 0, DOCUMENT_ATTRIBUTES = 1 }
+	export enum SuggestionType { QUERY = 'QUERY', DOCUMENT_ATTRIBUTES = 'DOCUMENT_ATTRIBUTES' }
 
 
 	/** Provides the configuration information for the document fields/attributes that you want to base query suggestions on. */
@@ -4738,9 +4738,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Interval { THIS_MONTH = 0, THIS_WEEK = 1, ONE_WEEK_AGO = 2, TWO_WEEKS_AGO = 3, ONE_MONTH_AGO = 4, TWO_MONTHS_AGO = 5 }
+	export enum Interval { THIS_MONTH = 'THIS_MONTH', THIS_WEEK = 'THIS_WEEK', ONE_WEEK_AGO = 'ONE_WEEK_AGO', TWO_WEEKS_AGO = 'TWO_WEEKS_AGO', ONE_MONTH_AGO = 'ONE_MONTH_AGO', TWO_MONTHS_AGO = 'TWO_MONTHS_AGO' }
 
-	export enum MetricType { QUERIES_BY_COUNT = 0, QUERIES_BY_ZERO_CLICK_RATE = 1, QUERIES_BY_ZERO_RESULT_RATE = 2, DOCS_BY_CLICK_COUNT = 3, AGG_QUERY_DOC_METRICS = 4, TREND_QUERY_DOC_METRICS = 5 }
+	export enum MetricType { QUERIES_BY_COUNT = 'QUERIES_BY_COUNT', QUERIES_BY_ZERO_CLICK_RATE = 'QUERIES_BY_ZERO_CLICK_RATE', QUERIES_BY_ZERO_RESULT_RATE = 'QUERIES_BY_ZERO_RESULT_RATE', DOCS_BY_CLICK_COUNT = 'DOCS_BY_CLICK_COUNT', AGG_QUERY_DOC_METRICS = 'AGG_QUERY_DOC_METRICS', TREND_QUERY_DOC_METRICS = 'TREND_QUERY_DOC_METRICS' }
 
 	export interface InvalidRequestException {
 	}
@@ -4862,7 +4862,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceSyncJobStatus { FAILED = 0, SUCCEEDED = 1, SYNCING = 2, INCOMPLETE = 3, STOPPING = 4, ABORTED = 5, SYNCING_INDEXING = 6 }
+	export enum DataSourceSyncJobStatus { FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', SYNCING = 'SYNCING', INCOMPLETE = 'INCOMPLETE', STOPPING = 'STOPPING', ABORTED = 'ABORTED', SYNCING_INDEXING = 'SYNCING_INDEXING' }
 
 
 	/** Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector. */
@@ -5833,9 +5833,9 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryResultType { DOCUMENT = 0, QUESTION_ANSWER = 1, ANSWER = 2 }
+	export enum QueryResultType { DOCUMENT = 'DOCUMENT', QUESTION_ANSWER = 'QUESTION_ANSWER', ANSWER = 'ANSWER' }
 
-	export enum QueryResultFormat { TABLE = 0, TEXT = 1 }
+	export enum QueryResultFormat { TABLE = 'TABLE', TEXT = 'TEXT' }
 
 
 	/** An attribute returned from an index query. */
@@ -5868,7 +5868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdditionalResultAttributeValueType { TEXT_WITH_HIGHLIGHTS_VALUE = 0 }
+	export enum AdditionalResultAttributeValueType { TEXT_WITH_HIGHLIGHTS_VALUE = 'TEXT_WITH_HIGHLIGHTS_VALUE' }
 
 
 	/** An attribute returned with a document from a search. */
@@ -5937,7 +5937,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HighlightType { STANDARD = 0, THESAURUS_SYNONYM = 1 }
+	export enum HighlightType { STANDARD = 'STANDARD', THESAURUS_SYNONYM = 'THESAURUS_SYNONYM' }
 
 
 	/** Provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query. */
@@ -5958,7 +5958,7 @@ export namespace MyNS {
 
 
 	/** Enumeration for query score confidence. */
-	export enum ScoreConfidence { VERY_HIGH = 0, HIGH = 1, MEDIUM = 2, LOW = 3, NOT_AVAILABLE = 4 }
+	export enum ScoreConfidence { VERY_HIGH = 'VERY_HIGH', HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW', NOT_AVAILABLE = 'NOT_AVAILABLE' }
 
 
 	/** An excerpt from a table within a document. The table excerpt displays up to five columns and three rows, depending on how many table cells are relevant to the query and how many columns are available in the original table. The top most relevant cell is displayed in the table excerpt, along with the next most relevant cells. */
@@ -6079,7 +6079,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WarningCode { QUERY_LANGUAGE_INVALID_SYNTAX = 0 }
+	export enum WarningCode { QUERY_LANGUAGE_INVALID_SYNTAX = 'QUERY_LANGUAGE_INVALID_SYNTAX' }
 
 
 	/** A query with suggested spell corrections.  */
@@ -6274,7 +6274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { DESC = 0, ASC = 1 }
+	export enum SortOrder { DESC = 'DESC', ASC = 'ASC' }
 
 
 	/** <p>Provides the configuration information for suggested query spell corrections.</p> <p>Suggested spell corrections are based on words that appear in your indexed documents and how closely a corrected word matches a misspelled word.</p> <p>This feature is designed with certain defaults or limits. For information on the current limits and how to request more support for some limits, see the <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-spell-check.html">Spell Checker documentation</a>.</p> */
@@ -6528,7 +6528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelevanceType { RELEVANT = 0, NOT_RELEVANT = 1 }
+	export enum RelevanceType { RELEVANT = 'RELEVANT', NOT_RELEVANT = 'NOT_RELEVANT' }
 
 	export interface TagResourceResponse {
 	}
@@ -6908,11 +6908,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeSuggestionsMode { ACTIVE = 0, INACTIVE = 1 }
+	export enum AttributeSuggestionsMode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum PrincipalType { USER = 0, GROUP = 1 }
+	export enum PrincipalType { USER = 'USER', GROUP = 'GROUP' }
 
-	export enum ServiceNowAuthenticationType { HTTP_BASIC = 0, OAUTH2 = 1 }
+	export enum ServiceNowAuthenticationType { HTTP_BASIC = 'HTTP_BASIC', OAUTH2 = 'OAUTH2' }
 
 	@Injectable()
 	export class MyClient {
@@ -7537,137 +7537,137 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateEntitiesToExperienceX_Amz_Target { 'AWSKendraFrontendService.AssociateEntitiesToExperience' = 0 }
+	export enum AssociateEntitiesToExperienceX_Amz_Target { 'AWSKendraFrontendService.AssociateEntitiesToExperience' = 'AWSKendraFrontendService.AssociateEntitiesToExperience' }
 
-	export enum AssociatePersonasToEntitiesX_Amz_Target { 'AWSKendraFrontendService.AssociatePersonasToEntities' = 0 }
+	export enum AssociatePersonasToEntitiesX_Amz_Target { 'AWSKendraFrontendService.AssociatePersonasToEntities' = 'AWSKendraFrontendService.AssociatePersonasToEntities' }
 
-	export enum BatchDeleteDocumentX_Amz_Target { 'AWSKendraFrontendService.BatchDeleteDocument' = 0 }
+	export enum BatchDeleteDocumentX_Amz_Target { 'AWSKendraFrontendService.BatchDeleteDocument' = 'AWSKendraFrontendService.BatchDeleteDocument' }
 
-	export enum BatchDeleteFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.BatchDeleteFeaturedResultsSet' = 0 }
+	export enum BatchDeleteFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.BatchDeleteFeaturedResultsSet' = 'AWSKendraFrontendService.BatchDeleteFeaturedResultsSet' }
 
-	export enum BatchGetDocumentStatusX_Amz_Target { 'AWSKendraFrontendService.BatchGetDocumentStatus' = 0 }
+	export enum BatchGetDocumentStatusX_Amz_Target { 'AWSKendraFrontendService.BatchGetDocumentStatus' = 'AWSKendraFrontendService.BatchGetDocumentStatus' }
 
-	export enum BatchPutDocumentX_Amz_Target { 'AWSKendraFrontendService.BatchPutDocument' = 0 }
+	export enum BatchPutDocumentX_Amz_Target { 'AWSKendraFrontendService.BatchPutDocument' = 'AWSKendraFrontendService.BatchPutDocument' }
 
-	export enum ClearQuerySuggestionsX_Amz_Target { 'AWSKendraFrontendService.ClearQuerySuggestions' = 0 }
+	export enum ClearQuerySuggestionsX_Amz_Target { 'AWSKendraFrontendService.ClearQuerySuggestions' = 'AWSKendraFrontendService.ClearQuerySuggestions' }
 
-	export enum CreateAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.CreateAccessControlConfiguration' = 0 }
+	export enum CreateAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.CreateAccessControlConfiguration' = 'AWSKendraFrontendService.CreateAccessControlConfiguration' }
 
-	export enum CreateDataSourceX_Amz_Target { 'AWSKendraFrontendService.CreateDataSource' = 0 }
+	export enum CreateDataSourceX_Amz_Target { 'AWSKendraFrontendService.CreateDataSource' = 'AWSKendraFrontendService.CreateDataSource' }
 
-	export enum CreateExperienceX_Amz_Target { 'AWSKendraFrontendService.CreateExperience' = 0 }
+	export enum CreateExperienceX_Amz_Target { 'AWSKendraFrontendService.CreateExperience' = 'AWSKendraFrontendService.CreateExperience' }
 
-	export enum CreateFaqX_Amz_Target { 'AWSKendraFrontendService.CreateFaq' = 0 }
+	export enum CreateFaqX_Amz_Target { 'AWSKendraFrontendService.CreateFaq' = 'AWSKendraFrontendService.CreateFaq' }
 
-	export enum CreateFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.CreateFeaturedResultsSet' = 0 }
+	export enum CreateFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.CreateFeaturedResultsSet' = 'AWSKendraFrontendService.CreateFeaturedResultsSet' }
 
-	export enum CreateIndexX_Amz_Target { 'AWSKendraFrontendService.CreateIndex' = 0 }
+	export enum CreateIndexX_Amz_Target { 'AWSKendraFrontendService.CreateIndex' = 'AWSKendraFrontendService.CreateIndex' }
 
-	export enum CreateQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.CreateQuerySuggestionsBlockList' = 0 }
+	export enum CreateQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.CreateQuerySuggestionsBlockList' = 'AWSKendraFrontendService.CreateQuerySuggestionsBlockList' }
 
-	export enum CreateThesaurusX_Amz_Target { 'AWSKendraFrontendService.CreateThesaurus' = 0 }
+	export enum CreateThesaurusX_Amz_Target { 'AWSKendraFrontendService.CreateThesaurus' = 'AWSKendraFrontendService.CreateThesaurus' }
 
-	export enum DeleteAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.DeleteAccessControlConfiguration' = 0 }
+	export enum DeleteAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.DeleteAccessControlConfiguration' = 'AWSKendraFrontendService.DeleteAccessControlConfiguration' }
 
-	export enum DeleteDataSourceX_Amz_Target { 'AWSKendraFrontendService.DeleteDataSource' = 0 }
+	export enum DeleteDataSourceX_Amz_Target { 'AWSKendraFrontendService.DeleteDataSource' = 'AWSKendraFrontendService.DeleteDataSource' }
 
-	export enum DeleteExperienceX_Amz_Target { 'AWSKendraFrontendService.DeleteExperience' = 0 }
+	export enum DeleteExperienceX_Amz_Target { 'AWSKendraFrontendService.DeleteExperience' = 'AWSKendraFrontendService.DeleteExperience' }
 
-	export enum DeleteFaqX_Amz_Target { 'AWSKendraFrontendService.DeleteFaq' = 0 }
+	export enum DeleteFaqX_Amz_Target { 'AWSKendraFrontendService.DeleteFaq' = 'AWSKendraFrontendService.DeleteFaq' }
 
-	export enum DeleteIndexX_Amz_Target { 'AWSKendraFrontendService.DeleteIndex' = 0 }
+	export enum DeleteIndexX_Amz_Target { 'AWSKendraFrontendService.DeleteIndex' = 'AWSKendraFrontendService.DeleteIndex' }
 
-	export enum DeletePrincipalMappingX_Amz_Target { 'AWSKendraFrontendService.DeletePrincipalMapping' = 0 }
+	export enum DeletePrincipalMappingX_Amz_Target { 'AWSKendraFrontendService.DeletePrincipalMapping' = 'AWSKendraFrontendService.DeletePrincipalMapping' }
 
-	export enum DeleteQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.DeleteQuerySuggestionsBlockList' = 0 }
+	export enum DeleteQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.DeleteQuerySuggestionsBlockList' = 'AWSKendraFrontendService.DeleteQuerySuggestionsBlockList' }
 
-	export enum DeleteThesaurusX_Amz_Target { 'AWSKendraFrontendService.DeleteThesaurus' = 0 }
+	export enum DeleteThesaurusX_Amz_Target { 'AWSKendraFrontendService.DeleteThesaurus' = 'AWSKendraFrontendService.DeleteThesaurus' }
 
-	export enum DescribeAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.DescribeAccessControlConfiguration' = 0 }
+	export enum DescribeAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.DescribeAccessControlConfiguration' = 'AWSKendraFrontendService.DescribeAccessControlConfiguration' }
 
-	export enum DescribeDataSourceX_Amz_Target { 'AWSKendraFrontendService.DescribeDataSource' = 0 }
+	export enum DescribeDataSourceX_Amz_Target { 'AWSKendraFrontendService.DescribeDataSource' = 'AWSKendraFrontendService.DescribeDataSource' }
 
-	export enum DescribeExperienceX_Amz_Target { 'AWSKendraFrontendService.DescribeExperience' = 0 }
+	export enum DescribeExperienceX_Amz_Target { 'AWSKendraFrontendService.DescribeExperience' = 'AWSKendraFrontendService.DescribeExperience' }
 
-	export enum DescribeFaqX_Amz_Target { 'AWSKendraFrontendService.DescribeFaq' = 0 }
+	export enum DescribeFaqX_Amz_Target { 'AWSKendraFrontendService.DescribeFaq' = 'AWSKendraFrontendService.DescribeFaq' }
 
-	export enum DescribeFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.DescribeFeaturedResultsSet' = 0 }
+	export enum DescribeFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.DescribeFeaturedResultsSet' = 'AWSKendraFrontendService.DescribeFeaturedResultsSet' }
 
-	export enum DescribeIndexX_Amz_Target { 'AWSKendraFrontendService.DescribeIndex' = 0 }
+	export enum DescribeIndexX_Amz_Target { 'AWSKendraFrontendService.DescribeIndex' = 'AWSKendraFrontendService.DescribeIndex' }
 
-	export enum DescribePrincipalMappingX_Amz_Target { 'AWSKendraFrontendService.DescribePrincipalMapping' = 0 }
+	export enum DescribePrincipalMappingX_Amz_Target { 'AWSKendraFrontendService.DescribePrincipalMapping' = 'AWSKendraFrontendService.DescribePrincipalMapping' }
 
-	export enum DescribeQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.DescribeQuerySuggestionsBlockList' = 0 }
+	export enum DescribeQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.DescribeQuerySuggestionsBlockList' = 'AWSKendraFrontendService.DescribeQuerySuggestionsBlockList' }
 
-	export enum DescribeQuerySuggestionsConfigX_Amz_Target { 'AWSKendraFrontendService.DescribeQuerySuggestionsConfig' = 0 }
+	export enum DescribeQuerySuggestionsConfigX_Amz_Target { 'AWSKendraFrontendService.DescribeQuerySuggestionsConfig' = 'AWSKendraFrontendService.DescribeQuerySuggestionsConfig' }
 
-	export enum DescribeThesaurusX_Amz_Target { 'AWSKendraFrontendService.DescribeThesaurus' = 0 }
+	export enum DescribeThesaurusX_Amz_Target { 'AWSKendraFrontendService.DescribeThesaurus' = 'AWSKendraFrontendService.DescribeThesaurus' }
 
-	export enum DisassociateEntitiesFromExperienceX_Amz_Target { 'AWSKendraFrontendService.DisassociateEntitiesFromExperience' = 0 }
+	export enum DisassociateEntitiesFromExperienceX_Amz_Target { 'AWSKendraFrontendService.DisassociateEntitiesFromExperience' = 'AWSKendraFrontendService.DisassociateEntitiesFromExperience' }
 
-	export enum DisassociatePersonasFromEntitiesX_Amz_Target { 'AWSKendraFrontendService.DisassociatePersonasFromEntities' = 0 }
+	export enum DisassociatePersonasFromEntitiesX_Amz_Target { 'AWSKendraFrontendService.DisassociatePersonasFromEntities' = 'AWSKendraFrontendService.DisassociatePersonasFromEntities' }
 
-	export enum GetQuerySuggestionsX_Amz_Target { 'AWSKendraFrontendService.GetQuerySuggestions' = 0 }
+	export enum GetQuerySuggestionsX_Amz_Target { 'AWSKendraFrontendService.GetQuerySuggestions' = 'AWSKendraFrontendService.GetQuerySuggestions' }
 
-	export enum GetSnapshotsX_Amz_Target { 'AWSKendraFrontendService.GetSnapshots' = 0 }
+	export enum GetSnapshotsX_Amz_Target { 'AWSKendraFrontendService.GetSnapshots' = 'AWSKendraFrontendService.GetSnapshots' }
 
-	export enum ListAccessControlConfigurationsX_Amz_Target { 'AWSKendraFrontendService.ListAccessControlConfigurations' = 0 }
+	export enum ListAccessControlConfigurationsX_Amz_Target { 'AWSKendraFrontendService.ListAccessControlConfigurations' = 'AWSKendraFrontendService.ListAccessControlConfigurations' }
 
-	export enum ListDataSourceSyncJobsX_Amz_Target { 'AWSKendraFrontendService.ListDataSourceSyncJobs' = 0 }
+	export enum ListDataSourceSyncJobsX_Amz_Target { 'AWSKendraFrontendService.ListDataSourceSyncJobs' = 'AWSKendraFrontendService.ListDataSourceSyncJobs' }
 
-	export enum ListDataSourcesX_Amz_Target { 'AWSKendraFrontendService.ListDataSources' = 0 }
+	export enum ListDataSourcesX_Amz_Target { 'AWSKendraFrontendService.ListDataSources' = 'AWSKendraFrontendService.ListDataSources' }
 
-	export enum ListEntityPersonasX_Amz_Target { 'AWSKendraFrontendService.ListEntityPersonas' = 0 }
+	export enum ListEntityPersonasX_Amz_Target { 'AWSKendraFrontendService.ListEntityPersonas' = 'AWSKendraFrontendService.ListEntityPersonas' }
 
-	export enum ListExperienceEntitiesX_Amz_Target { 'AWSKendraFrontendService.ListExperienceEntities' = 0 }
+	export enum ListExperienceEntitiesX_Amz_Target { 'AWSKendraFrontendService.ListExperienceEntities' = 'AWSKendraFrontendService.ListExperienceEntities' }
 
-	export enum ListExperiencesX_Amz_Target { 'AWSKendraFrontendService.ListExperiences' = 0 }
+	export enum ListExperiencesX_Amz_Target { 'AWSKendraFrontendService.ListExperiences' = 'AWSKendraFrontendService.ListExperiences' }
 
-	export enum ListFaqsX_Amz_Target { 'AWSKendraFrontendService.ListFaqs' = 0 }
+	export enum ListFaqsX_Amz_Target { 'AWSKendraFrontendService.ListFaqs' = 'AWSKendraFrontendService.ListFaqs' }
 
-	export enum ListFeaturedResultsSetsX_Amz_Target { 'AWSKendraFrontendService.ListFeaturedResultsSets' = 0 }
+	export enum ListFeaturedResultsSetsX_Amz_Target { 'AWSKendraFrontendService.ListFeaturedResultsSets' = 'AWSKendraFrontendService.ListFeaturedResultsSets' }
 
-	export enum ListGroupsOlderThanOrderingIdX_Amz_Target { 'AWSKendraFrontendService.ListGroupsOlderThanOrderingId' = 0 }
+	export enum ListGroupsOlderThanOrderingIdX_Amz_Target { 'AWSKendraFrontendService.ListGroupsOlderThanOrderingId' = 'AWSKendraFrontendService.ListGroupsOlderThanOrderingId' }
 
-	export enum ListIndicesX_Amz_Target { 'AWSKendraFrontendService.ListIndices' = 0 }
+	export enum ListIndicesX_Amz_Target { 'AWSKendraFrontendService.ListIndices' = 'AWSKendraFrontendService.ListIndices' }
 
-	export enum ListQuerySuggestionsBlockListsX_Amz_Target { 'AWSKendraFrontendService.ListQuerySuggestionsBlockLists' = 0 }
+	export enum ListQuerySuggestionsBlockListsX_Amz_Target { 'AWSKendraFrontendService.ListQuerySuggestionsBlockLists' = 'AWSKendraFrontendService.ListQuerySuggestionsBlockLists' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSKendraFrontendService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSKendraFrontendService.ListTagsForResource' = 'AWSKendraFrontendService.ListTagsForResource' }
 
-	export enum ListThesauriX_Amz_Target { 'AWSKendraFrontendService.ListThesauri' = 0 }
+	export enum ListThesauriX_Amz_Target { 'AWSKendraFrontendService.ListThesauri' = 'AWSKendraFrontendService.ListThesauri' }
 
-	export enum PutPrincipalMappingX_Amz_Target { 'AWSKendraFrontendService.PutPrincipalMapping' = 0 }
+	export enum PutPrincipalMappingX_Amz_Target { 'AWSKendraFrontendService.PutPrincipalMapping' = 'AWSKendraFrontendService.PutPrincipalMapping' }
 
-	export enum QueryX_Amz_Target { 'AWSKendraFrontendService.Query' = 0 }
+	export enum QueryX_Amz_Target { 'AWSKendraFrontendService.Query' = 'AWSKendraFrontendService.Query' }
 
-	export enum RetrieveX_Amz_Target { 'AWSKendraFrontendService.Retrieve' = 0 }
+	export enum RetrieveX_Amz_Target { 'AWSKendraFrontendService.Retrieve' = 'AWSKendraFrontendService.Retrieve' }
 
-	export enum StartDataSourceSyncJobX_Amz_Target { 'AWSKendraFrontendService.StartDataSourceSyncJob' = 0 }
+	export enum StartDataSourceSyncJobX_Amz_Target { 'AWSKendraFrontendService.StartDataSourceSyncJob' = 'AWSKendraFrontendService.StartDataSourceSyncJob' }
 
-	export enum StopDataSourceSyncJobX_Amz_Target { 'AWSKendraFrontendService.StopDataSourceSyncJob' = 0 }
+	export enum StopDataSourceSyncJobX_Amz_Target { 'AWSKendraFrontendService.StopDataSourceSyncJob' = 'AWSKendraFrontendService.StopDataSourceSyncJob' }
 
-	export enum SubmitFeedbackX_Amz_Target { 'AWSKendraFrontendService.SubmitFeedback' = 0 }
+	export enum SubmitFeedbackX_Amz_Target { 'AWSKendraFrontendService.SubmitFeedback' = 'AWSKendraFrontendService.SubmitFeedback' }
 
-	export enum TagResourceX_Amz_Target { 'AWSKendraFrontendService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSKendraFrontendService.TagResource' = 'AWSKendraFrontendService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSKendraFrontendService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSKendraFrontendService.UntagResource' = 'AWSKendraFrontendService.UntagResource' }
 
-	export enum UpdateAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.UpdateAccessControlConfiguration' = 0 }
+	export enum UpdateAccessControlConfigurationX_Amz_Target { 'AWSKendraFrontendService.UpdateAccessControlConfiguration' = 'AWSKendraFrontendService.UpdateAccessControlConfiguration' }
 
-	export enum UpdateDataSourceX_Amz_Target { 'AWSKendraFrontendService.UpdateDataSource' = 0 }
+	export enum UpdateDataSourceX_Amz_Target { 'AWSKendraFrontendService.UpdateDataSource' = 'AWSKendraFrontendService.UpdateDataSource' }
 
-	export enum UpdateExperienceX_Amz_Target { 'AWSKendraFrontendService.UpdateExperience' = 0 }
+	export enum UpdateExperienceX_Amz_Target { 'AWSKendraFrontendService.UpdateExperience' = 'AWSKendraFrontendService.UpdateExperience' }
 
-	export enum UpdateFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.UpdateFeaturedResultsSet' = 0 }
+	export enum UpdateFeaturedResultsSetX_Amz_Target { 'AWSKendraFrontendService.UpdateFeaturedResultsSet' = 'AWSKendraFrontendService.UpdateFeaturedResultsSet' }
 
-	export enum UpdateIndexX_Amz_Target { 'AWSKendraFrontendService.UpdateIndex' = 0 }
+	export enum UpdateIndexX_Amz_Target { 'AWSKendraFrontendService.UpdateIndex' = 'AWSKendraFrontendService.UpdateIndex' }
 
-	export enum UpdateQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.UpdateQuerySuggestionsBlockList' = 0 }
+	export enum UpdateQuerySuggestionsBlockListX_Amz_Target { 'AWSKendraFrontendService.UpdateQuerySuggestionsBlockList' = 'AWSKendraFrontendService.UpdateQuerySuggestionsBlockList' }
 
-	export enum UpdateQuerySuggestionsConfigX_Amz_Target { 'AWSKendraFrontendService.UpdateQuerySuggestionsConfig' = 0 }
+	export enum UpdateQuerySuggestionsConfigX_Amz_Target { 'AWSKendraFrontendService.UpdateQuerySuggestionsConfig' = 'AWSKendraFrontendService.UpdateQuerySuggestionsConfig' }
 
-	export enum UpdateThesaurusX_Amz_Target { 'AWSKendraFrontendService.UpdateThesaurus' = 0 }
+	export enum UpdateThesaurusX_Amz_Target { 'AWSKendraFrontendService.UpdateThesaurus' = 'AWSKendraFrontendService.UpdateThesaurus' }
 
 }
 

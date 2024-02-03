@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactMetaDataState { ENABLED = 0, DISABLED = 1, DEPRECATED = 2 }
+	export enum ArtifactMetaDataState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DEPRECATED = 'DEPRECATED' }
 
 
 	/** Describes the ownership of an artifact. */
@@ -353,7 +353,7 @@ export namespace MyNS {
 	 * * DISABLED
 	 * * DEPRECATED
 	 */
-	export enum ArtifactState { ENABLED = 0, DISABLED = 1, DEPRECATED = 2 }
+	export enum ArtifactState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DEPRECATED = 'DEPRECATED' }
 
 	export interface ArtifactTypeInfo {
 		name?: string | null;
@@ -689,7 +689,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IfExists { FAIL = 0, UPDATE = 1, RETURN = 2, RETURN_OR_UPDATE = 3 }
+	export enum IfExists { FAIL = 'FAIL', UPDATE = 'UPDATE', RETURN = 'RETURN', RETURN_OR_UPDATE = 'RETURN_OR_UPDATE' }
 
 
 	/**
@@ -766,9 +766,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogConfigurationLevel { DEBUG = 0, TRACE = 1, WARN = 2, ERROR = 3, SEVERE = 4, WARNING = 5, INFO = 6, CONFIG = 7, FINE = 8, FINER = 9, FINEST = 10 }
+	export enum LogConfigurationLevel { DEBUG = 'DEBUG', TRACE = 'TRACE', WARN = 'WARN', ERROR = 'ERROR', SEVERE = 'SEVERE', WARNING = 'WARNING', INFO = 'INFO', CONFIG = 'CONFIG', FINE = 'FINE', FINER = 'FINER', FINEST = 'FINEST' }
 
-	export enum LogLevel { DEBUG = 0, TRACE = 1, WARN = 2, ERROR = 3, SEVERE = 4, WARNING = 5, INFO = 6, CONFIG = 7, FINE = 8, FINER = 9, FINEST = 10 }
+	export enum LogLevel { DEBUG = 'DEBUG', TRACE = 'TRACE', WARN = 'WARN', ERROR = 'ERROR', SEVERE = 'SEVERE', WARNING = 'WARNING', INFO = 'INFO', CONFIG = 'CONFIG', FINE = 'FINE', FINER = 'FINER', FINEST = 'FINEST' }
 
 	export interface NamedLogConfiguration {
 	}
@@ -815,9 +815,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleMappingRole { READ_ONLY = 0, DEVELOPER = 1, ADMIN = 2 }
+	export enum RoleMappingRole { READ_ONLY = 'READ_ONLY', DEVELOPER = 'DEVELOPER', ADMIN = 'ADMIN' }
 
-	export enum RoleType { READ_ONLY = 0, DEVELOPER = 1, ADMIN = 2 }
+	export enum RoleType { READ_ONLY = 'READ_ONLY', DEVELOPER = 'DEVELOPER', ADMIN = 'ADMIN' }
 
 	export interface Rule {
 
@@ -839,7 +839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleType { VALIDITY = 0, COMPATIBILITY = 1 }
+	export enum RuleType { VALIDITY = 'VALIDITY', COMPATIBILITY = 'COMPATIBILITY' }
 
 	export interface RuleViolationCause {
 		context?: string | null;
@@ -967,9 +967,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SortBy { name = 0, createdOn = 1 }
+	export enum SortBy { name = 'name', createdOn = 'createdOn' }
 
-	export enum SortOrder { asc = 0, desc = 1 }
+	export enum SortOrder { asc = 'asc', desc = 'desc' }
 
 	export interface SystemInfo {
 		builtOn?: Date | null;
@@ -2036,7 +2036,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateArtifactX_Registry_Hash_Algorithm { SHA256 = 0, MD5 = 1 }
+	export enum CreateArtifactX_Registry_Hash_Algorithm { SHA256 = 'SHA256', MD5 = 'MD5' }
 
 }
 

@@ -156,9 +156,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessResponseEaadhar { Y = 0, N = 1 }
+	export enum AccessResponseEaadhar { Y = 'Y', N = 'N' }
 
-	export enum AccessResponseGender { M = 0, F = 1, T = 2 }
+	export enum AccessResponseGender { M = 'M', F = 'F', T = 'T' }
 
 	export interface AccessToken {
 
@@ -200,7 +200,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessTokenGrant_type { authorization_code = 0 }
+	export enum AccessTokenGrant_type { authorization_code = 'authorization_code' }
 
 	export interface AuthTokenResponse {
 
@@ -374,7 +374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DemoAuthGender { M = 0, F = 1, T = 2 }
+	export enum DemoAuthGender { M = 'M', F = 'F', T = 'T' }
 
 	export interface DemoAuthResponse {
 		details?: DemoAuthResponseDetails;
@@ -2289,7 +2289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RefreshTokenGrant_type { refresh_token = 0 }
+	export enum RefreshTokenGrant_type { refresh_token = 'refresh_token' }
 
 	export interface Response1 {
 
@@ -3280,7 +3280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_Authorization_Code_idCode_challengeParameter { Base64URL = 0, SHA256 = 1 }
+	export enum Get_Authorization_Code_idCode_challengeParameter { Base64URL = 'Base64URL', SHA256 = 'SHA256' }
 
 	export interface Get_Authorization_Code_idCode_challenge_method {
 		parameter?: Get_Authorization_Code_idCode_challenge_methodParameter | null;
@@ -3295,7 +3295,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_Authorization_Code_idCode_challenge_methodParameter { S256 = 0 }
+	export enum Get_Authorization_Code_idCode_challenge_methodParameter { S256 = 'S256' }
 
 	export interface Get_token_revocation_idPostBody {
 
@@ -3327,7 +3327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_token_revocation_idPostBodyToken_type_hint { refresh_token = 0, access_token = 1 }
+	export enum Get_token_revocation_idPostBodyToken_type_hint { refresh_token = 'refresh_token', access_token = 'access_token' }
 
 	export interface Getaccesstoken_idPostBody {
 		'Get access token using authorization code'?: AccessToken;

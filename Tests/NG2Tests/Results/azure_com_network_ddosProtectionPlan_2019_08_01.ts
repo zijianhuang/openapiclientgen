@@ -117,7 +117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DdosProtectionPlanPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum DdosProtectionPlanPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 	export interface DdosProtectionPlanPropertiesFormatVirtualNetworks {
 

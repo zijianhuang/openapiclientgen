@@ -22,7 +22,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChatTokenCapability { SEND_MESSAGE = 0, DISCONNECT_USER = 1, DELETE_MESSAGE = 2 }
+	export enum ChatTokenCapability { SEND_MESSAGE = 'SEND_MESSAGE', DISCONNECT_USER = 'DISCONNECT_USER', DELETE_MESSAGE = 'DELETE_MESSAGE' }
 
 	export interface AccessDeniedException {
 	}
@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateLoggingConfigurationState { ACTIVE = 0 }
+	export enum CreateLoggingConfigurationState { ACTIVE = 'ACTIVE' }
 
 	export interface Tags {
 	}
@@ -260,7 +260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FallbackResult { ALLOW = 0, DENY = 1 }
+	export enum FallbackResult { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 	export interface DeleteMessageResponse {
 		id?: string;
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingConfigurationState { CREATING = 0, CREATE_FAILED = 1, DELETING = 2, DELETE_FAILED = 3, UPDATING = 4, UPDATE_FAILED = 5, ACTIVE = 6 }
+	export enum LoggingConfigurationState { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED', ACTIVE = 'ACTIVE' }
 
 	export interface GetRoomResponse {
 		arn?: string;
@@ -909,7 +909,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateLoggingConfigurationState { ACTIVE = 0 }
+	export enum UpdateLoggingConfigurationState { ACTIVE = 'ACTIVE' }
 
 	export interface UpdateRoomRequest {
 

@@ -89,9 +89,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OfferAvailability { Discontinued = 0, InStock = 1, InStoreOnly = 2, LimitedAvailability = 3, OnlineOnly = 4, OutOfStock = 5, PreOrder = 6, SoldOut = 7 }
+	export enum OfferAvailability { Discontinued = 'Discontinued', InStock = 'InStock', InStoreOnly = 'InStoreOnly', LimitedAvailability = 'LimitedAvailability', OnlineOnly = 'OnlineOnly', OutOfStock = 'OutOfStock', PreOrder = 'PreOrder', SoldOut = 'SoldOut' }
 
-	export enum OfferPriceCurrency { USD = 0, CAD = 1, GBP = 2, EUR = 3, COP = 4, JPY = 5, CNY = 6, AUD = 7, INR = 8, AED = 9, AFN = 10, ALL = 11, AMD = 12, ANG = 13, AOA = 14, ARS = 15, AWG = 16, AZN = 17, BAM = 18, BBD = 19, BDT = 20, BGN = 21, BHD = 22, BIF = 23, BMD = 24, BND = 25, BOB = 26, BOV = 27, BRL = 28, BSD = 29, BTN = 30, BWP = 31, BYR = 32, BZD = 33, CDF = 34, CHE = 35, CHF = 36, CHW = 37, CLF = 38, CLP = 39, COU = 40, CRC = 41, CUC = 42, CUP = 43, CVE = 44, CZK = 45, DJF = 46, DKK = 47, DOP = 48, DZD = 49, EGP = 50, ERN = 51, ETB = 52, FJD = 53, FKP = 54, GEL = 55, GHS = 56, GIP = 57, GMD = 58, GNF = 59, GTQ = 60, GYD = 61, HKD = 62, HNL = 63, HRK = 64, HTG = 65, HUF = 66, IDR = 67, ILS = 68, IQD = 69, IRR = 70, ISK = 71, JMD = 72, JOD = 73, KES = 74, KGS = 75, KHR = 76, KMF = 77, KPW = 78, KRW = 79, KWD = 80, KYD = 81, KZT = 82, LAK = 83, LBP = 84, LKR = 85, LRD = 86, LSL = 87, LYD = 88, MAD = 89, MDL = 90, MGA = 91, MKD = 92, MMK = 93, MNT = 94, MOP = 95, MRO = 96, MUR = 97, MVR = 98, MWK = 99, MXN = 100, MXV = 101, MYR = 102, MZN = 103, NAD = 104, NGN = 105, NIO = 106, NOK = 107, NPR = 108, NZD = 109, OMR = 110, PAB = 111, PEN = 112, PGK = 113, PHP = 114, PKR = 115, PLN = 116, PYG = 117, QAR = 118, RON = 119, RSD = 120, RUB = 121, RWF = 122, SAR = 123, SBD = 124, SCR = 125, SDG = 126, SEK = 127, SGD = 128, SHP = 129, SLL = 130, SOS = 131, SRD = 132, SSP = 133, STD = 134, SYP = 135, SZL = 136, THB = 137, TJS = 138, TMT = 139, TND = 140, TOP = 141, TRY = 142, TTD = 143, TWD = 144, TZS = 145, UAH = 146, UGX = 147, UYU = 148, UZS = 149, VEF = 150, VND = 151, VUV = 152, WST = 153, XAF = 154, XCD = 155, XOF = 156, XPF = 157, YER = 158, ZAR = 159, ZMW = 160 }
+	export enum OfferPriceCurrency { USD = 'USD', CAD = 'CAD', GBP = 'GBP', EUR = 'EUR', COP = 'COP', JPY = 'JPY', CNY = 'CNY', AUD = 'AUD', INR = 'INR', AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', FJD = 'FJD', FKP = 'FKP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XCD = 'XCD', XOF = 'XOF', XPF = 'XPF', YER = 'YER', ZAR = 'ZAR', ZMW = 'ZMW' }
 
 
 	/** Defines an organization. */
@@ -372,9 +372,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { None = 0, ServerError = 1, InvalidRequest = 2, RateLimitExceeded = 3, InvalidAuthorization = 4, InsufficientAuthorization = 5 }
+	export enum ErrorCode { None = 'None', ServerError = 'ServerError', InvalidRequest = 'InvalidRequest', RateLimitExceeded = 'RateLimitExceeded', InvalidAuthorization = 'InvalidAuthorization', InsufficientAuthorization = 'InsufficientAuthorization' }
 
-	export enum ErrorSubCode { UnexpectedError = 0, ResourceError = 1, NotImplemented = 2, ParameterMissing = 3, ParameterInvalidValue = 4, HttpNotAllowed = 5, Blocked = 6, AuthorizationMissing = 7, AuthorizationRedundancy = 8, AuthorizationDisabled = 9, AuthorizationExpired = 10 }
+	export enum ErrorSubCode { UnexpectedError = 'UnexpectedError', ResourceError = 'ResourceError', NotImplemented = 'NotImplemented', ParameterMissing = 'ParameterMissing', ParameterInvalidValue = 'ParameterInvalidValue', HttpNotAllowed = 'HttpNotAllowed', Blocked = 'Blocked', AuthorizationMissing = 'AuthorizationMissing', AuthorizationRedundancy = 'AuthorizationRedundancy', AuthorizationDisabled = 'AuthorizationDisabled', AuthorizationExpired = 'AuthorizationExpired' }
 
 
 	/** The top-level response that represents a failed request. */
@@ -1390,25 +1390,25 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Images_DetailsX_BingApis_SDK { true = 0 }
+	export enum Images_DetailsX_BingApis_SDK { true = 'true' }
 
-	export enum Images_DetailsCt { Rectangular = 0 }
+	export enum Images_DetailsCt { Rectangular = 'Rectangular' }
 
-	export enum Images_DetailsSafeSearch { Off = 0, Moderate = 1, Strict = 2 }
+	export enum Images_DetailsSafeSearch { Off = 'Off', Moderate = 'Moderate', Strict = 'Strict' }
 
-	export enum Images_SearchAspect { All = 0, Square = 1, Wide = 2, Tall = 3 }
+	export enum Images_SearchAspect { All = 'All', Square = 'Square', Wide = 'Wide', Tall = 'Tall' }
 
-	export enum Images_SearchColor { ColorOnly = 0, Monochrome = 1, Black = 2, Blue = 3, Brown = 4, Gray = 5, Green = 6, Orange = 7, Pink = 8, Purple = 9, Red = 10, Teal = 11, White = 12, Yellow = 13 }
+	export enum Images_SearchColor { ColorOnly = 'ColorOnly', Monochrome = 'Monochrome', Black = 'Black', Blue = 'Blue', Brown = 'Brown', Gray = 'Gray', Green = 'Green', Orange = 'Orange', Pink = 'Pink', Purple = 'Purple', Red = 'Red', Teal = 'Teal', White = 'White', Yellow = 'Yellow' }
 
-	export enum Images_SearchFreshness { Day = 0, Week = 1, Month = 2 }
+	export enum Images_SearchFreshness { Day = 'Day', Week = 'Week', Month = 'Month' }
 
-	export enum Images_SearchImageContent { Face = 0, Portrait = 1 }
+	export enum Images_SearchImageContent { Face = 'Face', Portrait = 'Portrait' }
 
-	export enum Images_SearchImageType { AnimatedGif = 0, Clipart = 1, Line = 2, Photo = 3, Shopping = 4, Transparent = 5 }
+	export enum Images_SearchImageType { AnimatedGif = 'AnimatedGif', Clipart = 'Clipart', Line = 'Line', Photo = 'Photo', Shopping = 'Shopping', Transparent = 'Transparent' }
 
-	export enum Images_SearchLicense { All = 0, Any = 1, Public = 2, Share = 3, ShareCommercially = 4, Modify = 5, ModifyCommercially = 6 }
+	export enum Images_SearchLicense { All = 'All', Any = 'Any', Public = 'Public', Share = 'Share', ShareCommercially = 'ShareCommercially', Modify = 'Modify', ModifyCommercially = 'ModifyCommercially' }
 
-	export enum Images_SearchSize { All = 0, Small = 1, Medium = 2, Large = 3, Wallpaper = 4 }
+	export enum Images_SearchSize { All = 'All', Small = 'Small', Medium = 'Medium', Large = 'Large', Wallpaper = 'Wallpaper' }
 
 }
 

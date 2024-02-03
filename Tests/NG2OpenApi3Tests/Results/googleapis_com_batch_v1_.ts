@@ -207,7 +207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentInfoState { AGENT_STATE_UNSPECIFIED = 0, AGENT_STARTING = 1, AGENT_RUNNING = 2, AGENT_STOPPED = 3 }
+	export enum AgentInfoState { AGENT_STATE_UNSPECIFIED = 'AGENT_STATE_UNSPECIFIED', AGENT_STARTING = 'AGENT_STARTING', AGENT_RUNNING = 'AGENT_RUNNING', AGENT_STOPPED = 'AGENT_STOPPED' }
 
 
 	/** Task Info */
@@ -264,7 +264,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatusState { STATE_UNSPECIFIED = 0, PENDING = 1, ASSIGNED = 2, RUNNING = 3, FAILED = 4, SUCCEEDED = 5, UNEXECUTED = 6 }
+	export enum TaskStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', ASSIGNED = 'ASSIGNED', RUNNING = 'RUNNING', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', UNEXECUTED = 'UNEXECUTED' }
 
 
 	/** Status event */
@@ -597,7 +597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentTaskIntendedState { INTENDED_STATE_UNSPECIFIED = 0, ASSIGNED = 1, CANCELLED = 2, DELETED = 3 }
+	export enum AgentTaskIntendedState { INTENDED_STATE_UNSPECIFIED = 'INTENDED_STATE_UNSPECIFIED', ASSIGNED = 'ASSIGNED', CANCELLED = 'CANCELLED', DELETED = 'DELETED' }
 
 
 	/** Spec of a task */
@@ -761,7 +761,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LifecyclePolicyAction { ACTION_UNSPECIFIED = 0, RETRY_TASK = 1, FAIL_TASK = 2 }
+	export enum LifecyclePolicyAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', RETRY_TASK = 'RETRY_TASK', FAIL_TASK = 'FAIL_TASK' }
 
 
 	/** Runnable describes instructions for executing a specific script or container as part of a Task. */
@@ -1035,7 +1035,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentTaskTaskSource { TASK_SOURCE_UNSPECIFIED = 0, BATCH_INTERNAL = 1, USER = 2 }
+	export enum AgentTaskTaskSource { TASK_SOURCE_UNSPECIFIED = 'TASK_SOURCE_UNSPECIFIED', BATCH_INTERNAL = 'BATCH_INTERNAL', USER = 'USER' }
 
 
 	/** VM timing information */
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancePolicyProvisioningModel { PROVISIONING_MODEL_UNSPECIFIED = 0, STANDARD = 1, SPOT = 2, PREEMPTIBLE = 3 }
+	export enum InstancePolicyProvisioningModel { PROVISIONING_MODEL_UNSPECIFIED = 'PROVISIONING_MODEL_UNSPECIFIED', STANDARD = 'STANDARD', SPOT = 'SPOT', PREEMPTIBLE = 'PREEMPTIBLE' }
 
 	export interface LocationPolicy {
 
@@ -1555,7 +1555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogsPolicyDestination { DESTINATION_UNSPECIFIED = 0, CLOUD_LOGGING = 1, PATH = 2 }
+	export enum LogsPolicyDestination { DESTINATION_UNSPECIFIED = 'DESTINATION_UNSPECIFIED', CLOUD_LOGGING = 'CLOUD_LOGGING', PATH = 'PATH' }
 
 
 	/** Notification configurations. */
@@ -1616,9 +1616,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageNewJobState { STATE_UNSPECIFIED = 0, QUEUED = 1, SCHEDULED = 2, RUNNING = 3, SUCCEEDED = 4, FAILED = 5, DELETION_IN_PROGRESS = 6 }
+	export enum MessageNewJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', QUEUED = 'QUEUED', SCHEDULED = 'SCHEDULED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', DELETION_IN_PROGRESS = 'DELETION_IN_PROGRESS' }
 
-	export enum MessageType { TYPE_UNSPECIFIED = 0, JOB_STATE_CHANGED = 1, TASK_STATE_CHANGED = 2 }
+	export enum MessageType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', JOB_STATE_CHANGED = 'JOB_STATE_CHANGED', TASK_STATE_CHANGED = 'TASK_STATE_CHANGED' }
 
 
 	/** Job status. */
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskGroupSchedulingPolicy { SCHEDULING_POLICY_UNSPECIFIED = 0, AS_SOON_AS_POSSIBLE = 1, IN_ORDER = 2 }
+	export enum TaskGroupSchedulingPolicy { SCHEDULING_POLICY_UNSPECIFIED = 'SCHEDULING_POLICY_UNSPECIFIED', AS_SOON_AS_POSSIBLE = 'AS_SOON_AS_POSSIBLE', IN_ORDER = 'IN_ORDER' }
 
 
 	/** ListJob Response. */

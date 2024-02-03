@@ -310,9 +310,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReauthSettingsMethod { METHOD_UNSPECIFIED = 0, LOGIN = 1, PASSWORD = 2, SECURE_KEY = 3, ENROLLED_SECOND_FACTORS = 4 }
+	export enum ReauthSettingsMethod { METHOD_UNSPECIFIED = 'METHOD_UNSPECIFIED', LOGIN = 'LOGIN', PASSWORD = 'PASSWORD', SECURE_KEY = 'SECURE_KEY', ENROLLED_SECOND_FACTORS = 'ENROLLED_SECOND_FACTORS' }
 
-	export enum ReauthSettingsPolicyType { POLICY_TYPE_UNSPECIFIED = 0, MINIMUM = 1, DEFAULT = 2 }
+	export enum ReauthSettingsPolicyType { POLICY_TYPE_UNSPECIFIED = 'POLICY_TYPE_UNSPECIFIED', MINIMUM = 'MINIMUM', DEFAULT = 'DEFAULT' }
 
 
 	/** Wrapper over application specific settings for IAP. */

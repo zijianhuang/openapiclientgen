@@ -41,9 +41,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationObjectGroup { Account = 0, BankTransaction = 1, Contact = 2, CreditNote = 3, Invoice = 4, Item = 5, ManualJournal = 6, Overpayment = 7, Payment = 8, Prepayment = 9, Receipt = 10 }
+	export enum AssociationObjectGroup { Account = 'Account', BankTransaction = 'BankTransaction', Contact = 'Contact', CreditNote = 'CreditNote', Invoice = 'Invoice', Item = 'Item', ManualJournal = 'ManualJournal', Overpayment = 'Overpayment', Payment = 'Payment', Prepayment = 'Prepayment', Receipt = 'Receipt' }
 
-	export enum AssociationObjectType { Unknown = 0, Accpay = 1, AccPayCredit = 2, AccPayPayment = 3, AccRec = 4, AccRecCredit = 5, AccRecPayment = 6, Adjustment = 7, ApCreditPayment = 8, ApOverPayment = 9, ApOverPaymentPayment = 10, ApOverPaymentSourcePayment = 11, ApPrepayment = 12, ApPrepaymentPayment = 13, ApPrepaymentSourcePayment = 14, ArCreditPayment = 15, ArOverPayment = 16, ArOverpaymentPayment = 17, ArOverpaymentSourcePayment = 18, ArPrepayment = 19, ArPrepaymentPayment = 20, ArPrepaymentSourcePayment = 21, CashPaid = 22, CashRec = 23, ExpPayment = 24, ManJournal = 25, PurchaseOrder = 26, Receipt = 27, Transfer = 28, Account = 29, Contact = 30, Business = 31, Employee = 32, Person = 33, User = 34, Org = 35, FixedAsset = 36, PayRun = 37, PriceListItem = 38, Bank = 39, Current = 40, Equity = 41, Expense = 42, Fixed = 43, Liability = 44, Prepayment = 45, Revenue = 46, Sales = 47, Overheads = 48, Depreciatn = 49, OtherIncome = 50, DirectCosts = 51, Currliab = 52, Termliab = 53, NonCurrent = 54 }
+	export enum AssociationObjectType { Unknown = 'Unknown', Accpay = 'Accpay', AccPayCredit = 'AccPayCredit', AccPayPayment = 'AccPayPayment', AccRec = 'AccRec', AccRecCredit = 'AccRecCredit', AccRecPayment = 'AccRecPayment', Adjustment = 'Adjustment', ApCreditPayment = 'ApCreditPayment', ApOverPayment = 'ApOverPayment', ApOverPaymentPayment = 'ApOverPaymentPayment', ApOverPaymentSourcePayment = 'ApOverPaymentSourcePayment', ApPrepayment = 'ApPrepayment', ApPrepaymentPayment = 'ApPrepaymentPayment', ApPrepaymentSourcePayment = 'ApPrepaymentSourcePayment', ArCreditPayment = 'ArCreditPayment', ArOverPayment = 'ArOverPayment', ArOverpaymentPayment = 'ArOverpaymentPayment', ArOverpaymentSourcePayment = 'ArOverpaymentSourcePayment', ArPrepayment = 'ArPrepayment', ArPrepaymentPayment = 'ArPrepaymentPayment', ArPrepaymentSourcePayment = 'ArPrepaymentSourcePayment', CashPaid = 'CashPaid', CashRec = 'CashRec', ExpPayment = 'ExpPayment', ManJournal = 'ManJournal', PurchaseOrder = 'PurchaseOrder', Receipt = 'Receipt', Transfer = 'Transfer', Account = 'Account', Contact = 'Contact', Business = 'Business', Employee = 'Employee', Person = 'Person', User = 'User', Org = 'Org', FixedAsset = 'FixedAsset', PayRun = 'PayRun', PriceListItem = 'PriceListItem', Bank = 'Bank', Current = 'Current', Equity = 'Equity', Expense = 'Expense', Fixed = 'Fixed', Liability = 'Liability', Prepayment = 'Prepayment', Revenue = 'Revenue', Sales = 'Sales', Overheads = 'Overheads', Depreciatn = 'Depreciatn', OtherIncome = 'OtherIncome', DirectCosts = 'DirectCosts', Currliab = 'Currliab', Termliab = 'Termliab', NonCurrent = 'NonCurrent' }
 
 	export interface FileObject {
 
@@ -234,11 +234,11 @@ export namespace MyNS {
 
 
 	/** The Object Group that the object is in. These roughly correlate to the endpoints that can be used to retrieve the object via the core accounting API. */
-	export enum ObjectGroup { Account = 0, BankTransaction = 1, Contact = 2, CreditNote = 3, Invoice = 4, Item = 5, ManualJournal = 6, Overpayment = 7, Payment = 8, Prepayment = 9, Receipt = 10 }
+	export enum ObjectGroup { Account = 'Account', BankTransaction = 'BankTransaction', Contact = 'Contact', CreditNote = 'CreditNote', Invoice = 'Invoice', Item = 'Item', ManualJournal = 'ManualJournal', Overpayment = 'Overpayment', Payment = 'Payment', Prepayment = 'Prepayment', Receipt = 'Receipt' }
 
 
 	/** The Object Type */
-	export enum ObjectType { Unknown = 0, Accpay = 1, AccPayCredit = 2, AccPayPayment = 3, AccRec = 4, AccRecCredit = 5, AccRecPayment = 6, Adjustment = 7, ApCreditPayment = 8, ApOverPayment = 9, ApOverPaymentPayment = 10, ApOverPaymentSourcePayment = 11, ApPrepayment = 12, ApPrepaymentPayment = 13, ApPrepaymentSourcePayment = 14, ArCreditPayment = 15, ArOverPayment = 16, ArOverpaymentPayment = 17, ArOverpaymentSourcePayment = 18, ArPrepayment = 19, ArPrepaymentPayment = 20, ArPrepaymentSourcePayment = 21, CashPaid = 22, CashRec = 23, ExpPayment = 24, ManJournal = 25, PurchaseOrder = 26, Receipt = 27, Transfer = 28, Account = 29, Contact = 30, Business = 31, Employee = 32, Person = 33, User = 34, Org = 35, FixedAsset = 36, PayRun = 37, PriceListItem = 38, Bank = 39, Current = 40, Equity = 41, Expense = 42, Fixed = 43, Liability = 44, Prepayment = 45, Revenue = 46, Sales = 47, Overheads = 48, Depreciatn = 49, OtherIncome = 50, DirectCosts = 51, Currliab = 52, Termliab = 53, NonCurrent = 54 }
+	export enum ObjectType { Unknown = 'Unknown', Accpay = 'Accpay', AccPayCredit = 'AccPayCredit', AccPayPayment = 'AccPayPayment', AccRec = 'AccRec', AccRecCredit = 'AccRecCredit', AccRecPayment = 'AccRecPayment', Adjustment = 'Adjustment', ApCreditPayment = 'ApCreditPayment', ApOverPayment = 'ApOverPayment', ApOverPaymentPayment = 'ApOverPaymentPayment', ApOverPaymentSourcePayment = 'ApOverPaymentSourcePayment', ApPrepayment = 'ApPrepayment', ApPrepaymentPayment = 'ApPrepaymentPayment', ApPrepaymentSourcePayment = 'ApPrepaymentSourcePayment', ArCreditPayment = 'ArCreditPayment', ArOverPayment = 'ArOverPayment', ArOverpaymentPayment = 'ArOverpaymentPayment', ArOverpaymentSourcePayment = 'ArOverpaymentSourcePayment', ArPrepayment = 'ArPrepayment', ArPrepaymentPayment = 'ArPrepaymentPayment', ArPrepaymentSourcePayment = 'ArPrepaymentSourcePayment', CashPaid = 'CashPaid', CashRec = 'CashRec', ExpPayment = 'ExpPayment', ManJournal = 'ManJournal', PurchaseOrder = 'PurchaseOrder', Receipt = 'Receipt', Transfer = 'Transfer', Account = 'Account', Contact = 'Contact', Business = 'Business', Employee = 'Employee', Person = 'Person', User = 'User', Org = 'Org', FixedAsset = 'FixedAsset', PayRun = 'PayRun', PriceListItem = 'PriceListItem', Bank = 'Bank', Current = 'Current', Equity = 'Equity', Expense = 'Expense', Fixed = 'Fixed', Liability = 'Liability', Prepayment = 'Prepayment', Revenue = 'Revenue', Sales = 'Sales', Overheads = 'Overheads', Depreciatn = 'Depreciatn', OtherIncome = 'OtherIncome', DirectCosts = 'DirectCosts', Currliab = 'Currliab', Termliab = 'Termliab', NonCurrent = 'NonCurrent' }
 
 	@Injectable()
 	export class MyClient {
@@ -410,7 +410,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetFilesSort { Name = 0, Size = 1, CreatedDateUTC = 2 }
+	export enum GetFilesSort { Name = 'Name', Size = 'Size', CreatedDateUTC = 'CreatedDateUTC' }
 
 }
 

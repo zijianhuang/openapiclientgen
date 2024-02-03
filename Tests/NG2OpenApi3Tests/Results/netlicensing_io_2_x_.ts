@@ -128,7 +128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseTemplateLicenseType { FEATURE = 0, TIMEVOLUME = 1 }
+	export enum LicenseTemplateLicenseType { FEATURE = 'FEATURE', TIMEVOLUME = 'TIMEVOLUME' }
 
 	export interface Licensee {
 
@@ -314,9 +314,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionSource { SHOP = 0 }
+	export enum TransactionSource { SHOP = 'SHOP' }
 
-	export enum TransactionStatus { CANCELLED = 0, CLOSED = 1, PENDING = 2 }
+	export enum TransactionStatus { CANCELLED = 'CANCELLED', CLOSED = 'CLOSED', PENDING = 'PENDING' }
 
 	export interface Discount {
 		amountPercent?: string | null;

@@ -396,7 +396,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroundhogsIsGroundhog { _1 = 0, _0 = 1, true = 2, false = 3 }
+	export enum GroundhogsIsGroundhog { _1 = '1', _0 = '0', true = 'true', false = 'false' }
 
 	export interface GroundhogsReturn {
 		groundhogs?: Array<Groundhog>;

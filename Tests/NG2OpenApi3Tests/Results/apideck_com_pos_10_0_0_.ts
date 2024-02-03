@@ -181,7 +181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressType { primary = 0, secondary = 1, home = 2, office = 3, shipping = 4, billing = 5, other = 6 }
+	export enum AddressType { primary = 'primary', secondary = 'secondary', home = 'home', office = 'office', shipping = 'shipping', billing = 'billing', other = 'other' }
 
 	export interface BadRequestResponse {
 
@@ -962,7 +962,7 @@ export namespace MyNS {
 
 
 	/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
-	export enum Currency { UNKNOWN_CURRENCY = 0, AED = 1, AFN = 2, ALL = 3, AMD = 4, ANG = 5, AOA = 6, ARS = 7, AUD = 8, AWG = 9, AZN = 10, BAM = 11, BBD = 12, BDT = 13, BGN = 14, BHD = 15, BIF = 16, BMD = 17, BND = 18, BOB = 19, BOV = 20, BRL = 21, BSD = 22, BTN = 23, BWP = 24, BYR = 25, BZD = 26, CAD = 27, CDF = 28, CHE = 29, CHF = 30, CHW = 31, CLF = 32, CLP = 33, CNY = 34, COP = 35, COU = 36, CRC = 37, CUC = 38, CUP = 39, CVE = 40, CZK = 41, DJF = 42, DKK = 43, DOP = 44, DZD = 45, EGP = 46, ERN = 47, ETB = 48, EUR = 49, FJD = 50, FKP = 51, GBP = 52, GEL = 53, GHS = 54, GIP = 55, GMD = 56, GNF = 57, GTQ = 58, GYD = 59, HKD = 60, HNL = 61, HRK = 62, HTG = 63, HUF = 64, IDR = 65, ILS = 66, INR = 67, IQD = 68, IRR = 69, ISK = 70, JMD = 71, JOD = 72, JPY = 73, KES = 74, KGS = 75, KHR = 76, KMF = 77, KPW = 78, KRW = 79, KWD = 80, KYD = 81, KZT = 82, LAK = 83, LBP = 84, LKR = 85, LRD = 86, LSL = 87, LTL = 88, LVL = 89, LYD = 90, MAD = 91, MDL = 92, MGA = 93, MKD = 94, MMK = 95, MNT = 96, MOP = 97, MRO = 98, MUR = 99, MVR = 100, MWK = 101, MXN = 102, MXV = 103, MYR = 104, MZN = 105, NAD = 106, NGN = 107, NIO = 108, NOK = 109, NPR = 110, NZD = 111, OMR = 112, PAB = 113, PEN = 114, PGK = 115, PHP = 116, PKR = 117, PLN = 118, PYG = 119, QAR = 120, RON = 121, RSD = 122, RUB = 123, RWF = 124, SAR = 125, SBD = 126, SCR = 127, SDG = 128, SEK = 129, SGD = 130, SHP = 131, SLL = 132, SOS = 133, SRD = 134, SSP = 135, STD = 136, SVC = 137, SYP = 138, SZL = 139, THB = 140, TJS = 141, TMT = 142, TND = 143, TOP = 144, TRC = 145, TRY = 146, TTD = 147, TWD = 148, TZS = 149, UAH = 150, UGX = 151, USD = 152, USN = 153, USS = 154, UYI = 155, UYU = 156, UZS = 157, VEF = 158, VND = 159, VUV = 160, WST = 161, XAF = 162, XAG = 163, XAU = 164, XBA = 165, XBB = 166, XBC = 167, XBD = 168, XCD = 169, XDR = 170, XOF = 171, XPD = 172, XPF = 173, XPT = 174, XTS = 175, XXX = 176, YER = 177, ZAR = 178, ZMK = 179, ZMW = 180, BTC = 181, ETH = 182 }
+	export enum Currency { UNKNOWN_CURRENCY = 'UNKNOWN_CURRENCY', AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRC = 'TRC', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', USN = 'USN', USS = 'USS', UYI = 'UYI', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', XTS = 'XTS', XXX = 'XXX', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', BTC = 'BTC', ETH = 'ETH' }
 
 	export interface CustomField {
 
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmailType { primary = 0, secondary = 1, work = 2, personal = 3, billing = 4, other = 5 }
+	export enum EmailType { primary = 'primary', secondary = 'secondary', work = 'work', personal = 'personal', billing = 'billing', other = 'other' }
 
 	export interface GetItemResponse {
 
@@ -2050,9 +2050,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemPricing_type { fixed = 0, variable = 1, per_unit = 2, other = 3 }
+	export enum ItemPricing_type { fixed = 'fixed', variable = 'variable', per_unit = 'per_unit', other = 'other' }
 
-	export enum ItemProduct_type { regular = 0, other = 1 }
+	export enum ItemProduct_type { regular = 'regular', other = 'other' }
 
 	export interface ItemVariations {
 
@@ -2127,7 +2127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemVariationsPricing_type { fixed = 0, variable = 1, other = 2 }
+	export enum ItemVariationsPricing_type { fixed = 'fixed', variable = 'variable', other = 'other' }
 
 	export interface GetItemsResponse {
 
@@ -2461,7 +2461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationStatus { active = 0, inactive = 1, other = 2 }
+	export enum LocationStatus { active = 'active', inactive = 'inactive', other = 'other' }
 
 	export interface GetLocationsResponse {
 
@@ -2764,7 +2764,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceChargeType { auto_gratuity = 0, custom = 1 }
+	export enum ServiceChargeType { auto_gratuity = 'auto_gratuity', custom = 'custom' }
 
 	export interface GetMerchantsResponse {
 
@@ -3041,7 +3041,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModifierGroupSelection_type { single = 0, multiple = 1 }
+	export enum ModifierGroupSelection_type { single = 'single', multiple = 'multiple' }
 
 	export interface GetModifierGroupsResponse {
 
@@ -3727,7 +3727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { primary = 0, secondary = 1, home = 2, work = 3, office = 4, mobile = 5, assistant = 6, fax = 7, 'direct-dial-in' = 8, personal = 9, other = 10 }
+	export enum PhoneNumberType { primary = 'primary', secondary = 'secondary', home = 'home', work = 'work', office = 'office', mobile = 'mobile', assistant = 'assistant', fax = 'fax', 'direct-dial-in' = 'direct-dial-in', personal = 'personal', other = 'other' }
 
 	export interface OrderDiscounts {
 		amount?: number | null;
@@ -3776,9 +3776,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderDiscountsScope { order = 0, line_item = 1 }
+	export enum OrderDiscountsScope { order = 'order', line_item = 'line_item' }
 
-	export enum OrderDiscountsType { percentage = 0, flat_fee = 1 }
+	export enum OrderDiscountsType { percentage = 'percentage', flat_fee = 'flat_fee' }
 
 	export interface OrderFulfillments {
 		id?: string | null;
@@ -4060,11 +4060,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderFulfillmentsPickup_detailsSchedule_type { scheduled = 0 }
+	export enum OrderFulfillmentsPickup_detailsSchedule_type { scheduled = 'scheduled' }
 
-	export enum OrderFulfillmentsStatus { proposed = 0, reserved = 1, prepared = 2, completed = 3, cancelled = 4, failed = 5, other = 6 }
+	export enum OrderFulfillmentsStatus { proposed = 'proposed', reserved = 'reserved', prepared = 'prepared', completed = 'completed', cancelled = 'cancelled', failed = 'failed', other = 'other' }
 
-	export enum OrderFulfillmentsType { pickup = 0, shipment = 1 }
+	export enum OrderFulfillmentsType { pickup = 'pickup', shipment = 'shipment' }
 
 	export interface OrderLine_items {
 		OrderLine_itemsApplied_discounts?: Array<OrderLine_itemsApplied_discounts>;
@@ -4201,7 +4201,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderPayment_status { open = 0, paid = 1, refunded = 2, credited = 3, partially_paid = 4, partially_refunded = 5, unknown = 6 }
+	export enum OrderPayment_status { open = 'open', paid = 'paid', refunded = 'refunded', credited = 'credited', partially_paid = 'partially_paid', partially_refunded = 'partially_refunded', unknown = 'unknown' }
 
 	export interface OrderPayments {
 		amount?: number | null;
@@ -4284,11 +4284,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderRefundsStatus { pending = 0, approved = 1, rejected = 2, failed = 3 }
+	export enum OrderRefundsStatus { pending = 'pending', approved = 'approved', rejected = 'rejected', failed = 'failed' }
 
-	export enum OrderSource { 'in-store' = 0, online = 1, opt = 2, api = 3, kiosk = 4, 'caller-id' = 5, google = 6, invoice = 7 }
+	export enum OrderSource { 'in-store' = 'in-store', online = 'online', opt = 'opt', api = 'api', kiosk = 'kiosk', 'caller-id' = 'caller-id', google = 'google', invoice = 'invoice' }
 
-	export enum OrderStatus { open = 0, draft = 1, delivered = 2, delayed = 3, voided = 4, completed = 5, hidden = 6 }
+	export enum OrderStatus { open = 'open', draft = 'draft', delivered = 'delivered', delayed = 'delayed', voided = 'voided', completed = 'completed', hidden = 'hidden' }
 
 	export interface OrderTaxes {
 		amount?: number | null;
@@ -4336,7 +4336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderTaxesType { unknown = 0, additive = 1, inclusive = 2 }
+	export enum OrderTaxesType { unknown = 'unknown', additive = 'additive', inclusive = 'inclusive' }
 
 	export interface OrderTenders {
 		amount?: number | null;
@@ -4546,17 +4546,17 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentCardCard_brand { visa = 0, mastercard = 1, amex = 2, discover = 3, 'discover-diners' = 4, jcb = 5, 'china-unionpay' = 6, 'square-gift-card' = 7, 'square-capital-card' = 8, interac = 9, eftpos = 10, felica = 11, ebt = 12, other = 13 }
+	export enum PaymentCardCard_brand { visa = 'visa', mastercard = 'mastercard', amex = 'amex', discover = 'discover', 'discover-diners' = 'discover-diners', jcb = 'jcb', 'china-unionpay' = 'china-unionpay', 'square-gift-card' = 'square-gift-card', 'square-capital-card' = 'square-capital-card', interac = 'interac', eftpos = 'eftpos', felica = 'felica', ebt = 'ebt', other = 'other' }
 
-	export enum PaymentCardCard_type { credit = 0, debit = 1, prepaid = 2, other = 3 }
+	export enum PaymentCardCard_type { credit = 'credit', debit = 'debit', prepaid = 'prepaid', other = 'other' }
 
-	export enum PaymentCardPrepaid_type { 'non-prepaid' = 0, prepaid = 1, unknown = 2 }
+	export enum PaymentCardPrepaid_type { 'non-prepaid' = 'non-prepaid', prepaid = 'prepaid', unknown = 'unknown' }
 
-	export enum OrderTendersCard_entry_method { evm = 0, swiped = 1, keyed = 2, 'on-file' = 3, contactless = 4 }
+	export enum OrderTendersCard_entry_method { evm = 'evm', swiped = 'swiped', keyed = 'keyed', 'on-file' = 'on-file', contactless = 'contactless' }
 
-	export enum OrderTendersCard_status { authorized = 0, captured = 1, failed = 2, voided = 3 }
+	export enum OrderTendersCard_status { authorized = 'authorized', captured = 'captured', failed = 'failed', voided = 'voided' }
 
-	export enum OrderTendersType { cash = 0, card = 1, other = 2 }
+	export enum OrderTendersType { cash = 'cash', card = 'card', other = 'other' }
 
 	export interface GetOrderTypeResponse {
 
@@ -5402,7 +5402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PosPaymentExternal_detailsType { check = 0, bank_transfer = 1, other_gift_card = 2, crypto = 3, square_cash = 4, social = 5, external = 6, emoney = 7, card = 8, stored_balance = 9, food_voucher = 10, other = 11 }
+	export enum PosPaymentExternal_detailsType { check = 'check', bank_transfer = 'bank_transfer', other_gift_card = 'other_gift_card', crypto = 'crypto', square_cash = 'square_cash', social = 'social', external = 'external', emoney = 'emoney', card = 'card', stored_balance = 'stored_balance', food_voucher = 'food_voucher', other = 'other' }
 
 	export interface PosPaymentProcessing_fees {
 		amount?: number | null;
@@ -5423,11 +5423,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PosPaymentProcessing_feesProcessing_type { initial = 0, adjustment = 1 }
+	export enum PosPaymentProcessing_feesProcessing_type { initial = 'initial', adjustment = 'adjustment' }
 
-	export enum PosPaymentSource { card = 0, bank_account = 1, wallet = 2, bnpl = 3, cash = 4, external = 5, other = 6 }
+	export enum PosPaymentSource { card = 'card', bank_account = 'bank_account', wallet = 'wallet', bnpl = 'bnpl', cash = 'cash', external = 'external', other = 'other' }
 
-	export enum PosPaymentStatus { approved = 0, pending = 1, completed = 2, canceled = 3, failed = 4, other = 5 }
+	export enum PosPaymentStatus { approved = 'approved', pending = 'pending', completed = 'completed', canceled = 'canceled', failed = 'failed', other = 'other' }
 
 	export interface PosPaymentWallet {
 
@@ -5452,7 +5452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PosPaymentWalletStatus { authorized = 0, captured = 1, voided = 2, failed = 3, other = 4 }
+	export enum PosPaymentWalletStatus { authorized = 'authorized', captured = 'captured', voided = 'voided', failed = 'failed', other = 'other' }
 
 	export interface GetPosPaymentsResponse {
 
@@ -6958,7 +6958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebsiteType { primary = 0, secondary = 1, work = 2, personal = 3, other = 4 }
+	export enum WebsiteType { primary = 'primary', secondary = 'secondary', work = 'work', personal = 'personal', other = 'other' }
 
 	@Injectable()
 	export class MyClient {

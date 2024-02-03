@@ -181,7 +181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressType { primary = 0, secondary = 1, home = 2, office = 3, shipping = 4, billing = 5, other = 6 }
+	export enum AddressType { primary = 'primary', secondary = 'secondary', home = 'home', office = 'office', shipping = 'shipping', billing = 'billing', other = 'other' }
 
 	export interface BadRequestResponse {
 
@@ -322,9 +322,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BankAccountAccount_type { bank_account = 0, credit_card = 1, other = 2 }
+	export enum BankAccountAccount_type { bank_account = 'bank_account', credit_card = 'credit_card', other = 'other' }
 
-	export enum BankAccountCurrency { UNKNOWN_CURRENCY = 0, AED = 1, AFN = 2, ALL = 3, AMD = 4, ANG = 5, AOA = 6, ARS = 7, AUD = 8, AWG = 9, AZN = 10, BAM = 11, BBD = 12, BDT = 13, BGN = 14, BHD = 15, BIF = 16, BMD = 17, BND = 18, BOB = 19, BOV = 20, BRL = 21, BSD = 22, BTN = 23, BWP = 24, BYR = 25, BZD = 26, CAD = 27, CDF = 28, CHE = 29, CHF = 30, CHW = 31, CLF = 32, CLP = 33, CNY = 34, COP = 35, COU = 36, CRC = 37, CUC = 38, CUP = 39, CVE = 40, CZK = 41, DJF = 42, DKK = 43, DOP = 44, DZD = 45, EGP = 46, ERN = 47, ETB = 48, EUR = 49, FJD = 50, FKP = 51, GBP = 52, GEL = 53, GHS = 54, GIP = 55, GMD = 56, GNF = 57, GTQ = 58, GYD = 59, HKD = 60, HNL = 61, HRK = 62, HTG = 63, HUF = 64, IDR = 65, ILS = 66, INR = 67, IQD = 68, IRR = 69, ISK = 70, JMD = 71, JOD = 72, JPY = 73, KES = 74, KGS = 75, KHR = 76, KMF = 77, KPW = 78, KRW = 79, KWD = 80, KYD = 81, KZT = 82, LAK = 83, LBP = 84, LKR = 85, LRD = 86, LSL = 87, LTL = 88, LVL = 89, LYD = 90, MAD = 91, MDL = 92, MGA = 93, MKD = 94, MMK = 95, MNT = 96, MOP = 97, MRO = 98, MUR = 99, MVR = 100, MWK = 101, MXN = 102, MXV = 103, MYR = 104, MZN = 105, NAD = 106, NGN = 107, NIO = 108, NOK = 109, NPR = 110, NZD = 111, OMR = 112, PAB = 113, PEN = 114, PGK = 115, PHP = 116, PKR = 117, PLN = 118, PYG = 119, QAR = 120, RON = 121, RSD = 122, RUB = 123, RWF = 124, SAR = 125, SBD = 126, SCR = 127, SDG = 128, SEK = 129, SGD = 130, SHP = 131, SLL = 132, SOS = 133, SRD = 134, SSP = 135, STD = 136, SVC = 137, SYP = 138, SZL = 139, THB = 140, TJS = 141, TMT = 142, TND = 143, TOP = 144, TRC = 145, TRY = 146, TTD = 147, TWD = 148, TZS = 149, UAH = 150, UGX = 151, USD = 152, USN = 153, USS = 154, UYI = 155, UYU = 156, UZS = 157, VEF = 158, VND = 159, VUV = 160, WST = 161, XAF = 162, XAG = 163, XAU = 164, XBA = 165, XBB = 166, XBC = 167, XBD = 168, XCD = 169, XDR = 170, XOF = 171, XPD = 172, XPF = 173, XPT = 174, XTS = 175, XXX = 176, YER = 177, ZAR = 178, ZMK = 179, ZMW = 180, BTC = 181, ETH = 182 }
+	export enum BankAccountCurrency { UNKNOWN_CURRENCY = 'UNKNOWN_CURRENCY', AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRC = 'TRC', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', USN = 'USN', USS = 'USS', UYI = 'UYI', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', XTS = 'XTS', XXX = 'XXX', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', BTC = 'BTC', ETH = 'ETH' }
 
 	export interface Benefit {
 
@@ -795,7 +795,7 @@ export namespace MyNS {
 
 
 	/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
-	export enum Currency { UNKNOWN_CURRENCY = 0, AED = 1, AFN = 2, ALL = 3, AMD = 4, ANG = 5, AOA = 6, ARS = 7, AUD = 8, AWG = 9, AZN = 10, BAM = 11, BBD = 12, BDT = 13, BGN = 14, BHD = 15, BIF = 16, BMD = 17, BND = 18, BOB = 19, BOV = 20, BRL = 21, BSD = 22, BTN = 23, BWP = 24, BYR = 25, BZD = 26, CAD = 27, CDF = 28, CHE = 29, CHF = 30, CHW = 31, CLF = 32, CLP = 33, CNY = 34, COP = 35, COU = 36, CRC = 37, CUC = 38, CUP = 39, CVE = 40, CZK = 41, DJF = 42, DKK = 43, DOP = 44, DZD = 45, EGP = 46, ERN = 47, ETB = 48, EUR = 49, FJD = 50, FKP = 51, GBP = 52, GEL = 53, GHS = 54, GIP = 55, GMD = 56, GNF = 57, GTQ = 58, GYD = 59, HKD = 60, HNL = 61, HRK = 62, HTG = 63, HUF = 64, IDR = 65, ILS = 66, INR = 67, IQD = 68, IRR = 69, ISK = 70, JMD = 71, JOD = 72, JPY = 73, KES = 74, KGS = 75, KHR = 76, KMF = 77, KPW = 78, KRW = 79, KWD = 80, KYD = 81, KZT = 82, LAK = 83, LBP = 84, LKR = 85, LRD = 86, LSL = 87, LTL = 88, LVL = 89, LYD = 90, MAD = 91, MDL = 92, MGA = 93, MKD = 94, MMK = 95, MNT = 96, MOP = 97, MRO = 98, MUR = 99, MVR = 100, MWK = 101, MXN = 102, MXV = 103, MYR = 104, MZN = 105, NAD = 106, NGN = 107, NIO = 108, NOK = 109, NPR = 110, NZD = 111, OMR = 112, PAB = 113, PEN = 114, PGK = 115, PHP = 116, PKR = 117, PLN = 118, PYG = 119, QAR = 120, RON = 121, RSD = 122, RUB = 123, RWF = 124, SAR = 125, SBD = 126, SCR = 127, SDG = 128, SEK = 129, SGD = 130, SHP = 131, SLL = 132, SOS = 133, SRD = 134, SSP = 135, STD = 136, SVC = 137, SYP = 138, SZL = 139, THB = 140, TJS = 141, TMT = 142, TND = 143, TOP = 144, TRC = 145, TRY = 146, TTD = 147, TWD = 148, TZS = 149, UAH = 150, UGX = 151, USD = 152, USN = 153, USS = 154, UYI = 155, UYU = 156, UZS = 157, VEF = 158, VND = 159, VUV = 160, WST = 161, XAF = 162, XAG = 163, XAU = 164, XBA = 165, XBB = 166, XBC = 167, XBD = 168, XCD = 169, XDR = 170, XOF = 171, XPD = 172, XPF = 173, XPT = 174, XTS = 175, XXX = 176, YER = 177, ZAR = 178, ZMK = 179, ZMW = 180, BTC = 181, ETH = 182 }
+	export enum Currency { UNKNOWN_CURRENCY = 'UNKNOWN_CURRENCY', AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRC = 'TRC', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', USN = 'USN', USS = 'USS', UYI = 'UYI', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', XTS = 'XTS', XXX = 'XXX', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', BTC = 'BTC', ETH = 'ETH' }
 
 	export interface CustomField {
 
@@ -1270,7 +1270,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmailType { primary = 0, secondary = 1, work = 2, personal = 3, billing = 4, other = 5 }
+	export enum EmailType { primary = 'primary', secondary = 'secondary', work = 'work', personal = 'personal', billing = 'billing', other = 'other' }
 
 	export interface Employee {
 		addresses?: Array<Address>;
@@ -1699,11 +1699,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeCompensationFlsa_status { exempt = 0, 'salaried-nonexempt' = 1, nonexempt = 2, owner = 3, other = 4 }
+	export enum EmployeeCompensationFlsa_status { exempt = 'exempt', 'salaried-nonexempt' = 'salaried-nonexempt', nonexempt = 'nonexempt', owner = 'owner', other = 'other' }
 
-	export enum EmployeeCompensationPayment_frequency { weekly = 0, biweekly = 1, monthly = 2, 'pro-rata' = 3, other = 4 }
+	export enum EmployeeCompensationPayment_frequency { weekly = 'weekly', biweekly = 'biweekly', monthly = 'monthly', 'pro-rata' = 'pro-rata', other = 'other' }
 
-	export enum EmployeeCompensationPayment_unit { hour = 0, week = 1, month = 2, year = 3, paycheck = 4, other = 5 }
+	export enum EmployeeCompensationPayment_unit { hour = 'hour', week = 'week', month = 'month', year = 'year', paycheck = 'paycheck', other = 'other' }
 
 	export interface EmployeeEmployment_role {
 
@@ -1729,13 +1729,13 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeEmployment_roleSub_type { full_time = 0, part_time = 1, hourly = 2, other = 3 }
+	export enum EmployeeEmployment_roleSub_type { full_time = 'full_time', part_time = 'part_time', hourly = 'hourly', other = 'other' }
 
-	export enum EmployeeEmployment_roleType { contractor = 0, employee = 1, freelance = 2, temp = 3, internship = 4, other = 5 }
+	export enum EmployeeEmployment_roleType { contractor = 'contractor', employee = 'employee', freelance = 'freelance', temp = 'temp', internship = 'internship', other = 'other' }
 
-	export enum EmployeeEmployment_status { active = 0, inactive = 1, terminated = 2, other = 3 }
+	export enum EmployeeEmployment_status { active = 'active', inactive = 'inactive', terminated = 'terminated', other = 'other' }
 
-	export enum EmployeeGender { male = 0, female = 1, unisex = 2, other = 3, not_specified = 4 }
+	export enum EmployeeGender { male = 'male', female = 'female', unisex = 'unisex', other = 'other', not_specified = 'not_specified' }
 
 	export interface EmployeeJob {
 
@@ -1825,7 +1825,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeLeaving_reason { dismissed = 0, resigned = 1, redundancy = 2, other = 3 }
+	export enum EmployeeLeaving_reason { dismissed = 'dismissed', resigned = 'resigned', redundancy = 'redundancy', other = 'other' }
 
 	export interface EmployeeManager {
 
@@ -2008,7 +2008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { primary = 0, secondary = 1, home = 2, work = 3, office = 4, mobile = 5, assistant = 6, fax = 7, 'direct-dial-in' = 8, personal = 9, other = 10 }
+	export enum PhoneNumberType { primary = 'primary', secondary = 'secondary', home = 'home', work = 'work', office = 'office', mobile = 'mobile', assistant = 'assistant', fax = 'fax', 'direct-dial-in' = 'direct-dial-in', personal = 'personal', other = 'other' }
 
 	export interface EmployeeProbation_period {
 
@@ -2694,17 +2694,17 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeesSortBy { first_name = 0, last_name = 1, created_at = 2, updated_at = 3 }
+	export enum EmployeesSortBy { first_name = 'first_name', last_name = 'last_name', created_at = 'created_at', updated_at = 'updated_at' }
 
-	export enum EmployeesSortDirection { asc = 0, desc = 1 }
+	export enum EmployeesSortDirection { asc = 'asc', desc = 'desc' }
 
 
 	/** The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status. */
-	export enum EmploymentStatus { active = 0, inactive = 1, terminated = 2, other = 3 }
+	export enum EmploymentStatus { active = 'active', inactive = 'inactive', terminated = 'terminated', other = 'other' }
 
 
 	/** The gender represents the gender identity of a person. */
-	export enum Gender { male = 0, female = 1, unisex = 2, other = 3, not_specified = 4 }
+	export enum Gender { male = 'male', female = 'female', unisex = 'unisex', other = 'other', not_specified = 'not_specified' }
 
 	export interface GetDepartmentResponse {
 
@@ -3544,7 +3544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HrisCompanyStatus { active = 0, inactive = 1, trial = 2, other = 3 }
+	export enum HrisCompanyStatus { active = 'active', inactive = 'inactive', trial = 'trial', other = 'other' }
 
 	export interface Website {
 
@@ -3585,7 +3585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebsiteType { primary = 0, secondary = 1, work = 2, personal = 3, other = 4 }
+	export enum WebsiteType { primary = 'primary', secondary = 'secondary', work = 'work', personal = 'personal', other = 'other' }
 
 	export interface GetHrisCompanyResponse {
 
@@ -4380,11 +4380,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeOffRequestRequest_type { vacation = 0, sick = 1, personal = 2, jury_duty = 3, volunteer = 4, bereavement = 5, other = 6 }
+	export enum TimeOffRequestRequest_type { vacation = 'vacation', sick = 'sick', personal = 'personal', jury_duty = 'jury_duty', volunteer = 'volunteer', bereavement = 'bereavement', other = 'other' }
 
-	export enum TimeOffRequestStatus { requested = 0, approved = 1, declined = 2, cancelled = 3, deleted = 4, other = 5 }
+	export enum TimeOffRequestStatus { requested = 'requested', approved = 'approved', declined = 'declined', cancelled = 'cancelled', deleted = 'deleted', other = 'other' }
 
-	export enum TimeOffRequestUnits { days = 0, hours = 1, other = 2 }
+	export enum TimeOffRequestUnits { days = 'days', hours = 'hours', other = 'other' }
 
 	export interface GetTimeOffRequestsResponse {
 
@@ -4470,7 +4470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HrisEventType { '*' = 0, 'hris.employee.created' = 1, 'hris.employee.updated' = 2, 'hris.employee.terminated' = 3, 'hris.employee.deleted' = 4, 'hris.company.created' = 5, 'hris.company.updated' = 6, 'hris.company.deleted' = 7 }
+	export enum HrisEventType { '*' = '*', 'hris.employee.created' = 'hris.employee.created', 'hris.employee.updated' = 'hris.employee.updated', 'hris.employee.terminated' = 'hris.employee.terminated', 'hris.employee.deleted' = 'hris.employee.deleted', 'hris.company.created' = 'hris.company.created', 'hris.company.updated' = 'hris.company.updated', 'hris.company.deleted' = 'hris.company.deleted' }
 
 	export interface HrisWebhookEvent extends WebhookEvent {
 		event_type?: HrisEventType | null;
@@ -4617,7 +4617,7 @@ export namespace MyNS {
 
 
 	/** Frequency of employee compensation. */
-	export enum PaymentFrequency { weekly = 0, biweekly = 1, monthly = 2, 'pro-rata' = 3, other = 4 }
+	export enum PaymentFrequency { weekly = 'weekly', biweekly = 'biweekly', monthly = 'monthly', 'pro-rata' = 'pro-rata', other = 'other' }
 
 	export interface PaymentRequiredResponse {
 
@@ -4673,7 +4673,7 @@ export namespace MyNS {
 
 
 	/** Unit of measurement for employee compensation. */
-	export enum PaymentUnit { hour = 0, week = 1, month = 2, year = 3, paycheck = 4, other = 5 }
+	export enum PaymentUnit { hour = 'hour', week = 'week', month = 'month', year = 'year', paycheck = 'paycheck', other = 'other' }
 
 	export interface PayrollsFilter {
 
@@ -4701,7 +4701,7 @@ export namespace MyNS {
 
 
 	/** The direction in which to sort the results */
-	export enum SortDirection { asc = 0, desc = 1 }
+	export enum SortDirection { asc = 'asc', desc = 'desc' }
 
 	export interface TimeOffRequestsFilter {
 
@@ -5344,7 +5344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookEventUnified_api { accounting = 0, ats = 1, calendar = 2, crm = 3, csp = 4, 'customer-support' = 5, ecommerce = 6, email = 7, 'email-marketing' = 8, 'expense-management' = 9, 'file-storage' = 10, form = 11, hris = 12, lead = 13, payroll = 14, pos = 15, procurement = 16, 'project-management' = 17, script = 18, sms = 19, spreadsheet = 20, 'team-messaging' = 21, 'issue-tracking' = 22, 'time-registration' = 23, 'transactional-email' = 24, vault = 25, 'data-warehouse' = 26 }
+	export enum WebhookEventUnified_api { accounting = 'accounting', ats = 'ats', calendar = 'calendar', crm = 'crm', csp = 'csp', 'customer-support' = 'customer-support', ecommerce = 'ecommerce', email = 'email', 'email-marketing' = 'email-marketing', 'expense-management' = 'expense-management', 'file-storage' = 'file-storage', form = 'form', hris = 'hris', lead = 'lead', payroll = 'payroll', pos = 'pos', procurement = 'procurement', 'project-management' = 'project-management', script = 'script', sms = 'sms', spreadsheet = 'spreadsheet', 'team-messaging' = 'team-messaging', 'issue-tracking' = 'issue-tracking', 'time-registration' = 'time-registration', 'transactional-email' = 'transactional-email', vault = 'vault', 'data-warehouse' = 'data-warehouse' }
 
 	@Injectable()
 	export class MyClient {

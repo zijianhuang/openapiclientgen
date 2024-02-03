@@ -212,7 +212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudResourcesettingsV1SettingMetadataDataType { DATA_TYPE_UNSPECIFIED = 0, BOOLEAN = 1, STRING = 2, STRING_SET = 3, ENUM_VALUE = 4, DURATION_VALUE = 5, STRING_MAP = 6 }
+	export enum GoogleCloudResourcesettingsV1SettingMetadataDataType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', BOOLEAN = 'BOOLEAN', STRING = 'STRING', STRING_SET = 'STRING_SET', ENUM_VALUE = 'ENUM_VALUE', DURATION_VALUE = 'DURATION_VALUE', STRING_MAP = 'STRING_MAP' }
 
 	@Injectable()
 	export class MyClient {
@@ -254,7 +254,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Resourcesettings_projects_settings_getView { SETTING_VIEW_UNSPECIFIED = 0, SETTING_VIEW_BASIC = 1, SETTING_VIEW_EFFECTIVE_VALUE = 2, SETTING_VIEW_LOCAL_VALUE = 3 }
+	export enum Resourcesettings_projects_settings_getView { SETTING_VIEW_UNSPECIFIED = 'SETTING_VIEW_UNSPECIFIED', SETTING_VIEW_BASIC = 'SETTING_VIEW_BASIC', SETTING_VIEW_EFFECTIVE_VALUE = 'SETTING_VIEW_EFFECTIVE_VALUE', SETTING_VIEW_LOCAL_VALUE = 'SETTING_VIEW_LOCAL_VALUE' }
 
 }
 

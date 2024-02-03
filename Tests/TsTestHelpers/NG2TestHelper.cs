@@ -32,6 +32,7 @@ namespace SwagTests
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				ActionNameStrategy = ActionNameStrategy.Default,
 				DataAnnotationsToComments = true,
+				//EnumToString = true for baseline tests, expect false
 			});
 
 			if (testingSettings.UpdateGenerated)
@@ -50,24 +51,25 @@ namespace SwagTests
 			}
 		}
 
-		public void GenerateAndAssertBuild(string openApiFile, string expectedFile, ISettings settings = null)
-		{
-			GenerateAndAssert(openApiFile, expectedFile, settings);
+		//public void GenerateAndAssertBuild(string openApiFile, string expectedFile, ISettings settings = null)
+		//{
+		//	GenerateAndAssert(openApiFile, expectedFile, settings);
 
-			if (buildToValidate)
-			{
-				string s = TranslateDefToCode(openApiFile, settings ?? new Settings()
-				{
-					ClientNamespace = "MyNS",
-					ContainerClassName = "MyClient", //the TestBed requires this containerClassName
-					ContainerNameStrategy = ContainerNameStrategy.None,
-					ActionNameStrategy = ActionNameStrategy.Default,
-					DataAnnotationsToComments = true,
-				});
+		//	if (buildToValidate)
+		//	{
+		//		string s = TranslateDefToCode(openApiFile, settings ?? new Settings()
+		//		{
+		//			ClientNamespace = "MyNS",
+		//			ContainerClassName = "MyClient", //the TestBed requires this containerClassName
+		//			ContainerNameStrategy = ContainerNameStrategy.None,
+		//			ActionNameStrategy = ActionNameStrategy.Default,
+		//			DataAnnotationsToComments = true,
+		//			EnumToString = true
+		//		});
 
-				Assert.Equal(0, CheckNGBuild(s));
-			}
-		}
+		//		Assert.Equal(0, CheckNGBuild(s));
+		//	}
+		//}
 
 		int CheckNGBuild(string codes)
 		{

@@ -95,9 +95,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateValidationRecordStatus { PENDING_VALIDATION = 0, SUCCESS = 1, FAILED = 2 }
+	export enum CertificateValidationRecordStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
-	export enum CustomDomainAssociationStatus { CREATING = 0, CREATE_FAILED = 1, ACTIVE = 2, DELETING = 3, DELETE_FAILED = 4, PENDING_CERTIFICATE_DNS_VALIDATION = 5, BINDING_CERTIFICATE = 6 }
+	export enum CustomDomainAssociationStatus { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED', PENDING_CERTIFICATE_DNS_VALIDATION = 'PENDING_CERTIFICATE_DNS_VALIDATION', BINDING_CERTIFICATE = 'BINDING_CERTIFICATE' }
 
 
 	/** DNS Target record for a custom domain of this Amazon VPC. */
@@ -236,7 +236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoScalingConfigurationStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum AutoScalingConfigurationStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface CreateAutoScalingConfigurationRequest {
 
@@ -337,9 +337,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProviderType { GITHUB = 0 }
+	export enum ProviderType { GITHUB = 'GITHUB' }
 
-	export enum ConnectionStatus { PENDING_HANDSHAKE = 0, AVAILABLE = 1, ERROR = 2, DELETED = 3 }
+	export enum ConnectionStatus { PENDING_HANDSHAKE = 'PENDING_HANDSHAKE', AVAILABLE = 'AVAILABLE', ERROR = 'ERROR', DELETED = 'DELETED' }
 
 	export interface CreateConnectionRequest {
 
@@ -436,7 +436,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TracingVendor { AWSXRAY = 0 }
+	export enum TracingVendor { AWSXRAY = 'AWSXRAY' }
 
 	export interface CreateObservabilityConfigurationRequest {
 
@@ -554,7 +554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceStatus { CREATE_FAILED = 0, RUNNING = 1, DELETED = 2, DELETE_FAILED = 3, PAUSED = 4, OPERATION_IN_PROGRESS = 5 }
+	export enum ServiceStatus { CREATE_FAILED = 'CREATE_FAILED', RUNNING = 'RUNNING', DELETED = 'DELETED', DELETE_FAILED = 'DELETE_FAILED', PAUSED = 'PAUSED', OPERATION_IN_PROGRESS = 'OPERATION_IN_PROGRESS' }
 
 
 	/** Describes the source deployed to an App Runner service. It can be a code or an image repository. */
@@ -629,7 +629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceCodeVersionType { BRANCH = 0 }
+	export enum SourceCodeVersionType { BRANCH = 'BRANCH' }
 
 
 	/** Describes the configuration that App Runner uses to build and run an App Runner service from a source code repository. */
@@ -653,7 +653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationSource { REPOSITORY = 0, API = 1 }
+	export enum ConfigurationSource { REPOSITORY = 'REPOSITORY', API = 'API' }
 
 
 	/** Describes the basic configuration needed for building and running an App Runner service. This type doesn't support the full set of possible configuration options. Fur full configuration capabilities, use a <code>apprunner.yaml</code> file in the source code repository. */
@@ -687,7 +687,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Runtime { PYTHON_3 = 0, NODEJS_12 = 1, NODEJS_14 = 2, CORRETTO_8 = 3, CORRETTO_11 = 4, NODEJS_16 = 5, GO_1 = 6, DOTNET_6 = 7, PHP_81 = 8, RUBY_31 = 9 }
+	export enum Runtime { PYTHON_3 = 'PYTHON_3', NODEJS_12 = 'NODEJS_12', NODEJS_14 = 'NODEJS_14', CORRETTO_8 = 'CORRETTO_8', CORRETTO_11 = 'CORRETTO_11', NODEJS_16 = 'NODEJS_16', GO_1 = 'GO_1', DOTNET_6 = 'DOTNET_6', PHP_81 = 'PHP_81', RUBY_31 = 'RUBY_31' }
 
 	export interface RuntimeEnvironmentVariables {
 	}
@@ -760,7 +760,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageRepositoryType { ECR = 0, ECR_PUBLIC = 1 }
+	export enum ImageRepositoryType { ECR = 'ECR', ECR_PUBLIC = 'ECR_PUBLIC' }
 
 
 	/** Describes resources needed to authenticate access to some source repositories. The specific resource depends on the repository provider. */
@@ -858,7 +858,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckProtocol { TCP = 0, HTTP = 1 }
+	export enum HealthCheckProtocol { TCP = 'TCP', HTTP = 'HTTP' }
 
 
 	/** <p>Provides summary information about an App Runner automatic scaling configuration resource.</p> <p>This type contains limited information about an auto scaling configuration. It includes only identification information, without configuration details. It's returned by the <a>ListAutoScalingConfigurations</a> action. Complete configuration information is returned by the <a>CreateAutoScalingConfiguration</a>, <a>DescribeAutoScalingConfiguration</a>, and <a>DeleteAutoScalingConfiguration</a> actions using the <a>AutoScalingConfiguration</a> type.</p> */
@@ -919,7 +919,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EgressType { DEFAULT = 0, VPC = 1 }
+	export enum EgressType { DEFAULT = 'DEFAULT', VPC = 'VPC' }
 
 
 	/** Network configuration settings for inbound network traffic. */
@@ -1112,7 +1112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpcIngressConnectionStatus { AVAILABLE = 0, PENDING_CREATION = 1, PENDING_UPDATE = 2, PENDING_DELETION = 3, FAILED_CREATION = 4, FAILED_UPDATE = 5, FAILED_DELETION = 6, DELETED = 7 }
+	export enum VpcIngressConnectionStatus { AVAILABLE = 'AVAILABLE', PENDING_CREATION = 'PENDING_CREATION', PENDING_UPDATE = 'PENDING_UPDATE', PENDING_DELETION = 'PENDING_DELETION', FAILED_CREATION = 'FAILED_CREATION', FAILED_UPDATE = 'FAILED_UPDATE', FAILED_DELETION = 'FAILED_DELETION', DELETED = 'DELETED' }
 
 
 	/** The configuration of your VPC and the associated VPC endpoint. The VPC endpoint is an Amazon Web Services PrivateLink resource that allows access to your App Runner services from within an Amazon VPC. */
@@ -1829,9 +1829,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationType { START_DEPLOYMENT = 0, CREATE_SERVICE = 1, PAUSE_SERVICE = 2, RESUME_SERVICE = 3, DELETE_SERVICE = 4, UPDATE_SERVICE = 5 }
+	export enum OperationType { START_DEPLOYMENT = 'START_DEPLOYMENT', CREATE_SERVICE = 'CREATE_SERVICE', PAUSE_SERVICE = 'PAUSE_SERVICE', RESUME_SERVICE = 'RESUME_SERVICE', DELETE_SERVICE = 'DELETE_SERVICE', UPDATE_SERVICE = 'UPDATE_SERVICE' }
 
-	export enum OperationStatus { PENDING = 0, IN_PROGRESS = 1, FAILED = 2, SUCCEEDED = 3, ROLLBACK_IN_PROGRESS = 4, ROLLBACK_FAILED = 5, ROLLBACK_SUCCEEDED = 6 }
+	export enum OperationStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', ROLLBACK_IN_PROGRESS = 'ROLLBACK_IN_PROGRESS', ROLLBACK_FAILED = 'ROLLBACK_FAILED', ROLLBACK_SUCCEEDED = 'ROLLBACK_SUCCEEDED' }
 
 	export interface ListOperationsRequest {
 
@@ -2294,9 +2294,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ObservabilityConfigurationStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum ObservabilityConfigurationStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum VpcConnectorStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum VpcConnectorStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	@Injectable()
 	export class MyClient {
@@ -2635,75 +2635,75 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateCustomDomainX_Amz_Target { 'AppRunner.AssociateCustomDomain' = 0 }
+	export enum AssociateCustomDomainX_Amz_Target { 'AppRunner.AssociateCustomDomain' = 'AppRunner.AssociateCustomDomain' }
 
-	export enum CreateAutoScalingConfigurationX_Amz_Target { 'AppRunner.CreateAutoScalingConfiguration' = 0 }
+	export enum CreateAutoScalingConfigurationX_Amz_Target { 'AppRunner.CreateAutoScalingConfiguration' = 'AppRunner.CreateAutoScalingConfiguration' }
 
-	export enum CreateConnectionX_Amz_Target { 'AppRunner.CreateConnection' = 0 }
+	export enum CreateConnectionX_Amz_Target { 'AppRunner.CreateConnection' = 'AppRunner.CreateConnection' }
 
-	export enum CreateObservabilityConfigurationX_Amz_Target { 'AppRunner.CreateObservabilityConfiguration' = 0 }
+	export enum CreateObservabilityConfigurationX_Amz_Target { 'AppRunner.CreateObservabilityConfiguration' = 'AppRunner.CreateObservabilityConfiguration' }
 
-	export enum CreateServiceX_Amz_Target { 'AppRunner.CreateService' = 0 }
+	export enum CreateServiceX_Amz_Target { 'AppRunner.CreateService' = 'AppRunner.CreateService' }
 
-	export enum CreateVpcConnectorX_Amz_Target { 'AppRunner.CreateVpcConnector' = 0 }
+	export enum CreateVpcConnectorX_Amz_Target { 'AppRunner.CreateVpcConnector' = 'AppRunner.CreateVpcConnector' }
 
-	export enum CreateVpcIngressConnectionX_Amz_Target { 'AppRunner.CreateVpcIngressConnection' = 0 }
+	export enum CreateVpcIngressConnectionX_Amz_Target { 'AppRunner.CreateVpcIngressConnection' = 'AppRunner.CreateVpcIngressConnection' }
 
-	export enum DeleteAutoScalingConfigurationX_Amz_Target { 'AppRunner.DeleteAutoScalingConfiguration' = 0 }
+	export enum DeleteAutoScalingConfigurationX_Amz_Target { 'AppRunner.DeleteAutoScalingConfiguration' = 'AppRunner.DeleteAutoScalingConfiguration' }
 
-	export enum DeleteConnectionX_Amz_Target { 'AppRunner.DeleteConnection' = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'AppRunner.DeleteConnection' = 'AppRunner.DeleteConnection' }
 
-	export enum DeleteObservabilityConfigurationX_Amz_Target { 'AppRunner.DeleteObservabilityConfiguration' = 0 }
+	export enum DeleteObservabilityConfigurationX_Amz_Target { 'AppRunner.DeleteObservabilityConfiguration' = 'AppRunner.DeleteObservabilityConfiguration' }
 
-	export enum DeleteServiceX_Amz_Target { 'AppRunner.DeleteService' = 0 }
+	export enum DeleteServiceX_Amz_Target { 'AppRunner.DeleteService' = 'AppRunner.DeleteService' }
 
-	export enum DeleteVpcConnectorX_Amz_Target { 'AppRunner.DeleteVpcConnector' = 0 }
+	export enum DeleteVpcConnectorX_Amz_Target { 'AppRunner.DeleteVpcConnector' = 'AppRunner.DeleteVpcConnector' }
 
-	export enum DeleteVpcIngressConnectionX_Amz_Target { 'AppRunner.DeleteVpcIngressConnection' = 0 }
+	export enum DeleteVpcIngressConnectionX_Amz_Target { 'AppRunner.DeleteVpcIngressConnection' = 'AppRunner.DeleteVpcIngressConnection' }
 
-	export enum DescribeAutoScalingConfigurationX_Amz_Target { 'AppRunner.DescribeAutoScalingConfiguration' = 0 }
+	export enum DescribeAutoScalingConfigurationX_Amz_Target { 'AppRunner.DescribeAutoScalingConfiguration' = 'AppRunner.DescribeAutoScalingConfiguration' }
 
-	export enum DescribeCustomDomainsX_Amz_Target { 'AppRunner.DescribeCustomDomains' = 0 }
+	export enum DescribeCustomDomainsX_Amz_Target { 'AppRunner.DescribeCustomDomains' = 'AppRunner.DescribeCustomDomains' }
 
-	export enum DescribeObservabilityConfigurationX_Amz_Target { 'AppRunner.DescribeObservabilityConfiguration' = 0 }
+	export enum DescribeObservabilityConfigurationX_Amz_Target { 'AppRunner.DescribeObservabilityConfiguration' = 'AppRunner.DescribeObservabilityConfiguration' }
 
-	export enum DescribeServiceX_Amz_Target { 'AppRunner.DescribeService' = 0 }
+	export enum DescribeServiceX_Amz_Target { 'AppRunner.DescribeService' = 'AppRunner.DescribeService' }
 
-	export enum DescribeVpcConnectorX_Amz_Target { 'AppRunner.DescribeVpcConnector' = 0 }
+	export enum DescribeVpcConnectorX_Amz_Target { 'AppRunner.DescribeVpcConnector' = 'AppRunner.DescribeVpcConnector' }
 
-	export enum DescribeVpcIngressConnectionX_Amz_Target { 'AppRunner.DescribeVpcIngressConnection' = 0 }
+	export enum DescribeVpcIngressConnectionX_Amz_Target { 'AppRunner.DescribeVpcIngressConnection' = 'AppRunner.DescribeVpcIngressConnection' }
 
-	export enum DisassociateCustomDomainX_Amz_Target { 'AppRunner.DisassociateCustomDomain' = 0 }
+	export enum DisassociateCustomDomainX_Amz_Target { 'AppRunner.DisassociateCustomDomain' = 'AppRunner.DisassociateCustomDomain' }
 
-	export enum ListAutoScalingConfigurationsX_Amz_Target { 'AppRunner.ListAutoScalingConfigurations' = 0 }
+	export enum ListAutoScalingConfigurationsX_Amz_Target { 'AppRunner.ListAutoScalingConfigurations' = 'AppRunner.ListAutoScalingConfigurations' }
 
-	export enum ListConnectionsX_Amz_Target { 'AppRunner.ListConnections' = 0 }
+	export enum ListConnectionsX_Amz_Target { 'AppRunner.ListConnections' = 'AppRunner.ListConnections' }
 
-	export enum ListObservabilityConfigurationsX_Amz_Target { 'AppRunner.ListObservabilityConfigurations' = 0 }
+	export enum ListObservabilityConfigurationsX_Amz_Target { 'AppRunner.ListObservabilityConfigurations' = 'AppRunner.ListObservabilityConfigurations' }
 
-	export enum ListOperationsX_Amz_Target { 'AppRunner.ListOperations' = 0 }
+	export enum ListOperationsX_Amz_Target { 'AppRunner.ListOperations' = 'AppRunner.ListOperations' }
 
-	export enum ListServicesX_Amz_Target { 'AppRunner.ListServices' = 0 }
+	export enum ListServicesX_Amz_Target { 'AppRunner.ListServices' = 'AppRunner.ListServices' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AppRunner.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AppRunner.ListTagsForResource' = 'AppRunner.ListTagsForResource' }
 
-	export enum ListVpcConnectorsX_Amz_Target { 'AppRunner.ListVpcConnectors' = 0 }
+	export enum ListVpcConnectorsX_Amz_Target { 'AppRunner.ListVpcConnectors' = 'AppRunner.ListVpcConnectors' }
 
-	export enum ListVpcIngressConnectionsX_Amz_Target { 'AppRunner.ListVpcIngressConnections' = 0 }
+	export enum ListVpcIngressConnectionsX_Amz_Target { 'AppRunner.ListVpcIngressConnections' = 'AppRunner.ListVpcIngressConnections' }
 
-	export enum PauseServiceX_Amz_Target { 'AppRunner.PauseService' = 0 }
+	export enum PauseServiceX_Amz_Target { 'AppRunner.PauseService' = 'AppRunner.PauseService' }
 
-	export enum ResumeServiceX_Amz_Target { 'AppRunner.ResumeService' = 0 }
+	export enum ResumeServiceX_Amz_Target { 'AppRunner.ResumeService' = 'AppRunner.ResumeService' }
 
-	export enum StartDeploymentX_Amz_Target { 'AppRunner.StartDeployment' = 0 }
+	export enum StartDeploymentX_Amz_Target { 'AppRunner.StartDeployment' = 'AppRunner.StartDeployment' }
 
-	export enum TagResourceX_Amz_Target { 'AppRunner.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AppRunner.TagResource' = 'AppRunner.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AppRunner.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AppRunner.UntagResource' = 'AppRunner.UntagResource' }
 
-	export enum UpdateServiceX_Amz_Target { 'AppRunner.UpdateService' = 0 }
+	export enum UpdateServiceX_Amz_Target { 'AppRunner.UpdateService' = 'AppRunner.UpdateService' }
 
-	export enum UpdateVpcIngressConnectionX_Amz_Target { 'AppRunner.UpdateVpcIngressConnection' = 0 }
+	export enum UpdateVpcIngressConnectionX_Amz_Target { 'AppRunner.UpdateVpcIngressConnection' = 'AppRunner.UpdateVpcIngressConnection' }
 
 }
 

@@ -268,7 +268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamicGroupQueryResourceType { RESOURCE_TYPE_UNSPECIFIED = 0, USER = 1 }
+	export enum DynamicGroupQueryResourceType { RESOURCE_TYPE_UNSPECIFIED = 'RESOURCE_TYPE_UNSPECIFIED', USER = 'USER' }
 
 
 	/** The current status of a dynamic group along with timestamp. */
@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamicGroupStatusStatus { STATUS_UNSPECIFIED = 0, UP_TO_DATE = 1, UPDATING_MEMBERSHIPS = 2, INVALID_QUERY = 3 }
+	export enum DynamicGroupStatusStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', UP_TO_DATE = 'UP_TO_DATE', UPDATING_MEMBERSHIPS = 'UPDATING_MEMBERSHIPS', INVALID_QUERY = 'INVALID_QUERY' }
 
 
 	/** A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s. */
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipDeliverySetting { DELIVERY_SETTING_UNSPECIFIED = 0, ALL_MAIL = 1, DIGEST = 2, DAILY = 3, NONE = 4, DISABLED = 5 }
+	export enum MembershipDeliverySetting { DELIVERY_SETTING_UNSPECIFIED = 'DELIVERY_SETTING_UNSPECIFIED', ALL_MAIL = 'ALL_MAIL', DIGEST = 'DIGEST', DAILY = 'DAILY', NONE = 'NONE', DISABLED = 'DISABLED' }
 
 
 	/** A membership role within the Cloud Identity Groups API. A `MembershipRole` defines the privileges granted to a `Membership`. */
@@ -529,9 +529,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipRoleRestrictionEvaluationState { STATE_UNSPECIFIED = 0, COMPLIANT = 1, FORWARD_COMPLIANT = 2, NON_COMPLIANT = 3, EVALUATING = 4 }
+	export enum MembershipRoleRestrictionEvaluationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', COMPLIANT = 'COMPLIANT', FORWARD_COMPLIANT = 'FORWARD_COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT', EVALUATING = 'EVALUATING' }
 
-	export enum MembershipType { TYPE_UNSPECIFIED = 0, USER = 1, SERVICE_ACCOUNT = 2, GROUP = 3, SHARED_DRIVE = 4, OTHER = 5 }
+	export enum MembershipType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', USER = 'USER', SERVICE_ACCOUNT = 'SERVICE_ACCOUNT', GROUP = 'GROUP', SHARED_DRIVE = 'SHARED_DRIVE', OTHER = 'OTHER' }
 
 
 	/** A group within the Cloud Identity Groups API. A `Group` is a collection of entities, where each entity is either a user, another group, or a service account. */
@@ -675,7 +675,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege { OWNERSHIP_PRIVILEGE_UNSPECIFIED = 0, DEVICE_ADMINISTRATOR = 1, PROFILE_OWNER = 2, DEVICE_OWNER = 3 }
+	export enum GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege { OWNERSHIP_PRIVILEGE_UNSPECIFIED = 'OWNERSHIP_PRIVILEGE_UNSPECIFIED', DEVICE_ADMINISTRATOR = 'DEVICE_ADMINISTRATOR', PROFILE_OWNER = 'PROFILE_OWNER', DEVICE_OWNER = 'DEVICE_OWNER' }
 
 
 	/** Metadata for ApproveDeviceUser LRO. */
@@ -813,11 +813,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState { COMPROMISED_STATE_UNSPECIFIED = 0, COMPROMISED = 1, NOT_COMPROMISED = 2 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState { COMPROMISED_STATE_UNSPECIFIED = 'COMPROMISED_STATE_UNSPECIFIED', COMPROMISED = 'COMPROMISED', NOT_COMPROMISED = 'NOT_COMPROMISED' }
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceUserManagementState { MANAGEMENT_STATE_UNSPECIFIED = 0, WIPING = 1, WIPED = 2, APPROVED = 3, BLOCKED = 4, PENDING_APPROVAL = 5, UNENROLLED = 6 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceUserManagementState { MANAGEMENT_STATE_UNSPECIFIED = 'MANAGEMENT_STATE_UNSPECIFIED', WIPING = 'WIPING', WIPED = 'WIPED', APPROVED = 'APPROVED', BLOCKED = 'BLOCKED', PENDING_APPROVAL = 'PENDING_APPROVAL', UNENROLLED = 'UNENROLLED' }
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState { PASSWORD_STATE_UNSPECIFIED = 0, PASSWORD_SET = 1, PASSWORD_NOT_SET = 2 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState { PASSWORD_STATE_UNSPECIFIED = 'PASSWORD_STATE_UNSPECIFIED', PASSWORD_SET = 'PASSWORD_SET', PASSWORD_NOT_SET = 'PASSWORD_NOT_SET' }
 
 
 	/** Metadata for BlockDeviceUser LRO. */
@@ -1135,15 +1135,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceCompromisedState { COMPROMISED_STATE_UNSPECIFIED = 0, COMPROMISED = 1, UNCOMPROMISED = 2 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceCompromisedState { COMPROMISED_STATE_UNSPECIFIED = 'COMPROMISED_STATE_UNSPECIFIED', COMPROMISED = 'COMPROMISED', UNCOMPROMISED = 'UNCOMPROMISED' }
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceDeviceType { DEVICE_TYPE_UNSPECIFIED = 0, ANDROID = 1, IOS = 2, GOOGLE_SYNC = 3, WINDOWS = 4, MAC_OS = 5, LINUX = 6, CHROME_OS = 7 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceDeviceType { DEVICE_TYPE_UNSPECIFIED = 'DEVICE_TYPE_UNSPECIFIED', ANDROID = 'ANDROID', IOS = 'IOS', GOOGLE_SYNC = 'GOOGLE_SYNC', WINDOWS = 'WINDOWS', MAC_OS = 'MAC_OS', LINUX = 'LINUX', CHROME_OS = 'CHROME_OS' }
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceEncryptionState { ENCRYPTION_STATE_UNSPECIFIED = 0, UNSUPPORTED_BY_DEVICE = 1, ENCRYPTED = 2, NOT_ENCRYPTED = 3 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceEncryptionState { ENCRYPTION_STATE_UNSPECIFIED = 'ENCRYPTION_STATE_UNSPECIFIED', UNSUPPORTED_BY_DEVICE = 'UNSUPPORTED_BY_DEVICE', ENCRYPTED = 'ENCRYPTED', NOT_ENCRYPTED = 'NOT_ENCRYPTED' }
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceManagementState { MANAGEMENT_STATE_UNSPECIFIED = 0, APPROVED = 1, BLOCKED = 2, PENDING = 3, UNPROVISIONED = 4, WIPING = 5, WIPED = 6 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceManagementState { MANAGEMENT_STATE_UNSPECIFIED = 'MANAGEMENT_STATE_UNSPECIFIED', APPROVED = 'APPROVED', BLOCKED = 'BLOCKED', PENDING = 'PENDING', UNPROVISIONED = 'UNPROVISIONED', WIPING = 'WIPING', WIPED = 'WIPED' }
 
-	export enum GoogleAppsCloudidentityDevicesV1DeviceOwnerType { DEVICE_OWNERSHIP_UNSPECIFIED = 0, COMPANY = 1, BYOD = 2 }
+	export enum GoogleAppsCloudidentityDevicesV1DeviceOwnerType { DEVICE_OWNERSHIP_UNSPECIFIED = 'DEVICE_OWNERSHIP_UNSPECIFIED', COMPANY = 'COMPANY', BYOD = 'BYOD' }
 
 
 	/** Metadata for CancelWipeDeviceUser LRO. */
@@ -1291,9 +1291,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCloudidentityDevicesV1ClientStateComplianceState { COMPLIANCE_STATE_UNSPECIFIED = 0, COMPLIANT = 1, NON_COMPLIANT = 2 }
+	export enum GoogleAppsCloudidentityDevicesV1ClientStateComplianceState { COMPLIANCE_STATE_UNSPECIFIED = 'COMPLIANCE_STATE_UNSPECIFIED', COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT' }
 
-	export enum GoogleAppsCloudidentityDevicesV1ClientStateHealthScore { HEALTH_SCORE_UNSPECIFIED = 0, VERY_POOR = 1, POOR = 2, NEUTRAL = 3, GOOD = 4, VERY_GOOD = 5 }
+	export enum GoogleAppsCloudidentityDevicesV1ClientStateHealthScore { HEALTH_SCORE_UNSPECIFIED = 'HEALTH_SCORE_UNSPECIFIED', VERY_POOR = 'VERY_POOR', POOR = 'POOR', NEUTRAL = 'NEUTRAL', GOOD = 'GOOD', VERY_GOOD = 'VERY_GOOD' }
 
 
 	/** Additional custom attribute values may be one of these types */
@@ -1330,9 +1330,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCloudidentityDevicesV1ClientStateManaged { MANAGED_STATE_UNSPECIFIED = 0, MANAGED = 1, UNMANAGED = 2 }
+	export enum GoogleAppsCloudidentityDevicesV1ClientStateManaged { MANAGED_STATE_UNSPECIFIED = 'MANAGED_STATE_UNSPECIFIED', MANAGED = 'MANAGED', UNMANAGED = 'UNMANAGED' }
 
-	export enum GoogleAppsCloudidentityDevicesV1ClientStateOwnerType { OWNER_TYPE_UNSPECIFIED = 0, OWNER_TYPE_CUSTOMER = 1, OWNER_TYPE_PARTNER = 2 }
+	export enum GoogleAppsCloudidentityDevicesV1ClientStateOwnerType { OWNER_TYPE_UNSPECIFIED = 'OWNER_TYPE_UNSPECIFIED', OWNER_TYPE_CUSTOMER = 'OWNER_TYPE_CUSTOMER', OWNER_TYPE_PARTNER = 'OWNER_TYPE_PARTNER' }
 
 
 	/** Metadata for CreateDevice LRO. */
@@ -1694,7 +1694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupRelationRelationType { RELATION_TYPE_UNSPECIFIED = 0, DIRECT = 1, INDIRECT = 2, DIRECT_AND_INDIRECT = 3 }
+	export enum GroupRelationRelationType { RELATION_TYPE_UNSPECIFIED = 'RELATION_TYPE_UNSPECIFIED', DIRECT = 'DIRECT', INDIRECT = 'INDIRECT', DIRECT_AND_INDIRECT = 'DIRECT_AND_INDIRECT' }
 
 
 	/** Message representing the role of a TransitiveMembership. */
@@ -1987,9 +1987,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SignInBehaviorRedirectCondition { REDIRECT_CONDITION_UNSPECIFIED = 0, NEVER = 1 }
+	export enum SignInBehaviorRedirectCondition { REDIRECT_CONDITION_UNSPECIFIED = 'REDIRECT_CONDITION_UNSPECIFIED', NEVER = 'NEVER' }
 
-	export enum InboundSsoAssignmentSsoMode { SSO_MODE_UNSPECIFIED = 0, SSO_OFF = 1, SAML_SSO = 2, DOMAIN_WIDE_SAML_IF_ENABLED = 3 }
+	export enum InboundSsoAssignmentSsoMode { SSO_MODE_UNSPECIFIED = 'SSO_MODE_UNSPECIFIED', SSO_OFF = 'SSO_OFF', SAML_SSO = 'SAML_SSO', DOMAIN_WIDE_SAML_IF_ENABLED = 'DOMAIN_WIDE_SAML_IF_ENABLED' }
 
 
 	/** Response for IsInvitableUser RPC. */
@@ -2198,7 +2198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserInvitationState { STATE_UNSPECIFIED = 0, NOT_YET_SENT = 1, INVITED = 2, ACCEPTED = 3, DECLINED = 4 }
+	export enum UserInvitationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NOT_YET_SENT = 'NOT_YET_SENT', INVITED = 'INVITED', ACCEPTED = 'ACCEPTED', DECLINED = 'DECLINED' }
 
 
 	/** The response message for GroupsService.LookupGroupName. */
@@ -2321,7 +2321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestrictionEvaluationState { STATE_UNSPECIFIED = 0, EVALUATING = 1, COMPLIANT = 2, FORWARD_COMPLIANT = 3, NON_COMPLIANT = 4 }
+	export enum RestrictionEvaluationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', EVALUATING = 'EVALUATING', COMPLIANT = 'COMPLIANT', FORWARD_COMPLIANT = 'FORWARD_COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT' }
 
 
 	/** Message containing membership relation. */
@@ -3117,11 +3117,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Cloudidentity_devices_listView { VIEW_UNSPECIFIED = 0, COMPANY_INVENTORY = 1, USER_ASSIGNED_DEVICES = 2 }
+	export enum Cloudidentity_devices_listView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', COMPANY_INVENTORY = 'COMPANY_INVENTORY', USER_ASSIGNED_DEVICES = 'USER_ASSIGNED_DEVICES' }
 
-	export enum Cloudidentity_groups_listView { VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Cloudidentity_groups_listView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum Cloudidentity_groups_createInitialGroupConfig { INITIAL_GROUP_CONFIG_UNSPECIFIED = 0, WITH_INITIAL_OWNER = 1, EMPTY = 2 }
+	export enum Cloudidentity_groups_createInitialGroupConfig { INITIAL_GROUP_CONFIG_UNSPECIFIED = 'INITIAL_GROUP_CONFIG_UNSPECIFIED', WITH_INITIAL_OWNER = 'WITH_INITIAL_OWNER', EMPTY = 'EMPTY' }
 
 }
 

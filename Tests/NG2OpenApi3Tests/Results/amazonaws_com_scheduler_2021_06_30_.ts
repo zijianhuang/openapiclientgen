@@ -20,7 +20,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlexibleTimeWindowMode { OFF = 0, FLEXIBLE = 1 }
+	export enum FlexibleTimeWindowMode { OFF = 'OFF', FLEXIBLE = 'FLEXIBLE' }
 
 
 	/** An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue. */
@@ -116,7 +116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LaunchType { EC2 = 0, FARGATE = 1, EXTERNAL = 2 }
+	export enum LaunchType { EC2 = 'EC2', FARGATE = 'FARGATE', EXTERNAL = 'EXTERNAL' }
 
 
 	/** Specifies the network configuration for an ECS task. */
@@ -154,7 +154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignPublicIp { ENABLED = 0, DISABLED = 1 }
+	export enum AssignPublicIp { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** An object representing a constraint on task placement. */
@@ -176,7 +176,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementConstraintType { distinctInstance = 0, memberOf = 1 }
+	export enum PlacementConstraintType { distinctInstance = 'distinctInstance', memberOf = 'memberOf' }
 
 
 	/** The task placement strategy for a task or service. */
@@ -198,9 +198,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementStrategyType { random = 0, spread = 1, binpack = 2 }
+	export enum PlacementStrategyType { random = 'random', spread = 'spread', binpack = 'binpack' }
 
-	export enum PropagateTags { TASK_DEFINITION = 0 }
+	export enum PropagateTags { TASK_DEFINITION = 'TASK_DEFINITION' }
 
 	export interface TagMap {
 	}
@@ -517,7 +517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionAfterCompletion { NONE = 0, DELETE = 1 }
+	export enum ActionAfterCompletion { NONE = 'NONE', DELETE = 'DELETE' }
 
 
 	/** Allows you to configure a time window during which EventBridge Scheduler invokes the schedule. */
@@ -606,7 +606,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleGroupState { ACTIVE = 0, DELETING = 1 }
+	export enum ScheduleGroupState { ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface ListScheduleGroupsOutput {
 		NextToken?: string;
@@ -785,7 +785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleState { ENABLED = 0, DISABLED = 1 }
+	export enum ScheduleState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface CreateScheduleInput {
 		ActionAfterCompletion?: ActionAfterCompletion;

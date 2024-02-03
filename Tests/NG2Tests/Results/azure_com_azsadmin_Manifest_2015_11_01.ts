@@ -409,7 +409,7 @@ export namespace MyNS {
 
 
 	/** The resource type linked action. */
-	export enum LinkedAction { NotSpecified = 0, Blocked = 1, Validate = 2, Enabled = 3 }
+	export enum LinkedAction { NotSpecified = 'NotSpecified', Blocked = 'Blocked', Validate = 'Validate', Enabled = 'Enabled' }
 
 
 	/** The linked notification rule. */
@@ -454,7 +454,7 @@ export namespace MyNS {
 
 
 	/** The linked operation. */
-	export enum LinkedOperation { None = 0, CrossResourceGroupResourceMove = 1, CrossSubscriptionResourceMove = 2 }
+	export enum LinkedOperation { None = 'None', CrossResourceGroupResourceMove = 'CrossResourceGroupResourceMove', CrossSubscriptionResourceMove = 'CrossSubscriptionResourceMove' }
 
 
 	/** The linked resource access checks. */
@@ -638,11 +638,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ManifestProviderType { NotSpecified = 0, Internal = 1, External = 2, RegistrationFree = 3, TenantOnly = 4, AlwaysRoutable = 5 }
+	export enum ManifestProviderType { NotSpecified = 'NotSpecified', Internal = 'Internal', External = 'External', RegistrationFree = 'RegistrationFree', TenantOnly = 'TenantOnly', AlwaysRoutable = 'AlwaysRoutable' }
 
-	export enum ManifestProvisioningState { Accepted = 0, Creating = 1, Deleting = 2, Moving = 3, Failed = 4, Succeeded = 5 }
+	export enum ManifestProvisioningState { Accepted = 'Accepted', Creating = 'Creating', Deleting = 'Deleting', Moving = 'Moving', Failed = 'Failed', Succeeded = 'Succeeded' }
 
-	export enum ManifestRoutingResourceManagerType { Default = 0, Admin = 1 }
+	export enum ManifestRoutingResourceManagerType { Default = 'Default', Admin = 'Admin' }
 
 
 	/** List of manifests. */
@@ -670,7 +670,7 @@ export namespace MyNS {
 
 
 	/** The type of marketplace behavior for the resource type. */
-	export enum MarketplaceType { NotSpecified = 0, AddOn = 1 }
+	export enum MarketplaceType { NotSpecified = 'NotSpecified', AddOn = 'AddOn' }
 
 
 	/** Extension Client Access Section. */
@@ -726,7 +726,7 @@ export namespace MyNS {
 
 
 	/** The resource deletion policy. */
-	export enum ResourceDeletionPolicy { NotSpecified = 0, Cascade = 1 }
+	export enum ResourceDeletionPolicy { NotSpecified = 'NotSpecified', Cascade = 'Cascade' }
 
 
 	/** The resource provider authorization information. */
@@ -820,7 +820,7 @@ export namespace MyNS {
 
 
 	/** The resource provider type. */
-	export enum ResourceProviderType { NotSpecified = 0, Internal = 1, External = 2, RegistrationFree = 3, TenantOnly = 4, AlwaysRoutable = 5 }
+	export enum ResourceProviderType { NotSpecified = 'NotSpecified', Internal = 'Internal', External = 'External', RegistrationFree = 'RegistrationFree', TenantOnly = 'TenantOnly', AlwaysRoutable = 'AlwaysRoutable' }
 
 
 	/** The resource type definition. */
@@ -895,7 +895,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceTypeRoutingType { Default = 0, ProxyOnly = 1, HostBased = 2, Extension = 3, Tenant = 4, Fanout = 5, LocationBased = 6 }
+	export enum ResourceTypeRoutingType { Default = 'Default', ProxyOnly = 'ProxyOnly', HostBased = 'HostBased', Extension = 'Extension', Tenant = 'Tenant', Fanout = 'Fanout', LocationBased = 'LocationBased' }
 
 
 	/** List of the resource types. */
@@ -923,7 +923,7 @@ export namespace MyNS {
 
 
 	/** The resource routing type. */
-	export enum RoutingType { Default = 0, ProxyOnly = 1, HostBased = 2, Extension = 3, Tenant = 4, Fanout = 5, LocationBased = 6 }
+	export enum RoutingType { Default = 'Default', ProxyOnly = 'ProxyOnly', HostBased = 'HostBased', Extension = 'Extension', Tenant = 'Tenant', Fanout = 'Fanout', LocationBased = 'LocationBased' }
 
 	@Injectable()
 	export class MyClient {

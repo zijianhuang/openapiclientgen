@@ -81,9 +81,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { None = 0, ServerError = 1, InvalidRequest = 2, RateLimitExceeded = 3, InvalidAuthorization = 4, InsufficientAuthorization = 5 }
+	export enum ErrorCode { None = 'None', ServerError = 'ServerError', InvalidRequest = 'InvalidRequest', RateLimitExceeded = 'RateLimitExceeded', InvalidAuthorization = 'InvalidAuthorization', InsufficientAuthorization = 'InsufficientAuthorization' }
 
-	export enum ErrorSubCode { UnexpectedError = 0, ResourceError = 1, NotImplemented = 2, ParameterMissing = 3, ParameterInvalidValue = 4, HttpNotAllowed = 5, Blocked = 6, AuthorizationMissing = 7, AuthorizationRedundancy = 8, AuthorizationDisabled = 9, AuthorizationExpired = 10 }
+	export enum ErrorSubCode { UnexpectedError = 'UnexpectedError', ResourceError = 'ResourceError', NotImplemented = 'NotImplemented', ParameterMissing = 'ParameterMissing', ParameterInvalidValue = 'ParameterInvalidValue', HttpNotAllowed = 'HttpNotAllowed', Blocked = 'Blocked', AuthorizationMissing = 'AuthorizationMissing', AuthorizationRedundancy = 'AuthorizationRedundancy', AuthorizationDisabled = 'AuthorizationDisabled', AuthorizationExpired = 'AuthorizationExpired' }
 
 
 	/** The top-level response that represents a failed request. */
@@ -228,7 +228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpellingFlaggedTokenType { UnknownToken = 0, RepeatedToken = 1 }
+	export enum SpellingFlaggedTokenType { UnknownToken = 'UnknownToken', RepeatedToken = 'RepeatedToken' }
 
 	@Injectable()
 	export class MyClient {
@@ -258,11 +258,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SpellCheckerX_BingApis_SDK { true = 0 }
+	export enum SpellCheckerX_BingApis_SDK { true = 'true' }
 
-	export enum SpellCheckerActionType { Edit = 0, Load = 1 }
+	export enum SpellCheckerActionType { Edit = 'Edit', Load = 'Load' }
 
-	export enum SpellCheckerMode { proof = 0, spell = 1 }
+	export enum SpellCheckerMode { proof = 'proof', spell = 'spell' }
 
 }
 

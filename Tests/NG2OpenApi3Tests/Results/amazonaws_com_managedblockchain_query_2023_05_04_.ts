@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryNetwork { ETHEREUM_MAINNET = 0, BITCOIN_MAINNET = 1 }
+	export enum QueryNetwork { ETHEREUM_MAINNET = 'ETHEREUM_MAINNET', BITCOIN_MAINNET = 'BITCOIN_MAINNET' }
 
 
 	/** The container for time. */
@@ -166,7 +166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorType { VALIDATION_EXCEPTION = 0, RESOURCE_NOT_FOUND_EXCEPTION = 1 }
+	export enum ErrorType { VALIDATION_EXCEPTION = 'VALIDATION_EXCEPTION', RESOURCE_NOT_FOUND_EXCEPTION = 'RESOURCE_NOT_FOUND_EXCEPTION' }
 
 
 	/** The container for the input for getting a token balance. */
@@ -401,7 +401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryTransactionStatus { FINAL = 0, FAILED = 1 }
+	export enum QueryTransactionStatus { FINAL = 'FINAL', FAILED = 'FAILED' }
 
 	export interface ListTokenBalancesOutput {
 
@@ -518,7 +518,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryTransactionEventType { ERC20_TRANSFER = 0, ERC20_MINT = 1, ERC20_BURN = 2, ERC20_DEPOSIT = 3, ERC20_WITHDRAWAL = 4, ERC721_TRANSFER = 5, ERC1155_TRANSFER = 6, BITCOIN_VIN = 7, BITCOIN_VOUT = 8, INTERNAL_ETH_TRANSFER = 9, ETH_TRANSFER = 10 }
+	export enum QueryTransactionEventType { ERC20_TRANSFER = 'ERC20_TRANSFER', ERC20_MINT = 'ERC20_MINT', ERC20_BURN = 'ERC20_BURN', ERC20_DEPOSIT = 'ERC20_DEPOSIT', ERC20_WITHDRAWAL = 'ERC20_WITHDRAWAL', ERC721_TRANSFER = 'ERC721_TRANSFER', ERC1155_TRANSFER = 'ERC1155_TRANSFER', BITCOIN_VIN = 'BITCOIN_VIN', BITCOIN_VOUT = 'BITCOIN_VOUT', INTERNAL_ETH_TRANSFER = 'INTERNAL_ETH_TRANSFER', ETH_TRANSFER = 'ETH_TRANSFER' }
 
 	export interface ListTransactionsOutput {
 
@@ -571,9 +571,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ListTransactionsSortBy { TRANSACTION_TIMESTAMP = 0 }
+	export enum ListTransactionsSortBy { TRANSACTION_TIMESTAMP = 'TRANSACTION_TIMESTAMP' }
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface BatchGetTokenBalanceInput {
 		getTokenBalanceInputs?: Array<BatchGetTokenBalanceInputItem>;

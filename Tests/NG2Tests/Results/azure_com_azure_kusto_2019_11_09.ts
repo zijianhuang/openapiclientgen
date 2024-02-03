@@ -93,9 +93,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachedDatabaseConfigurationPropertiesDefaultPrincipalsModificationKind { Union = 0, Replace = 1, None = 2 }
+	export enum AttachedDatabaseConfigurationPropertiesDefaultPrincipalsModificationKind { Union = 'Union', Replace = 'Replace', None = 'None' }
 
-	export enum AttachedDatabaseConfigurationPropertiesProvisioningState { Running = 0, Creating = 1, Deleting = 2, Succeeded = 3, Failed = 4, Moving = 5 }
+	export enum AttachedDatabaseConfigurationPropertiesProvisioningState { Running = 'Running', Creating = 'Creating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Moving = 'Moving' }
 
 
 	/** Azure capacity definition. */
@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureCapacityScaleType { automatic = 0, manual = 1, none = 2 }
+	export enum AzureCapacityScaleType { automatic = 'automatic', manual = 'manual', none = 'none' }
 
 
 	/** Azure resource SKU definition. */
@@ -239,9 +239,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureSkuName { 'Standard_DS13_v2+1TB_PS' = 0, 'Standard_DS13_v2+2TB_PS' = 1, 'Standard_DS14_v2+3TB_PS' = 2, 'Standard_DS14_v2+4TB_PS' = 3, Standard_D13_v2 = 4, Standard_D14_v2 = 5, Standard_L8s = 6, Standard_L16s = 7, Standard_D11_v2 = 8, Standard_D12_v2 = 9, Standard_L4s = 10, 'Dev(No SLA)_Standard_D11_v2' = 11 }
+	export enum AzureSkuName { 'Standard_DS13_v2+1TB_PS' = 'Standard_DS13_v2+1TB_PS', 'Standard_DS13_v2+2TB_PS' = 'Standard_DS13_v2+2TB_PS', 'Standard_DS14_v2+3TB_PS' = 'Standard_DS14_v2+3TB_PS', 'Standard_DS14_v2+4TB_PS' = 'Standard_DS14_v2+4TB_PS', Standard_D13_v2 = 'Standard_D13_v2', Standard_D14_v2 = 'Standard_D14_v2', Standard_L8s = 'Standard_L8s', Standard_L16s = 'Standard_L16s', Standard_D11_v2 = 'Standard_D11_v2', Standard_D12_v2 = 'Standard_D12_v2', Standard_L4s = 'Standard_L4s', 'Dev(No SLA)_Standard_D11_v2' = 'Dev(No SLA)_Standard_D11_v2' }
 
-	export enum AzureSkuTier { Basic = 0, Standard = 1 }
+	export enum AzureSkuTier { Basic = 'Basic', Standard = 'Standard' }
 
 
 	/** The result returned from a database check name availability request. */
@@ -283,7 +283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameRequestType { 'Microsoft.Kusto/clusters/databases' = 0, 'Microsoft.Kusto/clusters/attachedDatabaseConfigurations' = 1 }
+	export enum CheckNameRequestType { 'Microsoft.Kusto/clusters/databases' = 'Microsoft.Kusto/clusters/databases', 'Microsoft.Kusto/clusters/attachedDatabaseConfigurations' = 'Microsoft.Kusto/clusters/attachedDatabaseConfigurations' }
 
 
 	/** The result returned from a check name availability request. */
@@ -327,7 +327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameResultReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameResultReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** An error response from Kusto. */
@@ -434,7 +434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterCheckNameRequestType { 'Microsoft.Kusto/clusters' = 0 }
+	export enum ClusterCheckNameRequestType { 'Microsoft.Kusto/clusters' = 'Microsoft.Kusto/clusters' }
 
 
 	/** The list Kusto clusters operation response. */
@@ -503,7 +503,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterPrincipalAssignmentCheckNameRequestType { 'Microsoft.Kusto/clusters/principalAssignments' = 0 }
+	export enum ClusterPrincipalAssignmentCheckNameRequestType { 'Microsoft.Kusto/clusters/principalAssignments' = 'Microsoft.Kusto/clusters/principalAssignments' }
 
 
 	/** The list Kusto cluster principal assignments operation response. */
@@ -603,9 +603,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterPrincipalPropertiesPrincipalType { App = 0, Group = 1, User = 2 }
+	export enum ClusterPrincipalPropertiesPrincipalType { App = 'App', Group = 'Group', User = 'User' }
 
-	export enum ClusterPrincipalPropertiesRole { AllDatabasesAdmin = 0, AllDatabasesViewer = 1 }
+	export enum ClusterPrincipalPropertiesRole { AllDatabasesAdmin = 'AllDatabasesAdmin', AllDatabasesViewer = 'AllDatabasesViewer' }
 
 
 	/** Class representing the Kusto cluster properties. */
@@ -748,7 +748,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterPropertiesState { Creating = 0, Unavailable = 1, Running = 2, Deleting = 3, Deleted = 4, Stopping = 5, Stopped = 6, Starting = 7, Updating = 8 }
+	export enum ClusterPropertiesState { Creating = 'Creating', Unavailable = 'Unavailable', Running = 'Running', Deleting = 'Deleting', Deleted = 'Deleted', Stopping = 'Stopping', Stopped = 'Stopped', Starting = 'Starting', Updating = 'Updating' }
 
 
 	/** Represents a tenant ID that is trusted by the cluster. */
@@ -836,7 +836,7 @@ export namespace MyNS {
 
 
 	/** The compression type */
-	export enum Compression { None = 0, GZip = 1 }
+	export enum Compression { None = 'None', GZip = 'GZip' }
 
 	export interface DataConnection {
 	}
@@ -888,7 +888,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataConnectionCheckNameRequestType { 'Microsoft.Kusto/clusters/databases/dataConnections' = 0 }
+	export enum DataConnectionCheckNameRequestType { 'Microsoft.Kusto/clusters/databases/dataConnections' = 'Microsoft.Kusto/clusters/databases/dataConnections' }
 
 
 	/** The list Kusto data connections operation response. */
@@ -1077,7 +1077,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabasePrincipalRole { Admin = 0, Ingestor = 1, Monitor = 2, User = 3, UnrestrictedViewers = 4, Viewer = 5 }
+	export enum DatabasePrincipalRole { Admin = 'Admin', Ingestor = 'Ingestor', Monitor = 'Monitor', User = 'User', UnrestrictedViewers = 'UnrestrictedViewers', Viewer = 'Viewer' }
 
 	export interface DatabasePrincipalAssignment {
 	}
@@ -1129,7 +1129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabasePrincipalAssignmentCheckNameRequestType { 'Microsoft.Kusto/clusters/databases/principalAssignments' = 0 }
+	export enum DatabasePrincipalAssignmentCheckNameRequestType { 'Microsoft.Kusto/clusters/databases/principalAssignments' = 'Microsoft.Kusto/clusters/databases/principalAssignments' }
 
 
 	/** The list Kusto database principal assignments operation response. */
@@ -1383,7 +1383,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventGridConnectionPropertiesDataFormat { MULTIJSON = 0, JSON = 1, CSV = 2, TSV = 3, SCSV = 4, SOHSV = 5, PSV = 6, TXT = 7, RAW = 8, SINGLEJSON = 9, AVRO = 10, TSVE = 11, PARQUET = 12, ORC = 13 }
+	export enum EventGridConnectionPropertiesDataFormat { MULTIJSON = 'MULTIJSON', JSON = 'JSON', CSV = 'CSV', TSV = 'TSV', SCSV = 'SCSV', SOHSV = 'SOHSV', PSV = 'PSV', TXT = 'TXT', RAW = 'RAW', SINGLEJSON = 'SINGLEJSON', AVRO = 'AVRO', TSVE = 'TSVE', PARQUET = 'PARQUET', ORC = 'ORC' }
 
 
 	/** Class representing an Event Grid data connection. */
@@ -1404,7 +1404,7 @@ export namespace MyNS {
 
 
 	/** The data format of the message. Optionally the data format can be added to each message. */
-	export enum EventGridDataFormat { MULTIJSON = 0, JSON = 1, CSV = 2, TSV = 3, SCSV = 4, SOHSV = 5, PSV = 6, TXT = 7, RAW = 8, SINGLEJSON = 9, AVRO = 10, TSVE = 11, PARQUET = 12, ORC = 13 }
+	export enum EventGridDataFormat { MULTIJSON = 'MULTIJSON', JSON = 'JSON', CSV = 'CSV', TSV = 'TSV', SCSV = 'SCSV', SOHSV = 'SOHSV', PSV = 'PSV', TXT = 'TXT', RAW = 'RAW', SINGLEJSON = 'SINGLEJSON', AVRO = 'AVRO', TSVE = 'TSVE', PARQUET = 'PARQUET', ORC = 'ORC' }
 
 
 	/** Class representing the Kusto event hub connection properties. */
@@ -1496,7 +1496,7 @@ export namespace MyNS {
 
 
 	/** The data format of the message. Optionally the data format can be added to each message. */
-	export enum EventHubDataFormat { MULTIJSON = 0, JSON = 1, CSV = 2, TSV = 3, SCSV = 4, SOHSV = 5, PSV = 6, TXT = 7, RAW = 8, SINGLEJSON = 9, AVRO = 10, TSVE = 11, PARQUET = 12, ORC = 13 }
+	export enum EventHubDataFormat { MULTIJSON = 'MULTIJSON', JSON = 'JSON', CSV = 'CSV', TSV = 'TSV', SCSV = 'SCSV', SOHSV = 'SOHSV', PSV = 'PSV', TXT = 'TXT', RAW = 'RAW', SINGLEJSON = 'SINGLEJSON', AVRO = 'AVRO', TSVE = 'TSVE', PARQUET = 'PARQUET', ORC = 'ORC' }
 
 
 	/** A class representing follower database request. */
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { None = 0, SystemAssigned = 1 }
+	export enum IdentityType { None = 'None', SystemAssigned = 'SystemAssigned' }
 
 	export interface IdentityUserAssignedIdentities {
 
@@ -1732,7 +1732,7 @@ export namespace MyNS {
 
 
 	/** The data format of the message. Optionally the data format can be added to each message. */
-	export enum IotHubDataFormat { MULTIJSON = 0, JSON = 1, CSV = 2, TSV = 3, SCSV = 4, SOHSV = 5, PSV = 6, TXT = 7, RAW = 8, SINGLEJSON = 9, AVRO = 10, TSVE = 11, PARQUET = 12, ORC = 13 }
+	export enum IotHubDataFormat { MULTIJSON = 'MULTIJSON', JSON = 'JSON', CSV = 'CSV', TSV = 'TSV', SCSV = 'SCSV', SOHSV = 'SOHSV', PSV = 'PSV', TXT = 'TXT', RAW = 'RAW', SINGLEJSON = 'SINGLEJSON', AVRO = 'AVRO', TSVE = 'TSVE', PARQUET = 'PARQUET', ORC = 'ORC' }
 
 
 	/** Properties of the key vault. */

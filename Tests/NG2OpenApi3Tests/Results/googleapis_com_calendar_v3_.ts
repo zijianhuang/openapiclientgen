@@ -2811,11 +2811,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Calendar_events_listOrderBy { startTime = 0, updated = 1 }
+	export enum Calendar_events_listOrderBy { startTime = 'startTime', updated = 'updated' }
 
-	export enum Calendar_events_insertSendUpdates { all = 0, externalOnly = 1, none = 2 }
+	export enum Calendar_events_insertSendUpdates { all = 'all', externalOnly = 'externalOnly', none = 'none' }
 
-	export enum Calendar_calendarList_listMinAccessRole { freeBusyReader = 0, owner = 1, reader = 2, writer = 3 }
+	export enum Calendar_calendarList_listMinAccessRole { freeBusyReader = 'freeBusyReader', owner = 'owner', reader = 'reader', writer = 'writer' }
 
 }
 

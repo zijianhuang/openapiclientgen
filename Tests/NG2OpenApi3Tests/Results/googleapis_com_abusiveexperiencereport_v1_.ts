@@ -66,9 +66,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteSummaryResponseAbusiveStatus { UNKNOWN = 0, PASSING = 1, FAILING = 2 }
+	export enum SiteSummaryResponseAbusiveStatus { UNKNOWN = 'UNKNOWN', PASSING = 'PASSING', FAILING = 'FAILING' }
 
-	export enum SiteSummaryResponseFilterStatus { UNKNOWN = 0, ON = 1, OFF = 2, PAUSED = 3, PENDING = 4 }
+	export enum SiteSummaryResponseFilterStatus { UNKNOWN = 'UNKNOWN', ON = 'ON', OFF = 'OFF', PAUSED = 'PAUSED', PENDING = 'PENDING' }
 
 
 	/** Response message for ListViolatingSites. */

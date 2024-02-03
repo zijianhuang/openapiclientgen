@@ -251,7 +251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedServiceIdentityType { UserAssigned = 0 }
+	export enum ManagedServiceIdentityType { UserAssigned = 'UserAssigned' }
 
 
 	/** User-assigned managed identity. */
@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentScriptKind { AzurePowerShell = 0, AzureCLI = 1 }
+	export enum DeploymentScriptKind { AzurePowerShell = 'AzurePowerShell', AzureCLI = 'AzureCLI' }
 
 
 	/** List of deployment scripts. */
@@ -345,9 +345,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentScriptPropertiesBaseCleanupPreference { Always = 0, OnSuccess = 1, OnExpiration = 2 }
+	export enum DeploymentScriptPropertiesBaseCleanupPreference { Always = 'Always', OnSuccess = 'OnSuccess', OnExpiration = 'OnExpiration' }
 
-	export enum DeploymentScriptPropertiesBaseProvisioningState { Creating = 0, ProvisioningResources = 1, Running = 2, Succeeded = 3, Failed = 4, Canceled = 5 }
+	export enum DeploymentScriptPropertiesBaseProvisioningState { Creating = 'Creating', ProvisioningResources = 'ProvisioningResources', Running = 'Running', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** Generic object modeling results of script execution. */

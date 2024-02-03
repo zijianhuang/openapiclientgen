@@ -253,7 +253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HITStatus { Assignable = 0, Unassignable = 1, Reviewable = 2, Reviewing = 3, Disposed = 4 }
+	export enum HITStatus { Assignable = 'Assignable', Unassignable = 'Unassignable', Reviewable = 'Reviewable', Reviewing = 'Reviewing', Disposed = 'Disposed' }
 
 
 	/**  The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results.  */
@@ -291,7 +291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Comparator { LessThan = 0, LessThanOrEqualTo = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, EqualTo = 4, NotEqualTo = 5, Exists = 6, DoesNotExist = 7, In = 8, NotIn = 9 }
+	export enum Comparator { LessThan = 'LessThan', LessThanOrEqualTo = 'LessThanOrEqualTo', GreaterThan = 'GreaterThan', GreaterThanOrEqualTo = 'GreaterThanOrEqualTo', EqualTo = 'EqualTo', NotEqualTo = 'NotEqualTo', Exists = 'Exists', DoesNotExist = 'DoesNotExist', In = 'In', NotIn = 'NotIn' }
 
 
 	/** The Locale data structure represents a geographical region or location. */
@@ -317,9 +317,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HITAccessActions { Accept = 0, PreviewAndAccept = 1, DiscoverPreviewAndAccept = 2 }
+	export enum HITAccessActions { Accept = 'Accept', PreviewAndAccept = 'PreviewAndAccept', DiscoverPreviewAndAccept = 'DiscoverPreviewAndAccept' }
 
-	export enum HITReviewStatus { NotReviewed = 0, MarkedForReview = 1, ReviewedAppropriate = 2, ReviewedInappropriate = 3 }
+	export enum HITReviewStatus { NotReviewed = 'NotReviewed', MarkedForReview = 'MarkedForReview', ReviewedAppropriate = 'ReviewedAppropriate', ReviewedInappropriate = 'ReviewedInappropriate' }
 
 	export interface CreateHITRequest {
 		MaxAssignments?: number | null;
@@ -653,7 +653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QualificationTypeStatus { Active = 0, Inactive = 1 }
+	export enum QualificationTypeStatus { Active = 'Active', Inactive = 'Inactive' }
 
 	export interface CreateQualificationTypeRequest {
 
@@ -958,7 +958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentStatus { Submitted = 0, Approved = 1, Rejected = 2 }
+	export enum AssignmentStatus { Submitted = 'Submitted', Approved = 'Approved', Rejected = 'Rejected' }
 
 	export interface GetAssignmentRequest {
 
@@ -1085,7 +1085,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QualificationStatus { Granted = 0, Revoked = 1 }
+	export enum QualificationStatus { Granted = 'Granted', Revoked = 'Revoked' }
 
 	export interface GetQualificationScoreRequest {
 
@@ -1683,7 +1683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReviewActionStatus { Intended = 0, Succeeded = 1, Failed = 2, Cancelled = 3 }
+	export enum ReviewActionStatus { Intended = 'Intended', Succeeded = 'Succeeded', Failed = 'Failed', Cancelled = 'Cancelled' }
 
 	export interface ListReviewPolicyResultsForHITRequest {
 
@@ -1715,7 +1715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReviewPolicyLevel { Assignment = 0, HIT = 1 }
+	export enum ReviewPolicyLevel { Assignment = 'Assignment', HIT = 'HIT' }
 
 	export interface ListReviewableHITsResponse {
 
@@ -1768,7 +1768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReviewableHITStatus { Reviewable = 0, Reviewing = 1 }
+	export enum ReviewableHITStatus { Reviewable = 'Reviewable', Reviewing = 'Reviewing' }
 
 	export interface ListWorkerBlocksResponse {
 
@@ -1934,7 +1934,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotifyWorkersFailureCode { SoftFailure = 0, HardFailure = 1 }
+	export enum NotifyWorkersFailureCode { SoftFailure = 'SoftFailure', HardFailure = 'HardFailure' }
 
 	export interface NotifyWorkersRequest {
 
@@ -2146,9 +2146,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationTransport { Email = 0, SQS = 1, SNS = 2 }
+	export enum NotificationTransport { Email = 'Email', SQS = 'SQS', SNS = 'SNS' }
 
-	export enum EventType { AssignmentAccepted = 0, AssignmentAbandoned = 1, AssignmentReturned = 2, AssignmentSubmitted = 3, AssignmentRejected = 4, AssignmentApproved = 5, HITCreated = 6, HITExpired = 7, HITReviewable = 8, HITExtended = 9, HITDisposed = 10, Ping = 11 }
+	export enum EventType { AssignmentAccepted = 'AssignmentAccepted', AssignmentAbandoned = 'AssignmentAbandoned', AssignmentReturned = 'AssignmentReturned', AssignmentSubmitted = 'AssignmentSubmitted', AssignmentRejected = 'AssignmentRejected', AssignmentApproved = 'AssignmentApproved', HITCreated = 'HITCreated', HITExpired = 'HITExpired', HITReviewable = 'HITReviewable', HITExtended = 'HITExtended', HITDisposed = 'HITDisposed', Ping = 'Ping' }
 
 	export interface UpdateExpirationForHITResponse {
 	}
@@ -2708,83 +2708,83 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptQualificationRequestX_Amz_Target { 'MTurkRequesterServiceV20170117.AcceptQualificationRequest' = 0 }
+	export enum AcceptQualificationRequestX_Amz_Target { 'MTurkRequesterServiceV20170117.AcceptQualificationRequest' = 'MTurkRequesterServiceV20170117.AcceptQualificationRequest' }
 
-	export enum ApproveAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.ApproveAssignment' = 0 }
+	export enum ApproveAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.ApproveAssignment' = 'MTurkRequesterServiceV20170117.ApproveAssignment' }
 
-	export enum AssociateQualificationWithWorkerX_Amz_Target { 'MTurkRequesterServiceV20170117.AssociateQualificationWithWorker' = 0 }
+	export enum AssociateQualificationWithWorkerX_Amz_Target { 'MTurkRequesterServiceV20170117.AssociateQualificationWithWorker' = 'MTurkRequesterServiceV20170117.AssociateQualificationWithWorker' }
 
-	export enum CreateAdditionalAssignmentsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateAdditionalAssignmentsForHIT' = 0 }
+	export enum CreateAdditionalAssignmentsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateAdditionalAssignmentsForHIT' = 'MTurkRequesterServiceV20170117.CreateAdditionalAssignmentsForHIT' }
 
-	export enum CreateHITX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHIT' = 0 }
+	export enum CreateHITX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHIT' = 'MTurkRequesterServiceV20170117.CreateHIT' }
 
-	export enum CreateHITTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHITType' = 0 }
+	export enum CreateHITTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHITType' = 'MTurkRequesterServiceV20170117.CreateHITType' }
 
-	export enum CreateHITWithHITTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHITWithHITType' = 0 }
+	export enum CreateHITWithHITTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHITWithHITType' = 'MTurkRequesterServiceV20170117.CreateHITWithHITType' }
 
-	export enum CreateQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateQualificationType' = 0 }
+	export enum CreateQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateQualificationType' = 'MTurkRequesterServiceV20170117.CreateQualificationType' }
 
-	export enum CreateWorkerBlockX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateWorkerBlock' = 0 }
+	export enum CreateWorkerBlockX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateWorkerBlock' = 'MTurkRequesterServiceV20170117.CreateWorkerBlock' }
 
-	export enum DeleteHITX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteHIT' = 0 }
+	export enum DeleteHITX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteHIT' = 'MTurkRequesterServiceV20170117.DeleteHIT' }
 
-	export enum DeleteQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteQualificationType' = 0 }
+	export enum DeleteQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteQualificationType' = 'MTurkRequesterServiceV20170117.DeleteQualificationType' }
 
-	export enum DeleteWorkerBlockX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteWorkerBlock' = 0 }
+	export enum DeleteWorkerBlockX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteWorkerBlock' = 'MTurkRequesterServiceV20170117.DeleteWorkerBlock' }
 
-	export enum DisassociateQualificationFromWorkerX_Amz_Target { 'MTurkRequesterServiceV20170117.DisassociateQualificationFromWorker' = 0 }
+	export enum DisassociateQualificationFromWorkerX_Amz_Target { 'MTurkRequesterServiceV20170117.DisassociateQualificationFromWorker' = 'MTurkRequesterServiceV20170117.DisassociateQualificationFromWorker' }
 
-	export enum GetAccountBalanceX_Amz_Target { 'MTurkRequesterServiceV20170117.GetAccountBalance' = 0 }
+	export enum GetAccountBalanceX_Amz_Target { 'MTurkRequesterServiceV20170117.GetAccountBalance' = 'MTurkRequesterServiceV20170117.GetAccountBalance' }
 
-	export enum GetAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.GetAssignment' = 0 }
+	export enum GetAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.GetAssignment' = 'MTurkRequesterServiceV20170117.GetAssignment' }
 
-	export enum GetFileUploadURLX_Amz_Target { 'MTurkRequesterServiceV20170117.GetFileUploadURL' = 0 }
+	export enum GetFileUploadURLX_Amz_Target { 'MTurkRequesterServiceV20170117.GetFileUploadURL' = 'MTurkRequesterServiceV20170117.GetFileUploadURL' }
 
-	export enum GetHITX_Amz_Target { 'MTurkRequesterServiceV20170117.GetHIT' = 0 }
+	export enum GetHITX_Amz_Target { 'MTurkRequesterServiceV20170117.GetHIT' = 'MTurkRequesterServiceV20170117.GetHIT' }
 
-	export enum GetQualificationScoreX_Amz_Target { 'MTurkRequesterServiceV20170117.GetQualificationScore' = 0 }
+	export enum GetQualificationScoreX_Amz_Target { 'MTurkRequesterServiceV20170117.GetQualificationScore' = 'MTurkRequesterServiceV20170117.GetQualificationScore' }
 
-	export enum GetQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.GetQualificationType' = 0 }
+	export enum GetQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.GetQualificationType' = 'MTurkRequesterServiceV20170117.GetQualificationType' }
 
-	export enum ListAssignmentsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.ListAssignmentsForHIT' = 0 }
+	export enum ListAssignmentsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.ListAssignmentsForHIT' = 'MTurkRequesterServiceV20170117.ListAssignmentsForHIT' }
 
-	export enum ListBonusPaymentsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListBonusPayments' = 0 }
+	export enum ListBonusPaymentsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListBonusPayments' = 'MTurkRequesterServiceV20170117.ListBonusPayments' }
 
-	export enum ListHITsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListHITs' = 0 }
+	export enum ListHITsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListHITs' = 'MTurkRequesterServiceV20170117.ListHITs' }
 
-	export enum ListHITsForQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.ListHITsForQualificationType' = 0 }
+	export enum ListHITsForQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.ListHITsForQualificationType' = 'MTurkRequesterServiceV20170117.ListHITsForQualificationType' }
 
-	export enum ListQualificationRequestsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListQualificationRequests' = 0 }
+	export enum ListQualificationRequestsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListQualificationRequests' = 'MTurkRequesterServiceV20170117.ListQualificationRequests' }
 
-	export enum ListQualificationTypesX_Amz_Target { 'MTurkRequesterServiceV20170117.ListQualificationTypes' = 0 }
+	export enum ListQualificationTypesX_Amz_Target { 'MTurkRequesterServiceV20170117.ListQualificationTypes' = 'MTurkRequesterServiceV20170117.ListQualificationTypes' }
 
-	export enum ListReviewPolicyResultsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT' = 0 }
+	export enum ListReviewPolicyResultsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT' = 'MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT' }
 
-	export enum ListReviewableHITsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListReviewableHITs' = 0 }
+	export enum ListReviewableHITsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListReviewableHITs' = 'MTurkRequesterServiceV20170117.ListReviewableHITs' }
 
-	export enum ListWorkerBlocksX_Amz_Target { 'MTurkRequesterServiceV20170117.ListWorkerBlocks' = 0 }
+	export enum ListWorkerBlocksX_Amz_Target { 'MTurkRequesterServiceV20170117.ListWorkerBlocks' = 'MTurkRequesterServiceV20170117.ListWorkerBlocks' }
 
-	export enum ListWorkersWithQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.ListWorkersWithQualificationType' = 0 }
+	export enum ListWorkersWithQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.ListWorkersWithQualificationType' = 'MTurkRequesterServiceV20170117.ListWorkersWithQualificationType' }
 
-	export enum NotifyWorkersX_Amz_Target { 'MTurkRequesterServiceV20170117.NotifyWorkers' = 0 }
+	export enum NotifyWorkersX_Amz_Target { 'MTurkRequesterServiceV20170117.NotifyWorkers' = 'MTurkRequesterServiceV20170117.NotifyWorkers' }
 
-	export enum RejectAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.RejectAssignment' = 0 }
+	export enum RejectAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.RejectAssignment' = 'MTurkRequesterServiceV20170117.RejectAssignment' }
 
-	export enum RejectQualificationRequestX_Amz_Target { 'MTurkRequesterServiceV20170117.RejectQualificationRequest' = 0 }
+	export enum RejectQualificationRequestX_Amz_Target { 'MTurkRequesterServiceV20170117.RejectQualificationRequest' = 'MTurkRequesterServiceV20170117.RejectQualificationRequest' }
 
-	export enum SendBonusX_Amz_Target { 'MTurkRequesterServiceV20170117.SendBonus' = 0 }
+	export enum SendBonusX_Amz_Target { 'MTurkRequesterServiceV20170117.SendBonus' = 'MTurkRequesterServiceV20170117.SendBonus' }
 
-	export enum SendTestEventNotificationX_Amz_Target { 'MTurkRequesterServiceV20170117.SendTestEventNotification' = 0 }
+	export enum SendTestEventNotificationX_Amz_Target { 'MTurkRequesterServiceV20170117.SendTestEventNotification' = 'MTurkRequesterServiceV20170117.SendTestEventNotification' }
 
-	export enum UpdateExpirationForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateExpirationForHIT' = 0 }
+	export enum UpdateExpirationForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateExpirationForHIT' = 'MTurkRequesterServiceV20170117.UpdateExpirationForHIT' }
 
-	export enum UpdateHITReviewStatusX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateHITReviewStatus' = 0 }
+	export enum UpdateHITReviewStatusX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateHITReviewStatus' = 'MTurkRequesterServiceV20170117.UpdateHITReviewStatus' }
 
-	export enum UpdateHITTypeOfHITX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateHITTypeOfHIT' = 0 }
+	export enum UpdateHITTypeOfHITX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateHITTypeOfHIT' = 'MTurkRequesterServiceV20170117.UpdateHITTypeOfHIT' }
 
-	export enum UpdateNotificationSettingsX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateNotificationSettings' = 0 }
+	export enum UpdateNotificationSettingsX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateNotificationSettings' = 'MTurkRequesterServiceV20170117.UpdateNotificationSettings' }
 
-	export enum UpdateQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateQualificationType' = 0 }
+	export enum UpdateQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateQualificationType' = 'MTurkRequesterServiceV20170117.UpdateQualificationType' }
 
 }
 

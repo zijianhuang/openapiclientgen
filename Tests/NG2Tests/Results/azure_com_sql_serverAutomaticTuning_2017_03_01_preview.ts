@@ -45,11 +45,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomaticTuningServerOptionsActualState { Off = 0, On = 1 }
+	export enum AutomaticTuningServerOptionsActualState { Off = 'Off', On = 'On' }
 
-	export enum AutomaticTuningServerOptionsDesiredState { Off = 0, On = 1, Default = 2 }
+	export enum AutomaticTuningServerOptionsDesiredState { Off = 'Off', On = 'On', Default = 'Default' }
 
-	export enum AutomaticTuningServerOptionsReasonDesc { Default = 0, Disabled = 1, AutoConfigured = 2 }
+	export enum AutomaticTuningServerOptionsReasonDesc { Default = 'Default', Disabled = 'Disabled', AutoConfigured = 'AutoConfigured' }
 
 
 	/** Server-level Automatic Tuning properties. */
@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomaticTuningServerPropertiesActualState { Custom = 0, Auto = 1, Unspecified = 2 }
+	export enum AutomaticTuningServerPropertiesActualState { Custom = 'Custom', Auto = 'Auto', Unspecified = 'Unspecified' }
 
 
 	/** Server-level Automatic Tuning. */

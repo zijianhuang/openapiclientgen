@@ -1307,7 +1307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EtcerPostBodyFormat { pdf = 0 }
+	export enum EtcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface GovidPostBody {
 		certificateParameters?: GovidPostBodyCertificateParameters;

@@ -72,9 +72,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionHookActionBodyHttpMethod { CONNECT = 0, DELETE = 1, GET = 2, HEAD = 3, OPTIONS = 4, PATCH = 5, POST = 6, PUT = 7, TRACE = 8 }
+	export enum ActionHookActionBodyHttpMethod { CONNECT = 'CONNECT', DELETE = 'DELETE', GET = 'GET', HEAD = 'HEAD', OPTIONS = 'OPTIONS', PATCH = 'PATCH', POST = 'POST', PUT = 'PUT', TRACE = 'TRACE' }
 
-	export enum ActionHookActionBodyType { ACTION_HOOK = 0 }
+	export enum ActionHookActionBodyType { ACTION_HOOK = 'ACTION_HOOK' }
 
 
 	/** Configuration for custom user actions on cards. */
@@ -220,7 +220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CardDisplayPropertyDataType { BOOLEAN = 0, CURRENCY = 1, DATE = 2, DATETIME = 3, EMAIL = 4, LINK = 5, NUMERIC = 6, STRING = 7, STATUS = 8 }
+	export enum CardDisplayPropertyDataType { BOOLEAN = 'BOOLEAN', CURRENCY = 'CURRENCY', DATE = 'DATE', DATETIME = 'DATETIME', EMAIL = 'EMAIL', LINK = 'LINK', NUMERIC = 'NUMERIC', STRING = 'STRING', STATUS = 'STATUS' }
 
 
 	/** Option definition for STATUS dataTypes. */
@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisplayOptionType { DEFAULT = 0, SUCCESS = 1, WARNING = 2, DANGER = 3, INFO = 4 }
+	export enum DisplayOptionType { DEFAULT = 'DEFAULT', SUCCESS = 'SUCCESS', WARNING = 'WARNING', DANGER = 'DANGER', INFO = 'INFO' }
 
 
 	/** Configuration for this card's data fetch request. */
@@ -339,7 +339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CardObjectTypeBodyName { contacts = 0, deals = 1, companies = 2, tickets = 3 }
+	export enum CardObjectTypeBodyName { contacts = 'contacts', deals = 'deals', companies = 'companies', tickets = 'tickets' }
 
 
 	/** Variant of CardFetchBody with fields as optional for patches */
@@ -658,7 +658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IFrameActionBodyType { IFRAME = 0 }
+	export enum IFrameActionBodyType { IFRAME = 'IFRAME' }
 
 
 	/** The card details payload, sent to HubSpot by an app in response to a data fetch request when a user visits a CRM record page. */
@@ -708,7 +708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegratorCardPayloadResponseResponseVersion { v1 = 0, v3 = 1 }
+	export enum IntegratorCardPayloadResponseResponseVersion { v1 = 'v1', v3 = 'v3' }
 
 	export interface IntegratorObjectResult {
 

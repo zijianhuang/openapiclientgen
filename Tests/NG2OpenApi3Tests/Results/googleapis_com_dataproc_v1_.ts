@@ -596,7 +596,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceGroupConfigPreemptibility { PREEMPTIBILITY_UNSPECIFIED = 0, NON_PREEMPTIBLE = 1, PREEMPTIBLE = 2, SPOT = 3 }
+	export enum InstanceGroupConfigPreemptibility { PREEMPTIBILITY_UNSPECIFIED = 'PREEMPTIBILITY_UNSPECIFIED', NON_PREEMPTIBLE = 'NON_PREEMPTIBLE', PREEMPTIBLE = 'PREEMPTIBLE', SPOT = 'SPOT' }
 
 
 	/** Configuration to handle the startup of instances during cluster create and update process. */
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchState { STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, CANCELLING = 3, CANCELLED = 4, SUCCEEDED = 5, FAILED = 6 }
+	export enum BatchState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Historical state information. */
@@ -1354,7 +1354,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchOperationMetadataOperationType { BATCH_OPERATION_TYPE_UNSPECIFIED = 0, BATCH = 1 }
+	export enum BatchOperationMetadataOperationType { BATCH_OPERATION_TYPE_UNSPECIFIED = 'BATCH_OPERATION_TYPE_UNSPECIFIED', BATCH = 'BATCH' }
 
 
 	/** Associates members, or principals, with a role. */
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricMetricSource { METRIC_SOURCE_UNSPECIFIED = 0, MONITORING_AGENT_DEFAULTS = 1, HDFS = 2, SPARK = 3, YARN = 4, SPARK_HISTORY_SERVER = 5, HIVESERVER2 = 6, HIVEMETASTORE = 7, FLINK = 8 }
+	export enum MetricMetricSource { METRIC_SOURCE_UNSPECIFIED = 'METRIC_SOURCE_UNSPECIFIED', MONITORING_AGENT_DEFAULTS = 'MONITORING_AGENT_DEFAULTS', HDFS = 'HDFS', SPARK = 'SPARK', YARN = 'YARN', SPARK_HISTORY_SERVER = 'SPARK_HISTORY_SERVER', HIVESERVER2 = 'HIVESERVER2', HIVEMETASTORE = 'HIVEMETASTORE', FLINK = 'FLINK' }
 
 
 	/** Encryption settings for the cluster. */
@@ -1791,7 +1791,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GceClusterConfigPrivateIpv6GoogleAccess { PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0, INHERIT_FROM_SUBNETWORK = 1, OUTBOUND = 2, BIDIRECTIONAL = 3 }
+	export enum GceClusterConfigPrivateIpv6GoogleAccess { PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 'PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED', INHERIT_FROM_SUBNETWORK = 'INHERIT_FROM_SUBNETWORK', OUTBOUND = 'OUTBOUND', BIDIRECTIONAL = 'BIDIRECTIONAL' }
 
 
 	/** Reservation Affinity for consuming Zonal reservation. */
@@ -1824,7 +1824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservationAffinityConsumeReservationType { TYPE_UNSPECIFIED = 0, NO_RESERVATION = 1, ANY_RESERVATION = 2, SPECIFIC_RESERVATION = 3 }
+	export enum ReservationAffinityConsumeReservationType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', NO_RESERVATION = 'NO_RESERVATION', ANY_RESERVATION = 'ANY_RESERVATION', SPECIFIC_RESERVATION = 'SPECIFIC_RESERVATION' }
 
 
 	/** Shielded Instance Config for clusters using Compute Engine Shielded VMs (https://cloud.google.com/security/shielded-cloud/shielded-vm). */
@@ -2419,9 +2419,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterStatusState { UNKNOWN = 0, CREATING = 1, RUNNING = 2, ERROR = 3, ERROR_DUE_TO_UPDATE = 4, DELETING = 5, UPDATING = 6, STOPPING = 7, STOPPED = 8, STARTING = 9, REPAIRING = 10 }
+	export enum ClusterStatusState { UNKNOWN = 'UNKNOWN', CREATING = 'CREATING', RUNNING = 'RUNNING', ERROR = 'ERROR', ERROR_DUE_TO_UPDATE = 'ERROR_DUE_TO_UPDATE', DELETING = 'DELETING', UPDATING = 'UPDATING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', STARTING = 'STARTING', REPAIRING = 'REPAIRING' }
 
-	export enum ClusterStatusSubstate { UNSPECIFIED = 0, UNHEALTHY = 1, STALE_STATUS = 2 }
+	export enum ClusterStatusSubstate { UNSPECIFIED = 'UNSPECIFIED', UNHEALTHY = 'UNHEALTHY', STALE_STATUS = 'STALE_STATUS' }
 
 
 	/** The Dataproc cluster config for a cluster that does not directly control the underlying compute resources, such as a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview). */
@@ -2643,7 +2643,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterOperationStatusState { UNKNOWN = 0, PENDING = 1, RUNNING = 2, DONE = 3 }
+	export enum ClusterOperationStatusState { UNKNOWN = 'UNKNOWN', PENDING = 'PENDING', RUNNING = 'RUNNING', DONE = 'DONE' }
 
 
 	/** A selector that chooses target cluster for jobs based on metadata. */
@@ -2752,7 +2752,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnoseClusterRequestTarballAccess { TARBALL_ACCESS_UNSPECIFIED = 0, GOOGLE_CLOUD_SUPPORT = 1, GOOGLE_DATAPROC_DIAGNOSE = 2 }
+	export enum DiagnoseClusterRequestTarballAccess { TARBALL_ACCESS_UNSPECIFIED = 'TARBALL_ACCESS_UNSPECIFIED', GOOGLE_CLOUD_SUPPORT = 'GOOGLE_CLOUD_SUPPORT', GOOGLE_DATAPROC_DIAGNOSE = 'GOOGLE_DATAPROC_DIAGNOSE' }
 
 
 	/** The location of diagnostic output. */
@@ -2889,7 +2889,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingConfigDriverLogLevels { LEVEL_UNSPECIFIED = 0, ALL = 1, TRACE = 2, DEBUG = 3, INFO = 4, WARN = 5, ERROR = 6, FATAL = 7, OFF = 8 }
+	export enum LoggingConfigDriverLogLevels { LEVEL_UNSPECIFIED = 'LEVEL_UNSPECIFIED', ALL = 'ALL', TRACE = 'TRACE', DEBUG = 'DEBUG', INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR', FATAL = 'FATAL', OFF = 'OFF' }
 
 
 	/** Request message for GetIamPolicy method. */
@@ -3643,9 +3643,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatusState { STATE_UNSPECIFIED = 0, PENDING = 1, SETUP_DONE = 2, RUNNING = 3, CANCEL_PENDING = 4, CANCEL_STARTED = 5, CANCELLED = 6, DONE = 7, ERROR = 8, ATTEMPT_FAILURE = 9 }
+	export enum JobStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', SETUP_DONE = 'SETUP_DONE', RUNNING = 'RUNNING', CANCEL_PENDING = 'CANCEL_PENDING', CANCEL_STARTED = 'CANCEL_STARTED', CANCELLED = 'CANCELLED', DONE = 'DONE', ERROR = 'ERROR', ATTEMPT_FAILURE = 'ATTEMPT_FAILURE' }
 
-	export enum JobStatusSubstate { UNSPECIFIED = 0, SUBMITTED = 1, QUEUED = 2, STALE_STATUS = 3 }
+	export enum JobStatusSubstate { UNSPECIFIED = 'UNSPECIFIED', SUBMITTED = 'SUBMITTED', QUEUED = 'QUEUED', STALE_STATUS = 'STALE_STATUS' }
 
 
 	/** A Dataproc job for running Trino (https://trino.io/) queries. IMPORTANT: The Dataproc Trino Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/trino) must be enabled when the cluster is created to submit a Trino job to the cluster. */
@@ -3740,7 +3740,7 @@ export namespace MyNS {
 
 	}
 
-	export enum YarnApplicationState { STATE_UNSPECIFIED = 0, NEW = 1, NEW_SAVING = 2, SUBMITTED = 3, ACCEPTED = 4, RUNNING = 5, FINISHED = 6, FAILED = 7, KILLED = 8 }
+	export enum YarnApplicationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NEW = 'NEW', NEW_SAVING = 'NEW_SAVING', SUBMITTED = 'SUBMITTED', ACCEPTED = 'ACCEPTED', RUNNING = 'RUNNING', FINISHED = 'FINISHED', FAILED = 'FAILED', KILLED = 'KILLED' }
 
 
 	/** Job Operation metadata. */
@@ -3808,7 +3808,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JupyterConfigKernel { KERNEL_UNSPECIFIED = 0, PYTHON = 1, SCALA = 2 }
+	export enum JupyterConfigKernel { KERNEL_UNSPECIFIED = 'KERNEL_UNSPECIFIED', PYTHON = 'PYTHON', SCALA = 'SCALA' }
 
 
 	/** A response to a request to list autoscaling policies in a project. */
@@ -4231,7 +4231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, TERMINATING = 3, TERMINATED = 4, FAILED = 5 }
+	export enum SessionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', FAILED = 'FAILED' }
 
 
 	/** Historical state information. */
@@ -4627,7 +4627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeGroupOperationMetadataOperationType { NODE_GROUP_OPERATION_TYPE_UNSPECIFIED = 0, CREATE = 1, UPDATE = 2, DELETE = 3, RESIZE = 4, REPAIR = 5 }
+	export enum NodeGroupOperationMetadataOperationType { NODE_GROUP_OPERATION_TYPE_UNSPECIFIED = 'NODE_GROUP_OPERATION_TYPE_UNSPECIFIED', CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE', RESIZE = 'RESIZE', REPAIR = 'REPAIR' }
 
 
 	/** indicating a list of workers of same type */
@@ -4660,7 +4660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodePoolRepairAction { REPAIR_ACTION_UNSPECIFIED = 0, DELETE = 1 }
+	export enum NodePoolRepairAction { REPAIR_ACTION_UNSPECIFIED = 'REPAIR_ACTION_UNSPECIFIED', DELETE = 'DELETE' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources.A Policy is a collection of bindings. A binding binds one or more members, or principals, to a single role. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role.For some types of Google Cloud resources, a binding can also specify a condition, which is a logical expression that allows access to a resource only if the expression evaluates to true. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies).JSON example: { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } YAML example: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the IAM documentation (https://cloud.google.com/iam/docs/). */
@@ -4846,7 +4846,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionOperationMetadataOperationType { SESSION_OPERATION_TYPE_UNSPECIFIED = 0, CREATE = 1, TERMINATE = 2, DELETE = 3 }
+	export enum SessionOperationMetadataOperationType { SESSION_OPERATION_TYPE_UNSPECIFIED = 'SESSION_OPERATION_TYPE_UNSPECIFIED', CREATE = 'CREATE', TERMINATE = 'TERMINATE', DELETE = 'DELETE' }
 
 
 	/** Request message for SetIamPolicy method. */
@@ -5062,7 +5062,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowNodeState { NODE_STATE_UNSPECIFIED = 0, BLOCKED = 1, RUNNABLE = 2, RUNNING = 3, COMPLETED = 4, FAILED = 5 }
+	export enum WorkflowNodeState { NODE_STATE_UNSPECIFIED = 'NODE_STATE_UNSPECIFIED', BLOCKED = 'BLOCKED', RUNNABLE = 'RUNNABLE', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** A Dataproc workflow template resource. */
@@ -5642,9 +5642,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Dataproc_projects_regions_clusters_createActionOnFailedPrimaryWorkers { FAILURE_ACTION_UNSPECIFIED = 0, NO_ACTION = 1, DELETE = 2 }
+	export enum Dataproc_projects_regions_clusters_createActionOnFailedPrimaryWorkers { FAILURE_ACTION_UNSPECIFIED = 'FAILURE_ACTION_UNSPECIFIED', NO_ACTION = 'NO_ACTION', DELETE = 'DELETE' }
 
-	export enum Dataproc_projects_regions_jobs_listJobStateMatcher { ALL = 0, ACTIVE = 1, NON_ACTIVE = 2 }
+	export enum Dataproc_projects_regions_jobs_listJobStateMatcher { ALL = 'ALL', ACTIVE = 'ACTIVE', NON_ACTIVE = 'NON_ACTIVE' }
 
 }
 

@@ -129,7 +129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThirdPartyType { RESOURCE = 0, MODULE = 1, HOOK = 2 }
+	export enum ThirdPartyType { RESOURCE = 'RESOURCE', MODULE = 'MODULE', HOOK = 'HOOK' }
 
 
 	/** <p>Detailed information concerning the specification of a CloudFormation extension in a given account and Region.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p> */
@@ -246,7 +246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Capability { CAPABILITY_IAM = 0, CAPABILITY_NAMED_IAM = 1, CAPABILITY_AUTO_EXPAND = 2 }
+	export enum Capability { CAPABILITY_IAM = 'CAPABILITY_IAM', CAPABILITY_NAMED_IAM = 'CAPABILITY_NAMED_IAM', CAPABILITY_AUTO_EXPAND = 'CAPABILITY_AUTO_EXPAND' }
 
 
 	/** A rollback trigger CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation. */
@@ -405,9 +405,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountFilterType { NONE = 0, INTERSECTION = 1, DIFFERENCE = 2, UNION = 3 }
+	export enum AccountFilterType { NONE = 'NONE', INTERSECTION = 'INTERSECTION', DIFFERENCE = 'DIFFERENCE', UNION = 'UNION' }
 
-	export enum RegionConcurrencyType { SEQUENTIAL = 0, PARALLEL = 1 }
+	export enum RegionConcurrencyType { SEQUENTIAL = 'SEQUENTIAL', PARALLEL = 'PARALLEL' }
 
 	export interface StackSetNotFoundException {
 	}
@@ -669,9 +669,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStatus { UNAVAILABLE = 0, AVAILABLE = 1, EXECUTE_IN_PROGRESS = 2, EXECUTE_COMPLETE = 3, EXECUTE_FAILED = 4, OBSOLETE = 5 }
+	export enum ExecutionStatus { UNAVAILABLE = 'UNAVAILABLE', AVAILABLE = 'AVAILABLE', EXECUTE_IN_PROGRESS = 'EXECUTE_IN_PROGRESS', EXECUTE_COMPLETE = 'EXECUTE_COMPLETE', EXECUTE_FAILED = 'EXECUTE_FAILED', OBSOLETE = 'OBSOLETE' }
 
-	export enum ChangeSetStatus { CREATE_PENDING = 0, CREATE_IN_PROGRESS = 1, CREATE_COMPLETE = 2, DELETE_PENDING = 3, DELETE_IN_PROGRESS = 4, DELETE_COMPLETE = 5, DELETE_FAILED = 6, FAILED = 7 }
+	export enum ChangeSetStatus { CREATE_PENDING = 'CREATE_PENDING', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_COMPLETE = 'CREATE_COMPLETE', DELETE_PENDING = 'DELETE_PENDING', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_COMPLETE = 'DELETE_COMPLETE', DELETE_FAILED = 'DELETE_FAILED', FAILED = 'FAILED' }
 
 
 	/** <p>Structure containing the rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
@@ -712,7 +712,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeType { Resource = 0 }
+	export enum ChangeType { Resource = 'Resource' }
 
 
 	/** The <code>ResourceChange</code> structure describes the resource and the action that CloudFormation will perform on it if you execute this change set. */
@@ -749,11 +749,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeAction { Add = 0, Modify = 1, Remove = 2, Import = 3, Dynamic = 4 }
+	export enum ChangeAction { Add = 'Add', Modify = 'Modify', Remove = 'Remove', Import = 'Import', Dynamic = 'Dynamic' }
 
-	export enum Replacement { True = 0, False = 1, Conditional = 2 }
+	export enum Replacement { True = 'True', False = 'False', Conditional = 'Conditional' }
 
-	export enum ResourceAttribute { Properties = 0, Metadata = 1, CreationPolicy = 2, UpdatePolicy = 3, DeletionPolicy = 4, Tags = 5 }
+	export enum ResourceAttribute { Properties = 'Properties', Metadata = 'Metadata', CreationPolicy = 'CreationPolicy', UpdatePolicy = 'UpdatePolicy', DeletionPolicy = 'DeletionPolicy', Tags = 'Tags' }
 
 
 	/** For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes CloudFormation will make to that resource. */
@@ -802,11 +802,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RequiresRecreation { Never = 0, Conditionally = 1, Always = 2 }
+	export enum RequiresRecreation { Never = 'Never', Conditionally = 'Conditionally', Always = 'Always' }
 
-	export enum EvaluationType { Static = 0, Dynamic = 1 }
+	export enum EvaluationType { Static = 'Static', Dynamic = 'Dynamic' }
 
-	export enum ChangeSource { ResourceReference = 0, ParameterReference = 1, ResourceAttribute = 2, DirectModification = 3, Automatic = 4 }
+	export enum ChangeSource { ResourceReference = 'ResourceReference', ParameterReference = 'ParameterReference', ResourceAttribute = 'ResourceAttribute', DirectModification = 'DirectModification', Automatic = 'Automatic' }
 
 
 	/** <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p> <p>For more information about modules, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Using modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation User Guide</i>.</p> */
@@ -828,7 +828,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OnStackFailure { DO_NOTHING = 0, ROLLBACK = 1, DELETE = 2 }
+	export enum OnStackFailure { DO_NOTHING = 'DO_NOTHING', ROLLBACK = 'ROLLBACK', DELETE = 'DELETE' }
 
 	export interface ChangeSetNotFoundException {
 	}
@@ -899,9 +899,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HookInvocationPoint { PRE_PROVISION = 0 }
+	export enum HookInvocationPoint { PRE_PROVISION = 'PRE_PROVISION' }
 
-	export enum HookFailureMode { FAIL = 0, WARN = 1 }
+	export enum HookFailureMode { FAIL = 'FAIL', WARN = 'WARN' }
 
 
 	/** Specifies target details for an activated hook. */
@@ -921,7 +921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HookTargetType { RESOURCE = 0 }
+	export enum HookTargetType { RESOURCE = 'RESOURCE' }
 
 
 	/** Specifies <code>RESOURCE</code> type target details for activated hooks. */
@@ -946,7 +946,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeSetHooksStatus { PLANNING = 0, PLANNED = 1, UNAVAILABLE = 2 }
+	export enum ChangeSetHooksStatus { PLANNING = 'PLANNING', PLANNED = 'PLANNED', UNAVAILABLE = 'UNAVAILABLE' }
 
 	export interface DescribeOrganizationsAccessOutput {
 		Status?: OrganizationStatus;
@@ -961,7 +961,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationStatus { ENABLED = 0, DISABLED = 1, DISABLED_PERMANENTLY = 2 }
+	export enum OrganizationStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DISABLED_PERMANENTLY = 'DISABLED_PERMANENTLY' }
 
 	export interface DescribePublisherOutput {
 		PublisherId?: string;
@@ -985,9 +985,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PublisherStatus { VERIFIED = 0, UNVERIFIED = 1 }
+	export enum PublisherStatus { VERIFIED = 'VERIFIED', UNVERIFIED = 'UNVERIFIED' }
 
-	export enum IdentityProvider { AWS_Marketplace = 0, GitHub = 1, Bitbucket = 2 }
+	export enum IdentityProvider { AWS_Marketplace = 'AWS_Marketplace', GitHub = 'GitHub', Bitbucket = 'Bitbucket' }
 
 	export interface DescribeStackDriftDetectionStatusOutput {
 
@@ -1036,9 +1036,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StackDriftStatus { DRIFTED = 0, IN_SYNC = 1, UNKNOWN = 2, NOT_CHECKED = 3 }
+	export enum StackDriftStatus { DRIFTED = 'DRIFTED', IN_SYNC = 'IN_SYNC', UNKNOWN = 'UNKNOWN', NOT_CHECKED = 'NOT_CHECKED' }
 
-	export enum StackDriftDetectionStatus { DETECTION_IN_PROGRESS = 0, DETECTION_FAILED = 1, DETECTION_COMPLETE = 2 }
+	export enum StackDriftDetectionStatus { DETECTION_IN_PROGRESS = 'DETECTION_IN_PROGRESS', DETECTION_FAILED = 'DETECTION_FAILED', DETECTION_COMPLETE = 'DETECTION_COMPLETE' }
 
 
 	/** The output for a <a>DescribeStackEvents</a> action. */
@@ -1136,9 +1136,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4, DELETE_COMPLETE = 5, DELETE_SKIPPED = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8, UPDATE_COMPLETE = 9, IMPORT_FAILED = 10, IMPORT_COMPLETE = 11, IMPORT_IN_PROGRESS = 12, IMPORT_ROLLBACK_IN_PROGRESS = 13, IMPORT_ROLLBACK_FAILED = 14, IMPORT_ROLLBACK_COMPLETE = 15, UPDATE_ROLLBACK_IN_PROGRESS = 16, UPDATE_ROLLBACK_COMPLETE = 17, UPDATE_ROLLBACK_FAILED = 18, ROLLBACK_IN_PROGRESS = 19, ROLLBACK_COMPLETE = 20, ROLLBACK_FAILED = 21 }
+	export enum ResourceStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', CREATE_COMPLETE = 'CREATE_COMPLETE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', DELETE_COMPLETE = 'DELETE_COMPLETE', DELETE_SKIPPED = 'DELETE_SKIPPED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_FAILED = 'UPDATE_FAILED', UPDATE_COMPLETE = 'UPDATE_COMPLETE', IMPORT_FAILED = 'IMPORT_FAILED', IMPORT_COMPLETE = 'IMPORT_COMPLETE', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS', IMPORT_ROLLBACK_IN_PROGRESS = 'IMPORT_ROLLBACK_IN_PROGRESS', IMPORT_ROLLBACK_FAILED = 'IMPORT_ROLLBACK_FAILED', IMPORT_ROLLBACK_COMPLETE = 'IMPORT_ROLLBACK_COMPLETE', UPDATE_ROLLBACK_IN_PROGRESS = 'UPDATE_ROLLBACK_IN_PROGRESS', UPDATE_ROLLBACK_COMPLETE = 'UPDATE_ROLLBACK_COMPLETE', UPDATE_ROLLBACK_FAILED = 'UPDATE_ROLLBACK_FAILED', ROLLBACK_IN_PROGRESS = 'ROLLBACK_IN_PROGRESS', ROLLBACK_COMPLETE = 'ROLLBACK_COMPLETE', ROLLBACK_FAILED = 'ROLLBACK_FAILED' }
 
-	export enum HookStatus { HOOK_IN_PROGRESS = 0, HOOK_COMPLETE_SUCCEEDED = 1, HOOK_COMPLETE_FAILED = 2, HOOK_FAILED = 3 }
+	export enum HookStatus { HOOK_IN_PROGRESS = 'HOOK_IN_PROGRESS', HOOK_COMPLETE_SUCCEEDED = 'HOOK_COMPLETE_SUCCEEDED', HOOK_COMPLETE_FAILED = 'HOOK_COMPLETE_FAILED', HOOK_FAILED = 'HOOK_FAILED' }
 
 	export interface DescribeStackInstanceOutput {
 		StackInstance?: StackInstance;
@@ -1197,7 +1197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackInstanceStatus { CURRENT = 0, OUTDATED = 1, INOPERABLE = 2 }
+	export enum StackInstanceStatus { CURRENT = 'CURRENT', OUTDATED = 'OUTDATED', INOPERABLE = 'INOPERABLE' }
 
 
 	/** The detailed status of the stack instance. */
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackInstanceDetailedStatus { PENDING = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4, INOPERABLE = 5, SKIPPED_SUSPENDED_ACCOUNT = 6 }
+	export enum StackInstanceDetailedStatus { PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', INOPERABLE = 'INOPERABLE', SKIPPED_SUSPENDED_ACCOUNT = 'SKIPPED_SUSPENDED_ACCOUNT' }
 
 	export interface StackInstanceNotFoundException {
 	}
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackResourceDriftStatus { IN_SYNC = 0, MODIFIED = 1, DELETED = 2, NOT_CHECKED = 3 }
+	export enum StackResourceDriftStatus { IN_SYNC = 'IN_SYNC', MODIFIED = 'MODIFIED', DELETED = 'DELETED', NOT_CHECKED = 'NOT_CHECKED' }
 
 	export interface DescribeStackResourceDriftsOutput {
 
@@ -1478,7 +1478,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DifferenceType { ADD = 0, REMOVE = 1, NOT_EQUAL = 2 }
+	export enum DifferenceType { ADD = 'ADD', REMOVE = 'REMOVE', NOT_EQUAL = 'NOT_EQUAL' }
 
 
 	/** The output for a <a>DescribeStackResources</a> action. */
@@ -1614,7 +1614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackSetStatus { ACTIVE = 0, DELETED = 1 }
+	export enum StackSetStatus { ACTIVE = 'ACTIVE', DELETED = 'DELETED' }
 
 
 	/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress isn't included.</p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting unmanaged changes in stack sets</a> in the <i>CloudFormation User Guide</i>.</p> */
@@ -1654,9 +1654,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StackSetDriftStatus { DRIFTED = 0, IN_SYNC = 1, NOT_CHECKED = 2 }
+	export enum StackSetDriftStatus { DRIFTED = 'DRIFTED', IN_SYNC = 'IN_SYNC', NOT_CHECKED = 'NOT_CHECKED' }
 
-	export enum StackSetDriftDetectionStatus { COMPLETED = 0, FAILED = 1, PARTIAL_SUCCESS = 2, IN_PROGRESS = 3, STOPPED = 4 }
+	export enum StackSetDriftDetectionStatus { COMPLETED = 'COMPLETED', FAILED = 'FAILED', PARTIAL_SUCCESS = 'PARTIAL_SUCCESS', IN_PROGRESS = 'IN_PROGRESS', STOPPED = 'STOPPED' }
 
 
 	/** [Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU). */
@@ -1678,7 +1678,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionModels { SERVICE_MANAGED = 0, SELF_MANAGED = 1 }
+	export enum PermissionModels { SERVICE_MANAGED = 'SERVICE_MANAGED', SELF_MANAGED = 'SELF_MANAGED' }
 
 
 	/** Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations. */
@@ -1756,9 +1756,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StackSetOperationAction { CREATE = 0, UPDATE = 1, DELETE = 2, DETECT_DRIFT = 3 }
+	export enum StackSetOperationAction { CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE', DETECT_DRIFT = 'DETECT_DRIFT' }
 
-	export enum StackSetOperationStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, STOPPING = 3, STOPPED = 4, QUEUED = 5 }
+	export enum StackSetOperationStatus { RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', STOPPING = 'STOPPING', STOPPED = 'STOPPED', QUEUED = 'QUEUED' }
 
 
 	/** <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p> <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
@@ -1928,7 +1928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, ROLLBACK_IN_PROGRESS = 3, ROLLBACK_FAILED = 4, ROLLBACK_COMPLETE = 5, DELETE_IN_PROGRESS = 6, DELETE_FAILED = 7, DELETE_COMPLETE = 8, UPDATE_IN_PROGRESS = 9, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = 10, UPDATE_COMPLETE = 11, UPDATE_FAILED = 12, UPDATE_ROLLBACK_IN_PROGRESS = 13, UPDATE_ROLLBACK_FAILED = 14, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = 15, UPDATE_ROLLBACK_COMPLETE = 16, REVIEW_IN_PROGRESS = 17, IMPORT_IN_PROGRESS = 18, IMPORT_COMPLETE = 19, IMPORT_ROLLBACK_IN_PROGRESS = 20, IMPORT_ROLLBACK_FAILED = 21, IMPORT_ROLLBACK_COMPLETE = 22 }
+	export enum StackStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', CREATE_COMPLETE = 'CREATE_COMPLETE', ROLLBACK_IN_PROGRESS = 'ROLLBACK_IN_PROGRESS', ROLLBACK_FAILED = 'ROLLBACK_FAILED', ROLLBACK_COMPLETE = 'ROLLBACK_COMPLETE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', DELETE_COMPLETE = 'DELETE_COMPLETE', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = 'UPDATE_COMPLETE_CLEANUP_IN_PROGRESS', UPDATE_COMPLETE = 'UPDATE_COMPLETE', UPDATE_FAILED = 'UPDATE_FAILED', UPDATE_ROLLBACK_IN_PROGRESS = 'UPDATE_ROLLBACK_IN_PROGRESS', UPDATE_ROLLBACK_FAILED = 'UPDATE_ROLLBACK_FAILED', UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = 'UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS', UPDATE_ROLLBACK_COMPLETE = 'UPDATE_ROLLBACK_COMPLETE', REVIEW_IN_PROGRESS = 'REVIEW_IN_PROGRESS', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS', IMPORT_COMPLETE = 'IMPORT_COMPLETE', IMPORT_ROLLBACK_IN_PROGRESS = 'IMPORT_ROLLBACK_IN_PROGRESS', IMPORT_ROLLBACK_FAILED = 'IMPORT_ROLLBACK_FAILED', IMPORT_ROLLBACK_COMPLETE = 'IMPORT_ROLLBACK_COMPLETE' }
 
 
 	/** The Output data type. */
@@ -2067,11 +2067,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeTestsStatus { PASSED = 0, FAILED = 1, IN_PROGRESS = 2, NOT_TESTED = 3 }
+	export enum TypeTestsStatus { PASSED = 'PASSED', FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS', NOT_TESTED = 'NOT_TESTED' }
 
-	export enum ProvisioningType { NON_PROVISIONABLE = 0, IMMUTABLE = 1, FULLY_MUTABLE = 2 }
+	export enum ProvisioningType { NON_PROVISIONABLE = 'NON_PROVISIONABLE', IMMUTABLE = 'IMMUTABLE', FULLY_MUTABLE = 'FULLY_MUTABLE' }
 
-	export enum DeprecatedStatus { LIVE = 0, DEPRECATED = 1 }
+	export enum DeprecatedStatus { LIVE = 'LIVE', DEPRECATED = 'DEPRECATED' }
 
 
 	/** Contains logging configuration information for an extension. */
@@ -2125,7 +2125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Visibility { PUBLIC = 0, PRIVATE = 1 }
+	export enum Visibility { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE' }
 
 	export interface DescribeTypeRegistrationOutput {
 		ProgressStatus?: RegistrationStatus;
@@ -2149,7 +2149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistrationStatus { COMPLETE = 0, IN_PROGRESS = 1, FAILED = 2 }
+	export enum RegistrationStatus { COMPLETE = 'COMPLETE', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED' }
 
 	export interface DetectStackDriftOutput {
 
@@ -2260,7 +2260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateStage { Original = 0, Processed = 1 }
+	export enum TemplateStage { Original = 'Original', Processed = 'Processed' }
 
 
 	/** The output for the <a>GetTemplateSummary</a> action. */
@@ -2662,7 +2662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackInstanceFilterName { DETAILED_STATUS = 0, LAST_OPERATION_ID = 1, DRIFT_STATUS = 2 }
+	export enum StackInstanceFilterName { DETAILED_STATUS = 'DETAILED_STATUS', LAST_OPERATION_ID = 'LAST_OPERATION_ID', DRIFT_STATUS = 'DRIFT_STATUS' }
 
 
 	/** The output for a <a>ListStackResources</a> action. */
@@ -2800,7 +2800,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackSetOperationResultStatus { PENDING = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
+	export enum StackSetOperationResultStatus { PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** <p>Structure that contains the results of the account gate function which CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p> <p>For each account and Region, CloudFormation lets you specify a Lambda function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p> */
@@ -2822,7 +2822,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountGateStatus { SUCCEEDED = 0, FAILED = 1, SKIPPED = 2 }
+	export enum AccountGateStatus { SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', SKIPPED = 'SKIPPED' }
 
 
 	/** The status that operation results are filtered by. */
@@ -2844,7 +2844,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationResultFilterName { OPERATION_RESULT_STATUS = 0 }
+	export enum OperationResultFilterName { OPERATION_RESULT_STATUS = 'OPERATION_RESULT_STATUS' }
 
 	export interface ListStackSetOperationsOutput {
 		Summaries?: Array<StackSetOperationSummary>;
@@ -3177,7 +3177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Category { REGISTERED = 0, ACTIVATED = 1, THIRD_PARTY = 2, AWS_TYPES = 3 }
+	export enum Category { REGISTERED = 'REGISTERED', ACTIVATED = 'ACTIVATED', THIRD_PARTY = 'THIRD_PARTY', AWS_TYPES = 'AWS_TYPES' }
 
 	export interface PublishTypeOutput {
 		PublicTypeArn?: string;
@@ -3422,7 +3422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionBump { MAJOR = 0, MINOR = 1 }
+	export enum VersionBump { MAJOR = 'MAJOR', MINOR = 'MINOR' }
 
 	export interface ActivateTypeInput {
 		Type?: ThirdPartyType;
@@ -3475,7 +3475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CallAs { SELF = 0, DELEGATED_ADMIN = 1 }
+	export enum CallAs { SELF = 'SELF', DELEGATED_ADMIN = 'DELEGATED_ADMIN' }
 
 
 	/** The input for the <a>CancelUpdateStack</a> action. */
@@ -3501,7 +3501,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeSetType { CREATE = 0, UPDATE = 1, IMPORT = 2 }
+	export enum ChangeSetType { CREATE = 'CREATE', UPDATE = 'UPDATE', IMPORT = 'IMPORT' }
 
 
 	/** The input for the <a>ContinueUpdateRollback</a> action. */
@@ -3593,7 +3593,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OnFailure { DO_NOTHING = 0, ROLLBACK = 1, DELETE = 2 }
+	export enum OnFailure { DO_NOTHING = 'DO_NOTHING', ROLLBACK = 'ROLLBACK', DELETE = 'DELETE' }
 
 
 	/** The input for <a>CreateStack</a> action. */
@@ -3871,7 +3871,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistryType { RESOURCE = 0, MODULE = 1, HOOK = 2 }
+	export enum RegistryType { RESOURCE = 'RESOURCE', MODULE = 'MODULE', HOOK = 'HOOK' }
 
 	export interface DeregisterTypeInput {
 		Arn?: string;
@@ -4460,7 +4460,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HandlerErrorCode { NotUpdatable = 0, InvalidRequest = 1, AccessDenied = 2, InvalidCredentials = 3, AlreadyExists = 4, NotFound = 5, ResourceConflict = 6, Throttling = 7, ServiceLimitExceeded = 8, NotStabilized = 9, GeneralServiceException = 10, ServiceInternalError = 11, NetworkFailure = 12, InternalFailure = 13, InvalidTypeConfiguration = 14, HandlerInternalFailure = 15, NonCompliant = 16, Unknown = 17, UnsupportedTarget = 18 }
+	export enum HandlerErrorCode { NotUpdatable = 'NotUpdatable', InvalidRequest = 'InvalidRequest', AccessDenied = 'AccessDenied', InvalidCredentials = 'InvalidCredentials', AlreadyExists = 'AlreadyExists', NotFound = 'NotFound', ResourceConflict = 'ResourceConflict', Throttling = 'Throttling', ServiceLimitExceeded = 'ServiceLimitExceeded', NotStabilized = 'NotStabilized', GeneralServiceException = 'GeneralServiceException', ServiceInternalError = 'ServiceInternalError', NetworkFailure = 'NetworkFailure', InternalFailure = 'InternalFailure', InvalidTypeConfiguration = 'InvalidTypeConfiguration', HandlerInternalFailure = 'HandlerInternalFailure', NonCompliant = 'NonCompliant', Unknown = 'Unknown', UnsupportedTarget = 'UnsupportedTarget' }
 
 	export interface ImportStacksToStackSetInput {
 
@@ -4864,7 +4864,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStatus { PENDING = 0, IN_PROGRESS = 1, SUCCESS = 2, FAILED = 3 }
+	export enum OperationStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
 	export interface PublishTypeInput {
 		Type?: ThirdPartyType;
@@ -4977,7 +4977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSignalStatus { SUCCESS = 0, FAILURE = 1 }
+	export enum ResourceSignalStatus { SUCCESS = 'SUCCESS', FAILURE = 'FAILURE' }
 
 	export interface RollbackStackInput {
 
@@ -6326,9 +6326,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_ActivateOrganizationsAccessAction { ActivateOrganizationsAccess = 0 }
+	export enum GET_ActivateOrganizationsAccessAction { ActivateOrganizationsAccess = 'ActivateOrganizationsAccess' }
 
-	export enum GET_ActivateOrganizationsAccessVersion { '2010-05-15' = 0 }
+	export enum GET_ActivateOrganizationsAccessVersion { '2010-05-15' = '2010-05-15' }
 
 	export interface GET_ActivateTypeLoggingConfig {
 
@@ -6354,13 +6354,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ActivateTypeAction { ActivateType = 0 }
+	export enum GET_ActivateTypeAction { ActivateType = 'ActivateType' }
 
-	export enum GET_BatchDescribeTypeConfigurationsAction { BatchDescribeTypeConfigurations = 0 }
+	export enum GET_BatchDescribeTypeConfigurationsAction { BatchDescribeTypeConfigurations = 'BatchDescribeTypeConfigurations' }
 
-	export enum GET_CancelUpdateStackAction { CancelUpdateStack = 0 }
+	export enum GET_CancelUpdateStackAction { CancelUpdateStack = 'CancelUpdateStack' }
 
-	export enum GET_ContinueUpdateRollbackAction { ContinueUpdateRollback = 0 }
+	export enum GET_ContinueUpdateRollbackAction { ContinueUpdateRollback = 'ContinueUpdateRollback' }
 
 	export interface GET_CreateChangeSetRollbackConfiguration {
 		RollbackTriggers?: Array<RollbackTrigger>;
@@ -6376,7 +6376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateChangeSetAction { CreateChangeSet = 0 }
+	export enum GET_CreateChangeSetAction { CreateChangeSet = 'CreateChangeSet' }
 
 	export interface GET_CreateStackRollbackConfiguration {
 		RollbackTriggers?: Array<RollbackTrigger>;
@@ -6392,7 +6392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateStackAction { CreateStack = 0 }
+	export enum GET_CreateStackAction { CreateStack = 'CreateStack' }
 
 	export interface GET_CreateStackInstancesDeploymentTargets {
 		Accounts?: Array<string>;
@@ -6438,7 +6438,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateStackInstancesAction { CreateStackInstances = 0 }
+	export enum GET_CreateStackInstancesAction { CreateStackInstances = 'CreateStackInstances' }
 
 	export interface GET_CreateStackSetAutoDeployment {
 		Enabled?: boolean | null;
@@ -6469,15 +6469,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateStackSetAction { CreateStackSet = 0 }
+	export enum GET_CreateStackSetAction { CreateStackSet = 'CreateStackSet' }
 
-	export enum GET_DeactivateOrganizationsAccessAction { DeactivateOrganizationsAccess = 0 }
+	export enum GET_DeactivateOrganizationsAccessAction { DeactivateOrganizationsAccess = 'DeactivateOrganizationsAccess' }
 
-	export enum GET_DeactivateTypeAction { DeactivateType = 0 }
+	export enum GET_DeactivateTypeAction { DeactivateType = 'DeactivateType' }
 
-	export enum GET_DeleteChangeSetAction { DeleteChangeSet = 0 }
+	export enum GET_DeleteChangeSetAction { DeleteChangeSet = 'DeleteChangeSet' }
 
-	export enum GET_DeleteStackAction { DeleteStack = 0 }
+	export enum GET_DeleteStackAction { DeleteStack = 'DeleteStack' }
 
 	export interface GET_DeleteStackInstancesDeploymentTargets {
 		Accounts?: Array<string>;
@@ -6523,47 +6523,47 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DeleteStackInstancesAction { DeleteStackInstances = 0 }
+	export enum GET_DeleteStackInstancesAction { DeleteStackInstances = 'DeleteStackInstances' }
 
-	export enum GET_DeleteStackSetAction { DeleteStackSet = 0 }
+	export enum GET_DeleteStackSetAction { DeleteStackSet = 'DeleteStackSet' }
 
-	export enum GET_DeregisterTypeAction { DeregisterType = 0 }
+	export enum GET_DeregisterTypeAction { DeregisterType = 'DeregisterType' }
 
-	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 0 }
+	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 'DescribeAccountLimits' }
 
-	export enum GET_DescribeChangeSetAction { DescribeChangeSet = 0 }
+	export enum GET_DescribeChangeSetAction { DescribeChangeSet = 'DescribeChangeSet' }
 
-	export enum GET_DescribeChangeSetHooksAction { DescribeChangeSetHooks = 0 }
+	export enum GET_DescribeChangeSetHooksAction { DescribeChangeSetHooks = 'DescribeChangeSetHooks' }
 
-	export enum GET_DescribeOrganizationsAccessAction { DescribeOrganizationsAccess = 0 }
+	export enum GET_DescribeOrganizationsAccessAction { DescribeOrganizationsAccess = 'DescribeOrganizationsAccess' }
 
-	export enum GET_DescribePublisherAction { DescribePublisher = 0 }
+	export enum GET_DescribePublisherAction { DescribePublisher = 'DescribePublisher' }
 
-	export enum GET_DescribeStackDriftDetectionStatusAction { DescribeStackDriftDetectionStatus = 0 }
+	export enum GET_DescribeStackDriftDetectionStatusAction { DescribeStackDriftDetectionStatus = 'DescribeStackDriftDetectionStatus' }
 
-	export enum GET_DescribeStackEventsAction { DescribeStackEvents = 0 }
+	export enum GET_DescribeStackEventsAction { DescribeStackEvents = 'DescribeStackEvents' }
 
-	export enum GET_DescribeStackInstanceAction { DescribeStackInstance = 0 }
+	export enum GET_DescribeStackInstanceAction { DescribeStackInstance = 'DescribeStackInstance' }
 
-	export enum GET_DescribeStackResourceAction { DescribeStackResource = 0 }
+	export enum GET_DescribeStackResourceAction { DescribeStackResource = 'DescribeStackResource' }
 
-	export enum GET_DescribeStackResourceDriftsAction { DescribeStackResourceDrifts = 0 }
+	export enum GET_DescribeStackResourceDriftsAction { DescribeStackResourceDrifts = 'DescribeStackResourceDrifts' }
 
-	export enum GET_DescribeStackResourcesAction { DescribeStackResources = 0 }
+	export enum GET_DescribeStackResourcesAction { DescribeStackResources = 'DescribeStackResources' }
 
-	export enum GET_DescribeStackSetAction { DescribeStackSet = 0 }
+	export enum GET_DescribeStackSetAction { DescribeStackSet = 'DescribeStackSet' }
 
-	export enum GET_DescribeStackSetOperationAction { DescribeStackSetOperation = 0 }
+	export enum GET_DescribeStackSetOperationAction { DescribeStackSetOperation = 'DescribeStackSetOperation' }
 
-	export enum GET_DescribeStacksAction { DescribeStacks = 0 }
+	export enum GET_DescribeStacksAction { DescribeStacks = 'DescribeStacks' }
 
-	export enum GET_DescribeTypeAction { DescribeType = 0 }
+	export enum GET_DescribeTypeAction { DescribeType = 'DescribeType' }
 
-	export enum GET_DescribeTypeRegistrationAction { DescribeTypeRegistration = 0 }
+	export enum GET_DescribeTypeRegistrationAction { DescribeTypeRegistration = 'DescribeTypeRegistration' }
 
-	export enum GET_DetectStackDriftAction { DetectStackDrift = 0 }
+	export enum GET_DetectStackDriftAction { DetectStackDrift = 'DetectStackDrift' }
 
-	export enum GET_DetectStackResourceDriftAction { DetectStackResourceDrift = 0 }
+	export enum GET_DetectStackResourceDriftAction { DetectStackResourceDrift = 'DetectStackResourceDrift' }
 
 	export interface GET_DetectStackSetDriftOperationPreferences {
 		RegionConcurrencyType?: RegionConcurrencyType;
@@ -6591,15 +6591,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DetectStackSetDriftAction { DetectStackSetDrift = 0 }
+	export enum GET_DetectStackSetDriftAction { DetectStackSetDrift = 'DetectStackSetDrift' }
 
-	export enum GET_EstimateTemplateCostAction { EstimateTemplateCost = 0 }
+	export enum GET_EstimateTemplateCostAction { EstimateTemplateCost = 'EstimateTemplateCost' }
 
-	export enum GET_ExecuteChangeSetAction { ExecuteChangeSet = 0 }
+	export enum GET_ExecuteChangeSetAction { ExecuteChangeSet = 'ExecuteChangeSet' }
 
-	export enum GET_GetStackPolicyAction { GetStackPolicy = 0 }
+	export enum GET_GetStackPolicyAction { GetStackPolicy = 'GetStackPolicy' }
 
-	export enum GET_GetTemplateAction { GetTemplate = 0 }
+	export enum GET_GetTemplateAction { GetTemplate = 'GetTemplate' }
 
 	export interface GET_GetTemplateSummaryTemplateSummaryConfig {
 		TreatUnrecognizedResourceTypesAsWarnings?: boolean | null;
@@ -6614,7 +6614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_GetTemplateSummaryAction { GetTemplateSummary = 0 }
+	export enum GET_GetTemplateSummaryAction { GetTemplateSummary = 'GetTemplateSummary' }
 
 	export interface GET_ImportStacksToStackSetOperationPreferences {
 		RegionConcurrencyType?: RegionConcurrencyType;
@@ -6642,31 +6642,31 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ImportStacksToStackSetAction { ImportStacksToStackSet = 0 }
+	export enum GET_ImportStacksToStackSetAction { ImportStacksToStackSet = 'ImportStacksToStackSet' }
 
-	export enum GET_ListChangeSetsAction { ListChangeSets = 0 }
+	export enum GET_ListChangeSetsAction { ListChangeSets = 'ListChangeSets' }
 
-	export enum GET_ListExportsAction { ListExports = 0 }
+	export enum GET_ListExportsAction { ListExports = 'ListExports' }
 
-	export enum GET_ListImportsAction { ListImports = 0 }
+	export enum GET_ListImportsAction { ListImports = 'ListImports' }
 
-	export enum GET_ListStackInstanceResourceDriftsAction { ListStackInstanceResourceDrifts = 0 }
+	export enum GET_ListStackInstanceResourceDriftsAction { ListStackInstanceResourceDrifts = 'ListStackInstanceResourceDrifts' }
 
-	export enum GET_ListStackInstancesAction { ListStackInstances = 0 }
+	export enum GET_ListStackInstancesAction { ListStackInstances = 'ListStackInstances' }
 
-	export enum GET_ListStackResourcesAction { ListStackResources = 0 }
+	export enum GET_ListStackResourcesAction { ListStackResources = 'ListStackResources' }
 
-	export enum GET_ListStackSetOperationResultsAction { ListStackSetOperationResults = 0 }
+	export enum GET_ListStackSetOperationResultsAction { ListStackSetOperationResults = 'ListStackSetOperationResults' }
 
-	export enum GET_ListStackSetOperationsAction { ListStackSetOperations = 0 }
+	export enum GET_ListStackSetOperationsAction { ListStackSetOperations = 'ListStackSetOperations' }
 
-	export enum GET_ListStackSetsAction { ListStackSets = 0 }
+	export enum GET_ListStackSetsAction { ListStackSets = 'ListStackSets' }
 
-	export enum GET_ListStacksAction { ListStacks = 0 }
+	export enum GET_ListStacksAction { ListStacks = 'ListStacks' }
 
-	export enum GET_ListTypeRegistrationsAction { ListTypeRegistrations = 0 }
+	export enum GET_ListTypeRegistrationsAction { ListTypeRegistrations = 'ListTypeRegistrations' }
 
-	export enum GET_ListTypeVersionsAction { ListTypeVersions = 0 }
+	export enum GET_ListTypeVersionsAction { ListTypeVersions = 'ListTypeVersions' }
 
 	export interface GET_ListTypesFilters {
 		Category?: Category;
@@ -6687,13 +6687,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ListTypesAction { ListTypes = 0 }
+	export enum GET_ListTypesAction { ListTypes = 'ListTypes' }
 
-	export enum GET_PublishTypeAction { PublishType = 0 }
+	export enum GET_PublishTypeAction { PublishType = 'PublishType' }
 
-	export enum GET_RecordHandlerProgressAction { RecordHandlerProgress = 0 }
+	export enum GET_RecordHandlerProgressAction { RecordHandlerProgress = 'RecordHandlerProgress' }
 
-	export enum GET_RegisterPublisherAction { RegisterPublisher = 0 }
+	export enum GET_RegisterPublisherAction { RegisterPublisher = 'RegisterPublisher' }
 
 	export interface GET_RegisterTypeLoggingConfig {
 
@@ -6719,21 +6719,21 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_RegisterTypeAction { RegisterType = 0 }
+	export enum GET_RegisterTypeAction { RegisterType = 'RegisterType' }
 
-	export enum GET_RollbackStackAction { RollbackStack = 0 }
+	export enum GET_RollbackStackAction { RollbackStack = 'RollbackStack' }
 
-	export enum GET_SetStackPolicyAction { SetStackPolicy = 0 }
+	export enum GET_SetStackPolicyAction { SetStackPolicy = 'SetStackPolicy' }
 
-	export enum GET_SetTypeConfigurationAction { SetTypeConfiguration = 0 }
+	export enum GET_SetTypeConfigurationAction { SetTypeConfiguration = 'SetTypeConfiguration' }
 
-	export enum GET_SetTypeDefaultVersionAction { SetTypeDefaultVersion = 0 }
+	export enum GET_SetTypeDefaultVersionAction { SetTypeDefaultVersion = 'SetTypeDefaultVersion' }
 
-	export enum GET_SignalResourceAction { SignalResource = 0 }
+	export enum GET_SignalResourceAction { SignalResource = 'SignalResource' }
 
-	export enum GET_StopStackSetOperationAction { StopStackSetOperation = 0 }
+	export enum GET_StopStackSetOperationAction { StopStackSetOperation = 'StopStackSetOperation' }
 
-	export enum GET_TestTypeAction { TestType = 0 }
+	export enum GET_TestTypeAction { TestType = 'TestType' }
 
 	export interface GET_UpdateStackRollbackConfiguration {
 		RollbackTriggers?: Array<RollbackTrigger>;
@@ -6749,7 +6749,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateStackAction { UpdateStack = 0 }
+	export enum GET_UpdateStackAction { UpdateStack = 'UpdateStack' }
 
 	export interface GET_UpdateStackInstancesDeploymentTargets {
 		Accounts?: Array<string>;
@@ -6795,7 +6795,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateStackInstancesAction { UpdateStackInstances = 0 }
+	export enum GET_UpdateStackInstancesAction { UpdateStackInstances = 'UpdateStackInstances' }
 
 	export interface GET_UpdateStackSetOperationPreferences {
 		RegionConcurrencyType?: RegionConcurrencyType;
@@ -6870,11 +6870,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateStackSetAction { UpdateStackSet = 0 }
+	export enum GET_UpdateStackSetAction { UpdateStackSet = 'UpdateStackSet' }
 
-	export enum GET_UpdateTerminationProtectionAction { UpdateTerminationProtection = 0 }
+	export enum GET_UpdateTerminationProtectionAction { UpdateTerminationProtection = 'UpdateTerminationProtection' }
 
-	export enum GET_ValidateTemplateAction { ValidateTemplate = 0 }
+	export enum GET_ValidateTemplateAction { ValidateTemplate = 'ValidateTemplate' }
 
 }
 

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Configuration_enum_status { ok = 0, inprogress = 1, notstarted = 2 }
+	export enum Configuration_enum_status { ok = 'ok', inprogress = 'inprogress', notstarted = 'notstarted' }
 
 	export interface Flexv1channel {
 
@@ -621,9 +621,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Flexv1flex_flowChannel_type { web = 0, sms = 1, facebook = 2, whatsapp = 3, line = 4, custom = 5 }
+	export enum Flexv1flex_flowChannel_type { web = 'web', sms = 'sms', facebook = 'facebook', whatsapp = 'whatsapp', line = 'line', custom = 'custom' }
 
-	export enum Flexv1flex_flowIntegration_type { studio = 0, external = 1, task = 2 }
+	export enum Flexv1flex_flowIntegration_type { studio = 'studio', external = 'external', task = 'task' }
 
 	export interface Flexv1insights_assessments {
 
@@ -1513,9 +1513,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Flexv1interactioninteraction_channelStatus { setup = 0, active = 1, failed = 2, closed = 3, inactive = 4 }
+	export enum Flexv1interactioninteraction_channelStatus { setup = 'setup', active = 'active', failed = 'failed', closed = 'closed', inactive = 'inactive' }
 
-	export enum Flexv1interactioninteraction_channelType { voice = 0, sms = 1, email = 2, web = 3, whatsapp = 4, chat = 5, messenger = 6, gbm = 7 }
+	export enum Flexv1interactioninteraction_channelType { voice = 'voice', sms = 'sms', email = 'email', web = 'web', whatsapp = 'whatsapp', chat = 'chat', messenger = 'messenger', gbm = 'gbm' }
 
 	export interface Flexv1interactioninteraction_channelinteraction_channel_invite {
 
@@ -1649,7 +1649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Flexv1interactioninteraction_channelinteraction_channel_participantType { supervisor = 0, customer = 1, external = 2, agent = 3, unknown = 4 }
+	export enum Flexv1interactioninteraction_channelinteraction_channel_participantType { supervisor = 'supervisor', customer = 'customer', external = 'external', agent = 'agent', unknown = 'unknown' }
 
 	export interface Flexv1provisioning_status {
 		status?: Flexv1provisioning_statusStatus | null;
@@ -1671,7 +1671,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Flexv1provisioning_statusStatus { active = 0, 'in-progress' = 1, 'not-configured' = 2, failed = 3 }
+	export enum Flexv1provisioning_statusStatus { active = 'active', 'in-progress' = 'in-progress', 'not-configured' = 'not-configured', failed = 'failed' }
 
 	export interface Flexv1web_channel {
 
@@ -1749,29 +1749,29 @@ export namespace MyNS {
 
 	}
 
-	export enum Flex_flow_enum_channel_type { web = 0, sms = 1, facebook = 2, whatsapp = 3, line = 4, custom = 5 }
+	export enum Flex_flow_enum_channel_type { web = 'web', sms = 'sms', facebook = 'facebook', whatsapp = 'whatsapp', line = 'line', custom = 'custom' }
 
-	export enum Flex_flow_enum_integration_type { studio = 0, external = 1, task = 2 }
+	export enum Flex_flow_enum_integration_type { studio = 'studio', external = 'external', task = 'task' }
 
-	export enum Interaction_channel_enum_channel_status { setup = 0, active = 1, failed = 2, closed = 3, inactive = 4 }
+	export enum Interaction_channel_enum_channel_status { setup = 'setup', active = 'active', failed = 'failed', closed = 'closed', inactive = 'inactive' }
 
-	export enum Interaction_channel_enum_status { closed = 0, wrapup = 1 }
+	export enum Interaction_channel_enum_status { closed = 'closed', wrapup = 'wrapup' }
 
-	export enum Interaction_channel_enum_type { voice = 0, sms = 1, email = 2, web = 3, whatsapp = 4, chat = 5, messenger = 6, gbm = 7 }
+	export enum Interaction_channel_enum_type { voice = 'voice', sms = 'sms', email = 'email', web = 'web', whatsapp = 'whatsapp', chat = 'chat', messenger = 'messenger', gbm = 'gbm' }
 
-	export enum Interaction_channel_enum_update_channel_status { closed = 0, inactive = 1 }
+	export enum Interaction_channel_enum_update_channel_status { closed = 'closed', inactive = 'inactive' }
 
-	export enum Interaction_channel_invite_enum_action { accept = 0, decline = 1 }
+	export enum Interaction_channel_invite_enum_action { accept = 'accept', decline = 'decline' }
 
-	export enum Interaction_channel_invite_enum_type { taskrouter = 0 }
+	export enum Interaction_channel_invite_enum_type { taskrouter = 'taskrouter' }
 
-	export enum Interaction_channel_participant_enum_status { closed = 0, wrapup = 1 }
+	export enum Interaction_channel_participant_enum_status { closed = 'closed', wrapup = 'wrapup' }
 
-	export enum Interaction_channel_participant_enum_type { supervisor = 0, customer = 1, external = 2, agent = 3, unknown = 4 }
+	export enum Interaction_channel_participant_enum_type { supervisor = 'supervisor', customer = 'customer', external = 'external', agent = 'agent', unknown = 'unknown' }
 
-	export enum Provisioning_status_enum_status { active = 0, 'in-progress' = 1, 'not-configured' = 2, failed = 3 }
+	export enum Provisioning_status_enum_status { active = 'active', 'in-progress' = 'in-progress', 'not-configured' = 'not-configured', failed = 'failed' }
 
-	export enum Web_channel_enum_chat_status { inactive = 0 }
+	export enum Web_channel_enum_chat_status { inactive = 'inactive' }
 
 	@Injectable()
 	export class MyClient {

@@ -129,7 +129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertSearchMethodResponseStatus { NOT_MODIFIED = 0, OK = 1, UNKNOWN_ERROR = 2, NOT_FOUND = 3, INVALID_VALUE = 4, NOT_OPERATING = 5, OUTSIDE_BOUNDS = 6, PATH_NOT_FOUND = 7, NO_TRANSIT_TIMES = 8, REQUEST_TIMEOUT = 9, BOGUS_PARAMETER = 10, TOO_CLOSE = 11, LOCATION_NOT_ACCESSIBLE = 12, MISSING_MODE = 13, ERROR_NO_GRAPH = 14, PLANNER_SERVICE_UNAVAILABLE = 15, ERROR_VEHICLE_LOCATION_SERVICE = 16, ERROR_BIKE_RENTAL_SERVICE = 17, ERROR_TICKETING_SERVICE = 18, ERROR_TRANSIT_INDEX_SERVICE = 19, MOVED_TEMPORARILY = 20 }
+	export enum AlertSearchMethodResponseStatus { NOT_MODIFIED = 'NOT_MODIFIED', OK = 'OK', UNKNOWN_ERROR = 'UNKNOWN_ERROR', NOT_FOUND = 'NOT_FOUND', INVALID_VALUE = 'INVALID_VALUE', NOT_OPERATING = 'NOT_OPERATING', OUTSIDE_BOUNDS = 'OUTSIDE_BOUNDS', PATH_NOT_FOUND = 'PATH_NOT_FOUND', NO_TRANSIT_TIMES = 'NO_TRANSIT_TIMES', REQUEST_TIMEOUT = 'REQUEST_TIMEOUT', BOGUS_PARAMETER = 'BOGUS_PARAMETER', TOO_CLOSE = 'TOO_CLOSE', LOCATION_NOT_ACCESSIBLE = 'LOCATION_NOT_ACCESSIBLE', MISSING_MODE = 'MISSING_MODE', ERROR_NO_GRAPH = 'ERROR_NO_GRAPH', PLANNER_SERVICE_UNAVAILABLE = 'PLANNER_SERVICE_UNAVAILABLE', ERROR_VEHICLE_LOCATION_SERVICE = 'ERROR_VEHICLE_LOCATION_SERVICE', ERROR_BIKE_RENTAL_SERVICE = 'ERROR_BIKE_RENTAL_SERVICE', ERROR_TICKETING_SERVICE = 'ERROR_TICKETING_SERVICE', ERROR_TRANSIT_INDEX_SERVICE = 'ERROR_TRANSIT_INDEX_SERVICE', MOVED_TEMPORARILY = 'MOVED_TEMPORARILY' }
 
 
 	/** A tervezés metaadatai. Tartalmazza a következő és az előző tervezési időablakot a lapozás megvalósításához ezred másodpercben. */
@@ -154,7 +154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiVersion { _2 = 0, _3 = 1, _4 = 2 }
+	export enum ApiVersion { _2 = '2', _3 = '3', _4 = '4' }
 
 	export interface ArrivalsAndDeparturesForLocationOTPMethodResponse {
 
@@ -649,9 +649,9 @@ export namespace MyNS {
 
 
 	/** Kerékpáros útszakaszok kategórizálásai. */
-	export enum BikeStreetCategory { CYCLEWAY = 0, CYCLELANE = 1, LOW_TRAFFIC = 2, OTHER = 3, PEDESTRIAN = 4 }
+	export enum BikeStreetCategory { CYCLEWAY = 'CYCLEWAY', CYCLELANE = 'CYCLELANE', LOW_TRAFFIC = 'LOW_TRAFFIC', OTHER = 'OTHER', PEDESTRIAN = 'PEDESTRIAN' }
 
-	export enum Dialect { otp = 0, mobile = 1 }
+	export enum Dialect { otp = 'otp', mobile = 'mobile' }
 
 
 	/** Az útiterv kivonatos megjelenítéséhez használható  lábak és adatok. */
@@ -704,7 +704,7 @@ export namespace MyNS {
 
 
 	/** A zavar hatásának típusa. */
-	export enum EffectType { NO_SERVICE = 0, WARNING = 1 }
+	export enum EffectType { NO_SERVICE = 'NO_SERVICE', WARNING = 'WARNING' }
 
 
 	/** A lábhoz tartozó magassági adatok. */
@@ -1457,11 +1457,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TicketingPeriodDayOfWeek { MON = 0, TUE = 1, WED = 2, THU = 3, FRI = 4, SAT = 5, SUN = 6, HOL = 7, O247 = 8 }
+	export enum TicketingPeriodDayOfWeek { MON = 'MON', TUE = 'TUE', WED = 'WED', THU = 'THU', FRI = 'FRI', SAT = 'SAT', SUN = 'SUN', HOL = 'HOL', O247 = 'O247' }
 
-	export enum TicketingLocationState { PLANNED = 0, OPERATIONAL = 1, INOPERATIVE = 2 }
+	export enum TicketingLocationState { PLANNED = 'PLANNED', OPERATIONAL = 'OPERATIONAL', INOPERATIVE = 'INOPERATIVE' }
 
-	export enum TicketingLocationType { CUSTOMER_CENTER = 0, CASHIER = 1, VENDING_MACHINE = 2, RESELLER = 3 }
+	export enum TicketingLocationType { CUSTOMER_CENTER = 'CUSTOMER_CENTER', CASHIER = 'CASHIER', VENDING_MACHINE = 'VENDING_MACHINE', RESELLER = 'RESELLER' }
 
 
 	/** Az útvonal lépései gyalogos, kerékpáros vagy autós láb lesetén. */
@@ -1564,11 +1564,11 @@ export namespace MyNS {
 
 	}
 
-	export enum WalkStepAbsoluteDirection { NORTH = 0, NORTHEAST = 1, EAST = 2, SOUTHEAST = 3, SOUTH = 4, SOUTHWEST = 5, WEST = 6, NORTHWEST = 7 }
+	export enum WalkStepAbsoluteDirection { NORTH = 'NORTH', NORTHEAST = 'NORTHEAST', EAST = 'EAST', SOUTHEAST = 'SOUTHEAST', SOUTH = 'SOUTH', SOUTHWEST = 'SOUTHWEST', WEST = 'WEST', NORTHWEST = 'NORTHWEST' }
 
-	export enum WalkStepBicycleStreetDirection { BIDIRECTIONAL = 0, ONEWAY_WITH_TRAFFIC = 1, ONEWAY_AGAINST_TRAFFIC = 2 }
+	export enum WalkStepBicycleStreetDirection { BIDIRECTIONAL = 'BIDIRECTIONAL', ONEWAY_WITH_TRAFFIC = 'ONEWAY_WITH_TRAFFIC', ONEWAY_AGAINST_TRAFFIC = 'ONEWAY_AGAINST_TRAFFIC' }
 
-	export enum WalkStepRelativeDirection { DEPART = 0, HARD_LEFT = 1, LEFT = 2, SLIGHTLY_LEFT = 3, CONTINUE = 4, SLIGHTLY_RIGHT = 5, RIGHT = 6, HARD_RIGHT = 7, CIRCLE_CLOCKWISE = 8, CIRCLE_COUNTERCLOCKWISE = 9, ELEVATOR = 10, UTURN_LEFT = 11, UTURN_RIGHT = 12 }
+	export enum WalkStepRelativeDirection { DEPART = 'DEPART', HARD_LEFT = 'HARD_LEFT', LEFT = 'LEFT', SLIGHTLY_LEFT = 'SLIGHTLY_LEFT', CONTINUE = 'CONTINUE', SLIGHTLY_RIGHT = 'SLIGHTLY_RIGHT', RIGHT = 'RIGHT', HARD_RIGHT = 'HARD_RIGHT', CIRCLE_CLOCKWISE = 'CIRCLE_CLOCKWISE', CIRCLE_COUNTERCLOCKWISE = 'CIRCLE_COUNTERCLOCKWISE', ELEVATOR = 'ELEVATOR', UTURN_LEFT = 'UTURN_LEFT', UTURN_RIGHT = 'UTURN_RIGHT' }
 
 	export interface LegTimeZone {
 		displayName?: string | null;
@@ -1592,7 +1592,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LegWait { SHORT = 0, LONG = 1 }
+	export enum LegWait { SHORT = 'SHORT', LONG = 'LONG' }
 
 
 	/** Útitervminták engedélyezése esetén a minták időtartam-adatai. */
@@ -2225,7 +2225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitRouteStyleIconType { BOX = 0, CIRCLE = 1 }
+	export enum TransitRouteStyleIconType { BOX = 'BOX', CIRCLE = 'CIRCLE' }
 
 
 	/** A megálló stílusa. */
@@ -2258,7 +2258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitStopStyleType { PRIORITY = 0 }
+	export enum TransitStopStyleType { PRIORITY = 'PRIORITY' }
 
 
 	/** A járathoz tartozó jármű ikon stílus. */
@@ -2281,7 +2281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitRouteType { WALK = 0, BICYCLE = 1, CAR = 2, TRAM = 3, SUBWAY = 4, SUBURBAN_RAILWAY = 5, RAIL = 6, COACH = 7, BUS = 8, TROLLEYBUS = 9, FERRY = 10, CABLE_CAR = 11, GONDOLA = 12, FUNICULAR = 13, TRANSIT = 14, TRAINISH = 15, BUSISH = 16, LEG_SWITCH = 17, CUSTOM_MOTOR_VEHICLE = 18 }
+	export enum TransitRouteType { WALK = 'WALK', BICYCLE = 'BICYCLE', CAR = 'CAR', TRAM = 'TRAM', SUBWAY = 'SUBWAY', SUBURBAN_RAILWAY = 'SUBURBAN_RAILWAY', RAIL = 'RAIL', COACH = 'COACH', BUS = 'BUS', TROLLEYBUS = 'TROLLEYBUS', FERRY = 'FERRY', CABLE_CAR = 'CABLE_CAR', GONDOLA = 'GONDOLA', FUNICULAR = 'FUNICULAR', TRANSIT = 'TRANSIT', TRAINISH = 'TRAINISH', BUSISH = 'BUSISH', LEG_SWITCH = 'LEG_SWITCH', CUSTOM_MOTOR_VEHICLE = 'CUSTOM_MOTOR_VEHICLE' }
 
 
 	/** Megállók referenciáinak listája. */
@@ -3203,7 +3203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitVehicleCongestionLevel { UNKNOWN = 0, CONGESTION = 1 }
+	export enum TransitVehicleCongestionLevel { UNKNOWN = 'UNKNOWN', CONGESTION = 'CONGESTION' }
 
 
 	/** A jármű pozíciója. */
@@ -3233,7 +3233,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitVehicleStatus { INCOMING_AT = 0, STOPPED_AT = 1, IN_TRANSIT_TO = 2 }
+	export enum TransitVehicleStatus { INCOMING_AT = 'INCOMING_AT', STOPPED_AT = 'STOPPED_AT', IN_TRANSIT_TO = 'IN_TRANSIT_TO' }
 
 
 	/** A járműhöz tartozó stílus. */
@@ -3405,7 +3405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlannerErrorMessage { PLAN_OK = 0, SYSTEM_ERROR = 1, GRAPH_UNAVAILABLE = 2, PLANNER_SERVICE_UNAVAILABLE = 3, OUTSIDE_BOUNDS = 4, PATH_NOT_FOUND = 5, NO_TRANSIT_TIMES = 6, REQUEST_TIMEOUT = 7, BOGUS_PARAMETER = 8, GEOCODE_FROM_NOT_FOUND = 9, GEOCODE_TO_NOT_FOUND = 10, GEOCODE_FROM_TO_NOT_FOUND = 11, TOO_CLOSE = 12, LOCATION_NOT_ACCESSIBLE = 13, MISSING_MODE = 14, GEOCODE_FROM_AMBIGUOUS = 15, GEOCODE_TO_AMBIGUOUS = 16, GEOCODE_FROM_TO_AMBIGUOUS = 17, UNDERSPECIFIED_TRIANGLE = 18, TRIANGLE_NOT_AFFINE = 19, TRIANGLE_OPTIMIZE_TYPE_NOT_SET = 20, TRIANGLE_VALUES_NOT_SET = 21 }
+	export enum PlannerErrorMessage { PLAN_OK = 'PLAN_OK', SYSTEM_ERROR = 'SYSTEM_ERROR', GRAPH_UNAVAILABLE = 'GRAPH_UNAVAILABLE', PLANNER_SERVICE_UNAVAILABLE = 'PLANNER_SERVICE_UNAVAILABLE', OUTSIDE_BOUNDS = 'OUTSIDE_BOUNDS', PATH_NOT_FOUND = 'PATH_NOT_FOUND', NO_TRANSIT_TIMES = 'NO_TRANSIT_TIMES', REQUEST_TIMEOUT = 'REQUEST_TIMEOUT', BOGUS_PARAMETER = 'BOGUS_PARAMETER', GEOCODE_FROM_NOT_FOUND = 'GEOCODE_FROM_NOT_FOUND', GEOCODE_TO_NOT_FOUND = 'GEOCODE_TO_NOT_FOUND', GEOCODE_FROM_TO_NOT_FOUND = 'GEOCODE_FROM_TO_NOT_FOUND', TOO_CLOSE = 'TOO_CLOSE', LOCATION_NOT_ACCESSIBLE = 'LOCATION_NOT_ACCESSIBLE', MISSING_MODE = 'MISSING_MODE', GEOCODE_FROM_AMBIGUOUS = 'GEOCODE_FROM_AMBIGUOUS', GEOCODE_TO_AMBIGUOUS = 'GEOCODE_TO_AMBIGUOUS', GEOCODE_FROM_TO_AMBIGUOUS = 'GEOCODE_FROM_TO_AMBIGUOUS', UNDERSPECIFIED_TRIANGLE = 'UNDERSPECIFIED_TRIANGLE', TRIANGLE_NOT_AFFINE = 'TRIANGLE_NOT_AFFINE', TRIANGLE_OPTIMIZE_TYPE_NOT_SET = 'TRIANGLE_OPTIMIZE_TYPE_NOT_SET', TRIANGLE_VALUES_NOT_SET = 'TRIANGLE_VALUES_NOT_SET' }
 
 
 	/** A tervezett útvonalak. */
@@ -3504,7 +3504,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferencesSchema { true = 0, false = 1, compact = 2, agencies = 3, routes = 4, trips = 5, stops = 6, alerts = 7, stations = 8 }
+	export enum ReferencesSchema { true = 'true', false = 'false', compact = 'compact', agencies = 'agencies', routes = 'routes', trips = 'trips', stops = 'stops', alerts = 'alerts', stations = 'stations' }
 
 	export interface RouteDetailsForStopMethodResponse {
 
@@ -3966,7 +3966,7 @@ export namespace MyNS {
 
 
 	/** A válasz státusza. */
-	export enum Status { NOT_MODIFIED = 0, OK = 1, UNKNOWN_ERROR = 2, NOT_FOUND = 3, INVALID_VALUE = 4, NOT_OPERATING = 5, OUTSIDE_BOUNDS = 6, PATH_NOT_FOUND = 7, NO_TRANSIT_TIMES = 8, REQUEST_TIMEOUT = 9, BOGUS_PARAMETER = 10, TOO_CLOSE = 11, LOCATION_NOT_ACCESSIBLE = 12, MISSING_MODE = 13, ERROR_NO_GRAPH = 14, PLANNER_SERVICE_UNAVAILABLE = 15, ERROR_VEHICLE_LOCATION_SERVICE = 16, ERROR_BIKE_RENTAL_SERVICE = 17, ERROR_TICKETING_SERVICE = 18, ERROR_TRANSIT_INDEX_SERVICE = 19, MOVED_TEMPORARILY = 20 }
+	export enum Status { NOT_MODIFIED = 'NOT_MODIFIED', OK = 'OK', UNKNOWN_ERROR = 'UNKNOWN_ERROR', NOT_FOUND = 'NOT_FOUND', INVALID_VALUE = 'INVALID_VALUE', NOT_OPERATING = 'NOT_OPERATING', OUTSIDE_BOUNDS = 'OUTSIDE_BOUNDS', PATH_NOT_FOUND = 'PATH_NOT_FOUND', NO_TRANSIT_TIMES = 'NO_TRANSIT_TIMES', REQUEST_TIMEOUT = 'REQUEST_TIMEOUT', BOGUS_PARAMETER = 'BOGUS_PARAMETER', TOO_CLOSE = 'TOO_CLOSE', LOCATION_NOT_ACCESSIBLE = 'LOCATION_NOT_ACCESSIBLE', MISSING_MODE = 'MISSING_MODE', ERROR_NO_GRAPH = 'ERROR_NO_GRAPH', PLANNER_SERVICE_UNAVAILABLE = 'PLANNER_SERVICE_UNAVAILABLE', ERROR_VEHICLE_LOCATION_SERVICE = 'ERROR_VEHICLE_LOCATION_SERVICE', ERROR_BIKE_RENTAL_SERVICE = 'ERROR_BIKE_RENTAL_SERVICE', ERROR_TICKETING_SERVICE = 'ERROR_TICKETING_SERVICE', ERROR_TRANSIT_INDEX_SERVICE = 'ERROR_TRANSIT_INDEX_SERVICE', MOVED_TEMPORARILY = 'MOVED_TEMPORARILY' }
 
 	export interface StopsForLocationResponse {
 
@@ -4422,7 +4422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TraverseMode { WALK = 0, BICYCLE = 1, CAR = 2, TRAM = 3, SUBWAY = 4, RAIL = 5, BUS = 6, FERRY = 7, CABLE_CAR = 8, GONDOLA = 9, FUNICULAR = 10, TRANSIT = 11, AIRPLANE = 12, TROLLEYBUS = 13, MONORAIL = 14, SUBURBAN_RAILWAY = 15, COACH = 16 }
+	export enum TraverseMode { WALK = 'WALK', BICYCLE = 'BICYCLE', CAR = 'CAR', TRAM = 'TRAM', SUBWAY = 'SUBWAY', RAIL = 'RAIL', BUS = 'BUS', FERRY = 'FERRY', CABLE_CAR = 'CABLE_CAR', GONDOLA = 'GONDOLA', FUNICULAR = 'FUNICULAR', TRANSIT = 'TRANSIT', AIRPLANE = 'AIRPLANE', TROLLEYBUS = 'TROLLEYBUS', MONORAIL = 'MONORAIL', SUBURBAN_RAILWAY = 'SUBURBAN_RAILWAY', COACH = 'COACH' }
 
 	export interface TripDetailsOTPMethodResponse {
 
@@ -4664,7 +4664,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WalkProfile { SLOW = 0, MID = 1, FAST = 2 }
+	export enum WalkProfile { SLOW = 'SLOW', MID = 'MID', FAST = 'FAST' }
 
 	@Injectable()
 	export class MyClient {
@@ -5062,7 +5062,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum PlanAccessOptimize { BEST = 0, WALK = 1, TRANSFERS = 2 }
+	export enum PlanAccessOptimize { BEST = 'BEST', WALK = 'WALK', TRANSFERS = 'TRANSFERS' }
 
 }
 

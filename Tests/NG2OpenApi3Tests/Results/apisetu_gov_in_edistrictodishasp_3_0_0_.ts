@@ -1390,7 +1390,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EgcerPostBodyFormat { pdf = 0 }
+	export enum EgcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface EwcerPostBody {
 		certificateParameters?: EwcerPostBodyCertificateParameters;

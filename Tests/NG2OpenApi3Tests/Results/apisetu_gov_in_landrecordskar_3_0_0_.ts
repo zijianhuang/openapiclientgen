@@ -1296,7 +1296,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CncerPostBodyFormat { xml = 0, pdf = 1 }
+	export enum CncerPostBodyFormat { xml = 'xml', pdf = 'pdf' }
 
 	export interface MutanPostBody {
 		certificateParameters?: MutanPostBodyCertificateParameters;

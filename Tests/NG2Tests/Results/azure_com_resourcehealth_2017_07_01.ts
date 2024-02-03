@@ -193,9 +193,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailabilityStatusPropertiesAvailabilityState { Available = 0, Unavailable = 1, Unknown = 2 }
+	export enum AvailabilityStatusPropertiesAvailabilityState { Available = 'Available', Unavailable = 'Unavailable', Unknown = 'Unknown' }
 
-	export enum AvailabilityStatusPropertiesReasonChronicity { Transient = 0, Persistent = 1 }
+	export enum AvailabilityStatusPropertiesReasonChronicity { Transient = 'Transient', Persistent = 'Persistent' }
 
 	export interface AvailabilityStatusPropertiesRecentlyResolvedState {
 
@@ -552,9 +552,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusActiveEventSeverity { Information = 0, Warning = 1, Error = 2 }
+	export enum StatusActiveEventSeverity { Information = 'Information', Warning = 'Warning', Error = 'Error' }
 
-	export enum StatusActiveEventStage { Active = 0, Resolve = 1, Archived = 2 }
+	export enum StatusActiveEventStage { Active = 'Active', Resolve = 'Resolve', Archived = 'Archived' }
 
 
 	/** Banner type of emerging issue. */
@@ -850,7 +850,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum EmergingIssues_GetIssueName { default = 0 }
+	export enum EmergingIssues_GetIssueName { default = 'default' }
 
 }
 

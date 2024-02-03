@@ -22,7 +22,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetStatus { CREATED = 0, INGESTION_IN_PROGRESS = 1, ACTIVE = 2, IMPORT_IN_PROGRESS = 3 }
+	export enum DatasetStatus { CREATED = 'CREATED', INGESTION_IN_PROGRESS = 'INGESTION_IN_PROGRESS', ACTIVE = 'ACTIVE', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS' }
 
 	export interface CreateDatasetRequest {
 
@@ -177,7 +177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InferenceSchedulerStatus { PENDING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3 }
+	export enum InferenceSchedulerStatus { PENDING = 'PENDING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 	export interface CreateInferenceSchedulerRequest {
 
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataUploadFrequency { PT5M = 0, PT10M = 1, PT15M = 2, PT30M = 3, PT1H = 4 }
+	export enum DataUploadFrequency { PT5M = 'PT5M', PT10M = 'PT10M', PT15M = 'PT15M', PT30M = 'PT30M', PT1H = 'PT1H' }
 
 
 	/** Specifies configuration information for the input data for the inference, including Amazon S3 location of input data..  */
@@ -423,7 +423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelRating { ANOMALY = 0, NO_ANOMALY = 1, NEUTRAL = 2 }
+	export enum LabelRating { ANOMALY = 'ANOMALY', NO_ANOMALY = 'NO_ANOMALY', NEUTRAL = 'NEUTRAL' }
 
 	export interface CreateLabelGroupResponse {
 		LabelGroupName?: string;
@@ -483,7 +483,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelStatus { IN_PROGRESS = 0, SUCCESS = 1, FAILED = 2, IMPORT_IN_PROGRESS = 3 }
+	export enum ModelStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS' }
 
 	export interface CreateModelRequest {
 
@@ -600,7 +600,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetSamplingRate { PT1S = 0, PT5S = 1, PT10S = 2, PT15S = 3, PT30S = 4, PT1M = 5, PT5M = 6, PT10M = 7, PT15M = 8, PT30M = 9, PT1H = 10 }
+	export enum TargetSamplingRate { PT1S = 'PT1S', PT5S = 'PT5S', PT10S = 'PT10S', PT15S = 'PT15S', PT30S = 'PT30S', PT1M = 'PT1M', PT5M = 'PT5M', PT10M = 'PT10M', PT15M = 'PT15M', PT30M = 'PT30M', PT1H = 'PT1H' }
 
 	export interface DeleteDatasetRequest {
 
@@ -1177,7 +1177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LatestInferenceResult { ANOMALOUS = 0, NORMAL = 1 }
+	export enum LatestInferenceResult { ANOMALOUS = 'ANOMALOUS', NORMAL = 'NORMAL' }
 
 	export interface DescribeInferenceSchedulerRequest {
 
@@ -1507,9 +1507,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelVersionStatus { IN_PROGRESS = 0, SUCCESS = 1, FAILED = 2, IMPORT_IN_PROGRESS = 3, CANCELED = 4 }
+	export enum ModelVersionStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS', CANCELED = 'CANCELED' }
 
-	export enum ModelVersionSourceType { TRAINING = 0, RETRAINING = 1, IMPORT = 2 }
+	export enum ModelVersionSourceType { TRAINING = 'TRAINING', RETRAINING = 'RETRAINING', IMPORT = 'IMPORT' }
 
 	export interface DescribeModelVersionRequest {
 
@@ -1959,7 +1959,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InferenceExecutionStatus { IN_PROGRESS = 0, SUCCESS = 1, FAILED = 2 }
+	export enum InferenceExecutionStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
 	export interface ListInferenceExecutionsRequest {
 		NextToken?: string;
@@ -2489,7 +2489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatisticalIssueStatus { POTENTIAL_ISSUE_DETECTED = 0, NO_ISSUE_DETECTED = 1 }
+	export enum StatisticalIssueStatus { POTENTIAL_ISSUE_DETECTED = 'POTENTIAL_ISSUE_DETECTED', NO_ISSUE_DETECTED = 'NO_ISSUE_DETECTED' }
 
 
 	/**  Entity that comprises information on operating modes in data.  */
@@ -2563,7 +2563,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Monotonicity { DECREASING = 0, INCREASING = 1, STATIC = 2 }
+	export enum Monotonicity { DECREASING = 'DECREASING', INCREASING = 'INCREASING', STATIC = 'STATIC' }
 
 	export interface ListSensorStatisticsRequest {
 
@@ -2961,7 +2961,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionJobStatus { IN_PROGRESS = 0, SUCCESS = 1, FAILED = 2, IMPORT_IN_PROGRESS = 3 }
+	export enum IngestionJobStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS' }
 
 	@Injectable()
 	export class MyClient {
@@ -3358,87 +3358,87 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateDataset' = 0 }
+	export enum CreateDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateDataset' = 'AWSLookoutEquipmentFrontendService.CreateDataset' }
 
-	export enum CreateInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateInferenceScheduler' = 0 }
+	export enum CreateInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateInferenceScheduler' = 'AWSLookoutEquipmentFrontendService.CreateInferenceScheduler' }
 
-	export enum CreateLabelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateLabel' = 0 }
+	export enum CreateLabelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateLabel' = 'AWSLookoutEquipmentFrontendService.CreateLabel' }
 
-	export enum CreateLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateLabelGroup' = 0 }
+	export enum CreateLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateLabelGroup' = 'AWSLookoutEquipmentFrontendService.CreateLabelGroup' }
 
-	export enum CreateModelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateModel' = 0 }
+	export enum CreateModelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.CreateModel' = 'AWSLookoutEquipmentFrontendService.CreateModel' }
 
-	export enum DeleteDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteDataset' = 0 }
+	export enum DeleteDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteDataset' = 'AWSLookoutEquipmentFrontendService.DeleteDataset' }
 
-	export enum DeleteInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteInferenceScheduler' = 0 }
+	export enum DeleteInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteInferenceScheduler' = 'AWSLookoutEquipmentFrontendService.DeleteInferenceScheduler' }
 
-	export enum DeleteLabelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteLabel' = 0 }
+	export enum DeleteLabelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteLabel' = 'AWSLookoutEquipmentFrontendService.DeleteLabel' }
 
-	export enum DeleteLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteLabelGroup' = 0 }
+	export enum DeleteLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteLabelGroup' = 'AWSLookoutEquipmentFrontendService.DeleteLabelGroup' }
 
-	export enum DeleteModelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteModel' = 0 }
+	export enum DeleteModelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteModel' = 'AWSLookoutEquipmentFrontendService.DeleteModel' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DeleteResourcePolicy' = 'AWSLookoutEquipmentFrontendService.DeleteResourcePolicy' }
 
-	export enum DescribeDataIngestionJobX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeDataIngestionJob' = 0 }
+	export enum DescribeDataIngestionJobX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeDataIngestionJob' = 'AWSLookoutEquipmentFrontendService.DescribeDataIngestionJob' }
 
-	export enum DescribeDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeDataset' = 0 }
+	export enum DescribeDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeDataset' = 'AWSLookoutEquipmentFrontendService.DescribeDataset' }
 
-	export enum DescribeInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeInferenceScheduler' = 0 }
+	export enum DescribeInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeInferenceScheduler' = 'AWSLookoutEquipmentFrontendService.DescribeInferenceScheduler' }
 
-	export enum DescribeLabelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeLabel' = 0 }
+	export enum DescribeLabelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeLabel' = 'AWSLookoutEquipmentFrontendService.DescribeLabel' }
 
-	export enum DescribeLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeLabelGroup' = 0 }
+	export enum DescribeLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeLabelGroup' = 'AWSLookoutEquipmentFrontendService.DescribeLabelGroup' }
 
-	export enum DescribeModelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeModel' = 0 }
+	export enum DescribeModelX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeModel' = 'AWSLookoutEquipmentFrontendService.DescribeModel' }
 
-	export enum DescribeModelVersionX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeModelVersion' = 0 }
+	export enum DescribeModelVersionX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeModelVersion' = 'AWSLookoutEquipmentFrontendService.DescribeModelVersion' }
 
-	export enum DescribeResourcePolicyX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeResourcePolicy' = 0 }
+	export enum DescribeResourcePolicyX_Amz_Target { 'AWSLookoutEquipmentFrontendService.DescribeResourcePolicy' = 'AWSLookoutEquipmentFrontendService.DescribeResourcePolicy' }
 
-	export enum ImportDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ImportDataset' = 0 }
+	export enum ImportDatasetX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ImportDataset' = 'AWSLookoutEquipmentFrontendService.ImportDataset' }
 
-	export enum ImportModelVersionX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ImportModelVersion' = 0 }
+	export enum ImportModelVersionX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ImportModelVersion' = 'AWSLookoutEquipmentFrontendService.ImportModelVersion' }
 
-	export enum ListDataIngestionJobsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListDataIngestionJobs' = 0 }
+	export enum ListDataIngestionJobsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListDataIngestionJobs' = 'AWSLookoutEquipmentFrontendService.ListDataIngestionJobs' }
 
-	export enum ListDatasetsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListDatasets' = 0 }
+	export enum ListDatasetsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListDatasets' = 'AWSLookoutEquipmentFrontendService.ListDatasets' }
 
-	export enum ListInferenceEventsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListInferenceEvents' = 0 }
+	export enum ListInferenceEventsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListInferenceEvents' = 'AWSLookoutEquipmentFrontendService.ListInferenceEvents' }
 
-	export enum ListInferenceExecutionsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListInferenceExecutions' = 0 }
+	export enum ListInferenceExecutionsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListInferenceExecutions' = 'AWSLookoutEquipmentFrontendService.ListInferenceExecutions' }
 
-	export enum ListInferenceSchedulersX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListInferenceSchedulers' = 0 }
+	export enum ListInferenceSchedulersX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListInferenceSchedulers' = 'AWSLookoutEquipmentFrontendService.ListInferenceSchedulers' }
 
-	export enum ListLabelGroupsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListLabelGroups' = 0 }
+	export enum ListLabelGroupsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListLabelGroups' = 'AWSLookoutEquipmentFrontendService.ListLabelGroups' }
 
-	export enum ListLabelsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListLabels' = 0 }
+	export enum ListLabelsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListLabels' = 'AWSLookoutEquipmentFrontendService.ListLabels' }
 
-	export enum ListModelVersionsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListModelVersions' = 0 }
+	export enum ListModelVersionsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListModelVersions' = 'AWSLookoutEquipmentFrontendService.ListModelVersions' }
 
-	export enum ListModelsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListModels' = 0 }
+	export enum ListModelsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListModels' = 'AWSLookoutEquipmentFrontendService.ListModels' }
 
-	export enum ListSensorStatisticsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListSensorStatistics' = 0 }
+	export enum ListSensorStatisticsX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListSensorStatistics' = 'AWSLookoutEquipmentFrontendService.ListSensorStatistics' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSLookoutEquipmentFrontendService.ListTagsForResource' = 'AWSLookoutEquipmentFrontendService.ListTagsForResource' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'AWSLookoutEquipmentFrontendService.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'AWSLookoutEquipmentFrontendService.PutResourcePolicy' = 'AWSLookoutEquipmentFrontendService.PutResourcePolicy' }
 
-	export enum StartDataIngestionJobX_Amz_Target { 'AWSLookoutEquipmentFrontendService.StartDataIngestionJob' = 0 }
+	export enum StartDataIngestionJobX_Amz_Target { 'AWSLookoutEquipmentFrontendService.StartDataIngestionJob' = 'AWSLookoutEquipmentFrontendService.StartDataIngestionJob' }
 
-	export enum StartInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.StartInferenceScheduler' = 0 }
+	export enum StartInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.StartInferenceScheduler' = 'AWSLookoutEquipmentFrontendService.StartInferenceScheduler' }
 
-	export enum StopInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.StopInferenceScheduler' = 0 }
+	export enum StopInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.StopInferenceScheduler' = 'AWSLookoutEquipmentFrontendService.StopInferenceScheduler' }
 
-	export enum TagResourceX_Amz_Target { 'AWSLookoutEquipmentFrontendService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSLookoutEquipmentFrontendService.TagResource' = 'AWSLookoutEquipmentFrontendService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UntagResource' = 'AWSLookoutEquipmentFrontendService.UntagResource' }
 
-	export enum UpdateActiveModelVersionX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UpdateActiveModelVersion' = 0 }
+	export enum UpdateActiveModelVersionX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UpdateActiveModelVersion' = 'AWSLookoutEquipmentFrontendService.UpdateActiveModelVersion' }
 
-	export enum UpdateInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UpdateInferenceScheduler' = 0 }
+	export enum UpdateInferenceSchedulerX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UpdateInferenceScheduler' = 'AWSLookoutEquipmentFrontendService.UpdateInferenceScheduler' }
 
-	export enum UpdateLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UpdateLabelGroup' = 0 }
+	export enum UpdateLabelGroupX_Amz_Target { 'AWSLookoutEquipmentFrontendService.UpdateLabelGroup' = 'AWSLookoutEquipmentFrontendService.UpdateLabelGroup' }
 
 }
 

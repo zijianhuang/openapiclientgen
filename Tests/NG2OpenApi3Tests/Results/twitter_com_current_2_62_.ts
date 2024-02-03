@@ -429,7 +429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientForbiddenProblemReason { 'official-client-forbidden' = 0, 'client-not-enrolled' = 1 }
+	export enum ClientForbiddenProblemReason { 'official-client-forbidden' = 'official-client-forbidden', 'client-not-enrolled' = 'client-not-enrolled' }
 
 	export interface ComplianceJob {
 
@@ -558,9 +558,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceJobStatus { created = 0, in_progress = 1, failed = 2, complete = 3, expired = 4 }
+	export enum ComplianceJobStatus { created = 'created', in_progress = 'in_progress', failed = 'failed', complete = 'complete', expired = 'expired' }
 
-	export enum ComplianceJobType { tweets = 0, users = 1 }
+	export enum ComplianceJobType { tweets = 'tweets', users = 'users' }
 
 
 	/** You cannot create a new job if one is already in progress. */
@@ -597,7 +597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionExceptionProblemConnection_issue { TooManyConnections = 0, ProvisioningSubscription = 1, RuleConfigurationIssue = 2, RulesInvalidIssue = 3 }
+	export enum ConnectionExceptionProblemConnection_issue { TooManyConnections = 'TooManyConnections', ProvisioningSubscription = 'ProvisioningSubscription', RuleConfigurationIssue = 'RuleConfigurationIssue', RulesInvalidIssue = 'RulesInvalidIssue' }
 
 
 	/** Annotation inferred from the Tweet text. */
@@ -854,7 +854,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateDmConversationRequestConversation_type { Group = 0 }
+	export enum CreateDmConversationRequestConversation_type { Group = 'Group' }
 
 	export interface CreateDmEventResponse {
 		data?: CreateDmEventResponseData;
@@ -1019,9 +1019,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DisallowedResourceProblemResource_type { user = 0, tweet = 1, media = 2, list = 3, space = 4 }
+	export enum DisallowedResourceProblemResource_type { user = 'user', tweet = 'tweet', media = 'media', list = 'list', space = 'space' }
 
-	export enum DisallowedResourceProblemSection { data = 0, includes = 1 }
+	export enum DisallowedResourceProblemSection { data = 'data', includes = 'includes' }
 
 	export interface DmEvent {
 
@@ -1474,11 +1474,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PointType { Point = 0 }
+	export enum PointType { Point = 'Point' }
 
-	export enum GeoType { Feature = 0 }
+	export enum GeoType { Feature = 'Feature' }
 
-	export enum PlacePlace_type { poi = 0, neighborhood = 1, city = 2, admin = 3, country = 4, unknown = 5 }
+	export enum PlacePlace_type { poi = 'poi', neighborhood = 'neighborhood', city = 'city', admin = 'admin', country = 'country', unknown = 'unknown' }
 
 
 	/** Represent a Poll attached to a Tweet. */
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PollVoting_status { open = 0, closed = 1 }
+	export enum PollVoting_status { open = 'open', closed = 'closed' }
 
 
 	/** The topic of a Space, as selected by its creator. */
@@ -2295,9 +2295,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TweetReferenced_tweetsType { retweeted = 0, quoted = 1, replied_to = 2 }
+	export enum TweetReferenced_tweetsType { retweeted = 'retweeted', quoted = 'quoted', replied_to = 'replied_to' }
 
-	export enum TweetReply_settings { everyone = 0, mentionedUsers = 1, following = 2, other = 3 }
+	export enum TweetReply_settings { everyone = 'everyone', mentionedUsers = 'mentionedUsers', following = 'following', other = 'other' }
 
 
 	/** Indicates withholding details for [withheld content](https://help.twitter.com/en/rules-and-policies/tweet-withheld-by-country). */
@@ -2340,7 +2340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TweetWithheldScope { tweet = 0, user = 1 }
+	export enum TweetWithheldScope { tweet = 'tweet', user = 'user' }
 
 
 	/** The Twitter User object. */
@@ -2584,7 +2584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserWithheldScope { user = 0 }
+	export enum UserWithheldScope { user = 'user' }
 
 
 	/** A problem that indicates that you are not allowed to see a particular field on a Tweet, User, etc. */
@@ -3327,7 +3327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpaceState { live = 0, scheduled = 1, ended = 2 }
+	export enum SpaceState { live = 'live', scheduled = 'scheduled', ended = 'ended' }
 
 	export interface SpaceTopics {
 
@@ -5607,7 +5607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationalDisconnectProblemDisconnect_type { OperationalDisconnect = 0, UpstreamOperationalDisconnect = 1, ForceDisconnect = 2, UpstreamUncleanDisconnect = 3, SlowReader = 4, InternalError = 5, ClientApplicationStateDegraded = 6, InvalidRules = 7 }
+	export enum OperationalDisconnectProblemDisconnect_type { OperationalDisconnect = 'OperationalDisconnect', UpstreamOperationalDisconnect = 'UpstreamOperationalDisconnect', ForceDisconnect = 'ForceDisconnect', UpstreamUncleanDisconnect = 'UpstreamUncleanDisconnect', SlowReader = 'SlowReader', InternalError = 'InternalError', ClientApplicationStateDegraded = 'ClientApplicationStateDegraded', InvalidRules = 'InvalidRules' }
 
 	export interface Photo extends Media {
 		alt_text?: string | null;
@@ -5629,11 +5629,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaceType { poi = 0, neighborhood = 1, city = 2, admin = 3, country = 4, unknown = 5 }
+	export enum PlaceType { poi = 'poi', neighborhood = 'neighborhood', city = 'city', admin = 'admin', country = 'country', unknown = 'unknown' }
 
 
 	/** Shows who can reply a Tweet. Fields returned are everyone, mentioned_users, and following. */
-	export enum ReplySettings { everyone = 0, mentionedUsers = 1, following = 2, other = 3 }
+	export enum ReplySettings { everyone = 'everyone', mentionedUsers = 'mentionedUsers', following = 'following', other = 'other' }
 
 
 	/** A problem that indicates that a given Tweet, User, etc. does not exist. */
@@ -6091,7 +6091,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TweetCreateRequestPollReply_settings { following = 0, mentionedUsers = 1 }
+	export enum TweetCreateRequestPollReply_settings { following = 'following', mentionedUsers = 'mentionedUsers' }
 
 	export interface TweetCreateRequestReply {
 
@@ -6812,9 +6812,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageCapExceededProblemPeriod { Daily = 0, Monthly = 1 }
+	export enum UsageCapExceededProblemPeriod { Daily = 'Daily', Monthly = 'Monthly' }
 
-	export enum UsageCapExceededProblemScope { Account = 0, Product = 1 }
+	export enum UsageCapExceededProblemScope { Account = 'Account', Product = 'Product' }
 
 
 	/** User compliance data. */
@@ -8815,13 +8815,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListBatchComplianceJobsStatus { created = 0, in_progress = 1, failed = 2, complete = 3 }
+	export enum ListBatchComplianceJobsStatus { created = 'created', in_progress = 'in_progress', failed = 'failed', complete = 'complete' }
 
-	export enum SearchSpacesState { live = 0, scheduled = 1, all = 2 }
+	export enum SearchSpacesState { live = 'live', scheduled = 'scheduled', all = 'all' }
 
-	export enum TweetCountsFullArchiveSearchGranularity { minute = 0, hour = 1, day = 2 }
+	export enum TweetCountsFullArchiveSearchGranularity { minute = 'minute', hour = 'hour', day = 'day' }
 
-	export enum TweetsFullarchiveSearchSort_order { recency = 0, relevancy = 1 }
+	export enum TweetsFullarchiveSearchSort_order { recency = 'recency', relevancy = 'relevancy' }
 
 }
 

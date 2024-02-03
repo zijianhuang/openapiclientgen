@@ -1216,9 +1216,9 @@ export namespace MyNS {
 
 	}
 
-	export enum QualityQuality { '240p' = 0, '360p' = 1, '480p' = 2, '720p' = 3, '1080p' = 4, '2160p' = 5 }
+	export enum QualityQuality { '240p' = '240p', '360p' = '360p', '480p' = '480p', '720p' = '720p', '1080p' = '1080p', '2160p' = '2160p' }
 
-	export enum QualityStatus { waiting = 0, encoding = 1, encoded = 2, failed = 3 }
+	export enum QualityStatus { waiting = 'waiting', encoding = 'encoding', encoded = 'encoded', failed = 'failed' }
 
 	export interface Raw_statistics_list_live_stream_analytics_response {
 		data?: Array<Live_stream_session>;
@@ -2182,7 +2182,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Videostatus_ingestStatus { missing = 0, uploading = 1, uploaded = 2 }
+	export enum Videostatus_ingestStatus { missing = 'missing', uploading = 'uploading', uploaded = 'uploaded' }
 
 	export interface Webhook {
 
@@ -2791,11 +2791,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_live_streamsSortOrder { asc = 0, desc = 1 }
+	export enum GET_live_streamsSortOrder { asc = 'asc', desc = 'desc' }
 
-	export enum GET_playersSortBy { createdAt = 0, updatedAt = 1 }
+	export enum GET_playersSortBy { createdAt = 'createdAt', updatedAt = 'updatedAt' }
 
-	export enum GET_upload_tokensSortBy { createdAt = 0, ttl = 1 }
+	export enum GET_upload_tokensSortBy { createdAt = 'createdAt', ttl = 'ttl' }
 
 }
 

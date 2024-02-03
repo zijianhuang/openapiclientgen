@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AmpUrlErrorErrorCode { ERROR_CODE_UNSPECIFIED = 0, INPUT_URL_NOT_FOUND = 1, NO_AMP_URL = 2, APPLICATION_ERROR = 3, URL_IS_VALID_AMP = 4, URL_IS_INVALID_AMP = 5 }
+	export enum AmpUrlErrorErrorCode { ERROR_CODE_UNSPECIFIED = 'ERROR_CODE_UNSPECIFIED', INPUT_URL_NOT_FOUND = 'INPUT_URL_NOT_FOUND', NO_AMP_URL = 'NO_AMP_URL', APPLICATION_ERROR = 'APPLICATION_ERROR', URL_IS_VALID_AMP = 'URL_IS_VALID_AMP', URL_IS_INVALID_AMP = 'URL_IS_INVALID_AMP' }
 
 
 	/** AMP URL request for a batch of URLs. */
@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchGetAmpUrlsRequestLookupStrategy { FETCH_LIVE_DOC = 0, IN_INDEX_DOC = 1 }
+	export enum BatchGetAmpUrlsRequestLookupStrategy { FETCH_LIVE_DOC = 'FETCH_LIVE_DOC', IN_INDEX_DOC = 'IN_INDEX_DOC' }
 
 
 	/** Batch AMP URL response. */

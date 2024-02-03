@@ -213,9 +213,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { None = 0, ServerError = 1, InvalidRequest = 2, RateLimitExceeded = 3, InvalidAuthorization = 4, InsufficientAuthorization = 5 }
+	export enum ErrorCode { None = 'None', ServerError = 'ServerError', InvalidRequest = 'InvalidRequest', RateLimitExceeded = 'RateLimitExceeded', InvalidAuthorization = 'InvalidAuthorization', InsufficientAuthorization = 'InsufficientAuthorization' }
 
-	export enum ErrorSubCode { UnexpectedError = 0, ResourceError = 1, NotImplemented = 2, ParameterMissing = 3, ParameterInvalidValue = 4, HttpNotAllowed = 5, Blocked = 6, AuthorizationMissing = 7, AuthorizationRedundancy = 8, AuthorizationDisabled = 9, AuthorizationExpired = 10 }
+	export enum ErrorSubCode { UnexpectedError = 'UnexpectedError', ResourceError = 'ResourceError', NotImplemented = 'NotImplemented', ParameterMissing = 'ParameterMissing', ParameterInvalidValue = 'ParameterInvalidValue', HttpNotAllowed = 'HttpNotAllowed', Blocked = 'Blocked', AuthorizationMissing = 'AuthorizationMissing', AuthorizationRedundancy = 'AuthorizationRedundancy', AuthorizationDisabled = 'AuthorizationDisabled', AuthorizationExpired = 'AuthorizationExpired' }
 
 
 	/** The top-level response that represents a failed request. */
@@ -522,23 +522,23 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CustomInstance_ImageSearchX_BingApis_SDK { true = 0 }
+	export enum CustomInstance_ImageSearchX_BingApis_SDK { true = 'true' }
 
-	export enum CustomInstance_ImageSearchAspect { All = 0, Square = 1, Wide = 2, Tall = 3 }
+	export enum CustomInstance_ImageSearchAspect { All = 'All', Square = 'Square', Wide = 'Wide', Tall = 'Tall' }
 
-	export enum CustomInstance_ImageSearchColor { ColorOnly = 0, Monochrome = 1, Black = 2, Blue = 3, Brown = 4, Gray = 5, Green = 6, Orange = 7, Pink = 8, Purple = 9, Red = 10, Teal = 11, White = 12, Yellow = 13 }
+	export enum CustomInstance_ImageSearchColor { ColorOnly = 'ColorOnly', Monochrome = 'Monochrome', Black = 'Black', Blue = 'Blue', Brown = 'Brown', Gray = 'Gray', Green = 'Green', Orange = 'Orange', Pink = 'Pink', Purple = 'Purple', Red = 'Red', Teal = 'Teal', White = 'White', Yellow = 'Yellow' }
 
-	export enum CustomInstance_ImageSearchFreshness { Day = 0, Week = 1, Month = 2 }
+	export enum CustomInstance_ImageSearchFreshness { Day = 'Day', Week = 'Week', Month = 'Month' }
 
-	export enum CustomInstance_ImageSearchImageContent { Face = 0, Portrait = 1 }
+	export enum CustomInstance_ImageSearchImageContent { Face = 'Face', Portrait = 'Portrait' }
 
-	export enum CustomInstance_ImageSearchImageType { AnimatedGif = 0, Clipart = 1, Line = 2, Photo = 3, Shopping = 4, Transparent = 5 }
+	export enum CustomInstance_ImageSearchImageType { AnimatedGif = 'AnimatedGif', Clipart = 'Clipart', Line = 'Line', Photo = 'Photo', Shopping = 'Shopping', Transparent = 'Transparent' }
 
-	export enum CustomInstance_ImageSearchLicense { All = 0, Any = 1, Public = 2, Share = 3, ShareCommercially = 4, Modify = 5, ModifyCommercially = 6 }
+	export enum CustomInstance_ImageSearchLicense { All = 'All', Any = 'Any', Public = 'Public', Share = 'Share', ShareCommercially = 'ShareCommercially', Modify = 'Modify', ModifyCommercially = 'ModifyCommercially' }
 
-	export enum CustomInstance_ImageSearchSafeSearch { Off = 0, Moderate = 1, Strict = 2 }
+	export enum CustomInstance_ImageSearchSafeSearch { Off = 'Off', Moderate = 'Moderate', Strict = 'Strict' }
 
-	export enum CustomInstance_ImageSearchSize { All = 0, Small = 1, Medium = 2, Large = 3, Wallpaper = 4 }
+	export enum CustomInstance_ImageSearchSize { All = 'All', Small = 'Small', Medium = 'Medium', Large = 'Large', Wallpaper = 'Wallpaper' }
 
 }
 

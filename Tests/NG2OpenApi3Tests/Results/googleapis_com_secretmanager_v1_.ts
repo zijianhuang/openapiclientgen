@@ -120,7 +120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** A replication policy that replicates the Secret payload without any restrictions. */
@@ -568,7 +568,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecretVersionState { STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2, DESTROYED = 3 }
+	export enum SecretVersionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED', DESTROYED = 'DESTROYED' }
 
 
 	/** Response message for SecretManagerService.ListSecrets. */

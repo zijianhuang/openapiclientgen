@@ -61,7 +61,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryErrorCode { INTERNAL_FAILURE = 0, ACCESS_DENIED = 1 }
+	export enum QueryErrorCode { INTERNAL_FAILURE = 'INTERNAL_FAILURE', ACCESS_DENIED = 'ACCESS_DENIED' }
 
 
 	/** Represents a single metric data query to include in a batch. */
@@ -113,9 +113,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricNamespace { VDM = 0 }
+	export enum MetricNamespace { VDM = 'VDM' }
 
-	export enum Metric { SEND = 0, COMPLAINT = 1, PERMANENT_BOUNCE = 2, TRANSIENT_BOUNCE = 3, OPEN = 4, CLICK = 5, DELIVERY = 6, DELIVERY_OPEN = 7, DELIVERY_CLICK = 8, DELIVERY_COMPLAINT = 9 }
+	export enum Metric { SEND = 'SEND', COMPLAINT = 'COMPLAINT', PERMANENT_BOUNCE = 'PERMANENT_BOUNCE', TRANSIENT_BOUNCE = 'TRANSIENT_BOUNCE', OPEN = 'OPEN', CLICK = 'CLICK', DELIVERY = 'DELIVERY', DELIVERY_OPEN = 'DELIVERY_OPEN', DELIVERY_CLICK = 'DELIVERY_CLICK', DELIVERY_COMPLAINT = 'DELIVERY_COMPLAINT' }
 
 	export interface Dimensions {
 	}
@@ -183,7 +183,7 @@ export namespace MyNS {
 
 
 	/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established. */
-	export enum TlsPolicy { REQUIRE = 0, OPTIONAL = 1 }
+	export enum TlsPolicy { REQUIRE = 'REQUIRE', OPTIONAL = 'OPTIONAL' }
 
 
 	/** <p>An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p> <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li> <li> <p>The <code>aws:</code> prefix is reserved for use by Amazon Web Services; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate tags with public or shared resources, but the tags are available only for your Amazon Web Services account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified Amazon Web Services Region for your Amazon Web Services account.</p> </li> </ul> */
@@ -215,7 +215,7 @@ export namespace MyNS {
 
 
 	/** <p>The reason that the address was added to the suppression list for your account. The value can be one of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.</p> </li> </ul> */
-	export enum SuppressionListReason { BOUNCE = 0, COMPLAINT = 1 }
+	export enum SuppressionListReason { BOUNCE = 'BOUNCE', COMPLAINT = 'COMPLAINT' }
 
 
 	/** An object containing additional settings for your VDM configuration as applicable to the Dashboard. */
@@ -234,7 +234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureStatus { ENABLED = 0, DISABLED = 1 }
+	export enum FeatureStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** An object containing additional settings for your VDM configuration as applicable to the Guardian. */
@@ -299,7 +299,7 @@ export namespace MyNS {
 
 
 	/** An email sending event type. For example, email sends, opens, and bounces are all email events. */
-	export enum EventType { SEND = 0, REJECT = 1, BOUNCE = 2, COMPLAINT = 3, DELIVERY = 4, OPEN = 5, CLICK = 6, RENDERING_FAILURE = 7, DELIVERY_DELAY = 8, SUBSCRIPTION = 9 }
+	export enum EventType { SEND = 'SEND', REJECT = 'REJECT', BOUNCE = 'BOUNCE', COMPLAINT = 'COMPLAINT', DELIVERY = 'DELIVERY', OPEN = 'OPEN', CLICK = 'CLICK', RENDERING_FAILURE = 'RENDERING_FAILURE', DELIVERY_DELAY = 'DELIVERY_DELAY', SUBSCRIPTION = 'SUBSCRIPTION' }
 
 
 	/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
@@ -383,7 +383,7 @@ export namespace MyNS {
 
 
 	/** The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>. */
-	export enum DimensionValueSource { MESSAGE_TAG = 0, EMAIL_HEADER = 1, LINK_TAG = 2 }
+	export enum DimensionValueSource { MESSAGE_TAG = 'MESSAGE_TAG', EMAIL_HEADER = 'EMAIL_HEADER', LINK_TAG = 'LINK_TAG' }
 
 
 	/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
@@ -461,7 +461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionStatus { OPT_IN = 0, OPT_OUT = 1 }
+	export enum SubscriptionStatus { OPT_IN = 'OPT_IN', OPT_OUT = 'OPT_OUT' }
 
 	export interface CreateContactListResponse {
 	}
@@ -569,7 +569,7 @@ export namespace MyNS {
 
 
 	/** The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test. */
-	export enum DeliverabilityTestStatus { IN_PROGRESS = 0, COMPLETED = 1 }
+	export enum DeliverabilityTestStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 
 	/** Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body. */
@@ -736,7 +736,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { EMAIL_ADDRESS = 0, DOMAIN = 1, MANAGED_DOMAIN = 2 }
+	export enum IdentityType { EMAIL_ADDRESS = 'EMAIL_ADDRESS', DOMAIN = 'DOMAIN', MANAGED_DOMAIN = 'MANAGED_DOMAIN' }
 
 
 	/** <p>An object that contains information about the DKIM authentication status for an email identity.</p> <p>Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity</p> */
@@ -773,11 +773,11 @@ export namespace MyNS {
 
 
 	/** <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul> */
-	export enum DkimStatus { PENDING = 0, SUCCESS = 1, FAILED = 2, TEMPORARY_FAILURE = 3, NOT_STARTED = 4 }
+	export enum DkimStatus { PENDING = 'PENDING', SUCCESS = 'SUCCESS', FAILED = 'FAILED', TEMPORARY_FAILURE = 'TEMPORARY_FAILURE', NOT_STARTED = 'NOT_STARTED' }
 
-	export enum DkimSigningAttributesOrigin { AWS_SES = 0, EXTERNAL = 1 }
+	export enum DkimSigningAttributesOrigin { AWS_SES = 'AWS_SES', EXTERNAL = 'EXTERNAL' }
 
-	export enum DkimSigningKeyLength { RSA_1024_BIT = 0, RSA_2048_BIT = 1 }
+	export enum DkimSigningKeyLength { RSA_1024_BIT = 'RSA_1024_BIT', RSA_2048_BIT = 'RSA_2048_BIT' }
 
 
 	/** An HTTP 200 response if the request succeeds, or an error message if the request fails. */
@@ -847,7 +847,7 @@ export namespace MyNS {
 
 
 	/** <p>The type of action to perform on the address. The following are possible values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list.</p> </li> <li> <p>DELETE: remove the address from the suppression list.</p> </li> </ul> */
-	export enum SuppressionListImportAction { DELETE = 0, PUT = 1 }
+	export enum SuppressionListImportAction { DELETE = 'DELETE', PUT = 'PUT' }
 
 
 	/** An object that contains details about the action of a contact list. */
@@ -879,7 +879,7 @@ export namespace MyNS {
 
 
 	/** The data format of the import job's data source. */
-	export enum DataFormat { CSV = 0, JSON = 1 }
+	export enum DataFormat { CSV = 'CSV', JSON = 'JSON' }
 
 
 	/** An HTTP 200 response if the request succeeds, or an error message if the request fails. */
@@ -1109,9 +1109,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MailType { MARKETING = 0, TRANSACTIONAL = 1 }
+	export enum MailType { MARKETING = 'MARKETING', TRANSACTIONAL = 'TRANSACTIONAL' }
 
-	export enum ContactLanguage { EN = 0, JA = 1 }
+	export enum ContactLanguage { EN = 'EN', JA = 'JA' }
 
 
 	/** An object that contains information about your account details review. */
@@ -1133,7 +1133,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReviewStatus { PENDING = 0, FAILED = 1, GRANTED = 2, DENIED = 3 }
+	export enum ReviewStatus { PENDING = 'PENDING', FAILED = 'FAILED', GRANTED = 'GRANTED', DENIED = 'DENIED' }
 
 
 	/** The VDM attributes that apply to your Amazon SES account. */
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 
 
 	/** The warmup status of a dedicated IP. */
-	export enum WarmupStatus { IN_PROGRESS = 0, DONE = 1 }
+	export enum WarmupStatus { IN_PROGRESS = 'IN_PROGRESS', DONE = 'DONE' }
 
 
 	/** The following element is returned by the service. */
@@ -1584,7 +1584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingMode { STANDARD = 0, MANAGED = 1 }
+	export enum ScalingMode { STANDARD = 'STANDARD', MANAGED = 'MANAGED' }
 
 
 	/** Information about the dedicated IP addresses that are associated with your Amazon Web Services account. */
@@ -1635,7 +1635,7 @@ export namespace MyNS {
 
 
 	/** The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month. */
-	export enum DeliverabilityDashboardAccountStatus { ACTIVE = 0, PENDING_EXPIRATION = 1, DISABLED = 2 }
+	export enum DeliverabilityDashboardAccountStatus { ACTIVE = 'ACTIVE', PENDING_EXPIRATION = 'PENDING_EXPIRATION', DISABLED = 'DISABLED' }
 
 
 	/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
@@ -2034,11 +2034,11 @@ export namespace MyNS {
 
 
 	/** <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.</p> </li> </ul> */
-	export enum MailFromDomainStatus { PENDING = 0, SUCCESS = 1, FAILED = 2, TEMPORARY_FAILURE = 3 }
+	export enum MailFromDomainStatus { PENDING = 'PENDING', SUCCESS = 'SUCCESS', FAILED = 'FAILED', TEMPORARY_FAILURE = 'TEMPORARY_FAILURE' }
 
 
 	/** <p>The action to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p> */
-	export enum BehaviorOnMxFailure { USE_DEFAULT_VALUE = 0, REJECT_MESSAGE = 1 }
+	export enum BehaviorOnMxFailure { USE_DEFAULT_VALUE = 'USE_DEFAULT_VALUE', REJECT_MESSAGE = 'REJECT_MESSAGE' }
 
 
 	/** An object that contains mapping between <code>PolicyName</code> and <code>Policy</code> text. */
@@ -2217,7 +2217,7 @@ export namespace MyNS {
 
 
 	/** The status of the import job. */
-	export enum JobStatus { CREATED = 0, PROCESSING = 1, COMPLETED = 2, FAILED = 3 }
+	export enum JobStatus { CREATED = 'CREATED', PROCESSING = 'PROCESSING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Information about the suppressed email address. */
@@ -2707,11 +2707,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationType { DKIM = 0, DMARC = 1, SPF = 2, BIMI = 3 }
+	export enum RecommendationType { DKIM = 'DKIM', DMARC = 'DMARC', SPF = 'SPF', BIMI = 'BIMI' }
 
-	export enum RecommendationStatus { OPEN = 0, FIXED = 1 }
+	export enum RecommendationStatus { OPEN = 'OPEN', FIXED = 'FIXED' }
 
-	export enum RecommendationImpact { LOW = 0, HIGH = 1 }
+	export enum RecommendationImpact { LOW = 'LOW', HIGH = 'HIGH' }
 
 
 	/** A list of suppressed email addresses. */
@@ -3133,7 +3133,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BulkEmailStatus { SUCCESS = 0, MESSAGE_REJECTED = 1, MAIL_FROM_DOMAIN_NOT_VERIFIED = 2, CONFIGURATION_SET_NOT_FOUND = 3, TEMPLATE_NOT_FOUND = 4, ACCOUNT_SUSPENDED = 5, ACCOUNT_THROTTLED = 6, ACCOUNT_DAILY_QUOTA_EXCEEDED = 7, INVALID_SENDING_POOL_NAME = 8, ACCOUNT_SENDING_PAUSED = 9, CONFIGURATION_SET_SENDING_PAUSED = 10, INVALID_PARAMETER = 11, TRANSIENT_FAILURE = 12, FAILED = 13 }
+	export enum BulkEmailStatus { SUCCESS = 'SUCCESS', MESSAGE_REJECTED = 'MESSAGE_REJECTED', MAIL_FROM_DOMAIN_NOT_VERIFIED = 'MAIL_FROM_DOMAIN_NOT_VERIFIED', CONFIGURATION_SET_NOT_FOUND = 'CONFIGURATION_SET_NOT_FOUND', TEMPLATE_NOT_FOUND = 'TEMPLATE_NOT_FOUND', ACCOUNT_SUSPENDED = 'ACCOUNT_SUSPENDED', ACCOUNT_THROTTLED = 'ACCOUNT_THROTTLED', ACCOUNT_DAILY_QUOTA_EXCEEDED = 'ACCOUNT_DAILY_QUOTA_EXCEEDED', INVALID_SENDING_POOL_NAME = 'INVALID_SENDING_POOL_NAME', ACCOUNT_SENDING_PAUSED = 'ACCOUNT_SENDING_PAUSED', CONFIGURATION_SET_SENDING_PAUSED = 'CONFIGURATION_SET_SENDING_PAUSED', INVALID_PARAMETER = 'INVALID_PARAMETER', TRANSIENT_FAILURE = 'TRANSIENT_FAILURE', FAILED = 'FAILED' }
 
 
 	/** Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events.  */
@@ -3433,7 +3433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactListImportAction { DELETE = 0, PUT = 1 }
+	export enum ContactListImportAction { DELETE = 'DELETE', PUT = 'PUT' }
 
 
 	/** An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination. */
@@ -4145,7 +4145,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerificationStatus { PENDING = 0, SUCCESS = 1, FAILED = 2, TEMPORARY_FAILURE = 3, NOT_STARTED = 4 }
+	export enum VerificationStatus { PENDING = 'PENDING', SUCCESS = 'SUCCESS', FAILED = 'FAILED', TEMPORARY_FAILURE = 'TEMPORARY_FAILURE', NOT_STARTED = 'NOT_STARTED' }
 
 
 	/** Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify. */
@@ -4191,7 +4191,7 @@ export namespace MyNS {
 
 
 	/** The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>. */
-	export enum ImportDestinationType { SUPPRESSION_LIST = 0, CONTACT_LIST = 1 }
+	export enum ImportDestinationType { SUPPRESSION_LIST = 'SUPPRESSION_LIST', CONTACT_LIST = 'CONTACT_LIST' }
 
 
 	/** A request to obtain a list of configuration sets for your Amazon SES account in the current Amazon Web Services Region. */
@@ -4387,7 +4387,7 @@ export namespace MyNS {
 
 
 	/** <p>The <code>ListRecommendations</code> filter type. This can be one of the following:</p> <ul> <li> <p> <code>TYPE</code> – The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p> </li> <li> <p> <code>IMPACT</code> – The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p> </li> <li> <p> <code>STATUS</code> – The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p> </li> <li> <p> <code>RESOURCE_ARN</code> – The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> </li> </ul> */
-	export enum ListRecommendationsFilterKey { TYPE = 0, IMPACT = 1, STATUS = 2, RESOURCE_ARN = 3 }
+	export enum ListRecommendationsFilterKey { TYPE = 'TYPE', IMPACT = 'IMPACT', STATUS = 'STATUS', RESOURCE_ARN = 'RESOURCE_ARN' }
 
 
 	/** Represents a request to list the existing recommendations for your account. */
@@ -4436,7 +4436,7 @@ export namespace MyNS {
 
 
 	/** <p>The <code>BatchGetMetricDataQuery</code> dimension name. This can be one of the following:</p> <ul> <li> <p> <code>EMAIL_IDENTITY</code> – The email identity used when sending messages.</p> </li> <li> <p> <code>CONFIGURATION_SET</code> – The configuration set used when sending messages (if one was used).</p> </li> <li> <p> <code>ISP</code> – The recipient ISP (e.g. <code>Gmail</code>, <code>Yahoo</code>, etc.).</p> </li> </ul> */
-	export enum MetricDimensionName { EMAIL_IDENTITY = 0, CONFIGURATION_SET = 1, ISP = 2 }
+	export enum MetricDimensionName { EMAIL_IDENTITY = 'EMAIL_IDENTITY', CONFIGURATION_SET = 'CONFIGURATION_SET', ISP = 'ISP' }
 
 
 	/** A request to enable or disable the automatic IP address warm-up feature. */

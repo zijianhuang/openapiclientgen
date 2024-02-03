@@ -1311,7 +1311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdcrdPostBodyFormat { xml = 0, pdf = 1 }
+	export enum AdcrdPostBodyFormat { xml = 'xml', pdf = 'pdf' }
 
 }
 

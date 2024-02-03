@@ -1485,7 +1485,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChcerPostBodyFormat { pdf = 0 }
+	export enum ChcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface DncerPostBody {
 		certificateParameters?: DncerPostBodyCertificateParameters;

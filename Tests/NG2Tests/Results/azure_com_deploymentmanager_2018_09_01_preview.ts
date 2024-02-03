@@ -872,7 +872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceUnitPropertiesDeploymentMode { Incremental = 0, Complete = 1 }
+	export enum ServiceUnitPropertiesDeploymentMode { Incremental = 'Incremental', Complete = 'Complete' }
 
 	export interface ServiceUnitResource {
 	}

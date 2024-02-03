@@ -5,11 +5,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Access to be allowed or denied. */
-	export enum Access { Allow = 0, Deny = 1 }
+	export enum Access { Allow = 'Allow', Deny = 'Deny' }
 
 
 	/** VPN client authentication method. */
-	export enum AuthenticationMethod { EAPTLS = 0, EAPMSCHAPv2 = 1 }
+	export enum AuthenticationMethod { EAPTLS = 'EAPTLS', EAPMSCHAPv2 = 'EAPMSCHAPv2' }
 
 
 	/** The response body contains the status of the specified asynchronous operation, indicating whether it has succeeded, is in progress, or has failed. Note that this status is distinct from the HTTP status code returned for the Get Operation Status operation itself. If the asynchronous operation succeeded, the response body includes the HTTP status code for the successful request. If the asynchronous operation failed, the response body includes the HTTP status code for the failed request and error information regarding the failure. */
@@ -35,7 +35,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureAsyncOperationResultStatus { InProgress = 0, Succeeded = 1, Failed = 2 }
+	export enum AzureAsyncOperationResultStatus { InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** An error response from the service. */
@@ -174,11 +174,11 @@ export namespace MyNS {
 
 
 	/** IP address allocation method. */
-	export enum IPAllocationMethod { Static = 0, Dynamic = 1 }
+	export enum IPAllocationMethod { Static = 'Static', Dynamic = 'Dynamic' }
 
 
 	/** IP address version. */
-	export enum IPVersion { IPv4 = 0, IPv6 = 1 }
+	export enum IPVersion { IPv4 = 'IPv4', IPv6 = 'IPv6' }
 
 
 	/** Identity for the resource. */
@@ -222,7 +222,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedServiceIdentityType { SystemAssigned = 0, UserAssigned = 1, 'SystemAssigned, UserAssigned' = 2, None = 3 }
+	export enum ManagedServiceIdentityType { SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned', None = 'None' }
 
 	export interface ManagedServiceIdentityUserAssignedIdentities {
 
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 
 	/** The current provisioning state. */
-	export enum ProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum ProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** Common resource representation. */

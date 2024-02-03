@@ -112,7 +112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterSkuName { Dedicated = 0 }
+	export enum ClusterSkuName { Dedicated = 'Dedicated' }
 
 
 	/** The response of the List Event Hubs Clusters operation. */
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { Basic = 0, Standard = 1 }
+	export enum SkuName { Basic = 'Basic', Standard = 'Standard' }
 
 
 	/** The full ARM ID of an Event Hubs Namespace */
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionKeySource { 'Microsoft.KeyVault' = 0 }
+	export enum EncryptionKeySource { 'Microsoft.KeyVault' = 'Microsoft.KeyVault' }
 
 
 	/** Error response that indicates the service is not able to process the incoming request. The reason is provided in the error message. */
@@ -390,7 +390,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** Single item in a List or Get IpFilterRules operation */
@@ -496,7 +496,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NWRuleSetIpRulesAction { Allow = 0 }
+	export enum NWRuleSetIpRulesAction { Allow = 'Allow' }
 
 
 	/** The response from the List namespace operation. */

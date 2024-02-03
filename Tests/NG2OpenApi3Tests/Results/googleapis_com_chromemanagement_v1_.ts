@@ -315,7 +315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1ChromeAppInfoType { ITEM_TYPE_UNSPECIFIED = 0, EXTENSION = 1, OTHERS = 2 }
+	export enum GoogleChromeManagementV1ChromeAppInfoType { ITEM_TYPE_UNSPECIFIED = 'ITEM_TYPE_UNSPECIFIED', EXTENSION = 'EXTENSION', OTHERS = 'OTHERS' }
 
 
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -348,7 +348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1AppDetailsType { APP_ITEM_TYPE_UNSPECIFIED = 0, CHROME = 1, ANDROID = 2, WEB = 3 }
+	export enum GoogleChromeManagementV1AppDetailsType { APP_ITEM_TYPE_UNSPECIFIED = 'APP_ITEM_TYPE_UNSPECIFIED', CHROME = 'CHROME', ANDROID = 'ANDROID', WEB = 'WEB' }
 
 
 	/** Status data for storage. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceAudioStatus](https://chromeenterprise.google/policies/#ReportDeviceAudioStatus) * Data Collection Frequency: 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_AUDIO_REPORT */
@@ -622,7 +622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1BatteryStatusReportBatteryHealth { BATTERY_HEALTH_UNSPECIFIED = 0, BATTERY_HEALTH_NORMAL = 1, BATTERY_REPLACE_SOON = 2, BATTERY_REPLACE_NOW = 3 }
+	export enum GoogleChromeManagementV1BatteryStatusReportBatteryHealth { BATTERY_HEALTH_UNSPECIFIED = 'BATTERY_HEALTH_UNSPECIFIED', BATTERY_HEALTH_NORMAL = 'BATTERY_HEALTH_NORMAL', BATTERY_REPLACE_SOON = 'BATTERY_REPLACE_SOON', BATTERY_REPLACE_NOW = 'BATTERY_REPLACE_NOW' }
 
 
 	/** Boot performance report of a device. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceBootMode](https://chromeenterprise.google/policies/#ReportDeviceBootMode) * Data Collection Frequency: On every boot up event * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_OS_REPORT */
@@ -680,7 +680,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1BootPerformanceReportShutdownReason { SHUTDOWN_REASON_UNSPECIFIED = 0, USER_REQUEST = 1, SYSTEM_UPDATE = 2, LOW_BATTERY = 3, OTHER = 4 }
+	export enum GoogleChromeManagementV1BootPerformanceReportShutdownReason { SHUTDOWN_REASON_UNSPECIFIED = 'SHUTDOWN_REASON_UNSPECIFIED', USER_REQUEST = 'USER_REQUEST', SYSTEM_UPDATE = 'SYSTEM_UPDATE', LOW_BATTERY = 'LOW_BATTERY', OTHER = 'OTHER' }
 
 
 	/** Describes a browser version and its install count. */
@@ -731,9 +731,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1BrowserVersionChannel { RELEASE_CHANNEL_UNSPECIFIED = 0, CANARY = 1, DEV = 2, BETA = 3, STABLE = 4 }
+	export enum GoogleChromeManagementV1BrowserVersionChannel { RELEASE_CHANNEL_UNSPECIFIED = 'RELEASE_CHANNEL_UNSPECIFIED', CANARY = 'CANARY', DEV = 'DEV', BETA = 'BETA', STABLE = 'STABLE' }
 
-	export enum GoogleChromeManagementV1BrowserVersionSystem { DEVICE_SYSTEM_UNSPECIFIED = 0, SYSTEM_OTHER = 1, SYSTEM_ANDROID = 2, SYSTEM_IOS = 3, SYSTEM_CROS = 4, SYSTEM_WINDOWS = 5, SYSTEM_MAC = 6, SYSTEM_LINUX = 7 }
+	export enum GoogleChromeManagementV1BrowserVersionSystem { DEVICE_SYSTEM_UNSPECIFIED = 'DEVICE_SYSTEM_UNSPECIFIED', SYSTEM_OTHER = 'SYSTEM_OTHER', SYSTEM_ANDROID = 'SYSTEM_ANDROID', SYSTEM_IOS = 'SYSTEM_IOS', SYSTEM_CROS = 'SYSTEM_CROS', SYSTEM_WINDOWS = 'SYSTEM_WINDOWS', SYSTEM_MAC = 'SYSTEM_MAC', SYSTEM_LINUX = 'SYSTEM_LINUX' }
 
 
 	/** Details of an app installation request. */
@@ -930,7 +930,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1DeviceAueCountReportAueMonth { MONTH_UNSPECIFIED = 0, JANUARY = 1, FEBRUARY = 2, MARCH = 3, APRIL = 4, MAY = 5, JUNE = 6, JULY = 7, AUGUST = 8, SEPTEMBER = 9, OCTOBER = 10, NOVEMBER = 11, DECEMBER = 12 }
+	export enum GoogleChromeManagementV1DeviceAueCountReportAueMonth { MONTH_UNSPECIFIED = 'MONTH_UNSPECIFIED', JANUARY = 'JANUARY', FEBRUARY = 'FEBRUARY', MARCH = 'MARCH', APRIL = 'APRIL', MAY = 'MAY', JUNE = 'JUNE', JULY = 'JULY', AUGUST = 'AUGUST', SEPTEMBER = 'SEPTEMBER', OCTOBER = 'OCTOBER', NOVEMBER = 'NOVEMBER', DECEMBER = 'DECEMBER' }
 
 
 	/** Response containing counts for devices that need attention. */
@@ -1184,11 +1184,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1InstalledAppAppInstallType { APP_INSTALL_TYPE_UNSPECIFIED = 0, MULTIPLE = 1, NORMAL = 2, ADMIN = 3, DEVELOPMENT = 4, SIDELOAD = 5, OTHER = 6 }
+	export enum GoogleChromeManagementV1InstalledAppAppInstallType { APP_INSTALL_TYPE_UNSPECIFIED = 'APP_INSTALL_TYPE_UNSPECIFIED', MULTIPLE = 'MULTIPLE', NORMAL = 'NORMAL', ADMIN = 'ADMIN', DEVELOPMENT = 'DEVELOPMENT', SIDELOAD = 'SIDELOAD', OTHER = 'OTHER' }
 
-	export enum GoogleChromeManagementV1InstalledAppAppSource { APP_SOURCE_UNSPECIFIED = 0, CHROME_WEBSTORE = 1, PLAY_STORE = 2 }
+	export enum GoogleChromeManagementV1InstalledAppAppSource { APP_SOURCE_UNSPECIFIED = 'APP_SOURCE_UNSPECIFIED', CHROME_WEBSTORE = 'CHROME_WEBSTORE', PLAY_STORE = 'PLAY_STORE' }
 
-	export enum GoogleChromeManagementV1InstalledAppAppType { APP_TYPE_UNSPECIFIED = 0, EXTENSION = 1, APP = 2, THEME = 3, HOSTED_APP = 4, ANDROID_APP = 5 }
+	export enum GoogleChromeManagementV1InstalledAppAppType { APP_TYPE_UNSPECIFIED = 'APP_TYPE_UNSPECIFIED', EXTENSION = 'EXTENSION', APP = 'APP', THEME = 'THEME', HOSTED_APP = 'HOSTED_APP', ANDROID_APP = 'ANDROID_APP' }
 
 
 	/** Response containing a summary printing report for each printer from the specified organizational unit for the requested time interval. */
@@ -1406,7 +1406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1CpuInfoArchitecture { ARCHITECTURE_UNSPECIFIED = 0, X64 = 1 }
+	export enum GoogleChromeManagementV1CpuInfoArchitecture { ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED', X64 = 'X64' }
 
 
 	/** Provides information about the status of the CPU. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Every 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_CPU_REPORT */
@@ -1530,7 +1530,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1DeviceActivityReportDeviceActivityState { DEVICE_ACTIVITY_STATE_UNSPECIFIED = 0, ACTIVE = 1, IDLE = 2, LOCKED = 3 }
+	export enum GoogleChromeManagementV1DeviceActivityReportDeviceActivityState { DEVICE_ACTIVITY_STATE_UNSPECIFIED = 'DEVICE_ACTIVITY_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', IDLE = 'IDLE', LOCKED = 'LOCKED' }
 
 
 	/** Status of the single storage device. */
@@ -1888,11 +1888,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1PrintJobColorMode { COLOR_MODE_UNSPECIFIED = 0, BLACK_AND_WHITE = 1, COLOR = 2 }
+	export enum GoogleChromeManagementV1PrintJobColorMode { COLOR_MODE_UNSPECIFIED = 'COLOR_MODE_UNSPECIFIED', BLACK_AND_WHITE = 'BLACK_AND_WHITE', COLOR = 'COLOR' }
 
-	export enum GoogleChromeManagementV1PrintJobDuplexMode { DUPLEX_MODE_UNSPECIFIED = 0, ONE_SIDED = 1, TWO_SIDED_LONG_EDGE = 2, TWO_SIDED_SHORT_EDGE = 3 }
+	export enum GoogleChromeManagementV1PrintJobDuplexMode { DUPLEX_MODE_UNSPECIFIED = 'DUPLEX_MODE_UNSPECIFIED', ONE_SIDED = 'ONE_SIDED', TWO_SIDED_LONG_EDGE = 'TWO_SIDED_LONG_EDGE', TWO_SIDED_SHORT_EDGE = 'TWO_SIDED_SHORT_EDGE' }
 
-	export enum GoogleChromeManagementV1PrintJobState { STATE_UNSPECIFIED = 0, PRINTED = 1, CANCELLED = 2, FAILED = 3 }
+	export enum GoogleChromeManagementV1PrintJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PRINTED = 'PRINTED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 
 	/** Response containing a list of devices with queried app installed. */
@@ -2101,7 +2101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1HeartbeatStatusReportState { STATE_UNSPECIFIED = 0, UNKNOWN = 1, ONLINE = 2, OFFLINE = 3 }
+	export enum GoogleChromeManagementV1HeartbeatStatusReportState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UNKNOWN = 'UNKNOWN', ONLINE = 'ONLINE', OFFLINE = 'OFFLINE' }
 
 
 	/** Data that describes the result of the HTTPS latency diagnostics routine, with the HTTPS requests issued to Google websites. */
@@ -2131,7 +2131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1HttpsLatencyRoutineDataProblem { HTTPS_LATENCY_PROBLEM_UNSPECIFIED = 0, FAILED_DNS_RESOLUTIONS = 1, FAILED_HTTPS_REQUESTS = 2, HIGH_LATENCY = 3, VERY_HIGH_LATENCY = 4 }
+	export enum GoogleChromeManagementV1HttpsLatencyRoutineDataProblem { HTTPS_LATENCY_PROBLEM_UNSPECIFIED = 'HTTPS_LATENCY_PROBLEM_UNSPECIFIED', FAILED_DNS_RESOLUTIONS = 'FAILED_DNS_RESOLUTIONS', FAILED_HTTPS_REQUESTS = 'FAILED_HTTPS_REQUESTS', HIGH_LATENCY = 'HIGH_LATENCY', VERY_HIGH_LATENCY = 'VERY_HIGH_LATENCY' }
 
 
 	/** Kiosk app status report of a device. * Available for Kiosks * This field provides the app id and version number running on a kiosk device and the timestamp of when the report was last updated * Data for this field is controlled via policy: [ReportDeviceSessionStatus](https://chromeenterprise.google/policies/#ReportDeviceSessionStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_APPS_REPORT */
@@ -2373,9 +2373,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm { MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED = 0, MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN = 1, MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128 = 2, MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256 = 3 }
+	export enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm { MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED = 'MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED', MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN = 'MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN', MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128 = 'MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128', MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256 = 'MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256' }
 
-	export enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState { MEMORY_ENCRYPTION_STATE_UNSPECIFIED = 0, MEMORY_ENCRYPTION_STATE_UNKNOWN = 1, MEMORY_ENCRYPTION_STATE_DISABLED = 2, MEMORY_ENCRYPTION_STATE_TME = 3, MEMORY_ENCRYPTION_STATE_MKTME = 4 }
+	export enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState { MEMORY_ENCRYPTION_STATE_UNSPECIFIED = 'MEMORY_ENCRYPTION_STATE_UNSPECIFIED', MEMORY_ENCRYPTION_STATE_UNKNOWN = 'MEMORY_ENCRYPTION_STATE_UNKNOWN', MEMORY_ENCRYPTION_STATE_DISABLED = 'MEMORY_ENCRYPTION_STATE_DISABLED', MEMORY_ENCRYPTION_STATE_TME = 'MEMORY_ENCRYPTION_STATE_TME', MEMORY_ENCRYPTION_STATE_MKTME = 'MEMORY_ENCRYPTION_STATE_MKTME' }
 
 
 	/** Contains samples of memory status reports. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: Only at upload, SystemRamFreeByes is collected every 10 minutes * Default Data Reporting Frequency: Every 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_MEMORY_REPORT */
@@ -2544,7 +2544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1NetworkDeviceType { NETWORK_DEVICE_TYPE_UNSPECIFIED = 0, CELLULAR_DEVICE = 1, ETHERNET_DEVICE = 2, WIFI_DEVICE = 3 }
+	export enum GoogleChromeManagementV1NetworkDeviceType { NETWORK_DEVICE_TYPE_UNSPECIFIED = 'NETWORK_DEVICE_TYPE_UNSPECIFIED', CELLULAR_DEVICE = 'CELLULAR_DEVICE', ETHERNET_DEVICE = 'ETHERNET_DEVICE', WIFI_DEVICE = 'WIFI_DEVICE' }
 
 
 	/** State of visible/configured networks. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportNetworkStatus](https://chromeenterprise.google/policies/#ReportNetworkStatus) * Data Collection Frequency: 60 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: Yes * Granular permission needed: TELEMETRY_API_NETWORK_REPORT */
@@ -2658,9 +2658,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1NetworkStatusReportConnectionState { NETWORK_CONNECTION_STATE_UNSPECIFIED = 0, ONLINE = 1, CONNECTED = 2, PORTAL = 3, CONNECTING = 4, NOT_CONNECTED = 5 }
+	export enum GoogleChromeManagementV1NetworkStatusReportConnectionState { NETWORK_CONNECTION_STATE_UNSPECIFIED = 'NETWORK_CONNECTION_STATE_UNSPECIFIED', ONLINE = 'ONLINE', CONNECTED = 'CONNECTED', PORTAL = 'PORTAL', CONNECTING = 'CONNECTING', NOT_CONNECTED = 'NOT_CONNECTED' }
 
-	export enum GoogleChromeManagementV1NetworkStatusReportConnectionType { NETWORK_TYPE_UNSPECIFIED = 0, CELLULAR = 1, ETHERNET = 2, TETHER = 3, VPN = 4, WIFI = 5 }
+	export enum GoogleChromeManagementV1NetworkStatusReportConnectionType { NETWORK_TYPE_UNSPECIFIED = 'NETWORK_TYPE_UNSPECIFIED', CELLULAR = 'CELLULAR', ETHERNET = 'ETHERNET', TETHER = 'TETHER', VPN = 'VPN', WIFI = 'WIFI' }
 
 
 	/** Contains information regarding the current OS update status. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceOsUpdateStatus](https://chromeenterprise.google/policies/#ReportDeviceOsUpdateStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_OS_REPORT */
@@ -2718,7 +2718,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1OsUpdateStatusUpdateState { UPDATE_STATE_UNSPECIFIED = 0, OS_IMAGE_DOWNLOAD_NOT_STARTED = 1, OS_IMAGE_DOWNLOAD_IN_PROGRESS = 2, OS_UPDATE_NEED_REBOOT = 3 }
+	export enum GoogleChromeManagementV1OsUpdateStatusUpdateState { UPDATE_STATE_UNSPECIFIED = 'UPDATE_STATE_UNSPECIFIED', OS_IMAGE_DOWNLOAD_NOT_STARTED = 'OS_IMAGE_DOWNLOAD_NOT_STARTED', OS_IMAGE_DOWNLOAD_IN_PROGRESS = 'OS_IMAGE_DOWNLOAD_IN_PROGRESS', OS_UPDATE_NEED_REBOOT = 'OS_UPDATE_NEED_REBOOT' }
 
 
 	/** Peripherals report. * Granular permission needed: TELEMETRY_API_PERIPHERALS_REPORT */
@@ -2921,7 +2921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1ThunderboltInfoSecurityLevel { THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED = 0, THUNDERBOLT_SECURITY_NONE_LEVEL = 1, THUNDERBOLT_SECURITY_USER_LEVEL = 2, THUNDERBOLT_SECURITY_SECURE_LEVEL = 3, THUNDERBOLT_SECURITY_DP_ONLY_LEVEL = 4, THUNDERBOLT_SECURITY_USB_ONLY_LEVEL = 5, THUNDERBOLT_SECURITY_NO_PCIE_LEVEL = 6 }
+	export enum GoogleChromeManagementV1ThunderboltInfoSecurityLevel { THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED = 'THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED', THUNDERBOLT_SECURITY_NONE_LEVEL = 'THUNDERBOLT_SECURITY_NONE_LEVEL', THUNDERBOLT_SECURITY_USER_LEVEL = 'THUNDERBOLT_SECURITY_USER_LEVEL', THUNDERBOLT_SECURITY_SECURE_LEVEL = 'THUNDERBOLT_SECURITY_SECURE_LEVEL', THUNDERBOLT_SECURITY_DP_ONLY_LEVEL = 'THUNDERBOLT_SECURITY_DP_ONLY_LEVEL', THUNDERBOLT_SECURITY_USB_ONLY_LEVEL = 'THUNDERBOLT_SECURITY_USB_ONLY_LEVEL', THUNDERBOLT_SECURITY_NO_PCIE_LEVEL = 'THUNDERBOLT_SECURITY_NO_PCIE_LEVEL' }
 
 
 	/** Response message for listing telemetry events for a customer. */
@@ -3048,7 +3048,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1TelemetryEventEventType { EVENT_TYPE_UNSPECIFIED = 0, AUDIO_SEVERE_UNDERRUN = 1, NETWORK_STATE_CHANGE = 2, USB_ADDED = 3, USB_REMOVED = 4, NETWORK_HTTPS_LATENCY_CHANGE = 5, WIFI_SIGNAL_STRENGTH_LOW = 6, WIFI_SIGNAL_STRENGTH_RECOVERED = 7, VPN_CONNECTION_STATE_CHANGE = 8 }
+	export enum GoogleChromeManagementV1TelemetryEventEventType { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', AUDIO_SEVERE_UNDERRUN = 'AUDIO_SEVERE_UNDERRUN', NETWORK_STATE_CHANGE = 'NETWORK_STATE_CHANGE', USB_ADDED = 'USB_ADDED', USB_REMOVED = 'USB_REMOVED', NETWORK_HTTPS_LATENCY_CHANGE = 'NETWORK_HTTPS_LATENCY_CHANGE', WIFI_SIGNAL_STRENGTH_LOW = 'WIFI_SIGNAL_STRENGTH_LOW', WIFI_SIGNAL_STRENGTH_RECOVERED = 'WIFI_SIGNAL_STRENGTH_RECOVERED', VPN_CONNECTION_STATE_CHANGE = 'VPN_CONNECTION_STATE_CHANGE' }
 
 
 	/** Https latency routine is run periodically and `TelemetryHttpsLatencyChangeEvent` is triggered if a latency problem was detected or if the device has recovered from a latency problem. * Granular permission needed: TELEMETRY_API_NETWORK_REPORT */
@@ -3074,7 +3074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState { HTTPS_LATENCY_STATE_UNSPECIFIED = 0, RECOVERY = 1, PROBLEM = 2 }
+	export enum GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState { HTTPS_LATENCY_STATE_UNSPECIFIED = 'HTTPS_LATENCY_STATE_UNSPECIFIED', RECOVERY = 'RECOVERY', PROBLEM = 'PROBLEM' }
 
 
 	/** `TelemetryNetworkConnectionStateChangeEvent` is triggered on network connection state changes. * Granular permission needed: TELEMETRY_API_NETWORK_REPORT */

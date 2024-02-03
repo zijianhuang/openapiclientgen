@@ -65,7 +65,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AchievementConfigurationAchievementType { ACHIEVEMENT_TYPE_UNSPECIFIED = 0, STANDARD = 1, INCREMENTAL = 2 }
+	export enum AchievementConfigurationAchievementType { ACHIEVEMENT_TYPE_UNSPECIFIED = 'ACHIEVEMENT_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', INCREMENTAL = 'INCREMENTAL' }
 
 
 	/** An achievement configuration detail. */
@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AchievementConfigurationInitialState { INITIAL_STATE_UNSPECIFIED = 0, HIDDEN = 1, REVEALED = 2 }
+	export enum AchievementConfigurationInitialState { INITIAL_STATE_UNSPECIFIED = 'INITIAL_STATE_UNSPECIFIED', HIDDEN = 'HIDDEN', REVEALED = 'REVEALED' }
 
 
 	/** A ListConfigurations response. */
@@ -277,7 +277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GamesNumberFormatConfigurationNumberFormatType { NUMBER_FORMAT_TYPE_UNSPECIFIED = 0, NUMERIC = 1, TIME_DURATION = 2, CURRENCY = 3 }
+	export enum GamesNumberFormatConfigurationNumberFormatType { NUMBER_FORMAT_TYPE_UNSPECIFIED = 'NUMBER_FORMAT_TYPE_UNSPECIFIED', NUMERIC = 'NUMERIC', TIME_DURATION = 'TIME_DURATION', CURRENCY = 'CURRENCY' }
 
 
 	/** An leaderboard configuration resource. */
@@ -378,7 +378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LeaderboardConfigurationScoreOrder { SCORE_ORDER_UNSPECIFIED = 0, LARGER_IS_BETTER = 1, SMALLER_IS_BETTER = 2 }
+	export enum LeaderboardConfigurationScoreOrder { SCORE_ORDER_UNSPECIFIED = 'SCORE_ORDER_UNSPECIFIED', LARGER_IS_BETTER = 'LARGER_IS_BETTER', SMALLER_IS_BETTER = 'SMALLER_IS_BETTER' }
 
 
 	/** A ListConfigurations response. */

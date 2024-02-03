@@ -107,11 +107,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TrustState { STATE_UNSPECIFIED = 0, CREATING = 1, UPDATING = 2, DELETING = 3, CONNECTED = 4, DISCONNECTED = 5 }
+	export enum TrustState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', CONNECTED = 'CONNECTED', DISCONNECTED = 'DISCONNECTED' }
 
-	export enum TrustTrustDirection { TRUST_DIRECTION_UNSPECIFIED = 0, INBOUND = 1, OUTBOUND = 2, BIDIRECTIONAL = 3 }
+	export enum TrustTrustDirection { TRUST_DIRECTION_UNSPECIFIED = 'TRUST_DIRECTION_UNSPECIFIED', INBOUND = 'INBOUND', OUTBOUND = 'OUTBOUND', BIDIRECTIONAL = 'BIDIRECTIONAL' }
 
-	export enum TrustTrustType { TRUST_TYPE_UNSPECIFIED = 0, FOREST = 1, EXTERNAL = 2 }
+	export enum TrustTrustType { TRUST_TYPE_UNSPECIFIED = 'TRUST_TYPE_UNSPECIFIED', FOREST = 'FOREST', EXTERNAL = 'EXTERNAL' }
 
 
 	/** Represents a Managed Microsoft Identities backup. */
@@ -176,9 +176,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, FAILED = 3, DELETING = 4 }
+	export enum BackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', DELETING = 'DELETING' }
 
-	export enum BackupType { TYPE_UNSPECIFIED = 0, ON_DEMAND = 1, SCHEDULED = 2 }
+	export enum BackupType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ON_DEMAND = 'ON_DEMAND', SCHEDULED = 'SCHEDULED' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -370,9 +370,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OnPremDomainSIDDetailsSidFilteringState { SID_FILTERING_STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum OnPremDomainSIDDetailsSidFilteringState { SID_FILTERING_STATE_UNSPECIFIED = 'SID_FILTERING_STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum CheckMigrationPermissionResponseState { STATE_UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2, NEEDS_MAINTENANCE = 3 }
+	export enum CheckMigrationPermissionResponseState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED', NEEDS_MAINTENANCE = 'NEEDS_MAINTENANCE' }
 
 
 	/** Time window specified for daily operations. */
@@ -622,7 +622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, DELETING = 4, REPAIRING = 5, PERFORMING_MAINTENANCE = 6, UNAVAILABLE = 7 }
+	export enum DomainState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', DELETING = 'DELETING', REPAIRING = 'REPAIRING', PERFORMING_MAINTENANCE = 'PERFORMING_MAINTENANCE', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** DomainJoinMachineRequest is the request message for DomainJoinMachine method */
@@ -1206,7 +1206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 0, READY = 1, DELETING = 2 }
+	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', DELETING = 'DELETING' }
 
 
 	/** Maintenance policy applicable to instance updates. */
@@ -1235,7 +1235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 0, EARLIER = 1, LATER = 2, WEEK1 = 3, WEEK2 = 4, WEEK5 = 5 }
+	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 'UPDATE_CHANNEL_UNSPECIFIED', EARLIER = 'EARLIER', LATER = 'LATER', WEEK1 = 'WEEK1', WEEK2 = 'WEEK2', WEEK5 = 'WEEK5' }
 
 
 	/** MaintenanceWindow definition. */
@@ -1305,7 +1305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Contains notification related data. */
@@ -1459,7 +1459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudSaasacceleratorManagementProvidersV1InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, REPAIRING = 4, DELETING = 5, ERROR = 6 }
+	export enum GoogleCloudSaasacceleratorManagementProvidersV1InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', REPAIRING = 'REPAIRING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** LDAPSSettings represents the ldaps settings for domain resource. LDAP is the Lightweight Directory Access Protocol, defined in https://tools.ietf.org/html/rfc4511. The settings object configures LDAP over SSL/TLS, whether it is over port 636 or the StartTLS operation. If LDAPSSettings is being changed, it will be placed into the UPDATING state, which indicates that the resource is being reconciled. At this point, Get will reflect an intermediate state. */
@@ -1513,7 +1513,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LDAPSSettingsState { STATE_UNSPECIFIED = 0, UPDATING = 1, ACTIVE = 2, FAILED = 3 }
+	export enum LDAPSSettingsState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** ListBackupsResponse is the response message for ListBackups method. */
@@ -1839,7 +1839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PeeringState { STATE_UNSPECIFIED = 0, CREATING = 1, CONNECTED = 2, DISCONNECTED = 3, DELETING = 4 }
+	export enum PeeringState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', CONNECTED = 'CONNECTED', DISCONNECTED = 'DISCONNECTED', DELETING = 'DELETING' }
 
 
 	/** ListSqlIntegrationsResponse is the response message for ListSqlIntegrations method. */
@@ -1917,7 +1917,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SqlIntegrationState { STATE_UNSPECIFIED = 0, CREATING = 1, DELETING = 2, READY = 3 }
+	export enum SqlIntegrationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', DELETING = 'DELETING', READY = 'READY' }
 
 
 	/** Represents the metadata of the long-running operation. */

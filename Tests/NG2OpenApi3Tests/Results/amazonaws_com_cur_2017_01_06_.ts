@@ -213,23 +213,23 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportDefinitionTimeUnit { HOURLY = 0, DAILY = 1, MONTHLY = 2 }
+	export enum ReportDefinitionTimeUnit { HOURLY = 'HOURLY', DAILY = 'DAILY', MONTHLY = 'MONTHLY' }
 
-	export enum ReportDefinitionFormat { textORcsv = 0, Parquet = 1 }
+	export enum ReportDefinitionFormat { textORcsv = 'textORcsv', Parquet = 'Parquet' }
 
-	export enum ReportDefinitionCompression { ZIP = 0, GZIP = 1, Parquet = 2 }
+	export enum ReportDefinitionCompression { ZIP = 'ZIP', GZIP = 'GZIP', Parquet = 'Parquet' }
 
 
 	/** Whether or not AWS includes resource IDs in the report.  */
-	export enum SchemaElement { RESOURCES = 0, SPLIT_COST_ALLOCATION_DATA = 1 }
+	export enum SchemaElement { RESOURCES = 'RESOURCES', SPLIT_COST_ALLOCATION_DATA = 'SPLIT_COST_ALLOCATION_DATA' }
 
-	export enum ReportDefinitionS3Region { 'af-south-1' = 0, 'ap-east-1' = 1, 'ap-south-1' = 2, 'ap-south-2' = 3, 'ap-southeast-1' = 4, 'ap-southeast-2' = 5, 'ap-southeast-3' = 6, 'ap-northeast-1' = 7, 'ap-northeast-2' = 8, 'ap-northeast-3' = 9, 'ca-central-1' = 10, 'eu-central-1' = 11, 'eu-central-2' = 12, 'eu-west-1' = 13, 'eu-west-2' = 14, 'eu-west-3' = 15, 'eu-north-1' = 16, 'eu-south-1' = 17, 'eu-south-2' = 18, 'me-central-1' = 19, 'me-south-1' = 20, 'sa-east-1' = 21, 'us-east-1' = 22, 'us-east-2' = 23, 'us-west-1' = 24, 'us-west-2' = 25, 'cn-north-1' = 26, 'cn-northwest-1' = 27 }
+	export enum ReportDefinitionS3Region { 'af-south-1' = 'af-south-1', 'ap-east-1' = 'ap-east-1', 'ap-south-1' = 'ap-south-1', 'ap-south-2' = 'ap-south-2', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-southeast-3' = 'ap-southeast-3', 'ap-northeast-1' = 'ap-northeast-1', 'ap-northeast-2' = 'ap-northeast-2', 'ap-northeast-3' = 'ap-northeast-3', 'ca-central-1' = 'ca-central-1', 'eu-central-1' = 'eu-central-1', 'eu-central-2' = 'eu-central-2', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'eu-west-3' = 'eu-west-3', 'eu-north-1' = 'eu-north-1', 'eu-south-1' = 'eu-south-1', 'eu-south-2' = 'eu-south-2', 'me-central-1' = 'me-central-1', 'me-south-1' = 'me-south-1', 'sa-east-1' = 'sa-east-1', 'us-east-1' = 'us-east-1', 'us-east-2' = 'us-east-2', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'cn-north-1' = 'cn-north-1', 'cn-northwest-1' = 'cn-northwest-1' }
 
 
 	/** The types of manifest that you want AWS to create for this report. */
-	export enum AdditionalArtifact { REDSHIFT = 0, QUICKSIGHT = 1, ATHENA = 2 }
+	export enum AdditionalArtifact { REDSHIFT = 'REDSHIFT', QUICKSIGHT = 'QUICKSIGHT', ATHENA = 'ATHENA' }
 
-	export enum ReportVersioning { CREATE_NEW_REPORT = 0, OVERWRITE_REPORT = 1 }
+	export enum ReportVersioning { CREATE_NEW_REPORT = 'CREATE_NEW_REPORT', OVERWRITE_REPORT = 'OVERWRITE_REPORT' }
 
 
 	/** Requests a list of AWS Cost and Usage reports owned by the account. */
@@ -367,19 +367,19 @@ export namespace MyNS {
 
 
 	/** The region of the S3 bucket that AWS delivers the report into. */
-	export enum AWSRegion { 'af-south-1' = 0, 'ap-east-1' = 1, 'ap-south-1' = 2, 'ap-south-2' = 3, 'ap-southeast-1' = 4, 'ap-southeast-2' = 5, 'ap-southeast-3' = 6, 'ap-northeast-1' = 7, 'ap-northeast-2' = 8, 'ap-northeast-3' = 9, 'ca-central-1' = 10, 'eu-central-1' = 11, 'eu-central-2' = 12, 'eu-west-1' = 13, 'eu-west-2' = 14, 'eu-west-3' = 15, 'eu-north-1' = 16, 'eu-south-1' = 17, 'eu-south-2' = 18, 'me-central-1' = 19, 'me-south-1' = 20, 'sa-east-1' = 21, 'us-east-1' = 22, 'us-east-2' = 23, 'us-west-1' = 24, 'us-west-2' = 25, 'cn-north-1' = 26, 'cn-northwest-1' = 27 }
+	export enum AWSRegion { 'af-south-1' = 'af-south-1', 'ap-east-1' = 'ap-east-1', 'ap-south-1' = 'ap-south-1', 'ap-south-2' = 'ap-south-2', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-southeast-3' = 'ap-southeast-3', 'ap-northeast-1' = 'ap-northeast-1', 'ap-northeast-2' = 'ap-northeast-2', 'ap-northeast-3' = 'ap-northeast-3', 'ca-central-1' = 'ca-central-1', 'eu-central-1' = 'eu-central-1', 'eu-central-2' = 'eu-central-2', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'eu-west-3' = 'eu-west-3', 'eu-north-1' = 'eu-north-1', 'eu-south-1' = 'eu-south-1', 'eu-south-2' = 'eu-south-2', 'me-central-1' = 'me-central-1', 'me-south-1' = 'me-south-1', 'sa-east-1' = 'sa-east-1', 'us-east-1' = 'us-east-1', 'us-east-2' = 'us-east-2', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'cn-north-1' = 'cn-north-1', 'cn-northwest-1' = 'cn-northwest-1' }
 
 
 	/** The compression format that AWS uses for the report. */
-	export enum CompressionFormat { ZIP = 0, GZIP = 1, Parquet = 2 }
+	export enum CompressionFormat { ZIP = 'ZIP', GZIP = 'GZIP', Parquet = 'Parquet' }
 
 
 	/** The length of time covered by the report.  */
-	export enum TimeUnit { HOURLY = 0, DAILY = 1, MONTHLY = 2 }
+	export enum TimeUnit { HOURLY = 'HOURLY', DAILY = 'DAILY', MONTHLY = 'MONTHLY' }
 
 
 	/** The format that AWS saves the report in. */
-	export enum ReportFormat { textORcsv = 0, Parquet = 1 }
+	export enum ReportFormat { textORcsv = 'textORcsv', Parquet = 'Parquet' }
 
 	@Injectable()
 	export class MyClient {
@@ -425,13 +425,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DeleteReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.DeleteReportDefinition' = 0 }
+	export enum DeleteReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.DeleteReportDefinition' = 'AWSOrigamiServiceGatewayService.DeleteReportDefinition' }
 
-	export enum DescribeReportDefinitionsX_Amz_Target { 'AWSOrigamiServiceGatewayService.DescribeReportDefinitions' = 0 }
+	export enum DescribeReportDefinitionsX_Amz_Target { 'AWSOrigamiServiceGatewayService.DescribeReportDefinitions' = 'AWSOrigamiServiceGatewayService.DescribeReportDefinitions' }
 
-	export enum ModifyReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.ModifyReportDefinition' = 0 }
+	export enum ModifyReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.ModifyReportDefinition' = 'AWSOrigamiServiceGatewayService.ModifyReportDefinition' }
 
-	export enum PutReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.PutReportDefinition' = 0 }
+	export enum PutReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.PutReportDefinition' = 'AWSOrigamiServiceGatewayService.PutReportDefinition' }
 
 }
 

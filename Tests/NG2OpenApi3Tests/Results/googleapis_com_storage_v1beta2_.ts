@@ -1430,7 +1430,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Storage_buckets_listProjection { full = 0, noAcl = 1 }
+	export enum Storage_buckets_listProjection { full = 'full', noAcl = 'noAcl' }
 
 }
 

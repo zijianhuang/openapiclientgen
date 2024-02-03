@@ -363,7 +363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmVersionInfoStatus { REQUIRED = 0, DISCOURAGED = 1 }
+	export enum AlgorithmVersionInfoStatus { REQUIRED = 'REQUIRED', DISCOURAGED = 'DISCOURAGED' }
 
 
 	/** Information of all available algorithms */
@@ -1144,7 +1144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserInfoUserType { system = 0, internal = 1, external = 2, deleted = 3 }
+	export enum UserInfoUserType { system = 'system', internal = 'internal', external = 'external', deleted = 'deleted' }
 
 
 	/** Authentication settings */
@@ -1840,7 +1840,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompleteS3FileUploadRequestResolutionStrategy { autorename = 0, overwrite = 1, fail = 2 }
+	export enum CompleteS3FileUploadRequestResolutionStrategy { autorename = 'autorename', overwrite = 'overwrite', fail = 'fail' }
 
 
 	/** Request model for completing a S3 file upload */
@@ -2102,7 +2102,7 @@ export namespace MyNS {
 
 	export enum ConfigRoomRequestClassification { _1 = 0, _2 = 1, _3 = 2, _4 = 3 }
 
-	export enum ConfigRoomRequestNewGroupMemberAcceptance { autoallow = 0, pending = 1 }
+	export enum ConfigRoomRequestNewGroupMemberAcceptance { autoallow = 'autoallow', pending = 'pending' }
 
 
 	/** Copied node information */
@@ -3303,7 +3303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOAuthClientRequestClientType { confidential = 0, public = 1 }
+	export enum CreateOAuthClientRequestClientType { confidential = 'confidential', public = 'public' }
 
 
 	/** Request model for creating an OpenID Connect IDP configuration */
@@ -3561,9 +3561,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOpenIdIdpConfigRequestFlow { authorization_code = 0, hybrid = 1 }
+	export enum CreateOpenIdIdpConfigRequestFlow { authorization_code = 'authorization_code', hybrid = 'hybrid' }
 
-	export enum CreateOpenIdIdpConfigRequestUserInfoSource { user_info_endpoint = 0, id_token = 1 }
+	export enum CreateOpenIdIdpConfigRequestUserInfoSource { user_info_endpoint = 'user_info_endpoint', id_token = 'id_token' }
 
 
 	/** Request model for creating a room */
@@ -4835,7 +4835,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerCustomerContractType { demo = 0, free = 1, pay = 2 }
+	export enum CustomerCustomerContractType { demo = 'demo', free = 'free', pay = 'pay' }
 
 
 	/** Customer information */
@@ -5352,7 +5352,7 @@ export namespace MyNS {
 
 	export enum DeletedNodeClassification { _1 = 0, _2 = 1, _3 = 2, _4 = 3 }
 
-	export enum DeletedNodeType { folder = 0, file = 1 }
+	export enum DeletedNodeType { folder = 'folder', file = 'file' }
 
 
 	/** Deleted node information (Deleted node can be a folder or file) */
@@ -6079,7 +6079,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionInfoDataSpaceKeyState { none = 0, available = 1, pending = 2 }
+	export enum EncryptionInfoDataSpaceKeyState { none = 'none', available = 'available', pending = 'pending' }
 
 
 	/** Encryption password policies */
@@ -8535,7 +8535,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoginRequestAuthType { basic = 0, active_directory = 1, radius = 2 }
+	export enum LoginRequestAuthType { basic = 'basic', active_directory = 'active_directory', radius = 'radius' }
 
 
 	/** Authentication token */
@@ -8657,7 +8657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MfaSetupStatusMfaType { TOTP = 0, EMERGENCY = 1, U2F = 2 }
+	export enum MfaSetupStatusMfaType { TOTP = 'TOTP', EMERGENCY = 'EMERGENCY', U2F = 'U2F' }
 
 	export interface MfaTotpConfirmationRequest {
 
@@ -9640,7 +9640,7 @@ export namespace MyNS {
 
 	export enum NodeClassification { _1 = 0, _2 = 1, _3 = 2, _4 = 3 }
 
-	export enum NodeType { room = 0, folder = 1, file = 2 }
+	export enum NodeType { room = 'room', folder = 'folder', file = 'file' }
 
 
 	/** List of nodes */
@@ -10259,7 +10259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OAuthAuthorizationUserAgentCategory { browser = 0, native = 1, unknown = 2 }
+	export enum OAuthAuthorizationUserAgentCategory { browser = 'browser', native = 'native', unknown = 'unknown' }
 
 
 	/** OAuth client information */
@@ -10964,7 +10964,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PendingAssignmentState { ACCEPTED = 0, DENIED = 1, WAITING = 2 }
+	export enum PendingAssignmentState { ACCEPTED = 'ACCEPTED', DENIED = 'DENIED', WAITING = 'WAITING' }
 
 
 	/** Pending assignment information */
@@ -12679,7 +12679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoomDataType { room = 0 }
+	export enum RoomDataType { room = 'room' }
 
 
 	/** Group information */
@@ -14316,7 +14316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyslogConfigProtocol { TCP = 0, UDP = 1 }
+	export enum SyslogConfigProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 
 	/** System defaults */
@@ -26756,11 +26756,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum RequestAuditNodeUserDataX_Sds_Date_Format { UTC = 0, LOCAL = 1, OFFSET = 2, EPOCH = 3, LEET = 4 }
+	export enum RequestAuditNodeUserDataX_Sds_Date_Format { UTC = 'UTC', LOCAL = 'LOCAL', OFFSET = 'OFFSET', EPOCH = 'EPOCH', LEET = 'LEET' }
 
-	export enum RequestMissingFileKeysUse_key { room_rescue_key = 0, system_rescue_key = 1, previous_user_key = 2, previous_room_rescue_key = 3, previous_system_rescue_key = 4 }
+	export enum RequestMissingFileKeysUse_key { room_rescue_key = 'room_rescue_key', system_rescue_key = 'system_rescue_key', previous_user_key = 'previous_user_key', previous_room_rescue_key = 'previous_room_rescue_key', previous_system_rescue_key = 'previous_system_rescue_key' }
 
-	export enum RequestPasswordPoliciesForPasswordTypePassword_type { login = 0, encryption = 1, shares = 2 }
+	export enum RequestPasswordPoliciesForPasswordTypePassword_type { login = 'login', encryption = 'encryption', shares = 'shares' }
 
 }
 

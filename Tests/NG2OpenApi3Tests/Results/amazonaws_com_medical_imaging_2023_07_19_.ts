@@ -69,9 +69,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageSetState { ACTIVE = 0, LOCKED = 1, DELETED = 2 }
+	export enum ImageSetState { ACTIVE = 'ACTIVE', LOCKED = 'LOCKED', DELETED = 'DELETED' }
 
-	export enum ImageSetWorkflowStatus { CREATED = 0, COPIED = 1, COPYING = 2, COPYING_WITH_READ_ONLY_ACCESS = 3, COPY_FAILED = 4, UPDATING = 5, UPDATED = 6, UPDATE_FAILED = 7, DELETING = 8, DELETED = 9 }
+	export enum ImageSetWorkflowStatus { CREATED = 'CREATED', COPIED = 'COPIED', COPYING = 'COPYING', COPYING_WITH_READ_ONLY_ACCESS = 'COPYING_WITH_READ_ONLY_ACCESS', COPY_FAILED = 'COPY_FAILED', UPDATING = 'UPDATING', UPDATED = 'UPDATED', UPDATE_FAILED = 'UPDATE_FAILED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** Copy the image set properties of the destination image set. */
@@ -259,7 +259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatastoreStatus { CREATING = 0, CREATE_FAILED = 1, ACTIVE = 2, DELETING = 3, DELETED = 4 }
+	export enum DatastoreStatus { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface DeleteDatastoreResponse {
 
@@ -408,7 +408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface GetDatastoreResponse {
 
@@ -952,7 +952,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator { EQUAL = 0, BETWEEN = 1 }
+	export enum Operator { EQUAL = 'EQUAL', BETWEEN = 'BETWEEN' }
 
 	export interface StartDICOMImportJobResponse {
 

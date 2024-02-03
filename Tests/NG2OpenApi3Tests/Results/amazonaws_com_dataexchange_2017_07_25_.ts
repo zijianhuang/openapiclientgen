@@ -92,9 +92,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetType { S3_SNAPSHOT = 0, REDSHIFT_DATA_SHARE = 1, API_GATEWAY_API = 2, S3_DATA_ACCESS = 3, LAKE_FORMATION_DATA_PERMISSION = 4 }
+	export enum AssetType { S3_SNAPSHOT = 'S3_SNAPSHOT', REDSHIFT_DATA_SHARE = 'REDSHIFT_DATA_SHARE', API_GATEWAY_API = 'API_GATEWAY_API', S3_DATA_ACCESS = 'S3_DATA_ACCESS', LAKE_FORMATION_DATA_PERMISSION = 'LAKE_FORMATION_DATA_PERMISSION' }
 
-	export enum Origin { OWNED = 0, ENTITLED = 1 }
+	export enum Origin { OWNED = 'OWNED', ENTITLED = 'ENTITLED' }
 
 
 	/** Details about the origin of the data set. */
@@ -228,7 +228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerSideEncryptionTypes { 'aws:kms' = 0, AES256 = 1 }
+	export enum ServerSideEncryptionTypes { 'aws:kms' = 'aws:kms', AES256 = 'AES256' }
 
 
 	/** A revision destination is the Amazon S3 bucket folder destination to where the export will be sent. */
@@ -744,7 +744,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtocolType { REST = 0 }
+	export enum ProtocolType { REST = 'REST' }
 
 
 	/** Details about the response of the operation to create an S3 data access from an S3 bucket. */
@@ -910,7 +910,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseLFTagPolicyPermission { DESCRIBE = 0 }
+	export enum DatabaseLFTagPolicyPermission { DESCRIBE = 'DESCRIBE' }
 
 
 	/** The LF-tag policy and permissions that apply to table resources. */
@@ -932,7 +932,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableTagPolicyLFPermission { DESCRIBE = 0, SELECT = 1 }
+	export enum TableTagPolicyLFPermission { DESCRIBE = 'DESCRIBE', SELECT = 'SELECT' }
 
 
 	/** An error that occurred with the job request. */
@@ -975,7 +975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Code { ACCESS_DENIED_EXCEPTION = 0, INTERNAL_SERVER_EXCEPTION = 1, MALWARE_DETECTED = 2, RESOURCE_NOT_FOUND_EXCEPTION = 3, SERVICE_QUOTA_EXCEEDED_EXCEPTION = 4, VALIDATION_EXCEPTION = 5, MALWARE_SCAN_ENCRYPTED_FILE = 6 }
+	export enum Code { ACCESS_DENIED_EXCEPTION = 'ACCESS_DENIED_EXCEPTION', INTERNAL_SERVER_EXCEPTION = 'INTERNAL_SERVER_EXCEPTION', MALWARE_DETECTED = 'MALWARE_DETECTED', RESOURCE_NOT_FOUND_EXCEPTION = 'RESOURCE_NOT_FOUND_EXCEPTION', SERVICE_QUOTA_EXCEEDED_EXCEPTION = 'SERVICE_QUOTA_EXCEEDED_EXCEPTION', VALIDATION_EXCEPTION = 'VALIDATION_EXCEPTION', MALWARE_SCAN_ENCRYPTED_FILE = 'MALWARE_SCAN_ENCRYPTED_FILE' }
 
 
 	/** Information about the job error. */
@@ -1014,13 +1014,13 @@ export namespace MyNS {
 
 	}
 
-	export enum JobErrorLimitName { 'Assets per revision' = 0, 'Asset size in GB' = 1, 'Amazon Redshift datashare assets per revision' = 2, 'AWS Lake Formation data permission assets per revision' = 3, 'Amazon S3 data access assets per revision' = 4 }
+	export enum JobErrorLimitName { 'Assets per revision' = 'Assets per revision', 'Asset size in GB' = 'Asset size in GB', 'Amazon Redshift datashare assets per revision' = 'Amazon Redshift datashare assets per revision', 'AWS Lake Formation data permission assets per revision' = 'AWS Lake Formation data permission assets per revision', 'Amazon S3 data access assets per revision' = 'Amazon S3 data access assets per revision' }
 
-	export enum JobErrorResourceTypes { REVISION = 0, ASSET = 1, DATA_SET = 2 }
+	export enum JobErrorResourceTypes { REVISION = 'REVISION', ASSET = 'ASSET', DATA_SET = 'DATA_SET' }
 
-	export enum State { WAITING = 0, IN_PROGRESS = 1, ERROR = 2, COMPLETED = 3, CANCELLED = 4, TIMED_OUT = 5 }
+	export enum State { WAITING = 'WAITING', IN_PROGRESS = 'IN_PROGRESS', ERROR = 'ERROR', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED', TIMED_OUT = 'TIMED_OUT' }
 
-	export enum Type { IMPORT_ASSETS_FROM_S3 = 0, IMPORT_ASSET_FROM_SIGNED_URL = 1, EXPORT_ASSETS_TO_S3 = 2, EXPORT_ASSET_TO_SIGNED_URL = 3, EXPORT_REVISIONS_TO_S3 = 4, IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES = 5, IMPORT_ASSET_FROM_API_GATEWAY_API = 6, CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET = 7, IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY = 8 }
+	export enum Type { IMPORT_ASSETS_FROM_S3 = 'IMPORT_ASSETS_FROM_S3', IMPORT_ASSET_FROM_SIGNED_URL = 'IMPORT_ASSET_FROM_SIGNED_URL', EXPORT_ASSETS_TO_S3 = 'EXPORT_ASSETS_TO_S3', EXPORT_ASSET_TO_SIGNED_URL = 'EXPORT_ASSET_TO_SIGNED_URL', EXPORT_REVISIONS_TO_S3 = 'EXPORT_REVISIONS_TO_S3', IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES = 'IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES', IMPORT_ASSET_FROM_API_GATEWAY_API = 'IMPORT_ASSET_FROM_API_GATEWAY_API', CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET = 'CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET', IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY = 'IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY' }
 
 
 	/** Details of the operation to be performed by the job. */
@@ -1652,7 +1652,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LFResourceType { TABLE = 0, DATABASE = 1 }
+	export enum LFResourceType { TABLE = 'TABLE', DATABASE = 'DATABASE' }
 
 
 	/** Details about the AWS Lake Formation resource (Table or Database) included in the AWS Lake Formation data permission. */
@@ -1704,9 +1704,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LakeFormationDataPermissionType { LFTagPolicy = 0 }
+	export enum LakeFormationDataPermissionType { LFTagPolicy = 'LFTagPolicy' }
 
-	export enum LFPermission { DESCRIBE = 0, SELECT = 1 }
+	export enum LFPermission { DESCRIBE = 'DESCRIBE', SELECT = 'SELECT' }
 
 	export interface GetDataSetResponse {
 		Arn?: string;

@@ -47,9 +47,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListHistoricalGWSColor { red = 0, white = 1, pink = 2 }
+	export enum ListHistoricalGWSColor { red = 'red', white = 'white', pink = 'pink' }
 
-	export enum ListHistoricalGWSOrdering { date = 0, '-date' = 1, score = 2, '-score' = 3 }
+	export enum ListHistoricalGWSOrdering { date = 'date', '-date' = '-date', score = 'score', '-score' = '-score' }
 
 }
 

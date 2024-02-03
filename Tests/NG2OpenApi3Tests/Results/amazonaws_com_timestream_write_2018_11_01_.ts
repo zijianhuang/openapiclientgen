@@ -106,7 +106,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeUnit { MILLISECONDS = 0, SECONDS = 1, MICROSECONDS = 2, NANOSECONDS = 3 }
+	export enum TimeUnit { MILLISECONDS = 'MILLISECONDS', SECONDS = 'SECONDS', MICROSECONDS = 'MICROSECONDS', NANOSECONDS = 'NANOSECONDS' }
 
 
 	/** <p/> */
@@ -175,7 +175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalarMeasureValueType { DOUBLE = 0, BIGINT = 1, BOOLEAN = 2, VARCHAR = 3, TIMESTAMP = 4 }
+	export enum ScalarMeasureValueType { DOUBLE = 'DOUBLE', BIGINT = 'BIGINT', BOOLEAN = 'BOOLEAN', VARCHAR = 'VARCHAR', TIMESTAMP = 'TIMESTAMP' }
 
 
 	/** <p/> */
@@ -208,7 +208,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MeasureValueType { DOUBLE = 0, BIGINT = 1, VARCHAR = 2, BOOLEAN = 3, TIMESTAMP = 4, MULTI = 5 }
+	export enum MeasureValueType { DOUBLE = 'DOUBLE', BIGINT = 'BIGINT', VARCHAR = 'VARCHAR', BOOLEAN = 'BOOLEAN', TIMESTAMP = 'TIMESTAMP', MULTI = 'MULTI' }
 
 
 	/** <p/> */
@@ -310,7 +310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchLoadDataFormat { CSV = 0 }
+	export enum BatchLoadDataFormat { CSV = 'CSV' }
 
 
 	/** Report configuration for a batch load task. This contains details about where error reports are stored. */
@@ -357,7 +357,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3EncryptionOption { SSE_S3 = 0, SSE_KMS = 1 }
+	export enum S3EncryptionOption { SSE_S3 = 'SSE_S3', SSE_KMS = 'SSE_KMS' }
 
 	export interface InternalServerException {
 	}
@@ -577,7 +577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableStatus { ACTIVE = 0, DELETING = 1, RESTORING = 2 }
+	export enum TableStatus { ACTIVE = 'ACTIVE', DELETING = 'DELETING', RESTORING = 'RESTORING' }
 
 
 	/** Retention properties contain the duration for which your time-series data must be stored in the magnetic store and the memory store.  */
@@ -712,9 +712,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PartitionKeyType { DIMENSION = 0, MEASURE = 1 }
+	export enum PartitionKeyType { DIMENSION = 'DIMENSION', MEASURE = 'MEASURE' }
 
-	export enum PartitionKeyEnforcementLevel { REQUIRED = 0, OPTIONAL = 1 }
+	export enum PartitionKeyEnforcementLevel { REQUIRED = 'REQUIRED', OPTIONAL = 'OPTIONAL' }
 
 	export interface CreateTableRequest {
 
@@ -875,7 +875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchLoadStatus { CREATED = 0, IN_PROGRESS = 1, FAILED = 2, SUCCEEDED = 3, PROGRESS_STOPPED = 4, PENDING_RESUME = 5 }
+	export enum BatchLoadStatus { CREATED = 'CREATED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', PROGRESS_STOPPED = 'PROGRESS_STOPPED', PENDING_RESUME = 'PENDING_RESUME' }
 
 	export interface DescribeBatchLoadTaskRequest {
 
@@ -1456,7 +1456,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionValueType { VARCHAR = 0 }
+	export enum DimensionValueType { VARCHAR = 'VARCHAR' }
 
 
 	/** <p> Represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures. MeasureValue has both name and value. </p> <p> MeasureValue is only allowed for type <code>MULTI</code>. Using <code>MULTI</code> type, you can pass multiple data attributes associated with the same time series in a single record </p> */
@@ -1685,43 +1685,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateBatchLoadTaskX_Amz_Target { 'Timestream_20181101.CreateBatchLoadTask' = 0 }
+	export enum CreateBatchLoadTaskX_Amz_Target { 'Timestream_20181101.CreateBatchLoadTask' = 'Timestream_20181101.CreateBatchLoadTask' }
 
-	export enum CreateDatabaseX_Amz_Target { 'Timestream_20181101.CreateDatabase' = 0 }
+	export enum CreateDatabaseX_Amz_Target { 'Timestream_20181101.CreateDatabase' = 'Timestream_20181101.CreateDatabase' }
 
-	export enum CreateTableX_Amz_Target { 'Timestream_20181101.CreateTable' = 0 }
+	export enum CreateTableX_Amz_Target { 'Timestream_20181101.CreateTable' = 'Timestream_20181101.CreateTable' }
 
-	export enum DeleteDatabaseX_Amz_Target { 'Timestream_20181101.DeleteDatabase' = 0 }
+	export enum DeleteDatabaseX_Amz_Target { 'Timestream_20181101.DeleteDatabase' = 'Timestream_20181101.DeleteDatabase' }
 
-	export enum DeleteTableX_Amz_Target { 'Timestream_20181101.DeleteTable' = 0 }
+	export enum DeleteTableX_Amz_Target { 'Timestream_20181101.DeleteTable' = 'Timestream_20181101.DeleteTable' }
 
-	export enum DescribeBatchLoadTaskX_Amz_Target { 'Timestream_20181101.DescribeBatchLoadTask' = 0 }
+	export enum DescribeBatchLoadTaskX_Amz_Target { 'Timestream_20181101.DescribeBatchLoadTask' = 'Timestream_20181101.DescribeBatchLoadTask' }
 
-	export enum DescribeDatabaseX_Amz_Target { 'Timestream_20181101.DescribeDatabase' = 0 }
+	export enum DescribeDatabaseX_Amz_Target { 'Timestream_20181101.DescribeDatabase' = 'Timestream_20181101.DescribeDatabase' }
 
-	export enum DescribeEndpointsX_Amz_Target { 'Timestream_20181101.DescribeEndpoints' = 0 }
+	export enum DescribeEndpointsX_Amz_Target { 'Timestream_20181101.DescribeEndpoints' = 'Timestream_20181101.DescribeEndpoints' }
 
-	export enum DescribeTableX_Amz_Target { 'Timestream_20181101.DescribeTable' = 0 }
+	export enum DescribeTableX_Amz_Target { 'Timestream_20181101.DescribeTable' = 'Timestream_20181101.DescribeTable' }
 
-	export enum ListBatchLoadTasksX_Amz_Target { 'Timestream_20181101.ListBatchLoadTasks' = 0 }
+	export enum ListBatchLoadTasksX_Amz_Target { 'Timestream_20181101.ListBatchLoadTasks' = 'Timestream_20181101.ListBatchLoadTasks' }
 
-	export enum ListDatabasesX_Amz_Target { 'Timestream_20181101.ListDatabases' = 0 }
+	export enum ListDatabasesX_Amz_Target { 'Timestream_20181101.ListDatabases' = 'Timestream_20181101.ListDatabases' }
 
-	export enum ListTablesX_Amz_Target { 'Timestream_20181101.ListTables' = 0 }
+	export enum ListTablesX_Amz_Target { 'Timestream_20181101.ListTables' = 'Timestream_20181101.ListTables' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'Timestream_20181101.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Timestream_20181101.ListTagsForResource' = 'Timestream_20181101.ListTagsForResource' }
 
-	export enum ResumeBatchLoadTaskX_Amz_Target { 'Timestream_20181101.ResumeBatchLoadTask' = 0 }
+	export enum ResumeBatchLoadTaskX_Amz_Target { 'Timestream_20181101.ResumeBatchLoadTask' = 'Timestream_20181101.ResumeBatchLoadTask' }
 
-	export enum TagResourceX_Amz_Target { 'Timestream_20181101.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Timestream_20181101.TagResource' = 'Timestream_20181101.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'Timestream_20181101.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Timestream_20181101.UntagResource' = 'Timestream_20181101.UntagResource' }
 
-	export enum UpdateDatabaseX_Amz_Target { 'Timestream_20181101.UpdateDatabase' = 0 }
+	export enum UpdateDatabaseX_Amz_Target { 'Timestream_20181101.UpdateDatabase' = 'Timestream_20181101.UpdateDatabase' }
 
-	export enum UpdateTableX_Amz_Target { 'Timestream_20181101.UpdateTable' = 0 }
+	export enum UpdateTableX_Amz_Target { 'Timestream_20181101.UpdateTable' = 'Timestream_20181101.UpdateTable' }
 
-	export enum WriteRecordsX_Amz_Target { 'Timestream_20181101.WriteRecords' = 0 }
+	export enum WriteRecordsX_Amz_Target { 'Timestream_20181101.WriteRecords' = 'Timestream_20181101.WriteRecords' }
 
 }
 

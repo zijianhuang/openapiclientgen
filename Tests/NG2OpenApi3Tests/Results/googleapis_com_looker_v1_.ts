@@ -68,7 +68,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -181,7 +181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomDomainState { CUSTOM_DOMAIN_STATE_UNSPECIFIED = 0, UNVERIFIED = 1, VERIFIED = 2, MODIFYING = 3, AVAILABLE = 4, UNAVAILABLE = 5, UNKNOWN = 6 }
+	export enum CustomDomainState { CUSTOM_DOMAIN_STATE_UNSPECIFIED = 'CUSTOM_DOMAIN_STATE_UNSPECIFIED', UNVERIFIED = 'UNVERIFIED', VERIFIED = 'VERIFIED', MODIFYING = 'MODIFYING', AVAILABLE = 'AVAILABLE', UNAVAILABLE = 'UNAVAILABLE', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -332,7 +332,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionConfigKmsKeyState { KMS_KEY_STATE_UNSPECIFIED = 0, VALID = 1, REVOKED = 2 }
+	export enum EncryptionConfigKmsKeyState { KMS_KEY_STATE_UNSPECIFIED = 'KMS_KEY_STATE_UNSPECIFIED', VALID = 'VALID', REVOKED = 'REVOKED' }
 
 
 	/** Configuration for Encryption - e.g. CMEK. */
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportMetadataSource { SOURCE_UNSPECIFIED = 0, LOOKER_CORE = 1, LOOKER_ORIGINAL = 2 }
+	export enum ExportMetadataSource { SOURCE_UNSPECIFIED = 'SOURCE_UNSPECIFIED', LOOKER_CORE = 'LOOKER_CORE', LOOKER_ORIGINAL = 'LOOKER_ORIGINAL' }
 
 
 	/** Requestion options for importing looker data to an Instance */
@@ -676,7 +676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceWindowDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum MaintenanceWindowDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Looker instance OAuth login settings. */
@@ -706,9 +706,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancePlatformEdition { PLATFORM_EDITION_UNSPECIFIED = 0, LOOKER_CORE_TRIAL = 1, LOOKER_CORE_STANDARD = 2, LOOKER_CORE_STANDARD_ANNUAL = 3, LOOKER_CORE_ENTERPRISE_ANNUAL = 4, LOOKER_CORE_EMBED_ANNUAL = 5 }
+	export enum InstancePlatformEdition { PLATFORM_EDITION_UNSPECIFIED = 'PLATFORM_EDITION_UNSPECIFIED', LOOKER_CORE_TRIAL = 'LOOKER_CORE_TRIAL', LOOKER_CORE_STANDARD = 'LOOKER_CORE_STANDARD', LOOKER_CORE_STANDARD_ANNUAL = 'LOOKER_CORE_STANDARD_ANNUAL', LOOKER_CORE_ENTERPRISE_ANNUAL = 'LOOKER_CORE_ENTERPRISE_ANNUAL', LOOKER_CORE_EMBED_ANNUAL = 'LOOKER_CORE_EMBED_ANNUAL' }
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, FAILED = 3, SUSPENDED = 4, UPDATING = 5, DELETING = 6, EXPORTING = 7, IMPORTING = 8 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', FAILED = 'FAILED', SUSPENDED = 'SUSPENDED', UPDATING = 'UPDATING', DELETING = 'DELETING', EXPORTING = 'EXPORTING', IMPORTING = 'IMPORTING' }
 
 
 	/** Metadata about users for a Looker instance. */

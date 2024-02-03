@@ -262,9 +262,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointPropertiesEndpointMonitorStatus { CheckingEndpoint = 0, Online = 1, Degraded = 2, Disabled = 3, Inactive = 4, Stopped = 5 }
+	export enum EndpointPropertiesEndpointMonitorStatus { CheckingEndpoint = 'CheckingEndpoint', Online = 'Online', Degraded = 'Degraded', Disabled = 'Disabled', Inactive = 'Inactive', Stopped = 'Stopped' }
 
-	export enum EndpointPropertiesEndpointStatus { Enabled = 0, Disabled = 1 }
+	export enum EndpointPropertiesEndpointStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface EndpointPropertiesSubnets {
 
@@ -595,9 +595,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorConfigProfileMonitorStatus { CheckingEndpoints = 0, Online = 1, Degraded = 2, Disabled = 3, Inactive = 4 }
+	export enum MonitorConfigProfileMonitorStatus { CheckingEndpoints = 'CheckingEndpoints', Online = 'Online', Degraded = 'Degraded', Disabled = 'Disabled', Inactive = 'Inactive' }
 
-	export enum MonitorConfigProtocol { HTTP = 0, HTTPS = 1, TCP = 2 }
+	export enum MonitorConfigProtocol { HTTP = 'HTTP', HTTPS = 'HTTPS', TCP = 'TCP' }
 
 
 	/** Class representing a Traffic Manager profile. */
@@ -689,7 +689,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfilePropertiesTrafficRoutingMethod { Performance = 0, Priority = 1, Weighted = 2, Geographic = 3, MultiValue = 4, Subnet = 5 }
+	export enum ProfilePropertiesTrafficRoutingMethod { Performance = 'Performance', Priority = 'Priority', Weighted = 'Weighted', Geographic = 'Geographic', MultiValue = 'MultiValue', Subnet = 'Subnet' }
 
 
 	/** The resource model definition for a ARM proxy resource. It will have everything other than required location and tags */
@@ -1121,7 +1121,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum HeatMap_GetHeatMapType { default = 0 }
+	export enum HeatMap_GetHeatMapType { default = 'default' }
 
 }
 

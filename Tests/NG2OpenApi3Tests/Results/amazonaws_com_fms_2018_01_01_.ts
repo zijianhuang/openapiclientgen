@@ -83,7 +83,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThirdPartyFirewallAssociationStatus { ONBOARDING = 0, ONBOARD_COMPLETE = 1, OFFBOARDING = 2, OFFBOARD_COMPLETE = 3, NOT_EXIST = 4 }
+	export enum ThirdPartyFirewallAssociationStatus { ONBOARDING = 'ONBOARDING', ONBOARD_COMPLETE = 'ONBOARD_COMPLETE', OFFBOARDING = 'OFFBOARDING', OFFBOARD_COMPLETE = 'OFFBOARD_COMPLETE', NOT_EXIST = 'NOT_EXIST' }
 
 	export interface AssociateThirdPartyFirewallRequest {
 
@@ -102,7 +102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThirdPartyFirewall { PALO_ALTO_NETWORKS_CLOUD_NGFW = 0, FORTIGATE_CLOUD_NATIVE_FIREWALL = 1 }
+	export enum ThirdPartyFirewall { PALO_ALTO_NETWORKS_CLOUD_NGFW = 'PALO_ALTO_NETWORKS_CLOUD_NGFW', FORTIGATE_CLOUD_NATIVE_FIREWALL = 'FORTIGATE_CLOUD_NATIVE_FIREWALL' }
 
 	export interface BatchAssociateResourceResponse {
 
@@ -144,7 +144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailedItemReason { NOT_VALID_ARN = 0, NOT_VALID_PARTITION = 1, NOT_VALID_REGION = 2, NOT_VALID_SERVICE = 3, NOT_VALID_RESOURCE_TYPE = 4, NOT_VALID_ACCOUNT_ID = 5 }
+	export enum FailedItemReason { NOT_VALID_ARN = 'NOT_VALID_ARN', NOT_VALID_PARTITION = 'NOT_VALID_PARTITION', NOT_VALID_REGION = 'NOT_VALID_REGION', NOT_VALID_SERVICE = 'NOT_VALID_SERVICE', NOT_VALID_RESOURCE_TYPE = 'NOT_VALID_RESOURCE_TYPE', NOT_VALID_ACCOUNT_ID = 'NOT_VALID_ACCOUNT_ID' }
 
 	export interface BatchAssociateResourceRequest {
 
@@ -343,7 +343,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountRoleStatus { READY = 0, CREATING = 1, PENDING_DELETION = 2, DELETING = 3, DELETED = 4 }
+	export enum AccountRoleStatus { READY = 'READY', CREATING = 'CREATING', PENDING_DELETION = 'PENDING_DELETION', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface GetAdminAccountRequest {
 	}
@@ -465,9 +465,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityServiceType { WAF = 0, WAFV2 = 1, SHIELD_ADVANCED = 2, SECURITY_GROUPS_COMMON = 3, SECURITY_GROUPS_CONTENT_AUDIT = 4, SECURITY_GROUPS_USAGE_AUDIT = 5, NETWORK_FIREWALL = 6, DNS_FIREWALL = 7, THIRD_PARTY_FIREWALL = 8, IMPORT_NETWORK_FIREWALL = 9 }
+	export enum SecurityServiceType { WAF = 'WAF', WAFV2 = 'WAFV2', SHIELD_ADVANCED = 'SHIELD_ADVANCED', SECURITY_GROUPS_COMMON = 'SECURITY_GROUPS_COMMON', SECURITY_GROUPS_CONTENT_AUDIT = 'SECURITY_GROUPS_CONTENT_AUDIT', SECURITY_GROUPS_USAGE_AUDIT = 'SECURITY_GROUPS_USAGE_AUDIT', NETWORK_FIREWALL = 'NETWORK_FIREWALL', DNS_FIREWALL = 'DNS_FIREWALL', THIRD_PARTY_FIREWALL = 'THIRD_PARTY_FIREWALL', IMPORT_NETWORK_FIREWALL = 'IMPORT_NETWORK_FIREWALL' }
 
-	export enum OrganizationStatus { ONBOARDING = 0, ONBOARDING_COMPLETE = 1, OFFBOARDING = 2, OFFBOARDING_COMPLETE = 3 }
+	export enum OrganizationStatus { ONBOARDING = 'ONBOARDING', ONBOARDING_COMPLETE = 'ONBOARDING_COMPLETE', OFFBOARDING = 'OFFBOARDING', OFFBOARDING_COMPLETE = 'OFFBOARDING_COMPLETE' }
 
 	export interface GetAdminScopeRequest {
 
@@ -668,7 +668,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ViolationReason { WEB_ACL_MISSING_RULE_GROUP = 0, RESOURCE_MISSING_WEB_ACL = 1, RESOURCE_INCORRECT_WEB_ACL = 2, RESOURCE_MISSING_SHIELD_PROTECTION = 3, RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = 4, RESOURCE_MISSING_SECURITY_GROUP = 5, RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = 6, SECURITY_GROUP_UNUSED = 7, SECURITY_GROUP_REDUNDANT = 8, FMS_CREATED_SECURITY_GROUP_EDITED = 9, MISSING_FIREWALL = 10, MISSING_FIREWALL_SUBNET_IN_AZ = 11, MISSING_EXPECTED_ROUTE_TABLE = 12, NETWORK_FIREWALL_POLICY_MODIFIED = 13, FIREWALL_SUBNET_IS_OUT_OF_SCOPE = 14, INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE = 15, FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE = 16, UNEXPECTED_FIREWALL_ROUTES = 17, UNEXPECTED_TARGET_GATEWAY_ROUTES = 18, TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY = 19, INVALID_ROUTE_CONFIGURATION = 20, MISSING_TARGET_GATEWAY = 21, INTERNET_TRAFFIC_NOT_INSPECTED = 22, BLACK_HOLE_ROUTE_DETECTED = 23, BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET = 24, RESOURCE_MISSING_DNS_FIREWALL = 25, ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT = 26, FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT = 27 }
+	export enum ViolationReason { WEB_ACL_MISSING_RULE_GROUP = 'WEB_ACL_MISSING_RULE_GROUP', RESOURCE_MISSING_WEB_ACL = 'RESOURCE_MISSING_WEB_ACL', RESOURCE_INCORRECT_WEB_ACL = 'RESOURCE_INCORRECT_WEB_ACL', RESOURCE_MISSING_SHIELD_PROTECTION = 'RESOURCE_MISSING_SHIELD_PROTECTION', RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = 'RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION', RESOURCE_MISSING_SECURITY_GROUP = 'RESOURCE_MISSING_SECURITY_GROUP', RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = 'RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP', SECURITY_GROUP_UNUSED = 'SECURITY_GROUP_UNUSED', SECURITY_GROUP_REDUNDANT = 'SECURITY_GROUP_REDUNDANT', FMS_CREATED_SECURITY_GROUP_EDITED = 'FMS_CREATED_SECURITY_GROUP_EDITED', MISSING_FIREWALL = 'MISSING_FIREWALL', MISSING_FIREWALL_SUBNET_IN_AZ = 'MISSING_FIREWALL_SUBNET_IN_AZ', MISSING_EXPECTED_ROUTE_TABLE = 'MISSING_EXPECTED_ROUTE_TABLE', NETWORK_FIREWALL_POLICY_MODIFIED = 'NETWORK_FIREWALL_POLICY_MODIFIED', FIREWALL_SUBNET_IS_OUT_OF_SCOPE = 'FIREWALL_SUBNET_IS_OUT_OF_SCOPE', INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE = 'INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE', FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE = 'FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE', UNEXPECTED_FIREWALL_ROUTES = 'UNEXPECTED_FIREWALL_ROUTES', UNEXPECTED_TARGET_GATEWAY_ROUTES = 'UNEXPECTED_TARGET_GATEWAY_ROUTES', TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY = 'TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY', INVALID_ROUTE_CONFIGURATION = 'INVALID_ROUTE_CONFIGURATION', MISSING_TARGET_GATEWAY = 'MISSING_TARGET_GATEWAY', INTERNET_TRAFFIC_NOT_INSPECTED = 'INTERNET_TRAFFIC_NOT_INSPECTED', BLACK_HOLE_ROUTE_DETECTED = 'BLACK_HOLE_ROUTE_DETECTED', BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET = 'BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET', RESOURCE_MISSING_DNS_FIREWALL = 'RESOURCE_MISSING_DNS_FIREWALL', ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT = 'ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT', FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT = 'FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT' }
 
 	export interface ComplianceViolatorMetadata {
 	}
@@ -877,7 +877,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallDeploymentModel { CENTRALIZED = 0, DISTRIBUTED = 1 }
+	export enum FirewallDeploymentModel { CENTRALIZED = 'CENTRALIZED', DISTRIBUTED = 'DISTRIBUTED' }
 
 
 	/** Configures the deployment model for the third-party firewall. */
@@ -930,7 +930,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerPolicyStatus { ACTIVE = 0, OUT_OF_ADMIN_SCOPE = 1 }
+	export enum CustomerPolicyStatus { ACTIVE = 'ACTIVE', OUT_OF_ADMIN_SCOPE = 'OUT_OF_ADMIN_SCOPE' }
 
 	export interface GetPolicyRequest {
 
@@ -1186,7 +1186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MarketplaceSubscriptionOnboardingStatus { NO_SUBSCRIPTION = 0, NOT_COMPLETE = 1, COMPLETE = 2 }
+	export enum MarketplaceSubscriptionOnboardingStatus { NO_SUBSCRIPTION = 'NO_SUBSCRIPTION', NOT_COMPLETE = 'NOT_COMPLETE', COMPLETE = 'COMPLETE' }
 
 	export interface GetThirdPartyFirewallAssociationStatusRequest {
 
@@ -1368,7 +1368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RemediationActionType { REMOVE = 0, MODIFY = 1 }
+	export enum RemediationActionType { REMOVE = 'REMOVE', MODIFY = 'MODIFY' }
 
 
 	/** Describes a set of permissions for a security group rule. */
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkFirewallOverrideAction { DROP_TO_ALERT = 0 }
+	export enum NetworkFirewallOverrideAction { DROP_TO_ALERT = 'DROP_TO_ALERT' }
 
 
 	/** Configuration settings for the handling of the stateful rule groups in a Network Firewall firewall policy. */
@@ -1642,7 +1642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleOrder { STRICT_ORDER = 0, DEFAULT_ACTION_ORDER = 1 }
+	export enum RuleOrder { STRICT_ORDER = 'STRICT_ORDER', DEFAULT_ACTION_ORDER = 'DEFAULT_ACTION_ORDER' }
 
 
 	/** Violation detail for the subnet for which internet traffic that hasn't been inspected. */
@@ -1719,9 +1719,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationType { IPV4 = 0, IPV6 = 1, PREFIX_LIST = 2 }
+	export enum DestinationType { IPV4 = 'IPV4', IPV6 = 'IPV6', PREFIX_LIST = 'PREFIX_LIST' }
 
-	export enum TargetType { GATEWAY = 0, CARRIER_GATEWAY = 1, INSTANCE = 2, LOCAL_GATEWAY = 3, NAT_GATEWAY = 4, NETWORK_INTERFACE = 5, VPC_ENDPOINT = 6, VPC_PEERING_CONNECTION = 7, EGRESS_ONLY_INTERNET_GATEWAY = 8, TRANSIT_GATEWAY = 9 }
+	export enum TargetType { GATEWAY = 'GATEWAY', CARRIER_GATEWAY = 'CARRIER_GATEWAY', INSTANCE = 'INSTANCE', LOCAL_GATEWAY = 'LOCAL_GATEWAY', NAT_GATEWAY = 'NAT_GATEWAY', NETWORK_INTERFACE = 'NETWORK_INTERFACE', VPC_ENDPOINT = 'VPC_ENDPOINT', VPC_PEERING_CONNECTION = 'VPC_PEERING_CONNECTION', EGRESS_ONLY_INTERNET_GATEWAY = 'EGRESS_ONLY_INTERNET_GATEWAY', TRANSIT_GATEWAY = 'TRANSIT_GATEWAY' }
 
 
 	/** Information about the expected route in the route table. */
@@ -2727,7 +2727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyComplianceStatusType { COMPLIANT = 0, NON_COMPLIANT = 1 }
+	export enum PolicyComplianceStatusType { COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT' }
 
 	export interface ListComplianceStatusRequest {
 
@@ -3408,11 +3408,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerPolicyScopeIdType { ACCOUNT = 0, ORG_UNIT = 1 }
+	export enum CustomerPolicyScopeIdType { ACCOUNT = 'ACCOUNT', ORG_UNIT = 'ORG_UNIT' }
 
-	export enum DependentServiceName { AWSCONFIG = 0, AWSWAF = 1, AWSSHIELD_ADVANCED = 2, AWSVPC = 3 }
+	export enum DependentServiceName { AWSCONFIG = 'AWSCONFIG', AWSWAF = 'AWSWAF', AWSSHIELD_ADVANCED = 'AWSSHIELD_ADVANCED', AWSVPC = 'AWSVPC' }
 
-	export enum ResourceSetStatus { ACTIVE = 0, OUT_OF_ADMIN_SCOPE = 1 }
+	export enum ResourceSetStatus { ACTIVE = 'ACTIVE', OUT_OF_ADMIN_SCOPE = 'OUT_OF_ADMIN_SCOPE' }
 
 	@Injectable()
 	export class MyClient {
@@ -3814,89 +3814,89 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateAdminAccountX_Amz_Target { 'AWSFMS_20180101.AssociateAdminAccount' = 0 }
+	export enum AssociateAdminAccountX_Amz_Target { 'AWSFMS_20180101.AssociateAdminAccount' = 'AWSFMS_20180101.AssociateAdminAccount' }
 
-	export enum AssociateThirdPartyFirewallX_Amz_Target { 'AWSFMS_20180101.AssociateThirdPartyFirewall' = 0 }
+	export enum AssociateThirdPartyFirewallX_Amz_Target { 'AWSFMS_20180101.AssociateThirdPartyFirewall' = 'AWSFMS_20180101.AssociateThirdPartyFirewall' }
 
-	export enum BatchAssociateResourceX_Amz_Target { 'AWSFMS_20180101.BatchAssociateResource' = 0 }
+	export enum BatchAssociateResourceX_Amz_Target { 'AWSFMS_20180101.BatchAssociateResource' = 'AWSFMS_20180101.BatchAssociateResource' }
 
-	export enum BatchDisassociateResourceX_Amz_Target { 'AWSFMS_20180101.BatchDisassociateResource' = 0 }
+	export enum BatchDisassociateResourceX_Amz_Target { 'AWSFMS_20180101.BatchDisassociateResource' = 'AWSFMS_20180101.BatchDisassociateResource' }
 
-	export enum DeleteAppsListX_Amz_Target { 'AWSFMS_20180101.DeleteAppsList' = 0 }
+	export enum DeleteAppsListX_Amz_Target { 'AWSFMS_20180101.DeleteAppsList' = 'AWSFMS_20180101.DeleteAppsList' }
 
-	export enum DeleteNotificationChannelX_Amz_Target { 'AWSFMS_20180101.DeleteNotificationChannel' = 0 }
+	export enum DeleteNotificationChannelX_Amz_Target { 'AWSFMS_20180101.DeleteNotificationChannel' = 'AWSFMS_20180101.DeleteNotificationChannel' }
 
-	export enum DeletePolicyX_Amz_Target { 'AWSFMS_20180101.DeletePolicy' = 0 }
+	export enum DeletePolicyX_Amz_Target { 'AWSFMS_20180101.DeletePolicy' = 'AWSFMS_20180101.DeletePolicy' }
 
-	export enum DeleteProtocolsListX_Amz_Target { 'AWSFMS_20180101.DeleteProtocolsList' = 0 }
+	export enum DeleteProtocolsListX_Amz_Target { 'AWSFMS_20180101.DeleteProtocolsList' = 'AWSFMS_20180101.DeleteProtocolsList' }
 
-	export enum DeleteResourceSetX_Amz_Target { 'AWSFMS_20180101.DeleteResourceSet' = 0 }
+	export enum DeleteResourceSetX_Amz_Target { 'AWSFMS_20180101.DeleteResourceSet' = 'AWSFMS_20180101.DeleteResourceSet' }
 
-	export enum DisassociateAdminAccountX_Amz_Target { 'AWSFMS_20180101.DisassociateAdminAccount' = 0 }
+	export enum DisassociateAdminAccountX_Amz_Target { 'AWSFMS_20180101.DisassociateAdminAccount' = 'AWSFMS_20180101.DisassociateAdminAccount' }
 
-	export enum DisassociateThirdPartyFirewallX_Amz_Target { 'AWSFMS_20180101.DisassociateThirdPartyFirewall' = 0 }
+	export enum DisassociateThirdPartyFirewallX_Amz_Target { 'AWSFMS_20180101.DisassociateThirdPartyFirewall' = 'AWSFMS_20180101.DisassociateThirdPartyFirewall' }
 
-	export enum GetAdminAccountX_Amz_Target { 'AWSFMS_20180101.GetAdminAccount' = 0 }
+	export enum GetAdminAccountX_Amz_Target { 'AWSFMS_20180101.GetAdminAccount' = 'AWSFMS_20180101.GetAdminAccount' }
 
-	export enum GetAdminScopeX_Amz_Target { 'AWSFMS_20180101.GetAdminScope' = 0 }
+	export enum GetAdminScopeX_Amz_Target { 'AWSFMS_20180101.GetAdminScope' = 'AWSFMS_20180101.GetAdminScope' }
 
-	export enum GetAppsListX_Amz_Target { 'AWSFMS_20180101.GetAppsList' = 0 }
+	export enum GetAppsListX_Amz_Target { 'AWSFMS_20180101.GetAppsList' = 'AWSFMS_20180101.GetAppsList' }
 
-	export enum GetComplianceDetailX_Amz_Target { 'AWSFMS_20180101.GetComplianceDetail' = 0 }
+	export enum GetComplianceDetailX_Amz_Target { 'AWSFMS_20180101.GetComplianceDetail' = 'AWSFMS_20180101.GetComplianceDetail' }
 
-	export enum GetNotificationChannelX_Amz_Target { 'AWSFMS_20180101.GetNotificationChannel' = 0 }
+	export enum GetNotificationChannelX_Amz_Target { 'AWSFMS_20180101.GetNotificationChannel' = 'AWSFMS_20180101.GetNotificationChannel' }
 
-	export enum GetPolicyX_Amz_Target { 'AWSFMS_20180101.GetPolicy' = 0 }
+	export enum GetPolicyX_Amz_Target { 'AWSFMS_20180101.GetPolicy' = 'AWSFMS_20180101.GetPolicy' }
 
-	export enum GetProtectionStatusX_Amz_Target { 'AWSFMS_20180101.GetProtectionStatus' = 0 }
+	export enum GetProtectionStatusX_Amz_Target { 'AWSFMS_20180101.GetProtectionStatus' = 'AWSFMS_20180101.GetProtectionStatus' }
 
-	export enum GetProtocolsListX_Amz_Target { 'AWSFMS_20180101.GetProtocolsList' = 0 }
+	export enum GetProtocolsListX_Amz_Target { 'AWSFMS_20180101.GetProtocolsList' = 'AWSFMS_20180101.GetProtocolsList' }
 
-	export enum GetResourceSetX_Amz_Target { 'AWSFMS_20180101.GetResourceSet' = 0 }
+	export enum GetResourceSetX_Amz_Target { 'AWSFMS_20180101.GetResourceSet' = 'AWSFMS_20180101.GetResourceSet' }
 
-	export enum GetThirdPartyFirewallAssociationStatusX_Amz_Target { 'AWSFMS_20180101.GetThirdPartyFirewallAssociationStatus' = 0 }
+	export enum GetThirdPartyFirewallAssociationStatusX_Amz_Target { 'AWSFMS_20180101.GetThirdPartyFirewallAssociationStatus' = 'AWSFMS_20180101.GetThirdPartyFirewallAssociationStatus' }
 
-	export enum GetViolationDetailsX_Amz_Target { 'AWSFMS_20180101.GetViolationDetails' = 0 }
+	export enum GetViolationDetailsX_Amz_Target { 'AWSFMS_20180101.GetViolationDetails' = 'AWSFMS_20180101.GetViolationDetails' }
 
-	export enum ListAdminAccountsForOrganizationX_Amz_Target { 'AWSFMS_20180101.ListAdminAccountsForOrganization' = 0 }
+	export enum ListAdminAccountsForOrganizationX_Amz_Target { 'AWSFMS_20180101.ListAdminAccountsForOrganization' = 'AWSFMS_20180101.ListAdminAccountsForOrganization' }
 
-	export enum ListAdminsManagingAccountX_Amz_Target { 'AWSFMS_20180101.ListAdminsManagingAccount' = 0 }
+	export enum ListAdminsManagingAccountX_Amz_Target { 'AWSFMS_20180101.ListAdminsManagingAccount' = 'AWSFMS_20180101.ListAdminsManagingAccount' }
 
-	export enum ListAppsListsX_Amz_Target { 'AWSFMS_20180101.ListAppsLists' = 0 }
+	export enum ListAppsListsX_Amz_Target { 'AWSFMS_20180101.ListAppsLists' = 'AWSFMS_20180101.ListAppsLists' }
 
-	export enum ListComplianceStatusX_Amz_Target { 'AWSFMS_20180101.ListComplianceStatus' = 0 }
+	export enum ListComplianceStatusX_Amz_Target { 'AWSFMS_20180101.ListComplianceStatus' = 'AWSFMS_20180101.ListComplianceStatus' }
 
-	export enum ListDiscoveredResourcesX_Amz_Target { 'AWSFMS_20180101.ListDiscoveredResources' = 0 }
+	export enum ListDiscoveredResourcesX_Amz_Target { 'AWSFMS_20180101.ListDiscoveredResources' = 'AWSFMS_20180101.ListDiscoveredResources' }
 
-	export enum ListMemberAccountsX_Amz_Target { 'AWSFMS_20180101.ListMemberAccounts' = 0 }
+	export enum ListMemberAccountsX_Amz_Target { 'AWSFMS_20180101.ListMemberAccounts' = 'AWSFMS_20180101.ListMemberAccounts' }
 
-	export enum ListPoliciesX_Amz_Target { 'AWSFMS_20180101.ListPolicies' = 0 }
+	export enum ListPoliciesX_Amz_Target { 'AWSFMS_20180101.ListPolicies' = 'AWSFMS_20180101.ListPolicies' }
 
-	export enum ListProtocolsListsX_Amz_Target { 'AWSFMS_20180101.ListProtocolsLists' = 0 }
+	export enum ListProtocolsListsX_Amz_Target { 'AWSFMS_20180101.ListProtocolsLists' = 'AWSFMS_20180101.ListProtocolsLists' }
 
-	export enum ListResourceSetResourcesX_Amz_Target { 'AWSFMS_20180101.ListResourceSetResources' = 0 }
+	export enum ListResourceSetResourcesX_Amz_Target { 'AWSFMS_20180101.ListResourceSetResources' = 'AWSFMS_20180101.ListResourceSetResources' }
 
-	export enum ListResourceSetsX_Amz_Target { 'AWSFMS_20180101.ListResourceSets' = 0 }
+	export enum ListResourceSetsX_Amz_Target { 'AWSFMS_20180101.ListResourceSets' = 'AWSFMS_20180101.ListResourceSets' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSFMS_20180101.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSFMS_20180101.ListTagsForResource' = 'AWSFMS_20180101.ListTagsForResource' }
 
-	export enum ListThirdPartyFirewallFirewallPoliciesX_Amz_Target { 'AWSFMS_20180101.ListThirdPartyFirewallFirewallPolicies' = 0 }
+	export enum ListThirdPartyFirewallFirewallPoliciesX_Amz_Target { 'AWSFMS_20180101.ListThirdPartyFirewallFirewallPolicies' = 'AWSFMS_20180101.ListThirdPartyFirewallFirewallPolicies' }
 
-	export enum PutAdminAccountX_Amz_Target { 'AWSFMS_20180101.PutAdminAccount' = 0 }
+	export enum PutAdminAccountX_Amz_Target { 'AWSFMS_20180101.PutAdminAccount' = 'AWSFMS_20180101.PutAdminAccount' }
 
-	export enum PutAppsListX_Amz_Target { 'AWSFMS_20180101.PutAppsList' = 0 }
+	export enum PutAppsListX_Amz_Target { 'AWSFMS_20180101.PutAppsList' = 'AWSFMS_20180101.PutAppsList' }
 
-	export enum PutNotificationChannelX_Amz_Target { 'AWSFMS_20180101.PutNotificationChannel' = 0 }
+	export enum PutNotificationChannelX_Amz_Target { 'AWSFMS_20180101.PutNotificationChannel' = 'AWSFMS_20180101.PutNotificationChannel' }
 
-	export enum PutPolicyX_Amz_Target { 'AWSFMS_20180101.PutPolicy' = 0 }
+	export enum PutPolicyX_Amz_Target { 'AWSFMS_20180101.PutPolicy' = 'AWSFMS_20180101.PutPolicy' }
 
-	export enum PutProtocolsListX_Amz_Target { 'AWSFMS_20180101.PutProtocolsList' = 0 }
+	export enum PutProtocolsListX_Amz_Target { 'AWSFMS_20180101.PutProtocolsList' = 'AWSFMS_20180101.PutProtocolsList' }
 
-	export enum PutResourceSetX_Amz_Target { 'AWSFMS_20180101.PutResourceSet' = 0 }
+	export enum PutResourceSetX_Amz_Target { 'AWSFMS_20180101.PutResourceSet' = 'AWSFMS_20180101.PutResourceSet' }
 
-	export enum TagResourceX_Amz_Target { 'AWSFMS_20180101.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSFMS_20180101.TagResource' = 'AWSFMS_20180101.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSFMS_20180101.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSFMS_20180101.UntagResource' = 'AWSFMS_20180101.UntagResource' }
 
 }
 

@@ -145,7 +145,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Mode { API_KEY = 0, AWS_IAM = 1, AMAZON_COGNITO_USER_POOLS = 2, OPENID_CONNECT = 3 }
+	export enum Mode { API_KEY = 'API_KEY', AWS_IAM = 'AWS_IAM', AMAZON_COGNITO_USER_POOLS = 'AMAZON_COGNITO_USER_POOLS', OPENID_CONNECT = 'OPENID_CONNECT' }
 
 
 	/** The authentication settings for accessing provisioned data models in your Amplify project. */
@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolutionStrategy { OPTIMISTIC_CONCURRENCY = 0, LAMBDA = 1, AUTOMERGE = 2, NONE = 3 }
+	export enum ResolutionStrategy { OPTIMISTIC_CONCURRENCY = 'OPTIMISTIC_CONCURRENCY', LAMBDA = 'LAMBDA', AUTOMERGE = 'AUTOMERGE', NONE = 'NONE' }
 
 	export interface CreateBackendAuthResponse {
 		AppId?: string;
@@ -232,7 +232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthResources { USER_POOL_ONLY = 0, IDENTITY_POOL_AND_USER_POOL = 1 }
+	export enum AuthResources { USER_POOL_ONLY = 'USER_POOL_ONLY', IDENTITY_POOL_AND_USER_POOL = 'IDENTITY_POOL_AND_USER_POOL' }
 
 
 	/** Describes authorization configurations for the auth resources, configured as a part of your Amplify project. */
@@ -262,7 +262,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Service { COGNITO = 0 }
+	export enum Service { COGNITO = 'COGNITO' }
 
 
 	/** Describes the Amazon Cognito user pool configuration for the auth resource to be configured for your Amplify project. */
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 
 	/** The type of verification message to send. */
-	export enum DeliveryMethod { EMAIL = 0, SMS = 1 }
+	export enum DeliveryMethod { EMAIL = 'EMAIL', SMS = 'SMS' }
 
 
 	/** The configuration for the email sent when an app user forgets their password. */
@@ -386,7 +386,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MFAMode { ON = 0, OFF = 1, OPTIONAL = 2 }
+	export enum MFAMode { ON = 'ON', OFF = 'OFF', OPTIONAL = 'OPTIONAL' }
 
 
 	/** The settings of your MFA configuration for the backend of your Amplify project. */
@@ -406,7 +406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MfaTypesElement { SMS = 0, TOTP = 1 }
+	export enum MfaTypesElement { SMS = 'SMS', TOTP = 'TOTP' }
 
 
 	/** Creates the OAuth configuration for your Amplify project. */
@@ -442,9 +442,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OAuthGrantType { CODE = 0, IMPLICIT = 1 }
+	export enum OAuthGrantType { CODE = 'CODE', IMPLICIT = 'IMPLICIT' }
 
-	export enum OAuthScopesElement { PHONE = 0, EMAIL = 1, OPENID = 2, PROFILE = 3, AWS_COGNITO_SIGNIN_USER_ADMIN = 4 }
+	export enum OAuthScopesElement { PHONE = 'PHONE', EMAIL = 'EMAIL', OPENID = 'OPENID', PROFILE = 'PROFILE', AWS_COGNITO_SIGNIN_USER_ADMIN = 'AWS_COGNITO_SIGNIN_USER_ADMIN' }
 
 
 	/** The settings for using the social identity providers for access to your Amplify app. */
@@ -540,11 +540,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AdditionalConstraintsElement { REQUIRE_DIGIT = 0, REQUIRE_LOWERCASE = 1, REQUIRE_SYMBOL = 2, REQUIRE_UPPERCASE = 3 }
+	export enum AdditionalConstraintsElement { REQUIRE_DIGIT = 'REQUIRE_DIGIT', REQUIRE_LOWERCASE = 'REQUIRE_LOWERCASE', REQUIRE_SYMBOL = 'REQUIRE_SYMBOL', REQUIRE_UPPERCASE = 'REQUIRE_UPPERCASE' }
 
-	export enum RequiredSignUpAttributesElement { ADDRESS = 0, BIRTHDATE = 1, EMAIL = 2, FAMILY_NAME = 3, GENDER = 4, GIVEN_NAME = 5, LOCALE = 6, MIDDLE_NAME = 7, NAME = 8, NICKNAME = 9, PHONE_NUMBER = 10, PICTURE = 11, PREFERRED_USERNAME = 12, PROFILE = 13, UPDATED_AT = 14, WEBSITE = 15, ZONE_INFO = 16 }
+	export enum RequiredSignUpAttributesElement { ADDRESS = 'ADDRESS', BIRTHDATE = 'BIRTHDATE', EMAIL = 'EMAIL', FAMILY_NAME = 'FAMILY_NAME', GENDER = 'GENDER', GIVEN_NAME = 'GIVEN_NAME', LOCALE = 'LOCALE', MIDDLE_NAME = 'MIDDLE_NAME', NAME = 'NAME', NICKNAME = 'NICKNAME', PHONE_NUMBER = 'PHONE_NUMBER', PICTURE = 'PICTURE', PREFERRED_USERNAME = 'PREFERRED_USERNAME', PROFILE = 'PROFILE', UPDATED_AT = 'UPDATED_AT', WEBSITE = 'WEBSITE', ZONE_INFO = 'ZONE_INFO' }
 
-	export enum SignInMethod { EMAIL = 0, EMAIL_AND_PHONE_NUMBER = 1, PHONE_NUMBER = 2, USERNAME = 3 }
+	export enum SignInMethod { EMAIL = 'EMAIL', EMAIL_AND_PHONE_NUMBER = 'EMAIL_AND_PHONE_NUMBER', PHONE_NUMBER = 'PHONE_NUMBER', USERNAME = 'USERNAME' }
 
 
 	/** Creates an email or SMS verification message for the auth resource configured for your Amplify project. */
@@ -631,11 +631,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticatedElement { READ = 0, CREATE_AND_UPDATE = 1, DELETE = 2 }
+	export enum AuthenticatedElement { READ = 'READ', CREATE_AND_UPDATE = 'CREATE_AND_UPDATE', DELETE = 'DELETE' }
 
-	export enum UnAuthenticatedElement { READ = 0, CREATE_AND_UPDATE = 1, DELETE = 2 }
+	export enum UnAuthenticatedElement { READ = 'READ', CREATE_AND_UPDATE = 'CREATE_AND_UPDATE', DELETE = 'DELETE' }
 
-	export enum ServiceName { S3 = 0 }
+	export enum ServiceName { S3 = 'S3' }
 
 	export interface CreateTokenResponse {
 		AppId?: string;
@@ -903,7 +903,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { LATEST = 0, STALE = 1 }
+	export enum Status { LATEST = 'LATEST', STALE = 'STALE' }
 
 	export interface GetBackendAuthResponse {
 		AppId?: string;

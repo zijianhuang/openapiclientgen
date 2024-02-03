@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessibilityMobilityAccessibleElevatorException { EXCEPTION_UNSPECIFIED = 0, UNDER_CONSTRUCTION = 1, DEPENDENT_ON_SEASON = 2, DEPENDENT_ON_DAY_OF_WEEK = 3 }
+	export enum AccessibilityMobilityAccessibleElevatorException { EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED', UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION', DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON', DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK' }
 
 
 	/** An account is a container for your business's locations. If you are the only user who manages locations for your business, you can use your personal Google Account. To share management of locations with multiple users, [create a business account] (https://support.google.com/business/answer/6085339?ref_topic=6085325). */
@@ -265,9 +265,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountPermissionLevel { PERMISSION_LEVEL_UNSPECIFIED = 0, OWNER_LEVEL = 1, MEMBER_LEVEL = 2 }
+	export enum AccountPermissionLevel { PERMISSION_LEVEL_UNSPECIFIED = 'PERMISSION_LEVEL_UNSPECIFIED', OWNER_LEVEL = 'OWNER_LEVEL', MEMBER_LEVEL = 'MEMBER_LEVEL' }
 
-	export enum AccountRole { ACCOUNT_ROLE_UNSPECIFIED = 0, OWNER = 1, CO_OWNER = 2, MANAGER = 3, COMMUNITY_MANAGER = 4 }
+	export enum AccountRole { ACCOUNT_ROLE_UNSPECIFIED = 'ACCOUNT_ROLE_UNSPECIFIED', OWNER = 'OWNER', CO_OWNER = 'CO_OWNER', MANAGER = 'MANAGER', COMMUNITY_MANAGER = 'COMMUNITY_MANAGER' }
 
 
 	/** Indicates status of the account, such as whether the account has been verified by Google. */
@@ -290,9 +290,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountStateStatus { ACCOUNT_STATUS_UNSPECIFIED = 0, VERIFIED = 1, UNVERIFIED = 2, VERIFICATION_REQUESTED = 3 }
+	export enum AccountStateStatus { ACCOUNT_STATUS_UNSPECIFIED = 'ACCOUNT_STATUS_UNSPECIFIED', VERIFIED = 'VERIFIED', UNVERIFIED = 'UNVERIFIED', VERIFICATION_REQUESTED = 'VERIFICATION_REQUESTED' }
 
-	export enum AccountType { ACCOUNT_TYPE_UNSPECIFIED = 0, PERSONAL = 1, LOCATION_GROUP = 2, USER_GROUP = 3, ORGANIZATION = 4 }
+	export enum AccountType { ACCOUNT_TYPE_UNSPECIFIED = 'ACCOUNT_TYPE_UNSPECIFIED', PERSONAL = 'PERSONAL', LOCATION_GROUP = 'LOCATION_GROUP', USER_GROUP = 'USER_GROUP', ORGANIZATION = 'ORGANIZATION' }
 
 
 	/** Amenities and features related to leisure and play. */
@@ -654,7 +654,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdminRole { ADMIN_ROLE_UNSPECIFIED = 0, OWNER = 1, CO_OWNER = 2, MANAGER = 3, COMMUNITY_MANAGER = 4 }
+	export enum AdminRole { ADMIN_ROLE_UNSPECIFIED = 'ADMIN_ROLE_UNSPECIFIED', OWNER = 'OWNER', CO_OWNER = 'CO_OWNER', MANAGER = 'MANAGER', COMMUNITY_MANAGER = 'COMMUNITY_MANAGER' }
 
 
 	/** Represents an answer to a question */
@@ -743,7 +743,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorType { AUTHOR_TYPE_UNSPECIFIED = 0, REGULAR_USER = 1, LOCAL_GUIDE = 2, MERCHANT = 3 }
+	export enum AuthorType { AUTHOR_TYPE_UNSPECIFIED = 'AUTHOR_TYPE_UNSPECIFIED', REGULAR_USER = 'REGULAR_USER', LOCAL_GUIDE = 'LOCAL_GUIDE', MERCHANT = 'MERCHANT' }
 
 
 	/** Request message for Locations.AssociateLocationRequest. */
@@ -844,7 +844,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeValueType { ATTRIBUTE_VALUE_TYPE_UNSPECIFIED = 0, BOOL = 1, ENUM = 2, URL = 3, REPEATED_ENUM = 4 }
+	export enum AttributeValueType { ATTRIBUTE_VALUE_TYPE_UNSPECIFIED = 'ATTRIBUTE_VALUE_TYPE_UNSPECIFIED', BOOL = 'BOOL', ENUM = 'ENUM', URL = 'URL', REPEATED_ENUM = 'REPEATED_ENUM' }
 
 
 	/** Metadata for an attribute. Contains display information for the attribute, including a localized name and a heading for grouping related attributes together. */
@@ -1019,7 +1019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricRequestMetric { METRIC_UNSPECIFIED = 0, ALL = 1, QUERIES_DIRECT = 2, QUERIES_INDIRECT = 3, QUERIES_CHAIN = 4, VIEWS_MAPS = 5, VIEWS_SEARCH = 6, ACTIONS_WEBSITE = 7, ACTIONS_PHONE = 8, ACTIONS_DRIVING_DIRECTIONS = 9, PHOTOS_VIEWS_MERCHANT = 10, PHOTOS_VIEWS_CUSTOMERS = 11, PHOTOS_COUNT_MERCHANT = 12, PHOTOS_COUNT_CUSTOMERS = 13, LOCAL_POST_VIEWS_SEARCH = 14, LOCAL_POST_ACTIONS_CALL_TO_ACTION = 15 }
+	export enum MetricRequestMetric { METRIC_UNSPECIFIED = 'METRIC_UNSPECIFIED', ALL = 'ALL', QUERIES_DIRECT = 'QUERIES_DIRECT', QUERIES_INDIRECT = 'QUERIES_INDIRECT', QUERIES_CHAIN = 'QUERIES_CHAIN', VIEWS_MAPS = 'VIEWS_MAPS', VIEWS_SEARCH = 'VIEWS_SEARCH', ACTIONS_WEBSITE = 'ACTIONS_WEBSITE', ACTIONS_PHONE = 'ACTIONS_PHONE', ACTIONS_DRIVING_DIRECTIONS = 'ACTIONS_DRIVING_DIRECTIONS', PHOTOS_VIEWS_MERCHANT = 'PHOTOS_VIEWS_MERCHANT', PHOTOS_VIEWS_CUSTOMERS = 'PHOTOS_VIEWS_CUSTOMERS', PHOTOS_COUNT_MERCHANT = 'PHOTOS_COUNT_MERCHANT', PHOTOS_COUNT_CUSTOMERS = 'PHOTOS_COUNT_CUSTOMERS', LOCAL_POST_VIEWS_SEARCH = 'LOCAL_POST_VIEWS_SEARCH', LOCAL_POST_ACTIONS_CALL_TO_ACTION = 'LOCAL_POST_ACTIONS_CALL_TO_ACTION' }
 
 
 	/** A range of time. Data will be pulled over the range as a half-open inverval (that is, [start_time, end_time)). */
@@ -1586,7 +1586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DuplicateAccess { ACCESS_UNSPECIFIED = 0, ACCESS_UNKNOWN = 1, ALLOWED = 2, INSUFFICIENT = 3 }
+	export enum DuplicateAccess { ACCESS_UNSPECIFIED = 'ACCESS_UNSPECIFIED', ACCESS_UNKNOWN = 'ACCESS_UNKNOWN', ALLOWED = 'ALLOWED', INSUFFICIENT = 'INSUFFICIENT' }
 
 
 	/** The time periods during which a location is open for certain types of business. */
@@ -1654,7 +1654,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimePeriodCloseDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum TimePeriodCloseDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Information related to the opening state of the business. */
@@ -1722,7 +1722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenInfoStatus { OPEN_FOR_BUSINESS_UNSPECIFIED = 0, OPEN = 1, CLOSED_PERMANENTLY = 2, CLOSED_TEMPORARILY = 3 }
+	export enum OpenInfoStatus { OPEN_FOR_BUSINESS_UNSPECIFIED = 'OPEN_FOR_BUSINESS_UNSPECIFIED', OPEN = 'OPEN', CLOSED_PERMANENTLY = 'CLOSED_PERMANENTLY', CLOSED_TEMPORARILY = 'CLOSED_TEMPORARILY' }
 
 
 	/** A list of item price information. Price lists are structured as one or more price lists, each containing one or more sections with one or more items. For example, food price lists may represent breakfast/lunch/dinner menus, with sections for burgers/steak/seafood. */
@@ -1889,7 +1889,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SectionSectionType { SECTION_TYPE_UNSPECIFIED = 0, FOOD = 1, SERVICES = 2 }
+	export enum SectionSectionType { SECTION_TYPE_UNSPECIFIED = 'SECTION_TYPE_UNSPECIFIED', FOOD = 'FOOD', SERVICES = 'SERVICES' }
 
 
 	/** All information pertaining to the location's profile. */
@@ -1977,7 +1977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceAreaBusinessBusinessType { BUSINESS_TYPE_UNSPECIFIED = 0, CUSTOMER_LOCATION_ONLY = 1, CUSTOMER_AND_BUSINESS_LOCATION = 2 }
+	export enum ServiceAreaBusinessBusinessType { BUSINESS_TYPE_UNSPECIFIED = 'BUSINESS_TYPE_UNSPECIFIED', CUSTOMER_LOCATION_ONLY = 'CUSTOMER_LOCATION_ONLY', CUSTOMER_AND_BUSINESS_LOCATION = 'CUSTOMER_AND_BUSINESS_LOCATION' }
 
 
 	/** Defines the union of areas represented by a set of places. */
@@ -2324,7 +2324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReviewStarRating { STAR_RATING_UNSPECIFIED = 0, ONE = 1, TWO = 2, THREE = 3, FOUR = 4, FIVE = 5 }
+	export enum ReviewStarRating { STAR_RATING_UNSPECIFIED = 'STAR_RATING_UNSPECIFIED', ONE = 'ONE', TWO = 'TWO', THREE = 'THREE', FOUR = 'FOUR', FIVE = 'FIVE' }
 
 
 	/** Features of the property of specific interest to the business traveler. */
@@ -2410,7 +2410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CallToActionActionType { ACTION_TYPE_UNSPECIFIED = 0, BOOK = 1, ORDER = 2, SHOP = 3, LEARN_MORE = 4, SIGN_UP = 5, GET_OFFER = 6, CALL = 7 }
+	export enum CallToActionActionType { ACTION_TYPE_UNSPECIFIED = 'ACTION_TYPE_UNSPECIFIED', BOOK = 'BOOK', ORDER = 'ORDER', SHOP = 'SHOP', LEARN_MORE = 'LEARN_MORE', SIGN_UP = 'SIGN_UP', GET_OFFER = 'GET_OFFER', CALL = 'CALL' }
 
 
 	/** This message denotes calories information with an upper bound and lower bound range. Lower amount must be specified. Both lower and upper amounts are non-negative numbers. */
@@ -2447,7 +2447,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaloriesFactUnit { ENERGY_UNIT_UNSPECIFIED = 0, CALORIE = 1, JOULE = 2 }
+	export enum CaloriesFactUnit { ENERGY_UNIT_UNSPECIFIED = 'ENERGY_UNIT_UNSPECIFIED', CALORIE = 'CALORIE', JOULE = 'JOULE' }
 
 
 	/** A chain is a brand that your business's locations can be affiliated with. */
@@ -2626,9 +2626,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VerificationMethod { VERIFICATION_METHOD_UNSPECIFIED = 0, ADDRESS = 1, EMAIL = 2, PHONE_CALL = 3, SMS = 4, AUTO = 5 }
+	export enum VerificationMethod { VERIFICATION_METHOD_UNSPECIFIED = 'VERIFICATION_METHOD_UNSPECIFIED', ADDRESS = 'ADDRESS', EMAIL = 'EMAIL', PHONE_CALL = 'PHONE_CALL', SMS = 'SMS', AUTO = 'AUTO' }
 
-	export enum VerificationState { VERIFICATION_STATE_UNSPECIFIED = 0, PENDING = 1, COMPLETED = 2, FAILED = 3 }
+	export enum VerificationState { VERIFICATION_STATE_UNSPECIFIED = 'VERIFICATION_STATE_UNSPECIFIED', PENDING = 'PENDING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** The ways in which the property provides guests with the ability to access the internet. */
@@ -2745,7 +2745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionalMetricValueMetricOption { METRIC_OPTION_UNSPECIFIED = 0, AGGREGATED_TOTAL = 1, AGGREGATED_DAILY = 2, BREAKDOWN_DAY_OF_WEEK = 3, BREAKDOWN_HOUR_OF_DAY = 4 }
+	export enum DimensionalMetricValueMetricOption { METRIC_OPTION_UNSPECIFIED = 'METRIC_OPTION_UNSPECIFIED', AGGREGATED_TOTAL = 'AGGREGATED_TOTAL', AGGREGATED_DAILY = 'AGGREGATED_DAILY', BREAKDOWN_DAY_OF_WEEK = 'BREAKDOWN_DAY_OF_WEEK', BREAKDOWN_HOUR_OF_DAY = 'BREAKDOWN_HOUR_OF_DAY' }
 
 
 	/** The dimension for which data is divided over. */
@@ -2872,7 +2872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DrivingDirectionMetricsRequestNumDays { SEVEN = 0, THIRTY = 1, NINETY = 2 }
+	export enum DrivingDirectionMetricsRequestNumDays { SEVEN = 'SEVEN', THIRTY = 'THIRTY', NINETY = 'NINETY' }
 
 
 	/** Input for EMAIL verification. */
@@ -3744,7 +3744,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NutritionFactUnit { MASS_UNIT_UNSPECIFIED = 0, GRAM = 1, MILLIGRAM = 2 }
+	export enum NutritionFactUnit { MASS_UNIT_UNSPECIFIED = 'MASS_UNIT_UNSPECIFIED', GRAM = 'GRAM', MILLIGRAM = 'MILLIGRAM' }
 
 
 	/** Serving portion size of a food dish. */
@@ -3770,7 +3770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FoodMenuItemAttributesSpiciness { SPICINESS_UNSPECIFIED = 0, MILD = 1, MEDIUM = 2, HOT = 3 }
+	export enum FoodMenuItemAttributesSpiciness { SPICINESS_UNSPECIFIED = 'SPICINESS_UNSPECIFIED', MILD = 'MILD', MEDIUM = 'MEDIUM', HOT = 'HOT' }
 
 
 	/** Option of an Item. It requires an explicit user selection. */
@@ -4108,7 +4108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GuestUnitFeaturesTier { UNIT_TIER_UNSPECIFIED = 0, STANDARD_UNIT = 1, DELUXE_UNIT = 2 }
+	export enum GuestUnitFeaturesTier { UNIT_TIER_UNSPECIFIED = 'UNIT_TIER_UNSPECIFIED', STANDARD_UNIT = 'STANDARD_UNIT', DELUXE_UNIT = 'DELUXE_UNIT' }
 
 
 	/** An individual room, such as kitchen, bathroom, bedroom, within a bookable guest unit. */
@@ -7219,7 +7219,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InsuranceNetworkState { NETWORK_STATE_UNSPECIFIED = 0, ACCEPTED = 1, PENDING_ADD = 2, PENDING_DELETE = 3, NOT_ACCEPTED = 4 }
+	export enum InsuranceNetworkState { NETWORK_STATE_UNSPECIFIED = 'NETWORK_STATE_UNSPECIFIED', ACCEPTED = 'ACCEPTED', PENDING_ADD = 'PENDING_ADD', PENDING_DELETE = 'PENDING_DELETE', NOT_ACCEPTED = 'NOT_ACCEPTED' }
 
 
 	/** Output only. Represents a pending invitation. */
@@ -7585,9 +7585,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationAssociationCategory { CATEGORY_UNSPECIFIED = 0, COVER = 1, PROFILE = 2, LOGO = 3, EXTERIOR = 4, INTERIOR = 5, PRODUCT = 6, AT_WORK = 7, FOOD_AND_DRINK = 8, MENU = 9, COMMON_AREA = 10, ROOMS = 11, TEAMS = 12, ADDITIONAL = 13 }
+	export enum LocationAssociationCategory { CATEGORY_UNSPECIFIED = 'CATEGORY_UNSPECIFIED', COVER = 'COVER', PROFILE = 'PROFILE', LOGO = 'LOGO', EXTERIOR = 'EXTERIOR', INTERIOR = 'INTERIOR', PRODUCT = 'PRODUCT', AT_WORK = 'AT_WORK', FOOD_AND_DRINK = 'FOOD_AND_DRINK', MENU = 'MENU', COMMON_AREA = 'COMMON_AREA', ROOMS = 'ROOMS', TEAMS = 'TEAMS', ADDITIONAL = 'ADDITIONAL' }
 
-	export enum MediaItemMediaFormat { MEDIA_FORMAT_UNSPECIFIED = 0, PHOTO = 1, VIDEO = 2 }
+	export enum MediaItemMediaFormat { MEDIA_FORMAT_UNSPECIFIED = 'MEDIA_FORMAT_UNSPECIFIED', PHOTO = 'PHOTO', VIDEO = 'VIDEO' }
 
 
 	/** Response message for InsuranceNetworkService.ListInsuranceNetworks */
@@ -7743,7 +7743,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocalPostAlertType { ALERT_TYPE_UNSPECIFIED = 0, COVID_19 = 1 }
+	export enum LocalPostAlertType { ALERT_TYPE_UNSPECIFIED = 'ALERT_TYPE_UNSPECIFIED', COVID_19 = 'COVID_19' }
 
 
 	/** All the information pertaining to an event featured in a local post. */
@@ -7830,9 +7830,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LocalPostState { LOCAL_POST_STATE_UNSPECIFIED = 0, REJECTED = 1, LIVE = 2, PROCESSING = 3 }
+	export enum LocalPostState { LOCAL_POST_STATE_UNSPECIFIED = 'LOCAL_POST_STATE_UNSPECIFIED', REJECTED = 'REJECTED', LIVE = 'LIVE', PROCESSING = 'PROCESSING' }
 
-	export enum LocalPostTopicType { LOCAL_POST_TOPIC_TYPE_UNSPECIFIED = 0, STANDARD = 1, EVENT = 2, OFFER = 3, ALERT = 4 }
+	export enum LocalPostTopicType { LOCAL_POST_TOPIC_TYPE_UNSPECIFIED = 'LOCAL_POST_TOPIC_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', EVENT = 'EVENT', OFFER = 'OFFER', ALERT = 'ALERT' }
 
 
 	/** Response message for AccessControl.ListLocationAdmins. */
@@ -8364,9 +8364,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportGoogleLocationRequestReportReasonBadLocation { BAD_LOCATION_REASON_UNSPECIFIED = 0, NOT_A_LOCATION = 1, PERMANENTLY_CLOSED = 2, DOES_NOT_EXIST = 3, SPAM = 4, NOT_A_BUSINESS = 5, MOVED = 6, DUPLICATE = 7 }
+	export enum ReportGoogleLocationRequestReportReasonBadLocation { BAD_LOCATION_REASON_UNSPECIFIED = 'BAD_LOCATION_REASON_UNSPECIFIED', NOT_A_LOCATION = 'NOT_A_LOCATION', PERMANENTLY_CLOSED = 'PERMANENTLY_CLOSED', DOES_NOT_EXIST = 'DOES_NOT_EXIST', SPAM = 'SPAM', NOT_A_BUSINESS = 'NOT_A_BUSINESS', MOVED = 'MOVED', DUPLICATE = 'DUPLICATE' }
 
-	export enum ReportGoogleLocationRequestReportReasonBadRecommendation { BAD_RECOMMENDATION_REASON_UNSPECIFIED = 0, NOT_A_STORE_FRONT = 1, NOT_PART_OF_SUGGESTED_CHAIN = 2, IRRELEVANT = 3 }
+	export enum ReportGoogleLocationRequestReportReasonBadRecommendation { BAD_RECOMMENDATION_REASON_UNSPECIFIED = 'BAD_RECOMMENDATION_REASON_UNSPECIFIED', NOT_A_STORE_FRONT = 'NOT_A_STORE_FRONT', NOT_PART_OF_SUGGESTED_CHAIN = 'NOT_PART_OF_SUGGESTED_CHAIN', IRRELEVANT = 'IRRELEVANT' }
 
 
 	/** Request message for Insights.ReportLocalPostInsights */
@@ -9270,9 +9270,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Mybusiness_categories_listView { CATEGORY_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Mybusiness_categories_listView { CATEGORY_VIEW_UNSPECIFIED = 'CATEGORY_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum Mybusiness_accounts_invitations_listTargetType { ALL = 0, ACCOUNTS_ONLY = 1, LOCATIONS_ONLY = 2 }
+	export enum Mybusiness_accounts_invitations_listTargetType { ALL = 'ALL', ACCOUNTS_ONLY = 'ACCOUNTS_ONLY', LOCATIONS_ONLY = 'LOCATIONS_ONLY' }
 
 }
 

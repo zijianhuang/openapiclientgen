@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateDestinationResponseState { ENABLED = 0, DISABLED = 1, DECOMMISSIONED = 2 }
+	export enum CreateDestinationResponseState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DECOMMISSIONED = 'DECOMMISSIONED' }
 
 	export interface ConflictException {
 	}
@@ -2124,7 +2124,7 @@ export namespace MyNS {
 
 
 	/** State of the destination. */
-	export enum DestinationState { ENABLED = 0, DISABLED = 1, DECOMMISSIONED = 2 }
+	export enum DestinationState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DECOMMISSIONED = 'DECOMMISSIONED' }
 
 	export interface CreateDestinationRequest {
 

@@ -528,11 +528,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MoneyCurrency { AUD = 0, BRL = 1, CAD = 2, EUR = 3, GBP = 4, HKD = 5, IDR = 6, INR = 7, JPY = 8, NZD = 9, SGD = 10, USD = 11, ZAR = 12, CNY = 13, VND = 14, MYR = 15, CHF = 16 }
+	export enum MoneyCurrency { AUD = 'AUD', BRL = 'BRL', CAD = 'CAD', EUR = 'EUR', GBP = 'GBP', HKD = 'HKD', IDR = 'IDR', INR = 'INR', JPY = 'JPY', NZD = 'NZD', SGD = 'SGD', USD = 'USD', ZAR = 'ZAR', CNY = 'CNY', VND = 'VND', MYR = 'MYR', CHF = 'CHF' }
 
-	export enum AccountCONTAINER { bank = 0, creditCard = 1, investment = 2, insurance = 3, loan = 4, reward = 5, realEstate = 6, otherAssets = 7, otherLiabilities = 8 }
+	export enum AccountCONTAINER { bank = 'bank', creditCard = 'creditCard', investment = 'investment', insurance = 'insurance', loan = 'loan', reward = 'reward', realEstate = 'realEstate', otherAssets = 'otherAssets', otherLiabilities = 'otherLiabilities' }
 
-	export enum AccountAccountStatus { ACTIVE = 0, INACTIVE = 1, TO_BE_CLOSED = 2, CLOSED = 3, DELETED = 4 }
+	export enum AccountAccountStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', TO_BE_CLOSED = 'TO_BE_CLOSED', CLOSED = 'CLOSED', DELETED = 'DELETED' }
 
 	export interface AccountAddress {
 		address1?: string | null;
@@ -574,9 +574,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountAddressType { HOME = 0, BUSINESS = 1, POBOX = 2, RETAIL = 3, OFFICE = 4, SMALL_BUSINESS = 5, COMMUNICATION = 6, PERMANENT = 7, STATEMENT_ADDRESS = 8, PAYMENT = 9, PAYOFF = 10, UNKNOWN = 11 }
+	export enum AccountAddressType { HOME = 'HOME', BUSINESS = 'BUSINESS', POBOX = 'POBOX', RETAIL = 'RETAIL', OFFICE = 'OFFICE', SMALL_BUSINESS = 'SMALL_BUSINESS', COMMUNICATION = 'COMMUNICATION', PERMANENT = 'PERMANENT', STATEMENT_ADDRESS = 'STATEMENT_ADDRESS', PAYMENT = 'PAYMENT', PAYOFF = 'PAYOFF', UNKNOWN = 'UNKNOWN' }
 
-	export enum AccountAggregationSource { SYSTEM = 0, USER = 1 }
+	export enum AccountAggregationSource { SYSTEM = 'SYSTEM', USER = 'USER' }
 
 	export interface AutoRefresh {
 
@@ -609,9 +609,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoRefreshAdditionalStatus { SCHEDULED = 0, TEMP_ERROR = 1, SITE_BLOCKING = 2, SITE_NOT_SUPPORTED = 3, REAL_TIME_MFA_REQUIRED = 4, USER_ACTION_REQUIRED = 5, UNSUBSCRIBED = 6, MANUAL_ACCOUNT = 7 }
+	export enum AutoRefreshAdditionalStatus { SCHEDULED = 'SCHEDULED', TEMP_ERROR = 'TEMP_ERROR', SITE_BLOCKING = 'SITE_BLOCKING', SITE_NOT_SUPPORTED = 'SITE_NOT_SUPPORTED', REAL_TIME_MFA_REQUIRED = 'REAL_TIME_MFA_REQUIRED', USER_ACTION_REQUIRED = 'USER_ACTION_REQUIRED', UNSUBSCRIBED = 'UNSUBSCRIBED', MANUAL_ACCOUNT = 'MANUAL_ACCOUNT' }
 
-	export enum AutoRefreshStatus { ENABLED = 0, DISABLED = 1 }
+	export enum AutoRefreshStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface BankTransferCode {
 
@@ -637,9 +637,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BankTransferCodeType { BSB = 0, IFSC = 1, ROUTING_NUMBER = 2, SORT_CODE = 3 }
+	export enum BankTransferCodeType { BSB = 'BSB', IFSC = 'IFSC', ROUTING_NUMBER = 'ROUTING_NUMBER', SORT_CODE = 'SORT_CODE' }
 
-	export enum AccountClassification { OTHER = 0, PERSONAL = 1, CORPORATE = 2, SMALL_BUSINESS = 3, TRUST = 4, ADD_ON_CARD = 5, VIRTUAL_CARD = 6 }
+	export enum AccountClassification { OTHER = 'OTHER', PERSONAL = 'PERSONAL', CORPORATE = 'CORPORATE', SMALL_BUSINESS = 'SMALL_BUSINESS', TRUST = 'TRUST', ADD_ON_CARD = 'ADD_ON_CARD', VIRTUAL_CARD = 'VIRTUAL_CARD' }
 
 	export interface Coverage {
 
@@ -715,15 +715,15 @@ export namespace MyNS {
 
 	}
 
-	export enum CoverageAmountLimitType { IN_NETWORK = 0, OUT_NETWORK = 1 }
+	export enum CoverageAmountLimitType { IN_NETWORK = 'IN_NETWORK', OUT_NETWORK = 'OUT_NETWORK' }
 
-	export enum CoverageAmountType { DEDUCTIBLE = 0, OUT_OF_POCKET = 1, ANNUAL_BENEFIT = 2, MAX_BENEFIT = 3, COVERAGE_AMOUNT = 4, MONTHLY_BENEFIT = 5, OTHER = 6 }
+	export enum CoverageAmountType { DEDUCTIBLE = 'DEDUCTIBLE', OUT_OF_POCKET = 'OUT_OF_POCKET', ANNUAL_BENEFIT = 'ANNUAL_BENEFIT', MAX_BENEFIT = 'MAX_BENEFIT', COVERAGE_AMOUNT = 'COVERAGE_AMOUNT', MONTHLY_BENEFIT = 'MONTHLY_BENEFIT', OTHER = 'OTHER' }
 
-	export enum CoverageAmountUnitType { PER_FAMILY = 0, PER_MEMBER = 1 }
+	export enum CoverageAmountUnitType { PER_FAMILY = 'PER_FAMILY', PER_MEMBER = 'PER_MEMBER' }
 
-	export enum CoveragePlanType { PPO = 0, HMO = 1, UNKNOWN = 2 }
+	export enum CoveragePlanType { PPO = 'PPO', HMO = 'HMO', UNKNOWN = 'UNKNOWN' }
 
-	export enum CoverageType { VISION = 0, DENTAL = 1, MEDICAL = 2, HEALTH = 3, DEATH_COVER = 4, TOTAL_PERMANENT_DISABILITY = 5, ACCIDENTAL_DEATH_COVER = 6, INCOME_PROTECTION = 7, DEATH_TOTAL_PERMANENT_DISABILITY = 8, OTHER = 9 }
+	export enum CoverageType { VISION = 'VISION', DENTAL = 'DENTAL', MEDICAL = 'MEDICAL', HEALTH = 'HEALTH', DEATH_COVER = 'DEATH_COVER', TOTAL_PERMANENT_DISABILITY = 'TOTAL_PERMANENT_DISABILITY', ACCIDENTAL_DEATH_COVER = 'ACCIDENTAL_DEATH_COVER', INCOME_PROTECTION = 'INCOME_PROTECTION', DEATH_TOTAL_PERMANENT_DISABILITY = 'DEATH_TOTAL_PERMANENT_DISABILITY', OTHER = 'OTHER' }
 
 	export interface AccountDataset {
 
@@ -777,13 +777,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountDatasetAdditionalStatus { LOGIN_IN_PROGRESS = 0, DATA_RETRIEVAL_IN_PROGRESS = 1, ACCT_SUMMARY_RECEIVED = 2, AVAILABLE_DATA_RETRIEVED = 3, PARTIAL_DATA_RETRIEVED = 4, DATA_RETRIEVAL_FAILED = 5, DATA_NOT_AVAILABLE = 6, ACCOUNT_LOCKED = 7, ADDL_AUTHENTICATION_REQUIRED = 8, BETA_SITE_DEV_IN_PROGRESS = 9, CREDENTIALS_UPDATE_NEEDED = 10, INCORRECT_CREDENTIALS = 11, PROPERTY_VALUE_NOT_AVAILABLE = 12, INVALID_ADDL_INFO_PROVIDED = 13, REQUEST_TIME_OUT = 14, SITE_BLOCKING_ERROR = 15, UNEXPECTED_SITE_ERROR = 16, SITE_NOT_SUPPORTED = 17, SITE_UNAVAILABLE = 18, TECH_ERROR = 19, USER_ACTION_NEEDED_AT_SITE = 20, SITE_SESSION_INVALIDATED = 21, NEW_AUTHENTICATION_REQUIRED = 22, DATASET_NOT_SUPPORTED = 23, ENROLLMENT_REQUIRED_FOR_DATASET = 24, CONSENT_REQUIRED = 25, CONSENT_EXPIRED = 26, CONSENT_REVOKED = 27, INCORRECT_OAUTH_TOKEN = 28, MIGRATION_IN_PROGRESS = 29 }
+	export enum AccountDatasetAdditionalStatus { LOGIN_IN_PROGRESS = 'LOGIN_IN_PROGRESS', DATA_RETRIEVAL_IN_PROGRESS = 'DATA_RETRIEVAL_IN_PROGRESS', ACCT_SUMMARY_RECEIVED = 'ACCT_SUMMARY_RECEIVED', AVAILABLE_DATA_RETRIEVED = 'AVAILABLE_DATA_RETRIEVED', PARTIAL_DATA_RETRIEVED = 'PARTIAL_DATA_RETRIEVED', DATA_RETRIEVAL_FAILED = 'DATA_RETRIEVAL_FAILED', DATA_NOT_AVAILABLE = 'DATA_NOT_AVAILABLE', ACCOUNT_LOCKED = 'ACCOUNT_LOCKED', ADDL_AUTHENTICATION_REQUIRED = 'ADDL_AUTHENTICATION_REQUIRED', BETA_SITE_DEV_IN_PROGRESS = 'BETA_SITE_DEV_IN_PROGRESS', CREDENTIALS_UPDATE_NEEDED = 'CREDENTIALS_UPDATE_NEEDED', INCORRECT_CREDENTIALS = 'INCORRECT_CREDENTIALS', PROPERTY_VALUE_NOT_AVAILABLE = 'PROPERTY_VALUE_NOT_AVAILABLE', INVALID_ADDL_INFO_PROVIDED = 'INVALID_ADDL_INFO_PROVIDED', REQUEST_TIME_OUT = 'REQUEST_TIME_OUT', SITE_BLOCKING_ERROR = 'SITE_BLOCKING_ERROR', UNEXPECTED_SITE_ERROR = 'UNEXPECTED_SITE_ERROR', SITE_NOT_SUPPORTED = 'SITE_NOT_SUPPORTED', SITE_UNAVAILABLE = 'SITE_UNAVAILABLE', TECH_ERROR = 'TECH_ERROR', USER_ACTION_NEEDED_AT_SITE = 'USER_ACTION_NEEDED_AT_SITE', SITE_SESSION_INVALIDATED = 'SITE_SESSION_INVALIDATED', NEW_AUTHENTICATION_REQUIRED = 'NEW_AUTHENTICATION_REQUIRED', DATASET_NOT_SUPPORTED = 'DATASET_NOT_SUPPORTED', ENROLLMENT_REQUIRED_FOR_DATASET = 'ENROLLMENT_REQUIRED_FOR_DATASET', CONSENT_REQUIRED = 'CONSENT_REQUIRED', CONSENT_EXPIRED = 'CONSENT_EXPIRED', CONSENT_REVOKED = 'CONSENT_REVOKED', INCORRECT_OAUTH_TOKEN = 'INCORRECT_OAUTH_TOKEN', MIGRATION_IN_PROGRESS = 'MIGRATION_IN_PROGRESS' }
 
-	export enum AccountDatasetName { BASIC_AGG_DATA = 0, ADVANCE_AGG_DATA = 1, ACCT_PROFILE = 2, DOCUMENT = 3 }
+	export enum AccountDatasetName { BASIC_AGG_DATA = 'BASIC_AGG_DATA', ADVANCE_AGG_DATA = 'ADVANCE_AGG_DATA', ACCT_PROFILE = 'ACCT_PROFILE', DOCUMENT = 'DOCUMENT' }
 
-	export enum AccountDatasetUpdateEligibility { ALLOW_UPDATE = 0, ALLOW_UPDATE_WITH_CREDENTIALS = 1, DISALLOW_UPDATE = 2 }
+	export enum AccountDatasetUpdateEligibility { ALLOW_UPDATE = 'ALLOW_UPDATE', ALLOW_UPDATE_WITH_CREDENTIALS = 'ALLOW_UPDATE_WITH_CREDENTIALS', DISALLOW_UPDATE = 'DISALLOW_UPDATE' }
 
-	export enum AccountFrequency { DAILY = 0, ONE_TIME = 1, WEEKLY = 2, EVERY_2_WEEKS = 3, SEMI_MONTHLY = 4, MONTHLY = 5, QUARTERLY = 6, SEMI_ANNUALLY = 7, ANNUALLY = 8, EVERY_2_MONTHS = 9, EBILL = 10, FIRST_DAY_MONTHLY = 11, LAST_DAY_MONTHLY = 12, EVERY_4_WEEKS = 13, UNKNOWN = 14, OTHER = 15 }
+	export enum AccountFrequency { DAILY = 'DAILY', ONE_TIME = 'ONE_TIME', WEEKLY = 'WEEKLY', EVERY_2_WEEKS = 'EVERY_2_WEEKS', SEMI_MONTHLY = 'SEMI_MONTHLY', MONTHLY = 'MONTHLY', QUARTERLY = 'QUARTERLY', SEMI_ANNUALLY = 'SEMI_ANNUALLY', ANNUALLY = 'ANNUALLY', EVERY_2_MONTHS = 'EVERY_2_MONTHS', EBILL = 'EBILL', FIRST_DAY_MONTHLY = 'FIRST_DAY_MONTHLY', LAST_DAY_MONTHLY = 'LAST_DAY_MONTHLY', EVERY_4_WEEKS = 'EVERY_4_WEEKS', UNKNOWN = 'UNKNOWN', OTHER = 'OTHER' }
 
 	export interface FullAccountNumberList {
 
@@ -861,7 +861,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentifierType { NIE = 0, DNI = 1, EIN = 2, BN = 3, AADHAR = 4, NIN = 5, NRIC = 6 }
+	export enum IdentifierType { NIE = 'NIE', DNI = 'DNI', EIN = 'EIN', BN = 'BN', AADHAR = 'AADHAR', NIN = 'NIN', NRIC = 'NRIC' }
 
 	export interface Name {
 		first?: string | null;
@@ -885,13 +885,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountHolderOwnership { PRIMARY = 0, SECONDARY = 1, CUSTODIAN = 2, OTHERS = 3, POWER_OF_ATTORNEY = 4, TRUSTEE = 5, JOINT_OWNER = 6, BENEFICIARY = 7, AAS = 8, BUSINESS = 9, DBA = 10, TRUST = 11 }
+	export enum AccountHolderOwnership { PRIMARY = 'PRIMARY', SECONDARY = 'SECONDARY', CUSTODIAN = 'CUSTODIAN', OTHERS = 'OTHERS', POWER_OF_ATTORNEY = 'POWER_OF_ATTORNEY', TRUSTEE = 'TRUSTEE', JOINT_OWNER = 'JOINT_OWNER', BENEFICIARY = 'BENEFICIARY', AAS = 'AAS', BUSINESS = 'BUSINESS', DBA = 'DBA', TRUST = 'TRUST' }
 
-	export enum AccountHomeInsuranceType { HOME_OWNER = 0, RENTAL = 1, RENTER = 2, UNKNOWN = 3, OTHER = 4 }
+	export enum AccountHomeInsuranceType { HOME_OWNER = 'HOME_OWNER', RENTAL = 'RENTAL', RENTER = 'RENTER', UNKNOWN = 'UNKNOWN', OTHER = 'OTHER' }
 
-	export enum AccountInterestRateType { FIXED = 0, VARIABLE = 1, UNKNOWN = 2, OTHER = 3 }
+	export enum AccountInterestRateType { FIXED = 'FIXED', VARIABLE = 'VARIABLE', UNKNOWN = 'UNKNOWN', OTHER = 'OTHER' }
 
-	export enum AccountLifeInsuranceType { OTHER = 0, TERM_LIFE_INSURANCE = 1, UNIVERSAL_LIFE_INSURANCE = 2, WHOLE_LIFE_INSURANCE = 3, VARIABLE_LIFE_INSURANCE = 4, ULIP = 5, ENDOWMENT = 6 }
+	export enum AccountLifeInsuranceType { OTHER = 'OTHER', TERM_LIFE_INSURANCE = 'TERM_LIFE_INSURANCE', UNIVERSAL_LIFE_INSURANCE = 'UNIVERSAL_LIFE_INSURANCE', WHOLE_LIFE_INSURANCE = 'WHOLE_LIFE_INSURANCE', VARIABLE_LIFE_INSURANCE = 'VARIABLE_LIFE_INSURANCE', ULIP = 'ULIP', ENDOWMENT = 'ENDOWMENT' }
 
 	export interface LoanPayoffDetails {
 		outstandingBalance?: Money;
@@ -912,7 +912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountOauthMigrationStatus { IN_PROGRESS = 0, TO_BE_MIGRATED = 1, COMPLETED = 2 }
+	export enum AccountOauthMigrationStatus { IN_PROGRESS = 'IN_PROGRESS', TO_BE_MIGRATED = 'TO_BE_MIGRATED', COMPLETED = 'COMPLETED' }
 
 	export interface PaymentProfile {
 
@@ -953,7 +953,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentIdentifierType { REFERENCE_NUMBER = 0, PLATFORM_CODE = 1 }
+	export enum PaymentIdentifierType { REFERENCE_NUMBER = 'REFERENCE_NUMBER', PLATFORM_CODE = 'PLATFORM_CODE' }
 
 	export interface PaymentBankTransferCode {
 
@@ -979,9 +979,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentBankTransferCodeType { ROUTING_NUMBER = 0, BSB = 1, IFSC = 2, SORT_CODE = 3 }
+	export enum PaymentBankTransferCodeType { ROUTING_NUMBER = 'ROUTING_NUMBER', BSB = 'BSB', IFSC = 'IFSC', SORT_CODE = 'SORT_CODE' }
 
-	export enum AccountPolicyStatus { ACTIVE = 0, INACTIVE = 1, OTHER = 2 }
+	export enum AccountPolicyStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', OTHER = 'OTHER' }
 
 	export interface AccountProfile {
 
@@ -1021,7 +1021,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmailType { PRIMARY = 0, SECONDARY = 1, PERSONAL = 2, WORK = 3, OTHERS = 4 }
+	export enum EmailType { PRIMARY = 'PRIMARY', SECONDARY = 'SECONDARY', PERSONAL = 'PERSONAL', WORK = 'WORK', OTHERS = 'OTHERS' }
 
 	export interface PhoneNumber {
 
@@ -1047,9 +1047,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { HOME = 0, WORK = 1, LANDLINE = 2, MOBILE = 3 }
+	export enum PhoneNumberType { HOME = 'HOME', WORK = 'WORK', LANDLINE = 'LANDLINE', MOBILE = 'MOBILE' }
 
-	export enum AccountRepaymentPlanType { STANDARD = 0, GRADUATED = 1, EXTENDED = 2, INCOME_BASED = 3, INCOME_CONTINGENT = 4, INCOME_SENSITIVE = 5, PAY_AS_YOU_EARN = 6, REVISED_PAY_AS_YOU_EARN = 7 }
+	export enum AccountRepaymentPlanType { STANDARD = 'STANDARD', GRADUATED = 'GRADUATED', EXTENDED = 'EXTENDED', INCOME_BASED = 'INCOME_BASED', INCOME_CONTINGENT = 'INCOME_CONTINGENT', INCOME_SENSITIVE = 'INCOME_SENSITIVE', PAY_AS_YOU_EARN = 'PAY_AS_YOU_EARN', REVISED_PAY_AS_YOU_EARN = 'REVISED_PAY_AS_YOU_EARN' }
 
 	export interface RewardBalance {
 
@@ -1110,13 +1110,13 @@ export namespace MyNS {
 
 	}
 
-	export enum RewardBalanceBalanceType { EXPIRING_BALANCE = 0, BALANCE_TO_LEVEL = 1, BALANCE_TO_REWARD = 2, BALANCE = 3, TOTAL_BALANCE = 4 }
+	export enum RewardBalanceBalanceType { EXPIRING_BALANCE = 'EXPIRING_BALANCE', BALANCE_TO_LEVEL = 'BALANCE_TO_LEVEL', BALANCE_TO_REWARD = 'BALANCE_TO_REWARD', BALANCE = 'BALANCE', TOTAL_BALANCE = 'TOTAL_BALANCE' }
 
-	export enum AccountSourceAccountStatus { IN_REPAYMENT = 0, DEFAULTED = 1, IN_SCHOOL = 2, IN_GRACE_PERIOD = 3, DELINQUENCY = 4, DEFERMENT = 5, FORBEARANCE = 6 }
+	export enum AccountSourceAccountStatus { IN_REPAYMENT = 'IN_REPAYMENT', DEFAULTED = 'DEFAULTED', IN_SCHOOL = 'IN_SCHOOL', IN_GRACE_PERIOD = 'IN_GRACE_PERIOD', DELINQUENCY = 'DELINQUENCY', DEFERMENT = 'DEFERMENT', FORBEARANCE = 'FORBEARANCE' }
 
-	export enum AccountUserClassification { BUSINESS = 0, PERSONAL = 1 }
+	export enum AccountUserClassification { BUSINESS = 'BUSINESS', PERSONAL = 'PERSONAL' }
 
-	export enum AccountValuationType { SYSTEM = 0, MANUAL = 1 }
+	export enum AccountValuationType { SYSTEM = 'SYSTEM', MANUAL = 'MANUAL' }
 
 	export interface AccountHistoricalBalancesResponse {
 		account?: Array<AccountHistory>;
@@ -1182,7 +1182,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistoricalBalanceDataSourceType { S = 0, C = 1, CF = 2 }
+	export enum HistoricalBalanceDataSourceType { S = 'S', C = 'C', CF = 'CF' }
 
 	export interface AccountResponse {
 		account?: Array<Account>;
@@ -1408,7 +1408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeName { BASIC_ACCOUNT_INFO = 0, TRANSACTIONS = 1, STATEMENTS = 2, HOLDINGS = 3, ACCOUNT_DETAILS = 4, TAX = 5, EBILLS = 6, FULL_ACCT_NUMBER = 7, BANK_TRANSFER_CODE = 8, HOLDER_NAME = 9, HOLDER_DETAILS = 10, PAYMENT_PROFILE = 11, PAYMENT_DETAILS = 12, INTEREST_DETAILS = 13, COVERAGE = 14 }
+	export enum AttributeName { BASIC_ACCOUNT_INFO = 'BASIC_ACCOUNT_INFO', TRANSACTIONS = 'TRANSACTIONS', STATEMENTS = 'STATEMENTS', HOLDINGS = 'HOLDINGS', ACCOUNT_DETAILS = 'ACCOUNT_DETAILS', TAX = 'TAX', EBILLS = 'EBILLS', FULL_ACCT_NUMBER = 'FULL_ACCT_NUMBER', BANK_TRANSFER_CODE = 'BANK_TRANSFER_CODE', HOLDER_NAME = 'HOLDER_NAME', HOLDER_DETAILS = 'HOLDER_DETAILS', PAYMENT_PROFILE = 'PAYMENT_PROFILE', PAYMENT_DETAILS = 'PAYMENT_DETAILS', INTEREST_DETAILS = 'INTEREST_DETAILS', COVERAGE = 'COVERAGE' }
 
 	export interface Capability {
 		container?: Array<AccountCONTAINER>;
@@ -1603,7 +1603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CobrandNotificationEventName { REFRESH = 0, DATA_UPDATES = 1, AUTO_REFRESH_UPDATES = 2 }
+	export enum CobrandNotificationEventName { REFRESH = 'REFRESH', DATA_UPDATES = 'DATA_UPDATES', AUTO_REFRESH_UPDATES = 'AUTO_REFRESH_UPDATES' }
 
 	export interface CobrandNotificationResponse {
 		event?: Array<CobrandNotificationEvent>;
@@ -2761,9 +2761,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataExtractsHoldingHoldingType { stock = 0, mutualFund = 1, bond = 2, CD = 3, option = 4, moneyMarketFund = 5, other = 6, remic = 7, future = 8, commodity = 9, currency = 10, unitInvestmentTrust = 11, employeeStockOption = 12, insuranceAnnuity = 13, unknown = 14, preferredStock = 15, ETF = 16, warrants = 17, ETN = 18 }
+	export enum DataExtractsHoldingHoldingType { stock = 'stock', mutualFund = 'mutualFund', bond = 'bond', CD = 'CD', option = 'option', moneyMarketFund = 'moneyMarketFund', other = 'other', remic = 'remic', future = 'future', commodity = 'commodity', currency = 'currency', unitInvestmentTrust = 'unitInvestmentTrust', employeeStockOption = 'employeeStockOption', insuranceAnnuity = 'insuranceAnnuity', unknown = 'unknown', preferredStock = 'preferredStock', ETF = 'ETF', warrants = 'warrants', ETN = 'ETN' }
 
-	export enum DataExtractsHoldingOptionType { put = 0, call = 1, unknown = 2, other = 3 }
+	export enum DataExtractsHoldingOptionType { put = 'put', call = 'call', unknown = 'unknown', other = 'other' }
 
 	export interface DataExtractsProviderAccount {
 
@@ -2848,7 +2848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataExtractsProviderAccountStatus { LOGIN_IN_PROGRESS = 0, USER_INPUT_REQUIRED = 1, IN_PROGRESS = 2, PARTIAL_SUCCESS = 3, SUCCESS = 4, FAILED = 5, MIGRATION_IN_PROGRESS = 6 }
+	export enum DataExtractsProviderAccountStatus { LOGIN_IN_PROGRESS = 'LOGIN_IN_PROGRESS', USER_INPUT_REQUIRED = 'USER_INPUT_REQUIRED', IN_PROGRESS = 'IN_PROGRESS', PARTIAL_SUCCESS = 'PARTIAL_SUCCESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', MIGRATION_IN_PROGRESS = 'MIGRATION_IN_PROGRESS' }
 
 	export interface DataExtractsTransaction {
 
@@ -3091,9 +3091,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataExtractsTransactionBaseType { CREDIT = 0, DEBIT = 1 }
+	export enum DataExtractsTransactionBaseType { CREDIT = 'CREDIT', DEBIT = 'DEBIT' }
 
-	export enum DataExtractsTransactionCategoryType { TRANSFER = 0, DEFERRED_COMPENSATION = 1, UNCATEGORIZE = 2, INCOME = 3, EXPENSE = 4 }
+	export enum DataExtractsTransactionCategoryType { TRANSFER = 'TRANSFER', DEFERRED_COMPENSATION = 'DEFERRED_COMPENSATION', UNCATEGORIZE = 'UNCATEGORIZE', INCOME = 'INCOME', EXPENSE = 'EXPENSE' }
 
 	export interface Description {
 
@@ -3177,13 +3177,13 @@ export namespace MyNS {
 
 	}
 
-	export enum MerchantSource { YODLEE = 0, FACTUAL = 1 }
+	export enum MerchantSource { YODLEE = 'YODLEE', FACTUAL = 'FACTUAL' }
 
-	export enum DataExtractsTransactionSourceType { AGGREGATED = 0, MANUAL = 1 }
+	export enum DataExtractsTransactionSourceType { AGGREGATED = 'AGGREGATED', MANUAL = 'MANUAL' }
 
-	export enum DataExtractsTransactionStatus { POSTED = 0, PENDING = 1, SCHEDULED = 2, FAILED = 3, CLEARED = 4 }
+	export enum DataExtractsTransactionStatus { POSTED = 'POSTED', PENDING = 'PENDING', SCHEDULED = 'SCHEDULED', FAILED = 'FAILED', CLEARED = 'CLEARED' }
 
-	export enum DataExtractsTransactionSubType { AUTH_HOLD = 0, AUTH_REQUEST = 1, OVERDRAFT_CHARGE = 2, CREDIT_ADJUSTMENT = 3, PIN_DEBIT = 4, BANK_DIRECT_DEPOSIT = 5, DIVIDEND_DEPOSIT = 6, INTEREST_SAVINGS = 7, INTEREST_ADJUSTMENT = 8, ONLINE_PURCHASE = 9, PURCHASED_WITH_CHECK = 10, RECURRING_BILLING = 11, TAX_PAYMENT = 12, PAYMENT_BY_CHECK = 13, PAYMENT_PLAN = 14, FEE_REFUND = 15, WIRE_TRANSFER_CHARGE = 16, ACCOUNT_TO_ACCOUNT_TRANSFER = 17, BANK_TO_BANK_TRANSACTION = 18, BANK_TO_NON_BANK_ACCOUNT_TRANSFER = 19, CASH_WITHDRAWAL_AT_FI = 20, ATM_CASH_WITHDRAWAL = 21, AUTH_PROCESSING = 22, AUTH_RELEASE = 23, PRE_AUTH = 24, AUTH_COMPLETE = 25, AUTH_VOID = 26, BALANCE_ENQUIRY = 27, ACCOUNT_VERIFICATION = 28, PRE_AUTH_COMPLETION = 29, SERVICE_CHARGE = 30, SERVICE_CHARGE_FEE_REFUND = 31, RETURNED_CHECK_CHARGE = 32, RETURNED_CHECK_REIMBURSEMENT = 33, CASH_ADVANCE = 34, BILL_PAY_CHARGE = 35, CHECK_IMAGE_SERVICE_CHARGE = 36, OVERDRAFT_PROTECTION_CHARGE = 37, STOP_PAYMENT_CHARGE = 38, CHECKS_ORDERING_CHARGE = 39, MONTHLY_MAINTENANCE_CHARGE = 40, DEBIT_CARD_FEE = 41, CONVENIENCE_FEE = 42, PERSONAL_LOAN_CREDIT = 43, CREDIT_CARD_CREDIT = 44, AUTO_LOAN = 45, HOME_LOAN_MORTGAGE = 46, SHORT_TERM_CREDIT = 47, SIGNATURE_DEBIT = 48, CONTACT_LESS_DEBIT = 49, DEFERRED_DEPOSIT = 50, DEFERRED_BILL_PAY = 51, INSTALLMENT_PAYMENT = 52, RECURRING_SUBSCRIPTION_PAYMENT = 53, HOLD_CHECK_PAYMENT = 54, CAPITAL_GAINS_DISTIBUTION = 55, CG_LONG_TERM_DEPOSIT = 56, OPEN_SALE_DEPOSIT = 57, INTEREST__CHECK = 58, PURCHASE_VOID = 59, PURCHASE_WITH_CREDIT_CARD = 60, PURCHASE_WITH_DEBIT_CARD = 61, CHARGE_A_REPEAT_CUSTOMER = 62, DOWN_PAYMENT_OR_ANNUITY_PAYMENT_OR_DIRECT_PAYMENT = 63, FEE_PAYMENT = 64, FINANCE_CHARGE_REFUND = 65, TRANSACTION_VOID = 66, FEE_VOID = 67, DEBIT_CARD_WITHDRAWAL_AT_STORE = 68, ELECTRONIC_PAYMENT = 69, ACH_DEBIT = 70, ATM_TELLER_DEPOSIT = 71, POS_DEBIT = 72, BANK_ADJUSTMENT = 73, CHARGES_FEES = 74, INTEREST = 75, DEPOSITS_CREDITS = 76, PAYMENT = 77, PURCHASE = 78, REFUND = 79, TRANSFER = 80, WITHDRAWAL = 81, OTHER_DEPOSITS = 82, OTHER_WITHDRAWALS = 83, ADJUSTMENT = 84, FINANCE_CHARGE = 85, OTHER_CHARGES_FEES = 86, ANNUAL_FEE = 87, DEPOSIT = 88, DIRECT_DEPOSIT_SALARY = 89, INVESTMENT_INCOME_CASH = 90, SSA = 91, REWARDS = 92, CHECK_DEPOSIT = 93, MOBILE_REMOTE_DEPOSIT = 94, TELLER_DEPOSIT = 95, TAX_REFUND = 96, CREDIT_CARD_PAYMENT = 97, INSURANCE_PAYMENT = 98, UTILITIES_PAYMENT = 99, CHILD_SUPPORT = 100, LOAN = 101, PERSONAL_LOAN = 102, STUDENT_LOAN = 103, SALES_TAX = 104, REIMBURSEMENT = 105, BALANCE_TRANSFER = 106, WIRE_TRANSFER = 107, OVERDRAFT_PROTECTION = 108, DEBIT = 109, CREDIT = 110, NSF_FEES = 111 }
+	export enum DataExtractsTransactionSubType { AUTH_HOLD = 'AUTH_HOLD', AUTH_REQUEST = 'AUTH_REQUEST', OVERDRAFT_CHARGE = 'OVERDRAFT_CHARGE', CREDIT_ADJUSTMENT = 'CREDIT_ADJUSTMENT', PIN_DEBIT = 'PIN_DEBIT', BANK_DIRECT_DEPOSIT = 'BANK_DIRECT_DEPOSIT', DIVIDEND_DEPOSIT = 'DIVIDEND_DEPOSIT', INTEREST_SAVINGS = 'INTEREST_SAVINGS', INTEREST_ADJUSTMENT = 'INTEREST_ADJUSTMENT', ONLINE_PURCHASE = 'ONLINE_PURCHASE', PURCHASED_WITH_CHECK = 'PURCHASED_WITH_CHECK', RECURRING_BILLING = 'RECURRING_BILLING', TAX_PAYMENT = 'TAX_PAYMENT', PAYMENT_BY_CHECK = 'PAYMENT_BY_CHECK', PAYMENT_PLAN = 'PAYMENT_PLAN', FEE_REFUND = 'FEE_REFUND', WIRE_TRANSFER_CHARGE = 'WIRE_TRANSFER_CHARGE', ACCOUNT_TO_ACCOUNT_TRANSFER = 'ACCOUNT_TO_ACCOUNT_TRANSFER', BANK_TO_BANK_TRANSACTION = 'BANK_TO_BANK_TRANSACTION', BANK_TO_NON_BANK_ACCOUNT_TRANSFER = 'BANK_TO_NON_BANK_ACCOUNT_TRANSFER', CASH_WITHDRAWAL_AT_FI = 'CASH_WITHDRAWAL_AT_FI', ATM_CASH_WITHDRAWAL = 'ATM_CASH_WITHDRAWAL', AUTH_PROCESSING = 'AUTH_PROCESSING', AUTH_RELEASE = 'AUTH_RELEASE', PRE_AUTH = 'PRE_AUTH', AUTH_COMPLETE = 'AUTH_COMPLETE', AUTH_VOID = 'AUTH_VOID', BALANCE_ENQUIRY = 'BALANCE_ENQUIRY', ACCOUNT_VERIFICATION = 'ACCOUNT_VERIFICATION', PRE_AUTH_COMPLETION = 'PRE_AUTH_COMPLETION', SERVICE_CHARGE = 'SERVICE_CHARGE', SERVICE_CHARGE_FEE_REFUND = 'SERVICE_CHARGE_FEE_REFUND', RETURNED_CHECK_CHARGE = 'RETURNED_CHECK_CHARGE', RETURNED_CHECK_REIMBURSEMENT = 'RETURNED_CHECK_REIMBURSEMENT', CASH_ADVANCE = 'CASH_ADVANCE', BILL_PAY_CHARGE = 'BILL_PAY_CHARGE', CHECK_IMAGE_SERVICE_CHARGE = 'CHECK_IMAGE_SERVICE_CHARGE', OVERDRAFT_PROTECTION_CHARGE = 'OVERDRAFT_PROTECTION_CHARGE', STOP_PAYMENT_CHARGE = 'STOP_PAYMENT_CHARGE', CHECKS_ORDERING_CHARGE = 'CHECKS_ORDERING_CHARGE', MONTHLY_MAINTENANCE_CHARGE = 'MONTHLY_MAINTENANCE_CHARGE', DEBIT_CARD_FEE = 'DEBIT_CARD_FEE', CONVENIENCE_FEE = 'CONVENIENCE_FEE', PERSONAL_LOAN_CREDIT = 'PERSONAL_LOAN_CREDIT', CREDIT_CARD_CREDIT = 'CREDIT_CARD_CREDIT', AUTO_LOAN = 'AUTO_LOAN', HOME_LOAN_MORTGAGE = 'HOME_LOAN_MORTGAGE', SHORT_TERM_CREDIT = 'SHORT_TERM_CREDIT', SIGNATURE_DEBIT = 'SIGNATURE_DEBIT', CONTACT_LESS_DEBIT = 'CONTACT_LESS_DEBIT', DEFERRED_DEPOSIT = 'DEFERRED_DEPOSIT', DEFERRED_BILL_PAY = 'DEFERRED_BILL_PAY', INSTALLMENT_PAYMENT = 'INSTALLMENT_PAYMENT', RECURRING_SUBSCRIPTION_PAYMENT = 'RECURRING_SUBSCRIPTION_PAYMENT', HOLD_CHECK_PAYMENT = 'HOLD_CHECK_PAYMENT', CAPITAL_GAINS_DISTIBUTION = 'CAPITAL_GAINS_DISTIBUTION', CG_LONG_TERM_DEPOSIT = 'CG_LONG_TERM_DEPOSIT', OPEN_SALE_DEPOSIT = 'OPEN_SALE_DEPOSIT', INTEREST__CHECK = 'INTEREST__CHECK', PURCHASE_VOID = 'PURCHASE_VOID', PURCHASE_WITH_CREDIT_CARD = 'PURCHASE_WITH_CREDIT_CARD', PURCHASE_WITH_DEBIT_CARD = 'PURCHASE_WITH_DEBIT_CARD', CHARGE_A_REPEAT_CUSTOMER = 'CHARGE_A_REPEAT_CUSTOMER', DOWN_PAYMENT_OR_ANNUITY_PAYMENT_OR_DIRECT_PAYMENT = 'DOWN_PAYMENT_OR_ANNUITY_PAYMENT_OR_DIRECT_PAYMENT', FEE_PAYMENT = 'FEE_PAYMENT', FINANCE_CHARGE_REFUND = 'FINANCE_CHARGE_REFUND', TRANSACTION_VOID = 'TRANSACTION_VOID', FEE_VOID = 'FEE_VOID', DEBIT_CARD_WITHDRAWAL_AT_STORE = 'DEBIT_CARD_WITHDRAWAL_AT_STORE', ELECTRONIC_PAYMENT = 'ELECTRONIC_PAYMENT', ACH_DEBIT = 'ACH_DEBIT', ATM_TELLER_DEPOSIT = 'ATM_TELLER_DEPOSIT', POS_DEBIT = 'POS_DEBIT', BANK_ADJUSTMENT = 'BANK_ADJUSTMENT', CHARGES_FEES = 'CHARGES_FEES', INTEREST = 'INTEREST', DEPOSITS_CREDITS = 'DEPOSITS_CREDITS', PAYMENT = 'PAYMENT', PURCHASE = 'PURCHASE', REFUND = 'REFUND', TRANSFER = 'TRANSFER', WITHDRAWAL = 'WITHDRAWAL', OTHER_DEPOSITS = 'OTHER_DEPOSITS', OTHER_WITHDRAWALS = 'OTHER_WITHDRAWALS', ADJUSTMENT = 'ADJUSTMENT', FINANCE_CHARGE = 'FINANCE_CHARGE', OTHER_CHARGES_FEES = 'OTHER_CHARGES_FEES', ANNUAL_FEE = 'ANNUAL_FEE', DEPOSIT = 'DEPOSIT', DIRECT_DEPOSIT_SALARY = 'DIRECT_DEPOSIT_SALARY', INVESTMENT_INCOME_CASH = 'INVESTMENT_INCOME_CASH', SSA = 'SSA', REWARDS = 'REWARDS', CHECK_DEPOSIT = 'CHECK_DEPOSIT', MOBILE_REMOTE_DEPOSIT = 'MOBILE_REMOTE_DEPOSIT', TELLER_DEPOSIT = 'TELLER_DEPOSIT', TAX_REFUND = 'TAX_REFUND', CREDIT_CARD_PAYMENT = 'CREDIT_CARD_PAYMENT', INSURANCE_PAYMENT = 'INSURANCE_PAYMENT', UTILITIES_PAYMENT = 'UTILITIES_PAYMENT', CHILD_SUPPORT = 'CHILD_SUPPORT', LOAN = 'LOAN', PERSONAL_LOAN = 'PERSONAL_LOAN', STUDENT_LOAN = 'STUDENT_LOAN', SALES_TAX = 'SALES_TAX', REIMBURSEMENT = 'REIMBURSEMENT', BALANCE_TRANSFER = 'BALANCE_TRANSFER', WIRE_TRANSFER = 'WIRE_TRANSFER', OVERDRAFT_PROTECTION = 'OVERDRAFT_PROTECTION', DEBIT = 'DEBIT', CREDIT = 'CREDIT', NSF_FEES = 'NSF_FEES' }
 
 	export interface DataExtractsUserData {
 		account?: Array<DataExtractsAccount>;
@@ -3785,7 +3785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentDocType { STMT = 0, TAX = 1, EBILL = 2 }
+	export enum DocumentDocType { STMT = 'STMT', TAX = 'TAX', EBILL = 'EBILL' }
 
 	export interface DocumentDownload {
 
@@ -4040,7 +4040,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldType { text = 0, password = 1, option = 2, checkbox = 3, radio = 4, image = 5 }
+	export enum FieldType { text = 'text', password = 'password', option = 'option', checkbox = 'checkbox', radio = 'radio', image = 'image' }
 
 	export interface FieldOperation {
 
@@ -4073,9 +4073,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldOperationField { amount = 0, description = 1 }
+	export enum FieldOperationField { amount = 'amount', description = 'description' }
 
-	export enum FieldOperationOperation { numberEquals = 0, numberLessThan = 1, numberLessThanEquals = 2, numberGreaterThan = 3, numberGreaterThanEquals = 4, stringEquals = 5, stringContains = 6 }
+	export enum FieldOperationOperation { numberEquals = 'numberEquals', numberLessThan = 'numberLessThan', numberLessThanEquals = 'numberLessThanEquals', numberGreaterThan = 'numberGreaterThan', numberGreaterThanEquals = 'numberGreaterThanEquals', stringEquals = 'stringEquals', stringContains = 'stringContains' }
 
 	export interface Holding {
 
@@ -4746,7 +4746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoginFormFormType { login = 0, questionAndAnswer = 1, token = 2, image = 3 }
+	export enum LoginFormFormType { login = 'login', questionAndAnswer = 'questionAndAnswer', token = 'token', image = 'image' }
 
 	export interface Row {
 
@@ -5284,11 +5284,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProviderDetailPRIORITY { POPULAR = 0, SUGGESTED = 1, COBRAND = 2, SEARCH = 3, ALL = 4 }
+	export enum ProviderDetailPRIORITY { POPULAR = 'POPULAR', SUGGESTED = 'SUGGESTED', COBRAND = 'COBRAND', SEARCH = 'SEARCH', ALL = 'ALL' }
 
-	export enum ProviderDetailAuthType { OAUTH = 0, CREDENTIALS = 1, MFA_CREDENTIALS = 2 }
+	export enum ProviderDetailAuthType { OAUTH = 'OAUTH', CREDENTIALS = 'CREDENTIALS', MFA_CREDENTIALS = 'MFA_CREDENTIALS' }
 
-	export enum ProviderDetailStatus { Supported = 0, Beta = 1, Unsupported = 2 }
+	export enum ProviderDetailStatus { Supported = 'Supported', Beta = 'Beta', Unsupported = 'Unsupported' }
 
 	export interface ProviderDetailResponse {
 		provider?: Array<ProviderDetail>;
@@ -6064,7 +6064,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionCategoryClassification { PERSONAL = 0, BUSINESS = 1 }
+	export enum TransactionCategoryClassification { PERSONAL = 'PERSONAL', BUSINESS = 'BUSINESS' }
 
 	export interface TransactionCategoryRequest {
 
@@ -6523,7 +6523,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserRequestPreferencesLocale { en_US = 0, en_ES = 1, fr_CA = 2, zh_CN = 3 }
+	export enum UserRequestPreferencesLocale { en_US = 'en_US', en_ES = 'en_ES', fr_CA = 'fr_CA', zh_CN = 'zh_CN' }
 
 	export interface UpdateUserRequest {
 
@@ -6639,7 +6639,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerificationAccountAccountType { SAVINGS = 0, CHECKING = 1 }
+	export enum VerificationAccountAccountType { SAVINGS = 'SAVINGS', CHECKING = 'CHECKING' }
 
 	export interface VerificationBankTransferCode {
 
@@ -6665,7 +6665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateVerificationReason { DATA_NOT_AVAILABLE = 0, ACCOUNT_HOLDER_MISMATCH = 1, FULL_ACCOUNT_NUMBER_AND_BANK_TRANSFER_CODE_NOT_AVAILABLE = 2, FULL_ACCOUNT_NUMBER_NOT_AVAILABLE = 3, BANK_TRANSFER_CODE_NOT_AVAILABLE = 4, EXPIRED = 5, DATA_MISMATCH = 6, INSTRUCTION_GENERATION_ERROR = 7 }
+	export enum UpdateVerificationReason { DATA_NOT_AVAILABLE = 'DATA_NOT_AVAILABLE', ACCOUNT_HOLDER_MISMATCH = 'ACCOUNT_HOLDER_MISMATCH', FULL_ACCOUNT_NUMBER_AND_BANK_TRANSFER_CODE_NOT_AVAILABLE = 'FULL_ACCOUNT_NUMBER_AND_BANK_TRANSFER_CODE_NOT_AVAILABLE', FULL_ACCOUNT_NUMBER_NOT_AVAILABLE = 'FULL_ACCOUNT_NUMBER_NOT_AVAILABLE', BANK_TRANSFER_CODE_NOT_AVAILABLE = 'BANK_TRANSFER_CODE_NOT_AVAILABLE', EXPIRED = 'EXPIRED', DATA_MISMATCH = 'DATA_MISMATCH', INSTRUCTION_GENERATION_ERROR = 'INSTRUCTION_GENERATION_ERROR' }
 
 	export interface VerificationTransaction {
 
@@ -6687,9 +6687,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateVerificationVerificationStatus { INITIATED = 0, DEPOSITED = 1, SUCCESS = 2, FAILED = 3 }
+	export enum UpdateVerificationVerificationStatus { INITIATED = 'INITIATED', DEPOSITED = 'DEPOSITED', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
-	export enum UpdateVerificationVerificationType { MATCHING = 0, CHALLENGE_DEPOSIT = 1 }
+	export enum UpdateVerificationVerificationType { MATCHING = 'MATCHING', CHALLENGE_DEPOSIT = 'CHALLENGE_DEPOSIT' }
 
 	export interface UpdateVerificationRequest {
 		verification?: UpdateVerification;
@@ -6876,7 +6876,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserRoleType { INDIVIDUAL = 0 }
+	export enum UserRoleType { INDIVIDUAL = 'INDIVIDUAL' }
 
 	export interface UserSession {
 
@@ -7289,7 +7289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerifyTransactionCriteriaMatched { COMPLETE = 0, NONE = 1 }
+	export enum VerifyTransactionCriteriaMatched { COMPLETE = 'COMPLETE', NONE = 'NONE' }
 
 	export interface VerifyAccountRequest {
 		accountId?: number | null;
@@ -8199,7 +8199,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum RunTransactionCategorizationRuleAction { run = 0 }
+	export enum RunTransactionCategorizationRuleAction { run = 'run' }
 
 }
 

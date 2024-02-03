@@ -3582,11 +3582,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Storage_buckets_listProjection { full = 0, noAcl = 1 }
+	export enum Storage_buckets_listProjection { full = 'full', noAcl = 'noAcl' }
 
-	export enum Storage_buckets_insertPredefinedAcl { authenticatedRead = 0, private = 1, projectPrivate = 2, publicRead = 3, publicReadWrite = 4 }
+	export enum Storage_buckets_insertPredefinedAcl { authenticatedRead = 'authenticatedRead', private = 'private', projectPrivate = 'projectPrivate', publicRead = 'publicRead', publicReadWrite = 'publicReadWrite' }
 
-	export enum Storage_buckets_insertPredefinedDefaultObjectAcl { authenticatedRead = 0, bucketOwnerFullControl = 1, bucketOwnerRead = 2, private = 3, projectPrivate = 4, publicRead = 5 }
+	export enum Storage_buckets_insertPredefinedDefaultObjectAcl { authenticatedRead = 'authenticatedRead', bucketOwnerFullControl = 'bucketOwnerFullControl', bucketOwnerRead = 'bucketOwnerRead', private = 'private', projectPrivate = 'projectPrivate', publicRead = 'publicRead' }
 
 }
 

@@ -32,13 +32,21 @@ namespace SwagTests
 		/// Just generate and build, not assertion for comparing previous. Ignore the settings in appsettings.json
 		/// </summary>
 		/// <param name="openapiDir"></param>
-		/// <param name="mySettings"></param>
-		public void GenerateFromOpenApiAndBuild(string openapiDir, ISettings mySettings = null)
+		/// <param name="settings"></param>
+		public void GenerateFromOpenApiAndBuild(string openapiDir, ISettings settings = null)
 		{
 			var m = (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod();
 			var targetFilePath = CreateUniqueFileName(openapiDir);
 			var filePath = Path.Combine(openapiDir, defaultDefFile);
-			GenerateAndAssertAndBuild(filePath, targetFilePath, mySettings);
+			GenerateAndAssertAndBuild(filePath, targetFilePath, settings ?? new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "MyClient", //the TestBed requires this containerClassName
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				DataAnnotationsToComments = true,
+				EnumToString = true // for openapi-directory, true to find doggy yaml which could be tolerated.
+			});
 		}
 
 

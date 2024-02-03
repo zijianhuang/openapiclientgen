@@ -114,7 +114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusCode { CODE_UNSPECIFIED = 0, OK = 1, FAILED = 2, UNKNOWN = 3 }
+	export enum StatusCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', OK = 'OK', FAILED = 'FAILED', UNKNOWN = 'UNKNOWN' }
 
 
 	/** ApplianceCluster contains information specific to GDC Edge Appliance Clusters. */
@@ -185,7 +185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Authority encodes how Google will recognize identities from this Membership. See the workload identity documentation for more details: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity */
@@ -253,7 +253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BinaryAuthorizationConfigEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 0, DISABLED = 1, POLICY_BINDINGS = 2 }
+	export enum BinaryAuthorizationConfigEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 'EVALUATION_MODE_UNSPECIFIED', DISABLED = 'DISABLED', POLICY_BINDINGS = 'POLICY_BINDINGS' }
 
 
 	/** Binauthz policy that applies to this cluster. */
@@ -404,7 +404,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudBuildMembershipSpecSecurityPolicy { SECURITY_POLICY_UNSPECIFIED = 0, NON_PRIVILEGED = 1, PRIVILEGED = 2 }
+	export enum CloudBuildMembershipSpecSecurityPolicy { SECURITY_POLICY_UNSPECIFIED = 'SECURITY_POLICY_UNSPECIFIED', NON_PRIVILEGED = 'NON_PRIVILEGED', PRIVILEGED = 'PRIVILEGED' }
 
 
 	/** **ClusterUpgrade**: The configuration for the fleet-level ClusterUpgrade feature. */
@@ -649,7 +649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterUpgradeUpgradeStatusCode { CODE_UNSPECIFIED = 0, INELIGIBLE = 1, PENDING = 2, IN_PROGRESS = 3, SOAKING = 4, FORCED_SOAKING = 5, COMPLETE = 6 }
+	export enum ClusterUpgradeUpgradeStatusCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', INELIGIBLE = 'INELIGIBLE', PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', SOAKING = 'SOAKING', FORCED_SOAKING = 'FORCED_SOAKING', COMPLETE = 'COMPLETE' }
 
 
 	/** IgnoredMembership represents a membership ignored by the feature. A membership can be ignored because it was manually upgraded to a newer version than RC default. */
@@ -868,7 +868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetObservabilityRoutingConfigMode { MODE_UNSPECIFIED = 0, COPY = 1, MOVE = 2 }
+	export enum FleetObservabilityRoutingConfigMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', COPY = 'COPY', MOVE = 'MOVE' }
 
 
 	/** **Multi-cluster Ingress**: The configuration for the MultiClusterIngress feature. */
@@ -898,7 +898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MultiClusterIngressFeatureSpecBilling { BILLING_UNSPECIFIED = 0, PAY_AS_YOU_GO = 1, ANTHOS_LICENSE = 2 }
+	export enum MultiClusterIngressFeatureSpecBilling { BILLING_UNSPECIFIED = 'BILLING_UNSPECIFIED', PAY_AS_YOU_GO = 'PAY_AS_YOU_GO', ANTHOS_LICENSE = 'ANTHOS_LICENSE' }
 
 
 	/** An empty spec for actuation feature. This is required since Feature proto requires a spec. */
@@ -921,7 +921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespaceActuationFeatureSpecActuationMode { ACTUATION_MODE_UNSPECIFIED = 0, ACTUATION_MODE_CREATE_AND_DELETE_IF_CREATED = 1, ACTUATION_MODE_ADD_AND_REMOVE_FLEET_LABELS = 2 }
+	export enum NamespaceActuationFeatureSpecActuationMode { ACTUATION_MODE_UNSPECIFIED = 'ACTUATION_MODE_UNSPECIFIED', ACTUATION_MODE_CREATE_AND_DELETE_IF_CREATED = 'ACTUATION_MODE_CREATE_AND_DELETE_IF_CREATED', ACTUATION_MODE_ADD_AND_REMOVE_FLEET_LABELS = 'ACTUATION_MODE_ADD_AND_REMOVE_FLEET_LABELS' }
 
 
 	/** **Workload Certificate**: The Hub-wide input for the WorkloadCertificate feature. */
@@ -968,9 +968,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipSpecCertificateManagement { CERTIFICATE_MANAGEMENT_UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2 }
+	export enum MembershipSpecCertificateManagement { CERTIFICATE_MANAGEMENT_UNSPECIFIED = 'CERTIFICATE_MANAGEMENT_UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
-	export enum FeatureSpecProvisionGoogleCa { GOOGLE_CA_PROVISIONING_UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2, ENABLED_WITH_MANAGED_CA = 3, ENABLED_WITH_DEFAULT_CA = 4 }
+	export enum FeatureSpecProvisionGoogleCa { GOOGLE_CA_PROVISIONING_UNSPECIFIED = 'GOOGLE_CA_PROVISIONING_UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED', ENABLED_WITH_MANAGED_CA = 'ENABLED_WITH_MANAGED_CA', ENABLED_WITH_DEFAULT_CA = 'ENABLED_WITH_DEFAULT_CA' }
 
 
 	/** CommonFeatureState contains Hub-wide Feature status information. */
@@ -1068,7 +1068,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetObservabilityFleetObservabilityBaseFeatureStateCode { CODE_UNSPECIFIED = 0, OK = 1, ERROR = 2 }
+	export enum FleetObservabilityFleetObservabilityBaseFeatureStateCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', OK = 'OK', ERROR = 'ERROR' }
 
 
 	/** All error details of the fleet observability feature. */
@@ -1211,7 +1211,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceMeshAnalysisMessageBaseLevel { LEVEL_UNSPECIFIED = 0, ERROR = 1, WARNING = 2, INFO = 3 }
+	export enum ServiceMeshAnalysisMessageBaseLevel { LEVEL_UNSPECIFIED = 'LEVEL_UNSPECIFIED', ERROR = 'ERROR', WARNING = 'WARNING', INFO = 'INFO' }
 
 
 	/** A unique identifier for the type of message. Display_name is intended to be human-readable, code is intended to be machine readable. There should be a one-to-one mapping between display_name and code. (i.e. do not re-use display_names or codes between message types.) See istio.analysis.v1alpha1.AnalysisMessageBase.Type */
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureStateCode { CODE_UNSPECIFIED = 0, OK = 1, WARNING = 2, ERROR = 3 }
+	export enum FeatureStateCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', OK = 'OK', WARNING = 'WARNING', ERROR = 'ERROR' }
 
 
 	/** CommonFleetDefaultMemberConfigSpec contains default configuration information for memberships of a fleet */
@@ -1931,11 +1931,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceMeshMembershipSpecControlPlane { CONTROL_PLANE_MANAGEMENT_UNSPECIFIED = 0, AUTOMATIC = 1, MANUAL = 2 }
+	export enum ServiceMeshMembershipSpecControlPlane { CONTROL_PLANE_MANAGEMENT_UNSPECIFIED = 'CONTROL_PLANE_MANAGEMENT_UNSPECIFIED', AUTOMATIC = 'AUTOMATIC', MANUAL = 'MANUAL' }
 
-	export enum ServiceMeshMembershipSpecDefaultChannel { CHANNEL_UNSPECIFIED = 0, RAPID = 1, REGULAR = 2, STABLE = 3 }
+	export enum ServiceMeshMembershipSpecDefaultChannel { CHANNEL_UNSPECIFIED = 'CHANNEL_UNSPECIFIED', RAPID = 'RAPID', REGULAR = 'REGULAR', STABLE = 'STABLE' }
 
-	export enum ServiceMeshMembershipSpecManagement { MANAGEMENT_UNSPECIFIED = 0, MANAGEMENT_AUTOMATIC = 1, MANAGEMENT_MANUAL = 2 }
+	export enum ServiceMeshMembershipSpecManagement { MANAGEMENT_UNSPECIFIED = 'MANAGEMENT_UNSPECIFIED', MANAGEMENT_AUTOMATIC = 'MANAGEMENT_AUTOMATIC', MANAGEMENT_MANUAL = 'MANAGEMENT_MANUAL' }
 
 
 	/** **Policy Controller**: Configuration for a single cluster. Intended to parallel the PolicyController CR. */
@@ -2122,7 +2122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyControllerPolicyControllerDeploymentConfigPodAffinity { AFFINITY_UNSPECIFIED = 0, NO_AFFINITY = 1, ANTI_AFFINITY = 2 }
+	export enum PolicyControllerPolicyControllerDeploymentConfigPodAffinity { AFFINITY_UNSPECIFIED = 'AFFINITY_UNSPECIFIED', NO_AFFINITY = 'NO_AFFINITY', ANTI_AFFINITY = 'ANTI_AFFINITY' }
 
 
 	/** Toleration of a node taint. */
@@ -2166,7 +2166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyControllerHubConfigInstallSpec { INSTALL_SPEC_UNSPECIFIED = 0, INSTALL_SPEC_NOT_INSTALLED = 1, INSTALL_SPEC_ENABLED = 2, INSTALL_SPEC_SUSPENDED = 3, INSTALL_SPEC_DETACHED = 4 }
+	export enum PolicyControllerHubConfigInstallSpec { INSTALL_SPEC_UNSPECIFIED = 'INSTALL_SPEC_UNSPECIFIED', INSTALL_SPEC_NOT_INSTALLED = 'INSTALL_SPEC_NOT_INSTALLED', INSTALL_SPEC_ENABLED = 'INSTALL_SPEC_ENABLED', INSTALL_SPEC_SUSPENDED = 'INSTALL_SPEC_SUSPENDED', INSTALL_SPEC_DETACHED = 'INSTALL_SPEC_DETACHED' }
 
 
 	/** MonitoringConfig specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: ["cloudmonitoring", "prometheus"] */
@@ -2247,7 +2247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyControllerTemplateLibraryConfigInstallation { INSTALLATION_UNSPECIFIED = 0, NOT_INSTALLED = 1, ALL = 2 }
+	export enum PolicyControllerTemplateLibraryConfigInstallation { INSTALLATION_UNSPECIFIED = 'INSTALLATION_UNSPECIFIED', NOT_INSTALLED = 'NOT_INSTALLED', ALL = 'ALL' }
 
 
 	/** State for Binauthz */
@@ -2294,7 +2294,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigManagementBinauthzStateWebhook { DEPLOYMENT_STATE_UNSPECIFIED = 0, NOT_INSTALLED = 1, INSTALLED = 2, ERROR = 3, PENDING = 4 }
+	export enum ConfigManagementBinauthzStateWebhook { DEPLOYMENT_STATE_UNSPECIFIED = 'DEPLOYMENT_STATE_UNSPECIFIED', NOT_INSTALLED = 'NOT_INSTALLED', INSTALLED = 'INSTALLED', ERROR = 'ERROR', PENDING = 'PENDING' }
 
 
 	/** The state of ConfigSync's deployment on a cluster */
@@ -2465,7 +2465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigManagementSyncStateCode { SYNC_CODE_UNSPECIFIED = 0, SYNCED = 1, PENDING = 2, ERROR = 3, NOT_CONFIGURED = 4, NOT_INSTALLED = 5, UNAUTHORIZED = 6, UNREACHABLE = 7 }
+	export enum ConfigManagementSyncStateCode { SYNC_CODE_UNSPECIFIED = 'SYNC_CODE_UNSPECIFIED', SYNCED = 'SYNCED', PENDING = 'PENDING', ERROR = 'ERROR', NOT_CONFIGURED = 'NOT_CONFIGURED', NOT_INSTALLED = 'NOT_INSTALLED', UNAUTHORIZED = 'UNAUTHORIZED', UNREACHABLE = 'UNREACHABLE' }
 
 
 	/** An ACM created error representing a problem syncing configurations */
@@ -2887,7 +2887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigManagementPolicyControllerMigrationStage { STAGE_UNSPECIFIED = 0, ACM_MANAGED = 1, POCO_MANAGED = 2 }
+	export enum ConfigManagementPolicyControllerMigrationStage { STAGE_UNSPECIFIED = 'STAGE_UNSPECIFIED', ACM_MANAGED = 'ACM_MANAGED', POCO_MANAGED = 'POCO_MANAGED' }
 
 
 	/** The build version of Gatekeeper Policy Controller is using. */
@@ -3010,9 +3010,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPostureConfigMode { MODE_UNSPECIFIED = 0, DISABLED = 1, BASIC = 2 }
+	export enum SecurityPostureConfigMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', DISABLED = 'DISABLED', BASIC = 'BASIC' }
 
-	export enum SecurityPostureConfigVulnerabilityMode { VULNERABILITY_MODE_UNSPECIFIED = 0, VULNERABILITY_DISABLED = 1, VULNERABILITY_BASIC = 2, VULNERABILITY_ENTERPRISE = 3 }
+	export enum SecurityPostureConfigVulnerabilityMode { VULNERABILITY_MODE_UNSPECIFIED = 'VULNERABILITY_MODE_UNSPECIFIED', VULNERABILITY_DISABLED = 'VULNERABILITY_DISABLED', VULNERABILITY_BASIC = 'VULNERABILITY_BASIC', VULNERABILITY_ENTERPRISE = 'VULNERABILITY_ENTERPRISE' }
 
 
 	/** EdgeCluster contains information specific to Google Edge Clusters. */
@@ -3231,7 +3231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginType { TYPE_UNSPECIFIED = 0, FLEET = 1, FLEET_OUT_OF_SYNC = 2, USER = 3 }
+	export enum OriginType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', FLEET = 'FLEET', FLEET_OUT_OF_SYNC = 'FLEET_OUT_OF_SYNC', USER = 'USER' }
 
 
 	/** MembershipFeatureState contains Feature status information for a single Membership. */
@@ -3329,7 +3329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityServiceMembershipStateState { DEPLOYMENT_STATE_UNSPECIFIED = 0, OK = 1, ERROR = 2 }
+	export enum IdentityServiceMembershipStateState { DEPLOYMENT_STATE_UNSPECIFIED = 'DEPLOYMENT_STATE_UNSPECIFIED', OK = 'OK', ERROR = 'ERROR' }
 
 
 	/** **Metering**: Per-Membership Feature State. */
@@ -3432,7 +3432,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyControllerOnClusterStateState { LIFECYCLE_STATE_UNSPECIFIED = 0, NOT_INSTALLED = 1, INSTALLING = 2, ACTIVE = 3, UPDATING = 4, DECOMMISSIONING = 5, CLUSTER_ERROR = 6, HUB_ERROR = 7, SUSPENDED = 8, DETACHED = 9 }
+	export enum PolicyControllerOnClusterStateState { LIFECYCLE_STATE_UNSPECIFIED = 'LIFECYCLE_STATE_UNSPECIFIED', NOT_INSTALLED = 'NOT_INSTALLED', INSTALLING = 'INSTALLING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DECOMMISSIONING = 'DECOMMISSIONING', CLUSTER_ERROR = 'CLUSTER_ERROR', HUB_ERROR = 'HUB_ERROR', SUSPENDED = 'SUSPENDED', DETACHED = 'DETACHED' }
 
 
 	/** The state of the policy controller policy content */
@@ -3543,7 +3543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceMeshControlPlaneManagementState { LIFECYCLE_STATE_UNSPECIFIED = 0, DISABLED = 1, FAILED_PRECONDITION = 2, PROVISIONING = 3, ACTIVE = 4, STALLED = 5, NEEDS_ATTENTION = 6, DEGRADED = 7 }
+	export enum ServiceMeshControlPlaneManagementState { LIFECYCLE_STATE_UNSPECIFIED = 'LIFECYCLE_STATE_UNSPECIFIED', DISABLED = 'DISABLED', FAILED_PRECONDITION = 'FAILED_PRECONDITION', PROVISIONING = 'PROVISIONING', ACTIVE = 'ACTIVE', STALLED = 'STALLED', NEEDS_ATTENTION = 'NEEDS_ATTENTION', DEGRADED = 'DEGRADED' }
 
 
 	/** Status of data plane management. Only reported per-member. */
@@ -3590,7 +3590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureResourceStateState { STATE_UNSPECIFIED = 0, ENABLING = 1, ACTIVE = 2, DISABLING = 3, UPDATING = 4, SERVICE_UPDATING = 5 }
+	export enum FeatureResourceStateState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ENABLING = 'ENABLING', ACTIVE = 'ACTIVE', DISABLING = 'DISABLING', UPDATING = 'UPDATING', SERVICE_UPDATING = 'SERVICE_UPDATING' }
 
 
 	/** ScopeFeatureSpec contains feature specs for a fleet scope. */
@@ -3719,7 +3719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetLifecycleStateCode { CODE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3, UPDATING = 4 }
+	export enum FleetLifecycleStateCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** GenerateConnectManifestResponse contains manifest information for installing/upgrading a Connect agent. */
@@ -4195,7 +4195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OnPremClusterClusterType { CLUSTERTYPE_UNSPECIFIED = 0, BOOTSTRAP = 1, HYBRID = 2, STANDALONE = 3, USER = 4 }
+	export enum OnPremClusterClusterType { CLUSTERTYPE_UNSPECIFIED = 'CLUSTERTYPE_UNSPECIFIED', BOOTSTRAP = 'BOOTSTRAP', HYBRID = 'HYBRID', STANDALONE = 'STANDALONE', USER = 'USER' }
 
 
 	/** MonitoringConfig informs Fleet-based applications/services/UIs how the metrics for the underlying cluster is reported to cloud monitoring services. It can be set from empty to non-empty, but can't be mutated directly to prevent accidentally breaking the constinousty of metrics. */
@@ -4267,7 +4267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipStateCode { CODE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3, UPDATING = 4, SERVICE_UPDATING = 5 }
+	export enum MembershipStateCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING', UPDATING = 'UPDATING', SERVICE_UPDATING = 'SERVICE_UPDATING' }
 
 
 	/** Response message for the `GkeHub.ListFeatures` method. */
@@ -4622,7 +4622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RolePredefinedRole { UNKNOWN = 0, ADMIN = 1, EDIT = 2, VIEW = 3, ANTHOS_SUPPORT = 4 }
+	export enum RolePredefinedRole { UNKNOWN = 'UNKNOWN', ADMIN = 'ADMIN', EDIT = 'EDIT', VIEW = 'VIEW', ANTHOS_SUPPORT = 'ANTHOS_SUPPORT' }
 
 
 	/** RBACRoleBindingLifecycleState describes the state of a RbacRoleBinding resource. */
@@ -5225,7 +5225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationResultValidator { VALIDATOR_TYPE_UNSPECIFIED = 0, MEMBERSHIP_ID = 1, CROSS_PROJECT_PERMISSION = 2 }
+	export enum ValidationResultValidator { VALIDATOR_TYPE_UNSPECIFIED = 'VALIDATOR_TYPE_UNSPECIFIED', MEMBERSHIP_ID = 'MEMBERSHIP_ID', CROSS_PROJECT_PERMISSION = 'CROSS_PROJECT_PERMISSION' }
 
 	@Injectable()
 	export class MyClient {

@@ -194,9 +194,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GameEsrb_ratingName { Everyone = 0, 'Everyone 10+' = 1, Teen = 2, Mature = 3, 'Adults Only' = 4, 'Rating Pending' = 5 }
+	export enum GameEsrb_ratingName { Everyone = 'Everyone', 'Everyone 10+' = 'Everyone 10+', Teen = 'Teen', Mature = 'Mature', 'Adults Only' = 'Adults Only', 'Rating Pending' = 'Rating Pending' }
 
-	export enum GameEsrb_ratingSlug { everyone = 0, 'everyone-10-plus' = 1, teen = 2, mature = 3, 'adults-only' = 4, 'rating-pending' = 5 }
+	export enum GameEsrb_ratingSlug { everyone = 'everyone', 'everyone-10-plus' = 'everyone-10-plus', teen = 'teen', mature = 'mature', 'adults-only' = 'adults-only', 'rating-pending' = 'rating-pending' }
 
 	export interface GamePlatforms {
 		platform?: GamePlatformsPlatform;

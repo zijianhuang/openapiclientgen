@@ -276,9 +276,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyAlgorithm { TDES_2KEY = 0, TDES_3KEY = 1, AES_128 = 2, AES_192 = 3, AES_256 = 4, RSA_2048 = 5, RSA_3072 = 6, RSA_4096 = 7 }
+	export enum KeyAlgorithm { TDES_2KEY = 'TDES_2KEY', TDES_3KEY = 'TDES_3KEY', AES_128 = 'AES_128', AES_192 = 'AES_192', AES_256 = 'AES_256', RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096' }
 
-	export enum KeyClass { SYMMETRIC_KEY = 0, ASYMMETRIC_KEY_PAIR = 1, PRIVATE_KEY = 2, PUBLIC_KEY = 3 }
+	export enum KeyClass { SYMMETRIC_KEY = 'SYMMETRIC_KEY', ASYMMETRIC_KEY_PAIR = 'ASYMMETRIC_KEY_PAIR', PRIVATE_KEY = 'PRIVATE_KEY', PUBLIC_KEY = 'PUBLIC_KEY' }
 
 
 	/** The list of cryptographic operations that you can perform using the key. The modes of use are deﬁned in section A.5.3 of the TR-31 spec. */
@@ -321,17 +321,17 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyUsage { TR31_B0_BASE_DERIVATION_KEY = 0, TR31_C0_CARD_VERIFICATION_KEY = 1, TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY = 2, TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION = 3, TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS = 4, TR31_E1_EMV_MKEY_CONFIDENTIALITY = 5, TR31_E2_EMV_MKEY_INTEGRITY = 6, TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS = 7, TR31_E5_EMV_MKEY_CARD_PERSONALIZATION = 8, TR31_E6_EMV_MKEY_OTHER = 9, TR31_K0_KEY_ENCRYPTION_KEY = 10, TR31_K1_KEY_BLOCK_PROTECTION_KEY = 11, TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT = 12, TR31_M3_ISO_9797_3_MAC_KEY = 13, TR31_M6_ISO_9797_5_CMAC_KEY = 14, TR31_M7_HMAC_KEY = 15, TR31_P0_PIN_ENCRYPTION_KEY = 16, TR31_P1_PIN_GENERATION_KEY = 17, TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE = 18, TR31_V1_IBM3624_PIN_VERIFICATION_KEY = 19, TR31_V2_VISA_PIN_VERIFICATION_KEY = 20, TR31_K2_TR34_ASYMMETRIC_KEY = 21 }
+	export enum KeyUsage { TR31_B0_BASE_DERIVATION_KEY = 'TR31_B0_BASE_DERIVATION_KEY', TR31_C0_CARD_VERIFICATION_KEY = 'TR31_C0_CARD_VERIFICATION_KEY', TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY = 'TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY', TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION = 'TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION', TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS = 'TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS', TR31_E1_EMV_MKEY_CONFIDENTIALITY = 'TR31_E1_EMV_MKEY_CONFIDENTIALITY', TR31_E2_EMV_MKEY_INTEGRITY = 'TR31_E2_EMV_MKEY_INTEGRITY', TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS = 'TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS', TR31_E5_EMV_MKEY_CARD_PERSONALIZATION = 'TR31_E5_EMV_MKEY_CARD_PERSONALIZATION', TR31_E6_EMV_MKEY_OTHER = 'TR31_E6_EMV_MKEY_OTHER', TR31_K0_KEY_ENCRYPTION_KEY = 'TR31_K0_KEY_ENCRYPTION_KEY', TR31_K1_KEY_BLOCK_PROTECTION_KEY = 'TR31_K1_KEY_BLOCK_PROTECTION_KEY', TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT = 'TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT', TR31_M3_ISO_9797_3_MAC_KEY = 'TR31_M3_ISO_9797_3_MAC_KEY', TR31_M6_ISO_9797_5_CMAC_KEY = 'TR31_M6_ISO_9797_5_CMAC_KEY', TR31_M7_HMAC_KEY = 'TR31_M7_HMAC_KEY', TR31_P0_PIN_ENCRYPTION_KEY = 'TR31_P0_PIN_ENCRYPTION_KEY', TR31_P1_PIN_GENERATION_KEY = 'TR31_P1_PIN_GENERATION_KEY', TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE = 'TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE', TR31_V1_IBM3624_PIN_VERIFICATION_KEY = 'TR31_V1_IBM3624_PIN_VERIFICATION_KEY', TR31_V2_VISA_PIN_VERIFICATION_KEY = 'TR31_V2_VISA_PIN_VERIFICATION_KEY', TR31_K2_TR34_ASYMMETRIC_KEY = 'TR31_K2_TR34_ASYMMETRIC_KEY' }
 
-	export enum KeyCheckValueAlgorithm { CMAC = 0, ANSI_X9_24 = 1 }
+	export enum KeyCheckValueAlgorithm { CMAC = 'CMAC', ANSI_X9_24 = 'ANSI_X9_24' }
 
 
 	/** Defines the source of a key */
-	export enum KeyOrigin { EXTERNAL = 0, AWS_PAYMENT_CRYPTOGRAPHY = 1 }
+	export enum KeyOrigin { EXTERNAL = 'EXTERNAL', AWS_PAYMENT_CRYPTOGRAPHY = 'AWS_PAYMENT_CRYPTOGRAPHY' }
 
 
 	/** Defines the state of a key */
-	export enum KeyState { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, DELETE_PENDING = 2, DELETE_COMPLETE = 3 }
+	export enum KeyState { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_COMPLETE = 'CREATE_COMPLETE', DELETE_PENDING = 'DELETE_PENDING', DELETE_COMPLETE = 'DELETE_COMPLETE' }
 
 	export interface CreateKeyInput {
 		Enabled?: boolean | null;
@@ -490,7 +490,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WrappedKeyMaterialFormat { KEY_CRYPTOGRAM = 0, TR31_KEY_BLOCK = 1, TR34_KEY_BLOCK = 2 }
+	export enum WrappedKeyMaterialFormat { KEY_CRYPTOGRAM = 'KEY_CRYPTOGRAM', TR31_KEY_BLOCK = 'TR31_KEY_BLOCK', TR34_KEY_BLOCK = 'TR34_KEY_BLOCK' }
 
 	export interface ExportKeyInput {
 
@@ -594,7 +594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Tr34KeyBlockFormat { X9_TR34_2012 = 0 }
+	export enum Tr34KeyBlockFormat { X9_TR34_2012 = 'X9_TR34_2012' }
 
 	export interface GetAliasOutput {
 
@@ -725,7 +725,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyMaterialType { TR34_KEY_BLOCK = 0, TR31_KEY_BLOCK = 1, ROOT_PUBLIC_KEY_CERTIFICATE = 2, TRUSTED_PUBLIC_KEY_CERTIFICATE = 3 }
+	export enum KeyMaterialType { TR34_KEY_BLOCK = 'TR34_KEY_BLOCK', TR31_KEY_BLOCK = 'TR31_KEY_BLOCK', ROOT_PUBLIC_KEY_CERTIFICATE = 'ROOT_PUBLIC_KEY_CERTIFICATE', TRUSTED_PUBLIC_KEY_CERTIFICATE = 'TRUSTED_PUBLIC_KEY_CERTIFICATE' }
 
 	export interface GetParametersForImportOutput {
 
@@ -1556,45 +1556,45 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateAliasX_Amz_Target { 'PaymentCryptographyControlPlane.CreateAlias' = 0 }
+	export enum CreateAliasX_Amz_Target { 'PaymentCryptographyControlPlane.CreateAlias' = 'PaymentCryptographyControlPlane.CreateAlias' }
 
-	export enum CreateKeyX_Amz_Target { 'PaymentCryptographyControlPlane.CreateKey' = 0 }
+	export enum CreateKeyX_Amz_Target { 'PaymentCryptographyControlPlane.CreateKey' = 'PaymentCryptographyControlPlane.CreateKey' }
 
-	export enum DeleteAliasX_Amz_Target { 'PaymentCryptographyControlPlane.DeleteAlias' = 0 }
+	export enum DeleteAliasX_Amz_Target { 'PaymentCryptographyControlPlane.DeleteAlias' = 'PaymentCryptographyControlPlane.DeleteAlias' }
 
-	export enum DeleteKeyX_Amz_Target { 'PaymentCryptographyControlPlane.DeleteKey' = 0 }
+	export enum DeleteKeyX_Amz_Target { 'PaymentCryptographyControlPlane.DeleteKey' = 'PaymentCryptographyControlPlane.DeleteKey' }
 
-	export enum ExportKeyX_Amz_Target { 'PaymentCryptographyControlPlane.ExportKey' = 0 }
+	export enum ExportKeyX_Amz_Target { 'PaymentCryptographyControlPlane.ExportKey' = 'PaymentCryptographyControlPlane.ExportKey' }
 
-	export enum GetAliasX_Amz_Target { 'PaymentCryptographyControlPlane.GetAlias' = 0 }
+	export enum GetAliasX_Amz_Target { 'PaymentCryptographyControlPlane.GetAlias' = 'PaymentCryptographyControlPlane.GetAlias' }
 
-	export enum GetKeyX_Amz_Target { 'PaymentCryptographyControlPlane.GetKey' = 0 }
+	export enum GetKeyX_Amz_Target { 'PaymentCryptographyControlPlane.GetKey' = 'PaymentCryptographyControlPlane.GetKey' }
 
-	export enum GetParametersForExportX_Amz_Target { 'PaymentCryptographyControlPlane.GetParametersForExport' = 0 }
+	export enum GetParametersForExportX_Amz_Target { 'PaymentCryptographyControlPlane.GetParametersForExport' = 'PaymentCryptographyControlPlane.GetParametersForExport' }
 
-	export enum GetParametersForImportX_Amz_Target { 'PaymentCryptographyControlPlane.GetParametersForImport' = 0 }
+	export enum GetParametersForImportX_Amz_Target { 'PaymentCryptographyControlPlane.GetParametersForImport' = 'PaymentCryptographyControlPlane.GetParametersForImport' }
 
-	export enum GetPublicKeyCertificateX_Amz_Target { 'PaymentCryptographyControlPlane.GetPublicKeyCertificate' = 0 }
+	export enum GetPublicKeyCertificateX_Amz_Target { 'PaymentCryptographyControlPlane.GetPublicKeyCertificate' = 'PaymentCryptographyControlPlane.GetPublicKeyCertificate' }
 
-	export enum ImportKeyX_Amz_Target { 'PaymentCryptographyControlPlane.ImportKey' = 0 }
+	export enum ImportKeyX_Amz_Target { 'PaymentCryptographyControlPlane.ImportKey' = 'PaymentCryptographyControlPlane.ImportKey' }
 
-	export enum ListAliasesX_Amz_Target { 'PaymentCryptographyControlPlane.ListAliases' = 0 }
+	export enum ListAliasesX_Amz_Target { 'PaymentCryptographyControlPlane.ListAliases' = 'PaymentCryptographyControlPlane.ListAliases' }
 
-	export enum ListKeysX_Amz_Target { 'PaymentCryptographyControlPlane.ListKeys' = 0 }
+	export enum ListKeysX_Amz_Target { 'PaymentCryptographyControlPlane.ListKeys' = 'PaymentCryptographyControlPlane.ListKeys' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'PaymentCryptographyControlPlane.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'PaymentCryptographyControlPlane.ListTagsForResource' = 'PaymentCryptographyControlPlane.ListTagsForResource' }
 
-	export enum RestoreKeyX_Amz_Target { 'PaymentCryptographyControlPlane.RestoreKey' = 0 }
+	export enum RestoreKeyX_Amz_Target { 'PaymentCryptographyControlPlane.RestoreKey' = 'PaymentCryptographyControlPlane.RestoreKey' }
 
-	export enum StartKeyUsageX_Amz_Target { 'PaymentCryptographyControlPlane.StartKeyUsage' = 0 }
+	export enum StartKeyUsageX_Amz_Target { 'PaymentCryptographyControlPlane.StartKeyUsage' = 'PaymentCryptographyControlPlane.StartKeyUsage' }
 
-	export enum StopKeyUsageX_Amz_Target { 'PaymentCryptographyControlPlane.StopKeyUsage' = 0 }
+	export enum StopKeyUsageX_Amz_Target { 'PaymentCryptographyControlPlane.StopKeyUsage' = 'PaymentCryptographyControlPlane.StopKeyUsage' }
 
-	export enum TagResourceX_Amz_Target { 'PaymentCryptographyControlPlane.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'PaymentCryptographyControlPlane.TagResource' = 'PaymentCryptographyControlPlane.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'PaymentCryptographyControlPlane.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'PaymentCryptographyControlPlane.UntagResource' = 'PaymentCryptographyControlPlane.UntagResource' }
 
-	export enum UpdateAliasX_Amz_Target { 'PaymentCryptographyControlPlane.UpdateAlias' = 0 }
+	export enum UpdateAliasX_Amz_Target { 'PaymentCryptographyControlPlane.UpdateAlias' = 'PaymentCryptographyControlPlane.UpdateAlias' }
 
 }
 

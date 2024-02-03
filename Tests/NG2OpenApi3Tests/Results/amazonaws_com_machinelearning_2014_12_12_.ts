@@ -23,7 +23,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaggableResourceType { BatchPrediction = 0, DataSource = 1, Evaluation = 2, MLModel = 3 }
+	export enum TaggableResourceType { BatchPrediction = 'BatchPrediction', DataSource = 'DataSource', Evaluation = 'Evaluation', MLModel = 'MLModel' }
 
 	export interface AddTagsInput {
 
@@ -764,7 +764,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MLModelType { REGRESSION = 0, BINARY = 1, MULTICLASS = 2 }
+	export enum MLModelType { REGRESSION = 'REGRESSION', BINARY = 'BINARY', MULTICLASS = 'MULTICLASS' }
 
 	export interface TrainingParameters {
 	}
@@ -820,7 +820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RealtimeEndpointStatus { NONE = 0, READY = 1, UPDATING = 2, FAILED = 3 }
+	export enum RealtimeEndpointStatus { NONE = 'NONE', READY = 'READY', UPDATING = 'UPDATING', FAILED = 'FAILED' }
 
 	export interface CreateRealtimeEndpointInput {
 
@@ -1159,7 +1159,7 @@ export namespace MyNS {
 
 
 	/** <p>Object status with the following possible values:</p> <ul> <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>INPROGRESS</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li> </ul> */
-	export enum EntityStatus { PENDING = 0, INPROGRESS = 1, FAILED = 2, COMPLETED = 3, DELETED = 4 }
+	export enum EntityStatus { PENDING = 'PENDING', INPROGRESS = 'INPROGRESS', FAILED = 'FAILED', COMPLETED = 'COMPLETED', DELETED = 'DELETED' }
 
 	export interface DescribeBatchPredictionsInput {
 		FilterVariable?: BatchPredictionFilterVariable;
@@ -1206,11 +1206,11 @@ export namespace MyNS {
 
 
 	/** <p>A list of the variables to use in searching or filtering <code>BatchPrediction</code>.</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.</p> </li> <li> <p> <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code> <code>Name</code>.</p> </li> <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li> <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li> <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> </ul> */
-	export enum BatchPredictionFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, IAMUser = 4, MLModelId = 5, DataSourceId = 6, DataURI = 7 }
+	export enum BatchPredictionFilterVariable { CreatedAt = 'CreatedAt', LastUpdatedAt = 'LastUpdatedAt', Status = 'Status', Name = 'Name', IAMUser = 'IAMUser', MLModelId = 'MLModelId', DataSourceId = 'DataSourceId', DataURI = 'DataURI' }
 
 
 	/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <p> <code>asc</code> - Present the information in ascending order (from A-Z).</p> </li> <li> <p> <code>dsc</code> - Present the information in descending order (from Z-A).</p> </li> </ul> */
-	export enum SortOrder { asc = 0, dsc = 1 }
+	export enum SortOrder { asc = 'asc', dsc = 'dsc' }
 
 
 	/** Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>. */
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 
 
 	/** <p>A list of the variables to use in searching or filtering <code>DataSource</code>.</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.</p> </li> <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> </ul> <p> <b>Note:</b> The variable names should match the variable names in the <code>DataSource</code>.</p> */
-	export enum DataSourceFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, DataLocationS3 = 4, IAMUser = 5 }
+	export enum DataSourceFilterVariable { CreatedAt = 'CreatedAt', LastUpdatedAt = 'LastUpdatedAt', Status = 'Status', Name = 'Name', DataLocationS3 = 'DataLocationS3', IAMUser = 'IAMUser' }
 
 
 	/** Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>. */
@@ -1701,7 +1701,7 @@ export namespace MyNS {
 
 
 	/** <p>The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p> <ul> <li> <p> <code>SGD</code> - Stochastic Gradient Descent.</p> </li> <li> <p> <code>RandomForest</code> - Random forest of decision trees.</p> </li> </ul> */
-	export enum Algorithm { sgd = 0 }
+	export enum Algorithm { sgd = 'sgd' }
 
 	export interface DescribeMLModelsInput {
 		FilterVariable?: MLModelFilterVariable;
@@ -1746,7 +1746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MLModelFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, IAMUser = 4, TrainingDataSourceId = 5, RealtimeEndpointStatus = 6, MLModelType = 7, Algorithm = 8, TrainingDataURI = 9 }
+	export enum MLModelFilterVariable { CreatedAt = 'CreatedAt', LastUpdatedAt = 'LastUpdatedAt', Status = 'Status', Name = 'Name', IAMUser = 'IAMUser', TrainingDataSourceId = 'TrainingDataSourceId', RealtimeEndpointStatus = 'RealtimeEndpointStatus', MLModelType = 'MLModelType', Algorithm = 'Algorithm', TrainingDataURI = 'TrainingDataURI' }
 
 
 	/** Amazon ML returns the following elements. */
@@ -2454,11 +2454,11 @@ export namespace MyNS {
 
 
 	/** <p>A list of the variables to use in searching or filtering <code>Evaluation</code>.</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.</p> </li> <li> <p> <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation.</p> </li> <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated.</p> </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.</p> </li> <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> </ul> */
-	export enum EvaluationFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, IAMUser = 4, MLModelId = 5, DataSourceId = 6, DataURI = 7 }
+	export enum EvaluationFilterVariable { CreatedAt = 'CreatedAt', LastUpdatedAt = 'LastUpdatedAt', Status = 'Status', Name = 'Name', IAMUser = 'IAMUser', MLModelId = 'MLModelId', DataSourceId = 'DataSourceId', DataURI = 'DataURI' }
 
 
 	/** <p>Contains the key values of <code>DetailsMap</code>:</p> <ul> <li> <p> <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>.</p> </li> <li> <p> <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.</p> </li> </ul> */
-	export enum DetailsAttributes { PredictiveModelType = 0, Algorithm = 1 }
+	export enum DetailsAttributes { PredictiveModelType = 'PredictiveModelType', Algorithm = 'Algorithm' }
 
 	@Injectable()
 	export class MyClient {
@@ -2726,61 +2726,61 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsX_Amz_Target { 'AmazonML_20141212.AddTags' = 0 }
+	export enum AddTagsX_Amz_Target { 'AmazonML_20141212.AddTags' = 'AmazonML_20141212.AddTags' }
 
-	export enum CreateBatchPredictionX_Amz_Target { 'AmazonML_20141212.CreateBatchPrediction' = 0 }
+	export enum CreateBatchPredictionX_Amz_Target { 'AmazonML_20141212.CreateBatchPrediction' = 'AmazonML_20141212.CreateBatchPrediction' }
 
-	export enum CreateDataSourceFromRDSX_Amz_Target { 'AmazonML_20141212.CreateDataSourceFromRDS' = 0 }
+	export enum CreateDataSourceFromRDSX_Amz_Target { 'AmazonML_20141212.CreateDataSourceFromRDS' = 'AmazonML_20141212.CreateDataSourceFromRDS' }
 
-	export enum CreateDataSourceFromRedshiftX_Amz_Target { 'AmazonML_20141212.CreateDataSourceFromRedshift' = 0 }
+	export enum CreateDataSourceFromRedshiftX_Amz_Target { 'AmazonML_20141212.CreateDataSourceFromRedshift' = 'AmazonML_20141212.CreateDataSourceFromRedshift' }
 
-	export enum CreateDataSourceFromS3X_Amz_Target { 'AmazonML_20141212.CreateDataSourceFromS3' = 0 }
+	export enum CreateDataSourceFromS3X_Amz_Target { 'AmazonML_20141212.CreateDataSourceFromS3' = 'AmazonML_20141212.CreateDataSourceFromS3' }
 
-	export enum CreateEvaluationX_Amz_Target { 'AmazonML_20141212.CreateEvaluation' = 0 }
+	export enum CreateEvaluationX_Amz_Target { 'AmazonML_20141212.CreateEvaluation' = 'AmazonML_20141212.CreateEvaluation' }
 
-	export enum CreateMLModelX_Amz_Target { 'AmazonML_20141212.CreateMLModel' = 0 }
+	export enum CreateMLModelX_Amz_Target { 'AmazonML_20141212.CreateMLModel' = 'AmazonML_20141212.CreateMLModel' }
 
-	export enum CreateRealtimeEndpointX_Amz_Target { 'AmazonML_20141212.CreateRealtimeEndpoint' = 0 }
+	export enum CreateRealtimeEndpointX_Amz_Target { 'AmazonML_20141212.CreateRealtimeEndpoint' = 'AmazonML_20141212.CreateRealtimeEndpoint' }
 
-	export enum DeleteBatchPredictionX_Amz_Target { 'AmazonML_20141212.DeleteBatchPrediction' = 0 }
+	export enum DeleteBatchPredictionX_Amz_Target { 'AmazonML_20141212.DeleteBatchPrediction' = 'AmazonML_20141212.DeleteBatchPrediction' }
 
-	export enum DeleteDataSourceX_Amz_Target { 'AmazonML_20141212.DeleteDataSource' = 0 }
+	export enum DeleteDataSourceX_Amz_Target { 'AmazonML_20141212.DeleteDataSource' = 'AmazonML_20141212.DeleteDataSource' }
 
-	export enum DeleteEvaluationX_Amz_Target { 'AmazonML_20141212.DeleteEvaluation' = 0 }
+	export enum DeleteEvaluationX_Amz_Target { 'AmazonML_20141212.DeleteEvaluation' = 'AmazonML_20141212.DeleteEvaluation' }
 
-	export enum DeleteMLModelX_Amz_Target { 'AmazonML_20141212.DeleteMLModel' = 0 }
+	export enum DeleteMLModelX_Amz_Target { 'AmazonML_20141212.DeleteMLModel' = 'AmazonML_20141212.DeleteMLModel' }
 
-	export enum DeleteRealtimeEndpointX_Amz_Target { 'AmazonML_20141212.DeleteRealtimeEndpoint' = 0 }
+	export enum DeleteRealtimeEndpointX_Amz_Target { 'AmazonML_20141212.DeleteRealtimeEndpoint' = 'AmazonML_20141212.DeleteRealtimeEndpoint' }
 
-	export enum DeleteTagsX_Amz_Target { 'AmazonML_20141212.DeleteTags' = 0 }
+	export enum DeleteTagsX_Amz_Target { 'AmazonML_20141212.DeleteTags' = 'AmazonML_20141212.DeleteTags' }
 
-	export enum DescribeBatchPredictionsX_Amz_Target { 'AmazonML_20141212.DescribeBatchPredictions' = 0 }
+	export enum DescribeBatchPredictionsX_Amz_Target { 'AmazonML_20141212.DescribeBatchPredictions' = 'AmazonML_20141212.DescribeBatchPredictions' }
 
-	export enum DescribeDataSourcesX_Amz_Target { 'AmazonML_20141212.DescribeDataSources' = 0 }
+	export enum DescribeDataSourcesX_Amz_Target { 'AmazonML_20141212.DescribeDataSources' = 'AmazonML_20141212.DescribeDataSources' }
 
-	export enum DescribeEvaluationsX_Amz_Target { 'AmazonML_20141212.DescribeEvaluations' = 0 }
+	export enum DescribeEvaluationsX_Amz_Target { 'AmazonML_20141212.DescribeEvaluations' = 'AmazonML_20141212.DescribeEvaluations' }
 
-	export enum DescribeMLModelsX_Amz_Target { 'AmazonML_20141212.DescribeMLModels' = 0 }
+	export enum DescribeMLModelsX_Amz_Target { 'AmazonML_20141212.DescribeMLModels' = 'AmazonML_20141212.DescribeMLModels' }
 
-	export enum DescribeTagsX_Amz_Target { 'AmazonML_20141212.DescribeTags' = 0 }
+	export enum DescribeTagsX_Amz_Target { 'AmazonML_20141212.DescribeTags' = 'AmazonML_20141212.DescribeTags' }
 
-	export enum GetBatchPredictionX_Amz_Target { 'AmazonML_20141212.GetBatchPrediction' = 0 }
+	export enum GetBatchPredictionX_Amz_Target { 'AmazonML_20141212.GetBatchPrediction' = 'AmazonML_20141212.GetBatchPrediction' }
 
-	export enum GetDataSourceX_Amz_Target { 'AmazonML_20141212.GetDataSource' = 0 }
+	export enum GetDataSourceX_Amz_Target { 'AmazonML_20141212.GetDataSource' = 'AmazonML_20141212.GetDataSource' }
 
-	export enum GetEvaluationX_Amz_Target { 'AmazonML_20141212.GetEvaluation' = 0 }
+	export enum GetEvaluationX_Amz_Target { 'AmazonML_20141212.GetEvaluation' = 'AmazonML_20141212.GetEvaluation' }
 
-	export enum GetMLModelX_Amz_Target { 'AmazonML_20141212.GetMLModel' = 0 }
+	export enum GetMLModelX_Amz_Target { 'AmazonML_20141212.GetMLModel' = 'AmazonML_20141212.GetMLModel' }
 
-	export enum PredictX_Amz_Target { 'AmazonML_20141212.Predict' = 0 }
+	export enum PredictX_Amz_Target { 'AmazonML_20141212.Predict' = 'AmazonML_20141212.Predict' }
 
-	export enum UpdateBatchPredictionX_Amz_Target { 'AmazonML_20141212.UpdateBatchPrediction' = 0 }
+	export enum UpdateBatchPredictionX_Amz_Target { 'AmazonML_20141212.UpdateBatchPrediction' = 'AmazonML_20141212.UpdateBatchPrediction' }
 
-	export enum UpdateDataSourceX_Amz_Target { 'AmazonML_20141212.UpdateDataSource' = 0 }
+	export enum UpdateDataSourceX_Amz_Target { 'AmazonML_20141212.UpdateDataSource' = 'AmazonML_20141212.UpdateDataSource' }
 
-	export enum UpdateEvaluationX_Amz_Target { 'AmazonML_20141212.UpdateEvaluation' = 0 }
+	export enum UpdateEvaluationX_Amz_Target { 'AmazonML_20141212.UpdateEvaluation' = 'AmazonML_20141212.UpdateEvaluation' }
 
-	export enum UpdateMLModelX_Amz_Target { 'AmazonML_20141212.UpdateMLModel' = 0 }
+	export enum UpdateMLModelX_Amz_Target { 'AmazonML_20141212.UpdateMLModel' = 'AmazonML_20141212.UpdateMLModel' }
 
 }
 

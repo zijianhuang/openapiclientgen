@@ -589,7 +589,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class PayoutClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -625,12 +625,6 @@ export namespace MyNS {
 		GetPayoutSummary(filter: string | null | undefined): Observable<PayoutSummaryResponse> {
 			return this.http.get<PayoutSummaryResponse>(this.baseUri + 'payout_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
-	}
-
-	@Injectable()
-	export class TransactionClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method allows a seller to retrieve one or monetary transactions. In this case, 'monetary transactions' include sales orders, buyer refunds, seller credits, buyer-initiated payment disputes, and eBay shipping label purchases. There are numerous input filters available for use, including filters to retrieve specific types of monetary transactions, to retrieve monetary transactions processed within a specific date range, or to retrieve monetary transactions in a specific state. See the filter field for more information on each filter, and how each one is used. There are also pagination and sort query parameters that allow users to further control the monetary transactions that are returned in the response. If no monetary transactions match the input criteria, an http status code of 204 No Content is returned with no response payload.
@@ -653,12 +647,6 @@ export namespace MyNS {
 		 */
 		GetTransactionSummary(filter: string | null | undefined): Observable<TransactionSummaryResponse> {
 			return this.http.get<TransactionSummaryResponse>(this.baseUri + 'transaction_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
-		}
-	}
-
-	@Injectable()
-	export class Seller_funds_summaryClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

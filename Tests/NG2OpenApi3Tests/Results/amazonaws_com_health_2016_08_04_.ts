@@ -20,7 +20,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventScopeCode { PUBLIC = 0, ACCOUNT_SPECIFIC = 1, NONE = 2 }
+	export enum EventScopeCode { PUBLIC = 'PUBLIC', ACCOUNT_SPECIFIC = 'ACCOUNT_SPECIFIC', NONE = 'NONE' }
 
 	export interface DescribeAffectedAccountsForOrganizationRequest {
 
@@ -105,7 +105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityStatusCode { IMPAIRED = 0, UNIMPAIRED = 1, UNKNOWN = 2 }
+	export enum EntityStatusCode { IMPAIRED = 'IMPAIRED', UNIMPAIRED = 'UNIMPAIRED', UNKNOWN = 'UNKNOWN' }
 
 	export interface TagSet {
 	}
@@ -405,11 +405,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTypeCategory { issue = 0, accountNotification = 1, scheduledChange = 2, investigation = 3 }
+	export enum EventTypeCategory { issue = 'issue', accountNotification = 'accountNotification', scheduledChange = 'scheduledChange', investigation = 'investigation' }
 
-	export enum EventStatusCode { open = 0, closed = 1, upcoming = 2 }
+	export enum EventStatusCode { open = 'open', closed = 'closed', upcoming = 'upcoming' }
 
-	export enum EventAggregateField { eventTypeCategory = 0 }
+	export enum EventAggregateField { eventTypeCategory = 'eventTypeCategory' }
 
 	export interface DescribeEventDetailsResponse {
 		successfulSet?: Array<EventDetails>;
@@ -1008,31 +1008,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeAffectedAccountsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedAccountsForOrganization' = 0 }
+	export enum DescribeAffectedAccountsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedAccountsForOrganization' = 'AWSHealth_20160804.DescribeAffectedAccountsForOrganization' }
 
-	export enum DescribeAffectedEntitiesX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedEntities' = 0 }
+	export enum DescribeAffectedEntitiesX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedEntities' = 'AWSHealth_20160804.DescribeAffectedEntities' }
 
-	export enum DescribeAffectedEntitiesForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedEntitiesForOrganization' = 0 }
+	export enum DescribeAffectedEntitiesForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedEntitiesForOrganization' = 'AWSHealth_20160804.DescribeAffectedEntitiesForOrganization' }
 
-	export enum DescribeEntityAggregatesX_Amz_Target { 'AWSHealth_20160804.DescribeEntityAggregates' = 0 }
+	export enum DescribeEntityAggregatesX_Amz_Target { 'AWSHealth_20160804.DescribeEntityAggregates' = 'AWSHealth_20160804.DescribeEntityAggregates' }
 
-	export enum DescribeEventAggregatesX_Amz_Target { 'AWSHealth_20160804.DescribeEventAggregates' = 0 }
+	export enum DescribeEventAggregatesX_Amz_Target { 'AWSHealth_20160804.DescribeEventAggregates' = 'AWSHealth_20160804.DescribeEventAggregates' }
 
-	export enum DescribeEventDetailsX_Amz_Target { 'AWSHealth_20160804.DescribeEventDetails' = 0 }
+	export enum DescribeEventDetailsX_Amz_Target { 'AWSHealth_20160804.DescribeEventDetails' = 'AWSHealth_20160804.DescribeEventDetails' }
 
-	export enum DescribeEventDetailsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeEventDetailsForOrganization' = 0 }
+	export enum DescribeEventDetailsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeEventDetailsForOrganization' = 'AWSHealth_20160804.DescribeEventDetailsForOrganization' }
 
-	export enum DescribeEventTypesX_Amz_Target { 'AWSHealth_20160804.DescribeEventTypes' = 0 }
+	export enum DescribeEventTypesX_Amz_Target { 'AWSHealth_20160804.DescribeEventTypes' = 'AWSHealth_20160804.DescribeEventTypes' }
 
-	export enum DescribeEventsX_Amz_Target { 'AWSHealth_20160804.DescribeEvents' = 0 }
+	export enum DescribeEventsX_Amz_Target { 'AWSHealth_20160804.DescribeEvents' = 'AWSHealth_20160804.DescribeEvents' }
 
-	export enum DescribeEventsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeEventsForOrganization' = 0 }
+	export enum DescribeEventsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeEventsForOrganization' = 'AWSHealth_20160804.DescribeEventsForOrganization' }
 
-	export enum DescribeHealthServiceStatusForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeHealthServiceStatusForOrganization' = 0 }
+	export enum DescribeHealthServiceStatusForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeHealthServiceStatusForOrganization' = 'AWSHealth_20160804.DescribeHealthServiceStatusForOrganization' }
 
-	export enum DisableHealthServiceAccessForOrganizationX_Amz_Target { 'AWSHealth_20160804.DisableHealthServiceAccessForOrganization' = 0 }
+	export enum DisableHealthServiceAccessForOrganizationX_Amz_Target { 'AWSHealth_20160804.DisableHealthServiceAccessForOrganization' = 'AWSHealth_20160804.DisableHealthServiceAccessForOrganization' }
 
-	export enum EnableHealthServiceAccessForOrganizationX_Amz_Target { 'AWSHealth_20160804.EnableHealthServiceAccessForOrganization' = 0 }
+	export enum EnableHealthServiceAccessForOrganizationX_Amz_Target { 'AWSHealth_20160804.EnableHealthServiceAccessForOrganization' = 'AWSHealth_20160804.EnableHealthServiceAccessForOrganization' }
 
 }
 

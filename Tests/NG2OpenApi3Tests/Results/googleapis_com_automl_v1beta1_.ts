@@ -1482,7 +1482,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataTypeTypeCode { TYPE_CODE_UNSPECIFIED = 0, FLOAT64 = 1, TIMESTAMP = 2, STRING = 3, ARRAY = 4, STRUCT = 5, CATEGORY = 6 }
+	export enum DataTypeTypeCode { TYPE_CODE_UNSPECIFIED = 'TYPE_CODE_UNSPECIFIED', FLOAT64 = 'FLOAT64', TIMESTAMP = 'TIMESTAMP', STRING = 'STRING', ARRAY = 'ARRAY', STRUCT = 'STRUCT', CATEGORY = 'CATEGORY' }
 
 
 	/** Identifies the table's column, and its correlation with the column this ColumnSpec describes. */
@@ -1647,7 +1647,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageClassificationDatasetMetadataClassificationType { CLASSIFICATION_TYPE_UNSPECIFIED = 0, MULTICLASS = 1, MULTILABEL = 2 }
+	export enum ImageClassificationDatasetMetadataClassificationType { CLASSIFICATION_TYPE_UNSPECIFIED = 'CLASSIFICATION_TYPE_UNSPECIFIED', MULTICLASS = 'MULTICLASS', MULTILABEL = 'MULTILABEL' }
 
 
 	/** Dataset metadata specific to image object detection. */
@@ -1989,7 +1989,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentDimensionsUnit { DOCUMENT_DIMENSION_UNIT_UNSPECIFIED = 0, INCH = 1, CENTIMETER = 2, POINT = 3 }
+	export enum DocumentDimensionsUnit { DOCUMENT_DIMENSION_UNIT_UNSPECIFIED = 'DOCUMENT_DIMENSION_UNIT_UNSPECIFIED', INCH = 'INCH', CENTIMETER = 'CENTIMETER', POINT = 'POINT' }
 
 
 	/** Input configuration of a Document. */
@@ -2042,7 +2042,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LayoutTextSegmentType { TEXT_SEGMENT_TYPE_UNSPECIFIED = 0, TOKEN = 1, PARAGRAPH = 2, FORM_FIELD = 3, FORM_FIELD_NAME = 4, FORM_FIELD_CONTENTS = 5, TABLE = 6, TABLE_HEADER = 7, TABLE_ROW = 8, TABLE_CELL = 9 }
+	export enum LayoutTextSegmentType { TEXT_SEGMENT_TYPE_UNSPECIFIED = 'TEXT_SEGMENT_TYPE_UNSPECIFIED', TOKEN = 'TOKEN', PARAGRAPH = 'PARAGRAPH', FORM_FIELD = 'FORM_FIELD', FORM_FIELD_NAME = 'FORM_FIELD_NAME', FORM_FIELD_CONTENTS = 'FORM_FIELD_CONTENTS', TABLE = 'TABLE', TABLE_HEADER = 'TABLE_HEADER', TABLE_ROW = 'TABLE_ROW', TABLE_CELL = 'TABLE_CELL' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -3193,7 +3193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelDeploymentState { DEPLOYMENT_STATE_UNSPECIFIED = 0, DEPLOYED = 1, UNDEPLOYED = 2 }
+	export enum ModelDeploymentState { DEPLOYMENT_STATE_UNSPECIFIED = 'DEPLOYMENT_STATE_UNSPECIFIED', DEPLOYED = 'DEPLOYED', UNDEPLOYED = 'UNDEPLOYED' }
 
 
 	/** Model metadata specific to AutoML Tables. */

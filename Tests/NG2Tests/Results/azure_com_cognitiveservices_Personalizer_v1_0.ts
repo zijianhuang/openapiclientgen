@@ -111,7 +111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PersonalizerErrorCode { BadRequest = 0, ResourceNotFound = 1, InternalServerError = 2, InvalidServiceConfiguration = 3, InvalidPolicyConfiguration = 4, InvalidPolicyContract = 5, InvalidEvaluationContract = 6, InvalidRewardRequest = 7, InvalidEventIdToActivate = 8, InvalidRankRequest = 9, InvalidExportLogsRequest = 10, InvalidContainer = 11, FrontEndNotFound = 12, EvaluationNotFound = 13, LogsPropertiesNotFound = 14, RankNullResponse = 15, UpdateConfigurationFailed = 16, ModelResetFailed = 17 }
+	export enum PersonalizerErrorCode { BadRequest = 'BadRequest', ResourceNotFound = 'ResourceNotFound', InternalServerError = 'InternalServerError', InvalidServiceConfiguration = 'InvalidServiceConfiguration', InvalidPolicyConfiguration = 'InvalidPolicyConfiguration', InvalidPolicyContract = 'InvalidPolicyContract', InvalidEvaluationContract = 'InvalidEvaluationContract', InvalidRewardRequest = 'InvalidRewardRequest', InvalidEventIdToActivate = 'InvalidEventIdToActivate', InvalidRankRequest = 'InvalidRankRequest', InvalidExportLogsRequest = 'InvalidExportLogsRequest', InvalidContainer = 'InvalidContainer', FrontEndNotFound = 'FrontEndNotFound', EvaluationNotFound = 'EvaluationNotFound', LogsPropertiesNotFound = 'LogsPropertiesNotFound', RankNullResponse = 'RankNullResponse', UpdateConfigurationFailed = 'UpdateConfigurationFailed', ModelResetFailed = 'ModelResetFailed' }
 
 
 	/** An object containing more specific information than the parent object about the error. */
@@ -227,7 +227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EvaluationStatus { completed = 0, pending = 1, failed = 2, notSubmitted = 3 }
+	export enum EvaluationStatus { completed = 'completed', pending = 'pending', failed = 'failed', notSubmitted = 'notSubmitted' }
 
 
 	/** A counterfactual evaluation. */

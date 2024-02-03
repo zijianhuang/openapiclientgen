@@ -493,7 +493,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkspaceState { PENDING = 0, AVAILABLE = 1, IMPAIRED = 2, UNHEALTHY = 3, REBOOTING = 4, STARTING = 5, REBUILDING = 6, RESTORING = 7, MAINTENANCE = 8, ADMIN_MAINTENANCE = 9, TERMINATING = 10, TERMINATED = 11, SUSPENDED = 12, UPDATING = 13, STOPPING = 14, STOPPED = 15, ERROR = 16 }
+	export enum WorkspaceState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', IMPAIRED = 'IMPAIRED', UNHEALTHY = 'UNHEALTHY', REBOOTING = 'REBOOTING', STARTING = 'STARTING', REBUILDING = 'REBUILDING', RESTORING = 'RESTORING', MAINTENANCE = 'MAINTENANCE', ADMIN_MAINTENANCE = 'ADMIN_MAINTENANCE', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', SUSPENDED = 'SUSPENDED', UPDATING = 'UPDATING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', ERROR = 'ERROR' }
 
 	export interface CreateStandbyWorkspacesRequest {
 
@@ -698,11 +698,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Compute { VALUE = 0, STANDARD = 1, PERFORMANCE = 2, POWER = 3, GRAPHICS = 4, POWERPRO = 5, GRAPHICSPRO = 6, GRAPHICS_G4DN = 7, GRAPHICSPRO_G4DN = 8 }
+	export enum Compute { VALUE = 'VALUE', STANDARD = 'STANDARD', PERFORMANCE = 'PERFORMANCE', POWER = 'POWER', GRAPHICS = 'GRAPHICS', POWERPRO = 'POWERPRO', GRAPHICSPRO = 'GRAPHICSPRO', GRAPHICS_G4DN = 'GRAPHICS_G4DN', GRAPHICSPRO_G4DN = 'GRAPHICSPRO_G4DN' }
 
-	export enum WorkspaceBundleState { AVAILABLE = 0, PENDING = 1, ERROR = 2 }
+	export enum WorkspaceBundleState { AVAILABLE = 'AVAILABLE', PENDING = 'PENDING', ERROR = 'ERROR' }
 
-	export enum BundleType { REGULAR = 0, STANDBY = 1 }
+	export enum BundleType { REGULAR = 'REGULAR', STANDBY = 'STANDBY' }
 
 	export interface CreateWorkspaceBundleRequest {
 
@@ -800,9 +800,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatingSystemType { WINDOWS = 0, LINUX = 1 }
+	export enum OperatingSystemType { WINDOWS = 'WINDOWS', LINUX = 'LINUX' }
 
-	export enum WorkspaceImageRequiredTenancy { DEFAULT = 0, DEDICATED = 1 }
+	export enum WorkspaceImageRequiredTenancy { DEFAULT = 'DEFAULT', DEDICATED = 'DEDICATED' }
 
 	export interface CreateWorkspaceImageRequest {
 
@@ -945,9 +945,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunningMode { AUTO_STOP = 0, ALWAYS_ON = 1, MANUAL = 2 }
+	export enum RunningMode { AUTO_STOP = 'AUTO_STOP', ALWAYS_ON = 'ALWAYS_ON', MANUAL = 'MANUAL' }
 
-	export enum Protocol { PCOIP = 0, WSP = 1 }
+	export enum Protocol { PCOIP = 'PCOIP', WSP = 'WSP' }
 
 
 	/** Describes a WorkSpace. */
@@ -1025,9 +1025,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ModificationResourceEnum { ROOT_VOLUME = 0, USER_VOLUME = 1, COMPUTE_TYPE = 2 }
+	export enum ModificationResourceEnum { ROOT_VOLUME = 'ROOT_VOLUME', USER_VOLUME = 'USER_VOLUME', COMPUTE_TYPE = 'COMPUTE_TYPE' }
 
-	export enum ModificationStateEnum { UPDATE_INITIATED = 0, UPDATE_IN_PROGRESS = 1 }
+	export enum ModificationStateEnum { UPDATE_INITIATED = 'UPDATE_INITIATED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS' }
 
 
 	/** Describes the related WorkSpace. The related WorkSpace could be a standby WorkSpace or primary WorkSpace related to the specified WorkSpace. */
@@ -1055,7 +1055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StandbyWorkspaceRelationshipType { PRIMARY = 0, STANDBY = 1 }
+	export enum StandbyWorkspaceRelationshipType { PRIMARY = 'PRIMARY', STANDBY = 'STANDBY' }
 
 	export interface CreateWorkspacesRequest {
 
@@ -1100,7 +1100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientDeviceType { DeviceTypeWindows = 0, DeviceTypeOsx = 1, DeviceTypeAndroid = 2, DeviceTypeIos = 3, DeviceTypeLinux = 4, DeviceTypeWeb = 5 }
+	export enum ClientDeviceType { DeviceTypeWindows = 'DeviceTypeWindows', DeviceTypeOsx = 'DeviceTypeOsx', DeviceTypeAndroid = 'DeviceTypeAndroid', DeviceTypeIos = 'DeviceTypeIos', DeviceTypeLinux = 'DeviceTypeLinux', DeviceTypeWeb = 'DeviceTypeWeb' }
 
 	export interface DeleteConnectClientAddInResult {
 	}
@@ -1313,7 +1313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DedicatedTenancySupportResultEnum { ENABLED = 0, DISABLED = 1 }
+	export enum DedicatedTenancySupportResultEnum { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DescribeAccountRequest {
 	}
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DedicatedTenancyModificationStateEnum { PENDING = 0, COMPLETED = 1, FAILED = 2 }
+	export enum DedicatedTenancyModificationStateEnum { PENDING = 'PENDING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface DescribeAccountModificationsRequest {
 		NextToken?: string;
@@ -1723,7 +1723,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionAliasState { CREATING = 0, CREATED = 1, DELETING = 2 }
+	export enum ConnectionAliasState { CREATING = 'CREATING', CREATED = 'CREATED', DELETING = 'DELETING' }
 
 
 	/** Describes a connection alias association that is used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>. */
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationStatus { NOT_ASSOCIATED = 0, ASSOCIATED_WITH_OWNER_ACCOUNT = 1, ASSOCIATED_WITH_SHARED_ACCOUNT = 2, PENDING_ASSOCIATION = 3, PENDING_DISASSOCIATION = 4 }
+	export enum AssociationStatus { NOT_ASSOCIATED = 'NOT_ASSOCIATED', ASSOCIATED_WITH_OWNER_ACCOUNT = 'ASSOCIATED_WITH_OWNER_ACCOUNT', ASSOCIATED_WITH_SHARED_ACCOUNT = 'ASSOCIATED_WITH_SHARED_ACCOUNT', PENDING_ASSOCIATION = 'PENDING_ASSOCIATION', PENDING_DISASSOCIATION = 'PENDING_DISASSOCIATION' }
 
 	export interface DescribeConnectionAliasesRequest {
 		AliasIds?: Array<string>;
@@ -1953,9 +1953,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkspaceDirectoryType { SIMPLE_AD = 0, AD_CONNECTOR = 1 }
+	export enum WorkspaceDirectoryType { SIMPLE_AD = 'SIMPLE_AD', AD_CONNECTOR = 'AD_CONNECTOR' }
 
-	export enum WorkspaceDirectoryState { REGISTERING = 0, REGISTERED = 1, DEREGISTERING = 2, DEREGISTERED = 3, ERROR = 4 }
+	export enum WorkspaceDirectoryState { REGISTERING = 'REGISTERING', REGISTERED = 'REGISTERED', DEREGISTERING = 'DEREGISTERING', DEREGISTERED = 'DEREGISTERED', ERROR = 'ERROR' }
 
 
 	/** Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. */
@@ -2027,9 +2027,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessPropertyValue { ALLOW = 0, DENY = 1 }
+	export enum AccessPropertyValue { ALLOW = 'ALLOW', DENY = 'DENY' }
 
-	export enum Tenancy { DEDICATED = 0, SHARED = 1 }
+	export enum Tenancy { DEDICATED = 'DEDICATED', SHARED = 'SHARED' }
 
 
 	/** Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>. */
@@ -2083,7 +2083,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SamlStatusEnum { DISABLED = 0, ENABLED = 1, ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK = 2 }
+	export enum SamlStatusEnum { DISABLED = 'DISABLED', ENABLED = 'ENABLED', ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK = 'ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK' }
 
 
 	/** Describes the properties of the certificate-based authentication you want to use with your WorkSpaces. */
@@ -2105,7 +2105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateBasedAuthStatusEnum { DISABLED = 0, ENABLED = 1 }
+	export enum CertificateBasedAuthStatusEnum { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 	export interface DescribeWorkspaceDirectoriesRequest {
 		DirectoryIds?: Array<string>;
@@ -2278,7 +2278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageType { OWNED = 0, SHARED = 1 }
+	export enum ImageType { OWNED = 'OWNED', SHARED = 'SHARED' }
 
 	export interface DescribeWorkspaceSnapshotsResult {
 		RebuildSnapshots?: Array<Snapshot>;
@@ -2406,7 +2406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionState { CONNECTED = 0, DISCONNECTED = 1, UNKNOWN = 2 }
+	export enum ConnectionState { CONNECTED = 'CONNECTED', DISCONNECTED = 'DISCONNECTED', UNKNOWN = 'UNKNOWN' }
 
 	export interface DescribeWorkspacesConnectionStatusRequest {
 		WorkspaceIds?: Array<string>;
@@ -2631,9 +2631,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkspaceImageIngestionProcess { BYOL_REGULAR = 0, BYOL_GRAPHICS = 1, BYOL_GRAPHICSPRO = 2, BYOL_GRAPHICS_G4DN = 3, BYOL_REGULAR_WSP = 4, BYOL_REGULAR_BYOP = 5, BYOL_GRAPHICS_G4DN_BYOP = 6 }
+	export enum WorkspaceImageIngestionProcess { BYOL_REGULAR = 'BYOL_REGULAR', BYOL_GRAPHICS = 'BYOL_GRAPHICS', BYOL_GRAPHICSPRO = 'BYOL_GRAPHICSPRO', BYOL_GRAPHICS_G4DN = 'BYOL_GRAPHICS_G4DN', BYOL_REGULAR_WSP = 'BYOL_REGULAR_WSP', BYOL_REGULAR_BYOP = 'BYOL_REGULAR_BYOP', BYOL_GRAPHICS_G4DN_BYOP = 'BYOL_GRAPHICS_G4DN_BYOP' }
 
-	export enum Application { Microsoft_Office_2016 = 0, Microsoft_Office_2019 = 1 }
+	export enum Application { Microsoft_Office_2016 = 'Microsoft_Office_2016', Microsoft_Office_2019 = 'Microsoft_Office_2019' }
 
 	export interface ListAvailableManagementCidrRangesResult {
 		ManagementCidrRanges?: Array<string>;
@@ -2748,7 +2748,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DedicatedTenancySupportEnum { ENABLED = 0 }
+	export enum DedicatedTenancySupportEnum { ENABLED = 'ENABLED' }
 
 	export interface ModifyCertificateBasedAuthPropertiesResult {
 	}
@@ -2779,7 +2779,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletableCertificateBasedAuthProperty { CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN = 0 }
+	export enum DeletableCertificateBasedAuthProperty { CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN = 'CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN' }
 
 	export interface ModifyClientPropertiesResult {
 	}
@@ -2840,7 +2840,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletableSamlProperty { SAML_PROPERTIES_USER_ACCESS_URL = 0, SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME = 1 }
+	export enum DeletableSamlProperty { SAML_PROPERTIES_USER_ACCESS_URL = 'SAML_PROPERTIES_USER_ACCESS_URL', SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME = 'SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME' }
 
 	export interface ModifySelfservicePermissionsResult {
 	}
@@ -3038,7 +3038,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetWorkspaceState { AVAILABLE = 0, ADMIN_MAINTENANCE = 1 }
+	export enum TargetWorkspaceState { AVAILABLE = 'AVAILABLE', ADMIN_MAINTENANCE = 'ADMIN_MAINTENANCE' }
 
 	export interface RebootWorkspacesResult {
 		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
@@ -3566,11 +3566,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ReconnectEnum { ENABLED = 0, DISABLED = 1 }
+	export enum ReconnectEnum { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum LogUploadEnum { ENABLED = 0, DISABLED = 1 }
+	export enum LogUploadEnum { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum WorkspaceImageState { AVAILABLE = 0, PENDING = 1, ERROR = 2 }
+	export enum WorkspaceImageState { AVAILABLE = 'AVAILABLE', PENDING = 'PENDING', ERROR = 'ERROR' }
 
 	@Injectable()
 	export class MyClient {
@@ -4167,135 +4167,135 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateConnectionAliasX_Amz_Target { 'WorkspacesService.AssociateConnectionAlias' = 0 }
+	export enum AssociateConnectionAliasX_Amz_Target { 'WorkspacesService.AssociateConnectionAlias' = 'WorkspacesService.AssociateConnectionAlias' }
 
-	export enum AssociateIpGroupsX_Amz_Target { 'WorkspacesService.AssociateIpGroups' = 0 }
+	export enum AssociateIpGroupsX_Amz_Target { 'WorkspacesService.AssociateIpGroups' = 'WorkspacesService.AssociateIpGroups' }
 
-	export enum AuthorizeIpRulesX_Amz_Target { 'WorkspacesService.AuthorizeIpRules' = 0 }
+	export enum AuthorizeIpRulesX_Amz_Target { 'WorkspacesService.AuthorizeIpRules' = 'WorkspacesService.AuthorizeIpRules' }
 
-	export enum CopyWorkspaceImageX_Amz_Target { 'WorkspacesService.CopyWorkspaceImage' = 0 }
+	export enum CopyWorkspaceImageX_Amz_Target { 'WorkspacesService.CopyWorkspaceImage' = 'WorkspacesService.CopyWorkspaceImage' }
 
-	export enum CreateConnectClientAddInX_Amz_Target { 'WorkspacesService.CreateConnectClientAddIn' = 0 }
+	export enum CreateConnectClientAddInX_Amz_Target { 'WorkspacesService.CreateConnectClientAddIn' = 'WorkspacesService.CreateConnectClientAddIn' }
 
-	export enum CreateConnectionAliasX_Amz_Target { 'WorkspacesService.CreateConnectionAlias' = 0 }
+	export enum CreateConnectionAliasX_Amz_Target { 'WorkspacesService.CreateConnectionAlias' = 'WorkspacesService.CreateConnectionAlias' }
 
-	export enum CreateIpGroupX_Amz_Target { 'WorkspacesService.CreateIpGroup' = 0 }
+	export enum CreateIpGroupX_Amz_Target { 'WorkspacesService.CreateIpGroup' = 'WorkspacesService.CreateIpGroup' }
 
-	export enum CreateStandbyWorkspacesX_Amz_Target { 'WorkspacesService.CreateStandbyWorkspaces' = 0 }
+	export enum CreateStandbyWorkspacesX_Amz_Target { 'WorkspacesService.CreateStandbyWorkspaces' = 'WorkspacesService.CreateStandbyWorkspaces' }
 
-	export enum CreateTagsX_Amz_Target { 'WorkspacesService.CreateTags' = 0 }
+	export enum CreateTagsX_Amz_Target { 'WorkspacesService.CreateTags' = 'WorkspacesService.CreateTags' }
 
-	export enum CreateUpdatedWorkspaceImageX_Amz_Target { 'WorkspacesService.CreateUpdatedWorkspaceImage' = 0 }
+	export enum CreateUpdatedWorkspaceImageX_Amz_Target { 'WorkspacesService.CreateUpdatedWorkspaceImage' = 'WorkspacesService.CreateUpdatedWorkspaceImage' }
 
-	export enum CreateWorkspaceBundleX_Amz_Target { 'WorkspacesService.CreateWorkspaceBundle' = 0 }
+	export enum CreateWorkspaceBundleX_Amz_Target { 'WorkspacesService.CreateWorkspaceBundle' = 'WorkspacesService.CreateWorkspaceBundle' }
 
-	export enum CreateWorkspaceImageX_Amz_Target { 'WorkspacesService.CreateWorkspaceImage' = 0 }
+	export enum CreateWorkspaceImageX_Amz_Target { 'WorkspacesService.CreateWorkspaceImage' = 'WorkspacesService.CreateWorkspaceImage' }
 
-	export enum CreateWorkspacesX_Amz_Target { 'WorkspacesService.CreateWorkspaces' = 0 }
+	export enum CreateWorkspacesX_Amz_Target { 'WorkspacesService.CreateWorkspaces' = 'WorkspacesService.CreateWorkspaces' }
 
-	export enum DeleteClientBrandingX_Amz_Target { 'WorkspacesService.DeleteClientBranding' = 0 }
+	export enum DeleteClientBrandingX_Amz_Target { 'WorkspacesService.DeleteClientBranding' = 'WorkspacesService.DeleteClientBranding' }
 
-	export enum DeleteConnectClientAddInX_Amz_Target { 'WorkspacesService.DeleteConnectClientAddIn' = 0 }
+	export enum DeleteConnectClientAddInX_Amz_Target { 'WorkspacesService.DeleteConnectClientAddIn' = 'WorkspacesService.DeleteConnectClientAddIn' }
 
-	export enum DeleteConnectionAliasX_Amz_Target { 'WorkspacesService.DeleteConnectionAlias' = 0 }
+	export enum DeleteConnectionAliasX_Amz_Target { 'WorkspacesService.DeleteConnectionAlias' = 'WorkspacesService.DeleteConnectionAlias' }
 
-	export enum DeleteIpGroupX_Amz_Target { 'WorkspacesService.DeleteIpGroup' = 0 }
+	export enum DeleteIpGroupX_Amz_Target { 'WorkspacesService.DeleteIpGroup' = 'WorkspacesService.DeleteIpGroup' }
 
-	export enum DeleteTagsX_Amz_Target { 'WorkspacesService.DeleteTags' = 0 }
+	export enum DeleteTagsX_Amz_Target { 'WorkspacesService.DeleteTags' = 'WorkspacesService.DeleteTags' }
 
-	export enum DeleteWorkspaceBundleX_Amz_Target { 'WorkspacesService.DeleteWorkspaceBundle' = 0 }
+	export enum DeleteWorkspaceBundleX_Amz_Target { 'WorkspacesService.DeleteWorkspaceBundle' = 'WorkspacesService.DeleteWorkspaceBundle' }
 
-	export enum DeleteWorkspaceImageX_Amz_Target { 'WorkspacesService.DeleteWorkspaceImage' = 0 }
+	export enum DeleteWorkspaceImageX_Amz_Target { 'WorkspacesService.DeleteWorkspaceImage' = 'WorkspacesService.DeleteWorkspaceImage' }
 
-	export enum DeregisterWorkspaceDirectoryX_Amz_Target { 'WorkspacesService.DeregisterWorkspaceDirectory' = 0 }
+	export enum DeregisterWorkspaceDirectoryX_Amz_Target { 'WorkspacesService.DeregisterWorkspaceDirectory' = 'WorkspacesService.DeregisterWorkspaceDirectory' }
 
-	export enum DescribeAccountX_Amz_Target { 'WorkspacesService.DescribeAccount' = 0 }
+	export enum DescribeAccountX_Amz_Target { 'WorkspacesService.DescribeAccount' = 'WorkspacesService.DescribeAccount' }
 
-	export enum DescribeAccountModificationsX_Amz_Target { 'WorkspacesService.DescribeAccountModifications' = 0 }
+	export enum DescribeAccountModificationsX_Amz_Target { 'WorkspacesService.DescribeAccountModifications' = 'WorkspacesService.DescribeAccountModifications' }
 
-	export enum DescribeClientBrandingX_Amz_Target { 'WorkspacesService.DescribeClientBranding' = 0 }
+	export enum DescribeClientBrandingX_Amz_Target { 'WorkspacesService.DescribeClientBranding' = 'WorkspacesService.DescribeClientBranding' }
 
-	export enum DescribeClientPropertiesX_Amz_Target { 'WorkspacesService.DescribeClientProperties' = 0 }
+	export enum DescribeClientPropertiesX_Amz_Target { 'WorkspacesService.DescribeClientProperties' = 'WorkspacesService.DescribeClientProperties' }
 
-	export enum DescribeConnectClientAddInsX_Amz_Target { 'WorkspacesService.DescribeConnectClientAddIns' = 0 }
+	export enum DescribeConnectClientAddInsX_Amz_Target { 'WorkspacesService.DescribeConnectClientAddIns' = 'WorkspacesService.DescribeConnectClientAddIns' }
 
-	export enum DescribeConnectionAliasPermissionsX_Amz_Target { 'WorkspacesService.DescribeConnectionAliasPermissions' = 0 }
+	export enum DescribeConnectionAliasPermissionsX_Amz_Target { 'WorkspacesService.DescribeConnectionAliasPermissions' = 'WorkspacesService.DescribeConnectionAliasPermissions' }
 
-	export enum DescribeConnectionAliasesX_Amz_Target { 'WorkspacesService.DescribeConnectionAliases' = 0 }
+	export enum DescribeConnectionAliasesX_Amz_Target { 'WorkspacesService.DescribeConnectionAliases' = 'WorkspacesService.DescribeConnectionAliases' }
 
-	export enum DescribeIpGroupsX_Amz_Target { 'WorkspacesService.DescribeIpGroups' = 0 }
+	export enum DescribeIpGroupsX_Amz_Target { 'WorkspacesService.DescribeIpGroups' = 'WorkspacesService.DescribeIpGroups' }
 
-	export enum DescribeTagsX_Amz_Target { 'WorkspacesService.DescribeTags' = 0 }
+	export enum DescribeTagsX_Amz_Target { 'WorkspacesService.DescribeTags' = 'WorkspacesService.DescribeTags' }
 
-	export enum DescribeWorkspaceBundlesX_Amz_Target { 'WorkspacesService.DescribeWorkspaceBundles' = 0 }
+	export enum DescribeWorkspaceBundlesX_Amz_Target { 'WorkspacesService.DescribeWorkspaceBundles' = 'WorkspacesService.DescribeWorkspaceBundles' }
 
-	export enum DescribeWorkspaceDirectoriesX_Amz_Target { 'WorkspacesService.DescribeWorkspaceDirectories' = 0 }
+	export enum DescribeWorkspaceDirectoriesX_Amz_Target { 'WorkspacesService.DescribeWorkspaceDirectories' = 'WorkspacesService.DescribeWorkspaceDirectories' }
 
-	export enum DescribeWorkspaceImagePermissionsX_Amz_Target { 'WorkspacesService.DescribeWorkspaceImagePermissions' = 0 }
+	export enum DescribeWorkspaceImagePermissionsX_Amz_Target { 'WorkspacesService.DescribeWorkspaceImagePermissions' = 'WorkspacesService.DescribeWorkspaceImagePermissions' }
 
-	export enum DescribeWorkspaceImagesX_Amz_Target { 'WorkspacesService.DescribeWorkspaceImages' = 0 }
+	export enum DescribeWorkspaceImagesX_Amz_Target { 'WorkspacesService.DescribeWorkspaceImages' = 'WorkspacesService.DescribeWorkspaceImages' }
 
-	export enum DescribeWorkspaceSnapshotsX_Amz_Target { 'WorkspacesService.DescribeWorkspaceSnapshots' = 0 }
+	export enum DescribeWorkspaceSnapshotsX_Amz_Target { 'WorkspacesService.DescribeWorkspaceSnapshots' = 'WorkspacesService.DescribeWorkspaceSnapshots' }
 
-	export enum DescribeWorkspacesX_Amz_Target { 'WorkspacesService.DescribeWorkspaces' = 0 }
+	export enum DescribeWorkspacesX_Amz_Target { 'WorkspacesService.DescribeWorkspaces' = 'WorkspacesService.DescribeWorkspaces' }
 
-	export enum DescribeWorkspacesConnectionStatusX_Amz_Target { 'WorkspacesService.DescribeWorkspacesConnectionStatus' = 0 }
+	export enum DescribeWorkspacesConnectionStatusX_Amz_Target { 'WorkspacesService.DescribeWorkspacesConnectionStatus' = 'WorkspacesService.DescribeWorkspacesConnectionStatus' }
 
-	export enum DisassociateConnectionAliasX_Amz_Target { 'WorkspacesService.DisassociateConnectionAlias' = 0 }
+	export enum DisassociateConnectionAliasX_Amz_Target { 'WorkspacesService.DisassociateConnectionAlias' = 'WorkspacesService.DisassociateConnectionAlias' }
 
-	export enum DisassociateIpGroupsX_Amz_Target { 'WorkspacesService.DisassociateIpGroups' = 0 }
+	export enum DisassociateIpGroupsX_Amz_Target { 'WorkspacesService.DisassociateIpGroups' = 'WorkspacesService.DisassociateIpGroups' }
 
-	export enum ImportClientBrandingX_Amz_Target { 'WorkspacesService.ImportClientBranding' = 0 }
+	export enum ImportClientBrandingX_Amz_Target { 'WorkspacesService.ImportClientBranding' = 'WorkspacesService.ImportClientBranding' }
 
-	export enum ImportWorkspaceImageX_Amz_Target { 'WorkspacesService.ImportWorkspaceImage' = 0 }
+	export enum ImportWorkspaceImageX_Amz_Target { 'WorkspacesService.ImportWorkspaceImage' = 'WorkspacesService.ImportWorkspaceImage' }
 
-	export enum ListAvailableManagementCidrRangesX_Amz_Target { 'WorkspacesService.ListAvailableManagementCidrRanges' = 0 }
+	export enum ListAvailableManagementCidrRangesX_Amz_Target { 'WorkspacesService.ListAvailableManagementCidrRanges' = 'WorkspacesService.ListAvailableManagementCidrRanges' }
 
-	export enum MigrateWorkspaceX_Amz_Target { 'WorkspacesService.MigrateWorkspace' = 0 }
+	export enum MigrateWorkspaceX_Amz_Target { 'WorkspacesService.MigrateWorkspace' = 'WorkspacesService.MigrateWorkspace' }
 
-	export enum ModifyAccountX_Amz_Target { 'WorkspacesService.ModifyAccount' = 0 }
+	export enum ModifyAccountX_Amz_Target { 'WorkspacesService.ModifyAccount' = 'WorkspacesService.ModifyAccount' }
 
-	export enum ModifyCertificateBasedAuthPropertiesX_Amz_Target { 'WorkspacesService.ModifyCertificateBasedAuthProperties' = 0 }
+	export enum ModifyCertificateBasedAuthPropertiesX_Amz_Target { 'WorkspacesService.ModifyCertificateBasedAuthProperties' = 'WorkspacesService.ModifyCertificateBasedAuthProperties' }
 
-	export enum ModifyClientPropertiesX_Amz_Target { 'WorkspacesService.ModifyClientProperties' = 0 }
+	export enum ModifyClientPropertiesX_Amz_Target { 'WorkspacesService.ModifyClientProperties' = 'WorkspacesService.ModifyClientProperties' }
 
-	export enum ModifySamlPropertiesX_Amz_Target { 'WorkspacesService.ModifySamlProperties' = 0 }
+	export enum ModifySamlPropertiesX_Amz_Target { 'WorkspacesService.ModifySamlProperties' = 'WorkspacesService.ModifySamlProperties' }
 
-	export enum ModifySelfservicePermissionsX_Amz_Target { 'WorkspacesService.ModifySelfservicePermissions' = 0 }
+	export enum ModifySelfservicePermissionsX_Amz_Target { 'WorkspacesService.ModifySelfservicePermissions' = 'WorkspacesService.ModifySelfservicePermissions' }
 
-	export enum ModifyWorkspaceAccessPropertiesX_Amz_Target { 'WorkspacesService.ModifyWorkspaceAccessProperties' = 0 }
+	export enum ModifyWorkspaceAccessPropertiesX_Amz_Target { 'WorkspacesService.ModifyWorkspaceAccessProperties' = 'WorkspacesService.ModifyWorkspaceAccessProperties' }
 
-	export enum ModifyWorkspaceCreationPropertiesX_Amz_Target { 'WorkspacesService.ModifyWorkspaceCreationProperties' = 0 }
+	export enum ModifyWorkspaceCreationPropertiesX_Amz_Target { 'WorkspacesService.ModifyWorkspaceCreationProperties' = 'WorkspacesService.ModifyWorkspaceCreationProperties' }
 
-	export enum ModifyWorkspacePropertiesX_Amz_Target { 'WorkspacesService.ModifyWorkspaceProperties' = 0 }
+	export enum ModifyWorkspacePropertiesX_Amz_Target { 'WorkspacesService.ModifyWorkspaceProperties' = 'WorkspacesService.ModifyWorkspaceProperties' }
 
-	export enum ModifyWorkspaceStateX_Amz_Target { 'WorkspacesService.ModifyWorkspaceState' = 0 }
+	export enum ModifyWorkspaceStateX_Amz_Target { 'WorkspacesService.ModifyWorkspaceState' = 'WorkspacesService.ModifyWorkspaceState' }
 
-	export enum RebootWorkspacesX_Amz_Target { 'WorkspacesService.RebootWorkspaces' = 0 }
+	export enum RebootWorkspacesX_Amz_Target { 'WorkspacesService.RebootWorkspaces' = 'WorkspacesService.RebootWorkspaces' }
 
-	export enum RebuildWorkspacesX_Amz_Target { 'WorkspacesService.RebuildWorkspaces' = 0 }
+	export enum RebuildWorkspacesX_Amz_Target { 'WorkspacesService.RebuildWorkspaces' = 'WorkspacesService.RebuildWorkspaces' }
 
-	export enum RegisterWorkspaceDirectoryX_Amz_Target { 'WorkspacesService.RegisterWorkspaceDirectory' = 0 }
+	export enum RegisterWorkspaceDirectoryX_Amz_Target { 'WorkspacesService.RegisterWorkspaceDirectory' = 'WorkspacesService.RegisterWorkspaceDirectory' }
 
-	export enum RestoreWorkspaceX_Amz_Target { 'WorkspacesService.RestoreWorkspace' = 0 }
+	export enum RestoreWorkspaceX_Amz_Target { 'WorkspacesService.RestoreWorkspace' = 'WorkspacesService.RestoreWorkspace' }
 
-	export enum RevokeIpRulesX_Amz_Target { 'WorkspacesService.RevokeIpRules' = 0 }
+	export enum RevokeIpRulesX_Amz_Target { 'WorkspacesService.RevokeIpRules' = 'WorkspacesService.RevokeIpRules' }
 
-	export enum StartWorkspacesX_Amz_Target { 'WorkspacesService.StartWorkspaces' = 0 }
+	export enum StartWorkspacesX_Amz_Target { 'WorkspacesService.StartWorkspaces' = 'WorkspacesService.StartWorkspaces' }
 
-	export enum StopWorkspacesX_Amz_Target { 'WorkspacesService.StopWorkspaces' = 0 }
+	export enum StopWorkspacesX_Amz_Target { 'WorkspacesService.StopWorkspaces' = 'WorkspacesService.StopWorkspaces' }
 
-	export enum TerminateWorkspacesX_Amz_Target { 'WorkspacesService.TerminateWorkspaces' = 0 }
+	export enum TerminateWorkspacesX_Amz_Target { 'WorkspacesService.TerminateWorkspaces' = 'WorkspacesService.TerminateWorkspaces' }
 
-	export enum UpdateConnectClientAddInX_Amz_Target { 'WorkspacesService.UpdateConnectClientAddIn' = 0 }
+	export enum UpdateConnectClientAddInX_Amz_Target { 'WorkspacesService.UpdateConnectClientAddIn' = 'WorkspacesService.UpdateConnectClientAddIn' }
 
-	export enum UpdateConnectionAliasPermissionX_Amz_Target { 'WorkspacesService.UpdateConnectionAliasPermission' = 0 }
+	export enum UpdateConnectionAliasPermissionX_Amz_Target { 'WorkspacesService.UpdateConnectionAliasPermission' = 'WorkspacesService.UpdateConnectionAliasPermission' }
 
-	export enum UpdateRulesOfIpGroupX_Amz_Target { 'WorkspacesService.UpdateRulesOfIpGroup' = 0 }
+	export enum UpdateRulesOfIpGroupX_Amz_Target { 'WorkspacesService.UpdateRulesOfIpGroup' = 'WorkspacesService.UpdateRulesOfIpGroup' }
 
-	export enum UpdateWorkspaceBundleX_Amz_Target { 'WorkspacesService.UpdateWorkspaceBundle' = 0 }
+	export enum UpdateWorkspaceBundleX_Amz_Target { 'WorkspacesService.UpdateWorkspaceBundle' = 'WorkspacesService.UpdateWorkspaceBundle' }
 
-	export enum UpdateWorkspaceImagePermissionX_Amz_Target { 'WorkspacesService.UpdateWorkspaceImagePermission' = 0 }
+	export enum UpdateWorkspaceImagePermissionX_Amz_Target { 'WorkspacesService.UpdateWorkspaceImagePermission' = 'WorkspacesService.UpdateWorkspaceImagePermission' }
 
 }
 

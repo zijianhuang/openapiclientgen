@@ -105,7 +105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HumanLoopStatus { InProgress = 0, Failed = 1, Completed = 2, Stopped = 3, Stopping = 4 }
+	export enum HumanLoopStatus { InProgress = 'InProgress', Failed = 'Failed', Completed = 'Completed', Stopped = 'Stopped', Stopping = 'Stopping' }
 
 
 	/** Information about where the human output will be stored. */
@@ -186,7 +186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
+	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 'FreeOfPersonallyIdentifiableInformation', FreeOfAdultContent = 'FreeOfAdultContent' }
 
 	export interface ServiceQuotaExceededException {
 	}
@@ -276,7 +276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { Ascending = 0, Descending = 1 }
+	export enum SortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 	export interface ListHumanLoopsRequest {
 	}

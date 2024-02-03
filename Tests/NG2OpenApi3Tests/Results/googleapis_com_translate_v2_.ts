@@ -350,7 +350,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Language_translations_listFormat { html = 0, text = 1 }
+	export enum Language_translations_listFormat { html = 'html', text = 'text' }
 
 }
 

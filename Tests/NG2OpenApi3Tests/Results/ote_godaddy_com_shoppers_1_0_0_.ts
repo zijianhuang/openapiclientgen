@@ -171,7 +171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PasswordErrorCode { PW_BLACK_LIST = 0, PW_TOO_SHORT = 1, PW_TOO_LONG = 2, PW_MISSING_UC = 3, PW_MISSING_NUM = 4, PW_RECENTLY_USED = 5, PW_NOT_UNIQUE = 6 }
+	export enum PasswordErrorCode { PW_BLACK_LIST = 'PW_BLACK_LIST', PW_TOO_SHORT = 'PW_TOO_SHORT', PW_TOO_LONG = 'PW_TOO_LONG', PW_MISSING_UC = 'PW_MISSING_UC', PW_MISSING_NUM = 'PW_MISSING_NUM', PW_RECENTLY_USED = 'PW_RECENTLY_USED', PW_NOT_UNIQUE = 'PW_NOT_UNIQUE' }
 
 	export interface Secret {
 
@@ -286,7 +286,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShopperStatusBillingState { ABANDONED = 0, INACTIVE = 1, ACTIVE = 2 }
+	export enum ShopperStatusBillingState { ABANDONED = 'ABANDONED', INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE' }
 
 	export interface ShopperUpdate {
 		email?: string | null;
@@ -317,7 +317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShopperUpdateMarketId { 'da-DK' = 0, 'de-AT' = 1, 'de-CH' = 2, 'de-DE' = 3, 'el-GR' = 4, 'en-AE' = 5, 'en-AU' = 6, 'en-CA' = 7, 'en-GB' = 8, 'en-HK' = 9, 'en-IE' = 10, 'en-IL' = 11, 'en-IN' = 12, 'en-MY' = 13, 'en-NZ' = 14, 'en-PH' = 15, 'en-PK' = 16, 'en-SG' = 17, 'en-US' = 18, 'en-ZA' = 19, 'es-AR' = 20, 'es-CL' = 21, 'es-CO' = 22, 'es-ES' = 23, 'es-MX' = 24, 'es-PE' = 25, 'es-US' = 26, 'es-VE' = 27, 'fi-FI' = 28, 'fr-BE' = 29, 'fr-CA' = 30, 'fr-CH' = 31, 'fr-FR' = 32, 'hi-IN' = 33, 'id-ID' = 34, 'it-CH' = 35, 'it-IT' = 36, 'ja-JP' = 37, 'ko-KR' = 38, 'mr-IN' = 39, 'nb-NO' = 40, 'nl-BE' = 41, 'nl-NL' = 42, 'pl-PL' = 43, 'pt-BR' = 44, 'pt-PT' = 45, 'ru-RU' = 46, 'sv-SE' = 47, 'ta-IN' = 48, 'th-TH' = 49, 'tr-TR' = 50, 'uk-UA' = 51, 'vi-VN' = 52, 'zh-HK' = 53, 'zh-SG' = 54, 'zh-TW' = 55 }
+	export enum ShopperUpdateMarketId { 'da-DK' = 'da-DK', 'de-AT' = 'de-AT', 'de-CH' = 'de-CH', 'de-DE' = 'de-DE', 'el-GR' = 'el-GR', 'en-AE' = 'en-AE', 'en-AU' = 'en-AU', 'en-CA' = 'en-CA', 'en-GB' = 'en-GB', 'en-HK' = 'en-HK', 'en-IE' = 'en-IE', 'en-IL' = 'en-IL', 'en-IN' = 'en-IN', 'en-MY' = 'en-MY', 'en-NZ' = 'en-NZ', 'en-PH' = 'en-PH', 'en-PK' = 'en-PK', 'en-SG' = 'en-SG', 'en-US' = 'en-US', 'en-ZA' = 'en-ZA', 'es-AR' = 'es-AR', 'es-CL' = 'es-CL', 'es-CO' = 'es-CO', 'es-ES' = 'es-ES', 'es-MX' = 'es-MX', 'es-PE' = 'es-PE', 'es-US' = 'es-US', 'es-VE' = 'es-VE', 'fi-FI' = 'fi-FI', 'fr-BE' = 'fr-BE', 'fr-CA' = 'fr-CA', 'fr-CH' = 'fr-CH', 'fr-FR' = 'fr-FR', 'hi-IN' = 'hi-IN', 'id-ID' = 'id-ID', 'it-CH' = 'it-CH', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'ko-KR' = 'ko-KR', 'mr-IN' = 'mr-IN', 'nb-NO' = 'nb-NO', 'nl-BE' = 'nl-BE', 'nl-NL' = 'nl-NL', 'pl-PL' = 'pl-PL', 'pt-BR' = 'pt-BR', 'pt-PT' = 'pt-PT', 'ru-RU' = 'ru-RU', 'sv-SE' = 'sv-SE', 'ta-IN' = 'ta-IN', 'th-TH' = 'th-TH', 'tr-TR' = 'tr-TR', 'uk-UA' = 'uk-UA', 'vi-VN' = 'vi-VN', 'zh-HK' = 'zh-HK', 'zh-SG' = 'zh-SG', 'zh-TW' = 'zh-TW' }
 
 	export interface SubaccountCreate {
 

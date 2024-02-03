@@ -207,9 +207,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BlockchainMemberPropertiesProtocol { NotSpecified = 0, Parity = 1, Quorum = 2, Corda = 3 }
+	export enum BlockchainMemberPropertiesProtocol { NotSpecified = 'NotSpecified', Parity = 'Parity', Quorum = 'Quorum', Corda = 'Corda' }
 
-	export enum BlockchainMemberPropertiesProvisioningState { NotSpecified = 0, Updating = 1, Deleting = 2, Succeeded = 3, Failed = 4, Stale = 5 }
+	export enum BlockchainMemberPropertiesProvisioningState { NotSpecified = 'NotSpecified', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Stale = 'Stale' }
 
 
 	/** Payload of the blockchain member nodes Sku for a blockchain member. */
@@ -508,7 +508,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NameAvailabilityReason { NotSpecified = 0, AlreadyExists = 1, Invalid = 2 }
+	export enum NameAvailabilityReason { NotSpecified = 'NotSpecified', AlreadyExists = 'AlreadyExists', Invalid = 'Invalid' }
 
 
 	/** Name availability request payload which is exposed in the request of the resource provider. */
@@ -897,7 +897,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionNodePropertiesProvisioningState { NotSpecified = 0, Updating = 1, Deleting = 2, Succeeded = 3, Failed = 4 }
+	export enum TransactionNodePropertiesProvisioningState { NotSpecified = 'NotSpecified', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Collection of transaction node payload which is exposed in the request/response of the resource provider. */
@@ -1252,7 +1252,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Operations_ListApi_version { '2018-06-01-preview' = 0 }
+	export enum Operations_ListApi_version { '2018-06-01-preview' = '2018-06-01-preview' }
 
 }
 

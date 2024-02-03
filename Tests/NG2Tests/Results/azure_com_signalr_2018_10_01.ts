@@ -455,7 +455,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateKeyParametersKeyType { Primary = 0, Secondary = 1 }
+	export enum RegenerateKeyParametersKeyType { Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** The core properties of ARM resources. */
@@ -565,7 +565,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSkuTier { Free = 0, Basic = 1, Standard = 2, Premium = 3 }
+	export enum ResourceSkuTier { Free = 'Free', Basic = 'Basic', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** Cross-Origin Resource Sharing (CORS) settings. */
@@ -678,7 +678,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SignalRFeatureFlag { ServiceMode = 0, EnableConnectivityLogs = 1 }
+	export enum SignalRFeatureFlag { ServiceMode = 'ServiceMode', EnableConnectivityLogs = 'EnableConnectivityLogs' }
 
 
 	/**
@@ -813,7 +813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SignalRPropertiesProvisioningState { Unknown = 0, Succeeded = 1, Failed = 2, Canceled = 3, Running = 4, Creating = 5, Updating = 6, Deleting = 7, Moving = 8 }
+	export enum SignalRPropertiesProvisioningState { Unknown = 'Unknown', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', Running = 'Running', Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Moving = 'Moving' }
 
 
 	/** A class represent a SignalR service resource. */

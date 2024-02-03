@@ -204,9 +204,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataType { STRING = 0, INTEGER = 1, FLOAT = 2, BOOLEAN = 3, DATETIME = 4 }
+	export enum DataType { STRING = 'STRING', INTEGER = 'INTEGER', FLOAT = 'FLOAT', BOOLEAN = 'BOOLEAN', DATETIME = 'DATETIME' }
 
-	export enum DataSource { EVENT = 0, MODEL_SCORE = 1, EXTERNAL_MODEL_SCORE = 2 }
+	export enum DataSource { EVENT = 'EVENT', MODEL_SCORE = 'MODEL_SCORE', EXTERNAL_MODEL_SCORE = 'EXTERNAL_MODEL_SCORE' }
 
 
 	/** Provides the error of the batch get variable API. */
@@ -449,7 +449,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectorVersionStatus { DRAFT = 0, ACTIVE = 1, INACTIVE = 2 }
+	export enum DetectorVersionStatus { DRAFT = 'DRAFT', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface CreateDetectorVersionRequest {
 
@@ -553,9 +553,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelTypeEnum { ONLINE_FRAUD_INSIGHTS = 0, TRANSACTION_FRAUD_INSIGHTS = 1, ACCOUNT_TAKEOVER_INSIGHTS = 2 }
+	export enum ModelTypeEnum { ONLINE_FRAUD_INSIGHTS = 'ONLINE_FRAUD_INSIGHTS', TRANSACTION_FRAUD_INSIGHTS = 'TRANSACTION_FRAUD_INSIGHTS', ACCOUNT_TAKEOVER_INSIGHTS = 'ACCOUNT_TAKEOVER_INSIGHTS' }
 
-	export enum RuleExecutionMode { ALL_MATCHED = 0, FIRST_MATCHED = 1 }
+	export enum RuleExecutionMode { ALL_MATCHED = 'ALL_MATCHED', FIRST_MATCHED = 'FIRST_MATCHED' }
 
 	export interface CreateListResult {
 	}
@@ -696,7 +696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingDataSourceEnum { EXTERNAL_EVENTS = 0, INGESTED_EVENTS = 1 }
+	export enum TrainingDataSourceEnum { EXTERNAL_EVENTS = 'EXTERNAL_EVENTS', INGESTED_EVENTS = 'INGESTED_EVENTS' }
 
 
 	/** The training data schema. */
@@ -746,7 +746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnlabeledEventsTreatment { IGNORE = 0, FRAUD = 1, LEGIT = 2, AUTO = 3 }
+	export enum UnlabeledEventsTreatment { IGNORE = 'IGNORE', FRAUD = 'FRAUD', LEGIT = 'LEGIT', AUTO = 'AUTO' }
 
 
 	/** Details for the external events data used for model version training. */
@@ -877,7 +877,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Language { DETECTORPL = 0 }
+	export enum Language { DETECTORPL = 'DETECTORPL' }
 
 	export interface CreateVariableResult {
 	}
@@ -2101,7 +2101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AsyncJobStatus { IN_PROGRESS_INITIALIZING = 0, IN_PROGRESS = 1, CANCEL_IN_PROGRESS = 2, CANCELED = 3, COMPLETE = 4, FAILED = 5 }
+	export enum AsyncJobStatus { IN_PROGRESS_INITIALIZING = 'IN_PROGRESS_INITIALIZING', IN_PROGRESS = 'IN_PROGRESS', CANCEL_IN_PROGRESS = 'CANCEL_IN_PROGRESS', CANCELED = 'CANCELED', COMPLETE = 'COMPLETE', FAILED = 'FAILED' }
 
 	export interface GetBatchImportJobsRequest {
 		jobId?: string;
@@ -2632,7 +2632,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelSource { SAGEMAKER = 0 }
+	export enum ModelSource { SAGEMAKER = 'SAGEMAKER' }
 
 	export interface ExternalModelPredictionMap {
 	}
@@ -3056,7 +3056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventIngestion { ENABLED = 0, DISABLED = 1 }
+	export enum EventIngestion { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Data about the stored events. */
@@ -3211,7 +3211,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelInputDataFormat { TEXT_CSV = 0, APPLICATION_JSON = 1 }
+	export enum ModelInputDataFormat { TEXT_CSV = 'TEXT_CSV', APPLICATION_JSON = 'APPLICATION_JSON' }
 
 
 	/** Provides the Amazon Sagemaker model output configuration. */
@@ -3236,7 +3236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelOutputDataFormat { TEXT_CSV = 0, APPLICATION_JSONLINES = 1 }
+	export enum ModelOutputDataFormat { TEXT_CSV = 'TEXT_CSV', APPLICATION_JSONLINES = 'APPLICATION_JSONLINES' }
 
 	export interface JsonKeyToVariableMap {
 	}
@@ -3258,7 +3258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelEndpointStatus { ASSOCIATED = 0, DISSOCIATED = 1 }
+	export enum ModelEndpointStatus { ASSOCIATED = 'ASSOCIATED', DISSOCIATED = 'DISSOCIATED' }
 
 	export interface GetExternalModelsRequest {
 		modelEndpoint?: string;
@@ -4519,7 +4519,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListUpdateMode { REPLACE = 0, APPEND = 1, REMOVE = 2 }
+	export enum ListUpdateMode { REPLACE = 'REPLACE', APPEND = 'APPEND', REMOVE = 'REMOVE' }
 
 	export interface UpdateModelResult {
 	}
@@ -4662,7 +4662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelVersionStatus { ACTIVE = 0, INACTIVE = 1, TRAINING_CANCELLED = 2 }
+	export enum ModelVersionStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', TRAINING_CANCELLED = 'TRAINING_CANCELLED' }
 
 	export interface UpdateRuleMetadataResult {
 	}
@@ -5490,151 +5490,151 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchCreateVariableX_Amz_Target { 'AWSHawksNestServiceFacade.BatchCreateVariable' = 0 }
+	export enum BatchCreateVariableX_Amz_Target { 'AWSHawksNestServiceFacade.BatchCreateVariable' = 'AWSHawksNestServiceFacade.BatchCreateVariable' }
 
-	export enum BatchGetVariableX_Amz_Target { 'AWSHawksNestServiceFacade.BatchGetVariable' = 0 }
+	export enum BatchGetVariableX_Amz_Target { 'AWSHawksNestServiceFacade.BatchGetVariable' = 'AWSHawksNestServiceFacade.BatchGetVariable' }
 
-	export enum CancelBatchImportJobX_Amz_Target { 'AWSHawksNestServiceFacade.CancelBatchImportJob' = 0 }
+	export enum CancelBatchImportJobX_Amz_Target { 'AWSHawksNestServiceFacade.CancelBatchImportJob' = 'AWSHawksNestServiceFacade.CancelBatchImportJob' }
 
-	export enum CancelBatchPredictionJobX_Amz_Target { 'AWSHawksNestServiceFacade.CancelBatchPredictionJob' = 0 }
+	export enum CancelBatchPredictionJobX_Amz_Target { 'AWSHawksNestServiceFacade.CancelBatchPredictionJob' = 'AWSHawksNestServiceFacade.CancelBatchPredictionJob' }
 
-	export enum CreateBatchImportJobX_Amz_Target { 'AWSHawksNestServiceFacade.CreateBatchImportJob' = 0 }
+	export enum CreateBatchImportJobX_Amz_Target { 'AWSHawksNestServiceFacade.CreateBatchImportJob' = 'AWSHawksNestServiceFacade.CreateBatchImportJob' }
 
-	export enum CreateBatchPredictionJobX_Amz_Target { 'AWSHawksNestServiceFacade.CreateBatchPredictionJob' = 0 }
+	export enum CreateBatchPredictionJobX_Amz_Target { 'AWSHawksNestServiceFacade.CreateBatchPredictionJob' = 'AWSHawksNestServiceFacade.CreateBatchPredictionJob' }
 
-	export enum CreateDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.CreateDetectorVersion' = 0 }
+	export enum CreateDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.CreateDetectorVersion' = 'AWSHawksNestServiceFacade.CreateDetectorVersion' }
 
-	export enum CreateListX_Amz_Target { 'AWSHawksNestServiceFacade.CreateList' = 0 }
+	export enum CreateListX_Amz_Target { 'AWSHawksNestServiceFacade.CreateList' = 'AWSHawksNestServiceFacade.CreateList' }
 
-	export enum CreateModelX_Amz_Target { 'AWSHawksNestServiceFacade.CreateModel' = 0 }
+	export enum CreateModelX_Amz_Target { 'AWSHawksNestServiceFacade.CreateModel' = 'AWSHawksNestServiceFacade.CreateModel' }
 
-	export enum CreateModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.CreateModelVersion' = 0 }
+	export enum CreateModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.CreateModelVersion' = 'AWSHawksNestServiceFacade.CreateModelVersion' }
 
-	export enum CreateRuleX_Amz_Target { 'AWSHawksNestServiceFacade.CreateRule' = 0 }
+	export enum CreateRuleX_Amz_Target { 'AWSHawksNestServiceFacade.CreateRule' = 'AWSHawksNestServiceFacade.CreateRule' }
 
-	export enum CreateVariableX_Amz_Target { 'AWSHawksNestServiceFacade.CreateVariable' = 0 }
+	export enum CreateVariableX_Amz_Target { 'AWSHawksNestServiceFacade.CreateVariable' = 'AWSHawksNestServiceFacade.CreateVariable' }
 
-	export enum DeleteBatchImportJobX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteBatchImportJob' = 0 }
+	export enum DeleteBatchImportJobX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteBatchImportJob' = 'AWSHawksNestServiceFacade.DeleteBatchImportJob' }
 
-	export enum DeleteBatchPredictionJobX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteBatchPredictionJob' = 0 }
+	export enum DeleteBatchPredictionJobX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteBatchPredictionJob' = 'AWSHawksNestServiceFacade.DeleteBatchPredictionJob' }
 
-	export enum DeleteDetectorX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteDetector' = 0 }
+	export enum DeleteDetectorX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteDetector' = 'AWSHawksNestServiceFacade.DeleteDetector' }
 
-	export enum DeleteDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteDetectorVersion' = 0 }
+	export enum DeleteDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteDetectorVersion' = 'AWSHawksNestServiceFacade.DeleteDetectorVersion' }
 
-	export enum DeleteEntityTypeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEntityType' = 0 }
+	export enum DeleteEntityTypeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEntityType' = 'AWSHawksNestServiceFacade.DeleteEntityType' }
 
-	export enum DeleteEventX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEvent' = 0 }
+	export enum DeleteEventX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEvent' = 'AWSHawksNestServiceFacade.DeleteEvent' }
 
-	export enum DeleteEventTypeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEventType' = 0 }
+	export enum DeleteEventTypeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEventType' = 'AWSHawksNestServiceFacade.DeleteEventType' }
 
-	export enum DeleteEventsByEventTypeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEventsByEventType' = 0 }
+	export enum DeleteEventsByEventTypeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteEventsByEventType' = 'AWSHawksNestServiceFacade.DeleteEventsByEventType' }
 
-	export enum DeleteExternalModelX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteExternalModel' = 0 }
+	export enum DeleteExternalModelX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteExternalModel' = 'AWSHawksNestServiceFacade.DeleteExternalModel' }
 
-	export enum DeleteLabelX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteLabel' = 0 }
+	export enum DeleteLabelX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteLabel' = 'AWSHawksNestServiceFacade.DeleteLabel' }
 
-	export enum DeleteListX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteList' = 0 }
+	export enum DeleteListX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteList' = 'AWSHawksNestServiceFacade.DeleteList' }
 
-	export enum DeleteModelX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteModel' = 0 }
+	export enum DeleteModelX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteModel' = 'AWSHawksNestServiceFacade.DeleteModel' }
 
-	export enum DeleteModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteModelVersion' = 0 }
+	export enum DeleteModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteModelVersion' = 'AWSHawksNestServiceFacade.DeleteModelVersion' }
 
-	export enum DeleteOutcomeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteOutcome' = 0 }
+	export enum DeleteOutcomeX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteOutcome' = 'AWSHawksNestServiceFacade.DeleteOutcome' }
 
-	export enum DeleteRuleX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteRule' = 0 }
+	export enum DeleteRuleX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteRule' = 'AWSHawksNestServiceFacade.DeleteRule' }
 
-	export enum DeleteVariableX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteVariable' = 0 }
+	export enum DeleteVariableX_Amz_Target { 'AWSHawksNestServiceFacade.DeleteVariable' = 'AWSHawksNestServiceFacade.DeleteVariable' }
 
-	export enum DescribeDetectorX_Amz_Target { 'AWSHawksNestServiceFacade.DescribeDetector' = 0 }
+	export enum DescribeDetectorX_Amz_Target { 'AWSHawksNestServiceFacade.DescribeDetector' = 'AWSHawksNestServiceFacade.DescribeDetector' }
 
-	export enum DescribeModelVersionsX_Amz_Target { 'AWSHawksNestServiceFacade.DescribeModelVersions' = 0 }
+	export enum DescribeModelVersionsX_Amz_Target { 'AWSHawksNestServiceFacade.DescribeModelVersions' = 'AWSHawksNestServiceFacade.DescribeModelVersions' }
 
-	export enum GetBatchImportJobsX_Amz_Target { 'AWSHawksNestServiceFacade.GetBatchImportJobs' = 0 }
+	export enum GetBatchImportJobsX_Amz_Target { 'AWSHawksNestServiceFacade.GetBatchImportJobs' = 'AWSHawksNestServiceFacade.GetBatchImportJobs' }
 
-	export enum GetBatchPredictionJobsX_Amz_Target { 'AWSHawksNestServiceFacade.GetBatchPredictionJobs' = 0 }
+	export enum GetBatchPredictionJobsX_Amz_Target { 'AWSHawksNestServiceFacade.GetBatchPredictionJobs' = 'AWSHawksNestServiceFacade.GetBatchPredictionJobs' }
 
-	export enum GetDeleteEventsByEventTypeStatusX_Amz_Target { 'AWSHawksNestServiceFacade.GetDeleteEventsByEventTypeStatus' = 0 }
+	export enum GetDeleteEventsByEventTypeStatusX_Amz_Target { 'AWSHawksNestServiceFacade.GetDeleteEventsByEventTypeStatus' = 'AWSHawksNestServiceFacade.GetDeleteEventsByEventTypeStatus' }
 
-	export enum GetDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.GetDetectorVersion' = 0 }
+	export enum GetDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.GetDetectorVersion' = 'AWSHawksNestServiceFacade.GetDetectorVersion' }
 
-	export enum GetDetectorsX_Amz_Target { 'AWSHawksNestServiceFacade.GetDetectors' = 0 }
+	export enum GetDetectorsX_Amz_Target { 'AWSHawksNestServiceFacade.GetDetectors' = 'AWSHawksNestServiceFacade.GetDetectors' }
 
-	export enum GetEntityTypesX_Amz_Target { 'AWSHawksNestServiceFacade.GetEntityTypes' = 0 }
+	export enum GetEntityTypesX_Amz_Target { 'AWSHawksNestServiceFacade.GetEntityTypes' = 'AWSHawksNestServiceFacade.GetEntityTypes' }
 
-	export enum GetEventX_Amz_Target { 'AWSHawksNestServiceFacade.GetEvent' = 0 }
+	export enum GetEventX_Amz_Target { 'AWSHawksNestServiceFacade.GetEvent' = 'AWSHawksNestServiceFacade.GetEvent' }
 
-	export enum GetEventPredictionX_Amz_Target { 'AWSHawksNestServiceFacade.GetEventPrediction' = 0 }
+	export enum GetEventPredictionX_Amz_Target { 'AWSHawksNestServiceFacade.GetEventPrediction' = 'AWSHawksNestServiceFacade.GetEventPrediction' }
 
-	export enum GetEventPredictionMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.GetEventPredictionMetadata' = 0 }
+	export enum GetEventPredictionMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.GetEventPredictionMetadata' = 'AWSHawksNestServiceFacade.GetEventPredictionMetadata' }
 
-	export enum GetEventTypesX_Amz_Target { 'AWSHawksNestServiceFacade.GetEventTypes' = 0 }
+	export enum GetEventTypesX_Amz_Target { 'AWSHawksNestServiceFacade.GetEventTypes' = 'AWSHawksNestServiceFacade.GetEventTypes' }
 
-	export enum GetExternalModelsX_Amz_Target { 'AWSHawksNestServiceFacade.GetExternalModels' = 0 }
+	export enum GetExternalModelsX_Amz_Target { 'AWSHawksNestServiceFacade.GetExternalModels' = 'AWSHawksNestServiceFacade.GetExternalModels' }
 
-	export enum GetKMSEncryptionKeyX_Amz_Target { 'AWSHawksNestServiceFacade.GetKMSEncryptionKey' = 0 }
+	export enum GetKMSEncryptionKeyX_Amz_Target { 'AWSHawksNestServiceFacade.GetKMSEncryptionKey' = 'AWSHawksNestServiceFacade.GetKMSEncryptionKey' }
 
-	export enum GetLabelsX_Amz_Target { 'AWSHawksNestServiceFacade.GetLabels' = 0 }
+	export enum GetLabelsX_Amz_Target { 'AWSHawksNestServiceFacade.GetLabels' = 'AWSHawksNestServiceFacade.GetLabels' }
 
-	export enum GetListElementsX_Amz_Target { 'AWSHawksNestServiceFacade.GetListElements' = 0 }
+	export enum GetListElementsX_Amz_Target { 'AWSHawksNestServiceFacade.GetListElements' = 'AWSHawksNestServiceFacade.GetListElements' }
 
-	export enum GetListsMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.GetListsMetadata' = 0 }
+	export enum GetListsMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.GetListsMetadata' = 'AWSHawksNestServiceFacade.GetListsMetadata' }
 
-	export enum GetModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.GetModelVersion' = 0 }
+	export enum GetModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.GetModelVersion' = 'AWSHawksNestServiceFacade.GetModelVersion' }
 
-	export enum GetModelsX_Amz_Target { 'AWSHawksNestServiceFacade.GetModels' = 0 }
+	export enum GetModelsX_Amz_Target { 'AWSHawksNestServiceFacade.GetModels' = 'AWSHawksNestServiceFacade.GetModels' }
 
-	export enum GetOutcomesX_Amz_Target { 'AWSHawksNestServiceFacade.GetOutcomes' = 0 }
+	export enum GetOutcomesX_Amz_Target { 'AWSHawksNestServiceFacade.GetOutcomes' = 'AWSHawksNestServiceFacade.GetOutcomes' }
 
-	export enum GetRulesX_Amz_Target { 'AWSHawksNestServiceFacade.GetRules' = 0 }
+	export enum GetRulesX_Amz_Target { 'AWSHawksNestServiceFacade.GetRules' = 'AWSHawksNestServiceFacade.GetRules' }
 
-	export enum GetVariablesX_Amz_Target { 'AWSHawksNestServiceFacade.GetVariables' = 0 }
+	export enum GetVariablesX_Amz_Target { 'AWSHawksNestServiceFacade.GetVariables' = 'AWSHawksNestServiceFacade.GetVariables' }
 
-	export enum ListEventPredictionsX_Amz_Target { 'AWSHawksNestServiceFacade.ListEventPredictions' = 0 }
+	export enum ListEventPredictionsX_Amz_Target { 'AWSHawksNestServiceFacade.ListEventPredictions' = 'AWSHawksNestServiceFacade.ListEventPredictions' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSHawksNestServiceFacade.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSHawksNestServiceFacade.ListTagsForResource' = 'AWSHawksNestServiceFacade.ListTagsForResource' }
 
-	export enum PutDetectorX_Amz_Target { 'AWSHawksNestServiceFacade.PutDetector' = 0 }
+	export enum PutDetectorX_Amz_Target { 'AWSHawksNestServiceFacade.PutDetector' = 'AWSHawksNestServiceFacade.PutDetector' }
 
-	export enum PutEntityTypeX_Amz_Target { 'AWSHawksNestServiceFacade.PutEntityType' = 0 }
+	export enum PutEntityTypeX_Amz_Target { 'AWSHawksNestServiceFacade.PutEntityType' = 'AWSHawksNestServiceFacade.PutEntityType' }
 
-	export enum PutEventTypeX_Amz_Target { 'AWSHawksNestServiceFacade.PutEventType' = 0 }
+	export enum PutEventTypeX_Amz_Target { 'AWSHawksNestServiceFacade.PutEventType' = 'AWSHawksNestServiceFacade.PutEventType' }
 
-	export enum PutExternalModelX_Amz_Target { 'AWSHawksNestServiceFacade.PutExternalModel' = 0 }
+	export enum PutExternalModelX_Amz_Target { 'AWSHawksNestServiceFacade.PutExternalModel' = 'AWSHawksNestServiceFacade.PutExternalModel' }
 
-	export enum PutKMSEncryptionKeyX_Amz_Target { 'AWSHawksNestServiceFacade.PutKMSEncryptionKey' = 0 }
+	export enum PutKMSEncryptionKeyX_Amz_Target { 'AWSHawksNestServiceFacade.PutKMSEncryptionKey' = 'AWSHawksNestServiceFacade.PutKMSEncryptionKey' }
 
-	export enum PutLabelX_Amz_Target { 'AWSHawksNestServiceFacade.PutLabel' = 0 }
+	export enum PutLabelX_Amz_Target { 'AWSHawksNestServiceFacade.PutLabel' = 'AWSHawksNestServiceFacade.PutLabel' }
 
-	export enum PutOutcomeX_Amz_Target { 'AWSHawksNestServiceFacade.PutOutcome' = 0 }
+	export enum PutOutcomeX_Amz_Target { 'AWSHawksNestServiceFacade.PutOutcome' = 'AWSHawksNestServiceFacade.PutOutcome' }
 
-	export enum SendEventX_Amz_Target { 'AWSHawksNestServiceFacade.SendEvent' = 0 }
+	export enum SendEventX_Amz_Target { 'AWSHawksNestServiceFacade.SendEvent' = 'AWSHawksNestServiceFacade.SendEvent' }
 
-	export enum TagResourceX_Amz_Target { 'AWSHawksNestServiceFacade.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSHawksNestServiceFacade.TagResource' = 'AWSHawksNestServiceFacade.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSHawksNestServiceFacade.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSHawksNestServiceFacade.UntagResource' = 'AWSHawksNestServiceFacade.UntagResource' }
 
-	export enum UpdateDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateDetectorVersion' = 0 }
+	export enum UpdateDetectorVersionX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateDetectorVersion' = 'AWSHawksNestServiceFacade.UpdateDetectorVersion' }
 
-	export enum UpdateDetectorVersionMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateDetectorVersionMetadata' = 0 }
+	export enum UpdateDetectorVersionMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateDetectorVersionMetadata' = 'AWSHawksNestServiceFacade.UpdateDetectorVersionMetadata' }
 
-	export enum UpdateDetectorVersionStatusX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateDetectorVersionStatus' = 0 }
+	export enum UpdateDetectorVersionStatusX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateDetectorVersionStatus' = 'AWSHawksNestServiceFacade.UpdateDetectorVersionStatus' }
 
-	export enum UpdateEventLabelX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateEventLabel' = 0 }
+	export enum UpdateEventLabelX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateEventLabel' = 'AWSHawksNestServiceFacade.UpdateEventLabel' }
 
-	export enum UpdateListX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateList' = 0 }
+	export enum UpdateListX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateList' = 'AWSHawksNestServiceFacade.UpdateList' }
 
-	export enum UpdateModelX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateModel' = 0 }
+	export enum UpdateModelX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateModel' = 'AWSHawksNestServiceFacade.UpdateModel' }
 
-	export enum UpdateModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateModelVersion' = 0 }
+	export enum UpdateModelVersionX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateModelVersion' = 'AWSHawksNestServiceFacade.UpdateModelVersion' }
 
-	export enum UpdateModelVersionStatusX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateModelVersionStatus' = 0 }
+	export enum UpdateModelVersionStatusX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateModelVersionStatus' = 'AWSHawksNestServiceFacade.UpdateModelVersionStatus' }
 
-	export enum UpdateRuleMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateRuleMetadata' = 0 }
+	export enum UpdateRuleMetadataX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateRuleMetadata' = 'AWSHawksNestServiceFacade.UpdateRuleMetadata' }
 
-	export enum UpdateRuleVersionX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateRuleVersion' = 0 }
+	export enum UpdateRuleVersionX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateRuleVersion' = 'AWSHawksNestServiceFacade.UpdateRuleVersion' }
 
-	export enum UpdateVariableX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateVariable' = 0 }
+	export enum UpdateVariableX_Amz_Target { 'AWSHawksNestServiceFacade.UpdateVariable' = 'AWSHawksNestServiceFacade.UpdateVariable' }
 
 }
 

@@ -70,7 +70,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingLevel { CRITICAL = 0, ERROR = 1, WARNING = 2, INFO = 3, DEBUG = 4 }
+	export enum LoggingLevel { CRITICAL = 'CRITICAL', ERROR = 'ERROR', WARNING = 'WARNING', INFO = 'INFO', DEBUG = 'DEBUG' }
 
 	export interface ValidationException {
 	}
@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateStatus { SUCCESS = 0, PENDING = 1, FAILED = 2 }
+	export enum UpdateStatus { SUCCESS = 'SUCCESS', PENDING = 'PENDING', FAILED = 'FAILED' }
 
 
 	/** Describes the Apache Airflow log types that are published to CloudWatch Logs. */
@@ -341,7 +341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentStatus { CREATING = 0, CREATE_FAILED = 1, AVAILABLE = 2, UPDATING = 3, DELETING = 4, DELETED = 5, UNAVAILABLE = 6, UPDATE_FAILED = 7, ROLLING_BACK = 8, CREATING_SNAPSHOT = 9 }
+	export enum EnvironmentStatus { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', AVAILABLE = 'AVAILABLE', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', UNAVAILABLE = 'UNAVAILABLE', UPDATE_FAILED = 'UPDATE_FAILED', ROLLING_BACK = 'ROLLING_BACK', CREATING_SNAPSHOT = 'CREATING_SNAPSHOT' }
 
 	export interface TagMap {
 	}
@@ -353,7 +353,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebserverAccessMode { PRIVATE_ONLY = 0, PUBLIC_ONLY = 1 }
+	export enum WebserverAccessMode { PRIVATE_ONLY = 'PRIVATE_ONLY', PUBLIC_ONLY = 'PUBLIC_ONLY' }
 
 	export interface ListEnvironmentsOutput {
 
@@ -482,7 +482,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Unit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
+	export enum Unit { Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', Count = 'Count', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second', None = 'None' }
 
 	export interface TagResourceOutput {
 	}

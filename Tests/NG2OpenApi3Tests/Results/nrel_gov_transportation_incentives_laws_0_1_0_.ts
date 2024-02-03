@@ -765,11 +765,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Transportation_incentives_laws_allOutput_format { json = 0, xml = 1, csv = 2 }
+	export enum Transportation_incentives_laws_allOutput_format { json = 'json', xml = 'xml', csv = 'csv' }
 
-	export enum Transportation_incentives_laws_categoriesOutput_format { json = 0, xml = 1 }
+	export enum Transportation_incentives_laws_categoriesOutput_format { json = 'json', xml = 'xml' }
 
-	export enum Transportation_incentives_laws_categoriesType { tech = 0, user = 1, regulation = 2, incentive = 3 }
+	export enum Transportation_incentives_laws_categoriesType { tech = 'tech', user = 'user', regulation = 'regulation', incentive = 'incentive' }
 
 }
 

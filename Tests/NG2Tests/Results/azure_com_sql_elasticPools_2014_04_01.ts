@@ -103,9 +103,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ElasticPoolPropertiesEdition { Basic = 0, Standard = 1, Premium = 2, GeneralPurpose = 3, BusinessCritical = 4 }
+	export enum ElasticPoolPropertiesEdition { Basic = 'Basic', Standard = 'Standard', Premium = 'Premium', GeneralPurpose = 'GeneralPurpose', BusinessCritical = 'BusinessCritical' }
 
-	export enum ElasticPoolPropertiesState { Creating = 0, Ready = 1, Disabled = 2 }
+	export enum ElasticPoolPropertiesState { Creating = 'Creating', Ready = 'Ready', Disabled = 'Disabled' }
 
 	export interface ElasticPoolUpdate {
 	}

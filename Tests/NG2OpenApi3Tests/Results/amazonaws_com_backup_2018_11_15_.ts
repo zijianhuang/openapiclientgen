@@ -285,7 +285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionType { STRINGEQUALS = 0 }
+	export enum ConditionType { STRINGEQUALS = 'STRINGEQUALS' }
 
 
 	/** Contains information about which resources to include or exclude from a backup plan using their tags. Conditions are case sensitive. */
@@ -459,7 +459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LegalHoldStatus { CREATING = 0, ACTIVE = 1, CANCELING = 2, CANCELED = 3 }
+	export enum LegalHoldStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', CANCELING = 'CANCELING', CANCELED = 'CANCELED' }
 
 
 	/** This specifies criteria to assign a set of resources, such as resource types or backup vaults. */
@@ -648,7 +648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupJobState { CREATED = 0, PENDING = 1, RUNNING = 2, ABORTING = 3, ABORTED = 4, COMPLETED = 5, FAILED = 6, EXPIRED = 7, PARTIAL = 8 }
+	export enum BackupJobState { CREATED = 'CREATED', PENDING = 'PENDING', RUNNING = 'RUNNING', ABORTING = 'ABORTING', ABORTED = 'ABORTED', COMPLETED = 'COMPLETED', FAILED = 'FAILED', EXPIRED = 'EXPIRED', PARTIAL = 'PARTIAL' }
 
 
 	/** Contains information about the backup plan and rule that Backup used to initiate the recovery point backup. */
@@ -822,7 +822,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CopyJobState { CREATED = 0, RUNNING = 1, COMPLETED = 2, FAILED = 3, PARTIAL = 4 }
+	export enum CopyJobState { CREATED = 'CREATED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', PARTIAL = 'PARTIAL' }
 
 	export interface CopyJobChildJobsInState {
 	}
@@ -985,7 +985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecoveryPointStatus { COMPLETED = 0, PARTIAL = 1, DELETING = 2, EXPIRED = 3 }
+	export enum RecoveryPointStatus { COMPLETED = 'COMPLETED', PARTIAL = 'PARTIAL', DELETING = 'DELETING', EXPIRED = 'EXPIRED' }
 
 
 	/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p> */
@@ -1007,7 +1007,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageClass { WARM = 0, COLD = 1, DELETED = 2 }
+	export enum StorageClass { WARM = 'WARM', COLD = 'COLD', DELETED = 'DELETED' }
 
 	export interface DescribeRegionSettingsOutput {
 		ResourceTypeOptInPreference?: ResourceTypeOptInPreference;
@@ -1256,7 +1256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreJobStatus { PENDING = 0, RUNNING = 1, COMPLETED = 2, ABORTED = 3, FAILED = 4 }
+	export enum RestoreJobStatus { PENDING = 'PENDING', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', ABORTED = 'ABORTED', FAILED = 'FAILED' }
 
 	export interface ExportBackupPlanTemplateOutput {
 		BackupPlanTemplateJson?: string;
@@ -1491,7 +1491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupVaultEvent { BACKUP_JOB_STARTED = 0, BACKUP_JOB_COMPLETED = 1, BACKUP_JOB_SUCCESSFUL = 2, BACKUP_JOB_FAILED = 3, BACKUP_JOB_EXPIRED = 4, RESTORE_JOB_STARTED = 5, RESTORE_JOB_COMPLETED = 6, RESTORE_JOB_SUCCESSFUL = 7, RESTORE_JOB_FAILED = 8, COPY_JOB_STARTED = 9, COPY_JOB_SUCCESSFUL = 10, COPY_JOB_FAILED = 11, RECOVERY_POINT_MODIFIED = 12, BACKUP_PLAN_CREATED = 13, BACKUP_PLAN_MODIFIED = 14, S3_BACKUP_OBJECT_FAILED = 15, S3_RESTORE_OBJECT_FAILED = 16 }
+	export enum BackupVaultEvent { BACKUP_JOB_STARTED = 'BACKUP_JOB_STARTED', BACKUP_JOB_COMPLETED = 'BACKUP_JOB_COMPLETED', BACKUP_JOB_SUCCESSFUL = 'BACKUP_JOB_SUCCESSFUL', BACKUP_JOB_FAILED = 'BACKUP_JOB_FAILED', BACKUP_JOB_EXPIRED = 'BACKUP_JOB_EXPIRED', RESTORE_JOB_STARTED = 'RESTORE_JOB_STARTED', RESTORE_JOB_COMPLETED = 'RESTORE_JOB_COMPLETED', RESTORE_JOB_SUCCESSFUL = 'RESTORE_JOB_SUCCESSFUL', RESTORE_JOB_FAILED = 'RESTORE_JOB_FAILED', COPY_JOB_STARTED = 'COPY_JOB_STARTED', COPY_JOB_SUCCESSFUL = 'COPY_JOB_SUCCESSFUL', COPY_JOB_FAILED = 'COPY_JOB_FAILED', RECOVERY_POINT_MODIFIED = 'RECOVERY_POINT_MODIFIED', BACKUP_PLAN_CREATED = 'BACKUP_PLAN_CREATED', BACKUP_PLAN_MODIFIED = 'BACKUP_PLAN_MODIFIED', S3_BACKUP_OBJECT_FAILED = 'S3_BACKUP_OBJECT_FAILED', S3_RESTORE_OBJECT_FAILED = 'S3_RESTORE_OBJECT_FAILED' }
 
 	export interface GetLegalHoldOutput {
 		Title?: string;

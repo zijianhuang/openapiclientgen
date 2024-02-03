@@ -80,7 +80,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedInstanceAdministratorPropertiesAdministratorType { ActiveDirectory = 0 }
+	export enum ManagedInstanceAdministratorPropertiesAdministratorType { ActiveDirectory = 'ActiveDirectory' }
 
 
 	/** A list of managed instance administrators. */

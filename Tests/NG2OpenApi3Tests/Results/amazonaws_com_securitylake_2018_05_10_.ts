@@ -42,7 +42,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsLogSourceName { ROUTE53 = 0, VPC_FLOW = 1, SH_FINDINGS = 2, CLOUD_TRAIL_MGMT = 3, LAMBDA_EXECUTION = 4, S3_DATA = 5 }
+	export enum AwsLogSourceName { ROUTE53 = 'ROUTE53', VPC_FLOW = 'VPC_FLOW', SH_FINDINGS = 'SH_FINDINGS', CLOUD_TRAIL_MGMT = 'CLOUD_TRAIL_MGMT', LAMBDA_EXECUTION = 'LAMBDA_EXECUTION', S3_DATA = 'S3_DATA' }
 
 	export interface BadRequestException {
 	}
@@ -278,7 +278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLakeStatus { INITIALIZED = 0, PENDING = 1, COMPLETED = 2, FAILED = 3 }
+	export enum DataLakeStatus { INITIALIZED = 'INITIALIZED', PENDING = 'PENDING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Provides encryption details of Amazon Security Lake object. */
@@ -605,7 +605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessType { LAKEFORMATION = 0, S3 = 1 }
+	export enum AccessType { LAKEFORMATION = 'LAKEFORMATION', S3 = 'S3' }
 
 
 	/** The supported source types from which logs and events are collected in Amazon Security Lake. For a list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>. */
@@ -623,7 +623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriberStatus { ACTIVE = 0, DEACTIVATED = 1, PENDING = 2, READY = 3 }
+	export enum SubscriberStatus { ACTIVE = 'ACTIVE', DEACTIVATED = 'DEACTIVATED', PENDING = 'PENDING', READY = 'READY' }
 
 	export interface CreateSubscriberNotificationResponse {
 		subscriberEndpoint?: string;
@@ -675,7 +675,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpMethod { POST = 0, PUT = 1 }
+	export enum HttpMethod { POST = 'POST', PUT = 'PUT' }
 
 
 	/** The configurations for SQS subscriber notification. */
@@ -861,7 +861,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceCollectionStatus { COLLECTING = 0, MISCONFIGURED = 1, NOT_COLLECTING = 2 }
+	export enum SourceCollectionStatus { COLLECTING = 'COLLECTING', MISCONFIGURED = 'MISCONFIGURED', NOT_COLLECTING = 'NOT_COLLECTING' }
 
 	export interface GetSubscriberResponse {
 		subscriber?: SubscriberResource;

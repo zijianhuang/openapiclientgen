@@ -31,9 +31,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceleratorAcceleratorType { ACCELERATOR_TYPE_UNSPECIFIED = 0, CDC = 1, HEALTHCARE = 2, CCAI_INSIGHTS = 3, CLOUDSEARCH = 4 }
+	export enum AcceleratorAcceleratorType { ACCELERATOR_TYPE_UNSPECIFIED = 'ACCELERATOR_TYPE_UNSPECIFIED', CDC = 'CDC', HEALTHCARE = 'HEALTHCARE', CCAI_INSIGHTS = 'CCAI_INSIGHTS', CLOUDSEARCH = 'CLOUDSEARCH' }
 
-	export enum AcceleratorState { STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2, UNKNOWN = 3 }
+	export enum AcceleratorState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -83,7 +83,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -609,7 +609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionType { TYPE_UNSPECIFIED = 0, TYPE_PREVIEW = 1, TYPE_GENERAL_AVAILABILITY = 2 }
+	export enum VersionType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TYPE_PREVIEW = 'TYPE_PREVIEW', TYPE_GENERAL_AVAILABILITY = 'TYPE_GENERAL_AVAILABILITY' }
 
 
 	/** Network configuration for a Data Fusion instance. These configurations are used for peering with the customer network. Configurations are optional when a public Data Fusion instance is to be created. However, providing these configurations allows several benefits, such as reduced network latency while accessing the customer resources from managed Data Fusion instance nodes, as well as access to the customer on-prem resources. */
@@ -649,7 +649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigConnectionType { CONNECTION_TYPE_UNSPECIFIED = 0, VPC_PEERING = 1, PRIVATE_SERVICE_CONNECT_INTERFACES = 2 }
+	export enum NetworkConfigConnectionType { CONNECTION_TYPE_UNSPECIFIED = 'CONNECTION_TYPE_UNSPECIFIED', VPC_PEERING = 'VPC_PEERING', PRIVATE_SERVICE_CONNECT_INTERFACES = 'PRIVATE_SERVICE_CONNECT_INTERFACES' }
 
 
 	/** Configuration for using Private Service Connect to establish connectivity between the Data Fusion consumer project and the corresponding tenant project. */
@@ -686,9 +686,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, FAILED = 3, DELETING = 4, UPGRADING = 5, RESTARTING = 6, UPDATING = 7, AUTO_UPDATING = 8, AUTO_UPGRADING = 9, DISABLED = 10 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', DELETING = 'DELETING', UPGRADING = 'UPGRADING', RESTARTING = 'RESTARTING', UPDATING = 'UPDATING', AUTO_UPDATING = 'AUTO_UPDATING', AUTO_UPGRADING = 'AUTO_UPGRADING', DISABLED = 'DISABLED' }
 
-	export enum InstanceType { TYPE_UNSPECIFIED = 0, BASIC = 1, ENTERPRISE = 2, DEVELOPER = 3 }
+	export enum InstanceType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', BASIC = 'BASIC', ENTERPRISE = 'ENTERPRISE', DEVELOPER = 'DEVELOPER' }
 
 
 	/** Response message for the list available versions request. */

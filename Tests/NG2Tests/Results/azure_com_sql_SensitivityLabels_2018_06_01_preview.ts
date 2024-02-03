@@ -178,9 +178,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SensitivityLabels_GetSensitivityLabelSource { current = 0, recommended = 1 }
+	export enum SensitivityLabels_GetSensitivityLabelSource { current = 'current', recommended = 'recommended' }
 
-	export enum SensitivityLabels_CreateOrUpdateSensitivityLabelSource { current = 0 }
+	export enum SensitivityLabels_CreateOrUpdateSensitivityLabelSource { current = 'current' }
 
 }
 

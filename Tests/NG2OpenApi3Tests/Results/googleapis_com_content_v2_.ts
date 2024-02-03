@@ -10308,9 +10308,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Content_orderreturns_listOrderBy { RETURN_CREATION_TIME_DESC = 0, RETURN_CREATION_TIME_ASC = 1 }
+	export enum Content_orderreturns_listOrderBy { RETURN_CREATION_TIME_DESC = 'RETURN_CREATION_TIME_DESC', RETURN_CREATION_TIME_ASC = 'RETURN_CREATION_TIME_ASC' }
 
-	export enum Content_orders_gettestordertemplateTemplateName { TEMPLATE1 = 0, TEMPLATE2 = 1, TEMPLATE1A = 2, TEMPLATE1B = 3, TEMPLATE3 = 4 }
+	export enum Content_orders_gettestordertemplateTemplateName { TEMPLATE1 = 'TEMPLATE1', TEMPLATE2 = 'TEMPLATE2', TEMPLATE1A = 'TEMPLATE1A', TEMPLATE1B = 'TEMPLATE1B', TEMPLATE3 = 'TEMPLATE3' }
 
 }
 

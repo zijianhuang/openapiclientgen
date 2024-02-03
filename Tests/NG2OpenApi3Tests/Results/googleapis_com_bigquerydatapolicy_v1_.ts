@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -150,7 +150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataMaskingPolicyPredefinedExpression { PREDEFINED_EXPRESSION_UNSPECIFIED = 0, SHA256 = 1, ALWAYS_NULL = 2, DEFAULT_MASKING_VALUE = 3, LAST_FOUR_CHARACTERS = 4, FIRST_FOUR_CHARACTERS = 5, EMAIL_MASK = 6, DATE_YEAR_MASK = 7 }
+	export enum DataMaskingPolicyPredefinedExpression { PREDEFINED_EXPRESSION_UNSPECIFIED = 'PREDEFINED_EXPRESSION_UNSPECIFIED', SHA256 = 'SHA256', ALWAYS_NULL = 'ALWAYS_NULL', DEFAULT_MASKING_VALUE = 'DEFAULT_MASKING_VALUE', LAST_FOUR_CHARACTERS = 'LAST_FOUR_CHARACTERS', FIRST_FOUR_CHARACTERS = 'FIRST_FOUR_CHARACTERS', EMAIL_MASK = 'EMAIL_MASK', DATE_YEAR_MASK = 'DATE_YEAR_MASK' }
 
 
 	/** Represents the label-policy binding. */
@@ -197,7 +197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataPolicyDataPolicyType { DATA_POLICY_TYPE_UNSPECIFIED = 0, COLUMN_LEVEL_SECURITY_POLICY = 1, DATA_MASKING_POLICY = 2 }
+	export enum DataPolicyDataPolicyType { DATA_POLICY_TYPE_UNSPECIFIED = 'DATA_POLICY_TYPE_UNSPECIFIED', COLUMN_LEVEL_SECURITY_POLICY = 'COLUMN_LEVEL_SECURITY_POLICY', DATA_MASKING_POLICY = 'DATA_MASKING_POLICY' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

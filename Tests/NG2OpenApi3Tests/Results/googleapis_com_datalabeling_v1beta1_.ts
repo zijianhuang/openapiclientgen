@@ -744,9 +744,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1AnnotatedDatasetAnnotationSource { ANNOTATION_SOURCE_UNSPECIFIED = 0, OPERATOR = 1 }
+	export enum GoogleCloudDatalabelingV1beta1AnnotatedDatasetAnnotationSource { ANNOTATION_SOURCE_UNSPECIFIED = 'ANNOTATION_SOURCE_UNSPECIFIED', OPERATOR = 'OPERATOR' }
 
-	export enum GoogleCloudDatalabelingV1beta1AnnotatedDatasetAnnotationType { ANNOTATION_TYPE_UNSPECIFIED = 0, IMAGE_CLASSIFICATION_ANNOTATION = 1, IMAGE_BOUNDING_BOX_ANNOTATION = 2, IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION = 3, IMAGE_BOUNDING_POLY_ANNOTATION = 4, IMAGE_POLYLINE_ANNOTATION = 5, IMAGE_SEGMENTATION_ANNOTATION = 6, VIDEO_SHOTS_CLASSIFICATION_ANNOTATION = 7, VIDEO_OBJECT_TRACKING_ANNOTATION = 8, VIDEO_OBJECT_DETECTION_ANNOTATION = 9, VIDEO_EVENT_ANNOTATION = 10, TEXT_CLASSIFICATION_ANNOTATION = 11, TEXT_ENTITY_EXTRACTION_ANNOTATION = 12, GENERAL_CLASSIFICATION_ANNOTATION = 13 }
+	export enum GoogleCloudDatalabelingV1beta1AnnotatedDatasetAnnotationType { ANNOTATION_TYPE_UNSPECIFIED = 'ANNOTATION_TYPE_UNSPECIFIED', IMAGE_CLASSIFICATION_ANNOTATION = 'IMAGE_CLASSIFICATION_ANNOTATION', IMAGE_BOUNDING_BOX_ANNOTATION = 'IMAGE_BOUNDING_BOX_ANNOTATION', IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION = 'IMAGE_ORIENTED_BOUNDING_BOX_ANNOTATION', IMAGE_BOUNDING_POLY_ANNOTATION = 'IMAGE_BOUNDING_POLY_ANNOTATION', IMAGE_POLYLINE_ANNOTATION = 'IMAGE_POLYLINE_ANNOTATION', IMAGE_SEGMENTATION_ANNOTATION = 'IMAGE_SEGMENTATION_ANNOTATION', VIDEO_SHOTS_CLASSIFICATION_ANNOTATION = 'VIDEO_SHOTS_CLASSIFICATION_ANNOTATION', VIDEO_OBJECT_TRACKING_ANNOTATION = 'VIDEO_OBJECT_TRACKING_ANNOTATION', VIDEO_OBJECT_DETECTION_ANNOTATION = 'VIDEO_OBJECT_DETECTION_ANNOTATION', VIDEO_EVENT_ANNOTATION = 'VIDEO_EVENT_ANNOTATION', TEXT_CLASSIFICATION_ANNOTATION = 'TEXT_CLASSIFICATION_ANNOTATION', TEXT_ENTITY_EXTRACTION_ANNOTATION = 'TEXT_ENTITY_EXTRACTION_ANNOTATION', GENERAL_CLASSIFICATION_ANNOTATION = 'GENERAL_CLASSIFICATION_ANNOTATION' }
 
 
 	/** Statistics about annotation specs. */
@@ -983,7 +983,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1ImageClassificationConfigAnswerAggregationType { STRING_AGGREGATION_TYPE_UNSPECIFIED = 0, MAJORITY_VOTE = 1, UNANIMOUS_VOTE = 2, NO_AGGREGATION = 3 }
+	export enum GoogleCloudDatalabelingV1beta1ImageClassificationConfigAnswerAggregationType { STRING_AGGREGATION_TYPE_UNSPECIFIED = 'STRING_AGGREGATION_TYPE_UNSPECIFIED', MAJORITY_VOTE = 'MAJORITY_VOTE', UNANIMOUS_VOTE = 'UNANIMOUS_VOTE', NO_AGGREGATION = 'NO_AGGREGATION' }
 
 
 	/** Config for video object detection human labeling task. Object detection will be conducted on the images extracted from the video, and those objects will be labeled with bounding boxes. User need to specify the number of images to be extracted per second as the extraction frame rate. */
@@ -1325,7 +1325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1AnnotationAnnotationSentiment { ANNOTATION_SENTIMENT_UNSPECIFIED = 0, NEGATIVE = 1, POSITIVE = 2 }
+	export enum GoogleCloudDatalabelingV1beta1AnnotationAnnotationSentiment { ANNOTATION_SENTIMENT_UNSPECIFIED = 'ANNOTATION_SENTIMENT_UNSPECIFIED', NEGATIVE = 'NEGATIVE', POSITIVE = 'POSITIVE' }
 
 
 	/** Annotation value for an example. */
@@ -2251,7 +2251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1InputConfigDataType { DATA_TYPE_UNSPECIFIED = 0, IMAGE = 1, VIDEO = 2, TEXT = 3, GENERAL_DATA = 4 }
+	export enum GoogleCloudDatalabelingV1beta1InputConfigDataType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', IMAGE = 'IMAGE', VIDEO = 'VIDEO', TEXT = 'TEXT', GENERAL_DATA = 'GENERAL_DATA' }
 
 
 	/** Source of the Cloud Storage file to be imported. */
@@ -2496,7 +2496,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1EvaluationJobState { STATE_UNSPECIFIED = 0, SCHEDULED = 1, RUNNING = 2, PAUSED = 3, STOPPED = 4 }
+	export enum GoogleCloudDatalabelingV1beta1EvaluationJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', SCHEDULED = 'SCHEDULED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', STOPPED = 'STOPPED' }
 
 
 	/** Metadata of a CreateInstruction operation. */
@@ -3281,7 +3281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1FeedbackThreadMetadataStatus { FEEDBACK_THREAD_STATUS_UNSPECIFIED = 0, NEW = 1, REPLIED = 2 }
+	export enum GoogleCloudDatalabelingV1beta1FeedbackThreadMetadataStatus { FEEDBACK_THREAD_STATUS_UNSPECIFIED = 'FEEDBACK_THREAD_STATUS_UNSPECIFIED', NEW = 'NEW', REPLIED = 'REPLIED' }
 
 
 	/** Metadata of an ImportData operation. */
@@ -3494,7 +3494,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1LabelImageRequestFeature { FEATURE_UNSPECIFIED = 0, CLASSIFICATION = 1, BOUNDING_BOX = 2, ORIENTED_BOUNDING_BOX = 3, BOUNDING_POLY = 4, POLYLINE = 5, SEGMENTATION = 6 }
+	export enum GoogleCloudDatalabelingV1beta1LabelImageRequestFeature { FEATURE_UNSPECIFIED = 'FEATURE_UNSPECIFIED', CLASSIFICATION = 'CLASSIFICATION', BOUNDING_BOX = 'BOUNDING_BOX', ORIENTED_BOUNDING_BOX = 'ORIENTED_BOUNDING_BOX', BOUNDING_POLY = 'BOUNDING_POLY', POLYLINE = 'POLYLINE', SEGMENTATION = 'SEGMENTATION' }
 
 
 	/** Details of a LabelImageSegmentation operation metadata. */
@@ -3726,7 +3726,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1LabelTextRequestFeature { FEATURE_UNSPECIFIED = 0, TEXT_CLASSIFICATION = 1, TEXT_ENTITY_EXTRACTION = 2 }
+	export enum GoogleCloudDatalabelingV1beta1LabelTextRequestFeature { FEATURE_UNSPECIFIED = 'FEATURE_UNSPECIFIED', TEXT_CLASSIFICATION = 'TEXT_CLASSIFICATION', TEXT_ENTITY_EXTRACTION = 'TEXT_ENTITY_EXTRACTION' }
 
 
 	/** Request message for LabelVideo. */
@@ -3764,7 +3764,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatalabelingV1beta1LabelVideoRequestFeature { FEATURE_UNSPECIFIED = 0, CLASSIFICATION = 1, OBJECT_DETECTION = 2, OBJECT_TRACKING = 3, EVENT = 4 }
+	export enum GoogleCloudDatalabelingV1beta1LabelVideoRequestFeature { FEATURE_UNSPECIFIED = 'FEATURE_UNSPECIFIED', CLASSIFICATION = 'CLASSIFICATION', OBJECT_DETECTION = 'OBJECT_DETECTION', OBJECT_TRACKING = 'OBJECT_TRACKING', EVENT = 'EVENT' }
 
 
 	/** Results of listing annotated datasets for a dataset. */

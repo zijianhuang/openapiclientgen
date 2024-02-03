@@ -192,9 +192,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationChannel { ALL = 0 }
+	export enum NotificationChannel { ALL = 'ALL' }
 
-	export enum NotificationEvent { CA_CERTIFICATE_EXPIRY = 0, END_ENTITY_CERTIFICATE_EXPIRY = 1 }
+	export enum NotificationEvent { CA_CERTIFICATE_EXPIRY = 'CA_CERTIFICATE_EXPIRY', END_ENTITY_CERTIFICATE_EXPIRY = 'END_ENTITY_CERTIFICATE_EXPIRY' }
 
 
 	/** The trust anchor type and its related certificate data. */
@@ -234,7 +234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrustAnchorType { AWS_ACM_PCA = 0, CERTIFICATE_BUNDLE = 1, SELF_SIGNED_REPOSITORY = 2 }
+	export enum TrustAnchorType { AWS_ACM_PCA = 'AWS_ACM_PCA', CERTIFICATE_BUNDLE = 'CERTIFICATE_BUNDLE', SELF_SIGNED_REPOSITORY = 'SELF_SIGNED_REPOSITORY' }
 
 
 	/**  Customizable notification settings that will be applied to notification events. IAM Roles Anywhere consumes these settings while notifying across multiple channels - CloudWatch metrics, EventBridge, and Health Dashboard.  */

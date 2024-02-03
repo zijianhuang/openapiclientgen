@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_COMPLETE = 4, UPDATE_FAILED_ROLLBACK_IN_PROGRESS = 5, UPDATE_FAILED_ROLLBACK_COMPLETE = 6, DELETE_IN_PROGRESS = 7, DELETE_COMPLETE = 8, DELETE_FAILED = 9 }
+	export enum DatasetStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_COMPLETE = 'CREATE_COMPLETE', CREATE_FAILED = 'CREATE_FAILED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_COMPLETE = 'UPDATE_COMPLETE', UPDATE_FAILED_ROLLBACK_IN_PROGRESS = 'UPDATE_FAILED_ROLLBACK_IN_PROGRESS', UPDATE_FAILED_ROLLBACK_COMPLETE = 'UPDATE_FAILED_ROLLBACK_COMPLETE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_COMPLETE = 'DELETE_COMPLETE', DELETE_FAILED = 'DELETE_FAILED' }
 
 
 	/** Location information about a manifest file. You can use a manifest file to create a dataset. */
@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelStatus { TRAINING = 0, TRAINED = 1, TRAINING_FAILED = 2, STARTING_HOSTING = 3, HOSTED = 4, HOSTING_FAILED = 5, STOPPING_HOSTING = 6, SYSTEM_UPDATING = 7, DELETING = 8 }
+	export enum ModelStatus { TRAINING = 'TRAINING', TRAINED = 'TRAINED', TRAINING_FAILED = 'TRAINING_FAILED', STARTING_HOSTING = 'STARTING_HOSTING', HOSTED = 'HOSTED', HOSTING_FAILED = 'HOSTING_FAILED', STOPPING_HOSTING = 'STOPPING_HOSTING', SYSTEM_UPDATING = 'SYSTEM_UPDATING', DELETING = 'DELETING' }
 
 
 	/** Information about the evaluation performance of a trained model.  */
@@ -632,7 +632,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetDevice { jetson_xavier = 0 }
+	export enum TargetDevice { jetson_xavier = 'jetson_xavier' }
 
 
 	/** The platform on which a model runs on an AWS IoT Greengrass core device. */
@@ -665,11 +665,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetPlatformOs { LINUX = 0 }
+	export enum TargetPlatformOs { LINUX = 'LINUX' }
 
-	export enum TargetPlatformArch { ARM64 = 0, X86_64 = 1 }
+	export enum TargetPlatformArch { ARM64 = 'ARM64', X86_64 = 'X86_64' }
 
-	export enum TargetPlatformAccelerator { NVIDIA = 0 }
+	export enum TargetPlatformAccelerator { NVIDIA = 'NVIDIA' }
 
 
 	/**  Information about the output from a model packaging job.  */
@@ -709,7 +709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelPackagingJobStatus { CREATED = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum ModelPackagingJobStatus { CREATED = 'CREATED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface DescribeProjectResponse {
 		ProjectDescription?: ProjectDescription;
@@ -958,7 +958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelHostingStatus { STARTING_HOSTING = 0, HOSTED = 1, HOSTING_FAILED = 2, STOPPING_HOSTING = 3, SYSTEM_UPDATING = 4 }
+	export enum ModelHostingStatus { STARTING_HOSTING = 'STARTING_HOSTING', HOSTED = 'HOSTED', HOSTING_FAILED = 'HOSTING_FAILED', STOPPING_HOSTING = 'STOPPING_HOSTING', SYSTEM_UPDATING = 'SYSTEM_UPDATING' }
 
 	export interface StartModelPackagingJobResponse {
 		JobName?: string;

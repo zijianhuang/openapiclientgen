@@ -178,7 +178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationSeverityLevel { none = 0, all = 1, high = 2 }
+	export enum NotificationSeverityLevel { none = 'none', all = 'all', high = 'high' }
 
 	export interface ListSlackWorkspaceConfigurationsResult {
 		nextToken?: string;
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountType { management = 0, member = 1 }
+	export enum AccountType { management = 'management', member = 'member' }
 
 	export interface UpdateSlackChannelConfigurationResult {
 		channelId?: string;

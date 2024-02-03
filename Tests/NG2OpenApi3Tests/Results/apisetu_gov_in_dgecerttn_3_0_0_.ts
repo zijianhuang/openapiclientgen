@@ -1361,7 +1361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HscerPostBodyFormat { pdf = 0 }
+	export enum HscerPostBodyFormat { pdf = 'pdf' }
 
 	export interface SscerPostBody {
 		certificateParameters?: SscerPostBodyCertificateParameters;

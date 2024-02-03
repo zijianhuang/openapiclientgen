@@ -1285,7 +1285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RatcrPostBodyFormat { pdf = 0 }
+	export enum RatcrPostBodyFormat { pdf = 'pdf' }
 
 }
 

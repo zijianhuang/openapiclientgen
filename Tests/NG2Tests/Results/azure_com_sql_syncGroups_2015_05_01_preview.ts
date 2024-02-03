@@ -287,7 +287,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncGroupPropertiesConflictResolutionPolicy { HubWin = 0, MemberWin = 1 }
+	export enum SyncGroupPropertiesConflictResolutionPolicy { HubWin = 'HubWin', MemberWin = 'MemberWin' }
 
 
 	/** Properties of sync group schema. */
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncGroupPropertiesSyncState { NotReady = 0, Error = 1, Warning = 2, Progressing = 3, Good = 4 }
+	export enum SyncGroupPropertiesSyncState { NotReady = 'NotReady', Error = 'Error', Warning = 'Warning', Progressing = 'Progressing', Good = 'Good' }
 
 
 	/** A list of sync groups. */
@@ -478,7 +478,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncGroupLogPropertiesType { All = 0, Error = 1, Warning = 2, Success = 3 }
+	export enum SyncGroupLogPropertiesType { All = 'All', Error = 'Error', Warning = 'Warning', Success = 'Success' }
 
 	@Injectable()
 	export class MyClient {

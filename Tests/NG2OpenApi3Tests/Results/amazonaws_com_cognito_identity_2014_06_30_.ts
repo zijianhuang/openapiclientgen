@@ -226,7 +226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { AccessDenied = 0, InternalServerError = 1 }
+	export enum ErrorCode { AccessDenied = 'AccessDenied', InternalServerError = 'InternalServerError' }
 
 
 	/** Input to the <code>DeleteIdentities</code> action. */
@@ -1170,9 +1170,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AmbiguousRoleResolutionType { AuthenticatedRole = 0, Deny = 1 }
+	export enum AmbiguousRoleResolutionType { AuthenticatedRole = 'AuthenticatedRole', Deny = 'Deny' }
 
-	export enum MappingRuleMatchType { Equals = 0, Contains = 1, StartsWith = 2, NotEqual = 3 }
+	export enum MappingRuleMatchType { Equals = 'Equals', Contains = 'Contains', StartsWith = 'StartsWith', NotEqual = 'NotEqual' }
 
 
 	/** A rule that maps a claim name, a claim value, and a match type to a role ARN. */
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleMappingType { Token = 0, Rules = 1 }
+	export enum RoleMappingType { Token = 'Token', Rules = 'Rules' }
 
 
 	/** A container for rules. */
@@ -1475,51 +1475,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.CreateIdentityPool' = 0 }
+	export enum CreateIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.CreateIdentityPool' = 'AWSCognitoIdentityService.CreateIdentityPool' }
 
-	export enum DeleteIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.DeleteIdentities' = 0 }
+	export enum DeleteIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.DeleteIdentities' = 'AWSCognitoIdentityService.DeleteIdentities' }
 
-	export enum DeleteIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.DeleteIdentityPool' = 0 }
+	export enum DeleteIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.DeleteIdentityPool' = 'AWSCognitoIdentityService.DeleteIdentityPool' }
 
-	export enum DescribeIdentityX_Amz_Target { 'AWSCognitoIdentityService.DescribeIdentity' = 0 }
+	export enum DescribeIdentityX_Amz_Target { 'AWSCognitoIdentityService.DescribeIdentity' = 'AWSCognitoIdentityService.DescribeIdentity' }
 
-	export enum DescribeIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.DescribeIdentityPool' = 0 }
+	export enum DescribeIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.DescribeIdentityPool' = 'AWSCognitoIdentityService.DescribeIdentityPool' }
 
-	export enum GetCredentialsForIdentityX_Amz_Target { 'AWSCognitoIdentityService.GetCredentialsForIdentity' = 0 }
+	export enum GetCredentialsForIdentityX_Amz_Target { 'AWSCognitoIdentityService.GetCredentialsForIdentity' = 'AWSCognitoIdentityService.GetCredentialsForIdentity' }
 
-	export enum GetIdX_Amz_Target { 'AWSCognitoIdentityService.GetId' = 0 }
+	export enum GetIdX_Amz_Target { 'AWSCognitoIdentityService.GetId' = 'AWSCognitoIdentityService.GetId' }
 
-	export enum GetIdentityPoolRolesX_Amz_Target { 'AWSCognitoIdentityService.GetIdentityPoolRoles' = 0 }
+	export enum GetIdentityPoolRolesX_Amz_Target { 'AWSCognitoIdentityService.GetIdentityPoolRoles' = 'AWSCognitoIdentityService.GetIdentityPoolRoles' }
 
-	export enum GetOpenIdTokenX_Amz_Target { 'AWSCognitoIdentityService.GetOpenIdToken' = 0 }
+	export enum GetOpenIdTokenX_Amz_Target { 'AWSCognitoIdentityService.GetOpenIdToken' = 'AWSCognitoIdentityService.GetOpenIdToken' }
 
-	export enum GetOpenIdTokenForDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity' = 0 }
+	export enum GetOpenIdTokenForDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity' = 'AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity' }
 
-	export enum GetPrincipalTagAttributeMapX_Amz_Target { 'AWSCognitoIdentityService.GetPrincipalTagAttributeMap' = 0 }
+	export enum GetPrincipalTagAttributeMapX_Amz_Target { 'AWSCognitoIdentityService.GetPrincipalTagAttributeMap' = 'AWSCognitoIdentityService.GetPrincipalTagAttributeMap' }
 
-	export enum ListIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.ListIdentities' = 0 }
+	export enum ListIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.ListIdentities' = 'AWSCognitoIdentityService.ListIdentities' }
 
-	export enum ListIdentityPoolsX_Amz_Target { 'AWSCognitoIdentityService.ListIdentityPools' = 0 }
+	export enum ListIdentityPoolsX_Amz_Target { 'AWSCognitoIdentityService.ListIdentityPools' = 'AWSCognitoIdentityService.ListIdentityPools' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSCognitoIdentityService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSCognitoIdentityService.ListTagsForResource' = 'AWSCognitoIdentityService.ListTagsForResource' }
 
-	export enum LookupDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.LookupDeveloperIdentity' = 0 }
+	export enum LookupDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.LookupDeveloperIdentity' = 'AWSCognitoIdentityService.LookupDeveloperIdentity' }
 
-	export enum MergeDeveloperIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.MergeDeveloperIdentities' = 0 }
+	export enum MergeDeveloperIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.MergeDeveloperIdentities' = 'AWSCognitoIdentityService.MergeDeveloperIdentities' }
 
-	export enum SetIdentityPoolRolesX_Amz_Target { 'AWSCognitoIdentityService.SetIdentityPoolRoles' = 0 }
+	export enum SetIdentityPoolRolesX_Amz_Target { 'AWSCognitoIdentityService.SetIdentityPoolRoles' = 'AWSCognitoIdentityService.SetIdentityPoolRoles' }
 
-	export enum SetPrincipalTagAttributeMapX_Amz_Target { 'AWSCognitoIdentityService.SetPrincipalTagAttributeMap' = 0 }
+	export enum SetPrincipalTagAttributeMapX_Amz_Target { 'AWSCognitoIdentityService.SetPrincipalTagAttributeMap' = 'AWSCognitoIdentityService.SetPrincipalTagAttributeMap' }
 
-	export enum TagResourceX_Amz_Target { 'AWSCognitoIdentityService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSCognitoIdentityService.TagResource' = 'AWSCognitoIdentityService.TagResource' }
 
-	export enum UnlinkDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.UnlinkDeveloperIdentity' = 0 }
+	export enum UnlinkDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.UnlinkDeveloperIdentity' = 'AWSCognitoIdentityService.UnlinkDeveloperIdentity' }
 
-	export enum UnlinkIdentityX_Amz_Target { 'AWSCognitoIdentityService.UnlinkIdentity' = 0 }
+	export enum UnlinkIdentityX_Amz_Target { 'AWSCognitoIdentityService.UnlinkIdentity' = 'AWSCognitoIdentityService.UnlinkIdentity' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSCognitoIdentityService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSCognitoIdentityService.UntagResource' = 'AWSCognitoIdentityService.UntagResource' }
 
-	export enum UpdateIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.UpdateIdentityPool' = 0 }
+	export enum UpdateIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.UpdateIdentityPool' = 'AWSCognitoIdentityService.UpdateIdentityPool' }
 
 }
 

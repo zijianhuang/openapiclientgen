@@ -139,7 +139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseType { TYPE_UNSPECIFIED = 0, HIVE = 1 }
+	export enum DatabaseType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', HIVE = 'HIVE' }
 
 
 	/** Options of a Hive table. */
@@ -507,7 +507,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Biglake_projects_locations_catalogs_databases_tables_listView { TABLE_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Biglake_projects_locations_catalogs_databases_tables_listView { TABLE_VIEW_UNSPECIFIED = 'TABLE_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

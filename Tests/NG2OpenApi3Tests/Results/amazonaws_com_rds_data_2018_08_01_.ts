@@ -106,7 +106,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeHint { JSON = 0, UUID = 1, TIMESTAMP = 2, DATE = 3, TIME = 4, DECIMAL = 5 }
+	export enum TypeHint { JSON = 'JSON', UUID = 'UUID', TIMESTAMP = 'TIMESTAMP', DATE = 'DATE', TIME = 'TIME', DECIMAL = 'DECIMAL' }
 
 	export interface AccessDeniedException {
 	}
@@ -428,9 +428,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DecimalReturnType { STRING = 0, DOUBLE_OR_LONG = 1 }
+	export enum DecimalReturnType { STRING = 'STRING', DOUBLE_OR_LONG = 'DOUBLE_OR_LONG' }
 
-	export enum LongReturnType { STRING = 0, LONG = 1 }
+	export enum LongReturnType { STRING = 'STRING', LONG = 'LONG' }
 
 
 	/** The response elements represent the output of a request to perform a rollback of a transaction. */
@@ -624,7 +624,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordsFormatType { NONE = 0, JSON = 1 }
+	export enum RecordsFormatType { NONE = 'NONE', JSON = 'JSON' }
 
 
 	/** The request parameters represent the input of a request to run a SQL statement against a database. */

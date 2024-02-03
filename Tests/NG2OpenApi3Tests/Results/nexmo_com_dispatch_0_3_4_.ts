@@ -116,7 +116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailoverPropertyCondition_status { delivered = 0, read = 1 }
+	export enum FailoverPropertyCondition_status { delivered = 'delivered', read = 'read' }
 
 	export interface FileProperty {
 
@@ -221,7 +221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FromPropertyType { sms = 0, viber_service_msg = 1, messenger = 2, whatsapp = 3 }
+	export enum FromPropertyType { sms = 'sms', viber_service_msg = 'viber_service_msg', messenger = 'messenger', whatsapp = 'whatsapp' }
 
 	export interface ImageProperty {
 
@@ -371,7 +371,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessagePropertyContentType { text = 0, image = 1, audio = 2, video = 3, file = 4, template = 5, custom = 6 }
+	export enum MessagePropertyContentType { text = 'text', image = 'image', audio = 'audio', video = 'video', file = 'file', template = 'template', custom = 'custom' }
 
 	export interface VideoProperty {
 
@@ -426,7 +426,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessagePropertyMessengerCategory { response = 0, update = 1, message_tag = 2 }
+	export enum MessagePropertyMessengerCategory { response = 'response', update = 'update', message_tag = 'message_tag' }
 
 	export interface MessagePropertyViber_service_msg {
 
@@ -460,7 +460,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessagePropertyViber_service_msgCategory { transaction = 0, promotion = 1 }
+	export enum MessagePropertyViber_service_msgCategory { transaction = 'transaction', promotion = 'promotion' }
 
 	export interface MessagePropertyWhatsapp {
 
@@ -486,7 +486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessagePropertyWhatsappPolicy { fallback = 0, deterministic = 1 }
+	export enum MessagePropertyWhatsappPolicy { fallback = 'fallback', deterministic = 'deterministic' }
 
 
 	/** The callbacks for the message status are the same as defined in the Messaging API. The only difference will be that dispatch_uuid and link will be appended. */
@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageStatusStatus { submitted = 0, delivered = 1, read = 2, rejected = 3, undeliverable = 4 }
+	export enum MessageStatusStatus { submitted = 'submitted', delivered = 'delivered', read = 'read', rejected = 'rejected', undeliverable = 'undeliverable' }
 
 	export interface ToProperty {
 
@@ -664,7 +664,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageStatusUsageCurrency { EUR = 0 }
+	export enum MessageStatusUsageCurrency { EUR = 'EUR' }
 
 	export interface Response {
 
@@ -709,7 +709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateWorkflowTemplate { failover = 0 }
+	export enum CreateWorkflowTemplate { failover = 'failover' }
 
 	export interface FinalReport {
 		_links?: FinalReport_links;
@@ -779,7 +779,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FinalReport_linksMessagesChannel { messenger = 0, viber_sevice_msg = 1, sms = 2, whatsapp = 3, mms = 4 }
+	export enum FinalReport_linksMessagesChannel { messenger = 'messenger', viber_sevice_msg = 'viber_sevice_msg', sms = 'sms', whatsapp = 'whatsapp', mms = 'mms' }
 
 	export interface FinalReport_linksMessagesUsage {
 
@@ -805,7 +805,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FinalReportStatus { completed = 0, error = 1 }
+	export enum FinalReportStatus { completed = 'completed', error = 'error' }
 
 	export interface FinalReportUsage {
 

@@ -2037,9 +2037,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PhonePhoneType { DEFAULT = 0, OFFICE = 1, FAX = 2, PHONE = 3 }
+	export enum PhonePhoneType { DEFAULT = 'DEFAULT', OFFICE = 'OFFICE', FAX = 'FAX', PHONE = 'PHONE' }
 
-	export enum AssociatedSoSPersonEntityType { Partner = 0, Agent = 1, CEO = 2, 'Partner/General Member' = 3, 'Partner/GeneralMember' = 4 }
+	export enum AssociatedSoSPersonEntityType { Partner = 'Partner', Agent = 'Agent', CEO = 'CEO', 'Partner/General Member' = 'Partner/General Member', 'Partner/GeneralMember' = 'Partner/GeneralMember' }
 
 	export interface Attorney {
 
@@ -2890,7 +2890,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PossibleNormAttorneyScoreConstituentsAddress { Matched = 0, Mismatched = 1, Not_Provided_By_Data_Source = 2 }
+	export enum PossibleNormAttorneyScoreConstituentsAddress { Matched = 'Matched', Mismatched = 'Mismatched', Not_Provided_By_Data_Source = 'Not_Provided_By_Data_Source' }
 
 	export interface PossibleNormLawFirm {
 
@@ -3147,7 +3147,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PossibleNormLawFirmSourceDetailsSource { Case_Attorney_Linked_In_Other_Cases = 0, Case_Attorney_Field_Contains_Law_Firm = 1 }
+	export enum PossibleNormLawFirmSourceDetailsSource { Case_Attorney_Linked_In_Other_Cases = 'Case_Attorney_Linked_In_Other_Cases', Case_Attorney_Field_Contains_Law_Firm = 'Case_Attorney_Field_Contains_Law_Firm' }
 
 	export interface AttorneyAnalyticsAPI {
 
@@ -5734,7 +5734,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BarRecordStatus { Active = 0, Inactive = 1, 'Not Classified' = 2, Unknown = 3 }
+	export enum BarRecordStatus { Active = 'Active', Inactive = 'Inactive', 'Not Classified' = 'Not Classified', Unknown = 'Unknown' }
 
 	export interface BillingCycleUsageResponse {
 
@@ -6789,7 +6789,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaseDocumentEstimatedOrderDuration { estimateUnavailable = 0, withinMinutes = 1, withinHours = 2, withinDays = 3, withinWeeks = 4 }
+	export enum CaseDocumentEstimatedOrderDuration { estimateUnavailable = 'estimateUnavailable', withinMinutes = 'withinMinutes', withinHours = 'withinHours', withinDays = 'withinDays', withinWeeks = 'withinWeeks' }
 
 	export interface PreviewDocument {
 
@@ -6863,7 +6863,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaseDocumentSourceDataStatus { NO_LONGER_AVAILABLE_IN_COURT = 0, SOURCE_DEPRECATED = 1, SEALED = 2, _null = 3 }
+	export enum CaseDocumentSourceDataStatus { NO_LONGER_AVAILABLE_IN_COURT = 'NO_LONGER_AVAILABLE_IN_COURT', SOURCE_DEPRECATED = 'SOURCE_DEPRECATED', SEALED = 'SEALED', _null = 3 }
 
 
 	/** Count of each entitiy of a case is mentioned here so that you can calculate the number of requests needs to be done to obtain each entity results completely. */
@@ -8559,9 +8559,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DocketEntryBoundary { first = 0, last = 1, single_docket_entry = 2, _null = 3 }
+	export enum DocketEntryBoundary { first = 'first', last = 'last', single_docket_entry = 'single_docket_entry', _null = 3 }
 
-	export enum DocketEntryDocketBadge { DOCKET = 0, CHARGE = 1, HEARING = 2, JUDGEMENT = 3, FINANCIAL = 4, DISPOSITION = 5, SENTENCE = 6, BOND = 7, BAIL = 8, CAUSE_OF_ACTION = 9, ARREST = 10, WARRANT = 11, SUMMON = 12, TICKLER = 13, OPINION = 14 }
+	export enum DocketEntryDocketBadge { DOCKET = 'DOCKET', CHARGE = 'CHARGE', HEARING = 'HEARING', JUDGEMENT = 'JUDGEMENT', FINANCIAL = 'FINANCIAL', DISPOSITION = 'DISPOSITION', SENTENCE = 'SENTENCE', BOND = 'BOND', BAIL = 'BAIL', CAUSE_OF_ACTION = 'CAUSE_OF_ACTION', ARREST = 'ARREST', WARRANT = 'WARRANT', SUMMON = 'SUMMON', TICKLER = 'TICKLER', OPINION = 'OPINION' }
 
 
 	/** Primary Documents refers to documents that are directly related to a docket entry. Primary Documents could be specific to a courts or case type in courts. For isntance the below example is in PACER. PACER District Courts - Here the primary document is one which is attached to the docket number. Because in district for a primary document it can have many attachments associatated to it. PACER Appeal Courts - Here the attachments for a docket entry are the primary documents. Because in appeal for those attachments there is no primary documents. */
@@ -10085,7 +10085,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartyPartyClassificationType { INDIVIDUAL = 0, COMPANY = 1, OTHER = 2 }
+	export enum PartyPartyClassificationType { INDIVIDUAL = 'INDIVIDUAL', COMPANY = 'COMPANY', OTHER = 'OTHER' }
 
 	export interface PartyRole {
 
@@ -11330,7 +11330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaseSourceDataStatus { NO_LONGER_AVAILABLE_IN_COURT = 0, SOURCE_DEPRECATED = 1, _null = 2 }
+	export enum CaseSourceDataStatus { NO_LONGER_AVAILABLE_IN_COURT = 'NO_LONGER_AVAILABLE_IN_COURT', SOURCE_DEPRECATED = 'SOURCE_DEPRECATED', _null = 2 }
 
 
 	/** Provides Court Data per State Jurisdiction for an entity. */
@@ -12254,11 +12254,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CaseCountAnalyticsByCaseFiledDateGroupedBy { Yearly = 0, Quarterly = 1, Monthly = 2, Weekly = 3 }
+	export enum CaseCountAnalyticsByCaseFiledDateGroupedBy { Yearly = 'Yearly', Quarterly = 'Quarterly', Monthly = 'Monthly', Weekly = 'Weekly' }
 
-	export enum CaseCountAnalyticsByCaseFiledDateMonthString { January = 0, February = 1, March = 2, April = 3, May = 4, June = 5, July = 6, August = 7, September = 8, October = 9, November = 10, December = 11, _null = 12 }
+	export enum CaseCountAnalyticsByCaseFiledDateMonthString { January = 'January', February = 'February', March = 'March', April = 'April', May = 'May', June = 'June', July = 'July', August = 'August', September = 'September', October = 'October', November = 'November', December = 'December', _null = 12 }
 
-	export enum CaseCountAnalyticsByCaseFiledDateQuarter { Q1 = 0, Q2 = 1, Q3 = 2, Q4 = 3, _null = 4 }
+	export enum CaseCountAnalyticsByCaseFiledDateQuarter { Q1 = 'Q1', Q2 = 'Q2', Q3 = 'Q3', Q4 = 'Q4', _null = 4 }
 
 
 	/** Response for Case Count by filing date. */
@@ -15373,7 +15373,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaseDocumentOrderCallbackStatus { COMPLETE = 0, FAILURE = 1, IN_PROGRESS = 2 }
+	export enum CaseDocumentOrderCallbackStatus { COMPLETE = 'COMPLETE', FAILURE = 'FAILURE', IN_PROGRESS = 'IN_PROGRESS' }
 
 	export interface CaseDocumentOrderCallbackListResponse {
 
@@ -16986,9 +16986,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CaseUpdatePacerOptionsResponseAdditionalPageArrayPage { associatedCases = 0, caseSummary = 1, listOfCreditors = 2 }
+	export enum CaseUpdatePacerOptionsResponseAdditionalPageArrayPage { associatedCases = 'associatedCases', caseSummary = 'caseSummary', listOfCreditors = 'listOfCreditors' }
 
-	export enum CaseUpdatePacerOptionsResponseRefreshType { fetchNewDocketEntries = 0, fetchAllDocketEntries = 1 }
+	export enum CaseUpdatePacerOptionsResponseRefreshType { fetchNewDocketEntries = 'fetchNewDocketEntries', fetchAllDocketEntries = 'fetchAllDocketEntries' }
 
 	export interface Schedule {
 
@@ -17040,7 +17040,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleType { daily = 0, weekly = 1, monthly = 2 }
+	export enum ScheduleType { daily = 'daily', weekly = 'weekly', monthly = 'monthly' }
 
 	export interface CaseTrackListResponse {
 
@@ -19645,7 +19645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceStatusServiceDetails { acceptingCaseUpdates = 0, notAcceptingCaseUpdates = 1, acceptingCaseTrack = 2, notAcceptingCaseTrack = 3, acceptingAutoDocOrders = 4, acceptingManualDocOrders = 5, notAcceptingAutoDocOrdersLimitExceeded = 6, notAcceptingManualDocOrdersLimitExceeded = 7, notAcceptingDocOrders = 8 }
+	export enum ServiceStatusServiceDetails { acceptingCaseUpdates = 'acceptingCaseUpdates', notAcceptingCaseUpdates = 'notAcceptingCaseUpdates', acceptingCaseTrack = 'acceptingCaseTrack', notAcceptingCaseTrack = 'notAcceptingCaseTrack', acceptingAutoDocOrders = 'acceptingAutoDocOrders', acceptingManualDocOrders = 'acceptingManualDocOrders', notAcceptingAutoDocOrdersLimitExceeded = 'notAcceptingAutoDocOrdersLimitExceeded', notAcceptingManualDocOrdersLimitExceeded = 'notAcceptingManualDocOrdersLimitExceeded', notAcceptingDocOrders = 'notAcceptingDocOrders' }
 
 	export interface ServiceStatusDownDetails {
 
@@ -19727,7 +19727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceStatusDownDetailsReason { underMaintenance = 0, notIntegrated = 1, brokenIntegration = 2, sourceMigrated = 3 }
+	export enum ServiceStatusDownDetailsReason { underMaintenance = 'underMaintenance', notIntegrated = 'notIntegrated', brokenIntegration = 'brokenIntegration', sourceMigrated = 'sourceMigrated' }
 
 	export interface CourtServiceStatusResponse {
 
@@ -21931,7 +21931,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NormJudgePublicDataJudicialSourceType { Website = 0, Other = 1 }
+	export enum NormJudgePublicDataJudicialSourceType { Website = 'Website', Other = 'Other' }
 
 	export interface NormJudgePublicDataNameHistoryArray {
 
@@ -22676,7 +22676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NormOrganizationOrganizationType { Business = 0, GovernmentAgency = 1 }
+	export enum NormOrganizationOrganizationType { Business = 'Business', GovernmentAgency = 'GovernmentAgency' }
 
 	export interface SOSData {
 
@@ -23014,9 +23014,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SOSAssociatedNormOrganizationRelationshipType { Parent = 0, Child = 1 }
+	export enum SOSAssociatedNormOrganizationRelationshipType { Parent = 'Parent', Child = 'Child' }
 
-	export enum SOSDataStatus { Active = 0 }
+	export enum SOSDataStatus { Active = 'Active' }
 
 	export interface NormOrganizationTickerArray {
 
@@ -23575,7 +23575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NormPartyPartyClassificationType { Individual = 0, Organization = 1 }
+	export enum NormPartyPartyClassificationType { Individual = 'Individual', Organization = 'Organization' }
 
 	export interface RelatedNormParty {
 
@@ -23628,7 +23628,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelatedNormPartyRelationshipType { Parent = 0, Child = 1, Same_Corporate_Group = 2 }
+	export enum RelatedNormPartyRelationshipType { Parent = 'Parent', Child = 'Child', Same_Corporate_Group = 'Same_Corporate_Group' }
 
 	export interface NormPartySearchResponse {
 
@@ -24528,7 +24528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PACERCaseSearchContentPclJurisdictionType { Appellate = 0, Bankruptcy = 1, Criminal = 2, Civil = 3, 'Multi-district Litigation' = 4 }
+	export enum PACERCaseSearchContentPclJurisdictionType { Appellate = 'Appellate', Bankruptcy = 'Bankruptcy', Criminal = 'Criminal', Civil = 'Civil', 'Multi-district Litigation' = 'Multi-district Litigation' }
 
 	export interface PACERCaseSearchResults {
 
@@ -29642,19 +29642,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetCallbacksStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILURE = 2 }
+	export enum GetCallbacksStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', FAILURE = 'FAILURE' }
 
-	export enum GetCaseDocketEntriesSortBy { 'latest to oldest' = 0, 'oldest to latest' = 1 }
+	export enum GetCaseDocketEntriesSortBy { 'latest to oldest' = 'latest to oldest', 'oldest to latest' = 'oldest to latest' }
 
-	export enum SearchCasesSort { filedDate = 0, relevancy = 1 }
+	export enum SearchCasesSort { filedDate = 'filedDate', relevancy = 'relevancy' }
 
-	export enum SearchCasesOrder { asc = 0, desc = 1 }
+	export enum SearchCasesOrder { asc = 'asc', desc = 'desc' }
 
-	export enum GetAreasOfLawSort { name = 0 }
+	export enum GetAreasOfLawSort { name = 'name' }
 
-	export enum GetJurisdictionGeoForCourtSort { state = 0 }
+	export enum GetJurisdictionGeoForCourtSort { state = 'state' }
 
-	export enum AllCourtsPacerCaseLocatorCaseSearchCaseStatus { open = 0, closed = 1 }
+	export enum AllCourtsPacerCaseLocatorCaseSearchCaseStatus { open = 'open', closed = 'closed' }
 
 }
 

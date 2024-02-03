@@ -207,9 +207,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionCallLogLevel { CALL_LOG_LEVEL_UNSPECIFIED = 0, LOG_ALL_CALLS = 1, LOG_ERRORS_ONLY = 2 }
+	export enum ExecutionCallLogLevel { CALL_LOG_LEVEL_UNSPECIFIED = 'CALL_LOG_LEVEL_UNSPECIFIED', LOG_ALL_CALLS = 'LOG_ALL_CALLS', LOG_ERRORS_ONLY = 'LOG_ERRORS_ONLY' }
 
-	export enum ExecutionState { STATE_UNSPECIFIED = 0, ACTIVE = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4, UNAVAILABLE = 5, QUEUED = 6 }
+	export enum ExecutionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', UNAVAILABLE = 'UNAVAILABLE', QUEUED = 'QUEUED' }
 
 
 	/** Represents the current status of this execution. */
@@ -330,7 +330,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Workflowexecutions_projects_locations_workflows_executions_getView { EXECUTION_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Workflowexecutions_projects_locations_workflows_executions_getView { EXECUTION_VIEW_UNSPECIFIED = 'EXECUTION_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

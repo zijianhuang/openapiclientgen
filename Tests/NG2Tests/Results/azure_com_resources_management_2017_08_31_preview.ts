@@ -169,7 +169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagementGroupDetailsPropertiesManagementGroupType { Enrollment = 0, Department = 1, Account = 2, Subscription = 3 }
+	export enum ManagementGroupDetailsPropertiesManagementGroupType { Enrollment = 'Enrollment', Department = 'Department', Account = 'Account', Subscription = 'Subscription' }
 
 
 	/** The unique identifier (ID) of a management group. */
@@ -418,7 +418,7 @@ export namespace MyNS {
 
 
 	/** (Optional) The type of the management group. */
-	export enum ManagementGroupType { Enrollment = 0, Department = 1, Account = 2, Subscription = 3 }
+	export enum ManagementGroupType { Enrollment = 'Enrollment', Department = 'Department', Account = 'Account', Subscription = 'Subscription' }
 
 
 	/** The management group details. */
@@ -617,7 +617,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ManagementGroups_GetExpand { children = 0 }
+	export enum ManagementGroups_GetExpand { children = 'children' }
 
 }
 

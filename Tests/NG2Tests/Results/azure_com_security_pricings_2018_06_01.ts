@@ -54,7 +54,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PricingPropertiesPricingTier { Free = 0, Standard = 1 }
+	export enum PricingPropertiesPricingTier { Free = 'Free', Standard = 'Standard' }
 
 
 	/** List of pricing configurations response. */

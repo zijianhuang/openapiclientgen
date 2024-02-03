@@ -251,7 +251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentState { STATE_UNSPECIFIED = 0, SUSPENDED = 1, PENDING = 2, RUNNING = 3, DELETING = 4 }
+	export enum EnvironmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', SUSPENDED = 'SUSPENDED', PENDING = 'PENDING', RUNNING = 'RUNNING', DELETING = 'DELETING' }
 
 
 	/** The response message for Operations.ListOperations. */
@@ -423,7 +423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartEnvironmentMetadataState { STATE_UNSPECIFIED = 0, STARTING = 1, UNARCHIVING_DISK = 2, AWAITING_COMPUTE_RESOURCES = 3, FINISHED = 4 }
+	export enum StartEnvironmentMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTING = 'STARTING', UNARCHIVING_DISK = 'UNARCHIVING_DISK', AWAITING_COMPUTE_RESOURCES = 'AWAITING_COMPUTE_RESOURCES', FINISHED = 'FINISHED' }
 
 
 	/** Request message for StartEnvironment. */

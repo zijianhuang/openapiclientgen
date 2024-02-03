@@ -50,7 +50,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Authorized_payment_methodType { invoice = 0, fixed_amount = 1, base_account = 2, direct_debit = 3, direct_bank_transfer = 4, b2b_invoice = 5, card = 6, slice_it_by_card = 7, pay_later_by_card = 8, pay_by_card = 9, fixed_sum_credit = 10 }
+	export enum Authorized_payment_methodType { invoice = 'invoice', fixed_amount = 'fixed_amount', base_account = 'base_account', direct_debit = 'direct_debit', direct_bank_transfer = 'direct_bank_transfer', b2b_invoice = 'b2b_invoice', card = 'card', slice_it_by_card = 'slice_it_by_card', pay_later_by_card = 'pay_later_by_card', pay_by_card = 'pay_by_card', fixed_sum_credit = 'fixed_sum_credit' }
 
 	export interface Address {
 
@@ -617,7 +617,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerOrganization_entity_type { LIMITED_COMPANY = 0, PUBLIC_LIMITED_COMPANY = 1, ENTREPRENEURIAL_COMPANY = 2, LIMITED_PARTNERSHIP_LIMITED_COMPANY = 3, LIMITED_PARTNERSHIP = 4, GENERAL_PARTNERSHIP = 5, REGISTERED_SOLE_TRADER = 6, SOLE_TRADER = 7, CIVIL_LAW_PARTNERSHIP = 8, PUBLIC_INSTITUTION = 9, OTHER = 10 }
+	export enum CustomerOrganization_entity_type { LIMITED_COMPANY = 'LIMITED_COMPANY', PUBLIC_LIMITED_COMPANY = 'PUBLIC_LIMITED_COMPANY', ENTREPRENEURIAL_COMPANY = 'ENTREPRENEURIAL_COMPANY', LIMITED_PARTNERSHIP_LIMITED_COMPANY = 'LIMITED_PARTNERSHIP_LIMITED_COMPANY', LIMITED_PARTNERSHIP = 'LIMITED_PARTNERSHIP', GENERAL_PARTNERSHIP = 'GENERAL_PARTNERSHIP', REGISTERED_SOLE_TRADER = 'REGISTERED_SOLE_TRADER', SOLE_TRADER = 'SOLE_TRADER', CIVIL_LAW_PARTNERSHIP = 'CIVIL_LAW_PARTNERSHIP', PUBLIC_INSTITUTION = 'PUBLIC_INSTITUTION', OTHER = 'OTHER' }
 
 	export interface Merchant_urls {
 
@@ -1061,7 +1061,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionInterval { DAY = 0, WEEK = 1, MONTH = 2, YEAR = 3 }
+	export enum SubscriptionInterval { DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH', YEAR = 'YEAR' }
 
 	export interface Payment_method_category {
 		asset_urls?: Asset_urls;
@@ -1094,7 +1094,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_order_requestStatus { complete = 0, incomplete = 1 }
+	export enum Create_order_requestStatus { complete = 'complete', incomplete = 'incomplete' }
 
 	export interface Customer_read {
 
@@ -1274,7 +1274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Customer_token_creation_requestIntended_use { SUBSCRIPTION = 0 }
+	export enum Customer_token_creation_requestIntended_use { SUBSCRIPTION = 'SUBSCRIPTION' }
 
 	export interface Customer_token_creation_response {
 		billing_address?: Address;
@@ -1657,9 +1657,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionAcquiring_channel { ECOMMERCE = 0, IN_STORE = 1, TELESALES = 2 }
+	export enum SessionAcquiring_channel { ECOMMERCE = 'ECOMMERCE', IN_STORE = 'IN_STORE', TELESALES = 'TELESALES' }
 
-	export enum SessionIntent { buy = 0, tokenize = 1, buy_and_tokenize = 2 }
+	export enum SessionIntent { buy = 'buy', tokenize = 'tokenize', buy_and_tokenize = 'buy_and_tokenize' }
 
 	export interface Session_create {
 

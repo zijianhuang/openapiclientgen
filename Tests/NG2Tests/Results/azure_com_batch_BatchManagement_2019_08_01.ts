@@ -121,7 +121,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationPackagePropertiesState { Pending = 0, Active = 1 }
+	export enum ApplicationPackagePropertiesState { Pending = 'Pending', Active = 'Active' }
 
 	export interface ApplicationPackageReference {
 
@@ -343,9 +343,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoUserSpecificationElevationLevel { NonAdmin = 0, Admin = 1 }
+	export enum AutoUserSpecificationElevationLevel { NonAdmin = 'NonAdmin', Admin = 'Admin' }
 
-	export enum AutoUserSpecificationScope { Task = 0, Pool = 1 }
+	export enum AutoUserSpecificationScope { Task = 'Task', Pool = 'Pool' }
 
 	export interface AzureBlobFileSystemConfiguration {
 
@@ -548,7 +548,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchAccountCreatePropertiesPoolAllocationMode { BatchService = 0, UserSubscription = 1 }
+	export enum BatchAccountCreatePropertiesPoolAllocationMode { BatchService = 'BatchService', UserSubscription = 'UserSubscription' }
 
 
 	/** A set of Azure Batch account keys. */
@@ -708,7 +708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchAccountPropertiesProvisioningState { Invalid = 0, Creating = 1, Deleting = 2, Succeeded = 3, Failed = 4, Cancelled = 5 }
+	export enum BatchAccountPropertiesProvisioningState { Invalid = 'Invalid', Creating = 'Creating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Cancelled = 'Cancelled' }
 
 
 	/** Parameters supplied to the RegenerateKey operation. */
@@ -737,7 +737,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchAccountRegenerateKeyParametersKeyName { Primary = 0, Secondary = 1 }
+	export enum BatchAccountRegenerateKeyParametersKeyName { Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** Parameters for updating an Azure Batch account. */
@@ -852,7 +852,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CachingType { None = 0, ReadOnly = 1, ReadWrite = 2 }
+	export enum CachingType { None = 'None', ReadOnly = 'ReadOnly', ReadWrite = 'ReadWrite' }
 
 
 	/** Contains information about a certificate. */
@@ -906,7 +906,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateBasePropertiesFormat { Pfx = 0, Cer = 1 }
+	export enum CertificateBasePropertiesFormat { Pfx = 'Pfx', Cer = 'Cer' }
 
 
 	/** Contains information about a certificate. */
@@ -1009,7 +1009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificatePropertiesPreviousProvisioningState { Succeeded = 0, Deleting = 1, Failed = 2 }
+	export enum CertificatePropertiesPreviousProvisioningState { Succeeded = 'Succeeded', Deleting = 'Deleting', Failed = 'Failed' }
 
 	export interface CertificateReference {
 
@@ -1043,7 +1043,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateReferenceStoreLocation { CurrentUser = 0, LocalMachine = 1 }
+	export enum CertificateReferenceStoreLocation { CurrentUser = 'CurrentUser', LocalMachine = 'LocalMachine' }
 
 
 	/** Parameters for a check name availability request. */
@@ -1085,7 +1085,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityParametersType { 'Microsoft.Batch/batchAccounts' = 0 }
+	export enum CheckNameAvailabilityParametersType { 'Microsoft.Batch/batchAccounts' = 'Microsoft.Batch/batchAccounts' }
 
 
 	/** The CheckNameAvailability operation response. */
@@ -1122,7 +1122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResultReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameAvailabilityResultReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** An error response from the Batch service. */
@@ -1209,7 +1209,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeNodeDeallocationOption { Requeue = 0, Terminate = 1, TaskCompletion = 2, RetainedData = 3 }
+	export enum ComputeNodeDeallocationOption { Requeue = 'Requeue', Terminate = 'Terminate', TaskCompletion = 'TaskCompletion', RetainedData = 'RetainedData' }
 
 	export interface ContainerConfiguration {
 
@@ -1265,7 +1265,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerConfigurationType { DockerCompatible = 0 }
+	export enum ContainerConfigurationType { DockerCompatible = 'DockerCompatible' }
 
 
 	/** Settings which will be used by the data disks associated to Compute Nodes in the Pool. When using attached data disks, you need to mount and format the disks from within a VM to use them. */
@@ -1307,7 +1307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataDiskStorageAccountType { Standard_LRS = 0, Premium_LRS = 1 }
+	export enum DataDiskStorageAccountType { Standard_LRS = 'Standard_LRS', Premium_LRS = 'Premium_LRS' }
 
 
 	/** An error response from the Batch service. */
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElevationLevel { NonAdmin = 0, Admin = 1 }
+	export enum ElevationLevel { NonAdmin = 'NonAdmin', Admin = 'Admin' }
 
 	export interface EnvironmentSetting {
 
@@ -1590,9 +1590,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkSecurityGroupRuleAccess { Allow = 0, Deny = 1 }
+	export enum NetworkSecurityGroupRuleAccess { Allow = 'Allow', Deny = 'Deny' }
 
-	export enum InboundNatPoolProtocol { TCP = 0, UDP = 1 }
+	export enum InboundNatPoolProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 
 	/** Identifies the Azure key vault associated with a Batch account. */
@@ -1928,7 +1928,7 @@ export namespace MyNS {
 
 
 	/** The allocation mode for creating pools in the Batch account. */
-	export enum PoolAllocationMode { BatchService = 0, UserSubscription = 1 }
+	export enum PoolAllocationMode { BatchService = 'BatchService', UserSubscription = 'UserSubscription' }
 
 	export interface PoolEndpointConfiguration {
 
@@ -2047,11 +2047,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PoolPropertiesAllocationState { Steady = 0, Resizing = 1, Stopping = 2 }
+	export enum PoolPropertiesAllocationState { Steady = 'Steady', Resizing = 'Resizing', Stopping = 'Stopping' }
 
-	export enum PoolPropertiesInterNodeCommunication { Enabled = 0, Disabled = 1 }
+	export enum PoolPropertiesInterNodeCommunication { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum PoolPropertiesProvisioningState { Succeeded = 0, Deleting = 1 }
+	export enum PoolPropertiesProvisioningState { Succeeded = 'Succeeded', Deleting = 'Deleting' }
 
 	export interface UserAccount {
 		elevationLevel?: AutoUserSpecificationElevationLevel | null;
@@ -2355,7 +2355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageAccountType { Standard_LRS = 0, Premium_LRS = 1 }
+	export enum StorageAccountType { Standard_LRS = 'Standard_LRS', Premium_LRS = 'Premium_LRS' }
 
 	export interface TaskContainerSettings {
 
@@ -2391,7 +2391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskContainerSettingsWorkingDirectory { TaskWorkingDirectory = 0, ContainerImageDefault = 1 }
+	export enum TaskContainerSettingsWorkingDirectory { TaskWorkingDirectory = 'TaskWorkingDirectory', ContainerImageDefault = 'ContainerImageDefault' }
 
 	export interface TaskSchedulingPolicy {
 
@@ -2410,7 +2410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskSchedulingPolicyNodeFillType { Spread = 0, Pack = 1 }
+	export enum TaskSchedulingPolicyNodeFillType { Spread = 'Spread', Pack = 'Pack' }
 
 
 	/** Specify either the userName or autoUser property, but not both. */
@@ -2514,7 +2514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WindowsUserConfigurationLoginMode { Batch = 0, Interactive = 1 }
+	export enum WindowsUserConfigurationLoginMode { Batch = 'Batch', Interactive = 'Interactive' }
 
 	@Injectable()
 	export class MyClient {

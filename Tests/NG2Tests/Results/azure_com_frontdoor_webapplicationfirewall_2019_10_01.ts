@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Defines the action to take on rule match. */
-	export enum ActionType { Allow = 0, Block = 1, Log = 2, Redirect = 3 }
+	export enum ActionType { Allow = 'Allow', Block = 'Block', Log = 'Log', Redirect = 'Redirect' }
 
 
 	/** Defines contents of a web application rule */
@@ -114,7 +114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRuleEnabledState { Disabled = 0, Enabled = 1 }
+	export enum CustomRuleEnabledState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Define a match condition. */
@@ -179,15 +179,15 @@ export namespace MyNS {
 
 	}
 
-	export enum MatchConditionMatchVariable { RemoteAddr = 0, RequestMethod = 1, QueryString = 2, PostArgs = 3, RequestUri = 4, RequestHeader = 5, RequestBody = 6, Cookies = 7, SocketAddr = 8 }
+	export enum MatchConditionMatchVariable { RemoteAddr = 'RemoteAddr', RequestMethod = 'RequestMethod', QueryString = 'QueryString', PostArgs = 'PostArgs', RequestUri = 'RequestUri', RequestHeader = 'RequestHeader', RequestBody = 'RequestBody', Cookies = 'Cookies', SocketAddr = 'SocketAddr' }
 
-	export enum MatchConditionOperator { Any = 0, IPMatch = 1, GeoMatch = 2, Equal = 3, Contains = 4, LessThan = 5, GreaterThan = 6, LessThanOrEqual = 7, GreaterThanOrEqual = 8, BeginsWith = 9, EndsWith = 10, RegEx = 11 }
+	export enum MatchConditionOperator { Any = 'Any', IPMatch = 'IPMatch', GeoMatch = 'GeoMatch', Equal = 'Equal', Contains = 'Contains', LessThan = 'LessThan', GreaterThan = 'GreaterThan', LessThanOrEqual = 'LessThanOrEqual', GreaterThanOrEqual = 'GreaterThanOrEqual', BeginsWith = 'BeginsWith', EndsWith = 'EndsWith', RegEx = 'RegEx' }
 
 
 	/** Describes what transforms applied before matching. */
-	export enum TransformType { Lowercase = 0, Uppercase = 1, Trim = 2, UrlDecode = 3, UrlEncode = 4, RemoveNulls = 5 }
+	export enum TransformType { Lowercase = 'Lowercase', Uppercase = 'Uppercase', Trim = 'Trim', UrlDecode = 'UrlDecode', UrlEncode = 'UrlEncode', RemoveNulls = 'RemoveNulls' }
 
-	export enum CustomRuleRuleType { MatchRule = 0, RateLimitRule = 1 }
+	export enum CustomRuleRuleType { MatchRule = 'MatchRule', RateLimitRule = 'RateLimitRule' }
 
 
 	/** Defines contents of custom rules */
@@ -299,7 +299,7 @@ export namespace MyNS {
 
 
 	/** Describes if the managed rule is in enabled or disabled state. */
-	export enum ManagedRuleEnabledState { Disabled = 0, Enabled = 1 }
+	export enum ManagedRuleEnabledState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Exclude variables from managed rule evaluation. */
@@ -354,9 +354,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedRuleExclusionMatchVariable { RequestHeaderNames = 0, RequestCookieNames = 1, QueryStringArgNames = 2, RequestBodyPostArgNames = 3 }
+	export enum ManagedRuleExclusionMatchVariable { RequestHeaderNames = 'RequestHeaderNames', RequestCookieNames = 'RequestCookieNames', QueryStringArgNames = 'QueryStringArgNames', RequestBodyPostArgNames = 'RequestBodyPostArgNames' }
 
-	export enum ManagedRuleExclusionSelectorMatchOperator { Equals = 0, Contains = 1, StartsWith = 2, EndsWith = 3, EqualsAny = 4 }
+	export enum ManagedRuleExclusionSelectorMatchOperator { Equals = 'Equals', Contains = 'Contains', StartsWith = 'StartsWith', EndsWith = 'EndsWith', EqualsAny = 'EqualsAny' }
 
 
 	/** Describes a managed rule group. */
@@ -650,7 +650,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicySettingsMode { Prevention = 0, Detection = 1 }
+	export enum PolicySettingsMode { Prevention = 'Prevention', Detection = 'Detection' }
 
 	export interface WebApplicationFirewallPolicy {
 	}
@@ -722,7 +722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebApplicationFirewallPolicyPropertiesResourceState { Creating = 0, Enabling = 1, Enabled = 2, Disabling = 3, Disabled = 4, Deleting = 5 }
+	export enum WebApplicationFirewallPolicyPropertiesResourceState { Creating = 'Creating', Enabling = 'Enabling', Enabled = 'Enabled', Disabling = 'Disabling', Disabled = 'Disabled', Deleting = 'Deleting' }
 
 	@Injectable()
 	export class MyClient {

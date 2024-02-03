@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppAppApprovalState { APP_APPROVAL_STATE_UNSPECIFIED = 0, ACTION_REQUIRED = 1, IN_REVIEW = 2, APPROVED = 3 }
+	export enum AppAppApprovalState { APP_APPROVAL_STATE_UNSPECIFIED = 'APP_APPROVAL_STATE_UNSPECIFIED', ACTION_REQUIRED = 'ACTION_REQUIRED', IN_REVIEW = 'IN_REVIEW', APPROVED = 'APPROVED' }
 
 
 	/** Information from the app store if the app is linked to an app store. */
@@ -296,7 +296,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediationReportSpecDimensionFilterDimension { DIMENSION_UNSPECIFIED = 0, DATE = 1, MONTH = 2, WEEK = 3, AD_SOURCE = 4, AD_SOURCE_INSTANCE = 5, AD_UNIT = 6, APP = 7, MEDIATION_GROUP = 8, COUNTRY = 9, FORMAT = 10, PLATFORM = 11, MOBILE_OS_VERSION = 12, GMA_SDK_VERSION = 13, APP_VERSION_NAME = 14, SERVING_RESTRICTION = 15 }
+	export enum MediationReportSpecDimensionFilterDimension { DIMENSION_UNSPECIFIED = 'DIMENSION_UNSPECIFIED', DATE = 'DATE', MONTH = 'MONTH', WEEK = 'WEEK', AD_SOURCE = 'AD_SOURCE', AD_SOURCE_INSTANCE = 'AD_SOURCE_INSTANCE', AD_UNIT = 'AD_UNIT', APP = 'APP', MEDIATION_GROUP = 'MEDIATION_GROUP', COUNTRY = 'COUNTRY', FORMAT = 'FORMAT', PLATFORM = 'PLATFORM', MOBILE_OS_VERSION = 'MOBILE_OS_VERSION', GMA_SDK_VERSION = 'GMA_SDK_VERSION', APP_VERSION_NAME = 'APP_VERSION_NAME', SERVING_RESTRICTION = 'SERVING_RESTRICTION' }
 
 
 	/** List of string values. */
@@ -378,9 +378,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MediationReportSpecSortConditionMetric { METRIC_UNSPECIFIED = 0, AD_REQUESTS = 1, CLICKS = 2, ESTIMATED_EARNINGS = 3, IMPRESSIONS = 4, IMPRESSION_CTR = 5, MATCHED_REQUESTS = 6, MATCH_RATE = 7, OBSERVED_ECPM = 8 }
+	export enum MediationReportSpecSortConditionMetric { METRIC_UNSPECIFIED = 'METRIC_UNSPECIFIED', AD_REQUESTS = 'AD_REQUESTS', CLICKS = 'CLICKS', ESTIMATED_EARNINGS = 'ESTIMATED_EARNINGS', IMPRESSIONS = 'IMPRESSIONS', IMPRESSION_CTR = 'IMPRESSION_CTR', MATCHED_REQUESTS = 'MATCHED_REQUESTS', MATCH_RATE = 'MATCH_RATE', OBSERVED_ECPM = 'OBSERVED_ECPM' }
 
-	export enum MediationReportSpecSortConditionOrder { SORT_ORDER_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum MediationReportSpecSortConditionOrder { SORT_ORDER_UNSPECIFIED = 'SORT_ORDER_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** The streaming response for the AdMob mediation report where the first response contains the report header, then a stream of row responses, and finally a footer as the last response message. For example: [{ "header": { "date_range": { "start_date": {"year": 2018, "month": 9, "day": 1}, "end_date": {"year": 2018, "month": 9, "day": 1} }, "localization_settings": { "currency_code": "USD", "language_code": "en-US" } } }, { "row": { "dimension_values": { "DATE": {"value": "20180918"}, "APP": { "value": "ca-app-pub-8123415297019784~1001342552", "display_label": "My app name!" } }, "metric_values": { "ESTIMATED_EARNINGS": {"decimal_value": "1324746"} } } }, { "footer": {"matching_row_count": 1} }] */
@@ -457,7 +457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportWarningType { TYPE_UNSPECIFIED = 0, DATA_BEFORE_ACCOUNT_TIMEZONE_CHANGE = 1, DATA_DELAYED = 2, OTHER = 3, REPORT_CURRENCY_NOT_ACCOUNT_CURRENCY = 4 }
+	export enum ReportWarningType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DATA_BEFORE_ACCOUNT_TIMEZONE_CHANGE = 'DATA_BEFORE_ACCOUNT_TIMEZONE_CHANGE', DATA_DELAYED = 'DATA_DELAYED', OTHER = 'OTHER', REPORT_CURRENCY_NOT_ACCOUNT_CURRENCY = 'REPORT_CURRENCY_NOT_ACCOUNT_CURRENCY' }
 
 
 	/** Groups data helps to treat the generated report. Always sent as a first message in the stream response. */
@@ -664,7 +664,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkReportSpecDimensionFilterDimension { DIMENSION_UNSPECIFIED = 0, DATE = 1, MONTH = 2, WEEK = 3, AD_UNIT = 4, APP = 5, AD_TYPE = 6, COUNTRY = 7, FORMAT = 8, PLATFORM = 9, MOBILE_OS_VERSION = 10, GMA_SDK_VERSION = 11, APP_VERSION_NAME = 12, SERVING_RESTRICTION = 13 }
+	export enum NetworkReportSpecDimensionFilterDimension { DIMENSION_UNSPECIFIED = 'DIMENSION_UNSPECIFIED', DATE = 'DATE', MONTH = 'MONTH', WEEK = 'WEEK', AD_UNIT = 'AD_UNIT', APP = 'APP', AD_TYPE = 'AD_TYPE', COUNTRY = 'COUNTRY', FORMAT = 'FORMAT', PLATFORM = 'PLATFORM', MOBILE_OS_VERSION = 'MOBILE_OS_VERSION', GMA_SDK_VERSION = 'GMA_SDK_VERSION', APP_VERSION_NAME = 'APP_VERSION_NAME', SERVING_RESTRICTION = 'SERVING_RESTRICTION' }
 
 
 	/** Sorting direction to be applied on a dimension or a metric. */
@@ -701,7 +701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkReportSpecSortConditionMetric { METRIC_UNSPECIFIED = 0, AD_REQUESTS = 1, CLICKS = 2, ESTIMATED_EARNINGS = 3, IMPRESSIONS = 4, IMPRESSION_CTR = 5, IMPRESSION_RPM = 6, MATCHED_REQUESTS = 7, MATCH_RATE = 8, SHOW_RATE = 9 }
+	export enum NetworkReportSpecSortConditionMetric { METRIC_UNSPECIFIED = 'METRIC_UNSPECIFIED', AD_REQUESTS = 'AD_REQUESTS', CLICKS = 'CLICKS', ESTIMATED_EARNINGS = 'ESTIMATED_EARNINGS', IMPRESSIONS = 'IMPRESSIONS', IMPRESSION_CTR = 'IMPRESSION_CTR', IMPRESSION_RPM = 'IMPRESSION_RPM', MATCHED_REQUESTS = 'MATCHED_REQUESTS', MATCH_RATE = 'MATCH_RATE', SHOW_RATE = 'SHOW_RATE' }
 
 
 	/** The streaming response for the AdMob Network report where the first response contains the report header, then a stream of row responses, and finally a footer as the last response message. For example: [{ "header": { "dateRange": { "startDate": {"year": 2018, "month": 9, "day": 1}, "endDate": {"year": 2018, "month": 9, "day": 1} }, "localizationSettings": { "currencyCode": "USD", "languageCode": "en-US" } } }, { "row": { "dimensionValues": { "DATE": {"value": "20180918"}, "APP": { "value": "ca-app-pub-8123415297019784~1001342552", displayLabel: "My app name!" } }, "metricValues": { "ESTIMATED_EARNINGS": {"microsValue": 6500000} } } }, { "footer": {"matchingRowCount": 1} }] */

@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Bulk_eligibility_enum_eligibility_status { ineligible = 0, eligible = 1 }
+	export enum Bulk_eligibility_enum_eligibility_status { ineligible = 'ineligible', eligible = 'eligible' }
 
-	export enum Bulk_eligibility_enum_eligibility_sub_status { 'country-ineligible' = 0, 'number-format-ineligible' = 1, 'number-type-ineligible' = 2, 'carrier-ineligible' = 3, 'already-in-twilio' = 4, 'internal-processing-error' = 5, 'invalid-phone-number' = 6, 'invalid-hosting-account-sid' = 7, eligible = 8, 'eligible-by-manual-process' = 9 }
+	export enum Bulk_eligibility_enum_eligibility_sub_status { 'country-ineligible' = 'country-ineligible', 'number-format-ineligible' = 'number-format-ineligible', 'number-type-ineligible' = 'number-type-ineligible', 'carrier-ineligible' = 'carrier-ineligible', 'already-in-twilio' = 'already-in-twilio', 'internal-processing-error' = 'internal-processing-error', 'invalid-phone-number' = 'invalid-phone-number', 'invalid-hosting-account-sid' = 'invalid-hosting-account-sid', eligible = 'eligible', 'eligible-by-manual-process' = 'eligible-by-manual-process' }
 
-	export enum Eligibility_enum_eligibility_status { ineligible = 0, eligible = 1 }
+	export enum Eligibility_enum_eligibility_status { ineligible = 'ineligible', eligible = 'eligible' }
 
-	export enum Eligibility_enum_eligibility_sub_status { 'country-ineligible' = 0, 'number-format-ineligible' = 1, 'number-type-ineligible' = 2, 'carrier-ineligible' = 3, 'already-in-twilio' = 4, 'internal-processing-error' = 5, 'invalid-phone-number' = 6, 'invalid-hosting-account-sid' = 7, eligible = 8 }
+	export enum Eligibility_enum_eligibility_sub_status { 'country-ineligible' = 'country-ineligible', 'number-format-ineligible' = 'number-format-ineligible', 'number-type-ineligible' = 'number-type-ineligible', 'carrier-ineligible' = 'carrier-ineligible', 'already-in-twilio' = 'already-in-twilio', 'internal-processing-error' = 'internal-processing-error', 'invalid-phone-number' = 'invalid-phone-number', 'invalid-hosting-account-sid' = 'invalid-hosting-account-sid', eligible = 'eligible' }
 
 	export interface Numbersv1bulk_eligibility {
 		date_completed?: Date | null;
@@ -124,7 +124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Numbersv1porting_bulk_portabilityStatus { 'in-progress' = 0, completed = 1, expired = 2 }
+	export enum Numbersv1porting_bulk_portabilityStatus { 'in-progress' = 'in-progress', completed = 'completed', expired = 'expired' }
 
 	export interface Numbersv1porting_port_in {
 
@@ -329,11 +329,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Numbersv1porting_portabilityNumber_type { LOCAL = 0, UNKNOWN = 1, MOBILE = 2, 'TOLL-FREE' = 3 }
+	export enum Numbersv1porting_portabilityNumber_type { LOCAL = 'LOCAL', UNKNOWN = 'UNKNOWN', MOBILE = 'MOBILE', 'TOLL-FREE' = 'TOLL-FREE' }
 
-	export enum Porting_bulk_portability_enum_status { 'in-progress' = 0, completed = 1, expired = 2 }
+	export enum Porting_bulk_portability_enum_status { 'in-progress' = 'in-progress', completed = 'completed', expired = 'expired' }
 
-	export enum Porting_portability_enum_number_type { LOCAL = 0, UNKNOWN = 1, MOBILE = 2, 'TOLL-FREE' = 3 }
+	export enum Porting_portability_enum_number_type { LOCAL = 'LOCAL', UNKNOWN = 'UNKNOWN', MOBILE = 'MOBILE', 'TOLL-FREE' = 'TOLL-FREE' }
 
 	@Injectable()
 	export class MyClient {

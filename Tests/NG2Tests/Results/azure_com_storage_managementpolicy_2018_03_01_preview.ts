@@ -122,7 +122,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ManagementPolicies_GetManagementPolicyName { default = 0 }
+	export enum ManagementPolicies_GetManagementPolicyName { default = 'default' }
 
 }
 

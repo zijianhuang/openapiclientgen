@@ -124,7 +124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckErrorResponseStatus { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4, _5 = 5, _6 = 6, _16 = 7, _17 = 8 }
+	export enum CheckErrorResponseStatus { _0 = '0', _1 = '1', _2 = '2', _3 = '3', _4 = '4', _5 = '5', _6 = '6', _16 = '16', _17 = '17' }
 
 	export interface CheckRequest {
 
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlErrorResponseStatus { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4, _5 = 5, _6 = 6, _8 = 7, _9 = 8, _19 = 9 }
+	export enum ControlErrorResponseStatus { _0 = '0', _1 = '1', _2 = '2', _3 = '3', _4 = '4', _5 = '5', _6 = '6', _8 = '8', _9 = '9', _19 = '19' }
 
 	export interface ControlRequest {
 
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlRequestCmd { cancel = 0, trigger_next_event = 1 }
+	export enum ControlRequestCmd { cancel = 'cancel', trigger_next_event = 'trigger_next_event' }
 
 
 	/** Success */
@@ -852,7 +852,7 @@ export namespace MyNS {
 
 	export enum Psd2RequestCode_length { _4 = 0, _6 = 1 }
 
-	export enum Psd2RequestLg { 'en-gb' = 0, 'bg-bg' = 1, 'cs-cz' = 2, 'da-dk' = 3, 'de-de' = 4, 'ee-et' = 5, 'el-gr' = 6, 'es-es' = 7, 'fi-fi' = 8, 'fr-fr' = 9, 'ga-ie' = 10, 'hu-hu' = 11, 'it-it' = 12, 'lv-lv' = 13, 'lt-lt' = 14, 'mt-mt' = 15, 'nl-nl' = 16, 'pl-pl' = 17, 'sk-sk' = 18, 'sl-si' = 19, 'sv-se' = 20 }
+	export enum Psd2RequestLg { 'en-gb' = 'en-gb', 'bg-bg' = 'bg-bg', 'cs-cz' = 'cs-cz', 'da-dk' = 'da-dk', 'de-de' = 'de-de', 'ee-et' = 'ee-et', 'el-gr' = 'el-gr', 'es-es' = 'es-es', 'fi-fi' = 'fi-fi', 'fr-fr' = 'fr-fr', 'ga-ie' = 'ga-ie', 'hu-hu' = 'hu-hu', 'it-it' = 'it-it', 'lv-lv' = 'lv-lv', 'lt-lt' = 'lt-lt', 'mt-mt' = 'mt-mt', 'nl-nl' = 'nl-nl', 'pl-pl' = 'pl-pl', 'sk-sk' = 'sk-sk', 'sl-si' = 'sl-si', 'sv-se' = 'sv-se' }
 
 	export enum Psd2RequestWorkflow_id { _1 = 0, _2 = 1, _3 = 2, _4 = 3, _5 = 4, _6 = 5, _7 = 6 }
 
@@ -938,7 +938,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestErrorResponseStatus { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4, _5 = 5, _6 = 6, _7 = 7, _8 = 8, _9 = 9, _10 = 10, _15 = 11, _20 = 12, _29 = 13 }
+	export enum RequestErrorResponseStatus { _0 = '0', _1 = '1', _2 = '2', _3 = '3', _4 = '4', _5 = '5', _6 = '6', _7 = '7', _8 = '8', _9 = '9', _10 = '10', _15 = '15', _20 = '20', _29 = '29' }
 
 
 	/** Success */
@@ -1027,7 +1027,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchErrorResponseStatus { 'IN PROGRESS' = 0, FAILED = 1, EXPIRED = 2, CANCELLED = 3, _101 = 4 }
+	export enum SearchErrorResponseStatus { 'IN PROGRESS' = 'IN PROGRESS', FAILED = 'FAILED', EXPIRED = 'EXPIRED', CANCELLED = 'CANCELLED', _101 = '101' }
 
 
 	/** Success */
@@ -1197,7 +1197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchResponseChecksStatus { VALID = 0, INVALID = 1 }
+	export enum SearchResponseChecksStatus { VALID = 'VALID', INVALID = 'INVALID' }
 
 	export interface SearchResponseEvents {
 		id?: string | null;
@@ -1215,9 +1215,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchResponseEventsType { tts = 0, sms = 1 }
+	export enum SearchResponseEventsType { tts = 'tts', sms = 'sms' }
 
-	export enum SearchResponseStatus { 'IN PROGRESS' = 0, SUCCESS = 1, FAILED = 2, EXPIRED = 3, CANCELLED = 4 }
+	export enum SearchResponseStatus { 'IN PROGRESS' = 'IN PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', EXPIRED = 'EXPIRED', CANCELLED = 'CANCELLED' }
 
 	export interface VerifyRequest {
 
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 
 	export enum VerifyRequestCode_length { _4 = 0, _6 = 1 }
 
-	export enum VerifyRequestLg { 'ar-xa' = 0, 'cs-cz' = 1, 'cy-cy' = 2, 'cy-gb' = 3, 'da-dk' = 4, 'de-de' = 5, 'el-gr' = 6, 'en-au' = 7, 'en-gb' = 8, 'en-in' = 9, 'en-us' = 10, 'es-es' = 11, 'es-mx' = 12, 'es-us' = 13, 'fi-fi' = 14, 'fil-ph' = 15, 'fr-ca' = 16, 'fr-fr' = 17, 'hi-in' = 18, 'hu-hu' = 19, 'id-id' = 20, 'is-is' = 21, 'it-it' = 22, 'ja-jp' = 23, 'ko-kr' = 24, 'nb-no' = 25, 'nl-nl' = 26, 'pl-pl' = 27, 'pt-br' = 28, 'pt-pt' = 29, 'ro-ro' = 30, 'ru-ru' = 31, 'sv-se' = 32, 'th-th' = 33, 'tr-tr' = 34, 'vi-vn' = 35, 'yue-cn' = 36, 'zh-cn' = 37, 'zh-tw' = 38 }
+	export enum VerifyRequestLg { 'ar-xa' = 'ar-xa', 'cs-cz' = 'cs-cz', 'cy-cy' = 'cy-cy', 'cy-gb' = 'cy-gb', 'da-dk' = 'da-dk', 'de-de' = 'de-de', 'el-gr' = 'el-gr', 'en-au' = 'en-au', 'en-gb' = 'en-gb', 'en-in' = 'en-in', 'en-us' = 'en-us', 'es-es' = 'es-es', 'es-mx' = 'es-mx', 'es-us' = 'es-us', 'fi-fi' = 'fi-fi', 'fil-ph' = 'fil-ph', 'fr-ca' = 'fr-ca', 'fr-fr' = 'fr-fr', 'hi-in' = 'hi-in', 'hu-hu' = 'hu-hu', 'id-id' = 'id-id', 'is-is' = 'is-is', 'it-it' = 'it-it', 'ja-jp' = 'ja-jp', 'ko-kr' = 'ko-kr', 'nb-no' = 'nb-no', 'nl-nl' = 'nl-nl', 'pl-pl' = 'pl-pl', 'pt-br' = 'pt-br', 'pt-pt' = 'pt-pt', 'ro-ro' = 'ro-ro', 'ru-ru' = 'ru-ru', 'sv-se' = 'sv-se', 'th-th' = 'th-th', 'tr-tr' = 'tr-tr', 'vi-vn' = 'vi-vn', 'yue-cn' = 'yue-cn', 'zh-cn' = 'zh-cn', 'zh-tw' = 'zh-tw' }
 
 	export enum VerifyRequestWorkflow_id { _1 = 0, _2 = 1, _3 = 2, _4 = 3, _5 = 4, _6 = 5, _7 = 6 }
 
@@ -1413,7 +1413,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum VerifyCheckFormat { json = 0, xml = 1 }
+	export enum VerifyCheckFormat { json = 'json', xml = 'xml' }
 
 }
 

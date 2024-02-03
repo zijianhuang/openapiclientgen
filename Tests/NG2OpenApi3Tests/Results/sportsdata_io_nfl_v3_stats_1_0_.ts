@@ -8525,15 +8525,15 @@ export namespace MyNS {
 		}
 	}
 
-	export enum LegacyBoxScoresActiveFormat { XML = 0, JSON = 1 }
+	export enum LegacyBoxScoresActiveFormat { XML = 'XML', JSON = 'JSON' }
 
-	export enum BoxScoresDeltaVPlayerstoinclude { all = 0, fantasy = 1, idp = 2 }
+	export enum BoxScoresDeltaVPlayerstoinclude { all = 'all', fantasy = 'fantasy', idp = 'idp' }
 
-	export enum LeagueLeadersByWeekPosition { ALL = 0, OFFENSE = 1, QB = 2, RB = 3, WR = 4, TE = 5, DEFENSE = 6, DL = 7, LB = 8, DB = 9, K = 10 }
+	export enum LeagueLeadersByWeekPosition { ALL = 'ALL', OFFENSE = 'OFFENSE', QB = 'QB', RB = 'RB', WR = 'WR', TE = 'TE', DEFENSE = 'DEFENSE', DL = 'DL', LB = 'LB', DB = 'DB', K = 'K' }
 
-	export enum LeagueLeadersByWeekColumn { FantasyPoints = 0, PassingYards = 1, RushingYards = 2, Receptions = 3, Sacks = 4, Interceptions = 5, Touchdowns = 6 }
+	export enum LeagueLeadersByWeekColumn { FantasyPoints = 'FantasyPoints', PassingYards = 'PassingYards', RushingYards = 'RushingYards', Receptions = 'Receptions', Sacks = 'Sacks', Interceptions = 'Interceptions', Touchdowns = 'Touchdowns' }
 
-	export enum PlayerGameLogsBySeasonFormat { JSON = 0, XML = 1 }
+	export enum PlayerGameLogsBySeasonFormat { JSON = 'JSON', XML = 'XML' }
 
 }
 

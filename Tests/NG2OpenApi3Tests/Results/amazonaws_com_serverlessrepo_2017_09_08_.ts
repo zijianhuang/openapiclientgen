@@ -166,7 +166,7 @@ export namespace MyNS {
 
 
 	/** Values that must be specified in order to deploy some applications. */
-	export enum Capability { CAPABILITY_IAM = 0, CAPABILITY_NAMED_IAM = 1, CAPABILITY_AUTO_EXPAND = 2, CAPABILITY_RESOURCE_POLICY = 3 }
+	export enum Capability { CAPABILITY_IAM = 'CAPABILITY_IAM', CAPABILITY_NAMED_IAM = 'CAPABILITY_NAMED_IAM', CAPABILITY_AUTO_EXPAND = 'CAPABILITY_AUTO_EXPAND', CAPABILITY_RESOURCE_POLICY = 'CAPABILITY_RESOURCE_POLICY' }
 
 	export interface TooManyRequestsException {
 	}
@@ -400,7 +400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { PREPARING = 0, ACTIVE = 1, EXPIRED = 2 }
+	export enum Status { PREPARING = 'PREPARING', ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED' }
 
 	export interface NotFoundException {
 	}

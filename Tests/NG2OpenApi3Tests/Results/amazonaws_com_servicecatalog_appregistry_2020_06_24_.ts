@@ -385,7 +385,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceGroupState { CREATING = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2, UPDATING = 3, UPDATE_COMPLETE = 4, UPDATE_FAILED = 5 }
+	export enum ResourceGroupState { CREATING = 'CREATING', CREATE_COMPLETE = 'CREATE_COMPLETE', CREATE_FAILED = 'CREATE_FAILED', UPDATING = 'UPDATING', UPDATE_COMPLETE = 'UPDATE_COMPLETE', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface GetAssociatedResourceResponse {
 		resource?: Resource;
@@ -581,7 +581,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { CFN_STACK = 0, RESOURCE_TAG_VALUE = 1 }
+	export enum ResourceType { CFN_STACK = 'CFN_STACK', RESOURCE_TAG_VALUE = 'RESOURCE_TAG_VALUE' }
 
 
 	/**  The details related to the resource.  */
@@ -684,7 +684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncAction { START_SYNC = 0, NO_ACTION = 1 }
+	export enum SyncAction { START_SYNC = 'START_SYNC', NO_ACTION = 'NO_ACTION' }
 
 	export interface TagResourceResponse {
 	}

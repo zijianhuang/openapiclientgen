@@ -120,7 +120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Scope { CLOUDFRONT = 0, REGIONAL = 1 }
+	export enum Scope { CLOUDFRONT = 'CLOUDFRONT', REGIONAL = 'REGIONAL' }
 
 
 	/** A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.  */
@@ -350,7 +350,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OversizeHandling { CONTINUE = 0, MATCH = 1, NO_MATCH = 2 }
+	export enum OversizeHandling { CONTINUE = 'CONTINUE', MATCH = 'MATCH', NO_MATCH = 'NO_MATCH' }
 
 
 	/** <p>Inspect the HTTP method of the web request. The method indicates the type of operation that the request is asking the origin to perform. </p> <p>This is used in the <a>FieldToMatch</a> specification for some web request component types. </p> <p>JSON specification: <code>"Method": {}</code> </p> */
@@ -426,9 +426,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JsonMatchScope { ALL = 0, KEY = 1, VALUE = 2 }
+	export enum JsonMatchScope { ALL = 'ALL', KEY = 'KEY', VALUE = 'VALUE' }
 
-	export enum BodyParsingFallbackBehavior { MATCH = 0, NO_MATCH = 1, EVALUATE_AS_STRING = 2 }
+	export enum BodyParsingFallbackBehavior { MATCH = 'MATCH', NO_MATCH = 'NO_MATCH', EVALUATE_AS_STRING = 'EVALUATE_AS_STRING' }
 
 
 	/** <p>Inspect all headers in the web request. You can specify the parts of the headers to inspect and you can narrow the set of headers to inspect by including or excluding specific keys.</p> <p>This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a> specification. </p> <p>If you want to inspect just the value of a single header, use the <code>SingleHeader</code> <code>FieldToMatch</code> setting instead.</p> <p>Example JSON: <code>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p> */
@@ -575,9 +575,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TextTransformationType { NONE = 0, COMPRESS_WHITE_SPACE = 1, HTML_ENTITY_DECODE = 2, LOWERCASE = 3, CMD_LINE = 4, URL_DECODE = 5, BASE64_DECODE = 6, HEX_DECODE = 7, MD5 = 8, REPLACE_COMMENTS = 9, ESCAPE_SEQ_DECODE = 10, SQL_HEX_DECODE = 11, CSS_DECODE = 12, JS_DECODE = 13, NORMALIZE_PATH = 14, NORMALIZE_PATH_WIN = 15, REMOVE_NULLS = 16, REPLACE_NULLS = 17, BASE64_DECODE_EXT = 18, URL_DECODE_UNI = 19, UTF8_TO_UNICODE = 20 }
+	export enum TextTransformationType { NONE = 'NONE', COMPRESS_WHITE_SPACE = 'COMPRESS_WHITE_SPACE', HTML_ENTITY_DECODE = 'HTML_ENTITY_DECODE', LOWERCASE = 'LOWERCASE', CMD_LINE = 'CMD_LINE', URL_DECODE = 'URL_DECODE', BASE64_DECODE = 'BASE64_DECODE', HEX_DECODE = 'HEX_DECODE', MD5 = 'MD5', REPLACE_COMMENTS = 'REPLACE_COMMENTS', ESCAPE_SEQ_DECODE = 'ESCAPE_SEQ_DECODE', SQL_HEX_DECODE = 'SQL_HEX_DECODE', CSS_DECODE = 'CSS_DECODE', JS_DECODE = 'JS_DECODE', NORMALIZE_PATH = 'NORMALIZE_PATH', NORMALIZE_PATH_WIN = 'NORMALIZE_PATH_WIN', REMOVE_NULLS = 'REMOVE_NULLS', REPLACE_NULLS = 'REPLACE_NULLS', BASE64_DECODE_EXT = 'BASE64_DECODE_EXT', URL_DECODE_UNI = 'URL_DECODE_UNI', UTF8_TO_UNICODE = 'UTF8_TO_UNICODE' }
 
-	export enum PositionalConstraint { EXACTLY = 0, STARTS_WITH = 1, ENDS_WITH = 2, CONTAINS = 3, CONTAINS_WORD = 4 }
+	export enum PositionalConstraint { EXACTLY = 'EXACTLY', STARTS_WITH = 'STARTS_WITH', ENDS_WITH = 'ENDS_WITH', CONTAINS = 'CONTAINS', CONTAINS_WORD = 'CONTAINS_WORD' }
 
 
 	/** A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it.  */
@@ -602,7 +602,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SensitivityLevel { LOW = 0, HIGH = 1 }
+	export enum SensitivityLevel { LOW = 'LOW', HIGH = 'HIGH' }
 
 
 	/** A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers.  */
@@ -658,7 +658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { EQ = 0, NE = 1, LE = 2, LT = 3, GE = 4, GT = 5 }
+	export enum ComparisonOperator { EQ = 'EQ', NE = 'NE', LE = 'LE', LT = 'LT', GE = 'GE', GT = 'GT' }
 
 
 	/** <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p> <ul> <li> <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed. </p> </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes from the International Organization for Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>. </p> <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country code&gt;</code>.</p> <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p> */
@@ -676,7 +676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CountryCode { AF = 0, AX = 1, AL = 2, DZ = 3, AS = 4, AD = 5, AO = 6, AI = 7, AQ = 8, AG = 9, AR = 10, AM = 11, AW = 12, AU = 13, AT = 14, AZ = 15, BS = 16, BH = 17, BD = 18, BB = 19, BY = 20, BE = 21, BZ = 22, BJ = 23, BM = 24, BT = 25, BO = 26, BQ = 27, BA = 28, BW = 29, BV = 30, BR = 31, IO = 32, BN = 33, BG = 34, BF = 35, BI = 36, KH = 37, CM = 38, CA = 39, CV = 40, KY = 41, CF = 42, TD = 43, CL = 44, CN = 45, CX = 46, CC = 47, CO = 48, KM = 49, CG = 50, CD = 51, CK = 52, CR = 53, CI = 54, HR = 55, CU = 56, CW = 57, CY = 58, CZ = 59, DK = 60, DJ = 61, DM = 62, DO = 63, EC = 64, EG = 65, SV = 66, GQ = 67, ER = 68, EE = 69, ET = 70, FK = 71, FO = 72, FJ = 73, FI = 74, FR = 75, GF = 76, PF = 77, TF = 78, GA = 79, GM = 80, GE = 81, DE = 82, GH = 83, GI = 84, GR = 85, GL = 86, GD = 87, GP = 88, GU = 89, GT = 90, GG = 91, GN = 92, GW = 93, GY = 94, HT = 95, HM = 96, VA = 97, HN = 98, HK = 99, HU = 100, IS = 101, IN = 102, ID = 103, IR = 104, IQ = 105, IE = 106, IM = 107, IL = 108, IT = 109, JM = 110, JP = 111, JE = 112, JO = 113, KZ = 114, KE = 115, KI = 116, KP = 117, KR = 118, KW = 119, KG = 120, LA = 121, LV = 122, LB = 123, LS = 124, LR = 125, LY = 126, LI = 127, LT = 128, LU = 129, MO = 130, MK = 131, MG = 132, MW = 133, MY = 134, MV = 135, ML = 136, MT = 137, MH = 138, MQ = 139, MR = 140, MU = 141, YT = 142, MX = 143, FM = 144, MD = 145, MC = 146, MN = 147, ME = 148, MS = 149, MA = 150, MZ = 151, MM = 152, NA = 153, NR = 154, NP = 155, NL = 156, NC = 157, NZ = 158, NI = 159, NE = 160, NG = 161, NU = 162, NF = 163, MP = 164, NO = 165, OM = 166, PK = 167, PW = 168, PS = 169, PA = 170, PG = 171, PY = 172, PE = 173, PH = 174, PN = 175, PL = 176, PT = 177, PR = 178, QA = 179, RE = 180, RO = 181, RU = 182, RW = 183, BL = 184, SH = 185, KN = 186, LC = 187, MF = 188, PM = 189, VC = 190, WS = 191, SM = 192, ST = 193, SA = 194, SN = 195, RS = 196, SC = 197, SL = 198, SG = 199, SX = 200, SK = 201, SI = 202, SB = 203, SO = 204, ZA = 205, GS = 206, SS = 207, ES = 208, LK = 209, SD = 210, SR = 211, SJ = 212, SZ = 213, SE = 214, CH = 215, SY = 216, TW = 217, TJ = 218, TZ = 219, TH = 220, TL = 221, TG = 222, TK = 223, TO = 224, TT = 225, TN = 226, TR = 227, TM = 228, TC = 229, TV = 230, UG = 231, UA = 232, AE = 233, GB = 234, US = 235, UM = 236, UY = 237, UZ = 238, VU = 239, VE = 240, VN = 241, VG = 242, VI = 243, WF = 244, EH = 245, YE = 246, ZM = 247, ZW = 248, XK = 249 }
+	export enum CountryCode { AF = 'AF', AX = 'AX', AL = 'AL', DZ = 'DZ', AS = 'AS', AD = 'AD', AO = 'AO', AI = 'AI', AQ = 'AQ', AG = 'AG', AR = 'AR', AM = 'AM', AW = 'AW', AU = 'AU', AT = 'AT', AZ = 'AZ', BS = 'BS', BH = 'BH', BD = 'BD', BB = 'BB', BY = 'BY', BE = 'BE', BZ = 'BZ', BJ = 'BJ', BM = 'BM', BT = 'BT', BO = 'BO', BQ = 'BQ', BA = 'BA', BW = 'BW', BV = 'BV', BR = 'BR', IO = 'IO', BN = 'BN', BG = 'BG', BF = 'BF', BI = 'BI', KH = 'KH', CM = 'CM', CA = 'CA', CV = 'CV', KY = 'KY', CF = 'CF', TD = 'TD', CL = 'CL', CN = 'CN', CX = 'CX', CC = 'CC', CO = 'CO', KM = 'KM', CG = 'CG', CD = 'CD', CK = 'CK', CR = 'CR', CI = 'CI', HR = 'HR', CU = 'CU', CW = 'CW', CY = 'CY', CZ = 'CZ', DK = 'DK', DJ = 'DJ', DM = 'DM', DO = 'DO', EC = 'EC', EG = 'EG', SV = 'SV', GQ = 'GQ', ER = 'ER', EE = 'EE', ET = 'ET', FK = 'FK', FO = 'FO', FJ = 'FJ', FI = 'FI', FR = 'FR', GF = 'GF', PF = 'PF', TF = 'TF', GA = 'GA', GM = 'GM', GE = 'GE', DE = 'DE', GH = 'GH', GI = 'GI', GR = 'GR', GL = 'GL', GD = 'GD', GP = 'GP', GU = 'GU', GT = 'GT', GG = 'GG', GN = 'GN', GW = 'GW', GY = 'GY', HT = 'HT', HM = 'HM', VA = 'VA', HN = 'HN', HK = 'HK', HU = 'HU', IS = 'IS', IN = 'IN', ID = 'ID', IR = 'IR', IQ = 'IQ', IE = 'IE', IM = 'IM', IL = 'IL', IT = 'IT', JM = 'JM', JP = 'JP', JE = 'JE', JO = 'JO', KZ = 'KZ', KE = 'KE', KI = 'KI', KP = 'KP', KR = 'KR', KW = 'KW', KG = 'KG', LA = 'LA', LV = 'LV', LB = 'LB', LS = 'LS', LR = 'LR', LY = 'LY', LI = 'LI', LT = 'LT', LU = 'LU', MO = 'MO', MK = 'MK', MG = 'MG', MW = 'MW', MY = 'MY', MV = 'MV', ML = 'ML', MT = 'MT', MH = 'MH', MQ = 'MQ', MR = 'MR', MU = 'MU', YT = 'YT', MX = 'MX', FM = 'FM', MD = 'MD', MC = 'MC', MN = 'MN', ME = 'ME', MS = 'MS', MA = 'MA', MZ = 'MZ', MM = 'MM', NA = 'NA', NR = 'NR', NP = 'NP', NL = 'NL', NC = 'NC', NZ = 'NZ', NI = 'NI', NE = 'NE', NG = 'NG', NU = 'NU', NF = 'NF', MP = 'MP', NO = 'NO', OM = 'OM', PK = 'PK', PW = 'PW', PS = 'PS', PA = 'PA', PG = 'PG', PY = 'PY', PE = 'PE', PH = 'PH', PN = 'PN', PL = 'PL', PT = 'PT', PR = 'PR', QA = 'QA', RE = 'RE', RO = 'RO', RU = 'RU', RW = 'RW', BL = 'BL', SH = 'SH', KN = 'KN', LC = 'LC', MF = 'MF', PM = 'PM', VC = 'VC', WS = 'WS', SM = 'SM', ST = 'ST', SA = 'SA', SN = 'SN', RS = 'RS', SC = 'SC', SL = 'SL', SG = 'SG', SX = 'SX', SK = 'SK', SI = 'SI', SB = 'SB', SO = 'SO', ZA = 'ZA', GS = 'GS', SS = 'SS', ES = 'ES', LK = 'LK', SD = 'SD', SR = 'SR', SJ = 'SJ', SZ = 'SZ', SE = 'SE', CH = 'CH', SY = 'SY', TW = 'TW', TJ = 'TJ', TZ = 'TZ', TH = 'TH', TL = 'TL', TG = 'TG', TK = 'TK', TO = 'TO', TT = 'TT', TN = 'TN', TR = 'TR', TM = 'TM', TC = 'TC', TV = 'TV', UG = 'UG', UA = 'UA', AE = 'AE', GB = 'GB', US = 'US', UM = 'UM', UY = 'UY', UZ = 'UZ', VU = 'VU', VE = 'VE', VN = 'VN', VG = 'VG', VI = 'VI', WF = 'WF', EH = 'EH', YE = 'YE', ZM = 'ZM', ZW = 'ZW', XK = 'XK' }
 
 
 	/** <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note> <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p> </note> <p>This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. </p> <p>WAF only evaluates the first IP address found in the specified HTTP header. </p> */
@@ -706,7 +706,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FallbackBehavior { MATCH = 0, NO_MATCH = 1 }
+	export enum FallbackBehavior { MATCH = 'MATCH', NO_MATCH = 'NO_MATCH' }
 
 
 	/** <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p> <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p> */
@@ -997,7 +997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ForwardedIPPosition { FIRST = 0, LAST = 1, ANY = 2 }
+	export enum ForwardedIPPosition { FIRST = 'FIRST', LAST = 'LAST', ANY = 'ANY' }
 
 
 	/** <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p> */
@@ -1057,7 +1057,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RateBasedStatementAggregateKeyType { IP = 0, FORWARDED_IP = 1, CUSTOM_KEYS = 2, CONSTANT = 3 }
+	export enum RateBasedStatementAggregateKeyType { IP = 'IP', FORWARDED_IP = 'FORWARDED_IP', CUSTOM_KEYS = 'CUSTOM_KEYS', CONSTANT = 'CONSTANT' }
 
 
 	/** <p>Specifies a single custom aggregate key for a rate-base rule. </p> <note> <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling. </p> </note> */
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PayloadType { JSON = 0, FORM_ENCODED = 1 }
+	export enum PayloadType { JSON = 'JSON', FORM_ENCODED = 'FORM_ENCODED' }
 
 
 	/** <p>The name of the field in the request payload that contains your customer's username. </p> <p>This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code> data types. </p> */
@@ -1427,7 +1427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InspectionLevel { COMMON = 0, TARGETED = 1 }
+	export enum InspectionLevel { COMMON = 'COMMON', TARGETED = 'TARGETED' }
 
 
 	/** Details for your use of the account takeover prevention managed rule group, <code>AWSManagedRulesATPRuleSet</code>. This configuration is used in <code>ManagedRuleGroupConfig</code>.  */
@@ -1746,7 +1746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelMatchScope { LABEL = 0, NAMESPACE = 1 }
+	export enum LabelMatchScope { LABEL = 'LABEL', NAMESPACE = 'NAMESPACE' }
 
 
 	/** A rule statement used to search web request components for a match against a single regular expression.  */
@@ -2063,7 +2063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPAddressVersion { IPV4 = 0, IPV6 = 1 }
+	export enum IPAddressVersion { IPV4 = 'IPV4', IPV6 = 'IPV6' }
 
 
 	/** <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p> */
@@ -2997,7 +2997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Platform { IOS = 0, ANDROID = 1 }
+	export enum Platform { IOS = 'IOS', ANDROID = 'ANDROID' }
 
 	export interface GetDecryptedAPIKeyResponse {
 		TokenDomains?: Array<string>;
@@ -3225,9 +3225,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterBehavior { KEEP = 0, DROP = 1 }
+	export enum FilterBehavior { KEEP = 'KEEP', DROP = 'DROP' }
 
-	export enum FilterRequirement { MEETS_ALL = 0, MEETS_ANY = 1 }
+	export enum FilterRequirement { MEETS_ALL = 'MEETS_ALL', MEETS_ANY = 'MEETS_ANY' }
 
 
 	/** A single match condition for a <a>Filter</a>. */
@@ -3266,7 +3266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionValue { ALLOW = 0, BLOCK = 1, COUNT = 2, CAPTCHA = 3, CHALLENGE = 4, EXCLUDED_AS_COUNT = 5 }
+	export enum ActionValue { ALLOW = 'ALLOW', BLOCK = 'BLOCK', COUNT = 'COUNT', CAPTCHA = 'CAPTCHA', CHALLENGE = 'CHALLENGE', EXCLUDED_AS_COUNT = 'EXCLUDED_AS_COUNT' }
 
 
 	/** A single label name condition for a <a>Condition</a> in a logging filter. */
@@ -3870,7 +3870,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailureReason { TOKEN_MISSING = 0, TOKEN_EXPIRED = 1, TOKEN_INVALID = 2, TOKEN_DOMAIN_MISMATCH = 3 }
+	export enum FailureReason { TOKEN_MISSING = 'TOKEN_MISSING', TOKEN_EXPIRED = 'TOKEN_EXPIRED', TOKEN_INVALID = 'TOKEN_INVALID', TOKEN_DOMAIN_MISMATCH = 'TOKEN_DOMAIN_MISMATCH' }
 
 
 	/** The result from the inspection of the web request for a valid challenge token.  */
@@ -4623,7 +4623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { APPLICATION_LOAD_BALANCER = 0, API_GATEWAY = 1, APPSYNC = 2, COGNITO_USER_POOL = 3, APP_RUNNER_SERVICE = 4, VERIFIED_ACCESS_INSTANCE = 5 }
+	export enum ResourceType { APPLICATION_LOAD_BALANCER = 'APPLICATION_LOAD_BALANCER', API_GATEWAY = 'API_GATEWAY', APPSYNC = 'APPSYNC', COGNITO_USER_POOL = 'COGNITO_USER_POOL', APP_RUNNER_SERVICE = 'APP_RUNNER_SERVICE', VERIFIED_ACCESS_INSTANCE = 'VERIFIED_ACCESS_INSTANCE' }
 
 	export interface ListRuleGroupsResponse {
 		NextMarker?: string;
@@ -5277,9 +5277,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociatedResourceType { CLOUDFRONT = 0 }
+	export enum AssociatedResourceType { CLOUDFRONT = 'CLOUDFRONT' }
 
-	export enum MapMatchScope { ALL = 0, KEY = 1, VALUE = 2 }
+	export enum MapMatchScope { ALL = 'ALL', KEY = 'KEY', VALUE = 'VALUE' }
 
 
 	/** The response body to use in a custom response to a web request. This is referenced by key from <a>CustomResponse</a> <code>CustomResponseBodyKey</code>. */
@@ -5309,7 +5309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseContentType { TEXT_PLAIN = 0, TEXT_HTML = 1, APPLICATION_JSON = 2 }
+	export enum ResponseContentType { TEXT_PLAIN = 'TEXT_PLAIN', TEXT_HTML = 'TEXT_HTML', APPLICATION_JSON = 'APPLICATION_JSON' }
 
 
 	/** <p>Information for a single version of a managed rule set. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note> */
@@ -5364,7 +5364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SizeInspectionLimit { KB_16 = 0, KB_32 = 1, KB_48 = 2, KB_64 = 3 }
+	export enum SizeInspectionLimit { KB_16 = 'KB_16', KB_32 = 'KB_32', KB_48 = 'KB_48', KB_64 = 'KB_64' }
 
 
 	/** <p>A version of the named managed rule group, that the rule group's vendor publishes for use by customers. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note> */
@@ -5869,111 +5869,111 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateWebACLX_Amz_Target { 'AWSWAF_20190729.AssociateWebACL' = 0 }
+	export enum AssociateWebACLX_Amz_Target { 'AWSWAF_20190729.AssociateWebACL' = 'AWSWAF_20190729.AssociateWebACL' }
 
-	export enum CheckCapacityX_Amz_Target { 'AWSWAF_20190729.CheckCapacity' = 0 }
+	export enum CheckCapacityX_Amz_Target { 'AWSWAF_20190729.CheckCapacity' = 'AWSWAF_20190729.CheckCapacity' }
 
-	export enum CreateAPIKeyX_Amz_Target { 'AWSWAF_20190729.CreateAPIKey' = 0 }
+	export enum CreateAPIKeyX_Amz_Target { 'AWSWAF_20190729.CreateAPIKey' = 'AWSWAF_20190729.CreateAPIKey' }
 
-	export enum CreateIPSetX_Amz_Target { 'AWSWAF_20190729.CreateIPSet' = 0 }
+	export enum CreateIPSetX_Amz_Target { 'AWSWAF_20190729.CreateIPSet' = 'AWSWAF_20190729.CreateIPSet' }
 
-	export enum CreateRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.CreateRegexPatternSet' = 0 }
+	export enum CreateRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.CreateRegexPatternSet' = 'AWSWAF_20190729.CreateRegexPatternSet' }
 
-	export enum CreateRuleGroupX_Amz_Target { 'AWSWAF_20190729.CreateRuleGroup' = 0 }
+	export enum CreateRuleGroupX_Amz_Target { 'AWSWAF_20190729.CreateRuleGroup' = 'AWSWAF_20190729.CreateRuleGroup' }
 
-	export enum CreateWebACLX_Amz_Target { 'AWSWAF_20190729.CreateWebACL' = 0 }
+	export enum CreateWebACLX_Amz_Target { 'AWSWAF_20190729.CreateWebACL' = 'AWSWAF_20190729.CreateWebACL' }
 
-	export enum DeleteFirewallManagerRuleGroupsX_Amz_Target { 'AWSWAF_20190729.DeleteFirewallManagerRuleGroups' = 0 }
+	export enum DeleteFirewallManagerRuleGroupsX_Amz_Target { 'AWSWAF_20190729.DeleteFirewallManagerRuleGroups' = 'AWSWAF_20190729.DeleteFirewallManagerRuleGroups' }
 
-	export enum DeleteIPSetX_Amz_Target { 'AWSWAF_20190729.DeleteIPSet' = 0 }
+	export enum DeleteIPSetX_Amz_Target { 'AWSWAF_20190729.DeleteIPSet' = 'AWSWAF_20190729.DeleteIPSet' }
 
-	export enum DeleteLoggingConfigurationX_Amz_Target { 'AWSWAF_20190729.DeleteLoggingConfiguration' = 0 }
+	export enum DeleteLoggingConfigurationX_Amz_Target { 'AWSWAF_20190729.DeleteLoggingConfiguration' = 'AWSWAF_20190729.DeleteLoggingConfiguration' }
 
-	export enum DeletePermissionPolicyX_Amz_Target { 'AWSWAF_20190729.DeletePermissionPolicy' = 0 }
+	export enum DeletePermissionPolicyX_Amz_Target { 'AWSWAF_20190729.DeletePermissionPolicy' = 'AWSWAF_20190729.DeletePermissionPolicy' }
 
-	export enum DeleteRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.DeleteRegexPatternSet' = 0 }
+	export enum DeleteRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.DeleteRegexPatternSet' = 'AWSWAF_20190729.DeleteRegexPatternSet' }
 
-	export enum DeleteRuleGroupX_Amz_Target { 'AWSWAF_20190729.DeleteRuleGroup' = 0 }
+	export enum DeleteRuleGroupX_Amz_Target { 'AWSWAF_20190729.DeleteRuleGroup' = 'AWSWAF_20190729.DeleteRuleGroup' }
 
-	export enum DeleteWebACLX_Amz_Target { 'AWSWAF_20190729.DeleteWebACL' = 0 }
+	export enum DeleteWebACLX_Amz_Target { 'AWSWAF_20190729.DeleteWebACL' = 'AWSWAF_20190729.DeleteWebACL' }
 
-	export enum DescribeAllManagedProductsX_Amz_Target { 'AWSWAF_20190729.DescribeAllManagedProducts' = 0 }
+	export enum DescribeAllManagedProductsX_Amz_Target { 'AWSWAF_20190729.DescribeAllManagedProducts' = 'AWSWAF_20190729.DescribeAllManagedProducts' }
 
-	export enum DescribeManagedProductsByVendorX_Amz_Target { 'AWSWAF_20190729.DescribeManagedProductsByVendor' = 0 }
+	export enum DescribeManagedProductsByVendorX_Amz_Target { 'AWSWAF_20190729.DescribeManagedProductsByVendor' = 'AWSWAF_20190729.DescribeManagedProductsByVendor' }
 
-	export enum DescribeManagedRuleGroupX_Amz_Target { 'AWSWAF_20190729.DescribeManagedRuleGroup' = 0 }
+	export enum DescribeManagedRuleGroupX_Amz_Target { 'AWSWAF_20190729.DescribeManagedRuleGroup' = 'AWSWAF_20190729.DescribeManagedRuleGroup' }
 
-	export enum DisassociateWebACLX_Amz_Target { 'AWSWAF_20190729.DisassociateWebACL' = 0 }
+	export enum DisassociateWebACLX_Amz_Target { 'AWSWAF_20190729.DisassociateWebACL' = 'AWSWAF_20190729.DisassociateWebACL' }
 
-	export enum GenerateMobileSdkReleaseUrlX_Amz_Target { 'AWSWAF_20190729.GenerateMobileSdkReleaseUrl' = 0 }
+	export enum GenerateMobileSdkReleaseUrlX_Amz_Target { 'AWSWAF_20190729.GenerateMobileSdkReleaseUrl' = 'AWSWAF_20190729.GenerateMobileSdkReleaseUrl' }
 
-	export enum GetDecryptedAPIKeyX_Amz_Target { 'AWSWAF_20190729.GetDecryptedAPIKey' = 0 }
+	export enum GetDecryptedAPIKeyX_Amz_Target { 'AWSWAF_20190729.GetDecryptedAPIKey' = 'AWSWAF_20190729.GetDecryptedAPIKey' }
 
-	export enum GetIPSetX_Amz_Target { 'AWSWAF_20190729.GetIPSet' = 0 }
+	export enum GetIPSetX_Amz_Target { 'AWSWAF_20190729.GetIPSet' = 'AWSWAF_20190729.GetIPSet' }
 
-	export enum GetLoggingConfigurationX_Amz_Target { 'AWSWAF_20190729.GetLoggingConfiguration' = 0 }
+	export enum GetLoggingConfigurationX_Amz_Target { 'AWSWAF_20190729.GetLoggingConfiguration' = 'AWSWAF_20190729.GetLoggingConfiguration' }
 
-	export enum GetManagedRuleSetX_Amz_Target { 'AWSWAF_20190729.GetManagedRuleSet' = 0 }
+	export enum GetManagedRuleSetX_Amz_Target { 'AWSWAF_20190729.GetManagedRuleSet' = 'AWSWAF_20190729.GetManagedRuleSet' }
 
-	export enum GetMobileSdkReleaseX_Amz_Target { 'AWSWAF_20190729.GetMobileSdkRelease' = 0 }
+	export enum GetMobileSdkReleaseX_Amz_Target { 'AWSWAF_20190729.GetMobileSdkRelease' = 'AWSWAF_20190729.GetMobileSdkRelease' }
 
-	export enum GetPermissionPolicyX_Amz_Target { 'AWSWAF_20190729.GetPermissionPolicy' = 0 }
+	export enum GetPermissionPolicyX_Amz_Target { 'AWSWAF_20190729.GetPermissionPolicy' = 'AWSWAF_20190729.GetPermissionPolicy' }
 
-	export enum GetRateBasedStatementManagedKeysX_Amz_Target { 'AWSWAF_20190729.GetRateBasedStatementManagedKeys' = 0 }
+	export enum GetRateBasedStatementManagedKeysX_Amz_Target { 'AWSWAF_20190729.GetRateBasedStatementManagedKeys' = 'AWSWAF_20190729.GetRateBasedStatementManagedKeys' }
 
-	export enum GetRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.GetRegexPatternSet' = 0 }
+	export enum GetRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.GetRegexPatternSet' = 'AWSWAF_20190729.GetRegexPatternSet' }
 
-	export enum GetRuleGroupX_Amz_Target { 'AWSWAF_20190729.GetRuleGroup' = 0 }
+	export enum GetRuleGroupX_Amz_Target { 'AWSWAF_20190729.GetRuleGroup' = 'AWSWAF_20190729.GetRuleGroup' }
 
-	export enum GetSampledRequestsX_Amz_Target { 'AWSWAF_20190729.GetSampledRequests' = 0 }
+	export enum GetSampledRequestsX_Amz_Target { 'AWSWAF_20190729.GetSampledRequests' = 'AWSWAF_20190729.GetSampledRequests' }
 
-	export enum GetWebACLX_Amz_Target { 'AWSWAF_20190729.GetWebACL' = 0 }
+	export enum GetWebACLX_Amz_Target { 'AWSWAF_20190729.GetWebACL' = 'AWSWAF_20190729.GetWebACL' }
 
-	export enum GetWebACLForResourceX_Amz_Target { 'AWSWAF_20190729.GetWebACLForResource' = 0 }
+	export enum GetWebACLForResourceX_Amz_Target { 'AWSWAF_20190729.GetWebACLForResource' = 'AWSWAF_20190729.GetWebACLForResource' }
 
-	export enum ListAPIKeysX_Amz_Target { 'AWSWAF_20190729.ListAPIKeys' = 0 }
+	export enum ListAPIKeysX_Amz_Target { 'AWSWAF_20190729.ListAPIKeys' = 'AWSWAF_20190729.ListAPIKeys' }
 
-	export enum ListAvailableManagedRuleGroupVersionsX_Amz_Target { 'AWSWAF_20190729.ListAvailableManagedRuleGroupVersions' = 0 }
+	export enum ListAvailableManagedRuleGroupVersionsX_Amz_Target { 'AWSWAF_20190729.ListAvailableManagedRuleGroupVersions' = 'AWSWAF_20190729.ListAvailableManagedRuleGroupVersions' }
 
-	export enum ListAvailableManagedRuleGroupsX_Amz_Target { 'AWSWAF_20190729.ListAvailableManagedRuleGroups' = 0 }
+	export enum ListAvailableManagedRuleGroupsX_Amz_Target { 'AWSWAF_20190729.ListAvailableManagedRuleGroups' = 'AWSWAF_20190729.ListAvailableManagedRuleGroups' }
 
-	export enum ListIPSetsX_Amz_Target { 'AWSWAF_20190729.ListIPSets' = 0 }
+	export enum ListIPSetsX_Amz_Target { 'AWSWAF_20190729.ListIPSets' = 'AWSWAF_20190729.ListIPSets' }
 
-	export enum ListLoggingConfigurationsX_Amz_Target { 'AWSWAF_20190729.ListLoggingConfigurations' = 0 }
+	export enum ListLoggingConfigurationsX_Amz_Target { 'AWSWAF_20190729.ListLoggingConfigurations' = 'AWSWAF_20190729.ListLoggingConfigurations' }
 
-	export enum ListManagedRuleSetsX_Amz_Target { 'AWSWAF_20190729.ListManagedRuleSets' = 0 }
+	export enum ListManagedRuleSetsX_Amz_Target { 'AWSWAF_20190729.ListManagedRuleSets' = 'AWSWAF_20190729.ListManagedRuleSets' }
 
-	export enum ListMobileSdkReleasesX_Amz_Target { 'AWSWAF_20190729.ListMobileSdkReleases' = 0 }
+	export enum ListMobileSdkReleasesX_Amz_Target { 'AWSWAF_20190729.ListMobileSdkReleases' = 'AWSWAF_20190729.ListMobileSdkReleases' }
 
-	export enum ListRegexPatternSetsX_Amz_Target { 'AWSWAF_20190729.ListRegexPatternSets' = 0 }
+	export enum ListRegexPatternSetsX_Amz_Target { 'AWSWAF_20190729.ListRegexPatternSets' = 'AWSWAF_20190729.ListRegexPatternSets' }
 
-	export enum ListResourcesForWebACLX_Amz_Target { 'AWSWAF_20190729.ListResourcesForWebACL' = 0 }
+	export enum ListResourcesForWebACLX_Amz_Target { 'AWSWAF_20190729.ListResourcesForWebACL' = 'AWSWAF_20190729.ListResourcesForWebACL' }
 
-	export enum ListRuleGroupsX_Amz_Target { 'AWSWAF_20190729.ListRuleGroups' = 0 }
+	export enum ListRuleGroupsX_Amz_Target { 'AWSWAF_20190729.ListRuleGroups' = 'AWSWAF_20190729.ListRuleGroups' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSWAF_20190729.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSWAF_20190729.ListTagsForResource' = 'AWSWAF_20190729.ListTagsForResource' }
 
-	export enum ListWebACLsX_Amz_Target { 'AWSWAF_20190729.ListWebACLs' = 0 }
+	export enum ListWebACLsX_Amz_Target { 'AWSWAF_20190729.ListWebACLs' = 'AWSWAF_20190729.ListWebACLs' }
 
-	export enum PutLoggingConfigurationX_Amz_Target { 'AWSWAF_20190729.PutLoggingConfiguration' = 0 }
+	export enum PutLoggingConfigurationX_Amz_Target { 'AWSWAF_20190729.PutLoggingConfiguration' = 'AWSWAF_20190729.PutLoggingConfiguration' }
 
-	export enum PutManagedRuleSetVersionsX_Amz_Target { 'AWSWAF_20190729.PutManagedRuleSetVersions' = 0 }
+	export enum PutManagedRuleSetVersionsX_Amz_Target { 'AWSWAF_20190729.PutManagedRuleSetVersions' = 'AWSWAF_20190729.PutManagedRuleSetVersions' }
 
-	export enum PutPermissionPolicyX_Amz_Target { 'AWSWAF_20190729.PutPermissionPolicy' = 0 }
+	export enum PutPermissionPolicyX_Amz_Target { 'AWSWAF_20190729.PutPermissionPolicy' = 'AWSWAF_20190729.PutPermissionPolicy' }
 
-	export enum TagResourceX_Amz_Target { 'AWSWAF_20190729.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSWAF_20190729.TagResource' = 'AWSWAF_20190729.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSWAF_20190729.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSWAF_20190729.UntagResource' = 'AWSWAF_20190729.UntagResource' }
 
-	export enum UpdateIPSetX_Amz_Target { 'AWSWAF_20190729.UpdateIPSet' = 0 }
+	export enum UpdateIPSetX_Amz_Target { 'AWSWAF_20190729.UpdateIPSet' = 'AWSWAF_20190729.UpdateIPSet' }
 
-	export enum UpdateManagedRuleSetVersionExpiryDateX_Amz_Target { 'AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate' = 0 }
+	export enum UpdateManagedRuleSetVersionExpiryDateX_Amz_Target { 'AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate' = 'AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate' }
 
-	export enum UpdateRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.UpdateRegexPatternSet' = 0 }
+	export enum UpdateRegexPatternSetX_Amz_Target { 'AWSWAF_20190729.UpdateRegexPatternSet' = 'AWSWAF_20190729.UpdateRegexPatternSet' }
 
-	export enum UpdateRuleGroupX_Amz_Target { 'AWSWAF_20190729.UpdateRuleGroup' = 0 }
+	export enum UpdateRuleGroupX_Amz_Target { 'AWSWAF_20190729.UpdateRuleGroup' = 'AWSWAF_20190729.UpdateRuleGroup' }
 
-	export enum UpdateWebACLX_Amz_Target { 'AWSWAF_20190729.UpdateWebACL' = 0 }
+	export enum UpdateWebACLX_Amz_Target { 'AWSWAF_20190729.UpdateWebACL' = 'AWSWAF_20190729.UpdateWebACL' }
 
 }
 

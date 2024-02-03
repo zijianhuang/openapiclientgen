@@ -1135,21 +1135,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetAudioUseCanonical { false = 0, true = 1 }
+	export enum GetAudioUseCanonical { false = 'false', true = 'true' }
 
-	export enum GetDefinitionsPartOfSpeech { noun = 0, adjective = 1, verb = 2, adverb = 3, interjection = 4, pronoun = 5, preposition = 6, abbreviation = 7, affix = 8, article = 9, 'auxiliary-verb' = 10, conjunction = 11, 'definite-article' = 12, 'family-name' = 13, 'given-name' = 14, idiom = 15, imperative = 16, 'noun-plural' = 17, 'noun-posessive' = 18, 'past-participle' = 19, 'phrasal-prefix' = 20, 'proper-noun' = 21, 'proper-noun-plural' = 22, 'proper-noun-posessive' = 23, suffix = 24, 'verb-intransitive' = 25, 'verb-transitive' = 26 }
+	export enum GetDefinitionsPartOfSpeech { noun = 'noun', adjective = 'adjective', verb = 'verb', adverb = 'adverb', interjection = 'interjection', pronoun = 'pronoun', preposition = 'preposition', abbreviation = 'abbreviation', affix = 'affix', article = 'article', 'auxiliary-verb' = 'auxiliary-verb', conjunction = 'conjunction', 'definite-article' = 'definite-article', 'family-name' = 'family-name', 'given-name' = 'given-name', idiom = 'idiom', imperative = 'imperative', 'noun-plural' = 'noun-plural', 'noun-posessive' = 'noun-posessive', 'past-participle' = 'past-participle', 'phrasal-prefix' = 'phrasal-prefix', 'proper-noun' = 'proper-noun', 'proper-noun-plural' = 'proper-noun-plural', 'proper-noun-posessive' = 'proper-noun-posessive', suffix = 'suffix', 'verb-intransitive' = 'verb-intransitive', 'verb-transitive' = 'verb-transitive' }
 
-	export enum GetHyphenationSourceDictionary { 'ahd-5' = 0, century = 1, wiktionary = 2, webster = 3, wordnet = 4 }
+	export enum GetHyphenationSourceDictionary { 'ahd-5' = 'ahd-5', century = 'century', wiktionary = 'wiktionary', webster = 'webster', wordnet = 'wordnet' }
 
-	export enum GetTextPronunciationsSourceDictionary { 'ahd-5' = 0, century = 1, cmu = 2, macmillan = 3, wiktionary = 4, webster = 5, wordnet = 6 }
+	export enum GetTextPronunciationsSourceDictionary { 'ahd-5' = 'ahd-5', century = 'century', cmu = 'cmu', macmillan = 'macmillan', wiktionary = 'wiktionary', webster = 'webster', wordnet = 'wordnet' }
 
-	export enum GetTextPronunciationsTypeFormat { 'ahd-5' = 0, arpabet = 1, 'gcide-diacritical' = 2, IPA = 3 }
+	export enum GetTextPronunciationsTypeFormat { 'ahd-5' = 'ahd-5', arpabet = 'arpabet', 'gcide-diacritical' = 'gcide-diacritical', IPA = 'IPA' }
 
-	export enum GetRelatedWordsRelationshipTypes { synonym = 0, antonym = 1, variant = 2, equivalent = 3, 'cross-reference' = 4, 'related-word' = 5, rhyme = 6, form = 7, 'etymologically-related-term' = 8, hypernym = 9, hyponym = 10, 'inflected-form' = 11, primary = 12, 'same-context' = 13, 'verb-form' = 14, 'verb-stem' = 15, has_topic = 16 }
+	export enum GetRelatedWordsRelationshipTypes { synonym = 'synonym', antonym = 'antonym', variant = 'variant', equivalent = 'equivalent', 'cross-reference' = 'cross-reference', 'related-word' = 'related-word', rhyme = 'rhyme', form = 'form', 'etymologically-related-term' = 'etymologically-related-term', hypernym = 'hypernym', hyponym = 'hyponym', 'inflected-form' = 'inflected-form', primary = 'primary', 'same-context' = 'same-context', 'verb-form' = 'verb-form', 'verb-stem' = 'verb-stem', has_topic = 'has_topic' }
 
-	export enum GetRandomWordsSortBy { alpha = 0, count = 1 }
+	export enum GetRandomWordsSortBy { alpha = 'alpha', count = 'count' }
 
-	export enum GetRandomWordsSortOrder { asc = 0, desc = 1 }
+	export enum GetRandomWordsSortOrder { asc = 'asc', desc = 'desc' }
 
 }
 

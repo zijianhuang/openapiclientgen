@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValueNullValue { NULL_VALUE = 0 }
+	export enum ValueNullValue { NULL_VALUE = 'NULL_VALUE' }
 
 
 	/** The request for Firestore.BatchGetDocuments. */
@@ -624,7 +624,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldTransformSetToServerValue { SERVER_VALUE_UNSPECIFIED = 0, REQUEST_TIME = 1 }
+	export enum FieldTransformSetToServerValue { SERVER_VALUE_UNSPECIFIED = 'SERVER_VALUE_UNSPECIFIED', REQUEST_TIME = 'REQUEST_TIME' }
 
 
 	/** The response from Firestore.BatchWrite. */
@@ -941,7 +941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldFilterOp { OPERATOR_UNSPECIFIED = 0, LESS_THAN = 1, LESS_THAN_OR_EQUAL = 2, GREATER_THAN = 3, GREATER_THAN_OR_EQUAL = 4, EQUAL = 5, NOT_EQUAL = 6, ARRAY_CONTAINS = 7, IN = 8, ARRAY_CONTAINS_ANY = 9, NOT_IN = 10 }
+	export enum FieldFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL', EQUAL = 'EQUAL', NOT_EQUAL = 'NOT_EQUAL', ARRAY_CONTAINS = 'ARRAY_CONTAINS', IN = 'IN', ARRAY_CONTAINS_ANY = 'ARRAY_CONTAINS_ANY', NOT_IN = 'NOT_IN' }
 
 
 	/** A filter with a single operand. */
@@ -967,9 +967,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UnaryFilterOp { OPERATOR_UNSPECIFIED = 0, IS_NAN = 1, IS_NULL = 2, IS_NOT_NAN = 3, IS_NOT_NULL = 4 }
+	export enum UnaryFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', IS_NAN = 'IS_NAN', IS_NULL = 'IS_NULL', IS_NOT_NAN = 'IS_NOT_NAN', IS_NOT_NULL = 'IS_NOT_NULL' }
 
-	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 0, AND = 1, OR = 2 }
+	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', AND = 'AND', OR = 'OR' }
 
 
 	/** A position in a query result set. */
@@ -1201,7 +1201,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, NOT_AVAILABLE = 3 }
+	export enum GoogleFirestoreAdminV1BackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', NOT_AVAILABLE = 'NOT_AVAILABLE' }
 
 
 	/** Backup specific statistics. */
@@ -1321,7 +1321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1WeeklyRecurrenceDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum GoogleFirestoreAdminV1WeeklyRecurrenceDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Metadata related to the create database operation. */
@@ -1449,15 +1449,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1DatabaseAppEngineIntegrationMode { APP_ENGINE_INTEGRATION_MODE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum GoogleFirestoreAdminV1DatabaseAppEngineIntegrationMode { APP_ENGINE_INTEGRATION_MODE_UNSPECIFIED = 'APP_ENGINE_INTEGRATION_MODE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum GoogleFirestoreAdminV1DatabaseConcurrencyMode { CONCURRENCY_MODE_UNSPECIFIED = 0, OPTIMISTIC = 1, PESSIMISTIC = 2, OPTIMISTIC_WITH_ENTITY_GROUPS = 3 }
+	export enum GoogleFirestoreAdminV1DatabaseConcurrencyMode { CONCURRENCY_MODE_UNSPECIFIED = 'CONCURRENCY_MODE_UNSPECIFIED', OPTIMISTIC = 'OPTIMISTIC', PESSIMISTIC = 'PESSIMISTIC', OPTIMISTIC_WITH_ENTITY_GROUPS = 'OPTIMISTIC_WITH_ENTITY_GROUPS' }
 
-	export enum GoogleFirestoreAdminV1DatabaseDeleteProtectionState { DELETE_PROTECTION_STATE_UNSPECIFIED = 0, DELETE_PROTECTION_DISABLED = 1, DELETE_PROTECTION_ENABLED = 2 }
+	export enum GoogleFirestoreAdminV1DatabaseDeleteProtectionState { DELETE_PROTECTION_STATE_UNSPECIFIED = 'DELETE_PROTECTION_STATE_UNSPECIFIED', DELETE_PROTECTION_DISABLED = 'DELETE_PROTECTION_DISABLED', DELETE_PROTECTION_ENABLED = 'DELETE_PROTECTION_ENABLED' }
 
-	export enum GoogleFirestoreAdminV1DatabasePointInTimeRecoveryEnablement { POINT_IN_TIME_RECOVERY_ENABLEMENT_UNSPECIFIED = 0, POINT_IN_TIME_RECOVERY_ENABLED = 1, POINT_IN_TIME_RECOVERY_DISABLED = 2 }
+	export enum GoogleFirestoreAdminV1DatabasePointInTimeRecoveryEnablement { POINT_IN_TIME_RECOVERY_ENABLEMENT_UNSPECIFIED = 'POINT_IN_TIME_RECOVERY_ENABLEMENT_UNSPECIFIED', POINT_IN_TIME_RECOVERY_ENABLED = 'POINT_IN_TIME_RECOVERY_ENABLED', POINT_IN_TIME_RECOVERY_DISABLED = 'POINT_IN_TIME_RECOVERY_DISABLED' }
 
-	export enum GoogleFirestoreAdminV1DatabaseType { DATABASE_TYPE_UNSPECIFIED = 0, FIRESTORE_NATIVE = 1, DATASTORE_MODE = 2 }
+	export enum GoogleFirestoreAdminV1DatabaseType { DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED', FIRESTORE_NATIVE = 'FIRESTORE_NATIVE', DATASTORE_MODE = 'DATASTORE_MODE' }
 
 
 	/** A consistent snapshot of a database at a specific point in time. */
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 0, INITIALIZING = 1, PROCESSING = 2, CANCELLING = 3, FINALIZING = 4, SUCCESSFUL = 5, FAILED = 6, CANCELLED = 7 }
+	export enum GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 'OPERATION_STATE_UNSPECIFIED', INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', CANCELLING = 'CANCELLING', FINALIZING = 'FINALIZING', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** Describes the progress of the operation. Unit of work is generic and must be interpreted based on where Progress is used. */
@@ -1757,7 +1757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1IndexApiScope { ANY_API = 0, DATASTORE_MODE_API = 1 }
+	export enum GoogleFirestoreAdminV1IndexApiScope { ANY_API = 'ANY_API', DATASTORE_MODE_API = 'DATASTORE_MODE_API' }
 
 
 	/** A field in an index. The field_path describes which field is indexed, the value_mode describes how the field value is indexed. */
@@ -1797,9 +1797,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1IndexFieldArrayConfig { ARRAY_CONFIG_UNSPECIFIED = 0, CONTAINS = 1 }
+	export enum GoogleFirestoreAdminV1IndexFieldArrayConfig { ARRAY_CONFIG_UNSPECIFIED = 'ARRAY_CONFIG_UNSPECIFIED', CONTAINS = 'CONTAINS' }
 
-	export enum GoogleFirestoreAdminV1IndexFieldOrder { ORDER_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum GoogleFirestoreAdminV1IndexFieldOrder { ORDER_UNSPECIFIED = 'ORDER_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** The index configuration to support vector search operations */
@@ -1839,9 +1839,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1IndexQueryScope { QUERY_SCOPE_UNSPECIFIED = 0, COLLECTION = 1, COLLECTION_GROUP = 2, COLLECTION_RECURSIVE = 3 }
+	export enum GoogleFirestoreAdminV1IndexQueryScope { QUERY_SCOPE_UNSPECIFIED = 'QUERY_SCOPE_UNSPECIFIED', COLLECTION = 'COLLECTION', COLLECTION_GROUP = 'COLLECTION_GROUP', COLLECTION_RECURSIVE = 'COLLECTION_RECURSIVE' }
 
-	export enum GoogleFirestoreAdminV1IndexState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, NEEDS_REPAIR = 3 }
+	export enum GoogleFirestoreAdminV1IndexState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', NEEDS_REPAIR = 'NEEDS_REPAIR' }
 
 
 	/** The TTL (time-to-live) configuration for documents that have this `Field` set. Storing a timestamp value into a TTL-enabled field will be treated as the document's absolute expiration time. Timestamp values in the past indicate that the document is eligible for immediate expiration. Using any other data type or leaving the field absent will disable expiration for the individual document. */
@@ -1864,7 +1864,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1TtlConfigState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, NEEDS_REPAIR = 3 }
+	export enum GoogleFirestoreAdminV1TtlConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', NEEDS_REPAIR = 'NEEDS_REPAIR' }
 
 
 	/** Metadata for google.longrunning.Operation results from FirestoreAdmin.UpdateField. */
@@ -1944,7 +1944,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1IndexConfigDeltaChangeType { CHANGE_TYPE_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
+	export enum GoogleFirestoreAdminV1IndexConfigDeltaChangeType { CHANGE_TYPE_UNSPECIFIED = 'CHANGE_TYPE_UNSPECIFIED', ADD = 'ADD', REMOVE = 'REMOVE' }
 
 
 	/** Information about a TTL configuration change. */
@@ -2731,7 +2731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderDirection { DIRECTION_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum OrderDirection { DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** The projection of document's fields to return. */
@@ -2820,7 +2820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetChangeTargetChangeType { NO_CHANGE = 0, ADD = 1, REMOVE = 2, CURRENT = 3, RESET = 4 }
+	export enum TargetChangeTargetChangeType { NO_CHANGE = 'NO_CHANGE', ADD = 'ADD', REMOVE = 'REMOVE', CURRENT = 'CURRENT', RESET = 'RESET' }
 
 
 	/** The request for Firestore.PartitionQuery. */

@@ -24,7 +24,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStateState { NEW = 0, NEW_SAVING = 1, SUBMITTED = 2, ACCEPTED = 3, RUNNING = 4, FINISHED = 5, FINISHING = 6, FAILED = 7, KILLED = 8 }
+	export enum AppStateState { NEW = 'NEW', NEW_SAVING = 'NEW_SAVING', SUBMITTED = 'SUBMITTED', ACCEPTED = 'ACCEPTED', RUNNING = 'RUNNING', FINISHED = 'FINISHED', FINISHING = 'FINISHING', FAILED = 'FAILED', KILLED = 'KILLED' }
 
 
 	/** The object containing the job ACLs. */
@@ -615,9 +615,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Job_ListShowall { true = 0 }
+	export enum Job_ListShowall { true = 'true' }
 
-	export enum Job_ListFields { '*' = 0 }
+	export enum Job_ListFields { '*' = '*' }
 
 }
 

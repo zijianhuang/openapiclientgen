@@ -45,9 +45,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentJobType { JOB_TYPE_UNSPECIFIED = 0, PIPELINE = 1, QUERY = 2, ML_EXTERNAL = 3, BACKGROUND = 4 }
+	export enum AssignmentJobType { JOB_TYPE_UNSPECIFIED = 'JOB_TYPE_UNSPECIFIED', PIPELINE = 'PIPELINE', QUERY = 'QUERY', ML_EXTERNAL = 'ML_EXTERNAL', BACKGROUND = 'BACKGROUND' }
 
-	export enum AssignmentState { STATE_UNSPECIFIED = 0, PENDING = 1, ACTIVE = 2 }
+	export enum AssignmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', ACTIVE = 'ACTIVE' }
 
 
 	/** Auto scaling settings. */
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacityCommitmentEdition { EDITION_UNSPECIFIED = 0, STANDARD = 1, ENTERPRISE = 2, ENTERPRISE_PLUS = 3 }
+	export enum CapacityCommitmentEdition { EDITION_UNSPECIFIED = 'EDITION_UNSPECIFIED', STANDARD = 'STANDARD', ENTERPRISE = 'ENTERPRISE', ENTERPRISE_PLUS = 'ENTERPRISE_PLUS' }
 
 
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -270,9 +270,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacityCommitmentPlan { COMMITMENT_PLAN_UNSPECIFIED = 0, FLEX = 1, FLEX_FLAT_RATE = 2, TRIAL = 3, MONTHLY = 4, MONTHLY_FLAT_RATE = 5, ANNUAL = 6, ANNUAL_FLAT_RATE = 7, THREE_YEAR = 8, NONE = 9 }
+	export enum CapacityCommitmentPlan { COMMITMENT_PLAN_UNSPECIFIED = 'COMMITMENT_PLAN_UNSPECIFIED', FLEX = 'FLEX', FLEX_FLAT_RATE = 'FLEX_FLAT_RATE', TRIAL = 'TRIAL', MONTHLY = 'MONTHLY', MONTHLY_FLAT_RATE = 'MONTHLY_FLAT_RATE', ANNUAL = 'ANNUAL', ANNUAL_FLAT_RATE = 'ANNUAL_FLAT_RATE', THREE_YEAR = 'THREE_YEAR', NONE = 'NONE' }
 
-	export enum CapacityCommitmentState { STATE_UNSPECIFIED = 0, PENDING = 1, ACTIVE = 2, FAILED = 3 }
+	export enum CapacityCommitmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

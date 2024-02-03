@@ -420,7 +420,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputerVisionErrorCode { InvalidImageFormat = 0, UnsupportedMediaType = 1, InvalidImageUrl = 2, NotSupportedFeature = 3, NotSupportedImage = 4, Timeout = 5, InternalServerError = 6, InvalidImageSize = 7, BadArgument = 8, DetectFaceError = 9, NotSupportedLanguage = 10, InvalidThumbnailSize = 11, InvalidDetails = 12, InvalidModel = 13, CancelledRequest = 14, NotSupportedVisualFeature = 15, FailedToProcess = 16, Unspecified = 17, StorageException = 18 }
+	export enum ComputerVisionErrorCode { InvalidImageFormat = 'InvalidImageFormat', UnsupportedMediaType = 'UnsupportedMediaType', InvalidImageUrl = 'InvalidImageUrl', NotSupportedFeature = 'NotSupportedFeature', NotSupportedImage = 'NotSupportedImage', Timeout = 'Timeout', InternalServerError = 'InternalServerError', InvalidImageSize = 'InvalidImageSize', BadArgument = 'BadArgument', DetectFaceError = 'DetectFaceError', NotSupportedLanguage = 'NotSupportedLanguage', InvalidThumbnailSize = 'InvalidThumbnailSize', InvalidDetails = 'InvalidDetails', InvalidModel = 'InvalidModel', CancelledRequest = 'CancelledRequest', NotSupportedVisualFeature = 'NotSupportedVisualFeature', FailedToProcess = 'FailedToProcess', Unspecified = 'Unspecified', StorageException = 'StorageException' }
 
 
 	/** Result of a DetectImage call. */
@@ -607,7 +607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FaceDescriptionGender { Male = 0, Female = 1 }
+	export enum FaceDescriptionGender { Male = 'Male', Female = 'Female' }
 
 
 	/** Result of AnalyzeImage operation. */
@@ -1154,9 +1154,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AnalyzeImageLanguage { en = 0, es = 1, ja = 2, pt = 3, zh = 4 }
+	export enum AnalyzeImageLanguage { en = 'en', es = 'es', ja = 'ja', pt = 'pt', zh = 'zh' }
 
-	export enum RecognizePrintedTextLanguage { unk = 0, 'zh-Hans' = 1, 'zh-Hant' = 2, cs = 3, da = 4, nl = 5, en = 6, fi = 7, fr = 8, de = 9, el = 10, hu = 11, it = 12, ja = 13, ko = 14, nb = 15, pl = 16, pt = 17, ru = 18, es = 19, sv = 20, tr = 21, ar = 22, ro = 23, 'sr-Cyrl' = 24, 'sr-Latn' = 25, sk = 26 }
+	export enum RecognizePrintedTextLanguage { unk = 'unk', 'zh-Hans' = 'zh-Hans', 'zh-Hant' = 'zh-Hant', cs = 'cs', da = 'da', nl = 'nl', en = 'en', fi = 'fi', fr = 'fr', de = 'de', el = 'el', hu = 'hu', it = 'it', ja = 'ja', ko = 'ko', nb = 'nb', pl = 'pl', pt = 'pt', ru = 'ru', es = 'es', sv = 'sv', tr = 'tr', ar = 'ar', ro = 'ro', 'sr-Cyrl' = 'sr-Cyrl', 'sr-Latn' = 'sr-Latn', sk = 'sk' }
 
 }
 

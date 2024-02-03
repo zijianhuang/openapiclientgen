@@ -77,9 +77,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BastionHostIPConfigurationPropertiesFormatPrivateIPAllocationMethod { Static = 0, Dynamic = 1 }
+	export enum BastionHostIPConfigurationPropertiesFormatPrivateIPAllocationMethod { Static = 'Static', Dynamic = 'Dynamic' }
 
-	export enum BastionHostIPConfigurationPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum BastionHostIPConfigurationPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** Response for ListBastionHosts API service call. */

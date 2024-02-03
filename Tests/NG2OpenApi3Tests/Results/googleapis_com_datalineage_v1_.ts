@@ -351,7 +351,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogLineageV1OriginSourceType { SOURCE_TYPE_UNSPECIFIED = 0, CUSTOM = 1, BIGQUERY = 2, DATA_FUSION = 3, COMPOSER = 4, LOOKER_STUDIO = 5, DATAPROC = 6 }
+	export enum GoogleCloudDatacatalogLineageV1OriginSourceType { SOURCE_TYPE_UNSPECIFIED = 'SOURCE_TYPE_UNSPECIFIED', CUSTOM = 'CUSTOM', BIGQUERY = 'BIGQUERY', DATA_FUSION = 'DATA_FUSION', COMPOSER = 'COMPOSER', LOOKER_STUDIO = 'LOOKER_STUDIO', DATAPROC = 'DATAPROC' }
 
 
 	/** Response message for ListRuns. */
@@ -433,7 +433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogLineageV1RunState { UNKNOWN = 0, STARTED = 1, COMPLETED = 2, FAILED = 3, ABORTED = 4 }
+	export enum GoogleCloudDatacatalogLineageV1RunState { UNKNOWN = 'UNKNOWN', STARTED = 'STARTED', COMPLETED = 'COMPLETED', FAILED = 'FAILED', ABORTED = 'ABORTED' }
 
 
 	/** Metadata describing the operation. */
@@ -491,9 +491,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDatacatalogLineageV1OperationMetadataOperationType { TYPE_UNSPECIFIED = 0, DELETE = 1, CREATE = 2 }
+	export enum GoogleCloudDatacatalogLineageV1OperationMetadataOperationType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DELETE = 'DELETE', CREATE = 'CREATE' }
 
-	export enum GoogleCloudDatacatalogLineageV1OperationMetadataState { STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum GoogleCloudDatacatalogLineageV1OperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Request message for SearchLinks. */

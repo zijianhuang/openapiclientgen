@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** A reference to a shared dataset. It is an existing BigQuery dataset with a collection of objects such as tables and views that you want to share with subscribers. When subscriber's subscribe to a listing, Analytics Hub creates a linked dataset in the subscriber's project. A Linked dataset is an opaque, read-only BigQuery dataset that serves as a _symbolic link_ to a shared dataset. */
@@ -576,7 +576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListingState { STATE_UNSPECIFIED = 0, ACTIVE = 1 }
+	export enum ListingState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE' }
 
 
 	/** Message for response to listing data exchanges in an organization and location. */
@@ -800,7 +800,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionState { STATE_UNSPECIFIED = 0, STATE_ACTIVE = 1, STATE_STALE = 2, STATE_INACTIVE = 3 }
+	export enum SubscriptionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STATE_ACTIVE = 'STATE_ACTIVE', STATE_STALE = 'STATE_STALE', STATE_INACTIVE = 'STATE_INACTIVE' }
 
 
 	/** Request message for `SetIamPolicy` method. */

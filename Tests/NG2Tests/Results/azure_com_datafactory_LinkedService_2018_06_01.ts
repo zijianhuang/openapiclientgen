@@ -2924,9 +2924,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CommonDataServiceForAppsLinkedServiceTypePropertiesAuthenticationType { Office365 = 0, Ifd = 1, AADServicePrincipal = 2 }
+	export enum CommonDataServiceForAppsLinkedServiceTypePropertiesAuthenticationType { Office365 = 'Office365', Ifd = 'Ifd', AADServicePrincipal = 'AADServicePrincipal' }
 
-	export enum CommonDataServiceForAppsLinkedServiceTypePropertiesDeploymentType { Online = 0, OnPremisesWithIfd = 1 }
+	export enum CommonDataServiceForAppsLinkedServiceTypePropertiesDeploymentType { Online = 'Online', OnPremisesWithIfd = 'OnPremisesWithIfd' }
 
 	export interface CommonDataServiceForAppsLinkedServiceTypePropertiesPassword {
 
@@ -2974,7 +2974,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommonDataServiceForAppsLinkedServiceTypePropertiesServicePrincipalCredentialType { ServicePrincipalKey = 0, ServicePrincipalCert = 1 }
+	export enum CommonDataServiceForAppsLinkedServiceTypePropertiesServicePrincipalCredentialType { ServicePrincipalKey = 'ServicePrincipalKey', ServicePrincipalCert = 'ServicePrincipalCert' }
 
 
 	/** Concur Service linked service. */
@@ -3457,7 +3457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Db2LinkedServiceTypePropertiesAuthenticationType { Basic = 0 }
+	export enum Db2LinkedServiceTypePropertiesAuthenticationType { Basic = 'Basic' }
 
 	export interface Db2LinkedServiceTypePropertiesPassword {
 
@@ -3866,7 +3866,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamicsCrmLinkedServiceTypePropertiesServicePrincipalCredentialType { ServicePrincipalKey = 0, ServicePrincipalCert = 1 }
+	export enum DynamicsCrmLinkedServiceTypePropertiesServicePrincipalCredentialType { ServicePrincipalKey = 'ServicePrincipalKey', ServicePrincipalCert = 'ServicePrincipalCert' }
 
 
 	/** Dynamics linked service. */
@@ -3990,9 +3990,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamicsLinkedServiceTypePropertiesAuthenticationType { Office365 = 0, Ifd = 1, AADServicePrincipal = 2 }
+	export enum DynamicsLinkedServiceTypePropertiesAuthenticationType { Office365 = 'Office365', Ifd = 'Ifd', AADServicePrincipal = 'AADServicePrincipal' }
 
-	export enum DynamicsLinkedServiceTypePropertiesDeploymentType { Online = 0, OnPremisesWithIfd = 1 }
+	export enum DynamicsLinkedServiceTypePropertiesDeploymentType { Online = 'Online', OnPremisesWithIfd = 'OnPremisesWithIfd' }
 
 	export interface DynamicsLinkedServiceTypePropertiesPassword {
 
@@ -4040,7 +4040,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamicsLinkedServiceTypePropertiesServicePrincipalCredentialType { ServicePrincipalKey = 0, ServicePrincipalCert = 1 }
+	export enum DynamicsLinkedServiceTypePropertiesServicePrincipalCredentialType { ServicePrincipalKey = 'ServicePrincipalKey', ServicePrincipalCert = 'ServicePrincipalCert' }
 
 
 	/** Eloqua server linked service. */
@@ -4335,7 +4335,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FtpServerLinkedServiceTypePropertiesAuthenticationType { Basic = 0, Anonymous = 1 }
+	export enum FtpServerLinkedServiceTypePropertiesAuthenticationType { Basic = 'Basic', Anonymous = 'Anonymous' }
 
 	export interface FtpServerLinkedServiceTypePropertiesPassword {
 
@@ -4474,7 +4474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAdWordsLinkedServiceTypePropertiesAuthenticationType { ServiceAuthentication = 0, UserAuthentication = 1 }
+	export enum GoogleAdWordsLinkedServiceTypePropertiesAuthenticationType { ServiceAuthentication = 'ServiceAuthentication', UserAuthentication = 'UserAuthentication' }
 
 	export interface GoogleAdWordsLinkedServiceTypePropertiesClientSecret {
 
@@ -5007,7 +5007,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HBaseLinkedServiceTypePropertiesAuthenticationType { Anonymous = 0, Basic = 1 }
+	export enum HBaseLinkedServiceTypePropertiesAuthenticationType { Anonymous = 'Anonymous', Basic = 'Basic' }
 
 	export interface HBaseLinkedServiceTypePropertiesPassword {
 
@@ -5477,7 +5477,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HDInsightOnDemandLinkedServiceTypePropertiesAdditionalLinkedServiceNamesType { LinkedServiceReference = 0 }
+	export enum HDInsightOnDemandLinkedServiceTypePropertiesAdditionalLinkedServiceNamesType { LinkedServiceReference = 'LinkedServiceReference' }
 
 	export interface HDInsightOnDemandLinkedServiceTypePropertiesClusterPassword {
 
@@ -5585,7 +5585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScriptActionRoles { Headnode = 0, Workernode = 1, Zookeeper = 2 }
+	export enum ScriptActionRoles { Headnode = 'Headnode', Workernode = 'Workernode', Zookeeper = 'Zookeeper' }
 
 	export interface HDInsightOnDemandLinkedServiceTypePropertiesServicePrincipalKey {
 
@@ -5865,7 +5865,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HiveLinkedServiceTypePropertiesAuthenticationType { Anonymous = 0, Username = 1, UsernameAndPassword = 2, WindowsAzureHDInsightService = 3 }
+	export enum HiveLinkedServiceTypePropertiesAuthenticationType { Anonymous = 'Anonymous', Username = 'Username', UsernameAndPassword = 'UsernameAndPassword', WindowsAzureHDInsightService = 'WindowsAzureHDInsightService' }
 
 	export interface HiveLinkedServiceTypePropertiesPassword {
 
@@ -5890,9 +5890,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HiveLinkedServiceTypePropertiesServerType { HiveServer1 = 0, HiveServer2 = 1, HiveThriftServer = 2 }
+	export enum HiveLinkedServiceTypePropertiesServerType { HiveServer1 = 'HiveServer1', HiveServer2 = 'HiveServer2', HiveThriftServer = 'HiveThriftServer' }
 
-	export enum HiveLinkedServiceTypePropertiesThriftTransportProtocol { Binary = 0, SASL = 1, 'HTTP ' = 2 }
+	export enum HiveLinkedServiceTypePropertiesThriftTransportProtocol { Binary = 'Binary', SASL = 'SASL', 'HTTP ' = 'HTTP ' }
 
 
 	/** Linked service for an HTTP source. */
@@ -5986,7 +5986,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpLinkedServiceTypePropertiesAuthenticationType { Basic = 0, Anonymous = 1, Digest = 2, Windows = 3, ClientCertificate = 4 }
+	export enum HttpLinkedServiceTypePropertiesAuthenticationType { Basic = 'Basic', Anonymous = 'Anonymous', Digest = 'Digest', Windows = 'Windows', ClientCertificate = 'ClientCertificate' }
 
 	export interface HttpLinkedServiceTypePropertiesPassword {
 
@@ -6283,7 +6283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImpalaLinkedServiceTypePropertiesAuthenticationType { Anonymous = 0, SASLUsername = 1, UsernameAndPassword = 2 }
+	export enum ImpalaLinkedServiceTypePropertiesAuthenticationType { Anonymous = 'Anonymous', SASLUsername = 'SASLUsername', UsernameAndPassword = 'UsernameAndPassword' }
 
 	export interface ImpalaLinkedServiceTypePropertiesPassword {
 
@@ -6630,7 +6630,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkedServiceParametersType { Object = 0, String = 1, Int = 2, Float = 3, Bool = 4, Array = 5, SecureString = 6 }
+	export enum LinkedServiceParametersType { Object = 'Object', String = 'String', Int = 'Int', Float = 'Float', Bool = 'Bool', Array = 'Array', SecureString = 'SecureString' }
 
 
 	/** Magento server linked service. */
@@ -7558,7 +7558,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ODataLinkedServiceTypePropertiesAuthenticationType { Basic = 0, Anonymous = 1, Windows = 2, AadServicePrincipal = 3, ManagedServiceIdentity = 4 }
+	export enum ODataLinkedServiceTypePropertiesAuthenticationType { Basic = 'Basic', Anonymous = 'Anonymous', Windows = 'Windows', AadServicePrincipal = 'AadServicePrincipal', ManagedServiceIdentity = 'ManagedServiceIdentity' }
 
 	export interface ODataLinkedServiceTypePropertiesPassword {
 
@@ -8338,7 +8338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoenixLinkedServiceTypePropertiesAuthenticationType { Anonymous = 0, UsernameAndPassword = 1, WindowsAzureHDInsightService = 2 }
+	export enum PhoenixLinkedServiceTypePropertiesAuthenticationType { Anonymous = 'Anonymous', UsernameAndPassword = 'UsernameAndPassword', WindowsAzureHDInsightService = 'WindowsAzureHDInsightService' }
 
 	export interface PhoenixLinkedServiceTypePropertiesPassword {
 
@@ -8615,7 +8615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrestoLinkedServiceTypePropertiesAuthenticationType { Anonymous = 0, LDAP = 1 }
+	export enum PrestoLinkedServiceTypePropertiesAuthenticationType { Anonymous = 'Anonymous', LDAP = 'LDAP' }
 
 	export interface PrestoLinkedServiceTypePropertiesPassword {
 
@@ -9036,7 +9036,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestServiceLinkedServiceTypePropertiesAuthenticationType { Anonymous = 0, Basic = 1, AadServicePrincipal = 2, ManagedServiceIdentity = 3 }
+	export enum RestServiceLinkedServiceTypePropertiesAuthenticationType { Anonymous = 'Anonymous', Basic = 'Basic', AadServicePrincipal = 'AadServicePrincipal', ManagedServiceIdentity = 'ManagedServiceIdentity' }
 
 	export interface RestServiceLinkedServiceTypePropertiesPassword {
 
@@ -9771,7 +9771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SapHanaLinkedServicePropertiesAuthenticationType { Basic = 0, Windows = 1 }
+	export enum SapHanaLinkedServicePropertiesAuthenticationType { Basic = 'Basic', Windows = 'Windows' }
 
 	export interface SapHanaLinkedServicePropertiesPassword {
 
@@ -10189,7 +10189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceNowLinkedServiceTypePropertiesAuthenticationType { Basic = 0, OAuth2 = 1 }
+	export enum ServiceNowLinkedServiceTypePropertiesAuthenticationType { Basic = 'Basic', OAuth2 = 'OAuth2' }
 
 	export interface ServiceNowLinkedServiceTypePropertiesClientSecret {
 
@@ -10342,7 +10342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SftpServerLinkedServiceTypePropertiesAuthenticationType { Basic = 0, SshPublicKey = 1 }
+	export enum SftpServerLinkedServiceTypePropertiesAuthenticationType { Basic = 'Basic', SshPublicKey = 'SshPublicKey' }
 
 	export interface SftpServerLinkedServiceTypePropertiesPassPhrase {
 
@@ -10683,7 +10683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SparkLinkedServiceTypePropertiesServerType { SharkServer = 0, SharkServer2 = 1, SparkThriftServer = 2 }
+	export enum SparkLinkedServiceTypePropertiesServerType { SharkServer = 'SharkServer', SharkServer2 = 'SharkServer2', SparkThriftServer = 'SparkThriftServer' }
 
 
 	/** SQL Server linked service. */
@@ -11408,7 +11408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebLinkedServiceTypePropertiesAuthenticationType { Basic = 0, Anonymous = 1, ClientCertificate = 2 }
+	export enum WebLinkedServiceTypePropertiesAuthenticationType { Basic = 'Basic', Anonymous = 'Anonymous', ClientCertificate = 'ClientCertificate' }
 
 
 	/** Xero Service linked service. */

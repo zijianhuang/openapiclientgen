@@ -1086,7 +1086,7 @@ export namespace MyNS {
 
 
 	/** Defines expansion options for the inventory summary endpoint. */
-	export enum InventoryAvailabilityExpansions { None = 0, Location = 1, Attribute = 2, All = 3 }
+	export enum InventoryAvailabilityExpansions { None = 'None', Location = 'Location', Attribute = 'Attribute', All = 'All' }
 
 
 	/** Inventory summary for a specific inventory item */
@@ -4503,7 +4503,7 @@ export namespace MyNS {
 
 
 	/** The Visma.net.ERP.SalesOrders.Api.Dto.SalesOrderExpansions enumeration defines individual parts of the Visma.net.ERP.SalesOrders.Api.Dto.SalesOrder.SalesOrderDto that can be filled */
-	export enum SalesOrderExpansions { None = 0, Billing = 1, Payment = 2, FinancialInformation = 3, Shipping = 4, Customer = 5, Owner = 6, Origin = 7, Note = 8, Freight = 9, Attachments = 10, All = 11 }
+	export enum SalesOrderExpansions { None = 'None', Billing = 'Billing', Payment = 'Payment', FinancialInformation = 'FinancialInformation', Shipping = 'Shipping', Customer = 'Customer', Owner = 'Owner', Origin = 'Origin', Note = 'Note', Freight = 'Freight', Attachments = 'Attachments', All = 'All' }
 
 	export interface SalesOrderLineDto {
 

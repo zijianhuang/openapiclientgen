@@ -175,7 +175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountType { checking = 0, savings = 1, cash = 2, creditCard = 3, lineOfCredit = 4, otherAsset = 5, otherLiability = 6, mortgage = 7, autoLoan = 8, studentLoan = 9, personalLoan = 10, medicalDebt = 11, otherDebt = 12 }
+	export enum AccountType { checking = 'checking', savings = 'savings', cash = 'cash', creditCard = 'creditCard', lineOfCredit = 'lineOfCredit', otherAsset = 'otherAsset', otherLiability = 'otherLiability', mortgage = 'mortgage', autoLoan = 'autoLoan', studentLoan = 'studentLoan', personalLoan = 'personalLoan', medicalDebt = 'medicalDebt', otherDebt = 'otherDebt' }
 
 	export interface AccountResponse {
 
@@ -457,7 +457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CategoryGoal_type { TB = 0, TBD = 1, MF = 2, NEED = 3, DEBT = 4, _null = 5 }
+	export enum CategoryGoal_type { TB = 'TB', TBD = 'TBD', MF = 'MF', NEED = 'NEED', DEBT = 'DEBT', _null = 5 }
 
 	export interface CategoryGroup {
 
@@ -800,9 +800,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledTransactionSummaryFlag_color { red = 0, orange = 1, yellow = 2, green = 3, blue = 4, purple = 5, _null = 6 }
+	export enum ScheduledTransactionSummaryFlag_color { red = 'red', orange = 'orange', yellow = 'yellow', green = 'green', blue = 'blue', purple = 'purple', _null = 6 }
 
-	export enum ScheduledTransactionSummaryFrequency { never = 0, daily = 1, weekly = 2, everyOtherWeek = 3, twiceAMonth = 4, every4Weeks = 5, monthly = 6, everyOtherMonth = 7, every3Months = 8, every4Months = 9, twiceAYear = 10, yearly = 11, everyOtherYear = 12 }
+	export enum ScheduledTransactionSummaryFrequency { never = 'never', daily = 'daily', weekly = 'weekly', everyOtherWeek = 'everyOtherWeek', twiceAMonth = 'twiceAMonth', every4Weeks = 'every4Weeks', monthly = 'monthly', everyOtherMonth = 'everyOtherMonth', every3Months = 'every3Months', every4Months = 'every4Months', twiceAYear = 'twiceAYear', yearly = 'yearly', everyOtherYear = 'everyOtherYear' }
 
 	export interface SubTransaction {
 
@@ -1037,11 +1037,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionSummaryCleared { cleared = 0, uncleared = 1, reconciled = 2 }
+	export enum TransactionSummaryCleared { cleared = 'cleared', uncleared = 'uncleared', reconciled = 'reconciled' }
 
-	export enum TransactionSummaryDebt_transaction_type { payment = 0, refund = 1, fee = 2, interest = 3, escrow = 4, balancedAdjustment = 5, credit = 6, charge = 7, _null = 8 }
+	export enum TransactionSummaryDebt_transaction_type { payment = 'payment', refund = 'refund', fee = 'fee', interest = 'interest', escrow = 'escrow', balancedAdjustment = 'balancedAdjustment', credit = 'credit', charge = 'charge', _null = 8 }
 
-	export enum TransactionSummaryFlag_color { red = 0, orange = 1, yellow = 2, green = 3, blue = 4, purple = 5, _null = 6 }
+	export enum TransactionSummaryFlag_color { red = 'red', orange = 'orange', yellow = 'yellow', green = 'green', blue = 'blue', purple = 'purple', _null = 6 }
 
 	export interface BudgetDetailResponse {
 
@@ -1567,7 +1567,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HybridTransactionType { transaction = 0, subtransaction = 1 }
+	export enum HybridTransactionType { transaction = 'transaction', subtransaction = 'subtransaction' }
 
 	export interface HybridTransactionsResponse {
 
@@ -2216,7 +2216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SaveTransactionWithOptionalFieldsFlag_color { red = 0, orange = 1, yellow = 2, green = 3, blue = 4, purple = 5, _null = 6 }
+	export enum SaveTransactionWithOptionalFieldsFlag_color { red = 'red', orange = 'orange', yellow = 'yellow', green = 'green', blue = 'blue', purple = 'purple', _null = 6 }
 
 	export interface SaveTransactionsResponse {
 
@@ -2952,7 +2952,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetTransactionsByAccountType { uncategorized = 0, unapproved = 1 }
+	export enum GetTransactionsByAccountType { uncategorized = 'uncategorized', unapproved = 'unapproved' }
 
 }
 

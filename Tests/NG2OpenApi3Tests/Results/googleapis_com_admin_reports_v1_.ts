@@ -733,9 +733,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Reports_activities_listApplicationName { access_transparency = 0, admin = 1, calendar = 2, chat = 3, drive = 4, gcp = 5, gplus = 6, groups = 7, groups_enterprise = 8, jamboard = 9, login = 10, meet = 11, mobile = 12, rules = 13, saml = 14, token = 15, user_accounts = 16, context_aware_access = 17, chrome = 18, data_studio = 19, keep = 20 }
+	export enum Reports_activities_listApplicationName { access_transparency = 'access_transparency', admin = 'admin', calendar = 'calendar', chat = 'chat', drive = 'drive', gcp = 'gcp', gplus = 'gplus', groups = 'groups', groups_enterprise = 'groups_enterprise', jamboard = 'jamboard', login = 'login', meet = 'meet', mobile = 'mobile', rules = 'rules', saml = 'saml', token = 'token', user_accounts = 'user_accounts', context_aware_access = 'context_aware_access', chrome = 'chrome', data_studio = 'data_studio', keep = 'keep' }
 
-	export enum Reports_entityUsageReports_getEntityType { gplus_communities = 0 }
+	export enum Reports_entityUsageReports_getEntityType { gplus_communities = 'gplus_communities' }
 
 }
 

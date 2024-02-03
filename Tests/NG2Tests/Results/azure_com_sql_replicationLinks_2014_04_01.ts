@@ -114,9 +114,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationLinkPropertiesPartnerRole { Primary = 0, Secondary = 1, NonReadableSecondary = 2, Source = 3, Copy = 4 }
+	export enum ReplicationLinkPropertiesPartnerRole { Primary = 'Primary', Secondary = 'Secondary', NonReadableSecondary = 'NonReadableSecondary', Source = 'Source', Copy = 'Copy' }
 
-	export enum ReplicationLinkPropertiesReplicationState { PENDING = 0, SEEDING = 1, CATCH_UP = 2, SUSPENDED = 3 }
+	export enum ReplicationLinkPropertiesReplicationState { PENDING = 'PENDING', SEEDING = 'SEEDING', CATCH_UP = 'CATCH_UP', SUSPENDED = 'SUSPENDED' }
 
 	@Injectable()
 	export class MyClient {

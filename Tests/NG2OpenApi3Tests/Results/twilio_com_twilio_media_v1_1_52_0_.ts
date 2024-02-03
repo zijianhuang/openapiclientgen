@@ -109,9 +109,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Mediav1media_processorStatus { failed = 0, started = 1, ended = 2 }
+	export enum Mediav1media_processorStatus { failed = 'failed', started = 'started', ended = 'ended' }
 
-	export enum Mediav1media_processorStatus_callback_method { HEAD = 0, GET = 1, POST = 2, PATCH = 3, PUT = 4, DELETE = 5 }
+	export enum Mediav1media_processorStatus_callback_method { HEAD = 'HEAD', GET = 'GET', POST = 'POST', PATCH = 'PATCH', PUT = 'PUT', DELETE = 'DELETE' }
 
 	export interface Mediav1media_recording {
 
@@ -252,9 +252,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Mediav1media_recordingFormat { mp4 = 0, webm = 1 }
+	export enum Mediav1media_recordingFormat { mp4 = 'mp4', webm = 'webm' }
 
-	export enum Mediav1media_recordingStatus { processing = 0, completed = 1, deleted = 2, failed = 3 }
+	export enum Mediav1media_recordingStatus { processing = 'processing', completed = 'completed', deleted = 'deleted', failed = 'failed' }
 
 	export interface Mediav1player_streamer {
 
@@ -358,9 +358,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Mediav1player_streamerEnded_reason { 'ended-via-api' = 0, 'max-duration-exceeded' = 1, 'stream-disconnected-by-source' = 2, 'unexpected-failure' = 3 }
+	export enum Mediav1player_streamerEnded_reason { 'ended-via-api' = 'ended-via-api', 'max-duration-exceeded' = 'max-duration-exceeded', 'stream-disconnected-by-source' = 'stream-disconnected-by-source', 'unexpected-failure' = 'unexpected-failure' }
 
-	export enum Mediav1player_streamerStatus { created = 0, started = 1, ended = 2, failed = 3 }
+	export enum Mediav1player_streamerStatus { created = 'created', started = 'started', ended = 'ended', failed = 'failed' }
 
 	export interface Mediav1player_streamerplayer_streamer_playback_grant {
 
@@ -423,25 +423,25 @@ export namespace MyNS {
 
 	}
 
-	export enum Media_processor_enum_order { asc = 0, desc = 1 }
+	export enum Media_processor_enum_order { asc = 'asc', desc = 'desc' }
 
-	export enum Media_processor_enum_status { failed = 0, started = 1, ended = 2 }
+	export enum Media_processor_enum_status { failed = 'failed', started = 'started', ended = 'ended' }
 
-	export enum Media_processor_enum_update_status { ended = 0 }
+	export enum Media_processor_enum_update_status { ended = 'ended' }
 
-	export enum Media_recording_enum_format { mp4 = 0, webm = 1 }
+	export enum Media_recording_enum_format { mp4 = 'mp4', webm = 'webm' }
 
-	export enum Media_recording_enum_order { asc = 0, desc = 1 }
+	export enum Media_recording_enum_order { asc = 'asc', desc = 'desc' }
 
-	export enum Media_recording_enum_status { processing = 0, completed = 1, deleted = 2, failed = 3 }
+	export enum Media_recording_enum_status { processing = 'processing', completed = 'completed', deleted = 'deleted', failed = 'failed' }
 
-	export enum Player_streamer_enum_ended_reason { 'ended-via-api' = 0, 'max-duration-exceeded' = 1, 'stream-disconnected-by-source' = 2, 'unexpected-failure' = 3 }
+	export enum Player_streamer_enum_ended_reason { 'ended-via-api' = 'ended-via-api', 'max-duration-exceeded' = 'max-duration-exceeded', 'stream-disconnected-by-source' = 'stream-disconnected-by-source', 'unexpected-failure' = 'unexpected-failure' }
 
-	export enum Player_streamer_enum_order { asc = 0, desc = 1 }
+	export enum Player_streamer_enum_order { asc = 'asc', desc = 'desc' }
 
-	export enum Player_streamer_enum_status { created = 0, started = 1, ended = 2, failed = 3 }
+	export enum Player_streamer_enum_status { created = 'created', started = 'started', ended = 'ended', failed = 'failed' }
 
-	export enum Player_streamer_enum_update_status { ended = 0 }
+	export enum Player_streamer_enum_update_status { ended = 'ended' }
 
 	@Injectable()
 	export class MyClient {

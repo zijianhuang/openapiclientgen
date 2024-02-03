@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleMapsPlayablelocationsV3ImpressionImpressionType { IMPRESSION_TYPE_UNSPECIFIED = 0, PRESENTED = 1, INTERACTED = 2 }
+	export enum GoogleMapsPlayablelocationsV3ImpressionImpressionType { IMPRESSION_TYPE_UNSPECIFIED = 'IMPRESSION_TYPE_UNSPECIFIED', PRESENTED = 'PRESENTED', INTERACTED = 'INTERACTED' }
 
 
 	/** A request for logging impressions. */
@@ -137,7 +137,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleMapsUnityClientInfoPlatform { PLATFORM_UNSPECIFIED = 0, EDITOR = 1, MAC_OS = 2, WINDOWS = 3, LINUX = 4, ANDROID = 5, IOS = 6, WEB_GL = 7 }
+	export enum GoogleMapsUnityClientInfoPlatform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', EDITOR = 'EDITOR', MAC_OS = 'MAC_OS', WINDOWS = 'WINDOWS', LINUX = 'LINUX', ANDROID = 'ANDROID', IOS = 'IOS', WEB_GL = 'WEB_GL' }
 
 
 	/** A response for the LogImpressions method. This method returns no data upon success. */
@@ -339,7 +339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleMapsPlayablelocationsV3SampleSpacingOptionsPointType { POINT_TYPE_UNSPECIFIED = 0, CENTER_POINT = 1, SNAPPED_POINT = 2 }
+	export enum GoogleMapsPlayablelocationsV3SampleSpacingOptionsPointType { POINT_TYPE_UNSPECIFIED = 'POINT_TYPE_UNSPECIFIED', CENTER_POINT = 'CENTER_POINT', SNAPPED_POINT = 'SNAPPED_POINT' }
 
 
 	/** A geographical point suitable for placing game objects in location-based games. */

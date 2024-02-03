@@ -184,7 +184,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthState { INITIAL = 0, HEALTHY = 1, UNHEALTHY = 2 }
+	export enum HealthState { INITIAL = 'INITIAL', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
 	export interface AddEndpointsRequest {
 
@@ -271,7 +271,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ByoipCidrState { PENDING_PROVISIONING = 0, READY = 1, PENDING_ADVERTISING = 2, ADVERTISING = 3, PENDING_WITHDRAWING = 4, PENDING_DEPROVISIONING = 5, DEPROVISIONED = 6, FAILED_PROVISION = 7, FAILED_ADVERTISING = 8, FAILED_WITHDRAW = 9, FAILED_DEPROVISION = 10 }
+	export enum ByoipCidrState { PENDING_PROVISIONING = 'PENDING_PROVISIONING', READY = 'READY', PENDING_ADVERTISING = 'PENDING_ADVERTISING', ADVERTISING = 'ADVERTISING', PENDING_WITHDRAWING = 'PENDING_WITHDRAWING', PENDING_DEPROVISIONING = 'PENDING_DEPROVISIONING', DEPROVISIONED = 'DEPROVISIONED', FAILED_PROVISION = 'FAILED_PROVISION', FAILED_ADVERTISING = 'FAILED_ADVERTISING', FAILED_WITHDRAW = 'FAILED_WITHDRAW', FAILED_DEPROVISION = 'FAILED_DEPROVISION' }
 
 
 	/** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP). */
@@ -413,7 +413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpAddressType { IPV4 = 0, DUAL_STACK = 1 }
+	export enum IpAddressType { IPV4 = 'IPV4', DUAL_STACK = 'DUAL_STACK' }
 
 
 	/** A complex type for the set of IP addresses for an accelerator. */
@@ -436,9 +436,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IpAddressFamily { IPv4 = 0, IPv6 = 1 }
+	export enum IpAddressFamily { IPv4 = 'IPv4', IPv6 = 'IPv6' }
 
-	export enum AcceleratorStatus { DEPLOYED = 0, IN_PROGRESS = 1 }
+	export enum AcceleratorStatus { DEPLOYED = 'DEPLOYED', IN_PROGRESS = 'IN_PROGRESS' }
 
 
 	/** A complex type that contains a <code>Timestamp</code> value and <code>Message</code> for changes that you make to an accelerator in Global Accelerator. Messages stored here provide progress or error information when you update an accelerator from IPv4 to dual-stack, or from dual-stack to IPv4. Global Accelerator stores a maximum of ten event messages.  */
@@ -656,7 +656,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Protocol { TCP = 0, UDP = 1 }
+	export enum Protocol { TCP = 'TCP', UDP = 'UDP' }
 
 	export interface CreateCustomRoutingEndpointGroupRequest {
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRoutingProtocol { TCP = 0, UDP = 1 }
+	export enum CustomRoutingProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 	export interface AcceleratorNotFoundException {
 	}
@@ -892,7 +892,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckProtocol { TCP = 0, HTTP = 1, HTTPS = 2 }
+	export enum HealthCheckProtocol { TCP = 'TCP', HTTP = 'HTTP', HTTPS = 'HTTPS' }
 
 
 	/** <p>Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p> */
@@ -1000,7 +1000,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientAffinity { NONE = 0, SOURCE_IP = 1 }
+	export enum ClientAffinity { NONE = 'NONE', SOURCE_IP = 'SOURCE_IP' }
 
 	export interface CreateListenerRequest {
 
@@ -1734,7 +1734,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRoutingDestinationTrafficState { ALLOW = 0, DENY = 1 }
+	export enum CustomRoutingDestinationTrafficState { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 	export interface ListCustomRoutingPortMappingsRequest {
 
@@ -2425,7 +2425,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRoutingAcceleratorStatus { DEPLOYED = 0, IN_PROGRESS = 1 }
+	export enum CustomRoutingAcceleratorStatus { DEPLOYED = 'DEPLOYED', IN_PROGRESS = 'IN_PROGRESS' }
 
 	@Injectable()
 	export class MyClient {
@@ -2892,103 +2892,103 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddCustomRoutingEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.AddCustomRoutingEndpoints' = 0 }
+	export enum AddCustomRoutingEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.AddCustomRoutingEndpoints' = 'GlobalAccelerator_V20180706.AddCustomRoutingEndpoints' }
 
-	export enum AddEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.AddEndpoints' = 0 }
+	export enum AddEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.AddEndpoints' = 'GlobalAccelerator_V20180706.AddEndpoints' }
 
-	export enum AdvertiseByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.AdvertiseByoipCidr' = 0 }
+	export enum AdvertiseByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.AdvertiseByoipCidr' = 'GlobalAccelerator_V20180706.AdvertiseByoipCidr' }
 
-	export enum AllowCustomRoutingTrafficX_Amz_Target { 'GlobalAccelerator_V20180706.AllowCustomRoutingTraffic' = 0 }
+	export enum AllowCustomRoutingTrafficX_Amz_Target { 'GlobalAccelerator_V20180706.AllowCustomRoutingTraffic' = 'GlobalAccelerator_V20180706.AllowCustomRoutingTraffic' }
 
-	export enum CreateAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.CreateAccelerator' = 0 }
+	export enum CreateAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.CreateAccelerator' = 'GlobalAccelerator_V20180706.CreateAccelerator' }
 
-	export enum CreateCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.CreateCustomRoutingAccelerator' = 0 }
+	export enum CreateCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.CreateCustomRoutingAccelerator' = 'GlobalAccelerator_V20180706.CreateCustomRoutingAccelerator' }
 
-	export enum CreateCustomRoutingEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.CreateCustomRoutingEndpointGroup' = 0 }
+	export enum CreateCustomRoutingEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.CreateCustomRoutingEndpointGroup' = 'GlobalAccelerator_V20180706.CreateCustomRoutingEndpointGroup' }
 
-	export enum CreateCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.CreateCustomRoutingListener' = 0 }
+	export enum CreateCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.CreateCustomRoutingListener' = 'GlobalAccelerator_V20180706.CreateCustomRoutingListener' }
 
-	export enum CreateEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.CreateEndpointGroup' = 0 }
+	export enum CreateEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.CreateEndpointGroup' = 'GlobalAccelerator_V20180706.CreateEndpointGroup' }
 
-	export enum CreateListenerX_Amz_Target { 'GlobalAccelerator_V20180706.CreateListener' = 0 }
+	export enum CreateListenerX_Amz_Target { 'GlobalAccelerator_V20180706.CreateListener' = 'GlobalAccelerator_V20180706.CreateListener' }
 
-	export enum DeleteAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteAccelerator' = 0 }
+	export enum DeleteAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteAccelerator' = 'GlobalAccelerator_V20180706.DeleteAccelerator' }
 
-	export enum DeleteCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteCustomRoutingAccelerator' = 0 }
+	export enum DeleteCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteCustomRoutingAccelerator' = 'GlobalAccelerator_V20180706.DeleteCustomRoutingAccelerator' }
 
-	export enum DeleteCustomRoutingEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteCustomRoutingEndpointGroup' = 0 }
+	export enum DeleteCustomRoutingEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteCustomRoutingEndpointGroup' = 'GlobalAccelerator_V20180706.DeleteCustomRoutingEndpointGroup' }
 
-	export enum DeleteCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteCustomRoutingListener' = 0 }
+	export enum DeleteCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteCustomRoutingListener' = 'GlobalAccelerator_V20180706.DeleteCustomRoutingListener' }
 
-	export enum DeleteEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteEndpointGroup' = 0 }
+	export enum DeleteEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteEndpointGroup' = 'GlobalAccelerator_V20180706.DeleteEndpointGroup' }
 
-	export enum DeleteListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteListener' = 0 }
+	export enum DeleteListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteListener' = 'GlobalAccelerator_V20180706.DeleteListener' }
 
-	export enum DenyCustomRoutingTrafficX_Amz_Target { 'GlobalAccelerator_V20180706.DenyCustomRoutingTraffic' = 0 }
+	export enum DenyCustomRoutingTrafficX_Amz_Target { 'GlobalAccelerator_V20180706.DenyCustomRoutingTraffic' = 'GlobalAccelerator_V20180706.DenyCustomRoutingTraffic' }
 
-	export enum DeprovisionByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.DeprovisionByoipCidr' = 0 }
+	export enum DeprovisionByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.DeprovisionByoipCidr' = 'GlobalAccelerator_V20180706.DeprovisionByoipCidr' }
 
-	export enum DescribeAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeAccelerator' = 0 }
+	export enum DescribeAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeAccelerator' = 'GlobalAccelerator_V20180706.DescribeAccelerator' }
 
-	export enum DescribeAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeAcceleratorAttributes' = 0 }
+	export enum DescribeAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeAcceleratorAttributes' = 'GlobalAccelerator_V20180706.DescribeAcceleratorAttributes' }
 
-	export enum DescribeCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingAccelerator' = 0 }
+	export enum DescribeCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingAccelerator' = 'GlobalAccelerator_V20180706.DescribeCustomRoutingAccelerator' }
 
-	export enum DescribeCustomRoutingAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingAcceleratorAttributes' = 0 }
+	export enum DescribeCustomRoutingAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingAcceleratorAttributes' = 'GlobalAccelerator_V20180706.DescribeCustomRoutingAcceleratorAttributes' }
 
-	export enum DescribeCustomRoutingEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingEndpointGroup' = 0 }
+	export enum DescribeCustomRoutingEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingEndpointGroup' = 'GlobalAccelerator_V20180706.DescribeCustomRoutingEndpointGroup' }
 
-	export enum DescribeCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingListener' = 0 }
+	export enum DescribeCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeCustomRoutingListener' = 'GlobalAccelerator_V20180706.DescribeCustomRoutingListener' }
 
-	export enum DescribeEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeEndpointGroup' = 0 }
+	export enum DescribeEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeEndpointGroup' = 'GlobalAccelerator_V20180706.DescribeEndpointGroup' }
 
-	export enum DescribeListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeListener' = 0 }
+	export enum DescribeListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeListener' = 'GlobalAccelerator_V20180706.DescribeListener' }
 
-	export enum ListAcceleratorsX_Amz_Target { 'GlobalAccelerator_V20180706.ListAccelerators' = 0 }
+	export enum ListAcceleratorsX_Amz_Target { 'GlobalAccelerator_V20180706.ListAccelerators' = 'GlobalAccelerator_V20180706.ListAccelerators' }
 
-	export enum ListByoipCidrsX_Amz_Target { 'GlobalAccelerator_V20180706.ListByoipCidrs' = 0 }
+	export enum ListByoipCidrsX_Amz_Target { 'GlobalAccelerator_V20180706.ListByoipCidrs' = 'GlobalAccelerator_V20180706.ListByoipCidrs' }
 
-	export enum ListCustomRoutingAcceleratorsX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingAccelerators' = 0 }
+	export enum ListCustomRoutingAcceleratorsX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingAccelerators' = 'GlobalAccelerator_V20180706.ListCustomRoutingAccelerators' }
 
-	export enum ListCustomRoutingEndpointGroupsX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingEndpointGroups' = 0 }
+	export enum ListCustomRoutingEndpointGroupsX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingEndpointGroups' = 'GlobalAccelerator_V20180706.ListCustomRoutingEndpointGroups' }
 
-	export enum ListCustomRoutingListenersX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingListeners' = 0 }
+	export enum ListCustomRoutingListenersX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingListeners' = 'GlobalAccelerator_V20180706.ListCustomRoutingListeners' }
 
-	export enum ListCustomRoutingPortMappingsX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingPortMappings' = 0 }
+	export enum ListCustomRoutingPortMappingsX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingPortMappings' = 'GlobalAccelerator_V20180706.ListCustomRoutingPortMappings' }
 
-	export enum ListCustomRoutingPortMappingsByDestinationX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingPortMappingsByDestination' = 0 }
+	export enum ListCustomRoutingPortMappingsByDestinationX_Amz_Target { 'GlobalAccelerator_V20180706.ListCustomRoutingPortMappingsByDestination' = 'GlobalAccelerator_V20180706.ListCustomRoutingPortMappingsByDestination' }
 
-	export enum ListEndpointGroupsX_Amz_Target { 'GlobalAccelerator_V20180706.ListEndpointGroups' = 0 }
+	export enum ListEndpointGroupsX_Amz_Target { 'GlobalAccelerator_V20180706.ListEndpointGroups' = 'GlobalAccelerator_V20180706.ListEndpointGroups' }
 
-	export enum ListListenersX_Amz_Target { 'GlobalAccelerator_V20180706.ListListeners' = 0 }
+	export enum ListListenersX_Amz_Target { 'GlobalAccelerator_V20180706.ListListeners' = 'GlobalAccelerator_V20180706.ListListeners' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'GlobalAccelerator_V20180706.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'GlobalAccelerator_V20180706.ListTagsForResource' = 'GlobalAccelerator_V20180706.ListTagsForResource' }
 
-	export enum ProvisionByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.ProvisionByoipCidr' = 0 }
+	export enum ProvisionByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.ProvisionByoipCidr' = 'GlobalAccelerator_V20180706.ProvisionByoipCidr' }
 
-	export enum RemoveCustomRoutingEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.RemoveCustomRoutingEndpoints' = 0 }
+	export enum RemoveCustomRoutingEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.RemoveCustomRoutingEndpoints' = 'GlobalAccelerator_V20180706.RemoveCustomRoutingEndpoints' }
 
-	export enum RemoveEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.RemoveEndpoints' = 0 }
+	export enum RemoveEndpointsX_Amz_Target { 'GlobalAccelerator_V20180706.RemoveEndpoints' = 'GlobalAccelerator_V20180706.RemoveEndpoints' }
 
-	export enum TagResourceX_Amz_Target { 'GlobalAccelerator_V20180706.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'GlobalAccelerator_V20180706.TagResource' = 'GlobalAccelerator_V20180706.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'GlobalAccelerator_V20180706.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'GlobalAccelerator_V20180706.UntagResource' = 'GlobalAccelerator_V20180706.UntagResource' }
 
-	export enum UpdateAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateAccelerator' = 0 }
+	export enum UpdateAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateAccelerator' = 'GlobalAccelerator_V20180706.UpdateAccelerator' }
 
-	export enum UpdateAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateAcceleratorAttributes' = 0 }
+	export enum UpdateAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateAcceleratorAttributes' = 'GlobalAccelerator_V20180706.UpdateAcceleratorAttributes' }
 
-	export enum UpdateCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateCustomRoutingAccelerator' = 0 }
+	export enum UpdateCustomRoutingAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateCustomRoutingAccelerator' = 'GlobalAccelerator_V20180706.UpdateCustomRoutingAccelerator' }
 
-	export enum UpdateCustomRoutingAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateCustomRoutingAcceleratorAttributes' = 0 }
+	export enum UpdateCustomRoutingAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateCustomRoutingAcceleratorAttributes' = 'GlobalAccelerator_V20180706.UpdateCustomRoutingAcceleratorAttributes' }
 
-	export enum UpdateCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateCustomRoutingListener' = 0 }
+	export enum UpdateCustomRoutingListenerX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateCustomRoutingListener' = 'GlobalAccelerator_V20180706.UpdateCustomRoutingListener' }
 
-	export enum UpdateEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateEndpointGroup' = 0 }
+	export enum UpdateEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateEndpointGroup' = 'GlobalAccelerator_V20180706.UpdateEndpointGroup' }
 
-	export enum UpdateListenerX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateListener' = 0 }
+	export enum UpdateListenerX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateListener' = 'GlobalAccelerator_V20180706.UpdateListener' }
 
-	export enum WithdrawByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.WithdrawByoipCidr' = 0 }
+	export enum WithdrawByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.WithdrawByoipCidr' = 'GlobalAccelerator_V20180706.WithdrawByoipCidr' }
 
 }
 

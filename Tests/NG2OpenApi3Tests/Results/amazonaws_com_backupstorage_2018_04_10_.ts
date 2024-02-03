@@ -178,7 +178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataChecksumAlgorithm { SHA256 = 0 }
+	export enum DataChecksumAlgorithm { SHA256 = 'SHA256' }
 
 	export interface ListObjectsOutput {
 
@@ -244,7 +244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SummaryChecksumAlgorithm { SUMMARY = 0 }
+	export enum SummaryChecksumAlgorithm { SUMMARY = 'SUMMARY' }
 
 	export interface NotifyObjectCompleteOutput {
 

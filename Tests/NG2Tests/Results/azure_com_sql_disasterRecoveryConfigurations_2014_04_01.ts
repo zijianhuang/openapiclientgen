@@ -111,13 +111,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DisasterRecoveryConfigurationPropertiesAutoFailover { Off = 0, On = 1 }
+	export enum DisasterRecoveryConfigurationPropertiesAutoFailover { Off = 'Off', On = 'On' }
 
-	export enum DisasterRecoveryConfigurationPropertiesFailoverPolicy { Manual = 0, Automatic = 1 }
+	export enum DisasterRecoveryConfigurationPropertiesFailoverPolicy { Manual = 'Manual', Automatic = 'Automatic' }
 
-	export enum DisasterRecoveryConfigurationPropertiesRole { None = 0, Primary = 1, Secondary = 2 }
+	export enum DisasterRecoveryConfigurationPropertiesRole { None = 'None', Primary = 'Primary', Secondary = 'Secondary' }
 
-	export enum DisasterRecoveryConfigurationPropertiesStatus { Creating = 0, Ready = 1, FailingOver = 2, Dropping = 3 }
+	export enum DisasterRecoveryConfigurationPropertiesStatus { Creating = 'Creating', Ready = 'Ready', FailingOver = 'FailingOver', Dropping = 'Dropping' }
 
 	@Injectable()
 	export class MyClient {

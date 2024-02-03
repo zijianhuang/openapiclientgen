@@ -416,7 +416,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeType { ACU_1 = 0, ACU_2 = 1 }
+	export enum ComputeType { ACU_1 = 'ACU_1', ACU_2 = 'ACU_2' }
 
 
 	/** An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>. */
@@ -1425,7 +1425,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
+	export enum ChannelStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 
 	/** Statistics information about the channel. */
@@ -1685,7 +1685,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingLevel { ERROR = 0 }
+	export enum LoggingLevel { ERROR = 'ERROR' }
 
 	export interface DescribePipelineResponse {
 		pipeline?: Pipeline;
@@ -1749,7 +1749,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReprocessingStatus { RUNNING = 0, SUCCEEDED = 1, CANCELLED = 2, FAILED = 3 }
+	export enum ReprocessingStatus { RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 	export interface GetDatasetContentResponse {
 		entries?: Array<DatasetEntry>;
@@ -1806,7 +1806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetContentState { CREATING = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum DatasetContentState { CREATING = 'CREATING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface ListChannelsResponse {
 		channelSummaries?: Array<ChannelSummary>;
@@ -2008,7 +2008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetActionType { QUERY = 0, CONTAINER = 1 }
+	export enum DatasetActionType { QUERY = 'QUERY', CONTAINER = 'CONTAINER' }
 
 	export interface ListDatastoresResponse {
 		datastoreSummaries?: Array<DatastoreSummary>;
@@ -2147,7 +2147,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileFormatType { JSON = 0, PARQUET = 1 }
+	export enum FileFormatType { JSON = 'JSON', PARQUET = 'PARQUET' }
 
 	export interface ListPipelinesResponse {
 		pipelineSummaries?: Array<PipelineSummary>;
@@ -2403,9 +2403,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
+	export enum DatasetStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
-	export enum DatastoreStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
+	export enum DatastoreStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface DeleteChannelRequest {
 	}

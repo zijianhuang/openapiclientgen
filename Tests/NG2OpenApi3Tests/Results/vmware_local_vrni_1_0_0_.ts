@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum AllEntityType { Group = 0, BaseSecurityGroup = 1, BaseEvent = 2, BaseVirtualMachine = 3, BaseFirewallRule = 4, BaseIPSet = 5, BaseL2Network = 6, BaseFirewall = 7, BaseService = 8, BaseServiceGroup = 9, BaseVnic = 10, VirtualMachine = 11, EC2Instance = 12, Host = 13, Vnic = 14, Vmknic = 15, VxlanLayer2Network = 16, VlanL2Network = 17, Cluster = 18, SecurityTag = 19, ResourcePool = 20, NSXIPSet = 21, EC2IPSet = 22, NSXSecurityGroup = 23, EC2SecurityGroup = 24, Flow = 25, ProblemEvent = 26, Application = 27, Tier = 28, NSXFirewallRule = 29, EC2SGFirewallRule = 30, NSXRedirectRule = 31, VCenterManager = 32, NSXVManager = 33, BaseManager = 34, BaseNSXManager = 35, NSXService = 36, EC2Service = 37, VPC = 38, NSXDistributedFirewall = 39, EC2Firewall = 40, NSXServiceGroup = 41, DistributedVirtualSwitch = 42, DistributedVirtualPortgroup = 43, VCDatacenter = 44, Datastore = 45, Folder = 46 }
+	export enum AllEntityType { Group = 'Group', BaseSecurityGroup = 'BaseSecurityGroup', BaseEvent = 'BaseEvent', BaseVirtualMachine = 'BaseVirtualMachine', BaseFirewallRule = 'BaseFirewallRule', BaseIPSet = 'BaseIPSet', BaseL2Network = 'BaseL2Network', BaseFirewall = 'BaseFirewall', BaseService = 'BaseService', BaseServiceGroup = 'BaseServiceGroup', BaseVnic = 'BaseVnic', VirtualMachine = 'VirtualMachine', EC2Instance = 'EC2Instance', Host = 'Host', Vnic = 'Vnic', Vmknic = 'Vmknic', VxlanLayer2Network = 'VxlanLayer2Network', VlanL2Network = 'VlanL2Network', Cluster = 'Cluster', SecurityTag = 'SecurityTag', ResourcePool = 'ResourcePool', NSXIPSet = 'NSXIPSet', EC2IPSet = 'EC2IPSet', NSXSecurityGroup = 'NSXSecurityGroup', EC2SecurityGroup = 'EC2SecurityGroup', Flow = 'Flow', ProblemEvent = 'ProblemEvent', Application = 'Application', Tier = 'Tier', NSXFirewallRule = 'NSXFirewallRule', EC2SGFirewallRule = 'EC2SGFirewallRule', NSXRedirectRule = 'NSXRedirectRule', VCenterManager = 'VCenterManager', NSXVManager = 'NSXVManager', BaseManager = 'BaseManager', BaseNSXManager = 'BaseNSXManager', NSXService = 'NSXService', EC2Service = 'EC2Service', VPC = 'VPC', NSXDistributedFirewall = 'NSXDistributedFirewall', EC2Firewall = 'EC2Firewall', NSXServiceGroup = 'NSXServiceGroup', DistributedVirtualSwitch = 'DistributedVirtualSwitch', DistributedVirtualPortgroup = 'DistributedVirtualPortgroup', VCDatacenter = 'VCDatacenter', Datastore = 'Datastore', Folder = 'Folder' }
 
 	export interface ApiError {
 		code?: number | null;
@@ -135,7 +135,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseDataSourceEntity_type { CiscoSwitchDataSource = 0, DellSwitchDataSource = 1, AristaSwitchDataSource = 2, BrocadeSwitchDataSource = 3, JuniperSwitchDataSource = 4, VCenterDataSource = 5, NSXVManagerDataSource = 6, UCSManagerDataSource = 7, HPVCManagerDataSource = 8, HPOneViewDataSource = 9, PanFirewallDataSource = 10, CheckpointFirewallDataSource = 11 }
+	export enum BaseDataSourceEntity_type { CiscoSwitchDataSource = 'CiscoSwitchDataSource', DellSwitchDataSource = 'DellSwitchDataSource', AristaSwitchDataSource = 'AristaSwitchDataSource', BrocadeSwitchDataSource = 'BrocadeSwitchDataSource', JuniperSwitchDataSource = 'JuniperSwitchDataSource', VCenterDataSource = 'VCenterDataSource', NSXVManagerDataSource = 'NSXVManagerDataSource', UCSManagerDataSource = 'UCSManagerDataSource', HPVCManagerDataSource = 'HPVCManagerDataSource', HPOneViewDataSource = 'HPOneViewDataSource', PanFirewallDataSource = 'PanFirewallDataSource', CheckpointFirewallDataSource = 'CheckpointFirewallDataSource' }
 
 	export interface BaseDataSourceRequest {
 		enabled?: boolean | null;
@@ -198,7 +198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseEntityEntity_type { VirtualMachine = 0, EC2Instance = 1, Host = 2, Vnic = 3, Vmknic = 4, VxlanLayer2Network = 5, VlanL2Network = 6, Cluster = 7, SecurityTag = 8, ResourcePool = 9, NSXIPSet = 10, EC2IPSet = 11, NSXSecurityGroup = 12, EC2SecurityGroup = 13, Flow = 14, ProblemEvent = 15, Application = 16, Tier = 17, NSXFirewallRule = 18, EC2SGFirewallRule = 19, NSXRedirectRule = 20, VCenterManager = 21, NSXVManager = 22, NSXService = 23, EC2Service = 24, VPC = 25, NSXDistributedFirewall = 26, EC2Firewall = 27, NSXServiceGroup = 28, DistributedVirtualSwitch = 29, DistributedVirtualPortgroup = 30, VCDatacenter = 31, Datastore = 32, Folder = 33 }
+	export enum BaseEntityEntity_type { VirtualMachine = 'VirtualMachine', EC2Instance = 'EC2Instance', Host = 'Host', Vnic = 'Vnic', Vmknic = 'Vmknic', VxlanLayer2Network = 'VxlanLayer2Network', VlanL2Network = 'VlanL2Network', Cluster = 'Cluster', SecurityTag = 'SecurityTag', ResourcePool = 'ResourcePool', NSXIPSet = 'NSXIPSet', EC2IPSet = 'EC2IPSet', NSXSecurityGroup = 'NSXSecurityGroup', EC2SecurityGroup = 'EC2SecurityGroup', Flow = 'Flow', ProblemEvent = 'ProblemEvent', Application = 'Application', Tier = 'Tier', NSXFirewallRule = 'NSXFirewallRule', EC2SGFirewallRule = 'EC2SGFirewallRule', NSXRedirectRule = 'NSXRedirectRule', VCenterManager = 'VCenterManager', NSXVManager = 'NSXVManager', NSXService = 'NSXService', EC2Service = 'EC2Service', VPC = 'VPC', NSXDistributedFirewall = 'NSXDistributedFirewall', EC2Firewall = 'EC2Firewall', NSXServiceGroup = 'NSXServiceGroup', DistributedVirtualSwitch = 'DistributedVirtualSwitch', DistributedVirtualPortgroup = 'DistributedVirtualPortgroup', VCDatacenter = 'VCDatacenter', Datastore = 'Datastore', Folder = 'Folder' }
 
 	export interface BaseEvent extends BaseEntity {
 		admin_state?: BaseEventAdmin_state | null;
@@ -228,7 +228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseEventAdmin_state { ENABLED = 0, DISABLED = 1 }
+	export enum BaseEventAdmin_state { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface Reference {
 		entity_id?: string | null;
@@ -276,7 +276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleSetRule_set_type { NSX_STANDARD = 0, NSX_REDIRECT = 1, AWS_STANDARD = 2 }
+	export enum RuleSetRule_set_type { NSX_STANDARD = 'NSX_STANDARD', NSX_REDIRECT = 'NSX_REDIRECT', AWS_STANDARD = 'AWS_STANDARD' }
 
 	export interface BaseFirewallRule extends BaseEntity {
 		action?: BaseFirewallRuleAction | null;
@@ -328,7 +328,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseFirewallRuleAction { ALLOW = 0, ACCEPT = 1, DENY = 2, DROP = 3, REJECT = 4, REDIRECT = 5, DO_NOT_REDIRECT = 6 }
+	export enum BaseFirewallRuleAction { ALLOW = 'ALLOW', ACCEPT = 'ACCEPT', DENY = 'DENY', DROP = 'DROP', REJECT = 'REJECT', REDIRECT = 'REDIRECT', DO_NOT_REDIRECT = 'DO_NOT_REDIRECT' }
 
 	export interface PortRange {
 		display?: string | null;
@@ -629,7 +629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CiscoSwitchDataSourceSwitch_type { CATALYST_3000 = 0, CATALYST_4500 = 1, CATALYST_6500 = 2, NEXUS_5K = 3, NEXUS_7K = 4, NEXUS_9K = 5 }
+	export enum CiscoSwitchDataSourceSwitch_type { CATALYST_3000 = 'CATALYST_3000', CATALYST_4500 = 'CATALYST_4500', CATALYST_6500 = 'CATALYST_6500', NEXUS_5K = 'NEXUS_5K', NEXUS_7K = 'NEXUS_7K', NEXUS_9K = 'NEXUS_9K' }
 
 	export interface CiscoSwitchDataSourceRequest extends SwitchDataSourceRequest {
 		switch_type?: CiscoSwitchDataSourceSwitch_type | null;
@@ -650,7 +650,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CiscoSwitchType { CATALYST_3000 = 0, CATALYST_4500 = 1, CATALYST_6500 = 2, NEXUS_5K = 3, NEXUS_7K = 4, NEXUS_9K = 5 }
+	export enum CiscoSwitchType { CATALYST_3000 = 'CATALYST_3000', CATALYST_4500 = 'CATALYST_4500', CATALYST_6500 = 'CATALYST_6500', NEXUS_5K = 'NEXUS_5K', NEXUS_7K = 'NEXUS_7K', NEXUS_9K = 'NEXUS_9K' }
 
 	export interface Cluster {
 	}
@@ -696,7 +696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceType { CiscoSwitchDataSource = 0, DellSwitchDataSource = 1, AristaSwitchDataSource = 2, BrocadeSwitchDataSource = 3, JuniperSwitchDataSource = 4, VCenterDataSource = 5, NSXVManagerDataSource = 6, UCSManagerDataSource = 7, HPVCManagerDataSource = 8, HPOneViewDataSource = 9, PanFirewallDataSource = 10, CheckpointFirewallDataSource = 11 }
+	export enum DataSourceType { CiscoSwitchDataSource = 'CiscoSwitchDataSource', DellSwitchDataSource = 'DellSwitchDataSource', AristaSwitchDataSource = 'AristaSwitchDataSource', BrocadeSwitchDataSource = 'BrocadeSwitchDataSource', JuniperSwitchDataSource = 'JuniperSwitchDataSource', VCenterDataSource = 'VCenterDataSource', NSXVManagerDataSource = 'NSXVManagerDataSource', UCSManagerDataSource = 'UCSManagerDataSource', HPVCManagerDataSource = 'HPVCManagerDataSource', HPOneViewDataSource = 'HPOneViewDataSource', PanFirewallDataSource = 'PanFirewallDataSource', CheckpointFirewallDataSource = 'CheckpointFirewallDataSource' }
 
 
 	/** Datasource Health state */
@@ -721,7 +721,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasourceHealthHealth_status { HEALTHY = 0, HEALTHY_WITH_WARNINGS = 1, UNHEALTHY = 2 }
+	export enum DatasourceHealthHealth_status { HEALTHY = 'HEALTHY', HEALTHY_WITH_WARNINGS = 'HEALTHY_WITH_WARNINGS', UNHEALTHY = 'UNHEALTHY' }
 
 	export interface Datastore {
 	}
@@ -754,7 +754,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DellSwitchDataSourceSwitch_type { FORCE_10_MXL_10 = 0, POWERCONNECT_8024 = 1, S4048 = 2, Z9100 = 3, S6000 = 4 }
+	export enum DellSwitchDataSourceSwitch_type { FORCE_10_MXL_10 = 'FORCE_10_MXL_10', POWERCONNECT_8024 = 'POWERCONNECT_8024', S4048 = 'S4048', Z9100 = 'Z9100', S6000 = 'S6000' }
 
 	export interface DellSwitchDataSourceRequest extends SwitchDataSourceRequest {
 		switch_type?: DellSwitchDataSourceSwitch_type | null;
@@ -775,7 +775,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DellSwitchType { FORCE_10_MXL_10 = 0, POWERCONNECT_8024 = 1, S4048 = 2, Z9100 = 3, S6000 = 4 }
+	export enum DellSwitchType { FORCE_10_MXL_10 = 'FORCE_10_MXL_10', POWERCONNECT_8024 = 'POWERCONNECT_8024', S4048 = 'S4048', Z9100 = 'Z9100', S6000 = 'S6000' }
 
 	export interface DistributedVirtualPortgroup {
 	}
@@ -817,7 +817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainDomain_type { LDAP = 0, LOCAL = 1 }
+	export enum DomainDomain_type { LDAP = 'LDAP', LOCAL = 'LOCAL' }
 
 	export interface EC2Firewall {
 	}
@@ -829,7 +829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EC2FirewallDirection { INBOUND = 0, OUTBOUND = 1 }
+	export enum EC2FirewallDirection { INBOUND = 'INBOUND', OUTBOUND = 'OUTBOUND' }
 
 	export interface EC2IPSet {
 	}
@@ -982,11 +982,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityType { VirtualMachine = 0, EC2Instance = 1, Host = 2, Vnic = 3, Vmknic = 4, VxlanLayer2Network = 5, VlanL2Network = 6, Cluster = 7, SecurityTag = 8, ResourcePool = 9, NSXIPSet = 10, EC2IPSet = 11, NSXSecurityGroup = 12, EC2SecurityGroup = 13, Flow = 14, ProblemEvent = 15, Application = 16, Tier = 17, NSXFirewallRule = 18, EC2SGFirewallRule = 19, NSXRedirectRule = 20, VCenterManager = 21, NSXVManager = 22, NSXService = 23, EC2Service = 24, VPC = 25, NSXDistributedFirewall = 26, EC2Firewall = 27, NSXServiceGroup = 28, DistributedVirtualSwitch = 29, DistributedVirtualPortgroup = 30, VCDatacenter = 31, Datastore = 32, Folder = 33 }
+	export enum EntityType { VirtualMachine = 'VirtualMachine', EC2Instance = 'EC2Instance', Host = 'Host', Vnic = 'Vnic', Vmknic = 'Vmknic', VxlanLayer2Network = 'VxlanLayer2Network', VlanL2Network = 'VlanL2Network', Cluster = 'Cluster', SecurityTag = 'SecurityTag', ResourcePool = 'ResourcePool', NSXIPSet = 'NSXIPSet', EC2IPSet = 'EC2IPSet', NSXSecurityGroup = 'NSXSecurityGroup', EC2SecurityGroup = 'EC2SecurityGroup', Flow = 'Flow', ProblemEvent = 'ProblemEvent', Application = 'Application', Tier = 'Tier', NSXFirewallRule = 'NSXFirewallRule', EC2SGFirewallRule = 'EC2SGFirewallRule', NSXRedirectRule = 'NSXRedirectRule', VCenterManager = 'VCenterManager', NSXVManager = 'NSXVManager', NSXService = 'NSXService', EC2Service = 'EC2Service', VPC = 'VPC', NSXDistributedFirewall = 'NSXDistributedFirewall', EC2Firewall = 'EC2Firewall', NSXServiceGroup = 'NSXServiceGroup', DistributedVirtualSwitch = 'DistributedVirtualSwitch', DistributedVirtualPortgroup = 'DistributedVirtualPortgroup', VCDatacenter = 'VCDatacenter', Datastore = 'Datastore', Folder = 'Folder' }
 
-	export enum FirewallAction { ALLOW = 0, ACCEPT = 1, DENY = 2, DROP = 3, REJECT = 4, REDIRECT = 5, DO_NOT_REDIRECT = 6 }
+	export enum FirewallAction { ALLOW = 'ALLOW', ACCEPT = 'ACCEPT', DENY = 'DENY', DROP = 'DROP', REJECT = 'REJECT', REDIRECT = 'REDIRECT', DO_NOT_REDIRECT = 'DO_NOT_REDIRECT' }
 
-	export enum FirewallDirection { IN = 0, OUT = 1, INOUT = 2 }
+	export enum FirewallDirection { IN = 'IN', OUT = 'OUT', INOUT = 'INOUT' }
 
 	export interface Flow extends BaseEntity {
 		destination_cluster?: Reference;
@@ -1043,13 +1043,13 @@ export namespace MyNS {
 
 	}
 
-	export enum FlowTag { TAG_TRAFFIC_TYPE_UNKNOWN = 0, TAG_INTERNET_TRAFFIC = 1, TAG_EAST_WEST_TRAFFIC = 2, TAG_VM_VM_TRAFFIC = 3, TAG_VM_PHY_TRAFFIC = 4, TAG_PHY_PHY_TRAFFIC = 5, TAG_SRC_IP_VMKNIC = 6, TAG_DST_IP_VMKNIC = 7, TAG_SRC_IP_VM = 8, TAG_DST_IP_VM = 9, TAG_SRC_IP_INTERNET = 10, TAG_DST_IP_INTERNET = 11, TAG_SRC_IP_PHYSICAL = 12, TAG_DST_IP_PHYSICAL = 13, TAG_SAME_HOST = 14, TAG_DIFF_HOST = 15, TAG_SHARED_SERVICE = 16, TAG_NOT_SHARED_SERVICE = 17, TAG_NETWORK_SWITCHED = 18, TAG_NETWORK_ROUTED = 19, TAG_NETWORK_UNKNOWN = 20, TAG_SRC_IP_VTEP = 21, TAG_DST_IP_VTEP = 22, TAG_UNICAST = 23, TAG_BROADCAST = 24, TAG_MULTICAST = 25, TAG_SRC_IP_LINK_LOCAL = 26, TAG_DST_IP_LINK_LOCAL = 27, TAG_SRC_IP_CLASS_E = 28, TAG_DST_IP_CLASS_E = 29, TAG_SRC_IP_CLASS_A_RESERVED = 30, TAG_DST_IP_CLASS_A_RESERVED = 31, TAG_INVALID_IP_PACKETS = 32, TAG_NOT_ANALYZED = 33, TAG_GENERIC_INTERNET_SRC_IP = 34, TAG_SNAT_DNAT_FLOW = 35, TAG_MULTINICS = 36, TAG_SRC_VC = 37, TAG_DST_VC = 38, TAG_SRC_AWS = 39, TAG_DST_AWS = 40, TAG_WITHIN_DC = 41, TAG_DIFF_DC = 42, TAG_WITHIN_VPC = 43, TAG_DIFF_VPC = 44 }
+	export enum FlowTag { TAG_TRAFFIC_TYPE_UNKNOWN = 'TAG_TRAFFIC_TYPE_UNKNOWN', TAG_INTERNET_TRAFFIC = 'TAG_INTERNET_TRAFFIC', TAG_EAST_WEST_TRAFFIC = 'TAG_EAST_WEST_TRAFFIC', TAG_VM_VM_TRAFFIC = 'TAG_VM_VM_TRAFFIC', TAG_VM_PHY_TRAFFIC = 'TAG_VM_PHY_TRAFFIC', TAG_PHY_PHY_TRAFFIC = 'TAG_PHY_PHY_TRAFFIC', TAG_SRC_IP_VMKNIC = 'TAG_SRC_IP_VMKNIC', TAG_DST_IP_VMKNIC = 'TAG_DST_IP_VMKNIC', TAG_SRC_IP_VM = 'TAG_SRC_IP_VM', TAG_DST_IP_VM = 'TAG_DST_IP_VM', TAG_SRC_IP_INTERNET = 'TAG_SRC_IP_INTERNET', TAG_DST_IP_INTERNET = 'TAG_DST_IP_INTERNET', TAG_SRC_IP_PHYSICAL = 'TAG_SRC_IP_PHYSICAL', TAG_DST_IP_PHYSICAL = 'TAG_DST_IP_PHYSICAL', TAG_SAME_HOST = 'TAG_SAME_HOST', TAG_DIFF_HOST = 'TAG_DIFF_HOST', TAG_SHARED_SERVICE = 'TAG_SHARED_SERVICE', TAG_NOT_SHARED_SERVICE = 'TAG_NOT_SHARED_SERVICE', TAG_NETWORK_SWITCHED = 'TAG_NETWORK_SWITCHED', TAG_NETWORK_ROUTED = 'TAG_NETWORK_ROUTED', TAG_NETWORK_UNKNOWN = 'TAG_NETWORK_UNKNOWN', TAG_SRC_IP_VTEP = 'TAG_SRC_IP_VTEP', TAG_DST_IP_VTEP = 'TAG_DST_IP_VTEP', TAG_UNICAST = 'TAG_UNICAST', TAG_BROADCAST = 'TAG_BROADCAST', TAG_MULTICAST = 'TAG_MULTICAST', TAG_SRC_IP_LINK_LOCAL = 'TAG_SRC_IP_LINK_LOCAL', TAG_DST_IP_LINK_LOCAL = 'TAG_DST_IP_LINK_LOCAL', TAG_SRC_IP_CLASS_E = 'TAG_SRC_IP_CLASS_E', TAG_DST_IP_CLASS_E = 'TAG_DST_IP_CLASS_E', TAG_SRC_IP_CLASS_A_RESERVED = 'TAG_SRC_IP_CLASS_A_RESERVED', TAG_DST_IP_CLASS_A_RESERVED = 'TAG_DST_IP_CLASS_A_RESERVED', TAG_INVALID_IP_PACKETS = 'TAG_INVALID_IP_PACKETS', TAG_NOT_ANALYZED = 'TAG_NOT_ANALYZED', TAG_GENERIC_INTERNET_SRC_IP = 'TAG_GENERIC_INTERNET_SRC_IP', TAG_SNAT_DNAT_FLOW = 'TAG_SNAT_DNAT_FLOW', TAG_MULTINICS = 'TAG_MULTINICS', TAG_SRC_VC = 'TAG_SRC_VC', TAG_DST_VC = 'TAG_DST_VC', TAG_SRC_AWS = 'TAG_SRC_AWS', TAG_DST_AWS = 'TAG_DST_AWS', TAG_WITHIN_DC = 'TAG_WITHIN_DC', TAG_DIFF_DC = 'TAG_DIFF_DC', TAG_WITHIN_VPC = 'TAG_WITHIN_VPC', TAG_DIFF_VPC = 'TAG_DIFF_VPC' }
 
-	export enum FlowProtocol { TCP = 0, UDP = 1, OTHER = 2 }
+	export enum FlowProtocol { TCP = 'TCP', UDP = 'UDP', OTHER = 'OTHER' }
 
-	export enum FlowTraffic_type { INTERNET_TRAFFIC = 0, EAST_WEST_TRAFFIC = 1 }
+	export enum FlowTraffic_type { INTERNET_TRAFFIC = 'INTERNET_TRAFFIC', EAST_WEST_TRAFFIC = 'EAST_WEST_TRAFFIC' }
 
-	export enum FlowTrafficType { INTERNET_TRAFFIC = 0, EAST_WEST_TRAFFIC = 1 }
+	export enum FlowTrafficType { INTERNET_TRAFFIC = 'INTERNET_TRAFFIC', EAST_WEST_TRAFFIC = 'EAST_WEST_TRAFFIC' }
 
 	export interface Folder {
 	}
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupMembershipCriteriaMembership_type { SearchMembershipCriteria = 0, IPAddressMembershipCriteria = 1 }
+	export enum GroupMembershipCriteriaMembership_type { SearchMembershipCriteria = 'SearchMembershipCriteria', IPAddressMembershipCriteria = 'IPAddressMembershipCriteria' }
 
 	export interface SearchMembershipCriteria {
 		entity_type?: AllEntityType | null;
@@ -1226,7 +1226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetaEntityType { Group = 0, BaseSecurityGroup = 1, BaseEvent = 2, BaseVirtualMachine = 3, BaseFirewallRule = 4, BaseIPSet = 5, BaseL2Network = 6, BaseManager = 7, BaseNSXManager = 8, BaseFirewall = 9, BaseService = 10, BaseServiceGroup = 11, BaseVnic = 12 }
+	export enum MetaEntityType { Group = 'Group', BaseSecurityGroup = 'BaseSecurityGroup', BaseEvent = 'BaseEvent', BaseVirtualMachine = 'BaseVirtualMachine', BaseFirewallRule = 'BaseFirewallRule', BaseIPSet = 'BaseIPSet', BaseL2Network = 'BaseL2Network', BaseManager = 'BaseManager', BaseNSXManager = 'BaseNSXManager', BaseFirewall = 'BaseFirewall', BaseService = 'BaseService', BaseServiceGroup = 'BaseServiceGroup', BaseVnic = 'BaseVnic' }
 
 	export interface MicroSecGroup {
 		entity?: Reference;
@@ -1305,7 +1305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NSXFirewallRuleScope { UNIVERSAL = 0, GLOBAL = 1 }
+	export enum NSXFirewallRuleScope { UNIVERSAL = 'UNIVERSAL', GLOBAL = 'GLOBAL' }
 
 	export interface NSXIPSet extends BaseIPSet {
 		nsx_managers?: Array<Reference>;
@@ -1601,9 +1601,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeEntity_type { Node = 0 }
+	export enum NodeEntity_type { Node = 'Node' }
 
-	export enum NodeNode_type { PROXY_VM = 0, PLATFORM_VM = 1 }
+	export enum NodeNode_type { PROXY_VM = 'PROXY_VM', PLATFORM_VM = 'PLATFORM_VM' }
 
 	export interface NodeId {
 		entity_type?: NodeEntity_type | null;
@@ -1639,7 +1639,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeType { Node = 0 }
+	export enum NodeType { Node = 'Node' }
 
 	export interface PagedListResponse {
 		cursor?: string | null;
@@ -1730,9 +1730,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProblemEventSeverity { CRITICAL = 0, MODERATE = 1, WARNING = 2, INFO = 3 }
+	export enum ProblemEventSeverity { CRITICAL = 'CRITICAL', MODERATE = 'MODERATE', WARNING = 'WARNING', INFO = 'INFO' }
 
-	export enum Protocol { TCP = 0, UDP = 1, OTHER = 2 }
+	export enum Protocol { TCP = 'TCP', UDP = 'UDP', OTHER = 'OTHER' }
 
 	export interface RecommendedRule {
 		action?: RecommendedRuleAction | null;
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendedRuleAction { ALLOW = 0, DROP = 1 }
+	export enum RecommendedRuleAction { ALLOW = 'ALLOW', DROP = 'DROP' }
 
 	export interface SimplePortRange {
 		end?: number | null;
@@ -1868,9 +1868,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SNMP3ConfigAuthentication_type { NO_AUTH = 0, MD5 = 1, SHA = 2 }
+	export enum SNMP3ConfigAuthentication_type { NO_AUTH = 'NO_AUTH', MD5 = 'MD5', SHA = 'SHA' }
 
-	export enum SNMP3ConfigPrivacy_type { AES = 0, DES = 1, AES128 = 2, AES192 = 3, AES256 = 4, '3DES' = 5, NO_PRIV = 6 }
+	export enum SNMP3ConfigPrivacy_type { AES = 'AES', DES = 'DES', AES128 = 'AES128', AES192 = 'AES192', AES256 = 'AES256', '3DES' = '3DES', NO_PRIV = 'NO_PRIV' }
 
 	export interface SNMPConfig {
 		config_snmp_2c?: SNMP2cConfig;
@@ -1890,9 +1890,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SNMPConfigSnmp_version { v2c = 0, v3 = 1 }
+	export enum SNMPConfigSnmp_version { v2c = 'v2c', v3 = 'v3' }
 
-	export enum ScopeEnum { UNIVERSAL = 0, GLOBAL = 1 }
+	export enum ScopeEnum { UNIVERSAL = 'UNIVERSAL', GLOBAL = 'GLOBAL' }
 
 	export interface SearchRequest {
 		cursor?: string | null;
@@ -1938,7 +1938,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortByClauseOrder { ASC = 0, DESC = 1 }
+	export enum SortByClauseOrder { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface SecurityTag extends BaseEntity {
 		description?: string | null;

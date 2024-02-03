@@ -50,7 +50,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputerVisionErrorCode { InvalidImageFormat = 0, UnsupportedMediaType = 1, InvalidImageUrl = 2, NotSupportedFeature = 3, NotSupportedImage = 4, Timeout = 5, InternalServerError = 6, InvalidImageSize = 7, BadArgument = 8, DetectFaceError = 9, NotSupportedLanguage = 10, InvalidThumbnailSize = 11, InvalidDetails = 12, InvalidModel = 13, CancelledRequest = 14, NotSupportedVisualFeature = 15, FailedToProcess = 16, Unspecified = 17, StorageException = 18 }
+	export enum ComputerVisionErrorCode { InvalidImageFormat = 'InvalidImageFormat', UnsupportedMediaType = 'UnsupportedMediaType', InvalidImageUrl = 'InvalidImageUrl', NotSupportedFeature = 'NotSupportedFeature', NotSupportedImage = 'NotSupportedImage', Timeout = 'Timeout', InternalServerError = 'InternalServerError', InvalidImageSize = 'InvalidImageSize', BadArgument = 'BadArgument', DetectFaceError = 'DetectFaceError', NotSupportedLanguage = 'NotSupportedLanguage', InvalidThumbnailSize = 'InvalidThumbnailSize', InvalidDetails = 'InvalidDetails', InvalidModel = 'InvalidModel', CancelledRequest = 'CancelledRequest', NotSupportedVisualFeature = 'NotSupportedVisualFeature', FailedToProcess = 'FailedToProcess', Unspecified = 'Unspecified', StorageException = 'StorageException' }
 
 	export interface ImageUrl {
 
@@ -142,11 +142,11 @@ export namespace MyNS {
 
 	}
 
-	export enum WordConfidence { High = 0, Low = 1 }
+	export enum WordConfidence { High = 'High', Low = 'Low' }
 
 
 	/** Status code of the text operation. */
-	export enum OperationStatus { NotStarted = 0, Running = 1, Failed = 2, Succeeded = 3 }
+	export enum OperationStatus { NotStarted = 'NotStarted', Running = 'Running', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 
 	/** OCR result of the read operation. */
@@ -227,7 +227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextRecognitionResultUnit { pixel = 0, inch = 1 }
+	export enum TextRecognitionResultUnit { pixel = 'pixel', inch = 'inch' }
 
 
 	/** Result of recognition text operation. */
@@ -300,7 +300,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum RecognizeTextMode { Handwritten = 0, Printed = 1 }
+	export enum RecognizeTextMode { Handwritten = 'Handwritten', Printed = 'Printed' }
 
 }
 

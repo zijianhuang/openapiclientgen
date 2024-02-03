@@ -252,7 +252,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { ALL = 0, TEXT_ALL = 1, TEXT_SENT = 2, TEXT_PENDING = 3, TEXT_QUEUED = 4, TEXT_SUCCESSFUL = 5, TEXT_DELIVERED = 6, TEXT_INVALID = 7, TEXT_INVALID_MESSAGE = 8, TEXT_UNREACHABLE = 9, TEXT_CARRIER_UNREACHABLE = 10, TEXT_BLOCKED = 11, TEXT_CARRIER_BLOCKED = 12, TEXT_SPAM = 13, TEXT_UNKNOWN = 14, TEXT_TTL_EXPIRED = 15, VOICE_ALL = 16, VOICE_INITIATED = 17, VOICE_RINGING = 18, VOICE_ANSWERED = 19, VOICE_COMPLETED = 20, VOICE_BUSY = 21, VOICE_NO_ANSWER = 22, VOICE_FAILED = 23, VOICE_TTL_EXPIRED = 24 }
+	export enum EventType { ALL = 'ALL', TEXT_ALL = 'TEXT_ALL', TEXT_SENT = 'TEXT_SENT', TEXT_PENDING = 'TEXT_PENDING', TEXT_QUEUED = 'TEXT_QUEUED', TEXT_SUCCESSFUL = 'TEXT_SUCCESSFUL', TEXT_DELIVERED = 'TEXT_DELIVERED', TEXT_INVALID = 'TEXT_INVALID', TEXT_INVALID_MESSAGE = 'TEXT_INVALID_MESSAGE', TEXT_UNREACHABLE = 'TEXT_UNREACHABLE', TEXT_CARRIER_UNREACHABLE = 'TEXT_CARRIER_UNREACHABLE', TEXT_BLOCKED = 'TEXT_BLOCKED', TEXT_CARRIER_BLOCKED = 'TEXT_CARRIER_BLOCKED', TEXT_SPAM = 'TEXT_SPAM', TEXT_UNKNOWN = 'TEXT_UNKNOWN', TEXT_TTL_EXPIRED = 'TEXT_TTL_EXPIRED', VOICE_ALL = 'VOICE_ALL', VOICE_INITIATED = 'VOICE_INITIATED', VOICE_RINGING = 'VOICE_RINGING', VOICE_ANSWERED = 'VOICE_ANSWERED', VOICE_COMPLETED = 'VOICE_COMPLETED', VOICE_BUSY = 'VOICE_BUSY', VOICE_NO_ANSWER = 'VOICE_NO_ANSWER', VOICE_FAILED = 'VOICE_FAILED', VOICE_TTL_EXPIRED = 'VOICE_TTL_EXPIRED' }
 
 
 	/** Contains the destination configuration to use when publishing message sending events.  */
@@ -449,9 +449,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PoolStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
+	export enum PoolStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
-	export enum MessageType { TRANSACTIONAL = 0, PROMOTIONAL = 1 }
+	export enum MessageType { TRANSACTIONAL = 'TRANSACTIONAL', PROMOTIONAL = 'PROMOTIONAL' }
 
 	export interface CreatePoolRequest {
 
@@ -672,7 +672,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeywordAction { AUTOMATIC_RESPONSE = 0, OPT_OUT = 1, OPT_IN = 2 }
+	export enum KeywordAction { AUTOMATIC_RESPONSE = 'AUTOMATIC_RESPONSE', OPT_OUT = 'OPT_OUT', OPT_IN = 'OPT_IN' }
 
 	export interface DeleteKeywordRequest {
 
@@ -928,7 +928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountAttributeName { ACCOUNT_TIER = 0 }
+	export enum AccountAttributeName { ACCOUNT_TIER = 'ACCOUNT_TIER' }
 
 	export interface DescribeAccountAttributesRequest {
 		NextToken?: string;
@@ -995,7 +995,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountLimitName { PHONE_NUMBERS = 0, POOLS = 1, CONFIGURATION_SETS = 2, OPT_OUT_LISTS = 3 }
+	export enum AccountLimitName { PHONE_NUMBERS = 'PHONE_NUMBERS', POOLS = 'POOLS', CONFIGURATION_SETS = 'CONFIGURATION_SETS', OPT_OUT_LISTS = 'OPT_OUT_LISTS' }
 
 	export interface DescribeAccountLimitsRequest {
 		NextToken?: string;
@@ -1113,7 +1113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationSetFilterName { 'event-destination-name' = 0, 'matching-event-types' = 1, 'default-message-type' = 2, 'default-sender-id' = 3 }
+	export enum ConfigurationSetFilterName { 'event-destination-name' = 'event-destination-name', 'matching-event-types' = 'matching-event-types', 'default-message-type' = 'default-message-type', 'default-sender-id' = 'default-sender-id' }
 
 	export interface DescribeKeywordsResult {
 		OriginationIdentityArn?: string;
@@ -1219,7 +1219,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeywordFilterName { 'keyword-action' = 0 }
+	export enum KeywordFilterName { 'keyword-action' = 'keyword-action' }
 
 	export interface DescribeOptOutListsResult {
 		OptOutLists?: Array<OptOutListInformation>;
@@ -1391,7 +1391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OptedOutFilterName { 'end-user-opted-out' = 0 }
+	export enum OptedOutFilterName { 'end-user-opted-out' = 'end-user-opted-out' }
 
 	export interface DescribePhoneNumbersResult {
 		PhoneNumbers?: Array<PhoneNumberInformation>;
@@ -1517,11 +1517,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NumberStatus { PENDING = 0, ACTIVE = 1, ASSOCIATING = 2, DISASSOCIATING = 3, DELETED = 4 }
+	export enum NumberStatus { PENDING = 'PENDING', ACTIVE = 'ACTIVE', ASSOCIATING = 'ASSOCIATING', DISASSOCIATING = 'DISASSOCIATING', DELETED = 'DELETED' }
 
-	export enum NumberCapability { SMS = 0, VOICE = 1 }
+	export enum NumberCapability { SMS = 'SMS', VOICE = 'VOICE' }
 
-	export enum NumberType { SHORT_CODE = 0, LONG_CODE = 1, TOLL_FREE = 2, TEN_DLC = 3 }
+	export enum NumberType { SHORT_CODE = 'SHORT_CODE', LONG_CODE = 'LONG_CODE', TOLL_FREE = 'TOLL_FREE', TEN_DLC = 'TEN_DLC' }
 
 	export interface DescribePhoneNumbersRequest {
 		PhoneNumberIds?: Array<string>;
@@ -1565,7 +1565,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberFilterName { status = 0, 'iso-country-code' = 1, 'message-type' = 2, 'number-capability' = 3, 'number-type' = 4, 'two-way-enabled' = 5, 'self-managed-opt-outs-enabled' = 6, 'opt-out-list-name' = 7, 'deletion-protection-enabled' = 8 }
+	export enum PhoneNumberFilterName { status = 'status', 'iso-country-code' = 'iso-country-code', 'message-type' = 'message-type', 'number-capability' = 'number-capability', 'number-type' = 'number-type', 'two-way-enabled' = 'two-way-enabled', 'self-managed-opt-outs-enabled' = 'self-managed-opt-outs-enabled', 'opt-out-list-name' = 'opt-out-list-name', 'deletion-protection-enabled' = 'deletion-protection-enabled' }
 
 	export interface DescribePoolsResult {
 		Pools?: Array<PoolInformation>;
@@ -1710,7 +1710,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PoolFilterName { status = 0, 'message-type' = 1, 'two-way-enabled' = 2, 'self-managed-opt-outs-enabled' = 3, 'opt-out-list-name' = 4, 'shared-routes-enabled' = 5, 'deletion-protection-enabled' = 6 }
+	export enum PoolFilterName { status = 'status', 'message-type' = 'message-type', 'two-way-enabled' = 'two-way-enabled', 'self-managed-opt-outs-enabled' = 'self-managed-opt-outs-enabled', 'opt-out-list-name' = 'opt-out-list-name', 'shared-routes-enabled' = 'shared-routes-enabled', 'deletion-protection-enabled' = 'deletion-protection-enabled' }
 
 	export interface DescribeSenderIdsResult {
 		SenderIds?: Array<SenderIdInformation>;
@@ -1841,7 +1841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SenderIdFilterName { 'sender-id' = 0, 'iso-country-code' = 1, 'message-type' = 2 }
+	export enum SenderIdFilterName { 'sender-id' = 'sender-id', 'iso-country-code' = 'iso-country-code', 'message-type' = 'message-type' }
 
 	export interface DescribeSpendLimitsResult {
 		SpendLimits?: Array<SpendLimit>;
@@ -1899,7 +1899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpendLimitName { TEXT_MESSAGE_MONTHLY_SPEND_LIMIT = 0, VOICE_MESSAGE_MONTHLY_SPEND_LIMIT = 1 }
+	export enum SpendLimitName { TEXT_MESSAGE_MONTHLY_SPEND_LIMIT = 'TEXT_MESSAGE_MONTHLY_SPEND_LIMIT', VOICE_MESSAGE_MONTHLY_SPEND_LIMIT = 'VOICE_MESSAGE_MONTHLY_SPEND_LIMIT' }
 
 	export interface DescribeSpendLimitsRequest {
 		NextToken?: string;
@@ -2082,7 +2082,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PoolOriginationIdentitiesFilterName { 'iso-country-code' = 0, 'number-capability' = 1 }
+	export enum PoolOriginationIdentitiesFilterName { 'iso-country-code' = 'iso-country-code', 'number-capability' = 'number-capability' }
 
 	export interface ListTagsForResourceResult {
 		ResourceArn?: string;
@@ -2347,7 +2347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestableNumberType { LONG_CODE = 0, TOLL_FREE = 1, TEN_DLC = 2 }
+	export enum RequestableNumberType { LONG_CODE = 'LONG_CODE', TOLL_FREE = 'TOLL_FREE', TEN_DLC = 'TEN_DLC' }
 
 	export interface RequestPhoneNumberRequest {
 
@@ -2534,9 +2534,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceMessageBodyTextType { TEXT = 0, SSML = 1 }
+	export enum VoiceMessageBodyTextType { TEXT = 'TEXT', SSML = 'SSML' }
 
-	export enum VoiceId { AMY = 0, ASTRID = 1, BIANCA = 2, BRIAN = 3, CAMILA = 4, CARLA = 5, CARMEN = 6, CELINE = 7, CHANTAL = 8, CONCHITA = 9, CRISTIANO = 10, DORA = 11, EMMA = 12, ENRIQUE = 13, EWA = 14, FILIZ = 15, GERAINT = 16, GIORGIO = 17, GWYNETH = 18, HANS = 19, INES = 20, IVY = 21, JACEK = 22, JAN = 23, JOANNA = 24, JOEY = 25, JUSTIN = 26, KARL = 27, KENDRA = 28, KIMBERLY = 29, LEA = 30, LIV = 31, LOTTE = 32, LUCIA = 33, LUPE = 34, MADS = 35, MAJA = 36, MARLENE = 37, MATHIEU = 38, MATTHEW = 39, MAXIM = 40, MIA = 41, MIGUEL = 42, MIZUKI = 43, NAJA = 44, NICOLE = 45, PENELOPE = 46, RAVEENA = 47, RICARDO = 48, RUBEN = 49, RUSSELL = 50, SALLI = 51, SEOYEON = 52, TAKUMI = 53, TATYANA = 54, VICKI = 55, VITORIA = 56, ZEINA = 57, ZHIYU = 58 }
+	export enum VoiceId { AMY = 'AMY', ASTRID = 'ASTRID', BIANCA = 'BIANCA', BRIAN = 'BRIAN', CAMILA = 'CAMILA', CARLA = 'CARLA', CARMEN = 'CARMEN', CELINE = 'CELINE', CHANTAL = 'CHANTAL', CONCHITA = 'CONCHITA', CRISTIANO = 'CRISTIANO', DORA = 'DORA', EMMA = 'EMMA', ENRIQUE = 'ENRIQUE', EWA = 'EWA', FILIZ = 'FILIZ', GERAINT = 'GERAINT', GIORGIO = 'GIORGIO', GWYNETH = 'GWYNETH', HANS = 'HANS', INES = 'INES', IVY = 'IVY', JACEK = 'JACEK', JAN = 'JAN', JOANNA = 'JOANNA', JOEY = 'JOEY', JUSTIN = 'JUSTIN', KARL = 'KARL', KENDRA = 'KENDRA', KIMBERLY = 'KIMBERLY', LEA = 'LEA', LIV = 'LIV', LOTTE = 'LOTTE', LUCIA = 'LUCIA', LUPE = 'LUPE', MADS = 'MADS', MAJA = 'MAJA', MARLENE = 'MARLENE', MATHIEU = 'MATHIEU', MATTHEW = 'MATTHEW', MAXIM = 'MAXIM', MIA = 'MIA', MIGUEL = 'MIGUEL', MIZUKI = 'MIZUKI', NAJA = 'NAJA', NICOLE = 'NICOLE', PENELOPE = 'PENELOPE', RAVEENA = 'RAVEENA', RICARDO = 'RICARDO', RUBEN = 'RUBEN', RUSSELL = 'RUSSELL', SALLI = 'SALLI', SEOYEON = 'SEOYEON', TAKUMI = 'TAKUMI', TATYANA = 'TATYANA', VICKI = 'VICKI', VITORIA = 'VITORIA', ZEINA = 'ZEINA', ZHIYU = 'ZHIYU' }
 
 	export interface SetDefaultMessageTypeResult {
 		ConfigurationSetArn?: string;
@@ -2955,7 +2955,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationCountryParameterKey { IN_TEMPLATE_ID = 0, IN_ENTITY_ID = 1 }
+	export enum DestinationCountryParameterKey { IN_TEMPLATE_ID = 'IN_TEMPLATE_ID', IN_ENTITY_ID = 'IN_ENTITY_ID' }
 
 	@Injectable()
 	export class MyClient {
@@ -3372,91 +3372,91 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateOriginationIdentityX_Amz_Target { 'PinpointSMSVoiceV2.AssociateOriginationIdentity' = 0 }
+	export enum AssociateOriginationIdentityX_Amz_Target { 'PinpointSMSVoiceV2.AssociateOriginationIdentity' = 'PinpointSMSVoiceV2.AssociateOriginationIdentity' }
 
-	export enum CreateConfigurationSetX_Amz_Target { 'PinpointSMSVoiceV2.CreateConfigurationSet' = 0 }
+	export enum CreateConfigurationSetX_Amz_Target { 'PinpointSMSVoiceV2.CreateConfigurationSet' = 'PinpointSMSVoiceV2.CreateConfigurationSet' }
 
-	export enum CreateEventDestinationX_Amz_Target { 'PinpointSMSVoiceV2.CreateEventDestination' = 0 }
+	export enum CreateEventDestinationX_Amz_Target { 'PinpointSMSVoiceV2.CreateEventDestination' = 'PinpointSMSVoiceV2.CreateEventDestination' }
 
-	export enum CreateOptOutListX_Amz_Target { 'PinpointSMSVoiceV2.CreateOptOutList' = 0 }
+	export enum CreateOptOutListX_Amz_Target { 'PinpointSMSVoiceV2.CreateOptOutList' = 'PinpointSMSVoiceV2.CreateOptOutList' }
 
-	export enum CreatePoolX_Amz_Target { 'PinpointSMSVoiceV2.CreatePool' = 0 }
+	export enum CreatePoolX_Amz_Target { 'PinpointSMSVoiceV2.CreatePool' = 'PinpointSMSVoiceV2.CreatePool' }
 
-	export enum DeleteConfigurationSetX_Amz_Target { 'PinpointSMSVoiceV2.DeleteConfigurationSet' = 0 }
+	export enum DeleteConfigurationSetX_Amz_Target { 'PinpointSMSVoiceV2.DeleteConfigurationSet' = 'PinpointSMSVoiceV2.DeleteConfigurationSet' }
 
-	export enum DeleteDefaultMessageTypeX_Amz_Target { 'PinpointSMSVoiceV2.DeleteDefaultMessageType' = 0 }
+	export enum DeleteDefaultMessageTypeX_Amz_Target { 'PinpointSMSVoiceV2.DeleteDefaultMessageType' = 'PinpointSMSVoiceV2.DeleteDefaultMessageType' }
 
-	export enum DeleteDefaultSenderIdX_Amz_Target { 'PinpointSMSVoiceV2.DeleteDefaultSenderId' = 0 }
+	export enum DeleteDefaultSenderIdX_Amz_Target { 'PinpointSMSVoiceV2.DeleteDefaultSenderId' = 'PinpointSMSVoiceV2.DeleteDefaultSenderId' }
 
-	export enum DeleteEventDestinationX_Amz_Target { 'PinpointSMSVoiceV2.DeleteEventDestination' = 0 }
+	export enum DeleteEventDestinationX_Amz_Target { 'PinpointSMSVoiceV2.DeleteEventDestination' = 'PinpointSMSVoiceV2.DeleteEventDestination' }
 
-	export enum DeleteKeywordX_Amz_Target { 'PinpointSMSVoiceV2.DeleteKeyword' = 0 }
+	export enum DeleteKeywordX_Amz_Target { 'PinpointSMSVoiceV2.DeleteKeyword' = 'PinpointSMSVoiceV2.DeleteKeyword' }
 
-	export enum DeleteOptOutListX_Amz_Target { 'PinpointSMSVoiceV2.DeleteOptOutList' = 0 }
+	export enum DeleteOptOutListX_Amz_Target { 'PinpointSMSVoiceV2.DeleteOptOutList' = 'PinpointSMSVoiceV2.DeleteOptOutList' }
 
-	export enum DeleteOptedOutNumberX_Amz_Target { 'PinpointSMSVoiceV2.DeleteOptedOutNumber' = 0 }
+	export enum DeleteOptedOutNumberX_Amz_Target { 'PinpointSMSVoiceV2.DeleteOptedOutNumber' = 'PinpointSMSVoiceV2.DeleteOptedOutNumber' }
 
-	export enum DeletePoolX_Amz_Target { 'PinpointSMSVoiceV2.DeletePool' = 0 }
+	export enum DeletePoolX_Amz_Target { 'PinpointSMSVoiceV2.DeletePool' = 'PinpointSMSVoiceV2.DeletePool' }
 
-	export enum DeleteTextMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.DeleteTextMessageSpendLimitOverride' = 0 }
+	export enum DeleteTextMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.DeleteTextMessageSpendLimitOverride' = 'PinpointSMSVoiceV2.DeleteTextMessageSpendLimitOverride' }
 
-	export enum DeleteVoiceMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.DeleteVoiceMessageSpendLimitOverride' = 0 }
+	export enum DeleteVoiceMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.DeleteVoiceMessageSpendLimitOverride' = 'PinpointSMSVoiceV2.DeleteVoiceMessageSpendLimitOverride' }
 
-	export enum DescribeAccountAttributesX_Amz_Target { 'PinpointSMSVoiceV2.DescribeAccountAttributes' = 0 }
+	export enum DescribeAccountAttributesX_Amz_Target { 'PinpointSMSVoiceV2.DescribeAccountAttributes' = 'PinpointSMSVoiceV2.DescribeAccountAttributes' }
 
-	export enum DescribeAccountLimitsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeAccountLimits' = 0 }
+	export enum DescribeAccountLimitsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeAccountLimits' = 'PinpointSMSVoiceV2.DescribeAccountLimits' }
 
-	export enum DescribeConfigurationSetsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeConfigurationSets' = 0 }
+	export enum DescribeConfigurationSetsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeConfigurationSets' = 'PinpointSMSVoiceV2.DescribeConfigurationSets' }
 
-	export enum DescribeKeywordsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeKeywords' = 0 }
+	export enum DescribeKeywordsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeKeywords' = 'PinpointSMSVoiceV2.DescribeKeywords' }
 
-	export enum DescribeOptOutListsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeOptOutLists' = 0 }
+	export enum DescribeOptOutListsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeOptOutLists' = 'PinpointSMSVoiceV2.DescribeOptOutLists' }
 
-	export enum DescribeOptedOutNumbersX_Amz_Target { 'PinpointSMSVoiceV2.DescribeOptedOutNumbers' = 0 }
+	export enum DescribeOptedOutNumbersX_Amz_Target { 'PinpointSMSVoiceV2.DescribeOptedOutNumbers' = 'PinpointSMSVoiceV2.DescribeOptedOutNumbers' }
 
-	export enum DescribePhoneNumbersX_Amz_Target { 'PinpointSMSVoiceV2.DescribePhoneNumbers' = 0 }
+	export enum DescribePhoneNumbersX_Amz_Target { 'PinpointSMSVoiceV2.DescribePhoneNumbers' = 'PinpointSMSVoiceV2.DescribePhoneNumbers' }
 
-	export enum DescribePoolsX_Amz_Target { 'PinpointSMSVoiceV2.DescribePools' = 0 }
+	export enum DescribePoolsX_Amz_Target { 'PinpointSMSVoiceV2.DescribePools' = 'PinpointSMSVoiceV2.DescribePools' }
 
-	export enum DescribeSenderIdsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeSenderIds' = 0 }
+	export enum DescribeSenderIdsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeSenderIds' = 'PinpointSMSVoiceV2.DescribeSenderIds' }
 
-	export enum DescribeSpendLimitsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeSpendLimits' = 0 }
+	export enum DescribeSpendLimitsX_Amz_Target { 'PinpointSMSVoiceV2.DescribeSpendLimits' = 'PinpointSMSVoiceV2.DescribeSpendLimits' }
 
-	export enum DisassociateOriginationIdentityX_Amz_Target { 'PinpointSMSVoiceV2.DisassociateOriginationIdentity' = 0 }
+	export enum DisassociateOriginationIdentityX_Amz_Target { 'PinpointSMSVoiceV2.DisassociateOriginationIdentity' = 'PinpointSMSVoiceV2.DisassociateOriginationIdentity' }
 
-	export enum ListPoolOriginationIdentitiesX_Amz_Target { 'PinpointSMSVoiceV2.ListPoolOriginationIdentities' = 0 }
+	export enum ListPoolOriginationIdentitiesX_Amz_Target { 'PinpointSMSVoiceV2.ListPoolOriginationIdentities' = 'PinpointSMSVoiceV2.ListPoolOriginationIdentities' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'PinpointSMSVoiceV2.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'PinpointSMSVoiceV2.ListTagsForResource' = 'PinpointSMSVoiceV2.ListTagsForResource' }
 
-	export enum PutKeywordX_Amz_Target { 'PinpointSMSVoiceV2.PutKeyword' = 0 }
+	export enum PutKeywordX_Amz_Target { 'PinpointSMSVoiceV2.PutKeyword' = 'PinpointSMSVoiceV2.PutKeyword' }
 
-	export enum PutOptedOutNumberX_Amz_Target { 'PinpointSMSVoiceV2.PutOptedOutNumber' = 0 }
+	export enum PutOptedOutNumberX_Amz_Target { 'PinpointSMSVoiceV2.PutOptedOutNumber' = 'PinpointSMSVoiceV2.PutOptedOutNumber' }
 
-	export enum ReleasePhoneNumberX_Amz_Target { 'PinpointSMSVoiceV2.ReleasePhoneNumber' = 0 }
+	export enum ReleasePhoneNumberX_Amz_Target { 'PinpointSMSVoiceV2.ReleasePhoneNumber' = 'PinpointSMSVoiceV2.ReleasePhoneNumber' }
 
-	export enum RequestPhoneNumberX_Amz_Target { 'PinpointSMSVoiceV2.RequestPhoneNumber' = 0 }
+	export enum RequestPhoneNumberX_Amz_Target { 'PinpointSMSVoiceV2.RequestPhoneNumber' = 'PinpointSMSVoiceV2.RequestPhoneNumber' }
 
-	export enum SendTextMessageX_Amz_Target { 'PinpointSMSVoiceV2.SendTextMessage' = 0 }
+	export enum SendTextMessageX_Amz_Target { 'PinpointSMSVoiceV2.SendTextMessage' = 'PinpointSMSVoiceV2.SendTextMessage' }
 
-	export enum SendVoiceMessageX_Amz_Target { 'PinpointSMSVoiceV2.SendVoiceMessage' = 0 }
+	export enum SendVoiceMessageX_Amz_Target { 'PinpointSMSVoiceV2.SendVoiceMessage' = 'PinpointSMSVoiceV2.SendVoiceMessage' }
 
-	export enum SetDefaultMessageTypeX_Amz_Target { 'PinpointSMSVoiceV2.SetDefaultMessageType' = 0 }
+	export enum SetDefaultMessageTypeX_Amz_Target { 'PinpointSMSVoiceV2.SetDefaultMessageType' = 'PinpointSMSVoiceV2.SetDefaultMessageType' }
 
-	export enum SetDefaultSenderIdX_Amz_Target { 'PinpointSMSVoiceV2.SetDefaultSenderId' = 0 }
+	export enum SetDefaultSenderIdX_Amz_Target { 'PinpointSMSVoiceV2.SetDefaultSenderId' = 'PinpointSMSVoiceV2.SetDefaultSenderId' }
 
-	export enum SetTextMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.SetTextMessageSpendLimitOverride' = 0 }
+	export enum SetTextMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.SetTextMessageSpendLimitOverride' = 'PinpointSMSVoiceV2.SetTextMessageSpendLimitOverride' }
 
-	export enum SetVoiceMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.SetVoiceMessageSpendLimitOverride' = 0 }
+	export enum SetVoiceMessageSpendLimitOverrideX_Amz_Target { 'PinpointSMSVoiceV2.SetVoiceMessageSpendLimitOverride' = 'PinpointSMSVoiceV2.SetVoiceMessageSpendLimitOverride' }
 
-	export enum TagResourceX_Amz_Target { 'PinpointSMSVoiceV2.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'PinpointSMSVoiceV2.TagResource' = 'PinpointSMSVoiceV2.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'PinpointSMSVoiceV2.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'PinpointSMSVoiceV2.UntagResource' = 'PinpointSMSVoiceV2.UntagResource' }
 
-	export enum UpdateEventDestinationX_Amz_Target { 'PinpointSMSVoiceV2.UpdateEventDestination' = 0 }
+	export enum UpdateEventDestinationX_Amz_Target { 'PinpointSMSVoiceV2.UpdateEventDestination' = 'PinpointSMSVoiceV2.UpdateEventDestination' }
 
-	export enum UpdatePhoneNumberX_Amz_Target { 'PinpointSMSVoiceV2.UpdatePhoneNumber' = 0 }
+	export enum UpdatePhoneNumberX_Amz_Target { 'PinpointSMSVoiceV2.UpdatePhoneNumber' = 'PinpointSMSVoiceV2.UpdatePhoneNumber' }
 
-	export enum UpdatePoolX_Amz_Target { 'PinpointSMSVoiceV2.UpdatePool' = 0 }
+	export enum UpdatePoolX_Amz_Target { 'PinpointSMSVoiceV2.UpdatePool' = 'PinpointSMSVoiceV2.UpdatePool' }
 
 }
 

@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceMappingType { CfnStack = 0, Resource = 1, AppRegistryApp = 2, ResourceGroup = 3, Terraform = 4, EKS = 5 }
+	export enum ResourceMappingType { CfnStack = 'CfnStack', Resource = 'Resource', AppRegistryApp = 'AppRegistryApp', ResourceGroup = 'ResourceGroup', Terraform = 'Terraform', EKS = 'EKS' }
 
 
 	/** Defines a physical resource identifier. */
@@ -108,7 +108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhysicalIdentifierType { Arn = 0, Native = 1 }
+	export enum PhysicalIdentifierType { Arn = 'Arn', Native = 'Native' }
 
 	export interface InternalServerException {
 	}
@@ -262,7 +262,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExcludeRecommendationReason { AlreadyImplemented = 0, NotRelevant = 1, ComplexityOfImplementation = 2 }
+	export enum ExcludeRecommendationReason { AlreadyImplemented = 'AlreadyImplemented', NotRelevant = 'NotRelevant', ComplexityOfImplementation = 'ComplexityOfImplementation' }
 
 
 	/** Defines the operational recommendation item that needs a status update. */
@@ -409,11 +409,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AppAssessmentScheduleType { Disabled = 0, Daily = 1 }
+	export enum AppAssessmentScheduleType { Disabled = 'Disabled', Daily = 'Daily' }
 
-	export enum AppComplianceStatusType { PolicyBreached = 0, PolicyMet = 1, NotAssessed = 2, ChangesDetected = 3 }
+	export enum AppComplianceStatusType { PolicyBreached = 'PolicyBreached', PolicyMet = 'PolicyMet', NotAssessed = 'NotAssessed', ChangesDetected = 'ChangesDetected' }
 
-	export enum AppDriftStatusType { NotChecked = 0, NotDetected = 1, Detected = 2 }
+	export enum AppDriftStatusType { NotChecked = 'NotChecked', NotDetected = 'NotDetected', Detected = 'Detected' }
 
 
 	/** Indicates an event you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events. */
@@ -446,7 +446,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { ScheduledAssessmentFailure = 0, DriftDetected = 1 }
+	export enum EventType { ScheduledAssessmentFailure = 'ScheduledAssessmentFailure', DriftDetected = 'DriftDetected' }
 
 
 	/** Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment. */
@@ -473,9 +473,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionModelType { LegacyIAMUser = 0, RoleBased = 1 }
+	export enum PermissionModelType { LegacyIAMUser = 'LegacyIAMUser', RoleBased = 'RoleBased' }
 
-	export enum AppStatusType { Active = 0, Deleting = 1 }
+	export enum AppStatusType { Active = 'Active', Deleting = 'Deleting' }
 
 	export interface TagMap {
 	}
@@ -663,7 +663,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSourceType { AppTemplate = 0, Discovered = 1 }
+	export enum ResourceSourceType { AppTemplate = 'AppTemplate', Discovered = 'Discovered' }
 
 	export interface CreateRecommendationTemplateResponse {
 		recommendationTemplate?: RecommendationTemplate;
@@ -746,11 +746,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateFormat { CfnYaml = 0, CfnJson = 1 }
+	export enum TemplateFormat { CfnYaml = 'CfnYaml', CfnJson = 'CfnJson' }
 
-	export enum RenderRecommendationType { Alarm = 0, Sop = 1, Test = 2 }
+	export enum RenderRecommendationType { Alarm = 'Alarm', Sop = 'Sop', Test = 'Test' }
 
-	export enum RecommendationTemplateStatus { Pending = 0, InProgress = 1, Failed = 2, Success = 3 }
+	export enum RecommendationTemplateStatus { Pending = 'Pending', InProgress = 'InProgress', Failed = 'Failed', Success = 'Success' }
 
 
 	/** The location of the Amazon S3 bucket. */
@@ -822,9 +822,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLocationConstraint { AnyLocation = 0, SameContinent = 1, SameCountry = 2 }
+	export enum DataLocationConstraint { AnyLocation = 'AnyLocation', SameContinent = 'SameContinent', SameCountry = 'SameCountry' }
 
-	export enum EstimatedCostTier { L1 = 0, L2 = 1, L3 = 2, L4 = 3 }
+	export enum EstimatedCostTier { L1 = 'L1', L2 = 'L2', L3 = 'L3', L4 = 'L4' }
 
 	export interface DisruptionPolicy {
 	}
@@ -836,7 +836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResiliencyPolicyTier { MissionCritical = 0, Critical = 1, Important = 2, CoreServices = 3, NonCritical = 4, NotApplicable = 5 }
+	export enum ResiliencyPolicyTier { MissionCritical = 'MissionCritical', Critical = 'Critical', Important = 'Important', CoreServices = 'CoreServices', NonCritical = 'NonCritical', NotApplicable = 'NotApplicable' }
 
 
 	/** Defines a failure policy. */
@@ -1197,7 +1197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceStatus { PolicyBreached = 0, PolicyMet = 1 }
+	export enum ComplianceStatus { PolicyBreached = 'PolicyBreached', PolicyMet = 'PolicyMet' }
 
 
 	/** Defines a cost object. */
@@ -1234,9 +1234,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CostFrequency { Hourly = 0, Daily = 1, Monthly = 2, Yearly = 3 }
+	export enum CostFrequency { Hourly = 'Hourly', Daily = 'Daily', Monthly = 'Monthly', Yearly = 'Yearly' }
 
-	export enum AssessmentInvoker { User = 0, System = 1 }
+	export enum AssessmentInvoker { User = 'User', System = 'System' }
 
 
 	/** The overall resiliency score, returned as an object that includes the disruption score and outage score. */
@@ -1673,7 +1673,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlarmType { Metric = 0, Composite = 1, Canary = 2, Logs = 3, Event = 4 }
+	export enum AlarmType { Metric = 'Metric', Composite = 'Composite', Canary = 'Canary', Logs = 'Logs', Event = 'Event' }
 
 	export interface ListAppAssessmentComplianceDriftsResponse {
 
@@ -1731,9 +1731,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DifferenceType { NotEqual = 0 }
+	export enum DifferenceType { NotEqual = 'NotEqual' }
 
-	export enum DriftType { ApplicationCompliance = 0 }
+	export enum DriftType { ApplicationCompliance = 'ApplicationCompliance' }
 
 	export interface ListAppAssessmentsResponse {
 
@@ -1813,7 +1813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentStatus { Pending = 0, InProgress = 1, Failed = 2, Success = 3 }
+	export enum AssessmentStatus { Pending = 'Pending', InProgress = 'InProgress', Failed = 'Failed', Success = 'Success' }
 
 	export interface ListAppComponentCompliancesResponse {
 
@@ -1952,9 +1952,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HaArchitecture { MultiSite = 0, WarmStandby = 1, PilotLight = 2, BackupAndRestore = 3, NoRecoveryPlan = 4 }
+	export enum HaArchitecture { MultiSite = 'MultiSite', WarmStandby = 'WarmStandby', PilotLight = 'PilotLight', BackupAndRestore = 'BackupAndRestore', NoRecoveryPlan = 'NoRecoveryPlan' }
 
-	export enum ConfigRecommendationOptimizationType { LeastCost = 0, LeastChange = 1, BestAZRecovery = 2, LeastErrors = 3, BestAttainable = 4, BestRegionRecovery = 5 }
+	export enum ConfigRecommendationOptimizationType { LeastCost = 'LeastCost', LeastChange = 'LeastChange', BestAZRecovery = 'BestAZRecovery', LeastErrors = 'LeastErrors', BestAttainable = 'BestAttainable', BestRegionRecovery = 'BestRegionRecovery' }
 
 	export interface RecommendationCompliance {
 	}
@@ -1966,7 +1966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationComplianceStatus { BreachedUnattainable = 0, BreachedCanMeet = 1, MetCanImprove = 2 }
+	export enum RecommendationComplianceStatus { BreachedUnattainable = 'BreachedUnattainable', BreachedCanMeet = 'BreachedCanMeet', MetCanImprove = 'MetCanImprove' }
 
 	export interface ListAppInputSourcesResponse {
 
@@ -2260,7 +2260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SopServiceType { SSM = 0 }
+	export enum SopServiceType { SSM = 'SSM' }
 
 	export interface ListSuggestedResiliencyPoliciesResponse {
 		nextToken?: string;
@@ -2352,9 +2352,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TestRisk { Small = 0, Medium = 1, High = 2 }
+	export enum TestRisk { Small = 'Small', Medium = 'Medium', High = 'High' }
 
-	export enum TestType { Software = 0, Hardware = 1, AZ = 2, Region = 3 }
+	export enum TestType { Software = 'Software', Hardware = 'Hardware', AZ = 'AZ', Region = 'Region' }
 
 	export interface ListUnsupportedAppVersionResourcesResponse {
 		nextToken?: string;
@@ -2659,7 +2659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriftStatus { NotChecked = 0, NotDetected = 1, Detected = 2 }
+	export enum DriftStatus { NotChecked = 'NotChecked', NotDetected = 'NotDetected', Detected = 'Detected' }
 
 
 	/** Defines the compliance against the resiliency policy for a disruption. */
@@ -3243,7 +3243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceResolutionStatusType { Pending = 0, InProgress = 1, Failed = 2, Success = 3 }
+	export enum ResourceResolutionStatusType { Pending = 'Pending', InProgress = 'InProgress', Failed = 'Failed', Success = 'Success' }
 
 	export interface DescribeAppVersionTemplateRequest {
 
@@ -3286,7 +3286,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceImportStatusType { Pending = 0, InProgress = 1, Failed = 2, Success = 3 }
+	export enum ResourceImportStatusType { Pending = 'Pending', InProgress = 'InProgress', Failed = 'Failed', Success = 'Success' }
 
 	export interface DescribeResiliencyPolicyRequest {
 
@@ -3305,9 +3305,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DisruptionType { Software = 0, Hardware = 1, AZ = 2, Region = 3 }
+	export enum DisruptionType { Software = 'Software', Hardware = 'Hardware', AZ = 'AZ', Region = 'Region' }
 
-	export enum ResourceImportStrategyType { AddOnly = 0, ReplaceAll = 1 }
+	export enum ResourceImportStrategyType { AddOnly = 'AddOnly', ReplaceAll = 'ReplaceAll' }
 
 	export interface ImportResourcesToDraftAppVersionRequest {
 

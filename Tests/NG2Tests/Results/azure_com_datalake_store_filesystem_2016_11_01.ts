@@ -434,7 +434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileStatusPropertiesType { FILE = 0, DIRECTORY = 1 }
+	export enum FileStatusPropertiesType { FILE = 'FILE', DIRECTORY = 'DIRECTORY' }
 
 
 	/** Data Lake Store filesystem file status information response. */
@@ -520,19 +520,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum FileSystem_SetFileExpiryExpiryOption { NeverExpire = 0, RelativeToNow = 1, RelativeToCreationDate = 2, Absolute = 3 }
+	export enum FileSystem_SetFileExpiryExpiryOption { NeverExpire = 'NeverExpire', RelativeToNow = 'RelativeToNow', RelativeToCreationDate = 'RelativeToCreationDate', Absolute = 'Absolute' }
 
-	export enum FileSystem_SetFileExpiryOp { SETEXPIRY = 0 }
+	export enum FileSystem_SetFileExpiryOp { SETEXPIRY = 'SETEXPIRY' }
 
-	export enum FileSystem_ConcurrentAppendAppendMode { autocreate = 0 }
+	export enum FileSystem_ConcurrentAppendAppendMode { autocreate = 'autocreate' }
 
-	export enum FileSystem_ConcurrentAppendOp { CONCURRENTAPPEND = 0 }
+	export enum FileSystem_ConcurrentAppendOp { CONCURRENTAPPEND = 'CONCURRENTAPPEND' }
 
-	export enum FileSystem_ConcurrentAppendTransfer_Encoding { chunked = 0 }
+	export enum FileSystem_ConcurrentAppendTransfer_Encoding { chunked = 'chunked' }
 
-	export enum FileSystem_ConcurrentAppendSyncFlag { DATA = 0, METADATA = 1, CLOSE = 2 }
+	export enum FileSystem_ConcurrentAppendSyncFlag { DATA = 'DATA', METADATA = 'METADATA', CLOSE = 'CLOSE' }
 
-	export enum FileSystem_CheckAccessOp { CHECKACCESS = 0 }
+	export enum FileSystem_CheckAccessOp { CHECKACCESS = 'CHECKACCESS' }
 
 }
 

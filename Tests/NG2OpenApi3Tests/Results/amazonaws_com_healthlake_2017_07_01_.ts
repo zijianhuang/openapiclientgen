@@ -41,7 +41,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatastoreStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3 }
+	export enum DatastoreStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface CreateFHIRDatastoreRequest {
 		DatastoreName?: string;
@@ -70,7 +70,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FHIRVersion { R4 = 0 }
+	export enum FHIRVersion { R4 = 'R4' }
 
 
 	/**  The server-side encryption key configuration for a customer provided encryption key.  */
@@ -113,7 +113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CmkType { CUSTOMER_MANAGED_KMS_KEY = 0, AWS_OWNED_KMS_KEY = 1 }
+	export enum CmkType { CUSTOMER_MANAGED_KMS_KEY = 'CUSTOMER_MANAGED_KMS_KEY', AWS_OWNED_KMS_KEY = 'AWS_OWNED_KMS_KEY' }
 
 
 	/**  The input properties for the preloaded data store. Only data preloaded from Synthea is supported. */
@@ -136,7 +136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreloadDataType { SYNTHEA = 0 }
+	export enum PreloadDataType { SYNTHEA = 'SYNTHEA' }
 
 
 	/**  A tag is a label consisting of a user-defined key and value. The form for tags is {"Key", "Value"}  */
@@ -196,7 +196,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationStrategy { SMART_ON_FHIR_V1 = 0, AWS_AUTH = 1 }
+	export enum AuthorizationStrategy { SMART_ON_FHIR_V1 = 'SMART_ON_FHIR_V1', AWS_AUTH = 'AWS_AUTH' }
 
 	export interface ValidationException {
 	}
@@ -471,7 +471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED_WITH_ERRORS = 2, COMPLETED = 3, FAILED = 4, CANCEL_SUBMITTED = 5, CANCEL_IN_PROGRESS = 6, CANCEL_COMPLETED = 7, CANCEL_FAILED = 8 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED_WITH_ERRORS = 'COMPLETED_WITH_ERRORS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCEL_SUBMITTED = 'CANCEL_SUBMITTED', CANCEL_IN_PROGRESS = 'CANCEL_IN_PROGRESS', CANCEL_COMPLETED = 'CANCEL_COMPLETED', CANCEL_FAILED = 'CANCEL_FAILED' }
 
 
 	/** The output data configuration that was supplied when the export job was created. */
@@ -1166,31 +1166,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateFHIRDatastoreX_Amz_Target { 'HealthLake.CreateFHIRDatastore' = 0 }
+	export enum CreateFHIRDatastoreX_Amz_Target { 'HealthLake.CreateFHIRDatastore' = 'HealthLake.CreateFHIRDatastore' }
 
-	export enum DeleteFHIRDatastoreX_Amz_Target { 'HealthLake.DeleteFHIRDatastore' = 0 }
+	export enum DeleteFHIRDatastoreX_Amz_Target { 'HealthLake.DeleteFHIRDatastore' = 'HealthLake.DeleteFHIRDatastore' }
 
-	export enum DescribeFHIRDatastoreX_Amz_Target { 'HealthLake.DescribeFHIRDatastore' = 0 }
+	export enum DescribeFHIRDatastoreX_Amz_Target { 'HealthLake.DescribeFHIRDatastore' = 'HealthLake.DescribeFHIRDatastore' }
 
-	export enum DescribeFHIRExportJobX_Amz_Target { 'HealthLake.DescribeFHIRExportJob' = 0 }
+	export enum DescribeFHIRExportJobX_Amz_Target { 'HealthLake.DescribeFHIRExportJob' = 'HealthLake.DescribeFHIRExportJob' }
 
-	export enum DescribeFHIRImportJobX_Amz_Target { 'HealthLake.DescribeFHIRImportJob' = 0 }
+	export enum DescribeFHIRImportJobX_Amz_Target { 'HealthLake.DescribeFHIRImportJob' = 'HealthLake.DescribeFHIRImportJob' }
 
-	export enum ListFHIRDatastoresX_Amz_Target { 'HealthLake.ListFHIRDatastores' = 0 }
+	export enum ListFHIRDatastoresX_Amz_Target { 'HealthLake.ListFHIRDatastores' = 'HealthLake.ListFHIRDatastores' }
 
-	export enum ListFHIRExportJobsX_Amz_Target { 'HealthLake.ListFHIRExportJobs' = 0 }
+	export enum ListFHIRExportJobsX_Amz_Target { 'HealthLake.ListFHIRExportJobs' = 'HealthLake.ListFHIRExportJobs' }
 
-	export enum ListFHIRImportJobsX_Amz_Target { 'HealthLake.ListFHIRImportJobs' = 0 }
+	export enum ListFHIRImportJobsX_Amz_Target { 'HealthLake.ListFHIRImportJobs' = 'HealthLake.ListFHIRImportJobs' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'HealthLake.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'HealthLake.ListTagsForResource' = 'HealthLake.ListTagsForResource' }
 
-	export enum StartFHIRExportJobX_Amz_Target { 'HealthLake.StartFHIRExportJob' = 0 }
+	export enum StartFHIRExportJobX_Amz_Target { 'HealthLake.StartFHIRExportJob' = 'HealthLake.StartFHIRExportJob' }
 
-	export enum StartFHIRImportJobX_Amz_Target { 'HealthLake.StartFHIRImportJob' = 0 }
+	export enum StartFHIRImportJobX_Amz_Target { 'HealthLake.StartFHIRImportJob' = 'HealthLake.StartFHIRImportJob' }
 
-	export enum TagResourceX_Amz_Target { 'HealthLake.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'HealthLake.TagResource' = 'HealthLake.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'HealthLake.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'HealthLake.UntagResource' = 'HealthLake.UntagResource' }
 
 }
 

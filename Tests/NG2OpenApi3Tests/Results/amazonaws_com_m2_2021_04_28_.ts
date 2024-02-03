@@ -661,9 +661,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentLifecycle { Deploying = 0, Succeeded = 1, Failed = 2 }
+	export enum DeploymentLifecycle { Deploying = 'Deploying', Succeeded = 'Succeeded', Failed = 'Failed' }
 
-	export enum EngineType { microfocus = 0, bluage = 1 }
+	export enum EngineType { microfocus = 'microfocus', bluage = 'bluage' }
 
 
 	/** Defines an application version summary. */
@@ -703,7 +703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationVersionLifecycle { Creating = 0, Available = 1, Failed = 2 }
+	export enum ApplicationVersionLifecycle { Creating = 'Creating', Available = 'Available', Failed = 'Failed' }
 
 
 	/** A subset of the attributes that describe a log group. In CloudWatch a log group is a group of log streams that share the same retention, monitoring, and access control settings. */
@@ -733,7 +733,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationLifecycle { Creating = 0, Created = 1, Available = 2, Ready = 3, Starting = 4, Running = 5, Stopping = 6, Stopped = 7, Failed = 8, Deleting = 9, 'Deleting From Environment' = 10 }
+	export enum ApplicationLifecycle { Creating = 'Creating', Created = 'Created', Available = 'Available', Ready = 'Ready', Starting = 'Starting', Running = 'Running', Stopping = 'Stopping', Stopped = 'Stopped', Failed = 'Failed', Deleting = 'Deleting', 'Deleting From Environment' = 'Deleting From Environment' }
 
 	export interface TagMap {
 	}
@@ -917,9 +917,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchJobType { VSE = 0, JES2 = 1, JES3 = 2 }
+	export enum BatchJobType { VSE = 'VSE', JES2 = 'JES2', JES3 = 'JES3' }
 
-	export enum BatchJobExecutionStatus { Submitting = 0, Holding = 1, Dispatching = 2, Running = 3, Cancelling = 4, Cancelled = 5, Succeeded = 6, Failed = 7, 'Succeeded With Warning' = 8 }
+	export enum BatchJobExecutionStatus { Submitting = 'Submitting', Holding = 'Holding', Dispatching = 'Dispatching', Running = 'Running', Cancelling = 'Cancelling', Cancelled = 'Cancelled', Succeeded = 'Succeeded', Failed = 'Failed', 'Succeeded With Warning' = 'Succeeded With Warning' }
 
 	export interface GetDataSetDetailsResponse {
 		blocksize?: number | null;
@@ -1104,7 +1104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSetTaskLifecycle { Creating = 0, Running = 1, Completed = 2 }
+	export enum DataSetTaskLifecycle { Creating = 'Creating', Running = 'Running', Completed = 'Completed' }
 
 
 	/** Represents a summary of data set imports. */
@@ -1373,7 +1373,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentLifecycle { Creating = 0, Available = 1, Updating = 2, Deleting = 3, Failed = 4 }
+	export enum EnvironmentLifecycle { Creating = 'Creating', Available = 'Available', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 	export interface GetSignedBluinsightsUrlResponse {
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationDeploymentLifecycle { Deploying = 0, Deployed = 1 }
+	export enum ApplicationDeploymentLifecycle { Deploying = 'Deploying', Deployed = 'Deployed' }
 
 	export interface ListBatchJobDefinitionsResponse {
 

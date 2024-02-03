@@ -92,9 +92,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AgeRatingDeclarationAttributesAlcoholTobaccoOrDrugUseOrReferences { NONE = 0, INFREQUENT_OR_MILD = 1, FREQUENT_OR_INTENSE = 2 }
+	export enum AgeRatingDeclarationAttributesAlcoholTobaccoOrDrugUseOrReferences { NONE = 'NONE', INFREQUENT_OR_MILD = 'INFREQUENT_OR_MILD', FREQUENT_OR_INTENSE = 'FREQUENT_OR_INTENSE' }
 
-	export enum AgeRatingDeclarationAttributesKidsAgeBand { FIVE_AND_UNDER = 0, SIX_TO_EIGHT = 1, NINE_TO_ELEVEN = 2 }
+	export enum AgeRatingDeclarationAttributesKidsAgeBand { FIVE_AND_UNDER = 'FIVE_AND_UNDER', SIX_TO_EIGHT = 'SIX_TO_EIGHT', NINE_TO_ELEVEN = 'NINE_TO_ELEVEN' }
 
 	export interface ResourceLinks {
 
@@ -113,7 +113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgeRatingDeclarationType { ageRatingDeclarations = 0 }
+	export enum AgeRatingDeclarationType { ageRatingDeclarations = 'ageRatingDeclarations' }
 
 	export interface AgeRatingDeclarationResponse {
 
@@ -307,7 +307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppAttributesContentRightsDeclaration { DOES_NOT_USE_THIRD_PARTY_CONTENT = 0, USES_THIRD_PARTY_CONTENT = 1 }
+	export enum AppAttributesContentRightsDeclaration { DOES_NOT_USE_THIRD_PARTY_CONTENT = 'DOES_NOT_USE_THIRD_PARTY_CONTENT', USES_THIRD_PARTY_CONTENT = 'USES_THIRD_PARTY_CONTENT' }
 
 	export interface AppRelationships {
 		appInfos?: AppRelationshipsAppInfos;
@@ -370,7 +370,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsAppInfosDataType { appInfos = 0 }
+	export enum AppRelationshipsAppInfosDataType { appInfos = 'appInfos' }
 
 	export interface AppRelationshipsAppInfosLinks {
 		related?: string | null;
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsAppStoreVersionsDataType { appStoreVersions = 0 }
+	export enum AppRelationshipsAppStoreVersionsDataType { appStoreVersions = 'appStoreVersions' }
 
 	export interface AppRelationshipsAppStoreVersionsLinks {
 		related?: string | null;
@@ -517,7 +517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsAvailableTerritoriesDataType { territories = 0 }
+	export enum AppRelationshipsAvailableTerritoriesDataType { territories = 'territories' }
 
 	export interface AppRelationshipsAvailableTerritoriesLinks {
 		related?: string | null;
@@ -572,7 +572,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsBetaAppLocalizationsDataType { betaAppLocalizations = 0 }
+	export enum AppRelationshipsBetaAppLocalizationsDataType { betaAppLocalizations = 'betaAppLocalizations' }
 
 	export interface AppRelationshipsBetaAppLocalizationsLinks {
 		related?: string | null;
@@ -626,7 +626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsBetaAppReviewDetailDataType { betaAppReviewDetails = 0 }
+	export enum AppRelationshipsBetaAppReviewDetailDataType { betaAppReviewDetails = 'betaAppReviewDetails' }
 
 	export interface AppRelationshipsBetaAppReviewDetailLinks {
 		related?: string | null;
@@ -681,7 +681,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsBetaGroupsDataType { betaGroups = 0 }
+	export enum AppRelationshipsBetaGroupsDataType { betaGroups = 'betaGroups' }
 
 	export interface AppRelationshipsBetaGroupsLinks {
 		related?: string | null;
@@ -735,7 +735,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsBetaLicenseAgreementDataType { betaLicenseAgreements = 0 }
+	export enum AppRelationshipsBetaLicenseAgreementDataType { betaLicenseAgreements = 'betaLicenseAgreements' }
 
 	export interface AppRelationshipsBetaLicenseAgreementLinks {
 		related?: string | null;
@@ -790,7 +790,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsBuildsDataType { builds = 0 }
+	export enum AppRelationshipsBuildsDataType { builds = 'builds' }
 
 	export interface AppRelationshipsBuildsLinks {
 		related?: string | null;
@@ -844,7 +844,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsEndUserLicenseAgreementDataType { endUserLicenseAgreements = 0 }
+	export enum AppRelationshipsEndUserLicenseAgreementDataType { endUserLicenseAgreements = 'endUserLicenseAgreements' }
 
 	export interface AppRelationshipsEndUserLicenseAgreementLinks {
 		related?: string | null;
@@ -899,7 +899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsGameCenterEnabledVersionsDataType { gameCenterEnabledVersions = 0 }
+	export enum AppRelationshipsGameCenterEnabledVersionsDataType { gameCenterEnabledVersions = 'gameCenterEnabledVersions' }
 
 	export interface AppRelationshipsGameCenterEnabledVersionsLinks {
 		related?: string | null;
@@ -954,7 +954,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsInAppPurchasesDataType { inAppPurchases = 0 }
+	export enum AppRelationshipsInAppPurchasesDataType { inAppPurchases = 'inAppPurchases' }
 
 	export interface AppRelationshipsInAppPurchasesLinks {
 		related?: string | null;
@@ -1008,7 +1008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsPreOrderDataType { appPreOrders = 0 }
+	export enum AppRelationshipsPreOrderDataType { appPreOrders = 'appPreOrders' }
 
 	export interface AppRelationshipsPreOrderLinks {
 		related?: string | null;
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsPreReleaseVersionsDataType { preReleaseVersions = 0 }
+	export enum AppRelationshipsPreReleaseVersionsDataType { preReleaseVersions = 'preReleaseVersions' }
 
 	export interface AppRelationshipsPreReleaseVersionsLinks {
 		related?: string | null;
@@ -1118,7 +1118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRelationshipsPricesDataType { appPrices = 0 }
+	export enum AppRelationshipsPricesDataType { appPrices = 'appPrices' }
 
 	export interface AppRelationshipsPricesLinks {
 		related?: string | null;
@@ -1136,7 +1136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppType { apps = 0 }
+	export enum AppType { apps = 'apps' }
 
 	export interface AppBetaTestersLinkagesRequest {
 
@@ -1175,7 +1175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppBetaTestersLinkagesRequestDataType { betaTesters = 0 }
+	export enum AppBetaTestersLinkagesRequestDataType { betaTesters = 'betaTesters' }
 
 	export interface AppCategoriesResponse {
 
@@ -1235,7 +1235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Platform { IOS = 0, MAC_OS = 1, TV_OS = 2 }
+	export enum Platform { IOS = 'IOS', MAC_OS = 'MAC_OS', TV_OS = 'TV_OS' }
 
 	export interface AppCategoryRelationships {
 		parent?: AppCategoryRelationshipsParent;
@@ -1285,7 +1285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppCategoryRelationshipsParentDataType { appCategories = 0 }
+	export enum AppCategoryRelationshipsParentDataType { appCategories = 'appCategories' }
 
 	export interface AppCategoryRelationshipsParentLinks {
 		related?: string | null;
@@ -1471,7 +1471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppEncryptionDeclarationAttributesAppEncryptionDeclarationState { IN_REVIEW = 0, APPROVED = 1, REJECTED = 2, INVALID = 3, EXPIRED = 4 }
+	export enum AppEncryptionDeclarationAttributesAppEncryptionDeclarationState { IN_REVIEW = 'IN_REVIEW', APPROVED = 'APPROVED', REJECTED = 'REJECTED', INVALID = 'INVALID', EXPIRED = 'EXPIRED' }
 
 	export interface AppEncryptionDeclarationRelationships {
 		app?: AppEncryptionDeclarationRelationshipsApp;
@@ -1536,7 +1536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppEncryptionDeclarationType { appEncryptionDeclarations = 0 }
+	export enum AppEncryptionDeclarationType { appEncryptionDeclarations = 'appEncryptionDeclarations' }
 
 	export interface AppEncryptionDeclarationBuildsLinkagesRequest {
 
@@ -1592,7 +1592,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppEncryptionDeclarationState { IN_REVIEW = 0, APPROVED = 1, REJECTED = 2, INVALID = 3, EXPIRED = 4 }
+	export enum AppEncryptionDeclarationState { IN_REVIEW = 'IN_REVIEW', APPROVED = 'APPROVED', REJECTED = 'REJECTED', INVALID = 'INVALID', EXPIRED = 'EXPIRED' }
 
 	export interface AppEncryptionDeclarationsResponse {
 
@@ -1663,11 +1663,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AppInfoAttributesAppStoreAgeRating { FOUR_PLUS = 0, NINE_PLUS = 1, TWELVE_PLUS = 2, SEVENTEEN_PLUS = 3 }
+	export enum AppInfoAttributesAppStoreAgeRating { FOUR_PLUS = 'FOUR_PLUS', NINE_PLUS = 'NINE_PLUS', TWELVE_PLUS = 'TWELVE_PLUS', SEVENTEEN_PLUS = 'SEVENTEEN_PLUS' }
 
-	export enum AppInfoAttributesAppStoreState { DEVELOPER_REMOVED_FROM_SALE = 0, DEVELOPER_REJECTED = 1, IN_REVIEW = 2, INVALID_BINARY = 3, METADATA_REJECTED = 4, PENDING_APPLE_RELEASE = 5, PENDING_CONTRACT = 6, PENDING_DEVELOPER_RELEASE = 7, PREPARE_FOR_SUBMISSION = 8, PREORDER_READY_FOR_SALE = 9, PROCESSING_FOR_APP_STORE = 10, READY_FOR_SALE = 11, REJECTED = 12, REMOVED_FROM_SALE = 13, WAITING_FOR_EXPORT_COMPLIANCE = 14, WAITING_FOR_REVIEW = 15, REPLACED_WITH_NEW_VERSION = 16 }
+	export enum AppInfoAttributesAppStoreState { DEVELOPER_REMOVED_FROM_SALE = 'DEVELOPER_REMOVED_FROM_SALE', DEVELOPER_REJECTED = 'DEVELOPER_REJECTED', IN_REVIEW = 'IN_REVIEW', INVALID_BINARY = 'INVALID_BINARY', METADATA_REJECTED = 'METADATA_REJECTED', PENDING_APPLE_RELEASE = 'PENDING_APPLE_RELEASE', PENDING_CONTRACT = 'PENDING_CONTRACT', PENDING_DEVELOPER_RELEASE = 'PENDING_DEVELOPER_RELEASE', PREPARE_FOR_SUBMISSION = 'PREPARE_FOR_SUBMISSION', PREORDER_READY_FOR_SALE = 'PREORDER_READY_FOR_SALE', PROCESSING_FOR_APP_STORE = 'PROCESSING_FOR_APP_STORE', READY_FOR_SALE = 'READY_FOR_SALE', REJECTED = 'REJECTED', REMOVED_FROM_SALE = 'REMOVED_FROM_SALE', WAITING_FOR_EXPORT_COMPLIANCE = 'WAITING_FOR_EXPORT_COMPLIANCE', WAITING_FOR_REVIEW = 'WAITING_FOR_REVIEW', REPLACED_WITH_NEW_VERSION = 'REPLACED_WITH_NEW_VERSION' }
 
-	export enum AppInfoAttributesBrazilAgeRating { L = 0, TEN = 1, TWELVE = 2, FOURTEEN = 3, SIXTEEN = 4, EIGHTEEN = 5 }
+	export enum AppInfoAttributesBrazilAgeRating { L = 'L', TEN = 'TEN', TWELVE = 'TWELVE', FOURTEEN = 'FOURTEEN', SIXTEEN = 'SIXTEEN', EIGHTEEN = 'EIGHTEEN' }
 
 	export interface AppInfoRelationships {
 		ageRatingDeclaration?: AppInfoRelationshipsAgeRatingDeclaration;
@@ -1829,7 +1829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppInfoRelationshipsAppInfoLocalizationsDataType { appInfoLocalizations = 0 }
+	export enum AppInfoRelationshipsAppInfoLocalizationsDataType { appInfoLocalizations = 'appInfoLocalizations' }
 
 	export interface AppInfoRelationshipsAppInfoLocalizationsLinks {
 		related?: string | null;
@@ -2814,7 +2814,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppMediaAssetStateState { AWAITING_UPLOAD = 0, UPLOAD_COMPLETE = 1, COMPLETE = 2, FAILED = 3 }
+	export enum AppMediaAssetStateState { AWAITING_UPLOAD = 'AWAITING_UPLOAD', UPLOAD_COMPLETE = 'UPLOAD_COMPLETE', COMPLETE = 'COMPLETE', FAILED = 'FAILED' }
 
 	export interface AppPreOrder {
 		attributes?: AppPreOrderAttributes;
@@ -3253,7 +3253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPreviewRelationshipsAppPreviewSetDataType { appPreviewSets = 0 }
+	export enum AppPreviewRelationshipsAppPreviewSetDataType { appPreviewSets = 'appPreviewSets' }
 
 	export interface AppPreviewRelationshipsAppPreviewSetLinks {
 		related?: string | null;
@@ -3271,7 +3271,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPreviewType { appPreviews = 0 }
+	export enum AppPreviewType { appPreviews = 'appPreviews' }
 
 	export interface AppPreviewCreateRequest {
 
@@ -3447,7 +3447,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPreviewSetAttributesPreviewType { IPHONE_65 = 0, IPHONE_58 = 1, IPHONE_55 = 2, IPHONE_47 = 3, IPHONE_40 = 4, IPHONE_35 = 5, IPAD_PRO_3GEN_129 = 6, IPAD_PRO_3GEN_11 = 7, IPAD_PRO_129 = 8, IPAD_105 = 9, IPAD_97 = 10, DESKTOP = 11, WATCH_SERIES_4 = 12, WATCH_SERIES_3 = 13, APPLE_TV = 14 }
+	export enum AppPreviewSetAttributesPreviewType { IPHONE_65 = 'IPHONE_65', IPHONE_58 = 'IPHONE_58', IPHONE_55 = 'IPHONE_55', IPHONE_47 = 'IPHONE_47', IPHONE_40 = 'IPHONE_40', IPHONE_35 = 'IPHONE_35', IPAD_PRO_3GEN_129 = 'IPAD_PRO_3GEN_129', IPAD_PRO_3GEN_11 = 'IPAD_PRO_3GEN_11', IPAD_PRO_129 = 'IPAD_PRO_129', IPAD_105 = 'IPAD_105', IPAD_97 = 'IPAD_97', DESKTOP = 'DESKTOP', WATCH_SERIES_4 = 'WATCH_SERIES_4', WATCH_SERIES_3 = 'WATCH_SERIES_3', APPLE_TV = 'APPLE_TV' }
 
 	export interface AppPreviewSetRelationships {
 		appPreviews?: AppPreviewSetRelationshipsAppPreviews;
@@ -3550,7 +3550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPreviewSetRelationshipsAppStoreVersionLocalizationDataType { appStoreVersionLocalizations = 0 }
+	export enum AppPreviewSetRelationshipsAppStoreVersionLocalizationDataType { appStoreVersionLocalizations = 'appStoreVersionLocalizations' }
 
 	export interface AppPreviewSetRelationshipsAppStoreVersionLocalizationLinks {
 		related?: string | null;
@@ -3986,7 +3986,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPriceRelationshipsPriceTierDataType { appPriceTiers = 0 }
+	export enum AppPriceRelationshipsPriceTierDataType { appPriceTiers = 'appPriceTiers' }
 
 	export interface AppPriceRelationshipsPriceTierLinks {
 		related?: string | null;
@@ -4165,7 +4165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPricePointType { appPricePoints = 0 }
+	export enum AppPricePointType { appPricePoints = 'appPricePoints' }
 
 	export interface AppPricePointResponse {
 
@@ -4524,7 +4524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppScreenshotRelationshipsAppScreenshotSetDataType { appScreenshotSets = 0 }
+	export enum AppScreenshotRelationshipsAppScreenshotSetDataType { appScreenshotSets = 'appScreenshotSets' }
 
 	export interface AppScreenshotRelationshipsAppScreenshotSetLinks {
 		related?: string | null;
@@ -4542,7 +4542,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppScreenshotType { appScreenshots = 0 }
+	export enum AppScreenshotType { appScreenshots = 'appScreenshots' }
 
 	export interface AppScreenshotCreateRequest {
 
@@ -4712,7 +4712,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppScreenshotSetAttributesScreenshotDisplayType { APP_IPHONE_65 = 0, APP_IPHONE_58 = 1, APP_IPHONE_55 = 2, APP_IPHONE_47 = 3, APP_IPHONE_40 = 4, APP_IPHONE_35 = 5, APP_IPAD_PRO_3GEN_129 = 6, APP_IPAD_PRO_3GEN_11 = 7, APP_IPAD_PRO_129 = 8, APP_IPAD_105 = 9, APP_IPAD_97 = 10, APP_DESKTOP = 11, APP_WATCH_SERIES_4 = 12, APP_WATCH_SERIES_3 = 13, APP_APPLE_TV = 14, IMESSAGE_APP_IPHONE_65 = 15, IMESSAGE_APP_IPHONE_58 = 16, IMESSAGE_APP_IPHONE_55 = 17, IMESSAGE_APP_IPHONE_47 = 18, IMESSAGE_APP_IPHONE_40 = 19, IMESSAGE_APP_IPAD_PRO_3GEN_129 = 20, IMESSAGE_APP_IPAD_PRO_3GEN_11 = 21, IMESSAGE_APP_IPAD_PRO_129 = 22, IMESSAGE_APP_IPAD_105 = 23, IMESSAGE_APP_IPAD_97 = 24 }
+	export enum AppScreenshotSetAttributesScreenshotDisplayType { APP_IPHONE_65 = 'APP_IPHONE_65', APP_IPHONE_58 = 'APP_IPHONE_58', APP_IPHONE_55 = 'APP_IPHONE_55', APP_IPHONE_47 = 'APP_IPHONE_47', APP_IPHONE_40 = 'APP_IPHONE_40', APP_IPHONE_35 = 'APP_IPHONE_35', APP_IPAD_PRO_3GEN_129 = 'APP_IPAD_PRO_3GEN_129', APP_IPAD_PRO_3GEN_11 = 'APP_IPAD_PRO_3GEN_11', APP_IPAD_PRO_129 = 'APP_IPAD_PRO_129', APP_IPAD_105 = 'APP_IPAD_105', APP_IPAD_97 = 'APP_IPAD_97', APP_DESKTOP = 'APP_DESKTOP', APP_WATCH_SERIES_4 = 'APP_WATCH_SERIES_4', APP_WATCH_SERIES_3 = 'APP_WATCH_SERIES_3', APP_APPLE_TV = 'APP_APPLE_TV', IMESSAGE_APP_IPHONE_65 = 'IMESSAGE_APP_IPHONE_65', IMESSAGE_APP_IPHONE_58 = 'IMESSAGE_APP_IPHONE_58', IMESSAGE_APP_IPHONE_55 = 'IMESSAGE_APP_IPHONE_55', IMESSAGE_APP_IPHONE_47 = 'IMESSAGE_APP_IPHONE_47', IMESSAGE_APP_IPHONE_40 = 'IMESSAGE_APP_IPHONE_40', IMESSAGE_APP_IPAD_PRO_3GEN_129 = 'IMESSAGE_APP_IPAD_PRO_3GEN_129', IMESSAGE_APP_IPAD_PRO_3GEN_11 = 'IMESSAGE_APP_IPAD_PRO_3GEN_11', IMESSAGE_APP_IPAD_PRO_129 = 'IMESSAGE_APP_IPAD_PRO_129', IMESSAGE_APP_IPAD_105 = 'IMESSAGE_APP_IPAD_105', IMESSAGE_APP_IPAD_97 = 'IMESSAGE_APP_IPAD_97' }
 
 	export interface AppScreenshotSetRelationships {
 		appScreenshots?: AppScreenshotSetRelationshipsAppScreenshots;
@@ -5118,7 +5118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreAgeRating { FOUR_PLUS = 0, NINE_PLUS = 1, TWELVE_PLUS = 2, SEVENTEEN_PLUS = 3 }
+	export enum AppStoreAgeRating { FOUR_PLUS = 'FOUR_PLUS', NINE_PLUS = 'NINE_PLUS', TWELVE_PLUS = 'TWELVE_PLUS', SEVENTEEN_PLUS = 'SEVENTEEN_PLUS' }
 
 	export interface AppStoreReviewAttachment {
 		attributes?: AppStoreReviewAttachmentAttributes;
@@ -5217,7 +5217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreReviewAttachmentRelationshipsAppStoreReviewDetailDataType { appStoreReviewDetails = 0 }
+	export enum AppStoreReviewAttachmentRelationshipsAppStoreReviewDetailDataType { appStoreReviewDetails = 'appStoreReviewDetails' }
 
 	export interface AppStoreReviewAttachmentRelationshipsAppStoreReviewDetailLinks {
 		related?: string | null;
@@ -5235,7 +5235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreReviewAttachmentType { appStoreReviewAttachments = 0 }
+	export enum AppStoreReviewAttachmentType { appStoreReviewAttachments = 'appStoreReviewAttachments' }
 
 	export interface AppStoreReviewAttachmentCreateRequest {
 
@@ -5887,7 +5887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreVersionAttributesReleaseType { MANUAL = 0, AFTER_APPROVAL = 1, SCHEDULED = 2 }
+	export enum AppStoreVersionAttributesReleaseType { MANUAL = 'MANUAL', AFTER_APPROVAL = 'AFTER_APPROVAL', SCHEDULED = 'SCHEDULED' }
 
 	export interface AppStoreVersionRelationships {
 		ageRatingDeclaration?: AppStoreVersionRelationshipsAgeRatingDeclaration;
@@ -6153,7 +6153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreVersionRelationshipsAppStoreVersionPhasedReleaseDataType { appStoreVersionPhasedReleases = 0 }
+	export enum AppStoreVersionRelationshipsAppStoreVersionPhasedReleaseDataType { appStoreVersionPhasedReleases = 'appStoreVersionPhasedReleases' }
 
 	export interface AppStoreVersionRelationshipsAppStoreVersionPhasedReleaseLinks {
 		related?: string | null;
@@ -6207,7 +6207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreVersionRelationshipsAppStoreVersionSubmissionDataType { appStoreVersionSubmissions = 0 }
+	export enum AppStoreVersionRelationshipsAppStoreVersionSubmissionDataType { appStoreVersionSubmissions = 'appStoreVersionSubmissions' }
 
 	export interface AppStoreVersionRelationshipsAppStoreVersionSubmissionLinks {
 		related?: string | null;
@@ -6313,7 +6313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreVersionRelationshipsIdfaDeclarationDataType { idfaDeclarations = 0 }
+	export enum AppStoreVersionRelationshipsIdfaDeclarationDataType { idfaDeclarations = 'idfaDeclarations' }
 
 	export interface AppStoreVersionRelationshipsIdfaDeclarationLinks {
 		related?: string | null;
@@ -6367,7 +6367,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreVersionRelationshipsRoutingAppCoverageDataType { routingAppCoverages = 0 }
+	export enum AppStoreVersionRelationshipsRoutingAppCoverageDataType { routingAppCoverages = 'routingAppCoverages' }
 
 	export interface AppStoreVersionRelationshipsRoutingAppCoverageLinks {
 		related?: string | null;
@@ -7123,7 +7123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreVersionPhasedReleaseAttributesPhasedReleaseState { INACTIVE = 0, ACTIVE = 1, PAUSED = 2, COMPLETE = 3 }
+	export enum AppStoreVersionPhasedReleaseAttributesPhasedReleaseState { INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE', PAUSED = 'PAUSED', COMPLETE = 'COMPLETE' }
 
 	export interface AppStoreVersionPhasedReleaseCreateRequest {
 
@@ -7306,7 +7306,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStoreVersionState { DEVELOPER_REMOVED_FROM_SALE = 0, DEVELOPER_REJECTED = 1, IN_REVIEW = 2, INVALID_BINARY = 3, METADATA_REJECTED = 4, PENDING_APPLE_RELEASE = 5, PENDING_CONTRACT = 6, PENDING_DEVELOPER_RELEASE = 7, PREPARE_FOR_SUBMISSION = 8, PREORDER_READY_FOR_SALE = 9, PROCESSING_FOR_APP_STORE = 10, READY_FOR_SALE = 11, REJECTED = 12, REMOVED_FROM_SALE = 13, WAITING_FOR_EXPORT_COMPLIANCE = 14, WAITING_FOR_REVIEW = 15, REPLACED_WITH_NEW_VERSION = 16 }
+	export enum AppStoreVersionState { DEVELOPER_REMOVED_FROM_SALE = 'DEVELOPER_REMOVED_FROM_SALE', DEVELOPER_REJECTED = 'DEVELOPER_REJECTED', IN_REVIEW = 'IN_REVIEW', INVALID_BINARY = 'INVALID_BINARY', METADATA_REJECTED = 'METADATA_REJECTED', PENDING_APPLE_RELEASE = 'PENDING_APPLE_RELEASE', PENDING_CONTRACT = 'PENDING_CONTRACT', PENDING_DEVELOPER_RELEASE = 'PENDING_DEVELOPER_RELEASE', PREPARE_FOR_SUBMISSION = 'PREPARE_FOR_SUBMISSION', PREORDER_READY_FOR_SALE = 'PREORDER_READY_FOR_SALE', PROCESSING_FOR_APP_STORE = 'PROCESSING_FOR_APP_STORE', READY_FOR_SALE = 'READY_FOR_SALE', REJECTED = 'REJECTED', REMOVED_FROM_SALE = 'REMOVED_FROM_SALE', WAITING_FOR_EXPORT_COMPLIANCE = 'WAITING_FOR_EXPORT_COMPLIANCE', WAITING_FOR_REVIEW = 'WAITING_FOR_REVIEW', REPLACED_WITH_NEW_VERSION = 'REPLACED_WITH_NEW_VERSION' }
 
 	export interface AppStoreVersionSubmission {
 
@@ -8401,7 +8401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BetaAppReviewSubmissionAttributesBetaReviewState { WAITING_FOR_REVIEW = 0, IN_REVIEW = 1, REJECTED = 2, APPROVED = 3 }
+	export enum BetaAppReviewSubmissionAttributesBetaReviewState { WAITING_FOR_REVIEW = 'WAITING_FOR_REVIEW', IN_REVIEW = 'IN_REVIEW', REJECTED = 'REJECTED', APPROVED = 'APPROVED' }
 
 	export interface BetaAppReviewSubmissionRelationships {
 		build?: BetaAppReviewSubmissionRelationshipsBuild;
@@ -8466,7 +8466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BetaAppReviewSubmissionType { betaAppReviewSubmissions = 0 }
+	export enum BetaAppReviewSubmissionType { betaAppReviewSubmissions = 'betaAppReviewSubmissions' }
 
 	export interface BetaAppReviewSubmissionCreateRequest {
 
@@ -8629,7 +8629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildAttributesProcessingState { PROCESSING = 0, FAILED = 1, INVALID = 2, VALID = 3 }
+	export enum BuildAttributesProcessingState { PROCESSING = 'PROCESSING', FAILED = 'FAILED', INVALID = 'INVALID', VALID = 'VALID' }
 
 	export interface BuildRelationships {
 		app?: BuildRelationshipsApp;
@@ -8895,7 +8895,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildRelationshipsBetaBuildLocalizationsDataType { betaBuildLocalizations = 0 }
+	export enum BuildRelationshipsBetaBuildLocalizationsDataType { betaBuildLocalizations = 'betaBuildLocalizations' }
 
 	export interface BuildRelationshipsBetaBuildLocalizationsLinks {
 		related?: string | null;
@@ -8949,7 +8949,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildRelationshipsBuildBetaDetailDataType { buildBetaDetails = 0 }
+	export enum BuildRelationshipsBuildBetaDetailDataType { buildBetaDetails = 'buildBetaDetails' }
 
 	export interface BuildRelationshipsBuildBetaDetailLinks {
 		related?: string | null;
@@ -9004,7 +9004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildRelationshipsIconsDataType { buildIcons = 0 }
+	export enum BuildRelationshipsIconsDataType { buildIcons = 'buildIcons' }
 
 	export interface BuildRelationshipsIconsLinks {
 		related?: string | null;
@@ -10123,7 +10123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BetaInviteType { EMAIL = 0, PUBLIC_LINK = 1 }
+	export enum BetaInviteType { EMAIL = 'EMAIL', PUBLIC_LINK = 'PUBLIC_LINK' }
 
 	export interface BetaLicenseAgreement {
 		attributes?: BetaLicenseAgreementAttributes;
@@ -10316,7 +10316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BetaReviewState { WAITING_FOR_REVIEW = 0, IN_REVIEW = 1, REJECTED = 2, APPROVED = 3 }
+	export enum BetaReviewState { WAITING_FOR_REVIEW = 'WAITING_FOR_REVIEW', IN_REVIEW = 'IN_REVIEW', REJECTED = 'REJECTED', APPROVED = 'APPROVED' }
 
 	export interface BetaTester {
 		attributes?: BetaTesterAttributes;
@@ -10941,7 +10941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BetaTesterInvitationType { betaTesterInvitations = 0 }
+	export enum BetaTesterInvitationType { betaTesterInvitations = 'betaTesterInvitations' }
 
 	export interface BetaTesterInvitationCreateRequest {
 
@@ -11117,7 +11117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BrazilAgeRating { L = 0, TEN = 1, TWELVE = 2, FOURTEEN = 3, SIXTEEN = 4, EIGHTEEN = 5 }
+	export enum BrazilAgeRating { L = 'L', TEN = 'TEN', TWELVE = 'TWELVE', FOURTEEN = 'FOURTEEN', SIXTEEN = 'SIXTEEN', EIGHTEEN = 'EIGHTEEN' }
 
 	export interface BuildAppEncryptionDeclarationLinkageRequest {
 
@@ -11244,9 +11244,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildBetaDetailAttributesExternalBuildState { PROCESSING = 0, PROCESSING_EXCEPTION = 1, MISSING_EXPORT_COMPLIANCE = 2, READY_FOR_BETA_TESTING = 3, IN_BETA_TESTING = 4, EXPIRED = 5, READY_FOR_BETA_SUBMISSION = 6, IN_EXPORT_COMPLIANCE_REVIEW = 7, WAITING_FOR_BETA_REVIEW = 8, IN_BETA_REVIEW = 9, BETA_REJECTED = 10, BETA_APPROVED = 11 }
+	export enum BuildBetaDetailAttributesExternalBuildState { PROCESSING = 'PROCESSING', PROCESSING_EXCEPTION = 'PROCESSING_EXCEPTION', MISSING_EXPORT_COMPLIANCE = 'MISSING_EXPORT_COMPLIANCE', READY_FOR_BETA_TESTING = 'READY_FOR_BETA_TESTING', IN_BETA_TESTING = 'IN_BETA_TESTING', EXPIRED = 'EXPIRED', READY_FOR_BETA_SUBMISSION = 'READY_FOR_BETA_SUBMISSION', IN_EXPORT_COMPLIANCE_REVIEW = 'IN_EXPORT_COMPLIANCE_REVIEW', WAITING_FOR_BETA_REVIEW = 'WAITING_FOR_BETA_REVIEW', IN_BETA_REVIEW = 'IN_BETA_REVIEW', BETA_REJECTED = 'BETA_REJECTED', BETA_APPROVED = 'BETA_APPROVED' }
 
-	export enum BuildBetaDetailAttributesInternalBuildState { PROCESSING = 0, PROCESSING_EXCEPTION = 1, MISSING_EXPORT_COMPLIANCE = 2, READY_FOR_BETA_TESTING = 3, IN_BETA_TESTING = 4, EXPIRED = 5, IN_EXPORT_COMPLIANCE_REVIEW = 6 }
+	export enum BuildBetaDetailAttributesInternalBuildState { PROCESSING = 'PROCESSING', PROCESSING_EXCEPTION = 'PROCESSING_EXCEPTION', MISSING_EXPORT_COMPLIANCE = 'MISSING_EXPORT_COMPLIANCE', READY_FOR_BETA_TESTING = 'READY_FOR_BETA_TESTING', IN_BETA_TESTING = 'IN_BETA_TESTING', EXPIRED = 'EXPIRED', IN_EXPORT_COMPLIANCE_REVIEW = 'IN_EXPORT_COMPLIANCE_REVIEW' }
 
 	export interface BuildBetaDetailRelationships {
 		build?: BuildBetaDetailRelationshipsBuild;
@@ -11461,7 +11461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildBetaNotificationType { buildBetaNotifications = 0 }
+	export enum BuildBetaNotificationType { buildBetaNotifications = 'buildBetaNotifications' }
 
 	export interface BuildBetaNotificationCreateRequest {
 
@@ -11604,7 +11604,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildIconAttributesIconType { APP_STORE = 0, MESSAGES_APP_STORE = 1, WATCH_APP_STORE = 2, TV_OS_HOME_SCREEN = 3, TV_OS_TOP_SHELF = 4 }
+	export enum BuildIconAttributesIconType { APP_STORE = 'APP_STORE', MESSAGES_APP_STORE = 'MESSAGES_APP_STORE', WATCH_APP_STORE = 'WATCH_APP_STORE', TV_OS_HOME_SCREEN = 'TV_OS_HOME_SCREEN', TV_OS_TOP_SHELF = 'TV_OS_TOP_SHELF' }
 
 	export interface BuildIconsResponse {
 
@@ -11888,7 +11888,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BundleIdAttributesPlatform { IOS = 0, MAC_OS = 1 }
+	export enum BundleIdAttributesPlatform { IOS = 'IOS', MAC_OS = 'MAC_OS' }
 
 	export interface BundleIdRelationships {
 		app?: BundleIdRelationshipsApp;
@@ -11992,7 +11992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BundleIdRelationshipsBundleIdCapabilitiesDataType { bundleIdCapabilities = 0 }
+	export enum BundleIdRelationshipsBundleIdCapabilitiesDataType { bundleIdCapabilities = 'bundleIdCapabilities' }
 
 	export interface BundleIdRelationshipsBundleIdCapabilitiesLinks {
 		related?: string | null;
@@ -12047,7 +12047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BundleIdRelationshipsProfilesDataType { profiles = 0 }
+	export enum BundleIdRelationshipsProfilesDataType { profiles = 'profiles' }
 
 	export interface BundleIdRelationshipsProfilesLinks {
 		related?: string | null;
@@ -12065,7 +12065,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BundleIdType { bundleIds = 0 }
+	export enum BundleIdType { bundleIds = 'bundleIds' }
 
 	export interface BundleIdCapabilitiesResponse {
 
@@ -12126,7 +12126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BundleIdCapabilityAttributesCapabilityType { ICLOUD = 0, IN_APP_PURCHASE = 1, GAME_CENTER = 2, PUSH_NOTIFICATIONS = 3, WALLET = 4, INTER_APP_AUDIO = 5, MAPS = 6, ASSOCIATED_DOMAINS = 7, PERSONAL_VPN = 8, APP_GROUPS = 9, HEALTHKIT = 10, HOMEKIT = 11, WIRELESS_ACCESSORY_CONFIGURATION = 12, APPLE_PAY = 13, DATA_PROTECTION = 14, SIRIKIT = 15, NETWORK_EXTENSIONS = 16, MULTIPATH = 17, HOT_SPOT = 18, NFC_TAG_READING = 19, CLASSKIT = 20, AUTOFILL_CREDENTIAL_PROVIDER = 21, ACCESS_WIFI_INFORMATION = 22, NETWORK_CUSTOM_PROTOCOL = 23, COREMEDIA_HLS_LOW_LATENCY = 24, SYSTEM_EXTENSION_INSTALL = 25, USER_MANAGEMENT = 26, APPLE_ID_AUTH = 27 }
+	export enum BundleIdCapabilityAttributesCapabilityType { ICLOUD = 'ICLOUD', IN_APP_PURCHASE = 'IN_APP_PURCHASE', GAME_CENTER = 'GAME_CENTER', PUSH_NOTIFICATIONS = 'PUSH_NOTIFICATIONS', WALLET = 'WALLET', INTER_APP_AUDIO = 'INTER_APP_AUDIO', MAPS = 'MAPS', ASSOCIATED_DOMAINS = 'ASSOCIATED_DOMAINS', PERSONAL_VPN = 'PERSONAL_VPN', APP_GROUPS = 'APP_GROUPS', HEALTHKIT = 'HEALTHKIT', HOMEKIT = 'HOMEKIT', WIRELESS_ACCESSORY_CONFIGURATION = 'WIRELESS_ACCESSORY_CONFIGURATION', APPLE_PAY = 'APPLE_PAY', DATA_PROTECTION = 'DATA_PROTECTION', SIRIKIT = 'SIRIKIT', NETWORK_EXTENSIONS = 'NETWORK_EXTENSIONS', MULTIPATH = 'MULTIPATH', HOT_SPOT = 'HOT_SPOT', NFC_TAG_READING = 'NFC_TAG_READING', CLASSKIT = 'CLASSKIT', AUTOFILL_CREDENTIAL_PROVIDER = 'AUTOFILL_CREDENTIAL_PROVIDER', ACCESS_WIFI_INFORMATION = 'ACCESS_WIFI_INFORMATION', NETWORK_CUSTOM_PROTOCOL = 'NETWORK_CUSTOM_PROTOCOL', COREMEDIA_HLS_LOW_LATENCY = 'COREMEDIA_HLS_LOW_LATENCY', SYSTEM_EXTENSION_INSTALL = 'SYSTEM_EXTENSION_INSTALL', USER_MANAGEMENT = 'USER_MANAGEMENT', APPLE_ID_AUTH = 'APPLE_ID_AUTH' }
 
 	export interface CapabilitySetting {
 		allowedInstances?: CapabilitySettingAllowedInstances | null;
@@ -12160,9 +12160,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CapabilitySettingAllowedInstances { ENTRY = 0, SINGLE = 1, MULTIPLE = 2 }
+	export enum CapabilitySettingAllowedInstances { ENTRY = 'ENTRY', SINGLE = 'SINGLE', MULTIPLE = 'MULTIPLE' }
 
-	export enum CapabilitySettingKey { ICLOUD_VERSION = 0, DATA_PROTECTION_PERMISSION_LEVEL = 1, APPLE_ID_AUTH_APP_CONSENT = 2 }
+	export enum CapabilitySettingKey { ICLOUD_VERSION = 'ICLOUD_VERSION', DATA_PROTECTION_PERMISSION_LEVEL = 'DATA_PROTECTION_PERMISSION_LEVEL', APPLE_ID_AUTH_APP_CONSENT = 'APPLE_ID_AUTH_APP_CONSENT' }
 
 	export interface CapabilityOption {
 		description?: string | null;
@@ -12192,7 +12192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapabilityOptionKey { XCODE_5 = 0, XCODE_6 = 1, COMPLETE_PROTECTION = 2, PROTECTED_UNLESS_OPEN = 3, PROTECTED_UNTIL_FIRST_USER_AUTH = 4, PRIMARY_APP_CONSENT = 5 }
+	export enum CapabilityOptionKey { XCODE_5 = 'XCODE_5', XCODE_6 = 'XCODE_6', COMPLETE_PROTECTION = 'COMPLETE_PROTECTION', PROTECTED_UNLESS_OPEN = 'PROTECTED_UNLESS_OPEN', PROTECTED_UNTIL_FIRST_USER_AUTH = 'PROTECTED_UNTIL_FIRST_USER_AUTH', PRIMARY_APP_CONSENT = 'PRIMARY_APP_CONSENT' }
 
 	export interface BundleIdCapabilityCreateRequest {
 
@@ -12433,7 +12433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BundleIdPlatform { IOS = 0, MAC_OS = 1 }
+	export enum BundleIdPlatform { IOS = 'IOS', MAC_OS = 'MAC_OS' }
 
 	export interface BundleIdResponse {
 
@@ -12521,7 +12521,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapabilityType { ICLOUD = 0, IN_APP_PURCHASE = 1, GAME_CENTER = 2, PUSH_NOTIFICATIONS = 3, WALLET = 4, INTER_APP_AUDIO = 5, MAPS = 6, ASSOCIATED_DOMAINS = 7, PERSONAL_VPN = 8, APP_GROUPS = 9, HEALTHKIT = 10, HOMEKIT = 11, WIRELESS_ACCESSORY_CONFIGURATION = 12, APPLE_PAY = 13, DATA_PROTECTION = 14, SIRIKIT = 15, NETWORK_EXTENSIONS = 16, MULTIPATH = 17, HOT_SPOT = 18, NFC_TAG_READING = 19, CLASSKIT = 20, AUTOFILL_CREDENTIAL_PROVIDER = 21, ACCESS_WIFI_INFORMATION = 22, NETWORK_CUSTOM_PROTOCOL = 23, COREMEDIA_HLS_LOW_LATENCY = 24, SYSTEM_EXTENSION_INSTALL = 25, USER_MANAGEMENT = 26, APPLE_ID_AUTH = 27 }
+	export enum CapabilityType { ICLOUD = 'ICLOUD', IN_APP_PURCHASE = 'IN_APP_PURCHASE', GAME_CENTER = 'GAME_CENTER', PUSH_NOTIFICATIONS = 'PUSH_NOTIFICATIONS', WALLET = 'WALLET', INTER_APP_AUDIO = 'INTER_APP_AUDIO', MAPS = 'MAPS', ASSOCIATED_DOMAINS = 'ASSOCIATED_DOMAINS', PERSONAL_VPN = 'PERSONAL_VPN', APP_GROUPS = 'APP_GROUPS', HEALTHKIT = 'HEALTHKIT', HOMEKIT = 'HOMEKIT', WIRELESS_ACCESSORY_CONFIGURATION = 'WIRELESS_ACCESSORY_CONFIGURATION', APPLE_PAY = 'APPLE_PAY', DATA_PROTECTION = 'DATA_PROTECTION', SIRIKIT = 'SIRIKIT', NETWORK_EXTENSIONS = 'NETWORK_EXTENSIONS', MULTIPATH = 'MULTIPATH', HOT_SPOT = 'HOT_SPOT', NFC_TAG_READING = 'NFC_TAG_READING', CLASSKIT = 'CLASSKIT', AUTOFILL_CREDENTIAL_PROVIDER = 'AUTOFILL_CREDENTIAL_PROVIDER', ACCESS_WIFI_INFORMATION = 'ACCESS_WIFI_INFORMATION', NETWORK_CUSTOM_PROTOCOL = 'NETWORK_CUSTOM_PROTOCOL', COREMEDIA_HLS_LOW_LATENCY = 'COREMEDIA_HLS_LOW_LATENCY', SYSTEM_EXTENSION_INSTALL = 'SYSTEM_EXTENSION_INSTALL', USER_MANAGEMENT = 'USER_MANAGEMENT', APPLE_ID_AUTH = 'APPLE_ID_AUTH' }
 
 	export interface Certificate {
 		attributes?: CertificateAttributes;
@@ -12582,9 +12582,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateAttributesCertificateType { IOS_DEVELOPMENT = 0, IOS_DISTRIBUTION = 1, MAC_APP_DISTRIBUTION = 2, MAC_INSTALLER_DISTRIBUTION = 3, MAC_APP_DEVELOPMENT = 4, DEVELOPER_ID_KEXT = 5, DEVELOPER_ID_APPLICATION = 6, DEVELOPMENT = 7, DISTRIBUTION = 8 }
+	export enum CertificateAttributesCertificateType { IOS_DEVELOPMENT = 'IOS_DEVELOPMENT', IOS_DISTRIBUTION = 'IOS_DISTRIBUTION', MAC_APP_DISTRIBUTION = 'MAC_APP_DISTRIBUTION', MAC_INSTALLER_DISTRIBUTION = 'MAC_INSTALLER_DISTRIBUTION', MAC_APP_DEVELOPMENT = 'MAC_APP_DEVELOPMENT', DEVELOPER_ID_KEXT = 'DEVELOPER_ID_KEXT', DEVELOPER_ID_APPLICATION = 'DEVELOPER_ID_APPLICATION', DEVELOPMENT = 'DEVELOPMENT', DISTRIBUTION = 'DISTRIBUTION' }
 
-	export enum CertificateType { certificates = 0 }
+	export enum CertificateType { certificates = 'certificates' }
 
 	export interface CertificateCreateRequest {
 
@@ -12735,11 +12735,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceAttributesDeviceClass { APPLE_WATCH = 0, IPAD = 1, IPHONE = 2, IPOD = 3, APPLE_TV = 4, MAC = 5 }
+	export enum DeviceAttributesDeviceClass { APPLE_WATCH = 'APPLE_WATCH', IPAD = 'IPAD', IPHONE = 'IPHONE', IPOD = 'IPOD', APPLE_TV = 'APPLE_TV', MAC = 'MAC' }
 
-	export enum DeviceAttributesStatus { ENABLED = 0, DISABLED = 1 }
+	export enum DeviceAttributesStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum DeviceType { devices = 0 }
+	export enum DeviceType { devices = 'devices' }
 
 	export interface DeviceCreateRequest {
 
@@ -12919,7 +12919,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticLogType { diagnosticLogs = 0 }
+	export enum DiagnosticLogType { diagnosticLogs = 'diagnosticLogs' }
 
 	export interface DiagnosticLogsResponse {
 
@@ -12985,9 +12985,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticSignatureAttributesDiagnosticType { DISK_WRITES = 0 }
+	export enum DiagnosticSignatureAttributesDiagnosticType { DISK_WRITES = 'DISK_WRITES' }
 
-	export enum DiagnosticSignatureType { diagnosticSignatures = 0 }
+	export enum DiagnosticSignatureType { diagnosticSignatures = 'diagnosticSignatures' }
 
 	export interface DiagnosticSignaturesResponse {
 
@@ -13490,7 +13490,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalBetaState { PROCESSING = 0, PROCESSING_EXCEPTION = 1, MISSING_EXPORT_COMPLIANCE = 2, READY_FOR_BETA_TESTING = 3, IN_BETA_TESTING = 4, EXPIRED = 5, READY_FOR_BETA_SUBMISSION = 6, IN_EXPORT_COMPLIANCE_REVIEW = 7, WAITING_FOR_BETA_REVIEW = 8, IN_BETA_REVIEW = 9, BETA_REJECTED = 10, BETA_APPROVED = 11 }
+	export enum ExternalBetaState { PROCESSING = 'PROCESSING', PROCESSING_EXCEPTION = 'PROCESSING_EXCEPTION', MISSING_EXPORT_COMPLIANCE = 'MISSING_EXPORT_COMPLIANCE', READY_FOR_BETA_TESTING = 'READY_FOR_BETA_TESTING', IN_BETA_TESTING = 'IN_BETA_TESTING', EXPIRED = 'EXPIRED', READY_FOR_BETA_SUBMISSION = 'READY_FOR_BETA_SUBMISSION', IN_EXPORT_COMPLIANCE_REVIEW = 'IN_EXPORT_COMPLIANCE_REVIEW', WAITING_FOR_BETA_REVIEW = 'WAITING_FOR_BETA_REVIEW', IN_BETA_REVIEW = 'IN_BETA_REVIEW', BETA_REJECTED = 'BETA_REJECTED', BETA_APPROVED = 'BETA_APPROVED' }
 
 	export interface GameCenterEnabledVersion {
 		attributes?: GameCenterEnabledVersionAttributes;
@@ -13751,7 +13751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IconAssetType { APP_STORE = 0, MESSAGES_APP_STORE = 1, WATCH_APP_STORE = 2, TV_OS_HOME_SCREEN = 3, TV_OS_TOP_SHELF = 4 }
+	export enum IconAssetType { APP_STORE = 'APP_STORE', MESSAGES_APP_STORE = 'MESSAGES_APP_STORE', WATCH_APP_STORE = 'WATCH_APP_STORE', TV_OS_HOME_SCREEN = 'TV_OS_HOME_SCREEN', TV_OS_TOP_SHELF = 'TV_OS_TOP_SHELF' }
 
 	export interface IdfaDeclaration {
 		attributes?: IdfaDeclarationAttributes;
@@ -14118,9 +14118,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InAppPurchaseAttributesInAppPurchaseType { AUTOMATICALLY_RENEWABLE_SUBSCRIPTION = 0, NON_CONSUMABLE = 1, CONSUMABLE = 2, NON_RENEWING_SUBSCRIPTION = 3, FREE_SUBSCRIPTION = 4 }
+	export enum InAppPurchaseAttributesInAppPurchaseType { AUTOMATICALLY_RENEWABLE_SUBSCRIPTION = 'AUTOMATICALLY_RENEWABLE_SUBSCRIPTION', NON_CONSUMABLE = 'NON_CONSUMABLE', CONSUMABLE = 'CONSUMABLE', NON_RENEWING_SUBSCRIPTION = 'NON_RENEWING_SUBSCRIPTION', FREE_SUBSCRIPTION = 'FREE_SUBSCRIPTION' }
 
-	export enum InAppPurchaseAttributesState { CREATED = 0, DEVELOPER_SIGNED_OFF = 1, DEVELOPER_ACTION_NEEDED = 2, DELETION_IN_PROGRESS = 3, APPROVED = 4, DELETED = 5, REMOVED_FROM_SALE = 6, DEVELOPER_REMOVED_FROM_SALE = 7, WAITING_FOR_UPLOAD = 8, PROCESSING_CONTENT = 9, REPLACED = 10, REJECTED = 11, WAITING_FOR_SCREENSHOT = 12, PREPARE_FOR_SUBMISSION = 13, MISSING_METADATA = 14, READY_TO_SUBMIT = 15, WAITING_FOR_REVIEW = 16, IN_REVIEW = 17, PENDING_DEVELOPER_RELEASE = 18 }
+	export enum InAppPurchaseAttributesState { CREATED = 'CREATED', DEVELOPER_SIGNED_OFF = 'DEVELOPER_SIGNED_OFF', DEVELOPER_ACTION_NEEDED = 'DEVELOPER_ACTION_NEEDED', DELETION_IN_PROGRESS = 'DELETION_IN_PROGRESS', APPROVED = 'APPROVED', DELETED = 'DELETED', REMOVED_FROM_SALE = 'REMOVED_FROM_SALE', DEVELOPER_REMOVED_FROM_SALE = 'DEVELOPER_REMOVED_FROM_SALE', WAITING_FOR_UPLOAD = 'WAITING_FOR_UPLOAD', PROCESSING_CONTENT = 'PROCESSING_CONTENT', REPLACED = 'REPLACED', REJECTED = 'REJECTED', WAITING_FOR_SCREENSHOT = 'WAITING_FOR_SCREENSHOT', PREPARE_FOR_SUBMISSION = 'PREPARE_FOR_SUBMISSION', MISSING_METADATA = 'MISSING_METADATA', READY_TO_SUBMIT = 'READY_TO_SUBMIT', WAITING_FOR_REVIEW = 'WAITING_FOR_REVIEW', IN_REVIEW = 'IN_REVIEW', PENDING_DEVELOPER_RELEASE = 'PENDING_DEVELOPER_RELEASE' }
 
 	export interface InAppPurchaseRelationships {
 		apps?: InAppPurchaseRelationshipsApps;
@@ -14219,9 +14219,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InternalBetaState { PROCESSING = 0, PROCESSING_EXCEPTION = 1, MISSING_EXPORT_COMPLIANCE = 2, READY_FOR_BETA_TESTING = 3, IN_BETA_TESTING = 4, EXPIRED = 5, IN_EXPORT_COMPLIANCE_REVIEW = 6 }
+	export enum InternalBetaState { PROCESSING = 'PROCESSING', PROCESSING_EXCEPTION = 'PROCESSING_EXCEPTION', MISSING_EXPORT_COMPLIANCE = 'MISSING_EXPORT_COMPLIANCE', READY_FOR_BETA_TESTING = 'READY_FOR_BETA_TESTING', IN_BETA_TESTING = 'IN_BETA_TESTING', EXPIRED = 'EXPIRED', IN_EXPORT_COMPLIANCE_REVIEW = 'IN_EXPORT_COMPLIANCE_REVIEW' }
 
-	export enum KidsAgeBand { FIVE_AND_UNDER = 0, SIX_TO_EIGHT = 1, NINE_TO_ELEVEN = 2 }
+	export enum KidsAgeBand { FIVE_AND_UNDER = 'FIVE_AND_UNDER', SIX_TO_EIGHT = 'SIX_TO_EIGHT', NINE_TO_ELEVEN = 'NINE_TO_ELEVEN' }
 
 	export interface PerfPowerMetric {
 		attributes?: PerfPowerMetricAttributes;
@@ -14270,11 +14270,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PerfPowerMetricAttributesMetricType { DISK = 0, HANG = 1, BATTERY = 2, LAUNCH = 3, MEMORY = 4, ANIMATION = 5, TERMINATION = 6 }
+	export enum PerfPowerMetricAttributesMetricType { DISK = 'DISK', HANG = 'HANG', BATTERY = 'BATTERY', LAUNCH = 'LAUNCH', MEMORY = 'MEMORY', ANIMATION = 'ANIMATION', TERMINATION = 'TERMINATION' }
 
-	export enum PerfPowerMetricAttributesPlatform { IOS = 0 }
+	export enum PerfPowerMetricAttributesPlatform { IOS = 'IOS' }
 
-	export enum PerfPowerMetricType { perfPowerMetrics = 0 }
+	export enum PerfPowerMetricType { perfPowerMetrics = 'perfPowerMetrics' }
 
 	export interface PerfPowerMetricsResponse {
 
@@ -14293,7 +14293,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhasedReleaseState { INACTIVE = 0, ACTIVE = 1, PAUSED = 2, COMPLETE = 3 }
+	export enum PhasedReleaseState { INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE', PAUSED = 'PAUSED', COMPLETE = 'COMPLETE' }
 
 	export interface PreReleaseVersionsResponse {
 
@@ -14492,7 +14492,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreviewType { IPHONE_65 = 0, IPHONE_58 = 1, IPHONE_55 = 2, IPHONE_47 = 3, IPHONE_40 = 4, IPHONE_35 = 5, IPAD_PRO_3GEN_129 = 6, IPAD_PRO_3GEN_11 = 7, IPAD_PRO_129 = 8, IPAD_105 = 9, IPAD_97 = 10, DESKTOP = 11, WATCH_SERIES_4 = 12, WATCH_SERIES_3 = 13, APPLE_TV = 14 }
+	export enum PreviewType { IPHONE_65 = 'IPHONE_65', IPHONE_58 = 'IPHONE_58', IPHONE_55 = 'IPHONE_55', IPHONE_47 = 'IPHONE_47', IPHONE_40 = 'IPHONE_40', IPHONE_35 = 'IPHONE_35', IPAD_PRO_3GEN_129 = 'IPAD_PRO_3GEN_129', IPAD_PRO_3GEN_11 = 'IPAD_PRO_3GEN_11', IPAD_PRO_129 = 'IPAD_PRO_129', IPAD_105 = 'IPAD_105', IPAD_97 = 'IPAD_97', DESKTOP = 'DESKTOP', WATCH_SERIES_4 = 'WATCH_SERIES_4', WATCH_SERIES_3 = 'WATCH_SERIES_3', APPLE_TV = 'APPLE_TV' }
 
 	export interface Profile {
 		attributes?: ProfileAttributes;
@@ -14557,9 +14557,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileAttributesProfileState { ACTIVE = 0, INVALID = 1 }
+	export enum ProfileAttributesProfileState { ACTIVE = 'ACTIVE', INVALID = 'INVALID' }
 
-	export enum ProfileAttributesProfileType { IOS_APP_DEVELOPMENT = 0, IOS_APP_STORE = 1, IOS_APP_ADHOC = 2, IOS_APP_INHOUSE = 3, MAC_APP_DEVELOPMENT = 4, MAC_APP_STORE = 5, MAC_APP_DIRECT = 6, TVOS_APP_DEVELOPMENT = 7, TVOS_APP_STORE = 8, TVOS_APP_ADHOC = 9, TVOS_APP_INHOUSE = 10, MAC_CATALYST_APP_DEVELOPMENT = 11, MAC_CATALYST_APP_STORE = 12, MAC_CATALYST_APP_DIRECT = 13 }
+	export enum ProfileAttributesProfileType { IOS_APP_DEVELOPMENT = 'IOS_APP_DEVELOPMENT', IOS_APP_STORE = 'IOS_APP_STORE', IOS_APP_ADHOC = 'IOS_APP_ADHOC', IOS_APP_INHOUSE = 'IOS_APP_INHOUSE', MAC_APP_DEVELOPMENT = 'MAC_APP_DEVELOPMENT', MAC_APP_STORE = 'MAC_APP_STORE', MAC_APP_DIRECT = 'MAC_APP_DIRECT', TVOS_APP_DEVELOPMENT = 'TVOS_APP_DEVELOPMENT', TVOS_APP_STORE = 'TVOS_APP_STORE', TVOS_APP_ADHOC = 'TVOS_APP_ADHOC', TVOS_APP_INHOUSE = 'TVOS_APP_INHOUSE', MAC_CATALYST_APP_DEVELOPMENT = 'MAC_CATALYST_APP_DEVELOPMENT', MAC_CATALYST_APP_STORE = 'MAC_CATALYST_APP_STORE', MAC_CATALYST_APP_DIRECT = 'MAC_CATALYST_APP_DIRECT' }
 
 	export interface ProfileRelationships {
 		bundleId?: ProfileRelationshipsBundleId;
@@ -15246,7 +15246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScreenshotDisplayType { APP_IPHONE_65 = 0, APP_IPHONE_58 = 1, APP_IPHONE_55 = 2, APP_IPHONE_47 = 3, APP_IPHONE_40 = 4, APP_IPHONE_35 = 5, APP_IPAD_PRO_3GEN_129 = 6, APP_IPAD_PRO_3GEN_11 = 7, APP_IPAD_PRO_129 = 8, APP_IPAD_105 = 9, APP_IPAD_97 = 10, APP_DESKTOP = 11, APP_WATCH_SERIES_4 = 12, APP_WATCH_SERIES_3 = 13, APP_APPLE_TV = 14, IMESSAGE_APP_IPHONE_65 = 15, IMESSAGE_APP_IPHONE_58 = 16, IMESSAGE_APP_IPHONE_55 = 17, IMESSAGE_APP_IPHONE_47 = 18, IMESSAGE_APP_IPHONE_40 = 19, IMESSAGE_APP_IPAD_PRO_3GEN_129 = 20, IMESSAGE_APP_IPAD_PRO_3GEN_11 = 21, IMESSAGE_APP_IPAD_PRO_129 = 22, IMESSAGE_APP_IPAD_105 = 23, IMESSAGE_APP_IPAD_97 = 24 }
+	export enum ScreenshotDisplayType { APP_IPHONE_65 = 'APP_IPHONE_65', APP_IPHONE_58 = 'APP_IPHONE_58', APP_IPHONE_55 = 'APP_IPHONE_55', APP_IPHONE_47 = 'APP_IPHONE_47', APP_IPHONE_40 = 'APP_IPHONE_40', APP_IPHONE_35 = 'APP_IPHONE_35', APP_IPAD_PRO_3GEN_129 = 'APP_IPAD_PRO_3GEN_129', APP_IPAD_PRO_3GEN_11 = 'APP_IPAD_PRO_3GEN_11', APP_IPAD_PRO_129 = 'APP_IPAD_PRO_129', APP_IPAD_105 = 'APP_IPAD_105', APP_IPAD_97 = 'APP_IPAD_97', APP_DESKTOP = 'APP_DESKTOP', APP_WATCH_SERIES_4 = 'APP_WATCH_SERIES_4', APP_WATCH_SERIES_3 = 'APP_WATCH_SERIES_3', APP_APPLE_TV = 'APP_APPLE_TV', IMESSAGE_APP_IPHONE_65 = 'IMESSAGE_APP_IPHONE_65', IMESSAGE_APP_IPHONE_58 = 'IMESSAGE_APP_IPHONE_58', IMESSAGE_APP_IPHONE_55 = 'IMESSAGE_APP_IPHONE_55', IMESSAGE_APP_IPHONE_47 = 'IMESSAGE_APP_IPHONE_47', IMESSAGE_APP_IPHONE_40 = 'IMESSAGE_APP_IPHONE_40', IMESSAGE_APP_IPAD_PRO_3GEN_129 = 'IMESSAGE_APP_IPAD_PRO_3GEN_129', IMESSAGE_APP_IPAD_PRO_3GEN_11 = 'IMESSAGE_APP_IPAD_PRO_3GEN_11', IMESSAGE_APP_IPAD_PRO_129 = 'IMESSAGE_APP_IPAD_PRO_129', IMESSAGE_APP_IPAD_105 = 'IMESSAGE_APP_IPAD_105', IMESSAGE_APP_IPAD_97 = 'IMESSAGE_APP_IPAD_97' }
 
 	export interface TerritoriesResponse {
 
@@ -15336,7 +15336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserRole { ADMIN = 0, FINANCE = 1, TECHNICAL = 2, ACCOUNT_HOLDER = 3, READ_ONLY = 4, SALES = 5, MARKETING = 6, APP_MANAGER = 7, DEVELOPER = 8, ACCESS_TO_REPORTS = 9, CUSTOMER_SUPPORT = 10, CREATE_APPS = 11, CLOUD_MANAGED_DEVELOPER_ID = 12, CLOUD_MANAGED_APP_DISTRIBUTION = 13 }
+	export enum UserRole { ADMIN = 'ADMIN', FINANCE = 'FINANCE', TECHNICAL = 'TECHNICAL', ACCOUNT_HOLDER = 'ACCOUNT_HOLDER', READ_ONLY = 'READ_ONLY', SALES = 'SALES', MARKETING = 'MARKETING', APP_MANAGER = 'APP_MANAGER', DEVELOPER = 'DEVELOPER', ACCESS_TO_REPORTS = 'ACCESS_TO_REPORTS', CUSTOMER_SUPPORT = 'CUSTOMER_SUPPORT', CREATE_APPS = 'CREATE_APPS', CLOUD_MANAGED_DEVELOPER_ID = 'CLOUD_MANAGED_DEVELOPER_ID', CLOUD_MANAGED_APP_DISTRIBUTION = 'CLOUD_MANAGED_APP_DISTRIBUTION' }
 
 	export interface UserRelationships {
 		visibleApps?: UserRelationshipsVisibleApps;
@@ -15402,7 +15402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserType { users = 0 }
+	export enum UserType { users = 'users' }
 
 	export interface UserInvitation {
 		attributes?: UserInvitationAttributes;
@@ -15526,7 +15526,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserInvitationType { userInvitations = 0 }
+	export enum UserInvitationType { userInvitations = 'userInvitations' }
 
 	export interface UserInvitationCreateRequest {
 

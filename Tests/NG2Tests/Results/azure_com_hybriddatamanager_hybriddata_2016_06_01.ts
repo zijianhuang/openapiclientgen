@@ -231,7 +231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerSecretAlgorithm { None = 0, RSA1_5 = 1, RSA_OAEP = 2, PlainText = 3 }
+	export enum CustomerSecretAlgorithm { None = 'None', RSA1_5 = 'RSA1_5', RSA_OAEP = 'RSA_OAEP', PlainText = 'PlainText' }
 
 
 	/** The DataManager resource. */
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataServicePropertiesState { Disabled = 0, Enabled = 1, Supported = 2 }
+	export enum DataServicePropertiesState { Disabled = 'Disabled', Enabled = 'Enabled', Supported = 'Supported' }
 
 
 	/** Data Service Collection. */
@@ -997,7 +997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobDefinitionPropertiesRunLocation { none = 0, australiaeast = 1, australiasoutheast = 2, brazilsouth = 3, canadacentral = 4, canadaeast = 5, centralindia = 6, centralus = 7, eastasia = 8, eastus = 9, eastus2 = 10, japaneast = 11, japanwest = 12, koreacentral = 13, koreasouth = 14, southeastasia = 15, southcentralus = 16, southindia = 17, northcentralus = 18, northeurope = 19, uksouth = 20, ukwest = 21, westcentralus = 22, westeurope = 23, westindia = 24, westus = 25, westus2 = 26 }
+	export enum JobDefinitionPropertiesRunLocation { none = 'none', australiaeast = 'australiaeast', australiasoutheast = 'australiasoutheast', brazilsouth = 'brazilsouth', canadacentral = 'canadacentral', canadaeast = 'canadaeast', centralindia = 'centralindia', centralus = 'centralus', eastasia = 'eastasia', eastus = 'eastus', eastus2 = 'eastus2', japaneast = 'japaneast', japanwest = 'japanwest', koreacentral = 'koreacentral', koreasouth = 'koreasouth', southeastasia = 'southeastasia', southcentralus = 'southcentralus', southindia = 'southindia', northcentralus = 'northcentralus', northeurope = 'northeurope', uksouth = 'uksouth', ukwest = 'ukwest', westcentralus = 'westcentralus', westeurope = 'westeurope', westindia = 'westindia', westus = 'westus', westus2 = 'westus2' }
 
 
 	/** Schedule for the job run. */
@@ -1023,7 +1023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobDefinitionPropertiesUserConfirmation { NotRequired = 0, Required = 1 }
+	export enum JobDefinitionPropertiesUserConfirmation { NotRequired = 'NotRequired', Required = 'Required' }
 
 
 	/** Job stages. */
@@ -1069,9 +1069,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStagesStageStatus { None = 0, InProgress = 1, Succeeded = 2, WaitingForAction = 3, Failed = 4, Cancelled = 5, Cancelling = 6 }
+	export enum JobStagesStageStatus { None = 'None', InProgress = 'InProgress', Succeeded = 'Succeeded', WaitingForAction = 'WaitingForAction', Failed = 'Failed', Cancelled = 'Cancelled', Cancelling = 'Cancelling' }
 
-	export enum JobPropertiesIsCancellable { NotCancellable = 0, Cancellable = 1 }
+	export enum JobPropertiesIsCancellable { NotCancellable = 'NotCancellable', Cancellable = 'Cancellable' }
 
 
 	/** Contains the supported job definition filters. */

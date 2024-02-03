@@ -144,11 +144,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtocolCustomSettingsFormatProtocol { Tcp = 0, Udp = 1, Syn = 2 }
+	export enum ProtocolCustomSettingsFormatProtocol { Tcp = 'Tcp', Udp = 'Udp', Syn = 'Syn' }
 
-	export enum ProtocolCustomSettingsFormatTriggerSensitivityOverride { Relaxed = 0, Low = 1, Default = 2, High = 3 }
+	export enum ProtocolCustomSettingsFormatTriggerSensitivityOverride { Relaxed = 'Relaxed', Low = 'Low', Default = 'Default', High = 'High' }
 
-	export enum DdosCustomPolicyPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum DdosCustomPolicyPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 	export interface DdosCustomPolicyPropertiesFormatPublicIPAddresses {
 

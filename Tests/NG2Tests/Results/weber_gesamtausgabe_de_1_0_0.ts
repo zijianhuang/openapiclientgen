@@ -301,7 +301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationGetReturnStatus { healthy = 0, unhealthy = 1 }
+	export enum ApplicationGetReturnStatus { healthy = 'healthy', unhealthy = 'unhealthy' }
 
 }
 

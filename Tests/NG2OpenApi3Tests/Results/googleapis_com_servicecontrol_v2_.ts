@@ -834,7 +834,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ViolationInfoPolicyType { POLICY_TYPE_UNSPECIFIED = 0, BOOLEAN_CONSTRAINT = 1, LIST_CONSTRAINT = 2, CUSTOM_CONSTRAINT = 3 }
+	export enum ViolationInfoPolicyType { POLICY_TYPE_UNSPECIFIED = 'POLICY_TYPE_UNSPECIFIED', BOOLEAN_CONSTRAINT = 'BOOLEAN_CONSTRAINT', LIST_CONSTRAINT = 'LIST_CONSTRAINT', CUSTOM_CONSTRAINT = 'CUSTOM_CONSTRAINT' }
 
 
 	/** Metadata about the request. */
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V2LogEntrySeverity { DEFAULT = 0, DEBUG = 1, INFO = 2, NOTICE = 3, WARNING = 4, ERROR = 5, CRITICAL = 6, ALERT = 7, EMERGENCY = 8 }
+	export enum V2LogEntrySeverity { DEFAULT = 'DEFAULT', DEBUG = 'DEBUG', INFO = 'INFO', NOTICE = 'NOTICE', WARNING = 'WARNING', ERROR = 'ERROR', CRITICAL = 'CRITICAL', ALERT = 'ALERT', EMERGENCY = 'EMERGENCY' }
 
 
 	/** Additional information about the source code location that produced the log entry. */

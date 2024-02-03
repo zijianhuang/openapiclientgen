@@ -77,7 +77,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AGCOPowerServicesModelsECUState { Active = 0, Inactive = 1, Damaged = 2 }
+	export enum AGCOPowerServicesModelsECUState { Active = 'Active', Inactive = 'Inactive', Damaged = 'Damaged' }
 
 
 	/** Production data for an AGCO Power engine. */
@@ -168,7 +168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AGCOPowerServicesModelsUserStatusState { Active = 0, Inactive = 1, None = 2 }
+	export enum AGCOPowerServicesModelsUserStatusState { Active = 'Active', Inactive = 'Inactive', None = 'None' }
 
 	export interface APIIPagedResponse_AuthorizationCodesSharedModelsAuthorizationCodeDefinition_ {
 		Entities?: Array<AuthorizationCodesSharedModelsAuthorizationCodeDefinition>;
@@ -393,9 +393,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationCodesSharedModelsDataFieldType { Boolean = 0, Decimal = 1, Float = 2, VariableLengthByteArray = 3 }
+	export enum AuthorizationCodesSharedModelsDataFieldType { Boolean = 'Boolean', Decimal = 'Decimal', Float = 'Float', VariableLengthByteArray = 'VariableLengthByteArray' }
 
-	export enum AuthorizationCodesSharedModelsAuthorizationCodeDefinitionDurationUnits { Weeks = 0, Days = 1, Hours = 2, Minutes = 3 }
+	export enum AuthorizationCodesSharedModelsAuthorizationCodeDefinitionDurationUnits { Weeks = 'Weeks', Days = 'Days', Hours = 'Hours', Minutes = 'Minutes' }
 
 	export interface AuthorizationCodesSharedModelsValidationField {
 
@@ -433,7 +433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationCodesSharedModelsValidationFieldType { Boolean = 0, Float = 1, Int = 2, StringCaseInsensitive = 3, StringCaseSensitive = 4 }
+	export enum AuthorizationCodesSharedModelsValidationFieldType { Boolean = 'Boolean', Float = 'Float', Int = 'Int', StringCaseInsensitive = 'StringCaseInsensitive', StringCaseSensitive = 'StringCaseSensitive' }
 
 
 	/** Metadata for the paged response */
@@ -993,7 +993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GlobalResourcesSharedModelsFileDownloadState { Created = 0, Available = 1, Removed = 2 }
+	export enum GlobalResourcesSharedModelsFileDownloadState { Created = 'Created', Available = 'Available', Removed = 'Removed' }
 
 	export interface APIIPagedResponse_GlobalResourcesSharedModelsGlobalImageCategory_ {
 		Entities?: Array<GlobalResourcesSharedModelsGlobalImageCategory>;
@@ -1395,7 +1395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GlobalResourcesSharedModelsStringTranslationState { Original = 0, Requested = 1, Processing = 2, Processed = 3, Validated = 4, Invalidated = 5, RequestPending = 6, CreatePending = 7 }
+	export enum GlobalResourcesSharedModelsStringTranslationState { Original = 'Original', Requested = 'Requested', Processing = 'Processing', Processed = 'Processed', Validated = 'Validated', Invalidated = 'Invalidated', RequestPending = 'RequestPending', CreatePending = 'CreatePending' }
 
 	export interface APIIPagedResponse_GlobalResourcesSharedModelsStringTranslation_ {
 		Entities?: Array<GlobalResourcesSharedModelsStringTranslation>;
@@ -1545,7 +1545,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GlobalResourcesSharedModelsTranslationRequestState { NotSubmitted = 0, Submitted = 1, Cancelled = 2, Completed = 3 }
+	export enum GlobalResourcesSharedModelsTranslationRequestState { NotSubmitted = 'NotSubmitted', Submitted = 'Submitted', Cancelled = 'Cancelled', Completed = 'Completed' }
 
 	export interface APIIPagedResponse_GlobalResourcesSharedModelsTranslationSetAttribute_ {
 		Entities?: Array<GlobalResourcesSharedModelsTranslationSetAttribute>;
@@ -1824,7 +1824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GlobalResourcesSharedModelsTranslationSetState { OutForProcessing = 0, Processing = 1, PendingApproval = 2, OutForTranslation = 3, Cancelled = 4, Completed = 5 }
+	export enum GlobalResourcesSharedModelsTranslationSetState { OutForProcessing = 'OutForProcessing', Processing = 'Processing', PendingApproval = 'PendingApproval', OutForTranslation = 'OutForTranslation', Cancelled = 'Cancelled', Completed = 'Completed' }
 
 	export interface APIIPagedResponse_OASSupportSharedModelsTranslationKey_ {
 		Entities?: Array<OASSupportSharedModelsTranslationKey>;
@@ -2018,7 +2018,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIModelsCredentialsBearerAction { None = 0, Reset = 1, Disable = 2 }
+	export enum APIModelsCredentialsBearerAction { None = 'None', Reset = 'Reset', Disable = 'Disable' }
 
 	export interface APIModelsLog {
 		ID?: string | null;
@@ -2212,7 +2212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIModelsPermissionDataRequired { Yes = 0, No = 1, Optional = 2 }
+	export enum APIModelsPermissionDataRequired { Yes = 'Yes', No = 'No', Optional = 'Optional' }
 
 
 	/** Defines an API Role */
@@ -2301,7 +2301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIModelsRolePermissionChangeAction { Grant = 0, Revoke = 1 }
+	export enum APIModelsRolePermissionChangeAction { Grant = 'Grant', Revoke = 'Revoke' }
 
 	export interface APIModelsRoleUserChange {
 
@@ -2704,7 +2704,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildSystemSharedDTOParameterValueDirection { Input = 0, Output = 1 }
+	export enum BuildSystemSharedDTOParameterValueDirection { Input = 'Input', Output = 'Output' }
 
 
 	/** A DTO for an IActivityRunStatus */
@@ -2748,7 +2748,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildSystemSharedDTOActivityRunStatusStatus { Ready = 0, InProgress = 1, Succeeded = 2, Cancelled = 3, Failed = 4 }
+	export enum BuildSystemSharedDTOActivityRunStatusStatus { Ready = 'Ready', InProgress = 'InProgress', Succeeded = 'Succeeded', Cancelled = 'Cancelled', Failed = 'Failed' }
 
 
 	/** A DTO for an IActivityStep */
@@ -2851,7 +2851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildSystemSharedDTOParameterMappingSourceType { Constant = 0, Variable = 1 }
+	export enum BuildSystemSharedDTOParameterMappingSourceType { Constant = 'Constant', Variable = 'Variable' }
 
 
 	/** A response containing a page of results and metadata concerning the results */
@@ -2948,7 +2948,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildSystemSharedDTOParameterType { String = 0, Boolean = 1, Integer = 2, Float = 3, StringDictionary = 4 }
+	export enum BuildSystemSharedDTOParameterType { String = 'String', Boolean = 'Boolean', Integer = 'Integer', Float = 'Float', StringDictionary = 'StringDictionary' }
 
 
 	/** A response containing a page of results and metadata concerning the results */
@@ -4238,7 +4238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DealerDBModelsLicenseLicenseActivationType { EDT = 0, EDTLite = 1 }
+	export enum DealerDBModelsLicenseLicenseActivationType { EDT = 'EDT', EDTLite = 'EDTLite' }
 
 
 	/** A response containing a page of results and metadata concerning the results */
@@ -4374,7 +4374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DealerDBModelsVoucherHistoryType { Commercial = 0, Internal = 1, Temporary = 2, RightToRepair = 3 }
+	export enum DealerDBModelsVoucherHistoryType { Commercial = 'Commercial', Internal = 'Internal', Temporary = 'Temporary', RightToRepair = 'RightToRepair' }
 
 
 	/** A response containing a page of results and metadata concerning the results */
@@ -4645,7 +4645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateSystemModelsAvailableSubscriptionSubscriptionType { Required = 0, IncludeByDefault = 1, ExcludeByDefault = 2 }
+	export enum UpdateSystemModelsAvailableSubscriptionSubscriptionType { Required = 'Required', IncludeByDefault = 'IncludeByDefault', ExcludeByDefault = 'ExcludeByDefault' }
 
 	export interface UpdateSystemModelsUpdateGroup {
 
@@ -10193,13 +10193,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Licenses_GetStatus { Active = 0, Inactive = 1, All = 2 }
+	export enum Licenses_GetStatus { Active = 'Active', Inactive = 'Inactive', All = 'All' }
 
-	export enum PriorityPackages_GetPriorityPackagesStatus { Active = 0, Completed = 1, All = 2 }
+	export enum PriorityPackages_GetPriorityPackagesStatus { Active = 'Active', Completed = 'Completed', All = 'All' }
 
-	export enum Reporting_CurrentPackagesInUpdateGroupSubscriptionTypeFilter { RequiredOnly = 0, Default = 1, All = 2 }
+	export enum Reporting_CurrentPackagesInUpdateGroupSubscriptionTypeFilter { RequiredOnly = 'RequiredOnly', Default = 'Default', All = 'All' }
 
-	export enum Vouchers_GetDeleted { NotDeleted = 0, Deleted = 1, All = 2 }
+	export enum Vouchers_GetDeleted { NotDeleted = 'NotDeleted', Deleted = 'Deleted', All = 'All' }
 
 }
 

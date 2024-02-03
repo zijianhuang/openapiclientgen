@@ -1318,7 +1318,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KecerPostBodyFormat { pdf = 0 }
+	export enum KecerPostBodyFormat { pdf = 'pdf' }
 
 	export interface TapcnPostBody {
 		certificateParameters?: TapcnPostBodyCertificateParameters;

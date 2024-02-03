@@ -96,7 +96,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestorePointPropertiesRestorePointType { CONTINUOUS = 0, DISCRETE = 1 }
+	export enum RestorePointPropertiesRestorePointType { CONTINUOUS = 'CONTINUOUS', DISCRETE = 'DISCRETE' }
 
 
 	/** A list of long term retention backups. */

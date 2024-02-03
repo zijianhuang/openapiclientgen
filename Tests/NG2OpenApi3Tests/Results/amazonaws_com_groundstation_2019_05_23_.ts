@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigCapabilityType { 'antenna-downlink' = 0, 'antenna-downlink-demod-decode' = 1, 'antenna-uplink' = 2, 'dataflow-endpoint' = 3, tracking = 4, 'uplink-echo' = 5, 's3-recording' = 6 }
+	export enum ConfigCapabilityType { 'antenna-downlink' = 'antenna-downlink', 'antenna-downlink-demod-decode' = 'antenna-downlink-demod-decode', 'antenna-uplink' = 'antenna-uplink', 'dataflow-endpoint' = 'dataflow-endpoint', tracking = 'tracking', 'uplink-echo' = 'uplink-echo', 's3-recording' = 's3-recording' }
 
 
 	/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
@@ -143,7 +143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BandwidthUnits { GHz = 0, MHz = 1, kHz = 2 }
+	export enum BandwidthUnits { GHz = 'GHz', MHz = 'MHz', kHz = 'kHz' }
 
 
 	/** Object that describes the frequency. */
@@ -173,7 +173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Polarization { LEFT_HAND = 0, NONE = 1, RIGHT_HAND = 2 }
+	export enum Polarization { LEFT_HAND = 'LEFT_HAND', NONE = 'NONE', RIGHT_HAND = 'RIGHT_HAND' }
 
 
 	/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
@@ -311,7 +311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EirpUnits { dBW = 0 }
+	export enum EirpUnits { dBW = 'dBW' }
 
 
 	/** Information about the dataflow endpoint <code>Config</code>. */
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Criticality { PREFERRED = 0, REMOVED = 1, REQUIRED = 2 }
+	export enum Criticality { PREFERRED = 'PREFERRED', REMOVED = 'REMOVED', REQUIRED = 'REQUIRED' }
 
 
 	/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
@@ -500,9 +500,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentStatus { SUCCESS = 0, FAILED = 1, ACTIVE = 2, INACTIVE = 3 }
+	export enum AgentStatus { SUCCESS = 'SUCCESS', FAILED = 'FAILED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum AuditResults { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum AuditResults { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
 
 	/** Egress address of AgentEndpoint with an optional mtu. */
@@ -648,11 +648,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointStatus { created = 0, creating = 1, deleted = 2, deleting = 3, failed = 4 }
+	export enum EndpointStatus { created = 'created', creating = 'creating', deleted = 'deleted', deleting = 'deleting', failed = 'failed' }
 
-	export enum CapabilityHealthReason { NO_REGISTERED_AGENT = 0, INVALID_IP_OWNERSHIP = 1, NOT_AUTHORIZED_TO_CREATE_SLR = 2, UNVERIFIED_IP_OWNERSHIP = 3, INITIALIZING_DATAPLANE = 4, DATAPLANE_FAILURE = 5, HEALTHY = 6 }
+	export enum CapabilityHealthReason { NO_REGISTERED_AGENT = 'NO_REGISTERED_AGENT', INVALID_IP_OWNERSHIP = 'INVALID_IP_OWNERSHIP', NOT_AUTHORIZED_TO_CREATE_SLR = 'NOT_AUTHORIZED_TO_CREATE_SLR', UNVERIFIED_IP_OWNERSHIP = 'UNVERIFIED_IP_OWNERSHIP', INITIALIZING_DATAPLANE = 'INITIALIZING_DATAPLANE', DATAPLANE_FAILURE = 'DATAPLANE_FAILURE', HEALTHY = 'HEALTHY' }
 
-	export enum CapabilityHealth { UNHEALTHY = 0, HEALTHY = 1 }
+	export enum CapabilityHealth { UNHEALTHY = 'UNHEALTHY', HEALTHY = 'HEALTHY' }
 
 
 	/** Information about endpoints. */
@@ -877,7 +877,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactStatus { AVAILABLE = 0, AWS_CANCELLED = 1, AWS_FAILED = 2, CANCELLED = 3, CANCELLING = 4, COMPLETED = 5, FAILED = 6, FAILED_TO_SCHEDULE = 7, PASS = 8, POSTPASS = 9, PREPASS = 10, SCHEDULED = 11, SCHEDULING = 12 }
+	export enum ContactStatus { AVAILABLE = 'AVAILABLE', AWS_CANCELLED = 'AWS_CANCELLED', AWS_FAILED = 'AWS_FAILED', CANCELLED = 'CANCELLED', CANCELLING = 'CANCELLING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', FAILED_TO_SCHEDULE = 'FAILED_TO_SCHEDULE', PASS = 'PASS', POSTPASS = 'POSTPASS', PREPASS = 'PREPASS', SCHEDULED = 'SCHEDULED', SCHEDULING = 'SCHEDULING' }
 
 
 	/** Information about a dataflow edge used in a contact. */
@@ -1034,7 +1034,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AngleUnits { DEGREE_ANGLE = 0, RADIAN = 1 }
+	export enum AngleUnits { DEGREE_ANGLE = 'DEGREE_ANGLE', RADIAN = 'RADIAN' }
 
 	export interface TagsMap {
 	}
@@ -1082,9 +1082,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EphemerisInvalidReason { METADATA_INVALID = 0, TIME_RANGE_INVALID = 1, TRAJECTORY_INVALID = 2, KMS_KEY_INVALID = 3, VALIDATION_ERROR = 4 }
+	export enum EphemerisInvalidReason { METADATA_INVALID = 'METADATA_INVALID', TIME_RANGE_INVALID = 'TIME_RANGE_INVALID', TRAJECTORY_INVALID = 'TRAJECTORY_INVALID', KMS_KEY_INVALID = 'KMS_KEY_INVALID', VALIDATION_ERROR = 'VALIDATION_ERROR' }
 
-	export enum EphemerisStatus { VALIDATING = 0, INVALID = 1, ERROR = 2, ENABLED = 3, DISABLED = 4, EXPIRED = 5 }
+	export enum EphemerisStatus { VALIDATING = 'VALIDATING', INVALID = 'INVALID', ERROR = 'ERROR', ENABLED = 'ENABLED', DISABLED = 'DISABLED', EXPIRED = 'EXPIRED' }
 
 
 	/** <p/> */
@@ -1379,7 +1379,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EphemerisSource { CUSTOMER_PROVIDED = 0, SPACE_TRACK = 1 }
+	export enum EphemerisSource { CUSTOMER_PROVIDED = 'CUSTOMER_PROVIDED', SPACE_TRACK = 'SPACE_TRACK' }
 
 
 	/** <p/> */
@@ -2194,7 +2194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FrequencyUnits { GHz = 0, MHz = 1, kHz = 2 }
+	export enum FrequencyUnits { GHz = 'GHz', MHz = 'MHz', kHz = 'kHz' }
 
 	export interface GetAgentConfigurationRequest {
 	}

@@ -147,7 +147,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DedicatedHsmPropertiesProvisioningState { Succeeded = 0, Provisioning = 1, Allocating = 2, Connecting = 3, Failed = 4, CheckingQuota = 5, Deleting = 6 }
+	export enum DedicatedHsmPropertiesProvisioningState { Succeeded = 'Succeeded', Provisioning = 'Provisioning', Allocating = 'Allocating', Connecting = 'Connecting', Failed = 'Failed', CheckingQuota = 'CheckingQuota', Deleting = 'Deleting' }
 
 
 	/** The key vault server error. */
@@ -324,7 +324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { 'SafeNet Luna Network HSM A790' = 0 }
+	export enum SkuName { 'SafeNet Luna Network HSM A790' = 'SafeNet Luna Network HSM A790' }
 
 	@Injectable()
 	export class MyClient {

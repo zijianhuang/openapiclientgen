@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	@Injectable()
-	export class UtilitiesClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -49,31 +49,11 @@ export namespace MyNS {
 		}
 
 		/**
-		 * Get contribute.json
-		 * @return {{[id: string]: any }} Return open source contributing information.
-		 */
-		Contribute(): Observable<{[id: string]: any }> {
-			return this.http.get<{[id: string]: any }>(this.baseUri + 'contribute.json', {});
-		}
-	}
-
-	@Injectable()
-	export class BatchClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
-
-		/**
 		 * Post batch
 		 * @return {BatchReturn} Return a list of operation responses.
 		 */
 		Batch(requestBody: BatchPostBody): Observable<BatchReturn> {
 			return this.http.post<BatchReturn>(this.baseUri + 'batch', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
-		}
-	}
-
-	@Injectable()
-	export class BucketsClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -85,31 +65,11 @@ export namespace MyNS {
 		}
 
 		/**
-		 * Get buckets/{id}
-		 * @return {Get_bucketReturn} Return the target object.
-		 */
-		Get_bucket(_fields: Array<string> | null | undefined): Observable<Get_bucketReturn> {
-			return this.http.get<Get_bucketReturn>(this.baseUri + 'buckets/{id}?' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
-		}
-	}
-
-	@Injectable()
-	export class ChangessClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
-
-		/**
 		 * Get buckets/monitor/collections/changes/records
 		 * @return {Get_changessReturn} Return a list of matching objects.
 		 */
 		Get_changess(_limit: number | null | undefined, _sort: Array<string> | null | undefined, _token: string | null | undefined, _since: number | null | undefined, _to: number | null | undefined, _before: number | null | undefined, id: string | null | undefined, last_modified: number | null | undefined, _fields: Array<string> | null | undefined): Observable<Get_changessReturn> {
 			return this.http.get<Get_changessReturn>(this.baseUri + 'buckets/monitor/collections/changes/records?_limit=' + _limit + '&' + _sort?.map(z => `_sort=${encodeURIComponent(z)}`).join('&') + '&_token=' + (_token == null ? '' : encodeURIComponent(_token)) + '&_since=' + _since + '&_to=' + _to + '&_before=' + _before + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&last_modified=' + last_modified + '&' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
-		}
-	}
-
-	@Injectable()
-	export class Collection-changesetClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -119,12 +79,6 @@ export namespace MyNS {
 		Get_collection_changeset(_since: string | null | undefined, _expected: string, _limit: number | null | undefined, bucket: string | null | undefined, collection: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'buckets/{bid}/collections/{cid}/changeset?_since=' + (_since == null ? '' : encodeURIComponent(_since)) + '&_expected=' + (_expected == null ? '' : encodeURIComponent(_expected)) + '&_limit=' + _limit + '&bucket=' + (bucket == null ? '' : encodeURIComponent(bucket)) + '&collection=' + (collection == null ? '' : encodeURIComponent(collection)), { observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class CollectionsClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * Get buckets/{bucket_id}/collections
@@ -132,20 +86,6 @@ export namespace MyNS {
 		 */
 		Get_collections(_limit: number | null | undefined, _sort: Array<string> | null | undefined, _token: string | null | undefined, _since: number | null | undefined, _to: number | null | undefined, _before: number | null | undefined, id: string | null | undefined, last_modified: number | null | undefined, _fields: Array<string> | null | undefined): Observable<Get_collectionsReturn> {
 			return this.http.get<Get_collectionsReturn>(this.baseUri + 'buckets/{bucket_id}/collections?_limit=' + _limit + '&' + _sort?.map(z => `_sort=${encodeURIComponent(z)}`).join('&') + '&_token=' + (_token == null ? '' : encodeURIComponent(_token)) + '&_since=' + _since + '&_to=' + _to + '&_before=' + _before + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&last_modified=' + last_modified + '&' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
-		}
-
-		/**
-		 * Get buckets/{bucket_id}/collections/{id}
-		 * @return {Get_collectionReturn} Return the target object.
-		 */
-		Get_collection(_fields: Array<string> | null | undefined): Observable<Get_collectionReturn> {
-			return this.http.get<Get_collectionReturn>(this.baseUri + 'buckets/{bucket_id}/collections/{id}?' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
-		}
-	}
-
-	@Injectable()
-	export class RecordsClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -163,12 +103,6 @@ export namespace MyNS {
 		Get_record(_fields: Array<string> | null | undefined): Observable<Get_recordReturn> {
 			return this.http.get<Get_recordReturn>(this.baseUri + 'buckets/{bucket_id}/collections/{collection_id}/records/{id}?' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
 		}
-	}
-
-	@Injectable()
-	export class AttachmentClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * Delete buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment
@@ -185,11 +119,13 @@ export namespace MyNS {
 		Create_attachment(): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment', null, { observe: 'response', responseType: 'text' });
 		}
-	}
 
-	@Injectable()
-	export class GroupsClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		/**
+		 * Get buckets/{bucket_id}/collections/{id}
+		 * @return {Get_collectionReturn} Return the target object.
+		 */
+		Get_collection(_fields: Array<string> | null | undefined): Observable<Get_collectionReturn> {
+			return this.http.get<Get_collectionReturn>(this.baseUri + 'buckets/{bucket_id}/collections/{id}?' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
 		/**
@@ -206,6 +142,22 @@ export namespace MyNS {
 		 */
 		Get_group(_fields: Array<string> | null | undefined): Observable<Get_groupReturn> {
 			return this.http.get<Get_groupReturn>(this.baseUri + 'buckets/{bucket_id}/groups/{id}?' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
+		}
+
+		/**
+		 * Get buckets/{id}
+		 * @return {Get_bucketReturn} Return the target object.
+		 */
+		Get_bucket(_fields: Array<string> | null | undefined): Observable<Get_bucketReturn> {
+			return this.http.get<Get_bucketReturn>(this.baseUri + 'buckets/{id}?' + _fields?.map(z => `_fields=${encodeURIComponent(z)}`).join('&'), {});
+		}
+
+		/**
+		 * Get contribute.json
+		 * @return {{[id: string]: any }} Return open source contributing information.
+		 */
+		Contribute(): Observable<{[id: string]: any }> {
+			return this.http.get<{[id: string]: any }>(this.baseUri + 'contribute.json', {});
 		}
 	}
 

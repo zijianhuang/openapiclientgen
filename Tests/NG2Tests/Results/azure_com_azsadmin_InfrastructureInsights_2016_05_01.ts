@@ -195,13 +195,13 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricsSourceName { PhysicalNode = 0, VirtualMachine = 1, ResourceProvider = 2 }
+	export enum MetricsSourceName { PhysicalNode = 'PhysicalNode', VirtualMachine = 'VirtualMachine', ResourceProvider = 'ResourceProvider' }
 
-	export enum MetricsUnit { One = 0, Percentage = 1, B = 2, KB = 3, MB = 4, GB = 5, TB = 6 }
+	export enum MetricsUnit { One = 'One', Percentage = 'Percentage', B = 'B', KB = 'KB', MB = 'MB', GB = 'GB', TB = 'TB' }
 
 
 	/** The origin of the metric. */
-	export enum MetricsSourceType { PhysicalNode = 0, VirtualMachine = 1, ResourceProvider = 2 }
+	export enum MetricsSourceType { PhysicalNode = 'PhysicalNode', VirtualMachine = 'VirtualMachine', ResourceProvider = 'ResourceProvider' }
 
 
 	/** Describes the supported REST operation. */

@@ -56,9 +56,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamicMetricCriteriaAlertSensitivity { Low = 0, Medium = 1, High = 2 }
+	export enum DynamicMetricCriteriaAlertSensitivity { Low = 'Low', Medium = 'Medium', High = 'High' }
 
-	export enum DynamicMetricCriteriaOperator { GreaterThan = 0, LessThan = 1, GreaterOrLessThan = 2 }
+	export enum DynamicMetricCriteriaOperator { GreaterThan = 'GreaterThan', LessThan = 'LessThan', GreaterOrLessThan = 'GreaterOrLessThan' }
 
 
 	/** The minimum number of violations required within the selected lookback time window required to raise an alert. */
@@ -155,7 +155,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricAlertCriteriaOdata_type { 'Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria' = 0, 'Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria' = 1 }
+	export enum MetricAlertCriteriaOdata_type { 'Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria' = 'Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria', 'Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria' = 'Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria' }
 
 
 	/** Specifies the metric alert criteria for multiple resource that has multiple metric criteria. */
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MultiMetricCriteriaCriterionType { StaticThresholdCriterion = 0, DynamicThresholdCriterion = 1 }
+	export enum MultiMetricCriteriaCriterionType { StaticThresholdCriterion = 'StaticThresholdCriterion', DynamicThresholdCriterion = 'DynamicThresholdCriterion' }
 
 
 	/** Specifies a metric dimension. */
@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MultiMetricCriteriaTimeAggregation { Average = 0, Minimum = 1, Maximum = 2, Total = 3 }
+	export enum MultiMetricCriteriaTimeAggregation { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', Total = 'Total' }
 
 
 	/** An alert rule. */
@@ -537,7 +537,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricCriteriaOperator { Equals = 0, NotEquals = 1, GreaterThan = 2, GreaterThanOrEqual = 3, LessThan = 4, LessThanOrEqual = 5 }
+	export enum MetricCriteriaOperator { Equals = 'Equals', NotEquals = 'NotEquals', GreaterThan = 'GreaterThan', GreaterThanOrEqual = 'GreaterThanOrEqual', LessThan = 'LessThan', LessThanOrEqual = 'LessThanOrEqual' }
 
 
 	/** An alert status. */

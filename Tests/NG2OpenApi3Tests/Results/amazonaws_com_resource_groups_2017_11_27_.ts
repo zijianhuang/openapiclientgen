@@ -76,7 +76,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryType { TAG_FILTERS_1_0 = 0, CLOUDFORMATION_STACK_1_0 = 1 }
+	export enum QueryType { TAG_FILTERS_1_0 = 'TAG_FILTERS_1_0', CLOUDFORMATION_STACK_1_0 = 'CLOUDFORMATION_STACK_1_0' }
 
 	export interface Tags {
 	}
@@ -154,7 +154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupConfigurationStatus { UPDATING = 0, UPDATE_COMPLETE = 1, UPDATE_FAILED = 2 }
+	export enum GroupConfigurationStatus { UPDATING = 'UPDATING', UPDATE_COMPLETE = 'UPDATE_COMPLETE', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface BadRequestException {
 	}
@@ -261,9 +261,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupLifecycleEventsDesiredStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum GroupLifecycleEventsDesiredStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum GroupLifecycleEventsStatus { ACTIVE = 0, INACTIVE = 1, IN_PROGRESS = 2, ERROR = 3 }
+	export enum GroupLifecycleEventsStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', IN_PROGRESS = 'IN_PROGRESS', ERROR = 'ERROR' }
 
 	export interface GetGroupOutput {
 		Group?: Group;
@@ -460,7 +460,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceStatusValue { PENDING = 0 }
+	export enum ResourceStatusValue { PENDING = 'PENDING' }
 
 
 	/** A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFront stack-based queries. The error occurs if the CloudFront stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that Resource Groups could not complete the operation, but the resulting group might have no member resources. */
@@ -482,7 +482,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryErrorCode { CLOUDFORMATION_STACK_INACTIVE = 0, CLOUDFORMATION_STACK_NOT_EXISTING = 1, CLOUDFORMATION_STACK_UNASSUMABLE_ROLE = 2 }
+	export enum QueryErrorCode { CLOUDFORMATION_STACK_INACTIVE = 'CLOUDFORMATION_STACK_INACTIVE', CLOUDFORMATION_STACK_NOT_EXISTING = 'CLOUDFORMATION_STACK_NOT_EXISTING', CLOUDFORMATION_STACK_UNASSUMABLE_ROLE = 'CLOUDFORMATION_STACK_UNASSUMABLE_ROLE' }
 
 
 	/** A filter name and value pair that is used to obtain more specific results from a list of resources. */
@@ -508,7 +508,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceFilterName { 'resource-type' = 0 }
+	export enum ResourceFilterName { 'resource-type' = 'resource-type' }
 
 	export interface UnauthorizedException {
 	}
@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupFilterName { 'resource-type' = 0, 'configuration-type' = 1 }
+	export enum GroupFilterName { 'resource-type' = 'resource-type', 'configuration-type' = 'configuration-type' }
 
 	export interface PutGroupConfigurationOutput {
 	}

@@ -50,7 +50,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GameState { ACTIVE = 0, DELETING = 1 }
+	export enum GameState { ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface TagMap {
 	}
@@ -432,7 +432,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeneratedCodeJobState { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, PENDING = 3 }
+	export enum GeneratedCodeJobState { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', PENDING = 'PENDING' }
 
 	export interface GetPlayerConnectionStatusResult {
 		Connections?: Array<Connection>;
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentAction { DEPLOY = 0, UNDEPLOY = 1 }
+	export enum DeploymentAction { DEPLOY = 'DEPLOY', UNDEPLOY = 'UNDEPLOY' }
 
 
 	/** The result of the deployment. */
@@ -553,9 +553,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResultCode { SUCCESS = 0, INVALID_ROLE_FAILURE = 1, UNSPECIFIED_FAILURE = 2 }
+	export enum ResultCode { SUCCESS = 'SUCCESS', INVALID_ROLE_FAILURE = 'INVALID_ROLE_FAILURE', UNSPECIFIED_FAILURE = 'UNSPECIFIED_FAILURE' }
 
-	export enum DeploymentState { PENDING = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3 }
+	export enum DeploymentState { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface ImportGameConfigurationResult {
 		GameConfiguration?: GameConfigurationDetails;
@@ -886,7 +886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operation { ADD = 0, REMOVE = 1, REPLACE = 2 }
+	export enum Operation { ADD = 'ADD', REMOVE = 'REMOVE', REPLACE = 'REPLACE' }
 
 
 	/** <p/> */
@@ -1280,7 +1280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StageState { ACTIVE = 0, DELETING = 1 }
+	export enum StageState { ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface StartGeneratedCodeJobRequest {
 

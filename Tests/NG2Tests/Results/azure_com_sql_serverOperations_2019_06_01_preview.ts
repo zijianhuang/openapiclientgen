@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerOperationPropertiesState { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, CancelInProgress = 4, Cancelled = 5 }
+	export enum ServerOperationPropertiesState { Pending = 'Pending', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', CancelInProgress = 'CancelInProgress', Cancelled = 'Cancelled' }
 
 
 	/** The response to a list server operations request */

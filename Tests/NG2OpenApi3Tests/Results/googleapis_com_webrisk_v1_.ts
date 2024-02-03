@@ -191,7 +191,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType { RESPONSE_TYPE_UNSPECIFIED = 0, DIFF = 1, RESET = 2 }
+	export enum GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType { RESPONSE_TYPE_UNSPECIFIED = 'RESPONSE_TYPE_UNSPECIFIED', DIFF = 'DIFF', RESET = 'RESET' }
 
 	export interface GoogleCloudWebriskV1SearchHashesResponse {
 
@@ -525,7 +525,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Webrisk_threatLists_computeDiffThreatType { THREAT_TYPE_UNSPECIFIED = 0, MALWARE = 1, SOCIAL_ENGINEERING = 2, UNWANTED_SOFTWARE = 3, SOCIAL_ENGINEERING_EXTENDED_COVERAGE = 4 }
+	export enum Webrisk_threatLists_computeDiffThreatType { THREAT_TYPE_UNSPECIFIED = 'THREAT_TYPE_UNSPECIFIED', MALWARE = 'MALWARE', SOCIAL_ENGINEERING = 'SOCIAL_ENGINEERING', UNWANTED_SOFTWARE = 'UNWANTED_SOFTWARE', SOCIAL_ENGINEERING_EXTENDED_COVERAGE = 'SOCIAL_ENGINEERING_EXTENDED_COVERAGE' }
 
 }
 

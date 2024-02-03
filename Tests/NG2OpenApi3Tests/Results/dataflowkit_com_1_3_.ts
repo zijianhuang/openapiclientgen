@@ -153,11 +153,11 @@ export namespace MyNS {
 
 	}
 
-	export enum InitialCookieSameSite { unspecified = 0, strict = 1, lax = 2, no_restriction = 3 }
+	export enum InitialCookieSameSite { unspecified = 'unspecified', strict = 'strict', lax = 'lax', no_restriction = 'no_restriction' }
 
-	export enum FetchrequestOutput { buffer = 0, file = 1 }
+	export enum FetchrequestOutput { buffer = 'buffer', file = 'file' }
 
-	export enum FetchrequestType { base = 0, chrome = 1 }
+	export enum FetchrequestType { base = 'base', chrome = 'chrome' }
 
 	export interface Field {
 
@@ -280,7 +280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParserequestFormat { csv = 0, json = 1, jsonl = 2, excel = 3, xml = 4 }
+	export enum ParserequestFormat { csv = 'csv', json = 'json', jsonl = 'jsonl', excel = 'excel', xml = 'xml' }
 
 	export enum FieldType { _0 = 0, _1 = 1, _2 = 2 }
 
@@ -499,7 +499,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Url2pdfrequestPaperSize { A3 = 0, A4 = 1, A5 = 2, A6 = 3, Letter = 4, Legal = 5, Tabloid = 6 }
+	export enum Url2pdfrequestPaperSize { A3 = 'A3', A4 = 'A4', A5 = 'A5', A6 = 'A6', Letter = 'Letter', Legal = 'Legal', Tabloid = 'Tabloid' }
 
 	export interface Url2screenshotrequest {
 
@@ -628,7 +628,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Url2screenshotrequestFormat { png = 0, jpeg = 1 }
+	export enum Url2screenshotrequestFormat { png = 'png', jpeg = 'jpeg' }
 
 	@Injectable()
 	export class MyClient {

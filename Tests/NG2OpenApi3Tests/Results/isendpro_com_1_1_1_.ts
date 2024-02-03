@@ -204,11 +204,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ComptageRequestComptage { _1 = 0 }
+	export enum ComptageRequestComptage { _1 = '1' }
 
-	export enum ComptageRequestGmt_zone { 'Pacific/Midway' = 0, 'America/Adak' = 1, 'Etc/GMT+10' = 2, 'Pacific/Marquesas' = 3, 'Pacific/Gambier' = 4, 'America/Anchorage' = 5, 'America/Ensenada' = 6, 'Etc/GMT+8' = 7, 'America/Los_Angeles' = 8, 'America/Denver' = 9, 'America/Chihuahua' = 10, 'America/Dawson_Creek' = 11, 'America/Belize' = 12, 'America/Cancun' = 13, 'Chile/EasterIsland' = 14, 'America/Chicago' = 15, 'America/New_York' = 16, 'America/Havana' = 17, 'America/Bogota' = 18, 'America/Caracas' = 19, 'America/Santiago' = 20, 'America/La_Paz' = 21, 'Atlantic/Stanley' = 22, 'America/Campo_Grande' = 23, 'America/Goose_Bay' = 24, 'America/Glace_Bay' = 25, 'America/St_Johns' = 26, 'America/Araguaina' = 27, 'America/Montevideo' = 28, 'America/Miquelon' = 29, 'America/Godthab' = 30, 'America/Argentina/Buenos_Aires' = 31, 'America/Sao_Paulo' = 32, 'America/Noronha' = 33, 'Atlantic/Cape_Verde' = 34, 'Atlantic/Azores' = 35, 'Europe/Belfast' = 36, 'Europe/Dublin' = 37, 'Europe/Lisbon' = 38, 'Europe/London' = 39, 'Africa/Abidjan' = 40, 'Europe/Amsterdam' = 41, 'Europe/Belgrade' = 42, 'Europe/Brussels' = 43, 'Africa/Algiers' = 44, 'Africa/Windhoek' = 45, 'Asia/Beirut' = 46, 'Africa/Cairo' = 47, 'Asia/Gaza' = 48, 'Africa/Blantyre' = 49, 'Asia/Jerusalem' = 50, 'Europe/Minsk' = 51, 'Asia/Damascus' = 52, 'Europe/Moscow' = 53, 'Africa/Addis_Ababa' = 54, 'Asia/Tehran' = 55, 'Asia/Dubai' = 56, 'Asia/Yerevan' = 57, 'Asia/Kabul' = 58, 'Asia/Yekaterinburg' = 59, 'Asia/Tashkent' = 60, 'Asia/Kolkata' = 61, 'Asia/Katmandu' = 62, 'Asia/Dhaka' = 63, 'Asia/Novosibirsk' = 64, 'Asia/Rangoon' = 65, 'Asia/Bangkok' = 66, 'Asia/Krasnoyarsk' = 67, 'Asia/Hong_Kong' = 68, 'Asia/Irkutsk' = 69, 'Australia/Perth' = 70, 'Australia/Eucla' = 71, 'Asia/Tokyo' = 72, 'Asia/Seoul' = 73, 'Asia/Yakutsk' = 74, 'Australia/Adelaide' = 75, 'Australia/Darwin' = 76, 'Australia/Brisbane' = 77, 'Australia/Hobart' = 78, 'Asia/Vladivostok' = 79, 'Australia/Lord_Howe' = 80, 'Etc/GMT-11' = 81, 'Asia/Magadan' = 82, 'Pacific/Norfolk' = 83, 'Asia/Anadyr' = 84, 'Pacific/Auckland' = 85, 'Etc/GMT-12' = 86, 'Pacific/Chatham' = 87, 'Pacific/Tongatapu' = 88, 'Pacific/Kiritimati' = 89 }
+	export enum ComptageRequestGmt_zone { 'Pacific/Midway' = 'Pacific/Midway', 'America/Adak' = 'America/Adak', 'Etc/GMT+10' = 'Etc/GMT+10', 'Pacific/Marquesas' = 'Pacific/Marquesas', 'Pacific/Gambier' = 'Pacific/Gambier', 'America/Anchorage' = 'America/Anchorage', 'America/Ensenada' = 'America/Ensenada', 'Etc/GMT+8' = 'Etc/GMT+8', 'America/Los_Angeles' = 'America/Los_Angeles', 'America/Denver' = 'America/Denver', 'America/Chihuahua' = 'America/Chihuahua', 'America/Dawson_Creek' = 'America/Dawson_Creek', 'America/Belize' = 'America/Belize', 'America/Cancun' = 'America/Cancun', 'Chile/EasterIsland' = 'Chile/EasterIsland', 'America/Chicago' = 'America/Chicago', 'America/New_York' = 'America/New_York', 'America/Havana' = 'America/Havana', 'America/Bogota' = 'America/Bogota', 'America/Caracas' = 'America/Caracas', 'America/Santiago' = 'America/Santiago', 'America/La_Paz' = 'America/La_Paz', 'Atlantic/Stanley' = 'Atlantic/Stanley', 'America/Campo_Grande' = 'America/Campo_Grande', 'America/Goose_Bay' = 'America/Goose_Bay', 'America/Glace_Bay' = 'America/Glace_Bay', 'America/St_Johns' = 'America/St_Johns', 'America/Araguaina' = 'America/Araguaina', 'America/Montevideo' = 'America/Montevideo', 'America/Miquelon' = 'America/Miquelon', 'America/Godthab' = 'America/Godthab', 'America/Argentina/Buenos_Aires' = 'America/Argentina/Buenos_Aires', 'America/Sao_Paulo' = 'America/Sao_Paulo', 'America/Noronha' = 'America/Noronha', 'Atlantic/Cape_Verde' = 'Atlantic/Cape_Verde', 'Atlantic/Azores' = 'Atlantic/Azores', 'Europe/Belfast' = 'Europe/Belfast', 'Europe/Dublin' = 'Europe/Dublin', 'Europe/Lisbon' = 'Europe/Lisbon', 'Europe/London' = 'Europe/London', 'Africa/Abidjan' = 'Africa/Abidjan', 'Europe/Amsterdam' = 'Europe/Amsterdam', 'Europe/Belgrade' = 'Europe/Belgrade', 'Europe/Brussels' = 'Europe/Brussels', 'Africa/Algiers' = 'Africa/Algiers', 'Africa/Windhoek' = 'Africa/Windhoek', 'Asia/Beirut' = 'Asia/Beirut', 'Africa/Cairo' = 'Africa/Cairo', 'Asia/Gaza' = 'Asia/Gaza', 'Africa/Blantyre' = 'Africa/Blantyre', 'Asia/Jerusalem' = 'Asia/Jerusalem', 'Europe/Minsk' = 'Europe/Minsk', 'Asia/Damascus' = 'Asia/Damascus', 'Europe/Moscow' = 'Europe/Moscow', 'Africa/Addis_Ababa' = 'Africa/Addis_Ababa', 'Asia/Tehran' = 'Asia/Tehran', 'Asia/Dubai' = 'Asia/Dubai', 'Asia/Yerevan' = 'Asia/Yerevan', 'Asia/Kabul' = 'Asia/Kabul', 'Asia/Yekaterinburg' = 'Asia/Yekaterinburg', 'Asia/Tashkent' = 'Asia/Tashkent', 'Asia/Kolkata' = 'Asia/Kolkata', 'Asia/Katmandu' = 'Asia/Katmandu', 'Asia/Dhaka' = 'Asia/Dhaka', 'Asia/Novosibirsk' = 'Asia/Novosibirsk', 'Asia/Rangoon' = 'Asia/Rangoon', 'Asia/Bangkok' = 'Asia/Bangkok', 'Asia/Krasnoyarsk' = 'Asia/Krasnoyarsk', 'Asia/Hong_Kong' = 'Asia/Hong_Kong', 'Asia/Irkutsk' = 'Asia/Irkutsk', 'Australia/Perth' = 'Australia/Perth', 'Australia/Eucla' = 'Australia/Eucla', 'Asia/Tokyo' = 'Asia/Tokyo', 'Asia/Seoul' = 'Asia/Seoul', 'Asia/Yakutsk' = 'Asia/Yakutsk', 'Australia/Adelaide' = 'Australia/Adelaide', 'Australia/Darwin' = 'Australia/Darwin', 'Australia/Brisbane' = 'Australia/Brisbane', 'Australia/Hobart' = 'Australia/Hobart', 'Asia/Vladivostok' = 'Asia/Vladivostok', 'Australia/Lord_Howe' = 'Australia/Lord_Howe', 'Etc/GMT-11' = 'Etc/GMT-11', 'Asia/Magadan' = 'Asia/Magadan', 'Pacific/Norfolk' = 'Pacific/Norfolk', 'Asia/Anadyr' = 'Asia/Anadyr', 'Pacific/Auckland' = 'Pacific/Auckland', 'Etc/GMT-12' = 'Etc/GMT-12', 'Pacific/Chatham' = 'Pacific/Chatham', 'Pacific/Tongatapu' = 'Pacific/Tongatapu', 'Pacific/Kiritimati' = 'Pacific/Kiritimati' }
 
-	export enum ComptageRequestSmslong { _999 = 0 }
+	export enum ComptageRequestSmslong { _999 = '999' }
 
 	export interface CreditResponse {
 		etat?: CreditResponse_etat;
@@ -564,7 +564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum REPERTOIREcreaterequestRepertoireEdit { create = 0 }
+	export enum REPERTOIREcreaterequestRepertoireEdit { create = 'create' }
 
 	export interface REPERTOIREmodifreponse {
 		etat?: REPERTOIREmodifreponse_etat;
@@ -772,7 +772,7 @@ export namespace MyNS {
 
 	}
 
-	export enum REPERTOIREmodifrequestRepertoireEdit { add = 0, del = 1 }
+	export enum REPERTOIREmodifrequestRepertoireEdit { add = 'add', del = 'del' }
 
 	export interface SMSReponse {
 		etat?: SMSReponse_etat;
@@ -1160,7 +1160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubaccountAddRequestSubAccountEdit { addAccount = 0 }
+	export enum SubaccountAddRequestSubAccountEdit { addAccount = 'addAccount' }
 
 	export interface SubaccountAddResponse {
 		etat?: SubaccountAddResponseEtat;
@@ -1271,9 +1271,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubaccountRequestSubAccountEdit { setPrice = 0, addCredit = 1, setRestriction = 2 }
+	export enum SubaccountRequestSubAccountEdit { setPrice = 'setPrice', addCredit = 'addCredit', setRestriction = 'setRestriction' }
 
-	export enum SubaccountRequestSubAccountRestrictionStop { _0 = 0, _1 = 1 }
+	export enum SubaccountRequestSubAccountRestrictionStop { _0 = '0', _1 = '1' }
 
 	export interface SubaccountResponse {
 		etat?: SubaccountResponseEtat;
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetCreditCredit { _1 = 0, _2 = 1 }
+	export enum GetCreditCredit { _1 = '1', _2 = '2' }
 
 }
 

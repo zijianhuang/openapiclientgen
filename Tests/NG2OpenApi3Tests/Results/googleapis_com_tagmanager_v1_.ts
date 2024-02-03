@@ -127,9 +127,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterType { template = 0, integer = 1, boolean = 2, list = 3, map = 4, triggerReference = 5, tagReference = 6 }
+	export enum ParameterType { template = 'template', integer = 'integer', boolean = 'boolean', list = 'list', map = 'map', triggerReference = 'triggerReference', tagReference = 'tagReference' }
 
-	export enum ConditionType { equals = 0, contains = 1, startsWith = 2, endsWith = 3, matchRegex = 4, greater = 5, greaterOrEquals = 6, less = 7, lessOrEquals = 8, cssSelector = 9, urlMatches = 10 }
+	export enum ConditionType { equals = 'equals', contains = 'contains', startsWith = 'startsWith', endsWith = 'endsWith', matchRegex = 'matchRegex', greater = 'greater', greaterOrEquals = 'greaterOrEquals', less = 'less', lessOrEquals = 'lessOrEquals', cssSelector = 'cssSelector', urlMatches = 'urlMatches' }
 
 
 	/** Represents a Google Tag Manager Container. */
@@ -672,7 +672,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagTagFiringOption { unlimited = 0, oncePerEvent = 1, oncePerLoad = 2 }
+	export enum TagTagFiringOption { unlimited = 'unlimited', oncePerEvent = 'oncePerEvent', oncePerLoad = 'oncePerLoad' }
 
 	export interface TeardownTag {
 
@@ -824,7 +824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerType { pageview = 0, domReady = 1, windowLoaded = 2, customEvent = 3, triggerGroup = 4, always = 5, formSubmission = 6, click = 7, linkClick = 8, jsError = 9, historyChange = 10, timer = 11, ampClick = 12, ampTimer = 13, ampScroll = 14, ampVisibility = 15, youTubeVideo = 16, scrollDepth = 17, elementVisibility = 18 }
+	export enum TriggerType { pageview = 'pageview', domReady = 'domReady', windowLoaded = 'windowLoaded', customEvent = 'customEvent', triggerGroup = 'triggerGroup', always = 'always', formSubmission = 'formSubmission', click = 'click', linkClick = 'linkClick', jsError = 'jsError', historyChange = 'historyChange', timer = 'timer', ampClick = 'ampClick', ampTimer = 'ampTimer', ampScroll = 'ampScroll', ampVisibility = 'ampVisibility', youTubeVideo = 'youTubeVideo', scrollDepth = 'scrollDepth', elementVisibility = 'elementVisibility' }
 
 
 	/** Represents a Google Tag Manager Variable. */
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentType { user = 0, live = 1, latest = 2, draft = 3 }
+	export enum EnvironmentType { user = 'user', live = 'live', latest = 'latest', draft = 'draft' }
 
 
 	/** Represents a Google Tag Manager Folder's contents. */

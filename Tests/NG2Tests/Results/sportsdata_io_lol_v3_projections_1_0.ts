@@ -218,7 +218,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ProjectedPlayerGameStatsByDateFormat { xml = 0, json = 1 }
+	export enum ProjectedPlayerGameStatsByDateFormat { xml = 'xml', json = 'json' }
 
 }
 

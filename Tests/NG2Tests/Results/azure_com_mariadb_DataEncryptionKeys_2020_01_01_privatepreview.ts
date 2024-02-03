@@ -158,7 +158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerKeyPropertiesServerKeyType { AzureKeyVault = 0 }
+	export enum ServerKeyPropertiesServerKeyType { AzureKeyVault = 'AzureKeyVault' }
 
 
 	/** A list of MariaDB Server keys. */

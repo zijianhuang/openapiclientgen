@@ -534,7 +534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirebaseAppcheckV1betaResourcePolicyEnforcementMode { OFF = 0, UNENFORCED = 1, ENFORCED = 2 }
+	export enum GoogleFirebaseAppcheckV1betaResourcePolicyEnforcementMode { OFF = 'OFF', UNENFORCED = 'UNENFORCED', ENFORCED = 'ENFORCED' }
 
 
 	/** Response message for the BatchUpdateResourcePolicies method. */

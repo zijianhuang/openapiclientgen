@@ -604,9 +604,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2ModelDataState { DATA_STATE_UNSPECIFIED = 0, DATA_OK = 1, DATA_ERROR = 2 }
+	export enum GoogleCloudRetailV2ModelDataState { DATA_STATE_UNSPECIFIED = 'DATA_STATE_UNSPECIFIED', DATA_OK = 'DATA_OK', DATA_ERROR = 'DATA_ERROR' }
 
-	export enum GoogleCloudRetailV2ModelFilteringOption { RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED = 0, RECOMMENDATIONS_FILTERING_DISABLED = 1, RECOMMENDATIONS_FILTERING_ENABLED = 2 }
+	export enum GoogleCloudRetailV2ModelFilteringOption { RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED = 'RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED', RECOMMENDATIONS_FILTERING_DISABLED = 'RECOMMENDATIONS_FILTERING_DISABLED', RECOMMENDATIONS_FILTERING_ENABLED = 'RECOMMENDATIONS_FILTERING_ENABLED' }
 
 
 	/** Additional model features config. */
@@ -646,9 +646,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2ModelFrequentlyBoughtTogetherFeaturesConfigContextProductsType { CONTEXT_PRODUCTS_TYPE_UNSPECIFIED = 0, SINGLE_CONTEXT_PRODUCT = 1, MULTIPLE_CONTEXT_PRODUCTS = 2 }
+	export enum GoogleCloudRetailV2ModelFrequentlyBoughtTogetherFeaturesConfigContextProductsType { CONTEXT_PRODUCTS_TYPE_UNSPECIFIED = 'CONTEXT_PRODUCTS_TYPE_UNSPECIFIED', SINGLE_CONTEXT_PRODUCT = 'SINGLE_CONTEXT_PRODUCT', MULTIPLE_CONTEXT_PRODUCTS = 'MULTIPLE_CONTEXT_PRODUCTS' }
 
-	export enum GoogleCloudRetailV2ModelPeriodicTuningState { PERIODIC_TUNING_STATE_UNSPECIFIED = 0, PERIODIC_TUNING_DISABLED = 1, ALL_TUNING_DISABLED = 2, PERIODIC_TUNING_ENABLED = 3 }
+	export enum GoogleCloudRetailV2ModelPeriodicTuningState { PERIODIC_TUNING_STATE_UNSPECIFIED = 'PERIODIC_TUNING_STATE_UNSPECIFIED', PERIODIC_TUNING_DISABLED = 'PERIODIC_TUNING_DISABLED', ALL_TUNING_DISABLED = 'ALL_TUNING_DISABLED', PERIODIC_TUNING_ENABLED = 'PERIODIC_TUNING_ENABLED' }
 
 
 	/** Represents an ordered combination of valid serving configs, which can be used for `PAGE_OPTIMIZATION` recommendations. */
@@ -667,9 +667,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2ModelServingState { SERVING_STATE_UNSPECIFIED = 0, INACTIVE = 1, ACTIVE = 2, TUNED = 3 }
+	export enum GoogleCloudRetailV2ModelServingState { SERVING_STATE_UNSPECIFIED = 'SERVING_STATE_UNSPECIFIED', INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE', TUNED = 'TUNED' }
 
-	export enum GoogleCloudRetailV2ModelTrainingState { TRAINING_STATE_UNSPECIFIED = 0, PAUSED = 1, TRAINING = 2 }
+	export enum GoogleCloudRetailV2ModelTrainingState { TRAINING_STATE_UNSPECIFIED = 'TRAINING_STATE_UNSPECIFIED', PAUSED = 'PAUSED', TRAINING = 'TRAINING' }
 
 
 	/** Metadata related to the progress of the Purge operation. This will be returned by the google.longrunning.Operation.metadata field. */
@@ -1094,7 +1094,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2alphaEnrollSolutionResponseEnrolledSolution { SOLUTION_TYPE_UNSPECIFIED = 0, SOLUTION_TYPE_RECOMMENDATION = 1, SOLUTION_TYPE_SEARCH = 2 }
+	export enum GoogleCloudRetailV2alphaEnrollSolutionResponseEnrolledSolution { SOLUTION_TYPE_UNSPECIFIED = 'SOLUTION_TYPE_UNSPECIFIED', SOLUTION_TYPE_RECOMMENDATION = 'SOLUTION_TYPE_RECOMMENDATION', SOLUTION_TYPE_SEARCH = 'SOLUTION_TYPE_SEARCH' }
 
 
 	/** Response of the ExportAnalyticsMetricsRequest. If the long running operation was successful, then this message is returned by the google.longrunning.Operations.response field if the operation was successful. */
@@ -1559,7 +1559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2alphaMerchantCenterAccountLinkState { STATE_UNSPECIFIED = 0, PENDING = 1, ACTIVE = 2, FAILED = 3 }
+	export enum GoogleCloudRetailV2alphaMerchantCenterAccountLinkState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** Metadata that describes the training and serving parameters of a Model. A Model can be associated with a ServingConfig and then queried through the Predict API. */
@@ -1792,7 +1792,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2alphaModelPageOptimizationConfigRestriction { RESTRICTION_UNSPECIFIED = 0, NO_RESTRICTION = 1, UNIQUE_SERVING_CONFIG_RESTRICTION = 2, UNIQUE_MODEL_RESTRICTION = 3, UNIQUE_MODEL_TYPE_RESTRICTION = 4 }
+	export enum GoogleCloudRetailV2alphaModelPageOptimizationConfigRestriction { RESTRICTION_UNSPECIFIED = 'RESTRICTION_UNSPECIFIED', NO_RESTRICTION = 'NO_RESTRICTION', UNIQUE_SERVING_CONFIG_RESTRICTION = 'UNIQUE_SERVING_CONFIG_RESTRICTION', UNIQUE_MODEL_RESTRICTION = 'UNIQUE_MODEL_RESTRICTION', UNIQUE_MODEL_TYPE_RESTRICTION = 'UNIQUE_MODEL_TYPE_RESTRICTION' }
 
 
 	/** Represents an ordered combination of valid serving configs, which can be used for `PAGE_OPTIMIZATION` recommendations. */
@@ -2163,9 +2163,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaCatalogAttributeDynamicFacetableOption { DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 0, DYNAMIC_FACETABLE_ENABLED = 1, DYNAMIC_FACETABLE_DISABLED = 2 }
+	export enum GoogleCloudRetailV2betaCatalogAttributeDynamicFacetableOption { DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 'DYNAMIC_FACETABLE_OPTION_UNSPECIFIED', DYNAMIC_FACETABLE_ENABLED = 'DYNAMIC_FACETABLE_ENABLED', DYNAMIC_FACETABLE_DISABLED = 'DYNAMIC_FACETABLE_DISABLED' }
 
-	export enum GoogleCloudRetailV2betaCatalogAttributeExactSearchableOption { EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 0, EXACT_SEARCHABLE_ENABLED = 1, EXACT_SEARCHABLE_DISABLED = 2 }
+	export enum GoogleCloudRetailV2betaCatalogAttributeExactSearchableOption { EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 'EXACT_SEARCHABLE_OPTION_UNSPECIFIED', EXACT_SEARCHABLE_ENABLED = 'EXACT_SEARCHABLE_ENABLED', EXACT_SEARCHABLE_DISABLED = 'EXACT_SEARCHABLE_DISABLED' }
 
 
 	/** Possible options for the facet that corresponds to the current attribute config. */
@@ -2314,13 +2314,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaCatalogAttributeIndexableOption { INDEXABLE_OPTION_UNSPECIFIED = 0, INDEXABLE_ENABLED = 1, INDEXABLE_DISABLED = 2 }
+	export enum GoogleCloudRetailV2betaCatalogAttributeIndexableOption { INDEXABLE_OPTION_UNSPECIFIED = 'INDEXABLE_OPTION_UNSPECIFIED', INDEXABLE_ENABLED = 'INDEXABLE_ENABLED', INDEXABLE_DISABLED = 'INDEXABLE_DISABLED' }
 
-	export enum GoogleCloudRetailV2betaCatalogAttributeRetrievableOption { RETRIEVABLE_OPTION_UNSPECIFIED = 0, RETRIEVABLE_ENABLED = 1, RETRIEVABLE_DISABLED = 2 }
+	export enum GoogleCloudRetailV2betaCatalogAttributeRetrievableOption { RETRIEVABLE_OPTION_UNSPECIFIED = 'RETRIEVABLE_OPTION_UNSPECIFIED', RETRIEVABLE_ENABLED = 'RETRIEVABLE_ENABLED', RETRIEVABLE_DISABLED = 'RETRIEVABLE_DISABLED' }
 
-	export enum GoogleCloudRetailV2betaCatalogAttributeSearchableOption { SEARCHABLE_OPTION_UNSPECIFIED = 0, SEARCHABLE_ENABLED = 1, SEARCHABLE_DISABLED = 2 }
+	export enum GoogleCloudRetailV2betaCatalogAttributeSearchableOption { SEARCHABLE_OPTION_UNSPECIFIED = 'SEARCHABLE_OPTION_UNSPECIFIED', SEARCHABLE_ENABLED = 'SEARCHABLE_ENABLED', SEARCHABLE_DISABLED = 'SEARCHABLE_DISABLED' }
 
-	export enum GoogleCloudRetailV2betaCatalogAttributeType { UNKNOWN = 0, TEXTUAL = 1, NUMERICAL = 2 }
+	export enum GoogleCloudRetailV2betaCatalogAttributeType { UNKNOWN = 'UNKNOWN', TEXTUAL = 'TEXTUAL', NUMERICAL = 'NUMERICAL' }
 
 
 	/** Request for AddControl method. */
@@ -2657,7 +2657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaAttributesConfigAttributeConfigLevel { ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED = 0, PRODUCT_LEVEL_ATTRIBUTE_CONFIG = 1, CATALOG_LEVEL_ATTRIBUTE_CONFIG = 2 }
+	export enum GoogleCloudRetailV2betaAttributesConfigAttributeConfigLevel { ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED = 'ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED', PRODUCT_LEVEL_ATTRIBUTE_CONFIG = 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG', CATALOG_LEVEL_ATTRIBUTE_CONFIG = 'CATALOG_LEVEL_ATTRIBUTE_CONFIG' }
 
 
 	/** An intended audience of the Product for whom it's sold. */
@@ -4465,7 +4465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaProductAvailability { AVAILABILITY_UNSPECIFIED = 0, IN_STOCK = 1, OUT_OF_STOCK = 2, PREORDER = 3, BACKORDER = 4 }
+	export enum GoogleCloudRetailV2betaProductAvailability { AVAILABILITY_UNSPECIFIED = 'AVAILABILITY_UNSPECIFIED', IN_STOCK = 'IN_STOCK', OUT_OF_STOCK = 'OUT_OF_STOCK', PREORDER = 'PREORDER', BACKORDER = 'BACKORDER' }
 
 
 	/** Promotion specification. */
@@ -4519,9 +4519,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaProductType { TYPE_UNSPECIFIED = 0, PRIMARY = 1, VARIANT = 2, COLLECTION = 3 }
+	export enum GoogleCloudRetailV2betaProductType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PRIMARY = 'PRIMARY', VARIANT = 'VARIANT', COLLECTION = 'COLLECTION' }
 
-	export enum GoogleCloudRetailV2betaImportProductsRequestReconciliationMode { RECONCILIATION_MODE_UNSPECIFIED = 0, INCREMENTAL = 1, FULL = 2 }
+	export enum GoogleCloudRetailV2betaImportProductsRequestReconciliationMode { RECONCILIATION_MODE_UNSPECIFIED = 'RECONCILIATION_MODE_UNSPECIFIED', INCREMENTAL = 'INCREMENTAL', FULL = 'FULL' }
 
 
 	/** Response of the ImportProductsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful. */
@@ -5291,7 +5291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaServingConfigDiversityType { DIVERSITY_TYPE_UNSPECIFIED = 0, RULE_BASED_DIVERSITY = 1, DATA_DRIVEN_DIVERSITY = 2 }
+	export enum GoogleCloudRetailV2betaServingConfigDiversityType { DIVERSITY_TYPE_UNSPECIFIED = 'DIVERSITY_TYPE_UNSPECIFIED', RULE_BASED_DIVERSITY = 'RULE_BASED_DIVERSITY', DATA_DRIVEN_DIVERSITY = 'DATA_DRIVEN_DIVERSITY' }
 
 
 	/** The specifications of dynamically generated facets. */
@@ -5314,7 +5314,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaSearchRequestDynamicFacetSpecMode { MODE_UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2 }
+	export enum GoogleCloudRetailV2betaSearchRequestDynamicFacetSpecMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** The specification for personalization. */
@@ -5337,7 +5337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaSearchRequestPersonalizationSpecMode { MODE_UNSPECIFIED = 0, AUTO = 1, DISABLED = 2 }
+	export enum GoogleCloudRetailV2betaSearchRequestPersonalizationSpecMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', AUTO = 'AUTO', DISABLED = 'DISABLED' }
 
 
 	/** Represents a link between a Merchant Center account and a branch. After a link is established, products from the linked Merchant Center account are streamed to the linked branch. */
@@ -5774,7 +5774,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaRejoinUserEventsRequestUserEventRejoinScope { USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 0, JOINED_EVENTS = 1, UNJOINED_EVENTS = 2 }
+	export enum GoogleCloudRetailV2betaRejoinUserEventsRequestUserEventRejoinScope { USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 'USER_EVENT_REJOIN_SCOPE_UNSPECIFIED', JOINED_EVENTS = 'JOINED_EVENTS', UNJOINED_EVENTS = 'UNJOINED_EVENTS' }
 
 
 	/** Response message for `RejoinUserEvents` method. */
@@ -6207,9 +6207,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaSearchRequestQueryExpansionSpecCondition { CONDITION_UNSPECIFIED = 0, DISABLED = 1, AUTO = 2 }
+	export enum GoogleCloudRetailV2betaSearchRequestQueryExpansionSpecCondition { CONDITION_UNSPECIFIED = 'CONDITION_UNSPECIFIED', DISABLED = 'DISABLED', AUTO = 'AUTO' }
 
-	export enum GoogleCloudRetailV2betaSearchRequestSearchMode { SEARCH_MODE_UNSPECIFIED = 0, PRODUCT_SEARCH_ONLY = 1, FACETED_SEARCH_ONLY = 2 }
+	export enum GoogleCloudRetailV2betaSearchRequestSearchMode { SEARCH_MODE_UNSPECIFIED = 'SEARCH_MODE_UNSPECIFIED', PRODUCT_SEARCH_ONLY = 'PRODUCT_SEARCH_ONLY', FACETED_SEARCH_ONLY = 'FACETED_SEARCH_ONLY' }
 
 
 	/** The specification for query spell correction. */
@@ -6232,7 +6232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRetailV2betaSearchRequestSpellCorrectionSpecMode { MODE_UNSPECIFIED = 0, SUGGESTION_ONLY = 1, AUTO = 2 }
+	export enum GoogleCloudRetailV2betaSearchRequestSpellCorrectionSpecMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', SUGGESTION_ONLY = 'SUGGESTION_ONLY', AUTO = 'AUTO' }
 
 
 	/** Response message for SearchService.Search method. */

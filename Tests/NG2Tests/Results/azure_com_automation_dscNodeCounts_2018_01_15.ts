@@ -86,7 +86,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum NodeCountInformation_GetCountType { status = 0, nodeconfiguration = 1 }
+	export enum NodeCountInformation_GetCountType { status = 'status', nodeconfiguration = 'nodeconfiguration' }
 
 }
 

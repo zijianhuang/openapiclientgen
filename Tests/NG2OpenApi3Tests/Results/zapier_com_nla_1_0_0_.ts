@@ -173,7 +173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecuteResponseStatus { success = 0, error = 1, empty = 2, preview = 3 }
+	export enum ExecuteResponseStatus { success = 'success', error = 'error', empty = 'empty', preview = 'preview' }
 
 	export interface ExposedActionResponseSchema {
 

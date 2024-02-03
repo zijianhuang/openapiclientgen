@@ -65,7 +65,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationPropertiesProvisioningState { Accepted = 0, Deleting = 1, Running = 2, Succeeded = 3, Failed = 4 }
+	export enum AssociationPropertiesProvisioningState { Accepted = 'Accepted', Deleting = 'Deleting', Running = 'Running', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** List of associations. */
@@ -114,7 +114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRPActionRouteDefinitionRoutingType { Proxy = 0 }
+	export enum CustomRPActionRouteDefinitionRoutingType { Proxy = 'Proxy' }
 
 
 	/** A manifest file that defines the custom resource provider resources. */
@@ -187,7 +187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRPResourceTypeRouteDefinitionRoutingType { Proxy = 0, 'Proxy,Cache' = 1 }
+	export enum CustomRPResourceTypeRouteDefinitionRoutingType { Proxy = 'Proxy', 'Proxy,Cache' = 'Proxy,Cache' }
 
 
 	/** A validation to apply on custom resource provider requests. */
@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRPValidationsValidationType { Swagger = 0 }
+	export enum CustomRPValidationsValidationType { Swagger = 'Swagger' }
 
 
 	/** A route definition that defines an action or resource that can be interacted with through the custom resource provider. */

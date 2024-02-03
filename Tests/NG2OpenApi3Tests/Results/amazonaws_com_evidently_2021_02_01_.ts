@@ -285,7 +285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeDirectionEnum { INCREASE = 0, DECREASE = 1 }
+	export enum ChangeDirectionEnum { INCREASE = 'INCREASE', DECREASE = 'DECREASE' }
 
 
 	/** This structure defines a metric that is being used to evaluate the variations during a launch or experiment. */
@@ -361,7 +361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentStatus { CREATED = 0, UPDATING = 1, RUNNING = 2, COMPLETED = 3, CANCELLED = 4 }
+	export enum ExperimentStatus { CREATED = 'CREATED', UPDATING = 'UPDATING', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 	export interface TagMap {
 	}
@@ -408,7 +408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentType { 'aws.evidently.onlineab' = 0 }
+	export enum ExperimentType { 'aws.evidently.onlineab' = 'aws.evidently.onlineab' }
 
 
 	/** Use this structure to tell Evidently whether higher or lower values are desired for a metric that is used in an experiment. */
@@ -652,11 +652,11 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureEvaluationStrategy { ALL_RULES = 0, DEFAULT_VARIATION = 1 }
+	export enum FeatureEvaluationStrategy { ALL_RULES = 'ALL_RULES', DEFAULT_VARIATION = 'DEFAULT_VARIATION' }
 
-	export enum FeatureStatus { AVAILABLE = 0, UPDATING = 1 }
+	export enum FeatureStatus { AVAILABLE = 'AVAILABLE', UPDATING = 'UPDATING' }
 
-	export enum VariationValueType { STRING = 0, LONG = 1, DOUBLE = 2, BOOLEAN = 3 }
+	export enum VariationValueType { STRING = 'STRING', LONG = 'LONG', DOUBLE = 'DOUBLE', BOOLEAN = 'BOOLEAN' }
 
 
 	/** This structure contains the name and variation value of one variation of a feature. */
@@ -929,7 +929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LaunchType { 'aws.evidently.splits' = 0 }
+	export enum LaunchType { 'aws.evidently.splits' = 'aws.evidently.splits' }
 
 
 	/** A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch. */
@@ -1434,7 +1434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentReportName { BayesianInference = 0 }
+	export enum ExperimentReportName { BayesianInference = 'BayesianInference' }
 
 
 	/** A structure that contains experiment results for one metric that is monitored in the experiment. */
@@ -1460,9 +1460,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentResultResponseType { Mean = 0, TreatmentEffect = 1, ConfidenceIntervalUpperBound = 2, ConfidenceIntervalLowerBound = 3, PValue = 4 }
+	export enum ExperimentResultResponseType { Mean = 'Mean', TreatmentEffect = 'TreatmentEffect', ConfidenceIntervalUpperBound = 'ConfidenceIntervalUpperBound', ConfidenceIntervalLowerBound = 'ConfidenceIntervalLowerBound', PValue = 'PValue' }
 
-	export enum ExperimentResultRequestType { BaseStat = 0, TreatmentEffect = 1, ConfidenceInterval = 2, PValue = 3 }
+	export enum ExperimentResultRequestType { BaseStat = 'BaseStat', TreatmentEffect = 'TreatmentEffect', ConfidenceInterval = 'ConfidenceInterval', PValue = 'PValue' }
 
 	export interface GetFeatureResponse {
 
@@ -1856,7 +1856,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { 'aws.evidently.evaluation' = 0, 'aws.evidently.custom' = 1 }
+	export enum EventType { 'aws.evidently.evaluation' = 'aws.evidently.evaluation', 'aws.evidently.custom' = 'aws.evidently.custom' }
 
 	export interface StartExperimentResponse {
 		startedTime?: Date;
@@ -2314,9 +2314,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentBaseStat { Mean = 0 }
+	export enum ExperimentBaseStat { Mean = 'Mean' }
 
-	export enum ExperimentStopDesiredState { COMPLETED = 0, CANCELLED = 1 }
+	export enum ExperimentStopDesiredState { COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 	export interface GetExperimentRequest {
 	}
@@ -2398,9 +2398,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LaunchStatus { CREATED = 0, UPDATING = 1, RUNNING = 2, COMPLETED = 3, CANCELLED = 4 }
+	export enum LaunchStatus { CREATED = 'CREATED', UPDATING = 'UPDATING', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
-	export enum LaunchStopDesiredState { COMPLETED = 0, CANCELLED = 1 }
+	export enum LaunchStopDesiredState { COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 	export interface ListExperimentsRequest {
 	}
@@ -2442,7 +2442,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SegmentReferenceResourceType { EXPERIMENT = 0, LAUNCH = 1 }
+	export enum SegmentReferenceResourceType { EXPERIMENT = 'EXPERIMENT', LAUNCH = 'LAUNCH' }
 
 	export interface ListSegmentReferencesRequest {
 	}
@@ -2474,7 +2474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectStatus { AVAILABLE = 0, UPDATING = 1 }
+	export enum ProjectStatus { AVAILABLE = 'AVAILABLE', UPDATING = 'UPDATING' }
 
 	export interface PutProjectEventsRequest {
 

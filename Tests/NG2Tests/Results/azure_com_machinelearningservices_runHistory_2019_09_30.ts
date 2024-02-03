@@ -134,7 +134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StoredProcedureParameterType { String = 0, Int = 1, Decimal = 2, Guid = 3, Boolean = 4, Date = 5 }
+	export enum StoredProcedureParameterType { String = 'String', Int = 'Int', Decimal = 'Decimal', Guid = 'Guid', Boolean = 'Boolean', Date = 'Date' }
 
 
 	/** Details of an Artifact Content Information. */
@@ -364,9 +364,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreatedFromLocationType { ArtifactId = 0 }
+	export enum CreatedFromLocationType { ArtifactId = 'ArtifactId' }
 
-	export enum CreatedFromType { Notebook = 0 }
+	export enum CreatedFromType { Notebook = 'Notebook' }
 
 	export interface RunOptions {
 		generateDataContainerIdIfNotSpecified?: boolean | null;
@@ -1729,13 +1729,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum RunMetrics_GetByQueryMergeStrategyType { Default = 0, None = 1, MergeToVector = 2 }
+	export enum RunMetrics_GetByQueryMergeStrategyType { Default = 'Default', None = 'None', MergeToVector = 'MergeToVector' }
 
-	export enum RunMetrics_GetByQueryMergeStrategyOptions { None = 0, ReportUnmergedMetricsValues = 1 }
+	export enum RunMetrics_GetByQueryMergeStrategyOptions { None = 'None', ReportUnmergedMetricsValues = 'ReportUnmergedMetricsValues' }
 
-	export enum RunMetrics_GetByQueryMergeStrategySettings_SelectMetrics { SelectAll = 0, SelectByFirstValueSchema = 1, SelectByFirstValueSchemaMergeNumericValues = 2 }
+	export enum RunMetrics_GetByQueryMergeStrategySettings_SelectMetrics { SelectAll = 'SelectAll', SelectByFirstValueSchema = 'SelectByFirstValueSchema', SelectByFirstValueSchemaMergeNumericValues = 'SelectByFirstValueSchemaMergeNumericValues' }
 
-	export enum Runs_GetChildSortorder { Asc = 0, Desc = 1 }
+	export enum Runs_GetChildSortorder { Asc = 'Asc', Desc = 'Desc' }
 
 }
 

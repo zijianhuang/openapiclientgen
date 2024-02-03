@@ -431,7 +431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountReportStatus { missing = 0, pending = 1, done = 2 }
+	export enum AccountReportStatus { missing = 'missing', pending = 'pending', done = 'done' }
 
 	export interface AccountUpdate {
 
@@ -959,7 +959,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupEmbargoOptionsType { logged_in = 0, ip_range = 1, administrator = 2 }
+	export enum GroupEmbargoOptionsType { logged_in = 'logged_in', ip_range = 'ip_range', administrator = 'administrator' }
 
 	export interface PublicFile {
 
@@ -1537,7 +1537,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArticleEmbargoUpdaterEmbargo_type { article = 0, file = 1 }
+	export enum ArticleEmbargoUpdaterEmbargo_type { article = 'article', file = 'file' }
 
 	export interface ArticleHandle {
 
@@ -1735,7 +1735,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArticleSearchOrder { published_date = 0, modified_date = 1, views = 2, shares = 3, downloads = 4, cites = 5 }
+	export enum ArticleSearchOrder { published_date = 'published_date', modified_date = 'modified_date', views = 'views', shares = 'shares', downloads = 'downloads', cites = 'cites' }
 
 	export interface ArticleUpdate {
 
@@ -3135,7 +3135,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CollectionSearchOrder { published_date = 0, modified_date = 1, views = 2, shares = 3, cites = 4 }
+	export enum CollectionSearchOrder { published_date = 'published_date', modified_date = 'modified_date', views = 'views', shares = 'shares', cites = 'cites' }
 
 	export interface CollectionUpdate {
 
@@ -3421,7 +3421,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommonSearchOrder_direction { asc = 0, desc = 1 }
+	export enum CommonSearchOrder_direction { asc = 'asc', desc = 'desc' }
 
 	export interface ConfidentialityCreator {
 
@@ -3635,7 +3635,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CurationStatus { pending = 0, approved = 1, rejected = 2, closed = 3 }
+	export enum CurationStatus { pending = 'pending', approved = 'approved', rejected = 'rejected', closed = 'closed' }
 
 	export interface CurationComment {
 
@@ -3699,7 +3699,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CurationCommentType { comment = 0, approved = 1, rejected = 2, closed = 3 }
+	export enum CurationCommentType { comment = 'comment', approved = 'approved', rejected = 'rejected', closed = 'closed' }
 
 	export interface CurationCommentCreate {
 
@@ -5158,7 +5158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectCollaboratorInviteRole_name { viewer = 0, collaborator = 1 }
+	export enum ProjectCollaboratorInviteRole_name { viewer = 'viewer', collaborator = 'collaborator' }
 
 	export interface ProjectComplete {
 
@@ -5631,9 +5631,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectPrivateRole { Owner = 0, Collaborator = 1, Viewer = 2 }
+	export enum ProjectPrivateRole { Owner = 'Owner', Collaborator = 'Collaborator', Viewer = 'Viewer' }
 
-	export enum ProjectPrivateStorage { individual = 0, group = 1 }
+	export enum ProjectPrivateStorage { individual = 'individual', group = 'group' }
 
 	export interface ProjectUpdate {
 
@@ -5710,7 +5710,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectsSearchOrder { published_date = 0, modified_date = 1, views = 2 }
+	export enum ProjectsSearchOrder { published_date = 'published_date', modified_date = 'modified_date', views = 'views' }
 
 	export interface Resource {
 
@@ -6075,7 +6075,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShortCustomFieldField_type { text = 0, textarea = 1, dropdown = 2, url = 3, email = 4, date = 5, dropdown_large_list = 6 }
+	export enum ShortCustomFieldField_type { text = 'text', textarea = 'textarea', dropdown = 'dropdown', url = 'url', email = 'email', date = 'date', dropdown_large_list = 'dropdown_large_list' }
 
 	export interface UploadFilePart {
 
@@ -6122,7 +6122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UploadFilePartStatus { PENDING = 0, COMPLETE = 1 }
+	export enum UploadFilePartStatus { PENDING = 'PENDING', COMPLETE = 'COMPLETE' }
 
 	export interface UploadInfo {
 
@@ -6172,7 +6172,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UploadInfoStatus { PENDING = 0, COMPLETED = 1, ABORTED = 2 }
+	export enum UploadInfoStatus { PENDING = 'PENDING', COMPLETED = 'COMPLETED', ABORTED = 'ABORTED' }
 
 	export interface User {
 
@@ -7860,7 +7860,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Private_projects_listStorage { group = 0, individual = 1 }
+	export enum Private_projects_listStorage { group = 'group', individual = 'individual' }
 
 }
 

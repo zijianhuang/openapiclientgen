@@ -64,7 +64,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoBackupPolicyPropertiesState { Disabled = 0, Enabled = 1 }
+	export enum GeoBackupPolicyPropertiesState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 	@Injectable()
 	export class MyClient {
@@ -117,7 +117,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GeoBackupPolicies_GetGeoBackupPolicyName { Default = 0 }
+	export enum GeoBackupPolicies_GetGeoBackupPolicyName { Default = 'Default' }
 
 }
 

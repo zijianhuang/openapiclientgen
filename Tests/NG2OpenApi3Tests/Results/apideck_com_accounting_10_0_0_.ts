@@ -401,7 +401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressType { primary = 0, secondary = 1, home = 2, office = 3, shipping = 4, billing = 5, other = 6 }
+	export enum AddressType { primary = 'primary', secondary = 'secondary', home = 'home', office = 'office', shipping = 'shipping', billing = 'billing', other = 'other' }
 
 	export interface BankAccount {
 
@@ -490,9 +490,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BankAccountAccount_type { bank_account = 0, credit_card = 1, other = 2 }
+	export enum BankAccountAccount_type { bank_account = 'bank_account', credit_card = 'credit_card', other = 'other' }
 
-	export enum BankAccountCurrency { UNKNOWN_CURRENCY = 0, AED = 1, AFN = 2, ALL = 3, AMD = 4, ANG = 5, AOA = 6, ARS = 7, AUD = 8, AWG = 9, AZN = 10, BAM = 11, BBD = 12, BDT = 13, BGN = 14, BHD = 15, BIF = 16, BMD = 17, BND = 18, BOB = 19, BOV = 20, BRL = 21, BSD = 22, BTN = 23, BWP = 24, BYR = 25, BZD = 26, CAD = 27, CDF = 28, CHE = 29, CHF = 30, CHW = 31, CLF = 32, CLP = 33, CNY = 34, COP = 35, COU = 36, CRC = 37, CUC = 38, CUP = 39, CVE = 40, CZK = 41, DJF = 42, DKK = 43, DOP = 44, DZD = 45, EGP = 46, ERN = 47, ETB = 48, EUR = 49, FJD = 50, FKP = 51, GBP = 52, GEL = 53, GHS = 54, GIP = 55, GMD = 56, GNF = 57, GTQ = 58, GYD = 59, HKD = 60, HNL = 61, HRK = 62, HTG = 63, HUF = 64, IDR = 65, ILS = 66, INR = 67, IQD = 68, IRR = 69, ISK = 70, JMD = 71, JOD = 72, JPY = 73, KES = 74, KGS = 75, KHR = 76, KMF = 77, KPW = 78, KRW = 79, KWD = 80, KYD = 81, KZT = 82, LAK = 83, LBP = 84, LKR = 85, LRD = 86, LSL = 87, LTL = 88, LVL = 89, LYD = 90, MAD = 91, MDL = 92, MGA = 93, MKD = 94, MMK = 95, MNT = 96, MOP = 97, MRO = 98, MUR = 99, MVR = 100, MWK = 101, MXN = 102, MXV = 103, MYR = 104, MZN = 105, NAD = 106, NGN = 107, NIO = 108, NOK = 109, NPR = 110, NZD = 111, OMR = 112, PAB = 113, PEN = 114, PGK = 115, PHP = 116, PKR = 117, PLN = 118, PYG = 119, QAR = 120, RON = 121, RSD = 122, RUB = 123, RWF = 124, SAR = 125, SBD = 126, SCR = 127, SDG = 128, SEK = 129, SGD = 130, SHP = 131, SLL = 132, SOS = 133, SRD = 134, SSP = 135, STD = 136, SVC = 137, SYP = 138, SZL = 139, THB = 140, TJS = 141, TMT = 142, TND = 143, TOP = 144, TRC = 145, TRY = 146, TTD = 147, TWD = 148, TZS = 149, UAH = 150, UGX = 151, USD = 152, USN = 153, USS = 154, UYI = 155, UYU = 156, UZS = 157, VEF = 158, VND = 159, VUV = 160, WST = 161, XAF = 162, XAG = 163, XAU = 164, XBA = 165, XBB = 166, XBC = 167, XBD = 168, XCD = 169, XDR = 170, XOF = 171, XPD = 172, XPF = 173, XPT = 174, XTS = 175, XXX = 176, YER = 177, ZAR = 178, ZMK = 179, ZMW = 180, BTC = 181, ETH = 182 }
+	export enum BankAccountCurrency { UNKNOWN_CURRENCY = 'UNKNOWN_CURRENCY', AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRC = 'TRC', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', USN = 'USN', USS = 'USS', UYI = 'UYI', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', XTS = 'XTS', XXX = 'XXX', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', BTC = 'BTC', ETH = 'ETH' }
 
 
 	/** When custom mappings are configured on the resource, the result is included here. */
@@ -547,7 +547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmailType { primary = 0, secondary = 1, work = 2, personal = 3, billing = 4, other = 5 }
+	export enum EmailType { primary = 'primary', secondary = 'secondary', work = 'work', personal = 'personal', billing = 'billing', other = 'other' }
 
 
 	/** The parent customer this entity is linked to. */
@@ -643,9 +643,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { primary = 0, secondary = 1, home = 2, work = 3, office = 4, mobile = 5, assistant = 6, fax = 7, 'direct-dial-in' = 8, personal = 9, other = 10 }
+	export enum PhoneNumberType { primary = 'primary', secondary = 'secondary', home = 'home', work = 'work', office = 'office', mobile = 'mobile', assistant = 'assistant', fax = 'fax', 'direct-dial-in' = 'direct-dial-in', personal = 'personal', other = 'other' }
 
-	export enum AccountingCustomerStatus { active = 0, inactive = 1, archived = 2, 'gdpr-erasure-request' = 3, unknown = 4 }
+	export enum AccountingCustomerStatus { active = 'active', inactive = 'inactive', archived = 'archived', 'gdpr-erasure-request' = 'gdpr-erasure-request', unknown = 'unknown' }
 
 	export interface LinkedTaxRate {
 
@@ -724,9 +724,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WebsiteType { primary = 0, secondary = 1, work = 2, personal = 3, other = 4 }
+	export enum WebsiteType { primary = 'primary', secondary = 'secondary', work = 'work', personal = 'personal', other = 'other' }
 
-	export enum AccountingEventType { '*' = 0, 'accounting.customer.created' = 1, 'accounting.customer.updated' = 2, 'accounting.customer.deleted' = 3, 'accounting.invoice.created' = 4, 'accounting.invoice.updated' = 5, 'accounting.invoice.deleted' = 6, 'accounting.invoice_item.created' = 7, 'accounting.invoice_item.updated' = 8, 'accounting.invoice_item.deleted' = 9, 'accounting.ledger_account.created' = 10, 'accounting.ledger_account.updated' = 11, 'accounting.ledger_account.deleted' = 12, 'accounting.tax_rate.created' = 13, 'accounting.tax_rate.updated' = 14, 'accounting.tax_rate.deleted' = 15, 'accounting.bill.created' = 16, 'accounting.bill.updated' = 17, 'accounting.bill.deleted' = 18, 'accounting.payment.created' = 19, 'accounting.payment.updated' = 20, 'accounting.payment.deleted' = 21, 'accounting.supplier.created' = 22, 'accounting.supplier.updated' = 23, 'accounting.supplier.deleted' = 24, 'accounting.purchase-order.created' = 25, 'accounting.purchase-order.updated' = 26, 'accounting.purchase-order.deleted' = 27 }
+	export enum AccountingEventType { '*' = '*', 'accounting.customer.created' = 'accounting.customer.created', 'accounting.customer.updated' = 'accounting.customer.updated', 'accounting.customer.deleted' = 'accounting.customer.deleted', 'accounting.invoice.created' = 'accounting.invoice.created', 'accounting.invoice.updated' = 'accounting.invoice.updated', 'accounting.invoice.deleted' = 'accounting.invoice.deleted', 'accounting.invoice_item.created' = 'accounting.invoice_item.created', 'accounting.invoice_item.updated' = 'accounting.invoice_item.updated', 'accounting.invoice_item.deleted' = 'accounting.invoice_item.deleted', 'accounting.ledger_account.created' = 'accounting.ledger_account.created', 'accounting.ledger_account.updated' = 'accounting.ledger_account.updated', 'accounting.ledger_account.deleted' = 'accounting.ledger_account.deleted', 'accounting.tax_rate.created' = 'accounting.tax_rate.created', 'accounting.tax_rate.updated' = 'accounting.tax_rate.updated', 'accounting.tax_rate.deleted' = 'accounting.tax_rate.deleted', 'accounting.bill.created' = 'accounting.bill.created', 'accounting.bill.updated' = 'accounting.bill.updated', 'accounting.bill.deleted' = 'accounting.bill.deleted', 'accounting.payment.created' = 'accounting.payment.created', 'accounting.payment.updated' = 'accounting.payment.updated', 'accounting.payment.deleted' = 'accounting.payment.deleted', 'accounting.supplier.created' = 'accounting.supplier.created', 'accounting.supplier.updated' = 'accounting.supplier.updated', 'accounting.supplier.deleted' = 'accounting.supplier.deleted', 'accounting.purchase-order.created' = 'accounting.purchase-order.created', 'accounting.purchase-order.updated' = 'accounting.purchase-order.updated', 'accounting.purchase-order.deleted' = 'accounting.purchase-order.deleted' }
 
 	export interface AccountingWebhookEvent {
 	}
@@ -1562,9 +1562,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BillLineItemType { expense_item = 0, expense_account = 1 }
+	export enum BillLineItemType { expense_item = 'expense_item', expense_account = 'expense_account' }
 
-	export enum BillStatus { draft = 0, submitted = 1, authorised = 2, partially_paid = 3, paid = 4, void = 5, credit = 6, deleted = 7 }
+	export enum BillStatus { draft = 'draft', submitted = 'submitted', authorised = 'authorised', partially_paid = 'partially_paid', paid = 'paid', void = 'void', credit = 'credit', deleted = 'deleted' }
 
 
 	/** The supplier this entity is linked to. */
@@ -1639,9 +1639,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BillsSortBy { updated_at = 0 }
+	export enum BillsSortBy { updated_at = 'updated_at' }
 
-	export enum BillsSortDirection { asc = 0, desc = 1 }
+	export enum BillsSortDirection { asc = 'asc', desc = 'desc' }
 
 	export interface Company {
 
@@ -2282,11 +2282,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TaxRateStatus { active = 0, inactive = 1, archived = 2 }
+	export enum TaxRateStatus { active = 'active', inactive = 'inactive', archived = 'archived' }
 
-	export enum CompanyInfoFiscal_year_start_month { January = 0, February = 1, March = 2, April = 3, May = 4, June = 5, July = 6, August = 7, September = 8, October = 9, November = 10, December = 11 }
+	export enum CompanyInfoFiscal_year_start_month { January = 'January', February = 'February', March = 'March', April = 'April', May = 'May', June = 'June', July = 'July', August = 'August', September = 'September', October = 'October', November = 'November', December = 'December' }
 
-	export enum CompanyInfoStatus { active = 0, inactive = 1 }
+	export enum CompanyInfoStatus { active = 'active', inactive = 'inactive' }
 
 	export interface Contact {
 
@@ -2525,9 +2525,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactGender { male = 0, female = 1, unisex = 2 }
+	export enum ContactGender { male = 'male', female = 'female', unisex = 'unisex' }
 
-	export enum ContactType { customer = 0, supplier = 1, employee = 2, personal = 3 }
+	export enum ContactType { customer = 'customer', supplier = 'supplier', employee = 'employee', personal = 'personal' }
 
 	export interface CreateBillResponse {
 
@@ -3660,7 +3660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreditNoteAllocationsType { invoice = 0, order = 1, expense = 2, credit_memo = 3, over_payment = 4, pre_payment = 5 }
+	export enum CreditNoteAllocationsType { invoice = 'invoice', order = 'order', expense = 'expense', credit_memo = 'credit_memo', over_payment = 'over_payment', pre_payment = 'pre_payment' }
 
 
 	/** The customer this entity is linked to. */
@@ -3865,15 +3865,15 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceLineItemType { sales_item = 0, discount = 1, info = 2, sub_total = 3 }
+	export enum InvoiceLineItemType { sales_item = 'sales_item', discount = 'discount', info = 'info', sub_total = 'sub_total' }
 
-	export enum CreditNoteStatus { draft = 0, authorised = 1, paid = 2, voided = 3, deleted = 4 }
+	export enum CreditNoteStatus { draft = 'draft', authorised = 'authorised', paid = 'paid', voided = 'voided', deleted = 'deleted' }
 
-	export enum CreditNoteType { accounts_receivable_credit = 0, accounts_payable_credit = 1 }
+	export enum CreditNoteType { accounts_receivable_credit = 'accounts_receivable_credit', accounts_payable_credit = 'accounts_payable_credit' }
 
 
 	/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
-	export enum Currency { UNKNOWN_CURRENCY = 0, AED = 1, AFN = 2, ALL = 3, AMD = 4, ANG = 5, AOA = 6, ARS = 7, AUD = 8, AWG = 9, AZN = 10, BAM = 11, BBD = 12, BDT = 13, BGN = 14, BHD = 15, BIF = 16, BMD = 17, BND = 18, BOB = 19, BOV = 20, BRL = 21, BSD = 22, BTN = 23, BWP = 24, BYR = 25, BZD = 26, CAD = 27, CDF = 28, CHE = 29, CHF = 30, CHW = 31, CLF = 32, CLP = 33, CNY = 34, COP = 35, COU = 36, CRC = 37, CUC = 38, CUP = 39, CVE = 40, CZK = 41, DJF = 42, DKK = 43, DOP = 44, DZD = 45, EGP = 46, ERN = 47, ETB = 48, EUR = 49, FJD = 50, FKP = 51, GBP = 52, GEL = 53, GHS = 54, GIP = 55, GMD = 56, GNF = 57, GTQ = 58, GYD = 59, HKD = 60, HNL = 61, HRK = 62, HTG = 63, HUF = 64, IDR = 65, ILS = 66, INR = 67, IQD = 68, IRR = 69, ISK = 70, JMD = 71, JOD = 72, JPY = 73, KES = 74, KGS = 75, KHR = 76, KMF = 77, KPW = 78, KRW = 79, KWD = 80, KYD = 81, KZT = 82, LAK = 83, LBP = 84, LKR = 85, LRD = 86, LSL = 87, LTL = 88, LVL = 89, LYD = 90, MAD = 91, MDL = 92, MGA = 93, MKD = 94, MMK = 95, MNT = 96, MOP = 97, MRO = 98, MUR = 99, MVR = 100, MWK = 101, MXN = 102, MXV = 103, MYR = 104, MZN = 105, NAD = 106, NGN = 107, NIO = 108, NOK = 109, NPR = 110, NZD = 111, OMR = 112, PAB = 113, PEN = 114, PGK = 115, PHP = 116, PKR = 117, PLN = 118, PYG = 119, QAR = 120, RON = 121, RSD = 122, RUB = 123, RWF = 124, SAR = 125, SBD = 126, SCR = 127, SDG = 128, SEK = 129, SGD = 130, SHP = 131, SLL = 132, SOS = 133, SRD = 134, SSP = 135, STD = 136, SVC = 137, SYP = 138, SZL = 139, THB = 140, TJS = 141, TMT = 142, TND = 143, TOP = 144, TRC = 145, TRY = 146, TTD = 147, TWD = 148, TZS = 149, UAH = 150, UGX = 151, USD = 152, USN = 153, USS = 154, UYI = 155, UYU = 156, UZS = 157, VEF = 158, VND = 159, VUV = 160, WST = 161, XAF = 162, XAG = 163, XAU = 164, XBA = 165, XBB = 166, XBC = 167, XBD = 168, XCD = 169, XDR = 170, XOF = 171, XPD = 172, XPF = 173, XPT = 174, XTS = 175, XXX = 176, YER = 177, ZAR = 178, ZMK = 179, ZMW = 180, BTC = 181, ETH = 182 }
+	export enum Currency { UNKNOWN_CURRENCY = 'UNKNOWN_CURRENCY', AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRC = 'TRC', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', USN = 'USN', USS = 'USS', UYI = 'UYI', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', XTS = 'XTS', XXX = 'XXX', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', BTC = 'BTC', ETH = 'ETH' }
 
 	export interface Customer {
 		account?: LinkedLedgerAccount;
@@ -4109,7 +4109,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomersFilterStatus { active = 0, inactive = 1, archived = 2, all = 3 }
+	export enum CustomersFilterStatus { active = 'active', inactive = 'inactive', archived = 'archived', all = 'all' }
 
 	export interface DeleteBillResponse {
 
@@ -5992,7 +5992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceItemType { inventory = 0, service = 1, other = 2 }
+	export enum InvoiceItemType { inventory = 'inventory', service = 'service', other = 'other' }
 
 	export interface GetInvoiceItemsResponse {
 
@@ -6416,7 +6416,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceType { standard = 0, credit = 1, service = 2, product = 3, supplier = 4, other = 5 }
+	export enum InvoiceType { standard = 'standard', credit = 'credit', service = 'service', product = 'product', supplier = 'supplier', other = 'other' }
 
 	export interface GetInvoicesResponse {
 
@@ -6793,7 +6793,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JournalEntryLineItemType { debit = 0, credit = 1 }
+	export enum JournalEntryLineItemType { debit = 'debit', credit = 'credit' }
 
 	export interface GetJournalEntryResponse {
 
@@ -7164,7 +7164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LedgerAccountClassification { asset = 0, equity = 1, expense = 2, liability = 3, revenue = 4, income = 5, other_income = 6, other_expense = 7, costs_of_sales = 8 }
+	export enum LedgerAccountClassification { asset = 'asset', equity = 'equity', expense = 'expense', liability = 'liability', revenue = 'revenue', income = 'income', other_income = 'other_income', other_expense = 'other_expense', costs_of_sales = 'costs_of_sales' }
 
 	export interface LedgerAccountParent_account {
 
@@ -7221,7 +7221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LedgerAccountType { accounts_receivable = 0, revenue = 1, sales = 2, other_income = 3, bank = 4, current_asset = 5, fixed_asset = 6, non_current_asset = 7, other_asset = 8, balancesheet = 9, equity = 10, expense = 11, other_expense = 12, costs_of_sales = 13, accounts_payable = 14, credit_card = 15, current_liability = 16, non_current_liability = 17, other_liability = 18, other = 19 }
+	export enum LedgerAccountType { accounts_receivable = 'accounts_receivable', revenue = 'revenue', sales = 'sales', other_income = 'other_income', bank = 'bank', current_asset = 'current_asset', fixed_asset = 'fixed_asset', non_current_asset = 'non_current_asset', other_asset = 'other_asset', balancesheet = 'balancesheet', equity = 'equity', expense = 'expense', other_expense = 'other_expense', costs_of_sales = 'costs_of_sales', accounts_payable = 'accounts_payable', credit_card = 'credit_card', current_liability = 'current_liability', non_current_liability = 'non_current_liability', other_liability = 'other_liability', other = 'other' }
 
 	export interface GetLedgerAccountsResponse {
 
@@ -7612,9 +7612,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentStatus { authorised = 0, paid = 1, voided = 2, deleted = 3 }
+	export enum PaymentStatus { authorised = 'authorised', paid = 'paid', voided = 'voided', deleted = 'deleted' }
 
-	export enum PaymentType { accounts_receivable = 0, accounts_payable = 1, accounts_receivable_credit = 2, accounts_payable_credit = 3, accounts_receivable_overpayment = 4, accounts_payable_overpayment = 5, accounts_receivable_prepayment = 6, accounts_payable_prepayment = 7 }
+	export enum PaymentType { accounts_receivable = 'accounts_receivable', accounts_payable = 'accounts_payable', accounts_receivable_credit = 'accounts_receivable_credit', accounts_payable_credit = 'accounts_payable_credit', accounts_receivable_overpayment = 'accounts_receivable_overpayment', accounts_payable_overpayment = 'accounts_payable_overpayment', accounts_receivable_prepayment = 'accounts_receivable_prepayment', accounts_payable_prepayment = 'accounts_payable_prepayment' }
 
 	export interface GetPaymentsResponse {
 
@@ -8261,7 +8261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PurchaseOrderStatus { draft = 0, open = 1, closed = 2, deleted = 3, billed = 4, other = 5 }
+	export enum PurchaseOrderStatus { draft = 'draft', open = 'open', closed = 'closed', deleted = 'deleted', billed = 'billed', other = 'other' }
 
 	export interface GetPurchaseOrdersResponse {
 
@@ -9274,7 +9274,7 @@ export namespace MyNS {
 
 
 	/** The direction in which to sort the results */
-	export enum SortDirection { asc = 0, desc = 1 }
+	export enum SortDirection { asc = 'asc', desc = 'desc' }
 
 	export interface SuppliersFilter {
 

@@ -525,7 +525,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { page_view = 0, sign_up = 1, sign_in = 2, content_posted = 3, create_post = 4, publish_post = 5, update_post = 6, delete_post = 7, unpublish_post = 8, invite = 9, publish_newsletter = 10, publish_social = 11, click = 12, delivered = 13, open = 14, dropped = 15, bounce = 16 }
+	export enum EventType { page_view = 'page_view', sign_up = 'sign_up', sign_in = 'sign_in', content_posted = 'content_posted', create_post = 'create_post', publish_post = 'publish_post', update_post = 'update_post', delete_post = 'delete_post', unpublish_post = 'unpublish_post', invite = 'invite', publish_newsletter = 'publish_newsletter', publish_social = 'publish_social', click = 'click', delivered = 'delivered', open = 'open', dropped = 'dropped', bounce = 'bounce' }
 
 	export interface EventContent {
 

@@ -277,9 +277,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkType { TYPE_UNSPECIFIED = 0, CHILD_LINKED_SPAN = 1, PARENT_LINKED_SPAN = 2 }
+	export enum LinkType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CHILD_LINKED_SPAN = 'CHILD_LINKED_SPAN', PARENT_LINKED_SPAN = 'PARENT_LINKED_SPAN' }
 
-	export enum SpanSpanKind { SPAN_KIND_UNSPECIFIED = 0, INTERNAL = 1, SERVER = 2, CLIENT = 3, PRODUCER = 4, CONSUMER = 5 }
+	export enum SpanSpanKind { SPAN_KIND_UNSPECIFIED = 'SPAN_KIND_UNSPECIFIED', INTERNAL = 'INTERNAL', SERVER = 'SERVER', CLIENT = 'CLIENT', PRODUCER = 'PRODUCER', CONSUMER = 'CONSUMER' }
 
 
 	/** A call stack appearing in a trace. */
@@ -523,7 +523,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageEventType { TYPE_UNSPECIFIED = 0, SENT = 1, RECEIVED = 2 }
+	export enum MessageEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', SENT = 'SENT', RECEIVED = 'RECEIVED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

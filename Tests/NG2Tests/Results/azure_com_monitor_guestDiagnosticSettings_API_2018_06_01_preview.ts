@@ -149,7 +149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceKind { PerformanceCounter = 0, ETWProviders = 1, WindowsEventLogs = 2 }
+	export enum DataSourceKind { PerformanceCounter = 'PerformanceCounter', ETWProviders = 'ETWProviders', WindowsEventLogs = 'WindowsEventLogs' }
 
 	export interface SinkConfiguration {
 
@@ -168,7 +168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SinkConfigurationKind { EventHub = 0, ApplicationInsights = 1, LogAnalytics = 2 }
+	export enum SinkConfigurationKind { EventHub = 'EventHub', ApplicationInsights = 'ApplicationInsights', LogAnalytics = 'LogAnalytics' }
 
 
 	/** Describes the format of Error response. */
@@ -225,7 +225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GuestDiagnosticSettingsOsType { Windows = 0, Linux = 1 }
+	export enum GuestDiagnosticSettingsOsType { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/** A list of guest diagnostic settings. */

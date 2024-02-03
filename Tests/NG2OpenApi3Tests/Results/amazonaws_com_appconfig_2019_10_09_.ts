@@ -102,7 +102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidatorType { JSON_SCHEMA = 0, LAMBDA = 1 }
+	export enum ValidatorType { JSON_SCHEMA = 'JSON_SCHEMA', LAMBDA = 'LAMBDA' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -148,9 +148,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GrowthType { LINEAR = 0, EXPONENTIAL = 1 }
+	export enum GrowthType { LINEAR = 'LINEAR', EXPONENTIAL = 'EXPONENTIAL' }
 
-	export enum ReplicateTo { NONE = 0, SSM_DOCUMENT = 1 }
+	export enum ReplicateTo { NONE = 'NONE', SSM_DOCUMENT = 'SSM_DOCUMENT' }
 
 	export interface Environment {
 		ApplicationId?: string;
@@ -178,7 +178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentState { READY_FOR_DEPLOYMENT = 0, DEPLOYING = 1, ROLLING_BACK = 2, ROLLED_BACK = 3 }
+	export enum EnvironmentState { READY_FOR_DEPLOYMENT = 'READY_FOR_DEPLOYMENT', DEPLOYING = 'DEPLOYING', ROLLING_BACK = 'ROLLING_BACK', ROLLED_BACK = 'ROLLED_BACK' }
 
 
 	/** Amazon CloudWatch alarms to monitor during the deployment process. */
@@ -458,7 +458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentState { BAKING = 0, VALIDATING = 1, DEPLOYING = 2, COMPLETE = 3, ROLLING_BACK = 4, ROLLED_BACK = 5 }
+	export enum DeploymentState { BAKING = 'BAKING', VALIDATING = 'VALIDATING', DEPLOYING = 'DEPLOYING', COMPLETE = 'COMPLETE', ROLLING_BACK = 'ROLLING_BACK', ROLLED_BACK = 'ROLLED_BACK' }
 
 
 	/** An object that describes a deployment event. */
@@ -487,9 +487,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentEventType { PERCENTAGE_UPDATED = 0, ROLLBACK_STARTED = 1, ROLLBACK_COMPLETED = 2, BAKE_TIME_STARTED = 3, DEPLOYMENT_STARTED = 4, DEPLOYMENT_COMPLETED = 5 }
+	export enum DeploymentEventType { PERCENTAGE_UPDATED = 'PERCENTAGE_UPDATED', ROLLBACK_STARTED = 'ROLLBACK_STARTED', ROLLBACK_COMPLETED = 'ROLLBACK_COMPLETED', BAKE_TIME_STARTED = 'BAKE_TIME_STARTED', DEPLOYMENT_STARTED = 'DEPLOYMENT_STARTED', DEPLOYMENT_COMPLETED = 'DEPLOYMENT_COMPLETED' }
 
-	export enum TriggeredBy { USER = 0, APPCONFIG = 1, CLOUDWATCH_ALARM = 2, INTERNAL_ERROR = 3 }
+	export enum TriggeredBy { USER = 'USER', APPCONFIG = 'APPCONFIG', CLOUDWATCH_ALARM = 'CLOUDWATCH_ALARM', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 
 	/** An extension that was invoked as part of a deployment event. */
@@ -844,7 +844,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionPoint { PRE_CREATE_HOSTED_CONFIGURATION_VERSION = 0, PRE_START_DEPLOYMENT = 1, ON_DEPLOYMENT_START = 2, ON_DEPLOYMENT_STEP = 3, ON_DEPLOYMENT_BAKING = 4, ON_DEPLOYMENT_COMPLETE = 5, ON_DEPLOYMENT_ROLLED_BACK = 6 }
+	export enum ActionPoint { PRE_CREATE_HOSTED_CONFIGURATION_VERSION = 'PRE_CREATE_HOSTED_CONFIGURATION_VERSION', PRE_START_DEPLOYMENT = 'PRE_START_DEPLOYMENT', ON_DEPLOYMENT_START = 'ON_DEPLOYMENT_START', ON_DEPLOYMENT_STEP = 'ON_DEPLOYMENT_STEP', ON_DEPLOYMENT_BAKING = 'ON_DEPLOYMENT_BAKING', ON_DEPLOYMENT_COMPLETE = 'ON_DEPLOYMENT_COMPLETE', ON_DEPLOYMENT_ROLLED_BACK = 'ON_DEPLOYMENT_ROLLED_BACK' }
 
 	export interface CreateApplicationRequest {
 

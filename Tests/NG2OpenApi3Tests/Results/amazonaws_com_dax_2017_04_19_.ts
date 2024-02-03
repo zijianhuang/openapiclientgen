@@ -199,9 +199,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SSEStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3 }
+	export enum SSEStatus { ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED' }
 
-	export enum ClusterEndpointEncryptionType { NONE = 0, TLS = 1 }
+	export enum ClusterEndpointEncryptionType { NONE = 'NONE', TLS = 'TLS' }
 
 	export interface CreateClusterRequest {
 
@@ -885,7 +885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterType { DEFAULT = 0, NODE_TYPE_SPECIFIC = 1 }
+	export enum ParameterType { DEFAULT = 'DEFAULT', NODE_TYPE_SPECIFIC = 'NODE_TYPE_SPECIFIC' }
 
 
 	/** Represents a parameter value that is applicable to a particular node type. */
@@ -907,9 +907,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IsModifiable { TRUE = 0, FALSE = 1, CONDITIONAL = 2 }
+	export enum IsModifiable { TRUE = 'TRUE', FALSE = 'FALSE', CONDITIONAL = 'CONDITIONAL' }
 
-	export enum ChangeType { IMMEDIATE = 0, REQUIRES_REBOOT = 1 }
+	export enum ChangeType { IMMEDIATE = 'IMMEDIATE', REQUIRES_REBOOT = 'REQUIRES_REBOOT' }
 
 	export interface DescribeDefaultParametersRequest {
 		MaxResults?: number | null;
@@ -967,7 +967,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { CLUSTER = 0, PARAMETER_GROUP = 1, SUBNET_GROUP = 2 }
+	export enum SourceType { CLUSTER = 'CLUSTER', PARAMETER_GROUP = 'PARAMETER_GROUP', SUBNET_GROUP = 'SUBNET_GROUP' }
 
 	export interface DescribeEventsRequest {
 		SourceName?: string;
@@ -1621,47 +1621,47 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateClusterX_Amz_Target { 'AmazonDAXV3.CreateCluster' = 0 }
+	export enum CreateClusterX_Amz_Target { 'AmazonDAXV3.CreateCluster' = 'AmazonDAXV3.CreateCluster' }
 
-	export enum CreateParameterGroupX_Amz_Target { 'AmazonDAXV3.CreateParameterGroup' = 0 }
+	export enum CreateParameterGroupX_Amz_Target { 'AmazonDAXV3.CreateParameterGroup' = 'AmazonDAXV3.CreateParameterGroup' }
 
-	export enum CreateSubnetGroupX_Amz_Target { 'AmazonDAXV3.CreateSubnetGroup' = 0 }
+	export enum CreateSubnetGroupX_Amz_Target { 'AmazonDAXV3.CreateSubnetGroup' = 'AmazonDAXV3.CreateSubnetGroup' }
 
-	export enum DecreaseReplicationFactorX_Amz_Target { 'AmazonDAXV3.DecreaseReplicationFactor' = 0 }
+	export enum DecreaseReplicationFactorX_Amz_Target { 'AmazonDAXV3.DecreaseReplicationFactor' = 'AmazonDAXV3.DecreaseReplicationFactor' }
 
-	export enum DeleteClusterX_Amz_Target { 'AmazonDAXV3.DeleteCluster' = 0 }
+	export enum DeleteClusterX_Amz_Target { 'AmazonDAXV3.DeleteCluster' = 'AmazonDAXV3.DeleteCluster' }
 
-	export enum DeleteParameterGroupX_Amz_Target { 'AmazonDAXV3.DeleteParameterGroup' = 0 }
+	export enum DeleteParameterGroupX_Amz_Target { 'AmazonDAXV3.DeleteParameterGroup' = 'AmazonDAXV3.DeleteParameterGroup' }
 
-	export enum DeleteSubnetGroupX_Amz_Target { 'AmazonDAXV3.DeleteSubnetGroup' = 0 }
+	export enum DeleteSubnetGroupX_Amz_Target { 'AmazonDAXV3.DeleteSubnetGroup' = 'AmazonDAXV3.DeleteSubnetGroup' }
 
-	export enum DescribeClustersX_Amz_Target { 'AmazonDAXV3.DescribeClusters' = 0 }
+	export enum DescribeClustersX_Amz_Target { 'AmazonDAXV3.DescribeClusters' = 'AmazonDAXV3.DescribeClusters' }
 
-	export enum DescribeDefaultParametersX_Amz_Target { 'AmazonDAXV3.DescribeDefaultParameters' = 0 }
+	export enum DescribeDefaultParametersX_Amz_Target { 'AmazonDAXV3.DescribeDefaultParameters' = 'AmazonDAXV3.DescribeDefaultParameters' }
 
-	export enum DescribeEventsX_Amz_Target { 'AmazonDAXV3.DescribeEvents' = 0 }
+	export enum DescribeEventsX_Amz_Target { 'AmazonDAXV3.DescribeEvents' = 'AmazonDAXV3.DescribeEvents' }
 
-	export enum DescribeParameterGroupsX_Amz_Target { 'AmazonDAXV3.DescribeParameterGroups' = 0 }
+	export enum DescribeParameterGroupsX_Amz_Target { 'AmazonDAXV3.DescribeParameterGroups' = 'AmazonDAXV3.DescribeParameterGroups' }
 
-	export enum DescribeParametersX_Amz_Target { 'AmazonDAXV3.DescribeParameters' = 0 }
+	export enum DescribeParametersX_Amz_Target { 'AmazonDAXV3.DescribeParameters' = 'AmazonDAXV3.DescribeParameters' }
 
-	export enum DescribeSubnetGroupsX_Amz_Target { 'AmazonDAXV3.DescribeSubnetGroups' = 0 }
+	export enum DescribeSubnetGroupsX_Amz_Target { 'AmazonDAXV3.DescribeSubnetGroups' = 'AmazonDAXV3.DescribeSubnetGroups' }
 
-	export enum IncreaseReplicationFactorX_Amz_Target { 'AmazonDAXV3.IncreaseReplicationFactor' = 0 }
+	export enum IncreaseReplicationFactorX_Amz_Target { 'AmazonDAXV3.IncreaseReplicationFactor' = 'AmazonDAXV3.IncreaseReplicationFactor' }
 
-	export enum ListTagsX_Amz_Target { 'AmazonDAXV3.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'AmazonDAXV3.ListTags' = 'AmazonDAXV3.ListTags' }
 
-	export enum RebootNodeX_Amz_Target { 'AmazonDAXV3.RebootNode' = 0 }
+	export enum RebootNodeX_Amz_Target { 'AmazonDAXV3.RebootNode' = 'AmazonDAXV3.RebootNode' }
 
-	export enum TagResourceX_Amz_Target { 'AmazonDAXV3.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonDAXV3.TagResource' = 'AmazonDAXV3.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AmazonDAXV3.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonDAXV3.UntagResource' = 'AmazonDAXV3.UntagResource' }
 
-	export enum UpdateClusterX_Amz_Target { 'AmazonDAXV3.UpdateCluster' = 0 }
+	export enum UpdateClusterX_Amz_Target { 'AmazonDAXV3.UpdateCluster' = 'AmazonDAXV3.UpdateCluster' }
 
-	export enum UpdateParameterGroupX_Amz_Target { 'AmazonDAXV3.UpdateParameterGroup' = 0 }
+	export enum UpdateParameterGroupX_Amz_Target { 'AmazonDAXV3.UpdateParameterGroup' = 'AmazonDAXV3.UpdateParameterGroup' }
 
-	export enum UpdateSubnetGroupX_Amz_Target { 'AmazonDAXV3.UpdateSubnetGroup' = 0 }
+	export enum UpdateSubnetGroupX_Amz_Target { 'AmazonDAXV3.UpdateSubnetGroup' = 'AmazonDAXV3.UpdateSubnetGroup' }
 
 }
 

@@ -146,7 +146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JsonSchemaJdbcType { DATA_TYPE_UNSPECIFIED = 0, INT = 1, SMALLINT = 2, DOUBLE = 3, DATE = 4, DATETIME = 5, TIME = 6, STRING = 7, LONG = 8, BOOLEAN = 9, DECIMAL = 10, UUID = 11, BLOB = 12, BIT = 13, TINYINT = 14, INTEGER = 15, BIGINT = 16, FLOAT = 17, REAL = 18, NUMERIC = 19, CHAR = 20, VARCHAR = 21, LONGVARCHAR = 22, TIMESTAMP = 23, NCHAR = 24, NVARCHAR = 25, LONGNVARCHAR = 26, NULL = 27, OTHER = 28, JAVA_OBJECT = 29, DISTINCT = 30, STRUCT = 31, ARRAY = 32, CLOB = 33, REF = 34, DATALINK = 35, ROWID = 36, BINARY = 37, VARBINARY = 38, LONGVARBINARY = 39, NCLOB = 40, SQLXML = 41, REF_CURSOR = 42, TIME_WITH_TIMEZONE = 43, TIMESTAMP_WITH_TIMEZONE = 44 }
+	export enum JsonSchemaJdbcType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', INT = 'INT', SMALLINT = 'SMALLINT', DOUBLE = 'DOUBLE', DATE = 'DATE', DATETIME = 'DATETIME', TIME = 'TIME', STRING = 'STRING', LONG = 'LONG', BOOLEAN = 'BOOLEAN', DECIMAL = 'DECIMAL', UUID = 'UUID', BLOB = 'BLOB', BIT = 'BIT', TINYINT = 'TINYINT', INTEGER = 'INTEGER', BIGINT = 'BIGINT', FLOAT = 'FLOAT', REAL = 'REAL', NUMERIC = 'NUMERIC', CHAR = 'CHAR', VARCHAR = 'VARCHAR', LONGVARCHAR = 'LONGVARCHAR', TIMESTAMP = 'TIMESTAMP', NCHAR = 'NCHAR', NVARCHAR = 'NVARCHAR', LONGNVARCHAR = 'LONGNVARCHAR', NULL = 'NULL', OTHER = 'OTHER', JAVA_OBJECT = 'JAVA_OBJECT', DISTINCT = 'DISTINCT', STRUCT = 'STRUCT', ARRAY = 'ARRAY', CLOB = 'CLOB', REF = 'REF', DATALINK = 'DATALINK', ROWID = 'ROWID', BINARY = 'BINARY', VARBINARY = 'VARBINARY', LONGVARBINARY = 'LONGVARBINARY', NCLOB = 'NCLOB', SQLXML = 'SQLXML', REF_CURSOR = 'REF_CURSOR', TIME_WITH_TIMEZONE = 'TIME_WITH_TIMEZONE', TIMESTAMP_WITH_TIMEZONE = 'TIMESTAMP_WITH_TIMEZONE' }
 
 
 	/** Input Parameter message contains metadata about the parameters required for executing an Action. */
@@ -290,7 +290,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckStatusResponseState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ERROR = 2, AUTH_ERROR = 3 }
+	export enum CheckStatusResponseState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', ERROR = 'ERROR', AUTH_ERROR = 'AUTH_ERROR' }
 
 
 	/** Time window specified for daily operations. */
@@ -1001,7 +1001,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 0, READY = 1, DELETING = 2 }
+	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', DELETING = 'DELETING' }
 
 
 	/** Maintenance policy applicable to instance updates. */
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 0, EARLIER = 1, LATER = 2, WEEK1 = 3, WEEK2 = 4, WEEK5 = 5 }
+	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 'UPDATE_CHANNEL_UNSPECIFIED', EARLIER = 'EARLIER', LATER = 'LATER', WEEK1 = 'WEEK1', WEEK2 = 'WEEK2', WEEK5 = 'WEEK5' }
 
 
 	/** MaintenanceWindow definition. */
@@ -1100,7 +1100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Contains notification related data. */
@@ -1254,7 +1254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, REPAIRING = 4, DELETING = 5, ERROR = 6 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', REPAIRING = 'REPAIRING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** Response message for ActionService.ListActions */
@@ -1550,9 +1550,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Connectors_projects_locations_connections_actions_listView { ACTION_VIEW_UNSPECIFIED = 0, ACTION_VIEW_BASIC = 1, ACTION_VIEW_FULL = 2 }
+	export enum Connectors_projects_locations_connections_actions_listView { ACTION_VIEW_UNSPECIFIED = 'ACTION_VIEW_UNSPECIFIED', ACTION_VIEW_BASIC = 'ACTION_VIEW_BASIC', ACTION_VIEW_FULL = 'ACTION_VIEW_FULL' }
 
-	export enum Connectors_projects_locations_connections_entityTypes_listView { ENTITY_TYPE_VIEW_UNSPECIFIED = 0, ENTITY_TYPE_VIEW_BASIC = 1, ENTITY_TYPE_VIEW_FULL = 2 }
+	export enum Connectors_projects_locations_connections_entityTypes_listView { ENTITY_TYPE_VIEW_UNSPECIFIED = 'ENTITY_TYPE_VIEW_UNSPECIFIED', ENTITY_TYPE_VIEW_BASIC = 'ENTITY_TYPE_VIEW_BASIC', ENTITY_TYPE_VIEW_FULL = 'ENTITY_TYPE_VIEW_FULL' }
 
 }
 

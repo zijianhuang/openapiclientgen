@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -195,7 +195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudSqlPropertiesType { DATABASE_TYPE_UNSPECIFIED = 0, POSTGRES = 1, MYSQL = 2 }
+	export enum CloudSqlPropertiesType { DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED', POSTGRES = 'POSTGRES', MYSQL = 'MYSQL' }
 
 
 	/** Configuration parameters to establish connection with an external data source, except the credential attributes. */

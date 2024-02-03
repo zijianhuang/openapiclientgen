@@ -125,7 +125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemType { OBJECT = 0, FOLDER = 1 }
+	export enum ItemType { OBJECT = 'OBJECT', FOLDER = 'FOLDER' }
 
 	export interface PutObjectResponse {
 		ContentSHA256?: string;
@@ -146,7 +146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageClass { TEMPORAL = 0 }
+	export enum StorageClass { TEMPORAL = 'TEMPORAL' }
 
 	export interface DeleteObjectRequest {
 	}
@@ -188,7 +188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UploadAvailability { STANDARD = 0, STREAMING = 1 }
+	export enum UploadAvailability { STANDARD = 'STANDARD', STREAMING = 'STREAMING' }
 
 	export interface PutObjectRequest {
 

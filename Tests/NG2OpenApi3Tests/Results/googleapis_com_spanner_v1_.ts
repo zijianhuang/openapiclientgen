@@ -179,7 +179,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupDatabaseDialect { DATABASE_DIALECT_UNSPECIFIED = 0, GOOGLE_STANDARD_SQL = 1, POSTGRESQL = 2 }
+	export enum BackupDatabaseDialect { DATABASE_DIALECT_UNSPECIFIED = 'DATABASE_DIALECT_UNSPECIFIED', GOOGLE_STANDARD_SQL = 'GOOGLE_STANDARD_SQL', POSTGRESQL = 'POSTGRESQL' }
 
 
 	/** Encryption information for a Cloud Spanner database or backup. */
@@ -243,9 +243,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionInfoEncryptionType { TYPE_UNSPECIFIED = 0, GOOGLE_DEFAULT_ENCRYPTION = 1, CUSTOMER_MANAGED_ENCRYPTION = 2 }
+	export enum EncryptionInfoEncryptionType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GOOGLE_DEFAULT_ENCRYPTION = 'GOOGLE_DEFAULT_ENCRYPTION', CUSTOMER_MANAGED_ENCRYPTION = 'CUSTOMER_MANAGED_ENCRYPTION' }
 
-	export enum BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2 }
+	export enum BackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY' }
 
 
 	/** Information about a backup. */
@@ -584,7 +584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestOptionsPriority { PRIORITY_UNSPECIFIED = 0, PRIORITY_LOW = 1, PRIORITY_MEDIUM = 2, PRIORITY_HIGH = 3 }
+	export enum RequestOptionsPriority { PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED', PRIORITY_LOW = 'PRIORITY_LOW', PRIORITY_MEDIUM = 'PRIORITY_MEDIUM', PRIORITY_HIGH = 'PRIORITY_HIGH' }
 
 
 	/** The result of applying a batch of mutations. */
@@ -747,7 +747,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadWriteReadLockMode { READ_LOCK_MODE_UNSPECIFIED = 0, PESSIMISTIC = 1, OPTIMISTIC = 2 }
+	export enum ReadWriteReadLockMode { READ_LOCK_MODE_UNSPECIFIED = 'READ_LOCK_MODE_UNSPECIFIED', PESSIMISTIC = 'PESSIMISTIC', OPTIMISTIC = 'OPTIMISTIC' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -1008,7 +1008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContextValueSeverity { SEVERITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ERROR = 3, FATAL = 4 }
+	export enum ContextValueSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', INFO = 'INFO', WARNING = 'WARNING', ERROR = 'ERROR', FATAL = 'FATAL' }
 
 
 	/** Encryption configuration for the copied backup. */
@@ -1038,7 +1038,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CopyBackupEncryptionConfigEncryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 0, USE_CONFIG_DEFAULT_OR_BACKUP_ENCRYPTION = 1, GOOGLE_DEFAULT_ENCRYPTION = 2, CUSTOMER_MANAGED_ENCRYPTION = 3 }
+	export enum CopyBackupEncryptionConfigEncryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 'ENCRYPTION_TYPE_UNSPECIFIED', USE_CONFIG_DEFAULT_OR_BACKUP_ENCRYPTION = 'USE_CONFIG_DEFAULT_OR_BACKUP_ENCRYPTION', GOOGLE_DEFAULT_ENCRYPTION = 'GOOGLE_DEFAULT_ENCRYPTION', CUSTOMER_MANAGED_ENCRYPTION = 'CUSTOMER_MANAGED_ENCRYPTION' }
 
 
 	/** Metadata type for the operation returned by CopyBackup. */
@@ -1385,9 +1385,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceConfigConfigType { TYPE_UNSPECIFIED = 0, GOOGLE_MANAGED = 1, USER_MANAGED = 2 }
+	export enum InstanceConfigConfigType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GOOGLE_MANAGED = 'GOOGLE_MANAGED', USER_MANAGED = 'USER_MANAGED' }
 
-	export enum InstanceConfigFreeInstanceAvailability { FREE_INSTANCE_AVAILABILITY_UNSPECIFIED = 0, AVAILABLE = 1, UNSUPPORTED = 2, DISABLED = 3, QUOTA_EXCEEDED = 4 }
+	export enum InstanceConfigFreeInstanceAvailability { FREE_INSTANCE_AVAILABILITY_UNSPECIFIED = 'FREE_INSTANCE_AVAILABILITY_UNSPECIFIED', AVAILABLE = 'AVAILABLE', UNSUPPORTED = 'UNSUPPORTED', DISABLED = 'DISABLED', QUOTA_EXCEEDED = 'QUOTA_EXCEEDED' }
 
 	export interface ReplicaInfo {
 
@@ -1420,7 +1420,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicaInfoType { TYPE_UNSPECIFIED = 0, READ_WRITE = 1, READ_ONLY = 2, WITNESS = 3 }
+	export enum ReplicaInfoType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', READ_WRITE = 'READ_WRITE', READ_ONLY = 'READ_ONLY', WITNESS = 'WITNESS' }
 
 
 	/** Encapsulates progress related information for a Cloud Spanner long running instance operations. */
@@ -1654,9 +1654,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FreeInstanceMetadataExpireBehavior { EXPIRE_BEHAVIOR_UNSPECIFIED = 0, FREE_TO_PROVISIONED = 1, REMOVE_AFTER_GRACE_PERIOD = 2 }
+	export enum FreeInstanceMetadataExpireBehavior { EXPIRE_BEHAVIOR_UNSPECIFIED = 'EXPIRE_BEHAVIOR_UNSPECIFIED', FREE_TO_PROVISIONED = 'FREE_TO_PROVISIONED', REMOVE_AFTER_GRACE_PERIOD = 'REMOVE_AFTER_GRACE_PERIOD' }
 
-	export enum InstanceInstanceType { INSTANCE_TYPE_UNSPECIFIED = 0, PROVISIONED = 1, FREE_INSTANCE = 2 }
+	export enum InstanceInstanceType { INSTANCE_TYPE_UNSPECIFIED = 'INSTANCE_TYPE_UNSPECIFIED', PROVISIONED = 'PROVISIONED', FREE_INSTANCE = 'FREE_INSTANCE' }
 
 
 	/** The request for CreateInstance. */
@@ -1809,9 +1809,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreInfoSourceType { TYPE_UNSPECIFIED = 0, BACKUP = 1 }
+	export enum RestoreInfoSourceType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', BACKUP = 'BACKUP' }
 
-	export enum DatabaseState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, READY_OPTIMIZING = 3 }
+	export enum DatabaseState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', READY_OPTIMIZING = 'READY_OPTIMIZING' }
 
 
 	/** A Cloud Spanner database role. */
@@ -1987,7 +1987,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicaSelectionType { TYPE_UNSPECIFIED = 0, READ_WRITE = 1, READ_ONLY = 2 }
+	export enum ReplicaSelectionType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', READ_WRITE = 'READ_WRITE', READ_ONLY = 'READ_ONLY' }
 
 
 	/** An IncludeReplicas contains a repeated set of ReplicaSelection which indicates the order in which replicas should be considered. */
@@ -2133,7 +2133,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeCode { TYPE_CODE_UNSPECIFIED = 0, BOOL = 1, INT64 = 2, FLOAT64 = 3, TIMESTAMP = 4, DATE = 5, STRING = 6, BYTES = 7, ARRAY = 8, STRUCT = 9, NUMERIC = 10, JSON = 11, PROTO = 12, ENUM = 13 }
+	export enum TypeCode { TYPE_CODE_UNSPECIFIED = 'TYPE_CODE_UNSPECIFIED', BOOL = 'BOOL', INT64 = 'INT64', FLOAT64 = 'FLOAT64', TIMESTAMP = 'TIMESTAMP', DATE = 'DATE', STRING = 'STRING', BYTES = 'BYTES', ARRAY = 'ARRAY', STRUCT = 'STRUCT', NUMERIC = 'NUMERIC', JSON = 'JSON', PROTO = 'PROTO', ENUM = 'ENUM' }
 
 
 	/** `StructType` defines the fields of a STRUCT type. */
@@ -2176,7 +2176,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeTypeAnnotation { TYPE_ANNOTATION_CODE_UNSPECIFIED = 0, PG_NUMERIC = 1, PG_JSONB = 2 }
+	export enum TypeTypeAnnotation { TYPE_ANNOTATION_CODE_UNSPECIFIED = 'TYPE_ANNOTATION_CODE_UNSPECIFIED', PG_NUMERIC = 'PG_NUMERIC', PG_JSONB = 'PG_JSONB' }
 
 
 	/** This message is used to select the transaction in which a Read or ExecuteSql call runs. See TransactionOptions for more information about transactions. */
@@ -2412,7 +2412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlanNodeKind { KIND_UNSPECIFIED = 0, RELATIONAL = 1, SCALAR = 2 }
+	export enum PlanNodeKind { KIND_UNSPECIFIED = 'KIND_UNSPECIFIED', RELATIONAL = 'RELATIONAL', SCALAR = 'SCALAR' }
 
 
 	/** Condensed representation of a node and its subtree. Only present for `SCALAR` PlanNode(s). */
@@ -2565,7 +2565,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecuteSqlRequestQueryMode { NORMAL = 0, PLAN = 1, PROFILE = 2 }
+	export enum ExecuteSqlRequestQueryMode { NORMAL = 'NORMAL', PLAN = 'PLAN', PROFILE = 'PROFILE' }
 
 
 	/** Query optimizer configuration. */
@@ -3206,7 +3206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VisualizationDataKeyUnit { KEY_UNIT_UNSPECIFIED = 0, KEY = 1, CHUNK = 2 }
+	export enum VisualizationDataKeyUnit { KEY_UNIT_UNSPECIFIED = 'KEY_UNIT_UNSPECIFIED', KEY = 'KEY', CHUNK = 'CHUNK' }
 
 
 	/** A message representing the actual monitoring data, values for each key bucket over time, of a metric. */
@@ -3282,7 +3282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricAggregation { AGGREGATION_UNSPECIFIED = 0, MAX = 1, SUM = 2 }
+	export enum MetricAggregation { AGGREGATION_UNSPECIFIED = 'AGGREGATION_UNSPECIFIED', MAX = 'MAX', SUM = 'SUM' }
 
 
 	/** A message representing a matrix of floats. */
@@ -4572,9 +4572,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Spanner_projects_instances_databases_getScansView { VIEW_UNSPECIFIED = 0, SUMMARY = 1, FULL = 2 }
+	export enum Spanner_projects_instances_databases_getScansView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', SUMMARY = 'SUMMARY', FULL = 'FULL' }
 
-	export enum Spanner_projects_instances_backups_createEncryptionConfig_encryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 0, USE_DATABASE_ENCRYPTION = 1, GOOGLE_DEFAULT_ENCRYPTION = 2, CUSTOMER_MANAGED_ENCRYPTION = 3 }
+	export enum Spanner_projects_instances_backups_createEncryptionConfig_encryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 'ENCRYPTION_TYPE_UNSPECIFIED', USE_DATABASE_ENCRYPTION = 'USE_DATABASE_ENCRYPTION', GOOGLE_DEFAULT_ENCRYPTION = 'GOOGLE_DEFAULT_ENCRYPTION', CUSTOMER_MANAGED_ENCRYPTION = 'CUSTOMER_MANAGED_ENCRYPTION' }
 
 }
 

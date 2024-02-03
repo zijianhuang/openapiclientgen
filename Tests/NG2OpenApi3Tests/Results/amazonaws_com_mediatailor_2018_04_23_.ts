@@ -17,7 +17,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogType { AS_RUN = 0 }
+	export enum LogType { AS_RUN = 'AS_RUN' }
 
 	export interface ConfigureLogsForPlaybackConfigurationResponse {
 
@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelState { RUNNING = 0, STOPPED = 1 }
+	export enum ChannelState { RUNNING = 'RUNNING', STOPPED = 'STOPPED' }
 
 
 	/** Slate VOD source configuration. */
@@ -176,7 +176,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdMarkupType { DATERANGE = 0, SCTE35_ENHANCED = 1 }
+	export enum AdMarkupType { DATERANGE = 'DATERANGE', SCTE35_ENHANCED = 'SCTE35_ENHANCED' }
 
 	export interface __mapOf__string {
 	}
@@ -280,7 +280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { DASH = 0, HLS = 1 }
+	export enum Type { DASH = 'DASH', HLS = 'HLS' }
 
 	export interface CreatePrefetchScheduleResponse {
 		Arn?: string;
@@ -359,7 +359,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator { EQUALS = 0 }
+	export enum Operator { EQUALS = 'EQUALS' }
 
 
 	/** A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server. */
@@ -477,7 +477,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageType { SPLICE_INSERT = 0, TIME_SIGNAL = 1 }
+	export enum MessageType { SPLICE_INSERT = 'SPLICE_INSERT', TIME_SIGNAL = 'TIME_SIGNAL' }
 
 
 	/** Splice insert message configuration. */
@@ -616,7 +616,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelativePosition { BEFORE_PROGRAM = 0, AFTER_PROGRAM = 1 }
+	export enum RelativePosition { BEFORE_PROGRAM = 'BEFORE_PROGRAM', AFTER_PROGRAM = 'AFTER_PROGRAM' }
 
 	export interface CreateSourceLocationResponse {
 		AccessConfiguration?: AccessConfiguration;
@@ -663,7 +663,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessType { S3_SIGV4 = 0, SECRETS_MANAGER_ACCESS_TOKEN = 1 }
+	export enum AccessType { S3_SIGV4 = 'S3_SIGV4', SECRETS_MANAGER_ACCESS_TOKEN = 'SECRETS_MANAGER_ACCESS_TOKEN' }
 
 
 	/** AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>. */
@@ -1136,7 +1136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleEntryType { PROGRAM = 0, FILLER_SLATE = 1 }
+	export enum ScheduleEntryType { PROGRAM = 'PROGRAM', FILLER_SLATE = 'FILLER_SLATE' }
 
 	export interface GetPlaybackConfigurationResponse {
 		AdDecisionServerUrl?: string;
@@ -1208,9 +1208,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FillPolicy { FULL_AVAIL_ONLY = 0, PARTIAL_AVAIL = 1 }
+	export enum FillPolicy { FULL_AVAIL_ONLY = 'FULL_AVAIL_ONLY', PARTIAL_AVAIL = 'PARTIAL_AVAIL' }
 
-	export enum Mode { OFF = 0, BEHIND_LIVE_EDGE = 1, AFTER_LIVE_EDGE = 2 }
+	export enum Mode { OFF = 'OFF', BEHIND_LIVE_EDGE = 'BEHIND_LIVE_EDGE', AFTER_LIVE_EDGE = 'AFTER_LIVE_EDGE' }
 
 
 	/** The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>. */
@@ -1289,7 +1289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginManifestType { SINGLE_PERIOD = 0, MULTI_PERIOD = 1 }
+	export enum OriginManifestType { SINGLE_PERIOD = 'SINGLE_PERIOD', MULTI_PERIOD = 'MULTI_PERIOD' }
 
 
 	/** The configuration for HLS content. */
@@ -1467,7 +1467,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertCategory { SCHEDULING_ERROR = 0, PLAYBACK_WARNING = 1, INFO = 2 }
+	export enum AlertCategory { SCHEDULING_ERROR = 'SCHEDULING_ERROR', PLAYBACK_WARNING = 'PLAYBACK_WARNING', INFO = 'INFO' }
 
 	export interface ListChannelsResponse {
 		Items?: Array<Channel>;
@@ -2176,9 +2176,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaybackMode { LOOP = 0, LINEAR = 1 }
+	export enum PlaybackMode { LOOP = 'LOOP', LINEAR = 'LINEAR' }
 
-	export enum Tier { BASIC = 0, STANDARD = 1 }
+	export enum Tier { BASIC = 'BASIC', STANDARD = 'STANDARD' }
 
 	export interface CreateChannelRequest {
 		FillerSlate?: SlateSource;

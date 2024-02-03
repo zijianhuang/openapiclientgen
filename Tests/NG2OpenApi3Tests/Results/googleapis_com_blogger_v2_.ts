@@ -419,7 +419,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostReaderComments { ALLOW = 0, DONT_ALLOW_SHOW_EXISTING = 1, DONT_ALLOW_HIDE_EXISTING = 2 }
+	export enum PostReaderComments { ALLOW = 'ALLOW', DONT_ALLOW_SHOW_EXISTING = 'DONT_ALLOW_SHOW_EXISTING', DONT_ALLOW_HIDE_EXISTING = 'DONT_ALLOW_HIDE_EXISTING' }
 
 	export interface PostReplies {
 
@@ -621,11 +621,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CommentStatus { LIVE = 0, EMPTIED = 1, PENDING = 2, SPAM = 3 }
+	export enum CommentStatus { LIVE = 'LIVE', EMPTIED = 'EMPTIED', PENDING = 'PENDING', SPAM = 'SPAM' }
 
-	export enum PostStatus { LIVE = 0, DRAFT = 1, SCHEDULED = 2, SOFT_TRASHED = 3 }
+	export enum PostStatus { LIVE = 'LIVE', DRAFT = 'DRAFT', SCHEDULED = 'SCHEDULED', SOFT_TRASHED = 'SOFT_TRASHED' }
 
-	export enum BlogStatus { LIVE = 0, DELETED = 1 }
+	export enum BlogStatus { LIVE = 'LIVE', DELETED = 'DELETED' }
 
 	export interface BlogList {
 
@@ -721,7 +721,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlogPerUserInfoRole { VIEW_TYPE_UNSPECIFIED = 0, READER = 1, AUTHOR = 2, ADMIN = 3 }
+	export enum BlogPerUserInfoRole { VIEW_TYPE_UNSPECIFIED = 'VIEW_TYPE_UNSPECIFIED', READER = 'READER', AUTHOR = 'AUTHOR', ADMIN = 'ADMIN' }
 
 	export interface CommentList {
 
@@ -925,7 +925,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PageStatus { LIVE = 0, DRAFT = 1, SOFT_TRASHED = 2 }
+	export enum PageStatus { LIVE = 'LIVE', DRAFT = 'DRAFT', SOFT_TRASHED = 'SOFT_TRASHED' }
 
 	export interface PageList {
 

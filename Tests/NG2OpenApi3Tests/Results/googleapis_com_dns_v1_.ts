@@ -278,9 +278,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RRSetRoutingPolicyLoadBalancerTargetIpProtocol { undefined = 0, tcp = 1, udp = 2 }
+	export enum RRSetRoutingPolicyLoadBalancerTargetIpProtocol { undefined = 'undefined', tcp = 'tcp', udp = 'udp' }
 
-	export enum RRSetRoutingPolicyLoadBalancerTargetLoadBalancerType { none = 0, globalL7ilb = 1, regionalL4ilb = 2, regionalL7ilb = 3 }
+	export enum RRSetRoutingPolicyLoadBalancerTargetLoadBalancerType { none = 'none', globalL7ilb = 'globalL7ilb', regionalL4ilb = 'regionalL4ilb', regionalL7ilb = 'regionalL7ilb' }
 
 
 	/** Configures a RRSetRoutingPolicy such that all queries are responded with the primary_targets if they are healthy. And if all of them are unhealthy, then we fallback to a geo localized policy. */
@@ -361,7 +361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeStatus { pending = 0, done = 1 }
+	export enum ChangeStatus { pending = 'pending', done = 'done' }
 
 
 	/** The response to a request to enumerate Changes to a ResourceRecordSets collection. */
@@ -501,7 +501,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsKeyAlgorithm { rsasha1 = 0, rsasha256 = 1, rsasha512 = 2, ecdsap256sha256 = 3, ecdsap384sha384 = 4 }
+	export enum DnsKeyAlgorithm { rsasha1 = 'rsasha1', rsasha256 = 'rsasha256', rsasha512 = 'rsasha512', ecdsap256sha256 = 'ecdsap256sha256', ecdsap384sha384 = 'ecdsap384sha384' }
 
 	export interface DnsKeyDigest {
 
@@ -527,9 +527,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsKeyDigestType { sha1 = 0, sha256 = 1, sha384 = 2 }
+	export enum DnsKeyDigestType { sha1 = 'sha1', sha256 = 'sha256', sha384 = 'sha384' }
 
-	export enum DnsKeyType { keySigning = 0, zoneSigning = 1 }
+	export enum DnsKeyType { keySigning = 'keySigning', zoneSigning = 'zoneSigning' }
 
 
 	/** Parameters for DnsKey key generation. Used for generating initial keys for a new ManagedZone and as default when adding a new DnsKey. */
@@ -693,7 +693,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -993,9 +993,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedZoneDnsSecConfigNonExistence { nsec = 0, nsec3 = 1 }
+	export enum ManagedZoneDnsSecConfigNonExistence { nsec = 'nsec', nsec3 = 'nsec3' }
 
-	export enum ManagedZoneDnsSecConfigState { off = 0, on = 1, transfer = 2 }
+	export enum ManagedZoneDnsSecConfigState { off = 'off', on = 'on', transfer = 'transfer' }
 
 	export interface ManagedZoneForwardingConfig {
 		kind?: string | null;
@@ -1047,7 +1047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedZoneForwardingConfigNameServerTargetForwardingPath { default = 0, private = 1 }
+	export enum ManagedZoneForwardingConfigNameServerTargetForwardingPath { default = 'default', private = 'private' }
 
 	export interface ManagedZonePeeringConfig {
 		kind?: string | null;
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedZoneVisibility { public = 0, private = 1 }
+	export enum ManagedZoneVisibility { public = 'public', private = 'private' }
 
 	export interface ManagedZoneOperationsListResponse {
 
@@ -1976,7 +1976,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponsePolicyRuleBehavior { behaviorUnspecified = 0, bypassResponsePolicy = 1 }
+	export enum ResponsePolicyRuleBehavior { behaviorUnspecified = 'behaviorUnspecified', bypassResponsePolicy = 'bypassResponsePolicy' }
 
 	export interface ResponsePolicyRuleLocalData {
 
@@ -2548,9 +2548,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Dns_changes_listSortBy { changeSequence = 0 }
+	export enum Dns_changes_listSortBy { changeSequence = 'changeSequence' }
 
-	export enum Dns_managedZoneOperations_listSortBy { startTime = 0, id = 1 }
+	export enum Dns_managedZoneOperations_listSortBy { startTime = 'startTime', id = 'id' }
 
 }
 

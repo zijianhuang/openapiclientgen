@@ -44,9 +44,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateStatus { InProgress = 0, Failed = 1, Cancelled = 2, Successful = 3 }
+	export enum UpdateStatus { InProgress = 'InProgress', Failed = 'Failed', Cancelled = 'Cancelled', Successful = 'Successful' }
 
-	export enum UpdateType { VersionUpdate = 0, EndpointAccessUpdate = 1, LoggingUpdate = 2, ConfigUpdate = 3, AssociateIdentityProviderConfig = 4, DisassociateIdentityProviderConfig = 5, AssociateEncryptionConfig = 6, AddonUpdate = 7 }
+	export enum UpdateType { VersionUpdate = 'VersionUpdate', EndpointAccessUpdate = 'EndpointAccessUpdate', LoggingUpdate = 'LoggingUpdate', ConfigUpdate = 'ConfigUpdate', AssociateIdentityProviderConfig = 'AssociateIdentityProviderConfig', DisassociateIdentityProviderConfig = 'DisassociateIdentityProviderConfig', AssociateEncryptionConfig = 'AssociateEncryptionConfig', AddonUpdate = 'AddonUpdate' }
 
 
 	/** An object representing the details of an update request. */
@@ -68,7 +68,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateParamType { Version = 0, PlatformVersion = 1, EndpointPrivateAccess = 2, EndpointPublicAccess = 3, ClusterLogging = 4, DesiredSize = 5, LabelsToAdd = 6, LabelsToRemove = 7, TaintsToAdd = 8, TaintsToRemove = 9, MaxSize = 10, MinSize = 11, ReleaseVersion = 12, PublicAccessCidrs = 13, LaunchTemplateName = 14, LaunchTemplateVersion = 15, IdentityProviderConfig = 16, EncryptionConfig = 17, AddonVersion = 18, ServiceAccountRoleArn = 19, ResolveConflicts = 20, MaxUnavailable = 21, MaxUnavailablePercentage = 22 }
+	export enum UpdateParamType { Version = 'Version', PlatformVersion = 'PlatformVersion', EndpointPrivateAccess = 'EndpointPrivateAccess', EndpointPublicAccess = 'EndpointPublicAccess', ClusterLogging = 'ClusterLogging', DesiredSize = 'DesiredSize', LabelsToAdd = 'LabelsToAdd', LabelsToRemove = 'LabelsToRemove', TaintsToAdd = 'TaintsToAdd', TaintsToRemove = 'TaintsToRemove', MaxSize = 'MaxSize', MinSize = 'MinSize', ReleaseVersion = 'ReleaseVersion', PublicAccessCidrs = 'PublicAccessCidrs', LaunchTemplateName = 'LaunchTemplateName', LaunchTemplateVersion = 'LaunchTemplateVersion', IdentityProviderConfig = 'IdentityProviderConfig', EncryptionConfig = 'EncryptionConfig', AddonVersion = 'AddonVersion', ServiceAccountRoleArn = 'ServiceAccountRoleArn', ResolveConflicts = 'ResolveConflicts', MaxUnavailable = 'MaxUnavailable', MaxUnavailablePercentage = 'MaxUnavailablePercentage' }
 
 
 	/** An object representing an error when an asynchronous operation fails. */
@@ -91,7 +91,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { SubnetNotFound = 0, SecurityGroupNotFound = 1, EniLimitReached = 2, IpNotAvailable = 3, AccessDenied = 4, OperationNotPermitted = 5, VpcIdNotFound = 6, Unknown = 7, NodeCreationFailure = 8, PodEvictionFailure = 9, InsufficientFreeAddresses = 10, ClusterUnreachable = 11, InsufficientNumberOfReplicas = 12, ConfigurationConflict = 13, AdmissionRequestDenied = 14, UnsupportedAddonModification = 15, K8sResourceNotFound = 16 }
+	export enum ErrorCode { SubnetNotFound = 'SubnetNotFound', SecurityGroupNotFound = 'SecurityGroupNotFound', EniLimitReached = 'EniLimitReached', IpNotAvailable = 'IpNotAvailable', AccessDenied = 'AccessDenied', OperationNotPermitted = 'OperationNotPermitted', VpcIdNotFound = 'VpcIdNotFound', Unknown = 'Unknown', NodeCreationFailure = 'NodeCreationFailure', PodEvictionFailure = 'PodEvictionFailure', InsufficientFreeAddresses = 'InsufficientFreeAddresses', ClusterUnreachable = 'ClusterUnreachable', InsufficientNumberOfReplicas = 'InsufficientNumberOfReplicas', ConfigurationConflict = 'ConfigurationConflict', AdmissionRequestDenied = 'AdmissionRequestDenied', UnsupportedAddonModification = 'UnsupportedAddonModification', K8sResourceNotFound = 'K8sResourceNotFound' }
 
 
 	/** The encryption configuration for the cluster. */
@@ -283,7 +283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddonStatus { CREATING = 0, ACTIVE = 1, CREATE_FAILED = 2, UPDATING = 3, DELETING = 4, DELETE_FAILED = 5, DEGRADED = 6, UPDATE_FAILED = 7 }
+	export enum AddonStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', CREATE_FAILED = 'CREATE_FAILED', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED', DEGRADED = 'DEGRADED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 
 	/** The health of the add-on. */
@@ -321,7 +321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddonIssueCode { AccessDenied = 0, InternalFailure = 1, ClusterUnreachable = 2, InsufficientNumberOfReplicas = 3, ConfigurationConflict = 4, AdmissionRequestDenied = 5, UnsupportedAddonModification = 6, K8sResourceNotFound = 7 }
+	export enum AddonIssueCode { AccessDenied = 'AccessDenied', InternalFailure = 'InternalFailure', ClusterUnreachable = 'ClusterUnreachable', InsufficientNumberOfReplicas = 'InsufficientNumberOfReplicas', ConfigurationConflict = 'ConfigurationConflict', AdmissionRequestDenied = 'AdmissionRequestDenied', UnsupportedAddonModification = 'UnsupportedAddonModification', K8sResourceNotFound = 'K8sResourceNotFound' }
 
 
 	/** Information about an Amazon EKS add-on from the Amazon Web Services Marketplace. */
@@ -460,7 +460,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpFamily { ipv4 = 0, ipv6 = 1 }
+	export enum IpFamily { ipv4 = 'ipv4', ipv6 = 'ipv6' }
 
 
 	/** An object representing the logging configuration for resources in your cluster. */
@@ -495,7 +495,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogType { api = 0, audit = 1, authenticator = 2, controllerManager = 3, scheduler = 4 }
+	export enum LogType { api = 'api', audit = 'audit', authenticator = 'authenticator', controllerManager = 'controllerManager', scheduler = 'scheduler' }
 
 
 	/** An object representing an identity provider. */
@@ -529,7 +529,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, UPDATING = 4, PENDING = 5 }
+	export enum ClusterStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED', UPDATING = 'UPDATING', PENDING = 'PENDING' }
 
 
 	/** An object representing the <code>certificate-authority-data</code> for your cluster. */
@@ -613,7 +613,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterIssueCode { AccessDenied = 0, ClusterUnreachable = 1, ConfigurationConflict = 2, InternalFailure = 3, ResourceLimitExceeded = 4, ResourceNotFound = 5 }
+	export enum ClusterIssueCode { AccessDenied = 'AccessDenied', ClusterUnreachable = 'ClusterUnreachable', ConfigurationConflict = 'ConfigurationConflict', InternalFailure = 'InternalFailure', ResourceLimitExceeded = 'ResourceLimitExceeded', ResourceNotFound = 'ResourceNotFound' }
 
 
 	/** An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud. */
@@ -778,7 +778,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FargateProfileStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, CREATE_FAILED = 3, DELETE_FAILED = 4 }
+	export enum FargateProfileStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface CreateNodegroupResponse {
 		nodegroup?: Nodegroup;
@@ -852,9 +852,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodegroupStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATE_FAILED = 4, DELETE_FAILED = 5, DEGRADED = 6 }
+	export enum NodegroupStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED', DEGRADED = 'DEGRADED' }
 
-	export enum CapacityTypes { ON_DEMAND = 0, SPOT = 1 }
+	export enum CapacityTypes { ON_DEMAND = 'ON_DEMAND', SPOT = 'SPOT' }
 
 
 	/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. When creating a node group, you must specify all or none of the properties. When updating a node group, you can specify any or none of the properties. */
@@ -897,7 +897,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AMITypes { AL2_x86_64 = 0, AL2_x86_64_GPU = 1, AL2_ARM_64 = 2, CUSTOM = 3, BOTTLEROCKET_ARM_64 = 4, BOTTLEROCKET_x86_64 = 5, BOTTLEROCKET_ARM_64_NVIDIA = 6, BOTTLEROCKET_x86_64_NVIDIA = 7, WINDOWS_CORE_2019_x86_64 = 8, WINDOWS_FULL_2019_x86_64 = 9, WINDOWS_CORE_2022_x86_64 = 10, WINDOWS_FULL_2022_x86_64 = 11 }
+	export enum AMITypes { AL2_x86_64 = 'AL2_x86_64', AL2_x86_64_GPU = 'AL2_x86_64_GPU', AL2_ARM_64 = 'AL2_ARM_64', CUSTOM = 'CUSTOM', BOTTLEROCKET_ARM_64 = 'BOTTLEROCKET_ARM_64', BOTTLEROCKET_x86_64 = 'BOTTLEROCKET_x86_64', BOTTLEROCKET_ARM_64_NVIDIA = 'BOTTLEROCKET_ARM_64_NVIDIA', BOTTLEROCKET_x86_64_NVIDIA = 'BOTTLEROCKET_x86_64_NVIDIA', WINDOWS_CORE_2019_x86_64 = 'WINDOWS_CORE_2019_x86_64', WINDOWS_FULL_2019_x86_64 = 'WINDOWS_FULL_2019_x86_64', WINDOWS_CORE_2022_x86_64 = 'WINDOWS_CORE_2022_x86_64', WINDOWS_FULL_2022_x86_64 = 'WINDOWS_FULL_2022_x86_64' }
 
 	export interface LabelsMap {
 	}
@@ -932,7 +932,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaintEffect { NO_SCHEDULE = 0, NO_EXECUTE = 1, PREFER_NO_SCHEDULE = 2 }
+	export enum TaintEffect { NO_SCHEDULE = 'NO_SCHEDULE', NO_EXECUTE = 'NO_EXECUTE', PREFER_NO_SCHEDULE = 'PREFER_NO_SCHEDULE' }
 
 
 	/** An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access. */
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodegroupIssueCode { AutoScalingGroupNotFound = 0, AutoScalingGroupInvalidConfiguration = 1, Ec2SecurityGroupNotFound = 2, Ec2SecurityGroupDeletionFailure = 3, Ec2LaunchTemplateNotFound = 4, Ec2LaunchTemplateVersionMismatch = 5, Ec2SubnetNotFound = 6, Ec2SubnetInvalidConfiguration = 7, IamInstanceProfileNotFound = 8, Ec2SubnetMissingIpv6Assignment = 9, IamLimitExceeded = 10, IamNodeRoleNotFound = 11, NodeCreationFailure = 12, AsgInstanceLaunchFailures = 13, InstanceLimitExceeded = 14, InsufficientFreeAddresses = 15, AccessDenied = 16, InternalFailure = 17, ClusterUnreachable = 18, AmiIdNotFound = 19, AutoScalingGroupOptInRequired = 20, AutoScalingGroupRateLimitExceeded = 21, Ec2LaunchTemplateDeletionFailure = 22, Ec2LaunchTemplateInvalidConfiguration = 23, Ec2LaunchTemplateMaxLimitExceeded = 24, Ec2SubnetListTooLong = 25, IamThrottling = 26, NodeTerminationFailure = 27, PodEvictionFailure = 28, SourceEc2LaunchTemplateNotFound = 29, LimitExceeded = 30, Unknown = 31, AutoScalingGroupInstanceRefreshActive = 32 }
+	export enum NodegroupIssueCode { AutoScalingGroupNotFound = 'AutoScalingGroupNotFound', AutoScalingGroupInvalidConfiguration = 'AutoScalingGroupInvalidConfiguration', Ec2SecurityGroupNotFound = 'Ec2SecurityGroupNotFound', Ec2SecurityGroupDeletionFailure = 'Ec2SecurityGroupDeletionFailure', Ec2LaunchTemplateNotFound = 'Ec2LaunchTemplateNotFound', Ec2LaunchTemplateVersionMismatch = 'Ec2LaunchTemplateVersionMismatch', Ec2SubnetNotFound = 'Ec2SubnetNotFound', Ec2SubnetInvalidConfiguration = 'Ec2SubnetInvalidConfiguration', IamInstanceProfileNotFound = 'IamInstanceProfileNotFound', Ec2SubnetMissingIpv6Assignment = 'Ec2SubnetMissingIpv6Assignment', IamLimitExceeded = 'IamLimitExceeded', IamNodeRoleNotFound = 'IamNodeRoleNotFound', NodeCreationFailure = 'NodeCreationFailure', AsgInstanceLaunchFailures = 'AsgInstanceLaunchFailures', InstanceLimitExceeded = 'InstanceLimitExceeded', InsufficientFreeAddresses = 'InsufficientFreeAddresses', AccessDenied = 'AccessDenied', InternalFailure = 'InternalFailure', ClusterUnreachable = 'ClusterUnreachable', AmiIdNotFound = 'AmiIdNotFound', AutoScalingGroupOptInRequired = 'AutoScalingGroupOptInRequired', AutoScalingGroupRateLimitExceeded = 'AutoScalingGroupRateLimitExceeded', Ec2LaunchTemplateDeletionFailure = 'Ec2LaunchTemplateDeletionFailure', Ec2LaunchTemplateInvalidConfiguration = 'Ec2LaunchTemplateInvalidConfiguration', Ec2LaunchTemplateMaxLimitExceeded = 'Ec2LaunchTemplateMaxLimitExceeded', Ec2SubnetListTooLong = 'Ec2SubnetListTooLong', IamThrottling = 'IamThrottling', NodeTerminationFailure = 'NodeTerminationFailure', PodEvictionFailure = 'PodEvictionFailure', SourceEc2LaunchTemplateNotFound = 'SourceEc2LaunchTemplateNotFound', LimitExceeded = 'LimitExceeded', Unknown = 'Unknown', AutoScalingGroupInstanceRefreshActive = 'AutoScalingGroupInstanceRefreshActive' }
 
 
 	/** The node group update configuration. */
@@ -1330,7 +1330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigStatus { CREATING = 0, DELETING = 1, ACTIVE = 2 }
+	export enum ConfigStatus { CREATING = 'CREATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE' }
 
 	export interface DescribeNodegroupResponse {
 		nodegroup?: Nodegroup;
@@ -1523,7 +1523,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorConfigProvider { EKS_ANYWHERE = 0, ANTHOS = 1, GKE = 2, AKS = 3, OPENSHIFT = 4, TANZU = 5, RANCHER = 6, EC2 = 7, OTHER = 8 }
+	export enum ConnectorConfigProvider { EKS_ANYWHERE = 'EKS_ANYWHERE', ANTHOS = 'ANTHOS', GKE = 'GKE', AKS = 'AKS', OPENSHIFT = 'OPENSHIFT', TANZU = 'TANZU', RANCHER = 'RANCHER', EC2 = 'EC2', OTHER = 'OTHER' }
 
 	export interface ResourcePropagationDelayException {
 	}
@@ -1727,7 +1727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolveConflicts { OVERWRITE = 0, NONE = 1, PRESERVE = 2 }
+	export enum ResolveConflicts { OVERWRITE = 'OVERWRITE', NONE = 'NONE', PRESERVE = 'PRESERVE' }
 
 	export interface CreateAddonRequest {
 

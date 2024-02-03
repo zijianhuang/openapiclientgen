@@ -21,7 +21,7 @@ export namespace MyNS {
 
 	}
 
-	export enum _200_OKStatus { emailNotFound = 0, emailNotVerified = 1, created = 2 }
+	export enum _200_OKStatus { emailNotFound = 'emailNotFound', emailNotVerified = 'emailNotVerified', created = 'created' }
 
 	export interface _401_Unauthorized {
 
@@ -63,9 +63,9 @@ export namespace MyNS {
 
 	export enum _401_UnauthorizedStatus { _401 = 0 }
 
-	export enum _401_UnauthorizedTitle { Unauthorized = 0 }
+	export enum _401_UnauthorizedTitle { Unauthorized = 'Unauthorized' }
 
-	export enum _401_UnauthorizedType { 'https://tools.ietf.org/html/rfc7235#section-3.1' = 0 }
+	export enum _401_UnauthorizedType { 'https://tools.ietf.org/html/rfc7235#section-3.1' = 'https://tools.ietf.org/html/rfc7235#section-3.1' }
 
 	@Injectable()
 	export class MyClient {

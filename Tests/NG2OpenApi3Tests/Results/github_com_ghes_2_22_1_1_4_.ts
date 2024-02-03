@@ -978,13 +978,13 @@ export namespace MyNS {
 
 	}
 
-	export enum App_permissionsActions { read = 0, write = 1 }
+	export enum App_permissionsActions { read = 'read', write = 'write' }
 
-	export enum App_permissionsOrganization_plan { read = 0 }
+	export enum App_permissionsOrganization_plan { read = 'read' }
 
-	export enum App_permissionsOrganization_projects { read = 0, write = 1, admin = 2 }
+	export enum App_permissionsOrganization_projects { read = 'read', write = 'write', admin = 'admin' }
 
-	export enum App_permissionsWorkflows { write = 0 }
+	export enum App_permissionsWorkflows { write = 'write' }
 
 
 	/** The authorization associated with an OAuth Access. */
@@ -2539,11 +2539,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Authentication_tokenRepository_selection { all = 0, selected = 1 }
+	export enum Authentication_tokenRepository_selection { all = 'all', selected = 'selected' }
 
 
 	/** How the author is associated with the repository. */
-	export enum Author_association { COLLABORATOR = 0, CONTRIBUTOR = 1, FIRST_TIMER = 2, FIRST_TIME_CONTRIBUTOR = 3, MANNEQUIN = 4, MEMBER = 5, NONE = 6, OWNER = 7 }
+	export enum Author_association { COLLABORATOR = 'COLLABORATOR', CONTRIBUTOR = 'CONTRIBUTOR', FIRST_TIMER = 'FIRST_TIMER', FIRST_TIME_CONTRIBUTOR = 'FIRST_TIME_CONTRIBUTOR', MANNEQUIN = 'MANNEQUIN', MEMBER = 'MEMBER', NONE = 'NONE', OWNER = 'OWNER' }
 
 
 	/** The authorization for an OAuth app, GitHub App, or a Personal Access Token. */
@@ -4448,7 +4448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_runConclusion { success = 0, failure = 1, neutral = 2, cancelled = 3, skipped = 4, timed_out = 5, action_required = 6 }
+	export enum Check_runConclusion { success = 'success', failure = 'failure', neutral = 'neutral', cancelled = 'cancelled', skipped = 'skipped', timed_out = 'timed_out', action_required = 'action_required' }
 
 
 	/** A deployment created as the result of an Actions check run from a workflow that references an environment */
@@ -4617,7 +4617,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_runStatus { queued = 0, in_progress = 1, completed = 2 }
+	export enum Check_runStatus { queued = 'queued', in_progress = 'in_progress', completed = 'completed' }
 
 
 	/** A suite of checks performed on the code of a given code change */
@@ -6777,7 +6777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Code_scanning_alertDismissed_reason { _null = 0, 'false positive' = 1, 'won\'t fix' = 2, 'used in tests' = 3 }
+	export enum Code_scanning_alertDismissed_reason { _null = 0, 'false positive' = 'false positive', 'won\'t fix' = 'won\'t fix', 'used in tests' = 'used in tests' }
 
 	export interface Code_scanning_alert_rule {
 
@@ -6834,9 +6834,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Code_scanning_alert_ruleSeverity { none = 0, note = 1, warning = 2, error = 3 }
+	export enum Code_scanning_alert_ruleSeverity { none = 'none', note = 'note', warning = 'warning', error = 'error' }
 
-	export enum Code_scanning_alertState { open = 0, closed = 1, dismissed = 2, fixed = 3 }
+	export enum Code_scanning_alertState { open = 'open', closed = 'closed', dismissed = 'dismissed', fixed = 'fixed' }
 
 	export interface Code_scanning_analysis_tool {
 
@@ -6871,11 +6871,11 @@ export namespace MyNS {
 
 
 	/** A classification of the file. For example to identify it as generated. */
-	export enum Code_scanning_alert_classification { source = 0, generated = 1, test = 2, library = 3 }
+	export enum Code_scanning_alert_classification { source = 'source', generated = 'generated', test = 'test', library = 'library' }
 
 
 	/** **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`. */
-	export enum Code_scanning_alert_dismissed_reason { _null = 0, 'false positive' = 1, 'won\'t fix' = 2, 'used in tests' = 3 }
+	export enum Code_scanning_alert_dismissed_reason { _null = 0, 'false positive' = 'false positive', 'won\'t fix' = 'won\'t fix', 'used in tests' = 'used in tests' }
 
 	export interface Code_scanning_alert_instance {
 
@@ -7115,7 +7115,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Code_scanning_alert_itemsDismissed_reason { _null = 0, 'false positive' = 1, 'won\'t fix' = 2, 'used in tests' = 3 }
+	export enum Code_scanning_alert_itemsDismissed_reason { _null = 0, 'false positive' = 'false positive', 'won\'t fix' = 'won\'t fix', 'used in tests' = 'used in tests' }
 
 	export interface Code_scanning_alert_rule_summary {
 
@@ -7157,11 +7157,11 @@ export namespace MyNS {
 
 
 	/** Sets the state of the code scanning alert. Can be one of `open` or `dismissed`. You must provide `dismissed_reason` when you set the state to `dismissed`. */
-	export enum Code_scanning_alert_set_state { open = 0, dismissed = 1 }
+	export enum Code_scanning_alert_set_state { open = 'open', dismissed = 'dismissed' }
 
 
 	/** State of a code scanning alert. */
-	export enum Code_scanning_alert_state { open = 0, closed = 1, dismissed = 2, fixed = 3 }
+	export enum Code_scanning_alert_state { open = 'open', closed = 'closed', dismissed = 'dismissed', fixed = 'fixed' }
 
 	export interface Code_scanning_analysis {
 
@@ -8213,9 +8213,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Diff_entryStatus { added = 0, removed = 1, modified = 2, renamed = 3, copied = 4, changed = 5, unchanged = 6 }
+	export enum Diff_entryStatus { added = 'added', removed = 'removed', modified = 'modified', renamed = 'renamed', copied = 'copied', changed = 'changed', unchanged = 'unchanged' }
 
-	export enum Commit_comparisonStatus { diverged = 0, ahead = 1, behind = 2, identical = 3 }
+	export enum Commit_comparisonStatus { diverged = 'diverged', ahead = 'ahead', behind = 'behind', identical = 'identical' }
 
 
 	/** Commit Search Result Item */
@@ -9962,7 +9962,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Deployment_statusState { error = 0, failure = 1, inactive = 2, pending = 3, success = 4, queued = 5, in_progress = 6 }
+	export enum Deployment_statusState { error = 'error', failure = 'failure', inactive = 'inactive', pending = 'pending', success = 'success', queued = 'queued', in_progress = 'in_progress' }
 
 
 	/** Email */
@@ -11531,7 +11531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Nullable_milestoneState { open = 0, closed = 1 }
+	export enum Nullable_milestoneState { open = 'open', closed = 'closed' }
 
 	export interface IssuePull_request {
 
@@ -18003,9 +18003,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Org_membershipRole { admin = 0, member = 1, billing_manager = 2 }
+	export enum Org_membershipRole { admin = 'admin', member = 'member', billing_manager = 'billing_manager' }
 
-	export enum Org_membershipState { active = 0, pending = 1 }
+	export enum Org_membershipState { active = 'active', pending = 'pending' }
 
 	export interface Org_pre_receive_hook {
 		allow_downstream_configuration?: boolean | null;
@@ -18089,7 +18089,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Organization_actions_secretVisibility { all = 0, private = 1, selected = 2 }
+	export enum Organization_actions_secretVisibility { all = 'all', private = 'private', selected = 'selected' }
 
 
 	/** Organization Full */
@@ -18508,9 +18508,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Pages_https_certificateState { new = 0, authorization_created = 1, authorization_pending = 2, authorized = 3, authorization_revoked = 4, issued = 5, uploaded = 6, approved = 7, errored = 8, bad_authz = 9, destroy_pending = 10, dns_changed = 11 }
+	export enum Pages_https_certificateState { new = 'new', authorization_created = 'authorization_created', authorization_pending = 'authorization_pending', authorized = 'authorized', authorization_revoked = 'authorization_revoked', issued = 'issued', uploaded = 'uploaded', approved = 'approved', errored = 'errored', bad_authz = 'bad_authz', destroy_pending = 'destroy_pending', dns_changed = 'dns_changed' }
 
-	export enum PageProtected_domain_state { pending = 0, verified = 1, unverified = 2 }
+	export enum PageProtected_domain_state { pending = 'pending', verified = 'verified', unverified = 'unverified' }
 
 	export interface Pages_source_hash {
 
@@ -18536,7 +18536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PageStatus { built = 0, building = 1, errored = 2 }
+	export enum PageStatus { built = 'built', building = 'building', errored = 'errored' }
 
 
 	/** Page Build */
@@ -19306,7 +19306,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectOrganization_permission { read = 0, write = 1, admin = 2, none = 3 }
+	export enum ProjectOrganization_permission { read = 'read', write = 'write', admin = 'admin', none = 'none' }
 
 
 	/** Project cards represent a scope of work. */
@@ -22783,7 +22783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Pull_request_review_commentSide { LEFT = 0, RIGHT = 1 }
+	export enum Pull_request_review_commentSide { LEFT = 'LEFT', RIGHT = 'RIGHT' }
 
 
 	/** Pull Request Review Request */
@@ -23365,7 +23365,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReactionContent { _Plus1 = 0, _Minus1 = 1, laugh = 2, confused = 3, heart = 4, hooray = 5, rocket = 6, eyes = 7 }
+	export enum ReactionContent { _Plus1 = '+1', _Minus1 = '-1', laugh = 'laugh', confused = 'confused', heart = 'heart', hooray = 'hooray', rocket = 'rocket', eyes = 'eyes' }
 
 
 	/** A release. */
@@ -23645,7 +23645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Release_assetState { uploaded = 0, open = 1 }
+	export enum Release_assetState { uploaded = 'uploaded', open = 'open' }
 
 
 	/** Removed from Project Issue Event */
@@ -24643,7 +24643,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Repository_invitationPermissions { read = 0, write = 1, admin = 2, triage = 3, maintain = 4 }
+	export enum Repository_invitationPermissions { read = 'read', write = 'write', admin = 'admin', triage = 'triage', maintain = 'maintain' }
 
 	export interface Repository_pre_receive_hook {
 		configuration_url?: string | null;
@@ -26272,7 +26272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Team_fullPrivacy { closed = 0, secret = 1 }
+	export enum Team_fullPrivacy { closed = 'closed', secret = 'secret' }
 
 
 	/** Team Membership */
@@ -26321,7 +26321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Team_membershipRole { member = 0, maintainer = 1 }
+	export enum Team_membershipRole { member = 'member', maintainer = 'maintainer' }
 
 
 	/** A team's access to a project. */
@@ -28934,7 +28934,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowState { active = 0, deleted = 1, disabled_fork = 2, disabled_inactivity = 3, disabled_manually = 4 }
+	export enum WorkflowState { active = 'active', deleted = 'deleted', disabled_fork = 'disabled_fork', disabled_inactivity = 'disabled_inactivity', disabled_manually = 'disabled_manually' }
 
 
 	/** An invocation of a workflow */
@@ -37598,9 +37598,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Enterprise_adminSlashlist_public_keysDirection { asc = 0, desc = 1 }
+	export enum Enterprise_adminSlashlist_public_keysDirection { asc = 'asc', desc = 'desc' }
 
-	export enum Enterprise_adminSlashlist_public_keysSort { created = 0, updated = 1, accessed = 2 }
+	export enum Enterprise_adminSlashlist_public_keysSort { created = 'created', updated = 'updated', accessed = 'accessed' }
 
 	export interface Enterprise_adminSlashupdate_ldap_mapping_for_teamPatchBody {
 
@@ -37714,7 +37714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Enterprise_adminSlashlist_pre_receive_environmentsSort { created = 0, updated = 1, name = 2 }
+	export enum Enterprise_adminSlashlist_pre_receive_environmentsSort { created = 'created', updated = 'updated', name = 'name' }
 
 	export interface Enterprise_adminSlashcreate_pre_receive_environmentPostBody {
 
@@ -38282,7 +38282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Enterprise_adminSlashcreate_self_hosted_runner_group_for_enterprisePostBodyVisibility { selected = 0, all = 1 }
+	export enum Enterprise_adminSlashcreate_self_hosted_runner_group_for_enterprisePostBodyVisibility { selected = 'selected', all = 'all' }
 
 	export interface Enterprise_adminSlashupdate_self_hosted_runner_group_for_enterprisePatchBody {
 
@@ -38571,11 +38571,11 @@ export namespace MyNS {
 
 	}
 
-	export enum IssuesSlashlistFilter { assigned = 0, created = 1, mentioned = 2, subscribed = 3, repos = 4, all = 5 }
+	export enum IssuesSlashlistFilter { assigned = 'assigned', created = 'created', mentioned = 'mentioned', subscribed = 'subscribed', repos = 'repos', all = 'all' }
 
-	export enum IssuesSlashlistState { open = 0, closed = 1, all = 2 }
+	export enum IssuesSlashlistState { open = 'open', closed = 'closed', all = 'all' }
 
-	export enum IssuesSlashlistSort { created = 0, updated = 1, comments = 2 }
+	export enum IssuesSlashlistSort { created = 'created', updated = 'updated', comments = 'comments' }
 
 	export interface MarkdownSlashrenderPostBody {
 
@@ -38614,7 +38614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MarkdownSlashrenderPostBodyMode { markdown = 0, gfm = 1 }
+	export enum MarkdownSlashrenderPostBodyMode { markdown = 'markdown', gfm = 'gfm' }
 
 	export interface ActivitySlashmark_notifications_as_readPutBody {
 
@@ -38841,7 +38841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrgsSlashupdatePatchBodyMembers_allowed_repository_creation_type { all = 0, private = 1, none = 2 }
+	export enum OrgsSlashupdatePatchBodyMembers_allowed_repository_creation_type { all = 'all', private = 'private', none = 'none' }
 
 	export interface ActionsSlashlist_self_hosted_runner_groups_for_orgReturn {
 
@@ -38899,7 +38899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionsSlashcreate_self_hosted_runner_group_for_orgPostBodyVisibility { selected = 0, all = 1, private = 2 }
+	export enum ActionsSlashcreate_self_hosted_runner_group_for_orgPostBodyVisibility { selected = 'selected', all = 'all', private = 'private' }
 
 	export interface ActionsSlashupdate_self_hosted_runner_group_for_orgPatchBody {
 
@@ -39292,9 +39292,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrgsSlashlist_membersFilter { '2fa_disabled' = 0, all = 1 }
+	export enum OrgsSlashlist_membersFilter { '2fa_disabled' = '2fa_disabled', all = 'all' }
 
-	export enum OrgsSlashlist_membersRole { all = 0, admin = 1, member = 2 }
+	export enum OrgsSlashlist_membersRole { all = 'all', admin = 'admin', member = 'member' }
 
 	export interface OrgsSlashset_membership_for_userPutBody {
 
@@ -39321,7 +39321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrgsSlashset_membership_for_userPutBodyRole { admin = 0, member = 1 }
+	export enum OrgsSlashset_membership_for_userPutBodyRole { admin = 'admin', member = 'member' }
 
 	export interface Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_orgPatchBody {
 
@@ -39377,9 +39377,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashlist_for_orgType { all = 0, public = 1, private = 2, forks = 3, sources = 4, member = 5, internal = 6 }
+	export enum ReposSlashlist_for_orgType { all = 'all', public = 'public', private = 'private', forks = 'forks', sources = 'sources', member = 'member', internal = 'internal' }
 
-	export enum ReposSlashlist_for_orgSort { created = 0, updated = 1, pushed = 2, full_name = 3 }
+	export enum ReposSlashlist_for_orgSort { created = 'created', updated = 'updated', pushed = 'pushed', full_name = 'full_name' }
 
 	export interface ReposSlashcreate_in_orgPostBody {
 
@@ -39522,7 +39522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashcreate_in_orgPostBodyVisibility { public = 0, private = 1, internal = 2 }
+	export enum ReposSlashcreate_in_orgPostBodyVisibility { public = 'public', private = 'private', internal = 'internal' }
 
 	export interface TeamsSlashcreatePostBody {
 
@@ -39609,9 +39609,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TeamsSlashcreatePostBodyPermission { pull = 0, push = 1, admin = 2 }
+	export enum TeamsSlashcreatePostBodyPermission { pull = 'pull', push = 'push', admin = 'admin' }
 
-	export enum TeamsSlashcreatePostBodyPrivacy { secret = 0, closed = 1 }
+	export enum TeamsSlashcreatePostBodyPrivacy { secret = 'secret', closed = 'closed' }
 
 	export interface TeamsSlashupdate_in_orgPatchBody {
 
@@ -39841,7 +39841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TeamsSlashlist_members_in_orgRole { member = 0, maintainer = 1, all = 2 }
+	export enum TeamsSlashlist_members_in_orgRole { member = 'member', maintainer = 'maintainer', all = 'all' }
 
 	export interface TeamsSlashadd_or_update_membership_for_user_in_orgPutBody {
 
@@ -39930,7 +39930,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TeamsSlashadd_or_update_repo_permissions_in_orgPutBodyPermission { pull = 0, push = 1, admin = 2, maintain = 3, triage = 4 }
+	export enum TeamsSlashadd_or_update_repo_permissions_in_orgPutBodyPermission { pull = 'pull', push = 'push', admin = 'admin', maintain = 'maintain', triage = 'triage' }
 
 	export interface ProjectsSlashupdate_cardPatchBody {
 
@@ -40009,7 +40009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectsSlashlist_cardsArchived_state { all = 0, archived = 1, not_archived = 2 }
+	export enum ProjectsSlashlist_cardsArchived_state { all = 'all', archived = 'archived', not_archived = 'not_archived' }
 
 	export interface ProjectsSlashcreate_cardPostBody {
 
@@ -40102,7 +40102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectsSlashlist_collaboratorsAffiliation { outside = 0, direct = 1, all = 2 }
+	export enum ProjectsSlashlist_collaboratorsAffiliation { outside = 'outside', direct = 'direct', all = 'all' }
 
 	export interface ProjectsSlashadd_collaboratorPutBody {
 
@@ -40312,7 +40312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionsSlashlist_workflow_runs_for_repoStatus { completed = 0, action_required = 1, cancelled = 2, failure = 3, neutral = 4, skipped = 5, stale = 6, success = 7, timed_out = 8, in_progress = 9, queued = 10, requested = 11, waiting = 12 }
+	export enum ActionsSlashlist_workflow_runs_for_repoStatus { completed = 'completed', action_required = 'action_required', cancelled = 'cancelled', failure = 'failure', neutral = 'neutral', skipped = 'skipped', stale = 'stale', success = 'success', timed_out = 'timed_out', in_progress = 'in_progress', queued = 'queued', requested = 'requested', waiting = 'waiting' }
 
 	export interface ActionsSlashlist_workflow_runs_for_repoReturn {
 
@@ -40354,7 +40354,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionsSlashlist_jobs_for_workflow_runFilter { latest = 0, all = 1 }
+	export enum ActionsSlashlist_jobs_for_workflow_runFilter { latest = 'latest', all = 'all' }
 
 	export interface ActionsSlashlist_jobs_for_workflow_runReturn {
 
@@ -41009,7 +41009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChecksSlashcreatePostBodyConclusion { action_required = 0, cancelled = 1, failure = 2, neutral = 3, success = 4, skipped = 5, stale = 6, timed_out = 7 }
+	export enum ChecksSlashcreatePostBodyConclusion { action_required = 'action_required', cancelled = 'cancelled', failure = 'failure', neutral = 'neutral', success = 'success', skipped = 'skipped', stale = 'stale', timed_out = 'timed_out' }
 
 	export interface ChecksSlashcreatePostBodyOutput {
 
@@ -41174,7 +41174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChecksSlashcreatePostBodyOutputAnnotationsAnnotation_level { notice = 0, warning = 1, failure = 2 }
+	export enum ChecksSlashcreatePostBodyOutputAnnotationsAnnotation_level { notice = 'notice', warning = 'warning', failure = 'failure' }
 
 	export interface ChecksSlashcreatePostBodyOutputImages {
 
@@ -41670,7 +41670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Code_scanningSlashupdate_alertPatchBodyDismissed_reason { _null = 0, 'false positive' = 1, 'won\'t fix' = 2, 'used in tests' = 3 }
+	export enum Code_scanningSlashupdate_alertPatchBodyDismissed_reason { _null = 0, 'false positive' = 'false positive', 'won\'t fix' = 'won\'t fix', 'used in tests' = 'used in tests' }
 
 	export interface Code_scanningSlashupload_sarifPostBody {
 
@@ -42368,9 +42368,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashcreate_deployment_statusPostBodyEnvironment { production = 0, staging = 1, qa = 2 }
+	export enum ReposSlashcreate_deployment_statusPostBodyEnvironment { production = 'production', staging = 'staging', qa = 'qa' }
 
-	export enum ReposSlashcreate_deployment_statusPostBodyState { error = 0, failure = 1, inactive = 2, in_progress = 3, queued = 4, pending = 5, success = 6 }
+	export enum ReposSlashcreate_deployment_statusPostBodyState { error = 'error', failure = 'failure', inactive = 'inactive', in_progress = 'in_progress', queued = 'queued', pending = 'pending', success = 'success' }
 
 	export interface ReposSlashcreate_dispatch_eventPostBody {
 
@@ -42406,7 +42406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashlist_forksSort { newest = 0, oldest = 1, stargazers = 2, watchers = 3 }
+	export enum ReposSlashlist_forksSort { newest = 'newest', oldest = 'oldest', stargazers = 'stargazers', watchers = 'watchers' }
 
 	export interface ReposSlashcreate_forkPostBody {
 
@@ -42758,7 +42758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GitSlashcreate_tagPostBodyType { commit = 0, tree = 1, blob = 2 }
+	export enum GitSlashcreate_tagPostBodyType { commit = 'commit', tree = 'tree', blob = 'blob' }
 
 	export interface GitSlashcreate_treePostBody {
 
@@ -42846,9 +42846,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GitSlashcreate_treePostBodyTreeMode { _100644 = 0, _100755 = 1, _040000 = 2, _160000 = 3, _120000 = 4 }
+	export enum GitSlashcreate_treePostBodyTreeMode { _100644 = '100644', _100755 = '100755', _040000 = '040000', _160000 = '160000', _120000 = '120000' }
 
-	export enum GitSlashcreate_treePostBodyTreeType { blob = 0, tree = 1, commit = 2 }
+	export enum GitSlashcreate_treePostBodyTreeType { blob = 'blob', tree = 'tree', commit = 'commit' }
 
 	export interface ReposSlashcreate_webhookPostBody {
 
@@ -43008,7 +43008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashupdate_invitationPatchBodyPermissions { read = 0, write = 1, maintain = 2, triage = 3, admin = 4 }
+	export enum ReposSlashupdate_invitationPatchBodyPermissions { read = 'read', write = 'write', maintain = 'maintain', triage = 'triage', admin = 'admin' }
 
 	export interface IssuesSlashcreatePostBody {
 
@@ -43056,7 +43056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IssuesSlashlist_comments_for_repoSort { created = 0, updated = 1 }
+	export enum IssuesSlashlist_comments_for_repoSort { created = 'created', updated = 'updated' }
 
 	export interface IssuesSlashupdate_commentPatchBody {
 
@@ -43248,7 +43248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IssuesSlashlockPutBodyLock_reason { 'off-topic' = 0, 'too heated' = 1, resolved = 2, spam = 3 }
+	export enum IssuesSlashlockPutBodyLock_reason { 'off-topic' = 'off-topic', 'too heated' = 'too heated', resolved = 'resolved', spam = 'spam' }
 
 	export interface ReactionsSlashcreate_for_issuePostBody {
 
@@ -43427,7 +43427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IssuesSlashlist_milestonesSort { due_on = 0, completeness = 1 }
+	export enum IssuesSlashlist_milestonesSort { due_on = 'due_on', completeness = 'completeness' }
 
 	export interface IssuesSlashcreate_milestonePostBody {
 
@@ -43574,7 +43574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashcreate_pages_sitePostBodySourcePath { '/' = 0, '/docs' = 1 }
+	export enum ReposSlashcreate_pages_sitePostBodySourcePath { '/' = '/', '/docs' = '/docs' }
 
 	export interface ReposSlashupdate_information_about_pages_sitePutBody {
 
@@ -43610,7 +43610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashupdate_information_about_pages_sitePutBodySource { 'gh-pages' = 0, master = 1, 'master /docs' = 2 }
+	export enum ReposSlashupdate_information_about_pages_sitePutBodySource { 'gh-pages' = 'gh-pages', master = 'master', 'master /docs' = 'master /docs' }
 
 	export interface Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_repoPatchBody {
 
@@ -43629,7 +43629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_repoPatchBodyEnforcement { enabled = 0, disabled = 1, testing = 2 }
+	export enum Enterprise_adminSlashupdate_pre_receive_hook_enforcement_for_repoPatchBodyEnforcement { enabled = 'enabled', disabled = 'disabled', testing = 'testing' }
 
 	export interface ProjectsSlashcreate_for_repoPostBody {
 
@@ -43661,7 +43661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullsSlashlistSort { created = 0, updated = 1, popularity = 2, 'long-running' = 3 }
+	export enum PullsSlashlistSort { created = 'created', updated = 'updated', popularity = 'popularity', 'long-running' = 'long-running' }
 
 	export interface PullsSlashcreatePostBody {
 
@@ -43730,7 +43730,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullsSlashlist_review_comments_for_repoSort { created = 0, updated = 1, created_at = 2 }
+	export enum PullsSlashlist_review_comments_for_repoSort { created = 'created', updated = 'updated', created_at = 'created_at' }
 
 	export interface PullsSlashupdate_review_commentPatchBody {
 
@@ -43898,7 +43898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullsSlashcreate_review_commentPostBodyStart_side { LEFT = 0, RIGHT = 1, side = 2 }
+	export enum PullsSlashcreate_review_commentPostBodyStart_side { LEFT = 'LEFT', RIGHT = 'RIGHT', side = 'side' }
 
 	export interface PullsSlashcreate_reply_for_review_commentPostBody {
 
@@ -43961,7 +43961,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullsSlashmergePutBodyMerge_method { merge = 0, squash = 1, rebase = 2 }
+	export enum PullsSlashmergePutBodyMerge_method { merge = 'merge', squash = 'squash', rebase = 'rebase' }
 
 	export interface PullsSlashrequest_reviewersPostBody {
 
@@ -44068,7 +44068,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullsSlashcreate_reviewPostBodyEvent { APPROVE = 0, REQUEST_CHANGES = 1, COMMENT = 2 }
+	export enum PullsSlashcreate_reviewPostBodyEvent { APPROVE = 'APPROVE', REQUEST_CHANGES = 'REQUEST_CHANGES', COMMENT = 'COMMENT' }
 
 	export interface PullsSlashupdate_reviewPutBody {
 
@@ -44355,7 +44355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashcreate_commit_statusPostBodyState { error = 0, failure = 1, pending = 2, success = 3 }
+	export enum ReposSlashcreate_commit_statusPostBodyState { error = 'error', failure = 'failure', pending = 'pending', success = 'success' }
 
 	export interface ActivitySlashset_repo_subscriptionPutBody {
 
@@ -44474,11 +44474,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashlist_publicVisibility { all = 0, public = 1 }
+	export enum ReposSlashlist_publicVisibility { all = 'all', public = 'public' }
 
-	export enum SearchSlashcodeSort { indexed = 0 }
+	export enum SearchSlashcodeSort { indexed = 'indexed' }
 
-	export enum SearchSlashcodeOrder { desc = 0, asc = 1 }
+	export enum SearchSlashcodeOrder { desc = 'desc', asc = 'asc' }
 
 	export interface SearchSlashcodeReturn {
 
@@ -44507,7 +44507,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchSlashcommitsSort { 'author-date' = 0, 'committer-date' = 1 }
+	export enum SearchSlashcommitsSort { 'author-date' = 'author-date', 'committer-date' = 'committer-date' }
 
 	export interface SearchSlashcommitsReturn {
 
@@ -44536,7 +44536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchSlashissues_and_pull_requestsSort { comments = 0, reactions = 1, 'reactions-+1' = 2, 'reactions--1' = 3, 'reactions-smile' = 4, 'reactions-thinking_face' = 5, 'reactions-heart' = 6, 'reactions-tada' = 7, interactions = 8, created = 9, updated = 10 }
+	export enum SearchSlashissues_and_pull_requestsSort { comments = 'comments', reactions = 'reactions', 'reactions-+1' = 'reactions-+1', 'reactions--1' = 'reactions--1', 'reactions-smile' = 'reactions-smile', 'reactions-thinking_face' = 'reactions-thinking_face', 'reactions-heart' = 'reactions-heart', 'reactions-tada' = 'reactions-tada', interactions = 'interactions', created = 'created', updated = 'updated' }
 
 	export interface SearchSlashissues_and_pull_requestsReturn {
 
@@ -44592,7 +44592,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchSlashreposSort { stars = 0, forks = 1, 'help-wanted-issues' = 2, updated = 3 }
+	export enum SearchSlashreposSort { stars = 'stars', forks = 'forks', 'help-wanted-issues' = 'help-wanted-issues', updated = 'updated' }
 
 	export interface SearchSlashreposReturn {
 
@@ -44648,7 +44648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchSlashusersSort { followers = 0, repositories = 1, joined = 2 }
+	export enum SearchSlashusersSort { followers = 'followers', repositories = 'repositories', joined = 'joined' }
 
 	export interface SearchSlashusersReturn {
 
@@ -45195,7 +45195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrgsSlashupdate_membership_for_authenticated_userPatchBodyState { active = 0 }
+	export enum OrgsSlashupdate_membership_for_authenticated_userPatchBodyState { active = 'active' }
 
 	export interface ProjectsSlashcreate_for_authenticated_userPostBody {
 
@@ -45227,9 +45227,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReposSlashlist_for_authenticated_userVisibility { all = 0, public = 1, private = 2 }
+	export enum ReposSlashlist_for_authenticated_userVisibility { all = 'all', public = 'public', private = 'private' }
 
-	export enum ReposSlashlist_for_authenticated_userType { all = 0, owner = 1, public = 2, private = 3, member = 4 }
+	export enum ReposSlashlist_for_authenticated_userType { all = 'all', owner = 'owner', public = 'public', private = 'private', member = 'member' }
 
 	export interface ReposSlashcreate_for_authenticated_userPostBody {
 
@@ -45366,9 +45366,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UsersSlashget_context_for_userSubject_type { organization = 0, repository = 1, issue = 2, pull_request = 3 }
+	export enum UsersSlashget_context_for_userSubject_type { organization = 'organization', repository = 'repository', issue = 'issue', pull_request = 'pull_request' }
 
-	export enum ReposSlashlist_for_userType { all = 0, owner = 1, member = 2 }
+	export enum ReposSlashlist_for_userType { all = 'all', owner = 'owner', member = 'member' }
 
 	export interface Enterprise_adminSlashsuspend_userPutBody {
 

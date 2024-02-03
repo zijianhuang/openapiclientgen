@@ -68,7 +68,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via [Search Console](https://search.google.com/search-console/welcome). */
@@ -1575,7 +1575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainMappingSpecCertificateMode { CERTIFICATE_MODE_UNSPECIFIED = 0, NONE = 1, AUTOMATIC = 2 }
+	export enum DomainMappingSpecCertificateMode { CERTIFICATE_MODE_UNSPECIFIED = 'CERTIFICATE_MODE_UNSPECIFIED', NONE = 'NONE', AUTOMATIC = 'AUTOMATIC' }
 
 
 	/** The current state of the Domain Mapping. */
@@ -1653,7 +1653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceRecordType { RECORD_TYPE_UNSPECIFIED = 0, A = 1, AAAA = 2, CNAME = 3 }
+	export enum ResourceRecordType { RECORD_TYPE_UNSPECIFIED = 'RECORD_TYPE_UNSPECIFIED', A = 'A', AAAA = 'AAAA', CNAME = 'CNAME' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

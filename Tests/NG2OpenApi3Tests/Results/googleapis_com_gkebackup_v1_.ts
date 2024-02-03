@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Represents a request to perform a single point-in-time capture of some portion of the state of a GKE cluster, the record of the backup operation itself, and an anchor for the underlying artifacts that comprise the Backup (the config backup and VolumeBackups). Next id: 29 */
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, IN_PROGRESS = 2, SUCCEEDED = 3, FAILED = 4, DELETING = 5 }
+	export enum BackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', DELETING = 'DELETING' }
 
 
 	/** BackupConfig defines the configuration of Backups created via this BackupPlan. */
@@ -588,7 +588,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupPlanState { STATE_UNSPECIFIED = 0, CLUSTER_PENDING = 1, PROVISIONING = 2, READY = 3, FAILED = 4, DEACTIVATED = 5, DELETING = 6 }
+	export enum BackupPlanState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CLUSTER_PENDING = 'CLUSTER_PENDING', PROVISIONING = 'PROVISIONING', READY = 'READY', FAILED = 'FAILED', DEACTIVATED = 'DEACTIVATED', DELETING = 'DELETING' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -1161,9 +1161,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreConfigClusterResourceConflictPolicy { CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED = 0, USE_EXISTING_VERSION = 1, USE_BACKUP_VERSION = 2 }
+	export enum RestoreConfigClusterResourceConflictPolicy { CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED = 'CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED', USE_EXISTING_VERSION = 'USE_EXISTING_VERSION', USE_BACKUP_VERSION = 'USE_BACKUP_VERSION' }
 
-	export enum RestoreConfigNamespacedResourceRestoreMode { NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED = 0, DELETE_AND_RESTORE = 1, FAIL_ON_CONFLICT = 2 }
+	export enum RestoreConfigNamespacedResourceRestoreMode { NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED = 'NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED', DELETE_AND_RESTORE = 'DELETE_AND_RESTORE', FAIL_ON_CONFLICT = 'FAIL_ON_CONFLICT' }
 
 
 	/** A transformation rule to be applied against Kubernetes resources as they are selected for restoration from a Backup. A rule contains both filtering logic (which resources are subject to substitution) and substitution logic. */
@@ -1275,7 +1275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransformationRuleActionOp { OP_UNSPECIFIED = 0, REMOVE = 1, MOVE = 2, COPY = 3, ADD = 4, TEST = 5, REPLACE = 6 }
+	export enum TransformationRuleActionOp { OP_UNSPECIFIED = 'OP_UNSPECIFIED', REMOVE = 'REMOVE', MOVE = 'MOVE', COPY = 'COPY', ADD = 'ADD', TEST = 'TEST', REPLACE = 'REPLACE' }
 
 
 	/** ResourceFilter specifies matching criteria to limit the scope of a change to a specific set of kubernetes resources that are selected for restoration from a backup. */
@@ -1304,9 +1304,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreConfigVolumeDataRestorePolicy { VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED = 0, RESTORE_VOLUME_DATA_FROM_BACKUP = 1, REUSE_VOLUME_HANDLE_FROM_BACKUP = 2, NO_VOLUME_DATA_RESTORATION = 3 }
+	export enum RestoreConfigVolumeDataRestorePolicy { VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED = 'VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED', RESTORE_VOLUME_DATA_FROM_BACKUP = 'RESTORE_VOLUME_DATA_FROM_BACKUP', REUSE_VOLUME_HANDLE_FROM_BACKUP = 'REUSE_VOLUME_HANDLE_FROM_BACKUP', NO_VOLUME_DATA_RESTORATION = 'NO_VOLUME_DATA_RESTORATION' }
 
-	export enum RestorePlanState { STATE_UNSPECIFIED = 0, CLUSTER_PENDING = 1, READY = 2, FAILED = 3, DELETING = 4 }
+	export enum RestorePlanState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CLUSTER_PENDING = 'CLUSTER_PENDING', READY = 'READY', FAILED = 'FAILED', DELETING = 'DELETING' }
 
 
 	/** Response message for ListRestores. */
@@ -1589,9 +1589,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeBackupFormat { VOLUME_BACKUP_FORMAT_UNSPECIFIED = 0, GCE_PERSISTENT_DISK = 1 }
+	export enum VolumeBackupFormat { VOLUME_BACKUP_FORMAT_UNSPECIFIED = 'VOLUME_BACKUP_FORMAT_UNSPECIFIED', GCE_PERSISTENT_DISK = 'GCE_PERSISTENT_DISK' }
 
-	export enum VolumeBackupState { STATE_UNSPECIFIED = 0, CREATING = 1, SNAPSHOTTING = 2, UPLOADING = 3, SUCCEEDED = 4, FAILED = 5, DELETING = 6 }
+	export enum VolumeBackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', SNAPSHOTTING = 'SNAPSHOTTING', UPLOADING = 'UPLOADING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', DELETING = 'DELETING' }
 
 
 	/** Response message for ListVolumeRestores. */
@@ -1711,9 +1711,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeRestoreState { STATE_UNSPECIFIED = 0, CREATING = 1, RESTORING = 2, SUCCEEDED = 3, FAILED = 4, DELETING = 5 }
+	export enum VolumeRestoreState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', RESTORING = 'RESTORING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', DELETING = 'DELETING' }
 
-	export enum VolumeRestoreVolumeType { VOLUME_TYPE_UNSPECIFIED = 0, GCE_PERSISTENT_DISK = 1 }
+	export enum VolumeRestoreVolumeType { VOLUME_TYPE_UNSPECIFIED = 'VOLUME_TYPE_UNSPECIFIED', GCE_PERSISTENT_DISK = 'GCE_PERSISTENT_DISK' }
 
 
 	/** Represents the metadata of the long-running operation. */

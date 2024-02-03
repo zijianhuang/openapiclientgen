@@ -108,7 +108,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BackupLongTermRetentionVaults_GetBackupLongTermRetentionVaultName { RegisteredVault = 0 }
+	export enum BackupLongTermRetentionVaults_GetBackupLongTermRetentionVaultName { RegisteredVault = 'RegisteredVault' }
 
 }
 

@@ -134,7 +134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckBoxFieldType { check = 0 }
+	export enum CheckBoxFieldType { check = 'check' }
 
 	export interface CreateOrUpdateTemplateRequest {
 
@@ -210,7 +210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrUpdateTemplateRequestFormat { a0 = 0, a1 = 1, a2 = 2, a3 = 3, a4 = 4, a5 = 5, a6 = 6 }
+	export enum CreateOrUpdateTemplateRequestFormat { a0 = 'a0', a1 = 'a1', a2 = 'a2', a3 = 'a3', a4 = 'a4', a5 = 'a5', a6 = 'a6' }
 
 	export interface Margin {
 
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrUpdateTemplateRequestOrientation { landscape = 0, portrait = 1 }
+	export enum CreateOrUpdateTemplateRequestOrientation { landscape = 'landscape', portrait = 'portrait' }
 
 	export interface DateField {
 
@@ -359,17 +359,17 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum Font { courier = 0, helvetica = 1, times_roman = 2 }
+	export enum Font { courier = 'courier', helvetica = 'helvetica', times_roman = 'times_roman' }
 
 
 	/** An enumeration. */
-	export enum HorizontalAlign { L = 0, C = 1, R = 2 }
+	export enum HorizontalAlign { L = 'L', C = 'C', R = 'R' }
 
-	export enum DateFieldType { date = 0 }
+	export enum DateFieldType { date = 'date' }
 
 
 	/** An enumeration. */
-	export enum VerticalAlign { T = 0, C = 1, B = 2 }
+	export enum VerticalAlign { T = 'T', C = 'C', B = 'B' }
 
 	export interface DesignerTemplate {
 
@@ -468,7 +468,7 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum Format { a0 = 0, a1 = 1, a2 = 2, a3 = 3, a4 = 4, a5 = 5, a6 = 6 }
+	export enum Format { a0 = 'a0', a1 = 'a1', a2 = 'a2', a3 = 'a3', a4 = 'a4', a5 = 'a5', a6 = 'a6' }
 
 	export interface GeneratePDFPayload {
 
@@ -489,7 +489,7 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum ImageAnchor { nw = 0, n = 1, ne = 2, w = 3, c = 4, e = 5, sw = 6, s = 7 }
+	export enum ImageAnchor { nw = 'nw', n = 'n', ne = 'ne', w = 'w', c = 'c', e = 'e', sw = 'sw', s = 's' }
 
 	export interface ImageField {
 		anchor?: ImageAnchor;
@@ -539,11 +539,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageFieldType { image = 0 }
+	export enum ImageFieldType { image = 'image' }
 
 
 	/** An enumeration. */
-	export enum Orientation { landscape = 0, portrait = 1 }
+	export enum Orientation { landscape = 'landscape', portrait = 'portrait' }
 
 	export interface PreviewModel {
 
@@ -844,7 +844,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextFieldType { text = 0 }
+	export enum TextFieldType { text = 'text' }
 
 	export interface UpdateTemplateRequest {
 

@@ -469,7 +469,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaPropertiesAlignment { ALIGNMENT_UNSPECIFIED = 0, LEFT = 1, RIGHT = 2, CENTER = 3 }
+	export enum MediaPropertiesAlignment { ALIGNMENT_UNSPECIFIED = 'ALIGNMENT_UNSPECIFIED', LEFT = 'LEFT', RIGHT = 'RIGHT', CENTER = 'CENTER' }
 
 
 	/** A page break. The title and description of this item are shown at the top of the new page. */
@@ -608,9 +608,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OptionGoToAction { GO_TO_ACTION_UNSPECIFIED = 0, NEXT_SECTION = 1, RESTART_FORM = 2, SUBMIT_FORM = 3 }
+	export enum OptionGoToAction { GO_TO_ACTION_UNSPECIFIED = 'GO_TO_ACTION_UNSPECIFIED', NEXT_SECTION = 'NEXT_SECTION', RESTART_FORM = 'RESTART_FORM', SUBMIT_FORM = 'SUBMIT_FORM' }
 
-	export enum ChoiceQuestionType { CHOICE_TYPE_UNSPECIFIED = 0, RADIO = 1, CHECKBOX = 2, DROP_DOWN = 3 }
+	export enum ChoiceQuestionType { CHOICE_TYPE_UNSPECIFIED = 'CHOICE_TYPE_UNSPECIFIED', RADIO = 'RADIO', CHECKBOX = 'CHECKBOX', DROP_DOWN = 'DROP_DOWN' }
 
 
 	/** Any question. The specific type of question is known by its `kind`. */
@@ -1441,11 +1441,11 @@ export namespace MyNS {
 
 	}
 
-	export enum WatchErrorType { ERROR_TYPE_UNSPECIFIED = 0, PROJECT_NOT_AUTHORIZED = 1, NO_USER_ACCESS = 2, OTHER_ERRORS = 3 }
+	export enum WatchErrorType { ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED', PROJECT_NOT_AUTHORIZED = 'PROJECT_NOT_AUTHORIZED', NO_USER_ACCESS = 'NO_USER_ACCESS', OTHER_ERRORS = 'OTHER_ERRORS' }
 
-	export enum WatchEventType { EVENT_TYPE_UNSPECIFIED = 0, SCHEMA = 1, RESPONSES = 2 }
+	export enum WatchEventType { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', SCHEMA = 'SCHEMA', RESPONSES = 'RESPONSES' }
 
-	export enum WatchState { STATE_UNSPECIFIED = 0, ACTIVE = 1, SUSPENDED = 2 }
+	export enum WatchState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', SUSPENDED = 'SUSPENDED' }
 
 
 	/** The target for notification delivery. */

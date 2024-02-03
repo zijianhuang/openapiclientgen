@@ -154,7 +154,7 @@ export namespace MyNS {
 
 
 	/** The provisioning state of the resource. */
-	export enum ProvisioningState { Creating = 0, Failed = 1, Succeeded = 2, Canceled = 3 }
+	export enum ProvisioningState { Creating = 'Creating', Failed = 'Failed', Succeeded = 'Succeeded', Canceled = 'Canceled' }
 
 
 	/** Base resource object. */
@@ -260,7 +260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrackedResourceLocation { global = 0 }
+	export enum TrackedResourceLocation { global = 'global' }
 
 	@Injectable()
 	export class MyClient {

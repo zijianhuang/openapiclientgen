@@ -4156,31 +4156,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Books_myconfig_requestAccessLicenseTypes { LICENSE_TYPES_UNDEFINED = 0, BOTH = 1, CONCURRENT = 2, DOWNLOAD = 3 }
+	export enum Books_myconfig_requestAccessLicenseTypes { LICENSE_TYPES_UNDEFINED = 'LICENSE_TYPES_UNDEFINED', BOTH = 'BOTH', CONCURRENT = 'CONCURRENT', DOWNLOAD = 'DOWNLOAD' }
 
-	export enum Books_mylibrary_bookshelves_addVolumeReason { REASON_UNDEFINED = 0, IOS_PREX = 1, IOS_SEARCH = 2, ONBOARDING = 3 }
+	export enum Books_mylibrary_bookshelves_addVolumeReason { REASON_UNDEFINED = 'REASON_UNDEFINED', IOS_PREX = 'IOS_PREX', IOS_SEARCH = 'IOS_SEARCH', ONBOARDING = 'ONBOARDING' }
 
-	export enum Books_mylibrary_bookshelves_removeVolumeReason { REASON_UNDEFINED = 0, ONBOARDING = 1 }
+	export enum Books_mylibrary_bookshelves_removeVolumeReason { REASON_UNDEFINED = 'REASON_UNDEFINED', ONBOARDING = 'ONBOARDING' }
 
-	export enum Books_mylibrary_bookshelves_volumes_listProjection { PROJECTION_UNDEFINED = 0, FULL = 1, LITE = 2 }
+	export enum Books_mylibrary_bookshelves_volumes_listProjection { PROJECTION_UNDEFINED = 'PROJECTION_UNDEFINED', FULL = 'FULL', LITE = 'LITE' }
 
-	export enum Books_mylibrary_readingpositions_setPositionAction { ACTION_UNDEFINED = 0, bookmark = 1, chapter = 2, 'next-page' = 3, 'prev-page' = 4, scroll = 5, search = 6 }
+	export enum Books_mylibrary_readingpositions_setPositionAction { ACTION_UNDEFINED = 'ACTION_UNDEFINED', bookmark = 'bookmark', chapter = 'chapter', 'next-page' = 'next-page', 'prev-page' = 'prev-page', scroll = 'scroll', search = 'search' }
 
-	export enum Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating { MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0, MATURE = 1, 'not-mature' = 2 }
+	export enum Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating { MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 'MAX_ALLOWED_MATURITY_RATING_UNDEFINED', MATURE = 'MATURE', 'not-mature' = 'not-mature' }
 
-	export enum Books_volumes_listDownload { DOWNLOAD_UNDEFINED = 0, EPUB = 1 }
+	export enum Books_volumes_listDownload { DOWNLOAD_UNDEFINED = 'DOWNLOAD_UNDEFINED', EPUB = 'EPUB' }
 
-	export enum Books_volumes_listFilter { FILTER_UNDEFINED = 0, ebooks = 1, 'free-ebooks' = 2, full = 3, 'paid-ebooks' = 4, partial = 5 }
+	export enum Books_volumes_listFilter { FILTER_UNDEFINED = 'FILTER_UNDEFINED', ebooks = 'ebooks', 'free-ebooks' = 'free-ebooks', full = 'full', 'paid-ebooks' = 'paid-ebooks', partial = 'partial' }
 
-	export enum Books_volumes_listLibraryRestrict { LIBRARY_RESTRICT_UNDEFINED = 0, 'my-library' = 1, 'no-restrict' = 2 }
+	export enum Books_volumes_listLibraryRestrict { LIBRARY_RESTRICT_UNDEFINED = 'LIBRARY_RESTRICT_UNDEFINED', 'my-library' = 'my-library', 'no-restrict' = 'no-restrict' }
 
-	export enum Books_volumes_listOrderBy { ORDER_BY_UNDEFINED = 0, newest = 1, relevance = 2 }
+	export enum Books_volumes_listOrderBy { ORDER_BY_UNDEFINED = 'ORDER_BY_UNDEFINED', newest = 'newest', relevance = 'relevance' }
 
-	export enum Books_volumes_listPrintType { PRINT_TYPE_UNDEFINED = 0, ALL = 1, BOOKS = 2, MAGAZINES = 3 }
+	export enum Books_volumes_listPrintType { PRINT_TYPE_UNDEFINED = 'PRINT_TYPE_UNDEFINED', ALL = 'ALL', BOOKS = 'BOOKS', MAGAZINES = 'MAGAZINES' }
 
-	export enum Books_volumes_recommended_rateRating { RATING_UNDEFINED = 0, HAVE_IT = 1, NOT_INTERESTED = 2 }
+	export enum Books_volumes_recommended_rateRating { RATING_UNDEFINED = 'RATING_UNDEFINED', HAVE_IT = 'HAVE_IT', NOT_INTERESTED = 'NOT_INTERESTED' }
 
-	export enum Books_volumes_associated_listAssociation { ASSOCIATION_UNDEFINED = 0, 'end-of-sample' = 1, 'end-of-volume' = 2, 'related-for-play' = 3 }
+	export enum Books_volumes_associated_listAssociation { ASSOCIATION_UNDEFINED = 'ASSOCIATION_UNDEFINED', 'end-of-sample' = 'end-of-sample', 'end-of-volume' = 'end-of-volume', 'related-for-play' = 'related-for-play' }
 
 }
 

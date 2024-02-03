@@ -55,7 +55,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchStatementErrorCodeEnum { ConditionalCheckFailed = 0, ItemCollectionSizeLimitExceeded = 1, RequestLimitExceeded = 2, ValidationError = 3, ProvisionedThroughputExceeded = 4, TransactionConflict = 5, ThrottlingError = 6, InternalServerError = 7, ResourceNotFound = 8, AccessDenied = 9, DuplicateItem = 10 }
+	export enum BatchStatementErrorCodeEnum { ConditionalCheckFailed = 'ConditionalCheckFailed', ItemCollectionSizeLimitExceeded = 'ItemCollectionSizeLimitExceeded', RequestLimitExceeded = 'RequestLimitExceeded', ValidationError = 'ValidationError', ProvisionedThroughputExceeded = 'ProvisionedThroughputExceeded', TransactionConflict = 'TransactionConflict', ThrottlingError = 'ThrottlingError', InternalServerError = 'InternalServerError', ResourceNotFound = 'ResourceNotFound', AccessDenied = 'AccessDenied', DuplicateItem = 'DuplicateItem' }
 
 	export interface AttributeMap {
 	}
@@ -221,9 +221,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReturnValuesOnConditionCheckFailure { ALL_OLD = 0, NONE = 1 }
+	export enum ReturnValuesOnConditionCheckFailure { ALL_OLD = 'ALL_OLD', NONE = 'NONE' }
 
-	export enum BatchExecuteStatementInputReturnConsumedCapacity { INDEXES = 0, TOTAL = 1, NONE = 2 }
+	export enum BatchExecuteStatementInputReturnConsumedCapacity { INDEXES = 'INDEXES', TOTAL = 'TOTAL', NONE = 'NONE' }
 
 	export interface RequestLimitExceeded {
 	}
@@ -390,7 +390,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReturnItemCollectionMetrics { SIZE = 0, NONE = 1 }
+	export enum ReturnItemCollectionMetrics { SIZE = 'SIZE', NONE = 'NONE' }
 
 	export interface ItemCollectionSizeLimitExceededException {
 	}
@@ -468,9 +468,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupStatus { CREATING = 0, DELETED = 1, AVAILABLE = 2 }
+	export enum BackupStatus { CREATING = 'CREATING', DELETED = 'DELETED', AVAILABLE = 'AVAILABLE' }
 
-	export enum BackupType { USER = 0, SYSTEM = 1, AWS_BACKUP = 2 }
+	export enum BackupType { USER = 'USER', SYSTEM = 'SYSTEM', AWS_BACKUP = 'AWS_BACKUP' }
 
 	export interface CreateBackupInput {
 
@@ -621,7 +621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicaStatus { CREATING = 0, CREATION_FAILED = 1, UPDATING = 2, DELETING = 3, ACTIVE = 4, REGION_DISABLED = 5, INACCESSIBLE_ENCRYPTION_CREDENTIALS = 6 }
+	export enum ReplicaStatus { CREATING = 'CREATING', CREATION_FAILED = 'CREATION_FAILED', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', REGION_DISABLED = 'REGION_DISABLED', INACCESSIBLE_ENCRYPTION_CREDENTIALS = 'INACCESSIBLE_ENCRYPTION_CREDENTIALS' }
 
 
 	/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
@@ -678,9 +678,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TableClass { STANDARD = 0, STANDARD_INFREQUENT_ACCESS = 1 }
+	export enum TableClass { STANDARD = 'STANDARD', STANDARD_INFREQUENT_ACCESS = 'STANDARD_INFREQUENT_ACCESS' }
 
-	export enum GlobalTableStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, UPDATING = 3 }
+	export enum GlobalTableStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 	export interface CreateGlobalTableInput {
 
@@ -831,7 +831,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalarAttributeType { S = 0, N = 1, B = 2 }
+	export enum ScalarAttributeType { S = 'S', N = 'N', B = 'B' }
 
 
 	/** <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p> */
@@ -861,9 +861,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyType { HASH = 0, RANGE = 1 }
+	export enum KeyType { HASH = 'HASH', RANGE = 'RANGE' }
 
-	export enum TableStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3, INACCESSIBLE_ENCRYPTION_CREDENTIALS = 4, ARCHIVING = 5, ARCHIVED = 6 }
+	export enum TableStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', INACCESSIBLE_ENCRYPTION_CREDENTIALS = 'INACCESSIBLE_ENCRYPTION_CREDENTIALS', ARCHIVING = 'ARCHIVING', ARCHIVED = 'ARCHIVED' }
 
 
 	/** Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases. */
@@ -914,7 +914,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BillingMode { PROVISIONED = 0, PAY_PER_REQUEST = 1 }
+	export enum BillingMode { PROVISIONED = 'PROVISIONED', PAY_PER_REQUEST = 'PAY_PER_REQUEST' }
 
 
 	/** Represents the properties of a local secondary index. */
@@ -962,7 +962,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectionType { ALL = 0, KEYS_ONLY = 1, INCLUDE = 2 }
+	export enum ProjectionType { ALL = 'ALL', KEYS_ONLY = 'KEYS_ONLY', INCLUDE = 'INCLUDE' }
 
 
 	/** Represents the properties of a global secondary index. */
@@ -999,7 +999,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3 }
+	export enum IndexStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE' }
 
 
 	/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
@@ -1025,7 +1025,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamViewType { NEW_IMAGE = 0, OLD_IMAGE = 1, NEW_AND_OLD_IMAGES = 2, KEYS_ONLY = 3 }
+	export enum StreamViewType { NEW_IMAGE = 'NEW_IMAGE', OLD_IMAGE = 'OLD_IMAGE', NEW_AND_OLD_IMAGES = 'NEW_AND_OLD_IMAGES', KEYS_ONLY = 'KEYS_ONLY' }
 
 
 	/** Contains details for the restore. */
@@ -1087,9 +1087,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SSEStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, UPDATING = 4 }
+	export enum SSEStatus { ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED', UPDATING = 'UPDATING' }
 
-	export enum SSEType { AES256 = 0, KMS = 1 }
+	export enum SSEType { AES256 = 'AES256', KMS = 'KMS' }
 
 
 	/** Contains details of a table archival operation. */
@@ -1459,7 +1459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeToLiveStatus { ENABLING = 0, DISABLING = 1, ENABLED = 2, DISABLED = 3 }
+	export enum TimeToLiveStatus { ENABLING = 'ENABLING', DISABLING = 'DISABLING', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DeleteBackupInput {
 
@@ -1600,9 +1600,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionalOperator { AND = 0, OR = 1 }
+	export enum ConditionalOperator { AND = 'AND', OR = 'OR' }
 
-	export enum ReturnValue { NONE = 0, ALL_OLD = 1, UPDATED_OLD = 2, ALL_NEW = 3, UPDATED_NEW = 4 }
+	export enum ReturnValue { NONE = 'NONE', ALL_OLD = 'ALL_OLD', UPDATED_OLD = 'UPDATED_OLD', ALL_NEW = 'ALL_NEW', UPDATED_NEW = 'UPDATED_NEW' }
 
 	export interface ExpressionAttributeNameMap {
 	}
@@ -1741,7 +1741,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContinuousBackupsStatus { ENABLED = 0, DISABLED = 1 }
+	export enum ContinuousBackupsStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** The description of the point in time settings applied to the table. */
@@ -1807,7 +1807,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContributorInsightsStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, FAILED = 4 }
+	export enum ContributorInsightsStatus { ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED', FAILED = 'FAILED' }
 
 
 	/** Represents a failure a contributor insights operation. */
@@ -1982,9 +1982,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
+	export enum ExportStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
-	export enum ExportFormat { DYNAMODB_JSON = 0, ION = 1 }
+	export enum ExportFormat { DYNAMODB_JSON = 'DYNAMODB_JSON', ION = 'ION' }
 
 	export interface DescribeExportInput {
 
@@ -2304,7 +2304,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportStatus { IN_PROGRESS = 0, COMPLETED = 1, CANCELLING = 2, CANCELLED = 3, FAILED = 4 }
+	export enum ImportStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 
 	/**  The S3 bucket that is being imported from.  */
@@ -2333,7 +2333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputFormat { DYNAMODB_JSON = 0, ION = 1, CSV = 2 }
+	export enum InputFormat { DYNAMODB_JSON = 'DYNAMODB_JSON', ION = 'ION', CSV = 'CSV' }
 
 
 	/**  The format options for the data that was imported into the target table. There is one value, CsvOption. */
@@ -2368,7 +2368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCompressionType { GZIP = 0, ZSTD = 1, NONE = 2 }
+	export enum InputCompressionType { GZIP = 'GZIP', ZSTD = 'ZSTD', NONE = 'NONE' }
 
 
 	/**  The parameters for the table created as part of the import operation.  */
@@ -2471,7 +2471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationStatus { ENABLING = 0, ACTIVE = 1, DISABLING = 2, DISABLED = 3, ENABLE_FAILED = 4 }
+	export enum DestinationStatus { ENABLING = 'ENABLING', ACTIVE = 'ACTIVE', DISABLING = 'DISABLING', DISABLED = 'DISABLED', ENABLE_FAILED = 'ENABLE_FAILED' }
 
 	export interface DescribeKinesisStreamingDestinationInput {
 
@@ -3185,7 +3185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupTypeFilter { USER = 0, SYSTEM = 1, AWS_BACKUP = 2, ALL = 3 }
+	export enum BackupTypeFilter { USER = 'USER', SYSTEM = 'SYSTEM', AWS_BACKUP = 'AWS_BACKUP', ALL = 'ALL' }
 
 	export interface ListContributorInsightsOutput {
 		ContributorInsightsSummaries?: Array<ContributorInsightsSummary>;
@@ -3648,7 +3648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Select { ALL_ATTRIBUTES = 0, ALL_PROJECTED_ATTRIBUTES = 1, SPECIFIC_ATTRIBUTES = 2, COUNT = 3 }
+	export enum Select { ALL_ATTRIBUTES = 'ALL_ATTRIBUTES', ALL_PROJECTED_ATTRIBUTES = 'ALL_PROJECTED_ATTRIBUTES', SPECIFIC_ATTRIBUTES = 'SPECIFIC_ATTRIBUTES', COUNT = 'COUNT' }
 
 	export interface KeyConditions {
 	}
@@ -4268,7 +4268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContributorInsightsAction { ENABLE = 0, DISABLE = 1 }
+	export enum ContributorInsightsAction { ENABLE = 'ENABLE', DISABLE = 'DISABLE' }
 
 	export interface UpdateGlobalTableOutput {
 		GlobalTableDescription?: GlobalTableDescription;
@@ -5085,7 +5085,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeAction { ADD = 0, PUT = 1, DELETE = 2 }
+	export enum AttributeAction { ADD = 'ADD', PUT = 'PUT', DELETE = 'DELETE' }
 
 
 	/** <p>For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to perform on each, and the new value for each.</p> <note> <p>You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will need to delete the item, and then use <code>PutItem</code> to create a new item with new attributes.</p> </note> <p>Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.</p> */
@@ -5107,7 +5107,7 @@ export namespace MyNS {
 
 
 	/** <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-	export enum ReturnConsumedCapacity { INDEXES = 0, TOTAL = 1, NONE = 2 }
+	export enum ReturnConsumedCapacity { INDEXES = 'INDEXES', TOTAL = 'TOTAL', NONE = 'NONE' }
 
 
 	/** <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p> */
@@ -5184,7 +5184,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { EQ = 0, NE = 1, IN = 2, LE = 3, LT = 4, GE = 5, GT = 6, BETWEEN = 7, NOT_NULL = 8, NULL = 9, CONTAINS = 10, NOT_CONTAINS = 11, BEGINS_WITH = 12 }
+	export enum ComparisonOperator { EQ = 'EQ', NE = 'NE', IN = 'IN', LE = 'LE', LT = 'LT', GE = 'GE', GT = 'GT', BETWEEN = 'BETWEEN', NOT_NULL = 'NOT_NULL', NULL = 'NULL', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS', BEGINS_WITH = 'BEGINS_WITH' }
 
 
 	/** <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p> <ul> <li> <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li> </ul> */
@@ -5230,9 +5230,9 @@ export namespace MyNS {
 
 	}
 
-	export enum S3SseAlgorithm { AES256 = 0, KMS = 1 }
+	export enum S3SseAlgorithm { AES256 = 'AES256', KMS = 'KMS' }
 
-	export enum PointInTimeRecoveryStatus { ENABLED = 0, DISABLED = 1 }
+	export enum PointInTimeRecoveryStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	@Injectable()
 	export class MyClient {
@@ -5730,111 +5730,111 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchExecuteStatementX_Amz_Target { 'DynamoDB_20120810.BatchExecuteStatement' = 0 }
+	export enum BatchExecuteStatementX_Amz_Target { 'DynamoDB_20120810.BatchExecuteStatement' = 'DynamoDB_20120810.BatchExecuteStatement' }
 
-	export enum BatchGetItemX_Amz_Target { 'DynamoDB_20120810.BatchGetItem' = 0 }
+	export enum BatchGetItemX_Amz_Target { 'DynamoDB_20120810.BatchGetItem' = 'DynamoDB_20120810.BatchGetItem' }
 
-	export enum BatchWriteItemX_Amz_Target { 'DynamoDB_20120810.BatchWriteItem' = 0 }
+	export enum BatchWriteItemX_Amz_Target { 'DynamoDB_20120810.BatchWriteItem' = 'DynamoDB_20120810.BatchWriteItem' }
 
-	export enum CreateBackupX_Amz_Target { 'DynamoDB_20120810.CreateBackup' = 0 }
+	export enum CreateBackupX_Amz_Target { 'DynamoDB_20120810.CreateBackup' = 'DynamoDB_20120810.CreateBackup' }
 
-	export enum CreateGlobalTableX_Amz_Target { 'DynamoDB_20120810.CreateGlobalTable' = 0 }
+	export enum CreateGlobalTableX_Amz_Target { 'DynamoDB_20120810.CreateGlobalTable' = 'DynamoDB_20120810.CreateGlobalTable' }
 
-	export enum CreateTableX_Amz_Target { 'DynamoDB_20120810.CreateTable' = 0 }
+	export enum CreateTableX_Amz_Target { 'DynamoDB_20120810.CreateTable' = 'DynamoDB_20120810.CreateTable' }
 
-	export enum DeleteBackupX_Amz_Target { 'DynamoDB_20120810.DeleteBackup' = 0 }
+	export enum DeleteBackupX_Amz_Target { 'DynamoDB_20120810.DeleteBackup' = 'DynamoDB_20120810.DeleteBackup' }
 
-	export enum DeleteItemX_Amz_Target { 'DynamoDB_20120810.DeleteItem' = 0 }
+	export enum DeleteItemX_Amz_Target { 'DynamoDB_20120810.DeleteItem' = 'DynamoDB_20120810.DeleteItem' }
 
-	export enum DeleteTableX_Amz_Target { 'DynamoDB_20120810.DeleteTable' = 0 }
+	export enum DeleteTableX_Amz_Target { 'DynamoDB_20120810.DeleteTable' = 'DynamoDB_20120810.DeleteTable' }
 
-	export enum DescribeBackupX_Amz_Target { 'DynamoDB_20120810.DescribeBackup' = 0 }
+	export enum DescribeBackupX_Amz_Target { 'DynamoDB_20120810.DescribeBackup' = 'DynamoDB_20120810.DescribeBackup' }
 
-	export enum DescribeContinuousBackupsX_Amz_Target { 'DynamoDB_20120810.DescribeContinuousBackups' = 0 }
+	export enum DescribeContinuousBackupsX_Amz_Target { 'DynamoDB_20120810.DescribeContinuousBackups' = 'DynamoDB_20120810.DescribeContinuousBackups' }
 
-	export enum DescribeContributorInsightsX_Amz_Target { 'DynamoDB_20120810.DescribeContributorInsights' = 0 }
+	export enum DescribeContributorInsightsX_Amz_Target { 'DynamoDB_20120810.DescribeContributorInsights' = 'DynamoDB_20120810.DescribeContributorInsights' }
 
-	export enum DescribeEndpointsX_Amz_Target { 'DynamoDB_20120810.DescribeEndpoints' = 0 }
+	export enum DescribeEndpointsX_Amz_Target { 'DynamoDB_20120810.DescribeEndpoints' = 'DynamoDB_20120810.DescribeEndpoints' }
 
-	export enum DescribeExportX_Amz_Target { 'DynamoDB_20120810.DescribeExport' = 0 }
+	export enum DescribeExportX_Amz_Target { 'DynamoDB_20120810.DescribeExport' = 'DynamoDB_20120810.DescribeExport' }
 
-	export enum DescribeGlobalTableX_Amz_Target { 'DynamoDB_20120810.DescribeGlobalTable' = 0 }
+	export enum DescribeGlobalTableX_Amz_Target { 'DynamoDB_20120810.DescribeGlobalTable' = 'DynamoDB_20120810.DescribeGlobalTable' }
 
-	export enum DescribeGlobalTableSettingsX_Amz_Target { 'DynamoDB_20120810.DescribeGlobalTableSettings' = 0 }
+	export enum DescribeGlobalTableSettingsX_Amz_Target { 'DynamoDB_20120810.DescribeGlobalTableSettings' = 'DynamoDB_20120810.DescribeGlobalTableSettings' }
 
-	export enum DescribeImportX_Amz_Target { 'DynamoDB_20120810.DescribeImport' = 0 }
+	export enum DescribeImportX_Amz_Target { 'DynamoDB_20120810.DescribeImport' = 'DynamoDB_20120810.DescribeImport' }
 
-	export enum DescribeKinesisStreamingDestinationX_Amz_Target { 'DynamoDB_20120810.DescribeKinesisStreamingDestination' = 0 }
+	export enum DescribeKinesisStreamingDestinationX_Amz_Target { 'DynamoDB_20120810.DescribeKinesisStreamingDestination' = 'DynamoDB_20120810.DescribeKinesisStreamingDestination' }
 
-	export enum DescribeLimitsX_Amz_Target { 'DynamoDB_20120810.DescribeLimits' = 0 }
+	export enum DescribeLimitsX_Amz_Target { 'DynamoDB_20120810.DescribeLimits' = 'DynamoDB_20120810.DescribeLimits' }
 
-	export enum DescribeTableX_Amz_Target { 'DynamoDB_20120810.DescribeTable' = 0 }
+	export enum DescribeTableX_Amz_Target { 'DynamoDB_20120810.DescribeTable' = 'DynamoDB_20120810.DescribeTable' }
 
-	export enum DescribeTableReplicaAutoScalingX_Amz_Target { 'DynamoDB_20120810.DescribeTableReplicaAutoScaling' = 0 }
+	export enum DescribeTableReplicaAutoScalingX_Amz_Target { 'DynamoDB_20120810.DescribeTableReplicaAutoScaling' = 'DynamoDB_20120810.DescribeTableReplicaAutoScaling' }
 
-	export enum DescribeTimeToLiveX_Amz_Target { 'DynamoDB_20120810.DescribeTimeToLive' = 0 }
+	export enum DescribeTimeToLiveX_Amz_Target { 'DynamoDB_20120810.DescribeTimeToLive' = 'DynamoDB_20120810.DescribeTimeToLive' }
 
-	export enum DisableKinesisStreamingDestinationX_Amz_Target { 'DynamoDB_20120810.DisableKinesisStreamingDestination' = 0 }
+	export enum DisableKinesisStreamingDestinationX_Amz_Target { 'DynamoDB_20120810.DisableKinesisStreamingDestination' = 'DynamoDB_20120810.DisableKinesisStreamingDestination' }
 
-	export enum EnableKinesisStreamingDestinationX_Amz_Target { 'DynamoDB_20120810.EnableKinesisStreamingDestination' = 0 }
+	export enum EnableKinesisStreamingDestinationX_Amz_Target { 'DynamoDB_20120810.EnableKinesisStreamingDestination' = 'DynamoDB_20120810.EnableKinesisStreamingDestination' }
 
-	export enum ExecuteStatementX_Amz_Target { 'DynamoDB_20120810.ExecuteStatement' = 0 }
+	export enum ExecuteStatementX_Amz_Target { 'DynamoDB_20120810.ExecuteStatement' = 'DynamoDB_20120810.ExecuteStatement' }
 
-	export enum ExecuteTransactionX_Amz_Target { 'DynamoDB_20120810.ExecuteTransaction' = 0 }
+	export enum ExecuteTransactionX_Amz_Target { 'DynamoDB_20120810.ExecuteTransaction' = 'DynamoDB_20120810.ExecuteTransaction' }
 
-	export enum ExportTableToPointInTimeX_Amz_Target { 'DynamoDB_20120810.ExportTableToPointInTime' = 0 }
+	export enum ExportTableToPointInTimeX_Amz_Target { 'DynamoDB_20120810.ExportTableToPointInTime' = 'DynamoDB_20120810.ExportTableToPointInTime' }
 
-	export enum GetItemX_Amz_Target { 'DynamoDB_20120810.GetItem' = 0 }
+	export enum GetItemX_Amz_Target { 'DynamoDB_20120810.GetItem' = 'DynamoDB_20120810.GetItem' }
 
-	export enum ImportTableX_Amz_Target { 'DynamoDB_20120810.ImportTable' = 0 }
+	export enum ImportTableX_Amz_Target { 'DynamoDB_20120810.ImportTable' = 'DynamoDB_20120810.ImportTable' }
 
-	export enum ListBackupsX_Amz_Target { 'DynamoDB_20120810.ListBackups' = 0 }
+	export enum ListBackupsX_Amz_Target { 'DynamoDB_20120810.ListBackups' = 'DynamoDB_20120810.ListBackups' }
 
-	export enum ListContributorInsightsX_Amz_Target { 'DynamoDB_20120810.ListContributorInsights' = 0 }
+	export enum ListContributorInsightsX_Amz_Target { 'DynamoDB_20120810.ListContributorInsights' = 'DynamoDB_20120810.ListContributorInsights' }
 
-	export enum ListExportsX_Amz_Target { 'DynamoDB_20120810.ListExports' = 0 }
+	export enum ListExportsX_Amz_Target { 'DynamoDB_20120810.ListExports' = 'DynamoDB_20120810.ListExports' }
 
-	export enum ListGlobalTablesX_Amz_Target { 'DynamoDB_20120810.ListGlobalTables' = 0 }
+	export enum ListGlobalTablesX_Amz_Target { 'DynamoDB_20120810.ListGlobalTables' = 'DynamoDB_20120810.ListGlobalTables' }
 
-	export enum ListImportsX_Amz_Target { 'DynamoDB_20120810.ListImports' = 0 }
+	export enum ListImportsX_Amz_Target { 'DynamoDB_20120810.ListImports' = 'DynamoDB_20120810.ListImports' }
 
-	export enum ListTablesX_Amz_Target { 'DynamoDB_20120810.ListTables' = 0 }
+	export enum ListTablesX_Amz_Target { 'DynamoDB_20120810.ListTables' = 'DynamoDB_20120810.ListTables' }
 
-	export enum ListTagsOfResourceX_Amz_Target { 'DynamoDB_20120810.ListTagsOfResource' = 0 }
+	export enum ListTagsOfResourceX_Amz_Target { 'DynamoDB_20120810.ListTagsOfResource' = 'DynamoDB_20120810.ListTagsOfResource' }
 
-	export enum PutItemX_Amz_Target { 'DynamoDB_20120810.PutItem' = 0 }
+	export enum PutItemX_Amz_Target { 'DynamoDB_20120810.PutItem' = 'DynamoDB_20120810.PutItem' }
 
-	export enum QueryX_Amz_Target { 'DynamoDB_20120810.Query' = 0 }
+	export enum QueryX_Amz_Target { 'DynamoDB_20120810.Query' = 'DynamoDB_20120810.Query' }
 
-	export enum RestoreTableFromBackupX_Amz_Target { 'DynamoDB_20120810.RestoreTableFromBackup' = 0 }
+	export enum RestoreTableFromBackupX_Amz_Target { 'DynamoDB_20120810.RestoreTableFromBackup' = 'DynamoDB_20120810.RestoreTableFromBackup' }
 
-	export enum RestoreTableToPointInTimeX_Amz_Target { 'DynamoDB_20120810.RestoreTableToPointInTime' = 0 }
+	export enum RestoreTableToPointInTimeX_Amz_Target { 'DynamoDB_20120810.RestoreTableToPointInTime' = 'DynamoDB_20120810.RestoreTableToPointInTime' }
 
-	export enum ScanX_Amz_Target { 'DynamoDB_20120810.Scan' = 0 }
+	export enum ScanX_Amz_Target { 'DynamoDB_20120810.Scan' = 'DynamoDB_20120810.Scan' }
 
-	export enum TagResourceX_Amz_Target { 'DynamoDB_20120810.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'DynamoDB_20120810.TagResource' = 'DynamoDB_20120810.TagResource' }
 
-	export enum TransactGetItemsX_Amz_Target { 'DynamoDB_20120810.TransactGetItems' = 0 }
+	export enum TransactGetItemsX_Amz_Target { 'DynamoDB_20120810.TransactGetItems' = 'DynamoDB_20120810.TransactGetItems' }
 
-	export enum TransactWriteItemsX_Amz_Target { 'DynamoDB_20120810.TransactWriteItems' = 0 }
+	export enum TransactWriteItemsX_Amz_Target { 'DynamoDB_20120810.TransactWriteItems' = 'DynamoDB_20120810.TransactWriteItems' }
 
-	export enum UntagResourceX_Amz_Target { 'DynamoDB_20120810.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'DynamoDB_20120810.UntagResource' = 'DynamoDB_20120810.UntagResource' }
 
-	export enum UpdateContinuousBackupsX_Amz_Target { 'DynamoDB_20120810.UpdateContinuousBackups' = 0 }
+	export enum UpdateContinuousBackupsX_Amz_Target { 'DynamoDB_20120810.UpdateContinuousBackups' = 'DynamoDB_20120810.UpdateContinuousBackups' }
 
-	export enum UpdateContributorInsightsX_Amz_Target { 'DynamoDB_20120810.UpdateContributorInsights' = 0 }
+	export enum UpdateContributorInsightsX_Amz_Target { 'DynamoDB_20120810.UpdateContributorInsights' = 'DynamoDB_20120810.UpdateContributorInsights' }
 
-	export enum UpdateGlobalTableX_Amz_Target { 'DynamoDB_20120810.UpdateGlobalTable' = 0 }
+	export enum UpdateGlobalTableX_Amz_Target { 'DynamoDB_20120810.UpdateGlobalTable' = 'DynamoDB_20120810.UpdateGlobalTable' }
 
-	export enum UpdateGlobalTableSettingsX_Amz_Target { 'DynamoDB_20120810.UpdateGlobalTableSettings' = 0 }
+	export enum UpdateGlobalTableSettingsX_Amz_Target { 'DynamoDB_20120810.UpdateGlobalTableSettings' = 'DynamoDB_20120810.UpdateGlobalTableSettings' }
 
-	export enum UpdateItemX_Amz_Target { 'DynamoDB_20120810.UpdateItem' = 0 }
+	export enum UpdateItemX_Amz_Target { 'DynamoDB_20120810.UpdateItem' = 'DynamoDB_20120810.UpdateItem' }
 
-	export enum UpdateTableX_Amz_Target { 'DynamoDB_20120810.UpdateTable' = 0 }
+	export enum UpdateTableX_Amz_Target { 'DynamoDB_20120810.UpdateTable' = 'DynamoDB_20120810.UpdateTable' }
 
-	export enum UpdateTableReplicaAutoScalingX_Amz_Target { 'DynamoDB_20120810.UpdateTableReplicaAutoScaling' = 0 }
+	export enum UpdateTableReplicaAutoScalingX_Amz_Target { 'DynamoDB_20120810.UpdateTableReplicaAutoScaling' = 'DynamoDB_20120810.UpdateTableReplicaAutoScaling' }
 
-	export enum UpdateTimeToLiveX_Amz_Target { 'DynamoDB_20120810.UpdateTimeToLive' = 0 }
+	export enum UpdateTimeToLiveX_Amz_Target { 'DynamoDB_20120810.UpdateTimeToLive' = 'DynamoDB_20120810.UpdateTimeToLive' }
 
 }
 

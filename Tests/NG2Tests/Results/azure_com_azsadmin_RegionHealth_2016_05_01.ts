@@ -140,9 +140,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionHealthModelUsageMetricsMetricsValueSourceName { PhysicalNode = 0, VirtualMachine = 1, ResourceProvider = 2 }
+	export enum RegionHealthModelUsageMetricsMetricsValueSourceName { PhysicalNode = 'PhysicalNode', VirtualMachine = 'VirtualMachine', ResourceProvider = 'ResourceProvider' }
 
-	export enum RegionHealthModelUsageMetricsMetricsValueUnit { One = 0, Percentage = 1, B = 2, KB = 3, MB = 4, GB = 5, TB = 6 }
+	export enum RegionHealthModelUsageMetricsMetricsValueUnit { One = 'One', Percentage = 'Percentage', B = 'B', KB = 'KB', MB = 'MB', GB = 'GB', TB = 'TB' }
 
 	@Injectable()
 	export class MyClient {

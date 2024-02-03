@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceptanceType { ACCEPT = 0, REJECT = 1 }
+	export enum AcceptanceType { ACCEPT = 'ACCEPT', REJECT = 'REJECT' }
 
 	export interface InvalidRequestException {
 	}
@@ -140,9 +140,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GameServerClaimStatus { CLAIMED = 0 }
+	export enum GameServerClaimStatus { CLAIMED = 'CLAIMED' }
 
-	export enum GameServerUtilizationStatus { AVAILABLE = 0, UTILIZED = 1 }
+	export enum GameServerUtilizationStatus { AVAILABLE = 'AVAILABLE', UTILIZED = 'UTILIZED' }
 
 	export interface ClaimGameServerInput {
 
@@ -183,7 +183,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterInstanceStatus { ACTIVE = 0, DRAINING = 1 }
+	export enum FilterInstanceStatus { ACTIVE = 'ACTIVE', DRAINING = 'DRAINING' }
 
 	export interface ConflictException {
 	}
@@ -282,7 +282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutingStrategyType { SIMPLE = 0, TERMINAL = 1 }
+	export enum RoutingStrategyType { SIMPLE = 'SIMPLE', TERMINAL = 'TERMINAL' }
 
 	export interface CreateAliasInput {
 
@@ -410,9 +410,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildStatus { INITIALIZED = 0, READY = 1, FAILED = 2 }
+	export enum BuildStatus { INITIALIZED = 'INITIALIZED', READY = 'READY', FAILED = 'FAILED' }
 
-	export enum OperatingSystem { WINDOWS_2012 = 0, AMAZON_LINUX = 1, AMAZON_LINUX_2 = 2, WINDOWS_2016 = 3, AMAZON_LINUX_2023 = 4 }
+	export enum OperatingSystem { WINDOWS_2012 = 'WINDOWS_2012', AMAZON_LINUX = 'AMAZON_LINUX', AMAZON_LINUX_2 = 'AMAZON_LINUX_2', WINDOWS_2016 = 'WINDOWS_2016', AMAZON_LINUX_2023 = 'AMAZON_LINUX_2023' }
 
 
 	/** Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. */
@@ -582,13 +582,13 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetType { ON_DEMAND = 0, SPOT = 1 }
+	export enum FleetType { ON_DEMAND = 'ON_DEMAND', SPOT = 'SPOT' }
 
-	export enum EC2InstanceType { 't2.micro' = 0, 't2.small' = 1, 't2.medium' = 2, 't2.large' = 3, 'c3.large' = 4, 'c3.xlarge' = 5, 'c3.2xlarge' = 6, 'c3.4xlarge' = 7, 'c3.8xlarge' = 8, 'c4.large' = 9, 'c4.xlarge' = 10, 'c4.2xlarge' = 11, 'c4.4xlarge' = 12, 'c4.8xlarge' = 13, 'c5.large' = 14, 'c5.xlarge' = 15, 'c5.2xlarge' = 16, 'c5.4xlarge' = 17, 'c5.9xlarge' = 18, 'c5.12xlarge' = 19, 'c5.18xlarge' = 20, 'c5.24xlarge' = 21, 'c5a.large' = 22, 'c5a.xlarge' = 23, 'c5a.2xlarge' = 24, 'c5a.4xlarge' = 25, 'c5a.8xlarge' = 26, 'c5a.12xlarge' = 27, 'c5a.16xlarge' = 28, 'c5a.24xlarge' = 29, 'r3.large' = 30, 'r3.xlarge' = 31, 'r3.2xlarge' = 32, 'r3.4xlarge' = 33, 'r3.8xlarge' = 34, 'r4.large' = 35, 'r4.xlarge' = 36, 'r4.2xlarge' = 37, 'r4.4xlarge' = 38, 'r4.8xlarge' = 39, 'r4.16xlarge' = 40, 'r5.large' = 41, 'r5.xlarge' = 42, 'r5.2xlarge' = 43, 'r5.4xlarge' = 44, 'r5.8xlarge' = 45, 'r5.12xlarge' = 46, 'r5.16xlarge' = 47, 'r5.24xlarge' = 48, 'r5a.large' = 49, 'r5a.xlarge' = 50, 'r5a.2xlarge' = 51, 'r5a.4xlarge' = 52, 'r5a.8xlarge' = 53, 'r5a.12xlarge' = 54, 'r5a.16xlarge' = 55, 'r5a.24xlarge' = 56, 'm3.medium' = 57, 'm3.large' = 58, 'm3.xlarge' = 59, 'm3.2xlarge' = 60, 'm4.large' = 61, 'm4.xlarge' = 62, 'm4.2xlarge' = 63, 'm4.4xlarge' = 64, 'm4.10xlarge' = 65, 'm5.large' = 66, 'm5.xlarge' = 67, 'm5.2xlarge' = 68, 'm5.4xlarge' = 69, 'm5.8xlarge' = 70, 'm5.12xlarge' = 71, 'm5.16xlarge' = 72, 'm5.24xlarge' = 73, 'm5a.large' = 74, 'm5a.xlarge' = 75, 'm5a.2xlarge' = 76, 'm5a.4xlarge' = 77, 'm5a.8xlarge' = 78, 'm5a.12xlarge' = 79, 'm5a.16xlarge' = 80, 'm5a.24xlarge' = 81, 'c5d.large' = 82, 'c5d.xlarge' = 83, 'c5d.2xlarge' = 84, 'c5d.4xlarge' = 85, 'c5d.9xlarge' = 86, 'c5d.12xlarge' = 87, 'c5d.18xlarge' = 88, 'c5d.24xlarge' = 89, 'c6a.large' = 90, 'c6a.xlarge' = 91, 'c6a.2xlarge' = 92, 'c6a.4xlarge' = 93, 'c6a.8xlarge' = 94, 'c6a.12xlarge' = 95, 'c6a.16xlarge' = 96, 'c6a.24xlarge' = 97, 'c6i.large' = 98, 'c6i.xlarge' = 99, 'c6i.2xlarge' = 100, 'c6i.4xlarge' = 101, 'c6i.8xlarge' = 102, 'c6i.12xlarge' = 103, 'c6i.16xlarge' = 104, 'c6i.24xlarge' = 105, 'r5d.large' = 106, 'r5d.xlarge' = 107, 'r5d.2xlarge' = 108, 'r5d.4xlarge' = 109, 'r5d.8xlarge' = 110, 'r5d.12xlarge' = 111, 'r5d.16xlarge' = 112, 'r5d.24xlarge' = 113 }
+	export enum EC2InstanceType { 't2.micro' = 't2.micro', 't2.small' = 't2.small', 't2.medium' = 't2.medium', 't2.large' = 't2.large', 'c3.large' = 'c3.large', 'c3.xlarge' = 'c3.xlarge', 'c3.2xlarge' = 'c3.2xlarge', 'c3.4xlarge' = 'c3.4xlarge', 'c3.8xlarge' = 'c3.8xlarge', 'c4.large' = 'c4.large', 'c4.xlarge' = 'c4.xlarge', 'c4.2xlarge' = 'c4.2xlarge', 'c4.4xlarge' = 'c4.4xlarge', 'c4.8xlarge' = 'c4.8xlarge', 'c5.large' = 'c5.large', 'c5.xlarge' = 'c5.xlarge', 'c5.2xlarge' = 'c5.2xlarge', 'c5.4xlarge' = 'c5.4xlarge', 'c5.9xlarge' = 'c5.9xlarge', 'c5.12xlarge' = 'c5.12xlarge', 'c5.18xlarge' = 'c5.18xlarge', 'c5.24xlarge' = 'c5.24xlarge', 'c5a.large' = 'c5a.large', 'c5a.xlarge' = 'c5a.xlarge', 'c5a.2xlarge' = 'c5a.2xlarge', 'c5a.4xlarge' = 'c5a.4xlarge', 'c5a.8xlarge' = 'c5a.8xlarge', 'c5a.12xlarge' = 'c5a.12xlarge', 'c5a.16xlarge' = 'c5a.16xlarge', 'c5a.24xlarge' = 'c5a.24xlarge', 'r3.large' = 'r3.large', 'r3.xlarge' = 'r3.xlarge', 'r3.2xlarge' = 'r3.2xlarge', 'r3.4xlarge' = 'r3.4xlarge', 'r3.8xlarge' = 'r3.8xlarge', 'r4.large' = 'r4.large', 'r4.xlarge' = 'r4.xlarge', 'r4.2xlarge' = 'r4.2xlarge', 'r4.4xlarge' = 'r4.4xlarge', 'r4.8xlarge' = 'r4.8xlarge', 'r4.16xlarge' = 'r4.16xlarge', 'r5.large' = 'r5.large', 'r5.xlarge' = 'r5.xlarge', 'r5.2xlarge' = 'r5.2xlarge', 'r5.4xlarge' = 'r5.4xlarge', 'r5.8xlarge' = 'r5.8xlarge', 'r5.12xlarge' = 'r5.12xlarge', 'r5.16xlarge' = 'r5.16xlarge', 'r5.24xlarge' = 'r5.24xlarge', 'r5a.large' = 'r5a.large', 'r5a.xlarge' = 'r5a.xlarge', 'r5a.2xlarge' = 'r5a.2xlarge', 'r5a.4xlarge' = 'r5a.4xlarge', 'r5a.8xlarge' = 'r5a.8xlarge', 'r5a.12xlarge' = 'r5a.12xlarge', 'r5a.16xlarge' = 'r5a.16xlarge', 'r5a.24xlarge' = 'r5a.24xlarge', 'm3.medium' = 'm3.medium', 'm3.large' = 'm3.large', 'm3.xlarge' = 'm3.xlarge', 'm3.2xlarge' = 'm3.2xlarge', 'm4.large' = 'm4.large', 'm4.xlarge' = 'm4.xlarge', 'm4.2xlarge' = 'm4.2xlarge', 'm4.4xlarge' = 'm4.4xlarge', 'm4.10xlarge' = 'm4.10xlarge', 'm5.large' = 'm5.large', 'm5.xlarge' = 'm5.xlarge', 'm5.2xlarge' = 'm5.2xlarge', 'm5.4xlarge' = 'm5.4xlarge', 'm5.8xlarge' = 'm5.8xlarge', 'm5.12xlarge' = 'm5.12xlarge', 'm5.16xlarge' = 'm5.16xlarge', 'm5.24xlarge' = 'm5.24xlarge', 'm5a.large' = 'm5a.large', 'm5a.xlarge' = 'm5a.xlarge', 'm5a.2xlarge' = 'm5a.2xlarge', 'm5a.4xlarge' = 'm5a.4xlarge', 'm5a.8xlarge' = 'm5a.8xlarge', 'm5a.12xlarge' = 'm5a.12xlarge', 'm5a.16xlarge' = 'm5a.16xlarge', 'm5a.24xlarge' = 'm5a.24xlarge', 'c5d.large' = 'c5d.large', 'c5d.xlarge' = 'c5d.xlarge', 'c5d.2xlarge' = 'c5d.2xlarge', 'c5d.4xlarge' = 'c5d.4xlarge', 'c5d.9xlarge' = 'c5d.9xlarge', 'c5d.12xlarge' = 'c5d.12xlarge', 'c5d.18xlarge' = 'c5d.18xlarge', 'c5d.24xlarge' = 'c5d.24xlarge', 'c6a.large' = 'c6a.large', 'c6a.xlarge' = 'c6a.xlarge', 'c6a.2xlarge' = 'c6a.2xlarge', 'c6a.4xlarge' = 'c6a.4xlarge', 'c6a.8xlarge' = 'c6a.8xlarge', 'c6a.12xlarge' = 'c6a.12xlarge', 'c6a.16xlarge' = 'c6a.16xlarge', 'c6a.24xlarge' = 'c6a.24xlarge', 'c6i.large' = 'c6i.large', 'c6i.xlarge' = 'c6i.xlarge', 'c6i.2xlarge' = 'c6i.2xlarge', 'c6i.4xlarge' = 'c6i.4xlarge', 'c6i.8xlarge' = 'c6i.8xlarge', 'c6i.12xlarge' = 'c6i.12xlarge', 'c6i.16xlarge' = 'c6i.16xlarge', 'c6i.24xlarge' = 'c6i.24xlarge', 'r5d.large' = 'r5d.large', 'r5d.xlarge' = 'r5d.xlarge', 'r5d.2xlarge' = 'r5d.2xlarge', 'r5d.4xlarge' = 'r5d.4xlarge', 'r5d.8xlarge' = 'r5d.8xlarge', 'r5d.12xlarge' = 'r5d.12xlarge', 'r5d.16xlarge' = 'r5d.16xlarge', 'r5d.24xlarge' = 'r5d.24xlarge' }
 
-	export enum FleetStatus { NEW = 0, DOWNLOADING = 1, VALIDATING = 2, BUILDING = 3, ACTIVATING = 4, ACTIVE = 5, DELETING = 6, ERROR = 7, TERMINATED = 8, NOT_FOUND = 9 }
+	export enum FleetStatus { NEW = 'NEW', DOWNLOADING = 'DOWNLOADING', VALIDATING = 'VALIDATING', BUILDING = 'BUILDING', ACTIVATING = 'ACTIVATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', ERROR = 'ERROR', TERMINATED = 'TERMINATED', NOT_FOUND = 'NOT_FOUND' }
 
-	export enum ProtectionPolicy { NoProtection = 0, FullProtection = 1 }
+	export enum ProtectionPolicy { NoProtection = 'NoProtection', FullProtection = 'FullProtection' }
 
 
 	/** <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p> */
@@ -610,7 +610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetAction { AUTO_SCALING = 0 }
+	export enum FleetAction { AUTO_SCALING = 'AUTO_SCALING' }
 
 
 	/** Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>.  */
@@ -633,9 +633,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateType { DISABLED = 0, GENERATED = 1 }
+	export enum CertificateType { DISABLED = 'DISABLED', GENERATED = 'GENERATED' }
 
-	export enum ComputeType { EC2 = 0, ANYWHERE = 1 }
+	export enum ComputeType { EC2 = 'EC2', ANYWHERE = 'ANYWHERE' }
 
 
 	/** Amazon GameLift Anywhere configuration options for your Anywhere fleets. */
@@ -782,7 +782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpProtocol { TCP = 0, UDP = 1 }
+	export enum IpProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 
 	/** <p>A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Amazon GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. </p> <p>A Amazon GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet</a>.</p> */
@@ -985,15 +985,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GameServerGroupInstanceType { 'c4.large' = 0, 'c4.xlarge' = 1, 'c4.2xlarge' = 2, 'c4.4xlarge' = 3, 'c4.8xlarge' = 4, 'c5.large' = 5, 'c5.xlarge' = 6, 'c5.2xlarge' = 7, 'c5.4xlarge' = 8, 'c5.9xlarge' = 9, 'c5.12xlarge' = 10, 'c5.18xlarge' = 11, 'c5.24xlarge' = 12, 'c5a.large' = 13, 'c5a.xlarge' = 14, 'c5a.2xlarge' = 15, 'c5a.4xlarge' = 16, 'c5a.8xlarge' = 17, 'c5a.12xlarge' = 18, 'c5a.16xlarge' = 19, 'c5a.24xlarge' = 20, 'c6g.medium' = 21, 'c6g.large' = 22, 'c6g.xlarge' = 23, 'c6g.2xlarge' = 24, 'c6g.4xlarge' = 25, 'c6g.8xlarge' = 26, 'c6g.12xlarge' = 27, 'c6g.16xlarge' = 28, 'r4.large' = 29, 'r4.xlarge' = 30, 'r4.2xlarge' = 31, 'r4.4xlarge' = 32, 'r4.8xlarge' = 33, 'r4.16xlarge' = 34, 'r5.large' = 35, 'r5.xlarge' = 36, 'r5.2xlarge' = 37, 'r5.4xlarge' = 38, 'r5.8xlarge' = 39, 'r5.12xlarge' = 40, 'r5.16xlarge' = 41, 'r5.24xlarge' = 42, 'r5a.large' = 43, 'r5a.xlarge' = 44, 'r5a.2xlarge' = 45, 'r5a.4xlarge' = 46, 'r5a.8xlarge' = 47, 'r5a.12xlarge' = 48, 'r5a.16xlarge' = 49, 'r5a.24xlarge' = 50, 'r6g.medium' = 51, 'r6g.large' = 52, 'r6g.xlarge' = 53, 'r6g.2xlarge' = 54, 'r6g.4xlarge' = 55, 'r6g.8xlarge' = 56, 'r6g.12xlarge' = 57, 'r6g.16xlarge' = 58, 'm4.large' = 59, 'm4.xlarge' = 60, 'm4.2xlarge' = 61, 'm4.4xlarge' = 62, 'm4.10xlarge' = 63, 'm5.large' = 64, 'm5.xlarge' = 65, 'm5.2xlarge' = 66, 'm5.4xlarge' = 67, 'm5.8xlarge' = 68, 'm5.12xlarge' = 69, 'm5.16xlarge' = 70, 'm5.24xlarge' = 71, 'm5a.large' = 72, 'm5a.xlarge' = 73, 'm5a.2xlarge' = 74, 'm5a.4xlarge' = 75, 'm5a.8xlarge' = 76, 'm5a.12xlarge' = 77, 'm5a.16xlarge' = 78, 'm5a.24xlarge' = 79, 'm6g.medium' = 80, 'm6g.large' = 81, 'm6g.xlarge' = 82, 'm6g.2xlarge' = 83, 'm6g.4xlarge' = 84, 'm6g.8xlarge' = 85, 'm6g.12xlarge' = 86, 'm6g.16xlarge' = 87 }
+	export enum GameServerGroupInstanceType { 'c4.large' = 'c4.large', 'c4.xlarge' = 'c4.xlarge', 'c4.2xlarge' = 'c4.2xlarge', 'c4.4xlarge' = 'c4.4xlarge', 'c4.8xlarge' = 'c4.8xlarge', 'c5.large' = 'c5.large', 'c5.xlarge' = 'c5.xlarge', 'c5.2xlarge' = 'c5.2xlarge', 'c5.4xlarge' = 'c5.4xlarge', 'c5.9xlarge' = 'c5.9xlarge', 'c5.12xlarge' = 'c5.12xlarge', 'c5.18xlarge' = 'c5.18xlarge', 'c5.24xlarge' = 'c5.24xlarge', 'c5a.large' = 'c5a.large', 'c5a.xlarge' = 'c5a.xlarge', 'c5a.2xlarge' = 'c5a.2xlarge', 'c5a.4xlarge' = 'c5a.4xlarge', 'c5a.8xlarge' = 'c5a.8xlarge', 'c5a.12xlarge' = 'c5a.12xlarge', 'c5a.16xlarge' = 'c5a.16xlarge', 'c5a.24xlarge' = 'c5a.24xlarge', 'c6g.medium' = 'c6g.medium', 'c6g.large' = 'c6g.large', 'c6g.xlarge' = 'c6g.xlarge', 'c6g.2xlarge' = 'c6g.2xlarge', 'c6g.4xlarge' = 'c6g.4xlarge', 'c6g.8xlarge' = 'c6g.8xlarge', 'c6g.12xlarge' = 'c6g.12xlarge', 'c6g.16xlarge' = 'c6g.16xlarge', 'r4.large' = 'r4.large', 'r4.xlarge' = 'r4.xlarge', 'r4.2xlarge' = 'r4.2xlarge', 'r4.4xlarge' = 'r4.4xlarge', 'r4.8xlarge' = 'r4.8xlarge', 'r4.16xlarge' = 'r4.16xlarge', 'r5.large' = 'r5.large', 'r5.xlarge' = 'r5.xlarge', 'r5.2xlarge' = 'r5.2xlarge', 'r5.4xlarge' = 'r5.4xlarge', 'r5.8xlarge' = 'r5.8xlarge', 'r5.12xlarge' = 'r5.12xlarge', 'r5.16xlarge' = 'r5.16xlarge', 'r5.24xlarge' = 'r5.24xlarge', 'r5a.large' = 'r5a.large', 'r5a.xlarge' = 'r5a.xlarge', 'r5a.2xlarge' = 'r5a.2xlarge', 'r5a.4xlarge' = 'r5a.4xlarge', 'r5a.8xlarge' = 'r5a.8xlarge', 'r5a.12xlarge' = 'r5a.12xlarge', 'r5a.16xlarge' = 'r5a.16xlarge', 'r5a.24xlarge' = 'r5a.24xlarge', 'r6g.medium' = 'r6g.medium', 'r6g.large' = 'r6g.large', 'r6g.xlarge' = 'r6g.xlarge', 'r6g.2xlarge' = 'r6g.2xlarge', 'r6g.4xlarge' = 'r6g.4xlarge', 'r6g.8xlarge' = 'r6g.8xlarge', 'r6g.12xlarge' = 'r6g.12xlarge', 'r6g.16xlarge' = 'r6g.16xlarge', 'm4.large' = 'm4.large', 'm4.xlarge' = 'm4.xlarge', 'm4.2xlarge' = 'm4.2xlarge', 'm4.4xlarge' = 'm4.4xlarge', 'm4.10xlarge' = 'm4.10xlarge', 'm5.large' = 'm5.large', 'm5.xlarge' = 'm5.xlarge', 'm5.2xlarge' = 'm5.2xlarge', 'm5.4xlarge' = 'm5.4xlarge', 'm5.8xlarge' = 'm5.8xlarge', 'm5.12xlarge' = 'm5.12xlarge', 'm5.16xlarge' = 'm5.16xlarge', 'm5.24xlarge' = 'm5.24xlarge', 'm5a.large' = 'm5a.large', 'm5a.xlarge' = 'm5a.xlarge', 'm5a.2xlarge' = 'm5a.2xlarge', 'm5a.4xlarge' = 'm5a.4xlarge', 'm5a.8xlarge' = 'm5a.8xlarge', 'm5a.12xlarge' = 'm5a.12xlarge', 'm5a.16xlarge' = 'm5a.16xlarge', 'm5a.24xlarge' = 'm5a.24xlarge', 'm6g.medium' = 'm6g.medium', 'm6g.large' = 'm6g.large', 'm6g.xlarge' = 'm6g.xlarge', 'm6g.2xlarge' = 'm6g.2xlarge', 'm6g.4xlarge' = 'm6g.4xlarge', 'm6g.8xlarge' = 'm6g.8xlarge', 'm6g.12xlarge' = 'm6g.12xlarge', 'm6g.16xlarge' = 'm6g.16xlarge' }
 
-	export enum BalancingStrategy { SPOT_ONLY = 0, SPOT_PREFERRED = 1, ON_DEMAND_ONLY = 2 }
+	export enum BalancingStrategy { SPOT_ONLY = 'SPOT_ONLY', SPOT_PREFERRED = 'SPOT_PREFERRED', ON_DEMAND_ONLY = 'ON_DEMAND_ONLY' }
 
-	export enum GameServerProtectionPolicy { NO_PROTECTION = 0, FULL_PROTECTION = 1 }
+	export enum GameServerProtectionPolicy { NO_PROTECTION = 'NO_PROTECTION', FULL_PROTECTION = 'FULL_PROTECTION' }
 
-	export enum GameServerGroupStatus { NEW = 0, ACTIVATING = 1, ACTIVE = 2, DELETE_SCHEDULED = 3, DELETING = 4, DELETED = 5, ERROR = 6 }
+	export enum GameServerGroupStatus { NEW = 'NEW', ACTIVATING = 'ACTIVATING', ACTIVE = 'ACTIVE', DELETE_SCHEDULED = 'DELETE_SCHEDULED', DELETING = 'DELETING', DELETED = 'DELETED', ERROR = 'ERROR' }
 
-	export enum GameServerGroupAction { REPLACE_INSTANCE_TYPES = 0 }
+	export enum GameServerGroupAction { REPLACE_INSTANCE_TYPES = 'REPLACE_INSTANCE_TYPES' }
 
 	export interface CreateGameServerGroupInput {
 
@@ -1192,9 +1192,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GameSessionStatus { ACTIVE = 0, ACTIVATING = 1, TERMINATED = 2, TERMINATING = 3, ERROR = 4 }
+	export enum GameSessionStatus { ACTIVE = 'ACTIVE', ACTIVATING = 'ACTIVATING', TERMINATED = 'TERMINATED', TERMINATING = 'TERMINATING', ERROR = 'ERROR' }
 
-	export enum GameSessionStatusReason { INTERRUPTED = 0 }
+	export enum GameSessionStatusReason { INTERRUPTED = 'INTERRUPTED' }
 
 
 	/** Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> Amazon GameLift Developer Guide</a>. */
@@ -1224,7 +1224,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayerSessionCreationPolicy { ACCEPT_ALL = 0, DENY_ALL = 1 }
+	export enum PlayerSessionCreationPolicy { ACCEPT_ALL = 'ACCEPT_ALL', DENY_ALL = 'DENY_ALL' }
 
 	export interface CreateGameSessionInput {
 		FleetId?: string;
@@ -1410,7 +1410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriorityType { LATENCY = 0, COST = 1, DESTINATION = 2, LOCATION = 3 }
+	export enum PriorityType { LATENCY = 'LATENCY', COST = 'COST', DESTINATION = 'DESTINATION', LOCATION = 'LOCATION' }
 
 	export interface CreateGameSessionQueueInput {
 
@@ -1564,9 +1564,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BackfillMode { AUTOMATIC = 0, MANUAL = 1 }
+	export enum BackfillMode { AUTOMATIC = 'AUTOMATIC', MANUAL = 'MANUAL' }
 
-	export enum FlexMatchMode { STANDALONE = 0, WITH_QUEUE = 1 }
+	export enum FlexMatchMode { STANDALONE = 'STANDALONE', WITH_QUEUE = 'WITH_QUEUE' }
 
 	export interface CreateMatchmakingConfigurationInput {
 
@@ -1762,7 +1762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayerSessionStatus { RESERVED = 0, ACTIVE = 1, COMPLETED = 2, TIMEDOUT = 3 }
+	export enum PlayerSessionStatus { RESERVED = 'RESERVED', ACTIVE = 'ACTIVE', COMPLETED = 'COMPLETED', TIMEDOUT = 'TIMEDOUT' }
 
 	export interface CreatePlayerSessionInput {
 
@@ -2142,7 +2142,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GameServerGroupDeleteOption { SAFE_DELETE = 0, FORCE_DELETE = 1, RETAIN = 2 }
+	export enum GameServerGroupDeleteOption { SAFE_DELETE = 'SAFE_DELETE', FORCE_DELETE = 'FORCE_DELETE', RETAIN = 'RETAIN' }
 
 	export interface DeleteGameSessionQueueOutput {
 	}
@@ -2536,7 +2536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeStatus { PENDING = 0, ACTIVE = 1, TERMINATING = 2 }
+	export enum ComputeStatus { PENDING = 'PENDING', ACTIVE = 'ACTIVE', TERMINATING = 'TERMINATING' }
 
 	export interface DescribeComputeInput {
 
@@ -2787,7 +2787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventCode { GENERIC_EVENT = 0, FLEET_CREATED = 1, FLEET_DELETED = 2, FLEET_SCALING_EVENT = 3, FLEET_STATE_DOWNLOADING = 4, FLEET_STATE_VALIDATING = 5, FLEET_STATE_BUILDING = 6, FLEET_STATE_ACTIVATING = 7, FLEET_STATE_ACTIVE = 8, FLEET_STATE_ERROR = 9, FLEET_INITIALIZATION_FAILED = 10, FLEET_BINARY_DOWNLOAD_FAILED = 11, FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = 12, FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = 13, FLEET_VALIDATION_TIMED_OUT = 14, FLEET_ACTIVATION_FAILED = 15, FLEET_ACTIVATION_FAILED_NO_INSTANCES = 16, FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = 17, SERVER_PROCESS_INVALID_PATH = 18, SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = 19, SERVER_PROCESS_PROCESS_READY_TIMEOUT = 20, SERVER_PROCESS_CRASHED = 21, SERVER_PROCESS_TERMINATED_UNHEALTHY = 22, SERVER_PROCESS_FORCE_TERMINATED = 23, SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = 24, GAME_SESSION_ACTIVATION_TIMEOUT = 25, FLEET_CREATION_EXTRACTING_BUILD = 26, FLEET_CREATION_RUNNING_INSTALLER = 27, FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = 28, FLEET_VPC_PEERING_SUCCEEDED = 29, FLEET_VPC_PEERING_FAILED = 30, FLEET_VPC_PEERING_DELETED = 31, INSTANCE_INTERRUPTED = 32, INSTANCE_RECYCLED = 33 }
+	export enum EventCode { GENERIC_EVENT = 'GENERIC_EVENT', FLEET_CREATED = 'FLEET_CREATED', FLEET_DELETED = 'FLEET_DELETED', FLEET_SCALING_EVENT = 'FLEET_SCALING_EVENT', FLEET_STATE_DOWNLOADING = 'FLEET_STATE_DOWNLOADING', FLEET_STATE_VALIDATING = 'FLEET_STATE_VALIDATING', FLEET_STATE_BUILDING = 'FLEET_STATE_BUILDING', FLEET_STATE_ACTIVATING = 'FLEET_STATE_ACTIVATING', FLEET_STATE_ACTIVE = 'FLEET_STATE_ACTIVE', FLEET_STATE_ERROR = 'FLEET_STATE_ERROR', FLEET_INITIALIZATION_FAILED = 'FLEET_INITIALIZATION_FAILED', FLEET_BINARY_DOWNLOAD_FAILED = 'FLEET_BINARY_DOWNLOAD_FAILED', FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = 'FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND', FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = 'FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE', FLEET_VALIDATION_TIMED_OUT = 'FLEET_VALIDATION_TIMED_OUT', FLEET_ACTIVATION_FAILED = 'FLEET_ACTIVATION_FAILED', FLEET_ACTIVATION_FAILED_NO_INSTANCES = 'FLEET_ACTIVATION_FAILED_NO_INSTANCES', FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = 'FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED', SERVER_PROCESS_INVALID_PATH = 'SERVER_PROCESS_INVALID_PATH', SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = 'SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT', SERVER_PROCESS_PROCESS_READY_TIMEOUT = 'SERVER_PROCESS_PROCESS_READY_TIMEOUT', SERVER_PROCESS_CRASHED = 'SERVER_PROCESS_CRASHED', SERVER_PROCESS_TERMINATED_UNHEALTHY = 'SERVER_PROCESS_TERMINATED_UNHEALTHY', SERVER_PROCESS_FORCE_TERMINATED = 'SERVER_PROCESS_FORCE_TERMINATED', SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = 'SERVER_PROCESS_PROCESS_EXIT_TIMEOUT', GAME_SESSION_ACTIVATION_TIMEOUT = 'GAME_SESSION_ACTIVATION_TIMEOUT', FLEET_CREATION_EXTRACTING_BUILD = 'FLEET_CREATION_EXTRACTING_BUILD', FLEET_CREATION_RUNNING_INSTALLER = 'FLEET_CREATION_RUNNING_INSTALLER', FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = 'FLEET_CREATION_VALIDATING_RUNTIME_CONFIG', FLEET_VPC_PEERING_SUCCEEDED = 'FLEET_VPC_PEERING_SUCCEEDED', FLEET_VPC_PEERING_FAILED = 'FLEET_VPC_PEERING_FAILED', FLEET_VPC_PEERING_DELETED = 'FLEET_VPC_PEERING_DELETED', INSTANCE_INTERRUPTED = 'INSTANCE_INTERRUPTED', INSTANCE_RECYCLED = 'INSTANCE_RECYCLED' }
 
 	export interface DescribeFleetEventsInput {
 
@@ -2857,7 +2857,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationUpdateStatus { PENDING_UPDATE = 0 }
+	export enum LocationUpdateStatus { PENDING_UPDATE = 'PENDING_UPDATE' }
 
 	export interface DescribeFleetLocationAttributesInput {
 
@@ -3165,7 +3165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GameServerInstanceStatus { ACTIVE = 0, DRAINING = 1, SPOT_TERMINATING = 2 }
+	export enum GameServerInstanceStatus { ACTIVE = 'ACTIVE', DRAINING = 'DRAINING', SPOT_TERMINATING = 'SPOT_TERMINATING' }
 
 	export interface DescribeGameServerInstancesInput {
 
@@ -3327,7 +3327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GameSessionPlacementState { PENDING = 0, FULFILLED = 1, CANCELLED = 2, TIMED_OUT = 3, FAILED = 4 }
+	export enum GameSessionPlacementState { PENDING = 'PENDING', FULFILLED = 'FULFILLED', CANCELLED = 'CANCELLED', TIMED_OUT = 'TIMED_OUT', FAILED = 'FAILED' }
 
 
 	/** Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player.  */
@@ -3606,7 +3606,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MatchmakingConfigurationStatus { CANCELLED = 0, COMPLETED = 1, FAILED = 2, PLACING = 3, QUEUED = 4, REQUIRES_ACCEPTANCE = 5, SEARCHING = 6, TIMED_OUT = 7 }
+	export enum MatchmakingConfigurationStatus { CANCELLED = 'CANCELLED', COMPLETED = 'COMPLETED', FAILED = 'FAILED', PLACING = 'PLACING', QUEUED = 'QUEUED', REQUIRES_ACCEPTANCE = 'REQUIRES_ACCEPTANCE', SEARCHING = 'SEARCHING', TIMED_OUT = 'TIMED_OUT' }
 
 
 	/** Represents a player in matchmaking. When starting a matchmaking request, a player has a player ID, attributes, and may have latency data. Team information is added after a match has been successfully completed. */
@@ -3915,15 +3915,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingStatusType { ACTIVE = 0, UPDATE_REQUESTED = 1, UPDATING = 2, DELETE_REQUESTED = 3, DELETING = 4, DELETED = 5, ERROR = 6 }
+	export enum ScalingStatusType { ACTIVE = 'ACTIVE', UPDATE_REQUESTED = 'UPDATE_REQUESTED', UPDATING = 'UPDATING', DELETE_REQUESTED = 'DELETE_REQUESTED', DELETING = 'DELETING', DELETED = 'DELETED', ERROR = 'ERROR' }
 
-	export enum ScalingAdjustmentType { ChangeInCapacity = 0, ExactCapacity = 1, PercentChangeInCapacity = 2 }
+	export enum ScalingAdjustmentType { ChangeInCapacity = 'ChangeInCapacity', ExactCapacity = 'ExactCapacity', PercentChangeInCapacity = 'PercentChangeInCapacity' }
 
-	export enum ComparisonOperatorType { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
+	export enum ComparisonOperatorType { GreaterThanOrEqualToThreshold = 'GreaterThanOrEqualToThreshold', GreaterThanThreshold = 'GreaterThanThreshold', LessThanThreshold = 'LessThanThreshold', LessThanOrEqualToThreshold = 'LessThanOrEqualToThreshold' }
 
-	export enum MetricName { ActivatingGameSessions = 0, ActiveGameSessions = 1, ActiveInstances = 2, AvailableGameSessions = 3, AvailablePlayerSessions = 4, CurrentPlayerSessions = 5, IdleInstances = 6, PercentAvailableGameSessions = 7, PercentIdleInstances = 8, QueueDepth = 9, WaitTime = 10, ConcurrentActivatableGameSessions = 11 }
+	export enum MetricName { ActivatingGameSessions = 'ActivatingGameSessions', ActiveGameSessions = 'ActiveGameSessions', ActiveInstances = 'ActiveInstances', AvailableGameSessions = 'AvailableGameSessions', AvailablePlayerSessions = 'AvailablePlayerSessions', CurrentPlayerSessions = 'CurrentPlayerSessions', IdleInstances = 'IdleInstances', PercentAvailableGameSessions = 'PercentAvailableGameSessions', PercentIdleInstances = 'PercentIdleInstances', QueueDepth = 'QueueDepth', WaitTime = 'WaitTime', ConcurrentActivatableGameSessions = 'ConcurrentActivatableGameSessions' }
 
-	export enum PolicyType { RuleBased = 0, TargetBased = 1 }
+	export enum PolicyType { RuleBased = 'RuleBased', TargetBased = 'TargetBased' }
 
 
 	/** Settings for a target-based scaling policy. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value.  */
@@ -4527,7 +4527,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListLocationsOutput {
 		Locations?: Array<LocationModel>;
@@ -4560,7 +4560,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationFilter { AWS = 0, CUSTOM = 1 }
+	export enum LocationFilter { AWS = 'AWS', CUSTOM = 'CUSTOM' }
 
 	export interface ListScriptsOutput {
 		Scripts?: Array<Script>;
@@ -5523,7 +5523,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GameServerHealthCheck { HEALTHY = 0 }
+	export enum GameServerHealthCheck { HEALTHY = 'HEALTHY' }
 
 	export interface UpdateGameServerGroupOutput {
 		GameServerGroup?: GameServerGroup;
@@ -5838,7 +5838,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceStatus { PENDING = 0, ACTIVE = 1, TERMINATING = 2 }
+	export enum InstanceStatus { PENDING = 'PENDING', ACTIVE = 'ACTIVE', TERMINATING = 'TERMINATING' }
 
 	@Injectable()
 	export class MyClient {
@@ -6828,213 +6828,213 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptMatchX_Amz_Target { 'GameLift.AcceptMatch' = 0 }
+	export enum AcceptMatchX_Amz_Target { 'GameLift.AcceptMatch' = 'GameLift.AcceptMatch' }
 
-	export enum ClaimGameServerX_Amz_Target { 'GameLift.ClaimGameServer' = 0 }
+	export enum ClaimGameServerX_Amz_Target { 'GameLift.ClaimGameServer' = 'GameLift.ClaimGameServer' }
 
-	export enum CreateAliasX_Amz_Target { 'GameLift.CreateAlias' = 0 }
+	export enum CreateAliasX_Amz_Target { 'GameLift.CreateAlias' = 'GameLift.CreateAlias' }
 
-	export enum CreateBuildX_Amz_Target { 'GameLift.CreateBuild' = 0 }
+	export enum CreateBuildX_Amz_Target { 'GameLift.CreateBuild' = 'GameLift.CreateBuild' }
 
-	export enum CreateFleetX_Amz_Target { 'GameLift.CreateFleet' = 0 }
+	export enum CreateFleetX_Amz_Target { 'GameLift.CreateFleet' = 'GameLift.CreateFleet' }
 
-	export enum CreateFleetLocationsX_Amz_Target { 'GameLift.CreateFleetLocations' = 0 }
+	export enum CreateFleetLocationsX_Amz_Target { 'GameLift.CreateFleetLocations' = 'GameLift.CreateFleetLocations' }
 
-	export enum CreateGameServerGroupX_Amz_Target { 'GameLift.CreateGameServerGroup' = 0 }
+	export enum CreateGameServerGroupX_Amz_Target { 'GameLift.CreateGameServerGroup' = 'GameLift.CreateGameServerGroup' }
 
-	export enum CreateGameSessionX_Amz_Target { 'GameLift.CreateGameSession' = 0 }
+	export enum CreateGameSessionX_Amz_Target { 'GameLift.CreateGameSession' = 'GameLift.CreateGameSession' }
 
-	export enum CreateGameSessionQueueX_Amz_Target { 'GameLift.CreateGameSessionQueue' = 0 }
+	export enum CreateGameSessionQueueX_Amz_Target { 'GameLift.CreateGameSessionQueue' = 'GameLift.CreateGameSessionQueue' }
 
-	export enum CreateLocationX_Amz_Target { 'GameLift.CreateLocation' = 0 }
+	export enum CreateLocationX_Amz_Target { 'GameLift.CreateLocation' = 'GameLift.CreateLocation' }
 
-	export enum CreateMatchmakingConfigurationX_Amz_Target { 'GameLift.CreateMatchmakingConfiguration' = 0 }
+	export enum CreateMatchmakingConfigurationX_Amz_Target { 'GameLift.CreateMatchmakingConfiguration' = 'GameLift.CreateMatchmakingConfiguration' }
 
-	export enum CreateMatchmakingRuleSetX_Amz_Target { 'GameLift.CreateMatchmakingRuleSet' = 0 }
+	export enum CreateMatchmakingRuleSetX_Amz_Target { 'GameLift.CreateMatchmakingRuleSet' = 'GameLift.CreateMatchmakingRuleSet' }
 
-	export enum CreatePlayerSessionX_Amz_Target { 'GameLift.CreatePlayerSession' = 0 }
+	export enum CreatePlayerSessionX_Amz_Target { 'GameLift.CreatePlayerSession' = 'GameLift.CreatePlayerSession' }
 
-	export enum CreatePlayerSessionsX_Amz_Target { 'GameLift.CreatePlayerSessions' = 0 }
+	export enum CreatePlayerSessionsX_Amz_Target { 'GameLift.CreatePlayerSessions' = 'GameLift.CreatePlayerSessions' }
 
-	export enum CreateScriptX_Amz_Target { 'GameLift.CreateScript' = 0 }
+	export enum CreateScriptX_Amz_Target { 'GameLift.CreateScript' = 'GameLift.CreateScript' }
 
-	export enum CreateVpcPeeringAuthorizationX_Amz_Target { 'GameLift.CreateVpcPeeringAuthorization' = 0 }
+	export enum CreateVpcPeeringAuthorizationX_Amz_Target { 'GameLift.CreateVpcPeeringAuthorization' = 'GameLift.CreateVpcPeeringAuthorization' }
 
-	export enum CreateVpcPeeringConnectionX_Amz_Target { 'GameLift.CreateVpcPeeringConnection' = 0 }
+	export enum CreateVpcPeeringConnectionX_Amz_Target { 'GameLift.CreateVpcPeeringConnection' = 'GameLift.CreateVpcPeeringConnection' }
 
-	export enum DeleteAliasX_Amz_Target { 'GameLift.DeleteAlias' = 0 }
+	export enum DeleteAliasX_Amz_Target { 'GameLift.DeleteAlias' = 'GameLift.DeleteAlias' }
 
-	export enum DeleteBuildX_Amz_Target { 'GameLift.DeleteBuild' = 0 }
+	export enum DeleteBuildX_Amz_Target { 'GameLift.DeleteBuild' = 'GameLift.DeleteBuild' }
 
-	export enum DeleteFleetX_Amz_Target { 'GameLift.DeleteFleet' = 0 }
+	export enum DeleteFleetX_Amz_Target { 'GameLift.DeleteFleet' = 'GameLift.DeleteFleet' }
 
-	export enum DeleteFleetLocationsX_Amz_Target { 'GameLift.DeleteFleetLocations' = 0 }
+	export enum DeleteFleetLocationsX_Amz_Target { 'GameLift.DeleteFleetLocations' = 'GameLift.DeleteFleetLocations' }
 
-	export enum DeleteGameServerGroupX_Amz_Target { 'GameLift.DeleteGameServerGroup' = 0 }
+	export enum DeleteGameServerGroupX_Amz_Target { 'GameLift.DeleteGameServerGroup' = 'GameLift.DeleteGameServerGroup' }
 
-	export enum DeleteGameSessionQueueX_Amz_Target { 'GameLift.DeleteGameSessionQueue' = 0 }
+	export enum DeleteGameSessionQueueX_Amz_Target { 'GameLift.DeleteGameSessionQueue' = 'GameLift.DeleteGameSessionQueue' }
 
-	export enum DeleteLocationX_Amz_Target { 'GameLift.DeleteLocation' = 0 }
+	export enum DeleteLocationX_Amz_Target { 'GameLift.DeleteLocation' = 'GameLift.DeleteLocation' }
 
-	export enum DeleteMatchmakingConfigurationX_Amz_Target { 'GameLift.DeleteMatchmakingConfiguration' = 0 }
+	export enum DeleteMatchmakingConfigurationX_Amz_Target { 'GameLift.DeleteMatchmakingConfiguration' = 'GameLift.DeleteMatchmakingConfiguration' }
 
-	export enum DeleteMatchmakingRuleSetX_Amz_Target { 'GameLift.DeleteMatchmakingRuleSet' = 0 }
+	export enum DeleteMatchmakingRuleSetX_Amz_Target { 'GameLift.DeleteMatchmakingRuleSet' = 'GameLift.DeleteMatchmakingRuleSet' }
 
-	export enum DeleteScalingPolicyX_Amz_Target { 'GameLift.DeleteScalingPolicy' = 0 }
+	export enum DeleteScalingPolicyX_Amz_Target { 'GameLift.DeleteScalingPolicy' = 'GameLift.DeleteScalingPolicy' }
 
-	export enum DeleteScriptX_Amz_Target { 'GameLift.DeleteScript' = 0 }
+	export enum DeleteScriptX_Amz_Target { 'GameLift.DeleteScript' = 'GameLift.DeleteScript' }
 
-	export enum DeleteVpcPeeringAuthorizationX_Amz_Target { 'GameLift.DeleteVpcPeeringAuthorization' = 0 }
+	export enum DeleteVpcPeeringAuthorizationX_Amz_Target { 'GameLift.DeleteVpcPeeringAuthorization' = 'GameLift.DeleteVpcPeeringAuthorization' }
 
-	export enum DeleteVpcPeeringConnectionX_Amz_Target { 'GameLift.DeleteVpcPeeringConnection' = 0 }
+	export enum DeleteVpcPeeringConnectionX_Amz_Target { 'GameLift.DeleteVpcPeeringConnection' = 'GameLift.DeleteVpcPeeringConnection' }
 
-	export enum DeregisterComputeX_Amz_Target { 'GameLift.DeregisterCompute' = 0 }
+	export enum DeregisterComputeX_Amz_Target { 'GameLift.DeregisterCompute' = 'GameLift.DeregisterCompute' }
 
-	export enum DeregisterGameServerX_Amz_Target { 'GameLift.DeregisterGameServer' = 0 }
+	export enum DeregisterGameServerX_Amz_Target { 'GameLift.DeregisterGameServer' = 'GameLift.DeregisterGameServer' }
 
-	export enum DescribeAliasX_Amz_Target { 'GameLift.DescribeAlias' = 0 }
+	export enum DescribeAliasX_Amz_Target { 'GameLift.DescribeAlias' = 'GameLift.DescribeAlias' }
 
-	export enum DescribeBuildX_Amz_Target { 'GameLift.DescribeBuild' = 0 }
+	export enum DescribeBuildX_Amz_Target { 'GameLift.DescribeBuild' = 'GameLift.DescribeBuild' }
 
-	export enum DescribeComputeX_Amz_Target { 'GameLift.DescribeCompute' = 0 }
+	export enum DescribeComputeX_Amz_Target { 'GameLift.DescribeCompute' = 'GameLift.DescribeCompute' }
 
-	export enum DescribeEC2InstanceLimitsX_Amz_Target { 'GameLift.DescribeEC2InstanceLimits' = 0 }
+	export enum DescribeEC2InstanceLimitsX_Amz_Target { 'GameLift.DescribeEC2InstanceLimits' = 'GameLift.DescribeEC2InstanceLimits' }
 
-	export enum DescribeFleetAttributesX_Amz_Target { 'GameLift.DescribeFleetAttributes' = 0 }
+	export enum DescribeFleetAttributesX_Amz_Target { 'GameLift.DescribeFleetAttributes' = 'GameLift.DescribeFleetAttributes' }
 
-	export enum DescribeFleetCapacityX_Amz_Target { 'GameLift.DescribeFleetCapacity' = 0 }
+	export enum DescribeFleetCapacityX_Amz_Target { 'GameLift.DescribeFleetCapacity' = 'GameLift.DescribeFleetCapacity' }
 
-	export enum DescribeFleetEventsX_Amz_Target { 'GameLift.DescribeFleetEvents' = 0 }
+	export enum DescribeFleetEventsX_Amz_Target { 'GameLift.DescribeFleetEvents' = 'GameLift.DescribeFleetEvents' }
 
-	export enum DescribeFleetLocationAttributesX_Amz_Target { 'GameLift.DescribeFleetLocationAttributes' = 0 }
+	export enum DescribeFleetLocationAttributesX_Amz_Target { 'GameLift.DescribeFleetLocationAttributes' = 'GameLift.DescribeFleetLocationAttributes' }
 
-	export enum DescribeFleetLocationCapacityX_Amz_Target { 'GameLift.DescribeFleetLocationCapacity' = 0 }
+	export enum DescribeFleetLocationCapacityX_Amz_Target { 'GameLift.DescribeFleetLocationCapacity' = 'GameLift.DescribeFleetLocationCapacity' }
 
-	export enum DescribeFleetLocationUtilizationX_Amz_Target { 'GameLift.DescribeFleetLocationUtilization' = 0 }
+	export enum DescribeFleetLocationUtilizationX_Amz_Target { 'GameLift.DescribeFleetLocationUtilization' = 'GameLift.DescribeFleetLocationUtilization' }
 
-	export enum DescribeFleetPortSettingsX_Amz_Target { 'GameLift.DescribeFleetPortSettings' = 0 }
+	export enum DescribeFleetPortSettingsX_Amz_Target { 'GameLift.DescribeFleetPortSettings' = 'GameLift.DescribeFleetPortSettings' }
 
-	export enum DescribeFleetUtilizationX_Amz_Target { 'GameLift.DescribeFleetUtilization' = 0 }
+	export enum DescribeFleetUtilizationX_Amz_Target { 'GameLift.DescribeFleetUtilization' = 'GameLift.DescribeFleetUtilization' }
 
-	export enum DescribeGameServerX_Amz_Target { 'GameLift.DescribeGameServer' = 0 }
+	export enum DescribeGameServerX_Amz_Target { 'GameLift.DescribeGameServer' = 'GameLift.DescribeGameServer' }
 
-	export enum DescribeGameServerGroupX_Amz_Target { 'GameLift.DescribeGameServerGroup' = 0 }
+	export enum DescribeGameServerGroupX_Amz_Target { 'GameLift.DescribeGameServerGroup' = 'GameLift.DescribeGameServerGroup' }
 
-	export enum DescribeGameServerInstancesX_Amz_Target { 'GameLift.DescribeGameServerInstances' = 0 }
+	export enum DescribeGameServerInstancesX_Amz_Target { 'GameLift.DescribeGameServerInstances' = 'GameLift.DescribeGameServerInstances' }
 
-	export enum DescribeGameSessionDetailsX_Amz_Target { 'GameLift.DescribeGameSessionDetails' = 0 }
+	export enum DescribeGameSessionDetailsX_Amz_Target { 'GameLift.DescribeGameSessionDetails' = 'GameLift.DescribeGameSessionDetails' }
 
-	export enum DescribeGameSessionPlacementX_Amz_Target { 'GameLift.DescribeGameSessionPlacement' = 0 }
+	export enum DescribeGameSessionPlacementX_Amz_Target { 'GameLift.DescribeGameSessionPlacement' = 'GameLift.DescribeGameSessionPlacement' }
 
-	export enum DescribeGameSessionQueuesX_Amz_Target { 'GameLift.DescribeGameSessionQueues' = 0 }
+	export enum DescribeGameSessionQueuesX_Amz_Target { 'GameLift.DescribeGameSessionQueues' = 'GameLift.DescribeGameSessionQueues' }
 
-	export enum DescribeGameSessionsX_Amz_Target { 'GameLift.DescribeGameSessions' = 0 }
+	export enum DescribeGameSessionsX_Amz_Target { 'GameLift.DescribeGameSessions' = 'GameLift.DescribeGameSessions' }
 
-	export enum DescribeInstancesX_Amz_Target { 'GameLift.DescribeInstances' = 0 }
+	export enum DescribeInstancesX_Amz_Target { 'GameLift.DescribeInstances' = 'GameLift.DescribeInstances' }
 
-	export enum DescribeMatchmakingX_Amz_Target { 'GameLift.DescribeMatchmaking' = 0 }
+	export enum DescribeMatchmakingX_Amz_Target { 'GameLift.DescribeMatchmaking' = 'GameLift.DescribeMatchmaking' }
 
-	export enum DescribeMatchmakingConfigurationsX_Amz_Target { 'GameLift.DescribeMatchmakingConfigurations' = 0 }
+	export enum DescribeMatchmakingConfigurationsX_Amz_Target { 'GameLift.DescribeMatchmakingConfigurations' = 'GameLift.DescribeMatchmakingConfigurations' }
 
-	export enum DescribeMatchmakingRuleSetsX_Amz_Target { 'GameLift.DescribeMatchmakingRuleSets' = 0 }
+	export enum DescribeMatchmakingRuleSetsX_Amz_Target { 'GameLift.DescribeMatchmakingRuleSets' = 'GameLift.DescribeMatchmakingRuleSets' }
 
-	export enum DescribePlayerSessionsX_Amz_Target { 'GameLift.DescribePlayerSessions' = 0 }
+	export enum DescribePlayerSessionsX_Amz_Target { 'GameLift.DescribePlayerSessions' = 'GameLift.DescribePlayerSessions' }
 
-	export enum DescribeRuntimeConfigurationX_Amz_Target { 'GameLift.DescribeRuntimeConfiguration' = 0 }
+	export enum DescribeRuntimeConfigurationX_Amz_Target { 'GameLift.DescribeRuntimeConfiguration' = 'GameLift.DescribeRuntimeConfiguration' }
 
-	export enum DescribeScalingPoliciesX_Amz_Target { 'GameLift.DescribeScalingPolicies' = 0 }
+	export enum DescribeScalingPoliciesX_Amz_Target { 'GameLift.DescribeScalingPolicies' = 'GameLift.DescribeScalingPolicies' }
 
-	export enum DescribeScriptX_Amz_Target { 'GameLift.DescribeScript' = 0 }
+	export enum DescribeScriptX_Amz_Target { 'GameLift.DescribeScript' = 'GameLift.DescribeScript' }
 
-	export enum DescribeVpcPeeringAuthorizationsX_Amz_Target { 'GameLift.DescribeVpcPeeringAuthorizations' = 0 }
+	export enum DescribeVpcPeeringAuthorizationsX_Amz_Target { 'GameLift.DescribeVpcPeeringAuthorizations' = 'GameLift.DescribeVpcPeeringAuthorizations' }
 
-	export enum DescribeVpcPeeringConnectionsX_Amz_Target { 'GameLift.DescribeVpcPeeringConnections' = 0 }
+	export enum DescribeVpcPeeringConnectionsX_Amz_Target { 'GameLift.DescribeVpcPeeringConnections' = 'GameLift.DescribeVpcPeeringConnections' }
 
-	export enum GetComputeAccessX_Amz_Target { 'GameLift.GetComputeAccess' = 0 }
+	export enum GetComputeAccessX_Amz_Target { 'GameLift.GetComputeAccess' = 'GameLift.GetComputeAccess' }
 
-	export enum GetComputeAuthTokenX_Amz_Target { 'GameLift.GetComputeAuthToken' = 0 }
+	export enum GetComputeAuthTokenX_Amz_Target { 'GameLift.GetComputeAuthToken' = 'GameLift.GetComputeAuthToken' }
 
-	export enum GetGameSessionLogUrlX_Amz_Target { 'GameLift.GetGameSessionLogUrl' = 0 }
+	export enum GetGameSessionLogUrlX_Amz_Target { 'GameLift.GetGameSessionLogUrl' = 'GameLift.GetGameSessionLogUrl' }
 
-	export enum GetInstanceAccessX_Amz_Target { 'GameLift.GetInstanceAccess' = 0 }
+	export enum GetInstanceAccessX_Amz_Target { 'GameLift.GetInstanceAccess' = 'GameLift.GetInstanceAccess' }
 
-	export enum ListAliasesX_Amz_Target { 'GameLift.ListAliases' = 0 }
+	export enum ListAliasesX_Amz_Target { 'GameLift.ListAliases' = 'GameLift.ListAliases' }
 
-	export enum ListBuildsX_Amz_Target { 'GameLift.ListBuilds' = 0 }
+	export enum ListBuildsX_Amz_Target { 'GameLift.ListBuilds' = 'GameLift.ListBuilds' }
 
-	export enum ListComputeX_Amz_Target { 'GameLift.ListCompute' = 0 }
+	export enum ListComputeX_Amz_Target { 'GameLift.ListCompute' = 'GameLift.ListCompute' }
 
-	export enum ListFleetsX_Amz_Target { 'GameLift.ListFleets' = 0 }
+	export enum ListFleetsX_Amz_Target { 'GameLift.ListFleets' = 'GameLift.ListFleets' }
 
-	export enum ListGameServerGroupsX_Amz_Target { 'GameLift.ListGameServerGroups' = 0 }
+	export enum ListGameServerGroupsX_Amz_Target { 'GameLift.ListGameServerGroups' = 'GameLift.ListGameServerGroups' }
 
-	export enum ListGameServersX_Amz_Target { 'GameLift.ListGameServers' = 0 }
+	export enum ListGameServersX_Amz_Target { 'GameLift.ListGameServers' = 'GameLift.ListGameServers' }
 
-	export enum ListLocationsX_Amz_Target { 'GameLift.ListLocations' = 0 }
+	export enum ListLocationsX_Amz_Target { 'GameLift.ListLocations' = 'GameLift.ListLocations' }
 
-	export enum ListScriptsX_Amz_Target { 'GameLift.ListScripts' = 0 }
+	export enum ListScriptsX_Amz_Target { 'GameLift.ListScripts' = 'GameLift.ListScripts' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'GameLift.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'GameLift.ListTagsForResource' = 'GameLift.ListTagsForResource' }
 
-	export enum PutScalingPolicyX_Amz_Target { 'GameLift.PutScalingPolicy' = 0 }
+	export enum PutScalingPolicyX_Amz_Target { 'GameLift.PutScalingPolicy' = 'GameLift.PutScalingPolicy' }
 
-	export enum RegisterComputeX_Amz_Target { 'GameLift.RegisterCompute' = 0 }
+	export enum RegisterComputeX_Amz_Target { 'GameLift.RegisterCompute' = 'GameLift.RegisterCompute' }
 
-	export enum RegisterGameServerX_Amz_Target { 'GameLift.RegisterGameServer' = 0 }
+	export enum RegisterGameServerX_Amz_Target { 'GameLift.RegisterGameServer' = 'GameLift.RegisterGameServer' }
 
-	export enum RequestUploadCredentialsX_Amz_Target { 'GameLift.RequestUploadCredentials' = 0 }
+	export enum RequestUploadCredentialsX_Amz_Target { 'GameLift.RequestUploadCredentials' = 'GameLift.RequestUploadCredentials' }
 
-	export enum ResolveAliasX_Amz_Target { 'GameLift.ResolveAlias' = 0 }
+	export enum ResolveAliasX_Amz_Target { 'GameLift.ResolveAlias' = 'GameLift.ResolveAlias' }
 
-	export enum ResumeGameServerGroupX_Amz_Target { 'GameLift.ResumeGameServerGroup' = 0 }
+	export enum ResumeGameServerGroupX_Amz_Target { 'GameLift.ResumeGameServerGroup' = 'GameLift.ResumeGameServerGroup' }
 
-	export enum SearchGameSessionsX_Amz_Target { 'GameLift.SearchGameSessions' = 0 }
+	export enum SearchGameSessionsX_Amz_Target { 'GameLift.SearchGameSessions' = 'GameLift.SearchGameSessions' }
 
-	export enum StartFleetActionsX_Amz_Target { 'GameLift.StartFleetActions' = 0 }
+	export enum StartFleetActionsX_Amz_Target { 'GameLift.StartFleetActions' = 'GameLift.StartFleetActions' }
 
-	export enum StartGameSessionPlacementX_Amz_Target { 'GameLift.StartGameSessionPlacement' = 0 }
+	export enum StartGameSessionPlacementX_Amz_Target { 'GameLift.StartGameSessionPlacement' = 'GameLift.StartGameSessionPlacement' }
 
-	export enum StartMatchBackfillX_Amz_Target { 'GameLift.StartMatchBackfill' = 0 }
+	export enum StartMatchBackfillX_Amz_Target { 'GameLift.StartMatchBackfill' = 'GameLift.StartMatchBackfill' }
 
-	export enum StartMatchmakingX_Amz_Target { 'GameLift.StartMatchmaking' = 0 }
+	export enum StartMatchmakingX_Amz_Target { 'GameLift.StartMatchmaking' = 'GameLift.StartMatchmaking' }
 
-	export enum StopFleetActionsX_Amz_Target { 'GameLift.StopFleetActions' = 0 }
+	export enum StopFleetActionsX_Amz_Target { 'GameLift.StopFleetActions' = 'GameLift.StopFleetActions' }
 
-	export enum StopGameSessionPlacementX_Amz_Target { 'GameLift.StopGameSessionPlacement' = 0 }
+	export enum StopGameSessionPlacementX_Amz_Target { 'GameLift.StopGameSessionPlacement' = 'GameLift.StopGameSessionPlacement' }
 
-	export enum StopMatchmakingX_Amz_Target { 'GameLift.StopMatchmaking' = 0 }
+	export enum StopMatchmakingX_Amz_Target { 'GameLift.StopMatchmaking' = 'GameLift.StopMatchmaking' }
 
-	export enum SuspendGameServerGroupX_Amz_Target { 'GameLift.SuspendGameServerGroup' = 0 }
+	export enum SuspendGameServerGroupX_Amz_Target { 'GameLift.SuspendGameServerGroup' = 'GameLift.SuspendGameServerGroup' }
 
-	export enum TagResourceX_Amz_Target { 'GameLift.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'GameLift.TagResource' = 'GameLift.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'GameLift.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'GameLift.UntagResource' = 'GameLift.UntagResource' }
 
-	export enum UpdateAliasX_Amz_Target { 'GameLift.UpdateAlias' = 0 }
+	export enum UpdateAliasX_Amz_Target { 'GameLift.UpdateAlias' = 'GameLift.UpdateAlias' }
 
-	export enum UpdateBuildX_Amz_Target { 'GameLift.UpdateBuild' = 0 }
+	export enum UpdateBuildX_Amz_Target { 'GameLift.UpdateBuild' = 'GameLift.UpdateBuild' }
 
-	export enum UpdateFleetAttributesX_Amz_Target { 'GameLift.UpdateFleetAttributes' = 0 }
+	export enum UpdateFleetAttributesX_Amz_Target { 'GameLift.UpdateFleetAttributes' = 'GameLift.UpdateFleetAttributes' }
 
-	export enum UpdateFleetCapacityX_Amz_Target { 'GameLift.UpdateFleetCapacity' = 0 }
+	export enum UpdateFleetCapacityX_Amz_Target { 'GameLift.UpdateFleetCapacity' = 'GameLift.UpdateFleetCapacity' }
 
-	export enum UpdateFleetPortSettingsX_Amz_Target { 'GameLift.UpdateFleetPortSettings' = 0 }
+	export enum UpdateFleetPortSettingsX_Amz_Target { 'GameLift.UpdateFleetPortSettings' = 'GameLift.UpdateFleetPortSettings' }
 
-	export enum UpdateGameServerX_Amz_Target { 'GameLift.UpdateGameServer' = 0 }
+	export enum UpdateGameServerX_Amz_Target { 'GameLift.UpdateGameServer' = 'GameLift.UpdateGameServer' }
 
-	export enum UpdateGameServerGroupX_Amz_Target { 'GameLift.UpdateGameServerGroup' = 0 }
+	export enum UpdateGameServerGroupX_Amz_Target { 'GameLift.UpdateGameServerGroup' = 'GameLift.UpdateGameServerGroup' }
 
-	export enum UpdateGameSessionX_Amz_Target { 'GameLift.UpdateGameSession' = 0 }
+	export enum UpdateGameSessionX_Amz_Target { 'GameLift.UpdateGameSession' = 'GameLift.UpdateGameSession' }
 
-	export enum UpdateGameSessionQueueX_Amz_Target { 'GameLift.UpdateGameSessionQueue' = 0 }
+	export enum UpdateGameSessionQueueX_Amz_Target { 'GameLift.UpdateGameSessionQueue' = 'GameLift.UpdateGameSessionQueue' }
 
-	export enum UpdateMatchmakingConfigurationX_Amz_Target { 'GameLift.UpdateMatchmakingConfiguration' = 0 }
+	export enum UpdateMatchmakingConfigurationX_Amz_Target { 'GameLift.UpdateMatchmakingConfiguration' = 'GameLift.UpdateMatchmakingConfiguration' }
 
-	export enum UpdateRuntimeConfigurationX_Amz_Target { 'GameLift.UpdateRuntimeConfiguration' = 0 }
+	export enum UpdateRuntimeConfigurationX_Amz_Target { 'GameLift.UpdateRuntimeConfiguration' = 'GameLift.UpdateRuntimeConfiguration' }
 
-	export enum UpdateScriptX_Amz_Target { 'GameLift.UpdateScript' = 0 }
+	export enum UpdateScriptX_Amz_Target { 'GameLift.UpdateScript' = 'GameLift.UpdateScript' }
 
-	export enum ValidateMatchmakingRuleSetX_Amz_Target { 'GameLift.ValidateMatchmakingRuleSet' = 0 }
+	export enum ValidateMatchmakingRuleSetX_Amz_Target { 'GameLift.ValidateMatchmakingRuleSet' = 'GameLift.ValidateMatchmakingRuleSet' }
 
 }
 

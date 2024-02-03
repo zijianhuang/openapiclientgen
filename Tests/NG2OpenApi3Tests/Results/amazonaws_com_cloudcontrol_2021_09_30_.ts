@@ -60,11 +60,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Operation { CREATE = 0, DELETE = 1, UPDATE = 2 }
+	export enum Operation { CREATE = 'CREATE', DELETE = 'DELETE', UPDATE = 'UPDATE' }
 
-	export enum OperationStatus { PENDING = 0, IN_PROGRESS = 1, SUCCESS = 2, FAILED = 3, CANCEL_IN_PROGRESS = 4, CANCEL_COMPLETE = 5 }
+	export enum OperationStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', CANCEL_IN_PROGRESS = 'CANCEL_IN_PROGRESS', CANCEL_COMPLETE = 'CANCEL_COMPLETE' }
 
-	export enum HandlerErrorCode { NotUpdatable = 0, InvalidRequest = 1, AccessDenied = 2, InvalidCredentials = 3, AlreadyExists = 4, NotFound = 5, ResourceConflict = 6, Throttling = 7, ServiceLimitExceeded = 8, NotStabilized = 9, GeneralServiceException = 10, ServiceInternalError = 11, ServiceTimeout = 12, NetworkFailure = 13, InternalFailure = 14 }
+	export enum HandlerErrorCode { NotUpdatable = 'NotUpdatable', InvalidRequest = 'InvalidRequest', AccessDenied = 'AccessDenied', InvalidCredentials = 'InvalidCredentials', AlreadyExists = 'AlreadyExists', NotFound = 'NotFound', ResourceConflict = 'ResourceConflict', Throttling = 'Throttling', ServiceLimitExceeded = 'ServiceLimitExceeded', NotStabilized = 'NotStabilized', GeneralServiceException = 'GeneralServiceException', ServiceInternalError = 'ServiceInternalError', ServiceTimeout = 'ServiceTimeout', NetworkFailure = 'NetworkFailure', InternalFailure = 'InternalFailure' }
 
 	export interface CancelResourceRequestInput {
 
@@ -704,21 +704,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelResourceRequestX_Amz_Target { 'CloudApiService.CancelResourceRequest' = 0 }
+	export enum CancelResourceRequestX_Amz_Target { 'CloudApiService.CancelResourceRequest' = 'CloudApiService.CancelResourceRequest' }
 
-	export enum CreateResourceX_Amz_Target { 'CloudApiService.CreateResource' = 0 }
+	export enum CreateResourceX_Amz_Target { 'CloudApiService.CreateResource' = 'CloudApiService.CreateResource' }
 
-	export enum DeleteResourceX_Amz_Target { 'CloudApiService.DeleteResource' = 0 }
+	export enum DeleteResourceX_Amz_Target { 'CloudApiService.DeleteResource' = 'CloudApiService.DeleteResource' }
 
-	export enum GetResourceX_Amz_Target { 'CloudApiService.GetResource' = 0 }
+	export enum GetResourceX_Amz_Target { 'CloudApiService.GetResource' = 'CloudApiService.GetResource' }
 
-	export enum GetResourceRequestStatusX_Amz_Target { 'CloudApiService.GetResourceRequestStatus' = 0 }
+	export enum GetResourceRequestStatusX_Amz_Target { 'CloudApiService.GetResourceRequestStatus' = 'CloudApiService.GetResourceRequestStatus' }
 
-	export enum ListResourceRequestsX_Amz_Target { 'CloudApiService.ListResourceRequests' = 0 }
+	export enum ListResourceRequestsX_Amz_Target { 'CloudApiService.ListResourceRequests' = 'CloudApiService.ListResourceRequests' }
 
-	export enum ListResourcesX_Amz_Target { 'CloudApiService.ListResources' = 0 }
+	export enum ListResourcesX_Amz_Target { 'CloudApiService.ListResources' = 'CloudApiService.ListResources' }
 
-	export enum UpdateResourceX_Amz_Target { 'CloudApiService.UpdateResource' = 0 }
+	export enum UpdateResourceX_Amz_Target { 'CloudApiService.UpdateResource' = 'CloudApiService.UpdateResource' }
 
 }
 

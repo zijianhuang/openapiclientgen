@@ -268,7 +268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PodcastFiltersPodcastType { podcasts = 0, shows = 1 }
+	export enum PodcastFiltersPodcastType { podcasts = 'podcasts', shows = 'shows' }
 
 
 	/** Podcast search params */

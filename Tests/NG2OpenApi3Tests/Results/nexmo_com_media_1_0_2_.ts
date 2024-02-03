@@ -152,7 +152,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum List_and_search_media_itemsOrder { ascending = 0, descending = 1 }
+	export enum List_and_search_media_itemsOrder { ascending = 'ascending', descending = 'descending' }
 
 	export interface List_and_search_media_itemsReturn {
 

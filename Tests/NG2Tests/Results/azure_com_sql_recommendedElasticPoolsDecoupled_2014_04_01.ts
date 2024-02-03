@@ -171,7 +171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendedElasticPoolPropertiesDatabaseEdition { Basic = 0, Standard = 1, Premium = 2, GeneralPurpose = 3, BusinessCritical = 4 }
+	export enum RecommendedElasticPoolPropertiesDatabaseEdition { Basic = 'Basic', Standard = 'Standard', Premium = 'Premium', GeneralPurpose = 'GeneralPurpose', BusinessCritical = 'BusinessCritical' }
 
 	export interface RecommendedElasticPoolPropertiesDatabases {
 

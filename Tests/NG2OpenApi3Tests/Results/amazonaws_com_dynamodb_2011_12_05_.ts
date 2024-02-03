@@ -250,9 +250,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalarAttributeType { S = 0, N = 1, B = 2 }
+	export enum ScalarAttributeType { S = 'S', N = 'N', B = 'B' }
 
-	export enum TableDescriptionTableStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3 }
+	export enum TableDescriptionTableStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE' }
 
 	export interface ProvisionedThroughputDescription {
 		LastIncreaseDateTime?: Date | null;
@@ -477,7 +477,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteItemInputReturnValues { NONE = 0, ALL_OLD = 1, UPDATED_OLD = 2, ALL_NEW = 3, UPDATED_NEW = 4 }
+	export enum DeleteItemInputReturnValues { NONE = 'NONE', ALL_OLD = 'ALL_OLD', UPDATED_OLD = 'UPDATED_OLD', ALL_NEW = 'ALL_NEW', UPDATED_NEW = 'UPDATED_NEW' }
 
 	export interface ConditionalCheckFailedException {
 	}
@@ -798,7 +798,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionComparisonOperator { EQ = 0, NE = 1, IN = 2, LE = 3, LT = 4, GE = 5, GT = 6, BETWEEN = 7, NOT_NULL = 8, NULL = 9, CONTAINS = 10, NOT_CONTAINS = 11, BEGINS_WITH = 12 }
+	export enum ConditionComparisonOperator { EQ = 'EQ', NE = 'NE', IN = 'IN', LE = 'LE', LT = 'LT', GE = 'GE', GT = 'GT', BETWEEN = 'BETWEEN', NOT_NULL = 'NOT_NULL', NULL = 'NULL', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS', BEGINS_WITH = 'BEGINS_WITH' }
 
 	export interface ScanOutput {
 		Items?: Array<AttributeMap>;
@@ -973,7 +973,7 @@ export namespace MyNS {
 
 
 	/** The type of action for an item update operation. Only use the add action for numbers or sets; the specified value is added to the existing value. If a set of values is specified, the values are added to the existing set. Adds the specified attribute. If the attribute exists, it is replaced by the new value. If no value is specified, this removes the attribute and its value. If a set of values is specified, then the values in the specified set are removed from the old set. */
-	export enum AttributeAction { ADD = 0, PUT = 1, DELETE = 2 }
+	export enum AttributeAction { ADD = 'ADD', PUT = 'PUT', DELETE = 'DELETE' }
 
 
 	/** Specifies the attribute to update and how to perform the update. Possible values: <code>PUT</code> (default), <code>ADD</code> or <code>DELETE</code>. */
@@ -1124,11 +1124,11 @@ export namespace MyNS {
 
 
 	/** <p>A comparison operator is an enumeration of several operations:</p> <ul> <li><code>EQ</code> for <em>equal</em>.</li> <li><code>NE</code> for <em>not equal</em>.</li> <li><code>IN</code> checks for exact matches.</li> <li><code>LE</code> for <em>less than or equal to</em>.</li> <li><code>LT</code> for <em>less than</em>.</li> <li><code>GE</code> for <em>greater than or equal to</em>.</li> <li><code>GT</code> for <em>greater than</em>.</li> <li><code>BETWEEN</code> for <em>between</em>.</li> <li><code>NOT_NULL</code> for <em>exists</em>.</li> <li><code>NULL</code> for <em>not exists</em>.</li> <li><code>CONTAINS</code> for substring or value in a set.</li> <li><code>NOT_CONTAINS</code> for absence of a substring or absence of a value in a set.</li> <li><code>BEGINS_WITH</code> for a substring prefix.</li> </ul> <p>Scan operations support all available comparison operators.</p> <p>Query operations support a subset of the available comparison operators: EQ, LE, LT, GE, GT, BETWEEN, and BEGINS_WITH.</p> */
-	export enum ComparisonOperator { EQ = 0, NE = 1, IN = 2, LE = 3, LT = 4, GE = 5, GT = 6, BETWEEN = 7, NOT_NULL = 8, NULL = 9, CONTAINS = 10, NOT_CONTAINS = 11, BEGINS_WITH = 12 }
+	export enum ComparisonOperator { EQ = 'EQ', NE = 'NE', IN = 'IN', LE = 'LE', LT = 'LT', GE = 'GE', GT = 'GT', BETWEEN = 'BETWEEN', NOT_NULL = 'NOT_NULL', NULL = 'NULL', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS', BEGINS_WITH = 'BEGINS_WITH' }
 
 
 	/** <p>Use this parameter if you want to get the attribute name-value pairs before or after they are modified. For <code>PUT</code> operations, the possible parameter values are <code>NONE</code> (default) or <code>ALL_OLD</code>. For update operations, the possible parameter values are <code>NONE</code> (default) or <code>ALL_OLD</code>, <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or <code>UPDATED_NEW</code>.</p> <ul> <li><code>NONE</code>: Nothing is returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the item as they were before the operation.</li> <li><code>UPDATED_OLD</code>: Returns the values of the updated attributes, only, as they were before the operation.</li> <li><code>ALL_NEW</code>: Returns all the attributes and their new values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns the values of the updated attributes, only, as they are after the operation.</li> </ul> */
-	export enum ReturnValue { NONE = 0, ALL_OLD = 1, UPDATED_OLD = 2, ALL_NEW = 3, UPDATED_NEW = 4 }
+	export enum ReturnValue { NONE = 'NONE', ALL_OLD = 'ALL_OLD', UPDATED_OLD = 'UPDATED_OLD', ALL_NEW = 'ALL_NEW', UPDATED_NEW = 'UPDATED_NEW' }
 
 
 	/** Allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the attribute value already exists; or if the attribute value exists and has a particular value before changing it. */
@@ -1148,7 +1148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3 }
+	export enum TableStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE' }
 
 	@Injectable()
 	export class MyClient {
@@ -1280,31 +1280,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchGetItemX_Amz_Target { 'DynamoDB_20111205.BatchGetItem' = 0 }
+	export enum BatchGetItemX_Amz_Target { 'DynamoDB_20111205.BatchGetItem' = 'DynamoDB_20111205.BatchGetItem' }
 
-	export enum BatchWriteItemX_Amz_Target { 'DynamoDB_20111205.BatchWriteItem' = 0 }
+	export enum BatchWriteItemX_Amz_Target { 'DynamoDB_20111205.BatchWriteItem' = 'DynamoDB_20111205.BatchWriteItem' }
 
-	export enum CreateTableX_Amz_Target { 'DynamoDB_20111205.CreateTable' = 0 }
+	export enum CreateTableX_Amz_Target { 'DynamoDB_20111205.CreateTable' = 'DynamoDB_20111205.CreateTable' }
 
-	export enum DeleteItemX_Amz_Target { 'DynamoDB_20111205.DeleteItem' = 0 }
+	export enum DeleteItemX_Amz_Target { 'DynamoDB_20111205.DeleteItem' = 'DynamoDB_20111205.DeleteItem' }
 
-	export enum DeleteTableX_Amz_Target { 'DynamoDB_20111205.DeleteTable' = 0 }
+	export enum DeleteTableX_Amz_Target { 'DynamoDB_20111205.DeleteTable' = 'DynamoDB_20111205.DeleteTable' }
 
-	export enum DescribeTableX_Amz_Target { 'DynamoDB_20111205.DescribeTable' = 0 }
+	export enum DescribeTableX_Amz_Target { 'DynamoDB_20111205.DescribeTable' = 'DynamoDB_20111205.DescribeTable' }
 
-	export enum GetItemX_Amz_Target { 'DynamoDB_20111205.GetItem' = 0 }
+	export enum GetItemX_Amz_Target { 'DynamoDB_20111205.GetItem' = 'DynamoDB_20111205.GetItem' }
 
-	export enum ListTablesX_Amz_Target { 'DynamoDB_20111205.ListTables' = 0 }
+	export enum ListTablesX_Amz_Target { 'DynamoDB_20111205.ListTables' = 'DynamoDB_20111205.ListTables' }
 
-	export enum PutItemX_Amz_Target { 'DynamoDB_20111205.PutItem' = 0 }
+	export enum PutItemX_Amz_Target { 'DynamoDB_20111205.PutItem' = 'DynamoDB_20111205.PutItem' }
 
-	export enum QueryX_Amz_Target { 'DynamoDB_20111205.Query' = 0 }
+	export enum QueryX_Amz_Target { 'DynamoDB_20111205.Query' = 'DynamoDB_20111205.Query' }
 
-	export enum ScanX_Amz_Target { 'DynamoDB_20111205.Scan' = 0 }
+	export enum ScanX_Amz_Target { 'DynamoDB_20111205.Scan' = 'DynamoDB_20111205.Scan' }
 
-	export enum UpdateItemX_Amz_Target { 'DynamoDB_20111205.UpdateItem' = 0 }
+	export enum UpdateItemX_Amz_Target { 'DynamoDB_20111205.UpdateItem' = 'DynamoDB_20111205.UpdateItem' }
 
-	export enum UpdateTableX_Amz_Target { 'DynamoDB_20111205.UpdateTable' = 0 }
+	export enum UpdateTableX_Amz_Target { 'DynamoDB_20111205.UpdateTable' = 'DynamoDB_20111205.UpdateTable' }
 
 }
 

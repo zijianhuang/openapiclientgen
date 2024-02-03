@@ -2255,11 +2255,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Androidpublisher_edits_deobfuscationfiles_uploadDeobfuscationFileType { nativeCode = 0, proguard = 1 }
+	export enum Androidpublisher_edits_deobfuscationfiles_uploadDeobfuscationFileType { nativeCode = 'nativeCode', proguard = 'proguard' }
 
-	export enum Androidpublisher_edits_expansionfiles_getExpansionFileType { main = 0, patch = 1 }
+	export enum Androidpublisher_edits_expansionfiles_getExpansionFileType { main = 'main', patch = 'patch' }
 
-	export enum Androidpublisher_edits_images_deleteallImageType { featureGraphic = 0, icon = 1, phoneScreenshots = 2, promoGraphic = 3, sevenInchScreenshots = 4, tenInchScreenshots = 5, tvBanner = 6, tvScreenshots = 7, wearScreenshots = 8 }
+	export enum Androidpublisher_edits_images_deleteallImageType { featureGraphic = 'featureGraphic', icon = 'icon', phoneScreenshots = 'phoneScreenshots', promoGraphic = 'promoGraphic', sevenInchScreenshots = 'sevenInchScreenshots', tenInchScreenshots = 'tenInchScreenshots', tvBanner = 'tvBanner', tvScreenshots = 'tvScreenshots', wearScreenshots = 'wearScreenshots' }
 
 }
 

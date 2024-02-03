@@ -30,7 +30,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AbstractExchangeType { reqRespPair = 0, unidirEvent = 1 }
+	export enum AbstractExchangeType { reqRespPair = 'reqRespPair', unidirEvent = 'unidirEvent' }
 
 
 	/**
@@ -140,7 +140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BindingType { KAFKA = 0, MQTT = 1, WS = 2, AMQP = 3, NATS = 4, GOOGLEPUBSUB = 5 }
+	export enum BindingType { KAFKA = 'KAFKA', MQTT = 'MQTT', WS = 'WS', AMQP = 'AMQP', NATS = 'NATS', GOOGLEPUBSUB = 'GOOGLEPUBSUB' }
 
 
 	/** A simple Counter type. */
@@ -855,7 +855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeycloakConfigSsl_required { none = 0, external = 1 }
+	export enum KeycloakConfigSsl_required { none = 'none', external = 'external' }
 
 
 	/** A map which keys are already used labels keys and values are already used values for this key */
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterConstraintIn { path = 0, query = 1, header = 2 }
+	export enum ParameterConstraintIn { path = 'path', query = 'query', header = 'header' }
 
 
 	/** Specification of additional headers for a Service/API operations. Keys are operation name or "globals" (if header applies to all), values are Header objects DTO. */
@@ -1239,7 +1239,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { WSDL = 0, XSD = 1, JSON_SCHEMA = 2, OPEN_API_SPEC = 3, OPEN_API_SCHEMA = 4, ASYNC_API_SPEC = 5, ASYNC_API_SCHEMA = 6, AVRO_SCHEMA = 7, PROTOBUF_SCHEMA = 8, PROTOBUF_DESCRIPTION = 9, GRAPHQL_SCHEMA = 10 }
+	export enum ResourceType { WSDL = 'WSDL', XSD = 'XSD', JSON_SCHEMA = 'JSON_SCHEMA', OPEN_API_SPEC = 'OPEN_API_SPEC', OPEN_API_SCHEMA = 'OPEN_API_SCHEMA', ASYNC_API_SPEC = 'ASYNC_API_SPEC', ASYNC_API_SCHEMA = 'ASYNC_API_SCHEMA', AVRO_SCHEMA = 'AVRO_SCHEMA', PROTOBUF_SCHEMA = 'PROTOBUF_SCHEMA', PROTOBUF_DESCRIPTION = 'PROTOBUF_DESCRIPTION', GRAPHQL_SCHEMA = 'GRAPHQL_SCHEMA' }
 
 
 	/** A mock invocation or test response */
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceType { REST = 0, SOAP_HTTP = 1, GENERIC_REST = 2, GENERIC_EVENT = 3, EVENT = 4, GRPC = 5, GRAPHQL = 6 }
+	export enum ServiceType { REST = 'REST', SOAP_HTTP = 'SOAP_HTTP', GENERIC_REST = 'GENERIC_REST', GENERIC_EVENT = 'GENERIC_EVENT', EVENT = 'EVENT', GRPC = 'GRPC', GRAPHQL = 'GRAPHQL' }
 
 
 	/** Aggregate bean for grouping a Service an its messages pairs */
@@ -1770,7 +1770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestConformanceMetricLatestTrend { DOWN = 0, LOW_DOWN = 1, STABLE = 2, LOW_UP = 3, UP = 4 }
+	export enum TestConformanceMetricLatestTrend { DOWN = 'DOWN', LOW_DOWN = 'LOW_DOWN', STABLE = 'STABLE', LOW_UP = 'LOW_UP', UP = 'UP' }
 
 
 	/** Test request is a minimalist wrapper for requesting the launch of a new test */
@@ -1851,7 +1851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestRequestRunnerType { HTTP = 0, SOAP_HTTP = 1, SOAP_UI = 2, POSTMAN = 3, OPEN_API_SCHEMA = 4, ASYNC_API_SCHEMA = 5, GRPC_PROTOBUF = 6, GRAPHQL_SCHEMA = 7 }
+	export enum TestRequestRunnerType { HTTP = 'HTTP', SOAP_HTTP = 'SOAP_HTTP', SOAP_UI = 'SOAP_UI', POSTMAN = 'POSTMAN', OPEN_API_SCHEMA = 'OPEN_API_SCHEMA', ASYNC_API_SCHEMA = 'ASYNC_API_SCHEMA', GRPC_PROTOBUF = 'GRPC_PROTOBUF', GRAPHQL_SCHEMA = 'GRAPHQL_SCHEMA' }
 
 
 	/** Represents the result of a Service or API test run by Microcks. Tests are related to a service and made of multiple test cases corresponding to each operations / actions composing service. Tests are run against a specific endpoint named testedEndpoint. It holds global markers telling if test still ran, is a success, how many times is has taken and so on ... */
@@ -2129,11 +2129,11 @@ export namespace MyNS {
 
 
 	/** Type of test strategy (different strategies are implemented by different runners) */
-	export enum TestRunnerType { HTTP = 0, SOAP_HTTP = 1, SOAP_UI = 2, POSTMAN = 3, OPEN_API_SCHEMA = 4, ASYNC_API_SCHEMA = 5, GRPC_PROTOBUF = 6, GRAPHQL_SCHEMA = 7 }
+	export enum TestRunnerType { HTTP = 'HTTP', SOAP_HTTP = 'SOAP_HTTP', SOAP_UI = 'SOAP_UI', POSTMAN = 'POSTMAN', OPEN_API_SCHEMA = 'OPEN_API_SCHEMA', ASYNC_API_SCHEMA = 'ASYNC_API_SCHEMA', GRPC_PROTOBUF = 'GRPC_PROTOBUF', GRAPHQL_SCHEMA = 'GRAPHQL_SCHEMA' }
 
 
 	/** Evolution trend qualifier */
-	export enum Trend { DOWN = 0, LOW_DOWN = 1, STABLE = 2, LOW_UP = 3, UP = 4 }
+	export enum Trend { DOWN = 'DOWN', LOW_DOWN = 'LOW_DOWN', STABLE = 'STABLE', LOW_UP = 'LOW_UP', UP = 'UP' }
 
 
 	/** Representation of an unidirectional exchange as an event message */

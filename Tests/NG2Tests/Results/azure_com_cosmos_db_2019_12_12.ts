@@ -510,7 +510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompositePathOrder { Ascending = 0, Descending = 1 }
+	export enum CompositePathOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 
 	/** The conflict resolution policy for the container. */
@@ -547,11 +547,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConflictResolutionPolicyMode { LastWriterWins = 0, Custom = 1 }
+	export enum ConflictResolutionPolicyMode { LastWriterWins = 'LastWriterWins', Custom = 'Custom' }
 
 
 	/** The cassandra connector offer type for the Cosmos DB C* database account. */
-	export enum ConnectorOffer { Small = 0 }
+	export enum ConnectorOffer { Small = 'Small' }
 
 
 	/** The consistency policy for the Cosmos DB database account. */
@@ -610,7 +610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsistencyPolicyDefaultConsistencyLevel { Eventual = 0, Session = 1, BoundedStaleness = 2, Strong = 3, ConsistentPrefix = 4 }
+	export enum ConsistencyPolicyDefaultConsistencyLevel { Eventual = 'Eventual', Session = 'Session', BoundedStaleness = 'BoundedStaleness', Strong = 'Strong', ConsistentPrefix = 'ConsistentPrefix' }
 
 
 	/** The configuration of the partition key to be used for partitioning data into multiple partitions */
@@ -651,7 +651,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerPartitionKeyKind { Hash = 0, Range = 1 }
+	export enum ContainerPartitionKeyKind { Hash = 'Hash', Range = 'Range' }
 
 
 	/** Connection string for the Cosmos DB account */
@@ -708,7 +708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseAccountCreateUpdateParametersKind { GlobalDocumentDB = 0, MongoDB = 1, Parse = 2 }
+	export enum DatabaseAccountCreateUpdateParametersKind { GlobalDocumentDB = 'GlobalDocumentDB', MongoDB = 'MongoDB', Parse = 'Parse' }
 
 
 	/** Properties to create and update Azure Cosmos DB database accounts. */
@@ -808,7 +808,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseAccountCreateUpdatePropertiesDatabaseAccountOfferType { Standard = 0 }
+	export enum DatabaseAccountCreateUpdatePropertiesDatabaseAccountOfferType { Standard = 'Standard' }
 
 
 	/** A region in which the Azure Cosmos DB database account is deployed. */
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 
 
 	/** The offer type for the Cosmos DB database account. */
-	export enum DatabaseAccountOfferType { Standard = 0 }
+	export enum DatabaseAccountOfferType { Standard = 'Standard' }
 
 
 	/** Parameters to regenerate the keys within the database account. */
@@ -1183,7 +1183,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseAccountRegenerateKeyParametersKeyKind { primary = 0, secondary = 1, primaryReadonly = 2, secondaryReadonly = 3 }
+	export enum DatabaseAccountRegenerateKeyParametersKeyKind { primary = 'primary', secondary = 'secondary', primaryReadonly = 'primaryReadonly', secondaryReadonly = 'secondaryReadonly' }
 
 
 	/** Parameters for patching Azure Cosmos DB database account properties. */
@@ -1724,11 +1724,11 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexesDataType { String = 0, Number = 1, Point = 2, Polygon = 3, LineString = 4, MultiPolygon = 5 }
+	export enum IndexesDataType { String = 'String', Number = 'Number', Point = 'Point', Polygon = 'Polygon', LineString = 'LineString', MultiPolygon = 'MultiPolygon' }
 
-	export enum IndexesKind { Hash = 0, Range = 1, Spatial = 2 }
+	export enum IndexesKind { Hash = 'Hash', Range = 'Range', Spatial = 'Spatial' }
 
-	export enum IndexingPolicyIndexingMode { Consistent = 0, Lazy = 1, None = 2 }
+	export enum IndexingPolicyIndexingMode { Consistent = 'Consistent', Lazy = 'Lazy', None = 'None' }
 
 	export interface SpatialSpec {
 
@@ -1752,7 +1752,7 @@ export namespace MyNS {
 
 
 	/** Indicates the spatial type of index. */
-	export enum SpatialType { Point = 0, LineString = 1, Polygon = 2, MultiPolygon = 3 }
+	export enum SpatialType { Point = 'Point', LineString = 'LineString', Polygon = 'Polygon', MultiPolygon = 'MultiPolygon' }
 
 
 	/** The unique key policy configuration for specifying uniqueness constraints on documents in the collection in the Azure Cosmos DB service. */
@@ -1941,7 +1941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricUnit { Count = 0, Bytes = 1, Seconds = 2, Percent = 3, CountPerSecond = 4, BytesPerSecond = 5, Milliseconds = 6 }
+	export enum MetricUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', Percent = 'Percent', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond', Milliseconds = 'Milliseconds' }
 
 
 	/** The availability of the metric. */
@@ -2012,7 +2012,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDefinitionPrimaryAggregationType { None = 0, Average = 1, Total = 2, Minimum = 3, Maximum = 4, Last = 5 }
+	export enum MetricDefinitionPrimaryAggregationType { None = 'None', Average = 'Average', Total = 'Total', Minimum = 'Minimum', Maximum = 'Maximum', Last = 'Last' }
 
 
 	/** The response to a list metric definitions request. */
@@ -3202,9 +3202,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SqlTriggerResourceTriggerOperation { All = 0, Create = 1, Update = 2, Delete = 3, Replace = 4 }
+	export enum SqlTriggerResourceTriggerOperation { All = 'All', Create = 'Create', Update = 'Update', Delete = 'Delete', Replace = 'Replace' }
 
-	export enum SqlTriggerResourceTriggerType { Pre = 0, Post = 1 }
+	export enum SqlTriggerResourceTriggerType { Pre = 'Pre', Post = 'Post' }
 
 
 	/** The properties of an Azure Cosmos DB trigger */
@@ -3621,7 +3621,7 @@ export namespace MyNS {
 
 
 	/** The unit of the metric. */
-	export enum UnitType { Count = 0, Bytes = 1, Seconds = 2, Percent = 3, CountPerSecond = 4, BytesPerSecond = 5, Milliseconds = 6 }
+	export enum UnitType { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', Percent = 'Percent', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond', Milliseconds = 'Milliseconds' }
 
 
 	/** The usage data for a usage request. */

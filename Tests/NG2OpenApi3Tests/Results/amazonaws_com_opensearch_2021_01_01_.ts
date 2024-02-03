@@ -103,11 +103,11 @@ export namespace MyNS {
 
 	}
 
-	export enum InboundConnectionStatusCode { PENDING_ACCEPTANCE = 0, APPROVED = 1, PROVISIONING = 2, ACTIVE = 3, REJECTING = 4, REJECTED = 5, DELETING = 6, DELETED = 7 }
+	export enum InboundConnectionStatusCode { PENDING_ACCEPTANCE = 'PENDING_ACCEPTANCE', APPROVED = 'APPROVED', PROVISIONING = 'PROVISIONING', ACTIVE = 'ACTIVE', REJECTING = 'REJECTING', REJECTED = 'REJECTED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** <p>The connection mode for the cross-cluster connection.</p> <ul> <li> <p> <b>DIRECT</b> - Used for cross-cluster search or cross-cluster replication.</p> </li> <li> <p> <b>VPC_ENDPOINT</b> - Used for remote reindex between Amazon OpenSearch Service VPC domains.</p> </li> </ul> */
-	export enum ConnectionMode { DIRECT = 0, VPC_ENDPOINT = 1 }
+	export enum ConnectionMode { DIRECT = 'DIRECT', VPC_ENDPOINT = 'VPC_ENDPOINT' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -251,9 +251,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageType { 'TXT-DICTIONARY' = 0 }
+	export enum PackageType { 'TXT-DICTIONARY' = 'TXT-DICTIONARY' }
 
-	export enum DomainPackageStatus { ASSOCIATING = 0, ASSOCIATION_FAILED = 1, ACTIVE = 2, DISSOCIATING = 3, DISSOCIATION_FAILED = 4 }
+	export enum DomainPackageStatus { ASSOCIATING = 'ASSOCIATING', ASSOCIATION_FAILED = 'ASSOCIATION_FAILED', ACTIVE = 'ACTIVE', DISSOCIATING = 'DISSOCIATING', DISSOCIATION_FAILED = 'DISSOCIATION_FAILED' }
 
 
 	/** Additional information if the package is in an error state. Null otherwise. */
@@ -328,7 +328,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrincipalType { AWS_ACCOUNT = 0, AWS_SERVICE = 1 }
+	export enum PrincipalType { AWS_ACCOUNT = 'AWS_ACCOUNT', AWS_SERVICE = 'AWS_SERVICE' }
 
 
 	/** Container for the response to a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the update. */
@@ -383,7 +383,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentStatus { PENDING_UPDATE = 0, IN_PROGRESS = 1, COMPLETED = 2, NOT_ELIGIBLE = 3, ELIGIBLE = 4 }
+	export enum DeploymentStatus { PENDING_UPDATE = 'PENDING_UPDATE', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', NOT_ELIGIBLE = 'NOT_ELIGIBLE', ELIGIBLE = 'ELIGIBLE' }
 
 
 	/** The result of a <code>CreateDomain</code> operation. Contains the status of the newly created domain. */
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenSearchPartitionInstanceType { 'm3.medium.search' = 0, 'm3.large.search' = 1, 'm3.xlarge.search' = 2, 'm3.2xlarge.search' = 3, 'm4.large.search' = 4, 'm4.xlarge.search' = 5, 'm4.2xlarge.search' = 6, 'm4.4xlarge.search' = 7, 'm4.10xlarge.search' = 8, 'm5.large.search' = 9, 'm5.xlarge.search' = 10, 'm5.2xlarge.search' = 11, 'm5.4xlarge.search' = 12, 'm5.12xlarge.search' = 13, 'm5.24xlarge.search' = 14, 'r5.large.search' = 15, 'r5.xlarge.search' = 16, 'r5.2xlarge.search' = 17, 'r5.4xlarge.search' = 18, 'r5.12xlarge.search' = 19, 'r5.24xlarge.search' = 20, 'c5.large.search' = 21, 'c5.xlarge.search' = 22, 'c5.2xlarge.search' = 23, 'c5.4xlarge.search' = 24, 'c5.9xlarge.search' = 25, 'c5.18xlarge.search' = 26, 't3.nano.search' = 27, 't3.micro.search' = 28, 't3.small.search' = 29, 't3.medium.search' = 30, 't3.large.search' = 31, 't3.xlarge.search' = 32, 't3.2xlarge.search' = 33, 'ultrawarm1.medium.search' = 34, 'ultrawarm1.large.search' = 35, 'ultrawarm1.xlarge.search' = 36, 't2.micro.search' = 37, 't2.small.search' = 38, 't2.medium.search' = 39, 'r3.large.search' = 40, 'r3.xlarge.search' = 41, 'r3.2xlarge.search' = 42, 'r3.4xlarge.search' = 43, 'r3.8xlarge.search' = 44, 'i2.xlarge.search' = 45, 'i2.2xlarge.search' = 46, 'd2.xlarge.search' = 47, 'd2.2xlarge.search' = 48, 'd2.4xlarge.search' = 49, 'd2.8xlarge.search' = 50, 'c4.large.search' = 51, 'c4.xlarge.search' = 52, 'c4.2xlarge.search' = 53, 'c4.4xlarge.search' = 54, 'c4.8xlarge.search' = 55, 'r4.large.search' = 56, 'r4.xlarge.search' = 57, 'r4.2xlarge.search' = 58, 'r4.4xlarge.search' = 59, 'r4.8xlarge.search' = 60, 'r4.16xlarge.search' = 61, 'i3.large.search' = 62, 'i3.xlarge.search' = 63, 'i3.2xlarge.search' = 64, 'i3.4xlarge.search' = 65, 'i3.8xlarge.search' = 66, 'i3.16xlarge.search' = 67, 'r6g.large.search' = 68, 'r6g.xlarge.search' = 69, 'r6g.2xlarge.search' = 70, 'r6g.4xlarge.search' = 71, 'r6g.8xlarge.search' = 72, 'r6g.12xlarge.search' = 73, 'm6g.large.search' = 74, 'm6g.xlarge.search' = 75, 'm6g.2xlarge.search' = 76, 'm6g.4xlarge.search' = 77, 'm6g.8xlarge.search' = 78, 'm6g.12xlarge.search' = 79, 'c6g.large.search' = 80, 'c6g.xlarge.search' = 81, 'c6g.2xlarge.search' = 82, 'c6g.4xlarge.search' = 83, 'c6g.8xlarge.search' = 84, 'c6g.12xlarge.search' = 85, 'r6gd.large.search' = 86, 'r6gd.xlarge.search' = 87, 'r6gd.2xlarge.search' = 88, 'r6gd.4xlarge.search' = 89, 'r6gd.8xlarge.search' = 90, 'r6gd.12xlarge.search' = 91, 'r6gd.16xlarge.search' = 92, 't4g.small.search' = 93, 't4g.medium.search' = 94 }
+	export enum OpenSearchPartitionInstanceType { 'm3.medium.search' = 'm3.medium.search', 'm3.large.search' = 'm3.large.search', 'm3.xlarge.search' = 'm3.xlarge.search', 'm3.2xlarge.search' = 'm3.2xlarge.search', 'm4.large.search' = 'm4.large.search', 'm4.xlarge.search' = 'm4.xlarge.search', 'm4.2xlarge.search' = 'm4.2xlarge.search', 'm4.4xlarge.search' = 'm4.4xlarge.search', 'm4.10xlarge.search' = 'm4.10xlarge.search', 'm5.large.search' = 'm5.large.search', 'm5.xlarge.search' = 'm5.xlarge.search', 'm5.2xlarge.search' = 'm5.2xlarge.search', 'm5.4xlarge.search' = 'm5.4xlarge.search', 'm5.12xlarge.search' = 'm5.12xlarge.search', 'm5.24xlarge.search' = 'm5.24xlarge.search', 'r5.large.search' = 'r5.large.search', 'r5.xlarge.search' = 'r5.xlarge.search', 'r5.2xlarge.search' = 'r5.2xlarge.search', 'r5.4xlarge.search' = 'r5.4xlarge.search', 'r5.12xlarge.search' = 'r5.12xlarge.search', 'r5.24xlarge.search' = 'r5.24xlarge.search', 'c5.large.search' = 'c5.large.search', 'c5.xlarge.search' = 'c5.xlarge.search', 'c5.2xlarge.search' = 'c5.2xlarge.search', 'c5.4xlarge.search' = 'c5.4xlarge.search', 'c5.9xlarge.search' = 'c5.9xlarge.search', 'c5.18xlarge.search' = 'c5.18xlarge.search', 't3.nano.search' = 't3.nano.search', 't3.micro.search' = 't3.micro.search', 't3.small.search' = 't3.small.search', 't3.medium.search' = 't3.medium.search', 't3.large.search' = 't3.large.search', 't3.xlarge.search' = 't3.xlarge.search', 't3.2xlarge.search' = 't3.2xlarge.search', 'ultrawarm1.medium.search' = 'ultrawarm1.medium.search', 'ultrawarm1.large.search' = 'ultrawarm1.large.search', 'ultrawarm1.xlarge.search' = 'ultrawarm1.xlarge.search', 't2.micro.search' = 't2.micro.search', 't2.small.search' = 't2.small.search', 't2.medium.search' = 't2.medium.search', 'r3.large.search' = 'r3.large.search', 'r3.xlarge.search' = 'r3.xlarge.search', 'r3.2xlarge.search' = 'r3.2xlarge.search', 'r3.4xlarge.search' = 'r3.4xlarge.search', 'r3.8xlarge.search' = 'r3.8xlarge.search', 'i2.xlarge.search' = 'i2.xlarge.search', 'i2.2xlarge.search' = 'i2.2xlarge.search', 'd2.xlarge.search' = 'd2.xlarge.search', 'd2.2xlarge.search' = 'd2.2xlarge.search', 'd2.4xlarge.search' = 'd2.4xlarge.search', 'd2.8xlarge.search' = 'd2.8xlarge.search', 'c4.large.search' = 'c4.large.search', 'c4.xlarge.search' = 'c4.xlarge.search', 'c4.2xlarge.search' = 'c4.2xlarge.search', 'c4.4xlarge.search' = 'c4.4xlarge.search', 'c4.8xlarge.search' = 'c4.8xlarge.search', 'r4.large.search' = 'r4.large.search', 'r4.xlarge.search' = 'r4.xlarge.search', 'r4.2xlarge.search' = 'r4.2xlarge.search', 'r4.4xlarge.search' = 'r4.4xlarge.search', 'r4.8xlarge.search' = 'r4.8xlarge.search', 'r4.16xlarge.search' = 'r4.16xlarge.search', 'i3.large.search' = 'i3.large.search', 'i3.xlarge.search' = 'i3.xlarge.search', 'i3.2xlarge.search' = 'i3.2xlarge.search', 'i3.4xlarge.search' = 'i3.4xlarge.search', 'i3.8xlarge.search' = 'i3.8xlarge.search', 'i3.16xlarge.search' = 'i3.16xlarge.search', 'r6g.large.search' = 'r6g.large.search', 'r6g.xlarge.search' = 'r6g.xlarge.search', 'r6g.2xlarge.search' = 'r6g.2xlarge.search', 'r6g.4xlarge.search' = 'r6g.4xlarge.search', 'r6g.8xlarge.search' = 'r6g.8xlarge.search', 'r6g.12xlarge.search' = 'r6g.12xlarge.search', 'm6g.large.search' = 'm6g.large.search', 'm6g.xlarge.search' = 'm6g.xlarge.search', 'm6g.2xlarge.search' = 'm6g.2xlarge.search', 'm6g.4xlarge.search' = 'm6g.4xlarge.search', 'm6g.8xlarge.search' = 'm6g.8xlarge.search', 'm6g.12xlarge.search' = 'm6g.12xlarge.search', 'c6g.large.search' = 'c6g.large.search', 'c6g.xlarge.search' = 'c6g.xlarge.search', 'c6g.2xlarge.search' = 'c6g.2xlarge.search', 'c6g.4xlarge.search' = 'c6g.4xlarge.search', 'c6g.8xlarge.search' = 'c6g.8xlarge.search', 'c6g.12xlarge.search' = 'c6g.12xlarge.search', 'r6gd.large.search' = 'r6gd.large.search', 'r6gd.xlarge.search' = 'r6gd.xlarge.search', 'r6gd.2xlarge.search' = 'r6gd.2xlarge.search', 'r6gd.4xlarge.search' = 'r6gd.4xlarge.search', 'r6gd.8xlarge.search' = 'r6gd.8xlarge.search', 'r6gd.12xlarge.search' = 'r6gd.12xlarge.search', 'r6gd.16xlarge.search' = 'r6gd.16xlarge.search', 't4g.small.search' = 't4g.small.search', 't4g.medium.search' = 't4g.medium.search' }
 
 
 	/** The zone awareness configuration for an Amazon OpenSearch Service domain. */
@@ -550,7 +550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenSearchWarmPartitionInstanceType { 'ultrawarm1.medium.search' = 0, 'ultrawarm1.large.search' = 1, 'ultrawarm1.xlarge.search' = 2 }
+	export enum OpenSearchWarmPartitionInstanceType { 'ultrawarm1.medium.search' = 'ultrawarm1.medium.search', 'ultrawarm1.large.search' = 'ultrawarm1.large.search', 'ultrawarm1.xlarge.search' = 'ultrawarm1.xlarge.search' }
 
 
 	/** Container for the parameters required to enable cold storage for an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold storage for Amazon OpenSearch Service</a>. */
@@ -604,7 +604,7 @@ export namespace MyNS {
 
 
 	/** The type of EBS volume that a domain uses. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs">Configuring EBS-based storage</a>. */
-	export enum VolumeType { standard = 0, gp2 = 1, io1 = 2, gp3 = 3 }
+	export enum VolumeType { standard = 'standard', gp2 = 'gp2', io1 = 'io1', gp3 = 'gp3' }
 
 
 	/** The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. */
@@ -759,7 +759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 0, 'Policy-Min-TLS-1-2-2019-07' = 1 }
+	export enum TLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 'Policy-Min-TLS-1-0-2019-07', 'Policy-Min-TLS-1-2-2019-07' = 'Policy-Min-TLS-1-2-2019-07' }
 
 
 	/** Container for fine-grained access control settings. */
@@ -868,7 +868,7 @@ export namespace MyNS {
 
 
 	/** The Auto-Tune state for the domain. For valid states see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.  */
-	export enum AutoTuneState { ENABLED = 0, DISABLED = 1, ENABLE_IN_PROGRESS = 2, DISABLE_IN_PROGRESS = 3, DISABLED_AND_ROLLBACK_SCHEDULED = 4, DISABLED_AND_ROLLBACK_IN_PROGRESS = 5, DISABLED_AND_ROLLBACK_COMPLETE = 6, DISABLED_AND_ROLLBACK_ERROR = 7, ERROR = 8 }
+	export enum AutoTuneState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', ENABLE_IN_PROGRESS = 'ENABLE_IN_PROGRESS', DISABLE_IN_PROGRESS = 'DISABLE_IN_PROGRESS', DISABLED_AND_ROLLBACK_SCHEDULED = 'DISABLED_AND_ROLLBACK_SCHEDULED', DISABLED_AND_ROLLBACK_IN_PROGRESS = 'DISABLED_AND_ROLLBACK_IN_PROGRESS', DISABLED_AND_ROLLBACK_COMPLETE = 'DISABLED_AND_ROLLBACK_COMPLETE', DISABLED_AND_ROLLBACK_ERROR = 'DISABLED_AND_ROLLBACK_ERROR', ERROR = 'ERROR' }
 
 
 	/** Container for information about a configuration change happening on a domain. */
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 
 
 	/** The Auto-Tune desired state. Valid values are ENABLED and DISABLED. */
-	export enum AutoTuneDesiredState { ENABLED = 0, DISABLED = 1 }
+	export enum AutoTuneDesiredState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** <note> <p>This object is deprecated. Use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a> to schedule Auto-Tune optimizations. For migration instructions, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html#off-peak-migrate">Migrating from Auto-Tune maintenance windows</a>.</p> </note> <p>The Auto-Tune maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p> */
@@ -1091,7 +1091,7 @@ export namespace MyNS {
 
 
 	/** The unit of a maintenance schedule duration. Valid value is <code>HOUR</code>. */
-	export enum TimeUnit { HOURS = 0 }
+	export enum TimeUnit { HOURS = 'HOURS' }
 
 	export interface InvalidTypeException {
 	}
@@ -1160,7 +1160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutboundConnectionStatusCode { VALIDATING = 0, VALIDATION_FAILED = 1, PENDING_ACCEPTANCE = 2, APPROVED = 3, PROVISIONING = 4, ACTIVE = 5, REJECTING = 6, REJECTED = 7, DELETING = 8, DELETED = 9 }
+	export enum OutboundConnectionStatusCode { VALIDATING = 'VALIDATING', VALIDATION_FAILED = 'VALIDATION_FAILED', PENDING_ACCEPTANCE = 'PENDING_ACCEPTANCE', APPROVED = 'APPROVED', PROVISIONING = 'PROVISIONING', ACTIVE = 'ACTIVE', REJECTING = 'REJECTING', REJECTED = 'REJECTED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** The connection properties of an outbound connection. */
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageStatus { COPYING = 0, COPY_FAILED = 1, VALIDATING = 2, VALIDATION_FAILED = 3, AVAILABLE = 4, DELETING = 5, DELETED = 6, DELETE_FAILED = 7 }
+	export enum PackageStatus { COPYING = 'COPYING', COPY_FAILED = 'COPY_FAILED', VALIDATING = 'VALIDATING', VALIDATION_FAILED = 'VALIDATION_FAILED', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', DELETED = 'DELETED', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface CreateVpcEndpointResponse {
 
@@ -1296,7 +1296,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpcEndpointStatus { CREATING = 0, CREATE_FAILED = 1, ACTIVE = 2, UPDATING = 3, UPDATE_FAILED = 4, DELETING = 5, DELETE_FAILED = 6 }
+	export enum VpcEndpointStatus { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED' }
 
 
 	/** The results of a <code>DeleteDomain</code> request. Contains the status of the pending deletion, or a "domain not found" error if the domain and all of its resources have been deleted. */
@@ -1479,7 +1479,7 @@ export namespace MyNS {
 
 
 	/** Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION. */
-	export enum AutoTuneType { SCHEDULED_ACTION = 0 }
+	export enum AutoTuneType { SCHEDULED_ACTION = 'SCHEDULED_ACTION' }
 
 
 	/** Specifies details about a scheduled Auto-Tune action. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>. */
@@ -1524,11 +1524,11 @@ export namespace MyNS {
 
 
 	/** The Auto-Tune action type. */
-	export enum ScheduledAutoTuneActionType { JVM_HEAP_SIZE_TUNING = 0, JVM_YOUNG_GEN_TUNING = 1 }
+	export enum ScheduledAutoTuneActionType { JVM_HEAP_SIZE_TUNING = 'JVM_HEAP_SIZE_TUNING', JVM_YOUNG_GEN_TUNING = 'JVM_YOUNG_GEN_TUNING' }
 
 
 	/** The Auto-Tune action severity. */
-	export enum ScheduledAutoTuneSeverityType { LOW = 0, MEDIUM = 1, HIGH = 2 }
+	export enum ScheduledAutoTuneSeverityType { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 
 	/** The result of a <code>DescribeDomainChangeProgress</code> request. Contains progress information for the requested domain change. */
@@ -1576,7 +1576,7 @@ export namespace MyNS {
 
 
 	/** The overall status value of the domain configuration change. */
-	export enum OverallChangeStatus { PENDING = 0, PROCESSING = 1, COMPLETED = 2, FAILED = 3 }
+	export enum OverallChangeStatus { PENDING = 'PENDING', PROCESSING = 'PROCESSING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Progress details for each stage of a domain update. */
@@ -1719,7 +1719,7 @@ export namespace MyNS {
 
 
 	/** <p>The state of a requested domain configuration change. Can be one of the following:</p> <ul> <li> <p> <b>Processing</b> - The requested change is still in progress.</p> </li> <li> <p> <b>Active</b> - The requested change is processed and deployed to the domain.</p> </li> </ul> */
-	export enum OptionState { RequiresIndexDocuments = 0, Processing = 1, Active = 2 }
+	export enum OptionState { RequiresIndexDocuments = 'RequiresIndexDocuments', Processing = 'Processing', Active = 'Active' }
 
 
 	/** The cluster configuration status for a domain. */
@@ -2003,7 +2003,7 @@ export namespace MyNS {
 
 
 	/** The rollback state while disabling Auto-Tune for the domain. */
-	export enum RollbackOnDisable { NO_ROLLBACK = 0, DEFAULT_ROLLBACK = 1 }
+	export enum RollbackOnDisable { NO_ROLLBACK = 'NO_ROLLBACK', DEFAULT_ROLLBACK = 'DEFAULT_ROLLBACK' }
 
 
 	/** The current status of Auto-Tune for the domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>. */
@@ -2132,11 +2132,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainState { Active = 0, Processing = 1, NotAvailable = 2 }
+	export enum DomainState { Active = 'Active', Processing = 'Processing', NotAvailable = 'NotAvailable' }
 
-	export enum MasterNodeStatus { Available = 0, UnAvailable = 1 }
+	export enum MasterNodeStatus { Available = 'Available', UnAvailable = 'UnAvailable' }
 
-	export enum DomainHealth { Red = 0, Yellow = 1, Green = 2, NotAvailable = 3 }
+	export enum DomainHealth { Red = 'Red', Yellow = 'Yellow', Green = 'Green', NotAvailable = 'NotAvailable' }
 
 
 	/** Information about the active domain environment. */
@@ -2185,7 +2185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ZoneStatus { Active = 0, StandBy = 1, NotAvailable = 2 }
+	export enum ZoneStatus { Active = 'Active', StandBy = 'StandBy', NotAvailable = 'NotAvailable' }
 
 
 	/** The result of a <code>DescribeDomainNodes</code> request. Contains information about the nodes on the requested domain.  */
@@ -2240,7 +2240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeType { Data = 0, Ultrawarm = 1, Master = 2 }
+	export enum NodeType { Data = 'Data', Ultrawarm = 'Ultrawarm', Master = 'Master' }
 
 	export interface DependencyFailureException {
 	}
@@ -2494,7 +2494,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DescribePackagesFilterName { PackageID = 0, PackageName = 1, PackageStatus = 2 }
+	export enum DescribePackagesFilterName { PackageID = 'PackageID', PackageName = 'PackageName', PackageStatus = 'PackageStatus' }
 
 
 	/** Container for results of a <code>DescribeReservedInstanceOfferings</code> request. */
@@ -2550,7 +2550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservedInstancePaymentOption { ALL_UPFRONT = 0, PARTIAL_UPFRONT = 1, NO_UPFRONT = 2 }
+	export enum ReservedInstancePaymentOption { ALL_UPFRONT = 'ALL_UPFRONT', PARTIAL_UPFRONT = 'PARTIAL_UPFRONT', NO_UPFRONT = 'NO_UPFRONT' }
 
 
 	/** Contains the specific price and frequency of a recurring charges for an OpenSearch Reserved Instance, or for a Reserved Instance offering. */
@@ -2683,7 +2683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpcEndpointErrorCode { ENDPOINT_NOT_FOUND = 0, SERVER_ERROR = 1 }
+	export enum VpcEndpointErrorCode { ENDPOINT_NOT_FOUND = 'ENDPOINT_NOT_FOUND', SERVER_ERROR = 'SERVER_ERROR' }
 
 
 	/** Container for the response returned by an <code>DissociatePackage</code> operation. */
@@ -2819,7 +2819,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeStatus { IN_PROGRESS = 0, SUCCEEDED = 1, SUCCEEDED_WITH_ISSUES = 2, FAILED = 3 }
+	export enum UpgradeStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', SUCCEEDED_WITH_ISSUES = 'SUCCEEDED_WITH_ISSUES', FAILED = 'FAILED' }
 
 
 	/** Represents a single step of an upgrade or upgrade eligibility check workflow. */
@@ -2845,7 +2845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeStep { PRE_UPGRADE_CHECK = 0, SNAPSHOT = 1, UPGRADE = 2 }
+	export enum UpgradeStep { PRE_UPGRADE_CHECK = 'PRE_UPGRADE_CHECK', SNAPSHOT = 'SNAPSHOT', UPGRADE = 'UPGRADE' }
 
 
 	/** Container for the response returned by the <code>GetUpgradeStatus</code> operation. */
@@ -2905,7 +2905,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EngineType { OpenSearch = 0, Elasticsearch = 1 }
+	export enum EngineType { OpenSearch = 'OpenSearch', Elasticsearch = 'Elasticsearch' }
 
 
 	/** Container for the response parameters to the <code>ListDomainsForPackage</code> operation. */
@@ -3062,13 +3062,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { SERVICE_SOFTWARE_UPDATE = 0, JVM_HEAP_SIZE_TUNING = 1, JVM_YOUNG_GEN_TUNING = 2 }
+	export enum ActionType { SERVICE_SOFTWARE_UPDATE = 'SERVICE_SOFTWARE_UPDATE', JVM_HEAP_SIZE_TUNING = 'JVM_HEAP_SIZE_TUNING', JVM_YOUNG_GEN_TUNING = 'JVM_YOUNG_GEN_TUNING' }
 
-	export enum ActionSeverity { HIGH = 0, MEDIUM = 1, LOW = 2 }
+	export enum ActionSeverity { HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW' }
 
-	export enum ScheduledBy { CUSTOMER = 0, SYSTEM = 1 }
+	export enum ScheduledBy { CUSTOMER = 'CUSTOMER', SYSTEM = 'SYSTEM' }
 
-	export enum ActionStatus { PENDING_UPDATE = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3, NOT_ELIGIBLE = 4, ELIGIBLE = 5 }
+	export enum ActionStatus { PENDING_UPDATE = 'PENDING_UPDATE', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', COMPLETED = 'COMPLETED', NOT_ELIGIBLE = 'NOT_ELIGIBLE', ELIGIBLE = 'ELIGIBLE' }
 
 
 	/** The results of a <code>ListTags</code> operation. */
@@ -3637,7 +3637,7 @@ export namespace MyNS {
 
 
 	/** <p>Status of SkipUnavailable param for outbound connection.</p> <ul> <li> <p> <b>ENABLED</b> - The SkipUnavailable param is enabled for the connection.</p> </li> <li> <p> <b>DISABLED</b> - The SkipUnavailable param is disabled for the connection.</p> </li> </ul> */
-	export enum SkipUnavailableStatus { ENABLED = 0, DISABLED = 1 }
+	export enum SkipUnavailableStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Container for the parameters to the <code>DeleteDomain</code> operation. */
@@ -3954,9 +3954,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeStatus { Active = 0, StandBy = 1, NotAvailable = 2 }
+	export enum NodeStatus { Active = 'Active', StandBy = 'StandBy', NotAvailable = 'NotAvailable' }
 
-	export enum DryRunMode { Basic = 0, Verbose = 1 }
+	export enum DryRunMode { Basic = 'Basic', Verbose = 'Verbose' }
 
 
 	/** Container for the request parameters to <code>GetCompatibleVersions</code> operation. */
@@ -4227,7 +4227,7 @@ export namespace MyNS {
 
 
 	/** <p>The type of log file. Can be one of the following:</p> <ul> <li> <p> <b>INDEX_SLOW_LOGS</b> - Index slow logs contain insert requests that took more time than the configured index query log threshold to execute.</p> </li> <li> <p> <b>SEARCH_SLOW_LOGS</b> - Search slow logs contain search queries that took more time than the configured search query log threshold to execute.</p> </li> <li> <p> <b>ES_APPLICATION_LOGS</b> - OpenSearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</p> </li> <li> <p> <b>AUDIT_LOGS</b> - Audit logs contain records of user requests for access to the domain.</p> </li> </ul> */
-	export enum LogType { INDEX_SLOW_LOGS = 0, SEARCH_SLOW_LOGS = 1, ES_APPLICATION_LOGS = 2, AUDIT_LOGS = 3 }
+	export enum LogType { INDEX_SLOW_LOGS = 'INDEX_SLOW_LOGS', SEARCH_SLOW_LOGS = 'SEARCH_SLOW_LOGS', ES_APPLICATION_LOGS = 'ES_APPLICATION_LOGS', AUDIT_LOGS = 'AUDIT_LOGS' }
 
 
 	/** Container for request parameters to the <code>PurchaseReservedInstanceOffering</code> operation. */
@@ -4315,7 +4315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleAt { NOW = 0, TIMESTAMP = 1, OFF_PEAK_WINDOW = 2 }
+	export enum ScheduleAt { NOW = 'NOW', TIMESTAMP = 'TIMESTAMP', OFF_PEAK_WINDOW = 'OFF_PEAK_WINDOW' }
 
 
 	/** Container for the request parameters to the <code>StartServiceSoftwareUpdate</code> operation. */

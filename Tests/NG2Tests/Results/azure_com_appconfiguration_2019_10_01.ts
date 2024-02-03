@@ -123,7 +123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityParametersType { 'Microsoft.AppConfiguration/configurationStores' = 0 }
+	export enum CheckNameAvailabilityParametersType { 'Microsoft.AppConfiguration/configurationStores' = 'Microsoft.AppConfiguration/configurationStores' }
 
 
 	/** The configuration store along with all resource properties. The Configuration Store will have all information to begin utilizing it. */
@@ -187,7 +187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceIdentityType { None = 0, SystemAssigned = 1, UserAssigned = 2, 'SystemAssigned, UserAssigned' = 3 }
+	export enum ResourceIdentityType { None = 'None', SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned' }
 
 	export interface UserIdentity {
 
@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationStorePropertiesProvisioningState { Creating = 0, Updating = 1, Deleting = 2, Succeeded = 3, Failed = 4, Canceled = 5 }
+	export enum ConfigurationStorePropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** Describes a configuration store SKU. */

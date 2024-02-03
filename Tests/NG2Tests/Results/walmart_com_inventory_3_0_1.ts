@@ -32,9 +32,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Version_2PostByFeedTypeFeedType { inventory = 0 }
+	export enum Version_2PostByFeedTypeFeedType { inventory = 'inventory' }
 
-	export enum Version_2PostByFeedTypeWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 0 }
+	export enum Version_2PostByFeedTypeWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 'SWAGGER_CHANNEL_TYPE' }
 
 }
 

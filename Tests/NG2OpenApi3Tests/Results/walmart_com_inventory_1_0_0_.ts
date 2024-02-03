@@ -43,7 +43,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailToSellQtyUnit { EACH = 0 }
+	export enum AvailToSellQtyUnit { EACH = 'EACH' }
 
 	export interface Cause {
 		code?: string | null;
@@ -266,7 +266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCategory { APPLICATION = 0, SYSTEM = 1, REQUEST = 2, DATA = 3 }
+	export enum ErrorCategory { APPLICATION = 'APPLICATION', SYSTEM = 'SYSTEM', REQUEST = 'REQUEST', DATA = 'DATA' }
 
 	export interface ErrorCauses {
 		code?: string | null;
@@ -290,7 +290,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorSeverity { INFO = 0, WARN = 1, ERROR = 2 }
+	export enum ErrorSeverity { INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR' }
 
 	export interface FeedId {
 		additionalAttributes?: string | null;
@@ -2219,7 +2219,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum UpdateBulkInventoryFeedType { inventory = 0, MP_INVENTORY = 1 }
+	export enum UpdateBulkInventoryFeedType { inventory = 'inventory', MP_INVENTORY = 'MP_INVENTORY' }
 
 	export interface GetWFSInventoryReturn {
 		headers?: GetWFSInventoryReturnHeaders;

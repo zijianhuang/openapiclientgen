@@ -491,7 +491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DmsSslModeValue { none = 0, require = 1, 'verify-ca' = 2, 'verify-full' = 3 }
+	export enum DmsSslModeValue { none = 'none', require = 'require', 'verify-ca' = 'verify-ca', 'verify-full' = 'verify-full' }
 
 
 	/** Provides information that defines a MySQL data provider. */
@@ -740,7 +740,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationEndpointTypeValue { source = 0, target = 1 }
+	export enum ReplicationEndpointTypeValue { source = 'source', target = 'target' }
 
 
 	/** Provides the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
@@ -900,21 +900,21 @@ export namespace MyNS {
 
 	}
 
-	export enum CompressionTypeValue { none = 0, gzip = 1 }
+	export enum CompressionTypeValue { none = 'none', gzip = 'gzip' }
 
-	export enum EncryptionModeValue { 'sse-s3' = 0, 'sse-kms' = 1 }
+	export enum EncryptionModeValue { 'sse-s3' = 'sse-s3', 'sse-kms' = 'sse-kms' }
 
-	export enum DataFormatValue { csv = 0, parquet = 1 }
+	export enum DataFormatValue { csv = 'csv', parquet = 'parquet' }
 
-	export enum EncodingTypeValue { plain = 0, 'plain-dictionary' = 1, 'rle-dictionary' = 2 }
+	export enum EncodingTypeValue { plain = 'plain', 'plain-dictionary' = 'plain-dictionary', 'rle-dictionary' = 'rle-dictionary' }
 
-	export enum ParquetVersionValue { 'parquet-1-0' = 0, 'parquet-2-0' = 1 }
+	export enum ParquetVersionValue { 'parquet-1-0' = 'parquet-1-0', 'parquet-2-0' = 'parquet-2-0' }
 
-	export enum DatePartitionSequenceValue { YYYYMMDD = 0, YYYYMMDDHH = 1, YYYYMM = 2, MMYYYYDD = 3, DDMMYYYY = 4 }
+	export enum DatePartitionSequenceValue { YYYYMMDD = 'YYYYMMDD', YYYYMMDDHH = 'YYYYMMDDHH', YYYYMM = 'YYYYMM', MMYYYYDD = 'MMYYYYDD', DDMMYYYY = 'DDMMYYYY' }
 
-	export enum DatePartitionDelimiterValue { SLASH = 0, UNDERSCORE = 1, DASH = 2, NONE = 3 }
+	export enum DatePartitionDelimiterValue { SLASH = 'SLASH', UNDERSCORE = 'UNDERSCORE', DASH = 'DASH', NONE = 'NONE' }
 
-	export enum CannedAclForObjectsValue { none = 0, private = 1, 'public-read' = 2, 'public-read-write' = 3, 'authenticated-read' = 4, 'aws-exec-read' = 5, 'bucket-owner-read' = 6, 'bucket-owner-full-control' = 7 }
+	export enum CannedAclForObjectsValue { none = 'none', private = 'private', 'public-read' = 'public-read', 'public-read-write' = 'public-read-write', 'authenticated-read' = 'authenticated-read', 'aws-exec-read' = 'aws-exec-read', 'bucket-owner-read' = 'bucket-owner-read', 'bucket-owner-full-control' = 'bucket-owner-full-control' }
 
 
 	/**  The settings in JSON format for the DMS Transfer type source endpoint.  */
@@ -998,11 +998,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthTypeValue { no = 0, password = 1 }
+	export enum AuthTypeValue { no = 'no', password = 'password' }
 
-	export enum AuthMechanismValue { default = 0, mongodb_cr = 1, scram_sha_1 = 2 }
+	export enum AuthMechanismValue { default = 'default', mongodb_cr = 'mongodb_cr', scram_sha_1 = 'scram_sha_1' }
 
-	export enum NestingLevelValue { none = 0, one = 1 }
+	export enum NestingLevelValue { none = 'none', one = 'one' }
 
 
 	/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
@@ -1048,7 +1048,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageFormatValue { json = 0, 'json-unformatted' = 1 }
+	export enum MessageFormatValue { json = 'json', 'json-unformatted' = 'json-unformatted' }
 
 
 	/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
@@ -1124,11 +1124,11 @@ export namespace MyNS {
 
 	}
 
-	export enum KafkaSecurityProtocol { plaintext = 0, 'ssl-authentication' = 1, 'ssl-encryption' = 2, 'sasl-ssl' = 3 }
+	export enum KafkaSecurityProtocol { plaintext = 'plaintext', 'ssl-authentication' = 'ssl-authentication', 'ssl-encryption' = 'ssl-encryption', 'sasl-ssl' = 'sasl-ssl' }
 
-	export enum KafkaSaslMechanism { 'scram-sha-512' = 0, plain = 1 }
+	export enum KafkaSaslMechanism { 'scram-sha-512' = 'scram-sha-512', plain = 'plain' }
 
-	export enum KafkaSslEndpointIdentificationAlgorithm { none = 0, https = 1 }
+	export enum KafkaSslEndpointIdentificationAlgorithm { none = 'none', https = 'https' }
 
 
 	/** Provides information that defines an OpenSearch endpoint. */
@@ -1403,11 +1403,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PluginNameValue { 'no-preference' = 0, 'test-decoding' = 1, pglogical = 2 }
+	export enum PluginNameValue { 'no-preference' = 'no-preference', 'test-decoding' = 'test-decoding', pglogical = 'pglogical' }
 
-	export enum LongVarcharMappingType { wstring = 0, clob = 1, nclob = 2 }
+	export enum LongVarcharMappingType { wstring = 'wstring', clob = 'clob', nclob = 'nclob' }
 
-	export enum DatabaseMode { default = 0, babelfish = 1 }
+	export enum DatabaseMode { default = 'default', babelfish = 'babelfish' }
 
 
 	/** Provides information that defines a MySQL endpoint. */
@@ -1465,7 +1465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetDbType { 'specific-database' = 0, 'multiple-databases' = 1 }
+	export enum TargetDbType { 'specific-database' = 'specific-database', 'multiple-databases' = 'multiple-databases' }
 
 
 	/** Provides information that defines an Oracle endpoint. */
@@ -1608,7 +1608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CharLengthSemantics { default = 0, char = 1, byte = 2 }
+	export enum CharLengthSemantics { default = 'default', char = 'char', byte = 'byte' }
 
 
 	/** Provides information that defines a SAP ASE endpoint. */
@@ -1710,9 +1710,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SafeguardPolicy { 'rely-on-sql-server-replication-agent' = 0, 'exclusive-automatic-truncation' = 1, 'shared-automatic-truncation' = 2 }
+	export enum SafeguardPolicy { 'rely-on-sql-server-replication-agent' = 'rely-on-sql-server-replication-agent', 'exclusive-automatic-truncation' = 'exclusive-automatic-truncation', 'shared-automatic-truncation' = 'shared-automatic-truncation' }
 
-	export enum TlogAccessMode { BackupOnly = 0, PreferBackup = 1, PreferTlog = 2, TlogOnly = 3 }
+	export enum TlogAccessMode { BackupOnly = 'BackupOnly', PreferBackup = 'PreferBackup', PreferTlog = 'PreferTlog', TlogOnly = 'TlogOnly' }
 
 
 	/** Provides information that defines an IBM Db2 LUW endpoint. */
@@ -1854,9 +1854,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SslSecurityProtocolValue { plaintext = 0, 'ssl-encryption' = 1 }
+	export enum SslSecurityProtocolValue { plaintext = 'plaintext', 'ssl-encryption' = 'ssl-encryption' }
 
-	export enum RedisAuthTypeValue { none = 0, 'auth-role' = 1, 'auth-token' = 2 }
+	export enum RedisAuthTypeValue { none = 'none', 'auth-role' = 'auth-role', 'auth-token' = 'auth-token' }
 
 
 	/** Settings in JSON format for the source GCP MySQL endpoint. */
@@ -2600,7 +2600,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationTypeValue { 'full-load' = 0, cdc = 1, 'full-load-and-cdc' = 2 }
+	export enum MigrationTypeValue { 'full-load' = 'full-load', cdc = 'cdc', 'full-load-and-cdc' = 'full-load-and-cdc' }
 
 
 	/** Configuration parameters for provisioning an DMS Serverless replication. */
@@ -4131,7 +4131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointSettingTypeValue { string = 0, boolean = 1, integer = 2, enum = 3 }
+	export enum EndpointSettingTypeValue { string = 'string', boolean = 'boolean', integer = 'integer', enum = 'enum' }
 
 	export interface DescribeEndpointSettingsMessage {
 
@@ -4313,7 +4313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReleaseStatusValues { beta = 0, prod = 1 }
+	export enum ReleaseStatusValues { beta = 'beta', prod = 'prod' }
 
 	export interface DescribeEngineVersionsMessage {
 		MaxRecords?: number | null;
@@ -4469,7 +4469,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { 'replication-instance' = 0 }
+	export enum SourceType { 'replication-instance' = 'replication-instance' }
 
 
 	/** <p/> */
@@ -4694,7 +4694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionStatus { UP_TO_DATE = 0, OUTDATED = 1, UNSUPPORTED = 2 }
+	export enum VersionStatus { UP_TO_DATE = 'UP_TO_DATE', OUTDATED = 'OUTDATED', UNSUPPORTED = 'UNSUPPORTED' }
 
 
 	/** Describes the last Fleet Advisor collector health check. */
@@ -4722,7 +4722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CollectorStatus { UNREGISTERED = 0, ACTIVE = 1 }
+	export enum CollectorStatus { UNREGISTERED = 'UNREGISTERED', ACTIVE = 'ACTIVE' }
 
 
 	/** Describes a Fleet Advisor collector inventory. */
@@ -5779,7 +5779,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RefreshSchemasStatusTypeValue { successful = 0, failed = 1, refreshing = 2 }
+	export enum RefreshSchemasStatusTypeValue { successful = 'successful', failed = 'failed', refreshing = 'refreshing' }
 
 
 	/** <p/> */
@@ -6676,7 +6676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentReportType { pdf = 0, csv = 1 }
+	export enum AssessmentReportType { pdf = 'pdf', csv = 'csv' }
 
 	export interface ImportCertificateResponse {
 		Certificate?: Certificate;
@@ -7507,7 +7507,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReloadOptionValue { 'data-reload' = 0, 'validate-only' = 1 }
+	export enum ReloadOptionValue { 'data-reload' = 'data-reload', 'validate-only' = 'validate-only' }
 
 	export interface ReloadTablesResponse {
 		ReplicationTaskArn?: string;
@@ -7750,7 +7750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginTypeValue { SOURCE = 0, TARGET = 1 }
+	export enum OriginTypeValue { SOURCE = 'SOURCE', TARGET = 'TARGET' }
 
 	export interface StartMetadataModelExportToTargetResponse {
 		RequestIdentifier?: string;
@@ -7963,7 +7963,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartReplicationTaskTypeValue { 'start-replication' = 0, 'resume-processing' = 1, 'reload-target' = 2 }
+	export enum StartReplicationTaskTypeValue { 'start-replication' = 'start-replication', 'resume-processing' = 'resume-processing', 'reload-target' = 'reload-target' }
 
 
 	/** <p/> */
@@ -9262,217 +9262,217 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToResourceX_Amz_Target { 'AmazonDMSv20160101.AddTagsToResource' = 0 }
+	export enum AddTagsToResourceX_Amz_Target { 'AmazonDMSv20160101.AddTagsToResource' = 'AmazonDMSv20160101.AddTagsToResource' }
 
-	export enum ApplyPendingMaintenanceActionX_Amz_Target { 'AmazonDMSv20160101.ApplyPendingMaintenanceAction' = 0 }
+	export enum ApplyPendingMaintenanceActionX_Amz_Target { 'AmazonDMSv20160101.ApplyPendingMaintenanceAction' = 'AmazonDMSv20160101.ApplyPendingMaintenanceAction' }
 
-	export enum BatchStartRecommendationsX_Amz_Target { 'AmazonDMSv20160101.BatchStartRecommendations' = 0 }
+	export enum BatchStartRecommendationsX_Amz_Target { 'AmazonDMSv20160101.BatchStartRecommendations' = 'AmazonDMSv20160101.BatchStartRecommendations' }
 
-	export enum CancelReplicationTaskAssessmentRunX_Amz_Target { 'AmazonDMSv20160101.CancelReplicationTaskAssessmentRun' = 0 }
+	export enum CancelReplicationTaskAssessmentRunX_Amz_Target { 'AmazonDMSv20160101.CancelReplicationTaskAssessmentRun' = 'AmazonDMSv20160101.CancelReplicationTaskAssessmentRun' }
 
-	export enum CreateDataProviderX_Amz_Target { 'AmazonDMSv20160101.CreateDataProvider' = 0 }
+	export enum CreateDataProviderX_Amz_Target { 'AmazonDMSv20160101.CreateDataProvider' = 'AmazonDMSv20160101.CreateDataProvider' }
 
-	export enum CreateEndpointX_Amz_Target { 'AmazonDMSv20160101.CreateEndpoint' = 0 }
+	export enum CreateEndpointX_Amz_Target { 'AmazonDMSv20160101.CreateEndpoint' = 'AmazonDMSv20160101.CreateEndpoint' }
 
-	export enum CreateEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.CreateEventSubscription' = 0 }
+	export enum CreateEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.CreateEventSubscription' = 'AmazonDMSv20160101.CreateEventSubscription' }
 
-	export enum CreateFleetAdvisorCollectorX_Amz_Target { 'AmazonDMSv20160101.CreateFleetAdvisorCollector' = 0 }
+	export enum CreateFleetAdvisorCollectorX_Amz_Target { 'AmazonDMSv20160101.CreateFleetAdvisorCollector' = 'AmazonDMSv20160101.CreateFleetAdvisorCollector' }
 
-	export enum CreateInstanceProfileX_Amz_Target { 'AmazonDMSv20160101.CreateInstanceProfile' = 0 }
+	export enum CreateInstanceProfileX_Amz_Target { 'AmazonDMSv20160101.CreateInstanceProfile' = 'AmazonDMSv20160101.CreateInstanceProfile' }
 
-	export enum CreateMigrationProjectX_Amz_Target { 'AmazonDMSv20160101.CreateMigrationProject' = 0 }
+	export enum CreateMigrationProjectX_Amz_Target { 'AmazonDMSv20160101.CreateMigrationProject' = 'AmazonDMSv20160101.CreateMigrationProject' }
 
-	export enum CreateReplicationConfigX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationConfig' = 0 }
+	export enum CreateReplicationConfigX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationConfig' = 'AmazonDMSv20160101.CreateReplicationConfig' }
 
-	export enum CreateReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationInstance' = 0 }
+	export enum CreateReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationInstance' = 'AmazonDMSv20160101.CreateReplicationInstance' }
 
-	export enum CreateReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationSubnetGroup' = 0 }
+	export enum CreateReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationSubnetGroup' = 'AmazonDMSv20160101.CreateReplicationSubnetGroup' }
 
-	export enum CreateReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationTask' = 0 }
+	export enum CreateReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationTask' = 'AmazonDMSv20160101.CreateReplicationTask' }
 
-	export enum DeleteCertificateX_Amz_Target { 'AmazonDMSv20160101.DeleteCertificate' = 0 }
+	export enum DeleteCertificateX_Amz_Target { 'AmazonDMSv20160101.DeleteCertificate' = 'AmazonDMSv20160101.DeleteCertificate' }
 
-	export enum DeleteConnectionX_Amz_Target { 'AmazonDMSv20160101.DeleteConnection' = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'AmazonDMSv20160101.DeleteConnection' = 'AmazonDMSv20160101.DeleteConnection' }
 
-	export enum DeleteDataProviderX_Amz_Target { 'AmazonDMSv20160101.DeleteDataProvider' = 0 }
+	export enum DeleteDataProviderX_Amz_Target { 'AmazonDMSv20160101.DeleteDataProvider' = 'AmazonDMSv20160101.DeleteDataProvider' }
 
-	export enum DeleteEndpointX_Amz_Target { 'AmazonDMSv20160101.DeleteEndpoint' = 0 }
+	export enum DeleteEndpointX_Amz_Target { 'AmazonDMSv20160101.DeleteEndpoint' = 'AmazonDMSv20160101.DeleteEndpoint' }
 
-	export enum DeleteEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.DeleteEventSubscription' = 0 }
+	export enum DeleteEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.DeleteEventSubscription' = 'AmazonDMSv20160101.DeleteEventSubscription' }
 
-	export enum DeleteFleetAdvisorCollectorX_Amz_Target { 'AmazonDMSv20160101.DeleteFleetAdvisorCollector' = 0 }
+	export enum DeleteFleetAdvisorCollectorX_Amz_Target { 'AmazonDMSv20160101.DeleteFleetAdvisorCollector' = 'AmazonDMSv20160101.DeleteFleetAdvisorCollector' }
 
-	export enum DeleteFleetAdvisorDatabasesX_Amz_Target { 'AmazonDMSv20160101.DeleteFleetAdvisorDatabases' = 0 }
+	export enum DeleteFleetAdvisorDatabasesX_Amz_Target { 'AmazonDMSv20160101.DeleteFleetAdvisorDatabases' = 'AmazonDMSv20160101.DeleteFleetAdvisorDatabases' }
 
-	export enum DeleteInstanceProfileX_Amz_Target { 'AmazonDMSv20160101.DeleteInstanceProfile' = 0 }
+	export enum DeleteInstanceProfileX_Amz_Target { 'AmazonDMSv20160101.DeleteInstanceProfile' = 'AmazonDMSv20160101.DeleteInstanceProfile' }
 
-	export enum DeleteMigrationProjectX_Amz_Target { 'AmazonDMSv20160101.DeleteMigrationProject' = 0 }
+	export enum DeleteMigrationProjectX_Amz_Target { 'AmazonDMSv20160101.DeleteMigrationProject' = 'AmazonDMSv20160101.DeleteMigrationProject' }
 
-	export enum DeleteReplicationConfigX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationConfig' = 0 }
+	export enum DeleteReplicationConfigX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationConfig' = 'AmazonDMSv20160101.DeleteReplicationConfig' }
 
-	export enum DeleteReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationInstance' = 0 }
+	export enum DeleteReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationInstance' = 'AmazonDMSv20160101.DeleteReplicationInstance' }
 
-	export enum DeleteReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationSubnetGroup' = 0 }
+	export enum DeleteReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationSubnetGroup' = 'AmazonDMSv20160101.DeleteReplicationSubnetGroup' }
 
-	export enum DeleteReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationTask' = 0 }
+	export enum DeleteReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationTask' = 'AmazonDMSv20160101.DeleteReplicationTask' }
 
-	export enum DeleteReplicationTaskAssessmentRunX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun' = 0 }
+	export enum DeleteReplicationTaskAssessmentRunX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun' = 'AmazonDMSv20160101.DeleteReplicationTaskAssessmentRun' }
 
-	export enum DescribeAccountAttributesX_Amz_Target { 'AmazonDMSv20160101.DescribeAccountAttributes' = 0 }
+	export enum DescribeAccountAttributesX_Amz_Target { 'AmazonDMSv20160101.DescribeAccountAttributes' = 'AmazonDMSv20160101.DescribeAccountAttributes' }
 
-	export enum DescribeApplicableIndividualAssessmentsX_Amz_Target { 'AmazonDMSv20160101.DescribeApplicableIndividualAssessments' = 0 }
+	export enum DescribeApplicableIndividualAssessmentsX_Amz_Target { 'AmazonDMSv20160101.DescribeApplicableIndividualAssessments' = 'AmazonDMSv20160101.DescribeApplicableIndividualAssessments' }
 
-	export enum DescribeCertificatesX_Amz_Target { 'AmazonDMSv20160101.DescribeCertificates' = 0 }
+	export enum DescribeCertificatesX_Amz_Target { 'AmazonDMSv20160101.DescribeCertificates' = 'AmazonDMSv20160101.DescribeCertificates' }
 
-	export enum DescribeConnectionsX_Amz_Target { 'AmazonDMSv20160101.DescribeConnections' = 0 }
+	export enum DescribeConnectionsX_Amz_Target { 'AmazonDMSv20160101.DescribeConnections' = 'AmazonDMSv20160101.DescribeConnections' }
 
-	export enum DescribeConversionConfigurationX_Amz_Target { 'AmazonDMSv20160101.DescribeConversionConfiguration' = 0 }
+	export enum DescribeConversionConfigurationX_Amz_Target { 'AmazonDMSv20160101.DescribeConversionConfiguration' = 'AmazonDMSv20160101.DescribeConversionConfiguration' }
 
-	export enum DescribeDataProvidersX_Amz_Target { 'AmazonDMSv20160101.DescribeDataProviders' = 0 }
+	export enum DescribeDataProvidersX_Amz_Target { 'AmazonDMSv20160101.DescribeDataProviders' = 'AmazonDMSv20160101.DescribeDataProviders' }
 
-	export enum DescribeEndpointSettingsX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpointSettings' = 0 }
+	export enum DescribeEndpointSettingsX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpointSettings' = 'AmazonDMSv20160101.DescribeEndpointSettings' }
 
-	export enum DescribeEndpointTypesX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpointTypes' = 0 }
+	export enum DescribeEndpointTypesX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpointTypes' = 'AmazonDMSv20160101.DescribeEndpointTypes' }
 
-	export enum DescribeEndpointsX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpoints' = 0 }
+	export enum DescribeEndpointsX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpoints' = 'AmazonDMSv20160101.DescribeEndpoints' }
 
-	export enum DescribeEngineVersionsX_Amz_Target { 'AmazonDMSv20160101.DescribeEngineVersions' = 0 }
+	export enum DescribeEngineVersionsX_Amz_Target { 'AmazonDMSv20160101.DescribeEngineVersions' = 'AmazonDMSv20160101.DescribeEngineVersions' }
 
-	export enum DescribeEventCategoriesX_Amz_Target { 'AmazonDMSv20160101.DescribeEventCategories' = 0 }
+	export enum DescribeEventCategoriesX_Amz_Target { 'AmazonDMSv20160101.DescribeEventCategories' = 'AmazonDMSv20160101.DescribeEventCategories' }
 
-	export enum DescribeEventSubscriptionsX_Amz_Target { 'AmazonDMSv20160101.DescribeEventSubscriptions' = 0 }
+	export enum DescribeEventSubscriptionsX_Amz_Target { 'AmazonDMSv20160101.DescribeEventSubscriptions' = 'AmazonDMSv20160101.DescribeEventSubscriptions' }
 
-	export enum DescribeEventsX_Amz_Target { 'AmazonDMSv20160101.DescribeEvents' = 0 }
+	export enum DescribeEventsX_Amz_Target { 'AmazonDMSv20160101.DescribeEvents' = 'AmazonDMSv20160101.DescribeEvents' }
 
-	export enum DescribeExtensionPackAssociationsX_Amz_Target { 'AmazonDMSv20160101.DescribeExtensionPackAssociations' = 0 }
+	export enum DescribeExtensionPackAssociationsX_Amz_Target { 'AmazonDMSv20160101.DescribeExtensionPackAssociations' = 'AmazonDMSv20160101.DescribeExtensionPackAssociations' }
 
-	export enum DescribeFleetAdvisorCollectorsX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorCollectors' = 0 }
+	export enum DescribeFleetAdvisorCollectorsX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorCollectors' = 'AmazonDMSv20160101.DescribeFleetAdvisorCollectors' }
 
-	export enum DescribeFleetAdvisorDatabasesX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorDatabases' = 0 }
+	export enum DescribeFleetAdvisorDatabasesX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorDatabases' = 'AmazonDMSv20160101.DescribeFleetAdvisorDatabases' }
 
-	export enum DescribeFleetAdvisorLsaAnalysisX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis' = 0 }
+	export enum DescribeFleetAdvisorLsaAnalysisX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis' = 'AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis' }
 
-	export enum DescribeFleetAdvisorSchemaObjectSummaryX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary' = 0 }
+	export enum DescribeFleetAdvisorSchemaObjectSummaryX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary' = 'AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary' }
 
-	export enum DescribeFleetAdvisorSchemasX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorSchemas' = 0 }
+	export enum DescribeFleetAdvisorSchemasX_Amz_Target { 'AmazonDMSv20160101.DescribeFleetAdvisorSchemas' = 'AmazonDMSv20160101.DescribeFleetAdvisorSchemas' }
 
-	export enum DescribeInstanceProfilesX_Amz_Target { 'AmazonDMSv20160101.DescribeInstanceProfiles' = 0 }
+	export enum DescribeInstanceProfilesX_Amz_Target { 'AmazonDMSv20160101.DescribeInstanceProfiles' = 'AmazonDMSv20160101.DescribeInstanceProfiles' }
 
-	export enum DescribeMetadataModelAssessmentsX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelAssessments' = 0 }
+	export enum DescribeMetadataModelAssessmentsX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelAssessments' = 'AmazonDMSv20160101.DescribeMetadataModelAssessments' }
 
-	export enum DescribeMetadataModelConversionsX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelConversions' = 0 }
+	export enum DescribeMetadataModelConversionsX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelConversions' = 'AmazonDMSv20160101.DescribeMetadataModelConversions' }
 
-	export enum DescribeMetadataModelExportsAsScriptX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelExportsAsScript' = 0 }
+	export enum DescribeMetadataModelExportsAsScriptX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelExportsAsScript' = 'AmazonDMSv20160101.DescribeMetadataModelExportsAsScript' }
 
-	export enum DescribeMetadataModelExportsToTargetX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelExportsToTarget' = 0 }
+	export enum DescribeMetadataModelExportsToTargetX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelExportsToTarget' = 'AmazonDMSv20160101.DescribeMetadataModelExportsToTarget' }
 
-	export enum DescribeMetadataModelImportsX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelImports' = 0 }
+	export enum DescribeMetadataModelImportsX_Amz_Target { 'AmazonDMSv20160101.DescribeMetadataModelImports' = 'AmazonDMSv20160101.DescribeMetadataModelImports' }
 
-	export enum DescribeMigrationProjectsX_Amz_Target { 'AmazonDMSv20160101.DescribeMigrationProjects' = 0 }
+	export enum DescribeMigrationProjectsX_Amz_Target { 'AmazonDMSv20160101.DescribeMigrationProjects' = 'AmazonDMSv20160101.DescribeMigrationProjects' }
 
-	export enum DescribeOrderableReplicationInstancesX_Amz_Target { 'AmazonDMSv20160101.DescribeOrderableReplicationInstances' = 0 }
+	export enum DescribeOrderableReplicationInstancesX_Amz_Target { 'AmazonDMSv20160101.DescribeOrderableReplicationInstances' = 'AmazonDMSv20160101.DescribeOrderableReplicationInstances' }
 
-	export enum DescribePendingMaintenanceActionsX_Amz_Target { 'AmazonDMSv20160101.DescribePendingMaintenanceActions' = 0 }
+	export enum DescribePendingMaintenanceActionsX_Amz_Target { 'AmazonDMSv20160101.DescribePendingMaintenanceActions' = 'AmazonDMSv20160101.DescribePendingMaintenanceActions' }
 
-	export enum DescribeRecommendationLimitationsX_Amz_Target { 'AmazonDMSv20160101.DescribeRecommendationLimitations' = 0 }
+	export enum DescribeRecommendationLimitationsX_Amz_Target { 'AmazonDMSv20160101.DescribeRecommendationLimitations' = 'AmazonDMSv20160101.DescribeRecommendationLimitations' }
 
-	export enum DescribeRecommendationsX_Amz_Target { 'AmazonDMSv20160101.DescribeRecommendations' = 0 }
+	export enum DescribeRecommendationsX_Amz_Target { 'AmazonDMSv20160101.DescribeRecommendations' = 'AmazonDMSv20160101.DescribeRecommendations' }
 
-	export enum DescribeRefreshSchemasStatusX_Amz_Target { 'AmazonDMSv20160101.DescribeRefreshSchemasStatus' = 0 }
+	export enum DescribeRefreshSchemasStatusX_Amz_Target { 'AmazonDMSv20160101.DescribeRefreshSchemasStatus' = 'AmazonDMSv20160101.DescribeRefreshSchemasStatus' }
 
-	export enum DescribeReplicationConfigsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationConfigs' = 0 }
+	export enum DescribeReplicationConfigsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationConfigs' = 'AmazonDMSv20160101.DescribeReplicationConfigs' }
 
-	export enum DescribeReplicationInstanceTaskLogsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs' = 0 }
+	export enum DescribeReplicationInstanceTaskLogsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs' = 'AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs' }
 
-	export enum DescribeReplicationInstancesX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationInstances' = 0 }
+	export enum DescribeReplicationInstancesX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationInstances' = 'AmazonDMSv20160101.DescribeReplicationInstances' }
 
-	export enum DescribeReplicationSubnetGroupsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationSubnetGroups' = 0 }
+	export enum DescribeReplicationSubnetGroupsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationSubnetGroups' = 'AmazonDMSv20160101.DescribeReplicationSubnetGroups' }
 
-	export enum DescribeReplicationTableStatisticsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTableStatistics' = 0 }
+	export enum DescribeReplicationTableStatisticsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTableStatistics' = 'AmazonDMSv20160101.DescribeReplicationTableStatistics' }
 
-	export enum DescribeReplicationTaskAssessmentResultsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults' = 0 }
+	export enum DescribeReplicationTaskAssessmentResultsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults' = 'AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults' }
 
-	export enum DescribeReplicationTaskAssessmentRunsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns' = 0 }
+	export enum DescribeReplicationTaskAssessmentRunsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns' = 'AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns' }
 
-	export enum DescribeReplicationTaskIndividualAssessmentsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments' = 0 }
+	export enum DescribeReplicationTaskIndividualAssessmentsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments' = 'AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments' }
 
-	export enum DescribeReplicationTasksX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTasks' = 0 }
+	export enum DescribeReplicationTasksX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTasks' = 'AmazonDMSv20160101.DescribeReplicationTasks' }
 
-	export enum DescribeReplicationsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplications' = 0 }
+	export enum DescribeReplicationsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplications' = 'AmazonDMSv20160101.DescribeReplications' }
 
-	export enum DescribeSchemasX_Amz_Target { 'AmazonDMSv20160101.DescribeSchemas' = 0 }
+	export enum DescribeSchemasX_Amz_Target { 'AmazonDMSv20160101.DescribeSchemas' = 'AmazonDMSv20160101.DescribeSchemas' }
 
-	export enum DescribeTableStatisticsX_Amz_Target { 'AmazonDMSv20160101.DescribeTableStatistics' = 0 }
+	export enum DescribeTableStatisticsX_Amz_Target { 'AmazonDMSv20160101.DescribeTableStatistics' = 'AmazonDMSv20160101.DescribeTableStatistics' }
 
-	export enum ExportMetadataModelAssessmentX_Amz_Target { 'AmazonDMSv20160101.ExportMetadataModelAssessment' = 0 }
+	export enum ExportMetadataModelAssessmentX_Amz_Target { 'AmazonDMSv20160101.ExportMetadataModelAssessment' = 'AmazonDMSv20160101.ExportMetadataModelAssessment' }
 
-	export enum ImportCertificateX_Amz_Target { 'AmazonDMSv20160101.ImportCertificate' = 0 }
+	export enum ImportCertificateX_Amz_Target { 'AmazonDMSv20160101.ImportCertificate' = 'AmazonDMSv20160101.ImportCertificate' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AmazonDMSv20160101.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonDMSv20160101.ListTagsForResource' = 'AmazonDMSv20160101.ListTagsForResource' }
 
-	export enum ModifyConversionConfigurationX_Amz_Target { 'AmazonDMSv20160101.ModifyConversionConfiguration' = 0 }
+	export enum ModifyConversionConfigurationX_Amz_Target { 'AmazonDMSv20160101.ModifyConversionConfiguration' = 'AmazonDMSv20160101.ModifyConversionConfiguration' }
 
-	export enum ModifyDataProviderX_Amz_Target { 'AmazonDMSv20160101.ModifyDataProvider' = 0 }
+	export enum ModifyDataProviderX_Amz_Target { 'AmazonDMSv20160101.ModifyDataProvider' = 'AmazonDMSv20160101.ModifyDataProvider' }
 
-	export enum ModifyEndpointX_Amz_Target { 'AmazonDMSv20160101.ModifyEndpoint' = 0 }
+	export enum ModifyEndpointX_Amz_Target { 'AmazonDMSv20160101.ModifyEndpoint' = 'AmazonDMSv20160101.ModifyEndpoint' }
 
-	export enum ModifyEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.ModifyEventSubscription' = 0 }
+	export enum ModifyEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.ModifyEventSubscription' = 'AmazonDMSv20160101.ModifyEventSubscription' }
 
-	export enum ModifyInstanceProfileX_Amz_Target { 'AmazonDMSv20160101.ModifyInstanceProfile' = 0 }
+	export enum ModifyInstanceProfileX_Amz_Target { 'AmazonDMSv20160101.ModifyInstanceProfile' = 'AmazonDMSv20160101.ModifyInstanceProfile' }
 
-	export enum ModifyMigrationProjectX_Amz_Target { 'AmazonDMSv20160101.ModifyMigrationProject' = 0 }
+	export enum ModifyMigrationProjectX_Amz_Target { 'AmazonDMSv20160101.ModifyMigrationProject' = 'AmazonDMSv20160101.ModifyMigrationProject' }
 
-	export enum ModifyReplicationConfigX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationConfig' = 0 }
+	export enum ModifyReplicationConfigX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationConfig' = 'AmazonDMSv20160101.ModifyReplicationConfig' }
 
-	export enum ModifyReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationInstance' = 0 }
+	export enum ModifyReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationInstance' = 'AmazonDMSv20160101.ModifyReplicationInstance' }
 
-	export enum ModifyReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationSubnetGroup' = 0 }
+	export enum ModifyReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationSubnetGroup' = 'AmazonDMSv20160101.ModifyReplicationSubnetGroup' }
 
-	export enum ModifyReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationTask' = 0 }
+	export enum ModifyReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationTask' = 'AmazonDMSv20160101.ModifyReplicationTask' }
 
-	export enum MoveReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.MoveReplicationTask' = 0 }
+	export enum MoveReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.MoveReplicationTask' = 'AmazonDMSv20160101.MoveReplicationTask' }
 
-	export enum RebootReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.RebootReplicationInstance' = 0 }
+	export enum RebootReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.RebootReplicationInstance' = 'AmazonDMSv20160101.RebootReplicationInstance' }
 
-	export enum RefreshSchemasX_Amz_Target { 'AmazonDMSv20160101.RefreshSchemas' = 0 }
+	export enum RefreshSchemasX_Amz_Target { 'AmazonDMSv20160101.RefreshSchemas' = 'AmazonDMSv20160101.RefreshSchemas' }
 
-	export enum ReloadReplicationTablesX_Amz_Target { 'AmazonDMSv20160101.ReloadReplicationTables' = 0 }
+	export enum ReloadReplicationTablesX_Amz_Target { 'AmazonDMSv20160101.ReloadReplicationTables' = 'AmazonDMSv20160101.ReloadReplicationTables' }
 
-	export enum ReloadTablesX_Amz_Target { 'AmazonDMSv20160101.ReloadTables' = 0 }
+	export enum ReloadTablesX_Amz_Target { 'AmazonDMSv20160101.ReloadTables' = 'AmazonDMSv20160101.ReloadTables' }
 
-	export enum RemoveTagsFromResourceX_Amz_Target { 'AmazonDMSv20160101.RemoveTagsFromResource' = 0 }
+	export enum RemoveTagsFromResourceX_Amz_Target { 'AmazonDMSv20160101.RemoveTagsFromResource' = 'AmazonDMSv20160101.RemoveTagsFromResource' }
 
-	export enum RunFleetAdvisorLsaAnalysisX_Amz_Target { 'AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis' = 0 }
+	export enum RunFleetAdvisorLsaAnalysisX_Amz_Target { 'AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis' = 'AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis' }
 
-	export enum StartExtensionPackAssociationX_Amz_Target { 'AmazonDMSv20160101.StartExtensionPackAssociation' = 0 }
+	export enum StartExtensionPackAssociationX_Amz_Target { 'AmazonDMSv20160101.StartExtensionPackAssociation' = 'AmazonDMSv20160101.StartExtensionPackAssociation' }
 
-	export enum StartMetadataModelAssessmentX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelAssessment' = 0 }
+	export enum StartMetadataModelAssessmentX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelAssessment' = 'AmazonDMSv20160101.StartMetadataModelAssessment' }
 
-	export enum StartMetadataModelConversionX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelConversion' = 0 }
+	export enum StartMetadataModelConversionX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelConversion' = 'AmazonDMSv20160101.StartMetadataModelConversion' }
 
-	export enum StartMetadataModelExportAsScriptX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelExportAsScript' = 0 }
+	export enum StartMetadataModelExportAsScriptX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelExportAsScript' = 'AmazonDMSv20160101.StartMetadataModelExportAsScript' }
 
-	export enum StartMetadataModelExportToTargetX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelExportToTarget' = 0 }
+	export enum StartMetadataModelExportToTargetX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelExportToTarget' = 'AmazonDMSv20160101.StartMetadataModelExportToTarget' }
 
-	export enum StartMetadataModelImportX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelImport' = 0 }
+	export enum StartMetadataModelImportX_Amz_Target { 'AmazonDMSv20160101.StartMetadataModelImport' = 'AmazonDMSv20160101.StartMetadataModelImport' }
 
-	export enum StartRecommendationsX_Amz_Target { 'AmazonDMSv20160101.StartRecommendations' = 0 }
+	export enum StartRecommendationsX_Amz_Target { 'AmazonDMSv20160101.StartRecommendations' = 'AmazonDMSv20160101.StartRecommendations' }
 
-	export enum StartReplicationX_Amz_Target { 'AmazonDMSv20160101.StartReplication' = 0 }
+	export enum StartReplicationX_Amz_Target { 'AmazonDMSv20160101.StartReplication' = 'AmazonDMSv20160101.StartReplication' }
 
-	export enum StartReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTask' = 0 }
+	export enum StartReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTask' = 'AmazonDMSv20160101.StartReplicationTask' }
 
-	export enum StartReplicationTaskAssessmentX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTaskAssessment' = 0 }
+	export enum StartReplicationTaskAssessmentX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTaskAssessment' = 'AmazonDMSv20160101.StartReplicationTaskAssessment' }
 
-	export enum StartReplicationTaskAssessmentRunX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTaskAssessmentRun' = 0 }
+	export enum StartReplicationTaskAssessmentRunX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTaskAssessmentRun' = 'AmazonDMSv20160101.StartReplicationTaskAssessmentRun' }
 
-	export enum StopReplicationX_Amz_Target { 'AmazonDMSv20160101.StopReplication' = 0 }
+	export enum StopReplicationX_Amz_Target { 'AmazonDMSv20160101.StopReplication' = 'AmazonDMSv20160101.StopReplication' }
 
-	export enum StopReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.StopReplicationTask' = 0 }
+	export enum StopReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.StopReplicationTask' = 'AmazonDMSv20160101.StopReplicationTask' }
 
-	export enum TestConnectionX_Amz_Target { 'AmazonDMSv20160101.TestConnection' = 0 }
+	export enum TestConnectionX_Amz_Target { 'AmazonDMSv20160101.TestConnection' = 'AmazonDMSv20160101.TestConnection' }
 
-	export enum UpdateSubscriptionsToEventBridgeX_Amz_Target { 'AmazonDMSv20160101.UpdateSubscriptionsToEventBridge' = 0 }
+	export enum UpdateSubscriptionsToEventBridgeX_Amz_Target { 'AmazonDMSv20160101.UpdateSubscriptionsToEventBridge' = 'AmazonDMSv20160101.UpdateSubscriptionsToEventBridge' }
 
 }
 

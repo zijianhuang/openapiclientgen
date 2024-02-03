@@ -156,7 +156,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum App_api_cari7_endpoints_CARI7_ambient_doseParticle { total = 0, neutron = 1, photon = 2, 'e-' = 3, 'e+' = 4, 'mu-' = 5, 'mu+' = 6, proton = 7, 'pi-' = 8, 'pi+' = 9, deuteron = 10, triton = 11, helion = 12, alpha = 13, Li = 14, Be = 15, B = 16, C = 17, N = 18, O = 19, F = 20, Ne = 21, Na = 22, Mg = 23, Al = 24, Si = 25, P = 26, S = 27, Cl = 28, Ar = 29, K = 30, Ca = 31, Sc = 32, Ti = 33, V = 34, Cr = 35, Mn = 36, Fe = 37 }
+	export enum App_api_cari7_endpoints_CARI7_ambient_doseParticle { total = 'total', neutron = 'neutron', photon = 'photon', 'e-' = 'e-', 'e+' = 'e+', 'mu-' = 'mu-', 'mu+' = 'mu+', proton = 'proton', 'pi-' = 'pi-', 'pi+' = 'pi+', deuteron = 'deuteron', triton = 'triton', helion = 'helion', alpha = 'alpha', Li = 'Li', Be = 'Be', B = 'B', C = 'C', N = 'N', O = 'O', F = 'F', Ne = 'Ne', Na = 'Na', Mg = 'Mg', Al = 'Al', Si = 'Si', P = 'P', S = 'S', Cl = 'Cl', Ar = 'Ar', K = 'K', Ca = 'Ca', Sc = 'Sc', Ti = 'Ti', V = 'V', Cr = 'Cr', Mn = 'Mn', Fe = 'Fe' }
 
 	export interface App_api_cari7_endpoints_CARI7_ambient_doseReturn {
 		'dose rate'?: App_api_cari7_endpoints_CARI7_ambient_doseReturn_dose_rate_;
@@ -212,7 +212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum App_api_parma_endpoints_PARMA_ambient_doseParticle { total = 0, 'e-' = 1, 'e+' = 2, 'mu+' = 3, 'mu-' = 4, gamma = 5, neutron = 6, proton = 7, alpha = 8 }
+	export enum App_api_parma_endpoints_PARMA_ambient_doseParticle { total = 'total', 'e-' = 'e-', 'e+' = 'e+', 'mu+' = 'mu+', 'mu-' = 'mu-', gamma = 'gamma', neutron = 'neutron', proton = 'proton', alpha = 'alpha' }
 
 	export interface App_api_parma_endpoints_PARMA_ambient_doseReturn {
 		'dose rate'?: App_api_parma_endpoints_PARMA_ambient_doseReturn_dose_rate_;

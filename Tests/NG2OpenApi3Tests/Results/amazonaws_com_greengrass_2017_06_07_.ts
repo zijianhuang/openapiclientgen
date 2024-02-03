@@ -411,7 +411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FunctionDefaultExecutionConfigIsolationMode { GreengrassContainer = 0, NoContainer = 1 }
+	export enum FunctionDefaultExecutionConfigIsolationMode { GreengrassContainer = 'GreengrassContainer', NoContainer = 'NoContainer' }
 
 
 	/** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''. */
@@ -494,7 +494,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncodingType { binary = 0, json = 1 }
+	export enum EncodingType { binary = 'binary', json = 'json' }
 
 
 	/** The environment configuration of the function. */
@@ -566,7 +566,7 @@ export namespace MyNS {
 
 
 	/** The type of permission a function has to access a resource. */
-	export enum Permission { ro = 0, rw = 1 }
+	export enum Permission { ro = 'ro', rw = 'rw' }
 
 	export interface CreateFunctionDefinitionVersionResponse {
 		Arn?: string;
@@ -732,11 +732,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggerComponent { GreengrassSystem = 0, Lambda = 1 }
+	export enum LoggerComponent { GreengrassSystem = 'GreengrassSystem', Lambda = 'Lambda' }
 
-	export enum LoggerLevel { DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3, FATAL = 4 }
+	export enum LoggerLevel { DEBUG = 'DEBUG', INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR', FATAL = 'FATAL' }
 
-	export enum LoggerType { FileSystem = 0, AWSCloudWatch = 1 }
+	export enum LoggerType { FileSystem = 'FileSystem', AWSCloudWatch = 'AWSCloudWatch' }
 
 	export interface CreateLoggerDefinitionVersionResponse {
 		Arn?: string;
@@ -1297,7 +1297,7 @@ export namespace MyNS {
 
 
 	/** The current status of the bulk deployment. */
-	export enum BulkDeploymentStatus { Initializing = 0, Running = 1, Completed = 2, Stopping = 3, Stopped = 4, Failed = 5 }
+	export enum BulkDeploymentStatus { Initializing = 'Initializing', Running = 'Running', Completed = 'Completed', Stopping = 'Stopping', Stopped = 'Stopped', Failed = 'Failed' }
 
 
 	/** Details about the error. */
@@ -1544,7 +1544,7 @@ export namespace MyNS {
 
 
 	/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
-	export enum DeploymentType { NewDeployment = 0, Redeployment = 1, ResetDeployment = 2, ForceResetDeployment = 3 }
+	export enum DeploymentType { NewDeployment = 'NewDeployment', Redeployment = 'Redeployment', ResetDeployment = 'ResetDeployment', ForceResetDeployment = 'ForceResetDeployment' }
 
 	export interface GetDeviceDefinitionResponse {
 		Arn?: string;
@@ -2100,9 +2100,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationSyncStatus { InSync = 0, OutOfSync = 1 }
+	export enum ConfigurationSyncStatus { InSync = 'InSync', OutOfSync = 'OutOfSync' }
 
-	export enum Telemetry { On = 0, Off = 1 }
+	export enum Telemetry { On = 'On', Off = 'Off' }
 
 	export interface ListBulkDeploymentDetailedReportsResponse {
 		Deployments?: Array<BulkDeploymentResult>;
@@ -3050,19 +3050,19 @@ export namespace MyNS {
 
 
 	/** The piece of software on the Greengrass core that will be updated. */
-	export enum SoftwareToUpdate { core = 0, ota_agent = 1 }
+	export enum SoftwareToUpdate { core = 'core', ota_agent = 'ota_agent' }
 
 
 	/** The minimum level of log statements that should be logged by the OTA Agent during an update. */
-	export enum UpdateAgentLogLevel { NONE = 0, TRACE = 1, DEBUG = 2, VERBOSE = 3, INFO = 4, WARN = 5, ERROR = 6, FATAL = 7 }
+	export enum UpdateAgentLogLevel { NONE = 'NONE', TRACE = 'TRACE', DEBUG = 'DEBUG', VERBOSE = 'VERBOSE', INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR', FATAL = 'FATAL' }
 
 
 	/** The architecture of the cores which are the targets of an update. */
-	export enum UpdateTargetsArchitecture { armv6l = 0, armv7l = 1, x86_64 = 2, aarch64 = 3 }
+	export enum UpdateTargetsArchitecture { armv6l = 'armv6l', armv7l = 'armv7l', x86_64 = 'x86_64', aarch64 = 'aarch64' }
 
 
 	/** The operating system of the cores which are the targets of an update. */
-	export enum UpdateTargetsOperatingSystem { ubuntu = 0, raspbian = 1, amazon_linux = 2, openwrt = 3 }
+	export enum UpdateTargetsOperatingSystem { ubuntu = 'ubuntu', raspbian = 'raspbian', amazon_linux = 'amazon_linux', openwrt = 'openwrt' }
 
 	export interface CreateSoftwareUpdateJobRequest {
 
@@ -3267,7 +3267,7 @@ export namespace MyNS {
 
 
 	/** Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group. */
-	export enum FunctionIsolationMode { GreengrassContainer = 0, NoContainer = 1 }
+	export enum FunctionIsolationMode { GreengrassContainer = 'GreengrassContainer', NoContainer = 'NoContainer' }
 
 	export interface GetAssociatedRoleRequest {
 	}

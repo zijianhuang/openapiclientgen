@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -282,11 +282,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudSqlSettingsActivationPolicy { SQL_ACTIVATION_POLICY_UNSPECIFIED = 0, ALWAYS = 1, NEVER = 2 }
+	export enum CloudSqlSettingsActivationPolicy { SQL_ACTIVATION_POLICY_UNSPECIFIED = 'SQL_ACTIVATION_POLICY_UNSPECIFIED', ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
-	export enum CloudSqlSettingsDataDiskType { SQL_DATA_DISK_TYPE_UNSPECIFIED = 0, PD_SSD = 1, PD_HDD = 2 }
+	export enum CloudSqlSettingsDataDiskType { SQL_DATA_DISK_TYPE_UNSPECIFIED = 'SQL_DATA_DISK_TYPE_UNSPECIFIED', PD_SSD = 'PD_SSD', PD_HDD = 'PD_HDD' }
 
-	export enum CloudSqlSettingsDatabaseVersion { SQL_DATABASE_VERSION_UNSPECIFIED = 0, MYSQL_5_6 = 1, MYSQL_5_7 = 2, MYSQL_8_0 = 3 }
+	export enum CloudSqlSettingsDatabaseVersion { SQL_DATABASE_VERSION_UNSPECIFIED = 'SQL_DATABASE_VERSION_UNSPECIFIED', MYSQL_5_6 = 'MYSQL_5_6', MYSQL_5_7 = 'MYSQL_5_7', MYSQL_8_0 = 'MYSQL_8_0' }
 
 
 	/** IP Management configuration. */
@@ -572,11 +572,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SslConfigType { SSL_TYPE_UNSPECIFIED = 0, SERVER_ONLY = 1, SERVER_CLIENT = 2 }
+	export enum SslConfigType { SSL_TYPE_UNSPECIFIED = 'SSL_TYPE_UNSPECIFIED', SERVER_ONLY = 'SERVER_ONLY', SERVER_CLIENT = 'SERVER_CLIENT' }
 
-	export enum ConnectionProfileProvider { DATABASE_PROVIDER_UNSPECIFIED = 0, CLOUDSQL = 1, RDS = 2 }
+	export enum ConnectionProfileProvider { DATABASE_PROVIDER_UNSPECIFIED = 'DATABASE_PROVIDER_UNSPECIFIED', CLOUDSQL = 'CLOUDSQL', RDS = 'RDS' }
 
-	export enum ConnectionProfileState { STATE_UNSPECIFIED = 0, DRAFT = 1, CREATING = 2, READY = 3, UPDATING = 4, DELETING = 5, DELETED = 6, FAILED = 7 }
+	export enum ConnectionProfileState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DRAFT = 'DRAFT', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', FAILED = 'FAILED' }
 
 
 	/** A message defining the database engine and provider. */
@@ -606,7 +606,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseTypeEngine { DATABASE_ENGINE_UNSPECIFIED = 0, MYSQL = 1 }
+	export enum DatabaseTypeEngine { DATABASE_ENGINE_UNSPECIFIED = 'DATABASE_ENGINE_UNSPECIFIED', MYSQL = 'MYSQL' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -1025,7 +1025,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationJobPhase { PHASE_UNSPECIFIED = 0, FULL_DUMP = 1, CDC = 2, PROMOTE_IN_PROGRESS = 3, WAITING_FOR_SOURCE_WRITES_TO_STOP = 4, PREPARING_THE_DUMP = 5 }
+	export enum MigrationJobPhase { PHASE_UNSPECIFIED = 'PHASE_UNSPECIFIED', FULL_DUMP = 'FULL_DUMP', CDC = 'CDC', PROMOTE_IN_PROGRESS = 'PROMOTE_IN_PROGRESS', WAITING_FOR_SOURCE_WRITES_TO_STOP = 'WAITING_FOR_SOURCE_WRITES_TO_STOP', PREPARING_THE_DUMP = 'PREPARING_THE_DUMP' }
 
 
 	/** The details needed to configure a reverse SSH tunnel between the source and destination databases. These details will be used when calling the generateSshScript method (see https://cloud.google.com/database-migration/docs/reference/rest/v1beta1/projects.locations.migrationJobs/generateSshScript) to produce the script that will help set up the reverse SSH tunnel, and to set up the VPC peering between the Cloud SQL private network and the VPC. */
@@ -1069,7 +1069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationJobState { STATE_UNSPECIFIED = 0, MAINTENANCE = 1, DRAFT = 2, CREATING = 3, NOT_STARTED = 4, RUNNING = 5, FAILED = 6, COMPLETED = 7, DELETING = 8, STOPPING = 9, STOPPED = 10, DELETED = 11, UPDATING = 12, STARTING = 13, RESTARTING = 14, RESUMING = 15 }
+	export enum MigrationJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', MAINTENANCE = 'MAINTENANCE', DRAFT = 'DRAFT', CREATING = 'CREATING', NOT_STARTED = 'NOT_STARTED', RUNNING = 'RUNNING', FAILED = 'FAILED', COMPLETED = 'COMPLETED', DELETING = 'DELETING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', DELETED = 'DELETED', UPDATING = 'UPDATING', STARTING = 'STARTING', RESTARTING = 'RESTARTING', RESUMING = 'RESUMING' }
 
 
 	/** The source database will allow incoming connections from the destination database's public IP. You can retrieve the Cloud SQL instance's public IP from the Cloud SQL console or using Cloud SQL APIs. No additional configuration is required. */
@@ -1085,7 +1085,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationJobType { TYPE_UNSPECIFIED = 0, ONE_TIME = 1, CONTINUOUS = 2 }
+	export enum MigrationJobType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ONE_TIME = 'ONE_TIME', CONTINUOUS = 'CONTINUOUS' }
 
 
 	/** The details of the VPC where the source database is located in Google Cloud. We will use this information to set up the VPC peering connection between Cloud SQL and this VPC. */
@@ -1212,7 +1212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationJobVerificationErrorErrorCode { ERROR_CODE_UNSPECIFIED = 0, CONNECTION_FAILURE = 1, AUTHENTICATION_FAILURE = 2, INVALID_CONNECTION_PROFILE_CONFIG = 3, VERSION_INCOMPATIBILITY = 4, CONNECTION_PROFILE_TYPES_INCOMPATIBILITY = 5, UNSUPPORTED_GTID_MODE = 6, UNSUPPORTED_DEFINER = 7, CANT_RESTART_RUNNING_MIGRATION = 8, TABLES_WITH_LIMITED_SUPPORT = 9, UNSUPPORTED_DATABASE_LOCALE = 10, UNSUPPORTED_DATABASE_FDW_CONFIG = 11, ERROR_RDBMS = 12, SOURCE_SIZE_EXCEEDS_THRESHOLD = 13, EXISTING_CONFLICTING_DATABASES = 14, PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 15, EXISTING_DATA = 16 }
+	export enum MigrationJobVerificationErrorErrorCode { ERROR_CODE_UNSPECIFIED = 'ERROR_CODE_UNSPECIFIED', CONNECTION_FAILURE = 'CONNECTION_FAILURE', AUTHENTICATION_FAILURE = 'AUTHENTICATION_FAILURE', INVALID_CONNECTION_PROFILE_CONFIG = 'INVALID_CONNECTION_PROFILE_CONFIG', VERSION_INCOMPATIBILITY = 'VERSION_INCOMPATIBILITY', CONNECTION_PROFILE_TYPES_INCOMPATIBILITY = 'CONNECTION_PROFILE_TYPES_INCOMPATIBILITY', UNSUPPORTED_GTID_MODE = 'UNSUPPORTED_GTID_MODE', UNSUPPORTED_DEFINER = 'UNSUPPORTED_DEFINER', CANT_RESTART_RUNNING_MIGRATION = 'CANT_RESTART_RUNNING_MIGRATION', TABLES_WITH_LIMITED_SUPPORT = 'TABLES_WITH_LIMITED_SUPPORT', UNSUPPORTED_DATABASE_LOCALE = 'UNSUPPORTED_DATABASE_LOCALE', UNSUPPORTED_DATABASE_FDW_CONFIG = 'UNSUPPORTED_DATABASE_FDW_CONFIG', ERROR_RDBMS = 'ERROR_RDBMS', SOURCE_SIZE_EXCEEDS_THRESHOLD = 'SOURCE_SIZE_EXCEEDS_THRESHOLD', EXISTING_CONFLICTING_DATABASES = 'EXISTING_CONFLICTING_DATABASES', PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 'PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE', EXISTING_DATA = 'EXISTING_DATA' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */

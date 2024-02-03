@@ -19,7 +19,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParallelDataStatus { CREATING = 0, UPDATING = 1, ACTIVE = 2, DELETING = 3, FAILED = 4 }
+	export enum ParallelDataStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface CreateParallelDataRequest {
 
@@ -83,7 +83,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParallelDataFormat { TSV = 0, CSV = 1, TMX = 2 }
+	export enum ParallelDataFormat { TSV = 'TSV', CSV = 'CSV', TMX = 'TMX' }
 
 
 	/** The encryption key used to encrypt this object. */
@@ -113,7 +113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionKeyType { KMS = 0 }
+	export enum EncryptionKeyType { KMS = 'KMS' }
 
 
 	/** A key-value pair that adds as a metadata to a resource used by Amazon Translate.  */
@@ -339,7 +339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERROR = 3, FAILED = 4, STOP_REQUESTED = 5, STOPPED = 6 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', COMPLETED_WITH_ERROR = 'COMPLETED_WITH_ERROR', FAILED = 'FAILED', STOP_REQUESTED = 'STOP_REQUESTED', STOPPED = 'STOPPED' }
 
 
 	/** The number of documents successfully and unsuccessfully processed during a translation job. */
@@ -436,9 +436,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Formality { FORMAL = 0, INFORMAL = 1 }
+	export enum Formality { FORMAL = 'FORMAL', INFORMAL = 'INFORMAL' }
 
-	export enum Profanity { MASK = 0 }
+	export enum Profanity { MASK = 'MASK' }
 
 	export interface DescribeTextTranslationJobRequest {
 
@@ -642,9 +642,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Directionality { UNI = 0, MULTI = 1 }
+	export enum Directionality { UNI = 'UNI', MULTI = 'MULTI' }
 
-	export enum TerminologyDataFormat { CSV = 0, TMX = 1, TSV = 2 }
+	export enum TerminologyDataFormat { CSV = 'CSV', TMX = 'TMX', TSV = 'TSV' }
 
 
 	/** The location of the custom terminology data. */
@@ -738,7 +738,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MergeStrategy { OVERWRITE = 0 }
+	export enum MergeStrategy { OVERWRITE = 'OVERWRITE' }
 
 
 	/** The data associated with the custom terminology. For information about the custom terminology file, see <a href="https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html"> Creating a Custom Terminology</a>. */
@@ -816,7 +816,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisplayLanguageCode { de = 0, en = 1, es = 2, fr = 3, it = 4, ja = 5, ko = 6, pt = 7, zh = 8, 'zh-TW' = 9 }
+	export enum DisplayLanguageCode { de = 'de', en = 'en', es = 'es', fr = 'fr', it = 'it', ja = 'ja', ko = 'ko', pt = 'pt', zh = 'zh', 'zh-TW' = 'zh-TW' }
 
 	export interface ListLanguagesRequest {
 		DisplayLanguageCode?: DisplayLanguageCode;
@@ -1649,43 +1649,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.CreateParallelData' = 0 }
+	export enum CreateParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.CreateParallelData' = 'AWSShineFrontendService_20170701.CreateParallelData' }
 
-	export enum DeleteParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.DeleteParallelData' = 0 }
+	export enum DeleteParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.DeleteParallelData' = 'AWSShineFrontendService_20170701.DeleteParallelData' }
 
-	export enum DeleteTerminologyX_Amz_Target { 'AWSShineFrontendService_20170701.DeleteTerminology' = 0 }
+	export enum DeleteTerminologyX_Amz_Target { 'AWSShineFrontendService_20170701.DeleteTerminology' = 'AWSShineFrontendService_20170701.DeleteTerminology' }
 
-	export enum DescribeTextTranslationJobX_Amz_Target { 'AWSShineFrontendService_20170701.DescribeTextTranslationJob' = 0 }
+	export enum DescribeTextTranslationJobX_Amz_Target { 'AWSShineFrontendService_20170701.DescribeTextTranslationJob' = 'AWSShineFrontendService_20170701.DescribeTextTranslationJob' }
 
-	export enum GetParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.GetParallelData' = 0 }
+	export enum GetParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.GetParallelData' = 'AWSShineFrontendService_20170701.GetParallelData' }
 
-	export enum GetTerminologyX_Amz_Target { 'AWSShineFrontendService_20170701.GetTerminology' = 0 }
+	export enum GetTerminologyX_Amz_Target { 'AWSShineFrontendService_20170701.GetTerminology' = 'AWSShineFrontendService_20170701.GetTerminology' }
 
-	export enum ImportTerminologyX_Amz_Target { 'AWSShineFrontendService_20170701.ImportTerminology' = 0 }
+	export enum ImportTerminologyX_Amz_Target { 'AWSShineFrontendService_20170701.ImportTerminology' = 'AWSShineFrontendService_20170701.ImportTerminology' }
 
-	export enum ListLanguagesX_Amz_Target { 'AWSShineFrontendService_20170701.ListLanguages' = 0 }
+	export enum ListLanguagesX_Amz_Target { 'AWSShineFrontendService_20170701.ListLanguages' = 'AWSShineFrontendService_20170701.ListLanguages' }
 
-	export enum ListParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.ListParallelData' = 0 }
+	export enum ListParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.ListParallelData' = 'AWSShineFrontendService_20170701.ListParallelData' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSShineFrontendService_20170701.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSShineFrontendService_20170701.ListTagsForResource' = 'AWSShineFrontendService_20170701.ListTagsForResource' }
 
-	export enum ListTerminologiesX_Amz_Target { 'AWSShineFrontendService_20170701.ListTerminologies' = 0 }
+	export enum ListTerminologiesX_Amz_Target { 'AWSShineFrontendService_20170701.ListTerminologies' = 'AWSShineFrontendService_20170701.ListTerminologies' }
 
-	export enum ListTextTranslationJobsX_Amz_Target { 'AWSShineFrontendService_20170701.ListTextTranslationJobs' = 0 }
+	export enum ListTextTranslationJobsX_Amz_Target { 'AWSShineFrontendService_20170701.ListTextTranslationJobs' = 'AWSShineFrontendService_20170701.ListTextTranslationJobs' }
 
-	export enum StartTextTranslationJobX_Amz_Target { 'AWSShineFrontendService_20170701.StartTextTranslationJob' = 0 }
+	export enum StartTextTranslationJobX_Amz_Target { 'AWSShineFrontendService_20170701.StartTextTranslationJob' = 'AWSShineFrontendService_20170701.StartTextTranslationJob' }
 
-	export enum StopTextTranslationJobX_Amz_Target { 'AWSShineFrontendService_20170701.StopTextTranslationJob' = 0 }
+	export enum StopTextTranslationJobX_Amz_Target { 'AWSShineFrontendService_20170701.StopTextTranslationJob' = 'AWSShineFrontendService_20170701.StopTextTranslationJob' }
 
-	export enum TagResourceX_Amz_Target { 'AWSShineFrontendService_20170701.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSShineFrontendService_20170701.TagResource' = 'AWSShineFrontendService_20170701.TagResource' }
 
-	export enum TranslateDocumentX_Amz_Target { 'AWSShineFrontendService_20170701.TranslateDocument' = 0 }
+	export enum TranslateDocumentX_Amz_Target { 'AWSShineFrontendService_20170701.TranslateDocument' = 'AWSShineFrontendService_20170701.TranslateDocument' }
 
-	export enum TranslateTextX_Amz_Target { 'AWSShineFrontendService_20170701.TranslateText' = 0 }
+	export enum TranslateTextX_Amz_Target { 'AWSShineFrontendService_20170701.TranslateText' = 'AWSShineFrontendService_20170701.TranslateText' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSShineFrontendService_20170701.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSShineFrontendService_20170701.UntagResource' = 'AWSShineFrontendService_20170701.UntagResource' }
 
-	export enum UpdateParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.UpdateParallelData' = 0 }
+	export enum UpdateParallelDataX_Amz_Target { 'AWSShineFrontendService_20170701.UpdateParallelData' = 'AWSShineFrontendService_20170701.UpdateParallelData' }
 
 }
 

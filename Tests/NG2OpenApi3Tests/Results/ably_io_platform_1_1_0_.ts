@@ -184,9 +184,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceDetailsFormFactor { phone = 0, tablet = 1, desktop = 2, tv = 3, watch = 4, car = 5, embedded = 6 }
+	export enum DeviceDetailsFormFactor { phone = 'phone', tablet = 'tablet', desktop = 'desktop', tv = 'tv', watch = 'watch', car = 'car', embedded = 'embedded' }
 
-	export enum DeviceDetailsPlatform { ios = 0, android = 1 }
+	export enum DeviceDetailsPlatform { ios = 'ios', android = 'android' }
 
 
 	/** Push recipient details for a device. */
@@ -237,9 +237,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RecipientTransportType { apns = 0, fcm = 1, gcm = 2 }
+	export enum RecipientTransportType { apns = 'apns', fcm = 'fcm', gcm = 'gcm' }
 
-	export enum DeviceDetailsPush_state { Active = 0, Failing = 1, Failed = 2 }
+	export enum DeviceDetailsPush_state { Active = 'Active', Failing = 'Failing', Failed = 'Failed' }
 
 
 	/** Returned error from failed REST. */
@@ -538,7 +538,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PresenceMessageAction { ABSENT = 0, PRESENT = 1, ENTER = 2, LEAVE = 3, UPDATE = 4 }
+	export enum PresenceMessageAction { ABSENT = 'ABSENT', PRESENT = 'PRESENT', ENTER = 'ENTER', LEAVE = 'LEAVE', UPDATE = 'UPDATE' }
 
 	export interface SignedTokenRequest extends TokenRequest {
 
@@ -934,9 +934,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetMetadataOfAllChannelsBy { value = 0, id = 1 }
+	export enum GetMetadataOfAllChannelsBy { value = 'value', id = 'id' }
 
-	export enum GetMessagesByChannelDirection { forwards = 0, backwards = 1 }
+	export enum GetMessagesByChannelDirection { forwards = 'forwards', backwards = 'backwards' }
 
 	export interface SubscribePushDeviceToChannelPostBody {
 
@@ -979,7 +979,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetStatsUnit { minute = 0, hour = 1, day = 2, month = 3 }
+	export enum GetStatsUnit { minute = 'minute', hour = 'hour', day = 'day', month = 'month' }
 
 }
 

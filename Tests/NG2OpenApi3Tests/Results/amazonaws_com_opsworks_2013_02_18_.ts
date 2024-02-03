@@ -280,9 +280,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { git = 0, svn = 1, archive = 2, s3 = 3 }
+	export enum SourceType { git = 'git', svn = 'svn', archive = 'archive', s3 = 's3' }
 
-	export enum RootDeviceType { ebs = 0, 'instance-store' = 1 }
+	export enum RootDeviceType { ebs = 'ebs', 'instance-store' = 'instance-store' }
 
 
 	/** Contains the response to a <code>CreateApp</code> request. */
@@ -370,7 +370,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppType { 'aws-flow-ruby' = 0, java = 1, rails = 2, php = 3, nodejs = 4, static = 5, other = 6 }
+	export enum AppType { 'aws-flow-ruby' = 'aws-flow-ruby', java = 'java', rails = 'rails', php = 'php', nodejs = 'nodejs', static = 'static', other = 'other' }
 
 
 	/** Describes an app's SSL configuration. */
@@ -514,7 +514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentCommandName { install_dependencies = 0, update_dependencies = 1, update_custom_cookbooks = 2, execute_recipes = 3, configure = 4, setup = 5, deploy = 6, rollback = 7, start = 8, stop = 9, restart = 10, undeploy = 11 }
+	export enum DeploymentCommandName { install_dependencies = 'install_dependencies', update_dependencies = 'update_dependencies', update_custom_cookbooks = 'update_custom_cookbooks', execute_recipes = 'execute_recipes', configure = 'configure', setup = 'setup', deploy = 'deploy', rollback = 'rollback', start = 'start', stop = 'stop', restart = 'restart', undeploy = 'undeploy' }
 
 	export interface DeploymentCommandArgs {
 	}
@@ -613,9 +613,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoScalingType { load = 0, timer = 1 }
+	export enum AutoScalingType { load = 'load', timer = 'timer' }
 
-	export enum Architecture { x86_64 = 0, i386 = 1 }
+	export enum Architecture { x86_64 = 'x86_64', i386 = 'i386' }
 
 
 	/** Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data type.  */
@@ -670,7 +670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeType { gp2 = 0, io1 = 1, standard = 2 }
+	export enum VolumeType { gp2 = 'gp2', io1 = 'io1', standard = 'standard' }
 
 
 	/** Contains the response to a <code>CreateLayer</code> request. */
@@ -755,7 +755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LayerType { 'aws-flow-ruby' = 0, 'ecs-cluster' = 1, 'java-app' = 2, lb = 3, web = 4, 'php-app' = 5, 'rails-app' = 6, 'nodejs-app' = 7, memcached = 8, 'db-master' = 9, 'monitoring-master' = 10, custom = 11 }
+	export enum LayerType { 'aws-flow-ruby' = 'aws-flow-ruby', 'ecs-cluster' = 'ecs-cluster', 'java-app' = 'java-app', lb = 'lb', web = 'web', 'php-app' = 'php-app', 'rails-app' = 'rails-app', 'nodejs-app' = 'nodejs-app', memcached = 'memcached', 'db-master' = 'db-master', 'monitoring-master' = 'monitoring-master', custom = 'custom' }
 
 	export interface LayerAttributes {
 	}
@@ -834,15 +834,15 @@ export namespace MyNS {
 
 
 	/** The preferred time zone for logs streamed to CloudWatch Logs. Valid values are <code>LOCAL</code> and <code>UTC</code>, for Coordinated Universal Time. */
-	export enum CloudWatchLogsTimeZone { LOCAL = 0, UTC = 1 }
+	export enum CloudWatchLogsTimeZone { LOCAL = 'LOCAL', UTC = 'UTC' }
 
 
 	/** Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. It's only used if there is no state persisted for that log stream. */
-	export enum CloudWatchLogsInitialPosition { start_of_file = 0, end_of_file = 1 }
+	export enum CloudWatchLogsInitialPosition { start_of_file = 'start_of_file', end_of_file = 'end_of_file' }
 
 
 	/** Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here. */
-	export enum CloudWatchLogsEncoding { ascii = 0, big5 = 1, big5hkscs = 2, cp037 = 3, cp424 = 4, cp437 = 5, cp500 = 6, cp720 = 7, cp737 = 8, cp775 = 9, cp850 = 10, cp852 = 11, cp855 = 12, cp856 = 13, cp857 = 14, cp858 = 15, cp860 = 16, cp861 = 17, cp862 = 18, cp863 = 19, cp864 = 20, cp865 = 21, cp866 = 22, cp869 = 23, cp874 = 24, cp875 = 25, cp932 = 26, cp949 = 27, cp950 = 28, cp1006 = 29, cp1026 = 30, cp1140 = 31, cp1250 = 32, cp1251 = 33, cp1252 = 34, cp1253 = 35, cp1254 = 36, cp1255 = 37, cp1256 = 38, cp1257 = 39, cp1258 = 40, euc_jp = 41, euc_jis_2004 = 42, euc_jisx0213 = 43, euc_kr = 44, gb2312 = 45, gbk = 46, gb18030 = 47, hz = 48, iso2022_jp = 49, iso2022_jp_1 = 50, iso2022_jp_2 = 51, iso2022_jp_2004 = 52, iso2022_jp_3 = 53, iso2022_jp_ext = 54, iso2022_kr = 55, latin_1 = 56, iso8859_2 = 57, iso8859_3 = 58, iso8859_4 = 59, iso8859_5 = 60, iso8859_6 = 61, iso8859_7 = 62, iso8859_8 = 63, iso8859_9 = 64, iso8859_10 = 65, iso8859_13 = 66, iso8859_14 = 67, iso8859_15 = 68, iso8859_16 = 69, johab = 70, koi8_r = 71, koi8_u = 72, mac_cyrillic = 73, mac_greek = 74, mac_iceland = 75, mac_latin2 = 76, mac_roman = 77, mac_turkish = 78, ptcp154 = 79, shift_jis = 80, shift_jis_2004 = 81, shift_jisx0213 = 82, utf_32 = 83, utf_32_be = 84, utf_32_le = 85, utf_16 = 86, utf_16_be = 87, utf_16_le = 88, utf_7 = 89, utf_8 = 90, utf_8_sig = 91 }
+	export enum CloudWatchLogsEncoding { ascii = 'ascii', big5 = 'big5', big5hkscs = 'big5hkscs', cp037 = 'cp037', cp424 = 'cp424', cp437 = 'cp437', cp500 = 'cp500', cp720 = 'cp720', cp737 = 'cp737', cp775 = 'cp775', cp850 = 'cp850', cp852 = 'cp852', cp855 = 'cp855', cp856 = 'cp856', cp857 = 'cp857', cp858 = 'cp858', cp860 = 'cp860', cp861 = 'cp861', cp862 = 'cp862', cp863 = 'cp863', cp864 = 'cp864', cp865 = 'cp865', cp866 = 'cp866', cp869 = 'cp869', cp874 = 'cp874', cp875 = 'cp875', cp932 = 'cp932', cp949 = 'cp949', cp950 = 'cp950', cp1006 = 'cp1006', cp1026 = 'cp1026', cp1140 = 'cp1140', cp1250 = 'cp1250', cp1251 = 'cp1251', cp1252 = 'cp1252', cp1253 = 'cp1253', cp1254 = 'cp1254', cp1255 = 'cp1255', cp1256 = 'cp1256', cp1257 = 'cp1257', cp1258 = 'cp1258', euc_jp = 'euc_jp', euc_jis_2004 = 'euc_jis_2004', euc_jisx0213 = 'euc_jisx0213', euc_kr = 'euc_kr', gb2312 = 'gb2312', gbk = 'gbk', gb18030 = 'gb18030', hz = 'hz', iso2022_jp = 'iso2022_jp', iso2022_jp_1 = 'iso2022_jp_1', iso2022_jp_2 = 'iso2022_jp_2', iso2022_jp_2004 = 'iso2022_jp_2004', iso2022_jp_3 = 'iso2022_jp_3', iso2022_jp_ext = 'iso2022_jp_ext', iso2022_kr = 'iso2022_kr', latin_1 = 'latin_1', iso8859_2 = 'iso8859_2', iso8859_3 = 'iso8859_3', iso8859_4 = 'iso8859_4', iso8859_5 = 'iso8859_5', iso8859_6 = 'iso8859_6', iso8859_7 = 'iso8859_7', iso8859_8 = 'iso8859_8', iso8859_9 = 'iso8859_9', iso8859_10 = 'iso8859_10', iso8859_13 = 'iso8859_13', iso8859_14 = 'iso8859_14', iso8859_15 = 'iso8859_15', iso8859_16 = 'iso8859_16', johab = 'johab', koi8_r = 'koi8_r', koi8_u = 'koi8_u', mac_cyrillic = 'mac_cyrillic', mac_greek = 'mac_greek', mac_iceland = 'mac_iceland', mac_latin2 = 'mac_latin2', mac_roman = 'mac_roman', mac_turkish = 'mac_turkish', ptcp154 = 'ptcp154', shift_jis = 'shift_jis', shift_jis_2004 = 'shift_jis_2004', shift_jisx0213 = 'shift_jisx0213', utf_32 = 'utf_32', utf_32_be = 'utf_32_be', utf_32_le = 'utf_32_le', utf_16 = 'utf_16', utf_16_be = 'utf_16_be', utf_16_le = 'utf_16_le', utf_7 = 'utf_7', utf_8 = 'utf_8', utf_8_sig = 'utf_8_sig' }
 
 
 	/** Describes an Amazon EBS volume configuration. */
@@ -1886,7 +1886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualizationType { paravirtual = 0, hvm = 1 }
+	export enum VirtualizationType { paravirtual = 'paravirtual', hvm = 'hvm' }
 
 	export interface DescribeInstancesRequest {
 		StackId?: string;
@@ -3927,11 +3927,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AppAttributesKeys { DocumentRoot = 0, RailsEnv = 1, AutoBundleOnDeploy = 2, AwsFlowRubySettings = 3 }
+	export enum AppAttributesKeys { DocumentRoot = 'DocumentRoot', RailsEnv = 'RailsEnv', AutoBundleOnDeploy = 'AutoBundleOnDeploy', AwsFlowRubySettings = 'AwsFlowRubySettings' }
 
-	export enum LayerAttributesKeys { EcsClusterArn = 0, EnableHaproxyStats = 1, HaproxyStatsUrl = 2, HaproxyStatsUser = 3, HaproxyStatsPassword = 4, HaproxyHealthCheckUrl = 5, HaproxyHealthCheckMethod = 6, MysqlRootPassword = 7, MysqlRootPasswordUbiquitous = 8, GangliaUrl = 9, GangliaUser = 10, GangliaPassword = 11, MemcachedMemory = 12, NodejsVersion = 13, RubyVersion = 14, RubygemsVersion = 15, ManageBundler = 16, BundlerVersion = 17, RailsStack = 18, PassengerVersion = 19, Jvm = 20, JvmVersion = 21, JvmOptions = 22, JavaAppServer = 23, JavaAppServerVersion = 24 }
+	export enum LayerAttributesKeys { EcsClusterArn = 'EcsClusterArn', EnableHaproxyStats = 'EnableHaproxyStats', HaproxyStatsUrl = 'HaproxyStatsUrl', HaproxyStatsUser = 'HaproxyStatsUser', HaproxyStatsPassword = 'HaproxyStatsPassword', HaproxyHealthCheckUrl = 'HaproxyHealthCheckUrl', HaproxyHealthCheckMethod = 'HaproxyHealthCheckMethod', MysqlRootPassword = 'MysqlRootPassword', MysqlRootPasswordUbiquitous = 'MysqlRootPasswordUbiquitous', GangliaUrl = 'GangliaUrl', GangliaUser = 'GangliaUser', GangliaPassword = 'GangliaPassword', MemcachedMemory = 'MemcachedMemory', NodejsVersion = 'NodejsVersion', RubyVersion = 'RubyVersion', RubygemsVersion = 'RubygemsVersion', ManageBundler = 'ManageBundler', BundlerVersion = 'BundlerVersion', RailsStack = 'RailsStack', PassengerVersion = 'PassengerVersion', Jvm = 'Jvm', JvmVersion = 'JvmVersion', JvmOptions = 'JvmOptions', JavaAppServer = 'JavaAppServer', JavaAppServerVersion = 'JavaAppServerVersion' }
 
-	export enum StackAttributesKeys { Color = 0 }
+	export enum StackAttributesKeys { Color = 'Color' }
 
 	@Injectable()
 	export class MyClient {
@@ -4607,153 +4607,153 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssignInstanceX_Amz_Target { 'OpsWorks_20130218.AssignInstance' = 0 }
+	export enum AssignInstanceX_Amz_Target { 'OpsWorks_20130218.AssignInstance' = 'OpsWorks_20130218.AssignInstance' }
 
-	export enum AssignVolumeX_Amz_Target { 'OpsWorks_20130218.AssignVolume' = 0 }
+	export enum AssignVolumeX_Amz_Target { 'OpsWorks_20130218.AssignVolume' = 'OpsWorks_20130218.AssignVolume' }
 
-	export enum AssociateElasticIpX_Amz_Target { 'OpsWorks_20130218.AssociateElasticIp' = 0 }
+	export enum AssociateElasticIpX_Amz_Target { 'OpsWorks_20130218.AssociateElasticIp' = 'OpsWorks_20130218.AssociateElasticIp' }
 
-	export enum AttachElasticLoadBalancerX_Amz_Target { 'OpsWorks_20130218.AttachElasticLoadBalancer' = 0 }
+	export enum AttachElasticLoadBalancerX_Amz_Target { 'OpsWorks_20130218.AttachElasticLoadBalancer' = 'OpsWorks_20130218.AttachElasticLoadBalancer' }
 
-	export enum CloneStackX_Amz_Target { 'OpsWorks_20130218.CloneStack' = 0 }
+	export enum CloneStackX_Amz_Target { 'OpsWorks_20130218.CloneStack' = 'OpsWorks_20130218.CloneStack' }
 
-	export enum CreateAppX_Amz_Target { 'OpsWorks_20130218.CreateApp' = 0 }
+	export enum CreateAppX_Amz_Target { 'OpsWorks_20130218.CreateApp' = 'OpsWorks_20130218.CreateApp' }
 
-	export enum CreateDeploymentX_Amz_Target { 'OpsWorks_20130218.CreateDeployment' = 0 }
+	export enum CreateDeploymentX_Amz_Target { 'OpsWorks_20130218.CreateDeployment' = 'OpsWorks_20130218.CreateDeployment' }
 
-	export enum CreateInstanceX_Amz_Target { 'OpsWorks_20130218.CreateInstance' = 0 }
+	export enum CreateInstanceX_Amz_Target { 'OpsWorks_20130218.CreateInstance' = 'OpsWorks_20130218.CreateInstance' }
 
-	export enum CreateLayerX_Amz_Target { 'OpsWorks_20130218.CreateLayer' = 0 }
+	export enum CreateLayerX_Amz_Target { 'OpsWorks_20130218.CreateLayer' = 'OpsWorks_20130218.CreateLayer' }
 
-	export enum CreateStackX_Amz_Target { 'OpsWorks_20130218.CreateStack' = 0 }
+	export enum CreateStackX_Amz_Target { 'OpsWorks_20130218.CreateStack' = 'OpsWorks_20130218.CreateStack' }
 
-	export enum CreateUserProfileX_Amz_Target { 'OpsWorks_20130218.CreateUserProfile' = 0 }
+	export enum CreateUserProfileX_Amz_Target { 'OpsWorks_20130218.CreateUserProfile' = 'OpsWorks_20130218.CreateUserProfile' }
 
-	export enum DeleteAppX_Amz_Target { 'OpsWorks_20130218.DeleteApp' = 0 }
+	export enum DeleteAppX_Amz_Target { 'OpsWorks_20130218.DeleteApp' = 'OpsWorks_20130218.DeleteApp' }
 
-	export enum DeleteInstanceX_Amz_Target { 'OpsWorks_20130218.DeleteInstance' = 0 }
+	export enum DeleteInstanceX_Amz_Target { 'OpsWorks_20130218.DeleteInstance' = 'OpsWorks_20130218.DeleteInstance' }
 
-	export enum DeleteLayerX_Amz_Target { 'OpsWorks_20130218.DeleteLayer' = 0 }
+	export enum DeleteLayerX_Amz_Target { 'OpsWorks_20130218.DeleteLayer' = 'OpsWorks_20130218.DeleteLayer' }
 
-	export enum DeleteStackX_Amz_Target { 'OpsWorks_20130218.DeleteStack' = 0 }
+	export enum DeleteStackX_Amz_Target { 'OpsWorks_20130218.DeleteStack' = 'OpsWorks_20130218.DeleteStack' }
 
-	export enum DeleteUserProfileX_Amz_Target { 'OpsWorks_20130218.DeleteUserProfile' = 0 }
+	export enum DeleteUserProfileX_Amz_Target { 'OpsWorks_20130218.DeleteUserProfile' = 'OpsWorks_20130218.DeleteUserProfile' }
 
-	export enum DeregisterEcsClusterX_Amz_Target { 'OpsWorks_20130218.DeregisterEcsCluster' = 0 }
+	export enum DeregisterEcsClusterX_Amz_Target { 'OpsWorks_20130218.DeregisterEcsCluster' = 'OpsWorks_20130218.DeregisterEcsCluster' }
 
-	export enum DeregisterElasticIpX_Amz_Target { 'OpsWorks_20130218.DeregisterElasticIp' = 0 }
+	export enum DeregisterElasticIpX_Amz_Target { 'OpsWorks_20130218.DeregisterElasticIp' = 'OpsWorks_20130218.DeregisterElasticIp' }
 
-	export enum DeregisterInstanceX_Amz_Target { 'OpsWorks_20130218.DeregisterInstance' = 0 }
+	export enum DeregisterInstanceX_Amz_Target { 'OpsWorks_20130218.DeregisterInstance' = 'OpsWorks_20130218.DeregisterInstance' }
 
-	export enum DeregisterRdsDbInstanceX_Amz_Target { 'OpsWorks_20130218.DeregisterRdsDbInstance' = 0 }
+	export enum DeregisterRdsDbInstanceX_Amz_Target { 'OpsWorks_20130218.DeregisterRdsDbInstance' = 'OpsWorks_20130218.DeregisterRdsDbInstance' }
 
-	export enum DeregisterVolumeX_Amz_Target { 'OpsWorks_20130218.DeregisterVolume' = 0 }
+	export enum DeregisterVolumeX_Amz_Target { 'OpsWorks_20130218.DeregisterVolume' = 'OpsWorks_20130218.DeregisterVolume' }
 
-	export enum DescribeAgentVersionsX_Amz_Target { 'OpsWorks_20130218.DescribeAgentVersions' = 0 }
+	export enum DescribeAgentVersionsX_Amz_Target { 'OpsWorks_20130218.DescribeAgentVersions' = 'OpsWorks_20130218.DescribeAgentVersions' }
 
-	export enum DescribeAppsX_Amz_Target { 'OpsWorks_20130218.DescribeApps' = 0 }
+	export enum DescribeAppsX_Amz_Target { 'OpsWorks_20130218.DescribeApps' = 'OpsWorks_20130218.DescribeApps' }
 
-	export enum DescribeCommandsX_Amz_Target { 'OpsWorks_20130218.DescribeCommands' = 0 }
+	export enum DescribeCommandsX_Amz_Target { 'OpsWorks_20130218.DescribeCommands' = 'OpsWorks_20130218.DescribeCommands' }
 
-	export enum DescribeDeploymentsX_Amz_Target { 'OpsWorks_20130218.DescribeDeployments' = 0 }
+	export enum DescribeDeploymentsX_Amz_Target { 'OpsWorks_20130218.DescribeDeployments' = 'OpsWorks_20130218.DescribeDeployments' }
 
-	export enum DescribeEcsClustersX_Amz_Target { 'OpsWorks_20130218.DescribeEcsClusters' = 0 }
+	export enum DescribeEcsClustersX_Amz_Target { 'OpsWorks_20130218.DescribeEcsClusters' = 'OpsWorks_20130218.DescribeEcsClusters' }
 
-	export enum DescribeElasticIpsX_Amz_Target { 'OpsWorks_20130218.DescribeElasticIps' = 0 }
+	export enum DescribeElasticIpsX_Amz_Target { 'OpsWorks_20130218.DescribeElasticIps' = 'OpsWorks_20130218.DescribeElasticIps' }
 
-	export enum DescribeElasticLoadBalancersX_Amz_Target { 'OpsWorks_20130218.DescribeElasticLoadBalancers' = 0 }
+	export enum DescribeElasticLoadBalancersX_Amz_Target { 'OpsWorks_20130218.DescribeElasticLoadBalancers' = 'OpsWorks_20130218.DescribeElasticLoadBalancers' }
 
-	export enum DescribeInstancesX_Amz_Target { 'OpsWorks_20130218.DescribeInstances' = 0 }
+	export enum DescribeInstancesX_Amz_Target { 'OpsWorks_20130218.DescribeInstances' = 'OpsWorks_20130218.DescribeInstances' }
 
-	export enum DescribeLayersX_Amz_Target { 'OpsWorks_20130218.DescribeLayers' = 0 }
+	export enum DescribeLayersX_Amz_Target { 'OpsWorks_20130218.DescribeLayers' = 'OpsWorks_20130218.DescribeLayers' }
 
-	export enum DescribeLoadBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.DescribeLoadBasedAutoScaling' = 0 }
+	export enum DescribeLoadBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.DescribeLoadBasedAutoScaling' = 'OpsWorks_20130218.DescribeLoadBasedAutoScaling' }
 
-	export enum DescribeMyUserProfileX_Amz_Target { 'OpsWorks_20130218.DescribeMyUserProfile' = 0 }
+	export enum DescribeMyUserProfileX_Amz_Target { 'OpsWorks_20130218.DescribeMyUserProfile' = 'OpsWorks_20130218.DescribeMyUserProfile' }
 
-	export enum DescribeOperatingSystemsX_Amz_Target { 'OpsWorks_20130218.DescribeOperatingSystems' = 0 }
+	export enum DescribeOperatingSystemsX_Amz_Target { 'OpsWorks_20130218.DescribeOperatingSystems' = 'OpsWorks_20130218.DescribeOperatingSystems' }
 
-	export enum DescribePermissionsX_Amz_Target { 'OpsWorks_20130218.DescribePermissions' = 0 }
+	export enum DescribePermissionsX_Amz_Target { 'OpsWorks_20130218.DescribePermissions' = 'OpsWorks_20130218.DescribePermissions' }
 
-	export enum DescribeRaidArraysX_Amz_Target { 'OpsWorks_20130218.DescribeRaidArrays' = 0 }
+	export enum DescribeRaidArraysX_Amz_Target { 'OpsWorks_20130218.DescribeRaidArrays' = 'OpsWorks_20130218.DescribeRaidArrays' }
 
-	export enum DescribeRdsDbInstancesX_Amz_Target { 'OpsWorks_20130218.DescribeRdsDbInstances' = 0 }
+	export enum DescribeRdsDbInstancesX_Amz_Target { 'OpsWorks_20130218.DescribeRdsDbInstances' = 'OpsWorks_20130218.DescribeRdsDbInstances' }
 
-	export enum DescribeServiceErrorsX_Amz_Target { 'OpsWorks_20130218.DescribeServiceErrors' = 0 }
+	export enum DescribeServiceErrorsX_Amz_Target { 'OpsWorks_20130218.DescribeServiceErrors' = 'OpsWorks_20130218.DescribeServiceErrors' }
 
-	export enum DescribeStackProvisioningParametersX_Amz_Target { 'OpsWorks_20130218.DescribeStackProvisioningParameters' = 0 }
+	export enum DescribeStackProvisioningParametersX_Amz_Target { 'OpsWorks_20130218.DescribeStackProvisioningParameters' = 'OpsWorks_20130218.DescribeStackProvisioningParameters' }
 
-	export enum DescribeStackSummaryX_Amz_Target { 'OpsWorks_20130218.DescribeStackSummary' = 0 }
+	export enum DescribeStackSummaryX_Amz_Target { 'OpsWorks_20130218.DescribeStackSummary' = 'OpsWorks_20130218.DescribeStackSummary' }
 
-	export enum DescribeStacksX_Amz_Target { 'OpsWorks_20130218.DescribeStacks' = 0 }
+	export enum DescribeStacksX_Amz_Target { 'OpsWorks_20130218.DescribeStacks' = 'OpsWorks_20130218.DescribeStacks' }
 
-	export enum DescribeTimeBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.DescribeTimeBasedAutoScaling' = 0 }
+	export enum DescribeTimeBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.DescribeTimeBasedAutoScaling' = 'OpsWorks_20130218.DescribeTimeBasedAutoScaling' }
 
-	export enum DescribeUserProfilesX_Amz_Target { 'OpsWorks_20130218.DescribeUserProfiles' = 0 }
+	export enum DescribeUserProfilesX_Amz_Target { 'OpsWorks_20130218.DescribeUserProfiles' = 'OpsWorks_20130218.DescribeUserProfiles' }
 
-	export enum DescribeVolumesX_Amz_Target { 'OpsWorks_20130218.DescribeVolumes' = 0 }
+	export enum DescribeVolumesX_Amz_Target { 'OpsWorks_20130218.DescribeVolumes' = 'OpsWorks_20130218.DescribeVolumes' }
 
-	export enum DetachElasticLoadBalancerX_Amz_Target { 'OpsWorks_20130218.DetachElasticLoadBalancer' = 0 }
+	export enum DetachElasticLoadBalancerX_Amz_Target { 'OpsWorks_20130218.DetachElasticLoadBalancer' = 'OpsWorks_20130218.DetachElasticLoadBalancer' }
 
-	export enum DisassociateElasticIpX_Amz_Target { 'OpsWorks_20130218.DisassociateElasticIp' = 0 }
+	export enum DisassociateElasticIpX_Amz_Target { 'OpsWorks_20130218.DisassociateElasticIp' = 'OpsWorks_20130218.DisassociateElasticIp' }
 
-	export enum GetHostnameSuggestionX_Amz_Target { 'OpsWorks_20130218.GetHostnameSuggestion' = 0 }
+	export enum GetHostnameSuggestionX_Amz_Target { 'OpsWorks_20130218.GetHostnameSuggestion' = 'OpsWorks_20130218.GetHostnameSuggestion' }
 
-	export enum GrantAccessX_Amz_Target { 'OpsWorks_20130218.GrantAccess' = 0 }
+	export enum GrantAccessX_Amz_Target { 'OpsWorks_20130218.GrantAccess' = 'OpsWorks_20130218.GrantAccess' }
 
-	export enum ListTagsX_Amz_Target { 'OpsWorks_20130218.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'OpsWorks_20130218.ListTags' = 'OpsWorks_20130218.ListTags' }
 
-	export enum RebootInstanceX_Amz_Target { 'OpsWorks_20130218.RebootInstance' = 0 }
+	export enum RebootInstanceX_Amz_Target { 'OpsWorks_20130218.RebootInstance' = 'OpsWorks_20130218.RebootInstance' }
 
-	export enum RegisterEcsClusterX_Amz_Target { 'OpsWorks_20130218.RegisterEcsCluster' = 0 }
+	export enum RegisterEcsClusterX_Amz_Target { 'OpsWorks_20130218.RegisterEcsCluster' = 'OpsWorks_20130218.RegisterEcsCluster' }
 
-	export enum RegisterElasticIpX_Amz_Target { 'OpsWorks_20130218.RegisterElasticIp' = 0 }
+	export enum RegisterElasticIpX_Amz_Target { 'OpsWorks_20130218.RegisterElasticIp' = 'OpsWorks_20130218.RegisterElasticIp' }
 
-	export enum RegisterInstanceX_Amz_Target { 'OpsWorks_20130218.RegisterInstance' = 0 }
+	export enum RegisterInstanceX_Amz_Target { 'OpsWorks_20130218.RegisterInstance' = 'OpsWorks_20130218.RegisterInstance' }
 
-	export enum RegisterRdsDbInstanceX_Amz_Target { 'OpsWorks_20130218.RegisterRdsDbInstance' = 0 }
+	export enum RegisterRdsDbInstanceX_Amz_Target { 'OpsWorks_20130218.RegisterRdsDbInstance' = 'OpsWorks_20130218.RegisterRdsDbInstance' }
 
-	export enum RegisterVolumeX_Amz_Target { 'OpsWorks_20130218.RegisterVolume' = 0 }
+	export enum RegisterVolumeX_Amz_Target { 'OpsWorks_20130218.RegisterVolume' = 'OpsWorks_20130218.RegisterVolume' }
 
-	export enum SetLoadBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.SetLoadBasedAutoScaling' = 0 }
+	export enum SetLoadBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.SetLoadBasedAutoScaling' = 'OpsWorks_20130218.SetLoadBasedAutoScaling' }
 
-	export enum SetPermissionX_Amz_Target { 'OpsWorks_20130218.SetPermission' = 0 }
+	export enum SetPermissionX_Amz_Target { 'OpsWorks_20130218.SetPermission' = 'OpsWorks_20130218.SetPermission' }
 
-	export enum SetTimeBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.SetTimeBasedAutoScaling' = 0 }
+	export enum SetTimeBasedAutoScalingX_Amz_Target { 'OpsWorks_20130218.SetTimeBasedAutoScaling' = 'OpsWorks_20130218.SetTimeBasedAutoScaling' }
 
-	export enum StartInstanceX_Amz_Target { 'OpsWorks_20130218.StartInstance' = 0 }
+	export enum StartInstanceX_Amz_Target { 'OpsWorks_20130218.StartInstance' = 'OpsWorks_20130218.StartInstance' }
 
-	export enum StartStackX_Amz_Target { 'OpsWorks_20130218.StartStack' = 0 }
+	export enum StartStackX_Amz_Target { 'OpsWorks_20130218.StartStack' = 'OpsWorks_20130218.StartStack' }
 
-	export enum StopInstanceX_Amz_Target { 'OpsWorks_20130218.StopInstance' = 0 }
+	export enum StopInstanceX_Amz_Target { 'OpsWorks_20130218.StopInstance' = 'OpsWorks_20130218.StopInstance' }
 
-	export enum StopStackX_Amz_Target { 'OpsWorks_20130218.StopStack' = 0 }
+	export enum StopStackX_Amz_Target { 'OpsWorks_20130218.StopStack' = 'OpsWorks_20130218.StopStack' }
 
-	export enum TagResourceX_Amz_Target { 'OpsWorks_20130218.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'OpsWorks_20130218.TagResource' = 'OpsWorks_20130218.TagResource' }
 
-	export enum UnassignInstanceX_Amz_Target { 'OpsWorks_20130218.UnassignInstance' = 0 }
+	export enum UnassignInstanceX_Amz_Target { 'OpsWorks_20130218.UnassignInstance' = 'OpsWorks_20130218.UnassignInstance' }
 
-	export enum UnassignVolumeX_Amz_Target { 'OpsWorks_20130218.UnassignVolume' = 0 }
+	export enum UnassignVolumeX_Amz_Target { 'OpsWorks_20130218.UnassignVolume' = 'OpsWorks_20130218.UnassignVolume' }
 
-	export enum UntagResourceX_Amz_Target { 'OpsWorks_20130218.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'OpsWorks_20130218.UntagResource' = 'OpsWorks_20130218.UntagResource' }
 
-	export enum UpdateAppX_Amz_Target { 'OpsWorks_20130218.UpdateApp' = 0 }
+	export enum UpdateAppX_Amz_Target { 'OpsWorks_20130218.UpdateApp' = 'OpsWorks_20130218.UpdateApp' }
 
-	export enum UpdateElasticIpX_Amz_Target { 'OpsWorks_20130218.UpdateElasticIp' = 0 }
+	export enum UpdateElasticIpX_Amz_Target { 'OpsWorks_20130218.UpdateElasticIp' = 'OpsWorks_20130218.UpdateElasticIp' }
 
-	export enum UpdateInstanceX_Amz_Target { 'OpsWorks_20130218.UpdateInstance' = 0 }
+	export enum UpdateInstanceX_Amz_Target { 'OpsWorks_20130218.UpdateInstance' = 'OpsWorks_20130218.UpdateInstance' }
 
-	export enum UpdateLayerX_Amz_Target { 'OpsWorks_20130218.UpdateLayer' = 0 }
+	export enum UpdateLayerX_Amz_Target { 'OpsWorks_20130218.UpdateLayer' = 'OpsWorks_20130218.UpdateLayer' }
 
-	export enum UpdateMyUserProfileX_Amz_Target { 'OpsWorks_20130218.UpdateMyUserProfile' = 0 }
+	export enum UpdateMyUserProfileX_Amz_Target { 'OpsWorks_20130218.UpdateMyUserProfile' = 'OpsWorks_20130218.UpdateMyUserProfile' }
 
-	export enum UpdateRdsDbInstanceX_Amz_Target { 'OpsWorks_20130218.UpdateRdsDbInstance' = 0 }
+	export enum UpdateRdsDbInstanceX_Amz_Target { 'OpsWorks_20130218.UpdateRdsDbInstance' = 'OpsWorks_20130218.UpdateRdsDbInstance' }
 
-	export enum UpdateStackX_Amz_Target { 'OpsWorks_20130218.UpdateStack' = 0 }
+	export enum UpdateStackX_Amz_Target { 'OpsWorks_20130218.UpdateStack' = 'OpsWorks_20130218.UpdateStack' }
 
-	export enum UpdateUserProfileX_Amz_Target { 'OpsWorks_20130218.UpdateUserProfile' = 0 }
+	export enum UpdateUserProfileX_Amz_Target { 'OpsWorks_20130218.UpdateUserProfile' = 'OpsWorks_20130218.UpdateUserProfile' }
 
-	export enum UpdateVolumeX_Amz_Target { 'OpsWorks_20130218.UpdateVolume' = 0 }
+	export enum UpdateVolumeX_Amz_Target { 'OpsWorks_20130218.UpdateVolume' = 'OpsWorks_20130218.UpdateVolume' }
 
 }
 

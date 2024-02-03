@@ -97,7 +97,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess { ACCESS_STATE_UNSPECIFIED = 0, GRANTED = 1, NOT_GRANTED = 2, UNKNOWN_CONDITIONAL = 3, UNKNOWN_INFO_DENIED = 4 }
+	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess { ACCESS_STATE_UNSPECIFIED = 'ACCESS_STATE_UNSPECIFIED', GRANTED = 'GRANTED', NOT_GRANTED = 'NOT_GRANTED', UNKNOWN_CONDITIONAL = 'UNKNOWN_CONDITIONAL', UNKNOWN_INFO_DENIED = 'UNKNOWN_INFO_DENIED' }
 
 
 	/** Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information. */
@@ -169,11 +169,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipMembership { MEMBERSHIP_UNSPECIFIED = 0, MEMBERSHIP_INCLUDED = 1, MEMBERSHIP_NOT_INCLUDED = 2, MEMBERSHIP_UNKNOWN_INFO_DENIED = 3, MEMBERSHIP_UNKNOWN_UNSUPPORTED = 4 }
+	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipMembership { MEMBERSHIP_UNSPECIFIED = 'MEMBERSHIP_UNSPECIFIED', MEMBERSHIP_INCLUDED = 'MEMBERSHIP_INCLUDED', MEMBERSHIP_NOT_INCLUDED = 'MEMBERSHIP_NOT_INCLUDED', MEMBERSHIP_UNKNOWN_INFO_DENIED = 'MEMBERSHIP_UNKNOWN_INFO_DENIED', MEMBERSHIP_UNKNOWN_UNSUPPORTED = 'MEMBERSHIP_UNKNOWN_UNSUPPORTED' }
 
-	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance { HEURISTIC_RELEVANCE_UNSPECIFIED = 0, NORMAL = 1, HIGH = 2 }
+	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance { HEURISTIC_RELEVANCE_UNSPECIFIED = 'HEURISTIC_RELEVANCE_UNSPECIFIED', NORMAL = 'NORMAL', HIGH = 'HIGH' }
 
-	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationRolePermission { ROLE_PERMISSION_UNSPECIFIED = 0, ROLE_PERMISSION_INCLUDED = 1, ROLE_PERMISSION_NOT_INCLUDED = 2, ROLE_PERMISSION_UNKNOWN_INFO_DENIED = 3 }
+	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationRolePermission { ROLE_PERMISSION_UNSPECIFIED = 'ROLE_PERMISSION_UNSPECIFIED', ROLE_PERMISSION_INCLUDED = 'ROLE_PERMISSION_INCLUDED', ROLE_PERMISSION_NOT_INCLUDED = 'ROLE_PERMISSION_NOT_INCLUDED', ROLE_PERMISSION_UNKNOWN_INFO_DENIED = 'ROLE_PERMISSION_UNKNOWN_INFO_DENIED' }
 
 
 	/** Details about how a specific IAM Policy contributed to the access check. */
@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */

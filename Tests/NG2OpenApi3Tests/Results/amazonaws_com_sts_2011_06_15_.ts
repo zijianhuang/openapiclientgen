@@ -749,23 +749,23 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AssumeRoleAction { AssumeRole = 0 }
+	export enum GET_AssumeRoleAction { AssumeRole = 'AssumeRole' }
 
-	export enum GET_AssumeRoleVersion { '2011-06-15' = 0 }
+	export enum GET_AssumeRoleVersion { '2011-06-15' = '2011-06-15' }
 
-	export enum GET_AssumeRoleWithSAMLAction { AssumeRoleWithSAML = 0 }
+	export enum GET_AssumeRoleWithSAMLAction { AssumeRoleWithSAML = 'AssumeRoleWithSAML' }
 
-	export enum GET_AssumeRoleWithWebIdentityAction { AssumeRoleWithWebIdentity = 0 }
+	export enum GET_AssumeRoleWithWebIdentityAction { AssumeRoleWithWebIdentity = 'AssumeRoleWithWebIdentity' }
 
-	export enum GET_DecodeAuthorizationMessageAction { DecodeAuthorizationMessage = 0 }
+	export enum GET_DecodeAuthorizationMessageAction { DecodeAuthorizationMessage = 'DecodeAuthorizationMessage' }
 
-	export enum GET_GetAccessKeyInfoAction { GetAccessKeyInfo = 0 }
+	export enum GET_GetAccessKeyInfoAction { GetAccessKeyInfo = 'GetAccessKeyInfo' }
 
-	export enum GET_GetCallerIdentityAction { GetCallerIdentity = 0 }
+	export enum GET_GetCallerIdentityAction { GetCallerIdentity = 'GetCallerIdentity' }
 
-	export enum GET_GetFederationTokenAction { GetFederationToken = 0 }
+	export enum GET_GetFederationTokenAction { GetFederationToken = 'GetFederationToken' }
 
-	export enum GET_GetSessionTokenAction { GetSessionToken = 0 }
+	export enum GET_GetSessionTokenAction { GetSessionToken = 'GetSessionToken' }
 
 }
 

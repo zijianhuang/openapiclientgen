@@ -1071,7 +1071,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CurrentSeasonFormat { XML = 0, JSON = 1 }
+	export enum CurrentSeasonFormat { XML = 'XML', JSON = 'JSON' }
 
 }
 

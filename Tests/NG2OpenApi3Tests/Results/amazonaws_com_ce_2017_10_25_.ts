@@ -83,9 +83,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorType { DIMENSIONAL = 0, CUSTOM = 1 }
+	export enum MonitorType { DIMENSIONAL = 'DIMENSIONAL', CUSTOM = 'CUSTOM' }
 
-	export enum MonitorDimension { SERVICE = 0 }
+	export enum MonitorDimension { SERVICE = 'SERVICE' }
 
 
 	/** <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with "a".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note> */
@@ -126,9 +126,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Dimension { AZ = 0, INSTANCE_TYPE = 1, LINKED_ACCOUNT = 2, LINKED_ACCOUNT_NAME = 3, OPERATION = 4, PURCHASE_TYPE = 5, REGION = 6, SERVICE = 7, SERVICE_CODE = 8, USAGE_TYPE = 9, USAGE_TYPE_GROUP = 10, RECORD_TYPE = 11, OPERATING_SYSTEM = 12, TENANCY = 13, SCOPE = 14, PLATFORM = 15, SUBSCRIPTION_ID = 16, LEGAL_ENTITY_NAME = 17, DEPLOYMENT_OPTION = 18, DATABASE_ENGINE = 19, CACHE_ENGINE = 20, INSTANCE_TYPE_FAMILY = 21, BILLING_ENTITY = 22, RESERVATION_ID = 23, RESOURCE_ID = 24, RIGHTSIZING_TYPE = 25, SAVINGS_PLANS_TYPE = 26, SAVINGS_PLAN_ARN = 27, PAYMENT_OPTION = 28, AGREEMENT_END_DATE_TIME_AFTER = 29, AGREEMENT_END_DATE_TIME_BEFORE = 30, INVOICING_ENTITY = 31, ANOMALY_TOTAL_IMPACT_ABSOLUTE = 32, ANOMALY_TOTAL_IMPACT_PERCENTAGE = 33 }
+	export enum Dimension { AZ = 'AZ', INSTANCE_TYPE = 'INSTANCE_TYPE', LINKED_ACCOUNT = 'LINKED_ACCOUNT', LINKED_ACCOUNT_NAME = 'LINKED_ACCOUNT_NAME', OPERATION = 'OPERATION', PURCHASE_TYPE = 'PURCHASE_TYPE', REGION = 'REGION', SERVICE = 'SERVICE', SERVICE_CODE = 'SERVICE_CODE', USAGE_TYPE = 'USAGE_TYPE', USAGE_TYPE_GROUP = 'USAGE_TYPE_GROUP', RECORD_TYPE = 'RECORD_TYPE', OPERATING_SYSTEM = 'OPERATING_SYSTEM', TENANCY = 'TENANCY', SCOPE = 'SCOPE', PLATFORM = 'PLATFORM', SUBSCRIPTION_ID = 'SUBSCRIPTION_ID', LEGAL_ENTITY_NAME = 'LEGAL_ENTITY_NAME', DEPLOYMENT_OPTION = 'DEPLOYMENT_OPTION', DATABASE_ENGINE = 'DATABASE_ENGINE', CACHE_ENGINE = 'CACHE_ENGINE', INSTANCE_TYPE_FAMILY = 'INSTANCE_TYPE_FAMILY', BILLING_ENTITY = 'BILLING_ENTITY', RESERVATION_ID = 'RESERVATION_ID', RESOURCE_ID = 'RESOURCE_ID', RIGHTSIZING_TYPE = 'RIGHTSIZING_TYPE', SAVINGS_PLANS_TYPE = 'SAVINGS_PLANS_TYPE', SAVINGS_PLAN_ARN = 'SAVINGS_PLAN_ARN', PAYMENT_OPTION = 'PAYMENT_OPTION', AGREEMENT_END_DATE_TIME_AFTER = 'AGREEMENT_END_DATE_TIME_AFTER', AGREEMENT_END_DATE_TIME_BEFORE = 'AGREEMENT_END_DATE_TIME_BEFORE', INVOICING_ENTITY = 'INVOICING_ENTITY', ANOMALY_TOTAL_IMPACT_ABSOLUTE = 'ANOMALY_TOTAL_IMPACT_ABSOLUTE', ANOMALY_TOTAL_IMPACT_PERCENTAGE = 'ANOMALY_TOTAL_IMPACT_PERCENTAGE' }
 
-	export enum MatchOption { EQUALS = 0, ABSENT = 1, STARTS_WITH = 2, ENDS_WITH = 3, CONTAINS = 4, CASE_SENSITIVE = 5, CASE_INSENSITIVE = 6, GREATER_THAN_OR_EQUAL = 7 }
+	export enum MatchOption { EQUALS = 'EQUALS', ABSENT = 'ABSENT', STARTS_WITH = 'STARTS_WITH', ENDS_WITH = 'ENDS_WITH', CONTAINS = 'CONTAINS', CASE_SENSITIVE = 'CASE_SENSITIVE', CASE_INSENSITIVE = 'CASE_INSENSITIVE', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL' }
 
 
 	/** <p>The values that are available for a tag.</p> <p>If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags.</p> <p>If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p> */
@@ -316,11 +316,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriberType { EMAIL = 0, SNS = 1 }
+	export enum SubscriberType { EMAIL = 'EMAIL', SNS = 'SNS' }
 
-	export enum SubscriberStatus { CONFIRMED = 0, DECLINED = 1 }
+	export enum SubscriberStatus { CONFIRMED = 'CONFIRMED', DECLINED = 'DECLINED' }
 
-	export enum AnomalySubscriptionFrequency { DAILY = 0, IMMEDIATE = 1, WEEKLY = 2 }
+	export enum AnomalySubscriptionFrequency { DAILY = 'DAILY', IMMEDIATE = 'IMMEDIATE', WEEKLY = 'WEEKLY' }
 
 	export interface UnknownMonitorException {
 	}
@@ -411,7 +411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateCostCategoryDefinitionRequestRuleVersion { 'CostCategoryExpression.v1' = 0 }
+	export enum CreateCostCategoryDefinitionRequestRuleVersion { 'CostCategoryExpression.v1' = 'CostCategoryExpression.v1' }
 
 
 	/** Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. */
@@ -467,9 +467,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CostCategoryInheritedValueDimensionName { LINKED_ACCOUNT_NAME = 0, TAG = 1 }
+	export enum CostCategoryInheritedValueDimensionName { LINKED_ACCOUNT_NAME = 'LINKED_ACCOUNT_NAME', TAG = 'TAG' }
 
-	export enum CostCategoryRuleType { REGULAR = 0, INHERITED_VALUE = 1 }
+	export enum CostCategoryRuleType { REGULAR = 'REGULAR', INHERITED_VALUE = 'INHERITED_VALUE' }
 
 
 	/** Use the split charge rule to split the cost of one Cost Category value across several other target values.  */
@@ -503,7 +503,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CostCategorySplitChargeMethod { FIXED = 0, PROPORTIONAL = 1, EVEN = 2 }
+	export enum CostCategorySplitChargeMethod { FIXED = 'FIXED', PROPORTIONAL = 'PROPORTIONAL', EVEN = 'EVEN' }
 
 
 	/** The parameters for a split charge method.  */
@@ -529,7 +529,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CostCategorySplitChargeRuleParameterType { ALLOCATION_PERCENTAGES = 0 }
+	export enum CostCategorySplitChargeRuleParameterType { ALLOCATION_PERCENTAGES = 'ALLOCATION_PERCENTAGES' }
 
 	export interface ServiceQuotaExceededException {
 	}
@@ -762,9 +762,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CostCategoryStatusComponent { COST_EXPLORER = 0 }
+	export enum CostCategoryStatusComponent { COST_EXPLORER = 'COST_EXPLORER' }
 
-	export enum CostCategoryStatus { PROCESSING = 0, APPLIED = 1 }
+	export enum CostCategoryStatus { PROCESSING = 'PROCESSING', APPLIED = 'APPLIED' }
 
 	export interface DescribeCostCategoryDefinitionRequest {
 
@@ -939,7 +939,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalyFeedbackType { YES = 0, NO = 1, PLANNED_ACTIVITY = 2 }
+	export enum AnomalyFeedbackType { YES = 'YES', NO = 'NO', PLANNED_ACTIVITY = 'PLANNED_ACTIVITY' }
 
 	export interface GetAnomaliesRequest {
 		MonitorArn?: string;
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumericOperator { EQUAL = 0, GREATER_THAN_OR_EQUAL = 1, LESS_THAN_OR_EQUAL = 2, GREATER_THAN = 3, LESS_THAN = 4, BETWEEN = 5 }
+	export enum NumericOperator { EQUAL = 'EQUAL', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN', BETWEEN = 'BETWEEN' }
 
 	export interface InvalidNextTokenException {
 	}
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupDefinitionType { DIMENSION = 0, TAG = 1, COST_CATEGORY = 2 }
+	export enum GroupDefinitionType { DIMENSION = 'DIMENSION', TAG = 'TAG', COST_CATEGORY = 'COST_CATEGORY' }
 
 
 	/** The result that's associated with a time period. */
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Granularity { DAILY = 0, MONTHLY = 1, HOURLY = 2 }
+	export enum Granularity { DAILY = 'DAILY', MONTHLY = 'MONTHLY', HOURLY = 'HOURLY' }
 
 	export interface BillExpirationException {
 	}
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface GetCostForecastResponse {
 		Total?: MetricValue;
@@ -1533,7 +1533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Metric { BLENDED_COST = 0, UNBLENDED_COST = 1, AMORTIZED_COST = 2, NET_UNBLENDED_COST = 3, NET_AMORTIZED_COST = 4, USAGE_QUANTITY = 5, NORMALIZED_USAGE_AMOUNT = 6 }
+	export enum Metric { BLENDED_COST = 'BLENDED_COST', UNBLENDED_COST = 'UNBLENDED_COST', AMORTIZED_COST = 'AMORTIZED_COST', NET_UNBLENDED_COST = 'NET_UNBLENDED_COST', NET_AMORTIZED_COST = 'NET_AMORTIZED_COST', USAGE_QUANTITY = 'USAGE_QUANTITY', NORMALIZED_USAGE_AMOUNT = 'NORMALIZED_USAGE_AMOUNT' }
 
 	export interface GetDimensionValuesResponse {
 
@@ -1601,7 +1601,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Context { COST_AND_USAGE = 0, RESERVATIONS = 1, SAVINGS_PLANS = 2 }
+	export enum Context { COST_AND_USAGE = 'COST_AND_USAGE', RESERVATIONS = 'RESERVATIONS', SAVINGS_PLANS = 'SAVINGS_PLANS' }
 
 	export interface GetReservationCoverageResponse {
 
@@ -1833,13 +1833,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountScope { PAYER = 0, LINKED = 1 }
+	export enum AccountScope { PAYER = 'PAYER', LINKED = 'LINKED' }
 
-	export enum LookbackPeriodInDays { SEVEN_DAYS = 0, THIRTY_DAYS = 1, SIXTY_DAYS = 2 }
+	export enum LookbackPeriodInDays { SEVEN_DAYS = 'SEVEN_DAYS', THIRTY_DAYS = 'THIRTY_DAYS', SIXTY_DAYS = 'SIXTY_DAYS' }
 
-	export enum TermInYears { ONE_YEAR = 0, THREE_YEARS = 1 }
+	export enum TermInYears { ONE_YEAR = 'ONE_YEAR', THREE_YEARS = 'THREE_YEARS' }
 
-	export enum PaymentOption { NO_UPFRONT = 0, PARTIAL_UPFRONT = 1, ALL_UPFRONT = 2, LIGHT_UTILIZATION = 3, MEDIUM_UTILIZATION = 4, HEAVY_UTILIZATION = 5 }
+	export enum PaymentOption { NO_UPFRONT = 'NO_UPFRONT', PARTIAL_UPFRONT = 'PARTIAL_UPFRONT', ALL_UPFRONT = 'ALL_UPFRONT', LIGHT_UTILIZATION = 'LIGHT_UTILIZATION', MEDIUM_UTILIZATION = 'MEDIUM_UTILIZATION', HEAVY_UTILIZATION = 'HEAVY_UTILIZATION' }
 
 
 	/** Hardware specifications for the service that you want recommendations for. */
@@ -1873,7 +1873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OfferingClass { STANDARD = 0, CONVERTIBLE = 1 }
+	export enum OfferingClass { STANDARD = 'STANDARD', CONVERTIBLE = 'CONVERTIBLE' }
 
 
 	/** Details about your recommended reservation purchase. */
@@ -2652,7 +2652,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RightsizingType { TERMINATE = 0, MODIFY = 1 }
+	export enum RightsizingType { TERMINATE = 'TERMINATE', MODIFY = 'MODIFY' }
 
 
 	/** Details for the modification recommendation. */
@@ -2698,7 +2698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformDifference { HYPERVISOR = 0, NETWORK_INTERFACE = 1, STORAGE_INTERFACE = 2, INSTANCE_STORE_AVAILABILITY = 3, VIRTUALIZATION_TYPE = 4 }
+	export enum PlatformDifference { HYPERVISOR = 'HYPERVISOR', NETWORK_INTERFACE = 'NETWORK_INTERFACE', STORAGE_INTERFACE = 'STORAGE_INTERFACE', INSTANCE_STORE_AVAILABILITY = 'INSTANCE_STORE_AVAILABILITY', VIRTUALIZATION_TYPE = 'VIRTUALIZATION_TYPE' }
 
 
 	/** Details on termination recommendation.  */
@@ -2720,7 +2720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingReasonCode { CPU_OVER_PROVISIONED = 0, CPU_UNDER_PROVISIONED = 1, MEMORY_OVER_PROVISIONED = 2, MEMORY_UNDER_PROVISIONED = 3, EBS_THROUGHPUT_OVER_PROVISIONED = 4, EBS_THROUGHPUT_UNDER_PROVISIONED = 5, EBS_IOPS_OVER_PROVISIONED = 6, EBS_IOPS_UNDER_PROVISIONED = 7, NETWORK_BANDWIDTH_OVER_PROVISIONED = 8, NETWORK_BANDWIDTH_UNDER_PROVISIONED = 9, NETWORK_PPS_OVER_PROVISIONED = 10, NETWORK_PPS_UNDER_PROVISIONED = 11, DISK_IOPS_OVER_PROVISIONED = 12, DISK_IOPS_UNDER_PROVISIONED = 13, DISK_THROUGHPUT_OVER_PROVISIONED = 14, DISK_THROUGHPUT_UNDER_PROVISIONED = 15 }
+	export enum FindingReasonCode { CPU_OVER_PROVISIONED = 'CPU_OVER_PROVISIONED', CPU_UNDER_PROVISIONED = 'CPU_UNDER_PROVISIONED', MEMORY_OVER_PROVISIONED = 'MEMORY_OVER_PROVISIONED', MEMORY_UNDER_PROVISIONED = 'MEMORY_UNDER_PROVISIONED', EBS_THROUGHPUT_OVER_PROVISIONED = 'EBS_THROUGHPUT_OVER_PROVISIONED', EBS_THROUGHPUT_UNDER_PROVISIONED = 'EBS_THROUGHPUT_UNDER_PROVISIONED', EBS_IOPS_OVER_PROVISIONED = 'EBS_IOPS_OVER_PROVISIONED', EBS_IOPS_UNDER_PROVISIONED = 'EBS_IOPS_UNDER_PROVISIONED', NETWORK_BANDWIDTH_OVER_PROVISIONED = 'NETWORK_BANDWIDTH_OVER_PROVISIONED', NETWORK_BANDWIDTH_UNDER_PROVISIONED = 'NETWORK_BANDWIDTH_UNDER_PROVISIONED', NETWORK_PPS_OVER_PROVISIONED = 'NETWORK_PPS_OVER_PROVISIONED', NETWORK_PPS_UNDER_PROVISIONED = 'NETWORK_PPS_UNDER_PROVISIONED', DISK_IOPS_OVER_PROVISIONED = 'DISK_IOPS_OVER_PROVISIONED', DISK_IOPS_UNDER_PROVISIONED = 'DISK_IOPS_UNDER_PROVISIONED', DISK_THROUGHPUT_OVER_PROVISIONED = 'DISK_THROUGHPUT_OVER_PROVISIONED', DISK_THROUGHPUT_UNDER_PROVISIONED = 'DISK_THROUGHPUT_UNDER_PROVISIONED' }
 
 
 	/** You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither.  */
@@ -2750,7 +2750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationTarget { SAME_INSTANCE_FAMILY = 0, CROSS_INSTANCE_FAMILY = 1 }
+	export enum RecommendationTarget { SAME_INSTANCE_FAMILY = 'SAME_INSTANCE_FAMILY', CROSS_INSTANCE_FAMILY = 'CROSS_INSTANCE_FAMILY' }
 
 	export interface GetRightsizingRecommendationRequest {
 
@@ -2916,7 +2916,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportedSavingsPlansType { COMPUTE_SP = 0, EC2_INSTANCE_SP = 1, SAGEMAKER_SP = 2 }
+	export enum SupportedSavingsPlansType { COMPUTE_SP = 'COMPUTE_SP', EC2_INSTANCE_SP = 'EC2_INSTANCE_SP', SAGEMAKER_SP = 'SAGEMAKER_SP' }
 
 
 	/** Contains the hourly metrics for the given recommendation over the lookback period.  */
@@ -3524,7 +3524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlansDataType { ATTRIBUTES = 0, UTILIZATION = 1, AMORTIZED_COMMITMENT = 2, SAVINGS = 3 }
+	export enum SavingsPlansDataType { ATTRIBUTES = 'ATTRIBUTES', UTILIZATION = 'UTILIZATION', AMORTIZED_COMMITMENT = 'AMORTIZED_COMMITMENT', SAVINGS = 'SAVINGS' }
 
 	export interface GetTagsResponse {
 		NextPageToken?: string;
@@ -3687,9 +3687,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CostAllocationTagType { AWSGenerated = 0, UserDefined = 1 }
+	export enum CostAllocationTagType { AWSGenerated = 'AWSGenerated', UserDefined = 'UserDefined' }
 
-	export enum CostAllocationTagStatus { Active = 0, Inactive = 1 }
+	export enum CostAllocationTagStatus { Active = 'Active', Inactive = 'Inactive' }
 
 	export interface ListCostAllocationTagsRequest {
 		Status?: CostAllocationTagStatus;
@@ -3848,7 +3848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GenerationStatus { SUCCEEDED = 0, PROCESSING = 1, FAILED = 2 }
+	export enum GenerationStatus { SUCCEEDED = 'SUCCEEDED', PROCESSING = 'PROCESSING', FAILED = 'FAILED' }
 
 	export interface ListSavingsPlansPurchaseRecommendationGenerationRequest {
 		GenerationStatus?: GenerationStatus;
@@ -4276,7 +4276,7 @@ export namespace MyNS {
 
 
 	/** The rule schema version in this particular Cost Category. */
-	export enum CostCategoryRuleVersion { 'CostCategoryExpression.v1' = 0 }
+	export enum CostCategoryRuleVersion { 'CostCategoryExpression.v1' = 'CostCategoryExpression.v1' }
 
 	@Injectable()
 	export class MyClient {
@@ -4634,81 +4634,81 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateAnomalyMonitorX_Amz_Target { 'AWSInsightsIndexService.CreateAnomalyMonitor' = 0 }
+	export enum CreateAnomalyMonitorX_Amz_Target { 'AWSInsightsIndexService.CreateAnomalyMonitor' = 'AWSInsightsIndexService.CreateAnomalyMonitor' }
 
-	export enum CreateAnomalySubscriptionX_Amz_Target { 'AWSInsightsIndexService.CreateAnomalySubscription' = 0 }
+	export enum CreateAnomalySubscriptionX_Amz_Target { 'AWSInsightsIndexService.CreateAnomalySubscription' = 'AWSInsightsIndexService.CreateAnomalySubscription' }
 
-	export enum CreateCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.CreateCostCategoryDefinition' = 0 }
+	export enum CreateCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.CreateCostCategoryDefinition' = 'AWSInsightsIndexService.CreateCostCategoryDefinition' }
 
-	export enum DeleteAnomalyMonitorX_Amz_Target { 'AWSInsightsIndexService.DeleteAnomalyMonitor' = 0 }
+	export enum DeleteAnomalyMonitorX_Amz_Target { 'AWSInsightsIndexService.DeleteAnomalyMonitor' = 'AWSInsightsIndexService.DeleteAnomalyMonitor' }
 
-	export enum DeleteAnomalySubscriptionX_Amz_Target { 'AWSInsightsIndexService.DeleteAnomalySubscription' = 0 }
+	export enum DeleteAnomalySubscriptionX_Amz_Target { 'AWSInsightsIndexService.DeleteAnomalySubscription' = 'AWSInsightsIndexService.DeleteAnomalySubscription' }
 
-	export enum DeleteCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.DeleteCostCategoryDefinition' = 0 }
+	export enum DeleteCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.DeleteCostCategoryDefinition' = 'AWSInsightsIndexService.DeleteCostCategoryDefinition' }
 
-	export enum DescribeCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.DescribeCostCategoryDefinition' = 0 }
+	export enum DescribeCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.DescribeCostCategoryDefinition' = 'AWSInsightsIndexService.DescribeCostCategoryDefinition' }
 
-	export enum GetAnomaliesX_Amz_Target { 'AWSInsightsIndexService.GetAnomalies' = 0 }
+	export enum GetAnomaliesX_Amz_Target { 'AWSInsightsIndexService.GetAnomalies' = 'AWSInsightsIndexService.GetAnomalies' }
 
-	export enum GetAnomalyMonitorsX_Amz_Target { 'AWSInsightsIndexService.GetAnomalyMonitors' = 0 }
+	export enum GetAnomalyMonitorsX_Amz_Target { 'AWSInsightsIndexService.GetAnomalyMonitors' = 'AWSInsightsIndexService.GetAnomalyMonitors' }
 
-	export enum GetAnomalySubscriptionsX_Amz_Target { 'AWSInsightsIndexService.GetAnomalySubscriptions' = 0 }
+	export enum GetAnomalySubscriptionsX_Amz_Target { 'AWSInsightsIndexService.GetAnomalySubscriptions' = 'AWSInsightsIndexService.GetAnomalySubscriptions' }
 
-	export enum GetCostAndUsageX_Amz_Target { 'AWSInsightsIndexService.GetCostAndUsage' = 0 }
+	export enum GetCostAndUsageX_Amz_Target { 'AWSInsightsIndexService.GetCostAndUsage' = 'AWSInsightsIndexService.GetCostAndUsage' }
 
-	export enum GetCostAndUsageWithResourcesX_Amz_Target { 'AWSInsightsIndexService.GetCostAndUsageWithResources' = 0 }
+	export enum GetCostAndUsageWithResourcesX_Amz_Target { 'AWSInsightsIndexService.GetCostAndUsageWithResources' = 'AWSInsightsIndexService.GetCostAndUsageWithResources' }
 
-	export enum GetCostCategoriesX_Amz_Target { 'AWSInsightsIndexService.GetCostCategories' = 0 }
+	export enum GetCostCategoriesX_Amz_Target { 'AWSInsightsIndexService.GetCostCategories' = 'AWSInsightsIndexService.GetCostCategories' }
 
-	export enum GetCostForecastX_Amz_Target { 'AWSInsightsIndexService.GetCostForecast' = 0 }
+	export enum GetCostForecastX_Amz_Target { 'AWSInsightsIndexService.GetCostForecast' = 'AWSInsightsIndexService.GetCostForecast' }
 
-	export enum GetDimensionValuesX_Amz_Target { 'AWSInsightsIndexService.GetDimensionValues' = 0 }
+	export enum GetDimensionValuesX_Amz_Target { 'AWSInsightsIndexService.GetDimensionValues' = 'AWSInsightsIndexService.GetDimensionValues' }
 
-	export enum GetReservationCoverageX_Amz_Target { 'AWSInsightsIndexService.GetReservationCoverage' = 0 }
+	export enum GetReservationCoverageX_Amz_Target { 'AWSInsightsIndexService.GetReservationCoverage' = 'AWSInsightsIndexService.GetReservationCoverage' }
 
-	export enum GetReservationPurchaseRecommendationX_Amz_Target { 'AWSInsightsIndexService.GetReservationPurchaseRecommendation' = 0 }
+	export enum GetReservationPurchaseRecommendationX_Amz_Target { 'AWSInsightsIndexService.GetReservationPurchaseRecommendation' = 'AWSInsightsIndexService.GetReservationPurchaseRecommendation' }
 
-	export enum GetReservationUtilizationX_Amz_Target { 'AWSInsightsIndexService.GetReservationUtilization' = 0 }
+	export enum GetReservationUtilizationX_Amz_Target { 'AWSInsightsIndexService.GetReservationUtilization' = 'AWSInsightsIndexService.GetReservationUtilization' }
 
-	export enum GetRightsizingRecommendationX_Amz_Target { 'AWSInsightsIndexService.GetRightsizingRecommendation' = 0 }
+	export enum GetRightsizingRecommendationX_Amz_Target { 'AWSInsightsIndexService.GetRightsizingRecommendation' = 'AWSInsightsIndexService.GetRightsizingRecommendation' }
 
-	export enum GetSavingsPlanPurchaseRecommendationDetailsX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlanPurchaseRecommendationDetails' = 0 }
+	export enum GetSavingsPlanPurchaseRecommendationDetailsX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlanPurchaseRecommendationDetails' = 'AWSInsightsIndexService.GetSavingsPlanPurchaseRecommendationDetails' }
 
-	export enum GetSavingsPlansCoverageX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansCoverage' = 0 }
+	export enum GetSavingsPlansCoverageX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansCoverage' = 'AWSInsightsIndexService.GetSavingsPlansCoverage' }
 
-	export enum GetSavingsPlansPurchaseRecommendationX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansPurchaseRecommendation' = 0 }
+	export enum GetSavingsPlansPurchaseRecommendationX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansPurchaseRecommendation' = 'AWSInsightsIndexService.GetSavingsPlansPurchaseRecommendation' }
 
-	export enum GetSavingsPlansUtilizationX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansUtilization' = 0 }
+	export enum GetSavingsPlansUtilizationX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansUtilization' = 'AWSInsightsIndexService.GetSavingsPlansUtilization' }
 
-	export enum GetSavingsPlansUtilizationDetailsX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansUtilizationDetails' = 0 }
+	export enum GetSavingsPlansUtilizationDetailsX_Amz_Target { 'AWSInsightsIndexService.GetSavingsPlansUtilizationDetails' = 'AWSInsightsIndexService.GetSavingsPlansUtilizationDetails' }
 
-	export enum GetTagsX_Amz_Target { 'AWSInsightsIndexService.GetTags' = 0 }
+	export enum GetTagsX_Amz_Target { 'AWSInsightsIndexService.GetTags' = 'AWSInsightsIndexService.GetTags' }
 
-	export enum GetUsageForecastX_Amz_Target { 'AWSInsightsIndexService.GetUsageForecast' = 0 }
+	export enum GetUsageForecastX_Amz_Target { 'AWSInsightsIndexService.GetUsageForecast' = 'AWSInsightsIndexService.GetUsageForecast' }
 
-	export enum ListCostAllocationTagsX_Amz_Target { 'AWSInsightsIndexService.ListCostAllocationTags' = 0 }
+	export enum ListCostAllocationTagsX_Amz_Target { 'AWSInsightsIndexService.ListCostAllocationTags' = 'AWSInsightsIndexService.ListCostAllocationTags' }
 
-	export enum ListCostCategoryDefinitionsX_Amz_Target { 'AWSInsightsIndexService.ListCostCategoryDefinitions' = 0 }
+	export enum ListCostCategoryDefinitionsX_Amz_Target { 'AWSInsightsIndexService.ListCostCategoryDefinitions' = 'AWSInsightsIndexService.ListCostCategoryDefinitions' }
 
-	export enum ListSavingsPlansPurchaseRecommendationGenerationX_Amz_Target { 'AWSInsightsIndexService.ListSavingsPlansPurchaseRecommendationGeneration' = 0 }
+	export enum ListSavingsPlansPurchaseRecommendationGenerationX_Amz_Target { 'AWSInsightsIndexService.ListSavingsPlansPurchaseRecommendationGeneration' = 'AWSInsightsIndexService.ListSavingsPlansPurchaseRecommendationGeneration' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSInsightsIndexService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSInsightsIndexService.ListTagsForResource' = 'AWSInsightsIndexService.ListTagsForResource' }
 
-	export enum ProvideAnomalyFeedbackX_Amz_Target { 'AWSInsightsIndexService.ProvideAnomalyFeedback' = 0 }
+	export enum ProvideAnomalyFeedbackX_Amz_Target { 'AWSInsightsIndexService.ProvideAnomalyFeedback' = 'AWSInsightsIndexService.ProvideAnomalyFeedback' }
 
-	export enum StartSavingsPlansPurchaseRecommendationGenerationX_Amz_Target { 'AWSInsightsIndexService.StartSavingsPlansPurchaseRecommendationGeneration' = 0 }
+	export enum StartSavingsPlansPurchaseRecommendationGenerationX_Amz_Target { 'AWSInsightsIndexService.StartSavingsPlansPurchaseRecommendationGeneration' = 'AWSInsightsIndexService.StartSavingsPlansPurchaseRecommendationGeneration' }
 
-	export enum TagResourceX_Amz_Target { 'AWSInsightsIndexService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSInsightsIndexService.TagResource' = 'AWSInsightsIndexService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSInsightsIndexService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSInsightsIndexService.UntagResource' = 'AWSInsightsIndexService.UntagResource' }
 
-	export enum UpdateAnomalyMonitorX_Amz_Target { 'AWSInsightsIndexService.UpdateAnomalyMonitor' = 0 }
+	export enum UpdateAnomalyMonitorX_Amz_Target { 'AWSInsightsIndexService.UpdateAnomalyMonitor' = 'AWSInsightsIndexService.UpdateAnomalyMonitor' }
 
-	export enum UpdateAnomalySubscriptionX_Amz_Target { 'AWSInsightsIndexService.UpdateAnomalySubscription' = 0 }
+	export enum UpdateAnomalySubscriptionX_Amz_Target { 'AWSInsightsIndexService.UpdateAnomalySubscription' = 'AWSInsightsIndexService.UpdateAnomalySubscription' }
 
-	export enum UpdateCostAllocationTagsStatusX_Amz_Target { 'AWSInsightsIndexService.UpdateCostAllocationTagsStatus' = 0 }
+	export enum UpdateCostAllocationTagsStatusX_Amz_Target { 'AWSInsightsIndexService.UpdateCostAllocationTagsStatus' = 'AWSInsightsIndexService.UpdateCostAllocationTagsStatus' }
 
-	export enum UpdateCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.UpdateCostCategoryDefinition' = 0 }
+	export enum UpdateCostCategoryDefinitionX_Amz_Target { 'AWSInsightsIndexService.UpdateCostCategoryDefinition' = 'AWSInsightsIndexService.UpdateCostCategoryDefinition' }
 
 }
 

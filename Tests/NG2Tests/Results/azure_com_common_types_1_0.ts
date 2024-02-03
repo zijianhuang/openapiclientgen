@@ -131,7 +131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** Plan for the resource. */
@@ -373,7 +373,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuTier { Free = 0, Basic = 1, Standard = 2, Premium = 3 }
+	export enum SkuTier { Free = 'Free', Basic = 'Basic', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The resource model definition for a ARM tracked top level resource */

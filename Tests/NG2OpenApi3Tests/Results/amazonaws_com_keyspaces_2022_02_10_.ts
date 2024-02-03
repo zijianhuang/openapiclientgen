@@ -89,7 +89,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Rs { SINGLE_REGION = 0, MULTI_REGION = 1 }
+	export enum Rs { SINGLE_REGION = 'SINGLE_REGION', MULTI_REGION = 'MULTI_REGION' }
 
 	export interface ValidationException {
 	}
@@ -294,7 +294,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASC = 0, DESC = 1 }
+	export enum SortOrder { ASC = 'ASC', DESC = 'DESC' }
 
 
 	/** The static columns of the table. Static columns store values that are shared by all rows in the same partition. */
@@ -365,7 +365,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThroughputMode { PAY_PER_REQUEST = 0, PROVISIONED = 1 }
+	export enum ThroughputMode { PAY_PER_REQUEST = 'PAY_PER_REQUEST', PROVISIONED = 'PROVISIONED' }
 
 
 	/** <p>Amazon Keyspaces encrypts and decrypts the table data at rest transparently and integrates with Key Management Service for storing and managing the encryption key. You can choose one of the following KMS keys (KMS keys):</p> <ul> <li> <p>Amazon Web Services owned key - This is the default encryption type. The key is owned by Amazon Keyspaces (no additional charge). </p> </li> <li> <p>Customer managed key - This key is stored in your account and is created, owned, and managed by you. You have full control over the customer managed key (KMS charges apply).</p> </li> </ul> <p>For more information about encryption at rest in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>For more information about KMS, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">KMS management service concepts</a> in the <i>Key Management Service Developer Guide</i>.</p> */
@@ -391,7 +391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { CUSTOMER_MANAGED_KMS_KEY = 0, AWS_OWNED_KMS_KEY = 1 }
+	export enum EncryptionType { CUSTOMER_MANAGED_KMS_KEY = 'CUSTOMER_MANAGED_KMS_KEY', AWS_OWNED_KMS_KEY = 'AWS_OWNED_KMS_KEY' }
 
 
 	/** <p>Point-in-time recovery (PITR) helps protect your Amazon Keyspaces tables from accidental write or delete operations by providing you continuous backups of your table data.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> */
@@ -414,7 +414,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PointInTimeRecoveryStatus { ENABLED = 0, DISABLED = 1 }
+	export enum PointInTimeRecoveryStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** <p>Enable custom Time to Live (TTL) settings for rows and columns without setting a TTL default for the specified table.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_enabling">Enabling TTL on tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> */
@@ -437,7 +437,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeToLiveStatus { ENABLED = 0 }
+	export enum TimeToLiveStatus { ENABLED = 'ENABLED' }
 
 
 	/** <p>The client-side timestamp setting of the table.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/client-side-timestamps-how-it-works.html">How it works: Amazon Keyspaces client-side timestamps</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> */
@@ -627,7 +627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableStatus { ACTIVE = 0, CREATING = 1, UPDATING = 2, DELETING = 3, DELETED = 4, RESTORING = 5, INACCESSIBLE_ENCRYPTION_CREDENTIALS = 6 }
+	export enum TableStatus { ACTIVE = 'ACTIVE', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', RESTORING = 'RESTORING', INACCESSIBLE_ENCRYPTION_CREDENTIALS = 'INACCESSIBLE_ENCRYPTION_CREDENTIALS' }
 
 
 	/** <p>The read/write throughput capacity mode for a table. The options are:</p> <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li> <li> <p> <code>throughputMode:PROVISIONED</code>.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> */
@@ -1056,7 +1056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientSideTimestampsStatus { ENABLED = 0 }
+	export enum ClientSideTimestampsStatus { ENABLED = 'ENABLED' }
 
 	@Injectable()
 	export class MyClient {
@@ -1187,31 +1187,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateKeyspaceX_Amz_Target { 'KeyspacesService.CreateKeyspace' = 0 }
+	export enum CreateKeyspaceX_Amz_Target { 'KeyspacesService.CreateKeyspace' = 'KeyspacesService.CreateKeyspace' }
 
-	export enum CreateTableX_Amz_Target { 'KeyspacesService.CreateTable' = 0 }
+	export enum CreateTableX_Amz_Target { 'KeyspacesService.CreateTable' = 'KeyspacesService.CreateTable' }
 
-	export enum DeleteKeyspaceX_Amz_Target { 'KeyspacesService.DeleteKeyspace' = 0 }
+	export enum DeleteKeyspaceX_Amz_Target { 'KeyspacesService.DeleteKeyspace' = 'KeyspacesService.DeleteKeyspace' }
 
-	export enum DeleteTableX_Amz_Target { 'KeyspacesService.DeleteTable' = 0 }
+	export enum DeleteTableX_Amz_Target { 'KeyspacesService.DeleteTable' = 'KeyspacesService.DeleteTable' }
 
-	export enum GetKeyspaceX_Amz_Target { 'KeyspacesService.GetKeyspace' = 0 }
+	export enum GetKeyspaceX_Amz_Target { 'KeyspacesService.GetKeyspace' = 'KeyspacesService.GetKeyspace' }
 
-	export enum GetTableX_Amz_Target { 'KeyspacesService.GetTable' = 0 }
+	export enum GetTableX_Amz_Target { 'KeyspacesService.GetTable' = 'KeyspacesService.GetTable' }
 
-	export enum ListKeyspacesX_Amz_Target { 'KeyspacesService.ListKeyspaces' = 0 }
+	export enum ListKeyspacesX_Amz_Target { 'KeyspacesService.ListKeyspaces' = 'KeyspacesService.ListKeyspaces' }
 
-	export enum ListTablesX_Amz_Target { 'KeyspacesService.ListTables' = 0 }
+	export enum ListTablesX_Amz_Target { 'KeyspacesService.ListTables' = 'KeyspacesService.ListTables' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'KeyspacesService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'KeyspacesService.ListTagsForResource' = 'KeyspacesService.ListTagsForResource' }
 
-	export enum RestoreTableX_Amz_Target { 'KeyspacesService.RestoreTable' = 0 }
+	export enum RestoreTableX_Amz_Target { 'KeyspacesService.RestoreTable' = 'KeyspacesService.RestoreTable' }
 
-	export enum TagResourceX_Amz_Target { 'KeyspacesService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'KeyspacesService.TagResource' = 'KeyspacesService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'KeyspacesService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'KeyspacesService.UntagResource' = 'KeyspacesService.UntagResource' }
 
-	export enum UpdateTableX_Amz_Target { 'KeyspacesService.UpdateTable' = 0 }
+	export enum UpdateTableX_Amz_Target { 'KeyspacesService.UpdateTable' = 'KeyspacesService.UpdateTable' }
 
 }
 

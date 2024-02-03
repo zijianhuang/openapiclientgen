@@ -54,7 +54,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvancedScheduleMonthlyOccurrenceDay { Monday = 0, Tuesday = 1, Wednesday = 2, Thursday = 3, Friday = 4, Saturday = 5, Sunday = 6 }
+	export enum AdvancedScheduleMonthlyOccurrenceDay { Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Sunday = 'Sunday' }
 
 
 	/** Azure query for the update configuration. */
@@ -107,7 +107,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagSettingsPropertiesFilterOperator { All = 0, Any = 1 }
+	export enum TagSettingsPropertiesFilterOperator { All = 'All', Any = 'Any' }
 
 
 	/** Linux specific update configuration. */
@@ -143,7 +143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinuxPropertiesIncludedPackageClassifications { Unclassified = 0, Critical = 1, Security = 2, Other = 3 }
+	export enum LinuxPropertiesIncludedPackageClassifications { Unclassified = 'Unclassified', Critical = 'Critical', Security = 'Security', Other = 'Other' }
 
 
 	/** Non Azure query for the update configuration. */
@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchedulePropertiesFrequency { OneTime = 0, Day = 1, Hour = 2, Week = 3, Month = 4, Minute = 5 }
+	export enum SchedulePropertiesFrequency { OneTime = 'OneTime', Day = 'Day', Hour = 'Hour', Week = 'Week', Month = 'Month', Minute = 'Minute' }
 
 
 	/** Group specific to the update configuration. */
@@ -337,7 +337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WindowsPropertiesIncludedUpdateClassifications { Unclassified = 0, Critical = 1, Security = 2, UpdateRollup = 3, FeaturePack = 4, ServicePack = 5, Definition = 6, Tools = 7, Updates = 8 }
+	export enum WindowsPropertiesIncludedUpdateClassifications { Unclassified = 'Unclassified', Critical = 'Critical', Security = 'Security', UpdateRollup = 'UpdateRollup', FeaturePack = 'FeaturePack', ServicePack = 'ServicePack', Definition = 'Definition', Tools = 'Tools', Updates = 'Updates' }
 
 
 	/** object returned when requesting a collection of software update configuration */
@@ -365,7 +365,7 @@ export namespace MyNS {
 
 
 	/** Target operating system for the software update configuration. */
-	export enum OperatingSystemType { Windows = 0, Linux = 1 }
+	export enum OperatingSystemType { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/** Software update configuration properties. */

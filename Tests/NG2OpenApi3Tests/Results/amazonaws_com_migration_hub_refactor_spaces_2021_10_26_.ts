@@ -68,11 +68,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiGatewayEndpointType { REGIONAL = 0, PRIVATE = 1 }
+	export enum ApiGatewayEndpointType { REGIONAL = 'REGIONAL', PRIVATE = 'PRIVATE' }
 
-	export enum ProxyType { API_GATEWAY = 0 }
+	export enum ProxyType { API_GATEWAY = 'API_GATEWAY' }
 
-	export enum ApplicationState { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, UPDATING = 4 }
+	export enum ApplicationState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED', UPDATING = 'UPDATING' }
 
 
 	/** A collection of up to 50 unique tags */
@@ -196,9 +196,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkFabricType { TRANSIT_GATEWAY = 0, NONE = 1 }
+	export enum NetworkFabricType { TRANSIT_GATEWAY = 'TRANSIT_GATEWAY', NONE = 'NONE' }
 
-	export enum EnvironmentState { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3 }
+	export enum EnvironmentState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface CreateRouteResponse {
 		ApplicationId?: string;
@@ -242,9 +242,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteType { DEFAULT = 0, URI_PATH = 1 }
+	export enum RouteType { DEFAULT = 'DEFAULT', URI_PATH = 'URI_PATH' }
 
-	export enum RouteState { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, UPDATING = 4, INACTIVE = 5 }
+	export enum RouteState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED', UPDATING = 'UPDATING', INACTIVE = 'INACTIVE' }
 
 
 	/** The configuration for the URI path route type.  */
@@ -281,9 +281,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteActivationState { ACTIVE = 0, INACTIVE = 1 }
+	export enum RouteActivationState { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum HttpMethod { DELETE = 0, GET = 1, HEAD = 2, OPTIONS = 3, PATCH = 4, POST = 5, PUT = 6 }
+	export enum HttpMethod { DELETE = 'DELETE', GET = 'GET', HEAD = 'HEAD', OPTIONS = 'OPTIONS', PATCH = 'PATCH', POST = 'POST', PUT = 'PUT' }
 
 	export interface CreateServiceResponse {
 		ApplicationId?: string;
@@ -337,7 +337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceEndpointType { LAMBDA = 0, URL = 1 }
+	export enum ServiceEndpointType { LAMBDA = 'LAMBDA', URL = 'URL' }
 
 
 	/** The input for the Lambda endpoint type.  */
@@ -627,9 +627,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { INVALID_RESOURCE_STATE = 0, RESOURCE_LIMIT_EXCEEDED = 1, RESOURCE_CREATION_FAILURE = 2, RESOURCE_UPDATE_FAILURE = 3, SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE = 4, RESOURCE_DELETION_FAILURE = 5, RESOURCE_RETRIEVAL_FAILURE = 6, RESOURCE_IN_USE = 7, RESOURCE_NOT_FOUND = 8, STATE_TRANSITION_FAILURE = 9, REQUEST_LIMIT_EXCEEDED = 10, NOT_AUTHORIZED = 11 }
+	export enum ErrorCode { INVALID_RESOURCE_STATE = 'INVALID_RESOURCE_STATE', RESOURCE_LIMIT_EXCEEDED = 'RESOURCE_LIMIT_EXCEEDED', RESOURCE_CREATION_FAILURE = 'RESOURCE_CREATION_FAILURE', RESOURCE_UPDATE_FAILURE = 'RESOURCE_UPDATE_FAILURE', SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE = 'SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE', RESOURCE_DELETION_FAILURE = 'RESOURCE_DELETION_FAILURE', RESOURCE_RETRIEVAL_FAILURE = 'RESOURCE_RETRIEVAL_FAILURE', RESOURCE_IN_USE = 'RESOURCE_IN_USE', RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND', STATE_TRANSITION_FAILURE = 'STATE_TRANSITION_FAILURE', REQUEST_LIMIT_EXCEEDED = 'REQUEST_LIMIT_EXCEEDED', NOT_AUTHORIZED = 'NOT_AUTHORIZED' }
 
-	export enum ErrorResourceType { ENVIRONMENT = 0, APPLICATION = 1, ROUTE = 2, SERVICE = 3, TRANSIT_GATEWAY = 4, TRANSIT_GATEWAY_ATTACHMENT = 5, API_GATEWAY = 6, NLB = 7, TARGET_GROUP = 8, LOAD_BALANCER_LISTENER = 9, VPC_LINK = 10, LAMBDA = 11, VPC = 12, SUBNET = 13, ROUTE_TABLE = 14, SECURITY_GROUP = 15, VPC_ENDPOINT_SERVICE_CONFIGURATION = 16, RESOURCE_SHARE = 17, IAM_ROLE = 18 }
+	export enum ErrorResourceType { ENVIRONMENT = 'ENVIRONMENT', APPLICATION = 'APPLICATION', ROUTE = 'ROUTE', SERVICE = 'SERVICE', TRANSIT_GATEWAY = 'TRANSIT_GATEWAY', TRANSIT_GATEWAY_ATTACHMENT = 'TRANSIT_GATEWAY_ATTACHMENT', API_GATEWAY = 'API_GATEWAY', NLB = 'NLB', TARGET_GROUP = 'TARGET_GROUP', LOAD_BALANCER_LISTENER = 'LOAD_BALANCER_LISTENER', VPC_LINK = 'VPC_LINK', LAMBDA = 'LAMBDA', VPC = 'VPC', SUBNET = 'SUBNET', ROUTE_TABLE = 'ROUTE_TABLE', SECURITY_GROUP = 'SECURITY_GROUP', VPC_ENDPOINT_SERVICE_CONFIGURATION = 'VPC_ENDPOINT_SERVICE_CONFIGURATION', RESOURCE_SHARE = 'RESOURCE_SHARE', IAM_ROLE = 'IAM_ROLE' }
 
 	export interface GetEnvironmentResponse {
 		Arn?: string;
@@ -1459,7 +1459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceState { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3 }
+	export enum ServiceState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface DeleteApplicationRequest {
 	}

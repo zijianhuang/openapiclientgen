@@ -2088,17 +2088,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Plus_activities_searchOrderBy { best = 0, recent = 1 }
+	export enum Plus_activities_searchOrderBy { best = 'best', recent = 'recent' }
 
-	export enum Plus_comments_listSortOrder { ascending = 0, descending = 1 }
+	export enum Plus_comments_listSortOrder { ascending = 'ascending', descending = 'descending' }
 
-	export enum Plus_people_listByActivityCollection { plusoners = 0, resharers = 1 }
+	export enum Plus_people_listByActivityCollection { plusoners = 'plusoners', resharers = 'resharers' }
 
-	export enum Plus_activities_listCollection { public = 0 }
+	export enum Plus_activities_listCollection { public = 'public' }
 
-	export enum Plus_people_listCollection { connected = 0, visible = 1 }
+	export enum Plus_people_listCollection { connected = 'connected', visible = 'visible' }
 
-	export enum Plus_people_listOrderBy { alphabetical = 0, best = 1 }
+	export enum Plus_people_listOrderBy { alphabetical = 'alphabetical', best = 'best' }
 
 }
 

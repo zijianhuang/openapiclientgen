@@ -146,7 +146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointStatus { Pending = 0, Available = 1, Deleting = 2, Create_Failed = 3, Delete_Failed = 4 }
+	export enum EndpointStatus { Pending = 'Pending', Available = 'Available', Deleting = 'Deleting', Create_Failed = 'Create_Failed', Delete_Failed = 'Delete_Failed' }
 
 
 	/** The container for the network interface. */
@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointAccessType { Private = 0, CustomerOwnedIp = 1 }
+	export enum EndpointAccessType { Private = 'Private', CustomerOwnedIp = 'CustomerOwnedIp' }
 
 
 	/** The failure reason, if any, for a create or delete endpoint operation. */

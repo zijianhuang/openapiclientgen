@@ -1586,7 +1586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppServicePlans_ListWebAppsReturnValueIdentityType { None = 0, SystemAssigned = 1, UserAssigned = 2 }
+	export enum AppServicePlans_ListWebAppsReturnValueIdentityType { None = 'None', SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned' }
 
 	export interface AppServicePlans_ListWebAppsReturnValueIdentityUserAssignedIdentities {
 

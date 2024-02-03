@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateJobOutputJobType { Import = 0, Export = 1 }
+	export enum CreateJobOutputJobType { Import = 'Import', Export = 'Export' }
 
 
 	/** A discrete item that contains the description and URL of an artifact (such as a PDF). */
@@ -797,7 +797,7 @@ export namespace MyNS {
 
 
 	/** Specifies whether the job to initiate is an import or export job. */
-	export enum JobType { Import = 0, Export = 1 }
+	export enum JobType { Import = 'Import', Export = 'Export' }
 
 
 	/** Input structure for the CreateJob operation. */
@@ -1158,19 +1158,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_CancelJobOperation { CancelJob = 0 }
+	export enum GET_CancelJobOperation { CancelJob = 'CancelJob' }
 
-	export enum GET_CancelJobVersion { '2010-06-01' = 0 }
+	export enum GET_CancelJobVersion { '2010-06-01' = '2010-06-01' }
 
-	export enum GET_CreateJobOperation { CreateJob = 0 }
+	export enum GET_CreateJobOperation { CreateJob = 'CreateJob' }
 
-	export enum GET_GetShippingLabelOperation { GetShippingLabel = 0 }
+	export enum GET_GetShippingLabelOperation { GetShippingLabel = 'GetShippingLabel' }
 
-	export enum GET_GetStatusOperation { GetStatus = 0 }
+	export enum GET_GetStatusOperation { GetStatus = 'GetStatus' }
 
-	export enum GET_ListJobsOperation { ListJobs = 0 }
+	export enum GET_ListJobsOperation { ListJobs = 'ListJobs' }
 
-	export enum GET_UpdateJobOperation { UpdateJob = 0 }
+	export enum GET_UpdateJobOperation { UpdateJob = 'UpdateJob' }
 
 }
 

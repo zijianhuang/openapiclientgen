@@ -55,9 +55,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareMethod { ORGANIZATIONS = 0, HANDSHAKE = 1 }
+	export enum ShareMethod { ORGANIZATIONS = 'ORGANIZATIONS', HANDSHAKE = 'HANDSHAKE' }
 
-	export enum ShareStatus { Shared = 0, PendingAcceptance = 1, Rejected = 2, Rejecting = 3, RejectFailed = 4, Sharing = 5, ShareFailed = 6, Deleted = 7, Deleting = 8 }
+	export enum ShareStatus { Shared = 'Shared', PendingAcceptance = 'PendingAcceptance', Rejected = 'Rejected', Rejecting = 'Rejecting', RejectFailed = 'RejectFailed', Sharing = 'Sharing', ShareFailed = 'ShareFailed', Deleted = 'Deleted', Deleting = 'Deleting' }
 
 	export interface AcceptSharedDirectoryRequest {
 
@@ -487,7 +487,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DirectorySize { Small = 0, Large = 1 }
+	export enum DirectorySize { Small = 'Small', Large = 'Large' }
 
 
 	/** Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created. */
@@ -893,7 +893,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DirectoryEdition { Enterprise = 0, Standard = 1 }
+	export enum DirectoryEdition { Enterprise = 'Enterprise', Standard = 'Standard' }
 
 
 	/** Contains the results of the <a>CreateSnapshot</a> operation. */
@@ -1012,11 +1012,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TrustDirection { 'One-Way: Outgoing' = 0, 'One-Way: Incoming' = 1, 'Two-Way' = 2 }
+	export enum TrustDirection { 'One-Way: Outgoing' = 'One-Way: Outgoing', 'One-Way: Incoming' = 'One-Way: Incoming', 'Two-Way' = 'Two-Way' }
 
-	export enum TrustType { Forest = 0, External = 1 }
+	export enum TrustType { Forest = 'Forest', External = 'External' }
 
-	export enum SelectiveAuth { Enabled = 0, Disabled = 1 }
+	export enum SelectiveAuth { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** The result of a DeleteConditionalForwarder request. */
@@ -1347,9 +1347,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateState { Registering = 0, Registered = 1, RegisterFailed = 2, Deregistering = 3, Deregistered = 4, DeregisterFailed = 5 }
+	export enum CertificateState { Registering = 'Registering', Registered = 'Registered', RegisterFailed = 'RegisterFailed', Deregistering = 'Deregistering', Deregistered = 'Deregistered', DeregisterFailed = 'DeregisterFailed' }
 
-	export enum CertificateType { ClientCertAuth = 0, ClientLDAPS = 1 }
+	export enum CertificateType { ClientCertAuth = 'ClientCertAuth', ClientLDAPS = 'ClientLDAPS' }
 
 
 	/** Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations.  */
@@ -1429,7 +1429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientAuthenticationType { SmartCard = 0, SmartCardOrPassword = 1 }
+	export enum ClientAuthenticationType { SmartCard = 'SmartCard', SmartCardOrPassword = 'SmartCardOrPassword' }
 
 	export interface DescribeClientAuthenticationSettingsRequest {
 
@@ -1493,7 +1493,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationScope { Domain = 0 }
+	export enum ReplicationScope { Domain = 'Domain' }
 
 
 	/** Describes a conditional forwarder. */
@@ -1615,9 +1615,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DirectoryStage { Requested = 0, Creating = 1, Created = 2, Active = 3, Inoperable = 4, Impaired = 5, Restoring = 6, RestoreFailed = 7, Deleting = 8, Deleted = 9, Failed = 10 }
+	export enum DirectoryStage { Requested = 'Requested', Creating = 'Creating', Created = 'Created', Active = 'Active', Inoperable = 'Inoperable', Impaired = 'Impaired', Restoring = 'Restoring', RestoreFailed = 'RestoreFailed', Deleting = 'Deleting', Deleted = 'Deleted', Failed = 'Failed' }
 
-	export enum DirectoryType { SimpleAD = 0, ADConnector = 1, MicrosoftAD = 2, SharedMicrosoftAD = 3 }
+	export enum DirectoryType { SimpleAD = 'SimpleAD', ADConnector = 'ADConnector', MicrosoftAD = 'MicrosoftAD', SharedMicrosoftAD = 'SharedMicrosoftAD' }
 
 
 	/** Contains information about the directory. */
@@ -1703,9 +1703,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RadiusAuthenticationProtocol { PAP = 0, CHAP = 1, 'MS-CHAPv1' = 2, 'MS-CHAPv2' = 3 }
+	export enum RadiusAuthenticationProtocol { PAP = 'PAP', CHAP = 'CHAP', 'MS-CHAPv1' = 'MS-CHAPv1', 'MS-CHAPv2' = 'MS-CHAPv2' }
 
-	export enum RadiusStatus { Creating = 0, Completed = 1, Failed = 2 }
+	export enum RadiusStatus { Creating = 'Creating', Completed = 'Completed', Failed = 'Failed' }
 
 
 	/** Describes the directory owner account details that have been shared to the directory consumer account. */
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSVersion { SERVER_2012 = 0, SERVER_2019 = 1 }
+	export enum OSVersion { SERVER_2012 = 'SERVER_2012', SERVER_2019 = 'SERVER_2019' }
 
 
 	/** Contains the inputs for the <a>DescribeDirectories</a> operation. */
@@ -1842,7 +1842,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainControllerStatus { Creating = 0, Active = 1, Impaired = 2, Restoring = 3, Deleting = 4, Deleted = 5, Failed = 6 }
+	export enum DomainControllerStatus { Creating = 'Creating', Active = 'Active', Impaired = 'Impaired', Restoring = 'Restoring', Deleting = 'Deleting', Deleted = 'Deleted', Failed = 'Failed' }
 
 	export interface DescribeDomainControllersRequest {
 
@@ -1912,7 +1912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicStatus { Registered = 0, 'Topic not found' = 1, Failed = 2, Deleted = 3 }
+	export enum TopicStatus { Registered = 'Registered', 'Topic not found' = 'Topic not found', Failed = 'Failed', Deleted = 'Deleted' }
 
 
 	/** Describes event topics. */
@@ -1969,7 +1969,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LDAPSStatus { Enabling = 0, Enabled = 1, EnableFailed = 2, Disabled = 3 }
+	export enum LDAPSStatus { Enabling = 'Enabling', Enabled = 'Enabled', EnableFailed = 'EnableFailed', Disabled = 'Disabled' }
 
 	export interface DescribeLDAPSSettingsRequest {
 
@@ -1997,7 +1997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LDAPSType { Client = 0 }
+	export enum LDAPSType { Client = 'Client' }
 
 	export interface DescribeRegionsResult {
 		RegionsDescription?: Array<RegionDescription>;
@@ -2054,7 +2054,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionType { Primary = 0, Additional = 1 }
+	export enum RegionType { Primary = 'Primary', Additional = 'Additional' }
 
 	export interface DescribeRegionsRequest {
 
@@ -2141,7 +2141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DirectoryConfigurationStatus { Requested = 0, Updating = 1, Updated = 2, Failed = 3, Default = 4 }
+	export enum DirectoryConfigurationStatus { Requested = 'Requested', Updating = 'Updating', Updated = 'Updated', Failed = 'Failed', Default = 'Default' }
 
 	export interface DirectoryConfigurationSettingRequestDetailedStatus {
 	}
@@ -2264,7 +2264,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotType { Auto = 0, Manual = 1 }
+	export enum SnapshotType { Auto = 'Auto', Manual = 'Manual' }
 
 
 	/** Contains the inputs for the <a>DescribeSnapshots</a> operation. */
@@ -2355,7 +2355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrustState { Creating = 0, Created = 1, Verifying = 2, VerifyFailed = 3, Verified = 4, Updating = 5, UpdateFailed = 6, Updated = 7, Deleting = 8, Deleted = 9, Failed = 10 }
+	export enum TrustState { Creating = 'Creating', Created = 'Created', Verifying = 'Verifying', VerifyFailed = 'VerifyFailed', Verified = 'Verified', Updating = 'Updating', UpdateFailed = 'UpdateFailed', Updated = 'Updated', Deleting = 'Deleting', Deleted = 'Deleted', Failed = 'Failed' }
 
 
 	/** Describes the trust relationships for a particular Managed Microsoft AD directory. If no input parameters are provided, such as directory ID or trust ID, this request describes all the trust relationships. */
@@ -2429,7 +2429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateStatus { Updated = 0, Updating = 1, UpdateFailed = 2 }
+	export enum UpdateStatus { Updated = 'Updated', Updating = 'Updating', UpdateFailed = 'UpdateFailed' }
 
 
 	/**  The value for a given type of <code>UpdateSettings</code>.  */
@@ -2493,7 +2493,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateType { OS = 0 }
+	export enum UpdateType { OS = 'OS' }
 
 	export interface DisableClientAuthenticationResult {
 	}
@@ -3057,7 +3057,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpRouteStatusMsg { Adding = 0, Added = 1, Removing = 2, Removed = 3, AddFailed = 4, RemoveFailed = 5 }
+	export enum IpRouteStatusMsg { Adding = 'Adding', Added = 'Added', Removing = 'Removing', Removed = 'Removed', AddFailed = 'AddFailed', RemoveFailed = 'RemoveFailed' }
 
 	export interface ListIpRoutesRequest {
 
@@ -3187,7 +3187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaExtensionStatus { Initializing = 0, CreatingSnapshot = 1, UpdatingSchema = 2, Replicating = 3, CancelInProgress = 4, RollbackInProgress = 5, Cancelled = 6, Failed = 7, Completed = 8 }
+	export enum SchemaExtensionStatus { Initializing = 'Initializing', CreatingSnapshot = 'CreatingSnapshot', UpdatingSchema = 'UpdatingSchema', Replicating = 'Replicating', CancelInProgress = 'CancelInProgress', RollbackInProgress = 'RollbackInProgress', Cancelled = 'Cancelled', Failed = 'Failed', Completed = 'Completed' }
 
 	export interface ListSchemaExtensionsRequest {
 
@@ -3646,7 +3646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetType { ACCOUNT = 0 }
+	export enum TargetType { ACCOUNT = 'ACCOUNT' }
 
 	export interface InvalidTargetException {
 	}
@@ -4134,9 +4134,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientAuthenticationStatus { Enabled = 0, Disabled = 1 }
+	export enum ClientAuthenticationStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum SnapshotStatus { Creating = 0, Completed = 1, Failed = 2 }
+	export enum SnapshotStatus { Creating = 'Creating', Completed = 'Completed', Failed = 'Failed' }
 
 	@Injectable()
 	export class MyClient {
@@ -4773,139 +4773,139 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptSharedDirectoryX_Amz_Target { 'DirectoryService_20150416.AcceptSharedDirectory' = 0 }
+	export enum AcceptSharedDirectoryX_Amz_Target { 'DirectoryService_20150416.AcceptSharedDirectory' = 'DirectoryService_20150416.AcceptSharedDirectory' }
 
-	export enum AddIpRoutesX_Amz_Target { 'DirectoryService_20150416.AddIpRoutes' = 0 }
+	export enum AddIpRoutesX_Amz_Target { 'DirectoryService_20150416.AddIpRoutes' = 'DirectoryService_20150416.AddIpRoutes' }
 
-	export enum AddRegionX_Amz_Target { 'DirectoryService_20150416.AddRegion' = 0 }
+	export enum AddRegionX_Amz_Target { 'DirectoryService_20150416.AddRegion' = 'DirectoryService_20150416.AddRegion' }
 
-	export enum AddTagsToResourceX_Amz_Target { 'DirectoryService_20150416.AddTagsToResource' = 0 }
+	export enum AddTagsToResourceX_Amz_Target { 'DirectoryService_20150416.AddTagsToResource' = 'DirectoryService_20150416.AddTagsToResource' }
 
-	export enum CancelSchemaExtensionX_Amz_Target { 'DirectoryService_20150416.CancelSchemaExtension' = 0 }
+	export enum CancelSchemaExtensionX_Amz_Target { 'DirectoryService_20150416.CancelSchemaExtension' = 'DirectoryService_20150416.CancelSchemaExtension' }
 
-	export enum ConnectDirectoryX_Amz_Target { 'DirectoryService_20150416.ConnectDirectory' = 0 }
+	export enum ConnectDirectoryX_Amz_Target { 'DirectoryService_20150416.ConnectDirectory' = 'DirectoryService_20150416.ConnectDirectory' }
 
-	export enum CreateAliasX_Amz_Target { 'DirectoryService_20150416.CreateAlias' = 0 }
+	export enum CreateAliasX_Amz_Target { 'DirectoryService_20150416.CreateAlias' = 'DirectoryService_20150416.CreateAlias' }
 
-	export enum CreateComputerX_Amz_Target { 'DirectoryService_20150416.CreateComputer' = 0 }
+	export enum CreateComputerX_Amz_Target { 'DirectoryService_20150416.CreateComputer' = 'DirectoryService_20150416.CreateComputer' }
 
-	export enum CreateConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.CreateConditionalForwarder' = 0 }
+	export enum CreateConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.CreateConditionalForwarder' = 'DirectoryService_20150416.CreateConditionalForwarder' }
 
-	export enum CreateDirectoryX_Amz_Target { 'DirectoryService_20150416.CreateDirectory' = 0 }
+	export enum CreateDirectoryX_Amz_Target { 'DirectoryService_20150416.CreateDirectory' = 'DirectoryService_20150416.CreateDirectory' }
 
-	export enum CreateLogSubscriptionX_Amz_Target { 'DirectoryService_20150416.CreateLogSubscription' = 0 }
+	export enum CreateLogSubscriptionX_Amz_Target { 'DirectoryService_20150416.CreateLogSubscription' = 'DirectoryService_20150416.CreateLogSubscription' }
 
-	export enum CreateMicrosoftADX_Amz_Target { 'DirectoryService_20150416.CreateMicrosoftAD' = 0 }
+	export enum CreateMicrosoftADX_Amz_Target { 'DirectoryService_20150416.CreateMicrosoftAD' = 'DirectoryService_20150416.CreateMicrosoftAD' }
 
-	export enum CreateSnapshotX_Amz_Target { 'DirectoryService_20150416.CreateSnapshot' = 0 }
+	export enum CreateSnapshotX_Amz_Target { 'DirectoryService_20150416.CreateSnapshot' = 'DirectoryService_20150416.CreateSnapshot' }
 
-	export enum CreateTrustX_Amz_Target { 'DirectoryService_20150416.CreateTrust' = 0 }
+	export enum CreateTrustX_Amz_Target { 'DirectoryService_20150416.CreateTrust' = 'DirectoryService_20150416.CreateTrust' }
 
-	export enum DeleteConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.DeleteConditionalForwarder' = 0 }
+	export enum DeleteConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.DeleteConditionalForwarder' = 'DirectoryService_20150416.DeleteConditionalForwarder' }
 
-	export enum DeleteDirectoryX_Amz_Target { 'DirectoryService_20150416.DeleteDirectory' = 0 }
+	export enum DeleteDirectoryX_Amz_Target { 'DirectoryService_20150416.DeleteDirectory' = 'DirectoryService_20150416.DeleteDirectory' }
 
-	export enum DeleteLogSubscriptionX_Amz_Target { 'DirectoryService_20150416.DeleteLogSubscription' = 0 }
+	export enum DeleteLogSubscriptionX_Amz_Target { 'DirectoryService_20150416.DeleteLogSubscription' = 'DirectoryService_20150416.DeleteLogSubscription' }
 
-	export enum DeleteSnapshotX_Amz_Target { 'DirectoryService_20150416.DeleteSnapshot' = 0 }
+	export enum DeleteSnapshotX_Amz_Target { 'DirectoryService_20150416.DeleteSnapshot' = 'DirectoryService_20150416.DeleteSnapshot' }
 
-	export enum DeleteTrustX_Amz_Target { 'DirectoryService_20150416.DeleteTrust' = 0 }
+	export enum DeleteTrustX_Amz_Target { 'DirectoryService_20150416.DeleteTrust' = 'DirectoryService_20150416.DeleteTrust' }
 
-	export enum DeregisterCertificateX_Amz_Target { 'DirectoryService_20150416.DeregisterCertificate' = 0 }
+	export enum DeregisterCertificateX_Amz_Target { 'DirectoryService_20150416.DeregisterCertificate' = 'DirectoryService_20150416.DeregisterCertificate' }
 
-	export enum DeregisterEventTopicX_Amz_Target { 'DirectoryService_20150416.DeregisterEventTopic' = 0 }
+	export enum DeregisterEventTopicX_Amz_Target { 'DirectoryService_20150416.DeregisterEventTopic' = 'DirectoryService_20150416.DeregisterEventTopic' }
 
-	export enum DescribeCertificateX_Amz_Target { 'DirectoryService_20150416.DescribeCertificate' = 0 }
+	export enum DescribeCertificateX_Amz_Target { 'DirectoryService_20150416.DescribeCertificate' = 'DirectoryService_20150416.DescribeCertificate' }
 
-	export enum DescribeClientAuthenticationSettingsX_Amz_Target { 'DirectoryService_20150416.DescribeClientAuthenticationSettings' = 0 }
+	export enum DescribeClientAuthenticationSettingsX_Amz_Target { 'DirectoryService_20150416.DescribeClientAuthenticationSettings' = 'DirectoryService_20150416.DescribeClientAuthenticationSettings' }
 
-	export enum DescribeConditionalForwardersX_Amz_Target { 'DirectoryService_20150416.DescribeConditionalForwarders' = 0 }
+	export enum DescribeConditionalForwardersX_Amz_Target { 'DirectoryService_20150416.DescribeConditionalForwarders' = 'DirectoryService_20150416.DescribeConditionalForwarders' }
 
-	export enum DescribeDirectoriesX_Amz_Target { 'DirectoryService_20150416.DescribeDirectories' = 0 }
+	export enum DescribeDirectoriesX_Amz_Target { 'DirectoryService_20150416.DescribeDirectories' = 'DirectoryService_20150416.DescribeDirectories' }
 
-	export enum DescribeDomainControllersX_Amz_Target { 'DirectoryService_20150416.DescribeDomainControllers' = 0 }
+	export enum DescribeDomainControllersX_Amz_Target { 'DirectoryService_20150416.DescribeDomainControllers' = 'DirectoryService_20150416.DescribeDomainControllers' }
 
-	export enum DescribeEventTopicsX_Amz_Target { 'DirectoryService_20150416.DescribeEventTopics' = 0 }
+	export enum DescribeEventTopicsX_Amz_Target { 'DirectoryService_20150416.DescribeEventTopics' = 'DirectoryService_20150416.DescribeEventTopics' }
 
-	export enum DescribeLDAPSSettingsX_Amz_Target { 'DirectoryService_20150416.DescribeLDAPSSettings' = 0 }
+	export enum DescribeLDAPSSettingsX_Amz_Target { 'DirectoryService_20150416.DescribeLDAPSSettings' = 'DirectoryService_20150416.DescribeLDAPSSettings' }
 
-	export enum DescribeRegionsX_Amz_Target { 'DirectoryService_20150416.DescribeRegions' = 0 }
+	export enum DescribeRegionsX_Amz_Target { 'DirectoryService_20150416.DescribeRegions' = 'DirectoryService_20150416.DescribeRegions' }
 
-	export enum DescribeSettingsX_Amz_Target { 'DirectoryService_20150416.DescribeSettings' = 0 }
+	export enum DescribeSettingsX_Amz_Target { 'DirectoryService_20150416.DescribeSettings' = 'DirectoryService_20150416.DescribeSettings' }
 
-	export enum DescribeSharedDirectoriesX_Amz_Target { 'DirectoryService_20150416.DescribeSharedDirectories' = 0 }
+	export enum DescribeSharedDirectoriesX_Amz_Target { 'DirectoryService_20150416.DescribeSharedDirectories' = 'DirectoryService_20150416.DescribeSharedDirectories' }
 
-	export enum DescribeSnapshotsX_Amz_Target { 'DirectoryService_20150416.DescribeSnapshots' = 0 }
+	export enum DescribeSnapshotsX_Amz_Target { 'DirectoryService_20150416.DescribeSnapshots' = 'DirectoryService_20150416.DescribeSnapshots' }
 
-	export enum DescribeTrustsX_Amz_Target { 'DirectoryService_20150416.DescribeTrusts' = 0 }
+	export enum DescribeTrustsX_Amz_Target { 'DirectoryService_20150416.DescribeTrusts' = 'DirectoryService_20150416.DescribeTrusts' }
 
-	export enum DescribeUpdateDirectoryX_Amz_Target { 'DirectoryService_20150416.DescribeUpdateDirectory' = 0 }
+	export enum DescribeUpdateDirectoryX_Amz_Target { 'DirectoryService_20150416.DescribeUpdateDirectory' = 'DirectoryService_20150416.DescribeUpdateDirectory' }
 
-	export enum DisableClientAuthenticationX_Amz_Target { 'DirectoryService_20150416.DisableClientAuthentication' = 0 }
+	export enum DisableClientAuthenticationX_Amz_Target { 'DirectoryService_20150416.DisableClientAuthentication' = 'DirectoryService_20150416.DisableClientAuthentication' }
 
-	export enum DisableLDAPSX_Amz_Target { 'DirectoryService_20150416.DisableLDAPS' = 0 }
+	export enum DisableLDAPSX_Amz_Target { 'DirectoryService_20150416.DisableLDAPS' = 'DirectoryService_20150416.DisableLDAPS' }
 
-	export enum DisableRadiusX_Amz_Target { 'DirectoryService_20150416.DisableRadius' = 0 }
+	export enum DisableRadiusX_Amz_Target { 'DirectoryService_20150416.DisableRadius' = 'DirectoryService_20150416.DisableRadius' }
 
-	export enum DisableSsoX_Amz_Target { 'DirectoryService_20150416.DisableSso' = 0 }
+	export enum DisableSsoX_Amz_Target { 'DirectoryService_20150416.DisableSso' = 'DirectoryService_20150416.DisableSso' }
 
-	export enum EnableClientAuthenticationX_Amz_Target { 'DirectoryService_20150416.EnableClientAuthentication' = 0 }
+	export enum EnableClientAuthenticationX_Amz_Target { 'DirectoryService_20150416.EnableClientAuthentication' = 'DirectoryService_20150416.EnableClientAuthentication' }
 
-	export enum EnableLDAPSX_Amz_Target { 'DirectoryService_20150416.EnableLDAPS' = 0 }
+	export enum EnableLDAPSX_Amz_Target { 'DirectoryService_20150416.EnableLDAPS' = 'DirectoryService_20150416.EnableLDAPS' }
 
-	export enum EnableRadiusX_Amz_Target { 'DirectoryService_20150416.EnableRadius' = 0 }
+	export enum EnableRadiusX_Amz_Target { 'DirectoryService_20150416.EnableRadius' = 'DirectoryService_20150416.EnableRadius' }
 
-	export enum EnableSsoX_Amz_Target { 'DirectoryService_20150416.EnableSso' = 0 }
+	export enum EnableSsoX_Amz_Target { 'DirectoryService_20150416.EnableSso' = 'DirectoryService_20150416.EnableSso' }
 
-	export enum GetDirectoryLimitsX_Amz_Target { 'DirectoryService_20150416.GetDirectoryLimits' = 0 }
+	export enum GetDirectoryLimitsX_Amz_Target { 'DirectoryService_20150416.GetDirectoryLimits' = 'DirectoryService_20150416.GetDirectoryLimits' }
 
-	export enum GetSnapshotLimitsX_Amz_Target { 'DirectoryService_20150416.GetSnapshotLimits' = 0 }
+	export enum GetSnapshotLimitsX_Amz_Target { 'DirectoryService_20150416.GetSnapshotLimits' = 'DirectoryService_20150416.GetSnapshotLimits' }
 
-	export enum ListCertificatesX_Amz_Target { 'DirectoryService_20150416.ListCertificates' = 0 }
+	export enum ListCertificatesX_Amz_Target { 'DirectoryService_20150416.ListCertificates' = 'DirectoryService_20150416.ListCertificates' }
 
-	export enum ListIpRoutesX_Amz_Target { 'DirectoryService_20150416.ListIpRoutes' = 0 }
+	export enum ListIpRoutesX_Amz_Target { 'DirectoryService_20150416.ListIpRoutes' = 'DirectoryService_20150416.ListIpRoutes' }
 
-	export enum ListLogSubscriptionsX_Amz_Target { 'DirectoryService_20150416.ListLogSubscriptions' = 0 }
+	export enum ListLogSubscriptionsX_Amz_Target { 'DirectoryService_20150416.ListLogSubscriptions' = 'DirectoryService_20150416.ListLogSubscriptions' }
 
-	export enum ListSchemaExtensionsX_Amz_Target { 'DirectoryService_20150416.ListSchemaExtensions' = 0 }
+	export enum ListSchemaExtensionsX_Amz_Target { 'DirectoryService_20150416.ListSchemaExtensions' = 'DirectoryService_20150416.ListSchemaExtensions' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'DirectoryService_20150416.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'DirectoryService_20150416.ListTagsForResource' = 'DirectoryService_20150416.ListTagsForResource' }
 
-	export enum RegisterCertificateX_Amz_Target { 'DirectoryService_20150416.RegisterCertificate' = 0 }
+	export enum RegisterCertificateX_Amz_Target { 'DirectoryService_20150416.RegisterCertificate' = 'DirectoryService_20150416.RegisterCertificate' }
 
-	export enum RegisterEventTopicX_Amz_Target { 'DirectoryService_20150416.RegisterEventTopic' = 0 }
+	export enum RegisterEventTopicX_Amz_Target { 'DirectoryService_20150416.RegisterEventTopic' = 'DirectoryService_20150416.RegisterEventTopic' }
 
-	export enum RejectSharedDirectoryX_Amz_Target { 'DirectoryService_20150416.RejectSharedDirectory' = 0 }
+	export enum RejectSharedDirectoryX_Amz_Target { 'DirectoryService_20150416.RejectSharedDirectory' = 'DirectoryService_20150416.RejectSharedDirectory' }
 
-	export enum RemoveIpRoutesX_Amz_Target { 'DirectoryService_20150416.RemoveIpRoutes' = 0 }
+	export enum RemoveIpRoutesX_Amz_Target { 'DirectoryService_20150416.RemoveIpRoutes' = 'DirectoryService_20150416.RemoveIpRoutes' }
 
-	export enum RemoveRegionX_Amz_Target { 'DirectoryService_20150416.RemoveRegion' = 0 }
+	export enum RemoveRegionX_Amz_Target { 'DirectoryService_20150416.RemoveRegion' = 'DirectoryService_20150416.RemoveRegion' }
 
-	export enum RemoveTagsFromResourceX_Amz_Target { 'DirectoryService_20150416.RemoveTagsFromResource' = 0 }
+	export enum RemoveTagsFromResourceX_Amz_Target { 'DirectoryService_20150416.RemoveTagsFromResource' = 'DirectoryService_20150416.RemoveTagsFromResource' }
 
-	export enum ResetUserPasswordX_Amz_Target { 'DirectoryService_20150416.ResetUserPassword' = 0 }
+	export enum ResetUserPasswordX_Amz_Target { 'DirectoryService_20150416.ResetUserPassword' = 'DirectoryService_20150416.ResetUserPassword' }
 
-	export enum RestoreFromSnapshotX_Amz_Target { 'DirectoryService_20150416.RestoreFromSnapshot' = 0 }
+	export enum RestoreFromSnapshotX_Amz_Target { 'DirectoryService_20150416.RestoreFromSnapshot' = 'DirectoryService_20150416.RestoreFromSnapshot' }
 
-	export enum ShareDirectoryX_Amz_Target { 'DirectoryService_20150416.ShareDirectory' = 0 }
+	export enum ShareDirectoryX_Amz_Target { 'DirectoryService_20150416.ShareDirectory' = 'DirectoryService_20150416.ShareDirectory' }
 
-	export enum StartSchemaExtensionX_Amz_Target { 'DirectoryService_20150416.StartSchemaExtension' = 0 }
+	export enum StartSchemaExtensionX_Amz_Target { 'DirectoryService_20150416.StartSchemaExtension' = 'DirectoryService_20150416.StartSchemaExtension' }
 
-	export enum UnshareDirectoryX_Amz_Target { 'DirectoryService_20150416.UnshareDirectory' = 0 }
+	export enum UnshareDirectoryX_Amz_Target { 'DirectoryService_20150416.UnshareDirectory' = 'DirectoryService_20150416.UnshareDirectory' }
 
-	export enum UpdateConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.UpdateConditionalForwarder' = 0 }
+	export enum UpdateConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.UpdateConditionalForwarder' = 'DirectoryService_20150416.UpdateConditionalForwarder' }
 
-	export enum UpdateDirectorySetupX_Amz_Target { 'DirectoryService_20150416.UpdateDirectorySetup' = 0 }
+	export enum UpdateDirectorySetupX_Amz_Target { 'DirectoryService_20150416.UpdateDirectorySetup' = 'DirectoryService_20150416.UpdateDirectorySetup' }
 
-	export enum UpdateNumberOfDomainControllersX_Amz_Target { 'DirectoryService_20150416.UpdateNumberOfDomainControllers' = 0 }
+	export enum UpdateNumberOfDomainControllersX_Amz_Target { 'DirectoryService_20150416.UpdateNumberOfDomainControllers' = 'DirectoryService_20150416.UpdateNumberOfDomainControllers' }
 
-	export enum UpdateRadiusX_Amz_Target { 'DirectoryService_20150416.UpdateRadius' = 0 }
+	export enum UpdateRadiusX_Amz_Target { 'DirectoryService_20150416.UpdateRadius' = 'DirectoryService_20150416.UpdateRadius' }
 
-	export enum UpdateSettingsX_Amz_Target { 'DirectoryService_20150416.UpdateSettings' = 0 }
+	export enum UpdateSettingsX_Amz_Target { 'DirectoryService_20150416.UpdateSettings' = 'DirectoryService_20150416.UpdateSettings' }
 
-	export enum UpdateTrustX_Amz_Target { 'DirectoryService_20150416.UpdateTrust' = 0 }
+	export enum UpdateTrustX_Amz_Target { 'DirectoryService_20150416.UpdateTrust' = 'DirectoryService_20150416.UpdateTrust' }
 
-	export enum VerifyTrustX_Amz_Target { 'DirectoryService_20150416.VerifyTrust' = 0 }
+	export enum VerifyTrustX_Amz_Target { 'DirectoryService_20150416.VerifyTrust' = 'DirectoryService_20150416.VerifyTrust' }
 
 }
 

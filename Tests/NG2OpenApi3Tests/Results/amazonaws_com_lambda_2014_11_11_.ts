@@ -182,9 +182,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Runtime { nodejs = 0 }
+	export enum Runtime { nodejs = 'nodejs' }
 
-	export enum Mode { event = 0 }
+	export enum Mode { event = 'event' }
 
 
 	/** The object for the Lambda function location. */

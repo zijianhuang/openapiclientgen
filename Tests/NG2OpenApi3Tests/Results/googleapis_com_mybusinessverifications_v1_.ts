@@ -204,9 +204,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VerificationMethod { VERIFICATION_METHOD_UNSPECIFIED = 0, ADDRESS = 1, EMAIL = 2, PHONE_CALL = 3, SMS = 4, AUTO = 5, VETTED_PARTNER = 6 }
+	export enum VerificationMethod { VERIFICATION_METHOD_UNSPECIFIED = 'VERIFICATION_METHOD_UNSPECIFIED', ADDRESS = 'ADDRESS', EMAIL = 'EMAIL', PHONE_CALL = 'PHONE_CALL', SMS = 'SMS', AUTO = 'AUTO', VETTED_PARTNER = 'VETTED_PARTNER' }
 
-	export enum VerificationState { STATE_UNSPECIFIED = 0, PENDING = 1, COMPLETED = 2, FAILED = 3 }
+	export enum VerificationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Indicates that the location fails to comply with our [guidelines](https://support.google.com/business/answer/3038177). */
@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplyWithGuidelinesRecommendationReason { RECOMMENDATION_REASON_UNSPECIFIED = 0, BUSINESS_LOCATION_SUSPENDED = 1, BUSINESS_LOCATION_DISABLED = 2 }
+	export enum ComplyWithGuidelinesRecommendationReason { RECOMMENDATION_REASON_UNSPECIFIED = 'RECOMMENDATION_REASON_UNSPECIFIED', BUSINESS_LOCATION_SUSPENDED = 'BUSINESS_LOCATION_SUSPENDED', BUSINESS_LOCATION_DISABLED = 'BUSINESS_LOCATION_DISABLED' }
 
 
 	/** Display data for verifications through email. */

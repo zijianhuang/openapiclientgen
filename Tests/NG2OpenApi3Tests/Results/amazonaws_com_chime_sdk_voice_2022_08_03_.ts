@@ -37,7 +37,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { BadRequest = 0, Conflict = 1, Forbidden = 2, NotFound = 3, PreconditionFailed = 4, ResourceLimitExceeded = 5, ServiceFailure = 6, AccessDenied = 7, ServiceUnavailable = 8, Throttled = 9, Throttling = 10, Unauthorized = 11, Unprocessable = 12, VoiceConnectorGroupAssociationsExist = 13, PhoneNumberAssociationsExist = 14, Gone = 15 }
+	export enum ErrorCode { BadRequest = 'BadRequest', Conflict = 'Conflict', Forbidden = 'Forbidden', NotFound = 'NotFound', PreconditionFailed = 'PreconditionFailed', ResourceLimitExceeded = 'ResourceLimitExceeded', ServiceFailure = 'ServiceFailure', AccessDenied = 'AccessDenied', ServiceUnavailable = 'ServiceUnavailable', Throttled = 'Throttled', Throttling = 'Throttling', Unauthorized = 'Unauthorized', Unprocessable = 'Unprocessable', VoiceConnectorGroupAssociationsExist = 'VoiceConnectorGroupAssociationsExist', PhoneNumberAssociationsExist = 'PhoneNumberAssociationsExist', Gone = 'Gone' }
 
 	export interface UnauthorizedClientException {
 	}
@@ -179,7 +179,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberProductType { VoiceConnector = 0, SipMediaApplicationDialIn = 1 }
+	export enum PhoneNumberProductType { VoiceConnector = 'VoiceConnector', SipMediaApplicationDialIn = 'SipMediaApplicationDialIn' }
 
 	export interface CreatePhoneNumberOrderResponse {
 		PhoneNumberOrder?: PhoneNumberOrder;
@@ -225,9 +225,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberOrderStatus { Processing = 0, Successful = 1, Failed = 2, Partial = 3, PendingDocuments = 4, Submitted = 5, FOC = 6, ChangeRequested = 7, Exception = 8, CancelRequested = 9, Cancelled = 10 }
+	export enum PhoneNumberOrderStatus { Processing = 'Processing', Successful = 'Successful', Failed = 'Failed', Partial = 'Partial', PendingDocuments = 'PendingDocuments', Submitted = 'Submitted', FOC = 'FOC', ChangeRequested = 'ChangeRequested', Exception = 'Exception', CancelRequested = 'CancelRequested', Cancelled = 'Cancelled' }
 
-	export enum PhoneNumberOrderType { New = 0, Porting = 1 }
+	export enum PhoneNumberOrderType { New = 'New', Porting = 'Porting' }
 
 
 	/** A phone number for which an order has been placed. */
@@ -249,7 +249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderedPhoneNumberStatus { Processing = 0, Acquired = 1, Failed = 2 }
+	export enum OrderedPhoneNumberStatus { Processing = 'Processing', Acquired = 'Acquired', Failed = 'Failed' }
 
 	export interface ResourceLimitExceededException {
 	}
@@ -319,9 +319,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProxySessionStatus { Open = 0, InProgress = 1, Closed = 2 }
+	export enum ProxySessionStatus { Open = 'Open', InProgress = 'InProgress', Closed = 'Closed' }
 
-	export enum Capability { Voice = 0, SMS = 1 }
+	export enum Capability { Voice = 'Voice', SMS = 'SMS' }
 
 
 	/** The phone number and proxy phone number for a participant in an Amazon Chime SDK Voice Connector proxy session. */
@@ -343,9 +343,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NumberSelectionBehavior { PreferSticky = 0, AvoidSticky = 1 }
+	export enum NumberSelectionBehavior { PreferSticky = 'PreferSticky', AvoidSticky = 'AvoidSticky' }
 
-	export enum GeoMatchLevel { Country = 0, AreaCode = 1 }
+	export enum GeoMatchLevel { Country = 'Country', AreaCode = 'AreaCode' }
 
 
 	/** The country and area code for a proxy phone number in a proxy phone session. */
@@ -549,7 +549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SipRuleTriggerType { ToPhoneNumber = 0, RequestUriHostname = 1 }
+	export enum SipRuleTriggerType { ToPhoneNumber = 'ToPhoneNumber', RequestUriHostname = 'RequestUriHostname' }
 
 
 	/** A target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided. */
@@ -623,7 +623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceConnectorAwsRegion { 'us-east-1' = 0, 'us-west-2' = 1, 'ca-central-1' = 2, 'eu-central-1' = 3, 'eu-west-1' = 4, 'eu-west-2' = 5, 'ap-northeast-2' = 6, 'ap-northeast-1' = 7, 'ap-southeast-1' = 8, 'ap-southeast-2' = 9 }
+	export enum VoiceConnectorAwsRegion { 'us-east-1' = 'us-east-1', 'us-west-2' = 'us-west-2', 'ca-central-1' = 'ca-central-1', 'eu-central-1' = 'eu-central-1', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'ap-northeast-2' = 'ap-northeast-2', 'ap-northeast-1' = 'ap-northeast-1', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2' }
 
 	export interface CreateVoiceConnectorGroupResponse {
 		VoiceConnectorGroup?: VoiceConnectorGroup;
@@ -925,9 +925,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { Local = 0, TollFree = 1 }
+	export enum PhoneNumberType { Local = 'Local', TollFree = 'TollFree' }
 
-	export enum PhoneNumberStatus { Cancelled = 0, PortinCancelRequested = 1, PortinInProgress = 2, AcquireInProgress = 3, AcquireFailed = 4, Unassigned = 5, Assigned = 6, ReleaseInProgress = 7, DeleteInProgress = 8, ReleaseFailed = 9, DeleteFailed = 10 }
+	export enum PhoneNumberStatus { Cancelled = 'Cancelled', PortinCancelRequested = 'PortinCancelRequested', PortinInProgress = 'PortinInProgress', AcquireInProgress = 'AcquireInProgress', AcquireFailed = 'AcquireFailed', Unassigned = 'Unassigned', Assigned = 'Assigned', ReleaseInProgress = 'ReleaseInProgress', DeleteInProgress = 'DeleteInProgress', ReleaseFailed = 'ReleaseFailed', DeleteFailed = 'DeleteFailed' }
 
 
 	/** The phone number capabilities for Amazon Chime SDK phone numbers, such as enabled inbound and outbound calling, and text messaging. */
@@ -984,9 +984,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberAssociationName { VoiceConnectorId = 0, VoiceConnectorGroupId = 1, SipRuleId = 2 }
+	export enum PhoneNumberAssociationName { VoiceConnectorId = 'VoiceConnectorId', VoiceConnectorGroupId = 'VoiceConnectorGroupId', SipRuleId = 'SipRuleId' }
 
-	export enum CallingNameStatus { Unassigned = 0, UpdateInProgress = 1, UpdateSucceeded = 2, UpdateFailed = 3 }
+	export enum CallingNameStatus { Unassigned = 'Unassigned', UpdateInProgress = 'UpdateInProgress', UpdateSucceeded = 'UpdateSucceeded', UpdateFailed = 'UpdateFailed' }
 
 	export interface GetPhoneNumberOrderResponse {
 		PhoneNumberOrder?: PhoneNumberOrder;
@@ -1072,7 +1072,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlexaSkillStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum AlexaSkillStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface GetSipMediaApplicationLoggingConfigurationResponse {
 		SipMediaApplicationLoggingConfiguration?: SipMediaApplicationLoggingConfiguration;
@@ -1387,7 +1387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginationRouteProtocol { TCP = 0, UDP = 1 }
+	export enum OriginationRouteProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 	export interface GetVoiceConnectorProxyResponse {
 		Proxy?: Proxy;
@@ -1482,7 +1482,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationTarget { EventBridge = 0, SNS = 1, SQS = 2 }
+	export enum NotificationTarget { EventBridge = 'EventBridge', SNS = 'SNS', SQS = 'SQS' }
 
 
 	/** The configuration for a call analytics task. */
@@ -2308,7 +2308,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CallLegType { Caller = 0, Callee = 1 }
+	export enum CallLegType { Caller = 'Caller', Callee = 'Callee' }
 
 	export interface CreatePhoneNumberOrderRequest {
 
@@ -2927,7 +2927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LanguageCode { 'en-US' = 0 }
+	export enum LanguageCode { 'en-US' = 'en-US' }
 
 	export interface ListPhoneNumberOrdersRequest {
 	}
@@ -4536,7 +4536,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociatePhoneNumbersWithVoiceConnectorOperation { 'associate-phone-numbers' = 0 }
+	export enum AssociatePhoneNumbersWithVoiceConnectorOperation { 'associate-phone-numbers' = 'associate-phone-numbers' }
 
 	export interface AssociatePhoneNumbersWithVoiceConnectorPostBody {
 
@@ -4584,7 +4584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchDeletePhoneNumberOperation { 'batch-delete' = 0 }
+	export enum BatchDeletePhoneNumberOperation { 'batch-delete' = 'batch-delete' }
 
 	export interface BatchDeletePhoneNumberPostBody {
 
@@ -4603,7 +4603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchUpdatePhoneNumberOperation { 'batch-update' = 0 }
+	export enum BatchUpdatePhoneNumberOperation { 'batch-update' = 'batch-update' }
 
 	export interface BatchUpdatePhoneNumberPostBody {
 
@@ -5457,7 +5457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteVoiceConnectorTerminationCredentialsOperation { delete = 0 }
+	export enum DeleteVoiceConnectorTerminationCredentialsOperation { delete = 'delete' }
 
 	export interface DeleteVoiceConnectorTerminationCredentialsPostBody {
 
@@ -5542,7 +5542,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisassociatePhoneNumbersFromVoiceConnectorOperation { 'disassociate-phone-numbers' = 0 }
+	export enum DisassociatePhoneNumbersFromVoiceConnectorOperation { 'disassociate-phone-numbers' = 'disassociate-phone-numbers' }
 
 	export interface DisassociatePhoneNumbersFromVoiceConnectorPostBody {
 
@@ -5710,7 +5710,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PutVoiceConnectorTerminationCredentialsOperation { put = 0 }
+	export enum PutVoiceConnectorTerminationCredentialsOperation { put = 'put' }
 
 	export interface PutVoiceConnectorTerminationCredentialsPostBody {
 
@@ -5725,9 +5725,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RestorePhoneNumberOperation { restore = 0 }
+	export enum RestorePhoneNumberOperation { restore = 'restore' }
 
-	export enum SearchAvailablePhoneNumbersType { 'phone-numbers' = 0 }
+	export enum SearchAvailablePhoneNumbersType { 'phone-numbers' = 'phone-numbers' }
 
 	export interface StartSpeakerSearchTaskPostBody {
 
@@ -5834,9 +5834,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StopSpeakerSearchTaskOperation { stop = 0 }
+	export enum StopSpeakerSearchTaskOperation { stop = 'stop' }
 
-	export enum TagResourceOperation { 'tag-resource' = 0 }
+	export enum TagResourceOperation { 'tag-resource' = 'tag-resource' }
 
 	export interface TagResourcePostBody {
 
@@ -5873,7 +5873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UntagResourceOperation { 'untag-resource' = 0 }
+	export enum UntagResourceOperation { 'untag-resource' = 'untag-resource' }
 
 	export interface UntagResourcePostBody {
 

@@ -153,9 +153,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeType { PUT = 0, DELETE = 1 }
+	export enum ChangeType { PUT = 'PUT', DELETE = 'DELETE' }
 
-	export enum ChangesetStatus { PENDING = 0, PROCESSING = 1, FAILED = 2, COMPLETED = 3 }
+	export enum ChangesetStatus { PENDING = 'PENDING', PROCESSING = 'PROCESSING', FAILED = 'FAILED', COMPLETED = 'COMPLETED' }
 
 
 	/** Provides details in the event of a failed flow, including the error type and the related error message. */
@@ -177,7 +177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorDetails { 'The inputs to this request are invalid.' = 0, 'Service limits have been exceeded.' = 1, 'Missing required permission to perform this request.' = 2, 'One or more inputs to this request were not found.' = 3, 'The system temporarily lacks sufficient resources to process the request.' = 4, 'An internal error has occurred.' = 5, Cancelled = 6, 'A user recoverable error has occurred' = 7 }
+	export enum ErrorDetails { 'The inputs to this request are invalid.' = 'The inputs to this request are invalid.', 'Service limits have been exceeded.' = 'Service limits have been exceeded.', 'Missing required permission to perform this request.' = 'Missing required permission to perform this request.', 'One or more inputs to this request were not found.' = 'One or more inputs to this request were not found.', 'The system temporarily lacks sufficient resources to process the request.' = 'The system temporarily lacks sufficient resources to process the request.', 'An internal error has occurred.' = 'An internal error has occurred.', Cancelled = 'Cancelled', 'A user recoverable error has occurred' = 'A user recoverable error has occurred' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -256,9 +256,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KxClusterStatus { PENDING = 0, CREATING = 1, CREATE_FAILED = 2, RUNNING = 3, UPDATING = 4, DELETING = 5, DELETED = 6, DELETE_FAILED = 7 }
+	export enum KxClusterStatus { PENDING = 'PENDING', CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', RUNNING = 'RUNNING', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', DELETE_FAILED = 'DELETE_FAILED' }
 
-	export enum KxClusterType { HDB = 0, RDB = 1, GATEWAY = 2 }
+	export enum KxClusterType { HDB = 'HDB', RDB = 'RDB', GATEWAY = 'GATEWAY' }
 
 
 	/** The configuration of data that is available for querying from this database. */
@@ -369,7 +369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoScalingMetric { CPU_UTILIZATION_PERCENTAGE = 0 }
+	export enum AutoScalingMetric { CPU_UTILIZATION_PERCENTAGE = 'CPU_UTILIZATION_PERCENTAGE' }
 
 
 	/** A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection. */
@@ -413,7 +413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPAddressType { IP_V4 = 0 }
+	export enum IPAddressType { IP_V4 = 'IP_V4' }
 
 
 	/** Defines the key-value pairs to make them available inside the cluster. */
@@ -486,9 +486,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KxSavedownStorageType { SDS01 = 0 }
+	export enum KxSavedownStorageType { SDS01 = 'SDS01' }
 
-	export enum KxAzMode { SINGLE = 0, MULTI = 1 }
+	export enum KxAzMode { SINGLE = 'SINGLE', MULTI = 'MULTI' }
 
 	export interface CreateKxDatabaseResponse {
 		databaseName?: string;
@@ -559,7 +559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentStatus { CREATE_REQUESTED = 0, CREATING = 1, CREATED = 2, DELETE_REQUESTED = 3, DELETING = 4, DELETED = 5, FAILED_CREATION = 6, RETRY_DELETION = 7, FAILED_DELETION = 8, UPDATE_NETWORK_REQUESTED = 9, UPDATING_NETWORK = 10, FAILED_UPDATING_NETWORK = 11, SUSPENDED = 12 }
+	export enum EnvironmentStatus { CREATE_REQUESTED = 'CREATE_REQUESTED', CREATING = 'CREATING', CREATED = 'CREATED', DELETE_REQUESTED = 'DELETE_REQUESTED', DELETING = 'DELETING', DELETED = 'DELETED', FAILED_CREATION = 'FAILED_CREATION', RETRY_DELETION = 'RETRY_DELETION', FAILED_DELETION = 'FAILED_DELETION', UPDATE_NETWORK_REQUESTED = 'UPDATE_NETWORK_REQUESTED', UPDATING_NETWORK = 'UPDATING_NETWORK', FAILED_UPDATING_NETWORK = 'FAILED_UPDATING_NETWORK', SUSPENDED = 'SUSPENDED' }
 
 	export interface CreateKxUserResponse {
 		userName?: string;
@@ -692,7 +692,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FederationMode { FEDERATED = 0, LOCAL = 1 }
+	export enum FederationMode { FEDERATED = 'FEDERATED', LOCAL = 'LOCAL' }
 
 
 	/** Configuration information when authentication mode is FEDERATED. */
@@ -921,7 +921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TgwStatus { NONE = 0, UPDATE_REQUESTED = 1, UPDATING = 2, FAILED_UPDATE = 3, SUCCESSFULLY_UPDATED = 4 }
+	export enum TgwStatus { NONE = 'NONE', UPDATE_REQUESTED = 'UPDATE_REQUESTED', UPDATING = 'UPDATING', FAILED_UPDATE = 'FAILED_UPDATE', SUCCESSFULLY_UPDATED = 'SUCCESSFULLY_UPDATED' }
 
 
 	/** The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network. */
@@ -1882,7 +1882,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsStatus { NONE = 0, UPDATE_REQUESTED = 1, UPDATING = 2, FAILED_UPDATE = 3, SUCCESSFULLY_UPDATED = 4 }
+	export enum DnsStatus { NONE = 'NONE', UPDATE_REQUESTED = 'UPDATE_REQUESTED', UPDATING = 'UPDATING', FAILED_UPDATE = 'FAILED_UPDATE', SUCCESSFULLY_UPDATED = 'SUCCESSFULLY_UPDATED' }
 
 	export interface GetKxUserRequest {
 	}

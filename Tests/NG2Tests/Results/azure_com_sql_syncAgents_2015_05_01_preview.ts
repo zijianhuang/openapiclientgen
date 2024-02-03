@@ -83,7 +83,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncAgentPropertiesState { Online = 0, Offline = 1, NeverConnected = 2 }
+	export enum SyncAgentPropertiesState { Online = 'Online', Offline = 'Offline', NeverConnected = 'NeverConnected' }
 
 
 	/** Properties of an Azure SQL Database sync agent key. */
@@ -179,7 +179,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncAgentLinkedDatabasePropertiesDatabaseType { AzureSqlDatabase = 0, SqlServerDatabase = 1 }
+	export enum SyncAgentLinkedDatabasePropertiesDatabaseType { AzureSqlDatabase = 'AzureSqlDatabase', SqlServerDatabase = 'SqlServerDatabase' }
 
 
 	/** A list of sync agent linked databases. */

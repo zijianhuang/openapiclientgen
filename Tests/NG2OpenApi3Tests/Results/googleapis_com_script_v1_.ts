@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileType { ENUM_TYPE_UNSPECIFIED = 0, SERVER_JS = 1, HTML = 2, JSON = 3 }
+	export enum FileType { ENUM_TYPE_UNSPECIFIED = 'ENUM_TYPE_UNSPECIFIED', SERVER_JS = 'SERVER_JS', HTML = 'HTML', JSON = 'JSON' }
 
 
 	/** Request to create a script project. Request to create a script project. */
@@ -357,9 +357,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsScriptTypeAddOnEntryPointAddOnType { UNKNOWN_ADDON_TYPE = 0, GMAIL = 1, DATA_STUDIO = 2 }
+	export enum GoogleAppsScriptTypeAddOnEntryPointAddOnType { UNKNOWN_ADDON_TYPE = 'UNKNOWN_ADDON_TYPE', GMAIL = 'GMAIL', DATA_STUDIO = 'DATA_STUDIO' }
 
-	export enum EntryPointEntryPointType { ENTRY_POINT_TYPE_UNSPECIFIED = 0, WEB_APP = 1, EXECUTION_API = 2, ADD_ON = 3 }
+	export enum EntryPointEntryPointType { ENTRY_POINT_TYPE_UNSPECIFIED = 'ENTRY_POINT_TYPE_UNSPECIFIED', WEB_APP = 'WEB_APP', EXECUTION_API = 'EXECUTION_API', ADD_ON = 'ADD_ON' }
 
 
 	/** An API executable entry point. */
@@ -399,7 +399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsScriptTypeExecutionApiConfigAccess { UNKNOWN_ACCESS = 0, MYSELF = 1, DOMAIN = 2, ANYONE = 3, ANYONE_ANONYMOUS = 4 }
+	export enum GoogleAppsScriptTypeExecutionApiConfigAccess { UNKNOWN_ACCESS = 'UNKNOWN_ACCESS', MYSELF = 'MYSELF', DOMAIN = 'DOMAIN', ANYONE = 'ANYONE', ANYONE_ANONYMOUS = 'ANYONE_ANONYMOUS' }
 
 
 	/** A web application entry point. */
@@ -453,7 +453,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsScriptTypeWebAppConfigExecuteAs { UNKNOWN_EXECUTE_AS = 0, USER_ACCESSING = 1, USER_DEPLOYING = 2 }
+	export enum GoogleAppsScriptTypeWebAppConfigExecuteAs { UNKNOWN_EXECUTE_AS = 'UNKNOWN_EXECUTE_AS', USER_ACCESSING = 'USER_ACCESSING', USER_DEPLOYING = 'USER_DEPLOYING' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -589,7 +589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValueNullValue { NULL_VALUE = 0 }
+	export enum ValueNullValue { NULL_VALUE = 'NULL_VALUE' }
 
 
 	/** `Struct` represents a structured data value, consisting of fields which map to dynamically typed values. */
@@ -800,13 +800,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsScriptTypeProcessProcessStatus { PROCESS_STATUS_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, COMPLETED = 3, CANCELED = 4, FAILED = 5, TIMED_OUT = 6, UNKNOWN = 7, DELAYED = 8, EXECUTION_DISABLED = 9 }
+	export enum GoogleAppsScriptTypeProcessProcessStatus { PROCESS_STATUS_UNSPECIFIED = 'PROCESS_STATUS_UNSPECIFIED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', COMPLETED = 'COMPLETED', CANCELED = 'CANCELED', FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT', UNKNOWN = 'UNKNOWN', DELAYED = 'DELAYED', EXECUTION_DISABLED = 'EXECUTION_DISABLED' }
 
-	export enum GoogleAppsScriptTypeProcessProcessType { PROCESS_TYPE_UNSPECIFIED = 0, ADD_ON = 1, EXECUTION_API = 2, TIME_DRIVEN = 3, TRIGGER = 4, WEBAPP = 5, EDITOR = 6, SIMPLE_TRIGGER = 7, MENU = 8, BATCH_TASK = 9 }
+	export enum GoogleAppsScriptTypeProcessProcessType { PROCESS_TYPE_UNSPECIFIED = 'PROCESS_TYPE_UNSPECIFIED', ADD_ON = 'ADD_ON', EXECUTION_API = 'EXECUTION_API', TIME_DRIVEN = 'TIME_DRIVEN', TRIGGER = 'TRIGGER', WEBAPP = 'WEBAPP', EDITOR = 'EDITOR', SIMPLE_TRIGGER = 'SIMPLE_TRIGGER', MENU = 'MENU', BATCH_TASK = 'BATCH_TASK' }
 
-	export enum GoogleAppsScriptTypeProcessRuntimeVersion { RUNTIME_VERSION_UNSPECIFIED = 0, DEPRECATED_ES5 = 1, V8 = 2 }
+	export enum GoogleAppsScriptTypeProcessRuntimeVersion { RUNTIME_VERSION_UNSPECIFIED = 'RUNTIME_VERSION_UNSPECIFIED', DEPRECATED_ES5 = 'DEPRECATED_ES5', V8 = 'V8' }
 
-	export enum GoogleAppsScriptTypeProcessUserAccessLevel { USER_ACCESS_LEVEL_UNSPECIFIED = 0, NONE = 1, READ = 2, WRITE = 3, OWNER = 4 }
+	export enum GoogleAppsScriptTypeProcessUserAccessLevel { USER_ACCESS_LEVEL_UNSPECIFIED = 'USER_ACCESS_LEVEL_UNSPECIFIED', NONE = 'NONE', READ = 'READ', WRITE = 'WRITE', OWNER = 'OWNER' }
 
 
 	/** Response with the list of deployments for the specified Apps Script project. */
@@ -1333,7 +1333,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Script_projects_getMetricsMetricsGranularity { UNSPECIFIED_GRANULARITY = 0, WEEKLY = 1, DAILY = 2 }
+	export enum Script_projects_getMetricsMetricsGranularity { UNSPECIFIED_GRANULARITY = 'UNSPECIFIED_GRANULARITY', WEEKLY = 'WEEKLY', DAILY = 'DAILY' }
 
 }
 

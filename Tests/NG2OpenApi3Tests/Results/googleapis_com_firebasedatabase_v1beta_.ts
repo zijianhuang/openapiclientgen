@@ -52,9 +52,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseInstanceState { LIFECYCLE_STATE_UNSPECIFIED = 0, ACTIVE = 1, DISABLED = 2, DELETED = 3 }
+	export enum DatabaseInstanceState { LIFECYCLE_STATE_UNSPECIFIED = 'LIFECYCLE_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DISABLED = 'DISABLED', DELETED = 'DELETED' }
 
-	export enum DatabaseInstanceType { DATABASE_INSTANCE_TYPE_UNSPECIFIED = 0, DEFAULT_DATABASE = 1, USER_DATABASE = 2 }
+	export enum DatabaseInstanceType { DATABASE_INSTANCE_TYPE_UNSPECIFIED = 'DATABASE_INSTANCE_TYPE_UNSPECIFIED', DEFAULT_DATABASE = 'DEFAULT_DATABASE', USER_DATABASE = 'USER_DATABASE' }
 
 
 	/** The request sent to the DisableDatabaseInstance method. */

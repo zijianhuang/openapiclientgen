@@ -97,7 +97,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BigQueryConfigState { STATE_UNSPECIFIED = 0, ACTIVE = 1, PERMISSION_DENIED = 2, NOT_FOUND = 3, SCHEMA_MISMATCH = 4, IN_TRANSIT_LOCATION_RESTRICTION = 5 }
+	export enum BigQueryConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', PERMISSION_DENIED = 'PERMISSION_DENIED', NOT_FOUND = 'NOT_FOUND', SCHEMA_MISMATCH = 'SCHEMA_MISMATCH', IN_TRANSIT_LOCATION_RESTRICTION = 'IN_TRANSIT_LOCATION_RESTRICTION' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -230,7 +230,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudStorageConfigState { STATE_UNSPECIFIED = 0, ACTIVE = 1, PERMISSION_DENIED = 2, NOT_FOUND = 3, IN_TRANSIT_LOCATION_RESTRICTION = 4 }
+	export enum CloudStorageConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', PERMISSION_DENIED = 'PERMISSION_DENIED', NOT_FOUND = 'NOT_FOUND', IN_TRANSIT_LOCATION_RESTRICTION = 'IN_TRANSIT_LOCATION_RESTRICTION' }
 
 
 	/** Configuration for writing message data in text format. Message payloads will be written to files as raw text, separated by a newline. */
@@ -312,7 +312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaType { TYPE_UNSPECIFIED = 0, PROTOCOL_BUFFER = 1, AVRO = 2 }
+	export enum SchemaType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PROTOCOL_BUFFER = 'PROTOCOL_BUFFER', AVRO = 'AVRO' }
 
 
 	/** Request for the `CreateSnapshot` method. */
@@ -801,7 +801,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionState { STATE_UNSPECIFIED = 0, ACTIVE = 1, RESOURCE_ERROR = 2 }
+	export enum SubscriptionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', RESOURCE_ERROR = 'RESOURCE_ERROR' }
 
 
 	/** Response for the `ListTopicSnapshots` method. */
@@ -996,7 +996,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaSettingsEncoding { ENCODING_UNSPECIFIED = 0, JSON = 1, BINARY = 2 }
+	export enum SchemaSettingsEncoding { ENCODING_UNSPECIFIED = 'ENCODING_UNSPECIFIED', JSON = 'JSON', BINARY = 'BINARY' }
 
 
 	/** Request for the ModifyAckDeadline method. */
@@ -1854,7 +1854,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Pubsub_projects_schemas_getView { SCHEMA_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Pubsub_projects_schemas_getView { SCHEMA_VIEW_UNSPECIFIED = 'SCHEMA_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

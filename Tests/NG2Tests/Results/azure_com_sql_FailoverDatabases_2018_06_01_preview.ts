@@ -24,7 +24,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Databases_FailoverReplicaType { Primary = 0, ReadableSecondary = 1 }
+	export enum Databases_FailoverReplicaType { Primary = 'Primary', ReadableSecondary = 'ReadableSecondary' }
 
 }
 

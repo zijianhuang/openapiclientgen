@@ -95,7 +95,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET__version_incidents___format_Incident_type { crash = 0, hazard = 1, theft = 2, unconfirmed = 3, infrastructure_issue = 4, chop_shop = 5 }
+	export enum GET__version_incidents___format_Incident_type { crash = 'crash', hazard = 'hazard', theft = 'theft', unconfirmed = 'unconfirmed', infrastructure_issue = 'infrastructure_issue', chop_shop = 'chop_shop' }
 
 }
 

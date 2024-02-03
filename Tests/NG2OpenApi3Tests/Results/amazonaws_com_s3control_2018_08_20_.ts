@@ -53,7 +53,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectLambdaAccessPointAliasStatus { PROVISIONING = 0, READY = 1 }
+	export enum ObjectLambdaAccessPointAliasStatus { PROVISIONING = 'PROVISIONING', READY = 'READY' }
 
 	export interface CreateBucketResult {
 		BucketArn?: string;
@@ -68,7 +68,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BucketLocationConstraint { EU = 0, 'eu-west-1' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'ap-south-1' = 4, 'ap-southeast-1' = 5, 'ap-southeast-2' = 6, 'ap-northeast-1' = 7, 'sa-east-1' = 8, 'cn-north-1' = 9, 'eu-central-1' = 10 }
+	export enum BucketLocationConstraint { EU = 'EU', 'eu-west-1' = 'eu-west-1', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'ap-south-1' = 'ap-south-1', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-northeast-1' = 'ap-northeast-1', 'sa-east-1' = 'sa-east-1', 'cn-north-1' = 'cn-north-1', 'eu-central-1' = 'eu-central-1' }
 
 	export interface BucketAlreadyExists {
 	}
@@ -182,7 +182,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3CannedAccessControlList { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'aws-exec-read' = 3, 'authenticated-read' = 4, 'bucket-owner-read' = 5, 'bucket-owner-full-control' = 6 }
+	export enum S3CannedAccessControlList { private = 'private', 'public-read' = 'public-read', 'public-read-write' = 'public-read-write', 'aws-exec-read' = 'aws-exec-read', 'authenticated-read' = 'authenticated-read', 'bucket-owner-read' = 'bucket-owner-read', 'bucket-owner-full-control' = 'bucket-owner-full-control' }
 
 
 	/** <p/> */
@@ -225,11 +225,11 @@ export namespace MyNS {
 
 	}
 
-	export enum S3GranteeTypeIdentifier { id = 0, emailAddress = 1, uri = 2 }
+	export enum S3GranteeTypeIdentifier { id = 'id', emailAddress = 'emailAddress', uri = 'uri' }
 
-	export enum S3Permission { FULL_CONTROL = 0, READ = 1, WRITE = 2, READ_ACP = 3, WRITE_ACP = 4 }
+	export enum S3Permission { FULL_CONTROL = 'FULL_CONTROL', READ = 'READ', WRITE = 'WRITE', READ_ACP = 'READ_ACP', WRITE_ACP = 'WRITE_ACP' }
 
-	export enum S3MetadataDirective { COPY = 0, REPLACE = 1 }
+	export enum S3MetadataDirective { COPY = 'COPY', REPLACE = 'REPLACE' }
 
 
 	/** <p/> */
@@ -286,7 +286,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3SSEAlgorithm { AES256 = 0, KMS = 1 }
+	export enum S3SSEAlgorithm { AES256 = 'AES256', KMS = 'KMS' }
 
 
 	/** A container for a key-value name pair. */
@@ -316,13 +316,13 @@ export namespace MyNS {
 
 	}
 
-	export enum S3StorageClass { STANDARD = 0, STANDARD_IA = 1, ONEZONE_IA = 2, GLACIER = 3, INTELLIGENT_TIERING = 4, DEEP_ARCHIVE = 5, GLACIER_IR = 6 }
+	export enum S3StorageClass { STANDARD = 'STANDARD', STANDARD_IA = 'STANDARD_IA', ONEZONE_IA = 'ONEZONE_IA', GLACIER = 'GLACIER', INTELLIGENT_TIERING = 'INTELLIGENT_TIERING', DEEP_ARCHIVE = 'DEEP_ARCHIVE', GLACIER_IR = 'GLACIER_IR' }
 
-	export enum S3ObjectLockLegalHoldStatus { OFF = 0, ON = 1 }
+	export enum S3ObjectLockLegalHoldStatus { OFF = 'OFF', ON = 'ON' }
 
-	export enum S3ObjectLockMode { COMPLIANCE = 0, GOVERNANCE = 1 }
+	export enum S3ObjectLockMode { COMPLIANCE = 'COMPLIANCE', GOVERNANCE = 'GOVERNANCE' }
 
-	export enum S3ChecksumAlgorithm { CRC32 = 0, CRC32C = 1, SHA1 = 2, SHA256 = 3 }
+	export enum S3ChecksumAlgorithm { CRC32 = 'CRC32', CRC32C = 'CRC32C', SHA1 = 'SHA1', SHA256 = 'SHA256' }
 
 
 	/** Contains the configuration parameters for a PUT Object ACL operation. S3 Batch Operations passes every object to the underlying <code>PutObjectAcl</code> API operation. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PutObjectAcl</a>. */
@@ -444,7 +444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3GlacierJobTier { BULK = 0, STANDARD = 1 }
+	export enum S3GlacierJobTier { BULK = 'BULK', STANDARD = 'STANDARD' }
 
 
 	/** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>. */
@@ -538,9 +538,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobReportFormat { Report_CSV_20180820 = 0 }
+	export enum JobReportFormat { Report_CSV_20180820 = 'Report_CSV_20180820' }
 
-	export enum JobReportScope { AllTasks = 0, FailedTasksOnly = 1 }
+	export enum JobReportScope { AllTasks = 'AllTasks', FailedTasksOnly = 'FailedTasksOnly' }
 
 
 	/** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest. */
@@ -564,9 +564,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobManifestFormat { S3BatchOperations_CSV_20180820 = 0, S3InventoryReport_CSV_20161130 = 1 }
+	export enum JobManifestFormat { S3BatchOperations_CSV_20180820 = 'S3BatchOperations_CSV_20180820', S3InventoryReport_CSV_20161130 = 'S3InventoryReport_CSV_20161130' }
 
-	export enum JobManifestFieldName { Ignore = 0, Bucket = 1, Key = 2, VersionId = 3 }
+	export enum JobManifestFieldName { Ignore = 'Ignore', Bucket = 'Bucket', Key = 'Key', VersionId = 'VersionId' }
 
 
 	/** Contains the information required to locate a manifest object. */
@@ -718,7 +718,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeneratedManifestFormat { S3InventoryReport_CSV_20211130 = 0 }
+	export enum GeneratedManifestFormat { S3InventoryReport_CSV_20211130 = 'S3InventoryReport_CSV_20211130' }
 
 
 	/** The filter used to describe a set of objects for the job's manifest. */
@@ -744,7 +744,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationStatus { COMPLETED = 0, FAILED = 1, REPLICA = 2, NONE = 3 }
+	export enum ReplicationStatus { COMPLETED = 'COMPLETED', FAILED = 'FAILED', REPLICA = 'REPLICA', NONE = 'NONE' }
 
 	export interface TooManyRequestsException {
 	}
@@ -936,7 +936,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { Active = 0, Cancelled = 1, Cancelling = 2, Complete = 3, Completing = 4, Failed = 5, Failing = 6, New = 7, Paused = 8, Pausing = 9, Preparing = 10, Ready = 11, Suspended = 12 }
+	export enum JobStatus { Active = 'Active', Cancelled = 'Cancelled', Cancelling = 'Cancelling', Complete = 'Complete', Completing = 'Completing', Failed = 'Failed', Failing = 'Failing', New = 'New', Paused = 'Paused', Pausing = 'Pausing', Preparing = 'Preparing', Ready = 'Ready', Suspended = 'Suspended' }
 
 
 	/** Contains the configuration information for a job's manifest. */
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AsyncOperationName { CreateMultiRegionAccessPoint = 0, DeleteMultiRegionAccessPoint = 1, PutMultiRegionAccessPointPolicy = 2 }
+	export enum AsyncOperationName { CreateMultiRegionAccessPoint = 'CreateMultiRegionAccessPoint', DeleteMultiRegionAccessPoint = 'DeleteMultiRegionAccessPoint', PutMultiRegionAccessPointPolicy = 'PutMultiRegionAccessPointPolicy' }
 
 
 	/** A container for the request parameters associated with an asynchronous request. */
@@ -1341,7 +1341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkOrigin { Internet = 0, VPC = 1 }
+	export enum NetworkOrigin { Internet = 'Internet', VPC = 'VPC' }
 
 
 	/** The virtual private cloud (VPC) configuration for an access point. */
@@ -1605,9 +1605,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BucketVersioningStatus { Enabled = 0, Suspended = 1 }
+	export enum BucketVersioningStatus { Enabled = 'Enabled', Suspended = 'Suspended' }
 
-	export enum MFADeleteStatus { Enabled = 0, Disabled = 1 }
+	export enum MFADeleteStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface GetJobTaggingResult {
 		Tags?: Array<S3Tag>;
@@ -1661,7 +1661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MultiRegionAccessPointStatus { READY = 0, INCONSISTENT_ACROSS_REGIONS = 1, CREATING = 2, PARTIALLY_CREATED = 3, PARTIALLY_DELETED = 4, DELETING = 5 }
+	export enum MultiRegionAccessPointStatus { READY = 'READY', INCONSISTENT_ACROSS_REGIONS = 'INCONSISTENT_ACROSS_REGIONS', CREATING = 'CREATING', PARTIALLY_CREATED = 'PARTIALLY_CREATED', PARTIALLY_DELETED = 'PARTIALLY_DELETED', DELETING = 'DELETING' }
 
 	export interface GetMultiRegionAccessPointPolicyResult {
 		Policy?: MultiRegionAccessPointPolicyDocument;
@@ -2083,9 +2083,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Format { CSV = 0, Parquet = 1 }
+	export enum Format { CSV = 'CSV', Parquet = 'Parquet' }
 
-	export enum OutputSchemaVersion { V_1 = 0 }
+	export enum OutputSchemaVersion { V_1 = 'V_1' }
 
 
 	/** A container for the encryption of the S3 Storage Lens metrics exports. */
@@ -2269,7 +2269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationName { LambdaInvoke = 0, S3PutObjectCopy = 1, S3PutObjectAcl = 2, S3PutObjectTagging = 3, S3DeleteObjectTagging = 4, S3InitiateRestoreObject = 5, S3PutObjectLegalHold = 6, S3PutObjectRetention = 7, S3ReplicateObject = 8 }
+	export enum OperationName { LambdaInvoke = 'LambdaInvoke', S3PutObjectCopy = 'S3PutObjectCopy', S3PutObjectAcl = 'S3PutObjectAcl', S3PutObjectTagging = 'S3PutObjectTagging', S3DeleteObjectTagging = 'S3DeleteObjectTagging', S3InitiateRestoreObject = 'S3InitiateRestoreObject', S3PutObjectLegalHold = 'S3PutObjectLegalHold', S3PutObjectRetention = 'S3PutObjectRetention', S3ReplicateObject = 'S3ReplicateObject' }
 
 	export interface InvalidRequestException {
 	}
@@ -2333,7 +2333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MFADelete { Enabled = 0, Disabled = 1 }
+	export enum MFADelete { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface PutJobTaggingResult {
 	}
@@ -2513,7 +2513,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OwnerOverride { Destination = 0 }
+	export enum OwnerOverride { Destination = 'Destination' }
 
 
 	/** <p>A container for information about access control for replicas.</p> <note> <p>This is not supported by Amazon S3 on Outposts buckets.</p> </note> */
@@ -2605,7 +2605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BucketCannedACL { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'authenticated-read' = 3 }
+	export enum BucketCannedACL { private = 'private', 'public-read' = 'public-read', 'public-read-write' = 'public-read-write', 'authenticated-read' = 'authenticated-read' }
 
 	export interface CreateAccessPointForObjectLambdaRequest {
 
@@ -2836,7 +2836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteMarkerReplicationStatus { Enabled = 0, Disabled = 1 }
+	export enum DeleteMarkerReplicationStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** <p>Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code> element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> element's <code>Status</code> child element must be set to <code>Disabled</code>, because S3 on Outposts does not support replicating delete markers for tag-based rules.</p> <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p> */
@@ -3009,7 +3009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationStorageClass { STANDARD = 0, REDUCED_REDUNDANCY = 1, STANDARD_IA = 2, ONEZONE_IA = 3, INTELLIGENT_TIERING = 4, GLACIER = 5, DEEP_ARCHIVE = 6, OUTPOSTS = 7, GLACIER_IR = 8 }
+	export enum ReplicationStorageClass { STANDARD = 'STANDARD', REDUCED_REDUNDANCY = 'REDUCED_REDUNDANCY', STANDARD_IA = 'STANDARD_IA', ONEZONE_IA = 'ONEZONE_IA', INTELLIGENT_TIERING = 'INTELLIGENT_TIERING', GLACIER = 'GLACIER', DEEP_ARCHIVE = 'DEEP_ARCHIVE', OUTPOSTS = 'OUTPOSTS', GLACIER_IR = 'GLACIER_IR' }
 
 
 	/** Specifies information about the replication destination bucket and its settings for an S3 on Outposts replication configuration. */
@@ -3042,7 +3042,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExistingObjectReplicationStatus { Enabled = 0, Disabled = 1 }
+	export enum ExistingObjectReplicationStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** <p>An optional configuration to replicate existing source bucket objects. </p> <note> <p>This is not supported by Amazon S3 on Outposts buckets.</p> </note> */
@@ -3065,7 +3065,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpirationStatus { Enabled = 0, Disabled = 1 }
+	export enum ExpirationStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface GetAccessPointConfigurationForObjectLambdaRequest {
 	}
@@ -3514,7 +3514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricsStatus { Enabled = 0, Disabled = 1 }
+	export enum MetricsStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Status information for a single Multi-Region Access Point Region. */
@@ -3536,7 +3536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitionStorageClass { GLACIER = 0, STANDARD_IA = 1, ONEZONE_IA = 2, INTELLIGENT_TIERING = 3, DEEP_ARCHIVE = 4 }
+	export enum TransitionStorageClass { GLACIER = 'GLACIER', STANDARD_IA = 'STANDARD_IA', ONEZONE_IA = 'ONEZONE_IA', INTELLIGENT_TIERING = 'INTELLIGENT_TIERING', DEEP_ARCHIVE = 'DEEP_ARCHIVE' }
 
 
 	/** The container for the noncurrent version transition. */
@@ -3583,7 +3583,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectLambdaAllowedFeature { 'GetObject-Range' = 0, 'GetObject-PartNumber' = 1, 'HeadObject-Range' = 2, 'HeadObject-PartNumber' = 3 }
+	export enum ObjectLambdaAllowedFeature { 'GetObject-Range' = 'GetObject-Range', 'GetObject-PartNumber' = 'GetObject-PartNumber', 'HeadObject-Range' = 'HeadObject-Range', 'HeadObject-PartNumber' = 'HeadObject-PartNumber' }
 
 
 	/** A container for AwsLambdaTransformation. */
@@ -3620,7 +3620,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectLambdaTransformationConfigurationAction { GetObject = 0, HeadObject = 1, ListObjects = 2, ListObjectsV2 = 3 }
+	export enum ObjectLambdaTransformationConfigurationAction { GetObject = 'GetObject', HeadObject = 'HeadObject', ListObjects = 'ListObjects', ListObjectsV2 = 'ListObjectsV2' }
 
 	export interface PutAccessPointConfigurationForObjectLambdaRequest {
 
@@ -3934,7 +3934,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicaModificationsStatus { Enabled = 0, Disabled = 1 }
+	export enum ReplicaModificationsStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** <p>A filter that you can use to specify whether replica modification sync is enabled. S3 on Outposts replica modification sync can help you keep object metadata synchronized between replicas and source objects. By default, S3 on Outposts replicates metadata from the source objects to the replicas only. When replica modification sync is enabled, S3 on Outposts replicates metadata changes made to the replica copies back to the source object, making the replication bidirectional.</p> <p>To replicate object metadata modifications on replicas, you can specify this element and set the <code>Status</code> of this element to <code>Enabled</code>.</p> <note> <p>You must enable replica modification sync on the source and destination buckets to replicate replica metadata changes between the source and the replicas.</p> </note> */
@@ -3996,7 +3996,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationRuleStatus { Enabled = 0, Disabled = 1 }
+	export enum ReplicationRuleStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. */
@@ -4079,13 +4079,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationTimeStatus { Enabled = 0, Disabled = 1 }
+	export enum ReplicationTimeStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum RequestedJobStatus { Cancelled = 0, Ready = 1 }
+	export enum RequestedJobStatus { Cancelled = 'Cancelled', Ready = 'Ready' }
 
-	export enum S3ObjectLockRetentionMode { COMPLIANCE = 0, GOVERNANCE = 1 }
+	export enum S3ObjectLockRetentionMode { COMPLIANCE = 'COMPLIANCE', GOVERNANCE = 'GOVERNANCE' }
 
-	export enum SseKmsEncryptedObjectsStatus { Enabled = 0, Disabled = 1 }
+	export enum SseKmsEncryptedObjectsStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface SubmitMultiRegionAccessPointRoutesRequest {
 

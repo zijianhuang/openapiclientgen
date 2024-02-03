@@ -16,11 +16,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyTypeValues { EBS_SNAPSHOT_MANAGEMENT = 0, IMAGE_MANAGEMENT = 1, EVENT_BASED_POLICY = 2 }
+	export enum PolicyTypeValues { EBS_SNAPSHOT_MANAGEMENT = 'EBS_SNAPSHOT_MANAGEMENT', IMAGE_MANAGEMENT = 'IMAGE_MANAGEMENT', EVENT_BASED_POLICY = 'EVENT_BASED_POLICY' }
 
-	export enum ResourceTypeValues { VOLUME = 0, INSTANCE = 1 }
+	export enum ResourceTypeValues { VOLUME = 'VOLUME', INSTANCE = 'INSTANCE' }
 
-	export enum ResourceLocationValues { CLOUD = 0, OUTPOST = 1 }
+	export enum ResourceLocationValues { CLOUD = 'CLOUD', OUTPOST = 'OUTPOST' }
 
 
 	/** Specifies a tag for a resource. */
@@ -106,9 +106,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationValues { CLOUD = 0, OUTPOST_LOCAL = 1 }
+	export enum LocationValues { CLOUD = 'CLOUD', OUTPOST_LOCAL = 'OUTPOST_LOCAL' }
 
-	export enum IntervalUnitValues { HOURS = 0 }
+	export enum IntervalUnitValues { HOURS = 'HOURS' }
 
 
 	/** <p> <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots created by snapshot policies, or for AMIs created by AMI policies.</p> <note> <p>For snapshot policies that have an <a>ArchiveRule</a>, this retention rule applies to standard tier retention. When the retention threshold is met, snapshots are moved from the standard to the archive tier.</p> <p>For snapshot policies that do not have an <b>ArchiveRule</b>, snapshots are permanently deleted when this retention threshold is met.</p> </note> <p>You can retain snapshots based on either a count or a time interval.</p> <ul> <li> <p> <b>Count-based retention</b> </p> <p>You must specify <b>Count</b>. If you specify an <a>ArchiveRule</a> for the schedule, then you can specify a retention count of <code>0</code> to archive snapshots immediately after creation. If you specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a retention count of <code>1</code> or more.</p> </li> <li> <p> <b>Age-based retention</b> </p> <p>You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an <a>ArchiveRule</a> for the schedule, then you can specify a retention interval of <code>0</code> days to archive snapshots immediately after creation. If you specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a retention interval of <code>1</code> day or more.</p> </li> </ul> */
@@ -133,7 +133,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RetentionIntervalUnitValues { DAYS = 0, WEEKS = 1, MONTHS = 2, YEARS = 3 }
+	export enum RetentionIntervalUnitValues { DAYS = 'DAYS', WEEKS = 'WEEKS', MONTHS = 'MONTHS', YEARS = 'YEARS' }
 
 
 	/**  <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot restore for snapshots created by snapshot policies. You can enable fast snapshot restore based on either a count or a time interval. */
@@ -382,7 +382,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceValues { MANAGED_CWE = 0 }
+	export enum EventSourceValues { MANAGED_CWE = 'MANAGED_CWE' }
 
 
 	/**  <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy. */
@@ -415,7 +415,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTypeValues { shareSnapshot = 0 }
+	export enum EventTypeValues { shareSnapshot = 'shareSnapshot' }
 
 
 	/**  <b>[Event-based policies only]</b> Specifies an action for an event-based policy. */
@@ -580,7 +580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GettablePolicyStateValues { ENABLED = 0, DISABLED = 1, ERROR = 2 }
+	export enum GettablePolicyStateValues { ENABLED = 'ENABLED', DISABLED = 'DISABLED', ERROR = 'ERROR' }
 
 	export interface TagMap {
 	}
@@ -708,7 +708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SettablePolicyStateValues { ENABLED = 0, DISABLED = 1 }
+	export enum SettablePolicyStateValues { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface CreateLifecyclePolicyRequest {
 

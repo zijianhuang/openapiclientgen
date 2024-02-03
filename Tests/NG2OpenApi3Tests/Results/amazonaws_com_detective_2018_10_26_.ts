@@ -241,11 +241,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberStatus { INVITED = 0, VERIFICATION_IN_PROGRESS = 1, VERIFICATION_FAILED = 2, ENABLED = 3, ACCEPTED_BUT_DISABLED = 4 }
+	export enum MemberStatus { INVITED = 'INVITED', VERIFICATION_IN_PROGRESS = 'VERIFICATION_IN_PROGRESS', VERIFICATION_FAILED = 'VERIFICATION_FAILED', ENABLED = 'ENABLED', ACCEPTED_BUT_DISABLED = 'ACCEPTED_BUT_DISABLED' }
 
-	export enum MemberDisabledReason { VOLUME_TOO_HIGH = 0, VOLUME_UNKNOWN = 1 }
+	export enum MemberDisabledReason { VOLUME_TOO_HIGH = 'VOLUME_TOO_HIGH', VOLUME_UNKNOWN = 'VOLUME_UNKNOWN' }
 
-	export enum InvitationType { INVITATION = 0, ORGANIZATION = 1 }
+	export enum InvitationType { INVITATION = 'INVITATION', ORGANIZATION = 'ORGANIZATION' }
 
 	export interface VolumeUsageByDatasourcePackage {
 	}
@@ -506,7 +506,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasourcePackage { DETECTIVE_CORE = 0, EKS_AUDIT = 1, ASFF_SECURITYHUB_FINDING = 2 }
+	export enum DatasourcePackage { DETECTIVE_CORE = 'DETECTIVE_CORE', EKS_AUDIT = 'EKS_AUDIT', ASFF_SECURITYHUB_FINDING = 'ASFF_SECURITYHUB_FINDING' }
 
 	export interface AcceptInvitationRequest {
 
@@ -595,7 +595,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasourcePackageIngestState { STARTED = 0, STOPPED = 1, DISABLED = 2 }
+	export enum DatasourcePackageIngestState { STARTED = 'STARTED', STOPPED = 'STOPPED', DISABLED = 'DISABLED' }
 
 	export interface LastIngestStateChangeDates {
 	}

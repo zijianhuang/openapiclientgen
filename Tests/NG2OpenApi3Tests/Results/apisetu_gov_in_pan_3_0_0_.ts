@@ -1908,7 +1908,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PancrPostBodyFormat { xml = 0, pdf = 1 }
+	export enum PancrPostBodyFormat { xml = 'xml', pdf = 'pdf' }
 
 }
 

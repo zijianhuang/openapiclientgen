@@ -1407,41 +1407,41 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateTeamMemberX_Amz_Target { 'CodeStar_20170419.AssociateTeamMember' = 0 }
+	export enum AssociateTeamMemberX_Amz_Target { 'CodeStar_20170419.AssociateTeamMember' = 'CodeStar_20170419.AssociateTeamMember' }
 
-	export enum CreateProjectX_Amz_Target { 'CodeStar_20170419.CreateProject' = 0 }
+	export enum CreateProjectX_Amz_Target { 'CodeStar_20170419.CreateProject' = 'CodeStar_20170419.CreateProject' }
 
-	export enum CreateUserProfileX_Amz_Target { 'CodeStar_20170419.CreateUserProfile' = 0 }
+	export enum CreateUserProfileX_Amz_Target { 'CodeStar_20170419.CreateUserProfile' = 'CodeStar_20170419.CreateUserProfile' }
 
-	export enum DeleteProjectX_Amz_Target { 'CodeStar_20170419.DeleteProject' = 0 }
+	export enum DeleteProjectX_Amz_Target { 'CodeStar_20170419.DeleteProject' = 'CodeStar_20170419.DeleteProject' }
 
-	export enum DeleteUserProfileX_Amz_Target { 'CodeStar_20170419.DeleteUserProfile' = 0 }
+	export enum DeleteUserProfileX_Amz_Target { 'CodeStar_20170419.DeleteUserProfile' = 'CodeStar_20170419.DeleteUserProfile' }
 
-	export enum DescribeProjectX_Amz_Target { 'CodeStar_20170419.DescribeProject' = 0 }
+	export enum DescribeProjectX_Amz_Target { 'CodeStar_20170419.DescribeProject' = 'CodeStar_20170419.DescribeProject' }
 
-	export enum DescribeUserProfileX_Amz_Target { 'CodeStar_20170419.DescribeUserProfile' = 0 }
+	export enum DescribeUserProfileX_Amz_Target { 'CodeStar_20170419.DescribeUserProfile' = 'CodeStar_20170419.DescribeUserProfile' }
 
-	export enum DisassociateTeamMemberX_Amz_Target { 'CodeStar_20170419.DisassociateTeamMember' = 0 }
+	export enum DisassociateTeamMemberX_Amz_Target { 'CodeStar_20170419.DisassociateTeamMember' = 'CodeStar_20170419.DisassociateTeamMember' }
 
-	export enum ListProjectsX_Amz_Target { 'CodeStar_20170419.ListProjects' = 0 }
+	export enum ListProjectsX_Amz_Target { 'CodeStar_20170419.ListProjects' = 'CodeStar_20170419.ListProjects' }
 
-	export enum ListResourcesX_Amz_Target { 'CodeStar_20170419.ListResources' = 0 }
+	export enum ListResourcesX_Amz_Target { 'CodeStar_20170419.ListResources' = 'CodeStar_20170419.ListResources' }
 
-	export enum ListTagsForProjectX_Amz_Target { 'CodeStar_20170419.ListTagsForProject' = 0 }
+	export enum ListTagsForProjectX_Amz_Target { 'CodeStar_20170419.ListTagsForProject' = 'CodeStar_20170419.ListTagsForProject' }
 
-	export enum ListTeamMembersX_Amz_Target { 'CodeStar_20170419.ListTeamMembers' = 0 }
+	export enum ListTeamMembersX_Amz_Target { 'CodeStar_20170419.ListTeamMembers' = 'CodeStar_20170419.ListTeamMembers' }
 
-	export enum ListUserProfilesX_Amz_Target { 'CodeStar_20170419.ListUserProfiles' = 0 }
+	export enum ListUserProfilesX_Amz_Target { 'CodeStar_20170419.ListUserProfiles' = 'CodeStar_20170419.ListUserProfiles' }
 
-	export enum TagProjectX_Amz_Target { 'CodeStar_20170419.TagProject' = 0 }
+	export enum TagProjectX_Amz_Target { 'CodeStar_20170419.TagProject' = 'CodeStar_20170419.TagProject' }
 
-	export enum UntagProjectX_Amz_Target { 'CodeStar_20170419.UntagProject' = 0 }
+	export enum UntagProjectX_Amz_Target { 'CodeStar_20170419.UntagProject' = 'CodeStar_20170419.UntagProject' }
 
-	export enum UpdateProjectX_Amz_Target { 'CodeStar_20170419.UpdateProject' = 0 }
+	export enum UpdateProjectX_Amz_Target { 'CodeStar_20170419.UpdateProject' = 'CodeStar_20170419.UpdateProject' }
 
-	export enum UpdateTeamMemberX_Amz_Target { 'CodeStar_20170419.UpdateTeamMember' = 0 }
+	export enum UpdateTeamMemberX_Amz_Target { 'CodeStar_20170419.UpdateTeamMember' = 'CodeStar_20170419.UpdateTeamMember' }
 
-	export enum UpdateUserProfileX_Amz_Target { 'CodeStar_20170419.UpdateUserProfile' = 0 }
+	export enum UpdateUserProfileX_Amz_Target { 'CodeStar_20170419.UpdateUserProfile' = 'CodeStar_20170419.UpdateUserProfile' }
 
 }
 

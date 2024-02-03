@@ -119,7 +119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MeetingsCapabilityWebhooksRecording_changedHttp_method { GET = 0, POST = 1, PUT = 2 }
+	export enum MeetingsCapabilityWebhooksRecording_changedHttp_method { GET = 'GET', POST = 'POST', PUT = 'PUT' }
 
 	export interface MeetingsCapabilityWebhooksRoom_changed {
 		address?: string | null;
@@ -207,7 +207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessagesCapabilityWebhooksInbound_urlHttp_method { POST = 0 }
+	export enum MessagesCapabilityWebhooksInbound_urlHttp_method { POST = 'POST' }
 
 	export interface MessagesCapabilityWebhooksStatus_url {
 		address?: string | null;
@@ -285,7 +285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RtcCapabilityWebhooksEvent_urlHttp_method { GET = 0, POST = 1 }
+	export enum RtcCapabilityWebhooksEvent_urlHttp_method { GET = 'GET', POST = 'POST' }
 
 
 	/** Two factor authentication related configuration */
@@ -309,7 +309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerifyCapabilityVersion { v2 = 0 }
+	export enum VerifyCapabilityVersion { v2 = 'v2' }
 
 	export interface VerifyCapabilityWebhooks {
 
@@ -416,7 +416,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceCapabilityPaymentsGatewaysMode { test = 0, live = 1 }
+	export enum VoiceCapabilityPaymentsGatewaysMode { test = 'test', live = 'live' }
 
 	export interface VoiceCapabilityWebhooks {
 		answer_url?: VoiceCapabilityWebhooksAnswer_url;

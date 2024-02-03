@@ -138,11 +138,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MultipleActivationKeyPropertiesOsType { Windows7 = 0, WindowsServer2008 = 1, WindowsServer2008R2 = 2 }
+	export enum MultipleActivationKeyPropertiesOsType { Windows7 = 'Windows7', WindowsServer2008 = 'WindowsServer2008', WindowsServer2008R2 = 'WindowsServer2008R2' }
 
-	export enum MultipleActivationKeyPropertiesProvisioningState { Succeeded = 0, Failed = 1, Canceled = 2, Accepted = 3, Provisioning = 4 }
+	export enum MultipleActivationKeyPropertiesProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', Accepted = 'Accepted', Provisioning = 'Provisioning' }
 
-	export enum MultipleActivationKeyPropertiesSupportType { SupplementalServicing = 0, PremiumAssurance = 1 }
+	export enum MultipleActivationKeyPropertiesSupportType { SupplementalServicing = 'SupplementalServicing', PremiumAssurance = 'PremiumAssurance' }
 
 
 	/** List of MAK keys. */

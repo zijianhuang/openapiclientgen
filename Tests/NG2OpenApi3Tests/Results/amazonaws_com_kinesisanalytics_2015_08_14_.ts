@@ -354,7 +354,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordFormatType { JSON = 0, CSV = 1 }
+	export enum RecordFormatType { JSON = 'JSON', CSV = 'CSV' }
 
 
 	/** When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. */
@@ -840,7 +840,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationStatus { DELETING = 0, STARTING = 1, STOPPING = 2, READY = 3, RUNNING = 4, UPDATING = 5 }
+	export enum ApplicationStatus { DELETING = 'DELETING', STARTING = 'STARTING', STOPPING = 'STOPPING', READY = 'READY', RUNNING = 'RUNNING', UPDATING = 'UPDATING' }
 
 
 	/** TBD */
@@ -1325,7 +1325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputStartingPosition { NOW = 0, TRIM_HORIZON = 1, LAST_STOPPED_POINT = 2 }
+	export enum InputStartingPosition { NOW = 'NOW', TRIM_HORIZON = 'TRIM_HORIZON', LAST_STOPPED_POINT = 'LAST_STOPPED_POINT' }
 
 
 	/** Describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.  */
@@ -2421,45 +2421,45 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationCloudWatchLoggingOption' = 0 }
+	export enum AddApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationCloudWatchLoggingOption' = 'KinesisAnalytics_20150814.AddApplicationCloudWatchLoggingOption' }
 
-	export enum AddApplicationInputX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationInput' = 0 }
+	export enum AddApplicationInputX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationInput' = 'KinesisAnalytics_20150814.AddApplicationInput' }
 
-	export enum AddApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationInputProcessingConfiguration' = 0 }
+	export enum AddApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationInputProcessingConfiguration' = 'KinesisAnalytics_20150814.AddApplicationInputProcessingConfiguration' }
 
-	export enum AddApplicationOutputX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationOutput' = 0 }
+	export enum AddApplicationOutputX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationOutput' = 'KinesisAnalytics_20150814.AddApplicationOutput' }
 
-	export enum AddApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationReferenceDataSource' = 0 }
+	export enum AddApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20150814.AddApplicationReferenceDataSource' = 'KinesisAnalytics_20150814.AddApplicationReferenceDataSource' }
 
-	export enum CreateApplicationX_Amz_Target { 'KinesisAnalytics_20150814.CreateApplication' = 0 }
+	export enum CreateApplicationX_Amz_Target { 'KinesisAnalytics_20150814.CreateApplication' = 'KinesisAnalytics_20150814.CreateApplication' }
 
-	export enum DeleteApplicationX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplication' = 0 }
+	export enum DeleteApplicationX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplication' = 'KinesisAnalytics_20150814.DeleteApplication' }
 
-	export enum DeleteApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationCloudWatchLoggingOption' = 0 }
+	export enum DeleteApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationCloudWatchLoggingOption' = 'KinesisAnalytics_20150814.DeleteApplicationCloudWatchLoggingOption' }
 
-	export enum DeleteApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationInputProcessingConfiguration' = 0 }
+	export enum DeleteApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationInputProcessingConfiguration' = 'KinesisAnalytics_20150814.DeleteApplicationInputProcessingConfiguration' }
 
-	export enum DeleteApplicationOutputX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationOutput' = 0 }
+	export enum DeleteApplicationOutputX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationOutput' = 'KinesisAnalytics_20150814.DeleteApplicationOutput' }
 
-	export enum DeleteApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationReferenceDataSource' = 0 }
+	export enum DeleteApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20150814.DeleteApplicationReferenceDataSource' = 'KinesisAnalytics_20150814.DeleteApplicationReferenceDataSource' }
 
-	export enum DescribeApplicationX_Amz_Target { 'KinesisAnalytics_20150814.DescribeApplication' = 0 }
+	export enum DescribeApplicationX_Amz_Target { 'KinesisAnalytics_20150814.DescribeApplication' = 'KinesisAnalytics_20150814.DescribeApplication' }
 
-	export enum DiscoverInputSchemaX_Amz_Target { 'KinesisAnalytics_20150814.DiscoverInputSchema' = 0 }
+	export enum DiscoverInputSchemaX_Amz_Target { 'KinesisAnalytics_20150814.DiscoverInputSchema' = 'KinesisAnalytics_20150814.DiscoverInputSchema' }
 
-	export enum ListApplicationsX_Amz_Target { 'KinesisAnalytics_20150814.ListApplications' = 0 }
+	export enum ListApplicationsX_Amz_Target { 'KinesisAnalytics_20150814.ListApplications' = 'KinesisAnalytics_20150814.ListApplications' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'KinesisAnalytics_20150814.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'KinesisAnalytics_20150814.ListTagsForResource' = 'KinesisAnalytics_20150814.ListTagsForResource' }
 
-	export enum StartApplicationX_Amz_Target { 'KinesisAnalytics_20150814.StartApplication' = 0 }
+	export enum StartApplicationX_Amz_Target { 'KinesisAnalytics_20150814.StartApplication' = 'KinesisAnalytics_20150814.StartApplication' }
 
-	export enum StopApplicationX_Amz_Target { 'KinesisAnalytics_20150814.StopApplication' = 0 }
+	export enum StopApplicationX_Amz_Target { 'KinesisAnalytics_20150814.StopApplication' = 'KinesisAnalytics_20150814.StopApplication' }
 
-	export enum TagResourceX_Amz_Target { 'KinesisAnalytics_20150814.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'KinesisAnalytics_20150814.TagResource' = 'KinesisAnalytics_20150814.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'KinesisAnalytics_20150814.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'KinesisAnalytics_20150814.UntagResource' = 'KinesisAnalytics_20150814.UntagResource' }
 
-	export enum UpdateApplicationX_Amz_Target { 'KinesisAnalytics_20150814.UpdateApplication' = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'KinesisAnalytics_20150814.UpdateApplication' = 'KinesisAnalytics_20150814.UpdateApplication' }
 
 }
 

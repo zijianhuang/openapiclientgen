@@ -59,7 +59,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoPauseDelayTimeRangeUnit { Minutes = 0 }
+	export enum AutoPauseDelayTimeRangeUnit { Minutes = 'Minutes' }
 
 
 	/** The edition capability. */
@@ -147,7 +147,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadScaleCapabilityStatus { Visible = 0, Available = 1, Default = 2, Disabled = 3 }
+	export enum ReadScaleCapabilityStatus { Visible = 'Visible', Available = 'Available', Default = 'Default', Disabled = 'Disabled' }
 
 
 	/** The service objectives capability. */
@@ -254,7 +254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaxSizeCapabilityUnit { Megabytes = 0, Gigabytes = 1, Terabytes = 2, Petabytes = 3 }
+	export enum MaxSizeCapabilityUnit { Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Petabytes = 'Petabytes' }
 
 
 	/** The performance level capability. */
@@ -284,7 +284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PerformanceLevelCapabilityUnit { DTU = 0, VCores = 1 }
+	export enum PerformanceLevelCapabilityUnit { DTU = 'DTU', VCores = 'VCores' }
 
 	export interface ServiceObjectiveCapabilitySku {
 
@@ -440,7 +440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogSizeCapabilityUnit { Megabytes = 0, Gigabytes = 1, Terabytes = 2, Petabytes = 3, Percent = 4 }
+	export enum LogSizeCapabilityUnit { Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Petabytes = 'Petabytes', Percent = 'Percent' }
 
 
 	/** The min capacity capability */
@@ -512,7 +512,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageCapabilityStorageAccountType { GRS = 0, LRS = 1, ZRS = 2 }
+	export enum StorageCapabilityStorageAccountType { GRS = 'GRS', LRS = 'LRS', ZRS = 'ZRS' }
 
 
 	/** The elastic pool edition capability. */
@@ -1174,7 +1174,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Capabilities_ListByLocationInclude { supportedEditions = 0, supportedElasticPoolEditions = 1, supportedManagedInstanceVersions = 2, supportedInstancePoolEditions = 3, supportedManagedInstanceEditions = 4 }
+	export enum Capabilities_ListByLocationInclude { supportedEditions = 'supportedEditions', supportedElasticPoolEditions = 'supportedElasticPoolEditions', supportedManagedInstanceVersions = 'supportedManagedInstanceVersions', supportedInstancePoolEditions = 'supportedInstancePoolEditions', supportedManagedInstanceEditions = 'supportedManagedInstanceEditions' }
 
 }
 

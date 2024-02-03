@@ -101,7 +101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputPortType { Dataset = 0 }
+	export enum InputPortType { Dataset = 'Dataset' }
 
 
 	/** Describes the access location for a blob. */
@@ -217,7 +217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetItemType { Module = 0, Resource = 1 }
+	export enum AssetItemType { Module = 'Module', Resource = 'Resource' }
 
 
 	/** The error detail information for async operation */
@@ -316,7 +316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AsyncOperationStatusProvisioningState { Unknown = 0, Provisioning = 1, Succeeded = 2, Failed = 3 }
+	export enum AsyncOperationStatusProvisioningState { Unknown = 'Unknown', Provisioning = 'Provisioning', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Swagger 2.0 schema for a column within the data table representing a web service input or output. See Swagger specification: http://swagger.io/specification/ */
@@ -369,9 +369,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnSpecificationFormat { Byte = 0, Char = 1, Complex64 = 2, Complex128 = 3, 'Date-time' = 4, 'Date-timeOffset' = 5, Double = 6, Duration = 7, Float = 8, Int8 = 9, Int16 = 10, Int32 = 11, Int64 = 12, Uint8 = 13, Uint16 = 14, Uint32 = 15, Uint64 = 16 }
+	export enum ColumnSpecificationFormat { Byte = 'Byte', Char = 'Char', Complex64 = 'Complex64', Complex128 = 'Complex128', 'Date-time' = 'Date-time', 'Date-timeOffset' = 'Date-timeOffset', Double = 'Double', Duration = 'Duration', Float = 'Float', Int8 = 'Int8', Int16 = 'Int16', Int32 = 'Int32', Int64 = 'Int64', Uint8 = 'Uint8', Uint16 = 'Uint16', Uint32 = 'Uint32', Uint64 = 'Uint64' }
 
-	export enum ColumnSpecificationType { Boolean = 0, Integer = 1, Number = 2, String = 3 }
+	export enum ColumnSpecificationType { Boolean = 'Boolean', Integer = 'Integer', Number = 'Number', String = 'String' }
 
 
 	/** Information about the machine learning commitment plan associated with the web service. */
@@ -434,7 +434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticsConfigurationLevel { None = 0, Error = 1, All = 2 }
+	export enum DiagnosticsConfigurationLevel { None = 'None', Error = 'Error', All = 'All' }
 
 
 	/** Sample input data for the service's input(s). */
@@ -687,7 +687,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GraphParameterType { String = 0, Int = 1, Float = 2, Enumerated = 3, Script = 4, Mode = 5, Credential = 6, Boolean = 7, Double = 8, ColumnPicker = 9, ParameterRange = 10, DataGatewayName = 11 }
+	export enum GraphParameterType { String = 'String', Int = 'Int', Float = 'Float', Enumerated = 'Enumerated', Script = 'Script', Mode = 'Mode', Credential = 'Credential', Boolean = 'Boolean', Double = 'Double', ColumnPicker = 'ColumnPicker', ParameterRange = 'ParameterRange', DataGatewayName = 'DataGatewayName' }
 
 
 	/** Information about the machine learning workspace containing the experiment that is source for the web service. */
@@ -1114,7 +1114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebServicePropertiesPackageType { Graph = 0 }
+	export enum WebServicePropertiesPackageType { Graph = 'Graph' }
 
 
 	/** Holds the available configuration options for an Azure ML web service endpoint. */

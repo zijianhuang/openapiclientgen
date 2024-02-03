@@ -97,13 +97,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountSasParametersSignedPermission { r = 0, d = 1, w = 2, l = 3, a = 4, c = 5, u = 6, p = 7 }
+	export enum AccountSasParametersSignedPermission { r = 'r', d = 'd', w = 'w', l = 'l', a = 'a', c = 'c', u = 'u', p = 'p' }
 
-	export enum AccountSasParametersSignedProtocol { 'https,http' = 0, https = 1 }
+	export enum AccountSasParametersSignedProtocol { 'https,http' = 'https,http', https = 'https' }
 
-	export enum AccountSasParametersSignedResourceTypes { s = 0, c = 1, o = 2 }
+	export enum AccountSasParametersSignedResourceTypes { s = 's', c = 'c', o = 'o' }
 
-	export enum AccountSasParametersSignedServices { b = 0, q = 1, t = 2, f = 3 }
+	export enum AccountSasParametersSignedServices { b = 'b', q = 'q', t = 't', f = 'f' }
 
 
 	/** Settings properties for Active Directory (AD). */
@@ -227,7 +227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureFilesIdentityBasedAuthenticationDirectoryServiceOptions { None = 0, AADDS = 1, AD = 2 }
+	export enum AzureFilesIdentityBasedAuthenticationDirectoryServiceOptions { None = 'None', AADDS = 'AADDS', AD = 'AD' }
 
 
 	/** Blob restore parameters */
@@ -340,7 +340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlobRestoreStatusStatus { InProgress = 0, Complete = 1, Failed = 2 }
+	export enum BlobRestoreStatusStatus { InProgress = 'InProgress', Complete = 'Complete', Failed = 'Failed' }
 
 
 	/** The CheckNameAvailability operation response. */
@@ -377,7 +377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResultReason { AccountNameInvalid = 0, AlreadyExists = 1 }
+	export enum CheckNameAvailabilityResultReason { AccountNameInvalid = 'AccountNameInvalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The custom domain assigned to this storage account. This can be set via Update. */
@@ -532,7 +532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionKeySource { 'Microsoft.Storage' = 0, 'Microsoft.Keyvault' = 1 }
+	export enum EncryptionKeySource { 'Microsoft.Storage' = 'Microsoft.Storage', 'Microsoft.Keyvault' = 'Microsoft.Keyvault' }
 
 
 	/** A service that allows server-side encryption to be used. */
@@ -569,7 +569,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionServiceKeyType { Service = 0, Account = 1 }
+	export enum EncryptionServiceKeyType { Service = 'Service', Account = 'Account' }
 
 
 	/** A list of services that support encryption. */
@@ -722,7 +722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoReplicationStatsStatus { Live = 0, Bootstrap = 1, Unavailable = 2 }
+	export enum GeoReplicationStatsStatus { Live = 'Live', Bootstrap = 'Bootstrap', Unavailable = 'Unavailable' }
 
 
 	/** IP rule with specific IP or IP range in CIDR format. */
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPRuleAction { Allow = 0 }
+	export enum IPRuleAction { Allow = 'Allow' }
 
 
 	/** Identity for the resource. */
@@ -801,7 +801,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** Properties of key vault. */
@@ -1059,7 +1059,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagementPolicyRuleType { Lifecycle = 0 }
+	export enum ManagementPolicyRuleType { Lifecycle = 'Lifecycle' }
 
 
 	/** The Storage Account ManagementPolicies Rules. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts. */
@@ -1211,9 +1211,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkRuleSetBypass { None = 0, Logging = 1, Metrics = 2, AzureServices = 3 }
+	export enum NetworkRuleSetBypass { None = 'None', Logging = 'Logging', Metrics = 'Metrics', AzureServices = 'AzureServices' }
 
-	export enum NetworkRuleSetDefaultAction { Allow = 0, Deny = 1 }
+	export enum NetworkRuleSetDefaultAction { Allow = 'Allow', Deny = 'Deny' }
 
 
 	/** Virtual Network rule. */
@@ -1256,7 +1256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualNetworkRuleState { provisioning = 0, deprovisioning = 1, succeeded = 2, failed = 3, networkSourceDeleted = 4 }
+	export enum VirtualNetworkRuleState { provisioning = 'provisioning', deprovisioning = 'deprovisioning', succeeded = 'succeeded', failed = 'failed', networkSourceDeleted = 'networkSourceDeleted' }
 
 
 	/** Storage REST API operation definition. */
@@ -1391,15 +1391,15 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateEndpointConnectionPropertiesProvisioningState { Succeeded = 0, Creating = 1, Deleting = 2, Failed = 3 }
+	export enum PrivateEndpointConnectionPropertiesProvisioningState { Succeeded = 'Succeeded', Creating = 'Creating', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** The current provisioning state. */
-	export enum PrivateEndpointConnectionProvisioningState { Succeeded = 0, Creating = 1, Deleting = 2, Failed = 3 }
+	export enum PrivateEndpointConnectionProvisioningState { Succeeded = 'Succeeded', Creating = 'Creating', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** The private endpoint connection status. */
-	export enum PrivateEndpointServiceConnectionStatus { Pending = 0, Approved = 1, Rejected = 2 }
+	export enum PrivateEndpointServiceConnectionStatus { Pending = 'Pending', Approved = 'Approved', Rejected = 'Rejected' }
 
 	export interface PrivateLinkResource {
 	}
@@ -1521,7 +1521,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestrictionReasonCode { QuotaId = 0, NotAvailableForSubscription = 1 }
+	export enum RestrictionReasonCode { QuotaId = 'QuotaId', NotAvailableForSubscription = 'NotAvailableForSubscription' }
 
 
 	/** Routing preference defines the type of network, either microsoft or internet routing to be used to deliver the user data, the default option is microsoft routing */
@@ -1558,7 +1558,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutingPreferenceRoutingChoice { MicrosoftRouting = 0, InternetRouting = 1 }
+	export enum RoutingPreferenceRoutingChoice { MicrosoftRouting = 'MicrosoftRouting', InternetRouting = 'InternetRouting' }
 
 
 	/** The capability information in the specified SKU, including file encryption, network ACLs, change notification, etc. */
@@ -1740,7 +1740,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceSasParametersSignedResource { b = 0, c = 1, f = 2, s = 3 }
+	export enum ServiceSasParametersSignedResource { b = 'b', c = 'c', f = 'f', s = 's' }
 
 
 	/** One property of operation, include metric specifications. */
@@ -1816,11 +1816,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuInformationKind { Storage = 0, StorageV2 = 1, BlobStorage = 2, FileStorage = 3, BlockBlobStorage = 4 }
+	export enum SkuInformationKind { Storage = 'Storage', StorageV2 = 'StorageV2', BlobStorage = 'BlobStorage', FileStorage = 'FileStorage', BlockBlobStorage = 'BlockBlobStorage' }
 
-	export enum SkuInformationName { Standard_LRS = 0, Standard_GRS = 1, Standard_RAGRS = 2, Standard_ZRS = 3, Premium_LRS = 4, Premium_ZRS = 5, Standard_GZRS = 6, Standard_RAGZRS = 7 }
+	export enum SkuInformationName { Standard_LRS = 'Standard_LRS', Standard_GRS = 'Standard_GRS', Standard_RAGRS = 'Standard_RAGRS', Standard_ZRS = 'Standard_ZRS', Premium_LRS = 'Premium_LRS', Premium_ZRS = 'Premium_ZRS', Standard_GZRS = 'Standard_GZRS', Standard_RAGZRS = 'Standard_RAGZRS' }
 
-	export enum SkuInformationTier { Standard = 0, Premium = 1 }
+	export enum SkuInformationTier { Standard = 'Standard', Premium = 'Premium' }
 
 	export interface StorageAccount {
 	}
@@ -1872,7 +1872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageAccountCheckNameAvailabilityParametersType { 'Microsoft.Storage/storageAccounts' = 0 }
+	export enum StorageAccountCheckNameAvailabilityParametersType { 'Microsoft.Storage/storageAccounts' = 'Microsoft.Storage/storageAccounts' }
 
 
 	/** The parameters used when creating a storage account. */
@@ -2017,7 +2017,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageAccountKeyPermissions { Read = 0, Full = 1 }
+	export enum StorageAccountKeyPermissions { Read = 'Read', Full = 'Full' }
 
 
 	/** The response from the ListKeys operation. */
@@ -2244,13 +2244,13 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageAccountPropertiesAccessTier { Hot = 0, Cool = 1 }
+	export enum StorageAccountPropertiesAccessTier { Hot = 'Hot', Cool = 'Cool' }
 
-	export enum StorageAccountPropertiesLargeFileSharesState { Disabled = 0, Enabled = 1 }
+	export enum StorageAccountPropertiesLargeFileSharesState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
-	export enum StorageAccountPropertiesProvisioningState { Creating = 0, ResolvingDNS = 1, Succeeded = 2 }
+	export enum StorageAccountPropertiesProvisioningState { Creating = 'Creating', ResolvingDNS = 'ResolvingDNS', Succeeded = 'Succeeded' }
 
-	export enum StorageAccountPropertiesStatusOfPrimary { available = 0, unavailable = 1 }
+	export enum StorageAccountPropertiesStatusOfPrimary { available = 'available', unavailable = 'unavailable' }
 
 
 	/** The parameters used to create the storage account. */
@@ -2482,7 +2482,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageUnit { Count = 0, Bytes = 1, Seconds = 2, Percent = 3, CountsPerSecond = 4, BytesPerSecond = 5 }
+	export enum UsageUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', Percent = 'Percent', CountsPerSecond = 'CountsPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 
 	/** The response from the List Usages operation. */
@@ -2853,11 +2853,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum StorageAccounts_GetPropertiesExpand { geoReplicationStats = 0, blobRestoreStatus = 1 }
+	export enum StorageAccounts_GetPropertiesExpand { geoReplicationStats = 'geoReplicationStats', blobRestoreStatus = 'blobRestoreStatus' }
 
-	export enum StorageAccounts_ListKeysExpand { kerb = 0 }
+	export enum StorageAccounts_ListKeysExpand { kerb = 'kerb' }
 
-	export enum ManagementPolicies_GetManagementPolicyName { default = 0 }
+	export enum ManagementPolicies_GetManagementPolicyName { default = 'default' }
 
 }
 

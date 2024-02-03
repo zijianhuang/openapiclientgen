@@ -45,9 +45,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationAttemptInfoFailureReason { FAILURE_REASON_UNSPECIFIED = 0, CONFIG = 1, CAA = 2, RATE_LIMITED = 3 }
+	export enum AuthorizationAttemptInfoFailureReason { FAILURE_REASON_UNSPECIFIED = 'FAILURE_REASON_UNSPECIFIED', CONFIG = 'CONFIG', CAA = 'CAA', RATE_LIMITED = 'RATE_LIMITED' }
 
-	export enum AuthorizationAttemptInfoState { STATE_UNSPECIFIED = 0, AUTHORIZING = 1, AUTHORIZED = 2, FAILED = 3 }
+	export enum AuthorizationAttemptInfoState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', AUTHORIZING = 'AUTHORIZING', AUTHORIZED = 'AUTHORIZED', FAILED = 'FAILED' }
 
 
 	/** The request message for Operations.CancelOperation. */
@@ -210,11 +210,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisioningIssueReason { REASON_UNSPECIFIED = 0, AUTHORIZATION_ISSUE = 1, RATE_LIMITED = 2 }
+	export enum ProvisioningIssueReason { REASON_UNSPECIFIED = 'REASON_UNSPECIFIED', AUTHORIZATION_ISSUE = 'AUTHORIZATION_ISSUE', RATE_LIMITED = 'RATE_LIMITED' }
 
-	export enum ManagedCertificateState { STATE_UNSPECIFIED = 0, PROVISIONING = 1, FAILED = 2, ACTIVE = 3 }
+	export enum ManagedCertificateState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PROVISIONING = 'PROVISIONING', FAILED = 'FAILED', ACTIVE = 'ACTIVE' }
 
-	export enum CertificateScope { DEFAULT = 0, EDGE_CACHE = 1, ALL_REGIONS = 2 }
+	export enum CertificateScope { DEFAULT = 'DEFAULT', EDGE_CACHE = 'EDGE_CACHE', ALL_REGIONS = 'ALL_REGIONS' }
 
 
 	/** Certificate data for a SelfManaged Certificate. SelfManaged Certificates are uploaded by the user. Updating such certificates before they expire remains the user's responsibility. */
@@ -355,7 +355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateIssuanceConfigKeyAlgorithm { KEY_ALGORITHM_UNSPECIFIED = 0, RSA_2048 = 1, ECDSA_P256 = 2 }
+	export enum CertificateIssuanceConfigKeyAlgorithm { KEY_ALGORITHM_UNSPECIFIED = 'KEY_ALGORITHM_UNSPECIFIED', RSA_2048 = 'RSA_2048', ECDSA_P256 = 'ECDSA_P256' }
 
 
 	/** Defines a collection of certificate configurations. */
@@ -537,9 +537,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateMapEntryMatcher { MATCHER_UNSPECIFIED = 0, PRIMARY = 1 }
+	export enum CertificateMapEntryMatcher { MATCHER_UNSPECIFIED = 'MATCHER_UNSPECIFIED', PRIMARY = 'PRIMARY' }
 
-	export enum CertificateMapEntryState { SERVING_STATE_UNSPECIFIED = 0, ACTIVE = 1, PENDING = 2 }
+	export enum CertificateMapEntryState { SERVING_STATE_UNSPECIFIED = 'SERVING_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', PENDING = 'PENDING' }
 
 
 	/** A DnsAuthorization resource describes a way to perform domain authorization for certificate issuance. */

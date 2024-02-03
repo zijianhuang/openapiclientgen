@@ -19,7 +19,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayOfWeek { MONDAY = 0, TUESDAY = 1, WEDNESDAY = 2, THURSDAY = 3, FRIDAY = 4, SATURDAY = 5, SUNDAY = 6 }
+	export enum DayOfWeek { MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** A user associated with the broker. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console. */
@@ -134,7 +134,7 @@ export namespace MyNS {
 
 
 	/** Optional. The authentication strategy used to secure the broker. The default is SIMPLE. */
-	export enum AuthenticationStrategy { SIMPLE = 0, LDAP = 1 }
+	export enum AuthenticationStrategy { SIMPLE = 'SIMPLE', LDAP = 'LDAP' }
 
 
 	/** Returns information about the specified configuration revision. */
@@ -332,7 +332,7 @@ export namespace MyNS {
 
 
 	/** The broker's status. */
-	export enum BrokerState { CREATION_IN_PROGRESS = 0, CREATION_FAILED = 1, DELETION_IN_PROGRESS = 2, RUNNING = 3, REBOOT_IN_PROGRESS = 4, CRITICAL_ACTION_REQUIRED = 5, REPLICA = 6 }
+	export enum BrokerState { CREATION_IN_PROGRESS = 'CREATION_IN_PROGRESS', CREATION_FAILED = 'CREATION_FAILED', DELETION_IN_PROGRESS = 'DELETION_IN_PROGRESS', RUNNING = 'RUNNING', REBOOT_IN_PROGRESS = 'REBOOT_IN_PROGRESS', CRITICAL_ACTION_REQUIRED = 'CRITICAL_ACTION_REQUIRED', REPLICA = 'REPLICA' }
 
 
 	/** Broker configuration information */
@@ -377,7 +377,7 @@ export namespace MyNS {
 
 
 	/** The broker's deployment mode. */
-	export enum DeploymentMode { SINGLE_INSTANCE = 0, ACTIVE_STANDBY_MULTI_AZ = 1, CLUSTER_MULTI_AZ = 2 }
+	export enum DeploymentMode { SINGLE_INSTANCE = 'SINGLE_INSTANCE', ACTIVE_STANDBY_MULTI_AZ = 'ACTIVE_STANDBY_MULTI_AZ', CLUSTER_MULTI_AZ = 'CLUSTER_MULTI_AZ' }
 
 
 	/** Encryption options for the broker. */
@@ -405,7 +405,7 @@ export namespace MyNS {
 
 
 	/** The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ. */
-	export enum EngineType { ACTIVEMQ = 0, RABBITMQ = 1 }
+	export enum EngineType { ACTIVEMQ = 'ACTIVEMQ', RABBITMQ = 'RABBITMQ' }
 
 
 	/** Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. */
@@ -559,7 +559,7 @@ export namespace MyNS {
 
 
 	/** <p>The broker's storage type.</p> <important><p>EFS is not supported for RabbitMQ engine type.</p></important> */
-	export enum BrokerStorageType { EBS = 0, EFS = 1 }
+	export enum BrokerStorageType { EBS = 'EBS', EFS = 'EFS' }
 
 	export interface __mapOf__string {
 	}
@@ -597,7 +597,7 @@ export namespace MyNS {
 
 
 	/** The type of change pending for the ActiveMQ user. */
-	export enum ChangeType { CREATE = 0, UPDATE = 1, DELETE = 2 }
+	export enum ChangeType { CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
 
 	/** The replication details of the data replication-enabled broker. Only returned if dataReplicationMode or pendingDataReplicationMode is set to CRDR. */
@@ -651,7 +651,7 @@ export namespace MyNS {
 
 
 	/** Specifies whether a broker is a part of a data replication pair. */
-	export enum DataReplicationMode { NONE = 0, CRDR = 1 }
+	export enum DataReplicationMode { NONE = 'NONE', CRDR = 'CRDR' }
 
 	export interface DescribeBrokerEngineTypesResponse {
 		BrokerEngineTypes?: Array<BrokerEngineType>;
@@ -1208,7 +1208,7 @@ export namespace MyNS {
 
 
 	/** The reason for which the configuration elements or attributes were sanitized. */
-	export enum SanitizationWarningReason { DISALLOWED_ELEMENT_REMOVED = 0, DISALLOWED_ATTRIBUTE_REMOVED = 1, INVALID_ATTRIBUTE_VALUE_REMOVED = 2 }
+	export enum SanitizationWarningReason { DISALLOWED_ELEMENT_REMOVED = 'DISALLOWED_ELEMENT_REMOVED', DISALLOWED_ATTRIBUTE_REMOVED = 'DISALLOWED_ATTRIBUTE_REMOVED', INVALID_ATTRIBUTE_VALUE_REMOVED = 'INVALID_ATTRIBUTE_VALUE_REMOVED' }
 
 	export interface UpdateUserResponse {
 	}
@@ -1604,7 +1604,7 @@ export namespace MyNS {
 
 
 	/** The Promote mode requested. */
-	export enum PromoteMode { SWITCHOVER = 0, FAILOVER = 1 }
+	export enum PromoteMode { SWITCHOVER = 'SWITCHOVER', FAILOVER = 'FAILOVER' }
 
 
 	/** Promotes a data replication replica broker to the primary broker role. */

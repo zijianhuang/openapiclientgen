@@ -75,9 +75,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BusinessItemHouseHouse { Commons = 0, Lords = 1 }
+	export enum BusinessItemHouseHouse { Commons = 'Commons', Lords = 'Lords' }
 
-	export enum BusinessItemLaidPaperType { StatutoryInstrument = 0, ProposedNegative = 1 }
+	export enum BusinessItemLaidPaperType { StatutoryInstrument = 'StatutoryInstrument', ProposedNegative = 'ProposedNegative' }
 
 	export interface BusinessItemResource {
 		links?: Array<Link>;
@@ -147,7 +147,7 @@ export namespace MyNS {
 
 	}
 
-	export enum House { Commons = 0, Lords = 1 }
+	export enum House { Commons = 'Commons', Lords = 'Lords' }
 
 	export interface LaidPaperSummary {
 		id?: string | null;
@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LaidPaperType { StatutoryInstrument = 0, ProposedNegative = 1 }
+	export enum LaidPaperType { StatutoryInstrument = 'StatutoryInstrument', ProposedNegative = 'ProposedNegative' }
 
 	export interface LayingBody {
 		departmentId?: number | null;
@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParliamentaryProcess { NotConcluded = 0, Concluded = 1 }
+	export enum ParliamentaryProcess { NotConcluded = 'NotConcluded', Concluded = 'Concluded' }
 
 	export interface ProblemDetails {
 		detail?: string | null;
@@ -520,7 +520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatutoryInstrumentType { DraftAffirmative = 0, DraftNegative = 1, MadeAffirmative = 2, MadeNegative = 3 }
+	export enum StatutoryInstrumentType { DraftAffirmative = 'DraftAffirmative', DraftNegative = 'DraftNegative', MadeAffirmative = 'MadeAffirmative', MadeNegative = 'MadeNegative' }
 
 	@Injectable()
 	export class MyClient {

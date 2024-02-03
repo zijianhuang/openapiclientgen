@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BasicLevelCombiningFunction { AND = 0, OR = 1 }
+	export enum BasicLevelCombiningFunction { AND = 'AND', OR = 'OR' }
 
 
 	/** A condition necessary for an `AccessLevel` to be granted. The Condition is an AND over its fields. So a Condition is true if: 1) the request IP is from one of the listed subnetworks AND 2) the originating device complies with the listed device policy AND 3) all listed access levels are granted AND 4) the request was sent at a time allowed by the DateTimeRestriction. */
@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OsConstraintOsType { OS_UNSPECIFIED = 0, DESKTOP_MAC = 1, DESKTOP_WINDOWS = 2, DESKTOP_LINUX = 3, DESKTOP_CHROME_OS = 4, ANDROID = 5, IOS = 6 }
+	export enum OsConstraintOsType { OS_UNSPECIFIED = 'OS_UNSPECIFIED', DESKTOP_MAC = 'DESKTOP_MAC', DESKTOP_WINDOWS = 'DESKTOP_WINDOWS', DESKTOP_LINUX = 'DESKTOP_LINUX', DESKTOP_CHROME_OS = 'DESKTOP_CHROME_OS', ANDROID = 'ANDROID', IOS = 'IOS' }
 
 
 	/** The originating network source in Google Cloud. */
@@ -449,7 +449,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** `AuthorizedOrgsDesc` contains data for an organization's authorization policy. */
@@ -496,11 +496,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizedOrgsDescAssetType { ASSET_TYPE_UNSPECIFIED = 0, ASSET_TYPE_DEVICE = 1, ASSET_TYPE_CREDENTIAL_STRENGTH = 2 }
+	export enum AuthorizedOrgsDescAssetType { ASSET_TYPE_UNSPECIFIED = 'ASSET_TYPE_UNSPECIFIED', ASSET_TYPE_DEVICE = 'ASSET_TYPE_DEVICE', ASSET_TYPE_CREDENTIAL_STRENGTH = 'ASSET_TYPE_CREDENTIAL_STRENGTH' }
 
-	export enum AuthorizedOrgsDescAuthorizationDirection { AUTHORIZATION_DIRECTION_UNSPECIFIED = 0, AUTHORIZATION_DIRECTION_TO = 1, AUTHORIZATION_DIRECTION_FROM = 2 }
+	export enum AuthorizedOrgsDescAuthorizationDirection { AUTHORIZATION_DIRECTION_UNSPECIFIED = 'AUTHORIZATION_DIRECTION_UNSPECIFIED', AUTHORIZATION_DIRECTION_TO = 'AUTHORIZATION_DIRECTION_TO', AUTHORIZATION_DIRECTION_FROM = 'AUTHORIZATION_DIRECTION_FROM' }
 
-	export enum AuthorizedOrgsDescAuthorizationType { AUTHORIZATION_TYPE_UNSPECIFIED = 0, AUTHORIZATION_TYPE_TRUST = 1 }
+	export enum AuthorizedOrgsDescAuthorizationType { AUTHORIZATION_TYPE_UNSPECIFIED = 'AUTHORIZATION_TYPE_UNSPECIFIED', AUTHORIZATION_TYPE_TRUST = 'AUTHORIZATION_TYPE_TRUST' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -636,7 +636,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 0, PERIMETER_TYPE_BRIDGE = 1 }
+	export enum ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 'PERIMETER_TYPE_REGULAR', PERIMETER_TYPE_BRIDGE = 'PERIMETER_TYPE_BRIDGE' }
 
 
 	/** `ServicePerimeterConfig` specifies a set of Google Cloud resources that describe specific Service Perimeter configuration. */
@@ -724,9 +724,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EgressFromIdentityType { IDENTITY_TYPE_UNSPECIFIED = 0, ANY_IDENTITY = 1, ANY_USER_ACCOUNT = 2, ANY_SERVICE_ACCOUNT = 3 }
+	export enum EgressFromIdentityType { IDENTITY_TYPE_UNSPECIFIED = 'IDENTITY_TYPE_UNSPECIFIED', ANY_IDENTITY = 'ANY_IDENTITY', ANY_USER_ACCOUNT = 'ANY_USER_ACCOUNT', ANY_SERVICE_ACCOUNT = 'ANY_SERVICE_ACCOUNT' }
 
-	export enum EgressFromSourceRestriction { SOURCE_RESTRICTION_UNSPECIFIED = 0, SOURCE_RESTRICTION_ENABLED = 1, SOURCE_RESTRICTION_DISABLED = 2 }
+	export enum EgressFromSourceRestriction { SOURCE_RESTRICTION_UNSPECIFIED = 'SOURCE_RESTRICTION_UNSPECIFIED', SOURCE_RESTRICTION_ENABLED = 'SOURCE_RESTRICTION_ENABLED', SOURCE_RESTRICTION_DISABLED = 'SOURCE_RESTRICTION_DISABLED' }
 
 
 	/** The source that EgressPolicy authorizes access from inside the ServicePerimeter to somewhere outside the ServicePerimeter boundaries. */
@@ -1287,7 +1287,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportedServiceSupportStage { LAUNCH_STAGE_UNSPECIFIED = 0, UNIMPLEMENTED = 1, PRELAUNCH = 2, EARLY_ACCESS = 3, ALPHA = 4, BETA = 5, GA = 6, DEPRECATED = 7 }
+	export enum SupportedServiceSupportStage { LAUNCH_STAGE_UNSPECIFIED = 'LAUNCH_STAGE_UNSPECIFIED', UNIMPLEMENTED = 'UNIMPLEMENTED', PRELAUNCH = 'PRELAUNCH', EARLY_ACCESS = 'EARLY_ACCESS', ALPHA = 'ALPHA', BETA = 'BETA', GA = 'GA', DEPRECATED = 'DEPRECATED' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */
@@ -1704,7 +1704,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Accesscontextmanager_organizations_gcpUserAccessBindings_getFilter { LEVEL_FORMAT_UNSPECIFIED = 0, AS_DEFINED = 1, CEL = 2 }
+	export enum Accesscontextmanager_organizations_gcpUserAccessBindings_getFilter { LEVEL_FORMAT_UNSPECIFIED = 'LEVEL_FORMAT_UNSPECIFIED', AS_DEFINED = 'AS_DEFINED', CEL = 'CEL' }
 
 }
 

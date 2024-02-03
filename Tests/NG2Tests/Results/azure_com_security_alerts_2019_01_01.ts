@@ -254,7 +254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertPropertiesReportedSeverity { Informational = 0, Low = 1, Medium = 2, High = 3 }
+	export enum AlertPropertiesReportedSeverity { Informational = 'Informational', Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** List of security alerts */

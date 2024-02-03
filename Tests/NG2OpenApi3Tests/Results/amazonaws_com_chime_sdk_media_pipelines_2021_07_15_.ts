@@ -56,11 +56,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaPipelineSourceType { ChimeSdkMeeting = 0 }
+	export enum MediaPipelineSourceType { ChimeSdkMeeting = 'ChimeSdkMeeting' }
 
-	export enum MediaPipelineStatus { Initializing = 0, InProgress = 1, Failed = 2, Stopping = 3, Stopped = 4, Paused = 5 }
+	export enum MediaPipelineStatus { Initializing = 'Initializing', InProgress = 'InProgress', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped', Paused = 'Paused' }
 
-	export enum MediaPipelineSinkType { S3Bucket = 0 }
+	export enum MediaPipelineSinkType { S3Bucket = 'S3Bucket' }
 
 
 	/** The configuration object of the Amazon Chime SDK meeting for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>. */
@@ -154,7 +154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioMuxType { AudioOnly = 0, AudioWithActiveSpeakerVideo = 1, AudioWithCompositedVideo = 2 }
+	export enum AudioMuxType { AudioOnly = 'AudioOnly', AudioWithActiveSpeakerVideo = 'AudioWithActiveSpeakerVideo', AudioWithCompositedVideo = 'AudioWithCompositedVideo' }
 
 
 	/** The video artifact configuration object. */
@@ -180,9 +180,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactsState { Enabled = 0, Disabled = 1 }
+	export enum ArtifactsState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum VideoMuxType { VideoOnly = 0 }
+	export enum VideoMuxType { VideoOnly = 'VideoOnly' }
 
 
 	/** The content artifact object. */
@@ -208,7 +208,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentMuxType { ContentOnly = 0 }
+	export enum ContentMuxType { ContentOnly = 'ContentOnly' }
 
 
 	/** Specifies the configuration for compositing video artifacts. */
@@ -233,9 +233,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LayoutOption { GridView = 0 }
+	export enum LayoutOption { GridView = 'GridView' }
 
-	export enum ResolutionOption { HD = 0, FHD = 1 }
+	export enum ResolutionOption { HD = 'HD', FHD = 'FHD' }
 
 
 	/** Specifies the type of grid layout. */
@@ -266,7 +266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentShareLayoutOption { PresenterOnly = 0, Horizontal = 1, Vertical = 2, ActiveSpeakerOnly = 3 }
+	export enum ContentShareLayoutOption { PresenterOnly = 'PresenterOnly', Horizontal = 'Horizontal', Vertical = 'Vertical', ActiveSpeakerOnly = 'ActiveSpeakerOnly' }
 
 
 	/** Defines the configuration for a presenter-only video tile. */
@@ -285,7 +285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PresenterPosition { TopLeft = 0, TopRight = 1, BottomLeft = 2, BottomRight = 3 }
+	export enum PresenterPosition { TopLeft = 'TopLeft', TopRight = 'TopRight', BottomLeft = 'BottomLeft', BottomRight = 'BottomRight' }
 
 
 	/** Defines the configuration for an <code>ActiveSpeakerOnly</code> video tile. */
@@ -330,9 +330,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TileOrder { JoinSequence = 0, SpeakerSequence = 1 }
+	export enum TileOrder { JoinSequence = 'JoinSequence', SpeakerSequence = 'SpeakerSequence' }
 
-	export enum HorizontalTilePosition { Top = 0, Bottom = 1 }
+	export enum HorizontalTilePosition { Top = 'Top', Bottom = 'Bottom' }
 
 
 	/** Defines the configuration settings for a vertial layout. */
@@ -360,7 +360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerticalTilePosition { Left = 0, Right = 1 }
+	export enum VerticalTilePosition { Left = 'Left', Right = 'Right' }
 
 
 	/** Defines the settings for a video tile. */
@@ -388,9 +388,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BorderColor { Black = 0, Blue = 1, Red = 2, Green = 3, White = 4, Yellow = 5 }
+	export enum BorderColor { Black = 'Black', Blue = 'Blue', Red = 'Red', Green = 'Green', White = 'White', Yellow = 'Yellow' }
 
-	export enum CanvasOrientation { Landscape = 0, Portrait = 1 }
+	export enum CanvasOrientation { Landscape = 'Landscape', Portrait = 'Portrait' }
 
 
 	/** A key/value pair that grants users access to meeting resources. */
@@ -556,7 +556,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConcatenationSourceType { MediaCapturePipeline = 0 }
+	export enum ConcatenationSourceType { MediaCapturePipeline = 'MediaCapturePipeline' }
 
 
 	/** The source configuration object of a media capture pipeline. */
@@ -655,7 +655,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioArtifactsConcatenationState { Enabled = 0 }
+	export enum AudioArtifactsConcatenationState { Enabled = 'Enabled' }
 
 
 	/** The configuration object of a video concatenation pipeline. */
@@ -978,9 +978,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ParticipantRole { AGENT = 0, CUSTOMER = 1 }
+	export enum ParticipantRole { AGENT = 'AGENT', CUSTOMER = 'CUSTOMER' }
 
-	export enum MediaEncoding { pcm = 0 }
+	export enum MediaEncoding { pcm = 'pcm' }
 
 	export interface MediaInsightsRuntimeMetadata {
 	}
@@ -1053,7 +1053,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FragmentSelectorType { ProducerTimestamp = 0, ServerTimestamp = 1 }
+	export enum FragmentSelectorType { ProducerTimestamp = 'ProducerTimestamp', ServerTimestamp = 'ServerTimestamp' }
 
 
 	/** The range of timestamps to return. */
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordingFileFormat { Wav = 0, Opus = 1 }
+	export enum RecordingFileFormat { Wav = 'Wav', Opus = 'Opus' }
 
 	export interface NotFoundException {
 	}
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RealTimeAlertRuleType { KeywordMatch = 0, Sentiment = 1, IssueDetection = 2 }
+	export enum RealTimeAlertRuleType { KeywordMatch = 'KeywordMatch', Sentiment = 'Sentiment', IssueDetection = 'IssueDetection' }
 
 
 	/** A structure that contains the settings for a keyword match task. */
@@ -1274,7 +1274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SentimentType { NEGATIVE = 0 }
+	export enum SentimentType { NEGATIVE = 'NEGATIVE' }
 
 
 	/** A structure that contains the configuration settings for an issue detection task. */
@@ -1326,7 +1326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaInsightsPipelineConfigurationElementType { AmazonTranscribeCallAnalyticsProcessor = 0, VoiceAnalyticsProcessor = 1, AmazonTranscribeProcessor = 2, KinesisDataStreamSink = 3, LambdaFunctionSink = 4, SqsQueueSink = 5, SnsTopicSink = 6, S3RecordingSink = 7 }
+	export enum MediaInsightsPipelineConfigurationElementType { AmazonTranscribeCallAnalyticsProcessor = 'AmazonTranscribeCallAnalyticsProcessor', VoiceAnalyticsProcessor = 'VoiceAnalyticsProcessor', AmazonTranscribeProcessor = 'AmazonTranscribeProcessor', KinesisDataStreamSink = 'KinesisDataStreamSink', LambdaFunctionSink = 'LambdaFunctionSink', SqsQueueSink = 'SqsQueueSink', SnsTopicSink = 'SnsTopicSink', S3RecordingSink = 'S3RecordingSink' }
 
 
 	/** A structure that contains the configuration settings for an Amazon Transcribe call analytics processor. */
@@ -1381,13 +1381,13 @@ export namespace MyNS {
 
 	}
 
-	export enum CallAnalyticsLanguageCode { 'en-US' = 0, 'en-GB' = 1, 'es-US' = 2, 'fr-CA' = 3, 'fr-FR' = 4, 'en-AU' = 5, 'it-IT' = 6, 'de-DE' = 7, 'pt-BR' = 8 }
+	export enum CallAnalyticsLanguageCode { 'en-US' = 'en-US', 'en-GB' = 'en-GB', 'es-US' = 'es-US', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'en-AU' = 'en-AU', 'it-IT' = 'it-IT', 'de-DE' = 'de-DE', 'pt-BR' = 'pt-BR' }
 
-	export enum VocabularyFilterMethod { remove = 0, mask = 1, tag = 2 }
+	export enum VocabularyFilterMethod { remove = 'remove', mask = 'mask', tag = 'tag' }
 
-	export enum PartialResultsStability { high = 0, medium = 1, low = 2 }
+	export enum PartialResultsStability { high = 'high', medium = 'medium', low = 'low' }
 
-	export enum ContentType { PII = 0 }
+	export enum ContentType { PII = 'PII' }
 
 
 	/** <p>Allows you to specify additional settings for your Call Analytics post-call request, including output locations for your redacted transcript, which IAM role to use, and which encryption key to use.</p> <p> <code>DataAccessRoleArn</code> and <code>OutputLocation</code> are required fields.</p> <p> <code>PostCallAnalyticsSettings</code> provides the same insights as a Call Analytics post-call transcription. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p> */
@@ -1423,7 +1423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentRedactionOutput { redacted = 0, redacted_and_unredacted = 1 }
+	export enum ContentRedactionOutput { redacted = 'redacted', redacted_and_unredacted = 'redacted_and_unredacted' }
 
 
 	/** A structure that contains the configuration settings for an Amazon Transcribe processor. */
@@ -1694,7 +1694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveConnectorMuxType { AudioWithCompositedVideo = 0, AudioWithActiveSpeakerVideo = 1 }
+	export enum LiveConnectorMuxType { AudioWithCompositedVideo = 'AudioWithCompositedVideo', AudioWithActiveSpeakerVideo = 'AudioWithActiveSpeakerVideo' }
 
 
 	/** The media pipeline's sink configuration settings. */
@@ -1720,7 +1720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveConnectorSinkType { RTMP = 0 }
+	export enum LiveConnectorSinkType { RTMP = 'RTMP' }
 
 
 	/** The media pipeline's RTMP configuration object. */
@@ -1749,7 +1749,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioChannelsOption { Stereo = 0, Mono = 1 }
+	export enum AudioChannelsOption { Stereo = 'Stereo', Mono = 'Mono' }
 
 	export interface ConflictException {
 	}
@@ -1959,11 +1959,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ActiveSpeakerPosition { TopLeft = 0, TopRight = 1, BottomLeft = 2, BottomRight = 3 }
+	export enum ActiveSpeakerPosition { TopLeft = 'TopLeft', TopRight = 'TopRight', BottomLeft = 'BottomLeft', BottomRight = 'BottomRight' }
 
-	export enum ArtifactsConcatenationState { Enabled = 0, Disabled = 1 }
+	export enum ArtifactsConcatenationState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum ConcatenationSinkType { S3Bucket = 0 }
+	export enum ConcatenationSinkType { S3Bucket = 'S3Bucket' }
 
 	export interface CreateMediaCapturePipelineRequest {
 
@@ -2165,7 +2165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HighlightColor { Black = 0, Blue = 1, Red = 2, Green = 3, White = 4, Yellow = 5 }
+	export enum HighlightColor { Black = 'Black', Blue = 'Blue', Red = 'Red', Green = 'Green', White = 'White', Yellow = 'Yellow' }
 
 	export interface ListMediaCapturePipelinesRequest {
 	}
@@ -2207,9 +2207,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveConnectorSourceType { ChimeSdkMeeting = 0 }
+	export enum LiveConnectorSourceType { ChimeSdkMeeting = 'ChimeSdkMeeting' }
 
-	export enum MediaPipelineStatusUpdate { Pause = 0, Resume = 1 }
+	export enum MediaPipelineStatusUpdate { Pause = 'Pause', Resume = 'Resume' }
 
 	export interface TagResourceRequest {
 
@@ -2289,7 +2289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceAnalyticsConfigurationStatus { Enabled = 0, Disabled = 1 }
+	export enum VoiceAnalyticsConfigurationStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	@Injectable()
 	export class MyClient {
@@ -2941,7 +2941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagResourceOperation { 'tag-resource' = 0 }
+	export enum TagResourceOperation { 'tag-resource' = 'tag-resource' }
 
 	export interface TagResourcePostBody {
 
@@ -2978,7 +2978,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UntagResourceOperation { 'untag-resource' = 0 }
+	export enum UntagResourceOperation { 'untag-resource' = 'untag-resource' }
 
 	export interface UntagResourcePostBody {
 

@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceleratorConfigType { TYPE_UNSPECIFIED = 0, V2 = 1, V3 = 2, V4 = 3, V5P = 4 }
+	export enum AcceleratorConfigType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', V2 = 'V2', V3 = 'V3', V4 = 'V4', V5P = 'V5P' }
 
 
 	/** A accelerator type that a Node can be configured with. */
@@ -141,7 +141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachedDiskMode { DISK_MODE_UNSPECIFIED = 0, READ_WRITE = 1, READ_ONLY = 2 }
+	export enum AttachedDiskMode { DISK_MODE_UNSPECIFIED = 'DISK_MODE_UNSPECIFIED', READ_WRITE = 'READ_WRITE', READ_ONLY = 'READ_ONLY' }
 
 
 	/** BestEffort tier definition. */
@@ -800,9 +800,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeApiVersion { API_VERSION_UNSPECIFIED = 0, V1_ALPHA1 = 1, V1 = 2, V2_ALPHA1 = 3 }
+	export enum NodeApiVersion { API_VERSION_UNSPECIFIED = 'API_VERSION_UNSPECIFIED', V1_ALPHA1 = 'V1_ALPHA1', V1 = 'V1', V2_ALPHA1 = 'V2_ALPHA1' }
 
-	export enum NodeHealth { HEALTH_UNSPECIFIED = 0, HEALTHY = 1, TIMEOUT = 2, UNHEALTHY_TENSORFLOW = 3, UNHEALTHY_MAINTENANCE = 4 }
+	export enum NodeHealth { HEALTH_UNSPECIFIED = 'HEALTH_UNSPECIFIED', HEALTHY = 'HEALTHY', TIMEOUT = 'TIMEOUT', UNHEALTHY_TENSORFLOW = 'UNHEALTHY_TENSORFLOW', UNHEALTHY_MAINTENANCE = 'UNHEALTHY_MAINTENANCE' }
 
 
 	/** Network related configurations. */
@@ -950,7 +950,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, RESTARTING = 3, REIMAGING = 4, DELETING = 5, REPAIRING = 6, STOPPED = 7, STOPPING = 8, STARTING = 9, PREEMPTED = 10, TERMINATED = 11, HIDING = 12, HIDDEN = 13, UNHIDING = 14 }
+	export enum NodeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', RESTARTING = 'RESTARTING', REIMAGING = 'REIMAGING', DELETING = 'DELETING', REPAIRING = 'REPAIRING', STOPPED = 'STOPPED', STOPPING = 'STOPPING', STARTING = 'STARTING', PREEMPTED = 'PREEMPTED', TERMINATED = 'TERMINATED', HIDING = 'HIDING', HIDDEN = 'HIDDEN', UNHIDING = 'UNHIDING' }
 
 
 	/** A Symptom instance. */
@@ -994,7 +994,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SymptomSymptomType { SYMPTOM_TYPE_UNSPECIFIED = 0, LOW_MEMORY = 1, OUT_OF_MEMORY = 2, EXECUTE_TIMED_OUT = 3, MESH_BUILD_FAIL = 4, HBM_OUT_OF_MEMORY = 5, PROJECT_ABUSE = 6 }
+	export enum SymptomSymptomType { SYMPTOM_TYPE_UNSPECIFIED = 'SYMPTOM_TYPE_UNSPECIFIED', LOW_MEMORY = 'LOW_MEMORY', OUT_OF_MEMORY = 'OUT_OF_MEMORY', EXECUTE_TIMED_OUT = 'EXECUTE_TIMED_OUT', MESH_BUILD_FAIL = 'MESH_BUILD_FAIL', HBM_OUT_OF_MEMORY = 'HBM_OUT_OF_MEMORY', PROJECT_ABUSE = 'PROJECT_ABUSE' }
 
 
 	/** The response message for Operations.ListOperations. */
@@ -1270,9 +1270,9 @@ export namespace MyNS {
 
 	}
 
-	export enum QueuedResourceStateState { STATE_UNSPECIFIED = 0, CREATING = 1, ACCEPTED = 2, PROVISIONING = 3, FAILED = 4, DELETING = 5, ACTIVE = 6, SUSPENDING = 7, SUSPENDED = 8, WAITING_FOR_RESOURCES = 9 }
+	export enum QueuedResourceStateState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACCEPTED = 'ACCEPTED', PROVISIONING = 'PROVISIONING', FAILED = 'FAILED', DELETING = 'DELETING', ACTIVE = 'ACTIVE', SUSPENDING = 'SUSPENDING', SUSPENDED = 'SUSPENDED', WAITING_FOR_RESOURCES = 'WAITING_FOR_RESOURCES' }
 
-	export enum QueuedResourceStateStateInitiator { STATE_INITIATOR_UNSPECIFIED = 0, USER = 1, SERVICE = 2 }
+	export enum QueuedResourceStateStateInitiator { STATE_INITIATOR_UNSPECIFIED = 'STATE_INITIATOR_UNSPECIFIED', USER = 'USER', SERVICE = 'SERVICE' }
 
 
 	/** Further data for the suspended state. */
@@ -1458,7 +1458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StandardCapacityUnits { CAPACITY_UNITS_UNSPECIFIED = 0, CORES = 1, CHIPS = 2 }
+	export enum StandardCapacityUnits { CAPACITY_UNITS_UNSPECIFIED = 'CAPACITY_UNITS_UNSPECIFIED', CORES = 'CORES', CHIPS = 'CHIPS' }
 
 	export interface Usage {
 

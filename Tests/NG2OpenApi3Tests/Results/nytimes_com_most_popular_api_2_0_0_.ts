@@ -143,7 +143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoFacet { '' = 0 }
+	export enum GeoFacet { '' = '' }
 
 	@Injectable()
 	export class MyClient {

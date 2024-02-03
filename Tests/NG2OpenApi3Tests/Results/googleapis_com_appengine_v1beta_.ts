@@ -52,11 +52,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiConfigHandlerAuthFailAction { AUTH_FAIL_ACTION_UNSPECIFIED = 0, AUTH_FAIL_ACTION_REDIRECT = 1, AUTH_FAIL_ACTION_UNAUTHORIZED = 2 }
+	export enum ApiConfigHandlerAuthFailAction { AUTH_FAIL_ACTION_UNSPECIFIED = 'AUTH_FAIL_ACTION_UNSPECIFIED', AUTH_FAIL_ACTION_REDIRECT = 'AUTH_FAIL_ACTION_REDIRECT', AUTH_FAIL_ACTION_UNAUTHORIZED = 'AUTH_FAIL_ACTION_UNAUTHORIZED' }
 
-	export enum ApiConfigHandlerLogin { LOGIN_UNSPECIFIED = 0, LOGIN_OPTIONAL = 1, LOGIN_ADMIN = 2, LOGIN_REQUIRED = 3 }
+	export enum ApiConfigHandlerLogin { LOGIN_UNSPECIFIED = 'LOGIN_UNSPECIFIED', LOGIN_OPTIONAL = 'LOGIN_OPTIONAL', LOGIN_ADMIN = 'LOGIN_ADMIN', LOGIN_REQUIRED = 'LOGIN_REQUIRED' }
 
-	export enum ApiConfigHandlerSecurityLevel { SECURE_UNSPECIFIED = 0, SECURE_DEFAULT = 1, SECURE_NEVER = 2, SECURE_OPTIONAL = 3, SECURE_ALWAYS = 4 }
+	export enum ApiConfigHandlerSecurityLevel { SECURE_UNSPECIFIED = 'SECURE_UNSPECIFIED', SECURE_DEFAULT = 'SECURE_DEFAULT', SECURE_NEVER = 'SECURE_NEVER', SECURE_OPTIONAL = 'SECURE_OPTIONAL', SECURE_ALWAYS = 'SECURE_ALWAYS' }
 
 
 	/** Uses Google Cloud Endpoints to handle requests. */
@@ -193,7 +193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationDatabaseType { DATABASE_TYPE_UNSPECIFIED = 0, CLOUD_DATASTORE = 1, CLOUD_FIRESTORE = 2, CLOUD_DATASTORE_COMPATIBILITY = 3 }
+	export enum ApplicationDatabaseType { DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED', CLOUD_DATASTORE = 'CLOUD_DATASTORE', CLOUD_FIRESTORE = 'CLOUD_FIRESTORE', CLOUD_DATASTORE_COMPATIBILITY = 'CLOUD_DATASTORE_COMPATIBILITY' }
 
 
 	/** Rules to match an HTTP request and dispatch that request to a service. */
@@ -300,7 +300,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationServingStatus { UNSPECIFIED = 0, SERVING = 1, USER_DISABLED = 2, SYSTEM_DISABLED = 3 }
+	export enum ApplicationServingStatus { UNSPECIFIED = 'UNSPECIFIED', SERVING = 'SERVING', USER_DISABLED = 'USER_DISABLED', SYSTEM_DISABLED = 'SYSTEM_DISABLED' }
 
 
 	/** An SSL certificate that a user has been authorized to administer. A user is authorized to administer any certificate that applies to one of their authorized domains. */
@@ -419,7 +419,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedCertificateStatus { MANAGEMENT_STATUS_UNSPECIFIED = 0, OK = 1, PENDING = 2, FAILED_RETRYING_NOT_VISIBLE = 3, FAILED_PERMANENT = 4, FAILED_RETRYING_CAA_FORBIDDEN = 5, FAILED_RETRYING_CAA_CHECKING = 6 }
+	export enum ManagedCertificateStatus { MANAGEMENT_STATUS_UNSPECIFIED = 'MANAGEMENT_STATUS_UNSPECIFIED', OK = 'OK', PENDING = 'PENDING', FAILED_RETRYING_NOT_VISIBLE = 'FAILED_RETRYING_NOT_VISIBLE', FAILED_PERMANENT = 'FAILED_PERMANENT', FAILED_RETRYING_CAA_FORBIDDEN = 'FAILED_RETRYING_CAA_FORBIDDEN', FAILED_RETRYING_CAA_CHECKING = 'FAILED_RETRYING_CAA_CHECKING' }
 
 
 	/** A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via Search Console (https://search.google.com/search-console/welcome). */
@@ -855,7 +855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallRuleAction { UNSPECIFIED_ACTION = 0, ALLOW = 1, DENY = 2 }
+	export enum FirewallRuleAction { UNSPECIFIED_ACTION = 'UNSPECIFIED_ACTION', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Response message for Firewall.UpdateAllIngressRules. */
@@ -997,15 +997,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ReasonsAbuse { ABUSE_UNKNOWN_REASON = 0, ABUSE_CONTROL_PLANE_SYNC = 1, SUSPEND = 2, REINSTATE = 3 }
+	export enum ReasonsAbuse { ABUSE_UNKNOWN_REASON = 'ABUSE_UNKNOWN_REASON', ABUSE_CONTROL_PLANE_SYNC = 'ABUSE_CONTROL_PLANE_SYNC', SUSPEND = 'SUSPEND', REINSTATE = 'REINSTATE' }
 
-	export enum ReasonsBilling { BILLING_UNKNOWN_REASON = 0, BILLING_CONTROL_PLANE_SYNC = 1, PROBATION = 2, CLOSE = 3, OPEN = 4 }
+	export enum ReasonsBilling { BILLING_UNKNOWN_REASON = 'BILLING_UNKNOWN_REASON', BILLING_CONTROL_PLANE_SYNC = 'BILLING_CONTROL_PLANE_SYNC', PROBATION = 'PROBATION', CLOSE = 'CLOSE', OPEN = 'OPEN' }
 
-	export enum ReasonsDataGovernance { DATA_GOVERNANCE_UNKNOWN_REASON = 0, DATA_GOVERNANCE_CONTROL_PLANE_SYNC = 1, HIDE = 2, UNHIDE = 3, PURGE = 4 }
+	export enum ReasonsDataGovernance { DATA_GOVERNANCE_UNKNOWN_REASON = 'DATA_GOVERNANCE_UNKNOWN_REASON', DATA_GOVERNANCE_CONTROL_PLANE_SYNC = 'DATA_GOVERNANCE_CONTROL_PLANE_SYNC', HIDE = 'HIDE', UNHIDE = 'UNHIDE', PURGE = 'PURGE' }
 
-	export enum ReasonsServiceManagement { SERVICE_MANAGEMENT_UNKNOWN_REASON = 0, SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC = 1, ACTIVATION = 2, PREPARE_DEACTIVATION = 3, ABORT_DEACTIVATION = 4, COMMIT_DEACTIVATION = 5 }
+	export enum ReasonsServiceManagement { SERVICE_MANAGEMENT_UNKNOWN_REASON = 'SERVICE_MANAGEMENT_UNKNOWN_REASON', SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC = 'SERVICE_MANAGEMENT_CONTROL_PLANE_SYNC', ACTIVATION = 'ACTIVATION', PREPARE_DEACTIVATION = 'PREPARE_DEACTIVATION', ABORT_DEACTIVATION = 'ABORT_DEACTIVATION', COMMIT_DEACTIVATION = 'COMMIT_DEACTIVATION' }
 
-	export enum ContainerStateState { UNKNOWN_STATE = 0, ON = 1, OFF = 2, DELETED = 3 }
+	export enum ContainerStateState { UNKNOWN_STATE = 'UNKNOWN_STATE', ON = 'ON', OFF = 'OFF', DELETED = 'DELETED' }
 
 
 	/** Metadata for the given google.longrunning.Operation during a google.appengine.v1.CreateVersionRequest. */
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceRecordType { A = 0, AAAA = 1, CNAME = 2 }
+	export enum ResourceRecordType { A = 'A', AAAA = 'AAAA', CNAME = 'CNAME' }
 
 
 	/** SSL configuration for a DomainMapping resource. */
@@ -1328,7 +1328,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslSettingsSslManagementType { AUTOMATIC = 0, MANUAL = 1 }
+	export enum SslSettingsSslManagementType { AUTOMATIC = 'AUTOMATIC', MANUAL = 'MANUAL' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }  */
@@ -1386,7 +1386,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointsApiServiceRolloutStrategy { UNSPECIFIED_ROLLOUT_STRATEGY = 0, FIXED = 1, MANAGED = 2 }
+	export enum EndpointsApiServiceRolloutStrategy { UNSPECIFIED_ROLLOUT_STRATEGY = 'UNSPECIFIED_ROLLOUT_STRATEGY', FIXED = 'FIXED', MANAGED = 'MANAGED' }
 
 
 	/** The entrypoint for the application. */
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorHandlerErrorCode { ERROR_CODE_UNSPECIFIED = 0, ERROR_CODE_DEFAULT = 1, ERROR_CODE_OVER_QUOTA = 2, ERROR_CODE_DOS_API_DENIAL = 3, ERROR_CODE_TIMEOUT = 4 }
+	export enum ErrorHandlerErrorCode { ERROR_CODE_UNSPECIFIED = 'ERROR_CODE_UNSPECIFIED', ERROR_CODE_DEFAULT = 'ERROR_CODE_DEFAULT', ERROR_CODE_OVER_QUOTA = 'ERROR_CODE_OVER_QUOTA', ERROR_CODE_DOS_API_DENIAL = 'ERROR_CODE_DOS_API_DENIAL', ERROR_CODE_TIMEOUT = 'ERROR_CODE_TIMEOUT' }
 
 
 	/** Runtime settings for the App Engine flexible environment. */
@@ -1705,9 +1705,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceAvailability { UNSPECIFIED = 0, RESIDENT = 1, DYNAMIC = 2 }
+	export enum InstanceAvailability { UNSPECIFIED = 'UNSPECIFIED', RESIDENT = 'RESIDENT', DYNAMIC = 'DYNAMIC' }
 
-	export enum InstanceVmLiveness { LIVENESS_STATE_UNSPECIFIED = 0, UNKNOWN = 1, HEALTHY = 2, UNHEALTHY = 3, DRAINING = 4, TIMEOUT = 5 }
+	export enum InstanceVmLiveness { LIVENESS_STATE_UNSPECIFIED = 'LIVENESS_STATE_UNSPECIFIED', UNKNOWN = 'UNKNOWN', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', DRAINING = 'DRAINING', TIMEOUT = 'TIMEOUT' }
 
 
 	/** Third-party Python runtime library that is required by the application. */
@@ -2101,9 +2101,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeEnvironment { ENVIRONMENT_UNSPECIFIED = 0, STANDARD = 1, FLEXIBLE = 2 }
+	export enum RuntimeEnvironment { ENVIRONMENT_UNSPECIFIED = 'ENVIRONMENT_UNSPECIFIED', STANDARD = 'STANDARD', FLEXIBLE = 'FLEXIBLE' }
 
-	export enum RuntimeStage { RUNTIME_STAGE_UNSPECIFIED = 0, DEVELOPMENT = 1, ALPHA = 2, BETA = 3, GA = 4, DEPRECATED = 5, DECOMMISSIONED = 6, END_OF_SUPPORT = 7 }
+	export enum RuntimeStage { RUNTIME_STAGE_UNSPECIFIED = 'RUNTIME_STAGE_UNSPECIFIED', DEVELOPMENT = 'DEVELOPMENT', ALPHA = 'ALPHA', BETA = 'BETA', GA = 'GA', DEPRECATED = 'DEPRECATED', DECOMMISSIONED = 'DECOMMISSIONED', END_OF_SUPPORT = 'END_OF_SUPPORT' }
 
 
 	/** Response message for Services.ListServices. */
@@ -2198,7 +2198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkSettingsIngressTrafficAllowed { INGRESS_TRAFFIC_ALLOWED_UNSPECIFIED = 0, INGRESS_TRAFFIC_ALLOWED_ALL = 1, INGRESS_TRAFFIC_ALLOWED_INTERNAL_ONLY = 2, INGRESS_TRAFFIC_ALLOWED_INTERNAL_AND_LB = 3 }
+	export enum NetworkSettingsIngressTrafficAllowed { INGRESS_TRAFFIC_ALLOWED_UNSPECIFIED = 'INGRESS_TRAFFIC_ALLOWED_UNSPECIFIED', INGRESS_TRAFFIC_ALLOWED_ALL = 'INGRESS_TRAFFIC_ALLOWED_ALL', INGRESS_TRAFFIC_ALLOWED_INTERNAL_ONLY = 'INGRESS_TRAFFIC_ALLOWED_INTERNAL_ONLY', INGRESS_TRAFFIC_ALLOWED_INTERNAL_AND_LB = 'INGRESS_TRAFFIC_ALLOWED_INTERNAL_AND_LB' }
 
 
 	/** Traffic routing configuration for versions within a single service. Traffic splits define how traffic directed to the service is assigned to versions. */
@@ -2228,7 +2228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrafficSplitShardBy { UNSPECIFIED = 0, COOKIE = 1, IP = 2, RANDOM = 3 }
+	export enum TrafficSplitShardBy { UNSPECIFIED = 'UNSPECIFIED', COOKIE = 'COOKIE', IP = 'IP', RANDOM = 'RANDOM' }
 
 
 	/** Response message for Versions.ListVersions. */
@@ -2544,7 +2544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UrlMapRedirectHttpResponseCode { REDIRECT_HTTP_RESPONSE_CODE_UNSPECIFIED = 0, REDIRECT_HTTP_RESPONSE_CODE_301 = 1, REDIRECT_HTTP_RESPONSE_CODE_302 = 2, REDIRECT_HTTP_RESPONSE_CODE_303 = 3, REDIRECT_HTTP_RESPONSE_CODE_307 = 4 }
+	export enum UrlMapRedirectHttpResponseCode { REDIRECT_HTTP_RESPONSE_CODE_UNSPECIFIED = 'REDIRECT_HTTP_RESPONSE_CODE_UNSPECIFIED', REDIRECT_HTTP_RESPONSE_CODE_301 = 'REDIRECT_HTTP_RESPONSE_CODE_301', REDIRECT_HTTP_RESPONSE_CODE_302 = 'REDIRECT_HTTP_RESPONSE_CODE_302', REDIRECT_HTTP_RESPONSE_CODE_303 = 'REDIRECT_HTTP_RESPONSE_CODE_303', REDIRECT_HTTP_RESPONSE_CODE_307 = 'REDIRECT_HTTP_RESPONSE_CODE_307' }
 
 
 	/** Executes a script to handle the request that matches the URL pattern. */
@@ -2766,7 +2766,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkInstanceIpMode { INSTANCE_IP_MODE_UNSPECIFIED = 0, EXTERNAL = 1, INTERNAL = 2 }
+	export enum NetworkInstanceIpMode { INSTANCE_IP_MODE_UNSPECIFIED = 'INSTANCE_IP_MODE_UNSPECIFIED', EXTERNAL = 'EXTERNAL', INTERNAL = 'INTERNAL' }
 
 
 	/** Readiness checking configuration for VM instances. Unhealthy instances are removed from traffic rotation. */
@@ -2911,7 +2911,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionServingStatus { SERVING_STATUS_UNSPECIFIED = 0, SERVING = 1, STOPPED = 2 }
+	export enum VersionServingStatus { SERVING_STATUS_UNSPECIFIED = 'SERVING_STATUS_UNSPECIFIED', SERVING = 'SERVING', STOPPED = 'STOPPED' }
 
 
 	/** VPC access connector specification. */
@@ -2941,7 +2941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpcAccessConnectorEgressSetting { EGRESS_SETTING_UNSPECIFIED = 0, ALL_TRAFFIC = 1, PRIVATE_IP_RANGES = 2 }
+	export enum VpcAccessConnectorEgressSetting { EGRESS_SETTING_UNSPECIFIED = 'EGRESS_SETTING_UNSPECIFIED', ALL_TRAFFIC = 'ALL_TRAFFIC', PRIVATE_IP_RANGES = 'PRIVATE_IP_RANGES' }
 
 
 	/** Metadata for the given google.cloud.location.Location. */
@@ -3194,7 +3194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectEventPhase { UNKNOWN = 0, BEFORE_RESOURCE_HANDLING = 1, AFTER_RESOURCE_HANDLING = 2 }
+	export enum ProjectEventPhase { UNKNOWN = 'UNKNOWN', BEFORE_RESOURCE_HANDLING = 'BEFORE_RESOURCE_HANDLING', AFTER_RESOURCE_HANDLING = 'AFTER_RESOURCE_HANDLING' }
 
 
 	/** ProjectsMetadata is the metadata CCFE stores about the all the relevant projects (tenant, consumer, producer). */
@@ -3795,13 +3795,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Appengine_apps_getIncludeExtraData { INCLUDE_EXTRA_DATA_UNSPECIFIED = 0, INCLUDE_EXTRA_DATA_NONE = 1, INCLUDE_GOOGLE_GENERATED_METADATA = 2 }
+	export enum Appengine_apps_getIncludeExtraData { INCLUDE_EXTRA_DATA_UNSPECIFIED = 'INCLUDE_EXTRA_DATA_UNSPECIFIED', INCLUDE_EXTRA_DATA_NONE = 'INCLUDE_EXTRA_DATA_NONE', INCLUDE_GOOGLE_GENERATED_METADATA = 'INCLUDE_GOOGLE_GENERATED_METADATA' }
 
-	export enum Appengine_apps_authorizedCertificates_listView { BASIC_CERTIFICATE = 0, FULL_CERTIFICATE = 1 }
+	export enum Appengine_apps_authorizedCertificates_listView { BASIC_CERTIFICATE = 'BASIC_CERTIFICATE', FULL_CERTIFICATE = 'FULL_CERTIFICATE' }
 
-	export enum Appengine_apps_domainMappings_createOverrideStrategy { UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY = 0, STRICT = 1, OVERRIDE = 2 }
+	export enum Appengine_apps_domainMappings_createOverrideStrategy { UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY = 'UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY', STRICT = 'STRICT', OVERRIDE = 'OVERRIDE' }
 
-	export enum Appengine_apps_services_versions_listView { BASIC = 0, FULL = 1 }
+	export enum Appengine_apps_services_versions_listView { BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

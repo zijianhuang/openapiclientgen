@@ -213,9 +213,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { None = 0, ServerError = 1, InvalidRequest = 2, RateLimitExceeded = 3, InvalidAuthorization = 4, InsufficientAuthorization = 5 }
+	export enum ErrorCode { None = 'None', ServerError = 'ServerError', InvalidRequest = 'InvalidRequest', RateLimitExceeded = 'RateLimitExceeded', InvalidAuthorization = 'InvalidAuthorization', InsufficientAuthorization = 'InsufficientAuthorization' }
 
-	export enum ErrorSubCode { UnexpectedError = 0, ResourceError = 1, NotImplemented = 2, ParameterMissing = 3, ParameterInvalidValue = 4, HttpNotAllowed = 5, Blocked = 6, AuthorizationMissing = 7, AuthorizationRedundancy = 8, AuthorizationDisabled = 9, AuthorizationExpired = 10 }
+	export enum ErrorSubCode { UnexpectedError = 'UnexpectedError', ResourceError = 'ResourceError', NotImplemented = 'NotImplemented', ParameterMissing = 'ParameterMissing', ParameterInvalidValue = 'ParameterInvalidValue', HttpNotAllowed = 'HttpNotAllowed', Blocked = 'Blocked', AuthorizationMissing = 'AuthorizationMissing', AuthorizationRedundancy = 'AuthorizationRedundancy', AuthorizationDisabled = 'AuthorizationDisabled', AuthorizationExpired = 'AuthorizationExpired' }
 
 
 	/** The top-level response that represents a failed request. */
@@ -604,7 +604,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideosScenario { List = 0, SingleDominantVideo = 1 }
+	export enum VideosScenario { List = 'List', SingleDominantVideo = 'SingleDominantVideo' }
 
 	@Injectable()
 	export class MyClient {
@@ -669,19 +669,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Videos_DetailsX_BingApis_SDK { true = 0 }
+	export enum Videos_DetailsX_BingApis_SDK { true = 'true' }
 
-	export enum Videos_DetailsResolution { All = 0, SD480p = 1, HD720p = 2, HD1080p = 3 }
+	export enum Videos_DetailsResolution { All = 'All', SD480p = 'SD480p', HD720p = 'HD720p', HD1080p = 'HD1080p' }
 
-	export enum Videos_DetailsSafeSearch { Off = 0, Moderate = 1, Strict = 2 }
+	export enum Videos_DetailsSafeSearch { Off = 'Off', Moderate = 'Moderate', Strict = 'Strict' }
 
-	export enum Videos_DetailsTextFormat { Raw = 0, Html = 1 }
+	export enum Videos_DetailsTextFormat { Raw = 'Raw', Html = 'Html' }
 
-	export enum Videos_SearchFreshness { Day = 0, Week = 1, Month = 2 }
+	export enum Videos_SearchFreshness { Day = 'Day', Week = 'Week', Month = 'Month' }
 
-	export enum Videos_SearchLength { All = 0, Short = 1, Medium = 2, Long = 3 }
+	export enum Videos_SearchLength { All = 'All', Short = 'Short', Medium = 'Medium', Long = 'Long' }
 
-	export enum Videos_SearchPricing { All = 0, Free = 1, Paid = 2 }
+	export enum Videos_SearchPricing { All = 'All', Free = 'Free', Paid = 'Paid' }
 
 }
 

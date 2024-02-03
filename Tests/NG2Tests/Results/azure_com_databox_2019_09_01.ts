@@ -41,7 +41,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountCredentialDetailsDataDestinationType { StorageAccount = 0, ManagedDisk = 1 }
+	export enum AccountCredentialDetailsDataDestinationType { StorageAccount = 'StorageAccount', ManagedDisk = 'ManagedDisk' }
 
 
 	/** Credential details of the shares in account. */
@@ -88,7 +88,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareCredentialDetailsShareType { UnknownType = 0, HCS = 1, BlockBlob = 2, PageBlob = 3, AzureFile = 4, ManagedDisk = 5 }
+	export enum ShareCredentialDetailsShareType { UnknownType = 'UnknownType', HCS = 'HCS', BlockBlob = 'BlockBlob', PageBlob = 'PageBlob', AzureFile = 'AzureFile', ManagedDisk = 'ManagedDisk' }
 
 
 	/** Output of the address validation api. */
@@ -233,9 +233,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ShippingAddressAddressType { None = 0, Residential = 1, Commercial = 2 }
+	export enum ShippingAddressAddressType { None = 'None', Residential = 'Residential', Commercial = 'Commercial' }
 
-	export enum AddressValidationPropertiesValidationStatus { Valid = 0, Invalid = 1, Ambiguous = 2 }
+	export enum AddressValidationPropertiesValidationStatus { Valid = 'Valid', Invalid = 'Invalid', Ambiguous = 'Ambiguous' }
 
 
 	/** The Network Adapter configuration of a DataBox. */
@@ -356,7 +356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailableSkuRequestTransferType { ImportToAzure = 0 }
+	export enum AvailableSkuRequestTransferType { ImportToAzure = 'ImportToAzure' }
 
 
 	/** The available skus operation response. */
@@ -540,7 +540,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuPropertiesDisabledReason { None = 0, Country = 1, Region = 2, Feature = 3, OfferType = 4, NoSubscriptionInfo = 5 }
+	export enum SkuPropertiesDisabledReason { None = 'None', Country = 'Country', Region = 'Region', Feature = 'Feature', OfferType = 'OfferType', NoSubscriptionInfo = 'NoSubscriptionInfo' }
 
 
 	/** The Sku. */
@@ -583,7 +583,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { DataBox = 0, DataBoxDisk = 1, DataBoxHeavy = 2 }
+	export enum SkuName { DataBox = 'DataBox', DataBoxDisk = 'DataBoxDisk', DataBoxHeavy = 'DataBoxHeavy' }
 
 
 	/** Reason for cancellation. */
@@ -753,7 +753,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationPreferenceStageName { DevicePrepared = 0, Dispatched = 1, Delivered = 2, PickedUp = 3, AtAzureDC = 4, DataCopy = 5 }
+	export enum NotificationPreferenceStageName { DevicePrepared = 'DevicePrepared', Dispatched = 'Dispatched', Delivered = 'Delivered', PickedUp = 'PickedUp', AtAzureDC = 'AtAzureDC', DataCopy = 'DataCopy' }
 
 
 	/** Details for log generated during copy. */
@@ -935,7 +935,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateOrderLimitForSubscriptionValidationResponsePropertiesStatus { Valid = 0, Invalid = 1, Skipped = 2 }
+	export enum CreateOrderLimitForSubscriptionValidationResponsePropertiesStatus { Valid = 'Valid', Invalid = 'Invalid', Skipped = 'Skipped' }
 
 
 	/** Copy log details for a storage account of a DataBox job */
@@ -1042,7 +1042,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataBoxDiskCopyProgressStatus { NotStarted = 0, InProgress = 1, Completed = 2, CompletedWithErrors = 3, Failed = 4, NotReturned = 5, HardwareError = 6, DeviceFormatted = 7, DeviceMetadataModified = 8, StorageAccountNotAccessible = 9, UnsupportedData = 10 }
+	export enum DataBoxDiskCopyProgressStatus { NotStarted = 'NotStarted', InProgress = 'InProgress', Completed = 'Completed', CompletedWithErrors = 'CompletedWithErrors', Failed = 'Failed', NotReturned = 'NotReturned', HardwareError = 'HardwareError', DeviceFormatted = 'DeviceFormatted', DeviceMetadataModified = 'DeviceMetadataModified', StorageAccountNotAccessible = 'StorageAccountNotAccessible', UnsupportedData = 'UnsupportedData' }
 
 
 	/** DataBox Disk Job Details. */
@@ -1836,9 +1836,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStagesStageName { DeviceOrdered = 0, DevicePrepared = 1, Dispatched = 2, Delivered = 3, PickedUp = 4, AtAzureDC = 5, DataCopy = 6, Completed = 7, CompletedWithErrors = 8, Cancelled = 9, Failed_IssueReportedAtCustomer = 10, Failed_IssueDetectedAtAzureDC = 11, Aborted = 12, CompletedWithWarnings = 13, ReadyToDispatchFromAzureDC = 14, ReadyToReceiveAtAzureDC = 15 }
+	export enum JobStagesStageName { DeviceOrdered = 'DeviceOrdered', DevicePrepared = 'DevicePrepared', Dispatched = 'Dispatched', Delivered = 'Delivered', PickedUp = 'PickedUp', AtAzureDC = 'AtAzureDC', DataCopy = 'DataCopy', Completed = 'Completed', CompletedWithErrors = 'CompletedWithErrors', Cancelled = 'Cancelled', Failed_IssueReportedAtCustomer = 'Failed_IssueReportedAtCustomer', Failed_IssueDetectedAtAzureDC = 'Failed_IssueDetectedAtAzureDC', Aborted = 'Aborted', CompletedWithWarnings = 'CompletedWithWarnings', ReadyToDispatchFromAzureDC = 'ReadyToDispatchFromAzureDC', ReadyToReceiveAtAzureDC = 'ReadyToReceiveAtAzureDC' }
 
-	export enum JobStagesStageStatus { None = 0, InProgress = 1, Succeeded = 2, Failed = 3, Cancelled = 4, Cancelling = 5, SucceededWithErrors = 6 }
+	export enum JobStagesStageStatus { None = 'None', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', Cancelled = 'Cancelled', Cancelling = 'Cancelling', SucceededWithErrors = 'SucceededWithErrors' }
 
 
 	/** Preferences related to the order */
@@ -1887,7 +1887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransportPreferencesPreferredShipmentType { CustomerManaged = 0, MicrosoftManaged = 1 }
+	export enum TransportPreferencesPreferredShipmentType { CustomerManaged = 'CustomerManaged', MicrosoftManaged = 'MicrosoftManaged' }
 
 
 	/** Job Properties */
@@ -1968,7 +1968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPropertiesDeliveryType { NonScheduled = 0, Scheduled = 1 }
+	export enum JobPropertiesDeliveryType { NonScheduled = 'NonScheduled', Scheduled = 'Scheduled' }
 
 
 	/** Job Resource. */
@@ -2806,7 +2806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationInputRequestValidationType { ValidateAddress = 0, ValidateDataDestinationDetails = 1, ValidateSubscriptionIsAllowedToCreateJob = 2, ValidatePreferences = 3, ValidateCreateOrderLimit = 4, ValidateSkuAvailability = 5 }
+	export enum ValidationInputRequestValidationType { ValidateAddress = 'ValidateAddress', ValidateDataDestinationDetails = 'ValidateDataDestinationDetails', ValidateSubscriptionIsAllowedToCreateJob = 'ValidateSubscriptionIsAllowedToCreateJob', ValidatePreferences = 'ValidatePreferences', ValidateCreateOrderLimit = 'ValidateCreateOrderLimit', ValidateSkuAvailability = 'ValidateSkuAvailability' }
 
 
 	/** Minimum properties that should be present in each individual validation response. */
@@ -2871,7 +2871,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationRequestValidationCategory { JobCreationValidation = 0 }
+	export enum ValidationRequestValidationCategory { JobCreationValidation = 'JobCreationValidation' }
 
 
 	/** Response of pre job creation validations. */
@@ -2914,7 +2914,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationResponsePropertiesStatus { AllValidToProceed = 0, InputsRevisitRequired = 1, CertainInputValidationsSkipped = 2 }
+	export enum ValidationResponsePropertiesStatus { AllValidToProceed = 'AllValidToProceed', InputsRevisitRequired = 'InputsRevisitRequired', CertainInputValidationsSkipped = 'CertainInputValidationsSkipped' }
 
 	@Injectable()
 	export class MyClient {

@@ -36,7 +36,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseJobParametersType { USql = 0, Hive = 1, Scope = 2 }
+	export enum BaseJobParametersType { USql = 'USql', Hive = 'Hive', Scope = 'Scope' }
 
 
 	/** The parameters used to build a new Data Lake Analytics job. */
@@ -267,7 +267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateUSqlJobPropertiesCompileMode { Semantic = 0, Full = 1, SingleBox = 2 }
+	export enum CreateUSqlJobPropertiesCompileMode { Semantic = 'Semantic', Full = 'Full', SingleBox = 'SingleBox' }
 
 
 	/** Error diagnostic information for failed jobs. */
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticsSeverity { Warning = 0, Error = 1, Info = 2, SevereWarning = 3, Deprecated = 4, UserWarning = 5 }
+	export enum DiagnosticsSeverity { Warning = 'Warning', Error = 'Error', Info = 'Info', SevereWarning = 'SevereWarning', Deprecated = 'Deprecated', UserWarning = 'UserWarning' }
 
 
 	/** Hive job properties used when retrieving Hive jobs. */
@@ -672,9 +672,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobInformationBasicResult { None = 0, Succeeded = 1, Cancelled = 2, Failed = 3 }
+	export enum JobInformationBasicResult { None = 'None', Succeeded = 'Succeeded', Cancelled = 'Cancelled', Failed = 'Failed' }
 
-	export enum JobInformationBasicState { Accepted = 0, Compiling = 1, Ended = 2, New = 3, Queued = 4, Running = 5, Scheduling = 6, Starting = 7, Paused = 8, WaitingForCapacity = 9, Yielded = 10, Finalizing = 11 }
+	export enum JobInformationBasicState { Accepted = 'Accepted', Compiling = 'Compiling', Ended = 'Ended', New = 'New', Queued = 'Queued', Running = 'Running', Scheduling = 'Scheduling', Starting = 'Starting', Paused = 'Paused', WaitingForCapacity = 'WaitingForCapacity', Yielded = 'Yielded', Finalizing = 'Finalizing' }
 
 
 	/** The extended Data Lake Analytics job information properties returned when retrieving a specific job. */
@@ -1258,7 +1258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobResourceType { VertexResource = 0, JobManagerResource = 1, StatisticsResource = 2, VertexResourceInUserFolder = 3, JobManagerResourceInUserFolder = 4, StatisticsResourceInUserFolder = 5 }
+	export enum JobResourceType { VertexResource = 'VertexResource', JobManagerResource = 'JobManagerResource', StatisticsResource = 'StatisticsResource', VertexResourceInUserFolder = 'VertexResourceInUserFolder', JobManagerResourceInUserFolder = 'JobManagerResourceInUserFolder', StatisticsResourceInUserFolder = 'StatisticsResourceInUserFolder' }
 
 
 	/** The Data Lake Analytics job execution statistics. */

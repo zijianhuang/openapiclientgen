@@ -42,7 +42,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaselineSensitivity { Low = 0, Medium = 1, High = 2 }
+	export enum BaselineSensitivity { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** The response to a calculate baseline call. */

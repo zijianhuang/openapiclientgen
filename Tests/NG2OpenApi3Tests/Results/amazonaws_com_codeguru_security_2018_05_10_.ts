@@ -61,7 +61,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { DUPLICATE_IDENTIFIER = 0, ITEM_DOES_NOT_EXIST = 1, INTERNAL_ERROR = 2, INVALID_FINDING_ID = 3, INVALID_SCAN_NAME = 4 }
+	export enum ErrorCode { DUPLICATE_IDENTIFIER = 'DUPLICATE_IDENTIFIER', ITEM_DOES_NOT_EXIST = 'ITEM_DOES_NOT_EXIST', INTERNAL_ERROR = 'INTERNAL_ERROR', INVALID_FINDING_ID = 'INVALID_FINDING_ID', INVALID_SCAN_NAME = 'INVALID_SCAN_NAME' }
 
 
 	/** Information about a finding that was detected in your code. */
@@ -193,9 +193,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Severity { Critical = 0, High = 1, Medium = 2, Low = 3, Info = 4 }
+	export enum Severity { Critical = 'Critical', High = 'High', Medium = 'Medium', Low = 'Low', Info = 'Info' }
 
-	export enum Status { Closed = 0, Open = 1, All = 2 }
+	export enum Status { Closed = 'Closed', Open = 'Open', All = 'All' }
 
 
 	/** Information about a security vulnerability that Amazon CodeGuru Security detected. */
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanState { InProgress = 0, Successful = 1, Failed = 2 }
+	export enum ScanState { InProgress = 'InProgress', Successful = 'Successful', Failed = 'Failed' }
 
 	export interface ConflictException {
 	}
@@ -647,7 +647,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisType { Security = 0, All = 1 }
+	export enum AnalysisType { Security = 'Security', All = 'All' }
 
 	export interface ListFindingsMetricsResponse {
 		findingsMetrics?: Array<AccountFindingsMetric>;
@@ -813,7 +813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanType { Standard = 0, Express = 1 }
+	export enum ScanType { Standard = 'Standard', Express = 'Express' }
 
 	export interface CreateScanRequest {
 		analysisType?: AnalysisType;

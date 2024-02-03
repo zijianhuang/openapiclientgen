@@ -303,7 +303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PeriodUnit { MICROSECOND = 0, MILLISECOND = 1, SECOND = 2, MINUTE = 3, HOUR = 4, DAY = 5, WEEK = 6 }
+	export enum PeriodUnit { MICROSECOND = 'MICROSECOND', MILLISECOND = 'MILLISECOND', SECOND = 'SECOND', MINUTE = 'MINUTE', HOUR = 'HOUR', DAY = 'DAY', WEEK = 'WEEK' }
 
 
 	/** An error that explains why an action did not succeed. */
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { DEPENDENCY_ACCESS_DENIED_ERROR = 0, DEPENDENCY_THROTTLING_ERROR = 1, DEPENDENCY_SERVICE_ERROR = 2, SERVICE_QUOTA_NOT_AVAILABLE_ERROR = 3 }
+	export enum ErrorCode { DEPENDENCY_ACCESS_DENIED_ERROR = 'DEPENDENCY_ACCESS_DENIED_ERROR', DEPENDENCY_THROTTLING_ERROR = 'DEPENDENCY_THROTTLING_ERROR', DEPENDENCY_SERVICE_ERROR = 'DEPENDENCY_SERVICE_ERROR', SERVICE_QUOTA_NOT_AVAILABLE_ERROR = 'SERVICE_QUOTA_NOT_AVAILABLE_ERROR' }
 
 	export interface GetAWSDefaultServiceQuotaRequest {
 
@@ -364,7 +364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceQuotaTemplateAssociationStatus { ASSOCIATED = 0, DISASSOCIATED = 1 }
+	export enum ServiceQuotaTemplateAssociationStatus { ASSOCIATED = 'ASSOCIATED', DISASSOCIATED = 'DISASSOCIATED' }
 
 	export interface GetAssociationForServiceQuotaTemplateRequest {
 	}
@@ -443,7 +443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestStatus { PENDING = 0, CASE_OPENED = 1, APPROVED = 2, DENIED = 3, CASE_CLOSED = 4 }
+	export enum RequestStatus { PENDING = 'PENDING', CASE_OPENED = 'CASE_OPENED', APPROVED = 'APPROVED', DENIED = 'DENIED', CASE_CLOSED = 'CASE_CLOSED' }
 
 	export interface GetRequestedServiceQuotaChangeRequest {
 
@@ -1276,43 +1276,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.AssociateServiceQuotaTemplate' = 0 }
+	export enum AssociateServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.AssociateServiceQuotaTemplate' = 'ServiceQuotasV20190624.AssociateServiceQuotaTemplate' }
 
-	export enum DeleteServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { 'ServiceQuotasV20190624.DeleteServiceQuotaIncreaseRequestFromTemplate' = 0 }
+	export enum DeleteServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { 'ServiceQuotasV20190624.DeleteServiceQuotaIncreaseRequestFromTemplate' = 'ServiceQuotasV20190624.DeleteServiceQuotaIncreaseRequestFromTemplate' }
 
-	export enum DisassociateServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.DisassociateServiceQuotaTemplate' = 0 }
+	export enum DisassociateServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.DisassociateServiceQuotaTemplate' = 'ServiceQuotasV20190624.DisassociateServiceQuotaTemplate' }
 
-	export enum GetAWSDefaultServiceQuotaX_Amz_Target { 'ServiceQuotasV20190624.GetAWSDefaultServiceQuota' = 0 }
+	export enum GetAWSDefaultServiceQuotaX_Amz_Target { 'ServiceQuotasV20190624.GetAWSDefaultServiceQuota' = 'ServiceQuotasV20190624.GetAWSDefaultServiceQuota' }
 
-	export enum GetAssociationForServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.GetAssociationForServiceQuotaTemplate' = 0 }
+	export enum GetAssociationForServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.GetAssociationForServiceQuotaTemplate' = 'ServiceQuotasV20190624.GetAssociationForServiceQuotaTemplate' }
 
-	export enum GetRequestedServiceQuotaChangeX_Amz_Target { 'ServiceQuotasV20190624.GetRequestedServiceQuotaChange' = 0 }
+	export enum GetRequestedServiceQuotaChangeX_Amz_Target { 'ServiceQuotasV20190624.GetRequestedServiceQuotaChange' = 'ServiceQuotasV20190624.GetRequestedServiceQuotaChange' }
 
-	export enum GetServiceQuotaX_Amz_Target { 'ServiceQuotasV20190624.GetServiceQuota' = 0 }
+	export enum GetServiceQuotaX_Amz_Target { 'ServiceQuotasV20190624.GetServiceQuota' = 'ServiceQuotasV20190624.GetServiceQuota' }
 
-	export enum GetServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { 'ServiceQuotasV20190624.GetServiceQuotaIncreaseRequestFromTemplate' = 0 }
+	export enum GetServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { 'ServiceQuotasV20190624.GetServiceQuotaIncreaseRequestFromTemplate' = 'ServiceQuotasV20190624.GetServiceQuotaIncreaseRequestFromTemplate' }
 
-	export enum ListAWSDefaultServiceQuotasX_Amz_Target { 'ServiceQuotasV20190624.ListAWSDefaultServiceQuotas' = 0 }
+	export enum ListAWSDefaultServiceQuotasX_Amz_Target { 'ServiceQuotasV20190624.ListAWSDefaultServiceQuotas' = 'ServiceQuotasV20190624.ListAWSDefaultServiceQuotas' }
 
-	export enum ListRequestedServiceQuotaChangeHistoryX_Amz_Target { 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistory' = 0 }
+	export enum ListRequestedServiceQuotaChangeHistoryX_Amz_Target { 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistory' = 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistory' }
 
-	export enum ListRequestedServiceQuotaChangeHistoryByQuotaX_Amz_Target { 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistoryByQuota' = 0 }
+	export enum ListRequestedServiceQuotaChangeHistoryByQuotaX_Amz_Target { 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistoryByQuota' = 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistoryByQuota' }
 
-	export enum ListServiceQuotaIncreaseRequestsInTemplateX_Amz_Target { 'ServiceQuotasV20190624.ListServiceQuotaIncreaseRequestsInTemplate' = 0 }
+	export enum ListServiceQuotaIncreaseRequestsInTemplateX_Amz_Target { 'ServiceQuotasV20190624.ListServiceQuotaIncreaseRequestsInTemplate' = 'ServiceQuotasV20190624.ListServiceQuotaIncreaseRequestsInTemplate' }
 
-	export enum ListServiceQuotasX_Amz_Target { 'ServiceQuotasV20190624.ListServiceQuotas' = 0 }
+	export enum ListServiceQuotasX_Amz_Target { 'ServiceQuotasV20190624.ListServiceQuotas' = 'ServiceQuotasV20190624.ListServiceQuotas' }
 
-	export enum ListServicesX_Amz_Target { 'ServiceQuotasV20190624.ListServices' = 0 }
+	export enum ListServicesX_Amz_Target { 'ServiceQuotasV20190624.ListServices' = 'ServiceQuotasV20190624.ListServices' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'ServiceQuotasV20190624.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'ServiceQuotasV20190624.ListTagsForResource' = 'ServiceQuotasV20190624.ListTagsForResource' }
 
-	export enum PutServiceQuotaIncreaseRequestIntoTemplateX_Amz_Target { 'ServiceQuotasV20190624.PutServiceQuotaIncreaseRequestIntoTemplate' = 0 }
+	export enum PutServiceQuotaIncreaseRequestIntoTemplateX_Amz_Target { 'ServiceQuotasV20190624.PutServiceQuotaIncreaseRequestIntoTemplate' = 'ServiceQuotasV20190624.PutServiceQuotaIncreaseRequestIntoTemplate' }
 
-	export enum RequestServiceQuotaIncreaseX_Amz_Target { 'ServiceQuotasV20190624.RequestServiceQuotaIncrease' = 0 }
+	export enum RequestServiceQuotaIncreaseX_Amz_Target { 'ServiceQuotasV20190624.RequestServiceQuotaIncrease' = 'ServiceQuotasV20190624.RequestServiceQuotaIncrease' }
 
-	export enum TagResourceX_Amz_Target { 'ServiceQuotasV20190624.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'ServiceQuotasV20190624.TagResource' = 'ServiceQuotasV20190624.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'ServiceQuotasV20190624.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'ServiceQuotasV20190624.UntagResource' = 'ServiceQuotasV20190624.UntagResource' }
 
 }
 

@@ -123,7 +123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuCapacityScaleType { Automatic = 0, Manual = 1, None = 2 }
+	export enum SkuCapacityScaleType { Automatic = 'Automatic', Manual = 'Manual', None = 'None' }
 
 
 	/** Describes metadata for SKU cost info. */
@@ -191,9 +191,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuRestrictionsReasonCode { QuotaId = 0, NotAvailableForSubscription = 1 }
+	export enum SkuRestrictionsReasonCode { QuotaId = 'QuotaId', NotAvailableForSubscription = 'NotAvailableForSubscription' }
 
-	export enum SkuRestrictionsType { location = 0, zone = 1 }
+	export enum SkuRestrictionsType { location = 'location', zone = 'zone' }
 
 
 	/** Represents the association between a commitment plan and some other resource, such as a Machine Learning web service. */

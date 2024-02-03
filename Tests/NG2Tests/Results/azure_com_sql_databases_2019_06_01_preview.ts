@@ -291,9 +291,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabasePropertiesCatalogCollation { DATABASE_DEFAULT = 0, SQL_Latin1_General_CP1_CI_AS = 1 }
+	export enum DatabasePropertiesCatalogCollation { DATABASE_DEFAULT = 'DATABASE_DEFAULT', SQL_Latin1_General_CP1_CI_AS = 'SQL_Latin1_General_CP1_CI_AS' }
 
-	export enum DatabasePropertiesCreateMode { Default = 0, Copy = 1, Secondary = 2, PointInTimeRestore = 3, Restore = 4, Recovery = 5, RestoreExternalBackup = 6, RestoreExternalBackupSecondary = 7, RestoreLongTermRetentionBackup = 8, OnlineSecondary = 9 }
+	export enum DatabasePropertiesCreateMode { Default = 'Default', Copy = 'Copy', Secondary = 'Secondary', PointInTimeRestore = 'PointInTimeRestore', Restore = 'Restore', Recovery = 'Recovery', RestoreExternalBackup = 'RestoreExternalBackup', RestoreExternalBackupSecondary = 'RestoreExternalBackupSecondary', RestoreLongTermRetentionBackup = 'RestoreLongTermRetentionBackup', OnlineSecondary = 'OnlineSecondary' }
 
 
 	/** An ARM Resource SKU. */
@@ -350,15 +350,15 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabasePropertiesLicenseType { LicenseIncluded = 0, BasePrice = 1 }
+	export enum DatabasePropertiesLicenseType { LicenseIncluded = 'LicenseIncluded', BasePrice = 'BasePrice' }
 
-	export enum DatabasePropertiesReadScale { Enabled = 0, Disabled = 1 }
+	export enum DatabasePropertiesReadScale { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum DatabasePropertiesSampleName { AdventureWorksLT = 0, WideWorldImportersStd = 1, WideWorldImportersFull = 2 }
+	export enum DatabasePropertiesSampleName { AdventureWorksLT = 'AdventureWorksLT', WideWorldImportersStd = 'WideWorldImportersStd', WideWorldImportersFull = 'WideWorldImportersFull' }
 
-	export enum DatabasePropertiesStatus { Online = 0, Restoring = 1, RecoveryPending = 2, Recovering = 3, Suspect = 4, Offline = 5, Standby = 6, Shutdown = 7, EmergencyMode = 8, AutoClosed = 9, Copying = 10, Creating = 11, Inaccessible = 12, OfflineSecondary = 13, Pausing = 14, Paused = 15, Resuming = 16, Scaling = 17, OfflineChangingDwPerformanceTiers = 18, OnlineChangingDwPerformanceTiers = 19, Disabled = 20 }
+	export enum DatabasePropertiesStatus { Online = 'Online', Restoring = 'Restoring', RecoveryPending = 'RecoveryPending', Recovering = 'Recovering', Suspect = 'Suspect', Offline = 'Offline', Standby = 'Standby', Shutdown = 'Shutdown', EmergencyMode = 'EmergencyMode', AutoClosed = 'AutoClosed', Copying = 'Copying', Creating = 'Creating', Inaccessible = 'Inaccessible', OfflineSecondary = 'OfflineSecondary', Pausing = 'Pausing', Paused = 'Paused', Resuming = 'Resuming', Scaling = 'Scaling', OfflineChangingDwPerformanceTiers = 'OfflineChangingDwPerformanceTiers', OnlineChangingDwPerformanceTiers = 'OnlineChangingDwPerformanceTiers', Disabled = 'Disabled' }
 
-	export enum DatabasePropertiesStorageAccountType { GRS = 0, LRS = 1, ZRS = 2 }
+	export enum DatabasePropertiesStorageAccountType { GRS = 'GRS', LRS = 'LRS', ZRS = 'ZRS' }
 
 
 	/** A list of databases. */
@@ -683,7 +683,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Databases_FailoverReplicaType { Primary = 0, ReadableSecondary = 1 }
+	export enum Databases_FailoverReplicaType { Primary = 'Primary', ReadableSecondary = 'ReadableSecondary' }
 
 }
 

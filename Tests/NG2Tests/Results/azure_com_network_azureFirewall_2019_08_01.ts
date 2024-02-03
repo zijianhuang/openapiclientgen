@@ -89,7 +89,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureFirewallApplicationRuleProtocolProtocolType { Http = 0, Https = 1, Mssql = 2 }
+	export enum AzureFirewallApplicationRuleProtocolProtocolType { Http = 'Http', Https = 'Https', Mssql = 'Mssql' }
 
 	export interface AzureFirewallApplicationRuleCollection {
 	}
@@ -143,11 +143,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureFirewallApplicationRuleCollectionPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum AzureFirewallApplicationRuleCollectionPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** The protocol type of a Application Rule resource. */
-	export enum AzureFirewallApplicationRuleProtocolType { Http = 0, Https = 1, Mssql = 2 }
+	export enum AzureFirewallApplicationRuleProtocolType { Http = 'Http', Https = 'Https', Mssql = 'Mssql' }
 
 	export interface AzureFirewallIPConfiguration {
 	}
@@ -246,7 +246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureFirewallNatRCActionType { Snat = 0, Dnat = 1 }
+	export enum AzureFirewallNatRCActionType { Snat = 'Snat', Dnat = 'Dnat' }
 
 
 	/** Properties of a NAT rule. */
@@ -304,7 +304,7 @@ export namespace MyNS {
 
 
 	/** The protocol of a Network Rule resource. */
-	export enum AzureFirewallNetworkRuleProtocol { TCP = 0, UDP = 1, Any = 2, ICMP = 3 }
+	export enum AzureFirewallNetworkRuleProtocol { TCP = 'TCP', UDP = 'UDP', Any = 'Any', ICMP = 'ICMP' }
 
 	export interface AzureFirewallNatRuleCollection {
 	}
@@ -510,7 +510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureFirewallPropertiesFormatThreatIntelMode { Alert = 0, Deny = 1, Off = 2 }
+	export enum AzureFirewallPropertiesFormatThreatIntelMode { Alert = 'Alert', Deny = 'Deny', Off = 'Off' }
 
 
 	/** Public IP Address associated with azure firewall. */
@@ -554,7 +554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureFirewallRCActionType { Allow = 0, Deny = 1 }
+	export enum AzureFirewallRCActionType { Allow = 'Allow', Deny = 'Deny' }
 
 
 	/** SKU of an Azure Firewall. */
@@ -584,13 +584,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureFirewallSkuName { AZFW_VNet = 0, AZFW_Hub = 1 }
+	export enum AzureFirewallSkuName { AZFW_VNet = 'AZFW_VNet', AZFW_Hub = 'AZFW_Hub' }
 
-	export enum AzureFirewallSkuTier { Standard = 0 }
+	export enum AzureFirewallSkuTier { Standard = 'Standard' }
 
 
 	/** The operation mode for Threat Intel. */
-	export enum AzureFirewallThreatIntelMode { Alert = 0, Deny = 1, Off = 2 }
+	export enum AzureFirewallThreatIntelMode { Alert = 'Alert', Deny = 'Deny', Off = 'Off' }
 
 
 	/** IP addresses associated with azure firewall. */

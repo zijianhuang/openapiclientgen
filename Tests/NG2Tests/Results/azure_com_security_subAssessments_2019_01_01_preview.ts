@@ -30,7 +30,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdditionalDataAssessedResourceType { SqlServerVulnerability = 0, ContainerRegistryVulnerability = 1, ServerVulnerability = 2 }
+	export enum AdditionalDataAssessedResourceType { SqlServerVulnerability = 'SqlServerVulnerability', ContainerRegistryVulnerability = 'ContainerRegistryVulnerability', ServerVulnerability = 'ServerVulnerability' }
 
 
 	/** CVE details */
@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecuritySubAssessmentPropertiesResourceDetailsSource { Azure = 0, OnPremise = 1 }
+	export enum SecuritySubAssessmentPropertiesResourceDetailsSource { Azure = 'Azure', OnPremise = 'OnPremise' }
 
 
 	/** Status of the sub-assessment */
@@ -325,9 +325,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubAssessmentStatusCode { Healthy = 0, Unhealthy = 1, NotApplicable = 2 }
+	export enum SubAssessmentStatusCode { Healthy = 'Healthy', Unhealthy = 'Unhealthy', NotApplicable = 'NotApplicable' }
 
-	export enum SubAssessmentStatusSeverity { Low = 0, Medium = 1, High = 2 }
+	export enum SubAssessmentStatusSeverity { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** List of security sub-assessments */

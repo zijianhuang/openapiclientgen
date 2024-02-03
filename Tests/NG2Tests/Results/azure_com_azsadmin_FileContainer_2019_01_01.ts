@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileContainerAdminPropertiesPostCopyAction { None = 0, Unzip = 1 }
+	export enum FileContainerAdminPropertiesPostCopyAction { None = 'None', Unzip = 'Unzip' }
 
 
 	/** Parameters for creating a new file container. */
@@ -159,7 +159,7 @@ export namespace MyNS {
 
 
 	/** Specifies the file post copy action. */
-	export enum PostCopyAction { None = 0, Unzip = 1 }
+	export enum PostCopyAction { None = 'None', Unzip = 'Unzip' }
 
 	@Injectable()
 	export class MyClient {

@@ -54,7 +54,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvancedScheduleMonthlyOccurrenceDay { Monday = 0, Tuesday = 1, Wednesday = 2, Thursday = 3, Friday = 4, Saturday = 5, Sunday = 6 }
+	export enum AdvancedScheduleMonthlyOccurrenceDay { Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Sunday = 'Sunday' }
 
 	export interface Schedule {
 	}
@@ -170,7 +170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleCreateOrUpdatePropertiesFrequency { OneTime = 0, Day = 1, Hour = 2, Week = 3, Month = 4, Minute = 5 }
+	export enum ScheduleCreateOrUpdatePropertiesFrequency { OneTime = 'OneTime', Day = 'Day', Hour = 'Hour', Week = 'Week', Month = 'Month', Minute = 'Minute' }
 
 
 	/** The response model for the list schedule operation. */
@@ -358,7 +358,7 @@ export namespace MyNS {
 
 
 	/** Gets or sets the frequency of the schedule. */
-	export enum ScheduleFrequency { OneTime = 0, Day = 1, Hour = 2, Week = 3, Month = 4, Minute = 5 }
+	export enum ScheduleFrequency { OneTime = 'OneTime', Day = 'Day', Hour = 'Hour', Week = 'Week', Month = 'Month', Minute = 'Minute' }
 
 	@Injectable()
 	export class MyClient {

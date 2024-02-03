@@ -79,6 +79,7 @@ namespace SwagTests
 				ContainerClassName = "MyClient",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
 				DataAnnotationsToComments = true,
+				//EnumToString = true, for baseline tests, false is desired.
 			};
 
 			System.CodeDom.CodeCompileUnit codeCompileUnit = new();

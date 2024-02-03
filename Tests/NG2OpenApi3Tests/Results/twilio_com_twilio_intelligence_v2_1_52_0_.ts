@@ -128,7 +128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Intelligencev2serviceWebhook_http_method { GET = 0, POST = 1, NULL = 2 }
+	export enum Intelligencev2serviceWebhook_http_method { GET = 'GET', POST = 'POST', NULL = 'NULL' }
 
 	export interface Intelligencev2transcript {
 
@@ -263,7 +263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Intelligencev2transcriptStatus { queued = 0, 'in-progress' = 1, completed = 2, failed = 3, canceled = 4 }
+	export enum Intelligencev2transcriptStatus { queued = 'queued', 'in-progress' = 'in-progress', completed = 'completed', failed = 'failed', canceled = 'canceled' }
 
 	export interface Intelligencev2transcriptmedia {
 
@@ -457,7 +457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Intelligencev2transcriptoperator_resultOperator_type { conversation_classify = 0, utterance_classify = 1, extract = 2, extract_normalize = 3, pii_extract = 4 }
+	export enum Intelligencev2transcriptoperator_resultOperator_type { conversation_classify = 'conversation_classify', utterance_classify = 'utterance_classify', extract = 'extract', extract_normalize = 'extract_normalize', pii_extract = 'pii_extract' }
 
 	export interface Intelligencev2transcriptsentence {
 		confidence?: number | null;
@@ -522,13 +522,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator_result_enum_operator_type { conversation_classify = 0, utterance_classify = 1, extract = 2, extract_normalize = 3, pii_extract = 4 }
+	export enum Operator_result_enum_operator_type { conversation_classify = 'conversation_classify', utterance_classify = 'utterance_classify', extract = 'extract', extract_normalize = 'extract_normalize', pii_extract = 'pii_extract' }
 
-	export enum Service_enum_http_method { GET = 0, POST = 1, NULL = 2 }
+	export enum Service_enum_http_method { GET = 'GET', POST = 'POST', NULL = 'NULL' }
 
-	export enum Transcript_enum_call_direction { inbound = 0, outbound = 1, internal = 2, unknown = 3 }
+	export enum Transcript_enum_call_direction { inbound = 'inbound', outbound = 'outbound', internal = 'internal', unknown = 'unknown' }
 
-	export enum Transcript_enum_status { queued = 0, 'in-progress' = 1, completed = 2, failed = 3, canceled = 4 }
+	export enum Transcript_enum_status { queued = 'queued', 'in-progress' = 'in-progress', completed = 'completed', failed = 'failed', canceled = 'canceled' }
 
 	@Injectable()
 	export class MyClient {

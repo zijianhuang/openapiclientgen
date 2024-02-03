@@ -223,9 +223,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScopeType { TYPE_UNSPECIFIED = 0, REGIONAL = 1 }
+	export enum ScopeType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', REGIONAL = 'REGIONAL' }
 
-	export enum ApplicationState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, DELETING = 3 }
+	export enum ApplicationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -1065,7 +1065,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, DELETING = 3, DETACHED = 4 }
+	export enum ServiceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DETACHED = 'DETACHED' }
 
 
 	/** Response for ListWorkloads. */

@@ -47,7 +47,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryStreamType { DirectPut = 0, KinesisStreamAsSource = 1 }
+	export enum DeliveryStreamType { DirectPut = 'DirectPut', KinesisStreamAsSource = 'KinesisStreamAsSource' }
 
 
 	/** The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. */
@@ -101,7 +101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyType { AWS_OWNED_CMK = 0, CUSTOMER_MANAGED_CMK = 1 }
+	export enum KeyType { AWS_OWNED_CMK = 'AWS_OWNED_CMK', CUSTOMER_MANAGED_CMK = 'CUSTOMER_MANAGED_CMK' }
 
 
 	/** Describes the configuration of a destination in Amazon S3. */
@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompressionFormat { UNCOMPRESSED = 0, GZIP = 1, ZIP = 2, Snappy = 3, HADOOP_SNAPPY = 4 }
+	export enum CompressionFormat { UNCOMPRESSED = 'UNCOMPRESSED', GZIP = 'GZIP', ZIP = 'ZIP', Snappy = 'Snappy', HADOOP_SNAPPY = 'HADOOP_SNAPPY' }
 
 
 	/** Describes the encryption for a destination in Amazon S3. */
@@ -183,7 +183,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NoEncryptionConfig { NoEncryption = 0 }
+	export enum NoEncryptionConfig { NoEncryption = 'NoEncryption' }
 
 
 	/** Describes an encryption key for a destination in Amazon S3. */
@@ -316,7 +316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessorType { RecordDeAggregation = 0, Lambda = 1, MetadataExtraction = 2, AppendDelimiterToRecord = 3 }
+	export enum ProcessorType { RecordDeAggregation = 'RecordDeAggregation', Lambda = 'Lambda', MetadataExtraction = 'MetadataExtraction', AppendDelimiterToRecord = 'AppendDelimiterToRecord' }
 
 
 	/** Describes the processor parameter.  */
@@ -346,9 +346,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessorParameterName { LambdaArn = 0, NumberOfRetries = 1, MetadataExtractionQuery = 2, JsonParsingEngine = 3, RoleArn = 4, BufferSizeInMBs = 5, BufferIntervalInSeconds = 6, SubRecordType = 7, Delimiter = 8 }
+	export enum ProcessorParameterName { LambdaArn = 'LambdaArn', NumberOfRetries = 'NumberOfRetries', MetadataExtractionQuery = 'MetadataExtractionQuery', JsonParsingEngine = 'JsonParsingEngine', RoleArn = 'RoleArn', BufferSizeInMBs = 'BufferSizeInMBs', BufferIntervalInSeconds = 'BufferIntervalInSeconds', SubRecordType = 'SubRecordType', Delimiter = 'Delimiter' }
 
-	export enum S3BackupMode { Disabled = 0, Enabled = 1 }
+	export enum S3BackupMode { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the Amazon Web Services Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
@@ -542,9 +542,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ParquetCompression { UNCOMPRESSED = 0, GZIP = 1, SNAPPY = 2 }
+	export enum ParquetCompression { UNCOMPRESSED = 'UNCOMPRESSED', GZIP = 'GZIP', SNAPPY = 'SNAPPY' }
 
-	export enum ParquetWriterVersion { V1 = 0, V2 = 1 }
+	export enum ParquetWriterVersion { V1 = 'V1', V2 = 'V2' }
 
 
 	/** A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>. */
@@ -588,9 +588,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrcCompression { NONE = 0, ZLIB = 1, SNAPPY = 2 }
+	export enum OrcCompression { NONE = 'NONE', ZLIB = 'ZLIB', SNAPPY = 'SNAPPY' }
 
-	export enum OrcFormatVersion { V0_11 = 0, V0_12 = 1 }
+	export enum OrcFormatVersion { V0_11 = 'V0_11', V0_12 = 'V0_12' }
 
 
 	/** The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.  */
@@ -777,7 +777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElasticsearchIndexRotationPeriod { NoRotation = 0, OneHour = 1, OneDay = 2, OneWeek = 3, OneMonth = 4 }
+	export enum ElasticsearchIndexRotationPeriod { NoRotation = 'NoRotation', OneHour = 'OneHour', OneDay = 'OneDay', OneWeek = 'OneWeek', OneMonth = 'OneMonth' }
 
 
 	/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
@@ -816,7 +816,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElasticsearchS3BackupMode { FailedDocumentsOnly = 0, AllDocuments = 1 }
+	export enum ElasticsearchS3BackupMode { FailedDocumentsOnly = 'FailedDocumentsOnly', AllDocuments = 'AllDocuments' }
 
 
 	/** The details of the VPC of the Amazon ES destination. */
@@ -989,7 +989,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HECEndpointType { Raw = 0, Event = 1 }
+	export enum HECEndpointType { Raw = 'Raw', Event = 'Event' }
 
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
@@ -1008,7 +1008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SplunkS3BackupMode { FailedEventsOnly = 0, AllEvents = 1 }
+	export enum SplunkS3BackupMode { FailedEventsOnly = 'FailedEventsOnly', AllEvents = 'AllEvents' }
 
 
 	/** Describes the configuration of the HTTP endpoint destination. */
@@ -1113,7 +1113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentEncoding { NONE = 0, GZIP = 1 }
+	export enum ContentEncoding { NONE = 'NONE', GZIP = 'GZIP' }
 
 
 	/** Describes the metadata that's delivered to the specified HTTP endpoint destination. */
@@ -1160,7 +1160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpEndpointS3BackupMode { FailedDataOnly = 0, AllData = 1 }
+	export enum HttpEndpointS3BackupMode { FailedDataOnly = 'FailedDataOnly', AllData = 'AllData' }
 
 
 	/** Metadata that you can assign to a delivery stream, consisting of a key-value pair. */
@@ -1435,7 +1435,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryStreamStatus { CREATING = 0, CREATING_FAILED = 1, DELETING = 2, DELETING_FAILED = 3, ACTIVE = 4 }
+	export enum DeliveryStreamStatus { CREATING = 'CREATING', CREATING_FAILED = 'CREATING_FAILED', DELETING = 'DELETING', DELETING_FAILED = 'DELETING_FAILED', ACTIVE = 'ACTIVE' }
 
 
 	/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
@@ -1465,7 +1465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryStreamFailureType { RETIRE_KMS_GRANT_FAILED = 0, CREATE_KMS_GRANT_FAILED = 1, KMS_ACCESS_DENIED = 2, DISABLED_KMS_KEY = 3, INVALID_KMS_KEY = 4, KMS_KEY_NOT_FOUND = 5, KMS_OPT_IN_REQUIRED = 6, CREATE_ENI_FAILED = 7, DELETE_ENI_FAILED = 8, SUBNET_NOT_FOUND = 9, SECURITY_GROUP_NOT_FOUND = 10, ENI_ACCESS_DENIED = 11, SUBNET_ACCESS_DENIED = 12, SECURITY_GROUP_ACCESS_DENIED = 13, UNKNOWN_ERROR = 14 }
+	export enum DeliveryStreamFailureType { RETIRE_KMS_GRANT_FAILED = 'RETIRE_KMS_GRANT_FAILED', CREATE_KMS_GRANT_FAILED = 'CREATE_KMS_GRANT_FAILED', KMS_ACCESS_DENIED = 'KMS_ACCESS_DENIED', DISABLED_KMS_KEY = 'DISABLED_KMS_KEY', INVALID_KMS_KEY = 'INVALID_KMS_KEY', KMS_KEY_NOT_FOUND = 'KMS_KEY_NOT_FOUND', KMS_OPT_IN_REQUIRED = 'KMS_OPT_IN_REQUIRED', CREATE_ENI_FAILED = 'CREATE_ENI_FAILED', DELETE_ENI_FAILED = 'DELETE_ENI_FAILED', SUBNET_NOT_FOUND = 'SUBNET_NOT_FOUND', SECURITY_GROUP_NOT_FOUND = 'SECURITY_GROUP_NOT_FOUND', ENI_ACCESS_DENIED = 'ENI_ACCESS_DENIED', SUBNET_ACCESS_DENIED = 'SUBNET_ACCESS_DENIED', SECURITY_GROUP_ACCESS_DENIED = 'SECURITY_GROUP_ACCESS_DENIED', UNKNOWN_ERROR = 'UNKNOWN_ERROR' }
 
 
 	/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation.  */
@@ -1491,7 +1491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryStreamEncryptionStatus { ENABLED = 0, ENABLING = 1, ENABLING_FAILED = 2, DISABLED = 3, DISABLING = 4, DISABLING_FAILED = 5 }
+	export enum DeliveryStreamEncryptionStatus { ENABLED = 'ENABLED', ENABLING = 'ENABLING', ENABLING_FAILED = 'ENABLING_FAILED', DISABLED = 'DISABLED', DISABLING = 'DISABLING', DISABLING_FAILED = 'DISABLING_FAILED' }
 
 
 	/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
@@ -2663,13 +2663,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AmazonOpenSearchServerlessS3BackupMode { FailedDocumentsOnly = 0, AllDocuments = 1 }
+	export enum AmazonOpenSearchServerlessS3BackupMode { FailedDocumentsOnly = 'FailedDocumentsOnly', AllDocuments = 'AllDocuments' }
 
-	export enum AmazonopensearchserviceIndexRotationPeriod { NoRotation = 0, OneHour = 1, OneDay = 2, OneWeek = 3, OneMonth = 4 }
+	export enum AmazonopensearchserviceIndexRotationPeriod { NoRotation = 'NoRotation', OneHour = 'OneHour', OneDay = 'OneDay', OneWeek = 'OneWeek', OneMonth = 'OneMonth' }
 
-	export enum AmazonopensearchserviceS3BackupMode { FailedDocumentsOnly = 0, AllDocuments = 1 }
+	export enum AmazonopensearchserviceS3BackupMode { FailedDocumentsOnly = 'FailedDocumentsOnly', AllDocuments = 'AllDocuments' }
 
-	export enum RedshiftS3BackupMode { Disabled = 0, Enabled = 1 }
+	export enum RedshiftS3BackupMode { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 	@Injectable()
 	export class MyClient {
@@ -2785,29 +2785,29 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateDeliveryStreamX_Amz_Target { 'Firehose_20150804.CreateDeliveryStream' = 0 }
+	export enum CreateDeliveryStreamX_Amz_Target { 'Firehose_20150804.CreateDeliveryStream' = 'Firehose_20150804.CreateDeliveryStream' }
 
-	export enum DeleteDeliveryStreamX_Amz_Target { 'Firehose_20150804.DeleteDeliveryStream' = 0 }
+	export enum DeleteDeliveryStreamX_Amz_Target { 'Firehose_20150804.DeleteDeliveryStream' = 'Firehose_20150804.DeleteDeliveryStream' }
 
-	export enum DescribeDeliveryStreamX_Amz_Target { 'Firehose_20150804.DescribeDeliveryStream' = 0 }
+	export enum DescribeDeliveryStreamX_Amz_Target { 'Firehose_20150804.DescribeDeliveryStream' = 'Firehose_20150804.DescribeDeliveryStream' }
 
-	export enum ListDeliveryStreamsX_Amz_Target { 'Firehose_20150804.ListDeliveryStreams' = 0 }
+	export enum ListDeliveryStreamsX_Amz_Target { 'Firehose_20150804.ListDeliveryStreams' = 'Firehose_20150804.ListDeliveryStreams' }
 
-	export enum ListTagsForDeliveryStreamX_Amz_Target { 'Firehose_20150804.ListTagsForDeliveryStream' = 0 }
+	export enum ListTagsForDeliveryStreamX_Amz_Target { 'Firehose_20150804.ListTagsForDeliveryStream' = 'Firehose_20150804.ListTagsForDeliveryStream' }
 
-	export enum PutRecordX_Amz_Target { 'Firehose_20150804.PutRecord' = 0 }
+	export enum PutRecordX_Amz_Target { 'Firehose_20150804.PutRecord' = 'Firehose_20150804.PutRecord' }
 
-	export enum PutRecordBatchX_Amz_Target { 'Firehose_20150804.PutRecordBatch' = 0 }
+	export enum PutRecordBatchX_Amz_Target { 'Firehose_20150804.PutRecordBatch' = 'Firehose_20150804.PutRecordBatch' }
 
-	export enum StartDeliveryStreamEncryptionX_Amz_Target { 'Firehose_20150804.StartDeliveryStreamEncryption' = 0 }
+	export enum StartDeliveryStreamEncryptionX_Amz_Target { 'Firehose_20150804.StartDeliveryStreamEncryption' = 'Firehose_20150804.StartDeliveryStreamEncryption' }
 
-	export enum StopDeliveryStreamEncryptionX_Amz_Target { 'Firehose_20150804.StopDeliveryStreamEncryption' = 0 }
+	export enum StopDeliveryStreamEncryptionX_Amz_Target { 'Firehose_20150804.StopDeliveryStreamEncryption' = 'Firehose_20150804.StopDeliveryStreamEncryption' }
 
-	export enum TagDeliveryStreamX_Amz_Target { 'Firehose_20150804.TagDeliveryStream' = 0 }
+	export enum TagDeliveryStreamX_Amz_Target { 'Firehose_20150804.TagDeliveryStream' = 'Firehose_20150804.TagDeliveryStream' }
 
-	export enum UntagDeliveryStreamX_Amz_Target { 'Firehose_20150804.UntagDeliveryStream' = 0 }
+	export enum UntagDeliveryStreamX_Amz_Target { 'Firehose_20150804.UntagDeliveryStream' = 'Firehose_20150804.UntagDeliveryStream' }
 
-	export enum UpdateDestinationX_Amz_Target { 'Firehose_20150804.UpdateDestination' = 0 }
+	export enum UpdateDestinationX_Amz_Target { 'Firehose_20150804.UpdateDestination' = 'Firehose_20150804.UpdateDestination' }
 
 }
 

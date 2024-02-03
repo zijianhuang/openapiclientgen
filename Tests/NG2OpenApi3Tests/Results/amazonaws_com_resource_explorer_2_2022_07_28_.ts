@@ -205,7 +205,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexState { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3, UPDATING = 4 }
+	export enum IndexState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETED = 'DELETED', UPDATING = 'UPDATING' }
 
 	export interface ConflictException {
 	}
@@ -321,7 +321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexType { LOCAL = 0, AGGREGATOR = 1 }
+	export enum IndexType { LOCAL = 'LOCAL', AGGREGATOR = 'AGGREGATOR' }
 
 	export interface GetViewOutput {
 		Tags?: TagMap;

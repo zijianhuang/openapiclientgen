@@ -50,7 +50,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessCredentialType { password = 0 }
+	export enum AccessCredentialType { password = 'password' }
 
 
 	/** Account information */
@@ -114,9 +114,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountState { enabled = 0, disabled = 1, deleting = 2 }
+	export enum AccountState { enabled = 'enabled', disabled = 'disabled', deleting = 'deleting' }
 
-	export enum AccountType { user = 0, admin = 1, service = 2 }
+	export enum AccountType { user = 'user', admin = 'admin', service = 'service' }
 
 
 	/** An account to create/add to the system. If already exists will return 400. */
@@ -173,7 +173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountStatusState { enabled = 0, disabled = 1 }
+	export enum AccountStatusState { enabled = 'enabled', disabled = 'disabled' }
 
 
 	/** The result of adding a single digest to the archive */
@@ -210,7 +210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisArchiveAddResultStatus { archived = 0, archiving = 1, error = 2 }
+	export enum AnalysisArchiveAddResultStatus { archived = 'archived', archiving = 'archiving', error = 'error' }
 
 
 	/** A rule for auto-archiving image analysis by time and/or tag-history */
@@ -345,7 +345,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisArchiveTransitionRuleTransition { archive = 0, delete = 1 }
+	export enum AnalysisArchiveTransitionRuleTransition { archive = 'archive', delete = 'delete' }
 
 
 	/** Summary of the transition rule set */
@@ -648,7 +648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnchoreImageAnalysis_status { not_analyzed = 0, analyzing = 1, analyzed = 2, analysis_failed = 3 }
+	export enum AnchoreImageAnalysis_status { not_analyzed = 'not_analyzed', analyzing = 'analyzing', analyzed = 'analyzed', analysis_failed = 'analysis_failed' }
 
 
 	/** A metadata content record for a specific image, containing different content type entries */
@@ -720,7 +720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnchoreImageImage_status { active = 0, inactive = 1, disabled = 2 }
+	export enum AnchoreImageImage_status { active = 'active', inactive = 'inactive', disabled = 'disabled' }
 
 
 	/** A unique image in the engine. */
@@ -933,7 +933,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArchivedAnalysisStatus { archiving = 0, archived = 1, deleting = 2, deleted = 3 }
+	export enum ArchivedAnalysisStatus { archiving = 'archiving', archived = 'archived', deleting = 'deleting', deleted = 'deleted' }
 
 
 	/** Every notification has a payload, which follows this basic structure */
@@ -1307,7 +1307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteImageResponseStatus { not_found = 0, deleting = 1, delete_failed = 2 }
+	export enum DeleteImageResponseStatus { not_found = 'not_found', deleting = 'deleting', delete_failed = 'delete_failed' }
 
 
 	/** A collection of event subcategories */
@@ -1663,7 +1663,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupSyncResultStatus { success = 0, failure = 1 }
+	export enum GroupSyncResultStatus { success = 'success', failure = 'failure' }
 
 
 	/** The retrieved file entry including content (b64 encoded) */
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GateSpecState { active = 0, deprecated = 1, eol = 2 }
+	export enum GateSpecState { active = 'active', deprecated = 'deprecated', eol = 'eol' }
 
 
 	/** Definition of a trigger and its parameters */
@@ -2258,7 +2258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageImportOperationStatus { pending = 0, queued = 1, processing = 2, complete = 3, failed = 4, expired = 5 }
+	export enum ImageImportOperationStatus { pending = 'pending', queued = 'queued', processing = 'processing', complete = 'complete', failed = 'failed', expired = 'expired' }
 
 	export interface ImagePackageManifest {
 		artifactRelationships?: Array<ImportPackageRelationship>;
@@ -2533,7 +2533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageRefType { tag = 0, digest = 1, id = 2 }
+	export enum ImageRefType { tag = 'tag', digest = 'digest', id = 'id' }
 
 
 	/** A summary of an image identity, including digest, id (if available), and any tags known to have ever been mapped to the digest */
@@ -2956,7 +2956,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StandaloneVulnerabilitySeverity { Unknown = 0, Negligible = 1, Low = 2, Medium = 3, High = 4, Critical = 5 }
+	export enum StandaloneVulnerabilitySeverity { Unknown = 'Unknown', Negligible = 'Negligible', Low = 'Low', Medium = 'Medium', High = 'High', Critical = 'Critical' }
 
 	export interface VendorDataObject {
 		cvss_v2?: CVSSV2Scores;
@@ -3167,7 +3167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyRuleAction { GO = 0, STOP = 1, WARN = 2 }
+	export enum PolicyRuleAction { GO = 'GO', STOP = 'STOP', WARN = 'WARN' }
 
 	export interface PolicyRuleParams {
 
@@ -4050,7 +4050,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserType { native = 0, internal = 1, external = 2 }
+	export enum UserType { native = 'native', internal = 'internal', external = 'external' }
 
 
 	/** A payload for creating a new user, includes the username and password in a single request */
@@ -5352,11 +5352,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum List_imagesImage_status { all = 0, active = 1, deleting = 2 }
+	export enum List_imagesImage_status { all = 'all', active = 'active', deleting = 'deleting' }
 
-	export enum List_imagesAnalysis_status { not_analyzed = 0, analyzed = 1, analyzing = 2, analysis_failed = 3 }
+	export enum List_imagesAnalysis_status { not_analyzed = 'not_analyzed', analyzed = 'analyzed', analyzing = 'analyzing', analysis_failed = 'analysis_failed' }
 
-	export enum Test_webhookNotification_type { tag_update = 0, analysis_update = 1, vuln_update = 2, policy_eval = 3 }
+	export enum Test_webhookNotification_type { tag_update = 'tag_update', analysis_update = 'analysis_update', vuln_update = 'vuln_update', policy_eval = 'policy_eval' }
 
 }
 

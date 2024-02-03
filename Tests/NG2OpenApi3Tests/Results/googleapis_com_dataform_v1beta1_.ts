@@ -837,7 +837,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationRelationType { RELATION_TYPE_UNSPECIFIED = 0, TABLE = 1, VIEW = 2, INCREMENTAL_TABLE = 3, MATERIALIZED_VIEW = 4 }
+	export enum RelationRelationType { RELATION_TYPE_UNSPECIFIED = 'RELATION_TYPE_UNSPECIFIED', TABLE = 'TABLE', VIEW = 'VIEW', INCREMENTAL_TABLE = 'INCREMENTAL_TABLE', MATERIALIZED_VIEW = 'MATERIALIZED_VIEW' }
 
 
 	/** `ComputeRepositoryAccessTokenStatus` response message. */
@@ -860,7 +860,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeRepositoryAccessTokenStatusResponseTokenStatus { TOKEN_STATUS_UNSPECIFIED = 0, NOT_FOUND = 1, INVALID = 2, VALID = 3 }
+	export enum ComputeRepositoryAccessTokenStatusResponseTokenStatus { TOKEN_STATUS_UNSPECIFIED = 'TOKEN_STATUS_UNSPECIFIED', NOT_FOUND = 'NOT_FOUND', INVALID = 'INVALID', VALID = 'VALID' }
 
 
 	/** Represents a single entry in a directory. */
@@ -991,7 +991,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UncommittedFileChangeState { STATE_UNSPECIFIED = 0, ADDED = 1, DELETED = 2, MODIFIED = 3, HAS_CONFLICTS = 4 }
+	export enum UncommittedFileChangeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ADDED = 'ADDED', DELETED = 'DELETED', MODIFIED = 'MODIFIED', HAS_CONFLICTS = 'HAS_CONFLICTS' }
 
 
 	/** `FetchGitAheadBehind` response message. */
@@ -1823,7 +1823,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowInvocationState { STATE_UNSPECIFIED = 0, RUNNING = 1, SUCCEEDED = 2, CANCELLED = 3, FAILED = 4, CANCELING = 5 }
+	export enum WorkflowInvocationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', FAILED = 'FAILED', CANCELING = 'CANCELING' }
 
 
 	/** `ListWorkspaces` response message. */
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowInvocationActionState { PENDING = 0, RUNNING = 1, SKIPPED = 2, DISABLED = 3, SUCCEEDED = 4, CANCELLED = 5, FAILED = 6 }
+	export enum WorkflowInvocationActionState { PENDING = 'PENDING', RUNNING = 'RUNNING', SKIPPED = 'SKIPPED', DISABLED = 'DISABLED', SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 
 	/** `ReadFile` response message. */

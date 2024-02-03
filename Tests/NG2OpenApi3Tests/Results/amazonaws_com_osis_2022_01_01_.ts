@@ -56,7 +56,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATE_FAILED = 4, UPDATE_FAILED = 5, STARTING = 6, START_FAILED = 7, STOPPING = 8, STOPPED = 9 }
+	export enum PipelineStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', CREATE_FAILED = 'CREATE_FAILED', UPDATE_FAILED = 'UPDATE_FAILED', STARTING = 'STARTING', START_FAILED = 'START_FAILED', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** Information about a pipeline's current status. */
@@ -338,7 +338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeProgressStatuses { PENDING = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3 }
+	export enum ChangeProgressStatuses { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Progress details for a specific stage of a pipeline configuration change. */
@@ -555,7 +555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeProgressStageStatuses { PENDING = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3 }
+	export enum ChangeProgressStageStatuses { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface CreatePipelineRequest {
 

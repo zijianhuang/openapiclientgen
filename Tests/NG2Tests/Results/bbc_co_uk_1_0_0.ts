@@ -199,7 +199,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BodyPlatform { responsiveweb = 0, app = 1 }
+	export enum BodyPlatform { responsiveweb = 'responsiveweb', app = 'app' }
 
 	export interface Body_1 {
 
@@ -318,9 +318,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Body_4Action { started = 0, ended = 1, paused = 2, heartbeat = 3 }
+	export enum Body_4Action { started = 'started', ended = 'ended', paused = 'paused', heartbeat = 'heartbeat' }
 
-	export enum Body_4Resource_type { episode = 0, clip = 1 }
+	export enum Body_4Resource_type { episode = 'episode', clip = 'clip' }
 
 	export interface BrandSummary {
 		available_versions?: Array<AvailableVersions>;
@@ -541,9 +541,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EpisodeSummaryType { episode_summary = 0 }
+	export enum EpisodeSummaryType { episode_summary = 'episode_summary' }
 
-	export enum BrandSummaryType { brand_summary = 0 }
+	export enum BrandSummaryType { brand_summary = 'brand_summary' }
 
 	export interface Broadcast {
 
@@ -671,7 +671,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProgrammeSummaryType { brand_summary = 0, series_summary = 1, episode_summary = 2, clip_summary = 3 }
+	export enum ProgrammeSummaryType { brand_summary = 'brand_summary', series_summary = 'series_summary', episode_summary = 'episode_summary', clip_summary = 'clip_summary' }
 
 	export interface BroadcastsResponse {
 
@@ -1049,7 +1049,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipSummaryType { clip_summary = 0 }
+	export enum ClipSummaryType { clip_summary = 'clip_summary' }
 
 	export interface Contact {
 
@@ -4153,7 +4153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SeriesSummaryType { series_summary = 0 }
+	export enum SeriesSummaryType { series_summary = 'series_summary' }
 
 	@Injectable()
 	export class MyClient {
@@ -5173,49 +5173,49 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BroadcastsGetByOffsetAndLimitAndService_idAndDateAndSortSort { start_at = 0, '-start_at' = 1, end_at = 2, '-end_at' = 3 }
+	export enum BroadcastsGetByOffsetAndLimitAndService_idAndDateAndSortSort { start_at = 'start_at', '-start_at' = '-start_at', end_at = 'end_at', '-end_at' = '-end_at' }
 
-	export enum BroadcastsGetByOffsetAndLimitAndService_idAndOn_airAndNextAndPreviousAndSortOn_air { now = 0, previous = 1, next = 2 }
+	export enum BroadcastsGetByOffsetAndLimitAndService_idAndOn_airAndNextAndPreviousAndSortOn_air { now = 'now', previous = 'previous', next = 'next' }
 
-	export enum CategoriesGetByKindKind { promoted = 0 }
+	export enum CategoriesGetByKindKind { promoted = 'promoted' }
 
-	export enum GetMusicExportJobsVendor { spotify = 0, deezer = 1, youtube = 2, itunes = 3 }
+	export enum GetMusicExportJobsVendor { spotify = 'spotify', deezer = 'deezer', youtube = 'youtube', itunes = 'itunes' }
 
-	export enum GetMusicExportTracksStatus { failed = 0, done = 1, pending = 2 }
+	export enum GetMusicExportTracksStatus { failed = 'failed', done = 'done', pending = 'pending' }
 
-	export enum GetPersonalisedMusicFavouritesAction { favourited = 0, unfavourited = 1 }
+	export enum GetPersonalisedMusicFavouritesAction { favourited = 'favourited', unfavourited = 'unfavourited' }
 
-	export enum GetPersonalisedMusicFavouritesByTypeType { clips = 0, tracks = 1 }
+	export enum GetPersonalisedMusicFavouritesByTypeType { clips = 'clips', tracks = 'tracks' }
 
-	export enum GetPersonalisedMusicFollowsAction { followed = 0, unfollowed = 1 }
+	export enum GetPersonalisedMusicFollowsAction { followed = 'followed', unfollowed = 'unfollowed' }
 
-	export enum GetPersonalisedMusicFollowsMusic_context { events = 0, ivote = 1, music = 2, musicplaylist = 3, programmes = 4, radio = 5, unknown = 6 }
+	export enum GetPersonalisedMusicFollowsMusic_context { events = 'events', ivote = 'ivote', music = 'music', musicplaylist = 'musicplaylist', programmes = 'programmes', radio = 'radio', unknown = 'unknown' }
 
-	export enum GetPersonalisedMusicFollowsByTypeType { playlists = 0, services = 1, networks = 2, genres = 3, categories = 4, artists = 5 }
+	export enum GetPersonalisedMusicFollowsByTypeType { playlists = 'playlists', services = 'services', networks = 'networks', genres = 'genres', categories = 'categories', artists = 'artists' }
 
-	export enum GetRecommendationsRights { web = 0, mobile = 1 }
+	export enum GetRecommendationsRights { web = 'web', mobile = 'mobile' }
 
-	export enum GetPersonalisedRadioFavouritesSort { programme_titles = 0, available_from_date = 1, available_to_date = 2 }
+	export enum GetPersonalisedRadioFavouritesSort { programme_titles = 'programme_titles', available_from_date = 'available_from_date', available_to_date = 'available_to_date' }
 
-	export enum GetPersonalisedRadioFavouritesByTypeType { clips = 0, episodes = 1 }
+	export enum GetPersonalisedRadioFavouritesByTypeType { clips = 'clips', episodes = 'episodes' }
 
-	export enum GetPersonalisedRadioFollowsByTypeType { brands = 0, series = 1 }
+	export enum GetPersonalisedRadioFollowsByTypeType { brands = 'brands', series = 'series' }
 
-	export enum GetPodcastsSort { title = 0, '-title' = 1, available_from_date = 2, '-available_from_date' = 3 }
+	export enum GetPodcastsSort { title = 'title', '-title' = '-title', available_from_date = 'available_from_date', '-available_from_date' = '-available_from_date' }
 
-	export enum GetPodcastsCoverage { local = 0, national = 1, regional = 2 }
+	export enum GetPodcastsCoverage { local = 'local', national = 'national', regional = 'regional' }
 
-	export enum GetPopularEpisodesClipsType { episode = 0, clip = 1, 'episode,clip' = 2 }
+	export enum GetPopularEpisodesClipsType { episode = 'episode', clip = 'clip', 'episode,clip' = 'episode,clip' }
 
-	export enum GetPopularEpisodesClipsDistinct { tleo = 0 }
+	export enum GetPopularEpisodesClipsDistinct { tleo = 'tleo' }
 
-	export enum GetPopularEpisodesClipsGroup { tv = 0, radio = 1, 'tv,radio' = 2 }
+	export enum GetPopularEpisodesClipsGroup { tv = 'tv', radio = 'radio', 'tv,radio' = 'tv,radio' }
 
-	export enum GetPopularEpisodesClipsMedia_type { audio = 0, video = 1, 'audio,video' = 2 }
+	export enum GetPopularEpisodesClipsMedia_type { audio = 'audio', video = 'video', 'audio,video' = 'audio,video' }
 
-	export enum GetRadioProgrammesSort { available_from_date = 0, '-available_from_date' = 1, title = 2, '-title' = 3 }
+	export enum GetRadioProgrammesSort { available_from_date = 'available_from_date', '-available_from_date' = '-available_from_date', title = 'title', '-title' = '-title' }
 
-	export enum GetRadioProgrammesType { brand = 0, series = 1, episode = 2, clip = 3, 'episode,clip' = 4 }
+	export enum GetRadioProgrammesType { brand = 'brand', series = 'series', episode = 'episode', clip = 'clip', 'episode,clip' = 'episode,clip' }
 
 }
 

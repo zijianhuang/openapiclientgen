@@ -704,7 +704,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CredentialType { miradore_api_key_v1 = 0, aws_access_secret = 1, crowdstrike_api_key = 2, azure_client_secret = 3, azure_username_password = 4, censys_search_api_key = 5, snmpv2_community = 6, snmpv3_credential = 7, vmware_username_password = 8 }
+	export enum CredentialType { miradore_api_key_v1 = 'miradore_api_key_v1', aws_access_secret = 'aws_access_secret', crowdstrike_api_key = 'crowdstrike_api_key', azure_client_secret = 'azure_client_secret', azure_username_password = 'azure_username_password', censys_search_api_key = 'censys_search_api_key', snmpv2_community = 'snmpv2_community', snmpv3_credential = 'snmpv3_credential', vmware_username_password = 'vmware_username_password' }
 
 	export interface CredentialFields {
 	}
@@ -742,7 +742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CredentialOptionsType { miradore_api_key_v1 = 0, aws_access_secret = 1 }
+	export enum CredentialOptionsType { miradore_api_key_v1 = 'miradore_api_key_v1', aws_access_secret = 'aws_access_secret' }
 
 	export interface CrowdstrikeCredentialFields {
 
@@ -1391,7 +1391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanOptionsScan_frequency { once = 0, hourly = 1, daily = 2, weekly = 3, monthly = 4, continuous = 5 }
+	export enum ScanOptionsScan_frequency { once = 'once', hourly = 'hourly', daily = 'daily', weekly = 'weekly', monthly = 'monthly', continuous = 'continuous' }
 
 	export interface ScanTemplate {
 

@@ -144,9 +144,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DigestConfigState { Active = 0, Disabled = 1 }
+	export enum DigestConfigState { Active = 'Active', Disabled = 'Disabled' }
 
-	export enum ConfigDataPropertiesLowCpuThreshold { _5 = 0, _10 = 1, _15 = 2, _20 = 3 }
+	export enum ConfigDataPropertiesLowCpuThreshold { _5 = '5', _10 = '10', _15 = '15', _20 = '20' }
 
 
 	/** The list of Advisor configurations. */
@@ -465,11 +465,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationPropertiesCategory { HighAvailability = 0, Security = 1, Performance = 2, Cost = 3, OperationalExcellence = 4 }
+	export enum RecommendationPropertiesCategory { HighAvailability = 'HighAvailability', Security = 'Security', Performance = 'Performance', Cost = 'Cost', OperationalExcellence = 'OperationalExcellence' }
 
-	export enum RecommendationPropertiesImpact { High = 0, Medium = 1, Low = 2 }
+	export enum RecommendationPropertiesImpact { High = 'High', Medium = 'Medium', Low = 'Low' }
 
-	export enum RecommendationPropertiesRisk { Error = 0, Warning = 1, None = 2 }
+	export enum RecommendationPropertiesRisk { Error = 'Error', Warning = 'Warning', None = 'None' }
 
 
 	/** A summary of the recommendation. */
@@ -835,7 +835,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Configurations_CreateInSubscriptionConfigurationName { default = 0 }
+	export enum Configurations_CreateInSubscriptionConfigurationName { default = 'default' }
 
 }
 

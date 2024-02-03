@@ -39,7 +39,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { InstanceRefresh = 0, PlatformUpdate = 1, Unknown = 2 }
+	export enum ActionType { InstanceRefresh = 'InstanceRefresh', PlatformUpdate = 'PlatformUpdate', Unknown = 'Unknown' }
 
 	export interface ElasticBeanstalkServiceException {
 	}
@@ -170,11 +170,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentStatus { Aborting = 0, Launching = 1, Updating = 2, LinkingFrom = 3, LinkingTo = 4, Ready = 5, Terminating = 6, Terminated = 7 }
+	export enum EnvironmentStatus { Aborting = 'Aborting', Launching = 'Launching', Updating = 'Updating', LinkingFrom = 'LinkingFrom', LinkingTo = 'LinkingTo', Ready = 'Ready', Terminating = 'Terminating', Terminated = 'Terminated' }
 
-	export enum EnvironmentHealth { Green = 0, Yellow = 1, Red = 2, Grey = 3 }
+	export enum EnvironmentHealth { Green = 'Green', Yellow = 'Yellow', Red = 'Red', Grey = 'Grey' }
 
-	export enum EnvironmentHealthStatus { NoData = 0, Unknown = 1, Pending = 2, Ok = 3, Info = 4, Warning = 5, Degraded = 6, Severe = 7, Suspended = 8 }
+	export enum EnvironmentHealthStatus { NoData = 'NoData', Unknown = 'Unknown', Pending = 'Pending', Ok = 'Ok', Info = 'Info', Warning = 'Warning', Degraded = 'Degraded', Severe = 'Severe', Suspended = 'Suspended' }
 
 
 	/** Describes the AWS resources in use by this environment. This data is not live data. */
@@ -540,9 +540,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { Git = 0, Zip = 1 }
+	export enum SourceType { Git = 'Git', Zip = 'Zip' }
 
-	export enum SourceRepository { CodeCommit = 0, S3 = 1 }
+	export enum SourceRepository { CodeCommit = 'CodeCommit', S3 = 'S3' }
 
 
 	/** The bucket and key of an item stored in Amazon S3. */
@@ -564,9 +564,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationVersionStatus { Processed = 0, Unprocessed = 1, Failed = 2, Processing = 3, Building = 4 }
+	export enum ApplicationVersionStatus { Processed = 'Processed', Unprocessed = 'Unprocessed', Failed = 'Failed', Processing = 'Processing', Building = 'Building' }
 
-	export enum ComputeType { BUILD_GENERAL1_SMALL = 0, BUILD_GENERAL1_MEDIUM = 1, BUILD_GENERAL1_LARGE = 2 }
+	export enum ComputeType { BUILD_GENERAL1_SMALL = 'BUILD_GENERAL1_SMALL', BUILD_GENERAL1_MEDIUM = 'BUILD_GENERAL1_MEDIUM', BUILD_GENERAL1_LARGE = 'BUILD_GENERAL1_LARGE' }
 
 	export interface TooManyApplicationVersionsException {
 	}
@@ -640,7 +640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationDeploymentStatus { deployed = 0, pending = 1, failed = 2 }
+	export enum ConfigurationDeploymentStatus { deployed = 'deployed', pending = 'pending', failed = 'failed' }
 
 
 	/** A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.  */
@@ -769,7 +769,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformStatus { Creating = 0, Failed = 1, Ready = 2, Deleting = 3, Deleted = 4 }
+	export enum PlatformStatus { Creating = 'Creating', Failed = 'Failed', Ready = 'Ready', Deleting = 'Deleting', Deleted = 'Deleted' }
 
 
 	/** The builder used to build the custom platform. */
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationOptionValueType { Scalar = 0, List = 1 }
+	export enum ConfigurationOptionValueType { Scalar = 'Scalar', List = 'List' }
 
 
 	/** A regular expression representing a restriction on a string configuration option value. */
@@ -1203,7 +1203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentHealthAttribute { Status = 0, Color = 1, Causes = 2, ApplicationMetrics = 3, InstancesHealth = 4, All = 5, HealthStatus = 6, RefreshedAt = 7 }
+	export enum EnvironmentHealthAttribute { Status = 'Status', Color = 'Color', Causes = 'Causes', ApplicationMetrics = 'ApplicationMetrics', InstancesHealth = 'InstancesHealth', All = 'All', HealthStatus = 'HealthStatus', RefreshedAt = 'RefreshedAt' }
 
 	export interface InvalidRequestException {
 	}
@@ -1271,9 +1271,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FailureType { UpdateCancelled = 0, CancellationFailed = 1, RollbackFailed = 2, RollbackSuccessful = 3, InternalFailure = 4, InvalidEnvironmentState = 5, PermissionsError = 6 }
+	export enum FailureType { UpdateCancelled = 'UpdateCancelled', CancellationFailed = 'CancellationFailed', RollbackFailed = 'RollbackFailed', RollbackSuccessful = 'RollbackSuccessful', InternalFailure = 'InternalFailure', InvalidEnvironmentState = 'InvalidEnvironmentState', PermissionsError = 'PermissionsError' }
 
-	export enum ActionHistoryStatus { Completed = 0, Failed = 1, Unknown = 2 }
+	export enum ActionHistoryStatus { Completed = 'Completed', Failed = 'Failed', Unknown = 'Unknown' }
 
 
 	/** The result message containing a list of managed actions. */
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionStatus { Scheduled = 0, Pending = 1, Running = 2, Unknown = 3 }
+	export enum ActionStatus { Scheduled = 'Scheduled', Pending = 'Pending', Running = 'Running', Unknown = 'Unknown' }
 
 
 	/** Result message containing a list of environment resource descriptions. */
@@ -1541,7 +1541,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSeverity { TRACE = 0, DEBUG = 1, INFO = 2, WARN = 3, ERROR = 4, FATAL = 5 }
+	export enum EventSeverity { TRACE = 'TRACE', DEBUG = 'DEBUG', INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR', FATAL = 'FATAL' }
 
 
 	/** Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment. */
@@ -1680,7 +1680,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancesHealthAttribute { HealthStatus = 0, Color = 1, Causes = 2, ApplicationMetrics = 3, RefreshedAt = 4, LaunchedAt = 5, System = 6, Deployment = 7, AvailabilityZone = 8, InstanceType = 9, All = 10 }
+	export enum InstancesHealthAttribute { HealthStatus = 'HealthStatus', Color = 'Color', Causes = 'Causes', ApplicationMetrics = 'ApplicationMetrics', RefreshedAt = 'RefreshedAt', LaunchedAt = 'LaunchedAt', System = 'System', Deployment = 'Deployment', AvailabilityZone = 'AvailabilityZone', InstanceType = 'InstanceType', All = 'All' }
 
 	export interface DescribePlatformVersionResult {
 		PlatformDescription?: PlatformDescription;
@@ -2026,7 +2026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentInfoType { tail = 0, bundle = 1 }
+	export enum EnvironmentInfoType { tail = 'tail', bundle = 'bundle' }
 
 	export interface ApplicationResourceLifecycleDescriptionMessage {
 		ApplicationName?: string;
@@ -2093,7 +2093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationSeverity { error = 0, warning = 1 }
+	export enum ValidationSeverity { error = 'error', warning = 'warning' }
 
 
 	/** <p/> */
@@ -3944,17 +3944,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AbortEnvironmentUpdateAction { AbortEnvironmentUpdate = 0 }
+	export enum GET_AbortEnvironmentUpdateAction { AbortEnvironmentUpdate = 'AbortEnvironmentUpdate' }
 
-	export enum GET_AbortEnvironmentUpdateVersion { '2010-12-01' = 0 }
+	export enum GET_AbortEnvironmentUpdateVersion { '2010-12-01' = '2010-12-01' }
 
-	export enum GET_ApplyEnvironmentManagedActionAction { ApplyEnvironmentManagedAction = 0 }
+	export enum GET_ApplyEnvironmentManagedActionAction { ApplyEnvironmentManagedAction = 'ApplyEnvironmentManagedAction' }
 
-	export enum GET_AssociateEnvironmentOperationsRoleAction { AssociateEnvironmentOperationsRole = 0 }
+	export enum GET_AssociateEnvironmentOperationsRoleAction { AssociateEnvironmentOperationsRole = 'AssociateEnvironmentOperationsRole' }
 
-	export enum GET_CheckDNSAvailabilityAction { CheckDNSAvailability = 0 }
+	export enum GET_CheckDNSAvailabilityAction { CheckDNSAvailability = 'CheckDNSAvailability' }
 
-	export enum GET_ComposeEnvironmentsAction { ComposeEnvironments = 0 }
+	export enum GET_ComposeEnvironmentsAction { ComposeEnvironments = 'ComposeEnvironments' }
 
 	export interface GET_CreateApplicationResourceLifecycleConfig {
 		ServiceRole?: string;
@@ -3970,7 +3970,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateApplicationAction { CreateApplication = 0 }
+	export enum GET_CreateApplicationAction { CreateApplication = 'CreateApplication' }
 
 	export interface GET_CreateApplicationVersionSourceBuildInformation {
 
@@ -4052,7 +4052,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateApplicationVersionAction { CreateApplicationVersion = 0 }
+	export enum GET_CreateApplicationVersionAction { CreateApplicationVersion = 'CreateApplicationVersion' }
 
 	export interface GET_CreateConfigurationTemplateSourceConfiguration {
 		ApplicationName?: string;
@@ -4070,7 +4070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateConfigurationTemplateAction { CreateConfigurationTemplate = 0 }
+	export enum GET_CreateConfigurationTemplateAction { CreateConfigurationTemplate = 'CreateConfigurationTemplate' }
 
 	export interface GET_CreateEnvironmentTier {
 		Name?: string;
@@ -4091,7 +4091,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateEnvironmentAction { CreateEnvironment = 0 }
+	export enum GET_CreateEnvironmentAction { CreateEnvironment = 'CreateEnvironment' }
 
 	export interface GET_CreatePlatformVersionPlatformDefinitionBundle {
 		S3Bucket?: string;
@@ -4109,69 +4109,69 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreatePlatformVersionAction { CreatePlatformVersion = 0 }
+	export enum GET_CreatePlatformVersionAction { CreatePlatformVersion = 'CreatePlatformVersion' }
 
-	export enum GET_CreateStorageLocationAction { CreateStorageLocation = 0 }
+	export enum GET_CreateStorageLocationAction { CreateStorageLocation = 'CreateStorageLocation' }
 
-	export enum GET_DeleteApplicationAction { DeleteApplication = 0 }
+	export enum GET_DeleteApplicationAction { DeleteApplication = 'DeleteApplication' }
 
-	export enum GET_DeleteApplicationVersionAction { DeleteApplicationVersion = 0 }
+	export enum GET_DeleteApplicationVersionAction { DeleteApplicationVersion = 'DeleteApplicationVersion' }
 
-	export enum GET_DeleteConfigurationTemplateAction { DeleteConfigurationTemplate = 0 }
+	export enum GET_DeleteConfigurationTemplateAction { DeleteConfigurationTemplate = 'DeleteConfigurationTemplate' }
 
-	export enum GET_DeleteEnvironmentConfigurationAction { DeleteEnvironmentConfiguration = 0 }
+	export enum GET_DeleteEnvironmentConfigurationAction { DeleteEnvironmentConfiguration = 'DeleteEnvironmentConfiguration' }
 
-	export enum GET_DeletePlatformVersionAction { DeletePlatformVersion = 0 }
+	export enum GET_DeletePlatformVersionAction { DeletePlatformVersion = 'DeletePlatformVersion' }
 
-	export enum GET_DescribeAccountAttributesAction { DescribeAccountAttributes = 0 }
+	export enum GET_DescribeAccountAttributesAction { DescribeAccountAttributes = 'DescribeAccountAttributes' }
 
-	export enum GET_DescribeApplicationVersionsAction { DescribeApplicationVersions = 0 }
+	export enum GET_DescribeApplicationVersionsAction { DescribeApplicationVersions = 'DescribeApplicationVersions' }
 
-	export enum GET_DescribeApplicationsAction { DescribeApplications = 0 }
+	export enum GET_DescribeApplicationsAction { DescribeApplications = 'DescribeApplications' }
 
-	export enum GET_DescribeConfigurationOptionsAction { DescribeConfigurationOptions = 0 }
+	export enum GET_DescribeConfigurationOptionsAction { DescribeConfigurationOptions = 'DescribeConfigurationOptions' }
 
-	export enum GET_DescribeConfigurationSettingsAction { DescribeConfigurationSettings = 0 }
+	export enum GET_DescribeConfigurationSettingsAction { DescribeConfigurationSettings = 'DescribeConfigurationSettings' }
 
-	export enum GET_DescribeEnvironmentHealthAction { DescribeEnvironmentHealth = 0 }
+	export enum GET_DescribeEnvironmentHealthAction { DescribeEnvironmentHealth = 'DescribeEnvironmentHealth' }
 
-	export enum GET_DescribeEnvironmentManagedActionHistoryAction { DescribeEnvironmentManagedActionHistory = 0 }
+	export enum GET_DescribeEnvironmentManagedActionHistoryAction { DescribeEnvironmentManagedActionHistory = 'DescribeEnvironmentManagedActionHistory' }
 
-	export enum GET_DescribeEnvironmentManagedActionsAction { DescribeEnvironmentManagedActions = 0 }
+	export enum GET_DescribeEnvironmentManagedActionsAction { DescribeEnvironmentManagedActions = 'DescribeEnvironmentManagedActions' }
 
-	export enum GET_DescribeEnvironmentResourcesAction { DescribeEnvironmentResources = 0 }
+	export enum GET_DescribeEnvironmentResourcesAction { DescribeEnvironmentResources = 'DescribeEnvironmentResources' }
 
-	export enum GET_DescribeEnvironmentsAction { DescribeEnvironments = 0 }
+	export enum GET_DescribeEnvironmentsAction { DescribeEnvironments = 'DescribeEnvironments' }
 
-	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
+	export enum GET_DescribeEventsAction { DescribeEvents = 'DescribeEvents' }
 
-	export enum GET_DescribeInstancesHealthAction { DescribeInstancesHealth = 0 }
+	export enum GET_DescribeInstancesHealthAction { DescribeInstancesHealth = 'DescribeInstancesHealth' }
 
-	export enum GET_DescribePlatformVersionAction { DescribePlatformVersion = 0 }
+	export enum GET_DescribePlatformVersionAction { DescribePlatformVersion = 'DescribePlatformVersion' }
 
-	export enum GET_DisassociateEnvironmentOperationsRoleAction { DisassociateEnvironmentOperationsRole = 0 }
+	export enum GET_DisassociateEnvironmentOperationsRoleAction { DisassociateEnvironmentOperationsRole = 'DisassociateEnvironmentOperationsRole' }
 
-	export enum GET_ListAvailableSolutionStacksAction { ListAvailableSolutionStacks = 0 }
+	export enum GET_ListAvailableSolutionStacksAction { ListAvailableSolutionStacks = 'ListAvailableSolutionStacks' }
 
-	export enum GET_ListPlatformBranchesAction { ListPlatformBranches = 0 }
+	export enum GET_ListPlatformBranchesAction { ListPlatformBranches = 'ListPlatformBranches' }
 
-	export enum GET_ListPlatformVersionsAction { ListPlatformVersions = 0 }
+	export enum GET_ListPlatformVersionsAction { ListPlatformVersions = 'ListPlatformVersions' }
 
-	export enum GET_ListTagsForResourceAction { ListTagsForResource = 0 }
+	export enum GET_ListTagsForResourceAction { ListTagsForResource = 'ListTagsForResource' }
 
-	export enum GET_RebuildEnvironmentAction { RebuildEnvironment = 0 }
+	export enum GET_RebuildEnvironmentAction { RebuildEnvironment = 'RebuildEnvironment' }
 
-	export enum GET_RequestEnvironmentInfoAction { RequestEnvironmentInfo = 0 }
+	export enum GET_RequestEnvironmentInfoAction { RequestEnvironmentInfo = 'RequestEnvironmentInfo' }
 
-	export enum GET_RestartAppServerAction { RestartAppServer = 0 }
+	export enum GET_RestartAppServerAction { RestartAppServer = 'RestartAppServer' }
 
-	export enum GET_RetrieveEnvironmentInfoAction { RetrieveEnvironmentInfo = 0 }
+	export enum GET_RetrieveEnvironmentInfoAction { RetrieveEnvironmentInfo = 'RetrieveEnvironmentInfo' }
 
-	export enum GET_SwapEnvironmentCNAMEsAction { SwapEnvironmentCNAMEs = 0 }
+	export enum GET_SwapEnvironmentCNAMEsAction { SwapEnvironmentCNAMEs = 'SwapEnvironmentCNAMEs' }
 
-	export enum GET_TerminateEnvironmentAction { TerminateEnvironment = 0 }
+	export enum GET_TerminateEnvironmentAction { TerminateEnvironment = 'TerminateEnvironment' }
 
-	export enum GET_UpdateApplicationAction { UpdateApplication = 0 }
+	export enum GET_UpdateApplicationAction { UpdateApplication = 'UpdateApplication' }
 
 	export interface GET_UpdateApplicationResourceLifecycleResourceLifecycleConfig {
 		ServiceRole?: string;
@@ -4187,11 +4187,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateApplicationResourceLifecycleAction { UpdateApplicationResourceLifecycle = 0 }
+	export enum GET_UpdateApplicationResourceLifecycleAction { UpdateApplicationResourceLifecycle = 'UpdateApplicationResourceLifecycle' }
 
-	export enum GET_UpdateApplicationVersionAction { UpdateApplicationVersion = 0 }
+	export enum GET_UpdateApplicationVersionAction { UpdateApplicationVersion = 'UpdateApplicationVersion' }
 
-	export enum GET_UpdateConfigurationTemplateAction { UpdateConfigurationTemplate = 0 }
+	export enum GET_UpdateConfigurationTemplateAction { UpdateConfigurationTemplate = 'UpdateConfigurationTemplate' }
 
 	export interface GET_UpdateEnvironmentTier {
 		Name?: string;
@@ -4212,11 +4212,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateEnvironmentAction { UpdateEnvironment = 0 }
+	export enum GET_UpdateEnvironmentAction { UpdateEnvironment = 'UpdateEnvironment' }
 
-	export enum GET_UpdateTagsForResourceAction { UpdateTagsForResource = 0 }
+	export enum GET_UpdateTagsForResourceAction { UpdateTagsForResource = 'UpdateTagsForResource' }
 
-	export enum GET_ValidateConfigurationSettingsAction { ValidateConfigurationSettings = 0 }
+	export enum GET_ValidateConfigurationSettingsAction { ValidateConfigurationSettings = 'ValidateConfigurationSettings' }
 
 }
 

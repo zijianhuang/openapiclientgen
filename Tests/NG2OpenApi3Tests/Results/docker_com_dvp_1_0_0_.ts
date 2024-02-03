@@ -18,13 +18,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetModelName { pulls = 0 }
+	export enum DatasetModelName { pulls = 'pulls' }
 
-	export enum TimespanType { months = 0, weeks = 1 }
+	export enum TimespanType { months = 'months', weeks = 'weeks' }
 
-	export enum DataviewType { raw = 0, summary = 1, 'repo-summary' = 2 }
+	export enum DataviewType { raw = 'raw', summary = 'summary', 'repo-summary' = 'repo-summary' }
 
-	export enum DatasetType { pulls = 0 }
+	export enum DatasetType { pulls = 'pulls' }
 
 	export interface MonthData {
 		months?: Array<MonthModel>;

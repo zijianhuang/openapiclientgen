@@ -198,9 +198,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CardsStatus { active = 0, inactive = 1, cancelled = 2 }
+	export enum CardsStatus { active = 'active', inactive = 'inactive', cancelled = 'cancelled' }
 
-	export enum CardsSubtype { credit = 0, debit = 1, prepaid = 2 }
+	export enum CardsSubtype { credit = 'credit', debit = 'debit', prepaid = 'prepaid' }
 
 
 	/** Solamente estará informado cuando el valor de code sea 2020 (usuario multicontrato) */
@@ -713,9 +713,9 @@ export namespace MyNS {
 
 	}
 
-	export enum User_informationGender { male = 0, female = 1 }
+	export enum User_informationGender { male = 'male', female = 'female' }
 
-	export enum User_informationMarital_status { single = 0, married = 1 }
+	export enum User_informationMarital_status { single = 'single', married = 'married' }
 
 	export interface Error {
 
@@ -848,7 +848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OwnerRole { owner = 0, 'co-owner' = 1, 'legal representative' = 2, administrator = 3, 'attorney-in-fact' = 4, authorised = 5 }
+	export enum OwnerRole { owner = 'owner', 'co-owner' = 'co-owner', 'legal representative' = 'legal representative', administrator = 'administrator', 'attorney-in-fact' = 'attorney-in-fact', authorised = 'authorised' }
 
 
 	/** Carteras de acciones, fondos y planes de pensiones */
@@ -985,7 +985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortfoliosSubtype { funds = 0, stocks = 1, 'pension-plans' = 2 }
+	export enum PortfoliosSubtype { funds = 'funds', stocks = 'stocks', 'pension-plans' = 'pension-plans' }
 
 	@Injectable()
 	export class MyClient {
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Entity_dataGetByLangLang { es = 0, en = 1 }
+	export enum Entity_dataGetByLangLang { es = 'es', en = 'en' }
 
 }
 

@@ -152,7 +152,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { 'Microsoft.ManagedIdentity/userAssignedIdentities' = 0 }
+	export enum IdentityType { 'Microsoft.ManagedIdentity/userAssignedIdentities' = 'Microsoft.ManagedIdentity/userAssignedIdentities' }
 
 
 	/** Operation supported by the Microsoft.ManagedIdentity REST API. */

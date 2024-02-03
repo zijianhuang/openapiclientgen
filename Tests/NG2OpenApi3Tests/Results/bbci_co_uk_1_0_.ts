@@ -131,7 +131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProgrammeImagesType { image = 0 }
+	export enum ProgrammeImagesType { image = 'image' }
 
 	export interface Episode {
 
@@ -347,7 +347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EpisodeImagesType { image = 0 }
+	export enum EpisodeImagesType { image = 'image' }
 
 	export interface EpisodeLabels {
 		category?: string | null;
@@ -456,7 +456,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EpisodeProgramme_type { narrative = 0, sequential = 1, 'self-contained' = 2, strand = 3, unclassified = 4, 'one-off' = 5 }
+	export enum EpisodeProgramme_type { narrative = 'narrative', sequential = 'sequential', 'self-contained' = 'self-contained', strand = 'strand', unclassified = 'unclassified', 'one-off' = 'one-off' }
 
 	export interface EpisodeRelated_links {
 
@@ -503,9 +503,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EpisodeRelated_linksType { link = 0 }
+	export enum EpisodeRelated_linksType { link = 'link' }
 
-	export enum EpisodeStatus { available = 0, unavailable = 1 }
+	export enum EpisodeStatus { available = 'available', unavailable = 'unavailable' }
 
 	export interface EpisodeSynopses {
 		editorial?: string | null;
@@ -565,7 +565,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EpisodeTestsStatus { active = 0 }
+	export enum EpisodeTestsStatus { active = 'active' }
 
 	export interface EpisodeTestsVariants {
 
@@ -624,11 +624,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EpisodeTestsVariantsDataImagesType { episode = 0, episode_large = 1 }
+	export enum EpisodeTestsVariantsDataImagesType { episode = 'episode', episode_large = 'episode_large' }
 
-	export enum EpisodeTleo_type { episode = 0, brand = 1, series = 2 }
+	export enum EpisodeTleo_type { episode = 'episode', brand = 'brand', series = 'series' }
 
-	export enum EpisodeType { episode = 0, episode_large = 1 }
+	export enum EpisodeType { episode = 'episode', episode_large = 'episode_large' }
 
 	export interface ProgrammeLabels {
 		category?: string | null;
@@ -643,9 +643,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProgrammeProgramme_type { narrative = 0, sequential = 1, 'self-contained' = 2, strand = 3, unclassified = 4, 'one-off' = 5 }
+	export enum ProgrammeProgramme_type { narrative = 'narrative', sequential = 'sequential', 'self-contained' = 'self-contained', strand = 'strand', unclassified = 'unclassified', 'one-off' = 'one-off' }
 
-	export enum ProgrammeStatus { available = 0, unavailable = 1 }
+	export enum ProgrammeStatus { available = 'available', unavailable = 'unavailable' }
 
 	export interface ProgrammeSynopses {
 		large?: string | null;
@@ -666,11 +666,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProgrammeTleo_type { brand = 0, series = 1, episode = 2 }
+	export enum ProgrammeTleo_type { brand = 'brand', series = 'series', episode = 'episode' }
 
-	export enum ProgrammeType { programme = 0, programme_large = 1 }
+	export enum ProgrammeType { programme = 'programme', programme_large = 'programme_large' }
 
-	export enum AddedType { added = 0 }
+	export enum AddedType { added = 'added' }
 
 	export interface Broadcast {
 		available_on_hd_service?: string | null;
@@ -817,7 +817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BroadcastType { broadcast = 0 }
+	export enum BroadcastType { broadcast = 'broadcast' }
 
 	export interface Category {
 		child_episode_count?: number | null;
@@ -870,9 +870,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CategoryKind { genre = 0, accessibility = 1, national = 2, childrens = 3 }
+	export enum CategoryKind { genre = 'genre', accessibility = 'accessibility', national = 'national', childrens = 'childrens' }
 
-	export enum CategoryType { category = 0 }
+	export enum CategoryType { category = 'category' }
 
 	export interface Channel {
 
@@ -929,7 +929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { channel = 0 }
+	export enum ChannelType { channel = 'channel' }
 
 	export interface Clip {
 
@@ -1016,7 +1016,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipImagesType { image = 0 }
+	export enum ClipImagesType { image = 'image' }
 
 	export interface ClipLabels {
 		category?: string | null;
@@ -1050,9 +1050,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipOnward_journeyType { episode = 0 }
+	export enum ClipOnward_journeyType { episode = 'episode' }
 
-	export enum ClipPromotion_type { available_now = 0, coming_soon = 1 }
+	export enum ClipPromotion_type { available_now = 'available_now', coming_soon = 'coming_soon' }
 
 	export interface ClipSynopses {
 		editorial?: string | null;
@@ -1076,9 +1076,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipTleo_type { episode = 0, brand = 1, series = 2 }
+	export enum ClipTleo_type { episode = 'episode', brand = 'brand', series = 'series' }
 
-	export enum ClipType { clip = 0 }
+	export enum ClipType { clip = 'clip' }
 
 	export interface ClipVersions {
 
@@ -1334,7 +1334,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipVersionsKind { legal = 0, editorial = 1, 'technical-replacement' = 2, original = 3, 'iplayer-version' = 4, lengthened = 5, shortened = 6, 'pre-watershed' = 7, 'post-watershed' = 8, 'warnings-higher' = 9, 'warnings-lower' = 10, 'warnings-none' = 11, duplication = 12, 'open-subtitled' = 13, other = 14, 'audio-described' = 15, signed = 16, webcast = 17, simulcast = 18 }
+	export enum ClipVersionsKind { legal = 'legal', editorial = 'editorial', 'technical-replacement' = 'technical-replacement', original = 'original', 'iplayer-version' = 'iplayer-version', lengthened = 'lengthened', shortened = 'shortened', 'pre-watershed' = 'pre-watershed', 'post-watershed' = 'post-watershed', 'warnings-higher' = 'warnings-higher', 'warnings-lower' = 'warnings-lower', 'warnings-none' = 'warnings-none', duplication = 'duplication', 'open-subtitled' = 'open-subtitled', other = 'other', 'audio-described' = 'audio-described', signed = 'signed', webcast = 'webcast', simulcast = 'simulcast' }
 
 	export interface ClipVersionsRrc {
 
@@ -1376,7 +1376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipVersionsType { version = 0, version_large = 1 }
+	export enum ClipVersionsType { version = 'version', version_large = 'version_large' }
 
 	export interface Group {
 		count?: number | null;
@@ -1425,7 +1425,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupGroup_type { tleo = 0, curated = 1, automated = 2, event = 3 }
+	export enum GroupGroup_type { tleo = 'tleo', curated = 'curated', automated = 'automated', event = 'event' }
 
 	export interface GroupImages {
 
@@ -1458,7 +1458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupImagesType { image = 0 }
+	export enum GroupImagesType { image = 'image' }
 
 	export interface GroupRelated_links {
 
@@ -1510,7 +1510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupType { group = 0, group_large = 1 }
+	export enum GroupType { group = 'group', group_large = 'group_large' }
 
 	export interface Ibl {
 	}
@@ -1585,7 +1585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PromotionImagesType { image = 0 }
+	export enum PromotionImagesType { image = 'image' }
 
 	export interface PromotionLabels {
 
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PromotionType { promotion = 0 }
+	export enum PromotionType { promotion = 'promotion' }
 
 	export interface Region {
 
@@ -1670,9 +1670,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionKind { regional = 0, national = 1 }
+	export enum RegionKind { regional = 'regional', national = 'national' }
 
-	export enum RegionType { region = 0 }
+	export enum RegionType { region = 'region' }
 
 	export interface Search_group {
 
@@ -1701,7 +1701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Search_groupType { search_group = 0 }
+	export enum Search_groupType { search_group = 'search_group' }
 
 	export interface Store_version {
 
@@ -1885,7 +1885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Store_versionType { store_version = 0 }
+	export enum Store_versionType { store_version = 'store_version' }
 
 	export interface Trailer {
 
@@ -1939,9 +1939,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TrailerKind { available_now = 0, watch_now = 1, coming_soon = 2, streaming_now_sounds = 3, other = 4 }
+	export enum TrailerKind { available_now = 'available_now', watch_now = 'watch_now', coming_soon = 'coming_soon', streaming_now_sounds = 'streaming_now_sounds', other = 'other' }
 
-	export enum TrailerType { trailer = 0 }
+	export enum TrailerType { trailer = 'trailer' }
 
 	export interface User_recommendation {
 
@@ -1970,7 +1970,7 @@ export namespace MyNS {
 
 	}
 
-	export enum User_recommendationType { user_recommendation = 0 }
+	export enum User_recommendationType { user_recommendation = 'user_recommendation' }
 
 	export interface Version {
 
@@ -2148,7 +2148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionKind { legal = 0, editorial = 1, 'technical-replacement' = 2, original = 3, 'iplayer-version' = 4, lengthened = 5, shortened = 6, 'pre-watershed' = 7, 'post-watershed' = 8, 'warnings-higher' = 9, 'warnings-lower' = 10, 'warnings-none' = 11, duplication = 12, 'open-subtitled' = 13, other = 14, 'audio-described' = 15, signed = 16, webcast = 17, simulcast = 18 }
+	export enum VersionKind { legal = 'legal', editorial = 'editorial', 'technical-replacement' = 'technical-replacement', original = 'original', 'iplayer-version' = 'iplayer-version', lengthened = 'lengthened', shortened = 'shortened', 'pre-watershed' = 'pre-watershed', 'post-watershed' = 'post-watershed', 'warnings-higher' = 'warnings-higher', 'warnings-lower' = 'warnings-lower', 'warnings-none' = 'warnings-none', duplication = 'duplication', 'open-subtitled' = 'open-subtitled', other = 'other', 'audio-described' = 'audio-described', signed = 'signed', webcast = 'webcast', simulcast = 'simulcast' }
 
 	export interface VersionRrc {
 
@@ -2190,7 +2190,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionType { version = 0, version_large = 1 }
+	export enum VersionType { version = 'version', version_large = 'version_large' }
 
 	export interface Watching {
 
@@ -2244,9 +2244,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WatchingStatus { current = 0, next = 1, ended = 2 }
+	export enum WatchingStatus { current = 'current', next = 'next', ended = 'ended' }
 
-	export enum WatchingType { watching = 0 }
+	export enum WatchingType { watching = 'watching' }
 
 	@Injectable()
 	export class MyClient {
@@ -2671,17 +2671,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Get_Programmes_AtoZ_search_Rights { mobile = 0, tv = 1, web = 2 }
+	export enum Get_Programmes_AtoZ_search_Rights { mobile = 'mobile', tv = 'tv', web = 'web' }
 
-	export enum Get_Programmes_AtoZ_search_Sort { title = 0 }
+	export enum Get_Programmes_AtoZ_search_Sort { title = 'title' }
 
-	export enum Get_Programmes_AtoZ_search_Sort_direction { asc = 0, desc = 1 }
+	export enum Get_Programmes_AtoZ_search_Sort_direction { asc = 'asc', desc = 'desc' }
 
-	export enum Get_Programmes_AtoZ_search_Availability { all = 0, available = 1 }
+	export enum Get_Programmes_AtoZ_search_Availability { all = 'all', available = 'available' }
 
-	export enum Get_Categories_Lang { en = 0, cy = 1, ga = 2, gd = 3, pi = 4 }
+	export enum Get_Categories_Lang { en = 'en', cy = 'cy', ga = 'ga', gd = 'gd', pi = 'pi' }
 
-	export enum Get_Episodes_by_category_Sort { recent = 0, popular = 1 }
+	export enum Get_Episodes_by_category_Sort { recent = 'recent', popular = 'popular' }
 
 }
 

@@ -428,7 +428,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesArrivalDepartureDepartureStatus { OnTime = 0, Delayed = 1, Cancelled = 2, NotStoppingAtStation = 3 }
+	export enum TflApiPresentationEntitiesArrivalDepartureDepartureStatus { OnTime = 'OnTime', Delayed = 'Delayed', Cancelled = 'Cancelled', NotStoppingAtStation = 'NotStoppingAtStation' }
 
 	export interface TflApiPresentationEntitiesPredictionTiming {
 		countdownServerAdjustment?: string | null;
@@ -895,9 +895,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesCycleSuperhighwayRouteType { Unknown = 0, All = 1, 'Cycle Superhighways' = 2, Quietways = 3, Cycleways = 4, 'Mini-Hollands' = 5, 'Central London Grid' = 6, 'Streetspace Route' = 7 }
+	export enum TflApiPresentationEntitiesCycleSuperhighwayRouteType { Unknown = 'Unknown', All = 'All', 'Cycle Superhighways' = 'Cycle Superhighways', Quietways = 'Quietways', Cycleways = 'Cycleways', 'Mini-Hollands' = 'Mini-Hollands', 'Central London Grid' = 'Central London Grid', 'Streetspace Route' = 'Streetspace Route' }
 
-	export enum TflApiPresentationEntitiesCycleSuperhighwayStatus { Unknown = 0, All = 1, Open = 2, 'In Progress' = 3, Planned = 4, 'Planned - Subject to feasibility and consultation.' = 5, 'Not Open' = 6 }
+	export enum TflApiPresentationEntitiesCycleSuperhighwayStatus { Unknown = 'Unknown', All = 'All', Open = 'Open', 'In Progress' = 'In Progress', Planned = 'Planned', 'Planned - Subject to feasibility and consultation.' = 'Planned - Subject to feasibility and consultation.', 'Not Open' = 'Not Open' }
 
 	export interface TflApiPresentationEntitiesDisruptedPoint {
 		additionalInformation?: string | null;
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesDisruptionCategory { Undefined = 0, RealTime = 1, PlannedWork = 2, Information = 3, Event = 4, Crowding = 5, StatusAlert = 6 }
+	export enum TflApiPresentationEntitiesDisruptionCategory { Undefined = 'Undefined', RealTime = 'RealTime', PlannedWork = 'PlannedWork', Information = 'Information', Event = 'Event', Crowding = 'Crowding', StatusAlert = 'StatusAlert' }
 
 	export interface TflApiPresentationEntitiesFaresFare {
 		cap?: number | null;
@@ -1660,7 +1660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesFaresFareStationFareCategory { Cash = 0, Oyster = 1, Contactless = 2, ContactlessOnly = 3, All = 4 }
+	export enum TflApiPresentationEntitiesFaresFareStationFareCategory { Cash = 'Cash', Oyster = 'Oyster', Contactless = 'Contactless', ContactlessOnly = 'ContactlessOnly', All = 'All' }
 
 	export interface TflApiPresentationEntitiesFaresFaresMode {
 		description?: string | null;
@@ -1943,9 +1943,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesInstructionStepSkyDirectionDescription { North = 0, NorthEast = 1, East = 2, SouthEast = 3, South = 4, SouthWest = 5, West = 6, NorthWest = 7 }
+	export enum TflApiPresentationEntitiesInstructionStepSkyDirectionDescription { North = 'North', NorthEast = 'NorthEast', East = 'East', SouthEast = 'SouthEast', South = 'South', SouthWest = 'SouthWest', West = 'West', NorthWest = 'NorthWest' }
 
-	export enum TflApiPresentationEntitiesInstructionStepTrackType { CycleSuperHighway = 0, CanalTowpath = 1, QuietRoad = 2, ProvisionForCyclists = 3, BusyRoads = 4, None = 5, PushBike = 6, Quietway = 7 }
+	export enum TflApiPresentationEntitiesInstructionStepTrackType { CycleSuperHighway = 'CycleSuperHighway', CanalTowpath = 'CanalTowpath', QuietRoad = 'QuietRoad', ProvisionForCyclists = 'ProvisionForCyclists', BusyRoads = 'BusyRoads', None = 'None', PushBike = 'PushBike', Quietway = 'Quietway' }
 
 	export interface TflApiPresentationEntitiesInterval {
 		stopId?: string | null;
@@ -2562,7 +2562,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesJourneyPlannerSearchCriteriaDateTimeType { Arriving = 0, Departing = 1 }
+	export enum TflApiPresentationEntitiesJourneyPlannerSearchCriteriaDateTimeType { Arriving = 'Arriving', Departing = 'Departing' }
 
 	export interface TflApiPresentationEntitiesJourneyPlannerTimeAdjustments {
 		earlier?: TflApiPresentationEntitiesJourneyPlannerTimeAdjustment;
@@ -2876,7 +2876,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesPeriodType { Normal = 0, FrequencyHours = 1, FrequencyMinutes = 2, Unknown = 3 }
+	export enum TflApiPresentationEntitiesPeriodType { Normal = 'Normal', FrequencyHours = 'FrequencyHours', FrequencyMinutes = 'FrequencyMinutes', Unknown = 'Unknown' }
 
 	export interface TflApiPresentationEntitiesPlaceCategory {
 		availableKeys?: Array<string>;
@@ -3546,7 +3546,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesRoadProjectPhase { Unscoped = 0, Concept = 1, ConsultationEnded = 2, Consultation = 3, Construction = 4, Complete = 5 }
+	export enum TflApiPresentationEntitiesRoadProjectPhase { Unscoped = 'Unscoped', Concept = 'Concept', ConsultationEnded = 'ConsultationEnded', Consultation = 'Consultation', Construction = 'Construction', Complete = 'Complete' }
 
 	export interface TflApiPresentationEntitiesStreet {
 
@@ -3788,7 +3788,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TflApiPresentationEntitiesStopPointSequenceServiceType { Regular = 0, Night = 1 }
+	export enum TflApiPresentationEntitiesStopPointSequenceServiceType { Regular = 'Regular', Night = 'Night' }
 
 	export interface TflApiPresentationEntitiesSchedule {
 		firstJourney?: TflApiPresentationEntitiesKnownJourney;
@@ -5050,15 +5050,15 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Journey_JourneyResultsJourneyPreference { LeastInterchange = 0, LeastTime = 1, LeastWalking = 2 }
+	export enum Journey_JourneyResultsJourneyPreference { LeastInterchange = 'LeastInterchange', LeastTime = 'LeastTime', LeastWalking = 'LeastWalking' }
 
-	export enum Journey_JourneyResultsWalkingSpeed { Slow = 0, Average = 1, Fast = 2 }
+	export enum Journey_JourneyResultsWalkingSpeed { Slow = 'Slow', Average = 'Average', Fast = 'Fast' }
 
-	export enum Journey_JourneyResultsCyclePreference { None = 0, LeaveAtStation = 1, TakeOnTransport = 2, AllTheWay = 3, CycleHire = 4 }
+	export enum Journey_JourneyResultsCyclePreference { None = 'None', LeaveAtStation = 'LeaveAtStation', TakeOnTransport = 'TakeOnTransport', AllTheWay = 'AllTheWay', CycleHire = 'CycleHire' }
 
-	export enum Line_ArrivalsDirection { inbound = 0, outbound = 1, all = 2 }
+	export enum Line_ArrivalsDirection { inbound = 'inbound', outbound = 'outbound', all = 'all' }
 
-	export enum TravelTime_GetCompareOverlayDirection { Average = 0, From = 1, To = 2 }
+	export enum TravelTime_GetCompareOverlayDirection { Average = 'Average', From = 'From', To = 'To' }
 
 }
 

@@ -147,11 +147,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountCurrency { CAD = 0, CHF = 1, EUR = 2, GBP = 3, JPY = 4, USD = 5 }
+	export enum AccountCurrency { CAD = 'CAD', CHF = 'CHF', EUR = 'EUR', GBP = 'GBP', JPY = 'JPY', USD = 'USD' }
 
-	export enum AccountStatus { open = 0, closed = 1 }
+	export enum AccountStatus { open = 'open', closed = 'closed' }
 
-	export enum AccountType { account = 0 }
+	export enum AccountType { account = 'account' }
 
 
 	/** A list of Account objects */
@@ -304,9 +304,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Account_numberStatus { active = 0, disabled = 1, canceled = 2 }
+	export enum Account_numberStatus { active = 'active', disabled = 'disabled', canceled = 'canceled' }
 
-	export enum Account_numberType { account_number = 0 }
+	export enum Account_numberType { account_number = 'account_number' }
 
 
 	/** A list of Account Number objects */
@@ -472,7 +472,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Account_statementType { account_statement = 0 }
+	export enum Account_statementType { account_statement = 'account_statement' }
 
 
 	/** A list of Account Statement objects */
@@ -761,9 +761,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Account_transferStatus { pending_approval = 0, canceled = 1, complete = 2 }
+	export enum Account_transferStatus { pending_approval = 'pending_approval', canceled = 'canceled', complete = 'complete' }
 
-	export enum Account_transferType { account_transfer = 0 }
+	export enum Account_transferType { account_transfer = 'account_transfer' }
 
 
 	/** A list of Account Transfer objects */
@@ -987,7 +987,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ach_prenotificationCredit_debit_indicator { credit = 0, debit = 1 }
+	export enum Ach_prenotificationCredit_debit_indicator { credit = 'credit', debit = 'debit' }
 
 	export interface Ach_prenotificationPrenotification_return {
 
@@ -1025,9 +1025,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Ach_prenotificationStatus { pending_submitting = 0, requires_attention = 1, returned = 2, submitted = 3 }
+	export enum Ach_prenotificationStatus { pending_submitting = 'pending_submitting', requires_attention = 'requires_attention', returned = 'returned', submitted = 'submitted' }
 
-	export enum Ach_prenotificationType { ach_prenotification = 0 }
+	export enum Ach_prenotificationType { ach_prenotification = 'ach_prenotification' }
 
 
 	/** A list of ACH Prenotification objects */
@@ -1477,9 +1477,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Ach_transferFunding { checking = 0, savings = 1 }
+	export enum Ach_transferFunding { checking = 'checking', savings = 'savings' }
 
-	export enum Ach_transferNetwork { ach = 0 }
+	export enum Ach_transferNetwork { ach = 'ach' }
 
 	export interface Ach_transferNotifications_of_change {
 
@@ -1592,11 +1592,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Ach_transferReturnReturn_reason_code { insufficient_fund = 0, no_account = 1, account_closed = 2, invalid_account_number_structure = 3, account_frozen_entry_returned_per_ofac_instruction = 4, credit_entry_refused_by_receiver = 5, unauthorized_debit_to_consumer_account_using_corporate_sec_code = 6, corporate_customer_advised_not_authorized = 7, payment_stopped = 8, non_transaction_account = 9, uncollected_funds = 10, routing_number_check_digit_error = 11, customer_advised_unauthorized_improper_ineligible_or_incomplete = 12, amount_field_error = 13, authorization_revoked_by_customer = 14, invalid_ach_routing_number = 15, file_record_edit_criteria = 16, enr_invalid_individual_name = 17, returned_per_odfi_request = 18, addenda_error = 19, limited_participation_dfi = 20, incorrectly_coded_outbound_international_payment = 21, other = 22 }
+	export enum Ach_transferReturnReturn_reason_code { insufficient_fund = 'insufficient_fund', no_account = 'no_account', account_closed = 'account_closed', invalid_account_number_structure = 'invalid_account_number_structure', account_frozen_entry_returned_per_ofac_instruction = 'account_frozen_entry_returned_per_ofac_instruction', credit_entry_refused_by_receiver = 'credit_entry_refused_by_receiver', unauthorized_debit_to_consumer_account_using_corporate_sec_code = 'unauthorized_debit_to_consumer_account_using_corporate_sec_code', corporate_customer_advised_not_authorized = 'corporate_customer_advised_not_authorized', payment_stopped = 'payment_stopped', non_transaction_account = 'non_transaction_account', uncollected_funds = 'uncollected_funds', routing_number_check_digit_error = 'routing_number_check_digit_error', customer_advised_unauthorized_improper_ineligible_or_incomplete = 'customer_advised_unauthorized_improper_ineligible_or_incomplete', amount_field_error = 'amount_field_error', authorization_revoked_by_customer = 'authorization_revoked_by_customer', invalid_ach_routing_number = 'invalid_ach_routing_number', file_record_edit_criteria = 'file_record_edit_criteria', enr_invalid_individual_name = 'enr_invalid_individual_name', returned_per_odfi_request = 'returned_per_odfi_request', addenda_error = 'addenda_error', limited_participation_dfi = 'limited_participation_dfi', incorrectly_coded_outbound_international_payment = 'incorrectly_coded_outbound_international_payment', other = 'other' }
 
-	export enum Ach_transferStandard_entry_class_code { corporate_credit_or_debit = 0, prearranged_payments_and_deposit = 1, internet_initiated = 2 }
+	export enum Ach_transferStandard_entry_class_code { corporate_credit_or_debit = 'corporate_credit_or_debit', prearranged_payments_and_deposit = 'prearranged_payments_and_deposit', internet_initiated = 'internet_initiated' }
 
-	export enum Ach_transferStatus { pending_approval = 0, canceled = 1, pending_reviewing = 2, pending_submission = 3, submitted = 4, returned = 5, requires_attention = 6, rejected = 7 }
+	export enum Ach_transferStatus { pending_approval = 'pending_approval', canceled = 'canceled', pending_reviewing = 'pending_reviewing', pending_submission = 'pending_submission', submitted = 'submitted', returned = 'returned', requires_attention = 'requires_attention', rejected = 'rejected' }
 
 	export interface Ach_transferSubmission {
 
@@ -1634,7 +1634,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ach_transferType { ach_transfer = 0 }
+	export enum Ach_transferType { ach_transfer = 'ach_transfer' }
 
 
 	/** A list of ACH Transfer objects */
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Action_a_real_time_decision_parametersCard_authorizationDecision { approve = 0, decline = 1 }
+	export enum Action_a_real_time_decision_parametersCard_authorizationDecision { approve = 'approve', decline = 'decline' }
 
 	export interface Action_a_real_time_decision_parametersDigital_wallet_authentication {
 
@@ -1736,7 +1736,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Action_a_real_time_decision_parametersDigital_wallet_authenticationResult { success = 0, failure = 1 }
+	export enum Action_a_real_time_decision_parametersDigital_wallet_authenticationResult { success = 'success', failure = 'failure' }
 
 	export interface Action_a_real_time_decision_parametersDigital_wallet_token {
 
@@ -1898,7 +1898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Balance_lookupType { balance_lookup = 0 }
+	export enum Balance_lookupType { balance_lookup = 'balance_lookup' }
 
 
 	/** Accounts are T-accounts. They can store accounting entries. */
@@ -1992,9 +1992,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Bookkeeping_accountCompliance_category { commingled_cash = 0, customer_balance = 1 }
+	export enum Bookkeeping_accountCompliance_category { commingled_cash = 'commingled_cash', customer_balance = 'customer_balance' }
 
-	export enum Bookkeeping_accountType { bookkeeping_account = 0 }
+	export enum Bookkeeping_accountType { bookkeeping_account = 'bookkeeping_account' }
 
 
 	/** A list of Bookkeeping Account objects */
@@ -2108,7 +2108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Bookkeeping_entryType { bookkeeping_entry = 0 }
+	export enum Bookkeeping_entryType { bookkeeping_entry = 'bookkeeping_entry' }
 
 
 	/** A list of Bookkeeping Entry objects */
@@ -2264,7 +2264,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Bookkeeping_entry_setType { bookkeeping_entry_set = 0 }
+	export enum Bookkeeping_entry_setType { bookkeeping_entry_set = 'bookkeeping_entry_set' }
 
 
 	/** Cards are commercial credit cards. They'll immediately work for online purchases after you create them. All cards maintain a credit limit of 100% of the Account’s available balance at the time of transaction. Funds are deducted from the Account upon transaction settlement. */
@@ -2533,7 +2533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CardType { card = 0 }
+	export enum CardType { card = 'card' }
 
 
 	/** An object containing the sensitive details (card number, cvc, etc) for a Card. */
@@ -2627,7 +2627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Card_detailsType { card_details = 0 }
+	export enum Card_detailsType { card_details = 'card_details' }
 
 
 	/** If unauthorized activity occurs on a card, you can create a Card Dispute and we'll return the funds if appropriate. */
@@ -2831,9 +2831,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Card_disputeStatus { pending_reviewing = 0, accepted = 1, rejected = 2 }
+	export enum Card_disputeStatus { pending_reviewing = 'pending_reviewing', accepted = 'accepted', rejected = 'rejected' }
 
-	export enum Card_disputeType { card_dispute = 0 }
+	export enum Card_disputeType { card_dispute = 'card_dispute' }
 
 
 	/** A list of Card Dispute objects */
@@ -3142,9 +3142,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Card_profileStatus { pending = 0, rejected = 1, active = 2, archived = 3 }
+	export enum Card_profileStatus { pending = 'pending', rejected = 'rejected', active = 'active', archived = 'archived' }
 
-	export enum Card_profileType { card_profile = 0 }
+	export enum Card_profileType { card_profile = 'card_profile' }
 
 
 	/** A list of Card Profile objects */
@@ -3504,7 +3504,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_depositDeposit_rejectionReason { incomplete_image = 0, duplicate = 1, poor_image_quality = 2, incorrect_amount = 3, incorrect_recipient = 4, not_eligible_for_mobile_deposit = 5, unknown = 6 }
+	export enum Check_depositDeposit_rejectionReason { incomplete_image = 'incomplete_image', duplicate = 'duplicate', poor_image_quality = 'poor_image_quality', incorrect_amount = 'incorrect_amount', incorrect_recipient = 'incorrect_recipient', not_eligible_for_mobile_deposit = 'not_eligible_for_mobile_deposit', unknown = 'unknown' }
 
 	export interface Check_depositDeposit_return {
 
@@ -3588,11 +3588,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_depositDeposit_returnReturn_reason { ach_conversion_not_supported = 0, closed_account = 1, duplicate_submission = 2, insufficient_funds = 3, no_account = 4, not_authorized = 5, stale_dated = 6, stop_payment = 7, unknown_reason = 8, unmatched_details = 9, unreadable_image = 10 }
+	export enum Check_depositDeposit_returnReturn_reason { ach_conversion_not_supported = 'ach_conversion_not_supported', closed_account = 'closed_account', duplicate_submission = 'duplicate_submission', insufficient_funds = 'insufficient_funds', no_account = 'no_account', not_authorized = 'not_authorized', stale_dated = 'stale_dated', stop_payment = 'stop_payment', unknown_reason = 'unknown_reason', unmatched_details = 'unmatched_details', unreadable_image = 'unreadable_image' }
 
-	export enum Check_depositStatus { pending = 0, submitted = 1, rejected = 2, returned = 3 }
+	export enum Check_depositStatus { pending = 'pending', submitted = 'submitted', rejected = 'rejected', returned = 'returned' }
 
-	export enum Check_depositType { check_deposit = 0 }
+	export enum Check_depositType { check_deposit = 'check_deposit' }
 
 
 	/** A list of Check Deposit objects */
@@ -4051,7 +4051,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_transferDepositType { check_transfer_deposit = 0 }
+	export enum Check_transferDepositType { check_transfer_deposit = 'check_transfer_deposit' }
 
 	export interface Check_transferReturn_address {
 
@@ -4216,9 +4216,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_transferReturn_detailsReason { mail_delivery_failure = 0, refused_by_recipient = 1 }
+	export enum Check_transferReturn_detailsReason { mail_delivery_failure = 'mail_delivery_failure', refused_by_recipient = 'refused_by_recipient' }
 
-	export enum Check_transferStatus { pending_approval = 0, pending_submission = 1, submitted = 2, pending_mailing = 3, mailed = 4, canceled = 5, deposited = 6, stopped = 7, returned = 8, rejected = 9, requires_attention = 10 }
+	export enum Check_transferStatus { pending_approval = 'pending_approval', pending_submission = 'pending_submission', submitted = 'submitted', pending_mailing = 'pending_mailing', mailed = 'mailed', canceled = 'canceled', deposited = 'deposited', stopped = 'stopped', returned = 'returned', rejected = 'rejected', requires_attention = 'requires_attention' }
 
 	export interface Check_transferStop_payment_request {
 
@@ -4282,7 +4282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_transferStop_payment_requestType { check_transfer_stop_payment_request = 0 }
+	export enum Check_transferStop_payment_requestType { check_transfer_stop_payment_request = 'check_transfer_stop_payment_request' }
 
 	export interface Check_transferSubmission {
 
@@ -4320,7 +4320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_transferType { check_transfer = 0 }
+	export enum Check_transferType { check_transfer = 'check_transfer' }
 
 
 	/** A list of Check Transfer objects */
@@ -4391,7 +4391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Complete_a_sandbox_real_time_payments_transfer_parametersRejectionReject_reason_code { account_closed = 0, account_blocked = 1, invalid_creditor_account_type = 2, invalid_creditor_account_number = 3, invalid_creditor_financial_institution_identifier = 4, end_customer_deceased = 5, narrative = 6, transaction_forbidden = 7, transaction_type_not_supported = 8, unexpected_amount = 9, amount_exceeds_bank_limits = 10, invalid_creditor_address = 11, unknown_end_customer = 12, invalid_debtor_address = 13, timeout = 14, unsupported_message_for_recipient = 15, recipient_connection_not_available = 16, real_time_payments_suspended = 17, instructed_agent_signed_off = 18, processing_error = 19, other = 20 }
+	export enum Complete_a_sandbox_real_time_payments_transfer_parametersRejectionReject_reason_code { account_closed = 'account_closed', account_blocked = 'account_blocked', invalid_creditor_account_type = 'invalid_creditor_account_type', invalid_creditor_account_number = 'invalid_creditor_account_number', invalid_creditor_financial_institution_identifier = 'invalid_creditor_financial_institution_identifier', end_customer_deceased = 'end_customer_deceased', narrative = 'narrative', transaction_forbidden = 'transaction_forbidden', transaction_type_not_supported = 'transaction_type_not_supported', unexpected_amount = 'unexpected_amount', amount_exceeds_bank_limits = 'amount_exceeds_bank_limits', invalid_creditor_address = 'invalid_creditor_address', unknown_end_customer = 'unknown_end_customer', invalid_debtor_address = 'invalid_debtor_address', timeout = 'timeout', unsupported_message_for_recipient = 'unsupported_message_for_recipient', recipient_connection_not_available = 'recipient_connection_not_available', real_time_payments_suspended = 'real_time_payments_suspended', instructed_agent_signed_off = 'instructed_agent_signed_off', processing_error = 'processing_error', other = 'other' }
 
 	export interface Create_a_bookkeeping_account_parameters {
 
@@ -5357,7 +5357,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_a_file_parametersPurpose { check_image_front = 0, check_image_back = 1, form_ss_4 = 2, identity_document = 3, other = 4, trust_formation_document = 5, digital_wallet_artwork = 6, digital_wallet_app_icon = 7, document_request = 8, entity_supplemental_document = 9 }
+	export enum Create_a_file_parametersPurpose { check_image_front = 'check_image_front', check_image_back = 'check_image_back', form_ss_4 = 'form_ss_4', identity_document = 'identity_document', other = 'other', trust_formation_document = 'trust_formation_document', digital_wallet_artwork = 'digital_wallet_artwork', digital_wallet_app_icon = 'digital_wallet_app_icon', document_request = 'document_request', entity_supplemental_document = 'entity_supplemental_document' }
 
 	export interface Create_a_limit_parameters {
 
@@ -5421,9 +5421,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_a_limit_parametersInterval { transaction = 0, day = 1, week = 2, month = 3, year = 4, all_time = 5 }
+	export enum Create_a_limit_parametersInterval { transaction = 'transaction', day = 'day', week = 'week', month = 'month', year = 'year', all_time = 'all_time' }
 
-	export enum Create_a_limit_parametersMetric { count = 0, volume = 1 }
+	export enum Create_a_limit_parametersMetric { count = 'count', volume = 'volume' }
 
 	export interface Create_a_real_time_payments_transfer_parameters {
 
@@ -6245,7 +6245,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_ach_return_parametersReason { authorization_revoked_by_customer = 0, payment_stopped = 1, customer_advised_unauthorized_improper_ineligible_or_incomplete = 2, representative_payee_deceased_or_unable_to_continue_in_that_capacity = 3, beneficiary_or_account_holder_deceased = 4, credit_entry_refused_by_receiver = 5, duplicate_entry = 6, corporate_customer_advised_not_authorized = 7 }
+	export enum Create_an_ach_return_parametersReason { authorization_revoked_by_customer = 'authorization_revoked_by_customer', payment_stopped = 'payment_stopped', customer_advised_unauthorized_improper_ineligible_or_incomplete = 'customer_advised_unauthorized_improper_ineligible_or_incomplete', representative_payee_deceased_or_unable_to_continue_in_that_capacity = 'representative_payee_deceased_or_unable_to_continue_in_that_capacity', beneficiary_or_account_holder_deceased = 'beneficiary_or_account_holder_deceased', credit_entry_refused_by_receiver = 'credit_entry_refused_by_receiver', duplicate_entry = 'duplicate_entry', corporate_customer_advised_not_authorized = 'corporate_customer_advised_not_authorized' }
 
 	export interface Create_an_ach_transfer_parameters {
 
@@ -7005,7 +7005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_entity_parametersCorporationBeneficial_ownersIndividualIdentificationMethod { social_security_number = 0, individual_taxpayer_identification_number = 1, passport = 2, drivers_license = 3, other = 4 }
+	export enum Create_an_entity_parametersCorporationBeneficial_ownersIndividualIdentificationMethod { social_security_number = 'social_security_number', individual_taxpayer_identification_number = 'individual_taxpayer_identification_number', passport = 'passport', drivers_license = 'drivers_license', other = 'other' }
 
 	export interface Create_an_entity_parametersCorporationBeneficial_ownersIndividualIdentificationOther {
 
@@ -7124,7 +7124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_entity_parametersCorporationBeneficial_ownersProng { ownership = 0, control = 1 }
+	export enum Create_an_entity_parametersCorporationBeneficial_ownersProng { ownership = 'ownership', control = 'control' }
 
 	export interface Create_an_entity_parametersJoint {
 
@@ -7899,9 +7899,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_entity_parametersRelationship { affiliated = 0, informational = 1, unaffiliated = 2 }
+	export enum Create_an_entity_parametersRelationship { affiliated = 'affiliated', informational = 'informational', unaffiliated = 'unaffiliated' }
 
-	export enum Create_an_entity_parametersStructure { corporation = 0, natural_person = 1, joint = 2, trust = 3 }
+	export enum Create_an_entity_parametersStructure { corporation = 'corporation', natural_person = 'natural_person', joint = 'joint', trust = 'trust' }
 
 	export interface Create_an_entity_parametersSupplemental_documents {
 
@@ -8111,7 +8111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_entity_parametersTrustCategory { revocable = 0, irrevocable = 1 }
+	export enum Create_an_entity_parametersTrustCategory { revocable = 'revocable', irrevocable = 'irrevocable' }
 
 	export interface Create_an_entity_parametersTrustGrantor {
 
@@ -8881,7 +8881,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_entity_parametersTrustTrusteesStructure { individual = 0 }
+	export enum Create_an_entity_parametersTrustTrusteesStructure { individual = 'individual' }
 
 	export interface Create_an_event_subscription_parameters {
 
@@ -8928,7 +8928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_event_subscription_parametersSelected_event_category { 'account.created' = 0, 'account.updated' = 1, 'account_number.created' = 2, 'account_number.updated' = 3, 'account_statement.created' = 4, 'account_transfer.created' = 5, 'account_transfer.updated' = 6, 'ach_prenotification.created' = 7, 'ach_prenotification.updated' = 8, 'ach_transfer.created' = 9, 'ach_transfer.updated' = 10, 'card.created' = 11, 'card.updated' = 12, 'card_payment.created' = 13, 'card_payment.updated' = 14, 'card_dispute.created' = 15, 'card_dispute.updated' = 16, 'check_deposit.created' = 17, 'check_deposit.updated' = 18, 'check_transfer.created' = 19, 'check_transfer.updated' = 20, 'declined_transaction.created' = 21, 'digital_wallet_token.created' = 22, 'digital_wallet_token.updated' = 23, 'document.created' = 24, 'entity.created' = 25, 'entity.updated' = 26, 'external_account.created' = 27, 'file.created' = 28, 'group.updated' = 29, 'group.heartbeat' = 30, 'inbound_ach_transfer_return.created' = 31, 'inbound_ach_transfer_return.updated' = 32, 'inbound_wire_drawdown_request.created' = 33, 'oauth_connection.created' = 34, 'oauth_connection.deactivated' = 35, 'pending_transaction.created' = 36, 'pending_transaction.updated' = 37, 'real_time_decision.card_authorization_requested' = 38, 'real_time_decision.digital_wallet_token_requested' = 39, 'real_time_decision.digital_wallet_authentication_requested' = 40, 'real_time_payments_transfer.created' = 41, 'real_time_payments_transfer.updated' = 42, 'real_time_payments_request_for_payment.created' = 43, 'real_time_payments_request_for_payment.updated' = 44, 'transaction.created' = 45, 'wire_drawdown_request.created' = 46, 'wire_drawdown_request.updated' = 47, 'wire_transfer.created' = 48, 'wire_transfer.updated' = 49 }
+	export enum Create_an_event_subscription_parametersSelected_event_category { 'account.created' = 'account.created', 'account.updated' = 'account.updated', 'account_number.created' = 'account_number.created', 'account_number.updated' = 'account_number.updated', 'account_statement.created' = 'account_statement.created', 'account_transfer.created' = 'account_transfer.created', 'account_transfer.updated' = 'account_transfer.updated', 'ach_prenotification.created' = 'ach_prenotification.created', 'ach_prenotification.updated' = 'ach_prenotification.updated', 'ach_transfer.created' = 'ach_transfer.created', 'ach_transfer.updated' = 'ach_transfer.updated', 'card.created' = 'card.created', 'card.updated' = 'card.updated', 'card_payment.created' = 'card_payment.created', 'card_payment.updated' = 'card_payment.updated', 'card_dispute.created' = 'card_dispute.created', 'card_dispute.updated' = 'card_dispute.updated', 'check_deposit.created' = 'check_deposit.created', 'check_deposit.updated' = 'check_deposit.updated', 'check_transfer.created' = 'check_transfer.created', 'check_transfer.updated' = 'check_transfer.updated', 'declined_transaction.created' = 'declined_transaction.created', 'digital_wallet_token.created' = 'digital_wallet_token.created', 'digital_wallet_token.updated' = 'digital_wallet_token.updated', 'document.created' = 'document.created', 'entity.created' = 'entity.created', 'entity.updated' = 'entity.updated', 'external_account.created' = 'external_account.created', 'file.created' = 'file.created', 'group.updated' = 'group.updated', 'group.heartbeat' = 'group.heartbeat', 'inbound_ach_transfer_return.created' = 'inbound_ach_transfer_return.created', 'inbound_ach_transfer_return.updated' = 'inbound_ach_transfer_return.updated', 'inbound_wire_drawdown_request.created' = 'inbound_wire_drawdown_request.created', 'oauth_connection.created' = 'oauth_connection.created', 'oauth_connection.deactivated' = 'oauth_connection.deactivated', 'pending_transaction.created' = 'pending_transaction.created', 'pending_transaction.updated' = 'pending_transaction.updated', 'real_time_decision.card_authorization_requested' = 'real_time_decision.card_authorization_requested', 'real_time_decision.digital_wallet_token_requested' = 'real_time_decision.digital_wallet_token_requested', 'real_time_decision.digital_wallet_authentication_requested' = 'real_time_decision.digital_wallet_authentication_requested', 'real_time_payments_transfer.created' = 'real_time_payments_transfer.created', 'real_time_payments_transfer.updated' = 'real_time_payments_transfer.updated', 'real_time_payments_request_for_payment.created' = 'real_time_payments_request_for_payment.created', 'real_time_payments_request_for_payment.updated' = 'real_time_payments_request_for_payment.updated', 'transaction.created' = 'transaction.created', 'wire_drawdown_request.created' = 'wire_drawdown_request.created', 'wire_drawdown_request.updated' = 'wire_drawdown_request.updated', 'wire_transfer.created' = 'wire_transfer.created', 'wire_transfer.updated' = 'wire_transfer.updated' }
 
 	export interface Create_an_export_parameters {
 
@@ -9017,7 +9017,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_export_parametersCategory { transaction_csv = 0, balance_csv = 1 }
+	export enum Create_an_export_parametersCategory { transaction_csv = 'transaction_csv', balance_csv = 'balance_csv' }
 
 	export interface Create_an_export_parametersTransaction_csv {
 
@@ -9145,7 +9145,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_an_external_account_parametersFunding { checking = 0, savings = 1, other = 2 }
+	export enum Create_an_external_account_parametersFunding { checking = 'checking', savings = 'savings', other = 'other' }
 
 
 	/** Declined Transactions are refused additions and removals of money from your bank account. For example, Declined Transactions are caused when your Account has an insufficient balance or your Limits are triggered. */
@@ -9284,7 +9284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionRoute_type { account_number = 0, card = 1 }
+	export enum Declined_transactionRoute_type { account_number = 'account_number', card = 'card' }
 
 	export interface Declined_transactionSource {
 
@@ -9430,7 +9430,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionSourceAch_declineReason { ach_route_canceled = 0, ach_route_disabled = 1, breaches_limit = 2, credit_entry_refused_by_receiver = 3, duplicate_return = 4, entity_not_active = 5, group_locked = 6, insufficient_funds = 7, misrouted_return = 8, no_ach_route = 9, originator_request = 10, transaction_not_allowed = 11 }
+	export enum Declined_transactionSourceAch_declineReason { ach_route_canceled = 'ach_route_canceled', ach_route_disabled = 'ach_route_disabled', breaches_limit = 'breaches_limit', credit_entry_refused_by_receiver = 'credit_entry_refused_by_receiver', duplicate_return = 'duplicate_return', entity_not_active = 'entity_not_active', group_locked = 'group_locked', insufficient_funds = 'insufficient_funds', misrouted_return = 'misrouted_return', no_ach_route = 'no_ach_route', originator_request = 'originator_request', transaction_not_allowed = 'transaction_not_allowed' }
 
 	export interface Declined_transactionSourceCard_decline {
 
@@ -9604,7 +9604,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionSourceCard_declineNetwork { visa = 0 }
+	export enum Declined_transactionSourceCard_declineNetwork { visa = 'visa' }
 
 	export interface Declined_transactionSourceCard_declineNetwork_details {
 
@@ -9658,11 +9658,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionSourceCard_declineNetwork_detailsVisaElectronic_commerce_indicator { mail_phone_order = 0, recurring = 1, installment = 2, unknown_mail_phone_order = 3, secure_electronic_commerce = 4, non_authenticated_security_transaction_at_3ds_capable_merchant = 5, non_authenticated_security_transaction = 6, non_secure_transaction = 7 }
+	export enum Declined_transactionSourceCard_declineNetwork_detailsVisaElectronic_commerce_indicator { mail_phone_order = 'mail_phone_order', recurring = 'recurring', installment = 'installment', unknown_mail_phone_order = 'unknown_mail_phone_order', secure_electronic_commerce = 'secure_electronic_commerce', non_authenticated_security_transaction_at_3ds_capable_merchant = 'non_authenticated_security_transaction_at_3ds_capable_merchant', non_authenticated_security_transaction = 'non_authenticated_security_transaction', non_secure_transaction = 'non_secure_transaction' }
 
-	export enum Declined_transactionSourceCard_declineNetwork_detailsVisaPoint_of_service_entry_mode { manual = 0, magnetic_stripe_no_cvv = 1, optical_code = 2, integrated_circuit_card = 3, contactless = 4, credential_on_file = 5, magnetic_stripe = 6, contactless_magnetic_stripe = 7, integrated_circuit_card_no_cvv = 8 }
+	export enum Declined_transactionSourceCard_declineNetwork_detailsVisaPoint_of_service_entry_mode { manual = 'manual', magnetic_stripe_no_cvv = 'magnetic_stripe_no_cvv', optical_code = 'optical_code', integrated_circuit_card = 'integrated_circuit_card', contactless = 'contactless', credential_on_file = 'credential_on_file', magnetic_stripe = 'magnetic_stripe', contactless_magnetic_stripe = 'contactless_magnetic_stripe', integrated_circuit_card_no_cvv = 'integrated_circuit_card_no_cvv' }
 
-	export enum Declined_transactionSourceCard_declineReason { card_not_active = 0, entity_not_active = 1, group_locked = 2, insufficient_funds = 3, cvv2_mismatch = 4, transaction_not_allowed = 5, breaches_limit = 6, webhook_declined = 7, webhook_timed_out = 8, declined_by_stand_in_processing = 9, invalid_physical_card = 10, missing_original_authorization = 11 }
+	export enum Declined_transactionSourceCard_declineReason { card_not_active = 'card_not_active', entity_not_active = 'entity_not_active', group_locked = 'group_locked', insufficient_funds = 'insufficient_funds', cvv2_mismatch = 'cvv2_mismatch', transaction_not_allowed = 'transaction_not_allowed', breaches_limit = 'breaches_limit', webhook_declined = 'webhook_declined', webhook_timed_out = 'webhook_timed_out', declined_by_stand_in_processing = 'declined_by_stand_in_processing', invalid_physical_card = 'invalid_physical_card', missing_original_authorization = 'missing_original_authorization' }
 
 	export interface Declined_transactionSourceCard_route_decline {
 
@@ -9742,7 +9742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionSourceCategory { ach_decline = 0, card_decline = 1, check_decline = 2, inbound_real_time_payments_transfer_decline = 3, international_ach_decline = 4, card_route_decline = 5, other = 6 }
+	export enum Declined_transactionSourceCategory { ach_decline = 'ach_decline', card_decline = 'card_decline', check_decline = 'check_decline', inbound_real_time_payments_transfer_decline = 'inbound_real_time_payments_transfer_decline', international_ach_decline = 'international_ach_decline', card_route_decline = 'card_route_decline', other = 'other' }
 
 	export interface Declined_transactionSourceCheck_decline {
 
@@ -9787,7 +9787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionSourceCheck_declineReason { ach_route_canceled = 0, ach_route_disabled = 1, breaches_limit = 2, entity_not_active = 3, group_locked = 4, insufficient_funds = 5, unable_to_locate_account = 6, unable_to_process = 7, refer_to_image = 8, stop_payment_requested = 9, returned = 10, duplicate_presentment = 11, not_authorized = 12 }
+	export enum Declined_transactionSourceCheck_declineReason { ach_route_canceled = 'ach_route_canceled', ach_route_disabled = 'ach_route_disabled', breaches_limit = 'breaches_limit', entity_not_active = 'entity_not_active', group_locked = 'group_locked', insufficient_funds = 'insufficient_funds', unable_to_locate_account = 'unable_to_locate_account', unable_to_process = 'unable_to_process', refer_to_image = 'refer_to_image', stop_payment_requested = 'stop_payment_requested', returned = 'returned', duplicate_presentment = 'duplicate_presentment', not_authorized = 'not_authorized' }
 
 	export interface Declined_transactionSourceInbound_real_time_payments_transfer_decline {
 
@@ -9916,7 +9916,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionSourceInbound_real_time_payments_transfer_declineReason { account_number_canceled = 0, account_number_disabled = 1, group_locked = 2, entity_not_active = 3, real_time_payments_not_enabled = 4 }
+	export enum Declined_transactionSourceInbound_real_time_payments_transfer_declineReason { account_number_canceled = 'account_number_canceled', account_number_disabled = 'account_number_disabled', group_locked = 'group_locked', entity_not_active = 'entity_not_active', real_time_payments_not_enabled = 'real_time_payments_not_enabled' }
 
 	export interface Declined_transactionSourceInternational_ach_decline {
 
@@ -10186,7 +10186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Declined_transactionType { declined_transaction = 0 }
+	export enum Declined_transactionType { declined_transaction = 'declined_transaction' }
 
 
 	/** A list of Declined Transaction objects */
@@ -10313,11 +10313,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Digital_wallet_tokenStatus { active = 0, inactive = 1, suspended = 2, deactivated = 3 }
+	export enum Digital_wallet_tokenStatus { active = 'active', inactive = 'inactive', suspended = 'suspended', deactivated = 'deactivated' }
 
-	export enum Digital_wallet_tokenToken_requestor { apple_pay = 0, google_pay = 1 }
+	export enum Digital_wallet_tokenToken_requestor { apple_pay = 'apple_pay', google_pay = 'google_pay' }
 
-	export enum Digital_wallet_tokenType { digital_wallet_token = 0 }
+	export enum Digital_wallet_tokenType { digital_wallet_token = 'digital_wallet_token' }
 
 
 	/** A list of Digital Wallet Token objects */
@@ -10444,9 +10444,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentCategory { account_opening_disclosures = 0, anti_money_laundering_policy = 1, anti_money_laundering_procedures = 2, audit_report = 3, background_checks = 4, business_continuity_plan = 5, collections_policy = 6, complaints_policy = 7, complaint_report = 8, compliance_report = 9, compliance_staffing_plan = 10, compliance_management_system_policy = 11, consumer_privacy_notice = 12, consumer_protection_policy = 13, corporate_formation_document = 14, credit_monitoring_report = 15, customer_information_program_policy = 16, electronic_funds_tranfer_act_policy = 17, employee_overview = 18, end_user_terms_of_service = 19, e_sign_policy = 20, financial_statement = 21, form_1099_int = 22, fraud_prevention_policy = 23, funds_availability_policy = 24, funds_availability_disclosure = 25, funds_flow_diagram = 26, gramm_leach_bliley_act_policy = 27, information_security_policy = 28, insurance_policy = 29, investor_presentation = 30, loan_application_processing_policy = 31, management_biography = 32, marketing_and_advertising_policy = 33, network_security_diagram = 34, onboarding_questionnaire = 35, penetration_test_report = 36, program_risk_assessment = 37, security_audit_report = 38, servicing_policy = 39, transaction_monitoring_report = 40, truth_in_savings_act_policy = 41, underwriting_policy = 42, vendor_list = 43, vendor_management_policy = 44, vendor_risk_management_report = 45, volume_forecast = 46 }
+	export enum DocumentCategory { account_opening_disclosures = 'account_opening_disclosures', anti_money_laundering_policy = 'anti_money_laundering_policy', anti_money_laundering_procedures = 'anti_money_laundering_procedures', audit_report = 'audit_report', background_checks = 'background_checks', business_continuity_plan = 'business_continuity_plan', collections_policy = 'collections_policy', complaints_policy = 'complaints_policy', complaint_report = 'complaint_report', compliance_report = 'compliance_report', compliance_staffing_plan = 'compliance_staffing_plan', compliance_management_system_policy = 'compliance_management_system_policy', consumer_privacy_notice = 'consumer_privacy_notice', consumer_protection_policy = 'consumer_protection_policy', corporate_formation_document = 'corporate_formation_document', credit_monitoring_report = 'credit_monitoring_report', customer_information_program_policy = 'customer_information_program_policy', electronic_funds_tranfer_act_policy = 'electronic_funds_tranfer_act_policy', employee_overview = 'employee_overview', end_user_terms_of_service = 'end_user_terms_of_service', e_sign_policy = 'e_sign_policy', financial_statement = 'financial_statement', form_1099_int = 'form_1099_int', fraud_prevention_policy = 'fraud_prevention_policy', funds_availability_policy = 'funds_availability_policy', funds_availability_disclosure = 'funds_availability_disclosure', funds_flow_diagram = 'funds_flow_diagram', gramm_leach_bliley_act_policy = 'gramm_leach_bliley_act_policy', information_security_policy = 'information_security_policy', insurance_policy = 'insurance_policy', investor_presentation = 'investor_presentation', loan_application_processing_policy = 'loan_application_processing_policy', management_biography = 'management_biography', marketing_and_advertising_policy = 'marketing_and_advertising_policy', network_security_diagram = 'network_security_diagram', onboarding_questionnaire = 'onboarding_questionnaire', penetration_test_report = 'penetration_test_report', program_risk_assessment = 'program_risk_assessment', security_audit_report = 'security_audit_report', servicing_policy = 'servicing_policy', transaction_monitoring_report = 'transaction_monitoring_report', truth_in_savings_act_policy = 'truth_in_savings_act_policy', underwriting_policy = 'underwriting_policy', vendor_list = 'vendor_list', vendor_management_policy = 'vendor_management_policy', vendor_risk_management_report = 'vendor_risk_management_report', volume_forecast = 'volume_forecast' }
 
-	export enum DocumentType { document = 0 }
+	export enum DocumentType { document = 'document' }
 
 
 	/** A list of Document objects */
@@ -11825,7 +11825,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityType { entity = 0 }
+	export enum EntityType { entity = 'entity' }
 
 
 	/** A list of Entity objects */
@@ -11962,7 +11962,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { event = 0 }
+	export enum EventType { event = 'event' }
 
 
 	/** A list of Event objects */
@@ -12102,9 +12102,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Event_subscriptionStatus { active = 0, disabled = 1, deleted = 2, requires_attention = 3 }
+	export enum Event_subscriptionStatus { active = 'active', disabled = 'disabled', deleted = 'deleted', requires_attention = 'requires_attention' }
 
-	export enum Event_subscriptionType { event_subscription = 0 }
+	export enum Event_subscriptionType { event_subscription = 'event_subscription' }
 
 
 	/** A list of Event Subscription objects */
@@ -12244,9 +12244,9 @@ export namespace MyNS {
 
 	}
 
-	export enum export_Status { pending = 0, complete = 1 }
+	export enum export_Status { pending = 'pending', complete = 'complete' }
 
-	export enum export_Type { export = 0 }
+	export enum export_Type { export = 'export' }
 
 
 	/** A list of Export objects */
@@ -12412,11 +12412,11 @@ export namespace MyNS {
 
 	}
 
-	export enum External_accountStatus { active = 0, archived = 1 }
+	export enum External_accountStatus { active = 'active', archived = 'archived' }
 
-	export enum External_accountType { external_account = 0 }
+	export enum External_accountType { external_account = 'external_account' }
 
-	export enum External_accountVerification_status { unverified = 0, pending = 1, verified = 2 }
+	export enum External_accountVerification_status { unverified = 'unverified', pending = 'pending', verified = 'verified' }
 
 
 	/** A list of External Account objects */
@@ -12569,11 +12569,11 @@ export namespace MyNS {
 
 	}
 
-	export enum FileDirection { to_increase = 0, from_increase = 1 }
+	export enum FileDirection { to_increase = 'to_increase', from_increase = 'from_increase' }
 
-	export enum FilePurpose { check_image_front = 0, check_image_back = 1, form_1099_int = 2, form_ss_4 = 3, identity_document = 4, increase_statement = 5, other = 6, trust_formation_document = 7, digital_wallet_artwork = 8, digital_wallet_app_icon = 9, document_request = 10, entity_supplemental_document = 11, export = 12 }
+	export enum FilePurpose { check_image_front = 'check_image_front', check_image_back = 'check_image_back', form_1099_int = 'form_1099_int', form_ss_4 = 'form_ss_4', identity_document = 'identity_document', increase_statement = 'increase_statement', other = 'other', trust_formation_document = 'trust_formation_document', digital_wallet_artwork = 'digital_wallet_artwork', digital_wallet_app_icon = 'digital_wallet_app_icon', document_request = 'document_request', entity_supplemental_document = 'entity_supplemental_document', export = 'export' }
 
-	export enum FileType { file = 0 }
+	export enum FileType { file = 'file' }
 
 
 	/** A list of File objects */
@@ -12687,11 +12687,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupAch_debit_status { disabled = 0, enabled = 1 }
+	export enum GroupAch_debit_status { disabled = 'disabled', enabled = 'enabled' }
 
-	export enum GroupActivation_status { unactivated = 0, activated = 1 }
+	export enum GroupActivation_status { unactivated = 'unactivated', activated = 'activated' }
 
-	export enum GroupType { group = 0 }
+	export enum GroupType { group = 'group' }
 
 
 	/** If unauthorized activity occurs via ACH, you can create an Inbound ACH Transfer Return and we'll reverse the transaction. You can create an Inbound ACH Transfer return the first two days after receiving an Inbound ACH Transfer. */
@@ -12791,7 +12791,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_ach_transfer_returnStatus { pending_submitting = 0, submitted = 1 }
+	export enum Inbound_ach_transfer_returnStatus { pending_submitting = 'pending_submitting', submitted = 'submitted' }
 
 	export interface Inbound_ach_transfer_returnSubmission {
 
@@ -12829,7 +12829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_ach_transfer_returnType { inbound_ach_transfer_return = 0 }
+	export enum Inbound_ach_transfer_returnType { inbound_ach_transfer_return = 'inbound_ach_transfer_return' }
 
 
 	/** A list of Inbound ACH Transfer Return objects */
@@ -14802,7 +14802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_ach_transfer_simulation_resultTransactionSourceCard_refundType { card_refund = 0 }
+	export enum Inbound_ach_transfer_simulation_resultTransactionSourceCard_refundType { card_refund = 'card_refund' }
 
 	export interface Inbound_ach_transfer_simulation_resultTransactionSourceCard_revenue_payment {
 
@@ -15227,9 +15227,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_ach_transfer_simulation_resultTransactionSourceCard_settlementType { card_settlement = 0 }
+	export enum Inbound_ach_transfer_simulation_resultTransactionSourceCard_settlementType { card_settlement = 'card_settlement' }
 
-	export enum Inbound_ach_transfer_simulation_resultTransactionSourceCategory { account_transfer_intention = 0, ach_check_conversion_return = 1, ach_check_conversion = 2, ach_transfer_intention = 3, ach_transfer_rejection = 4, ach_transfer_return = 5, card_dispute_acceptance = 6, card_refund = 7, card_settlement = 8, card_revenue_payment = 9, check_deposit_acceptance = 10, check_deposit_return = 11, check_transfer_intention = 12, check_transfer_return = 13, check_transfer_rejection = 14, check_transfer_stop_payment_request = 15, dispute_resolution = 16, empyreal_cash_deposit = 17, fee_payment = 18, inbound_ach_transfer = 19, inbound_ach_transfer_return_intention = 20, inbound_check = 21, inbound_international_ach_transfer = 22, inbound_real_time_payments_transfer_confirmation = 23, inbound_wire_drawdown_payment_reversal = 24, inbound_wire_drawdown_payment = 25, inbound_wire_reversal = 26, inbound_wire_transfer = 27, interest_payment = 28, internal_general_ledger_transaction = 29, internal_source = 30, card_route_refund = 31, card_route_settlement = 32, real_time_payments_transfer_acknowledgement = 33, sample_funds = 34, wire_drawdown_payment_intention = 35, wire_drawdown_payment_rejection = 36, wire_transfer_intention = 37, wire_transfer_rejection = 38, other = 39 }
+	export enum Inbound_ach_transfer_simulation_resultTransactionSourceCategory { account_transfer_intention = 'account_transfer_intention', ach_check_conversion_return = 'ach_check_conversion_return', ach_check_conversion = 'ach_check_conversion', ach_transfer_intention = 'ach_transfer_intention', ach_transfer_rejection = 'ach_transfer_rejection', ach_transfer_return = 'ach_transfer_return', card_dispute_acceptance = 'card_dispute_acceptance', card_refund = 'card_refund', card_settlement = 'card_settlement', card_revenue_payment = 'card_revenue_payment', check_deposit_acceptance = 'check_deposit_acceptance', check_deposit_return = 'check_deposit_return', check_transfer_intention = 'check_transfer_intention', check_transfer_return = 'check_transfer_return', check_transfer_rejection = 'check_transfer_rejection', check_transfer_stop_payment_request = 'check_transfer_stop_payment_request', dispute_resolution = 'dispute_resolution', empyreal_cash_deposit = 'empyreal_cash_deposit', fee_payment = 'fee_payment', inbound_ach_transfer = 'inbound_ach_transfer', inbound_ach_transfer_return_intention = 'inbound_ach_transfer_return_intention', inbound_check = 'inbound_check', inbound_international_ach_transfer = 'inbound_international_ach_transfer', inbound_real_time_payments_transfer_confirmation = 'inbound_real_time_payments_transfer_confirmation', inbound_wire_drawdown_payment_reversal = 'inbound_wire_drawdown_payment_reversal', inbound_wire_drawdown_payment = 'inbound_wire_drawdown_payment', inbound_wire_reversal = 'inbound_wire_reversal', inbound_wire_transfer = 'inbound_wire_transfer', interest_payment = 'interest_payment', internal_general_ledger_transaction = 'internal_general_ledger_transaction', internal_source = 'internal_source', card_route_refund = 'card_route_refund', card_route_settlement = 'card_route_settlement', real_time_payments_transfer_acknowledgement = 'real_time_payments_transfer_acknowledgement', sample_funds = 'sample_funds', wire_drawdown_payment_intention = 'wire_drawdown_payment_intention', wire_drawdown_payment_rejection = 'wire_drawdown_payment_rejection', wire_transfer_intention = 'wire_transfer_intention', wire_transfer_rejection = 'wire_transfer_rejection', other = 'other' }
 
 	export interface Inbound_ach_transfer_simulation_resultTransactionSourceCheck_deposit_acceptance {
 
@@ -17033,7 +17033,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_ach_transfer_simulation_resultTransactionSourceInternal_sourceReason { bank_migration = 0, cashback = 1, empyreal_adjustment = 2, error = 3, error_correction = 4, fees = 5, interest = 6, sample_funds = 7, sample_funds_return = 8 }
+	export enum Inbound_ach_transfer_simulation_resultTransactionSourceInternal_sourceReason { bank_migration = 'bank_migration', cashback = 'cashback', empyreal_adjustment = 'empyreal_adjustment', error = 'error', error_correction = 'error_correction', fees = 'fees', interest = 'interest', sample_funds = 'sample_funds', sample_funds_return = 'sample_funds_return' }
 
 	export interface Inbound_ach_transfer_simulation_resultTransactionSourceReal_time_payments_transfer_acknowledgement {
 
@@ -17287,9 +17287,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_ach_transfer_simulation_resultTransactionType { transaction = 0 }
+	export enum Inbound_ach_transfer_simulation_resultTransactionType { transaction = 'transaction' }
 
-	export enum Inbound_ach_transfer_simulation_resultType { inbound_ach_transfer_simulation_result = 0 }
+	export enum Inbound_ach_transfer_simulation_resultType { inbound_ach_transfer_simulation_result = 'inbound_ach_transfer_simulation_result' }
 
 
 	/** The results of a Card Authorization simulation. */
@@ -18898,7 +18898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_card_authorization_simulation_resultPending_transactionSourceCard_authorizationType { card_authorization = 0 }
+	export enum Inbound_card_authorization_simulation_resultPending_transactionSourceCard_authorizationType { card_authorization = 'card_authorization' }
 
 	export interface Inbound_card_authorization_simulation_resultPending_transactionSourceCard_route_authorization {
 
@@ -18978,7 +18978,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_card_authorization_simulation_resultPending_transactionSourceCategory { account_transfer_instruction = 0, ach_transfer_instruction = 1, card_authorization = 2, check_deposit_instruction = 3, check_transfer_instruction = 4, inbound_funds_hold = 5, card_route_authorization = 6, real_time_payments_transfer_instruction = 7, wire_drawdown_payment_instruction = 8, wire_transfer_instruction = 9, other = 10 }
+	export enum Inbound_card_authorization_simulation_resultPending_transactionSourceCategory { account_transfer_instruction = 'account_transfer_instruction', ach_transfer_instruction = 'ach_transfer_instruction', card_authorization = 'card_authorization', check_deposit_instruction = 'check_deposit_instruction', check_transfer_instruction = 'check_transfer_instruction', inbound_funds_hold = 'inbound_funds_hold', card_route_authorization = 'card_route_authorization', real_time_payments_transfer_instruction = 'real_time_payments_transfer_instruction', wire_drawdown_payment_instruction = 'wire_drawdown_payment_instruction', wire_transfer_instruction = 'wire_transfer_instruction', other = 'other' }
 
 	export interface Inbound_card_authorization_simulation_resultPending_transactionSourceCheck_deposit_instruction {
 
@@ -19218,7 +19218,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_card_authorization_simulation_resultPending_transactionSourceInbound_funds_holdStatus { held = 0, complete = 1 }
+	export enum Inbound_card_authorization_simulation_resultPending_transactionSourceInbound_funds_holdStatus { held = 'held', complete = 'complete' }
 
 	export interface Inbound_card_authorization_simulation_resultPending_transactionSourceReal_time_payments_transfer_instruction {
 
@@ -19351,9 +19351,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_card_authorization_simulation_resultPending_transactionType { pending_transaction = 0 }
+	export enum Inbound_card_authorization_simulation_resultPending_transactionType { pending_transaction = 'pending_transaction' }
 
-	export enum Inbound_card_authorization_simulation_resultType { inbound_card_authorization_simulation_result = 0 }
+	export enum Inbound_card_authorization_simulation_resultType { inbound_card_authorization_simulation_result = 'inbound_card_authorization_simulation_result' }
 
 
 	/** The results of a Digital Wallet Token simulation. */
@@ -19408,9 +19408,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_digital_wallet_token_request_simulation_resultDecline_reason { card_not_active = 0, no_verification_method = 1, webhook_timed_out = 2, webhook_declined = 3 }
+	export enum Inbound_digital_wallet_token_request_simulation_resultDecline_reason { card_not_active = 'card_not_active', no_verification_method = 'no_verification_method', webhook_timed_out = 'webhook_timed_out', webhook_declined = 'webhook_declined' }
 
-	export enum Inbound_digital_wallet_token_request_simulation_resultType { inbound_digital_wallet_token_request_simulation_result = 0 }
+	export enum Inbound_digital_wallet_token_request_simulation_resultType { inbound_digital_wallet_token_request_simulation_result = 'inbound_digital_wallet_token_request_simulation_result' }
 
 
 	/** The results of an inbound Real Time Payments Transfer simulation. */
@@ -23827,7 +23827,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_real_time_payments_transfer_simulation_resultType { inbound_real_time_payments_transfer_simulation_result = 0 }
+	export enum Inbound_real_time_payments_transfer_simulation_resultType { inbound_real_time_payments_transfer_simulation_result = 'inbound_real_time_payments_transfer_simulation_result' }
 
 
 	/** Inbound wire drawdown requests are requests from someone else to send them a wire. This feature is in beta; reach out to [support@increase.com](mailto:support@increase.com) to learn more. */
@@ -24129,7 +24129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_wire_drawdown_requestType { inbound_wire_drawdown_request = 0 }
+	export enum Inbound_wire_drawdown_requestType { inbound_wire_drawdown_request = 'inbound_wire_drawdown_request' }
 
 
 	/** A list of Inbound Wire Drawdown Request objects */
@@ -27556,7 +27556,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Inbound_wire_transfer_simulation_resultType { inbound_wire_transfer_simulation_result = 0 }
+	export enum Inbound_wire_transfer_simulation_resultType { inbound_wire_transfer_simulation_result = 'inbound_wire_transfer_simulation_result' }
 
 
 	/** The results of an Interest Payment simulation. */
@@ -30950,7 +30950,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Interest_payment_simulation_resultType { interest_payment_simulation_result = 0 }
+	export enum Interest_payment_simulation_resultType { interest_payment_simulation_result = 'interest_payment_simulation_result' }
 
 
 	/** You can set limits at the Account, Account Number, or Card level. Limits applied to Accounts will apply to all Account Numbers and Cards in the Account. You can specify any number of Limits and they will all be applied to inbound debits and card authorizations. Volume and count Limits are designed to prevent unauthorized debits. */
@@ -31070,11 +31070,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LimitModel_type { account = 0, account_number = 1, card = 2 }
+	export enum LimitModel_type { account = 'account', account_number = 'account_number', card = 'card' }
 
-	export enum LimitStatus { active = 0, inactive = 1 }
+	export enum LimitStatus { active = 'active', inactive = 'inactive' }
 
-	export enum LimitType { limit = 0 }
+	export enum LimitType { limit = 'limit' }
 
 
 	/** A list of Limit objects */
@@ -31211,7 +31211,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Oauth_connectionType { oauth_connection = 0 }
+	export enum Oauth_connectionType { oauth_connection = 'oauth_connection' }
 
 
 	/** A list of OAuth Connection objects */
@@ -32360,7 +32360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProgramType { program = 0 }
+	export enum ProgramType { program = 'program' }
 
 
 	/** A list of Program objects */
@@ -32742,7 +32742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Real_time_decisionCategory { card_authorization_requested = 0, digital_wallet_token_requested = 1, digital_wallet_authentication_requested = 2 }
+	export enum Real_time_decisionCategory { card_authorization_requested = 'card_authorization_requested', digital_wallet_token_requested = 'digital_wallet_token_requested', digital_wallet_authentication_requested = 'digital_wallet_authentication_requested' }
 
 	export interface Real_time_decisionDigital_wallet_authentication {
 
@@ -32845,7 +32845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Real_time_decisionDigital_wallet_authenticationChannel { sms = 0, email = 1 }
+	export enum Real_time_decisionDigital_wallet_authenticationChannel { sms = 'sms', email = 'email' }
 
 	export interface Real_time_decisionDigital_wallet_token {
 
@@ -32909,9 +32909,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Real_time_decisionStatus { pending = 0, responded = 1, timed_out = 2 }
+	export enum Real_time_decisionStatus { pending = 'pending', responded = 'responded', timed_out = 'timed_out' }
 
-	export enum Real_time_decisionType { real_time_decision = 0 }
+	export enum Real_time_decisionType { real_time_decision = 'real_time_decision' }
 
 
 	/** Real Time Payments transfers move funds, within seconds, between your Increase account and any other account on the Real Time Payments network. */
@@ -33254,7 +33254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Real_time_payments_transferStatus { pending_approval = 0, canceled = 1, pending_submission = 2, submitted = 3, complete = 4, rejected = 5, requires_attention = 6 }
+	export enum Real_time_payments_transferStatus { pending_approval = 'pending_approval', canceled = 'canceled', pending_submission = 'pending_submission', submitted = 'submitted', complete = 'complete', rejected = 'rejected', requires_attention = 'requires_attention' }
 
 	export interface Real_time_payments_transferSubmission {
 
@@ -33292,7 +33292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Real_time_payments_transferType { real_time_payments_transfer = 0 }
+	export enum Real_time_payments_transferType { real_time_payments_transfer = 'real_time_payments_transfer' }
 
 
 	/** A list of Real Time Payments Transfer objects */
@@ -33459,9 +33459,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Routing_numberAch_transfers { supported = 0, not_supported = 1 }
+	export enum Routing_numberAch_transfers { supported = 'supported', not_supported = 'not_supported' }
 
-	export enum Routing_numberType { routing_number = 0 }
+	export enum Routing_numberType { routing_number = 'routing_number' }
 
 
 	/** A list of Routing Number objects */
@@ -34530,7 +34530,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Simulates_advancing_the_state_of_a_card_dispute_parametersStatus { accepted = 0, rejected = 1 }
+	export enum Simulates_advancing_the_state_of_a_card_dispute_parametersStatus { accepted = 'accepted', rejected = 'rejected' }
 
 
 	/** Transactions are the immutable additions and removals of money from your bank account. They're the equivalent of line items on your bank statement. */
@@ -38129,7 +38129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Update_a_limit_parametersStatus { inactive = 0, active = 1 }
+	export enum Update_a_limit_parametersStatus { inactive = 'inactive', active = 'active' }
 
 	export interface Update_an_account_number_parameters {
 
@@ -38205,7 +38205,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Update_an_event_subscription_parametersStatus { active = 0, disabled = 1, deleted = 2 }
+	export enum Update_an_event_subscription_parametersStatus { active = 'active', disabled = 'disabled', deleted = 'deleted' }
 
 	export interface Update_an_external_account_parameters {
 
@@ -38441,7 +38441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Wire_drawdown_requestStatus { pending_submission = 0, pending_response = 1, fulfilled = 2, refused = 3 }
+	export enum Wire_drawdown_requestStatus { pending_submission = 'pending_submission', pending_response = 'pending_response', fulfilled = 'fulfilled', refused = 'refused' }
 
 	export interface Wire_drawdown_requestSubmission {
 
@@ -38466,7 +38466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Wire_drawdown_requestType { wire_drawdown_request = 0 }
+	export enum Wire_drawdown_requestType { wire_drawdown_request = 'wire_drawdown_request' }
 
 
 	/** A list of Wire Drawdown Request objects */
@@ -38832,7 +38832,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Wire_transferNetwork { wire = 0 }
+	export enum Wire_transferNetwork { wire = 'wire' }
 
 	export interface Wire_transferReversal {
 
@@ -39026,7 +39026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Wire_transferStatus { canceled = 0, requires_attention = 1, pending_approval = 2, rejected = 3, reversed = 4, complete = 5, pending_creating = 6 }
+	export enum Wire_transferStatus { canceled = 'canceled', requires_attention = 'requires_attention', pending_approval = 'pending_approval', rejected = 'rejected', reversed = 'reversed', complete = 'complete', pending_creating = 'pending_creating' }
 
 	export interface Wire_transferSubmission {
 
@@ -39064,7 +39064,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Wire_transferType { wire_transfer = 0 }
+	export enum Wire_transferType { wire_transfer = 'wire_transfer' }
 
 
 	/** A list of Wire Transfer objects */

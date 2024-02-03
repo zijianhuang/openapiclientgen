@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerStatus { ACTIVE = 0, CREATING = 1, DELETING = 2 }
+	export enum ContainerStatus { ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING' }
 
 	export interface CreateContainerInput {
 
@@ -383,7 +383,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MethodName { PUT = 0, GET = 1, DELETE = 2, HEAD = 3 }
+	export enum MethodName { PUT = 'PUT', GET = 'GET', DELETE = 'DELETE', HEAD = 'HEAD' }
 
 	export interface GetCorsPolicyInput {
 
@@ -471,7 +471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerLevelMetrics { ENABLED = 0, DISABLED = 1 }
+	export enum ContainerLevelMetrics { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy. */
@@ -1017,47 +1017,47 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateContainerX_Amz_Target { 'MediaStore_20170901.CreateContainer' = 0 }
+	export enum CreateContainerX_Amz_Target { 'MediaStore_20170901.CreateContainer' = 'MediaStore_20170901.CreateContainer' }
 
-	export enum DeleteContainerX_Amz_Target { 'MediaStore_20170901.DeleteContainer' = 0 }
+	export enum DeleteContainerX_Amz_Target { 'MediaStore_20170901.DeleteContainer' = 'MediaStore_20170901.DeleteContainer' }
 
-	export enum DeleteContainerPolicyX_Amz_Target { 'MediaStore_20170901.DeleteContainerPolicy' = 0 }
+	export enum DeleteContainerPolicyX_Amz_Target { 'MediaStore_20170901.DeleteContainerPolicy' = 'MediaStore_20170901.DeleteContainerPolicy' }
 
-	export enum DeleteCorsPolicyX_Amz_Target { 'MediaStore_20170901.DeleteCorsPolicy' = 0 }
+	export enum DeleteCorsPolicyX_Amz_Target { 'MediaStore_20170901.DeleteCorsPolicy' = 'MediaStore_20170901.DeleteCorsPolicy' }
 
-	export enum DeleteLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.DeleteLifecyclePolicy' = 0 }
+	export enum DeleteLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.DeleteLifecyclePolicy' = 'MediaStore_20170901.DeleteLifecyclePolicy' }
 
-	export enum DeleteMetricPolicyX_Amz_Target { 'MediaStore_20170901.DeleteMetricPolicy' = 0 }
+	export enum DeleteMetricPolicyX_Amz_Target { 'MediaStore_20170901.DeleteMetricPolicy' = 'MediaStore_20170901.DeleteMetricPolicy' }
 
-	export enum DescribeContainerX_Amz_Target { 'MediaStore_20170901.DescribeContainer' = 0 }
+	export enum DescribeContainerX_Amz_Target { 'MediaStore_20170901.DescribeContainer' = 'MediaStore_20170901.DescribeContainer' }
 
-	export enum GetContainerPolicyX_Amz_Target { 'MediaStore_20170901.GetContainerPolicy' = 0 }
+	export enum GetContainerPolicyX_Amz_Target { 'MediaStore_20170901.GetContainerPolicy' = 'MediaStore_20170901.GetContainerPolicy' }
 
-	export enum GetCorsPolicyX_Amz_Target { 'MediaStore_20170901.GetCorsPolicy' = 0 }
+	export enum GetCorsPolicyX_Amz_Target { 'MediaStore_20170901.GetCorsPolicy' = 'MediaStore_20170901.GetCorsPolicy' }
 
-	export enum GetLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.GetLifecyclePolicy' = 0 }
+	export enum GetLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.GetLifecyclePolicy' = 'MediaStore_20170901.GetLifecyclePolicy' }
 
-	export enum GetMetricPolicyX_Amz_Target { 'MediaStore_20170901.GetMetricPolicy' = 0 }
+	export enum GetMetricPolicyX_Amz_Target { 'MediaStore_20170901.GetMetricPolicy' = 'MediaStore_20170901.GetMetricPolicy' }
 
-	export enum ListContainersX_Amz_Target { 'MediaStore_20170901.ListContainers' = 0 }
+	export enum ListContainersX_Amz_Target { 'MediaStore_20170901.ListContainers' = 'MediaStore_20170901.ListContainers' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'MediaStore_20170901.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'MediaStore_20170901.ListTagsForResource' = 'MediaStore_20170901.ListTagsForResource' }
 
-	export enum PutContainerPolicyX_Amz_Target { 'MediaStore_20170901.PutContainerPolicy' = 0 }
+	export enum PutContainerPolicyX_Amz_Target { 'MediaStore_20170901.PutContainerPolicy' = 'MediaStore_20170901.PutContainerPolicy' }
 
-	export enum PutCorsPolicyX_Amz_Target { 'MediaStore_20170901.PutCorsPolicy' = 0 }
+	export enum PutCorsPolicyX_Amz_Target { 'MediaStore_20170901.PutCorsPolicy' = 'MediaStore_20170901.PutCorsPolicy' }
 
-	export enum PutLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.PutLifecyclePolicy' = 0 }
+	export enum PutLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.PutLifecyclePolicy' = 'MediaStore_20170901.PutLifecyclePolicy' }
 
-	export enum PutMetricPolicyX_Amz_Target { 'MediaStore_20170901.PutMetricPolicy' = 0 }
+	export enum PutMetricPolicyX_Amz_Target { 'MediaStore_20170901.PutMetricPolicy' = 'MediaStore_20170901.PutMetricPolicy' }
 
-	export enum StartAccessLoggingX_Amz_Target { 'MediaStore_20170901.StartAccessLogging' = 0 }
+	export enum StartAccessLoggingX_Amz_Target { 'MediaStore_20170901.StartAccessLogging' = 'MediaStore_20170901.StartAccessLogging' }
 
-	export enum StopAccessLoggingX_Amz_Target { 'MediaStore_20170901.StopAccessLogging' = 0 }
+	export enum StopAccessLoggingX_Amz_Target { 'MediaStore_20170901.StopAccessLogging' = 'MediaStore_20170901.StopAccessLogging' }
 
-	export enum TagResourceX_Amz_Target { 'MediaStore_20170901.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'MediaStore_20170901.TagResource' = 'MediaStore_20170901.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'MediaStore_20170901.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'MediaStore_20170901.UntagResource' = 'MediaStore_20170901.UntagResource' }
 
 }
 

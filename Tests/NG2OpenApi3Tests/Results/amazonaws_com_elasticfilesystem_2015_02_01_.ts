@@ -151,7 +151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LifeCycleState { creating = 0, available = 1, updating = 2, deleting = 3, deleted = 4, error = 5 }
+	export enum LifeCycleState { creating = 'creating', available = 'available', updating = 'updating', deleting = 'deleting', deleted = 'deleted', error = 'error' }
 
 	export interface BadRequest {
 	}
@@ -346,9 +346,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PerformanceMode { generalPurpose = 0, maxIO = 1 }
+	export enum PerformanceMode { generalPurpose = 'generalPurpose', maxIO = 'maxIO' }
 
-	export enum ThroughputMode { bursting = 0, provisioned = 1, elastic = 2 }
+	export enum ThroughputMode { bursting = 'bursting', provisioned = 'provisioned', elastic = 'elastic' }
 
 	export interface FileSystemAlreadyExists {
 	}
@@ -626,7 +626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationStatus { ENABLED = 0, ENABLING = 1, DELETING = 2, ERROR = 3, PAUSED = 4, PAUSING = 5 }
+	export enum ReplicationStatus { ENABLED = 'ENABLED', ENABLING = 'ENABLING', DELETING = 'DELETING', ERROR = 'ERROR', PAUSED = 'PAUSED', PAUSING = 'PAUSING' }
 
 
 	/** Describes the destination file system to create in the replication configuration. */
@@ -759,11 +759,11 @@ export namespace MyNS {
 
 
 	/** A preference indicating a choice to use 63bit/32bit IDs for all applicable resources. */
-	export enum ResourceIdType { LONG_ID = 0, SHORT_ID = 1 }
+	export enum ResourceIdType { LONG_ID = 'LONG_ID', SHORT_ID = 'SHORT_ID' }
 
 
 	/** An EFS resource, for example a file system or a mount target. */
-	export enum Resource { FILE_SYSTEM = 0, MOUNT_TARGET = 1 }
+	export enum Resource { FILE_SYSTEM = 'FILE_SYSTEM', MOUNT_TARGET = 'MOUNT_TARGET' }
 
 	export interface BackupPolicyDescription {
 		BackupPolicy?: BackupPolicy;
@@ -797,7 +797,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { ENABLED = 0, ENABLING = 1, DISABLED = 2, DISABLING = 3 }
+	export enum Status { ENABLED = 'ENABLED', ENABLING = 'ENABLING', DISABLED = 'DISABLED', DISABLING = 'DISABLING' }
 
 	export interface PolicyNotFound {
 	}
@@ -873,9 +873,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitionToIARules { AFTER_7_DAYS = 0, AFTER_14_DAYS = 1, AFTER_30_DAYS = 2, AFTER_60_DAYS = 3, AFTER_90_DAYS = 4, AFTER_1_DAY = 5 }
+	export enum TransitionToIARules { AFTER_7_DAYS = 'AFTER_7_DAYS', AFTER_14_DAYS = 'AFTER_14_DAYS', AFTER_30_DAYS = 'AFTER_30_DAYS', AFTER_60_DAYS = 'AFTER_60_DAYS', AFTER_90_DAYS = 'AFTER_90_DAYS', AFTER_1_DAY = 'AFTER_1_DAY' }
 
-	export enum TransitionToPrimaryStorageClassRules { AFTER_1_ACCESS = 0 }
+	export enum TransitionToPrimaryStorageClassRules { AFTER_1_ACCESS = 'AFTER_1_ACCESS' }
 
 	export interface DescribeMountTargetSecurityGroupsResponse {
 

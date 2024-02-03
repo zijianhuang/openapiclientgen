@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessScheduleDayOfWeek { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6, Everyday = 7, Weekday = 8, Weekend = 9 }
+	export enum AccessScheduleDayOfWeek { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Everyday = 'Everyday', Weekday = 'Weekday', Weekend = 'Weekend' }
 
 	export interface ActivityLogEntry {
 
@@ -160,7 +160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityLogEntrySeverity { Trace = 0, Debug = 1, Information = 2, Warning = 3, Error = 4, Critical = 5, None = 6 }
+	export enum ActivityLogEntrySeverity { Trace = 'Trace', Debug = 'Debug', Information = 'Information', Warning = 'Warning', Error = 'Error', Critical = 'Critical', None = 'None' }
 
 	export interface ActivityLogEntryQueryResult {
 
@@ -346,7 +346,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageOptionType { Primary = 0, Art = 1, Backdrop = 2, Banner = 3, Logo = 4, Thumb = 5, Disc = 6, Box = 7, Screenshot = 8, Menu = 9, Chapter = 10, BoxRear = 11, Profile = 12 }
+	export enum ImageOptionType { Primary = 'Primary', Art = 'Art', Backdrop = 'Backdrop', Banner = 'Banner', Logo = 'Logo', Thumb = 'Thumb', Disc = 'Disc', Box = 'Box', Screenshot = 'Screenshot', Menu = 'Menu', Chapter = 'Chapter', BoxRear = 'BoxRear', Profile = 'Profile' }
 
 	export interface AlbumInfo {
 
@@ -1420,7 +1420,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayOfWeek { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6 }
+	export enum DayOfWeek { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday' }
 
 	export interface NameGuidPair {
 		Id?: string | null;
@@ -1438,9 +1438,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseItemDtoAudio { Mono = 0, Stereo = 1, Dolby = 2, DolbyDigital = 3, Thx = 4, Atmos = 5 }
+	export enum BaseItemDtoAudio { Mono = 'Mono', Stereo = 'Stereo', Dolby = 'Dolby', DolbyDigital = 'DolbyDigital', Thx = 'Thx', Atmos = 'Atmos' }
 
-	export enum BaseItemDtoChannelType { TV = 0, Radio = 1 }
+	export enum BaseItemDtoChannelType { TV = 'TV', Radio = 'Radio' }
 
 
 	/** Class ChapterInfo. */
@@ -1556,15 +1556,15 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseItemDtoImageOrientation { TopLeft = 0, TopRight = 1, BottomRight = 2, BottomLeft = 3, LeftTop = 4, RightTop = 5, RightBottom = 6, LeftBottom = 7 }
+	export enum BaseItemDtoImageOrientation { TopLeft = 'TopLeft', TopRight = 'TopRight', BottomRight = 'BottomRight', BottomLeft = 'BottomLeft', LeftTop = 'LeftTop', RightTop = 'RightTop', RightBottom = 'RightBottom', LeftBottom = 'LeftBottom' }
 
-	export enum BaseItemDtoIsoType { Dvd = 0, BluRay = 1 }
+	export enum BaseItemDtoIsoType { Dvd = 'Dvd', BluRay = 'BluRay' }
 
-	export enum BaseItemDtoLocationType { FileSystem = 0, Remote = 1, Virtual = 2, Offline = 3 }
+	export enum BaseItemDtoLocationType { FileSystem = 'FileSystem', Remote = 'Remote', Virtual = 'Virtual', Offline = 'Offline' }
 
 
 	/** Enum MetadataFields. */
-	export enum MetadataField { Cast = 0, Genres = 1, ProductionLocations = 2, Studios = 3, Tags = 4, Name = 5, Overview = 6, Runtime = 7, OfficialRating = 8 }
+	export enum MetadataField { Cast = 'Cast', Genres = 'Genres', ProductionLocations = 'ProductionLocations', Studios = 'Studios', Tags = 'Tags', Name = 'Name', Overview = 'Overview', Runtime = 'Runtime', OfficialRating = 'OfficialRating' }
 
 	export interface MediaSourceInfo {
 		AnalyzeDurationMs?: number | null;
@@ -1708,7 +1708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaSourceInfoEncoderProtocol { File = 0, Http = 1, Rtmp = 2, Rtsp = 3, Udp = 4, Rtp = 5, Ftp = 6 }
+	export enum MediaSourceInfoEncoderProtocol { File = 'File', Http = 'Http', Rtmp = 'Rtmp', Rtsp = 'Rtsp', Udp = 'Udp', Rtp = 'Rtp', Ftp = 'Ftp' }
 
 
 	/** Class MediaAttachment. */
@@ -2084,17 +2084,17 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaStreamDeliveryMethod { Encode = 0, Embed = 1, External = 2, Hls = 3 }
+	export enum MediaStreamDeliveryMethod { Encode = 'Encode', Embed = 'Embed', External = 'External', Hls = 'Hls' }
 
-	export enum MediaStreamType { Audio = 0, Video = 1, Subtitle = 2, EmbeddedImage = 3 }
+	export enum MediaStreamType { Audio = 'Audio', Video = 'Video', Subtitle = 'Subtitle', EmbeddedImage = 'EmbeddedImage' }
 
-	export enum MediaSourceInfoTimestamp { None = 0, Zero = 1, Valid = 2 }
+	export enum MediaSourceInfoTimestamp { None = 'None', Zero = 'Zero', Valid = 'Valid' }
 
-	export enum MediaSourceInfoType { Default = 0, Grouping = 1, Placeholder = 2 }
+	export enum MediaSourceInfoType { Default = 'Default', Grouping = 'Grouping', Placeholder = 'Placeholder' }
 
-	export enum MediaSourceInfoVideo3DFormat { HalfSideBySide = 0, FullSideBySide = 1, FullTopAndBottom = 2, HalfTopAndBottom = 3, MVC = 4 }
+	export enum MediaSourceInfoVideo3DFormat { HalfSideBySide = 'HalfSideBySide', FullSideBySide = 'FullSideBySide', FullTopAndBottom = 'FullTopAndBottom', HalfTopAndBottom = 'HalfTopAndBottom', MVC = 'MVC' }
 
-	export enum MediaSourceInfoVideoType { VideoFile = 0, Iso = 1, Dvd = 2, BluRay = 3 }
+	export enum MediaSourceInfoVideoType { VideoFile = 'VideoFile', Iso = 'Iso', Dvd = 'Dvd', BluRay = 'BluRay' }
 
 
 	/** This is used by the api to get information about a Person within a BaseItem. */
@@ -2197,7 +2197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseItemDtoPlayAccess { Full = 0, None = 1 }
+	export enum BaseItemDtoPlayAccess { Full = 'Full', None = 'None' }
 
 	export interface MediaUrl {
 		Name?: string | null;
@@ -2306,7 +2306,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Architecture { X86 = 0, X64 = 1, Arm = 2, Arm64 = 3, Wasm = 4 }
+	export enum Architecture { X86 = 'X86', X64 = 'X64', Arm = 'Arm', Arm64 = 'Arm64', Wasm = 'Wasm' }
 
 	export interface ArtistInfo {
 		IndexNumber?: number | null;
@@ -3073,11 +3073,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileConditionCondition { Equals = 0, NotEquals = 1, LessThanEqual = 2, GreaterThanEqual = 3, EqualsAny = 4 }
+	export enum ProfileConditionCondition { Equals = 'Equals', NotEquals = 'NotEquals', LessThanEqual = 'LessThanEqual', GreaterThanEqual = 'GreaterThanEqual', EqualsAny = 'EqualsAny' }
 
-	export enum ProfileConditionProperty { AudioChannels = 0, AudioBitrate = 1, AudioProfile = 2, Width = 3, Height = 4, Has64BitOffsets = 5, PacketLength = 6, VideoBitDepth = 7, VideoBitrate = 8, VideoFramerate = 9, VideoLevel = 10, VideoProfile = 11, VideoTimestamp = 12, IsAnamorphic = 13, RefFrames = 14, NumAudioStreams = 15, NumVideoStreams = 16, IsSecondaryAudio = 17, VideoCodecTag = 18, IsAvc = 19, IsInterlaced = 20, AudioSampleRate = 21, AudioBitDepth = 22 }
+	export enum ProfileConditionProperty { AudioChannels = 'AudioChannels', AudioBitrate = 'AudioBitrate', AudioProfile = 'AudioProfile', Width = 'Width', Height = 'Height', Has64BitOffsets = 'Has64BitOffsets', PacketLength = 'PacketLength', VideoBitDepth = 'VideoBitDepth', VideoBitrate = 'VideoBitrate', VideoFramerate = 'VideoFramerate', VideoLevel = 'VideoLevel', VideoProfile = 'VideoProfile', VideoTimestamp = 'VideoTimestamp', IsAnamorphic = 'IsAnamorphic', RefFrames = 'RefFrames', NumAudioStreams = 'NumAudioStreams', NumVideoStreams = 'NumVideoStreams', IsSecondaryAudio = 'IsSecondaryAudio', VideoCodecTag = 'VideoCodecTag', IsAvc = 'IsAvc', IsInterlaced = 'IsInterlaced', AudioSampleRate = 'AudioSampleRate', AudioBitDepth = 'AudioBitDepth' }
 
-	export enum CodecProfileType { Video = 0, VideoAudio = 1, Audio = 2 }
+	export enum CodecProfileType { Video = 'Video', VideoAudio = 'VideoAudio', Audio = 'Audio' }
 
 	export interface ContainerProfile {
 		Conditions?: Array<ProfileCondition>;
@@ -3096,7 +3096,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerProfileType { Audio = 0, Video = 1, Photo = 2 }
+	export enum ContainerProfileType { Audio = 'Audio', Video = 'Video', Photo = 'Photo' }
 
 	export interface DirectPlayProfile {
 		AudioCodec?: string | null;
@@ -3208,7 +3208,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpHeaderInfoMatch { Equals = 0, Regex = 1, Substring = 2 }
+	export enum HttpHeaderInfoMatch { Equals = 'Equals', Regex = 'Regex', Substring = 'Substring' }
 
 	export interface ResponseProfile {
 		AudioCodec?: string | null;
@@ -3319,9 +3319,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscodingProfileContext { Streaming = 0, Static = 1 }
+	export enum TranscodingProfileContext { Streaming = 'Streaming', Static = 'Static' }
 
-	export enum TranscodingProfileTranscodeSeekInfo { Auto = 0, Bytes = 1 }
+	export enum TranscodingProfileTranscodeSeekInfo { Auto = 'Auto', Bytes = 'Bytes' }
 
 
 	/** Defines the MediaBrowser.Model.Dlna.XmlAttribute. */
@@ -3353,7 +3353,7 @@ export namespace MyNS {
 
 
 	/** This exists simply to identify a set of known commands. */
-	export enum GeneralCommandType { MoveUp = 0, MoveDown = 1, MoveLeft = 2, MoveRight = 3, PageUp = 4, PageDown = 5, PreviousLetter = 6, NextLetter = 7, ToggleOsd = 8, ToggleContextMenu = 9, Select = 10, Back = 11, TakeScreenshot = 12, SendKey = 13, SendString = 14, GoHome = 15, GoToSettings = 16, VolumeUp = 17, VolumeDown = 18, Mute = 19, Unmute = 20, ToggleMute = 21, SetVolume = 22, SetAudioStreamIndex = 23, SetSubtitleStreamIndex = 24, ToggleFullscreen = 25, DisplayContent = 26, GoToSearch = 27, DisplayMessage = 28, SetRepeatMode = 29, ChannelUp = 30, ChannelDown = 31, Guide = 32, ToggleStats = 33, PlayMediaSource = 34, PlayTrailers = 35, SetShuffleQueue = 36, PlayState = 37, PlayNext = 38, ToggleOsdMenu = 39, Play = 40 }
+	export enum GeneralCommandType { MoveUp = 'MoveUp', MoveDown = 'MoveDown', MoveLeft = 'MoveLeft', MoveRight = 'MoveRight', PageUp = 'PageUp', PageDown = 'PageDown', PreviousLetter = 'PreviousLetter', NextLetter = 'NextLetter', ToggleOsd = 'ToggleOsd', ToggleContextMenu = 'ToggleContextMenu', Select = 'Select', Back = 'Back', TakeScreenshot = 'TakeScreenshot', SendKey = 'SendKey', SendString = 'SendString', GoHome = 'GoHome', GoToSettings = 'GoToSettings', VolumeUp = 'VolumeUp', VolumeDown = 'VolumeDown', Mute = 'Mute', Unmute = 'Unmute', ToggleMute = 'ToggleMute', SetVolume = 'SetVolume', SetAudioStreamIndex = 'SetAudioStreamIndex', SetSubtitleStreamIndex = 'SetSubtitleStreamIndex', ToggleFullscreen = 'ToggleFullscreen', DisplayContent = 'DisplayContent', GoToSearch = 'GoToSearch', DisplayMessage = 'DisplayMessage', SetRepeatMode = 'SetRepeatMode', ChannelUp = 'ChannelUp', ChannelDown = 'ChannelDown', Guide = 'Guide', ToggleStats = 'ToggleStats', PlayMediaSource = 'PlayMediaSource', PlayTrailers = 'PlayTrailers', SetShuffleQueue = 'SetShuffleQueue', PlayState = 'PlayState', PlayNext = 'PlayNext', ToggleOsdMenu = 'ToggleOsdMenu', Play = 'Play' }
 
 
 	/** Class BaseItem. */
@@ -3488,9 +3488,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayerStateInfoPlayMethod { Transcode = 0, DirectStream = 1, DirectPlay = 2 }
+	export enum PlayerStateInfoPlayMethod { Transcode = 'Transcode', DirectStream = 'DirectStream', DirectPlay = 'DirectPlay' }
 
-	export enum PlayerStateInfoRepeatMode { RepeatNone = 0, RepeatAll = 1, RepeatOne = 2 }
+	export enum PlayerStateInfoRepeatMode { RepeatNone = 'RepeatNone', RepeatAll = 'RepeatAll', RepeatOne = 'RepeatOne' }
 
 	export interface TranscodingInfo {
 		AudioChannels?: number | null;
@@ -3536,7 +3536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscodeReason { ContainerNotSupported = 0, VideoCodecNotSupported = 1, AudioCodecNotSupported = 2, ContainerBitrateExceedsLimit = 3, AudioBitrateNotSupported = 4, AudioChannelsNotSupported = 5, VideoResolutionNotSupported = 6, UnknownVideoStreamInfo = 7, UnknownAudioStreamInfo = 8, AudioProfileNotSupported = 9, AudioSampleRateNotSupported = 10, AnamorphicVideoNotSupported = 11, InterlacedVideoNotSupported = 12, SecondaryAudioNotSupported = 13, RefFramesNotSupported = 14, VideoBitDepthNotSupported = 15, VideoBitrateNotSupported = 16, VideoFramerateNotSupported = 17, VideoLevelNotSupported = 18, VideoProfileNotSupported = 19, AudioBitDepthNotSupported = 20, SubtitleCodecNotSupported = 21, DirectPlayError = 22 }
+	export enum TranscodeReason { ContainerNotSupported = 'ContainerNotSupported', VideoCodecNotSupported = 'VideoCodecNotSupported', AudioCodecNotSupported = 'AudioCodecNotSupported', ContainerBitrateExceedsLimit = 'ContainerBitrateExceedsLimit', AudioBitrateNotSupported = 'AudioBitrateNotSupported', AudioChannelsNotSupported = 'AudioChannelsNotSupported', VideoResolutionNotSupported = 'VideoResolutionNotSupported', UnknownVideoStreamInfo = 'UnknownVideoStreamInfo', UnknownAudioStreamInfo = 'UnknownAudioStreamInfo', AudioProfileNotSupported = 'AudioProfileNotSupported', AudioSampleRateNotSupported = 'AudioSampleRateNotSupported', AnamorphicVideoNotSupported = 'AnamorphicVideoNotSupported', InterlacedVideoNotSupported = 'InterlacedVideoNotSupported', SecondaryAudioNotSupported = 'SecondaryAudioNotSupported', RefFramesNotSupported = 'RefFramesNotSupported', VideoBitDepthNotSupported = 'VideoBitDepthNotSupported', VideoBitrateNotSupported = 'VideoBitrateNotSupported', VideoFramerateNotSupported = 'VideoFramerateNotSupported', VideoLevelNotSupported = 'VideoLevelNotSupported', VideoProfileNotSupported = 'VideoProfileNotSupported', AudioBitDepthNotSupported = 'AudioBitDepthNotSupported', SubtitleCodecNotSupported = 'SubtitleCodecNotSupported', DirectPlayError = 'DirectPlayError' }
 
 
 	/** Class UserDto. */
@@ -3713,7 +3713,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserConfigurationSubtitleMode { Default = 0, Always = 1, OnlyForced = 2, None = 3, Smart = 4 }
+	export enum UserConfigurationSubtitleMode { Default = 'Default', Always = 'Always', OnlyForced = 'OnlyForced', None = 'None', Smart = 'Smart' }
 
 	export interface UserPolicy {
 		AccessSchedules?: Array<AccessSchedule>;
@@ -3850,9 +3850,9 @@ export namespace MyNS {
 
 
 	/** An enum representing an unrated item. */
-	export enum UnratedItem { Movie = 0, Trailer = 1, Series = 2, Music = 3, Book = 4, LiveTvChannel = 5, LiveTvProgram = 6, ChannelContent = 7, Other = 8 }
+	export enum UnratedItem { Movie = 'Movie', Trailer = 'Trailer', Series = 'Series', Music = 'Music', Book = 'Book', LiveTvChannel = 'LiveTvChannel', LiveTvProgram = 'LiveTvProgram', ChannelContent = 'ChannelContent', Other = 'Other' }
 
-	export enum UserPolicySyncPlayAccess { CreateAndJoinGroups = 0, JoinGroups = 1, None = 2 }
+	export enum UserPolicySyncPlayAccess { CreateAndJoinGroups = 'CreateAndJoinGroups', JoinGroups = 'JoinGroups', None = 'None' }
 
 	export interface BaseItemDtoQueryResult {
 
@@ -4230,11 +4230,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelMediaContentType { Clip = 0, Podcast = 1, Trailer = 2, Movie = 3, Episode = 4, Song = 5, MovieExtra = 6, TvExtra = 7 }
+	export enum ChannelMediaContentType { Clip = 'Clip', Podcast = 'Podcast', Trailer = 'Trailer', Movie = 'Movie', Episode = 'Episode', Song = 'Song', MovieExtra = 'MovieExtra', TvExtra = 'TvExtra' }
 
-	export enum ChannelItemSortField { Name = 0, CommunityRating = 1, PremiereDate = 2, DateCreated = 3, Runtime = 4, PlayCount = 5, CommunityPlayCount = 6 }
+	export enum ChannelItemSortField { Name = 'Name', CommunityRating = 'CommunityRating', PremiereDate = 'PremiereDate', DateCreated = 'DateCreated', Runtime = 'Runtime', PlayCount = 'PlayCount', CommunityPlayCount = 'CommunityPlayCount' }
 
-	export enum ChannelMediaType { Audio = 0, Video = 1, Photo = 2 }
+	export enum ChannelMediaType { Audio = 'Audio', Video = 'Video', Photo = 'Photo' }
 
 
 	/** Channel mapping options dto. */
@@ -4338,7 +4338,7 @@ export namespace MyNS {
 
 
 	/** Enum ChannelType. */
-	export enum ChannelType { TV = 0, Radio = 1 }
+	export enum ChannelType { TV = 'TV', Radio = 'Radio' }
 
 
 	/** Client capabilities dto. */
@@ -4412,7 +4412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodecType { Video = 0, VideoAudio = 1, Audio = 2 }
+	export enum CodecType { Video = 'Video', VideoAudio = 'VideoAudio', Audio = 'Audio' }
 
 	export interface CollectionCreationResult {
 		Id?: string | null;
@@ -4490,11 +4490,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationPageInfoConfigurationPageType { PluginConfiguration = 0, None = 1 }
+	export enum ConfigurationPageInfoConfigurationPageType { PluginConfiguration = 'PluginConfiguration', None = 'None' }
 
 
 	/** Enum ConfigurationPageType. */
-	export enum ConfigurationPageType { PluginConfiguration = 0, None = 1 }
+	export enum ConfigurationPageType { PluginConfiguration = 'PluginConfiguration', None = 'None' }
 
 	export interface ControlResponse {
 		Headers?: {[id: string]: string };
@@ -4666,7 +4666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayPattern { Daily = 0, Weekdays = 1, Weekends = 2 }
+	export enum DayPattern { Daily = 'Daily', Weekdays = 'Weekdays', Weekends = 'Weekends' }
 
 
 	/** Default directory browser info. */
@@ -4815,9 +4815,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceProfileInfoType { System = 0, User = 1 }
+	export enum DeviceProfileInfoType { System = 'System', User = 'User' }
 
-	export enum DeviceProfileType { System = 0, User = 1 }
+	export enum DeviceProfileType { System = 'System', User = 'User' }
 
 
 	/** Defines the display preferences for any item that supports them (usually Folders). */
@@ -4931,17 +4931,17 @@ export namespace MyNS {
 
 	}
 
-	export enum DisplayPreferencesDtoScrollDirection { Horizontal = 0, Vertical = 1 }
+	export enum DisplayPreferencesDtoScrollDirection { Horizontal = 'Horizontal', Vertical = 'Vertical' }
 
-	export enum DisplayPreferencesDtoSortOrder { Ascending = 0, Descending = 1 }
+	export enum DisplayPreferencesDtoSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
-	export enum DlnaProfileType { Audio = 0, Video = 1, Photo = 2 }
+	export enum DlnaProfileType { Audio = 'Audio', Video = 'Video', Photo = 'Photo' }
 
 
 	/** An enum that represents a day of the week, weekdays, weekends, or all days. */
-	export enum DynamicDayOfWeek { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6, Everyday = 7, Weekday = 8, Weekend = 9 }
+	export enum DynamicDayOfWeek { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Everyday = 'Everyday', Weekday = 'Weekday', Weekend = 'Weekend' }
 
-	export enum EncodingContext { Streaming = 0, Static = 1 }
+	export enum EncodingContext { Streaming = 'Streaming', Static = 'Static' }
 
 	export interface EndPointInfo {
 		IsInNetwork?: boolean | null;
@@ -5001,15 +5001,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalIdInfoType { Album = 0, AlbumArtist = 1, Artist = 2, BoxSet = 3, Episode = 4, Movie = 5, OtherArtist = 6, Person = 7, ReleaseGroup = 8, Season = 9, Series = 10, Track = 11 }
+	export enum ExternalIdInfoType { Album = 'Album', AlbumArtist = 'AlbumArtist', Artist = 'Artist', BoxSet = 'BoxSet', Episode = 'Episode', Movie = 'Movie', OtherArtist = 'OtherArtist', Person = 'Person', ReleaseGroup = 'ReleaseGroup', Season = 'Season', Series = 'Series', Track = 'Track' }
 
 
 	/** The specific media type of an MediaBrowser.Model.Providers.ExternalIdInfo. */
-	export enum ExternalIdMediaType { Album = 0, AlbumArtist = 1, Artist = 2, BoxSet = 3, Episode = 4, Movie = 5, OtherArtist = 6, Person = 7, ReleaseGroup = 8, Season = 9, Series = 10, Track = 11 }
+	export enum ExternalIdMediaType { Album = 'Album', AlbumArtist = 'AlbumArtist', Artist = 'Artist', BoxSet = 'BoxSet', Episode = 'Episode', Movie = 'Movie', OtherArtist = 'OtherArtist', Person = 'Person', ReleaseGroup = 'ReleaseGroup', Season = 'Season', Series = 'Series', Track = 'Track' }
 
 
 	/** Enum describing the location of the FFmpeg tool. */
-	export enum FFmpegLocation { NotFound = 0, SetByArgument = 1, Custom = 2, System = 3 }
+	export enum FFmpegLocation { NotFound = 'NotFound', SetByArgument = 'SetByArgument', Custom = 'Custom', System = 'System' }
 
 
 	/** Class FileSystemEntryInfo. */
@@ -5046,11 +5046,11 @@ export namespace MyNS {
 
 	}
 
-	export enum FileSystemEntryInfoType { File = 0, Directory = 1, NetworkComputer = 2, NetworkShare = 3 }
+	export enum FileSystemEntryInfoType { File = 'File', Directory = 'Directory', NetworkComputer = 'NetworkComputer', NetworkShare = 'NetworkShare' }
 
 
 	/** Enum FileSystemEntryType. */
-	export enum FileSystemEntryType { File = 0, Directory = 1, NetworkComputer = 2, NetworkShare = 3 }
+	export enum FileSystemEntryType { File = 'File', Directory = 'Directory', NetworkComputer = 'NetworkComputer', NetworkShare = 'NetworkShare' }
 
 
 	/** Class FontFile. */
@@ -5094,7 +5094,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ForgotPasswordAction { ContactAdmin = 0, PinCode = 1, InNetworkRequired = 2 }
+	export enum ForgotPasswordAction { ContactAdmin = 'ContactAdmin', PinCode = 'PinCode', InNetworkRequired = 'InNetworkRequired' }
 
 
 	/** Forgot Password request body DTO. */
@@ -5478,11 +5478,11 @@ export namespace MyNS {
 
 
 	/** Enum ImageType. */
-	export enum ImageType { Primary = 0, Art = 1, Backdrop = 2, Banner = 3, Logo = 4, Thumb = 5, Disc = 6, Box = 7, Screenshot = 8, Menu = 9, Chapter = 10, BoxRear = 11, Profile = 12 }
+	export enum ImageType { Primary = 'Primary', Art = 'Art', Backdrop = 'Backdrop', Banner = 'Banner', Logo = 'Logo', Thumb = 'Thumb', Disc = 'Disc', Box = 'Box', Screenshot = 'Screenshot', Menu = 'Menu', Chapter = 'Chapter', BoxRear = 'BoxRear', Profile = 'Profile' }
 
 
 	/** Used to control the data that gets attached to DtoBaseItems. */
-	export enum ItemFields { AirTime = 0, CanDelete = 1, CanDownload = 2, ChannelInfo = 3, Chapters = 4, ChildCount = 5, CumulativeRunTimeTicks = 6, CustomRating = 7, DateCreated = 8, DateLastMediaAdded = 9, DisplayPreferencesId = 10, Etag = 11, ExternalUrls = 12, Genres = 13, HomePageUrl = 14, ItemCounts = 15, MediaSourceCount = 16, MediaSources = 17, OriginalTitle = 18, Overview = 19, ParentId = 20, Path = 21, People = 22, PlayAccess = 23, ProductionLocations = 24, ProviderIds = 25, PrimaryImageAspectRatio = 26, RecursiveItemCount = 27, Settings = 28, ScreenshotImageTags = 29, SeriesPrimaryImage = 30, SeriesStudio = 31, SortName = 32, SpecialEpisodeNumbers = 33, Studios = 34, BasicSyncInfo = 35, SyncInfo = 36, Taglines = 37, Tags = 38, RemoteTrailers = 39, MediaStreams = 40, SeasonUserData = 41, ServiceName = 42, ThemeSongIds = 43, ThemeVideoIds = 44, ExternalEtag = 45, PresentationUniqueKey = 46, InheritedParentalRatingValue = 47, ExternalSeriesId = 48, SeriesPresentationUniqueKey = 49, DateLastRefreshed = 50, DateLastSaved = 51, RefreshState = 52, ChannelImage = 53, EnableMediaSourceDisplay = 54, Width = 55, Height = 56, ExtraIds = 57, LocalTrailerCount = 58, IsHD = 59, SpecialFeatureCount = 60 }
+	export enum ItemFields { AirTime = 'AirTime', CanDelete = 'CanDelete', CanDownload = 'CanDownload', ChannelInfo = 'ChannelInfo', Chapters = 'Chapters', ChildCount = 'ChildCount', CumulativeRunTimeTicks = 'CumulativeRunTimeTicks', CustomRating = 'CustomRating', DateCreated = 'DateCreated', DateLastMediaAdded = 'DateLastMediaAdded', DisplayPreferencesId = 'DisplayPreferencesId', Etag = 'Etag', ExternalUrls = 'ExternalUrls', Genres = 'Genres', HomePageUrl = 'HomePageUrl', ItemCounts = 'ItemCounts', MediaSourceCount = 'MediaSourceCount', MediaSources = 'MediaSources', OriginalTitle = 'OriginalTitle', Overview = 'Overview', ParentId = 'ParentId', Path = 'Path', People = 'People', PlayAccess = 'PlayAccess', ProductionLocations = 'ProductionLocations', ProviderIds = 'ProviderIds', PrimaryImageAspectRatio = 'PrimaryImageAspectRatio', RecursiveItemCount = 'RecursiveItemCount', Settings = 'Settings', ScreenshotImageTags = 'ScreenshotImageTags', SeriesPrimaryImage = 'SeriesPrimaryImage', SeriesStudio = 'SeriesStudio', SortName = 'SortName', SpecialEpisodeNumbers = 'SpecialEpisodeNumbers', Studios = 'Studios', BasicSyncInfo = 'BasicSyncInfo', SyncInfo = 'SyncInfo', Taglines = 'Taglines', Tags = 'Tags', RemoteTrailers = 'RemoteTrailers', MediaStreams = 'MediaStreams', SeasonUserData = 'SeasonUserData', ServiceName = 'ServiceName', ThemeSongIds = 'ThemeSongIds', ThemeVideoIds = 'ThemeVideoIds', ExternalEtag = 'ExternalEtag', PresentationUniqueKey = 'PresentationUniqueKey', InheritedParentalRatingValue = 'InheritedParentalRatingValue', ExternalSeriesId = 'ExternalSeriesId', SeriesPresentationUniqueKey = 'SeriesPresentationUniqueKey', DateLastRefreshed = 'DateLastRefreshed', DateLastSaved = 'DateLastSaved', RefreshState = 'RefreshState', ChannelImage = 'ChannelImage', EnableMediaSourceDisplay = 'EnableMediaSourceDisplay', Width = 'Width', Height = 'Height', ExtraIds = 'ExtraIds', LocalTrailerCount = 'LocalTrailerCount', IsHD = 'IsHD', SpecialFeatureCount = 'SpecialFeatureCount' }
 
 
 	/** Class GroupInfoDto. */
@@ -5529,27 +5529,27 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupInfoDtoState { Idle = 0, Waiting = 1, Paused = 2, Playing = 3 }
+	export enum GroupInfoDtoState { Idle = 'Idle', Waiting = 'Waiting', Paused = 'Paused', Playing = 'Playing' }
 
 
 	/** Enum GroupQueueMode. */
-	export enum GroupQueueMode { Queue = 0, QueueNext = 1 }
+	export enum GroupQueueMode { Queue = 'Queue', QueueNext = 'QueueNext' }
 
 
 	/** Enum GroupRepeatMode. */
-	export enum GroupRepeatMode { RepeatOne = 0, RepeatAll = 1, RepeatNone = 2 }
+	export enum GroupRepeatMode { RepeatOne = 'RepeatOne', RepeatAll = 'RepeatAll', RepeatNone = 'RepeatNone' }
 
 
 	/** Enum GroupShuffleMode. */
-	export enum GroupShuffleMode { Sorted = 0, Shuffle = 1 }
+	export enum GroupShuffleMode { Sorted = 'Sorted', Shuffle = 'Shuffle' }
 
 
 	/** Enum GroupState. */
-	export enum GroupStateType { Idle = 0, Waiting = 1, Paused = 2, Playing = 3 }
+	export enum GroupStateType { Idle = 'Idle', Waiting = 'Waiting', Paused = 'Paused', Playing = 'Playing' }
 
 
 	/** Enum GroupUpdateType. */
-	export enum GroupUpdateType { UserJoined = 0, UserLeft = 1, GroupJoined = 2, GroupLeft = 3, StateUpdate = 4, PlayQueue = 5, NotInGroup = 6, GroupDoesNotExist = 7, CreateGroupDenied = 8, JoinGroupDenied = 9, LibraryAccessDenied = 10 }
+	export enum GroupUpdateType { UserJoined = 'UserJoined', UserLeft = 'UserLeft', GroupJoined = 'GroupJoined', GroupLeft = 'GroupLeft', StateUpdate = 'StateUpdate', PlayQueue = 'PlayQueue', NotInGroup = 'NotInGroup', GroupDoesNotExist = 'GroupDoesNotExist', CreateGroupDenied = 'CreateGroupDenied', JoinGroupDenied = 'JoinGroupDenied', LibraryAccessDenied = 'LibraryAccessDenied' }
 
 	export interface GuideInfo {
 
@@ -5575,7 +5575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HeaderMatchType { Equals = 0, Regex = 1, Substring = 2 }
+	export enum HeaderMatchType { Equals = 'Equals', Regex = 'Regex', Substring = 'Substring' }
 
 
 	/** Defines the MediaBrowser.Common.Plugins.IPlugin. */
@@ -5730,7 +5730,7 @@ export namespace MyNS {
 
 
 	/** Enum ImageOutputFormat. */
-	export enum ImageFormat { Bmp = 0, Gif = 1, Jpg = 2, Png = 3, Webp = 4 }
+	export enum ImageFormat { Bmp = 'Bmp', Gif = 'Gif', Jpg = 'Jpg', Png = 'Png', Webp = 'Webp' }
 
 
 	/** Class ImageInfo. */
@@ -5802,7 +5802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageOrientation { TopLeft = 0, TopRight = 1, BottomRight = 2, BottomLeft = 3, LeftTop = 4, RightTop = 5, RightBottom = 6, LeftBottom = 7 }
+	export enum ImageOrientation { TopLeft = 'TopLeft', TopRight = 'TopRight', BottomRight = 'BottomRight', BottomLeft = 'BottomLeft', LeftTop = 'LeftTop', RightTop = 'RightTop', RightBottom = 'RightBottom', LeftBottom = 'LeftBottom' }
 
 
 	/** Class ImageProviderInfo. */
@@ -5828,7 +5828,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageSavingConvention { Legacy = 0, Compatible = 1 }
+	export enum ImageSavingConvention { Legacy = 'Legacy', Compatible = 'Compatible' }
 
 
 	/** Class InstallationInfo. */
@@ -5882,7 +5882,7 @@ export namespace MyNS {
 
 
 	/** Enum IsoType. */
-	export enum IsoType { Dvd = 0, BluRay = 1 }
+	export enum IsoType { Dvd = 'Dvd', BluRay = 'BluRay' }
 
 
 	/** Class LibrarySummary. */
@@ -5984,7 +5984,7 @@ export namespace MyNS {
 
 
 	/** Enum ItemFilter. */
-	export enum ItemFilter { IsFolder = 0, IsNotFolder = 1, IsUnplayed = 2, IsPlayed = 3, IsFavorite = 4, IsResumable = 5, Likes = 6, Dislikes = 7, IsFavoriteOrLikes = 8 }
+	export enum ItemFilter { IsFolder = 'IsFolder', IsNotFolder = 'IsNotFolder', IsUnplayed = 'IsUnplayed', IsPlayed = 'IsPlayed', IsFavorite = 'IsFavorite', IsResumable = 'IsResumable', Likes = 'Likes', Dislikes = 'Dislikes', IsFavoriteOrLikes = 'IsFavoriteOrLikes' }
 
 
 	/** Class JoinGroupRequestDto. */
@@ -6007,7 +6007,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeepUntil { UntilDeleted = 0, UntilSpaceNeeded = 1, UntilWatched = 2, UntilDate = 3 }
+	export enum KeepUntil { UntilDeleted = 'UntilDeleted', UntilSpaceNeeded = 'UntilSpaceNeeded', UntilWatched = 'UntilWatched', UntilDate = 'UntilDate' }
 
 
 	/** Library option info dto. */
@@ -6275,9 +6275,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveTvServiceInfoStatus { Ok = 0, Unavailable = 1 }
+	export enum LiveTvServiceInfoStatus { Ok = 'Ok', Unavailable = 'Unavailable' }
 
-	export enum LiveTvServiceStatus { Ok = 0, Unavailable = 1 }
+	export enum LiveTvServiceStatus { Ok = 'Ok', Unavailable = 'Unavailable' }
 
 	export interface LocalizationOption {
 		Name?: string | null;
@@ -6297,7 +6297,7 @@ export namespace MyNS {
 
 
 	/** Enum LocationType. */
-	export enum LocationType { FileSystem = 0, Remote = 1, Virtual = 2, Offline = 3 }
+	export enum LocationType { FileSystem = 'FileSystem', Remote = 'Remote', Virtual = 'Virtual', Offline = 'Offline' }
 
 	export interface LogFile {
 
@@ -6337,7 +6337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogLevel { Trace = 0, Debug = 1, Information = 2, Warning = 3, Error = 4, Critical = 5, None = 6 }
+	export enum LogLevel { Trace = 'Trace', Debug = 'Debug', Information = 'Information', Warning = 'Warning', Error = 'Error', Critical = 'Critical', None = 'None' }
 
 
 	/** Media Encoder Path Dto. */
@@ -6402,9 +6402,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaProtocol { File = 0, Http = 1, Rtmp = 2, Rtsp = 3, Udp = 4, Rtp = 5, Ftp = 6 }
+	export enum MediaProtocol { File = 'File', Http = 'Http', Rtmp = 'Rtmp', Rtsp = 'Rtsp', Udp = 'Udp', Rtp = 'Rtp', Ftp = 'Ftp' }
 
-	export enum MediaSourceType { Default = 0, Grouping = 1, Placeholder = 2 }
+	export enum MediaSourceType { Default = 'Default', Grouping = 'Grouping', Placeholder = 'Placeholder' }
 
 
 	/** Media Update Info Dto. */
@@ -6509,7 +6509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetadataRefreshMode { None = 0, ValidationOnly = 1, Default = 2, FullRefresh = 3 }
+	export enum MetadataRefreshMode { None = 'None', ValidationOnly = 'ValidationOnly', Default = 'Default', FullRefresh = 'FullRefresh' }
 
 
 	/** Class MovePlaylistItemRequestDto. */
@@ -6832,9 +6832,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationDtoLevel { Normal = 0, Warning = 1, Error = 2 }
+	export enum NotificationDtoLevel { Normal = 'Normal', Warning = 'Warning', Error = 'Error' }
 
-	export enum NotificationLevel { Normal = 0, Warning = 1, Error = 2 }
+	export enum NotificationLevel { Normal = 'Normal', Warning = 'Warning', Error = 'Error' }
 
 
 	/** A list of notifications with the total record count for pagination. */
@@ -7345,13 +7345,13 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayAccess { Full = 0, None = 1 }
+	export enum PlayAccess { Full = 'Full', None = 'None' }
 
 
 	/** Enum PlayCommand. */
-	export enum PlayCommand { PlayNow = 0, PlayNext = 1, PlayLast = 2, PlayInstantMix = 3, PlayShuffle = 4 }
+	export enum PlayCommand { PlayNow = 'PlayNow', PlayNext = 'PlayNext', PlayLast = 'PlayLast', PlayInstantMix = 'PlayInstantMix', PlayShuffle = 'PlayShuffle' }
 
-	export enum PlayMethod { Transcode = 0, DirectStream = 1, DirectPlay = 2 }
+	export enum PlayMethod { Transcode = 'Transcode', DirectStream = 'DirectStream', DirectPlay = 'DirectPlay' }
 
 
 	/** Class PlayRequest. */
@@ -7434,7 +7434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaybackErrorCode { NotAllowed = 0, NoCompatibleStream = 1, RateLimitExceeded = 2 }
+	export enum PlaybackErrorCode { NotAllowed = 'NotAllowed', NoCompatibleStream = 'NoCompatibleStream', RateLimitExceeded = 'RateLimitExceeded' }
 
 
 	/** Plabyback info dto. */
@@ -7915,7 +7915,7 @@ export namespace MyNS {
 
 
 	/** Enum PlaystateCommand. */
-	export enum PlaystateCommand { Stop = 0, Pause = 1, Unpause = 2, NextTrack = 3, PreviousTrack = 4, Seek = 5, Rewind = 6, FastForward = 7, PlayPause = 8 }
+	export enum PlaystateCommand { Stop = 'Stop', Pause = 'Pause', Unpause = 'Unpause', NextTrack = 'NextTrack', PreviousTrack = 'PreviousTrack', Seek = 'Seek', Rewind = 'Rewind', FastForward = 'FastForward', PlayPause = 'PlayPause' }
 
 	export interface PlaystateRequest {
 
@@ -8008,7 +8008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PluginInfoStatus { Active = 0, Restart = 1, Deleted = 2, Superceded = 3, Malfunctioned = 4, NotSupported = 5, Disabled = 6 }
+	export enum PluginInfoStatus { Active = 'Active', Restart = 'Restart', Deleted = 'Deleted', Superceded = 'Superceded', Malfunctioned = 'Malfunctioned', NotSupported = 'NotSupported', Disabled = 'Disabled' }
 
 
 	/** Plugin security info. */
@@ -8040,7 +8040,7 @@ export namespace MyNS {
 
 
 	/** Plugin load status. */
-	export enum PluginStatus { Active = 0, Restart = 1, Deleted = 2, Superceded = 3, Malfunctioned = 4, NotSupported = 5, Disabled = 6 }
+	export enum PluginStatus { Active = 'Active', Restart = 'Restart', Deleted = 'Deleted', Superceded = 'Superceded', Malfunctioned = 'Malfunctioned', NotSupported = 'NotSupported', Disabled = 'Disabled' }
 
 
 	/** Class PreviousItemRequestDto. */
@@ -8088,11 +8088,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileConditionType { Equals = 0, NotEquals = 1, LessThanEqual = 2, GreaterThanEqual = 3, EqualsAny = 4 }
+	export enum ProfileConditionType { Equals = 'Equals', NotEquals = 'NotEquals', LessThanEqual = 'LessThanEqual', GreaterThanEqual = 'GreaterThanEqual', EqualsAny = 'EqualsAny' }
 
-	export enum ProfileConditionValue { AudioChannels = 0, AudioBitrate = 1, AudioProfile = 2, Width = 3, Height = 4, Has64BitOffsets = 5, PacketLength = 6, VideoBitDepth = 7, VideoBitrate = 8, VideoFramerate = 9, VideoLevel = 10, VideoProfile = 11, VideoTimestamp = 12, IsAnamorphic = 13, RefFrames = 14, NumAudioStreams = 15, NumVideoStreams = 16, IsSecondaryAudio = 17, VideoCodecTag = 18, IsAvc = 19, IsInterlaced = 20, AudioSampleRate = 21, AudioBitDepth = 22 }
+	export enum ProfileConditionValue { AudioChannels = 'AudioChannels', AudioBitrate = 'AudioBitrate', AudioProfile = 'AudioProfile', Width = 'Width', Height = 'Height', Has64BitOffsets = 'Has64BitOffsets', PacketLength = 'PacketLength', VideoBitDepth = 'VideoBitDepth', VideoBitrate = 'VideoBitrate', VideoFramerate = 'VideoFramerate', VideoLevel = 'VideoLevel', VideoProfile = 'VideoProfile', VideoTimestamp = 'VideoTimestamp', IsAnamorphic = 'IsAnamorphic', RefFrames = 'RefFrames', NumAudioStreams = 'NumAudioStreams', NumVideoStreams = 'NumVideoStreams', IsSecondaryAudio = 'IsSecondaryAudio', VideoCodecTag = 'VideoCodecTag', IsAvc = 'IsAvc', IsInterlaced = 'IsInterlaced', AudioSampleRate = 'AudioSampleRate', AudioBitDepth = 'AudioBitDepth' }
 
-	export enum ProgramAudio { Mono = 0, Stereo = 1, Dolby = 2, DolbyDigital = 3, Thx = 4, Atmos = 5 }
+	export enum ProgramAudio { Mono = 'Mono', Stereo = 'Stereo', Dolby = 'Dolby', DolbyDigital = 'DolbyDigital', Thx = 'Thx', Atmos = 'Atmos' }
 
 	export interface PublicSystemInfo {
 
@@ -8288,9 +8288,9 @@ export namespace MyNS {
 
 
 	/** Quick connect state. */
-	export enum QuickConnectState { Unavailable = 0, Available = 1, Active = 2 }
+	export enum QuickConnectState { Unavailable = 'Unavailable', Available = 'Available', Active = 'Active' }
 
-	export enum RatingType { Score = 0, Likes = 1 }
+	export enum RatingType { Score = 'Score', Likes = 'Likes' }
 
 
 	/** Class ReadyRequest. */
@@ -8354,11 +8354,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationDtoRecommendationType { SimilarToRecentlyPlayed = 0, SimilarToLikedItem = 1, HasDirectorFromRecentlyPlayed = 2, HasActorFromRecentlyPlayed = 3, HasLikedDirector = 4, HasLikedActor = 5 }
+	export enum RecommendationDtoRecommendationType { SimilarToRecentlyPlayed = 'SimilarToRecentlyPlayed', SimilarToLikedItem = 'SimilarToLikedItem', HasDirectorFromRecentlyPlayed = 'HasDirectorFromRecentlyPlayed', HasActorFromRecentlyPlayed = 'HasActorFromRecentlyPlayed', HasLikedDirector = 'HasLikedDirector', HasLikedActor = 'HasLikedActor' }
 
-	export enum RecommendationType { SimilarToRecentlyPlayed = 0, SimilarToLikedItem = 1, HasDirectorFromRecentlyPlayed = 2, HasActorFromRecentlyPlayed = 3, HasLikedDirector = 4, HasLikedActor = 5 }
+	export enum RecommendationType { SimilarToRecentlyPlayed = 'SimilarToRecentlyPlayed', SimilarToLikedItem = 'SimilarToLikedItem', HasDirectorFromRecentlyPlayed = 'HasDirectorFromRecentlyPlayed', HasActorFromRecentlyPlayed = 'HasActorFromRecentlyPlayed', HasLikedDirector = 'HasLikedDirector', HasLikedActor = 'HasLikedActor' }
 
-	export enum RecordingStatus { New = 0, InProgress = 1, Completed = 2, Cancelled = 3, ConflictedOk = 4, ConflictedNotOk = 5, Error = 6 }
+	export enum RecordingStatus { New = 'New', InProgress = 'InProgress', Completed = 'Completed', Cancelled = 'Cancelled', ConflictedOk = 'ConflictedOk', ConflictedNotOk = 'ConflictedNotOk', Error = 'Error' }
 
 
 	/** Class RemoteImageInfo. */
@@ -8581,7 +8581,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepeatMode { RepeatNone = 0, RepeatAll = 1, RepeatOne = 2 }
+	export enum RepeatMode { RepeatNone = 'RepeatNone', RepeatAll = 'RepeatAll', RepeatOne = 'RepeatOne' }
 
 
 	/** Class RepositoryInfo. */
@@ -8620,7 +8620,7 @@ export namespace MyNS {
 
 
 	/** An enum representing the axis that should be scrolled. */
-	export enum ScrollDirection { Horizontal = 0, Vertical = 1 }
+	export enum ScrollDirection { Horizontal = 'Horizontal', Vertical = 'Vertical' }
 
 
 	/** Class SearchHintResult. */
@@ -8912,11 +8912,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SendCommandCommand { Unpause = 0, Pause = 1, Stop = 2, Seek = 3 }
+	export enum SendCommandCommand { Unpause = 'Unpause', Pause = 'Pause', Stop = 'Stop', Seek = 'Seek' }
 
 
 	/** Enum SendCommandType. */
-	export enum SendCommandType { Unpause = 0, Pause = 1, Stop = 2, Seek = 3 }
+	export enum SendCommandType { Unpause = 'Unpause', Pause = 'Pause', Stop = 'Stop', Seek = 'Seek' }
 
 	export interface SeriesInfo {
 		IndexNumber?: number | null;
@@ -9012,7 +9012,7 @@ export namespace MyNS {
 
 
 	/** Enum SeriesStatus. */
-	export enum SeriesStatus { Continuing = 0, Ended = 1 }
+	export enum SeriesStatus { Continuing = 'Continuing', Ended = 'Ended' }
 
 
 	/** Class SeriesTimerInfoDto. */
@@ -9887,7 +9887,7 @@ export namespace MyNS {
 
 
 	/** An enum representing the sorting order. */
-	export enum SortOrder { Ascending = 0, Descending = 1 }
+	export enum SortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 
 	/** Special view option dto. */
@@ -10020,15 +10020,15 @@ export namespace MyNS {
 
 	}
 
-	export enum SubtitleDeliveryMethod { Encode = 0, Embed = 1, External = 2, Hls = 3 }
+	export enum SubtitleDeliveryMethod { Encode = 'Encode', Embed = 'Embed', External = 'External', Hls = 'Hls' }
 
 
 	/** An enum representing a subtitle playback mode. */
-	export enum SubtitlePlaybackMode { Default = 0, Always = 1, OnlyForced = 2, None = 3, Smart = 4 }
+	export enum SubtitlePlaybackMode { Default = 'Default', Always = 'Always', OnlyForced = 'OnlyForced', None = 'None', Smart = 'Smart' }
 
 
 	/** Enum SyncPlayUserAccessType. */
-	export enum SyncPlayUserAccessType { CreateAndJoinGroups = 0, JoinGroups = 1, None = 2 }
+	export enum SyncPlayUserAccessType { CreateAndJoinGroups = 'CreateAndJoinGroups', JoinGroups = 'JoinGroups', None = 'None' }
 
 
 	/** Class SystemInfo. */
@@ -10212,7 +10212,7 @@ export namespace MyNS {
 
 
 	/** Enum TaskCompletionStatus. */
-	export enum TaskCompletionStatus { Completed = 0, Failed = 1, Cancelled = 2, Aborted = 3 }
+	export enum TaskCompletionStatus { Completed = 'Completed', Failed = 'Failed', Cancelled = 'Cancelled', Aborted = 'Aborted' }
 
 
 	/** Class TaskInfo. */
@@ -10360,7 +10360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskInfoState { Idle = 0, Cancelling = 1, Running = 2 }
+	export enum TaskInfoState { Idle = 'Idle', Cancelling = 'Cancelling', Running = 'Running' }
 
 
 	/** Class TaskTriggerInfo. */
@@ -10409,7 +10409,7 @@ export namespace MyNS {
 
 
 	/** Enum TaskState. */
-	export enum TaskState { Idle = 0, Cancelling = 1, Running = 2 }
+	export enum TaskState { Idle = 'Idle', Cancelling = 'Cancelling', Running = 'Running' }
 
 	export interface TimerEventInfo {
 		Id?: string | null;
@@ -10731,9 +10731,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscodeSeekInfo { Auto = 0, Bytes = 1 }
+	export enum TranscodeSeekInfo { Auto = 'Auto', Bytes = 'Bytes' }
 
-	export enum TransportStreamTimestamp { None = 0, Zero = 1, Valid = 2 }
+	export enum TransportStreamTimestamp { None = 'None', Zero = 'Zero', Valid = 'Valid' }
 
 	export interface TunerHostInfo {
 		AllowHWTranscoding?: boolean | null;
@@ -11006,11 +11006,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Video3DFormat { HalfSideBySide = 0, FullSideBySide = 1, FullTopAndBottom = 2, HalfTopAndBottom = 3, MVC = 4 }
+	export enum Video3DFormat { HalfSideBySide = 'HalfSideBySide', FullSideBySide = 'FullSideBySide', FullTopAndBottom = 'FullTopAndBottom', HalfTopAndBottom = 'HalfTopAndBottom', MVC = 'MVC' }
 
 
 	/** Enum VideoType. */
-	export enum VideoType { VideoFile = 0, Iso = 1, Dvd = 2, BluRay = 3 }
+	export enum VideoType { VideoFile = 'VideoFile', Iso = 'Iso', Dvd = 'Dvd', BluRay = 'BluRay' }
 
 
 	/** Used to hold information about a user's list of configured virtual folders. */

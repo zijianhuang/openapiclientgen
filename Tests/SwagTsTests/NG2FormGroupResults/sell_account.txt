@@ -1656,7 +1656,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class Fulfillment_policyClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -1721,12 +1721,6 @@ export namespace MyNS {
 		GetFulfillmentPolicyByName(marketplace_id: string, name: string): Observable<FulfillmentPolicy> {
 			return this.http.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
-	}
-
-	@Injectable()
-	export class Payment_policyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method retrieves all the payment policies configured for the marketplace you specify using the marketplace_id query parameter. Marketplaces and locales Get the correct policies for a marketplace that supports multiple locales using the Content-Language request header. For example, get the policies for the French locale of the Canadian marketplace by specifying fr-CA for the Content-Language header. Likewise, target the Dutch locale of the Belgium marketplace by setting Content-Language: fr-BE. For details on header values, see HTTP request headers.
@@ -1789,12 +1783,6 @@ export namespace MyNS {
 		GetPaymentPolicyByName(marketplace_id: string, name: string): Observable<PaymentPolicy> {
 			return this.http.get<PaymentPolicy>(this.baseUri + 'payment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
-	}
-
-	@Injectable()
-	export class Payments_programClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method returns whether or not the user is opted-in to the payment program. Sellers opt-in to payment programs by marketplace and you must target a specific marketplace in your requests to this method using the marketplace_id path parameter.
@@ -1806,12 +1794,6 @@ export namespace MyNS {
 		GetPaymentsProgram(marketplace_id: string, payments_program_type: string): Observable<PaymentsProgramResponse> {
 			return this.http.get<PaymentsProgramResponse>(this.baseUri + 'payments_program/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/' + (payments_program_type == null ? '' : encodeURIComponent(payments_program_type)), {});
 		}
-	}
-
-	@Injectable()
-	export class PrivilegeClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method retrieves the seller's current set of privileges. The call returns whether or not the seller's eBay registration has been completed, as well as the details of their site-wide sellingLimt (the amount and quantity they can sell on a given day).
@@ -1820,12 +1802,6 @@ export namespace MyNS {
 		 */
 		GetPrivileges(): Observable<SellingPrivileges> {
 			return this.http.get<SellingPrivileges>(this.baseUri + 'privilege/', {});
-		}
-	}
-
-	@Injectable()
-	export class ProgramClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -1856,12 +1832,6 @@ export namespace MyNS {
 		OptOutOfProgram(requestBody: Program): Observable<string> {
 			return this.http.post(this.baseUri + 'program/opt_out', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class Rate_tableClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method retrieves a seller's shipping rate tables for the country specified in the country_code query parameter. If no country code is specified, the call returns all shipping rate tables that have been assigned a rateTableId (to assign an ID to an older rate table, call this method using the table's country code). The method's response includes a rateTableId for each table defined by the seller. Use a table's ID value in a fulfillment policy to specify the shipping rate table to use for that policy's DOMESTIC or INTERNATIONAL shipping option (make sure the locality of the rate table matches the optionType of the shipping option). Sellers can define up to 40 shipping rate tables for their account, which lets them set up different rate tables for each of the marketplaces they sell into. Go to My eBay &gt; Account &gt; Site Preferences to create and maintain the rate tables. For more, see Using shipping rate tables. If you're using the Trading API, use the rate table ID values in the RateTableDetails container of the Add/Revise/Relist calls. If the locality for a rate table is set to DOMESTIC, pass the ID value in the RateTableDetails.DomesticRateTableId field. Otherwise, if locality is INTERNATIONAL, pass the ID value in RateTableDetails.InternationalRateTableId. Note: For regions that are not yet ramped up with multi-rate table support, this method returns an ID that maps to the seller's default rate table for the country specified. Currently, only the US and AU marketplaces support the extended multi-rate table functionality.
@@ -1871,12 +1841,6 @@ export namespace MyNS {
 		 */
 		GetRateTables(country_code: string | null | undefined): Observable<RateTableResponse> {
 			return this.http.get<RateTableResponse>(this.baseUri + 'rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {});
-		}
-	}
-
-	@Injectable()
-	export class Return_policyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -1939,12 +1903,6 @@ export namespace MyNS {
 		 */
 		GetReturnPolicyByName(marketplace_id: string, name: string): Observable<ReturnPolicy> {
 			return this.http.get<ReturnPolicy>(this.baseUri + 'return_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
-		}
-	}
-
-	@Injectable()
-	export class Sales_taxClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

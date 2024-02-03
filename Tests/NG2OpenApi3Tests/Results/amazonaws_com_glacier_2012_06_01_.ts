@@ -152,9 +152,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionCode { ArchiveRetrieval = 0, InventoryRetrieval = 1, Select = 2 }
+	export enum ActionCode { ArchiveRetrieval = 'ArchiveRetrieval', InventoryRetrieval = 'InventoryRetrieval', Select = 'Select' }
 
-	export enum StatusCode { InProgress = 0, Succeeded = 1, Failed = 2 }
+	export enum StatusCode { InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Describes the options for a range inventory retrieval job. */
@@ -254,9 +254,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FileHeaderInfo { USE = 0, IGNORE = 1, NONE = 2 }
+	export enum FileHeaderInfo { USE = 'USE', IGNORE = 'IGNORE', NONE = 'NONE' }
 
-	export enum ExpressionType { SQL = 0 }
+	export enum ExpressionType { SQL = 'SQL' }
 
 
 	/** Describes how the select output is serialized. */
@@ -302,7 +302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuoteFields { ALWAYS = 0, ASNEEDED = 1 }
+	export enum QuoteFields { ALWAYS = 'ALWAYS', ASNEEDED = 'ASNEEDED' }
 
 
 	/** Contains information about the location where the select job results are stored. */
@@ -372,9 +372,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { 'aws:kms' = 0, AES256 = 1 }
+	export enum EncryptionType { 'aws:kms' = 'aws:kms', AES256 = 'AES256' }
 
-	export enum CannedACL { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'aws-exec-read' = 3, 'authenticated-read' = 4, 'bucket-owner-read' = 5, 'bucket-owner-full-control' = 6 }
+	export enum CannedACL { private = 'private', 'public-read' = 'public-read', 'public-read-write' = 'public-read-write', 'aws-exec-read' = 'aws-exec-read', 'authenticated-read' = 'authenticated-read', 'bucket-owner-read' = 'bucket-owner-read', 'bucket-owner-full-control' = 'bucket-owner-full-control' }
 
 
 	/** Contains information about a grant. */
@@ -427,9 +427,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { AmazonCustomerByEmail = 0, CanonicalUser = 1, Group = 2 }
+	export enum Type { AmazonCustomerByEmail = 'AmazonCustomerByEmail', CanonicalUser = 'CanonicalUser', Group = 'Group' }
 
-	export enum Permission { FULL_CONTROL = 0, WRITE = 1, WRITE_ACP = 2, READ = 3, READ_ACP = 4 }
+	export enum Permission { FULL_CONTROL = 'FULL_CONTROL', WRITE = 'WRITE', WRITE_ACP = 'WRITE_ACP', READ = 'READ', READ_ACP = 'READ_ACP' }
 
 	export interface Hashmap {
 	}
@@ -441,7 +441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageClass { STANDARD = 0, REDUCED_REDUNDANCY = 1, STANDARD_IA = 2 }
+	export enum StorageClass { STANDARD = 'STANDARD', REDUCED_REDUNDANCY = 'REDUCED_REDUNDANCY', STANDARD_IA = 'STANDARD_IA' }
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
@@ -1900,7 +1900,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddTagsToVaultOperation { add = 0 }
+	export enum AddTagsToVaultOperation { add = 'add' }
 
 	export interface AddTagsToVaultPostBody {
 
@@ -2043,7 +2043,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RemoveTagsFromVaultOperation { remove = 0 }
+	export enum RemoveTagsFromVaultOperation { remove = 'remove' }
 
 	export interface RemoveTagsFromVaultPostBody {
 

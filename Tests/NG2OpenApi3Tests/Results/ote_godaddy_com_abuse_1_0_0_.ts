@@ -134,7 +134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AbuseTicketType { A_RECORD = 0, CHILD_ABUSE = 1, CONTENT = 2, FRAUD_WIRE = 3, IP_BLOCK = 4, MALWARE = 5, NETWORK_ABUSE = 6, PHISHING = 7, SPAM = 8 }
+	export enum AbuseTicketType { A_RECORD = 'A_RECORD', CHILD_ABUSE = 'CHILD_ABUSE', CONTENT = 'CONTENT', FRAUD_WIRE = 'FRAUD_WIRE', IP_BLOCK = 'IP_BLOCK', MALWARE = 'MALWARE', NETWORK_ABUSE = 'NETWORK_ABUSE', PHISHING = 'PHISHING', SPAM = 'SPAM' }
 
 	export interface AbuseTicketCreate {
 

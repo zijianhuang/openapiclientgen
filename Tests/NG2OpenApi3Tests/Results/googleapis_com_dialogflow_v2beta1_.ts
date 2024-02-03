@@ -196,7 +196,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3InputAudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 0, AUDIO_ENCODING_LINEAR_16 = 1, AUDIO_ENCODING_FLAC = 2, AUDIO_ENCODING_MULAW = 3, AUDIO_ENCODING_AMR = 4, AUDIO_ENCODING_AMR_WB = 5, AUDIO_ENCODING_OGG_OPUS = 6, AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 7 }
+	export enum GoogleCloudDialogflowCxV3InputAudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 'AUDIO_ENCODING_UNSPECIFIED', AUDIO_ENCODING_LINEAR_16 = 'AUDIO_ENCODING_LINEAR_16', AUDIO_ENCODING_FLAC = 'AUDIO_ENCODING_FLAC', AUDIO_ENCODING_MULAW = 'AUDIO_ENCODING_MULAW', AUDIO_ENCODING_AMR = 'AUDIO_ENCODING_AMR', AUDIO_ENCODING_AMR_WB = 'AUDIO_ENCODING_AMR_WB', AUDIO_ENCODING_OGG_OPUS = 'AUDIO_ENCODING_OGG_OPUS', AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 'AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE' }
 
 
 	/** Configuration of the barge-in behavior. Barge-in instructs the API to return a detected utterance at a proper time while the client is playing back the response audio from a previous request. When the client sees the utterance, it should stop the playback and immediately get ready for receiving the responses for the current request. The barge-in handling requires the client to start streaming audio input as soon as it starts playing back the audio from the previous response. The playback is modeled into two phases: * No barge-in phase: which goes first and during which speech detection should not be carried out. * Barge-in phase: which follows the no barge-in phase and during which the API starts speech detection and may inform the client that an utterance has been detected. Note that no-speech event is not expected in this phase. The client provides this configuration in terms of the durations of those two phases. The durations are measured in terms of the audio length from the the start of the input audio. No-speech event is a response with END_OF_UTTERANCE without any transcript following up. */
@@ -226,7 +226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3InputAudioConfigModelVariant { SPEECH_MODEL_VARIANT_UNSPECIFIED = 0, USE_BEST_AVAILABLE = 1, USE_STANDARD = 2, USE_ENHANCED = 3 }
+	export enum GoogleCloudDialogflowCxV3InputAudioConfigModelVariant { SPEECH_MODEL_VARIANT_UNSPECIFIED = 'SPEECH_MODEL_VARIANT_UNSPECIFIED', USE_BEST_AVAILABLE = 'USE_BEST_AVAILABLE', USE_STANDARD = 'USE_STANDARD', USE_ENHANCED = 'USE_ENHANCED' }
 
 
 	/** Metadata returned for the TestCases.BatchRunTestCases long running operation. */
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3ResponseMessageResponseType { RESPONSE_TYPE_UNSPECIFIED = 0, ENTRY_PROMPT = 1, PARAMETER_PROMPT = 2, HANDLER_PROMPT = 3 }
+	export enum GoogleCloudDialogflowCxV3ResponseMessageResponseType { RESPONSE_TYPE_UNSPECIFIED = 'RESPONSE_TYPE_UNSPECIFIED', ENTRY_PROMPT = 'ENTRY_PROMPT', PARAMETER_PROMPT = 'PARAMETER_PROMPT', HANDLER_PROMPT = 'HANDLER_PROMPT' }
 
 
 	/** Represents the signal that telles the client to transfer the phone call connected to the agent to a third-party endpoint. */
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3DataStoreConnectionDataStoreType { DATA_STORE_TYPE_UNSPECIFIED = 0, PUBLIC_WEB = 1, UNSTRUCTURED = 2, STRUCTURED = 3 }
+	export enum GoogleCloudDialogflowCxV3DataStoreConnectionDataStoreType { DATA_STORE_TYPE_UNSPECIFIED = 'DATA_STORE_TYPE_UNSPECIFIED', PUBLIC_WEB = 'PUBLIC_WEB', UNSTRUCTURED = 'UNSTRUCTURED', STRUCTURED = 'STRUCTURED' }
 
 
 	/** A transition route specifies a intent that can be matched and/or a data condition that can be evaluated during a session. When a specified transition is matched, the following actions are taken in order: * If there is a `trigger_fulfillment` associated with the transition, it will be called. * If there is a `target_page` associated with the transition, the session will transition into the specified page. * If there is a `target_flow` associated with the transition, the session will transition into the specified flow. */
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3TestRunDifferenceType { DIFF_TYPE_UNSPECIFIED = 0, INTENT = 1, PAGE = 2, PARAMETERS = 3, UTTERANCE = 4, FLOW = 5 }
+	export enum GoogleCloudDialogflowCxV3TestRunDifferenceType { DIFF_TYPE_UNSPECIFIED = 'DIFF_TYPE_UNSPECIFIED', INTENT = 'INTENT', PAGE = 'PAGE', PARAMETERS = 'PARAMETERS', UTTERANCE = 'UTTERANCE', FLOW = 'FLOW' }
 
 
 	/** An intent represents a user's intent to interact with a conversational agent. You can provide information for the Dialogflow API to use to match user input to an intent by adding training phrases (i.e., examples of user input) to your intent. */
@@ -1557,7 +1557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3TestCaseResultTestResult { TEST_RESULT_UNSPECIFIED = 0, PASSED = 1, FAILED = 2 }
+	export enum GoogleCloudDialogflowCxV3TestCaseResultTestResult { TEST_RESULT_UNSPECIFIED = 'TEST_RESULT_UNSPECIFIED', PASSED = 'PASSED', FAILED = 'FAILED' }
 
 
 	/** Represents a result from running a test case in an agent environment. */
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3ContinuousTestResultResult { AGGREGATED_TEST_RESULT_UNSPECIFIED = 0, PASSED = 1, FAILED = 2 }
+	export enum GoogleCloudDialogflowCxV3ContinuousTestResultResult { AGGREGATED_TEST_RESULT_UNSPECIFIED = 'AGGREGATED_TEST_RESULT_UNSPECIFIED', PASSED = 'PASSED', FAILED = 'FAILED' }
 
 
 	/** This message is used to hold all the Conversation Signals data, which will be converted to JSON and exported to BigQuery. */
@@ -1730,7 +1730,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadataState { STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, DONE = 3 }
+	export enum GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', DONE = 'DONE' }
 
 
 	/** Metadata associated with the long running operation for Versions.CreateVersion. */
@@ -2052,9 +2052,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3WebhookGenericWebServiceHttpMethod { HTTP_METHOD_UNSPECIFIED = 0, POST = 1, GET = 2, HEAD = 3, PUT = 4, DELETE = 5, PATCH = 6, OPTIONS = 7 }
+	export enum GoogleCloudDialogflowCxV3WebhookGenericWebServiceHttpMethod { HTTP_METHOD_UNSPECIFIED = 'HTTP_METHOD_UNSPECIFIED', POST = 'POST', GET = 'GET', HEAD = 'HEAD', PUT = 'PUT', DELETE = 'DELETE', PATCH = 'PATCH', OPTIONS = 'OPTIONS' }
 
-	export enum GoogleCloudDialogflowCxV3WebhookGenericWebServiceWebhookType { WEBHOOK_TYPE_UNSPECIFIED = 0, STANDARD = 1, FLEXIBLE = 2 }
+	export enum GoogleCloudDialogflowCxV3WebhookGenericWebServiceWebhookType { WEBHOOK_TYPE_UNSPECIFIED = 'WEBHOOK_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', FLEXIBLE = 'FLEXIBLE' }
 
 
 	/** Represents configuration for a [Service Directory](https://cloud.google.com/service-directory) service. */
@@ -2589,7 +2589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfoState { PARAMETER_STATE_UNSPECIFIED = 0, EMPTY = 1, INVALID = 2, FILLED = 3 }
+	export enum GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfoState { PARAMETER_STATE_UNSPECIFIED = 'PARAMETER_STATE_UNSPECIFIED', EMPTY = 'EMPTY', INVALID = 'INVALID', FILLED = 'FILLED' }
 
 
 	/** Metadata for ReloadDocument operation. */
@@ -2993,7 +2993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponseMergeBehavior { MERGE_BEHAVIOR_UNSPECIFIED = 0, APPEND = 1, REPLACE = 2 }
+	export enum GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponseMergeBehavior { MERGE_BEHAVIOR_UNSPECIFIED = 'MERGE_BEHAVIOR_UNSPECIFIED', APPEND = 'APPEND', REPLACE = 'REPLACE' }
 
 
 	/** Hierarchical advanced settings for agent/flow/page/fulfillment/parameter. Settings exposed at lower level overrides the settings exposed at higher level. Overriding occurs at the sub-setting level. For example, the playback_interruption_settings at fulfillment level only overrides the playback_interruption_settings at the agent level, leaving other settings at the agent level unchanged. DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Hierarchy: Agent->Flow->Page->Fulfillment/Parameter. */
@@ -6033,7 +6033,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2ArticleSuggestionModelMetadataTrainingModelType { MODEL_TYPE_UNSPECIFIED = 0, SMART_REPLY_DUAL_ENCODER_MODEL = 1, SMART_REPLY_BERT_MODEL = 2 }
+	export enum GoogleCloudDialogflowV2ArticleSuggestionModelMetadataTrainingModelType { MODEL_TYPE_UNSPECIFIED = 'MODEL_TYPE_UNSPECIFIED', SMART_REPLY_DUAL_ENCODER_MODEL = 'SMART_REPLY_DUAL_ENCODER_MODEL', SMART_REPLY_BERT_MODEL = 'SMART_REPLY_BERT_MODEL' }
 
 
 	/** The response message for EntityTypes.BatchUpdateEntityTypes. */
@@ -6104,7 +6104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2EntityTypeAutoExpansionMode { AUTO_EXPANSION_MODE_UNSPECIFIED = 0, AUTO_EXPANSION_MODE_DEFAULT = 1 }
+	export enum GoogleCloudDialogflowV2EntityTypeAutoExpansionMode { AUTO_EXPANSION_MODE_UNSPECIFIED = 'AUTO_EXPANSION_MODE_UNSPECIFIED', AUTO_EXPANSION_MODE_DEFAULT = 'AUTO_EXPANSION_MODE_DEFAULT' }
 
 
 	/** An **entity entry** for an associated entity type. */
@@ -6130,7 +6130,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2EntityTypeKind { KIND_UNSPECIFIED = 0, KIND_MAP = 1, KIND_LIST = 2, KIND_REGEXP = 3 }
+	export enum GoogleCloudDialogflowV2EntityTypeKind { KIND_UNSPECIFIED = 'KIND_UNSPECIFIED', KIND_MAP = 'KIND_MAP', KIND_LIST = 'KIND_LIST', KIND_REGEXP = 'KIND_REGEXP' }
 
 
 	/** The response message for Intents.BatchUpdateIntents. */
@@ -6504,7 +6504,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardImageDisplayOptions { IMAGE_DISPLAY_OPTIONS_UNSPECIFIED = 0, GRAY = 1, WHITE = 2, CROPPED = 3, BLURRED_BACKGROUND = 4 }
+	export enum GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardImageDisplayOptions { IMAGE_DISPLAY_OPTIONS_UNSPECIFIED = 'IMAGE_DISPLAY_OPTIONS_UNSPECIFIED', GRAY = 'GRAY', WHITE = 'WHITE', CROPPED = 'CROPPED', BLURRED_BACKGROUND = 'BLURRED_BACKGROUND' }
 
 
 	/** Browsing carousel tile */
@@ -6575,7 +6575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlActionUrlTypeHint { URL_TYPE_HINT_UNSPECIFIED = 0, AMP_ACTION = 1, AMP_CONTENT = 2 }
+	export enum GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlActionUrlTypeHint { URL_TYPE_HINT_UNSPECIFIED = 'URL_TYPE_HINT_UNSPECIFIED', AMP_ACTION = 'AMP_ACTION', AMP_CONTENT = 'AMP_CONTENT' }
 
 
 	/** The card response message. */
@@ -6876,9 +6876,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2IntentMessageMediaContentMediaType { RESPONSE_MEDIA_TYPE_UNSPECIFIED = 0, AUDIO = 1 }
+	export enum GoogleCloudDialogflowV2IntentMessageMediaContentMediaType { RESPONSE_MEDIA_TYPE_UNSPECIFIED = 'RESPONSE_MEDIA_TYPE_UNSPECIFIED', AUDIO = 'AUDIO' }
 
-	export enum GoogleCloudDialogflowV2IntentMessagePlatform { PLATFORM_UNSPECIFIED = 0, FACEBOOK = 1, SLACK = 2, TELEGRAM = 3, KIK = 4, SKYPE = 5, LINE = 6, VIBER = 7, ACTIONS_ON_GOOGLE = 8, GOOGLE_HANGOUTS = 9 }
+	export enum GoogleCloudDialogflowV2IntentMessagePlatform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', FACEBOOK = 'FACEBOOK', SLACK = 'SLACK', TELEGRAM = 'TELEGRAM', KIK = 'KIK', SKYPE = 'SKYPE', LINE = 'LINE', VIBER = 'VIBER', ACTIONS_ON_GOOGLE = 'ACTIONS_ON_GOOGLE', GOOGLE_HANGOUTS = 'GOOGLE_HANGOUTS' }
 
 
 	/** The quick replies response message. */
@@ -7062,7 +7062,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2IntentMessageColumnPropertiesHorizontalAlignment { HORIZONTAL_ALIGNMENT_UNSPECIFIED = 0, LEADING = 1, CENTER = 2, TRAILING = 3 }
+	export enum GoogleCloudDialogflowV2IntentMessageColumnPropertiesHorizontalAlignment { HORIZONTAL_ALIGNMENT_UNSPECIFIED = 'HORIZONTAL_ALIGNMENT_UNSPECIFIED', LEADING = 'LEADING', CENTER = 'CENTER', TRAILING = 'TRAILING' }
 
 
 	/** Row of TableCard. */
@@ -7307,9 +7307,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2IntentTrainingPhraseType { TYPE_UNSPECIFIED = 0, EXAMPLE = 1, TEMPLATE = 2 }
+	export enum GoogleCloudDialogflowV2IntentTrainingPhraseType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', EXAMPLE = 'EXAMPLE', TEMPLATE = 'TEMPLATE' }
 
-	export enum GoogleCloudDialogflowV2IntentWebhookState { WEBHOOK_STATE_UNSPECIFIED = 0, WEBHOOK_STATE_ENABLED = 1, WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING = 2 }
+	export enum GoogleCloudDialogflowV2IntentWebhookState { WEBHOOK_STATE_UNSPECIFIED = 'WEBHOOK_STATE_UNSPECIFIED', WEBHOOK_STATE_ENABLED = 'WEBHOOK_STATE_ENABLED', WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING = 'WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING' }
 
 
 	/** Metadata for a ConversationProfile.ClearSuggestionFeatureConfig operation. */
@@ -7353,9 +7353,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadataParticipantRole { ROLE_UNSPECIFIED = 0, HUMAN_AGENT = 1, AUTOMATED_AGENT = 2, END_USER = 3 }
+	export enum GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadataParticipantRole { ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED', HUMAN_AGENT = 'HUMAN_AGENT', AUTOMATED_AGENT = 'AUTOMATED_AGENT', END_USER = 'END_USER' }
 
-	export enum GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { TYPE_UNSPECIFIED = 0, ARTICLE_SUGGESTION = 1, FAQ = 2, SMART_REPLY = 3, KNOWLEDGE_SEARCH = 4 }
+	export enum GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ARTICLE_SUGGESTION = 'ARTICLE_SUGGESTION', FAQ = 'FAQ', SMART_REPLY = 'SMART_REPLY', KNOWLEDGE_SEARCH = 'KNOWLEDGE_SEARCH' }
 
 
 	/** Represents a notification sent to Pub/Sub subscribers for conversation lifecycle events. */
@@ -7529,7 +7529,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2ConversationEventType { TYPE_UNSPECIFIED = 0, CONVERSATION_STARTED = 1, CONVERSATION_FINISHED = 2, HUMAN_INTERVENTION_NEEDED = 3, NEW_MESSAGE = 4, UNRECOVERABLE_ERROR = 5 }
+	export enum GoogleCloudDialogflowV2ConversationEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CONVERSATION_STARTED = 'CONVERSATION_STARTED', CONVERSATION_FINISHED = 'CONVERSATION_FINISHED', HUMAN_INTERVENTION_NEEDED = 'HUMAN_INTERVENTION_NEEDED', NEW_MESSAGE = 'NEW_MESSAGE', UNRECOVERABLE_ERROR = 'UNRECOVERABLE_ERROR' }
 
 
 	/** Represents a conversation model. */
@@ -7631,7 +7631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2ConversationModelState { STATE_UNSPECIFIED = 0, CREATING = 1, UNDEPLOYED = 2, DEPLOYING = 3, DEPLOYED = 4, UNDEPLOYING = 5, DELETING = 6, FAILED = 7, PENDING = 8 }
+	export enum GoogleCloudDialogflowV2ConversationModelState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', UNDEPLOYED = 'UNDEPLOYED', DEPLOYING = 'DEPLOYING', DEPLOYED = 'DEPLOYED', UNDEPLOYING = 'UNDEPLOYING', DELETING = 'DELETING', FAILED = 'FAILED', PENDING = 'PENDING' }
 
 
 	/** Metadata for ConversationDatasets. */
@@ -7696,7 +7696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadataState { STATE_UNSPECIFIED = 0, INITIALIZING = 1, RUNNING = 2, CANCELLED = 3, SUCCEEDED = 4, FAILED = 5 }
+	export enum GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INITIALIZING = 'INITIALIZING', RUNNING = 'RUNNING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Metadata for a ConversationModels.CreateConversationModel operation. */
@@ -7733,7 +7733,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2CreateConversationModelOperationMetadataState { STATE_UNSPECIFIED = 0, PENDING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4, CANCELLING = 5, TRAINING = 6 }
+	export enum GoogleCloudDialogflowV2CreateConversationModelOperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', CANCELLING = 'CANCELLING', TRAINING = 'TRAINING' }
 
 
 	/** Metadata for ConversationDatasets. */
@@ -8430,7 +8430,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2SessionEntityTypeEntityOverrideMode { ENTITY_OVERRIDE_MODE_UNSPECIFIED = 0, ENTITY_OVERRIDE_MODE_OVERRIDE = 1, ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2 }
+	export enum GoogleCloudDialogflowV2SessionEntityTypeEntityOverrideMode { ENTITY_OVERRIDE_MODE_UNSPECIFIED = 'ENTITY_OVERRIDE_MODE_UNSPECIFIED', ENTITY_OVERRIDE_MODE_OVERRIDE = 'ENTITY_OVERRIDE_MODE_OVERRIDE', ENTITY_OVERRIDE_MODE_SUPPLEMENT = 'ENTITY_OVERRIDE_MODE_SUPPLEMENT' }
 
 
 	/** Metadata for a ConversationProfile.SetSuggestionFeatureConfig operation. */
@@ -8677,11 +8677,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1AgentApiVersion { API_VERSION_UNSPECIFIED = 0, API_VERSION_V1 = 1, API_VERSION_V2 = 2, API_VERSION_V2_BETA_1 = 3 }
+	export enum GoogleCloudDialogflowV2beta1AgentApiVersion { API_VERSION_UNSPECIFIED = 'API_VERSION_UNSPECIFIED', API_VERSION_V1 = 'API_VERSION_V1', API_VERSION_V2 = 'API_VERSION_V2', API_VERSION_V2_BETA_1 = 'API_VERSION_V2_BETA_1' }
 
-	export enum GoogleCloudDialogflowV2beta1AgentMatchMode { MATCH_MODE_UNSPECIFIED = 0, MATCH_MODE_HYBRID = 1, MATCH_MODE_ML_ONLY = 2 }
+	export enum GoogleCloudDialogflowV2beta1AgentMatchMode { MATCH_MODE_UNSPECIFIED = 'MATCH_MODE_UNSPECIFIED', MATCH_MODE_HYBRID = 'MATCH_MODE_HYBRID', MATCH_MODE_ML_ONLY = 'MATCH_MODE_ML_ONLY' }
 
-	export enum GoogleCloudDialogflowV2beta1AgentTier { TIER_UNSPECIFIED = 0, TIER_STANDARD = 1, TIER_ENTERPRISE = 2, TIER_ENTERPRISE_PLUS = 3 }
+	export enum GoogleCloudDialogflowV2beta1AgentTier { TIER_UNSPECIFIED = 'TIER_UNSPECIFIED', TIER_STANDARD = 'TIER_STANDARD', TIER_ENTERPRISE = 'TIER_ENTERPRISE', TIER_ENTERPRISE_PLUS = 'TIER_ENTERPRISE_PLUS' }
 
 
 	/** Detail feedback of Agent Assistant result. */
@@ -8724,11 +8724,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1AgentAssistantFeedbackAnswerRelevance { ANSWER_RELEVANCE_UNSPECIFIED = 0, IRRELEVANT = 1, RELEVANT = 2 }
+	export enum GoogleCloudDialogflowV2beta1AgentAssistantFeedbackAnswerRelevance { ANSWER_RELEVANCE_UNSPECIFIED = 'ANSWER_RELEVANCE_UNSPECIFIED', IRRELEVANT = 'IRRELEVANT', RELEVANT = 'RELEVANT' }
 
-	export enum GoogleCloudDialogflowV2beta1AgentAssistantFeedbackDocumentCorrectness { DOCUMENT_CORRECTNESS_UNSPECIFIED = 0, INCORRECT = 1, CORRECT = 2 }
+	export enum GoogleCloudDialogflowV2beta1AgentAssistantFeedbackDocumentCorrectness { DOCUMENT_CORRECTNESS_UNSPECIFIED = 'DOCUMENT_CORRECTNESS_UNSPECIFIED', INCORRECT = 'INCORRECT', CORRECT = 'CORRECT' }
 
-	export enum GoogleCloudDialogflowV2beta1AgentAssistantFeedbackDocumentEfficiency { DOCUMENT_EFFICIENCY_UNSPECIFIED = 0, INEFFICIENT = 1, EFFICIENT = 2 }
+	export enum GoogleCloudDialogflowV2beta1AgentAssistantFeedbackDocumentEfficiency { DOCUMENT_EFFICIENCY_UNSPECIFIED = 'DOCUMENT_EFFICIENCY_UNSPECIFIED', INEFFICIENT = 'INEFFICIENT', EFFICIENT = 'EFFICIENT' }
 
 
 	/** Feedback for knowledge search. */
@@ -9623,7 +9623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1IntentMessagePlatform { PLATFORM_UNSPECIFIED = 0, FACEBOOK = 1, SLACK = 2, TELEGRAM = 3, KIK = 4, SKYPE = 5, LINE = 6, VIBER = 7, ACTIONS_ON_GOOGLE = 8, TELEPHONY = 9, GOOGLE_HANGOUTS = 10 }
+	export enum GoogleCloudDialogflowV2beta1IntentMessagePlatform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', FACEBOOK = 'FACEBOOK', SLACK = 'SLACK', TELEGRAM = 'TELEGRAM', KIK = 'KIK', SKYPE = 'SKYPE', LINE = 'LINE', VIBER = 'VIBER', ACTIONS_ON_GOOGLE = 'ACTIONS_ON_GOOGLE', TELEPHONY = 'TELEPHONY', GOOGLE_HANGOUTS = 'GOOGLE_HANGOUTS' }
 
 
 	/** The quick replies response message. */
@@ -9742,7 +9742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMediaHeight { HEIGHT_UNSPECIFIED = 0, SHORT = 1, MEDIUM = 2, TALL = 3 }
+	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMediaHeight { HEIGHT_UNSPECIFIED = 'HEIGHT_UNSPECIFIED', SHORT = 'SHORT', MEDIUM = 'MEDIUM', TALL = 'TALL' }
 
 
 	/** Rich Business Messaging (RBM) suggestion. Suggestions allow user to easily select/click a predefined response or perform an action (like opening a web uri). */
@@ -9885,7 +9885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCardCardWidth { CARD_WIDTH_UNSPECIFIED = 0, SMALL = 1, MEDIUM = 2 }
+	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCardCardWidth { CARD_WIDTH_UNSPECIFIED = 'CARD_WIDTH_UNSPECIFIED', SMALL = 'SMALL', MEDIUM = 'MEDIUM' }
 
 
 	/** Standalone Rich Business Messaging (RBM) rich card. Rich cards allow you to respond to users with more vivid content, e.g. with media and suggestions. You can group multiple rich cards into one using RbmCarouselCard but carousel cards will give you less control over the card layout. */
@@ -9918,9 +9918,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCardCardOrientation { CARD_ORIENTATION_UNSPECIFIED = 0, HORIZONTAL = 1, VERTICAL = 2 }
+	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCardCardOrientation { CARD_ORIENTATION_UNSPECIFIED = 'CARD_ORIENTATION_UNSPECIFIED', HORIZONTAL = 'HORIZONTAL', VERTICAL = 'VERTICAL' }
 
-	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCardThumbnailImageAlignment { THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED = 0, LEFT = 1, RIGHT = 2 }
+	export enum GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCardThumbnailImageAlignment { THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED = 'THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED', LEFT = 'LEFT', RIGHT = 'RIGHT' }
 
 
 	/** Rich Business Messaging (RBM) text response with suggestions. */
@@ -10640,7 +10640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswerMatchConfidenceLevel { MATCH_CONFIDENCE_LEVEL_UNSPECIFIED = 0, LOW = 1, MEDIUM = 2, HIGH = 3 }
+	export enum GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswerMatchConfidenceLevel { MATCH_CONFIDENCE_LEVEL_UNSPECIFIED = 'MATCH_CONFIDENCE_LEVEL_UNSPECIFIED', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 
 	/** The result of sentiment analysis. Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. For Participants.DetectIntent, it needs to be configured in DetectIntentRequest.query_params. For Participants.StreamingDetectIntent, it needs to be configured in StreamingDetectIntentRequest.query_params. And for Participants.AnalyzeContent and Participants.StreamingAnalyzeContent, it needs to be configured in ConversationProfile.human_agent_assistant_config */
@@ -11254,7 +11254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1OutputAudioConfigAudioEncoding { OUTPUT_AUDIO_ENCODING_UNSPECIFIED = 0, OUTPUT_AUDIO_ENCODING_LINEAR_16 = 1, OUTPUT_AUDIO_ENCODING_MP3 = 2, OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 3, OUTPUT_AUDIO_ENCODING_OGG_OPUS = 4, OUTPUT_AUDIO_ENCODING_MULAW = 5 }
+	export enum GoogleCloudDialogflowV2beta1OutputAudioConfigAudioEncoding { OUTPUT_AUDIO_ENCODING_UNSPECIFIED = 'OUTPUT_AUDIO_ENCODING_UNSPECIFIED', OUTPUT_AUDIO_ENCODING_LINEAR_16 = 'OUTPUT_AUDIO_ENCODING_LINEAR_16', OUTPUT_AUDIO_ENCODING_MP3 = 'OUTPUT_AUDIO_ENCODING_MP3', OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 'OUTPUT_AUDIO_ENCODING_MP3_64_KBPS', OUTPUT_AUDIO_ENCODING_OGG_OPUS = 'OUTPUT_AUDIO_ENCODING_OGG_OPUS', OUTPUT_AUDIO_ENCODING_MULAW = 'OUTPUT_AUDIO_ENCODING_MULAW' }
 
 
 	/** Configuration of how speech should be synthesized. */
@@ -11325,7 +11325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1VoiceSelectionParamsSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 0, SSML_VOICE_GENDER_MALE = 1, SSML_VOICE_GENDER_FEMALE = 2, SSML_VOICE_GENDER_NEUTRAL = 3 }
+	export enum GoogleCloudDialogflowV2beta1VoiceSelectionParamsSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 'SSML_VOICE_GENDER_UNSPECIFIED', SSML_VOICE_GENDER_MALE = 'SSML_VOICE_GENDER_MALE', SSML_VOICE_GENDER_FEMALE = 'SSML_VOICE_GENDER_FEMALE', SSML_VOICE_GENDER_NEUTRAL = 'SSML_VOICE_GENDER_NEUTRAL' }
 
 
 	/** Represents the selection of a suggestion. */
@@ -11532,7 +11532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1AutomatedAgentReplyAutomatedAgentReplyType { AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED = 0, PARTIAL = 1, FINAL = 2 }
+	export enum GoogleCloudDialogflowV2beta1AutomatedAgentReplyAutomatedAgentReplyType { AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED = 'AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED', PARTIAL = 'PARTIAL', FINAL = 'FINAL' }
 
 
 	/** The message returned from the DetectIntent method. */
@@ -12158,7 +12158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1AnswerFeedbackCorrectnessLevel { CORRECTNESS_LEVEL_UNSPECIFIED = 0, NOT_CORRECT = 1, PARTIALLY_CORRECT = 2, FULLY_CORRECT = 3 }
+	export enum GoogleCloudDialogflowV2beta1AnswerFeedbackCorrectnessLevel { CORRECTNESS_LEVEL_UNSPECIFIED = 'CORRECTNESS_LEVEL_UNSPECIFIED', NOT_CORRECT = 'NOT_CORRECT', PARTIALLY_CORRECT = 'PARTIALLY_CORRECT', FULLY_CORRECT = 'FULLY_CORRECT' }
 
 
 	/** Answer records are records to manage answer history and feedbacks for Dialogflow. Currently, answer record includes: - human agent assistant article suggestion - human agent assistant faq article It doesn't include: - `DetectIntent` intent matching - `DetectIntent` knowledge Answer records are not related to the conversation history in the Dialogflow Console. A Record is generated even when the end-user disables conversation history in the console. Records are created when there's a human agent assistant suggestion generated. A typical workflow for customers provide feedback to an answer is: 1. For human agent assistant, customers get suggestion via ListSuggestions API. Together with the answers, AnswerRecord.name are returned to the customers. 2. The customer uses the AnswerRecord.name to call the UpdateAnswerRecord method to send feedback about a specific answer that they believe is wrong. */
@@ -12572,7 +12572,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1BatchUpdateIntentsRequestIntentView { INTENT_VIEW_UNSPECIFIED = 0, INTENT_VIEW_FULL = 1 }
+	export enum GoogleCloudDialogflowV2beta1BatchUpdateIntentsRequestIntentView { INTENT_VIEW_UNSPECIFIED = 'INTENT_VIEW_UNSPECIFIED', INTENT_VIEW_FULL = 'INTENT_VIEW_FULL' }
 
 
 	/** The response message for Intents.BatchUpdateIntents. */
@@ -12633,7 +12633,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { TYPE_UNSPECIFIED = 0, ARTICLE_SUGGESTION = 1, FAQ = 2, SMART_REPLY = 3, DIALOGFLOW_ASSIST = 4, CONVERSATION_SUMMARIZATION = 5, KNOWLEDGE_SEARCH = 6 }
+	export enum GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ARTICLE_SUGGESTION = 'ARTICLE_SUGGESTION', FAQ = 'FAQ', SMART_REPLY = 'SMART_REPLY', DIALOGFLOW_ASSIST = 'DIALOGFLOW_ASSIST', CONVERSATION_SUMMARIZATION = 'CONVERSATION_SUMMARIZATION', KNOWLEDGE_SEARCH = 'KNOWLEDGE_SEARCH' }
 
 
 	/** The request message for ConversationProfiles.ClearFeature. */
@@ -12937,9 +12937,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1ConversationConversationStage { CONVERSATION_STAGE_UNSPECIFIED = 0, VIRTUAL_AGENT_STAGE = 1, HUMAN_ASSIST_STAGE = 2 }
+	export enum GoogleCloudDialogflowV2beta1ConversationConversationStage { CONVERSATION_STAGE_UNSPECIFIED = 'CONVERSATION_STAGE_UNSPECIFIED', VIRTUAL_AGENT_STAGE = 'VIRTUAL_AGENT_STAGE', HUMAN_ASSIST_STAGE = 'HUMAN_ASSIST_STAGE' }
 
-	export enum GoogleCloudDialogflowV2beta1ConversationLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
+	export enum GoogleCloudDialogflowV2beta1ConversationLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 'LIFECYCLE_STATE_UNSPECIFIED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 
 	/** Represents a phone number for telephony integration. It allows for connecting a particular conversation over telephony. */
@@ -13511,7 +13511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1NotificationConfigMessageFormat { MESSAGE_FORMAT_UNSPECIFIED = 0, PROTO = 1, JSON = 2 }
+	export enum GoogleCloudDialogflowV2beta1NotificationConfigMessageFormat { MESSAGE_FORMAT_UNSPECIFIED = 'MESSAGE_FORMAT_UNSPECIFIED', PROTO = 'PROTO', JSON = 'JSON' }
 
 
 	/** Defines the hand off to a live agent, typically on which external agent service provider to connect to a conversation. Currently, this feature is not general available, please contact Google to get access. */
@@ -13839,7 +13839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1DocumentState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, UPDATING = 3, RELOADING = 4, DELETING = 5 }
+	export enum GoogleCloudDialogflowV2beta1DocumentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', RELOADING = 'RELOADING', DELETING = 'DELETING' }
 
 
 	/** You can create multiple versions of your agent and publish them to separate environments. When you edit an agent, you are editing the draft agent. At any point, you can save the draft agent as an agent version, which is an immutable snapshot of your agent. When you save the draft agent, it is published to the default environment. When you create agent versions, you can publish them to custom environments. You can create a variety of custom environments for: - testing - development - production - etc. For more information, see the [versions and environments guide](https://cloud.google.com/dialogflow/docs/agents-versions). */
@@ -13958,7 +13958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1FulfillmentFeatureType { TYPE_UNSPECIFIED = 0, SMALLTALK = 1 }
+	export enum GoogleCloudDialogflowV2beta1FulfillmentFeatureType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', SMALLTALK = 'SMALLTALK' }
 
 
 	/** Represents configuration for a generic web service. Dialogflow supports two mechanisms for authentications: - Basic authentication with username and password. - Authentication with additional authentication headers. More information could be found at: https://cloud.google.com/dialogflow/docs/fulfillment-configure. */
@@ -14009,7 +14009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1EnvironmentState { STATE_UNSPECIFIED = 0, STOPPED = 1, LOADING = 2, RUNNING = 3 }
+	export enum GoogleCloudDialogflowV2beta1EnvironmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STOPPED = 'STOPPED', LOADING = 'LOADING', RUNNING = 'RUNNING' }
 
 
 	/** Instructs the speech synthesizer on how to generate the output audio content. */
@@ -14988,7 +14988,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1VersionStatus { VERSION_STATUS_UNSPECIFIED = 0, IN_PROGRESS = 1, READY = 2, FAILED = 3 }
+	export enum GoogleCloudDialogflowV2beta1VersionStatus { VERSION_STATUS_UNSPECIFIED = 'VERSION_STATUS_UNSPECIFIED', IN_PROGRESS = 'IN_PROGRESS', READY = 'READY', FAILED = 'FAILED' }
 
 
 	/** Represents the contents of the original request that was passed to the `[Streaming]DetectIntent` call. */
@@ -15174,7 +15174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1SearchKnowledgeAnswerAnswerType { ANSWER_TYPE_UNSPECIFIED = 0, FAQ = 1, GENERATIVE = 2, INTENT = 3 }
+	export enum GoogleCloudDialogflowV2beta1SearchKnowledgeAnswerAnswerType { ANSWER_TYPE_UNSPECIFIED = 'ANSWER_TYPE_UNSPECIFIED', FAQ = 'FAQ', GENERATIVE = 'GENERATIVE', INTENT = 'INTENT' }
 
 
 	/** The request message for Conversations.SearchKnowledge. */
@@ -15560,7 +15560,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDialogflowV2beta1ValidationErrorSeverity { SEVERITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ERROR = 3, CRITICAL = 4 }
+	export enum GoogleCloudDialogflowV2beta1ValidationErrorSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', INFO = 'INFO', WARNING = 'WARNING', ERROR = 'ERROR', CRITICAL = 'CRITICAL' }
 
 
 	/** Represents the output of agent validation. */

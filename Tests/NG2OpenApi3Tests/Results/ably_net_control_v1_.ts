@@ -28,7 +28,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Amqp_external_rule_patchRuleType { 'amqp/external' = 0 }
+	export enum Amqp_external_rule_patchRuleType { 'amqp/external' = 'amqp/external' }
 
 	export interface Rule_source_patch {
 		channelFilter?: string | null;
@@ -364,7 +364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Amqp_rule_patchRuleType { amqp = 0 }
+	export enum Amqp_rule_patchRuleType { amqp = 'amqp' }
 
 	export interface Amqp_rule_patchTarget {
 		enveloped?: boolean | null;
@@ -720,7 +720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Aws_access_keysAuthenticationMode { credentials = 0 }
+	export enum Aws_access_keysAuthenticationMode { credentials = 'credentials' }
 
 	export interface Aws_access_keys_response {
 		accessKeyId?: string | null;
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Aws_assume_roleAuthenticationMode { assumeRole = 0 }
+	export enum Aws_assume_roleAuthenticationMode { assumeRole = 'assumeRole' }
 
 	export interface Aws_kinesis_rule_patch {
 		requestMode?: string | null;
@@ -785,7 +785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Aws_kinesis_rule_patchRuleType { 'aws/kinesis' = 0 }
+	export enum Aws_kinesis_rule_patchRuleType { 'aws/kinesis' = 'aws/kinesis' }
 
 	export interface Aws_kinesis_rule_patchTarget {
 		authentication?: Aws_access_keys;
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Aws_lambda_rule_patchRuleType { 'aws/lambda' = 0 }
+	export enum Aws_lambda_rule_patchRuleType { 'aws/lambda' = 'aws/lambda' }
 
 	export interface Aws_lambda_rule_patchTarget {
 
@@ -1214,7 +1214,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Aws_sqs_rule_patchRuleType { 'aws/sqs' = 0 }
+	export enum Aws_sqs_rule_patchRuleType { 'aws/sqs' = 'aws/sqs' }
 
 	export interface Aws_sqs_rule_patchTarget {
 		authentication?: Aws_access_keys;
@@ -1431,7 +1431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Azure_function_rule_patchRuleType { 'http/azure-function' = 0 }
+	export enum Azure_function_rule_patchRuleType { 'http/azure-function' = 'http/azure-function' }
 
 	export interface Azure_function_rule_patchTarget {
 		azureAppId?: string | null;
@@ -1684,7 +1684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Cloudflare_worker_rule_patchRuleType { 'http/cloudflare-worker' = 0 }
+	export enum Cloudflare_worker_rule_patchRuleType { 'http/cloudflare-worker' = 'http/cloudflare-worker' }
 
 	export interface Cloudflare_worker_rule_patchTarget {
 		Cloudflare_worker_rule_patchTargetHeaders?: Array<Cloudflare_worker_rule_patchTargetHeaders>;
@@ -1943,7 +1943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Google_cloud_function_rule_patchRuleType { 'http/google-cloud-function' = 0 }
+	export enum Google_cloud_function_rule_patchRuleType { 'http/google-cloud-function' = 'http/google-cloud-function' }
 
 	export interface Google_cloud_function_rule_patchTarget {
 		enveloped?: boolean | null;
@@ -2213,7 +2213,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Http_rule_patchRuleType { http = 0 }
+	export enum Http_rule_patchRuleType { http = 'http' }
 
 	export interface Http_rule_patchTarget {
 		enveloped?: boolean | null;
@@ -2457,7 +2457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ifttt_rule_patchRuleType { 'http/ifttt' = 0 }
+	export enum Ifttt_rule_patchRuleType { 'http/ifttt' = 'http/ifttt' }
 
 	export interface Ifttt_rule_patchTarget {
 		eventName?: string | null;
@@ -2632,7 +2632,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Kafka_rule_patchRuleType { kafka = 0 }
+	export enum Kafka_rule_patchRuleType { kafka = 'kafka' }
 
 	export interface Kafka_rule_patchTarget {
 		auth?: Kafka_rule_patchTargetAuth;
@@ -2685,7 +2685,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Kafka_rule_patchTargetAuthSaslMechanism { plain = 0, 'scram-sha-256' = 1, 'scram-sha-512' = 2 }
+	export enum Kafka_rule_patchTargetAuthSaslMechanism { plain = 'plain', 'scram-sha-256' = 'scram-sha-256', 'scram-sha-512' = 'scram-sha-512' }
 
 	export interface Kafka_rule_post {
 
@@ -3179,7 +3179,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Pulsar_rule_patchRuleType { pulsar = 0 }
+	export enum Pulsar_rule_patchRuleType { pulsar = 'pulsar' }
 
 	export interface Pulsar_rule_patchTarget {
 		authentication?: Pulsar_token_auth;
@@ -3232,7 +3232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Pulsar_token_authAuthenticationMode { token = 0 }
+	export enum Pulsar_token_authAuthenticationMode { token = 'token' }
 
 	export interface Pulsar_rule_post {
 
@@ -3615,7 +3615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Unsupported_rule_responseRuleType { unsupported = 0 }
+	export enum Unsupported_rule_responseRuleType { unsupported = 'unsupported' }
 
 	export interface Unsupported_rule_responseTarget {
 
@@ -3659,7 +3659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Zapier_rule_patchRuleType { 'http/zapier' = 0 }
+	export enum Zapier_rule_patchRuleType { 'http/zapier' = 'http/zapier' }
 
 	export interface Zapier_rule_patchTarget {
 		Zapier_rule_patchTargetHeaders?: Array<Zapier_rule_patchTargetHeaders>;

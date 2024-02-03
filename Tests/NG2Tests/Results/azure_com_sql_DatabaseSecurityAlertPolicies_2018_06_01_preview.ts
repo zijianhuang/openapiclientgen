@@ -112,7 +112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityAlertPolicyPropertiesState { New = 0, Enabled = 1, Disabled = 2 }
+	export enum SecurityAlertPolicyPropertiesState { New = 'New', Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	@Injectable()
 	export class MyClient {
@@ -165,7 +165,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DatabaseSecurityAlertPolicies_GetSecurityAlertPolicyName { default = 0 }
+	export enum DatabaseSecurityAlertPolicies_GetSecurityAlertPolicyName { default = 'default' }
 
 }
 

@@ -200,7 +200,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextStyleBaselineOffset { BASELINE_OFFSET_UNSPECIFIED = 0, NONE = 1, SUPERSCRIPT = 2, SUBSCRIPT = 3 }
+	export enum TextStyleBaselineOffset { BASELINE_OFFSET_UNSPECIFIED = 'BASELINE_OFFSET_UNSPECIFIED', NONE = 'NONE', SUPERSCRIPT = 'SUPERSCRIPT', SUBSCRIPT = 'SUBSCRIPT' }
 
 
 	/** A magnitude in a single direction in the specified units. */
@@ -230,7 +230,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionUnit { UNIT_UNSPECIFIED = 0, PT = 1 }
+	export enum DimensionUnit { UNIT_UNSPECIFIED = 'UNIT_UNSPECIFIED', PT = 'PT' }
 
 
 	/** A reference to another portion of a document or an external URL resource. */
@@ -386,7 +386,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoTextType { TYPE_UNSPECIFIED = 0, PAGE_NUMBER = 1, PAGE_COUNT = 2 }
+	export enum AutoTextType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PAGE_NUMBER = 'PAGE_NUMBER', PAGE_COUNT = 'PAGE_COUNT' }
 
 
 	/** Represents the background of a document. */
@@ -611,7 +611,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateFooterRequestType { HEADER_FOOTER_TYPE_UNSPECIFIED = 0, DEFAULT = 1 }
+	export enum CreateFooterRequestType { HEADER_FOOTER_TYPE_UNSPECIFIED = 'HEADER_FOOTER_TYPE_UNSPECIFIED', DEFAULT = 'DEFAULT' }
 
 
 	/** Creates a Footnote segment and inserts a new FootnoteReference to it at the given location. The new Footnote segment will contain a space followed by a newline character. */
@@ -761,7 +761,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateParagraphBulletsRequestBulletPreset { BULLET_GLYPH_PRESET_UNSPECIFIED = 0, BULLET_DISC_CIRCLE_SQUARE = 1, BULLET_DIAMONDX_ARROW3D_SQUARE = 2, BULLET_CHECKBOX = 3, BULLET_ARROW_DIAMOND_DISC = 4, BULLET_STAR_CIRCLE_SQUARE = 5, BULLET_ARROW3D_CIRCLE_SQUARE = 6, BULLET_LEFTTRIANGLE_DIAMOND_DISC = 7, BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE = 8, BULLET_DIAMOND_CIRCLE_SQUARE = 9, NUMBERED_DECIMAL_ALPHA_ROMAN = 10, NUMBERED_DECIMAL_ALPHA_ROMAN_PARENS = 11, NUMBERED_DECIMAL_NESTED = 12, NUMBERED_UPPERALPHA_ALPHA_ROMAN = 13, NUMBERED_UPPERROMAN_UPPERALPHA_DECIMAL = 14, NUMBERED_ZERODECIMAL_ALPHA_ROMAN = 15 }
+	export enum CreateParagraphBulletsRequestBulletPreset { BULLET_GLYPH_PRESET_UNSPECIFIED = 'BULLET_GLYPH_PRESET_UNSPECIFIED', BULLET_DISC_CIRCLE_SQUARE = 'BULLET_DISC_CIRCLE_SQUARE', BULLET_DIAMONDX_ARROW3D_SQUARE = 'BULLET_DIAMONDX_ARROW3D_SQUARE', BULLET_CHECKBOX = 'BULLET_CHECKBOX', BULLET_ARROW_DIAMOND_DISC = 'BULLET_ARROW_DIAMOND_DISC', BULLET_STAR_CIRCLE_SQUARE = 'BULLET_STAR_CIRCLE_SQUARE', BULLET_ARROW3D_CIRCLE_SQUARE = 'BULLET_ARROW3D_CIRCLE_SQUARE', BULLET_LEFTTRIANGLE_DIAMOND_DISC = 'BULLET_LEFTTRIANGLE_DIAMOND_DISC', BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE = 'BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE', BULLET_DIAMOND_CIRCLE_SQUARE = 'BULLET_DIAMOND_CIRCLE_SQUARE', NUMBERED_DECIMAL_ALPHA_ROMAN = 'NUMBERED_DECIMAL_ALPHA_ROMAN', NUMBERED_DECIMAL_ALPHA_ROMAN_PARENS = 'NUMBERED_DECIMAL_ALPHA_ROMAN_PARENS', NUMBERED_DECIMAL_NESTED = 'NUMBERED_DECIMAL_NESTED', NUMBERED_UPPERALPHA_ALPHA_ROMAN = 'NUMBERED_UPPERALPHA_ALPHA_ROMAN', NUMBERED_UPPERROMAN_UPPERALPHA_DECIMAL = 'NUMBERED_UPPERROMAN_UPPERALPHA_DECIMAL', NUMBERED_ZERODECIMAL_ALPHA_ROMAN = 'NUMBERED_ZERODECIMAL_ALPHA_ROMAN' }
 
 
 	/** Deletes content from the document. */
@@ -1050,7 +1050,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InsertSectionBreakRequestSectionType { SECTION_TYPE_UNSPECIFIED = 0, CONTINUOUS = 1, NEXT_PAGE = 2 }
+	export enum InsertSectionBreakRequestSectionType { SECTION_TYPE_UNSPECIFIED = 'SECTION_TYPE_UNSPECIFIED', CONTINUOUS = 'CONTINUOUS', NEXT_PAGE = 'NEXT_PAGE' }
 
 
 	/** Inserts a table at the specified location. A newline character will be inserted before the inserted table. */
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplaceImageRequestImageReplaceMethod { IMAGE_REPLACE_METHOD_UNSPECIFIED = 0, CENTER_CROP = 1 }
+	export enum ReplaceImageRequestImageReplaceMethod { IMAGE_REPLACE_METHOD_UNSPECIFIED = 'IMAGE_REPLACE_METHOD_UNSPECIFIED', CENTER_CROP = 'CENTER_CROP' }
 
 
 	/** Replaces the contents of the specified NamedRange or NamedRanges with the given replacement content. Note that an individual NamedRange may consist of multiple discontinuous ranges. In this case, only the content in the first range will be replaced. The other ranges and their content will be deleted. In cases where replacing or deleting any ranges would result in an invalid document structure, a 400 bad request error is returned. */
@@ -1660,7 +1660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParagraphStyleAlignment { ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3, JUSTIFIED = 4 }
+	export enum ParagraphStyleAlignment { ALIGNMENT_UNSPECIFIED = 'ALIGNMENT_UNSPECIFIED', START = 'START', CENTER = 'CENTER', END = 'END', JUSTIFIED = 'JUSTIFIED' }
 
 
 	/** A border around a paragraph. */
@@ -1692,11 +1692,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ParagraphBorderDashStyle { DASH_STYLE_UNSPECIFIED = 0, SOLID = 1, DOT = 2, DASH = 3 }
+	export enum ParagraphBorderDashStyle { DASH_STYLE_UNSPECIFIED = 'DASH_STYLE_UNSPECIFIED', SOLID = 'SOLID', DOT = 'DOT', DASH = 'DASH' }
 
-	export enum ParagraphStyleDirection { CONTENT_DIRECTION_UNSPECIFIED = 0, LEFT_TO_RIGHT = 1, RIGHT_TO_LEFT = 2 }
+	export enum ParagraphStyleDirection { CONTENT_DIRECTION_UNSPECIFIED = 'CONTENT_DIRECTION_UNSPECIFIED', LEFT_TO_RIGHT = 'LEFT_TO_RIGHT', RIGHT_TO_LEFT = 'RIGHT_TO_LEFT' }
 
-	export enum ParagraphStyleNamedStyleType { NAMED_STYLE_TYPE_UNSPECIFIED = 0, NORMAL_TEXT = 1, TITLE = 2, SUBTITLE = 3, HEADING_1 = 4, HEADING_2 = 5, HEADING_3 = 6, HEADING_4 = 7, HEADING_5 = 8, HEADING_6 = 9 }
+	export enum ParagraphStyleNamedStyleType { NAMED_STYLE_TYPE_UNSPECIFIED = 'NAMED_STYLE_TYPE_UNSPECIFIED', NORMAL_TEXT = 'NORMAL_TEXT', TITLE = 'TITLE', SUBTITLE = 'SUBTITLE', HEADING_1 = 'HEADING_1', HEADING_2 = 'HEADING_2', HEADING_3 = 'HEADING_3', HEADING_4 = 'HEADING_4', HEADING_5 = 'HEADING_5', HEADING_6 = 'HEADING_6' }
 
 
 	/** The shading of a paragraph. */
@@ -1715,7 +1715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParagraphStyleSpacingMode { SPACING_MODE_UNSPECIFIED = 0, NEVER_COLLAPSE = 1, COLLAPSE_LISTS = 2 }
+	export enum ParagraphStyleSpacingMode { SPACING_MODE_UNSPECIFIED = 'SPACING_MODE_UNSPECIFIED', NEVER_COLLAPSE = 'NEVER_COLLAPSE', COLLAPSE_LISTS = 'COLLAPSE_LISTS' }
 
 
 	/** A tab stop within a paragraph. */
@@ -1741,7 +1741,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TabStopAlignment { TAB_STOP_ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3 }
+	export enum TabStopAlignment { TAB_STOP_ALIGNMENT_UNSPECIFIED = 'TAB_STOP_ALIGNMENT_UNSPECIFIED', START = 'START', CENTER = 'CENTER', END = 'END' }
 
 
 	/** Updates the SectionStyle. */
@@ -1909,7 +1909,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SectionStyleColumnSeparatorStyle { COLUMN_SEPARATOR_STYLE_UNSPECIFIED = 0, NONE = 1, BETWEEN_EACH_COLUMN = 2 }
+	export enum SectionStyleColumnSeparatorStyle { COLUMN_SEPARATOR_STYLE_UNSPECIFIED = 'COLUMN_SEPARATOR_STYLE_UNSPECIFIED', NONE = 'NONE', BETWEEN_EACH_COLUMN = 'BETWEEN_EACH_COLUMN' }
 
 
 	/** Updates the style of a range of table cells. */
@@ -2030,7 +2030,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableCellStyleContentAlignment { CONTENT_ALIGNMENT_UNSPECIFIED = 0, CONTENT_ALIGNMENT_UNSUPPORTED = 1, TOP = 2, MIDDLE = 3, BOTTOM = 4 }
+	export enum TableCellStyleContentAlignment { CONTENT_ALIGNMENT_UNSPECIFIED = 'CONTENT_ALIGNMENT_UNSPECIFIED', CONTENT_ALIGNMENT_UNSUPPORTED = 'CONTENT_ALIGNMENT_UNSUPPORTED', TOP = 'TOP', MIDDLE = 'MIDDLE', BOTTOM = 'BOTTOM' }
 
 
 	/** Updates the TableColumnProperties of columns in a table. */
@@ -2086,7 +2086,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableColumnPropertiesWidthType { WIDTH_TYPE_UNSPECIFIED = 0, EVENLY_DISTRIBUTED = 1, FIXED_WIDTH = 2 }
+	export enum TableColumnPropertiesWidthType { WIDTH_TYPE_UNSPECIFIED = 'WIDTH_TYPE_UNSPECIFIED', EVENLY_DISTRIBUTED = 'EVENLY_DISTRIBUTED', FIXED_WIDTH = 'FIXED_WIDTH' }
 
 
 	/** Updates the TableRowStyle of rows in a table. */
@@ -4044,7 +4044,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmbeddedObjectBorderPropertyState { RENDERED = 0, NOT_RENDERED = 1 }
+	export enum EmbeddedObjectBorderPropertyState { RENDERED = 'RENDERED', NOT_RENDERED = 'NOT_RENDERED' }
 
 
 	/** The properties of an image. */
@@ -4555,9 +4555,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NestingLevelBulletAlignment { BULLET_ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3 }
+	export enum NestingLevelBulletAlignment { BULLET_ALIGNMENT_UNSPECIFIED = 'BULLET_ALIGNMENT_UNSPECIFIED', START = 'START', CENTER = 'CENTER', END = 'END' }
 
-	export enum NestingLevelGlyphType { GLYPH_TYPE_UNSPECIFIED = 0, NONE = 1, DECIMAL = 2, ZERO_DECIMAL = 3, UPPER_ALPHA = 4, ALPHA = 5, UPPER_ROMAN = 6, ROMAN = 7 }
+	export enum NestingLevelGlyphType { GLYPH_TYPE_UNSPECIFIED = 'GLYPH_TYPE_UNSPECIFIED', NONE = 'NONE', DECIMAL = 'DECIMAL', ZERO_DECIMAL = 'ZERO_DECIMAL', UPPER_ALPHA = 'UPPER_ALPHA', ALPHA = 'ALPHA', UPPER_ROMAN = 'UPPER_ROMAN', ROMAN = 'ROMAN' }
 
 
 	/** A suggested change to ListProperties. */
@@ -4849,7 +4849,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PositionedObjectPositioningLayout { POSITIONED_OBJECT_LAYOUT_UNSPECIFIED = 0, WRAP_TEXT = 1, BREAK_LEFT = 2, BREAK_RIGHT = 3, BREAK_LEFT_RIGHT = 4, IN_FRONT_OF_TEXT = 5, BEHIND_TEXT = 6 }
+	export enum PositionedObjectPositioningLayout { POSITIONED_OBJECT_LAYOUT_UNSPECIFIED = 'POSITIONED_OBJECT_LAYOUT_UNSPECIFIED', WRAP_TEXT = 'WRAP_TEXT', BREAK_LEFT = 'BREAK_LEFT', BREAK_RIGHT = 'BREAK_RIGHT', BREAK_LEFT_RIGHT = 'BREAK_LEFT_RIGHT', IN_FRONT_OF_TEXT = 'IN_FRONT_OF_TEXT', BEHIND_TEXT = 'BEHIND_TEXT' }
 
 
 	/** A suggested change to PositionedObjectProperties. */
@@ -5149,7 +5149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentSuggestionsViewMode { DEFAULT_FOR_CURRENT_ACCESS = 0, SUGGESTIONS_INLINE = 1, PREVIEW_SUGGESTIONS_ACCEPTED = 2, PREVIEW_WITHOUT_SUGGESTIONS = 3 }
+	export enum DocumentSuggestionsViewMode { DEFAULT_FOR_CURRENT_ACCESS = 'DEFAULT_FOR_CURRENT_ACCESS', SUGGESTIONS_INLINE = 'SUGGESTIONS_INLINE', PREVIEW_SUGGESTIONS_ACCEPTED = 'PREVIEW_SUGGESTIONS_ACCEPTED', PREVIEW_WITHOUT_SUGGESTIONS = 'PREVIEW_WITHOUT_SUGGESTIONS' }
 
 	@Injectable()
 	export class MyClient {

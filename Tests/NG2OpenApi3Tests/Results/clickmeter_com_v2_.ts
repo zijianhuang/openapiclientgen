@@ -203,7 +203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCoreDtoAccountingGuestTimeFormat { AmPm = 0, H24 = 1 }
+	export enum ApiCoreDtoAccountingGuestTimeFormat { AmPm = 'AmPm', H24 = 'H24' }
 
 	export interface ApiCoreDtoAccountingIpBlacklistEntry {
 		id?: string | null;
@@ -634,7 +634,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCoreDtoClickStreamHitDatapointInfoStatus { Active = 0, Paused = 1, Abuse = 2, Deleted = 3 }
+	export enum ApiCoreDtoClickStreamHitDatapointInfoStatus { Active = 'Active', Paused = 'Paused', Abuse = 'Abuse', Deleted = 'Deleted' }
 
 	export interface ApiCoreDtoTagsTag {
 		datapoints?: Array<number>;
@@ -787,7 +787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCoreDtoConversionsConversionProtocol { Http = 0, Https = 1 }
+	export enum ApiCoreDtoConversionsConversionProtocol { Http = 'Http', Https = 'Https' }
 
 	export interface ApiCoreDtoDatapointsBrowserBaseDestinationItem {
 		emailDestinationUrl?: string | null;
@@ -906,7 +906,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCoreDtoDatapointsDatapointType { TrackingLink = 0, TrackingPixel = 1 }
+	export enum ApiCoreDtoDatapointsDatapointType { TrackingLink = 'TrackingLink', TrackingPixel = 'TrackingPixel' }
 
 	export interface ApiCoreDtoDatapointsTrackingLinkSpecifics {
 		appendQuery?: boolean | null;
@@ -988,7 +988,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCoreDtoDatapointsTrackingLinkSpecificsDestinationMode { Simple = 0, RandomDestination = 1, DestinationByLanguage = 2, SpilloverDestination = 3, DynamicUrl = 4, BrowserDestination = 5, DestinationByNation = 6, UniqueDestination = 7, SequentialDestination = 8, WeightedDestination = 9 }
+	export enum ApiCoreDtoDatapointsTrackingLinkSpecificsDestinationMode { Simple = 'Simple', RandomDestination = 'RandomDestination', DestinationByLanguage = 'DestinationByLanguage', SpilloverDestination = 'SpilloverDestination', DynamicUrl = 'DynamicUrl', BrowserDestination = 'BrowserDestination', DestinationByNation = 'DestinationByNation', UniqueDestination = 'UniqueDestination', SequentialDestination = 'SequentialDestination', WeightedDestination = 'WeightedDestination' }
 
 	export interface ApiCoreDtoDatapointsMultipleDestinationItem {
 		url?: string | null;
@@ -1003,9 +1003,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCoreDtoDatapointsTrackingLinkSpecificsRedirectType { PermanentRedirect = 0, TemporaryRedirect = 1 }
+	export enum ApiCoreDtoDatapointsTrackingLinkSpecificsRedirectType { PermanentRedirect = 'PermanentRedirect', TemporaryRedirect = 'TemporaryRedirect' }
 
-	export enum ApiCoreDtoDatapointsTrackingLinkSpecificsReferrerClean { None = 0, Clean = 1, Myself = 2 }
+	export enum ApiCoreDtoDatapointsTrackingLinkSpecificsReferrerClean { None = 'None', Clean = 'Clean', Myself = 'Myself' }
 
 	export interface ApiCoreDtoDatapointsDatapointRetargetingInfo {
 		id?: number | null;
@@ -1122,7 +1122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCoreDtoDomainsDomainType { System = 0, Go = 1, Dedicated = 2, Personal = 3 }
+	export enum ApiCoreDtoDomainsDomainType { System = 'System', Go = 'Go', Dedicated = 'Dedicated', Personal = 'Personal' }
 
 	export interface ApiCoreDtoEntityUriLong {
 		id?: number | null;
@@ -2817,31 +2817,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Account_GetGuestsSortDirection { asc = 0, desc = 1 }
+	export enum Account_GetGuestsSortDirection { asc = 'asc', desc = 'desc' }
 
-	export enum Account_GetPermissionsEntityType { datapoint = 0, group = 1 }
+	export enum Account_GetPermissionsEntityType { datapoint = 'datapoint', group = 'group' }
 
-	export enum Account_GetPermissionsType { r = 0, w = 1 }
+	export enum Account_GetPermissionsType { r = 'r', w = 'w' }
 
-	export enum Aggregated_GetStatisticsSingleTimeFrame { today = 0, yesterday = 1, last7 = 2, last30 = 3, lastmonth = 4, currentmonth = 5, previousmonth = 6, last90 = 7, last120 = 8, last180 = 9, last12months = 10, lastyear = 11, currentyear = 12, beginning = 13, custom = 14 }
+	export enum Aggregated_GetStatisticsSingleTimeFrame { today = 'today', yesterday = 'yesterday', last7 = 'last7', last30 = 'last30', lastmonth = 'lastmonth', currentmonth = 'currentmonth', previousmonth = 'previousmonth', last90 = 'last90', last120 = 'last120', last180 = 'last180', last12months = 'last12months', lastyear = 'lastyear', currentyear = 'currentyear', beginning = 'beginning', custom = 'custom' }
 
-	export enum Aggregated_GetStatisticsListGroupBy { week = 0, month = 1 }
+	export enum Aggregated_GetStatisticsListGroupBy { week = 'week', month = 'month' }
 
-	export enum Aggregated_GetConversionsSummaryStatus { deleted = 0, active = 1 }
+	export enum Aggregated_GetConversionsSummaryStatus { deleted = 'deleted', active = 'active' }
 
-	export enum Aggregated_GetDatapointsSummaryType { tp = 0, tl = 1 }
+	export enum Aggregated_GetDatapointsSummaryType { tp = 'tp', tl = 'tl' }
 
-	export enum Aggregated_GetDatapointsSummaryStatus { deleted = 0, active = 1, paused = 2, spam = 3 }
+	export enum Aggregated_GetDatapointsSummaryStatus { deleted = 'deleted', active = 'active', paused = 'paused', spam = 'spam' }
 
-	export enum ClickStream_GetFilter { '' = 0, spiders = 1, uniques = 2, nonuniques = 3, conversions = 4 }
+	export enum ClickStream_GetFilter { '' = '', spiders = 'spiders', uniques = 'uniques', nonuniques = 'nonuniques', conversions = 'conversions' }
 
-	export enum Conversions_GetHitsTimeframe { yesterday = 0, last7 = 1, last30 = 2, lastmonth = 3, currentmonth = 4, previousmonth = 5, last90 = 6, last120 = 7, last180 = 8, custom = 9 }
+	export enum Conversions_GetHitsTimeframe { yesterday = 'yesterday', last7 = 'last7', last30 = 'last30', lastmonth = 'lastmonth', currentmonth = 'currentmonth', previousmonth = 'previousmonth', last90 = 'last90', last120 = 'last120', last180 = 'last180', custom = 'custom' }
 
-	export enum Conversions_GetHitsFilter { spiders = 0, uniques = 1, nonuniques = 2, conversions = 3 }
+	export enum Conversions_GetHitsFilter { spiders = 'spiders', uniques = 'uniques', nonuniques = 'nonuniques', conversions = 'conversions' }
 
-	export enum Domains_GetType { system = 0, go = 1, personal = 2, dedicated = 3 }
+	export enum Domains_GetType { system = 'system', go = 'go', personal = 'personal', dedicated = 'dedicated' }
 
-	export enum Tags_GetType { tp = 0, tl = 1, dp = 2, gr = 3 }
+	export enum Tags_GetType { tp = 'tp', tl = 'tl', dp = 'dp', gr = 'gr' }
 
 }
 

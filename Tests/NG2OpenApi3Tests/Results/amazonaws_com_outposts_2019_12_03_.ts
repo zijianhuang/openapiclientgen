@@ -113,7 +113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderStatus { RECEIVED = 0, PENDING = 1, PROCESSING = 2, INSTALLING = 3, FULFILLED = 4, CANCELLED = 5, PREPARING = 6, IN_PROGRESS = 7, COMPLETED = 8, ERROR = 9 }
+	export enum OrderStatus { RECEIVED = 'RECEIVED', PENDING = 'PENDING', PROCESSING = 'PROCESSING', INSTALLING = 'INSTALLING', FULFILLED = 'FULFILLED', CANCELLED = 'CANCELLED', PREPARING = 'PREPARING', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', ERROR = 'ERROR' }
 
 
 	/** Information about a line item. */
@@ -149,7 +149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineItemStatus { PREPARING = 0, BUILDING = 1, SHIPPED = 2, DELIVERED = 3, INSTALLING = 4, INSTALLED = 5, ERROR = 6, CANCELLED = 7, REPLACED = 8 }
+	export enum LineItemStatus { PREPARING = 'PREPARING', BUILDING = 'BUILDING', SHIPPED = 'SHIPPED', DELIVERED = 'DELIVERED', INSTALLING = 'INSTALLING', INSTALLED = 'INSTALLED', ERROR = 'ERROR', CANCELLED = 'CANCELLED', REPLACED = 'REPLACED' }
 
 
 	/**  Information about a line item shipment.  */
@@ -171,7 +171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShipmentCarrier { DHL = 0, DBS = 1, FEDEX = 2, UPS = 3 }
+	export enum ShipmentCarrier { DHL = 'DHL', DBS = 'DBS', FEDEX = 'FEDEX', UPS = 'UPS' }
 
 
 	/**  Information about a line item asset.  */
@@ -191,11 +191,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentOption { ALL_UPFRONT = 0, NO_UPFRONT = 1, PARTIAL_UPFRONT = 2 }
+	export enum PaymentOption { ALL_UPFRONT = 'ALL_UPFRONT', NO_UPFRONT = 'NO_UPFRONT', PARTIAL_UPFRONT = 'PARTIAL_UPFRONT' }
 
-	export enum PaymentTerm { THREE_YEARS = 0, ONE_YEAR = 1 }
+	export enum PaymentTerm { THREE_YEARS = 'THREE_YEARS', ONE_YEAR = 'ONE_YEAR' }
 
-	export enum OrderType { OUTPOST = 0, REPLACEMENT = 1 }
+	export enum OrderType { OUTPOST = 'OUTPOST', REPLACEMENT = 'REPLACEMENT' }
 
 
 	/** Information about a line item request. */
@@ -406,7 +406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportedHardwareType { RACK = 0, SERVER = 1 }
+	export enum SupportedHardwareType { RACK = 'RACK', SERVER = 'SERVER' }
 
 	export interface CreateSiteOutput {
 
@@ -565,23 +565,23 @@ export namespace MyNS {
 
 	}
 
-	export enum PowerDrawKva { POWER_5_KVA = 0, POWER_10_KVA = 1, POWER_15_KVA = 2, POWER_30_KVA = 3 }
+	export enum PowerDrawKva { POWER_5_KVA = 'POWER_5_KVA', POWER_10_KVA = 'POWER_10_KVA', POWER_15_KVA = 'POWER_15_KVA', POWER_30_KVA = 'POWER_30_KVA' }
 
-	export enum PowerPhase { SINGLE_PHASE = 0, THREE_PHASE = 1 }
+	export enum PowerPhase { SINGLE_PHASE = 'SINGLE_PHASE', THREE_PHASE = 'THREE_PHASE' }
 
-	export enum PowerConnector { L6_30P = 0, IEC309 = 1, AH530P7W = 2, AH532P6W = 3 }
+	export enum PowerConnector { L6_30P = 'L6_30P', IEC309 = 'IEC309', AH530P7W = 'AH530P7W', AH532P6W = 'AH532P6W' }
 
-	export enum PowerFeedDrop { ABOVE_RACK = 0, BELOW_RACK = 1 }
+	export enum PowerFeedDrop { ABOVE_RACK = 'ABOVE_RACK', BELOW_RACK = 'BELOW_RACK' }
 
-	export enum UplinkGbps { UPLINK_1G = 0, UPLINK_10G = 1, UPLINK_40G = 2, UPLINK_100G = 3 }
+	export enum UplinkGbps { UPLINK_1G = 'UPLINK_1G', UPLINK_10G = 'UPLINK_10G', UPLINK_40G = 'UPLINK_40G', UPLINK_100G = 'UPLINK_100G' }
 
-	export enum UplinkCount { UPLINK_COUNT_1 = 0, UPLINK_COUNT_2 = 1, UPLINK_COUNT_3 = 2, UPLINK_COUNT_4 = 3, UPLINK_COUNT_5 = 4, UPLINK_COUNT_6 = 5, UPLINK_COUNT_7 = 6, UPLINK_COUNT_8 = 7, UPLINK_COUNT_12 = 8, UPLINK_COUNT_16 = 9 }
+	export enum UplinkCount { UPLINK_COUNT_1 = 'UPLINK_COUNT_1', UPLINK_COUNT_2 = 'UPLINK_COUNT_2', UPLINK_COUNT_3 = 'UPLINK_COUNT_3', UPLINK_COUNT_4 = 'UPLINK_COUNT_4', UPLINK_COUNT_5 = 'UPLINK_COUNT_5', UPLINK_COUNT_6 = 'UPLINK_COUNT_6', UPLINK_COUNT_7 = 'UPLINK_COUNT_7', UPLINK_COUNT_8 = 'UPLINK_COUNT_8', UPLINK_COUNT_12 = 'UPLINK_COUNT_12', UPLINK_COUNT_16 = 'UPLINK_COUNT_16' }
 
-	export enum FiberOpticCableType { SINGLE_MODE = 0, MULTI_MODE = 1 }
+	export enum FiberOpticCableType { SINGLE_MODE = 'SINGLE_MODE', MULTI_MODE = 'MULTI_MODE' }
 
-	export enum OpticalStandard { OPTIC_10GBASE_SR = 0, OPTIC_10GBASE_IR = 1, OPTIC_10GBASE_LR = 2, OPTIC_40GBASE_SR = 3, OPTIC_40GBASE_ESR = 4, OPTIC_40GBASE_IR4_LR4L = 5, OPTIC_40GBASE_LR4 = 6, OPTIC_100GBASE_SR4 = 7, OPTIC_100GBASE_CWDM4 = 8, OPTIC_100GBASE_LR4 = 9, OPTIC_100G_PSM4_MSA = 10, OPTIC_1000BASE_LX = 11, OPTIC_1000BASE_SX = 12 }
+	export enum OpticalStandard { OPTIC_10GBASE_SR = 'OPTIC_10GBASE_SR', OPTIC_10GBASE_IR = 'OPTIC_10GBASE_IR', OPTIC_10GBASE_LR = 'OPTIC_10GBASE_LR', OPTIC_40GBASE_SR = 'OPTIC_40GBASE_SR', OPTIC_40GBASE_ESR = 'OPTIC_40GBASE_ESR', OPTIC_40GBASE_IR4_LR4L = 'OPTIC_40GBASE_IR4_LR4L', OPTIC_40GBASE_LR4 = 'OPTIC_40GBASE_LR4', OPTIC_100GBASE_SR4 = 'OPTIC_100GBASE_SR4', OPTIC_100GBASE_CWDM4 = 'OPTIC_100GBASE_CWDM4', OPTIC_100GBASE_LR4 = 'OPTIC_100GBASE_LR4', OPTIC_100G_PSM4_MSA = 'OPTIC_100G_PSM4_MSA', OPTIC_1000BASE_LX = 'OPTIC_1000BASE_LX', OPTIC_1000BASE_SX = 'OPTIC_1000BASE_SX' }
 
-	export enum MaximumSupportedWeightLbs { NO_LIMIT = 0, MAX_1400_LBS = 1, MAX_1600_LBS = 2, MAX_1800_LBS = 3, MAX_2000_LBS = 4 }
+	export enum MaximumSupportedWeightLbs { NO_LIMIT = 'NO_LIMIT', MAX_1400_LBS = 'MAX_1400_LBS', MAX_1600_LBS = 'MAX_1600_LBS', MAX_1800_LBS = 'MAX_1800_LBS', MAX_2000_LBS = 'MAX_2000_LBS' }
 
 	export interface DeleteOutpostOutput {
 	}
@@ -643,7 +643,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogItemStatus { AVAILABLE = 0, DISCONTINUED = 1 }
+	export enum CatalogItemStatus { AVAILABLE = 'AVAILABLE', DISCONTINUED = 'DISCONTINUED' }
 
 
 	/**  Information about EC2 capacity.  */
@@ -668,7 +668,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportedStorageEnum { EBS = 0, S3 = 1 }
+	export enum SupportedStorageEnum { EBS = 'EBS', S3 = 'S3' }
 
 	export interface GetConnectionResponse {
 		ConnectionId?: string;
@@ -849,7 +849,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressType { SHIPPING_ADDRESS = 0, OPERATING_ADDRESS = 1 }
+	export enum AddressType { SHIPPING_ADDRESS = 'SHIPPING_ADDRESS', OPERATING_ADDRESS = 'OPERATING_ADDRESS' }
 
 
 	/**  Information about an address.  */
@@ -969,7 +969,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetType { COMPUTE = 0 }
+	export enum AssetType { COMPUTE = 'COMPUTE' }
 
 
 	/**  Information about compute hardware assets.  */
@@ -991,7 +991,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeAssetState { ACTIVE = 0, ISOLATED = 1, RETIRING = 2 }
+	export enum ComputeAssetState { ACTIVE = 'ACTIVE', ISOLATED = 'ISOLATED', RETIRING = 'RETIRING' }
 
 
 	/**  Information about the position of the asset in a rack.  */
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetState { ACTIVE = 0, RETIRING = 1, ISOLATED = 2 }
+	export enum AssetState { ACTIVE = 'ACTIVE', RETIRING = 'RETIRING', ISOLATED = 'ISOLATED' }
 
 	export interface ListCatalogItemsOutput {
 		CatalogItems?: Array<CatalogItem>;
@@ -1038,7 +1038,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogItemClass { RACK = 0, SERVER = 1 }
+	export enum CatalogItemClass { RACK = 'RACK', SERVER = 'SERVER' }
 
 	export interface ListOrdersOutput {
 		Orders?: Array<OrderSummary>;

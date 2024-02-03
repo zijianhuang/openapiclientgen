@@ -339,11 +339,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AndroidNotificationNotificationPriority { PRIORITY_UNSPECIFIED = 0, PRIORITY_MIN = 1, PRIORITY_LOW = 2, PRIORITY_DEFAULT = 3, PRIORITY_HIGH = 4, PRIORITY_MAX = 5 }
+	export enum AndroidNotificationNotificationPriority { PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED', PRIORITY_MIN = 'PRIORITY_MIN', PRIORITY_LOW = 'PRIORITY_LOW', PRIORITY_DEFAULT = 'PRIORITY_DEFAULT', PRIORITY_HIGH = 'PRIORITY_HIGH', PRIORITY_MAX = 'PRIORITY_MAX' }
 
-	export enum AndroidNotificationVisibility { VISIBILITY_UNSPECIFIED = 0, PRIVATE = 1, PUBLIC = 2, SECRET = 3 }
+	export enum AndroidNotificationVisibility { VISIBILITY_UNSPECIFIED = 'VISIBILITY_UNSPECIFIED', PRIVATE = 'PRIVATE', PUBLIC = 'PUBLIC', SECRET = 'SECRET' }
 
-	export enum AndroidConfigPriority { NORMAL = 0, HIGH = 1 }
+	export enum AndroidConfigPriority { NORMAL = 'NORMAL', HIGH = 'HIGH' }
 
 
 	/** [Apple Push Notification Service](https://goo.gl/MXRTPa) specific options. */

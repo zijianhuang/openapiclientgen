@@ -124,7 +124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Protocol { 'zixi-push' = 0, 'rtp-fec' = 1, rtp = 2, 'zixi-pull' = 3, rist = 4, 'st2110-jpegxs' = 5, cdi = 6, 'srt-listener' = 7, 'srt-caller' = 8, 'fujitsu-qos' = 9, udp = 10 }
+	export enum Protocol { 'zixi-push' = 'zixi-push', 'rtp-fec' = 'rtp-fec', rtp = 'rtp', 'zixi-pull' = 'zixi-pull', rist = 'rist', 'st2110-jpegxs' = 'st2110-jpegxs', cdi = 'cdi', 'srt-listener' = 'srt-listener', 'srt-caller' = 'srt-caller', 'fujitsu-qos' = 'fujitsu-qos', udp = 'udp' }
 
 
 	/** Add an output to a bridge. */
@@ -610,15 +610,15 @@ export namespace MyNS {
 
 	}
 
-	export enum Colorimetry { BT601 = 0, BT709 = 1, BT2020 = 2, BT2100 = 3, 'ST2065-1' = 4, 'ST2065-3' = 5, XYZ = 6 }
+	export enum Colorimetry { BT601 = 'BT601', BT709 = 'BT709', BT2020 = 'BT2020', BT2100 = 'BT2100', 'ST2065-1' = 'ST2065-1', 'ST2065-3' = 'ST2065-3', XYZ = 'XYZ' }
 
-	export enum Range { NARROW = 0, FULL = 1, FULLPROTECT = 2 }
+	export enum Range { NARROW = 'NARROW', FULL = 'FULL', FULLPROTECT = 'FULLPROTECT' }
 
-	export enum ScanMode { progressive = 0, interlace = 1, 'progressive-segmented-frame' = 2 }
+	export enum ScanMode { progressive = 'progressive', interlace = 'interlace', 'progressive-segmented-frame' = 'progressive-segmented-frame' }
 
-	export enum Tcs { SDR = 0, PQ = 1, HLG = 2, LINEAR = 3, BT2100LINPQ = 4, BT2100LINHLG = 5, 'ST2065-1' = 6, 'ST428-1' = 7, DENSITY = 8 }
+	export enum Tcs { SDR = 'SDR', PQ = 'PQ', HLG = 'HLG', LINEAR = 'LINEAR', BT2100LINPQ = 'BT2100LINPQ', BT2100LINHLG = 'BT2100LINHLG', 'ST2065-1' = 'ST2065-1', 'ST428-1' = 'ST428-1', DENSITY = 'DENSITY' }
 
-	export enum MediaStreamType { video = 0, audio = 1, 'ancillary-data' = 2 }
+	export enum MediaStreamType { video = 'video', audio = 'audio', 'ancillary-data' = 'ancillary-data' }
 
 
 	/** The media stream that you want to add to the flow. */
@@ -834,9 +834,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Algorithm { aes128 = 0, aes192 = 1, aes256 = 2 }
+	export enum Algorithm { aes128 = 'aes128', aes192 = 'aes192', aes256 = 'aes256' }
 
-	export enum KeyType { speke = 0, 'static-key' = 1, 'srt-password' = 2 }
+	export enum KeyType { speke = 'speke', 'static-key' = 'static-key', 'srt-password' = 'srt-password' }
 
 
 	/** The media stream that is associated with the output, and the parameters for that association. */
@@ -927,7 +927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncodingName { jxsv = 0, raw = 1, smpte291 = 2, pcm = 3 }
+	export enum EncodingName { jxsv = 'jxsv', raw = 'raw', smpte291 = 'smpte291', pcm = 'pcm' }
 
 
 	/** A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source. */
@@ -957,7 +957,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncoderProfile { main = 0, high = 1 }
+	export enum EncoderProfile { main = 'main', high = 'high' }
 
 
 	/** Attributes related to the transport stream that are used in a source or output. */
@@ -1546,7 +1546,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkInterfaceType { ena = 0, efa = 1 }
+	export enum NetworkInterfaceType { ena = 'ena', efa = 'efa' }
 
 
 	/** Desired VPC Interface for a Flow */
@@ -1675,7 +1675,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BridgeState { CREATING = 0, STANDBY = 1, STARTING = 2, DEPLOYING = 3, ACTIVE = 4, STOPPING = 5, DELETING = 6, DELETED = 7, START_FAILED = 8, START_PENDING = 9, STOP_FAILED = 10, UPDATING = 11 }
+	export enum BridgeState { CREATING = 'CREATING', STANDBY = 'STANDBY', STARTING = 'STARTING', DEPLOYING = 'DEPLOYING', ACTIVE = 'ACTIVE', STOPPING = 'STOPPING', DELETING = 'DELETING', DELETED = 'DELETED', START_FAILED = 'START_FAILED', START_PENDING = 'START_PENDING', STOP_FAILED = 'STOP_FAILED', UPDATING = 'UPDATING' }
 
 	export interface EgressGatewayBridge {
 		InstanceId?: string;
@@ -1748,7 +1748,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailoverMode { MERGE = 0, FAILOVER = 1 }
+	export enum FailoverMode { MERGE = 'MERGE', FAILOVER = 'FAILOVER' }
 
 
 	/** The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams. */
@@ -1767,7 +1767,7 @@ export namespace MyNS {
 
 	}
 
-	export enum State { ENABLED = 0, DISABLED = 1 }
+	export enum State { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface CreateBridge420Exception {
 	}
@@ -1893,7 +1893,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { STANDBY = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, STARTING = 4, STOPPING = 5, ERROR = 6 }
+	export enum Status { STANDBY = 'STANDBY', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', STARTING = 'STARTING', STOPPING = 'STOPPING', ERROR = 'ERROR' }
 
 
 	/** The maintenance setting of a flow */
@@ -1921,7 +1921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceDay { Monday = 0, Tuesday = 1, Wednesday = 2, Thursday = 3, Friday = 4, Saturday = 5, Sunday = 6 }
+	export enum MaintenanceDay { Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Sunday = 'Sunday' }
 
 
 	/** The entitlements that you want to grant on a flow. */
@@ -2012,7 +2012,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayState { CREATING = 0, ACTIVE = 1, UPDATING = 2, ERROR = 3, DELETING = 4, DELETED = 5 }
+	export enum GatewayState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', ERROR = 'ERROR', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** The network settings for a gateway. */
@@ -2110,7 +2110,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { REGISTERING = 0, ACTIVE = 1, DEREGISTERING = 2, DEREGISTERED = 3, REGISTRATION_ERROR = 4, DEREGISTRATION_ERROR = 5 }
+	export enum InstanceState { REGISTERING = 'REGISTERING', ACTIVE = 'ACTIVE', DEREGISTERING = 'DEREGISTERING', DEREGISTERED = 'DEREGISTERED', REGISTRATION_ERROR = 'REGISTRATION_ERROR', DEREGISTRATION_ERROR = 'DEREGISTRATION_ERROR' }
 
 	export interface DescribeBridgeResponse {
 		Bridge?: Bridge;
@@ -2238,9 +2238,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BridgePlacement { AVAILABLE = 0, LOCKED = 1 }
+	export enum BridgePlacement { AVAILABLE = 'AVAILABLE', LOCKED = 'LOCKED' }
 
-	export enum ConnectionStatus { CONNECTED = 0, DISCONNECTED = 1 }
+	export enum ConnectionStatus { CONNECTED = 'CONNECTED', DISCONNECTED = 'DISCONNECTED' }
 
 	export interface DescribeOfferingResponse {
 		Offering?: Offering;
@@ -2319,9 +2319,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DurationUnits { MONTHS = 0 }
+	export enum DurationUnits { MONTHS = 'MONTHS' }
 
-	export enum PriceUnits { HOURLY = 0 }
+	export enum PriceUnits { HOURLY = 'HOURLY' }
 
 
 	/** A definition of what is being billed for, including the type and amount. */
@@ -2347,7 +2347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { Mbps_Outbound_Bandwidth = 0 }
+	export enum ResourceType { Mbps_Outbound_Bandwidth = 'Mbps_Outbound_Bandwidth' }
 
 	export interface DescribeReservationResponse {
 		Reservation?: Reservation;
@@ -2461,7 +2461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservationState { ACTIVE = 0, EXPIRED = 1, PROCESSING = 2, CANCELED = 3 }
+	export enum ReservationState { ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED', PROCESSING = 'PROCESSING', CANCELED = 'CANCELED' }
 
 	export interface GrantFlowEntitlementsResponse {
 		Entitlements?: Array<Entitlement>;
@@ -2666,7 +2666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { OWNED = 0, ENTITLED = 1 }
+	export enum SourceType { OWNED = 'OWNED', ENTITLED = 'ENTITLED' }
 
 	export interface ListGatewayInstancesResponse {
 		Instances?: Array<ListedGatewayInstance>;
@@ -3029,7 +3029,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DesiredState { ACTIVE = 0, STANDBY = 1, DELETED = 2 }
+	export enum DesiredState { ACTIVE = 'ACTIVE', STANDBY = 'STANDBY', DELETED = 'DELETED' }
 
 	export interface UpdateFlowResponse {
 		Flow?: Flow;
@@ -3479,7 +3479,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntitlementStatus { ENABLED = 0, DISABLED = 1 }
+	export enum EntitlementStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** A request to grant entitlements on a flow. */

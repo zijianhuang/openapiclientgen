@@ -24,7 +24,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CanonicalSupportPlanPropertiesProvisioningState { Succeeded = 0, Failed = 1, Cancelled = 2, Purchasing = 3, Downgrading = 4, Cancelling = 5, Upgrading = 6 }
+	export enum CanonicalSupportPlanPropertiesProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Cancelled = 'Cancelled', Purchasing = 'Purchasing', Downgrading = 'Downgrading', Cancelling = 'Cancelling', Upgrading = 'Upgrading' }
 
 
 	/** The status of the Canonical support plan. */
@@ -105,7 +105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CanonicalSupportPlanStatusElementSupportPlanType { essential = 0, standard = 1, advanced = 2 }
+	export enum CanonicalSupportPlanStatusElementSupportPlanType { essential = 'essential', standard = 'standard', advanced = 'advanced' }
 
 
 	/** Error description and code explaining why an operation failed. */
@@ -323,7 +323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportPlanTypes_GetPlanTypeName { Essential = 0, Standard = 1, Advanced = 2 }
+	export enum SupportPlanTypes_GetPlanTypeName { Essential = 'Essential', Standard = 'Standard', Advanced = 'Advanced' }
 
 }
 

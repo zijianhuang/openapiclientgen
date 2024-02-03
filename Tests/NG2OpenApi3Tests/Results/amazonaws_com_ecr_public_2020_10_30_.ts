@@ -41,7 +41,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LayerAvailability { AVAILABLE = 0, UNAVAILABLE = 1 }
+	export enum LayerAvailability { AVAILABLE = 'AVAILABLE', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** An object that represents an Amazon ECR image layer failure. */
@@ -66,7 +66,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LayerFailureCode { InvalidLayerDigest = 0, MissingLayerDigest = 1 }
+	export enum LayerFailureCode { InvalidLayerDigest = 'InvalidLayerDigest', MissingLayerDigest = 'MissingLayerDigest' }
 
 	export interface BatchCheckLayerAvailabilityRequest {
 		registryId?: string;
@@ -194,7 +194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageFailureCode { InvalidImageDigest = 0, InvalidImageTag = 1, ImageTagDoesNotMatchDigest = 2, ImageNotFound = 3, MissingDigestAndTag = 4, ImageReferencedByManifestList = 5, KmsError = 6 }
+	export enum ImageFailureCode { InvalidImageDigest = 'InvalidImageDigest', InvalidImageTag = 'InvalidImageTag', ImageTagDoesNotMatchDigest = 'ImageTagDoesNotMatchDigest', ImageNotFound = 'ImageNotFound', MissingDigestAndTag = 'MissingDigestAndTag', ImageReferencedByManifestList = 'ImageReferencedByManifestList', KmsError = 'KmsError' }
 
 	export interface BatchDeleteImageRequest {
 		registryId?: string;
@@ -875,7 +875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistryAliasStatus { ACTIVE = 0, PENDING = 1, REJECTED = 2 }
+	export enum RegistryAliasStatus { ACTIVE = 'ACTIVE', PENDING = 'PENDING', REJECTED = 'REJECTED' }
 
 	export interface DescribeRegistriesRequest {
 		nextToken?: string;
@@ -1746,51 +1746,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchCheckLayerAvailabilityX_Amz_Target { 'SpencerFrontendService.BatchCheckLayerAvailability' = 0 }
+	export enum BatchCheckLayerAvailabilityX_Amz_Target { 'SpencerFrontendService.BatchCheckLayerAvailability' = 'SpencerFrontendService.BatchCheckLayerAvailability' }
 
-	export enum BatchDeleteImageX_Amz_Target { 'SpencerFrontendService.BatchDeleteImage' = 0 }
+	export enum BatchDeleteImageX_Amz_Target { 'SpencerFrontendService.BatchDeleteImage' = 'SpencerFrontendService.BatchDeleteImage' }
 
-	export enum CompleteLayerUploadX_Amz_Target { 'SpencerFrontendService.CompleteLayerUpload' = 0 }
+	export enum CompleteLayerUploadX_Amz_Target { 'SpencerFrontendService.CompleteLayerUpload' = 'SpencerFrontendService.CompleteLayerUpload' }
 
-	export enum CreateRepositoryX_Amz_Target { 'SpencerFrontendService.CreateRepository' = 0 }
+	export enum CreateRepositoryX_Amz_Target { 'SpencerFrontendService.CreateRepository' = 'SpencerFrontendService.CreateRepository' }
 
-	export enum DeleteRepositoryX_Amz_Target { 'SpencerFrontendService.DeleteRepository' = 0 }
+	export enum DeleteRepositoryX_Amz_Target { 'SpencerFrontendService.DeleteRepository' = 'SpencerFrontendService.DeleteRepository' }
 
-	export enum DeleteRepositoryPolicyX_Amz_Target { 'SpencerFrontendService.DeleteRepositoryPolicy' = 0 }
+	export enum DeleteRepositoryPolicyX_Amz_Target { 'SpencerFrontendService.DeleteRepositoryPolicy' = 'SpencerFrontendService.DeleteRepositoryPolicy' }
 
-	export enum DescribeImageTagsX_Amz_Target { 'SpencerFrontendService.DescribeImageTags' = 0 }
+	export enum DescribeImageTagsX_Amz_Target { 'SpencerFrontendService.DescribeImageTags' = 'SpencerFrontendService.DescribeImageTags' }
 
-	export enum DescribeImagesX_Amz_Target { 'SpencerFrontendService.DescribeImages' = 0 }
+	export enum DescribeImagesX_Amz_Target { 'SpencerFrontendService.DescribeImages' = 'SpencerFrontendService.DescribeImages' }
 
-	export enum DescribeRegistriesX_Amz_Target { 'SpencerFrontendService.DescribeRegistries' = 0 }
+	export enum DescribeRegistriesX_Amz_Target { 'SpencerFrontendService.DescribeRegistries' = 'SpencerFrontendService.DescribeRegistries' }
 
-	export enum DescribeRepositoriesX_Amz_Target { 'SpencerFrontendService.DescribeRepositories' = 0 }
+	export enum DescribeRepositoriesX_Amz_Target { 'SpencerFrontendService.DescribeRepositories' = 'SpencerFrontendService.DescribeRepositories' }
 
-	export enum GetAuthorizationTokenX_Amz_Target { 'SpencerFrontendService.GetAuthorizationToken' = 0 }
+	export enum GetAuthorizationTokenX_Amz_Target { 'SpencerFrontendService.GetAuthorizationToken' = 'SpencerFrontendService.GetAuthorizationToken' }
 
-	export enum GetRegistryCatalogDataX_Amz_Target { 'SpencerFrontendService.GetRegistryCatalogData' = 0 }
+	export enum GetRegistryCatalogDataX_Amz_Target { 'SpencerFrontendService.GetRegistryCatalogData' = 'SpencerFrontendService.GetRegistryCatalogData' }
 
-	export enum GetRepositoryCatalogDataX_Amz_Target { 'SpencerFrontendService.GetRepositoryCatalogData' = 0 }
+	export enum GetRepositoryCatalogDataX_Amz_Target { 'SpencerFrontendService.GetRepositoryCatalogData' = 'SpencerFrontendService.GetRepositoryCatalogData' }
 
-	export enum GetRepositoryPolicyX_Amz_Target { 'SpencerFrontendService.GetRepositoryPolicy' = 0 }
+	export enum GetRepositoryPolicyX_Amz_Target { 'SpencerFrontendService.GetRepositoryPolicy' = 'SpencerFrontendService.GetRepositoryPolicy' }
 
-	export enum InitiateLayerUploadX_Amz_Target { 'SpencerFrontendService.InitiateLayerUpload' = 0 }
+	export enum InitiateLayerUploadX_Amz_Target { 'SpencerFrontendService.InitiateLayerUpload' = 'SpencerFrontendService.InitiateLayerUpload' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'SpencerFrontendService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'SpencerFrontendService.ListTagsForResource' = 'SpencerFrontendService.ListTagsForResource' }
 
-	export enum PutImageX_Amz_Target { 'SpencerFrontendService.PutImage' = 0 }
+	export enum PutImageX_Amz_Target { 'SpencerFrontendService.PutImage' = 'SpencerFrontendService.PutImage' }
 
-	export enum PutRegistryCatalogDataX_Amz_Target { 'SpencerFrontendService.PutRegistryCatalogData' = 0 }
+	export enum PutRegistryCatalogDataX_Amz_Target { 'SpencerFrontendService.PutRegistryCatalogData' = 'SpencerFrontendService.PutRegistryCatalogData' }
 
-	export enum PutRepositoryCatalogDataX_Amz_Target { 'SpencerFrontendService.PutRepositoryCatalogData' = 0 }
+	export enum PutRepositoryCatalogDataX_Amz_Target { 'SpencerFrontendService.PutRepositoryCatalogData' = 'SpencerFrontendService.PutRepositoryCatalogData' }
 
-	export enum SetRepositoryPolicyX_Amz_Target { 'SpencerFrontendService.SetRepositoryPolicy' = 0 }
+	export enum SetRepositoryPolicyX_Amz_Target { 'SpencerFrontendService.SetRepositoryPolicy' = 'SpencerFrontendService.SetRepositoryPolicy' }
 
-	export enum TagResourceX_Amz_Target { 'SpencerFrontendService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'SpencerFrontendService.TagResource' = 'SpencerFrontendService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'SpencerFrontendService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'SpencerFrontendService.UntagResource' = 'SpencerFrontendService.UntagResource' }
 
-	export enum UploadLayerPartX_Amz_Target { 'SpencerFrontendService.UploadLayerPart' = 0 }
+	export enum UploadLayerPartX_Amz_Target { 'SpencerFrontendService.UploadLayerPart' = 'SpencerFrontendService.UploadLayerPart' }
 
 }
 

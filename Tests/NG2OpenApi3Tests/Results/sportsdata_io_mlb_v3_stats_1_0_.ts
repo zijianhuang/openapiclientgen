@@ -2823,13 +2823,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum TeamsAllFormat { XML = 0, JSON = 1 }
+	export enum TeamsAllFormat { XML = 'XML', JSON = 'JSON' }
 
-	export enum PlayerGameLogsBySeasonFormat { JSON = 0, XML = 1 }
+	export enum PlayerGameLogsBySeasonFormat { JSON = 'JSON', XML = 'XML' }
 
-	export enum PlayerSeasonSplitStatsSplit { L = 0, R = 1, S = 2 }
+	export enum PlayerSeasonSplitStatsSplit { L = 'L', R = 'R', S = 'S' }
 
-	export enum StadiumsFormat { xml = 0, json = 1 }
+	export enum StadiumsFormat { xml = 'xml', json = 'json' }
 
 }
 

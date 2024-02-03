@@ -71,7 +71,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataReferenceConfigurationMode { Mount = 0, Download = 1, Upload = 2 }
+	export enum DataReferenceConfigurationMode { Mount = 'Mount', Download = 'Download', Upload = 'Upload' }
 
 	export interface DockerSection {
 
@@ -386,7 +386,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HdiConfigurationYarnDeployMode { None = 0, Client = 1, Cluster = 2 }
+	export enum HdiConfigurationYarnDeployMode { None = 'None', Client = 'Client', Cluster = 'Cluster' }
 
 	export interface HistoryConfiguration {
 
@@ -518,9 +518,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunConfigurationCommunicator { None = 0, ParameterServer = 1, Gloo = 2, Mpi = 3, Nccl = 4 }
+	export enum RunConfigurationCommunicator { None = 'None', ParameterServer = 'ParameterServer', Gloo = 'Gloo', Mpi = 'Mpi', Nccl = 'Nccl' }
 
-	export enum RunConfigurationFramework { Python = 0, PySpark = 1, Cntk = 2, TensorFlow = 3, PyTorch = 4 }
+	export enum RunConfigurationFramework { Python = 'Python', PySpark = 'PySpark', Cntk = 'Cntk', TensorFlow = 'TensorFlow', PyTorch = 'PyTorch' }
 
 	export interface SparkConfiguration {
 		configuration?: {[id: string]: string };

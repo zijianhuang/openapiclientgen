@@ -100,7 +100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobScheduleType { Once = 0, Recurring = 1 }
+	export enum JobScheduleType { Once = 'Once', Recurring = 'Recurring' }
 
 
 	/** An Azure SQL job agent. */
@@ -156,7 +156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobAgentPropertiesState { Creating = 0, Ready = 1, Updating = 2, Deleting = 3, Disabled = 4 }
+	export enum JobAgentPropertiesState { Creating = 'Creating', Ready = 'Ready', Updating = 'Updating', Deleting = 'Deleting', Disabled = 'Disabled' }
 
 	export interface JobAgentSku {
 
@@ -453,9 +453,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobExecutionPropertiesLifecycle { Created = 0, InProgress = 1, WaitingForChildJobExecutions = 2, WaitingForRetry = 3, Succeeded = 4, SucceededWithSkipped = 5, Failed = 6, TimedOut = 7, Canceled = 8, Skipped = 9 }
+	export enum JobExecutionPropertiesLifecycle { Created = 'Created', InProgress = 'InProgress', WaitingForChildJobExecutions = 'WaitingForChildJobExecutions', WaitingForRetry = 'WaitingForRetry', Succeeded = 'Succeeded', SucceededWithSkipped = 'SucceededWithSkipped', Failed = 'Failed', TimedOut = 'TimedOut', Canceled = 'Canceled', Skipped = 'Skipped' }
 
-	export enum JobExecutionPropertiesProvisioningState { Created = 0, InProgress = 1, Succeeded = 2, Failed = 3, Canceled = 4 }
+	export enum JobExecutionPropertiesProvisioningState { Created = 'Created', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** The target that a job execution is executed on. */
@@ -492,7 +492,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobExecutionTargetType { TargetGroup = 0, SqlDatabase = 1, SqlElasticPool = 2, SqlShardMap = 3, SqlServer = 4 }
+	export enum JobExecutionTargetType { TargetGroup = 'TargetGroup', SqlDatabase = 'SqlDatabase', SqlElasticPool = 'SqlElasticPool', SqlShardMap = 'SqlShardMap', SqlServer = 'SqlServer' }
 
 
 	/** A list of job executions. */
@@ -659,9 +659,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStepActionSource { Inline = 0 }
+	export enum JobStepActionSource { Inline = 'Inline' }
 
-	export enum JobStepActionType { TSql = 0 }
+	export enum JobStepActionType { TSql = 'TSql' }
 
 
 	/** The execution options of a job step. */
@@ -806,7 +806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStepOutputType { SqlDatabase = 0 }
+	export enum JobStepOutputType { SqlDatabase = 'SqlDatabase' }
 
 
 	/** A list of job steps. */
@@ -901,7 +901,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobTargetMembershipType { Include = 0, Exclude = 1 }
+	export enum JobTargetMembershipType { Include = 'Include', Exclude = 'Exclude' }
 
 
 	/** A group of job targets. */

@@ -314,7 +314,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputerVisionErrorCode { InvalidImageUrl = 0, InvalidImageFormat = 1, InvalidImageSize = 2, NotSupportedVisualFeature = 3, NotSupportedImage = 4, InvalidDetails = 5, NotSupportedLanguage = 6, BadArgument = 7, FailedToProcess = 8, Timeout = 9, InternalServerError = 10, Unspecified = 11, StorageException = 12 }
+	export enum ComputerVisionErrorCode { InvalidImageUrl = 'InvalidImageUrl', InvalidImageFormat = 'InvalidImageFormat', InvalidImageSize = 'InvalidImageSize', NotSupportedVisualFeature = 'NotSupportedVisualFeature', NotSupportedImage = 'NotSupportedImage', InvalidDetails = 'InvalidDetails', NotSupportedLanguage = 'NotSupportedLanguage', BadArgument = 'BadArgument', FailedToProcess = 'FailedToProcess', Timeout = 'Timeout', InternalServerError = 'InternalServerError', Unspecified = 'Unspecified', StorageException = 'StorageException' }
 
 
 	/** Result of image analysis using a specific domain model including additional metadata. */
@@ -378,7 +378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FaceDescriptionGender { Male = 0, Female = 1 }
+	export enum FaceDescriptionGender { Male = 'Male', Female = 'Female' }
 
 
 	/** Result of AnalyzeImage operation. */
@@ -833,7 +833,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextOperationResultStatus { 'Not Started' = 0, Running = 1, Failed = 2, Succeeded = 3 }
+	export enum TextOperationResultStatus { 'Not Started' = 'Not Started', Running = 'Running', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 	@Injectable()
 	export class MyClient {
@@ -944,7 +944,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AnalyzeImageLanguage { en = 0, es = 1, ja = 2, pt = 3, zh = 4 }
+	export enum AnalyzeImageLanguage { en = 'en', es = 'es', ja = 'ja', pt = 'pt', zh = 'zh' }
 
 	export interface AnalyzeImagePostBody {
 
@@ -1038,7 +1038,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecognizePrintedTextLanguage { unk = 0, 'zh-Hans' = 1, 'zh-Hant' = 2, cs = 3, da = 4, nl = 5, en = 6, fi = 7, fr = 8, de = 9, el = 10, hu = 11, it = 12, ja = 13, ko = 14, nb = 15, pl = 16, pt = 17, ru = 18, es = 19, sv = 20, tr = 21, ar = 22, ro = 23, 'sr-Cyrl' = 24, 'sr-Latn' = 25, sk = 26 }
+	export enum RecognizePrintedTextLanguage { unk = 'unk', 'zh-Hans' = 'zh-Hans', 'zh-Hant' = 'zh-Hant', cs = 'cs', da = 'da', nl = 'nl', en = 'en', fi = 'fi', fr = 'fr', de = 'de', el = 'el', hu = 'hu', it = 'it', ja = 'ja', ko = 'ko', nb = 'nb', pl = 'pl', pt = 'pt', ru = 'ru', es = 'es', sv = 'sv', tr = 'tr', ar = 'ar', ro = 'ro', 'sr-Cyrl' = 'sr-Cyrl', 'sr-Latn' = 'sr-Latn', sk = 'sk' }
 
 	export interface RecognizePrintedTextPostBody {
 

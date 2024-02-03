@@ -1324,7 +1324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SocerPostBodyFormat { pdf = 0 }
+	export enum SocerPostBodyFormat { pdf = 'pdf' }
 
 }
 

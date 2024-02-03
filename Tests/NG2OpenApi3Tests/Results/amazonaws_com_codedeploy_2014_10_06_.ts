@@ -171,7 +171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RevisionLocationType { S3 = 0, GitHub = 1, String = 2, AppSpecContent = 3 }
+	export enum RevisionLocationType { S3 = 'S3', GitHub = 'GitHub', String = 'String', AppSpecContent = 'AppSpecContent' }
 
 
 	/** Information about the location of application artifacts stored in Amazon S3. */
@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BundleType { tar = 0, tgz = 1, zip = 2, YAML = 3, JSON = 4 }
+	export enum BundleType { tar = 'tar', tgz = 'tgz', zip = 'zip', YAML = 'YAML', JSON = 'JSON' }
 
 
 	/** Information about the location of application artifacts stored in GitHub. */
@@ -422,7 +422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputePlatform { Server = 0, Lambda = 1, ECS = 2 }
+	export enum ComputePlatform { Server = 'Server', Lambda = 'Lambda', ECS = 'ECS' }
 
 
 	/** Represents the input of a <code>BatchGetApplications</code> operation. */
@@ -532,7 +532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EC2TagFilterType { KEY_ONLY = 0, VALUE_ONLY = 1, KEY_AND_VALUE = 2 }
+	export enum EC2TagFilterType { KEY_ONLY = 'KEY_ONLY', VALUE_ONLY = 'VALUE_ONLY', KEY_AND_VALUE = 'KEY_AND_VALUE' }
 
 
 	/** Information about an on-premises instance tag filter. */
@@ -598,7 +598,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerEventType { DeploymentStart = 0, DeploymentSuccess = 1, DeploymentFailure = 2, DeploymentStop = 3, DeploymentRollback = 4, DeploymentReady = 5, InstanceStart = 6, InstanceSuccess = 7, InstanceFailure = 8, InstanceReady = 9 }
+	export enum TriggerEventType { DeploymentStart = 'DeploymentStart', DeploymentSuccess = 'DeploymentSuccess', DeploymentFailure = 'DeploymentFailure', DeploymentStop = 'DeploymentStop', DeploymentRollback = 'DeploymentRollback', DeploymentReady = 'DeploymentReady', InstanceStart = 'InstanceStart', InstanceSuccess = 'InstanceSuccess', InstanceFailure = 'InstanceFailure', InstanceReady = 'InstanceReady' }
 
 
 	/** Information about alarms associated with a deployment or deployment group. */
@@ -656,7 +656,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoRollbackEvent { DEPLOYMENT_FAILURE = 0, DEPLOYMENT_STOP_ON_ALARM = 1, DEPLOYMENT_STOP_ON_REQUEST = 2 }
+	export enum AutoRollbackEvent { DEPLOYMENT_FAILURE = 'DEPLOYMENT_FAILURE', DEPLOYMENT_STOP_ON_ALARM = 'DEPLOYMENT_STOP_ON_ALARM', DEPLOYMENT_STOP_ON_REQUEST = 'DEPLOYMENT_STOP_ON_REQUEST' }
 
 
 	/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
@@ -678,11 +678,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentType { IN_PLACE = 0, BLUE_GREEN = 1 }
+	export enum DeploymentType { IN_PLACE = 'IN_PLACE', BLUE_GREEN = 'BLUE_GREEN' }
 
-	export enum DeploymentOption { WITH_TRAFFIC_CONTROL = 0, WITHOUT_TRAFFIC_CONTROL = 1 }
+	export enum DeploymentOption { WITH_TRAFFIC_CONTROL = 'WITH_TRAFFIC_CONTROL', WITHOUT_TRAFFIC_CONTROL = 'WITHOUT_TRAFFIC_CONTROL' }
 
-	export enum OutdatedInstancesStrategy { UPDATE = 0, IGNORE = 1 }
+	export enum OutdatedInstancesStrategy { UPDATE = 'UPDATE', IGNORE = 'IGNORE' }
 
 
 	/** Information about blue/green deployment options for a deployment group. */
@@ -721,7 +721,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceAction { TERMINATE = 0, KEEP_ALIVE = 1 }
+	export enum InstanceAction { TERMINATE = 'TERMINATE', KEEP_ALIVE = 'KEEP_ALIVE' }
 
 
 	/** Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment. */
@@ -743,7 +743,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentReadyAction { CONTINUE_DEPLOYMENT = 0, STOP_DEPLOYMENT = 1 }
+	export enum DeploymentReadyAction { CONTINUE_DEPLOYMENT = 'CONTINUE_DEPLOYMENT', STOP_DEPLOYMENT = 'STOP_DEPLOYMENT' }
 
 
 	/** Information about the instances that belong to the replacement environment in a blue/green deployment. */
@@ -762,7 +762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GreenFleetProvisioningAction { DISCOVER_EXISTING = 0, COPY_AUTO_SCALING_GROUP = 1 }
+	export enum GreenFleetProvisioningAction { DISCOVER_EXISTING = 'DISCOVER_EXISTING', COPY_AUTO_SCALING_GROUP = 'COPY_AUTO_SCALING_GROUP' }
 
 
 	/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
@@ -873,7 +873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentStatus { Created = 0, Queued = 1, InProgress = 2, Baking = 3, Succeeded = 4, Failed = 5, Stopped = 6, Ready = 7 }
+	export enum DeploymentStatus { Created = 'Created', Queued = 'Queued', InProgress = 'InProgress', Baking = 'Baking', Succeeded = 'Succeeded', Failed = 'Failed', Stopped = 'Stopped', Ready = 'Ready' }
 
 
 	/** Information about groups of Amazon EC2 instance tags. */
@@ -1029,7 +1029,7 @@ export namespace MyNS {
 
 
 	/** InstanceStatus is deprecated, use TargetStatus instead. */
-	export enum InstanceStatus { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, Skipped = 4, Unknown = 5, Ready = 6 }
+	export enum InstanceStatus { Pending = 'Pending', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', Skipped = 'Skipped', Unknown = 'Unknown', Ready = 'Ready' }
 
 
 	/** Information about a deployment lifecycle event. */
@@ -1084,11 +1084,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LifecycleErrorCode { Success = 0, ScriptMissing = 1, ScriptNotExecutable = 2, ScriptTimedOut = 3, ScriptFailed = 4, UnknownError = 5 }
+	export enum LifecycleErrorCode { Success = 'Success', ScriptMissing = 'ScriptMissing', ScriptNotExecutable = 'ScriptNotExecutable', ScriptTimedOut = 'ScriptTimedOut', ScriptFailed = 'ScriptFailed', UnknownError = 'UnknownError' }
 
-	export enum LifecycleEventStatus { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, Skipped = 4, Unknown = 5 }
+	export enum LifecycleEventStatus { Pending = 'Pending', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', Skipped = 'Skipped', Unknown = 'Unknown' }
 
-	export enum InstanceType { Blue = 0, Green = 1 }
+	export enum InstanceType { Blue = 'Blue', Green = 'Green' }
 
 
 	/**  Represents the input of a <code>BatchGetDeploymentInstances</code> operation.  */
@@ -1198,7 +1198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentTargetType { InstanceTarget = 0, LambdaTarget = 1, ECSTarget = 2, CloudFormationTarget = 3 }
+	export enum DeploymentTargetType { InstanceTarget = 'InstanceTarget', LambdaTarget = 'LambdaTarget', ECSTarget = 'ECSTarget', CloudFormationTarget = 'CloudFormationTarget' }
 
 
 	/**  A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform.  */
@@ -1584,7 +1584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { AGENT_ISSUE = 0, ALARM_ACTIVE = 1, APPLICATION_MISSING = 2, AUTOSCALING_VALIDATION_ERROR = 3, AUTO_SCALING_CONFIGURATION = 4, AUTO_SCALING_IAM_ROLE_PERMISSIONS = 5, CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = 6, CUSTOMER_APPLICATION_UNHEALTHY = 7, DEPLOYMENT_GROUP_MISSING = 8, ECS_UPDATE_ERROR = 9, ELASTIC_LOAD_BALANCING_INVALID = 10, ELB_INVALID_INSTANCE = 11, HEALTH_CONSTRAINTS = 12, HEALTH_CONSTRAINTS_INVALID = 13, HOOK_EXECUTION_FAILURE = 14, IAM_ROLE_MISSING = 15, IAM_ROLE_PERMISSIONS = 16, INTERNAL_ERROR = 17, INVALID_ECS_SERVICE = 18, INVALID_LAMBDA_CONFIGURATION = 19, INVALID_LAMBDA_FUNCTION = 20, INVALID_REVISION = 21, MANUAL_STOP = 22, MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = 23, MISSING_ELB_INFORMATION = 24, MISSING_GITHUB_TOKEN = 25, NO_EC2_SUBSCRIPTION = 26, NO_INSTANCES = 27, OVER_MAX_INSTANCES = 28, RESOURCE_LIMIT_EXCEEDED = 29, REVISION_MISSING = 30, THROTTLED = 31, TIMEOUT = 32, CLOUDFORMATION_STACK_FAILURE = 33 }
+	export enum ErrorCode { AGENT_ISSUE = 'AGENT_ISSUE', ALARM_ACTIVE = 'ALARM_ACTIVE', APPLICATION_MISSING = 'APPLICATION_MISSING', AUTOSCALING_VALIDATION_ERROR = 'AUTOSCALING_VALIDATION_ERROR', AUTO_SCALING_CONFIGURATION = 'AUTO_SCALING_CONFIGURATION', AUTO_SCALING_IAM_ROLE_PERMISSIONS = 'AUTO_SCALING_IAM_ROLE_PERMISSIONS', CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = 'CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND', CUSTOMER_APPLICATION_UNHEALTHY = 'CUSTOMER_APPLICATION_UNHEALTHY', DEPLOYMENT_GROUP_MISSING = 'DEPLOYMENT_GROUP_MISSING', ECS_UPDATE_ERROR = 'ECS_UPDATE_ERROR', ELASTIC_LOAD_BALANCING_INVALID = 'ELASTIC_LOAD_BALANCING_INVALID', ELB_INVALID_INSTANCE = 'ELB_INVALID_INSTANCE', HEALTH_CONSTRAINTS = 'HEALTH_CONSTRAINTS', HEALTH_CONSTRAINTS_INVALID = 'HEALTH_CONSTRAINTS_INVALID', HOOK_EXECUTION_FAILURE = 'HOOK_EXECUTION_FAILURE', IAM_ROLE_MISSING = 'IAM_ROLE_MISSING', IAM_ROLE_PERMISSIONS = 'IAM_ROLE_PERMISSIONS', INTERNAL_ERROR = 'INTERNAL_ERROR', INVALID_ECS_SERVICE = 'INVALID_ECS_SERVICE', INVALID_LAMBDA_CONFIGURATION = 'INVALID_LAMBDA_CONFIGURATION', INVALID_LAMBDA_FUNCTION = 'INVALID_LAMBDA_FUNCTION', INVALID_REVISION = 'INVALID_REVISION', MANUAL_STOP = 'MANUAL_STOP', MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = 'MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION', MISSING_ELB_INFORMATION = 'MISSING_ELB_INFORMATION', MISSING_GITHUB_TOKEN = 'MISSING_GITHUB_TOKEN', NO_EC2_SUBSCRIPTION = 'NO_EC2_SUBSCRIPTION', NO_INSTANCES = 'NO_INSTANCES', OVER_MAX_INSTANCES = 'OVER_MAX_INSTANCES', RESOURCE_LIMIT_EXCEEDED = 'RESOURCE_LIMIT_EXCEEDED', REVISION_MISSING = 'REVISION_MISSING', THROTTLED = 'THROTTLED', TIMEOUT = 'TIMEOUT', CLOUDFORMATION_STACK_FAILURE = 'CLOUDFORMATION_STACK_FAILURE' }
 
 
 	/** Information about the deployment status of the instances in the deployment. */
@@ -1618,7 +1618,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentCreator { user = 0, autoscaling = 1, codeDeployRollback = 2, CodeDeploy = 3, CodeDeployAutoUpdate = 4, CloudFormation = 5, CloudFormationRollback = 6 }
+	export enum DeploymentCreator { user = 'user', autoscaling = 'autoscaling', codeDeployRollback = 'codeDeployRollback', CodeDeploy = 'CodeDeploy', CodeDeployAutoUpdate = 'CodeDeployAutoUpdate', CloudFormation = 'CloudFormation', CloudFormationRollback = 'CloudFormationRollback' }
 
 
 	/** Information about a deployment rollback. */
@@ -1660,7 +1660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileExistsBehavior { DISALLOW = 0, OVERWRITE = 1, RETAIN = 2 }
+	export enum FileExistsBehavior { DISALLOW = 'DISALLOW', OVERWRITE = 'OVERWRITE', RETAIN = 'RETAIN' }
 
 
 	/** Information about deployments related to the specified deployment. */
@@ -1778,7 +1778,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentWaitType { READY_WAIT = 0, TERMINATION_WAIT = 1 }
+	export enum DeploymentWaitType { READY_WAIT = 'READY_WAIT', TERMINATION_WAIT = 'TERMINATION_WAIT' }
 
 	export interface DeploymentAlreadyCompletedException {
 	}
@@ -2205,7 +2205,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MinimumHealthyHostsType { HOST_COUNT = 0, FLEET_PERCENT = 1 }
+	export enum MinimumHealthyHostsType { HOST_COUNT = 'HOST_COUNT', FLEET_PERCENT = 'FLEET_PERCENT' }
 
 
 	/** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment. */
@@ -2226,7 +2226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrafficRoutingType { TimeBasedCanary = 0, TimeBasedLinear = 1, AllAtOnce = 2 }
+	export enum TrafficRoutingType { TimeBasedCanary = 'TimeBasedCanary', TimeBasedLinear = 'TimeBasedLinear', AllAtOnce = 'AllAtOnce' }
 
 
 	/** A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
@@ -3157,11 +3157,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationRevisionSortBy { registerTime = 0, firstUsedTime = 1, lastUsedTime = 2 }
+	export enum ApplicationRevisionSortBy { registerTime = 'registerTime', firstUsedTime = 'firstUsedTime', lastUsedTime = 'lastUsedTime' }
 
-	export enum SortOrder { ascending = 0, descending = 1 }
+	export enum SortOrder { ascending = 'ascending', descending = 'descending' }
 
-	export enum ListStateFilterAction { include = 0, exclude = 1, ignore = 2 }
+	export enum ListStateFilterAction { include = 'include', exclude = 'exclude', ignore = 'ignore' }
 
 	export interface InvalidSortByException {
 	}
@@ -3633,7 +3633,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistrationStatus { Registered = 0, Deregistered = 1 }
+	export enum RegistrationStatus { Registered = 'Registered', Deregistered = 'Deregistered' }
 
 	export interface InvalidRegistrationStatusException {
 	}
@@ -3968,7 +3968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StopStatus { Pending = 0, Succeeded = 1 }
+	export enum StopStatus { Pending = 'Pending', Succeeded = 'Succeeded' }
 
 
 	/**  Represents the input of a <code>StopDeployment</code> operation.  */
@@ -4141,13 +4141,13 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetStatus { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, Skipped = 4, Unknown = 5, Ready = 6 }
+	export enum TargetStatus { Pending = 'Pending', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', Skipped = 'Skipped', Unknown = 'Unknown', Ready = 'Ready' }
 
-	export enum TargetLabel { Blue = 0, Green = 1 }
+	export enum TargetLabel { Blue = 'Blue', Green = 'Green' }
 
-	export enum TagFilterType { KEY_ONLY = 0, VALUE_ONLY = 1, KEY_AND_VALUE = 2 }
+	export enum TagFilterType { KEY_ONLY = 'KEY_ONLY', VALUE_ONLY = 'VALUE_ONLY', KEY_AND_VALUE = 'KEY_AND_VALUE' }
 
-	export enum TargetFilterName { TargetStatus = 0, ServerInstanceLabel = 1 }
+	export enum TargetFilterName { TargetStatus = 'TargetStatus', ServerInstanceLabel = 'ServerInstanceLabel' }
 
 	@Injectable()
 	export class MyClient {
@@ -4584,99 +4584,99 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.AddTagsToOnPremisesInstances' = 0 }
+	export enum AddTagsToOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.AddTagsToOnPremisesInstances' = 'CodeDeploy_20141006.AddTagsToOnPremisesInstances' }
 
-	export enum BatchGetApplicationRevisionsX_Amz_Target { 'CodeDeploy_20141006.BatchGetApplicationRevisions' = 0 }
+	export enum BatchGetApplicationRevisionsX_Amz_Target { 'CodeDeploy_20141006.BatchGetApplicationRevisions' = 'CodeDeploy_20141006.BatchGetApplicationRevisions' }
 
-	export enum BatchGetApplicationsX_Amz_Target { 'CodeDeploy_20141006.BatchGetApplications' = 0 }
+	export enum BatchGetApplicationsX_Amz_Target { 'CodeDeploy_20141006.BatchGetApplications' = 'CodeDeploy_20141006.BatchGetApplications' }
 
-	export enum BatchGetDeploymentGroupsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentGroups' = 0 }
+	export enum BatchGetDeploymentGroupsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentGroups' = 'CodeDeploy_20141006.BatchGetDeploymentGroups' }
 
-	export enum BatchGetDeploymentInstancesX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentInstances' = 0 }
+	export enum BatchGetDeploymentInstancesX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentInstances' = 'CodeDeploy_20141006.BatchGetDeploymentInstances' }
 
-	export enum BatchGetDeploymentTargetsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentTargets' = 0 }
+	export enum BatchGetDeploymentTargetsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentTargets' = 'CodeDeploy_20141006.BatchGetDeploymentTargets' }
 
-	export enum BatchGetDeploymentsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeployments' = 0 }
+	export enum BatchGetDeploymentsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeployments' = 'CodeDeploy_20141006.BatchGetDeployments' }
 
-	export enum BatchGetOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.BatchGetOnPremisesInstances' = 0 }
+	export enum BatchGetOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.BatchGetOnPremisesInstances' = 'CodeDeploy_20141006.BatchGetOnPremisesInstances' }
 
-	export enum ContinueDeploymentX_Amz_Target { 'CodeDeploy_20141006.ContinueDeployment' = 0 }
+	export enum ContinueDeploymentX_Amz_Target { 'CodeDeploy_20141006.ContinueDeployment' = 'CodeDeploy_20141006.ContinueDeployment' }
 
-	export enum CreateApplicationX_Amz_Target { 'CodeDeploy_20141006.CreateApplication' = 0 }
+	export enum CreateApplicationX_Amz_Target { 'CodeDeploy_20141006.CreateApplication' = 'CodeDeploy_20141006.CreateApplication' }
 
-	export enum CreateDeploymentX_Amz_Target { 'CodeDeploy_20141006.CreateDeployment' = 0 }
+	export enum CreateDeploymentX_Amz_Target { 'CodeDeploy_20141006.CreateDeployment' = 'CodeDeploy_20141006.CreateDeployment' }
 
-	export enum CreateDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.CreateDeploymentConfig' = 0 }
+	export enum CreateDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.CreateDeploymentConfig' = 'CodeDeploy_20141006.CreateDeploymentConfig' }
 
-	export enum CreateDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.CreateDeploymentGroup' = 0 }
+	export enum CreateDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.CreateDeploymentGroup' = 'CodeDeploy_20141006.CreateDeploymentGroup' }
 
-	export enum DeleteApplicationX_Amz_Target { 'CodeDeploy_20141006.DeleteApplication' = 0 }
+	export enum DeleteApplicationX_Amz_Target { 'CodeDeploy_20141006.DeleteApplication' = 'CodeDeploy_20141006.DeleteApplication' }
 
-	export enum DeleteDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.DeleteDeploymentConfig' = 0 }
+	export enum DeleteDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.DeleteDeploymentConfig' = 'CodeDeploy_20141006.DeleteDeploymentConfig' }
 
-	export enum DeleteDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.DeleteDeploymentGroup' = 0 }
+	export enum DeleteDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.DeleteDeploymentGroup' = 'CodeDeploy_20141006.DeleteDeploymentGroup' }
 
-	export enum DeleteGitHubAccountTokenX_Amz_Target { 'CodeDeploy_20141006.DeleteGitHubAccountToken' = 0 }
+	export enum DeleteGitHubAccountTokenX_Amz_Target { 'CodeDeploy_20141006.DeleteGitHubAccountToken' = 'CodeDeploy_20141006.DeleteGitHubAccountToken' }
 
-	export enum DeleteResourcesByExternalIdX_Amz_Target { 'CodeDeploy_20141006.DeleteResourcesByExternalId' = 0 }
+	export enum DeleteResourcesByExternalIdX_Amz_Target { 'CodeDeploy_20141006.DeleteResourcesByExternalId' = 'CodeDeploy_20141006.DeleteResourcesByExternalId' }
 
-	export enum DeregisterOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.DeregisterOnPremisesInstance' = 0 }
+	export enum DeregisterOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.DeregisterOnPremisesInstance' = 'CodeDeploy_20141006.DeregisterOnPremisesInstance' }
 
-	export enum GetApplicationX_Amz_Target { 'CodeDeploy_20141006.GetApplication' = 0 }
+	export enum GetApplicationX_Amz_Target { 'CodeDeploy_20141006.GetApplication' = 'CodeDeploy_20141006.GetApplication' }
 
-	export enum GetApplicationRevisionX_Amz_Target { 'CodeDeploy_20141006.GetApplicationRevision' = 0 }
+	export enum GetApplicationRevisionX_Amz_Target { 'CodeDeploy_20141006.GetApplicationRevision' = 'CodeDeploy_20141006.GetApplicationRevision' }
 
-	export enum GetDeploymentX_Amz_Target { 'CodeDeploy_20141006.GetDeployment' = 0 }
+	export enum GetDeploymentX_Amz_Target { 'CodeDeploy_20141006.GetDeployment' = 'CodeDeploy_20141006.GetDeployment' }
 
-	export enum GetDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentConfig' = 0 }
+	export enum GetDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentConfig' = 'CodeDeploy_20141006.GetDeploymentConfig' }
 
-	export enum GetDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentGroup' = 0 }
+	export enum GetDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentGroup' = 'CodeDeploy_20141006.GetDeploymentGroup' }
 
-	export enum GetDeploymentInstanceX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentInstance' = 0 }
+	export enum GetDeploymentInstanceX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentInstance' = 'CodeDeploy_20141006.GetDeploymentInstance' }
 
-	export enum GetDeploymentTargetX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentTarget' = 0 }
+	export enum GetDeploymentTargetX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentTarget' = 'CodeDeploy_20141006.GetDeploymentTarget' }
 
-	export enum GetOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.GetOnPremisesInstance' = 0 }
+	export enum GetOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.GetOnPremisesInstance' = 'CodeDeploy_20141006.GetOnPremisesInstance' }
 
-	export enum ListApplicationRevisionsX_Amz_Target { 'CodeDeploy_20141006.ListApplicationRevisions' = 0 }
+	export enum ListApplicationRevisionsX_Amz_Target { 'CodeDeploy_20141006.ListApplicationRevisions' = 'CodeDeploy_20141006.ListApplicationRevisions' }
 
-	export enum ListApplicationsX_Amz_Target { 'CodeDeploy_20141006.ListApplications' = 0 }
+	export enum ListApplicationsX_Amz_Target { 'CodeDeploy_20141006.ListApplications' = 'CodeDeploy_20141006.ListApplications' }
 
-	export enum ListDeploymentConfigsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentConfigs' = 0 }
+	export enum ListDeploymentConfigsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentConfigs' = 'CodeDeploy_20141006.ListDeploymentConfigs' }
 
-	export enum ListDeploymentGroupsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentGroups' = 0 }
+	export enum ListDeploymentGroupsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentGroups' = 'CodeDeploy_20141006.ListDeploymentGroups' }
 
-	export enum ListDeploymentInstancesX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentInstances' = 0 }
+	export enum ListDeploymentInstancesX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentInstances' = 'CodeDeploy_20141006.ListDeploymentInstances' }
 
-	export enum ListDeploymentTargetsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentTargets' = 0 }
+	export enum ListDeploymentTargetsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentTargets' = 'CodeDeploy_20141006.ListDeploymentTargets' }
 
-	export enum ListDeploymentsX_Amz_Target { 'CodeDeploy_20141006.ListDeployments' = 0 }
+	export enum ListDeploymentsX_Amz_Target { 'CodeDeploy_20141006.ListDeployments' = 'CodeDeploy_20141006.ListDeployments' }
 
-	export enum ListGitHubAccountTokenNamesX_Amz_Target { 'CodeDeploy_20141006.ListGitHubAccountTokenNames' = 0 }
+	export enum ListGitHubAccountTokenNamesX_Amz_Target { 'CodeDeploy_20141006.ListGitHubAccountTokenNames' = 'CodeDeploy_20141006.ListGitHubAccountTokenNames' }
 
-	export enum ListOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.ListOnPremisesInstances' = 0 }
+	export enum ListOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.ListOnPremisesInstances' = 'CodeDeploy_20141006.ListOnPremisesInstances' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'CodeDeploy_20141006.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'CodeDeploy_20141006.ListTagsForResource' = 'CodeDeploy_20141006.ListTagsForResource' }
 
-	export enum PutLifecycleEventHookExecutionStatusX_Amz_Target { 'CodeDeploy_20141006.PutLifecycleEventHookExecutionStatus' = 0 }
+	export enum PutLifecycleEventHookExecutionStatusX_Amz_Target { 'CodeDeploy_20141006.PutLifecycleEventHookExecutionStatus' = 'CodeDeploy_20141006.PutLifecycleEventHookExecutionStatus' }
 
-	export enum RegisterApplicationRevisionX_Amz_Target { 'CodeDeploy_20141006.RegisterApplicationRevision' = 0 }
+	export enum RegisterApplicationRevisionX_Amz_Target { 'CodeDeploy_20141006.RegisterApplicationRevision' = 'CodeDeploy_20141006.RegisterApplicationRevision' }
 
-	export enum RegisterOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.RegisterOnPremisesInstance' = 0 }
+	export enum RegisterOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.RegisterOnPremisesInstance' = 'CodeDeploy_20141006.RegisterOnPremisesInstance' }
 
-	export enum RemoveTagsFromOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.RemoveTagsFromOnPremisesInstances' = 0 }
+	export enum RemoveTagsFromOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.RemoveTagsFromOnPremisesInstances' = 'CodeDeploy_20141006.RemoveTagsFromOnPremisesInstances' }
 
-	export enum SkipWaitTimeForInstanceTerminationX_Amz_Target { 'CodeDeploy_20141006.SkipWaitTimeForInstanceTermination' = 0 }
+	export enum SkipWaitTimeForInstanceTerminationX_Amz_Target { 'CodeDeploy_20141006.SkipWaitTimeForInstanceTermination' = 'CodeDeploy_20141006.SkipWaitTimeForInstanceTermination' }
 
-	export enum StopDeploymentX_Amz_Target { 'CodeDeploy_20141006.StopDeployment' = 0 }
+	export enum StopDeploymentX_Amz_Target { 'CodeDeploy_20141006.StopDeployment' = 'CodeDeploy_20141006.StopDeployment' }
 
-	export enum TagResourceX_Amz_Target { 'CodeDeploy_20141006.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'CodeDeploy_20141006.TagResource' = 'CodeDeploy_20141006.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'CodeDeploy_20141006.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'CodeDeploy_20141006.UntagResource' = 'CodeDeploy_20141006.UntagResource' }
 
-	export enum UpdateApplicationX_Amz_Target { 'CodeDeploy_20141006.UpdateApplication' = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'CodeDeploy_20141006.UpdateApplication' = 'CodeDeploy_20141006.UpdateApplication' }
 
-	export enum UpdateDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.UpdateDeploymentGroup' = 0 }
+	export enum UpdateDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.UpdateDeploymentGroup' = 'CodeDeploy_20141006.UpdateDeploymentGroup' }
 
 }
 

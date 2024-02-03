@@ -116,11 +116,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiResourcesStatus { live = 0, beta = 1, development = 2, upcoming = 3, considering = 4 }
+	export enum ApiResourcesStatus { live = 'live', beta = 'beta', development = 'development', upcoming = 'upcoming', considering = 'considering' }
 
-	export enum ApiStatus { live = 0, beta = 1, development = 2, considering = 3 }
+	export enum ApiStatus { live = 'live', beta = 'beta', development = 'development', considering = 'considering' }
 
-	export enum ApiType { platform = 0, unified = 1 }
+	export enum ApiType { platform = 'platform', unified = 'unified' }
 
 	export interface ApiResource {
 
@@ -297,7 +297,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaginationCoverageMode { native = 0, virtual = 1 }
+	export enum PaginationCoverageMode { native = 'native', virtual = 'virtual' }
 
 	export interface SupportedProperty {
 
@@ -559,7 +559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorAuth_type { oauth2 = 0, apiKey = 1, basic = 2, custom = 3, none = 4 }
+	export enum ConnectorAuth_type { oauth2 = 'oauth2', apiKey = 'apiKey', basic = 'basic', custom = 'custom', none = 'none' }
 
 	export interface ConnectorDoc {
 
@@ -606,13 +606,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorDocAudience { application_owner = 0, consumer = 1 }
+	export enum ConnectorDocAudience { application_owner = 'application_owner', consumer = 'consumer' }
 
-	export enum ConnectorDocFormat { markdown = 0 }
+	export enum ConnectorDocFormat { markdown = 'markdown' }
 
-	export enum ConnectorOauth_credentials_source { integration = 0, connection = 1 }
+	export enum ConnectorOauth_credentials_source { integration = 'integration', connection = 'connection' }
 
-	export enum ConnectorOauth_grant_type { authorization_code = 0, client_credentials = 1, password = 2 }
+	export enum ConnectorOauth_grant_type { authorization_code = 'authorization_code', client_credentials = 'client_credentials', password = 'password' }
 
 	export interface ConnectorOauth_scopes {
 
@@ -681,7 +681,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorSettingType { text = 0, checkbox = 1, tel = 2, email = 3, url = 4, textarea = 5, select = 6, 'filtered-select' = 7, 'multi-select' = 8, datetime = 9, date = 10, time = 11, number = 12, password = 13 }
+	export enum ConnectorSettingType { text = 'text', checkbox = 'checkbox', tel = 'tel', email = 'email', url = 'url', textarea = 'textarea', select = 'select', 'filtered-select' = 'filtered-select', 'multi-select' = 'multi-select', datetime = 'datetime', date = 'date', time = 'time', number = 'number', password = 'password' }
 
 
 	/** Unify event that is supported on the connector. Events are delivered via Webhooks. */
@@ -832,7 +832,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorUnified_apisId { accounting = 0, ats = 1, calendar = 2, crm = 3, csp = 4, 'customer-support' = 5, ecommerce = 6, email = 7, 'email-marketing' = 8, 'expense-management' = 9, 'file-storage' = 10, form = 11, hris = 12, lead = 13, payroll = 14, pos = 15, procurement = 16, 'project-management' = 17, script = 18, sms = 19, spreadsheet = 20, 'team-messaging' = 21, 'issue-tracking' = 22, 'time-registration' = 23, 'transactional-email' = 24, vault = 25, 'data-warehouse' = 26 }
+	export enum ConnectorUnified_apisId { accounting = 'accounting', ats = 'ats', calendar = 'calendar', crm = 'crm', csp = 'csp', 'customer-support' = 'customer-support', ecommerce = 'ecommerce', email = 'email', 'email-marketing' = 'email-marketing', 'expense-management' = 'expense-management', 'file-storage' = 'file-storage', form = 'form', hris = 'hris', lead = 'lead', payroll = 'payroll', pos = 'pos', procurement = 'procurement', 'project-management' = 'project-management', script = 'script', sms = 'sms', spreadsheet = 'spreadsheet', 'team-messaging' = 'team-messaging', 'issue-tracking' = 'issue-tracking', 'time-registration' = 'time-registration', 'transactional-email' = 'transactional-email', vault = 'vault', 'data-warehouse' = 'data-warehouse' }
 
 	export interface ConnectorUnified_apisOauth_scopes {
 
@@ -896,11 +896,11 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookSupportManaged_via { manual = 0, api = 1 }
+	export enum WebhookSupportManaged_via { manual = 'manual', api = 'api' }
 
-	export enum WebhookSupportMode { native = 0, virtual = 1, none = 2 }
+	export enum WebhookSupportMode { native = 'native', virtual = 'virtual', none = 'none' }
 
-	export enum WebhookSupportSubscription_level { connection = 0, integration = 1 }
+	export enum WebhookSupportSubscription_level { connection = 'connection', integration = 'integration' }
 
 	export interface WebhookSupportVirtual_webhooks {
 
@@ -974,7 +974,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookSupportVirtual_webhooksRequest_rateUnit { second = 0, minute = 1, hour = 2, day = 3 }
+	export enum WebhookSupportVirtual_webhooksRequest_rateUnit { second = 'second', minute = 'minute', hour = 'hour', day = 'day' }
 
 	export interface ConnectorResource {
 
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 
 
 	/** Status of the connector. Connectors with status live or beta are callable. */
-	export enum ConnectorStatus { live = 0, beta = 1, development = 2, considering = 3 }
+	export enum ConnectorStatus { live = 'live', beta = 'beta', development = 'development', considering = 'considering' }
 
 	export interface ConnectorsFilter {
 
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 
 
 	/** Status of the resource. Resources with status live or beta are callable. */
-	export enum ResourceStatus { live = 0, beta = 1, development = 2, upcoming = 3, considering = 4 }
+	export enum ResourceStatus { live = 'live', beta = 'beta', development = 'development', upcoming = 'upcoming', considering = 'considering' }
 
 	export interface TooManyRequestsResponse {
 		detail?: TooManyRequestsResponseDetail;
@@ -1887,7 +1887,7 @@ export namespace MyNS {
 
 
 	/** Name of Apideck Unified API */
-	export enum UnifiedApiId { accounting = 0, ats = 1, calendar = 2, crm = 3, csp = 4, 'customer-support' = 5, ecommerce = 6, email = 7, 'email-marketing' = 8, 'expense-management' = 9, 'file-storage' = 10, form = 11, hris = 12, lead = 13, payroll = 14, pos = 15, procurement = 16, 'project-management' = 17, script = 18, sms = 19, spreadsheet = 20, 'team-messaging' = 21, 'issue-tracking' = 22, 'time-registration' = 23, 'transactional-email' = 24, vault = 25, 'data-warehouse' = 26 }
+	export enum UnifiedApiId { accounting = 'accounting', ats = 'ats', calendar = 'calendar', crm = 'crm', csp = 'csp', 'customer-support' = 'customer-support', ecommerce = 'ecommerce', email = 'email', 'email-marketing' = 'email-marketing', 'expense-management' = 'expense-management', 'file-storage' = 'file-storage', form = 'form', hris = 'hris', lead = 'lead', payroll = 'payroll', pos = 'pos', procurement = 'procurement', 'project-management' = 'project-management', script = 'script', sms = 'sms', spreadsheet = 'spreadsheet', 'team-messaging' = 'team-messaging', 'issue-tracking' = 'issue-tracking', 'time-registration' = 'time-registration', 'transactional-email' = 'transactional-email', vault = 'vault', 'data-warehouse' = 'data-warehouse' }
 
 	@Injectable()
 	export class MyClient {

@@ -127,9 +127,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetAllOrdersContent_Type { 'application/xml' = 0, 'application/json' = 1 }
+	export enum GetAllOrdersContent_Type { 'application/xml' = 'application/xml', 'application/json' = 'application/json' }
 
-	export enum GetAllOrdersWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 0 }
+	export enum GetAllOrdersWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 'SWAGGER_CHANNEL_TYPE' }
 
 }
 

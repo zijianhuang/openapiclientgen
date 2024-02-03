@@ -65,7 +65,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationSecurityGroupPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum ApplicationSecurityGroupPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 	@Injectable()
 	export class MyClient {

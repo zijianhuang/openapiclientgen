@@ -420,7 +420,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum HeatMap_GetHeatMapType { default = 0 }
+	export enum HeatMap_GetHeatMapType { default = 'default' }
 
 }
 

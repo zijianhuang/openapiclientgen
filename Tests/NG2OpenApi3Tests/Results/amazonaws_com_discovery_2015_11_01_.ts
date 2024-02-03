@@ -117,7 +117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchDeleteImportDataErrorCode { NOT_FOUND = 0, INTERNAL_SERVER_ERROR = 1, OVER_LIMIT = 2 }
+	export enum BatchDeleteImportDataErrorCode { NOT_FOUND = 'NOT_FOUND', INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR', OVER_LIMIT = 'OVER_LIMIT' }
 
 	export interface BatchDeleteImportDataRequest {
 
@@ -352,7 +352,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentStatus { HEALTHY = 0, UNHEALTHY = 1, RUNNING = 2, UNKNOWN = 3, BLACKLISTED = 4, SHUTDOWN = 5 }
+	export enum AgentStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', RUNNING = 'RUNNING', UNKNOWN = 'UNKNOWN', BLACKLISTED = 'BLACKLISTED', SHUTDOWN = 'SHUTDOWN' }
 
 	export interface DescribeAgentsRequest {
 		agentIds?: Array<string>;
@@ -487,9 +487,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContinuousExportStatus { START_IN_PROGRESS = 0, START_FAILED = 1, ACTIVE = 2, ERROR = 3, STOP_IN_PROGRESS = 4, STOP_FAILED = 5, INACTIVE = 6 }
+	export enum ContinuousExportStatus { START_IN_PROGRESS = 'START_IN_PROGRESS', START_FAILED = 'START_FAILED', ACTIVE = 'ACTIVE', ERROR = 'ERROR', STOP_IN_PROGRESS = 'STOP_IN_PROGRESS', STOP_FAILED = 'STOP_FAILED', INACTIVE = 'INACTIVE' }
 
-	export enum DataSource { AGENT = 0 }
+	export enum DataSource { AGENT = 'AGENT' }
 
 	export interface SchemaStorageConfig {
 	}
@@ -596,7 +596,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportStatus { FAILED = 0, SUCCEEDED = 1, IN_PROGRESS = 2 }
+	export enum ExportStatus { FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', IN_PROGRESS = 'IN_PROGRESS' }
 
 	export interface DescribeExportConfigurationsRequest {
 		exportIds?: Array<string>;
@@ -745,7 +745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportStatus { IMPORT_IN_PROGRESS = 0, IMPORT_COMPLETE = 1, IMPORT_COMPLETE_WITH_ERRORS = 2, IMPORT_FAILED = 3, IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = 4, IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = 5, DELETE_IN_PROGRESS = 6, DELETE_COMPLETE = 7, DELETE_FAILED = 8, DELETE_FAILED_LIMIT_EXCEEDED = 9, INTERNAL_ERROR = 10 }
+	export enum ImportStatus { IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS', IMPORT_COMPLETE = 'IMPORT_COMPLETE', IMPORT_COMPLETE_WITH_ERRORS = 'IMPORT_COMPLETE_WITH_ERRORS', IMPORT_FAILED = 'IMPORT_FAILED', IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = 'IMPORT_FAILED_SERVER_LIMIT_EXCEEDED', IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = 'IMPORT_FAILED_RECORD_LIMIT_EXCEEDED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_COMPLETE = 'DELETE_COMPLETE', DELETE_FAILED = 'DELETE_FAILED', DELETE_FAILED_LIMIT_EXCEEDED = 'DELETE_FAILED_LIMIT_EXCEEDED', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 	export interface DescribeImportTasksRequest {
 		filters?: Array<ImportTaskFilter>;
@@ -782,7 +782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportTaskFilterName { IMPORT_TASK_ID = 0, STATUS = 1, NAME = 2 }
+	export enum ImportTaskFilterName { IMPORT_TASK_ID = 'IMPORT_TASK_ID', STATUS = 'STATUS', NAME = 'NAME' }
 
 	export interface DescribeTagsResponse {
 		tags?: Array<ConfigurationTag>;
@@ -827,7 +827,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationItemType { SERVER = 0, PROCESS = 1, CONNECTION = 2, APPLICATION = 3 }
+	export enum ConfigurationItemType { SERVER = 'SERVER', PROCESS = 'PROCESS', CONNECTION = 'CONNECTION', APPLICATION = 'APPLICATION' }
 
 	export interface DescribeTagsRequest {
 		filters?: Array<TagFilter>;
@@ -1274,7 +1274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderString { ASC = 0, DESC = 1 }
+	export enum OrderString { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface ListServerNeighborsResponse {
 
@@ -1495,7 +1495,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportDataFormat { CSV = 0 }
+	export enum ExportDataFormat { CSV = 'CSV' }
 
 
 	/**  Indicates the type of data that is being exported. Only one <code>ExportPreferences</code> can be enabled for a <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action.  */
@@ -1559,7 +1559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Tenancy { DEDICATED = 0, SHARED = 1 }
+	export enum Tenancy { DEDICATED = 'DEDICATED', SHARED = 'SHARED' }
 
 
 	/**  Used to provide Reserved Instance preferences for the recommendation.  */
@@ -1596,11 +1596,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PurchasingOption { ALL_UPFRONT = 0, PARTIAL_UPFRONT = 1, NO_UPFRONT = 2 }
+	export enum PurchasingOption { ALL_UPFRONT = 'ALL_UPFRONT', PARTIAL_UPFRONT = 'PARTIAL_UPFRONT', NO_UPFRONT = 'NO_UPFRONT' }
 
-	export enum OfferingClass { STANDARD = 0, CONVERTIBLE = 1 }
+	export enum OfferingClass { STANDARD = 'STANDARD', CONVERTIBLE = 'CONVERTIBLE' }
 
-	export enum TermLength { ONE_YEAR = 0, THREE_YEAR = 1 }
+	export enum TermLength { ONE_YEAR = 'ONE_YEAR', THREE_YEAR = 'THREE_YEAR' }
 
 	export interface StartImportTaskResponse {
 		task?: ImportTask;
@@ -1965,55 +1965,55 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateConfigurationItemsToApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication' = 0 }
+	export enum AssociateConfigurationItemsToApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication' = 'AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication' }
 
-	export enum BatchDeleteImportDataX_Amz_Target { 'AWSPoseidonService_V2015_11_01.BatchDeleteImportData' = 0 }
+	export enum BatchDeleteImportDataX_Amz_Target { 'AWSPoseidonService_V2015_11_01.BatchDeleteImportData' = 'AWSPoseidonService_V2015_11_01.BatchDeleteImportData' }
 
-	export enum CreateApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.CreateApplication' = 0 }
+	export enum CreateApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.CreateApplication' = 'AWSPoseidonService_V2015_11_01.CreateApplication' }
 
-	export enum CreateTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.CreateTags' = 0 }
+	export enum CreateTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.CreateTags' = 'AWSPoseidonService_V2015_11_01.CreateTags' }
 
-	export enum DeleteApplicationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DeleteApplications' = 0 }
+	export enum DeleteApplicationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DeleteApplications' = 'AWSPoseidonService_V2015_11_01.DeleteApplications' }
 
-	export enum DeleteTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DeleteTags' = 0 }
+	export enum DeleteTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DeleteTags' = 'AWSPoseidonService_V2015_11_01.DeleteTags' }
 
-	export enum DescribeAgentsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeAgents' = 0 }
+	export enum DescribeAgentsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeAgents' = 'AWSPoseidonService_V2015_11_01.DescribeAgents' }
 
-	export enum DescribeConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeConfigurations' = 0 }
+	export enum DescribeConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeConfigurations' = 'AWSPoseidonService_V2015_11_01.DescribeConfigurations' }
 
-	export enum DescribeContinuousExportsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeContinuousExports' = 0 }
+	export enum DescribeContinuousExportsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeContinuousExports' = 'AWSPoseidonService_V2015_11_01.DescribeContinuousExports' }
 
-	export enum DescribeExportConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeExportConfigurations' = 0 }
+	export enum DescribeExportConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeExportConfigurations' = 'AWSPoseidonService_V2015_11_01.DescribeExportConfigurations' }
 
-	export enum DescribeExportTasksX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeExportTasks' = 0 }
+	export enum DescribeExportTasksX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeExportTasks' = 'AWSPoseidonService_V2015_11_01.DescribeExportTasks' }
 
-	export enum DescribeImportTasksX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeImportTasks' = 0 }
+	export enum DescribeImportTasksX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeImportTasks' = 'AWSPoseidonService_V2015_11_01.DescribeImportTasks' }
 
-	export enum DescribeTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeTags' = 0 }
+	export enum DescribeTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeTags' = 'AWSPoseidonService_V2015_11_01.DescribeTags' }
 
-	export enum DisassociateConfigurationItemsFromApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DisassociateConfigurationItemsFromApplication' = 0 }
+	export enum DisassociateConfigurationItemsFromApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DisassociateConfigurationItemsFromApplication' = 'AWSPoseidonService_V2015_11_01.DisassociateConfigurationItemsFromApplication' }
 
-	export enum ExportConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ExportConfigurations' = 0 }
+	export enum ExportConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ExportConfigurations' = 'AWSPoseidonService_V2015_11_01.ExportConfigurations' }
 
-	export enum GetDiscoverySummaryX_Amz_Target { 'AWSPoseidonService_V2015_11_01.GetDiscoverySummary' = 0 }
+	export enum GetDiscoverySummaryX_Amz_Target { 'AWSPoseidonService_V2015_11_01.GetDiscoverySummary' = 'AWSPoseidonService_V2015_11_01.GetDiscoverySummary' }
 
-	export enum ListConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ListConfigurations' = 0 }
+	export enum ListConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ListConfigurations' = 'AWSPoseidonService_V2015_11_01.ListConfigurations' }
 
-	export enum ListServerNeighborsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ListServerNeighbors' = 0 }
+	export enum ListServerNeighborsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ListServerNeighbors' = 'AWSPoseidonService_V2015_11_01.ListServerNeighbors' }
 
-	export enum StartContinuousExportX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartContinuousExport' = 0 }
+	export enum StartContinuousExportX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartContinuousExport' = 'AWSPoseidonService_V2015_11_01.StartContinuousExport' }
 
-	export enum StartDataCollectionByAgentIdsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartDataCollectionByAgentIds' = 0 }
+	export enum StartDataCollectionByAgentIdsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartDataCollectionByAgentIds' = 'AWSPoseidonService_V2015_11_01.StartDataCollectionByAgentIds' }
 
-	export enum StartExportTaskX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartExportTask' = 0 }
+	export enum StartExportTaskX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartExportTask' = 'AWSPoseidonService_V2015_11_01.StartExportTask' }
 
-	export enum StartImportTaskX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartImportTask' = 0 }
+	export enum StartImportTaskX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartImportTask' = 'AWSPoseidonService_V2015_11_01.StartImportTask' }
 
-	export enum StopContinuousExportX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StopContinuousExport' = 0 }
+	export enum StopContinuousExportX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StopContinuousExport' = 'AWSPoseidonService_V2015_11_01.StopContinuousExport' }
 
-	export enum StopDataCollectionByAgentIdsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds' = 0 }
+	export enum StopDataCollectionByAgentIdsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds' = 'AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds' }
 
-	export enum UpdateApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.UpdateApplication' = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.UpdateApplication' = 'AWSPoseidonService_V2015_11_01.UpdateApplication' }
 
 }
 

@@ -1285,7 +1285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApmclPostBodyFormat { pdf = 0 }
+	export enum ApmclPostBodyFormat { pdf = 'pdf' }
 
 }
 

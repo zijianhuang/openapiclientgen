@@ -1417,7 +1417,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileStorageEventType { '*' = 0, 'file-storage.file.created' = 1, 'file-storage.file.updated' = 2, 'file-storage.file.deleted' = 3 }
+	export enum FileStorageEventType { '*' = '*', 'file-storage.file.created' = 'file-storage.file.created', 'file-storage.file.updated' = 'file-storage.file.updated', 'file-storage.file.deleted' = 'file-storage.file.deleted' }
 
 	export interface FileStorageWebhookEvent {
 	}
@@ -1431,7 +1431,7 @@ export namespace MyNS {
 
 
 	/** The type of resource. Could be file, folder or url */
-	export enum FileType { file = 0, folder = 1, url = 2 }
+	export enum FileType { file = 'file', folder = 'folder', url = 'url' }
 
 	export interface FilesFilter {
 
@@ -1518,9 +1518,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilesSortBy { updated_at = 0, name = 1 }
+	export enum FilesSortBy { updated_at = 'updated_at', name = 'name' }
 
-	export enum FilesSortDirection { asc = 0, desc = 1 }
+	export enum FilesSortDirection { asc = 'asc', desc = 'desc' }
 
 	export interface Folder {
 
@@ -2734,7 +2734,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharedLinkScope { public = 0, company = 1 }
+	export enum SharedLinkScope { public = 'public', company = 'company' }
 
 	export interface SharedLinkTarget {
 
@@ -3158,7 +3158,7 @@ export namespace MyNS {
 
 
 	/** The direction in which to sort the results */
-	export enum SortDirection { asc = 0, desc = 1 }
+	export enum SortDirection { asc = 'asc', desc = 'desc' }
 
 	export interface TooManyRequestsResponse {
 		detail?: TooManyRequestsResponseDetail;

@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualNetworkConfigurationStatusStatus { Failure = 0, Warning = 1, Success = 2, Uninitialized = 3, InProgress = 4, Unknown = 5 }
+	export enum VirtualNetworkConfigurationStatusStatus { Failure = 'Failure', Warning = 'Warning', Success = 'Success', Uninitialized = 'Uninitialized', InProgress = 'InProgress', Unknown = 'Unknown' }
 
 
 	/** Pageable list of virtual networks. */

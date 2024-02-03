@@ -244,7 +244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GifType { gif = 0 }
+	export enum GifType { gif = 'gif' }
 
 
 	/** The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more. */

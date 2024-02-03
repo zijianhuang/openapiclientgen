@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SocketAddressProtocol { TCP = 0, UDP = 1 }
+	export enum SocketAddressProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 
 	/** BuildVersion combines SemVer version of extension with free-form build information (i.e. 'alpha', 'private-build') as a set of strings. */
@@ -731,7 +731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PerXdsConfigStatus { UNKNOWN = 0, SYNCED = 1, NOT_SENT = 2, STALE = 3, ERROR = 4 }
+	export enum PerXdsConfigStatus { UNKNOWN = 'UNKNOWN', SYNCED = 'SYNCED', NOT_SENT = 'NOT_SENT', STALE = 'STALE', ERROR = 'ERROR' }
 
 
 	/** Request for client status of clients identified by a list of NodeMatchers. */

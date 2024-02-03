@@ -163,7 +163,7 @@ export namespace MyNS {
 
 
 	/** Provisioning status of the workspace. */
-	export enum ProvisioningState { Accepted = 0, Running = 1, Ready = 2, Creating = 3, Created = 4, Deleting = 5, Deleted = 6, Canceled = 7, Failed = 8, Succeeded = 9, Updating = 10 }
+	export enum ProvisioningState { Accepted = 'Accepted', Running = 'Running', Ready = 'Ready', Creating = 'Creating', Created = 'Created', Deleting = 'Deleting', Deleted = 'Deleted', Canceled = 'Canceled', Failed = 'Failed', Succeeded = 'Succeeded', Updating = 'Updating' }
 
 
 	/** The core properties of ARM resources */
@@ -333,7 +333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkspaceCustomBooleanParameterType { Bool = 0, Object = 1, String = 2 }
+	export enum WorkspaceCustomBooleanParameterType { Bool = 'Bool', Object = 'Object', String = 'String' }
 
 
 	/** The value which should be used for this field. */
@@ -371,7 +371,7 @@ export namespace MyNS {
 
 
 	/** Provisioning status of the workspace. */
-	export enum WorkspaceCustomParameterType { Bool = 0, Object = 1, String = 2 }
+	export enum WorkspaceCustomParameterType { Bool = 'Bool', Object = 'Object', String = 'String' }
 
 
 	/** Custom Parameters used for Cluster Creation. */

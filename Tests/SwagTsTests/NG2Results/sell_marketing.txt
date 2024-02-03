@@ -1118,7 +1118,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class AdClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -1279,12 +1279,6 @@ export namespace MyNS {
 		UpdateBid(ad_id: string, campaign_id: string, requestBody: UpdateBidPercentageRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)) + '/update_bid', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class CampaignClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method clones (makes a copy of) the specified campaign. Supply the campaign_id as a URI parameter. The ID of the newly-cloned campaign is returned in the Location response header. Call getCampaigns to retrieve a seller's current campaign IDs Requirement: In order to clone a campaign, the campaignStatus must be ENDED and the campaign must define a set of selection rules (it must be a rules-based campaign).
@@ -1404,12 +1398,6 @@ export namespace MyNS {
 		UpdateCampaignIdentification(campaign_id: string, requestBody: UpdateCampaignIdentificationRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/update_campaign_identification', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class Ad_reportClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This call downloads the report as specified by the report_id path parameter. Note: All date values are returned in UTC format (yyyy-MM-ddThh:mm:ss.sssZ), which you can convert and display in the seller's local time.
@@ -1419,12 +1407,6 @@ export namespace MyNS {
 		 */
 		GetReport(report_id: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ad_report/' + (report_id == null ? '' : encodeURIComponent(report_id)), { observe: 'response', responseType: 'text' });
-		}
-	}
-
-	@Injectable()
-	export class Ad_report_metadataClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -1444,12 +1426,6 @@ export namespace MyNS {
 		 */
 		GetReportMetadataForReportType(report_type: string): Observable<ReportMetadata> {
 			return this.http.get<ReportMetadata>(this.baseUri + 'ad_report_metadata/' + (report_type == null ? '' : encodeURIComponent(report_type)), {});
-		}
-	}
-
-	@Injectable()
-	export class Ad_report_taskClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -1493,12 +1469,6 @@ export namespace MyNS {
 		DeleteReportTask(report_task_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), { observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class Item_price_markdownClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method creates an item price markdown promotion (know simply as a &quot;markdown promotion&quot;) where a discount amount is applied directly to the items included the promotion. Discounts can be specified as either a monetary amount or a percentage off the standard sales price. eBay highlights promoted items by placing teasers for the items throughout the online sales flows. Unlike an item promotion, a markdown promotion does not require the buyer meet a &quot;threshold&quot; before the offer takes effect. With markdown promotions, all the buyer needs to do is purchase the item to receive the promotion benefit. Important: You can create item price markdown promotions only for specific listings. For complete details, see Promotions Manager requirements and restrictions. In addition, we recommend you list items at competitive prices before including them in your markdown promotions. For an extensive list of pricing recommendations, see the Growth tab in Seller Hub. There are two ways to add items to markdown promotions: Key-based promotions select items using either the listing IDs or inventory reference IDs of the items you want to promote. Note that if you use inventory reference IDs, you must specify both the inventoryReferenceId and the associated inventoryReferenceType of the item(s) you want to include the promotion. Rule-based promotions select items using a list of eBay category IDs or seller Store category IDs. Rules can further constrain items in a promotion by minimum and maximum prices, brands, and item conditions. New promotions must be created in either a DRAFT or a SCHEDULED state. Use the DRAFT state when you are initially creating a promotion and you want to be sure it's correctly configured before scheduling it to run. When you create a promotion, the promotion ID is returned in the Location response header. Use this ID to reference the promotion in subsequent requests (such as to schedule a promotion that's in a DRAFT state). Tip: Refer to Promotions Manager in the Selling Integration Guide for details and examples showing how to create and manage seller promotions. Markdown promotions are available on all eBay marketplaces. For more information, see Promotions Manager requirements and restrictions.
@@ -1540,12 +1510,6 @@ export namespace MyNS {
 		DeleteItemPriceMarkdownPromotion(promotion_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class Item_promotionClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method creates an item promotion (known casually as a &quot;threshold promotion&quot;) where the buyer receives a discount when they meet the buying criteria that's set for the promotion. eBay highlights promoted items by placing teasers for the items throughout the online sales flows. Discounts can be specified as either a monetary amount or a percentage off the standard sales price. This gives you the ability offer discounts such as &quot;Buy 1 Get 1&quot;, or &quot;Buy $50, get 20% off&quot;. You can also create volume pricing promotions, where the discount amount increases as the buyer increases the quantity they purchase. There are two ways to add items to a threshold promotion: Key-based promotions select items using either the listing IDs or inventory reference IDs of the items you want to promote. Note that if you use inventory reference IDs, you must specify both the inventoryReferenceId and the associated inventoryReferenceType of the item(s) you want to include the promotion. Rule-based promotions select items using a list of eBay category IDs or seller Store category IDs. Rules can further constrain items in a promotion by minimum and maximum prices, brands, and item conditions. You must create a new promotion either a DRAFT or SCHEDULED state. Use the DRAFT state when you are initially creating a promotion and you want to be sure it's correctly configured before scheduling it to run. When you create a promotion, the promotion ID is returned in the Location response header. Use this ID to reference the promotion in subsequent requests. Tip: Refer to the Selling Integration Guide for details and examples showing how to create and manage threshold promotions using the Promotions Manager. For information on the eBay marketplaces that support item promotions, see Promotions Manager requirements and restrictions.
@@ -1586,12 +1550,6 @@ export namespace MyNS {
 		 */
 		DeleteItemPromotion(promotion_id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { observe: 'response', responseType: 'text' });
-		}
-	}
-
-	@Injectable()
-	export class PromotionClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -1644,12 +1602,6 @@ export namespace MyNS {
 		ResumePromotion(promotion_id: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/resume', null, { observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class Promotion_reportClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This method generates a report that lists the seller's running, paused, and ended promotions for the specified eBay marketplace. The result set can be filtered by the promotion status and the number of results to return. You can also supply keywords to limit the report to promotions that contain the specified keywords. Specify the eBay marketplace for which you want the report run using the marketplace_id query parameter. Supply additional query parameters to control the report as needed.
@@ -1664,12 +1616,6 @@ export namespace MyNS {
 		 */
 		GetPromotionReports(limit: string | null | undefined, marketplace_id: string, offset: string | null | undefined, promotion_status: string | null | undefined, promotion_type: string | null | undefined, q: string | null | undefined): Observable<PromotionsReportPagedCollection> {
 			return this.http.get<PromotionsReportPagedCollection>(this.baseUri + 'promotion_report?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), {});
-		}
-	}
-
-	@Injectable()
-	export class Promotion_summary_reportClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

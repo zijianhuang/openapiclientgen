@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Interaction_enum_resource_status { accepted = 0, answered = 1, busy = 2, canceled = 3, completed = 4, deleted = 5, delivered = 6, 'delivery-unknown' = 7, failed = 8, 'in-progress' = 9, initiated = 10, 'no-answer' = 11, queued = 12, received = 13, receiving = 14, ringing = 15, scheduled = 16, sending = 17, sent = 18, undelivered = 19, unknown = 20 }
+	export enum Interaction_enum_resource_status { accepted = 'accepted', answered = 'answered', busy = 'busy', canceled = 'canceled', completed = 'completed', deleted = 'deleted', delivered = 'delivered', 'delivery-unknown' = 'delivery-unknown', failed = 'failed', 'in-progress' = 'in-progress', initiated = 'initiated', 'no-answer' = 'no-answer', queued = 'queued', received = 'received', receiving = 'receiving', ringing = 'ringing', scheduled = 'scheduled', sending = 'sending', sent = 'sent', undelivered = 'undelivered', unknown = 'unknown' }
 
-	export enum Interaction_enum_type { message = 0, voice = 1, unknown = 2 }
+	export enum Interaction_enum_type { message = 'message', voice = 'voice', unknown = 'unknown' }
 
-	export enum Message_interaction_enum_resource_status { accepted = 0, answered = 1, busy = 2, canceled = 3, completed = 4, deleted = 5, delivered = 6, 'delivery-unknown' = 7, failed = 8, 'in-progress' = 9, initiated = 10, 'no-answer' = 11, queued = 12, received = 13, receiving = 14, ringing = 15, scheduled = 16, sending = 17, sent = 18, undelivered = 19, unknown = 20 }
+	export enum Message_interaction_enum_resource_status { accepted = 'accepted', answered = 'answered', busy = 'busy', canceled = 'canceled', completed = 'completed', deleted = 'deleted', delivered = 'delivered', 'delivery-unknown' = 'delivery-unknown', failed = 'failed', 'in-progress' = 'in-progress', initiated = 'initiated', 'no-answer' = 'no-answer', queued = 'queued', received = 'received', receiving = 'receiving', ringing = 'ringing', scheduled = 'scheduled', sending = 'sending', sent = 'sent', undelivered = 'undelivered', unknown = 'unknown' }
 
-	export enum Message_interaction_enum_type { message = 0, voice = 1, unknown = 2 }
+	export enum Message_interaction_enum_type { message = 'message', voice = 'voice', unknown = 'unknown' }
 
 	export interface Proxyv1service {
 
@@ -135,9 +135,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Proxyv1serviceGeo_match_level { 'area-code' = 0, overlay = 1, radius = 2, country = 3 }
+	export enum Proxyv1serviceGeo_match_level { 'area-code' = 'area-code', overlay = 'overlay', radius = 'radius', country = 'country' }
 
-	export enum Proxyv1serviceNumber_selection_behavior { 'avoid-sticky' = 0, 'prefer-sticky' = 1 }
+	export enum Proxyv1serviceNumber_selection_behavior { 'avoid-sticky' = 'avoid-sticky', 'prefer-sticky' = 'prefer-sticky' }
 
 	export interface Proxyv1servicephone_number {
 
@@ -413,9 +413,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Proxyv1servicesessionMode { 'message-only' = 0, 'voice-only' = 1, 'voice-and-message' = 2 }
+	export enum Proxyv1servicesessionMode { 'message-only' = 'message-only', 'voice-only' = 'voice-only', 'voice-and-message' = 'voice-and-message' }
 
-	export enum Proxyv1servicesessionStatus { open = 0, 'in-progress' = 1, closed = 2, failed = 3, unknown = 4 }
+	export enum Proxyv1servicesessionStatus { open = 'open', 'in-progress' = 'in-progress', closed = 'closed', failed = 'failed', unknown = 'unknown' }
 
 	export interface Proxyv1servicesessioninteraction {
 
@@ -1085,13 +1085,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Service_enum_geo_match_level { 'area-code' = 0, overlay = 1, radius = 2, country = 3 }
+	export enum Service_enum_geo_match_level { 'area-code' = 'area-code', overlay = 'overlay', radius = 'radius', country = 'country' }
 
-	export enum Service_enum_number_selection_behavior { 'avoid-sticky' = 0, 'prefer-sticky' = 1 }
+	export enum Service_enum_number_selection_behavior { 'avoid-sticky' = 'avoid-sticky', 'prefer-sticky' = 'prefer-sticky' }
 
-	export enum Session_enum_mode { 'message-only' = 0, 'voice-only' = 1, 'voice-and-message' = 2 }
+	export enum Session_enum_mode { 'message-only' = 'message-only', 'voice-only' = 'voice-only', 'voice-and-message' = 'voice-and-message' }
 
-	export enum Session_enum_status { open = 0, 'in-progress' = 1, closed = 2, failed = 3, unknown = 4 }
+	export enum Session_enum_status { open = 'open', 'in-progress' = 'in-progress', closed = 'closed', failed = 'failed', unknown = 'unknown' }
 
 	@Injectable()
 	export class MyClient {

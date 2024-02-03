@@ -330,7 +330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisSchemeAnalysisSchemeLanguage { ar = 0, bg = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, eu = 9, fa = 10, fi = 11, fr = 12, ga = 13, gl = 14, he = 15, hi = 16, hu = 17, hy = 18, id = 19, it = 20, ja = 21, ko = 22, lv = 23, mul = 24, nl = 25, no = 26, pt = 27, ro = 28, ru = 29, sv = 30, th = 31, tr = 32, 'zh-Hans' = 33, 'zh-Hant' = 34 }
+	export enum AnalysisSchemeAnalysisSchemeLanguage { ar = 'ar', bg = 'bg', ca = 'ca', cs = 'cs', da = 'da', de = 'de', el = 'el', en = 'en', es = 'es', eu = 'eu', fa = 'fa', fi = 'fi', fr = 'fr', ga = 'ga', gl = 'gl', he = 'he', hi = 'hi', hu = 'hu', hy = 'hy', id = 'id', it = 'it', ja = 'ja', ko = 'ko', lv = 'lv', mul = 'mul', nl = 'nl', no = 'no', pt = 'pt', ro = 'ro', ru = 'ru', sv = 'sv', th = 'th', tr = 'tr', 'zh-Hans' = 'zh-Hans', 'zh-Hant' = 'zh-Hant' }
 
 
 	/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
@@ -361,7 +361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmicStemming { none = 0, minimal = 1, light = 2, full = 3 }
+	export enum AlgorithmicStemming { none = 'none', minimal = 'minimal', light = 'light', full = 'full' }
 
 
 	/** The status of domain configuration option. */
@@ -406,11 +406,11 @@ export namespace MyNS {
 
 
 	/** <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul> */
-	export enum OptionState { RequiresIndexDocuments = 0, Processing = 1, Active = 2, FailedToValidate = 3 }
+	export enum OptionState { RequiresIndexDocuments = 'RequiresIndexDocuments', Processing = 'Processing', Active = 'Active', FailedToValidate = 'FailedToValidate' }
 
 
 	/** An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages. */
-	export enum AnalysisSchemeLanguage { ar = 0, bg = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, eu = 9, fa = 10, fi = 11, fr = 12, ga = 13, gl = 14, he = 15, hi = 16, hu = 17, hy = 18, id = 19, it = 20, ja = 21, ko = 22, lv = 23, mul = 24, nl = 25, no = 26, pt = 27, ro = 28, ru = 29, sv = 30, th = 31, tr = 32, 'zh-Hans' = 33, 'zh-Hant' = 34 }
+	export enum AnalysisSchemeLanguage { ar = 'ar', bg = 'bg', ca = 'ca', cs = 'cs', da = 'da', de = 'de', el = 'el', en = 'en', es = 'es', eu = 'eu', fa = 'fa', fi = 'fi', fr = 'fr', ga = 'ga', gl = 'gl', he = 'he', hi = 'hi', hu = 'hu', hy = 'hy', id = 'id', it = 'it', ja = 'ja', ko = 'ko', lv = 'lv', mul = 'mul', nl = 'nl', no = 'no', pt = 'pt', ro = 'ro', ru = 'ru', sv = 'sv', th = 'th', tr = 'tr', 'zh-Hans' = 'zh-Hans', 'zh-Hant' = 'zh-Hant' }
 
 	export interface InvalidTypeException {
 	}
@@ -626,7 +626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexFieldIndexFieldType { int = 0, double = 1, literal = 2, text = 3, date = 4, latlon = 5, 'int-array' = 6, 'double-array' = 7, 'literal-array' = 8, 'text-array' = 9, 'date-array' = 10 }
+	export enum IndexFieldIndexFieldType { int = 'int', double = 'double', literal = 'literal', text = 'text', date = 'date', latlon = 'latlon', 'int-array' = 'int-array', 'double-array' = 'double-array', 'literal-array' = 'literal-array', 'text-array' = 'text-array', 'date-array' = 'date-array' }
 
 
 	/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 
 
 	/** The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. */
-	export enum IndexFieldType { int = 0, double = 1, literal = 2, text = 3, date = 4, latlon = 5, 'int-array' = 6, 'double-array' = 7, 'literal-array' = 8, 'text-array' = 9, 'date-array' = 10 }
+	export enum IndexFieldType { int = 'int', double = 'double', literal = 'literal', text = 'text', date = 'date', latlon = 'latlon', 'int-array' = 'int-array', 'double-array' = 'double-array', 'literal-array' = 'literal-array', 'text-array' = 'text-array', 'date-array' = 'date-array' }
 
 
 	/** The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester. */
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuggesterFuzzyMatching { none = 0, low = 1, high = 2 }
+	export enum SuggesterFuzzyMatching { none = 'none', low = 'low', high = 'high' }
 
 
 	/** The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme. */
@@ -1340,7 +1340,7 @@ export namespace MyNS {
 
 
 	/** The minimum required TLS version. */
-	export enum TLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 0, 'Policy-Min-TLS-1-2-2019-07' = 1 }
+	export enum TLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 'Policy-Min-TLS-1-0-2019-07', 'Policy-Min-TLS-1-2-2019-07' = 'Policy-Min-TLS-1-2-2019-07' }
 
 
 	/** The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account. */
@@ -1467,7 +1467,7 @@ export namespace MyNS {
 
 
 	/** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted. */
-	export enum PartitionInstanceType { 'search.m1.small' = 0, 'search.m1.large' = 1, 'search.m2.xlarge' = 2, 'search.m2.2xlarge' = 3, 'search.m3.medium' = 4, 'search.m3.large' = 5, 'search.m3.xlarge' = 6, 'search.m3.2xlarge' = 7, 'search.small' = 8, 'search.medium' = 9, 'search.large' = 10, 'search.xlarge' = 11, 'search.2xlarge' = 12, 'search.previousgeneration.small' = 13, 'search.previousgeneration.large' = 14, 'search.previousgeneration.xlarge' = 15, 'search.previousgeneration.2xlarge' = 16 }
+	export enum PartitionInstanceType { 'search.m1.small' = 'search.m1.small', 'search.m1.large' = 'search.m1.large', 'search.m2.xlarge' = 'search.m2.xlarge', 'search.m2.2xlarge' = 'search.m2.2xlarge', 'search.m3.medium' = 'search.m3.medium', 'search.m3.large' = 'search.m3.large', 'search.m3.xlarge' = 'search.m3.xlarge', 'search.m3.2xlarge' = 'search.m3.2xlarge', 'search.small' = 'search.small', 'search.medium' = 'search.medium', 'search.large' = 'search.large', 'search.xlarge' = 'search.xlarge', 'search.2xlarge' = 'search.2xlarge', 'search.previousgeneration.small' = 'search.previousgeneration.small', 'search.previousgeneration.large' = 'search.previousgeneration.large', 'search.previousgeneration.xlarge' = 'search.previousgeneration.xlarge', 'search.previousgeneration.2xlarge' = 'search.previousgeneration.2xlarge' }
 
 
 	/** The result of a <code>DescribeServiceAccessPolicies</code> request. */
@@ -2682,11 +2682,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_BuildSuggestersAction { BuildSuggesters = 0 }
+	export enum GET_BuildSuggestersAction { BuildSuggesters = 'BuildSuggesters' }
 
-	export enum GET_BuildSuggestersVersion { '2013-01-01' = 0 }
+	export enum GET_BuildSuggestersVersion { '2013-01-01' = '2013-01-01' }
 
-	export enum GET_CreateDomainAction { CreateDomain = 0 }
+	export enum GET_CreateDomainAction { CreateDomain = 'CreateDomain' }
 
 	export interface GET_DefineAnalysisSchemeAnalysisScheme {
 
@@ -2731,7 +2731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DefineAnalysisSchemeAction { DefineAnalysisScheme = 0 }
+	export enum GET_DefineAnalysisSchemeAction { DefineAnalysisScheme = 'DefineAnalysisScheme' }
 
 	export interface GET_DefineExpressionExpression {
 
@@ -2777,7 +2777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DefineExpressionAction { DefineExpression = 0 }
+	export enum GET_DefineExpressionAction { DefineExpression = 'DefineExpression' }
 
 	export interface GET_DefineIndexFieldIndexField {
 
@@ -2842,7 +2842,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DefineIndexFieldAction { DefineIndexField = 0 }
+	export enum GET_DefineIndexFieldAction { DefineIndexField = 'DefineIndexField' }
 
 	export interface GET_DefineSuggesterSuggester {
 
@@ -2877,41 +2877,41 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DefineSuggesterAction { DefineSuggester = 0 }
+	export enum GET_DefineSuggesterAction { DefineSuggester = 'DefineSuggester' }
 
-	export enum GET_DeleteAnalysisSchemeAction { DeleteAnalysisScheme = 0 }
+	export enum GET_DeleteAnalysisSchemeAction { DeleteAnalysisScheme = 'DeleteAnalysisScheme' }
 
-	export enum GET_DeleteDomainAction { DeleteDomain = 0 }
+	export enum GET_DeleteDomainAction { DeleteDomain = 'DeleteDomain' }
 
-	export enum GET_DeleteExpressionAction { DeleteExpression = 0 }
+	export enum GET_DeleteExpressionAction { DeleteExpression = 'DeleteExpression' }
 
-	export enum GET_DeleteIndexFieldAction { DeleteIndexField = 0 }
+	export enum GET_DeleteIndexFieldAction { DeleteIndexField = 'DeleteIndexField' }
 
-	export enum GET_DeleteSuggesterAction { DeleteSuggester = 0 }
+	export enum GET_DeleteSuggesterAction { DeleteSuggester = 'DeleteSuggester' }
 
-	export enum GET_DescribeAnalysisSchemesAction { DescribeAnalysisSchemes = 0 }
+	export enum GET_DescribeAnalysisSchemesAction { DescribeAnalysisSchemes = 'DescribeAnalysisSchemes' }
 
-	export enum GET_DescribeAvailabilityOptionsAction { DescribeAvailabilityOptions = 0 }
+	export enum GET_DescribeAvailabilityOptionsAction { DescribeAvailabilityOptions = 'DescribeAvailabilityOptions' }
 
-	export enum GET_DescribeDomainEndpointOptionsAction { DescribeDomainEndpointOptions = 0 }
+	export enum GET_DescribeDomainEndpointOptionsAction { DescribeDomainEndpointOptions = 'DescribeDomainEndpointOptions' }
 
-	export enum GET_DescribeDomainsAction { DescribeDomains = 0 }
+	export enum GET_DescribeDomainsAction { DescribeDomains = 'DescribeDomains' }
 
-	export enum GET_DescribeExpressionsAction { DescribeExpressions = 0 }
+	export enum GET_DescribeExpressionsAction { DescribeExpressions = 'DescribeExpressions' }
 
-	export enum GET_DescribeIndexFieldsAction { DescribeIndexFields = 0 }
+	export enum GET_DescribeIndexFieldsAction { DescribeIndexFields = 'DescribeIndexFields' }
 
-	export enum GET_DescribeScalingParametersAction { DescribeScalingParameters = 0 }
+	export enum GET_DescribeScalingParametersAction { DescribeScalingParameters = 'DescribeScalingParameters' }
 
-	export enum GET_DescribeServiceAccessPoliciesAction { DescribeServiceAccessPolicies = 0 }
+	export enum GET_DescribeServiceAccessPoliciesAction { DescribeServiceAccessPolicies = 'DescribeServiceAccessPolicies' }
 
-	export enum GET_DescribeSuggestersAction { DescribeSuggesters = 0 }
+	export enum GET_DescribeSuggestersAction { DescribeSuggesters = 'DescribeSuggesters' }
 
-	export enum GET_IndexDocumentsAction { IndexDocuments = 0 }
+	export enum GET_IndexDocumentsAction { IndexDocuments = 'IndexDocuments' }
 
-	export enum GET_ListDomainNamesAction { ListDomainNames = 0 }
+	export enum GET_ListDomainNamesAction { ListDomainNames = 'ListDomainNames' }
 
-	export enum GET_UpdateAvailabilityOptionsAction { UpdateAvailabilityOptions = 0 }
+	export enum GET_UpdateAvailabilityOptionsAction { UpdateAvailabilityOptions = 'UpdateAvailabilityOptions' }
 
 	export interface GET_UpdateDomainEndpointOptionsDomainEndpointOptions {
 		EnforceHTTPS?: boolean | null;
@@ -2929,7 +2929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateDomainEndpointOptionsAction { UpdateDomainEndpointOptions = 0 }
+	export enum GET_UpdateDomainEndpointOptionsAction { UpdateDomainEndpointOptions = 'UpdateDomainEndpointOptions' }
 
 	export interface GET_UpdateScalingParametersScalingParameters {
 		DesiredInstanceType?: PartitionInstanceType;
@@ -2950,9 +2950,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateScalingParametersAction { UpdateScalingParameters = 0 }
+	export enum GET_UpdateScalingParametersAction { UpdateScalingParameters = 'UpdateScalingParameters' }
 
-	export enum GET_UpdateServiceAccessPoliciesAction { UpdateServiceAccessPolicies = 0 }
+	export enum GET_UpdateServiceAccessPoliciesAction { UpdateServiceAccessPolicies = 'UpdateServiceAccessPolicies' }
 
 }
 

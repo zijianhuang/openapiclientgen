@@ -218,9 +218,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSkuRestrictionsReasonCode { QuotaId = 0, NotAvailableForSubscription = 1 }
+	export enum ResourceSkuRestrictionsReasonCode { QuotaId = 'QuotaId', NotAvailableForSubscription = 'NotAvailableForSubscription' }
 
-	export enum ResourceSkuRestrictionsType { Location = 0, Zone = 1 }
+	export enum ResourceSkuRestrictionsType { Location = 'Location', Zone = 'Zone' }
 
 
 	/** Describes scaling information of a SKU. */
@@ -264,7 +264,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSkuCapacityScaleType { Automatic = 0, Manual = 1, None = 2 }
+	export enum ResourceSkuCapacityScaleType { Automatic = 'Automatic', Manual = 'Manual', None = 'None' }
 
 	export interface ResourceSkuRestrictionInfo {
 

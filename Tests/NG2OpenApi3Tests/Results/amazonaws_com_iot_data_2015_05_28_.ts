@@ -306,7 +306,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PayloadFormatIndicator { UNSPECIFIED_BYTES = 0, UTF8_DATA = 1 }
+	export enum PayloadFormatIndicator { UNSPECIFIED_BYTES = 'UNSPECIFIED_BYTES', UTF8_DATA = 'UTF8_DATA' }
 
 
 	/** The input for the Publish operation. */

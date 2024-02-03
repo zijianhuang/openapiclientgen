@@ -301,7 +301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowState { STATE_UNSPECIFIED = 0, ACTIVE = 1 }
+	export enum WorkflowState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE' }
 
 
 	/** Represents the metadata of the long-running operation. */

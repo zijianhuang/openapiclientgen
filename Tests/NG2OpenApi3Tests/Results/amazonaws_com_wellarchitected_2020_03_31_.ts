@@ -252,9 +252,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TrustedAdvisorIntegrationStatus { ENABLED = 0, DISABLED = 1 }
+	export enum TrustedAdvisorIntegrationStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum DefinitionType { WORKLOAD_METADATA = 0, APP_REGISTRY = 1 }
+	export enum DefinitionType { WORKLOAD_METADATA = 'WORKLOAD_METADATA', APP_REGISTRY = 'APP_REGISTRY' }
 
 
 	/** Input for Create Workload Share */
@@ -614,7 +614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdditionalResourceType { HELPFUL_RESOURCE = 0, IMPROVEMENT_PLAN = 1 }
+	export enum AdditionalResourceType { HELPFUL_RESOURCE = 'HELPFUL_RESOURCE', IMPROVEMENT_PLAN = 'IMPROVEMENT_PLAN' }
 
 
 	/** A choice that has been answered on a question in your workload. */
@@ -654,11 +654,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ChoiceStatus { SELECTED = 0, NOT_APPLICABLE = 1, UNSELECTED = 2 }
+	export enum ChoiceStatus { SELECTED = 'SELECTED', NOT_APPLICABLE = 'NOT_APPLICABLE', UNSELECTED = 'UNSELECTED' }
 
-	export enum ChoiceReason { OUT_OF_SCOPE = 0, BUSINESS_PRIORITIES = 1, ARCHITECTURE_CONSTRAINTS = 2, OTHER = 3, NONE = 4 }
+	export enum ChoiceReason { OUT_OF_SCOPE = 'OUT_OF_SCOPE', BUSINESS_PRIORITIES = 'BUSINESS_PRIORITIES', ARCHITECTURE_CONSTRAINTS = 'ARCHITECTURE_CONSTRAINTS', OTHER = 'OTHER', NONE = 'NONE' }
 
-	export enum AnswerRisk { UNANSWERED = 0, HIGH = 1, MEDIUM = 2, NONE = 3, NOT_APPLICABLE = 4 }
+	export enum AnswerRisk { UNANSWERED = 'UNANSWERED', HIGH = 'HIGH', MEDIUM = 'MEDIUM', NONE = 'NONE', NOT_APPLICABLE = 'NOT_APPLICABLE' }
 
 	export interface GetConsolidatedReportOutput {
 		Metrics?: Array<ConsolidatedReportMetric>;
@@ -753,7 +753,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricType { WORKLOAD = 0 }
+	export enum MetricType { WORKLOAD = 'WORKLOAD' }
 
 
 	/** A map from risk names to the count of how many questions have that rating. */
@@ -1119,7 +1119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LensStatus { CURRENT = 0, NOT_CURRENT = 1, DEPRECATED = 2, DELETED = 3, UNSHARED = 4 }
+	export enum LensStatus { CURRENT = 'CURRENT', NOT_CURRENT = 'NOT_CURRENT', DEPRECATED = 'DEPRECATED', DELETED = 'DELETED', UNSHARED = 'UNSHARED' }
 
 
 	/** A pillar review summary of a lens review. */
@@ -1393,7 +1393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DifferenceStatus { UPDATED = 0, NEW = 1, DELETED = 2 }
+	export enum DifferenceStatus { UPDATED = 'UPDATED', NEW = 'NEW', DELETED = 'DELETED' }
 
 
 	/** A question difference return object. */
@@ -1744,9 +1744,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkloadEnvironment { PRODUCTION = 0, PREPRODUCTION = 1 }
+	export enum WorkloadEnvironment { PRODUCTION = 'PRODUCTION', PREPRODUCTION = 'PREPRODUCTION' }
 
-	export enum WorkloadImprovementStatus { NOT_APPLICABLE = 0, NOT_STARTED = 1, IN_PROGRESS = 2, COMPLETE = 3, RISK_ACKNOWLEDGED = 4 }
+	export enum WorkloadImprovementStatus { NOT_APPLICABLE = 'NOT_APPLICABLE', NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', RISK_ACKNOWLEDGED = 'RISK_ACKNOWLEDGED' }
 
 
 	/** Discovery configuration associated to the workload. */
@@ -2164,7 +2164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportLensStatus { IN_PROGRESS = 0, COMPLETE = 1, ERROR = 2 }
+	export enum ImportLensStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', ERROR = 'ERROR' }
 
 
 	/** Output of a list answers call. */
@@ -2359,7 +2359,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuestionType { PRIORITIZED = 0, NON_PRIORITIZED = 1 }
+	export enum QuestionType { PRIORITIZED = 'PRIORITIZED', NON_PRIORITIZED = 'NON_PRIORITIZED' }
 
 	export interface ListCheckDetailsOutput {
 		CheckDetails?: Array<CheckDetail>;
@@ -2484,11 +2484,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckProvider { TRUSTED_ADVISOR = 0 }
+	export enum CheckProvider { TRUSTED_ADVISOR = 'TRUSTED_ADVISOR' }
 
-	export enum CheckStatus { OKAY = 0, WARNING = 1, ERROR = 2, NOT_AVAILABLE = 3, FETCH_FAILED = 4 }
+	export enum CheckStatus { OKAY = 'OKAY', WARNING = 'WARNING', ERROR = 'ERROR', NOT_AVAILABLE = 'NOT_AVAILABLE', FETCH_FAILED = 'FETCH_FAILED' }
 
-	export enum CheckFailureReason { ASSUME_ROLE_ERROR = 0, ACCESS_DENIED = 1, UNKNOWN_ERROR = 2, PREMIUM_SUPPORT_REQUIRED = 3 }
+	export enum CheckFailureReason { ASSUME_ROLE_ERROR = 'ASSUME_ROLE_ERROR', ACCESS_DENIED = 'ACCESS_DENIED', UNKNOWN_ERROR = 'UNKNOWN_ERROR', PREMIUM_SUPPORT_REQUIRED = 'PREMIUM_SUPPORT_REQUIRED' }
 
 	export interface ListCheckSummariesOutput {
 		CheckSummaries?: Array<CheckSummary>;
@@ -2993,7 +2993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LensShareSummaryStatus { ACCEPTED = 0, REJECTED = 1, PENDING = 2, REVOKED = 3, EXPIRED = 4, ASSOCIATING = 5, ASSOCIATED = 6, FAILED = 7 }
+	export enum LensShareSummaryStatus { ACCEPTED = 'ACCEPTED', REJECTED = 'REJECTED', PENDING = 'PENDING', REVOKED = 'REVOKED', EXPIRED = 'EXPIRED', ASSOCIATING = 'ASSOCIATING', ASSOCIATED = 'ASSOCIATED', FAILED = 'FAILED' }
 
 
 	/** Output of a list lenses call. */
@@ -3119,7 +3119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LensType { AWS_OFFICIAL = 0, CUSTOM_SHARED = 1, CUSTOM_SELF = 2 }
+	export enum LensType { AWS_OFFICIAL = 'AWS_OFFICIAL', CUSTOM_SHARED = 'CUSTOM_SHARED', CUSTOM_SELF = 'CUSTOM_SELF' }
 
 
 	/** Output of a list milestones call. */
@@ -3340,7 +3340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationType { LENS_VERSION_UPGRADED = 0, LENS_VERSION_DEPRECATED = 1 }
+	export enum NotificationType { LENS_VERSION_UPGRADED = 'LENS_VERSION_UPGRADED', LENS_VERSION_DEPRECATED = 'LENS_VERSION_DEPRECATED' }
 
 
 	/** Lens upgrade summary return object. */
@@ -3487,7 +3487,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileNotificationType { PROFILE_ANSWERS_UPDATED = 0, PROFILE_DELETED = 1 }
+	export enum ProfileNotificationType { PROFILE_ANSWERS_UPDATED = 'PROFILE_ANSWERS_UPDATED', PROFILE_DELETED = 'PROFILE_DELETED' }
 
 	export interface ListProfileSharesOutput {
 		ProfileShareSummaries?: Array<ProfileShareSummary>;
@@ -3759,9 +3759,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareInvitationSummaryPermissionType { READONLY = 0, CONTRIBUTOR = 1 }
+	export enum ShareInvitationSummaryPermissionType { READONLY = 'READONLY', CONTRIBUTOR = 'CONTRIBUTOR' }
 
-	export enum ShareResourceType { WORKLOAD = 0, LENS = 1, PROFILE = 2 }
+	export enum ShareResourceType { WORKLOAD = 'WORKLOAD', LENS = 'LENS', PROFILE = 'PROFILE' }
 
 	export interface ListTagsForResourceOutput {
 		Tags?: TagMap;
@@ -4243,9 +4243,9 @@ export namespace MyNS {
 
 
 	/** The risk for a given workload, lens review, pillar, or question. */
-	export enum Risk { UNANSWERED = 0, HIGH = 1, MEDIUM = 2, NONE = 3, NOT_APPLICABLE = 4 }
+	export enum Risk { UNANSWERED = 'UNANSWERED', HIGH = 'HIGH', MEDIUM = 'MEDIUM', NONE = 'NONE', NOT_APPLICABLE = 'NOT_APPLICABLE' }
 
-	export enum AnswerReason { OUT_OF_SCOPE = 0, BUSINESS_PRIORITIES = 1, ARCHITECTURE_CONSTRAINTS = 2, OTHER = 3, NONE = 4 }
+	export enum AnswerReason { OUT_OF_SCOPE = 'OUT_OF_SCOPE', BUSINESS_PRIORITIES = 'BUSINESS_PRIORITIES', ARCHITECTURE_CONSTRAINTS = 'ARCHITECTURE_CONSTRAINTS', OTHER = 'OTHER', NONE = 'NONE' }
 
 
 	/** Input to associate lens reviews. */
@@ -4687,7 +4687,7 @@ export namespace MyNS {
 
 
 	/** Permission granted on a share request. */
-	export enum PermissionType { READONLY = 0, CONTRIBUTOR = 1 }
+	export enum PermissionType { READONLY = 'READONLY', CONTRIBUTOR = 'CONTRIBUTOR' }
 
 
 	/** Input for Create Workload Share */
@@ -4750,7 +4750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LensStatusType { ALL = 0, DRAFT = 1, PUBLISHED = 2 }
+	export enum LensStatusType { ALL = 'ALL', DRAFT = 'DRAFT', PUBLISHED = 'PUBLISHED' }
 
 	export interface DeleteLensInput {
 	}
@@ -4854,7 +4854,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryIntegrationStatus { ENABLED = 0, DISABLED = 1 }
+	export enum DiscoveryIntegrationStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface ExportLensInput {
 	}
@@ -4880,7 +4880,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportFormat { PDF = 0, JSON = 1 }
+	export enum ReportFormat { PDF = 'PDF', JSON = 'JSON' }
 
 	export interface GetConsolidatedReportInput {
 	}
@@ -5040,9 +5040,9 @@ export namespace MyNS {
 
 
 	/** The status of the share request. */
-	export enum ShareStatus { ACCEPTED = 0, REJECTED = 1, PENDING = 2, REVOKED = 3, EXPIRED = 4, ASSOCIATING = 5, ASSOCIATED = 6, FAILED = 7 }
+	export enum ShareStatus { ACCEPTED = 'ACCEPTED', REJECTED = 'REJECTED', PENDING = 'PENDING', REVOKED = 'REVOKED', EXPIRED = 'EXPIRED', ASSOCIATING = 'ASSOCIATING', ASSOCIATED = 'ASSOCIATED', FAILED = 'FAILED' }
 
-	export enum QuestionPriority { PRIORITIZED = 0, NONE = 1 }
+	export enum QuestionPriority { PRIORITIZED = 'PRIORITIZED', NONE = 'NONE' }
 
 
 	/** Input to list answers. */
@@ -5381,7 +5381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileOwnerType { SELF = 0, SHARED = 1 }
+	export enum ProfileOwnerType { SELF = 'SELF', SHARED = 'SHARED' }
 
 	export interface ListProfilesInput {
 	}
@@ -5468,7 +5468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationSharingStatus { ENABLED = 0, DISABLED = 1 }
+	export enum OrganizationSharingStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** List of pillar notes of a lens review in a workload. */
@@ -5486,7 +5486,7 @@ export namespace MyNS {
 
 
 	/** Share invitation action taken by contributor. */
-	export enum ShareInvitationAction { ACCEPT = 0, REJECT = 1 }
+	export enum ShareInvitationAction { ACCEPT = 'ACCEPT', REJECT = 'REJECT' }
 
 	export interface TagResourceInput {
 

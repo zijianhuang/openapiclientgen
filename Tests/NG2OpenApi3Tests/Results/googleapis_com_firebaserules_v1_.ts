@@ -307,9 +307,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReleaseExecutableResponseExecutableVersion { RELEASE_EXECUTABLE_VERSION_UNSPECIFIED = 0, FIREBASE_RULES_EXECUTABLE_V1 = 1, FIREBASE_RULES_EXECUTABLE_V2 = 2 }
+	export enum GetReleaseExecutableResponseExecutableVersion { RELEASE_EXECUTABLE_VERSION_UNSPECIFIED = 'RELEASE_EXECUTABLE_VERSION_UNSPECIFIED', FIREBASE_RULES_EXECUTABLE_V1 = 'FIREBASE_RULES_EXECUTABLE_V1', FIREBASE_RULES_EXECUTABLE_V2 = 'FIREBASE_RULES_EXECUTABLE_V2' }
 
-	export enum GetReleaseExecutableResponseLanguage { LANGUAGE_UNSPECIFIED = 0, FIREBASE_RULES = 1, EVENT_FLOW_TRIGGERS = 2 }
+	export enum GetReleaseExecutableResponseLanguage { LANGUAGE_UNSPECIFIED = 'LANGUAGE_UNSPECIFIED', FIREBASE_RULES = 'FIREBASE_RULES', EVENT_FLOW_TRIGGERS = 'EVENT_FLOW_TRIGGERS' }
 
 
 	/** Issues include warnings, errors, and deprecation notices. */
@@ -342,7 +342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IssueSeverity { SEVERITY_UNSPECIFIED = 0, DEPRECATION = 1, WARNING = 2, ERROR = 3 }
+	export enum IssueSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', DEPRECATION = 'DEPRECATION', WARNING = 'WARNING', ERROR = 'ERROR' }
 
 
 	/** The response for FirebaseRulesService.ListReleases. */
@@ -561,11 +561,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TestCaseExpectation { EXPECTATION_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum TestCaseExpectation { EXPECTATION_UNSPECIFIED = 'EXPECTATION_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
-	export enum TestCaseExpressionReportLevel { LEVEL_UNSPECIFIED = 0, NONE = 1, FULL = 2, VISITED = 3 }
+	export enum TestCaseExpressionReportLevel { LEVEL_UNSPECIFIED = 'LEVEL_UNSPECIFIED', NONE = 'NONE', FULL = 'FULL', VISITED = 'VISITED' }
 
-	export enum TestCasePathEncoding { ENCODING_UNSPECIFIED = 0, URL_ENCODED = 1, PLAIN = 2 }
+	export enum TestCasePathEncoding { ENCODING_UNSPECIFIED = 'ENCODING_UNSPECIFIED', URL_ENCODED = 'URL_ENCODED', PLAIN = 'PLAIN' }
 
 
 	/** Test result message containing the state of the test as well as a description and source position for test failures. */
@@ -603,7 +603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestResultState { STATE_UNSPECIFIED = 0, SUCCESS = 1, FAILURE = 2 }
+	export enum TestResultState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', SUCCESS = 'SUCCESS', FAILURE = 'FAILURE' }
 
 
 	/** Store the position and access outcome for an expression visited in rules. */

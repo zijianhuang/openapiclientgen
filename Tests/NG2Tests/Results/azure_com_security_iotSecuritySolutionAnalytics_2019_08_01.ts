@@ -121,7 +121,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IoTSecurityAggregatedAlertPropertiesReportedSeverity { Informational = 0, Low = 1, Medium = 2, High = 3 }
+	export enum IoTSecurityAggregatedAlertPropertiesReportedSeverity { Informational = 'Informational', Low = 'Low', Medium = 'Medium', High = 'High' }
 
 	export interface IoTSecurityAggregatedAlertPropertiesTopDevicesList {
 

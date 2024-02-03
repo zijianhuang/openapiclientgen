@@ -570,7 +570,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class CountryClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -582,12 +582,6 @@ export namespace MyNS {
 		 */
 		GetSalesTaxJurisdictions(countryCode: string): Observable<SalesTaxJurisdictions> {
 			return this.http.get<SalesTaxJurisdictions>(this.baseUri + 'country/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/sales_tax_jurisdiction', {});
-		}
-	}
-
-	@Injectable()
-	export class MarketplaceClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

@@ -1333,7 +1333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeCustomBooleanFieldsCategory { PayrollAndHR = 0 }
+	export enum EmployeeCustomBooleanFieldsCategory { PayrollAndHR = 'PayrollAndHR' }
 
 	export interface EmployeeCustomDateFields {
 

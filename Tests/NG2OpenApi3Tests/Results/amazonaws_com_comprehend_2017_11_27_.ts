@@ -197,7 +197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityType { PERSON = 0, LOCATION = 1, ORGANIZATION = 2, COMMERCIAL_ITEM = 3, EVENT = 4, DATE = 5, QUANTITY = 6, TITLE = 7, OTHER = 8 }
+	export enum EntityType { PERSON = 'PERSON', LOCATION = 'LOCATION', ORGANIZATION = 'ORGANIZATION', COMMERCIAL_ITEM = 'COMMERCIAL_ITEM', EVENT = 'EVENT', DATE = 'DATE', QUANTITY = 'QUANTITY', TITLE = 'TITLE', OTHER = 'OTHER' }
 
 
 	/** A reference to a block.  */
@@ -266,7 +266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, 'zh-TW' = 11 }
+	export enum LanguageCode { en = 'en', es = 'es', fr = 'fr', de = 'de', it = 'it', pt = 'pt', ar = 'ar', hi = 'hi', ja = 'ja', ko = 'ko', zh = 'zh', 'zh-TW' = 'zh-TW' }
 
 	export interface UnsupportedLanguageException {
 	}
@@ -395,7 +395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SentimentType { POSITIVE = 0, NEGATIVE = 1, NEUTRAL = 2, MIXED = 3 }
+	export enum SentimentType { POSITIVE = 'POSITIVE', NEGATIVE = 'NEGATIVE', NEUTRAL = 'NEUTRAL', MIXED = 'MIXED' }
 
 
 	/** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments. */
@@ -524,7 +524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartOfSpeechTagType { ADJ = 0, ADP = 1, ADV = 2, AUX = 3, CONJ = 4, CCONJ = 5, DET = 6, INTJ = 7, NOUN = 8, NUM = 9, O = 10, PART = 11, PRON = 12, PROPN = 13, PUNCT = 14, SCONJ = 15, SYM = 16, VERB = 17 }
+	export enum PartOfSpeechTagType { ADJ = 'ADJ', ADP = 'ADP', ADV = 'ADV', AUX = 'AUX', CONJ = 'CONJ', CCONJ = 'CCONJ', DET = 'DET', INTJ = 'INTJ', NOUN = 'NOUN', NUM = 'NUM', O = 'O', PART = 'PART', PRON = 'PRON', PROPN = 'PROPN', PUNCT = 'PUNCT', SCONJ = 'SCONJ', SYM = 'SYM', VERB = 'VERB' }
 
 	export interface BatchDetectSyntaxRequest {
 
@@ -546,7 +546,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyntaxLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5 }
+	export enum SyntaxLanguageCode { en = 'en', es = 'es', fr = 'fr', de = 'de', it = 'it', pt = 'pt' }
 
 	export interface BatchDetectTargetedSentimentResponse {
 
@@ -631,7 +631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetedSentimentEntityType { PERSON = 0, LOCATION = 1, ORGANIZATION = 2, FACILITY = 3, BRAND = 4, COMMERCIAL_ITEM = 5, MOVIE = 6, MUSIC = 7, BOOK = 8, SOFTWARE = 9, GAME = 10, PERSONAL_TITLE = 11, EVENT = 12, DATE = 13, QUANTITY = 14, ATTRIBUTE = 15, OTHER = 16 }
+	export enum TargetedSentimentEntityType { PERSON = 'PERSON', LOCATION = 'LOCATION', ORGANIZATION = 'ORGANIZATION', FACILITY = 'FACILITY', BRAND = 'BRAND', COMMERCIAL_ITEM = 'COMMERCIAL_ITEM', MOVIE = 'MOVIE', MUSIC = 'MUSIC', BOOK = 'BOOK', SOFTWARE = 'SOFTWARE', GAME = 'GAME', PERSONAL_TITLE = 'PERSONAL_TITLE', EVENT = 'EVENT', DATE = 'DATE', QUANTITY = 'QUANTITY', ATTRIBUTE = 'ATTRIBUTE', OTHER = 'OTHER' }
 
 
 	/** <p>Contains the sentiment and sentiment score for one mention of an entity.</p> <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p> */
@@ -793,7 +793,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentType { NATIVE_PDF = 0, SCANNED_PDF = 1, MS_WORD = 2, IMAGE = 3, PLAIN_TEXT = 4, TEXTRACT_DETECT_DOCUMENT_TEXT_JSON = 5, TEXTRACT_ANALYZE_DOCUMENT_JSON = 6 }
+	export enum DocumentType { NATIVE_PDF = 'NATIVE_PDF', SCANNED_PDF = 'SCANNED_PDF', MS_WORD = 'MS_WORD', IMAGE = 'IMAGE', PLAIN_TEXT = 'PLAIN_TEXT', TEXTRACT_DETECT_DOCUMENT_TEXT_JSON = 'TEXTRACT_DETECT_DOCUMENT_TEXT_JSON', TEXTRACT_ANALYZE_DOCUMENT_JSON = 'TEXTRACT_ANALYZE_DOCUMENT_JSON' }
 
 
 	/** <p>Text extraction encountered one or more page-level errors in the input document.</p> <p>The <code>ErrorCode</code> contains one of the following values:</p> <ul> <li> <p>TEXTRACT_BAD_PAGE - Amazon Textract cannot read the page. For more information about page limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits-document.html"> Page Quotas in Amazon Textract</a>.</p> </li> <li> <p>TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED - The number of requests exceeded your throughput limit. For more information about throughput quotas in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html"> Default quotas in Amazon Textract</a>.</p> </li> <li> <p>PAGE_CHARACTERS_EXCEEDED - Too many text characters on the page (10,000 characters maximum).</p> </li> <li> <p>PAGE_SIZE_EXCEEDED - The maximum page size is 10 MB.</p> </li> <li> <p>INTERNAL_SERVER_ERROR - The request encountered a service issue. Try the API request again.</p> </li> </ul> */
@@ -818,7 +818,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PageBasedErrorCode { TEXTRACT_BAD_PAGE = 0, TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED = 1, PAGE_CHARACTERS_EXCEEDED = 2, PAGE_SIZE_EXCEEDED = 3, INTERNAL_SERVER_ERROR = 4 }
+	export enum PageBasedErrorCode { TEXTRACT_BAD_PAGE = 'TEXTRACT_BAD_PAGE', TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED = 'TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED', PAGE_CHARACTERS_EXCEEDED = 'PAGE_CHARACTERS_EXCEEDED', PAGE_SIZE_EXCEEDED = 'PAGE_SIZE_EXCEEDED', INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR' }
 
 
 	/** <p>The system identified one of the following warnings while processing the input document:</p> <ul> <li> <p>The document to classify is plain text, but the classifier is a native model.</p> </li> <li> <p>The document to classify is semi-structured, but the classifier is a plain-text model.</p> </li> </ul> */
@@ -843,7 +843,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PageBasedWarningCode { INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL = 0, INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL = 1 }
+	export enum PageBasedWarningCode { INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL = 'INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL', INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL = 'INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL' }
 
 	export interface ClassifyDocumentRequest {
 		Text?: string;
@@ -894,13 +894,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentReadAction { TEXTRACT_DETECT_DOCUMENT_TEXT = 0, TEXTRACT_ANALYZE_DOCUMENT = 1 }
+	export enum DocumentReadAction { TEXTRACT_DETECT_DOCUMENT_TEXT = 'TEXTRACT_DETECT_DOCUMENT_TEXT', TEXTRACT_ANALYZE_DOCUMENT = 'TEXTRACT_ANALYZE_DOCUMENT' }
 
-	export enum DocumentReadMode { SERVICE_DEFAULT = 0, FORCE_DOCUMENT_READ_ACTION = 1 }
+	export enum DocumentReadMode { SERVICE_DEFAULT = 'SERVICE_DEFAULT', FORCE_DOCUMENT_READ_ACTION = 'FORCE_DOCUMENT_READ_ACTION' }
 
 
 	/** <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p> </li> </ul> */
-	export enum DocumentReadFeatureTypes { TABLES = 0, FORMS = 1 }
+	export enum DocumentReadFeatureTypes { TABLES = 'TABLES', FORMS = 'FORMS' }
 
 	export interface ResourceUnavailableException {
 	}
@@ -943,7 +943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PiiEntityType { BANK_ACCOUNT_NUMBER = 0, BANK_ROUTING = 1, CREDIT_DEBIT_NUMBER = 2, CREDIT_DEBIT_CVV = 3, CREDIT_DEBIT_EXPIRY = 4, PIN = 5, EMAIL = 6, ADDRESS = 7, NAME = 8, PHONE = 9, SSN = 10, DATE_TIME = 11, PASSPORT_NUMBER = 12, DRIVER_ID = 13, URL = 14, AGE = 15, USERNAME = 16, PASSWORD = 17, AWS_ACCESS_KEY = 18, AWS_SECRET_KEY = 19, IP_ADDRESS = 20, MAC_ADDRESS = 21, ALL = 22, LICENSE_PLATE = 23, VEHICLE_IDENTIFICATION_NUMBER = 24, UK_NATIONAL_INSURANCE_NUMBER = 25, CA_SOCIAL_INSURANCE_NUMBER = 26, US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = 27, UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = 28, IN_PERMANENT_ACCOUNT_NUMBER = 29, IN_NREGA = 30, INTERNATIONAL_BANK_ACCOUNT_NUMBER = 31, SWIFT_CODE = 32, UK_NATIONAL_HEALTH_SERVICE_NUMBER = 33, CA_HEALTH_NUMBER = 34, IN_AADHAAR = 35, IN_VOTER_NUMBER = 36 }
+	export enum PiiEntityType { BANK_ACCOUNT_NUMBER = 'BANK_ACCOUNT_NUMBER', BANK_ROUTING = 'BANK_ROUTING', CREDIT_DEBIT_NUMBER = 'CREDIT_DEBIT_NUMBER', CREDIT_DEBIT_CVV = 'CREDIT_DEBIT_CVV', CREDIT_DEBIT_EXPIRY = 'CREDIT_DEBIT_EXPIRY', PIN = 'PIN', EMAIL = 'EMAIL', ADDRESS = 'ADDRESS', NAME = 'NAME', PHONE = 'PHONE', SSN = 'SSN', DATE_TIME = 'DATE_TIME', PASSPORT_NUMBER = 'PASSPORT_NUMBER', DRIVER_ID = 'DRIVER_ID', URL = 'URL', AGE = 'AGE', USERNAME = 'USERNAME', PASSWORD = 'PASSWORD', AWS_ACCESS_KEY = 'AWS_ACCESS_KEY', AWS_SECRET_KEY = 'AWS_SECRET_KEY', IP_ADDRESS = 'IP_ADDRESS', MAC_ADDRESS = 'MAC_ADDRESS', ALL = 'ALL', LICENSE_PLATE = 'LICENSE_PLATE', VEHICLE_IDENTIFICATION_NUMBER = 'VEHICLE_IDENTIFICATION_NUMBER', UK_NATIONAL_INSURANCE_NUMBER = 'UK_NATIONAL_INSURANCE_NUMBER', CA_SOCIAL_INSURANCE_NUMBER = 'CA_SOCIAL_INSURANCE_NUMBER', US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = 'US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER', UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = 'UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER', IN_PERMANENT_ACCOUNT_NUMBER = 'IN_PERMANENT_ACCOUNT_NUMBER', IN_NREGA = 'IN_NREGA', INTERNATIONAL_BANK_ACCOUNT_NUMBER = 'INTERNATIONAL_BANK_ACCOUNT_NUMBER', SWIFT_CODE = 'SWIFT_CODE', UK_NATIONAL_HEALTH_SERVICE_NUMBER = 'UK_NATIONAL_HEALTH_SERVICE_NUMBER', CA_HEALTH_NUMBER = 'CA_HEALTH_NUMBER', IN_AADHAAR = 'IN_AADHAAR', IN_VOTER_NUMBER = 'IN_VOTER_NUMBER' }
 
 	export interface ContainsPiiEntitiesRequest {
 
@@ -1019,7 +1019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetType { TRAIN = 0, TEST = 1 }
+	export enum DatasetType { TRAIN = 'TRAIN', TEST = 'TEST' }
 
 
 	/** Specifies the format and location of the input data for the dataset. */
@@ -1074,9 +1074,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AugmentedManifestsDocumentTypeFormat { PLAIN_TEXT_DOCUMENT = 0, SEMI_STRUCTURED_DOCUMENT = 1 }
+	export enum AugmentedManifestsDocumentTypeFormat { PLAIN_TEXT_DOCUMENT = 'PLAIN_TEXT_DOCUMENT', SEMI_STRUCTURED_DOCUMENT = 'SEMI_STRUCTURED_DOCUMENT' }
 
-	export enum DatasetDataFormat { COMPREHEND_CSV = 0, AUGMENTED_MANIFEST = 1 }
+	export enum DatasetDataFormat { COMPREHEND_CSV = 'COMPREHEND_CSV', AUGMENTED_MANIFEST = 'AUGMENTED_MANIFEST' }
 
 
 	/** <p>Describes the dataset input data configuration for a document classifier model.</p> <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p> */
@@ -1166,7 +1166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputFormat { ONE_DOC_PER_FILE = 0, ONE_DOC_PER_LINE = 1 }
+	export enum InputFormat { ONE_DOC_PER_FILE = 'ONE_DOC_PER_FILE', ONE_DOC_PER_LINE = 'ONE_DOC_PER_LINE' }
 
 
 	/** <p>Describes the dataset entity list for an entity recognizer model.</p> <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-training-data-cer.html">Preparing training data</a> in the Comprehend Developer Guide. </p> */
@@ -1468,7 +1468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentClassifierMode { MULTI_CLASS = 0, MULTI_LABEL = 1 }
+	export enum DocumentClassifierMode { MULTI_CLASS = 'MULTI_CLASS', MULTI_LABEL = 'MULTI_LABEL' }
 
 	export interface KmsKeyValidationException {
 	}
@@ -1835,7 +1835,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelType { DOCUMENT_CLASSIFIER = 0, ENTITY_RECOGNIZER = 1 }
+	export enum ModelType { DOCUMENT_CLASSIFIER = 'DOCUMENT_CLASSIFIER', ENTITY_RECOGNIZER = 'ENTITY_RECOGNIZER' }
 
 
 	/** Data security configuration. */
@@ -2056,7 +2056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetStatus { CREATING = 0, COMPLETED = 1, FAILED = 2 }
+	export enum DatasetStatus { CREATING = 'CREATING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface DescribeDatasetRequest {
 
@@ -2136,7 +2136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3, STOP_REQUESTED = 4, STOPPED = 5 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', STOP_REQUESTED = 'STOP_REQUESTED', STOPPED = 'STOPPED' }
 
 
 	/** The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis. */
@@ -2288,7 +2288,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelStatus { SUBMITTED = 0, TRAINING = 1, DELETING = 2, STOP_REQUESTED = 3, STOPPED = 4, IN_ERROR = 5, TRAINED = 6, TRAINED_WITH_WARNING = 7 }
+	export enum ModelStatus { SUBMITTED = 'SUBMITTED', TRAINING = 'TRAINING', DELETING = 'DELETING', STOP_REQUESTED = 'STOP_REQUESTED', STOPPED = 'STOPPED', IN_ERROR = 'IN_ERROR', TRAINED = 'TRAINED', TRAINED_WITH_WARNING = 'TRAINED_WITH_WARNING' }
 
 
 	/** Provides information about a document classifier. */
@@ -2502,7 +2502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointStatus { CREATING = 0, DELETING = 1, FAILED = 2, IN_SERVICE = 3, UPDATING = 4 }
+	export enum EndpointStatus { CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', IN_SERVICE = 'IN_SERVICE', UPDATING = 'UPDATING' }
 
 	export interface DescribeEndpointRequest {
 
@@ -2925,7 +2925,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlywheelStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
+	export enum FlywheelStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface DescribeFlywheelRequest {
 
@@ -3000,7 +3000,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlywheelIterationStatus { TRAINING = 0, EVALUATING = 1, COMPLETED = 2, FAILED = 3, STOP_REQUESTED = 4, STOPPED = 5 }
+	export enum FlywheelIterationStatus { TRAINING = 'TRAINING', EVALUATING = 'EVALUATING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', STOP_REQUESTED = 'STOP_REQUESTED', STOPPED = 'STOPPED' }
 
 
 	/** The evaluation metrics associated with the evaluated model. */
@@ -3232,9 +3232,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PiiEntitiesDetectionMaskMode { MASK = 0, REPLACE_WITH_PII_ENTITY_TYPE = 1 }
+	export enum PiiEntitiesDetectionMaskMode { MASK = 'MASK', REPLACE_WITH_PII_ENTITY_TYPE = 'REPLACE_WITH_PII_ENTITY_TYPE' }
 
-	export enum PiiEntitiesDetectionMode { ONLY_REDACTION = 0, ONLY_OFFSETS = 1 }
+	export enum PiiEntitiesDetectionMode { ONLY_REDACTION = 'ONLY_REDACTION', ONLY_OFFSETS = 'ONLY_OFFSETS' }
 
 	export interface DescribePiiEntitiesDetectionJobRequest {
 
@@ -3594,7 +3594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlockType { LINE = 0, WORD = 1 }
+	export enum BlockType { LINE = 'LINE', WORD = 'WORD' }
 
 
 	/** <p>Information about the location of items on a document page.</p> <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Geometry.html">Geometry</a> in the Amazon Textract API reference.</p> */
@@ -3676,7 +3676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationshipType { CHILD = 0 }
+	export enum RelationshipType { CHILD = 'CHILD' }
 
 	export interface DetectEntitiesRequest {
 		Text?: string;
@@ -6093,13 +6093,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Split { TRAIN = 0, TEST = 1 }
+	export enum Split { TRAIN = 'TRAIN', TEST = 'TEST' }
 
-	export enum DocumentClassifierDataFormat { COMPREHEND_CSV = 0, AUGMENTED_MANIFEST = 1 }
+	export enum DocumentClassifierDataFormat { COMPREHEND_CSV = 'COMPREHEND_CSV', AUGMENTED_MANIFEST = 'AUGMENTED_MANIFEST' }
 
-	export enum DocumentClassifierDocumentTypeFormat { PLAIN_TEXT_DOCUMENT = 0, SEMI_STRUCTURED_DOCUMENT = 1 }
+	export enum DocumentClassifierDocumentTypeFormat { PLAIN_TEXT_DOCUMENT = 'PLAIN_TEXT_DOCUMENT', SEMI_STRUCTURED_DOCUMENT = 'SEMI_STRUCTURED_DOCUMENT' }
 
-	export enum EntityRecognizerDataFormat { COMPREHEND_CSV = 0, AUGMENTED_MANIFEST = 1 }
+	export enum EntityRecognizerDataFormat { COMPREHEND_CSV = 'COMPREHEND_CSV', AUGMENTED_MANIFEST = 'AUGMENTED_MANIFEST' }
 
 	@Injectable()
 	export class MyClient {
@@ -6897,173 +6897,173 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchDetectDominantLanguageX_Amz_Target { 'Comprehend_20171127.BatchDetectDominantLanguage' = 0 }
+	export enum BatchDetectDominantLanguageX_Amz_Target { 'Comprehend_20171127.BatchDetectDominantLanguage' = 'Comprehend_20171127.BatchDetectDominantLanguage' }
 
-	export enum BatchDetectEntitiesX_Amz_Target { 'Comprehend_20171127.BatchDetectEntities' = 0 }
+	export enum BatchDetectEntitiesX_Amz_Target { 'Comprehend_20171127.BatchDetectEntities' = 'Comprehend_20171127.BatchDetectEntities' }
 
-	export enum BatchDetectKeyPhrasesX_Amz_Target { 'Comprehend_20171127.BatchDetectKeyPhrases' = 0 }
+	export enum BatchDetectKeyPhrasesX_Amz_Target { 'Comprehend_20171127.BatchDetectKeyPhrases' = 'Comprehend_20171127.BatchDetectKeyPhrases' }
 
-	export enum BatchDetectSentimentX_Amz_Target { 'Comprehend_20171127.BatchDetectSentiment' = 0 }
+	export enum BatchDetectSentimentX_Amz_Target { 'Comprehend_20171127.BatchDetectSentiment' = 'Comprehend_20171127.BatchDetectSentiment' }
 
-	export enum BatchDetectSyntaxX_Amz_Target { 'Comprehend_20171127.BatchDetectSyntax' = 0 }
+	export enum BatchDetectSyntaxX_Amz_Target { 'Comprehend_20171127.BatchDetectSyntax' = 'Comprehend_20171127.BatchDetectSyntax' }
 
-	export enum BatchDetectTargetedSentimentX_Amz_Target { 'Comprehend_20171127.BatchDetectTargetedSentiment' = 0 }
+	export enum BatchDetectTargetedSentimentX_Amz_Target { 'Comprehend_20171127.BatchDetectTargetedSentiment' = 'Comprehend_20171127.BatchDetectTargetedSentiment' }
 
-	export enum ClassifyDocumentX_Amz_Target { 'Comprehend_20171127.ClassifyDocument' = 0 }
+	export enum ClassifyDocumentX_Amz_Target { 'Comprehend_20171127.ClassifyDocument' = 'Comprehend_20171127.ClassifyDocument' }
 
-	export enum ContainsPiiEntitiesX_Amz_Target { 'Comprehend_20171127.ContainsPiiEntities' = 0 }
+	export enum ContainsPiiEntitiesX_Amz_Target { 'Comprehend_20171127.ContainsPiiEntities' = 'Comprehend_20171127.ContainsPiiEntities' }
 
-	export enum CreateDatasetX_Amz_Target { 'Comprehend_20171127.CreateDataset' = 0 }
+	export enum CreateDatasetX_Amz_Target { 'Comprehend_20171127.CreateDataset' = 'Comprehend_20171127.CreateDataset' }
 
-	export enum CreateDocumentClassifierX_Amz_Target { 'Comprehend_20171127.CreateDocumentClassifier' = 0 }
+	export enum CreateDocumentClassifierX_Amz_Target { 'Comprehend_20171127.CreateDocumentClassifier' = 'Comprehend_20171127.CreateDocumentClassifier' }
 
-	export enum CreateEndpointX_Amz_Target { 'Comprehend_20171127.CreateEndpoint' = 0 }
+	export enum CreateEndpointX_Amz_Target { 'Comprehend_20171127.CreateEndpoint' = 'Comprehend_20171127.CreateEndpoint' }
 
-	export enum CreateEntityRecognizerX_Amz_Target { 'Comprehend_20171127.CreateEntityRecognizer' = 0 }
+	export enum CreateEntityRecognizerX_Amz_Target { 'Comprehend_20171127.CreateEntityRecognizer' = 'Comprehend_20171127.CreateEntityRecognizer' }
 
-	export enum CreateFlywheelX_Amz_Target { 'Comprehend_20171127.CreateFlywheel' = 0 }
+	export enum CreateFlywheelX_Amz_Target { 'Comprehend_20171127.CreateFlywheel' = 'Comprehend_20171127.CreateFlywheel' }
 
-	export enum DeleteDocumentClassifierX_Amz_Target { 'Comprehend_20171127.DeleteDocumentClassifier' = 0 }
+	export enum DeleteDocumentClassifierX_Amz_Target { 'Comprehend_20171127.DeleteDocumentClassifier' = 'Comprehend_20171127.DeleteDocumentClassifier' }
 
-	export enum DeleteEndpointX_Amz_Target { 'Comprehend_20171127.DeleteEndpoint' = 0 }
+	export enum DeleteEndpointX_Amz_Target { 'Comprehend_20171127.DeleteEndpoint' = 'Comprehend_20171127.DeleteEndpoint' }
 
-	export enum DeleteEntityRecognizerX_Amz_Target { 'Comprehend_20171127.DeleteEntityRecognizer' = 0 }
+	export enum DeleteEntityRecognizerX_Amz_Target { 'Comprehend_20171127.DeleteEntityRecognizer' = 'Comprehend_20171127.DeleteEntityRecognizer' }
 
-	export enum DeleteFlywheelX_Amz_Target { 'Comprehend_20171127.DeleteFlywheel' = 0 }
+	export enum DeleteFlywheelX_Amz_Target { 'Comprehend_20171127.DeleteFlywheel' = 'Comprehend_20171127.DeleteFlywheel' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'Comprehend_20171127.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'Comprehend_20171127.DeleteResourcePolicy' = 'Comprehend_20171127.DeleteResourcePolicy' }
 
-	export enum DescribeDatasetX_Amz_Target { 'Comprehend_20171127.DescribeDataset' = 0 }
+	export enum DescribeDatasetX_Amz_Target { 'Comprehend_20171127.DescribeDataset' = 'Comprehend_20171127.DescribeDataset' }
 
-	export enum DescribeDocumentClassificationJobX_Amz_Target { 'Comprehend_20171127.DescribeDocumentClassificationJob' = 0 }
+	export enum DescribeDocumentClassificationJobX_Amz_Target { 'Comprehend_20171127.DescribeDocumentClassificationJob' = 'Comprehend_20171127.DescribeDocumentClassificationJob' }
 
-	export enum DescribeDocumentClassifierX_Amz_Target { 'Comprehend_20171127.DescribeDocumentClassifier' = 0 }
+	export enum DescribeDocumentClassifierX_Amz_Target { 'Comprehend_20171127.DescribeDocumentClassifier' = 'Comprehend_20171127.DescribeDocumentClassifier' }
 
-	export enum DescribeDominantLanguageDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeDominantLanguageDetectionJob' = 0 }
+	export enum DescribeDominantLanguageDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeDominantLanguageDetectionJob' = 'Comprehend_20171127.DescribeDominantLanguageDetectionJob' }
 
-	export enum DescribeEndpointX_Amz_Target { 'Comprehend_20171127.DescribeEndpoint' = 0 }
+	export enum DescribeEndpointX_Amz_Target { 'Comprehend_20171127.DescribeEndpoint' = 'Comprehend_20171127.DescribeEndpoint' }
 
-	export enum DescribeEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeEntitiesDetectionJob' = 0 }
+	export enum DescribeEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeEntitiesDetectionJob' = 'Comprehend_20171127.DescribeEntitiesDetectionJob' }
 
-	export enum DescribeEntityRecognizerX_Amz_Target { 'Comprehend_20171127.DescribeEntityRecognizer' = 0 }
+	export enum DescribeEntityRecognizerX_Amz_Target { 'Comprehend_20171127.DescribeEntityRecognizer' = 'Comprehend_20171127.DescribeEntityRecognizer' }
 
-	export enum DescribeEventsDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeEventsDetectionJob' = 0 }
+	export enum DescribeEventsDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeEventsDetectionJob' = 'Comprehend_20171127.DescribeEventsDetectionJob' }
 
-	export enum DescribeFlywheelX_Amz_Target { 'Comprehend_20171127.DescribeFlywheel' = 0 }
+	export enum DescribeFlywheelX_Amz_Target { 'Comprehend_20171127.DescribeFlywheel' = 'Comprehend_20171127.DescribeFlywheel' }
 
-	export enum DescribeFlywheelIterationX_Amz_Target { 'Comprehend_20171127.DescribeFlywheelIteration' = 0 }
+	export enum DescribeFlywheelIterationX_Amz_Target { 'Comprehend_20171127.DescribeFlywheelIteration' = 'Comprehend_20171127.DescribeFlywheelIteration' }
 
-	export enum DescribeKeyPhrasesDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeKeyPhrasesDetectionJob' = 0 }
+	export enum DescribeKeyPhrasesDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeKeyPhrasesDetectionJob' = 'Comprehend_20171127.DescribeKeyPhrasesDetectionJob' }
 
-	export enum DescribePiiEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribePiiEntitiesDetectionJob' = 0 }
+	export enum DescribePiiEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribePiiEntitiesDetectionJob' = 'Comprehend_20171127.DescribePiiEntitiesDetectionJob' }
 
-	export enum DescribeResourcePolicyX_Amz_Target { 'Comprehend_20171127.DescribeResourcePolicy' = 0 }
+	export enum DescribeResourcePolicyX_Amz_Target { 'Comprehend_20171127.DescribeResourcePolicy' = 'Comprehend_20171127.DescribeResourcePolicy' }
 
-	export enum DescribeSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeSentimentDetectionJob' = 0 }
+	export enum DescribeSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeSentimentDetectionJob' = 'Comprehend_20171127.DescribeSentimentDetectionJob' }
 
-	export enum DescribeTargetedSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeTargetedSentimentDetectionJob' = 0 }
+	export enum DescribeTargetedSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeTargetedSentimentDetectionJob' = 'Comprehend_20171127.DescribeTargetedSentimentDetectionJob' }
 
-	export enum DescribeTopicsDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeTopicsDetectionJob' = 0 }
+	export enum DescribeTopicsDetectionJobX_Amz_Target { 'Comprehend_20171127.DescribeTopicsDetectionJob' = 'Comprehend_20171127.DescribeTopicsDetectionJob' }
 
-	export enum DetectDominantLanguageX_Amz_Target { 'Comprehend_20171127.DetectDominantLanguage' = 0 }
+	export enum DetectDominantLanguageX_Amz_Target { 'Comprehend_20171127.DetectDominantLanguage' = 'Comprehend_20171127.DetectDominantLanguage' }
 
-	export enum DetectEntitiesX_Amz_Target { 'Comprehend_20171127.DetectEntities' = 0 }
+	export enum DetectEntitiesX_Amz_Target { 'Comprehend_20171127.DetectEntities' = 'Comprehend_20171127.DetectEntities' }
 
-	export enum DetectKeyPhrasesX_Amz_Target { 'Comprehend_20171127.DetectKeyPhrases' = 0 }
+	export enum DetectKeyPhrasesX_Amz_Target { 'Comprehend_20171127.DetectKeyPhrases' = 'Comprehend_20171127.DetectKeyPhrases' }
 
-	export enum DetectPiiEntitiesX_Amz_Target { 'Comprehend_20171127.DetectPiiEntities' = 0 }
+	export enum DetectPiiEntitiesX_Amz_Target { 'Comprehend_20171127.DetectPiiEntities' = 'Comprehend_20171127.DetectPiiEntities' }
 
-	export enum DetectSentimentX_Amz_Target { 'Comprehend_20171127.DetectSentiment' = 0 }
+	export enum DetectSentimentX_Amz_Target { 'Comprehend_20171127.DetectSentiment' = 'Comprehend_20171127.DetectSentiment' }
 
-	export enum DetectSyntaxX_Amz_Target { 'Comprehend_20171127.DetectSyntax' = 0 }
+	export enum DetectSyntaxX_Amz_Target { 'Comprehend_20171127.DetectSyntax' = 'Comprehend_20171127.DetectSyntax' }
 
-	export enum DetectTargetedSentimentX_Amz_Target { 'Comprehend_20171127.DetectTargetedSentiment' = 0 }
+	export enum DetectTargetedSentimentX_Amz_Target { 'Comprehend_20171127.DetectTargetedSentiment' = 'Comprehend_20171127.DetectTargetedSentiment' }
 
-	export enum ImportModelX_Amz_Target { 'Comprehend_20171127.ImportModel' = 0 }
+	export enum ImportModelX_Amz_Target { 'Comprehend_20171127.ImportModel' = 'Comprehend_20171127.ImportModel' }
 
-	export enum ListDatasetsX_Amz_Target { 'Comprehend_20171127.ListDatasets' = 0 }
+	export enum ListDatasetsX_Amz_Target { 'Comprehend_20171127.ListDatasets' = 'Comprehend_20171127.ListDatasets' }
 
-	export enum ListDocumentClassificationJobsX_Amz_Target { 'Comprehend_20171127.ListDocumentClassificationJobs' = 0 }
+	export enum ListDocumentClassificationJobsX_Amz_Target { 'Comprehend_20171127.ListDocumentClassificationJobs' = 'Comprehend_20171127.ListDocumentClassificationJobs' }
 
-	export enum ListDocumentClassifierSummariesX_Amz_Target { 'Comprehend_20171127.ListDocumentClassifierSummaries' = 0 }
+	export enum ListDocumentClassifierSummariesX_Amz_Target { 'Comprehend_20171127.ListDocumentClassifierSummaries' = 'Comprehend_20171127.ListDocumentClassifierSummaries' }
 
-	export enum ListDocumentClassifiersX_Amz_Target { 'Comprehend_20171127.ListDocumentClassifiers' = 0 }
+	export enum ListDocumentClassifiersX_Amz_Target { 'Comprehend_20171127.ListDocumentClassifiers' = 'Comprehend_20171127.ListDocumentClassifiers' }
 
-	export enum ListDominantLanguageDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListDominantLanguageDetectionJobs' = 0 }
+	export enum ListDominantLanguageDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListDominantLanguageDetectionJobs' = 'Comprehend_20171127.ListDominantLanguageDetectionJobs' }
 
-	export enum ListEndpointsX_Amz_Target { 'Comprehend_20171127.ListEndpoints' = 0 }
+	export enum ListEndpointsX_Amz_Target { 'Comprehend_20171127.ListEndpoints' = 'Comprehend_20171127.ListEndpoints' }
 
-	export enum ListEntitiesDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListEntitiesDetectionJobs' = 0 }
+	export enum ListEntitiesDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListEntitiesDetectionJobs' = 'Comprehend_20171127.ListEntitiesDetectionJobs' }
 
-	export enum ListEntityRecognizerSummariesX_Amz_Target { 'Comprehend_20171127.ListEntityRecognizerSummaries' = 0 }
+	export enum ListEntityRecognizerSummariesX_Amz_Target { 'Comprehend_20171127.ListEntityRecognizerSummaries' = 'Comprehend_20171127.ListEntityRecognizerSummaries' }
 
-	export enum ListEntityRecognizersX_Amz_Target { 'Comprehend_20171127.ListEntityRecognizers' = 0 }
+	export enum ListEntityRecognizersX_Amz_Target { 'Comprehend_20171127.ListEntityRecognizers' = 'Comprehend_20171127.ListEntityRecognizers' }
 
-	export enum ListEventsDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListEventsDetectionJobs' = 0 }
+	export enum ListEventsDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListEventsDetectionJobs' = 'Comprehend_20171127.ListEventsDetectionJobs' }
 
-	export enum ListFlywheelIterationHistoryX_Amz_Target { 'Comprehend_20171127.ListFlywheelIterationHistory' = 0 }
+	export enum ListFlywheelIterationHistoryX_Amz_Target { 'Comprehend_20171127.ListFlywheelIterationHistory' = 'Comprehend_20171127.ListFlywheelIterationHistory' }
 
-	export enum ListFlywheelsX_Amz_Target { 'Comprehend_20171127.ListFlywheels' = 0 }
+	export enum ListFlywheelsX_Amz_Target { 'Comprehend_20171127.ListFlywheels' = 'Comprehend_20171127.ListFlywheels' }
 
-	export enum ListKeyPhrasesDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListKeyPhrasesDetectionJobs' = 0 }
+	export enum ListKeyPhrasesDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListKeyPhrasesDetectionJobs' = 'Comprehend_20171127.ListKeyPhrasesDetectionJobs' }
 
-	export enum ListPiiEntitiesDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListPiiEntitiesDetectionJobs' = 0 }
+	export enum ListPiiEntitiesDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListPiiEntitiesDetectionJobs' = 'Comprehend_20171127.ListPiiEntitiesDetectionJobs' }
 
-	export enum ListSentimentDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListSentimentDetectionJobs' = 0 }
+	export enum ListSentimentDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListSentimentDetectionJobs' = 'Comprehend_20171127.ListSentimentDetectionJobs' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'Comprehend_20171127.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Comprehend_20171127.ListTagsForResource' = 'Comprehend_20171127.ListTagsForResource' }
 
-	export enum ListTargetedSentimentDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListTargetedSentimentDetectionJobs' = 0 }
+	export enum ListTargetedSentimentDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListTargetedSentimentDetectionJobs' = 'Comprehend_20171127.ListTargetedSentimentDetectionJobs' }
 
-	export enum ListTopicsDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListTopicsDetectionJobs' = 0 }
+	export enum ListTopicsDetectionJobsX_Amz_Target { 'Comprehend_20171127.ListTopicsDetectionJobs' = 'Comprehend_20171127.ListTopicsDetectionJobs' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'Comprehend_20171127.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'Comprehend_20171127.PutResourcePolicy' = 'Comprehend_20171127.PutResourcePolicy' }
 
-	export enum StartDocumentClassificationJobX_Amz_Target { 'Comprehend_20171127.StartDocumentClassificationJob' = 0 }
+	export enum StartDocumentClassificationJobX_Amz_Target { 'Comprehend_20171127.StartDocumentClassificationJob' = 'Comprehend_20171127.StartDocumentClassificationJob' }
 
-	export enum StartDominantLanguageDetectionJobX_Amz_Target { 'Comprehend_20171127.StartDominantLanguageDetectionJob' = 0 }
+	export enum StartDominantLanguageDetectionJobX_Amz_Target { 'Comprehend_20171127.StartDominantLanguageDetectionJob' = 'Comprehend_20171127.StartDominantLanguageDetectionJob' }
 
-	export enum StartEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StartEntitiesDetectionJob' = 0 }
+	export enum StartEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StartEntitiesDetectionJob' = 'Comprehend_20171127.StartEntitiesDetectionJob' }
 
-	export enum StartEventsDetectionJobX_Amz_Target { 'Comprehend_20171127.StartEventsDetectionJob' = 0 }
+	export enum StartEventsDetectionJobX_Amz_Target { 'Comprehend_20171127.StartEventsDetectionJob' = 'Comprehend_20171127.StartEventsDetectionJob' }
 
-	export enum StartFlywheelIterationX_Amz_Target { 'Comprehend_20171127.StartFlywheelIteration' = 0 }
+	export enum StartFlywheelIterationX_Amz_Target { 'Comprehend_20171127.StartFlywheelIteration' = 'Comprehend_20171127.StartFlywheelIteration' }
 
-	export enum StartKeyPhrasesDetectionJobX_Amz_Target { 'Comprehend_20171127.StartKeyPhrasesDetectionJob' = 0 }
+	export enum StartKeyPhrasesDetectionJobX_Amz_Target { 'Comprehend_20171127.StartKeyPhrasesDetectionJob' = 'Comprehend_20171127.StartKeyPhrasesDetectionJob' }
 
-	export enum StartPiiEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StartPiiEntitiesDetectionJob' = 0 }
+	export enum StartPiiEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StartPiiEntitiesDetectionJob' = 'Comprehend_20171127.StartPiiEntitiesDetectionJob' }
 
-	export enum StartSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StartSentimentDetectionJob' = 0 }
+	export enum StartSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StartSentimentDetectionJob' = 'Comprehend_20171127.StartSentimentDetectionJob' }
 
-	export enum StartTargetedSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StartTargetedSentimentDetectionJob' = 0 }
+	export enum StartTargetedSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StartTargetedSentimentDetectionJob' = 'Comprehend_20171127.StartTargetedSentimentDetectionJob' }
 
-	export enum StartTopicsDetectionJobX_Amz_Target { 'Comprehend_20171127.StartTopicsDetectionJob' = 0 }
+	export enum StartTopicsDetectionJobX_Amz_Target { 'Comprehend_20171127.StartTopicsDetectionJob' = 'Comprehend_20171127.StartTopicsDetectionJob' }
 
-	export enum StopDominantLanguageDetectionJobX_Amz_Target { 'Comprehend_20171127.StopDominantLanguageDetectionJob' = 0 }
+	export enum StopDominantLanguageDetectionJobX_Amz_Target { 'Comprehend_20171127.StopDominantLanguageDetectionJob' = 'Comprehend_20171127.StopDominantLanguageDetectionJob' }
 
-	export enum StopEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StopEntitiesDetectionJob' = 0 }
+	export enum StopEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StopEntitiesDetectionJob' = 'Comprehend_20171127.StopEntitiesDetectionJob' }
 
-	export enum StopEventsDetectionJobX_Amz_Target { 'Comprehend_20171127.StopEventsDetectionJob' = 0 }
+	export enum StopEventsDetectionJobX_Amz_Target { 'Comprehend_20171127.StopEventsDetectionJob' = 'Comprehend_20171127.StopEventsDetectionJob' }
 
-	export enum StopKeyPhrasesDetectionJobX_Amz_Target { 'Comprehend_20171127.StopKeyPhrasesDetectionJob' = 0 }
+	export enum StopKeyPhrasesDetectionJobX_Amz_Target { 'Comprehend_20171127.StopKeyPhrasesDetectionJob' = 'Comprehend_20171127.StopKeyPhrasesDetectionJob' }
 
-	export enum StopPiiEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StopPiiEntitiesDetectionJob' = 0 }
+	export enum StopPiiEntitiesDetectionJobX_Amz_Target { 'Comprehend_20171127.StopPiiEntitiesDetectionJob' = 'Comprehend_20171127.StopPiiEntitiesDetectionJob' }
 
-	export enum StopSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StopSentimentDetectionJob' = 0 }
+	export enum StopSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StopSentimentDetectionJob' = 'Comprehend_20171127.StopSentimentDetectionJob' }
 
-	export enum StopTargetedSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StopTargetedSentimentDetectionJob' = 0 }
+	export enum StopTargetedSentimentDetectionJobX_Amz_Target { 'Comprehend_20171127.StopTargetedSentimentDetectionJob' = 'Comprehend_20171127.StopTargetedSentimentDetectionJob' }
 
-	export enum StopTrainingDocumentClassifierX_Amz_Target { 'Comprehend_20171127.StopTrainingDocumentClassifier' = 0 }
+	export enum StopTrainingDocumentClassifierX_Amz_Target { 'Comprehend_20171127.StopTrainingDocumentClassifier' = 'Comprehend_20171127.StopTrainingDocumentClassifier' }
 
-	export enum StopTrainingEntityRecognizerX_Amz_Target { 'Comprehend_20171127.StopTrainingEntityRecognizer' = 0 }
+	export enum StopTrainingEntityRecognizerX_Amz_Target { 'Comprehend_20171127.StopTrainingEntityRecognizer' = 'Comprehend_20171127.StopTrainingEntityRecognizer' }
 
-	export enum TagResourceX_Amz_Target { 'Comprehend_20171127.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Comprehend_20171127.TagResource' = 'Comprehend_20171127.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'Comprehend_20171127.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Comprehend_20171127.UntagResource' = 'Comprehend_20171127.UntagResource' }
 
-	export enum UpdateEndpointX_Amz_Target { 'Comprehend_20171127.UpdateEndpoint' = 0 }
+	export enum UpdateEndpointX_Amz_Target { 'Comprehend_20171127.UpdateEndpoint' = 'Comprehend_20171127.UpdateEndpoint' }
 
-	export enum UpdateFlywheelX_Amz_Target { 'Comprehend_20171127.UpdateFlywheel' = 0 }
+	export enum UpdateFlywheelX_Amz_Target { 'Comprehend_20171127.UpdateFlywheel' = 'Comprehend_20171127.UpdateFlywheel' }
 
 }
 

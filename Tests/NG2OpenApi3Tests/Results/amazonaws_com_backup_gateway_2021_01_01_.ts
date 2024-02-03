@@ -125,7 +125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayType { BACKUP_VM = 0 }
+	export enum GatewayType { BACKUP_VM = 'BACKUP_VM' }
 
 
 	/** A key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. */
@@ -494,9 +494,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncMetadataStatus { CREATED = 0, RUNNING = 1, FAILED = 2, PARTIALLY_FAILED = 3, SUCCEEDED = 4 }
+	export enum SyncMetadataStatus { CREATED = 'CREATED', RUNNING = 'RUNNING', FAILED = 'FAILED', PARTIALLY_FAILED = 'PARTIALLY_FAILED', SUCCEEDED = 'SUCCEEDED' }
 
-	export enum HypervisorState { PENDING = 0, ONLINE = 1, OFFLINE = 2, ERROR = 3 }
+	export enum HypervisorState { PENDING = 'PENDING', ONLINE = 'ONLINE', OFFLINE = 'OFFLINE', ERROR = 'ERROR' }
 
 	export interface GetHypervisorInput {
 
@@ -1540,55 +1540,55 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateGatewayToServerX_Amz_Target { 'BackupOnPremises_v20210101.AssociateGatewayToServer' = 0 }
+	export enum AssociateGatewayToServerX_Amz_Target { 'BackupOnPremises_v20210101.AssociateGatewayToServer' = 'BackupOnPremises_v20210101.AssociateGatewayToServer' }
 
-	export enum CreateGatewayX_Amz_Target { 'BackupOnPremises_v20210101.CreateGateway' = 0 }
+	export enum CreateGatewayX_Amz_Target { 'BackupOnPremises_v20210101.CreateGateway' = 'BackupOnPremises_v20210101.CreateGateway' }
 
-	export enum DeleteGatewayX_Amz_Target { 'BackupOnPremises_v20210101.DeleteGateway' = 0 }
+	export enum DeleteGatewayX_Amz_Target { 'BackupOnPremises_v20210101.DeleteGateway' = 'BackupOnPremises_v20210101.DeleteGateway' }
 
-	export enum DeleteHypervisorX_Amz_Target { 'BackupOnPremises_v20210101.DeleteHypervisor' = 0 }
+	export enum DeleteHypervisorX_Amz_Target { 'BackupOnPremises_v20210101.DeleteHypervisor' = 'BackupOnPremises_v20210101.DeleteHypervisor' }
 
-	export enum DisassociateGatewayFromServerX_Amz_Target { 'BackupOnPremises_v20210101.DisassociateGatewayFromServer' = 0 }
+	export enum DisassociateGatewayFromServerX_Amz_Target { 'BackupOnPremises_v20210101.DisassociateGatewayFromServer' = 'BackupOnPremises_v20210101.DisassociateGatewayFromServer' }
 
-	export enum GetBandwidthRateLimitScheduleX_Amz_Target { 'BackupOnPremises_v20210101.GetBandwidthRateLimitSchedule' = 0 }
+	export enum GetBandwidthRateLimitScheduleX_Amz_Target { 'BackupOnPremises_v20210101.GetBandwidthRateLimitSchedule' = 'BackupOnPremises_v20210101.GetBandwidthRateLimitSchedule' }
 
-	export enum GetGatewayX_Amz_Target { 'BackupOnPremises_v20210101.GetGateway' = 0 }
+	export enum GetGatewayX_Amz_Target { 'BackupOnPremises_v20210101.GetGateway' = 'BackupOnPremises_v20210101.GetGateway' }
 
-	export enum GetHypervisorX_Amz_Target { 'BackupOnPremises_v20210101.GetHypervisor' = 0 }
+	export enum GetHypervisorX_Amz_Target { 'BackupOnPremises_v20210101.GetHypervisor' = 'BackupOnPremises_v20210101.GetHypervisor' }
 
-	export enum GetHypervisorPropertyMappingsX_Amz_Target { 'BackupOnPremises_v20210101.GetHypervisorPropertyMappings' = 0 }
+	export enum GetHypervisorPropertyMappingsX_Amz_Target { 'BackupOnPremises_v20210101.GetHypervisorPropertyMappings' = 'BackupOnPremises_v20210101.GetHypervisorPropertyMappings' }
 
-	export enum GetVirtualMachineX_Amz_Target { 'BackupOnPremises_v20210101.GetVirtualMachine' = 0 }
+	export enum GetVirtualMachineX_Amz_Target { 'BackupOnPremises_v20210101.GetVirtualMachine' = 'BackupOnPremises_v20210101.GetVirtualMachine' }
 
-	export enum ImportHypervisorConfigurationX_Amz_Target { 'BackupOnPremises_v20210101.ImportHypervisorConfiguration' = 0 }
+	export enum ImportHypervisorConfigurationX_Amz_Target { 'BackupOnPremises_v20210101.ImportHypervisorConfiguration' = 'BackupOnPremises_v20210101.ImportHypervisorConfiguration' }
 
-	export enum ListGatewaysX_Amz_Target { 'BackupOnPremises_v20210101.ListGateways' = 0 }
+	export enum ListGatewaysX_Amz_Target { 'BackupOnPremises_v20210101.ListGateways' = 'BackupOnPremises_v20210101.ListGateways' }
 
-	export enum ListHypervisorsX_Amz_Target { 'BackupOnPremises_v20210101.ListHypervisors' = 0 }
+	export enum ListHypervisorsX_Amz_Target { 'BackupOnPremises_v20210101.ListHypervisors' = 'BackupOnPremises_v20210101.ListHypervisors' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'BackupOnPremises_v20210101.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'BackupOnPremises_v20210101.ListTagsForResource' = 'BackupOnPremises_v20210101.ListTagsForResource' }
 
-	export enum ListVirtualMachinesX_Amz_Target { 'BackupOnPremises_v20210101.ListVirtualMachines' = 0 }
+	export enum ListVirtualMachinesX_Amz_Target { 'BackupOnPremises_v20210101.ListVirtualMachines' = 'BackupOnPremises_v20210101.ListVirtualMachines' }
 
-	export enum PutBandwidthRateLimitScheduleX_Amz_Target { 'BackupOnPremises_v20210101.PutBandwidthRateLimitSchedule' = 0 }
+	export enum PutBandwidthRateLimitScheduleX_Amz_Target { 'BackupOnPremises_v20210101.PutBandwidthRateLimitSchedule' = 'BackupOnPremises_v20210101.PutBandwidthRateLimitSchedule' }
 
-	export enum PutHypervisorPropertyMappingsX_Amz_Target { 'BackupOnPremises_v20210101.PutHypervisorPropertyMappings' = 0 }
+	export enum PutHypervisorPropertyMappingsX_Amz_Target { 'BackupOnPremises_v20210101.PutHypervisorPropertyMappings' = 'BackupOnPremises_v20210101.PutHypervisorPropertyMappings' }
 
-	export enum PutMaintenanceStartTimeX_Amz_Target { 'BackupOnPremises_v20210101.PutMaintenanceStartTime' = 0 }
+	export enum PutMaintenanceStartTimeX_Amz_Target { 'BackupOnPremises_v20210101.PutMaintenanceStartTime' = 'BackupOnPremises_v20210101.PutMaintenanceStartTime' }
 
-	export enum StartVirtualMachinesMetadataSyncX_Amz_Target { 'BackupOnPremises_v20210101.StartVirtualMachinesMetadataSync' = 0 }
+	export enum StartVirtualMachinesMetadataSyncX_Amz_Target { 'BackupOnPremises_v20210101.StartVirtualMachinesMetadataSync' = 'BackupOnPremises_v20210101.StartVirtualMachinesMetadataSync' }
 
-	export enum TagResourceX_Amz_Target { 'BackupOnPremises_v20210101.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'BackupOnPremises_v20210101.TagResource' = 'BackupOnPremises_v20210101.TagResource' }
 
-	export enum TestHypervisorConfigurationX_Amz_Target { 'BackupOnPremises_v20210101.TestHypervisorConfiguration' = 0 }
+	export enum TestHypervisorConfigurationX_Amz_Target { 'BackupOnPremises_v20210101.TestHypervisorConfiguration' = 'BackupOnPremises_v20210101.TestHypervisorConfiguration' }
 
-	export enum UntagResourceX_Amz_Target { 'BackupOnPremises_v20210101.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'BackupOnPremises_v20210101.UntagResource' = 'BackupOnPremises_v20210101.UntagResource' }
 
-	export enum UpdateGatewayInformationX_Amz_Target { 'BackupOnPremises_v20210101.UpdateGatewayInformation' = 0 }
+	export enum UpdateGatewayInformationX_Amz_Target { 'BackupOnPremises_v20210101.UpdateGatewayInformation' = 'BackupOnPremises_v20210101.UpdateGatewayInformation' }
 
-	export enum UpdateGatewaySoftwareNowX_Amz_Target { 'BackupOnPremises_v20210101.UpdateGatewaySoftwareNow' = 0 }
+	export enum UpdateGatewaySoftwareNowX_Amz_Target { 'BackupOnPremises_v20210101.UpdateGatewaySoftwareNow' = 'BackupOnPremises_v20210101.UpdateGatewaySoftwareNow' }
 
-	export enum UpdateHypervisorX_Amz_Target { 'BackupOnPremises_v20210101.UpdateHypervisor' = 0 }
+	export enum UpdateHypervisorX_Amz_Target { 'BackupOnPremises_v20210101.UpdateHypervisor' = 'BackupOnPremises_v20210101.UpdateHypervisor' }
 
 }
 

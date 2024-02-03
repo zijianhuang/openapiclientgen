@@ -118,11 +118,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AppGatewayHostType { HOST_TYPE_UNSPECIFIED = 0, GCP_REGIONAL_MIG = 1 }
+	export enum AppGatewayHostType { HOST_TYPE_UNSPECIFIED = 'HOST_TYPE_UNSPECIFIED', GCP_REGIONAL_MIG = 'GCP_REGIONAL_MIG' }
 
-	export enum AppGatewayState { STATE_UNSPECIFIED = 0, CREATING = 1, CREATED = 2, UPDATING = 3, DELETING = 4, DOWN = 5 }
+	export enum AppGatewayState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', CREATED = 'CREATED', UPDATING = 'UPDATING', DELETING = 'DELETING', DOWN = 'DOWN' }
 
-	export enum AppGatewayType { TYPE_UNSPECIFIED = 0, TCP_PROXY = 1 }
+	export enum AppGatewayType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TCP_PROXY = 'TCP_PROXY' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -493,7 +493,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayType { TYPE_UNSPECIFIED = 0, GCP_REGIONAL_MIG = 1 }
+	export enum GatewayType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GCP_REGIONAL_MIG = 'GCP_REGIONAL_MIG' }
 
 
 	/** Details of the Connection. */
@@ -730,7 +730,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceInfoStatus { HEALTH_STATUS_UNSPECIFIED = 0, HEALTHY = 1, UNHEALTHY = 2, UNRESPONSIVE = 3, DEGRADED = 4 }
+	export enum ResourceInfoStatus { HEALTH_STATUS_UNSPECIFIED = 'HEALTH_STATUS_UNSPECIFIED', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', UNRESPONSIVE = 'UNRESPONSIVE', DEGRADED = 'DEGRADED' }
 
 
 	/** ConnectorInstanceConfig defines the instance config of a connector. */
@@ -2451,7 +2451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBeyondcorpSaasplatformInsightsV1alphaAppliedConfigAggregation { AGGREGATION_UNSPECIFIED = 0, HOURLY = 1, DAILY = 2, WEEKLY = 3, MONTHLY = 4, CUSTOM_DATE_RANGE = 5 }
+	export enum GoogleCloudBeyondcorpSaasplatformInsightsV1alphaAppliedConfigAggregation { AGGREGATION_UNSPECIFIED = 'AGGREGATION_UNSPECIFIED', HOURLY = 'HOURLY', DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY', CUSTOM_DATE_RANGE = 'CUSTOM_DATE_RANGE' }
 
 
 	/** Customised grouping option that allows setting the group_by fields and also the filters togather for a configured insight request. */
@@ -2825,11 +2825,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBeyondcorpSaasplatformSubscriptionsV1alphaSubscriptionSku { SKU_UNSPECIFIED = 0, BCE_STANDARD_SKU = 1 }
+	export enum GoogleCloudBeyondcorpSaasplatformSubscriptionsV1alphaSubscriptionSku { SKU_UNSPECIFIED = 'SKU_UNSPECIFIED', BCE_STANDARD_SKU = 'BCE_STANDARD_SKU' }
 
-	export enum GoogleCloudBeyondcorpSaasplatformSubscriptionsV1alphaSubscriptionState { STATE_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2, COMPLETED = 3 }
+	export enum GoogleCloudBeyondcorpSaasplatformSubscriptionsV1alphaSubscriptionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', COMPLETED = 'COMPLETED' }
 
-	export enum GoogleCloudBeyondcorpSaasplatformSubscriptionsV1alphaSubscriptionType { TYPE_UNSPECIFIED = 0, TRIAL = 1, PAID = 2, ALLOWLIST = 3 }
+	export enum GoogleCloudBeyondcorpSaasplatformSubscriptionsV1alphaSubscriptionType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TRIAL = 'TRIAL', PAID = 'PAID', ALLOWLIST = 'ALLOWLIST' }
 
 
 	/** The response message for Locations.ListLocations. */
@@ -2952,7 +2952,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -3909,7 +3909,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Beyondcorp_projects_locations_operations_getView { INSIGHT_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Beyondcorp_projects_locations_operations_getView { INSIGHT_VIEW_UNSPECIFIED = 'INSIGHT_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

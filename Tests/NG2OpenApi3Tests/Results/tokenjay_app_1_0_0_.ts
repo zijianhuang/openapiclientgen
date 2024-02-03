@@ -258,7 +258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErgoPayResponseMessageSeverity { NONE = 0, INFORMATION = 1, WARNING = 2, ERROR = 3 }
+	export enum ErgoPayResponseMessageSeverity { NONE = 'NONE', INFORMATION = 'INFORMATION', WARNING = 'WARNING', ERROR = 'ERROR' }
 
 	export interface FetchActionResponse {
 		action?: Action;
@@ -330,7 +330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MosaikManifestTargetCanvasDimension { COMPACT_WIDTH = 0, MEDIUM_WIDTH = 1, FULL_WIDTH = 2 }
+	export enum MosaikManifestTargetCanvasDimension { COMPACT_WIDTH = 'COMPACT_WIDTH', MEDIUM_WIDTH = 'MEDIUM_WIDTH', FULL_WIDTH = 'FULL_WIDTH' }
 
 	export interface ViewElement {
 		id?: string | null;
@@ -466,7 +466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentRequestStateResponsePaymentRequestState { CREATED = 0, WAITING = 1, EXECUTED = 2, INVALID = 3 }
+	export enum PaymentRequestStateResponsePaymentRequestState { CREATED = 'CREATED', WAITING = 'WAITING', EXECUTED = 'EXECUTED', INVALID = 'INVALID' }
 
 	export interface TokenPrice {
 

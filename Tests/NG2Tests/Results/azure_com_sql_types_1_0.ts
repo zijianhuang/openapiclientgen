@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceIdentityType { SystemAssigned = 0 }
+	export enum ResourceIdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** An ARM Resource SKU. */

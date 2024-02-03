@@ -1296,7 +1296,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LpgsvPostBodyFormat { pdf = 0 }
+	export enum LpgsvPostBodyFormat { pdf = 'pdf' }
 
 	export interface LpgtvPostBody {
 		certificateParameters?: LpgtvPostBodyCertificateParameters;

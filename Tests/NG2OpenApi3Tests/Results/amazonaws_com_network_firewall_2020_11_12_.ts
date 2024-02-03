@@ -155,7 +155,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPAddressType { DUALSTACK = 0, IPV4 = 1, IPV6 = 2 }
+	export enum IPAddressType { DUALSTACK = 'DUALSTACK', IPV4 = 'IPV4', IPV6 = 'IPV6' }
 
 	export interface AssociateSubnetsRequest {
 		UpdateToken?: string;
@@ -311,7 +311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { CUSTOMER_KMS = 0, AWS_OWNED_KMS_KEY = 1 }
+	export enum EncryptionType { CUSTOMER_KMS = 'CUSTOMER_KMS', AWS_OWNED_KMS_KEY = 'AWS_OWNED_KMS_KEY' }
 
 
 	/** Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN. */
@@ -343,9 +343,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallStatusValue { PROVISIONING = 0, DELETING = 1, READY = 2 }
+	export enum FirewallStatusValue { PROVISIONING = 'PROVISIONING', DELETING = 'DELETING', READY = 'READY' }
 
-	export enum ConfigurationSyncState { PENDING = 0, IN_SYNC = 1, CAPACITY_CONSTRAINED = 2 }
+	export enum ConfigurationSyncState { PENDING = 'PENDING', IN_SYNC = 'IN_SYNC', CAPACITY_CONSTRAINED = 'CAPACITY_CONSTRAINED' }
 
 	export interface SyncStates {
 	}
@@ -536,7 +536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceStatus { ACTIVE = 0, DELETING = 1 }
+	export enum ResourceStatus { ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface CreateFirewallPolicyRequest {
 
@@ -742,7 +742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OverrideAction { DROP_TO_ALERT = 0 }
+	export enum OverrideAction { DROP_TO_ALERT = 'DROP_TO_ALERT' }
 
 
 	/** Configuration settings for the handling of the stateful rule groups in a firewall policy.  */
@@ -764,9 +764,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleOrder { DEFAULT_ACTION_ORDER = 0, STRICT_ORDER = 1 }
+	export enum RuleOrder { DEFAULT_ACTION_ORDER = 'DEFAULT_ACTION_ORDER', STRICT_ORDER = 'STRICT_ORDER' }
 
-	export enum StreamExceptionPolicy { DROP = 0, CONTINUE = 1, REJECT = 2 }
+	export enum StreamExceptionPolicy { DROP = 'DROP', CONTINUE = 'CONTINUE', REJECT = 'REJECT' }
 
 
 	/** Contains variables that you can use to override default Suricata settings in your firewall policy. */
@@ -875,7 +875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleGroupType { STATELESS = 0, STATEFUL = 1 }
+	export enum RuleGroupType { STATELESS = 'STATELESS', STATEFUL = 'STATEFUL' }
 
 
 	/** High-level information about the managed rule group that your own rule group is copied from. You can use the the metadata to track version updates made to the originating rule group. You can retrieve all objects for a rule group by calling <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html">DescribeRuleGroup</a>. */
@@ -1059,9 +1059,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetType { TLS_SNI = 0, HTTP_HOST = 1 }
+	export enum TargetType { TLS_SNI = 'TLS_SNI', HTTP_HOST = 'HTTP_HOST' }
 
-	export enum GeneratedRulesType { ALLOWLIST = 0, DENYLIST = 1 }
+	export enum GeneratedRulesType { ALLOWLIST = 'ALLOWLIST', DENYLIST = 'DENYLIST' }
 
 
 	/** A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>.  */
@@ -1090,7 +1090,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatefulAction { PASS = 0, DROP = 1, ALERT = 2, REJECT = 3 }
+	export enum StatefulAction { PASS = 'PASS', DROP = 'DROP', ALERT = 'ALERT', REJECT = 'REJECT' }
 
 
 	/** The basic rule criteria for Network Firewall to use to inspect packet headers in stateful traffic flow inspection. Traffic flows that match the criteria are a match for the corresponding <a>StatefulRule</a>.  */
@@ -1148,9 +1148,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StatefulRuleProtocol { IP = 0, TCP = 1, UDP = 2, ICMP = 3, HTTP = 4, FTP = 5, TLS = 6, SMB = 7, DNS = 8, DCERPC = 9, SSH = 10, SMTP = 11, IMAP = 12, MSN = 13, KRB5 = 14, IKEV2 = 15, TFTP = 16, NTP = 17, DHCP = 18 }
+	export enum StatefulRuleProtocol { IP = 'IP', TCP = 'TCP', UDP = 'UDP', ICMP = 'ICMP', HTTP = 'HTTP', FTP = 'FTP', TLS = 'TLS', SMB = 'SMB', DNS = 'DNS', DCERPC = 'DCERPC', SSH = 'SSH', SMTP = 'SMTP', IMAP = 'IMAP', MSN = 'MSN', KRB5 = 'KRB5', IKEV2 = 'IKEV2', TFTP = 'TFTP', NTP = 'NTP', DHCP = 'DHCP' }
 
-	export enum StatefulRuleDirection { FORWARD = 0, ANY = 1 }
+	export enum StatefulRuleDirection { FORWARD = 'FORWARD', ANY = 'ANY' }
 
 
 	/** Additional settings for a stateful rule. This is part of the <a>StatefulRule</a> configuration. */
@@ -1323,7 +1323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TCPFlag { FIN = 0, SYN = 1, RST = 2, PSH = 3, ACK = 4, URG = 5, ECE = 6, CWR = 7 }
+	export enum TCPFlag { FIN = 'FIN', SYN = 'SYN', RST = 'RST', PSH = 'PSH', ACK = 'ACK', URG = 'URG', ECE = 'ECE', CWR = 'CWR' }
 
 
 	/** Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups. */
@@ -1833,9 +1833,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogType { ALERT = 0, FLOW = 1 }
+	export enum LogType { ALERT = 'ALERT', FLOW = 'FLOW' }
 
-	export enum LogDestinationType { S3 = 0, CloudWatchLogs = 1, KinesisDataFirehose = 2 }
+	export enum LogDestinationType { S3 = 'S3', CloudWatchLogs = 'CloudWatchLogs', KinesisDataFirehose = 'KinesisDataFirehose' }
 
 	export interface LogDestinationMap {
 	}
@@ -2230,9 +2230,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceManagedStatus { MANAGED = 0, ACCOUNT = 1 }
+	export enum ResourceManagedStatus { MANAGED = 'MANAGED', ACCOUNT = 'ACCOUNT' }
 
-	export enum ResourceManagedType { AWS_MANAGED_THREAT_SIGNATURES = 0, AWS_MANAGED_DOMAIN_LISTS = 1 }
+	export enum ResourceManagedType { AWS_MANAGED_THREAT_SIGNATURES = 'AWS_MANAGED_THREAT_SIGNATURES', AWS_MANAGED_DOMAIN_LISTS = 'AWS_MANAGED_DOMAIN_LISTS' }
 
 	export interface ListTLSInspectionConfigurationsResponse {
 		NextToken?: string;
@@ -2864,7 +2864,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachmentStatus { CREATING = 0, DELETING = 1, FAILED = 2, ERROR = 3, SCALING = 4, READY = 5 }
+	export enum AttachmentStatus { CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', ERROR = 'ERROR', SCALING = 'SCALING', READY = 'READY' }
 
 
 	/** The configuration and status for a single subnet that you've specified for use by the Network Firewall firewall. This is part of the <a>FirewallStatus</a>. */
@@ -2943,7 +2943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PerObjectSyncStatus { PENDING = 0, IN_SYNC = 1, CAPACITY_CONSTRAINED = 2 }
+	export enum PerObjectSyncStatus { PENDING = 'PENDING', IN_SYNC = 'IN_SYNC', CAPACITY_CONSTRAINED = 'CAPACITY_CONSTRAINED' }
 
 
 	/** Provides configuration status for a single policy or rule group that is used for a firewall endpoint. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of a <a>SyncState</a> for a firewall. */
@@ -3346,77 +3346,77 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.AssociateFirewallPolicy' = 0 }
+	export enum AssociateFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.AssociateFirewallPolicy' = 'NetworkFirewall_20201112.AssociateFirewallPolicy' }
 
-	export enum AssociateSubnetsX_Amz_Target { 'NetworkFirewall_20201112.AssociateSubnets' = 0 }
+	export enum AssociateSubnetsX_Amz_Target { 'NetworkFirewall_20201112.AssociateSubnets' = 'NetworkFirewall_20201112.AssociateSubnets' }
 
-	export enum CreateFirewallX_Amz_Target { 'NetworkFirewall_20201112.CreateFirewall' = 0 }
+	export enum CreateFirewallX_Amz_Target { 'NetworkFirewall_20201112.CreateFirewall' = 'NetworkFirewall_20201112.CreateFirewall' }
 
-	export enum CreateFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.CreateFirewallPolicy' = 0 }
+	export enum CreateFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.CreateFirewallPolicy' = 'NetworkFirewall_20201112.CreateFirewallPolicy' }
 
-	export enum CreateRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.CreateRuleGroup' = 0 }
+	export enum CreateRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.CreateRuleGroup' = 'NetworkFirewall_20201112.CreateRuleGroup' }
 
-	export enum CreateTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.CreateTLSInspectionConfiguration' = 0 }
+	export enum CreateTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.CreateTLSInspectionConfiguration' = 'NetworkFirewall_20201112.CreateTLSInspectionConfiguration' }
 
-	export enum DeleteFirewallX_Amz_Target { 'NetworkFirewall_20201112.DeleteFirewall' = 0 }
+	export enum DeleteFirewallX_Amz_Target { 'NetworkFirewall_20201112.DeleteFirewall' = 'NetworkFirewall_20201112.DeleteFirewall' }
 
-	export enum DeleteFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.DeleteFirewallPolicy' = 0 }
+	export enum DeleteFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.DeleteFirewallPolicy' = 'NetworkFirewall_20201112.DeleteFirewallPolicy' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'NetworkFirewall_20201112.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'NetworkFirewall_20201112.DeleteResourcePolicy' = 'NetworkFirewall_20201112.DeleteResourcePolicy' }
 
-	export enum DeleteRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.DeleteRuleGroup' = 0 }
+	export enum DeleteRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.DeleteRuleGroup' = 'NetworkFirewall_20201112.DeleteRuleGroup' }
 
-	export enum DeleteTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.DeleteTLSInspectionConfiguration' = 0 }
+	export enum DeleteTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.DeleteTLSInspectionConfiguration' = 'NetworkFirewall_20201112.DeleteTLSInspectionConfiguration' }
 
-	export enum DescribeFirewallX_Amz_Target { 'NetworkFirewall_20201112.DescribeFirewall' = 0 }
+	export enum DescribeFirewallX_Amz_Target { 'NetworkFirewall_20201112.DescribeFirewall' = 'NetworkFirewall_20201112.DescribeFirewall' }
 
-	export enum DescribeFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.DescribeFirewallPolicy' = 0 }
+	export enum DescribeFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.DescribeFirewallPolicy' = 'NetworkFirewall_20201112.DescribeFirewallPolicy' }
 
-	export enum DescribeLoggingConfigurationX_Amz_Target { 'NetworkFirewall_20201112.DescribeLoggingConfiguration' = 0 }
+	export enum DescribeLoggingConfigurationX_Amz_Target { 'NetworkFirewall_20201112.DescribeLoggingConfiguration' = 'NetworkFirewall_20201112.DescribeLoggingConfiguration' }
 
-	export enum DescribeResourcePolicyX_Amz_Target { 'NetworkFirewall_20201112.DescribeResourcePolicy' = 0 }
+	export enum DescribeResourcePolicyX_Amz_Target { 'NetworkFirewall_20201112.DescribeResourcePolicy' = 'NetworkFirewall_20201112.DescribeResourcePolicy' }
 
-	export enum DescribeRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.DescribeRuleGroup' = 0 }
+	export enum DescribeRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.DescribeRuleGroup' = 'NetworkFirewall_20201112.DescribeRuleGroup' }
 
-	export enum DescribeRuleGroupMetadataX_Amz_Target { 'NetworkFirewall_20201112.DescribeRuleGroupMetadata' = 0 }
+	export enum DescribeRuleGroupMetadataX_Amz_Target { 'NetworkFirewall_20201112.DescribeRuleGroupMetadata' = 'NetworkFirewall_20201112.DescribeRuleGroupMetadata' }
 
-	export enum DescribeTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.DescribeTLSInspectionConfiguration' = 0 }
+	export enum DescribeTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.DescribeTLSInspectionConfiguration' = 'NetworkFirewall_20201112.DescribeTLSInspectionConfiguration' }
 
-	export enum DisassociateSubnetsX_Amz_Target { 'NetworkFirewall_20201112.DisassociateSubnets' = 0 }
+	export enum DisassociateSubnetsX_Amz_Target { 'NetworkFirewall_20201112.DisassociateSubnets' = 'NetworkFirewall_20201112.DisassociateSubnets' }
 
-	export enum ListFirewallPoliciesX_Amz_Target { 'NetworkFirewall_20201112.ListFirewallPolicies' = 0 }
+	export enum ListFirewallPoliciesX_Amz_Target { 'NetworkFirewall_20201112.ListFirewallPolicies' = 'NetworkFirewall_20201112.ListFirewallPolicies' }
 
-	export enum ListFirewallsX_Amz_Target { 'NetworkFirewall_20201112.ListFirewalls' = 0 }
+	export enum ListFirewallsX_Amz_Target { 'NetworkFirewall_20201112.ListFirewalls' = 'NetworkFirewall_20201112.ListFirewalls' }
 
-	export enum ListRuleGroupsX_Amz_Target { 'NetworkFirewall_20201112.ListRuleGroups' = 0 }
+	export enum ListRuleGroupsX_Amz_Target { 'NetworkFirewall_20201112.ListRuleGroups' = 'NetworkFirewall_20201112.ListRuleGroups' }
 
-	export enum ListTLSInspectionConfigurationsX_Amz_Target { 'NetworkFirewall_20201112.ListTLSInspectionConfigurations' = 0 }
+	export enum ListTLSInspectionConfigurationsX_Amz_Target { 'NetworkFirewall_20201112.ListTLSInspectionConfigurations' = 'NetworkFirewall_20201112.ListTLSInspectionConfigurations' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'NetworkFirewall_20201112.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'NetworkFirewall_20201112.ListTagsForResource' = 'NetworkFirewall_20201112.ListTagsForResource' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'NetworkFirewall_20201112.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'NetworkFirewall_20201112.PutResourcePolicy' = 'NetworkFirewall_20201112.PutResourcePolicy' }
 
-	export enum TagResourceX_Amz_Target { 'NetworkFirewall_20201112.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'NetworkFirewall_20201112.TagResource' = 'NetworkFirewall_20201112.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'NetworkFirewall_20201112.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'NetworkFirewall_20201112.UntagResource' = 'NetworkFirewall_20201112.UntagResource' }
 
-	export enum UpdateFirewallDeleteProtectionX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallDeleteProtection' = 0 }
+	export enum UpdateFirewallDeleteProtectionX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallDeleteProtection' = 'NetworkFirewall_20201112.UpdateFirewallDeleteProtection' }
 
-	export enum UpdateFirewallDescriptionX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallDescription' = 0 }
+	export enum UpdateFirewallDescriptionX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallDescription' = 'NetworkFirewall_20201112.UpdateFirewallDescription' }
 
-	export enum UpdateFirewallEncryptionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration' = 0 }
+	export enum UpdateFirewallEncryptionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration' = 'NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration' }
 
-	export enum UpdateFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallPolicy' = 0 }
+	export enum UpdateFirewallPolicyX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallPolicy' = 'NetworkFirewall_20201112.UpdateFirewallPolicy' }
 
-	export enum UpdateFirewallPolicyChangeProtectionX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallPolicyChangeProtection' = 0 }
+	export enum UpdateFirewallPolicyChangeProtectionX_Amz_Target { 'NetworkFirewall_20201112.UpdateFirewallPolicyChangeProtection' = 'NetworkFirewall_20201112.UpdateFirewallPolicyChangeProtection' }
 
-	export enum UpdateLoggingConfigurationX_Amz_Target { 'NetworkFirewall_20201112.UpdateLoggingConfiguration' = 0 }
+	export enum UpdateLoggingConfigurationX_Amz_Target { 'NetworkFirewall_20201112.UpdateLoggingConfiguration' = 'NetworkFirewall_20201112.UpdateLoggingConfiguration' }
 
-	export enum UpdateRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.UpdateRuleGroup' = 0 }
+	export enum UpdateRuleGroupX_Amz_Target { 'NetworkFirewall_20201112.UpdateRuleGroup' = 'NetworkFirewall_20201112.UpdateRuleGroup' }
 
-	export enum UpdateSubnetChangeProtectionX_Amz_Target { 'NetworkFirewall_20201112.UpdateSubnetChangeProtection' = 0 }
+	export enum UpdateSubnetChangeProtectionX_Amz_Target { 'NetworkFirewall_20201112.UpdateSubnetChangeProtection' = 'NetworkFirewall_20201112.UpdateSubnetChangeProtection' }
 
-	export enum UpdateTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.UpdateTLSInspectionConfiguration' = 0 }
+	export enum UpdateTLSInspectionConfigurationX_Amz_Target { 'NetworkFirewall_20201112.UpdateTLSInspectionConfiguration' = 'NetworkFirewall_20201112.UpdateTLSInspectionConfiguration' }
 
 }
 

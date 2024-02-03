@@ -66,9 +66,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Frontlinev1userState { active = 0, deactivated = 1 }
+	export enum Frontlinev1userState { active = 'active', deactivated = 'deactivated' }
 
-	export enum User_enum_state_type { active = 0, deactivated = 1 }
+	export enum User_enum_state_type { active = 'active', deactivated = 'deactivated' }
 
 	@Injectable()
 	export class MyClient {

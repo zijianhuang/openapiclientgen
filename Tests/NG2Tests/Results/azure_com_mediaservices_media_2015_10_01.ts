@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityInputType { mediaservices = 0 }
+	export enum CheckNameAvailabilityInputType { mediaservices = 'mediaservices' }
 
 
 	/** The response body for CheckNameAvailability API. */
@@ -140,7 +140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityOutputReason { None = 0, Invalid = 1, AlreadyExists = 2 }
+	export enum CheckNameAvailabilityOutputReason { None = 'None', Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The properties of a Media Service resource. */
@@ -320,7 +320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateKeyInputKeyType { Primary = 0, Secondary = 1 }
+	export enum RegenerateKeyInputKeyType { Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** The response body for a RegenerateKey API. */
@@ -394,7 +394,7 @@ export namespace MyNS {
 
 
 	/** Type of MediaService resource. */
-	export enum ResourceType { mediaservices = 0 }
+	export enum ResourceType { mediaservices = 'mediaservices' }
 
 
 	/** The response body for a ListKeys API. */

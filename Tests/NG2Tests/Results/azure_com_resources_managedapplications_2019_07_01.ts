@@ -101,9 +101,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationArtifactName { NotSpecified = 0, ViewDefinition = 1, Authorizations = 2, CustomRoleDefinition = 3 }
+	export enum ApplicationArtifactName { NotSpecified = 'NotSpecified', ViewDefinition = 'ViewDefinition', Authorizations = 'Authorizations', CustomRoleDefinition = 'CustomRoleDefinition' }
 
-	export enum ApplicationArtifactType { NotSpecified = 0, Template = 1, Custom = 2 }
+	export enum ApplicationArtifactType { NotSpecified = 'NotSpecified', Template = 'Template', Custom = 'Custom' }
 
 
 	/** The managed application provider authorization. */
@@ -280,7 +280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationDefinitionArtifactName { NotSpecified = 0, ApplicationResourceTemplate = 1, CreateUiDefinition = 2, MainTemplateParameters = 3 }
+	export enum ApplicationDefinitionArtifactName { NotSpecified = 'NotSpecified', ApplicationResourceTemplate = 'ApplicationResourceTemplate', CreateUiDefinition = 'CreateUiDefinition', MainTemplateParameters = 'MainTemplateParameters' }
 
 
 	/** List of managed application definitions. */
@@ -396,7 +396,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationDefinitionPropertiesLockLevel { CanNotDelete = 0, ReadOnly = 1, None = 2 }
+	export enum ApplicationDefinitionPropertiesLockLevel { CanNotDelete = 'CanNotDelete', ReadOnly = 'ReadOnly', None = 'None' }
 
 
 	/** Managed application policy. */
@@ -460,7 +460,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationDeploymentPolicyDeploymentMode { NotSpecified = 0, Incremental = 1, Complete = 2 }
+	export enum ApplicationDeploymentPolicyDeploymentMode { NotSpecified = 'NotSpecified', Incremental = 'Incremental', Complete = 'Complete' }
 
 
 	/** Managed application Jit access policy. */
@@ -506,7 +506,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationJitAccessPolicyJitApprovalMode { NotSpecified = 0, AutoApprove = 1, ManualApprove = 2 }
+	export enum ApplicationJitAccessPolicyJitApprovalMode { NotSpecified = 'NotSpecified', AutoApprove = 'AutoApprove', ManualApprove = 'ManualApprove' }
 
 
 	/** JIT approver definition. */
@@ -549,7 +549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JitApproverDefinitionType { user = 0, group = 1 }
+	export enum JitApproverDefinitionType { user = 'user', group = 'group' }
 
 
 	/** List of managed applications. */
@@ -577,11 +577,11 @@ export namespace MyNS {
 
 
 	/** The managed application lock level. */
-	export enum ApplicationLockLevel { CanNotDelete = 0, ReadOnly = 1, None = 2 }
+	export enum ApplicationLockLevel { CanNotDelete = 'CanNotDelete', ReadOnly = 'ReadOnly', None = 'None' }
 
 
 	/** The management mode. */
-	export enum ApplicationManagementMode { NotSpecified = 0, Unmanaged = 1, Managed = 2 }
+	export enum ApplicationManagementMode { NotSpecified = 'NotSpecified', Unmanaged = 'Unmanaged', Managed = 'Managed' }
 
 
 	/** Managed application management policy. */
@@ -866,7 +866,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationPropertiesProvisioningState { NotSpecified = 0, Accepted = 1, Running = 2, Ready = 3, Creating = 4, Created = 5, Deleting = 6, Deleted = 7, Canceled = 8, Failed = 9, Succeeded = 10, Updating = 11 }
+	export enum ApplicationPropertiesProvisioningState { NotSpecified = 'NotSpecified', Accepted = 'Accepted', Running = 'Running', Ready = 'Ready', Creating = 'Creating', Created = 'Created', Deleting = 'Deleting', Deleted = 'Deleted', Canceled = 'Canceled', Failed = 'Failed', Succeeded = 'Succeeded', Updating = 'Updating' }
 
 
 	/** The managed application properties. */
@@ -919,7 +919,7 @@ export namespace MyNS {
 
 
 	/** The deployment mode. */
-	export enum DeploymentMode { NotSpecified = 0, Incremental = 1, Complete = 2 }
+	export enum DeploymentMode { NotSpecified = 'NotSpecified', Incremental = 'Incremental', Complete = 'Complete' }
 
 
 	/** Error response indicates managed application is not able to process the incoming request. The reason is provided in the error message. */
@@ -1020,11 +1020,11 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** The Jit approval mode. */
-	export enum JitApprovalMode { NotSpecified = 0, AutoApprove = 1, ManualApprove = 2 }
+	export enum JitApprovalMode { NotSpecified = 'NotSpecified', AutoApprove = 'AutoApprove', ManualApprove = 'ManualApprove' }
 
 
 	/** The JIT authorization policies. */
@@ -1199,11 +1199,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JitRequestPropertiesJitRequestState { NotSpecified = 0, Pending = 1, Approved = 2, Denied = 3, Failed = 4, Canceled = 5, Expired = 6, Timeout = 7 }
+	export enum JitRequestPropertiesJitRequestState { NotSpecified = 'NotSpecified', Pending = 'Pending', Approved = 'Approved', Denied = 'Denied', Failed = 'Failed', Canceled = 'Canceled', Expired = 'Expired', Timeout = 'Timeout' }
 
 
 	/** The JIT request state. */
-	export enum JitRequestState { NotSpecified = 0, Pending = 1, Approved = 2, Denied = 3, Failed = 4, Canceled = 5, Expired = 6, Timeout = 7 }
+	export enum JitRequestState { NotSpecified = 'NotSpecified', Pending = 'Pending', Approved = 'Approved', Denied = 'Denied', Failed = 'Failed', Canceled = 'Canceled', Expired = 'Expired', Timeout = 'Timeout' }
 
 
 	/** The JIT scheduling policies. */
@@ -1252,11 +1252,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JitSchedulingPolicyType { NotSpecified = 0, Once = 1, Recurring = 2 }
+	export enum JitSchedulingPolicyType { NotSpecified = 'NotSpecified', Once = 'Once', Recurring = 'Recurring' }
 
 
 	/** The JIT request scheduling type. */
-	export enum JitSchedulingType { NotSpecified = 0, Once = 1, Recurring = 2 }
+	export enum JitSchedulingType { NotSpecified = 'NotSpecified', Once = 'Once', Recurring = 'Recurring' }
 
 
 	/** Microsoft.Solutions operation */
@@ -1434,7 +1434,7 @@ export namespace MyNS {
 
 
 	/** Provisioning status of the managed application. */
-	export enum ProvisioningState { NotSpecified = 0, Accepted = 1, Running = 2, Ready = 3, Creating = 4, Created = 5, Deleting = 6, Deleted = 7, Canceled = 8, Failed = 9, Succeeded = 10, Updating = 11 }
+	export enum ProvisioningState { NotSpecified = 'NotSpecified', Accepted = 'Accepted', Running = 'Running', Ready = 'Ready', Creating = 'Creating', Created = 'Created', Deleting = 'Deleting', Deleted = 'Deleted', Canceled = 'Canceled', Failed = 'Failed', Succeeded = 'Succeeded', Updating = 'Updating' }
 
 
 	/** Resource information. */

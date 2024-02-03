@@ -70,7 +70,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SmsRequestEncoding { AUTO = 0, GSM7bit = 1, UNICODE = 2 }
+	export enum SmsRequestEncoding { AUTO = 'AUTO', GSM7bit = 'GSM7bit', UNICODE = 'UNICODE' }
 
 	export interface SmsTemplate {
 		encoding?: SmsRequestEncoding | null;

@@ -127,7 +127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnimationFadeFadeType { FADE_TYPE_UNSPECIFIED = 0, FADE_IN = 1, FADE_OUT = 2 }
+	export enum AnimationFadeFadeType { FADE_TYPE_UNSPECIFIED = 'FADE_TYPE_UNSPECIFIED', FADE_IN = 'FADE_IN', FADE_OUT = 'FADE_OUT' }
 
 
 	/** 2D normalized coordinates. Default: `{0.0, 0.0}` */
@@ -1227,7 +1227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManifestType { MANIFEST_TYPE_UNSPECIFIED = 0, HLS = 1, DASH = 2 }
+	export enum ManifestType { MANIFEST_TYPE_UNSPECIFIED = 'MANIFEST_TYPE_UNSPECIFIED', HLS = 'HLS', DASH = 'DASH' }
 
 
 	/** Multiplexing settings for output stream. */
@@ -1524,7 +1524,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobState { PROCESSING_STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum JobState { PROCESSING_STATE_UNSPECIFIED = 'PROCESSING_STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Transcoding job template resource. */

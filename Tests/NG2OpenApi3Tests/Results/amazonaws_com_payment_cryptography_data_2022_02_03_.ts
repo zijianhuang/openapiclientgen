@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaddingType { PKCS1 = 0, OAEP_SHA1 = 1, OAEP_SHA256 = 2, OAEP_SHA512 = 3 }
+	export enum PaddingType { PKCS1 = 'PKCS1', OAEP_SHA1 = 'OAEP_SHA1', OAEP_SHA256 = 'OAEP_SHA256', OAEP_SHA512 = 'OAEP_SHA512' }
 
 
 	/** Parameters that are required to encrypt plaintext data using DUKPT. */
@@ -86,11 +86,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DukptDerivationType { TDES_2KEY = 0, TDES_3KEY = 1, AES_128 = 2, AES_192 = 3, AES_256 = 4 }
+	export enum DukptDerivationType { TDES_2KEY = 'TDES_2KEY', TDES_3KEY = 'TDES_3KEY', AES_128 = 'AES_128', AES_192 = 'AES_192', AES_256 = 'AES_256' }
 
-	export enum DukptKeyVariant { BIDIRECTIONAL = 0, REQUEST = 1, RESPONSE = 2 }
+	export enum DukptKeyVariant { BIDIRECTIONAL = 'BIDIRECTIONAL', REQUEST = 'REQUEST', RESPONSE = 'RESPONSE' }
 
-	export enum DukptEncryptionMode { ECB = 0, CBC = 1 }
+	export enum DukptEncryptionMode { ECB = 'ECB', CBC = 'CBC' }
 
 
 	/** Parameters requried to encrypt plaintext data using symmetric keys. */
@@ -119,7 +119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionMode { ECB = 0, CBC = 1, CFB = 2, CFB1 = 3, CFB8 = 4, CFB64 = 5, CFB128 = 6, OFB = 7 }
+	export enum EncryptionMode { ECB = 'ECB', CBC = 'CBC', CFB = 'CFB', CFB1 = 'CFB1', CFB8 = 'CFB8', CFB64 = 'CFB64', CFB128 = 'CFB128', OFB = 'OFB' }
 
 	export interface ValidationException {
 	}
@@ -481,7 +481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MacAlgorithm { ISO9797_ALGORITHM1 = 0, ISO9797_ALGORITHM3 = 1, CMAC = 2, HMAC_SHA224 = 3, HMAC_SHA256 = 4, HMAC_SHA384 = 5, HMAC_SHA512 = 6 }
+	export enum MacAlgorithm { ISO9797_ALGORITHM1 = 'ISO9797_ALGORITHM1', ISO9797_ALGORITHM3 = 'ISO9797_ALGORITHM3', CMAC = 'CMAC', HMAC_SHA224 = 'HMAC_SHA224', HMAC_SHA256 = 'HMAC_SHA256', HMAC_SHA384 = 'HMAC_SHA384', HMAC_SHA512 = 'HMAC_SHA512' }
 
 
 	/** Parameters required for DUKPT MAC generation and verification. */
@@ -559,9 +559,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MajorKeyDerivationMode { EMV_OPTION_A = 0, EMV_OPTION_B = 1 }
+	export enum MajorKeyDerivationMode { EMV_OPTION_A = 'EMV_OPTION_A', EMV_OPTION_B = 'EMV_OPTION_B' }
 
-	export enum SessionKeyDerivationMode { EMV_COMMON_SESSION_KEY = 0, EMV2000 = 1, AMEX = 2, MASTERCARD_SESSION_KEY = 3, VISA = 4 }
+	export enum SessionKeyDerivationMode { EMV_COMMON_SESSION_KEY = 'EMV_COMMON_SESSION_KEY', EMV2000 = 'EMV2000', AMEX = 'AMEX', MASTERCARD_SESSION_KEY = 'MASTERCARD_SESSION_KEY', VISA = 'VISA' }
 
 
 	/** Parameters to derive session key value using a MAC EMV algorithm. */
@@ -1672,7 +1672,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PinBlockFormatForPinData { ISO_FORMAT_0 = 0, ISO_FORMAT_3 = 1 }
+	export enum PinBlockFormatForPinData { ISO_FORMAT_0 = 'ISO_FORMAT_0', ISO_FORMAT_3 = 'ISO_FORMAT_3' }
 
 	export interface GeneratePinDataInput {
 

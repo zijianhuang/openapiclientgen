@@ -489,7 +489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionMode { BULK = 0, PUT = 1, ALL = 2 }
+	export enum IngestionMode { BULK = 'BULK', PUT = 'PUT', ALL = 'ALL' }
 
 
 	/** The output configuration parameters of a dataset export job. */
@@ -527,7 +527,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Domain { ECOMMERCE = 0, VIDEO_ON_DEMAND = 1 }
+	export enum Domain { ECOMMERCE = 'ECOMMERCE', VIDEO_ON_DEMAND = 'VIDEO_ON_DEMAND' }
 
 	export interface CreateDatasetGroupRequest {
 
@@ -627,7 +627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportMode { FULL = 0, INCREMENTAL = 1 }
+	export enum ImportMode { FULL = 'FULL', INCREMENTAL = 'INCREMENTAL' }
 
 	export interface CreateEventTrackerResponse {
 		eventTrackerArn?: string;
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectiveSensitivity { LOW = 0, MEDIUM = 1, HIGH = 2, OFF = 3 }
+	export enum ObjectiveSensitivity { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', OFF = 'OFF' }
 
 	export interface CreateSolutionVersionResponse {
 		solutionVersionArn?: string;
@@ -1249,7 +1249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingMode { FULL = 0, UPDATE = 1 }
+	export enum TrainingMode { FULL = 'FULL', UPDATE = 'UPDATE' }
 
 	export interface DeleteCampaignRequest {
 
@@ -3676,7 +3676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecipeProvider { SERVICE = 0 }
+	export enum RecipeProvider { SERVICE = 'SERVICE' }
 
 	export interface ListRecommendersResponse {
 		recommenders?: Array<RecommenderSummary>;
@@ -4856,139 +4856,139 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateBatchInferenceJobX_Amz_Target { 'AmazonPersonalize.CreateBatchInferenceJob' = 0 }
+	export enum CreateBatchInferenceJobX_Amz_Target { 'AmazonPersonalize.CreateBatchInferenceJob' = 'AmazonPersonalize.CreateBatchInferenceJob' }
 
-	export enum CreateBatchSegmentJobX_Amz_Target { 'AmazonPersonalize.CreateBatchSegmentJob' = 0 }
+	export enum CreateBatchSegmentJobX_Amz_Target { 'AmazonPersonalize.CreateBatchSegmentJob' = 'AmazonPersonalize.CreateBatchSegmentJob' }
 
-	export enum CreateCampaignX_Amz_Target { 'AmazonPersonalize.CreateCampaign' = 0 }
+	export enum CreateCampaignX_Amz_Target { 'AmazonPersonalize.CreateCampaign' = 'AmazonPersonalize.CreateCampaign' }
 
-	export enum CreateDatasetX_Amz_Target { 'AmazonPersonalize.CreateDataset' = 0 }
+	export enum CreateDatasetX_Amz_Target { 'AmazonPersonalize.CreateDataset' = 'AmazonPersonalize.CreateDataset' }
 
-	export enum CreateDatasetExportJobX_Amz_Target { 'AmazonPersonalize.CreateDatasetExportJob' = 0 }
+	export enum CreateDatasetExportJobX_Amz_Target { 'AmazonPersonalize.CreateDatasetExportJob' = 'AmazonPersonalize.CreateDatasetExportJob' }
 
-	export enum CreateDatasetGroupX_Amz_Target { 'AmazonPersonalize.CreateDatasetGroup' = 0 }
+	export enum CreateDatasetGroupX_Amz_Target { 'AmazonPersonalize.CreateDatasetGroup' = 'AmazonPersonalize.CreateDatasetGroup' }
 
-	export enum CreateDatasetImportJobX_Amz_Target { 'AmazonPersonalize.CreateDatasetImportJob' = 0 }
+	export enum CreateDatasetImportJobX_Amz_Target { 'AmazonPersonalize.CreateDatasetImportJob' = 'AmazonPersonalize.CreateDatasetImportJob' }
 
-	export enum CreateEventTrackerX_Amz_Target { 'AmazonPersonalize.CreateEventTracker' = 0 }
+	export enum CreateEventTrackerX_Amz_Target { 'AmazonPersonalize.CreateEventTracker' = 'AmazonPersonalize.CreateEventTracker' }
 
-	export enum CreateFilterX_Amz_Target { 'AmazonPersonalize.CreateFilter' = 0 }
+	export enum CreateFilterX_Amz_Target { 'AmazonPersonalize.CreateFilter' = 'AmazonPersonalize.CreateFilter' }
 
-	export enum CreateMetricAttributionX_Amz_Target { 'AmazonPersonalize.CreateMetricAttribution' = 0 }
+	export enum CreateMetricAttributionX_Amz_Target { 'AmazonPersonalize.CreateMetricAttribution' = 'AmazonPersonalize.CreateMetricAttribution' }
 
-	export enum CreateRecommenderX_Amz_Target { 'AmazonPersonalize.CreateRecommender' = 0 }
+	export enum CreateRecommenderX_Amz_Target { 'AmazonPersonalize.CreateRecommender' = 'AmazonPersonalize.CreateRecommender' }
 
-	export enum CreateSchemaX_Amz_Target { 'AmazonPersonalize.CreateSchema' = 0 }
+	export enum CreateSchemaX_Amz_Target { 'AmazonPersonalize.CreateSchema' = 'AmazonPersonalize.CreateSchema' }
 
-	export enum CreateSolutionX_Amz_Target { 'AmazonPersonalize.CreateSolution' = 0 }
+	export enum CreateSolutionX_Amz_Target { 'AmazonPersonalize.CreateSolution' = 'AmazonPersonalize.CreateSolution' }
 
-	export enum CreateSolutionVersionX_Amz_Target { 'AmazonPersonalize.CreateSolutionVersion' = 0 }
+	export enum CreateSolutionVersionX_Amz_Target { 'AmazonPersonalize.CreateSolutionVersion' = 'AmazonPersonalize.CreateSolutionVersion' }
 
-	export enum DeleteCampaignX_Amz_Target { 'AmazonPersonalize.DeleteCampaign' = 0 }
+	export enum DeleteCampaignX_Amz_Target { 'AmazonPersonalize.DeleteCampaign' = 'AmazonPersonalize.DeleteCampaign' }
 
-	export enum DeleteDatasetX_Amz_Target { 'AmazonPersonalize.DeleteDataset' = 0 }
+	export enum DeleteDatasetX_Amz_Target { 'AmazonPersonalize.DeleteDataset' = 'AmazonPersonalize.DeleteDataset' }
 
-	export enum DeleteDatasetGroupX_Amz_Target { 'AmazonPersonalize.DeleteDatasetGroup' = 0 }
+	export enum DeleteDatasetGroupX_Amz_Target { 'AmazonPersonalize.DeleteDatasetGroup' = 'AmazonPersonalize.DeleteDatasetGroup' }
 
-	export enum DeleteEventTrackerX_Amz_Target { 'AmazonPersonalize.DeleteEventTracker' = 0 }
+	export enum DeleteEventTrackerX_Amz_Target { 'AmazonPersonalize.DeleteEventTracker' = 'AmazonPersonalize.DeleteEventTracker' }
 
-	export enum DeleteFilterX_Amz_Target { 'AmazonPersonalize.DeleteFilter' = 0 }
+	export enum DeleteFilterX_Amz_Target { 'AmazonPersonalize.DeleteFilter' = 'AmazonPersonalize.DeleteFilter' }
 
-	export enum DeleteMetricAttributionX_Amz_Target { 'AmazonPersonalize.DeleteMetricAttribution' = 0 }
+	export enum DeleteMetricAttributionX_Amz_Target { 'AmazonPersonalize.DeleteMetricAttribution' = 'AmazonPersonalize.DeleteMetricAttribution' }
 
-	export enum DeleteRecommenderX_Amz_Target { 'AmazonPersonalize.DeleteRecommender' = 0 }
+	export enum DeleteRecommenderX_Amz_Target { 'AmazonPersonalize.DeleteRecommender' = 'AmazonPersonalize.DeleteRecommender' }
 
-	export enum DeleteSchemaX_Amz_Target { 'AmazonPersonalize.DeleteSchema' = 0 }
+	export enum DeleteSchemaX_Amz_Target { 'AmazonPersonalize.DeleteSchema' = 'AmazonPersonalize.DeleteSchema' }
 
-	export enum DeleteSolutionX_Amz_Target { 'AmazonPersonalize.DeleteSolution' = 0 }
+	export enum DeleteSolutionX_Amz_Target { 'AmazonPersonalize.DeleteSolution' = 'AmazonPersonalize.DeleteSolution' }
 
-	export enum DescribeAlgorithmX_Amz_Target { 'AmazonPersonalize.DescribeAlgorithm' = 0 }
+	export enum DescribeAlgorithmX_Amz_Target { 'AmazonPersonalize.DescribeAlgorithm' = 'AmazonPersonalize.DescribeAlgorithm' }
 
-	export enum DescribeBatchInferenceJobX_Amz_Target { 'AmazonPersonalize.DescribeBatchInferenceJob' = 0 }
+	export enum DescribeBatchInferenceJobX_Amz_Target { 'AmazonPersonalize.DescribeBatchInferenceJob' = 'AmazonPersonalize.DescribeBatchInferenceJob' }
 
-	export enum DescribeBatchSegmentJobX_Amz_Target { 'AmazonPersonalize.DescribeBatchSegmentJob' = 0 }
+	export enum DescribeBatchSegmentJobX_Amz_Target { 'AmazonPersonalize.DescribeBatchSegmentJob' = 'AmazonPersonalize.DescribeBatchSegmentJob' }
 
-	export enum DescribeCampaignX_Amz_Target { 'AmazonPersonalize.DescribeCampaign' = 0 }
+	export enum DescribeCampaignX_Amz_Target { 'AmazonPersonalize.DescribeCampaign' = 'AmazonPersonalize.DescribeCampaign' }
 
-	export enum DescribeDatasetX_Amz_Target { 'AmazonPersonalize.DescribeDataset' = 0 }
+	export enum DescribeDatasetX_Amz_Target { 'AmazonPersonalize.DescribeDataset' = 'AmazonPersonalize.DescribeDataset' }
 
-	export enum DescribeDatasetExportJobX_Amz_Target { 'AmazonPersonalize.DescribeDatasetExportJob' = 0 }
+	export enum DescribeDatasetExportJobX_Amz_Target { 'AmazonPersonalize.DescribeDatasetExportJob' = 'AmazonPersonalize.DescribeDatasetExportJob' }
 
-	export enum DescribeDatasetGroupX_Amz_Target { 'AmazonPersonalize.DescribeDatasetGroup' = 0 }
+	export enum DescribeDatasetGroupX_Amz_Target { 'AmazonPersonalize.DescribeDatasetGroup' = 'AmazonPersonalize.DescribeDatasetGroup' }
 
-	export enum DescribeDatasetImportJobX_Amz_Target { 'AmazonPersonalize.DescribeDatasetImportJob' = 0 }
+	export enum DescribeDatasetImportJobX_Amz_Target { 'AmazonPersonalize.DescribeDatasetImportJob' = 'AmazonPersonalize.DescribeDatasetImportJob' }
 
-	export enum DescribeEventTrackerX_Amz_Target { 'AmazonPersonalize.DescribeEventTracker' = 0 }
+	export enum DescribeEventTrackerX_Amz_Target { 'AmazonPersonalize.DescribeEventTracker' = 'AmazonPersonalize.DescribeEventTracker' }
 
-	export enum DescribeFeatureTransformationX_Amz_Target { 'AmazonPersonalize.DescribeFeatureTransformation' = 0 }
+	export enum DescribeFeatureTransformationX_Amz_Target { 'AmazonPersonalize.DescribeFeatureTransformation' = 'AmazonPersonalize.DescribeFeatureTransformation' }
 
-	export enum DescribeFilterX_Amz_Target { 'AmazonPersonalize.DescribeFilter' = 0 }
+	export enum DescribeFilterX_Amz_Target { 'AmazonPersonalize.DescribeFilter' = 'AmazonPersonalize.DescribeFilter' }
 
-	export enum DescribeMetricAttributionX_Amz_Target { 'AmazonPersonalize.DescribeMetricAttribution' = 0 }
+	export enum DescribeMetricAttributionX_Amz_Target { 'AmazonPersonalize.DescribeMetricAttribution' = 'AmazonPersonalize.DescribeMetricAttribution' }
 
-	export enum DescribeRecipeX_Amz_Target { 'AmazonPersonalize.DescribeRecipe' = 0 }
+	export enum DescribeRecipeX_Amz_Target { 'AmazonPersonalize.DescribeRecipe' = 'AmazonPersonalize.DescribeRecipe' }
 
-	export enum DescribeRecommenderX_Amz_Target { 'AmazonPersonalize.DescribeRecommender' = 0 }
+	export enum DescribeRecommenderX_Amz_Target { 'AmazonPersonalize.DescribeRecommender' = 'AmazonPersonalize.DescribeRecommender' }
 
-	export enum DescribeSchemaX_Amz_Target { 'AmazonPersonalize.DescribeSchema' = 0 }
+	export enum DescribeSchemaX_Amz_Target { 'AmazonPersonalize.DescribeSchema' = 'AmazonPersonalize.DescribeSchema' }
 
-	export enum DescribeSolutionX_Amz_Target { 'AmazonPersonalize.DescribeSolution' = 0 }
+	export enum DescribeSolutionX_Amz_Target { 'AmazonPersonalize.DescribeSolution' = 'AmazonPersonalize.DescribeSolution' }
 
-	export enum DescribeSolutionVersionX_Amz_Target { 'AmazonPersonalize.DescribeSolutionVersion' = 0 }
+	export enum DescribeSolutionVersionX_Amz_Target { 'AmazonPersonalize.DescribeSolutionVersion' = 'AmazonPersonalize.DescribeSolutionVersion' }
 
-	export enum GetSolutionMetricsX_Amz_Target { 'AmazonPersonalize.GetSolutionMetrics' = 0 }
+	export enum GetSolutionMetricsX_Amz_Target { 'AmazonPersonalize.GetSolutionMetrics' = 'AmazonPersonalize.GetSolutionMetrics' }
 
-	export enum ListBatchInferenceJobsX_Amz_Target { 'AmazonPersonalize.ListBatchInferenceJobs' = 0 }
+	export enum ListBatchInferenceJobsX_Amz_Target { 'AmazonPersonalize.ListBatchInferenceJobs' = 'AmazonPersonalize.ListBatchInferenceJobs' }
 
-	export enum ListBatchSegmentJobsX_Amz_Target { 'AmazonPersonalize.ListBatchSegmentJobs' = 0 }
+	export enum ListBatchSegmentJobsX_Amz_Target { 'AmazonPersonalize.ListBatchSegmentJobs' = 'AmazonPersonalize.ListBatchSegmentJobs' }
 
-	export enum ListCampaignsX_Amz_Target { 'AmazonPersonalize.ListCampaigns' = 0 }
+	export enum ListCampaignsX_Amz_Target { 'AmazonPersonalize.ListCampaigns' = 'AmazonPersonalize.ListCampaigns' }
 
-	export enum ListDatasetExportJobsX_Amz_Target { 'AmazonPersonalize.ListDatasetExportJobs' = 0 }
+	export enum ListDatasetExportJobsX_Amz_Target { 'AmazonPersonalize.ListDatasetExportJobs' = 'AmazonPersonalize.ListDatasetExportJobs' }
 
-	export enum ListDatasetGroupsX_Amz_Target { 'AmazonPersonalize.ListDatasetGroups' = 0 }
+	export enum ListDatasetGroupsX_Amz_Target { 'AmazonPersonalize.ListDatasetGroups' = 'AmazonPersonalize.ListDatasetGroups' }
 
-	export enum ListDatasetImportJobsX_Amz_Target { 'AmazonPersonalize.ListDatasetImportJobs' = 0 }
+	export enum ListDatasetImportJobsX_Amz_Target { 'AmazonPersonalize.ListDatasetImportJobs' = 'AmazonPersonalize.ListDatasetImportJobs' }
 
-	export enum ListDatasetsX_Amz_Target { 'AmazonPersonalize.ListDatasets' = 0 }
+	export enum ListDatasetsX_Amz_Target { 'AmazonPersonalize.ListDatasets' = 'AmazonPersonalize.ListDatasets' }
 
-	export enum ListEventTrackersX_Amz_Target { 'AmazonPersonalize.ListEventTrackers' = 0 }
+	export enum ListEventTrackersX_Amz_Target { 'AmazonPersonalize.ListEventTrackers' = 'AmazonPersonalize.ListEventTrackers' }
 
-	export enum ListFiltersX_Amz_Target { 'AmazonPersonalize.ListFilters' = 0 }
+	export enum ListFiltersX_Amz_Target { 'AmazonPersonalize.ListFilters' = 'AmazonPersonalize.ListFilters' }
 
-	export enum ListMetricAttributionMetricsX_Amz_Target { 'AmazonPersonalize.ListMetricAttributionMetrics' = 0 }
+	export enum ListMetricAttributionMetricsX_Amz_Target { 'AmazonPersonalize.ListMetricAttributionMetrics' = 'AmazonPersonalize.ListMetricAttributionMetrics' }
 
-	export enum ListMetricAttributionsX_Amz_Target { 'AmazonPersonalize.ListMetricAttributions' = 0 }
+	export enum ListMetricAttributionsX_Amz_Target { 'AmazonPersonalize.ListMetricAttributions' = 'AmazonPersonalize.ListMetricAttributions' }
 
-	export enum ListRecipesX_Amz_Target { 'AmazonPersonalize.ListRecipes' = 0 }
+	export enum ListRecipesX_Amz_Target { 'AmazonPersonalize.ListRecipes' = 'AmazonPersonalize.ListRecipes' }
 
-	export enum ListRecommendersX_Amz_Target { 'AmazonPersonalize.ListRecommenders' = 0 }
+	export enum ListRecommendersX_Amz_Target { 'AmazonPersonalize.ListRecommenders' = 'AmazonPersonalize.ListRecommenders' }
 
-	export enum ListSchemasX_Amz_Target { 'AmazonPersonalize.ListSchemas' = 0 }
+	export enum ListSchemasX_Amz_Target { 'AmazonPersonalize.ListSchemas' = 'AmazonPersonalize.ListSchemas' }
 
-	export enum ListSolutionVersionsX_Amz_Target { 'AmazonPersonalize.ListSolutionVersions' = 0 }
+	export enum ListSolutionVersionsX_Amz_Target { 'AmazonPersonalize.ListSolutionVersions' = 'AmazonPersonalize.ListSolutionVersions' }
 
-	export enum ListSolutionsX_Amz_Target { 'AmazonPersonalize.ListSolutions' = 0 }
+	export enum ListSolutionsX_Amz_Target { 'AmazonPersonalize.ListSolutions' = 'AmazonPersonalize.ListSolutions' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AmazonPersonalize.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonPersonalize.ListTagsForResource' = 'AmazonPersonalize.ListTagsForResource' }
 
-	export enum StartRecommenderX_Amz_Target { 'AmazonPersonalize.StartRecommender' = 0 }
+	export enum StartRecommenderX_Amz_Target { 'AmazonPersonalize.StartRecommender' = 'AmazonPersonalize.StartRecommender' }
 
-	export enum StopRecommenderX_Amz_Target { 'AmazonPersonalize.StopRecommender' = 0 }
+	export enum StopRecommenderX_Amz_Target { 'AmazonPersonalize.StopRecommender' = 'AmazonPersonalize.StopRecommender' }
 
-	export enum StopSolutionVersionCreationX_Amz_Target { 'AmazonPersonalize.StopSolutionVersionCreation' = 0 }
+	export enum StopSolutionVersionCreationX_Amz_Target { 'AmazonPersonalize.StopSolutionVersionCreation' = 'AmazonPersonalize.StopSolutionVersionCreation' }
 
-	export enum TagResourceX_Amz_Target { 'AmazonPersonalize.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonPersonalize.TagResource' = 'AmazonPersonalize.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AmazonPersonalize.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonPersonalize.UntagResource' = 'AmazonPersonalize.UntagResource' }
 
-	export enum UpdateCampaignX_Amz_Target { 'AmazonPersonalize.UpdateCampaign' = 0 }
+	export enum UpdateCampaignX_Amz_Target { 'AmazonPersonalize.UpdateCampaign' = 'AmazonPersonalize.UpdateCampaign' }
 
-	export enum UpdateDatasetX_Amz_Target { 'AmazonPersonalize.UpdateDataset' = 0 }
+	export enum UpdateDatasetX_Amz_Target { 'AmazonPersonalize.UpdateDataset' = 'AmazonPersonalize.UpdateDataset' }
 
-	export enum UpdateMetricAttributionX_Amz_Target { 'AmazonPersonalize.UpdateMetricAttribution' = 0 }
+	export enum UpdateMetricAttributionX_Amz_Target { 'AmazonPersonalize.UpdateMetricAttribution' = 'AmazonPersonalize.UpdateMetricAttribution' }
 
-	export enum UpdateRecommenderX_Amz_Target { 'AmazonPersonalize.UpdateRecommender' = 0 }
+	export enum UpdateRecommenderX_Amz_Target { 'AmazonPersonalize.UpdateRecommender' = 'AmazonPersonalize.UpdateRecommender' }
 
 }
 

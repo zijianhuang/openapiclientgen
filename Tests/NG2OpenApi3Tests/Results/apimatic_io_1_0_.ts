@@ -9,7 +9,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ConvertAPIFormat { swagger10 = 0, swagger20 = 1, swaggeryaml = 2, apiblueprint = 3, wadl2009 = 4, raml = 5, apimatic = 6 }
+	export enum ConvertAPIFormat { swagger10 = 'swagger10', swagger20 = 'swagger20', swaggeryaml = 'swaggeryaml', apiblueprint = 'apiblueprint', wadl2009 = 'wadl2009', raml = 'raml', apimatic = 'apimatic' }
 
 }
 

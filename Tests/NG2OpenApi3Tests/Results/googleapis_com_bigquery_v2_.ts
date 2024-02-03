@@ -135,7 +135,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArgumentArgumentKind { ARGUMENT_KIND_UNSPECIFIED = 0, FIXED_TYPE = 1, ANY_TYPE = 2 }
+	export enum ArgumentArgumentKind { ARGUMENT_KIND_UNSPECIFIED = 'ARGUMENT_KIND_UNSPECIFIED', FIXED_TYPE = 'FIXED_TYPE', ANY_TYPE = 'ANY_TYPE' }
 
 
 	/** The data type of a variable such as a function argument. Examples include: * INT64: `{"typeKind": "INT64"}` * ARRAY: { "typeKind": "ARRAY", "arrayElementType": {"typeKind": "STRING"} } * STRUCT>: { "typeKind": "STRUCT", "structType": { "fields": [ { "name": "x", "type": {"typeKind": "STRING"} }, { "name": "y", "type": { "typeKind": "ARRAY", "arrayElementType": {"typeKind": "DATE"} } } ] } } */
@@ -208,9 +208,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StandardSqlDataTypeTypeKind { TYPE_KIND_UNSPECIFIED = 0, INT64 = 1, BOOL = 2, FLOAT64 = 3, STRING = 4, BYTES = 5, TIMESTAMP = 6, DATE = 7, TIME = 8, DATETIME = 9, INTERVAL = 10, GEOGRAPHY = 11, NUMERIC = 12, BIGNUMERIC = 13, JSON = 14, ARRAY = 15, STRUCT = 16, RANGE = 17 }
+	export enum StandardSqlDataTypeTypeKind { TYPE_KIND_UNSPECIFIED = 'TYPE_KIND_UNSPECIFIED', INT64 = 'INT64', BOOL = 'BOOL', FLOAT64 = 'FLOAT64', STRING = 'STRING', BYTES = 'BYTES', TIMESTAMP = 'TIMESTAMP', DATE = 'DATE', TIME = 'TIME', DATETIME = 'DATETIME', INTERVAL = 'INTERVAL', GEOGRAPHY = 'GEOGRAPHY', NUMERIC = 'NUMERIC', BIGNUMERIC = 'BIGNUMERIC', JSON = 'JSON', ARRAY = 'ARRAY', STRUCT = 'STRUCT', RANGE = 'RANGE' }
 
-	export enum ArgumentMode { MODE_UNSPECIFIED = 0, IN = 1, OUT = 2, INOUT = 3 }
+	export enum ArgumentMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', IN = 'IN', OUT = 'OUT', INOUT = 'INOUT' }
 
 
 	/** Arima coefficients. */
@@ -534,7 +534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 	export interface AvroOptions {
 
@@ -3932,39 +3932,39 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingOptionsBoosterType { BOOSTER_TYPE_UNSPECIFIED = 0, GBTREE = 1, DART = 2 }
+	export enum TrainingOptionsBoosterType { BOOSTER_TYPE_UNSPECIFIED = 'BOOSTER_TYPE_UNSPECIFIED', GBTREE = 'GBTREE', DART = 'DART' }
 
-	export enum TrainingOptionsCategoryEncodingMethod { ENCODING_METHOD_UNSPECIFIED = 0, ONE_HOT_ENCODING = 1, LABEL_ENCODING = 2, DUMMY_ENCODING = 3 }
+	export enum TrainingOptionsCategoryEncodingMethod { ENCODING_METHOD_UNSPECIFIED = 'ENCODING_METHOD_UNSPECIFIED', ONE_HOT_ENCODING = 'ONE_HOT_ENCODING', LABEL_ENCODING = 'LABEL_ENCODING', DUMMY_ENCODING = 'DUMMY_ENCODING' }
 
-	export enum TrainingOptionsColorSpace { COLOR_SPACE_UNSPECIFIED = 0, RGB = 1, HSV = 2, YIQ = 3, YUV = 4, GRAYSCALE = 5 }
+	export enum TrainingOptionsColorSpace { COLOR_SPACE_UNSPECIFIED = 'COLOR_SPACE_UNSPECIFIED', RGB = 'RGB', HSV = 'HSV', YIQ = 'YIQ', YUV = 'YUV', GRAYSCALE = 'GRAYSCALE' }
 
-	export enum TrainingOptionsDartNormalizeType { DART_NORMALIZE_TYPE_UNSPECIFIED = 0, TREE = 1, FOREST = 2 }
+	export enum TrainingOptionsDartNormalizeType { DART_NORMALIZE_TYPE_UNSPECIFIED = 'DART_NORMALIZE_TYPE_UNSPECIFIED', TREE = 'TREE', FOREST = 'FOREST' }
 
-	export enum TrainingOptionsDataFrequency { DATA_FREQUENCY_UNSPECIFIED = 0, AUTO_FREQUENCY = 1, YEARLY = 2, QUARTERLY = 3, MONTHLY = 4, WEEKLY = 5, DAILY = 6, HOURLY = 7, PER_MINUTE = 8 }
+	export enum TrainingOptionsDataFrequency { DATA_FREQUENCY_UNSPECIFIED = 'DATA_FREQUENCY_UNSPECIFIED', AUTO_FREQUENCY = 'AUTO_FREQUENCY', YEARLY = 'YEARLY', QUARTERLY = 'QUARTERLY', MONTHLY = 'MONTHLY', WEEKLY = 'WEEKLY', DAILY = 'DAILY', HOURLY = 'HOURLY', PER_MINUTE = 'PER_MINUTE' }
 
-	export enum TrainingOptionsDataSplitMethod { DATA_SPLIT_METHOD_UNSPECIFIED = 0, RANDOM = 1, CUSTOM = 2, SEQUENTIAL = 3, NO_SPLIT = 4, AUTO_SPLIT = 5 }
+	export enum TrainingOptionsDataSplitMethod { DATA_SPLIT_METHOD_UNSPECIFIED = 'DATA_SPLIT_METHOD_UNSPECIFIED', RANDOM = 'RANDOM', CUSTOM = 'CUSTOM', SEQUENTIAL = 'SEQUENTIAL', NO_SPLIT = 'NO_SPLIT', AUTO_SPLIT = 'AUTO_SPLIT' }
 
-	export enum TrainingOptionsDistanceType { DISTANCE_TYPE_UNSPECIFIED = 0, EUCLIDEAN = 1, COSINE = 2 }
+	export enum TrainingOptionsDistanceType { DISTANCE_TYPE_UNSPECIFIED = 'DISTANCE_TYPE_UNSPECIFIED', EUCLIDEAN = 'EUCLIDEAN', COSINE = 'COSINE' }
 
-	export enum TrainingOptionsFeedbackType { FEEDBACK_TYPE_UNSPECIFIED = 0, IMPLICIT = 1, EXPLICIT = 2 }
+	export enum TrainingOptionsFeedbackType { FEEDBACK_TYPE_UNSPECIFIED = 'FEEDBACK_TYPE_UNSPECIFIED', IMPLICIT = 'IMPLICIT', EXPLICIT = 'EXPLICIT' }
 
-	export enum TrainingOptionsHolidayRegion { HOLIDAY_REGION_UNSPECIFIED = 0, GLOBAL = 1, NA = 2, JAPAC = 3, EMEA = 4, LAC = 5, AE = 6, AR = 7, AT = 8, AU = 9, BE = 10, BR = 11, CA = 12, CH = 13, CL = 14, CN = 15, CO = 16, CS = 17, CZ = 18, DE = 19, DK = 20, DZ = 21, EC = 22, EE = 23, EG = 24, ES = 25, FI = 26, FR = 27, GB = 28, GR = 29, HK = 30, HU = 31, ID = 32, IE = 33, IL = 34, IN = 35, IR = 36, IT = 37, JP = 38, KR = 39, LV = 40, MA = 41, MX = 42, MY = 43, NG = 44, NL = 45, NO = 46, NZ = 47, PE = 48, PH = 49, PK = 50, PL = 51, PT = 52, RO = 53, RS = 54, RU = 55, SA = 56, SE = 57, SG = 58, SI = 59, SK = 60, TH = 61, TR = 62, TW = 63, UA = 64, US = 65, VE = 66, VN = 67, ZA = 68 }
+	export enum TrainingOptionsHolidayRegion { HOLIDAY_REGION_UNSPECIFIED = 'HOLIDAY_REGION_UNSPECIFIED', GLOBAL = 'GLOBAL', NA = 'NA', JAPAC = 'JAPAC', EMEA = 'EMEA', LAC = 'LAC', AE = 'AE', AR = 'AR', AT = 'AT', AU = 'AU', BE = 'BE', BR = 'BR', CA = 'CA', CH = 'CH', CL = 'CL', CN = 'CN', CO = 'CO', CS = 'CS', CZ = 'CZ', DE = 'DE', DK = 'DK', DZ = 'DZ', EC = 'EC', EE = 'EE', EG = 'EG', ES = 'ES', FI = 'FI', FR = 'FR', GB = 'GB', GR = 'GR', HK = 'HK', HU = 'HU', ID = 'ID', IE = 'IE', IL = 'IL', IN = 'IN', IR = 'IR', IT = 'IT', JP = 'JP', KR = 'KR', LV = 'LV', MA = 'MA', MX = 'MX', MY = 'MY', NG = 'NG', NL = 'NL', NO = 'NO', NZ = 'NZ', PE = 'PE', PH = 'PH', PK = 'PK', PL = 'PL', PT = 'PT', RO = 'RO', RS = 'RS', RU = 'RU', SA = 'SA', SE = 'SE', SG = 'SG', SI = 'SI', SK = 'SK', TH = 'TH', TR = 'TR', TW = 'TW', UA = 'UA', US = 'US', VE = 'VE', VN = 'VN', ZA = 'ZA' }
 
-	export enum TrainingOptionsKmeansInitializationMethod { KMEANS_INITIALIZATION_METHOD_UNSPECIFIED = 0, RANDOM = 1, CUSTOM = 2, KMEANS_PLUS_PLUS = 3 }
+	export enum TrainingOptionsKmeansInitializationMethod { KMEANS_INITIALIZATION_METHOD_UNSPECIFIED = 'KMEANS_INITIALIZATION_METHOD_UNSPECIFIED', RANDOM = 'RANDOM', CUSTOM = 'CUSTOM', KMEANS_PLUS_PLUS = 'KMEANS_PLUS_PLUS' }
 
-	export enum TrainingOptionsLearnRateStrategy { LEARN_RATE_STRATEGY_UNSPECIFIED = 0, LINE_SEARCH = 1, CONSTANT = 2 }
+	export enum TrainingOptionsLearnRateStrategy { LEARN_RATE_STRATEGY_UNSPECIFIED = 'LEARN_RATE_STRATEGY_UNSPECIFIED', LINE_SEARCH = 'LINE_SEARCH', CONSTANT = 'CONSTANT' }
 
-	export enum TrainingOptionsLossType { LOSS_TYPE_UNSPECIFIED = 0, MEAN_SQUARED_LOSS = 1, MEAN_LOG_LOSS = 2 }
+	export enum TrainingOptionsLossType { LOSS_TYPE_UNSPECIFIED = 'LOSS_TYPE_UNSPECIFIED', MEAN_SQUARED_LOSS = 'MEAN_SQUARED_LOSS', MEAN_LOG_LOSS = 'MEAN_LOG_LOSS' }
 
-	export enum TrainingOptionsModelRegistry { MODEL_REGISTRY_UNSPECIFIED = 0, VERTEX_AI = 1 }
+	export enum TrainingOptionsModelRegistry { MODEL_REGISTRY_UNSPECIFIED = 'MODEL_REGISTRY_UNSPECIFIED', VERTEX_AI = 'VERTEX_AI' }
 
-	export enum TrainingOptionsOptimizationStrategy { OPTIMIZATION_STRATEGY_UNSPECIFIED = 0, BATCH_GRADIENT_DESCENT = 1, NORMAL_EQUATION = 2 }
+	export enum TrainingOptionsOptimizationStrategy { OPTIMIZATION_STRATEGY_UNSPECIFIED = 'OPTIMIZATION_STRATEGY_UNSPECIFIED', BATCH_GRADIENT_DESCENT = 'BATCH_GRADIENT_DESCENT', NORMAL_EQUATION = 'NORMAL_EQUATION' }
 
-	export enum TrainingOptionsPcaSolver { UNSPECIFIED = 0, FULL = 1, RANDOMIZED = 2, AUTO = 3 }
+	export enum TrainingOptionsPcaSolver { UNSPECIFIED = 'UNSPECIFIED', FULL = 'FULL', RANDOMIZED = 'RANDOMIZED', AUTO = 'AUTO' }
 
-	export enum TrainingOptionsTreeMethod { TREE_METHOD_UNSPECIFIED = 0, AUTO = 1, EXACT = 2, APPROX = 3, HIST = 4 }
+	export enum TrainingOptionsTreeMethod { TREE_METHOD_UNSPECIFIED = 'TREE_METHOD_UNSPECIFIED', AUTO = 'AUTO', EXACT = 'EXACT', APPROX = 'APPROX', HIST = 'HIST' }
 
-	export enum HparamTuningTrialStatus { TRIAL_STATUS_UNSPECIFIED = 0, NOT_STARTED = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4, INFEASIBLE = 5, STOPPED_EARLY = 6 }
+	export enum HparamTuningTrialStatus { TRIAL_STATUS_UNSPECIFIED = 'TRIAL_STATUS_UNSPECIFIED', NOT_STARTED = 'NOT_STARTED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', INFEASIBLE = 'INFEASIBLE', STOPPED_EARLY = 'STOPPED_EARLY' }
 
 	export interface IndexUnusedReason {
 		baseTable?: TableReference;
@@ -5531,7 +5531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobCreationReasonCode { CODE_UNSPECIFIED = 0, REQUESTED = 1, LONG_RUNNING = 2, LARGE_RESULTS = 3, OTHER = 4 }
+	export enum JobCreationReasonCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', REQUESTED = 'REQUESTED', LONG_RUNNING = 'LONG_RUNNING', LARGE_RESULTS = 'LARGE_RESULTS', OTHER = 'OTHER' }
 
 	export interface JobList {
 
@@ -5771,7 +5771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelModelType { MODEL_TYPE_UNSPECIFIED = 0, LINEAR_REGRESSION = 1, LOGISTIC_REGRESSION = 2, KMEANS = 3, MATRIX_FACTORIZATION = 4, DNN_CLASSIFIER = 5, TENSORFLOW = 6, DNN_REGRESSOR = 7, XGBOOST = 8, BOOSTED_TREE_REGRESSOR = 9, BOOSTED_TREE_CLASSIFIER = 10, ARIMA = 11, AUTOML_REGRESSOR = 12, AUTOML_CLASSIFIER = 13, PCA = 14, DNN_LINEAR_COMBINED_CLASSIFIER = 15, DNN_LINEAR_COMBINED_REGRESSOR = 16, AUTOENCODER = 17, ARIMA_PLUS = 18, ARIMA_PLUS_XREG = 19, RANDOM_FOREST_REGRESSOR = 20, RANDOM_FOREST_CLASSIFIER = 21, TENSORFLOW_LITE = 22, ONNX = 23 }
+	export enum ModelModelType { MODEL_TYPE_UNSPECIFIED = 'MODEL_TYPE_UNSPECIFIED', LINEAR_REGRESSION = 'LINEAR_REGRESSION', LOGISTIC_REGRESSION = 'LOGISTIC_REGRESSION', KMEANS = 'KMEANS', MATRIX_FACTORIZATION = 'MATRIX_FACTORIZATION', DNN_CLASSIFIER = 'DNN_CLASSIFIER', TENSORFLOW = 'TENSORFLOW', DNN_REGRESSOR = 'DNN_REGRESSOR', XGBOOST = 'XGBOOST', BOOSTED_TREE_REGRESSOR = 'BOOSTED_TREE_REGRESSOR', BOOSTED_TREE_CLASSIFIER = 'BOOSTED_TREE_CLASSIFIER', ARIMA = 'ARIMA', AUTOML_REGRESSOR = 'AUTOML_REGRESSOR', AUTOML_CLASSIFIER = 'AUTOML_CLASSIFIER', PCA = 'PCA', DNN_LINEAR_COMBINED_CLASSIFIER = 'DNN_LINEAR_COMBINED_CLASSIFIER', DNN_LINEAR_COMBINED_REGRESSOR = 'DNN_LINEAR_COMBINED_REGRESSOR', AUTOENCODER = 'AUTOENCODER', ARIMA_PLUS = 'ARIMA_PLUS', ARIMA_PLUS_XREG = 'ARIMA_PLUS_XREG', RANDOM_FOREST_REGRESSOR = 'RANDOM_FOREST_REGRESSOR', RANDOM_FOREST_CLASSIFIER = 'RANDOM_FOREST_CLASSIFIER', TENSORFLOW_LITE = 'TENSORFLOW_LITE', ONNX = 'ONNX' }
 
 
 	/** Remote Model Info */
@@ -5829,7 +5829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RemoteModelInfoRemoteServiceType { REMOTE_SERVICE_TYPE_UNSPECIFIED = 0, CLOUD_AI_TRANSLATE_V3 = 1, CLOUD_AI_VISION_V1 = 2, CLOUD_AI_NATURAL_LANGUAGE_V1 = 3, CLOUD_AI_SPEECH_TO_TEXT_V2 = 4 }
+	export enum RemoteModelInfoRemoteServiceType { REMOTE_SERVICE_TYPE_UNSPECIFIED = 'REMOTE_SERVICE_TYPE_UNSPECIFIED', CLOUD_AI_TRANSLATE_V3 = 'CLOUD_AI_TRANSLATE_V3', CLOUD_AI_VISION_V1 = 'CLOUD_AI_VISION_V1', CLOUD_AI_NATURAL_LANGUAGE_V1 = 'CLOUD_AI_NATURAL_LANGUAGE_V1', CLOUD_AI_SPEECH_TO_TEXT_V2 = 'CLOUD_AI_SPEECH_TO_TEXT_V2' }
 
 
 	/** Information about a single training query run for the model. */
@@ -6056,11 +6056,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutineDataGovernanceType { DATA_GOVERNANCE_TYPE_UNSPECIFIED = 0, DATA_MASKING = 1 }
+	export enum RoutineDataGovernanceType { DATA_GOVERNANCE_TYPE_UNSPECIFIED = 'DATA_GOVERNANCE_TYPE_UNSPECIFIED', DATA_MASKING = 'DATA_MASKING' }
 
-	export enum RoutineDeterminismLevel { DETERMINISM_LEVEL_UNSPECIFIED = 0, DETERMINISTIC = 1, NOT_DETERMINISTIC = 2 }
+	export enum RoutineDeterminismLevel { DETERMINISM_LEVEL_UNSPECIFIED = 'DETERMINISM_LEVEL_UNSPECIFIED', DETERMINISTIC = 'DETERMINISTIC', NOT_DETERMINISTIC = 'NOT_DETERMINISTIC' }
 
-	export enum RoutineLanguage { LANGUAGE_UNSPECIFIED = 0, SQL = 1, JAVASCRIPT = 2, PYTHON = 3, JAVA = 4, SCALA = 5 }
+	export enum RoutineLanguage { LANGUAGE_UNSPECIFIED = 'LANGUAGE_UNSPECIFIED', SQL = 'SQL', JAVASCRIPT = 'JAVASCRIPT', PYTHON = 'PYTHON', JAVA = 'JAVA', SCALA = 'SCALA' }
 
 
 	/** Options for a remote user-defined function. */
@@ -6121,9 +6121,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutineRoutineType { ROUTINE_TYPE_UNSPECIFIED = 0, SCALAR_FUNCTION = 1, PROCEDURE = 2, TABLE_VALUED_FUNCTION = 3, AGGREGATE_FUNCTION = 4 }
+	export enum RoutineRoutineType { ROUTINE_TYPE_UNSPECIFIED = 'ROUTINE_TYPE_UNSPECIFIED', SCALAR_FUNCTION = 'SCALAR_FUNCTION', PROCEDURE = 'PROCEDURE', TABLE_VALUED_FUNCTION = 'TABLE_VALUED_FUNCTION', AGGREGATE_FUNCTION = 'AGGREGATE_FUNCTION' }
 
-	export enum RoutineSecurityMode { SECURITY_MODE_UNSPECIFIED = 0, DEFINER = 1, INVOKER = 2 }
+	export enum RoutineSecurityMode { SECURITY_MODE_UNSPECIFIED = 'SECURITY_MODE_UNSPECIFIED', DEFINER = 'DEFINER', INVOKER = 'INVOKER' }
 
 
 	/** Options for a user-defined Spark routine. */
@@ -7504,7 +7504,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VectorSearchStatisticsIndexUsageMode { INDEX_USAGE_MODE_UNSPECIFIED = 0, UNUSED = 1, PARTIALLY_USED = 2, FULLY_USED = 3 }
+	export enum VectorSearchStatisticsIndexUsageMode { INDEX_USAGE_MODE_UNSPECIFIED = 'INDEX_USAGE_MODE_UNSPECIFIED', UNUSED = 'UNUSED', PARTIALLY_USED = 'PARTIALLY_USED', FULLY_USED = 'FULLY_USED' }
 
 	@Injectable()
 	export class MyClient {
@@ -7943,9 +7943,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Bigquery_tables_getView { BASIC = 0, FULL = 1, STORAGE_STATS = 2, TABLE_METADATA_VIEW_UNSPECIFIED = 3 }
+	export enum Bigquery_tables_getView { BASIC = 'BASIC', FULL = 'FULL', STORAGE_STATS = 'STORAGE_STATS', TABLE_METADATA_VIEW_UNSPECIFIED = 'TABLE_METADATA_VIEW_UNSPECIFIED' }
 
-	export enum Bigquery_jobs_listProjection { full = 0, minimal = 1 }
+	export enum Bigquery_jobs_listProjection { full = 'full', minimal = 'minimal' }
 
 }
 

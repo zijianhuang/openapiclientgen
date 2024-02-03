@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApprovalResultDecision { DECISION_UNSPECIFIED = 0, APPROVED = 1, REJECTED = 2 }
+	export enum ApprovalResultDecision { DECISION_UNSPECIFIED = 'DECISION_UNSPECIFIED', APPROVED = 'APPROVED', REJECTED = 'REJECTED' }
 
 
 	/** Files in the workspace to upload to Cloud Storage upon successful completion of all build steps. */
@@ -199,7 +199,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HashType { NONE = 0, SHA256 = 1, MD5 = 2 }
+	export enum HashType { NONE = 'NONE', SHA256 = 'SHA256', MD5 = 'MD5' }
 
 
 	/** Artifacts produced by a build that should be uploaded upon successful completion of all build steps. */
@@ -817,7 +817,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildApprovalState { STATE_UNSPECIFIED = 0, PENDING = 1, APPROVED = 2, REJECTED = 3, CANCELLED = 4 }
+	export enum BuildApprovalState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', APPROVED = 'APPROVED', REJECTED = 'REJECTED', CANCELLED = 'CANCELLED' }
 
 
 	/** Secrets and secret environment variables. */
@@ -923,7 +923,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailureInfoType { FAILURE_TYPE_UNSPECIFIED = 0, PUSH_FAILED = 1, PUSH_IMAGE_NOT_FOUND = 2, PUSH_NOT_AUTHORIZED = 3, LOGGING_FAILURE = 4, USER_BUILD_STEP = 5, FETCH_SOURCE_FAILED = 6 }
+	export enum FailureInfoType { FAILURE_TYPE_UNSPECIFIED = 'FAILURE_TYPE_UNSPECIFIED', PUSH_FAILED = 'PUSH_FAILED', PUSH_IMAGE_NOT_FOUND = 'PUSH_IMAGE_NOT_FOUND', PUSH_NOT_AUTHORIZED = 'PUSH_NOT_AUTHORIZED', LOGGING_FAILURE = 'LOGGING_FAILURE', USER_BUILD_STEP = 'USER_BUILD_STEP', FETCH_SOURCE_FAILED = 'FETCH_SOURCE_FAILED' }
 
 
 	/** Optional arguments to enable specific features of builds. */
@@ -1010,11 +1010,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildOptionsLogStreamingOption { STREAM_DEFAULT = 0, STREAM_ON = 1, STREAM_OFF = 2 }
+	export enum BuildOptionsLogStreamingOption { STREAM_DEFAULT = 'STREAM_DEFAULT', STREAM_ON = 'STREAM_ON', STREAM_OFF = 'STREAM_OFF' }
 
-	export enum BuildOptionsLogging { LOGGING_UNSPECIFIED = 0, LEGACY = 1, GCS_ONLY = 2, STACKDRIVER_ONLY = 3, CLOUD_LOGGING_ONLY = 4, NONE = 5 }
+	export enum BuildOptionsLogging { LOGGING_UNSPECIFIED = 'LOGGING_UNSPECIFIED', LEGACY = 'LEGACY', GCS_ONLY = 'GCS_ONLY', STACKDRIVER_ONLY = 'STACKDRIVER_ONLY', CLOUD_LOGGING_ONLY = 'CLOUD_LOGGING_ONLY', NONE = 'NONE' }
 
-	export enum BuildOptionsMachineType { UNSPECIFIED = 0, N1_HIGHCPU_8 = 1, N1_HIGHCPU_32 = 2, E2_HIGHCPU_8 = 3, E2_HIGHCPU_32 = 4 }
+	export enum BuildOptionsMachineType { UNSPECIFIED = 'UNSPECIFIED', N1_HIGHCPU_8 = 'N1_HIGHCPU_8', N1_HIGHCPU_32 = 'N1_HIGHCPU_32', E2_HIGHCPU_8 = 'E2_HIGHCPU_8', E2_HIGHCPU_32 = 'E2_HIGHCPU_32' }
 
 
 	/** Details about how a build should be executed on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information. */
@@ -1037,9 +1037,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildOptionsRequestedVerifyOption { NOT_VERIFIED = 0, VERIFIED = 1 }
+	export enum BuildOptionsRequestedVerifyOption { NOT_VERIFIED = 'NOT_VERIFIED', VERIFIED = 'VERIFIED' }
 
-	export enum BuildOptionsSubstitutionOption { MUST_MATCH = 0, ALLOW_LOOSE = 1 }
+	export enum BuildOptionsSubstitutionOption { MUST_MATCH = 'MUST_MATCH', ALLOW_LOOSE = 'ALLOW_LOOSE' }
 
 
 	/** Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution. */
@@ -1421,7 +1421,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildStatus { STATUS_UNKNOWN = 0, PENDING = 1, QUEUED = 2, WORKING = 3, SUCCESS = 4, FAILURE = 5, INTERNAL_ERROR = 6, TIMEOUT = 7, CANCELLED = 8, EXPIRED = 9 }
+	export enum BuildStatus { STATUS_UNKNOWN = 'STATUS_UNKNOWN', PENDING = 'PENDING', QUEUED = 'QUEUED', WORKING = 'WORKING', SUCCESS = 'SUCCESS', FAILURE = 'FAILURE', INTERNAL_ERROR = 'INTERNAL_ERROR', TIMEOUT = 'TIMEOUT', CANCELLED = 'CANCELLED', EXPIRED = 'EXPIRED' }
 
 
 	/** A step in the build pipeline. */
@@ -1552,7 +1552,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WarningPriority { PRIORITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ALERT = 3 }
+	export enum WarningPriority { PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED', INFO = 'INFO', WARNING = 'WARNING', ALERT = 'ALERT' }
 
 
 	/** Metadata for build operations. */
@@ -2056,7 +2056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkerPoolStatus { STATUS_UNSPECIFIED = 0, CREATING = 1, RUNNING = 2, DELETING = 3, DELETED = 4 }
+	export enum WorkerPoolStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', CREATING = 'CREATING', RUNNING = 'RUNNING', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** WorkerConfig defines the configuration to be used for a creating workers in the pool. */

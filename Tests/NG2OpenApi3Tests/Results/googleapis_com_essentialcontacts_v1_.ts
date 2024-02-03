@@ -79,7 +79,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudEssentialcontactsV1ContactValidationState { VALIDATION_STATE_UNSPECIFIED = 0, VALID = 1, INVALID = 2 }
+	export enum GoogleCloudEssentialcontactsV1ContactValidationState { VALIDATION_STATE_UNSPECIFIED = 'VALIDATION_STATE_UNSPECIFIED', VALID = 'VALID', INVALID = 'INVALID' }
 
 
 	/** Response message for the ListContacts method. */
@@ -129,7 +129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudEssentialcontactsV1SendTestMessageRequestNotificationCategory { NOTIFICATION_CATEGORY_UNSPECIFIED = 0, ALL = 1, SUSPENSION = 2, SECURITY = 3, TECHNICAL = 4, BILLING = 5, LEGAL = 6, PRODUCT_UPDATES = 7, TECHNICAL_INCIDENTS = 8 }
+	export enum GoogleCloudEssentialcontactsV1SendTestMessageRequestNotificationCategory { NOTIFICATION_CATEGORY_UNSPECIFIED = 'NOTIFICATION_CATEGORY_UNSPECIFIED', ALL = 'ALL', SUSPENSION = 'SUSPENSION', SECURITY = 'SECURITY', TECHNICAL = 'TECHNICAL', BILLING = 'BILLING', LEGAL = 'LEGAL', PRODUCT_UPDATES = 'PRODUCT_UPDATES', TECHNICAL_INCIDENTS = 'TECHNICAL_INCIDENTS' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

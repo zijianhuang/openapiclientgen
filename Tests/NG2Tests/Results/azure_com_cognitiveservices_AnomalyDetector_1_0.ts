@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIErrorCode { InvalidCustomInterval = 0, BadArgument = 1, InvalidGranularity = 2, InvalidPeriod = 3, InvalidModelArgument = 4, InvalidSeries = 5, InvalidJsonFormat = 6, RequiredGranularity = 7, RequiredSeries = 8 }
+	export enum APIErrorCode { InvalidCustomInterval = 'InvalidCustomInterval', BadArgument = 'BadArgument', InvalidGranularity = 'InvalidGranularity', InvalidPeriod = 'InvalidPeriod', InvalidModelArgument = 'InvalidModelArgument', InvalidSeries = 'InvalidSeries', InvalidJsonFormat = 'InvalidJsonFormat', RequiredGranularity = 'RequiredGranularity', RequiredSeries = 'RequiredSeries' }
 
 	export interface ChangePointDetectRequest {
 
@@ -90,7 +90,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangePointDetectRequestGranularity { yearly = 0, monthly = 1, weekly = 2, daily = 3, hourly = 4, minutely = 5 }
+	export enum ChangePointDetectRequestGranularity { yearly = 'yearly', monthly = 'monthly', weekly = 'weekly', daily = 'daily', hourly = 'hourly', minutely = 'minutely' }
 
 	export interface Point {
 
@@ -224,7 +224,7 @@ export namespace MyNS {
 
 
 	/** Can only be one of yearly, monthly, weekly, daily, hourly or minutely. Granularity is used for verify whether input series is valid. */
-	export enum Granularity { yearly = 0, monthly = 1, weekly = 2, daily = 3, hourly = 4, minutely = 5 }
+	export enum Granularity { yearly = 'yearly', monthly = 'monthly', weekly = 'weekly', daily = 'daily', hourly = 'hourly', minutely = 'minutely' }
 
 	export interface LastDetectResponse {
 

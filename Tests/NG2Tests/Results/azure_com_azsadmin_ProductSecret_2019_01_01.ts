@@ -137,9 +137,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecretDescriptorRotationStatus { None = 0, PlantNewSak = 1, RotateInactiveSak = 2, Complete = 3 }
+	export enum SecretDescriptorRotationStatus { None = 'None', PlantNewSak = 'PlantNewSak', RotateInactiveSak = 'RotateInactiveSak', Complete = 'Complete' }
 
-	export enum ProductSecretPropertiesSecretKind { AdHoc = 0, Certificate = 1, Password = 2, StorageAccount = 3, SymmetricKey = 4 }
+	export enum ProductSecretPropertiesSecretKind { AdHoc = 'AdHoc', Certificate = 'Certificate', Password = 'Password', StorageAccount = 'StorageAccount', SymmetricKey = 'SymmetricKey' }
 
 
 	/** Represents the secret state. */
@@ -176,9 +176,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecretStateRotationStatus { None = 0, InProgress = 1, Complete = 2 }
+	export enum SecretStateRotationStatus { None = 'None', InProgress = 'InProgress', Complete = 'Complete' }
 
-	export enum SecretStateStatus { NotUploaded = 0, Uploaded = 1, Deployed = 2 }
+	export enum SecretStateStatus { NotUploaded = 'NotUploaded', Uploaded = 'Uploaded', Deployed = 'Deployed' }
 
 
 	/** List of product secrets. */
@@ -255,11 +255,11 @@ export namespace MyNS {
 
 
 	/** Specifies the secret rotation status. */
-	export enum SecretRotationStatus { None = 0, InProgress = 1, Complete = 2 }
+	export enum SecretRotationStatus { None = 'None', InProgress = 'InProgress', Complete = 'Complete' }
 
 
 	/** Specifies the secret status. */
-	export enum SecretStatus { NotUploaded = 0, Uploaded = 1, Deployed = 2 }
+	export enum SecretStatus { NotUploaded = 'NotUploaded', Uploaded = 'Uploaded', Deployed = 'Deployed' }
 
 	@Injectable()
 	export class MyClient {

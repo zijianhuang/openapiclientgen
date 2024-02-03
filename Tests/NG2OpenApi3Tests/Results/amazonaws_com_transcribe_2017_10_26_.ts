@@ -158,7 +158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParticipantRole { AGENT = 0, CUSTOMER = 1 }
+	export enum ParticipantRole { AGENT = 'AGENT', CUSTOMER = 'CUSTOMER' }
 
 
 	/** <p>Flag the presence or absence of specific words or phrases detected in your Call Analytics transcription output.</p> <p>Rules using <code>TranscriptFilter</code> are designed to match:</p> <ul> <li> <p>Custom words or phrases spoken by the agent, the customer, or both</p> </li> <li> <p>Custom words or phrases <b>not</b> spoken by the agent, the customer, or either</p> </li> <li> <p>Custom words or phrases that occur at a specific time frame</p> </li> </ul> <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for post-call categories</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule criteria for streaming categories</a> for usage examples.</p> */
@@ -192,7 +192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscriptFilterType { EXACT = 0 }
+	export enum TranscriptFilterType { EXACT = 'EXACT' }
 
 
 	/** <p>Flag the presence or absence of specific sentiments detected in your Call Analytics transcription output.</p> <p>Rules using <code>SentimentFilter</code> are designed to match:</p> <ul> <li> <p>The presence or absence of a positive sentiment felt by the customer, agent, or both at specified points in the call</p> </li> <li> <p>The presence or absence of a negative sentiment felt by the customer, agent, or both at specified points in the call</p> </li> <li> <p>The presence or absence of a neutral sentiment felt by the customer, agent, or both at specified points in the call</p> </li> <li> <p>The presence or absence of a mixed sentiment felt by the customer, the agent, or both at specified points in the call</p> </li> </ul> <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for post-call categories</a> for usage examples.</p> */
@@ -219,9 +219,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SentimentValue { POSITIVE = 0, NEGATIVE = 1, NEUTRAL = 2, MIXED = 3 }
+	export enum SentimentValue { POSITIVE = 'POSITIVE', NEGATIVE = 'NEGATIVE', NEUTRAL = 'NEUTRAL', MIXED = 'MIXED' }
 
-	export enum InputType { REAL_TIME = 0, POST_CALL = 1 }
+	export enum InputType { REAL_TIME = 'REAL_TIME', POST_CALL = 'POST_CALL' }
 
 	export interface CreateCallAnalyticsCategoryRequest {
 
@@ -309,9 +309,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CLMLanguageCode { 'en-US' = 0, 'hi-IN' = 1, 'es-US' = 2, 'en-GB' = 3, 'en-AU' = 4, 'de-DE' = 5, 'ja-JP' = 6 }
+	export enum CLMLanguageCode { 'en-US' = 'en-US', 'hi-IN' = 'hi-IN', 'es-US' = 'es-US', 'en-GB' = 'en-GB', 'en-AU' = 'en-AU', 'de-DE' = 'de-DE', 'ja-JP' = 'ja-JP' }
 
-	export enum BaseModelName { NarrowBand = 0, WideBand = 1 }
+	export enum BaseModelName { NarrowBand = 'NarrowBand', WideBand = 'WideBand' }
 
 
 	/** <p>Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.</p> <p>When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code> and <code>DataAccessRoleArn</code>. You can optionally include <code>TuningDataS3Uri</code>.</p> */
@@ -344,7 +344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelStatus { IN_PROGRESS = 0, FAILED = 1, COMPLETED = 2 }
+	export enum ModelStatus { IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', COMPLETED = 'COMPLETED' }
 
 	export interface CreateLanguageModelRequest {
 
@@ -434,9 +434,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LanguageCode { 'af-ZA' = 0, 'ar-AE' = 1, 'ar-SA' = 2, 'da-DK' = 3, 'de-CH' = 4, 'de-DE' = 5, 'en-AB' = 6, 'en-AU' = 7, 'en-GB' = 8, 'en-IE' = 9, 'en-IN' = 10, 'en-US' = 11, 'en-WL' = 12, 'es-ES' = 13, 'es-US' = 14, 'fa-IR' = 15, 'fr-CA' = 16, 'fr-FR' = 17, 'he-IL' = 18, 'hi-IN' = 19, 'id-ID' = 20, 'it-IT' = 21, 'ja-JP' = 22, 'ko-KR' = 23, 'ms-MY' = 24, 'nl-NL' = 25, 'pt-BR' = 26, 'pt-PT' = 27, 'ru-RU' = 28, 'ta-IN' = 29, 'te-IN' = 30, 'tr-TR' = 31, 'zh-CN' = 32, 'zh-TW' = 33, 'th-TH' = 34, 'en-ZA' = 35, 'en-NZ' = 36, 'vi-VN' = 37, 'sv-SE' = 38 }
+	export enum LanguageCode { 'af-ZA' = 'af-ZA', 'ar-AE' = 'ar-AE', 'ar-SA' = 'ar-SA', 'da-DK' = 'da-DK', 'de-CH' = 'de-CH', 'de-DE' = 'de-DE', 'en-AB' = 'en-AB', 'en-AU' = 'en-AU', 'en-GB' = 'en-GB', 'en-IE' = 'en-IE', 'en-IN' = 'en-IN', 'en-US' = 'en-US', 'en-WL' = 'en-WL', 'es-ES' = 'es-ES', 'es-US' = 'es-US', 'fa-IR' = 'fa-IR', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'he-IL' = 'he-IL', 'hi-IN' = 'hi-IN', 'id-ID' = 'id-ID', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'ko-KR' = 'ko-KR', 'ms-MY' = 'ms-MY', 'nl-NL' = 'nl-NL', 'pt-BR' = 'pt-BR', 'pt-PT' = 'pt-PT', 'ru-RU' = 'ru-RU', 'ta-IN' = 'ta-IN', 'te-IN' = 'te-IN', 'tr-TR' = 'tr-TR', 'zh-CN' = 'zh-CN', 'zh-TW' = 'zh-TW', 'th-TH' = 'th-TH', 'en-ZA' = 'en-ZA', 'en-NZ' = 'en-NZ', 'vi-VN' = 'vi-VN', 'sv-SE' = 'sv-SE' }
 
-	export enum VocabularyState { PENDING = 0, READY = 1, FAILED = 2 }
+	export enum VocabularyState { PENDING = 'PENDING', READY = 'READY', FAILED = 'FAILED' }
 
 	export interface CreateMedicalVocabularyRequest {
 
@@ -903,9 +903,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CallAnalyticsJobStatus { QUEUED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
+	export enum CallAnalyticsJobStatus { QUEUED = 'QUEUED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', COMPLETED = 'COMPLETED' }
 
-	export enum MediaFormat { mp3 = 0, mp4 = 1, wav = 2, flac = 3, ogg = 4, amr = 5, webm = 6 }
+	export enum MediaFormat { mp3 = 'mp3', mp4 = 'mp4', wav = 'wav', flac = 'flac', ogg = 'ogg', amr = 'amr', webm = 'webm' }
 
 
 	/** <p>Describes the Amazon S3 location of the media file you want to use in your request.</p> <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p> */
@@ -978,7 +978,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VocabularyFilterMethod { remove = 0, mask = 1, tag = 2 }
+	export enum VocabularyFilterMethod { remove = 'remove', mask = 'mask', tag = 'tag' }
 
 
 	/** Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>. */
@@ -1009,11 +1009,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RedactionType { PII = 0 }
+	export enum RedactionType { PII = 'PII' }
 
-	export enum RedactionOutput { redacted = 0, redacted_and_unredacted = 1 }
+	export enum RedactionOutput { redacted = 'redacted', redacted_and_unredacted = 'redacted_and_unredacted' }
 
-	export enum PiiEntityType { BANK_ACCOUNT_NUMBER = 0, BANK_ROUTING = 1, CREDIT_DEBIT_NUMBER = 2, CREDIT_DEBIT_CVV = 3, CREDIT_DEBIT_EXPIRY = 4, PIN = 5, EMAIL = 6, ADDRESS = 7, NAME = 8, PHONE = 9, SSN = 10, ALL = 11 }
+	export enum PiiEntityType { BANK_ACCOUNT_NUMBER = 'BANK_ACCOUNT_NUMBER', BANK_ROUTING = 'BANK_ROUTING', CREDIT_DEBIT_NUMBER = 'CREDIT_DEBIT_NUMBER', CREDIT_DEBIT_CVV = 'CREDIT_DEBIT_CVV', CREDIT_DEBIT_EXPIRY = 'CREDIT_DEBIT_EXPIRY', PIN = 'PIN', EMAIL = 'EMAIL', ADDRESS = 'ADDRESS', NAME = 'NAME', PHONE = 'PHONE', SSN = 'SSN', ALL = 'ALL' }
 
 	export interface LanguageIdSettingsMap {
 	}
@@ -1178,11 +1178,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MedicalContentIdentificationType { PHI = 0 }
+	export enum MedicalContentIdentificationType { PHI = 'PHI' }
 
-	export enum Specialty { PRIMARYCARE = 0 }
+	export enum Specialty { PRIMARYCARE = 'PRIMARYCARE' }
 
-	export enum Type { CONVERSATION = 0, DICTATION = 1 }
+	export enum Type { CONVERSATION = 'CONVERSATION', DICTATION = 'DICTATION' }
 
 	export interface GetMedicalTranscriptionJobRequest {
 
@@ -1433,7 +1433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubtitleFormat { vtt = 0, srt = 1 }
+	export enum SubtitleFormat { vtt = 'vtt', srt = 'srt' }
 
 
 	/** Contains <code>ToxicityCategories</code>, which is a required parameter if you want to enable toxicity detection (<code>ToxicityDetection</code>) in your transcription request. */
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ToxicityCategory { ALL = 0 }
+	export enum ToxicityCategory { ALL = 'ALL' }
 
 	export interface GetTranscriptionJobRequest {
 
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputLocationType { CUSTOMER_BUCKET = 0, SERVICE_BUCKET = 1 }
+	export enum OutputLocationType { CUSTOMER_BUCKET = 'CUSTOMER_BUCKET', SERVICE_BUCKET = 'SERVICE_BUCKET' }
 
 	export interface ListMedicalTranscriptionJobsRequest {
 		Status?: CallAnalyticsJobStatus;
@@ -2547,7 +2547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscriptionJobStatus { QUEUED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
+	export enum TranscriptionJobStatus { QUEUED = 'QUEUED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', COMPLETED = 'COMPLETED' }
 
 	@Injectable()
 	export class MyClient {
@@ -2922,83 +2922,83 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateCallAnalyticsCategoryX_Amz_Target { 'Transcribe.CreateCallAnalyticsCategory' = 0 }
+	export enum CreateCallAnalyticsCategoryX_Amz_Target { 'Transcribe.CreateCallAnalyticsCategory' = 'Transcribe.CreateCallAnalyticsCategory' }
 
-	export enum CreateLanguageModelX_Amz_Target { 'Transcribe.CreateLanguageModel' = 0 }
+	export enum CreateLanguageModelX_Amz_Target { 'Transcribe.CreateLanguageModel' = 'Transcribe.CreateLanguageModel' }
 
-	export enum CreateMedicalVocabularyX_Amz_Target { 'Transcribe.CreateMedicalVocabulary' = 0 }
+	export enum CreateMedicalVocabularyX_Amz_Target { 'Transcribe.CreateMedicalVocabulary' = 'Transcribe.CreateMedicalVocabulary' }
 
-	export enum CreateVocabularyX_Amz_Target { 'Transcribe.CreateVocabulary' = 0 }
+	export enum CreateVocabularyX_Amz_Target { 'Transcribe.CreateVocabulary' = 'Transcribe.CreateVocabulary' }
 
-	export enum CreateVocabularyFilterX_Amz_Target { 'Transcribe.CreateVocabularyFilter' = 0 }
+	export enum CreateVocabularyFilterX_Amz_Target { 'Transcribe.CreateVocabularyFilter' = 'Transcribe.CreateVocabularyFilter' }
 
-	export enum DeleteCallAnalyticsCategoryX_Amz_Target { 'Transcribe.DeleteCallAnalyticsCategory' = 0 }
+	export enum DeleteCallAnalyticsCategoryX_Amz_Target { 'Transcribe.DeleteCallAnalyticsCategory' = 'Transcribe.DeleteCallAnalyticsCategory' }
 
-	export enum DeleteCallAnalyticsJobX_Amz_Target { 'Transcribe.DeleteCallAnalyticsJob' = 0 }
+	export enum DeleteCallAnalyticsJobX_Amz_Target { 'Transcribe.DeleteCallAnalyticsJob' = 'Transcribe.DeleteCallAnalyticsJob' }
 
-	export enum DeleteLanguageModelX_Amz_Target { 'Transcribe.DeleteLanguageModel' = 0 }
+	export enum DeleteLanguageModelX_Amz_Target { 'Transcribe.DeleteLanguageModel' = 'Transcribe.DeleteLanguageModel' }
 
-	export enum DeleteMedicalTranscriptionJobX_Amz_Target { 'Transcribe.DeleteMedicalTranscriptionJob' = 0 }
+	export enum DeleteMedicalTranscriptionJobX_Amz_Target { 'Transcribe.DeleteMedicalTranscriptionJob' = 'Transcribe.DeleteMedicalTranscriptionJob' }
 
-	export enum DeleteMedicalVocabularyX_Amz_Target { 'Transcribe.DeleteMedicalVocabulary' = 0 }
+	export enum DeleteMedicalVocabularyX_Amz_Target { 'Transcribe.DeleteMedicalVocabulary' = 'Transcribe.DeleteMedicalVocabulary' }
 
-	export enum DeleteTranscriptionJobX_Amz_Target { 'Transcribe.DeleteTranscriptionJob' = 0 }
+	export enum DeleteTranscriptionJobX_Amz_Target { 'Transcribe.DeleteTranscriptionJob' = 'Transcribe.DeleteTranscriptionJob' }
 
-	export enum DeleteVocabularyX_Amz_Target { 'Transcribe.DeleteVocabulary' = 0 }
+	export enum DeleteVocabularyX_Amz_Target { 'Transcribe.DeleteVocabulary' = 'Transcribe.DeleteVocabulary' }
 
-	export enum DeleteVocabularyFilterX_Amz_Target { 'Transcribe.DeleteVocabularyFilter' = 0 }
+	export enum DeleteVocabularyFilterX_Amz_Target { 'Transcribe.DeleteVocabularyFilter' = 'Transcribe.DeleteVocabularyFilter' }
 
-	export enum DescribeLanguageModelX_Amz_Target { 'Transcribe.DescribeLanguageModel' = 0 }
+	export enum DescribeLanguageModelX_Amz_Target { 'Transcribe.DescribeLanguageModel' = 'Transcribe.DescribeLanguageModel' }
 
-	export enum GetCallAnalyticsCategoryX_Amz_Target { 'Transcribe.GetCallAnalyticsCategory' = 0 }
+	export enum GetCallAnalyticsCategoryX_Amz_Target { 'Transcribe.GetCallAnalyticsCategory' = 'Transcribe.GetCallAnalyticsCategory' }
 
-	export enum GetCallAnalyticsJobX_Amz_Target { 'Transcribe.GetCallAnalyticsJob' = 0 }
+	export enum GetCallAnalyticsJobX_Amz_Target { 'Transcribe.GetCallAnalyticsJob' = 'Transcribe.GetCallAnalyticsJob' }
 
-	export enum GetMedicalTranscriptionJobX_Amz_Target { 'Transcribe.GetMedicalTranscriptionJob' = 0 }
+	export enum GetMedicalTranscriptionJobX_Amz_Target { 'Transcribe.GetMedicalTranscriptionJob' = 'Transcribe.GetMedicalTranscriptionJob' }
 
-	export enum GetMedicalVocabularyX_Amz_Target { 'Transcribe.GetMedicalVocabulary' = 0 }
+	export enum GetMedicalVocabularyX_Amz_Target { 'Transcribe.GetMedicalVocabulary' = 'Transcribe.GetMedicalVocabulary' }
 
-	export enum GetTranscriptionJobX_Amz_Target { 'Transcribe.GetTranscriptionJob' = 0 }
+	export enum GetTranscriptionJobX_Amz_Target { 'Transcribe.GetTranscriptionJob' = 'Transcribe.GetTranscriptionJob' }
 
-	export enum GetVocabularyX_Amz_Target { 'Transcribe.GetVocabulary' = 0 }
+	export enum GetVocabularyX_Amz_Target { 'Transcribe.GetVocabulary' = 'Transcribe.GetVocabulary' }
 
-	export enum GetVocabularyFilterX_Amz_Target { 'Transcribe.GetVocabularyFilter' = 0 }
+	export enum GetVocabularyFilterX_Amz_Target { 'Transcribe.GetVocabularyFilter' = 'Transcribe.GetVocabularyFilter' }
 
-	export enum ListCallAnalyticsCategoriesX_Amz_Target { 'Transcribe.ListCallAnalyticsCategories' = 0 }
+	export enum ListCallAnalyticsCategoriesX_Amz_Target { 'Transcribe.ListCallAnalyticsCategories' = 'Transcribe.ListCallAnalyticsCategories' }
 
-	export enum ListCallAnalyticsJobsX_Amz_Target { 'Transcribe.ListCallAnalyticsJobs' = 0 }
+	export enum ListCallAnalyticsJobsX_Amz_Target { 'Transcribe.ListCallAnalyticsJobs' = 'Transcribe.ListCallAnalyticsJobs' }
 
-	export enum ListLanguageModelsX_Amz_Target { 'Transcribe.ListLanguageModels' = 0 }
+	export enum ListLanguageModelsX_Amz_Target { 'Transcribe.ListLanguageModels' = 'Transcribe.ListLanguageModels' }
 
-	export enum ListMedicalTranscriptionJobsX_Amz_Target { 'Transcribe.ListMedicalTranscriptionJobs' = 0 }
+	export enum ListMedicalTranscriptionJobsX_Amz_Target { 'Transcribe.ListMedicalTranscriptionJobs' = 'Transcribe.ListMedicalTranscriptionJobs' }
 
-	export enum ListMedicalVocabulariesX_Amz_Target { 'Transcribe.ListMedicalVocabularies' = 0 }
+	export enum ListMedicalVocabulariesX_Amz_Target { 'Transcribe.ListMedicalVocabularies' = 'Transcribe.ListMedicalVocabularies' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'Transcribe.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Transcribe.ListTagsForResource' = 'Transcribe.ListTagsForResource' }
 
-	export enum ListTranscriptionJobsX_Amz_Target { 'Transcribe.ListTranscriptionJobs' = 0 }
+	export enum ListTranscriptionJobsX_Amz_Target { 'Transcribe.ListTranscriptionJobs' = 'Transcribe.ListTranscriptionJobs' }
 
-	export enum ListVocabulariesX_Amz_Target { 'Transcribe.ListVocabularies' = 0 }
+	export enum ListVocabulariesX_Amz_Target { 'Transcribe.ListVocabularies' = 'Transcribe.ListVocabularies' }
 
-	export enum ListVocabularyFiltersX_Amz_Target { 'Transcribe.ListVocabularyFilters' = 0 }
+	export enum ListVocabularyFiltersX_Amz_Target { 'Transcribe.ListVocabularyFilters' = 'Transcribe.ListVocabularyFilters' }
 
-	export enum StartCallAnalyticsJobX_Amz_Target { 'Transcribe.StartCallAnalyticsJob' = 0 }
+	export enum StartCallAnalyticsJobX_Amz_Target { 'Transcribe.StartCallAnalyticsJob' = 'Transcribe.StartCallAnalyticsJob' }
 
-	export enum StartMedicalTranscriptionJobX_Amz_Target { 'Transcribe.StartMedicalTranscriptionJob' = 0 }
+	export enum StartMedicalTranscriptionJobX_Amz_Target { 'Transcribe.StartMedicalTranscriptionJob' = 'Transcribe.StartMedicalTranscriptionJob' }
 
-	export enum StartTranscriptionJobX_Amz_Target { 'Transcribe.StartTranscriptionJob' = 0 }
+	export enum StartTranscriptionJobX_Amz_Target { 'Transcribe.StartTranscriptionJob' = 'Transcribe.StartTranscriptionJob' }
 
-	export enum TagResourceX_Amz_Target { 'Transcribe.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Transcribe.TagResource' = 'Transcribe.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'Transcribe.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Transcribe.UntagResource' = 'Transcribe.UntagResource' }
 
-	export enum UpdateCallAnalyticsCategoryX_Amz_Target { 'Transcribe.UpdateCallAnalyticsCategory' = 0 }
+	export enum UpdateCallAnalyticsCategoryX_Amz_Target { 'Transcribe.UpdateCallAnalyticsCategory' = 'Transcribe.UpdateCallAnalyticsCategory' }
 
-	export enum UpdateMedicalVocabularyX_Amz_Target { 'Transcribe.UpdateMedicalVocabulary' = 0 }
+	export enum UpdateMedicalVocabularyX_Amz_Target { 'Transcribe.UpdateMedicalVocabulary' = 'Transcribe.UpdateMedicalVocabulary' }
 
-	export enum UpdateVocabularyX_Amz_Target { 'Transcribe.UpdateVocabulary' = 0 }
+	export enum UpdateVocabularyX_Amz_Target { 'Transcribe.UpdateVocabulary' = 'Transcribe.UpdateVocabulary' }
 
-	export enum UpdateVocabularyFilterX_Amz_Target { 'Transcribe.UpdateVocabularyFilter' = 0 }
+	export enum UpdateVocabularyFilterX_Amz_Target { 'Transcribe.UpdateVocabularyFilter' = 'Transcribe.UpdateVocabularyFilter' }
 
 }
 

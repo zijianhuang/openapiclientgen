@@ -1406,7 +1406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BrlcsPostBodyFormat { pdf = 0 }
+	export enum BrlcsPostBodyFormat { pdf = 'pdf' }
 
 	export interface DpcerPostBody {
 		certificateParameters?: DpcerPostBodyCertificateParameters;

@@ -249,7 +249,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum InformationProtectionPolicies_GetInformationProtectionPolicyName { effective = 0, custom = 1 }
+	export enum InformationProtectionPolicies_GetInformationProtectionPolicyName { effective = 'effective', custom = 'custom' }
 
 }
 

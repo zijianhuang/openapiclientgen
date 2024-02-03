@@ -236,7 +236,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Provider_GetAvailableStacksOsTypeSelected { Windows = 0, Linux = 1, WindowsFunctions = 2, LinuxFunctions = 3 }
+	export enum Provider_GetAvailableStacksOsTypeSelected { Windows = 'Windows', Linux = 'Linux', WindowsFunctions = 'WindowsFunctions', LinuxFunctions = 'LinuxFunctions' }
 
 	export interface Provider_ListOperationsReturn {
 

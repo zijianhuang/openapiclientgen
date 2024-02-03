@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** AuthConfig defines details of a authentication type. */
@@ -175,7 +175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionKeyType { TYPE_UNSPECIFIED = 0, GOOGLE_MANAGED = 1, CUSTOMER_MANAGED = 2 }
+	export enum EncryptionKeyType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GOOGLE_MANAGED = 'GOOGLE_MANAGED', CUSTOMER_MANAGED = 'CUSTOMER_MANAGED' }
 
 
 	/** Secret provides a reference to entries in Secret Manager. */
@@ -198,7 +198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthConfigAuthType { AUTH_TYPE_UNSPECIFIED = 0, USER_PASSWORD = 1, OAUTH2_JWT_BEARER = 2, OAUTH2_CLIENT_CREDENTIALS = 3, SSH_PUBLIC_KEY = 4, OAUTH2_AUTH_CODE_FLOW = 5, GOOGLE_AUTHENTICATION = 6 }
+	export enum AuthConfigAuthType { AUTH_TYPE_UNSPECIFIED = 'AUTH_TYPE_UNSPECIFIED', USER_PASSWORD = 'USER_PASSWORD', OAUTH2_JWT_BEARER = 'OAUTH2_JWT_BEARER', OAUTH2_CLIENT_CREDENTIALS = 'OAUTH2_CLIENT_CREDENTIALS', SSH_PUBLIC_KEY = 'SSH_PUBLIC_KEY', OAUTH2_AUTH_CODE_FLOW = 'OAUTH2_AUTH_CODE_FLOW', GOOGLE_AUTHENTICATION = 'GOOGLE_AUTHENTICATION' }
 
 
 	/** Parameters to support Oauth 2.0 Auth Code Grant Authentication. See https://www.rfc-editor.org/rfc/rfc6749#section-1.3.1 for more details. */
@@ -599,7 +599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigVariableTemplateLocationType { LOCATION_TYPE_UNSPECIFIED = 0, HEADER = 1, PAYLOAD = 2, QUERY_PARAM = 3, PATH_PARAM = 4 }
+	export enum ConfigVariableTemplateLocationType { LOCATION_TYPE_UNSPECIFIED = 'LOCATION_TYPE_UNSPECIFIED', HEADER = 'HEADER', PAYLOAD = 'PAYLOAD', QUERY_PARAM = 'QUERY_PARAM', PATH_PARAM = 'PATH_PARAM' }
 
 
 	/** Struct for representing boolean expressions. */
@@ -677,9 +677,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldComparisonComparator { COMPARATOR_UNSPECIFIED = 0, EQUALS = 1, NOT_EQUALS = 2 }
+	export enum FieldComparisonComparator { COMPARATOR_UNSPECIFIED = 'COMPARATOR_UNSPECIFIED', EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS' }
 
-	export enum LogicalExpressionLogicalOperator { OPERATOR_UNSPECIFIED = 0, AND = 1, OR = 2 }
+	export enum LogicalExpressionLogicalOperator { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', AND = 'AND', OR = 'OR' }
 
 
 	/** This configuration defines all the Cloud IAM roles that needs to be granted to a particular Google Cloud resource for the selected principal like service account. These configurations will let UI display to customers what IAM roles need to be granted by them. Or these configurations can be used by the UI to render a 'grant' button to do the same on behalf of the user. */
@@ -715,7 +715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleGrantPrincipal { PRINCIPAL_UNSPECIFIED = 0, CONNECTOR_SA = 1 }
+	export enum RoleGrantPrincipal { PRINCIPAL_UNSPECIFIED = 'PRINCIPAL_UNSPECIFIED', CONNECTOR_SA = 'CONNECTOR_SA' }
 
 
 	/** Resource definition */
@@ -745,11 +745,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { TYPE_UNSPECIFIED = 0, GCP_PROJECT = 1, GCP_RESOURCE = 2, GCP_SECRETMANAGER_SECRET = 3, GCP_SECRETMANAGER_SECRET_VERSION = 4 }
+	export enum ResourceType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GCP_PROJECT = 'GCP_PROJECT', GCP_RESOURCE = 'GCP_RESOURCE', GCP_SECRETMANAGER_SECRET = 'GCP_SECRETMANAGER_SECRET', GCP_SECRETMANAGER_SECRET_VERSION = 'GCP_SECRETMANAGER_SECRET_VERSION' }
 
-	export enum ConfigVariableTemplateState { STATE_UNSPECIFIED = 0, ACTIVE = 1, DEPRECATED = 2 }
+	export enum ConfigVariableTemplateState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DEPRECATED = 'DEPRECATED' }
 
-	export enum ConfigVariableTemplateValueType { VALUE_TYPE_UNSPECIFIED = 0, STRING = 1, INT = 2, BOOL = 3, SECRET = 4, ENUM = 5, AUTHORIZATION_CODE = 6, ENCRYPTION_KEY = 7 }
+	export enum ConfigVariableTemplateValueType { VALUE_TYPE_UNSPECIFIED = 'VALUE_TYPE_UNSPECIFIED', STRING = 'STRING', INT = 'INT', BOOL = 'BOOL', SECRET = 'SECRET', ENUM = 'ENUM', AUTHORIZATION_CODE = 'AUTHORIZATION_CODE', ENCRYPTION_KEY = 'ENCRYPTION_KEY' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorVersionInfraConfigDeploymentModel { DEPLOYMENT_MODEL_UNSPECIFIED = 0, GKE_MST = 1, CLOUD_RUN_MST = 2 }
+	export enum ConnectorVersionInfraConfigDeploymentModel { DEPLOYMENT_MODEL_UNSPECIFIED = 'DEPLOYMENT_MODEL_UNSPECIFIED', GKE_MST = 'GKE_MST', CLOUD_RUN_MST = 'CLOUD_RUN_MST' }
 
 
 	/** Autoscaling config for connector deployment system metrics. */
@@ -1137,7 +1137,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionConnectorVersionLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 0, PREVIEW = 1, GA = 2, DEPRECATED = 3, PRIVATE_PREVIEW = 4 }
+	export enum ConnectionConnectorVersionLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 'LAUNCH_STAGE_UNSPECIFIED', PREVIEW = 'PREVIEW', GA = 'GA', DEPRECATED = 'DEPRECATED', PRIVATE_PREVIEW = 'PRIVATE_PREVIEW' }
 
 
 	/** Define the Connectors target endpoint. */
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionEventingEnablementType { EVENTING_ENABLEMENT_TYPE_UNSPECIFIED = 0, EVENTING_AND_CONNECTION = 1, ONLY_EVENTING = 2 }
+	export enum ConnectionEventingEnablementType { EVENTING_ENABLEMENT_TYPE_UNSPECIFIED = 'EVENTING_ENABLEMENT_TYPE_UNSPECIFIED', EVENTING_AND_CONNECTION = 'EVENTING_AND_CONNECTION', ONLY_EVENTING = 'ONLY_EVENTING' }
 
 
 	/** Eventing runtime data has the details related to eventing managed by the system. */
@@ -1333,7 +1333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventingStatusState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ERROR = 2, INGRESS_ENDPOINT_REQUIRED = 3 }
+	export enum EventingStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', ERROR = 'ERROR', INGRESS_ENDPOINT_REQUIRED = 'INGRESS_ENDPOINT_REQUIRED' }
 
 
 	/** Determines whether or no a connection is locked. If locked, a reason must be specified. */
@@ -1476,11 +1476,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SslConfigClientCertType { CERT_TYPE_UNSPECIFIED = 0, PEM = 1 }
+	export enum SslConfigClientCertType { CERT_TYPE_UNSPECIFIED = 'CERT_TYPE_UNSPECIFIED', PEM = 'PEM' }
 
-	export enum SslConfigTrustModel { PUBLIC = 0, PRIVATE = 1, INSECURE = 2 }
+	export enum SslConfigTrustModel { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE', INSECURE = 'INSECURE' }
 
-	export enum SslConfigType { SSL_TYPE_UNSPECIFIED = 0, TLS = 1, MTLS = 2 }
+	export enum SslConfigType { SSL_TYPE_UNSPECIFIED = 'SSL_TYPE_UNSPECIFIED', TLS = 'TLS', MTLS = 'MTLS' }
 
 
 	/** ConnectionStatus indicates the state of the connection. */
@@ -1517,9 +1517,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStatusState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, INACTIVE = 3, DELETING = 4, UPDATING = 5, ERROR = 6, AUTHORIZATION_REQUIRED = 7 }
+	export enum ConnectionStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETING = 'DELETING', UPDATING = 'UPDATING', ERROR = 'ERROR', AUTHORIZATION_REQUIRED = 'AUTHORIZATION_REQUIRED' }
 
-	export enum ConnectionSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 0, PAY_G = 1, PAID = 2 }
+	export enum ConnectionSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 'SUBSCRIPTION_TYPE_UNSPECIFIED', PAY_G = 'PAY_G', PAID = 'PAID' }
 
 
 	/** ConnectionSchemaMetadata is the singleton resource of each connection. It includes the entity and action names of runtime resources exposed by a connection backend. */
@@ -1576,7 +1576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionSchemaMetadataState { STATE_UNSPECIFIED = 0, REFRESHING = 1, UPDATED = 2, REFRESHING_SCHEMA_METADATA = 3, UPDATED_SCHEMA_METADATA = 4, REFRESH_SCHEMA_METADATA_FAILED = 5, REFRESHING_FULL_SCHEMA = 6, UPDATED_FULL_SCHEMA = 7 }
+	export enum ConnectionSchemaMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', REFRESHING = 'REFRESHING', UPDATED = 'UPDATED', REFRESHING_SCHEMA_METADATA = 'REFRESHING_SCHEMA_METADATA', UPDATED_SCHEMA_METADATA = 'UPDATED_SCHEMA_METADATA', REFRESH_SCHEMA_METADATA_FAILED = 'REFRESH_SCHEMA_METADATA_FAILED', REFRESHING_FULL_SCHEMA = 'REFRESHING_FULL_SCHEMA', UPDATED_FULL_SCHEMA = 'UPDATED_FULL_SCHEMA' }
 
 
 	/** Connectors indicates a specific connector type, e.x. Salesforce, SAP etc. */
@@ -1731,7 +1731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventingDetailsType { TYPE_UNSPECIFIED = 0, WEBHOOK = 1, JMS = 2 }
+	export enum EventingDetailsType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', WEBHOOK = 'WEBHOOK', JMS = 'JMS' }
 
 
 	/** This cofiguration provides infra configs like rate limit threshold which need to be configurable for every connector version */
@@ -1964,7 +1964,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationConfigTemplatePortFieldType { FIELD_TYPE_UNSPECIFIED = 0, REQUIRED = 1, OPTIONAL = 2, NOT_USED = 3 }
+	export enum DestinationConfigTemplatePortFieldType { FIELD_TYPE_UNSPECIFIED = 'FIELD_TYPE_UNSPECIFIED', REQUIRED = 'REQUIRED', OPTIONAL = 'OPTIONAL', NOT_USED = 'NOT_USED' }
 
 
 	/** Egress control config for connector runtime. These configurations define the rules to identify which outbound domains/hosts needs to be whitelisted. It may be a static information for a particular connector version or it is derived from the configurations provided by the customer in Connection resource. */
@@ -2059,7 +2059,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceSourceType { SOURCE_TYPE_UNSPECIFIED = 0, CONFIG_VARIABLE = 1 }
+	export enum SourceSourceType { SOURCE_TYPE_UNSPECIFIED = 'SOURCE_TYPE_UNSPECIFIED', CONFIG_VARIABLE = 'CONFIG_VARIABLE' }
 
 
 	/** Eventing Config details of a connector version. */
@@ -2125,7 +2125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventingConfigTemplateEventListenerType { EVENT_LISTENER_TYPE_UNSPECIFIED = 0, WEBHOOK_LISTENER = 1, JMS_LISTENER = 2 }
+	export enum EventingConfigTemplateEventListenerType { EVENT_LISTENER_TYPE_UNSPECIFIED = 'EVENT_LISTENER_TYPE_UNSPECIFIED', WEBHOOK_LISTENER = 'WEBHOOK_LISTENER', JMS_LISTENER = 'JMS_LISTENER' }
 
 
 	/** Ssl config details of a connector version */
@@ -2269,7 +2269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomConnectorCustomConnectorType { CUSTOM_CONNECTOR_TYPE_UNSPECIFIED = 0, OPEN_API = 1, PROTO = 2 }
+	export enum CustomConnectorCustomConnectorType { CUSTOM_CONNECTOR_TYPE_UNSPECIFIED = 'CUSTOM_CONNECTOR_TYPE_UNSPECIFIED', OPEN_API = 'OPEN_API', PROTO = 'PROTO' }
 
 
 	/** CustomConnectorVersion indicates a specific version of a connector. */
@@ -2509,7 +2509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionConfigEncryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 0, GMEK = 1, CMEK = 2 }
+	export enum EncryptionConfigEncryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 'ENCRYPTION_TYPE_UNSPECIFIED', GMEK = 'GMEK', CMEK = 'CMEK' }
 
 
 	/** Endpoint message includes details of the Destination endpoint. */
@@ -2722,7 +2722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSubscriptionDestinationType { TYPE_UNSPECIFIED = 0, ENDPOINT = 1 }
+	export enum EventSubscriptionDestinationType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ENDPOINT = 'ENDPOINT' }
 
 
 	/** JMS message denotes the source of the event */
@@ -2752,7 +2752,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JMSType { TYPE_UNSPECIFIED = 0, QUEUE = 1, TOPIC = 2 }
+	export enum JMSType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', QUEUE = 'QUEUE', TOPIC = 'TOPIC' }
 
 
 	/** EventSubscription Status denotes the status of the EventSubscription resource. */
@@ -2782,7 +2782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSubscriptionStatusState { STATE_UNSPECIFIED = 0, CREATING = 1, UPDATING = 2, ACTIVE = 3, SUSPENDED = 4, ERROR = 5 }
+	export enum EventSubscriptionStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE', SUSPENDED = 'SUSPENDED', ERROR = 'ERROR' }
 
 
 	/** EventType includes fields. */
@@ -2927,7 +2927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldDataType { DATA_TYPE_UNSPECIFIED = 0, DATA_TYPE_INT = 1, DATA_TYPE_SMALLINT = 2, DATA_TYPE_DOUBLE = 3, DATA_TYPE_DATE = 4, DATA_TYPE_DATETIME = 5, DATA_TYPE_TIME = 6, DATA_TYPE_STRING = 7, DATA_TYPE_LONG = 8, DATA_TYPE_BOOLEAN = 9, DATA_TYPE_DECIMAL = 10, DATA_TYPE_UUID = 11, DATA_TYPE_BLOB = 12, DATA_TYPE_BIT = 13, DATA_TYPE_TINYINT = 14, DATA_TYPE_INTEGER = 15, DATA_TYPE_BIGINT = 16, DATA_TYPE_FLOAT = 17, DATA_TYPE_REAL = 18, DATA_TYPE_NUMERIC = 19, DATA_TYPE_CHAR = 20, DATA_TYPE_VARCHAR = 21, DATA_TYPE_LONGVARCHAR = 22, DATA_TYPE_TIMESTAMP = 23, DATA_TYPE_NCHAR = 24, DATA_TYPE_NVARCHAR = 25, DATA_TYPE_LONGNVARCHAR = 26, DATA_TYPE_NULL = 27, DATA_TYPE_OTHER = 28, DATA_TYPE_JAVA_OBJECT = 29, DATA_TYPE_DISTINCT = 30, DATA_TYPE_STRUCT = 31, DATA_TYPE_ARRAY = 32, DATA_TYPE_CLOB = 33, DATA_TYPE_REF = 34, DATA_TYPE_DATALINK = 35, DATA_TYPE_ROWID = 36, DATA_TYPE_BINARY = 37, DATA_TYPE_VARBINARY = 38, DATA_TYPE_LONGVARBINARY = 39, DATA_TYPE_NCLOB = 40, DATA_TYPE_SQLXML = 41, DATA_TYPE_REF_CURSOR = 42, DATA_TYPE_TIME_WITH_TIMEZONE = 43, DATA_TYPE_TIMESTAMP_WITH_TIMEZONE = 44 }
+	export enum FieldDataType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', DATA_TYPE_INT = 'DATA_TYPE_INT', DATA_TYPE_SMALLINT = 'DATA_TYPE_SMALLINT', DATA_TYPE_DOUBLE = 'DATA_TYPE_DOUBLE', DATA_TYPE_DATE = 'DATA_TYPE_DATE', DATA_TYPE_DATETIME = 'DATA_TYPE_DATETIME', DATA_TYPE_TIME = 'DATA_TYPE_TIME', DATA_TYPE_STRING = 'DATA_TYPE_STRING', DATA_TYPE_LONG = 'DATA_TYPE_LONG', DATA_TYPE_BOOLEAN = 'DATA_TYPE_BOOLEAN', DATA_TYPE_DECIMAL = 'DATA_TYPE_DECIMAL', DATA_TYPE_UUID = 'DATA_TYPE_UUID', DATA_TYPE_BLOB = 'DATA_TYPE_BLOB', DATA_TYPE_BIT = 'DATA_TYPE_BIT', DATA_TYPE_TINYINT = 'DATA_TYPE_TINYINT', DATA_TYPE_INTEGER = 'DATA_TYPE_INTEGER', DATA_TYPE_BIGINT = 'DATA_TYPE_BIGINT', DATA_TYPE_FLOAT = 'DATA_TYPE_FLOAT', DATA_TYPE_REAL = 'DATA_TYPE_REAL', DATA_TYPE_NUMERIC = 'DATA_TYPE_NUMERIC', DATA_TYPE_CHAR = 'DATA_TYPE_CHAR', DATA_TYPE_VARCHAR = 'DATA_TYPE_VARCHAR', DATA_TYPE_LONGVARCHAR = 'DATA_TYPE_LONGVARCHAR', DATA_TYPE_TIMESTAMP = 'DATA_TYPE_TIMESTAMP', DATA_TYPE_NCHAR = 'DATA_TYPE_NCHAR', DATA_TYPE_NVARCHAR = 'DATA_TYPE_NVARCHAR', DATA_TYPE_LONGNVARCHAR = 'DATA_TYPE_LONGNVARCHAR', DATA_TYPE_NULL = 'DATA_TYPE_NULL', DATA_TYPE_OTHER = 'DATA_TYPE_OTHER', DATA_TYPE_JAVA_OBJECT = 'DATA_TYPE_JAVA_OBJECT', DATA_TYPE_DISTINCT = 'DATA_TYPE_DISTINCT', DATA_TYPE_STRUCT = 'DATA_TYPE_STRUCT', DATA_TYPE_ARRAY = 'DATA_TYPE_ARRAY', DATA_TYPE_CLOB = 'DATA_TYPE_CLOB', DATA_TYPE_REF = 'DATA_TYPE_REF', DATA_TYPE_DATALINK = 'DATA_TYPE_DATALINK', DATA_TYPE_ROWID = 'DATA_TYPE_ROWID', DATA_TYPE_BINARY = 'DATA_TYPE_BINARY', DATA_TYPE_VARBINARY = 'DATA_TYPE_VARBINARY', DATA_TYPE_LONGVARBINARY = 'DATA_TYPE_LONGVARBINARY', DATA_TYPE_NCLOB = 'DATA_TYPE_NCLOB', DATA_TYPE_SQLXML = 'DATA_TYPE_SQLXML', DATA_TYPE_REF_CURSOR = 'DATA_TYPE_REF_CURSOR', DATA_TYPE_TIME_WITH_TIMEZONE = 'DATA_TYPE_TIME_WITH_TIMEZONE', DATA_TYPE_TIMESTAMP_WITH_TIMEZONE = 'DATA_TYPE_TIMESTAMP_WITH_TIMEZONE' }
 
 
 	/** JsonSchema representation of schema metadata */
@@ -3299,7 +3299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 0, READY = 1, DELETING = 2 }
+	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', DELETING = 'DELETING' }
 
 
 	/** Maintenance policy applicable to instance updates. */
@@ -3328,7 +3328,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 0, EARLIER = 1, LATER = 2, WEEK1 = 3, WEEK2 = 4, WEEK5 = 5 }
+	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 'UPDATE_CHANNEL_UNSPECIFIED', EARLIER = 'EARLIER', LATER = 'LATER', WEEK1 = 'WEEK1', WEEK2 = 'WEEK2', WEEK5 = 'WEEK5' }
 
 
 	/** MaintenanceWindow definition. */
@@ -3398,7 +3398,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Contains notification related data. */
@@ -3552,7 +3552,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, REPAIRING = 4, DELETING = 5, ERROR = 6 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', REPAIRING = 'REPAIRING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** Response message for ListActions API */
@@ -4412,7 +4412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigEgressMode { NETWORK_EGRESS_MODE_UNSPECIFIED = 0, AUTO_IP = 1, STATIC_IP = 2 }
+	export enum NetworkConfigEgressMode { NETWORK_EGRESS_MODE_UNSPECIFIED = 'NETWORK_EGRESS_MODE_UNSPECIFIED', AUTO_IP = 'AUTO_IP', STATIC_IP = 'STATIC_IP' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -4664,7 +4664,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeConfigState { STATE_UNSPECIFIED = 0, INACTIVE = 1, ACTIVATING = 2, ACTIVE = 3, CREATING = 4, DELETING = 5, UPDATING = 6 }
+	export enum RuntimeConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INACTIVE = 'INACTIVE', ACTIVATING = 'ACTIVATING', ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** Request message for `SetIamPolicy` method. */
@@ -5186,11 +5186,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Connectors_projects_locations_providers_connectors_versions_eventtypes_getView { CONNECTOR_VERSION_VIEW_UNSPECIFIED = 0, CONNECTOR_VERSION_VIEW_BASIC = 1, CONNECTOR_VERSION_VIEW_FULL = 2 }
+	export enum Connectors_projects_locations_providers_connectors_versions_eventtypes_getView { CONNECTOR_VERSION_VIEW_UNSPECIFIED = 'CONNECTOR_VERSION_VIEW_UNSPECIFIED', CONNECTOR_VERSION_VIEW_BASIC = 'CONNECTOR_VERSION_VIEW_BASIC', CONNECTOR_VERSION_VIEW_FULL = 'CONNECTOR_VERSION_VIEW_FULL' }
 
-	export enum Connectors_projects_locations_connections_connectionSchemaMetadata_listActionsView { VIEW_UNSPECIFIED = 0, BASIC = 1 }
+	export enum Connectors_projects_locations_connections_connectionSchemaMetadata_listActionsView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', BASIC = 'BASIC' }
 
-	export enum Connectors_projects_locations_connections_listView { CONNECTION_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Connectors_projects_locations_connections_listView { CONNECTION_VIEW_UNSPECIFIED = 'CONNECTION_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

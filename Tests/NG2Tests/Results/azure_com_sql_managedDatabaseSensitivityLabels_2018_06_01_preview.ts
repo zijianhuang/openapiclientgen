@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SensitivityLabelPropertiesRank { None = 0, Low = 1, Medium = 2, High = 3, Critical = 4 }
+	export enum SensitivityLabelPropertiesRank { None = 'None', Low = 'Low', Medium = 'Medium', High = 'High', Critical = 'Critical' }
 
 
 	/** A list of sensitivity labels. */
@@ -224,11 +224,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ManagedDatabaseSensitivityLabels_GetSensitivityLabelSource { current = 0, recommended = 1 }
+	export enum ManagedDatabaseSensitivityLabels_GetSensitivityLabelSource { current = 'current', recommended = 'recommended' }
 
-	export enum ManagedDatabaseSensitivityLabels_CreateOrUpdateSensitivityLabelSource { current = 0 }
+	export enum ManagedDatabaseSensitivityLabels_CreateOrUpdateSensitivityLabelSource { current = 'current' }
 
-	export enum ManagedDatabaseSensitivityLabels_DisableRecommendationSensitivityLabelSource { recommended = 0 }
+	export enum ManagedDatabaseSensitivityLabels_DisableRecommendationSensitivityLabelSource { recommended = 'recommended' }
 
 }
 

@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElasticPoolPropertiesLicenseType { LicenseIncluded = 0, BasePrice = 1 }
+	export enum ElasticPoolPropertiesLicenseType { LicenseIncluded = 'LicenseIncluded', BasePrice = 'BasePrice' }
 
 
 	/** Per database settings of an elastic pool. */
@@ -112,7 +112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElasticPoolPropertiesState { Creating = 0, Ready = 1, Disabled = 2 }
+	export enum ElasticPoolPropertiesState { Creating = 'Creating', Ready = 'Ready', Disabled = 'Disabled' }
 
 	export interface ElasticPoolSku {
 

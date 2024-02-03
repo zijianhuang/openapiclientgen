@@ -126,7 +126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppResourcePropertiesProvisioningState { Succeeded = 0, Failed = 1, Creating = 2, Updating = 3 }
+	export enum AppResourcePropertiesProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Creating = 'Creating', Updating = 'Updating' }
 
 
 	/** Temporary disk payload */
@@ -941,9 +941,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigServerPropertiesState { NotAvailable = 0, Deleted = 1, Failed = 2, Succeeded = 3, Updating = 4 }
+	export enum ConfigServerPropertiesState { NotAvailable = 'NotAvailable', Deleted = 'Deleted', Failed = 'Failed', Succeeded = 'Succeeded', Updating = 'Updating' }
 
-	export enum ClusterResourcePropertiesProvisioningState { Creating = 0, Updating = 1, Deleting = 2, Deleted = 3, Succeeded = 4, Failed = 5, Moving = 6, Moved = 7, MoveFailed = 8 }
+	export enum ClusterResourcePropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Deleted = 'Deleted', Succeeded = 'Succeeded', Failed = 'Failed', Moving = 'Moving', Moved = 'Moved', MoveFailed = 'MoveFailed' }
 
 
 	/** Trace properties payload */
@@ -983,7 +983,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TracePropertiesState { NotAvailable = 0, Failed = 1, Succeeded = 2, Updating = 3 }
+	export enum TracePropertiesState { NotAvailable = 'NotAvailable', Failed = 'Failed', Succeeded = 'Succeeded', Updating = 'Updating' }
 
 
 	/** Deployment instance payload */
@@ -1182,9 +1182,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentSettingsRuntimeVersion { Java_8 = 0, Java_11 = 1 }
+	export enum DeploymentSettingsRuntimeVersion { Java_8 = 'Java_8', Java_11 = 'Java_11' }
 
-	export enum DeploymentResourcePropertiesProvisioningState { Creating = 0, Updating = 1, Succeeded = 2, Failed = 3 }
+	export enum DeploymentResourcePropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Source information for a deployment */
@@ -1234,9 +1234,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UserSourceInfoType { Jar = 0, Source = 1 }
+	export enum UserSourceInfoType { Jar = 'Jar', Source = 'Source' }
 
-	export enum DeploymentResourcePropertiesStatus { Unknown = 0, Stopped = 1, Running = 2, Failed = 3, Allocating = 4, Upgrading = 5, Compiling = 6 }
+	export enum DeploymentResourcePropertiesStatus { Unknown = 'Unknown', Stopped = 'Stopped', Running = 'Running', Failed = 'Failed', Allocating = 'Allocating', Upgrading = 'Upgrading', Compiling = 'Compiling' }
 
 
 	/** Object that includes an array of App resources and a possible link for next set */
@@ -1411,7 +1411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateTestKeyRequestPayloadKeyType { Primary = 0, Secondary = 1 }
+	export enum RegenerateTestKeyRequestPayloadKeyType { Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** The core properties of ARM resources. */
@@ -2070,7 +2070,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Operations_ListApi_version { '2019-05-01-preview' = 0 }
+	export enum Operations_ListApi_version { '2019-05-01-preview' = '2019-05-01-preview' }
 
 }
 

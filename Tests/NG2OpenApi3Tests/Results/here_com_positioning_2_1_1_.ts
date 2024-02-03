@@ -1917,7 +1917,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum PostLocateContent_Encoding { gzip = 0 }
+	export enum PostLocateContent_Encoding { gzip = 'gzip' }
 
 	export interface PostLocateReturn {
 

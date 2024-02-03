@@ -47,7 +47,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedNetworkGroupKind { Connectivity = 0 }
+	export enum ManagedNetworkGroupKind { Connectivity = 'Connectivity' }
 
 
 	/** The Managed Network Peering Policy resource */
@@ -318,7 +318,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedNetworkPeeringPolicyPropertiesType { HubAndSpokeTopology = 0, MeshTopology = 1 }
+	export enum ManagedNetworkPeeringPolicyPropertiesType { HubAndSpokeTopology = 'HubAndSpokeTopology', MeshTopology = 'MeshTopology' }
 
 
 	/** Update Tags of Managed Network */
@@ -497,7 +497,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourcePropertiesProvisioningState { Updating = 0, Deleting = 1, Failed = 2, Succeeded = 3 }
+	export enum ResourcePropertiesProvisioningState { Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 
 	/** Scope of a Managed Network */

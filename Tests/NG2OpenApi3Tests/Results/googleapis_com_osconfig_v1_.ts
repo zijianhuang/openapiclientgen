@@ -30,7 +30,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AptSettingsType { TYPE_UNSPECIFIED = 0, DIST = 1, UPGRADE = 2 }
+	export enum AptSettingsType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DIST = 'DIST', UPGRADE = 'UPGRADE' }
 
 
 	/** Common Vulnerability Scoring System version 3. For details, see https://www.first.org/cvss/specification-document */
@@ -123,17 +123,17 @@ export namespace MyNS {
 
 	}
 
-	export enum CVSSv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 0, ATTACK_COMPLEXITY_LOW = 1, ATTACK_COMPLEXITY_HIGH = 2 }
+	export enum CVSSv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 'ATTACK_COMPLEXITY_UNSPECIFIED', ATTACK_COMPLEXITY_LOW = 'ATTACK_COMPLEXITY_LOW', ATTACK_COMPLEXITY_HIGH = 'ATTACK_COMPLEXITY_HIGH' }
 
-	export enum CVSSv3AttackVector { ATTACK_VECTOR_UNSPECIFIED = 0, ATTACK_VECTOR_NETWORK = 1, ATTACK_VECTOR_ADJACENT = 2, ATTACK_VECTOR_LOCAL = 3, ATTACK_VECTOR_PHYSICAL = 4 }
+	export enum CVSSv3AttackVector { ATTACK_VECTOR_UNSPECIFIED = 'ATTACK_VECTOR_UNSPECIFIED', ATTACK_VECTOR_NETWORK = 'ATTACK_VECTOR_NETWORK', ATTACK_VECTOR_ADJACENT = 'ATTACK_VECTOR_ADJACENT', ATTACK_VECTOR_LOCAL = 'ATTACK_VECTOR_LOCAL', ATTACK_VECTOR_PHYSICAL = 'ATTACK_VECTOR_PHYSICAL' }
 
-	export enum CVSSv3AvailabilityImpact { IMPACT_UNSPECIFIED = 0, IMPACT_HIGH = 1, IMPACT_LOW = 2, IMPACT_NONE = 3 }
+	export enum CVSSv3AvailabilityImpact { IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED', IMPACT_HIGH = 'IMPACT_HIGH', IMPACT_LOW = 'IMPACT_LOW', IMPACT_NONE = 'IMPACT_NONE' }
 
-	export enum CVSSv3PrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 0, PRIVILEGES_REQUIRED_NONE = 1, PRIVILEGES_REQUIRED_LOW = 2, PRIVILEGES_REQUIRED_HIGH = 3 }
+	export enum CVSSv3PrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 'PRIVILEGES_REQUIRED_UNSPECIFIED', PRIVILEGES_REQUIRED_NONE = 'PRIVILEGES_REQUIRED_NONE', PRIVILEGES_REQUIRED_LOW = 'PRIVILEGES_REQUIRED_LOW', PRIVILEGES_REQUIRED_HIGH = 'PRIVILEGES_REQUIRED_HIGH' }
 
-	export enum CVSSv3Scope { SCOPE_UNSPECIFIED = 0, SCOPE_UNCHANGED = 1, SCOPE_CHANGED = 2 }
+	export enum CVSSv3Scope { SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED', SCOPE_UNCHANGED = 'SCOPE_UNCHANGED', SCOPE_CHANGED = 'SCOPE_CHANGED' }
 
-	export enum CVSSv3UserInteraction { USER_INTERACTION_UNSPECIFIED = 0, USER_INTERACTION_NONE = 1, USER_INTERACTION_REQUIRED = 2 }
+	export enum CVSSv3UserInteraction { USER_INTERACTION_UNSPECIFIED = 'USER_INTERACTION_UNSPECIFIED', USER_INTERACTION_NONE = 'USER_INTERACTION_NONE', USER_INTERACTION_REQUIRED = 'USER_INTERACTION_REQUIRED' }
 
 
 	/** The request message for Operations.CancelOperation. */
@@ -301,7 +301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecStepConfigInterpreter { INTERPRETER_UNSPECIFIED = 0, NONE = 1, SHELL = 2, POWERSHELL = 3 }
+	export enum ExecStepConfigInterpreter { INTERPRETER_UNSPECIFIED = 'INTERPRETER_UNSPECIFIED', NONE = 'NONE', SHELL = 'SHELL', POWERSHELL = 'POWERSHELL' }
 
 
 	/** A request message to initiate patching across Compute Engine instances. */
@@ -471,7 +471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchConfigRebootConfig { REBOOT_CONFIG_UNSPECIFIED = 0, DEFAULT = 1, ALWAYS = 2, NEVER = 3 }
+	export enum PatchConfigRebootConfig { REBOOT_CONFIG_UNSPECIFIED = 'REBOOT_CONFIG_UNSPECIFIED', DEFAULT = 'DEFAULT', ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
 
 	/** Windows patching is performed using the Windows Update Agent. */
@@ -622,7 +622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchRolloutMode { MODE_UNSPECIFIED = 0, ZONE_BY_ZONE = 1, CONCURRENT_ZONES = 2 }
+	export enum PatchRolloutMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', ZONE_BY_ZONE = 'ZONE_BY_ZONE', CONCURRENT_ZONES = 'CONCURRENT_ZONES' }
 
 
 	/** OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations. */
@@ -673,9 +673,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod { API_METHOD_UNSPECIFIED = 0, CREATE = 1, UPDATE = 2, DELETE = 3 }
+	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod { API_METHOD_UNSPECIFIED = 'API_METHOD_UNSPECIFIED', CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
-	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState { ROLLOUT_STATE_UNSPECIFIED = 0, IN_PROGRESS = 1, CANCELLING = 2, CANCELLED = 3, SUCCEEDED = 4 }
+	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState { ROLLOUT_STATE_UNSPECIFIED = 'ROLLOUT_STATE_UNSPECIFIED', IN_PROGRESS = 'IN_PROGRESS', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** This API resource represents the available inventory data for a Compute Engine virtual machine (VM) instance at a given point in time. You can use this API resource to determine the inventory data of your VM. For more information, see [Information provided by OS inventory management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected). */
@@ -1068,9 +1068,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InventoryItemOriginType { ORIGIN_TYPE_UNSPECIFIED = 0, INVENTORY_REPORT = 1 }
+	export enum InventoryItemOriginType { ORIGIN_TYPE_UNSPECIFIED = 'ORIGIN_TYPE_UNSPECIFIED', INVENTORY_REPORT = 'INVENTORY_REPORT' }
 
-	export enum InventoryItemType { TYPE_UNSPECIFIED = 0, INSTALLED_PACKAGE = 1, AVAILABLE_PACKAGE = 2 }
+	export enum InventoryItemType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', INSTALLED_PACKAGE = 'INSTALLED_PACKAGE', AVAILABLE_PACKAGE = 'AVAILABLE_PACKAGE' }
 
 
 	/** Operating system information for the VM. */
@@ -1280,7 +1280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyAssignmentReportOSPolicyComplianceComplianceState { UNKNOWN = 0, COMPLIANT = 1, NON_COMPLIANT = 2 }
+	export enum OSPolicyAssignmentReportOSPolicyComplianceComplianceState { UNKNOWN = 'UNKNOWN', COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT' }
 
 
 	/** Compliance data for an OS policy resource. */
@@ -1351,7 +1351,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceOSPolicyResourceConfigStepType { TYPE_UNSPECIFIED = 0, VALIDATION = 1, DESIRED_STATE_CHECK = 2, DESIRED_STATE_ENFORCEMENT = 3, DESIRED_STATE_CHECK_POST_ENFORCEMENT = 4 }
+	export enum OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceOSPolicyResourceConfigStepType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', VALIDATION = 'VALIDATION', DESIRED_STATE_CHECK = 'DESIRED_STATE_CHECK', DESIRED_STATE_ENFORCEMENT = 'DESIRED_STATE_ENFORCEMENT', DESIRED_STATE_CHECK_POST_ENFORCEMENT = 'DESIRED_STATE_CHECK_POST_ENFORCEMENT' }
 
 
 	/** ExecResource specific output. */
@@ -1615,7 +1615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyMode { MODE_UNSPECIFIED = 0, VALIDATION = 1, ENFORCEMENT = 2 }
+	export enum OSPolicyMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', VALIDATION = 'VALIDATION', ENFORCEMENT = 'ENFORCEMENT' }
 
 
 	/** Resource groups provide a mechanism to group OS policy resources. Resource groups enable OS policy authors to create a single OS policy to be applied to VMs running different operating Systems. When the OS policy is applied to a target VM, the appropriate resource group within the OS policy is selected based on the `OSFilter` specified within the resource group. */
@@ -1901,7 +1901,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourceFileResourceState { DESIRED_STATE_UNSPECIFIED = 0, PRESENT = 1, ABSENT = 2, CONTENTS_MATCH = 3 }
+	export enum OSPolicyResourceFileResourceState { DESIRED_STATE_UNSPECIFIED = 'DESIRED_STATE_UNSPECIFIED', PRESENT = 'PRESENT', ABSENT = 'ABSENT', CONTENTS_MATCH = 'CONTENTS_MATCH' }
 
 
 	/** A resource that manages a system package. */
@@ -1990,7 +1990,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourcePackageResourceDesiredState { DESIRED_STATE_UNSPECIFIED = 0, INSTALLED = 1, REMOVED = 2 }
+	export enum OSPolicyResourcePackageResourceDesiredState { DESIRED_STATE_UNSPECIFIED = 'DESIRED_STATE_UNSPECIFIED', INSTALLED = 'INSTALLED', REMOVED = 'REMOVED' }
 
 
 	/** A package managed by GooGet. - install: `googet -noconfirm install package` - remove: `googet -noconfirm remove package` */
@@ -2170,7 +2170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourceRepositoryResourceAptRepositoryArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 0, DEB = 1, DEB_SRC = 2 }
+	export enum OSPolicyResourceRepositoryResourceAptRepositoryArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 'ARCHIVE_TYPE_UNSPECIFIED', DEB = 'DEB', DEB_SRC = 'DEB_SRC' }
 
 
 	/** Represents a Goo package repository. These are added to a repo file that is managed at `C:/ProgramData/GooGet/repos/google_osconfig.repo`. */
@@ -2508,7 +2508,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecurringScheduleFrequency { FREQUENCY_UNSPECIFIED = 0, WEEKLY = 1, MONTHLY = 2, DAILY = 3 }
+	export enum RecurringScheduleFrequency { FREQUENCY_UNSPECIFIED = 'FREQUENCY_UNSPECIFIED', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY', DAILY = 'DAILY' }
 
 
 	/** Represents a monthly schedule. An example of a valid monthly schedule is "on the third Tuesday of the month" or "on the 15th of the month". */
@@ -2569,7 +2569,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WeekDayOfMonthDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum WeekDayOfMonthDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
@@ -2662,7 +2662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchDeploymentState { STATE_UNSPECIFIED = 0, ACTIVE = 1, PAUSED = 2 }
+	export enum PatchDeploymentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', PAUSED = 'PAUSED' }
 
 
 	/** A response message for listing the instances details for a patch job. */
@@ -2737,7 +2737,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchJobInstanceDetailsState { PATCH_STATE_UNSPECIFIED = 0, PENDING = 1, INACTIVE = 2, NOTIFIED = 3, STARTED = 4, DOWNLOADING_PATCHES = 5, APPLYING_PATCHES = 6, REBOOTING = 7, SUCCEEDED = 8, SUCCEEDED_REBOOT_REQUIRED = 9, FAILED = 10, ACKED = 11, TIMED_OUT = 12, RUNNING_PRE_PATCH_STEP = 13, RUNNING_POST_PATCH_STEP = 14, NO_AGENT_DETECTED = 15 }
+	export enum PatchJobInstanceDetailsState { PATCH_STATE_UNSPECIFIED = 'PATCH_STATE_UNSPECIFIED', PENDING = 'PENDING', INACTIVE = 'INACTIVE', NOTIFIED = 'NOTIFIED', STARTED = 'STARTED', DOWNLOADING_PATCHES = 'DOWNLOADING_PATCHES', APPLYING_PATCHES = 'APPLYING_PATCHES', REBOOTING = 'REBOOTING', SUCCEEDED = 'SUCCEEDED', SUCCEEDED_REBOOT_REQUIRED = 'SUCCEEDED_REBOOT_REQUIRED', FAILED = 'FAILED', ACKED = 'ACKED', TIMED_OUT = 'TIMED_OUT', RUNNING_PRE_PATCH_STEP = 'RUNNING_PRE_PATCH_STEP', RUNNING_POST_PATCH_STEP = 'RUNNING_POST_PATCH_STEP', NO_AGENT_DETECTED = 'NO_AGENT_DETECTED' }
 
 
 	/** A response message for listing patch jobs. */
@@ -2985,7 +2985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchJobState { STATE_UNSPECIFIED = 0, STARTED = 1, INSTANCE_LOOKUP = 2, PATCHING = 3, SUCCEEDED = 4, COMPLETED_WITH_ERRORS = 5, CANCELED = 6, TIMED_OUT = 7 }
+	export enum PatchJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTED = 'STARTED', INSTANCE_LOOKUP = 'INSTANCE_LOOKUP', PATCHING = 'PATCHING', SUCCEEDED = 'SUCCEEDED', COMPLETED_WITH_ERRORS = 'COMPLETED_WITH_ERRORS', CANCELED = 'CANCELED', TIMED_OUT = 'TIMED_OUT' }
 
 
 	/** A response message for listing vulnerability reports for all VM instances in the specified location. */
@@ -3555,7 +3555,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Osconfig_projects_patchJobs_getView { INVENTORY_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Osconfig_projects_patchJobs_getView { INVENTORY_VIEW_UNSPECIFIED = 'INVENTORY_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

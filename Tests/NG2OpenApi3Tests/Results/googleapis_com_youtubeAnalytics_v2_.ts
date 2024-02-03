@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorsCode { BAD_REQUEST = 0, FORBIDDEN = 1, NOT_FOUND = 2, CONFLICT = 3, GONE = 4, PRECONDITION_FAILED = 5, INTERNAL_ERROR = 6, SERVICE_UNAVAILABLE = 7 }
+	export enum ErrorsCode { BAD_REQUEST = 'BAD_REQUEST', FORBIDDEN = 'FORBIDDEN', NOT_FOUND = 'NOT_FOUND', CONFLICT = 'CONFLICT', GONE = 'GONE', PRECONDITION_FAILED = 'PRECONDITION_FAILED', INTERNAL_ERROR = 'INTERNAL_ERROR', SERVICE_UNAVAILABLE = 'SERVICE_UNAVAILABLE' }
 
 
 	/** Describes one specific error. */
@@ -108,7 +108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorProtoLocationType { PATH = 0, OTHER = 1, PARAMETER = 2 }
+	export enum ErrorProtoLocationType { PATH = 'PATH', OTHER = 'OTHER', PARAMETER = 'PARAMETER' }
 
 
 	/** A group. */

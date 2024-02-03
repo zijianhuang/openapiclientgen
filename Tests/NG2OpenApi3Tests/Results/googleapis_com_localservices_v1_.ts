@@ -308,9 +308,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus { CHARGE_STATUS_UNSPECIFIED = 0, CHARGED = 1, NOT_CHARGED = 2 }
+	export enum GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus { CHARGE_STATUS_UNSPECIFIED = 'CHARGE_STATUS_UNSPECIFIED', CHARGED = 'CHARGED', NOT_CHARGED = 'NOT_CHARGED' }
 
-	export enum GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType { LEAD_TYPE_UNSPECIFIED = 0, MESSAGE = 1, PHONE_CALL = 2, BOOKING = 3 }
+	export enum GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType { LEAD_TYPE_UNSPECIFIED = 'LEAD_TYPE_UNSPECIFIED', MESSAGE = 'MESSAGE', PHONE_CALL = 'PHONE_CALL', BOOKING = 'BOOKING' }
 
 
 	/** Container for message lead specific information. */

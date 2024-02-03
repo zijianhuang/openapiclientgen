@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Engagement_enum_status { active = 0, ended = 1 }
+	export enum Engagement_enum_status { active = 'active', ended = 'ended' }
 
-	export enum Execution_enum_status { active = 0, ended = 1 }
+	export enum Execution_enum_status { active = 'active', ended = 'ended' }
 
-	export enum Flow_enum_status { draft = 0, published = 1 }
+	export enum Flow_enum_status { draft = 'draft', published = 'published' }
 
 	export interface Studiov1flow {
 

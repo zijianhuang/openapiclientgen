@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Defines the action to take on rule match. */
-	export enum ActionType { Allow = 0, Block = 1, Log = 2, Redirect = 3 }
+	export enum ActionType { Allow = 'Allow', Block = 'Block', Log = 'Log', Redirect = 'Redirect' }
 
 
 	/** Defines the ARM Resource ID for the linked endpoints */
@@ -122,9 +122,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CdnWebApplicationFirewallPolicyPropertiesProvisioningState { Creating = 0, Succeeded = 1, Failed = 2 }
+	export enum CdnWebApplicationFirewallPolicyPropertiesProvisioningState { Creating = 'Creating', Succeeded = 'Succeeded', Failed = 'Failed' }
 
-	export enum CdnWebApplicationFirewallPolicyPropertiesResourceState { Creating = 0, Enabling = 1, Enabled = 2, Disabling = 3, Disabled = 4, Deleting = 5 }
+	export enum CdnWebApplicationFirewallPolicyPropertiesResourceState { Creating = 'Creating', Enabling = 'Enabling', Enabled = 'Enabled', Disabling = 'Disabling', Disabled = 'Disabled', Deleting = 'Deleting' }
 
 
 	/** Defines the common attributes for a custom rule that can be included in a waf policy */
@@ -196,7 +196,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomRuleEnabledState { Disabled = 0, Enabled = 1 }
+	export enum CustomRuleEnabledState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Define match conditions */
@@ -261,13 +261,13 @@ export namespace MyNS {
 
 	}
 
-	export enum MatchConditionMatchVariable { RemoteAddr = 0, Country = 1, RequestMethod = 2, RequestHeader = 3, RequestUri = 4, QueryString = 5, RequestBody = 6, Cookies = 7, PostArgs = 8 }
+	export enum MatchConditionMatchVariable { RemoteAddr = 'RemoteAddr', Country = 'Country', RequestMethod = 'RequestMethod', RequestHeader = 'RequestHeader', RequestUri = 'RequestUri', QueryString = 'QueryString', RequestBody = 'RequestBody', Cookies = 'Cookies', PostArgs = 'PostArgs' }
 
-	export enum MatchConditionOperator { Any = 0, IPMatch = 1, GeoMatch = 2, Equal = 3, Contains = 4, LessThan = 5, GreaterThan = 6, LessThanOrEqual = 7, GreaterThanOrEqual = 8, BeginsWith = 9, EndsWith = 10, RegEx = 11 }
+	export enum MatchConditionOperator { Any = 'Any', IPMatch = 'IPMatch', GeoMatch = 'GeoMatch', Equal = 'Equal', Contains = 'Contains', LessThan = 'LessThan', GreaterThan = 'GreaterThan', LessThanOrEqual = 'LessThanOrEqual', GreaterThanOrEqual = 'GreaterThanOrEqual', BeginsWith = 'BeginsWith', EndsWith = 'EndsWith', RegEx = 'RegEx' }
 
 
 	/** Describes what transforms were applied before matching. */
-	export enum TransformType { Lowercase = 0, Uppercase = 1, Trim = 2, UrlDecode = 3, UrlEncode = 4, RemoveNulls = 5 }
+	export enum TransformType { Lowercase = 'Lowercase', Uppercase = 'Uppercase', Trim = 'Trim', UrlDecode = 'UrlDecode', UrlEncode = 'UrlEncode', RemoveNulls = 'RemoveNulls' }
 
 
 	/** Defines contents of custom rules */
@@ -683,7 +683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicySettingsMode { Prevention = 0, Detection = 1 }
+	export enum PolicySettingsMode { Prevention = 'Prevention', Detection = 'Detection' }
 
 	@Injectable()
 	export class MyClient {

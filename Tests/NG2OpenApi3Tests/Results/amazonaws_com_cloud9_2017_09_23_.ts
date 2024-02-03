@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionType { CONNECT_SSH = 0, CONNECT_SSM = 1 }
+	export enum ConnectionType { CONNECT_SSH = 'CONNECT_SSH', CONNECT_SSM = 'CONNECT_SSM' }
 
 	export interface BadRequestException {
 	}
@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Permissions { owner = 0, 'read-write' = 1, 'read-only' = 2 }
+	export enum Permissions { owner = 'owner', 'read-write' = 'read-write', 'read-only' = 'read-only' }
 
 	export interface CreateEnvironmentMembershipRequest {
 
@@ -256,7 +256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberPermissions { 'read-write' = 0, 'read-only' = 1 }
+	export enum MemberPermissions { 'read-write' = 'read-write', 'read-only' = 'read-only' }
 
 	export interface DeleteEnvironmentResult {
 	}
@@ -380,7 +380,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentStatus { error = 0, creating = 1, connecting = 2, ready = 3, stopping = 4, stopped = 5, deleting = 6 }
+	export enum EnvironmentStatus { error = 'error', creating = 'creating', connecting = 'connecting', ready = 'ready', stopping = 'stopping', stopped = 'stopped', deleting = 'deleting' }
 
 	export interface DescribeEnvironmentStatusRequest {
 
@@ -461,7 +461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentType { ssh = 0, ec2 = 1 }
+	export enum EnvironmentType { ssh = 'ssh', ec2 = 'ec2' }
 
 
 	/** Information about the current creation or deletion lifecycle state of an Cloud9 development environment. */
@@ -486,9 +486,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentLifecycleStatus { CREATING = 0, CREATED = 1, CREATE_FAILED = 2, DELETING = 3, DELETE_FAILED = 4 }
+	export enum EnvironmentLifecycleStatus { CREATING = 'CREATING', CREATED = 'CREATED', CREATE_FAILED = 'CREATE_FAILED', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED' }
 
-	export enum ManagedCredentialsStatus { ENABLED_ON_CREATE = 0, ENABLED_BY_OWNER = 1, DISABLED_BY_DEFAULT = 2, DISABLED_BY_OWNER = 3, DISABLED_BY_COLLABORATOR = 4, PENDING_REMOVAL_BY_COLLABORATOR = 5, PENDING_START_REMOVAL_BY_COLLABORATOR = 6, PENDING_REMOVAL_BY_OWNER = 7, PENDING_START_REMOVAL_BY_OWNER = 8, FAILED_REMOVAL_BY_COLLABORATOR = 9, FAILED_REMOVAL_BY_OWNER = 10 }
+	export enum ManagedCredentialsStatus { ENABLED_ON_CREATE = 'ENABLED_ON_CREATE', ENABLED_BY_OWNER = 'ENABLED_BY_OWNER', DISABLED_BY_DEFAULT = 'DISABLED_BY_DEFAULT', DISABLED_BY_OWNER = 'DISABLED_BY_OWNER', DISABLED_BY_COLLABORATOR = 'DISABLED_BY_COLLABORATOR', PENDING_REMOVAL_BY_COLLABORATOR = 'PENDING_REMOVAL_BY_COLLABORATOR', PENDING_START_REMOVAL_BY_COLLABORATOR = 'PENDING_START_REMOVAL_BY_COLLABORATOR', PENDING_REMOVAL_BY_OWNER = 'PENDING_REMOVAL_BY_OWNER', PENDING_START_REMOVAL_BY_OWNER = 'PENDING_START_REMOVAL_BY_OWNER', FAILED_REMOVAL_BY_COLLABORATOR = 'FAILED_REMOVAL_BY_COLLABORATOR', FAILED_REMOVAL_BY_OWNER = 'FAILED_REMOVAL_BY_OWNER' }
 
 	export interface DescribeEnvironmentsRequest {
 
@@ -667,7 +667,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedCredentialsAction { ENABLE = 0, DISABLE = 1 }
+	export enum ManagedCredentialsAction { ENABLE = 'ENABLE', DISABLE = 'DISABLE' }
 
 	export interface UpdateEnvironmentMembershipResult {
 		membership?: EnvironmentMember;
@@ -838,31 +838,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateEnvironmentEC2X_Amz_Target { 'AWSCloud9WorkspaceManagementService.CreateEnvironmentEC2' = 0 }
+	export enum CreateEnvironmentEC2X_Amz_Target { 'AWSCloud9WorkspaceManagementService.CreateEnvironmentEC2' = 'AWSCloud9WorkspaceManagementService.CreateEnvironmentEC2' }
 
-	export enum CreateEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.CreateEnvironmentMembership' = 0 }
+	export enum CreateEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.CreateEnvironmentMembership' = 'AWSCloud9WorkspaceManagementService.CreateEnvironmentMembership' }
 
-	export enum DeleteEnvironmentX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DeleteEnvironment' = 0 }
+	export enum DeleteEnvironmentX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DeleteEnvironment' = 'AWSCloud9WorkspaceManagementService.DeleteEnvironment' }
 
-	export enum DeleteEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DeleteEnvironmentMembership' = 0 }
+	export enum DeleteEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DeleteEnvironmentMembership' = 'AWSCloud9WorkspaceManagementService.DeleteEnvironmentMembership' }
 
-	export enum DescribeEnvironmentMembershipsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentMemberships' = 0 }
+	export enum DescribeEnvironmentMembershipsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentMemberships' = 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentMemberships' }
 
-	export enum DescribeEnvironmentStatusX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentStatus' = 0 }
+	export enum DescribeEnvironmentStatusX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentStatus' = 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentStatus' }
 
-	export enum DescribeEnvironmentsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironments' = 0 }
+	export enum DescribeEnvironmentsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironments' = 'AWSCloud9WorkspaceManagementService.DescribeEnvironments' }
 
-	export enum ListEnvironmentsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.ListEnvironments' = 0 }
+	export enum ListEnvironmentsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.ListEnvironments' = 'AWSCloud9WorkspaceManagementService.ListEnvironments' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.ListTagsForResource' = 'AWSCloud9WorkspaceManagementService.ListTagsForResource' }
 
-	export enum TagResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.TagResource' = 'AWSCloud9WorkspaceManagementService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UntagResource' = 'AWSCloud9WorkspaceManagementService.UntagResource' }
 
-	export enum UpdateEnvironmentX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UpdateEnvironment' = 0 }
+	export enum UpdateEnvironmentX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UpdateEnvironment' = 'AWSCloud9WorkspaceManagementService.UpdateEnvironment' }
 
-	export enum UpdateEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UpdateEnvironmentMembership' = 0 }
+	export enum UpdateEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UpdateEnvironmentMembership' = 'AWSCloud9WorkspaceManagementService.UpdateEnvironmentMembership' }
 
 }
 

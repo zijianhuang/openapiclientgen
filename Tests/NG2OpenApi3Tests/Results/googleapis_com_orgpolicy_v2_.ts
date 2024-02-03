@@ -244,7 +244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOrgpolicyV2ConstraintConstraintDefault { CONSTRAINT_DEFAULT_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GoogleCloudOrgpolicyV2ConstraintConstraintDefault { CONSTRAINT_DEFAULT_UNSPECIFIED = 'CONSTRAINT_DEFAULT_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** A constraint that allows or disallows a list of string values, which are configured by an Organization Policy administrator with a policy. */
@@ -336,7 +336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOrgpolicyV2CustomConstraintActionType { ACTION_TYPE_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GoogleCloudOrgpolicyV2CustomConstraintActionType { ACTION_TYPE_UNSPECIFIED = 'ACTION_TYPE_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** The response returned from the ListConstraints method. */

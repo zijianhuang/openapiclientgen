@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1AnalyticsConfigState { ADDON_STATE_UNSPECIFIED = 0, ENABLING = 1, ENABLED = 2, DISABLING = 3, DISABLED = 4 }
+	export enum GoogleCloudApigeeV1AnalyticsConfigState { ADDON_STATE_UNSPECIFIED = 'ADDON_STATE_UNSPECIFIED', ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED' }
 
 
 	/** Configurations of the API Security add-on. */
@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1AliasType { ALIAS_TYPE_UNSPECIFIED = 0, CERT = 1, KEY_CERT = 2 }
+	export enum GoogleCloudApigeeV1AliasType { ALIAS_TYPE_UNSPECIFIED = 'ALIAS_TYPE_UNSPECIFIED', CERT = 'CERT', KEY_CERT = 'KEY_CERT' }
 
 	export interface GoogleCloudApigeeV1AliasRevisionConfig {
 
@@ -1072,7 +1072,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1ApiProductQuotaCounterScope { QUOTA_COUNTER_SCOPE_UNSPECIFIED = 0, PROXY = 1, OPERATION = 2 }
+	export enum GoogleCloudApigeeV1ApiProductQuotaCounterScope { QUOTA_COUNTER_SCOPE_UNSPECIFIED = 'QUOTA_COUNTER_SCOPE_UNSPECIFIED', PROXY = 'PROXY', OPERATION = 'OPERATION' }
 
 	export interface GoogleCloudApigeeV1ApiProductRef {
 
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1ApiProxyApiProxyType { API_PROXY_TYPE_UNSPECIFIED = 0, PROGRAMMABLE = 1, CONFIGURABLE = 2 }
+	export enum GoogleCloudApigeeV1ApiProxyApiProxyType { API_PROXY_TYPE_UNSPECIFIED = 'API_PROXY_TYPE_UNSPECIFIED', PROGRAMMABLE = 'PROGRAMMABLE', CONFIGURABLE = 'CONFIGURABLE' }
 
 
 	/** Metadata common to many entities in this API. */
@@ -2200,9 +2200,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1SecurityIncidentObservability { OBSERVABILITY_UNSPECIFIED = 0, ACTIVE = 1, ARCHIVED = 2 }
+	export enum GoogleCloudApigeeV1SecurityIncidentObservability { OBSERVABILITY_UNSPECIFIED = 'OBSERVABILITY_UNSPECIFIED', ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED' }
 
-	export enum GoogleCloudApigeeV1SecurityIncidentRiskLevel { RISK_LEVEL_UNSPECIFIED = 0, LOW = 1, MODERATE = 2, SEVERE = 3 }
+	export enum GoogleCloudApigeeV1SecurityIncidentRiskLevel { RISK_LEVEL_UNSPECIFIED = 'RISK_LEVEL_UNSPECIFIED', LOW = 'LOW', MODERATE = 'MODERATE', SEVERE = 'SEVERE' }
 
 
 	/** Response for BatchUpdateSecurityIncident. */
@@ -2329,9 +2329,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1CanaryEvaluationState { STATE_UNSPECIFIED = 0, RUNNING = 1, SUCCEEDED = 2 }
+	export enum GoogleCloudApigeeV1CanaryEvaluationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED' }
 
-	export enum GoogleCloudApigeeV1CanaryEvaluationVerdict { VERDICT_UNSPECIFIED = 0, NONE = 1, FAIL = 2, PASS = 3 }
+	export enum GoogleCloudApigeeV1CanaryEvaluationVerdict { VERDICT_UNSPECIFIED = 'VERDICT_UNSPECIFIED', NONE = 'NONE', FAIL = 'FAIL', PASS = 'PASS' }
 
 	export interface GoogleCloudApigeeV1CommonNameConfig {
 		matchWildCards?: boolean | null;
@@ -2871,7 +2871,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1DataCollectorType { TYPE_UNSPECIFIED = 0, INTEGER = 1, FLOAT = 2, STRING = 3, BOOLEAN = 4, DATETIME = 5 }
+	export enum GoogleCloudApigeeV1DataCollectorType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', INTEGER = 'INTEGER', FLOAT = 'FLOAT', STRING = 'STRING', BOOLEAN = 'BOOLEAN', DATETIME = 'DATETIME' }
 
 
 	/** Data collector and its configuration. */
@@ -3644,7 +3644,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1DeploymentProxyDeploymentType { PROXY_DEPLOYMENT_TYPE_UNSPECIFIED = 0, STANDARD = 1, EXTENSIBLE = 2 }
+	export enum GoogleCloudApigeeV1DeploymentProxyDeploymentType { PROXY_DEPLOYMENT_TYPE_UNSPECIFIED = 'PROXY_DEPLOYMENT_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', EXTENSIBLE = 'EXTENSIBLE' }
 
 
 	/** Describes a routing conflict that may cause a deployment not to receive traffic at some base path. */
@@ -3719,7 +3719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1DeploymentState { RUNTIME_STATE_UNSPECIFIED = 0, READY = 1, PROGRESSING = 2, ERROR = 3 }
+	export enum GoogleCloudApigeeV1DeploymentState { RUNTIME_STATE_UNSPECIFIED = 'RUNTIME_STATE_UNSPECIFIED', READY = 'READY', PROGRESSING = 'PROGRESSING', ERROR = 'ERROR' }
 
 
 	/** Response for GenerateDeployChangeReport and GenerateUndeployChangeReport. This report contains any validation failures that would cause the deployment to be rejected, as well changes and conflicts in routing that may occur due to the new deployment. The existence of a routing warning does not necessarily imply that the deployment request is bad, if the desired state of the deployment request is to effect a routing change. The primary purposes of the routing messages are: 1) To inform users of routing changes that may have an effect on traffic currently being routed to other existing deployments. 2) To warn users if some base path in the proxy will not receive traffic due to an existing deployment having already claimed that base path. The presence of routing conflicts/changes will not cause non-dry-run DeployApiProxy/UndeployApiProxy requests to be rejected. */
@@ -3952,7 +3952,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1DeploymentGroupConfigDeploymentGroupType { DEPLOYMENT_GROUP_TYPE_UNSPECIFIED = 0, STANDARD = 1, EXTENSIBLE = 2 }
+	export enum GoogleCloudApigeeV1DeploymentGroupConfigDeploymentGroupType { DEPLOYMENT_GROUP_TYPE_UNSPECIFIED = 'DEPLOYMENT_GROUP_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', EXTENSIBLE = 'EXTENSIBLE' }
 
 	export interface GoogleCloudApigeeV1Developer {
 
@@ -4258,7 +4258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1DeveloperMonetizationConfigBillingType { BILLING_TYPE_UNSPECIFIED = 0, PREPAID = 1, POSTPAID = 2 }
+	export enum GoogleCloudApigeeV1DeveloperMonetizationConfigBillingType { BILLING_TYPE_UNSPECIFIED = 'BILLING_TYPE_UNSPECIFIED', PREPAID = 'PREPAID', POSTPAID = 'POSTPAID' }
 
 
 	/** Structure of a DeveloperSubscription. */
@@ -4451,9 +4451,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1EndpointAttachmentConnectionState { CONNECTION_STATE_UNSPECIFIED = 0, UNAVAILABLE = 1, PENDING = 2, ACCEPTED = 3, REJECTED = 4, CLOSED = 5, FROZEN = 6, NEEDS_ATTENTION = 7 }
+	export enum GoogleCloudApigeeV1EndpointAttachmentConnectionState { CONNECTION_STATE_UNSPECIFIED = 'CONNECTION_STATE_UNSPECIFIED', UNAVAILABLE = 'UNAVAILABLE', PENDING = 'PENDING', ACCEPTED = 'ACCEPTED', REJECTED = 'REJECTED', CLOSED = 'CLOSED', FROZEN = 'FROZEN', NEEDS_ATTENTION = 'NEEDS_ATTENTION' }
 
-	export enum GoogleCloudApigeeV1EndpointAttachmentState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, DELETING = 3, UPDATING = 4 }
+	export enum GoogleCloudApigeeV1EndpointAttachmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** EndpointChainingRule specifies the proxies contained in a particular deployment group, so that other deployment groups can find them in chaining calls. */
@@ -4568,7 +4568,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1EnvironmentDeploymentType { DEPLOYMENT_TYPE_UNSPECIFIED = 0, PROXY = 1, ARCHIVE = 2 }
+	export enum GoogleCloudApigeeV1EnvironmentDeploymentType { DEPLOYMENT_TYPE_UNSPECIFIED = 'DEPLOYMENT_TYPE_UNSPECIFIED', PROXY = 'PROXY', ARCHIVE = 'ARCHIVE' }
 
 
 	/** NodeConfig for setting the min/max number of nodes associated with the environment. */
@@ -4605,7 +4605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1EnvironmentType { ENVIRONMENT_TYPE_UNSPECIFIED = 0, BASE = 1, INTERMEDIATE = 2, COMPREHENSIVE = 3 }
+	export enum GoogleCloudApigeeV1EnvironmentType { ENVIRONMENT_TYPE_UNSPECIFIED = 'ENVIRONMENT_TYPE_UNSPECIFIED', BASE = 'BASE', INTERMEDIATE = 'INTERMEDIATE', COMPREHENSIVE = 'COMPREHENSIVE' }
 
 	export interface GoogleCloudApigeeV1EnvironmentConfig {
 
@@ -4967,7 +4967,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1TargetServerConfigProtocol { PROTOCOL_UNSPECIFIED = 0, HTTP = 1, HTTP2 = 2, GRPC_TARGET = 3, GRPC = 4, EXTERNAL_CALLOUT = 5 }
+	export enum GoogleCloudApigeeV1TargetServerConfigProtocol { PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED', HTTP = 'HTTP', HTTP2 = 'HTTP2', GRPC_TARGET = 'GRPC_TARGET', GRPC = 'GRPC', EXTERNAL_CALLOUT = 'EXTERNAL_CALLOUT' }
 
 	export interface GoogleCloudApigeeV1TlsInfoConfig {
 
@@ -5101,7 +5101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1RuntimeTraceConfigExporter { EXPORTER_UNSPECIFIED = 0, JAEGER = 1, CLOUD_TRACE = 2 }
+	export enum GoogleCloudApigeeV1RuntimeTraceConfigExporter { EXPORTER_UNSPECIFIED = 'EXPORTER_UNSPECIFIED', JAEGER = 'JAEGER', CLOUD_TRACE = 'CLOUD_TRACE' }
 
 
 	/** NEXT ID: 7 Trace configuration override for a specific API proxy in an environment. */
@@ -5183,7 +5183,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1RuntimeTraceSamplingConfigSampler { SAMPLER_UNSPECIFIED = 0, OFF = 1, PROBABILITY = 2 }
+	export enum GoogleCloudApigeeV1RuntimeTraceSamplingConfigSampler { SAMPLER_UNSPECIFIED = 'SAMPLER_UNSPECIFIED', OFF = 'OFF', PROBABILITY = 'PROBABILITY' }
 
 
 	/** EnvironmentGroup configuration. An environment group is used to group one or more Apigee environments under a single host name. */
@@ -5851,7 +5851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1InstancePeeringCidrRange { CIDR_RANGE_UNSPECIFIED = 0, SLASH_16 = 1, SLASH_17 = 2, SLASH_18 = 3, SLASH_19 = 4, SLASH_20 = 5, SLASH_22 = 6, SLASH_23 = 7 }
+	export enum GoogleCloudApigeeV1InstancePeeringCidrRange { CIDR_RANGE_UNSPECIFIED = 'CIDR_RANGE_UNSPECIFIED', SLASH_16 = 'SLASH_16', SLASH_17 = 'SLASH_17', SLASH_18 = 'SLASH_18', SLASH_19 = 'SLASH_19', SLASH_20 = 'SLASH_20', SLASH_22 = 'SLASH_22', SLASH_23 = 'SLASH_23' }
 
 
 	/** InstanceAttachment represents the installation of an environment onto an instance. */
@@ -6586,7 +6586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1NatAddressState { STATE_UNSPECIFIED = 0, CREATING = 1, RESERVED = 2, ACTIVE = 3, DELETING = 4 }
+	export enum GoogleCloudApigeeV1NatAddressState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', RESERVED = 'RESERVED', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface GoogleCloudApigeeV1ListOfDevelopersResponse {
 
@@ -6803,7 +6803,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1RatePlanBillingPeriod { BILLING_PERIOD_UNSPECIFIED = 0, WEEKLY = 1, MONTHLY = 2 }
+	export enum GoogleCloudApigeeV1RatePlanBillingPeriod { BILLING_PERIOD_UNSPECIFIED = 'BILLING_PERIOD_UNSPECIFIED', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 
 	/** API call volume range and the fees charged when the total number of API calls is within the range. */
@@ -6836,9 +6836,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1RatePlanConsumptionPricingType { CONSUMPTION_PRICING_TYPE_UNSPECIFIED = 0, FIXED_PER_UNIT = 1, BANDED = 2, TIERED = 3, STAIRSTEP = 4 }
+	export enum GoogleCloudApigeeV1RatePlanConsumptionPricingType { CONSUMPTION_PRICING_TYPE_UNSPECIFIED = 'CONSUMPTION_PRICING_TYPE_UNSPECIFIED', FIXED_PER_UNIT = 'FIXED_PER_UNIT', BANDED = 'BANDED', TIERED = 'TIERED', STAIRSTEP = 'STAIRSTEP' }
 
-	export enum GoogleCloudApigeeV1RatePlanPaymentFundingModel { PAYMENT_FUNDING_MODEL_UNSPECIFIED = 0, PREPAID = 1, POSTPAID = 2 }
+	export enum GoogleCloudApigeeV1RatePlanPaymentFundingModel { PAYMENT_FUNDING_MODEL_UNSPECIFIED = 'PAYMENT_FUNDING_MODEL_UNSPECIFIED', PREPAID = 'PREPAID', POSTPAID = 'POSTPAID' }
 
 
 	/** API call volume range and the percentage of revenue to share with the developer when the total number of API calls is within the range. */
@@ -6875,9 +6875,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1RatePlanRevenueShareType { REVENUE_SHARE_TYPE_UNSPECIFIED = 0, FIXED = 1, VOLUME_BANDED = 2 }
+	export enum GoogleCloudApigeeV1RatePlanRevenueShareType { REVENUE_SHARE_TYPE_UNSPECIFIED = 'REVENUE_SHARE_TYPE_UNSPECIFIED', FIXED = 'FIXED', VOLUME_BANDED = 'VOLUME_BANDED' }
 
-	export enum GoogleCloudApigeeV1RatePlanState { STATE_UNSPECIFIED = 0, DRAFT = 1, PUBLISHED = 2 }
+	export enum GoogleCloudApigeeV1RatePlanState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DRAFT = 'DRAFT', PUBLISHED = 'PUBLISHED' }
 
 
 	/** Contains a list of SecurityActions in response to a ListSecurityActionRequest. */
@@ -7078,7 +7078,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1SecurityActionState { STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum GoogleCloudApigeeV1SecurityActionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Response for ListSecurityIncidents. */
@@ -7818,9 +7818,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1MetricAggregationAggregation { AGGREGATION_FUNCTION_UNSPECIFIED = 0, AVG = 1, SUM = 2, MIN = 3, MAX = 4, COUNT_DISTINCT = 5 }
+	export enum GoogleCloudApigeeV1MetricAggregationAggregation { AGGREGATION_FUNCTION_UNSPECIFIED = 'AGGREGATION_FUNCTION_UNSPECIFIED', AVG = 'AVG', SUM = 'SUM', MIN = 'MIN', MAX = 'MAX', COUNT_DISTINCT = 'COUNT_DISTINCT' }
 
-	export enum GoogleCloudApigeeV1MetricAggregationOrder { ORDER_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum GoogleCloudApigeeV1MetricAggregationOrder { ORDER_UNSPECIFIED = 'ORDER_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** Metadata describing an Operation. */
@@ -7855,7 +7855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, INSERT = 1, DELETE = 2, UPDATE = 3 }
+	export enum GoogleCloudApigeeV1OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', INSERT = 'INSERT', DELETE = 'DELETE', UPDATE = 'UPDATE' }
 
 
 	/** Information about operation progress. */
@@ -7899,7 +7899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1OperationMetadataProgressState { STATE_UNSPECIFIED = 0, NOT_STARTED = 1, IN_PROGRESS = 2, FINISHED = 3 }
+	export enum GoogleCloudApigeeV1OperationMetadataProgressState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FINISHED = 'FINISHED' }
 
 	export interface GoogleCloudApigeeV1OptimizedStats {
 
@@ -8149,15 +8149,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1OrganizationBillingType { BILLING_TYPE_UNSPECIFIED = 0, SUBSCRIPTION = 1, EVALUATION = 2, PAYG = 3 }
+	export enum GoogleCloudApigeeV1OrganizationBillingType { BILLING_TYPE_UNSPECIFIED = 'BILLING_TYPE_UNSPECIFIED', SUBSCRIPTION = 'SUBSCRIPTION', EVALUATION = 'EVALUATION', PAYG = 'PAYG' }
 
-	export enum GoogleCloudApigeeV1OrganizationRuntimeType { RUNTIME_TYPE_UNSPECIFIED = 0, CLOUD = 1, HYBRID = 2 }
+	export enum GoogleCloudApigeeV1OrganizationRuntimeType { RUNTIME_TYPE_UNSPECIFIED = 'RUNTIME_TYPE_UNSPECIFIED', CLOUD = 'CLOUD', HYBRID = 'HYBRID' }
 
-	export enum GoogleCloudApigeeV1OrganizationSubscriptionPlan { SUBSCRIPTION_PLAN_UNSPECIFIED = 0, SUBSCRIPTION_2021 = 1, SUBSCRIPTION_2024 = 2 }
+	export enum GoogleCloudApigeeV1OrganizationSubscriptionPlan { SUBSCRIPTION_PLAN_UNSPECIFIED = 'SUBSCRIPTION_PLAN_UNSPECIFIED', SUBSCRIPTION_2021 = 'SUBSCRIPTION_2021', SUBSCRIPTION_2024 = 'SUBSCRIPTION_2024' }
 
-	export enum GoogleCloudApigeeV1OrganizationSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 0, PAID = 1, TRIAL = 2 }
+	export enum GoogleCloudApigeeV1OrganizationSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 'SUBSCRIPTION_TYPE_UNSPECIFIED', PAID = 'PAID', TRIAL = 'TRIAL' }
 
-	export enum GoogleCloudApigeeV1OrganizationType { TYPE_UNSPECIFIED = 0, TYPE_TRIAL = 1, TYPE_PAID = 2, TYPE_INTERNAL = 3 }
+	export enum GoogleCloudApigeeV1OrganizationType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TYPE_TRIAL = 'TYPE_TRIAL', TYPE_PAID = 'TYPE_PAID', TYPE_INTERNAL = 'TYPE_INTERNAL' }
 
 
 	/** Request for ProvisionOrganization. */
@@ -8458,7 +8458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1QueryTimeSeriesStatsRequestWindowSize { WINDOW_SIZE_UNSPECIFIED = 0, MINUTE = 1, HOUR = 2, DAY = 3, MONTH = 4 }
+	export enum GoogleCloudApigeeV1QueryTimeSeriesStatsRequestWindowSize { WINDOW_SIZE_UNSPECIFIED = 'WINDOW_SIZE_UNSPECIFIED', MINUTE = 'MINUTE', HOUR = 'HOUR', DAY = 'DAY', MONTH = 'MONTH' }
 
 
 	/** Represents security stats result as a collection of time series sequences. */
@@ -8702,7 +8702,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudApigeeV1UpdateErrorCode { OK = 0, CANCELLED = 1, UNKNOWN = 2, INVALID_ARGUMENT = 3, DEADLINE_EXCEEDED = 4, NOT_FOUND = 5, ALREADY_EXISTS = 6, PERMISSION_DENIED = 7, UNAUTHENTICATED = 8, RESOURCE_EXHAUSTED = 9, FAILED_PRECONDITION = 10, ABORTED = 11, OUT_OF_RANGE = 12, UNIMPLEMENTED = 13, INTERNAL = 14, UNAVAILABLE = 15, DATA_LOSS = 16 }
+	export enum GoogleCloudApigeeV1UpdateErrorCode { OK = 'OK', CANCELLED = 'CANCELLED', UNKNOWN = 'UNKNOWN', INVALID_ARGUMENT = 'INVALID_ARGUMENT', DEADLINE_EXCEEDED = 'DEADLINE_EXCEEDED', NOT_FOUND = 'NOT_FOUND', ALREADY_EXISTS = 'ALREADY_EXISTS', PERMISSION_DENIED = 'PERMISSION_DENIED', UNAUTHENTICATED = 'UNAUTHENTICATED', RESOURCE_EXHAUSTED = 'RESOURCE_EXHAUSTED', FAILED_PRECONDITION = 'FAILED_PRECONDITION', ABORTED = 'ABORTED', OUT_OF_RANGE = 'OUT_OF_RANGE', UNIMPLEMENTED = 'UNIMPLEMENTED', INTERNAL = 'INTERNAL', UNAVAILABLE = 'UNAVAILABLE', DATA_LOSS = 'DATA_LOSS' }
 
 
 	/** Placeholder for future enhancements to status reporting protocol */
@@ -9648,7 +9648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -11234,9 +11234,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Apigee_organizations_sites_apicategories_deleteRetention { DELETION_RETENTION_UNSPECIFIED = 0, MINIMUM = 1 }
+	export enum Apigee_organizations_sites_apicategories_deleteRetention { DELETION_RETENTION_UNSPECIFIED = 'DELETION_RETENTION_UNSPECIFIED', MINIMUM = 'MINIMUM' }
 
-	export enum Apigee_organizations_sites_apicategories_getFormat { INGRESS_CONFIG_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Apigee_organizations_sites_apicategories_getFormat { INGRESS_CONFIG_VIEW_UNSPECIFIED = 'INGRESS_CONFIG_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

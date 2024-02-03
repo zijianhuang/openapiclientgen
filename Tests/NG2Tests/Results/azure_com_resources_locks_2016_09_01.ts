@@ -126,7 +126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagementLockPropertiesLevel { NotSpecified = 0, CanNotDelete = 1, ReadOnly = 2 }
+	export enum ManagementLockPropertiesLevel { NotSpecified = 'NotSpecified', CanNotDelete = 'CanNotDelete', ReadOnly = 'ReadOnly' }
 
 
 	/** Microsoft.Authorization operation */

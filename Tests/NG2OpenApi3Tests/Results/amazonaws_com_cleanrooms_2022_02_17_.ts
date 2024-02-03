@@ -121,7 +121,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisFormat { SQL = 0 }
+	export enum AnalysisFormat { SQL = 'SQL' }
 
 
 	/** The structure that defines the body of the analysis template. */
@@ -171,7 +171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterType { SMALLINT = 0, INTEGER = 1, BIGINT = 2, DECIMAL = 3, REAL = 4, DOUBLE_PRECISION = 5, BOOLEAN = 6, CHAR = 7, VARCHAR = 8, DATE = 9, TIMESTAMP = 10, TIMESTAMPTZ = 11, TIME = 12, TIMETZ = 13, VARBYTE = 14 }
+	export enum ParameterType { SMALLINT = 'SMALLINT', INTEGER = 'INTEGER', BIGINT = 'BIGINT', DECIMAL = 'DECIMAL', REAL = 'REAL', DOUBLE_PRECISION = 'DOUBLE_PRECISION', BOOLEAN = 'BOOLEAN', CHAR = 'CHAR', VARCHAR = 'VARCHAR', DATE = 'DATE', TIMESTAMP = 'TIMESTAMP', TIMESTAMPTZ = 'TIMESTAMPTZ', TIME = 'TIME', TIMETZ = 'TIMETZ', VARBYTE = 'VARBYTE' }
 
 
 	/** Details of errors thrown by the call to retrieve multiple analysis templates within a collaboration by their identifiers. */
@@ -384,11 +384,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisRuleType { AGGREGATION = 0, LIST = 1, CUSTOM = 2 }
+	export enum AnalysisRuleType { AGGREGATION = 'AGGREGATION', LIST = 'LIST', CUSTOM = 'CUSTOM' }
 
-	export enum AnalysisMethod { DIRECT_QUERY = 0 }
+	export enum AnalysisMethod { DIRECT_QUERY = 'DIRECT_QUERY' }
 
-	export enum SchemaType { TABLE = 0 }
+	export enum SchemaType { TABLE = 'TABLE' }
 
 
 	/** An error describing why a schema could not be fetched. */
@@ -652,7 +652,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberStatus { INVITED = 0, ACTIVE = 1, LEFT = 2, REMOVED = 3 }
+	export enum MemberStatus { INVITED = 'INVITED', ACTIVE = 'ACTIVE', LEFT = 'LEFT', REMOVED = 'REMOVED' }
 
 
 	/** The settings for client-side encryption for cryptographic computing. */
@@ -696,7 +696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CollaborationQueryLogStatus { ENABLED = 0, DISABLED = 1 }
+	export enum CollaborationQueryLogStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Basic metadata used to construct a new member. */
@@ -729,7 +729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberAbility { CAN_QUERY = 0, CAN_RECEIVE_RESULTS = 1 }
+	export enum MemberAbility { CAN_QUERY = 'CAN_QUERY', CAN_RECEIVE_RESULTS = 'CAN_RECEIVE_RESULTS' }
 
 	export interface CreateConfiguredTableOutput {
 
@@ -855,7 +855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfiguredTableAnalysisRuleType { AGGREGATION = 0, LIST = 1, CUSTOM = 2 }
+	export enum ConfiguredTableAnalysisRuleType { AGGREGATION = 'AGGREGATION', LIST = 'LIST', CUSTOM = 'CUSTOM' }
 
 	export interface CreateConfiguredTableAnalysisRuleOutput {
 
@@ -977,7 +977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JoinOperator { OR = 0, AND = 1 }
+	export enum JoinOperator { OR = 'OR', AND = 'AND' }
 
 
 	/** A type of analysis rule that enables query structure and specified queries that produce aggregate statistics. */
@@ -1036,11 +1036,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregateFunctionName { SUM = 0, SUM_DISTINCT = 1, COUNT = 2, COUNT_DISTINCT = 3, AVG = 4 }
+	export enum AggregateFunctionName { SUM = 'SUM', SUM_DISTINCT = 'SUM_DISTINCT', COUNT = 'COUNT', COUNT_DISTINCT = 'COUNT_DISTINCT', AVG = 'AVG' }
 
-	export enum JoinRequiredOption { QUERY_RUNNER = 0 }
+	export enum JoinRequiredOption { QUERY_RUNNER = 'QUERY_RUNNER' }
 
-	export enum ScalarFunctions { TRUNC = 0, ABS = 1, CEILING = 2, FLOOR = 3, LN = 4, LOG = 5, ROUND = 6, SQRT = 7, CAST = 8, LOWER = 9, RTRIM = 10, UPPER = 11, COALESCE = 12 }
+	export enum ScalarFunctions { TRUNC = 'TRUNC', ABS = 'ABS', CEILING = 'CEILING', FLOOR = 'FLOOR', LN = 'LN', LOG = 'LOG', ROUND = 'ROUND', SQRT = 'SQRT', CAST = 'CAST', LOWER = 'LOWER', RTRIM = 'RTRIM', UPPER = 'UPPER', COALESCE = 'COALESCE' }
 
 
 	/** Constraint on query output removing output rows that do not meet a minimum number of distinct values of a specified column. */
@@ -1077,7 +1077,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationType { COUNT_DISTINCT = 0 }
+	export enum AggregationType { COUNT_DISTINCT = 'COUNT_DISTINCT' }
 
 
 	/** A type of analysis rule that enables the table owner to approve custom SQL queries on their configured tables. */
@@ -1304,7 +1304,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipStatus { ACTIVE = 0, REMOVED = 1, COLLABORATION_DELETED = 2 }
+	export enum MembershipStatus { ACTIVE = 'ACTIVE', REMOVED = 'REMOVED', COLLABORATION_DELETED = 'COLLABORATION_DELETED' }
 
 	export interface DeleteAnalysisTemplateOutput {
 	}
@@ -1577,7 +1577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtectedQueryStatus { SUBMITTED = 0, STARTED = 1, CANCELLED = 2, CANCELLING = 3, FAILED = 4, SUCCESS = 5, TIMED_OUT = 6 }
+	export enum ProtectedQueryStatus { SUBMITTED = 'SUBMITTED', STARTED = 'STARTED', CANCELLED = 'CANCELLED', CANCELLING = 'CANCELLING', FAILED = 'FAILED', SUCCESS = 'SUCCESS', TIMED_OUT = 'TIMED_OUT' }
 
 
 	/** Contains configurations for protected query results. */
@@ -1642,7 +1642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResultFormat { CSV = 0, PARQUET = 1 }
+	export enum ResultFormat { CSV = 'CSV', PARQUET = 'PARQUET' }
 
 
 	/** Contains statistics about the execution of the protected query. */
@@ -2964,7 +2964,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipQueryLogStatus { ENABLED = 0, DISABLED = 1 }
+	export enum MembershipQueryLogStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface CreateMembershipInput {
 
@@ -3061,7 +3061,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterableMemberStatus { INVITED = 0, ACTIVE = 1 }
+	export enum FilterableMemberStatus { INVITED = 'INVITED', ACTIVE = 'ACTIVE' }
 
 	export interface GetAnalysisTemplateInput {
 	}
@@ -3263,7 +3263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtectedQueryType { SQL = 0 }
+	export enum ProtectedQueryType { SQL = 'SQL' }
 
 	export interface StartProtectedQueryInput {
 
@@ -3301,7 +3301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetProtectedQueryStatus { CANCELLED = 0 }
+	export enum TargetProtectedQueryStatus { CANCELLED = 'CANCELLED' }
 
 	export interface UntagResourceInput {
 	}

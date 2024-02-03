@@ -53,9 +53,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AcceptType { DELIVERED = 0, READ = 1 }
+	export enum AcceptType { DELIVERED = 'DELIVERED', READ = 'READ' }
 
-	export enum AcceptCodeValidation { IGNORE = 0, ENFORCE = 1 }
+	export enum AcceptCodeValidation { IGNORE = 'IGNORE', ENFORCE = 'ENFORCE' }
 
 	export interface AccessDeniedException {
 	}
@@ -192,7 +192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactType { PERSONAL = 0, ESCALATION = 1, ONCALL_SCHEDULE = 2 }
+	export enum ContactType { PERSONAL = 'PERSONAL', ESCALATION = 'ESCALATION', ONCALL_SCHEDULE = 'ONCALL_SCHEDULE' }
 
 
 	/** Information about the stages and on-call rotation teams associated with an escalation plan or engagement plan.  */
@@ -405,7 +405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { SMS = 0, VOICE = 1, EMAIL = 2 }
+	export enum ChannelType { SMS = 'SMS', VOICE = 'VOICE', EMAIL = 'EMAIL' }
 
 
 	/** The details that Incident Manager uses when trying to engage the contact channel. */
@@ -586,7 +586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayOfWeek { MON = 0, TUE = 1, WED = 2, THU = 3, FRI = 4, SAT = 5, SUN = 6 }
+	export enum DayOfWeek { MON = 'MON', TUE = 'TUE', WED = 'WED', THU = 'THU', FRI = 'FRI', SAT = 'SAT', SUN = 'SUN' }
 
 	export interface ShiftCoveragesMap {
 	}
@@ -1056,7 +1056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivationStatus { ACTIVATED = 0, NOT_ACTIVATED = 1 }
+	export enum ActivationStatus { ACTIVATED = 'ACTIVATED', NOT_ACTIVATED = 'NOT_ACTIVATED' }
 
 	export interface GetContactChannelRequest {
 
@@ -1528,7 +1528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReceiptType { DELIVERED = 0, ERROR = 1, READ = 2, SENT = 3, STOP = 4 }
+	export enum ReceiptType { DELIVERED = 'DELIVERED', ERROR = 'ERROR', READ = 'READ', SENT = 'SENT', STOP = 'STOP' }
 
 	export interface ListPageReceiptsRequest {
 
@@ -1799,7 +1799,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShiftType { REGULAR = 0, OVERRIDDEN = 1 }
+	export enum ShiftType { REGULAR = 'REGULAR', OVERRIDDEN = 'OVERRIDDEN' }
 
 
 	/** Information about overrides to an on-call rotation shift. */
@@ -2835,83 +2835,83 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptPageX_Amz_Target { 'SSMContacts.AcceptPage' = 0 }
+	export enum AcceptPageX_Amz_Target { 'SSMContacts.AcceptPage' = 'SSMContacts.AcceptPage' }
 
-	export enum ActivateContactChannelX_Amz_Target { 'SSMContacts.ActivateContactChannel' = 0 }
+	export enum ActivateContactChannelX_Amz_Target { 'SSMContacts.ActivateContactChannel' = 'SSMContacts.ActivateContactChannel' }
 
-	export enum CreateContactX_Amz_Target { 'SSMContacts.CreateContact' = 0 }
+	export enum CreateContactX_Amz_Target { 'SSMContacts.CreateContact' = 'SSMContacts.CreateContact' }
 
-	export enum CreateContactChannelX_Amz_Target { 'SSMContacts.CreateContactChannel' = 0 }
+	export enum CreateContactChannelX_Amz_Target { 'SSMContacts.CreateContactChannel' = 'SSMContacts.CreateContactChannel' }
 
-	export enum CreateRotationX_Amz_Target { 'SSMContacts.CreateRotation' = 0 }
+	export enum CreateRotationX_Amz_Target { 'SSMContacts.CreateRotation' = 'SSMContacts.CreateRotation' }
 
-	export enum CreateRotationOverrideX_Amz_Target { 'SSMContacts.CreateRotationOverride' = 0 }
+	export enum CreateRotationOverrideX_Amz_Target { 'SSMContacts.CreateRotationOverride' = 'SSMContacts.CreateRotationOverride' }
 
-	export enum DeactivateContactChannelX_Amz_Target { 'SSMContacts.DeactivateContactChannel' = 0 }
+	export enum DeactivateContactChannelX_Amz_Target { 'SSMContacts.DeactivateContactChannel' = 'SSMContacts.DeactivateContactChannel' }
 
-	export enum DeleteContactX_Amz_Target { 'SSMContacts.DeleteContact' = 0 }
+	export enum DeleteContactX_Amz_Target { 'SSMContacts.DeleteContact' = 'SSMContacts.DeleteContact' }
 
-	export enum DeleteContactChannelX_Amz_Target { 'SSMContacts.DeleteContactChannel' = 0 }
+	export enum DeleteContactChannelX_Amz_Target { 'SSMContacts.DeleteContactChannel' = 'SSMContacts.DeleteContactChannel' }
 
-	export enum DeleteRotationX_Amz_Target { 'SSMContacts.DeleteRotation' = 0 }
+	export enum DeleteRotationX_Amz_Target { 'SSMContacts.DeleteRotation' = 'SSMContacts.DeleteRotation' }
 
-	export enum DeleteRotationOverrideX_Amz_Target { 'SSMContacts.DeleteRotationOverride' = 0 }
+	export enum DeleteRotationOverrideX_Amz_Target { 'SSMContacts.DeleteRotationOverride' = 'SSMContacts.DeleteRotationOverride' }
 
-	export enum DescribeEngagementX_Amz_Target { 'SSMContacts.DescribeEngagement' = 0 }
+	export enum DescribeEngagementX_Amz_Target { 'SSMContacts.DescribeEngagement' = 'SSMContacts.DescribeEngagement' }
 
-	export enum DescribePageX_Amz_Target { 'SSMContacts.DescribePage' = 0 }
+	export enum DescribePageX_Amz_Target { 'SSMContacts.DescribePage' = 'SSMContacts.DescribePage' }
 
-	export enum GetContactX_Amz_Target { 'SSMContacts.GetContact' = 0 }
+	export enum GetContactX_Amz_Target { 'SSMContacts.GetContact' = 'SSMContacts.GetContact' }
 
-	export enum GetContactChannelX_Amz_Target { 'SSMContacts.GetContactChannel' = 0 }
+	export enum GetContactChannelX_Amz_Target { 'SSMContacts.GetContactChannel' = 'SSMContacts.GetContactChannel' }
 
-	export enum GetContactPolicyX_Amz_Target { 'SSMContacts.GetContactPolicy' = 0 }
+	export enum GetContactPolicyX_Amz_Target { 'SSMContacts.GetContactPolicy' = 'SSMContacts.GetContactPolicy' }
 
-	export enum GetRotationX_Amz_Target { 'SSMContacts.GetRotation' = 0 }
+	export enum GetRotationX_Amz_Target { 'SSMContacts.GetRotation' = 'SSMContacts.GetRotation' }
 
-	export enum GetRotationOverrideX_Amz_Target { 'SSMContacts.GetRotationOverride' = 0 }
+	export enum GetRotationOverrideX_Amz_Target { 'SSMContacts.GetRotationOverride' = 'SSMContacts.GetRotationOverride' }
 
-	export enum ListContactChannelsX_Amz_Target { 'SSMContacts.ListContactChannels' = 0 }
+	export enum ListContactChannelsX_Amz_Target { 'SSMContacts.ListContactChannels' = 'SSMContacts.ListContactChannels' }
 
-	export enum ListContactsX_Amz_Target { 'SSMContacts.ListContacts' = 0 }
+	export enum ListContactsX_Amz_Target { 'SSMContacts.ListContacts' = 'SSMContacts.ListContacts' }
 
-	export enum ListEngagementsX_Amz_Target { 'SSMContacts.ListEngagements' = 0 }
+	export enum ListEngagementsX_Amz_Target { 'SSMContacts.ListEngagements' = 'SSMContacts.ListEngagements' }
 
-	export enum ListPageReceiptsX_Amz_Target { 'SSMContacts.ListPageReceipts' = 0 }
+	export enum ListPageReceiptsX_Amz_Target { 'SSMContacts.ListPageReceipts' = 'SSMContacts.ListPageReceipts' }
 
-	export enum ListPageResolutionsX_Amz_Target { 'SSMContacts.ListPageResolutions' = 0 }
+	export enum ListPageResolutionsX_Amz_Target { 'SSMContacts.ListPageResolutions' = 'SSMContacts.ListPageResolutions' }
 
-	export enum ListPagesByContactX_Amz_Target { 'SSMContacts.ListPagesByContact' = 0 }
+	export enum ListPagesByContactX_Amz_Target { 'SSMContacts.ListPagesByContact' = 'SSMContacts.ListPagesByContact' }
 
-	export enum ListPagesByEngagementX_Amz_Target { 'SSMContacts.ListPagesByEngagement' = 0 }
+	export enum ListPagesByEngagementX_Amz_Target { 'SSMContacts.ListPagesByEngagement' = 'SSMContacts.ListPagesByEngagement' }
 
-	export enum ListPreviewRotationShiftsX_Amz_Target { 'SSMContacts.ListPreviewRotationShifts' = 0 }
+	export enum ListPreviewRotationShiftsX_Amz_Target { 'SSMContacts.ListPreviewRotationShifts' = 'SSMContacts.ListPreviewRotationShifts' }
 
-	export enum ListRotationOverridesX_Amz_Target { 'SSMContacts.ListRotationOverrides' = 0 }
+	export enum ListRotationOverridesX_Amz_Target { 'SSMContacts.ListRotationOverrides' = 'SSMContacts.ListRotationOverrides' }
 
-	export enum ListRotationShiftsX_Amz_Target { 'SSMContacts.ListRotationShifts' = 0 }
+	export enum ListRotationShiftsX_Amz_Target { 'SSMContacts.ListRotationShifts' = 'SSMContacts.ListRotationShifts' }
 
-	export enum ListRotationsX_Amz_Target { 'SSMContacts.ListRotations' = 0 }
+	export enum ListRotationsX_Amz_Target { 'SSMContacts.ListRotations' = 'SSMContacts.ListRotations' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'SSMContacts.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'SSMContacts.ListTagsForResource' = 'SSMContacts.ListTagsForResource' }
 
-	export enum PutContactPolicyX_Amz_Target { 'SSMContacts.PutContactPolicy' = 0 }
+	export enum PutContactPolicyX_Amz_Target { 'SSMContacts.PutContactPolicy' = 'SSMContacts.PutContactPolicy' }
 
-	export enum SendActivationCodeX_Amz_Target { 'SSMContacts.SendActivationCode' = 0 }
+	export enum SendActivationCodeX_Amz_Target { 'SSMContacts.SendActivationCode' = 'SSMContacts.SendActivationCode' }
 
-	export enum StartEngagementX_Amz_Target { 'SSMContacts.StartEngagement' = 0 }
+	export enum StartEngagementX_Amz_Target { 'SSMContacts.StartEngagement' = 'SSMContacts.StartEngagement' }
 
-	export enum StopEngagementX_Amz_Target { 'SSMContacts.StopEngagement' = 0 }
+	export enum StopEngagementX_Amz_Target { 'SSMContacts.StopEngagement' = 'SSMContacts.StopEngagement' }
 
-	export enum TagResourceX_Amz_Target { 'SSMContacts.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'SSMContacts.TagResource' = 'SSMContacts.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'SSMContacts.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'SSMContacts.UntagResource' = 'SSMContacts.UntagResource' }
 
-	export enum UpdateContactX_Amz_Target { 'SSMContacts.UpdateContact' = 0 }
+	export enum UpdateContactX_Amz_Target { 'SSMContacts.UpdateContact' = 'SSMContacts.UpdateContact' }
 
-	export enum UpdateContactChannelX_Amz_Target { 'SSMContacts.UpdateContactChannel' = 0 }
+	export enum UpdateContactChannelX_Amz_Target { 'SSMContacts.UpdateContactChannel' = 'SSMContacts.UpdateContactChannel' }
 
-	export enum UpdateRotationX_Amz_Target { 'SSMContacts.UpdateRotation' = 0 }
+	export enum UpdateRotationX_Amz_Target { 'SSMContacts.UpdateRotation' = 'SSMContacts.UpdateRotation' }
 
 }
 

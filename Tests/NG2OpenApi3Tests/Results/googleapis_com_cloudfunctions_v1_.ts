@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Security patches are applied automatically to the runtime without requiring the function to be redeployed. */
@@ -423,7 +423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudFunctionDockerRegistry { DOCKER_REGISTRY_UNSPECIFIED = 0, CONTAINER_REGISTRY = 1, ARTIFACT_REGISTRY = 2 }
+	export enum CloudFunctionDockerRegistry { DOCKER_REGISTRY_UNSPECIFIED = 'DOCKER_REGISTRY_UNSPECIFIED', CONTAINER_REGISTRY = 'CONTAINER_REGISTRY', ARTIFACT_REGISTRY = 'ARTIFACT_REGISTRY' }
 
 
 	/** Describes EventTrigger, used to request events be sent from another service. */
@@ -522,9 +522,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpsTriggerSecurityLevel { SECURITY_LEVEL_UNSPECIFIED = 0, SECURE_ALWAYS = 1, SECURE_OPTIONAL = 2 }
+	export enum HttpsTriggerSecurityLevel { SECURITY_LEVEL_UNSPECIFIED = 'SECURITY_LEVEL_UNSPECIFIED', SECURE_ALWAYS = 'SECURE_ALWAYS', SECURE_OPTIONAL = 'SECURE_OPTIONAL' }
 
-	export enum CloudFunctionIngressSettings { INGRESS_SETTINGS_UNSPECIFIED = 0, ALLOW_ALL = 1, ALLOW_INTERNAL_ONLY = 2, ALLOW_INTERNAL_AND_GCLB = 3 }
+	export enum CloudFunctionIngressSettings { INGRESS_SETTINGS_UNSPECIFIED = 'INGRESS_SETTINGS_UNSPECIFIED', ALLOW_ALL = 'ALLOW_ALL', ALLOW_INTERNAL_ONLY = 'ALLOW_INTERNAL_ONLY', ALLOW_INTERNAL_AND_GCLB = 'ALLOW_INTERNAL_AND_GCLB' }
 
 
 	/** Security patches are only applied when a function is redeployed. */
@@ -683,9 +683,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudFunctionStatus { CLOUD_FUNCTION_STATUS_UNSPECIFIED = 0, ACTIVE = 1, OFFLINE = 2, DEPLOY_IN_PROGRESS = 3, DELETE_IN_PROGRESS = 4, UNKNOWN = 5 }
+	export enum CloudFunctionStatus { CLOUD_FUNCTION_STATUS_UNSPECIFIED = 'CLOUD_FUNCTION_STATUS_UNSPECIFIED', ACTIVE = 'ACTIVE', OFFLINE = 'OFFLINE', DEPLOY_IN_PROGRESS = 'DEPLOY_IN_PROGRESS', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', UNKNOWN = 'UNKNOWN' }
 
-	export enum CloudFunctionVpcConnectorEgressSettings { VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED = 0, PRIVATE_RANGES_ONLY = 1, ALL_TRAFFIC = 2 }
+	export enum CloudFunctionVpcConnectorEgressSettings { VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED = 'VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED', PRIVATE_RANGES_ONLY = 'PRIVATE_RANGES_ONLY', ALL_TRAFFIC = 'ALL_TRAFFIC' }
 
 
 	/** Request of `GenerateDownloadUrl` method. */
@@ -875,7 +875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudFunctionsV2OperationMetadataOperationType { OPERATIONTYPE_UNSPECIFIED = 0, CREATE_FUNCTION = 1, UPDATE_FUNCTION = 2, DELETE_FUNCTION = 3, REDIRECT_FUNCTION_UPGRADE_TRAFFIC = 4, ROLLBACK_FUNCTION_UPGRADE_TRAFFIC = 5, SETUP_FUNCTION_UPGRADE_CONFIG = 6, ABORT_FUNCTION_UPGRADE = 7, COMMIT_FUNCTION_UPGRADE = 8 }
+	export enum GoogleCloudFunctionsV2OperationMetadataOperationType { OPERATIONTYPE_UNSPECIFIED = 'OPERATIONTYPE_UNSPECIFIED', CREATE_FUNCTION = 'CREATE_FUNCTION', UPDATE_FUNCTION = 'UPDATE_FUNCTION', DELETE_FUNCTION = 'DELETE_FUNCTION', REDIRECT_FUNCTION_UPGRADE_TRAFFIC = 'REDIRECT_FUNCTION_UPGRADE_TRAFFIC', ROLLBACK_FUNCTION_UPGRADE_TRAFFIC = 'ROLLBACK_FUNCTION_UPGRADE_TRAFFIC', SETUP_FUNCTION_UPGRADE_CONFIG = 'SETUP_FUNCTION_UPGRADE_CONFIG', ABORT_FUNCTION_UPGRADE = 'ABORT_FUNCTION_UPGRADE', COMMIT_FUNCTION_UPGRADE = 'COMMIT_FUNCTION_UPGRADE' }
 
 
 	/** Each Stage of the deployment process */
@@ -929,9 +929,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudFunctionsV2StageName { NAME_UNSPECIFIED = 0, ARTIFACT_REGISTRY = 1, BUILD = 2, SERVICE = 3, TRIGGER = 4, SERVICE_ROLLBACK = 5, TRIGGER_ROLLBACK = 6 }
+	export enum GoogleCloudFunctionsV2StageName { NAME_UNSPECIFIED = 'NAME_UNSPECIFIED', ARTIFACT_REGISTRY = 'ARTIFACT_REGISTRY', BUILD = 'BUILD', SERVICE = 'SERVICE', TRIGGER = 'TRIGGER', SERVICE_ROLLBACK = 'SERVICE_ROLLBACK', TRIGGER_ROLLBACK = 'TRIGGER_ROLLBACK' }
 
-	export enum GoogleCloudFunctionsV2StageState { STATE_UNSPECIFIED = 0, NOT_STARTED = 1, IN_PROGRESS = 2, COMPLETE = 3 }
+	export enum GoogleCloudFunctionsV2StageState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE' }
 
 
 	/** Informational messages about the state of the Cloud Function or Operation. */
@@ -968,7 +968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudFunctionsV2StateMessageSeverity { SEVERITY_UNSPECIFIED = 0, ERROR = 1, WARNING = 2, INFO = 3 }
+	export enum GoogleCloudFunctionsV2StateMessageSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', ERROR = 'ERROR', WARNING = 'WARNING', INFO = 'INFO' }
 
 
 	/** Extra GCF specific location information. */
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationMetadataV1Type { OPERATION_UNSPECIFIED = 0, CREATE_FUNCTION = 1, UPDATE_FUNCTION = 2, DELETE_FUNCTION = 3 }
+	export enum OperationMetadataV1Type { OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED', CREATE_FUNCTION = 'CREATE_FUNCTION', UPDATE_FUNCTION = 'UPDATE_FUNCTION', DELETE_FUNCTION = 'DELETE_FUNCTION' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */

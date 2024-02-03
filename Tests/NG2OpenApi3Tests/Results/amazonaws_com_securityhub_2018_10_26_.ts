@@ -168,7 +168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StandardsStatus { PENDING = 0, READY = 1, FAILED = 2, DELETING = 3, INCOMPLETE = 4 }
+	export enum StandardsStatus { PENDING = 'PENDING', READY = 'READY', FAILED = 'FAILED', DELETING = 'DELETING', INCOMPLETE = 'INCOMPLETE' }
 
 
 	/** The reason for the current status of a standard subscription. */
@@ -191,7 +191,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusReasonCode { NO_AVAILABLE_CONFIGURATION_RECORDER = 0, INTERNAL_ERROR = 1 }
+	export enum StatusReasonCode { NO_AVAILABLE_CONFIGURATION_RECORDER = 'NO_AVAILABLE_CONFIGURATION_RECORDER', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 	export interface BatchEnableStandardsResponse {
 		StandardsSubscriptions?: Array<StandardsSubscription>;
@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleStatus { ENABLED = 0, DISABLED = 1 }
+	export enum RuleStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/**  The criteria that determine which findings a rule applies to.  */
@@ -352,7 +352,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StringFilterComparison { EQUALS = 0, PREFIX = 1, NOT_EQUALS = 2, PREFIX_NOT_EQUALS = 3, CONTAINS = 4, NOT_CONTAINS = 5 }
+	export enum StringFilterComparison { EQUALS = 'EQUALS', PREFIX = 'PREFIX', NOT_EQUALS = 'NOT_EQUALS', PREFIX_NOT_EQUALS = 'PREFIX_NOT_EQUALS', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS' }
 
 
 	/** A date filter for querying findings. */
@@ -395,7 +395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DateRangeUnit { DAYS = 0 }
+	export enum DateRangeUnit { DAYS = 'DAYS' }
 
 
 	/** A number filter for querying findings. */
@@ -443,7 +443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MapFilterComparison { EQUALS = 0, NOT_EQUALS = 1, CONTAINS = 2, NOT_CONTAINS = 3 }
+	export enum MapFilterComparison { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS' }
 
 
 	/**  One or more actions to update finding fields if a finding matches the defined criteria of the rule.  */
@@ -463,7 +463,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomationRulesActionType { FINDING_FIELDS_UPDATE = 0 }
+	export enum AutomationRulesActionType { FINDING_FIELDS_UPDATE = 'FINDING_FIELDS_UPDATE' }
 
 
 	/**  Identifies the finding fields that the automation rule action updates when a finding matches the defined criteria.  */
@@ -551,9 +551,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SeverityLabel { INFORMATIONAL = 0, LOW = 1, MEDIUM = 2, HIGH = 3, CRITICAL = 4 }
+	export enum SeverityLabel { INFORMATIONAL = 'INFORMATIONAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL' }
 
-	export enum VerificationState { UNKNOWN = 0, TRUE_POSITIVE = 1, FALSE_POSITIVE = 2, BENIGN_POSITIVE = 3 }
+	export enum VerificationState { UNKNOWN = 'UNKNOWN', TRUE_POSITIVE = 'TRUE_POSITIVE', FALSE_POSITIVE = 'FALSE_POSITIVE', BENIGN_POSITIVE = 'BENIGN_POSITIVE' }
 
 	export interface FieldMap {
 	}
@@ -582,7 +582,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowStatus { NEW = 0, NOTIFIED = 1, RESOLVED = 2, SUPPRESSED = 3 }
+	export enum WorkflowStatus { NEW = 'NEW', NOTIFIED = 'NOTIFIED', RESOLVED = 'RESOLVED', SUPPRESSED = 'SUPPRESSED' }
 
 
 	/** Details about a related finding. */
@@ -699,7 +699,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SeverityRating { LOW = 0, MEDIUM = 1, HIGH = 2, CRITICAL = 3 }
+	export enum SeverityRating { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL' }
 
 
 	/**  Provides details about a security control for which a response couldn't be returned.  */
@@ -732,7 +732,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnprocessedErrorCode { INVALID_INPUT = 0, ACCESS_DENIED = 1, NOT_FOUND = 2, LIMIT_EXCEEDED = 3 }
+	export enum UnprocessedErrorCode { INVALID_INPUT = 'INVALID_INPUT', ACCESS_DENIED = 'ACCESS_DENIED', NOT_FOUND = 'NOT_FOUND', LIMIT_EXCEEDED = 'LIMIT_EXCEEDED' }
 
 	export interface BatchGetStandardsControlAssociationsResponse {
 
@@ -1145,9 +1145,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MalwareType { ADWARE = 0, BLENDED_THREAT = 1, BOTNET_AGENT = 2, COIN_MINER = 3, EXPLOIT_KIT = 4, KEYLOGGER = 5, MACRO = 6, POTENTIALLY_UNWANTED = 7, SPYWARE = 8, RANSOMWARE = 9, REMOTE_ACCESS = 10, ROOTKIT = 11, TROJAN = 12, VIRUS = 13, WORM = 14 }
+	export enum MalwareType { ADWARE = 'ADWARE', BLENDED_THREAT = 'BLENDED_THREAT', BOTNET_AGENT = 'BOTNET_AGENT', COIN_MINER = 'COIN_MINER', EXPLOIT_KIT = 'EXPLOIT_KIT', KEYLOGGER = 'KEYLOGGER', MACRO = 'MACRO', POTENTIALLY_UNWANTED = 'POTENTIALLY_UNWANTED', SPYWARE = 'SPYWARE', RANSOMWARE = 'RANSOMWARE', REMOTE_ACCESS = 'REMOTE_ACCESS', ROOTKIT = 'ROOTKIT', TROJAN = 'TROJAN', VIRUS = 'VIRUS', WORM = 'WORM' }
 
-	export enum MalwareState { OBSERVED = 0, REMOVAL_FAILED = 1, REMOVED = 2 }
+	export enum MalwareState { OBSERVED = 'OBSERVED', REMOVAL_FAILED = 'REMOVAL_FAILED', REMOVED = 'REMOVED' }
 
 
 	/** The details of network-related information about a finding. */
@@ -1197,7 +1197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkDirection { IN = 0, OUT = 1 }
+	export enum NetworkDirection { IN = 'IN', OUT = 'OUT' }
 
 
 	/** A range of ports. */
@@ -1390,9 +1390,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ThreatIntelIndicatorType { DOMAIN = 0, EMAIL_ADDRESS = 1, HASH_MD5 = 2, HASH_SHA1 = 3, HASH_SHA256 = 4, HASH_SHA512 = 5, IPV4_ADDRESS = 6, IPV6_ADDRESS = 7, MUTEX = 8, PROCESS = 9, URL = 10 }
+	export enum ThreatIntelIndicatorType { DOMAIN = 'DOMAIN', EMAIL_ADDRESS = 'EMAIL_ADDRESS', HASH_MD5 = 'HASH_MD5', HASH_SHA1 = 'HASH_SHA1', HASH_SHA256 = 'HASH_SHA256', HASH_SHA512 = 'HASH_SHA512', IPV4_ADDRESS = 'IPV4_ADDRESS', IPV6_ADDRESS = 'IPV6_ADDRESS', MUTEX = 'MUTEX', PROCESS = 'PROCESS', URL = 'URL' }
 
-	export enum ThreatIntelIndicatorCategory { BACKDOOR = 0, CARD_STEALER = 1, COMMAND_AND_CONTROL = 2, DROP_SITE = 3, EXPLOIT_SITE = 4, KEYLOGGER = 5 }
+	export enum ThreatIntelIndicatorCategory { BACKDOOR = 'BACKDOOR', CARD_STEALER = 'CARD_STEALER', COMMAND_AND_CONTROL = 'COMMAND_AND_CONTROL', DROP_SITE = 'DROP_SITE', EXPLOIT_SITE = 'EXPLOIT_SITE', KEYLOGGER = 'KEYLOGGER' }
 
 
 	/** A resource related to a finding. */
@@ -1434,7 +1434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Partition { aws = 0, 'aws-cn' = 1, 'aws-us-gov' = 2 }
+	export enum Partition { aws = 'aws', 'aws-cn' = 'aws-cn', 'aws-us-gov' = 'aws-us-gov' }
 
 
 	/** Provides details about sensitive data that was detected on a resource. */
@@ -4273,7 +4273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsS3BucketNotificationConfigurationS3KeyFilterRuleName { Prefix = 0, Suffix = 1 }
+	export enum AwsS3BucketNotificationConfigurationS3KeyFilterRuleName { Prefix = 'Prefix', Suffix = 'Suffix' }
 
 
 	/** Describes the versioning state of an S3 bucket. */
@@ -4475,7 +4475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsIamAccessKeyStatus { Active = 0, Inactive = 1 }
+	export enum AwsIamAccessKeyStatus { Active = 'Active', Inactive = 'Inactive' }
 
 
 	/** Provides information about the session that the key was used for. */
@@ -14329,7 +14329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceStatus { PASSED = 0, WARNING = 1, FAILED = 2, NOT_AVAILABLE = 3 }
+	export enum ComplianceStatus { PASSED = 'PASSED', WARNING = 'WARNING', FAILED = 'FAILED', NOT_AVAILABLE = 'NOT_AVAILABLE' }
 
 
 	/** Provides additional context for the value of <code>Compliance.Status</code>. */
@@ -14374,7 +14374,7 @@ export namespace MyNS {
 
 
 	/** This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel. */
-	export enum WorkflowState { NEW = 0, ASSIGNED = 1, IN_PROGRESS = 2, DEFERRED = 3, RESOLVED = 4 }
+	export enum WorkflowState { NEW = 'NEW', ASSIGNED = 'ASSIGNED', IN_PROGRESS = 'IN_PROGRESS', DEFERRED = 'DEFERRED', RESOLVED = 'RESOLVED' }
 
 
 	/** Provides information about the status of the investigation into a finding. */
@@ -14393,7 +14393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordState { ACTIVE = 0, ARCHIVED = 1 }
+	export enum RecordState { ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED' }
 
 
 	/** A user-defined note added to a finding. */
@@ -14586,7 +14586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VulnerabilityFixAvailable { YES = 0, NO = 1, PARTIAL = 2 }
+	export enum VulnerabilityFixAvailable { YES = 'YES', NO = 'NO', PARTIAL = 'PARTIAL' }
 
 
 	/** Provides an overview of the patch compliance status for an instance against a selected compliance standard. */
@@ -15531,7 +15531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlFindingGenerator { STANDARD_CONTROL = 0, SECURITY_CONTROL = 1 }
+	export enum ControlFindingGenerator { STANDARD_CONTROL = 'STANDARD_CONTROL', SECURITY_CONTROL = 'SECURITY_CONTROL' }
 
 	export interface DescribeOrganizationConfigurationResponse {
 		AutoEnable?: boolean | null;
@@ -15552,7 +15552,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoEnableStandards { NONE = 0, DEFAULT = 1 }
+	export enum AutoEnableStandards { NONE = 'NONE', DEFAULT = 'DEFAULT' }
 
 	export interface DescribeProductsResponse {
 
@@ -15611,7 +15611,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationType { SEND_FINDINGS_TO_SECURITY_HUB = 0, RECEIVE_FINDINGS_FROM_SECURITY_HUB = 1, UPDATE_FINDINGS_IN_SECURITY_HUB = 2 }
+	export enum IntegrationType { SEND_FINDINGS_TO_SECURITY_HUB = 'SEND_FINDINGS_TO_SECURITY_HUB', RECEIVE_FINDINGS_FROM_SECURITY_HUB = 'RECEIVE_FINDINGS_FROM_SECURITY_HUB', UPDATE_FINDINGS_IN_SECURITY_HUB = 'UPDATE_FINDINGS_IN_SECURITY_HUB' }
 
 	export interface DescribeStandardsResponse {
 		Standards?: Array<Standard>;
@@ -15958,7 +15958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingHistoryUpdateSourceType { BATCH_UPDATE_FINDINGS = 0, BATCH_IMPORT_FINDINGS = 1 }
+	export enum FindingHistoryUpdateSourceType { BATCH_UPDATE_FINDINGS = 'BATCH_UPDATE_FINDINGS', BATCH_IMPORT_FINDINGS = 'BATCH_IMPORT_FINDINGS' }
 
 
 	/**  An array of objects that provides details about a change to a finding, including the Amazon Web Services Security Finding Format (ASFF) field that changed, the value of the field before the change, and the value of the field after the change.  */
@@ -16019,7 +16019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { asc = 0, desc = 1 }
+	export enum SortOrder { asc = 'asc', desc = 'desc' }
 
 	export interface GetInsightResultsResponse {
 
@@ -16502,7 +16502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
+	export enum AdminStatus { ENABLED = 'ENABLED', DISABLE_IN_PROGRESS = 'DISABLE_IN_PROGRESS' }
 
 	export interface ListSecurityControlDefinitionsResponse {
 
@@ -16576,7 +16576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionAvailabilityStatus { AVAILABLE = 0, UNAVAILABLE = 1 }
+	export enum RegionAvailabilityStatus { AVAILABLE = 'AVAILABLE', UNAVAILABLE = 'UNAVAILABLE' }
 
 	export interface ListStandardsControlAssociationsResponse {
 
@@ -16818,7 +16818,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationStatus { ENABLED = 0, DISABLED = 1 }
+	export enum AssociationStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface BatchDeleteAutomationRulesRequest {
 
@@ -16967,7 +16967,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ControlStatus { ENABLED = 0, DISABLED = 1 }
+	export enum ControlStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface CreateActionTargetRequest {
 

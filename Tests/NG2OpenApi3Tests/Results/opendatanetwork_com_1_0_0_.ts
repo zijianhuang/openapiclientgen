@@ -266,11 +266,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Get_values_for_variablesFormat { google = 0 }
+	export enum Get_values_for_variablesFormat { google = 'google' }
 
-	export enum Find_the_relatives_of_an_entityRelation { parent = 0, child = 1, sibling = 2, peer = 3 }
+	export enum Find_the_relatives_of_an_entityRelation { parent = 'parent', child = 'child', sibling = 'sibling', peer = 'peer' }
 
-	export enum Get_suggestionsType { entity = 0, category = 1, publisher = 2, dataset = 3, question = 4 }
+	export enum Get_suggestionsType { entity = 'entity', category = 'category', publisher = 'publisher', dataset = 'dataset', question = 'question' }
 
 }
 

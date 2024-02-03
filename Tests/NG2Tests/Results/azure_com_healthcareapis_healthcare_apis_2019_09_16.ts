@@ -241,7 +241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationResultsDescriptionStatus { Canceled = 0, Succeeded = 1, Failed = 2, Requested = 3, Running = 4 }
+	export enum OperationResultsDescriptionStatus { Canceled = 'Canceled', Succeeded = 'Succeeded', Failed = 'Failed', Requested = 'Requested', Running = 'Running' }
 
 
 	/** The common properties of a service. */
@@ -318,7 +318,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceKind { fhir = 0, 'fhir-Stu3' = 1, 'fhir-R4' = 2 }
+	export enum ResourceKind { fhir = 'fhir', 'fhir-Stu3' = 'fhir-Stu3', 'fhir-R4' = 'fhir-R4' }
 
 
 	/** An access policy entry. */
@@ -510,7 +510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServicesPropertiesProvisioningState { Deleting = 0, Succeeded = 1, Creating = 2, Accepted = 3, Verifying = 4, Updating = 5, Failed = 6, Canceled = 7, Deprovisioned = 8 }
+	export enum ServicesPropertiesProvisioningState { Deleting = 'Deleting', Succeeded = 'Succeeded', Creating = 'Creating', Accepted = 'Accepted', Verifying = 'Verifying', Updating = 'Updating', Failed = 'Failed', Canceled = 'Canceled', Deprovisioned = 'Deprovisioned' }
 
 
 	/** A list of service description objects with a next link. */
@@ -571,7 +571,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServicesNameAvailabilityInfoReason { Invalid = 0, AlreadyExists = 1 }
+	export enum ServicesNameAvailabilityInfoReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The description of the service. */

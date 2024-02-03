@@ -90,7 +90,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorType { AUTHOR_TYPE_UNSPECIFIED = 0, REGULAR_USER = 1, LOCAL_GUIDE = 2, MERCHANT = 3 }
+	export enum AuthorType { AUTHOR_TYPE_UNSPECIFIED = 'AUTHOR_TYPE_UNSPECIFIED', REGULAR_USER = 'REGULAR_USER', LOCAL_GUIDE = 'LOCAL_GUIDE', MERCHANT = 'MERCHANT' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

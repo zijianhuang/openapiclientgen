@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** 'Identifies the action of the MEC host data plane, when a packet matches the trafficFilter.' */
-	export enum Action { DROP = 0, FORWARD_DECAPSULATED = 1, FORWARD_AS_IS = 2, PASSTHROUGH = 3, DUPLICATED_DECAPSULATED = 4, DUPLICATE_AS_IS = 5 }
+	export enum Action { DROP = 'DROP', FORWARD_DECAPSULATED = 'FORWARD_DECAPSULATED', FORWARD_AS_IS = 'FORWARD_AS_IS', PASSTHROUGH = 'PASSTHROUGH', DUPLICATED_DECAPSULATED = 'DUPLICATED_DECAPSULATED', DUPLICATE_AS_IS = 'DUPLICATE_AS_IS' }
 
 	export interface AppD {
 
@@ -279,7 +279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DNSRuleDescriptorIpAddressType { IP_V6 = 0, IP_V4 = 1 }
+	export enum DNSRuleDescriptorIpAddressType { IP_V6 = 'IP_V6', IP_V4 = 'IP_V4' }
 
 	export interface AppExternalCpd {
 
@@ -684,7 +684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterfaceDescriptorInterfaceType { TUNNEL = 0, MAC = 1, IP = 2 }
+	export enum InterfaceDescriptorInterfaceType { TUNNEL = 'TUNNEL', MAC = 'MAC', IP = 'IP' }
 
 	export interface TunnelInfo {
 
@@ -738,9 +738,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TunnelInfoTunnelType { 'GTP-U' = 0, GRE = 1 }
+	export enum TunnelInfoTunnelType { 'GTP-U' = 'GTP-U', GRE = 'GRE' }
 
-	export enum TrafficRuleDescriptorFilterType { FLOW = 0, PACKET = 1 }
+	export enum TrafficRuleDescriptorFilterType { FLOW = 'FLOW', PACKET = 'PACKET' }
 
 	export interface TrafficFilter {
 
@@ -835,15 +835,15 @@ export namespace MyNS {
 
 
 	/** Discriminator for the different notification types */
-	export enum AppPkgNotificationType { AppPackageOnBoarded = 0, AppPacakgeEnabled = 1, AppPacakgeDisabled = 2, AppPackageDeleted = 3 }
+	export enum AppPkgNotificationType { AppPackageOnBoarded = 'AppPackageOnBoarded', AppPacakgeEnabled = 'AppPacakgeEnabled', AppPacakgeDisabled = 'AppPacakgeDisabled', AppPackageDeleted = 'AppPackageDeleted' }
 
 
 	/** Operational state of the onboarded application package: Ã¢â‚¬Â¢ENABLED: the application package can be used for instantiation of new application instances. Ã¢â‚¬Â¢DISABLED: the application package cannot be used for further application instantiation requests. */
-	export enum AppPkgOperationalState { ENABLED = 0, DISABLED = 1 }
+	export enum AppPkgOperationalState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Subscribed notification type. */
-	export enum AppPkgSubscriptionType { AppPackageOnBoarding = 0, AppPacakgeOperationChange = 1, AppPackageDeletion = 2 }
+	export enum AppPkgSubscriptionType { AppPackageOnBoarding = 'AppPackageOnBoarding', AppPacakgeOperationChange = 'AppPacakgeOperationChange', AppPackageDeletion = 'AppPackageDeletion' }
 
 
 	/** Additional information of application package artifacts that are not application software images. Type is TBD */
@@ -1087,9 +1087,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPkgInfoOnboardingState { CREATED = 0, UPLOADING = 1, PROCESSING = 2, ONBOARDED = 3 }
+	export enum AppPkgInfoOnboardingState { CREATED = 'CREATED', UPLOADING = 'UPLOADING', PROCESSING = 'PROCESSING', ONBOARDED = 'ONBOARDED' }
 
-	export enum AppPkgInfoUsageState { IN_USE = 0, NOT_IN_USE = 1 }
+	export enum AppPkgInfoUsageState { IN_USE = 'IN_USE', NOT_IN_USE = 'NOT_IN_USE' }
 
 
 	/** 'This data type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of key-value pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259' */
@@ -1126,7 +1126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppPkgInfoModificationsOperationState { DISABLED = 0, ENABLED = 1 }
+	export enum AppPkgInfoModificationsOperationState { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** 'This data type represents an application package management notification for informing the subscribers about onboarding application package resources. The notification is triggered when a new application package is onboarded' */
@@ -1559,19 +1559,19 @@ export namespace MyNS {
 
 
 	/** Definition of filter type: per FLOW or PACKET */
-	export enum FilterType { FLOW = 0, PACKET = 1 }
+	export enum FilterType { FLOW = 'FLOW', PACKET = 'PACKET' }
 
 
 	/** Type of interface. */
-	export enum InterfaceType { TUNNEL = 0, MAC = 1, IP = 2 }
+	export enum InterfaceType { TUNNEL = 'TUNNEL', MAC = 'MAC', IP = 'IP' }
 
 
 	/** Specifies the IP address type */
-	export enum IpAddressType { IP_V6 = 0, IP_V4 = 1 }
+	export enum IpAddressType { IP_V6 = 'IP_V6', IP_V4 = 'IP_V4' }
 
 
 	/** Onboarding state of application package */
-	export enum OnboardingState { CREATED = 0, UPLOADING = 1, PROCESSING = 2, ONBOARDED = 3 }
+	export enum OnboardingState { CREATED = 'CREATED', UPLOADING = 'UPLOADING', PROCESSING = 'PROCESSING', ONBOARDED = 'ONBOARDED' }
 
 	export interface ProblemDetails {
 
@@ -1634,15 +1634,15 @@ export namespace MyNS {
 
 
 	/** 'Subscribed notification type' */
-	export enum SubsctiptionTypeAppPkg { AppPackageOnBoarding = 0, AppPacakgeOperationChange = 1, AppPackageDeletion = 2 }
+	export enum SubsctiptionTypeAppPkg { AppPackageOnBoarding = 'AppPackageOnBoarding', AppPacakgeOperationChange = 'AppPacakgeOperationChange', AppPackageDeletion = 'AppPackageDeletion' }
 
 
 	/** Type of tunnel. */
-	export enum TunnelType { 'GTP-U' = 0, GRE = 1 }
+	export enum TunnelType { 'GTP-U' = 'GTP-U', GRE = 'GRE' }
 
 
 	/** Usage state of the onboarded instance of the application package */
-	export enum UsageState { IN_USE = 0, NOT_IN_USE = 1 }
+	export enum UsageState { IN_USE = 'IN_USE', NOT_IN_USE = 'NOT_IN_USE' }
 
 	@Injectable()
 	export class MyClient {

@@ -111,7 +111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Service { TURN = 0 }
+	export enum Service { TURN = 'TURN' }
 
 	export interface GetIceServerConfigRequest {
 

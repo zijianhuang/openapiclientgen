@@ -332,7 +332,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentType { 'application/json' = 0, 'application/xml' = 1 }
+	export enum ContentType { 'application/json' = 'application/json', 'application/xml' = 'application/xml' }
 
 
 	/** The statistics for a field calculated in the request. */
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryParser { simple = 0, structured = 1, lucene = 2, dismax = 3 }
+	export enum QueryParser { simple = 'simple', structured = 'structured', lucene = 'lucene', dismax = 'dismax' }
 
 
 	/** Container for the parameters to the <code>Search</code> request. */
@@ -473,9 +473,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SearchFormat { sdk = 0 }
+	export enum SearchFormat { sdk = 'sdk' }
 
-	export enum SearchPretty { true = 0 }
+	export enum SearchPretty { true = 'true' }
 
 	export interface UploadDocumentsPostBody {
 

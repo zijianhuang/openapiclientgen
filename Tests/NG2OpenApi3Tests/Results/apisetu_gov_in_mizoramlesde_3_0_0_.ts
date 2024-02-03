@@ -1311,7 +1311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GovidPostBodyFormat { pdf = 0 }
+	export enum GovidPostBodyFormat { pdf = 'pdf' }
 
 }
 

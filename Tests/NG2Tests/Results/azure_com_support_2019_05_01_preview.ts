@@ -43,7 +43,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityInputType { 'Microsoft.Support/supportTickets' = 0, 'Microsoft.Support/communications' = 1 }
+	export enum CheckNameAvailabilityInputType { 'Microsoft.Support/supportTickets' = 'Microsoft.Support/supportTickets', 'Microsoft.Support/communications' = 'Microsoft.Support/communications' }
 
 
 	/** Output of check name availability API. */
@@ -186,9 +186,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CommunicationDetailsPropertiesCommunicationDirection { inbound = 0, outbound = 1 }
+	export enum CommunicationDetailsPropertiesCommunicationDirection { inbound = 'inbound', outbound = 'outbound' }
 
-	export enum CommunicationDetailsPropertiesCommunicationType { web = 0, phone = 1 }
+	export enum CommunicationDetailsPropertiesCommunicationType { web = 'web', phone = 'phone' }
 
 
 	/** Collection of Communication resources. */
@@ -329,7 +329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactProfilePreferredContactMethod { email = 0, phone = 1 }
+	export enum ContactProfilePreferredContactMethod { email = 'email', phone = 'phone' }
 
 
 	/** The api error. */
@@ -945,7 +945,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportTicketDetailsPropertiesSeverity { minimal = 0, moderate = 1, critical = 2 }
+	export enum SupportTicketDetailsPropertiesSeverity { minimal = 'minimal', moderate = 'moderate', critical = 'critical' }
 
 
 	/** Additional information for technical support ticket. */

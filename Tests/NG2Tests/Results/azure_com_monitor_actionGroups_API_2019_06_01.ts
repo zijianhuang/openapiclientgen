@@ -400,7 +400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmailReceiverStatus { NotSpecified = 0, Enabled = 1, Disabled = 2 }
+	export enum EmailReceiverStatus { NotSpecified = 'NotSpecified', Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** An Itsm receiver. */
@@ -889,7 +889,7 @@ export namespace MyNS {
 
 
 	/** Indicates the status of the receiver. Receivers that are not Enabled will not receive any communications. */
-	export enum ReceiverStatus { NotSpecified = 0, Enabled = 1, Disabled = 2 }
+	export enum ReceiverStatus { NotSpecified = 'NotSpecified', Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** An azure resource object */

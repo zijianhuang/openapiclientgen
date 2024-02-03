@@ -148,9 +148,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentPropertiesEnabledState { Enabled = 0, Disabled = 1 }
+	export enum ExperimentPropertiesEnabledState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum ExperimentPropertiesResourceState { Creating = 0, Enabling = 1, Enabled = 2, Disabling = 3, Disabled = 4, Deleting = 5 }
+	export enum ExperimentPropertiesResourceState { Creating = 'Creating', Enabling = 'Enabling', Enabled = 'Enabled', Disabling = 'Disabling', Disabled = 'Disabled', Deleting = 'Deleting' }
 
 
 	/** Defines modifiable attributes of an Experiment */
@@ -373,7 +373,7 @@ export namespace MyNS {
 
 
 	/** Defines the server side resource status */
-	export enum NetworkExperimentResourceState { Creating = 0, Enabling = 1, Enabled = 2, Disabling = 3, Disabled = 4, Deleting = 5 }
+	export enum NetworkExperimentResourceState { Creating = 'Creating', Enabling = 'Enabling', Enabled = 'Enabled', Disabling = 'Disabling', Disabled = 'Disabled', Deleting = 'Deleting' }
 
 	export interface PreconfiguredEndpoint {
 	}
@@ -451,7 +451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreconfiguredEndpointPropertiesEndpointType { AFD = 0, AzureRegion = 1, CDN = 2, ATM = 3 }
+	export enum PreconfiguredEndpointPropertiesEndpointType { AFD = 'AFD', AzureRegion = 'AzureRegion', CDN = 'CDN', ATM = 'ATM' }
 
 	export interface Profile {
 	}
@@ -657,9 +657,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeseriesPropertiesAggregationInterval { Hourly = 0, Daily = 1 }
+	export enum TimeseriesPropertiesAggregationInterval { Hourly = 'Hourly', Daily = 'Daily' }
 
-	export enum TimeseriesPropertiesTimeseriesType { MeasurementCounts = 0, LatencyP50 = 1, LatencyP75 = 2, LatencyP95 = 3 }
+	export enum TimeseriesPropertiesTimeseriesType { MeasurementCounts = 'MeasurementCounts', LatencyP50 = 'LatencyP50', LatencyP75 = 'LatencyP75', LatencyP95 = 'LatencyP95' }
 
 	@Injectable()
 	export class MyClient {
@@ -867,7 +867,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Reports_GetLatencyScorecardsAggregationInterval { Daily = 0, Weekly = 1, Monthly = 2 }
+	export enum Reports_GetLatencyScorecardsAggregationInterval { Daily = 'Daily', Weekly = 'Weekly', Monthly = 'Monthly' }
 
 }
 

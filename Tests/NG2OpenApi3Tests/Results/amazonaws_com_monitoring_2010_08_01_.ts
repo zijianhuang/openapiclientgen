@@ -143,7 +143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StandardUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
+	export enum StandardUnit { Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', Count = 'Count', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second', None = 'None' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -308,9 +308,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AlarmType { CompositeAlarm = 0, MetricAlarm = 1 }
+	export enum AlarmType { CompositeAlarm = 'CompositeAlarm', MetricAlarm = 'MetricAlarm' }
 
-	export enum HistoryItemType { ConfigurationUpdate = 0, StateUpdate = 1, Action = 2 }
+	export enum HistoryItemType { ConfigurationUpdate = 'ConfigurationUpdate', StateUpdate = 'StateUpdate', Action = 'Action' }
 
 	export interface InvalidNextToken {
 	}
@@ -402,9 +402,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StateValue { OK = 0, ALARM = 1, INSUFFICIENT_DATA = 2 }
+	export enum StateValue { OK = 'OK', ALARM = 'ALARM', INSUFFICIENT_DATA = 'INSUFFICIENT_DATA' }
 
-	export enum ActionsSuppressedBy { WaitPeriod = 0, ExtensionPeriod = 1, Alarm = 2 }
+	export enum ActionsSuppressedBy { WaitPeriod = 'WaitPeriod', ExtensionPeriod = 'ExtensionPeriod', Alarm = 'Alarm' }
 
 
 	/** The details about a metric alarm. */
@@ -497,11 +497,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Statistic { SampleCount = 0, Average = 1, Sum = 2, Minimum = 3, Maximum = 4 }
+	export enum Statistic { SampleCount = 'SampleCount', Average = 'Average', Sum = 'Sum', Minimum = 'Minimum', Maximum = 'Maximum' }
 
-	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3, LessThanLowerOrGreaterThanUpperThreshold = 4, LessThanLowerThreshold = 5, GreaterThanUpperThreshold = 6 }
+	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 'GreaterThanOrEqualToThreshold', GreaterThanThreshold = 'GreaterThanThreshold', LessThanThreshold = 'LessThanThreshold', LessThanOrEqualToThreshold = 'LessThanOrEqualToThreshold', LessThanLowerOrGreaterThanUpperThreshold = 'LessThanLowerOrGreaterThanUpperThreshold', LessThanLowerThreshold = 'LessThanLowerThreshold', GreaterThanUpperThreshold = 'GreaterThanUpperThreshold' }
 
-	export enum EvaluationState { PARTIAL_DATA = 0 }
+	export enum EvaluationState { PARTIAL_DATA = 'PARTIAL_DATA' }
 
 	export interface DescribeAlarmsForMetricOutput {
 		MetricAlarms?: Array<MetricAlarm>;
@@ -604,7 +604,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalyDetectorStateValue { PENDING_TRAINING = 0, TRAINED_INSUFFICIENT_DATA = 1, TRAINED = 2 }
+	export enum AnomalyDetectorStateValue { PENDING_TRAINING = 'PENDING_TRAINING', TRAINED_INSUFFICIENT_DATA = 'TRAINED_INSUFFICIENT_DATA', TRAINED = 'TRAINED' }
 
 
 	/** Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input. */
@@ -645,7 +645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalyDetectorType { SINGLE_METRIC = 0, METRIC_MATH = 1 }
+	export enum AnomalyDetectorType { SINGLE_METRIC = 'SINGLE_METRIC', METRIC_MATH = 'METRIC_MATH' }
 
 	export interface DescribeInsightRulesOutput {
 		NextToken?: string;
@@ -917,7 +917,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusCode { Complete = 0, InternalError = 1, PartialData = 2, Forbidden = 3 }
+	export enum StatusCode { Complete = 'Complete', InternalError = 'InternalError', PartialData = 'PartialData', Forbidden = 'Forbidden' }
 
 
 	/** <p>A message returned by the <code>GetMetricData</code>API, including a code and a description.</p> <p>If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a value of <code>Authentication too complex to retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code> operation in the same Region where the metric data is.</p> */
@@ -1057,7 +1057,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricStreamOutputFormat { json = 0, 'opentelemetry0.7' = 1 }
+	export enum MetricStreamOutputFormat { json = 'json', 'opentelemetry0.7' = 'opentelemetry0.7' }
 
 
 	/** By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure contains information for one metric that includes additional statistics in the stream. For more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. */
@@ -1691,7 +1691,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanBy { TimestampDescending = 0, TimestampAscending = 1 }
+	export enum ScanBy { TimestampDescending = 'TimestampDescending', TimestampAscending = 'TimestampAscending' }
 
 	export interface DescribeAlarmHistoryInput {
 		AlarmName?: string;
@@ -2146,7 +2146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecentlyActive { PT3H = 0 }
+	export enum RecentlyActive { PT3H = 'PT3H' }
 
 	export interface ListMetricsInput {
 		Namespace?: string;
@@ -3070,9 +3070,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_DeleteAlarmsAction { DeleteAlarms = 0 }
+	export enum GET_DeleteAlarmsAction { DeleteAlarms = 'DeleteAlarms' }
 
-	export enum GET_DeleteAlarmsVersion { '2010-08-01' = 0 }
+	export enum GET_DeleteAlarmsVersion { '2010-08-01' = '2010-08-01' }
 
 	export interface GET_DeleteAnomalyDetectorSingleMetricAnomalyDetector {
 		Namespace?: string;
@@ -3105,35 +3105,35 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DeleteAnomalyDetectorAction { DeleteAnomalyDetector = 0 }
+	export enum GET_DeleteAnomalyDetectorAction { DeleteAnomalyDetector = 'DeleteAnomalyDetector' }
 
-	export enum GET_DeleteDashboardsAction { DeleteDashboards = 0 }
+	export enum GET_DeleteDashboardsAction { DeleteDashboards = 'DeleteDashboards' }
 
-	export enum GET_DeleteInsightRulesAction { DeleteInsightRules = 0 }
+	export enum GET_DeleteInsightRulesAction { DeleteInsightRules = 'DeleteInsightRules' }
 
-	export enum GET_DeleteMetricStreamAction { DeleteMetricStream = 0 }
+	export enum GET_DeleteMetricStreamAction { DeleteMetricStream = 'DeleteMetricStream' }
 
-	export enum GET_DescribeAlarmHistoryAction { DescribeAlarmHistory = 0 }
+	export enum GET_DescribeAlarmHistoryAction { DescribeAlarmHistory = 'DescribeAlarmHistory' }
 
-	export enum GET_DescribeAlarmsAction { DescribeAlarms = 0 }
+	export enum GET_DescribeAlarmsAction { DescribeAlarms = 'DescribeAlarms' }
 
-	export enum GET_DescribeAlarmsForMetricAction { DescribeAlarmsForMetric = 0 }
+	export enum GET_DescribeAlarmsForMetricAction { DescribeAlarmsForMetric = 'DescribeAlarmsForMetric' }
 
-	export enum GET_DescribeAnomalyDetectorsAction { DescribeAnomalyDetectors = 0 }
+	export enum GET_DescribeAnomalyDetectorsAction { DescribeAnomalyDetectors = 'DescribeAnomalyDetectors' }
 
-	export enum GET_DescribeInsightRulesAction { DescribeInsightRules = 0 }
+	export enum GET_DescribeInsightRulesAction { DescribeInsightRules = 'DescribeInsightRules' }
 
-	export enum GET_DisableAlarmActionsAction { DisableAlarmActions = 0 }
+	export enum GET_DisableAlarmActionsAction { DisableAlarmActions = 'DisableAlarmActions' }
 
-	export enum GET_DisableInsightRulesAction { DisableInsightRules = 0 }
+	export enum GET_DisableInsightRulesAction { DisableInsightRules = 'DisableInsightRules' }
 
-	export enum GET_EnableAlarmActionsAction { EnableAlarmActions = 0 }
+	export enum GET_EnableAlarmActionsAction { EnableAlarmActions = 'EnableAlarmActions' }
 
-	export enum GET_EnableInsightRulesAction { EnableInsightRules = 0 }
+	export enum GET_EnableInsightRulesAction { EnableInsightRules = 'EnableInsightRules' }
 
-	export enum GET_GetDashboardAction { GetDashboard = 0 }
+	export enum GET_GetDashboardAction { GetDashboard = 'GetDashboard' }
 
-	export enum GET_GetInsightRuleReportAction { GetInsightRuleReport = 0 }
+	export enum GET_GetInsightRuleReportAction { GetInsightRuleReport = 'GetInsightRuleReport' }
 
 	export interface GET_GetMetricDataLabelOptions {
 		Timezone?: string;
@@ -3148,23 +3148,23 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_GetMetricDataAction { GetMetricData = 0 }
+	export enum GET_GetMetricDataAction { GetMetricData = 'GetMetricData' }
 
-	export enum GET_GetMetricStatisticsAction { GetMetricStatistics = 0 }
+	export enum GET_GetMetricStatisticsAction { GetMetricStatistics = 'GetMetricStatistics' }
 
-	export enum GET_GetMetricStreamAction { GetMetricStream = 0 }
+	export enum GET_GetMetricStreamAction { GetMetricStream = 'GetMetricStream' }
 
-	export enum GET_GetMetricWidgetImageAction { GetMetricWidgetImage = 0 }
+	export enum GET_GetMetricWidgetImageAction { GetMetricWidgetImage = 'GetMetricWidgetImage' }
 
-	export enum GET_ListDashboardsAction { ListDashboards = 0 }
+	export enum GET_ListDashboardsAction { ListDashboards = 'ListDashboards' }
 
-	export enum GET_ListManagedInsightRulesAction { ListManagedInsightRules = 0 }
+	export enum GET_ListManagedInsightRulesAction { ListManagedInsightRules = 'ListManagedInsightRules' }
 
-	export enum GET_ListMetricStreamsAction { ListMetricStreams = 0 }
+	export enum GET_ListMetricStreamsAction { ListMetricStreams = 'ListMetricStreams' }
 
-	export enum GET_ListMetricsAction { ListMetrics = 0 }
+	export enum GET_ListMetricsAction { ListMetrics = 'ListMetrics' }
 
-	export enum GET_ListTagsForResourceAction { ListTagsForResource = 0 }
+	export enum GET_ListTagsForResourceAction { ListTagsForResource = 'ListTagsForResource' }
 
 	export interface GET_PutAnomalyDetectorConfiguration {
 		ExcludedTimeRanges?: Array<Range>;
@@ -3211,31 +3211,31 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_PutAnomalyDetectorAction { PutAnomalyDetector = 0 }
+	export enum GET_PutAnomalyDetectorAction { PutAnomalyDetector = 'PutAnomalyDetector' }
 
-	export enum GET_PutCompositeAlarmAction { PutCompositeAlarm = 0 }
+	export enum GET_PutCompositeAlarmAction { PutCompositeAlarm = 'PutCompositeAlarm' }
 
-	export enum GET_PutDashboardAction { PutDashboard = 0 }
+	export enum GET_PutDashboardAction { PutDashboard = 'PutDashboard' }
 
-	export enum GET_PutInsightRuleAction { PutInsightRule = 0 }
+	export enum GET_PutInsightRuleAction { PutInsightRule = 'PutInsightRule' }
 
-	export enum GET_PutManagedInsightRulesAction { PutManagedInsightRules = 0 }
+	export enum GET_PutManagedInsightRulesAction { PutManagedInsightRules = 'PutManagedInsightRules' }
 
-	export enum GET_PutMetricAlarmAction { PutMetricAlarm = 0 }
+	export enum GET_PutMetricAlarmAction { PutMetricAlarm = 'PutMetricAlarm' }
 
-	export enum GET_PutMetricDataAction { PutMetricData = 0 }
+	export enum GET_PutMetricDataAction { PutMetricData = 'PutMetricData' }
 
-	export enum GET_PutMetricStreamAction { PutMetricStream = 0 }
+	export enum GET_PutMetricStreamAction { PutMetricStream = 'PutMetricStream' }
 
-	export enum GET_SetAlarmStateAction { SetAlarmState = 0 }
+	export enum GET_SetAlarmStateAction { SetAlarmState = 'SetAlarmState' }
 
-	export enum GET_StartMetricStreamsAction { StartMetricStreams = 0 }
+	export enum GET_StartMetricStreamsAction { StartMetricStreams = 'StartMetricStreams' }
 
-	export enum GET_StopMetricStreamsAction { StopMetricStreams = 0 }
+	export enum GET_StopMetricStreamsAction { StopMetricStreams = 'StopMetricStreams' }
 
-	export enum GET_TagResourceAction { TagResource = 0 }
+	export enum GET_TagResourceAction { TagResource = 'TagResource' }
 
-	export enum GET_UntagResourceAction { UntagResource = 0 }
+	export enum GET_UntagResourceAction { UntagResource = 'UntagResource' }
 
 }
 

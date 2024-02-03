@@ -628,7 +628,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountCredentialsPurpose { ACCOUNT_CREDENTIALS_PURPOSE_UNSPECIFIED = 0, SHOPIFY_ORDER_MANAGEMENT = 1, SHOPIFY_INTEGRATION = 2 }
+	export enum AccountCredentialsPurpose { ACCOUNT_CREDENTIALS_PURPOSE_UNSPECIFIED = 'ACCOUNT_CREDENTIALS_PURPOSE_UNSPECIFIED', SHOPIFY_ORDER_MANAGEMENT = 'SHOPIFY_ORDER_MANAGEMENT', SHOPIFY_INTEGRATION = 'SHOPIFY_INTEGRATION' }
 
 	export interface AccountIdentifier {
 
@@ -780,7 +780,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuiltInSimpleActionType { BUILT_IN_SIMPLE_ACTION_TYPE_UNSPECIFIED = 0, VERIFY_PHONE = 1, CLAIM_WEBSITE = 2, ADD_PRODUCTS = 3, ADD_CONTACT_INFO = 4, LINK_ADS_ACCOUNT = 5, ADD_BUSINESS_REGISTRATION_NUMBER = 6, EDIT_ITEM_ATTRIBUTE = 7, FIX_ACCOUNT_ISSUE = 8, SHOW_ADDITIONAL_CONTENT = 9 }
+	export enum BuiltInSimpleActionType { BUILT_IN_SIMPLE_ACTION_TYPE_UNSPECIFIED = 'BUILT_IN_SIMPLE_ACTION_TYPE_UNSPECIFIED', VERIFY_PHONE = 'VERIFY_PHONE', CLAIM_WEBSITE = 'CLAIM_WEBSITE', ADD_PRODUCTS = 'ADD_PRODUCTS', ADD_CONTACT_INFO = 'ADD_CONTACT_INFO', LINK_ADS_ACCOUNT = 'LINK_ADS_ACCOUNT', ADD_BUSINESS_REGISTRATION_NUMBER = 'ADD_BUSINESS_REGISTRATION_NUMBER', EDIT_ITEM_ATTRIBUTE = 'EDIT_ITEM_ATTRIBUTE', FIX_ACCOUNT_ISSUE = 'FIX_ACCOUNT_ISSUE', SHOW_ADDITIONAL_CONTENT = 'SHOW_ADDITIONAL_CONTENT' }
 
 
 	/** Action that is implemented and performed outside of the third-party application. It should redirect the merchant to the provided URL of an external system where they can perform the action. For example to request a review in the Merchant Center. */
@@ -810,7 +810,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalActionType { EXTERNAL_ACTION_TYPE_UNSPECIFIED = 0, REVIEW_PRODUCT_ISSUE_IN_MERCHANT_CENTER = 1, REVIEW_ACCOUNT_ISSUE_IN_MERCHANT_CENTER = 2, LEGAL_APPEAL_IN_HELP_CENTER = 3, VERIFY_IDENTITY_IN_MERCHANT_CENTER = 4 }
+	export enum ExternalActionType { EXTERNAL_ACTION_TYPE_UNSPECIFIED = 'EXTERNAL_ACTION_TYPE_UNSPECIFIED', REVIEW_PRODUCT_ISSUE_IN_MERCHANT_CENTER = 'REVIEW_PRODUCT_ISSUE_IN_MERCHANT_CENTER', REVIEW_ACCOUNT_ISSUE_IN_MERCHANT_CENTER = 'REVIEW_ACCOUNT_ISSUE_IN_MERCHANT_CENTER', LEGAL_APPEAL_IN_HELP_CENTER = 'LEGAL_APPEAL_IN_HELP_CENTER', VERIFY_IDENTITY_IN_MERCHANT_CENTER = 'VERIFY_IDENTITY_IN_MERCHANT_CENTER' }
 
 
 	/** A single reason why the action is not available. */
@@ -922,7 +922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountIssueImpactSeverity { SEVERITY_UNSPECIFIED = 0, ERROR = 1, WARNING = 2, INFO = 3 }
+	export enum AccountIssueImpactSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', ERROR = 'ERROR', WARNING = 'WARNING', INFO = 'INFO' }
 
 
 	/** Label assigned by CSS domain or CSS group to one of its sub-accounts. */
@@ -973,7 +973,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountLabelLabelType { LABEL_TYPE_UNSPECIFIED = 0, MANUAL = 1, AUTOMATIC = 2 }
+	export enum AccountLabelLabelType { LABEL_TYPE_UNSPECIFIED = 'LABEL_TYPE_UNSPECIFIED', MANUAL = 'MANUAL', AUTOMATIC = 'AUTOMATIC' }
 
 
 	/**  The return carrier information. This service is designed for merchants enrolled in the Buy on Google program.  */
@@ -1017,7 +1017,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountReturnCarrierCarrierCode { CARRIER_CODE_UNSPECIFIED = 0, FEDEX = 1, UPS = 2 }
+	export enum AccountReturnCarrierCarrierCode { CARRIER_CODE_UNSPECIFIED = 'CARRIER_CODE_UNSPECIFIED', FEDEX = 'FEDEX', UPS = 'UPS' }
 
 
 	/** The status of an account, that is, information about its products, which is computed offline and not returned immediately at insertion time. */
@@ -2272,7 +2272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributionSettingsAttributionModel { ATTRIBUTION_MODEL_UNSPECIFIED = 0, CROSS_CHANNEL_LAST_CLICK = 1, ADS_PREFERRED_LAST_CLICK = 2, CROSS_CHANNEL_DATA_DRIVEN = 3, CROSS_CHANNEL_FIRST_CLICK = 4, CROSS_CHANNEL_LINEAR = 5, CROSS_CHANNEL_POSITION_BASED = 6, CROSS_CHANNEL_TIME_DECAY = 7 }
+	export enum AttributionSettingsAttributionModel { ATTRIBUTION_MODEL_UNSPECIFIED = 'ATTRIBUTION_MODEL_UNSPECIFIED', CROSS_CHANNEL_LAST_CLICK = 'CROSS_CHANNEL_LAST_CLICK', ADS_PREFERRED_LAST_CLICK = 'ADS_PREFERRED_LAST_CLICK', CROSS_CHANNEL_DATA_DRIVEN = 'CROSS_CHANNEL_DATA_DRIVEN', CROSS_CHANNEL_FIRST_CLICK = 'CROSS_CHANNEL_FIRST_CLICK', CROSS_CHANNEL_LINEAR = 'CROSS_CHANNEL_LINEAR', CROSS_CHANNEL_POSITION_BASED = 'CROSS_CHANNEL_POSITION_BASED', CROSS_CHANNEL_TIME_DECAY = 'CROSS_CHANNEL_TIME_DECAY' }
 
 
 	/** Message representing a types of conversion events */
@@ -2375,9 +2375,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BestSellersPreviousRelativeDemand { RELATIVE_DEMAND_UNSPECIFIED = 0, VERY_LOW = 1, LOW = 2, MEDIUM = 3, HIGH = 4, VERY_HIGH = 5 }
+	export enum BestSellersPreviousRelativeDemand { RELATIVE_DEMAND_UNSPECIFIED = 'RELATIVE_DEMAND_UNSPECIFIED', VERY_LOW = 'VERY_LOW', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', VERY_HIGH = 'VERY_HIGH' }
 
-	export enum BestSellersRelativeDemandChange { RELATIVE_DEMAND_CHANGE_TYPE_UNSPECIFIED = 0, SINKER = 1, FLAT = 2, RISER = 3 }
+	export enum BestSellersRelativeDemandChange { RELATIVE_DEMAND_CHANGE_TYPE_UNSPECIFIED = 'RELATIVE_DEMAND_CHANGE_TYPE_UNSPECIFIED', SINKER = 'SINKER', FLAT = 'FLAT', RISER = 'RISER' }
 
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -2414,7 +2414,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BestSellersReportGranularity { REPORT_GRANULARITY_UNSPECIFIED = 0, WEEKLY = 1, MONTHLY = 2 }
+	export enum BestSellersReportGranularity { REPORT_GRANULARITY_UNSPECIFIED = 'REPORT_GRANULARITY_UNSPECIFIED', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 
 	/** Brand fields. Values are only set for fields requested explicitly in the request's search query. */
@@ -2551,9 +2551,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BuyOnGoogleProgramStatusOnlineSalesChannel { ONLINE_SALES_CHANNEL_UNSPECIFIED = 0, GOOGLE_EXCLUSIVE = 1, GOOGLE_AND_OTHER_WEBSITES = 2 }
+	export enum BuyOnGoogleProgramStatusOnlineSalesChannel { ONLINE_SALES_CHANNEL_UNSPECIFIED = 'ONLINE_SALES_CHANNEL_UNSPECIFIED', GOOGLE_EXCLUSIVE = 'GOOGLE_EXCLUSIVE', GOOGLE_AND_OTHER_WEBSITES = 'GOOGLE_AND_OTHER_WEBSITES' }
 
-	export enum BuyOnGoogleProgramStatusParticipationStage { PROGRAM_PARTICIPATION_STAGE_UNSPECIFIED = 0, NOT_ELIGIBLE = 1, ELIGIBLE = 2, ONBOARDING = 3, ELIGIBLE_FOR_REVIEW = 4, PENDING_REVIEW = 5, REVIEW_DISAPPROVED = 6, ACTIVE = 7, PAUSED = 8, DEPRECATED = 9 }
+	export enum BuyOnGoogleProgramStatusParticipationStage { PROGRAM_PARTICIPATION_STAGE_UNSPECIFIED = 'PROGRAM_PARTICIPATION_STAGE_UNSPECIFIED', NOT_ELIGIBLE = 'NOT_ELIGIBLE', ELIGIBLE = 'ELIGIBLE', ONBOARDING = 'ONBOARDING', ELIGIBLE_FOR_REVIEW = 'ELIGIBLE_FOR_REVIEW', PENDING_REVIEW = 'PENDING_REVIEW', REVIEW_DISAPPROVED = 'REVIEW_DISAPPROVED', ACTIVE = 'ACTIVE', PAUSED = 'PAUSED', DEPRECATED = 'DEPRECATED' }
 
 
 	/** Request message for the CaptureOrder method. */
@@ -2590,7 +2590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaptureOrderResponseExecutionStatus { EXECUTION_STATUS_UNSPECIFIED = 0, EXECUTED = 1, DUPLICATE = 2 }
+	export enum CaptureOrderResponseExecutionStatus { EXECUTION_STATUS_UNSPECIFIED = 'EXECUTION_STATUS_UNSPECIFIED', EXECUTED = 'EXECUTED', DUPLICATE = 'DUPLICATE' }
 
 	export interface CarrierRate {
 
@@ -2723,9 +2723,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckoutSettingsEffectiveEnrollmentState { CHECKOUT_ON_MERCHANT_ENROLLMENT_STATE_UNSPECIFIED = 0, INACTIVE = 1, ENROLLED = 2 }
+	export enum CheckoutSettingsEffectiveEnrollmentState { CHECKOUT_ON_MERCHANT_ENROLLMENT_STATE_UNSPECIFIED = 'CHECKOUT_ON_MERCHANT_ENROLLMENT_STATE_UNSPECIFIED', INACTIVE = 'INACTIVE', ENROLLED = 'ENROLLED' }
 
-	export enum CheckoutSettingsEffectiveReviewState { CHECKOUT_ON_MERCHANT_REVIEW_STATE_UNSPECIFIED = 0, IN_REVIEW = 1, APPROVED = 2, DISAPPROVED = 3 }
+	export enum CheckoutSettingsEffectiveReviewState { CHECKOUT_ON_MERCHANT_REVIEW_STATE_UNSPECIFIED = 'CHECKOUT_ON_MERCHANT_REVIEW_STATE_UNSPECIFIED', IN_REVIEW = 'IN_REVIEW', APPROVED = 'APPROVED', DISAPPROVED = 'DISAPPROVED' }
 
 
 	/** Specifications related to the `Checkout` URL. The `UriTemplate` is of the form `https://www.mystore.com/checkout?item_id={id}` where `{id}` will be automatically replaced with data from the merchant account with this attribute [offer_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.offer_id) */
@@ -3193,7 +3193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompetitiveVisibilityTrafficSource { UNKNOWN = 0, ORGANIC = 1, ADS = 2, ALL = 3 }
+	export enum CompetitiveVisibilityTrafficSource { UNKNOWN = 'UNKNOWN', ORGANIC = 'ORGANIC', ADS = 'ADS', ALL = 'ALL' }
 
 
 	/** Represents a conversion source owned by a Merchant account. A merchant account can have up to 200 conversion sources. */
@@ -3305,7 +3305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConversionSourceState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ARCHIVED = 2, PENDING = 3 }
+	export enum ConversionSourceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED', PENDING = 'PENDING' }
 
 
 	/** Information about CSS domain. */
@@ -4530,7 +4530,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FreeListingsProgramStatusGlobalState { PROGRAM_STATE_UNSPECIFIED = 0, NOT_ENABLED = 1, NO_OFFERS_UPLOADED = 2, ENABLED = 3 }
+	export enum FreeListingsProgramStatusGlobalState { PROGRAM_STATE_UNSPECIFIED = 'PROGRAM_STATE_UNSPECIFIED', NOT_ENABLED = 'NOT_ENABLED', NO_OFFERS_UPLOADED = 'NO_OFFERS_UPLOADED', ENABLED = 'ENABLED' }
 
 
 	/** Status of program and region. */
@@ -4593,11 +4593,11 @@ export namespace MyNS {
 
 	}
 
-	export enum FreeListingsProgramStatusRegionStatusEligibilityStatus { STATE_UNSPECIFIED = 0, APPROVED = 1, DISAPPROVED = 2, WARNING = 3, UNDER_REVIEW = 4, PENDING_REVIEW = 5, ONBOARDING = 6 }
+	export enum FreeListingsProgramStatusRegionStatusEligibilityStatus { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', APPROVED = 'APPROVED', DISAPPROVED = 'DISAPPROVED', WARNING = 'WARNING', UNDER_REVIEW = 'UNDER_REVIEW', PENDING_REVIEW = 'PENDING_REVIEW', ONBOARDING = 'ONBOARDING' }
 
-	export enum FreeListingsProgramStatusRegionStatusReviewEligibilityStatus { REVIEW_ELIGIBILITY_UNSPECIFIED = 0, ELIGIBLE = 1, INELIGIBLE = 2 }
+	export enum FreeListingsProgramStatusRegionStatusReviewEligibilityStatus { REVIEW_ELIGIBILITY_UNSPECIFIED = 'REVIEW_ELIGIBILITY_UNSPECIFIED', ELIGIBLE = 'ELIGIBLE', INELIGIBLE = 'INELIGIBLE' }
 
-	export enum FreeListingsProgramStatusRegionStatusReviewIneligibilityReason { REVIEW_INELIGIBILITY_REASON_UNSPECIFIED = 0, ONBOARDING_ISSUES = 1, NOT_ENOUGH_OFFERS = 2, IN_COOLDOWN_PERIOD = 3, ALREADY_UNDER_REVIEW = 4, NO_REVIEW_REQUIRED = 5, WILL_BE_REVIEWED_AUTOMATICALLY = 6, IS_RETIRED = 7, ALREADY_REVIEWED = 8 }
+	export enum FreeListingsProgramStatusRegionStatusReviewIneligibilityReason { REVIEW_INELIGIBILITY_REASON_UNSPECIFIED = 'REVIEW_INELIGIBILITY_REASON_UNSPECIFIED', ONBOARDING_ISSUES = 'ONBOARDING_ISSUES', NOT_ENOUGH_OFFERS = 'NOT_ENOUGH_OFFERS', IN_COOLDOWN_PERIOD = 'IN_COOLDOWN_PERIOD', ALREADY_UNDER_REVIEW = 'ALREADY_UNDER_REVIEW', NO_REVIEW_REQUIRED = 'NO_REVIEW_REQUIRED', WILL_BE_REVIEWED_AUTOMATICALLY = 'WILL_BE_REVIEWED_AUTOMATICALLY', IS_RETIRED = 'IS_RETIRED', ALREADY_REVIEWED = 'ALREADY_REVIEWED' }
 
 
 	/** Additional details for review ineligibility reasons. */
@@ -4782,7 +4782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationDescriptionType { DESCRIPTION_TYPE_UNSPECIFIED = 0, SHORT = 1, LONG = 2 }
+	export enum RecommendationDescriptionType { DESCRIPTION_TYPE_UNSPECIFIED = 'DESCRIPTION_TYPE_UNSPECIFIED', SHORT = 'SHORT', LONG = 'LONG' }
 
 
 	/** Creative is a multimedia attachment to recommendation that can be used on the frontend. */
@@ -4812,7 +4812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationCreativeType { CREATIVE_TYPE_UNSPECIFIED = 0, VIDEO = 1, PHOTO = 2 }
+	export enum RecommendationCreativeType { CREATIVE_TYPE_UNSPECIFIED = 'CREATIVE_TYPE_UNSPECIFIED', VIDEO = 'VIDEO', PHOTO = 'PHOTO' }
 
 	export interface GmbAccounts {
 
@@ -6092,7 +6092,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PromotionCouponValueType { COUPON_VALUE_TYPE_UNSPECIFIED = 0, MONEY_OFF = 1, PERCENT_OFF = 2, BUY_M_GET_N_MONEY_OFF = 3, BUY_M_GET_N_PERCENT_OFF = 4, BUY_M_GET_MONEY_OFF = 5, BUY_M_GET_PERCENT_OFF = 6, FREE_GIFT = 7, FREE_GIFT_WITH_VALUE = 8, FREE_GIFT_WITH_ITEM_ID = 9, FREE_SHIPPING_STANDARD = 10, FREE_SHIPPING_OVERNIGHT = 11, FREE_SHIPPING_TWO_DAY = 12 }
+	export enum PromotionCouponValueType { COUPON_VALUE_TYPE_UNSPECIFIED = 'COUPON_VALUE_TYPE_UNSPECIFIED', MONEY_OFF = 'MONEY_OFF', PERCENT_OFF = 'PERCENT_OFF', BUY_M_GET_N_MONEY_OFF = 'BUY_M_GET_N_MONEY_OFF', BUY_M_GET_N_PERCENT_OFF = 'BUY_M_GET_N_PERCENT_OFF', BUY_M_GET_MONEY_OFF = 'BUY_M_GET_MONEY_OFF', BUY_M_GET_PERCENT_OFF = 'BUY_M_GET_PERCENT_OFF', FREE_GIFT = 'FREE_GIFT', FREE_GIFT_WITH_VALUE = 'FREE_GIFT_WITH_VALUE', FREE_GIFT_WITH_ITEM_ID = 'FREE_GIFT_WITH_ITEM_ID', FREE_SHIPPING_STANDARD = 'FREE_SHIPPING_STANDARD', FREE_SHIPPING_OVERNIGHT = 'FREE_SHIPPING_OVERNIGHT', FREE_SHIPPING_TWO_DAY = 'FREE_SHIPPING_TWO_DAY' }
 
 
 	/** The price represented as a number and currency. */
@@ -6122,9 +6122,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PromotionOfferType { OFFER_TYPE_UNSPECIFIED = 0, NO_CODE = 1, GENERIC_CODE = 2 }
+	export enum PromotionOfferType { OFFER_TYPE_UNSPECIFIED = 'OFFER_TYPE_UNSPECIFIED', NO_CODE = 'NO_CODE', GENERIC_CODE = 'GENERIC_CODE' }
 
-	export enum PromotionProductApplicability { PRODUCT_APPLICABILITY_UNSPECIFIED = 0, ALL_PRODUCTS = 1, SPECIFIC_PRODUCTS = 2 }
+	export enum PromotionProductApplicability { PRODUCT_APPLICABILITY_UNSPECIFIED = 'PRODUCT_APPLICABILITY_UNSPECIFIED', ALL_PRODUCTS = 'ALL_PRODUCTS', SPECIFIC_PRODUCTS = 'SPECIFIC_PRODUCTS' }
 
 
 	/** A message that represents a time period. */
@@ -6216,7 +6216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PromotionPromotionStatusDestinationStatusStatus { STATE_UNSPECIFIED = 0, IN_REVIEW = 1, REJECTED = 2, LIVE = 3, STOPPED = 4, EXPIRED = 5, PENDING = 6 }
+	export enum PromotionPromotionStatusDestinationStatusStatus { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', IN_REVIEW = 'IN_REVIEW', REJECTED = 'REJECTED', LIVE = 'LIVE', STOPPED = 'STOPPED', EXPIRED = 'EXPIRED', PENDING = 'PENDING' }
 
 
 	/** The issue associated with the promotion. */
@@ -6246,7 +6246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PromotionStoreApplicability { STORE_APPLICABILITY_UNSPECIFIED = 0, ALL_STORES = 1, SPECIFIC_STORES = 2 }
+	export enum PromotionStoreApplicability { STORE_APPLICABILITY_UNSPECIFIED = 'STORE_APPLICABILITY_UNSPECIFIED', ALL_STORES = 'ALL_STORES', SPECIFIC_STORES = 'SPECIFIC_STORES' }
 
 
 	/** Response message for the `ListRegions` method. */
@@ -6501,7 +6501,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReturnPolicyOnlinePolicyType { TYPE_UNSPECIFIED = 0, NUMBER_OF_DAYS_AFTER_DELIVERY = 1, NO_RETURNS = 2, LIFETIME_RETURNS = 3 }
+	export enum ReturnPolicyOnlinePolicyType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', NUMBER_OF_DAYS_AFTER_DELIVERY = 'NUMBER_OF_DAYS_AFTER_DELIVERY', NO_RETURNS = 'NO_RETURNS', LIFETIME_RETURNS = 'LIFETIME_RETURNS' }
 
 
 	/** The restocking fee. This can either be a fixed fee or a micro percent. */
@@ -6558,9 +6558,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReturnPolicyOnlineReturnReasonCategoryInfoReturnLabelSource { RETURN_LABEL_SOURCE_UNSPECIFIED = 0, DOWNLOAD_AND_PRINT = 1, IN_THE_BOX = 2, CUSTOMER_RESPONSIBILITY = 3 }
+	export enum ReturnPolicyOnlineReturnReasonCategoryInfoReturnLabelSource { RETURN_LABEL_SOURCE_UNSPECIFIED = 'RETURN_LABEL_SOURCE_UNSPECIFIED', DOWNLOAD_AND_PRINT = 'DOWNLOAD_AND_PRINT', IN_THE_BOX = 'IN_THE_BOX', CUSTOMER_RESPONSIBILITY = 'CUSTOMER_RESPONSIBILITY' }
 
-	export enum ReturnPolicyOnlineReturnReasonCategoryInfoReturnReasonCategory { RETURN_REASON_CATEGORY_UNSPECIFIED = 0, BUYER_REMORSE = 1, ITEM_DEFECT = 2 }
+	export enum ReturnPolicyOnlineReturnReasonCategoryInfoReturnReasonCategory { RETURN_REASON_CATEGORY_UNSPECIFIED = 'RETURN_REASON_CATEGORY_UNSPECIFIED', BUYER_REMORSE = 'BUYER_REMORSE', ITEM_DEFECT = 'ITEM_DEFECT' }
 
 
 	/** The return shipping fee. This can either be a fixed fee or a boolean to indicate that the customer pays the actual shipping cost. */
@@ -6586,7 +6586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReturnPolicyOnlineReturnShippingFeeType { TYPE_UNSPECIFIED = 0, FIXED = 1, CUSTOMER_PAYING_ACTUAL_FEE = 2 }
+	export enum ReturnPolicyOnlineReturnShippingFeeType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', FIXED = 'FIXED', CUSTOMER_PAYING_ACTUAL_FEE = 'CUSTOMER_PAYING_ACTUAL_FEE' }
 
 
 	/** Local inventory resource. For accepted attribute values, see the local product inventory feed specification. */
@@ -8737,7 +8737,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderTrackingSignalShippingInfoShippingStatus { SHIPPING_STATE_UNSPECIFIED = 0, SHIPPED = 1, DELIVERED = 2 }
+	export enum OrderTrackingSignalShippingInfoShippingStatus { SHIPPING_STATE_UNSPECIFIED = 'SHIPPING_STATE_UNSPECIFIED', SHIPPED = 'SHIPPED', DELIVERED = 'DELIVERED' }
 
 	export interface OrderinvoicesCreateChargeInvoiceRequest {
 
@@ -12758,7 +12758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductClusterBrandInventoryStatus { INVENTORY_STATUS_UNSPECIFIED = 0, IN_STOCK = 1, OUT_OF_STOCK = 2, NOT_IN_INVENTORY = 3 }
+	export enum ProductClusterBrandInventoryStatus { INVENTORY_STATUS_UNSPECIFIED = 'INVENTORY_STATUS_UNSPECIFIED', IN_STOCK = 'IN_STOCK', OUT_OF_STOCK = 'OUT_OF_STOCK', NOT_IN_INVENTORY = 'NOT_IN_INVENTORY' }
 
 
 	/** The estimated days to deliver a product after an order is placed. Only authorized shipping signals partners working with a merchant can use this resource. Merchants should use the [`products`](https://developers.google.com/shopping-content/reference/rest/v2.1/products#productshipping) resource instead. */
@@ -13290,9 +13290,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductViewAggregatedDestinationStatus { AGGREGATED_STATUS_UNSPECIFIED = 0, NOT_ELIGIBLE_OR_DISAPPROVED = 1, PENDING = 2, ELIGIBLE_LIMITED = 3, ELIGIBLE = 4 }
+	export enum ProductViewAggregatedDestinationStatus { AGGREGATED_STATUS_UNSPECIFIED = 'AGGREGATED_STATUS_UNSPECIFIED', NOT_ELIGIBLE_OR_DISAPPROVED = 'NOT_ELIGIBLE_OR_DISAPPROVED', PENDING = 'PENDING', ELIGIBLE_LIMITED = 'ELIGIBLE_LIMITED', ELIGIBLE = 'ELIGIBLE' }
 
-	export enum ProductViewChannel { CHANNEL_UNSPECIFIED = 0, LOCAL = 1, ONLINE = 2 }
+	export enum ProductViewChannel { CHANNEL_UNSPECIFIED = 'CHANNEL_UNSPECIFIED', LOCAL = 'LOCAL', ONLINE = 'ONLINE' }
 
 
 	/** Item issue associated with the product. */
@@ -13349,7 +13349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductViewItemIssueResolution { UNKNOWN = 0, MERCHANT_ACTION = 1, PENDING_PROCESSING = 2 }
+	export enum ProductViewItemIssueResolution { UNKNOWN = 'UNKNOWN', MERCHANT_ACTION = 'MERCHANT_ACTION', PENDING_PROCESSING = 'PENDING_PROCESSING' }
 
 
 	/** Severity of an issue per destination in a region, and aggregated severity. */
@@ -13375,7 +13375,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductViewItemIssueItemIssueSeverityAggregatedSeverity { AGGREGATED_ISSUE_SEVERITY_UNSPECIFIED = 0, DISAPPROVED = 1, DEMOTED = 2, PENDING = 3 }
+	export enum ProductViewItemIssueItemIssueSeverityAggregatedSeverity { AGGREGATED_ISSUE_SEVERITY_UNSPECIFIED = 'AGGREGATED_ISSUE_SEVERITY_UNSPECIFIED', DISAPPROVED = 'DISAPPROVED', DEMOTED = 'DEMOTED', PENDING = 'PENDING' }
 
 
 	/** Issue severity for all affected regions in a destination. */
@@ -14022,7 +14022,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RenderAccountIssuesRequestPayloadContentOption { CONTENT_OPTION_UNSPECIFIED = 0, PRE_RENDERED_HTML = 1 }
+	export enum RenderAccountIssuesRequestPayloadContentOption { CONTENT_OPTION_UNSPECIFIED = 'CONTENT_OPTION_UNSPECIFIED', PRE_RENDERED_HTML = 'PRE_RENDERED_HTML' }
 
 
 	/** Response containing support content and actions for listed account issues. */
@@ -14127,7 +14127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportInteractionRequestInteractionType { INTERACTION_TYPE_UNSPECIFIED = 0, INTERACTION_DISMISS = 1, INTERACTION_CLICK = 2 }
+	export enum ReportInteractionRequestInteractionType { INTERACTION_TYPE_UNSPECIFIED = 'INTERACTION_TYPE_UNSPECIFIED', INTERACTION_DISMISS = 'INTERACTION_DISMISS', INTERACTION_CLICK = 'INTERACTION_CLICK' }
 
 
 	/** Result row returned from the search query. */
@@ -14337,7 +14337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SegmentsProgram { PROGRAM_UNSPECIFIED = 0, SHOPPING_ADS = 1, FREE_PRODUCT_LISTING = 2, FREE_LOCAL_PRODUCT_LISTING = 3, BUY_ON_GOOGLE_LISTING = 4 }
+	export enum SegmentsProgram { PROGRAM_UNSPECIFIED = 'PROGRAM_UNSPECIFIED', SHOPPING_ADS = 'SHOPPING_ADS', FREE_PRODUCT_LISTING = 'FREE_PRODUCT_LISTING', FREE_LOCAL_PRODUCT_LISTING = 'FREE_LOCAL_PRODUCT_LISTING', BUY_ON_GOOGLE_LISTING = 'BUY_ON_GOOGLE_LISTING' }
 
 
 	/** Request message for the RequestPhoneVerification method. */
@@ -14381,7 +14381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestPhoneVerificationRequestPhoneVerificationMethod { PHONE_VERIFICATION_METHOD_UNSPECIFIED = 0, SMS = 1, PHONE_CALL = 2 }
+	export enum RequestPhoneVerificationRequestPhoneVerificationMethod { PHONE_VERIFICATION_METHOD_UNSPECIFIED = 'PHONE_VERIFICATION_METHOD_UNSPECIFIED', SMS = 'SMS', PHONE_CALL = 'PHONE_CALL' }
 
 
 	/** Response message for the RequestPhoneVerification method. */
@@ -17884,11 +17884,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Content_accounts_listView { MERCHANT = 0, CSS = 1 }
+	export enum Content_accounts_listView { MERCHANT = 'MERCHANT', CSS = 'CSS' }
 
-	export enum Content_orderreturns_listOrderBy { RETURN_CREATION_TIME_DESC = 0, RETURN_CREATION_TIME_ASC = 1 }
+	export enum Content_orderreturns_listOrderBy { RETURN_CREATION_TIME_DESC = 'RETURN_CREATION_TIME_DESC', RETURN_CREATION_TIME_ASC = 'RETURN_CREATION_TIME_ASC' }
 
-	export enum Content_orders_gettestordertemplateTemplateName { TEMPLATE1 = 0, TEMPLATE2 = 1, TEMPLATE1A = 2, TEMPLATE1B = 3, TEMPLATE3 = 4, TEMPLATE4 = 5 }
+	export enum Content_orders_gettestordertemplateTemplateName { TEMPLATE1 = 'TEMPLATE1', TEMPLATE2 = 'TEMPLATE2', TEMPLATE1A = 'TEMPLATE1A', TEMPLATE1B = 'TEMPLATE1B', TEMPLATE3 = 'TEMPLATE3', TEMPLATE4 = 'TEMPLATE4' }
 
 }
 

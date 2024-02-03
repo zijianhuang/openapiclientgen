@@ -100,7 +100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionPropertyStatus { enabled = 0, disabled = 1 }
+	export enum EncryptionPropertyStatus { enabled = 'enabled', disabled = 'disabled' }
 
 
 	/** The event for a webhook. */
@@ -496,7 +496,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPRuleAction { Allow = 0 }
+	export enum IPRuleAction { Allow = 'Allow' }
 
 
 	/** Managed identity for the resource. */
@@ -550,7 +550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityPropertiesType { SystemAssigned = 0, UserAssigned = 1, 'SystemAssigned, UserAssigned' = 2, None = 3 }
+	export enum IdentityPropertiesType { SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned', None = 'None' }
 
 	export interface UserIdentityProperties {
 
@@ -602,7 +602,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportImageParametersMode { NoForce = 0, Force = 1 }
+	export enum ImportImageParametersMode { NoForce = 'NoForce', Force = 'Force' }
 
 	export interface ImportSource {
 		credentials?: ImportSourceCredentials;
@@ -711,7 +711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkRuleSetDefaultAction { Allow = 0, Deny = 1 }
+	export enum NetworkRuleSetDefaultAction { Allow = 'Allow', Deny = 'Deny' }
 
 
 	/** Virtual network rule. */
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrustPolicyType { Notary = 0 }
+	export enum TrustPolicyType { Notary = 'Notary' }
 
 
 	/** The parameters used to regenerate the login credential. */
@@ -1073,7 +1073,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateCredentialParametersName { password = 0, password2 = 1 }
+	export enum RegenerateCredentialParametersName { password = 'password', password2 = 'password2' }
 
 
 	/** An object that represents a container registry. */
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistryPropertiesProvisioningState { Creating = 0, Updating = 1, Deleting = 2, Succeeded = 3, Failed = 4, Canceled = 5 }
+	export enum RegistryPropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** The status of an Azure resource at the time the operation was called. */
@@ -1254,7 +1254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { Classic = 0, Basic = 1, Standard = 2, Premium = 3 }
+	export enum SkuName { Classic = 'Classic', Basic = 'Basic', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The response from the ListCredentials operation. */
@@ -1376,7 +1376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistryNameCheckRequestType { 'Microsoft.ContainerRegistry/registries' = 0 }
+	export enum RegistryNameCheckRequestType { 'Microsoft.ContainerRegistry/registries' = 'Microsoft.ContainerRegistry/registries' }
 
 
 	/** The result of a request to check the availability of a container registry name. */
@@ -1513,7 +1513,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistryUsageUnit { Count = 0, Bytes = 1 }
+	export enum RegistryUsageUnit { Count = 'Count', Bytes = 'Bytes' }
 
 
 	/** The result of a request to get container registry quota usages. */

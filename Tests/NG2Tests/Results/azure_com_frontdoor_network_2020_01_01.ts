@@ -25,7 +25,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureAsyncOperationResultStatus { InProgress = 0, Succeeded = 1, Failed = 2 }
+	export enum AzureAsyncOperationResultStatus { InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 	export interface Error {
 		code?: string | null;

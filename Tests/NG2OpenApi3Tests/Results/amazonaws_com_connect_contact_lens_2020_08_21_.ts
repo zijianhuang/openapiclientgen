@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SentimentValue { POSITIVE = 0, NEUTRAL = 1, NEGATIVE = 2 }
+	export enum SentimentValue { POSITIVE = 'POSITIVE', NEUTRAL = 'NEUTRAL', NEGATIVE = 'NEGATIVE' }
 
 
 	/** Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation. */

@@ -45,11 +45,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomaticTuningOptionsActualState { Off = 0, On = 1 }
+	export enum AutomaticTuningOptionsActualState { Off = 'Off', On = 'On' }
 
-	export enum AutomaticTuningOptionsDesiredState { Off = 0, On = 1, Default = 2 }
+	export enum AutomaticTuningOptionsDesiredState { Off = 'Off', On = 'On', Default = 'Default' }
 
-	export enum AutomaticTuningOptionsReasonDesc { Default = 0, Disabled = 1, AutoConfigured = 2, InheritedFromServer = 3, QueryStoreOff = 4, QueryStoreReadOnly = 5, NotSupported = 6 }
+	export enum AutomaticTuningOptionsReasonDesc { Default = 'Default', Disabled = 'Disabled', AutoConfigured = 'AutoConfigured', InheritedFromServer = 'InheritedFromServer', QueryStoreOff = 'QueryStoreOff', QueryStoreReadOnly = 'QueryStoreReadOnly', NotSupported = 'NotSupported' }
 
 
 	/** Database-level Automatic Tuning. */
@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseAutomaticTuningPropertiesActualState { Inherit = 0, Custom = 1, Auto = 2, Unspecified = 3 }
+	export enum DatabaseAutomaticTuningPropertiesActualState { Inherit = 'Inherit', Custom = 'Custom', Auto = 'Auto', Unspecified = 'Unspecified' }
 
 	@Injectable()
 	export class MyClient {

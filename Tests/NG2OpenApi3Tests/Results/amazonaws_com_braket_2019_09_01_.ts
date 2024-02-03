@@ -27,7 +27,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CancellationStatus { CANCELLING = 0, CANCELLED = 1 }
+	export enum CancellationStatus { CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -182,7 +182,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompressionType { NONE = 0, GZIP = 1 }
+	export enum CompressionType { NONE = 'NONE', GZIP = 'GZIP' }
 
 
 	/** A list of parameters that specify the input channels, type of input data, and where it is located. */
@@ -249,7 +249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceType { 'ml.m4.xlarge' = 0, 'ml.m4.2xlarge' = 1, 'ml.m4.4xlarge' = 2, 'ml.m4.10xlarge' = 3, 'ml.m4.16xlarge' = 4, 'ml.g4dn.xlarge' = 5, 'ml.g4dn.2xlarge' = 6, 'ml.g4dn.4xlarge' = 7, 'ml.g4dn.8xlarge' = 8, 'ml.g4dn.12xlarge' = 9, 'ml.g4dn.16xlarge' = 10, 'ml.m5.large' = 11, 'ml.m5.xlarge' = 12, 'ml.m5.2xlarge' = 13, 'ml.m5.4xlarge' = 14, 'ml.m5.12xlarge' = 15, 'ml.m5.24xlarge' = 16, 'ml.c4.xlarge' = 17, 'ml.c4.2xlarge' = 18, 'ml.c4.4xlarge' = 19, 'ml.c4.8xlarge' = 20, 'ml.p2.xlarge' = 21, 'ml.p2.8xlarge' = 22, 'ml.p2.16xlarge' = 23, 'ml.p3.2xlarge' = 24, 'ml.p3.8xlarge' = 25, 'ml.p3.16xlarge' = 26, 'ml.p3dn.24xlarge' = 27, 'ml.p4d.24xlarge' = 28, 'ml.c5.xlarge' = 29, 'ml.c5.2xlarge' = 30, 'ml.c5.4xlarge' = 31, 'ml.c5.9xlarge' = 32, 'ml.c5.18xlarge' = 33, 'ml.c5n.xlarge' = 34, 'ml.c5n.2xlarge' = 35, 'ml.c5n.4xlarge' = 36, 'ml.c5n.9xlarge' = 37, 'ml.c5n.18xlarge' = 38 }
+	export enum InstanceType { 'ml.m4.xlarge' = 'ml.m4.xlarge', 'ml.m4.2xlarge' = 'ml.m4.2xlarge', 'ml.m4.4xlarge' = 'ml.m4.4xlarge', 'ml.m4.10xlarge' = 'ml.m4.10xlarge', 'ml.m4.16xlarge' = 'ml.m4.16xlarge', 'ml.g4dn.xlarge' = 'ml.g4dn.xlarge', 'ml.g4dn.2xlarge' = 'ml.g4dn.2xlarge', 'ml.g4dn.4xlarge' = 'ml.g4dn.4xlarge', 'ml.g4dn.8xlarge' = 'ml.g4dn.8xlarge', 'ml.g4dn.12xlarge' = 'ml.g4dn.12xlarge', 'ml.g4dn.16xlarge' = 'ml.g4dn.16xlarge', 'ml.m5.large' = 'ml.m5.large', 'ml.m5.xlarge' = 'ml.m5.xlarge', 'ml.m5.2xlarge' = 'ml.m5.2xlarge', 'ml.m5.4xlarge' = 'ml.m5.4xlarge', 'ml.m5.12xlarge' = 'ml.m5.12xlarge', 'ml.m5.24xlarge' = 'ml.m5.24xlarge', 'ml.c4.xlarge' = 'ml.c4.xlarge', 'ml.c4.2xlarge' = 'ml.c4.2xlarge', 'ml.c4.4xlarge' = 'ml.c4.4xlarge', 'ml.c4.8xlarge' = 'ml.c4.8xlarge', 'ml.p2.xlarge' = 'ml.p2.xlarge', 'ml.p2.8xlarge' = 'ml.p2.8xlarge', 'ml.p2.16xlarge' = 'ml.p2.16xlarge', 'ml.p3.2xlarge' = 'ml.p3.2xlarge', 'ml.p3.8xlarge' = 'ml.p3.8xlarge', 'ml.p3.16xlarge' = 'ml.p3.16xlarge', 'ml.p3dn.24xlarge' = 'ml.p3dn.24xlarge', 'ml.p4d.24xlarge' = 'ml.p4d.24xlarge', 'ml.c5.xlarge' = 'ml.c5.xlarge', 'ml.c5.2xlarge' = 'ml.c5.2xlarge', 'ml.c5.4xlarge' = 'ml.c5.4xlarge', 'ml.c5.9xlarge' = 'ml.c5.9xlarge', 'ml.c5.18xlarge' = 'ml.c5.18xlarge', 'ml.c5n.xlarge' = 'ml.c5n.xlarge', 'ml.c5n.2xlarge' = 'ml.c5n.2xlarge', 'ml.c5n.4xlarge' = 'ml.c5n.4xlarge', 'ml.c5n.9xlarge' = 'ml.c5n.9xlarge', 'ml.c5n.18xlarge' = 'ml.c5n.18xlarge' }
 
 	export interface DeviceRetiredException {
 	}
@@ -350,9 +350,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceStatus { ONLINE = 0, OFFLINE = 1, RETIRED = 2 }
+	export enum DeviceStatus { ONLINE = 'ONLINE', OFFLINE = 'OFFLINE', RETIRED = 'RETIRED' }
 
-	export enum DeviceType { QPU = 0, SIMULATOR = 1 }
+	export enum DeviceType { QPU = 'QPU', SIMULATOR = 'SIMULATOR' }
 
 	export interface GetJobResponse {
 
@@ -511,7 +511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobEventType { WAITING_FOR_PRIORITY = 0, QUEUED_FOR_EXECUTION = 1, STARTING_INSTANCE = 2, DOWNLOADING_DATA = 3, RUNNING = 4, DEPRIORITIZED_DUE_TO_INACTIVITY = 5, UPLOADING_RESULTS = 6, COMPLETED = 7, FAILED = 8, MAX_RUNTIME_EXCEEDED = 9, CANCELLED = 10 }
+	export enum JobEventType { WAITING_FOR_PRIORITY = 'WAITING_FOR_PRIORITY', QUEUED_FOR_EXECUTION = 'QUEUED_FOR_EXECUTION', STARTING_INSTANCE = 'STARTING_INSTANCE', DOWNLOADING_DATA = 'DOWNLOADING_DATA', RUNNING = 'RUNNING', DEPRIORITIZED_DUE_TO_INACTIVITY = 'DEPRIORITIZED_DUE_TO_INACTIVITY', UPLOADING_RESULTS = 'UPLOADING_RESULTS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', MAX_RUNTIME_EXCEEDED = 'MAX_RUNTIME_EXCEEDED', CANCELLED = 'CANCELLED' }
 
 	export interface HyperParameters {
 	}
@@ -578,7 +578,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPrimaryStatus { QUEUED = 0, RUNNING = 1, COMPLETED = 2, FAILED = 3, CANCELLING = 4, CANCELLED = 5 }
+	export enum JobPrimaryStatus { QUEUED = 'QUEUED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
 
 	/** Specifies limits for how long an Amazon Braket job can run.  */
@@ -683,7 +683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuantumTaskStatus { CREATED = 0, QUEUED = 1, RUNNING = 2, COMPLETED = 3, FAILED = 4, CANCELLING = 5, CANCELLED = 6 }
+	export enum QuantumTaskStatus { CREATED = 'CREATED', QUEUED = 'QUEUED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagsMap;
@@ -888,7 +888,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchJobsFilterOperator { LT = 0, LTE = 1, EQUAL = 2, GT = 3, GTE = 4, BETWEEN = 5, CONTAINS = 6 }
+	export enum SearchJobsFilterOperator { LT = 'LT', LTE = 'LTE', EQUAL = 'EQUAL', GT = 'GT', GTE = 'GTE', BETWEEN = 'BETWEEN', CONTAINS = 'CONTAINS' }
 
 	export interface SearchQuantumTasksResponse {
 		nextToken?: string;
@@ -1004,7 +1004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchQuantumTasksFilterOperator { LT = 0, LTE = 1, EQUAL = 2, GT = 3, GTE = 4, BETWEEN = 5 }
+	export enum SearchQuantumTasksFilterOperator { LT = 'LT', LTE = 'LTE', EQUAL = 'EQUAL', GT = 'GT', GTE = 'GTE', BETWEEN = 'BETWEEN' }
 
 	export interface TagResourceResponse {
 	}

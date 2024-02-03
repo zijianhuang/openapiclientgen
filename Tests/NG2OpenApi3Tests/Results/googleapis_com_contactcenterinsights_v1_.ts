@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1EntityMentionDataType { MENTION_TYPE_UNSPECIFIED = 0, PROPER = 1, COMMON = 2 }
+	export enum GoogleCloudContactcenterinsightsV1EntityMentionDataType { MENTION_TYPE_UNSPECIFIED = 'MENTION_TYPE_UNSPECIFIED', PROPER = 'PROPER', COMMON = 'COMMON' }
 
 
 	/** The data for a hold annotation. */
@@ -440,7 +440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1EntityType { TYPE_UNSPECIFIED = 0, PERSON = 1, LOCATION = 2, ORGANIZATION = 3, EVENT = 4, WORK_OF_ART = 5, CONSUMER_GOOD = 6, OTHER = 7, PHONE_NUMBER = 8, ADDRESS = 9, DATE = 10, NUMBER = 11, PRICE = 12 }
+	export enum GoogleCloudContactcenterinsightsV1EntityType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PERSON = 'PERSON', LOCATION = 'LOCATION', ORGANIZATION = 'ORGANIZATION', EVENT = 'EVENT', WORK_OF_ART = 'WORK_OF_ART', CONSUMER_GOOD = 'CONSUMER_GOOD', OTHER = 'OTHER', PHONE_NUMBER = 'PHONE_NUMBER', ADDRESS = 'ADDRESS', DATE = 'DATE', NUMBER = 'NUMBER', PRICE = 'PRICE' }
 
 
 	/** The data for an intent. Represents a detected intent in the conversation, for example MAKES_PROMISE. */
@@ -625,7 +625,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1AnnotatorSelectorSummarizationConfigSummarizationModel { SUMMARIZATION_MODEL_UNSPECIFIED = 0, BASELINE_MODEL = 1 }
+	export enum GoogleCloudContactcenterinsightsV1AnnotatorSelectorSummarizationConfigSummarizationModel { SUMMARIZATION_MODEL_UNSPECIFIED = 'SUMMARIZATION_MODEL_UNSPECIFIED', BASELINE_MODEL = 'BASELINE_MODEL' }
 
 
 	/** The feedback that the customer has about a certain answer in the conversation. */
@@ -662,7 +662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1AnswerFeedbackCorrectnessLevel { CORRECTNESS_LEVEL_UNSPECIFIED = 0, NOT_CORRECT = 1, PARTIALLY_CORRECT = 2, FULLY_CORRECT = 3 }
+	export enum GoogleCloudContactcenterinsightsV1AnswerFeedbackCorrectnessLevel { CORRECTNESS_LEVEL_UNSPECIFIED = 'CORRECTNESS_LEVEL_UNSPECIFIED', NOT_CORRECT = 'NOT_CORRECT', PARTIALLY_CORRECT = 'PARTIALLY_CORRECT', FULLY_CORRECT = 'FULLY_CORRECT' }
 
 
 	/** Agent Assist Article Suggestion data. */
@@ -1481,7 +1481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1ConversationMedium { MEDIUM_UNSPECIFIED = 0, PHONE_CALL = 1, CHAT = 2 }
+	export enum GoogleCloudContactcenterinsightsV1ConversationMedium { MEDIUM_UNSPECIFIED = 'MEDIUM_UNSPECIFIED', PHONE_CALL = 'PHONE_CALL', CHAT = 'CHAT' }
 
 
 	/** Conversation metadata related to quality management. */
@@ -1934,7 +1934,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1ConversationParticipantRole { ROLE_UNSPECIFIED = 0, HUMAN_AGENT = 1, AUTOMATED_AGENT = 2, END_USER = 3, ANY_AGENT = 4 }
+	export enum GoogleCloudContactcenterinsightsV1ConversationParticipantRole { ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED', HUMAN_AGENT = 'HUMAN_AGENT', AUTOMATED_AGENT = 'AUTOMATED_AGENT', END_USER = 'END_USER', ANY_AGENT = 'ANY_AGENT' }
 
 
 	/** Word-level info for words in a transcript. */
@@ -2182,9 +2182,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1IssueModelModelType { MODEL_TYPE_UNSPECIFIED = 0, TYPE_V1 = 1, TYPE_V2 = 2 }
+	export enum GoogleCloudContactcenterinsightsV1IssueModelModelType { MODEL_TYPE_UNSPECIFIED = 'MODEL_TYPE_UNSPECIFIED', TYPE_V1 = 'TYPE_V1', TYPE_V2 = 'TYPE_V2' }
 
-	export enum GoogleCloudContactcenterinsightsV1IssueModelState { STATE_UNSPECIFIED = 0, UNDEPLOYED = 1, DEPLOYING = 2, DEPLOYED = 3, UNDEPLOYING = 4, DELETING = 5 }
+	export enum GoogleCloudContactcenterinsightsV1IssueModelState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UNDEPLOYED = 'UNDEPLOYED', DEPLOYING = 'DEPLOYING', DEPLOYED = 'DEPLOYED', UNDEPLOYING = 'UNDEPLOYING', DELETING = 'DELETING' }
 
 
 	/** Metadata for deleting an issue model. */
@@ -2439,7 +2439,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestWriteDisposition { WRITE_DISPOSITION_UNSPECIFIED = 0, WRITE_TRUNCATE = 1, WRITE_APPEND = 2 }
+	export enum GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestWriteDisposition { WRITE_DISPOSITION_UNSPECIFIED = 'WRITE_DISPOSITION_UNSPECIFIED', WRITE_TRUNCATE = 'WRITE_TRUNCATE', WRITE_APPEND = 'WRITE_APPEND' }
 
 
 	/** Response for an export insights operation. */
@@ -2633,7 +2633,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSourceBucketObjectType { BUCKET_OBJECT_TYPE_UNSPECIFIED = 0, TRANSCRIPT = 1, AUDIO = 2 }
+	export enum GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSourceBucketObjectType { BUCKET_OBJECT_TYPE_UNSPECIFIED = 'BUCKET_OBJECT_TYPE_UNSPECIFIED', TRANSCRIPT = 'TRANSCRIPT', AUDIO = 'AUDIO' }
 
 
 	/** DLP resources used for redaction while ingesting conversations. */
@@ -3029,9 +3029,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroupType { PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED = 0, ALL_OF = 1, ANY_OF = 2 }
+	export enum GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroupType { PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED = 'PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED', ALL_OF = 'ALL_OF', ANY_OF = 'ANY_OF' }
 
-	export enum GoogleCloudContactcenterinsightsV1PhraseMatcherType { PHRASE_MATCHER_TYPE_UNSPECIFIED = 0, ALL_OF = 1, ANY_OF = 2 }
+	export enum GoogleCloudContactcenterinsightsV1PhraseMatcherType { PHRASE_MATCHER_TYPE_UNSPECIFIED = 'PHRASE_MATCHER_TYPE_UNSPECIFIED', ALL_OF = 'ALL_OF', ANY_OF = 'ANY_OF' }
 
 
 	/** The response of listing views. */
@@ -6358,7 +6358,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Contactcenterinsights_projects_locations_views_getView { CONVERSATION_VIEW_UNSPECIFIED = 0, FULL = 1, BASIC = 2 }
+	export enum Contactcenterinsights_projects_locations_views_getView { CONVERSATION_VIEW_UNSPECIFIED = 'CONVERSATION_VIEW_UNSPECIFIED', FULL = 'FULL', BASIC = 'BASIC' }
 
 }
 

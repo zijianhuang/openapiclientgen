@@ -227,11 +227,11 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusValues { IN_PROGRESS = 0, FAILED = 1, SUCCEEDED = 2 }
+	export enum StatusValues { IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
-	export enum TargetType { AWS_ACCOUNT = 0 }
+	export enum TargetType { AWS_ACCOUNT = 'AWS_ACCOUNT' }
 
-	export enum PrincipalType { USER = 0, GROUP = 1 }
+	export enum PrincipalType { USER = 'USER', GROUP = 'GROUP' }
 
 	export interface CreateAccountAssignmentRequest {
 
@@ -757,7 +757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceAccessControlAttributeConfigurationStatus { ENABLED = 0, CREATION_IN_PROGRESS = 1, CREATION_FAILED = 2 }
+	export enum InstanceAccessControlAttributeConfigurationStatus { ENABLED = 'ENABLED', CREATION_IN_PROGRESS = 'CREATION_IN_PROGRESS', CREATION_FAILED = 'CREATION_FAILED' }
 
 	export interface DescribeInstanceAccessControlAttributeConfigurationRequest {
 
@@ -1286,7 +1286,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisioningStatus { LATEST_PERMISSION_SET_PROVISIONED = 0, LATEST_PERMISSION_SET_NOT_PROVISIONED = 1 }
+	export enum ProvisioningStatus { LATEST_PERMISSION_SET_PROVISIONED = 'LATEST_PERMISSION_SET_PROVISIONED', LATEST_PERMISSION_SET_NOT_PROVISIONED = 'LATEST_PERMISSION_SET_NOT_PROVISIONED' }
 
 	export interface ListCustomerManagedPolicyReferencesInPermissionSetResponse {
 		CustomerManagedPolicyReferences?: Array<CustomerManagedPolicyReference>;
@@ -1677,7 +1677,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionTargetType { AWS_ACCOUNT = 0, ALL_PROVISIONED_ACCOUNTS = 1 }
+	export enum ProvisionTargetType { AWS_ACCOUNT = 'AWS_ACCOUNT', ALL_PROVISIONED_ACCOUNTS = 'ALL_PROVISIONED_ACCOUNTS' }
 
 	export interface PutInlinePolicyToPermissionSetResponse {
 	}
@@ -2264,79 +2264,79 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AttachCustomerManagedPolicyReferenceToPermissionSetX_Amz_Target { 'SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet' = 0 }
+	export enum AttachCustomerManagedPolicyReferenceToPermissionSetX_Amz_Target { 'SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet' = 'SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet' }
 
-	export enum AttachManagedPolicyToPermissionSetX_Amz_Target { 'SWBExternalService.AttachManagedPolicyToPermissionSet' = 0 }
+	export enum AttachManagedPolicyToPermissionSetX_Amz_Target { 'SWBExternalService.AttachManagedPolicyToPermissionSet' = 'SWBExternalService.AttachManagedPolicyToPermissionSet' }
 
-	export enum CreateAccountAssignmentX_Amz_Target { 'SWBExternalService.CreateAccountAssignment' = 0 }
+	export enum CreateAccountAssignmentX_Amz_Target { 'SWBExternalService.CreateAccountAssignment' = 'SWBExternalService.CreateAccountAssignment' }
 
-	export enum CreateInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.CreateInstanceAccessControlAttributeConfiguration' = 0 }
+	export enum CreateInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.CreateInstanceAccessControlAttributeConfiguration' = 'SWBExternalService.CreateInstanceAccessControlAttributeConfiguration' }
 
-	export enum CreatePermissionSetX_Amz_Target { 'SWBExternalService.CreatePermissionSet' = 0 }
+	export enum CreatePermissionSetX_Amz_Target { 'SWBExternalService.CreatePermissionSet' = 'SWBExternalService.CreatePermissionSet' }
 
-	export enum DeleteAccountAssignmentX_Amz_Target { 'SWBExternalService.DeleteAccountAssignment' = 0 }
+	export enum DeleteAccountAssignmentX_Amz_Target { 'SWBExternalService.DeleteAccountAssignment' = 'SWBExternalService.DeleteAccountAssignment' }
 
-	export enum DeleteInlinePolicyFromPermissionSetX_Amz_Target { 'SWBExternalService.DeleteInlinePolicyFromPermissionSet' = 0 }
+	export enum DeleteInlinePolicyFromPermissionSetX_Amz_Target { 'SWBExternalService.DeleteInlinePolicyFromPermissionSet' = 'SWBExternalService.DeleteInlinePolicyFromPermissionSet' }
 
-	export enum DeleteInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration' = 0 }
+	export enum DeleteInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration' = 'SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration' }
 
-	export enum DeletePermissionSetX_Amz_Target { 'SWBExternalService.DeletePermissionSet' = 0 }
+	export enum DeletePermissionSetX_Amz_Target { 'SWBExternalService.DeletePermissionSet' = 'SWBExternalService.DeletePermissionSet' }
 
-	export enum DeletePermissionsBoundaryFromPermissionSetX_Amz_Target { 'SWBExternalService.DeletePermissionsBoundaryFromPermissionSet' = 0 }
+	export enum DeletePermissionsBoundaryFromPermissionSetX_Amz_Target { 'SWBExternalService.DeletePermissionsBoundaryFromPermissionSet' = 'SWBExternalService.DeletePermissionsBoundaryFromPermissionSet' }
 
-	export enum DescribeAccountAssignmentCreationStatusX_Amz_Target { 'SWBExternalService.DescribeAccountAssignmentCreationStatus' = 0 }
+	export enum DescribeAccountAssignmentCreationStatusX_Amz_Target { 'SWBExternalService.DescribeAccountAssignmentCreationStatus' = 'SWBExternalService.DescribeAccountAssignmentCreationStatus' }
 
-	export enum DescribeAccountAssignmentDeletionStatusX_Amz_Target { 'SWBExternalService.DescribeAccountAssignmentDeletionStatus' = 0 }
+	export enum DescribeAccountAssignmentDeletionStatusX_Amz_Target { 'SWBExternalService.DescribeAccountAssignmentDeletionStatus' = 'SWBExternalService.DescribeAccountAssignmentDeletionStatus' }
 
-	export enum DescribeInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration' = 0 }
+	export enum DescribeInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration' = 'SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration' }
 
-	export enum DescribePermissionSetX_Amz_Target { 'SWBExternalService.DescribePermissionSet' = 0 }
+	export enum DescribePermissionSetX_Amz_Target { 'SWBExternalService.DescribePermissionSet' = 'SWBExternalService.DescribePermissionSet' }
 
-	export enum DescribePermissionSetProvisioningStatusX_Amz_Target { 'SWBExternalService.DescribePermissionSetProvisioningStatus' = 0 }
+	export enum DescribePermissionSetProvisioningStatusX_Amz_Target { 'SWBExternalService.DescribePermissionSetProvisioningStatus' = 'SWBExternalService.DescribePermissionSetProvisioningStatus' }
 
-	export enum DetachCustomerManagedPolicyReferenceFromPermissionSetX_Amz_Target { 'SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet' = 0 }
+	export enum DetachCustomerManagedPolicyReferenceFromPermissionSetX_Amz_Target { 'SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet' = 'SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet' }
 
-	export enum DetachManagedPolicyFromPermissionSetX_Amz_Target { 'SWBExternalService.DetachManagedPolicyFromPermissionSet' = 0 }
+	export enum DetachManagedPolicyFromPermissionSetX_Amz_Target { 'SWBExternalService.DetachManagedPolicyFromPermissionSet' = 'SWBExternalService.DetachManagedPolicyFromPermissionSet' }
 
-	export enum GetInlinePolicyForPermissionSetX_Amz_Target { 'SWBExternalService.GetInlinePolicyForPermissionSet' = 0 }
+	export enum GetInlinePolicyForPermissionSetX_Amz_Target { 'SWBExternalService.GetInlinePolicyForPermissionSet' = 'SWBExternalService.GetInlinePolicyForPermissionSet' }
 
-	export enum GetPermissionsBoundaryForPermissionSetX_Amz_Target { 'SWBExternalService.GetPermissionsBoundaryForPermissionSet' = 0 }
+	export enum GetPermissionsBoundaryForPermissionSetX_Amz_Target { 'SWBExternalService.GetPermissionsBoundaryForPermissionSet' = 'SWBExternalService.GetPermissionsBoundaryForPermissionSet' }
 
-	export enum ListAccountAssignmentCreationStatusX_Amz_Target { 'SWBExternalService.ListAccountAssignmentCreationStatus' = 0 }
+	export enum ListAccountAssignmentCreationStatusX_Amz_Target { 'SWBExternalService.ListAccountAssignmentCreationStatus' = 'SWBExternalService.ListAccountAssignmentCreationStatus' }
 
-	export enum ListAccountAssignmentDeletionStatusX_Amz_Target { 'SWBExternalService.ListAccountAssignmentDeletionStatus' = 0 }
+	export enum ListAccountAssignmentDeletionStatusX_Amz_Target { 'SWBExternalService.ListAccountAssignmentDeletionStatus' = 'SWBExternalService.ListAccountAssignmentDeletionStatus' }
 
-	export enum ListAccountAssignmentsX_Amz_Target { 'SWBExternalService.ListAccountAssignments' = 0 }
+	export enum ListAccountAssignmentsX_Amz_Target { 'SWBExternalService.ListAccountAssignments' = 'SWBExternalService.ListAccountAssignments' }
 
-	export enum ListAccountsForProvisionedPermissionSetX_Amz_Target { 'SWBExternalService.ListAccountsForProvisionedPermissionSet' = 0 }
+	export enum ListAccountsForProvisionedPermissionSetX_Amz_Target { 'SWBExternalService.ListAccountsForProvisionedPermissionSet' = 'SWBExternalService.ListAccountsForProvisionedPermissionSet' }
 
-	export enum ListCustomerManagedPolicyReferencesInPermissionSetX_Amz_Target { 'SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet' = 0 }
+	export enum ListCustomerManagedPolicyReferencesInPermissionSetX_Amz_Target { 'SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet' = 'SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet' }
 
-	export enum ListInstancesX_Amz_Target { 'SWBExternalService.ListInstances' = 0 }
+	export enum ListInstancesX_Amz_Target { 'SWBExternalService.ListInstances' = 'SWBExternalService.ListInstances' }
 
-	export enum ListManagedPoliciesInPermissionSetX_Amz_Target { 'SWBExternalService.ListManagedPoliciesInPermissionSet' = 0 }
+	export enum ListManagedPoliciesInPermissionSetX_Amz_Target { 'SWBExternalService.ListManagedPoliciesInPermissionSet' = 'SWBExternalService.ListManagedPoliciesInPermissionSet' }
 
-	export enum ListPermissionSetProvisioningStatusX_Amz_Target { 'SWBExternalService.ListPermissionSetProvisioningStatus' = 0 }
+	export enum ListPermissionSetProvisioningStatusX_Amz_Target { 'SWBExternalService.ListPermissionSetProvisioningStatus' = 'SWBExternalService.ListPermissionSetProvisioningStatus' }
 
-	export enum ListPermissionSetsX_Amz_Target { 'SWBExternalService.ListPermissionSets' = 0 }
+	export enum ListPermissionSetsX_Amz_Target { 'SWBExternalService.ListPermissionSets' = 'SWBExternalService.ListPermissionSets' }
 
-	export enum ListPermissionSetsProvisionedToAccountX_Amz_Target { 'SWBExternalService.ListPermissionSetsProvisionedToAccount' = 0 }
+	export enum ListPermissionSetsProvisionedToAccountX_Amz_Target { 'SWBExternalService.ListPermissionSetsProvisionedToAccount' = 'SWBExternalService.ListPermissionSetsProvisionedToAccount' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'SWBExternalService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'SWBExternalService.ListTagsForResource' = 'SWBExternalService.ListTagsForResource' }
 
-	export enum ProvisionPermissionSetX_Amz_Target { 'SWBExternalService.ProvisionPermissionSet' = 0 }
+	export enum ProvisionPermissionSetX_Amz_Target { 'SWBExternalService.ProvisionPermissionSet' = 'SWBExternalService.ProvisionPermissionSet' }
 
-	export enum PutInlinePolicyToPermissionSetX_Amz_Target { 'SWBExternalService.PutInlinePolicyToPermissionSet' = 0 }
+	export enum PutInlinePolicyToPermissionSetX_Amz_Target { 'SWBExternalService.PutInlinePolicyToPermissionSet' = 'SWBExternalService.PutInlinePolicyToPermissionSet' }
 
-	export enum PutPermissionsBoundaryToPermissionSetX_Amz_Target { 'SWBExternalService.PutPermissionsBoundaryToPermissionSet' = 0 }
+	export enum PutPermissionsBoundaryToPermissionSetX_Amz_Target { 'SWBExternalService.PutPermissionsBoundaryToPermissionSet' = 'SWBExternalService.PutPermissionsBoundaryToPermissionSet' }
 
-	export enum TagResourceX_Amz_Target { 'SWBExternalService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'SWBExternalService.TagResource' = 'SWBExternalService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'SWBExternalService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'SWBExternalService.UntagResource' = 'SWBExternalService.UntagResource' }
 
-	export enum UpdateInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration' = 0 }
+	export enum UpdateInstanceAccessControlAttributeConfigurationX_Amz_Target { 'SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration' = 'SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration' }
 
-	export enum UpdatePermissionSetX_Amz_Target { 'SWBExternalService.UpdatePermissionSet' = 0 }
+	export enum UpdatePermissionSetX_Amz_Target { 'SWBExternalService.UpdatePermissionSet' = 'SWBExternalService.UpdatePermissionSet' }
 
 }
 

@@ -92,11 +92,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvisorPropertiesAdvisorStatus { GA = 0, PublicPreview = 1, LimitedPublicPreview = 2, PrivatePreview = 3 }
+	export enum AdvisorPropertiesAdvisorStatus { GA = 'GA', PublicPreview = 'PublicPreview', LimitedPublicPreview = 'LimitedPublicPreview', PrivatePreview = 'PrivatePreview' }
 
-	export enum AdvisorPropertiesAutoExecuteStatus { Enabled = 0, Disabled = 1, Default = 2 }
+	export enum AdvisorPropertiesAutoExecuteStatus { Enabled = 'Enabled', Disabled = 'Disabled', Default = 'Default' }
 
-	export enum AdvisorPropertiesAutoExecuteStatusInheritedFrom { Default = 0, Subscription = 1, Server = 2, ElasticPool = 3, Database = 4 }
+	export enum AdvisorPropertiesAutoExecuteStatusInheritedFrom { Default = 'Default', Subscription = 'Subscription', Server = 'Server', ElasticPool = 'ElasticPool', Database = 'Database' }
 
 
 	/** Database, Server or Elastic Pool Recommended Action. */
@@ -307,7 +307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendedActionErrorInfoIsRetryable { Yes = 0, No = 1 }
+	export enum RecommendedActionErrorInfoIsRetryable { Yes = 'Yes', No = 'No' }
 
 
 	/** Contains information of estimated or observed impact on various metrics for an Azure SQL Database, Server or Elastic Pool Recommended Action. */
@@ -358,7 +358,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendedActionPropertiesExecuteActionInitiatedBy { User = 0, System = 1 }
+	export enum RecommendedActionPropertiesExecuteActionInitiatedBy { User = 'User', System = 'System' }
 
 
 	/** Contains information for manual implementation for an Azure SQL Database, Server or Elastic Pool Recommended Action. */
@@ -388,7 +388,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendedActionImplementationInfoMethod { TSql = 0, AzurePowerShell = 1 }
+	export enum RecommendedActionImplementationInfoMethod { TSql = 'TSql', AzurePowerShell = 'AzurePowerShell' }
 
 
 	/** Contains information of current state for an Azure SQL Database, Server or Elastic Pool Recommended Action. */
@@ -431,7 +431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendedActionStateInfoCurrentValue { Active = 0, Pending = 1, Executing = 2, Verifying = 3, PendingRevert = 4, RevertCancelled = 5, Reverting = 6, Reverted = 7, Ignored = 8, Expired = 9, Monitoring = 10, Resolved = 11, Success = 12, Error = 13 }
+	export enum RecommendedActionStateInfoCurrentValue { Active = 'Active', Pending = 'Pending', Executing = 'Executing', Verifying = 'Verifying', PendingRevert = 'PendingRevert', RevertCancelled = 'RevertCancelled', Reverting = 'Reverting', Reverted = 'Reverted', Ignored = 'Ignored', Expired = 'Expired', Monitoring = 'Monitoring', Resolved = 'Resolved', Success = 'Success', Error = 'Error' }
 
 
 	/** Contains time series of various impacted metrics for an Azure SQL Database, Server or Elastic Pool Recommended Action. */

@@ -45,9 +45,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentJobType { JOB_TYPE_UNSPECIFIED = 0, PIPELINE = 1, QUERY = 2, ML_EXTERNAL = 3 }
+	export enum AssignmentJobType { JOB_TYPE_UNSPECIFIED = 'JOB_TYPE_UNSPECIFIED', PIPELINE = 'PIPELINE', QUERY = 'QUERY', ML_EXTERNAL = 'ML_EXTERNAL' }
 
-	export enum AssignmentState { STATE_UNSPECIFIED = 0, PENDING = 1, ACTIVE = 2 }
+	export enum AssignmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', ACTIVE = 'ACTIVE' }
 
 
 	/** Represents a BI Reservation. */
@@ -226,9 +226,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacityCommitmentPlan { COMMITMENT_PLAN_UNSPECIFIED = 0, FLEX = 1, TRIAL = 2, MONTHLY = 3, ANNUAL = 4 }
+	export enum CapacityCommitmentPlan { COMMITMENT_PLAN_UNSPECIFIED = 'COMMITMENT_PLAN_UNSPECIFIED', FLEX = 'FLEX', TRIAL = 'TRIAL', MONTHLY = 'MONTHLY', ANNUAL = 'ANNUAL' }
 
-	export enum CapacityCommitmentState { STATE_UNSPECIFIED = 0, PENDING = 1, ACTIVE = 2, FAILED = 3 }
+	export enum CapacityCommitmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

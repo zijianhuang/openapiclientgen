@@ -626,7 +626,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DfsSlatesByDateFormat { XML = 0, JSON = 1 }
+	export enum DfsSlatesByDateFormat { XML = 'XML', JSON = 'JSON' }
 
 }
 

@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonPriceCurrency { USD = 0, CAD = 1 }
+	export enum ComparisonPriceCurrency { USD = 'USD', CAD = 'CAD' }
 
 	export interface CurrentPrice {
 		amount?: number | null;
@@ -312,7 +312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayErrorCategory { APPLICATION = 0, SYSTEM = 1, REQUEST = 2, DATA = 3 }
+	export enum GatewayErrorCategory { APPLICATION = 'APPLICATION', SYSTEM = 'SYSTEM', REQUEST = 'REQUEST', DATA = 'DATA' }
 
 	export interface GatewayErrorCauses {
 		code?: string | null;
@@ -336,9 +336,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayErrorGatewayErrorCategory { INTERNAL_DATA_ERROR = 0, EXTERNAL_DATA_ERROR = 1, SYSTEM_ERROR = 2 }
+	export enum GatewayErrorGatewayErrorCategory { INTERNAL_DATA_ERROR = 'INTERNAL_DATA_ERROR', EXTERNAL_DATA_ERROR = 'EXTERNAL_DATA_ERROR', SYSTEM_ERROR = 'SYSTEM_ERROR' }
 
-	export enum GatewayErrorSeverity { INFO = 0, WARN = 1, ERROR = 2 }
+	export enum GatewayErrorSeverity { INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR' }
 
 	export interface ItemPriceResponse {
 		ItemPriceResponseErrors?: Array<ItemPriceResponseErrors>;
@@ -569,7 +569,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PricePricingComparisonPriceType { BASE = 0 }
+	export enum PricePricingComparisonPriceType { BASE = 'BASE' }
 
 	export interface PricePricingCurrentPrice {
 		amount?: number | null;
@@ -587,13 +587,13 @@ export namespace MyNS {
 
 	}
 
-	export enum PricePricingCurrentPriceType { BASE = 0, REDUCED = 1, CLEARANCE = 2 }
+	export enum PricePricingCurrentPriceType { BASE = 'BASE', REDUCED = 'REDUCED', CLEARANCE = 'CLEARANCE' }
 
-	export enum PricePricingPriceDisplayCodes { CART = 0, CHECKOUT = 1 }
+	export enum PricePricingPriceDisplayCodes { CART = 'CART', CHECKOUT = 'CHECKOUT' }
 
-	export enum PricePricingProcessMode { UPSERT = 0, DELETE = 1 }
+	export enum PricePricingProcessMode { UPSERT = 'UPSERT', DELETE = 'DELETE' }
 
-	export enum PriceReplaceAll { true = 0, false = 1 }
+	export enum PriceReplaceAll { true = 'true', false = 'false' }
 
 	export interface Pricing {
 
@@ -757,9 +757,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType { UNIT = 0, PERCENTAGE = 1 }
+	export enum RepricerEntityCollectionResponseStrategyCollectionsStrategiesAdjustmentType { UNIT = 'UNIT', PERCENTAGE = 'PERCENTAGE' }
 
-	export enum RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType { 'Buy Box Price' = 0, 'External Price' = 1, 'Competitive Price' = 2 }
+	export enum RepricerEntityCollectionResponseStrategyCollectionsStrategiesStrategyType { 'Buy Box Price' = 'Buy Box Price', 'External Price' = 'External Price', 'Competitive Price' = 'Competitive Price' }
 
 	export interface RepricerEntityDeleteResponse {
 		message?: string | null;
@@ -1140,7 +1140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriceBulkUploadsFeedType { price = 0, CPT_SELLER_ELIGIBILITY = 1 }
+	export enum PriceBulkUploadsFeedType { price = 'price', CPT_SELLER_ELIGIBILITY = 'CPT_SELLER_ELIGIBILITY' }
 
 	export interface UpdatePricePutBody {
 		definitions?: string | null;

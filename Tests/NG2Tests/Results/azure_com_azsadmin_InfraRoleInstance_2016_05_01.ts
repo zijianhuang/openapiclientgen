@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InfraRoleInstanceModelState { Stopped = 0, Starting = 1, Running = 2, Stopping = 3 }
+	export enum InfraRoleInstanceModelState { Stopped = 'Stopped', Starting = 'Starting', Running = 'Running', Stopping = 'Stopping' }
 
 
 	/** Pageable list of infrastructure role instances. */

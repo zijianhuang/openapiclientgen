@@ -144,7 +144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomationAccountPropertiesState { Ok = 0, Unavailable = 1, Suspended = 2 }
+	export enum AutomationAccountPropertiesState { Ok = 'Ok', Unavailable = 'Unavailable', Suspended = 'Suspended' }
 
 
 	/** The parameters supplied to the update automation account operation. */
@@ -236,9 +236,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyKeyName { Primary = 0, Secondary = 1 }
+	export enum KeyKeyName { Primary = 'Primary', Secondary = 'Secondary' }
 
-	export enum KeyPermissions { Read = 0, Full = 1 }
+	export enum KeyPermissions { Read = 'Read', Full = 'Full' }
 
 	export interface KeyListResult {
 
@@ -339,7 +339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { Free = 0, Basic = 1 }
+	export enum SkuName { Free = 'Free', Basic = 'Basic' }
 
 
 	/** Definition of the statistic. */

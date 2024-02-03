@@ -507,7 +507,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataFlowDebugCommandRequestCommand { executePreviewQuery = 0, executeStatisticsQuery = 1, executeExpressionQuery = 2 }
+	export enum DataFlowDebugCommandRequestCommand { executePreviewQuery = 'executePreviewQuery', executeStatisticsQuery = 'executeStatisticsQuery', executeExpressionQuery = 'executeExpressionQuery' }
 
 
 	/** Response body structure of data flow result for data preview, statistics or expression preview. */
@@ -711,7 +711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetDebugResourcePropertiesParametersType { Object = 0, String = 1, Int = 2, Float = 3, Bool = 4, Array = 5, SecureString = 6 }
+	export enum DatasetDebugResourcePropertiesParametersType { Object = 'Object', String = 'String', Int = 'Int', Float = 'Float', Bool = 'Bool', Array = 'Array', SecureString = 'SecureString' }
 
 	export interface DataFlowDebugPackageDebugSettings {
 
@@ -1166,7 +1166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataFlowReferenceType { DataFlowReference = 0 }
+	export enum DataFlowReferenceType { DataFlowReference = 'DataFlowReference' }
 
 
 	/** Staging info for execute data flow activity. */
@@ -1403,7 +1403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetReferenceType { DatasetReference = 0 }
+	export enum DatasetReferenceType { DatasetReference = 'DatasetReference' }
 
 
 	/** Request body structure for deleting data flow debug session. */
@@ -1522,7 +1522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressionType { Expression = 0 }
+	export enum ExpressionType { Expression = 'Expression' }
 
 
 	/** Factory resource type. */
@@ -1606,7 +1606,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FactoryIdentityType { SystemAssigned = 0 }
+	export enum FactoryIdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** A list of factory resources. */
@@ -2002,7 +2002,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeDebugResourcePropertiesType { Managed = 0, SelfHosted = 1 }
+	export enum IntegrationRuntimeDebugResourcePropertiesType { Managed = 'Managed', SelfHosted = 'SelfHosted' }
 
 
 	/** A list of integration runtime resources. */
@@ -2132,7 +2132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeReferenceType { IntegrationRuntimeReference = 0 }
+	export enum IntegrationRuntimeReferenceType { IntegrationRuntimeReference = 'IntegrationRuntimeReference' }
 
 
 	/** A list of integration runtime status. */
@@ -2225,7 +2225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeStatusResponsePropertiesState { Initial = 0, Stopped = 1, Started = 2, Starting = 3, Stopping = 4, NeedRegistration = 5, Online = 6, Limited = 7, Offline = 8, AccessDenied = 9 }
+	export enum IntegrationRuntimeStatusResponsePropertiesState { Initial = 'Initial', Stopped = 'Stopped', Started = 'Started', Starting = 'Starting', Stopping = 'Stopping', NeedRegistration = 'NeedRegistration', Online = 'Online', Limited = 'Limited', Offline = 'Offline', AccessDenied = 'AccessDenied' }
 
 
 	/** Data factory name for linked integration runtime request. */
@@ -2429,7 +2429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkedServiceReferenceType { LinkedServiceReference = 0 }
+	export enum LinkedServiceReferenceType { LinkedServiceReference = 'LinkedServiceReference' }
 
 
 	/** Azure Data Factory API operation definition. */
@@ -3050,7 +3050,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineResourcePropertiesVariablesType { String = 0, Bool = 1, Array = 2 }
+	export enum PipelineResourcePropertiesVariablesType { String = 'String', Bool = 'Bool', Array = 'Array' }
 
 
 	/** Pipeline reference type. */
@@ -3099,7 +3099,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineReferenceType { PipelineReference = 0 }
+	export enum PipelineReferenceType { PipelineReference = 'PipelineReference' }
 
 
 	/** Information about a pipeline run. */
@@ -3574,9 +3574,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunQueryFilterOperand { PipelineName = 0, Status = 1, RunStart = 2, RunEnd = 3, ActivityName = 4, ActivityRunStart = 5, ActivityRunEnd = 6, ActivityType = 7, TriggerName = 8, TriggerRunTimestamp = 9, RunGroupId = 10, LatestOnly = 11 }
+	export enum RunQueryFilterOperand { PipelineName = 'PipelineName', Status = 'Status', RunStart = 'RunStart', RunEnd = 'RunEnd', ActivityName = 'ActivityName', ActivityRunStart = 'ActivityRunStart', ActivityRunEnd = 'ActivityRunEnd', ActivityType = 'ActivityType', TriggerName = 'TriggerName', TriggerRunTimestamp = 'TriggerRunTimestamp', RunGroupId = 'RunGroupId', LatestOnly = 'LatestOnly' }
 
-	export enum RunQueryFilterOperator { Equals = 0, NotEquals = 1, In = 2, NotIn = 3 }
+	export enum RunQueryFilterOperator { Equals = 'Equals', NotEquals = 'NotEquals', In = 'In', NotIn = 'NotIn' }
 
 
 	/** An object to provide order by options for listing runs. */
@@ -3618,9 +3618,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunQueryOrderByOrder { ASC = 0, DESC = 1 }
+	export enum RunQueryOrderByOrder { ASC = 'ASC', DESC = 'DESC' }
 
-	export enum RunQueryOrderByOrderBy { RunStart = 0, RunEnd = 1, PipelineName = 2, Status = 3, ActivityName = 4, ActivityRunStart = 5, ActivityRunEnd = 6, TriggerName = 7, TriggerRunTimestamp = 8 }
+	export enum RunQueryOrderByOrderBy { RunStart = 'RunStart', RunEnd = 'RunEnd', PipelineName = 'PipelineName', Status = 'Status', ActivityName = 'ActivityName', ActivityRunStart = 'ActivityRunStart', ActivityRunEnd = 'ActivityRunEnd', TriggerName = 'TriggerName', TriggerRunTimestamp = 'TriggerRunTimestamp' }
 
 
 	/** The base definition of a secret type. */
@@ -3872,7 +3872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerResourcePropertiesRuntimeState { Started = 0, Stopped = 1, Disabled = 2 }
+	export enum TriggerResourcePropertiesRuntimeState { Started = 'Started', Stopped = 'Stopped', Disabled = 'Disabled' }
 
 
 	/** Pipeline that needs to be triggered with the given parameters. */
@@ -3978,7 +3978,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerRunStatus { Succeeded = 0, Failed = 1, Inprogress = 2 }
+	export enum TriggerRunStatus { Succeeded = 'Succeeded', Failed = 'Failed', Inprogress = 'Inprogress' }
 
 
 	/** A list of trigger runs. */
@@ -4035,7 +4035,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerSubscriptionOperationStatusStatus { Enabled = 0, Provisioning = 1, Deprovisioning = 2, Disabled = 3, Unknown = 4 }
+	export enum TriggerSubscriptionOperationStatusStatus { Enabled = 'Enabled', Provisioning = 'Provisioning', Deprovisioning = 'Deprovisioning', Disabled = 'Disabled', Unknown = 'Unknown' }
 
 
 	/** Update integration runtime node request. */
@@ -4092,7 +4092,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateIntegrationRuntimeRequestAutoUpdate { On = 0, Off = 1 }
+	export enum UpdateIntegrationRuntimeRequestAutoUpdate { On = 'On', Off = 'Off' }
 
 
 	/** Get Data Plane read only token request definition. */
@@ -5385,7 +5385,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimeObjectMetadata_GetReturnValueType { Folder = 0, Project = 1, Package = 2, Environment = 3 }
+	export enum IntegrationRuntimeObjectMetadata_GetReturnValueType { Folder = 'Folder', Project = 'Project', Package = 'Package', Environment = 'Environment' }
 
 	export interface IntegrationRuntimes_ListAuthKeysReturn {
 
@@ -5531,7 +5531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationRuntimes_RegenerateAuthKeyPostBodyKeyName { authKey1 = 0, authKey2 = 1 }
+	export enum IntegrationRuntimes_RegenerateAuthKeyPostBodyKeyName { authKey1 = 'authKey1', authKey2 = 'authKey2' }
 
 	export interface IntegrationRuntimes_RegenerateAuthKeyReturn {
 

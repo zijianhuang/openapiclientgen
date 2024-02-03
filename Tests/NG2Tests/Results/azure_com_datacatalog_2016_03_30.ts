@@ -102,7 +102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ADCCatalogPropertiesSku { Free = 0, Standard = 1 }
+	export enum ADCCatalogPropertiesSku { Free = 'Free', Standard = 'Standard' }
 
 
 	/** The response from the List Azure Data Catalog operation. */

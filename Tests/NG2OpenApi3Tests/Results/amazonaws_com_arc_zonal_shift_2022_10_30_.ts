@@ -62,7 +62,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ZonalShiftStatus { ACTIVE = 0, EXPIRED = 1, CANCELED = 2 }
+	export enum ZonalShiftStatus { ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED', CANCELED = 'CANCELED' }
 
 	export interface InternalServerException {
 	}
@@ -219,7 +219,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppliedStatus { APPLIED = 0, NOT_APPLIED = 1 }
+	export enum AppliedStatus { APPLIED = 'APPLIED', NOT_APPLIED = 'NOT_APPLIED' }
 
 	export interface ListManagedResourcesResponse {
 

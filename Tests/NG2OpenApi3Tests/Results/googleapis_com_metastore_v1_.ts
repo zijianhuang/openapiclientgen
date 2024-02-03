@@ -128,7 +128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Configuration information for the auxiliary service versions. */
@@ -241,7 +241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackendMetastoreMetastoreType { METASTORE_TYPE_UNSPECIFIED = 0, BIGQUERY = 1, DATAPROC_METASTORE = 2 }
+	export enum BackendMetastoreMetastoreType { METASTORE_TYPE_UNSPECIFIED = 'METASTORE_TYPE_UNSPECIFIED', BIGQUERY = 'BIGQUERY', DATAPROC_METASTORE = 'DATAPROC_METASTORE' }
 
 
 	/** The details of a backup resource. */
@@ -434,7 +434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceDatabaseType { DATABASE_TYPE_UNSPECIFIED = 0, MYSQL = 1, SPANNER = 2 }
+	export enum ServiceDatabaseType { DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED', MYSQL = 'MYSQL', SPANNER = 'SPANNER' }
 
 
 	/** Encryption settings for the service. */
@@ -502,7 +502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HiveMetastoreConfigEndpointProtocol { ENDPOINT_PROTOCOL_UNSPECIFIED = 0, THRIFT = 1, GRPC = 2 }
+	export enum HiveMetastoreConfigEndpointProtocol { ENDPOINT_PROTOCOL_UNSPECIFIED = 'ENDPOINT_PROTOCOL_UNSPECIFIED', THRIFT = 'THRIFT', GRPC = 'GRPC' }
 
 
 	/** Configuration information for a Kerberos principal. */
@@ -584,7 +584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceWindowDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum MaintenanceWindowDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Specifies how metastore metadata should be integrated with external services. */
@@ -693,9 +693,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetadataExportDatabaseDumpType { TYPE_UNSPECIFIED = 0, MYSQL = 1, AVRO = 2 }
+	export enum MetadataExportDatabaseDumpType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', MYSQL = 'MYSQL', AVRO = 'AVRO' }
 
-	export enum MetadataExportState { STATE_UNSPECIFIED = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
+	export enum MetadataExportState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** The details of a metadata restore operation. */
@@ -753,9 +753,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreType { RESTORE_TYPE_UNSPECIFIED = 0, FULL = 1, METADATA_ONLY = 2 }
+	export enum RestoreType { RESTORE_TYPE_UNSPECIFIED = 'RESTORE_TYPE_UNSPECIFIED', FULL = 'FULL', METADATA_ONLY = 'METADATA_ONLY' }
 
-	export enum ServiceReleaseChannel { RELEASE_CHANNEL_UNSPECIFIED = 0, CANARY = 1, STABLE = 2 }
+	export enum ServiceReleaseChannel { RELEASE_CHANNEL_UNSPECIFIED = 'RELEASE_CHANNEL_UNSPECIFIED', CANARY = 'CANARY', STABLE = 'STABLE' }
 
 
 	/** Represents the scaling configuration of a metastore service. */
@@ -785,9 +785,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingConfigInstanceSize { INSTANCE_SIZE_UNSPECIFIED = 0, EXTRA_SMALL = 1, SMALL = 2, MEDIUM = 3, LARGE = 4, EXTRA_LARGE = 5 }
+	export enum ScalingConfigInstanceSize { INSTANCE_SIZE_UNSPECIFIED = 'INSTANCE_SIZE_UNSPECIFIED', EXTRA_SMALL = 'EXTRA_SMALL', SMALL = 'SMALL', MEDIUM = 'MEDIUM', LARGE = 'LARGE', EXTRA_LARGE = 'EXTRA_LARGE' }
 
-	export enum ServiceState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, SUSPENDING = 3, SUSPENDED = 4, UPDATING = 5, DELETING = 6, ERROR = 7 }
+	export enum ServiceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', SUSPENDING = 'SUSPENDING', SUSPENDED = 'SUSPENDED', UPDATING = 'UPDATING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** Telemetry Configuration for the Dataproc Metastore service. */
@@ -810,11 +810,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TelemetryConfigLogFormat { LOG_FORMAT_UNSPECIFIED = 0, LEGACY = 1, JSON = 2 }
+	export enum TelemetryConfigLogFormat { LOG_FORMAT_UNSPECIFIED = 'LOG_FORMAT_UNSPECIFIED', LEGACY = 'LEGACY', JSON = 'JSON' }
 
-	export enum ServiceTier { TIER_UNSPECIFIED = 0, DEVELOPER = 1, ENTERPRISE = 2 }
+	export enum ServiceTier { TIER_UNSPECIFIED = 'TIER_UNSPECIFIED', DEVELOPER = 'DEVELOPER', ENTERPRISE = 'ENTERPRISE' }
 
-	export enum BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, DELETING = 2, ACTIVE = 3, FAILED = 4, RESTORING = 5 }
+	export enum BackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', RESTORING = 'RESTORING' }
 
 
 	/** Associates members, or principals, with a role. */
@@ -941,7 +941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseDumpDatabaseType { DATABASE_TYPE_UNSPECIFIED = 0, MYSQL = 1 }
+	export enum DatabaseDumpDatabaseType { DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED', MYSQL = 'MYSQL' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }  */
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FederationState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, UPDATING = 3, DELETING = 4, ERROR = 5 }
+	export enum FederationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** A specification of a supported version of the Hive Metastore software. */
@@ -1340,7 +1340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetadataImportState { STATE_UNSPECIFIED = 0, RUNNING = 1, SUCCEEDED = 2, UPDATING = 3, FAILED = 4 }
+	export enum MetadataImportState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', UPDATING = 'UPDATING', FAILED = 'FAILED' }
 
 
 	/** The response message for Operations.ListOperations. */

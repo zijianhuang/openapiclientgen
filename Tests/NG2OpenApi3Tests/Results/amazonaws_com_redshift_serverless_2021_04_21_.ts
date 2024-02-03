@@ -84,7 +84,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotStatus { AVAILABLE = 0, CREATING = 1, DELETED = 2, CANCELLED = 3, FAILED = 4, COPYING = 5 }
+	export enum SnapshotStatus { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', DELETED = 'DELETED', CANCELLED = 'CANCELLED', FAILED = 'FAILED', COPYING = 'COPYING' }
 
 	export interface ConvertRecoveryPointToSnapshotRequest {
 
@@ -410,9 +410,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogExport { useractivitylog = 0, userlog = 1, connectionlog = 2 }
+	export enum LogExport { useractivitylog = 'useractivitylog', userlog = 'userlog', connectionlog = 'connectionlog' }
 
-	export enum NamespaceStatus { AVAILABLE = 0, MODIFYING = 1, DELETING = 2 }
+	export enum NamespaceStatus { AVAILABLE = 'AVAILABLE', MODIFYING = 'MODIFYING', DELETING = 'DELETING' }
 
 	export interface CreateNamespaceRequest {
 		adminUserPassword?: string;
@@ -534,11 +534,11 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageLimitBreachAction { log = 0, 'emit-metric' = 1, deactivate = 2 }
+	export enum UsageLimitBreachAction { log = 'log', 'emit-metric' = 'emit-metric', deactivate = 'deactivate' }
 
-	export enum UsageLimitPeriod { daily = 0, weekly = 1, monthly = 2 }
+	export enum UsageLimitPeriod { daily = 'daily', weekly = 'weekly', monthly = 'monthly' }
 
-	export enum UsageLimitUsageType { 'serverless-compute' = 0, 'cross-region-datasharing' = 1 }
+	export enum UsageLimitUsageType { 'serverless-compute' = 'serverless-compute', 'cross-region-datasharing' = 'cross-region-datasharing' }
 
 	export interface CreateUsageLimitRequest {
 
@@ -677,7 +677,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkgroupStatus { CREATING = 0, AVAILABLE = 1, MODIFYING = 2, DELETING = 3 }
+	export enum WorkgroupStatus { CREATING = 'CREATING', AVAILABLE = 'AVAILABLE', MODIFYING = 'MODIFYING', DELETING = 'DELETING' }
 
 	export interface CreateWorkgroupRequest {
 		baseCapacity?: number | null;
@@ -2431,85 +2431,85 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ConvertRecoveryPointToSnapshotX_Amz_Target { 'RedshiftServerless.ConvertRecoveryPointToSnapshot' = 0 }
+	export enum ConvertRecoveryPointToSnapshotX_Amz_Target { 'RedshiftServerless.ConvertRecoveryPointToSnapshot' = 'RedshiftServerless.ConvertRecoveryPointToSnapshot' }
 
-	export enum CreateEndpointAccessX_Amz_Target { 'RedshiftServerless.CreateEndpointAccess' = 0 }
+	export enum CreateEndpointAccessX_Amz_Target { 'RedshiftServerless.CreateEndpointAccess' = 'RedshiftServerless.CreateEndpointAccess' }
 
-	export enum CreateNamespaceX_Amz_Target { 'RedshiftServerless.CreateNamespace' = 0 }
+	export enum CreateNamespaceX_Amz_Target { 'RedshiftServerless.CreateNamespace' = 'RedshiftServerless.CreateNamespace' }
 
-	export enum CreateSnapshotX_Amz_Target { 'RedshiftServerless.CreateSnapshot' = 0 }
+	export enum CreateSnapshotX_Amz_Target { 'RedshiftServerless.CreateSnapshot' = 'RedshiftServerless.CreateSnapshot' }
 
-	export enum CreateUsageLimitX_Amz_Target { 'RedshiftServerless.CreateUsageLimit' = 0 }
+	export enum CreateUsageLimitX_Amz_Target { 'RedshiftServerless.CreateUsageLimit' = 'RedshiftServerless.CreateUsageLimit' }
 
-	export enum CreateWorkgroupX_Amz_Target { 'RedshiftServerless.CreateWorkgroup' = 0 }
+	export enum CreateWorkgroupX_Amz_Target { 'RedshiftServerless.CreateWorkgroup' = 'RedshiftServerless.CreateWorkgroup' }
 
-	export enum DeleteEndpointAccessX_Amz_Target { 'RedshiftServerless.DeleteEndpointAccess' = 0 }
+	export enum DeleteEndpointAccessX_Amz_Target { 'RedshiftServerless.DeleteEndpointAccess' = 'RedshiftServerless.DeleteEndpointAccess' }
 
-	export enum DeleteNamespaceX_Amz_Target { 'RedshiftServerless.DeleteNamespace' = 0 }
+	export enum DeleteNamespaceX_Amz_Target { 'RedshiftServerless.DeleteNamespace' = 'RedshiftServerless.DeleteNamespace' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'RedshiftServerless.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'RedshiftServerless.DeleteResourcePolicy' = 'RedshiftServerless.DeleteResourcePolicy' }
 
-	export enum DeleteSnapshotX_Amz_Target { 'RedshiftServerless.DeleteSnapshot' = 0 }
+	export enum DeleteSnapshotX_Amz_Target { 'RedshiftServerless.DeleteSnapshot' = 'RedshiftServerless.DeleteSnapshot' }
 
-	export enum DeleteUsageLimitX_Amz_Target { 'RedshiftServerless.DeleteUsageLimit' = 0 }
+	export enum DeleteUsageLimitX_Amz_Target { 'RedshiftServerless.DeleteUsageLimit' = 'RedshiftServerless.DeleteUsageLimit' }
 
-	export enum DeleteWorkgroupX_Amz_Target { 'RedshiftServerless.DeleteWorkgroup' = 0 }
+	export enum DeleteWorkgroupX_Amz_Target { 'RedshiftServerless.DeleteWorkgroup' = 'RedshiftServerless.DeleteWorkgroup' }
 
-	export enum GetCredentialsX_Amz_Target { 'RedshiftServerless.GetCredentials' = 0 }
+	export enum GetCredentialsX_Amz_Target { 'RedshiftServerless.GetCredentials' = 'RedshiftServerless.GetCredentials' }
 
-	export enum GetEndpointAccessX_Amz_Target { 'RedshiftServerless.GetEndpointAccess' = 0 }
+	export enum GetEndpointAccessX_Amz_Target { 'RedshiftServerless.GetEndpointAccess' = 'RedshiftServerless.GetEndpointAccess' }
 
-	export enum GetNamespaceX_Amz_Target { 'RedshiftServerless.GetNamespace' = 0 }
+	export enum GetNamespaceX_Amz_Target { 'RedshiftServerless.GetNamespace' = 'RedshiftServerless.GetNamespace' }
 
-	export enum GetRecoveryPointX_Amz_Target { 'RedshiftServerless.GetRecoveryPoint' = 0 }
+	export enum GetRecoveryPointX_Amz_Target { 'RedshiftServerless.GetRecoveryPoint' = 'RedshiftServerless.GetRecoveryPoint' }
 
-	export enum GetResourcePolicyX_Amz_Target { 'RedshiftServerless.GetResourcePolicy' = 0 }
+	export enum GetResourcePolicyX_Amz_Target { 'RedshiftServerless.GetResourcePolicy' = 'RedshiftServerless.GetResourcePolicy' }
 
-	export enum GetSnapshotX_Amz_Target { 'RedshiftServerless.GetSnapshot' = 0 }
+	export enum GetSnapshotX_Amz_Target { 'RedshiftServerless.GetSnapshot' = 'RedshiftServerless.GetSnapshot' }
 
-	export enum GetTableRestoreStatusX_Amz_Target { 'RedshiftServerless.GetTableRestoreStatus' = 0 }
+	export enum GetTableRestoreStatusX_Amz_Target { 'RedshiftServerless.GetTableRestoreStatus' = 'RedshiftServerless.GetTableRestoreStatus' }
 
-	export enum GetUsageLimitX_Amz_Target { 'RedshiftServerless.GetUsageLimit' = 0 }
+	export enum GetUsageLimitX_Amz_Target { 'RedshiftServerless.GetUsageLimit' = 'RedshiftServerless.GetUsageLimit' }
 
-	export enum GetWorkgroupX_Amz_Target { 'RedshiftServerless.GetWorkgroup' = 0 }
+	export enum GetWorkgroupX_Amz_Target { 'RedshiftServerless.GetWorkgroup' = 'RedshiftServerless.GetWorkgroup' }
 
-	export enum ListEndpointAccessX_Amz_Target { 'RedshiftServerless.ListEndpointAccess' = 0 }
+	export enum ListEndpointAccessX_Amz_Target { 'RedshiftServerless.ListEndpointAccess' = 'RedshiftServerless.ListEndpointAccess' }
 
-	export enum ListNamespacesX_Amz_Target { 'RedshiftServerless.ListNamespaces' = 0 }
+	export enum ListNamespacesX_Amz_Target { 'RedshiftServerless.ListNamespaces' = 'RedshiftServerless.ListNamespaces' }
 
-	export enum ListRecoveryPointsX_Amz_Target { 'RedshiftServerless.ListRecoveryPoints' = 0 }
+	export enum ListRecoveryPointsX_Amz_Target { 'RedshiftServerless.ListRecoveryPoints' = 'RedshiftServerless.ListRecoveryPoints' }
 
-	export enum ListSnapshotsX_Amz_Target { 'RedshiftServerless.ListSnapshots' = 0 }
+	export enum ListSnapshotsX_Amz_Target { 'RedshiftServerless.ListSnapshots' = 'RedshiftServerless.ListSnapshots' }
 
-	export enum ListTableRestoreStatusX_Amz_Target { 'RedshiftServerless.ListTableRestoreStatus' = 0 }
+	export enum ListTableRestoreStatusX_Amz_Target { 'RedshiftServerless.ListTableRestoreStatus' = 'RedshiftServerless.ListTableRestoreStatus' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'RedshiftServerless.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'RedshiftServerless.ListTagsForResource' = 'RedshiftServerless.ListTagsForResource' }
 
-	export enum ListUsageLimitsX_Amz_Target { 'RedshiftServerless.ListUsageLimits' = 0 }
+	export enum ListUsageLimitsX_Amz_Target { 'RedshiftServerless.ListUsageLimits' = 'RedshiftServerless.ListUsageLimits' }
 
-	export enum ListWorkgroupsX_Amz_Target { 'RedshiftServerless.ListWorkgroups' = 0 }
+	export enum ListWorkgroupsX_Amz_Target { 'RedshiftServerless.ListWorkgroups' = 'RedshiftServerless.ListWorkgroups' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'RedshiftServerless.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'RedshiftServerless.PutResourcePolicy' = 'RedshiftServerless.PutResourcePolicy' }
 
-	export enum RestoreFromRecoveryPointX_Amz_Target { 'RedshiftServerless.RestoreFromRecoveryPoint' = 0 }
+	export enum RestoreFromRecoveryPointX_Amz_Target { 'RedshiftServerless.RestoreFromRecoveryPoint' = 'RedshiftServerless.RestoreFromRecoveryPoint' }
 
-	export enum RestoreFromSnapshotX_Amz_Target { 'RedshiftServerless.RestoreFromSnapshot' = 0 }
+	export enum RestoreFromSnapshotX_Amz_Target { 'RedshiftServerless.RestoreFromSnapshot' = 'RedshiftServerless.RestoreFromSnapshot' }
 
-	export enum RestoreTableFromSnapshotX_Amz_Target { 'RedshiftServerless.RestoreTableFromSnapshot' = 0 }
+	export enum RestoreTableFromSnapshotX_Amz_Target { 'RedshiftServerless.RestoreTableFromSnapshot' = 'RedshiftServerless.RestoreTableFromSnapshot' }
 
-	export enum TagResourceX_Amz_Target { 'RedshiftServerless.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'RedshiftServerless.TagResource' = 'RedshiftServerless.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'RedshiftServerless.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'RedshiftServerless.UntagResource' = 'RedshiftServerless.UntagResource' }
 
-	export enum UpdateEndpointAccessX_Amz_Target { 'RedshiftServerless.UpdateEndpointAccess' = 0 }
+	export enum UpdateEndpointAccessX_Amz_Target { 'RedshiftServerless.UpdateEndpointAccess' = 'RedshiftServerless.UpdateEndpointAccess' }
 
-	export enum UpdateNamespaceX_Amz_Target { 'RedshiftServerless.UpdateNamespace' = 0 }
+	export enum UpdateNamespaceX_Amz_Target { 'RedshiftServerless.UpdateNamespace' = 'RedshiftServerless.UpdateNamespace' }
 
-	export enum UpdateSnapshotX_Amz_Target { 'RedshiftServerless.UpdateSnapshot' = 0 }
+	export enum UpdateSnapshotX_Amz_Target { 'RedshiftServerless.UpdateSnapshot' = 'RedshiftServerless.UpdateSnapshot' }
 
-	export enum UpdateUsageLimitX_Amz_Target { 'RedshiftServerless.UpdateUsageLimit' = 0 }
+	export enum UpdateUsageLimitX_Amz_Target { 'RedshiftServerless.UpdateUsageLimit' = 'RedshiftServerless.UpdateUsageLimit' }
 
-	export enum UpdateWorkgroupX_Amz_Target { 'RedshiftServerless.UpdateWorkgroup' = 0 }
+	export enum UpdateWorkgroupX_Amz_Target { 'RedshiftServerless.UpdateWorkgroup' = 'RedshiftServerless.UpdateWorkgroup' }
 
 }
 

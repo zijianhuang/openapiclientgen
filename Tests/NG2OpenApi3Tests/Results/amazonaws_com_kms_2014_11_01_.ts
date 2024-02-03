@@ -259,7 +259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomKeyStoreType { AWS_CLOUDHSM = 0, EXTERNAL_KEY_STORE = 1 }
+	export enum CustomKeyStoreType { AWS_CLOUDHSM = 'AWS_CLOUDHSM', EXTERNAL_KEY_STORE = 'EXTERNAL_KEY_STORE' }
 
 
 	/** <p>KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS.</p> <p>The <code>XksProxyAuthenticationCredential</code> includes two required elements.</p> */
@@ -289,7 +289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum XksProxyConnectivityType { PUBLIC_ENDPOINT = 0, VPC_ENDPOINT_SERVICE = 1 }
+	export enum XksProxyConnectivityType { PUBLIC_ENDPOINT = 'PUBLIC_ENDPOINT', VPC_ENDPOINT_SERVICE = 'VPC_ENDPOINT_SERVICE' }
 
 	export interface CloudHsmClusterInUseException {
 	}
@@ -475,7 +475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GrantOperation { Decrypt = 0, Encrypt = 1, GenerateDataKey = 2, GenerateDataKeyWithoutPlaintext = 3, ReEncryptFrom = 4, ReEncryptTo = 5, Sign = 6, Verify = 7, GetPublicKey = 8, CreateGrant = 9, RetireGrant = 10, DescribeKey = 11, GenerateDataKeyPair = 12, GenerateDataKeyPairWithoutPlaintext = 13, GenerateMac = 14, VerifyMac = 15 }
+	export enum GrantOperation { Decrypt = 'Decrypt', Encrypt = 'Encrypt', GenerateDataKey = 'GenerateDataKey', GenerateDataKeyWithoutPlaintext = 'GenerateDataKeyWithoutPlaintext', ReEncryptFrom = 'ReEncryptFrom', ReEncryptTo = 'ReEncryptTo', Sign = 'Sign', Verify = 'Verify', GetPublicKey = 'GetPublicKey', CreateGrant = 'CreateGrant', RetireGrant = 'RetireGrant', DescribeKey = 'DescribeKey', GenerateDataKeyPair = 'GenerateDataKeyPair', GenerateDataKeyPairWithoutPlaintext = 'GenerateDataKeyPairWithoutPlaintext', GenerateMac = 'GenerateMac', VerifyMac = 'VerifyMac' }
 
 
 	/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </important> */
@@ -624,23 +624,23 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyUsageType { SIGN_VERIFY = 0, ENCRYPT_DECRYPT = 1, GENERATE_VERIFY_MAC = 2 }
+	export enum KeyUsageType { SIGN_VERIFY = 'SIGN_VERIFY', ENCRYPT_DECRYPT = 'ENCRYPT_DECRYPT', GENERATE_VERIFY_MAC = 'GENERATE_VERIFY_MAC' }
 
-	export enum KeyState { Creating = 0, Enabled = 1, Disabled = 2, PendingDeletion = 3, PendingImport = 4, PendingReplicaDeletion = 5, Unavailable = 6, Updating = 7 }
+	export enum KeyState { Creating = 'Creating', Enabled = 'Enabled', Disabled = 'Disabled', PendingDeletion = 'PendingDeletion', PendingImport = 'PendingImport', PendingReplicaDeletion = 'PendingReplicaDeletion', Unavailable = 'Unavailable', Updating = 'Updating' }
 
-	export enum OriginType { AWS_KMS = 0, EXTERNAL = 1, AWS_CLOUDHSM = 2, EXTERNAL_KEY_STORE = 3 }
+	export enum OriginType { AWS_KMS = 'AWS_KMS', EXTERNAL = 'EXTERNAL', AWS_CLOUDHSM = 'AWS_CLOUDHSM', EXTERNAL_KEY_STORE = 'EXTERNAL_KEY_STORE' }
 
-	export enum ExpirationModelType { KEY_MATERIAL_EXPIRES = 0, KEY_MATERIAL_DOES_NOT_EXPIRE = 1 }
+	export enum ExpirationModelType { KEY_MATERIAL_EXPIRES = 'KEY_MATERIAL_EXPIRES', KEY_MATERIAL_DOES_NOT_EXPIRE = 'KEY_MATERIAL_DOES_NOT_EXPIRE' }
 
-	export enum KeyManagerType { AWS = 0, CUSTOMER = 1 }
+	export enum KeyManagerType { AWS = 'AWS', CUSTOMER = 'CUSTOMER' }
 
 
 	/** This enum has been deprecated. Instead, use the KeySpec enum. */
-	export enum CustomerMasterKeySpec { RSA_2048 = 0, RSA_3072 = 1, RSA_4096 = 2, ECC_NIST_P256 = 3, ECC_NIST_P384 = 4, ECC_NIST_P521 = 5, ECC_SECG_P256K1 = 6, SYMMETRIC_DEFAULT = 7, HMAC_224 = 8, HMAC_256 = 9, HMAC_384 = 10, HMAC_512 = 11, SM2 = 12 }
+	export enum CustomerMasterKeySpec { RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096', ECC_NIST_P256 = 'ECC_NIST_P256', ECC_NIST_P384 = 'ECC_NIST_P384', ECC_NIST_P521 = 'ECC_NIST_P521', ECC_SECG_P256K1 = 'ECC_SECG_P256K1', SYMMETRIC_DEFAULT = 'SYMMETRIC_DEFAULT', HMAC_224 = 'HMAC_224', HMAC_256 = 'HMAC_256', HMAC_384 = 'HMAC_384', HMAC_512 = 'HMAC_512', SM2 = 'SM2' }
 
-	export enum EncryptionAlgorithmSpec { SYMMETRIC_DEFAULT = 0, RSAES_OAEP_SHA_1 = 1, RSAES_OAEP_SHA_256 = 2, SM2PKE = 3 }
+	export enum EncryptionAlgorithmSpec { SYMMETRIC_DEFAULT = 'SYMMETRIC_DEFAULT', RSAES_OAEP_SHA_1 = 'RSAES_OAEP_SHA_1', RSAES_OAEP_SHA_256 = 'RSAES_OAEP_SHA_256', SM2PKE = 'SM2PKE' }
 
-	export enum SigningAlgorithmSpec { RSASSA_PSS_SHA_256 = 0, RSASSA_PSS_SHA_384 = 1, RSASSA_PSS_SHA_512 = 2, RSASSA_PKCS1_V1_5_SHA_256 = 3, RSASSA_PKCS1_V1_5_SHA_384 = 4, RSASSA_PKCS1_V1_5_SHA_512 = 5, ECDSA_SHA_256 = 6, ECDSA_SHA_384 = 7, ECDSA_SHA_512 = 8, SM2DSA = 9 }
+	export enum SigningAlgorithmSpec { RSASSA_PSS_SHA_256 = 'RSASSA_PSS_SHA_256', RSASSA_PSS_SHA_384 = 'RSASSA_PSS_SHA_384', RSASSA_PSS_SHA_512 = 'RSASSA_PSS_SHA_512', RSASSA_PKCS1_V1_5_SHA_256 = 'RSASSA_PKCS1_V1_5_SHA_256', RSASSA_PKCS1_V1_5_SHA_384 = 'RSASSA_PKCS1_V1_5_SHA_384', RSASSA_PKCS1_V1_5_SHA_512 = 'RSASSA_PKCS1_V1_5_SHA_512', ECDSA_SHA_256 = 'ECDSA_SHA_256', ECDSA_SHA_384 = 'ECDSA_SHA_384', ECDSA_SHA_512 = 'ECDSA_SHA_512', SM2DSA = 'SM2DSA' }
 
 
 	/** <p>Describes the configuration of this multi-Region key. This field appears only when the KMS key is a primary or replica of a multi-Region key.</p> <p>For more information about any listed KMS key, use the <a>DescribeKey</a> operation.</p> */
@@ -661,7 +661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MultiRegionKeyType { PRIMARY = 0, REPLICA = 1 }
+	export enum MultiRegionKeyType { PRIMARY = 'PRIMARY', REPLICA = 'REPLICA' }
 
 
 	/** Describes the primary or replica key in a multi-Region key. */
@@ -683,7 +683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MacAlgorithmSpec { HMAC_SHA_224 = 0, HMAC_SHA_256 = 1, HMAC_SHA_384 = 2, HMAC_SHA_512 = 3 }
+	export enum MacAlgorithmSpec { HMAC_SHA_224 = 'HMAC_SHA_224', HMAC_SHA_256 = 'HMAC_SHA_256', HMAC_SHA_384 = 'HMAC_SHA_384', HMAC_SHA_512 = 'HMAC_SHA_512' }
 
 
 	/** <p>Information about the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">external key </a>that is associated with a KMS key in an external key store. </p> <p>This element appears in a <a>CreateKey</a> or <a>DescribeKey</a> response only for a KMS key in an external key store.</p> <p>The <i>external key</i> is a symmetric encryption key that is hosted by an external key manager outside of Amazon Web Services. When you use the KMS key in an external key store in a cryptographic operation, the cryptographic operation is performed in the external key manager using the specified external key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p> */
@@ -902,7 +902,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyEncryptionMechanism { RSAES_OAEP_SHA_256 = 0 }
+	export enum KeyEncryptionMechanism { RSAES_OAEP_SHA_256 = 'RSAES_OAEP_SHA_256' }
 
 	export interface InvalidCiphertextException {
 	}
@@ -1071,9 +1071,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStateType { CONNECTED = 0, CONNECTING = 1, FAILED = 2, DISCONNECTED = 3, DISCONNECTING = 4 }
+	export enum ConnectionStateType { CONNECTED = 'CONNECTED', CONNECTING = 'CONNECTING', FAILED = 'FAILED', DISCONNECTED = 'DISCONNECTED', DISCONNECTING = 'DISCONNECTING' }
 
-	export enum ConnectionErrorCodeType { INVALID_CREDENTIALS = 0, CLUSTER_NOT_FOUND = 1, NETWORK_ERRORS = 2, INTERNAL_ERROR = 3, INSUFFICIENT_CLOUDHSM_HSMS = 4, USER_LOCKED_OUT = 5, USER_NOT_FOUND = 6, USER_LOGGED_IN = 7, SUBNET_NOT_FOUND = 8, INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET = 9, XKS_PROXY_ACCESS_DENIED = 10, XKS_PROXY_NOT_REACHABLE = 11, XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND = 12, XKS_PROXY_INVALID_RESPONSE = 13, XKS_PROXY_INVALID_CONFIGURATION = 14, XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION = 15, XKS_PROXY_TIMED_OUT = 16, XKS_PROXY_INVALID_TLS_CONFIGURATION = 17 }
+	export enum ConnectionErrorCodeType { INVALID_CREDENTIALS = 'INVALID_CREDENTIALS', CLUSTER_NOT_FOUND = 'CLUSTER_NOT_FOUND', NETWORK_ERRORS = 'NETWORK_ERRORS', INTERNAL_ERROR = 'INTERNAL_ERROR', INSUFFICIENT_CLOUDHSM_HSMS = 'INSUFFICIENT_CLOUDHSM_HSMS', USER_LOCKED_OUT = 'USER_LOCKED_OUT', USER_NOT_FOUND = 'USER_NOT_FOUND', USER_LOGGED_IN = 'USER_LOGGED_IN', SUBNET_NOT_FOUND = 'SUBNET_NOT_FOUND', INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET = 'INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET', XKS_PROXY_ACCESS_DENIED = 'XKS_PROXY_ACCESS_DENIED', XKS_PROXY_NOT_REACHABLE = 'XKS_PROXY_NOT_REACHABLE', XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND = 'XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND', XKS_PROXY_INVALID_RESPONSE = 'XKS_PROXY_INVALID_RESPONSE', XKS_PROXY_INVALID_CONFIGURATION = 'XKS_PROXY_INVALID_CONFIGURATION', XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION = 'XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION', XKS_PROXY_TIMED_OUT = 'XKS_PROXY_TIMED_OUT', XKS_PROXY_INVALID_TLS_CONFIGURATION = 'XKS_PROXY_INVALID_TLS_CONFIGURATION' }
 
 
 	/** Detailed information about the external key store proxy (XKS proxy). Your external key store proxy translates KMS requests into a format that your external key manager can understand. These fields appear in a <a>DescribeCustomKeyStores</a> response only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>. */
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataKeySpec { AES_256 = 0, AES_128 = 1 }
+	export enum DataKeySpec { AES_256 = 'AES_256', AES_128 = 'AES_128' }
 
 	export interface GenerateDataKeyPairResponse {
 		PrivateKeyCiphertextBlob?: string;
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataKeyPairSpec { RSA_2048 = 0, RSA_3072 = 1, RSA_4096 = 2, ECC_NIST_P256 = 3, ECC_NIST_P384 = 4, ECC_NIST_P521 = 5, ECC_SECG_P256K1 = 6, SM2 = 7 }
+	export enum DataKeyPairSpec { RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096', ECC_NIST_P256 = 'ECC_NIST_P256', ECC_NIST_P384 = 'ECC_NIST_P384', ECC_NIST_P521 = 'ECC_NIST_P521', ECC_SECG_P256K1 = 'ECC_SECG_P256K1', SM2 = 'SM2' }
 
 	export interface GenerateDataKeyPairRequest {
 		EncryptionContext?: EncryptionContextType;
@@ -1726,9 +1726,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmSpec { RSAES_PKCS1_V1_5 = 0, RSAES_OAEP_SHA_1 = 1, RSAES_OAEP_SHA_256 = 2, RSA_AES_KEY_WRAP_SHA_1 = 3, RSA_AES_KEY_WRAP_SHA_256 = 4 }
+	export enum AlgorithmSpec { RSAES_PKCS1_V1_5 = 'RSAES_PKCS1_V1_5', RSAES_OAEP_SHA_1 = 'RSAES_OAEP_SHA_1', RSAES_OAEP_SHA_256 = 'RSAES_OAEP_SHA_256', RSA_AES_KEY_WRAP_SHA_1 = 'RSA_AES_KEY_WRAP_SHA_1', RSA_AES_KEY_WRAP_SHA_256 = 'RSA_AES_KEY_WRAP_SHA_256' }
 
-	export enum WrappingKeySpec { RSA_2048 = 0, RSA_3072 = 1, RSA_4096 = 2 }
+	export enum WrappingKeySpec { RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096' }
 
 	export interface GetPublicKeyResponse {
 		KeyId?: string;
@@ -2461,7 +2461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageType { RAW = 0, DIGEST = 1 }
+	export enum MessageType { RAW = 'RAW', DIGEST = 'DIGEST' }
 
 	export interface TagResourceRequest {
 
@@ -2779,7 +2779,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeySpec { RSA_2048 = 0, RSA_3072 = 1, RSA_4096 = 2, ECC_NIST_P256 = 3, ECC_NIST_P384 = 4, ECC_NIST_P521 = 5, ECC_SECG_P256K1 = 6, SYMMETRIC_DEFAULT = 7, HMAC_224 = 8, HMAC_256 = 9, HMAC_384 = 10, HMAC_512 = 11, SM2 = 12 }
+	export enum KeySpec { RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096', ECC_NIST_P256 = 'ECC_NIST_P256', ECC_NIST_P384 = 'ECC_NIST_P384', ECC_NIST_P521 = 'ECC_NIST_P521', ECC_SECG_P256K1 = 'ECC_SECG_P256K1', SYMMETRIC_DEFAULT = 'SYMMETRIC_DEFAULT', HMAC_224 = 'HMAC_224', HMAC_256 = 'HMAC_256', HMAC_384 = 'HMAC_384', HMAC_512 = 'HMAC_512', SM2 = 'SM2' }
 
 	@Injectable()
 	export class MyClient {
@@ -3251,105 +3251,105 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelKeyDeletionX_Amz_Target { 'TrentService.CancelKeyDeletion' = 0 }
+	export enum CancelKeyDeletionX_Amz_Target { 'TrentService.CancelKeyDeletion' = 'TrentService.CancelKeyDeletion' }
 
-	export enum ConnectCustomKeyStoreX_Amz_Target { 'TrentService.ConnectCustomKeyStore' = 0 }
+	export enum ConnectCustomKeyStoreX_Amz_Target { 'TrentService.ConnectCustomKeyStore' = 'TrentService.ConnectCustomKeyStore' }
 
-	export enum CreateAliasX_Amz_Target { 'TrentService.CreateAlias' = 0 }
+	export enum CreateAliasX_Amz_Target { 'TrentService.CreateAlias' = 'TrentService.CreateAlias' }
 
-	export enum CreateCustomKeyStoreX_Amz_Target { 'TrentService.CreateCustomKeyStore' = 0 }
+	export enum CreateCustomKeyStoreX_Amz_Target { 'TrentService.CreateCustomKeyStore' = 'TrentService.CreateCustomKeyStore' }
 
-	export enum CreateGrantX_Amz_Target { 'TrentService.CreateGrant' = 0 }
+	export enum CreateGrantX_Amz_Target { 'TrentService.CreateGrant' = 'TrentService.CreateGrant' }
 
-	export enum CreateKeyX_Amz_Target { 'TrentService.CreateKey' = 0 }
+	export enum CreateKeyX_Amz_Target { 'TrentService.CreateKey' = 'TrentService.CreateKey' }
 
-	export enum DecryptX_Amz_Target { 'TrentService.Decrypt' = 0 }
+	export enum DecryptX_Amz_Target { 'TrentService.Decrypt' = 'TrentService.Decrypt' }
 
-	export enum DeleteAliasX_Amz_Target { 'TrentService.DeleteAlias' = 0 }
+	export enum DeleteAliasX_Amz_Target { 'TrentService.DeleteAlias' = 'TrentService.DeleteAlias' }
 
-	export enum DeleteCustomKeyStoreX_Amz_Target { 'TrentService.DeleteCustomKeyStore' = 0 }
+	export enum DeleteCustomKeyStoreX_Amz_Target { 'TrentService.DeleteCustomKeyStore' = 'TrentService.DeleteCustomKeyStore' }
 
-	export enum DeleteImportedKeyMaterialX_Amz_Target { 'TrentService.DeleteImportedKeyMaterial' = 0 }
+	export enum DeleteImportedKeyMaterialX_Amz_Target { 'TrentService.DeleteImportedKeyMaterial' = 'TrentService.DeleteImportedKeyMaterial' }
 
-	export enum DescribeCustomKeyStoresX_Amz_Target { 'TrentService.DescribeCustomKeyStores' = 0 }
+	export enum DescribeCustomKeyStoresX_Amz_Target { 'TrentService.DescribeCustomKeyStores' = 'TrentService.DescribeCustomKeyStores' }
 
-	export enum DescribeKeyX_Amz_Target { 'TrentService.DescribeKey' = 0 }
+	export enum DescribeKeyX_Amz_Target { 'TrentService.DescribeKey' = 'TrentService.DescribeKey' }
 
-	export enum DisableKeyX_Amz_Target { 'TrentService.DisableKey' = 0 }
+	export enum DisableKeyX_Amz_Target { 'TrentService.DisableKey' = 'TrentService.DisableKey' }
 
-	export enum DisableKeyRotationX_Amz_Target { 'TrentService.DisableKeyRotation' = 0 }
+	export enum DisableKeyRotationX_Amz_Target { 'TrentService.DisableKeyRotation' = 'TrentService.DisableKeyRotation' }
 
-	export enum DisconnectCustomKeyStoreX_Amz_Target { 'TrentService.DisconnectCustomKeyStore' = 0 }
+	export enum DisconnectCustomKeyStoreX_Amz_Target { 'TrentService.DisconnectCustomKeyStore' = 'TrentService.DisconnectCustomKeyStore' }
 
-	export enum EnableKeyX_Amz_Target { 'TrentService.EnableKey' = 0 }
+	export enum EnableKeyX_Amz_Target { 'TrentService.EnableKey' = 'TrentService.EnableKey' }
 
-	export enum EnableKeyRotationX_Amz_Target { 'TrentService.EnableKeyRotation' = 0 }
+	export enum EnableKeyRotationX_Amz_Target { 'TrentService.EnableKeyRotation' = 'TrentService.EnableKeyRotation' }
 
-	export enum EncryptX_Amz_Target { 'TrentService.Encrypt' = 0 }
+	export enum EncryptX_Amz_Target { 'TrentService.Encrypt' = 'TrentService.Encrypt' }
 
-	export enum GenerateDataKeyX_Amz_Target { 'TrentService.GenerateDataKey' = 0 }
+	export enum GenerateDataKeyX_Amz_Target { 'TrentService.GenerateDataKey' = 'TrentService.GenerateDataKey' }
 
-	export enum GenerateDataKeyPairX_Amz_Target { 'TrentService.GenerateDataKeyPair' = 0 }
+	export enum GenerateDataKeyPairX_Amz_Target { 'TrentService.GenerateDataKeyPair' = 'TrentService.GenerateDataKeyPair' }
 
-	export enum GenerateDataKeyPairWithoutPlaintextX_Amz_Target { 'TrentService.GenerateDataKeyPairWithoutPlaintext' = 0 }
+	export enum GenerateDataKeyPairWithoutPlaintextX_Amz_Target { 'TrentService.GenerateDataKeyPairWithoutPlaintext' = 'TrentService.GenerateDataKeyPairWithoutPlaintext' }
 
-	export enum GenerateDataKeyWithoutPlaintextX_Amz_Target { 'TrentService.GenerateDataKeyWithoutPlaintext' = 0 }
+	export enum GenerateDataKeyWithoutPlaintextX_Amz_Target { 'TrentService.GenerateDataKeyWithoutPlaintext' = 'TrentService.GenerateDataKeyWithoutPlaintext' }
 
-	export enum GenerateMacX_Amz_Target { 'TrentService.GenerateMac' = 0 }
+	export enum GenerateMacX_Amz_Target { 'TrentService.GenerateMac' = 'TrentService.GenerateMac' }
 
-	export enum GenerateRandomX_Amz_Target { 'TrentService.GenerateRandom' = 0 }
+	export enum GenerateRandomX_Amz_Target { 'TrentService.GenerateRandom' = 'TrentService.GenerateRandom' }
 
-	export enum GetKeyPolicyX_Amz_Target { 'TrentService.GetKeyPolicy' = 0 }
+	export enum GetKeyPolicyX_Amz_Target { 'TrentService.GetKeyPolicy' = 'TrentService.GetKeyPolicy' }
 
-	export enum GetKeyRotationStatusX_Amz_Target { 'TrentService.GetKeyRotationStatus' = 0 }
+	export enum GetKeyRotationStatusX_Amz_Target { 'TrentService.GetKeyRotationStatus' = 'TrentService.GetKeyRotationStatus' }
 
-	export enum GetParametersForImportX_Amz_Target { 'TrentService.GetParametersForImport' = 0 }
+	export enum GetParametersForImportX_Amz_Target { 'TrentService.GetParametersForImport' = 'TrentService.GetParametersForImport' }
 
-	export enum GetPublicKeyX_Amz_Target { 'TrentService.GetPublicKey' = 0 }
+	export enum GetPublicKeyX_Amz_Target { 'TrentService.GetPublicKey' = 'TrentService.GetPublicKey' }
 
-	export enum ImportKeyMaterialX_Amz_Target { 'TrentService.ImportKeyMaterial' = 0 }
+	export enum ImportKeyMaterialX_Amz_Target { 'TrentService.ImportKeyMaterial' = 'TrentService.ImportKeyMaterial' }
 
-	export enum ListAliasesX_Amz_Target { 'TrentService.ListAliases' = 0 }
+	export enum ListAliasesX_Amz_Target { 'TrentService.ListAliases' = 'TrentService.ListAliases' }
 
-	export enum ListGrantsX_Amz_Target { 'TrentService.ListGrants' = 0 }
+	export enum ListGrantsX_Amz_Target { 'TrentService.ListGrants' = 'TrentService.ListGrants' }
 
-	export enum ListKeyPoliciesX_Amz_Target { 'TrentService.ListKeyPolicies' = 0 }
+	export enum ListKeyPoliciesX_Amz_Target { 'TrentService.ListKeyPolicies' = 'TrentService.ListKeyPolicies' }
 
-	export enum ListKeysX_Amz_Target { 'TrentService.ListKeys' = 0 }
+	export enum ListKeysX_Amz_Target { 'TrentService.ListKeys' = 'TrentService.ListKeys' }
 
-	export enum ListResourceTagsX_Amz_Target { 'TrentService.ListResourceTags' = 0 }
+	export enum ListResourceTagsX_Amz_Target { 'TrentService.ListResourceTags' = 'TrentService.ListResourceTags' }
 
-	export enum ListRetirableGrantsX_Amz_Target { 'TrentService.ListRetirableGrants' = 0 }
+	export enum ListRetirableGrantsX_Amz_Target { 'TrentService.ListRetirableGrants' = 'TrentService.ListRetirableGrants' }
 
-	export enum PutKeyPolicyX_Amz_Target { 'TrentService.PutKeyPolicy' = 0 }
+	export enum PutKeyPolicyX_Amz_Target { 'TrentService.PutKeyPolicy' = 'TrentService.PutKeyPolicy' }
 
-	export enum ReEncryptX_Amz_Target { 'TrentService.ReEncrypt' = 0 }
+	export enum ReEncryptX_Amz_Target { 'TrentService.ReEncrypt' = 'TrentService.ReEncrypt' }
 
-	export enum ReplicateKeyX_Amz_Target { 'TrentService.ReplicateKey' = 0 }
+	export enum ReplicateKeyX_Amz_Target { 'TrentService.ReplicateKey' = 'TrentService.ReplicateKey' }
 
-	export enum RetireGrantX_Amz_Target { 'TrentService.RetireGrant' = 0 }
+	export enum RetireGrantX_Amz_Target { 'TrentService.RetireGrant' = 'TrentService.RetireGrant' }
 
-	export enum RevokeGrantX_Amz_Target { 'TrentService.RevokeGrant' = 0 }
+	export enum RevokeGrantX_Amz_Target { 'TrentService.RevokeGrant' = 'TrentService.RevokeGrant' }
 
-	export enum ScheduleKeyDeletionX_Amz_Target { 'TrentService.ScheduleKeyDeletion' = 0 }
+	export enum ScheduleKeyDeletionX_Amz_Target { 'TrentService.ScheduleKeyDeletion' = 'TrentService.ScheduleKeyDeletion' }
 
-	export enum SignX_Amz_Target { 'TrentService.Sign' = 0 }
+	export enum SignX_Amz_Target { 'TrentService.Sign' = 'TrentService.Sign' }
 
-	export enum TagResourceX_Amz_Target { 'TrentService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'TrentService.TagResource' = 'TrentService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'TrentService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'TrentService.UntagResource' = 'TrentService.UntagResource' }
 
-	export enum UpdateAliasX_Amz_Target { 'TrentService.UpdateAlias' = 0 }
+	export enum UpdateAliasX_Amz_Target { 'TrentService.UpdateAlias' = 'TrentService.UpdateAlias' }
 
-	export enum UpdateCustomKeyStoreX_Amz_Target { 'TrentService.UpdateCustomKeyStore' = 0 }
+	export enum UpdateCustomKeyStoreX_Amz_Target { 'TrentService.UpdateCustomKeyStore' = 'TrentService.UpdateCustomKeyStore' }
 
-	export enum UpdateKeyDescriptionX_Amz_Target { 'TrentService.UpdateKeyDescription' = 0 }
+	export enum UpdateKeyDescriptionX_Amz_Target { 'TrentService.UpdateKeyDescription' = 'TrentService.UpdateKeyDescription' }
 
-	export enum UpdatePrimaryRegionX_Amz_Target { 'TrentService.UpdatePrimaryRegion' = 0 }
+	export enum UpdatePrimaryRegionX_Amz_Target { 'TrentService.UpdatePrimaryRegion' = 'TrentService.UpdatePrimaryRegion' }
 
-	export enum VerifyX_Amz_Target { 'TrentService.Verify' = 0 }
+	export enum VerifyX_Amz_Target { 'TrentService.Verify' = 'TrentService.Verify' }
 
-	export enum VerifyMacX_Amz_Target { 'TrentService.VerifyMac' = 0 }
+	export enum VerifyMacX_Amz_Target { 'TrentService.VerifyMac' = 'TrentService.VerifyMac' }
 
 }
 

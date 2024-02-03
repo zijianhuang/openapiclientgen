@@ -455,9 +455,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1PeriodPeriodType { PERIOD_TYPE_UNSPECIFIED = 0, DAY = 1, MONTH = 2, YEAR = 3 }
+	export enum GoogleCloudChannelV1PeriodPeriodType { PERIOD_TYPE_UNSPECIFIED = 'PERIOD_TYPE_UNSPECIFIED', DAY = 'DAY', MONTH = 'MONTH', YEAR = 'YEAR' }
 
-	export enum GoogleCloudChannelV1RenewalSettingsPaymentPlan { PAYMENT_PLAN_UNSPECIFIED = 0, COMMITMENT = 1, FLEXIBLE = 2, FREE = 3, TRIAL = 4, OFFLINE = 5 }
+	export enum GoogleCloudChannelV1RenewalSettingsPaymentPlan { PAYMENT_PLAN_UNSPECIFIED = 'PAYMENT_PLAN_UNSPECIFIED', COMMITMENT = 'COMMITMENT', FLEXIBLE = 'FLEXIBLE', FREE = 'FREE', TRIAL = 'TRIAL', OFFLINE = 'OFFLINE' }
 
 
 	/** Entity representing a link between distributors and their indirect resellers in an n-tier resale channel. */
@@ -591,7 +591,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1CloudIdentityInfoCustomerType { CUSTOMER_TYPE_UNSPECIFIED = 0, DOMAIN = 1, TEAM = 2 }
+	export enum GoogleCloudChannelV1CloudIdentityInfoCustomerType { CUSTOMER_TYPE_UNSPECIFIED = 'CUSTOMER_TYPE_UNSPECIFIED', DOMAIN = 'DOMAIN', TEAM = 'TEAM' }
 
 
 	/** Required Edu Attributes */
@@ -628,11 +628,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1EduDataInstituteSize { INSTITUTE_SIZE_UNSPECIFIED = 0, SIZE_1_100 = 1, SIZE_101_500 = 2, SIZE_501_1000 = 3, SIZE_1001_2000 = 4, SIZE_2001_5000 = 5, SIZE_5001_10000 = 6, SIZE_10001_OR_MORE = 7 }
+	export enum GoogleCloudChannelV1EduDataInstituteSize { INSTITUTE_SIZE_UNSPECIFIED = 'INSTITUTE_SIZE_UNSPECIFIED', SIZE_1_100 = 'SIZE_1_100', SIZE_101_500 = 'SIZE_101_500', SIZE_501_1000 = 'SIZE_501_1000', SIZE_1001_2000 = 'SIZE_1001_2000', SIZE_2001_5000 = 'SIZE_2001_5000', SIZE_5001_10000 = 'SIZE_5001_10000', SIZE_10001_OR_MORE = 'SIZE_10001_OR_MORE' }
 
-	export enum GoogleCloudChannelV1EduDataInstituteType { INSTITUTE_TYPE_UNSPECIFIED = 0, K12 = 1, UNIVERSITY = 2 }
+	export enum GoogleCloudChannelV1EduDataInstituteType { INSTITUTE_TYPE_UNSPECIFIED = 'INSTITUTE_TYPE_UNSPECIFIED', K12 = 'K12', UNIVERSITY = 'UNIVERSITY' }
 
-	export enum GoogleCloudChannelV1ChannelPartnerLinkLinkState { CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED = 0, INVITED = 1, ACTIVE = 2, REVOKED = 3, SUSPENDED = 4 }
+	export enum GoogleCloudChannelV1ChannelPartnerLinkLinkState { CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED = 'CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED', INVITED = 'INVITED', ACTIVE = 'ACTIVE', REVOKED = 'REVOKED', SUSPENDED = 'SUSPENDED' }
 
 
 	/** Configuration for how a distributor will rebill a channel partner (also known as a distributor-authorized reseller). */
@@ -797,7 +797,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1ConditionalOverrideRebillingBasis { REBILLING_BASIS_UNSPECIFIED = 0, COST_AT_LIST = 1, DIRECT_CUSTOMER_COST = 2 }
+	export enum GoogleCloudChannelV1ConditionalOverrideRebillingBasis { REBILLING_BASIS_UNSPECIFIED = 'REBILLING_BASIS_UNSPECIFIED', COST_AT_LIST = 'COST_AT_LIST', DIRECT_CUSTOMER_COST = 'DIRECT_CUSTOMER_COST' }
 
 
 	/** Represents the various repricing conditions you can use for a conditional override. */
@@ -1008,7 +1008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1ColumnDataType { DATA_TYPE_UNSPECIFIED = 0, STRING = 1, INT = 2, DECIMAL = 3, MONEY = 4, DATE = 5, DATE_TIME = 6 }
+	export enum GoogleCloudChannelV1ColumnDataType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', STRING = 'STRING', INT = 'INT', DECIMAL = 'DECIMAL', MONEY = 'MONEY', DATE = 'DATE', DATE_TIME = 'DATE_TIME' }
 
 
 	/** Commitment settings for commitment-based offers. */
@@ -1277,7 +1277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1EntitlementProvisioningState { PROVISIONING_STATE_UNSPECIFIED = 0, ACTIVE = 1, SUSPENDED = 2 }
+	export enum GoogleCloudChannelV1EntitlementProvisioningState { PROVISIONING_STATE_UNSPECIFIED = 'PROVISIONING_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', SUSPENDED = 'SUSPENDED' }
 
 
 	/** Settings for trial offers. */
@@ -1511,7 +1511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1CustomerEventEventType { TYPE_UNSPECIFIED = 0, PRIMARY_DOMAIN_CHANGED = 1, PRIMARY_DOMAIN_VERIFIED = 2 }
+	export enum GoogleCloudChannelV1CustomerEventEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PRIMARY_DOMAIN_CHANGED = 'PRIMARY_DOMAIN_CHANGED', PRIMARY_DOMAIN_VERIFIED = 'PRIMARY_DOMAIN_VERIFIED' }
 
 
 	/** Configuration for how a reseller will reprice a Customer. */
@@ -1761,15 +1761,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1EntitlementChangeActivationReason { ACTIVATION_REASON_UNSPECIFIED = 0, RESELLER_REVOKED_SUSPENSION = 1, CUSTOMER_ACCEPTED_PENDING_TOS = 2, RENEWAL_SETTINGS_CHANGED = 3, OTHER_ACTIVATION_REASON = 4 }
+	export enum GoogleCloudChannelV1EntitlementChangeActivationReason { ACTIVATION_REASON_UNSPECIFIED = 'ACTIVATION_REASON_UNSPECIFIED', RESELLER_REVOKED_SUSPENSION = 'RESELLER_REVOKED_SUSPENSION', CUSTOMER_ACCEPTED_PENDING_TOS = 'CUSTOMER_ACCEPTED_PENDING_TOS', RENEWAL_SETTINGS_CHANGED = 'RENEWAL_SETTINGS_CHANGED', OTHER_ACTIVATION_REASON = 'OTHER_ACTIVATION_REASON' }
 
-	export enum GoogleCloudChannelV1EntitlementChangeCancellationReason { CANCELLATION_REASON_UNSPECIFIED = 0, SERVICE_TERMINATED = 1, RELATIONSHIP_ENDED = 2, PARTIAL_TRANSFER = 3 }
+	export enum GoogleCloudChannelV1EntitlementChangeCancellationReason { CANCELLATION_REASON_UNSPECIFIED = 'CANCELLATION_REASON_UNSPECIFIED', SERVICE_TERMINATED = 'SERVICE_TERMINATED', RELATIONSHIP_ENDED = 'RELATIONSHIP_ENDED', PARTIAL_TRANSFER = 'PARTIAL_TRANSFER' }
 
-	export enum GoogleCloudChannelV1EntitlementChangeChangeType { CHANGE_TYPE_UNSPECIFIED = 0, CREATED = 1, PRICE_PLAN_SWITCHED = 2, COMMITMENT_CHANGED = 3, RENEWED = 4, SUSPENDED = 5, ACTIVATED = 6, CANCELLED = 7, SKU_CHANGED = 8, RENEWAL_SETTING_CHANGED = 9, PAID_SUBSCRIPTION_STARTED = 10, LICENSE_CAP_CHANGED = 11, SUSPENSION_DETAILS_CHANGED = 12, TRIAL_END_DATE_EXTENDED = 13, TRIAL_STARTED = 14 }
+	export enum GoogleCloudChannelV1EntitlementChangeChangeType { CHANGE_TYPE_UNSPECIFIED = 'CHANGE_TYPE_UNSPECIFIED', CREATED = 'CREATED', PRICE_PLAN_SWITCHED = 'PRICE_PLAN_SWITCHED', COMMITMENT_CHANGED = 'COMMITMENT_CHANGED', RENEWED = 'RENEWED', SUSPENDED = 'SUSPENDED', ACTIVATED = 'ACTIVATED', CANCELLED = 'CANCELLED', SKU_CHANGED = 'SKU_CHANGED', RENEWAL_SETTING_CHANGED = 'RENEWAL_SETTING_CHANGED', PAID_SUBSCRIPTION_STARTED = 'PAID_SUBSCRIPTION_STARTED', LICENSE_CAP_CHANGED = 'LICENSE_CAP_CHANGED', SUSPENSION_DETAILS_CHANGED = 'SUSPENSION_DETAILS_CHANGED', TRIAL_END_DATE_EXTENDED = 'TRIAL_END_DATE_EXTENDED', TRIAL_STARTED = 'TRIAL_STARTED' }
 
-	export enum GoogleCloudChannelV1EntitlementChangeOperatorType { OPERATOR_TYPE_UNSPECIFIED = 0, CUSTOMER_SERVICE_REPRESENTATIVE = 1, SYSTEM = 2, CUSTOMER = 3, RESELLER = 4 }
+	export enum GoogleCloudChannelV1EntitlementChangeOperatorType { OPERATOR_TYPE_UNSPECIFIED = 'OPERATOR_TYPE_UNSPECIFIED', CUSTOMER_SERVICE_REPRESENTATIVE = 'CUSTOMER_SERVICE_REPRESENTATIVE', SYSTEM = 'SYSTEM', CUSTOMER = 'CUSTOMER', RESELLER = 'RESELLER' }
 
-	export enum GoogleCloudChannelV1EntitlementChangeSuspensionReason { SUSPENSION_REASON_UNSPECIFIED = 0, RESELLER_INITIATED = 1, TRIAL_ENDED = 2, RENEWAL_WITH_TYPE_CANCEL = 3, PENDING_TOS_ACCEPTANCE = 4, OTHER = 5 }
+	export enum GoogleCloudChannelV1EntitlementChangeSuspensionReason { SUSPENSION_REASON_UNSPECIFIED = 'SUSPENSION_REASON_UNSPECIFIED', RESELLER_INITIATED = 'RESELLER_INITIATED', TRIAL_ENDED = 'TRIAL_ENDED', RENEWAL_WITH_TYPE_CANCEL = 'RENEWAL_WITH_TYPE_CANCEL', PENDING_TOS_ACCEPTANCE = 'PENDING_TOS_ACCEPTANCE', OTHER = 'OTHER' }
 
 
 	/** Represents Pub/Sub message content describing entitlement update. */
@@ -1799,7 +1799,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1EntitlementEventEventType { TYPE_UNSPECIFIED = 0, CREATED = 1, PRICE_PLAN_SWITCHED = 2, COMMITMENT_CHANGED = 3, RENEWED = 4, SUSPENDED = 5, ACTIVATED = 6, CANCELLED = 7, SKU_CHANGED = 8, RENEWAL_SETTING_CHANGED = 9, PAID_SERVICE_STARTED = 10, LICENSE_ASSIGNMENT_CHANGED = 11, LICENSE_CAP_CHANGED = 12 }
+	export enum GoogleCloudChannelV1EntitlementEventEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CREATED = 'CREATED', PRICE_PLAN_SWITCHED = 'PRICE_PLAN_SWITCHED', COMMITMENT_CHANGED = 'COMMITMENT_CHANGED', RENEWED = 'RENEWED', SUSPENDED = 'SUSPENDED', ACTIVATED = 'ACTIVATED', CANCELLED = 'CANCELLED', SKU_CHANGED = 'SKU_CHANGED', RENEWAL_SETTING_CHANGED = 'RENEWAL_SETTING_CHANGED', PAID_SERVICE_STARTED = 'PAID_SERVICE_STARTED', LICENSE_ASSIGNMENT_CHANGED = 'LICENSE_ASSIGNMENT_CHANGED', LICENSE_CAP_CHANGED = 'LICENSE_CAP_CHANGED' }
 
 
 	/** Request message for CloudChannelReportsService.FetchReportResults. */
@@ -2376,7 +2376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1MediaType { MEDIA_TYPE_UNSPECIFIED = 0, MEDIA_TYPE_IMAGE = 1 }
+	export enum GoogleCloudChannelV1MediaType { MEDIA_TYPE_UNSPECIFIED = 'MEDIA_TYPE_UNSPECIFIED', MEDIA_TYPE_IMAGE = 'MEDIA_TYPE_IMAGE' }
 
 
 	/** Parameter's definition. Specifies what parameter is required to use the current Offer to purchase. */
@@ -2422,7 +2422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1ParameterDefinitionParameterType { PARAMETER_TYPE_UNSPECIFIED = 0, INT64 = 1, STRING = 2, DOUBLE = 3, BOOLEAN = 4 }
+	export enum GoogleCloudChannelV1ParameterDefinitionParameterType { PARAMETER_TYPE_UNSPECIFIED = 'PARAMETER_TYPE_UNSPECIFIED', INT64 = 'INT64', STRING = 'STRING', DOUBLE = 'DOUBLE', BOOLEAN = 'BOOLEAN' }
 
 
 	/** The payment plan for the Offer. Describes how to make a payment. */
@@ -2465,7 +2465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1PlanPaymentType { PAYMENT_TYPE_UNSPECIFIED = 0, PREPAY = 1, POSTPAY = 2 }
+	export enum GoogleCloudChannelV1PlanPaymentType { PAYMENT_TYPE_UNSPECIFIED = 'PAYMENT_TYPE_UNSPECIFIED', PREPAY = 'PREPAY', POSTPAY = 'POSTPAY' }
 
 
 	/** Represents price by resource type. */
@@ -2600,7 +2600,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1PriceByResourceResourceType { RESOURCE_TYPE_UNSPECIFIED = 0, SEAT = 1, MAU = 2, GB = 3, LICENSED_USER = 4, MINUTES = 5, IAAS_USAGE = 6, SUBSCRIPTION = 7 }
+	export enum GoogleCloudChannelV1PriceByResourceResourceType { RESOURCE_TYPE_UNSPECIFIED = 'RESOURCE_TYPE_UNSPECIFIED', SEAT = 'SEAT', MAU = 'MAU', GB = 'GB', LICENSED_USER = 'LICENSED_USER', MINUTES = 'MINUTES', IAAS_USAGE = 'IAAS_USAGE', SUBSCRIPTION = 'SUBSCRIPTION' }
 
 
 	/** Represents a product's purchasable Stock Keeping Unit (SKU). SKUs represent the different variations of the product. For example, Google Workspace Business Standard and Google Workspace Business Plus are Google Workspace product SKUs. */
@@ -3156,7 +3156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1TransferEligibilityIneligibilityReason { REASON_UNSPECIFIED = 0, PENDING_TOS_ACCEPTANCE = 1, SKU_NOT_ELIGIBLE = 2, SKU_SUSPENDED = 3, CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU = 4 }
+	export enum GoogleCloudChannelV1TransferEligibilityIneligibilityReason { REASON_UNSPECIFIED = 'REASON_UNSPECIFIED', PENDING_TOS_ACCEPTANCE = 'PENDING_TOS_ACCEPTANCE', SKU_NOT_ELIGIBLE = 'SKU_NOT_ELIGIBLE', SKU_SUSPENDED = 'SKU_SUSPENDED', CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU = 'CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU' }
 
 
 	/** Provides contextual information about a google.longrunning.Operation. */
@@ -3179,7 +3179,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, CREATE_ENTITLEMENT = 1, CHANGE_RENEWAL_SETTINGS = 2, START_PAID_SERVICE = 3, ACTIVATE_ENTITLEMENT = 4, SUSPEND_ENTITLEMENT = 5, CANCEL_ENTITLEMENT = 6, TRANSFER_ENTITLEMENTS = 7, TRANSFER_ENTITLEMENTS_TO_GOOGLE = 8, CHANGE_OFFER = 9, CHANGE_PARAMETERS = 10, PROVISION_CLOUD_IDENTITY = 11 }
+	export enum GoogleCloudChannelV1OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', CREATE_ENTITLEMENT = 'CREATE_ENTITLEMENT', CHANGE_RENEWAL_SETTINGS = 'CHANGE_RENEWAL_SETTINGS', START_PAID_SERVICE = 'START_PAID_SERVICE', ACTIVATE_ENTITLEMENT = 'ACTIVATE_ENTITLEMENT', SUSPEND_ENTITLEMENT = 'SUSPEND_ENTITLEMENT', CANCEL_ENTITLEMENT = 'CANCEL_ENTITLEMENT', TRANSFER_ENTITLEMENTS = 'TRANSFER_ENTITLEMENTS', TRANSFER_ENTITLEMENTS_TO_GOOGLE = 'TRANSFER_ENTITLEMENTS_TO_GOOGLE', CHANGE_OFFER = 'CHANGE_OFFER', CHANGE_PARAMETERS = 'CHANGE_PARAMETERS', PROVISION_CLOUD_IDENTITY = 'PROVISION_CLOUD_IDENTITY' }
 
 
 	/** Request message for CloudChannelService.ProvisionCloudIdentity */
@@ -3346,7 +3346,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1ReportStatusState { STATE_UNSPECIFIED = 0, STARTED = 1, WRITING = 2, AVAILABLE = 3, FAILED = 4 }
+	export enum GoogleCloudChannelV1ReportStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STARTED = 'STARTED', WRITING = 'WRITING', AVAILABLE = 'AVAILABLE', FAILED = 'FAILED' }
 
 
 	/** Request message for CloudChannelReportsService.RunReportJob. */
@@ -3648,7 +3648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1alpha1ChannelPartnerEventEventType { TYPE_UNSPECIFIED = 0, LINK_STATE_CHANGED = 1, PARTNER_ADVANTAGE_INFO_CHANGED = 2 }
+	export enum GoogleCloudChannelV1alpha1ChannelPartnerEventEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', LINK_STATE_CHANGED = 'LINK_STATE_CHANGED', PARTNER_ADVANTAGE_INFO_CHANGED = 'PARTNER_ADVANTAGE_INFO_CHANGED' }
 
 
 	/** The definition of a report column. Specifies the data properties in the corresponding position of the report rows. */
@@ -3803,7 +3803,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1alpha1RenewalSettingsPaymentOption { PAYMENT_OPTION_UNSPECIFIED = 0, ANNUAL = 1, MONTHLY = 2 }
+	export enum GoogleCloudChannelV1alpha1RenewalSettingsPaymentOption { PAYMENT_OPTION_UNSPECIFIED = 'PAYMENT_OPTION_UNSPECIFIED', ANNUAL = 'ANNUAL', MONTHLY = 'MONTHLY' }
 
 
 	/** Represents Pub/Sub message content describing customer update. */
@@ -4083,7 +4083,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1alpha1EntitlementProvisioningState { PROVISIONING_STATE_UNSPECIFIED = 0, ACTIVE = 1, CANCELED = 2, COMPLETE = 3, PENDING = 4, SUSPENDED = 5 }
+	export enum GoogleCloudChannelV1alpha1EntitlementProvisioningState { PROVISIONING_STATE_UNSPECIFIED = 'PROVISIONING_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CANCELED = 'CANCELED', COMPLETE = 'COMPLETE', PENDING = 'PENDING', SUSPENDED = 'SUSPENDED' }
 
 
 	/** Settings for trial offers. */
@@ -4162,7 +4162,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudChannelV1alpha1OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, CREATE_ENTITLEMENT = 1, CHANGE_QUANTITY = 2, CHANGE_RENEWAL_SETTINGS = 3, CHANGE_PLAN = 4, START_PAID_SERVICE = 5, CHANGE_SKU = 6, ACTIVATE_ENTITLEMENT = 7, SUSPEND_ENTITLEMENT = 8, CANCEL_ENTITLEMENT = 9, TRANSFER_ENTITLEMENTS = 10, TRANSFER_ENTITLEMENTS_TO_GOOGLE = 11, CHANGE_OFFER = 12, CHANGE_PARAMETERS = 13, PROVISION_CLOUD_IDENTITY = 14 }
+	export enum GoogleCloudChannelV1alpha1OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', CREATE_ENTITLEMENT = 'CREATE_ENTITLEMENT', CHANGE_QUANTITY = 'CHANGE_QUANTITY', CHANGE_RENEWAL_SETTINGS = 'CHANGE_RENEWAL_SETTINGS', CHANGE_PLAN = 'CHANGE_PLAN', START_PAID_SERVICE = 'START_PAID_SERVICE', CHANGE_SKU = 'CHANGE_SKU', ACTIVATE_ENTITLEMENT = 'ACTIVATE_ENTITLEMENT', SUSPEND_ENTITLEMENT = 'SUSPEND_ENTITLEMENT', CANCEL_ENTITLEMENT = 'CANCEL_ENTITLEMENT', TRANSFER_ENTITLEMENTS = 'TRANSFER_ENTITLEMENTS', TRANSFER_ENTITLEMENTS_TO_GOOGLE = 'TRANSFER_ENTITLEMENTS_TO_GOOGLE', CHANGE_OFFER = 'CHANGE_OFFER', CHANGE_PARAMETERS = 'CHANGE_PARAMETERS', PROVISION_CLOUD_IDENTITY = 'PROVISION_CLOUD_IDENTITY' }
 
 
 	/** The ID and description of a report that was used to generate report data. For example, "Google Cloud Daily Spend", "Google Workspace License Activity", etc. */
@@ -4972,9 +4972,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Cloudchannel_accounts_customers_listPurchasableSkusChangeOfferPurchase_changeType { CHANGE_TYPE_UNSPECIFIED = 0, UPGRADE = 1, DOWNGRADE = 2 }
+	export enum Cloudchannel_accounts_customers_listPurchasableSkusChangeOfferPurchase_changeType { CHANGE_TYPE_UNSPECIFIED = 'CHANGE_TYPE_UNSPECIFIED', UPGRADE = 'UPGRADE', DOWNGRADE = 'DOWNGRADE' }
 
-	export enum Cloudchannel_operations_listFilter { UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Cloudchannel_operations_listFilter { UNSPECIFIED = 'UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

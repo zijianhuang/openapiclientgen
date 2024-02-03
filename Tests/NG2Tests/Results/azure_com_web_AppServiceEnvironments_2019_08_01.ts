@@ -480,11 +480,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode { Shared = 0, Dedicated = 1, Dynamic = 2 }
+	export enum AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode { Shared = 'Shared', Dedicated = 'Dedicated', Dynamic = 'Dynamic' }
 
-	export enum AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesWorkerSize { Small = 0, Medium = 1, Large = 2, D1 = 3, D2 = 4, D3 = 5, NestedSmall = 6, Default = 7 }
+	export enum AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesWorkerSize { Small = 'Small', Medium = 'Medium', Large = 'Large', D1 = 'D1', D2 = 'D2', D3 = 'D3', NestedSmall = 'NestedSmall', Default = 'Default' }
 
-	export enum AppServiceEnvironmentResourcePropertiesInternalLoadBalancingMode { None = 0, Web = 1, Publishing = 2 }
+	export enum AppServiceEnvironmentResourcePropertiesInternalLoadBalancingMode { None = 'None', Web = 'Web', Publishing = 'Publishing' }
 
 	export interface AppServiceEnvironmentResourcePropertiesNetworkAccessControlList {
 
@@ -524,11 +524,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AppServiceEnvironmentResourcePropertiesNetworkAccessControlListAction { Permit = 0, Deny = 1 }
+	export enum AppServiceEnvironmentResourcePropertiesNetworkAccessControlListAction { Permit = 'Permit', Deny = 'Deny' }
 
-	export enum AppServiceEnvironmentResourcePropertiesProvisioningState { Succeeded = 0, Failed = 1, Canceled = 2, InProgress = 3, Deleting = 4 }
+	export enum AppServiceEnvironmentResourcePropertiesProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', InProgress = 'InProgress', Deleting = 'Deleting' }
 
-	export enum AppServiceEnvironmentResourcePropertiesStatus { Preparing = 0, Ready = 1, Scaling = 2, Deleting = 3 }
+	export enum AppServiceEnvironmentResourcePropertiesStatus { Preparing = 'Preparing', Ready = 'Ready', Scaling = 'Scaling', Deleting = 'Deleting' }
 
 	export interface AppServiceEnvironmentResourcePropertiesVipMappings {
 
@@ -2780,7 +2780,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppServiceEnvironments_ChangeVnetReturnValueIdentityType { None = 0, SystemAssigned = 1, UserAssigned = 2 }
+	export enum AppServiceEnvironments_ChangeVnetReturnValueIdentityType { None = 'None', SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned' }
 
 	export interface AppServiceEnvironments_ChangeVnetReturnValueIdentityUserAssignedIdentities {
 
@@ -2912,7 +2912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppServiceEnvironments_ListOperationsReturnStatus { InProgress = 0, Failed = 1, Succeeded = 2, TimedOut = 3, Created = 4 }
+	export enum AppServiceEnvironments_ListOperationsReturnStatus { InProgress = 'InProgress', Failed = 'Failed', Succeeded = 'Succeeded', TimedOut = 'TimedOut', Created = 'Created' }
 
 	export interface AppServiceEnvironments_ResumeReturn {
 

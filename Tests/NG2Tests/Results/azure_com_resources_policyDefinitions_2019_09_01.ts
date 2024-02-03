@@ -106,7 +106,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterDefinitionsValueType { String = 0, Array = 1, Object = 2, Boolean = 3, Integer = 4, Float = 5, DateTime = 6 }
+	export enum ParameterDefinitionsValueType { String = 'String', Array = 'Array', Object = 'Object', Boolean = 'Boolean', Integer = 'Integer', Float = 'Float', DateTime = 'DateTime' }
 
 
 	/** The policy definition. */
@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyDefinitionPropertiesPolicyType { NotSpecified = 0, BuiltIn = 1, Custom = 2, Static = 3 }
+	export enum PolicyDefinitionPropertiesPolicyType { NotSpecified = 'NotSpecified', BuiltIn = 'BuiltIn', Custom = 'Custom', Static = 'Static' }
 
 	@Injectable()
 	export class MyClient {

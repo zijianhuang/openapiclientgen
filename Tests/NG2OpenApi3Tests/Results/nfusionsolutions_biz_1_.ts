@@ -543,9 +543,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Currencies_History_GETFormat { json = 0, xml = 1 }
+	export enum Currencies_History_GETFormat { json = 'json', xml = 'xml' }
 
-	export enum Metals_BenchmarkHistory_GETUnitofmeasure { mg = 0, g = 1, kg = 2, gr = 3, oz = 4, toz = 5, ct = 6, dwt = 7 }
+	export enum Metals_BenchmarkHistory_GETUnitofmeasure { mg = 'mg', g = 'g', kg = 'kg', gr = 'gr', oz = 'oz', toz = 'toz', ct = 'ct', dwt = 'dwt' }
 
 }
 

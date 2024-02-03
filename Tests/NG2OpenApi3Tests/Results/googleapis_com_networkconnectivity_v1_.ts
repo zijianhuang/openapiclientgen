@@ -327,11 +327,11 @@ export namespace MyNS {
 
 	}
 
-	export enum StateReasonCode { CODE_UNSPECIFIED = 0, PENDING_REVIEW = 1, REJECTED = 2, PAUSED = 3, FAILED = 4 }
+	export enum StateReasonCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', PENDING_REVIEW = 'PENDING_REVIEW', REJECTED = 'REJECTED', PAUSED = 'PAUSED', FAILED = 'FAILED' }
 
-	export enum SpokeSpokeType { SPOKE_TYPE_UNSPECIFIED = 0, VPN_TUNNEL = 1, INTERCONNECT_ATTACHMENT = 2, ROUTER_APPLIANCE = 3, VPC_NETWORK = 4 }
+	export enum SpokeSpokeType { SPOKE_TYPE_UNSPECIFIED = 'SPOKE_TYPE_UNSPECIFIED', VPN_TUNNEL = 'VPN_TUNNEL', INTERCONNECT_ATTACHMENT = 'INTERCONNECT_ATTACHMENT', ROUTER_APPLIANCE = 'ROUTER_APPLIANCE', VPC_NETWORK = 'VPC_NETWORK' }
 
-	export enum SpokeState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, DELETING = 3, ACCEPTING = 4, REJECTING = 5, UPDATING = 6, INACTIVE = 7, OBSOLETE = 8 }
+	export enum SpokeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', ACCEPTING = 'ACCEPTING', REJECTING = 'REJECTING', UPDATING = 'UPDATING', INACTIVE = 'INACTIVE', OBSOLETE = 'OBSOLETE' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -381,7 +381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -494,7 +494,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsumerPscConfigState { STATE_UNSPECIFIED = 0, VALID = 1, CONNECTION_POLICY_MISSING = 2, POLICY_LIMIT_REACHED = 3 }
+	export enum ConsumerPscConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', VALID = 'VALID', CONNECTION_POLICY_MISSING = 'CONNECTION_POLICY_MISSING', POLICY_LIMIT_REACHED = 'POLICY_LIMIT_REACHED' }
 
 
 	/** PSC connection details on consumer side. */
@@ -645,9 +645,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsumerPscConnectionErrorType { CONNECTION_ERROR_TYPE_UNSPECIFIED = 0, ERROR_INTERNAL = 1, ERROR_CONSUMER_SIDE = 2, ERROR_PRODUCER_SIDE = 3 }
+	export enum ConsumerPscConnectionErrorType { CONNECTION_ERROR_TYPE_UNSPECIFIED = 'CONNECTION_ERROR_TYPE_UNSPECIFIED', ERROR_INTERNAL = 'ERROR_INTERNAL', ERROR_CONSUMER_SIDE = 'ERROR_CONSUMER_SIDE', ERROR_PRODUCER_SIDE = 'ERROR_PRODUCER_SIDE' }
 
-	export enum ConsumerPscConnectionState { STATE_UNSPECIFIED = 0, ACTIVE = 1, FAILED = 2, CREATING = 3, DELETING = 4 }
+	export enum ConsumerPscConnectionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', FAILED = 'FAILED', CREATING = 'CREATING', DELETING = 'DELETING' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -705,7 +705,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterProtocolVersion { PROTOCOL_VERSION_UNSPECIFIED = 0, IPV4 = 1 }
+	export enum FilterProtocolVersion { PROTOCOL_VERSION_UNSPECIFIED = 'PROTOCOL_VERSION_UNSPECIFIED', IPV4 = 'IPV4' }
 
 
 	/** The request message for Operations.CancelOperation. */
@@ -1174,9 +1174,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InternalRangePeering { PEERING_UNSPECIFIED = 0, FOR_SELF = 1, FOR_PEER = 2, NOT_SHARED = 3 }
+	export enum InternalRangePeering { PEERING_UNSPECIFIED = 'PEERING_UNSPECIFIED', FOR_SELF = 'FOR_SELF', FOR_PEER = 'FOR_PEER', NOT_SHARED = 'NOT_SHARED' }
 
-	export enum InternalRangeUsage { USAGE_UNSPECIFIED = 0, FOR_VPC = 1, EXTERNAL_TO_VPC = 2 }
+	export enum InternalRangeUsage { USAGE_UNSPECIFIED = 'USAGE_UNSPECIFIED', FOR_VPC = 'FOR_VPC', EXTERNAL_TO_VPC = 'EXTERNAL_TO_VPC' }
 
 
 	/** Response for HubService.ListGroups method. */
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyBasedRouteNextHopOtherRoutes { OTHER_ROUTES_UNSPECIFIED = 0, DEFAULT_ROUTING = 1 }
+	export enum PolicyBasedRouteNextHopOtherRoutes { OTHER_ROUTES_UNSPECIFIED = 'OTHER_ROUTES_UNSPECIFIED', DEFAULT_ROUTING = 'DEFAULT_ROUTING' }
 
 
 	/** VM instances to which this policy-based route applies to. */
@@ -1543,7 +1543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WarningsCode { WARNING_UNSPECIFIED = 0, RESOURCE_NOT_ACTIVE = 1, RESOURCE_BEING_MODIFIED = 2 }
+	export enum WarningsCode { WARNING_UNSPECIFIED = 'WARNING_UNSPECIFIED', RESOURCE_NOT_ACTIVE = 'RESOURCE_NOT_ACTIVE', RESOURCE_BEING_MODIFIED = 'RESOURCE_BEING_MODIFIED' }
 
 
 	/** Response for HubService.ListRouteTables method. */
@@ -1767,7 +1767,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteType { ROUTE_TYPE_UNSPECIFIED = 0, VPC_PRIMARY_SUBNET = 1, VPC_SECONDARY_SUBNET = 2 }
+	export enum RouteType { ROUTE_TYPE_UNSPECIFIED = 'ROUTE_TYPE_UNSPECIFIED', VPC_PRIMARY_SUBNET = 'VPC_PRIMARY_SUBNET', VPC_SECONDARY_SUBNET = 'VPC_SECONDARY_SUBNET' }
 
 
 	/** Response for ListServiceClasses. */
@@ -1979,7 +1979,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceConnectionMapInfrastructure { INFRASTRUCTURE_UNSPECIFIED = 0, PSC = 1 }
+	export enum ServiceConnectionMapInfrastructure { INFRASTRUCTURE_UNSPECIFIED = 'INFRASTRUCTURE_UNSPECIFIED', PSC = 'PSC' }
 
 
 	/** The PSC configurations on producer side. */
@@ -2940,7 +2940,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Networkconnectivity_projects_locations_global_hubs_listSpokesView { SPOKE_VIEW_UNSPECIFIED = 0, BASIC = 1, DETAILED = 2 }
+	export enum Networkconnectivity_projects_locations_global_hubs_listSpokesView { SPOKE_VIEW_UNSPECIFIED = 'SPOKE_VIEW_UNSPECIFIED', BASIC = 'BASIC', DETAILED = 'DETAILED' }
 
 }
 

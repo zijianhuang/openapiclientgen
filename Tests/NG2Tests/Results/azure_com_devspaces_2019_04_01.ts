@@ -158,7 +158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ControllerPropertiesProvisioningState { Succeeded = 0, Failed = 1, Canceled = 2, Updating = 3, Creating = 4, Deleting = 5, Deleted = 6 }
+	export enum ControllerPropertiesProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', Updating = 'Updating', Creating = 'Creating', Deleting = 'Deleting', Deleted = 'Deleted' }
 
 
 	/** Parameters for updating an Azure Dev Spaces Controller. */
@@ -460,9 +460,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { S1 = 0 }
+	export enum SkuName { S1 = 'S1' }
 
-	export enum SkuTier { Standard = 0 }
+	export enum SkuTier { Standard = 'Standard' }
 
 
 	/** The resource model definition for a ARM tracked top level resource. */

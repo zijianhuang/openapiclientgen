@@ -273,7 +273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2OutputStorageConfigOutputSchema { OUTPUT_SCHEMA_UNSPECIFIED = 0, BASIC_COLUMNS = 1, GCS_COLUMNS = 2, DATASTORE_COLUMNS = 3, BIG_QUERY_COLUMNS = 4, ALL_COLUMNS = 5 }
+	export enum GooglePrivacyDlpV2OutputStorageConfigOutputSchema { OUTPUT_SCHEMA_UNSPECIFIED = 'OUTPUT_SCHEMA_UNSPECIFIED', BASIC_COLUMNS = 'BASIC_COLUMNS', GCS_COLUMNS = 'GCS_COLUMNS', DATASTORE_COLUMNS = 'DATASTORE_COLUMNS', BIG_QUERY_COLUMNS = 'BIG_QUERY_COLUMNS', ALL_COLUMNS = 'ALL_COLUMNS' }
 
 
 	/** The results of an Action. */
@@ -621,7 +621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2SensitivityScoreScore { SENSITIVITY_SCORE_UNSPECIFIED = 0, SENSITIVITY_LOW = 1, SENSITIVITY_MODERATE = 2, SENSITIVITY_HIGH = 3 }
+	export enum GooglePrivacyDlpV2SensitivityScoreScore { SENSITIVITY_SCORE_UNSPECIFIED = 'SENSITIVITY_SCORE_UNSPECIFIED', SENSITIVITY_LOW = 'SENSITIVITY_LOW', SENSITIVITY_MODERATE = 'SENSITIVITY_MODERATE', SENSITIVITY_HIGH = 'SENSITIVITY_HIGH' }
 
 
 	/** A type of transformation that will scan unstructured text and apply various `PrimitiveTransformation`s to each finding, where the transformation is applied to only values that were identified as a specific info_type. */
@@ -847,7 +847,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2ValueDayOfWeekValue { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum GooglePrivacyDlpV2ValueDayOfWeekValue { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
@@ -957,7 +957,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore { COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0, NUMERIC = 1, ALPHA_UPPER_CASE = 2, ALPHA_LOWER_CASE = 3, PUNCTUATION = 4, WHITESPACE = 5 }
+	export enum GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore { COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 'COMMON_CHARS_TO_IGNORE_UNSPECIFIED', NUMERIC = 'NUMERIC', ALPHA_UPPER_CASE = 'ALPHA_UPPER_CASE', ALPHA_LOWER_CASE = 'ALPHA_LOWER_CASE', PUNCTUATION = 'PUNCTUATION', WHITESPACE = 'WHITESPACE' }
 
 
 	/** Pseudonymization method that generates deterministic encryption for the given input. Outputs a base64 encoded representation of the encrypted output. Uses AES-SIV based on the RFC https://tools.ietf.org/html/rfc5297. */
@@ -1157,7 +1157,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet { FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0, NUMERIC = 1, HEXADECIMAL = 2, UPPER_CASE_ALPHA_NUMERIC = 3, ALPHA_NUMERIC = 4 }
+	export enum GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet { FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 'FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED', NUMERIC = 'NUMERIC', HEXADECIMAL = 'HEXADECIMAL', UPPER_CASE_ALPHA_NUMERIC = 'UPPER_CASE_ALPHA_NUMERIC', ALPHA_NUMERIC = 'ALPHA_NUMERIC' }
 
 
 	/** Shifts dates by random number of days, with option to be consistent for the same context. See https://cloud.google.com/dlp/docs/concepts-date-shifting to learn more. */
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2TimePartConfigPartToExtract { TIME_PART_UNSPECIFIED = 0, YEAR = 1, MONTH = 2, DAY_OF_MONTH = 3, DAY_OF_WEEK = 4, WEEK_OF_YEAR = 5, HOUR_OF_DAY = 6 }
+	export enum GooglePrivacyDlpV2TimePartConfigPartToExtract { TIME_PART_UNSPECIFIED = 'TIME_PART_UNSPECIFIED', YEAR = 'YEAR', MONTH = 'MONTH', DAY_OF_MONTH = 'DAY_OF_MONTH', DAY_OF_WEEK = 'DAY_OF_WEEK', WEEK_OF_YEAR = 'WEEK_OF_YEAR', HOUR_OF_DAY = 'HOUR_OF_DAY' }
 
 
 	/** A type of transformation that is applied over structured data such as a table. */
@@ -1453,9 +1453,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2ConditionOperator { RELATIONAL_OPERATOR_UNSPECIFIED = 0, EQUAL_TO = 1, NOT_EQUAL_TO = 2, GREATER_THAN = 3, LESS_THAN = 4, GREATER_THAN_OR_EQUALS = 5, LESS_THAN_OR_EQUALS = 6, EXISTS = 7 }
+	export enum GooglePrivacyDlpV2ConditionOperator { RELATIONAL_OPERATOR_UNSPECIFIED = 'RELATIONAL_OPERATOR_UNSPECIFIED', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN', GREATER_THAN_OR_EQUALS = 'GREATER_THAN_OR_EQUALS', LESS_THAN_OR_EQUALS = 'LESS_THAN_OR_EQUALS', EXISTS = 'EXISTS' }
 
-	export enum GooglePrivacyDlpV2ExpressionsLogicalOperator { LOGICAL_OPERATOR_UNSPECIFIED = 0, AND = 1 }
+	export enum GooglePrivacyDlpV2ExpressionsLogicalOperator { LOGICAL_OPERATOR_UNSPECIFIED = 'LOGICAL_OPERATOR_UNSPECIFIED', AND = 'AND' }
 
 
 	/** Configuration to suppress records whose suppression conditions evaluate to true. */
@@ -2509,7 +2509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2DiscoverySchemaModifiedCadenceFrequency { UPDATE_FREQUENCY_UNSPECIFIED = 0, UPDATE_FREQUENCY_NEVER = 1, UPDATE_FREQUENCY_DAILY = 2, UPDATE_FREQUENCY_MONTHLY = 3 }
+	export enum GooglePrivacyDlpV2DiscoverySchemaModifiedCadenceFrequency { UPDATE_FREQUENCY_UNSPECIFIED = 'UPDATE_FREQUENCY_UNSPECIFIED', UPDATE_FREQUENCY_NEVER = 'UPDATE_FREQUENCY_NEVER', UPDATE_FREQUENCY_DAILY = 'UPDATE_FREQUENCY_DAILY', UPDATE_FREQUENCY_MONTHLY = 'UPDATE_FREQUENCY_MONTHLY' }
 
 
 	/** The cadence at which to update data profiles when a table is modified. */
@@ -2597,7 +2597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2DiscoveryBigQueryConditionsTypeCollection { BIG_QUERY_COLLECTION_UNSPECIFIED = 0, BIG_QUERY_COLLECTION_ALL_TYPES = 1, BIG_QUERY_COLLECTION_ONLY_SUPPORTED_TYPES = 2 }
+	export enum GooglePrivacyDlpV2DiscoveryBigQueryConditionsTypeCollection { BIG_QUERY_COLLECTION_UNSPECIFIED = 'BIG_QUERY_COLLECTION_UNSPECIFIED', BIG_QUERY_COLLECTION_ALL_TYPES = 'BIG_QUERY_COLLECTION_ALL_TYPES', BIG_QUERY_COLLECTION_ONLY_SUPPORTED_TYPES = 'BIG_QUERY_COLLECTION_ONLY_SUPPORTED_TYPES' }
 
 
 	/** The types of BigQuery tables supported by Cloud DLP. */
@@ -2806,7 +2806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2BigQueryOptionsSampleMethod { SAMPLE_METHOD_UNSPECIFIED = 0, TOP = 1, RANDOM_START = 2 }
+	export enum GooglePrivacyDlpV2BigQueryOptionsSampleMethod { SAMPLE_METHOD_UNSPECIFIED = 'SAMPLE_METHOD_UNSPECIFIED', TOP = 'TOP', RANDOM_START = 'RANDOM_START' }
 
 
 	/** Bounding box encompassing detected text within an image. */
@@ -2878,7 +2878,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2ByteContentItemType { BYTES_TYPE_UNSPECIFIED = 0, IMAGE = 1, IMAGE_JPEG = 2, IMAGE_BMP = 3, IMAGE_PNG = 4, IMAGE_SVG = 5, TEXT_UTF8 = 6, WORD_DOCUMENT = 7, PDF = 8, POWERPOINT_DOCUMENT = 9, EXCEL_DOCUMENT = 10, AVRO = 11, CSV = 12, TSV = 13 }
+	export enum GooglePrivacyDlpV2ByteContentItemType { BYTES_TYPE_UNSPECIFIED = 'BYTES_TYPE_UNSPECIFIED', IMAGE = 'IMAGE', IMAGE_JPEG = 'IMAGE_JPEG', IMAGE_BMP = 'IMAGE_BMP', IMAGE_PNG = 'IMAGE_PNG', IMAGE_SVG = 'IMAGE_SVG', TEXT_UTF8 = 'TEXT_UTF8', WORD_DOCUMENT = 'WORD_DOCUMENT', PDF = 'PDF', POWERPOINT_DOCUMENT = 'POWERPOINT_DOCUMENT', EXCEL_DOCUMENT = 'EXCEL_DOCUMENT', AVRO = 'AVRO', CSV = 'CSV', TSV = 'TSV' }
 
 
 	/** The request message for canceling a DLP job. */
@@ -3187,7 +3187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2ColumnDataProfileColumnType { COLUMN_DATA_TYPE_UNSPECIFIED = 0, TYPE_INT64 = 1, TYPE_BOOL = 2, TYPE_FLOAT64 = 3, TYPE_STRING = 4, TYPE_BYTES = 5, TYPE_TIMESTAMP = 6, TYPE_DATE = 7, TYPE_TIME = 8, TYPE_DATETIME = 9, TYPE_GEOGRAPHY = 10, TYPE_NUMERIC = 11, TYPE_RECORD = 12, TYPE_BIGNUMERIC = 13, TYPE_JSON = 14 }
+	export enum GooglePrivacyDlpV2ColumnDataProfileColumnType { COLUMN_DATA_TYPE_UNSPECIFIED = 'COLUMN_DATA_TYPE_UNSPECIFIED', TYPE_INT64 = 'TYPE_INT64', TYPE_BOOL = 'TYPE_BOOL', TYPE_FLOAT64 = 'TYPE_FLOAT64', TYPE_STRING = 'TYPE_STRING', TYPE_BYTES = 'TYPE_BYTES', TYPE_TIMESTAMP = 'TYPE_TIMESTAMP', TYPE_DATE = 'TYPE_DATE', TYPE_TIME = 'TYPE_TIME', TYPE_DATETIME = 'TYPE_DATETIME', TYPE_GEOGRAPHY = 'TYPE_GEOGRAPHY', TYPE_NUMERIC = 'TYPE_NUMERIC', TYPE_RECORD = 'TYPE_RECORD', TYPE_BIGNUMERIC = 'TYPE_BIGNUMERIC', TYPE_JSON = 'TYPE_JSON' }
 
 
 	/** Score is a summary of all elements in the data profile. A higher number means more risk. */
@@ -3210,11 +3210,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2DataRiskLevelScore { RISK_SCORE_UNSPECIFIED = 0, RISK_LOW = 1, RISK_MODERATE = 2, RISK_HIGH = 3 }
+	export enum GooglePrivacyDlpV2DataRiskLevelScore { RISK_SCORE_UNSPECIFIED = 'RISK_SCORE_UNSPECIFIED', RISK_LOW = 'RISK_LOW', RISK_MODERATE = 'RISK_MODERATE', RISK_HIGH = 'RISK_HIGH' }
 
-	export enum GooglePrivacyDlpV2ColumnDataProfileEstimatedNullPercentage { NULL_PERCENTAGE_LEVEL_UNSPECIFIED = 0, NULL_PERCENTAGE_VERY_LOW = 1, NULL_PERCENTAGE_LOW = 2, NULL_PERCENTAGE_MEDIUM = 3, NULL_PERCENTAGE_HIGH = 4 }
+	export enum GooglePrivacyDlpV2ColumnDataProfileEstimatedNullPercentage { NULL_PERCENTAGE_LEVEL_UNSPECIFIED = 'NULL_PERCENTAGE_LEVEL_UNSPECIFIED', NULL_PERCENTAGE_VERY_LOW = 'NULL_PERCENTAGE_VERY_LOW', NULL_PERCENTAGE_LOW = 'NULL_PERCENTAGE_LOW', NULL_PERCENTAGE_MEDIUM = 'NULL_PERCENTAGE_MEDIUM', NULL_PERCENTAGE_HIGH = 'NULL_PERCENTAGE_HIGH' }
 
-	export enum GooglePrivacyDlpV2ColumnDataProfileEstimatedUniquenessScore { UNIQUENESS_SCORE_LEVEL_UNSPECIFIED = 0, UNIQUENESS_SCORE_LOW = 1, UNIQUENESS_SCORE_MEDIUM = 2, UNIQUENESS_SCORE_HIGH = 3 }
+	export enum GooglePrivacyDlpV2ColumnDataProfileEstimatedUniquenessScore { UNIQUENESS_SCORE_LEVEL_UNSPECIFIED = 'UNIQUENESS_SCORE_LEVEL_UNSPECIFIED', UNIQUENESS_SCORE_LOW = 'UNIQUENESS_SCORE_LOW', UNIQUENESS_SCORE_MEDIUM = 'UNIQUENESS_SCORE_MEDIUM', UNIQUENESS_SCORE_HIGH = 'UNIQUENESS_SCORE_HIGH' }
 
 
 	/** Infotype details for other infoTypes found within a column. */
@@ -3247,7 +3247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2ColumnDataProfilePolicyState { COLUMN_POLICY_STATE_UNSPECIFIED = 0, COLUMN_POLICY_TAGGED = 1 }
+	export enum GooglePrivacyDlpV2ColumnDataProfilePolicyState { COLUMN_POLICY_STATE_UNSPECIFIED = 'COLUMN_POLICY_STATE_UNSPECIFIED', COLUMN_POLICY_TAGGED = 'COLUMN_POLICY_TAGGED' }
 
 	export interface GooglePrivacyDlpV2ProfileStatus {
 
@@ -3300,7 +3300,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2ColumnDataProfileState { STATE_UNSPECIFIED = 0, RUNNING = 1, DONE = 2 }
+	export enum GooglePrivacyDlpV2ColumnDataProfileState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', DONE = 'DONE' }
 
 
 	/** Represents a container that may contain DLP findings. Examples of a container include a file, table, or database record. */
@@ -3551,7 +3551,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2MetadataLocationType { METADATATYPE_UNSPECIFIED = 0, STORAGE_METADATA = 1 }
+	export enum GooglePrivacyDlpV2MetadataLocationType { METADATATYPE_UNSPECIFIED = 'METADATATYPE_UNSPECIFIED', STORAGE_METADATA = 'STORAGE_METADATA' }
 
 
 	/** Location of a finding within a row or record. */
@@ -3921,9 +3921,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2PubSubNotificationDetailOfMessage { DETAIL_LEVEL_UNSPECIFIED = 0, TABLE_PROFILE = 1, RESOURCE_NAME = 2 }
+	export enum GooglePrivacyDlpV2PubSubNotificationDetailOfMessage { DETAIL_LEVEL_UNSPECIFIED = 'DETAIL_LEVEL_UNSPECIFIED', TABLE_PROFILE = 'TABLE_PROFILE', RESOURCE_NAME = 'RESOURCE_NAME' }
 
-	export enum GooglePrivacyDlpV2PubSubNotificationEvent { EVENT_TYPE_UNSPECIFIED = 0, NEW_PROFILE = 1, CHANGED_PROFILE = 2, SCORE_INCREASED = 3, ERROR_CHANGED = 4 }
+	export enum GooglePrivacyDlpV2PubSubNotificationEvent { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', NEW_PROFILE = 'NEW_PROFILE', CHANGED_PROFILE = 'CHANGED_PROFILE', SCORE_INCREASED = 'SCORE_INCREASED', ERROR_CHANGED = 'ERROR_CHANGED' }
 
 
 	/** A condition for determining whether a Pub/Sub should be triggered. */
@@ -3994,9 +3994,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2PubSubConditionMinimumRiskScore { PROFILE_SCORE_BUCKET_UNSPECIFIED = 0, HIGH = 1, MEDIUM_OR_HIGH = 2 }
+	export enum GooglePrivacyDlpV2PubSubConditionMinimumRiskScore { PROFILE_SCORE_BUCKET_UNSPECIFIED = 'PROFILE_SCORE_BUCKET_UNSPECIFIED', HIGH = 'HIGH', MEDIUM_OR_HIGH = 'MEDIUM_OR_HIGH' }
 
-	export enum GooglePrivacyDlpV2PubSubExpressionsLogicalOperator { LOGICAL_OPERATOR_UNSPECIFIED = 0, OR = 1, AND = 2 }
+	export enum GooglePrivacyDlpV2PubSubExpressionsLogicalOperator { LOGICAL_OPERATOR_UNSPECIFIED = 'LOGICAL_OPERATOR_UNSPECIFIED', OR = 'OR', AND = 'AND' }
 
 
 	/** Details information about an error encountered during job execution or the results of an unsuccessful activation of the JobTrigger. */
@@ -4070,7 +4070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2DiscoveryConfigStatus { STATUS_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2 }
+	export enum GooglePrivacyDlpV2DiscoveryConfigStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', RUNNING = 'RUNNING', PAUSED = 'PAUSED' }
 
 
 	/** Target used to match against for Discovery. */
@@ -4347,7 +4347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood { LIKELIHOOD_UNSPECIFIED = 0, VERY_UNLIKELY = 1, UNLIKELY = 2, POSSIBLE = 3, LIKELY = 4, VERY_LIKELY = 5 }
+	export enum GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood { LIKELIHOOD_UNSPECIFIED = 'LIKELIHOOD_UNSPECIFIED', VERY_UNLIKELY = 'VERY_UNLIKELY', UNLIKELY = 'UNLIKELY', POSSIBLE = 'POSSIBLE', LIKELY = 'LIKELY', VERY_LIKELY = 'VERY_LIKELY' }
 
 
 	/** Message for specifying a window around a finding to apply a detection rule. */
@@ -4397,7 +4397,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2CustomInfoTypeExclusionType { EXCLUSION_TYPE_UNSPECIFIED = 0, EXCLUSION_TYPE_EXCLUDE = 1 }
+	export enum GooglePrivacyDlpV2CustomInfoTypeExclusionType { EXCLUSION_TYPE_UNSPECIFIED = 'EXCLUSION_TYPE_UNSPECIFIED', EXCLUSION_TYPE_EXCLUDE = 'EXCLUSION_TYPE_EXCLUDE' }
 
 
 	/** A reference to a StoredInfoType to use with scanning. */
@@ -4630,7 +4630,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2ExclusionRuleMatchingType { MATCHING_TYPE_UNSPECIFIED = 0, MATCHING_TYPE_FULL_MATCH = 1, MATCHING_TYPE_PARTIAL_MATCH = 2, MATCHING_TYPE_INVERSE_MATCH = 3 }
+	export enum GooglePrivacyDlpV2ExclusionRuleMatchingType { MATCHING_TYPE_UNSPECIFIED = 'MATCHING_TYPE_UNSPECIFIED', MATCHING_TYPE_FULL_MATCH = 'MATCHING_TYPE_FULL_MATCH', MATCHING_TYPE_PARTIAL_MATCH = 'MATCHING_TYPE_PARTIAL_MATCH', MATCHING_TYPE_INVERSE_MATCH = 'MATCHING_TYPE_INVERSE_MATCH' }
 
 
 	/** Shared message indicating Cloud storage type. */
@@ -4977,7 +4977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2JobTriggerStatus { STATUS_UNSPECIFIED = 0, HEALTHY = 1, PAUSED = 2, CANCELLED = 3 }
+	export enum GooglePrivacyDlpV2JobTriggerStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', HEALTHY = 'HEALTHY', PAUSED = 'PAUSED', CANCELLED = 'CANCELLED' }
 
 
 	/** What event needs to occur for a new job to be started. */
@@ -5389,9 +5389,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2TableDataProfileEncryptionStatus { ENCRYPTION_STATUS_UNSPECIFIED = 0, ENCRYPTION_GOOGLE_MANAGED = 1, ENCRYPTION_CUSTOMER_MANAGED = 2 }
+	export enum GooglePrivacyDlpV2TableDataProfileEncryptionStatus { ENCRYPTION_STATUS_UNSPECIFIED = 'ENCRYPTION_STATUS_UNSPECIFIED', ENCRYPTION_GOOGLE_MANAGED = 'ENCRYPTION_GOOGLE_MANAGED', ENCRYPTION_CUSTOMER_MANAGED = 'ENCRYPTION_CUSTOMER_MANAGED' }
 
-	export enum GooglePrivacyDlpV2TableDataProfileResourceVisibility { RESOURCE_VISIBILITY_UNSPECIFIED = 0, RESOURCE_VISIBILITY_PUBLIC = 1, RESOURCE_VISIBILITY_RESTRICTED = 2 }
+	export enum GooglePrivacyDlpV2TableDataProfileResourceVisibility { RESOURCE_VISIBILITY_UNSPECIFIED = 'RESOURCE_VISIBILITY_UNSPECIFIED', RESOURCE_VISIBILITY_PUBLIC = 'RESOURCE_VISIBILITY_PUBLIC', RESOURCE_VISIBILITY_RESTRICTED = 'RESOURCE_VISIBILITY_RESTRICTED' }
 
 
 	/** Pub/Sub topic message for a DataProfileAction.PubSubNotification event. To receive a message of protocol buffer schema type, convert the message data to an object of this proto class. */
@@ -5626,7 +5626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2SummaryResultCode { TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 0, SUCCESS = 1, ERROR = 2 }
+	export enum GooglePrivacyDlpV2SummaryResultCode { TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 'TRANSFORMATION_RESULT_CODE_UNSPECIFIED', SUCCESS = 'SUCCESS', ERROR = 'ERROR' }
 
 
 	/** Combines all of the information about a DLP job. */
@@ -5843,9 +5843,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2DlpJobState { JOB_STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, DONE = 3, CANCELED = 4, FAILED = 5, ACTIVE = 6 }
+	export enum GooglePrivacyDlpV2DlpJobState { JOB_STATE_UNSPECIFIED = 'JOB_STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', DONE = 'DONE', CANCELED = 'CANCELED', FAILED = 'FAILED', ACTIVE = 'ACTIVE' }
 
-	export enum GooglePrivacyDlpV2DlpJobType { DLP_JOB_TYPE_UNSPECIFIED = 0, INSPECT_JOB = 1, RISK_ANALYSIS_JOB = 2 }
+	export enum GooglePrivacyDlpV2DlpJobType { DLP_JOB_TYPE_UNSPECIFIED = 'DLP_JOB_TYPE_UNSPECIFIED', INSPECT_JOB = 'INSPECT_JOB', RISK_ANALYSIS_JOB = 'RISK_ANALYSIS_JOB' }
 
 
 	/** Represents a piece of potentially sensitive content. */
@@ -6194,11 +6194,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory { INDUSTRY_UNSPECIFIED = 0, FINANCE = 1, HEALTH = 2, TELECOMMUNICATIONS = 3 }
+	export enum GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory { INDUSTRY_UNSPECIFIED = 'INDUSTRY_UNSPECIFIED', FINANCE = 'FINANCE', HEALTH = 'HEALTH', TELECOMMUNICATIONS = 'TELECOMMUNICATIONS' }
 
-	export enum GooglePrivacyDlpV2InfoTypeCategoryLocationCategory { LOCATION_UNSPECIFIED = 0, GLOBAL = 1, ARGENTINA = 2, AUSTRALIA = 3, BELGIUM = 4, BRAZIL = 5, CANADA = 6, CHILE = 7, CHINA = 8, COLOMBIA = 9, CROATIA = 10, DENMARK = 11, FRANCE = 12, FINLAND = 13, GERMANY = 14, HONG_KONG = 15, INDIA = 16, INDONESIA = 17, IRELAND = 18, ISRAEL = 19, ITALY = 20, JAPAN = 21, KOREA = 22, MEXICO = 23, THE_NETHERLANDS = 24, NEW_ZEALAND = 25, NORWAY = 26, PARAGUAY = 27, PERU = 28, POLAND = 29, PORTUGAL = 30, SINGAPORE = 31, SOUTH_AFRICA = 32, SPAIN = 33, SWEDEN = 34, SWITZERLAND = 35, TAIWAN = 36, THAILAND = 37, TURKEY = 38, UNITED_KINGDOM = 39, UNITED_STATES = 40, URUGUAY = 41, VENEZUELA = 42, INTERNAL = 43 }
+	export enum GooglePrivacyDlpV2InfoTypeCategoryLocationCategory { LOCATION_UNSPECIFIED = 'LOCATION_UNSPECIFIED', GLOBAL = 'GLOBAL', ARGENTINA = 'ARGENTINA', AUSTRALIA = 'AUSTRALIA', BELGIUM = 'BELGIUM', BRAZIL = 'BRAZIL', CANADA = 'CANADA', CHILE = 'CHILE', CHINA = 'CHINA', COLOMBIA = 'COLOMBIA', CROATIA = 'CROATIA', DENMARK = 'DENMARK', FRANCE = 'FRANCE', FINLAND = 'FINLAND', GERMANY = 'GERMANY', HONG_KONG = 'HONG_KONG', INDIA = 'INDIA', INDONESIA = 'INDONESIA', IRELAND = 'IRELAND', ISRAEL = 'ISRAEL', ITALY = 'ITALY', JAPAN = 'JAPAN', KOREA = 'KOREA', MEXICO = 'MEXICO', THE_NETHERLANDS = 'THE_NETHERLANDS', NEW_ZEALAND = 'NEW_ZEALAND', NORWAY = 'NORWAY', PARAGUAY = 'PARAGUAY', PERU = 'PERU', POLAND = 'POLAND', PORTUGAL = 'PORTUGAL', SINGAPORE = 'SINGAPORE', SOUTH_AFRICA = 'SOUTH_AFRICA', SPAIN = 'SPAIN', SWEDEN = 'SWEDEN', SWITZERLAND = 'SWITZERLAND', TAIWAN = 'TAIWAN', THAILAND = 'THAILAND', TURKEY = 'TURKEY', UNITED_KINGDOM = 'UNITED_KINGDOM', UNITED_STATES = 'UNITED_STATES', URUGUAY = 'URUGUAY', VENEZUELA = 'VENEZUELA', INTERNAL = 'INTERNAL' }
 
-	export enum GooglePrivacyDlpV2InfoTypeCategoryTypeCategory { TYPE_UNSPECIFIED = 0, PII = 1, SPII = 2, DEMOGRAPHIC = 3, CREDENTIAL = 4, GOVERNMENT_ID = 5, DOCUMENT = 6, CONTEXTUAL_INFORMATION = 7 }
+	export enum GooglePrivacyDlpV2InfoTypeCategoryTypeCategory { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PII = 'PII', SPII = 'SPII', DEMOGRAPHIC = 'DEMOGRAPHIC', CREDENTIAL = 'CREDENTIAL', GOVERNMENT_ID = 'GOVERNMENT_ID', DOCUMENT = 'DOCUMENT', CONTEXTUAL_INFORMATION = 'CONTEXTUAL_INFORMATION' }
 
 
 	/** InfoType description. */
@@ -6594,7 +6594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2StoredInfoTypeVersionState { STORED_INFO_TYPE_STATE_UNSPECIFIED = 0, PENDING = 1, READY = 2, FAILED = 3, INVALID = 4 }
+	export enum GooglePrivacyDlpV2StoredInfoTypeVersionState { STORED_INFO_TYPE_STATE_UNSPECIFIED = 'STORED_INFO_TYPE_STATE_UNSPECIFIED', PENDING = 'PENDING', READY = 'READY', FAILED = 'FAILED', INVALID = 'INVALID' }
 
 
 	/** Statistics for a StoredInfoType. */
@@ -6806,7 +6806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2TransformationDescriptionType { TRANSFORMATION_TYPE_UNSPECIFIED = 0, RECORD_SUPPRESSION = 1, REPLACE_VALUE = 2, REPLACE_DICTIONARY = 3, REDACT = 4, CHARACTER_MASK = 5, CRYPTO_REPLACE_FFX_FPE = 6, FIXED_SIZE_BUCKETING = 7, BUCKETING = 8, REPLACE_WITH_INFO_TYPE = 9, TIME_PART = 10, CRYPTO_HASH = 11, DATE_SHIFT = 12, CRYPTO_DETERMINISTIC_CONFIG = 13, REDACT_IMAGE = 14 }
+	export enum GooglePrivacyDlpV2TransformationDescriptionType { TRANSFORMATION_TYPE_UNSPECIFIED = 'TRANSFORMATION_TYPE_UNSPECIFIED', RECORD_SUPPRESSION = 'RECORD_SUPPRESSION', REPLACE_VALUE = 'REPLACE_VALUE', REPLACE_DICTIONARY = 'REPLACE_DICTIONARY', REDACT = 'REDACT', CHARACTER_MASK = 'CHARACTER_MASK', CRYPTO_REPLACE_FFX_FPE = 'CRYPTO_REPLACE_FFX_FPE', FIXED_SIZE_BUCKETING = 'FIXED_SIZE_BUCKETING', BUCKETING = 'BUCKETING', REPLACE_WITH_INFO_TYPE = 'REPLACE_WITH_INFO_TYPE', TIME_PART = 'TIME_PART', CRYPTO_HASH = 'CRYPTO_HASH', DATE_SHIFT = 'DATE_SHIFT', CRYPTO_DETERMINISTIC_CONFIG = 'CRYPTO_DETERMINISTIC_CONFIG', REDACT_IMAGE = 'REDACT_IMAGE' }
 
 
 	/** Details about a single transformation. This object contains a description of the transformation, information about whether the transformation was successfully applied, and the precise location where the transformation occurred. These details are stored in a user-specified BigQuery table. */
@@ -6870,7 +6870,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2TransformationResultStatusResultStatusType { STATE_TYPE_UNSPECIFIED = 0, INVALID_TRANSFORM = 1, BIGQUERY_MAX_ROW_SIZE_EXCEEDED = 2, METADATA_UNRETRIEVABLE = 3, SUCCESS = 4 }
+	export enum GooglePrivacyDlpV2TransformationResultStatusResultStatusType { STATE_TYPE_UNSPECIFIED = 'STATE_TYPE_UNSPECIFIED', INVALID_TRANSFORM = 'INVALID_TRANSFORM', BIGQUERY_MAX_ROW_SIZE_EXCEEDED = 'BIGQUERY_MAX_ROW_SIZE_EXCEEDED', METADATA_UNRETRIEVABLE = 'METADATA_UNRETRIEVABLE', SUCCESS = 'SUCCESS' }
 
 
 	/** Specifies the location of a transformation. */
@@ -6901,7 +6901,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GooglePrivacyDlpV2TransformationLocationContainerType { TRANSFORM_UNKNOWN_CONTAINER = 0, TRANSFORM_BODY = 1, TRANSFORM_METADATA = 2, TRANSFORM_TABLE = 3 }
+	export enum GooglePrivacyDlpV2TransformationLocationContainerType { TRANSFORM_UNKNOWN_CONTAINER = 'TRANSFORM_UNKNOWN_CONTAINER', TRANSFORM_BODY = 'TRANSFORM_BODY', TRANSFORM_METADATA = 'TRANSFORM_METADATA', TRANSFORM_TABLE = 'TRANSFORM_TABLE' }
 
 
 	/** Request message for UpdateDeidentifyTemplate. */

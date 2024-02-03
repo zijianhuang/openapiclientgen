@@ -3,17 +3,17 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Asset_version_enum_visibility { public = 0, private = 1, protected = 2 }
+	export enum Asset_version_enum_visibility { public = 'public', private = 'private', protected = 'protected' }
 
-	export enum Build_enum_runtime { node8 = 0, node10 = 1, node12 = 2, node14 = 3, node16 = 4, node18 = 5 }
+	export enum Build_enum_runtime { node8 = 'node8', node10 = 'node10', node12 = 'node12', node14 = 'node14', node16 = 'node16', node18 = 'node18' }
 
-	export enum Build_enum_status { building = 0, completed = 1, failed = 2 }
+	export enum Build_enum_status { building = 'building', completed = 'completed', failed = 'failed' }
 
-	export enum Build_status_enum_status { building = 0, completed = 1, failed = 2 }
+	export enum Build_status_enum_status { building = 'building', completed = 'completed', failed = 'failed' }
 
-	export enum Function_version_enum_visibility { public = 0, private = 1, protected = 2 }
+	export enum Function_version_enum_visibility { public = 'public', private = 'private', protected = 'protected' }
 
-	export enum Log_enum_level { info = 0, warn = 1, error = 2 }
+	export enum Log_enum_level { info = 'info', warn = 'warn', error = 'error' }
 
 	export interface Serverlessv1service {
 

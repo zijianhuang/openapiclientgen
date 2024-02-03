@@ -301,7 +301,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetEventsType { all = 0, clicks = 1, contacts = 2 }
+	export enum GetEventsType { all = 'all', clicks = 'clicks', contacts = 'contacts' }
 
 }
 

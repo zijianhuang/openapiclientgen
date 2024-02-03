@@ -263,7 +263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudComponentState { REQUESTED = 0, INITIATED = 1, DEPLOYABLE = 2, FAILED = 3, DEPRECATED = 4 }
+	export enum CloudComponentState { REQUESTED = 'REQUESTED', INITIATED = 'INITIATED', DEPLOYABLE = 'DEPLOYABLE', FAILED = 'FAILED', DEPRECATED = 'DEPRECATED' }
 
 	export interface StringMap {
 	}
@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VendorGuidance { ACTIVE = 0, DISCONTINUED = 1, DELETED = 2 }
+	export enum VendorGuidance { ACTIVE = 'ACTIVE', DISCONTINUED = 'DISCONTINUED', DELETED = 'DELETED' }
 
 
 	/** Contains information about a platform that a component supports. */
@@ -382,9 +382,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LambdaEventSourceType { PUB_SUB = 0, IOT_CORE = 1 }
+	export enum LambdaEventSourceType { PUB_SUB = 'PUB_SUB', IOT_CORE = 'IOT_CORE' }
 
-	export enum LambdaInputPayloadEncodingType { json = 0, binary = 1 }
+	export enum LambdaInputPayloadEncodingType { json = 'json', binary = 'binary' }
 
 	export interface LambdaEnvironmentVariables {
 	}
@@ -414,7 +414,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LambdaIsolationMode { GreengrassContainer = 0, NoContainer = 1 }
+	export enum LambdaIsolationMode { GreengrassContainer = 'GreengrassContainer', NoContainer = 'NoContainer' }
 
 
 	/** Contains information about a container in which Lambda functions run on Greengrass core devices. */
@@ -472,7 +472,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LambdaFilesystemPermission { ro = 0, rw = 1 }
+	export enum LambdaFilesystemPermission { ro = 'ro', rw = 'rw' }
 
 
 	/** Contains information about a device that Linux processes in a container can access. */
@@ -746,9 +746,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IoTJobExecutionFailureType { FAILED = 0, REJECTED = 1, TIMED_OUT = 2, ALL = 3 }
+	export enum IoTJobExecutionFailureType { FAILED = 'FAILED', REJECTED = 'REJECTED', TIMED_OUT = 'TIMED_OUT', ALL = 'ALL' }
 
-	export enum IoTJobAbortAction { CANCEL = 0 }
+	export enum IoTJobAbortAction { CANCEL = 'CANCEL' }
 
 
 	/** Contains information about the timeout configuration for a job. */
@@ -767,7 +767,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentFailureHandlingPolicy { ROLLBACK = 0, DO_NOTHING = 1 }
+	export enum DeploymentFailureHandlingPolicy { ROLLBACK = 'ROLLBACK', DO_NOTHING = 'DO_NOTHING' }
 
 
 	/** <p>Contains information about a deployment's policy that defines when components are safe to update.</p> <p>Each component on a device can report whether or not it's ready to update. After a component and its dependencies are ready, they can apply the update in the deployment. You can configure whether or not the deployment notifies components of an update and waits for a response. You specify the amount of time each component has to respond to the update notification.</p> */
@@ -789,7 +789,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentComponentUpdatePolicyAction { NOTIFY_COMPONENTS = 0, SKIP_NOTIFY_COMPONENTS = 1 }
+	export enum DeploymentComponentUpdatePolicyAction { NOTIFY_COMPONENTS = 'NOTIFY_COMPONENTS', SKIP_NOTIFY_COMPONENTS = 'SKIP_NOTIFY_COMPONENTS' }
 
 
 	/** Contains information about how long a component on a core device can validate its configuration updates before it times out. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates">SubscribeToValidateConfigurationUpdates</a> IPC operation to receive notifications when a deployment specifies a configuration update. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport">SendConfigurationValidityReport</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>. */
@@ -887,7 +887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecipeOutputFormat { JSON = 0, YAML = 1 }
+	export enum RecipeOutputFormat { JSON = 'JSON', YAML = 'YAML' }
 
 	export interface GetComponentVersionArtifactResponse {
 
@@ -975,7 +975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CoreDeviceStatus { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum CoreDeviceStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
 	export interface GetDeploymentResponse {
 		targetArn?: string;
@@ -1021,7 +1021,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentStatus { ACTIVE = 0, COMPLETED = 1, CANCELED = 2, FAILED = 3, INACTIVE = 4 }
+	export enum DeploymentStatus { ACTIVE = 'ACTIVE', COMPLETED = 'COMPLETED', CANCELED = 'CANCELED', FAILED = 'FAILED', INACTIVE = 'INACTIVE' }
 
 	export interface ComponentDeploymentSpecifications {
 	}
@@ -1393,7 +1393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EffectiveDeploymentExecutionStatus { IN_PROGRESS = 0, QUEUED = 1, FAILED = 2, COMPLETED = 3, TIMED_OUT = 4, CANCELED = 5, REJECTED = 6, SUCCEEDED = 7 }
+	export enum EffectiveDeploymentExecutionStatus { IN_PROGRESS = 'IN_PROGRESS', QUEUED = 'QUEUED', FAILED = 'FAILED', COMPLETED = 'COMPLETED', TIMED_OUT = 'TIMED_OUT', CANCELED = 'CANCELED', REJECTED = 'REJECTED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** <p>Contains all error-related information for the deployment record. The status details will be null if the deployment is in a success state.</p> <note> <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>errorStack</code> and <code>errorTypes</code> response. This field will not be returned for earlier Greengrass nucleus versions.</p> </note> */
@@ -1464,7 +1464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstalledComponentLifecycleState { NEW = 0, INSTALLED = 1, STARTING = 2, RUNNING = 3, STOPPING = 4, ERRORED = 5, BROKEN = 6, FINISHED = 7 }
+	export enum InstalledComponentLifecycleState { NEW = 'NEW', INSTALLED = 'INSTALLED', STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', ERRORED = 'ERRORED', BROKEN = 'BROKEN', FINISHED = 'FINISHED' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagMap;
@@ -1656,9 +1656,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentDependencyType { HARD = 0, SOFT = 1 }
+	export enum ComponentDependencyType { HARD = 'HARD', SOFT = 'SOFT' }
 
-	export enum ComponentVisibilityScope { PRIVATE = 0, PUBLIC = 1 }
+	export enum ComponentVisibilityScope { PRIVATE = 'PRIVATE', PUBLIC = 'PUBLIC' }
 
 
 	/** Contains information about an Lambda function to import to create a component. */
@@ -1768,7 +1768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentHistoryFilter { ALL = 0, LATEST_ONLY = 1 }
+	export enum DeploymentHistoryFilter { ALL = 'ALL', LATEST_ONLY = 'LATEST_ONLY' }
 
 	export interface DescribeComponentRequest {
 	}
@@ -1850,7 +1850,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstalledComponentTopologyFilter { ALL = 0, ROOT = 1 }
+	export enum InstalledComponentTopologyFilter { ALL = 'ALL', ROOT = 'ROOT' }
 
 	export interface ListClientDevicesAssociatedWithCoreDeviceRequest {
 	}

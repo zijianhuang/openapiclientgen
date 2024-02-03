@@ -1309,7 +1309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BtcerPostBodyFormat { pdf = 0 }
+	export enum BtcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface DtcerPostBody {
 		certificateParameters?: DtcerPostBodyCertificateParameters;

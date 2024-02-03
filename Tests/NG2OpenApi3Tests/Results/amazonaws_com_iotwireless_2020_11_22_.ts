@@ -268,7 +268,7 @@ export namespace MyNS {
 
 
 	/** Supported RfRegions */
-	export enum SupportedRfRegion { EU868 = 0, US915 = 1, AU915 = 2, 'AS923-1' = 3, 'AS923-2' = 4, 'AS923-3' = 5, 'AS923-4' = 6, EU433 = 7, CN470 = 8, CN779 = 9, RU864 = 10, KR920 = 11, IN865 = 12 }
+	export enum SupportedRfRegion { EU868 = 'EU868', US915 = 'US915', AU915 = 'AU915', 'AS923-1' = 'AS923-1', 'AS923-2' = 'AS923-2', 'AS923-3' = 'AS923-3', 'AS923-4' = 'AS923-4', EU433 = 'EU433', CN470 = 'CN470', CN779 = 'CN779', RU864 = 'RU864', KR920 = 'KR920', IN865 = 'IN865' }
 
 	export interface CreateMulticastGroupResponse {
 
@@ -308,7 +308,7 @@ export namespace MyNS {
 
 
 	/** DlClass for LoRaWAM, valid values are ClassB and ClassC. */
-	export enum DlClass { ClassB = 0, ClassC = 1 }
+	export enum DlClass { ClassB = 'ClassB', ClassC = 'ClassC' }
 
 	export interface CreateNetworkAnalyzerConfigurationResponse {
 		Arn?: string;
@@ -340,15 +340,15 @@ export namespace MyNS {
 
 
 	/**  <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server. */
-	export enum WirelessDeviceFrameInfo { ENABLED = 0, DISABLED = 1 }
+	export enum WirelessDeviceFrameInfo { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs. */
-	export enum LogLevel { INFO = 0, ERROR = 1, DISABLED = 2 }
+	export enum LogLevel { INFO = 'INFO', ERROR = 'ERROR', DISABLED = 'DISABLED' }
 
 
 	/**  <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server. */
-	export enum MulticastFrameInfo { ENABLED = 0, DISABLED = 1 }
+	export enum MulticastFrameInfo { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface CreateServiceProfileResponse {
 		Arn?: string;
@@ -671,7 +671,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationConfigType { SemtechGeolocation = 0 }
+	export enum ApplicationConfigType { SemtechGeolocation = 'SemtechGeolocation' }
 
 	export interface CreateWirelessGatewayResponse {
 		Arn?: string;
@@ -723,7 +723,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessGatewayTaskStatus { PENDING = 0, IN_PROGRESS = 1, FIRST_RETRY = 2, SECOND_RETRY = 3, COMPLETED = 4, FAILED = 5 }
+	export enum WirelessGatewayTaskStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', FIRST_RETRY = 'FIRST_RETRY', SECOND_RETRY = 'SECOND_RETRY', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface CreateWirelessGatewayTaskDefinitionResponse {
 		Id?: string;
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressionType { RuleName = 0, MqttTopic = 1 }
+	export enum ExpressionType { RuleName = 'RuleName', MqttTopic = 'MqttTopic' }
 
 	export interface GetDeviceProfileResponse {
 		Arn?: string;
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventNotificationTopicStatus { Enabled = 0, Disabled = 1 }
+	export enum EventNotificationTopicStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Proximity resource type event configuration object for enabling or disabling topic. */
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetFuotaTaskResponseStatus { Pending = 0, FuotaSession_Waiting = 1, In_FuotaSession = 2, FuotaDone = 3, Delete_Waiting = 4 }
+	export enum GetFuotaTaskResponseStatus { Pending = 'Pending', FuotaSession_Waiting = 'FuotaSession_Waiting', In_FuotaSession = 'In_FuotaSession', FuotaDone = 'FuotaDone', Delete_Waiting = 'Delete_Waiting' }
 
 
 	/** The LoRaWAN information returned from getting a FUOTA task. */
@@ -1557,7 +1557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessGatewayLogOptionType { LoRaWAN = 0 }
+	export enum WirelessGatewayLogOptionType { LoRaWAN = 'LoRaWAN' }
 
 
 	/** <p>The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.</p> <p>For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.</p> */
@@ -1599,7 +1599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessGatewayEventLogOptionEvent { CUPS_Request = 0, Certificate = 1 }
+	export enum WirelessGatewayEventLogOptionEvent { CUPS_Request = 'CUPS_Request', Certificate = 'Certificate' }
 
 
 	/** The log options for wireless devices and can be used to set log levels for a specific type of wireless device. */
@@ -1638,7 +1638,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessDeviceType { Sidewalk = 0, LoRaWAN = 1 }
+	export enum WirelessDeviceType { Sidewalk = 'Sidewalk', LoRaWAN = 'LoRaWAN' }
 
 
 	/** <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p> <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p> */
@@ -1680,7 +1680,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessDeviceEventLogOptionEvent { Join = 0, Rejoin = 1, Uplink_Data = 2, Downlink_Data = 3, Registration = 4 }
+	export enum WirelessDeviceEventLogOptionEvent { Join = 'Join', Rejoin = 'Rejoin', Uplink_Data = 'Uplink_Data', Downlink_Data = 'Downlink_Data', Registration = 'Registration' }
 
 	export interface GetMulticastGroupResponse {
 
@@ -2064,9 +2064,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PositionSolverType { GNSS = 0 }
+	export enum PositionSolverType { GNSS = 'GNSS' }
 
-	export enum PositionSolverProvider { Semtech = 0 }
+	export enum PositionSolverProvider { Semtech = 'Semtech' }
 
 
 	/** This operation is no longer supported. */
@@ -2127,7 +2127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PositionConfigurationFec { ROSE = 0, NONE = 1 }
+	export enum PositionConfigurationFec { ROSE = 'ROSE', NONE = 'NONE' }
 
 	export interface GetPositionEstimateResponse {
 		GeoJsonPayload?: string;
@@ -2976,7 +2976,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessGatewayServiceType { CUPS = 0, LNS = 1 }
+	export enum WirelessGatewayServiceType { CUPS = 'CUPS', LNS = 'LNS' }
 
 	export interface GetServiceProfileResponse {
 		Arn?: string;
@@ -3212,9 +3212,9 @@ export namespace MyNS {
 
 
 	/** The certificate chain algorithm provided by sidewalk. */
-	export enum SigningAlg { Ed25519 = 0, P256r1 = 1 }
+	export enum SigningAlg { Ed25519 = 'Ed25519', P256r1 = 'P256r1' }
 
-	export enum WirelessDeviceSidewalkStatus { PROVISIONED = 0, REGISTERED = 1, ACTIVATED = 2, UNKNOWN = 3 }
+	export enum WirelessDeviceSidewalkStatus { PROVISIONED = 'PROVISIONED', REGISTERED = 'REGISTERED', ACTIVATED = 'ACTIVATED', UNKNOWN = 'UNKNOWN' }
 
 	export interface GetWirelessDeviceImportTaskResponse {
 		Id?: string;
@@ -3275,7 +3275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportTaskStatus { INITIALIZING = 0, INITIALIZED = 1, PENDING = 2, COMPLETE = 3, FAILED = 4, DELETING = 5 }
+	export enum ImportTaskStatus { INITIALIZING = 'INITIALIZING', INITIALIZED = 'INITIALIZED', PENDING = 'PENDING', COMPLETE = 'COMPLETE', FAILED = 'FAILED', DELETING = 'DELETING' }
 
 	export interface GetWirelessDeviceStatisticsResponse {
 		WirelessDeviceId?: string;
@@ -3376,15 +3376,15 @@ export namespace MyNS {
 
 
 	/** Sidewalk device battery level. */
-	export enum BatteryLevel { normal = 0, low = 1, critical = 2 }
+	export enum BatteryLevel { normal = 'normal', low = 'low', critical = 'critical' }
 
 
 	/** Sidewalk device status notification. */
-	export enum Event { discovered = 0, lost = 1, ack = 2, nack = 3, passthrough = 4 }
+	export enum Event { discovered = 'discovered', lost = 'lost', ack = 'ack', nack = 'nack', passthrough = 'passthrough' }
 
 
 	/** Device state defines the device status of sidewalk device. */
-	export enum DeviceState { Provisioned = 0, RegisteredNotSeen = 1, RegisteredReachable = 2, RegisteredUnreachable = 3 }
+	export enum DeviceState { Provisioned = 'Provisioned', RegisteredNotSeen = 'RegisteredNotSeen', RegisteredReachable = 'RegisteredReachable', RegisteredUnreachable = 'RegisteredUnreachable' }
 
 	export interface GetWirelessGatewayResponse {
 		Name?: string;
@@ -3521,7 +3521,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStatus { Connected = 0, Disconnected = 1 }
+	export enum ConnectionStatus { Connected = 'Connected', Disconnected = 'Disconnected' }
 
 	export interface GetWirelessGatewayTaskResponse {
 		WirelessGatewayId?: string;
@@ -3730,7 +3730,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OnboardStatus { INITIALIZED = 0, PENDING = 1, ONBOARDED = 2, FAILED = 3 }
+	export enum OnboardStatus { INITIALIZED = 'INITIALIZED', PENDING = 'PENDING', ONBOARDED = 'ONBOARDED', FAILED = 'FAILED' }
 
 	export interface ListEventConfigurationsResponse {
 		NextToken?: string;
@@ -3772,9 +3772,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentifierType { PartnerAccountId = 0, DevEui = 1, GatewayEui = 2, WirelessDeviceId = 3, WirelessGatewayId = 4 }
+	export enum IdentifierType { PartnerAccountId = 'PartnerAccountId', DevEui = 'DevEui', GatewayEui = 'GatewayEui', WirelessDeviceId = 'WirelessDeviceId', WirelessGatewayId = 'WirelessGatewayId' }
 
-	export enum EventNotificationPartnerType { Sidewalk = 0 }
+	export enum EventNotificationPartnerType { Sidewalk = 'Sidewalk' }
 
 
 	/** Object of all event configurations and the status of the event topics. */
@@ -4078,7 +4078,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PositionResourceType { WirelessDevice = 0, WirelessGateway = 1 }
+	export enum PositionResourceType { WirelessDevice = 'WirelessDevice', WirelessGateway = 'WirelessGateway' }
 
 	export interface ListQueuedMessagesResponse {
 		NextToken?: string;
@@ -4181,7 +4181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DownlinkMode { SEQUENTIAL = 0, CONCURRENT = 1, USING_UPLINK_GATEWAY = 2 }
+	export enum DownlinkMode { SEQUENTIAL = 'SEQUENTIAL', CONCURRENT = 'CONCURRENT', USING_UPLINK_GATEWAY = 'USING_UPLINK_GATEWAY' }
 
 
 	/** Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent. */
@@ -4438,7 +4438,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessDeviceStatisticsFuotaDeviceStatus { Initial = 0, Package_Not_Supported = 1, FragAlgo_unsupported = 2, Not_enough_memory = 3, FragIndex_unsupported = 4, Wrong_descriptor = 5, SessionCnt_replay = 6, MissingFrag = 7, MemoryError = 8, MICError = 9, Successful = 10 }
+	export enum WirelessDeviceStatisticsFuotaDeviceStatus { Initial = 'Initial', Package_Not_Supported = 'Package_Not_Supported', FragAlgo_unsupported = 'FragAlgo_unsupported', Not_enough_memory = 'Not_enough_memory', FragIndex_unsupported = 'FragIndex_unsupported', Wrong_descriptor = 'Wrong_descriptor', SessionCnt_replay = 'SessionCnt_replay', MissingFrag = 'MissingFrag', MemoryError = 'MemoryError', MICError = 'MICError', Successful = 'Successful' }
 
 	export interface ListWirelessGatewayTaskDefinitionsResponse {
 		NextToken?: string;
@@ -4699,7 +4699,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SidewalkSendDataToDeviceMessageType { CUSTOM_COMMAND_ID_NOTIFY = 0, CUSTOM_COMMAND_ID_GET = 1, CUSTOM_COMMAND_ID_SET = 2, CUSTOM_COMMAND_ID_RESP = 3 }
+	export enum SidewalkSendDataToDeviceMessageType { CUSTOM_COMMAND_ID_NOTIFY = 'CUSTOM_COMMAND_ID_NOTIFY', CUSTOM_COMMAND_ID_GET = 'CUSTOM_COMMAND_ID_GET', CUSTOM_COMMAND_ID_SET = 'CUSTOM_COMMAND_ID_SET', CUSTOM_COMMAND_ID_RESP = 'CUSTOM_COMMAND_ID_RESP' }
 
 	export interface StartBulkAssociateWirelessDeviceWithMulticastGroupResponse {
 	}
@@ -5598,7 +5598,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PositioningConfigStatus { Enabled = 0, Disabled = 1 }
+	export enum PositioningConfigStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Sidewalk object for creating a wireless device. */
@@ -5851,9 +5851,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceProfileType { Sidewalk = 0, LoRaWAN = 1 }
+	export enum DeviceProfileType { Sidewalk = 'Sidewalk', LoRaWAN = 'LoRaWAN' }
 
-	export enum PartnerType { Sidewalk = 0 }
+	export enum PartnerType { Sidewalk = 'Sidewalk' }
 
 	export interface DisassociateAwsAccountFromPartnerAccountRequest {
 	}
@@ -5925,15 +5925,15 @@ export namespace MyNS {
 
 	}
 
-	export enum EventNotificationResourceType { SidewalkAccount = 0, WirelessDevice = 1, WirelessGateway = 2 }
+	export enum EventNotificationResourceType { SidewalkAccount = 'SidewalkAccount', WirelessDevice = 'WirelessDevice', WirelessGateway = 'WirelessGateway' }
 
 
 	/** The status of a wireless device in a FUOTA task. */
-	export enum FuotaDeviceStatus { Initial = 0, Package_Not_Supported = 1, FragAlgo_unsupported = 2, Not_enough_memory = 3, FragIndex_unsupported = 4, Wrong_descriptor = 5, SessionCnt_replay = 6, MissingFrag = 7, MemoryError = 8, MICError = 9, Successful = 10 }
+	export enum FuotaDeviceStatus { Initial = 'Initial', Package_Not_Supported = 'Package_Not_Supported', FragAlgo_unsupported = 'FragAlgo_unsupported', Not_enough_memory = 'Not_enough_memory', FragIndex_unsupported = 'FragIndex_unsupported', Wrong_descriptor = 'Wrong_descriptor', SessionCnt_replay = 'SessionCnt_replay', MissingFrag = 'MissingFrag', MemoryError = 'MemoryError', MICError = 'MICError', Successful = 'Successful' }
 
 
 	/** The status of a FUOTA task. */
-	export enum FuotaTaskStatus { Pending = 0, FuotaSession_Waiting = 1, In_FuotaSession = 2, FuotaDone = 3, Delete_Waiting = 4 }
+	export enum FuotaTaskStatus { Pending = 'Pending', FuotaSession_Waiting = 'FuotaSession_Waiting', In_FuotaSession = 'In_FuotaSession', FuotaDone = 'FuotaDone', Delete_Waiting = 'Delete_Waiting' }
 
 	export interface GetDestinationRequest {
 	}
@@ -6185,7 +6185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessDeviceIdType { WirelessDeviceId = 0, DevEui = 1, ThingName = 2, SidewalkManufacturingSn = 3 }
+	export enum WirelessDeviceIdType { WirelessDeviceId = 'WirelessDeviceId', DevEui = 'DevEui', ThingName = 'ThingName', SidewalkManufacturingSn = 'SidewalkManufacturingSn' }
 
 	export interface GetWirelessDeviceRequest {
 	}
@@ -6227,7 +6227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessGatewayIdType { GatewayEui = 0, WirelessGatewayId = 1, ThingName = 2 }
+	export enum WirelessGatewayIdType { GatewayEui = 'GatewayEui', WirelessGatewayId = 'WirelessGatewayId', ThingName = 'ThingName' }
 
 	export interface GetWirelessGatewayRequest {
 	}
@@ -6423,7 +6423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WirelessGatewayTaskDefinitionType { UPDATE = 0 }
+	export enum WirelessGatewayTaskDefinitionType { UPDATE = 'UPDATE' }
 
 	export interface ListWirelessGatewayTaskDefinitionsRequest {
 	}
@@ -6491,7 +6491,7 @@ export namespace MyNS {
 
 
 	/** Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>. */
-	export enum MessageType { CUSTOM_COMMAND_ID_NOTIFY = 0, CUSTOM_COMMAND_ID_GET = 1, CUSTOM_COMMAND_ID_SET = 2, CUSTOM_COMMAND_ID_RESP = 3 }
+	export enum MessageType { CUSTOM_COMMAND_ID_NOTIFY = 'CUSTOM_COMMAND_ID_NOTIFY', CUSTOM_COMMAND_ID_GET = 'CUSTOM_COMMAND_ID_GET', CUSTOM_COMMAND_ID_SET = 'CUSTOM_COMMAND_ID_SET', CUSTOM_COMMAND_ID_RESP = 'CUSTOM_COMMAND_ID_RESP' }
 
 
 	/** Wireless metadata that is to be sent to multicast group. */
@@ -6510,7 +6510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PositionConfigurationStatus { Enabled = 0, Disabled = 1 }
+	export enum PositionConfigurationStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** The wrapper for position solver configurations. */
@@ -7318,15 +7318,15 @@ export namespace MyNS {
 
 
 	/** The event for a log message, if the log message is tied to a wireless device. */
-	export enum WirelessDeviceEvent { Join = 0, Rejoin = 1, Uplink_Data = 2, Downlink_Data = 3, Registration = 4 }
+	export enum WirelessDeviceEvent { Join = 'Join', Rejoin = 'Rejoin', Uplink_Data = 'Uplink_Data', Downlink_Data = 'Downlink_Data', Registration = 'Registration' }
 
 
 	/** The event for a log message, if the log message is tied to a wireless gateway. */
-	export enum WirelessGatewayEvent { CUPS_Request = 0, Certificate = 1 }
+	export enum WirelessGatewayEvent { CUPS_Request = 'CUPS_Request', Certificate = 'Certificate' }
 
 
 	/** The wireless gateway type. */
-	export enum WirelessGatewayType { LoRaWAN = 0 }
+	export enum WirelessGatewayType { LoRaWAN = 'LoRaWAN' }
 
 	@Injectable()
 	export class MyClient {

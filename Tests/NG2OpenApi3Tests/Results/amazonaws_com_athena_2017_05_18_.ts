@@ -251,7 +251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatementType { DDL = 0, DML = 1, UTILITY = 2 }
+	export enum StatementType { DDL = 'DDL', DML = 'DML', UTILITY = 'UTILITY' }
 
 
 	/** The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
@@ -299,7 +299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionOption { SSE_S3 = 0, SSE_KMS = 1, CSE_KMS = 2 }
+	export enum EncryptionOption { SSE_S3 = 'SSE_S3', SSE_KMS = 'SSE_KMS', CSE_KMS = 'CSE_KMS' }
 
 
 	/** Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. When Athena stores query results in Amazon S3, the canned ACL is set with the <code>x-amz-acl</code> request header. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview">Object Ownership settings</a> in the <i>Amazon S3 User Guide</i>. */
@@ -322,7 +322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3AclOption { BUCKET_OWNER_FULL_CONTROL = 0 }
+	export enum S3AclOption { BUCKET_OWNER_FULL_CONTROL = 'BUCKET_OWNER_FULL_CONTROL' }
 
 
 	/** Specifies the query result reuse behavior for the query. */
@@ -410,7 +410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryExecutionState { QUEUED = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
+	export enum QueryExecutionState { QUEUED = 'QUEUED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error. */
@@ -676,7 +676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataCatalogType { LAMBDA = 0, GLUE = 1, HIVE = 2 }
+	export enum DataCatalogType { LAMBDA = 'LAMBDA', GLUE = 'GLUE', HIVE = 'HIVE' }
 
 	export interface ParametersMap {
 	}
@@ -1202,7 +1202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotebookType { IPYNB = 0 }
+	export enum NotebookType { IPYNB = 'IPYNB' }
 
 	export interface ExportNotebookInput {
 
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CalculationExecutionState { CREATING = 0, CREATED = 1, QUEUED = 2, RUNNING = 3, CANCELING = 4, CANCELED = 5, COMPLETED = 6, FAILED = 7 }
+	export enum CalculationExecutionState { CREATING = 'CREATING', CREATED = 'CREATED', QUEUED = 'QUEUED', RUNNING = 'RUNNING', CANCELING = 'CANCELING', CANCELED = 'CANCELED', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Contains statistics for a notebook calculation. */
@@ -1527,7 +1527,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacityReservationStatus { PENDING = 0, ACTIVE = 1, CANCELLING = 2, CANCELLED = 3, FAILED = 4, UPDATE_PENDING = 5 }
+	export enum CapacityReservationStatus { PENDING = 'PENDING', ACTIVE = 'ACTIVE', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', FAILED = 'FAILED', UPDATE_PENDING = 'UPDATE_PENDING' }
 
 
 	/** Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation. */
@@ -1563,7 +1563,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacityAllocationStatus { PENDING = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum CapacityAllocationStatus { PENDING = 'PENDING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface GetCapacityReservationInput {
 
@@ -1963,7 +1963,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnNullable { NOT_NULL = 0, NULLABLE = 1, UNKNOWN = 2 }
+	export enum ColumnNullable { NOT_NULL = 'NOT_NULL', NULLABLE = 'NULLABLE', UNKNOWN = 'UNKNOWN' }
 
 	export interface GetQueryResultsInput {
 
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionState { CREATING = 0, CREATED = 1, IDLE = 2, BUSY = 3, TERMINATING = 4, TERMINATED = 5, DEGRADED = 6, FAILED = 7 }
+	export enum SessionState { CREATING = 'CREATING', CREATED = 'CREATED', IDLE = 'IDLE', BUSY = 'BUSY', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', DEGRADED = 'DEGRADED', FAILED = 'FAILED' }
 
 
 	/** Contains statistics for a session. */
@@ -2478,7 +2478,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkGroupState { ENABLED = 0, DISABLED = 1 }
+	export enum WorkGroupState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface GetWorkGroupInput {
 
@@ -2866,9 +2866,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutorType { COORDINATOR = 0, GATEWAY = 1, WORKER = 2 }
+	export enum ExecutorType { COORDINATOR = 'COORDINATOR', GATEWAY = 'GATEWAY', WORKER = 'WORKER' }
 
-	export enum ExecutorState { CREATING = 0, CREATED = 1, REGISTERED = 2, TERMINATING = 3, TERMINATED = 4, FAILED = 5 }
+	export enum ExecutorState { CREATING = 'CREATING', CREATED = 'CREATED', REGISTERED = 'REGISTERED', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', FAILED = 'FAILED' }
 
 	export interface ListExecutorsRequest {
 
@@ -4680,141 +4680,141 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchGetNamedQueryX_Amz_Target { 'AmazonAthena.BatchGetNamedQuery' = 0 }
+	export enum BatchGetNamedQueryX_Amz_Target { 'AmazonAthena.BatchGetNamedQuery' = 'AmazonAthena.BatchGetNamedQuery' }
 
-	export enum BatchGetPreparedStatementX_Amz_Target { 'AmazonAthena.BatchGetPreparedStatement' = 0 }
+	export enum BatchGetPreparedStatementX_Amz_Target { 'AmazonAthena.BatchGetPreparedStatement' = 'AmazonAthena.BatchGetPreparedStatement' }
 
-	export enum BatchGetQueryExecutionX_Amz_Target { 'AmazonAthena.BatchGetQueryExecution' = 0 }
+	export enum BatchGetQueryExecutionX_Amz_Target { 'AmazonAthena.BatchGetQueryExecution' = 'AmazonAthena.BatchGetQueryExecution' }
 
-	export enum CancelCapacityReservationX_Amz_Target { 'AmazonAthena.CancelCapacityReservation' = 0 }
+	export enum CancelCapacityReservationX_Amz_Target { 'AmazonAthena.CancelCapacityReservation' = 'AmazonAthena.CancelCapacityReservation' }
 
-	export enum CreateCapacityReservationX_Amz_Target { 'AmazonAthena.CreateCapacityReservation' = 0 }
+	export enum CreateCapacityReservationX_Amz_Target { 'AmazonAthena.CreateCapacityReservation' = 'AmazonAthena.CreateCapacityReservation' }
 
-	export enum CreateDataCatalogX_Amz_Target { 'AmazonAthena.CreateDataCatalog' = 0 }
+	export enum CreateDataCatalogX_Amz_Target { 'AmazonAthena.CreateDataCatalog' = 'AmazonAthena.CreateDataCatalog' }
 
-	export enum CreateNamedQueryX_Amz_Target { 'AmazonAthena.CreateNamedQuery' = 0 }
+	export enum CreateNamedQueryX_Amz_Target { 'AmazonAthena.CreateNamedQuery' = 'AmazonAthena.CreateNamedQuery' }
 
-	export enum CreateNotebookX_Amz_Target { 'AmazonAthena.CreateNotebook' = 0 }
+	export enum CreateNotebookX_Amz_Target { 'AmazonAthena.CreateNotebook' = 'AmazonAthena.CreateNotebook' }
 
-	export enum CreatePreparedStatementX_Amz_Target { 'AmazonAthena.CreatePreparedStatement' = 0 }
+	export enum CreatePreparedStatementX_Amz_Target { 'AmazonAthena.CreatePreparedStatement' = 'AmazonAthena.CreatePreparedStatement' }
 
-	export enum CreatePresignedNotebookUrlX_Amz_Target { 'AmazonAthena.CreatePresignedNotebookUrl' = 0 }
+	export enum CreatePresignedNotebookUrlX_Amz_Target { 'AmazonAthena.CreatePresignedNotebookUrl' = 'AmazonAthena.CreatePresignedNotebookUrl' }
 
-	export enum CreateWorkGroupX_Amz_Target { 'AmazonAthena.CreateWorkGroup' = 0 }
+	export enum CreateWorkGroupX_Amz_Target { 'AmazonAthena.CreateWorkGroup' = 'AmazonAthena.CreateWorkGroup' }
 
-	export enum DeleteCapacityReservationX_Amz_Target { 'AmazonAthena.DeleteCapacityReservation' = 0 }
+	export enum DeleteCapacityReservationX_Amz_Target { 'AmazonAthena.DeleteCapacityReservation' = 'AmazonAthena.DeleteCapacityReservation' }
 
-	export enum DeleteDataCatalogX_Amz_Target { 'AmazonAthena.DeleteDataCatalog' = 0 }
+	export enum DeleteDataCatalogX_Amz_Target { 'AmazonAthena.DeleteDataCatalog' = 'AmazonAthena.DeleteDataCatalog' }
 
-	export enum DeleteNamedQueryX_Amz_Target { 'AmazonAthena.DeleteNamedQuery' = 0 }
+	export enum DeleteNamedQueryX_Amz_Target { 'AmazonAthena.DeleteNamedQuery' = 'AmazonAthena.DeleteNamedQuery' }
 
-	export enum DeleteNotebookX_Amz_Target { 'AmazonAthena.DeleteNotebook' = 0 }
+	export enum DeleteNotebookX_Amz_Target { 'AmazonAthena.DeleteNotebook' = 'AmazonAthena.DeleteNotebook' }
 
-	export enum DeletePreparedStatementX_Amz_Target { 'AmazonAthena.DeletePreparedStatement' = 0 }
+	export enum DeletePreparedStatementX_Amz_Target { 'AmazonAthena.DeletePreparedStatement' = 'AmazonAthena.DeletePreparedStatement' }
 
-	export enum DeleteWorkGroupX_Amz_Target { 'AmazonAthena.DeleteWorkGroup' = 0 }
+	export enum DeleteWorkGroupX_Amz_Target { 'AmazonAthena.DeleteWorkGroup' = 'AmazonAthena.DeleteWorkGroup' }
 
-	export enum ExportNotebookX_Amz_Target { 'AmazonAthena.ExportNotebook' = 0 }
+	export enum ExportNotebookX_Amz_Target { 'AmazonAthena.ExportNotebook' = 'AmazonAthena.ExportNotebook' }
 
-	export enum GetCalculationExecutionX_Amz_Target { 'AmazonAthena.GetCalculationExecution' = 0 }
+	export enum GetCalculationExecutionX_Amz_Target { 'AmazonAthena.GetCalculationExecution' = 'AmazonAthena.GetCalculationExecution' }
 
-	export enum GetCalculationExecutionCodeX_Amz_Target { 'AmazonAthena.GetCalculationExecutionCode' = 0 }
+	export enum GetCalculationExecutionCodeX_Amz_Target { 'AmazonAthena.GetCalculationExecutionCode' = 'AmazonAthena.GetCalculationExecutionCode' }
 
-	export enum GetCalculationExecutionStatusX_Amz_Target { 'AmazonAthena.GetCalculationExecutionStatus' = 0 }
+	export enum GetCalculationExecutionStatusX_Amz_Target { 'AmazonAthena.GetCalculationExecutionStatus' = 'AmazonAthena.GetCalculationExecutionStatus' }
 
-	export enum GetCapacityAssignmentConfigurationX_Amz_Target { 'AmazonAthena.GetCapacityAssignmentConfiguration' = 0 }
+	export enum GetCapacityAssignmentConfigurationX_Amz_Target { 'AmazonAthena.GetCapacityAssignmentConfiguration' = 'AmazonAthena.GetCapacityAssignmentConfiguration' }
 
-	export enum GetCapacityReservationX_Amz_Target { 'AmazonAthena.GetCapacityReservation' = 0 }
+	export enum GetCapacityReservationX_Amz_Target { 'AmazonAthena.GetCapacityReservation' = 'AmazonAthena.GetCapacityReservation' }
 
-	export enum GetDataCatalogX_Amz_Target { 'AmazonAthena.GetDataCatalog' = 0 }
+	export enum GetDataCatalogX_Amz_Target { 'AmazonAthena.GetDataCatalog' = 'AmazonAthena.GetDataCatalog' }
 
-	export enum GetDatabaseX_Amz_Target { 'AmazonAthena.GetDatabase' = 0 }
+	export enum GetDatabaseX_Amz_Target { 'AmazonAthena.GetDatabase' = 'AmazonAthena.GetDatabase' }
 
-	export enum GetNamedQueryX_Amz_Target { 'AmazonAthena.GetNamedQuery' = 0 }
+	export enum GetNamedQueryX_Amz_Target { 'AmazonAthena.GetNamedQuery' = 'AmazonAthena.GetNamedQuery' }
 
-	export enum GetNotebookMetadataX_Amz_Target { 'AmazonAthena.GetNotebookMetadata' = 0 }
+	export enum GetNotebookMetadataX_Amz_Target { 'AmazonAthena.GetNotebookMetadata' = 'AmazonAthena.GetNotebookMetadata' }
 
-	export enum GetPreparedStatementX_Amz_Target { 'AmazonAthena.GetPreparedStatement' = 0 }
+	export enum GetPreparedStatementX_Amz_Target { 'AmazonAthena.GetPreparedStatement' = 'AmazonAthena.GetPreparedStatement' }
 
-	export enum GetQueryExecutionX_Amz_Target { 'AmazonAthena.GetQueryExecution' = 0 }
+	export enum GetQueryExecutionX_Amz_Target { 'AmazonAthena.GetQueryExecution' = 'AmazonAthena.GetQueryExecution' }
 
-	export enum GetQueryResultsX_Amz_Target { 'AmazonAthena.GetQueryResults' = 0 }
+	export enum GetQueryResultsX_Amz_Target { 'AmazonAthena.GetQueryResults' = 'AmazonAthena.GetQueryResults' }
 
-	export enum GetQueryRuntimeStatisticsX_Amz_Target { 'AmazonAthena.GetQueryRuntimeStatistics' = 0 }
+	export enum GetQueryRuntimeStatisticsX_Amz_Target { 'AmazonAthena.GetQueryRuntimeStatistics' = 'AmazonAthena.GetQueryRuntimeStatistics' }
 
-	export enum GetSessionX_Amz_Target { 'AmazonAthena.GetSession' = 0 }
+	export enum GetSessionX_Amz_Target { 'AmazonAthena.GetSession' = 'AmazonAthena.GetSession' }
 
-	export enum GetSessionStatusX_Amz_Target { 'AmazonAthena.GetSessionStatus' = 0 }
+	export enum GetSessionStatusX_Amz_Target { 'AmazonAthena.GetSessionStatus' = 'AmazonAthena.GetSessionStatus' }
 
-	export enum GetTableMetadataX_Amz_Target { 'AmazonAthena.GetTableMetadata' = 0 }
+	export enum GetTableMetadataX_Amz_Target { 'AmazonAthena.GetTableMetadata' = 'AmazonAthena.GetTableMetadata' }
 
-	export enum GetWorkGroupX_Amz_Target { 'AmazonAthena.GetWorkGroup' = 0 }
+	export enum GetWorkGroupX_Amz_Target { 'AmazonAthena.GetWorkGroup' = 'AmazonAthena.GetWorkGroup' }
 
-	export enum ImportNotebookX_Amz_Target { 'AmazonAthena.ImportNotebook' = 0 }
+	export enum ImportNotebookX_Amz_Target { 'AmazonAthena.ImportNotebook' = 'AmazonAthena.ImportNotebook' }
 
-	export enum ListApplicationDPUSizesX_Amz_Target { 'AmazonAthena.ListApplicationDPUSizes' = 0 }
+	export enum ListApplicationDPUSizesX_Amz_Target { 'AmazonAthena.ListApplicationDPUSizes' = 'AmazonAthena.ListApplicationDPUSizes' }
 
-	export enum ListCalculationExecutionsX_Amz_Target { 'AmazonAthena.ListCalculationExecutions' = 0 }
+	export enum ListCalculationExecutionsX_Amz_Target { 'AmazonAthena.ListCalculationExecutions' = 'AmazonAthena.ListCalculationExecutions' }
 
-	export enum ListCapacityReservationsX_Amz_Target { 'AmazonAthena.ListCapacityReservations' = 0 }
+	export enum ListCapacityReservationsX_Amz_Target { 'AmazonAthena.ListCapacityReservations' = 'AmazonAthena.ListCapacityReservations' }
 
-	export enum ListDataCatalogsX_Amz_Target { 'AmazonAthena.ListDataCatalogs' = 0 }
+	export enum ListDataCatalogsX_Amz_Target { 'AmazonAthena.ListDataCatalogs' = 'AmazonAthena.ListDataCatalogs' }
 
-	export enum ListDatabasesX_Amz_Target { 'AmazonAthena.ListDatabases' = 0 }
+	export enum ListDatabasesX_Amz_Target { 'AmazonAthena.ListDatabases' = 'AmazonAthena.ListDatabases' }
 
-	export enum ListEngineVersionsX_Amz_Target { 'AmazonAthena.ListEngineVersions' = 0 }
+	export enum ListEngineVersionsX_Amz_Target { 'AmazonAthena.ListEngineVersions' = 'AmazonAthena.ListEngineVersions' }
 
-	export enum ListExecutorsX_Amz_Target { 'AmazonAthena.ListExecutors' = 0 }
+	export enum ListExecutorsX_Amz_Target { 'AmazonAthena.ListExecutors' = 'AmazonAthena.ListExecutors' }
 
-	export enum ListNamedQueriesX_Amz_Target { 'AmazonAthena.ListNamedQueries' = 0 }
+	export enum ListNamedQueriesX_Amz_Target { 'AmazonAthena.ListNamedQueries' = 'AmazonAthena.ListNamedQueries' }
 
-	export enum ListNotebookMetadataX_Amz_Target { 'AmazonAthena.ListNotebookMetadata' = 0 }
+	export enum ListNotebookMetadataX_Amz_Target { 'AmazonAthena.ListNotebookMetadata' = 'AmazonAthena.ListNotebookMetadata' }
 
-	export enum ListNotebookSessionsX_Amz_Target { 'AmazonAthena.ListNotebookSessions' = 0 }
+	export enum ListNotebookSessionsX_Amz_Target { 'AmazonAthena.ListNotebookSessions' = 'AmazonAthena.ListNotebookSessions' }
 
-	export enum ListPreparedStatementsX_Amz_Target { 'AmazonAthena.ListPreparedStatements' = 0 }
+	export enum ListPreparedStatementsX_Amz_Target { 'AmazonAthena.ListPreparedStatements' = 'AmazonAthena.ListPreparedStatements' }
 
-	export enum ListQueryExecutionsX_Amz_Target { 'AmazonAthena.ListQueryExecutions' = 0 }
+	export enum ListQueryExecutionsX_Amz_Target { 'AmazonAthena.ListQueryExecutions' = 'AmazonAthena.ListQueryExecutions' }
 
-	export enum ListSessionsX_Amz_Target { 'AmazonAthena.ListSessions' = 0 }
+	export enum ListSessionsX_Amz_Target { 'AmazonAthena.ListSessions' = 'AmazonAthena.ListSessions' }
 
-	export enum ListTableMetadataX_Amz_Target { 'AmazonAthena.ListTableMetadata' = 0 }
+	export enum ListTableMetadataX_Amz_Target { 'AmazonAthena.ListTableMetadata' = 'AmazonAthena.ListTableMetadata' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AmazonAthena.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonAthena.ListTagsForResource' = 'AmazonAthena.ListTagsForResource' }
 
-	export enum ListWorkGroupsX_Amz_Target { 'AmazonAthena.ListWorkGroups' = 0 }
+	export enum ListWorkGroupsX_Amz_Target { 'AmazonAthena.ListWorkGroups' = 'AmazonAthena.ListWorkGroups' }
 
-	export enum PutCapacityAssignmentConfigurationX_Amz_Target { 'AmazonAthena.PutCapacityAssignmentConfiguration' = 0 }
+	export enum PutCapacityAssignmentConfigurationX_Amz_Target { 'AmazonAthena.PutCapacityAssignmentConfiguration' = 'AmazonAthena.PutCapacityAssignmentConfiguration' }
 
-	export enum StartCalculationExecutionX_Amz_Target { 'AmazonAthena.StartCalculationExecution' = 0 }
+	export enum StartCalculationExecutionX_Amz_Target { 'AmazonAthena.StartCalculationExecution' = 'AmazonAthena.StartCalculationExecution' }
 
-	export enum StartQueryExecutionX_Amz_Target { 'AmazonAthena.StartQueryExecution' = 0 }
+	export enum StartQueryExecutionX_Amz_Target { 'AmazonAthena.StartQueryExecution' = 'AmazonAthena.StartQueryExecution' }
 
-	export enum StartSessionX_Amz_Target { 'AmazonAthena.StartSession' = 0 }
+	export enum StartSessionX_Amz_Target { 'AmazonAthena.StartSession' = 'AmazonAthena.StartSession' }
 
-	export enum StopCalculationExecutionX_Amz_Target { 'AmazonAthena.StopCalculationExecution' = 0 }
+	export enum StopCalculationExecutionX_Amz_Target { 'AmazonAthena.StopCalculationExecution' = 'AmazonAthena.StopCalculationExecution' }
 
-	export enum StopQueryExecutionX_Amz_Target { 'AmazonAthena.StopQueryExecution' = 0 }
+	export enum StopQueryExecutionX_Amz_Target { 'AmazonAthena.StopQueryExecution' = 'AmazonAthena.StopQueryExecution' }
 
-	export enum TagResourceX_Amz_Target { 'AmazonAthena.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonAthena.TagResource' = 'AmazonAthena.TagResource' }
 
-	export enum TerminateSessionX_Amz_Target { 'AmazonAthena.TerminateSession' = 0 }
+	export enum TerminateSessionX_Amz_Target { 'AmazonAthena.TerminateSession' = 'AmazonAthena.TerminateSession' }
 
-	export enum UntagResourceX_Amz_Target { 'AmazonAthena.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonAthena.UntagResource' = 'AmazonAthena.UntagResource' }
 
-	export enum UpdateCapacityReservationX_Amz_Target { 'AmazonAthena.UpdateCapacityReservation' = 0 }
+	export enum UpdateCapacityReservationX_Amz_Target { 'AmazonAthena.UpdateCapacityReservation' = 'AmazonAthena.UpdateCapacityReservation' }
 
-	export enum UpdateDataCatalogX_Amz_Target { 'AmazonAthena.UpdateDataCatalog' = 0 }
+	export enum UpdateDataCatalogX_Amz_Target { 'AmazonAthena.UpdateDataCatalog' = 'AmazonAthena.UpdateDataCatalog' }
 
-	export enum UpdateNamedQueryX_Amz_Target { 'AmazonAthena.UpdateNamedQuery' = 0 }
+	export enum UpdateNamedQueryX_Amz_Target { 'AmazonAthena.UpdateNamedQuery' = 'AmazonAthena.UpdateNamedQuery' }
 
-	export enum UpdateNotebookX_Amz_Target { 'AmazonAthena.UpdateNotebook' = 0 }
+	export enum UpdateNotebookX_Amz_Target { 'AmazonAthena.UpdateNotebook' = 'AmazonAthena.UpdateNotebook' }
 
-	export enum UpdateNotebookMetadataX_Amz_Target { 'AmazonAthena.UpdateNotebookMetadata' = 0 }
+	export enum UpdateNotebookMetadataX_Amz_Target { 'AmazonAthena.UpdateNotebookMetadata' = 'AmazonAthena.UpdateNotebookMetadata' }
 
-	export enum UpdatePreparedStatementX_Amz_Target { 'AmazonAthena.UpdatePreparedStatement' = 0 }
+	export enum UpdatePreparedStatementX_Amz_Target { 'AmazonAthena.UpdatePreparedStatement' = 'AmazonAthena.UpdatePreparedStatement' }
 
-	export enum UpdateWorkGroupX_Amz_Target { 'AmazonAthena.UpdateWorkGroup' = 0 }
+	export enum UpdateWorkGroupX_Amz_Target { 'AmazonAthena.UpdateWorkGroup' = 'AmazonAthena.UpdateWorkGroup' }
 
 }
 

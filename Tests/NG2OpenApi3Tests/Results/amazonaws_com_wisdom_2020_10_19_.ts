@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssistantStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, ACTIVE = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4, DELETED = 5 }
+	export enum AssistantStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', DELETED = 'DELETED' }
 
 	export interface Tags {
 	}
@@ -115,7 +115,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssistantType { AGENT = 0 }
+	export enum AssistantType { AGENT = 'AGENT' }
 
 	export interface ConflictException {
 	}
@@ -256,7 +256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationType { KNOWLEDGE_BASE = 0 }
+	export enum AssociationType { KNOWLEDGE_BASE = 'KNOWLEDGE_BASE' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -387,7 +387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, ACTIVE = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4, DELETED = 5, UPDATE_FAILED = 6 }
+	export enum ContentStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', DELETED = 'DELETED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface CreateKnowledgeBaseResponse {
 		knowledgeBase?: KnowledgeBaseData;
@@ -459,7 +459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KnowledgeBaseType { EXTERNAL = 0, CUSTOM = 1 }
+	export enum KnowledgeBaseType { EXTERNAL = 'EXTERNAL', CUSTOM = 'CUSTOM' }
 
 
 	/** Information about how to render the content. */
@@ -889,9 +889,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RelevanceLevel { HIGH = 0, MEDIUM = 1, LOW = 2 }
+	export enum RelevanceLevel { HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW' }
 
-	export enum RecommendationType { KNOWLEDGE_CONTENT = 0 }
+	export enum RecommendationType { KNOWLEDGE_CONTENT = 'KNOWLEDGE_CONTENT' }
 
 
 	/** A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger. */
@@ -966,9 +966,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationSourceType { ISSUE_DETECTION = 0, RULE_EVALUATION = 1, OTHER = 2 }
+	export enum RecommendationSourceType { ISSUE_DETECTION = 'ISSUE_DETECTION', RULE_EVALUATION = 'RULE_EVALUATION', OTHER = 'OTHER' }
 
-	export enum RecommendationTriggerType { QUERY = 0 }
+	export enum RecommendationTriggerType { QUERY = 'QUERY' }
 
 	export interface GetSessionResponse {
 		session?: SessionData;
@@ -1356,9 +1356,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterField { NAME = 0 }
+	export enum FilterField { NAME = 'NAME' }
 
-	export enum FilterOperator { EQUALS = 0 }
+	export enum FilterOperator { EQUALS = 'EQUALS' }
 
 	export interface SearchSessionsResponse {
 		nextToken?: string;
@@ -1800,7 +1800,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KnowledgeBaseStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, ACTIVE = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4, DELETED = 5 }
+	export enum KnowledgeBaseStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', DELETED = 'DELETED' }
 
 	export interface ListAssistantAssociationsRequest {
 	}

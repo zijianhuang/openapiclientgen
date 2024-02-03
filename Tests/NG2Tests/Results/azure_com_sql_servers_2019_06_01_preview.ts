@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityRequestType { 'Microsoft.Sql/servers' = 0 }
+	export enum CheckNameAvailabilityRequestType { 'Microsoft.Sql/servers' = 'Microsoft.Sql/servers' }
 
 
 	/** The result of a name availability check. */
@@ -75,7 +75,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResponseReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameAvailabilityResponseReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** Properties of a private endpoint connection. */
@@ -160,11 +160,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateLinkServiceConnectionStatePropertyActionsRequired { None = 0 }
+	export enum PrivateLinkServiceConnectionStatePropertyActionsRequired { None = 'None' }
 
-	export enum PrivateLinkServiceConnectionStatePropertyStatus { Approved = 0, Pending = 1, Rejected = 2, Disconnected = 3 }
+	export enum PrivateLinkServiceConnectionStatePropertyStatus { Approved = 'Approved', Pending = 'Pending', Rejected = 'Rejected', Disconnected = 'Disconnected' }
 
-	export enum PrivateEndpointConnectionPropertiesProvisioningState { Approving = 0, Ready = 1, Dropping = 2, Failed = 3, Rejecting = 4 }
+	export enum PrivateEndpointConnectionPropertiesProvisioningState { Approving = 'Approving', Ready = 'Ready', Dropping = 'Dropping', Failed = 'Failed', Rejecting = 'Rejecting' }
 
 
 	/** ARM resource. */
@@ -236,7 +236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceIdentityType { SystemAssigned = 0 }
+	export enum ResourceIdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** An Azure SQL Database server. */

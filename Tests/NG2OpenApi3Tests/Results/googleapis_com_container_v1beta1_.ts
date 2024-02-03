@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GPUDriverInstallationConfigGpuDriverVersion { GPU_DRIVER_VERSION_UNSPECIFIED = 0, INSTALLATION_DISABLED = 1, DEFAULT = 2, LATEST = 3 }
+	export enum GPUDriverInstallationConfigGpuDriverVersion { GPU_DRIVER_VERSION_UNSPECIFIED = 'GPU_DRIVER_VERSION_UNSPECIFIED', INSTALLATION_DISABLED = 'INSTALLATION_DISABLED', DEFAULT = 'DEFAULT', LATEST = 'LATEST' }
 
 
 	/** GPUSharingConfig represents the GPU sharing configuration for Hardware Accelerators. */
@@ -102,7 +102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GPUSharingConfigGpuSharingStrategy { GPU_SHARING_STRATEGY_UNSPECIFIED = 0, TIME_SHARING = 1 }
+	export enum GPUSharingConfigGpuSharingStrategy { GPU_SHARING_STRATEGY_UNSPECIFIED = 'GPU_SHARING_STRATEGY_UNSPECIFIED', TIME_SHARING = 'TIME_SHARING' }
 
 
 	/** AdditionalNodeNetworkConfig is the configuration for additional node networks within the NodeNetworkConfig message */
@@ -313,7 +313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudRunConfigLoadBalancerType { LOAD_BALANCER_TYPE_UNSPECIFIED = 0, LOAD_BALANCER_TYPE_EXTERNAL = 1, LOAD_BALANCER_TYPE_INTERNAL = 2 }
+	export enum CloudRunConfigLoadBalancerType { LOAD_BALANCER_TYPE_UNSPECIFIED = 'LOAD_BALANCER_TYPE_UNSPECIFIED', LOAD_BALANCER_TYPE_EXTERNAL = 'LOAD_BALANCER_TYPE_EXTERNAL', LOAD_BALANCER_TYPE_INTERNAL = 'LOAD_BALANCER_TYPE_INTERNAL' }
 
 
 	/** Configuration options for the Config Connector add-on. */
@@ -511,7 +511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IstioConfigAuth { AUTH_NONE = 0, AUTH_MUTUAL_TLS = 1 }
+	export enum IstioConfigAuth { AUTH_NONE = 'AUTH_NONE', AUTH_MUTUAL_TLS = 'AUTH_MUTUAL_TLS' }
 
 
 	/** Configuration options for the KALM addon. */
@@ -611,7 +611,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvancedDatapathObservabilityConfigRelayMode { RELAY_MODE_UNSPECIFIED = 0, DISABLED = 1, INTERNAL_VPC_LB = 2, EXTERNAL_LB = 3 }
+	export enum AdvancedDatapathObservabilityConfigRelayMode { RELAY_MODE_UNSPECIFIED = 'RELAY_MODE_UNSPECIFIED', DISABLED = 'DISABLED', INTERNAL_VPC_LB = 'INTERNAL_VPC_LB', EXTERNAL_LB = 'EXTERNAL_LB' }
 
 
 	/** Specifies options for controlling advanced machine features. */
@@ -738,7 +738,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutopilotConversionStatusState { STATE_UNSPECIFIED = 0, DONE = 1 }
+	export enum AutopilotConversionStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DONE = 'DONE' }
 
 
 	/** WorkloadPolicyConfig is the configuration of workload policy for autopilot clusters. */
@@ -813,7 +813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutopilotCompatibilityIssueIncompatibilityType { UNSPECIFIED = 0, INCOMPATIBILITY = 1, ADDITIONAL_CONFIG_REQUIRED = 2, PASSED_WITH_OPTIONAL_CONFIG = 3 }
+	export enum AutopilotCompatibilityIssueIncompatibilityType { UNSPECIFIED = 'UNSPECIFIED', INCOMPATIBILITY = 'INCOMPATIBILITY', ADDITIONAL_CONFIG_REQUIRED = 'ADDITIONAL_CONFIG_REQUIRED', PASSED_WITH_OPTIONAL_CONFIG = 'PASSED_WITH_OPTIONAL_CONFIG' }
 
 
 	/** AutoprovisioningNodePoolDefaults contains defaults for a node pool created by NAP. */
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeSettingsStrategy { NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED = 0, BLUE_GREEN = 1, SURGE = 2 }
+	export enum UpgradeSettingsStrategy { NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED = 'NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED', BLUE_GREEN = 'BLUE_GREEN', SURGE = 'SURGE' }
 
 
 	/** Deprecated. */
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BinaryAuthorizationEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 0, DISABLED = 1, PROJECT_SINGLETON_POLICY_ENFORCE = 2, POLICY_BINDINGS = 3, POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE = 4 }
+	export enum BinaryAuthorizationEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 'EVALUATION_MODE_UNSPECIFIED', DISABLED = 'DISABLED', PROJECT_SINGLETON_POLICY_ENFORCE = 'PROJECT_SINGLETON_POLICY_ENFORCE', POLICY_BINDINGS = 'POLICY_BINDINGS', POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE = 'POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE' }
 
 
 	/** Binauthz policy that applies to this cluster. */
@@ -1237,7 +1237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlueGreenInfoPhase { PHASE_UNSPECIFIED = 0, UPDATE_STARTED = 1, CREATING_GREEN_POOL = 2, CORDONING_BLUE_POOL = 3, WAITING_TO_DRAIN_BLUE_POOL = 4, DRAINING_BLUE_POOL = 5, NODE_POOL_SOAKING = 6, DELETING_BLUE_POOL = 7, ROLLBACK_STARTED = 8 }
+	export enum BlueGreenInfoPhase { PHASE_UNSPECIFIED = 'PHASE_UNSPECIFIED', UPDATE_STARTED = 'UPDATE_STARTED', CREATING_GREEN_POOL = 'CREATING_GREEN_POOL', CORDONING_BLUE_POOL = 'CORDONING_BLUE_POOL', WAITING_TO_DRAIN_BLUE_POOL = 'WAITING_TO_DRAIN_BLUE_POOL', DRAINING_BLUE_POOL = 'DRAINING_BLUE_POOL', NODE_POOL_SOAKING = 'NODE_POOL_SOAKING', DELETING_BLUE_POOL = 'DELETING_BLUE_POOL', ROLLBACK_STARTED = 'ROLLBACK_STARTED' }
 
 
 	/** CancelOperationRequest cancels a single operation. */
@@ -1760,7 +1760,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterAutoscalingAutoscalingProfile { PROFILE_UNSPECIFIED = 0, OPTIMIZE_UTILIZATION = 1, BALANCED = 2 }
+	export enum ClusterAutoscalingAutoscalingProfile { PROFILE_UNSPECIFIED = 'PROFILE_UNSPECIFIED', OPTIMIZE_UTILIZATION = 'OPTIMIZE_UTILIZATION', BALANCED = 'BALANCED' }
 
 
 	/** Contains information about amount of some resource in the cluster. For memory, value should be in GB. */
@@ -1818,7 +1818,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterTelemetryType { UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2, SYSTEM_ONLY = 3 }
+	export enum ClusterTelemetryType { UNSPECIFIED = 'UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED', SYSTEM_ONLY = 'SYSTEM_ONLY' }
 
 
 	/** StatusCondition describes why a cluster or a node pool has a certain status (e.g., ERROR or DEGRADED). */
@@ -1855,9 +1855,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusConditionCanonicalCode { OK = 0, CANCELLED = 1, UNKNOWN = 2, INVALID_ARGUMENT = 3, DEADLINE_EXCEEDED = 4, NOT_FOUND = 5, ALREADY_EXISTS = 6, PERMISSION_DENIED = 7, UNAUTHENTICATED = 8, RESOURCE_EXHAUSTED = 9, FAILED_PRECONDITION = 10, ABORTED = 11, OUT_OF_RANGE = 12, UNIMPLEMENTED = 13, INTERNAL = 14, UNAVAILABLE = 15, DATA_LOSS = 16 }
+	export enum StatusConditionCanonicalCode { OK = 'OK', CANCELLED = 'CANCELLED', UNKNOWN = 'UNKNOWN', INVALID_ARGUMENT = 'INVALID_ARGUMENT', DEADLINE_EXCEEDED = 'DEADLINE_EXCEEDED', NOT_FOUND = 'NOT_FOUND', ALREADY_EXISTS = 'ALREADY_EXISTS', PERMISSION_DENIED = 'PERMISSION_DENIED', UNAUTHENTICATED = 'UNAUTHENTICATED', RESOURCE_EXHAUSTED = 'RESOURCE_EXHAUSTED', FAILED_PRECONDITION = 'FAILED_PRECONDITION', ABORTED = 'ABORTED', OUT_OF_RANGE = 'OUT_OF_RANGE', UNIMPLEMENTED = 'UNIMPLEMENTED', INTERNAL = 'INTERNAL', UNAVAILABLE = 'UNAVAILABLE', DATA_LOSS = 'DATA_LOSS' }
 
-	export enum StatusConditionCode { UNKNOWN = 0, GCE_STOCKOUT = 1, GKE_SERVICE_ACCOUNT_DELETED = 2, GCE_QUOTA_EXCEEDED = 3, SET_BY_OPERATOR = 4, CLOUD_KMS_KEY_ERROR = 5, CA_EXPIRING = 6 }
+	export enum StatusConditionCode { UNKNOWN = 'UNKNOWN', GCE_STOCKOUT = 'GCE_STOCKOUT', GKE_SERVICE_ACCOUNT_DELETED = 'GKE_SERVICE_ACCOUNT_DELETED', GCE_QUOTA_EXCEEDED = 'GCE_QUOTA_EXCEEDED', SET_BY_OPERATOR = 'SET_BY_OPERATOR', CLOUD_KMS_KEY_ERROR = 'CLOUD_KMS_KEY_ERROR', CA_EXPIRING = 'CA_EXPIRING' }
 
 
 	/** ConfidentialNodes is configuration for the confidential nodes feature, which makes nodes run on confidential VMs. */
@@ -1929,7 +1929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseEncryptionState { UNKNOWN = 0, ENCRYPTED = 1, DECRYPTED = 2 }
+	export enum DatabaseEncryptionState { UNKNOWN = 'UNKNOWN', ENCRYPTED = 'ENCRYPTED', DECRYPTED = 'DECRYPTED' }
 
 
 	/** Kubernetes open source beta apis enabled on the cluster. */
@@ -1969,7 +1969,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseConfigClusterTier { CLUSTER_TIER_UNSPECIFIED = 0, STANDARD = 1, ENTERPRISE = 2 }
+	export enum EnterpriseConfigClusterTier { CLUSTER_TIER_UNSPECIFIED = 'CLUSTER_TIER_UNSPECIFIED', STANDARD = 'STANDARD', ENTERPRISE = 'ENTERPRISE' }
 
 
 	/** Fleet is the fleet configuration for the cluster. */
@@ -2180,7 +2180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPAllocationPolicyIpv6AccessType { IPV6_ACCESS_TYPE_UNSPECIFIED = 0, INTERNAL = 1, EXTERNAL = 2 }
+	export enum IPAllocationPolicyIpv6AccessType { IPV6_ACCESS_TYPE_UNSPECIFIED = 'IPV6_ACCESS_TYPE_UNSPECIFIED', INTERNAL = 'INTERNAL', EXTERNAL = 'EXTERNAL' }
 
 
 	/** [PRIVATE FIELD] Config for pod CIDR size overprovisioning. */
@@ -2203,7 +2203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPAllocationPolicyStackType { STACK_TYPE_UNSPECIFIED = 0, IPV4 = 1, IPV4_IPV6 = 2 }
+	export enum IPAllocationPolicyStackType { STACK_TYPE_UNSPECIFIED = 'STACK_TYPE_UNSPECIFIED', IPV4 = 'IPV4', IPV4_IPV6 = 'IPV4_IPV6' }
 
 
 	/** Configuration for the legacy Attribute Based Access Control authorization mode. */
@@ -2391,7 +2391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceExclusionOptionsScope { NO_UPGRADES = 0, NO_MINOR_UPGRADES = 1, NO_MINOR_OR_NODE_UPGRADES = 2 }
+	export enum MaintenanceExclusionOptionsScope { NO_UPGRADES = 'NO_UPGRADES', NO_MINOR_UPGRADES = 'NO_MINOR_UPGRADES', NO_MINOR_OR_NODE_UPGRADES = 'NO_MINOR_OR_NODE_UPGRADES' }
 
 
 	/** Represents an arbitrary window of time that recurs. */
@@ -2684,7 +2684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigDatapathProvider { DATAPATH_PROVIDER_UNSPECIFIED = 0, LEGACY_DATAPATH = 1, ADVANCED_DATAPATH = 2 }
+	export enum NetworkConfigDatapathProvider { DATAPATH_PROVIDER_UNSPECIFIED = 'DATAPATH_PROVIDER_UNSPECIFIED', LEGACY_DATAPATH = 'LEGACY_DATAPATH', ADVANCED_DATAPATH = 'ADVANCED_DATAPATH' }
 
 
 	/** DefaultSnatStatus contains the desired state of whether default sNAT should be disabled on the cluster. */
@@ -2742,9 +2742,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DNSConfigClusterDns { PROVIDER_UNSPECIFIED = 0, PLATFORM_DEFAULT = 1, CLOUD_DNS = 2, KUBE_DNS = 3 }
+	export enum DNSConfigClusterDns { PROVIDER_UNSPECIFIED = 'PROVIDER_UNSPECIFIED', PLATFORM_DEFAULT = 'PLATFORM_DEFAULT', CLOUD_DNS = 'CLOUD_DNS', KUBE_DNS = 'KUBE_DNS' }
 
-	export enum DNSConfigClusterDnsScope { DNS_SCOPE_UNSPECIFIED = 0, CLUSTER_SCOPE = 1, VPC_SCOPE = 2 }
+	export enum DNSConfigClusterDnsScope { DNS_SCOPE_UNSPECIFIED = 'DNS_SCOPE_UNSPECIFIED', CLUSTER_SCOPE = 'CLUSTER_SCOPE', VPC_SCOPE = 'VPC_SCOPE' }
 
 
 	/** GatewayAPIConfig contains the desired config of Gateway API on this cluster. */
@@ -2767,9 +2767,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayAPIConfigChannel { CHANNEL_UNSPECIFIED = 0, CHANNEL_DISABLED = 1, CHANNEL_EXPERIMENTAL = 2, CHANNEL_STANDARD = 3 }
+	export enum GatewayAPIConfigChannel { CHANNEL_UNSPECIFIED = 'CHANNEL_UNSPECIFIED', CHANNEL_DISABLED = 'CHANNEL_DISABLED', CHANNEL_EXPERIMENTAL = 'CHANNEL_EXPERIMENTAL', CHANNEL_STANDARD = 'CHANNEL_STANDARD' }
 
-	export enum NetworkConfigInTransitEncryptionConfig { IN_TRANSIT_ENCRYPTION_CONFIG_UNSPECIFIED = 0, IN_TRANSIT_ENCRYPTION_DISABLED = 1, IN_TRANSIT_ENCRYPTION_INTER_NODE_TRANSPARENT = 2 }
+	export enum NetworkConfigInTransitEncryptionConfig { IN_TRANSIT_ENCRYPTION_CONFIG_UNSPECIFIED = 'IN_TRANSIT_ENCRYPTION_CONFIG_UNSPECIFIED', IN_TRANSIT_ENCRYPTION_DISABLED = 'IN_TRANSIT_ENCRYPTION_DISABLED', IN_TRANSIT_ENCRYPTION_INTER_NODE_TRANSPARENT = 'IN_TRANSIT_ENCRYPTION_INTER_NODE_TRANSPARENT' }
 
 
 	/** Configuration of all network bandwidth tiers */
@@ -2792,9 +2792,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterNetworkPerformanceConfigTotalEgressBandwidthTier { TIER_UNSPECIFIED = 0, TIER_1 = 1 }
+	export enum ClusterNetworkPerformanceConfigTotalEgressBandwidthTier { TIER_UNSPECIFIED = 'TIER_UNSPECIFIED', TIER_1 = 'TIER_1' }
 
-	export enum NetworkConfigPrivateIpv6GoogleAccess { PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0, PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED = 1, PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE = 2, PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL = 3 }
+	export enum NetworkConfigPrivateIpv6GoogleAccess { PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 'PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED', PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED = 'PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED', PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE = 'PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE', PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL = 'PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL' }
 
 
 	/** Config to block services with externalIPs field. */
@@ -2845,7 +2845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkPolicyProvider { PROVIDER_UNSPECIFIED = 0, CALICO = 1 }
+	export enum NetworkPolicyProvider { PROVIDER_UNSPECIFIED = 'PROVIDER_UNSPECIFIED', CALICO = 'CALICO' }
 
 
 	/** Parameters that describe the nodes in a cluster. GKE Autopilot clusters do not recognize parameters in `NodeConfig`. Use AutoprovisioningNodePoolDefaults instead. */
@@ -3164,7 +3164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HostMaintenancePolicyMaintenanceInterval { MAINTENANCE_INTERVAL_UNSPECIFIED = 0, AS_NEEDED = 1, PERIODIC = 2 }
+	export enum HostMaintenancePolicyMaintenanceInterval { MAINTENANCE_INTERVAL_UNSPECIFIED = 'MAINTENANCE_INTERVAL_UNSPECIFIED', AS_NEEDED = 'AS_NEEDED', PERIODIC = 'PERIODIC' }
 
 
 	/** Strategy that will trigger maintenance on behalf of the customer. */
@@ -3278,7 +3278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinuxNodeConfigCgroupMode { CGROUP_MODE_UNSPECIFIED = 0, CGROUP_MODE_V1 = 1, CGROUP_MODE_V2 = 2 }
+	export enum LinuxNodeConfigCgroupMode { CGROUP_MODE_UNSPECIFIED = 'CGROUP_MODE_UNSPECIFIED', CGROUP_MODE_V1 = 'CGROUP_MODE_V1', CGROUP_MODE_V2 = 'CGROUP_MODE_V2' }
 
 
 	/** LocalNvmeSsdBlockConfig contains configuration for using raw-block local NVMe SSDs */
@@ -3339,7 +3339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingVariantConfigVariant { VARIANT_UNSPECIFIED = 0, DEFAULT = 1, MAX_THROUGHPUT = 2 }
+	export enum LoggingVariantConfigVariant { VARIANT_UNSPECIFIED = 'VARIANT_UNSPECIFIED', DEFAULT = 'DEFAULT', MAX_THROUGHPUT = 'MAX_THROUGHPUT' }
 
 
 	/** [ReservationAffinity](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources) is the configuration of desired reservation which instances could take capacity from. */
@@ -3372,7 +3372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservationAffinityConsumeReservationType { UNSPECIFIED = 0, NO_RESERVATION = 1, ANY_RESERVATION = 2, SPECIFIC_RESERVATION = 3 }
+	export enum ReservationAffinityConsumeReservationType { UNSPECIFIED = 'UNSPECIFIED', NO_RESERVATION = 'NO_RESERVATION', ANY_RESERVATION = 'ANY_RESERVATION', SPECIFIC_RESERVATION = 'SPECIFIC_RESERVATION' }
 
 
 	/** A map of resource manager tag keys and values to be attached to the nodes for managing Compute Engine firewalls using Network Firewall Policies. Tags must be according to specifications in https://cloud.google.com/vpc/docs/tags-firewalls-overview#specifications. A maximum of 5 tag key-value pairs can be specified. Existing tags will be replaced with new values. */
@@ -3423,7 +3423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SandboxConfigType { UNSPECIFIED = 0, GVISOR = 1 }
+	export enum SandboxConfigType { UNSPECIFIED = 'UNSPECIFIED', GVISOR = 'GVISOR' }
 
 
 	/** SoleTenantConfig contains the NodeAffinities to specify what shared sole tenant node groups should back the node pool. */
@@ -3473,7 +3473,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeAffinityOperator { OPERATOR_UNSPECIFIED = 0, IN = 1, NOT_IN = 2 }
+	export enum NodeAffinityOperator { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', IN = 'IN', NOT_IN = 'NOT_IN' }
 
 
 	/** Kubernetes taint is composed of three fields: key, value, and effect. Effect can only be one of three types: NoSchedule, PreferNoSchedule or NoExecute. See [here](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration) for more information, including usage and the valid values. */
@@ -3510,7 +3510,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeTaintEffect { EFFECT_UNSPECIFIED = 0, NO_SCHEDULE = 1, PREFER_NO_SCHEDULE = 2, NO_EXECUTE = 3 }
+	export enum NodeTaintEffect { EFFECT_UNSPECIFIED = 'EFFECT_UNSPECIFIED', NO_SCHEDULE = 'NO_SCHEDULE', PREFER_NO_SCHEDULE = 'PREFER_NO_SCHEDULE', NO_EXECUTE = 'NO_EXECUTE' }
 
 
 	/** Parameters that can be configured on Windows nodes. Windows Node Config that define the parameters that will be used to configure the Windows node pool settings */
@@ -3533,7 +3533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WindowsNodeConfigOsVersion { OS_VERSION_UNSPECIFIED = 0, OS_VERSION_LTSC2019 = 1, OS_VERSION_LTSC2022 = 2 }
+	export enum WindowsNodeConfigOsVersion { OS_VERSION_UNSPECIFIED = 'OS_VERSION_UNSPECIFIED', OS_VERSION_LTSC2019 = 'OS_VERSION_LTSC2019', OS_VERSION_LTSC2022 = 'OS_VERSION_LTSC2022' }
 
 
 	/** WorkloadMetadataConfig defines the metadata configuration to expose to workloads on the node pool. */
@@ -3563,9 +3563,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkloadMetadataConfigMode { MODE_UNSPECIFIED = 0, GCE_METADATA = 1, GKE_METADATA = 2 }
+	export enum WorkloadMetadataConfigMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', GCE_METADATA = 'GCE_METADATA', GKE_METADATA = 'GKE_METADATA' }
 
-	export enum WorkloadMetadataConfigNodeMetadata { UNSPECIFIED = 0, SECURE = 1, EXPOSE = 2, GKE_METADATA_SERVER = 3 }
+	export enum WorkloadMetadataConfigNodeMetadata { UNSPECIFIED = 'UNSPECIFIED', SECURE = 'SECURE', EXPOSE = 'EXPOSE', GKE_METADATA_SERVER = 'GKE_METADATA_SERVER' }
 
 
 	/** node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters */
@@ -3816,7 +3816,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodePoolAutoscalingLocationPolicy { LOCATION_POLICY_UNSPECIFIED = 0, BALANCED = 1, ANY = 2 }
+	export enum NodePoolAutoscalingLocationPolicy { LOCATION_POLICY_UNSPECIFIED = 'LOCATION_POLICY_UNSPECIFIED', BALANCED = 'BALANCED', ANY = 'ANY' }
 
 
 	/** Parameters for node pool-level network config. */
@@ -3942,7 +3942,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementPolicyType { TYPE_UNSPECIFIED = 0, COMPACT = 1 }
+	export enum PlacementPolicyType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', COMPACT = 'COMPACT' }
 
 
 	/** QueuedProvisioning defines the queued provisioning used by the node pool. */
@@ -3965,7 +3965,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodePoolStatus { STATUS_UNSPECIFIED = 0, PROVISIONING = 1, RUNNING = 2, RUNNING_WITH_ERROR = 3, RECONCILING = 4, STOPPING = 5, ERROR = 6 }
+	export enum NodePoolStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', PROVISIONING = 'PROVISIONING', RUNNING = 'RUNNING', RUNNING_WITH_ERROR = 'RUNNING_WITH_ERROR', RECONCILING = 'RECONCILING', STOPPING = 'STOPPING', ERROR = 'ERROR' }
 
 
 	/** UpdateInfo contains resource (instance groups, etc), status and other intermediate information relevant to a node pool upgrade. */
@@ -4230,9 +4230,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkloadConfigAuditMode { MODE_UNSPECIFIED = 0, DISABLED = 1, BASIC = 2, BASELINE = 3, RESTRICTED = 4 }
+	export enum WorkloadConfigAuditMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', DISABLED = 'DISABLED', BASIC = 'BASIC', BASELINE = 'BASELINE', RESTRICTED = 'RESTRICTED' }
 
-	export enum ProtectConfigWorkloadVulnerabilityMode { WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED = 0, DISABLED = 1, BASIC = 2 }
+	export enum ProtectConfigWorkloadVulnerabilityMode { WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED = 'WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED', DISABLED = 'DISABLED', BASIC = 'BASIC' }
 
 
 	/** ReleaseChannel indicates which release channel a cluster is subscribed to. Release channels are arranged in order of risk. When a cluster is subscribed to a release channel, Google maintains both the master version and the node version. Node auto-upgrade defaults to true and cannot be disabled. */
@@ -4255,7 +4255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReleaseChannelChannel { UNSPECIFIED = 0, RAPID = 1, REGULAR = 2, STABLE = 3 }
+	export enum ReleaseChannelChannel { UNSPECIFIED = 'UNSPECIFIED', RAPID = 'RAPID', REGULAR = 'REGULAR', STABLE = 'STABLE' }
 
 
 	/** Configuration for exporting cluster resource usages. */
@@ -4333,9 +4333,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityPostureConfigMode { MODE_UNSPECIFIED = 0, DISABLED = 1, BASIC = 2 }
+	export enum SecurityPostureConfigMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', DISABLED = 'DISABLED', BASIC = 'BASIC' }
 
-	export enum SecurityPostureConfigVulnerabilityMode { VULNERABILITY_MODE_UNSPECIFIED = 0, VULNERABILITY_DISABLED = 1, VULNERABILITY_BASIC = 2, VULNERABILITY_ENTERPRISE = 3 }
+	export enum SecurityPostureConfigVulnerabilityMode { VULNERABILITY_MODE_UNSPECIFIED = 'VULNERABILITY_MODE_UNSPECIFIED', VULNERABILITY_DISABLED = 'VULNERABILITY_DISABLED', VULNERABILITY_BASIC = 'VULNERABILITY_BASIC', VULNERABILITY_ENTERPRISE = 'VULNERABILITY_ENTERPRISE' }
 
 
 	/** Configuration of Shielded Nodes feature. */
@@ -4358,7 +4358,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterStatus { STATUS_UNSPECIFIED = 0, PROVISIONING = 1, RUNNING = 2, RECONCILING = 3, STOPPING = 4, ERROR = 5, DEGRADED = 6 }
+	export enum ClusterStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', PROVISIONING = 'PROVISIONING', RUNNING = 'RUNNING', RECONCILING = 'RECONCILING', STOPPING = 'STOPPING', ERROR = 'ERROR', DEGRADED = 'DEGRADED' }
 
 
 	/** Configuration for Cloud TPU. */
@@ -5226,7 +5226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationType { LOCATION_TYPE_UNSPECIFIED = 0, ZONE = 1, REGION = 2 }
+	export enum LocationType { LOCATION_TYPE_UNSPECIFIED = 'LOCATION_TYPE_UNSPECIFIED', ZONE = 'ZONE', REGION = 'REGION' }
 
 
 	/** ListNodePoolsResponse is the result of ListNodePoolsRequest. */
@@ -5399,7 +5399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationOperationType { TYPE_UNSPECIFIED = 0, CREATE_CLUSTER = 1, DELETE_CLUSTER = 2, UPGRADE_MASTER = 3, UPGRADE_NODES = 4, REPAIR_CLUSTER = 5, UPDATE_CLUSTER = 6, CREATE_NODE_POOL = 7, DELETE_NODE_POOL = 8, SET_NODE_POOL_MANAGEMENT = 9, AUTO_REPAIR_NODES = 10, AUTO_UPGRADE_NODES = 11, SET_LABELS = 12, SET_MASTER_AUTH = 13, SET_NODE_POOL_SIZE = 14, SET_NETWORK_POLICY = 15, SET_MAINTENANCE_POLICY = 16, RESIZE_CLUSTER = 17, FLEET_FEATURE_UPGRADE = 18 }
+	export enum OperationOperationType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CREATE_CLUSTER = 'CREATE_CLUSTER', DELETE_CLUSTER = 'DELETE_CLUSTER', UPGRADE_MASTER = 'UPGRADE_MASTER', UPGRADE_NODES = 'UPGRADE_NODES', REPAIR_CLUSTER = 'REPAIR_CLUSTER', UPDATE_CLUSTER = 'UPDATE_CLUSTER', CREATE_NODE_POOL = 'CREATE_NODE_POOL', DELETE_NODE_POOL = 'DELETE_NODE_POOL', SET_NODE_POOL_MANAGEMENT = 'SET_NODE_POOL_MANAGEMENT', AUTO_REPAIR_NODES = 'AUTO_REPAIR_NODES', AUTO_UPGRADE_NODES = 'AUTO_UPGRADE_NODES', SET_LABELS = 'SET_LABELS', SET_MASTER_AUTH = 'SET_MASTER_AUTH', SET_NODE_POOL_SIZE = 'SET_NODE_POOL_SIZE', SET_NETWORK_POLICY = 'SET_NETWORK_POLICY', SET_MAINTENANCE_POLICY = 'SET_MAINTENANCE_POLICY', RESIZE_CLUSTER = 'RESIZE_CLUSTER', FLEET_FEATURE_UPGRADE = 'FLEET_FEATURE_UPGRADE' }
 
 
 	/** Information about operation (or operation stage) progress. */
@@ -5477,7 +5477,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationProgressStatus { STATUS_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, DONE = 3, ABORTING = 4 }
+	export enum OperationProgressStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', DONE = 'DONE', ABORTING = 'ABORTING' }
 
 
 	/** ListUsableSubnetworksResponse is the response of ListUsableSubnetworksRequest. */
@@ -5583,7 +5583,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsableSubnetworkSecondaryRangeStatus { UNKNOWN = 0, UNUSED = 1, IN_USE_SERVICE = 2, IN_USE_SHAREABLE_POD = 3, IN_USE_MANAGED_POD = 4 }
+	export enum UsableSubnetworkSecondaryRangeStatus { UNKNOWN = 'UNKNOWN', UNUSED = 'UNUSED', IN_USE_SERVICE = 'IN_USE_SERVICE', IN_USE_SHAREABLE_POD = 'IN_USE_SHAREABLE_POD', IN_USE_MANAGED_POD = 'IN_USE_MANAGED_POD' }
 
 
 	/** Collection of node-level [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels). */
@@ -6242,7 +6242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SetMasterAuthRequestAction { UNKNOWN = 0, SET_PASSWORD = 1, GENERATE_PASSWORD = 2, SET_USERNAME = 3 }
+	export enum SetMasterAuthRequestAction { UNKNOWN = 'UNKNOWN', SET_PASSWORD = 'SET_PASSWORD', GENERATE_PASSWORD = 'GENERATE_PASSWORD', SET_USERNAME = 'SET_USERNAME' }
 
 
 	/** SetMonitoringServiceRequest sets the monitoring service of a cluster. */
@@ -6824,7 +6824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeAvailableEventResourceType { UPGRADE_RESOURCE_TYPE_UNSPECIFIED = 0, MASTER = 1, NODE_POOL = 2 }
+	export enum UpgradeAvailableEventResourceType { UPGRADE_RESOURCE_TYPE_UNSPECIFIED = 'UPGRADE_RESOURCE_TYPE_UNSPECIFIED', MASTER = 'MASTER', NODE_POOL = 'NODE_POOL' }
 
 
 	/** UpgradeEvent is a notification sent to customers by the cluster server when a resource is upgrading. */

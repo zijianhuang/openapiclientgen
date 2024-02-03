@@ -197,7 +197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MapsKeySpecificationKeyType { primary = 0, secondary = 1 }
+	export enum MapsKeySpecificationKeyType { primary = 'primary', secondary = 'secondary' }
 
 
 	/** The set of operations available for Maps. */

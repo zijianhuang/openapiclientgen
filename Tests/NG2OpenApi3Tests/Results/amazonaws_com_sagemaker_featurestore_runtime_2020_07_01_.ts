@@ -191,7 +191,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetStore { OnlineStore = 0, OfflineStore = 1 }
+	export enum TargetStore { OnlineStore = 'OnlineStore', OfflineStore = 'OfflineStore' }
 
 	export interface GetRecordResponse {
 		Record?: Array<FeatureValue>;
@@ -217,9 +217,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TtlDurationUnit { Seconds = 0, Minutes = 1, Hours = 2, Days = 3, Weeks = 4 }
+	export enum TtlDurationUnit { Seconds = 'Seconds', Minutes = 'Minutes', Hours = 'Hours', Days = 'Days', Weeks = 'Weeks' }
 
-	export enum ExpirationTimeResponse { Enabled = 0, Disabled = 1 }
+	export enum ExpirationTimeResponse { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface BatchGetRecordRequest {
 
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletionMode { SoftDelete = 0, HardDelete = 1 }
+	export enum DeletionMode { SoftDelete = 'SoftDelete', HardDelete = 'HardDelete' }
 
 	export interface DeleteRecordRequest {
 	}

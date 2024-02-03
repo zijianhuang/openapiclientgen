@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Tier { CUSTOM = 0, DEFAULT = 1, DOT_NET_CORE = 2, DOT_NET_WORKER = 3, DOT_NET_WEB_TIER = 4, DOT_NET_WEB = 5, SQL_SERVER = 6, SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP = 7, MYSQL = 8, POSTGRESQL = 9, JAVA_JMX = 10, ORACLE = 11, SAP_HANA_MULTI_NODE = 12, SAP_HANA_SINGLE_NODE = 13, SAP_HANA_HIGH_AVAILABILITY = 14, SQL_SERVER_FAILOVER_CLUSTER_INSTANCE = 15, SHAREPOINT = 16, ACTIVE_DIRECTORY = 17, SAP_NETWEAVER_STANDARD = 18, SAP_NETWEAVER_DISTRIBUTED = 19, SAP_NETWEAVER_HIGH_AVAILABILITY = 20 }
+	export enum Tier { CUSTOM = 'CUSTOM', DEFAULT = 'DEFAULT', DOT_NET_CORE = 'DOT_NET_CORE', DOT_NET_WORKER = 'DOT_NET_WORKER', DOT_NET_WEB_TIER = 'DOT_NET_WEB_TIER', DOT_NET_WEB = 'DOT_NET_WEB', SQL_SERVER = 'SQL_SERVER', SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP = 'SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP', MYSQL = 'MYSQL', POSTGRESQL = 'POSTGRESQL', JAVA_JMX = 'JAVA_JMX', ORACLE = 'ORACLE', SAP_HANA_MULTI_NODE = 'SAP_HANA_MULTI_NODE', SAP_HANA_SINGLE_NODE = 'SAP_HANA_SINGLE_NODE', SAP_HANA_HIGH_AVAILABILITY = 'SAP_HANA_HIGH_AVAILABILITY', SQL_SERVER_FAILOVER_CLUSTER_INSTANCE = 'SQL_SERVER_FAILOVER_CLUSTER_INSTANCE', SHAREPOINT = 'SHAREPOINT', ACTIVE_DIRECTORY = 'ACTIVE_DIRECTORY', SAP_NETWEAVER_STANDARD = 'SAP_NETWEAVER_STANDARD', SAP_NETWEAVER_DISTRIBUTED = 'SAP_NETWEAVER_DISTRIBUTED', SAP_NETWEAVER_HIGH_AVAILABILITY = 'SAP_NETWEAVER_HIGH_AVAILABILITY' }
 
 	export interface AddWorkloadRequest {
 
@@ -161,7 +161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryType { RESOURCE_GROUP_BASED = 0, ACCOUNT_BASED = 1 }
+	export enum DiscoveryType { RESOURCE_GROUP_BASED = 'RESOURCE_GROUP_BASED', ACCOUNT_BASED = 'ACCOUNT_BASED' }
 
 	export interface CreateApplicationRequest {
 		ResourceGroupName?: string;
@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupingType { ACCOUNT_BASED = 0 }
+	export enum GroupingType { ACCOUNT_BASED = 'ACCOUNT_BASED' }
 
 	export interface TagsAlreadyExistException {
 	}
@@ -557,7 +557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OsType { WINDOWS = 0, LINUX = 1 }
+	export enum OsType { WINDOWS = 'WINDOWS', LINUX = 'LINUX' }
 
 	export interface DetectedWorkload {
 	}
@@ -689,7 +689,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationType { INFRA_ONLY = 0, WORKLOAD_ONLY = 1, ALL = 2 }
+	export enum RecommendationType { INFRA_ONLY = 'INFRA_ONLY', WORKLOAD_ONLY = 'WORKLOAD_ONLY', ALL = 'ALL' }
 
 	export interface DescribeLogPatternResponse {
 		ResourceGroupName?: string;
@@ -902,9 +902,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogFilter { ERROR = 0, WARN = 1, INFO = 2 }
+	export enum LogFilter { ERROR = 'ERROR', WARN = 'WARN', INFO = 'INFO' }
 
-	export enum CloudWatchEventSource { EC2 = 0, CODE_DEPLOY = 1, HEALTH = 2, RDS = 3 }
+	export enum CloudWatchEventSource { EC2 = 'EC2', CODE_DEPLOY = 'CODE_DEPLOY', HEALTH = 'HEALTH', RDS = 'RDS' }
 
 	export interface DescribeObservationRequest {
 
@@ -994,9 +994,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { IGNORE = 0, RESOLVED = 1, PENDING = 2, RECURRING = 3, RECOVERING = 4 }
+	export enum Status { IGNORE = 'IGNORE', RESOLVED = 'RESOLVED', PENDING = 'PENDING', RECURRING = 'RECURRING', RECOVERING = 'RECOVERING' }
 
-	export enum SeverityLevel { Informative = 0, Low = 1, Medium = 2, High = 3 }
+	export enum SeverityLevel { Informative = 'Informative', Low = 'Low', Medium = 'Medium', High = 'High' }
 
 	export interface Feedback {
 	}
@@ -1008,9 +1008,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Visibility { IGNORED = 0, VISIBLE = 1 }
+	export enum Visibility { IGNORED = 'IGNORED', VISIBLE = 'VISIBLE' }
 
-	export enum ResolutionMethod { MANUAL = 0, AUTOMATIC = 1, UNRESOLVED = 2 }
+	export enum ResolutionMethod { MANUAL = 'MANUAL', AUTOMATIC = 'AUTOMATIC', UNRESOLVED = 'UNRESOLVED' }
 
 	export interface DescribeProblemRequest {
 
@@ -1254,9 +1254,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationEventStatus { INFO = 0, WARN = 1, ERROR = 2 }
+	export enum ConfigurationEventStatus { INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR' }
 
-	export enum ConfigurationEventResourceType { CLOUDWATCH_ALARM = 0, CLOUDWATCH_LOG = 1, CLOUDFORMATION = 2, SSM_ASSOCIATION = 3 }
+	export enum ConfigurationEventResourceType { CLOUDWATCH_ALARM = 'CLOUDWATCH_ALARM', CLOUDWATCH_LOG = 'CLOUDWATCH_LOG', CLOUDFORMATION = 'CLOUDFORMATION', SSM_ASSOCIATION = 'SSM_ASSOCIATION' }
 
 	export interface ListConfigurationHistoryRequest {
 		ResourceGroupName?: string;
@@ -1864,7 +1864,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateStatus { RESOLVED = 0 }
+	export enum UpdateStatus { RESOLVED = 'RESOLVED' }
 
 	export interface UpdateWorkloadResponse {
 		WorkloadId?: string;
@@ -1920,9 +1920,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FeedbackValue { NOT_SPECIFIED = 0, USEFUL = 1, NOT_USEFUL = 2 }
+	export enum FeedbackValue { NOT_SPECIFIED = 'NOT_SPECIFIED', USEFUL = 'USEFUL', NOT_USEFUL = 'NOT_USEFUL' }
 
-	export enum FeedbackKey { INSIGHTS_FEEDBACK = 0 }
+	export enum FeedbackKey { INSIGHTS_FEEDBACK = 'INSIGHTS_FEEDBACK' }
 
 	@Injectable()
 	export class MyClient {
@@ -2241,71 +2241,71 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddWorkloadX_Amz_Target { 'EC2WindowsBarleyService.AddWorkload' = 0 }
+	export enum AddWorkloadX_Amz_Target { 'EC2WindowsBarleyService.AddWorkload' = 'EC2WindowsBarleyService.AddWorkload' }
 
-	export enum CreateApplicationX_Amz_Target { 'EC2WindowsBarleyService.CreateApplication' = 0 }
+	export enum CreateApplicationX_Amz_Target { 'EC2WindowsBarleyService.CreateApplication' = 'EC2WindowsBarleyService.CreateApplication' }
 
-	export enum CreateComponentX_Amz_Target { 'EC2WindowsBarleyService.CreateComponent' = 0 }
+	export enum CreateComponentX_Amz_Target { 'EC2WindowsBarleyService.CreateComponent' = 'EC2WindowsBarleyService.CreateComponent' }
 
-	export enum CreateLogPatternX_Amz_Target { 'EC2WindowsBarleyService.CreateLogPattern' = 0 }
+	export enum CreateLogPatternX_Amz_Target { 'EC2WindowsBarleyService.CreateLogPattern' = 'EC2WindowsBarleyService.CreateLogPattern' }
 
-	export enum DeleteApplicationX_Amz_Target { 'EC2WindowsBarleyService.DeleteApplication' = 0 }
+	export enum DeleteApplicationX_Amz_Target { 'EC2WindowsBarleyService.DeleteApplication' = 'EC2WindowsBarleyService.DeleteApplication' }
 
-	export enum DeleteComponentX_Amz_Target { 'EC2WindowsBarleyService.DeleteComponent' = 0 }
+	export enum DeleteComponentX_Amz_Target { 'EC2WindowsBarleyService.DeleteComponent' = 'EC2WindowsBarleyService.DeleteComponent' }
 
-	export enum DeleteLogPatternX_Amz_Target { 'EC2WindowsBarleyService.DeleteLogPattern' = 0 }
+	export enum DeleteLogPatternX_Amz_Target { 'EC2WindowsBarleyService.DeleteLogPattern' = 'EC2WindowsBarleyService.DeleteLogPattern' }
 
-	export enum DescribeApplicationX_Amz_Target { 'EC2WindowsBarleyService.DescribeApplication' = 0 }
+	export enum DescribeApplicationX_Amz_Target { 'EC2WindowsBarleyService.DescribeApplication' = 'EC2WindowsBarleyService.DescribeApplication' }
 
-	export enum DescribeComponentX_Amz_Target { 'EC2WindowsBarleyService.DescribeComponent' = 0 }
+	export enum DescribeComponentX_Amz_Target { 'EC2WindowsBarleyService.DescribeComponent' = 'EC2WindowsBarleyService.DescribeComponent' }
 
-	export enum DescribeComponentConfigurationX_Amz_Target { 'EC2WindowsBarleyService.DescribeComponentConfiguration' = 0 }
+	export enum DescribeComponentConfigurationX_Amz_Target { 'EC2WindowsBarleyService.DescribeComponentConfiguration' = 'EC2WindowsBarleyService.DescribeComponentConfiguration' }
 
-	export enum DescribeComponentConfigurationRecommendationX_Amz_Target { 'EC2WindowsBarleyService.DescribeComponentConfigurationRecommendation' = 0 }
+	export enum DescribeComponentConfigurationRecommendationX_Amz_Target { 'EC2WindowsBarleyService.DescribeComponentConfigurationRecommendation' = 'EC2WindowsBarleyService.DescribeComponentConfigurationRecommendation' }
 
-	export enum DescribeLogPatternX_Amz_Target { 'EC2WindowsBarleyService.DescribeLogPattern' = 0 }
+	export enum DescribeLogPatternX_Amz_Target { 'EC2WindowsBarleyService.DescribeLogPattern' = 'EC2WindowsBarleyService.DescribeLogPattern' }
 
-	export enum DescribeObservationX_Amz_Target { 'EC2WindowsBarleyService.DescribeObservation' = 0 }
+	export enum DescribeObservationX_Amz_Target { 'EC2WindowsBarleyService.DescribeObservation' = 'EC2WindowsBarleyService.DescribeObservation' }
 
-	export enum DescribeProblemX_Amz_Target { 'EC2WindowsBarleyService.DescribeProblem' = 0 }
+	export enum DescribeProblemX_Amz_Target { 'EC2WindowsBarleyService.DescribeProblem' = 'EC2WindowsBarleyService.DescribeProblem' }
 
-	export enum DescribeProblemObservationsX_Amz_Target { 'EC2WindowsBarleyService.DescribeProblemObservations' = 0 }
+	export enum DescribeProblemObservationsX_Amz_Target { 'EC2WindowsBarleyService.DescribeProblemObservations' = 'EC2WindowsBarleyService.DescribeProblemObservations' }
 
-	export enum DescribeWorkloadX_Amz_Target { 'EC2WindowsBarleyService.DescribeWorkload' = 0 }
+	export enum DescribeWorkloadX_Amz_Target { 'EC2WindowsBarleyService.DescribeWorkload' = 'EC2WindowsBarleyService.DescribeWorkload' }
 
-	export enum ListApplicationsX_Amz_Target { 'EC2WindowsBarleyService.ListApplications' = 0 }
+	export enum ListApplicationsX_Amz_Target { 'EC2WindowsBarleyService.ListApplications' = 'EC2WindowsBarleyService.ListApplications' }
 
-	export enum ListComponentsX_Amz_Target { 'EC2WindowsBarleyService.ListComponents' = 0 }
+	export enum ListComponentsX_Amz_Target { 'EC2WindowsBarleyService.ListComponents' = 'EC2WindowsBarleyService.ListComponents' }
 
-	export enum ListConfigurationHistoryX_Amz_Target { 'EC2WindowsBarleyService.ListConfigurationHistory' = 0 }
+	export enum ListConfigurationHistoryX_Amz_Target { 'EC2WindowsBarleyService.ListConfigurationHistory' = 'EC2WindowsBarleyService.ListConfigurationHistory' }
 
-	export enum ListLogPatternSetsX_Amz_Target { 'EC2WindowsBarleyService.ListLogPatternSets' = 0 }
+	export enum ListLogPatternSetsX_Amz_Target { 'EC2WindowsBarleyService.ListLogPatternSets' = 'EC2WindowsBarleyService.ListLogPatternSets' }
 
-	export enum ListLogPatternsX_Amz_Target { 'EC2WindowsBarleyService.ListLogPatterns' = 0 }
+	export enum ListLogPatternsX_Amz_Target { 'EC2WindowsBarleyService.ListLogPatterns' = 'EC2WindowsBarleyService.ListLogPatterns' }
 
-	export enum ListProblemsX_Amz_Target { 'EC2WindowsBarleyService.ListProblems' = 0 }
+	export enum ListProblemsX_Amz_Target { 'EC2WindowsBarleyService.ListProblems' = 'EC2WindowsBarleyService.ListProblems' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'EC2WindowsBarleyService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'EC2WindowsBarleyService.ListTagsForResource' = 'EC2WindowsBarleyService.ListTagsForResource' }
 
-	export enum ListWorkloadsX_Amz_Target { 'EC2WindowsBarleyService.ListWorkloads' = 0 }
+	export enum ListWorkloadsX_Amz_Target { 'EC2WindowsBarleyService.ListWorkloads' = 'EC2WindowsBarleyService.ListWorkloads' }
 
-	export enum RemoveWorkloadX_Amz_Target { 'EC2WindowsBarleyService.RemoveWorkload' = 0 }
+	export enum RemoveWorkloadX_Amz_Target { 'EC2WindowsBarleyService.RemoveWorkload' = 'EC2WindowsBarleyService.RemoveWorkload' }
 
-	export enum TagResourceX_Amz_Target { 'EC2WindowsBarleyService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'EC2WindowsBarleyService.TagResource' = 'EC2WindowsBarleyService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'EC2WindowsBarleyService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'EC2WindowsBarleyService.UntagResource' = 'EC2WindowsBarleyService.UntagResource' }
 
-	export enum UpdateApplicationX_Amz_Target { 'EC2WindowsBarleyService.UpdateApplication' = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'EC2WindowsBarleyService.UpdateApplication' = 'EC2WindowsBarleyService.UpdateApplication' }
 
-	export enum UpdateComponentX_Amz_Target { 'EC2WindowsBarleyService.UpdateComponent' = 0 }
+	export enum UpdateComponentX_Amz_Target { 'EC2WindowsBarleyService.UpdateComponent' = 'EC2WindowsBarleyService.UpdateComponent' }
 
-	export enum UpdateComponentConfigurationX_Amz_Target { 'EC2WindowsBarleyService.UpdateComponentConfiguration' = 0 }
+	export enum UpdateComponentConfigurationX_Amz_Target { 'EC2WindowsBarleyService.UpdateComponentConfiguration' = 'EC2WindowsBarleyService.UpdateComponentConfiguration' }
 
-	export enum UpdateLogPatternX_Amz_Target { 'EC2WindowsBarleyService.UpdateLogPattern' = 0 }
+	export enum UpdateLogPatternX_Amz_Target { 'EC2WindowsBarleyService.UpdateLogPattern' = 'EC2WindowsBarleyService.UpdateLogPattern' }
 
-	export enum UpdateProblemX_Amz_Target { 'EC2WindowsBarleyService.UpdateProblem' = 0 }
+	export enum UpdateProblemX_Amz_Target { 'EC2WindowsBarleyService.UpdateProblem' = 'EC2WindowsBarleyService.UpdateProblem' }
 
-	export enum UpdateWorkloadX_Amz_Target { 'EC2WindowsBarleyService.UpdateWorkload' = 0 }
+	export enum UpdateWorkloadX_Amz_Target { 'EC2WindowsBarleyService.UpdateWorkload' = 'EC2WindowsBarleyService.UpdateWorkload' }
 
 }
 

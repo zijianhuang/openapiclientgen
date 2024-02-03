@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApprovalResultDecision { DECISION_UNSPECIFIED = 0, APPROVED = 1, REJECTED = 2 }
+	export enum ApprovalResultDecision { DECISION_UNSPECIFIED = 'DECISION_UNSPECIFIED', APPROVED = 'APPROVED', REJECTED = 'REJECTED' }
 
 
 	/** Request to approve or reject a pending build. */
@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HashType { NONE = 0, SHA256 = 1, MD5 = 2, SHA512 = 3 }
+	export enum HashType { NONE = 'NONE', SHA256 = 'SHA256', MD5 = 'MD5', SHA512 = 'SHA512' }
 
 
 	/** Artifacts produced by a build that should be uploaded upon successful completion of all build steps. */
@@ -924,7 +924,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullRequestFilterCommentControl { COMMENTS_DISABLED = 0, COMMENTS_ENABLED = 1, COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY = 2 }
+	export enum PullRequestFilterCommentControl { COMMENTS_DISABLED = 'COMMENTS_DISABLED', COMMENTS_ENABLED = 'COMMENTS_ENABLED', COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY = 'COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY' }
 
 
 	/** Push contains filter properties for matching GitHub git pushes. */
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildApprovalState { STATE_UNSPECIFIED = 0, PENDING = 1, APPROVED = 2, REJECTED = 3, CANCELLED = 4 }
+	export enum BuildApprovalState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', APPROVED = 'APPROVED', REJECTED = 'REJECTED', CANCELLED = 'CANCELLED' }
 
 
 	/** Secrets and secret environment variables. */
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailureInfoType { FAILURE_TYPE_UNSPECIFIED = 0, PUSH_FAILED = 1, PUSH_IMAGE_NOT_FOUND = 2, PUSH_NOT_AUTHORIZED = 3, LOGGING_FAILURE = 4, USER_BUILD_STEP = 5, FETCH_SOURCE_FAILED = 6 }
+	export enum FailureInfoType { FAILURE_TYPE_UNSPECIFIED = 'FAILURE_TYPE_UNSPECIFIED', PUSH_FAILED = 'PUSH_FAILED', PUSH_IMAGE_NOT_FOUND = 'PUSH_IMAGE_NOT_FOUND', PUSH_NOT_AUTHORIZED = 'PUSH_NOT_AUTHORIZED', LOGGING_FAILURE = 'LOGGING_FAILURE', USER_BUILD_STEP = 'USER_BUILD_STEP', FETCH_SOURCE_FAILED = 'FETCH_SOURCE_FAILED' }
 
 
 	/** Optional arguments to enable specific features of builds. */
@@ -1360,13 +1360,13 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildOptionsDefaultLogsBucketBehavior { DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED = 0, REGIONAL_USER_OWNED_BUCKET = 1 }
+	export enum BuildOptionsDefaultLogsBucketBehavior { DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED = 'DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED', REGIONAL_USER_OWNED_BUCKET = 'REGIONAL_USER_OWNED_BUCKET' }
 
-	export enum BuildOptionsLogStreamingOption { STREAM_DEFAULT = 0, STREAM_ON = 1, STREAM_OFF = 2 }
+	export enum BuildOptionsLogStreamingOption { STREAM_DEFAULT = 'STREAM_DEFAULT', STREAM_ON = 'STREAM_ON', STREAM_OFF = 'STREAM_OFF' }
 
-	export enum BuildOptionsLogging { LOGGING_UNSPECIFIED = 0, LEGACY = 1, GCS_ONLY = 2, STACKDRIVER_ONLY = 3, CLOUD_LOGGING_ONLY = 4, NONE = 5 }
+	export enum BuildOptionsLogging { LOGGING_UNSPECIFIED = 'LOGGING_UNSPECIFIED', LEGACY = 'LEGACY', GCS_ONLY = 'GCS_ONLY', STACKDRIVER_ONLY = 'STACKDRIVER_ONLY', CLOUD_LOGGING_ONLY = 'CLOUD_LOGGING_ONLY', NONE = 'NONE' }
 
-	export enum BuildOptionsMachineType { UNSPECIFIED = 0, N1_HIGHCPU_8 = 1, N1_HIGHCPU_32 = 2, E2_HIGHCPU_8 = 3, E2_HIGHCPU_32 = 4, E2_MEDIUM = 5 }
+	export enum BuildOptionsMachineType { UNSPECIFIED = 'UNSPECIFIED', N1_HIGHCPU_8 = 'N1_HIGHCPU_8', N1_HIGHCPU_32 = 'N1_HIGHCPU_32', E2_HIGHCPU_8 = 'E2_HIGHCPU_8', E2_HIGHCPU_32 = 'E2_HIGHCPU_32', E2_MEDIUM = 'E2_MEDIUM' }
 
 
 	/** Details about how a build should be executed on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information. */
@@ -1389,9 +1389,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildOptionsRequestedVerifyOption { NOT_VERIFIED = 0, VERIFIED = 1 }
+	export enum BuildOptionsRequestedVerifyOption { NOT_VERIFIED = 'NOT_VERIFIED', VERIFIED = 'VERIFIED' }
 
-	export enum BuildOptionsSubstitutionOption { MUST_MATCH = 0, ALLOW_LOOSE = 1 }
+	export enum BuildOptionsSubstitutionOption { MUST_MATCH = 'MUST_MATCH', ALLOW_LOOSE = 'ALLOW_LOOSE' }
 
 
 	/** Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution. */
@@ -1821,7 +1821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageSourceSourceFetcher { SOURCE_FETCHER_UNSPECIFIED = 0, GSUTIL = 1, GCS_FETCHER = 2 }
+	export enum StorageSourceSourceFetcher { SOURCE_FETCHER_UNSPECIFIED = 'SOURCE_FETCHER_UNSPECIFIED', GSUTIL = 'GSUTIL', GCS_FETCHER = 'GCS_FETCHER' }
 
 
 	/** Location of the source manifest in Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher). */
@@ -1894,7 +1894,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildStatus { STATUS_UNKNOWN = 0, PENDING = 1, QUEUED = 2, WORKING = 3, SUCCESS = 4, FAILURE = 5, INTERNAL_ERROR = 6, TIMEOUT = 7, CANCELLED = 8, EXPIRED = 9 }
+	export enum BuildStatus { STATUS_UNKNOWN = 'STATUS_UNKNOWN', PENDING = 'PENDING', QUEUED = 'QUEUED', WORKING = 'WORKING', SUCCESS = 'SUCCESS', FAILURE = 'FAILURE', INTERNAL_ERROR = 'INTERNAL_ERROR', TIMEOUT = 'TIMEOUT', CANCELLED = 'CANCELLED', EXPIRED = 'EXPIRED' }
 
 
 	/** A step in the build pipeline. */
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WarningPriority { PRIORITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ALERT = 3 }
+	export enum WarningPriority { PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED', INFO = 'INFO', WARNING = 'WARNING', ALERT = 'ALERT' }
 
 
 	/** Metadata for build operations. */
@@ -2198,7 +2198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildTriggerEventType { EVENT_TYPE_UNSPECIFIED = 0, REPO = 1, WEBHOOK = 2, PUBSUB = 3, MANUAL = 4 }
+	export enum BuildTriggerEventType { EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED', REPO = 'REPO', WEBHOOK = 'WEBHOOK', PUBSUB = 'PUBSUB', MANUAL = 'MANUAL' }
 
 
 	/** GitFileSource describes a file within a (possibly remote) code repository. */
@@ -2263,7 +2263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GitFileSourceRepoType { UNKNOWN = 0, CLOUD_SOURCE_REPOSITORIES = 1, GITHUB = 2, BITBUCKET_SERVER = 3, GITLAB = 4, BITBUCKET_CLOUD = 5 }
+	export enum GitFileSourceRepoType { UNKNOWN = 'UNKNOWN', CLOUD_SOURCE_REPOSITORIES = 'CLOUD_SOURCE_REPOSITORIES', GITHUB = 'GITHUB', BITBUCKET_SERVER = 'BITBUCKET_SERVER', GITLAB = 'GITLAB', BITBUCKET_CLOUD = 'BITBUCKET_CLOUD' }
 
 
 	/** GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received. */
@@ -2495,7 +2495,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildTriggerIncludeBuildLogs { INCLUDE_BUILD_LOGS_UNSPECIFIED = 0, INCLUDE_BUILD_LOGS_WITH_STATUS = 1 }
+	export enum BuildTriggerIncludeBuildLogs { INCLUDE_BUILD_LOGS_UNSPECIFIED = 'INCLUDE_BUILD_LOGS_UNSPECIFIED', INCLUDE_BUILD_LOGS_WITH_STATUS = 'INCLUDE_BUILD_LOGS_WITH_STATUS' }
 
 
 	/** PubsubConfig describes the configuration of a trigger that creates a build whenever a Pub/Sub message is published. */
@@ -2539,7 +2539,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PubsubConfigState { STATE_UNSPECIFIED = 0, OK = 1, SUBSCRIPTION_DELETED = 2, TOPIC_DELETED = 3, SUBSCRIPTION_MISCONFIGURED = 4 }
+	export enum PubsubConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', OK = 'OK', SUBSCRIPTION_DELETED = 'SUBSCRIPTION_DELETED', TOPIC_DELETED = 'TOPIC_DELETED', SUBSCRIPTION_MISCONFIGURED = 'SUBSCRIPTION_MISCONFIGURED' }
 
 
 	/** The configuration of a trigger that creates a build whenever an event from Repo API is received. */
@@ -2575,7 +2575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryEventConfigRepositoryType { REPOSITORY_TYPE_UNSPECIFIED = 0, GITHUB = 1, GITHUB_ENTERPRISE = 2, GITLAB_ENTERPRISE = 3, BITBUCKET_DATA_CENTER = 4, BITBUCKET_CLOUD = 5 }
+	export enum RepositoryEventConfigRepositoryType { REPOSITORY_TYPE_UNSPECIFIED = 'REPOSITORY_TYPE_UNSPECIFIED', GITHUB = 'GITHUB', GITHUB_ENTERPRISE = 'GITHUB_ENTERPRISE', GITLAB_ENTERPRISE = 'GITLAB_ENTERPRISE', BITBUCKET_DATA_CENTER = 'BITBUCKET_DATA_CENTER', BITBUCKET_CLOUD = 'BITBUCKET_CLOUD' }
 
 
 	/** GitRepoSource describes a repo and ref of a code repository. */
@@ -2661,7 +2661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookConfigState { STATE_UNSPECIFIED = 0, OK = 1, SECRET_DELETED = 2 }
+	export enum WebhookConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', OK = 'OK', SECRET_DELETED = 'SECRET_DELETED' }
 
 
 	/** Request to cancel an ongoing build. */
@@ -3545,7 +3545,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigEgressOption { EGRESS_OPTION_UNSPECIFIED = 0, NO_PUBLIC_EGRESS = 1, PUBLIC_EGRESS = 2 }
+	export enum NetworkConfigEgressOption { EGRESS_OPTION_UNSPECIFIED = 'EGRESS_OPTION_UNSPECIFIED', NO_PUBLIC_EGRESS = 'NO_PUBLIC_EGRESS', PUBLIC_EGRESS = 'PUBLIC_EGRESS' }
 
 
 	/** Defines the configuration to be used for creating workers in the pool. */
@@ -3575,7 +3575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkerPoolState { STATE_UNSPECIFIED = 0, CREATING = 1, RUNNING = 2, DELETING = 3, DELETED = 4, UPDATING = 5 }
+	export enum WorkerPoolState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', RUNNING = 'RUNNING', DELETING = 'DELETING', DELETED = 'DELETED', UPDATING = 'UPDATING' }
 
 
 	/** This resource represents a long-running operation that is the result of a network API call. */

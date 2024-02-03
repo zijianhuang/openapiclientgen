@@ -662,7 +662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerHttpGetScheme { http = 0, https = 1 }
+	export enum ContainerHttpGetScheme { http = 'http', https = 'https' }
 
 
 	/** The port exposed on the container instance. */
@@ -698,7 +698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerPortProtocol { TCP = 0, UDP = 1 }
+	export enum ContainerPortProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 
 	/** The resource requirements. */
@@ -794,7 +794,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GpuResourceSku { K80 = 0, P100 = 1, V100 = 2 }
+	export enum GpuResourceSku { K80 = 'K80', P100 = 'P100', V100 = 'V100' }
 
 
 	/** The resource requests. */
@@ -1132,7 +1132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogAnalyticsLogType { ContainerInsights = 0, ContainerInstanceLogs = 1 }
+	export enum LogAnalyticsLogType { ContainerInsights = 'ContainerInsights', ContainerInstanceLogs = 'ContainerInstanceLogs' }
 
 
 	/** DNS configuration for the container group. */
@@ -1323,7 +1323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpAddressType { Public = 0, Private = 1 }
+	export enum IpAddressType { Public = 'Public', Private = 'Private' }
 
 
 	/** Container group network profile information. */
@@ -1352,9 +1352,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerGroupPropertiesOsType { Windows = 0, Linux = 1 }
+	export enum ContainerGroupPropertiesOsType { Windows = 'Windows', Linux = 'Linux' }
 
-	export enum ContainerGroupPropertiesRestartPolicy { Always = 0, OnFailure = 1, Never = 2 }
+	export enum ContainerGroupPropertiesRestartPolicy { Always = 'Always', OnFailure = 'OnFailure', Never = 'Never' }
 
 
 	/** The properties of the volume. */
@@ -1465,7 +1465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerGroupIdentityType { SystemAssigned = 0, UserAssigned = 1, 'SystemAssigned, UserAssigned' = 2, None = 3 }
+	export enum ContainerGroupIdentityType { SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned', None = 'None' }
 
 	export interface ContainerGroupIdentityUserAssignedIdentities {
 
@@ -1662,7 +1662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationOrigin { User = 0, System = 1 }
+	export enum OperationOrigin { User = 'User', System = 'System' }
 
 
 	/** The operation list response that contains all operations for Azure Container Instance service. */

@@ -167,7 +167,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetLatestCountryDataByNameFormat { json = 0, xml = 1 }
+	export enum GetLatestCountryDataByNameFormat { json = 'json', xml = 'xml' }
 
 	export interface GetLatestCountryDataByNameReturn {
 		confirmed?: number | null;
@@ -305,7 +305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDailyReportAllCountriesDate_format { 'YYYY-MM-DD' = 0, 'YYYY-DD-MM' = 1, 'DD-MM-YYYY' = 2, 'MM-DD-YYYY' = 3 }
+	export enum GetDailyReportAllCountriesDate_format { 'YYYY-MM-DD' = 'YYYY-MM-DD', 'YYYY-DD-MM' = 'YYYY-DD-MM', 'DD-MM-YYYY' = 'DD-MM-YYYY', 'MM-DD-YYYY' = 'MM-DD-YYYY' }
 
 	export interface GetDailyReportAllCountriesReturn {
 		country?: string | null;

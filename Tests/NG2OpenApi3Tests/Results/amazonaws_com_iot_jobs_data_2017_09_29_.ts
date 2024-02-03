@@ -59,7 +59,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobExecutionStatus { QUEUED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, TIMED_OUT = 4, REJECTED = 5, REMOVED = 6, CANCELED = 7 }
+	export enum JobExecutionStatus { QUEUED = 'QUEUED', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT', REJECTED = 'REJECTED', REMOVED = 'REMOVED', CANCELED = 'CANCELED' }
 
 	export interface DetailsMap {
 	}

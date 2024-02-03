@@ -854,7 +854,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class ShipmentClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -896,12 +896,6 @@ export namespace MyNS {
 		 */
 		CancelShipment(shipmentId: string): Observable<Shipment> {
 			return this.http.post<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/cancel', null, {});
-		}
-	}
-
-	@Injectable()
-	export class Shipping_quoteClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

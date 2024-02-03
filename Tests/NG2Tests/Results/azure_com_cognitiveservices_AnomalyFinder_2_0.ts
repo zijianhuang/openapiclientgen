@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIErrorCode { InvalidCustomInterval = 0, BadArgument = 1, InvalidGranularity = 2, InvalidPeriod = 3, InvalidModelArgument = 4, InvalidSeries = 5 }
+	export enum APIErrorCode { InvalidCustomInterval = 'InvalidCustomInterval', BadArgument = 'BadArgument', InvalidGranularity = 'InvalidGranularity', InvalidPeriod = 'InvalidPeriod', InvalidModelArgument = 'InvalidModelArgument', InvalidSeries = 'InvalidSeries' }
 
 	export interface EntireDetectResponse {
 
@@ -251,7 +251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestGranularity { yearly = 0, monthly = 1, weekly = 2, daily = 3, hourly = 4, minutely = 5 }
+	export enum RequestGranularity { yearly = 'yearly', monthly = 'monthly', weekly = 'weekly', daily = 'daily', hourly = 'hourly', minutely = 'minutely' }
 
 	@Injectable()
 	export class MyClient {

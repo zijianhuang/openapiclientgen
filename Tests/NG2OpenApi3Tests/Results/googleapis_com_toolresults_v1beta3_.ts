@@ -336,11 +336,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BasicPerfSampleSeriesPerfMetricType { perfMetricTypeUnspecified = 0, memory = 1, cpu = 2, network = 3, graphics = 4 }
+	export enum BasicPerfSampleSeriesPerfMetricType { perfMetricTypeUnspecified = 'perfMetricTypeUnspecified', memory = 'memory', cpu = 'cpu', network = 'network', graphics = 'graphics' }
 
-	export enum BasicPerfSampleSeriesPerfUnit { perfUnitUnspecified = 0, kibibyte = 1, percent = 2, bytesPerSecond = 3, framesPerSecond = 4, byte = 5 }
+	export enum BasicPerfSampleSeriesPerfUnit { perfUnitUnspecified = 'perfUnitUnspecified', kibibyte = 'kibibyte', percent = 'percent', bytesPerSecond = 'bytesPerSecond', framesPerSecond = 'framesPerSecond', byte = 'byte' }
 
-	export enum BasicPerfSampleSeriesSampleSeriesLabel { sampleSeriesTypeUnspecified = 0, memoryRssPrivate = 1, memoryRssShared = 2, memoryRssTotal = 3, memoryTotal = 4, cpuUser = 5, cpuKernel = 6, cpuTotal = 7, ntBytesTransferred = 8, ntBytesReceived = 9, networkSent = 10, networkReceived = 11, graphicsFrameRate = 12 }
+	export enum BasicPerfSampleSeriesSampleSeriesLabel { sampleSeriesTypeUnspecified = 'sampleSeriesTypeUnspecified', memoryRssPrivate = 'memoryRssPrivate', memoryRssShared = 'memoryRssShared', memoryRssTotal = 'memoryRssTotal', memoryTotal = 'memoryTotal', cpuUser = 'cpuUser', cpuKernel = 'cpuKernel', cpuTotal = 'cpuTotal', ntBytesTransferred = 'ntBytesTransferred', ntBytesReceived = 'ntBytesReceived', networkSent = 'networkSent', networkReceived = 'networkReceived', graphicsFrameRate = 'graphicsFrameRate' }
 
 
 	/** The request must provide up to a maximum of 5000 samples to be created; a larger sample size will cause an INVALID_ARGUMENT error */
@@ -868,9 +868,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OutcomeSummary { unset = 0, success = 1, failure = 2, inconclusive = 3, skipped = 4, flaky = 5 }
+	export enum OutcomeSummary { unset = 'unset', success = 'success', failure = 'failure', inconclusive = 'inconclusive', skipped = 'skipped', flaky = 'flaky' }
 
-	export enum MergedResultState { unknownState = 0, pending = 1, inProgress = 2, complete = 3 }
+	export enum MergedResultState { unknownState = 'unknownState', pending = 'pending', inProgress = 'inProgress', complete = 'complete' }
 
 
 	/** A summary of a test suite result either parsed from XML or uploaded directly by a user. Note: the API related comments are for StepService only. This message is also being used in ExecutionService in a read only mode for the corresponding step. */
@@ -1397,7 +1397,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistoryTestPlatform { unknownPlatform = 0, android = 1, ios = 2 }
+	export enum HistoryTestPlatform { unknownPlatform = 'unknownPlatform', android = 'android', ios = 'ios' }
 
 
 	/** An image, with a link to the main image and a thumbnail. */
@@ -1962,7 +1962,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuggestionClusterProtoCategory { unknownCategory = 0, contentLabeling = 1, touchTargetSize = 2, lowContrast = 3, implementation = 4 }
+	export enum SuggestionClusterProtoCategory { unknownCategory = 'unknownCategory', contentLabeling = 'contentLabeling', touchTargetSize = 'touchTargetSize', lowContrast = 'lowContrast', implementation = 'implementation' }
 
 	export interface SuggestionProto {
 
@@ -2053,7 +2053,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuggestionProtoPriority { unknownPriority = 0, error = 1, warning = 2, info = 3 }
+	export enum SuggestionProtoPriority { unknownPriority = 'unknownPriority', error = 'error', warning = 'warning', info = 'info' }
 
 
 	/** A rectangular region. */
@@ -2385,11 +2385,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TestIssueCategory { unspecifiedCategory = 0, common = 1, robo = 2 }
+	export enum TestIssueCategory { unspecifiedCategory = 'unspecifiedCategory', common = 'common', robo = 'robo' }
 
-	export enum TestIssueSeverity { unspecifiedSeverity = 0, info = 1, suggestion = 2, warning = 3, severe = 4 }
+	export enum TestIssueSeverity { unspecifiedSeverity = 'unspecifiedSeverity', info = 'info', suggestion = 'suggestion', warning = 'warning', severe = 'severe' }
 
-	export enum TestIssueType { unspecifiedType = 0, fatalException = 1, nativeCrash = 2, anr = 3, unusedRoboDirective = 4, compatibleWithOrchestrator = 5, launcherActivityNotFound = 6, startActivityNotFound = 7, incompleteRoboScriptExecution = 8, completeRoboScriptExecution = 9, failedToInstall = 10, availableDeepLinks = 11, nonSdkApiUsageViolation = 12, nonSdkApiUsageReport = 13, encounteredNonAndroidUiWidgetScreen = 14, encounteredLoginScreen = 15, performedGoogleLogin = 16, iosException = 17, iosCrash = 18, performedMonkeyActions = 19, usedRoboDirective = 20, usedRoboIgnoreDirective = 21, insufficientCoverage = 22, inAppPurchases = 23, crashDialogError = 24, uiElementsTooDeep = 25, blankScreen = 26, overlappingUiElements = 27, unityException = 28, deviceOutOfMemory = 29, logcatCollectionError = 30, detectedAppSplashScreen = 31, assetIssue = 32 }
+	export enum TestIssueType { unspecifiedType = 'unspecifiedType', fatalException = 'fatalException', nativeCrash = 'nativeCrash', anr = 'anr', unusedRoboDirective = 'unusedRoboDirective', compatibleWithOrchestrator = 'compatibleWithOrchestrator', launcherActivityNotFound = 'launcherActivityNotFound', startActivityNotFound = 'startActivityNotFound', incompleteRoboScriptExecution = 'incompleteRoboScriptExecution', completeRoboScriptExecution = 'completeRoboScriptExecution', failedToInstall = 'failedToInstall', availableDeepLinks = 'availableDeepLinks', nonSdkApiUsageViolation = 'nonSdkApiUsageViolation', nonSdkApiUsageReport = 'nonSdkApiUsageReport', encounteredNonAndroidUiWidgetScreen = 'encounteredNonAndroidUiWidgetScreen', encounteredLoginScreen = 'encounteredLoginScreen', performedGoogleLogin = 'performedGoogleLogin', iosException = 'iosException', iosCrash = 'iosCrash', performedMonkeyActions = 'performedMonkeyActions', usedRoboDirective = 'usedRoboDirective', usedRoboIgnoreDirective = 'usedRoboIgnoreDirective', insufficientCoverage = 'insufficientCoverage', inAppPurchases = 'inAppPurchases', crashDialogError = 'crashDialogError', uiElementsTooDeep = 'uiElementsTooDeep', blankScreen = 'blankScreen', overlappingUiElements = 'overlappingUiElements', unityException = 'unityException', deviceOutOfMemory = 'deviceOutOfMemory', logcatCollectionError = 'logcatCollectionError', detectedAppSplashScreen = 'detectedAppSplashScreen', assetIssue = 'assetIssue' }
 
 
 	/** Testing timing break down to know phases. */
@@ -2541,7 +2541,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestCaseStatus { passed = 0, failed = 1, error = 2, skipped = 3, flaky = 4 }
+	export enum TestCaseStatus { passed = 'passed', failed = 'failed', error = 'error', skipped = 'skipped', flaky = 'flaky' }
 
 
 	/** A warning that there were issues in logcat collection. */
@@ -2718,7 +2718,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NonSdkApiList { NONE = 0, WHITE = 1, BLACK = 2, GREY = 3, GREY_MAX_O = 4, GREY_MAX_P = 5, GREY_MAX_Q = 6, GREY_MAX_R = 7 }
+	export enum NonSdkApiList { NONE = 'NONE', WHITE = 'WHITE', BLACK = 'BLACK', GREY = 'GREY', GREY_MAX_O = 'GREY_MAX_O', GREY_MAX_P = 'GREY_MAX_P', GREY_MAX_Q = 'GREY_MAX_Q', GREY_MAX_R = 'GREY_MAX_R' }
 
 
 	/** Additional details for a non-sdk API usage violation. */

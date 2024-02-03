@@ -154,9 +154,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SolutionType { QuickSolution = 0, DeepInvestigation = 1, BestPractices = 2 }
+	export enum SolutionType { QuickSolution = 'QuickSolution', DeepInvestigation = 'DeepInvestigation', BestPractices = 'BestPractices' }
 
-	export enum DetectorAbnormalTimePeriodType { ServiceIncident = 0, AppDeployment = 1, AppCrash = 2, RuntimeIssueDetected = 3, AseDeployment = 4, UserIssue = 5, PlatformIssue = 6, Other = 7 }
+	export enum DetectorAbnormalTimePeriodType { ServiceIncident = 'ServiceIncident', AppDeployment = 'AppDeployment', AppCrash = 'AppCrash', RuntimeIssueDetected = 'RuntimeIssueDetected', AseDeployment = 'AseDeployment', UserIssue = 'UserIssue', PlatformIssue = 'PlatformIssue', Other = 'Other' }
 
 
 	/** Class Representing Detector Evidence used for analysis */
@@ -709,7 +709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RenderingType { NoGraph = 0, Table = 1, TimeSeries = 2, TimeSeriesPerInstance = 3 }
+	export enum RenderingType { NoGraph = 'NoGraph', Table = 'Table', TimeSeries = 'TimeSeries', TimeSeriesPerInstance = 'TimeSeriesPerInstance' }
 
 
 	/** Collection of Diagnostic Detectors */

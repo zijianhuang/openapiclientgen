@@ -71,7 +71,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HomeDirectoryType { PATH = 0, LOGICAL = 1 }
+	export enum HomeDirectoryType { PATH = 'PATH', LOGICAL = 'LOGICAL' }
 
 
 	/** <p>Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.</p> <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> */
@@ -249,7 +249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgreementStatusType { ACTIVE = 0, INACTIVE = 1 }
+	export enum AgreementStatusType { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group. */
@@ -377,15 +377,15 @@ export namespace MyNS {
 
 	}
 
-	export enum CompressionEnum { ZLIB = 0, DISABLED = 1 }
+	export enum CompressionEnum { ZLIB = 'ZLIB', DISABLED = 'DISABLED' }
 
-	export enum EncryptionAlg { AES128_CBC = 0, AES192_CBC = 1, AES256_CBC = 2, NONE = 3 }
+	export enum EncryptionAlg { AES128_CBC = 'AES128_CBC', AES192_CBC = 'AES192_CBC', AES256_CBC = 'AES256_CBC', NONE = 'NONE' }
 
-	export enum SigningAlg { SHA256 = 0, SHA384 = 1, SHA512 = 2, SHA1 = 3, NONE = 4 }
+	export enum SigningAlg { SHA256 = 'SHA256', SHA384 = 'SHA384', SHA512 = 'SHA512', SHA1 = 'SHA1', NONE = 'NONE' }
 
-	export enum MdnSigningAlg { SHA256 = 0, SHA384 = 1, SHA512 = 2, SHA1 = 3, NONE = 4, DEFAULT = 5 }
+	export enum MdnSigningAlg { SHA256 = 'SHA256', SHA384 = 'SHA384', SHA512 = 'SHA512', SHA1 = 'SHA1', NONE = 'NONE', DEFAULT = 'DEFAULT' }
 
-	export enum MdnResponse { SYNC = 0, NONE = 1 }
+	export enum MdnResponse { SYNC = 'SYNC', NONE = 'NONE' }
 
 
 	/** Contains the details for an SFTP connector object. The connector object is used for transferring files to and from a partner's SFTP server. */
@@ -448,7 +448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileType { LOCAL = 0, PARTNER = 1 }
+	export enum ProfileType { LOCAL = 'LOCAL', PARTNER = 'PARTNER' }
 
 	export interface CreateServerResponse {
 
@@ -511,7 +511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Domain { S3 = 0, EFS = 1 }
+	export enum Domain { S3 = 'S3', EFS = 'EFS' }
 
 
 	/** <p>The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP address to your server's endpoint.</p> <note> <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p> </note> */
@@ -536,7 +536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointType { PUBLIC = 0, VPC = 1, VPC_ENDPOINT = 2 }
+	export enum EndpointType { PUBLIC = 'PUBLIC', VPC = 'VPC', VPC_ENDPOINT = 'VPC_ENDPOINT' }
 
 
 	/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
@@ -567,13 +567,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SftpAuthenticationMethods { PASSWORD = 0, PUBLIC_KEY = 1, PUBLIC_KEY_OR_PASSWORD = 2, PUBLIC_KEY_AND_PASSWORD = 3 }
+	export enum SftpAuthenticationMethods { PASSWORD = 'PASSWORD', PUBLIC_KEY = 'PUBLIC_KEY', PUBLIC_KEY_OR_PASSWORD = 'PUBLIC_KEY_OR_PASSWORD', PUBLIC_KEY_AND_PASSWORD = 'PUBLIC_KEY_AND_PASSWORD' }
 
 
 	/** <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p> <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p> <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p> <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p> */
-	export enum IdentityProviderType { SERVICE_MANAGED = 0, API_GATEWAY = 1, AWS_DIRECTORY_SERVICE = 2, AWS_LAMBDA = 3 }
+	export enum IdentityProviderType { SERVICE_MANAGED = 'SERVICE_MANAGED', API_GATEWAY = 'API_GATEWAY', AWS_DIRECTORY_SERVICE = 'AWS_DIRECTORY_SERVICE', AWS_LAMBDA = 'AWS_LAMBDA' }
 
-	export enum Protocol { SFTP = 0, FTP = 1, FTPS = 2, AS2 = 3 }
+	export enum Protocol { SFTP = 'SFTP', FTP = 'FTP', FTPS = 'FTPS', AS2 = 'AS2' }
 
 
 	/**  The protocol settings that are configured for your server.  */
@@ -599,11 +599,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TlsSessionResumptionMode { DISABLED = 0, ENABLED = 1, ENFORCED = 2 }
+	export enum TlsSessionResumptionMode { DISABLED = 'DISABLED', ENABLED = 'ENABLED', ENFORCED = 'ENFORCED' }
 
-	export enum SetStatOption { DEFAULT = 0, ENABLE_NO_OP = 1 }
+	export enum SetStatOption { DEFAULT = 'DEFAULT', ENABLE_NO_OP = 'ENABLE_NO_OP' }
 
-	export enum As2Transport { HTTP = 0 }
+	export enum As2Transport { HTTP = 'HTTP' }
 
 
 	/** Container for the <code>WorkflowDetail</code> data type. It is used by actions that trigger a workflow to begin execution. */
@@ -786,7 +786,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowStepType { COPY = 0, CUSTOM = 1, TAG = 2, DELETE = 3, DECRYPT = 4 }
+	export enum WorkflowStepType { COPY = 'COPY', CUSTOM = 'CUSTOM', TAG = 'TAG', DELETE = 'DELETE', DECRYPT = 'DECRYPT' }
 
 
 	/** Each step type has its own <code>StepDetails</code> structure. */
@@ -868,7 +868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OverwriteExisting { TRUE = 0, FALSE = 1 }
+	export enum OverwriteExisting { TRUE = 'TRUE', FALSE = 'FALSE' }
 
 
 	/** Each step type has its own <code>StepDetails</code> structure. */
@@ -998,7 +998,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { PGP = 0 }
+	export enum EncryptionType { PGP = 'PGP' }
 
 	export interface DeleteAccessRequest {
 
@@ -1443,11 +1443,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateUsageType { SIGNING = 0, ENCRYPTION = 1 }
+	export enum CertificateUsageType { SIGNING = 'SIGNING', ENCRYPTION = 'ENCRYPTION' }
 
-	export enum CertificateStatusType { ACTIVE = 0, PENDING_ROTATION = 1, INACTIVE = 2 }
+	export enum CertificateStatusType { ACTIVE = 'ACTIVE', PENDING_ROTATION = 'PENDING_ROTATION', INACTIVE = 'INACTIVE' }
 
-	export enum CertificateType { CERTIFICATE = 0, CERTIFICATE_WITH_PRIVATE_KEY = 1 }
+	export enum CertificateType { CERTIFICATE = 'CERTIFICATE', CERTIFICATE_WITH_PRIVATE_KEY = 'CERTIFICATE_WITH_PRIVATE_KEY' }
 
 	export interface DescribeCertificateRequest {
 
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStatus { IN_PROGRESS = 0, COMPLETED = 1, EXCEPTION = 2, HANDLING_EXCEPTION = 3 }
+	export enum ExecutionStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', EXCEPTION = 'EXCEPTION', HANDLING_EXCEPTION = 'HANDLING_EXCEPTION' }
 
 
 	/** Specifies the steps in the workflow, as well as the steps to execute in case of any errors during workflow execution. */
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionErrorType { PERMISSION_DENIED = 0, CUSTOM_STEP_FAILED = 1, THROTTLED = 2, ALREADY_EXISTS = 3, NOT_FOUND = 4, BAD_REQUEST = 5, TIMEOUT = 6, INTERNAL_SERVER_ERROR = 7 }
+	export enum ExecutionErrorType { PERMISSION_DENIED = 'PERMISSION_DENIED', CUSTOM_STEP_FAILED = 'CUSTOM_STEP_FAILED', THROTTLED = 'THROTTLED', ALREADY_EXISTS = 'ALREADY_EXISTS', NOT_FOUND = 'NOT_FOUND', BAD_REQUEST = 'BAD_REQUEST', TIMEOUT = 'TIMEOUT', INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR' }
 
 	export interface DescribeExecutionRequest {
 
@@ -2058,7 +2058,7 @@ export namespace MyNS {
 
 
 	/** <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p> */
-	export enum State { OFFLINE = 0, ONLINE = 1, STARTING = 2, STOPPING = 3, START_FAILED = 4, STOP_FAILED = 5 }
+	export enum State { OFFLINE = 'OFFLINE', ONLINE = 'ONLINE', STARTING = 'STARTING', STOPPING = 'STOPPING', START_FAILED = 'START_FAILED', STOP_FAILED = 'STOP_FAILED' }
 
 	export interface DescribeServerRequest {
 
@@ -3254,7 +3254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomStepStatus { SUCCESS = 0, FAILURE = 1 }
+	export enum CustomStepStatus { SUCCESS = 'SUCCESS', FAILURE = 'FAILURE' }
 
 	export interface StartFileTransferResponse {
 
@@ -4468,123 +4468,123 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateAccessX_Amz_Target { 'TransferService.CreateAccess' = 0 }
+	export enum CreateAccessX_Amz_Target { 'TransferService.CreateAccess' = 'TransferService.CreateAccess' }
 
-	export enum CreateAgreementX_Amz_Target { 'TransferService.CreateAgreement' = 0 }
+	export enum CreateAgreementX_Amz_Target { 'TransferService.CreateAgreement' = 'TransferService.CreateAgreement' }
 
-	export enum CreateConnectorX_Amz_Target { 'TransferService.CreateConnector' = 0 }
+	export enum CreateConnectorX_Amz_Target { 'TransferService.CreateConnector' = 'TransferService.CreateConnector' }
 
-	export enum CreateProfileX_Amz_Target { 'TransferService.CreateProfile' = 0 }
+	export enum CreateProfileX_Amz_Target { 'TransferService.CreateProfile' = 'TransferService.CreateProfile' }
 
-	export enum CreateServerX_Amz_Target { 'TransferService.CreateServer' = 0 }
+	export enum CreateServerX_Amz_Target { 'TransferService.CreateServer' = 'TransferService.CreateServer' }
 
-	export enum CreateUserX_Amz_Target { 'TransferService.CreateUser' = 0 }
+	export enum CreateUserX_Amz_Target { 'TransferService.CreateUser' = 'TransferService.CreateUser' }
 
-	export enum CreateWorkflowX_Amz_Target { 'TransferService.CreateWorkflow' = 0 }
+	export enum CreateWorkflowX_Amz_Target { 'TransferService.CreateWorkflow' = 'TransferService.CreateWorkflow' }
 
-	export enum DeleteAccessX_Amz_Target { 'TransferService.DeleteAccess' = 0 }
+	export enum DeleteAccessX_Amz_Target { 'TransferService.DeleteAccess' = 'TransferService.DeleteAccess' }
 
-	export enum DeleteAgreementX_Amz_Target { 'TransferService.DeleteAgreement' = 0 }
+	export enum DeleteAgreementX_Amz_Target { 'TransferService.DeleteAgreement' = 'TransferService.DeleteAgreement' }
 
-	export enum DeleteCertificateX_Amz_Target { 'TransferService.DeleteCertificate' = 0 }
+	export enum DeleteCertificateX_Amz_Target { 'TransferService.DeleteCertificate' = 'TransferService.DeleteCertificate' }
 
-	export enum DeleteConnectorX_Amz_Target { 'TransferService.DeleteConnector' = 0 }
+	export enum DeleteConnectorX_Amz_Target { 'TransferService.DeleteConnector' = 'TransferService.DeleteConnector' }
 
-	export enum DeleteHostKeyX_Amz_Target { 'TransferService.DeleteHostKey' = 0 }
+	export enum DeleteHostKeyX_Amz_Target { 'TransferService.DeleteHostKey' = 'TransferService.DeleteHostKey' }
 
-	export enum DeleteProfileX_Amz_Target { 'TransferService.DeleteProfile' = 0 }
+	export enum DeleteProfileX_Amz_Target { 'TransferService.DeleteProfile' = 'TransferService.DeleteProfile' }
 
-	export enum DeleteServerX_Amz_Target { 'TransferService.DeleteServer' = 0 }
+	export enum DeleteServerX_Amz_Target { 'TransferService.DeleteServer' = 'TransferService.DeleteServer' }
 
-	export enum DeleteSshPublicKeyX_Amz_Target { 'TransferService.DeleteSshPublicKey' = 0 }
+	export enum DeleteSshPublicKeyX_Amz_Target { 'TransferService.DeleteSshPublicKey' = 'TransferService.DeleteSshPublicKey' }
 
-	export enum DeleteUserX_Amz_Target { 'TransferService.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'TransferService.DeleteUser' = 'TransferService.DeleteUser' }
 
-	export enum DeleteWorkflowX_Amz_Target { 'TransferService.DeleteWorkflow' = 0 }
+	export enum DeleteWorkflowX_Amz_Target { 'TransferService.DeleteWorkflow' = 'TransferService.DeleteWorkflow' }
 
-	export enum DescribeAccessX_Amz_Target { 'TransferService.DescribeAccess' = 0 }
+	export enum DescribeAccessX_Amz_Target { 'TransferService.DescribeAccess' = 'TransferService.DescribeAccess' }
 
-	export enum DescribeAgreementX_Amz_Target { 'TransferService.DescribeAgreement' = 0 }
+	export enum DescribeAgreementX_Amz_Target { 'TransferService.DescribeAgreement' = 'TransferService.DescribeAgreement' }
 
-	export enum DescribeCertificateX_Amz_Target { 'TransferService.DescribeCertificate' = 0 }
+	export enum DescribeCertificateX_Amz_Target { 'TransferService.DescribeCertificate' = 'TransferService.DescribeCertificate' }
 
-	export enum DescribeConnectorX_Amz_Target { 'TransferService.DescribeConnector' = 0 }
+	export enum DescribeConnectorX_Amz_Target { 'TransferService.DescribeConnector' = 'TransferService.DescribeConnector' }
 
-	export enum DescribeExecutionX_Amz_Target { 'TransferService.DescribeExecution' = 0 }
+	export enum DescribeExecutionX_Amz_Target { 'TransferService.DescribeExecution' = 'TransferService.DescribeExecution' }
 
-	export enum DescribeHostKeyX_Amz_Target { 'TransferService.DescribeHostKey' = 0 }
+	export enum DescribeHostKeyX_Amz_Target { 'TransferService.DescribeHostKey' = 'TransferService.DescribeHostKey' }
 
-	export enum DescribeProfileX_Amz_Target { 'TransferService.DescribeProfile' = 0 }
+	export enum DescribeProfileX_Amz_Target { 'TransferService.DescribeProfile' = 'TransferService.DescribeProfile' }
 
-	export enum DescribeSecurityPolicyX_Amz_Target { 'TransferService.DescribeSecurityPolicy' = 0 }
+	export enum DescribeSecurityPolicyX_Amz_Target { 'TransferService.DescribeSecurityPolicy' = 'TransferService.DescribeSecurityPolicy' }
 
-	export enum DescribeServerX_Amz_Target { 'TransferService.DescribeServer' = 0 }
+	export enum DescribeServerX_Amz_Target { 'TransferService.DescribeServer' = 'TransferService.DescribeServer' }
 
-	export enum DescribeUserX_Amz_Target { 'TransferService.DescribeUser' = 0 }
+	export enum DescribeUserX_Amz_Target { 'TransferService.DescribeUser' = 'TransferService.DescribeUser' }
 
-	export enum DescribeWorkflowX_Amz_Target { 'TransferService.DescribeWorkflow' = 0 }
+	export enum DescribeWorkflowX_Amz_Target { 'TransferService.DescribeWorkflow' = 'TransferService.DescribeWorkflow' }
 
-	export enum ImportCertificateX_Amz_Target { 'TransferService.ImportCertificate' = 0 }
+	export enum ImportCertificateX_Amz_Target { 'TransferService.ImportCertificate' = 'TransferService.ImportCertificate' }
 
-	export enum ImportHostKeyX_Amz_Target { 'TransferService.ImportHostKey' = 0 }
+	export enum ImportHostKeyX_Amz_Target { 'TransferService.ImportHostKey' = 'TransferService.ImportHostKey' }
 
-	export enum ImportSshPublicKeyX_Amz_Target { 'TransferService.ImportSshPublicKey' = 0 }
+	export enum ImportSshPublicKeyX_Amz_Target { 'TransferService.ImportSshPublicKey' = 'TransferService.ImportSshPublicKey' }
 
-	export enum ListAccessesX_Amz_Target { 'TransferService.ListAccesses' = 0 }
+	export enum ListAccessesX_Amz_Target { 'TransferService.ListAccesses' = 'TransferService.ListAccesses' }
 
-	export enum ListAgreementsX_Amz_Target { 'TransferService.ListAgreements' = 0 }
+	export enum ListAgreementsX_Amz_Target { 'TransferService.ListAgreements' = 'TransferService.ListAgreements' }
 
-	export enum ListCertificatesX_Amz_Target { 'TransferService.ListCertificates' = 0 }
+	export enum ListCertificatesX_Amz_Target { 'TransferService.ListCertificates' = 'TransferService.ListCertificates' }
 
-	export enum ListConnectorsX_Amz_Target { 'TransferService.ListConnectors' = 0 }
+	export enum ListConnectorsX_Amz_Target { 'TransferService.ListConnectors' = 'TransferService.ListConnectors' }
 
-	export enum ListExecutionsX_Amz_Target { 'TransferService.ListExecutions' = 0 }
+	export enum ListExecutionsX_Amz_Target { 'TransferService.ListExecutions' = 'TransferService.ListExecutions' }
 
-	export enum ListHostKeysX_Amz_Target { 'TransferService.ListHostKeys' = 0 }
+	export enum ListHostKeysX_Amz_Target { 'TransferService.ListHostKeys' = 'TransferService.ListHostKeys' }
 
-	export enum ListProfilesX_Amz_Target { 'TransferService.ListProfiles' = 0 }
+	export enum ListProfilesX_Amz_Target { 'TransferService.ListProfiles' = 'TransferService.ListProfiles' }
 
-	export enum ListSecurityPoliciesX_Amz_Target { 'TransferService.ListSecurityPolicies' = 0 }
+	export enum ListSecurityPoliciesX_Amz_Target { 'TransferService.ListSecurityPolicies' = 'TransferService.ListSecurityPolicies' }
 
-	export enum ListServersX_Amz_Target { 'TransferService.ListServers' = 0 }
+	export enum ListServersX_Amz_Target { 'TransferService.ListServers' = 'TransferService.ListServers' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'TransferService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'TransferService.ListTagsForResource' = 'TransferService.ListTagsForResource' }
 
-	export enum ListUsersX_Amz_Target { 'TransferService.ListUsers' = 0 }
+	export enum ListUsersX_Amz_Target { 'TransferService.ListUsers' = 'TransferService.ListUsers' }
 
-	export enum ListWorkflowsX_Amz_Target { 'TransferService.ListWorkflows' = 0 }
+	export enum ListWorkflowsX_Amz_Target { 'TransferService.ListWorkflows' = 'TransferService.ListWorkflows' }
 
-	export enum SendWorkflowStepStateX_Amz_Target { 'TransferService.SendWorkflowStepState' = 0 }
+	export enum SendWorkflowStepStateX_Amz_Target { 'TransferService.SendWorkflowStepState' = 'TransferService.SendWorkflowStepState' }
 
-	export enum StartFileTransferX_Amz_Target { 'TransferService.StartFileTransfer' = 0 }
+	export enum StartFileTransferX_Amz_Target { 'TransferService.StartFileTransfer' = 'TransferService.StartFileTransfer' }
 
-	export enum StartServerX_Amz_Target { 'TransferService.StartServer' = 0 }
+	export enum StartServerX_Amz_Target { 'TransferService.StartServer' = 'TransferService.StartServer' }
 
-	export enum StopServerX_Amz_Target { 'TransferService.StopServer' = 0 }
+	export enum StopServerX_Amz_Target { 'TransferService.StopServer' = 'TransferService.StopServer' }
 
-	export enum TagResourceX_Amz_Target { 'TransferService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'TransferService.TagResource' = 'TransferService.TagResource' }
 
-	export enum TestConnectionX_Amz_Target { 'TransferService.TestConnection' = 0 }
+	export enum TestConnectionX_Amz_Target { 'TransferService.TestConnection' = 'TransferService.TestConnection' }
 
-	export enum TestIdentityProviderX_Amz_Target { 'TransferService.TestIdentityProvider' = 0 }
+	export enum TestIdentityProviderX_Amz_Target { 'TransferService.TestIdentityProvider' = 'TransferService.TestIdentityProvider' }
 
-	export enum UntagResourceX_Amz_Target { 'TransferService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'TransferService.UntagResource' = 'TransferService.UntagResource' }
 
-	export enum UpdateAccessX_Amz_Target { 'TransferService.UpdateAccess' = 0 }
+	export enum UpdateAccessX_Amz_Target { 'TransferService.UpdateAccess' = 'TransferService.UpdateAccess' }
 
-	export enum UpdateAgreementX_Amz_Target { 'TransferService.UpdateAgreement' = 0 }
+	export enum UpdateAgreementX_Amz_Target { 'TransferService.UpdateAgreement' = 'TransferService.UpdateAgreement' }
 
-	export enum UpdateCertificateX_Amz_Target { 'TransferService.UpdateCertificate' = 0 }
+	export enum UpdateCertificateX_Amz_Target { 'TransferService.UpdateCertificate' = 'TransferService.UpdateCertificate' }
 
-	export enum UpdateConnectorX_Amz_Target { 'TransferService.UpdateConnector' = 0 }
+	export enum UpdateConnectorX_Amz_Target { 'TransferService.UpdateConnector' = 'TransferService.UpdateConnector' }
 
-	export enum UpdateHostKeyX_Amz_Target { 'TransferService.UpdateHostKey' = 0 }
+	export enum UpdateHostKeyX_Amz_Target { 'TransferService.UpdateHostKey' = 'TransferService.UpdateHostKey' }
 
-	export enum UpdateProfileX_Amz_Target { 'TransferService.UpdateProfile' = 0 }
+	export enum UpdateProfileX_Amz_Target { 'TransferService.UpdateProfile' = 'TransferService.UpdateProfile' }
 
-	export enum UpdateServerX_Amz_Target { 'TransferService.UpdateServer' = 0 }
+	export enum UpdateServerX_Amz_Target { 'TransferService.UpdateServer' = 'TransferService.UpdateServer' }
 
-	export enum UpdateUserX_Amz_Target { 'TransferService.UpdateUser' = 0 }
+	export enum UpdateUserX_Amz_Target { 'TransferService.UpdateUser' = 'TransferService.UpdateUser' }
 
 }
 

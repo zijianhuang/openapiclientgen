@@ -120,9 +120,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityAssessmentMetadataPropertiesAssessmentType { BuiltIn = 0, CustomPolicy = 1, CustomerManaged = 2, VerifiedPartner = 3 }
+	export enum SecurityAssessmentMetadataPropertiesAssessmentType { BuiltIn = 'BuiltIn', CustomPolicy = 'CustomPolicy', CustomerManaged = 'CustomerManaged', VerifiedPartner = 'VerifiedPartner' }
 
-	export enum SecurityAssessmentMetadataPropertiesImplementationEffort { Low = 0, Moderate = 1, High = 2 }
+	export enum SecurityAssessmentMetadataPropertiesImplementationEffort { Low = 'Low', Moderate = 'Moderate', High = 'High' }
 
 
 	/** Describes the partner that created the assessment */
@@ -159,7 +159,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityAssessmentMetadataPropertiesSeverity { Low = 0, Medium = 1, High = 2 }
+	export enum SecurityAssessmentMetadataPropertiesSeverity { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** List of security assessment metadata */

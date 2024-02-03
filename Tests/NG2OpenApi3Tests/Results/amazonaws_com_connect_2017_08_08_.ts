@@ -147,7 +147,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageType { S3 = 0, KINESIS_VIDEO_STREAM = 1, KINESIS_STREAM = 2, KINESIS_FIREHOSE = 3 }
+	export enum StorageType { S3 = 'S3', KINESIS_VIDEO_STREAM = 'KINESIS_VIDEO_STREAM', KINESIS_STREAM = 'KINESIS_STREAM', KINESIS_FIREHOSE = 'KINESIS_FIREHOSE' }
 
 
 	/** Information about the Amazon Simple Storage Service (Amazon S3) storage type. */
@@ -206,7 +206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { KMS = 0 }
+	export enum EncryptionType { KMS = 'KMS' }
 
 
 	/** Configuration information of a Kinesis video stream. */
@@ -340,7 +340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Channel { VOICE = 0, CHAT = 1, TASK = 2 }
+	export enum Channel { VOICE = 'VOICE', CHAT = 'CHAT', TASK = 'TASK' }
 
 	export interface AssociateSecurityKeyResponse {
 		AssociationId?: string;
@@ -581,7 +581,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EvaluationFormQuestionType { TEXT = 0, SINGLESELECT = 1, NUMERIC = 2 }
+	export enum EvaluationFormQuestionType { TEXT = 'TEXT', SINGLESELECT = 'SINGLESELECT', NUMERIC = 'NUMERIC' }
 
 
 	/** Information about properties for a question in an evaluation form. The question type properties must be either for a numeric question or a single select question. */
@@ -699,7 +699,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumericQuestionPropertyAutomationLabel { OVERALL_CUSTOMER_SENTIMENT_SCORE = 0, OVERALL_AGENT_SENTIMENT_SCORE = 1, NON_TALK_TIME = 2, NON_TALK_TIME_PERCENTAGE = 3, NUMBER_OF_INTERRUPTIONS = 4, CONTACT_DURATION = 5, AGENT_INTERACTION_DURATION = 6, CUSTOMER_HOLD_TIME = 7 }
+	export enum NumericQuestionPropertyAutomationLabel { OVERALL_CUSTOMER_SENTIMENT_SCORE = 'OVERALL_CUSTOMER_SENTIMENT_SCORE', OVERALL_AGENT_SENTIMENT_SCORE = 'OVERALL_AGENT_SENTIMENT_SCORE', NON_TALK_TIME = 'NON_TALK_TIME', NON_TALK_TIME_PERCENTAGE = 'NON_TALK_TIME_PERCENTAGE', NUMBER_OF_INTERRUPTIONS = 'NUMBER_OF_INTERRUPTIONS', CONTACT_DURATION = 'CONTACT_DURATION', AGENT_INTERACTION_DURATION = 'AGENT_INTERACTION_DURATION', CUSTOMER_HOLD_TIME = 'CUSTOMER_HOLD_TIME' }
 
 
 	/** Information about the options in single select questions. */
@@ -756,7 +756,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EvaluationFormSingleSelectQuestionDisplayMode { DROPDOWN = 0, RADIO = 1 }
+	export enum EvaluationFormSingleSelectQuestionDisplayMode { DROPDOWN = 'DROPDOWN', RADIO = 'RADIO' }
 
 
 	/** Information about the automation configuration in single select questions. Automation options are evaluated in order, and the first matched option is applied. If no automation option matches, and there is a default option, then the default option is applied. */
@@ -828,11 +828,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SingleSelectQuestionRuleCategoryAutomationCondition { PRESENT = 0, NOT_PRESENT = 1 }
+	export enum SingleSelectQuestionRuleCategoryAutomationCondition { PRESENT = 'PRESENT', NOT_PRESENT = 'NOT_PRESENT' }
 
-	export enum EvaluationFormScoringMode { QUESTION_ONLY = 0, SECTION_ONLY = 1 }
+	export enum EvaluationFormScoringMode { QUESTION_ONLY = 'QUESTION_ONLY', SECTION_ONLY = 'SECTION_ONLY' }
 
-	export enum EvaluationFormScoringStatus { ENABLED = 0, DISABLED = 1 }
+	export enum EvaluationFormScoringStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface CreateHoursOfOperationResponse {
 		HoursOfOperationId?: string;
@@ -877,7 +877,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HoursOfOperationDays { SUNDAY = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6 }
+	export enum HoursOfOperationDays { SUNDAY = 'SUNDAY', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY' }
 
 
 	/** The start time or end time for an hours of operation. */
@@ -973,7 +973,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParticipantRole { AGENT = 0, CUSTOMER = 1, SYSTEM = 2, CUSTOM_BOT = 3 }
+	export enum ParticipantRole { AGENT = 'AGENT', CUSTOMER = 'CUSTOMER', SYSTEM = 'SYSTEM', CUSTOM_BOT = 'CUSTOM_BOT' }
 
 	export interface CreatePromptResponse {
 		PromptARN?: string;
@@ -1023,7 +1023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuickConnectType { USER = 0, QUEUE = 1, PHONE_NUMBER = 2 }
+	export enum QuickConnectType { USER = 'USER', QUEUE = 'QUEUE', PHONE_NUMBER = 'PHONE_NUMBER' }
 
 
 	/** Contains information about the quick connect configuration settings for a user. The contact flow must be of type Transfer to Agent. */
@@ -1168,7 +1168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BehaviorType { ROUTE_CURRENT_CHANNEL_ONLY = 0, ROUTE_ANY_CHANNEL = 1 }
+	export enum BehaviorType { ROUTE_CURRENT_CHANNEL_ONLY = 'ROUTE_CURRENT_CHANNEL_ONLY', ROUTE_ANY_CHANNEL = 'ROUTE_ANY_CHANNEL' }
 
 	export interface CreateRuleResponse {
 
@@ -1194,7 +1194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceName { OnPostCallAnalysisAvailable = 0, OnRealTimeCallAnalysisAvailable = 1, OnPostChatAnalysisAvailable = 2, OnZendeskTicketCreate = 3, OnZendeskTicketStatusUpdate = 4, OnSalesforceCaseCreate = 5, OnContactEvaluationSubmit = 6 }
+	export enum EventSourceName { OnPostCallAnalysisAvailable = 'OnPostCallAnalysisAvailable', OnRealTimeCallAnalysisAvailable = 'OnRealTimeCallAnalysisAvailable', OnPostChatAnalysisAvailable = 'OnPostChatAnalysisAvailable', OnZendeskTicketCreate = 'OnZendeskTicketCreate', OnZendeskTicketStatusUpdate = 'OnZendeskTicketStatusUpdate', OnSalesforceCaseCreate = 'OnSalesforceCaseCreate', OnContactEvaluationSubmit = 'OnContactEvaluationSubmit' }
 
 
 	/** Information about the action to be performed when a rule is triggered. */
@@ -1221,7 +1221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { CREATE_TASK = 0, ASSIGN_CONTACT_CATEGORY = 1, GENERATE_EVENTBRIDGE_EVENT = 2, SEND_NOTIFICATION = 3 }
+	export enum ActionType { CREATE_TASK = 'CREATE_TASK', ASSIGN_CONTACT_CATEGORY = 'ASSIGN_CONTACT_CATEGORY', GENERATE_EVENTBRIDGE_EVENT = 'GENERATE_EVENTBRIDGE_EVENT', SEND_NOTIFICATION = 'SEND_NOTIFICATION' }
 
 
 	/** Information about the task action. */
@@ -1341,9 +1341,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationDeliveryType { EMAIL = 0 }
+	export enum NotificationDeliveryType { EMAIL = 'EMAIL' }
 
-	export enum NotificationContentType { PLAIN_TEXT = 0 }
+	export enum NotificationContentType { PLAIN_TEXT = 'PLAIN_TEXT' }
 
 
 	/** The type of notification recipient. */
@@ -1515,7 +1515,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskTemplateFieldType { NAME = 0, DESCRIPTION = 1, SCHEDULED_TIME = 2, QUICK_CONNECT = 3, URL = 4, NUMBER = 5, TEXT = 6, TEXT_AREA = 7, DATE_TIME = 8, BOOLEAN = 9, SINGLE_SELECT = 10, EMAIL = 11 }
+	export enum TaskTemplateFieldType { NAME = 'NAME', DESCRIPTION = 'DESCRIPTION', SCHEDULED_TIME = 'SCHEDULED_TIME', QUICK_CONNECT = 'QUICK_CONNECT', URL = 'URL', NUMBER = 'NUMBER', TEXT = 'TEXT', TEXT_AREA = 'TEXT_AREA', DATE_TIME = 'DATE_TIME', BOOLEAN = 'BOOLEAN', SINGLE_SELECT = 'SINGLE_SELECT', EMAIL = 'EMAIL' }
 
 	export interface PropertyValidationException {
 	}
@@ -1585,7 +1585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneType { SOFT_PHONE = 0, DESK_PHONE = 1 }
+	export enum PhoneType { SOFT_PHONE = 'SOFT_PHONE', DESK_PHONE = 'DESK_PHONE' }
 
 	export interface CreateUserHierarchyGroupResponse {
 		HierarchyGroupId?: string;
@@ -1634,7 +1634,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VocabularyState { CREATION_IN_PROGRESS = 0, ACTIVE = 1, CREATION_FAILED = 2, DELETE_IN_PROGRESS = 3 }
+	export enum VocabularyState { CREATION_IN_PROGRESS = 'CREATION_IN_PROGRESS', ACTIVE = 'ACTIVE', CREATION_FAILED = 'CREATION_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS' }
 
 	export interface DeactivateEvaluationFormResponse {
 
@@ -1795,7 +1795,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentStatusType { ROUTABLE = 0, CUSTOM = 1, OFFLINE = 2 }
+	export enum AgentStatusType { ROUTABLE = 'ROUTABLE', CUSTOM = 'CUSTOM', OFFLINE = 'OFFLINE' }
 
 	export interface TagMap {
 	}
@@ -1874,7 +1874,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactInitiationMethod { INBOUND = 0, OUTBOUND = 1, TRANSFER = 2, QUEUE_TRANSFER = 3, CALLBACK = 4, API = 5, DISCONNECT = 6, MONITOR = 7, EXTERNAL_OUTBOUND = 8 }
+	export enum ContactInitiationMethod { INBOUND = 'INBOUND', OUTBOUND = 'OUTBOUND', TRANSFER = 'TRANSFER', QUEUE_TRANSFER = 'QUEUE_TRANSFER', CALLBACK = 'CALLBACK', API = 'API', DISCONNECT = 'DISCONNECT', MONITOR = 'MONITOR', EXTERNAL_OUTBOUND = 'EXTERNAL_OUTBOUND' }
 
 
 	/** If this contact was queued, this contains information about the queue.  */
@@ -2084,7 +2084,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EvaluationStatus { DRAFT = 0, SUBMITTED = 1 }
+	export enum EvaluationStatus { DRAFT = 'DRAFT', SUBMITTED = 'SUBMITTED' }
 
 	export interface EvaluationScoresMap {
 	}
@@ -2220,9 +2220,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactFlowType { CONTACT_FLOW = 0, CUSTOMER_QUEUE = 1, CUSTOMER_HOLD = 2, CUSTOMER_WHISPER = 3, AGENT_HOLD = 4, AGENT_WHISPER = 5, OUTBOUND_WHISPER = 6, AGENT_TRANSFER = 7, QUEUE_TRANSFER = 8 }
+	export enum ContactFlowType { CONTACT_FLOW = 'CONTACT_FLOW', CUSTOMER_QUEUE = 'CUSTOMER_QUEUE', CUSTOMER_HOLD = 'CUSTOMER_HOLD', CUSTOMER_WHISPER = 'CUSTOMER_WHISPER', AGENT_HOLD = 'AGENT_HOLD', AGENT_WHISPER = 'AGENT_WHISPER', OUTBOUND_WHISPER = 'OUTBOUND_WHISPER', AGENT_TRANSFER = 'AGENT_TRANSFER', QUEUE_TRANSFER = 'QUEUE_TRANSFER' }
 
-	export enum ContactFlowState { ACTIVE = 0, ARCHIVED = 1 }
+	export enum ContactFlowState { ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED' }
 
 	export interface ContactFlowNotPublishedException {
 	}
@@ -2281,7 +2281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactFlowModuleStatus { PUBLISHED = 0, SAVED = 1 }
+	export enum ContactFlowModuleStatus { PUBLISHED = 'PUBLISHED', SAVED = 'SAVED' }
 
 	export interface DescribeEvaluationFormResponse {
 
@@ -2388,7 +2388,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EvaluationFormVersionStatus { DRAFT = 0, ACTIVE = 1 }
+	export enum EvaluationFormVersionStatus { DRAFT = 'DRAFT', ACTIVE = 'ACTIVE' }
 
 	export interface DescribeHoursOfOperationResponse {
 		HoursOfOperation?: HoursOfOperation;
@@ -2488,9 +2488,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DirectoryType { SAML = 0, CONNECT_MANAGED = 1, EXISTING_DIRECTORY = 2 }
+	export enum DirectoryType { SAML = 'SAML', CONNECT_MANAGED = 'CONNECT_MANAGED', EXISTING_DIRECTORY = 'EXISTING_DIRECTORY' }
 
-	export enum InstanceStatus { CREATION_IN_PROGRESS = 0, ACTIVE = 1, CREATION_FAILED = 2 }
+	export enum InstanceStatus { CREATION_IN_PROGRESS = 'CREATION_IN_PROGRESS', ACTIVE = 'ACTIVE', CREATION_FAILED = 'CREATION_FAILED' }
 
 
 	/** Relevant details why the instance was not successfully created. */
@@ -2540,7 +2540,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceAttributeType { INBOUND_CALLS = 0, OUTBOUND_CALLS = 1, CONTACTFLOW_LOGS = 2, CONTACT_LENS = 3, AUTO_RESOLVE_BEST_VOICES = 4, USE_CUSTOM_TTS_VOICES = 5, EARLY_MEDIA = 6, MULTI_PARTY_CONFERENCE = 7, HIGH_VOLUME_OUTBOUND = 8, ENHANCED_CONTACT_MONITORING = 9 }
+	export enum InstanceAttributeType { INBOUND_CALLS = 'INBOUND_CALLS', OUTBOUND_CALLS = 'OUTBOUND_CALLS', CONTACTFLOW_LOGS = 'CONTACTFLOW_LOGS', CONTACT_LENS = 'CONTACT_LENS', AUTO_RESOLVE_BEST_VOICES = 'AUTO_RESOLVE_BEST_VOICES', USE_CUSTOM_TTS_VOICES = 'USE_CUSTOM_TTS_VOICES', EARLY_MEDIA = 'EARLY_MEDIA', MULTI_PARTY_CONFERENCE = 'MULTI_PARTY_CONFERENCE', HIGH_VOLUME_OUTBOUND = 'HIGH_VOLUME_OUTBOUND', ENHANCED_CONTACT_MONITORING = 'ENHANCED_CONTACT_MONITORING' }
 
 	export interface DescribeInstanceStorageConfigResponse {
 		StorageConfig?: InstanceStorageConfig;
@@ -2629,9 +2629,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberCountryCode { AF = 0, AL = 1, DZ = 2, AS = 3, AD = 4, AO = 5, AI = 6, AQ = 7, AG = 8, AR = 9, AM = 10, AW = 11, AU = 12, AT = 13, AZ = 14, BS = 15, BH = 16, BD = 17, BB = 18, BY = 19, BE = 20, BZ = 21, BJ = 22, BM = 23, BT = 24, BO = 25, BA = 26, BW = 27, BR = 28, IO = 29, VG = 30, BN = 31, BG = 32, BF = 33, BI = 34, KH = 35, CM = 36, CA = 37, CV = 38, KY = 39, CF = 40, TD = 41, CL = 42, CN = 43, CX = 44, CC = 45, CO = 46, KM = 47, CK = 48, CR = 49, HR = 50, CU = 51, CW = 52, CY = 53, CZ = 54, CD = 55, DK = 56, DJ = 57, DM = 58, DO = 59, TL = 60, EC = 61, EG = 62, SV = 63, GQ = 64, ER = 65, EE = 66, ET = 67, FK = 68, FO = 69, FJ = 70, FI = 71, FR = 72, PF = 73, GA = 74, GM = 75, GE = 76, DE = 77, GH = 78, GI = 79, GR = 80, GL = 81, GD = 82, GU = 83, GT = 84, GG = 85, GN = 86, GW = 87, GY = 88, HT = 89, HN = 90, HK = 91, HU = 92, IS = 93, IN = 94, ID = 95, IR = 96, IQ = 97, IE = 98, IM = 99, IL = 100, IT = 101, CI = 102, JM = 103, JP = 104, JE = 105, JO = 106, KZ = 107, KE = 108, KI = 109, KW = 110, KG = 111, LA = 112, LV = 113, LB = 114, LS = 115, LR = 116, LY = 117, LI = 118, LT = 119, LU = 120, MO = 121, MK = 122, MG = 123, MW = 124, MY = 125, MV = 126, ML = 127, MT = 128, MH = 129, MR = 130, MU = 131, YT = 132, MX = 133, FM = 134, MD = 135, MC = 136, MN = 137, ME = 138, MS = 139, MA = 140, MZ = 141, MM = 142, NA = 143, NR = 144, NP = 145, NL = 146, AN = 147, NC = 148, NZ = 149, NI = 150, NE = 151, NG = 152, NU = 153, KP = 154, MP = 155, NO = 156, OM = 157, PK = 158, PW = 159, PA = 160, PG = 161, PY = 162, PE = 163, PH = 164, PN = 165, PL = 166, PT = 167, PR = 168, QA = 169, CG = 170, RE = 171, RO = 172, RU = 173, RW = 174, BL = 175, SH = 176, KN = 177, LC = 178, MF = 179, PM = 180, VC = 181, WS = 182, SM = 183, ST = 184, SA = 185, SN = 186, RS = 187, SC = 188, SL = 189, SG = 190, SX = 191, SK = 192, SI = 193, SB = 194, SO = 195, ZA = 196, KR = 197, ES = 198, LK = 199, SD = 200, SR = 201, SJ = 202, SZ = 203, SE = 204, CH = 205, SY = 206, TW = 207, TJ = 208, TZ = 209, TH = 210, TG = 211, TK = 212, TO = 213, TT = 214, TN = 215, TR = 216, TM = 217, TC = 218, TV = 219, VI = 220, UG = 221, UA = 222, AE = 223, GB = 224, US = 225, UY = 226, UZ = 227, VU = 228, VA = 229, VE = 230, VN = 231, WF = 232, EH = 233, YE = 234, ZM = 235, ZW = 236 }
+	export enum PhoneNumberCountryCode { AF = 'AF', AL = 'AL', DZ = 'DZ', AS = 'AS', AD = 'AD', AO = 'AO', AI = 'AI', AQ = 'AQ', AG = 'AG', AR = 'AR', AM = 'AM', AW = 'AW', AU = 'AU', AT = 'AT', AZ = 'AZ', BS = 'BS', BH = 'BH', BD = 'BD', BB = 'BB', BY = 'BY', BE = 'BE', BZ = 'BZ', BJ = 'BJ', BM = 'BM', BT = 'BT', BO = 'BO', BA = 'BA', BW = 'BW', BR = 'BR', IO = 'IO', VG = 'VG', BN = 'BN', BG = 'BG', BF = 'BF', BI = 'BI', KH = 'KH', CM = 'CM', CA = 'CA', CV = 'CV', KY = 'KY', CF = 'CF', TD = 'TD', CL = 'CL', CN = 'CN', CX = 'CX', CC = 'CC', CO = 'CO', KM = 'KM', CK = 'CK', CR = 'CR', HR = 'HR', CU = 'CU', CW = 'CW', CY = 'CY', CZ = 'CZ', CD = 'CD', DK = 'DK', DJ = 'DJ', DM = 'DM', DO = 'DO', TL = 'TL', EC = 'EC', EG = 'EG', SV = 'SV', GQ = 'GQ', ER = 'ER', EE = 'EE', ET = 'ET', FK = 'FK', FO = 'FO', FJ = 'FJ', FI = 'FI', FR = 'FR', PF = 'PF', GA = 'GA', GM = 'GM', GE = 'GE', DE = 'DE', GH = 'GH', GI = 'GI', GR = 'GR', GL = 'GL', GD = 'GD', GU = 'GU', GT = 'GT', GG = 'GG', GN = 'GN', GW = 'GW', GY = 'GY', HT = 'HT', HN = 'HN', HK = 'HK', HU = 'HU', IS = 'IS', IN = 'IN', ID = 'ID', IR = 'IR', IQ = 'IQ', IE = 'IE', IM = 'IM', IL = 'IL', IT = 'IT', CI = 'CI', JM = 'JM', JP = 'JP', JE = 'JE', JO = 'JO', KZ = 'KZ', KE = 'KE', KI = 'KI', KW = 'KW', KG = 'KG', LA = 'LA', LV = 'LV', LB = 'LB', LS = 'LS', LR = 'LR', LY = 'LY', LI = 'LI', LT = 'LT', LU = 'LU', MO = 'MO', MK = 'MK', MG = 'MG', MW = 'MW', MY = 'MY', MV = 'MV', ML = 'ML', MT = 'MT', MH = 'MH', MR = 'MR', MU = 'MU', YT = 'YT', MX = 'MX', FM = 'FM', MD = 'MD', MC = 'MC', MN = 'MN', ME = 'ME', MS = 'MS', MA = 'MA', MZ = 'MZ', MM = 'MM', NA = 'NA', NR = 'NR', NP = 'NP', NL = 'NL', AN = 'AN', NC = 'NC', NZ = 'NZ', NI = 'NI', NE = 'NE', NG = 'NG', NU = 'NU', KP = 'KP', MP = 'MP', NO = 'NO', OM = 'OM', PK = 'PK', PW = 'PW', PA = 'PA', PG = 'PG', PY = 'PY', PE = 'PE', PH = 'PH', PN = 'PN', PL = 'PL', PT = 'PT', PR = 'PR', QA = 'QA', CG = 'CG', RE = 'RE', RO = 'RO', RU = 'RU', RW = 'RW', BL = 'BL', SH = 'SH', KN = 'KN', LC = 'LC', MF = 'MF', PM = 'PM', VC = 'VC', WS = 'WS', SM = 'SM', ST = 'ST', SA = 'SA', SN = 'SN', RS = 'RS', SC = 'SC', SL = 'SL', SG = 'SG', SX = 'SX', SK = 'SK', SI = 'SI', SB = 'SB', SO = 'SO', ZA = 'ZA', KR = 'KR', ES = 'ES', LK = 'LK', SD = 'SD', SR = 'SR', SJ = 'SJ', SZ = 'SZ', SE = 'SE', CH = 'CH', SY = 'SY', TW = 'TW', TJ = 'TJ', TZ = 'TZ', TH = 'TH', TG = 'TG', TK = 'TK', TO = 'TO', TT = 'TT', TN = 'TN', TR = 'TR', TM = 'TM', TC = 'TC', TV = 'TV', VI = 'VI', UG = 'UG', UA = 'UA', AE = 'AE', GB = 'GB', US = 'US', UY = 'UY', UZ = 'UZ', VU = 'VU', VA = 'VA', VE = 'VE', VN = 'VN', WF = 'WF', EH = 'EH', YE = 'YE', ZM = 'ZM', ZW = 'ZW' }
 
-	export enum PhoneNumberType { TOLL_FREE = 0, DID = 1, UIFN = 2, SHARED = 3, THIRD_PARTY_TF = 4, THIRD_PARTY_DID = 5 }
+	export enum PhoneNumberType { TOLL_FREE = 'TOLL_FREE', DID = 'DID', UIFN = 'UIFN', SHARED = 'SHARED', THIRD_PARTY_TF = 'THIRD_PARTY_TF', THIRD_PARTY_DID = 'THIRD_PARTY_DID' }
 
 
 	/** <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a> at a later time to verify if the previous operation has completed.</p> </li> <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li> </ul> */
@@ -2653,7 +2653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberWorkflowStatus { CLAIMED = 0, IN_PROGRESS = 1, FAILED = 2 }
+	export enum PhoneNumberWorkflowStatus { CLAIMED = 'CLAIMED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED' }
 
 	export interface DescribePromptResponse {
 		Prompt?: Prompt;
@@ -2881,7 +2881,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentAvailabilityTimer { TIME_SINCE_LAST_ACTIVITY = 0, TIME_SINCE_LAST_INBOUND = 1 }
+	export enum AgentAvailabilityTimer { TIME_SINCE_LAST_ACTIVITY = 'TIME_SINCE_LAST_ACTIVITY', TIME_SINCE_LAST_INBOUND = 'TIME_SINCE_LAST_INBOUND' }
 
 	export interface DescribeRuleResponse {
 
@@ -2997,7 +2997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RulePublishStatus { DRAFT = 0, PUBLISHED = 1 }
+	export enum RulePublishStatus { DRAFT = 'DRAFT', PUBLISHED = 'PUBLISHED' }
 
 	export interface DescribeSecurityProfileResponse {
 		SecurityProfile?: SecurityProfile;
@@ -3096,7 +3096,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrafficDistributionGroupStatus { CREATION_IN_PROGRESS = 0, ACTIVE = 1, CREATION_FAILED = 2, PENDING_DELETION = 3, DELETION_FAILED = 4, UPDATE_IN_PROGRESS = 5 }
+	export enum TrafficDistributionGroupStatus { CREATION_IN_PROGRESS = 'CREATION_IN_PROGRESS', ACTIVE = 'ACTIVE', CREATION_FAILED = 'CREATION_FAILED', PENDING_DELETION = 'PENDING_DELETION', DELETION_FAILED = 'DELETION_FAILED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS' }
 
 	export interface DescribeUserResponse {
 		User?: User;
@@ -3414,7 +3414,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VocabularyLanguageCode { 'ar-AE' = 0, 'de-CH' = 1, 'de-DE' = 2, 'en-AB' = 3, 'en-AU' = 4, 'en-GB' = 5, 'en-IE' = 6, 'en-IN' = 7, 'en-US' = 8, 'en-WL' = 9, 'es-ES' = 10, 'es-US' = 11, 'fr-CA' = 12, 'fr-FR' = 13, 'hi-IN' = 14, 'it-IT' = 15, 'ja-JP' = 16, 'ko-KR' = 17, 'pt-BR' = 18, 'pt-PT' = 19, 'zh-CN' = 20, 'en-NZ' = 21, 'en-ZA' = 22 }
+	export enum VocabularyLanguageCode { 'ar-AE' = 'ar-AE', 'de-CH' = 'de-CH', 'de-DE' = 'de-DE', 'en-AB' = 'en-AB', 'en-AU' = 'en-AU', 'en-GB' = 'en-GB', 'en-IE' = 'en-IE', 'en-IN' = 'en-IN', 'en-US' = 'en-US', 'en-WL' = 'en-WL', 'es-ES' = 'es-ES', 'es-US' = 'es-US', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'hi-IN' = 'hi-IN', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'ko-KR' = 'ko-KR', 'pt-BR' = 'pt-BR', 'pt-PT' = 'pt-PT', 'zh-CN' = 'zh-CN', 'en-NZ' = 'en-NZ', 'en-ZA' = 'en-ZA' }
 
 	export interface DismissUserContactResponse {
 	}
@@ -3584,11 +3584,11 @@ export namespace MyNS {
 
 
 	/** The current metric names. */
-	export enum CurrentMetricName { AGENTS_ONLINE = 0, AGENTS_AVAILABLE = 1, AGENTS_ON_CALL = 2, AGENTS_NON_PRODUCTIVE = 3, AGENTS_AFTER_CONTACT_WORK = 4, AGENTS_ERROR = 5, AGENTS_STAFFED = 6, CONTACTS_IN_QUEUE = 7, OLDEST_CONTACT_AGE = 8, CONTACTS_SCHEDULED = 9, AGENTS_ON_CONTACT = 10, SLOTS_ACTIVE = 11, SLOTS_AVAILABLE = 12 }
+	export enum CurrentMetricName { AGENTS_ONLINE = 'AGENTS_ONLINE', AGENTS_AVAILABLE = 'AGENTS_AVAILABLE', AGENTS_ON_CALL = 'AGENTS_ON_CALL', AGENTS_NON_PRODUCTIVE = 'AGENTS_NON_PRODUCTIVE', AGENTS_AFTER_CONTACT_WORK = 'AGENTS_AFTER_CONTACT_WORK', AGENTS_ERROR = 'AGENTS_ERROR', AGENTS_STAFFED = 'AGENTS_STAFFED', CONTACTS_IN_QUEUE = 'CONTACTS_IN_QUEUE', OLDEST_CONTACT_AGE = 'OLDEST_CONTACT_AGE', CONTACTS_SCHEDULED = 'CONTACTS_SCHEDULED', AGENTS_ON_CONTACT = 'AGENTS_ON_CONTACT', SLOTS_ACTIVE = 'SLOTS_ACTIVE', SLOTS_AVAILABLE = 'SLOTS_AVAILABLE' }
 
-	export enum Unit { SECONDS = 0, COUNT = 1, PERCENT = 2 }
+	export enum Unit { SECONDS = 'SECONDS', COUNT = 'COUNT', PERCENT = 'PERCENT' }
 
-	export enum Grouping { QUEUE = 0, CHANNEL = 1, ROUTING_PROFILE = 2 }
+	export enum Grouping { QUEUE = 'QUEUE', CHANNEL = 'CHANNEL', ROUTING_PROFILE = 'ROUTING_PROFILE' }
 
 
 	/** The way to sort the resulting response based on metrics. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics. */
@@ -3614,7 +3614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface GetCurrentUserDataResponse {
 		NextToken?: string;
@@ -3785,7 +3785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactState { INCOMING = 0, PENDING = 1, CONNECTING = 2, CONNECTED = 3, CONNECTED_ONHOLD = 4, MISSED = 5, ERROR = 6, ENDED = 7, REJECTED = 8 }
+	export enum ContactState { INCOMING = 'INCOMING', PENDING = 'PENDING', CONNECTING = 'CONNECTING', CONNECTED = 'CONNECTED', CONNECTED_ONHOLD = 'CONNECTED_ONHOLD', MISSED = 'MISSED', ERROR = 'ERROR', ENDED = 'ENDED', REJECTED = 'REJECTED' }
 
 
 	/** Filters user data based on the contact information that is associated to the users. It contains a list of <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>. */
@@ -3932,7 +3932,7 @@ export namespace MyNS {
 
 
 	/** The historical metric names. */
-	export enum HistoricalMetricName { CONTACTS_QUEUED = 0, CONTACTS_HANDLED = 1, CONTACTS_ABANDONED = 2, CONTACTS_CONSULTED = 3, CONTACTS_AGENT_HUNG_UP_FIRST = 4, CONTACTS_HANDLED_INCOMING = 5, CONTACTS_HANDLED_OUTBOUND = 6, CONTACTS_HOLD_ABANDONS = 7, CONTACTS_TRANSFERRED_IN = 8, CONTACTS_TRANSFERRED_OUT = 9, CONTACTS_TRANSFERRED_IN_FROM_QUEUE = 10, CONTACTS_TRANSFERRED_OUT_FROM_QUEUE = 11, CONTACTS_MISSED = 12, CALLBACK_CONTACTS_HANDLED = 13, API_CONTACTS_HANDLED = 14, OCCUPANCY = 15, HANDLE_TIME = 16, AFTER_CONTACT_WORK_TIME = 17, QUEUED_TIME = 18, ABANDON_TIME = 19, QUEUE_ANSWER_TIME = 20, HOLD_TIME = 21, INTERACTION_TIME = 22, INTERACTION_AND_HOLD_TIME = 23, SERVICE_LEVEL = 24 }
+	export enum HistoricalMetricName { CONTACTS_QUEUED = 'CONTACTS_QUEUED', CONTACTS_HANDLED = 'CONTACTS_HANDLED', CONTACTS_ABANDONED = 'CONTACTS_ABANDONED', CONTACTS_CONSULTED = 'CONTACTS_CONSULTED', CONTACTS_AGENT_HUNG_UP_FIRST = 'CONTACTS_AGENT_HUNG_UP_FIRST', CONTACTS_HANDLED_INCOMING = 'CONTACTS_HANDLED_INCOMING', CONTACTS_HANDLED_OUTBOUND = 'CONTACTS_HANDLED_OUTBOUND', CONTACTS_HOLD_ABANDONS = 'CONTACTS_HOLD_ABANDONS', CONTACTS_TRANSFERRED_IN = 'CONTACTS_TRANSFERRED_IN', CONTACTS_TRANSFERRED_OUT = 'CONTACTS_TRANSFERRED_OUT', CONTACTS_TRANSFERRED_IN_FROM_QUEUE = 'CONTACTS_TRANSFERRED_IN_FROM_QUEUE', CONTACTS_TRANSFERRED_OUT_FROM_QUEUE = 'CONTACTS_TRANSFERRED_OUT_FROM_QUEUE', CONTACTS_MISSED = 'CONTACTS_MISSED', CALLBACK_CONTACTS_HANDLED = 'CALLBACK_CONTACTS_HANDLED', API_CONTACTS_HANDLED = 'API_CONTACTS_HANDLED', OCCUPANCY = 'OCCUPANCY', HANDLE_TIME = 'HANDLE_TIME', AFTER_CONTACT_WORK_TIME = 'AFTER_CONTACT_WORK_TIME', QUEUED_TIME = 'QUEUED_TIME', ABANDON_TIME = 'ABANDON_TIME', QUEUE_ANSWER_TIME = 'QUEUE_ANSWER_TIME', HOLD_TIME = 'HOLD_TIME', INTERACTION_TIME = 'INTERACTION_TIME', INTERACTION_AND_HOLD_TIME = 'INTERACTION_AND_HOLD_TIME', SERVICE_LEVEL = 'SERVICE_LEVEL' }
 
 
 	/** Contains information about the threshold for service level metrics. */
@@ -3954,9 +3954,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Comparison { LT = 0 }
+	export enum Comparison { LT = 'LT' }
 
-	export enum Statistic { SUM = 0, MAX = 1, AVG = 2 }
+	export enum Statistic { SUM = 'SUM', MAX = 'MAX', AVG = 'AVG' }
 
 	export interface GetMetricDataV2Response {
 		NextToken?: string;
@@ -4189,7 +4189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskTemplateStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum TaskTemplateStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface GetTrafficDistributionResponse {
 		TelephonyConfig?: TelephonyConfig;
@@ -4631,7 +4631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceStatus { APPROVED = 0, REJECTED = 1 }
+	export enum ReferenceStatus { APPROVED = 'APPROVED', REJECTED = 'REJECTED' }
 
 
 	/** Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null. */
@@ -4713,7 +4713,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceType { URL = 0, ATTACHMENT = 1, NUMBER = 2, STRING = 3, DATE = 4, EMAIL = 5 }
+	export enum ReferenceType { URL = 'URL', ATTACHMENT = 'ATTACHMENT', NUMBER = 'NUMBER', STRING = 'STRING', DATE = 'DATE', EMAIL = 'EMAIL' }
 
 	export interface ListDefaultVocabulariesResponse {
 
@@ -5136,9 +5136,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationType { EVENT = 0, VOICE_ID = 1, PINPOINT_APP = 2, WISDOM_ASSISTANT = 3, WISDOM_KNOWLEDGE_BASE = 4, CASES_DOMAIN = 5 }
+	export enum IntegrationType { EVENT = 'EVENT', VOICE_ID = 'VOICE_ID', PINPOINT_APP = 'PINPOINT_APP', WISDOM_ASSISTANT = 'WISDOM_ASSISTANT', WISDOM_KNOWLEDGE_BASE = 'WISDOM_KNOWLEDGE_BASE', CASES_DOMAIN = 'CASES_DOMAIN' }
 
-	export enum SourceType { SALESFORCE = 0, ZENDESK = 1 }
+	export enum SourceType { SALESFORCE = 'SALESFORCE', ZENDESK = 'ZENDESK' }
 
 	export interface ListLambdaFunctionsResponse {
 		LambdaFunctions?: Array<string>;
@@ -5374,7 +5374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueueType { STANDARD = 0, AGENT = 1 }
+	export enum QueueType { STANDARD = 'STANDARD', AGENT = 'AGENT' }
 
 	export interface ListQuickConnectsResponse {
 		QuickConnectSummaryList?: Array<QuickConnectSummary>;
@@ -5828,7 +5828,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UseCaseType { RULES_EVALUATION = 0, CONNECT_CAMPAIGNS = 1 }
+	export enum UseCaseType { RULES_EVALUATION = 'RULES_EVALUATION', CONNECT_CAMPAIGNS = 'CONNECT_CAMPAIGNS' }
 
 	export interface ListUserHierarchyGroupsResponse {
 		UserHierarchyGroupSummaryList?: Array<HierarchyGroupSummary>;
@@ -5897,7 +5897,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorCapability { SILENT_MONITOR = 0, BARGE = 1 }
+	export enum MonitorCapability { SILENT_MONITOR = 'SILENT_MONITOR', BARGE = 'BARGE' }
 
 	export interface PutUserStatusResponse {
 	}
@@ -6066,7 +6066,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StringComparisonType { STARTS_WITH = 0, CONTAINS = 1, EXACT = 2 }
+	export enum StringComparisonType { STARTS_WITH = 'STARTS_WITH', CONTAINS = 'CONTAINS', EXACT = 'EXACT' }
 
 	export interface SearchPromptsResponse {
 		Prompts?: Array<Prompt>;
@@ -6139,7 +6139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchableQueueType { STANDARD = 0 }
+	export enum SearchableQueueType { STANDARD = 'STANDARD' }
 
 	export interface SearchQuickConnectsResponse {
 		QuickConnects?: Array<QuickConnect>;
@@ -6458,7 +6458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HierarchyGroupMatchType { EXACT = 0, WITH_CHILD_GROUPS = 1 }
+	export enum HierarchyGroupMatchType { EXACT = 'EXACT', WITH_CHILD_GROUPS = 'WITH_CHILD_GROUPS' }
 
 	export interface SearchVocabulariesResponse {
 		VocabularySummaryList?: Array<VocabularySummary>;
@@ -6555,7 +6555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RehydrationType { ENTIRE_PAST_SESSION = 0, FROM_SEGMENT = 1 }
+	export enum RehydrationType { ENTIRE_PAST_SESSION = 'ENTIRE_PAST_SESSION', FROM_SEGMENT = 'FROM_SEGMENT' }
 
 	export interface StartContactEvaluationResponse {
 
@@ -6591,7 +6591,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceRecordingTrack { FROM_AGENT = 0, TO_AGENT = 1, ALL = 2 }
+	export enum VoiceRecordingTrack { FROM_AGENT = 'FROM_AGENT', TO_AGENT = 'TO_AGENT', ALL = 'ALL' }
 
 	export interface StartContactStreamingResponse {
 
@@ -7022,9 +7022,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TimerEligibleParticipantRoles { CUSTOMER = 0, AGENT = 1 }
+	export enum TimerEligibleParticipantRoles { CUSTOMER = 'CUSTOMER', AGENT = 'AGENT' }
 
-	export enum ParticipantTimerType { IDLE = 0, DISCONNECT_NONCUSTOMER = 1 }
+	export enum ParticipantTimerType { IDLE = 'IDLE', DISCONNECT_NONCUSTOMER = 'DISCONNECT_NONCUSTOMER' }
 
 
 	/** <p>The value of the timer. Either the timer action (<code>Unset</code> to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p> <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p> */
@@ -7046,7 +7046,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParticipantTimerAction { Unset = 0 }
+	export enum ParticipantTimerAction { Unset = 'Unset' }
 
 	export interface UpdatePhoneNumberResponse {
 		PhoneNumberId?: string;
@@ -7168,7 +7168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentStatusState { ENABLED = 0, DISABLED = 1 }
+	export enum AgentStatusState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Configuration of the answering machine detection. */
@@ -7234,7 +7234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceStorageResourceType { CHAT_TRANSCRIPTS = 0, CALL_RECORDINGS = 1, SCHEDULED_REPORTS = 2, MEDIA_STREAMS = 3, CONTACT_TRACE_RECORDS = 4, AGENT_EVENTS = 5, REAL_TIME_CONTACT_ANALYSIS_SEGMENTS = 6, ATTACHMENTS = 7, CONTACT_EVALUATIONS = 8, SCREEN_RECORDINGS = 9 }
+	export enum InstanceStorageResourceType { CHAT_TRANSCRIPTS = 'CHAT_TRANSCRIPTS', CALL_RECORDINGS = 'CALL_RECORDINGS', SCHEDULED_REPORTS = 'SCHEDULED_REPORTS', MEDIA_STREAMS = 'MEDIA_STREAMS', CONTACT_TRACE_RECORDS = 'CONTACT_TRACE_RECORDS', AGENT_EVENTS = 'AGENT_EVENTS', REAL_TIME_CONTACT_ANALYSIS_SEGMENTS = 'REAL_TIME_CONTACT_ANALYSIS_SEGMENTS', ATTACHMENTS = 'ATTACHMENTS', CONTACT_EVALUATIONS = 'CONTACT_EVALUATIONS', SCREEN_RECORDINGS = 'SCREEN_RECORDINGS' }
 
 	export interface AssociateInstanceStorageConfigRequest {
 
@@ -7433,7 +7433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactFlowModuleState { ACTIVE = 0, ARCHIVED = 1 }
+	export enum ContactFlowModuleState { ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED' }
 
 	export interface CreateAgentStatusRequest {
 
@@ -8898,7 +8898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LexVersion { V1 = 0, V2 = 1 }
+	export enum LexVersion { V1 = 'V1', V2 = 'V2' }
 
 	export interface ListAgentStatusRequest {
 	}
@@ -9387,7 +9387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueueStatus { ENABLED = 0, DISABLED = 1 }
+	export enum QueueStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Filters to be applied to search results. */
@@ -9972,7 +9972,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrafficType { GENERAL = 0, CAMPAIGN = 1 }
+	export enum TrafficType { GENERAL = 'GENERAL', CAMPAIGN = 'CAMPAIGN' }
 
 	export interface StartOutboundVoiceContactRequest {
 

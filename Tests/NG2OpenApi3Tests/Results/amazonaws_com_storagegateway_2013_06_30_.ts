@@ -879,7 +879,7 @@ export namespace MyNS {
 
 
 	/** A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>. */
-	export enum ObjectACL { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'authenticated-read' = 3, 'bucket-owner-read' = 4, 'bucket-owner-full-control' = 5, 'aws-exec-read' = 6 }
+	export enum ObjectACL { private = 'private', 'public-read' = 'public-read', 'public-read-write' = 'public-read-write', 'authenticated-read' = 'authenticated-read', 'bucket-owner-read' = 'bucket-owner-read', 'bucket-owner-full-control' = 'bucket-owner-full-control', 'aws-exec-read' = 'aws-exec-read' }
 
 
 	/** CreateSMBFileShareOutput */
@@ -996,7 +996,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaseSensitivity { ClientSpecified = 0, CaseSensitive = 1 }
+	export enum CaseSensitivity { ClientSpecified = 'ClientSpecified', CaseSensitive = 'CaseSensitive' }
 
 
 	/** A JSON object containing the following fields: */
@@ -1237,9 +1237,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TapeStorageClass { DEEP_ARCHIVE = 0, GLACIER = 1 }
+	export enum TapeStorageClass { DEEP_ARCHIVE = 'DEEP_ARCHIVE', GLACIER = 'GLACIER' }
 
-	export enum RetentionLockType { COMPLIANCE = 0, GOVERNANCE = 1, NONE = 2 }
+	export enum RetentionLockType { COMPLIANCE = 'COMPLIANCE', GOVERNANCE = 'GOVERNANCE', NONE = 'NONE' }
 
 
 	/** CreateTapeOutput */
@@ -1869,7 +1869,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailabilityMonitorTestStatus { COMPLETE = 0, FAILED = 1, PENDING = 2 }
+	export enum AvailabilityMonitorTestStatus { COMPLETE = 'COMPLETE', FAILED = 'FAILED', PENDING = 'PENDING' }
 
 	export interface DescribeAvailabilityMonitorTestInput {
 
@@ -2512,9 +2512,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HostEnvironment { VMWARE = 0, 'HYPER-V' = 1, EC2 = 2, KVM = 3, OTHER = 4, SNOWBALL = 5 }
+	export enum HostEnvironment { VMWARE = 'VMWARE', 'HYPER-V' = 'HYPER-V', EC2 = 'EC2', KVM = 'KVM', OTHER = 'OTHER', SNOWBALL = 'SNOWBALL' }
 
-	export enum GatewayCapacity { Small = 0, Medium = 1, Large = 2 }
+	export enum GatewayCapacity { Small = 'Small', Medium = 'Medium', Large = 'Large' }
 
 
 	/** A JSON object containing the ID of the gateway. */
@@ -3108,9 +3108,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ActiveDirectoryStatus { ACCESS_DENIED = 0, DETACHED = 1, JOINED = 2, JOINING = 3, NETWORK_ERROR = 4, TIMEOUT = 5, UNKNOWN_ERROR = 6 }
+	export enum ActiveDirectoryStatus { ACCESS_DENIED = 'ACCESS_DENIED', DETACHED = 'DETACHED', JOINED = 'JOINED', JOINING = 'JOINING', NETWORK_ERROR = 'NETWORK_ERROR', TIMEOUT = 'TIMEOUT', UNKNOWN_ERROR = 'UNKNOWN_ERROR' }
 
-	export enum SMBSecurityStrategy { ClientSpecified = 0, MandatorySigning = 1, MandatoryEncryption = 2 }
+	export enum SMBSecurityStrategy { ClientSpecified = 'ClientSpecified', MandatorySigning = 'MandatorySigning', MandatoryEncryption = 'MandatoryEncryption' }
 
 
 	/** A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway. */
@@ -4273,7 +4273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileShareInfoFileShareType { NFS = 0, SMB = 1 }
+	export enum FileShareInfoFileShareType { NFS = 'NFS', SMB = 'SMB' }
 
 
 	/** ListFileShareInput */
@@ -4664,7 +4664,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PoolStatus { ACTIVE = 0, DELETED = 1 }
+	export enum PoolStatus { ACTIVE = 'ACTIVE', DELETED = 'DELETED' }
 
 	export interface ListTapePoolsInput {
 		PoolARNs?: Array<string>;
@@ -6540,7 +6540,7 @@ export namespace MyNS {
 
 
 	/** The type of the file share. */
-	export enum FileShareType { NFS = 0, SMB = 1 }
+	export enum FileShareType { NFS = 'NFS', SMB = 'SMB' }
 
 	@Injectable()
 	export class MyClient {
@@ -7380,185 +7380,185 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ActivateGatewayX_Amz_Target { 'StorageGateway_20130630.ActivateGateway' = 0 }
+	export enum ActivateGatewayX_Amz_Target { 'StorageGateway_20130630.ActivateGateway' = 'StorageGateway_20130630.ActivateGateway' }
 
-	export enum AddCacheX_Amz_Target { 'StorageGateway_20130630.AddCache' = 0 }
+	export enum AddCacheX_Amz_Target { 'StorageGateway_20130630.AddCache' = 'StorageGateway_20130630.AddCache' }
 
-	export enum AddTagsToResourceX_Amz_Target { 'StorageGateway_20130630.AddTagsToResource' = 0 }
+	export enum AddTagsToResourceX_Amz_Target { 'StorageGateway_20130630.AddTagsToResource' = 'StorageGateway_20130630.AddTagsToResource' }
 
-	export enum AddUploadBufferX_Amz_Target { 'StorageGateway_20130630.AddUploadBuffer' = 0 }
+	export enum AddUploadBufferX_Amz_Target { 'StorageGateway_20130630.AddUploadBuffer' = 'StorageGateway_20130630.AddUploadBuffer' }
 
-	export enum AddWorkingStorageX_Amz_Target { 'StorageGateway_20130630.AddWorkingStorage' = 0 }
+	export enum AddWorkingStorageX_Amz_Target { 'StorageGateway_20130630.AddWorkingStorage' = 'StorageGateway_20130630.AddWorkingStorage' }
 
-	export enum AssignTapePoolX_Amz_Target { 'StorageGateway_20130630.AssignTapePool' = 0 }
+	export enum AssignTapePoolX_Amz_Target { 'StorageGateway_20130630.AssignTapePool' = 'StorageGateway_20130630.AssignTapePool' }
 
-	export enum AssociateFileSystemX_Amz_Target { 'StorageGateway_20130630.AssociateFileSystem' = 0 }
+	export enum AssociateFileSystemX_Amz_Target { 'StorageGateway_20130630.AssociateFileSystem' = 'StorageGateway_20130630.AssociateFileSystem' }
 
-	export enum AttachVolumeX_Amz_Target { 'StorageGateway_20130630.AttachVolume' = 0 }
+	export enum AttachVolumeX_Amz_Target { 'StorageGateway_20130630.AttachVolume' = 'StorageGateway_20130630.AttachVolume' }
 
-	export enum CancelArchivalX_Amz_Target { 'StorageGateway_20130630.CancelArchival' = 0 }
+	export enum CancelArchivalX_Amz_Target { 'StorageGateway_20130630.CancelArchival' = 'StorageGateway_20130630.CancelArchival' }
 
-	export enum CancelRetrievalX_Amz_Target { 'StorageGateway_20130630.CancelRetrieval' = 0 }
+	export enum CancelRetrievalX_Amz_Target { 'StorageGateway_20130630.CancelRetrieval' = 'StorageGateway_20130630.CancelRetrieval' }
 
-	export enum CreateCachediSCSIVolumeX_Amz_Target { 'StorageGateway_20130630.CreateCachediSCSIVolume' = 0 }
+	export enum CreateCachediSCSIVolumeX_Amz_Target { 'StorageGateway_20130630.CreateCachediSCSIVolume' = 'StorageGateway_20130630.CreateCachediSCSIVolume' }
 
-	export enum CreateNFSFileShareX_Amz_Target { 'StorageGateway_20130630.CreateNFSFileShare' = 0 }
+	export enum CreateNFSFileShareX_Amz_Target { 'StorageGateway_20130630.CreateNFSFileShare' = 'StorageGateway_20130630.CreateNFSFileShare' }
 
-	export enum CreateSMBFileShareX_Amz_Target { 'StorageGateway_20130630.CreateSMBFileShare' = 0 }
+	export enum CreateSMBFileShareX_Amz_Target { 'StorageGateway_20130630.CreateSMBFileShare' = 'StorageGateway_20130630.CreateSMBFileShare' }
 
-	export enum CreateSnapshotX_Amz_Target { 'StorageGateway_20130630.CreateSnapshot' = 0 }
+	export enum CreateSnapshotX_Amz_Target { 'StorageGateway_20130630.CreateSnapshot' = 'StorageGateway_20130630.CreateSnapshot' }
 
-	export enum CreateSnapshotFromVolumeRecoveryPointX_Amz_Target { 'StorageGateway_20130630.CreateSnapshotFromVolumeRecoveryPoint' = 0 }
+	export enum CreateSnapshotFromVolumeRecoveryPointX_Amz_Target { 'StorageGateway_20130630.CreateSnapshotFromVolumeRecoveryPoint' = 'StorageGateway_20130630.CreateSnapshotFromVolumeRecoveryPoint' }
 
-	export enum CreateStorediSCSIVolumeX_Amz_Target { 'StorageGateway_20130630.CreateStorediSCSIVolume' = 0 }
+	export enum CreateStorediSCSIVolumeX_Amz_Target { 'StorageGateway_20130630.CreateStorediSCSIVolume' = 'StorageGateway_20130630.CreateStorediSCSIVolume' }
 
-	export enum CreateTapePoolX_Amz_Target { 'StorageGateway_20130630.CreateTapePool' = 0 }
+	export enum CreateTapePoolX_Amz_Target { 'StorageGateway_20130630.CreateTapePool' = 'StorageGateway_20130630.CreateTapePool' }
 
-	export enum CreateTapeWithBarcodeX_Amz_Target { 'StorageGateway_20130630.CreateTapeWithBarcode' = 0 }
+	export enum CreateTapeWithBarcodeX_Amz_Target { 'StorageGateway_20130630.CreateTapeWithBarcode' = 'StorageGateway_20130630.CreateTapeWithBarcode' }
 
-	export enum CreateTapesX_Amz_Target { 'StorageGateway_20130630.CreateTapes' = 0 }
+	export enum CreateTapesX_Amz_Target { 'StorageGateway_20130630.CreateTapes' = 'StorageGateway_20130630.CreateTapes' }
 
-	export enum DeleteAutomaticTapeCreationPolicyX_Amz_Target { 'StorageGateway_20130630.DeleteAutomaticTapeCreationPolicy' = 0 }
+	export enum DeleteAutomaticTapeCreationPolicyX_Amz_Target { 'StorageGateway_20130630.DeleteAutomaticTapeCreationPolicy' = 'StorageGateway_20130630.DeleteAutomaticTapeCreationPolicy' }
 
-	export enum DeleteBandwidthRateLimitX_Amz_Target { 'StorageGateway_20130630.DeleteBandwidthRateLimit' = 0 }
+	export enum DeleteBandwidthRateLimitX_Amz_Target { 'StorageGateway_20130630.DeleteBandwidthRateLimit' = 'StorageGateway_20130630.DeleteBandwidthRateLimit' }
 
-	export enum DeleteChapCredentialsX_Amz_Target { 'StorageGateway_20130630.DeleteChapCredentials' = 0 }
+	export enum DeleteChapCredentialsX_Amz_Target { 'StorageGateway_20130630.DeleteChapCredentials' = 'StorageGateway_20130630.DeleteChapCredentials' }
 
-	export enum DeleteFileShareX_Amz_Target { 'StorageGateway_20130630.DeleteFileShare' = 0 }
+	export enum DeleteFileShareX_Amz_Target { 'StorageGateway_20130630.DeleteFileShare' = 'StorageGateway_20130630.DeleteFileShare' }
 
-	export enum DeleteGatewayX_Amz_Target { 'StorageGateway_20130630.DeleteGateway' = 0 }
+	export enum DeleteGatewayX_Amz_Target { 'StorageGateway_20130630.DeleteGateway' = 'StorageGateway_20130630.DeleteGateway' }
 
-	export enum DeleteSnapshotScheduleX_Amz_Target { 'StorageGateway_20130630.DeleteSnapshotSchedule' = 0 }
+	export enum DeleteSnapshotScheduleX_Amz_Target { 'StorageGateway_20130630.DeleteSnapshotSchedule' = 'StorageGateway_20130630.DeleteSnapshotSchedule' }
 
-	export enum DeleteTapeX_Amz_Target { 'StorageGateway_20130630.DeleteTape' = 0 }
+	export enum DeleteTapeX_Amz_Target { 'StorageGateway_20130630.DeleteTape' = 'StorageGateway_20130630.DeleteTape' }
 
-	export enum DeleteTapeArchiveX_Amz_Target { 'StorageGateway_20130630.DeleteTapeArchive' = 0 }
+	export enum DeleteTapeArchiveX_Amz_Target { 'StorageGateway_20130630.DeleteTapeArchive' = 'StorageGateway_20130630.DeleteTapeArchive' }
 
-	export enum DeleteTapePoolX_Amz_Target { 'StorageGateway_20130630.DeleteTapePool' = 0 }
+	export enum DeleteTapePoolX_Amz_Target { 'StorageGateway_20130630.DeleteTapePool' = 'StorageGateway_20130630.DeleteTapePool' }
 
-	export enum DeleteVolumeX_Amz_Target { 'StorageGateway_20130630.DeleteVolume' = 0 }
+	export enum DeleteVolumeX_Amz_Target { 'StorageGateway_20130630.DeleteVolume' = 'StorageGateway_20130630.DeleteVolume' }
 
-	export enum DescribeAvailabilityMonitorTestX_Amz_Target { 'StorageGateway_20130630.DescribeAvailabilityMonitorTest' = 0 }
+	export enum DescribeAvailabilityMonitorTestX_Amz_Target { 'StorageGateway_20130630.DescribeAvailabilityMonitorTest' = 'StorageGateway_20130630.DescribeAvailabilityMonitorTest' }
 
-	export enum DescribeBandwidthRateLimitX_Amz_Target { 'StorageGateway_20130630.DescribeBandwidthRateLimit' = 0 }
+	export enum DescribeBandwidthRateLimitX_Amz_Target { 'StorageGateway_20130630.DescribeBandwidthRateLimit' = 'StorageGateway_20130630.DescribeBandwidthRateLimit' }
 
-	export enum DescribeBandwidthRateLimitScheduleX_Amz_Target { 'StorageGateway_20130630.DescribeBandwidthRateLimitSchedule' = 0 }
+	export enum DescribeBandwidthRateLimitScheduleX_Amz_Target { 'StorageGateway_20130630.DescribeBandwidthRateLimitSchedule' = 'StorageGateway_20130630.DescribeBandwidthRateLimitSchedule' }
 
-	export enum DescribeCacheX_Amz_Target { 'StorageGateway_20130630.DescribeCache' = 0 }
+	export enum DescribeCacheX_Amz_Target { 'StorageGateway_20130630.DescribeCache' = 'StorageGateway_20130630.DescribeCache' }
 
-	export enum DescribeCachediSCSIVolumesX_Amz_Target { 'StorageGateway_20130630.DescribeCachediSCSIVolumes' = 0 }
+	export enum DescribeCachediSCSIVolumesX_Amz_Target { 'StorageGateway_20130630.DescribeCachediSCSIVolumes' = 'StorageGateway_20130630.DescribeCachediSCSIVolumes' }
 
-	export enum DescribeChapCredentialsX_Amz_Target { 'StorageGateway_20130630.DescribeChapCredentials' = 0 }
+	export enum DescribeChapCredentialsX_Amz_Target { 'StorageGateway_20130630.DescribeChapCredentials' = 'StorageGateway_20130630.DescribeChapCredentials' }
 
-	export enum DescribeFileSystemAssociationsX_Amz_Target { 'StorageGateway_20130630.DescribeFileSystemAssociations' = 0 }
+	export enum DescribeFileSystemAssociationsX_Amz_Target { 'StorageGateway_20130630.DescribeFileSystemAssociations' = 'StorageGateway_20130630.DescribeFileSystemAssociations' }
 
-	export enum DescribeGatewayInformationX_Amz_Target { 'StorageGateway_20130630.DescribeGatewayInformation' = 0 }
+	export enum DescribeGatewayInformationX_Amz_Target { 'StorageGateway_20130630.DescribeGatewayInformation' = 'StorageGateway_20130630.DescribeGatewayInformation' }
 
-	export enum DescribeMaintenanceStartTimeX_Amz_Target { 'StorageGateway_20130630.DescribeMaintenanceStartTime' = 0 }
+	export enum DescribeMaintenanceStartTimeX_Amz_Target { 'StorageGateway_20130630.DescribeMaintenanceStartTime' = 'StorageGateway_20130630.DescribeMaintenanceStartTime' }
 
-	export enum DescribeNFSFileSharesX_Amz_Target { 'StorageGateway_20130630.DescribeNFSFileShares' = 0 }
+	export enum DescribeNFSFileSharesX_Amz_Target { 'StorageGateway_20130630.DescribeNFSFileShares' = 'StorageGateway_20130630.DescribeNFSFileShares' }
 
-	export enum DescribeSMBFileSharesX_Amz_Target { 'StorageGateway_20130630.DescribeSMBFileShares' = 0 }
+	export enum DescribeSMBFileSharesX_Amz_Target { 'StorageGateway_20130630.DescribeSMBFileShares' = 'StorageGateway_20130630.DescribeSMBFileShares' }
 
-	export enum DescribeSMBSettingsX_Amz_Target { 'StorageGateway_20130630.DescribeSMBSettings' = 0 }
+	export enum DescribeSMBSettingsX_Amz_Target { 'StorageGateway_20130630.DescribeSMBSettings' = 'StorageGateway_20130630.DescribeSMBSettings' }
 
-	export enum DescribeSnapshotScheduleX_Amz_Target { 'StorageGateway_20130630.DescribeSnapshotSchedule' = 0 }
+	export enum DescribeSnapshotScheduleX_Amz_Target { 'StorageGateway_20130630.DescribeSnapshotSchedule' = 'StorageGateway_20130630.DescribeSnapshotSchedule' }
 
-	export enum DescribeStorediSCSIVolumesX_Amz_Target { 'StorageGateway_20130630.DescribeStorediSCSIVolumes' = 0 }
+	export enum DescribeStorediSCSIVolumesX_Amz_Target { 'StorageGateway_20130630.DescribeStorediSCSIVolumes' = 'StorageGateway_20130630.DescribeStorediSCSIVolumes' }
 
-	export enum DescribeTapeArchivesX_Amz_Target { 'StorageGateway_20130630.DescribeTapeArchives' = 0 }
+	export enum DescribeTapeArchivesX_Amz_Target { 'StorageGateway_20130630.DescribeTapeArchives' = 'StorageGateway_20130630.DescribeTapeArchives' }
 
-	export enum DescribeTapeRecoveryPointsX_Amz_Target { 'StorageGateway_20130630.DescribeTapeRecoveryPoints' = 0 }
+	export enum DescribeTapeRecoveryPointsX_Amz_Target { 'StorageGateway_20130630.DescribeTapeRecoveryPoints' = 'StorageGateway_20130630.DescribeTapeRecoveryPoints' }
 
-	export enum DescribeTapesX_Amz_Target { 'StorageGateway_20130630.DescribeTapes' = 0 }
+	export enum DescribeTapesX_Amz_Target { 'StorageGateway_20130630.DescribeTapes' = 'StorageGateway_20130630.DescribeTapes' }
 
-	export enum DescribeUploadBufferX_Amz_Target { 'StorageGateway_20130630.DescribeUploadBuffer' = 0 }
+	export enum DescribeUploadBufferX_Amz_Target { 'StorageGateway_20130630.DescribeUploadBuffer' = 'StorageGateway_20130630.DescribeUploadBuffer' }
 
-	export enum DescribeVTLDevicesX_Amz_Target { 'StorageGateway_20130630.DescribeVTLDevices' = 0 }
+	export enum DescribeVTLDevicesX_Amz_Target { 'StorageGateway_20130630.DescribeVTLDevices' = 'StorageGateway_20130630.DescribeVTLDevices' }
 
-	export enum DescribeWorkingStorageX_Amz_Target { 'StorageGateway_20130630.DescribeWorkingStorage' = 0 }
+	export enum DescribeWorkingStorageX_Amz_Target { 'StorageGateway_20130630.DescribeWorkingStorage' = 'StorageGateway_20130630.DescribeWorkingStorage' }
 
-	export enum DetachVolumeX_Amz_Target { 'StorageGateway_20130630.DetachVolume' = 0 }
+	export enum DetachVolumeX_Amz_Target { 'StorageGateway_20130630.DetachVolume' = 'StorageGateway_20130630.DetachVolume' }
 
-	export enum DisableGatewayX_Amz_Target { 'StorageGateway_20130630.DisableGateway' = 0 }
+	export enum DisableGatewayX_Amz_Target { 'StorageGateway_20130630.DisableGateway' = 'StorageGateway_20130630.DisableGateway' }
 
-	export enum DisassociateFileSystemX_Amz_Target { 'StorageGateway_20130630.DisassociateFileSystem' = 0 }
+	export enum DisassociateFileSystemX_Amz_Target { 'StorageGateway_20130630.DisassociateFileSystem' = 'StorageGateway_20130630.DisassociateFileSystem' }
 
-	export enum JoinDomainX_Amz_Target { 'StorageGateway_20130630.JoinDomain' = 0 }
+	export enum JoinDomainX_Amz_Target { 'StorageGateway_20130630.JoinDomain' = 'StorageGateway_20130630.JoinDomain' }
 
-	export enum ListAutomaticTapeCreationPoliciesX_Amz_Target { 'StorageGateway_20130630.ListAutomaticTapeCreationPolicies' = 0 }
+	export enum ListAutomaticTapeCreationPoliciesX_Amz_Target { 'StorageGateway_20130630.ListAutomaticTapeCreationPolicies' = 'StorageGateway_20130630.ListAutomaticTapeCreationPolicies' }
 
-	export enum ListFileSharesX_Amz_Target { 'StorageGateway_20130630.ListFileShares' = 0 }
+	export enum ListFileSharesX_Amz_Target { 'StorageGateway_20130630.ListFileShares' = 'StorageGateway_20130630.ListFileShares' }
 
-	export enum ListFileSystemAssociationsX_Amz_Target { 'StorageGateway_20130630.ListFileSystemAssociations' = 0 }
+	export enum ListFileSystemAssociationsX_Amz_Target { 'StorageGateway_20130630.ListFileSystemAssociations' = 'StorageGateway_20130630.ListFileSystemAssociations' }
 
-	export enum ListGatewaysX_Amz_Target { 'StorageGateway_20130630.ListGateways' = 0 }
+	export enum ListGatewaysX_Amz_Target { 'StorageGateway_20130630.ListGateways' = 'StorageGateway_20130630.ListGateways' }
 
-	export enum ListLocalDisksX_Amz_Target { 'StorageGateway_20130630.ListLocalDisks' = 0 }
+	export enum ListLocalDisksX_Amz_Target { 'StorageGateway_20130630.ListLocalDisks' = 'StorageGateway_20130630.ListLocalDisks' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'StorageGateway_20130630.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'StorageGateway_20130630.ListTagsForResource' = 'StorageGateway_20130630.ListTagsForResource' }
 
-	export enum ListTapePoolsX_Amz_Target { 'StorageGateway_20130630.ListTapePools' = 0 }
+	export enum ListTapePoolsX_Amz_Target { 'StorageGateway_20130630.ListTapePools' = 'StorageGateway_20130630.ListTapePools' }
 
-	export enum ListTapesX_Amz_Target { 'StorageGateway_20130630.ListTapes' = 0 }
+	export enum ListTapesX_Amz_Target { 'StorageGateway_20130630.ListTapes' = 'StorageGateway_20130630.ListTapes' }
 
-	export enum ListVolumeInitiatorsX_Amz_Target { 'StorageGateway_20130630.ListVolumeInitiators' = 0 }
+	export enum ListVolumeInitiatorsX_Amz_Target { 'StorageGateway_20130630.ListVolumeInitiators' = 'StorageGateway_20130630.ListVolumeInitiators' }
 
-	export enum ListVolumeRecoveryPointsX_Amz_Target { 'StorageGateway_20130630.ListVolumeRecoveryPoints' = 0 }
+	export enum ListVolumeRecoveryPointsX_Amz_Target { 'StorageGateway_20130630.ListVolumeRecoveryPoints' = 'StorageGateway_20130630.ListVolumeRecoveryPoints' }
 
-	export enum ListVolumesX_Amz_Target { 'StorageGateway_20130630.ListVolumes' = 0 }
+	export enum ListVolumesX_Amz_Target { 'StorageGateway_20130630.ListVolumes' = 'StorageGateway_20130630.ListVolumes' }
 
-	export enum NotifyWhenUploadedX_Amz_Target { 'StorageGateway_20130630.NotifyWhenUploaded' = 0 }
+	export enum NotifyWhenUploadedX_Amz_Target { 'StorageGateway_20130630.NotifyWhenUploaded' = 'StorageGateway_20130630.NotifyWhenUploaded' }
 
-	export enum RefreshCacheX_Amz_Target { 'StorageGateway_20130630.RefreshCache' = 0 }
+	export enum RefreshCacheX_Amz_Target { 'StorageGateway_20130630.RefreshCache' = 'StorageGateway_20130630.RefreshCache' }
 
-	export enum RemoveTagsFromResourceX_Amz_Target { 'StorageGateway_20130630.RemoveTagsFromResource' = 0 }
+	export enum RemoveTagsFromResourceX_Amz_Target { 'StorageGateway_20130630.RemoveTagsFromResource' = 'StorageGateway_20130630.RemoveTagsFromResource' }
 
-	export enum ResetCacheX_Amz_Target { 'StorageGateway_20130630.ResetCache' = 0 }
+	export enum ResetCacheX_Amz_Target { 'StorageGateway_20130630.ResetCache' = 'StorageGateway_20130630.ResetCache' }
 
-	export enum RetrieveTapeArchiveX_Amz_Target { 'StorageGateway_20130630.RetrieveTapeArchive' = 0 }
+	export enum RetrieveTapeArchiveX_Amz_Target { 'StorageGateway_20130630.RetrieveTapeArchive' = 'StorageGateway_20130630.RetrieveTapeArchive' }
 
-	export enum RetrieveTapeRecoveryPointX_Amz_Target { 'StorageGateway_20130630.RetrieveTapeRecoveryPoint' = 0 }
+	export enum RetrieveTapeRecoveryPointX_Amz_Target { 'StorageGateway_20130630.RetrieveTapeRecoveryPoint' = 'StorageGateway_20130630.RetrieveTapeRecoveryPoint' }
 
-	export enum SetLocalConsolePasswordX_Amz_Target { 'StorageGateway_20130630.SetLocalConsolePassword' = 0 }
+	export enum SetLocalConsolePasswordX_Amz_Target { 'StorageGateway_20130630.SetLocalConsolePassword' = 'StorageGateway_20130630.SetLocalConsolePassword' }
 
-	export enum SetSMBGuestPasswordX_Amz_Target { 'StorageGateway_20130630.SetSMBGuestPassword' = 0 }
+	export enum SetSMBGuestPasswordX_Amz_Target { 'StorageGateway_20130630.SetSMBGuestPassword' = 'StorageGateway_20130630.SetSMBGuestPassword' }
 
-	export enum ShutdownGatewayX_Amz_Target { 'StorageGateway_20130630.ShutdownGateway' = 0 }
+	export enum ShutdownGatewayX_Amz_Target { 'StorageGateway_20130630.ShutdownGateway' = 'StorageGateway_20130630.ShutdownGateway' }
 
-	export enum StartAvailabilityMonitorTestX_Amz_Target { 'StorageGateway_20130630.StartAvailabilityMonitorTest' = 0 }
+	export enum StartAvailabilityMonitorTestX_Amz_Target { 'StorageGateway_20130630.StartAvailabilityMonitorTest' = 'StorageGateway_20130630.StartAvailabilityMonitorTest' }
 
-	export enum StartGatewayX_Amz_Target { 'StorageGateway_20130630.StartGateway' = 0 }
+	export enum StartGatewayX_Amz_Target { 'StorageGateway_20130630.StartGateway' = 'StorageGateway_20130630.StartGateway' }
 
-	export enum UpdateAutomaticTapeCreationPolicyX_Amz_Target { 'StorageGateway_20130630.UpdateAutomaticTapeCreationPolicy' = 0 }
+	export enum UpdateAutomaticTapeCreationPolicyX_Amz_Target { 'StorageGateway_20130630.UpdateAutomaticTapeCreationPolicy' = 'StorageGateway_20130630.UpdateAutomaticTapeCreationPolicy' }
 
-	export enum UpdateBandwidthRateLimitX_Amz_Target { 'StorageGateway_20130630.UpdateBandwidthRateLimit' = 0 }
+	export enum UpdateBandwidthRateLimitX_Amz_Target { 'StorageGateway_20130630.UpdateBandwidthRateLimit' = 'StorageGateway_20130630.UpdateBandwidthRateLimit' }
 
-	export enum UpdateBandwidthRateLimitScheduleX_Amz_Target { 'StorageGateway_20130630.UpdateBandwidthRateLimitSchedule' = 0 }
+	export enum UpdateBandwidthRateLimitScheduleX_Amz_Target { 'StorageGateway_20130630.UpdateBandwidthRateLimitSchedule' = 'StorageGateway_20130630.UpdateBandwidthRateLimitSchedule' }
 
-	export enum UpdateChapCredentialsX_Amz_Target { 'StorageGateway_20130630.UpdateChapCredentials' = 0 }
+	export enum UpdateChapCredentialsX_Amz_Target { 'StorageGateway_20130630.UpdateChapCredentials' = 'StorageGateway_20130630.UpdateChapCredentials' }
 
-	export enum UpdateFileSystemAssociationX_Amz_Target { 'StorageGateway_20130630.UpdateFileSystemAssociation' = 0 }
+	export enum UpdateFileSystemAssociationX_Amz_Target { 'StorageGateway_20130630.UpdateFileSystemAssociation' = 'StorageGateway_20130630.UpdateFileSystemAssociation' }
 
-	export enum UpdateGatewayInformationX_Amz_Target { 'StorageGateway_20130630.UpdateGatewayInformation' = 0 }
+	export enum UpdateGatewayInformationX_Amz_Target { 'StorageGateway_20130630.UpdateGatewayInformation' = 'StorageGateway_20130630.UpdateGatewayInformation' }
 
-	export enum UpdateGatewaySoftwareNowX_Amz_Target { 'StorageGateway_20130630.UpdateGatewaySoftwareNow' = 0 }
+	export enum UpdateGatewaySoftwareNowX_Amz_Target { 'StorageGateway_20130630.UpdateGatewaySoftwareNow' = 'StorageGateway_20130630.UpdateGatewaySoftwareNow' }
 
-	export enum UpdateMaintenanceStartTimeX_Amz_Target { 'StorageGateway_20130630.UpdateMaintenanceStartTime' = 0 }
+	export enum UpdateMaintenanceStartTimeX_Amz_Target { 'StorageGateway_20130630.UpdateMaintenanceStartTime' = 'StorageGateway_20130630.UpdateMaintenanceStartTime' }
 
-	export enum UpdateNFSFileShareX_Amz_Target { 'StorageGateway_20130630.UpdateNFSFileShare' = 0 }
+	export enum UpdateNFSFileShareX_Amz_Target { 'StorageGateway_20130630.UpdateNFSFileShare' = 'StorageGateway_20130630.UpdateNFSFileShare' }
 
-	export enum UpdateSMBFileShareX_Amz_Target { 'StorageGateway_20130630.UpdateSMBFileShare' = 0 }
+	export enum UpdateSMBFileShareX_Amz_Target { 'StorageGateway_20130630.UpdateSMBFileShare' = 'StorageGateway_20130630.UpdateSMBFileShare' }
 
-	export enum UpdateSMBFileShareVisibilityX_Amz_Target { 'StorageGateway_20130630.UpdateSMBFileShareVisibility' = 0 }
+	export enum UpdateSMBFileShareVisibilityX_Amz_Target { 'StorageGateway_20130630.UpdateSMBFileShareVisibility' = 'StorageGateway_20130630.UpdateSMBFileShareVisibility' }
 
-	export enum UpdateSMBLocalGroupsX_Amz_Target { 'StorageGateway_20130630.UpdateSMBLocalGroups' = 0 }
+	export enum UpdateSMBLocalGroupsX_Amz_Target { 'StorageGateway_20130630.UpdateSMBLocalGroups' = 'StorageGateway_20130630.UpdateSMBLocalGroups' }
 
-	export enum UpdateSMBSecurityStrategyX_Amz_Target { 'StorageGateway_20130630.UpdateSMBSecurityStrategy' = 0 }
+	export enum UpdateSMBSecurityStrategyX_Amz_Target { 'StorageGateway_20130630.UpdateSMBSecurityStrategy' = 'StorageGateway_20130630.UpdateSMBSecurityStrategy' }
 
-	export enum UpdateSnapshotScheduleX_Amz_Target { 'StorageGateway_20130630.UpdateSnapshotSchedule' = 0 }
+	export enum UpdateSnapshotScheduleX_Amz_Target { 'StorageGateway_20130630.UpdateSnapshotSchedule' = 'StorageGateway_20130630.UpdateSnapshotSchedule' }
 
-	export enum UpdateVTLDeviceTypeX_Amz_Target { 'StorageGateway_20130630.UpdateVTLDeviceType' = 0 }
+	export enum UpdateVTLDeviceTypeX_Amz_Target { 'StorageGateway_20130630.UpdateVTLDeviceType' = 'StorageGateway_20130630.UpdateVTLDeviceType' }
 
 }
 

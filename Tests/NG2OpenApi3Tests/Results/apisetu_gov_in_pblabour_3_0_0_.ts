@@ -1320,7 +1320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlsfcPostBodyFormat { pdf = 0 }
+	export enum AlsfcPostBodyFormat { pdf = 'pdf' }
 
 	export interface ClcerPostBody {
 		certificateParameters?: ClcerPostBodyCertificateParameters;

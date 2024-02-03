@@ -2418,9 +2418,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum MembershipsActiveFormat { xml = 0, json = 1 }
+	export enum MembershipsActiveFormat { xml = 'xml', json = 'json' }
 
-	export enum DfsSlatesByDateFormat { json = 0, xml = 1 }
+	export enum DfsSlatesByDateFormat { json = 'json', xml = 'xml' }
 
 }
 

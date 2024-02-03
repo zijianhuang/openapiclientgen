@@ -53,9 +53,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InsightSeverity { LOW = 0, MEDIUM = 1, HIGH = 2 }
+	export enum InsightSeverity { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
-	export enum NotificationMessageType { NEW_INSIGHT = 0, CLOSED_INSIGHT = 1, NEW_ASSOCIATION = 2, SEVERITY_UPGRADED = 3, NEW_RECOMMENDATION = 4 }
+	export enum NotificationMessageType { NEW_INSIGHT = 'NEW_INSIGHT', CLOSED_INSIGHT = 'CLOSED_INSIGHT', NEW_ASSOCIATION = 'NEW_ASSOCIATION', SEVERITY_UPGRADED = 'SEVERITY_UPGRADED', NEW_RECOMMENDATION = 'NEW_RECOMMENDATION' }
 
 	export interface AccessDeniedException {
 	}
@@ -269,7 +269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalyStatus { ONGOING = 0, CLOSED = 1 }
+	export enum AnomalyStatus { ONGOING = 'ONGOING', CLOSED = 'CLOSED' }
 
 
 	/**  A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly.  */
@@ -410,7 +410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudWatchMetricsStat { Sum = 0, Average = 1, SampleCount = 2, Minimum = 3, Maximum = 4, p99 = 5, p90 = 6, p50 = 7 }
+	export enum CloudWatchMetricsStat { Sum = 'Sum', Average = 'Average', SampleCount = 'SampleCount', Minimum = 'Minimum', Maximum = 'Maximum', p99 = 'p99', p90 = 'p90', p50 = 'p50' }
 
 
 	/** Contains information about the analyzed metrics that displayed anomalous behavior.  */
@@ -450,7 +450,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudWatchMetricDataStatusCode { Complete = 0, InternalError = 1, PartialData = 2 }
+	export enum CloudWatchMetricDataStatusCode { Complete = 'Complete', InternalError = 'InternalError', PartialData = 'PartialData' }
 
 
 	/** <p>Details about Performance Insights metrics.</p> <p>Amazon RDS Performance Insights enables you to monitor and explore different dimensions of database load based on data captured from a running DB instance. DB load is measured as average active sessions. Performance Insights provides the data to API consumers as a two-dimensional time-series dataset. The time dimension provides DB load data for each time point in the queried time range. Each time point decomposes overall load in relation to the requested dimensions, measured at that time point. Examples include SQL, Wait event, User, and Host. </p> <ul> <li> <p>To learn more about Performance Insights and Amazon Aurora DB instances, go to the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html"> Amazon Aurora User Guide</a>. </p> </li> <li> <p>To learn more about Performance Insights and Amazon RDS DB instances, go to the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Amazon RDS User Guide</a>. </p> </li> </ul> */
@@ -757,7 +757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalyType { CAUSAL = 0, CONTEXTUAL = 1 }
+	export enum AnomalyType { CAUSAL = 'CAUSAL', CONTEXTUAL = 'CONTEXTUAL' }
 
 	export interface DescribeEventSourcesConfigResponse {
 		EventSources?: EventSourcesConfig;
@@ -802,7 +802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceOptInStatus { ENABLED = 0, DISABLED = 1 }
+	export enum EventSourceOptInStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DescribeFeedbackResponse {
 
@@ -837,7 +837,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InsightFeedbackOption { VALID_COLLECTION = 0, RECOMMENDATION_USEFUL = 1, ALERT_TOO_SENSITIVE = 2, DATA_NOISY_ANOMALY = 3, DATA_INCORRECT = 4 }
+	export enum InsightFeedbackOption { VALID_COLLECTION = 'VALID_COLLECTION', RECOMMENDATION_USEFUL = 'RECOMMENDATION_USEFUL', ALERT_TOO_SENSITIVE = 'ALERT_TOO_SENSITIVE', DATA_NOISY_ANOMALY = 'DATA_NOISY_ANOMALY', DATA_INCORRECT = 'DATA_INCORRECT' }
 
 	export interface DescribeInsightResponse {
 		ProactiveInsight?: ProactiveInsight;
@@ -1098,7 +1098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceName { API_GATEWAY = 0, APPLICATION_ELB = 1, AUTO_SCALING_GROUP = 2, CLOUD_FRONT = 3, DYNAMO_DB = 4, EC2 = 5, ECS = 6, EKS = 7, ELASTIC_BEANSTALK = 8, ELASTI_CACHE = 9, ELB = 10, ES = 11, KINESIS = 12, LAMBDA = 13, NAT_GATEWAY = 14, NETWORK_ELB = 15, RDS = 16, REDSHIFT = 17, ROUTE_53 = 18, S3 = 19, SAGE_MAKER = 20, SNS = 21, SQS = 22, STEP_FUNCTIONS = 23, SWF = 24 }
+	export enum ServiceName { API_GATEWAY = 'API_GATEWAY', APPLICATION_ELB = 'APPLICATION_ELB', AUTO_SCALING_GROUP = 'AUTO_SCALING_GROUP', CLOUD_FRONT = 'CLOUD_FRONT', DYNAMO_DB = 'DYNAMO_DB', EC2 = 'EC2', ECS = 'ECS', EKS = 'EKS', ELASTIC_BEANSTALK = 'ELASTIC_BEANSTALK', ELASTI_CACHE = 'ELASTI_CACHE', ELB = 'ELB', ES = 'ES', KINESIS = 'KINESIS', LAMBDA = 'LAMBDA', NAT_GATEWAY = 'NAT_GATEWAY', NETWORK_ELB = 'NETWORK_ELB', RDS = 'RDS', REDSHIFT = 'REDSHIFT', ROUTE_53 = 'ROUTE_53', S3 = 'S3', SAGE_MAKER = 'SAGE_MAKER', SNS = 'SNS', SQS = 'SQS', STEP_FUNCTIONS = 'STEP_FUNCTIONS', SWF = 'SWF' }
 
 
 	/** Contains the number of open proactive and reactive insights in an analyzed Amazon Web Services service. */
@@ -1285,7 +1285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerSideEncryptionType { CUSTOMER_MANAGED_KEY = 0, AWS_OWNED_KMS_KEY = 1 }
+	export enum ServerSideEncryptionType { CUSTOMER_MANAGED_KEY = 'CUSTOMER_MANAGED_KEY', AWS_OWNED_KMS_KEY = 'AWS_OWNED_KMS_KEY' }
 
 	export interface GetCostEstimationResponse {
 		ResourceCollection?: CostEstimationResourceCollectionFilter;
@@ -1364,7 +1364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CostEstimationStatus { ONGOING = 0, COMPLETED = 1 }
+	export enum CostEstimationStatus { ONGOING = 'ONGOING', COMPLETED = 'COMPLETED' }
 
 
 	/** An object that contains information about the estimated monthly cost to analyze an Amazon Web Services resource. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>. */
@@ -1395,7 +1395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CostEstimationServiceResourceState { ACTIVE = 0, INACTIVE = 1 }
+	export enum CostEstimationServiceResourceState { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** The time range of a cost estimation. */
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogAnomalyType { KEYWORD = 0, KEYWORD_TOKEN = 1, FORMAT = 2, HTTP_CODE = 3, BLOCK_FORMAT = 4, NUMERICAL_POINT = 5, NUMERICAL_NAN = 6, NEW_FIELD_NAME = 7 }
+	export enum LogAnomalyType { KEYWORD = 'KEYWORD', KEYWORD_TOKEN = 'KEYWORD_TOKEN', FORMAT = 'FORMAT', HTTP_CODE = 'HTTP_CODE', BLOCK_FORMAT = 'BLOCK_FORMAT', NUMERICAL_POINT = 'NUMERICAL_POINT', NUMERICAL_NAN = 'NUMERICAL_NAN', NEW_FIELD_NAME = 'NEW_FIELD_NAME' }
 
 	export interface ListEventsResponse {
 
@@ -1765,9 +1765,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EventDataSource { AWS_CLOUD_TRAIL = 0, AWS_CODE_DEPLOY = 1 }
+	export enum EventDataSource { AWS_CLOUD_TRAIL = 'AWS_CLOUD_TRAIL', AWS_CODE_DEPLOY = 'AWS_CODE_DEPLOY' }
 
-	export enum EventClass { INFRASTRUCTURE = 0, DEPLOYMENT = 1, SECURITY_CHANGE = 2, CONFIG_CHANGE = 3, SCHEMA_CHANGE = 4 }
+	export enum EventClass { INFRASTRUCTURE = 'INFRASTRUCTURE', DEPLOYMENT = 'DEPLOYMENT', SECURITY_CHANGE = 'SECURITY_CHANGE', CONFIG_CHANGE = 'CONFIG_CHANGE', SCHEMA_CHANGE = 'SCHEMA_CHANGE' }
 
 
 	/**  The Amazon Web Services resource that emitted an event. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions.  */
@@ -1927,7 +1927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InsightType { REACTIVE = 0, PROACTIVE = 1 }
+	export enum InsightType { REACTIVE = 'REACTIVE', PROACTIVE = 'PROACTIVE' }
 
 
 	/**  Used to filter for insights that have the status <code>CLOSED</code>.  */
@@ -2062,9 +2062,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourcePermission { FULL_PERMISSION = 0, MISSING_PERMISSION = 1 }
+	export enum ResourcePermission { FULL_PERMISSION = 'FULL_PERMISSION', MISSING_PERMISSION = 'MISSING_PERMISSION' }
 
-	export enum ResourceTypeFilter { LOG_GROUPS = 0, CLOUDFRONT_DISTRIBUTION = 1, DYNAMODB_TABLE = 2, EC2_NAT_GATEWAY = 3, ECS_CLUSTER = 4, ECS_SERVICE = 5, EKS_CLUSTER = 6, ELASTIC_BEANSTALK_ENVIRONMENT = 7, ELASTIC_LOAD_BALANCER_LOAD_BALANCER = 8, ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER = 9, ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP = 10, ELASTICACHE_CACHE_CLUSTER = 11, ELASTICSEARCH_DOMAIN = 12, KINESIS_STREAM = 13, LAMBDA_FUNCTION = 14, OPEN_SEARCH_SERVICE_DOMAIN = 15, RDS_DB_INSTANCE = 16, RDS_DB_CLUSTER = 17, REDSHIFT_CLUSTER = 18, ROUTE53_HOSTED_ZONE = 19, ROUTE53_HEALTH_CHECK = 20, S3_BUCKET = 21, SAGEMAKER_ENDPOINT = 22, SNS_TOPIC = 23, SQS_QUEUE = 24, STEP_FUNCTIONS_ACTIVITY = 25, STEP_FUNCTIONS_STATE_MACHINE = 26 }
+	export enum ResourceTypeFilter { LOG_GROUPS = 'LOG_GROUPS', CLOUDFRONT_DISTRIBUTION = 'CLOUDFRONT_DISTRIBUTION', DYNAMODB_TABLE = 'DYNAMODB_TABLE', EC2_NAT_GATEWAY = 'EC2_NAT_GATEWAY', ECS_CLUSTER = 'ECS_CLUSTER', ECS_SERVICE = 'ECS_SERVICE', EKS_CLUSTER = 'EKS_CLUSTER', ELASTIC_BEANSTALK_ENVIRONMENT = 'ELASTIC_BEANSTALK_ENVIRONMENT', ELASTIC_LOAD_BALANCER_LOAD_BALANCER = 'ELASTIC_LOAD_BALANCER_LOAD_BALANCER', ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER = 'ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER', ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP = 'ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP', ELASTICACHE_CACHE_CLUSTER = 'ELASTICACHE_CACHE_CLUSTER', ELASTICSEARCH_DOMAIN = 'ELASTICSEARCH_DOMAIN', KINESIS_STREAM = 'KINESIS_STREAM', LAMBDA_FUNCTION = 'LAMBDA_FUNCTION', OPEN_SEARCH_SERVICE_DOMAIN = 'OPEN_SEARCH_SERVICE_DOMAIN', RDS_DB_INSTANCE = 'RDS_DB_INSTANCE', RDS_DB_CLUSTER = 'RDS_DB_CLUSTER', REDSHIFT_CLUSTER = 'REDSHIFT_CLUSTER', ROUTE53_HOSTED_ZONE = 'ROUTE53_HOSTED_ZONE', ROUTE53_HEALTH_CHECK = 'ROUTE53_HEALTH_CHECK', S3_BUCKET = 'S3_BUCKET', SAGEMAKER_ENDPOINT = 'SAGEMAKER_ENDPOINT', SNS_TOPIC = 'SNS_TOPIC', SQS_QUEUE = 'SQS_QUEUE', STEP_FUNCTIONS_ACTIVITY = 'STEP_FUNCTIONS_ACTIVITY', STEP_FUNCTIONS_STATE_MACHINE = 'STEP_FUNCTIONS_STATE_MACHINE' }
 
 	export interface ListNotificationChannelsResponse {
 		Channels?: Array<NotificationChannel>;
@@ -2408,7 +2408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InsightStatus { ONGOING = 0, CLOSED = 1 }
+	export enum InsightStatus { ONGOING = 'ONGOING', CLOSED = 'CLOSED' }
 
 	export interface SearchOrganizationInsightsResponse {
 		ProactiveInsights?: Array<ProactiveInsightSummary>;
@@ -2574,7 +2574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalySeverity { LOW = 0, MEDIUM = 1, HIGH = 2 }
+	export enum AnomalySeverity { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 	export interface DeleteInsightRequest {
 	}
@@ -2693,7 +2693,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationResourceCollectionType { AWS_CLOUD_FORMATION = 0, AWS_SERVICE = 1, AWS_ACCOUNT = 2, AWS_TAGS = 3 }
+	export enum OrganizationResourceCollectionType { AWS_CLOUD_FORMATION = 'AWS_CLOUD_FORMATION', AWS_SERVICE = 'AWS_SERVICE', AWS_ACCOUNT = 'AWS_ACCOUNT', AWS_TAGS = 'AWS_TAGS' }
 
 	export interface DescribeOrganizationResourceCollectionHealthRequest {
 
@@ -2720,7 +2720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceCollectionType { AWS_CLOUD_FORMATION = 0, AWS_SERVICE = 1, AWS_TAGS = 2 }
+	export enum ResourceCollectionType { AWS_CLOUD_FORMATION = 'AWS_CLOUD_FORMATION', AWS_SERVICE = 'AWS_SERVICE', AWS_TAGS = 'AWS_TAGS' }
 
 	export interface DescribeResourceCollectionHealthRequest {
 	}
@@ -2764,7 +2764,7 @@ export namespace MyNS {
 
 
 	/**  Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight.  */
-	export enum OptInStatus { ENABLED = 0, DISABLED = 1 }
+	export enum OptInStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/**  Specifies one or more service names that are used to list anomalies.  */
@@ -2993,7 +2993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Locale { DE_DE = 0, EN_US = 1, EN_GB = 2, ES_ES = 3, FR_FR = 4, IT_IT = 5, JA_JP = 6, KO_KR = 7, PT_BR = 8, ZH_CN = 9, ZH_TW = 10 }
+	export enum Locale { DE_DE = 'DE_DE', EN_US = 'EN_US', EN_GB = 'EN_GB', ES_ES = 'ES_ES', FR_FR = 'FR_FR', IT_IT = 'IT_IT', JA_JP = 'JA_JP', KO_KR = 'KO_KR', PT_BR = 'PT_BR', ZH_CN = 'ZH_CN', ZH_TW = 'ZH_TW' }
 
 	export interface ListRecommendationsRequest {
 
@@ -3171,7 +3171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateResourceCollectionAction { ADD = 0, REMOVE = 1 }
+	export enum UpdateResourceCollectionAction { ADD = 'ADD', REMOVE = 'REMOVE' }
 
 
 	/**  Contains information used to update a collection of Amazon Web Services resources.  */

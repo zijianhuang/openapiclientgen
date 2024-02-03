@@ -135,7 +135,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TraceSpanKind { SPAN_KIND_UNSPECIFIED = 0, RPC_SERVER = 1, RPC_CLIENT = 2 }
+	export enum TraceSpanKind { SPAN_KIND_UNSPECIFIED = 'SPAN_KIND_UNSPECIFIED', RPC_SERVER = 'RPC_SERVER', RPC_CLIENT = 'RPC_CLIENT' }
 
 
 	/** List of new or updated traces. */
@@ -198,7 +198,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Cloudtrace_projects_traces_listView { VIEW_TYPE_UNSPECIFIED = 0, MINIMAL = 1, ROOTSPAN = 2, COMPLETE = 3 }
+	export enum Cloudtrace_projects_traces_listView { VIEW_TYPE_UNSPECIFIED = 'VIEW_TYPE_UNSPECIFIED', MINIMAL = 'MINIMAL', ROOTSPAN = 'ROOTSPAN', COMPLETE = 'COMPLETE' }
 
 }
 

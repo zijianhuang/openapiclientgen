@@ -609,7 +609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OAuth2GrantType { CLIENT_CREDENTIALS = 0, AUTHORIZATION_CODE = 1, JWT_BEARER = 2 }
+	export enum OAuth2GrantType { CLIENT_CREDENTIALS = 'CLIENT_CREDENTIALS', AUTHORIZATION_CODE = 'AUTHORIZATION_CODE', JWT_BEARER = 'JWT_BEARER' }
 
 	export interface TokenUrlCustomProperties {
 	}
@@ -1254,7 +1254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationType { OAUTH2 = 0, APIKEY = 1, BASIC = 2, CUSTOM = 3 }
+	export enum AuthenticationType { OAUTH2 = 'OAUTH2', APIKEY = 'APIKEY', BASIC = 'BASIC', CUSTOM = 'CUSTOM' }
 
 
 	/** The OAuth 2.0 credentials required for OAuth 2.0 authentication. */
@@ -1413,9 +1413,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FlowStatus { Active = 0, Deprecated = 1, Deleted = 2, Draft = 3, Errored = 4, Suspended = 5 }
+	export enum FlowStatus { Active = 'Active', Deprecated = 'Deprecated', Deleted = 'Deleted', Draft = 'Draft', Errored = 'Errored', Suspended = 'Suspended' }
 
-	export enum TriggerType { Scheduled = 0, Event = 1, OnDemand = 2 }
+	export enum TriggerType { Scheduled = 'Scheduled', Event = 'Event', OnDemand = 'OnDemand' }
 
 
 	/**  Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the <code>Scheduled</code> trigger type.  */
@@ -1474,9 +1474,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataPullMode { Incremental = 0, Complete = 1 }
+	export enum DataPullMode { Incremental = 'Incremental', Complete = 'Complete' }
 
-	export enum ConnectorType { Salesforce = 0, Singular = 1, Slack = 2, Redshift = 3, S3 = 4, Marketo = 5, Googleanalytics = 6, Zendesk = 7, Servicenow = 8, Datadog = 9, Trendmicro = 10, Snowflake = 11, Dynatrace = 12, Infornexus = 13, Amplitude = 14, Veeva = 15, EventBridge = 16, LookoutMetrics = 17, Upsolver = 18, Honeycode = 19, CustomerProfiles = 20, SAPOData = 21, CustomConnector = 22, Pardot = 23 }
+	export enum ConnectorType { Salesforce = 'Salesforce', Singular = 'Singular', Slack = 'Slack', Redshift = 'Redshift', S3 = 'S3', Marketo = 'Marketo', Googleanalytics = 'Googleanalytics', Zendesk = 'Zendesk', Servicenow = 'Servicenow', Datadog = 'Datadog', Trendmicro = 'Trendmicro', Snowflake = 'Snowflake', Dynatrace = 'Dynatrace', Infornexus = 'Infornexus', Amplitude = 'Amplitude', Veeva = 'Veeva', EventBridge = 'EventBridge', LookoutMetrics = 'LookoutMetrics', Upsolver = 'Upsolver', Honeycode = 'Honeycode', CustomerProfiles = 'CustomerProfiles', SAPOData = 'SAPOData', CustomConnector = 'CustomConnector', Pardot = 'Pardot' }
 
 
 	/**  Specifies the information that is required to query a particular connector.  */
@@ -1683,7 +1683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3InputFileType { CSV = 0, JSON = 1 }
+	export enum S3InputFileType { CSV = 'CSV', JSON = 'JSON' }
 
 
 	/**  The properties that are applied when Salesforce is being used as a source.  */
@@ -1715,7 +1715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesforceDataTransferApi { AUTOMATIC = 0, BULKV2 = 1, REST_SYNC = 2 }
+	export enum SalesforceDataTransferApi { AUTOMATIC = 'AUTOMATIC', BULKV2 = 'BULKV2', REST_SYNC = 'REST_SYNC' }
 
 
 	/**  The properties that are applied when ServiceNow is being used as a source.  */
@@ -1925,7 +1925,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataTransferApiType { SYNC = 0, ASYNC = 1, AUTOMATIC = 2 }
+	export enum DataTransferApiType { SYNC = 'SYNC', ASYNC = 'ASYNC', AUTOMATIC = 'AUTOMATIC' }
 
 
 	/** The properties that are applied when Salesforce Pardot is being used as a source. */
@@ -2128,7 +2128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileType { CSV = 0, JSON = 1, PARQUET = 2 }
+	export enum FileType { CSV = 'CSV', JSON = 'JSON', PARQUET = 'PARQUET' }
 
 
 	/** Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination. */
@@ -2151,11 +2151,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PrefixType { FILENAME = 0, PATH = 1, PATH_AND_FILENAME = 2 }
+	export enum PrefixType { FILENAME = 'FILENAME', PATH = 'PATH', PATH_AND_FILENAME = 'PATH_AND_FILENAME' }
 
-	export enum PrefixFormat { YEAR = 0, MONTH = 1, DAY = 2, HOUR = 3, MINUTE = 4 }
+	export enum PrefixFormat { YEAR = 'YEAR', MONTH = 'MONTH', DAY = 'DAY', HOUR = 'HOUR', MINUTE = 'MINUTE' }
 
-	export enum PathPrefix { EXECUTION_ID = 0, SCHEMA_VERSION = 1 }
+	export enum PathPrefix { EXECUTION_ID = 'EXECUTION_ID', SCHEMA_VERSION = 'SCHEMA_VERSION' }
 
 
 	/**  The aggregation settings that you can use to customize the output format of your flow data.  */
@@ -2177,7 +2177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationType { None = 0, SingleFile = 1 }
+	export enum AggregationType { None = 'None', SingleFile = 'SingleFile' }
 
 
 	/**  The properties that are applied when Salesforce is being used as a destination.  */
@@ -2210,7 +2210,7 @@ export namespace MyNS {
 
 
 	/**  The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation.  */
-	export enum WriteOperationType { INSERT = 0, UPSERT = 1, UPDATE = 2, DELETE = 3 }
+	export enum WriteOperationType { INSERT = 'INSERT', UPSERT = 'UPSERT', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
 
 	/**  The properties that are applied when Snowflake is being used as a destination.  */
@@ -2623,31 +2623,31 @@ export namespace MyNS {
 
 	}
 
-	export enum AmplitudeConnectorOperator { BETWEEN = 0 }
+	export enum AmplitudeConnectorOperator { BETWEEN = 'BETWEEN' }
 
-	export enum DatadogConnectorOperator { PROJECTION = 0, BETWEEN = 1, EQUAL_TO = 2, ADDITION = 3, MULTIPLICATION = 4, DIVISION = 5, SUBTRACTION = 6, MASK_ALL = 7, MASK_FIRST_N = 8, MASK_LAST_N = 9, VALIDATE_NON_NULL = 10, VALIDATE_NON_ZERO = 11, VALIDATE_NON_NEGATIVE = 12, VALIDATE_NUMERIC = 13, NO_OP = 14 }
+	export enum DatadogConnectorOperator { PROJECTION = 'PROJECTION', BETWEEN = 'BETWEEN', EQUAL_TO = 'EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum GoogleAnalyticsConnectorOperator { PROJECTION = 0, BETWEEN = 1 }
+	export enum GoogleAnalyticsConnectorOperator { PROJECTION = 'PROJECTION', BETWEEN = 'BETWEEN' }
 
-	export enum MarketoConnectorOperator { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, BETWEEN = 3, ADDITION = 4, MULTIPLICATION = 5, DIVISION = 6, SUBTRACTION = 7, MASK_ALL = 8, MASK_FIRST_N = 9, MASK_LAST_N = 10, VALIDATE_NON_NULL = 11, VALIDATE_NON_ZERO = 12, VALIDATE_NON_NEGATIVE = 13, VALIDATE_NUMERIC = 14, NO_OP = 15 }
+	export enum MarketoConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum S3ConnectorOperator { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, BETWEEN = 3, LESS_THAN_OR_EQUAL_TO = 4, GREATER_THAN_OR_EQUAL_TO = 5, EQUAL_TO = 6, NOT_EQUAL_TO = 7, ADDITION = 8, MULTIPLICATION = 9, DIVISION = 10, SUBTRACTION = 11, MASK_ALL = 12, MASK_FIRST_N = 13, MASK_LAST_N = 14, VALIDATE_NON_NULL = 15, VALIDATE_NON_ZERO = 16, VALIDATE_NON_NEGATIVE = 17, VALIDATE_NUMERIC = 18, NO_OP = 19 }
+	export enum S3ConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum SalesforceConnectorOperator { PROJECTION = 0, LESS_THAN = 1, CONTAINS = 2, GREATER_THAN = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum SalesforceConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', CONTAINS = 'CONTAINS', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum ServiceNowConnectorOperator { PROJECTION = 0, CONTAINS = 1, LESS_THAN = 2, GREATER_THAN = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum ServiceNowConnectorOperator { PROJECTION = 'PROJECTION', CONTAINS = 'CONTAINS', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum SingularConnectorOperator { PROJECTION = 0, EQUAL_TO = 1, ADDITION = 2, MULTIPLICATION = 3, DIVISION = 4, SUBTRACTION = 5, MASK_ALL = 6, MASK_FIRST_N = 7, MASK_LAST_N = 8, VALIDATE_NON_NULL = 9, VALIDATE_NON_ZERO = 10, VALIDATE_NON_NEGATIVE = 11, VALIDATE_NUMERIC = 12, NO_OP = 13 }
+	export enum SingularConnectorOperator { PROJECTION = 'PROJECTION', EQUAL_TO = 'EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum SlackConnectorOperator { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, BETWEEN = 3, LESS_THAN_OR_EQUAL_TO = 4, GREATER_THAN_OR_EQUAL_TO = 5, EQUAL_TO = 6, ADDITION = 7, MULTIPLICATION = 8, DIVISION = 9, SUBTRACTION = 10, MASK_ALL = 11, MASK_FIRST_N = 12, MASK_LAST_N = 13, VALIDATE_NON_NULL = 14, VALIDATE_NON_ZERO = 15, VALIDATE_NON_NEGATIVE = 16, VALIDATE_NUMERIC = 17, NO_OP = 18 }
+	export enum SlackConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum VeevaConnectorOperator { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, CONTAINS = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum VeevaConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', CONTAINS = 'CONTAINS', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum ZendeskConnectorOperator { PROJECTION = 0, GREATER_THAN = 1, ADDITION = 2, MULTIPLICATION = 3, DIVISION = 4, SUBTRACTION = 5, MASK_ALL = 6, MASK_FIRST_N = 7, MASK_LAST_N = 8, VALIDATE_NON_NULL = 9, VALIDATE_NON_ZERO = 10, VALIDATE_NON_NEGATIVE = 11, VALIDATE_NUMERIC = 12, NO_OP = 13 }
+	export enum ZendeskConnectorOperator { PROJECTION = 'PROJECTION', GREATER_THAN = 'GREATER_THAN', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum PardotConnectorOperator { PROJECTION = 0, EQUAL_TO = 1, NO_OP = 2, ADDITION = 3, MULTIPLICATION = 4, DIVISION = 5, SUBTRACTION = 6, MASK_ALL = 7, MASK_FIRST_N = 8, MASK_LAST_N = 9, VALIDATE_NON_NULL = 10, VALIDATE_NON_ZERO = 11, VALIDATE_NON_NEGATIVE = 12, VALIDATE_NUMERIC = 13 }
+	export enum PardotConnectorOperator { PROJECTION = 'PROJECTION', EQUAL_TO = 'EQUAL_TO', NO_OP = 'NO_OP', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC' }
 
-	export enum TaskType { Arithmetic = 0, Filter = 1, Map = 2, Map_all = 3, Mask = 4, Merge = 5, Passthrough = 6, Truncate = 7, Validate = 8, Partition = 9 }
+	export enum TaskType { Arithmetic = 'Arithmetic', Filter = 'Filter', Map = 'Map', Map_all = 'Map_all', Mask = 'Mask', Merge = 'Merge', Passthrough = 'Passthrough', Truncate = 'Truncate', Validate = 'Validate', Partition = 'Partition' }
 
 	export interface TaskPropertiesMap {
 	}
@@ -2807,7 +2807,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleFrequencyType { BYMINUTE = 0, HOURLY = 1, DAILY = 2, WEEKLY = 3, MONTHLY = 4, ONCE = 5 }
+	export enum ScheduleFrequencyType { BYMINUTE = 'BYMINUTE', HOURLY = 'HOURLY', DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY', ONCE = 'ONCE' }
 
 
 	/**  A structure to specify connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.  */
@@ -3243,7 +3243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OAuth2CustomPropType { TOKEN_URL = 0, AUTH_URL = 1 }
+	export enum OAuth2CustomPropType { TOKEN_URL = 'TOKEN_URL', AUTH_URL = 'AUTH_URL' }
 
 
 	/** Configuration information required for custom authentication. */
@@ -3326,11 +3326,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Operators { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, CONTAINS = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum Operators { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', CONTAINS = 'CONTAINS', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
 
 	/** The type of provisioning that the connector supports, such as Lambda. */
-	export enum ConnectorProvisioningType { LAMBDA = 0 }
+	export enum ConnectorProvisioningType { LAMBDA = 'LAMBDA' }
 
 
 	/** Contains information about the configuration of the connector being registered. */
@@ -3368,7 +3368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportedDataTransferType { RECORD = 0, FILE = 1 }
+	export enum SupportedDataTransferType { RECORD = 'RECORD', FILE = 'FILE' }
 
 	export interface DescribeConnectorEntityResponse {
 
@@ -3476,7 +3476,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator { PROJECTION = 0, LESS_THAN = 1, GREATER_THAN = 2, CONTAINS = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum Operator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', CONTAINS = 'CONTAINS', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
 
 	/** The range of values that the property supports. */
@@ -3605,7 +3605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionMode { Public = 0, Private = 1 }
+	export enum ConnectionMode { Public = 'Public', Private = 'Private' }
 
 
 	/**  Specifies the private connection provisioning state.  */
@@ -3630,9 +3630,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateConnectionProvisioningStatus { FAILED = 0, PENDING = 1, CREATED = 2 }
+	export enum PrivateConnectionProvisioningStatus { FAILED = 'FAILED', PENDING = 'PENDING', CREATED = 'CREATED' }
 
-	export enum PrivateConnectionProvisioningFailureCause { CONNECTOR_AUTHENTICATION = 0, CONNECTOR_SERVER = 1, INTERNAL_SERVER = 2, ACCESS_DENIED = 3, VALIDATION = 4 }
+	export enum PrivateConnectionProvisioningFailureCause { CONNECTOR_AUTHENTICATION = 'CONNECTOR_AUTHENTICATION', CONNECTOR_SERVER = 'CONNECTOR_SERVER', INTERNAL_SERVER = 'INTERNAL_SERVER', ACCESS_DENIED = 'ACCESS_DENIED', VALIDATION = 'VALIDATION' }
 
 	export interface DescribeConnectorsResponse {
 		connectorConfigurations?: ConnectorConfigurationsMap;
@@ -3810,7 +3810,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStatus { InProgress = 0, Successful = 1, Error = 2, CancelStarted = 3, Canceled = 4 }
+	export enum ExecutionStatus { InProgress = 'InProgress', Successful = 'Successful', Error = 'Error', CancelStarted = 'CancelStarted', Canceled = 'Canceled' }
 
 
 	/**  The trigger settings that determine how and when Amazon AppFlow runs the specified flow.  */
@@ -3881,7 +3881,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogType { GLUE = 0 }
+	export enum CatalogType { GLUE = 'GLUE' }
 
 
 	/** <p>Describes the status of an attempt from Amazon AppFlow to register a resource.</p> <p>When you run a flow that you've configured to use a metadata catalog, Amazon AppFlow registers a metadata table and data partitions with that catalog. This operation provides the status of that registration attempt. The operation also indicates how many related resources Amazon AppFlow created or updated.</p> */
@@ -4300,13 +4300,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DynatraceConnectorOperator { PROJECTION = 0, BETWEEN = 1, EQUAL_TO = 2, ADDITION = 3, MULTIPLICATION = 4, DIVISION = 5, SUBTRACTION = 6, MASK_ALL = 7, MASK_FIRST_N = 8, MASK_LAST_N = 9, VALIDATE_NON_NULL = 10, VALIDATE_NON_ZERO = 11, VALIDATE_NON_NEGATIVE = 12, VALIDATE_NUMERIC = 13, NO_OP = 14 }
+	export enum DynatraceConnectorOperator { PROJECTION = 'PROJECTION', BETWEEN = 'BETWEEN', EQUAL_TO = 'EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum InforNexusConnectorOperator { PROJECTION = 0, BETWEEN = 1, EQUAL_TO = 2, ADDITION = 3, MULTIPLICATION = 4, DIVISION = 5, SUBTRACTION = 6, MASK_ALL = 7, MASK_FIRST_N = 8, MASK_LAST_N = 9, VALIDATE_NON_NULL = 10, VALIDATE_NON_ZERO = 11, VALIDATE_NON_NEGATIVE = 12, VALIDATE_NUMERIC = 13, NO_OP = 14 }
+	export enum InforNexusConnectorOperator { PROJECTION = 'PROJECTION', BETWEEN = 'BETWEEN', EQUAL_TO = 'EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum TrendmicroConnectorOperator { PROJECTION = 0, EQUAL_TO = 1, ADDITION = 2, MULTIPLICATION = 3, DIVISION = 4, SUBTRACTION = 5, MASK_ALL = 6, MASK_FIRST_N = 7, MASK_LAST_N = 8, VALIDATE_NON_NULL = 9, VALIDATE_NON_ZERO = 10, VALIDATE_NON_NEGATIVE = 11, VALIDATE_NUMERIC = 12, NO_OP = 13 }
+	export enum TrendmicroConnectorOperator { PROJECTION = 'PROJECTION', EQUAL_TO = 'EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
-	export enum SAPODataConnectorOperator { PROJECTION = 0, LESS_THAN = 1, CONTAINS = 2, GREATER_THAN = 3, BETWEEN = 4, LESS_THAN_OR_EQUAL_TO = 5, GREATER_THAN_OR_EQUAL_TO = 6, EQUAL_TO = 7, NOT_EQUAL_TO = 8, ADDITION = 9, MULTIPLICATION = 10, DIVISION = 11, SUBTRACTION = 12, MASK_ALL = 13, MASK_FIRST_N = 14, MASK_LAST_N = 15, VALIDATE_NON_NULL = 16, VALIDATE_NON_ZERO = 17, VALIDATE_NON_NEGATIVE = 18, VALIDATE_NUMERIC = 19, NO_OP = 20 }
+	export enum SAPODataConnectorOperator { PROJECTION = 'PROJECTION', LESS_THAN = 'LESS_THAN', CONTAINS = 'CONTAINS', GREATER_THAN = 'GREATER_THAN', BETWEEN = 'BETWEEN', LESS_THAN_OR_EQUAL_TO = 'LESS_THAN_OR_EQUAL_TO', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO', EQUAL_TO = 'EQUAL_TO', NOT_EQUAL_TO = 'NOT_EQUAL_TO', ADDITION = 'ADDITION', MULTIPLICATION = 'MULTIPLICATION', DIVISION = 'DIVISION', SUBTRACTION = 'SUBTRACTION', MASK_ALL = 'MASK_ALL', MASK_FIRST_N = 'MASK_FIRST_N', MASK_LAST_N = 'MASK_LAST_N', VALIDATE_NON_NULL = 'VALIDATE_NON_NULL', VALIDATE_NON_ZERO = 'VALIDATE_NON_ZERO', VALIDATE_NON_NEGATIVE = 'VALIDATE_NON_NEGATIVE', VALIDATE_NUMERIC = 'VALIDATE_NUMERIC', NO_OP = 'NO_OP' }
 
 
 	/**  Defines the connector-specific configuration and credentials for the connector profile.  */
@@ -4645,7 +4645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatorPropertiesKeys { VALUE = 0, VALUES = 1, DATA_TYPE = 2, UPPER_BOUND = 3, LOWER_BOUND = 4, SOURCE_DATA_TYPE = 5, DESTINATION_DATA_TYPE = 6, VALIDATION_ACTION = 7, MASK_VALUE = 8, MASK_LENGTH = 9, TRUNCATE_LENGTH = 10, MATH_OPERATION_FIELDS_ORDER = 11, CONCAT_FORMAT = 12, SUBFIELD_CATEGORY_MAP = 13, EXCLUDE_SOURCE_FIELDS_LIST = 14, INCLUDE_NEW_FIELDS = 15, ORDERED_PARTITION_KEYS_LIST = 16 }
+	export enum OperatorPropertiesKeys { VALUE = 'VALUE', VALUES = 'VALUES', DATA_TYPE = 'DATA_TYPE', UPPER_BOUND = 'UPPER_BOUND', LOWER_BOUND = 'LOWER_BOUND', SOURCE_DATA_TYPE = 'SOURCE_DATA_TYPE', DESTINATION_DATA_TYPE = 'DESTINATION_DATA_TYPE', VALIDATION_ACTION = 'VALIDATION_ACTION', MASK_VALUE = 'MASK_VALUE', MASK_LENGTH = 'MASK_LENGTH', TRUNCATE_LENGTH = 'TRUNCATE_LENGTH', MATH_OPERATION_FIELDS_ORDER = 'MATH_OPERATION_FIELDS_ORDER', CONCAT_FORMAT = 'CONCAT_FORMAT', SUBFIELD_CATEGORY_MAP = 'SUBFIELD_CATEGORY_MAP', EXCLUDE_SOURCE_FIELDS_LIST = 'EXCLUDE_SOURCE_FIELDS_LIST', INCLUDE_NEW_FIELDS = 'INCLUDE_NEW_FIELDS', ORDERED_PARTITION_KEYS_LIST = 'ORDERED_PARTITION_KEYS_LIST' }
 
 	export interface RegisterConnectorRequest {
 		connectorLabel?: string;

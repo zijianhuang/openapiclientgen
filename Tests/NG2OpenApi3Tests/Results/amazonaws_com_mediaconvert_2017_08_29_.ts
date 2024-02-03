@@ -200,19 +200,19 @@ export namespace MyNS {
 
 
 	/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
-	export enum AccelerationMode { DISABLED = 0, ENABLED = 1, PREFERRED = 2 }
+	export enum AccelerationMode { DISABLED = 'DISABLED', ENABLED = 'ENABLED', PREFERRED = 'PREFERRED' }
 
 
 	/** Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED. */
-	export enum AccelerationStatus { NOT_APPLICABLE = 0, IN_PROGRESS = 1, ACCELERATED = 2, NOT_ACCELERATED = 3 }
+	export enum AccelerationStatus { NOT_APPLICABLE = 'NOT_APPLICABLE', IN_PROGRESS = 'IN_PROGRESS', ACCELERATED = 'ACCELERATED', NOT_ACCELERATED = 'NOT_ACCELERATED' }
 
 
 	/** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. */
-	export enum BillingTagsSource { QUEUE = 0, PRESET = 1, JOB_TEMPLATE = 2, JOB = 3 }
+	export enum BillingTagsSource { QUEUE = 'QUEUE', PRESET = 'PRESET', JOB_TEMPLATE = 'JOB_TEMPLATE', JOB = 'JOB' }
 
 
 	/** A job's phase can be PROBING, TRANSCODING OR UPLOADING */
-	export enum JobPhase { PROBING = 0, TRANSCODING = 1, UPLOADING = 2 }
+	export enum JobPhase { PROBING = 'PROBING', TRANSCODING = 'TRANSCODING', UPLOADING = 'UPLOADING' }
 
 
 	/** Optional. Configuration for a destination queue to which the job can hop once a customer-defined minimum wait time has passed. */
@@ -449,7 +449,7 @@ export namespace MyNS {
 
 
 	/** The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions. */
-	export enum CopyProtectionAction { PASSTHROUGH = 0, STRIP = 1 }
+	export enum CopyProtectionAction { PASSTHROUGH = 'PASSTHROUGH', STRIP = 'STRIP' }
 
 
 	/** Use inputs to define the source files used in your transcoding job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/specify-input-settings.html. You can use multiple video inputs to do input stitching. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/assembling-multiple-inputs-and-input-clips.html */
@@ -515,7 +515,7 @@ export namespace MyNS {
 
 
 	/** Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise. */
-	export enum AdvancedInputFilter { ENABLED = 0, DISABLED = 1 }
+	export enum AdvancedInputFilter { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Optional settings for Advanced input filter when you set Advanced input filter to Enabled. */
@@ -539,7 +539,7 @@ export namespace MyNS {
 
 
 	/** Optionally specify the amount of sharpening to apply when you use the Advanced input filter. Sharpening adds contrast to the edges of your video content and can reduce softness. To apply no sharpening: Keep the default value, Off. To apply a minimal amount of sharpening choose Low, or for the maximum choose High. */
-	export enum AdvancedInputFilterSharpen { OFF = 0, LOW = 1, HIGH = 2 }
+	export enum AdvancedInputFilterSharpen { OFF = 'OFF', LOW = 'LOW', HIGH = 'HIGH' }
 
 	export interface __mapOfAudioSelectorGroup {
 	}
@@ -625,11 +625,11 @@ export namespace MyNS {
 
 
 	/** Specify the encryption mode that you used to encrypt your input files. */
-	export enum DecryptionMode { AES_CTR = 0, AES_CBC = 1, AES_GCM = 2 }
+	export enum DecryptionMode { AES_CTR = 'AES_CTR', AES_CBC = 'AES_CBC', AES_GCM = 'AES_GCM' }
 
 
 	/** Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength. */
-	export enum InputFilterEnable { AUTO = 0, DISABLE = 1, FORCE = 2 }
+	export enum InputFilterEnable { AUTO = 'AUTO', DISABLE = 'DISABLE', FORCE = 'FORCE' }
 
 
 	/** Use the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/graphic-overlay.html. This setting is disabled by default. */
@@ -718,7 +718,7 @@ export namespace MyNS {
 
 
 	/** When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts. */
-	export enum InputScanType { AUTO = 0, PSF = 1 }
+	export enum InputScanType { AUTO = 'AUTO', PSF = 'PSF' }
 
 
 	/**
@@ -726,11 +726,11 @@ export namespace MyNS {
 	 * * Ignore PSI - Scan all PIDs for audio and video.
 	 * * Use PSI - Scan only PSI data.
 	 */
-	export enum InputPsiControl { IGNORE_PSI = 0, USE_PSI = 1 }
+	export enum InputPsiControl { IGNORE_PSI = 'IGNORE_PSI', USE_PSI = 'USE_PSI' }
 
 
 	/** Use this Timecode source setting, located under the input settings, to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode. */
-	export enum InputTimecodeSource { EMBEDDED = 0, ZEROBASED = 1, SPECIFIEDSTART = 2 }
+	export enum InputTimecodeSource { EMBEDDED = 'EMBEDDED', ZEROBASED = 'ZEROBASED', SPECIFIEDSTART = 'SPECIFIEDSTART' }
 
 
 	/** When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html */
@@ -793,7 +793,7 @@ export namespace MyNS {
 
 
 	/** Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs. */
-	export enum AlphaBehavior { DISCARD = 0, REMAP_TO_LUMA = 1 }
+	export enum AlphaBehavior { DISCARD = 'DISCARD', REMAP_TO_LUMA = 'REMAP_TO_LUMA' }
 
 
 	/**
@@ -804,15 +804,15 @@ export namespace MyNS {
 	 *  * P3D65 (SDR): Display P3, sRGB, BT.709
 	 *  * P3D65 (HDR): Display P3, PQ, BT.709
 	 */
-	export enum ColorSpace { FOLLOW = 0, REC_601 = 1, REC_709 = 2, HDR10 = 3, HLG_2020 = 4, P3DCI = 5, P3D65_SDR = 6, P3D65_HDR = 7 }
+	export enum ColorSpace { FOLLOW = 'FOLLOW', REC_601 = 'REC_601', REC_709 = 'REC_709', HDR10 = 'HDR10', HLG_2020 = 'HLG_2020', P3DCI = 'P3DCI', P3D65_SDR = 'P3D65_SDR', P3D65_HDR = 'P3D65_HDR' }
 
 
 	/** There are two sources for color metadata, the input file and the job input settings Color space and HDR master display information settings. The Color space usage setting determines which takes precedence. Choose Force to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings. */
-	export enum ColorSpaceUsage { FORCE = 0, FALLBACK = 1 }
+	export enum ColorSpaceUsage { FORCE = 'FORCE', FALLBACK = 'FALLBACK' }
 
 
 	/** Set Embedded timecode override to Use MDPM when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata. When you do, we recommend you also set Timecode source to Embedded. Leave Embedded timecode override blank, or set to None, when your input does not contain MDPM timecode. */
-	export enum EmbeddedTimecodeOverride { NONE = 0, USE_MDPM = 1 }
+	export enum EmbeddedTimecodeOverride { NONE = 'NONE', USE_MDPM = 'USE_MDPM' }
 
 
 	/** Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. */
@@ -866,15 +866,15 @@ export namespace MyNS {
 
 
 	/** Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video to Black, MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled or leave blank. */
-	export enum PadVideo { DISABLED = 0, BLACK = 1 }
+	export enum PadVideo { DISABLED = 'DISABLED', BLACK = 'BLACK' }
 
 
 	/** Use Rotate to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata. */
-	export enum InputRotate { DEGREE_0 = 0, DEGREES_90 = 1, DEGREES_180 = 2, DEGREES_270 = 3, AUTO = 4 }
+	export enum InputRotate { DEGREE_0 = 'DEGREE_0', DEGREES_90 = 'DEGREES_90', DEGREES_180 = 'DEGREES_180', DEGREES_270 = 'DEGREES_270', AUTO = 'AUTO' }
 
 
 	/** If the sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default value, Follow, for this setting. When you do, the service automatically detects your input sample range. If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata. */
-	export enum InputSampleRange { FOLLOW = 0, FULL_RANGE = 1, LIMITED_RANGE = 2 }
+	export enum InputSampleRange { FOLLOW = 'FOLLOW', FULL_RANGE = 'FULL_RANGE', LIMITED_RANGE = 'LIMITED_RANGE' }
 
 
 	/** Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html. */
@@ -979,7 +979,7 @@ export namespace MyNS {
 
 
 	/** Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files. */
-	export enum MotionImageInsertionMode { MOV = 0, PNG = 1 }
+	export enum MotionImageInsertionMode { MOV = 'MOV', PNG = 'PNG' }
 
 
 	/** Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay. */
@@ -1003,7 +1003,7 @@ export namespace MyNS {
 
 
 	/** Specify whether your motion graphic overlay repeats on a loop or plays only once. */
-	export enum MotionImagePlayback { ONCE = 0, REPEAT = 1 }
+	export enum MotionImagePlayback { ONCE = 'ONCE', REPEAT = 'REPEAT' }
 
 
 	/** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job. */
@@ -1074,15 +1074,15 @@ export namespace MyNS {
 
 
 	/** Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings. */
-	export enum NielsenActiveWatermarkProcessType { NAES2_AND_NW = 0, CBET = 1, NAES2_AND_NW_AND_CBET = 2 }
+	export enum NielsenActiveWatermarkProcessType { NAES2_AND_NW = 'NAES2_AND_NW', CBET = 'CBET', NAES2_AND_NW_AND_CBET = 'NAES2_AND_NW_AND_CBET' }
 
 
 	/** Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks. */
-	export enum NielsenSourceWatermarkStatusType { CLEAN = 0, WATERMARKED = 1 }
+	export enum NielsenSourceWatermarkStatusType { CLEAN = 'CLEAN', WATERMARKED = 'WATERMARKED' }
 
 
 	/** To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs. */
-	export enum NielsenUniqueTicPerAudioTrackType { RESERVE_UNIQUE_TICS_PER_TRACK = 0, SAME_TICS_PER_TRACK = 1 }
+	export enum NielsenUniqueTicPerAudioTrackType { RESERVE_UNIQUE_TICS_PER_TRACK = 'RESERVE_UNIQUE_TICS_PER_TRACK', SAME_TICS_PER_TRACK = 'SAME_TICS_PER_TRACK' }
 
 
 	/** Group of outputs */
@@ -1252,7 +1252,7 @@ export namespace MyNS {
 
 
 	/** Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions. */
-	export enum RuleType { MIN_TOP_RENDITION_SIZE = 0, MIN_BOTTOM_RENDITION_SIZE = 1, FORCE_INCLUDE_RENDITIONS = 2, ALLOWED_RENDITIONS = 3 }
+	export enum RuleType { MIN_TOP_RENDITION_SIZE = 'MIN_TOP_RENDITION_SIZE', MIN_BOTTOM_RENDITION_SIZE = 'MIN_BOTTOM_RENDITION_SIZE', FORCE_INCLUDE_RENDITIONS = 'FORCE_INCLUDE_RENDITIONS', ALLOWED_RENDITIONS = 'ALLOWED_RENDITIONS' }
 
 
 	/** Output Group settings, including type */
@@ -1383,15 +1383,15 @@ export namespace MyNS {
 
 
 	/** Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header. */
-	export enum CmafClientCache { DISABLED = 0, ENABLED = 1 }
+	export enum CmafClientCache { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
-	export enum CmafCodecSpecification { RFC_6381 = 0, RFC_4281 = 1 }
+	export enum CmafCodecSpecification { RFC_6381 = 'RFC_6381', RFC_4281 = 'RFC_4281' }
 
 
 	/** Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct. */
-	export enum DashManifestStyle { BASIC = 0, COMPACT = 1, DISTINCT = 2 }
+	export enum DashManifestStyle { BASIC = 'BASIC', COMPACT = 'COMPACT', DISTINCT = 'DISTINCT' }
 
 
 	/** Settings associated with the destination. Will vary based on the type of destination */
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 
 
 	/** Choose an Amazon S3 canned ACL for MediaConvert to apply to this output. */
-	export enum S3ObjectCannedAcl { PUBLIC_READ = 0, AUTHENTICATED_READ = 1, BUCKET_OWNER_READ = 2, BUCKET_OWNER_FULL_CONTROL = 3 }
+	export enum S3ObjectCannedAcl { PUBLIC_READ = 'PUBLIC_READ', AUTHENTICATED_READ = 'AUTHENTICATED_READ', BUCKET_OWNER_READ = 'BUCKET_OWNER_READ', BUCKET_OWNER_FULL_CONTROL = 'BUCKET_OWNER_FULL_CONTROL' }
 
 
 	/** Settings for how your job outputs are encrypted as they are uploaded to Amazon S3. */
@@ -1470,7 +1470,7 @@ export namespace MyNS {
 
 
 	/** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3. If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS. By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN. */
-	export enum S3ServerSideEncryptionType { SERVER_SIDE_ENCRYPTION_S3 = 0, SERVER_SIDE_ENCRYPTION_KMS = 1 }
+	export enum S3ServerSideEncryptionType { SERVER_SIDE_ENCRYPTION_S3 = 'SERVER_SIDE_ENCRYPTION_S3', SERVER_SIDE_ENCRYPTION_KMS = 'SERVER_SIDE_ENCRYPTION_KMS' }
 
 
 	/** Settings for CMAF encryption */
@@ -1502,11 +1502,11 @@ export namespace MyNS {
 
 
 	/** Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample or AES_CTR. */
-	export enum CmafEncryptionType { SAMPLE_AES = 0, AES_CTR = 1 }
+	export enum CmafEncryptionType { SAMPLE_AES = 'SAMPLE_AES', AES_CTR = 'AES_CTR' }
 
 
 	/** When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests. */
-	export enum CmafInitializationVectorInManifest { INCLUDE = 0, EXCLUDE = 1 }
+	export enum CmafInitializationVectorInManifest { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead. */
@@ -1561,11 +1561,11 @@ export namespace MyNS {
 
 
 	/** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html. */
-	export enum CmafKeyProviderType { SPEKE = 0, STATIC_KEY = 1 }
+	export enum CmafKeyProviderType { SPEKE = 'SPEKE', STATIC_KEY = 'STATIC_KEY' }
 
 
 	/** Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest, MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md */
-	export enum CmafImageBasedTrickPlay { NONE = 0, THUMBNAIL = 1, THUMBNAIL_AND_FULLFRAME = 2, ADVANCED = 3 }
+	export enum CmafImageBasedTrickPlay { NONE = 'NONE', THUMBNAIL = 'THUMBNAIL', THUMBNAIL_AND_FULLFRAME = 'THUMBNAIL_AND_FULLFRAME', ADVANCED = 'ADVANCED' }
 
 
 	/** Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED */
@@ -1601,43 +1601,43 @@ export namespace MyNS {
 
 
 	/** The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval. */
-	export enum CmafIntervalCadence { FOLLOW_IFRAME = 0, FOLLOW_CUSTOM = 1 }
+	export enum CmafIntervalCadence { FOLLOW_IFRAME = 'FOLLOW_IFRAME', FOLLOW_CUSTOM = 'FOLLOW_CUSTOM' }
 
 
 	/** When set to GZIP, compresses HLS playlist. */
-	export enum CmafManifestCompression { GZIP = 0, NONE = 1 }
+	export enum CmafManifestCompression { GZIP = 'GZIP', NONE = 'NONE' }
 
 
 	/** Indicates whether the output manifest should use floating point values for segment duration. */
-	export enum CmafManifestDurationFormat { FLOATING_POINT = 0, INTEGER = 1 }
+	export enum CmafManifestDurationFormat { FLOATING_POINT = 'FLOATING_POINT', INTEGER = 'INTEGER' }
 
 
 	/** Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second. */
-	export enum CmafMpdManifestBandwidthType { AVERAGE = 0, MAX = 1 }
+	export enum CmafMpdManifestBandwidthType { AVERAGE = 'AVERAGE', MAX = 'MAX' }
 
 
 	/** Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file. */
-	export enum CmafMpdProfile { MAIN_PROFILE = 0, ON_DEMAND_PROFILE = 1 }
+	export enum CmafMpdProfile { MAIN_PROFILE = 'MAIN_PROFILE', ON_DEMAND_PROFILE = 'ON_DEMAND_PROFILE' }
 
 
 	/** Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here. */
-	export enum CmafPtsOffsetHandlingForBFrames { ZERO_BASED = 0, MATCH_INITIAL_PTS = 1 }
+	export enum CmafPtsOffsetHandlingForBFrames { ZERO_BASED = 'ZERO_BASED', MATCH_INITIAL_PTS = 'MATCH_INITIAL_PTS' }
 
 
 	/** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created. */
-	export enum CmafSegmentControl { SINGLE_FILE = 0, SEGMENTED_FILES = 1 }
+	export enum CmafSegmentControl { SINGLE_FILE = 'SINGLE_FILE', SEGMENTED_FILES = 'SEGMENTED_FILES' }
 
 
 	/** Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary. */
-	export enum CmafSegmentLengthControl { EXACT = 0, GOP_MULTIPLE = 1 }
+	export enum CmafSegmentLengthControl { EXACT = 'EXACT', GOP_MULTIPLE = 'GOP_MULTIPLE' }
 
 
 	/** When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration. */
-	export enum CmafTargetDurationCompatibilityMode { LEGACY = 0, SPEC_COMPLIANT = 1 }
+	export enum CmafTargetDurationCompatibilityMode { LEGACY = 'LEGACY', SPEC_COMPLIANT = 'SPEC_COMPLIANT' }
 
 
 	/** Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers. */
-	export enum CmafVideoCompositionOffsets { SIGNED = 0, UNSIGNED = 1 }
+	export enum CmafVideoCompositionOffsets { SIGNED = 'SIGNED', UNSIGNED = 'UNSIGNED' }
 
 
 	/** Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. */
@@ -1728,7 +1728,7 @@ export namespace MyNS {
 
 
 	/** Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011. */
-	export enum DashIsoGroupAudioChannelConfigSchemeIdUri { MPEG_CHANNEL_CONFIGURATION = 0, DOLBY_CHANNEL_CONFIGURATION = 1 }
+	export enum DashIsoGroupAudioChannelConfigSchemeIdUri { MPEG_CHANNEL_CONFIGURATION = 'MPEG_CHANNEL_CONFIGURATION', DOLBY_CHANNEL_CONFIGURATION = 'DOLBY_CHANNEL_CONFIGURATION' }
 
 
 	/** Specifies DRM settings for DASH outputs. */
@@ -1750,7 +1750,7 @@ export namespace MyNS {
 
 
 	/** This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted. */
-	export enum DashIsoPlaybackDeviceCompatibility { CENC_V1 = 0, UNENCRYPTED_SEI = 1 }
+	export enum DashIsoPlaybackDeviceCompatibility { CENC_V1 = 'CENC_V1', UNENCRYPTED_SEI = 'UNENCRYPTED_SEI' }
 
 
 	/** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead. */
@@ -1778,7 +1778,7 @@ export namespace MyNS {
 
 
 	/** Supports HbbTV specification as indicated */
-	export enum DashIsoHbbtvCompliance { HBBTV_1_5 = 0, NONE = 1 }
+	export enum DashIsoHbbtvCompliance { HBBTV_1_5 = 'HBBTV_1_5', NONE = 'NONE' }
 
 
 	/** Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED */
@@ -1930,7 +1930,7 @@ export namespace MyNS {
 
 
 	/** Ad marker for Apple HLS manifest. */
-	export enum HlsAdMarkers { ELEMENTAL = 0, ELEMENTAL_SCTE35 = 1 }
+	export enum HlsAdMarkers { ELEMENTAL = 'ELEMENTAL', ELEMENTAL_SCTE35 = 'ELEMENTAL_SCTE35' }
 
 
 	/** Specify the details for each additional HLS manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group. */
@@ -1978,19 +1978,19 @@ export namespace MyNS {
 
 
 	/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
-	export enum LanguageCode { ENG = 0, SPA = 1, FRA = 2, DEU = 3, GER = 4, ZHO = 5, ARA = 6, HIN = 7, JPN = 8, RUS = 9, POR = 10, ITA = 11, URD = 12, VIE = 13, KOR = 14, PAN = 15, ABK = 16, AAR = 17, AFR = 18, AKA = 19, SQI = 20, AMH = 21, ARG = 22, HYE = 23, ASM = 24, AVA = 25, AVE = 26, AYM = 27, AZE = 28, BAM = 29, BAK = 30, EUS = 31, BEL = 32, BEN = 33, BIH = 34, BIS = 35, BOS = 36, BRE = 37, BUL = 38, MYA = 39, CAT = 40, KHM = 41, CHA = 42, CHE = 43, NYA = 44, CHU = 45, CHV = 46, COR = 47, COS = 48, CRE = 49, HRV = 50, CES = 51, DAN = 52, DIV = 53, NLD = 54, DZO = 55, ENM = 56, EPO = 57, EST = 58, EWE = 59, FAO = 60, FIJ = 61, FIN = 62, FRM = 63, FUL = 64, GLA = 65, GLG = 66, LUG = 67, KAT = 68, ELL = 69, GRN = 70, GUJ = 71, HAT = 72, HAU = 73, HEB = 74, HER = 75, HMO = 76, HUN = 77, ISL = 78, IDO = 79, IBO = 80, IND = 81, INA = 82, ILE = 83, IKU = 84, IPK = 85, GLE = 86, JAV = 87, KAL = 88, KAN = 89, KAU = 90, KAS = 91, KAZ = 92, KIK = 93, KIN = 94, KIR = 95, KOM = 96, KON = 97, KUA = 98, KUR = 99, LAO = 100, LAT = 101, LAV = 102, LIM = 103, LIN = 104, LIT = 105, LUB = 106, LTZ = 107, MKD = 108, MLG = 109, MSA = 110, MAL = 111, MLT = 112, GLV = 113, MRI = 114, MAR = 115, MAH = 116, MON = 117, NAU = 118, NAV = 119, NDE = 120, NBL = 121, NDO = 122, NEP = 123, SME = 124, NOR = 125, NOB = 126, NNO = 127, OCI = 128, OJI = 129, ORI = 130, ORM = 131, OSS = 132, PLI = 133, FAS = 134, POL = 135, PUS = 136, QUE = 137, QAA = 138, RON = 139, ROH = 140, RUN = 141, SMO = 142, SAG = 143, SAN = 144, SRD = 145, SRB = 146, SNA = 147, III = 148, SND = 149, SIN = 150, SLK = 151, SLV = 152, SOM = 153, SOT = 154, SUN = 155, SWA = 156, SSW = 157, SWE = 158, TGL = 159, TAH = 160, TGK = 161, TAM = 162, TAT = 163, TEL = 164, THA = 165, BOD = 166, TIR = 167, TON = 168, TSO = 169, TSN = 170, TUR = 171, TUK = 172, TWI = 173, UIG = 174, UKR = 175, UZB = 176, VEN = 177, VOL = 178, WLN = 179, CYM = 180, FRY = 181, WOL = 182, XHO = 183, YID = 184, YOR = 185, ZHA = 186, ZUL = 187, ORJ = 188, QPC = 189, TNG = 190, SRP = 191 }
+	export enum LanguageCode { ENG = 'ENG', SPA = 'SPA', FRA = 'FRA', DEU = 'DEU', GER = 'GER', ZHO = 'ZHO', ARA = 'ARA', HIN = 'HIN', JPN = 'JPN', RUS = 'RUS', POR = 'POR', ITA = 'ITA', URD = 'URD', VIE = 'VIE', KOR = 'KOR', PAN = 'PAN', ABK = 'ABK', AAR = 'AAR', AFR = 'AFR', AKA = 'AKA', SQI = 'SQI', AMH = 'AMH', ARG = 'ARG', HYE = 'HYE', ASM = 'ASM', AVA = 'AVA', AVE = 'AVE', AYM = 'AYM', AZE = 'AZE', BAM = 'BAM', BAK = 'BAK', EUS = 'EUS', BEL = 'BEL', BEN = 'BEN', BIH = 'BIH', BIS = 'BIS', BOS = 'BOS', BRE = 'BRE', BUL = 'BUL', MYA = 'MYA', CAT = 'CAT', KHM = 'KHM', CHA = 'CHA', CHE = 'CHE', NYA = 'NYA', CHU = 'CHU', CHV = 'CHV', COR = 'COR', COS = 'COS', CRE = 'CRE', HRV = 'HRV', CES = 'CES', DAN = 'DAN', DIV = 'DIV', NLD = 'NLD', DZO = 'DZO', ENM = 'ENM', EPO = 'EPO', EST = 'EST', EWE = 'EWE', FAO = 'FAO', FIJ = 'FIJ', FIN = 'FIN', FRM = 'FRM', FUL = 'FUL', GLA = 'GLA', GLG = 'GLG', LUG = 'LUG', KAT = 'KAT', ELL = 'ELL', GRN = 'GRN', GUJ = 'GUJ', HAT = 'HAT', HAU = 'HAU', HEB = 'HEB', HER = 'HER', HMO = 'HMO', HUN = 'HUN', ISL = 'ISL', IDO = 'IDO', IBO = 'IBO', IND = 'IND', INA = 'INA', ILE = 'ILE', IKU = 'IKU', IPK = 'IPK', GLE = 'GLE', JAV = 'JAV', KAL = 'KAL', KAN = 'KAN', KAU = 'KAU', KAS = 'KAS', KAZ = 'KAZ', KIK = 'KIK', KIN = 'KIN', KIR = 'KIR', KOM = 'KOM', KON = 'KON', KUA = 'KUA', KUR = 'KUR', LAO = 'LAO', LAT = 'LAT', LAV = 'LAV', LIM = 'LIM', LIN = 'LIN', LIT = 'LIT', LUB = 'LUB', LTZ = 'LTZ', MKD = 'MKD', MLG = 'MLG', MSA = 'MSA', MAL = 'MAL', MLT = 'MLT', GLV = 'GLV', MRI = 'MRI', MAR = 'MAR', MAH = 'MAH', MON = 'MON', NAU = 'NAU', NAV = 'NAV', NDE = 'NDE', NBL = 'NBL', NDO = 'NDO', NEP = 'NEP', SME = 'SME', NOR = 'NOR', NOB = 'NOB', NNO = 'NNO', OCI = 'OCI', OJI = 'OJI', ORI = 'ORI', ORM = 'ORM', OSS = 'OSS', PLI = 'PLI', FAS = 'FAS', POL = 'POL', PUS = 'PUS', QUE = 'QUE', QAA = 'QAA', RON = 'RON', ROH = 'ROH', RUN = 'RUN', SMO = 'SMO', SAG = 'SAG', SAN = 'SAN', SRD = 'SRD', SRB = 'SRB', SNA = 'SNA', III = 'III', SND = 'SND', SIN = 'SIN', SLK = 'SLK', SLV = 'SLV', SOM = 'SOM', SOT = 'SOT', SUN = 'SUN', SWA = 'SWA', SSW = 'SSW', SWE = 'SWE', TGL = 'TGL', TAH = 'TAH', TGK = 'TGK', TAM = 'TAM', TAT = 'TAT', TEL = 'TEL', THA = 'THA', BOD = 'BOD', TIR = 'TIR', TON = 'TON', TSO = 'TSO', TSN = 'TSN', TUR = 'TUR', TUK = 'TUK', TWI = 'TWI', UIG = 'UIG', UKR = 'UKR', UZB = 'UZB', VEN = 'VEN', VOL = 'VOL', WLN = 'WLN', CYM = 'CYM', FRY = 'FRY', WOL = 'WOL', XHO = 'XHO', YID = 'YID', YOR = 'YOR', ZHA = 'ZHA', ZUL = 'ZUL', ORJ = 'ORJ', QPC = 'QPC', TNG = 'TNG', SRP = 'SRP' }
 
 
 	/** Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest. */
-	export enum HlsCaptionLanguageSetting { INSERT = 0, OMIT = 1, NONE = 2 }
+	export enum HlsCaptionLanguageSetting { INSERT = 'INSERT', OMIT = 'OMIT', NONE = 'NONE' }
 
 
 	/** Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long. */
-	export enum HlsCaptionSegmentLengthControl { LARGE_SEGMENTS = 0, MATCH_VIDEO = 1 }
+	export enum HlsCaptionSegmentLengthControl { LARGE_SEGMENTS = 'LARGE_SEGMENTS', MATCH_VIDEO = 'MATCH_VIDEO' }
 
 
 	/** Indicates whether segments should be placed in subdirectories. */
-	export enum HlsDirectoryStructure { SINGLE_DIRECTORY = 0, SUBDIRECTORY_PER_STREAM = 1 }
+	export enum HlsDirectoryStructure { SINGLE_DIRECTORY = 'SINGLE_DIRECTORY', SUBDIRECTORY_PER_STREAM = 'SUBDIRECTORY_PER_STREAM' }
 
 
 	/** Settings for HLS encryption */
@@ -2025,7 +2025,7 @@ export namespace MyNS {
 
 
 	/** Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption. */
-	export enum HlsEncryptionType { AES128 = 0, SAMPLE_AES = 1 }
+	export enum HlsEncryptionType { AES128 = 'AES128', SAMPLE_AES = 'SAMPLE_AES' }
 
 
 	/** Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED */
@@ -2061,11 +2061,11 @@ export namespace MyNS {
 
 
 	/** Indicates whether the .m3u8 manifest file should be generated for this HLS output group. */
-	export enum HlsOutputSelection { MANIFESTS_AND_SEGMENTS = 0, SEGMENTS_ONLY = 1 }
+	export enum HlsOutputSelection { MANIFESTS_AND_SEGMENTS = 'MANIFESTS_AND_SEGMENTS', SEGMENTS_ONLY = 'SEGMENTS_ONLY' }
 
 
 	/** Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None. */
-	export enum HlsTimedMetadataId3Frame { NONE = 0, PRIV = 1, TDRL = 2 }
+	export enum HlsTimedMetadataId3Frame { NONE = 'NONE', PRIV = 'PRIV', TDRL = 'TDRL' }
 
 
 	/** Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. */
@@ -2119,7 +2119,7 @@ export namespace MyNS {
 
 
 	/** COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream. */
-	export enum MsSmoothAudioDeduplication { COMBINE_DUPLICATE_STREAMS = 0, NONE = 1 }
+	export enum MsSmoothAudioDeduplication { COMBINE_DUPLICATE_STREAMS = 'COMBINE_DUPLICATE_STREAMS', NONE = 'NONE' }
 
 
 	/** If you are using DRM, set DRM System to specify the value SpekeKeyProvider. */
@@ -2138,11 +2138,11 @@ export namespace MyNS {
 
 
 	/** Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16. */
-	export enum MsSmoothManifestEncoding { UTF8 = 0, UTF16 = 1 }
+	export enum MsSmoothManifestEncoding { UTF8 = 'UTF8', UTF16 = 'UTF16' }
 
 
 	/** Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF) */
-	export enum OutputGroupType { HLS_GROUP_SETTINGS = 0, DASH_ISO_GROUP_SETTINGS = 1, FILE_GROUP_SETTINGS = 2, MS_SMOOTH_GROUP_SETTINGS = 3, CMAF_GROUP_SETTINGS = 4 }
+	export enum OutputGroupType { HLS_GROUP_SETTINGS = 'HLS_GROUP_SETTINGS', DASH_ISO_GROUP_SETTINGS = 'DASH_ISO_GROUP_SETTINGS', FILE_GROUP_SETTINGS = 'FILE_GROUP_SETTINGS', MS_SMOOTH_GROUP_SETTINGS = 'MS_SMOOTH_GROUP_SETTINGS', CMAF_GROUP_SETTINGS = 'CMAF_GROUP_SETTINGS' }
 
 
 	/** Each output in your job is a collection of settings that describes how you want MediaConvert to encode a single output file or stream. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/create-outputs.html. */
@@ -2230,7 +2230,7 @@ export namespace MyNS {
 
 
 	/** You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS). */
-	export enum AudioChannelTag { L = 0, R = 1, C = 2, LFE = 3, LS = 4, RS = 5, LC = 6, RC = 7, CS = 8, LSD = 9, RSD = 10, TCS = 11, VHL = 12, VHC = 13, VHR = 14 }
+	export enum AudioChannelTag { L = 'L', R = 'R', C = 'C', LFE = 'LFE', LS = 'LS', RS = 'RS', LC = 'LC', RC = 'RC', CS = 'CS', LSD = 'LSD', RSD = 'RSD', TCS = 'TCS', VHL = 'VHL', VHC = 'VHC', VHR = 'VHR' }
 
 
 	/** Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard. */
@@ -2269,23 +2269,23 @@ export namespace MyNS {
 
 
 	/** Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1. */
-	export enum AudioNormalizationAlgorithm { ITU_BS_1770_1 = 0, ITU_BS_1770_2 = 1, ITU_BS_1770_3 = 2, ITU_BS_1770_4 = 3 }
+	export enum AudioNormalizationAlgorithm { ITU_BS_1770_1 = 'ITU_BS_1770_1', ITU_BS_1770_2 = 'ITU_BS_1770_2', ITU_BS_1770_3 = 'ITU_BS_1770_3', ITU_BS_1770_4 = 'ITU_BS_1770_4' }
 
 
 	/** When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted. */
-	export enum AudioNormalizationAlgorithmControl { CORRECT_AUDIO = 0, MEASURE_ONLY = 1 }
+	export enum AudioNormalizationAlgorithmControl { CORRECT_AUDIO = 'CORRECT_AUDIO', MEASURE_ONLY = 'MEASURE_ONLY' }
 
 
 	/** If set to LOG, log each output's audio track loudness to a CSV file. */
-	export enum AudioNormalizationLoudnessLogging { LOG = 0, DONT_LOG = 1 }
+	export enum AudioNormalizationLoudnessLogging { LOG = 'LOG', DONT_LOG = 'DONT_LOG' }
 
 
 	/** If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness. */
-	export enum AudioNormalizationPeakCalculation { TRUE_PEAK = 0, NONE = 1 }
+	export enum AudioNormalizationPeakCalculation { TRUE_PEAK = 'TRUE_PEAK', NONE = 'NONE' }
 
 
 	/** When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD. */
-	export enum AudioTypeControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum AudioTypeControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Settings related to audio encoding. The settings in this group vary depending on the value that you choose for your audio codec. */
@@ -2357,31 +2357,31 @@ export namespace MyNS {
 
 
 	/** Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType. */
-	export enum AacAudioDescriptionBroadcasterMix { BROADCASTER_MIXED_AD = 0, NORMAL = 1 }
+	export enum AacAudioDescriptionBroadcasterMix { BROADCASTER_MIXED_AD = 'BROADCASTER_MIXED_AD', NORMAL = 'NORMAL' }
 
 
 	/** AAC Profile. */
-	export enum AacCodecProfile { LC = 0, HEV1 = 1, HEV2 = 2 }
+	export enum AacCodecProfile { LC = 'LC', HEV1 = 'HEV1', HEV2 = 'HEV2' }
 
 
 	/** The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE. */
-	export enum AacCodingMode { AD_RECEIVER_MIX = 0, CODING_MODE_1_0 = 1, CODING_MODE_1_1 = 2, CODING_MODE_2_0 = 3, CODING_MODE_5_1 = 4 }
+	export enum AacCodingMode { AD_RECEIVER_MIX = 'AD_RECEIVER_MIX', CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_1_1 = 'CODING_MODE_1_1', CODING_MODE_2_0 = 'CODING_MODE_2_0', CODING_MODE_5_1 = 'CODING_MODE_5_1' }
 
 
 	/** Rate Control Mode. */
-	export enum AacRateControlMode { CBR = 0, VBR = 1 }
+	export enum AacRateControlMode { CBR = 'CBR', VBR = 'VBR' }
 
 
 	/** Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container. */
-	export enum AacRawFormat { LATM_LOAS = 0, NONE = 1 }
+	export enum AacRawFormat { LATM_LOAS = 'LATM_LOAS', NONE = 'NONE' }
 
 
 	/** Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers. */
-	export enum AacSpecification { MPEG2 = 0, MPEG4 = 1 }
+	export enum AacSpecification { MPEG2 = 'MPEG2', MPEG4 = 'MPEG4' }
 
 
 	/** VBR Quality Level - Only used if rate_control_mode is VBR. */
-	export enum AacVbrQuality { LOW = 0, MEDIUM_LOW = 1, MEDIUM_HIGH = 2, HIGH = 3 }
+	export enum AacVbrQuality { LOW = 'LOW', MEDIUM_LOW = 'MEDIUM_LOW', MEDIUM_HIGH = 'MEDIUM_HIGH', HIGH = 'HIGH' }
 
 
 	/** Required when you set Codec to the value AC3. */
@@ -2429,19 +2429,19 @@ export namespace MyNS {
 
 
 	/** Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E). */
-	export enum Ac3BitstreamMode { COMPLETE_MAIN = 0, COMMENTARY = 1, DIALOGUE = 2, EMERGENCY = 3, HEARING_IMPAIRED = 4, MUSIC_AND_EFFECTS = 5, VISUALLY_IMPAIRED = 6, VOICE_OVER = 7 }
+	export enum Ac3BitstreamMode { COMPLETE_MAIN = 'COMPLETE_MAIN', COMMENTARY = 'COMMENTARY', DIALOGUE = 'DIALOGUE', EMERGENCY = 'EMERGENCY', HEARING_IMPAIRED = 'HEARING_IMPAIRED', MUSIC_AND_EFFECTS = 'MUSIC_AND_EFFECTS', VISUALLY_IMPAIRED = 'VISUALLY_IMPAIRED', VOICE_OVER = 'VOICE_OVER' }
 
 
 	/** Dolby Digital coding mode. Determines number of channels. */
-	export enum Ac3CodingMode { CODING_MODE_1_0 = 0, CODING_MODE_1_1 = 1, CODING_MODE_2_0 = 2, CODING_MODE_3_2_LFE = 3 }
+	export enum Ac3CodingMode { CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_1_1 = 'CODING_MODE_1_1', CODING_MODE_2_0 = 'CODING_MODE_2_0', CODING_MODE_3_2_LFE = 'CODING_MODE_3_2_LFE' }
 
 
 	/** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf. */
-	export enum Ac3DynamicRangeCompressionLine { FILM_STANDARD = 0, FILM_LIGHT = 1, MUSIC_STANDARD = 2, MUSIC_LIGHT = 3, SPEECH = 4, NONE = 5 }
+	export enum Ac3DynamicRangeCompressionLine { FILM_STANDARD = 'FILM_STANDARD', FILM_LIGHT = 'FILM_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', SPEECH = 'SPEECH', NONE = 'NONE' }
 
 
 	/** When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes. */
-	export enum Ac3DynamicRangeCompressionProfile { FILM_STANDARD = 0, NONE = 1 }
+	export enum Ac3DynamicRangeCompressionProfile { FILM_STANDARD = 'FILM_STANDARD', NONE = 'NONE' }
 
 
 	/** Required when you set Codec to the value AIFF. */
@@ -2468,7 +2468,7 @@ export namespace MyNS {
 
 
 	/** Choose the audio codec for this output. Note that the option Dolby Digital passthrough applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output */
-	export enum AudioCodec { AAC = 0, MP2 = 1, MP3 = 2, WAV = 3, AIFF = 4, AC3 = 5, EAC3 = 6, EAC3_ATMOS = 7, VORBIS = 8, OPUS = 9, PASSTHROUGH = 10 }
+	export enum AudioCodec { AAC = 'AAC', MP2 = 'MP2', MP3 = 'MP3', WAV = 'WAV', AIFF = 'AIFF', AC3 = 'AC3', EAC3 = 'EAC3', EAC3_ATMOS = 'EAC3_ATMOS', VORBIS = 'VORBIS', OPUS = 'OPUS', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** Required when you set Codec to the value EAC3_ATMOS. */
@@ -2537,31 +2537,31 @@ export namespace MyNS {
 
 
 	/** Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E). */
-	export enum Eac3AtmosBitstreamMode { COMPLETE_MAIN = 0 }
+	export enum Eac3AtmosBitstreamMode { COMPLETE_MAIN = 'COMPLETE_MAIN' }
 
 
 	/** The coding mode for Dolby Digital Plus JOC (Atmos). */
-	export enum Eac3AtmosCodingMode { CODING_MODE_AUTO = 0, CODING_MODE_5_1_4 = 1, CODING_MODE_7_1_4 = 2, CODING_MODE_9_1_6 = 3 }
+	export enum Eac3AtmosCodingMode { CODING_MODE_AUTO = 'CODING_MODE_AUTO', CODING_MODE_5_1_4 = 'CODING_MODE_5_1_4', CODING_MODE_7_1_4 = 'CODING_MODE_7_1_4', CODING_MODE_9_1_6 = 'CODING_MODE_9_1_6' }
 
 
 	/** Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those settings. */
-	export enum Eac3AtmosDownmixControl { SPECIFIED = 0, INITIALIZE_FROM_SOURCE = 1 }
+	export enum Eac3AtmosDownmixControl { SPECIFIED = 'SPECIFIED', INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE' }
 
 
 	/** Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf. */
-	export enum Eac3AtmosDynamicRangeCompressionLine { NONE = 0, FILM_STANDARD = 1, FILM_LIGHT = 2, MUSIC_STANDARD = 3, MUSIC_LIGHT = 4, SPEECH = 5 }
+	export enum Eac3AtmosDynamicRangeCompressionLine { NONE = 'NONE', FILM_STANDARD = 'FILM_STANDARD', FILM_LIGHT = 'FILM_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', SPEECH = 'SPEECH' }
 
 
 	/** Choose how the service meters the loudness of your audio. */
-	export enum Eac3AtmosMeteringMode { LEQ_A = 0, ITU_BS_1770_1 = 1, ITU_BS_1770_2 = 2, ITU_BS_1770_3 = 3, ITU_BS_1770_4 = 4 }
+	export enum Eac3AtmosMeteringMode { LEQ_A = 'LEQ_A', ITU_BS_1770_1 = 'ITU_BS_1770_1', ITU_BS_1770_2 = 'ITU_BS_1770_2', ITU_BS_1770_3 = 'ITU_BS_1770_3', ITU_BS_1770_4 = 'ITU_BS_1770_4' }
 
 
 	/** Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Stereo downmix. */
-	export enum Eac3AtmosStereoDownmix { NOT_INDICATED = 0, STEREO = 1, SURROUND = 2, DPL2 = 3 }
+	export enum Eac3AtmosStereoDownmix { NOT_INDICATED = 'NOT_INDICATED', STEREO = 'STEREO', SURROUND = 'SURROUND', DPL2 = 'DPL2' }
 
 
 	/** Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels. */
-	export enum Eac3AtmosSurroundExMode { NOT_INDICATED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum Eac3AtmosSurroundExMode { NOT_INDICATED = 'NOT_INDICATED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Required when you set Codec to the value EAC3. */
@@ -2642,31 +2642,31 @@ export namespace MyNS {
 
 
 	/** If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode. */
-	export enum Eac3AttenuationControl { ATTENUATE_3_DB = 0, NONE = 1 }
+	export enum Eac3AttenuationControl { ATTENUATE_3_DB = 'ATTENUATE_3_DB', NONE = 'NONE' }
 
 
 	/** Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E). */
-	export enum Eac3BitstreamMode { COMPLETE_MAIN = 0, COMMENTARY = 1, EMERGENCY = 2, HEARING_IMPAIRED = 3, VISUALLY_IMPAIRED = 4 }
+	export enum Eac3BitstreamMode { COMPLETE_MAIN = 'COMPLETE_MAIN', COMMENTARY = 'COMMENTARY', EMERGENCY = 'EMERGENCY', HEARING_IMPAIRED = 'HEARING_IMPAIRED', VISUALLY_IMPAIRED = 'VISUALLY_IMPAIRED' }
 
 
 	/** Dolby Digital Plus coding mode. Determines number of channels. */
-	export enum Eac3CodingMode { CODING_MODE_1_0 = 0, CODING_MODE_2_0 = 1, CODING_MODE_3_2 = 2 }
+	export enum Eac3CodingMode { CODING_MODE_1_0 = 'CODING_MODE_1_0', CODING_MODE_2_0 = 'CODING_MODE_2_0', CODING_MODE_3_2 = 'CODING_MODE_3_2' }
 
 
 	/** When encoding 3/2 audio, controls whether the LFE channel is enabled */
-	export enum Eac3LfeControl { LFE = 0, NO_LFE = 1 }
+	export enum Eac3LfeControl { LFE = 'LFE', NO_LFE = 'NO_LFE' }
 
 
 	/** When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding. */
-	export enum Eac3PassthroughControl { WHEN_POSSIBLE = 0, NO_PASSTHROUGH = 1 }
+	export enum Eac3PassthroughControl { WHEN_POSSIBLE = 'WHEN_POSSIBLE', NO_PASSTHROUGH = 'NO_PASSTHROUGH' }
 
 
 	/** Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode. */
-	export enum Eac3PhaseControl { SHIFT_90_DEGREES = 0, NO_SHIFT = 1 }
+	export enum Eac3PhaseControl { SHIFT_90_DEGREES = 'SHIFT_90_DEGREES', NO_SHIFT = 'NO_SHIFT' }
 
 
 	/** Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Stereo downmix. */
-	export enum Eac3StereoDownmix { NOT_INDICATED = 0, LO_RO = 1, LT_RT = 2, DPL2 = 3 }
+	export enum Eac3StereoDownmix { NOT_INDICATED = 'NOT_INDICATED', LO_RO = 'LO_RO', LT_RT = 'LT_RT', DPL2 = 'DPL2' }
 
 
 	/** Required when you set Codec to the value MP2. */
@@ -2794,7 +2794,7 @@ export namespace MyNS {
 
 
 	/** The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64. */
-	export enum WavFormat { RIFF = 0, RF64 = 1 }
+	export enum WavFormat { RIFF = 'RIFF', RF64 = 'RF64' }
 
 
 	/** Use Manual audio remixing to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides. */
@@ -2980,39 +2980,39 @@ export namespace MyNS {
 
 
 	/** Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. */
-	export enum BurninSubtitleAlignment { CENTERED = 0, LEFT = 1, AUTO = 2 }
+	export enum BurninSubtitleAlignment { CENTERED = 'CENTERED', LEFT = 'LEFT', AUTO = 'AUTO' }
 
 
 	/** Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text. */
-	export enum BurninSubtitleApplyFontColor { WHITE_TEXT_ONLY = 0, ALL_TEXT = 1 }
+	export enum BurninSubtitleApplyFontColor { WHITE_TEXT_ONLY = 'WHITE_TEXT_ONLY', ALL_TEXT = 'ALL_TEXT' }
 
 
 	/** Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to enabled to use the background color data from your input captions, if present. */
-	export enum BurninSubtitleBackgroundColor { NONE = 0, BLACK = 1, WHITE = 2, AUTO = 3 }
+	export enum BurninSubtitleBackgroundColor { NONE = 'NONE', BLACK = 'BLACK', WHITE = 'WHITE', AUTO = 'AUTO' }
 
 
 	/** Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input. */
-	export enum BurninSubtitleFallbackFont { BEST_MATCH = 0, MONOSPACED_SANSSERIF = 1, MONOSPACED_SERIF = 2, PROPORTIONAL_SANSSERIF = 3, PROPORTIONAL_SERIF = 4 }
+	export enum BurninSubtitleFallbackFont { BEST_MATCH = 'BEST_MATCH', MONOSPACED_SANSSERIF = 'MONOSPACED_SANSSERIF', MONOSPACED_SERIF = 'MONOSPACED_SERIF', PROPORTIONAL_SANSSERIF = 'PROPORTIONAL_SANSSERIF', PROPORTIONAL_SERIF = 'PROPORTIONAL_SERIF' }
 
 
 	/** Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present. */
-	export enum BurninSubtitleFontColor { WHITE = 0, BLACK = 1, YELLOW = 2, RED = 3, GREEN = 4, BLUE = 5, HEX = 6, AUTO = 7 }
+	export enum BurninSubtitleFontColor { WHITE = 'WHITE', BLACK = 'BLACK', YELLOW = 'YELLOW', RED = 'RED', GREEN = 'GREEN', BLUE = 'BLUE', HEX = 'HEX', AUTO = 'AUTO' }
 
 
 	/** Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. */
-	export enum FontScript { AUTOMATIC = 0, HANS = 1, HANT = 2 }
+	export enum FontScript { AUTOMATIC = 'AUTOMATIC', HANS = 'HANS', HANT = 'HANT' }
 
 
 	/** Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font outline color data from your input captions, if present. */
-	export enum BurninSubtitleOutlineColor { BLACK = 0, WHITE = 1, YELLOW = 2, RED = 3, GREEN = 4, BLUE = 5, AUTO = 6 }
+	export enum BurninSubtitleOutlineColor { BLACK = 'BLACK', WHITE = 'WHITE', YELLOW = 'YELLOW', RED = 'RED', GREEN = 'GREEN', BLUE = 'BLUE', AUTO = 'AUTO' }
 
 
 	/** Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions. */
-	export enum BurninSubtitleTeletextSpacing { FIXED_GRID = 0, PROPORTIONAL = 1, AUTO = 2 }
+	export enum BurninSubtitleTeletextSpacing { FIXED_GRID = 'FIXED_GRID', PROPORTIONAL = 'PROPORTIONAL', AUTO = 'AUTO' }
 
 
 	/** Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20. */
-	export enum CaptionDestinationType { BURN_IN = 0, DVB_SUB = 1, EMBEDDED = 2, EMBEDDED_PLUS_SCTE20 = 3, IMSC = 4, SCTE20_PLUS_EMBEDDED = 5, SCC = 6, SRT = 7, SMI = 8, TELETEXT = 9, TTML = 10, WEBVTT = 11 }
+	export enum CaptionDestinationType { BURN_IN = 'BURN_IN', DVB_SUB = 'DVB_SUB', EMBEDDED = 'EMBEDDED', EMBEDDED_PLUS_SCTE20 = 'EMBEDDED_PLUS_SCTE20', IMSC = 'IMSC', SCTE20_PLUS_EMBEDDED = 'SCTE20_PLUS_EMBEDDED', SCC = 'SCC', SRT = 'SRT', SMI = 'SMI', TELETEXT = 'TELETEXT', TTML = 'TTML', WEBVTT = 'WEBVTT' }
 
 
 	/** Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. */
@@ -3111,11 +3111,11 @@ export namespace MyNS {
 
 
 	/** Specify how MediaConvert handles the display definition segment (DDS). To exclude the DDS from this set of captions: Keep the default, None. To include the DDS: Choose Specified. When you do, also specify the offset coordinates of the display window with DDS x-coordinate and DDS y-coordinate. To include the DDS, but not include display window data: Choose No display window. When you do, you can write position metadata to the page composition segment (PCS) with DDS x-coordinate and DDS y-coordinate. For video resolutions with a height of 576 pixels or less, MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling. All burn-in and DVB-Sub font settings must match. */
-	export enum DvbddsHandling { NONE = 0, SPECIFIED = 1, NO_DISPLAY_WINDOW = 2 }
+	export enum DvbddsHandling { NONE = 'NONE', SPECIFIED = 'SPECIFIED', NO_DISPLAY_WINDOW = 'NO_DISPLAY_WINDOW' }
 
 
 	/** Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue. */
-	export enum DvbSubtitlingType { HEARING_IMPAIRED = 0, STANDARD = 1 }
+	export enum DvbSubtitlingType { HEARING_IMPAIRED = 'HEARING_IMPAIRED', STANDARD = 'STANDARD' }
 
 
 	/** Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. */
@@ -3176,7 +3176,7 @@ export namespace MyNS {
 
 
 	/** Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe. */
-	export enum SccDestinationFramerate { FRAMERATE_23_97 = 0, FRAMERATE_24 = 1, FRAMERATE_25 = 2, FRAMERATE_29_97_DROPFRAME = 3, FRAMERATE_29_97_NON_DROPFRAME = 4 }
+	export enum SccDestinationFramerate { FRAMERATE_23_97 = 'FRAMERATE_23_97', FRAMERATE_24 = 'FRAMERATE_24', FRAMERATE_25 = 'FRAMERATE_25', FRAMERATE_29_97_DROPFRAME = 'FRAMERATE_29_97_DROPFRAME', FRAMERATE_29_97_NON_DROPFRAME = 'FRAMERATE_29_97_NON_DROPFRAME' }
 
 
 	/** Settings related to SRT captions. SRT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. */
@@ -3215,7 +3215,7 @@ export namespace MyNS {
 
 
 	/** A page type as defined in the standard ETSI EN 300 468, Table 94 */
-	export enum TeletextPageType { PAGE_TYPE_INITIAL = 0, PAGE_TYPE_SUBTITLE = 1, PAGE_TYPE_ADDL_INFO = 2, PAGE_TYPE_PROGRAM_SCHEDULE = 3, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = 4 }
+	export enum TeletextPageType { PAGE_TYPE_INITIAL = 'PAGE_TYPE_INITIAL', PAGE_TYPE_SUBTITLE = 'PAGE_TYPE_SUBTITLE', PAGE_TYPE_ADDL_INFO = 'PAGE_TYPE_ADDL_INFO', PAGE_TYPE_PROGRAM_SCHEDULE = 'PAGE_TYPE_PROGRAM_SCHEDULE', PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = 'PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE' }
 
 
 	/** Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. */
@@ -3256,7 +3256,7 @@ export namespace MyNS {
 
 
 	/** To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict. MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled, or leave blank. */
-	export enum WebvttStylePassthrough { ENABLED = 0, DISABLED = 1, STRICT = 2 }
+	export enum WebvttStylePassthrough { ENABLED = 'ENABLED', DISABLED = 'DISABLED', STRICT = 'STRICT' }
 
 
 	/** Container specific settings. */
@@ -3341,23 +3341,23 @@ export namespace MyNS {
 
 
 	/** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec. */
-	export enum CmfcAudioDuration { DEFAULT_CODEC_DURATION = 0, MATCH_VIDEO_DURATION = 1 }
+	export enum CmfcAudioDuration { DEFAULT_CODEC_DURATION = 'DEFAULT_CODEC_DURATION', MATCH_VIDEO_DURATION = 'MATCH_VIDEO_DURATION' }
 
 
 	/** Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting. */
-	export enum CmfcAudioTrackType { ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 0, ALTERNATE_AUDIO_AUTO_SELECT = 1, ALTERNATE_AUDIO_NOT_AUTO_SELECT = 2 }
+	export enum CmfcAudioTrackType { ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 'ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT', ALTERNATE_AUDIO_AUTO_SELECT = 'ALTERNATE_AUDIO_AUTO_SELECT', ALTERNATE_AUDIO_NOT_AUTO_SELECT = 'ALTERNATE_AUDIO_NOT_AUTO_SELECT' }
 
 
 	/** Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag, MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag, MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation. */
-	export enum CmfcDescriptiveVideoServiceFlag { DONT_FLAG = 0, FLAG = 1 }
+	export enum CmfcDescriptiveVideoServiceFlag { DONT_FLAG = 'DONT_FLAG', FLAG = 'FLAG' }
 
 
 	/** To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank. */
-	export enum CmfcKlvMetadata { PASSTHROUGH = 0, NONE = 1 }
+	export enum CmfcKlvMetadata { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML. */
-	export enum CmfcScte35Esam { INSERT = 0, NONE = 1 }
+	export enum CmfcScte35Esam { INSERT = 'INSERT', NONE = 'NONE' }
 
 
 	/**
@@ -3366,11 +3366,11 @@ export namespace MyNS {
 	 * Leave blank to use the default value Version 0.
 	 * When you specify Version 1, you must also set ID3 metadata to Passthrough.
 	 */
-	export enum CmfcTimedMetadataBoxVersion { VERSION_0 = 0, VERSION_1 = 1 }
+	export enum CmfcTimedMetadataBoxVersion { VERSION_0 = 'VERSION_0', VERSION_1 = 'VERSION_1' }
 
 
 	/** Container for this output. Some containers require a container settings object. If not specified, the default object will be created. */
-	export enum ContainerType { F4V = 0, ISMV = 1, M2TS = 2, M3U8 = 3, CMFC = 4, MOV = 5, MP4 = 6, MPD = 7, MXF = 8, WEBM = 9, RAW = 10 }
+	export enum ContainerType { F4V = 'F4V', ISMV = 'ISMV', M2TS = 'M2TS', M3U8 = 'M3U8', CMFC = 'CMFC', MOV = 'MOV', MP4 = 'MP4', MPD = 'MPD', MXF = 'MXF', WEBM = 'WEBM', RAW = 'RAW' }
 
 
 	/** Settings for F4v container */
@@ -3391,7 +3391,7 @@ export namespace MyNS {
 
 
 	/** If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end. */
-	export enum F4vMoovPlacement { PROGRESSIVE_DOWNLOAD = 0, NORMAL = 1 }
+	export enum F4vMoovPlacement { PROGRESSIVE_DOWNLOAD = 'PROGRESSIVE_DOWNLOAD', NORMAL = 'NORMAL' }
 
 
 	/** MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset. */
@@ -3514,15 +3514,15 @@ export namespace MyNS {
 
 
 	/** Selects between the DVB and ATSC buffer models for Dolby Digital audio. */
-	export enum M2tsAudioBufferModel { DVB = 0, ATSC = 1 }
+	export enum M2tsAudioBufferModel { DVB = 'DVB', ATSC = 'ATSC' }
 
 
 	/** Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions. */
-	export enum M2tsBufferModel { MULTIPLEX = 0, NONE = 1 }
+	export enum M2tsBufferModel { MULTIPLEX = 'MULTIPLEX', NONE = 'NONE' }
 
 
 	/** If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value to allow all PTS values. */
-	export enum M2tsDataPtsControl { AUTO = 0, ALIGN_TO_VIDEO = 1 }
+	export enum M2tsDataPtsControl { AUTO = 'AUTO', ALIGN_TO_VIDEO = 'ALIGN_TO_VIDEO' }
 
 
 	/** Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. */
@@ -3575,7 +3575,7 @@ export namespace MyNS {
 
 
 	/** Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information. */
-	export enum OutputSdt { SDT_FOLLOW = 0, SDT_FOLLOW_IF_PRESENT = 1, SDT_MANUAL = 2, SDT_NONE = 3 }
+	export enum OutputSdt { SDT_FOLLOW = 'SDT_FOLLOW', SDT_FOLLOW_IF_PRESENT = 'SDT_FOLLOW_IF_PRESENT', SDT_MANUAL = 'SDT_MANUAL', SDT_NONE = 'SDT_NONE' }
 
 
 	/** Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. */
@@ -3596,23 +3596,23 @@ export namespace MyNS {
 
 
 	/** When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY). */
-	export enum M2tsEbpAudioInterval { VIDEO_AND_FIXED_INTERVALS = 0, VIDEO_INTERVAL = 1 }
+	export enum M2tsEbpAudioInterval { VIDEO_AND_FIXED_INTERVALS = 'VIDEO_AND_FIXED_INTERVALS', VIDEO_INTERVAL = 'VIDEO_INTERVAL' }
 
 
 	/** Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY). */
-	export enum M2tsEbpPlacement { VIDEO_AND_AUDIO_PIDS = 0, VIDEO_PID = 1 }
+	export enum M2tsEbpPlacement { VIDEO_AND_AUDIO_PIDS = 'VIDEO_AND_AUDIO_PIDS', VIDEO_PID = 'VIDEO_PID' }
 
 
 	/** Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force. */
-	export enum M2tsForceTsVideoEbpOrder { FORCE = 0, DEFAULT = 1 }
+	export enum M2tsForceTsVideoEbpOrder { FORCE = 'FORCE', DEFAULT = 'DEFAULT' }
 
 
 	/** When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream. */
-	export enum M2tsPcrControl { PCR_EVERY_PES_PACKET = 0, CONFIGURED_PCR_PERIOD = 1 }
+	export enum M2tsPcrControl { PCR_EVERY_PES_PACKET = 'PCR_EVERY_PES_PACKET', CONFIGURED_PCR_PERIOD = 'CONFIGURED_PCR_PERIOD' }
 
 
 	/** When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate. */
-	export enum M2tsRateMode { VBR = 0, CBR = 1 }
+	export enum M2tsRateMode { VBR = 'VBR', CBR = 'CBR' }
 
 
 	/** Settings for SCTE-35 signals from ESAM. Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML. */
@@ -3633,11 +3633,11 @@ export namespace MyNS {
 
 
 	/** Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format. */
-	export enum M2tsSegmentationMarkers { NONE = 0, RAI_SEGSTART = 1, RAI_ADAPT = 2, PSI_SEGSTART = 3, EBP = 4, EBP_LEGACY = 5 }
+	export enum M2tsSegmentationMarkers { NONE = 'NONE', RAI_SEGSTART = 'RAI_SEGSTART', RAI_ADAPT = 'RAI_ADAPT', PSI_SEGSTART = 'PSI_SEGSTART', EBP = 'EBP', EBP_LEGACY = 'EBP_LEGACY' }
 
 
 	/** The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule. */
-	export enum M2tsSegmentationStyle { MAINTAIN_CADENCE = 0, RESET_CADENCE = 1 }
+	export enum M2tsSegmentationStyle { MAINTAIN_CADENCE = 'MAINTAIN_CADENCE', RESET_CADENCE = 'RESET_CADENCE' }
 
 
 	/** These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs. */
@@ -3739,15 +3739,15 @@ export namespace MyNS {
 
 
 	/** When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2. */
-	export enum MovMpeg2FourCCControl { XDCAM = 0, MPEG = 1 }
+	export enum MovMpeg2FourCCControl { XDCAM = 'XDCAM', MPEG = 'MPEG' }
 
 
 	/** Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding. */
-	export enum MovPaddingControl { OMNEON = 0, NONE = 1 }
+	export enum MovPaddingControl { OMNEON = 'OMNEON', NONE = 'NONE' }
 
 
 	/** Always keep the default value (SELF_CONTAINED) for this setting. */
-	export enum MovReference { SELF_CONTAINED = 0, EXTERNAL = 1 }
+	export enum MovReference { SELF_CONTAINED = 'SELF_CONTAINED', EXTERNAL = 'EXTERNAL' }
 
 
 	/** These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only. */
@@ -3830,11 +3830,11 @@ export namespace MyNS {
 
 
 	/** Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files. */
-	export enum MpdCaptionContainerType { RAW = 0, FRAGMENTED_MP4 = 1 }
+	export enum MpdCaptionContainerType { RAW = 'RAW', FRAGMENTED_MP4 = 'FRAGMENTED_MP4' }
 
 
 	/** To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank. */
-	export enum MpdKlvMetadata { NONE = 0, PASSTHROUGH = 1 }
+	export enum MpdKlvMetadata { NONE = 'NONE', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** These settings relate to your MXF output container. */
@@ -3859,11 +3859,11 @@ export namespace MyNS {
 
 
 	/** Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings. */
-	export enum MxfAfdSignaling { NO_COPY = 0, COPY_FROM_VIDEO = 1 }
+	export enum MxfAfdSignaling { NO_COPY = 'NO_COPY', COPY_FROM_VIDEO = 'COPY_FROM_VIDEO' }
 
 
 	/** Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html. */
-	export enum MxfProfile { D_10 = 0, XDCAM = 1, OP1A = 2, XAVC = 3, XDCAM_RDD9 = 4 }
+	export enum MxfProfile { D_10 = 'D_10', XDCAM = 'XDCAM', OP1A = 'OP1A', XAVC = 'XAVC', XDCAM_RDD9 = 'XDCAM_RDD9' }
 
 
 	/** Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC. */
@@ -3887,7 +3887,7 @@ export namespace MyNS {
 
 
 	/** To create an output that complies with the XAVC file format guidelines for interoperability, keep the default value, Drop frames for compliance. To include all frames from your input in this output, keep the default setting, Allow any duration. The number of frames that MediaConvert excludes when you set this to Drop frames for compliance depends on the output frame rate and duration. */
-	export enum MxfXavcDurationMode { ALLOW_ANY_DURATION = 0, DROP_FRAMES_FOR_COMPLIANCE = 1 }
+	export enum MxfXavcDurationMode { ALLOW_ANY_DURATION = 'ALLOW_ANY_DURATION', DROP_FRAMES_FOR_COMPLIANCE = 'DROP_FRAMES_FOR_COMPLIANCE' }
 
 
 	/** Specific settings for this type of output. */
@@ -3941,11 +3941,11 @@ export namespace MyNS {
 
 
 	/** Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container. Keep the default value Automatic to create a raw audio-only file with no container. Regardless of the value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS container. */
-	export enum HlsAudioOnlyContainer { AUTOMATIC = 0, M2TS = 1 }
+	export enum HlsAudioOnlyContainer { AUTOMATIC = 'AUTOMATIC', M2TS = 'M2TS' }
 
 
 	/** Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO */
-	export enum HlsAudioTrackType { ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 0, ALTERNATE_AUDIO_AUTO_SELECT = 1, ALTERNATE_AUDIO_NOT_AUTO_SELECT = 2, AUDIO_ONLY_VARIANT_STREAM = 3 }
+	export enum HlsAudioTrackType { ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 'ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT', ALTERNATE_AUDIO_AUTO_SELECT = 'ALTERNATE_AUDIO_AUTO_SELECT', ALTERNATE_AUDIO_NOT_AUTO_SELECT = 'ALTERNATE_AUDIO_NOT_AUTO_SELECT', AUDIO_ONLY_VARIANT_STREAM = 'AUDIO_ONLY_VARIANT_STREAM' }
 
 
 	/** Settings related to video encoding of your output. The specific video settings depend on the video codec that you choose. */
@@ -4000,7 +4000,7 @@ export namespace MyNS {
 
 
 	/** This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data. */
-	export enum AfdSignaling { NONE = 0, AUTO = 1, FIXED = 2 }
+	export enum AfdSignaling { NONE = 'NONE', AUTO = 'AUTO', FIXED = 'FIXED' }
 
 
 	/** Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings */
@@ -4083,19 +4083,19 @@ export namespace MyNS {
 
 
 	/** Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization. */
-	export enum Av1AdaptiveQuantization { OFF = 0, LOW = 1, MEDIUM = 2, HIGH = 3, HIGHER = 4, MAX = 5 }
+	export enum Av1AdaptiveQuantization { OFF = 'OFF', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', HIGHER = 'HIGHER', MAX = 'MAX' }
 
 
 	/** Specify the Bit depth. You can choose 8-bit or 10-bit. */
-	export enum Av1BitDepth { BIT_8 = 0, BIT_10 = 1 }
+	export enum Av1BitDepth { BIT_8 = 'BIT_8', BIT_10 = 'BIT_10' }
 
 
 	/** Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum Av1FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Av1FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum Av1FramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum Av1FramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode. */
@@ -4119,7 +4119,7 @@ export namespace MyNS {
 
 
 	/** 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.' */
-	export enum Av1RateControlMode { QVBR = 0 }
+	export enum Av1RateControlMode { QVBR = 'QVBR' }
 
 
 	/** Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf. */
@@ -4165,7 +4165,7 @@ export namespace MyNS {
 
 
 	/** Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling. */
-	export enum AvcIntraClass { CLASS_50 = 0, CLASS_100 = 1, CLASS_200 = 2, CLASS_4K_2K = 3 }
+	export enum AvcIntraClass { CLASS_50 = 'CLASS_50', CLASS_100 = 'CLASS_100', CLASS_200 = 'CLASS_200', CLASS_4K_2K = 'CLASS_4K_2K' }
 
 
 	/** Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra class to a different value, this object isn't allowed. */
@@ -4186,23 +4186,23 @@ export namespace MyNS {
 
 
 	/** Optional. Use Quality tuning level to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass, your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass, your encoding time is faster. The default behavior is Single-pass. */
-	export enum AvcIntraUhdQualityTuningLevel { SINGLE_PASS = 0, MULTI_PASS = 1 }
+	export enum AvcIntraUhdQualityTuningLevel { SINGLE_PASS = 'SINGLE_PASS', MULTI_PASS = 'MULTI_PASS' }
 
 
 	/** Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose. */
-	export enum AvcIntraInterlaceMode { PROGRESSIVE = 0, TOP_FIELD = 1, BOTTOM_FIELD = 2, FOLLOW_TOP_FIELD = 3, FOLLOW_BOTTOM_FIELD = 4 }
+	export enum AvcIntraInterlaceMode { PROGRESSIVE = 'PROGRESSIVE', TOP_FIELD = 'TOP_FIELD', BOTTOM_FIELD = 'BOTTOM_FIELD', FOLLOW_TOP_FIELD = 'FOLLOW_TOP_FIELD', FOLLOW_BOTTOM_FIELD = 'FOLLOW_BOTTOM_FIELD' }
 
 
 	/** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive. */
-	export enum AvcIntraScanTypeConversionMode { INTERLACED = 0, INTERLACED_OPTIMIZE = 1 }
+	export enum AvcIntraScanTypeConversionMode { INTERLACED = 'INTERLACED', INTERLACED_OPTIMIZE = 'INTERLACED_OPTIMIZE' }
 
 
 	/** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture. */
-	export enum AvcIntraTelecine { NONE = 0, HARD = 1 }
+	export enum AvcIntraTelecine { NONE = 'NONE', HARD = 'HARD' }
 
 
 	/** Type of video codec */
-	export enum VideoCodec { AV1 = 0, AVC_INTRA = 1, FRAME_CAPTURE = 2, H_264 = 3, H_265 = 4, MPEG2 = 5, PASSTHROUGH = 6, PRORES = 7, VC3 = 8, VP8 = 9, VP9 = 10, XAVC = 11 }
+	export enum VideoCodec { AV1 = 'AV1', AVC_INTRA = 'AVC_INTRA', FRAME_CAPTURE = 'FRAME_CAPTURE', H_264 = 'H_264', H_265 = 'H_265', MPEG2 = 'MPEG2', PASSTHROUGH = 'PASSTHROUGH', PRORES = 'PRORES', VC3 = 'VC3', VP8 = 'VP8', VP9 = 'VP9', XAVC = 'XAVC' }
 
 
 	/** Required when you set Codec to the value FRAME_CAPTURE. */
@@ -4368,7 +4368,7 @@ export namespace MyNS {
 
 
 	/** Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization. */
-	export enum H264AdaptiveQuantization { OFF = 0, AUTO = 1, LOW = 2, MEDIUM = 3, HIGH = 4, HIGHER = 5, MAX = 6 }
+	export enum H264AdaptiveQuantization { OFF = 'OFF', AUTO = 'AUTO', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', HIGHER = 'HIGHER', MAX = 'MAX' }
 
 
 	/** The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor. */
@@ -4392,39 +4392,39 @@ export namespace MyNS {
 
 
 	/** Optionally specify the level of sharpening to apply when you use the Bandwidth reduction filter. Sharpening adds contrast to the edges of your video content and can reduce softness. Keep the default value Off to apply no sharpening. Set Sharpening strength to Low to apply a minimal amount of sharpening, or High to apply a maximum amount of sharpening. */
-	export enum BandwidthReductionFilterSharpening { LOW = 0, MEDIUM = 1, HIGH = 2, OFF = 3 }
+	export enum BandwidthReductionFilterSharpening { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', OFF = 'OFF' }
 
 
 	/** Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output. */
-	export enum BandwidthReductionFilterStrength { LOW = 0, MEDIUM = 1, HIGH = 2, AUTO = 3, OFF = 4 }
+	export enum BandwidthReductionFilterStrength { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', AUTO = 'AUTO', OFF = 'OFF' }
 
 
 	/** Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto. */
-	export enum H264CodecLevel { AUTO = 0, LEVEL_1 = 1, LEVEL_1_1 = 2, LEVEL_1_2 = 3, LEVEL_1_3 = 4, LEVEL_2 = 5, LEVEL_2_1 = 6, LEVEL_2_2 = 7, LEVEL_3 = 8, LEVEL_3_1 = 9, LEVEL_3_2 = 10, LEVEL_4 = 11, LEVEL_4_1 = 12, LEVEL_4_2 = 13, LEVEL_5 = 14, LEVEL_5_1 = 15, LEVEL_5_2 = 16 }
+	export enum H264CodecLevel { AUTO = 'AUTO', LEVEL_1 = 'LEVEL_1', LEVEL_1_1 = 'LEVEL_1_1', LEVEL_1_2 = 'LEVEL_1_2', LEVEL_1_3 = 'LEVEL_1_3', LEVEL_2 = 'LEVEL_2', LEVEL_2_1 = 'LEVEL_2_1', LEVEL_2_2 = 'LEVEL_2_2', LEVEL_3 = 'LEVEL_3', LEVEL_3_1 = 'LEVEL_3_1', LEVEL_3_2 = 'LEVEL_3_2', LEVEL_4 = 'LEVEL_4', LEVEL_4_1 = 'LEVEL_4_1', LEVEL_4_2 = 'LEVEL_4_2', LEVEL_5 = 'LEVEL_5', LEVEL_5_1 = 'LEVEL_5_1', LEVEL_5_2 = 'LEVEL_5_2' }
 
 
 	/** H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License. */
-	export enum H264CodecProfile { BASELINE = 0, HIGH = 1, HIGH_10BIT = 2, HIGH_422 = 3, HIGH_422_10BIT = 4, MAIN = 5 }
+	export enum H264CodecProfile { BASELINE = 'BASELINE', HIGH = 'HIGH', HIGH_10BIT = 'HIGH_10BIT', HIGH_422 = 'HIGH_422', HIGH_422_10BIT = 'HIGH_422_10BIT', MAIN = 'MAIN' }
 
 
 	/** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames. */
-	export enum H264DynamicSubGop { ADAPTIVE = 0, STATIC = 1 }
+	export enum H264DynamicSubGop { ADAPTIVE = 'ADAPTIVE', STATIC = 'STATIC' }
 
 
 	/** Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC. */
-	export enum H264EntropyEncoding { CABAC = 0, CAVLC = 1 }
+	export enum H264EntropyEncoding { CABAC = 'CABAC', CAVLC = 'CAVLC' }
 
 
 	/** The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs. */
-	export enum H264FieldEncoding { PAFF = 0, FORCE_FIELD = 1, MBAFF = 2 }
+	export enum H264FieldEncoding { PAFF = 'PAFF', FORCE_FIELD = 'FORCE_FIELD', MBAFF = 'MBAFF' }
 
 
 	/** Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto and and leave GOP size blank. By default, if you don't specify GOP mode control, MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames or Specified, seconds and then provide the GOP length in the related setting GOP size. */
-	export enum H264GopSizeUnits { FRAMES = 0, SECONDS = 1, AUTO = 2 }
+	export enum H264GopSizeUnits { FRAMES = 'FRAMES', SECONDS = 'SECONDS', AUTO = 'AUTO' }
 
 
 	/** The Quality tuning level you choose represents a trade-off between the encoding speed of your job and the output video quality. For the fastest encoding speed at the cost of video quality: Choose Single pass. For a good balance between encoding speed and video quality: Leave blank or keep the default value Single pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi pass HQ. MediaConvert performs an analysis pass on your input followed by an encoding pass. Outputs that use this feature incur pro-tier pricing. */
-	export enum H264QualityTuningLevel { SINGLE_PASS = 0, SINGLE_PASS_HQ = 1, MULTI_PASS_HQ = 2 }
+	export enum H264QualityTuningLevel { SINGLE_PASS = 'SINGLE_PASS', SINGLE_PASS_HQ = 'SINGLE_PASS_HQ', MULTI_PASS_HQ = 'MULTI_PASS_HQ' }
 
 
 	/** Settings for quality-defined variable bitrate encoding with the H.264 codec. Use these settings only when you set QVBR for Rate control mode. */
@@ -4451,19 +4451,19 @@ export namespace MyNS {
 
 
 	/** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR). */
-	export enum H264RateControlMode { VBR = 0, CBR = 1, QVBR = 2 }
+	export enum H264RateControlMode { VBR = 'VBR', CBR = 'CBR', QVBR = 'QVBR' }
 
 
 	/** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr. */
-	export enum H264SceneChangeDetect { DISABLED = 0, ENABLED = 1, TRANSITION_DETECTION = 2 }
+	export enum H264SceneChangeDetect { DISABLED = 'DISABLED', ENABLED = 'ENABLED', TRANSITION_DETECTION = 'TRANSITION_DETECTION' }
 
 
 	/** Produces a bitstream compliant with SMPTE RP-2027. */
-	export enum H264Syntax { DEFAULT = 0, RP2027 = 1 }
+	export enum H264Syntax { DEFAULT = 'DEFAULT', RP2027 = 'RP2027' }
 
 
 	/** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture. */
-	export enum H264Telecine { NONE = 0, SOFT = 1, HARD = 2 }
+	export enum H264Telecine { NONE = 'NONE', SOFT = 'SOFT', HARD = 'HARD' }
 
 
 	/** Settings for H265 codec */
@@ -4603,15 +4603,15 @@ export namespace MyNS {
 
 
 	/** When you set Adaptive Quantization to Auto, or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low, Medium, High, Higher, or Max to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization, Temporal Adaptive Quantization, and Flicker Adaptive Quantization, to further control the quantization filter. Set Adaptive Quantization to Off to apply no quantization to your output. */
-	export enum H265AdaptiveQuantization { OFF = 0, LOW = 1, MEDIUM = 2, HIGH = 3, HIGHER = 4, MAX = 5, AUTO = 6 }
+	export enum H265AdaptiveQuantization { OFF = 'OFF', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', HIGHER = 'HIGHER', MAX = 'MAX', AUTO = 'AUTO' }
 
 
 	/** H.265 Level. */
-	export enum H265CodecLevel { AUTO = 0, LEVEL_1 = 1, LEVEL_2 = 2, LEVEL_2_1 = 3, LEVEL_3 = 4, LEVEL_3_1 = 5, LEVEL_4 = 6, LEVEL_4_1 = 7, LEVEL_5 = 8, LEVEL_5_1 = 9, LEVEL_5_2 = 10, LEVEL_6 = 11, LEVEL_6_1 = 12, LEVEL_6_2 = 13 }
+	export enum H265CodecLevel { AUTO = 'AUTO', LEVEL_1 = 'LEVEL_1', LEVEL_2 = 'LEVEL_2', LEVEL_2_1 = 'LEVEL_2_1', LEVEL_3 = 'LEVEL_3', LEVEL_3_1 = 'LEVEL_3_1', LEVEL_4 = 'LEVEL_4', LEVEL_4_1 = 'LEVEL_4_1', LEVEL_5 = 'LEVEL_5', LEVEL_5_1 = 'LEVEL_5_1', LEVEL_5_2 = 'LEVEL_5_2', LEVEL_6 = 'LEVEL_6', LEVEL_6_1 = 'LEVEL_6_1', LEVEL_6_2 = 'LEVEL_6_2' }
 
 
 	/** Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License. */
-	export enum H265CodecProfile { MAIN_MAIN = 0, MAIN_HIGH = 1, MAIN10_MAIN = 2, MAIN10_HIGH = 3, MAIN_422_8BIT_MAIN = 4, MAIN_422_8BIT_HIGH = 5, MAIN_422_10BIT_MAIN = 6, MAIN_422_10BIT_HIGH = 7 }
+	export enum H265CodecProfile { MAIN_MAIN = 'MAIN_MAIN', MAIN_HIGH = 'MAIN_HIGH', MAIN10_MAIN = 'MAIN10_MAIN', MAIN10_HIGH = 'MAIN10_HIGH', MAIN_422_8BIT_MAIN = 'MAIN_422_8BIT_MAIN', MAIN_422_8BIT_HIGH = 'MAIN_422_8BIT_HIGH', MAIN_422_10BIT_MAIN = 'MAIN_422_10BIT_MAIN', MAIN_422_10BIT_HIGH = 'MAIN_422_10BIT_HIGH' }
 
 
 	/** Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode. */
@@ -4638,11 +4638,11 @@ export namespace MyNS {
 
 
 	/** Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically selects best strength based on content */
-	export enum H265SampleAdaptiveOffsetFilterMode { DEFAULT = 0, ADAPTIVE = 1, OFF = 2 }
+	export enum H265SampleAdaptiveOffsetFilterMode { DEFAULT = 'DEFAULT', ADAPTIVE = 'ADAPTIVE', OFF = 'OFF' }
 
 
 	/** If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples. */
-	export enum H265WriteMp4PackagingType { HVC1 = 0, HEV1 = 1 }
+	export enum H265WriteMp4PackagingType { HVC1 = 'HVC1', HEV1 = 'HEV1' }
 
 
 	/** Required when you set Codec to the value MPEG2. */
@@ -4759,27 +4759,27 @@ export namespace MyNS {
 
 
 	/** Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Spatial adaptive quantization, and Temporal adaptive quantization. */
-	export enum Mpeg2AdaptiveQuantization { OFF = 0, LOW = 1, MEDIUM = 2, HIGH = 3 }
+	export enum Mpeg2AdaptiveQuantization { OFF = 'OFF', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 
 	/** Use Level to set the MPEG-2 level for the video output. */
-	export enum Mpeg2CodecLevel { AUTO = 0, LOW = 1, MAIN = 2, HIGH1440 = 3, HIGH = 4 }
+	export enum Mpeg2CodecLevel { AUTO = 'AUTO', LOW = 'LOW', MAIN = 'MAIN', HIGH1440 = 'HIGH1440', HIGH = 'HIGH' }
 
 
 	/** Use Profile to set the MPEG-2 profile for the video output. */
-	export enum Mpeg2CodecProfile { MAIN = 0, PROFILE_422 = 1 }
+	export enum Mpeg2CodecProfile { MAIN = 'MAIN', PROFILE_422 = 'PROFILE_422' }
 
 
 	/** Specify the units for GOP size. If you don't specify a value here, by default the encoder measures GOP size in frames. */
-	export enum Mpeg2GopSizeUnits { FRAMES = 0, SECONDS = 1 }
+	export enum Mpeg2GopSizeUnits { FRAMES = 'FRAMES', SECONDS = 'SECONDS' }
 
 
 	/** Use Intra DC precision to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio. */
-	export enum Mpeg2IntraDcPrecision { AUTO = 0, INTRA_DC_PRECISION_8 = 1, INTRA_DC_PRECISION_9 = 2, INTRA_DC_PRECISION_10 = 3, INTRA_DC_PRECISION_11 = 4 }
+	export enum Mpeg2IntraDcPrecision { AUTO = 'AUTO', INTRA_DC_PRECISION_8 = 'INTRA_DC_PRECISION_8', INTRA_DC_PRECISION_9 = 'INTRA_DC_PRECISION_9', INTRA_DC_PRECISION_10 = 'INTRA_DC_PRECISION_10', INTRA_DC_PRECISION_11 = 'INTRA_DC_PRECISION_11' }
 
 
 	/** Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 for your MXF profile, you must also set this value to D10. */
-	export enum Mpeg2Syntax { DEFAULT = 0, D_10 = 1 }
+	export enum Mpeg2Syntax { DEFAULT = 'DEFAULT', D_10 = 'D_10' }
 
 
 	/** Required when you set Codec to the value PRORES. */
@@ -4836,11 +4836,11 @@ export namespace MyNS {
 
 
 	/** This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors: Dolby Vision, HDR10+, or Noise reducer. */
-	export enum ProresChromaSampling { PRESERVE_444_SAMPLING = 0, SUBSAMPLE_TO_422 = 1 }
+	export enum ProresChromaSampling { PRESERVE_444_SAMPLING = 'PRESERVE_444_SAMPLING', SUBSAMPLE_TO_422 = 'SUBSAMPLE_TO_422' }
 
 
 	/** Use Profile to specify the type of Apple ProRes codec to use for this output. */
-	export enum ProresCodecProfile { APPLE_PRORES_422 = 0, APPLE_PRORES_422_HQ = 1, APPLE_PRORES_422_LT = 2, APPLE_PRORES_422_PROXY = 3, APPLE_PRORES_4444 = 4, APPLE_PRORES_4444_XQ = 5 }
+	export enum ProresCodecProfile { APPLE_PRORES_422 = 'APPLE_PRORES_422', APPLE_PRORES_422_HQ = 'APPLE_PRORES_422_HQ', APPLE_PRORES_422_LT = 'APPLE_PRORES_422_LT', APPLE_PRORES_422_PROXY = 'APPLE_PRORES_422_PROXY', APPLE_PRORES_4444 = 'APPLE_PRORES_4444', APPLE_PRORES_4444_XQ = 'APPLE_PRORES_4444_XQ' }
 
 
 	/** Required when you set Codec to the value VC3 */
@@ -4885,11 +4885,11 @@ export namespace MyNS {
 
 
 	/** Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output. */
-	export enum Vc3InterlaceMode { INTERLACED = 0, PROGRESSIVE = 1 }
+	export enum Vc3InterlaceMode { INTERLACED = 'INTERLACED', PROGRESSIVE = 'PROGRESSIVE' }
 
 
 	/** Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output. */
-	export enum Vc3Class { CLASS_145_8BIT = 0, CLASS_220_8BIT = 1, CLASS_220_10BIT = 2 }
+	export enum Vc3Class { CLASS_145_8BIT = 'CLASS_145_8BIT', CLASS_220_8BIT = 'CLASS_220_8BIT', CLASS_220_10BIT = 'CLASS_220_10BIT' }
 
 
 	/** Required when you set Codec to the value VP8. */
@@ -4946,11 +4946,11 @@ export namespace MyNS {
 
 
 	/** Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding. */
-	export enum Vp8QualityTuningLevel { MULTI_PASS = 0, MULTI_PASS_HQ = 1 }
+	export enum Vp8QualityTuningLevel { MULTI_PASS = 'MULTI_PASS', MULTI_PASS_HQ = 'MULTI_PASS_HQ' }
 
 
 	/** With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode. */
-	export enum Vp8RateControlMode { VBR = 0 }
+	export enum Vp8RateControlMode { VBR = 'VBR' }
 
 
 	/** Required when you set Codec to the value VP9. */
@@ -5059,11 +5059,11 @@ export namespace MyNS {
 
 
 	/** Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point. */
-	export enum XavcEntropyEncoding { AUTO = 0, CABAC = 1, CAVLC = 2 }
+	export enum XavcEntropyEncoding { AUTO = 'AUTO', CABAC = 'CABAC', CAVLC = 'CAVLC' }
 
 
 	/** Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD. */
-	export enum XavcProfile { XAVC_HD_INTRA_CBG = 0, XAVC_4K_INTRA_CBG = 1, XAVC_4K_INTRA_VBR = 2, XAVC_HD = 3, XAVC_4K = 4 }
+	export enum XavcProfile { XAVC_HD_INTRA_CBG = 'XAVC_HD_INTRA_CBG', XAVC_4K_INTRA_CBG = 'XAVC_4K_INTRA_CBG', XAVC_4K_INTRA_VBR = 'XAVC_4K_INTRA_VBR', XAVC_HD = 'XAVC_HD', XAVC_4K = 'XAVC_4K' }
 
 
 	/** Required when you set Profile to the value XAVC_4K_INTRA_CBG. */
@@ -5084,7 +5084,7 @@ export namespace MyNS {
 
 
 	/** Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class. */
-	export enum Xavc4kIntraCbgProfileClass { CLASS_100 = 0, CLASS_300 = 1, CLASS_480 = 2 }
+	export enum Xavc4kIntraCbgProfileClass { CLASS_100 = 'CLASS_100', CLASS_300 = 'CLASS_300', CLASS_480 = 'CLASS_480' }
 
 
 	/** Required when you set Profile to the value XAVC_4K_INTRA_VBR. */
@@ -5143,11 +5143,11 @@ export namespace MyNS {
 
 
 	/** Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class. */
-	export enum Xavc4kProfileBitrateClass { BITRATE_CLASS_100 = 0, BITRATE_CLASS_140 = 1, BITRATE_CLASS_200 = 2 }
+	export enum Xavc4kProfileBitrateClass { BITRATE_CLASS_100 = 'BITRATE_CLASS_100', BITRATE_CLASS_140 = 'BITRATE_CLASS_140', BITRATE_CLASS_200 = 'BITRATE_CLASS_200' }
 
 
 	/** Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264. */
-	export enum Xavc4kProfileCodecProfile { HIGH = 0, HIGH_422 = 1 }
+	export enum Xavc4kProfileCodecProfile { HIGH = 'HIGH', HIGH_422 = 'HIGH_422' }
 
 
 	/** Required when you set Profile to the value XAVC_HD_INTRA_CBG. */
@@ -5168,7 +5168,7 @@ export namespace MyNS {
 
 
 	/** Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class. */
-	export enum XavcHdIntraCbgProfileClass { CLASS_50 = 0, CLASS_100 = 1, CLASS_200 = 2 }
+	export enum XavcHdIntraCbgProfileClass { CLASS_50 = 'CLASS_50', CLASS_100 = 'CLASS_100', CLASS_200 = 'CLASS_200' }
 
 
 	/** Required when you set Profile to the value XAVC_HD. */
@@ -5213,23 +5213,23 @@ export namespace MyNS {
 
 
 	/** Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class. */
-	export enum XavcHdProfileBitrateClass { BITRATE_CLASS_25 = 0, BITRATE_CLASS_35 = 1, BITRATE_CLASS_50 = 2 }
+	export enum XavcHdProfileBitrateClass { BITRATE_CLASS_25 = 'BITRATE_CLASS_25', BITRATE_CLASS_35 = 'BITRATE_CLASS_35', BITRATE_CLASS_50 = 'BITRATE_CLASS_50' }
 
 
 	/** Choose Insert for this setting to include color metadata in this output. Choose Ignore to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default. */
-	export enum ColorMetadata { IGNORE = 0, INSERT = 1 }
+	export enum ColorMetadata { IGNORE = 'IGNORE', INSERT = 'INSERT' }
 
 
 	/** Use Respond to AFD to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to NONE. A preferred implementation of this workflow is to set RespondToAfd to and set AfdSignaling to AUTO. * Choose None to remove all input AFD values from this output. */
-	export enum RespondToAfd { NONE = 0, RESPOND = 1, PASSTHROUGH = 2 }
+	export enum RespondToAfd { NONE = 'NONE', RESPOND = 'RESPOND', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output. */
-	export enum ScalingBehavior { DEFAULT = 0, STRETCH_TO_OUTPUT = 1 }
+	export enum ScalingBehavior { DEFAULT = 'DEFAULT', STRETCH_TO_OUTPUT = 'STRETCH_TO_OUTPUT' }
 
 
 	/** Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration. In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration does. */
-	export enum VideoTimecodeInsertion { DISABLED = 0, PIC_TIMING_SEI = 1 }
+	export enum VideoTimecodeInsertion { DISABLED = 'DISABLED', PIC_TIMING_SEI = 'PIC_TIMING_SEI' }
 
 
 	/** Find additional transcoding features under Preprocessors. Enable the features at each output individually. These features are disabled by default. */
@@ -5328,15 +5328,15 @@ export namespace MyNS {
 	 *   * P3D65 (SDR): Display P3, sRGB, BT.709
 	 *   * P3D65 (HDR): Display P3, PQ, BT.709
 	 */
-	export enum ColorSpaceConversion { NONE = 0, FORCE_601 = 1, FORCE_709 = 2, FORCE_HDR10 = 3, FORCE_HLG_2020 = 4, FORCE_P3DCI = 5, FORCE_P3D65_SDR = 6, FORCE_P3D65_HDR = 7 }
+	export enum ColorSpaceConversion { NONE = 'NONE', FORCE_601 = 'FORCE_601', FORCE_709 = 'FORCE_709', FORCE_HDR10 = 'FORCE_HDR10', FORCE_HLG_2020 = 'FORCE_HLG_2020', FORCE_P3DCI = 'FORCE_P3DCI', FORCE_P3D65_SDR = 'FORCE_P3D65_SDR', FORCE_P3D65_HDR = 'FORCE_P3D65_HDR' }
 
 
 	/** Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR. */
-	export enum HDRToSDRToneMapper { PRESERVE_DETAILS = 0, VIBRANT = 1 }
+	export enum HDRToSDRToneMapper { PRESERVE_DETAILS = 'PRESERVE_DETAILS', VIBRANT = 'VIBRANT' }
 
 
 	/** Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output. */
-	export enum SampleRangeConversion { LIMITED_RANGE_SQUEEZE = 0, NONE = 1, LIMITED_RANGE_CLIP = 2 }
+	export enum SampleRangeConversion { LIMITED_RANGE_SQUEEZE = 'LIMITED_RANGE_SQUEEZE', NONE = 'NONE', LIMITED_RANGE_CLIP = 'LIMITED_RANGE_CLIP' }
 
 
 	/** Settings for deinterlacer */
@@ -5363,11 +5363,11 @@ export namespace MyNS {
 
 
 	/** Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output. */
-	export enum DeinterlaceAlgorithm { INTERPOLATE = 0, INTERPOLATE_TICKER = 1, BLEND = 2, BLEND_TICKER = 3, LINEAR_INTERPOLATION = 4 }
+	export enum DeinterlaceAlgorithm { INTERPOLATE = 'INTERPOLATE', INTERPOLATE_TICKER = 'INTERPOLATE_TICKER', BLEND = 'BLEND', BLEND_TICKER = 'BLEND_TICKER', LINEAR_INTERPOLATION = 'LINEAR_INTERPOLATION' }
 
 
 	/** - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video. */
-	export enum DeinterlacerControl { FORCE_ALL_FRAMES = 0, NORMAL = 1 }
+	export enum DeinterlacerControl { FORCE_ALL_FRAMES = 'FORCE_ALL_FRAMES', NORMAL = 'NORMAL' }
 
 
 	/**
@@ -5376,7 +5376,7 @@ export namespace MyNS {
 	 * - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p.
 	 * - Adaptive auto-detects and converts to progressive.
 	 */
-	export enum DeinterlacerMode { DEINTERLACE = 0, INVERSE_TELECINE = 1, ADAPTIVE = 2 }
+	export enum DeinterlacerMode { DEINTERLACE = 'DEINTERLACE', INVERSE_TELECINE = 'INVERSE_TELECINE', ADAPTIVE = 'ADAPTIVE' }
 
 
 	/** Create Dolby Vision Profile 5 or Profile 8.1 compatible video output. */
@@ -5424,15 +5424,15 @@ export namespace MyNS {
 
 
 	/** Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies. */
-	export enum DolbyVisionLevel6Mode { PASSTHROUGH = 0, RECALCULATE = 1, SPECIFY = 2 }
+	export enum DolbyVisionLevel6Mode { PASSTHROUGH = 'PASSTHROUGH', RECALCULATE = 'RECALCULATE', SPECIFY = 'SPECIFY' }
 
 
 	/** Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims. */
-	export enum DolbyVisionMapping { HDR10_NOMAP = 0, HDR10_1000 = 1 }
+	export enum DolbyVisionMapping { HDR10_NOMAP = 'HDR10_NOMAP', HDR10_1000 = 'HDR10_1000' }
 
 
 	/** Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision metadata. */
-	export enum DolbyVisionProfile { PROFILE_5 = 0, PROFILE_8_1 = 1 }
+	export enum DolbyVisionProfile { PROFILE_5 = 'PROFILE_5', PROFILE_8_1 = 'PROFILE_8_1' }
 
 
 	/** Setting for HDR10+ metadata insertion */
@@ -5476,7 +5476,7 @@ export namespace MyNS {
 
 
 	/** Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion. */
-	export enum NoiseReducerFilter { BILATERAL = 0, MEAN = 1, GAUSSIAN = 2, LANCZOS = 3, SHARPEN = 4, CONSERVE = 5, SPATIAL = 6, TEMPORAL = 7 }
+	export enum NoiseReducerFilter { BILATERAL = 'BILATERAL', MEAN = 'MEAN', GAUSSIAN = 'GAUSSIAN', LANCZOS = 'LANCZOS', SHARPEN = 'SHARPEN', CONSERVE = 'CONSERVE', SPATIAL = 'SPATIAL', TEMPORAL = 'TEMPORAL' }
 
 
 	/** Settings for a noise reducer filter */
@@ -5549,11 +5549,11 @@ export namespace MyNS {
 
 
 	/** When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening. */
-	export enum NoiseFilterPostTemporalSharpening { DISABLED = 0, ENABLED = 1, AUTO = 2 }
+	export enum NoiseFilterPostTemporalSharpening { DISABLED = 'DISABLED', ENABLED = 'ENABLED', AUTO = 'AUTO' }
 
 
 	/** Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening. */
-	export enum NoiseFilterPostTemporalSharpeningStrength { LOW = 0, MEDIUM = 1, HIGH = 2 }
+	export enum NoiseFilterPostTemporalSharpeningStrength { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 
 	/** If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output. */
@@ -5598,7 +5598,7 @@ export namespace MyNS {
 
 
 	/** Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value. */
-	export enum WatermarkingStrength { LIGHTEST = 0, LIGHTER = 1, DEFAULT = 2, STRONGER = 3, STRONGEST = 4 }
+	export enum WatermarkingStrength { LIGHTEST = 'LIGHTEST', LIGHTER = 'LIGHTER', DEFAULT = 'DEFAULT', STRONGER = 'STRONGER', STRONGEST = 'STRONGEST' }
 
 
 	/** Settings for burning the output timecode and specified prefix into the output. */
@@ -5625,7 +5625,7 @@ export namespace MyNS {
 
 
 	/** Use Position under Timecode burn-in to specify the location the burned-in timecode on output video. */
-	export enum TimecodeBurninPosition { TOP_CENTER = 0, TOP_LEFT = 1, TOP_RIGHT = 2, MIDDLE_LEFT = 3, MIDDLE_CENTER = 4, MIDDLE_RIGHT = 5, BOTTOM_LEFT = 6, BOTTOM_CENTER = 7, BOTTOM_RIGHT = 8 }
+	export enum TimecodeBurninPosition { TOP_CENTER = 'TOP_CENTER', TOP_LEFT = 'TOP_LEFT', TOP_RIGHT = 'TOP_RIGHT', MIDDLE_LEFT = 'MIDDLE_LEFT', MIDDLE_CENTER = 'MIDDLE_CENTER', MIDDLE_RIGHT = 'MIDDLE_RIGHT', BOTTOM_LEFT = 'BOTTOM_LEFT', BOTTOM_CENTER = 'BOTTOM_CENTER', BOTTOM_RIGHT = 'BOTTOM_RIGHT' }
 
 
 	/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
@@ -5690,11 +5690,11 @@ export namespace MyNS {
 
 
 	/** A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR. */
-	export enum JobStatus { SUBMITTED = 0, PROGRESSING = 1, COMPLETE = 2, CANCELED = 3, ERROR = 4 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', PROGRESSING = 'PROGRESSING', COMPLETE = 'COMPLETE', CANCELED = 'CANCELED', ERROR = 'ERROR' }
 
 
 	/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
-	export enum StatusUpdateInterval { SECONDS_10 = 0, SECONDS_12 = 1, SECONDS_15 = 2, SECONDS_20 = 3, SECONDS_30 = 4, SECONDS_60 = 5, SECONDS_120 = 6, SECONDS_180 = 7, SECONDS_240 = 8, SECONDS_300 = 9, SECONDS_360 = 10, SECONDS_420 = 11, SECONDS_480 = 12, SECONDS_540 = 13, SECONDS_600 = 14 }
+	export enum StatusUpdateInterval { SECONDS_10 = 'SECONDS_10', SECONDS_12 = 'SECONDS_12', SECONDS_15 = 'SECONDS_15', SECONDS_20 = 'SECONDS_20', SECONDS_30 = 'SECONDS_30', SECONDS_60 = 'SECONDS_60', SECONDS_120 = 'SECONDS_120', SECONDS_180 = 'SECONDS_180', SECONDS_240 = 'SECONDS_240', SECONDS_300 = 'SECONDS_300', SECONDS_360 = 'SECONDS_360', SECONDS_420 = 'SECONDS_420', SECONDS_480 = 'SECONDS_480', SECONDS_540 = 'SECONDS_540', SECONDS_600 = 'SECONDS_600' }
 
 
 	/** Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds. */
@@ -5905,7 +5905,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { SYSTEM = 0, CUSTOM = 1 }
+	export enum Type { SYSTEM = 'SYSTEM', CUSTOM = 'CUSTOM' }
 
 	export interface CreatePresetResponse {
 		Preset?: Preset;
@@ -6064,7 +6064,7 @@ export namespace MyNS {
 
 
 	/** Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. */
-	export enum PricingPlan { ON_DEMAND = 0, RESERVED = 1 }
+	export enum PricingPlan { ON_DEMAND = 'ON_DEMAND', RESERVED = 'RESERVED' }
 
 
 	/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
@@ -6100,19 +6100,19 @@ export namespace MyNS {
 
 
 	/** The length of the term of your reserved queue pricing plan commitment. */
-	export enum Commitment { ONE_YEAR = 0 }
+	export enum Commitment { ONE_YEAR = 'ONE_YEAR' }
 
 
 	/** Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. */
-	export enum RenewalType { AUTO_RENEW = 0, EXPIRE = 1 }
+	export enum RenewalType { AUTO_RENEW = 'AUTO_RENEW', EXPIRE = 'EXPIRE' }
 
 
 	/** Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED. */
-	export enum ReservationPlanStatus { ACTIVE = 0, EXPIRED = 1 }
+	export enum ReservationPlanStatus { ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED' }
 
 
 	/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
-	export enum QueueStatus { ACTIVE = 0, PAUSED = 1 }
+	export enum QueueStatus { ACTIVE = 'ACTIVE', PAUSED = 'PAUSED' }
 
 	export interface DeleteJobTemplateResponse {
 	}
@@ -6253,7 +6253,7 @@ export namespace MyNS {
 
 
 	/** An input policy allows or disallows a job you submit to run based on the conditions that you specify. */
-	export enum InputPolicy { ALLOWED = 0, DISALLOWED = 1 }
+	export enum InputPolicy { ALLOWED = 'ALLOWED', DISALLOWED = 'DISALLOWED' }
 
 	export interface GetPresetResponse {
 		Preset?: Preset;
@@ -6428,31 +6428,31 @@ export namespace MyNS {
 
 
 	/** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf. */
-	export enum Ac3DynamicRangeCompressionRf { FILM_STANDARD = 0, FILM_LIGHT = 1, MUSIC_STANDARD = 2, MUSIC_LIGHT = 3, SPEECH = 4, NONE = 5 }
+	export enum Ac3DynamicRangeCompressionRf { FILM_STANDARD = 'FILM_STANDARD', FILM_LIGHT = 'FILM_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', SPEECH = 'SPEECH', NONE = 'NONE' }
 
 
 	/** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
-	export enum Ac3LfeFilter { ENABLED = 0, DISABLED = 1 }
+	export enum Ac3LfeFilter { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used. */
-	export enum Ac3MetadataControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum Ac3MetadataControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Add texture and detail to areas of your input video content that were lost after applying the Advanced input filter. To adaptively add texture and reduce softness: Choose Enabled. To not add any texture: Keep the default value, Disabled. We recommend that you choose Disabled for input video content that doesn't have texture, including screen recordings, computer graphics, or cartoons. */
-	export enum AdvancedInputFilterAddTexture { ENABLED = 0, DISABLED = 1 }
+	export enum AdvancedInputFilterAddTexture { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Set to ENABLED to force a rendition to be included. */
-	export enum RequiredFlag { ENABLED = 0, DISABLED = 1 }
+	export enum RequiredFlag { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708. */
-	export enum AncillaryConvert608To708 { UPCONVERT = 0, DISABLED = 1 }
+	export enum AncillaryConvert608To708 { UPCONVERT = 'UPCONVERT', DISABLED = 'DISABLED' }
 
 
 	/** By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting. */
-	export enum AncillaryTerminateCaptions { END_OF_INPUT = 0, DISABLED = 1 }
+	export enum AncillaryTerminateCaptions { END_OF_INPUT = 'END_OF_INPUT', DISABLED = 'DISABLED' }
 
 
 	/** Settings for ancillary captions source. */
@@ -6479,7 +6479,7 @@ export namespace MyNS {
 
 
 	/** The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting. */
-	export enum AntiAlias { DISABLED = 0, ENABLED = 1 }
+	export enum AntiAlias { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 	export interface AssociateCertificateRequest {
 
@@ -6500,15 +6500,15 @@ export namespace MyNS {
 
 
 	/** Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio. */
-	export enum AudioDefaultSelection { DEFAULT = 0, NOT_DEFAULT = 1 }
+	export enum AudioDefaultSelection { DEFAULT = 'DEFAULT', NOT_DEFAULT = 'NOT_DEFAULT' }
 
 
 	/** Specify which source for language code takes precedence for this audio track. When you choose Follow input, the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code. When you choose Use configured, the service uses the language code that you specify. */
-	export enum AudioLanguageCodeControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum AudioLanguageCodeControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion. */
-	export enum AudioDurationCorrection { DISABLED = 0, AUTO = 1, TRACK = 2, FRAME = 3 }
+	export enum AudioDurationCorrection { DISABLED = 'DISABLED', AUTO = 'AUTO', TRACK = 'TRACK', FRAME = 'FRAME' }
 
 
 	/** Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead. */
@@ -6535,7 +6535,7 @@ export namespace MyNS {
 
 
 	/** Specifies the type of the audio selector. */
-	export enum AudioSelectorType { PID = 0, TRACK = 1, LANGUAGE_CODE = 2, HLS_RENDITION_GROUP = 3 }
+	export enum AudioSelectorType { PID = 'PID', TRACK = 'TRACK', LANGUAGE_CODE = 'LANGUAGE_CODE', HLS_RENDITION_GROUP = 'HLS_RENDITION_GROUP' }
 
 
 	/** Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input. */
@@ -6596,27 +6596,27 @@ export namespace MyNS {
 
 
 	/** Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. */
-	export enum Av1SpatialAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum Av1SpatialAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum AvcIntraFramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum AvcIntraFramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum AvcIntraFramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum AvcIntraFramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. */
-	export enum AvcIntraSlowPal { DISABLED = 0, ENABLED = 1 }
+	export enum AvcIntraSlowPal { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. */
-	export enum BurnInSubtitleStylePassthrough { ENABLED = 0, DISABLED = 1 }
+	export enum BurnInSubtitleStylePassthrough { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present. */
-	export enum BurninSubtitleShadowColor { NONE = 0, BLACK = 1, WHITE = 2, AUTO = 3 }
+	export enum BurninSubtitleShadowColor { NONE = 'NONE', BLACK = 'BLACK', WHITE = 'WHITE', AUTO = 'AUTO' }
 
 	export interface CancelJobRequest {
 	}
@@ -6747,11 +6747,11 @@ export namespace MyNS {
 
 
 	/** When you use the setting Time delta to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units, MediaConvert uses seconds by default. */
-	export enum FileSourceTimeDeltaUnits { SECONDS = 0, MILLISECONDS = 1 }
+	export enum FileSourceTimeDeltaUnits { SECONDS = 'SECONDS', MILLISECONDS = 'MILLISECONDS' }
 
 
 	/** Use Source to identify the format of your input captions. The service cannot auto-detect caption format. */
-	export enum CaptionSourceType { ANCILLARY = 0, DVB_SUB = 1, EMBEDDED = 2, SCTE20 = 3, SCC = 4, TTML = 5, STL = 6, SRT = 7, SMI = 8, SMPTE_TT = 9, TELETEXT = 10, NULL_SOURCE = 11, IMSC = 12, WEBVTT = 13 }
+	export enum CaptionSourceType { ANCILLARY = 'ANCILLARY', DVB_SUB = 'DVB_SUB', EMBEDDED = 'EMBEDDED', SCTE20 = 'SCTE20', SCC = 'SCC', TTML = 'TTML', STL = 'STL', SRT = 'SRT', SMI = 'SMI', SMPTE_TT = 'SMPTE_TT', TELETEXT = 'TELETEXT', NULL_SOURCE = 'NULL_SOURCE', IMSC = 'IMSC', WEBVTT = 'WEBVTT' }
 
 
 	/** Settings specific to Teletext caption sources, including Page number. */
@@ -6833,43 +6833,43 @@ export namespace MyNS {
 
 
 	/** Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions. */
-	export enum CaptionSourceConvertPaintOnToPopOn { ENABLED = 0, DISABLED = 1 }
+	export enum CaptionSourceConvertPaintOnToPopOn { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
-	export enum CmafStreamInfResolution { INCLUDE = 0, EXCLUDE = 1 }
+	export enum CmafStreamInfResolution { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** When set to ENABLED, a DASH MPD manifest will be generated for this output. */
-	export enum CmafWriteDASHManifest { DISABLED = 0, ENABLED = 1 }
+	export enum CmafWriteDASHManifest { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** When set to ENABLED, an Apple HLS manifest will be generated for this output. */
-	export enum CmafWriteHLSManifest { DISABLED = 0, ENABLED = 1 }
+	export enum CmafWriteHLSManifest { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** When you enable Precise segment duration in DASH manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element. */
-	export enum CmafWriteSegmentTimelineInRepresentation { ENABLED = 0, DISABLED = 1 }
+	export enum CmafWriteSegmentTimelineInRepresentation { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Choose Include to have MediaConvert generate an HLS child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude. */
-	export enum CmfcIFrameOnlyManifest { INCLUDE = 0, EXCLUDE = 1 }
+	export enum CmfcIFrameOnlyManifest { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough. */
-	export enum CmfcManifestMetadataSignaling { ENABLED = 0, DISABLED = 1 }
+	export enum CmfcManifestMetadataSignaling { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. */
-	export enum CmfcScte35Source { PASSTHROUGH = 0, NONE = 1 }
+	export enum CmfcScte35Source { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank. */
-	export enum CmfcTimedMetadata { PASSTHROUGH = 0, NONE = 1 }
+	export enum CmfcTimedMetadata { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default. */
-	export enum SimulateReservedQueue { DISABLED = 0, ENABLED = 1 }
+	export enum SimulateReservedQueue { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 	export interface CreateJobRequest {
 		AccelerationSettings?: AccelerationSettings;
@@ -7046,39 +7046,39 @@ export namespace MyNS {
 
 
 	/** Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md */
-	export enum DashIsoImageBasedTrickPlay { NONE = 0, THUMBNAIL = 1, THUMBNAIL_AND_FULLFRAME = 2, ADVANCED = 3 }
+	export enum DashIsoImageBasedTrickPlay { NONE = 'NONE', THUMBNAIL = 'THUMBNAIL', THUMBNAIL_AND_FULLFRAME = 'THUMBNAIL_AND_FULLFRAME', ADVANCED = 'ADVANCED' }
 
 
 	/** Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second. */
-	export enum DashIsoMpdManifestBandwidthType { AVERAGE = 0, MAX = 1 }
+	export enum DashIsoMpdManifestBandwidthType { AVERAGE = 'AVERAGE', MAX = 'MAX' }
 
 
 	/** Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file. */
-	export enum DashIsoMpdProfile { MAIN_PROFILE = 0, ON_DEMAND_PROFILE = 1 }
+	export enum DashIsoMpdProfile { MAIN_PROFILE = 'MAIN_PROFILE', ON_DEMAND_PROFILE = 'ON_DEMAND_PROFILE' }
 
 
 	/** Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here. */
-	export enum DashIsoPtsOffsetHandlingForBFrames { ZERO_BASED = 0, MATCH_INITIAL_PTS = 1 }
+	export enum DashIsoPtsOffsetHandlingForBFrames { ZERO_BASED = 'ZERO_BASED', MATCH_INITIAL_PTS = 'MATCH_INITIAL_PTS' }
 
 
 	/** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created. */
-	export enum DashIsoSegmentControl { SINGLE_FILE = 0, SEGMENTED_FILES = 1 }
+	export enum DashIsoSegmentControl { SINGLE_FILE = 'SINGLE_FILE', SEGMENTED_FILES = 'SEGMENTED_FILES' }
 
 
 	/** Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary. */
-	export enum DashIsoSegmentLengthControl { EXACT = 0, GOP_MULTIPLE = 1 }
+	export enum DashIsoSegmentLengthControl { EXACT = 'EXACT', GOP_MULTIPLE = 'GOP_MULTIPLE' }
 
 
 	/** Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers. */
-	export enum DashIsoVideoCompositionOffsets { SIGNED = 0, UNSIGNED = 1 }
+	export enum DashIsoVideoCompositionOffsets { SIGNED = 'SIGNED', UNSIGNED = 'UNSIGNED' }
 
 
 	/** When you enable Precise segment duration in manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element. */
-	export enum DashIsoWriteSegmentTimelineInRepresentation { ENABLED = 0, DISABLED = 1 }
+	export enum DashIsoWriteSegmentTimelineInRepresentation { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval. */
-	export enum DashIsoIntervalCadence { FOLLOW_IFRAME = 0, FOLLOW_CUSTOM = 1 }
+	export enum DashIsoIntervalCadence { FOLLOW_IFRAME = 'FOLLOW_IFRAME', FOLLOW_CUSTOM = 'FOLLOW_CUSTOM' }
 
 	export interface DeleteJobTemplateRequest {
 	}
@@ -7122,7 +7122,7 @@ export namespace MyNS {
 
 
 	/** Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist. */
-	export enum DescribeEndpointsMode { DEFAULT = 0, GET_ONLY = 1 }
+	export enum DescribeEndpointsMode { DEFAULT = 'DEFAULT', GET_ONLY = 'GET_ONLY' }
 
 
 	/** DescribeEndpointsRequest */
@@ -7159,99 +7159,99 @@ export namespace MyNS {
 
 
 	/** Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled. */
-	export enum DropFrameTimecode { DISABLED = 0, ENABLED = 1 }
+	export enum DropFrameTimecode { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Within your job settings, all of your DVB-Sub settings must be identical. */
-	export enum DvbSubtitleAlignment { CENTERED = 0, LEFT = 1, AUTO = 2 }
+	export enum DvbSubtitleAlignment { CENTERED = 'CENTERED', LEFT = 'LEFT', AUTO = 'AUTO' }
 
 
 	/** Ignore this setting unless Style Passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text. */
-	export enum DvbSubtitleApplyFontColor { WHITE_TEXT_ONLY = 0, ALL_TEXT = 1 }
+	export enum DvbSubtitleApplyFontColor { WHITE_TEXT_ONLY = 'WHITE_TEXT_ONLY', ALL_TEXT = 'ALL_TEXT' }
 
 
 	/** Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to enabled to use the background color data from your input captions, if present. */
-	export enum DvbSubtitleBackgroundColor { NONE = 0, BLACK = 1, WHITE = 2, AUTO = 3 }
+	export enum DvbSubtitleBackgroundColor { NONE = 'NONE', BLACK = 'BLACK', WHITE = 'WHITE', AUTO = 'AUTO' }
 
 
 	/** Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input. */
-	export enum DvbSubSubtitleFallbackFont { BEST_MATCH = 0, MONOSPACED_SANSSERIF = 1, MONOSPACED_SERIF = 2, PROPORTIONAL_SANSSERIF = 3, PROPORTIONAL_SERIF = 4 }
+	export enum DvbSubSubtitleFallbackFont { BEST_MATCH = 'BEST_MATCH', MONOSPACED_SANSSERIF = 'MONOSPACED_SANSSERIF', MONOSPACED_SERIF = 'MONOSPACED_SERIF', PROPORTIONAL_SANSSERIF = 'PROPORTIONAL_SANSSERIF', PROPORTIONAL_SERIF = 'PROPORTIONAL_SERIF' }
 
 
 	/** Specify the color of the captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical. */
-	export enum DvbSubtitleFontColor { WHITE = 0, BLACK = 1, YELLOW = 2, RED = 3, GREEN = 4, BLUE = 5, HEX = 6, AUTO = 7 }
+	export enum DvbSubtitleFontColor { WHITE = 'WHITE', BLACK = 'BLACK', YELLOW = 'YELLOW', RED = 'RED', GREEN = 'GREEN', BLUE = 'BLUE', HEX = 'HEX', AUTO = 'AUTO' }
 
 
 	/** Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical. */
-	export enum DvbSubtitleOutlineColor { BLACK = 0, WHITE = 1, YELLOW = 2, RED = 3, GREEN = 4, BLUE = 5, AUTO = 6 }
+	export enum DvbSubtitleOutlineColor { BLACK = 'BLACK', WHITE = 'WHITE', YELLOW = 'YELLOW', RED = 'RED', GREEN = 'GREEN', BLUE = 'BLUE', AUTO = 'AUTO' }
 
 
 	/** Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical. */
-	export enum DvbSubtitleShadowColor { NONE = 0, BLACK = 1, WHITE = 2, AUTO = 3 }
+	export enum DvbSubtitleShadowColor { NONE = 'NONE', BLACK = 'BLACK', WHITE = 'WHITE', AUTO = 'AUTO' }
 
 
 	/** Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. */
-	export enum DvbSubtitleStylePassthrough { ENABLED = 0, DISABLED = 1 }
+	export enum DvbSubtitleStylePassthrough { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Specify whether the Text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical. */
-	export enum DvbSubtitleTeletextSpacing { FIXED_GRID = 0, PROPORTIONAL = 1, AUTO = 2 }
+	export enum DvbSubtitleTeletextSpacing { FIXED_GRID = 'FIXED_GRID', PROPORTIONAL = 'PROPORTIONAL', AUTO = 'AUTO' }
 
 
 	/** Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis. */
-	export enum Eac3AtmosDialogueIntelligence { ENABLED = 0, DISABLED = 1 }
+	export enum Eac3AtmosDialogueIntelligence { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf. */
-	export enum Eac3AtmosDynamicRangeCompressionRf { NONE = 0, FILM_STANDARD = 1, FILM_LIGHT = 2, MUSIC_STANDARD = 3, MUSIC_LIGHT = 4, SPEECH = 5 }
+	export enum Eac3AtmosDynamicRangeCompressionRf { NONE = 'NONE', FILM_STANDARD = 'FILM_STANDARD', FILM_LIGHT = 'FILM_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', SPEECH = 'SPEECH' }
 
 
 	/** Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings. */
-	export enum Eac3AtmosDynamicRangeControl { SPECIFIED = 0, INITIALIZE_FROM_SOURCE = 1 }
+	export enum Eac3AtmosDynamicRangeControl { SPECIFIED = 'SPECIFIED', INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE' }
 
 
 	/** Activates a DC highpass filter for all input channels. */
-	export enum Eac3DcFilter { ENABLED = 0, DISABLED = 1 }
+	export enum Eac3DcFilter { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf. */
-	export enum Eac3DynamicRangeCompressionLine { NONE = 0, FILM_STANDARD = 1, FILM_LIGHT = 2, MUSIC_STANDARD = 3, MUSIC_LIGHT = 4, SPEECH = 5 }
+	export enum Eac3DynamicRangeCompressionLine { NONE = 'NONE', FILM_STANDARD = 'FILM_STANDARD', FILM_LIGHT = 'FILM_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', SPEECH = 'SPEECH' }
 
 
 	/** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf. */
-	export enum Eac3DynamicRangeCompressionRf { NONE = 0, FILM_STANDARD = 1, FILM_LIGHT = 2, MUSIC_STANDARD = 3, MUSIC_LIGHT = 4, SPEECH = 5 }
+	export enum Eac3DynamicRangeCompressionRf { NONE = 'NONE', FILM_STANDARD = 'FILM_STANDARD', FILM_LIGHT = 'FILM_LIGHT', MUSIC_STANDARD = 'MUSIC_STANDARD', MUSIC_LIGHT = 'MUSIC_LIGHT', SPEECH = 'SPEECH' }
 
 
 	/** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
-	export enum Eac3LfeFilter { ENABLED = 0, DISABLED = 1 }
+	export enum Eac3LfeFilter { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used. */
-	export enum Eac3MetadataControl { FOLLOW_INPUT = 0, USE_CONFIGURED = 1 }
+	export enum Eac3MetadataControl { FOLLOW_INPUT = 'FOLLOW_INPUT', USE_CONFIGURED = 'USE_CONFIGURED' }
 
 
 	/** When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels. */
-	export enum Eac3SurroundExMode { NOT_INDICATED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum Eac3SurroundExMode { NOT_INDICATED = 'NOT_INDICATED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels. */
-	export enum Eac3SurroundMode { NOT_INDICATED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum Eac3SurroundMode { NOT_INDICATED = 'NOT_INDICATED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708. */
-	export enum EmbeddedConvert608To708 { UPCONVERT = 0, DISABLED = 1 }
+	export enum EmbeddedConvert608To708 { UPCONVERT = 'UPCONVERT', DISABLED = 'DISABLED' }
 
 
 	/** By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting. */
-	export enum EmbeddedTerminateCaptions { END_OF_INPUT = 0, DISABLED = 1 }
+	export enum EmbeddedTerminateCaptions { END_OF_INPUT = 'END_OF_INPUT', DISABLED = 'DISABLED' }
 
 
 	/** The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions. */
-	export enum VchipAction { PASSTHROUGH = 0, STRIP = 1 }
+	export enum VchipAction { PASSTHROUGH = 'PASSTHROUGH', STRIP = 'STRIP' }
 
 
 	/** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708. */
-	export enum FileSourceConvert608To708 { UPCONVERT = 0, DISABLED = 1 }
+	export enum FileSourceConvert608To708 { UPCONVERT = 'UPCONVERT', DISABLED = 'DISABLED' }
 
 	export interface GetJobRequest {
 	}
@@ -7305,227 +7305,227 @@ export namespace MyNS {
 
 
 	/** Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled. Change this value to Enabled to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO. */
-	export enum H264FlickerAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum H264FlickerAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum H264FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum H264FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum H264FramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum H264FramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled. */
-	export enum H264GopBReference { DISABLED = 0, ENABLED = 1 }
+	export enum H264GopBReference { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose. */
-	export enum H264InterlaceMode { PROGRESSIVE = 0, TOP_FIELD = 1, BOTTOM_FIELD = 2, FOLLOW_TOP_FIELD = 3, FOLLOW_BOTTOM_FIELD = 4 }
+	export enum H264InterlaceMode { PROGRESSIVE = 'PROGRESSIVE', TOP_FIELD = 'TOP_FIELD', BOTTOM_FIELD = 'BOTTOM_FIELD', FOLLOW_TOP_FIELD = 'FOLLOW_TOP_FIELD', FOLLOW_BOTTOM_FIELD = 'FOLLOW_BOTTOM_FIELD' }
 
 
 	/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
-	export enum H264ParControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum H264ParControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Places a PPS header on each encoded picture, even if repeated. */
-	export enum H264RepeatPps { DISABLED = 0, ENABLED = 1 }
+	export enum H264RepeatPps { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive. */
-	export enum H264ScanTypeConversionMode { INTERLACED = 0, INTERLACED_OPTIMIZE = 1 }
+	export enum H264ScanTypeConversionMode { INTERLACED = 'INTERLACED', INTERLACED_OPTIMIZE = 'INTERLACED_OPTIMIZE' }
 
 
 	/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. */
-	export enum H264SlowPal { DISABLED = 0, ENABLED = 1 }
+	export enum H264SlowPal { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Only use this setting when you change the default value, Auto, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO. */
-	export enum H264SpatialAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum H264SpatialAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization. To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO. */
-	export enum H264TemporalAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum H264TemporalAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Inserts timecode for each frame as 4 bytes of an unregistered SEI message. */
-	export enum H264UnregisteredSeiTimecode { DISABLED = 0, ENABLED = 1 }
+	export enum H264UnregisteredSeiTimecode { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Enables Alternate Transfer Function SEI message for outputs using Hybrid Log Gamma (HLG) Electro-Optical Transfer Function (EOTF). */
-	export enum H265AlternateTransferFunctionSei { DISABLED = 0, ENABLED = 1 }
+	export enum H265AlternateTransferFunctionSei { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames. */
-	export enum H265DynamicSubGop { ADAPTIVE = 0, STATIC = 1 }
+	export enum H265DynamicSubGop { ADAPTIVE = 'ADAPTIVE', STATIC = 'STATIC' }
 
 
 	/** Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set adaptiveQuantization to a value other than Off. */
-	export enum H265FlickerAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum H265FlickerAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum H265FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum H265FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum H265FramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum H265FramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled. */
-	export enum H265GopBReference { DISABLED = 0, ENABLED = 1 }
+	export enum H265GopBReference { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto and and leave GOP size blank. By default, if you don't specify GOP mode control, MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames or Specified, seconds and then provide the GOP length in the related setting GOP size. */
-	export enum H265GopSizeUnits { FRAMES = 0, SECONDS = 1, AUTO = 2 }
+	export enum H265GopSizeUnits { FRAMES = 'FRAMES', SECONDS = 'SECONDS', AUTO = 'AUTO' }
 
 
 	/** Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose. */
-	export enum H265InterlaceMode { PROGRESSIVE = 0, TOP_FIELD = 1, BOTTOM_FIELD = 2, FOLLOW_TOP_FIELD = 3, FOLLOW_BOTTOM_FIELD = 4 }
+	export enum H265InterlaceMode { PROGRESSIVE = 'PROGRESSIVE', TOP_FIELD = 'TOP_FIELD', BOTTOM_FIELD = 'BOTTOM_FIELD', FOLLOW_TOP_FIELD = 'FOLLOW_TOP_FIELD', FOLLOW_BOTTOM_FIELD = 'FOLLOW_BOTTOM_FIELD' }
 
 
 	/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
-	export enum H265ParControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum H265ParControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding. */
-	export enum H265QualityTuningLevel { SINGLE_PASS = 0, SINGLE_PASS_HQ = 1, MULTI_PASS_HQ = 2 }
+	export enum H265QualityTuningLevel { SINGLE_PASS = 'SINGLE_PASS', SINGLE_PASS_HQ = 'SINGLE_PASS_HQ', MULTI_PASS_HQ = 'MULTI_PASS_HQ' }
 
 
 	/** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR). */
-	export enum H265RateControlMode { VBR = 0, CBR = 1, QVBR = 2 }
+	export enum H265RateControlMode { VBR = 'VBR', CBR = 'CBR', QVBR = 'QVBR' }
 
 
 	/** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive. */
-	export enum H265ScanTypeConversionMode { INTERLACED = 0, INTERLACED_OPTIMIZE = 1 }
+	export enum H265ScanTypeConversionMode { INTERLACED = 'INTERLACED', INTERLACED_OPTIMIZE = 'INTERLACED_OPTIMIZE' }
 
 
 	/** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr. */
-	export enum H265SceneChangeDetect { DISABLED = 0, ENABLED = 1, TRANSITION_DETECTION = 2 }
+	export enum H265SceneChangeDetect { DISABLED = 'DISABLED', ENABLED = 'ENABLED', TRANSITION_DETECTION = 'TRANSITION_DETECTION' }
 
 
 	/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. */
-	export enum H265SlowPal { DISABLED = 0, ENABLED = 1 }
+	export enum H265SlowPal { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. */
-	export enum H265SpatialAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum H265SpatialAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** This field applies only if the Streams > Advanced > Framerate field is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer field and the Streams > Advanced > Interlaced Mode field to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i. */
-	export enum H265Telecine { NONE = 0, SOFT = 1, HARD = 2 }
+	export enum H265Telecine { NONE = 'NONE', SOFT = 'SOFT', HARD = 'HARD' }
 
 
 	/** Keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization. */
-	export enum H265TemporalAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum H265TemporalAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are supported depending on GOP structure: I- and P-frames form one layer, reference B-frames can form a second layer and non-reference b-frames can form a third layer. Decoders can optionally decode only the lower temporal layers to generate a lower frame rate output. For example, given a bitstream with temporal IDs and with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the frames for full frame rate output or only the I and P frames (lowest temporal layer) for a half frame rate output. */
-	export enum H265TemporalIds { DISABLED = 0, ENABLED = 1 }
+	export enum H265TemporalIds { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures. */
-	export enum H265Tiles { DISABLED = 0, ENABLED = 1 }
+	export enum H265Tiles { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Inserts timecode for each frame as 4 bytes of an unregistered SEI message. */
-	export enum H265UnregisteredSeiTimecode { DISABLED = 0, ENABLED = 1 }
+	export enum H265UnregisteredSeiTimecode { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments. */
-	export enum HlsAudioOnlyHeader { INCLUDE = 0, EXCLUDE = 1 }
+	export enum HlsAudioOnlyHeader { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header. */
-	export enum HlsClientCache { DISABLED = 0, ENABLED = 1 }
+	export enum HlsClientCache { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
-	export enum HlsCodecSpecification { RFC_6381 = 0, RFC_4281 = 1 }
+	export enum HlsCodecSpecification { RFC_6381 = 'RFC_6381', RFC_4281 = 'RFC_4281' }
 
 
 	/** Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag, MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag, MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation. */
-	export enum HlsDescriptiveVideoServiceFlag { DONT_FLAG = 0, FLAG = 1 }
+	export enum HlsDescriptiveVideoServiceFlag { DONT_FLAG = 'DONT_FLAG', FLAG = 'FLAG' }
 
 
 	/** The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest. */
-	export enum HlsInitializationVectorInManifest { INCLUDE = 0, EXCLUDE = 1 }
+	export enum HlsInitializationVectorInManifest { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection. */
-	export enum HlsOfflineEncrypted { ENABLED = 0, DISABLED = 1 }
+	export enum HlsOfflineEncrypted { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html. */
-	export enum HlsKeyProviderType { SPEKE = 0, STATIC_KEY = 1 }
+	export enum HlsKeyProviderType { SPEKE = 'SPEKE', STATIC_KEY = 'STATIC_KEY' }
 
 
 	/** Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md */
-	export enum HlsImageBasedTrickPlay { NONE = 0, THUMBNAIL = 1, THUMBNAIL_AND_FULLFRAME = 2, ADVANCED = 3 }
+	export enum HlsImageBasedTrickPlay { NONE = 'NONE', THUMBNAIL = 'THUMBNAIL', THUMBNAIL_AND_FULLFRAME = 'THUMBNAIL_AND_FULLFRAME', ADVANCED = 'ADVANCED' }
 
 
 	/** When set to GZIP, compresses HLS playlist. */
-	export enum HlsManifestCompression { GZIP = 0, NONE = 1 }
+	export enum HlsManifestCompression { GZIP = 'GZIP', NONE = 'NONE' }
 
 
 	/** Indicates whether the output manifest should use floating point values for segment duration. */
-	export enum HlsManifestDurationFormat { FLOATING_POINT = 0, INTEGER = 1 }
+	export enum HlsManifestDurationFormat { FLOATING_POINT = 'FLOATING_POINT', INTEGER = 'INTEGER' }
 
 
 	/** Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset. */
-	export enum HlsProgramDateTime { INCLUDE = 0, EXCLUDE = 1 }
+	export enum HlsProgramDateTime { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled. */
-	export enum HlsProgressiveWriteHlsManifest { ENABLED = 0, DISABLED = 1 }
+	export enum HlsProgressiveWriteHlsManifest { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback. */
-	export enum HlsSegmentControl { SINGLE_FILE = 0, SEGMENTED_FILES = 1 }
+	export enum HlsSegmentControl { SINGLE_FILE = 'SINGLE_FILE', SEGMENTED_FILES = 'SEGMENTED_FILES' }
 
 
 	/** Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary. */
-	export enum HlsSegmentLengthControl { EXACT = 0, GOP_MULTIPLE = 1 }
+	export enum HlsSegmentLengthControl { EXACT = 'EXACT', GOP_MULTIPLE = 'GOP_MULTIPLE' }
 
 
 	/** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
-	export enum HlsStreamInfResolution { INCLUDE = 0, EXCLUDE = 1 }
+	export enum HlsStreamInfResolution { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration. */
-	export enum HlsTargetDurationCompatibilityMode { LEGACY = 0, SPEC_COMPLIANT = 1 }
+	export enum HlsTargetDurationCompatibilityMode { LEGACY = 'LEGACY', SPEC_COMPLIANT = 'SPEC_COMPLIANT' }
 
 
 	/** Choose Include to have MediaConvert generate a child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude. */
-	export enum HlsIFrameOnlyManifest { INCLUDE = 0, EXCLUDE = 1 }
+	export enum HlsIFrameOnlyManifest { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval. */
-	export enum HlsIntervalCadence { FOLLOW_IFRAME = 0, FOLLOW_CUSTOM = 1 }
+	export enum HlsIntervalCadence { FOLLOW_IFRAME = 'FOLLOW_IFRAME', FOLLOW_CUSTOM = 'FOLLOW_CUSTOM' }
 
 
 	/** If the IMSC captions track is intended to provide accessibility for people who are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you do, MediaConvert adds accessibility attributes to your output HLS or DASH manifest. For HLS manifests, MediaConvert adds the following accessibility attributes under EXT-X-MEDIA for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the adaptation set for this track: <Accessibility schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track is not intended to provide such accessibility: Keep the default value, Disabled. When you do, for DASH manifests, MediaConvert instead adds the following in the adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011" value="subtitle"/>. */
-	export enum ImscAccessibilitySubs { DISABLED = 0, ENABLED = 1 }
+	export enum ImscAccessibilitySubs { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions. */
-	export enum ImscStylePassthrough { ENABLED = 0, DISABLED = 1 }
+	export enum ImscStylePassthrough { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs. */
-	export enum InputDeblockFilter { ENABLED = 0, DISABLED = 1 }
+	export enum InputDeblockFilter { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs. */
-	export enum InputDenoiseFilter { ENABLED = 0, DISABLED = 1 }
+	export enum InputDenoiseFilter { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name. */
-	export enum JobTemplateListBy { NAME = 0, CREATION_DATE = 1, SYSTEM = 2 }
+	export enum JobTemplateListBy { NAME = 'NAME', CREATION_DATE = 'CREATION_DATE', SYSTEM = 'SYSTEM' }
 
 
 	/** Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource. */
-	export enum Order { ASCENDING = 0, DESCENDING = 1 }
+	export enum Order { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListJobTemplatesRequest {
 	}
@@ -7549,7 +7549,7 @@ export namespace MyNS {
 
 
 	/** Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name. */
-	export enum PresetListBy { NAME = 0, CREATION_DATE = 1, SYSTEM = 2 }
+	export enum PresetListBy { NAME = 'NAME', CREATION_DATE = 'CREATION_DATE', SYSTEM = 'SYSTEM' }
 
 	export interface ListPresetsRequest {
 	}
@@ -7563,7 +7563,7 @@ export namespace MyNS {
 
 
 	/** Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date. */
-	export enum QueueListBy { NAME = 0, CREATION_DATE = 1 }
+	export enum QueueListBy { NAME = 'NAME', CREATION_DATE = 'CREATION_DATE' }
 
 	export interface ListQueuesRequest {
 	}
@@ -7587,95 +7587,95 @@ export namespace MyNS {
 
 
 	/** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec. */
-	export enum M2tsAudioDuration { DEFAULT_CODEC_DURATION = 0, MATCH_VIDEO_DURATION = 1 }
+	export enum M2tsAudioDuration { DEFAULT_CODEC_DURATION = 'DEFAULT_CODEC_DURATION', MATCH_VIDEO_DURATION = 'MATCH_VIDEO_DURATION' }
 
 
 	/** Controls whether to include the ES Rate field in the PES header. */
-	export enum M2tsEsRateInPes { INCLUDE = 0, EXCLUDE = 1 }
+	export enum M2tsEsRateInPes { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank. */
-	export enum M2tsKlvMetadata { PASSTHROUGH = 0, NONE = 1 }
+	export enum M2tsKlvMetadata { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output. */
-	export enum M2tsNielsenId3 { INSERT = 0, NONE = 1 }
+	export enum M2tsNielsenId3 { INSERT = 'INSERT', NONE = 'NONE' }
 
 
 	/** For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam). */
-	export enum M2tsScte35Source { PASSTHROUGH = 0, NONE = 1 }
+	export enum M2tsScte35Source { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec. */
-	export enum M3u8AudioDuration { DEFAULT_CODEC_DURATION = 0, MATCH_VIDEO_DURATION = 1 }
+	export enum M3u8AudioDuration { DEFAULT_CODEC_DURATION = 'DEFAULT_CODEC_DURATION', MATCH_VIDEO_DURATION = 'MATCH_VIDEO_DURATION' }
 
 
 	/** If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value AUTO to allow all PTS values. */
-	export enum M3u8DataPtsControl { AUTO = 0, ALIGN_TO_VIDEO = 1 }
+	export enum M3u8DataPtsControl { AUTO = 'AUTO', ALIGN_TO_VIDEO = 'ALIGN_TO_VIDEO' }
 
 
 	/** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output. */
-	export enum M3u8NielsenId3 { INSERT = 0, NONE = 1 }
+	export enum M3u8NielsenId3 { INSERT = 'INSERT', NONE = 'NONE' }
 
 
 	/** When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream. */
-	export enum M3u8PcrControl { PCR_EVERY_PES_PACKET = 0, CONFIGURED_PCR_PERIOD = 1 }
+	export enum M3u8PcrControl { PCR_EVERY_PES_PACKET = 'PCR_EVERY_PES_PACKET', CONFIGURED_PCR_PERIOD = 'CONFIGURED_PCR_PERIOD' }
 
 
 	/** For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose Passthrough and choose Ad markers if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML. */
-	export enum M3u8Scte35Source { PASSTHROUGH = 0, NONE = 1 }
+	export enum M3u8Scte35Source { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set ID3 metadata to None or leave blank. */
-	export enum TimedMetadata { PASSTHROUGH = 0, NONE = 1 }
+	export enum TimedMetadata { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** When enabled, include 'clap' atom if appropriate for the video output settings. */
-	export enum MovClapAtom { INCLUDE = 0, EXCLUDE = 1 }
+	export enum MovClapAtom { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools. */
-	export enum MovCslgAtom { INCLUDE = 0, EXCLUDE = 1 }
+	export enum MovCslgAtom { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR). */
-	export enum Mp3RateControlMode { CBR = 0, VBR = 1 }
+	export enum Mp3RateControlMode { CBR = 'CBR', VBR = 'VBR' }
 
 
 	/** When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools. */
-	export enum Mp4CslgAtom { INCLUDE = 0, EXCLUDE = 1 }
+	export enum Mp4CslgAtom { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Inserts a free-space box immediately after the moov box. */
-	export enum Mp4FreeSpaceBox { INCLUDE = 0, EXCLUDE = 1 }
+	export enum Mp4FreeSpaceBox { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end. */
-	export enum Mp4MoovPlacement { PROGRESSIVE_DOWNLOAD = 0, NORMAL = 1 }
+	export enum Mp4MoovPlacement { PROGRESSIVE_DOWNLOAD = 'PROGRESSIVE_DOWNLOAD', NORMAL = 'NORMAL' }
 
 
 	/** Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/> */
-	export enum MpdAccessibilityCaptionHints { INCLUDE = 0, EXCLUDE = 1 }
+	export enum MpdAccessibilityCaptionHints { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec. */
-	export enum MpdAudioDuration { DEFAULT_CODEC_DURATION = 0, MATCH_VIDEO_DURATION = 1 }
+	export enum MpdAudioDuration { DEFAULT_CODEC_DURATION = 'DEFAULT_CODEC_DURATION', MATCH_VIDEO_DURATION = 'MATCH_VIDEO_DURATION' }
 
 
 	/** To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough. */
-	export enum MpdManifestMetadataSignaling { ENABLED = 0, DISABLED = 1 }
+	export enum MpdManifestMetadataSignaling { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML. */
-	export enum MpdScte35Esam { INSERT = 0, NONE = 1 }
+	export enum MpdScte35Esam { INSERT = 'INSERT', NONE = 'NONE' }
 
 
 	/** Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. */
-	export enum MpdScte35Source { PASSTHROUGH = 0, NONE = 1 }
+	export enum MpdScte35Source { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/** To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank. */
-	export enum MpdTimedMetadata { PASSTHROUGH = 0, NONE = 1 }
+	export enum MpdTimedMetadata { PASSTHROUGH = 'PASSTHROUGH', NONE = 'NONE' }
 
 
 	/**
@@ -7684,91 +7684,91 @@ export namespace MyNS {
 	 * Leave blank to use the default value Version 0.
 	 * When you specify Version 1, you must also set ID3 metadata to Passthrough.
 	 */
-	export enum MpdTimedMetadataBoxVersion { VERSION_0 = 0, VERSION_1 = 1 }
+	export enum MpdTimedMetadataBoxVersion { VERSION_0 = 'VERSION_0', VERSION_1 = 'VERSION_1' }
 
 
 	/** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames. */
-	export enum Mpeg2DynamicSubGop { ADAPTIVE = 0, STATIC = 1 }
+	export enum Mpeg2DynamicSubGop { ADAPTIVE = 'ADAPTIVE', STATIC = 'STATIC' }
 
 
 	/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum Mpeg2FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Mpeg2FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum Mpeg2FramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum Mpeg2FramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose. */
-	export enum Mpeg2InterlaceMode { PROGRESSIVE = 0, TOP_FIELD = 1, BOTTOM_FIELD = 2, FOLLOW_TOP_FIELD = 3, FOLLOW_BOTTOM_FIELD = 4 }
+	export enum Mpeg2InterlaceMode { PROGRESSIVE = 'PROGRESSIVE', TOP_FIELD = 'TOP_FIELD', BOTTOM_FIELD = 'BOTTOM_FIELD', FOLLOW_TOP_FIELD = 'FOLLOW_TOP_FIELD', FOLLOW_BOTTOM_FIELD = 'FOLLOW_BOTTOM_FIELD' }
 
 
 	/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
-	export enum Mpeg2ParControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Mpeg2ParControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding. */
-	export enum Mpeg2QualityTuningLevel { SINGLE_PASS = 0, MULTI_PASS = 1 }
+	export enum Mpeg2QualityTuningLevel { SINGLE_PASS = 'SINGLE_PASS', MULTI_PASS = 'MULTI_PASS' }
 
 
 	/** Use Rate control mode to specify whether the bitrate is variable (vbr) or constant (cbr). */
-	export enum Mpeg2RateControlMode { VBR = 0, CBR = 1 }
+	export enum Mpeg2RateControlMode { VBR = 'VBR', CBR = 'CBR' }
 
 
 	/** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive. */
-	export enum Mpeg2ScanTypeConversionMode { INTERLACED = 0, INTERLACED_OPTIMIZE = 1 }
+	export enum Mpeg2ScanTypeConversionMode { INTERLACED = 'INTERLACED', INTERLACED_OPTIMIZE = 'INTERLACED_OPTIMIZE' }
 
 
 	/** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. */
-	export enum Mpeg2SceneChangeDetect { DISABLED = 0, ENABLED = 1 }
+	export enum Mpeg2SceneChangeDetect { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. */
-	export enum Mpeg2SlowPal { DISABLED = 0, ENABLED = 1 }
+	export enum Mpeg2SlowPal { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. */
-	export enum Mpeg2SpatialAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum Mpeg2SpatialAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture. */
-	export enum Mpeg2Telecine { NONE = 0, SOFT = 1, HARD = 2 }
+	export enum Mpeg2Telecine { NONE = 'NONE', SOFT = 'SOFT', HARD = 'HARD' }
 
 
 	/** Keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization. */
-	export enum Mpeg2TemporalAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum Mpeg2TemporalAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary. */
-	export enum MsSmoothFragmentLengthControl { EXACT = 0, GOP_MULTIPLE = 1 }
+	export enum MsSmoothFragmentLengthControl { EXACT = 'EXACT', GOP_MULTIPLE = 'GOP_MULTIPLE' }
 
 
 	/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum ProresFramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum ProresFramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum ProresFramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum ProresFramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose. */
-	export enum ProresInterlaceMode { PROGRESSIVE = 0, TOP_FIELD = 1, BOTTOM_FIELD = 2, FOLLOW_TOP_FIELD = 3, FOLLOW_BOTTOM_FIELD = 4 }
+	export enum ProresInterlaceMode { PROGRESSIVE = 'PROGRESSIVE', TOP_FIELD = 'TOP_FIELD', BOTTOM_FIELD = 'BOTTOM_FIELD', FOLLOW_TOP_FIELD = 'FOLLOW_TOP_FIELD', FOLLOW_BOTTOM_FIELD = 'FOLLOW_BOTTOM_FIELD' }
 
 
 	/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
-	export enum ProresParControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum ProresParControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive. */
-	export enum ProresScanTypeConversionMode { INTERLACED = 0, INTERLACED_OPTIMIZE = 1 }
+	export enum ProresScanTypeConversionMode { INTERLACED = 'INTERLACED', INTERLACED_OPTIMIZE = 'INTERLACED_OPTIMIZE' }
 
 
 	/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. */
-	export enum ProresSlowPal { DISABLED = 0, ENABLED = 1 }
+	export enum ProresSlowPal { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture. */
-	export enum ProresTelecine { NONE = 0, HARD = 1 }
+	export enum ProresTelecine { NONE = 'NONE', HARD = 'HARD' }
 
 	export interface PutPolicyRequest {
 
@@ -7785,7 +7785,7 @@ export namespace MyNS {
 
 
 	/** Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions. */
-	export enum SrtStylePassthrough { ENABLED = 0, DISABLED = 1 }
+	export enum SrtStylePassthrough { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface TagResourceRequest {
 
@@ -7809,11 +7809,11 @@ export namespace MyNS {
 
 
 	/** Use Source to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 instead. * Start at 0 - Set the timecode of the initial frame to 00:00:00:00. * Specified Start - Set the timecode of the initial frame to a value other than zero. You use Start timecode to provide this value. */
-	export enum TimecodeSource { EMBEDDED = 0, ZEROBASED = 1, SPECIFIEDSTART = 2 }
+	export enum TimecodeSource { EMBEDDED = 'EMBEDDED', ZEROBASED = 'ZEROBASED', SPECIFIEDSTART = 'SPECIFIEDSTART' }
 
 
 	/** Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output. */
-	export enum TtmlStylePassthrough { ENABLED = 0, DISABLED = 1 }
+	export enum TtmlStylePassthrough { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface UntagResourceRequest {
 		TagKeys?: Array<string>;
@@ -7890,111 +7890,111 @@ export namespace MyNS {
 
 
 	/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum Vc3FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Vc3FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum Vc3FramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum Vc3FramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive. */
-	export enum Vc3ScanTypeConversionMode { INTERLACED = 0, INTERLACED_OPTIMIZE = 1 }
+	export enum Vc3ScanTypeConversionMode { INTERLACED = 'INTERLACED', INTERLACED_OPTIMIZE = 'INTERLACED_OPTIMIZE' }
 
 
 	/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. */
-	export enum Vc3SlowPal { DISABLED = 0, ENABLED = 1 }
+	export enum Vc3SlowPal { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture. */
-	export enum Vc3Telecine { NONE = 0, HARD = 1 }
+	export enum Vc3Telecine { NONE = 'NONE', HARD = 'HARD' }
 
 
 	/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum Vp8FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Vp8FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum Vp8FramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum Vp8FramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
-	export enum Vp8ParControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Vp8ParControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. */
-	export enum Vp9FramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Vp9FramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum Vp9FramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum Vp9FramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
-	export enum Vp9ParControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum Vp9ParControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding. */
-	export enum Vp9QualityTuningLevel { MULTI_PASS = 0, MULTI_PASS_HQ = 1 }
+	export enum Vp9QualityTuningLevel { MULTI_PASS = 'MULTI_PASS', MULTI_PASS_HQ = 'MULTI_PASS_HQ' }
 
 
 	/** With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode. */
-	export enum Vp9RateControlMode { VBR = 0 }
+	export enum Vp9RateControlMode { VBR = 'VBR' }
 
 
 	/** If the WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you do, MediaConvert adds accessibility attributes to your output HLS or DASH manifest. For HLS manifests, MediaConvert adds the following accessibility attributes under EXT-X-MEDIA for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the adaptation set for this track: <Accessibility schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track is not intended to provide such accessibility: Keep the default value, Disabled. When you do, for DASH manifests, MediaConvert instead adds the following in the adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011" value="subtitle"/>. */
-	export enum WebvttAccessibilitySubs { DISABLED = 0, ENABLED = 1 }
+	export enum WebvttAccessibilitySubs { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class. */
-	export enum Xavc4kIntraVbrProfileClass { CLASS_100 = 0, CLASS_300 = 1, CLASS_480 = 2 }
+	export enum Xavc4kIntraVbrProfileClass { CLASS_100 = 'CLASS_100', CLASS_300 = 'CLASS_300', CLASS_480 = 'CLASS_480' }
 
 
 	/** Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding. */
-	export enum Xavc4kProfileQualityTuningLevel { SINGLE_PASS = 0, SINGLE_PASS_HQ = 1, MULTI_PASS_HQ = 2 }
+	export enum Xavc4kProfileQualityTuningLevel { SINGLE_PASS = 'SINGLE_PASS', SINGLE_PASS_HQ = 'SINGLE_PASS_HQ', MULTI_PASS_HQ = 'MULTI_PASS_HQ' }
 
 
 	/** The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides. */
-	export enum XavcFlickerAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum XavcFlickerAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames. */
-	export enum XavcGopBReference { DISABLED = 0, ENABLED = 1 }
+	export enum XavcGopBReference { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set Adaptive quantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal adaptive quantization. */
-	export enum XavcAdaptiveQuantization { OFF = 0, AUTO = 1, LOW = 2, MEDIUM = 3, HIGH = 4, HIGHER = 5, MAX = 6 }
+	export enum XavcAdaptiveQuantization { OFF = 'OFF', AUTO = 'AUTO', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', HIGHER = 'HIGHER', MAX = 'MAX' }
 
 
 	/** If you are using the console, use the Frame rate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list. The framerates shown in the dropdown list are decimal approximations of fractions. */
-	export enum XavcFramerateControl { INITIALIZE_FROM_SOURCE = 0, SPECIFIED = 1 }
+	export enum XavcFramerateControl { INITIALIZE_FROM_SOURCE = 'INITIALIZE_FROM_SOURCE', SPECIFIED = 'SPECIFIED' }
 
 
 	/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. */
-	export enum XavcFramerateConversionAlgorithm { DUPLICATE_DROP = 0, INTERPOLATE = 1, FRAMEFORMER = 2 }
+	export enum XavcFramerateConversionAlgorithm { DUPLICATE_DROP = 'DUPLICATE_DROP', INTERPOLATE = 'INTERPOLATE', FRAMEFORMER = 'FRAMEFORMER' }
 
 
 	/** Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding. */
-	export enum XavcHdProfileQualityTuningLevel { SINGLE_PASS = 0, SINGLE_PASS_HQ = 1, MULTI_PASS_HQ = 2 }
+	export enum XavcHdProfileQualityTuningLevel { SINGLE_PASS = 'SINGLE_PASS', SINGLE_PASS_HQ = 'SINGLE_PASS_HQ', MULTI_PASS_HQ = 'MULTI_PASS_HQ' }
 
 
 	/** Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose. */
-	export enum XavcInterlaceMode { PROGRESSIVE = 0, TOP_FIELD = 1, BOTTOM_FIELD = 2, FOLLOW_TOP_FIELD = 3, FOLLOW_BOTTOM_FIELD = 4 }
+	export enum XavcInterlaceMode { PROGRESSIVE = 'PROGRESSIVE', TOP_FIELD = 'TOP_FIELD', BOTTOM_FIELD = 'BOTTOM_FIELD', FOLLOW_TOP_FIELD = 'FOLLOW_TOP_FIELD', FOLLOW_BOTTOM_FIELD = 'FOLLOW_BOTTOM_FIELD' }
 
 
 	/** Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html. */
-	export enum XavcHdProfileTelecine { NONE = 0, HARD = 1 }
+	export enum XavcHdProfileTelecine { NONE = 'NONE', HARD = 'HARD' }
 
 
 	/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Frame rate to 25. */
-	export enum XavcSlowPal { DISABLED = 0, ENABLED = 1 }
+	export enum XavcSlowPal { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. */
-	export enum XavcSpatialAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum XavcSpatialAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization. */
-	export enum XavcTemporalAdaptiveQuantization { DISABLED = 0, ENABLED = 1 }
+	export enum XavcTemporalAdaptiveQuantization { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 	@Injectable()
 	export class MyClient {

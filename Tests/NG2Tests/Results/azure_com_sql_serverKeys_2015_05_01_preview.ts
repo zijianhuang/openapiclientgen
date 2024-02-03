@@ -89,7 +89,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerKeyPropertiesServerKeyType { ServiceManaged = 0, AzureKeyVault = 1 }
+	export enum ServerKeyPropertiesServerKeyType { ServiceManaged = 'ServiceManaged', AzureKeyVault = 'AzureKeyVault' }
 
 
 	/** A list of server keys. */

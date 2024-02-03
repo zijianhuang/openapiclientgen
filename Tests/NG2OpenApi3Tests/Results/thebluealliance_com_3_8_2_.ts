@@ -856,7 +856,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebcastType { youtube = 0, twitch = 1, ustream = 2, iframe = 3, html5 = 4, rtmp = 5, livestream = 6, direct_link = 7, mms = 8, justin = 9, stemtv = 10, dacast = 11 }
+	export enum WebcastType { youtube = 'youtube', twitch = 'twitch', ustream = 'ustream', iframe = 'iframe', html5 = 'html5', rtmp = 'rtmp', livestream = 'livestream', direct_link = 'direct_link', mms = 'mms', justin = 'justin', stemtv = 'stemtv', dacast = 'dacast' }
 
 	export interface Event_District_Points {
 
@@ -2521,7 +2521,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MatchComp_level { qm = 0, ef = 1, qf = 2, sf = 3, f = 4 }
+	export enum MatchComp_level { qm = 'qm', ef = 'ef', qf = 'qf', sf = 'sf', f = 'f' }
 
 	export interface MatchVideos {
 
@@ -2547,7 +2547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MatchWinning_alliance { red = 0, blue = 1, '' = 2 }
+	export enum MatchWinning_alliance { red = 'red', blue = 'blue', '' = '' }
 
 
 	/** See the 2015 FMS API documentation for a description of each value */
@@ -2653,7 +2653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Match_Score_Breakdown_2015Coopertition { None = 0, Unknown = 1, Stack = 2 }
+	export enum Match_Score_Breakdown_2015Coopertition { None = 'None', Unknown = 'Unknown', Stack = 'Stack' }
 
 
 	/** See the 2016 FMS API documentation for a description of each value. */
@@ -2795,7 +2795,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Match_Score_Breakdown_2016_AllianceRobot1Auto { Crossed = 0, Reached = 1, None = 2 }
+	export enum Match_Score_Breakdown_2016_AllianceRobot1Auto { Crossed = 'Crossed', Reached = 'Reached', None = 'None' }
 
 
 	/** See the 2017 FMS API documentation for a description of each value. */
@@ -2922,7 +2922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Match_Score_Breakdown_2017_AllianceRobot1Auto { Unknown = 0, Mobility = 1, None = 2 }
+	export enum Match_Score_Breakdown_2017_AllianceRobot1Auto { Unknown = 'Unknown', Mobility = 'Mobility', None = 'None' }
 
 
 	/** See the 2018 FMS API documentation for a description of each value. https://frcevents2.docs.apiary.io/#/reference/match-results/score-details */
@@ -3526,9 +3526,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Match_Score_Breakdown_2022_AllianceEndgameRobot1 { Traversal = 0, High = 1, Mid = 2, Low = 3, None = 4 }
+	export enum Match_Score_Breakdown_2022_AllianceEndgameRobot1 { Traversal = 'Traversal', High = 'High', Mid = 'Mid', Low = 'Low', None = 'None' }
 
-	export enum Match_Score_Breakdown_2022_AllianceTaxiRobot1 { Yes = 0, No = 1 }
+	export enum Match_Score_Breakdown_2022_AllianceTaxiRobot1 { Yes = 'Yes', No = 'No' }
 
 
 	/** See the 2023 FMS API documentation for a description of each value. https://frc-api-docs.firstinspires.org */
@@ -3664,9 +3664,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Match_Score_Breakdown_2023_AllianceAutoBridgeState { NotLevel = 0, Level = 1 }
+	export enum Match_Score_Breakdown_2023_AllianceAutoBridgeState { NotLevel = 'NotLevel', Level = 'Level' }
 
-	export enum Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 { None = 0, Docked = 1 }
+	export enum Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 { None = 'None', Docked = 'Docked' }
 
 	export interface Match_Score_Breakdown_2023_AllianceAutoCommunity {
 		B?: Array<string>;
@@ -3695,7 +3695,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Match_Score_Breakdown_2023_AllianceLinksRow { Bottom = 0, Mid = 1, Top = 2 }
+	export enum Match_Score_Breakdown_2023_AllianceLinksRow { Bottom = 'Bottom', Mid = 'Mid', Top = 'Top' }
 
 	export interface Match_Score_Breakdown_2023_AllianceTeleopCommunity {
 		B?: Array<string>;
@@ -4131,7 +4131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaType { youtube = 0, cdphotothread = 1, imgur = 2, 'facebook-profile' = 3, 'youtube-channel' = 4, 'twitter-profile' = 5, 'github-profile' = 6, 'instagram-profile' = 7, 'periscope-profile' = 8, grabcad = 9, 'instagram-image' = 10, 'external-link' = 11, avatar = 12 }
+	export enum MediaType { youtube = 'youtube', cdphotothread = 'cdphotothread', imgur = 'imgur', 'facebook-profile' = 'facebook-profile', 'youtube-channel' = 'youtube-channel', 'twitter-profile' = 'twitter-profile', 'github-profile' = 'github-profile', 'instagram-profile' = 'instagram-profile', 'periscope-profile' = 'periscope-profile', grabcad = 'grabcad', 'instagram-image' = 'instagram-image', 'external-link' = 'external-link', avatar = 'avatar' }
 
 	export interface Team {
 
@@ -4459,7 +4459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Team_Event_Status_playoffStatus { won = 0, eliminated = 1, playing = 2 }
+	export enum Team_Event_Status_playoffStatus { won = 'won', eliminated = 'eliminated', playing = 'playing' }
 
 	export interface Team_Event_Status_rank {
 

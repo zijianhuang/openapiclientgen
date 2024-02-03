@@ -48,15 +48,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ExtendedErrorInfoCode { NotFound = 0, Conflict = 1, BadRequest = 2 }
+	export enum ExtendedErrorInfoCode { NotFound = 'NotFound', Conflict = 'Conflict', BadRequest = 'BadRequest' }
 
 
 	/** this is the error response code that management partner operations may return */
-	export enum ErrorResponseCode { NotFound = 0, Conflict = 1, BadRequest = 2 }
+	export enum ErrorResponseCode { NotFound = 'NotFound', Conflict = 'Conflict', BadRequest = 'BadRequest' }
 
 
 	/** this is the management partner state: Active or Deleted */
-	export enum ManagementPartnerState { Active = 0, Deleted = 1 }
+	export enum ManagementPartnerState { Active = 'Active', Deleted = 'Deleted' }
 
 
 	/** this is the management partner operation */

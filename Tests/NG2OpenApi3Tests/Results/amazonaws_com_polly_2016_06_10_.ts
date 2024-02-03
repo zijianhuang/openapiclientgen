@@ -78,13 +78,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Gender { Female = 0, Male = 1 }
+	export enum Gender { Female = 'Female', Male = 'Male' }
 
-	export enum VoiceId { Aditi = 0, Amy = 1, Astrid = 2, Bianca = 3, Brian = 4, Camila = 5, Carla = 6, Carmen = 7, Celine = 8, Chantal = 9, Conchita = 10, Cristiano = 11, Dora = 12, Emma = 13, Enrique = 14, Ewa = 15, Filiz = 16, Gabrielle = 17, Geraint = 18, Giorgio = 19, Gwyneth = 20, Hans = 21, Ines = 22, Ivy = 23, Jacek = 24, Jan = 25, Joanna = 26, Joey = 27, Justin = 28, Karl = 29, Kendra = 30, Kevin = 31, Kimberly = 32, Lea = 33, Liv = 34, Lotte = 35, Lucia = 36, Lupe = 37, Mads = 38, Maja = 39, Marlene = 40, Mathieu = 41, Matthew = 42, Maxim = 43, Mia = 44, Miguel = 45, Mizuki = 46, Naja = 47, Nicole = 48, Olivia = 49, Penelope = 50, Raveena = 51, Ricardo = 52, Ruben = 53, Russell = 54, Salli = 55, Seoyeon = 56, Takumi = 57, Tatyana = 58, Vicki = 59, Vitoria = 60, Zeina = 61, Zhiyu = 62, Aria = 63, Ayanda = 64, Arlet = 65, Hannah = 66, Arthur = 67, Daniel = 68, Liam = 69, Pedro = 70, Kajal = 71, Hiujin = 72, Laura = 73, Elin = 74, Ida = 75, Suvi = 76, Ola = 77, Hala = 78, Andres = 79, Sergio = 80, Remi = 81, Adriano = 82, Thiago = 83, Ruth = 84, Stephen = 85, Kazuha = 86, Tomoko = 87, Niamh = 88, Sofie = 89, Lisa = 90, Isabelle = 91 }
+	export enum VoiceId { Aditi = 'Aditi', Amy = 'Amy', Astrid = 'Astrid', Bianca = 'Bianca', Brian = 'Brian', Camila = 'Camila', Carla = 'Carla', Carmen = 'Carmen', Celine = 'Celine', Chantal = 'Chantal', Conchita = 'Conchita', Cristiano = 'Cristiano', Dora = 'Dora', Emma = 'Emma', Enrique = 'Enrique', Ewa = 'Ewa', Filiz = 'Filiz', Gabrielle = 'Gabrielle', Geraint = 'Geraint', Giorgio = 'Giorgio', Gwyneth = 'Gwyneth', Hans = 'Hans', Ines = 'Ines', Ivy = 'Ivy', Jacek = 'Jacek', Jan = 'Jan', Joanna = 'Joanna', Joey = 'Joey', Justin = 'Justin', Karl = 'Karl', Kendra = 'Kendra', Kevin = 'Kevin', Kimberly = 'Kimberly', Lea = 'Lea', Liv = 'Liv', Lotte = 'Lotte', Lucia = 'Lucia', Lupe = 'Lupe', Mads = 'Mads', Maja = 'Maja', Marlene = 'Marlene', Mathieu = 'Mathieu', Matthew = 'Matthew', Maxim = 'Maxim', Mia = 'Mia', Miguel = 'Miguel', Mizuki = 'Mizuki', Naja = 'Naja', Nicole = 'Nicole', Olivia = 'Olivia', Penelope = 'Penelope', Raveena = 'Raveena', Ricardo = 'Ricardo', Ruben = 'Ruben', Russell = 'Russell', Salli = 'Salli', Seoyeon = 'Seoyeon', Takumi = 'Takumi', Tatyana = 'Tatyana', Vicki = 'Vicki', Vitoria = 'Vitoria', Zeina = 'Zeina', Zhiyu = 'Zhiyu', Aria = 'Aria', Ayanda = 'Ayanda', Arlet = 'Arlet', Hannah = 'Hannah', Arthur = 'Arthur', Daniel = 'Daniel', Liam = 'Liam', Pedro = 'Pedro', Kajal = 'Kajal', Hiujin = 'Hiujin', Laura = 'Laura', Elin = 'Elin', Ida = 'Ida', Suvi = 'Suvi', Ola = 'Ola', Hala = 'Hala', Andres = 'Andres', Sergio = 'Sergio', Remi = 'Remi', Adriano = 'Adriano', Thiago = 'Thiago', Ruth = 'Ruth', Stephen = 'Stephen', Kazuha = 'Kazuha', Tomoko = 'Tomoko', Niamh = 'Niamh', Sofie = 'Sofie', Lisa = 'Lisa', Isabelle = 'Isabelle' }
 
-	export enum LanguageCode { arb = 0, 'cmn-CN' = 1, 'cy-GB' = 2, 'da-DK' = 3, 'de-DE' = 4, 'en-AU' = 5, 'en-GB' = 6, 'en-GB-WLS' = 7, 'en-IN' = 8, 'en-US' = 9, 'es-ES' = 10, 'es-MX' = 11, 'es-US' = 12, 'fr-CA' = 13, 'fr-FR' = 14, 'is-IS' = 15, 'it-IT' = 16, 'ja-JP' = 17, 'hi-IN' = 18, 'ko-KR' = 19, 'nb-NO' = 20, 'nl-NL' = 21, 'pl-PL' = 22, 'pt-BR' = 23, 'pt-PT' = 24, 'ro-RO' = 25, 'ru-RU' = 26, 'sv-SE' = 27, 'tr-TR' = 28, 'en-NZ' = 29, 'en-ZA' = 30, 'ca-ES' = 31, 'de-AT' = 32, 'yue-CN' = 33, 'ar-AE' = 34, 'fi-FI' = 35, 'en-IE' = 36, 'nl-BE' = 37, 'fr-BE' = 38 }
+	export enum LanguageCode { arb = 'arb', 'cmn-CN' = 'cmn-CN', 'cy-GB' = 'cy-GB', 'da-DK' = 'da-DK', 'de-DE' = 'de-DE', 'en-AU' = 'en-AU', 'en-GB' = 'en-GB', 'en-GB-WLS' = 'en-GB-WLS', 'en-IN' = 'en-IN', 'en-US' = 'en-US', 'es-ES' = 'es-ES', 'es-MX' = 'es-MX', 'es-US' = 'es-US', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'is-IS' = 'is-IS', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'hi-IN' = 'hi-IN', 'ko-KR' = 'ko-KR', 'nb-NO' = 'nb-NO', 'nl-NL' = 'nl-NL', 'pl-PL' = 'pl-PL', 'pt-BR' = 'pt-BR', 'pt-PT' = 'pt-PT', 'ro-RO' = 'ro-RO', 'ru-RU' = 'ru-RU', 'sv-SE' = 'sv-SE', 'tr-TR' = 'tr-TR', 'en-NZ' = 'en-NZ', 'en-ZA' = 'en-ZA', 'ca-ES' = 'ca-ES', 'de-AT' = 'de-AT', 'yue-CN' = 'yue-CN', 'ar-AE' = 'ar-AE', 'fi-FI' = 'fi-FI', 'en-IE' = 'en-IE', 'nl-BE' = 'nl-BE', 'fr-BE' = 'fr-BE' }
 
-	export enum Engine { standard = 0, neural = 1 }
+	export enum Engine { standard = 'standard', neural = 'neural' }
 
 	export interface InvalidNextTokenException {
 	}
@@ -226,13 +226,13 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatus { scheduled = 0, inProgress = 1, completed = 2, failed = 3 }
+	export enum TaskStatus { scheduled = 'scheduled', inProgress = 'inProgress', completed = 'completed', failed = 'failed' }
 
-	export enum OutputFormat { json = 0, mp3 = 1, ogg_vorbis = 2, pcm = 3 }
+	export enum OutputFormat { json = 'json', mp3 = 'mp3', ogg_vorbis = 'ogg_vorbis', pcm = 'pcm' }
 
-	export enum SpeechMarkType { sentence = 0, ssml = 1, viseme = 2, word = 3 }
+	export enum SpeechMarkType { sentence = 'sentence', ssml = 'ssml', viseme = 'viseme', word = 'word' }
 
-	export enum TextType { ssml = 0, text = 1 }
+	export enum TextType { ssml = 'ssml', text = 'text' }
 
 	export interface InvalidTaskIdException {
 	}

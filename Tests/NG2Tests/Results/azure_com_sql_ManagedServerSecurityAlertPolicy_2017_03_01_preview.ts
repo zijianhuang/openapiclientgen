@@ -88,7 +88,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityAlertPolicyPropertiesState { New = 0, Enabled = 1, Disabled = 2 }
+	export enum SecurityAlertPolicyPropertiesState { New = 'New', Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** A list of the managed Server's security alert policies. */
@@ -162,7 +162,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ManagedServerSecurityAlertPolicies_GetSecurityAlertPolicyName { Default = 0 }
+	export enum ManagedServerSecurityAlertPolicies_GetSecurityAlertPolicyName { Default = 'Default' }
 
 }
 

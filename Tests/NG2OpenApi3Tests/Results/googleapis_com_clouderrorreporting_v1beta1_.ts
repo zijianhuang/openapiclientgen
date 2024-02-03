@@ -273,7 +273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorGroupResolutionStatus { RESOLUTION_STATUS_UNSPECIFIED = 0, OPEN = 1, ACKNOWLEDGED = 2, RESOLVED = 3, MUTED = 4 }
+	export enum ErrorGroupResolutionStatus { RESOLUTION_STATUS_UNSPECIFIED = 'RESOLUTION_STATUS_UNSPECIFIED', OPEN = 'OPEN', ACKNOWLEDGED = 'ACKNOWLEDGED', RESOLVED = 'RESOLVED', MUTED = 'MUTED' }
 
 
 	/** Information related to tracking the progress on resolving the error. */
@@ -586,11 +586,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Clouderrorreporting_projects_events_listTimeRange_period { PERIOD_UNSPECIFIED = 0, PERIOD_1_HOUR = 1, PERIOD_6_HOURS = 2, PERIOD_1_DAY = 3, PERIOD_1_WEEK = 4, PERIOD_30_DAYS = 5 }
+	export enum Clouderrorreporting_projects_events_listTimeRange_period { PERIOD_UNSPECIFIED = 'PERIOD_UNSPECIFIED', PERIOD_1_HOUR = 'PERIOD_1_HOUR', PERIOD_6_HOURS = 'PERIOD_6_HOURS', PERIOD_1_DAY = 'PERIOD_1_DAY', PERIOD_1_WEEK = 'PERIOD_1_WEEK', PERIOD_30_DAYS = 'PERIOD_30_DAYS' }
 
-	export enum Clouderrorreporting_projects_groupStats_listAlignment { ERROR_COUNT_ALIGNMENT_UNSPECIFIED = 0, ALIGNMENT_EQUAL_ROUNDED = 1, ALIGNMENT_EQUAL_AT_END = 2 }
+	export enum Clouderrorreporting_projects_groupStats_listAlignment { ERROR_COUNT_ALIGNMENT_UNSPECIFIED = 'ERROR_COUNT_ALIGNMENT_UNSPECIFIED', ALIGNMENT_EQUAL_ROUNDED = 'ALIGNMENT_EQUAL_ROUNDED', ALIGNMENT_EQUAL_AT_END = 'ALIGNMENT_EQUAL_AT_END' }
 
-	export enum Clouderrorreporting_projects_groupStats_listOrder { GROUP_ORDER_UNSPECIFIED = 0, COUNT_DESC = 1, LAST_SEEN_DESC = 2, CREATED_DESC = 3, AFFECTED_USERS_DESC = 4 }
+	export enum Clouderrorreporting_projects_groupStats_listOrder { GROUP_ORDER_UNSPECIFIED = 'GROUP_ORDER_UNSPECIFIED', COUNT_DESC = 'COUNT_DESC', LAST_SEEN_DESC = 'LAST_SEEN_DESC', CREATED_DESC = 'CREATED_DESC', AFFECTED_USERS_DESC = 'AFFECTED_USERS_DESC' }
 
 }
 

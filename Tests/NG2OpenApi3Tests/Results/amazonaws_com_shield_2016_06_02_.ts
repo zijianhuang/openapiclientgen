@@ -345,11 +345,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtectionGroupAggregation { SUM = 0, MEAN = 1, MAX = 2 }
+	export enum ProtectionGroupAggregation { SUM = 'SUM', MEAN = 'MEAN', MAX = 'MAX' }
 
-	export enum ProtectionGroupPattern { ALL = 0, ARBITRARY = 1, BY_RESOURCE_TYPE = 2 }
+	export enum ProtectionGroupPattern { ALL = 'ALL', ARBITRARY = 'ARBITRARY', BY_RESOURCE_TYPE = 'BY_RESOURCE_TYPE' }
 
-	export enum ProtectedResourceType { CLOUDFRONT_DISTRIBUTION = 0, ROUTE_53_HOSTED_ZONE = 1, ELASTIC_IP_ALLOCATION = 2, CLASSIC_LOAD_BALANCER = 3, APPLICATION_LOAD_BALANCER = 4, GLOBAL_ACCELERATOR = 5 }
+	export enum ProtectedResourceType { CLOUDFRONT_DISTRIBUTION = 'CLOUDFRONT_DISTRIBUTION', ROUTE_53_HOSTED_ZONE = 'ROUTE_53_HOSTED_ZONE', ELASTIC_IP_ALLOCATION = 'ELASTIC_IP_ALLOCATION', CLASSIC_LOAD_BALANCER = 'CLASSIC_LOAD_BALANCER', APPLICATION_LOAD_BALANCER = 'APPLICATION_LOAD_BALANCER', GLOBAL_ACCELERATOR = 'GLOBAL_ACCELERATOR' }
 
 	export interface CreateSubscriptionResponse {
 	}
@@ -518,7 +518,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubResourceType { IP = 0, URL = 1 }
+	export enum SubResourceType { IP = 'IP', URL = 'URL' }
 
 
 	/** A summary of information about the attack. */
@@ -601,9 +601,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AttackLayer { NETWORK = 0, APPLICATION = 1 }
+	export enum AttackLayer { NETWORK = 'NETWORK', APPLICATION = 'APPLICATION' }
 
-	export enum AttackPropertyIdentifier { DESTINATION_URL = 0, REFERRER = 1, SOURCE_ASN = 2, SOURCE_COUNTRY = 3, SOURCE_IP_ADDRESS = 4, SOURCE_USER_AGENT = 5, WORDPRESS_PINGBACK_REFLECTOR = 6, WORDPRESS_PINGBACK_SOURCE = 7 }
+	export enum AttackPropertyIdentifier { DESTINATION_URL = 'DESTINATION_URL', REFERRER = 'REFERRER', SOURCE_ASN = 'SOURCE_ASN', SOURCE_COUNTRY = 'SOURCE_COUNTRY', SOURCE_IP_ADDRESS = 'SOURCE_IP_ADDRESS', SOURCE_USER_AGENT = 'SOURCE_USER_AGENT', WORDPRESS_PINGBACK_REFLECTOR = 'WORDPRESS_PINGBACK_REFLECTOR', WORDPRESS_PINGBACK_SOURCE = 'WORDPRESS_PINGBACK_SOURCE' }
 
 
 	/** A contributor to the attack and their contribution.  */
@@ -625,7 +625,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Unit { BITS = 0, BYTES = 1, PACKETS = 2, REQUESTS = 3 }
+	export enum Unit { BITS = 'BITS', BYTES = 'BYTES', PACKETS = 'PACKETS', REQUESTS = 'REQUESTS' }
 
 
 	/** The mitigation applied to a DDoS attack. */
@@ -885,7 +885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationLayerAutomaticResponseStatus { ENABLED = 0, DISABLED = 1 }
+	export enum ApplicationLayerAutomaticResponseStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource.  */
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProactiveEngagementStatus { ENABLED = 0, DISABLED = 1, PENDING = 2 }
+	export enum ProactiveEngagementStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED', PENDING = 'PENDING' }
 
 
 	/** Limits settings for your subscription.  */
@@ -1394,7 +1394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionState { ACTIVE = 0, INACTIVE = 1 }
+	export enum SubscriptionState { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface GetSubscriptionStateRequest {
 	}
@@ -1842,7 +1842,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoRenew { ENABLED = 0, DISABLED = 1 }
+	export enum AutoRenew { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	@Injectable()
 	export class MyClient {
@@ -2182,77 +2182,77 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateDRTLogBucketX_Amz_Target { 'AWSShield_20160616.AssociateDRTLogBucket' = 0 }
+	export enum AssociateDRTLogBucketX_Amz_Target { 'AWSShield_20160616.AssociateDRTLogBucket' = 'AWSShield_20160616.AssociateDRTLogBucket' }
 
-	export enum AssociateDRTRoleX_Amz_Target { 'AWSShield_20160616.AssociateDRTRole' = 0 }
+	export enum AssociateDRTRoleX_Amz_Target { 'AWSShield_20160616.AssociateDRTRole' = 'AWSShield_20160616.AssociateDRTRole' }
 
-	export enum AssociateHealthCheckX_Amz_Target { 'AWSShield_20160616.AssociateHealthCheck' = 0 }
+	export enum AssociateHealthCheckX_Amz_Target { 'AWSShield_20160616.AssociateHealthCheck' = 'AWSShield_20160616.AssociateHealthCheck' }
 
-	export enum AssociateProactiveEngagementDetailsX_Amz_Target { 'AWSShield_20160616.AssociateProactiveEngagementDetails' = 0 }
+	export enum AssociateProactiveEngagementDetailsX_Amz_Target { 'AWSShield_20160616.AssociateProactiveEngagementDetails' = 'AWSShield_20160616.AssociateProactiveEngagementDetails' }
 
-	export enum CreateProtectionX_Amz_Target { 'AWSShield_20160616.CreateProtection' = 0 }
+	export enum CreateProtectionX_Amz_Target { 'AWSShield_20160616.CreateProtection' = 'AWSShield_20160616.CreateProtection' }
 
-	export enum CreateProtectionGroupX_Amz_Target { 'AWSShield_20160616.CreateProtectionGroup' = 0 }
+	export enum CreateProtectionGroupX_Amz_Target { 'AWSShield_20160616.CreateProtectionGroup' = 'AWSShield_20160616.CreateProtectionGroup' }
 
-	export enum CreateSubscriptionX_Amz_Target { 'AWSShield_20160616.CreateSubscription' = 0 }
+	export enum CreateSubscriptionX_Amz_Target { 'AWSShield_20160616.CreateSubscription' = 'AWSShield_20160616.CreateSubscription' }
 
-	export enum DeleteProtectionX_Amz_Target { 'AWSShield_20160616.DeleteProtection' = 0 }
+	export enum DeleteProtectionX_Amz_Target { 'AWSShield_20160616.DeleteProtection' = 'AWSShield_20160616.DeleteProtection' }
 
-	export enum DeleteProtectionGroupX_Amz_Target { 'AWSShield_20160616.DeleteProtectionGroup' = 0 }
+	export enum DeleteProtectionGroupX_Amz_Target { 'AWSShield_20160616.DeleteProtectionGroup' = 'AWSShield_20160616.DeleteProtectionGroup' }
 
-	export enum DeleteSubscriptionX_Amz_Target { 'AWSShield_20160616.DeleteSubscription' = 0 }
+	export enum DeleteSubscriptionX_Amz_Target { 'AWSShield_20160616.DeleteSubscription' = 'AWSShield_20160616.DeleteSubscription' }
 
-	export enum DescribeAttackX_Amz_Target { 'AWSShield_20160616.DescribeAttack' = 0 }
+	export enum DescribeAttackX_Amz_Target { 'AWSShield_20160616.DescribeAttack' = 'AWSShield_20160616.DescribeAttack' }
 
-	export enum DescribeAttackStatisticsX_Amz_Target { 'AWSShield_20160616.DescribeAttackStatistics' = 0 }
+	export enum DescribeAttackStatisticsX_Amz_Target { 'AWSShield_20160616.DescribeAttackStatistics' = 'AWSShield_20160616.DescribeAttackStatistics' }
 
-	export enum DescribeDRTAccessX_Amz_Target { 'AWSShield_20160616.DescribeDRTAccess' = 0 }
+	export enum DescribeDRTAccessX_Amz_Target { 'AWSShield_20160616.DescribeDRTAccess' = 'AWSShield_20160616.DescribeDRTAccess' }
 
-	export enum DescribeEmergencyContactSettingsX_Amz_Target { 'AWSShield_20160616.DescribeEmergencyContactSettings' = 0 }
+	export enum DescribeEmergencyContactSettingsX_Amz_Target { 'AWSShield_20160616.DescribeEmergencyContactSettings' = 'AWSShield_20160616.DescribeEmergencyContactSettings' }
 
-	export enum DescribeProtectionX_Amz_Target { 'AWSShield_20160616.DescribeProtection' = 0 }
+	export enum DescribeProtectionX_Amz_Target { 'AWSShield_20160616.DescribeProtection' = 'AWSShield_20160616.DescribeProtection' }
 
-	export enum DescribeProtectionGroupX_Amz_Target { 'AWSShield_20160616.DescribeProtectionGroup' = 0 }
+	export enum DescribeProtectionGroupX_Amz_Target { 'AWSShield_20160616.DescribeProtectionGroup' = 'AWSShield_20160616.DescribeProtectionGroup' }
 
-	export enum DescribeSubscriptionX_Amz_Target { 'AWSShield_20160616.DescribeSubscription' = 0 }
+	export enum DescribeSubscriptionX_Amz_Target { 'AWSShield_20160616.DescribeSubscription' = 'AWSShield_20160616.DescribeSubscription' }
 
-	export enum DisableApplicationLayerAutomaticResponseX_Amz_Target { 'AWSShield_20160616.DisableApplicationLayerAutomaticResponse' = 0 }
+	export enum DisableApplicationLayerAutomaticResponseX_Amz_Target { 'AWSShield_20160616.DisableApplicationLayerAutomaticResponse' = 'AWSShield_20160616.DisableApplicationLayerAutomaticResponse' }
 
-	export enum DisableProactiveEngagementX_Amz_Target { 'AWSShield_20160616.DisableProactiveEngagement' = 0 }
+	export enum DisableProactiveEngagementX_Amz_Target { 'AWSShield_20160616.DisableProactiveEngagement' = 'AWSShield_20160616.DisableProactiveEngagement' }
 
-	export enum DisassociateDRTLogBucketX_Amz_Target { 'AWSShield_20160616.DisassociateDRTLogBucket' = 0 }
+	export enum DisassociateDRTLogBucketX_Amz_Target { 'AWSShield_20160616.DisassociateDRTLogBucket' = 'AWSShield_20160616.DisassociateDRTLogBucket' }
 
-	export enum DisassociateDRTRoleX_Amz_Target { 'AWSShield_20160616.DisassociateDRTRole' = 0 }
+	export enum DisassociateDRTRoleX_Amz_Target { 'AWSShield_20160616.DisassociateDRTRole' = 'AWSShield_20160616.DisassociateDRTRole' }
 
-	export enum DisassociateHealthCheckX_Amz_Target { 'AWSShield_20160616.DisassociateHealthCheck' = 0 }
+	export enum DisassociateHealthCheckX_Amz_Target { 'AWSShield_20160616.DisassociateHealthCheck' = 'AWSShield_20160616.DisassociateHealthCheck' }
 
-	export enum EnableApplicationLayerAutomaticResponseX_Amz_Target { 'AWSShield_20160616.EnableApplicationLayerAutomaticResponse' = 0 }
+	export enum EnableApplicationLayerAutomaticResponseX_Amz_Target { 'AWSShield_20160616.EnableApplicationLayerAutomaticResponse' = 'AWSShield_20160616.EnableApplicationLayerAutomaticResponse' }
 
-	export enum EnableProactiveEngagementX_Amz_Target { 'AWSShield_20160616.EnableProactiveEngagement' = 0 }
+	export enum EnableProactiveEngagementX_Amz_Target { 'AWSShield_20160616.EnableProactiveEngagement' = 'AWSShield_20160616.EnableProactiveEngagement' }
 
-	export enum GetSubscriptionStateX_Amz_Target { 'AWSShield_20160616.GetSubscriptionState' = 0 }
+	export enum GetSubscriptionStateX_Amz_Target { 'AWSShield_20160616.GetSubscriptionState' = 'AWSShield_20160616.GetSubscriptionState' }
 
-	export enum ListAttacksX_Amz_Target { 'AWSShield_20160616.ListAttacks' = 0 }
+	export enum ListAttacksX_Amz_Target { 'AWSShield_20160616.ListAttacks' = 'AWSShield_20160616.ListAttacks' }
 
-	export enum ListProtectionGroupsX_Amz_Target { 'AWSShield_20160616.ListProtectionGroups' = 0 }
+	export enum ListProtectionGroupsX_Amz_Target { 'AWSShield_20160616.ListProtectionGroups' = 'AWSShield_20160616.ListProtectionGroups' }
 
-	export enum ListProtectionsX_Amz_Target { 'AWSShield_20160616.ListProtections' = 0 }
+	export enum ListProtectionsX_Amz_Target { 'AWSShield_20160616.ListProtections' = 'AWSShield_20160616.ListProtections' }
 
-	export enum ListResourcesInProtectionGroupX_Amz_Target { 'AWSShield_20160616.ListResourcesInProtectionGroup' = 0 }
+	export enum ListResourcesInProtectionGroupX_Amz_Target { 'AWSShield_20160616.ListResourcesInProtectionGroup' = 'AWSShield_20160616.ListResourcesInProtectionGroup' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSShield_20160616.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSShield_20160616.ListTagsForResource' = 'AWSShield_20160616.ListTagsForResource' }
 
-	export enum TagResourceX_Amz_Target { 'AWSShield_20160616.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSShield_20160616.TagResource' = 'AWSShield_20160616.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSShield_20160616.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSShield_20160616.UntagResource' = 'AWSShield_20160616.UntagResource' }
 
-	export enum UpdateApplicationLayerAutomaticResponseX_Amz_Target { 'AWSShield_20160616.UpdateApplicationLayerAutomaticResponse' = 0 }
+	export enum UpdateApplicationLayerAutomaticResponseX_Amz_Target { 'AWSShield_20160616.UpdateApplicationLayerAutomaticResponse' = 'AWSShield_20160616.UpdateApplicationLayerAutomaticResponse' }
 
-	export enum UpdateEmergencyContactSettingsX_Amz_Target { 'AWSShield_20160616.UpdateEmergencyContactSettings' = 0 }
+	export enum UpdateEmergencyContactSettingsX_Amz_Target { 'AWSShield_20160616.UpdateEmergencyContactSettings' = 'AWSShield_20160616.UpdateEmergencyContactSettings' }
 
-	export enum UpdateProtectionGroupX_Amz_Target { 'AWSShield_20160616.UpdateProtectionGroup' = 0 }
+	export enum UpdateProtectionGroupX_Amz_Target { 'AWSShield_20160616.UpdateProtectionGroup' = 'AWSShield_20160616.UpdateProtectionGroup' }
 
-	export enum UpdateSubscriptionX_Amz_Target { 'AWSShield_20160616.UpdateSubscription' = 0 }
+	export enum UpdateSubscriptionX_Amz_Target { 'AWSShield_20160616.UpdateSubscription' = 'AWSShield_20160616.UpdateSubscription' }
 
 }
 

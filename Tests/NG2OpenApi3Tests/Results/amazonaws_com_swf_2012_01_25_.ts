@@ -161,7 +161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloseStatus { COMPLETED = 0, FAILED = 1, CANCELED = 2, TERMINATED = 3, CONTINUED_AS_NEW = 4, TIMED_OUT = 5 }
+	export enum CloseStatus { COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELED = 'CANCELED', TERMINATED = 'TERMINATED', CONTINUED_AS_NEW = 'CONTINUED_AS_NEW', TIMED_OUT = 'TIMED_OUT' }
 
 	export interface UnknownResourceFault {
 	}
@@ -481,7 +481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistrationStatus { REGISTERED = 0, DEPRECATED = 1 }
+	export enum RegistrationStatus { REGISTERED = 'REGISTERED', DEPRECATED = 'DEPRECATED' }
 
 
 	/** Configuration settings registered with the activity type. */
@@ -727,7 +727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStatus { OPEN = 0, CLOSED = 1 }
+	export enum ExecutionStatus { OPEN = 'OPEN', CLOSED = 'CLOSED' }
 
 
 	/** The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution. */
@@ -773,7 +773,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChildPolicy { TERMINATE = 0, REQUEST_CANCEL = 1, ABANDON = 2 }
+	export enum ChildPolicy { TERMINATE = 'TERMINATE', REQUEST_CANCEL = 'REQUEST_CANCEL', ABANDON = 'ABANDON' }
 
 
 	/** Contains the counts of open tasks, child workflow executions and timers for a workflow execution. */
@@ -1056,7 +1056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { WorkflowExecutionStarted = 0, WorkflowExecutionCancelRequested = 1, WorkflowExecutionCompleted = 2, CompleteWorkflowExecutionFailed = 3, WorkflowExecutionFailed = 4, FailWorkflowExecutionFailed = 5, WorkflowExecutionTimedOut = 6, WorkflowExecutionCanceled = 7, CancelWorkflowExecutionFailed = 8, WorkflowExecutionContinuedAsNew = 9, ContinueAsNewWorkflowExecutionFailed = 10, WorkflowExecutionTerminated = 11, DecisionTaskScheduled = 12, DecisionTaskStarted = 13, DecisionTaskCompleted = 14, DecisionTaskTimedOut = 15, ActivityTaskScheduled = 16, ScheduleActivityTaskFailed = 17, ActivityTaskStarted = 18, ActivityTaskCompleted = 19, ActivityTaskFailed = 20, ActivityTaskTimedOut = 21, ActivityTaskCanceled = 22, ActivityTaskCancelRequested = 23, RequestCancelActivityTaskFailed = 24, WorkflowExecutionSignaled = 25, MarkerRecorded = 26, RecordMarkerFailed = 27, TimerStarted = 28, StartTimerFailed = 29, TimerFired = 30, TimerCanceled = 31, CancelTimerFailed = 32, StartChildWorkflowExecutionInitiated = 33, StartChildWorkflowExecutionFailed = 34, ChildWorkflowExecutionStarted = 35, ChildWorkflowExecutionCompleted = 36, ChildWorkflowExecutionFailed = 37, ChildWorkflowExecutionTimedOut = 38, ChildWorkflowExecutionCanceled = 39, ChildWorkflowExecutionTerminated = 40, SignalExternalWorkflowExecutionInitiated = 41, SignalExternalWorkflowExecutionFailed = 42, ExternalWorkflowExecutionSignaled = 43, RequestCancelExternalWorkflowExecutionInitiated = 44, RequestCancelExternalWorkflowExecutionFailed = 45, ExternalWorkflowExecutionCancelRequested = 46, LambdaFunctionScheduled = 47, LambdaFunctionStarted = 48, LambdaFunctionCompleted = 49, LambdaFunctionFailed = 50, LambdaFunctionTimedOut = 51, ScheduleLambdaFunctionFailed = 52, StartLambdaFunctionFailed = 53 }
+	export enum EventType { WorkflowExecutionStarted = 'WorkflowExecutionStarted', WorkflowExecutionCancelRequested = 'WorkflowExecutionCancelRequested', WorkflowExecutionCompleted = 'WorkflowExecutionCompleted', CompleteWorkflowExecutionFailed = 'CompleteWorkflowExecutionFailed', WorkflowExecutionFailed = 'WorkflowExecutionFailed', FailWorkflowExecutionFailed = 'FailWorkflowExecutionFailed', WorkflowExecutionTimedOut = 'WorkflowExecutionTimedOut', WorkflowExecutionCanceled = 'WorkflowExecutionCanceled', CancelWorkflowExecutionFailed = 'CancelWorkflowExecutionFailed', WorkflowExecutionContinuedAsNew = 'WorkflowExecutionContinuedAsNew', ContinueAsNewWorkflowExecutionFailed = 'ContinueAsNewWorkflowExecutionFailed', WorkflowExecutionTerminated = 'WorkflowExecutionTerminated', DecisionTaskScheduled = 'DecisionTaskScheduled', DecisionTaskStarted = 'DecisionTaskStarted', DecisionTaskCompleted = 'DecisionTaskCompleted', DecisionTaskTimedOut = 'DecisionTaskTimedOut', ActivityTaskScheduled = 'ActivityTaskScheduled', ScheduleActivityTaskFailed = 'ScheduleActivityTaskFailed', ActivityTaskStarted = 'ActivityTaskStarted', ActivityTaskCompleted = 'ActivityTaskCompleted', ActivityTaskFailed = 'ActivityTaskFailed', ActivityTaskTimedOut = 'ActivityTaskTimedOut', ActivityTaskCanceled = 'ActivityTaskCanceled', ActivityTaskCancelRequested = 'ActivityTaskCancelRequested', RequestCancelActivityTaskFailed = 'RequestCancelActivityTaskFailed', WorkflowExecutionSignaled = 'WorkflowExecutionSignaled', MarkerRecorded = 'MarkerRecorded', RecordMarkerFailed = 'RecordMarkerFailed', TimerStarted = 'TimerStarted', StartTimerFailed = 'StartTimerFailed', TimerFired = 'TimerFired', TimerCanceled = 'TimerCanceled', CancelTimerFailed = 'CancelTimerFailed', StartChildWorkflowExecutionInitiated = 'StartChildWorkflowExecutionInitiated', StartChildWorkflowExecutionFailed = 'StartChildWorkflowExecutionFailed', ChildWorkflowExecutionStarted = 'ChildWorkflowExecutionStarted', ChildWorkflowExecutionCompleted = 'ChildWorkflowExecutionCompleted', ChildWorkflowExecutionFailed = 'ChildWorkflowExecutionFailed', ChildWorkflowExecutionTimedOut = 'ChildWorkflowExecutionTimedOut', ChildWorkflowExecutionCanceled = 'ChildWorkflowExecutionCanceled', ChildWorkflowExecutionTerminated = 'ChildWorkflowExecutionTerminated', SignalExternalWorkflowExecutionInitiated = 'SignalExternalWorkflowExecutionInitiated', SignalExternalWorkflowExecutionFailed = 'SignalExternalWorkflowExecutionFailed', ExternalWorkflowExecutionSignaled = 'ExternalWorkflowExecutionSignaled', RequestCancelExternalWorkflowExecutionInitiated = 'RequestCancelExternalWorkflowExecutionInitiated', RequestCancelExternalWorkflowExecutionFailed = 'RequestCancelExternalWorkflowExecutionFailed', ExternalWorkflowExecutionCancelRequested = 'ExternalWorkflowExecutionCancelRequested', LambdaFunctionScheduled = 'LambdaFunctionScheduled', LambdaFunctionStarted = 'LambdaFunctionStarted', LambdaFunctionCompleted = 'LambdaFunctionCompleted', LambdaFunctionFailed = 'LambdaFunctionFailed', LambdaFunctionTimedOut = 'LambdaFunctionTimedOut', ScheduleLambdaFunctionFailed = 'ScheduleLambdaFunctionFailed', StartLambdaFunctionFailed = 'StartLambdaFunctionFailed' }
 
 
 	/** Provides details of <code>WorkflowExecutionStarted</code> event. */
@@ -1160,7 +1160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompleteWorkflowExecutionFailedCause { UNHANDLED_DECISION = 0, OPERATION_NOT_PERMITTED = 1 }
+	export enum CompleteWorkflowExecutionFailedCause { UNHANDLED_DECISION = 'UNHANDLED_DECISION', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>WorkflowExecutionFailed</code> event. */
@@ -1245,7 +1245,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowExecutionTimeoutType { START_TO_CLOSE = 0 }
+	export enum WorkflowExecutionTimeoutType { START_TO_CLOSE = 'START_TO_CLOSE' }
 
 
 	/** Provides the details of the <code>WorkflowExecutionCanceled</code> event. */
@@ -1384,7 +1384,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContinueAsNewWorkflowExecutionFailedCause { UNHANDLED_DECISION = 0, WORKFLOW_TYPE_DEPRECATED = 1, WORKFLOW_TYPE_DOES_NOT_EXIST = 2, DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = 3, DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED = 4, DEFAULT_TASK_LIST_UNDEFINED = 5, DEFAULT_CHILD_POLICY_UNDEFINED = 6, CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED = 7, OPERATION_NOT_PERMITTED = 8 }
+	export enum ContinueAsNewWorkflowExecutionFailedCause { UNHANDLED_DECISION = 'UNHANDLED_DECISION', WORKFLOW_TYPE_DEPRECATED = 'WORKFLOW_TYPE_DEPRECATED', WORKFLOW_TYPE_DOES_NOT_EXIST = 'WORKFLOW_TYPE_DOES_NOT_EXIST', DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = 'DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED', DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED = 'DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED', DEFAULT_TASK_LIST_UNDEFINED = 'DEFAULT_TASK_LIST_UNDEFINED', DEFAULT_CHILD_POLICY_UNDEFINED = 'DEFAULT_CHILD_POLICY_UNDEFINED', CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED = 'CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>WorkflowExecutionTerminated</code> event. */
@@ -1416,7 +1416,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowExecutionTerminatedCause { CHILD_POLICY_APPLIED = 0, EVENT_LIMIT_EXCEEDED = 1, OPERATOR_INITIATED = 2 }
+	export enum WorkflowExecutionTerminatedCause { CHILD_POLICY_APPLIED = 'CHILD_POLICY_APPLIED', EVENT_LIMIT_EXCEEDED = 'EVENT_LIMIT_EXCEEDED', OPERATOR_INITIATED = 'OPERATOR_INITIATED' }
 
 
 	/** Provides the details of the <code>WorkflowExecutionCancelRequested</code> event. */
@@ -1439,7 +1439,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowExecutionCancelRequestedCause { CHILD_POLICY_APPLIED = 0 }
+	export enum WorkflowExecutionCancelRequestedCause { CHILD_POLICY_APPLIED = 'CHILD_POLICY_APPLIED' }
 
 
 	/** Provides details about the <code>DecisionTaskScheduled</code> event. */
@@ -1736,7 +1736,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityTaskTimeoutType { START_TO_CLOSE = 0, SCHEDULE_TO_START = 1, SCHEDULE_TO_CLOSE = 2, HEARTBEAT = 3 }
+	export enum ActivityTaskTimeoutType { START_TO_CLOSE = 'START_TO_CLOSE', SCHEDULE_TO_START = 'SCHEDULE_TO_START', SCHEDULE_TO_CLOSE = 'SCHEDULE_TO_CLOSE', HEARTBEAT = 'HEARTBEAT' }
 
 
 	/** Provides the details of the <code>ActivityTaskCanceled</code> event. */
@@ -1894,7 +1894,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordMarkerFailedCause { OPERATION_NOT_PERMITTED = 0 }
+	export enum RecordMarkerFailedCause { OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>TimerStarted</code> event. */
@@ -2389,7 +2389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SignalExternalWorkflowExecutionFailedCause { UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = 0, SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = 1, OPERATION_NOT_PERMITTED = 2 }
+	export enum SignalExternalWorkflowExecutionFailedCause { UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = 'UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION', SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = 'SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event. */
@@ -2497,7 +2497,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestCancelExternalWorkflowExecutionFailedCause { UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = 0, REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = 1, OPERATION_NOT_PERMITTED = 2 }
+	export enum RequestCancelExternalWorkflowExecutionFailedCause { UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = 'UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION', REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = 'REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>ScheduleActivityTaskFailed</code> event. */
@@ -2537,7 +2537,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleActivityTaskFailedCause { ACTIVITY_TYPE_DEPRECATED = 0, ACTIVITY_TYPE_DOES_NOT_EXIST = 1, ACTIVITY_ID_ALREADY_IN_USE = 2, OPEN_ACTIVITIES_LIMIT_EXCEEDED = 3, ACTIVITY_CREATION_RATE_EXCEEDED = 4, DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED = 5, DEFAULT_TASK_LIST_UNDEFINED = 6, DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED = 7, DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED = 8, DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED = 9, OPERATION_NOT_PERMITTED = 10 }
+	export enum ScheduleActivityTaskFailedCause { ACTIVITY_TYPE_DEPRECATED = 'ACTIVITY_TYPE_DEPRECATED', ACTIVITY_TYPE_DOES_NOT_EXIST = 'ACTIVITY_TYPE_DOES_NOT_EXIST', ACTIVITY_ID_ALREADY_IN_USE = 'ACTIVITY_ID_ALREADY_IN_USE', OPEN_ACTIVITIES_LIMIT_EXCEEDED = 'OPEN_ACTIVITIES_LIMIT_EXCEEDED', ACTIVITY_CREATION_RATE_EXCEEDED = 'ACTIVITY_CREATION_RATE_EXCEEDED', DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED = 'DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED', DEFAULT_TASK_LIST_UNDEFINED = 'DEFAULT_TASK_LIST_UNDEFINED', DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED = 'DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED', DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED = 'DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED', DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED = 'DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>RequestCancelActivityTaskFailed</code> event. */
@@ -2574,7 +2574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestCancelActivityTaskFailedCause { ACTIVITY_ID_UNKNOWN = 0, OPERATION_NOT_PERMITTED = 1 }
+	export enum RequestCancelActivityTaskFailedCause { ACTIVITY_ID_UNKNOWN = 'ACTIVITY_ID_UNKNOWN', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>StartTimerFailed</code> event. */
@@ -2611,7 +2611,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartTimerFailedCause { TIMER_ID_ALREADY_IN_USE = 0, OPEN_TIMERS_LIMIT_EXCEEDED = 1, TIMER_CREATION_RATE_EXCEEDED = 2, OPERATION_NOT_PERMITTED = 3 }
+	export enum StartTimerFailedCause { TIMER_ID_ALREADY_IN_USE = 'TIMER_ID_ALREADY_IN_USE', OPEN_TIMERS_LIMIT_EXCEEDED = 'OPEN_TIMERS_LIMIT_EXCEEDED', TIMER_CREATION_RATE_EXCEEDED = 'TIMER_CREATION_RATE_EXCEEDED', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>CancelTimerFailed</code> event. */
@@ -2648,7 +2648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelTimerFailedCause { TIMER_ID_UNKNOWN = 0, OPERATION_NOT_PERMITTED = 1 }
+	export enum CancelTimerFailedCause { TIMER_ID_UNKNOWN = 'TIMER_ID_UNKNOWN', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event. */
@@ -2698,7 +2698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartChildWorkflowExecutionFailedCause { WORKFLOW_TYPE_DOES_NOT_EXIST = 0, WORKFLOW_TYPE_DEPRECATED = 1, OPEN_CHILDREN_LIMIT_EXCEEDED = 2, OPEN_WORKFLOWS_LIMIT_EXCEEDED = 3, CHILD_CREATION_RATE_EXCEEDED = 4, WORKFLOW_ALREADY_RUNNING = 5, DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = 6, DEFAULT_TASK_LIST_UNDEFINED = 7, DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED = 8, DEFAULT_CHILD_POLICY_UNDEFINED = 9, OPERATION_NOT_PERMITTED = 10 }
+	export enum StartChildWorkflowExecutionFailedCause { WORKFLOW_TYPE_DOES_NOT_EXIST = 'WORKFLOW_TYPE_DOES_NOT_EXIST', WORKFLOW_TYPE_DEPRECATED = 'WORKFLOW_TYPE_DEPRECATED', OPEN_CHILDREN_LIMIT_EXCEEDED = 'OPEN_CHILDREN_LIMIT_EXCEEDED', OPEN_WORKFLOWS_LIMIT_EXCEEDED = 'OPEN_WORKFLOWS_LIMIT_EXCEEDED', CHILD_CREATION_RATE_EXCEEDED = 'CHILD_CREATION_RATE_EXCEEDED', WORKFLOW_ALREADY_RUNNING = 'WORKFLOW_ALREADY_RUNNING', DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = 'DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED', DEFAULT_TASK_LIST_UNDEFINED = 'DEFAULT_TASK_LIST_UNDEFINED', DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED = 'DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED', DEFAULT_CHILD_POLICY_UNDEFINED = 'DEFAULT_CHILD_POLICY_UNDEFINED', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
 
 	/** Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types. */
@@ -2903,7 +2903,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleLambdaFunctionFailedCause { ID_ALREADY_IN_USE = 0, OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED = 1, LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED = 2, LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION = 3 }
+	export enum ScheduleLambdaFunctionFailedCause { ID_ALREADY_IN_USE = 'ID_ALREADY_IN_USE', OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED = 'OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED', LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED = 'LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED', LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION = 'LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION' }
 
 
 	/** Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types. */
@@ -2928,7 +2928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartLambdaFunctionFailedCause { ASSUME_ROLE_FAILED = 0 }
+	export enum StartLambdaFunctionFailedCause { ASSUME_ROLE_FAILED = 'ASSUME_ROLE_FAILED' }
 
 	export interface GetWorkflowExecutionHistoryInput {
 
@@ -3756,7 +3756,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DecisionType { ScheduleActivityTask = 0, RequestCancelActivityTask = 1, CompleteWorkflowExecution = 2, FailWorkflowExecution = 3, CancelWorkflowExecution = 4, ContinueAsNewWorkflowExecution = 5, RecordMarker = 6, StartTimer = 7, CancelTimer = 8, SignalExternalWorkflowExecution = 9, RequestCancelExternalWorkflowExecution = 10, StartChildWorkflowExecution = 11, ScheduleLambdaFunction = 12 }
+	export enum DecisionType { ScheduleActivityTask = 'ScheduleActivityTask', RequestCancelActivityTask = 'RequestCancelActivityTask', CompleteWorkflowExecution = 'CompleteWorkflowExecution', FailWorkflowExecution = 'FailWorkflowExecution', CancelWorkflowExecution = 'CancelWorkflowExecution', ContinueAsNewWorkflowExecution = 'ContinueAsNewWorkflowExecution', RecordMarker = 'RecordMarker', StartTimer = 'StartTimer', CancelTimer = 'CancelTimer', SignalExternalWorkflowExecution = 'SignalExternalWorkflowExecution', RequestCancelExternalWorkflowExecution = 'RequestCancelExternalWorkflowExecution', StartChildWorkflowExecution = 'StartChildWorkflowExecution', ScheduleLambdaFunction = 'ScheduleLambdaFunction' }
 
 
 	/** <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
@@ -4394,13 +4394,13 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelWorkflowExecutionFailedCause { UNHANDLED_DECISION = 0, OPERATION_NOT_PERMITTED = 1 }
+	export enum CancelWorkflowExecutionFailedCause { UNHANDLED_DECISION = 'UNHANDLED_DECISION', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
-	export enum DecisionTaskTimeoutType { START_TO_CLOSE = 0 }
+	export enum DecisionTaskTimeoutType { START_TO_CLOSE = 'START_TO_CLOSE' }
 
-	export enum FailWorkflowExecutionFailedCause { UNHANDLED_DECISION = 0, OPERATION_NOT_PERMITTED = 1 }
+	export enum FailWorkflowExecutionFailedCause { UNHANDLED_DECISION = 'UNHANDLED_DECISION', OPERATION_NOT_PERMITTED = 'OPERATION_NOT_PERMITTED' }
 
-	export enum LambdaFunctionTimeoutType { START_TO_CLOSE = 0 }
+	export enum LambdaFunctionTimeoutType { START_TO_CLOSE = 'START_TO_CLOSE' }
 
 	@Injectable()
 	export class MyClient {
@@ -4755,79 +4755,79 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CountClosedWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.CountClosedWorkflowExecutions' = 0 }
+	export enum CountClosedWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.CountClosedWorkflowExecutions' = 'SimpleWorkflowService.CountClosedWorkflowExecutions' }
 
-	export enum CountOpenWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.CountOpenWorkflowExecutions' = 0 }
+	export enum CountOpenWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.CountOpenWorkflowExecutions' = 'SimpleWorkflowService.CountOpenWorkflowExecutions' }
 
-	export enum CountPendingActivityTasksX_Amz_Target { 'SimpleWorkflowService.CountPendingActivityTasks' = 0 }
+	export enum CountPendingActivityTasksX_Amz_Target { 'SimpleWorkflowService.CountPendingActivityTasks' = 'SimpleWorkflowService.CountPendingActivityTasks' }
 
-	export enum CountPendingDecisionTasksX_Amz_Target { 'SimpleWorkflowService.CountPendingDecisionTasks' = 0 }
+	export enum CountPendingDecisionTasksX_Amz_Target { 'SimpleWorkflowService.CountPendingDecisionTasks' = 'SimpleWorkflowService.CountPendingDecisionTasks' }
 
-	export enum DeprecateActivityTypeX_Amz_Target { 'SimpleWorkflowService.DeprecateActivityType' = 0 }
+	export enum DeprecateActivityTypeX_Amz_Target { 'SimpleWorkflowService.DeprecateActivityType' = 'SimpleWorkflowService.DeprecateActivityType' }
 
-	export enum DeprecateDomainX_Amz_Target { 'SimpleWorkflowService.DeprecateDomain' = 0 }
+	export enum DeprecateDomainX_Amz_Target { 'SimpleWorkflowService.DeprecateDomain' = 'SimpleWorkflowService.DeprecateDomain' }
 
-	export enum DeprecateWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.DeprecateWorkflowType' = 0 }
+	export enum DeprecateWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.DeprecateWorkflowType' = 'SimpleWorkflowService.DeprecateWorkflowType' }
 
-	export enum DescribeActivityTypeX_Amz_Target { 'SimpleWorkflowService.DescribeActivityType' = 0 }
+	export enum DescribeActivityTypeX_Amz_Target { 'SimpleWorkflowService.DescribeActivityType' = 'SimpleWorkflowService.DescribeActivityType' }
 
-	export enum DescribeDomainX_Amz_Target { 'SimpleWorkflowService.DescribeDomain' = 0 }
+	export enum DescribeDomainX_Amz_Target { 'SimpleWorkflowService.DescribeDomain' = 'SimpleWorkflowService.DescribeDomain' }
 
-	export enum DescribeWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.DescribeWorkflowExecution' = 0 }
+	export enum DescribeWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.DescribeWorkflowExecution' = 'SimpleWorkflowService.DescribeWorkflowExecution' }
 
-	export enum DescribeWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.DescribeWorkflowType' = 0 }
+	export enum DescribeWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.DescribeWorkflowType' = 'SimpleWorkflowService.DescribeWorkflowType' }
 
-	export enum GetWorkflowExecutionHistoryX_Amz_Target { 'SimpleWorkflowService.GetWorkflowExecutionHistory' = 0 }
+	export enum GetWorkflowExecutionHistoryX_Amz_Target { 'SimpleWorkflowService.GetWorkflowExecutionHistory' = 'SimpleWorkflowService.GetWorkflowExecutionHistory' }
 
-	export enum ListActivityTypesX_Amz_Target { 'SimpleWorkflowService.ListActivityTypes' = 0 }
+	export enum ListActivityTypesX_Amz_Target { 'SimpleWorkflowService.ListActivityTypes' = 'SimpleWorkflowService.ListActivityTypes' }
 
-	export enum ListClosedWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.ListClosedWorkflowExecutions' = 0 }
+	export enum ListClosedWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.ListClosedWorkflowExecutions' = 'SimpleWorkflowService.ListClosedWorkflowExecutions' }
 
-	export enum ListDomainsX_Amz_Target { 'SimpleWorkflowService.ListDomains' = 0 }
+	export enum ListDomainsX_Amz_Target { 'SimpleWorkflowService.ListDomains' = 'SimpleWorkflowService.ListDomains' }
 
-	export enum ListOpenWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.ListOpenWorkflowExecutions' = 0 }
+	export enum ListOpenWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.ListOpenWorkflowExecutions' = 'SimpleWorkflowService.ListOpenWorkflowExecutions' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'SimpleWorkflowService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'SimpleWorkflowService.ListTagsForResource' = 'SimpleWorkflowService.ListTagsForResource' }
 
-	export enum ListWorkflowTypesX_Amz_Target { 'SimpleWorkflowService.ListWorkflowTypes' = 0 }
+	export enum ListWorkflowTypesX_Amz_Target { 'SimpleWorkflowService.ListWorkflowTypes' = 'SimpleWorkflowService.ListWorkflowTypes' }
 
-	export enum PollForActivityTaskX_Amz_Target { 'SimpleWorkflowService.PollForActivityTask' = 0 }
+	export enum PollForActivityTaskX_Amz_Target { 'SimpleWorkflowService.PollForActivityTask' = 'SimpleWorkflowService.PollForActivityTask' }
 
-	export enum PollForDecisionTaskX_Amz_Target { 'SimpleWorkflowService.PollForDecisionTask' = 0 }
+	export enum PollForDecisionTaskX_Amz_Target { 'SimpleWorkflowService.PollForDecisionTask' = 'SimpleWorkflowService.PollForDecisionTask' }
 
-	export enum RecordActivityTaskHeartbeatX_Amz_Target { 'SimpleWorkflowService.RecordActivityTaskHeartbeat' = 0 }
+	export enum RecordActivityTaskHeartbeatX_Amz_Target { 'SimpleWorkflowService.RecordActivityTaskHeartbeat' = 'SimpleWorkflowService.RecordActivityTaskHeartbeat' }
 
-	export enum RegisterActivityTypeX_Amz_Target { 'SimpleWorkflowService.RegisterActivityType' = 0 }
+	export enum RegisterActivityTypeX_Amz_Target { 'SimpleWorkflowService.RegisterActivityType' = 'SimpleWorkflowService.RegisterActivityType' }
 
-	export enum RegisterDomainX_Amz_Target { 'SimpleWorkflowService.RegisterDomain' = 0 }
+	export enum RegisterDomainX_Amz_Target { 'SimpleWorkflowService.RegisterDomain' = 'SimpleWorkflowService.RegisterDomain' }
 
-	export enum RegisterWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.RegisterWorkflowType' = 0 }
+	export enum RegisterWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.RegisterWorkflowType' = 'SimpleWorkflowService.RegisterWorkflowType' }
 
-	export enum RequestCancelWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.RequestCancelWorkflowExecution' = 0 }
+	export enum RequestCancelWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.RequestCancelWorkflowExecution' = 'SimpleWorkflowService.RequestCancelWorkflowExecution' }
 
-	export enum RespondActivityTaskCanceledX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskCanceled' = 0 }
+	export enum RespondActivityTaskCanceledX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskCanceled' = 'SimpleWorkflowService.RespondActivityTaskCanceled' }
 
-	export enum RespondActivityTaskCompletedX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskCompleted' = 0 }
+	export enum RespondActivityTaskCompletedX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskCompleted' = 'SimpleWorkflowService.RespondActivityTaskCompleted' }
 
-	export enum RespondActivityTaskFailedX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskFailed' = 0 }
+	export enum RespondActivityTaskFailedX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskFailed' = 'SimpleWorkflowService.RespondActivityTaskFailed' }
 
-	export enum RespondDecisionTaskCompletedX_Amz_Target { 'SimpleWorkflowService.RespondDecisionTaskCompleted' = 0 }
+	export enum RespondDecisionTaskCompletedX_Amz_Target { 'SimpleWorkflowService.RespondDecisionTaskCompleted' = 'SimpleWorkflowService.RespondDecisionTaskCompleted' }
 
-	export enum SignalWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.SignalWorkflowExecution' = 0 }
+	export enum SignalWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.SignalWorkflowExecution' = 'SimpleWorkflowService.SignalWorkflowExecution' }
 
-	export enum StartWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.StartWorkflowExecution' = 0 }
+	export enum StartWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.StartWorkflowExecution' = 'SimpleWorkflowService.StartWorkflowExecution' }
 
-	export enum TagResourceX_Amz_Target { 'SimpleWorkflowService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'SimpleWorkflowService.TagResource' = 'SimpleWorkflowService.TagResource' }
 
-	export enum TerminateWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.TerminateWorkflowExecution' = 0 }
+	export enum TerminateWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.TerminateWorkflowExecution' = 'SimpleWorkflowService.TerminateWorkflowExecution' }
 
-	export enum UndeprecateActivityTypeX_Amz_Target { 'SimpleWorkflowService.UndeprecateActivityType' = 0 }
+	export enum UndeprecateActivityTypeX_Amz_Target { 'SimpleWorkflowService.UndeprecateActivityType' = 'SimpleWorkflowService.UndeprecateActivityType' }
 
-	export enum UndeprecateDomainX_Amz_Target { 'SimpleWorkflowService.UndeprecateDomain' = 0 }
+	export enum UndeprecateDomainX_Amz_Target { 'SimpleWorkflowService.UndeprecateDomain' = 'SimpleWorkflowService.UndeprecateDomain' }
 
-	export enum UndeprecateWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.UndeprecateWorkflowType' = 0 }
+	export enum UndeprecateWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.UndeprecateWorkflowType' = 'SimpleWorkflowService.UndeprecateWorkflowType' }
 
-	export enum UntagResourceX_Amz_Target { 'SimpleWorkflowService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'SimpleWorkflowService.UntagResource' = 'SimpleWorkflowService.UntagResource' }
 
 }
 

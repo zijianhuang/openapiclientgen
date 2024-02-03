@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Message for creating repositoritories in batch. */
@@ -322,7 +322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChildStatusReferenceType { TYPE_UNSPECIFIED = 0, TASK_RUN = 1 }
+	export enum ChildStatusReferenceType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TASK_RUN = 'TASK_RUN' }
 
 
 	/** Conditions that need to be true for the task to run. */
@@ -355,7 +355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WhenExpressionExpressionOperator { EXPRESSION_OPERATOR_UNSPECIFIED = 0, IN = 1, NOT_IN = 2 }
+	export enum WhenExpressionExpressionOperator { EXPRESSION_OPERATOR_UNSPECIFIED = 'EXPRESSION_OPERATOR_UNSPECIFIED', IN = 'IN', NOT_IN = 'NOT_IN' }
 
 
 	/** A connection to a SCM like GitHub, GitHub Enterprise, Bitbucket Data Center or GitLab. */
@@ -699,7 +699,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstallationStateStage { STAGE_UNSPECIFIED = 0, PENDING_CREATE_APP = 1, PENDING_USER_OAUTH = 2, PENDING_INSTALL_APP = 3, COMPLETE = 4 }
+	export enum InstallationStateStage { STAGE_UNSPECIFIED = 'STAGE_UNSPECIFIED', PENDING_CREATE_APP = 'PENDING_CREATE_APP', PENDING_USER_OAUTH = 'PENDING_USER_OAUTH', PENDING_INSTALL_APP = 'PENDING_INSTALL_APP', COMPLETE = 'COMPLETE' }
 
 
 	/** EmbeddedTask defines a Task that is embedded in a Pipeline. */
@@ -805,7 +805,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParamSpecType { TYPE_UNSPECIFIED = 0, STRING = 1, ARRAY = 2 }
+	export enum ParamSpecType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', STRING = 'STRING', ARRAY = 'ARRAY' }
 
 
 	/** TaskResult is used to describe the results of a task. */
@@ -870,9 +870,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertySpecType { TYPE_UNSPECIFIED = 0, STRING = 1 }
+	export enum PropertySpecType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', STRING = 'STRING' }
 
-	export enum TaskResultType { TYPE_UNSPECIFIED = 0, STRING = 1, ARRAY = 2, OBJECT = 3 }
+	export enum TaskResultType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', STRING = 'STRING', ARRAY = 'ARRAY', OBJECT = 'OBJECT' }
 
 
 	/** Sidecars run alongside the Task's step containers. */
@@ -1477,9 +1477,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDevtoolsCloudbuildV2ConditionSeverity { SEVERITY_UNSPECIFIED = 0, WARNING = 1, INFO = 2 }
+	export enum GoogleDevtoolsCloudbuildV2ConditionSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', WARNING = 'WARNING', INFO = 'INFO' }
 
-	export enum GoogleDevtoolsCloudbuildV2ConditionStatus { UNKNOWN = 0, TRUE = 1, FALSE = 2 }
+	export enum GoogleDevtoolsCloudbuildV2ConditionStatus { UNKNOWN = 'UNKNOWN', TRUE = 'TRUE', FALSE = 'FALSE' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -1921,7 +1921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineRefResolver { RESOLVER_NAME_UNSPECIFIED = 0, BUNDLES = 1, GCB_REPO = 2, GIT = 3 }
+	export enum PipelineRefResolver { RESOLVER_NAME_UNSPECIFIED = 'RESOLVER_NAME_UNSPECIFIED', BUNDLES = 'BUNDLES', GCB_REPO = 'GCB_REPO', GIT = 'GIT' }
 
 
 	/** Message describing PipelineRun object */
@@ -2055,7 +2055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineRunPipelineRunStatus { PIPELINE_RUN_STATUS_UNSPECIFIED = 0, PIPELINE_RUN_CANCELLED = 1 }
+	export enum PipelineRunPipelineRunStatus { PIPELINE_RUN_STATUS_UNSPECIFIED = 'PIPELINE_RUN_STATUS_UNSPECIFIED', PIPELINE_RUN_CANCELLED = 'PIPELINE_RUN_CANCELLED' }
 
 
 	/** PipelineSpec defines the desired state of Pipeline. */
@@ -2756,7 +2756,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Cloudbuild_projects_locations_connections_repositories_fetchGitRefsRefType { REF_TYPE_UNSPECIFIED = 0, TAG = 1, BRANCH = 2 }
+	export enum Cloudbuild_projects_locations_connections_repositories_fetchGitRefsRefType { REF_TYPE_UNSPECIFIED = 'REF_TYPE_UNSPECIFIED', TAG = 'TAG', BRANCH = 'BRANCH' }
 
 }
 

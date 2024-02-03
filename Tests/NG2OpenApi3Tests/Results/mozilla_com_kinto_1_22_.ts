@@ -197,7 +197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchPostBodyDefaultsMethod { GET = 0, HEAD = 1, DELETE = 2, TRACE = 3, POST = 4, PUT = 5, PATCH = 6 }
+	export enum BatchPostBodyDefaultsMethod { GET = 'GET', HEAD = 'HEAD', DELETE = 'DELETE', TRACE = 'TRACE', POST = 'POST', PUT = 'PUT', PATCH = 'PATCH' }
 
 	export interface BatchPostBodyRequests {
 		body?: {[id: string]: any };

@@ -1021,7 +1021,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DfsSlatesFormat { XML = 0, JSON = 1 }
+	export enum DfsSlatesFormat { XML = 'XML', JSON = 'JSON' }
 
 }
 

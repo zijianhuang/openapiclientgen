@@ -140,7 +140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterAuthorizationMode { AUTH_MODE_UNSPECIFIED = 0, AUTH_MODE_IAM_AUTH = 1, AUTH_MODE_DISABLED = 2 }
+	export enum ClusterAuthorizationMode { AUTH_MODE_UNSPECIFIED = 'AUTH_MODE_UNSPECIFIED', AUTH_MODE_IAM_AUTH = 'AUTH_MODE_IAM_AUTH', AUTH_MODE_DISABLED = 'AUTH_MODE_DISABLED' }
 
 
 	/** Endpoints on each network, for Redis clients to connect to the cluster. */
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, UPDATING = 3, DELETING = 4 }
+	export enum ClusterState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING' }
 
 
 	/** Represents additional information about the state of the cluster. */
@@ -284,7 +284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterTransitEncryptionMode { TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0, TRANSIT_ENCRYPTION_MODE_DISABLED = 1, TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION = 2 }
+	export enum ClusterTransitEncryptionMode { TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 'TRANSIT_ENCRYPTION_MODE_UNSPECIFIED', TRANSIT_ENCRYPTION_MODE_DISABLED = 'TRANSIT_ENCRYPTION_MODE_DISABLED', TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION = 'TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -376,7 +376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailoverInstanceRequestDataProtectionMode { DATA_PROTECTION_MODE_UNSPECIFIED = 0, LIMITED_DATA_LOSS = 1, FORCE_DATA_LOSS = 2 }
+	export enum FailoverInstanceRequestDataProtectionMode { DATA_PROTECTION_MODE_UNSPECIFIED = 'DATA_PROTECTION_MODE_UNSPECIFIED', LIMITED_DATA_LOSS = 'LIMITED_DATA_LOSS', FORCE_DATA_LOSS = 'FORCE_DATA_LOSS' }
 
 
 	/** The Cloud Storage location for the input content */
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceConnectMode { CONNECT_MODE_UNSPECIFIED = 0, DIRECT_PEERING = 1, PRIVATE_SERVICE_ACCESS = 2 }
+	export enum InstanceConnectMode { CONNECT_MODE_UNSPECIFIED = 'CONNECT_MODE_UNSPECIFIED', DIRECT_PEERING = 'DIRECT_PEERING', PRIVATE_SERVICE_ACCESS = 'PRIVATE_SERVICE_ACCESS' }
 
 
 	/** Maintenance policy for an instance. */
@@ -847,7 +847,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WeeklyMaintenanceWindowDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum WeeklyMaintenanceWindowDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
@@ -1003,11 +1003,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PersistenceConfigPersistenceMode { PERSISTENCE_MODE_UNSPECIFIED = 0, DISABLED = 1, RDB = 2 }
+	export enum PersistenceConfigPersistenceMode { PERSISTENCE_MODE_UNSPECIFIED = 'PERSISTENCE_MODE_UNSPECIFIED', DISABLED = 'DISABLED', RDB = 'RDB' }
 
-	export enum PersistenceConfigRdbSnapshotPeriod { SNAPSHOT_PERIOD_UNSPECIFIED = 0, ONE_HOUR = 1, SIX_HOURS = 2, TWELVE_HOURS = 3, TWENTY_FOUR_HOURS = 4 }
+	export enum PersistenceConfigRdbSnapshotPeriod { SNAPSHOT_PERIOD_UNSPECIFIED = 'SNAPSHOT_PERIOD_UNSPECIFIED', ONE_HOUR = 'ONE_HOUR', SIX_HOURS = 'SIX_HOURS', TWELVE_HOURS = 'TWELVE_HOURS', TWENTY_FOUR_HOURS = 'TWENTY_FOUR_HOURS' }
 
-	export enum InstanceReadReplicasMode { READ_REPLICAS_MODE_UNSPECIFIED = 0, READ_REPLICAS_DISABLED = 1, READ_REPLICAS_ENABLED = 2 }
+	export enum InstanceReadReplicasMode { READ_REPLICAS_MODE_UNSPECIFIED = 'READ_REPLICAS_MODE_UNSPECIFIED', READ_REPLICAS_DISABLED = 'READ_REPLICAS_DISABLED', READ_REPLICAS_ENABLED = 'READ_REPLICAS_ENABLED' }
 
 
 	/** TlsCertificate Resource */
@@ -1058,11 +1058,11 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, DELETING = 4, REPAIRING = 5, MAINTENANCE = 6, IMPORTING = 7, FAILING_OVER = 8 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', DELETING = 'DELETING', REPAIRING = 'REPAIRING', MAINTENANCE = 'MAINTENANCE', IMPORTING = 'IMPORTING', FAILING_OVER = 'FAILING_OVER' }
 
-	export enum InstanceTier { TIER_UNSPECIFIED = 0, BASIC = 1, STANDARD_HA = 2 }
+	export enum InstanceTier { TIER_UNSPECIFIED = 'TIER_UNSPECIFIED', BASIC = 'BASIC', STANDARD_HA = 'STANDARD_HA' }
 
-	export enum InstanceTransitEncryptionMode { TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0, SERVER_AUTHENTICATION = 1, DISABLED = 2 }
+	export enum InstanceTransitEncryptionMode { TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 'TRANSIT_ENCRYPTION_MODE_UNSPECIFIED', SERVER_AUTHENTICATION = 'SERVER_AUTHENTICATION', DISABLED = 'DISABLED' }
 
 
 	/** Instance AUTH string details. */
@@ -1403,7 +1403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReconciliationOperationMetadataExclusiveAction { UNKNOWN_REPAIR_ACTION = 0, DELETE = 1, RETRY = 2 }
+	export enum ReconciliationOperationMetadataExclusiveAction { UNKNOWN_REPAIR_ACTION = 'UNKNOWN_REPAIR_ACTION', DELETE = 'DELETE', RETRY = 'RETRY' }
 
 
 	/** Request for RescheduleMaintenance. */
@@ -1433,7 +1433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RescheduleMaintenanceRequestRescheduleType { RESCHEDULE_TYPE_UNSPECIFIED = 0, IMMEDIATE = 1, NEXT_AVAILABLE_WINDOW = 2, SPECIFIC_TIME = 3 }
+	export enum RescheduleMaintenanceRequestRescheduleType { RESCHEDULE_TYPE_UNSPECIFIED = 'RESCHEDULE_TYPE_UNSPECIFIED', IMMEDIATE = 'IMMEDIATE', NEXT_AVAILABLE_WINDOW = 'NEXT_AVAILABLE_WINDOW', SPECIFIC_TIME = 'SPECIFIC_TIME' }
 
 
 	/** Request for UpgradeInstance. */

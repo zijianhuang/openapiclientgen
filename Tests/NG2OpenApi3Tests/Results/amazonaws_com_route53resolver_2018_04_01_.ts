@@ -67,9 +67,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MutationProtectionStatus { ENABLED = 0, DISABLED = 1 }
+	export enum MutationProtectionStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum FirewallRuleGroupAssociationStatus { COMPLETE = 0, DELETING = 1, UPDATING = 2 }
+	export enum FirewallRuleGroupAssociationStatus { COMPLETE = 'COMPLETE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 	export interface AssociateFirewallRuleGroupRequest {
 
@@ -286,11 +286,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolverEndpointDirection { INBOUND = 0, OUTBOUND = 1 }
+	export enum ResolverEndpointDirection { INBOUND = 'INBOUND', OUTBOUND = 'OUTBOUND' }
 
-	export enum ResolverEndpointStatus { CREATING = 0, OPERATIONAL = 1, UPDATING = 2, AUTO_RECOVERING = 3, ACTION_NEEDED = 4, DELETING = 5 }
+	export enum ResolverEndpointStatus { CREATING = 'CREATING', OPERATIONAL = 'OPERATIONAL', UPDATING = 'UPDATING', AUTO_RECOVERING = 'AUTO_RECOVERING', ACTION_NEEDED = 'ACTION_NEEDED', DELETING = 'DELETING' }
 
-	export enum ResolverEndpointType { IPV6 = 0, IPV4 = 1, DUALSTACK = 2 }
+	export enum ResolverEndpointType { IPV6 = 'IPV6', IPV4 = 'IPV4', DUALSTACK = 'DUALSTACK' }
 
 	export interface AssociateResolverEndpointIpAddressRequest {
 
@@ -414,9 +414,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolverQueryLogConfigAssociationStatus { CREATING = 0, ACTIVE = 1, ACTION_NEEDED = 2, DELETING = 3, FAILED = 4 }
+	export enum ResolverQueryLogConfigAssociationStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', ACTION_NEEDED = 'ACTION_NEEDED', DELETING = 'DELETING', FAILED = 'FAILED' }
 
-	export enum ResolverQueryLogConfigAssociationError { NONE = 0, DESTINATION_NOT_FOUND = 1, ACCESS_DENIED = 2, INTERNAL_SERVICE_ERROR = 3 }
+	export enum ResolverQueryLogConfigAssociationError { NONE = 'NONE', DESTINATION_NOT_FOUND = 'DESTINATION_NOT_FOUND', ACCESS_DENIED = 'ACCESS_DENIED', INTERNAL_SERVICE_ERROR = 'INTERNAL_SERVICE_ERROR' }
 
 	export interface AssociateResolverQueryLogConfigRequest {
 
@@ -485,7 +485,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolverRuleAssociationStatus { CREATING = 0, COMPLETE = 1, DELETING = 2, FAILED = 3, OVERRIDDEN = 4 }
+	export enum ResolverRuleAssociationStatus { CREATING = 'CREATING', COMPLETE = 'COMPLETE', DELETING = 'DELETING', FAILED = 'FAILED', OVERRIDDEN = 'OVERRIDDEN' }
 
 	export interface AssociateResolverRuleRequest {
 
@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallDomainListStatus { COMPLETE = 0, COMPLETE_IMPORT_FAILED = 1, IMPORTING = 2, DELETING = 3, UPDATING = 4 }
+	export enum FirewallDomainListStatus { COMPLETE = 'COMPLETE', COMPLETE_IMPORT_FAILED = 'COMPLETE_IMPORT_FAILED', IMPORTING = 'IMPORTING', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 	export interface CreateFirewallDomainListRequest {
 
@@ -667,11 +667,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Action { ALLOW = 0, BLOCK = 1, ALERT = 2 }
+	export enum Action { ALLOW = 'ALLOW', BLOCK = 'BLOCK', ALERT = 'ALERT' }
 
-	export enum BlockResponse { NODATA = 0, NXDOMAIN = 1, OVERRIDE = 2 }
+	export enum BlockResponse { NODATA = 'NODATA', NXDOMAIN = 'NXDOMAIN', OVERRIDE = 'OVERRIDE' }
 
-	export enum BlockOverrideDnsType { CNAME = 0 }
+	export enum BlockOverrideDnsType { CNAME = 'CNAME' }
 
 	export interface CreateFirewallRuleRequest {
 
@@ -795,7 +795,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareStatus { NOT_SHARED = 0, SHARED_WITH_ME = 1, SHARED_BY_ME = 2 }
+	export enum ShareStatus { NOT_SHARED = 'NOT_SHARED', SHARED_WITH_ME = 'SHARED_WITH_ME', SHARED_BY_ME = 'SHARED_BY_ME' }
 
 	export interface CreateFirewallRuleGroupRequest {
 
@@ -880,7 +880,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutpostResolverStatus { CREATING = 0, OPERATIONAL = 1, UPDATING = 2, DELETING = 3, ACTION_NEEDED = 4, FAILED_CREATION = 5, FAILED_DELETION = 6 }
+	export enum OutpostResolverStatus { CREATING = 'CREATING', OPERATIONAL = 'OPERATIONAL', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTION_NEEDED = 'ACTION_NEEDED', FAILED_CREATION = 'FAILED_CREATION', FAILED_DELETION = 'FAILED_DELETION' }
 
 	export interface CreateOutpostResolverRequest {
 
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolverQueryLogConfigStatus { CREATING = 0, CREATED = 1, DELETING = 2, FAILED = 3 }
+	export enum ResolverQueryLogConfigStatus { CREATING = 'CREATING', CREATED = 'CREATED', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface CreateResolverQueryLogConfigRequest {
 
@@ -1169,9 +1169,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolverRuleStatus { COMPLETE = 0, DELETING = 1, UPDATING = 2, FAILED = 3 }
+	export enum ResolverRuleStatus { COMPLETE = 'COMPLETE', DELETING = 'DELETING', UPDATING = 'UPDATING', FAILED = 'FAILED' }
 
-	export enum RuleTypeOption { FORWARD = 0, SYSTEM = 1, RECURSIVE = 2 }
+	export enum RuleTypeOption { FORWARD = 'FORWARD', SYSTEM = 'SYSTEM', RECURSIVE = 'RECURSIVE' }
 
 
 	/** In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to. */
@@ -1614,7 +1614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallFailOpenStatus { ENABLED = 0, DISABLED = 1, USE_LOCAL_RESOURCE_SETTING = 2 }
+	export enum FirewallFailOpenStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED', USE_LOCAL_RESOURCE_SETTING = 'USE_LOCAL_RESOURCE_SETTING' }
 
 	export interface GetFirewallConfigRequest {
 
@@ -1812,7 +1812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolverAutodefinedReverseStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, UPDATING_TO_USE_LOCAL_RESOURCE_SETTING = 4, USE_LOCAL_RESOURCE_SETTING = 5 }
+	export enum ResolverAutodefinedReverseStatus { ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED', UPDATING_TO_USE_LOCAL_RESOURCE_SETTING = 'UPDATING_TO_USE_LOCAL_RESOURCE_SETTING', USE_LOCAL_RESOURCE_SETTING = 'USE_LOCAL_RESOURCE_SETTING' }
 
 	export interface GetResolverConfigRequest {
 
@@ -2148,7 +2148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallDomainImportOperation { REPLACE = 0 }
+	export enum FirewallDomainImportOperation { REPLACE = 'REPLACE' }
 
 	export interface ListFirewallConfigsResponse {
 		NextToken?: string;
@@ -2600,7 +2600,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpAddressStatus { CREATING = 0, FAILED_CREATION = 1, ATTACHING = 2, ATTACHED = 3, REMAP_DETACHING = 4, REMAP_ATTACHING = 5, DETACHING = 6, FAILED_RESOURCE_GONE = 7, DELETING = 8, DELETE_FAILED_FAS_EXPIRED = 9, UPDATING = 10, UPDATE_FAILED = 11 }
+	export enum IpAddressStatus { CREATING = 'CREATING', FAILED_CREATION = 'FAILED_CREATION', ATTACHING = 'ATTACHING', ATTACHED = 'ATTACHED', REMAP_DETACHING = 'REMAP_DETACHING', REMAP_ATTACHING = 'REMAP_ATTACHING', DETACHING = 'DETACHING', FAILED_RESOURCE_GONE = 'FAILED_RESOURCE_GONE', DELETING = 'DELETING', DELETE_FAILED_FAS_EXPIRED = 'DELETE_FAILED_FAS_EXPIRED', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface ListResolverEndpointIpAddressesRequest {
 
@@ -2702,7 +2702,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListResolverQueryLogConfigsResponse {
 		NextToken?: string;
@@ -3135,7 +3135,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallDomainUpdateOperation { ADD = 0, REMOVE = 1, REPLACE = 2 }
+	export enum FirewallDomainUpdateOperation { ADD = 'ADD', REMOVE = 'REMOVE', REPLACE = 'REPLACE' }
 
 	export interface UpdateFirewallRuleResponse {
 		FirewallRule?: FirewallRule;
@@ -3302,7 +3302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutodefinedReverseFlag { ENABLE = 0, DISABLE = 1, USE_LOCAL_RESOURCE_SETTING = 2 }
+	export enum AutodefinedReverseFlag { ENABLE = 'ENABLE', DISABLE = 'DISABLE', USE_LOCAL_RESOURCE_SETTING = 'USE_LOCAL_RESOURCE_SETTING' }
 
 	export interface UpdateResolverDnssecConfigResponse {
 		ResolverDNSSECConfig?: ResolverDnssecConfig;
@@ -3454,11 +3454,11 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallRuleGroupStatus { COMPLETE = 0, DELETING = 1, UPDATING = 2 }
+	export enum FirewallRuleGroupStatus { COMPLETE = 'COMPLETE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
-	export enum ResolverDNSSECValidationStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, UPDATING_TO_USE_LOCAL_RESOURCE_SETTING = 4, USE_LOCAL_RESOURCE_SETTING = 5 }
+	export enum ResolverDNSSECValidationStatus { ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED', UPDATING_TO_USE_LOCAL_RESOURCE_SETTING = 'UPDATING_TO_USE_LOCAL_RESOURCE_SETTING', USE_LOCAL_RESOURCE_SETTING = 'USE_LOCAL_RESOURCE_SETTING' }
 
-	export enum Validation { ENABLE = 0, DISABLE = 1, USE_LOCAL_RESOURCE_SETTING = 2 }
+	export enum Validation { ENABLE = 'ENABLE', DISABLE = 'DISABLE', USE_LOCAL_RESOURCE_SETTING = 'USE_LOCAL_RESOURCE_SETTING' }
 
 	@Injectable()
 	export class MyClient {
@@ -4110,141 +4110,141 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateFirewallRuleGroupX_Amz_Target { 'Route53Resolver.AssociateFirewallRuleGroup' = 0 }
+	export enum AssociateFirewallRuleGroupX_Amz_Target { 'Route53Resolver.AssociateFirewallRuleGroup' = 'Route53Resolver.AssociateFirewallRuleGroup' }
 
-	export enum AssociateResolverEndpointIpAddressX_Amz_Target { 'Route53Resolver.AssociateResolverEndpointIpAddress' = 0 }
+	export enum AssociateResolverEndpointIpAddressX_Amz_Target { 'Route53Resolver.AssociateResolverEndpointIpAddress' = 'Route53Resolver.AssociateResolverEndpointIpAddress' }
 
-	export enum AssociateResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.AssociateResolverQueryLogConfig' = 0 }
+	export enum AssociateResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.AssociateResolverQueryLogConfig' = 'Route53Resolver.AssociateResolverQueryLogConfig' }
 
-	export enum AssociateResolverRuleX_Amz_Target { 'Route53Resolver.AssociateResolverRule' = 0 }
+	export enum AssociateResolverRuleX_Amz_Target { 'Route53Resolver.AssociateResolverRule' = 'Route53Resolver.AssociateResolverRule' }
 
-	export enum CreateFirewallDomainListX_Amz_Target { 'Route53Resolver.CreateFirewallDomainList' = 0 }
+	export enum CreateFirewallDomainListX_Amz_Target { 'Route53Resolver.CreateFirewallDomainList' = 'Route53Resolver.CreateFirewallDomainList' }
 
-	export enum CreateFirewallRuleX_Amz_Target { 'Route53Resolver.CreateFirewallRule' = 0 }
+	export enum CreateFirewallRuleX_Amz_Target { 'Route53Resolver.CreateFirewallRule' = 'Route53Resolver.CreateFirewallRule' }
 
-	export enum CreateFirewallRuleGroupX_Amz_Target { 'Route53Resolver.CreateFirewallRuleGroup' = 0 }
+	export enum CreateFirewallRuleGroupX_Amz_Target { 'Route53Resolver.CreateFirewallRuleGroup' = 'Route53Resolver.CreateFirewallRuleGroup' }
 
-	export enum CreateOutpostResolverX_Amz_Target { 'Route53Resolver.CreateOutpostResolver' = 0 }
+	export enum CreateOutpostResolverX_Amz_Target { 'Route53Resolver.CreateOutpostResolver' = 'Route53Resolver.CreateOutpostResolver' }
 
-	export enum CreateResolverEndpointX_Amz_Target { 'Route53Resolver.CreateResolverEndpoint' = 0 }
+	export enum CreateResolverEndpointX_Amz_Target { 'Route53Resolver.CreateResolverEndpoint' = 'Route53Resolver.CreateResolverEndpoint' }
 
-	export enum CreateResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.CreateResolverQueryLogConfig' = 0 }
+	export enum CreateResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.CreateResolverQueryLogConfig' = 'Route53Resolver.CreateResolverQueryLogConfig' }
 
-	export enum CreateResolverRuleX_Amz_Target { 'Route53Resolver.CreateResolverRule' = 0 }
+	export enum CreateResolverRuleX_Amz_Target { 'Route53Resolver.CreateResolverRule' = 'Route53Resolver.CreateResolverRule' }
 
-	export enum DeleteFirewallDomainListX_Amz_Target { 'Route53Resolver.DeleteFirewallDomainList' = 0 }
+	export enum DeleteFirewallDomainListX_Amz_Target { 'Route53Resolver.DeleteFirewallDomainList' = 'Route53Resolver.DeleteFirewallDomainList' }
 
-	export enum DeleteFirewallRuleX_Amz_Target { 'Route53Resolver.DeleteFirewallRule' = 0 }
+	export enum DeleteFirewallRuleX_Amz_Target { 'Route53Resolver.DeleteFirewallRule' = 'Route53Resolver.DeleteFirewallRule' }
 
-	export enum DeleteFirewallRuleGroupX_Amz_Target { 'Route53Resolver.DeleteFirewallRuleGroup' = 0 }
+	export enum DeleteFirewallRuleGroupX_Amz_Target { 'Route53Resolver.DeleteFirewallRuleGroup' = 'Route53Resolver.DeleteFirewallRuleGroup' }
 
-	export enum DeleteOutpostResolverX_Amz_Target { 'Route53Resolver.DeleteOutpostResolver' = 0 }
+	export enum DeleteOutpostResolverX_Amz_Target { 'Route53Resolver.DeleteOutpostResolver' = 'Route53Resolver.DeleteOutpostResolver' }
 
-	export enum DeleteResolverEndpointX_Amz_Target { 'Route53Resolver.DeleteResolverEndpoint' = 0 }
+	export enum DeleteResolverEndpointX_Amz_Target { 'Route53Resolver.DeleteResolverEndpoint' = 'Route53Resolver.DeleteResolverEndpoint' }
 
-	export enum DeleteResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.DeleteResolverQueryLogConfig' = 0 }
+	export enum DeleteResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.DeleteResolverQueryLogConfig' = 'Route53Resolver.DeleteResolverQueryLogConfig' }
 
-	export enum DeleteResolverRuleX_Amz_Target { 'Route53Resolver.DeleteResolverRule' = 0 }
+	export enum DeleteResolverRuleX_Amz_Target { 'Route53Resolver.DeleteResolverRule' = 'Route53Resolver.DeleteResolverRule' }
 
-	export enum DisassociateFirewallRuleGroupX_Amz_Target { 'Route53Resolver.DisassociateFirewallRuleGroup' = 0 }
+	export enum DisassociateFirewallRuleGroupX_Amz_Target { 'Route53Resolver.DisassociateFirewallRuleGroup' = 'Route53Resolver.DisassociateFirewallRuleGroup' }
 
-	export enum DisassociateResolverEndpointIpAddressX_Amz_Target { 'Route53Resolver.DisassociateResolverEndpointIpAddress' = 0 }
+	export enum DisassociateResolverEndpointIpAddressX_Amz_Target { 'Route53Resolver.DisassociateResolverEndpointIpAddress' = 'Route53Resolver.DisassociateResolverEndpointIpAddress' }
 
-	export enum DisassociateResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.DisassociateResolverQueryLogConfig' = 0 }
+	export enum DisassociateResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.DisassociateResolverQueryLogConfig' = 'Route53Resolver.DisassociateResolverQueryLogConfig' }
 
-	export enum DisassociateResolverRuleX_Amz_Target { 'Route53Resolver.DisassociateResolverRule' = 0 }
+	export enum DisassociateResolverRuleX_Amz_Target { 'Route53Resolver.DisassociateResolverRule' = 'Route53Resolver.DisassociateResolverRule' }
 
-	export enum GetFirewallConfigX_Amz_Target { 'Route53Resolver.GetFirewallConfig' = 0 }
+	export enum GetFirewallConfigX_Amz_Target { 'Route53Resolver.GetFirewallConfig' = 'Route53Resolver.GetFirewallConfig' }
 
-	export enum GetFirewallDomainListX_Amz_Target { 'Route53Resolver.GetFirewallDomainList' = 0 }
+	export enum GetFirewallDomainListX_Amz_Target { 'Route53Resolver.GetFirewallDomainList' = 'Route53Resolver.GetFirewallDomainList' }
 
-	export enum GetFirewallRuleGroupX_Amz_Target { 'Route53Resolver.GetFirewallRuleGroup' = 0 }
+	export enum GetFirewallRuleGroupX_Amz_Target { 'Route53Resolver.GetFirewallRuleGroup' = 'Route53Resolver.GetFirewallRuleGroup' }
 
-	export enum GetFirewallRuleGroupAssociationX_Amz_Target { 'Route53Resolver.GetFirewallRuleGroupAssociation' = 0 }
+	export enum GetFirewallRuleGroupAssociationX_Amz_Target { 'Route53Resolver.GetFirewallRuleGroupAssociation' = 'Route53Resolver.GetFirewallRuleGroupAssociation' }
 
-	export enum GetFirewallRuleGroupPolicyX_Amz_Target { 'Route53Resolver.GetFirewallRuleGroupPolicy' = 0 }
+	export enum GetFirewallRuleGroupPolicyX_Amz_Target { 'Route53Resolver.GetFirewallRuleGroupPolicy' = 'Route53Resolver.GetFirewallRuleGroupPolicy' }
 
-	export enum GetOutpostResolverX_Amz_Target { 'Route53Resolver.GetOutpostResolver' = 0 }
+	export enum GetOutpostResolverX_Amz_Target { 'Route53Resolver.GetOutpostResolver' = 'Route53Resolver.GetOutpostResolver' }
 
-	export enum GetResolverConfigX_Amz_Target { 'Route53Resolver.GetResolverConfig' = 0 }
+	export enum GetResolverConfigX_Amz_Target { 'Route53Resolver.GetResolverConfig' = 'Route53Resolver.GetResolverConfig' }
 
-	export enum GetResolverDnssecConfigX_Amz_Target { 'Route53Resolver.GetResolverDnssecConfig' = 0 }
+	export enum GetResolverDnssecConfigX_Amz_Target { 'Route53Resolver.GetResolverDnssecConfig' = 'Route53Resolver.GetResolverDnssecConfig' }
 
-	export enum GetResolverEndpointX_Amz_Target { 'Route53Resolver.GetResolverEndpoint' = 0 }
+	export enum GetResolverEndpointX_Amz_Target { 'Route53Resolver.GetResolverEndpoint' = 'Route53Resolver.GetResolverEndpoint' }
 
-	export enum GetResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.GetResolverQueryLogConfig' = 0 }
+	export enum GetResolverQueryLogConfigX_Amz_Target { 'Route53Resolver.GetResolverQueryLogConfig' = 'Route53Resolver.GetResolverQueryLogConfig' }
 
-	export enum GetResolverQueryLogConfigAssociationX_Amz_Target { 'Route53Resolver.GetResolverQueryLogConfigAssociation' = 0 }
+	export enum GetResolverQueryLogConfigAssociationX_Amz_Target { 'Route53Resolver.GetResolverQueryLogConfigAssociation' = 'Route53Resolver.GetResolverQueryLogConfigAssociation' }
 
-	export enum GetResolverQueryLogConfigPolicyX_Amz_Target { 'Route53Resolver.GetResolverQueryLogConfigPolicy' = 0 }
+	export enum GetResolverQueryLogConfigPolicyX_Amz_Target { 'Route53Resolver.GetResolverQueryLogConfigPolicy' = 'Route53Resolver.GetResolverQueryLogConfigPolicy' }
 
-	export enum GetResolverRuleX_Amz_Target { 'Route53Resolver.GetResolverRule' = 0 }
+	export enum GetResolverRuleX_Amz_Target { 'Route53Resolver.GetResolverRule' = 'Route53Resolver.GetResolverRule' }
 
-	export enum GetResolverRuleAssociationX_Amz_Target { 'Route53Resolver.GetResolverRuleAssociation' = 0 }
+	export enum GetResolverRuleAssociationX_Amz_Target { 'Route53Resolver.GetResolverRuleAssociation' = 'Route53Resolver.GetResolverRuleAssociation' }
 
-	export enum GetResolverRulePolicyX_Amz_Target { 'Route53Resolver.GetResolverRulePolicy' = 0 }
+	export enum GetResolverRulePolicyX_Amz_Target { 'Route53Resolver.GetResolverRulePolicy' = 'Route53Resolver.GetResolverRulePolicy' }
 
-	export enum ImportFirewallDomainsX_Amz_Target { 'Route53Resolver.ImportFirewallDomains' = 0 }
+	export enum ImportFirewallDomainsX_Amz_Target { 'Route53Resolver.ImportFirewallDomains' = 'Route53Resolver.ImportFirewallDomains' }
 
-	export enum ListFirewallConfigsX_Amz_Target { 'Route53Resolver.ListFirewallConfigs' = 0 }
+	export enum ListFirewallConfigsX_Amz_Target { 'Route53Resolver.ListFirewallConfigs' = 'Route53Resolver.ListFirewallConfigs' }
 
-	export enum ListFirewallDomainListsX_Amz_Target { 'Route53Resolver.ListFirewallDomainLists' = 0 }
+	export enum ListFirewallDomainListsX_Amz_Target { 'Route53Resolver.ListFirewallDomainLists' = 'Route53Resolver.ListFirewallDomainLists' }
 
-	export enum ListFirewallDomainsX_Amz_Target { 'Route53Resolver.ListFirewallDomains' = 0 }
+	export enum ListFirewallDomainsX_Amz_Target { 'Route53Resolver.ListFirewallDomains' = 'Route53Resolver.ListFirewallDomains' }
 
-	export enum ListFirewallRuleGroupAssociationsX_Amz_Target { 'Route53Resolver.ListFirewallRuleGroupAssociations' = 0 }
+	export enum ListFirewallRuleGroupAssociationsX_Amz_Target { 'Route53Resolver.ListFirewallRuleGroupAssociations' = 'Route53Resolver.ListFirewallRuleGroupAssociations' }
 
-	export enum ListFirewallRuleGroupsX_Amz_Target { 'Route53Resolver.ListFirewallRuleGroups' = 0 }
+	export enum ListFirewallRuleGroupsX_Amz_Target { 'Route53Resolver.ListFirewallRuleGroups' = 'Route53Resolver.ListFirewallRuleGroups' }
 
-	export enum ListFirewallRulesX_Amz_Target { 'Route53Resolver.ListFirewallRules' = 0 }
+	export enum ListFirewallRulesX_Amz_Target { 'Route53Resolver.ListFirewallRules' = 'Route53Resolver.ListFirewallRules' }
 
-	export enum ListOutpostResolversX_Amz_Target { 'Route53Resolver.ListOutpostResolvers' = 0 }
+	export enum ListOutpostResolversX_Amz_Target { 'Route53Resolver.ListOutpostResolvers' = 'Route53Resolver.ListOutpostResolvers' }
 
-	export enum ListResolverConfigsX_Amz_Target { 'Route53Resolver.ListResolverConfigs' = 0 }
+	export enum ListResolverConfigsX_Amz_Target { 'Route53Resolver.ListResolverConfigs' = 'Route53Resolver.ListResolverConfigs' }
 
-	export enum ListResolverDnssecConfigsX_Amz_Target { 'Route53Resolver.ListResolverDnssecConfigs' = 0 }
+	export enum ListResolverDnssecConfigsX_Amz_Target { 'Route53Resolver.ListResolverDnssecConfigs' = 'Route53Resolver.ListResolverDnssecConfigs' }
 
-	export enum ListResolverEndpointIpAddressesX_Amz_Target { 'Route53Resolver.ListResolverEndpointIpAddresses' = 0 }
+	export enum ListResolverEndpointIpAddressesX_Amz_Target { 'Route53Resolver.ListResolverEndpointIpAddresses' = 'Route53Resolver.ListResolverEndpointIpAddresses' }
 
-	export enum ListResolverEndpointsX_Amz_Target { 'Route53Resolver.ListResolverEndpoints' = 0 }
+	export enum ListResolverEndpointsX_Amz_Target { 'Route53Resolver.ListResolverEndpoints' = 'Route53Resolver.ListResolverEndpoints' }
 
-	export enum ListResolverQueryLogConfigAssociationsX_Amz_Target { 'Route53Resolver.ListResolverQueryLogConfigAssociations' = 0 }
+	export enum ListResolverQueryLogConfigAssociationsX_Amz_Target { 'Route53Resolver.ListResolverQueryLogConfigAssociations' = 'Route53Resolver.ListResolverQueryLogConfigAssociations' }
 
-	export enum ListResolverQueryLogConfigsX_Amz_Target { 'Route53Resolver.ListResolverQueryLogConfigs' = 0 }
+	export enum ListResolverQueryLogConfigsX_Amz_Target { 'Route53Resolver.ListResolverQueryLogConfigs' = 'Route53Resolver.ListResolverQueryLogConfigs' }
 
-	export enum ListResolverRuleAssociationsX_Amz_Target { 'Route53Resolver.ListResolverRuleAssociations' = 0 }
+	export enum ListResolverRuleAssociationsX_Amz_Target { 'Route53Resolver.ListResolverRuleAssociations' = 'Route53Resolver.ListResolverRuleAssociations' }
 
-	export enum ListResolverRulesX_Amz_Target { 'Route53Resolver.ListResolverRules' = 0 }
+	export enum ListResolverRulesX_Amz_Target { 'Route53Resolver.ListResolverRules' = 'Route53Resolver.ListResolverRules' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'Route53Resolver.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Route53Resolver.ListTagsForResource' = 'Route53Resolver.ListTagsForResource' }
 
-	export enum PutFirewallRuleGroupPolicyX_Amz_Target { 'Route53Resolver.PutFirewallRuleGroupPolicy' = 0 }
+	export enum PutFirewallRuleGroupPolicyX_Amz_Target { 'Route53Resolver.PutFirewallRuleGroupPolicy' = 'Route53Resolver.PutFirewallRuleGroupPolicy' }
 
-	export enum PutResolverQueryLogConfigPolicyX_Amz_Target { 'Route53Resolver.PutResolverQueryLogConfigPolicy' = 0 }
+	export enum PutResolverQueryLogConfigPolicyX_Amz_Target { 'Route53Resolver.PutResolverQueryLogConfigPolicy' = 'Route53Resolver.PutResolverQueryLogConfigPolicy' }
 
-	export enum PutResolverRulePolicyX_Amz_Target { 'Route53Resolver.PutResolverRulePolicy' = 0 }
+	export enum PutResolverRulePolicyX_Amz_Target { 'Route53Resolver.PutResolverRulePolicy' = 'Route53Resolver.PutResolverRulePolicy' }
 
-	export enum TagResourceX_Amz_Target { 'Route53Resolver.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Route53Resolver.TagResource' = 'Route53Resolver.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'Route53Resolver.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Route53Resolver.UntagResource' = 'Route53Resolver.UntagResource' }
 
-	export enum UpdateFirewallConfigX_Amz_Target { 'Route53Resolver.UpdateFirewallConfig' = 0 }
+	export enum UpdateFirewallConfigX_Amz_Target { 'Route53Resolver.UpdateFirewallConfig' = 'Route53Resolver.UpdateFirewallConfig' }
 
-	export enum UpdateFirewallDomainsX_Amz_Target { 'Route53Resolver.UpdateFirewallDomains' = 0 }
+	export enum UpdateFirewallDomainsX_Amz_Target { 'Route53Resolver.UpdateFirewallDomains' = 'Route53Resolver.UpdateFirewallDomains' }
 
-	export enum UpdateFirewallRuleX_Amz_Target { 'Route53Resolver.UpdateFirewallRule' = 0 }
+	export enum UpdateFirewallRuleX_Amz_Target { 'Route53Resolver.UpdateFirewallRule' = 'Route53Resolver.UpdateFirewallRule' }
 
-	export enum UpdateFirewallRuleGroupAssociationX_Amz_Target { 'Route53Resolver.UpdateFirewallRuleGroupAssociation' = 0 }
+	export enum UpdateFirewallRuleGroupAssociationX_Amz_Target { 'Route53Resolver.UpdateFirewallRuleGroupAssociation' = 'Route53Resolver.UpdateFirewallRuleGroupAssociation' }
 
-	export enum UpdateOutpostResolverX_Amz_Target { 'Route53Resolver.UpdateOutpostResolver' = 0 }
+	export enum UpdateOutpostResolverX_Amz_Target { 'Route53Resolver.UpdateOutpostResolver' = 'Route53Resolver.UpdateOutpostResolver' }
 
-	export enum UpdateResolverConfigX_Amz_Target { 'Route53Resolver.UpdateResolverConfig' = 0 }
+	export enum UpdateResolverConfigX_Amz_Target { 'Route53Resolver.UpdateResolverConfig' = 'Route53Resolver.UpdateResolverConfig' }
 
-	export enum UpdateResolverDnssecConfigX_Amz_Target { 'Route53Resolver.UpdateResolverDnssecConfig' = 0 }
+	export enum UpdateResolverDnssecConfigX_Amz_Target { 'Route53Resolver.UpdateResolverDnssecConfig' = 'Route53Resolver.UpdateResolverDnssecConfig' }
 
-	export enum UpdateResolverEndpointX_Amz_Target { 'Route53Resolver.UpdateResolverEndpoint' = 0 }
+	export enum UpdateResolverEndpointX_Amz_Target { 'Route53Resolver.UpdateResolverEndpoint' = 'Route53Resolver.UpdateResolverEndpoint' }
 
-	export enum UpdateResolverRuleX_Amz_Target { 'Route53Resolver.UpdateResolverRule' = 0 }
+	export enum UpdateResolverRuleX_Amz_Target { 'Route53Resolver.UpdateResolverRule' = 'Route53Resolver.UpdateResolverRule' }
 
 }
 

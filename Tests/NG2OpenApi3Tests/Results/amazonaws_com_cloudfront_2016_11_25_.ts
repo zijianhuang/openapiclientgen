@@ -481,7 +481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemSelection { none = 0, whitelist = 1, all = 2 }
+	export enum ItemSelection { none = 'none', whitelist = 'whitelist', all = 'all' }
 
 
 	/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>. */
@@ -574,7 +574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ViewerProtocolPolicy { 'allow-all' = 0, 'https-only' = 1, 'redirect-to-https' = 2 }
+	export enum ViewerProtocolPolicy { 'allow-all' = 'allow-all', 'https-only' = 'https-only', 'redirect-to-https' = 'redirect-to-https' }
 
 
 	/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
@@ -735,7 +735,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriceClass { PriceClass_100 = 0, PriceClass_200 = 1, PriceClass_All = 2 }
+	export enum PriceClass { PriceClass_100 = 'PriceClass_100', PriceClass_200 = 'PriceClass_200', PriceClass_All = 'PriceClass_All' }
 
 
 	/** <p>A complex type that specifies the following:</p> <ul> <li> <p>Which SSL/TLS certificate to use when viewers request objects using HTTPS</p> </li> <li> <p>Whether you want CloudFront to use dedicated IP addresses or SNI when you're using alternate domain names in your object names</p> </li> <li> <p>The minimum protocol version that you want CloudFront to use when communicating with viewers</p> </li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS Connection to Access Your Objects</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.</p> */
@@ -772,11 +772,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SSLSupportMethod { 'sni-only' = 0, vip = 1 }
+	export enum SSLSupportMethod { 'sni-only' = 'sni-only', vip = 'vip' }
 
-	export enum MinimumProtocolVersion { SSLv3 = 0, TLSv1 = 1 }
+	export enum MinimumProtocolVersion { SSLv3 = 'SSLv3', TLSv1 = 'TLSv1' }
 
-	export enum CertificateSource { cloudfront = 0, iam = 1, acm = 2 }
+	export enum CertificateSource { cloudfront = 'cloudfront', iam = 'iam', acm = 'acm' }
 
 
 	/** A complex type that identifies ways in which you want to restrict distribution of your content. */
@@ -827,9 +827,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoRestrictionType { blacklist = 0, whitelist = 1, none = 2 }
+	export enum GeoRestrictionType { blacklist = 'blacklist', whitelist = 'whitelist', none = 'none' }
 
-	export enum HttpVersion { 'http1.1' = 0, http2 = 1 }
+	export enum HttpVersion { 'http1.1' = 'http1.1', http2 = 'http2' }
 
 	export interface CNAMEAlreadyExists {
 		Message?: string | null;
@@ -2665,7 +2665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginProtocolPolicy { 'http-only' = 0, 'match-viewer' = 1, 'https-only' = 2 }
+	export enum OriginProtocolPolicy { 'http-only' = 'http-only', 'match-viewer' = 'match-viewer', 'https-only' = 'https-only' }
 
 
 	/** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.  */
@@ -2887,7 +2887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { 'viewer-request' = 0, 'viewer-response' = 1, 'origin-request' = 2, 'origin-response' = 3 }
+	export enum EventType { 'viewer-request' = 'viewer-request', 'viewer-response' = 'viewer-response', 'origin-request' = 'origin-request', 'origin-response' = 'origin-response' }
 
 
 	/** The origin access identity's configuration information. For more information, see <a>CloudFrontOriginAccessIdentityConfigComplexType</a>. */
@@ -3148,7 +3148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Method { GET = 0, HEAD = 1, POST = 2, PUT = 3, PATCH = 4, OPTIONS = 5, DELETE = 6 }
+	export enum Method { GET = 'GET', HEAD = 'HEAD', POST = 'POST', PUT = 'PUT', PATCH = 'PATCH', OPTIONS = 'OPTIONS', DELETE = 'DELETE' }
 
 
 	/** A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the <code>CustomOriginConfig</code> element instead. */
@@ -3251,7 +3251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslProtocol { SSLv3 = 0, TLSv1 = 1, 'TLSv1.1' = 2, 'TLSv1.2' = 3 }
+	export enum SslProtocol { SSLv3 = 'SSLv3', TLSv1 = 'TLSv1', 'TLSv1.1' = 'TLSv1.1', 'TLSv1.2' = 'TLSv1.2' }
 
 
 	/**  A summary of the information for an Amazon CloudFront streaming distribution. */
@@ -3630,9 +3630,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum TagResource2016_11_25Operation { Tag = 0 }
+	export enum TagResource2016_11_25Operation { Tag = 'Tag' }
 
-	export enum UntagResource2016_11_25Operation { Untag = 0 }
+	export enum UntagResource2016_11_25Operation { Untag = 'Untag' }
 
 }
 

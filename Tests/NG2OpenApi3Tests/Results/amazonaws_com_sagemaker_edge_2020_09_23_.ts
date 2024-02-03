@@ -38,9 +38,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentType { Model = 0 }
+	export enum DeploymentType { Model = 'Model' }
 
-	export enum FailureHandlingPolicy { ROLLBACK_ON_FAILURE = 0, DO_NOTHING = 1 }
+	export enum FailureHandlingPolicy { ROLLBACK_ON_FAILURE = 'ROLLBACK_ON_FAILURE', DO_NOTHING = 'DO_NOTHING' }
 
 
 	/** <p/> */
@@ -86,9 +86,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChecksumType { SHA1 = 0 }
+	export enum ChecksumType { SHA1 = 'SHA1' }
 
-	export enum ModelState { DEPLOY = 0, UNDEPLOY = 1 }
+	export enum ModelState { DEPLOY = 'DEPLOY', UNDEPLOY = 'UNDEPLOY' }
 
 	export interface InternalServiceException {
 	}
@@ -207,7 +207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentStatus { SUCCESS = 0, FAIL = 1 }
+	export enum DeploymentStatus { SUCCESS = 'SUCCESS', FAIL = 'FAIL' }
 
 
 	/** Information about the result of a deployment on an edge device that is registered with SageMaker Edge Manager. */

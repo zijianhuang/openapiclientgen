@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AreGamesInProgressFormat { XML = 0, JSON = 1 }
+	export enum AreGamesInProgressFormat { XML = 'XML', JSON = 'JSON' }
 
 }
 

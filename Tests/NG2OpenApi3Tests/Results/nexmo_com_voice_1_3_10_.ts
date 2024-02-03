@@ -92,7 +92,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateCallRequestBaseEvent_method { POST = 0, GET = 1 }
+	export enum CreateCallRequestBaseEvent_method { POST = 'POST', GET = 'GET' }
 
 
 	/** Connect to a Phone (PSTN) number */
@@ -138,7 +138,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateCallRequestBaseMachine_detection { continue = 0, hangup = 1 }
+	export enum CreateCallRequestBaseMachine_detection { continue = 'continue', hangup = 'hangup' }
 
 	export interface CreateCallRequestNcco {
 	}
@@ -188,7 +188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateCallResponseDirection { outbound = 0, inbound = 1 }
+	export enum CreateCallResponseDirection { outbound = 'outbound', inbound = 'inbound' }
 
 	export interface DTMFRequest {
 
@@ -448,7 +448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointWebsocketContent_type { 'audio/l16;rate=8000' = 0, 'audio/l16;rate=16000' = 1 }
+	export enum EndpointWebsocketContent_type { 'audio/l16;rate=8000' = 'audio/l16;rate=8000', 'audio/l16;rate=16000' = 'audio/l16;rate=16000' }
 
 	export interface EndpointWebsocketHeaders {
 
@@ -678,7 +678,7 @@ export namespace MyNS {
 
 
 	/** Transfer the call to a new NCCO */
-	export enum RequestTransferActionParam { transfer = 0 }
+	export enum RequestTransferActionParam { transfer = 'transfer' }
 
 	export interface StartStreamRequest {
 
@@ -796,9 +796,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StartTalkRequestLanguage { ar = 0, 'ca-ES' = 1, 'cmn-CN' = 2, 'cmn-TW' = 3, 'cs-CZ' = 4, 'cy-GB' = 5, 'da-DK' = 6, 'de-DE' = 7, 'el-GR' = 8, 'en-AU' = 9, 'en-GB' = 10, 'en-GB-WLS' = 11, 'en-IN' = 12, 'en-US' = 13, 'en-ZA' = 14, 'es-ES' = 15, 'es-MX' = 16, 'es-US' = 17, 'eu-ES' = 18, 'fi-FI' = 19, 'fil-PH' = 20, 'fr-CA' = 21, 'fr-FR' = 22, 'he-IL' = 23, 'hi-IN' = 24, 'hu-HU' = 25, 'id-ID' = 26, 'is-IS' = 27, 'it-IT' = 28, 'ja-JP' = 29, 'ko-KR' = 30, 'nb-NO' = 31, 'nl-NL' = 32, 'no-NO' = 33, 'pl-PL' = 34, 'pt-BR' = 35, 'pt-PT' = 36, 'ro-RO' = 37, 'ru-RU' = 38, 'sk-SK' = 39, 'sv-SE' = 40, 'th-TH' = 41, 'tr-TR' = 42, 'uk-UA' = 43, 'vi-VN' = 44, 'yue-CN' = 45 }
+	export enum StartTalkRequestLanguage { ar = 'ar', 'ca-ES' = 'ca-ES', 'cmn-CN' = 'cmn-CN', 'cmn-TW' = 'cmn-TW', 'cs-CZ' = 'cs-CZ', 'cy-GB' = 'cy-GB', 'da-DK' = 'da-DK', 'de-DE' = 'de-DE', 'el-GR' = 'el-GR', 'en-AU' = 'en-AU', 'en-GB' = 'en-GB', 'en-GB-WLS' = 'en-GB-WLS', 'en-IN' = 'en-IN', 'en-US' = 'en-US', 'en-ZA' = 'en-ZA', 'es-ES' = 'es-ES', 'es-MX' = 'es-MX', 'es-US' = 'es-US', 'eu-ES' = 'eu-ES', 'fi-FI' = 'fi-FI', 'fil-PH' = 'fil-PH', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'he-IL' = 'he-IL', 'hi-IN' = 'hi-IN', 'hu-HU' = 'hu-HU', 'id-ID' = 'id-ID', 'is-IS' = 'is-IS', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'ko-KR' = 'ko-KR', 'nb-NO' = 'nb-NO', 'nl-NL' = 'nl-NL', 'no-NO' = 'no-NO', 'pl-PL' = 'pl-PL', 'pt-BR' = 'pt-BR', 'pt-PT' = 'pt-PT', 'ro-RO' = 'ro-RO', 'ru-RU' = 'ru-RU', 'sk-SK' = 'sk-SK', 'sv-SE' = 'sv-SE', 'th-TH' = 'th-TH', 'tr-TR' = 'tr-TR', 'uk-UA' = 'uk-UA', 'vi-VN' = 'vi-VN', 'yue-CN' = 'yue-CN' }
 
-	export enum StartTalkRequestVoice_name { Aditi = 0, Agnieszka = 1, Alva = 2, Amy = 3, Astrid = 4, Bianca = 5, Brian = 6, Carla = 7, Carmen = 8, Carmit = 9, Catarina = 10, Celine = 11, Cem = 12, Chantal = 13, Chipmunk = 14, Conchita = 15, Cristiano = 16, Damayanti = 17, Dora = 18, Emma = 19, Empar = 20, Enrique = 21, Eric = 22, Ewa = 23, Felipe = 24, Filiz = 25, Geraint = 26, Giorgio = 27, Gwyneth = 28, Hans = 29, Henrik = 30, Ines = 31, Ioana = 32, Iveta = 33, Ivy = 34, Jacek = 35, Jan = 36, Jennifer = 37, Joana = 38, Joanna = 39, Joey = 40, Jordi = 41, Justin = 42, Kanya = 43, Karl = 44, Kendra = 45, Kimberly = 46, Laila = 47, Laura = 48, Lea = 49, Lekha = 50, Liv = 51, Lotte = 52, Lucia = 53, Luciana = 54, Mads = 55, Maged = 56, Maja = 57, Mariska = 58, Marlene = 59, Mathieu = 60, Matthew = 61, Maxim = 62, 'Mei-Jia' = 63, Melina = 64, Mia = 65, Miguel = 66, Miren = 67, Mizuki = 68, Montserrat = 69, Naja = 70, Nicole = 71, Nikos = 72, Nora = 73, Oskar = 74, Penelope = 75, Raveena = 76, Ricardo = 77, Ruben = 78, Russell = 79, Salli = 80, Satu = 81, Seoyeon = 82, 'Sin-Ji' = 83, Sora = 84, Takumi = 85, Tarik = 86, Tatyana = 87, Tessa = 88, 'Tian-Tian' = 89, Vicki = 90, Vitoria = 91, Yelda = 92, Zeina = 93, Zhiyu = 94, Zuzana = 95 }
+	export enum StartTalkRequestVoice_name { Aditi = 'Aditi', Agnieszka = 'Agnieszka', Alva = 'Alva', Amy = 'Amy', Astrid = 'Astrid', Bianca = 'Bianca', Brian = 'Brian', Carla = 'Carla', Carmen = 'Carmen', Carmit = 'Carmit', Catarina = 'Catarina', Celine = 'Celine', Cem = 'Cem', Chantal = 'Chantal', Chipmunk = 'Chipmunk', Conchita = 'Conchita', Cristiano = 'Cristiano', Damayanti = 'Damayanti', Dora = 'Dora', Emma = 'Emma', Empar = 'Empar', Enrique = 'Enrique', Eric = 'Eric', Ewa = 'Ewa', Felipe = 'Felipe', Filiz = 'Filiz', Geraint = 'Geraint', Giorgio = 'Giorgio', Gwyneth = 'Gwyneth', Hans = 'Hans', Henrik = 'Henrik', Ines = 'Ines', Ioana = 'Ioana', Iveta = 'Iveta', Ivy = 'Ivy', Jacek = 'Jacek', Jan = 'Jan', Jennifer = 'Jennifer', Joana = 'Joana', Joanna = 'Joanna', Joey = 'Joey', Jordi = 'Jordi', Justin = 'Justin', Kanya = 'Kanya', Karl = 'Karl', Kendra = 'Kendra', Kimberly = 'Kimberly', Laila = 'Laila', Laura = 'Laura', Lea = 'Lea', Lekha = 'Lekha', Liv = 'Liv', Lotte = 'Lotte', Lucia = 'Lucia', Luciana = 'Luciana', Mads = 'Mads', Maged = 'Maged', Maja = 'Maja', Mariska = 'Mariska', Marlene = 'Marlene', Mathieu = 'Mathieu', Matthew = 'Matthew', Maxim = 'Maxim', 'Mei-Jia' = 'Mei-Jia', Melina = 'Melina', Mia = 'Mia', Miguel = 'Miguel', Miren = 'Miren', Mizuki = 'Mizuki', Montserrat = 'Montserrat', Naja = 'Naja', Nicole = 'Nicole', Nikos = 'Nikos', Nora = 'Nora', Oskar = 'Oskar', Penelope = 'Penelope', Raveena = 'Raveena', Ricardo = 'Ricardo', Ruben = 'Ruben', Russell = 'Russell', Salli = 'Salli', Satu = 'Satu', Seoyeon = 'Seoyeon', 'Sin-Ji' = 'Sin-Ji', Sora = 'Sora', Takumi = 'Takumi', Tarik = 'Tarik', Tatyana = 'Tatyana', Tessa = 'Tessa', 'Tian-Tian' = 'Tian-Tian', Vicki = 'Vicki', Vitoria = 'Vitoria', Yelda = 'Yelda', Zeina = 'Zeina', Zhiyu = 'Zhiyu', Zuzana = 'Zuzana' }
 
 	export interface StartTalkResponse {
 
@@ -889,7 +889,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateCallRequestEarmuffAction { earmuff = 0 }
+	export enum UpdateCallRequestEarmuffAction { earmuff = 'earmuff' }
 
 	export interface UpdateCallRequestHangup {
 
@@ -908,7 +908,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateCallRequestHangupAction { hangup = 0 }
+	export enum UpdateCallRequestHangupAction { hangup = 'hangup' }
 
 	export interface UpdateCallRequestMute {
 
@@ -927,7 +927,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateCallRequestMuteAction { mute = 0 }
+	export enum UpdateCallRequestMuteAction { mute = 'mute' }
 
 	export interface UpdateCallRequestTransferAnswerUrl {
 
@@ -1056,7 +1056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateCallRequestUnearmuffAction { unearmuff = 0 }
+	export enum UpdateCallRequestUnearmuffAction { unearmuff = 'unearmuff' }
 
 	export interface UpdateCallRequestUnmute {
 
@@ -1077,15 +1077,15 @@ export namespace MyNS {
 
 
 	/** Possible values are `outbound` or `inbound` */
-	export enum Direction { outbound = 0, inbound = 1 }
+	export enum Direction { outbound = 'outbound', inbound = 'inbound' }
 
 
 	/** The language to use */
-	export enum Language { ar = 0, 'ca-ES' = 1, 'cmn-CN' = 2, 'cmn-TW' = 3, 'cs-CZ' = 4, 'cy-GB' = 5, 'da-DK' = 6, 'de-DE' = 7, 'el-GR' = 8, 'en-AU' = 9, 'en-GB' = 10, 'en-GB-WLS' = 11, 'en-IN' = 12, 'en-US' = 13, 'en-ZA' = 14, 'es-ES' = 15, 'es-MX' = 16, 'es-US' = 17, 'eu-ES' = 18, 'fi-FI' = 19, 'fil-PH' = 20, 'fr-CA' = 21, 'fr-FR' = 22, 'he-IL' = 23, 'hi-IN' = 24, 'hu-HU' = 25, 'id-ID' = 26, 'is-IS' = 27, 'it-IT' = 28, 'ja-JP' = 29, 'ko-KR' = 30, 'nb-NO' = 31, 'nl-NL' = 32, 'no-NO' = 33, 'pl-PL' = 34, 'pt-BR' = 35, 'pt-PT' = 36, 'ro-RO' = 37, 'ru-RU' = 38, 'sk-SK' = 39, 'sv-SE' = 40, 'th-TH' = 41, 'tr-TR' = 42, 'uk-UA' = 43, 'vi-VN' = 44, 'yue-CN' = 45 }
+	export enum Language { ar = 'ar', 'ca-ES' = 'ca-ES', 'cmn-CN' = 'cmn-CN', 'cmn-TW' = 'cmn-TW', 'cs-CZ' = 'cs-CZ', 'cy-GB' = 'cy-GB', 'da-DK' = 'da-DK', 'de-DE' = 'de-DE', 'el-GR' = 'el-GR', 'en-AU' = 'en-AU', 'en-GB' = 'en-GB', 'en-GB-WLS' = 'en-GB-WLS', 'en-IN' = 'en-IN', 'en-US' = 'en-US', 'en-ZA' = 'en-ZA', 'es-ES' = 'es-ES', 'es-MX' = 'es-MX', 'es-US' = 'es-US', 'eu-ES' = 'eu-ES', 'fi-FI' = 'fi-FI', 'fil-PH' = 'fil-PH', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'he-IL' = 'he-IL', 'hi-IN' = 'hi-IN', 'hu-HU' = 'hu-HU', 'id-ID' = 'id-ID', 'is-IS' = 'is-IS', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'ko-KR' = 'ko-KR', 'nb-NO' = 'nb-NO', 'nl-NL' = 'nl-NL', 'no-NO' = 'no-NO', 'pl-PL' = 'pl-PL', 'pt-BR' = 'pt-BR', 'pt-PT' = 'pt-PT', 'ro-RO' = 'ro-RO', 'ru-RU' = 'ru-RU', 'sk-SK' = 'sk-SK', 'sv-SE' = 'sv-SE', 'th-TH' = 'th-TH', 'tr-TR' = 'tr-TR', 'uk-UA' = 'uk-UA', 'vi-VN' = 'vi-VN', 'yue-CN' = 'yue-CN' }
 
 
 	/** <strong>DEPRECATED</strong> The voice & language to use */
-	export enum Voice_name { Aditi = 0, Agnieszka = 1, Alva = 2, Amy = 3, Astrid = 4, Bianca = 5, Brian = 6, Carla = 7, Carmen = 8, Carmit = 9, Catarina = 10, Celine = 11, Cem = 12, Chantal = 13, Chipmunk = 14, Conchita = 15, Cristiano = 16, Damayanti = 17, Dora = 18, Emma = 19, Empar = 20, Enrique = 21, Eric = 22, Ewa = 23, Felipe = 24, Filiz = 25, Geraint = 26, Giorgio = 27, Gwyneth = 28, Hans = 29, Henrik = 30, Ines = 31, Ioana = 32, Iveta = 33, Ivy = 34, Jacek = 35, Jan = 36, Jennifer = 37, Joana = 38, Joanna = 39, Joey = 40, Jordi = 41, Justin = 42, Kanya = 43, Karl = 44, Kendra = 45, Kimberly = 46, Laila = 47, Laura = 48, Lea = 49, Lekha = 50, Liv = 51, Lotte = 52, Lucia = 53, Luciana = 54, Mads = 55, Maged = 56, Maja = 57, Mariska = 58, Marlene = 59, Mathieu = 60, Matthew = 61, Maxim = 62, 'Mei-Jia' = 63, Melina = 64, Mia = 65, Miguel = 66, Miren = 67, Mizuki = 68, Montserrat = 69, Naja = 70, Nicole = 71, Nikos = 72, Nora = 73, Oskar = 74, Penelope = 75, Raveena = 76, Ricardo = 77, Ruben = 78, Russell = 79, Salli = 80, Satu = 81, Seoyeon = 82, 'Sin-Ji' = 83, Sora = 84, Takumi = 85, Tarik = 86, Tatyana = 87, Tessa = 88, 'Tian-Tian' = 89, Vicki = 90, Vitoria = 91, Yelda = 92, Zeina = 93, Zhiyu = 94, Zuzana = 95 }
+	export enum Voice_name { Aditi = 'Aditi', Agnieszka = 'Agnieszka', Alva = 'Alva', Amy = 'Amy', Astrid = 'Astrid', Bianca = 'Bianca', Brian = 'Brian', Carla = 'Carla', Carmen = 'Carmen', Carmit = 'Carmit', Catarina = 'Catarina', Celine = 'Celine', Cem = 'Cem', Chantal = 'Chantal', Chipmunk = 'Chipmunk', Conchita = 'Conchita', Cristiano = 'Cristiano', Damayanti = 'Damayanti', Dora = 'Dora', Emma = 'Emma', Empar = 'Empar', Enrique = 'Enrique', Eric = 'Eric', Ewa = 'Ewa', Felipe = 'Felipe', Filiz = 'Filiz', Geraint = 'Geraint', Giorgio = 'Giorgio', Gwyneth = 'Gwyneth', Hans = 'Hans', Henrik = 'Henrik', Ines = 'Ines', Ioana = 'Ioana', Iveta = 'Iveta', Ivy = 'Ivy', Jacek = 'Jacek', Jan = 'Jan', Jennifer = 'Jennifer', Joana = 'Joana', Joanna = 'Joanna', Joey = 'Joey', Jordi = 'Jordi', Justin = 'Justin', Kanya = 'Kanya', Karl = 'Karl', Kendra = 'Kendra', Kimberly = 'Kimberly', Laila = 'Laila', Laura = 'Laura', Lea = 'Lea', Lekha = 'Lekha', Liv = 'Liv', Lotte = 'Lotte', Lucia = 'Lucia', Luciana = 'Luciana', Mads = 'Mads', Maged = 'Maged', Maja = 'Maja', Mariska = 'Mariska', Marlene = 'Marlene', Mathieu = 'Mathieu', Matthew = 'Matthew', Maxim = 'Maxim', 'Mei-Jia' = 'Mei-Jia', Melina = 'Melina', Mia = 'Mia', Miguel = 'Miguel', Miren = 'Miren', Mizuki = 'Mizuki', Montserrat = 'Montserrat', Naja = 'Naja', Nicole = 'Nicole', Nikos = 'Nikos', Nora = 'Nora', Oskar = 'Oskar', Penelope = 'Penelope', Raveena = 'Raveena', Ricardo = 'Ricardo', Ruben = 'Ruben', Russell = 'Russell', Salli = 'Salli', Satu = 'Satu', Seoyeon = 'Seoyeon', 'Sin-Ji' = 'Sin-Ji', Sora = 'Sora', Takumi = 'Takumi', Tarik = 'Tarik', Tatyana = 'Tatyana', Tessa = 'Tessa', 'Tian-Tian' = 'Tian-Tian', Vicki = 'Vicki', Vitoria = 'Vitoria', Yelda = 'Yelda', Zeina = 'Zeina', Zhiyu = 'Zhiyu', Zuzana = 'Zuzana' }
 
 	@Injectable()
 	export class MyClient {
@@ -1194,9 +1194,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetCallsStatus { started = 0, ringing = 1, answered = 2, machine = 3, completed = 4, busy = 5, cancelled = 6, failed = 7, rejected = 8, timeout = 9, unanswered = 10 }
+	export enum GetCallsStatus { started = 'started', ringing = 'ringing', answered = 'answered', machine = 'machine', completed = 'completed', busy = 'busy', cancelled = 'cancelled', failed = 'failed', rejected = 'rejected', timeout = 'timeout', unanswered = 'unanswered' }
 
-	export enum GetCallsOrder { asc = 0, desc = 1 }
+	export enum GetCallsOrder { asc = 'asc', desc = 'desc' }
 
 }
 

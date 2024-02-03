@@ -626,7 +626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityErrorResponseError { invalid_request = 0, unauthorized_client = 1, access_denied = 2, unsupported_response_type = 3, invalid_scope = 4, server_error = 5, service_unavailable = 6, bad_request = 7, forbidden = 8, not_found = 9, method_not_allowed = 10, too_many_requests = 11 }
+	export enum IdentityErrorResponseError { invalid_request = 'invalid_request', unauthorized_client = 'unauthorized_client', access_denied = 'access_denied', unsupported_response_type = 'unsupported_response_type', invalid_scope = 'invalid_scope', server_error = 'server_error', service_unavailable = 'service_unavailable', bad_request = 'bad_request', forbidden = 'forbidden', not_found = 'not_found', method_not_allowed = 'method_not_allowed', too_many_requests = 'too_many_requests' }
 
 
 	/** This is the response from the Identity_GetInfo operation. */
@@ -956,9 +956,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Attested_GetDocumentApi_version { '2018-10-01' = 0 }
+	export enum Attested_GetDocumentApi_version { '2018-10-01' = '2018-10-01' }
 
-	export enum Attested_GetDocumentMetadata { true = 0 }
+	export enum Attested_GetDocumentMetadata { true = 'true' }
 
 }
 

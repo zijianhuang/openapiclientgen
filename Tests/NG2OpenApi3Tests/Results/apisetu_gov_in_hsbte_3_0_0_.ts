@@ -1311,7 +1311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DgmstPostBodyFormat { pdf = 0 }
+	export enum DgmstPostBodyFormat { pdf = 'pdf' }
 
 }
 

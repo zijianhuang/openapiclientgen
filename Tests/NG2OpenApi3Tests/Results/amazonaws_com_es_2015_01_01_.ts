@@ -101,7 +101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InboundCrossClusterSearchConnectionStatusCode { PENDING_ACCEPTANCE = 0, APPROVED = 1, REJECTING = 2, REJECTED = 3, DELETING = 4, DELETED = 5 }
+	export enum InboundCrossClusterSearchConnectionStatusCode { PENDING_ACCEPTANCE = 'PENDING_ACCEPTANCE', APPROVED = 'APPROVED', REJECTING = 'REJECTING', REJECTED = 'REJECTED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -245,9 +245,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageType { 'TXT-DICTIONARY' = 0 }
+	export enum PackageType { 'TXT-DICTIONARY' = 'TXT-DICTIONARY' }
 
-	export enum DomainPackageStatus { ASSOCIATING = 0, ASSOCIATION_FAILED = 1, ACTIVE = 2, DISSOCIATING = 3, DISSOCIATION_FAILED = 4 }
+	export enum DomainPackageStatus { ASSOCIATING = 'ASSOCIATING', ASSOCIATION_FAILED = 'ASSOCIATION_FAILED', ACTIVE = 'ACTIVE', DISSOCIATING = 'DISSOCIATING', DISSOCIATION_FAILED = 'DISSOCIATION_FAILED' }
 
 	export interface ErrorDetails {
 		ErrorType?: string | null;
@@ -324,7 +324,7 @@ export namespace MyNS {
 
 
 	/** Specifies the type of AWS account permitted to manage VPC endpoints.: <ul> <li>AWS_ACCOUNT: Indicates that the account is owned by an AWS user.</li> <li>AWS_SERVICE: Indicates the the account is owned by an AWS service.</li> </ul>  */
-	export enum PrincipalType { AWS_ACCOUNT = 0, AWS_SERVICE = 1 }
+	export enum PrincipalType { AWS_ACCOUNT = 'AWS_ACCOUNT', AWS_SERVICE = 'AWS_SERVICE' }
 
 
 	/** The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update. */
@@ -379,7 +379,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentStatus { PENDING_UPDATE = 0, IN_PROGRESS = 1, COMPLETED = 2, NOT_ELIGIBLE = 3, ELIGIBLE = 4 }
+	export enum DeploymentStatus { PENDING_UPDATE = 'PENDING_UPDATE', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', NOT_ELIGIBLE = 'NOT_ELIGIBLE', ELIGIBLE = 'ELIGIBLE' }
 
 
 	/** The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain. */
@@ -522,7 +522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ESPartitionInstanceType { 'm3.medium.elasticsearch' = 0, 'm3.large.elasticsearch' = 1, 'm3.xlarge.elasticsearch' = 2, 'm3.2xlarge.elasticsearch' = 3, 'm4.large.elasticsearch' = 4, 'm4.xlarge.elasticsearch' = 5, 'm4.2xlarge.elasticsearch' = 6, 'm4.4xlarge.elasticsearch' = 7, 'm4.10xlarge.elasticsearch' = 8, 'm5.large.elasticsearch' = 9, 'm5.xlarge.elasticsearch' = 10, 'm5.2xlarge.elasticsearch' = 11, 'm5.4xlarge.elasticsearch' = 12, 'm5.12xlarge.elasticsearch' = 13, 'r5.large.elasticsearch' = 14, 'r5.xlarge.elasticsearch' = 15, 'r5.2xlarge.elasticsearch' = 16, 'r5.4xlarge.elasticsearch' = 17, 'r5.12xlarge.elasticsearch' = 18, 'c5.large.elasticsearch' = 19, 'c5.xlarge.elasticsearch' = 20, 'c5.2xlarge.elasticsearch' = 21, 'c5.4xlarge.elasticsearch' = 22, 'c5.9xlarge.elasticsearch' = 23, 'c5.18xlarge.elasticsearch' = 24, 'ultrawarm1.medium.elasticsearch' = 25, 'ultrawarm1.large.elasticsearch' = 26, 't2.micro.elasticsearch' = 27, 't2.small.elasticsearch' = 28, 't2.medium.elasticsearch' = 29, 'r3.large.elasticsearch' = 30, 'r3.xlarge.elasticsearch' = 31, 'r3.2xlarge.elasticsearch' = 32, 'r3.4xlarge.elasticsearch' = 33, 'r3.8xlarge.elasticsearch' = 34, 'i2.xlarge.elasticsearch' = 35, 'i2.2xlarge.elasticsearch' = 36, 'd2.xlarge.elasticsearch' = 37, 'd2.2xlarge.elasticsearch' = 38, 'd2.4xlarge.elasticsearch' = 39, 'd2.8xlarge.elasticsearch' = 40, 'c4.large.elasticsearch' = 41, 'c4.xlarge.elasticsearch' = 42, 'c4.2xlarge.elasticsearch' = 43, 'c4.4xlarge.elasticsearch' = 44, 'c4.8xlarge.elasticsearch' = 45, 'r4.large.elasticsearch' = 46, 'r4.xlarge.elasticsearch' = 47, 'r4.2xlarge.elasticsearch' = 48, 'r4.4xlarge.elasticsearch' = 49, 'r4.8xlarge.elasticsearch' = 50, 'r4.16xlarge.elasticsearch' = 51, 'i3.large.elasticsearch' = 52, 'i3.xlarge.elasticsearch' = 53, 'i3.2xlarge.elasticsearch' = 54, 'i3.4xlarge.elasticsearch' = 55, 'i3.8xlarge.elasticsearch' = 56, 'i3.16xlarge.elasticsearch' = 57 }
+	export enum ESPartitionInstanceType { 'm3.medium.elasticsearch' = 'm3.medium.elasticsearch', 'm3.large.elasticsearch' = 'm3.large.elasticsearch', 'm3.xlarge.elasticsearch' = 'm3.xlarge.elasticsearch', 'm3.2xlarge.elasticsearch' = 'm3.2xlarge.elasticsearch', 'm4.large.elasticsearch' = 'm4.large.elasticsearch', 'm4.xlarge.elasticsearch' = 'm4.xlarge.elasticsearch', 'm4.2xlarge.elasticsearch' = 'm4.2xlarge.elasticsearch', 'm4.4xlarge.elasticsearch' = 'm4.4xlarge.elasticsearch', 'm4.10xlarge.elasticsearch' = 'm4.10xlarge.elasticsearch', 'm5.large.elasticsearch' = 'm5.large.elasticsearch', 'm5.xlarge.elasticsearch' = 'm5.xlarge.elasticsearch', 'm5.2xlarge.elasticsearch' = 'm5.2xlarge.elasticsearch', 'm5.4xlarge.elasticsearch' = 'm5.4xlarge.elasticsearch', 'm5.12xlarge.elasticsearch' = 'm5.12xlarge.elasticsearch', 'r5.large.elasticsearch' = 'r5.large.elasticsearch', 'r5.xlarge.elasticsearch' = 'r5.xlarge.elasticsearch', 'r5.2xlarge.elasticsearch' = 'r5.2xlarge.elasticsearch', 'r5.4xlarge.elasticsearch' = 'r5.4xlarge.elasticsearch', 'r5.12xlarge.elasticsearch' = 'r5.12xlarge.elasticsearch', 'c5.large.elasticsearch' = 'c5.large.elasticsearch', 'c5.xlarge.elasticsearch' = 'c5.xlarge.elasticsearch', 'c5.2xlarge.elasticsearch' = 'c5.2xlarge.elasticsearch', 'c5.4xlarge.elasticsearch' = 'c5.4xlarge.elasticsearch', 'c5.9xlarge.elasticsearch' = 'c5.9xlarge.elasticsearch', 'c5.18xlarge.elasticsearch' = 'c5.18xlarge.elasticsearch', 'ultrawarm1.medium.elasticsearch' = 'ultrawarm1.medium.elasticsearch', 'ultrawarm1.large.elasticsearch' = 'ultrawarm1.large.elasticsearch', 't2.micro.elasticsearch' = 't2.micro.elasticsearch', 't2.small.elasticsearch' = 't2.small.elasticsearch', 't2.medium.elasticsearch' = 't2.medium.elasticsearch', 'r3.large.elasticsearch' = 'r3.large.elasticsearch', 'r3.xlarge.elasticsearch' = 'r3.xlarge.elasticsearch', 'r3.2xlarge.elasticsearch' = 'r3.2xlarge.elasticsearch', 'r3.4xlarge.elasticsearch' = 'r3.4xlarge.elasticsearch', 'r3.8xlarge.elasticsearch' = 'r3.8xlarge.elasticsearch', 'i2.xlarge.elasticsearch' = 'i2.xlarge.elasticsearch', 'i2.2xlarge.elasticsearch' = 'i2.2xlarge.elasticsearch', 'd2.xlarge.elasticsearch' = 'd2.xlarge.elasticsearch', 'd2.2xlarge.elasticsearch' = 'd2.2xlarge.elasticsearch', 'd2.4xlarge.elasticsearch' = 'd2.4xlarge.elasticsearch', 'd2.8xlarge.elasticsearch' = 'd2.8xlarge.elasticsearch', 'c4.large.elasticsearch' = 'c4.large.elasticsearch', 'c4.xlarge.elasticsearch' = 'c4.xlarge.elasticsearch', 'c4.2xlarge.elasticsearch' = 'c4.2xlarge.elasticsearch', 'c4.4xlarge.elasticsearch' = 'c4.4xlarge.elasticsearch', 'c4.8xlarge.elasticsearch' = 'c4.8xlarge.elasticsearch', 'r4.large.elasticsearch' = 'r4.large.elasticsearch', 'r4.xlarge.elasticsearch' = 'r4.xlarge.elasticsearch', 'r4.2xlarge.elasticsearch' = 'r4.2xlarge.elasticsearch', 'r4.4xlarge.elasticsearch' = 'r4.4xlarge.elasticsearch', 'r4.8xlarge.elasticsearch' = 'r4.8xlarge.elasticsearch', 'r4.16xlarge.elasticsearch' = 'r4.16xlarge.elasticsearch', 'i3.large.elasticsearch' = 'i3.large.elasticsearch', 'i3.xlarge.elasticsearch' = 'i3.xlarge.elasticsearch', 'i3.2xlarge.elasticsearch' = 'i3.2xlarge.elasticsearch', 'i3.4xlarge.elasticsearch' = 'i3.4xlarge.elasticsearch', 'i3.8xlarge.elasticsearch' = 'i3.8xlarge.elasticsearch', 'i3.16xlarge.elasticsearch' = 'i3.16xlarge.elasticsearch' }
 
 
 	/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
@@ -541,7 +541,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ESWarmPartitionInstanceType { 'ultrawarm1.medium.elasticsearch' = 0, 'ultrawarm1.large.elasticsearch' = 1 }
+	export enum ESWarmPartitionInstanceType { 'ultrawarm1.medium.elasticsearch' = 'ultrawarm1.medium.elasticsearch', 'ultrawarm1.large.elasticsearch' = 'ultrawarm1.large.elasticsearch' }
 
 
 	/** Specifies the configuration for cold storage options such as enabled */
@@ -595,7 +595,7 @@ export namespace MyNS {
 
 
 	/**  The type of EBS volume, standard, gp2, gp3 or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
-	export enum VolumeType { standard = 0, gp2 = 1, io1 = 2, gp3 = 3 }
+	export enum VolumeType { standard = 'standard', gp2 = 'gp2', io1 = 'io1', gp3 = 'gp3' }
 
 
 	/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
@@ -750,7 +750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 0, 'Policy-Min-TLS-1-2-2019-07' = 1 }
+	export enum TLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 'Policy-Min-TLS-1-0-2019-07', 'Policy-Min-TLS-1-2-2019-07' = 'Policy-Min-TLS-1-2-2019-07' }
 
 
 	/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. */
@@ -856,7 +856,7 @@ export namespace MyNS {
 
 
 	/** Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a>. */
-	export enum AutoTuneState { ENABLED = 0, DISABLED = 1, ENABLE_IN_PROGRESS = 2, DISABLE_IN_PROGRESS = 3, DISABLED_AND_ROLLBACK_SCHEDULED = 4, DISABLED_AND_ROLLBACK_IN_PROGRESS = 5, DISABLED_AND_ROLLBACK_COMPLETE = 6, DISABLED_AND_ROLLBACK_ERROR = 7, ERROR = 8 }
+	export enum AutoTuneState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', ENABLE_IN_PROGRESS = 'ENABLE_IN_PROGRESS', DISABLE_IN_PROGRESS = 'DISABLE_IN_PROGRESS', DISABLED_AND_ROLLBACK_SCHEDULED = 'DISABLED_AND_ROLLBACK_SCHEDULED', DISABLED_AND_ROLLBACK_IN_PROGRESS = 'DISABLED_AND_ROLLBACK_IN_PROGRESS', DISABLED_AND_ROLLBACK_COMPLETE = 'DISABLED_AND_ROLLBACK_COMPLETE', DISABLED_AND_ROLLBACK_ERROR = 'DISABLED_AND_ROLLBACK_ERROR', ERROR = 'ERROR' }
 
 
 	/** Specifies change details of the domain configuration change. */
@@ -960,7 +960,7 @@ export namespace MyNS {
 
 
 	/** Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. */
-	export enum AutoTuneDesiredState { ENABLED = 0, DISABLED = 1 }
+	export enum AutoTuneDesiredState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Specifies Auto-Tune maitenance schedule. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. */
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 
 
 	/** Specifies the unit of a maintenance schedule duration. Valid value is HOUR. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. */
-	export enum TimeUnit { HOURS = 0 }
+	export enum TimeUnit { HOURS = 'HOURS' }
 
 	export interface InvalidTypeException {
 	}
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutboundCrossClusterSearchConnectionStatusCode { PENDING_ACCEPTANCE = 0, VALIDATING = 1, VALIDATION_FAILED = 2, PROVISIONING = 3, ACTIVE = 4, REJECTED = 5, DELETING = 6, DELETED = 7 }
+	export enum OutboundCrossClusterSearchConnectionStatusCode { PENDING_ACCEPTANCE = 'PENDING_ACCEPTANCE', VALIDATING = 'VALIDATING', VALIDATION_FAILED = 'VALIDATION_FAILED', PROVISIONING = 'PROVISIONING', ACTIVE = 'ACTIVE', REJECTED = 'REJECTED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/**  Container for response returned by <code> <a>CreatePackage</a> </code> operation.  */
@@ -1126,7 +1126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageStatus { COPYING = 0, COPY_FAILED = 1, VALIDATING = 2, VALIDATION_FAILED = 3, AVAILABLE = 4, DELETING = 5, DELETED = 6, DELETE_FAILED = 7 }
+	export enum PackageStatus { COPYING = 'COPYING', COPY_FAILED = 'COPY_FAILED', VALIDATING = 'VALIDATING', VALIDATION_FAILED = 'VALIDATION_FAILED', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', DELETED = 'DELETED', DELETE_FAILED = 'DELETE_FAILED' }
 
 
 	/** Container for response parameters to the <code><a>CreateVpcEndpoint</a></code> operation. Contains the configuration and status of the VPC Endpoint being created. */
@@ -1177,7 +1177,7 @@ export namespace MyNS {
 
 
 	/** Specifies the current status of the VPC endpoint: <ul> <li>CREATING: Indicates that the VPC endpoint is currently being created.</li> <li>CREATE_FAILED: Indicates that the VPC endpoint creation failed.</li> <li>ACTIVE: Indicates that the VPC endpoint is currently active.</li> <li>UPDATING: Indicates that the VPC endpoint is currently being updated.</li> <li>UPDATE_FAILED: Indicates that the VPC endpoint update failed.</li> <li>DELETING: Indicates that the VPC endpoint is currently being deleted.</li> <li>DELETE_FAILED: Indicates that the VPC endpoint deletion failed.</li> </ul>  */
-	export enum VpcEndpointStatus { CREATING = 0, CREATE_FAILED = 1, ACTIVE = 2, UPDATING = 3, UPDATE_FAILED = 4, DELETING = 5, DELETE_FAILED = 6 }
+	export enum VpcEndpointStatus { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED' }
 
 
 	/** The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted. */
@@ -1343,7 +1343,7 @@ export namespace MyNS {
 
 
 	/** Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION.  */
-	export enum AutoTuneType { SCHEDULED_ACTION = 0 }
+	export enum AutoTuneType { SCHEDULED_ACTION = 'SCHEDULED_ACTION' }
 
 
 	/** Specifies details of the Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.  */
@@ -1390,11 +1390,11 @@ export namespace MyNS {
 
 
 	/** Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.  */
-	export enum ScheduledAutoTuneActionType { JVM_HEAP_SIZE_TUNING = 0, JVM_YOUNG_GEN_TUNING = 1 }
+	export enum ScheduledAutoTuneActionType { JVM_HEAP_SIZE_TUNING = 'JVM_HEAP_SIZE_TUNING', JVM_YOUNG_GEN_TUNING = 'JVM_YOUNG_GEN_TUNING' }
 
 
 	/** Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH.  */
-	export enum ScheduledAutoTuneSeverityType { LOW = 0, MEDIUM = 1, HIGH = 2 }
+	export enum ScheduledAutoTuneSeverityType { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 
 	/** The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change.  */
@@ -1442,7 +1442,7 @@ export namespace MyNS {
 
 
 	/** The overall status value of the domain configuration change. */
-	export enum OverallChangeStatus { PENDING = 0, PROCESSING = 1, COMPLETED = 2, FAILED = 3 }
+	export enum OverallChangeStatus { PENDING = 'PENDING', PROCESSING = 'PROCESSING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** A progress stage details of a specific domain configuration change. */
@@ -1600,7 +1600,7 @@ export namespace MyNS {
 
 
 	/** <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul> */
-	export enum OptionState { RequiresIndexDocuments = 0, Processing = 1, Active = 2 }
+	export enum OptionState { RequiresIndexDocuments = 'RequiresIndexDocuments', Processing = 'Processing', Active = 'Active' }
 
 
 	/**  Specifies the configuration status for the specified Elasticsearch domain. */
@@ -1881,7 +1881,7 @@ export namespace MyNS {
 
 
 	/** Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK. */
-	export enum RollbackOnDisable { NO_ROLLBACK = 0, DEFAULT_ROLLBACK = 1 }
+	export enum RollbackOnDisable { NO_ROLLBACK = 'NO_ROLLBACK', DEFAULT_ROLLBACK = 'DEFAULT_ROLLBACK' }
 
 
 	/** Provides the current status of the Auto-Tune options.  */
@@ -2075,7 +2075,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DescribePackagesFilterName { PackageID = 0, PackageName = 1, PackageStatus = 2 }
+	export enum DescribePackagesFilterName { PackageID = 'PackageID', PackageName = 'PackageName', PackageStatus = 'PackageStatus' }
 
 
 	/** Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code> */
@@ -2131,7 +2131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservedElasticsearchInstancePaymentOption { ALL_UPFRONT = 0, PARTIAL_UPFRONT = 1, NO_UPFRONT = 2 }
+	export enum ReservedElasticsearchInstancePaymentOption { ALL_UPFRONT = 'ALL_UPFRONT', PARTIAL_UPFRONT = 'PARTIAL_UPFRONT', NO_UPFRONT = 'NO_UPFRONT' }
 
 
 	/** Contains the specific price and frequency of a recurring charges for a reserved Elasticsearch instance, or for a reserved Elasticsearch instance offering. */
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 
 
 	/** Specifies the error code of the failure encountered while describing the VPC endpoint: <ul> <li>ENDPOINT_NOT_FOUND: Indicates that the requested VPC endpoint does not exist.</li> <li>SERVER_ERROR: Indicates the describe endpoint operation failed due to an internal server error.</li> </ul>  */
-	export enum VpcEndpointErrorCode { ENDPOINT_NOT_FOUND = 0, SERVER_ERROR = 1 }
+	export enum VpcEndpointErrorCode { ENDPOINT_NOT_FOUND = 'ENDPOINT_NOT_FOUND', SERVER_ERROR = 'SERVER_ERROR' }
 
 
 	/**  Container for response returned by <code> <a>DissociatePackage</a> </code> operation.  */
@@ -2405,7 +2405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeStatus { IN_PROGRESS = 0, SUCCEEDED = 1, SUCCEEDED_WITH_ISSUES = 2, FAILED = 3 }
+	export enum UpgradeStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', SUCCEEDED_WITH_ISSUES = 'SUCCEEDED_WITH_ISSUES', FAILED = 'FAILED' }
 
 
 	/** Represents a single step of the Upgrade or Upgrade Eligibility Check workflow. */
@@ -2431,7 +2431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeStep { PRE_UPGRADE_CHECK = 0, SNAPSHOT = 1, UPGRADE = 2 }
+	export enum UpgradeStep { PRE_UPGRADE_CHECK = 'PRE_UPGRADE_CHECK', SNAPSHOT = 'SNAPSHOT', UPGRADE = 'UPGRADE' }
 
 
 	/**  Container for response returned by <code> <a>GetUpgradeStatus</a> </code> operation.  */
@@ -2487,7 +2487,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EngineType { OpenSearch = 0, Elasticsearch = 1 }
+	export enum EngineType { OpenSearch = 'OpenSearch', Elasticsearch = 'Elasticsearch' }
 
 
 	/**  Container for response parameters to <code> <a>ListDomainsForPackage</a> </code> operation.  */
@@ -3717,7 +3717,7 @@ export namespace MyNS {
 
 
 	/** Type of Log File, it can be one of the following: <ul> <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li> <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li> <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li> <li>AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.</li> </ul>  */
-	export enum LogType { INDEX_SLOW_LOGS = 0, SEARCH_SLOW_LOGS = 1, ES_APPLICATION_LOGS = 2, AUDIT_LOGS = 3 }
+	export enum LogType { INDEX_SLOW_LOGS = 'INDEX_SLOW_LOGS', SEARCH_SLOW_LOGS = 'SEARCH_SLOW_LOGS', ES_APPLICATION_LOGS = 'ES_APPLICATION_LOGS', AUDIT_LOGS = 'AUDIT_LOGS' }
 
 
 	/** Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code> */

@@ -69,9 +69,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationItemStatus { OK = 0, ResourceDiscovered = 1, ResourceNotRecorded = 2, ResourceDeleted = 3, ResourceDeletedNotRecorded = 4 }
+	export enum ConfigurationItemStatus { OK = 'OK', ResourceDiscovered = 'ResourceDiscovered', ResourceNotRecorded = 'ResourceNotRecorded', ResourceDeleted = 'ResourceDeleted', ResourceDeletedNotRecorded = 'ResourceDeletedNotRecorded' }
 
-	export enum ResourceType { 'AWS::EC2::CustomerGateway' = 0, 'AWS::EC2::EIP' = 1, 'AWS::EC2::Host' = 2, 'AWS::EC2::Instance' = 3, 'AWS::EC2::InternetGateway' = 4, 'AWS::EC2::NetworkAcl' = 5, 'AWS::EC2::NetworkInterface' = 6, 'AWS::EC2::RouteTable' = 7, 'AWS::EC2::SecurityGroup' = 8, 'AWS::EC2::Subnet' = 9, 'AWS::CloudTrail::Trail' = 10, 'AWS::EC2::Volume' = 11, 'AWS::EC2::VPC' = 12, 'AWS::EC2::VPNConnection' = 13, 'AWS::EC2::VPNGateway' = 14, 'AWS::EC2::RegisteredHAInstance' = 15, 'AWS::EC2::NatGateway' = 16, 'AWS::EC2::EgressOnlyInternetGateway' = 17, 'AWS::EC2::VPCEndpoint' = 18, 'AWS::EC2::VPCEndpointService' = 19, 'AWS::EC2::FlowLog' = 20, 'AWS::EC2::VPCPeeringConnection' = 21, 'AWS::Elasticsearch::Domain' = 22, 'AWS::IAM::Group' = 23, 'AWS::IAM::Policy' = 24, 'AWS::IAM::Role' = 25, 'AWS::IAM::User' = 26, 'AWS::ElasticLoadBalancingV2::LoadBalancer' = 27, 'AWS::ACM::Certificate' = 28, 'AWS::RDS::DBInstance' = 29, 'AWS::RDS::DBSubnetGroup' = 30, 'AWS::RDS::DBSecurityGroup' = 31, 'AWS::RDS::DBSnapshot' = 32, 'AWS::RDS::DBCluster' = 33, 'AWS::RDS::DBClusterSnapshot' = 34, 'AWS::RDS::EventSubscription' = 35, 'AWS::S3::Bucket' = 36, 'AWS::S3::AccountPublicAccessBlock' = 37, 'AWS::Redshift::Cluster' = 38, 'AWS::Redshift::ClusterSnapshot' = 39, 'AWS::Redshift::ClusterParameterGroup' = 40, 'AWS::Redshift::ClusterSecurityGroup' = 41, 'AWS::Redshift::ClusterSubnetGroup' = 42, 'AWS::Redshift::EventSubscription' = 43, 'AWS::SSM::ManagedInstanceInventory' = 44, 'AWS::CloudWatch::Alarm' = 45, 'AWS::CloudFormation::Stack' = 46, 'AWS::ElasticLoadBalancing::LoadBalancer' = 47, 'AWS::AutoScaling::AutoScalingGroup' = 48, 'AWS::AutoScaling::LaunchConfiguration' = 49, 'AWS::AutoScaling::ScalingPolicy' = 50, 'AWS::AutoScaling::ScheduledAction' = 51, 'AWS::DynamoDB::Table' = 52, 'AWS::CodeBuild::Project' = 53, 'AWS::WAF::RateBasedRule' = 54, 'AWS::WAF::Rule' = 55, 'AWS::WAF::RuleGroup' = 56, 'AWS::WAF::WebACL' = 57, 'AWS::WAFRegional::RateBasedRule' = 58, 'AWS::WAFRegional::Rule' = 59, 'AWS::WAFRegional::RuleGroup' = 60, 'AWS::WAFRegional::WebACL' = 61, 'AWS::CloudFront::Distribution' = 62, 'AWS::CloudFront::StreamingDistribution' = 63, 'AWS::Lambda::Function' = 64, 'AWS::NetworkFirewall::Firewall' = 65, 'AWS::NetworkFirewall::FirewallPolicy' = 66, 'AWS::NetworkFirewall::RuleGroup' = 67, 'AWS::ElasticBeanstalk::Application' = 68, 'AWS::ElasticBeanstalk::ApplicationVersion' = 69, 'AWS::ElasticBeanstalk::Environment' = 70, 'AWS::WAFv2::WebACL' = 71, 'AWS::WAFv2::RuleGroup' = 72, 'AWS::WAFv2::IPSet' = 73, 'AWS::WAFv2::RegexPatternSet' = 74, 'AWS::WAFv2::ManagedRuleSet' = 75, 'AWS::XRay::EncryptionConfig' = 76, 'AWS::SSM::AssociationCompliance' = 77, 'AWS::SSM::PatchCompliance' = 78, 'AWS::Shield::Protection' = 79, 'AWS::ShieldRegional::Protection' = 80, 'AWS::Config::ConformancePackCompliance' = 81, 'AWS::Config::ResourceCompliance' = 82, 'AWS::ApiGateway::Stage' = 83, 'AWS::ApiGateway::RestApi' = 84, 'AWS::ApiGatewayV2::Stage' = 85, 'AWS::ApiGatewayV2::Api' = 86, 'AWS::CodePipeline::Pipeline' = 87, 'AWS::ServiceCatalog::CloudFormationProvisionedProduct' = 88, 'AWS::ServiceCatalog::CloudFormationProduct' = 89, 'AWS::ServiceCatalog::Portfolio' = 90, 'AWS::SQS::Queue' = 91, 'AWS::KMS::Key' = 92, 'AWS::QLDB::Ledger' = 93, 'AWS::SecretsManager::Secret' = 94, 'AWS::SNS::Topic' = 95, 'AWS::SSM::FileData' = 96, 'AWS::Backup::BackupPlan' = 97, 'AWS::Backup::BackupSelection' = 98, 'AWS::Backup::BackupVault' = 99, 'AWS::Backup::RecoveryPoint' = 100, 'AWS::ECR::Repository' = 101, 'AWS::ECS::Cluster' = 102, 'AWS::ECS::Service' = 103, 'AWS::ECS::TaskDefinition' = 104, 'AWS::EFS::AccessPoint' = 105, 'AWS::EFS::FileSystem' = 106, 'AWS::EKS::Cluster' = 107, 'AWS::OpenSearch::Domain' = 108, 'AWS::EC2::TransitGateway' = 109, 'AWS::Kinesis::Stream' = 110, 'AWS::Kinesis::StreamConsumer' = 111, 'AWS::CodeDeploy::Application' = 112, 'AWS::CodeDeploy::DeploymentConfig' = 113, 'AWS::CodeDeploy::DeploymentGroup' = 114, 'AWS::EC2::LaunchTemplate' = 115, 'AWS::ECR::PublicRepository' = 116, 'AWS::GuardDuty::Detector' = 117, 'AWS::EMR::SecurityConfiguration' = 118, 'AWS::SageMaker::CodeRepository' = 119, 'AWS::Route53Resolver::ResolverEndpoint' = 120, 'AWS::Route53Resolver::ResolverRule' = 121, 'AWS::Route53Resolver::ResolverRuleAssociation' = 122, 'AWS::DMS::ReplicationSubnetGroup' = 123, 'AWS::DMS::EventSubscription' = 124, 'AWS::MSK::Cluster' = 125, 'AWS::StepFunctions::Activity' = 126, 'AWS::WorkSpaces::Workspace' = 127, 'AWS::WorkSpaces::ConnectionAlias' = 128, 'AWS::SageMaker::Model' = 129, 'AWS::ElasticLoadBalancingV2::Listener' = 130, 'AWS::StepFunctions::StateMachine' = 131, 'AWS::Batch::JobQueue' = 132, 'AWS::Batch::ComputeEnvironment' = 133, 'AWS::AccessAnalyzer::Analyzer' = 134, 'AWS::Athena::WorkGroup' = 135, 'AWS::Athena::DataCatalog' = 136, 'AWS::Detective::Graph' = 137, 'AWS::GlobalAccelerator::Accelerator' = 138, 'AWS::GlobalAccelerator::EndpointGroup' = 139, 'AWS::GlobalAccelerator::Listener' = 140, 'AWS::EC2::TransitGatewayAttachment' = 141, 'AWS::EC2::TransitGatewayRouteTable' = 142, 'AWS::DMS::Certificate' = 143, 'AWS::AppConfig::Application' = 144, 'AWS::AppSync::GraphQLApi' = 145, 'AWS::DataSync::LocationSMB' = 146, 'AWS::DataSync::LocationFSxLustre' = 147, 'AWS::DataSync::LocationS3' = 148, 'AWS::DataSync::LocationEFS' = 149, 'AWS::DataSync::Task' = 150, 'AWS::DataSync::LocationNFS' = 151, 'AWS::EC2::NetworkInsightsAccessScopeAnalysis' = 152, 'AWS::EKS::FargateProfile' = 153, 'AWS::Glue::Job' = 154, 'AWS::GuardDuty::ThreatIntelSet' = 155, 'AWS::GuardDuty::IPSet' = 156, 'AWS::SageMaker::Workteam' = 157, 'AWS::SageMaker::NotebookInstanceLifecycleConfig' = 158, 'AWS::ServiceDiscovery::Service' = 159, 'AWS::ServiceDiscovery::PublicDnsNamespace' = 160, 'AWS::SES::ContactList' = 161, 'AWS::SES::ConfigurationSet' = 162, 'AWS::Route53::HostedZone' = 163, 'AWS::IoTEvents::Input' = 164, 'AWS::IoTEvents::DetectorModel' = 165, 'AWS::IoTEvents::AlarmModel' = 166, 'AWS::ServiceDiscovery::HttpNamespace' = 167, 'AWS::Events::EventBus' = 168, 'AWS::ImageBuilder::ContainerRecipe' = 169, 'AWS::ImageBuilder::DistributionConfiguration' = 170, 'AWS::ImageBuilder::InfrastructureConfiguration' = 171, 'AWS::DataSync::LocationObjectStorage' = 172, 'AWS::DataSync::LocationHDFS' = 173, 'AWS::Glue::Classifier' = 174, 'AWS::Route53RecoveryReadiness::Cell' = 175, 'AWS::Route53RecoveryReadiness::ReadinessCheck' = 176, 'AWS::ECR::RegistryPolicy' = 177, 'AWS::Backup::ReportPlan' = 178, 'AWS::Lightsail::Certificate' = 179, 'AWS::RUM::AppMonitor' = 180, 'AWS::Events::Endpoint' = 181, 'AWS::SES::ReceiptRuleSet' = 182, 'AWS::Events::Archive' = 183, 'AWS::Events::ApiDestination' = 184, 'AWS::Lightsail::Disk' = 185, 'AWS::FIS::ExperimentTemplate' = 186, 'AWS::DataSync::LocationFSxWindows' = 187, 'AWS::SES::ReceiptFilter' = 188, 'AWS::GuardDuty::Filter' = 189, 'AWS::SES::Template' = 190, 'AWS::AmazonMQ::Broker' = 191, 'AWS::AppConfig::Environment' = 192, 'AWS::AppConfig::ConfigurationProfile' = 193, 'AWS::Cloud9::EnvironmentEC2' = 194, 'AWS::EventSchemas::Registry' = 195, 'AWS::EventSchemas::RegistryPolicy' = 196, 'AWS::EventSchemas::Discoverer' = 197, 'AWS::FraudDetector::Label' = 198, 'AWS::FraudDetector::EntityType' = 199, 'AWS::FraudDetector::Variable' = 200, 'AWS::FraudDetector::Outcome' = 201, 'AWS::IoT::Authorizer' = 202, 'AWS::IoT::SecurityProfile' = 203, 'AWS::IoT::RoleAlias' = 204, 'AWS::IoT::Dimension' = 205, 'AWS::IoTAnalytics::Datastore' = 206, 'AWS::Lightsail::Bucket' = 207, 'AWS::Lightsail::StaticIp' = 208, 'AWS::MediaPackage::PackagingGroup' = 209, 'AWS::Route53RecoveryReadiness::RecoveryGroup' = 210, 'AWS::ResilienceHub::ResiliencyPolicy' = 211, 'AWS::Transfer::Workflow' = 212, 'AWS::EKS::IdentityProviderConfig' = 213, 'AWS::EKS::Addon' = 214, 'AWS::Glue::MLTransform' = 215, 'AWS::IoT::Policy' = 216, 'AWS::IoT::MitigationAction' = 217, 'AWS::IoTTwinMaker::Workspace' = 218, 'AWS::IoTTwinMaker::Entity' = 219, 'AWS::IoTAnalytics::Dataset' = 220, 'AWS::IoTAnalytics::Pipeline' = 221, 'AWS::IoTAnalytics::Channel' = 222, 'AWS::IoTSiteWise::Dashboard' = 223, 'AWS::IoTSiteWise::Project' = 224, 'AWS::IoTSiteWise::Portal' = 225, 'AWS::IoTSiteWise::AssetModel' = 226, 'AWS::IVS::Channel' = 227, 'AWS::IVS::RecordingConfiguration' = 228, 'AWS::IVS::PlaybackKeyPair' = 229, 'AWS::KinesisAnalyticsV2::Application' = 230, 'AWS::RDS::GlobalCluster' = 231, 'AWS::S3::MultiRegionAccessPoint' = 232, 'AWS::DeviceFarm::TestGridProject' = 233, 'AWS::Budgets::BudgetsAction' = 234, 'AWS::Lex::Bot' = 235, 'AWS::CodeGuruReviewer::RepositoryAssociation' = 236, 'AWS::IoT::CustomMetric' = 237, 'AWS::Route53Resolver::FirewallDomainList' = 238, 'AWS::RoboMaker::RobotApplicationVersion' = 239, 'AWS::EC2::TrafficMirrorSession' = 240, 'AWS::IoTSiteWise::Gateway' = 241, 'AWS::Lex::BotAlias' = 242, 'AWS::LookoutMetrics::Alert' = 243, 'AWS::IoT::AccountAuditConfiguration' = 244, 'AWS::EC2::TrafficMirrorTarget' = 245, 'AWS::S3::StorageLens' = 246, 'AWS::IoT::ScheduledAudit' = 247, 'AWS::Events::Connection' = 248, 'AWS::EventSchemas::Schema' = 249, 'AWS::MediaPackage::PackagingConfiguration' = 250, 'AWS::KinesisVideo::SignalingChannel' = 251, 'AWS::AppStream::DirectoryConfig' = 252, 'AWS::LookoutVision::Project' = 253, 'AWS::Route53RecoveryControl::Cluster' = 254, 'AWS::Route53RecoveryControl::SafetyRule' = 255, 'AWS::Route53RecoveryControl::ControlPanel' = 256, 'AWS::Route53RecoveryControl::RoutingControl' = 257, 'AWS::Route53RecoveryReadiness::ResourceSet' = 258, 'AWS::RoboMaker::SimulationApplication' = 259, 'AWS::RoboMaker::RobotApplication' = 260, 'AWS::HealthLake::FHIRDatastore' = 261, 'AWS::Pinpoint::Segment' = 262, 'AWS::Pinpoint::ApplicationSettings' = 263, 'AWS::Events::Rule' = 264, 'AWS::EC2::DHCPOptions' = 265, 'AWS::EC2::NetworkInsightsPath' = 266, 'AWS::EC2::TrafficMirrorFilter' = 267, 'AWS::EC2::IPAM' = 268, 'AWS::IoTTwinMaker::Scene' = 269, 'AWS::NetworkManager::TransitGatewayRegistration' = 270, 'AWS::CustomerProfiles::Domain' = 271, 'AWS::AutoScaling::WarmPool' = 272, 'AWS::Connect::PhoneNumber' = 273, 'AWS::AppConfig::DeploymentStrategy' = 274, 'AWS::AppFlow::Flow' = 275, 'AWS::AuditManager::Assessment' = 276, 'AWS::CloudWatch::MetricStream' = 277, 'AWS::DeviceFarm::InstanceProfile' = 278, 'AWS::DeviceFarm::Project' = 279, 'AWS::EC2::EC2Fleet' = 280, 'AWS::EC2::SubnetRouteTableAssociation' = 281, 'AWS::ECR::PullThroughCacheRule' = 282, 'AWS::GroundStation::Config' = 283, 'AWS::ImageBuilder::ImagePipeline' = 284, 'AWS::IoT::FleetMetric' = 285, 'AWS::IoTWireless::ServiceProfile' = 286, 'AWS::NetworkManager::Device' = 287, 'AWS::NetworkManager::GlobalNetwork' = 288, 'AWS::NetworkManager::Link' = 289, 'AWS::NetworkManager::Site' = 290, 'AWS::Panorama::Package' = 291, 'AWS::Pinpoint::App' = 292, 'AWS::Redshift::ScheduledAction' = 293, 'AWS::Route53Resolver::FirewallRuleGroupAssociation' = 294, 'AWS::SageMaker::AppImageConfig' = 295, 'AWS::SageMaker::Image' = 296, 'AWS::ECS::TaskSet' = 297, 'AWS::Cassandra::Keyspace' = 298, 'AWS::Signer::SigningProfile' = 299, 'AWS::Amplify::App' = 300, 'AWS::AppMesh::VirtualNode' = 301, 'AWS::AppMesh::VirtualService' = 302, 'AWS::AppRunner::VpcConnector' = 303, 'AWS::AppStream::Application' = 304, 'AWS::CodeArtifact::Repository' = 305, 'AWS::EC2::PrefixList' = 306, 'AWS::EC2::SpotFleet' = 307, 'AWS::Evidently::Project' = 308, 'AWS::Forecast::Dataset' = 309, 'AWS::IAM::SAMLProvider' = 310, 'AWS::IAM::ServerCertificate' = 311, 'AWS::Pinpoint::Campaign' = 312, 'AWS::Pinpoint::InAppTemplate' = 313, 'AWS::SageMaker::Domain' = 314, 'AWS::Transfer::Agreement' = 315, 'AWS::Transfer::Connector' = 316, 'AWS::KinesisFirehose::DeliveryStream' = 317 }
+	export enum ResourceType { 'AWS::EC2::CustomerGateway' = 'AWS::EC2::CustomerGateway', 'AWS::EC2::EIP' = 'AWS::EC2::EIP', 'AWS::EC2::Host' = 'AWS::EC2::Host', 'AWS::EC2::Instance' = 'AWS::EC2::Instance', 'AWS::EC2::InternetGateway' = 'AWS::EC2::InternetGateway', 'AWS::EC2::NetworkAcl' = 'AWS::EC2::NetworkAcl', 'AWS::EC2::NetworkInterface' = 'AWS::EC2::NetworkInterface', 'AWS::EC2::RouteTable' = 'AWS::EC2::RouteTable', 'AWS::EC2::SecurityGroup' = 'AWS::EC2::SecurityGroup', 'AWS::EC2::Subnet' = 'AWS::EC2::Subnet', 'AWS::CloudTrail::Trail' = 'AWS::CloudTrail::Trail', 'AWS::EC2::Volume' = 'AWS::EC2::Volume', 'AWS::EC2::VPC' = 'AWS::EC2::VPC', 'AWS::EC2::VPNConnection' = 'AWS::EC2::VPNConnection', 'AWS::EC2::VPNGateway' = 'AWS::EC2::VPNGateway', 'AWS::EC2::RegisteredHAInstance' = 'AWS::EC2::RegisteredHAInstance', 'AWS::EC2::NatGateway' = 'AWS::EC2::NatGateway', 'AWS::EC2::EgressOnlyInternetGateway' = 'AWS::EC2::EgressOnlyInternetGateway', 'AWS::EC2::VPCEndpoint' = 'AWS::EC2::VPCEndpoint', 'AWS::EC2::VPCEndpointService' = 'AWS::EC2::VPCEndpointService', 'AWS::EC2::FlowLog' = 'AWS::EC2::FlowLog', 'AWS::EC2::VPCPeeringConnection' = 'AWS::EC2::VPCPeeringConnection', 'AWS::Elasticsearch::Domain' = 'AWS::Elasticsearch::Domain', 'AWS::IAM::Group' = 'AWS::IAM::Group', 'AWS::IAM::Policy' = 'AWS::IAM::Policy', 'AWS::IAM::Role' = 'AWS::IAM::Role', 'AWS::IAM::User' = 'AWS::IAM::User', 'AWS::ElasticLoadBalancingV2::LoadBalancer' = 'AWS::ElasticLoadBalancingV2::LoadBalancer', 'AWS::ACM::Certificate' = 'AWS::ACM::Certificate', 'AWS::RDS::DBInstance' = 'AWS::RDS::DBInstance', 'AWS::RDS::DBSubnetGroup' = 'AWS::RDS::DBSubnetGroup', 'AWS::RDS::DBSecurityGroup' = 'AWS::RDS::DBSecurityGroup', 'AWS::RDS::DBSnapshot' = 'AWS::RDS::DBSnapshot', 'AWS::RDS::DBCluster' = 'AWS::RDS::DBCluster', 'AWS::RDS::DBClusterSnapshot' = 'AWS::RDS::DBClusterSnapshot', 'AWS::RDS::EventSubscription' = 'AWS::RDS::EventSubscription', 'AWS::S3::Bucket' = 'AWS::S3::Bucket', 'AWS::S3::AccountPublicAccessBlock' = 'AWS::S3::AccountPublicAccessBlock', 'AWS::Redshift::Cluster' = 'AWS::Redshift::Cluster', 'AWS::Redshift::ClusterSnapshot' = 'AWS::Redshift::ClusterSnapshot', 'AWS::Redshift::ClusterParameterGroup' = 'AWS::Redshift::ClusterParameterGroup', 'AWS::Redshift::ClusterSecurityGroup' = 'AWS::Redshift::ClusterSecurityGroup', 'AWS::Redshift::ClusterSubnetGroup' = 'AWS::Redshift::ClusterSubnetGroup', 'AWS::Redshift::EventSubscription' = 'AWS::Redshift::EventSubscription', 'AWS::SSM::ManagedInstanceInventory' = 'AWS::SSM::ManagedInstanceInventory', 'AWS::CloudWatch::Alarm' = 'AWS::CloudWatch::Alarm', 'AWS::CloudFormation::Stack' = 'AWS::CloudFormation::Stack', 'AWS::ElasticLoadBalancing::LoadBalancer' = 'AWS::ElasticLoadBalancing::LoadBalancer', 'AWS::AutoScaling::AutoScalingGroup' = 'AWS::AutoScaling::AutoScalingGroup', 'AWS::AutoScaling::LaunchConfiguration' = 'AWS::AutoScaling::LaunchConfiguration', 'AWS::AutoScaling::ScalingPolicy' = 'AWS::AutoScaling::ScalingPolicy', 'AWS::AutoScaling::ScheduledAction' = 'AWS::AutoScaling::ScheduledAction', 'AWS::DynamoDB::Table' = 'AWS::DynamoDB::Table', 'AWS::CodeBuild::Project' = 'AWS::CodeBuild::Project', 'AWS::WAF::RateBasedRule' = 'AWS::WAF::RateBasedRule', 'AWS::WAF::Rule' = 'AWS::WAF::Rule', 'AWS::WAF::RuleGroup' = 'AWS::WAF::RuleGroup', 'AWS::WAF::WebACL' = 'AWS::WAF::WebACL', 'AWS::WAFRegional::RateBasedRule' = 'AWS::WAFRegional::RateBasedRule', 'AWS::WAFRegional::Rule' = 'AWS::WAFRegional::Rule', 'AWS::WAFRegional::RuleGroup' = 'AWS::WAFRegional::RuleGroup', 'AWS::WAFRegional::WebACL' = 'AWS::WAFRegional::WebACL', 'AWS::CloudFront::Distribution' = 'AWS::CloudFront::Distribution', 'AWS::CloudFront::StreamingDistribution' = 'AWS::CloudFront::StreamingDistribution', 'AWS::Lambda::Function' = 'AWS::Lambda::Function', 'AWS::NetworkFirewall::Firewall' = 'AWS::NetworkFirewall::Firewall', 'AWS::NetworkFirewall::FirewallPolicy' = 'AWS::NetworkFirewall::FirewallPolicy', 'AWS::NetworkFirewall::RuleGroup' = 'AWS::NetworkFirewall::RuleGroup', 'AWS::ElasticBeanstalk::Application' = 'AWS::ElasticBeanstalk::Application', 'AWS::ElasticBeanstalk::ApplicationVersion' = 'AWS::ElasticBeanstalk::ApplicationVersion', 'AWS::ElasticBeanstalk::Environment' = 'AWS::ElasticBeanstalk::Environment', 'AWS::WAFv2::WebACL' = 'AWS::WAFv2::WebACL', 'AWS::WAFv2::RuleGroup' = 'AWS::WAFv2::RuleGroup', 'AWS::WAFv2::IPSet' = 'AWS::WAFv2::IPSet', 'AWS::WAFv2::RegexPatternSet' = 'AWS::WAFv2::RegexPatternSet', 'AWS::WAFv2::ManagedRuleSet' = 'AWS::WAFv2::ManagedRuleSet', 'AWS::XRay::EncryptionConfig' = 'AWS::XRay::EncryptionConfig', 'AWS::SSM::AssociationCompliance' = 'AWS::SSM::AssociationCompliance', 'AWS::SSM::PatchCompliance' = 'AWS::SSM::PatchCompliance', 'AWS::Shield::Protection' = 'AWS::Shield::Protection', 'AWS::ShieldRegional::Protection' = 'AWS::ShieldRegional::Protection', 'AWS::Config::ConformancePackCompliance' = 'AWS::Config::ConformancePackCompliance', 'AWS::Config::ResourceCompliance' = 'AWS::Config::ResourceCompliance', 'AWS::ApiGateway::Stage' = 'AWS::ApiGateway::Stage', 'AWS::ApiGateway::RestApi' = 'AWS::ApiGateway::RestApi', 'AWS::ApiGatewayV2::Stage' = 'AWS::ApiGatewayV2::Stage', 'AWS::ApiGatewayV2::Api' = 'AWS::ApiGatewayV2::Api', 'AWS::CodePipeline::Pipeline' = 'AWS::CodePipeline::Pipeline', 'AWS::ServiceCatalog::CloudFormationProvisionedProduct' = 'AWS::ServiceCatalog::CloudFormationProvisionedProduct', 'AWS::ServiceCatalog::CloudFormationProduct' = 'AWS::ServiceCatalog::CloudFormationProduct', 'AWS::ServiceCatalog::Portfolio' = 'AWS::ServiceCatalog::Portfolio', 'AWS::SQS::Queue' = 'AWS::SQS::Queue', 'AWS::KMS::Key' = 'AWS::KMS::Key', 'AWS::QLDB::Ledger' = 'AWS::QLDB::Ledger', 'AWS::SecretsManager::Secret' = 'AWS::SecretsManager::Secret', 'AWS::SNS::Topic' = 'AWS::SNS::Topic', 'AWS::SSM::FileData' = 'AWS::SSM::FileData', 'AWS::Backup::BackupPlan' = 'AWS::Backup::BackupPlan', 'AWS::Backup::BackupSelection' = 'AWS::Backup::BackupSelection', 'AWS::Backup::BackupVault' = 'AWS::Backup::BackupVault', 'AWS::Backup::RecoveryPoint' = 'AWS::Backup::RecoveryPoint', 'AWS::ECR::Repository' = 'AWS::ECR::Repository', 'AWS::ECS::Cluster' = 'AWS::ECS::Cluster', 'AWS::ECS::Service' = 'AWS::ECS::Service', 'AWS::ECS::TaskDefinition' = 'AWS::ECS::TaskDefinition', 'AWS::EFS::AccessPoint' = 'AWS::EFS::AccessPoint', 'AWS::EFS::FileSystem' = 'AWS::EFS::FileSystem', 'AWS::EKS::Cluster' = 'AWS::EKS::Cluster', 'AWS::OpenSearch::Domain' = 'AWS::OpenSearch::Domain', 'AWS::EC2::TransitGateway' = 'AWS::EC2::TransitGateway', 'AWS::Kinesis::Stream' = 'AWS::Kinesis::Stream', 'AWS::Kinesis::StreamConsumer' = 'AWS::Kinesis::StreamConsumer', 'AWS::CodeDeploy::Application' = 'AWS::CodeDeploy::Application', 'AWS::CodeDeploy::DeploymentConfig' = 'AWS::CodeDeploy::DeploymentConfig', 'AWS::CodeDeploy::DeploymentGroup' = 'AWS::CodeDeploy::DeploymentGroup', 'AWS::EC2::LaunchTemplate' = 'AWS::EC2::LaunchTemplate', 'AWS::ECR::PublicRepository' = 'AWS::ECR::PublicRepository', 'AWS::GuardDuty::Detector' = 'AWS::GuardDuty::Detector', 'AWS::EMR::SecurityConfiguration' = 'AWS::EMR::SecurityConfiguration', 'AWS::SageMaker::CodeRepository' = 'AWS::SageMaker::CodeRepository', 'AWS::Route53Resolver::ResolverEndpoint' = 'AWS::Route53Resolver::ResolverEndpoint', 'AWS::Route53Resolver::ResolverRule' = 'AWS::Route53Resolver::ResolverRule', 'AWS::Route53Resolver::ResolverRuleAssociation' = 'AWS::Route53Resolver::ResolverRuleAssociation', 'AWS::DMS::ReplicationSubnetGroup' = 'AWS::DMS::ReplicationSubnetGroup', 'AWS::DMS::EventSubscription' = 'AWS::DMS::EventSubscription', 'AWS::MSK::Cluster' = 'AWS::MSK::Cluster', 'AWS::StepFunctions::Activity' = 'AWS::StepFunctions::Activity', 'AWS::WorkSpaces::Workspace' = 'AWS::WorkSpaces::Workspace', 'AWS::WorkSpaces::ConnectionAlias' = 'AWS::WorkSpaces::ConnectionAlias', 'AWS::SageMaker::Model' = 'AWS::SageMaker::Model', 'AWS::ElasticLoadBalancingV2::Listener' = 'AWS::ElasticLoadBalancingV2::Listener', 'AWS::StepFunctions::StateMachine' = 'AWS::StepFunctions::StateMachine', 'AWS::Batch::JobQueue' = 'AWS::Batch::JobQueue', 'AWS::Batch::ComputeEnvironment' = 'AWS::Batch::ComputeEnvironment', 'AWS::AccessAnalyzer::Analyzer' = 'AWS::AccessAnalyzer::Analyzer', 'AWS::Athena::WorkGroup' = 'AWS::Athena::WorkGroup', 'AWS::Athena::DataCatalog' = 'AWS::Athena::DataCatalog', 'AWS::Detective::Graph' = 'AWS::Detective::Graph', 'AWS::GlobalAccelerator::Accelerator' = 'AWS::GlobalAccelerator::Accelerator', 'AWS::GlobalAccelerator::EndpointGroup' = 'AWS::GlobalAccelerator::EndpointGroup', 'AWS::GlobalAccelerator::Listener' = 'AWS::GlobalAccelerator::Listener', 'AWS::EC2::TransitGatewayAttachment' = 'AWS::EC2::TransitGatewayAttachment', 'AWS::EC2::TransitGatewayRouteTable' = 'AWS::EC2::TransitGatewayRouteTable', 'AWS::DMS::Certificate' = 'AWS::DMS::Certificate', 'AWS::AppConfig::Application' = 'AWS::AppConfig::Application', 'AWS::AppSync::GraphQLApi' = 'AWS::AppSync::GraphQLApi', 'AWS::DataSync::LocationSMB' = 'AWS::DataSync::LocationSMB', 'AWS::DataSync::LocationFSxLustre' = 'AWS::DataSync::LocationFSxLustre', 'AWS::DataSync::LocationS3' = 'AWS::DataSync::LocationS3', 'AWS::DataSync::LocationEFS' = 'AWS::DataSync::LocationEFS', 'AWS::DataSync::Task' = 'AWS::DataSync::Task', 'AWS::DataSync::LocationNFS' = 'AWS::DataSync::LocationNFS', 'AWS::EC2::NetworkInsightsAccessScopeAnalysis' = 'AWS::EC2::NetworkInsightsAccessScopeAnalysis', 'AWS::EKS::FargateProfile' = 'AWS::EKS::FargateProfile', 'AWS::Glue::Job' = 'AWS::Glue::Job', 'AWS::GuardDuty::ThreatIntelSet' = 'AWS::GuardDuty::ThreatIntelSet', 'AWS::GuardDuty::IPSet' = 'AWS::GuardDuty::IPSet', 'AWS::SageMaker::Workteam' = 'AWS::SageMaker::Workteam', 'AWS::SageMaker::NotebookInstanceLifecycleConfig' = 'AWS::SageMaker::NotebookInstanceLifecycleConfig', 'AWS::ServiceDiscovery::Service' = 'AWS::ServiceDiscovery::Service', 'AWS::ServiceDiscovery::PublicDnsNamespace' = 'AWS::ServiceDiscovery::PublicDnsNamespace', 'AWS::SES::ContactList' = 'AWS::SES::ContactList', 'AWS::SES::ConfigurationSet' = 'AWS::SES::ConfigurationSet', 'AWS::Route53::HostedZone' = 'AWS::Route53::HostedZone', 'AWS::IoTEvents::Input' = 'AWS::IoTEvents::Input', 'AWS::IoTEvents::DetectorModel' = 'AWS::IoTEvents::DetectorModel', 'AWS::IoTEvents::AlarmModel' = 'AWS::IoTEvents::AlarmModel', 'AWS::ServiceDiscovery::HttpNamespace' = 'AWS::ServiceDiscovery::HttpNamespace', 'AWS::Events::EventBus' = 'AWS::Events::EventBus', 'AWS::ImageBuilder::ContainerRecipe' = 'AWS::ImageBuilder::ContainerRecipe', 'AWS::ImageBuilder::DistributionConfiguration' = 'AWS::ImageBuilder::DistributionConfiguration', 'AWS::ImageBuilder::InfrastructureConfiguration' = 'AWS::ImageBuilder::InfrastructureConfiguration', 'AWS::DataSync::LocationObjectStorage' = 'AWS::DataSync::LocationObjectStorage', 'AWS::DataSync::LocationHDFS' = 'AWS::DataSync::LocationHDFS', 'AWS::Glue::Classifier' = 'AWS::Glue::Classifier', 'AWS::Route53RecoveryReadiness::Cell' = 'AWS::Route53RecoveryReadiness::Cell', 'AWS::Route53RecoveryReadiness::ReadinessCheck' = 'AWS::Route53RecoveryReadiness::ReadinessCheck', 'AWS::ECR::RegistryPolicy' = 'AWS::ECR::RegistryPolicy', 'AWS::Backup::ReportPlan' = 'AWS::Backup::ReportPlan', 'AWS::Lightsail::Certificate' = 'AWS::Lightsail::Certificate', 'AWS::RUM::AppMonitor' = 'AWS::RUM::AppMonitor', 'AWS::Events::Endpoint' = 'AWS::Events::Endpoint', 'AWS::SES::ReceiptRuleSet' = 'AWS::SES::ReceiptRuleSet', 'AWS::Events::Archive' = 'AWS::Events::Archive', 'AWS::Events::ApiDestination' = 'AWS::Events::ApiDestination', 'AWS::Lightsail::Disk' = 'AWS::Lightsail::Disk', 'AWS::FIS::ExperimentTemplate' = 'AWS::FIS::ExperimentTemplate', 'AWS::DataSync::LocationFSxWindows' = 'AWS::DataSync::LocationFSxWindows', 'AWS::SES::ReceiptFilter' = 'AWS::SES::ReceiptFilter', 'AWS::GuardDuty::Filter' = 'AWS::GuardDuty::Filter', 'AWS::SES::Template' = 'AWS::SES::Template', 'AWS::AmazonMQ::Broker' = 'AWS::AmazonMQ::Broker', 'AWS::AppConfig::Environment' = 'AWS::AppConfig::Environment', 'AWS::AppConfig::ConfigurationProfile' = 'AWS::AppConfig::ConfigurationProfile', 'AWS::Cloud9::EnvironmentEC2' = 'AWS::Cloud9::EnvironmentEC2', 'AWS::EventSchemas::Registry' = 'AWS::EventSchemas::Registry', 'AWS::EventSchemas::RegistryPolicy' = 'AWS::EventSchemas::RegistryPolicy', 'AWS::EventSchemas::Discoverer' = 'AWS::EventSchemas::Discoverer', 'AWS::FraudDetector::Label' = 'AWS::FraudDetector::Label', 'AWS::FraudDetector::EntityType' = 'AWS::FraudDetector::EntityType', 'AWS::FraudDetector::Variable' = 'AWS::FraudDetector::Variable', 'AWS::FraudDetector::Outcome' = 'AWS::FraudDetector::Outcome', 'AWS::IoT::Authorizer' = 'AWS::IoT::Authorizer', 'AWS::IoT::SecurityProfile' = 'AWS::IoT::SecurityProfile', 'AWS::IoT::RoleAlias' = 'AWS::IoT::RoleAlias', 'AWS::IoT::Dimension' = 'AWS::IoT::Dimension', 'AWS::IoTAnalytics::Datastore' = 'AWS::IoTAnalytics::Datastore', 'AWS::Lightsail::Bucket' = 'AWS::Lightsail::Bucket', 'AWS::Lightsail::StaticIp' = 'AWS::Lightsail::StaticIp', 'AWS::MediaPackage::PackagingGroup' = 'AWS::MediaPackage::PackagingGroup', 'AWS::Route53RecoveryReadiness::RecoveryGroup' = 'AWS::Route53RecoveryReadiness::RecoveryGroup', 'AWS::ResilienceHub::ResiliencyPolicy' = 'AWS::ResilienceHub::ResiliencyPolicy', 'AWS::Transfer::Workflow' = 'AWS::Transfer::Workflow', 'AWS::EKS::IdentityProviderConfig' = 'AWS::EKS::IdentityProviderConfig', 'AWS::EKS::Addon' = 'AWS::EKS::Addon', 'AWS::Glue::MLTransform' = 'AWS::Glue::MLTransform', 'AWS::IoT::Policy' = 'AWS::IoT::Policy', 'AWS::IoT::MitigationAction' = 'AWS::IoT::MitigationAction', 'AWS::IoTTwinMaker::Workspace' = 'AWS::IoTTwinMaker::Workspace', 'AWS::IoTTwinMaker::Entity' = 'AWS::IoTTwinMaker::Entity', 'AWS::IoTAnalytics::Dataset' = 'AWS::IoTAnalytics::Dataset', 'AWS::IoTAnalytics::Pipeline' = 'AWS::IoTAnalytics::Pipeline', 'AWS::IoTAnalytics::Channel' = 'AWS::IoTAnalytics::Channel', 'AWS::IoTSiteWise::Dashboard' = 'AWS::IoTSiteWise::Dashboard', 'AWS::IoTSiteWise::Project' = 'AWS::IoTSiteWise::Project', 'AWS::IoTSiteWise::Portal' = 'AWS::IoTSiteWise::Portal', 'AWS::IoTSiteWise::AssetModel' = 'AWS::IoTSiteWise::AssetModel', 'AWS::IVS::Channel' = 'AWS::IVS::Channel', 'AWS::IVS::RecordingConfiguration' = 'AWS::IVS::RecordingConfiguration', 'AWS::IVS::PlaybackKeyPair' = 'AWS::IVS::PlaybackKeyPair', 'AWS::KinesisAnalyticsV2::Application' = 'AWS::KinesisAnalyticsV2::Application', 'AWS::RDS::GlobalCluster' = 'AWS::RDS::GlobalCluster', 'AWS::S3::MultiRegionAccessPoint' = 'AWS::S3::MultiRegionAccessPoint', 'AWS::DeviceFarm::TestGridProject' = 'AWS::DeviceFarm::TestGridProject', 'AWS::Budgets::BudgetsAction' = 'AWS::Budgets::BudgetsAction', 'AWS::Lex::Bot' = 'AWS::Lex::Bot', 'AWS::CodeGuruReviewer::RepositoryAssociation' = 'AWS::CodeGuruReviewer::RepositoryAssociation', 'AWS::IoT::CustomMetric' = 'AWS::IoT::CustomMetric', 'AWS::Route53Resolver::FirewallDomainList' = 'AWS::Route53Resolver::FirewallDomainList', 'AWS::RoboMaker::RobotApplicationVersion' = 'AWS::RoboMaker::RobotApplicationVersion', 'AWS::EC2::TrafficMirrorSession' = 'AWS::EC2::TrafficMirrorSession', 'AWS::IoTSiteWise::Gateway' = 'AWS::IoTSiteWise::Gateway', 'AWS::Lex::BotAlias' = 'AWS::Lex::BotAlias', 'AWS::LookoutMetrics::Alert' = 'AWS::LookoutMetrics::Alert', 'AWS::IoT::AccountAuditConfiguration' = 'AWS::IoT::AccountAuditConfiguration', 'AWS::EC2::TrafficMirrorTarget' = 'AWS::EC2::TrafficMirrorTarget', 'AWS::S3::StorageLens' = 'AWS::S3::StorageLens', 'AWS::IoT::ScheduledAudit' = 'AWS::IoT::ScheduledAudit', 'AWS::Events::Connection' = 'AWS::Events::Connection', 'AWS::EventSchemas::Schema' = 'AWS::EventSchemas::Schema', 'AWS::MediaPackage::PackagingConfiguration' = 'AWS::MediaPackage::PackagingConfiguration', 'AWS::KinesisVideo::SignalingChannel' = 'AWS::KinesisVideo::SignalingChannel', 'AWS::AppStream::DirectoryConfig' = 'AWS::AppStream::DirectoryConfig', 'AWS::LookoutVision::Project' = 'AWS::LookoutVision::Project', 'AWS::Route53RecoveryControl::Cluster' = 'AWS::Route53RecoveryControl::Cluster', 'AWS::Route53RecoveryControl::SafetyRule' = 'AWS::Route53RecoveryControl::SafetyRule', 'AWS::Route53RecoveryControl::ControlPanel' = 'AWS::Route53RecoveryControl::ControlPanel', 'AWS::Route53RecoveryControl::RoutingControl' = 'AWS::Route53RecoveryControl::RoutingControl', 'AWS::Route53RecoveryReadiness::ResourceSet' = 'AWS::Route53RecoveryReadiness::ResourceSet', 'AWS::RoboMaker::SimulationApplication' = 'AWS::RoboMaker::SimulationApplication', 'AWS::RoboMaker::RobotApplication' = 'AWS::RoboMaker::RobotApplication', 'AWS::HealthLake::FHIRDatastore' = 'AWS::HealthLake::FHIRDatastore', 'AWS::Pinpoint::Segment' = 'AWS::Pinpoint::Segment', 'AWS::Pinpoint::ApplicationSettings' = 'AWS::Pinpoint::ApplicationSettings', 'AWS::Events::Rule' = 'AWS::Events::Rule', 'AWS::EC2::DHCPOptions' = 'AWS::EC2::DHCPOptions', 'AWS::EC2::NetworkInsightsPath' = 'AWS::EC2::NetworkInsightsPath', 'AWS::EC2::TrafficMirrorFilter' = 'AWS::EC2::TrafficMirrorFilter', 'AWS::EC2::IPAM' = 'AWS::EC2::IPAM', 'AWS::IoTTwinMaker::Scene' = 'AWS::IoTTwinMaker::Scene', 'AWS::NetworkManager::TransitGatewayRegistration' = 'AWS::NetworkManager::TransitGatewayRegistration', 'AWS::CustomerProfiles::Domain' = 'AWS::CustomerProfiles::Domain', 'AWS::AutoScaling::WarmPool' = 'AWS::AutoScaling::WarmPool', 'AWS::Connect::PhoneNumber' = 'AWS::Connect::PhoneNumber', 'AWS::AppConfig::DeploymentStrategy' = 'AWS::AppConfig::DeploymentStrategy', 'AWS::AppFlow::Flow' = 'AWS::AppFlow::Flow', 'AWS::AuditManager::Assessment' = 'AWS::AuditManager::Assessment', 'AWS::CloudWatch::MetricStream' = 'AWS::CloudWatch::MetricStream', 'AWS::DeviceFarm::InstanceProfile' = 'AWS::DeviceFarm::InstanceProfile', 'AWS::DeviceFarm::Project' = 'AWS::DeviceFarm::Project', 'AWS::EC2::EC2Fleet' = 'AWS::EC2::EC2Fleet', 'AWS::EC2::SubnetRouteTableAssociation' = 'AWS::EC2::SubnetRouteTableAssociation', 'AWS::ECR::PullThroughCacheRule' = 'AWS::ECR::PullThroughCacheRule', 'AWS::GroundStation::Config' = 'AWS::GroundStation::Config', 'AWS::ImageBuilder::ImagePipeline' = 'AWS::ImageBuilder::ImagePipeline', 'AWS::IoT::FleetMetric' = 'AWS::IoT::FleetMetric', 'AWS::IoTWireless::ServiceProfile' = 'AWS::IoTWireless::ServiceProfile', 'AWS::NetworkManager::Device' = 'AWS::NetworkManager::Device', 'AWS::NetworkManager::GlobalNetwork' = 'AWS::NetworkManager::GlobalNetwork', 'AWS::NetworkManager::Link' = 'AWS::NetworkManager::Link', 'AWS::NetworkManager::Site' = 'AWS::NetworkManager::Site', 'AWS::Panorama::Package' = 'AWS::Panorama::Package', 'AWS::Pinpoint::App' = 'AWS::Pinpoint::App', 'AWS::Redshift::ScheduledAction' = 'AWS::Redshift::ScheduledAction', 'AWS::Route53Resolver::FirewallRuleGroupAssociation' = 'AWS::Route53Resolver::FirewallRuleGroupAssociation', 'AWS::SageMaker::AppImageConfig' = 'AWS::SageMaker::AppImageConfig', 'AWS::SageMaker::Image' = 'AWS::SageMaker::Image', 'AWS::ECS::TaskSet' = 'AWS::ECS::TaskSet', 'AWS::Cassandra::Keyspace' = 'AWS::Cassandra::Keyspace', 'AWS::Signer::SigningProfile' = 'AWS::Signer::SigningProfile', 'AWS::Amplify::App' = 'AWS::Amplify::App', 'AWS::AppMesh::VirtualNode' = 'AWS::AppMesh::VirtualNode', 'AWS::AppMesh::VirtualService' = 'AWS::AppMesh::VirtualService', 'AWS::AppRunner::VpcConnector' = 'AWS::AppRunner::VpcConnector', 'AWS::AppStream::Application' = 'AWS::AppStream::Application', 'AWS::CodeArtifact::Repository' = 'AWS::CodeArtifact::Repository', 'AWS::EC2::PrefixList' = 'AWS::EC2::PrefixList', 'AWS::EC2::SpotFleet' = 'AWS::EC2::SpotFleet', 'AWS::Evidently::Project' = 'AWS::Evidently::Project', 'AWS::Forecast::Dataset' = 'AWS::Forecast::Dataset', 'AWS::IAM::SAMLProvider' = 'AWS::IAM::SAMLProvider', 'AWS::IAM::ServerCertificate' = 'AWS::IAM::ServerCertificate', 'AWS::Pinpoint::Campaign' = 'AWS::Pinpoint::Campaign', 'AWS::Pinpoint::InAppTemplate' = 'AWS::Pinpoint::InAppTemplate', 'AWS::SageMaker::Domain' = 'AWS::SageMaker::Domain', 'AWS::Transfer::Agreement' = 'AWS::Transfer::Agreement', 'AWS::Transfer::Connector' = 'AWS::Transfer::Connector', 'AWS::KinesisFirehose::DeliveryStream' = 'AWS::KinesisFirehose::DeliveryStream' }
 
 	export interface SupplementaryConfiguration {
 	}
@@ -876,7 +876,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceType { COMPLIANT = 0, NON_COMPLIANT = 1, NOT_APPLICABLE = 2, INSUFFICIENT_DATA = 3 }
+	export enum ComplianceType { COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT', NOT_APPLICABLE = 'NOT_APPLICABLE', INSUFFICIENT_DATA = 'INSUFFICIENT_DATA' }
 
 
 	/** The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item, up to a maximum number. */
@@ -1032,7 +1032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConformancePackComplianceType { COMPLIANT = 0, NON_COMPLIANT = 1, INSUFFICIENT_DATA = 2 }
+	export enum ConformancePackComplianceType { COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT', INSUFFICIENT_DATA = 'INSUFFICIENT_DATA' }
 
 	export interface DescribeAggregateComplianceByConformancePacksRequest {
 
@@ -1470,7 +1470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Owner { CUSTOM_LAMBDA = 0, AWS = 1, CUSTOM_POLICY = 2 }
+	export enum Owner { CUSTOM_LAMBDA = 'CUSTOM_LAMBDA', AWS = 'AWS', CUSTOM_POLICY = 'CUSTOM_POLICY' }
 
 
 	/** Provides the source and the message types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.  */
@@ -1495,11 +1495,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSource { 'aws.config' = 0 }
+	export enum EventSource { 'aws.config' = 'aws.config' }
 
-	export enum MessageType { ConfigurationItemChangeNotification = 0, ConfigurationSnapshotDeliveryCompleted = 1, ScheduledNotification = 2, OversizedConfigurationItemChangeNotification = 3 }
+	export enum MessageType { ConfigurationItemChangeNotification = 'ConfigurationItemChangeNotification', ConfigurationSnapshotDeliveryCompleted = 'ConfigurationSnapshotDeliveryCompleted', ScheduledNotification = 'ScheduledNotification', OversizedConfigurationItemChangeNotification = 'OversizedConfigurationItemChangeNotification' }
 
-	export enum MaximumExecutionFrequency { One_Hour = 0, Three_Hours = 1, Six_Hours = 2, Twelve_Hours = 3, TwentyFour_Hours = 4 }
+	export enum MaximumExecutionFrequency { One_Hour = 'One_Hour', Three_Hours = 'Three_Hours', Six_Hours = 'Six_Hours', Twelve_Hours = 'Twelve_Hours', TwentyFour_Hours = 'TwentyFour_Hours' }
 
 
 	/** Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules. */
@@ -1532,7 +1532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigRuleState { ACTIVE = 0, DELETING = 1, DELETING_RESULTS = 2, EVALUATING = 3 }
+	export enum ConfigRuleState { ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETING_RESULTS = 'DELETING_RESULTS', EVALUATING = 'EVALUATING' }
 
 
 	/** The configuration object for Config rule evaluation mode. The Supported valid values are Detective or Proactive. */
@@ -1551,7 +1551,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EvaluationMode { DETECTIVE = 0, PROACTIVE = 1 }
+	export enum EvaluationMode { DETECTIVE = 'DETECTIVE', PROACTIVE = 'PROACTIVE' }
 
 
 	/** <p/> */
@@ -1638,9 +1638,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregatedSourceType { ACCOUNT = 0, ORGANIZATION = 1 }
+	export enum AggregatedSourceType { ACCOUNT = 'ACCOUNT', ORGANIZATION = 'ORGANIZATION' }
 
-	export enum AggregatedSourceStatusType { FAILED = 0, SUCCEEDED = 1, OUTDATED = 2 }
+	export enum AggregatedSourceStatusType { FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', OUTDATED = 'OUTDATED' }
 
 	export interface DescribeConfigurationAggregatorSourcesStatusRequest {
 
@@ -1827,7 +1827,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecorderStatus { Pending = 0, Success = 1, Failure = 2 }
+	export enum RecorderStatus { Pending = 'Pending', Success = 'Success', Failure = 'Failure' }
 
 
 	/** The input for the <a>DescribeConfigurationRecorderStatus</a> action. */
@@ -1935,7 +1935,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordingStrategyType { ALL_SUPPORTED_RESOURCE_TYPES = 0, INCLUSION_BY_RESOURCE_TYPES = 1, EXCLUSION_BY_RESOURCE_TYPES = 2 }
+	export enum RecordingStrategyType { ALL_SUPPORTED_RESOURCE_TYPES = 'ALL_SUPPORTED_RESOURCE_TYPES', INCLUSION_BY_RESOURCE_TYPES = 'INCLUSION_BY_RESOURCE_TYPES', EXCLUSION_BY_RESOURCE_TYPES = 'EXCLUSION_BY_RESOURCE_TYPES' }
 
 
 	/** The input for the <a>DescribeConfigurationRecorders</a> action. */
@@ -2124,7 +2124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConformancePackState { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4 }
+	export enum ConformancePackState { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_COMPLETE = 'CREATE_COMPLETE', CREATE_FAILED = 'CREATE_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface DescribeConformancePackStatusRequest {
 		ConformancePackNames?: Array<string>;
@@ -2342,7 +2342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryStatus { Success = 0, Failure = 1, Not_Applicable = 2 }
+	export enum DeliveryStatus { Success = 'Success', Failure = 'Failure', Not_Applicable = 'Not_Applicable' }
 
 
 	/** A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic. */
@@ -2513,7 +2513,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationRuleStatus { CREATE_SUCCESSFUL = 0, CREATE_IN_PROGRESS = 1, CREATE_FAILED = 2, DELETE_SUCCESSFUL = 3, DELETE_FAILED = 4, DELETE_IN_PROGRESS = 5, UPDATE_SUCCESSFUL = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8 }
+	export enum OrganizationRuleStatus { CREATE_SUCCESSFUL = 'CREATE_SUCCESSFUL', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_SUCCESSFUL = 'DELETE_SUCCESSFUL', DELETE_FAILED = 'DELETE_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', UPDATE_SUCCESSFUL = 'UPDATE_SUCCESSFUL', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface DescribeOrganizationConfigRuleStatusesRequest {
 		OrganizationConfigRuleNames?: Array<string>;
@@ -2664,7 +2664,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationConfigRuleTriggerType { ConfigurationItemChangeNotification = 0, OversizedConfigurationItemChangeNotification = 1, ScheduledNotification = 2 }
+	export enum OrganizationConfigRuleTriggerType { ConfigurationItemChangeNotification = 'ConfigurationItemChangeNotification', OversizedConfigurationItemChangeNotification = 'OversizedConfigurationItemChangeNotification', ScheduledNotification = 'ScheduledNotification' }
 
 
 	/**  metadata for your organization Config Custom Policy rule including the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that trigger Config to evaluate Amazon Web Services resources against a rule. */
@@ -2704,7 +2704,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationConfigRuleTriggerTypeNoSN { ConfigurationItemChangeNotification = 0, OversizedConfigurationItemChangeNotification = 1 }
+	export enum OrganizationConfigRuleTriggerTypeNoSN { ConfigurationItemChangeNotification = 'ConfigurationItemChangeNotification', OversizedConfigurationItemChangeNotification = 'OversizedConfigurationItemChangeNotification' }
 
 	export interface DescribeOrganizationConfigRulesRequest {
 		OrganizationConfigRuleNames?: Array<string>;
@@ -2984,7 +2984,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RemediationTargetType { SSM_DOCUMENT = 0 }
+	export enum RemediationTargetType { SSM_DOCUMENT = 'SSM_DOCUMENT' }
 
 	export interface RemediationParameters {
 	}
@@ -3164,7 +3164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RemediationExecutionState { QUEUED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum RemediationExecutionState { QUEUED = 'QUEUED', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Name of the step from the SSM document. */
@@ -3195,7 +3195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RemediationExecutionStepState { SUCCEEDED = 0, PENDING = 1, FAILED = 2 }
+	export enum RemediationExecutionStepState { SUCCEEDED = 'SUCCEEDED', PENDING = 'PENDING', FAILED = 'FAILED' }
 
 	export interface DescribeRemediationExecutionStatusRequest {
 
@@ -3519,7 +3519,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigRuleComplianceSummaryGroupKey { ACCOUNT_ID = 0, AWS_REGION = 1 }
+	export enum ConfigRuleComplianceSummaryGroupKey { ACCOUNT_ID = 'ACCOUNT_ID', AWS_REGION = 'AWS_REGION' }
 
 	export interface GetAggregateConformancePackComplianceSummaryResponse {
 		AggregateConformancePackComplianceSummaries?: Array<AggregateConformancePackComplianceSummary>;
@@ -3725,7 +3725,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceCountGroupKey { RESOURCE_TYPE = 0, ACCOUNT_ID = 1, AWS_REGION = 2 }
+	export enum ResourceCountGroupKey { RESOURCE_TYPE = 'RESOURCE_TYPE', ACCOUNT_ID = 'ACCOUNT_ID', AWS_REGION = 'AWS_REGION' }
 
 	export interface GetAggregateResourceConfigResponse {
 		ConfigurationItem?: ConfigurationItem;
@@ -4605,7 +4605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChronologicalOrder { Reverse = 0, Forward = 1 }
+	export enum ChronologicalOrder { Reverse = 'Reverse', Forward = 'Forward' }
 
 	export interface InvalidTimeRangeException {
 	}
@@ -4666,7 +4666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceEvaluationStatus { IN_PROGRESS = 0, FAILED = 1, SUCCEEDED = 2 }
+	export enum ResourceEvaluationStatus { IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** Use EvaluationContext to group independently initiated proactive resource evaluations. For example, CFN Stack. If you want to check just a resource definition, you do not need to provide evaluation context. */
@@ -4723,7 +4723,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceConfigurationSchemaType { CFN_RESOURCE_SCHEMA = 0 }
+	export enum ResourceConfigurationSchemaType { CFN_RESOURCE_SCHEMA = 'CFN_RESOURCE_SCHEMA' }
 
 	export interface GetResourceEvaluationSummaryRequest {
 
@@ -4953,9 +4953,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
-	export enum SortBy { SCORE = 0 }
+	export enum SortBy { SCORE = 'SCORE' }
 
 
 	/** <p/> */
@@ -6480,13 +6480,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregateConformancePackComplianceSummaryGroupKey { ACCOUNT_ID = 0, AWS_REGION = 1 }
+	export enum AggregateConformancePackComplianceSummaryGroupKey { ACCOUNT_ID = 'ACCOUNT_ID', AWS_REGION = 'AWS_REGION' }
 
-	export enum MemberAccountRuleStatus { CREATE_SUCCESSFUL = 0, CREATE_IN_PROGRESS = 1, CREATE_FAILED = 2, DELETE_SUCCESSFUL = 3, DELETE_FAILED = 4, DELETE_IN_PROGRESS = 5, UPDATE_SUCCESSFUL = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8 }
+	export enum MemberAccountRuleStatus { CREATE_SUCCESSFUL = 'CREATE_SUCCESSFUL', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_SUCCESSFUL = 'DELETE_SUCCESSFUL', DELETE_FAILED = 'DELETE_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', UPDATE_SUCCESSFUL = 'UPDATE_SUCCESSFUL', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_FAILED = 'UPDATE_FAILED' }
 
-	export enum OrganizationResourceDetailedStatus { CREATE_SUCCESSFUL = 0, CREATE_IN_PROGRESS = 1, CREATE_FAILED = 2, DELETE_SUCCESSFUL = 3, DELETE_FAILED = 4, DELETE_IN_PROGRESS = 5, UPDATE_SUCCESSFUL = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8 }
+	export enum OrganizationResourceDetailedStatus { CREATE_SUCCESSFUL = 'CREATE_SUCCESSFUL', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_SUCCESSFUL = 'DELETE_SUCCESSFUL', DELETE_FAILED = 'DELETE_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', UPDATE_SUCCESSFUL = 'UPDATE_SUCCESSFUL', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_FAILED = 'UPDATE_FAILED' }
 
-	export enum OrganizationResourceStatus { CREATE_SUCCESSFUL = 0, CREATE_IN_PROGRESS = 1, CREATE_FAILED = 2, DELETE_SUCCESSFUL = 3, DELETE_FAILED = 4, DELETE_IN_PROGRESS = 5, UPDATE_SUCCESSFUL = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8 }
+	export enum OrganizationResourceStatus { CREATE_SUCCESSFUL = 'CREATE_SUCCESSFUL', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', DELETE_SUCCESSFUL = 'DELETE_SUCCESSFUL', DELETE_FAILED = 'DELETE_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', UPDATE_SUCCESSFUL = 'UPDATE_SUCCESSFUL', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 
 	/** The dynamic value of the resource. */
@@ -6509,7 +6509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceValueType { RESOURCE_ID = 0 }
+	export enum ResourceValueType { RESOURCE_ID = 'RESOURCE_ID' }
 
 
 	/** The static value of the resource. */
@@ -7454,189 +7454,189 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchGetAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.BatchGetAggregateResourceConfig' = 0 }
+	export enum BatchGetAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.BatchGetAggregateResourceConfig' = 'StarlingDoveService.BatchGetAggregateResourceConfig' }
 
-	export enum BatchGetResourceConfigX_Amz_Target { 'StarlingDoveService.BatchGetResourceConfig' = 0 }
+	export enum BatchGetResourceConfigX_Amz_Target { 'StarlingDoveService.BatchGetResourceConfig' = 'StarlingDoveService.BatchGetResourceConfig' }
 
-	export enum DeleteAggregationAuthorizationX_Amz_Target { 'StarlingDoveService.DeleteAggregationAuthorization' = 0 }
+	export enum DeleteAggregationAuthorizationX_Amz_Target { 'StarlingDoveService.DeleteAggregationAuthorization' = 'StarlingDoveService.DeleteAggregationAuthorization' }
 
-	export enum DeleteConfigRuleX_Amz_Target { 'StarlingDoveService.DeleteConfigRule' = 0 }
+	export enum DeleteConfigRuleX_Amz_Target { 'StarlingDoveService.DeleteConfigRule' = 'StarlingDoveService.DeleteConfigRule' }
 
-	export enum DeleteConfigurationAggregatorX_Amz_Target { 'StarlingDoveService.DeleteConfigurationAggregator' = 0 }
+	export enum DeleteConfigurationAggregatorX_Amz_Target { 'StarlingDoveService.DeleteConfigurationAggregator' = 'StarlingDoveService.DeleteConfigurationAggregator' }
 
-	export enum DeleteConfigurationRecorderX_Amz_Target { 'StarlingDoveService.DeleteConfigurationRecorder' = 0 }
+	export enum DeleteConfigurationRecorderX_Amz_Target { 'StarlingDoveService.DeleteConfigurationRecorder' = 'StarlingDoveService.DeleteConfigurationRecorder' }
 
-	export enum DeleteConformancePackX_Amz_Target { 'StarlingDoveService.DeleteConformancePack' = 0 }
+	export enum DeleteConformancePackX_Amz_Target { 'StarlingDoveService.DeleteConformancePack' = 'StarlingDoveService.DeleteConformancePack' }
 
-	export enum DeleteDeliveryChannelX_Amz_Target { 'StarlingDoveService.DeleteDeliveryChannel' = 0 }
+	export enum DeleteDeliveryChannelX_Amz_Target { 'StarlingDoveService.DeleteDeliveryChannel' = 'StarlingDoveService.DeleteDeliveryChannel' }
 
-	export enum DeleteEvaluationResultsX_Amz_Target { 'StarlingDoveService.DeleteEvaluationResults' = 0 }
+	export enum DeleteEvaluationResultsX_Amz_Target { 'StarlingDoveService.DeleteEvaluationResults' = 'StarlingDoveService.DeleteEvaluationResults' }
 
-	export enum DeleteOrganizationConfigRuleX_Amz_Target { 'StarlingDoveService.DeleteOrganizationConfigRule' = 0 }
+	export enum DeleteOrganizationConfigRuleX_Amz_Target { 'StarlingDoveService.DeleteOrganizationConfigRule' = 'StarlingDoveService.DeleteOrganizationConfigRule' }
 
-	export enum DeleteOrganizationConformancePackX_Amz_Target { 'StarlingDoveService.DeleteOrganizationConformancePack' = 0 }
+	export enum DeleteOrganizationConformancePackX_Amz_Target { 'StarlingDoveService.DeleteOrganizationConformancePack' = 'StarlingDoveService.DeleteOrganizationConformancePack' }
 
-	export enum DeletePendingAggregationRequestX_Amz_Target { 'StarlingDoveService.DeletePendingAggregationRequest' = 0 }
+	export enum DeletePendingAggregationRequestX_Amz_Target { 'StarlingDoveService.DeletePendingAggregationRequest' = 'StarlingDoveService.DeletePendingAggregationRequest' }
 
-	export enum DeleteRemediationConfigurationX_Amz_Target { 'StarlingDoveService.DeleteRemediationConfiguration' = 0 }
+	export enum DeleteRemediationConfigurationX_Amz_Target { 'StarlingDoveService.DeleteRemediationConfiguration' = 'StarlingDoveService.DeleteRemediationConfiguration' }
 
-	export enum DeleteRemediationExceptionsX_Amz_Target { 'StarlingDoveService.DeleteRemediationExceptions' = 0 }
+	export enum DeleteRemediationExceptionsX_Amz_Target { 'StarlingDoveService.DeleteRemediationExceptions' = 'StarlingDoveService.DeleteRemediationExceptions' }
 
-	export enum DeleteResourceConfigX_Amz_Target { 'StarlingDoveService.DeleteResourceConfig' = 0 }
+	export enum DeleteResourceConfigX_Amz_Target { 'StarlingDoveService.DeleteResourceConfig' = 'StarlingDoveService.DeleteResourceConfig' }
 
-	export enum DeleteRetentionConfigurationX_Amz_Target { 'StarlingDoveService.DeleteRetentionConfiguration' = 0 }
+	export enum DeleteRetentionConfigurationX_Amz_Target { 'StarlingDoveService.DeleteRetentionConfiguration' = 'StarlingDoveService.DeleteRetentionConfiguration' }
 
-	export enum DeleteStoredQueryX_Amz_Target { 'StarlingDoveService.DeleteStoredQuery' = 0 }
+	export enum DeleteStoredQueryX_Amz_Target { 'StarlingDoveService.DeleteStoredQuery' = 'StarlingDoveService.DeleteStoredQuery' }
 
-	export enum DeliverConfigSnapshotX_Amz_Target { 'StarlingDoveService.DeliverConfigSnapshot' = 0 }
+	export enum DeliverConfigSnapshotX_Amz_Target { 'StarlingDoveService.DeliverConfigSnapshot' = 'StarlingDoveService.DeliverConfigSnapshot' }
 
-	export enum DescribeAggregateComplianceByConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeAggregateComplianceByConfigRules' = 0 }
+	export enum DescribeAggregateComplianceByConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeAggregateComplianceByConfigRules' = 'StarlingDoveService.DescribeAggregateComplianceByConfigRules' }
 
-	export enum DescribeAggregateComplianceByConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeAggregateComplianceByConformancePacks' = 0 }
+	export enum DescribeAggregateComplianceByConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeAggregateComplianceByConformancePacks' = 'StarlingDoveService.DescribeAggregateComplianceByConformancePacks' }
 
-	export enum DescribeAggregationAuthorizationsX_Amz_Target { 'StarlingDoveService.DescribeAggregationAuthorizations' = 0 }
+	export enum DescribeAggregationAuthorizationsX_Amz_Target { 'StarlingDoveService.DescribeAggregationAuthorizations' = 'StarlingDoveService.DescribeAggregationAuthorizations' }
 
-	export enum DescribeComplianceByConfigRuleX_Amz_Target { 'StarlingDoveService.DescribeComplianceByConfigRule' = 0 }
+	export enum DescribeComplianceByConfigRuleX_Amz_Target { 'StarlingDoveService.DescribeComplianceByConfigRule' = 'StarlingDoveService.DescribeComplianceByConfigRule' }
 
-	export enum DescribeComplianceByResourceX_Amz_Target { 'StarlingDoveService.DescribeComplianceByResource' = 0 }
+	export enum DescribeComplianceByResourceX_Amz_Target { 'StarlingDoveService.DescribeComplianceByResource' = 'StarlingDoveService.DescribeComplianceByResource' }
 
-	export enum DescribeConfigRuleEvaluationStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigRuleEvaluationStatus' = 0 }
+	export enum DescribeConfigRuleEvaluationStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigRuleEvaluationStatus' = 'StarlingDoveService.DescribeConfigRuleEvaluationStatus' }
 
-	export enum DescribeConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeConfigRules' = 0 }
+	export enum DescribeConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeConfigRules' = 'StarlingDoveService.DescribeConfigRules' }
 
-	export enum DescribeConfigurationAggregatorSourcesStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigurationAggregatorSourcesStatus' = 0 }
+	export enum DescribeConfigurationAggregatorSourcesStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigurationAggregatorSourcesStatus' = 'StarlingDoveService.DescribeConfigurationAggregatorSourcesStatus' }
 
-	export enum DescribeConfigurationAggregatorsX_Amz_Target { 'StarlingDoveService.DescribeConfigurationAggregators' = 0 }
+	export enum DescribeConfigurationAggregatorsX_Amz_Target { 'StarlingDoveService.DescribeConfigurationAggregators' = 'StarlingDoveService.DescribeConfigurationAggregators' }
 
-	export enum DescribeConfigurationRecorderStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigurationRecorderStatus' = 0 }
+	export enum DescribeConfigurationRecorderStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigurationRecorderStatus' = 'StarlingDoveService.DescribeConfigurationRecorderStatus' }
 
-	export enum DescribeConfigurationRecordersX_Amz_Target { 'StarlingDoveService.DescribeConfigurationRecorders' = 0 }
+	export enum DescribeConfigurationRecordersX_Amz_Target { 'StarlingDoveService.DescribeConfigurationRecorders' = 'StarlingDoveService.DescribeConfigurationRecorders' }
 
-	export enum DescribeConformancePackComplianceX_Amz_Target { 'StarlingDoveService.DescribeConformancePackCompliance' = 0 }
+	export enum DescribeConformancePackComplianceX_Amz_Target { 'StarlingDoveService.DescribeConformancePackCompliance' = 'StarlingDoveService.DescribeConformancePackCompliance' }
 
-	export enum DescribeConformancePackStatusX_Amz_Target { 'StarlingDoveService.DescribeConformancePackStatus' = 0 }
+	export enum DescribeConformancePackStatusX_Amz_Target { 'StarlingDoveService.DescribeConformancePackStatus' = 'StarlingDoveService.DescribeConformancePackStatus' }
 
-	export enum DescribeConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeConformancePacks' = 0 }
+	export enum DescribeConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeConformancePacks' = 'StarlingDoveService.DescribeConformancePacks' }
 
-	export enum DescribeDeliveryChannelStatusX_Amz_Target { 'StarlingDoveService.DescribeDeliveryChannelStatus' = 0 }
+	export enum DescribeDeliveryChannelStatusX_Amz_Target { 'StarlingDoveService.DescribeDeliveryChannelStatus' = 'StarlingDoveService.DescribeDeliveryChannelStatus' }
 
-	export enum DescribeDeliveryChannelsX_Amz_Target { 'StarlingDoveService.DescribeDeliveryChannels' = 0 }
+	export enum DescribeDeliveryChannelsX_Amz_Target { 'StarlingDoveService.DescribeDeliveryChannels' = 'StarlingDoveService.DescribeDeliveryChannels' }
 
-	export enum DescribeOrganizationConfigRuleStatusesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConfigRuleStatuses' = 0 }
+	export enum DescribeOrganizationConfigRuleStatusesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConfigRuleStatuses' = 'StarlingDoveService.DescribeOrganizationConfigRuleStatuses' }
 
-	export enum DescribeOrganizationConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConfigRules' = 0 }
+	export enum DescribeOrganizationConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConfigRules' = 'StarlingDoveService.DescribeOrganizationConfigRules' }
 
-	export enum DescribeOrganizationConformancePackStatusesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConformancePackStatuses' = 0 }
+	export enum DescribeOrganizationConformancePackStatusesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConformancePackStatuses' = 'StarlingDoveService.DescribeOrganizationConformancePackStatuses' }
 
-	export enum DescribeOrganizationConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConformancePacks' = 0 }
+	export enum DescribeOrganizationConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConformancePacks' = 'StarlingDoveService.DescribeOrganizationConformancePacks' }
 
-	export enum DescribePendingAggregationRequestsX_Amz_Target { 'StarlingDoveService.DescribePendingAggregationRequests' = 0 }
+	export enum DescribePendingAggregationRequestsX_Amz_Target { 'StarlingDoveService.DescribePendingAggregationRequests' = 'StarlingDoveService.DescribePendingAggregationRequests' }
 
-	export enum DescribeRemediationConfigurationsX_Amz_Target { 'StarlingDoveService.DescribeRemediationConfigurations' = 0 }
+	export enum DescribeRemediationConfigurationsX_Amz_Target { 'StarlingDoveService.DescribeRemediationConfigurations' = 'StarlingDoveService.DescribeRemediationConfigurations' }
 
-	export enum DescribeRemediationExceptionsX_Amz_Target { 'StarlingDoveService.DescribeRemediationExceptions' = 0 }
+	export enum DescribeRemediationExceptionsX_Amz_Target { 'StarlingDoveService.DescribeRemediationExceptions' = 'StarlingDoveService.DescribeRemediationExceptions' }
 
-	export enum DescribeRemediationExecutionStatusX_Amz_Target { 'StarlingDoveService.DescribeRemediationExecutionStatus' = 0 }
+	export enum DescribeRemediationExecutionStatusX_Amz_Target { 'StarlingDoveService.DescribeRemediationExecutionStatus' = 'StarlingDoveService.DescribeRemediationExecutionStatus' }
 
-	export enum DescribeRetentionConfigurationsX_Amz_Target { 'StarlingDoveService.DescribeRetentionConfigurations' = 0 }
+	export enum DescribeRetentionConfigurationsX_Amz_Target { 'StarlingDoveService.DescribeRetentionConfigurations' = 'StarlingDoveService.DescribeRetentionConfigurations' }
 
-	export enum GetAggregateComplianceDetailsByConfigRuleX_Amz_Target { 'StarlingDoveService.GetAggregateComplianceDetailsByConfigRule' = 0 }
+	export enum GetAggregateComplianceDetailsByConfigRuleX_Amz_Target { 'StarlingDoveService.GetAggregateComplianceDetailsByConfigRule' = 'StarlingDoveService.GetAggregateComplianceDetailsByConfigRule' }
 
-	export enum GetAggregateConfigRuleComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetAggregateConfigRuleComplianceSummary' = 0 }
+	export enum GetAggregateConfigRuleComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetAggregateConfigRuleComplianceSummary' = 'StarlingDoveService.GetAggregateConfigRuleComplianceSummary' }
 
-	export enum GetAggregateConformancePackComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetAggregateConformancePackComplianceSummary' = 0 }
+	export enum GetAggregateConformancePackComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetAggregateConformancePackComplianceSummary' = 'StarlingDoveService.GetAggregateConformancePackComplianceSummary' }
 
-	export enum GetAggregateDiscoveredResourceCountsX_Amz_Target { 'StarlingDoveService.GetAggregateDiscoveredResourceCounts' = 0 }
+	export enum GetAggregateDiscoveredResourceCountsX_Amz_Target { 'StarlingDoveService.GetAggregateDiscoveredResourceCounts' = 'StarlingDoveService.GetAggregateDiscoveredResourceCounts' }
 
-	export enum GetAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.GetAggregateResourceConfig' = 0 }
+	export enum GetAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.GetAggregateResourceConfig' = 'StarlingDoveService.GetAggregateResourceConfig' }
 
-	export enum GetComplianceDetailsByConfigRuleX_Amz_Target { 'StarlingDoveService.GetComplianceDetailsByConfigRule' = 0 }
+	export enum GetComplianceDetailsByConfigRuleX_Amz_Target { 'StarlingDoveService.GetComplianceDetailsByConfigRule' = 'StarlingDoveService.GetComplianceDetailsByConfigRule' }
 
-	export enum GetComplianceDetailsByResourceX_Amz_Target { 'StarlingDoveService.GetComplianceDetailsByResource' = 0 }
+	export enum GetComplianceDetailsByResourceX_Amz_Target { 'StarlingDoveService.GetComplianceDetailsByResource' = 'StarlingDoveService.GetComplianceDetailsByResource' }
 
-	export enum GetComplianceSummaryByConfigRuleX_Amz_Target { 'StarlingDoveService.GetComplianceSummaryByConfigRule' = 0 }
+	export enum GetComplianceSummaryByConfigRuleX_Amz_Target { 'StarlingDoveService.GetComplianceSummaryByConfigRule' = 'StarlingDoveService.GetComplianceSummaryByConfigRule' }
 
-	export enum GetComplianceSummaryByResourceTypeX_Amz_Target { 'StarlingDoveService.GetComplianceSummaryByResourceType' = 0 }
+	export enum GetComplianceSummaryByResourceTypeX_Amz_Target { 'StarlingDoveService.GetComplianceSummaryByResourceType' = 'StarlingDoveService.GetComplianceSummaryByResourceType' }
 
-	export enum GetConformancePackComplianceDetailsX_Amz_Target { 'StarlingDoveService.GetConformancePackComplianceDetails' = 0 }
+	export enum GetConformancePackComplianceDetailsX_Amz_Target { 'StarlingDoveService.GetConformancePackComplianceDetails' = 'StarlingDoveService.GetConformancePackComplianceDetails' }
 
-	export enum GetConformancePackComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetConformancePackComplianceSummary' = 0 }
+	export enum GetConformancePackComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetConformancePackComplianceSummary' = 'StarlingDoveService.GetConformancePackComplianceSummary' }
 
-	export enum GetCustomRulePolicyX_Amz_Target { 'StarlingDoveService.GetCustomRulePolicy' = 0 }
+	export enum GetCustomRulePolicyX_Amz_Target { 'StarlingDoveService.GetCustomRulePolicy' = 'StarlingDoveService.GetCustomRulePolicy' }
 
-	export enum GetDiscoveredResourceCountsX_Amz_Target { 'StarlingDoveService.GetDiscoveredResourceCounts' = 0 }
+	export enum GetDiscoveredResourceCountsX_Amz_Target { 'StarlingDoveService.GetDiscoveredResourceCounts' = 'StarlingDoveService.GetDiscoveredResourceCounts' }
 
-	export enum GetOrganizationConfigRuleDetailedStatusX_Amz_Target { 'StarlingDoveService.GetOrganizationConfigRuleDetailedStatus' = 0 }
+	export enum GetOrganizationConfigRuleDetailedStatusX_Amz_Target { 'StarlingDoveService.GetOrganizationConfigRuleDetailedStatus' = 'StarlingDoveService.GetOrganizationConfigRuleDetailedStatus' }
 
-	export enum GetOrganizationConformancePackDetailedStatusX_Amz_Target { 'StarlingDoveService.GetOrganizationConformancePackDetailedStatus' = 0 }
+	export enum GetOrganizationConformancePackDetailedStatusX_Amz_Target { 'StarlingDoveService.GetOrganizationConformancePackDetailedStatus' = 'StarlingDoveService.GetOrganizationConformancePackDetailedStatus' }
 
-	export enum GetOrganizationCustomRulePolicyX_Amz_Target { 'StarlingDoveService.GetOrganizationCustomRulePolicy' = 0 }
+	export enum GetOrganizationCustomRulePolicyX_Amz_Target { 'StarlingDoveService.GetOrganizationCustomRulePolicy' = 'StarlingDoveService.GetOrganizationCustomRulePolicy' }
 
-	export enum GetResourceConfigHistoryX_Amz_Target { 'StarlingDoveService.GetResourceConfigHistory' = 0 }
+	export enum GetResourceConfigHistoryX_Amz_Target { 'StarlingDoveService.GetResourceConfigHistory' = 'StarlingDoveService.GetResourceConfigHistory' }
 
-	export enum GetResourceEvaluationSummaryX_Amz_Target { 'StarlingDoveService.GetResourceEvaluationSummary' = 0 }
+	export enum GetResourceEvaluationSummaryX_Amz_Target { 'StarlingDoveService.GetResourceEvaluationSummary' = 'StarlingDoveService.GetResourceEvaluationSummary' }
 
-	export enum GetStoredQueryX_Amz_Target { 'StarlingDoveService.GetStoredQuery' = 0 }
+	export enum GetStoredQueryX_Amz_Target { 'StarlingDoveService.GetStoredQuery' = 'StarlingDoveService.GetStoredQuery' }
 
-	export enum ListAggregateDiscoveredResourcesX_Amz_Target { 'StarlingDoveService.ListAggregateDiscoveredResources' = 0 }
+	export enum ListAggregateDiscoveredResourcesX_Amz_Target { 'StarlingDoveService.ListAggregateDiscoveredResources' = 'StarlingDoveService.ListAggregateDiscoveredResources' }
 
-	export enum ListConformancePackComplianceScoresX_Amz_Target { 'StarlingDoveService.ListConformancePackComplianceScores' = 0 }
+	export enum ListConformancePackComplianceScoresX_Amz_Target { 'StarlingDoveService.ListConformancePackComplianceScores' = 'StarlingDoveService.ListConformancePackComplianceScores' }
 
-	export enum ListDiscoveredResourcesX_Amz_Target { 'StarlingDoveService.ListDiscoveredResources' = 0 }
+	export enum ListDiscoveredResourcesX_Amz_Target { 'StarlingDoveService.ListDiscoveredResources' = 'StarlingDoveService.ListDiscoveredResources' }
 
-	export enum ListResourceEvaluationsX_Amz_Target { 'StarlingDoveService.ListResourceEvaluations' = 0 }
+	export enum ListResourceEvaluationsX_Amz_Target { 'StarlingDoveService.ListResourceEvaluations' = 'StarlingDoveService.ListResourceEvaluations' }
 
-	export enum ListStoredQueriesX_Amz_Target { 'StarlingDoveService.ListStoredQueries' = 0 }
+	export enum ListStoredQueriesX_Amz_Target { 'StarlingDoveService.ListStoredQueries' = 'StarlingDoveService.ListStoredQueries' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'StarlingDoveService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'StarlingDoveService.ListTagsForResource' = 'StarlingDoveService.ListTagsForResource' }
 
-	export enum PutAggregationAuthorizationX_Amz_Target { 'StarlingDoveService.PutAggregationAuthorization' = 0 }
+	export enum PutAggregationAuthorizationX_Amz_Target { 'StarlingDoveService.PutAggregationAuthorization' = 'StarlingDoveService.PutAggregationAuthorization' }
 
-	export enum PutConfigRuleX_Amz_Target { 'StarlingDoveService.PutConfigRule' = 0 }
+	export enum PutConfigRuleX_Amz_Target { 'StarlingDoveService.PutConfigRule' = 'StarlingDoveService.PutConfigRule' }
 
-	export enum PutConfigurationAggregatorX_Amz_Target { 'StarlingDoveService.PutConfigurationAggregator' = 0 }
+	export enum PutConfigurationAggregatorX_Amz_Target { 'StarlingDoveService.PutConfigurationAggregator' = 'StarlingDoveService.PutConfigurationAggregator' }
 
-	export enum PutConfigurationRecorderX_Amz_Target { 'StarlingDoveService.PutConfigurationRecorder' = 0 }
+	export enum PutConfigurationRecorderX_Amz_Target { 'StarlingDoveService.PutConfigurationRecorder' = 'StarlingDoveService.PutConfigurationRecorder' }
 
-	export enum PutConformancePackX_Amz_Target { 'StarlingDoveService.PutConformancePack' = 0 }
+	export enum PutConformancePackX_Amz_Target { 'StarlingDoveService.PutConformancePack' = 'StarlingDoveService.PutConformancePack' }
 
-	export enum PutDeliveryChannelX_Amz_Target { 'StarlingDoveService.PutDeliveryChannel' = 0 }
+	export enum PutDeliveryChannelX_Amz_Target { 'StarlingDoveService.PutDeliveryChannel' = 'StarlingDoveService.PutDeliveryChannel' }
 
-	export enum PutEvaluationsX_Amz_Target { 'StarlingDoveService.PutEvaluations' = 0 }
+	export enum PutEvaluationsX_Amz_Target { 'StarlingDoveService.PutEvaluations' = 'StarlingDoveService.PutEvaluations' }
 
-	export enum PutExternalEvaluationX_Amz_Target { 'StarlingDoveService.PutExternalEvaluation' = 0 }
+	export enum PutExternalEvaluationX_Amz_Target { 'StarlingDoveService.PutExternalEvaluation' = 'StarlingDoveService.PutExternalEvaluation' }
 
-	export enum PutOrganizationConfigRuleX_Amz_Target { 'StarlingDoveService.PutOrganizationConfigRule' = 0 }
+	export enum PutOrganizationConfigRuleX_Amz_Target { 'StarlingDoveService.PutOrganizationConfigRule' = 'StarlingDoveService.PutOrganizationConfigRule' }
 
-	export enum PutOrganizationConformancePackX_Amz_Target { 'StarlingDoveService.PutOrganizationConformancePack' = 0 }
+	export enum PutOrganizationConformancePackX_Amz_Target { 'StarlingDoveService.PutOrganizationConformancePack' = 'StarlingDoveService.PutOrganizationConformancePack' }
 
-	export enum PutRemediationConfigurationsX_Amz_Target { 'StarlingDoveService.PutRemediationConfigurations' = 0 }
+	export enum PutRemediationConfigurationsX_Amz_Target { 'StarlingDoveService.PutRemediationConfigurations' = 'StarlingDoveService.PutRemediationConfigurations' }
 
-	export enum PutRemediationExceptionsX_Amz_Target { 'StarlingDoveService.PutRemediationExceptions' = 0 }
+	export enum PutRemediationExceptionsX_Amz_Target { 'StarlingDoveService.PutRemediationExceptions' = 'StarlingDoveService.PutRemediationExceptions' }
 
-	export enum PutResourceConfigX_Amz_Target { 'StarlingDoveService.PutResourceConfig' = 0 }
+	export enum PutResourceConfigX_Amz_Target { 'StarlingDoveService.PutResourceConfig' = 'StarlingDoveService.PutResourceConfig' }
 
-	export enum PutRetentionConfigurationX_Amz_Target { 'StarlingDoveService.PutRetentionConfiguration' = 0 }
+	export enum PutRetentionConfigurationX_Amz_Target { 'StarlingDoveService.PutRetentionConfiguration' = 'StarlingDoveService.PutRetentionConfiguration' }
 
-	export enum PutStoredQueryX_Amz_Target { 'StarlingDoveService.PutStoredQuery' = 0 }
+	export enum PutStoredQueryX_Amz_Target { 'StarlingDoveService.PutStoredQuery' = 'StarlingDoveService.PutStoredQuery' }
 
-	export enum SelectAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.SelectAggregateResourceConfig' = 0 }
+	export enum SelectAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.SelectAggregateResourceConfig' = 'StarlingDoveService.SelectAggregateResourceConfig' }
 
-	export enum SelectResourceConfigX_Amz_Target { 'StarlingDoveService.SelectResourceConfig' = 0 }
+	export enum SelectResourceConfigX_Amz_Target { 'StarlingDoveService.SelectResourceConfig' = 'StarlingDoveService.SelectResourceConfig' }
 
-	export enum StartConfigRulesEvaluationX_Amz_Target { 'StarlingDoveService.StartConfigRulesEvaluation' = 0 }
+	export enum StartConfigRulesEvaluationX_Amz_Target { 'StarlingDoveService.StartConfigRulesEvaluation' = 'StarlingDoveService.StartConfigRulesEvaluation' }
 
-	export enum StartConfigurationRecorderX_Amz_Target { 'StarlingDoveService.StartConfigurationRecorder' = 0 }
+	export enum StartConfigurationRecorderX_Amz_Target { 'StarlingDoveService.StartConfigurationRecorder' = 'StarlingDoveService.StartConfigurationRecorder' }
 
-	export enum StartRemediationExecutionX_Amz_Target { 'StarlingDoveService.StartRemediationExecution' = 0 }
+	export enum StartRemediationExecutionX_Amz_Target { 'StarlingDoveService.StartRemediationExecution' = 'StarlingDoveService.StartRemediationExecution' }
 
-	export enum StartResourceEvaluationX_Amz_Target { 'StarlingDoveService.StartResourceEvaluation' = 0 }
+	export enum StartResourceEvaluationX_Amz_Target { 'StarlingDoveService.StartResourceEvaluation' = 'StarlingDoveService.StartResourceEvaluation' }
 
-	export enum StopConfigurationRecorderX_Amz_Target { 'StarlingDoveService.StopConfigurationRecorder' = 0 }
+	export enum StopConfigurationRecorderX_Amz_Target { 'StarlingDoveService.StopConfigurationRecorder' = 'StarlingDoveService.StopConfigurationRecorder' }
 
-	export enum TagResourceX_Amz_Target { 'StarlingDoveService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'StarlingDoveService.TagResource' = 'StarlingDoveService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'StarlingDoveService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'StarlingDoveService.UntagResource' = 'StarlingDoveService.UntagResource' }
 
 }
 

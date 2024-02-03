@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VeteranStatusConfirmationVeteran_status { confirmed = 0, 'not confirmed' = 1 }
+	export enum VeteranStatusConfirmationVeteran_status { confirmed = 'confirmed', 'not confirmed' = 'not confirmed' }
 
 
 	/** Attributes required to retrieve a Veteran's status */
@@ -164,7 +164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VeteranStatusRequestGender { M = 0, F = 1 }
+	export enum VeteranStatusRequestGender { M = 'M', F = 'F' }
 
 	@Injectable()
 	export class MyClient {

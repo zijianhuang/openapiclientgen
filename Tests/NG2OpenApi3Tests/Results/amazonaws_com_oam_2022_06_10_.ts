@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { 'AWS::CloudWatch::Metric' = 0, 'AWS::Logs::LogGroup' = 1, 'AWS::XRay::Trace' = 2 }
+	export enum ResourceType { 'AWS::CloudWatch::Metric' = 'AWS::CloudWatch::Metric', 'AWS::Logs::LogGroup' = 'AWS::Logs::LogGroup', 'AWS::XRay::Trace' = 'AWS::XRay::Trace' }
 
 	export interface InternalServiceFault {
 	}

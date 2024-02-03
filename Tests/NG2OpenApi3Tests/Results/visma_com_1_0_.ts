@@ -37,7 +37,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessTokenCredentialsGrant_type { client_credentials = 0, authorization_code = 1, refresh_token = 2 }
+	export enum AccessTokenCredentialsGrant_type { client_credentials = 'client_credentials', authorization_code = 'authorization_code', refresh_token = 'refresh_token' }
 
 	export interface ActivityActivityType {
 		category?: ActivityActivityTypeCategory | null;
@@ -68,9 +68,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityActivityTypeCategory { Personal = 0, Absences = 1, CalendarEntry = 2, SalesEvent = 3, Task = 4 }
+	export enum ActivityActivityTypeCategory { Personal = 'Personal', Absences = 'Absences', CalendarEntry = 'CalendarEntry', SalesEvent = 'SalesEvent', Task = 'Task' }
 
-	export enum ActivityCategory { Personal = 0, Absences = 1, CalendarEntry = 2, SalesEvent = 3, Task = 4 }
+	export enum ActivityCategory { Personal = 'Personal', Absences = 'Absences', CalendarEntry = 'CalendarEntry', SalesEvent = 'SalesEvent', Task = 'Task' }
 
 	export interface ActivityCustomer {
 		guid?: string | null;
@@ -326,7 +326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityRecurrenceModelFrequency { Daily = 0, Weekly = 1, Monthly = 2, Yearly = 3 }
+	export enum ActivityRecurrenceModelFrequency { Daily = 'Daily', Weekly = 'Weekly', Monthly = 'Monthly', Yearly = 'Yearly' }
 
 	export interface RecurrencePattern {
 		daily?: DailyModel;
@@ -380,9 +380,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MonthlyModelDayOrdinal { First = 0, Second = 1, Third = 2, Fourth = 3, Last = 4 }
+	export enum MonthlyModelDayOrdinal { First = 'First', Second = 'Second', Third = 'Third', Fourth = 'Fourth', Last = 'Last' }
 
-	export enum MonthlyModelDayOrdinalOption { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, WeekDay = 6, Saturday = 7, WeekendDay = 8, Day = 9 }
+	export enum MonthlyModelDayOrdinalOption { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', WeekDay = 'WeekDay', Saturday = 'Saturday', WeekendDay = 'WeekendDay', Day = 'Day' }
 
 	export interface WeeklyModel {
 		friday?: boolean | null;
@@ -440,7 +440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum YearlyModelMonth { January = 0, February = 1, March = 2, April = 3, May = 4, June = 5, July = 6, August = 7, September = 8, October = 9, November = 10, December = 11 }
+	export enum YearlyModelMonth { January = 'January', February = 'February', March = 'March', April = 'April', May = 'May', June = 'June', July = 'July', August = 'August', September = 'September', October = 'October', November = 'November', December = 'December' }
 
 	export interface RecurrenceRange {
 		maxOccurrences?: number | null;
@@ -458,7 +458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityModelRecurrenceType { None = 0, Occurrence = 1, Exception = 2, Series = 3 }
+	export enum ActivityModelRecurrenceType { None = 'None', Occurrence = 'Occurrence', Exception = 'Exception', Series = 'Series' }
 
 	export interface ActivityParticipantModel {
 
@@ -520,9 +520,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityParticipantModelStatus { Unknown = 0, Invited = 1, Accepted = 2, Tentative = 3, Declined = 4 }
+	export enum ActivityParticipantModelStatus { Unknown = 'Unknown', Invited = 'Invited', Accepted = 'Accepted', Tentative = 'Tentative', Declined = 'Declined' }
 
-	export enum ActivityParticipantModelType { User = 0, Contact = 1, Resource = 2, Other = 3 }
+	export enum ActivityParticipantModelType { User = 'User', Contact = 'Contact', Resource = 'Resource', Other = 'Other' }
 
 	export interface ActivityTypeModel {
 
@@ -599,7 +599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressCountryHasRegions { NoRegion = 0, Unknown = 1, HasRegions = 2 }
+	export enum AddressCountryHasRegions { NoRegion = 'NoRegion', Unknown = 'Unknown', HasRegions = 'HasRegions' }
 
 	export interface AddressCustomer {
 		guid?: string | null;
@@ -669,7 +669,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BankAccountFormat { Iban = 0, Bankgiro = 1 }
+	export enum BankAccountFormat { Iban = 'Iban', Bankgiro = 'Bankgiro' }
 
 	export interface BankAccountOutputModel {
 
@@ -729,9 +729,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BillablePeriod { Any = 0, Past = 1, Future = 2, NowAndPast = 3, NowAndFuture = 4 }
+	export enum BillablePeriod { Any = 'Any', Past = 'Past', Future = 'Future', NowAndPast = 'NowAndPast', NowAndFuture = 'NowAndFuture' }
 
-	export enum BillableStatusType { Billable = 0, NotBillable = 1, RemovedFromInvoice = 2 }
+	export enum BillableStatusType { Billable = 'Billable', NotBillable = 'NotBillable', RemovedFromInvoice = 'RemovedFromInvoice' }
 
 	export interface BillingAddressModel {
 		addressline?: string | null;
@@ -790,7 +790,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BillingScheduleType { Immediately = 0, WhenPhaseCompleted = 1, OnDate = 2 }
+	export enum BillingScheduleType { Immediately = 'Immediately', WhenPhaseCompleted = 'WhenPhaseCompleted', OnDate = 'OnDate' }
 
 	export interface BusinessUnitCostCenterModel {
 
@@ -979,7 +979,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommunicationMethodType { Phone = 0, Fax = 1, MobilePhone = 2, IPPhone = 3, InstantMessenger = 4, EmailAddress = 5 }
+	export enum CommunicationMethodType { Phone = 'Phone', Fax = 'Fax', MobilePhone = 'MobilePhone', IPPhone = 'IPPhone', InstantMessenger = 'InstantMessenger', EmailAddress = 'EmailAddress' }
 
 	export interface CommunicationTypeModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -1245,7 +1245,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactKeywordModelCategory { Project = 0, Contact = 1, User = 2, File = 3 }
+	export enum ContactKeywordModelCategory { Project = 'Project', Contact = 'Contact', User = 'User', File = 'File' }
 
 	export interface ContactModel {
 		addressGuid?: string | null;
@@ -1332,9 +1332,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactModelSalutation { 'Mr.' = 0, 'Mrs.' = 1, 'Ms.' = 2 }
+	export enum ContactModelSalutation { 'Mr.' = 'Mr.', 'Mrs.' = 'Mrs.', 'Ms.' = 'Ms.' }
 
-	export enum ContactModelSatisfactionLevel { Unsatisfied = 0, Neutral = 1, Satisfied = 2, Unknown = 3 }
+	export enum ContactModelSatisfactionLevel { Unsatisfied = 'Unsatisfied', Neutral = 'Neutral', Satisfied = 'Satisfied', Unknown = 'Unknown' }
 
 	export interface ContactRoleModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CountryRegionsStatus { NoRegion = 0, Unknown = 1, HasRegions = 2 }
+	export enum CountryRegionsStatus { NoRegion = 'NoRegion', Unknown = 'Unknown', HasRegions = 'HasRegions' }
 
 	export interface CreateInvoiceModel {
 		billingCustomerGuid?: string | null;
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CurrencyPurpose { ProjectPrice = 0, ProjectCost = 1, UserCost = 2, ExpenseCost = 3 }
+	export enum CurrencyPurpose { ProjectPrice = 'ProjectPrice', ProjectCost = 'ProjectCost', UserCost = 'UserCost', ExpenseCost = 'ExpenseCost' }
 
 	export interface CurrencySubModel {
 		code?: string | null;
@@ -1908,7 +1908,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomPropertyModelType { Numeric = 0, Money = 1, String = 2, Date = 3, Selection = 4 }
+	export enum CustomPropertyModelType { Numeric = 'Numeric', Money = 'Money', String = 'String', Date = 'Date', Selection = 'Selection' }
 
 	export interface CustomPropertyShortModel {
 
@@ -1942,7 +1942,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomPropertyType { Numeric = 0, Money = 1, String = 2, Date = 3, Selection = 4 }
+	export enum CustomPropertyType { Numeric = 'Numeric', Money = 'Money', String = 'String', Date = 'Date', Selection = 'Selection' }
 
 	export interface CustomerContactPersonSubModel {
 		guid?: string | null;
@@ -2487,9 +2487,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DayOrdinal { First = 0, Second = 1, Third = 2, Fourth = 3, Last = 4 }
+	export enum DayOrdinal { First = 'First', Second = 'Second', Third = 'Third', Fourth = 'Fourth', Last = 'Last' }
 
-	export enum DayOrdinalOption { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, WeekDay = 6, Saturday = 7, WeekendDay = 8, Day = 9 }
+	export enum DayOrdinalOption { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', WeekDay = 'WeekDay', Saturday = 'Saturday', WeekendDay = 'WeekendDay', Day = 'Day' }
 
 	export interface DeletedPhaseMemberOutputModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -2668,7 +2668,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntryFormat { StartTimeEndTime = 0, Quantity = 1 }
+	export enum EntryFormat { StartTimeEndTime = 'StartTimeEndTime', Quantity = 'Quantity' }
 
 	export interface ErrorModel {
 		details?: Array<ExceptionDetailModel>;
@@ -2726,11 +2726,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ExceptionLocationModelType { PathParameter = 0, RequestBody = 1, RequestHeader = 2, UriParameter = 3 }
+	export enum ExceptionLocationModelType { PathParameter = 'PathParameter', RequestBody = 'RequestBody', RequestHeader = 'RequestHeader', UriParameter = 'UriParameter' }
 
-	export enum ErrorModelType { InternalSystemError = 0, AuthenticationRequired = 1, AddonMissing = 2, FeatureIsNotEnabled = 3, InvalidParameter = 4, InvalidOperation = 5, InvalidRequest = 6, InsufficientApiScope = 7, InvalidApiVersion = 8, ConfigurationError = 9, UserLicenseType = 10, TermsOfServiceNotApproved = 11, HttpsRequired = 12, OrganizationNotActive = 13, PermissionDenied = 14, TrialExpired = 15, NotAvailableInTrial = 16, InvalidRecaptcha = 17, AddonMissingTermsOfServiceApproval = 18 }
+	export enum ErrorModelType { InternalSystemError = 'InternalSystemError', AuthenticationRequired = 'AuthenticationRequired', AddonMissing = 'AddonMissing', FeatureIsNotEnabled = 'FeatureIsNotEnabled', InvalidParameter = 'InvalidParameter', InvalidOperation = 'InvalidOperation', InvalidRequest = 'InvalidRequest', InsufficientApiScope = 'InsufficientApiScope', InvalidApiVersion = 'InvalidApiVersion', ConfigurationError = 'ConfigurationError', UserLicenseType = 'UserLicenseType', TermsOfServiceNotApproved = 'TermsOfServiceNotApproved', HttpsRequired = 'HttpsRequired', OrganizationNotActive = 'OrganizationNotActive', PermissionDenied = 'PermissionDenied', TrialExpired = 'TrialExpired', NotAvailableInTrial = 'NotAvailableInTrial', InvalidRecaptcha = 'InvalidRecaptcha', AddonMissingTermsOfServiceApproval = 'AddonMissingTermsOfServiceApproval' }
 
-	export enum ExceptionLocationTypeEnum { PathParameter = 0, RequestBody = 1, RequestHeader = 2, UriParameter = 3 }
+	export enum ExceptionLocationTypeEnum { PathParameter = 'PathParameter', RequestBody = 'RequestBody', RequestHeader = 'RequestHeader', UriParameter = 'UriParameter' }
 
 	export interface ExceptionModel {
 		error?: ErrorModel;
@@ -2743,11 +2743,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ExceptionTypeEnum { InternalSystemError = 0, AuthenticationRequired = 1, AddonMissing = 2, FeatureIsNotEnabled = 3, InvalidParameter = 4, InvalidOperation = 5, InvalidRequest = 6, InsufficientApiScope = 7, InvalidApiVersion = 8, ConfigurationError = 9, UserLicenseType = 10, TermsOfServiceNotApproved = 11, HttpsRequired = 12, OrganizationNotActive = 13, PermissionDenied = 14, TrialExpired = 15, NotAvailableInTrial = 16, InvalidRecaptcha = 17, AddonMissingTermsOfServiceApproval = 18 }
+	export enum ExceptionTypeEnum { InternalSystemError = 'InternalSystemError', AuthenticationRequired = 'AuthenticationRequired', AddonMissing = 'AddonMissing', FeatureIsNotEnabled = 'FeatureIsNotEnabled', InvalidParameter = 'InvalidParameter', InvalidOperation = 'InvalidOperation', InvalidRequest = 'InvalidRequest', InsufficientApiScope = 'InsufficientApiScope', InvalidApiVersion = 'InvalidApiVersion', ConfigurationError = 'ConfigurationError', UserLicenseType = 'UserLicenseType', TermsOfServiceNotApproved = 'TermsOfServiceNotApproved', HttpsRequired = 'HttpsRequired', OrganizationNotActive = 'OrganizationNotActive', PermissionDenied = 'PermissionDenied', TrialExpired = 'TrialExpired', NotAvailableInTrial = 'NotAvailableInTrial', InvalidRecaptcha = 'InvalidRecaptcha', AddonMissingTermsOfServiceApproval = 'AddonMissingTermsOfServiceApproval' }
 
-	export enum ExpensesClass { Mileage = 0, DailyAllowance = 1, OtherTravelExpense = 2 }
+	export enum ExpensesClass { Mileage = 'Mileage', DailyAllowance = 'DailyAllowance', OtherTravelExpense = 'OtherTravelExpense' }
 
-	export enum FileCategory { Misc = 0, Application = 1, Projects = 2, Proposal = 3, ProjectFees = 4, Invoice = 5, Users = 6, ProjectTravelExpense = 7, Customer = 8 }
+	export enum FileCategory { Misc = 'Misc', Application = 'Application', Projects = 'Projects', Proposal = 'Proposal', ProjectFees = 'ProjectFees', Invoice = 'Invoice', Users = 'Users', ProjectTravelExpense = 'ProjectTravelExpense', Customer = 'Customer' }
 
 	export interface FileKeywordModel {
 		category?: ContactKeywordModelCategory | null;
@@ -3220,11 +3220,11 @@ export namespace MyNS {
 
 
 	/** Purpose used for getting the users. */
-	export enum GetUsersPurpose { AbsenceOwner = 0, AccountOwner = 1, ActivityOwner = 2, ActivityParticipant = 3, BillingContact = 4, ProjectManager = 5, SalesPerson = 6, SuperiorUser = 7, TermsOfServiceApprover = 8 }
+	export enum GetUsersPurpose { AbsenceOwner = 'AbsenceOwner', AccountOwner = 'AccountOwner', ActivityOwner = 'ActivityOwner', ActivityParticipant = 'ActivityParticipant', BillingContact = 'BillingContact', ProjectManager = 'ProjectManager', SalesPerson = 'SalesPerson', SuperiorUser = 'SuperiorUser', TermsOfServiceApprover = 'TermsOfServiceApprover' }
 
-	export enum GrantType { client_credentials = 0, authorization_code = 1, refresh_token = 2 }
+	export enum GrantType { client_credentials = 'client_credentials', authorization_code = 'authorization_code', refresh_token = 'refresh_token' }
 
-	export enum GroupByType { None = 0, Date = 1, Category = 2, Project = 3 }
+	export enum GroupByType { None = 'None', Date = 'Date', Category = 'Category', Project = 'Project' }
 
 	export interface HolidayModel {
 
@@ -3411,7 +3411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceGrouping { OneByOne = 0, Group = 1, 'Group+Attachment' = 2 }
+	export enum InvoiceGrouping { OneByOne = 'OneByOne', Group = 'Group', 'Group+Attachment' = 'Group+Attachment' }
 
 	export interface InvoiceLanguageSubModel {
 		code?: string | null;
@@ -3684,7 +3684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoicePdfGetOptions { All = 0, InvoiceOnly = 1, AttachmentAndBreakdown = 2 }
+	export enum InvoicePdfGetOptions { All = 'All', InvoiceOnly = 'InvoiceOnly', AttachmentAndBreakdown = 'AttachmentAndBreakdown' }
 
 	export interface InvoiceRowAccountingSubModel {
 		name?: string | null;
@@ -3702,7 +3702,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceRowCategory { Hours = 0, ProjectFees = 1, Travels = 2 }
+	export enum InvoiceRowCategory { Hours = 'Hours', ProjectFees = 'ProjectFees', Travels = 'Travels' }
 
 	export interface InvoiceRowOutputModel {
 		category?: InvoiceRowCategory | null;
@@ -3762,9 +3762,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceRowOutputModelRowType { FlatRate = 0, Hours = 1, ProjectFees = 2, TravelExpenses = 3 }
+	export enum InvoiceRowOutputModelRowType { FlatRate = 'FlatRate', Hours = 'Hours', ProjectFees = 'ProjectFees', TravelExpenses = 'TravelExpenses' }
 
-	export enum InvoiceRowType { FlatRate = 0, Hours = 1, ProjectFees = 2, TravelExpenses = 3 }
+	export enum InvoiceRowType { FlatRate = 'FlatRate', Hours = 'Hours', ProjectFees = 'ProjectFees', TravelExpenses = 'TravelExpenses' }
 
 	export interface InvoiceSettingsOutputModel {
 		categorySortOrder?: string | null;
@@ -3883,9 +3883,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceSettingsOutputModelStyle { BlackAndWhite = 0, Blue = 1, Cyan = 2, Green = 3, Lilac = 4, Orange = 5, Plain = 6, Red = 7, Yellow = 8 }
+	export enum InvoiceSettingsOutputModelStyle { BlackAndWhite = 'BlackAndWhite', Blue = 'Blue', Cyan = 'Cyan', Green = 'Green', Lilac = 'Lilac', Orange = 'Orange', Plain = 'Plain', Red = 'Red', Yellow = 'Yellow' }
 
-	export enum InvoiceSkin { BlackAndWhite = 0, Blue = 1, Cyan = 2, Green = 3, Lilac = 4, Orange = 5, Plain = 6, Red = 7, Yellow = 8 }
+	export enum InvoiceSkin { BlackAndWhite = 'BlackAndWhite', Blue = 'Blue', Cyan = 'Cyan', Green = 'Green', Lilac = 'Lilac', Orange = 'Orange', Plain = 'Plain', Red = 'Red', Yellow = 'Yellow' }
 
 	export interface InvoiceStatusModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -4026,7 +4026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvoiceType { Invoice = 0, Reminder = 1 }
+	export enum InvoiceType { Invoice = 'Invoice', Reminder = 'Reminder' }
 
 	export interface KeyValuePairOfStringAndObject {
 		key?: string | null;
@@ -4060,9 +4060,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyValuePairOfStringAndSortDirectionValue { Asc = 0, Desc = 1, AscNullsFirst = 2, AscNullsLast = 3, DescNullsFirst = 4, DescNullsLast = 5 }
+	export enum KeyValuePairOfStringAndSortDirectionValue { Asc = 'Asc', Desc = 'Desc', AscNullsFirst = 'AscNullsFirst', AscNullsLast = 'AscNullsLast', DescNullsFirst = 'DescNullsFirst', DescNullsLast = 'DescNullsLast' }
 
-	export enum KeywordCategory { Project = 0, Contact = 1, User = 2, File = 3 }
+	export enum KeywordCategory { Project = 'Project', Contact = 'Contact', User = 'User', File = 'File' }
 
 	export interface KeywordModel {
 
@@ -4108,7 +4108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KpiFormulaCategory { Unknown = 0, Functions = 1, Project = 2, User = 3, Invoice = 4 }
+	export enum KpiFormulaCategory { Unknown = 'Unknown', Functions = 'Functions', Project = 'Project', User = 'User', Invoice = 'Invoice' }
 
 	export interface KpiFormulaModelBase {
 		category?: KpiFormulaCategory | null;
@@ -4138,7 +4138,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KpiFormulaModelBaseDataType { String = 0, Boolean = 1, Integer = 2, Percentage = 3, Numeric = 4, Money = 5, Date = 6, DateTime = 7, Time = 8, Object = 9, ObjectCollection = 10, IpAddress = 11 }
+	export enum KpiFormulaModelBaseDataType { String = 'String', Boolean = 'Boolean', Integer = 'Integer', Percentage = 'Percentage', Numeric = 'Numeric', Money = 'Money', Date = 'Date', DateTime = 'DateTime', Time = 'Time', Object = 'Object', ObjectCollection = 'ObjectCollection', IpAddress = 'IpAddress' }
 
 	export interface LanguageModel {
 		code?: string | null;
@@ -4202,7 +4202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseUserType { FullUser = 0, Employee = 1, RestrictedEmployee = 2, Subcontractor = 3 }
+	export enum LicenseUserType { FullUser = 'FullUser', Employee = 'Employee', RestrictedEmployee = 'RestrictedEmployee', Subcontractor = 'Subcontractor' }
 
 	export interface MarketSegmentModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -4242,7 +4242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberStatus { Unknown = 0, Invited = 1, Accepted = 2, Tentative = 3, Declined = 4 }
+	export enum MemberStatus { Unknown = 'Unknown', Invited = 'Invited', Accepted = 'Accepted', Tentative = 'Tentative', Declined = 'Declined' }
 
 	export interface MoneyInputModel {
 
@@ -4300,7 +4300,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Months { January = 0, February = 1, March = 2, April = 3, May = 4, June = 5, July = 6, August = 7, September = 8, October = 9, November = 10, December = 11 }
+	export enum Months { January = 'January', February = 'February', March = 'March', April = 'April', May = 'May', June = 'June', July = 'July', August = 'August', September = 'September', October = 'October', November = 'November', December = 'December' }
 
 	export interface OrganizationDetailsCountrySubModel {
 		code?: string | null;
@@ -4609,7 +4609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationSettingsModelCurrencyRoundingType { AwayFromZero = 0, NearestInteger = 1 }
+	export enum OrganizationSettingsModelCurrencyRoundingType { AwayFromZero = 'AwayFromZero', NearestInteger = 'NearestInteger' }
 
 	export interface UserWithFirstNameLastNameModel {
 		firstName?: string | null;
@@ -4640,17 +4640,17 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationSettingsModelPaymentReferenceNumberDisplaySetting { ReferenceNumber = 0, Kid = 1 }
+	export enum OrganizationSettingsModelPaymentReferenceNumberDisplaySetting { ReferenceNumber = 'ReferenceNumber', Kid = 'Kid' }
 
-	export enum OrganizationSettingsModelProjectNameDisplayFormatSetting { ProjectNamePhaseName = 0, CustomerNameProjectNamePhaseName = 1 }
+	export enum OrganizationSettingsModelProjectNameDisplayFormatSetting { ProjectNamePhaseName = 'ProjectNamePhaseName', CustomerNameProjectNamePhaseName = 'CustomerNameProjectNamePhaseName' }
 
-	export enum OrganizationSettingsModelProjectNameDisplaySetting { ShowProjectLongName = 0, ShowProjectShortName = 1 }
+	export enum OrganizationSettingsModelProjectNameDisplaySetting { ShowProjectLongName = 'ShowProjectLongName', ShowProjectShortName = 'ShowProjectShortName' }
 
-	export enum OrganizationSettingsModelQuickSearchSetting { ShowOpenProjectsSalesCasesAndCustomers = 0, ShowOpenAndClosedProjectsSalesCasesAndCustomers = 1 }
+	export enum OrganizationSettingsModelQuickSearchSetting { ShowOpenProjectsSalesCasesAndCustomers = 'ShowOpenProjectsSalesCasesAndCustomers', ShowOpenAndClosedProjectsSalesCasesAndCustomers = 'ShowOpenAndClosedProjectsSalesCasesAndCustomers' }
 
-	export enum OrganizationSettingsModelWorkHourApprovalMode { None = 0, RequiredForInvoicing = 1, InvoicableAlways = 2 }
+	export enum OrganizationSettingsModelWorkHourApprovalMode { None = 'None', RequiredForInvoicing = 'RequiredForInvoicing', InvoicableAlways = 'InvoicableAlways' }
 
-	export enum Workweek { Monday = 0, Tuesday = 1, Wednesday = 2, Thursday = 3, Friday = 4, Saturday = 5, Sunday = 6 }
+	export enum Workweek { Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Sunday = 'Sunday' }
 
 	export interface OvertimeModel {
 
@@ -4739,9 +4739,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OvertimePriceModelPriceSource { ProductRegistry = 0, Pricelist = 1, Project = 2 }
+	export enum OvertimePriceModelPriceSource { ProductRegistry = 'ProductRegistry', Pricelist = 'Pricelist', Project = 'Project' }
 
-	export enum ParticipantType { User = 0, Contact = 1, Resource = 2, Other = 3 }
+	export enum ParticipantType { User = 'User', Contact = 'Contact', Resource = 'Resource', Other = 'Other' }
 
 	export interface PatchOperation {
 		from?: string | null;
@@ -4769,11 +4769,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchOperationOp { Add = 0, Copy = 1, Move = 2, Remove = 3, Replace = 4 }
+	export enum PatchOperationOp { Add = 'Add', Copy = 'Copy', Move = 'Move', Remove = 'Remove', Replace = 'Replace' }
 
-	export enum PatchOperationType { Add = 0, Copy = 1, Move = 2, Remove = 3, Replace = 4 }
+	export enum PatchOperationType { Add = 'Add', Copy = 'Copy', Move = 'Move', Remove = 'Remove', Replace = 'Replace' }
 
-	export enum PermissionLevel { View = 0, Edit = 1 }
+	export enum PermissionLevel { View = 'View', Edit = 'Edit' }
 
 	export interface PermissionProfileModel {
 		guid?: string | null;
@@ -5468,7 +5468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriceSource { ProductRegistry = 0, Pricelist = 1, Project = 2 }
+	export enum PriceSource { ProductRegistry = 'ProductRegistry', Pricelist = 'Pricelist', Project = 'Project' }
 
 	export interface PricelistVersionOutputModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -5497,7 +5497,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrintToPdf { DoNotPrintToProposal = 0, PrintToProposalBottom = 1, PrintToProposalBoth = 2 }
+	export enum PrintToPdf { DoNotPrintToProposal = 'DoNotPrintToProposal', PrintToProposalBottom = 'PrintToProposalBottom', PrintToProposalBoth = 'PrintToProposalBoth' }
 
 	export interface ProductCategoryModel {
 		code?: string | null;
@@ -5661,7 +5661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductOutputModelType { FixedFees = 0, Materials = 1, Subcontracting = 2 }
+	export enum ProductOutputModelType { FixedFees = 'FixedFees', Materials = 'Materials', Subcontracting = 'Subcontracting' }
 
 	export interface ProductInputModel {
 		code?: string | null;
@@ -5794,7 +5794,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductType { FixedFees = 0, Materials = 1, Subcontracting = 2 }
+	export enum ProductType { FixedFees = 'FixedFees', Materials = 'Materials', Subcontracting = 'Subcontracting' }
 
 	export interface ProjectBillingCustomerModel {
 
@@ -6005,7 +6005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectFeeBillingScheduleType { Immediately = 0, OnDate = 1, WhenPhaseCompleted = 2, Recurring = 3 }
+	export enum ProjectFeeBillingScheduleType { Immediately = 'Immediately', OnDate = 'OnDate', WhenPhaseCompleted = 'WhenPhaseCompleted', Recurring = 'Recurring' }
 
 	export interface ProjectFeeCustomerSubModel {
 		guid?: string | null;
@@ -6397,7 +6397,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageModelType { Invoice = 0, Proposal = 1, InvoiceTemplate = 2, Other = 3 }
+	export enum UsageModelType { Invoice = 'Invoice', Proposal = 'Proposal', InvoiceTemplate = 'InvoiceTemplate', Other = 'Other' }
 
 	export interface ProjectForecastInputModel {
 		billingForecast?: MoneyInputModelWithNullableAmount;
@@ -7019,9 +7019,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectNameDisplayFormatOptions { ProjectNamePhaseName = 0, CustomerNameProjectNamePhaseName = 1 }
+	export enum ProjectNameDisplayFormatOptions { ProjectNamePhaseName = 'ProjectNamePhaseName', CustomerNameProjectNamePhaseName = 'CustomerNameProjectNamePhaseName' }
 
-	export enum ProjectNameDisplayOptions { ShowProjectLongName = 0, ShowProjectShortName = 1 }
+	export enum ProjectNameDisplayOptions { ShowProjectLongName = 'ShowProjectLongName', ShowProjectShortName = 'ShowProjectShortName' }
 
 	export interface ProjectOutputModel {
 		billingContact?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -7283,7 +7283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectProductSubModelProductType { OwnWork = 0, Products = 1, Subcontracting = 2, Travels = 3 }
+	export enum ProjectProductSubModelProductType { OwnWork = 'OwnWork', Products = 'Products', Subcontracting = 'Subcontracting', Travels = 'Travels' }
 
 	export interface ProjectSubModel {
 		guid?: string | null;
@@ -7368,7 +7368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectRecurringFeeRuleInputModelRecurrenceEndType { Never = 0, AfterNumberOfTimes = 1, OnDate = 2 }
+	export enum ProjectRecurringFeeRuleInputModelRecurrenceEndType { Never = 'Never', AfterNumberOfTimes = 'AfterNumberOfTimes', OnDate = 'OnDate' }
 
 	export interface ProjectRecurringFeeRuleOutputModel {
 		costCenter?: ProjectCostCenterSubModel;
@@ -7580,7 +7580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectTravelExpenseBillingScheduleType { Immediately = 0, WhenPhaseCompleted = 1, OnDate = 2 }
+	export enum ProjectTravelExpenseBillingScheduleType { Immediately = 'Immediately', WhenPhaseCompleted = 'WhenPhaseCompleted', OnDate = 'OnDate' }
 
 	export interface ProjectTravelExpenseFileModel {
 		category?: FileCategory | null;
@@ -7640,7 +7640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectTravelExpenseFileModelSource { Severa = 0, VismaScanner = 1, Google = 2 }
+	export enum ProjectTravelExpenseFileModelSource { Severa = 'Severa', VismaScanner = 'VismaScanner', Google = 'Google' }
 
 	export interface ProjectTravelExpenseInputModel {
 		billingDependencyPhase?: SimpleInputModel;
@@ -8639,17 +8639,17 @@ export namespace MyNS {
 
 	}
 
-	export enum QuickSearchOptions { ShowOpenProjectsSalesCasesAndCustomers = 0, ShowOpenAndClosedProjectsSalesCasesAndCustomers = 1 }
+	export enum QuickSearchOptions { ShowOpenProjectsSalesCasesAndCustomers = 'ShowOpenProjectsSalesCasesAndCustomers', ShowOpenAndClosedProjectsSalesCasesAndCustomers = 'ShowOpenAndClosedProjectsSalesCasesAndCustomers' }
 
-	export enum RecurrenceEndTypes { Never = 0, AfterNumberOfTimes = 1, OnDate = 2 }
+	export enum RecurrenceEndTypes { Never = 'Never', AfterNumberOfTimes = 'AfterNumberOfTimes', OnDate = 'OnDate' }
 
-	export enum RecurrenceFrequency { Daily = 0, Weekly = 1, Monthly = 2, Yearly = 3 }
+	export enum RecurrenceFrequency { Daily = 'Daily', Weekly = 'Weekly', Monthly = 'Monthly', Yearly = 'Yearly' }
 
-	export enum RecurrenceType { None = 0, Occurrence = 1, Exception = 2, Series = 3 }
+	export enum RecurrenceType { None = 'None', Occurrence = 'Occurrence', Exception = 'Exception', Series = 'Series' }
 
-	export enum ReferenceNumberDisplay { ReferenceNumber = 0, Kid = 1 }
+	export enum ReferenceNumberDisplay { ReferenceNumber = 'ReferenceNumber', Kid = 'Kid' }
 
-	export enum ReferenceType { Invoice = 0, Proposal = 1, InvoiceTemplate = 2, Other = 3 }
+	export enum ReferenceType { Invoice = 'Invoice', Proposal = 'Proposal', InvoiceTemplate = 'InvoiceTemplate', Other = 'Other' }
 
 	export interface ReimbursedProjectFeeOutputModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -8874,7 +8874,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceAllocationAction { None = 0, Delete = 1, Transfer = 2 }
+	export enum ResourceAllocationAction { None = 'None', Delete = 'Delete', Transfer = 'Transfer' }
 
 	export interface ResourceAllocationCriteriaModel {
 		endDate?: Date | null;
@@ -8912,7 +8912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesProgress { None = 0, InProgress = 1, Won = 2, Lost = 3 }
+	export enum SalesProgress { None = 'None', InProgress = 'InProgress', Won = 'Won', Lost = 'Lost' }
 
 	export interface ResourceAllocationInputModel {
 		allocationHours?: number | null;
@@ -9279,7 +9279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SalesStatusType { InProgress = 0, Won = 1, Lost = 2 }
+	export enum SalesStatusType { InProgress = 'InProgress', Won = 'Won', Lost = 'Lost' }
 
 	export interface SalesStatusTypeInputModel {
 		defaultProbability?: number | null;
@@ -9356,13 +9356,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SalutationType { 'Mr.' = 0, 'Mrs.' = 1, 'Ms.' = 2 }
+	export enum SalutationType { 'Mr.' = 'Mr.', 'Mrs.' = 'Mrs.', 'Ms.' = 'Ms.' }
 
-	export enum SatisfactionLevelType { Unsatisfied = 0, Neutral = 1, Satisfied = 2, Unknown = 3 }
+	export enum SatisfactionLevelType { Unsatisfied = 'Unsatisfied', Neutral = 'Neutral', Satisfied = 'Satisfied', Unknown = 'Unknown' }
 
-	export enum SearchFieldDataType { String = 0, Boolean = 1, Integer = 2, Percentage = 3, Numeric = 4, Money = 5, Date = 6, DateTime = 7, Time = 8, Object = 9, ObjectCollection = 10, IpAddress = 11 }
+	export enum SearchFieldDataType { String = 'String', Boolean = 'Boolean', Integer = 'Integer', Percentage = 'Percentage', Numeric = 'Numeric', Money = 'Money', Date = 'Date', DateTime = 'DateTime', Time = 'Time', Object = 'Object', ObjectCollection = 'ObjectCollection', IpAddress = 'IpAddress' }
 
-	export enum SortDirection { Asc = 0, Desc = 1, AscNullsFirst = 2, AscNullsLast = 3, DescNullsFirst = 4, DescNullsLast = 5 }
+	export enum SortDirection { Asc = 'Asc', Desc = 'Desc', AscNullsFirst = 'AscNullsFirst', AscNullsLast = 'AscNullsLast', DescNullsFirst = 'DescNullsFirst', DescNullsLast = 'DescNullsLast' }
 
 	export interface TeamProductivityOutputModel {
 		adjustedShareOfBilling?: MoneyOutputModel;
@@ -9532,7 +9532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TotalRoundingType { AwayFromZero = 0, NearestInteger = 1 }
+	export enum TotalRoundingType { AwayFromZero = 'AwayFromZero', NearestInteger = 'NearestInteger' }
 
 	export interface TravelExpenseCostAccountSubModel {
 		guid?: string | null;
@@ -9739,7 +9739,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TravelReimbursementAttachmentSource { Severa = 0, VismaScanner = 1, Google = 2 }
+	export enum TravelReimbursementAttachmentSource { Severa = 'Severa', VismaScanner = 'VismaScanner', Google = 'Google' }
 
 	export interface TravelReimbursementInputModel {
 		advancePayment?: MoneyInputModelWithNullableAmount;
@@ -9856,7 +9856,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeOfProduct { OwnWork = 0, Products = 1, Subcontracting = 2, Travels = 3 }
+	export enum TypeOfProduct { OwnWork = 'OwnWork', Products = 'Products', Subcontracting = 'Subcontracting', Travels = 'Travels' }
 
 	export interface UsageModel2 {
 		context?: string | null;
@@ -10680,7 +10680,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkHourApprovalMode { None = 0, RequiredForInvoicing = 1, InvoicableAlways = 2 }
+	export enum WorkHourApprovalMode { None = 'None', RequiredForInvoicing = 'RequiredForInvoicing', InvoicableAlways = 'InvoicableAlways' }
 
 	export interface WorkHourCustomerSubModel {
 		guid?: string | null;

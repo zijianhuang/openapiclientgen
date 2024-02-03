@@ -853,7 +853,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchReadExceptionType { ValidationException = 0, InvalidArnException = 1, ResourceNotFoundException = 2, InvalidNextTokenException = 3, AccessDeniedException = 4, NotNodeException = 5, FacetValidationException = 6, CannotListParentOfRootException = 7, NotIndexException = 8, NotPolicyException = 9, DirectoryNotEnabledException = 10, LimitExceededException = 11, InternalServiceException = 12 }
+	export enum BatchReadExceptionType { ValidationException = 'ValidationException', InvalidArnException = 'InvalidArnException', ResourceNotFoundException = 'ResourceNotFoundException', InvalidNextTokenException = 'InvalidNextTokenException', AccessDeniedException = 'AccessDeniedException', NotNodeException = 'NotNodeException', FacetValidationException = 'FacetValidationException', CannotListParentOfRootException = 'CannotListParentOfRootException', NotIndexException = 'NotIndexException', NotPolicyException = 'NotPolicyException', DirectoryNotEnabledException = 'DirectoryNotEnabledException', LimitExceededException = 'LimitExceededException', InternalServiceException = 'InternalServiceException' }
 
 
 	/** Represents the output of a <code>BatchRead</code> operation. */
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RangeMode { FIRST = 0, LAST = 1, LAST_BEFORE_MISSING_VALUES = 2, INCLUSIVE = 3, EXCLUSIVE = 4 }
+	export enum RangeMode { FIRST = 'FIRST', LAST = 'LAST', LAST_BEFORE_MISSING_VALUES = 'LAST_BEFORE_MISSING_VALUES', INCLUSIVE = 'INCLUSIVE', EXCLUSIVE = 'EXCLUSIVE' }
 
 
 	/** Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and <a>BatchReadRequest$Operations</a>. */
@@ -1709,7 +1709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateActionType { CREATE_OR_UPDATE = 0, DELETE = 1 }
+	export enum UpdateActionType { CREATE_OR_UPDATE = 'CREATE_OR_UPDATE', DELETE = 'DELETE' }
 
 
 	/** Represents the output of a <a>DeleteObject</a> operation. */
@@ -2099,7 +2099,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FacetAttributeType { STRING = 0, BINARY = 1, BOOLEAN = 2, NUMBER = 3, DATETIME = 4, VARIANT = 5 }
+	export enum FacetAttributeType { STRING = 'STRING', BINARY = 'BINARY', BOOLEAN = 'BOOLEAN', NUMBER = 'NUMBER', DATETIME = 'DATETIME', VARIANT = 'VARIANT' }
 
 	export interface RuleMap {
 	}
@@ -2139,7 +2139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequiredAttributeBehavior { REQUIRED_ALWAYS = 0, NOT_REQUIRED = 1 }
+	export enum RequiredAttributeBehavior { REQUIRED_ALWAYS = 'REQUIRED_ALWAYS', NOT_REQUIRED = 'NOT_REQUIRED' }
 
 	export interface FacetAlreadyExistsException {
 	}
@@ -2522,7 +2522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DirectoryState { ENABLED = 0, DISABLED = 1, DELETED = 2 }
+	export enum DirectoryState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DELETED = 'DELETED' }
 
 	export interface GetFacetResponse {
 		Facet?: Facet;
@@ -2558,9 +2558,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectType { NODE = 0, LEAF_NODE = 1, POLICY = 2, INDEX = 3 }
+	export enum ObjectType { NODE = 'NODE', LEAF_NODE = 'LEAF_NODE', POLICY = 'POLICY', INDEX = 'INDEX' }
 
-	export enum FacetStyle { STATIC = 0, DYNAMIC = 1 }
+	export enum FacetStyle { STATIC = 'STATIC', DYNAMIC = 'DYNAMIC' }
 
 	export interface GetLinkAttributesResponse {
 		Attributes?: Array<AttributeKeyAndValue>;
@@ -3316,7 +3316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsistencyLevel { SERIALIZABLE = 0, EVENTUAL = 1 }
+	export enum ConsistencyLevel { SERIALIZABLE = 'SERIALIZABLE', EVENTUAL = 'EVENTUAL' }
 
 	export interface BatchReadRequest {
 
@@ -4238,7 +4238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleType { BINARY_LENGTH = 0, NUMBER_COMPARISON = 1, STRING_FROM_SET = 2, STRING_LENGTH = 3 }
+	export enum RuleType { BINARY_LENGTH = 'BINARY_LENGTH', NUMBER_COMPARISON = 'NUMBER_COMPARISON', STRING_FROM_SET = 'STRING_FROM_SET', STRING_LENGTH = 'STRING_LENGTH' }
 
 	export interface RuleParameterMap {
 	}

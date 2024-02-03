@@ -90,7 +90,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegulatoryComplianceAssessmentPropertiesState { Passed = 0, Failed = 1, Skipped = 2, Unsupported = 3 }
+	export enum RegulatoryComplianceAssessmentPropertiesState { Passed = 'Passed', Failed = 'Failed', Skipped = 'Skipped', Unsupported = 'Unsupported' }
 
 
 	/** List of regulatory compliance assessment response */

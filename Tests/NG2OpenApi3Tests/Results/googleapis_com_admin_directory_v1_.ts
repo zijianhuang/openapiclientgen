@@ -178,7 +178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuxiliaryMessageSeverity { SEVERITY_UNSPECIFIED = 0, SEVERITY_INFO = 1, SEVERITY_WARNING = 2, SEVERITY_ERROR = 3 }
+	export enum AuxiliaryMessageSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', SEVERITY_INFO = 'SEVERITY_INFO', SEVERITY_WARNING = 'SEVERITY_WARNING', SEVERITY_ERROR = 'SEVERITY_ERROR' }
 
 
 	/** A request for changing the status of a batch of ChromeOS devices. */
@@ -211,9 +211,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchChangeChromeOsDeviceStatusRequestChangeChromeOsDeviceStatusAction { CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_UNSPECIFIED = 0, CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DEPROVISION = 1, CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DISABLE = 2, CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_REENABLE = 3 }
+	export enum BatchChangeChromeOsDeviceStatusRequestChangeChromeOsDeviceStatusAction { CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_UNSPECIFIED = 'CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_UNSPECIFIED', CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DEPROVISION = 'CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DEPROVISION', CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DISABLE = 'CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_DISABLE', CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_REENABLE = 'CHANGE_CHROME_OS_DEVICE_STATUS_ACTION_REENABLE' }
 
-	export enum BatchChangeChromeOsDeviceStatusRequestDeprovisionReason { DEPROVISION_REASON_UNSPECIFIED = 0, DEPROVISION_REASON_SAME_MODEL_REPLACEMENT = 1, DEPROVISION_REASON_UPGRADE = 2, DEPROVISION_REASON_DOMAIN_MOVE = 3, DEPROVISION_REASON_SERVICE_EXPIRATION = 4, DEPROVISION_REASON_OTHER = 5, DEPROVISION_REASON_DIFFERENT_MODEL_REPLACEMENT = 6, DEPROVISION_REASON_RETIRING_DEVICE = 7, DEPROVISION_REASON_UPGRADE_TRANSFER = 8, DEPROVISION_REASON_NOT_REQUIRED = 9, DEPROVISION_REASON_REPAIR_CENTER = 10 }
+	export enum BatchChangeChromeOsDeviceStatusRequestDeprovisionReason { DEPROVISION_REASON_UNSPECIFIED = 'DEPROVISION_REASON_UNSPECIFIED', DEPROVISION_REASON_SAME_MODEL_REPLACEMENT = 'DEPROVISION_REASON_SAME_MODEL_REPLACEMENT', DEPROVISION_REASON_UPGRADE = 'DEPROVISION_REASON_UPGRADE', DEPROVISION_REASON_DOMAIN_MOVE = 'DEPROVISION_REASON_DOMAIN_MOVE', DEPROVISION_REASON_SERVICE_EXPIRATION = 'DEPROVISION_REASON_SERVICE_EXPIRATION', DEPROVISION_REASON_OTHER = 'DEPROVISION_REASON_OTHER', DEPROVISION_REASON_DIFFERENT_MODEL_REPLACEMENT = 'DEPROVISION_REASON_DIFFERENT_MODEL_REPLACEMENT', DEPROVISION_REASON_RETIRING_DEVICE = 'DEPROVISION_REASON_RETIRING_DEVICE', DEPROVISION_REASON_UPGRADE_TRANSFER = 'DEPROVISION_REASON_UPGRADE_TRANSFER', DEPROVISION_REASON_NOT_REQUIRED = 'DEPROVISION_REASON_NOT_REQUIRED', DEPROVISION_REASON_REPAIR_CENTER = 'DEPROVISION_REASON_REPAIR_CENTER' }
 
 
 	/** The response of changing the status of a batch of ChromeOS devices. */
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrintServerFailureInfoErrorCode { OK = 0, CANCELLED = 1, UNKNOWN = 2, INVALID_ARGUMENT = 3, DEADLINE_EXCEEDED = 4, NOT_FOUND = 5, ALREADY_EXISTS = 6, PERMISSION_DENIED = 7, UNAUTHENTICATED = 8, RESOURCE_EXHAUSTED = 9, FAILED_PRECONDITION = 10, ABORTED = 11, OUT_OF_RANGE = 12, UNIMPLEMENTED = 13, INTERNAL = 14, UNAVAILABLE = 15, DATA_LOSS = 16 }
+	export enum PrintServerFailureInfoErrorCode { OK = 'OK', CANCELLED = 'CANCELLED', UNKNOWN = 'UNKNOWN', INVALID_ARGUMENT = 'INVALID_ARGUMENT', DEADLINE_EXCEEDED = 'DEADLINE_EXCEEDED', NOT_FOUND = 'NOT_FOUND', ALREADY_EXISTS = 'ALREADY_EXISTS', PERMISSION_DENIED = 'PERMISSION_DENIED', UNAUTHENTICATED = 'UNAUTHENTICATED', RESOURCE_EXHAUSTED = 'RESOURCE_EXHAUSTED', FAILED_PRECONDITION = 'FAILED_PRECONDITION', ABORTED = 'ABORTED', OUT_OF_RANGE = 'OUT_OF_RANGE', UNIMPLEMENTED = 'UNIMPLEMENTED', INTERNAL = 'INTERNAL', UNAVAILABLE = 'UNAVAILABLE', DATA_LOSS = 'DATA_LOSS' }
 
 
 	/** Request for adding new printers in batch. */
@@ -1614,7 +1614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChromeOsDeviceDeviceLicenseType { deviceLicenseTypeUnspecified = 0, enterprise = 1, enterpriseUpgrade = 2, educationUpgrade = 3, education = 4, kioskUpgrade = 5 }
+	export enum ChromeOsDeviceDeviceLicenseType { deviceLicenseTypeUnspecified = 'deviceLicenseTypeUnspecified', enterprise = 'enterprise', enterpriseUpgrade = 'enterpriseUpgrade', educationUpgrade = 'educationUpgrade', education = 'education', kioskUpgrade = 'kioskUpgrade' }
 
 	export interface ChromeOsDeviceDiskVolumeReports {
 
@@ -1740,7 +1740,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OsUpdateStatusState { updateStateUnspecified = 0, updateStateNotStarted = 1, updateStateDownloadInProgress = 2, updateStateNeedReboot = 3 }
+	export enum OsUpdateStatusState { updateStateUnspecified = 'updateStateUnspecified', updateStateNotStarted = 'updateStateNotStarted', updateStateDownloadInProgress = 'updateStateDownloadInProgress', updateStateNeedReboot = 'updateStateNeedReboot' }
 
 	export interface ChromeOsDeviceRecentUsers {
 
@@ -2190,11 +2190,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DirectoryChromeosdevicesCommandResultResult { COMMAND_RESULT_TYPE_UNSPECIFIED = 0, IGNORED = 1, FAILURE = 2, SUCCESS = 3 }
+	export enum DirectoryChromeosdevicesCommandResultResult { COMMAND_RESULT_TYPE_UNSPECIFIED = 'COMMAND_RESULT_TYPE_UNSPECIFIED', IGNORED = 'IGNORED', FAILURE = 'FAILURE', SUCCESS = 'SUCCESS' }
 
-	export enum DirectoryChromeosdevicesCommandState { STATE_UNSPECIFIED = 0, PENDING = 1, EXPIRED = 2, CANCELLED = 3, SENT_TO_CLIENT = 4, ACKED_BY_CLIENT = 5, EXECUTED_BY_CLIENT = 6 }
+	export enum DirectoryChromeosdevicesCommandState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', EXPIRED = 'EXPIRED', CANCELLED = 'CANCELLED', SENT_TO_CLIENT = 'SENT_TO_CLIENT', ACKED_BY_CLIENT = 'ACKED_BY_CLIENT', EXECUTED_BY_CLIENT = 'EXECUTED_BY_CLIENT' }
 
-	export enum DirectoryChromeosdevicesCommandType { COMMAND_TYPE_UNSPECIFIED = 0, REBOOT = 1, TAKE_A_SCREENSHOT = 2, SET_VOLUME = 3, WIPE_USERS = 4, REMOTE_POWERWASH = 5, DEVICE_START_CRD_SESSION = 6, CAPTURE_LOGS = 7 }
+	export enum DirectoryChromeosdevicesCommandType { COMMAND_TYPE_UNSPECIFIED = 'COMMAND_TYPE_UNSPECIFIED', REBOOT = 'REBOOT', TAKE_A_SCREENSHOT = 'TAKE_A_SCREENSHOT', SET_VOLUME = 'SET_VOLUME', WIPE_USERS = 'WIPE_USERS', REMOTE_POWERWASH = 'REMOTE_POWERWASH', DEVICE_START_CRD_SESSION = 'DEVICE_START_CRD_SESSION', CAPTURE_LOGS = 'CAPTURE_LOGS' }
 
 
 	/** A request for issuing a command. */
@@ -3626,7 +3626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleAssignmentAssigneeType { user = 0, group = 1 }
+	export enum RoleAssignmentAssigneeType { user = 'user', group = 'group' }
 
 	export interface RoleAssignments {
 
@@ -6783,29 +6783,29 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Directory_chromeosdevices_listOrderBy { annotatedLocation = 0, annotatedUser = 1, lastSync = 2, notes = 3, serialNumber = 4, status = 5 }
+	export enum Directory_chromeosdevices_listOrderBy { annotatedLocation = 'annotatedLocation', annotatedUser = 'annotatedUser', lastSync = 'lastSync', notes = 'notes', serialNumber = 'serialNumber', status = 'status' }
 
-	export enum Directory_chromeosdevices_listProjection { BASIC = 0, FULL = 1 }
+	export enum Directory_chromeosdevices_listProjection { BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum Directory_chromeosdevices_listSortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum Directory_chromeosdevices_listSortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
-	export enum Directory_mobiledevices_listOrderBy { deviceId = 0, email = 1, lastSync = 2, model = 3, name = 4, os = 5, status = 6, type = 7 }
+	export enum Directory_mobiledevices_listOrderBy { deviceId = 'deviceId', email = 'email', lastSync = 'lastSync', model = 'model', name = 'name', os = 'os', status = 'status', type = 'type' }
 
-	export enum Directory_orgunits_listType { all = 0, children = 1, allIncludingParent = 2 }
+	export enum Directory_orgunits_listType { all = 'all', children = 'children', allIncludingParent = 'allIncludingParent' }
 
-	export enum Directory_resources_buildings_insertCoordinatesSource { CLIENT_SPECIFIED = 0, RESOLVED_FROM_ADDRESS = 1, SOURCE_UNSPECIFIED = 2 }
+	export enum Directory_resources_buildings_insertCoordinatesSource { CLIENT_SPECIFIED = 'CLIENT_SPECIFIED', RESOLVED_FROM_ADDRESS = 'RESOLVED_FROM_ADDRESS', SOURCE_UNSPECIFIED = 'SOURCE_UNSPECIFIED' }
 
-	export enum Directory_groups_listOrderBy { email = 0 }
+	export enum Directory_groups_listOrderBy { email = 'email' }
 
-	export enum Directory_users_listEvent { add = 0, delete = 1, makeAdmin = 2, undelete = 3, update = 4 }
+	export enum Directory_users_listEvent { add = 'add', delete = 'delete', makeAdmin = 'makeAdmin', undelete = 'undelete', update = 'update' }
 
-	export enum Directory_users_listOrderBy { email = 0, familyName = 1, givenName = 2 }
+	export enum Directory_users_listOrderBy { email = 'email', familyName = 'familyName', givenName = 'givenName' }
 
-	export enum Directory_users_listProjection { basic = 0, custom = 1, full = 2 }
+	export enum Directory_users_listProjection { basic = 'basic', custom = 'custom', full = 'full' }
 
-	export enum Directory_users_listViewType { admin_view = 0, domain_public = 1 }
+	export enum Directory_users_listViewType { admin_view = 'admin_view', domain_public = 'domain_public' }
 
-	export enum Directory_users_aliases_listEvent { add = 0, delete = 1 }
+	export enum Directory_users_aliases_listEvent { add = 'add', delete = 'delete' }
 
 }
 

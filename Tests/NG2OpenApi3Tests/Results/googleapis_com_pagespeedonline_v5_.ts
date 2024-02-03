@@ -1207,7 +1207,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Pagespeedonline_pagespeedapi_runpagespeedStrategy { STRATEGY_UNSPECIFIED = 0, DESKTOP = 1, MOBILE = 2 }
+	export enum Pagespeedonline_pagespeedapi_runpagespeedStrategy { STRATEGY_UNSPECIFIED = 'STRATEGY_UNSPECIFIED', DESKTOP = 'DESKTOP', MOBILE = 'MOBILE' }
 
 }
 

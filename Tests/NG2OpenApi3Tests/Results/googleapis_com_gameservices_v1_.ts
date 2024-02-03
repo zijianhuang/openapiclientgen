@@ -54,7 +54,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Authorization-related information used by Cloud Audit Logging. */
@@ -77,7 +77,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationLoggingOptionsPermissionType { PERMISSION_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, ADMIN_WRITE = 2, DATA_READ = 3, DATA_WRITE = 4 }
+	export enum AuthorizationLoggingOptionsPermissionType { PERMISSION_TYPE_UNSPECIFIED = 'PERMISSION_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', ADMIN_WRITE = 'ADMIN_WRITE', DATA_READ = 'DATA_READ', DATA_WRITE = 'DATA_WRITE' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -189,7 +189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudAuditOptionsLogName { UNSPECIFIED_LOG_NAME = 0, ADMIN_ACTIVITY = 1, DATA_ACCESS = 2 }
+	export enum CloudAuditOptionsLogName { UNSPECIFIED_LOG_NAME = 'UNSPECIFIED_LOG_NAME', ADMIN_ACTIVITY = 'ADMIN_ACTIVITY', DATA_ACCESS = 'DATA_ACCESS' }
 
 
 	/** A condition to be met. */
@@ -236,11 +236,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionIam { NO_ATTR = 0, AUTHORITY = 1, ATTRIBUTION = 2, SECURITY_REALM = 3, APPROVER = 4, JUSTIFICATION_TYPE = 5, CREDENTIALS_TYPE = 6, CREDS_ASSERTION = 7 }
+	export enum ConditionIam { NO_ATTR = 'NO_ATTR', AUTHORITY = 'AUTHORITY', ATTRIBUTION = 'ATTRIBUTION', SECURITY_REALM = 'SECURITY_REALM', APPROVER = 'APPROVER', JUSTIFICATION_TYPE = 'JUSTIFICATION_TYPE', CREDENTIALS_TYPE = 'CREDENTIALS_TYPE', CREDS_ASSERTION = 'CREDS_ASSERTION' }
 
-	export enum ConditionOp { NO_OP = 0, EQUALS = 1, NOT_EQUALS = 2, IN = 3, NOT_IN = 4, DISCHARGED = 5 }
+	export enum ConditionOp { NO_OP = 'NO_OP', EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS', IN = 'IN', NOT_IN = 'NOT_IN', DISCHARGED = 'DISCHARGED' }
 
-	export enum ConditionSys { NO_ATTR = 0, REGION = 1, SERVICE = 2, NAME = 3, IP = 4 }
+	export enum ConditionSys { NO_ATTR = 'NO_ATTR', REGION = 'REGION', SERVICE = 'SERVICE', NAME = 'NAME', IP = 'IP' }
 
 
 	/** Increment a streamz counter with the specified metric and field names. Metric names should start with a '/', generally be lowercase-only, and end in "_count". Field names should not contain an initial slash. The actual exported metric names will have "/iam/policy" prepended. Field names correspond to IAM request parameters and field values are their respective values. Supported field names: - "authority", which is "[token]" if IAMContext.token is present, otherwise the value of IAMContext.authority_selector if present, and otherwise a representation of IAMContext.principal; or - "iam_principal", a representation of IAMContext.principal even if a token or authority selector is present; or - "" (empty string), resulting in a counter with no fields. Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==> increment counter /iam/policy/debug_access_count {iam_principal=[value of IAMContext.principal]} */
@@ -318,7 +318,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataAccessOptionsLogMode { LOG_MODE_UNSPECIFIED = 0, LOG_FAIL_CLOSED = 1 }
+	export enum DataAccessOptionsLogMode { LOG_MODE_UNSPECIFIED = 'LOG_MODE_UNSPECIFIED', LOG_FAIL_CLOSED = 'LOG_FAIL_CLOSED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -610,7 +610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleAction { NO_ACTION = 0, ALLOW = 1, ALLOW_WITH_LOG = 2, DENY = 3, DENY_WITH_LOG = 4, LOG = 5 }
+	export enum RuleAction { NO_ACTION = 'NO_ACTION', ALLOW = 'ALLOW', ALLOW_WITH_LOG = 'ALLOW_WITH_LOG', DENY = 'DENY', DENY_WITH_LOG = 'DENY_WITH_LOG', LOG = 'LOG' }
 
 
 	/** Request message for `SetIamPolicy` method. */

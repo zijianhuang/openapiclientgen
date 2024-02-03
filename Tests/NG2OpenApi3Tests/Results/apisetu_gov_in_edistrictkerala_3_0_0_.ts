@@ -1002,7 +1002,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CasteCertificateSchemaCertificateDataCategory { SC = 0, ST = 1, OBC = 2, GC = 3 }
+	export enum CasteCertificateSchemaCertificateDataCategory { SC = 'SC', ST = 'ST', OBC = 'OBC', GC = 'GC' }
 
 	export interface CasteCertificateSchemaIssuedBy {
 
@@ -2124,7 +2124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CmcerPostBodyFormat { pdf = 0 }
+	export enum CmcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface CncerPostBody {
 		certificateParameters?: CncerPostBodyCertificateParameters;

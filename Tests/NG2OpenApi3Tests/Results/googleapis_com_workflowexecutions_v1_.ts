@@ -283,9 +283,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionCallLogLevel { CALL_LOG_LEVEL_UNSPECIFIED = 0, LOG_ALL_CALLS = 1, LOG_ERRORS_ONLY = 2, LOG_NONE = 3 }
+	export enum ExecutionCallLogLevel { CALL_LOG_LEVEL_UNSPECIFIED = 'CALL_LOG_LEVEL_UNSPECIFIED', LOG_ALL_CALLS = 'LOG_ALL_CALLS', LOG_ERRORS_ONLY = 'LOG_ERRORS_ONLY', LOG_NONE = 'LOG_NONE' }
 
-	export enum ExecutionState { STATE_UNSPECIFIED = 0, ACTIVE = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4, UNAVAILABLE = 5, QUEUED = 6 }
+	export enum ExecutionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', UNAVAILABLE = 'UNAVAILABLE', QUEUED = 'QUEUED' }
 
 
 	/** Describes an error related to the current state of the Execution resource. */
@@ -315,7 +315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StateErrorType { TYPE_UNSPECIFIED = 0, KMS_ERROR = 1 }
+	export enum StateErrorType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', KMS_ERROR = 'KMS_ERROR' }
 
 
 	/** Represents the current status of this execution. */
@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepEntryState { STATE_UNSPECIFIED = 0, STATE_IN_PROGRESS = 1, STATE_SUCCEEDED = 2, STATE_FAILED = 3 }
+	export enum StepEntryState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STATE_IN_PROGRESS = 'STATE_IN_PROGRESS', STATE_SUCCEEDED = 'STATE_SUCCEEDED', STATE_FAILED = 'STATE_FAILED' }
 
 
 	/** StepEntryMetadata contains metadata information about this step. */
@@ -616,9 +616,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StepEntryMetadataProgressType { PROGRESS_TYPE_UNSPECIFIED = 0, PROGRESS_TYPE_FOR = 1, PROGRESS_TYPE_SWITCH = 2, PROGRESS_TYPE_RETRY = 3, PROGRESS_TYPE_PARALLEL_FOR = 4, PROGRESS_TYPE_PARALLEL_BRANCH = 5 }
+	export enum StepEntryMetadataProgressType { PROGRESS_TYPE_UNSPECIFIED = 'PROGRESS_TYPE_UNSPECIFIED', PROGRESS_TYPE_FOR = 'PROGRESS_TYPE_FOR', PROGRESS_TYPE_SWITCH = 'PROGRESS_TYPE_SWITCH', PROGRESS_TYPE_RETRY = 'PROGRESS_TYPE_RETRY', PROGRESS_TYPE_PARALLEL_FOR = 'PROGRESS_TYPE_PARALLEL_FOR', PROGRESS_TYPE_PARALLEL_BRANCH = 'PROGRESS_TYPE_PARALLEL_BRANCH' }
 
-	export enum StepEntryStepType { STEP_TYPE_UNSPECIFIED = 0, STEP_ASSIGN = 1, STEP_STD_LIB_CALL = 2, STEP_CONNECTOR_CALL = 3, STEP_SUBWORKFLOW_CALL = 4, STEP_CALL = 5, STEP_SWITCH = 6, STEP_CONDITION = 7, STEP_FOR = 8, STEP_FOR_ITERATION = 9, STEP_PARALLEL_FOR = 10, STEP_PARALLEL_BRANCH = 11, STEP_PARALLEL_BRANCH_ENTRY = 12, STEP_TRY_RETRY_EXCEPT = 13, STEP_TRY = 14, STEP_RETRY = 15, STEP_EXCEPT = 16, STEP_RETURN = 17, STEP_RAISE = 18, STEP_GOTO = 19 }
+	export enum StepEntryStepType { STEP_TYPE_UNSPECIFIED = 'STEP_TYPE_UNSPECIFIED', STEP_ASSIGN = 'STEP_ASSIGN', STEP_STD_LIB_CALL = 'STEP_STD_LIB_CALL', STEP_CONNECTOR_CALL = 'STEP_CONNECTOR_CALL', STEP_SUBWORKFLOW_CALL = 'STEP_SUBWORKFLOW_CALL', STEP_CALL = 'STEP_CALL', STEP_SWITCH = 'STEP_SWITCH', STEP_CONDITION = 'STEP_CONDITION', STEP_FOR = 'STEP_FOR', STEP_FOR_ITERATION = 'STEP_FOR_ITERATION', STEP_PARALLEL_FOR = 'STEP_PARALLEL_FOR', STEP_PARALLEL_BRANCH = 'STEP_PARALLEL_BRANCH', STEP_PARALLEL_BRANCH_ENTRY = 'STEP_PARALLEL_BRANCH_ENTRY', STEP_TRY_RETRY_EXCEPT = 'STEP_TRY_RETRY_EXCEPT', STEP_TRY = 'STEP_TRY', STEP_RETRY = 'STEP_RETRY', STEP_EXCEPT = 'STEP_EXCEPT', STEP_RETURN = 'STEP_RETURN', STEP_RAISE = 'STEP_RAISE', STEP_GOTO = 'STEP_GOTO' }
 
 
 	/** A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute. Note that client libraries represent this object differently depending on the language. See the corresponding [client library documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for more information. See [quotas and limits] (https://cloud.google.com/pubsub/quotas) for more information about message limits. */
@@ -806,7 +806,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Workflowexecutions_projects_locations_workflows_executions_stepEntries_getView { EXECUTION_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Workflowexecutions_projects_locations_workflows_executions_stepEntries_getView { EXECUTION_VIEW_UNSPECIFIED = 'EXECUTION_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

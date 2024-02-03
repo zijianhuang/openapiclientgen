@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelChannelType { CHANNEL_TYPE_UNSPECIFIED = 0, STABLE = 1, BETA = 2, DEV = 3, CANARY = 4, CANARY_ASAN = 5, ALL = 6, EXTENDED = 7 }
+	export enum ChannelChannelType { CHANNEL_TYPE_UNSPECIFIED = 'CHANNEL_TYPE_UNSPECIFIED', STABLE = 'STABLE', BETA = 'BETA', DEV = 'DEV', CANARY = 'CANARY', CANARY_ASAN = 'CANARY_ASAN', ALL = 'ALL', EXTENDED = 'EXTENDED' }
 
 
 	/** Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive). The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time. */
@@ -137,7 +137,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformPlatformType { PLATFORM_TYPE_UNSPECIFIED = 0, WIN = 1, WIN64 = 2, MAC = 3, LINUX = 4, ANDROID = 5, WEBVIEW = 6, IOS = 7, ALL = 8, MAC_ARM64 = 9, LACROS = 10, LACROS_ARM32 = 11, CHROMEOS = 12, LACROS_ARM64 = 13, FUCHSIA = 14 }
+	export enum PlatformPlatformType { PLATFORM_TYPE_UNSPECIFIED = 'PLATFORM_TYPE_UNSPECIFIED', WIN = 'WIN', WIN64 = 'WIN64', MAC = 'MAC', LINUX = 'LINUX', ANDROID = 'ANDROID', WEBVIEW = 'WEBVIEW', IOS = 'IOS', ALL = 'ALL', MAC_ARM64 = 'MAC_ARM64', LACROS = 'LACROS', LACROS_ARM32 = 'LACROS_ARM32', CHROMEOS = 'CHROMEOS', LACROS_ARM64 = 'LACROS_ARM64', FUCHSIA = 'FUCHSIA' }
 
 
 	/** Response message for ListReleases. */

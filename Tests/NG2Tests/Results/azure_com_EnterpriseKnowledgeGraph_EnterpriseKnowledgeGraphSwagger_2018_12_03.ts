@@ -60,7 +60,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseKnowledgeGraphPropertiesProvisioningState { Creating = 0, Deleting = 1, Failed = 2, Succeeded = 3 }
+	export enum EnterpriseKnowledgeGraphPropertiesProvisioningState { Creating = 'Creating', Deleting = 'Deleting', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 
 	/** The list of  EnterpriseKnowledgeGraph service operation response. */
@@ -326,7 +326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { F0 = 0, S1 = 1 }
+	export enum SkuName { F0 = 'F0', S1 = 'S1' }
 
 	@Injectable()
 	export class MyClient {

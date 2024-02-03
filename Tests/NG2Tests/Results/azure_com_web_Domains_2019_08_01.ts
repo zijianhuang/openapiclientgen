@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainAvailabilityCheckResultDomainType { Regular = 0, SoftDeleted = 1 }
+	export enum DomainAvailabilityCheckResultDomainType { Regular = 'Regular', SoftDeleted = 'SoftDeleted' }
 
 
 	/** Collection of domains. */
@@ -492,11 +492,11 @@ export namespace MyNS {
 
 	}
 
-	export enum HostNameAzureResourceType { Website = 0, TrafficManager = 1 }
+	export enum HostNameAzureResourceType { Website = 'Website', TrafficManager = 'TrafficManager' }
 
-	export enum HostNameCustomHostNameDnsRecordType { CName = 0, A = 1 }
+	export enum HostNameCustomHostNameDnsRecordType { CName = 'CName', A = 'A' }
 
-	export enum HostNameHostNameType { Verified = 0, Managed = 1 }
+	export enum HostNameHostNameType { Verified = 'Verified', Managed = 'Managed' }
 
 
 	/** Collection of domain name identifiers. */

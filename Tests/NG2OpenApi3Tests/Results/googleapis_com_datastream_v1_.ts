@@ -553,9 +553,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BackfillJobState { STATE_UNSPECIFIED = 0, NOT_STARTED = 1, PENDING = 2, ACTIVE = 3, STOPPED = 4, FAILED = 5, COMPLETED = 6, UNSUPPORTED = 7 }
+	export enum BackfillJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NOT_STARTED = 'NOT_STARTED', PENDING = 'PENDING', ACTIVE = 'ACTIVE', STOPPED = 'STOPPED', FAILED = 'FAILED', COMPLETED = 'COMPLETED', UNSUPPORTED = 'UNSUPPORTED' }
 
-	export enum BackfillJobTrigger { TRIGGER_UNSPECIFIED = 0, AUTOMATIC = 1, MANUAL = 2 }
+	export enum BackfillJobTrigger { TRIGGER_UNSPECIFIED = 'TRIGGER_UNSPECIFIED', AUTOMATIC = 'AUTOMATIC', MANUAL = 'MANUAL' }
 
 
 	/** Backfill strategy to disable automatic backfill for the Stream's objects. */
@@ -1313,9 +1313,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JsonFileFormatCompression { JSON_COMPRESSION_UNSPECIFIED = 0, NO_COMPRESSION = 1, GZIP = 2 }
+	export enum JsonFileFormatCompression { JSON_COMPRESSION_UNSPECIFIED = 'JSON_COMPRESSION_UNSPECIFIED', NO_COMPRESSION = 'NO_COMPRESSION', GZIP = 'GZIP' }
 
-	export enum JsonFileFormatSchemaFileFormat { SCHEMA_FILE_FORMAT_UNSPECIFIED = 0, NO_SCHEMA_FILE = 1, AVRO_SCHEMA_FILE = 2 }
+	export enum JsonFileFormatSchemaFileFormat { SCHEMA_FILE_FORMAT_UNSPECIFIED = 'SCHEMA_FILE_FORMAT_UNSPECIFIED', NO_SCHEMA_FILE = 'NO_SCHEMA_FILE', AVRO_SCHEMA_FILE = 'AVRO_SCHEMA_FILE' }
 
 
 	/** Request message for 'discover' ConnectionProfile request. */
@@ -1728,7 +1728,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateConnectionState { STATE_UNSPECIFIED = 0, CREATING = 1, CREATED = 2, FAILED = 3, DELETING = 4, FAILED_TO_DELETE = 5 }
+	export enum PrivateConnectionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', CREATED = 'CREATED', FAILED = 'FAILED', DELETING = 'DELETING', FAILED_TO_DELETE = 'FAILED_TO_DELETE' }
 
 
 	/** The VPC Peering configuration is used to create VPC peering between Datastream and the consumer's VPC. */
@@ -2301,7 +2301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamState { STATE_UNSPECIFIED = 0, NOT_STARTED = 1, RUNNING = 2, PAUSED = 3, MAINTENANCE = 4, FAILED = 5, FAILED_PERMANENTLY = 6, STARTING = 7, DRAINING = 8 }
+	export enum StreamState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NOT_STARTED = 'NOT_STARTED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', MAINTENANCE = 'MAINTENANCE', FAILED = 'FAILED', FAILED_PERMANENTLY = 'FAILED_PERMANENTLY', STARTING = 'STARTING', DRAINING = 'DRAINING' }
 
 
 	/** Request for looking up a specific stream object by its source object identifier. */
@@ -2483,9 +2483,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationMessageLevel { LEVEL_UNSPECIFIED = 0, WARNING = 1, ERROR = 2 }
+	export enum ValidationMessageLevel { LEVEL_UNSPECIFIED = 'LEVEL_UNSPECIFIED', WARNING = 'WARNING', ERROR = 'ERROR' }
 
-	export enum ValidationState { STATE_UNSPECIFIED = 0, NOT_EXECUTED = 1, FAILED = 2, PASSED = 3, WARNING = 4 }
+	export enum ValidationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', NOT_EXECUTED = 'NOT_EXECUTED', FAILED = 'FAILED', PASSED = 'PASSED', WARNING = 'WARNING' }
 
 
 	/** Request message for running a stream. */

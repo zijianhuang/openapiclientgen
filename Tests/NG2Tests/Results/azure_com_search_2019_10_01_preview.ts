@@ -71,7 +71,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityInputType { searchServices = 0 }
+	export enum CheckNameAvailabilityInputType { searchServices = 'searchServices' }
 
 
 	/** Output of check name availability API. */
@@ -108,7 +108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityOutputReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameAvailabilityOutputReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** Contains information about an API error. */
@@ -206,7 +206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { None = 0, SystemAssigned = 1 }
+	export enum IdentityType { None = 'None', SystemAssigned = 'SystemAssigned' }
 
 
 	/** The IP restriction rule of the Azure Cognitive Search service. */
@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkRuleSetEndpointAccess { Public = 0, Private = 1 }
+	export enum NetworkRuleSetEndpointAccess { Public = 'Public', Private = 'Private' }
 
 
 	/** Describes a REST API operation. */
@@ -445,7 +445,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionStateStatus { Pending = 0, Approved = 1, Rejected = 2, Disconnected = 3 }
+	export enum PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionStateStatus { Pending = 'Pending', Approved = 'Approved', Rejected = 'Rejected', Disconnected = 'Disconnected' }
 
 
 	/** Base type for all Azure resources. */
@@ -619,11 +619,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchServicePropertiesHostingMode { default = 0, highDensity = 1 }
+	export enum SearchServicePropertiesHostingMode { default = 'default', highDensity = 'highDensity' }
 
-	export enum SearchServicePropertiesProvisioningState { succeeded = 0, provisioning = 1, failed = 2 }
+	export enum SearchServicePropertiesProvisioningState { succeeded = 'succeeded', provisioning = 'provisioning', failed = 'failed' }
 
-	export enum SearchServicePropertiesStatus { running = 0, provisioning = 1, deleting = 2, degraded = 3, disabled = 4, error = 5 }
+	export enum SearchServicePropertiesStatus { running = 'running', provisioning = 'provisioning', deleting = 'deleting', degraded = 'degraded', disabled = 'disabled', error = 'error' }
 
 
 	/** Defines the SKU of an Azure Cognitive Search Service, which determines price tier and capacity limits. */
@@ -646,7 +646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { free = 0, basic = 1, standard = 2, standard2 = 3, standard3 = 4, storage_optimized_l1 = 5, storage_optimized_l2 = 6 }
+	export enum SkuName { free = 'free', basic = 'basic', standard = 'standard', standard2 = 'standard2', standard3 = 'standard3', storage_optimized_l1 = 'storage_optimized_l1', storage_optimized_l2 = 'storage_optimized_l2' }
 
 	@Injectable()
 	export class MyClient {
@@ -864,7 +864,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AdminKeys_RegenerateKeyKind { primary = 0, secondary = 1 }
+	export enum AdminKeys_RegenerateKeyKind { primary = 'primary', secondary = 'secondary' }
 
 }
 

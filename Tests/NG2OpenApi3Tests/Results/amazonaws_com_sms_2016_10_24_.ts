@@ -85,13 +85,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AppStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, DELETED = 4, DELETE_FAILED = 5 }
+	export enum AppStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', DELETE_FAILED = 'DELETE_FAILED' }
 
-	export enum AppReplicationConfigurationStatus { NOT_CONFIGURED = 0, CONFIGURED = 1 }
+	export enum AppReplicationConfigurationStatus { NOT_CONFIGURED = 'NOT_CONFIGURED', CONFIGURED = 'CONFIGURED' }
 
-	export enum AppReplicationStatus { READY_FOR_CONFIGURATION = 0, CONFIGURATION_IN_PROGRESS = 1, CONFIGURATION_INVALID = 2, READY_FOR_REPLICATION = 3, VALIDATION_IN_PROGRESS = 4, REPLICATION_PENDING = 5, REPLICATION_IN_PROGRESS = 6, REPLICATED = 7, PARTIALLY_REPLICATED = 8, DELTA_REPLICATION_IN_PROGRESS = 9, DELTA_REPLICATED = 10, DELTA_REPLICATION_FAILED = 11, REPLICATION_FAILED = 12, REPLICATION_STOPPING = 13, REPLICATION_STOP_FAILED = 14, REPLICATION_STOPPED = 15 }
+	export enum AppReplicationStatus { READY_FOR_CONFIGURATION = 'READY_FOR_CONFIGURATION', CONFIGURATION_IN_PROGRESS = 'CONFIGURATION_IN_PROGRESS', CONFIGURATION_INVALID = 'CONFIGURATION_INVALID', READY_FOR_REPLICATION = 'READY_FOR_REPLICATION', VALIDATION_IN_PROGRESS = 'VALIDATION_IN_PROGRESS', REPLICATION_PENDING = 'REPLICATION_PENDING', REPLICATION_IN_PROGRESS = 'REPLICATION_IN_PROGRESS', REPLICATED = 'REPLICATED', PARTIALLY_REPLICATED = 'PARTIALLY_REPLICATED', DELTA_REPLICATION_IN_PROGRESS = 'DELTA_REPLICATION_IN_PROGRESS', DELTA_REPLICATED = 'DELTA_REPLICATED', DELTA_REPLICATION_FAILED = 'DELTA_REPLICATION_FAILED', REPLICATION_FAILED = 'REPLICATION_FAILED', REPLICATION_STOPPING = 'REPLICATION_STOPPING', REPLICATION_STOP_FAILED = 'REPLICATION_STOP_FAILED', REPLICATION_STOPPED = 'REPLICATION_STOPPED' }
 
-	export enum AppLaunchStatus { READY_FOR_CONFIGURATION = 0, CONFIGURATION_IN_PROGRESS = 1, CONFIGURATION_INVALID = 2, READY_FOR_LAUNCH = 3, VALIDATION_IN_PROGRESS = 4, LAUNCH_PENDING = 5, LAUNCH_IN_PROGRESS = 6, LAUNCHED = 7, PARTIALLY_LAUNCHED = 8, DELTA_LAUNCH_IN_PROGRESS = 9, DELTA_LAUNCH_FAILED = 10, LAUNCH_FAILED = 11, TERMINATE_IN_PROGRESS = 12, TERMINATE_FAILED = 13, TERMINATED = 14 }
+	export enum AppLaunchStatus { READY_FOR_CONFIGURATION = 'READY_FOR_CONFIGURATION', CONFIGURATION_IN_PROGRESS = 'CONFIGURATION_IN_PROGRESS', CONFIGURATION_INVALID = 'CONFIGURATION_INVALID', READY_FOR_LAUNCH = 'READY_FOR_LAUNCH', VALIDATION_IN_PROGRESS = 'VALIDATION_IN_PROGRESS', LAUNCH_PENDING = 'LAUNCH_PENDING', LAUNCH_IN_PROGRESS = 'LAUNCH_IN_PROGRESS', LAUNCHED = 'LAUNCHED', PARTIALLY_LAUNCHED = 'PARTIALLY_LAUNCHED', DELTA_LAUNCH_IN_PROGRESS = 'DELTA_LAUNCH_IN_PROGRESS', DELTA_LAUNCH_FAILED = 'DELTA_LAUNCH_FAILED', LAUNCH_FAILED = 'LAUNCH_FAILED', TERMINATE_IN_PROGRESS = 'TERMINATE_IN_PROGRESS', TERMINATE_FAILED = 'TERMINATE_FAILED', TERMINATED = 'TERMINATED' }
 
 
 	/** Details about the latest launch of an application. */
@@ -164,7 +164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerType { VIRTUAL_MACHINE = 0 }
+	export enum ServerType { VIRTUAL_MACHINE = 'VIRTUAL_MACHINE' }
 
 
 	/** Represents a VM server. */
@@ -213,7 +213,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VmManagerType { VSPHERE = 0, SCVMM = 1, 'HYPERV-MANAGER' = 2 }
+	export enum VmManagerType { VSPHERE = 'VSPHERE', SCVMM = 'SCVMM', 'HYPERV-MANAGER' = 'HYPERV-MANAGER' }
 
 
 	/** Key/value pair that can be assigned to an application. */
@@ -370,7 +370,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LicenseType { AWS = 0, BYOL = 1 }
+	export enum LicenseType { AWS = 'AWS', BYOL = 'BYOL' }
 
 	export interface ServerCannotBeReplicatedException {
 	}
@@ -645,7 +645,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputFormat { JSON = 0, YAML = 1 }
+	export enum OutputFormat { JSON = 'JSON', YAML = 'YAML' }
 
 	export interface GenerateTemplateResponse {
 		s3Location?: S3Location;
@@ -802,7 +802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScriptType { SHELL_SCRIPT = 0, POWERSHELL_SCRIPT = 1 }
+	export enum ScriptType { SHELL_SCRIPT = 'SHELL_SCRIPT', POWERSHELL_SCRIPT = 'POWERSHELL_SCRIPT' }
 
 	export interface GetAppLaunchConfigurationRequest {
 		appId?: string;
@@ -946,7 +946,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppValidationStrategy { SSM = 0 }
+	export enum AppValidationStrategy { SSM = 'SSM' }
 
 
 	/** Contains validation parameters. */
@@ -1040,7 +1040,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerValidationStrategy { USERDATA = 0 }
+	export enum ServerValidationStrategy { USERDATA = 'USERDATA' }
 
 
 	/** Contains validation parameters. */
@@ -1119,7 +1119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationStatus { READY_FOR_VALIDATION = 0, PENDING = 1, IN_PROGRESS = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum ValidationStatus { READY_FOR_VALIDATION = 'READY_FOR_VALIDATION', PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Output from validating an application. */
@@ -1243,9 +1243,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorStatus { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum ConnectorStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
-	export enum ConnectorCapability { VSPHERE = 0, SCVMM = 1, 'HYPERV-MANAGER' = 2, SNAPSHOT_BATCHING = 3, SMS_OPTIMIZED = 4 }
+	export enum ConnectorCapability { VSPHERE = 'VSPHERE', SCVMM = 'SCVMM', 'HYPERV-MANAGER' = 'HYPERV-MANAGER', SNAPSHOT_BATCHING = 'SNAPSHOT_BATCHING', SMS_OPTIMIZED = 'SMS_OPTIMIZED' }
 
 	export interface GetConnectorsRequest {
 		nextToken?: string;
@@ -1341,7 +1341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationJobState { PENDING = 0, ACTIVE = 1, FAILED = 2, DELETING = 3, DELETED = 4, COMPLETED = 5, PAUSED_ON_FAILURE = 6, FAILING = 7 }
+	export enum ReplicationJobState { PENDING = 'PENDING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', DELETING = 'DELETING', DELETED = 'DELETED', COMPLETED = 'COMPLETED', PAUSED_ON_FAILURE = 'PAUSED_ON_FAILURE', FAILING = 'FAILING' }
 
 
 	/** Represents a replication run. */
@@ -1388,9 +1388,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationRunState { PENDING = 0, MISSED = 1, ACTIVE = 2, FAILED = 3, COMPLETED = 4, DELETING = 5, DELETED = 6 }
+	export enum ReplicationRunState { PENDING = 'PENDING', MISSED = 'MISSED', ACTIVE = 'ACTIVE', FAILED = 'FAILED', COMPLETED = 'COMPLETED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
-	export enum ReplicationRunType { ON_DEMAND = 0, AUTOMATIC = 1 }
+	export enum ReplicationRunType { ON_DEMAND = 'ON_DEMAND', AUTOMATIC = 'AUTOMATIC' }
 
 
 	/** Details of the current stage of a replication run. */
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerCatalogStatus { NOT_IMPORTED = 0, IMPORTING = 1, AVAILABLE = 2, DELETED = 3, EXPIRED = 4 }
+	export enum ServerCatalogStatus { NOT_IMPORTED = 'NOT_IMPORTED', IMPORTING = 'IMPORTING', AVAILABLE = 'AVAILABLE', DELETED = 'DELETED', EXPIRED = 'EXPIRED' }
 
 	export interface GetServersRequest {
 		nextToken?: string;
@@ -1979,7 +1979,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppLaunchConfigurationStatus { NOT_CONFIGURED = 0, CONFIGURED = 1 }
+	export enum AppLaunchConfigurationStatus { NOT_CONFIGURED = 'NOT_CONFIGURED', CONFIGURED = 'CONFIGURED' }
 
 	@Injectable()
 	export class MyClient {
@@ -2310,75 +2310,75 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.CreateApp' = 0 }
+	export enum CreateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.CreateApp' = 'AWSServerMigrationService_V2016_10_24.CreateApp' }
 
-	export enum CreateReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.CreateReplicationJob' = 0 }
+	export enum CreateReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.CreateReplicationJob' = 'AWSServerMigrationService_V2016_10_24.CreateReplicationJob' }
 
-	export enum DeleteAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteApp' = 0 }
+	export enum DeleteAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteApp' = 'AWSServerMigrationService_V2016_10_24.DeleteApp' }
 
-	export enum DeleteAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppLaunchConfiguration' = 0 }
+	export enum DeleteAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppLaunchConfiguration' = 'AWSServerMigrationService_V2016_10_24.DeleteAppLaunchConfiguration' }
 
-	export enum DeleteAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppReplicationConfiguration' = 0 }
+	export enum DeleteAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppReplicationConfiguration' = 'AWSServerMigrationService_V2016_10_24.DeleteAppReplicationConfiguration' }
 
-	export enum DeleteAppValidationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppValidationConfiguration' = 0 }
+	export enum DeleteAppValidationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppValidationConfiguration' = 'AWSServerMigrationService_V2016_10_24.DeleteAppValidationConfiguration' }
 
-	export enum DeleteReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteReplicationJob' = 0 }
+	export enum DeleteReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteReplicationJob' = 'AWSServerMigrationService_V2016_10_24.DeleteReplicationJob' }
 
-	export enum DeleteServerCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteServerCatalog' = 0 }
+	export enum DeleteServerCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteServerCatalog' = 'AWSServerMigrationService_V2016_10_24.DeleteServerCatalog' }
 
-	export enum DisassociateConnectorX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DisassociateConnector' = 0 }
+	export enum DisassociateConnectorX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DisassociateConnector' = 'AWSServerMigrationService_V2016_10_24.DisassociateConnector' }
 
-	export enum GenerateChangeSetX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GenerateChangeSet' = 0 }
+	export enum GenerateChangeSetX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GenerateChangeSet' = 'AWSServerMigrationService_V2016_10_24.GenerateChangeSet' }
 
-	export enum GenerateTemplateX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GenerateTemplate' = 0 }
+	export enum GenerateTemplateX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GenerateTemplate' = 'AWSServerMigrationService_V2016_10_24.GenerateTemplate' }
 
-	export enum GetAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetApp' = 0 }
+	export enum GetAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetApp' = 'AWSServerMigrationService_V2016_10_24.GetApp' }
 
-	export enum GetAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppLaunchConfiguration' = 0 }
+	export enum GetAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppLaunchConfiguration' = 'AWSServerMigrationService_V2016_10_24.GetAppLaunchConfiguration' }
 
-	export enum GetAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppReplicationConfiguration' = 0 }
+	export enum GetAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppReplicationConfiguration' = 'AWSServerMigrationService_V2016_10_24.GetAppReplicationConfiguration' }
 
-	export enum GetAppValidationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppValidationConfiguration' = 0 }
+	export enum GetAppValidationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppValidationConfiguration' = 'AWSServerMigrationService_V2016_10_24.GetAppValidationConfiguration' }
 
-	export enum GetAppValidationOutputX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppValidationOutput' = 0 }
+	export enum GetAppValidationOutputX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppValidationOutput' = 'AWSServerMigrationService_V2016_10_24.GetAppValidationOutput' }
 
-	export enum GetConnectorsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetConnectors' = 0 }
+	export enum GetConnectorsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetConnectors' = 'AWSServerMigrationService_V2016_10_24.GetConnectors' }
 
-	export enum GetReplicationJobsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetReplicationJobs' = 0 }
+	export enum GetReplicationJobsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetReplicationJobs' = 'AWSServerMigrationService_V2016_10_24.GetReplicationJobs' }
 
-	export enum GetReplicationRunsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetReplicationRuns' = 0 }
+	export enum GetReplicationRunsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetReplicationRuns' = 'AWSServerMigrationService_V2016_10_24.GetReplicationRuns' }
 
-	export enum GetServersX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetServers' = 0 }
+	export enum GetServersX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetServers' = 'AWSServerMigrationService_V2016_10_24.GetServers' }
 
-	export enum ImportAppCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ImportAppCatalog' = 0 }
+	export enum ImportAppCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ImportAppCatalog' = 'AWSServerMigrationService_V2016_10_24.ImportAppCatalog' }
 
-	export enum ImportServerCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ImportServerCatalog' = 0 }
+	export enum ImportServerCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ImportServerCatalog' = 'AWSServerMigrationService_V2016_10_24.ImportServerCatalog' }
 
-	export enum LaunchAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.LaunchApp' = 0 }
+	export enum LaunchAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.LaunchApp' = 'AWSServerMigrationService_V2016_10_24.LaunchApp' }
 
-	export enum ListAppsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ListApps' = 0 }
+	export enum ListAppsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ListApps' = 'AWSServerMigrationService_V2016_10_24.ListApps' }
 
-	export enum NotifyAppValidationOutputX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.NotifyAppValidationOutput' = 0 }
+	export enum NotifyAppValidationOutputX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.NotifyAppValidationOutput' = 'AWSServerMigrationService_V2016_10_24.NotifyAppValidationOutput' }
 
-	export enum PutAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppLaunchConfiguration' = 0 }
+	export enum PutAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppLaunchConfiguration' = 'AWSServerMigrationService_V2016_10_24.PutAppLaunchConfiguration' }
 
-	export enum PutAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppReplicationConfiguration' = 0 }
+	export enum PutAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppReplicationConfiguration' = 'AWSServerMigrationService_V2016_10_24.PutAppReplicationConfiguration' }
 
-	export enum PutAppValidationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppValidationConfiguration' = 0 }
+	export enum PutAppValidationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppValidationConfiguration' = 'AWSServerMigrationService_V2016_10_24.PutAppValidationConfiguration' }
 
-	export enum StartAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartAppReplication' = 0 }
+	export enum StartAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartAppReplication' = 'AWSServerMigrationService_V2016_10_24.StartAppReplication' }
 
-	export enum StartOnDemandAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartOnDemandAppReplication' = 0 }
+	export enum StartOnDemandAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartOnDemandAppReplication' = 'AWSServerMigrationService_V2016_10_24.StartOnDemandAppReplication' }
 
-	export enum StartOnDemandReplicationRunX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartOnDemandReplicationRun' = 0 }
+	export enum StartOnDemandReplicationRunX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartOnDemandReplicationRun' = 'AWSServerMigrationService_V2016_10_24.StartOnDemandReplicationRun' }
 
-	export enum StopAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StopAppReplication' = 0 }
+	export enum StopAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StopAppReplication' = 'AWSServerMigrationService_V2016_10_24.StopAppReplication' }
 
-	export enum TerminateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.TerminateApp' = 0 }
+	export enum TerminateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.TerminateApp' = 'AWSServerMigrationService_V2016_10_24.TerminateApp' }
 
-	export enum UpdateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.UpdateApp' = 0 }
+	export enum UpdateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.UpdateApp' = 'AWSServerMigrationService_V2016_10_24.UpdateApp' }
 
-	export enum UpdateReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.UpdateReplicationJob' = 0 }
+	export enum UpdateReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.UpdateReplicationJob' = 'AWSServerMigrationService_V2016_10_24.UpdateReplicationJob' }
 
 }
 

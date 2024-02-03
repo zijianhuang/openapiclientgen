@@ -65,7 +65,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservedNodeOfferingType { Regular = 0, Upgradable = 1 }
+	export enum ReservedNodeOfferingType { Regular = 'Regular', Upgradable = 'Upgradable' }
 
 	export interface ReservedNodeNotFoundFault {
 	}
@@ -235,7 +235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataShareStatus { ACTIVE = 0, PENDING_AUTHORIZATION = 1, AUTHORIZED = 2, DEAUTHORIZED = 3, REJECTED = 4, AVAILABLE = 5 }
+	export enum DataShareStatus { ACTIVE = 'ACTIVE', PENDING_AUTHORIZATION = 'PENDING_AUTHORIZATION', AUTHORIZED = 'AUTHORIZED', DEAUTHORIZED = 'DEAUTHORIZED', REJECTED = 'REJECTED', AVAILABLE = 'AVAILABLE' }
 
 	export interface InvalidDataShareFault {
 	}
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationStatus { Authorized = 0, Revoking = 1 }
+	export enum AuthorizationStatus { Authorized = 'Authorized', Revoking = 'Revoking' }
 
 	export interface EndpointAuthorizationsPerClusterLimitExceededFault {
 	}
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleState { MODIFYING = 0, ACTIVE = 1, FAILED = 2 }
+	export enum ScheduleState { MODIFYING = 'MODIFYING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** Describes a resize operation. */
@@ -1222,9 +1222,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AquaStatus { enabled = 0, disabled = 1, applying = 2 }
+	export enum AquaStatus { enabled = 'enabled', disabled = 'disabled', applying = 'applying' }
 
-	export enum AquaConfigurationStatus { enabled = 0, disabled = 1, auto = 2 }
+	export enum AquaConfigurationStatus { enabled = 'enabled', disabled = 'disabled', auto = 'auto' }
 
 
 	/** Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details. */
@@ -1267,7 +1267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservedNodeExchangeStatusType { REQUESTED = 0, PENDING = 1, IN_PROGRESS = 2, RETRYING = 3, SUCCEEDED = 4, FAILED = 5 }
+	export enum ReservedNodeExchangeStatusType { REQUESTED = 'REQUESTED', PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', RETRYING = 'RETRYING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** A tag consisting of a name/value pair for a resource. */
@@ -2171,7 +2171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledActionState { ACTIVE = 0, DISABLED = 1 }
+	export enum ScheduledActionState { ACTIVE = 'ACTIVE', DISABLED = 'DISABLED' }
 
 	export interface ScheduledActionAlreadyExistsFault {
 	}
@@ -2380,13 +2380,13 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageLimitFeatureType { spectrum = 0, 'concurrency-scaling' = 1, 'cross-region-datasharing' = 2 }
+	export enum UsageLimitFeatureType { spectrum = 'spectrum', 'concurrency-scaling' = 'concurrency-scaling', 'cross-region-datasharing' = 'cross-region-datasharing' }
 
-	export enum UsageLimitLimitType { time = 0, 'data-scanned' = 1 }
+	export enum UsageLimitLimitType { time = 'time', 'data-scanned' = 'data-scanned' }
 
-	export enum UsageLimitPeriod { daily = 0, weekly = 1, monthly = 2 }
+	export enum UsageLimitPeriod { daily = 'daily', weekly = 'weekly', monthly = 'monthly' }
 
-	export enum UsageLimitBreachAction { log = 0, 'emit-metric' = 1, disable = 2 }
+	export enum UsageLimitBreachAction { log = 'log', 'emit-metric' = 'emit-metric', disable = 'disable' }
 
 	export interface UsageLimitAlreadyExistsFault {
 	}
@@ -2739,9 +2739,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotAttributeToSortBy { SOURCE_TYPE = 0, TOTAL_SIZE = 1, CREATE_TIME = 2 }
+	export enum SnapshotAttributeToSortBy { SOURCE_TYPE = 'SOURCE_TYPE', TOTAL_SIZE = 'TOTAL_SIZE', CREATE_TIME = 'CREATE_TIME' }
 
-	export enum SortByOrder { ASC = 0, DESC = 1 }
+	export enum SortByOrder { ASC = 'ASC', DESC = 'DESC' }
 
 
 	/** Contains the output from the <a>DescribeClusterSubnetGroups</a> action.  */
@@ -3062,7 +3062,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogDestinationType { s3 = 0, cloudwatch = 1 }
+	export enum LogDestinationType { s3 = 's3', cloudwatch = 'cloudwatch' }
 
 	export interface NodeConfigurationOptionsMessage {
 		NodeConfigurationOptionList?: Array<string>;
@@ -3099,9 +3099,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeConfigurationOptionsFilterName { NodeType = 0, NumberOfNodes = 1, EstimatedDiskUtilizationPercent = 2, Mode = 3 }
+	export enum NodeConfigurationOptionsFilterName { NodeType = 'NodeType', NumberOfNodes = 'NumberOfNodes', EstimatedDiskUtilizationPercent = 'EstimatedDiskUtilizationPercent', Mode = 'Mode' }
 
-	export enum OperatorType { eq = 0, lt = 1, gt = 2, le = 3, ge = 4, in = 5, between = 6 }
+	export enum OperatorType { eq = 'eq', lt = 'lt', gt = 'gt', le = 'le', ge = 'ge', in = 'in', between = 'between' }
 
 	export interface AccessToSnapshotDeniedFault {
 	}
@@ -3240,7 +3240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledActionFilterName { 'cluster-identifier' = 0, 'iam-role' = 1 }
+	export enum ScheduledActionFilterName { 'cluster-identifier' = 'cluster-identifier', 'iam-role' = 'iam-role' }
 
 
 	/** <p/> */
@@ -3709,7 +3709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterApplyType { static = 0, dynamic = 1 }
+	export enum ParameterApplyType { static = 'static', dynamic = 'dynamic' }
 
 	export interface ModifyClusterSnapshotResult {
 
@@ -3969,7 +3969,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableRestoreStatusType { PENDING = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, CANCELED = 4 }
+	export enum TableRestoreStatusType { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELED = 'CANCELED' }
 
 	export interface InProgressTableRestoreQuotaExceededFault {
 	}
@@ -4125,7 +4125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { 'restore-cluster' = 0, 'recommend-node-config' = 1, 'resize-cluster' = 2 }
+	export enum ActionType { 'restore-cluster' = 'restore-cluster', 'recommend-node-config' = 'recommend-node-config', 'resize-cluster' = 'resize-cluster' }
 
 	export interface AssociateDataShareConsumerMessage {
 
@@ -5216,9 +5216,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataShareStatusForConsumer { ACTIVE = 0, AVAILABLE = 1 }
+	export enum DataShareStatusForConsumer { ACTIVE = 'ACTIVE', AVAILABLE = 'AVAILABLE' }
 
-	export enum DataShareStatusForProducer { ACTIVE = 0, AUTHORIZED = 1, PENDING_AUTHORIZATION = 2, DEAUTHORIZED = 3, REJECTED = 4 }
+	export enum DataShareStatusForProducer { ACTIVE = 'ACTIVE', AUTHORIZED = 'AUTHORIZED', PENDING_AUTHORIZATION = 'PENDING_AUTHORIZATION', DEAUTHORIZED = 'DEAUTHORIZED', REJECTED = 'REJECTED' }
 
 	export interface DeauthorizeDataShareMessage {
 
@@ -6042,7 +6042,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { cluster = 0, 'cluster-parameter-group' = 1, 'cluster-security-group' = 2, 'cluster-snapshot' = 3, 'scheduled-action' = 4 }
+	export enum SourceType { cluster = 'cluster', 'cluster-parameter-group' = 'cluster-parameter-group', 'cluster-security-group' = 'cluster-security-group', 'cluster-snapshot' = 'cluster-snapshot', 'scheduled-action' = 'scheduled-action' }
 
 
 	/** <p/> */
@@ -6331,7 +6331,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledActionTypeValues { ResizeCluster = 0, PauseCluster = 1, ResumeCluster = 2 }
+	export enum ScheduledActionTypeValues { ResizeCluster = 'ResizeCluster', PauseCluster = 'PauseCluster', ResumeCluster = 'ResumeCluster' }
 
 	export interface DescribeScheduledActionsMessage {
 		ScheduledActionName?: string;
@@ -6810,7 +6810,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReservedNodeExchangeActionType { 'restore-cluster' = 0, 'resize-cluster' = 1 }
+	export enum ReservedNodeExchangeActionType { 'restore-cluster' = 'restore-cluster', 'resize-cluster' = 'resize-cluster' }
 
 	export interface GetReservedNodeExchangeConfigurationOptionsInputMessage {
 
@@ -6910,7 +6910,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Mode { standard = 0, 'high-performance' = 1 }
+	export enum Mode { standard = 'standard', 'high-performance' = 'high-performance' }
 
 	export interface ModifyAquaInputMessage {
 
@@ -7486,7 +7486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartnerIntegrationStatus { Active = 0, Inactive = 1, RuntimeFailure = 2, ConnectionFailure = 3 }
+	export enum PartnerIntegrationStatus { Active = 'Active', Inactive = 'Inactive', RuntimeFailure = 'RuntimeFailure', ConnectionFailure = 'ConnectionFailure' }
 
 
 	/** Describes a partner integration. */
@@ -9807,51 +9807,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AcceptReservedNodeExchangeAction { AcceptReservedNodeExchange = 0 }
+	export enum GET_AcceptReservedNodeExchangeAction { AcceptReservedNodeExchange = 'AcceptReservedNodeExchange' }
 
-	export enum GET_AcceptReservedNodeExchangeVersion { '2012-12-01' = 0 }
+	export enum GET_AcceptReservedNodeExchangeVersion { '2012-12-01' = '2012-12-01' }
 
-	export enum GET_AddPartnerAction { AddPartner = 0 }
+	export enum GET_AddPartnerAction { AddPartner = 'AddPartner' }
 
-	export enum GET_AssociateDataShareConsumerAction { AssociateDataShareConsumer = 0 }
+	export enum GET_AssociateDataShareConsumerAction { AssociateDataShareConsumer = 'AssociateDataShareConsumer' }
 
-	export enum GET_AuthorizeClusterSecurityGroupIngressAction { AuthorizeClusterSecurityGroupIngress = 0 }
+	export enum GET_AuthorizeClusterSecurityGroupIngressAction { AuthorizeClusterSecurityGroupIngress = 'AuthorizeClusterSecurityGroupIngress' }
 
-	export enum GET_AuthorizeDataShareAction { AuthorizeDataShare = 0 }
+	export enum GET_AuthorizeDataShareAction { AuthorizeDataShare = 'AuthorizeDataShare' }
 
-	export enum GET_AuthorizeEndpointAccessAction { AuthorizeEndpointAccess = 0 }
+	export enum GET_AuthorizeEndpointAccessAction { AuthorizeEndpointAccess = 'AuthorizeEndpointAccess' }
 
-	export enum GET_AuthorizeSnapshotAccessAction { AuthorizeSnapshotAccess = 0 }
+	export enum GET_AuthorizeSnapshotAccessAction { AuthorizeSnapshotAccess = 'AuthorizeSnapshotAccess' }
 
-	export enum GET_BatchDeleteClusterSnapshotsAction { BatchDeleteClusterSnapshots = 0 }
+	export enum GET_BatchDeleteClusterSnapshotsAction { BatchDeleteClusterSnapshots = 'BatchDeleteClusterSnapshots' }
 
-	export enum GET_BatchModifyClusterSnapshotsAction { BatchModifyClusterSnapshots = 0 }
+	export enum GET_BatchModifyClusterSnapshotsAction { BatchModifyClusterSnapshots = 'BatchModifyClusterSnapshots' }
 
-	export enum GET_CancelResizeAction { CancelResize = 0 }
+	export enum GET_CancelResizeAction { CancelResize = 'CancelResize' }
 
-	export enum GET_CopyClusterSnapshotAction { CopyClusterSnapshot = 0 }
+	export enum GET_CopyClusterSnapshotAction { CopyClusterSnapshot = 'CopyClusterSnapshot' }
 
-	export enum GET_CreateAuthenticationProfileAction { CreateAuthenticationProfile = 0 }
+	export enum GET_CreateAuthenticationProfileAction { CreateAuthenticationProfile = 'CreateAuthenticationProfile' }
 
-	export enum GET_CreateClusterAction { CreateCluster = 0 }
+	export enum GET_CreateClusterAction { CreateCluster = 'CreateCluster' }
 
-	export enum GET_CreateClusterParameterGroupAction { CreateClusterParameterGroup = 0 }
+	export enum GET_CreateClusterParameterGroupAction { CreateClusterParameterGroup = 'CreateClusterParameterGroup' }
 
-	export enum GET_CreateClusterSecurityGroupAction { CreateClusterSecurityGroup = 0 }
+	export enum GET_CreateClusterSecurityGroupAction { CreateClusterSecurityGroup = 'CreateClusterSecurityGroup' }
 
-	export enum GET_CreateClusterSnapshotAction { CreateClusterSnapshot = 0 }
+	export enum GET_CreateClusterSnapshotAction { CreateClusterSnapshot = 'CreateClusterSnapshot' }
 
-	export enum GET_CreateClusterSubnetGroupAction { CreateClusterSubnetGroup = 0 }
+	export enum GET_CreateClusterSubnetGroupAction { CreateClusterSubnetGroup = 'CreateClusterSubnetGroup' }
 
-	export enum GET_CreateCustomDomainAssociationAction { CreateCustomDomainAssociation = 0 }
+	export enum GET_CreateCustomDomainAssociationAction { CreateCustomDomainAssociation = 'CreateCustomDomainAssociation' }
 
-	export enum GET_CreateEndpointAccessAction { CreateEndpointAccess = 0 }
+	export enum GET_CreateEndpointAccessAction { CreateEndpointAccess = 'CreateEndpointAccess' }
 
-	export enum GET_CreateEventSubscriptionAction { CreateEventSubscription = 0 }
+	export enum GET_CreateEventSubscriptionAction { CreateEventSubscription = 'CreateEventSubscription' }
 
-	export enum GET_CreateHsmClientCertificateAction { CreateHsmClientCertificate = 0 }
+	export enum GET_CreateHsmClientCertificateAction { CreateHsmClientCertificate = 'CreateHsmClientCertificate' }
 
-	export enum GET_CreateHsmConfigurationAction { CreateHsmConfiguration = 0 }
+	export enum GET_CreateHsmConfigurationAction { CreateHsmConfiguration = 'CreateHsmConfiguration' }
 
 	export interface GET_CreateScheduledActionTargetAction {
 		ResizeCluster?: ResizeClusterMessage;
@@ -9866,171 +9866,171 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateScheduledActionAction { CreateScheduledAction = 0 }
+	export enum GET_CreateScheduledActionAction { CreateScheduledAction = 'CreateScheduledAction' }
 
-	export enum GET_CreateSnapshotCopyGrantAction { CreateSnapshotCopyGrant = 0 }
+	export enum GET_CreateSnapshotCopyGrantAction { CreateSnapshotCopyGrant = 'CreateSnapshotCopyGrant' }
 
-	export enum GET_CreateSnapshotScheduleAction { CreateSnapshotSchedule = 0 }
+	export enum GET_CreateSnapshotScheduleAction { CreateSnapshotSchedule = 'CreateSnapshotSchedule' }
 
-	export enum GET_CreateTagsAction { CreateTags = 0 }
+	export enum GET_CreateTagsAction { CreateTags = 'CreateTags' }
 
-	export enum GET_CreateUsageLimitAction { CreateUsageLimit = 0 }
+	export enum GET_CreateUsageLimitAction { CreateUsageLimit = 'CreateUsageLimit' }
 
-	export enum GET_DeauthorizeDataShareAction { DeauthorizeDataShare = 0 }
+	export enum GET_DeauthorizeDataShareAction { DeauthorizeDataShare = 'DeauthorizeDataShare' }
 
-	export enum GET_DeleteAuthenticationProfileAction { DeleteAuthenticationProfile = 0 }
+	export enum GET_DeleteAuthenticationProfileAction { DeleteAuthenticationProfile = 'DeleteAuthenticationProfile' }
 
-	export enum GET_DeleteClusterAction { DeleteCluster = 0 }
+	export enum GET_DeleteClusterAction { DeleteCluster = 'DeleteCluster' }
 
-	export enum GET_DeleteClusterParameterGroupAction { DeleteClusterParameterGroup = 0 }
+	export enum GET_DeleteClusterParameterGroupAction { DeleteClusterParameterGroup = 'DeleteClusterParameterGroup' }
 
-	export enum GET_DeleteClusterSecurityGroupAction { DeleteClusterSecurityGroup = 0 }
+	export enum GET_DeleteClusterSecurityGroupAction { DeleteClusterSecurityGroup = 'DeleteClusterSecurityGroup' }
 
-	export enum GET_DeleteClusterSnapshotAction { DeleteClusterSnapshot = 0 }
+	export enum GET_DeleteClusterSnapshotAction { DeleteClusterSnapshot = 'DeleteClusterSnapshot' }
 
-	export enum GET_DeleteClusterSubnetGroupAction { DeleteClusterSubnetGroup = 0 }
+	export enum GET_DeleteClusterSubnetGroupAction { DeleteClusterSubnetGroup = 'DeleteClusterSubnetGroup' }
 
-	export enum GET_DeleteCustomDomainAssociationAction { DeleteCustomDomainAssociation = 0 }
+	export enum GET_DeleteCustomDomainAssociationAction { DeleteCustomDomainAssociation = 'DeleteCustomDomainAssociation' }
 
-	export enum GET_DeleteEndpointAccessAction { DeleteEndpointAccess = 0 }
+	export enum GET_DeleteEndpointAccessAction { DeleteEndpointAccess = 'DeleteEndpointAccess' }
 
-	export enum GET_DeleteEventSubscriptionAction { DeleteEventSubscription = 0 }
+	export enum GET_DeleteEventSubscriptionAction { DeleteEventSubscription = 'DeleteEventSubscription' }
 
-	export enum GET_DeleteHsmClientCertificateAction { DeleteHsmClientCertificate = 0 }
+	export enum GET_DeleteHsmClientCertificateAction { DeleteHsmClientCertificate = 'DeleteHsmClientCertificate' }
 
-	export enum GET_DeleteHsmConfigurationAction { DeleteHsmConfiguration = 0 }
+	export enum GET_DeleteHsmConfigurationAction { DeleteHsmConfiguration = 'DeleteHsmConfiguration' }
 
-	export enum GET_DeletePartnerAction { DeletePartner = 0 }
+	export enum GET_DeletePartnerAction { DeletePartner = 'DeletePartner' }
 
-	export enum GET_DeleteScheduledActionAction { DeleteScheduledAction = 0 }
+	export enum GET_DeleteScheduledActionAction { DeleteScheduledAction = 'DeleteScheduledAction' }
 
-	export enum GET_DeleteSnapshotCopyGrantAction { DeleteSnapshotCopyGrant = 0 }
+	export enum GET_DeleteSnapshotCopyGrantAction { DeleteSnapshotCopyGrant = 'DeleteSnapshotCopyGrant' }
 
-	export enum GET_DeleteSnapshotScheduleAction { DeleteSnapshotSchedule = 0 }
+	export enum GET_DeleteSnapshotScheduleAction { DeleteSnapshotSchedule = 'DeleteSnapshotSchedule' }
 
-	export enum GET_DeleteTagsAction { DeleteTags = 0 }
+	export enum GET_DeleteTagsAction { DeleteTags = 'DeleteTags' }
 
-	export enum GET_DeleteUsageLimitAction { DeleteUsageLimit = 0 }
+	export enum GET_DeleteUsageLimitAction { DeleteUsageLimit = 'DeleteUsageLimit' }
 
-	export enum GET_DescribeAccountAttributesAction { DescribeAccountAttributes = 0 }
+	export enum GET_DescribeAccountAttributesAction { DescribeAccountAttributes = 'DescribeAccountAttributes' }
 
-	export enum GET_DescribeAuthenticationProfilesAction { DescribeAuthenticationProfiles = 0 }
+	export enum GET_DescribeAuthenticationProfilesAction { DescribeAuthenticationProfiles = 'DescribeAuthenticationProfiles' }
 
-	export enum GET_DescribeClusterDbRevisionsAction { DescribeClusterDbRevisions = 0 }
+	export enum GET_DescribeClusterDbRevisionsAction { DescribeClusterDbRevisions = 'DescribeClusterDbRevisions' }
 
-	export enum GET_DescribeClusterParameterGroupsAction { DescribeClusterParameterGroups = 0 }
+	export enum GET_DescribeClusterParameterGroupsAction { DescribeClusterParameterGroups = 'DescribeClusterParameterGroups' }
 
-	export enum GET_DescribeClusterParametersAction { DescribeClusterParameters = 0 }
+	export enum GET_DescribeClusterParametersAction { DescribeClusterParameters = 'DescribeClusterParameters' }
 
-	export enum GET_DescribeClusterSecurityGroupsAction { DescribeClusterSecurityGroups = 0 }
+	export enum GET_DescribeClusterSecurityGroupsAction { DescribeClusterSecurityGroups = 'DescribeClusterSecurityGroups' }
 
-	export enum GET_DescribeClusterSnapshotsAction { DescribeClusterSnapshots = 0 }
+	export enum GET_DescribeClusterSnapshotsAction { DescribeClusterSnapshots = 'DescribeClusterSnapshots' }
 
-	export enum GET_DescribeClusterSubnetGroupsAction { DescribeClusterSubnetGroups = 0 }
+	export enum GET_DescribeClusterSubnetGroupsAction { DescribeClusterSubnetGroups = 'DescribeClusterSubnetGroups' }
 
-	export enum GET_DescribeClusterTracksAction { DescribeClusterTracks = 0 }
+	export enum GET_DescribeClusterTracksAction { DescribeClusterTracks = 'DescribeClusterTracks' }
 
-	export enum GET_DescribeClusterVersionsAction { DescribeClusterVersions = 0 }
+	export enum GET_DescribeClusterVersionsAction { DescribeClusterVersions = 'DescribeClusterVersions' }
 
-	export enum GET_DescribeClustersAction { DescribeClusters = 0 }
+	export enum GET_DescribeClustersAction { DescribeClusters = 'DescribeClusters' }
 
-	export enum GET_DescribeCustomDomainAssociationsAction { DescribeCustomDomainAssociations = 0 }
+	export enum GET_DescribeCustomDomainAssociationsAction { DescribeCustomDomainAssociations = 'DescribeCustomDomainAssociations' }
 
-	export enum GET_DescribeDataSharesAction { DescribeDataShares = 0 }
+	export enum GET_DescribeDataSharesAction { DescribeDataShares = 'DescribeDataShares' }
 
-	export enum GET_DescribeDataSharesForConsumerAction { DescribeDataSharesForConsumer = 0 }
+	export enum GET_DescribeDataSharesForConsumerAction { DescribeDataSharesForConsumer = 'DescribeDataSharesForConsumer' }
 
-	export enum GET_DescribeDataSharesForProducerAction { DescribeDataSharesForProducer = 0 }
+	export enum GET_DescribeDataSharesForProducerAction { DescribeDataSharesForProducer = 'DescribeDataSharesForProducer' }
 
-	export enum GET_DescribeDefaultClusterParametersAction { DescribeDefaultClusterParameters = 0 }
+	export enum GET_DescribeDefaultClusterParametersAction { DescribeDefaultClusterParameters = 'DescribeDefaultClusterParameters' }
 
-	export enum GET_DescribeEndpointAccessAction { DescribeEndpointAccess = 0 }
+	export enum GET_DescribeEndpointAccessAction { DescribeEndpointAccess = 'DescribeEndpointAccess' }
 
-	export enum GET_DescribeEndpointAuthorizationAction { DescribeEndpointAuthorization = 0 }
+	export enum GET_DescribeEndpointAuthorizationAction { DescribeEndpointAuthorization = 'DescribeEndpointAuthorization' }
 
-	export enum GET_DescribeEventCategoriesAction { DescribeEventCategories = 0 }
+	export enum GET_DescribeEventCategoriesAction { DescribeEventCategories = 'DescribeEventCategories' }
 
-	export enum GET_DescribeEventSubscriptionsAction { DescribeEventSubscriptions = 0 }
+	export enum GET_DescribeEventSubscriptionsAction { DescribeEventSubscriptions = 'DescribeEventSubscriptions' }
 
-	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
+	export enum GET_DescribeEventsAction { DescribeEvents = 'DescribeEvents' }
 
-	export enum GET_DescribeHsmClientCertificatesAction { DescribeHsmClientCertificates = 0 }
+	export enum GET_DescribeHsmClientCertificatesAction { DescribeHsmClientCertificates = 'DescribeHsmClientCertificates' }
 
-	export enum GET_DescribeHsmConfigurationsAction { DescribeHsmConfigurations = 0 }
+	export enum GET_DescribeHsmConfigurationsAction { DescribeHsmConfigurations = 'DescribeHsmConfigurations' }
 
-	export enum GET_DescribeLoggingStatusAction { DescribeLoggingStatus = 0 }
+	export enum GET_DescribeLoggingStatusAction { DescribeLoggingStatus = 'DescribeLoggingStatus' }
 
-	export enum GET_DescribeNodeConfigurationOptionsAction { DescribeNodeConfigurationOptions = 0 }
+	export enum GET_DescribeNodeConfigurationOptionsAction { DescribeNodeConfigurationOptions = 'DescribeNodeConfigurationOptions' }
 
-	export enum GET_DescribeOrderableClusterOptionsAction { DescribeOrderableClusterOptions = 0 }
+	export enum GET_DescribeOrderableClusterOptionsAction { DescribeOrderableClusterOptions = 'DescribeOrderableClusterOptions' }
 
-	export enum GET_DescribePartnersAction { DescribePartners = 0 }
+	export enum GET_DescribePartnersAction { DescribePartners = 'DescribePartners' }
 
-	export enum GET_DescribeReservedNodeExchangeStatusAction { DescribeReservedNodeExchangeStatus = 0 }
+	export enum GET_DescribeReservedNodeExchangeStatusAction { DescribeReservedNodeExchangeStatus = 'DescribeReservedNodeExchangeStatus' }
 
-	export enum GET_DescribeReservedNodeOfferingsAction { DescribeReservedNodeOfferings = 0 }
+	export enum GET_DescribeReservedNodeOfferingsAction { DescribeReservedNodeOfferings = 'DescribeReservedNodeOfferings' }
 
-	export enum GET_DescribeReservedNodesAction { DescribeReservedNodes = 0 }
+	export enum GET_DescribeReservedNodesAction { DescribeReservedNodes = 'DescribeReservedNodes' }
 
-	export enum GET_DescribeResizeAction { DescribeResize = 0 }
+	export enum GET_DescribeResizeAction { DescribeResize = 'DescribeResize' }
 
-	export enum GET_DescribeScheduledActionsAction { DescribeScheduledActions = 0 }
+	export enum GET_DescribeScheduledActionsAction { DescribeScheduledActions = 'DescribeScheduledActions' }
 
-	export enum GET_DescribeSnapshotCopyGrantsAction { DescribeSnapshotCopyGrants = 0 }
+	export enum GET_DescribeSnapshotCopyGrantsAction { DescribeSnapshotCopyGrants = 'DescribeSnapshotCopyGrants' }
 
-	export enum GET_DescribeSnapshotSchedulesAction { DescribeSnapshotSchedules = 0 }
+	export enum GET_DescribeSnapshotSchedulesAction { DescribeSnapshotSchedules = 'DescribeSnapshotSchedules' }
 
-	export enum GET_DescribeStorageAction { DescribeStorage = 0 }
+	export enum GET_DescribeStorageAction { DescribeStorage = 'DescribeStorage' }
 
-	export enum GET_DescribeTableRestoreStatusAction { DescribeTableRestoreStatus = 0 }
+	export enum GET_DescribeTableRestoreStatusAction { DescribeTableRestoreStatus = 'DescribeTableRestoreStatus' }
 
-	export enum GET_DescribeTagsAction { DescribeTags = 0 }
+	export enum GET_DescribeTagsAction { DescribeTags = 'DescribeTags' }
 
-	export enum GET_DescribeUsageLimitsAction { DescribeUsageLimits = 0 }
+	export enum GET_DescribeUsageLimitsAction { DescribeUsageLimits = 'DescribeUsageLimits' }
 
-	export enum GET_DisableLoggingAction { DisableLogging = 0 }
+	export enum GET_DisableLoggingAction { DisableLogging = 'DisableLogging' }
 
-	export enum GET_DisableSnapshotCopyAction { DisableSnapshotCopy = 0 }
+	export enum GET_DisableSnapshotCopyAction { DisableSnapshotCopy = 'DisableSnapshotCopy' }
 
-	export enum GET_DisassociateDataShareConsumerAction { DisassociateDataShareConsumer = 0 }
+	export enum GET_DisassociateDataShareConsumerAction { DisassociateDataShareConsumer = 'DisassociateDataShareConsumer' }
 
-	export enum GET_EnableLoggingAction { EnableLogging = 0 }
+	export enum GET_EnableLoggingAction { EnableLogging = 'EnableLogging' }
 
-	export enum GET_EnableSnapshotCopyAction { EnableSnapshotCopy = 0 }
+	export enum GET_EnableSnapshotCopyAction { EnableSnapshotCopy = 'EnableSnapshotCopy' }
 
-	export enum GET_GetClusterCredentialsAction { GetClusterCredentials = 0 }
+	export enum GET_GetClusterCredentialsAction { GetClusterCredentials = 'GetClusterCredentials' }
 
-	export enum GET_GetClusterCredentialsWithIAMAction { GetClusterCredentialsWithIAM = 0 }
+	export enum GET_GetClusterCredentialsWithIAMAction { GetClusterCredentialsWithIAM = 'GetClusterCredentialsWithIAM' }
 
-	export enum GET_GetReservedNodeExchangeConfigurationOptionsAction { GetReservedNodeExchangeConfigurationOptions = 0 }
+	export enum GET_GetReservedNodeExchangeConfigurationOptionsAction { GetReservedNodeExchangeConfigurationOptions = 'GetReservedNodeExchangeConfigurationOptions' }
 
-	export enum GET_GetReservedNodeExchangeOfferingsAction { GetReservedNodeExchangeOfferings = 0 }
+	export enum GET_GetReservedNodeExchangeOfferingsAction { GetReservedNodeExchangeOfferings = 'GetReservedNodeExchangeOfferings' }
 
-	export enum GET_ModifyAquaConfigurationAction { ModifyAquaConfiguration = 0 }
+	export enum GET_ModifyAquaConfigurationAction { ModifyAquaConfiguration = 'ModifyAquaConfiguration' }
 
-	export enum GET_ModifyAuthenticationProfileAction { ModifyAuthenticationProfile = 0 }
+	export enum GET_ModifyAuthenticationProfileAction { ModifyAuthenticationProfile = 'ModifyAuthenticationProfile' }
 
-	export enum GET_ModifyClusterAction { ModifyCluster = 0 }
+	export enum GET_ModifyClusterAction { ModifyCluster = 'ModifyCluster' }
 
-	export enum GET_ModifyClusterDbRevisionAction { ModifyClusterDbRevision = 0 }
+	export enum GET_ModifyClusterDbRevisionAction { ModifyClusterDbRevision = 'ModifyClusterDbRevision' }
 
-	export enum GET_ModifyClusterIamRolesAction { ModifyClusterIamRoles = 0 }
+	export enum GET_ModifyClusterIamRolesAction { ModifyClusterIamRoles = 'ModifyClusterIamRoles' }
 
-	export enum GET_ModifyClusterMaintenanceAction { ModifyClusterMaintenance = 0 }
+	export enum GET_ModifyClusterMaintenanceAction { ModifyClusterMaintenance = 'ModifyClusterMaintenance' }
 
-	export enum GET_ModifyClusterParameterGroupAction { ModifyClusterParameterGroup = 0 }
+	export enum GET_ModifyClusterParameterGroupAction { ModifyClusterParameterGroup = 'ModifyClusterParameterGroup' }
 
-	export enum GET_ModifyClusterSnapshotAction { ModifyClusterSnapshot = 0 }
+	export enum GET_ModifyClusterSnapshotAction { ModifyClusterSnapshot = 'ModifyClusterSnapshot' }
 
-	export enum GET_ModifyClusterSnapshotScheduleAction { ModifyClusterSnapshotSchedule = 0 }
+	export enum GET_ModifyClusterSnapshotScheduleAction { ModifyClusterSnapshotSchedule = 'ModifyClusterSnapshotSchedule' }
 
-	export enum GET_ModifyClusterSubnetGroupAction { ModifyClusterSubnetGroup = 0 }
+	export enum GET_ModifyClusterSubnetGroupAction { ModifyClusterSubnetGroup = 'ModifyClusterSubnetGroup' }
 
-	export enum GET_ModifyCustomDomainAssociationAction { ModifyCustomDomainAssociation = 0 }
+	export enum GET_ModifyCustomDomainAssociationAction { ModifyCustomDomainAssociation = 'ModifyCustomDomainAssociation' }
 
-	export enum GET_ModifyEndpointAccessAction { ModifyEndpointAccess = 0 }
+	export enum GET_ModifyEndpointAccessAction { ModifyEndpointAccess = 'ModifyEndpointAccess' }
 
-	export enum GET_ModifyEventSubscriptionAction { ModifyEventSubscription = 0 }
+	export enum GET_ModifyEventSubscriptionAction { ModifyEventSubscription = 'ModifyEventSubscription' }
 
 	export interface GET_ModifyScheduledActionTargetAction {
 		ResizeCluster?: ResizeClusterMessage;
@@ -10045,41 +10045,41 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ModifyScheduledActionAction { ModifyScheduledAction = 0 }
+	export enum GET_ModifyScheduledActionAction { ModifyScheduledAction = 'ModifyScheduledAction' }
 
-	export enum GET_ModifySnapshotCopyRetentionPeriodAction { ModifySnapshotCopyRetentionPeriod = 0 }
+	export enum GET_ModifySnapshotCopyRetentionPeriodAction { ModifySnapshotCopyRetentionPeriod = 'ModifySnapshotCopyRetentionPeriod' }
 
-	export enum GET_ModifySnapshotScheduleAction { ModifySnapshotSchedule = 0 }
+	export enum GET_ModifySnapshotScheduleAction { ModifySnapshotSchedule = 'ModifySnapshotSchedule' }
 
-	export enum GET_ModifyUsageLimitAction { ModifyUsageLimit = 0 }
+	export enum GET_ModifyUsageLimitAction { ModifyUsageLimit = 'ModifyUsageLimit' }
 
-	export enum GET_PauseClusterAction { PauseCluster = 0 }
+	export enum GET_PauseClusterAction { PauseCluster = 'PauseCluster' }
 
-	export enum GET_PurchaseReservedNodeOfferingAction { PurchaseReservedNodeOffering = 0 }
+	export enum GET_PurchaseReservedNodeOfferingAction { PurchaseReservedNodeOffering = 'PurchaseReservedNodeOffering' }
 
-	export enum GET_RebootClusterAction { RebootCluster = 0 }
+	export enum GET_RebootClusterAction { RebootCluster = 'RebootCluster' }
 
-	export enum GET_RejectDataShareAction { RejectDataShare = 0 }
+	export enum GET_RejectDataShareAction { RejectDataShare = 'RejectDataShare' }
 
-	export enum GET_ResetClusterParameterGroupAction { ResetClusterParameterGroup = 0 }
+	export enum GET_ResetClusterParameterGroupAction { ResetClusterParameterGroup = 'ResetClusterParameterGroup' }
 
-	export enum GET_ResizeClusterAction { ResizeCluster = 0 }
+	export enum GET_ResizeClusterAction { ResizeCluster = 'ResizeCluster' }
 
-	export enum GET_RestoreFromClusterSnapshotAction { RestoreFromClusterSnapshot = 0 }
+	export enum GET_RestoreFromClusterSnapshotAction { RestoreFromClusterSnapshot = 'RestoreFromClusterSnapshot' }
 
-	export enum GET_RestoreTableFromClusterSnapshotAction { RestoreTableFromClusterSnapshot = 0 }
+	export enum GET_RestoreTableFromClusterSnapshotAction { RestoreTableFromClusterSnapshot = 'RestoreTableFromClusterSnapshot' }
 
-	export enum GET_ResumeClusterAction { ResumeCluster = 0 }
+	export enum GET_ResumeClusterAction { ResumeCluster = 'ResumeCluster' }
 
-	export enum GET_RevokeClusterSecurityGroupIngressAction { RevokeClusterSecurityGroupIngress = 0 }
+	export enum GET_RevokeClusterSecurityGroupIngressAction { RevokeClusterSecurityGroupIngress = 'RevokeClusterSecurityGroupIngress' }
 
-	export enum GET_RevokeEndpointAccessAction { RevokeEndpointAccess = 0 }
+	export enum GET_RevokeEndpointAccessAction { RevokeEndpointAccess = 'RevokeEndpointAccess' }
 
-	export enum GET_RevokeSnapshotAccessAction { RevokeSnapshotAccess = 0 }
+	export enum GET_RevokeSnapshotAccessAction { RevokeSnapshotAccess = 'RevokeSnapshotAccess' }
 
-	export enum GET_RotateEncryptionKeyAction { RotateEncryptionKey = 0 }
+	export enum GET_RotateEncryptionKeyAction { RotateEncryptionKey = 'RotateEncryptionKey' }
 
-	export enum GET_UpdatePartnerStatusAction { UpdatePartnerStatus = 0 }
+	export enum GET_UpdatePartnerStatusAction { UpdatePartnerStatus = 'UpdatePartnerStatus' }
 
 }
 

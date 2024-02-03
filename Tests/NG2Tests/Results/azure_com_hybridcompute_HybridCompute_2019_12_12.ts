@@ -468,7 +468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MachinePropertiesStatus { Connected = 0, Disconnected = 1, Error = 2 }
+	export enum MachinePropertiesStatus { Connected = 'Connected', Disconnected = 'Disconnected', Error = 'Error' }
 
 
 	/** Describes a hybrid machine reconnect. */
@@ -915,7 +915,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Machines_GetExpand { instanceView = 0 }
+	export enum Machines_GetExpand { instanceView = 'instanceView' }
 
 }
 

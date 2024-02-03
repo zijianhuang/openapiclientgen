@@ -107,7 +107,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum PremiumNewsFormat { xml = 0, json = 1 }
+	export enum PremiumNewsFormat { xml = 'xml', json = 'json' }
 
 }
 

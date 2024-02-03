@@ -62,7 +62,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Phone_number_enum_type { landline = 0, mobile = 1, voip = 2 }
+	export enum Phone_number_enum_type { landline = 'landline', mobile = 'mobile', voip = 'voip' }
 
 	@Injectable()
 	export class MyClient {

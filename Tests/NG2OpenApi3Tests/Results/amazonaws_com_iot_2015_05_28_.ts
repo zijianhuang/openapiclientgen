@@ -540,7 +540,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationTypeName { Statistics = 0, Percentiles = 1, Cardinality = 2 }
+	export enum AggregationTypeName { Statistics = 'Statistics', Percentiles = 'Percentiles', Cardinality = 'Cardinality' }
 
 	export interface InvalidAggregationException {
 	}
@@ -674,9 +674,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobExecutionFailureType { FAILED = 0, REJECTED = 1, TIMED_OUT = 2, ALL = 3 }
+	export enum JobExecutionFailureType { FAILED = 'FAILED', REJECTED = 'REJECTED', TIMED_OUT = 'TIMED_OUT', ALL = 'ALL' }
 
-	export enum AbortAction { CANCEL = 0 }
+	export enum AbortAction { CANCEL = 'CANCEL' }
 
 
 	/** The criteria that determines how many retries are allowed for each failure type for a job. */
@@ -706,9 +706,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RetryableFailureType { FAILED = 0, TIMED_OUT = 1, ALL = 2 }
+	export enum RetryableFailureType { FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT', ALL = 'ALL' }
 
-	export enum JobEndBehavior { STOP_ROLLOUT = 0, CANCEL = 1, FORCE_CANCEL = 2 }
+	export enum JobEndBehavior { STOP_ROLLOUT = 'STOP_ROLLOUT', CANCEL = 'CANCEL', FORCE_CANCEL = 'FORCE_CANCEL' }
 
 
 	/** An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job. */
@@ -845,7 +845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceCertificateUpdateAction { DEACTIVATE = 0 }
+	export enum DeviceCertificateUpdateAction { DEACTIVATE = 'DEACTIVATE' }
 
 
 	/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
@@ -909,7 +909,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyTemplateName { BLANK_POLICY = 0 }
+	export enum PolicyTemplateName { BLANK_POLICY = 'BLANK_POLICY' }
 
 
 	/** Parameters used when defining a mitigation action that enable Amazon Web Services IoT Core logging. */
@@ -939,7 +939,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogLevel { DEBUG = 0, INFO = 1, ERROR = 2, WARN = 3, DISABLED = 4 }
+	export enum LogLevel { DEBUG = 'DEBUG', INFO = 'INFO', ERROR = 'ERROR', WARN = 'WARN', DISABLED = 'DISABLED' }
 
 
 	/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
@@ -987,9 +987,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OTAUpdateStatus { CREATE_PENDING = 0, CREATE_IN_PROGRESS = 1, CREATE_COMPLETE = 2, CREATE_FAILED = 3, DELETE_IN_PROGRESS = 4, DELETE_FAILED = 5 }
+	export enum OTAUpdateStatus { CREATE_PENDING = 'CREATE_PENDING', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_COMPLETE = 'CREATE_COMPLETE', CREATE_FAILED = 'CREATE_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED' }
 
-	export enum Protocol { MQTT = 0, HTTP = 1 }
+	export enum Protocol { MQTT = 'MQTT', HTTP = 'HTTP' }
 
 
 	/** The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout. */
@@ -1422,7 +1422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageVersionStatus { DRAFT = 0, PUBLISHED = 1, DEPRECATED = 2 }
+	export enum PackageVersionStatus { DRAFT = 'DRAFT', PUBLISHED = 'PUBLISHED', DEPRECATED = 'DEPRECATED' }
 
 
 	/** The output from the CreatePolicy operation. */
@@ -1655,7 +1655,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionValueOperator { IN = 0, NOT_IN = 1 }
+	export enum DimensionValueOperator { IN = 'IN', NOT_IN = 'NOT_IN' }
 
 
 	/** The criteria by which the behavior is determined to be normal. */
@@ -1686,7 +1686,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { 'less-than' = 0, 'less-than-equals' = 1, 'greater-than' = 2, 'greater-than-equals' = 3, 'in-cidr-set' = 4, 'not-in-cidr-set' = 5, 'in-port-set' = 6, 'not-in-port-set' = 7, 'in-set' = 8, 'not-in-set' = 9 }
+	export enum ComparisonOperator { 'less-than' = 'less-than', 'less-than-equals' = 'less-than-equals', 'greater-than' = 'greater-than', 'greater-than-equals' = 'greater-than-equals', 'in-cidr-set' = 'in-cidr-set', 'not-in-cidr-set' = 'not-in-cidr-set', 'in-port-set' = 'in-port-set', 'not-in-port-set' = 'not-in-port-set', 'in-set' = 'in-set', 'not-in-set' = 'not-in-set' }
 
 
 	/** The value to be compared with the <code>metric</code>. */
@@ -1750,7 +1750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfidenceLevel { LOW = 0, MEDIUM = 1, HIGH = 2 }
+	export enum ConfidenceLevel { LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 
 	/** A structure containing the alert target ARN and the role ARN. */
@@ -2004,7 +2004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamoKeyType { STRING = 0, NUMBER = 1 }
+	export enum DynamoKeyType { STRING = 'STRING', NUMBER = 'NUMBER' }
 
 
 	/** <p>Describes an action to write to a DynamoDB table.</p> <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p> */
@@ -2103,7 +2103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageFormat { RAW = 0, JSON = 1 }
+	export enum MessageFormat { RAW = 'RAW', JSON = 'JSON' }
 
 
 	/** Describes an action to publish data to an Amazon SQS queue. */
@@ -2295,7 +2295,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CannedAccessControlList { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'aws-exec-read' = 3, 'authenticated-read' = 4, 'bucket-owner-read' = 5, 'bucket-owner-full-control' = 6, 'log-delivery-write' = 7 }
+	export enum CannedAccessControlList { private = 'private', 'public-read' = 'public-read', 'public-read-write' = 'public-read-write', 'aws-exec-read' = 'aws-exec-read', 'authenticated-read' = 'authenticated-read', 'bucket-owner-read' = 'bucket-owner-read', 'bucket-owner-full-control' = 'bucket-owner-full-control', 'log-delivery-write' = 'log-delivery-write' }
 
 
 	/** Describes an action that writes data to an Amazon Kinesis Firehose stream. */
@@ -3171,7 +3171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicRuleDestinationStatus { ENABLED = 0, IN_PROGRESS = 1, DISABLED = 2, ERROR = 3, DELETING = 4 }
+	export enum TopicRuleDestinationStatus { ENABLED = 'ENABLED', IN_PROGRESS = 'IN_PROGRESS', DISABLED = 'DISABLED', ERROR = 'ERROR', DELETING = 'DELETING' }
 
 
 	/** HTTP URL destination properties. */
@@ -3646,7 +3646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditFindingSeverity { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3 }
+	export enum AuditFindingSeverity { CRITICAL = 'CRITICAL', HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW' }
 
 
 	/** Information about the resource that was noncompliant with the audit check. */
@@ -3667,7 +3667,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { DEVICE_CERTIFICATE = 0, CA_CERTIFICATE = 1, IOT_POLICY = 2, COGNITO_IDENTITY_POOL = 3, CLIENT_ID = 4, ACCOUNT_SETTINGS = 5, ROLE_ALIAS = 6, IAM_ROLE = 7, ISSUER_CERTIFICATE = 8 }
+	export enum ResourceType { DEVICE_CERTIFICATE = 'DEVICE_CERTIFICATE', CA_CERTIFICATE = 'CA_CERTIFICATE', IOT_POLICY = 'IOT_POLICY', COGNITO_IDENTITY_POOL = 'COGNITO_IDENTITY_POOL', CLIENT_ID = 'CLIENT_ID', ACCOUNT_SETTINGS = 'ACCOUNT_SETTINGS', ROLE_ALIAS = 'ROLE_ALIAS', IAM_ROLE = 'IAM_ROLE', ISSUER_CERTIFICATE = 'ISSUER_CERTIFICATE' }
 
 
 	/** Information that identifies the noncompliant resource. */
@@ -3761,7 +3761,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditMitigationActionsTaskStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, CANCELED = 3 }
+	export enum AuditMitigationActionsTaskStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELED = 'CANCELED' }
 
 	export interface AuditMitigationActionsTaskStatistics {
 	}
@@ -3909,7 +3909,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditTaskType { ON_DEMAND_AUDIT_TASK = 0, SCHEDULED_AUDIT_TASK = 1 }
+	export enum AuditTaskType { ON_DEMAND_AUDIT_TASK = 'ON_DEMAND_AUDIT_TASK', SCHEDULED_AUDIT_TASK = 'SCHEDULED_AUDIT_TASK' }
 
 
 	/** Statistics for the checks performed during the audit. */
@@ -4019,7 +4019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizerStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum AuthorizerStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface DescribeBillingGroupResponse {
 		billingGroupName?: string;
@@ -4143,7 +4143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoRegistrationStatus { ENABLE = 0, DISABLE = 1 }
+	export enum AutoRegistrationStatus { ENABLE = 'ENABLE', DISABLE = 'DISABLE' }
 
 
 	/** When the certificate is valid. */
@@ -4165,7 +4165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateMode { DEFAULT = 0, SNI_ONLY = 1 }
+	export enum CertificateMode { DEFAULT = 'DEFAULT', SNI_ONLY = 'SNI_ONLY' }
 
 
 	/** The registration configuration. */
@@ -4257,7 +4257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateStatus { ACTIVE = 0, INACTIVE = 1, REVOKED = 2, PENDING_TRANSFER = 3, REGISTER_INACTIVE = 4, PENDING_ACTIVATION = 5 }
+	export enum CertificateStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', REVOKED = 'REVOKED', PENDING_TRANSFER = 'PENDING_TRANSFER', REGISTER_INACTIVE = 'REGISTER_INACTIVE', PENDING_ACTIVATION = 'PENDING_ACTIVATION' }
 
 
 	/** Data used to transfer a certificate to an Amazon Web Services account. */
@@ -4316,7 +4316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomMetricType { 'string-list' = 0, 'ip-address-list' = 1, 'number-list' = 2, number = 3 }
+	export enum CustomMetricType { 'string-list' = 'string-list', 'ip-address-list' = 'ip-address-list', 'number-list' = 'number-list', number = 'number' }
 
 	export interface DescribeDefaultAuthorizerResponse {
 		authorizerDescription?: AuthorizerDescription;
@@ -4376,7 +4376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectMitigationActionsTaskStatus { IN_PROGRESS = 0, SUCCESSFUL = 1, FAILED = 2, CANCELED = 3 }
+	export enum DetectMitigationActionsTaskStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', CANCELED = 'CANCELED' }
 
 
 	/**  The target of a mitigation action task.  */
@@ -4476,7 +4476,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionType { TOPIC_FILTER = 0 }
+	export enum DimensionType { TOPIC_FILTER = 'TOPIC_FILTER' }
 
 	export interface DescribeDomainConfigurationResponse {
 		domainConfigurationName?: string;
@@ -4535,7 +4535,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerCertificateStatus { INVALID = 0, VALID = 1 }
+	export enum ServerCertificateStatus { INVALID = 'INVALID', VALID = 'VALID' }
 
 
 	/** An object that specifies the authorization service for a domain. */
@@ -4557,11 +4557,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainConfigurationStatus { ENABLED = 0, DISABLED = 1 }
+	export enum DomainConfigurationStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum ServiceType { DATA = 0, CREDENTIAL_PROVIDER = 1, JOBS = 2 }
+	export enum ServiceType { DATA = 'DATA', CREDENTIAL_PROVIDER = 'CREDENTIAL_PROVIDER', JOBS = 'JOBS' }
 
-	export enum DomainType { ENDPOINT = 0, AWS_MANAGED = 1, CUSTOMER_MANAGED = 2 }
+	export enum DomainType { ENDPOINT = 'ENDPOINT', AWS_MANAGED = 'AWS_MANAGED', CUSTOMER_MANAGED = 'CUSTOMER_MANAGED' }
 
 
 	/** An object that specifies the TLS configuration for a domain. */
@@ -4693,7 +4693,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetMetricUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
+	export enum FleetMetricUnit { Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', Count = 'Count', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second', None = 'None' }
 
 	export interface DescribeIndexResponse {
 		indexName?: string;
@@ -4714,7 +4714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexStatus { ACTIVE = 0, BUILDING = 1, REBUILDING = 2 }
+	export enum IndexStatus { ACTIVE = 'ACTIVE', BUILDING = 'BUILDING', REBUILDING = 'REBUILDING' }
 
 	export interface DescribeJobResponse {
 		documentSource?: string;
@@ -4797,9 +4797,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetSelection { CONTINUOUS = 0, SNAPSHOT = 1 }
+	export enum TargetSelection { CONTINUOUS = 'CONTINUOUS', SNAPSHOT = 'SNAPSHOT' }
 
-	export enum JobStatus { IN_PROGRESS = 0, CANCELED = 1, COMPLETED = 2, DELETION_IN_PROGRESS = 3, SCHEDULED = 4 }
+	export enum JobStatus { IN_PROGRESS = 'IN_PROGRESS', CANCELED = 'CANCELED', COMPLETED = 'COMPLETED', DELETION_IN_PROGRESS = 'DELETION_IN_PROGRESS', SCHEDULED = 'SCHEDULED' }
 
 
 	/** Configuration for pre-signed S3 URLs. */
@@ -5036,7 +5036,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobExecutionStatus { QUEUED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, TIMED_OUT = 4, REJECTED = 5, REMOVED = 6, CANCELED = 7 }
+	export enum JobExecutionStatus { QUEUED = 'QUEUED', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT', REJECTED = 'REJECTED', REMOVED = 'REMOVED', CANCELED = 'CANCELED' }
 
 
 	/** Details of the job execution status. */
@@ -5194,7 +5194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MitigationActionType { UPDATE_DEVICE_CERTIFICATE = 0, UPDATE_CA_CERTIFICATE = 1, ADD_THINGS_TO_THING_GROUP = 2, REPLACE_DEFAULT_POLICY_VERSION = 3, ENABLE_IOT_LOGGING = 4, PUBLISH_FINDING_TO_SNS = 5 }
+	export enum MitigationActionType { UPDATE_DEVICE_CERTIFICATE = 'UPDATE_DEVICE_CERTIFICATE', UPDATE_CA_CERTIFICATE = 'UPDATE_CA_CERTIFICATE', ADD_THINGS_TO_THING_GROUP = 'ADD_THINGS_TO_THING_GROUP', REPLACE_DEFAULT_POLICY_VERSION = 'REPLACE_DEFAULT_POLICY_VERSION', ENABLE_IOT_LOGGING = 'ENABLE_IOT_LOGGING', PUBLISH_FINDING_TO_SNS = 'PUBLISH_FINDING_TO_SNS' }
 
 	export interface DescribeProvisioningTemplateResponse {
 		templateArn?: string;
@@ -5261,7 +5261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateType { FLEET_PROVISIONING = 0, JITP = 1 }
+	export enum TemplateType { FLEET_PROVISIONING = 'FLEET_PROVISIONING', JITP = 'JITP' }
 
 	export interface DescribeProvisioningTemplateVersionResponse {
 		versionId?: number | null;
@@ -5357,9 +5357,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditFrequency { DAILY = 0, WEEKLY = 1, BIWEEKLY = 2, MONTHLY = 3 }
+	export enum AuditFrequency { DAILY = 'DAILY', WEEKLY = 'WEEKLY', BIWEEKLY = 'BIWEEKLY', MONTHLY = 'MONTHLY' }
 
-	export enum DayOfWeek { SUN = 0, MON = 1, TUE = 2, WED = 3, THU = 4, FRI = 5, SAT = 6 }
+	export enum DayOfWeek { SUN = 'SUN', MON = 'MON', TUE = 'TUE', WED = 'WED', THU = 'THU', FRI = 'FRI', SAT = 'SAT' }
 
 	export interface DescribeSecurityProfileResponse {
 		securityProfileName?: string;
@@ -5627,7 +5627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { InProgress = 0, Completed = 1, Failed = 2, Cancelled = 3, Cancelling = 4 }
+	export enum Status { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Cancelled = 'Cancelled', Cancelling = 'Cancelling' }
 
 
 	/** The output for the DescribeThingType operation. */
@@ -5765,7 +5765,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelStatus { PENDING_BUILD = 0, ACTIVE = 1, EXPIRED = 2 }
+	export enum ModelStatus { PENDING_BUILD = 'PENDING_BUILD', ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED' }
 
 	export interface GetBucketsAggregationResponse {
 		totalCount?: number | null;
@@ -5910,13 +5910,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ThingIndexingMode { OFF = 0, REGISTRY = 1, REGISTRY_AND_SHADOW = 2 }
+	export enum ThingIndexingMode { OFF = 'OFF', REGISTRY = 'REGISTRY', REGISTRY_AND_SHADOW = 'REGISTRY_AND_SHADOW' }
 
-	export enum ThingConnectivityIndexingMode { OFF = 0, STATUS = 1 }
+	export enum ThingConnectivityIndexingMode { OFF = 'OFF', STATUS = 'STATUS' }
 
-	export enum DeviceDefenderIndexingMode { OFF = 0, VIOLATIONS = 1 }
+	export enum DeviceDefenderIndexingMode { OFF = 'OFF', VIOLATIONS = 'VIOLATIONS' }
 
-	export enum NamedShadowIndexingMode { OFF = 0, ON = 1 }
+	export enum NamedShadowIndexingMode { OFF = 'OFF', ON = 'ON' }
 
 
 	/** Describes the name and data type at a field. */
@@ -5938,7 +5938,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldType { Number = 0, String = 1, Boolean = 2 }
+	export enum FieldType { Number = 'Number', String = 'String', Boolean = 'Boolean' }
 
 
 	/** Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>. */
@@ -6560,7 +6560,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerificationState { FALSE_POSITIVE = 0, BENIGN_POSITIVE = 1, TRUE_POSITIVE = 2, UNKNOWN = 3 }
+	export enum VerificationState { FALSE_POSITIVE = 'FALSE_POSITIVE', BENIGN_POSITIVE = 'BENIGN_POSITIVE', TRUE_POSITIVE = 'TRUE_POSITIVE', UNKNOWN = 'UNKNOWN' }
 
 	export interface ListAttachedPoliciesResponse {
 		policies?: Array<Policy>;
@@ -6665,7 +6665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditMitigationActionsExecutionStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, CANCELED = 3, SKIPPED = 4, PENDING = 5 }
+	export enum AuditMitigationActionsExecutionStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELED = 'CANCELED', SKIPPED = 'SKIPPED', PENDING = 'PENDING' }
 
 	export interface ListAuditMitigationActionsTasksResponse {
 		tasks?: Array<AuditMitigationActionsTaskMetadata>;
@@ -7023,7 +7023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectMitigationActionExecutionStatus { IN_PROGRESS = 0, SUCCESSFUL = 1, FAILED = 2, SKIPPED = 3 }
+	export enum DetectMitigationActionExecutionStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', SKIPPED = 'SKIPPED' }
 
 	export interface ListDetectMitigationActionsTasksResponse {
 		tasks?: Array<DetectMitigationActionsTaskSummary>;
@@ -8114,7 +8114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportType { ERRORS = 0, RESULTS = 1 }
+	export enum ReportType { ERRORS = 'ERRORS', RESULTS = 'RESULTS' }
 
 	export interface ListThingRegistrationTasksResponse {
 		taskIds?: Array<string>;
@@ -8430,7 +8430,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogTargetType { DEFAULT = 0, THING_GROUP = 1, CLIENT_ID = 2, SOURCE_IP = 3, PRINCIPAL_ID = 4 }
+	export enum LogTargetType { DEFAULT = 'DEFAULT', THING_GROUP = 'THING_GROUP', CLIENT_ID = 'CLIENT_ID', SOURCE_IP = 'SOURCE_IP', PRINCIPAL_ID = 'PRINCIPAL_ID' }
 
 	export interface ListViolationEventsResponse {
 		violationEvents?: Array<ViolationEvent>;
@@ -8484,7 +8484,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ViolationEventType { 'in-alarm' = 0, 'alarm-cleared' = 1, 'alarm-invalidated' = 2 }
+	export enum ViolationEventType { 'in-alarm' = 'in-alarm', 'alarm-cleared' = 'alarm-cleared', 'alarm-invalidated' = 'alarm-invalidated' }
 
 	export interface PutVerificationStateOnViolationResponse {
 	}
@@ -8871,7 +8871,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { PUBLISH = 0, SUBSCRIBE = 1, RECEIVE = 2, CONNECT = 3 }
+	export enum ActionType { PUBLISH = 'PUBLISH', SUBSCRIBE = 'SUBSCRIBE', RECEIVE = 'RECEIVE', CONNECT = 'CONNECT' }
 
 
 	/** Contains information that allowed the authorization. */
@@ -8934,7 +8934,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthDecision { ALLOWED = 0, EXPLICIT_DENY = 1, IMPLICIT_DENY = 2 }
+	export enum AuthDecision { ALLOWED = 'ALLOWED', EXPLICIT_DENY = 'EXPLICIT_DENY', IMPLICIT_DENY = 'IMPLICIT_DENY' }
 
 	export interface TestInvokeAuthorizerResponse {
 		isAuthenticated?: boolean | null;
@@ -9225,7 +9225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThingGroupIndexingMode { OFF = 0, ON = 1 }
+	export enum ThingGroupIndexingMode { OFF = 'OFF', ON = 'ON' }
 
 	export interface UpdateMitigationActionResponse {
 		actionArn?: string;
@@ -9507,7 +9507,7 @@ export namespace MyNS {
 
 
 	/** The type of alert target: one of "SNS". */
-	export enum AlertTargetType { SNS = 0 }
+	export enum AlertTargetType { SNS = 'SNS' }
 
 	export interface AssociateTargetsWithJobRequest {
 
@@ -9580,7 +9580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditCheckRunStatus { IN_PROGRESS = 0, WAITING_FOR_DATA_COLLECTION = 1, CANCELED = 2, COMPLETED_COMPLIANT = 3, COMPLETED_NON_COMPLIANT = 4, FAILED = 5 }
+	export enum AuditCheckRunStatus { IN_PROGRESS = 'IN_PROGRESS', WAITING_FOR_DATA_COLLECTION = 'WAITING_FOR_DATA_COLLECTION', CANCELED = 'CANCELED', COMPLETED_COMPLIANT = 'COMPLETED_COMPLIANT', COMPLETED_NON_COMPLIANT = 'COMPLETED_NON_COMPLIANT', FAILED = 'FAILED' }
 
 
 	/** Information about the audit check. */
@@ -9646,9 +9646,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditNotificationType { SNS = 0 }
+	export enum AuditNotificationType { SNS = 'SNS' }
 
-	export enum AuditTaskStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, CANCELED = 3 }
+	export enum AuditTaskStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELED = 'CANCELED' }
 
 
 	/** The criteria that determine when and how a job abort takes place. */
@@ -9667,9 +9667,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsJobAbortCriteriaFailureType { FAILED = 0, REJECTED = 1, TIMED_OUT = 2, ALL = 3 }
+	export enum AwsJobAbortCriteriaFailureType { FAILED = 'FAILED', REJECTED = 'REJECTED', TIMED_OUT = 'TIMED_OUT', ALL = 'ALL' }
 
-	export enum AwsJobAbortCriteriaAbortAction { CANCEL = 0 }
+	export enum AwsJobAbortCriteriaAbortAction { CANCEL = 'CANCEL' }
 
 
 	/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
@@ -9688,7 +9688,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BehaviorCriteriaType { STATIC = 0, STATISTICAL = 1, MACHINE_LEARNING = 2 }
+	export enum BehaviorCriteriaType { STATIC = 'STATIC', STATISTICAL = 'STATISTICAL', MACHINE_LEARNING = 'MACHINE_LEARNING' }
 
 
 	/** The type of bucketed aggregation performed. */
@@ -9705,9 +9705,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CACertificateStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum CACertificateStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum CACertificateUpdateAction { DEACTIVATE = 0 }
+	export enum CACertificateUpdateAction { DEACTIVATE = 'DEACTIVATE' }
 
 	export interface CancelAuditMitigationActionsTaskRequest {
 	}
@@ -11318,7 +11318,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DynamicGroupStatus { ACTIVE = 0, BUILDING = 1, REBUILDING = 2 }
+	export enum DynamicGroupStatus { ACTIVE = 'ACTIVE', BUILDING = 'BUILDING', REBUILDING = 'REBUILDING' }
 
 	export interface DescribeThingRegistrationTaskRequest {
 	}
@@ -11441,7 +11441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { THING = 0, THING_GROUP = 1, THING_TYPE = 2, THING_GROUP_MEMBERSHIP = 3, THING_GROUP_HIERARCHY = 4, THING_TYPE_ASSOCIATION = 5, JOB = 6, JOB_EXECUTION = 7, POLICY = 8, CERTIFICATE = 9, CA_CERTIFICATE = 10 }
+	export enum EventType { THING = 'THING', THING_GROUP = 'THING_GROUP', THING_TYPE = 'THING_TYPE', THING_GROUP_MEMBERSHIP = 'THING_GROUP_MEMBERSHIP', THING_GROUP_HIERARCHY = 'THING_GROUP_HIERARCHY', THING_TYPE_ASSOCIATION = 'THING_TYPE_ASSOCIATION', JOB = 'JOB', JOB_EXECUTION = 'JOB_EXECUTION', POLICY = 'POLICY', CERTIFICATE = 'CERTIFICATE', CA_CERTIFICATE = 'CA_CERTIFICATE' }
 
 	export interface GetBehaviorModelTrainingSummariesRequest {
 	}
@@ -12479,7 +12479,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageVersionAction { PUBLISH = 0, DEPRECATE = 1 }
+	export enum PackageVersionAction { PUBLISH = 'PUBLISH', DEPRECATE = 'DEPRECATE' }
 
 	export interface Parameters {
 	}

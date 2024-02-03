@@ -62,7 +62,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DataWarehouseUserActivities_GetDataWarehouseUserActivityName { current = 0 }
+	export enum DataWarehouseUserActivities_GetDataWarehouseUserActivityName { current = 'current' }
 
 }
 

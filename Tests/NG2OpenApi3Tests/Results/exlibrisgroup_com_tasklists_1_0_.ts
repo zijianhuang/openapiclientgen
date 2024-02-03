@@ -533,7 +533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnRequested_resourceRequestRequest_type { BOOKING = 0, DIGITIZATION = 1, HOLD = 2, MOVE = 3, WORK_ORDER = 4 }
+	export enum GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnRequested_resourceRequestRequest_type { BOOKING = 'BOOKING', DIGITIZATION = 'DIGITIZATION', HOLD = 'HOLD', MOVE = 'MOVE', WORK_ORDER = 'WORK_ORDER' }
 
 	export interface GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnRequested_resourceRequestRequester {
 		desc?: string | null;

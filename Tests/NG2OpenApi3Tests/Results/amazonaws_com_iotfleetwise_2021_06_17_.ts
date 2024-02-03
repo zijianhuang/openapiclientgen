@@ -208,7 +208,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VehicleAssociationBehavior { CreateIotThing = 0, ValidateIotThingExists = 1 }
+	export enum VehicleAssociationBehavior { CreateIotThing = 'CreateIotThing', ValidateIotThingExists = 'ValidateIotThingExists' }
 
 
 	/** A set of key/value pairs that are used to manage the resource. */
@@ -347,7 +347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateMode { Overwrite = 0, Merge = 1 }
+	export enum UpdateMode { Overwrite = 'Overwrite', Merge = 'Merge' }
 
 	export interface CreateCampaignResponse {
 		name?: string;
@@ -427,11 +427,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticsMode { OFF = 0, SEND_ACTIVE_DTCS = 1 }
+	export enum DiagnosticsMode { OFF = 'OFF', SEND_ACTIVE_DTCS = 'SEND_ACTIVE_DTCS' }
 
-	export enum SpoolingMode { OFF = 0, TO_DISK = 1 }
+	export enum SpoolingMode { OFF = 'OFF', TO_DISK = 'TO_DISK' }
 
-	export enum Compression { OFF = 0, SNAPPY = 1 }
+	export enum Compression { OFF = 'OFF', SNAPPY = 'SNAPPY' }
 
 
 	/** Information about a signal. */
@@ -527,7 +527,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerMode { ALWAYS = 0, RISING_EDGE = 1 }
+	export enum TriggerMode { ALWAYS = 'ALWAYS', RISING_EDGE = 'RISING_EDGE' }
 
 
 	/** The destination where the Amazon Web Services IoT FleetWise campaign sends data. You can send data to be stored in Amazon S3 or Amazon Timestream. */
@@ -575,9 +575,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataFormat { JSON = 0, PARQUET = 1 }
+	export enum DataFormat { JSON = 'JSON', PARQUET = 'PARQUET' }
 
-	export enum StorageCompressionFormat { NONE = 0, GZIP = 1 }
+	export enum StorageCompressionFormat { NONE = 'NONE', GZIP = 'GZIP' }
 
 
 	/** The Amazon Timestream table where the Amazon Web Services IoT FleetWise campaign sends data. Timestream stores and organizes data to optimize query processing time and to reduce storage costs. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/data-modeling.html">Data modeling</a> in the <i>Amazon Timestream Developer Guide</i>. */
@@ -708,7 +708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SignalDecoderType { CAN_SIGNAL = 0, OBD_SIGNAL = 1 }
+	export enum SignalDecoderType { CAN_SIGNAL = 'CAN_SIGNAL', OBD_SIGNAL = 'OBD_SIGNAL' }
 
 
 	/** Information about a single controller area network (CAN) signal and the messages it receives and transmits. */
@@ -875,7 +875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkInterfaceType { CAN_INTERFACE = 0, OBD_INTERFACE = 1 }
+	export enum NetworkInterfaceType { CAN_INTERFACE = 'CAN_INTERFACE', OBD_INTERFACE = 'OBD_INTERFACE' }
 
 
 	/** A single controller area network (CAN) device interface. */
@@ -1217,7 +1217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeDataType { INT8 = 0, UINT8 = 1, INT16 = 2, UINT16 = 3, INT32 = 4, UINT32 = 5, INT64 = 6, UINT64 = 7, BOOLEAN = 8, FLOAT = 9, DOUBLE = 10, STRING = 11, UNIX_TIMESTAMP = 12, INT8_ARRAY = 13, UINT8_ARRAY = 14, INT16_ARRAY = 15, UINT16_ARRAY = 16, INT32_ARRAY = 17, UINT32_ARRAY = 18, INT64_ARRAY = 19, UINT64_ARRAY = 20, BOOLEAN_ARRAY = 21, FLOAT_ARRAY = 22, DOUBLE_ARRAY = 23, STRING_ARRAY = 24, UNIX_TIMESTAMP_ARRAY = 25, UNKNOWN = 26 }
+	export enum NodeDataType { INT8 = 'INT8', UINT8 = 'UINT8', INT16 = 'INT16', UINT16 = 'UINT16', INT32 = 'INT32', UINT32 = 'UINT32', INT64 = 'INT64', UINT64 = 'UINT64', BOOLEAN = 'BOOLEAN', FLOAT = 'FLOAT', DOUBLE = 'DOUBLE', STRING = 'STRING', UNIX_TIMESTAMP = 'UNIX_TIMESTAMP', INT8_ARRAY = 'INT8_ARRAY', UINT8_ARRAY = 'UINT8_ARRAY', INT16_ARRAY = 'INT16_ARRAY', UINT16_ARRAY = 'UINT16_ARRAY', INT32_ARRAY = 'INT32_ARRAY', UINT32_ARRAY = 'UINT32_ARRAY', INT64_ARRAY = 'INT64_ARRAY', UINT64_ARRAY = 'UINT64_ARRAY', BOOLEAN_ARRAY = 'BOOLEAN_ARRAY', FLOAT_ARRAY = 'FLOAT_ARRAY', DOUBLE_ARRAY = 'DOUBLE_ARRAY', STRING_ARRAY = 'STRING_ARRAY', UNIX_TIMESTAMP_ARRAY = 'UNIX_TIMESTAMP_ARRAY', UNKNOWN = 'UNKNOWN' }
 
 
 	/** <p>A signal that represents a vehicle device such as the engine, heater, and door locks. Data from an actuator reports the state of a certain vehicle device.</p> <note> <p> Updating actuator data can change the state of a device. For example, you can turn on or off the heater by updating its actuator data.</p> </note> */
@@ -1710,7 +1710,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CampaignStatus { CREATING = 0, WAITING_FOR_APPROVAL = 1, RUNNING = 2, SUSPENDED = 3 }
+	export enum CampaignStatus { CREATING = 'CREATING', WAITING_FOR_APPROVAL = 'WAITING_FOR_APPROVAL', RUNNING = 'RUNNING', SUSPENDED = 'SUSPENDED' }
 
 	export interface GetCampaignRequest {
 
@@ -1776,7 +1776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManifestStatus { ACTIVE = 0, DRAFT = 1 }
+	export enum ManifestStatus { ACTIVE = 'ACTIVE', DRAFT = 'DRAFT' }
 
 	export interface GetDecoderManifestRequest {
 
@@ -1897,7 +1897,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogType { OFF = 0, ERROR = 1 }
+	export enum LogType { OFF = 'OFF', ERROR = 'ERROR' }
 
 	export interface GetLoggingOptionsRequest {
 	}
@@ -2015,7 +2015,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistrationStatus { REGISTRATION_PENDING = 0, REGISTRATION_SUCCESS = 1, REGISTRATION_FAILURE = 2 }
+	export enum RegistrationStatus { REGISTRATION_PENDING = 'REGISTRATION_PENDING', REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS', REGISTRATION_FAILURE = 'REGISTRATION_FAILURE' }
 
 
 	/** Information about the registered Amazon Timestream resources or errors, if any. */
@@ -2273,7 +2273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VehicleState { CREATED = 0, READY = 1, HEALTHY = 2, SUSPENDED = 3, DELETING = 4 }
+	export enum VehicleState { CREATED = 'CREATED', READY = 'READY', HEALTHY = 'HEALTHY', SUSPENDED = 'SUSPENDED', DELETING = 'DELETING' }
 
 	export interface GetVehicleStatusRequest {
 		nextToken?: string;
@@ -3387,7 +3387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateCampaignAction { APPROVE = 0, SUSPEND = 1, RESUME = 2, UPDATE = 3 }
+	export enum UpdateCampaignAction { APPROVE = 'APPROVE', SUSPEND = 'SUSPEND', RESUME = 'RESUME', UPDATE = 'UPDATE' }
 
 	export interface UpdateDecoderManifestResponse {
 
@@ -4099,105 +4099,105 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateVehicleFleetX_Amz_Target { 'IoTAutobahnControlPlane.AssociateVehicleFleet' = 0 }
+	export enum AssociateVehicleFleetX_Amz_Target { 'IoTAutobahnControlPlane.AssociateVehicleFleet' = 'IoTAutobahnControlPlane.AssociateVehicleFleet' }
 
-	export enum BatchCreateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.BatchCreateVehicle' = 0 }
+	export enum BatchCreateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.BatchCreateVehicle' = 'IoTAutobahnControlPlane.BatchCreateVehicle' }
 
-	export enum BatchUpdateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.BatchUpdateVehicle' = 0 }
+	export enum BatchUpdateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.BatchUpdateVehicle' = 'IoTAutobahnControlPlane.BatchUpdateVehicle' }
 
-	export enum CreateCampaignX_Amz_Target { 'IoTAutobahnControlPlane.CreateCampaign' = 0 }
+	export enum CreateCampaignX_Amz_Target { 'IoTAutobahnControlPlane.CreateCampaign' = 'IoTAutobahnControlPlane.CreateCampaign' }
 
-	export enum CreateDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.CreateDecoderManifest' = 0 }
+	export enum CreateDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.CreateDecoderManifest' = 'IoTAutobahnControlPlane.CreateDecoderManifest' }
 
-	export enum CreateFleetX_Amz_Target { 'IoTAutobahnControlPlane.CreateFleet' = 0 }
+	export enum CreateFleetX_Amz_Target { 'IoTAutobahnControlPlane.CreateFleet' = 'IoTAutobahnControlPlane.CreateFleet' }
 
-	export enum CreateModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.CreateModelManifest' = 0 }
+	export enum CreateModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.CreateModelManifest' = 'IoTAutobahnControlPlane.CreateModelManifest' }
 
-	export enum CreateSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.CreateSignalCatalog' = 0 }
+	export enum CreateSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.CreateSignalCatalog' = 'IoTAutobahnControlPlane.CreateSignalCatalog' }
 
-	export enum CreateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.CreateVehicle' = 0 }
+	export enum CreateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.CreateVehicle' = 'IoTAutobahnControlPlane.CreateVehicle' }
 
-	export enum DeleteCampaignX_Amz_Target { 'IoTAutobahnControlPlane.DeleteCampaign' = 0 }
+	export enum DeleteCampaignX_Amz_Target { 'IoTAutobahnControlPlane.DeleteCampaign' = 'IoTAutobahnControlPlane.DeleteCampaign' }
 
-	export enum DeleteDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.DeleteDecoderManifest' = 0 }
+	export enum DeleteDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.DeleteDecoderManifest' = 'IoTAutobahnControlPlane.DeleteDecoderManifest' }
 
-	export enum DeleteFleetX_Amz_Target { 'IoTAutobahnControlPlane.DeleteFleet' = 0 }
+	export enum DeleteFleetX_Amz_Target { 'IoTAutobahnControlPlane.DeleteFleet' = 'IoTAutobahnControlPlane.DeleteFleet' }
 
-	export enum DeleteModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.DeleteModelManifest' = 0 }
+	export enum DeleteModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.DeleteModelManifest' = 'IoTAutobahnControlPlane.DeleteModelManifest' }
 
-	export enum DeleteSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.DeleteSignalCatalog' = 0 }
+	export enum DeleteSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.DeleteSignalCatalog' = 'IoTAutobahnControlPlane.DeleteSignalCatalog' }
 
-	export enum DeleteVehicleX_Amz_Target { 'IoTAutobahnControlPlane.DeleteVehicle' = 0 }
+	export enum DeleteVehicleX_Amz_Target { 'IoTAutobahnControlPlane.DeleteVehicle' = 'IoTAutobahnControlPlane.DeleteVehicle' }
 
-	export enum DisassociateVehicleFleetX_Amz_Target { 'IoTAutobahnControlPlane.DisassociateVehicleFleet' = 0 }
+	export enum DisassociateVehicleFleetX_Amz_Target { 'IoTAutobahnControlPlane.DisassociateVehicleFleet' = 'IoTAutobahnControlPlane.DisassociateVehicleFleet' }
 
-	export enum GetCampaignX_Amz_Target { 'IoTAutobahnControlPlane.GetCampaign' = 0 }
+	export enum GetCampaignX_Amz_Target { 'IoTAutobahnControlPlane.GetCampaign' = 'IoTAutobahnControlPlane.GetCampaign' }
 
-	export enum GetDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.GetDecoderManifest' = 0 }
+	export enum GetDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.GetDecoderManifest' = 'IoTAutobahnControlPlane.GetDecoderManifest' }
 
-	export enum GetFleetX_Amz_Target { 'IoTAutobahnControlPlane.GetFleet' = 0 }
+	export enum GetFleetX_Amz_Target { 'IoTAutobahnControlPlane.GetFleet' = 'IoTAutobahnControlPlane.GetFleet' }
 
-	export enum GetLoggingOptionsX_Amz_Target { 'IoTAutobahnControlPlane.GetLoggingOptions' = 0 }
+	export enum GetLoggingOptionsX_Amz_Target { 'IoTAutobahnControlPlane.GetLoggingOptions' = 'IoTAutobahnControlPlane.GetLoggingOptions' }
 
-	export enum GetModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.GetModelManifest' = 0 }
+	export enum GetModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.GetModelManifest' = 'IoTAutobahnControlPlane.GetModelManifest' }
 
-	export enum GetRegisterAccountStatusX_Amz_Target { 'IoTAutobahnControlPlane.GetRegisterAccountStatus' = 0 }
+	export enum GetRegisterAccountStatusX_Amz_Target { 'IoTAutobahnControlPlane.GetRegisterAccountStatus' = 'IoTAutobahnControlPlane.GetRegisterAccountStatus' }
 
-	export enum GetSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.GetSignalCatalog' = 0 }
+	export enum GetSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.GetSignalCatalog' = 'IoTAutobahnControlPlane.GetSignalCatalog' }
 
-	export enum GetVehicleX_Amz_Target { 'IoTAutobahnControlPlane.GetVehicle' = 0 }
+	export enum GetVehicleX_Amz_Target { 'IoTAutobahnControlPlane.GetVehicle' = 'IoTAutobahnControlPlane.GetVehicle' }
 
-	export enum GetVehicleStatusX_Amz_Target { 'IoTAutobahnControlPlane.GetVehicleStatus' = 0 }
+	export enum GetVehicleStatusX_Amz_Target { 'IoTAutobahnControlPlane.GetVehicleStatus' = 'IoTAutobahnControlPlane.GetVehicleStatus' }
 
-	export enum ImportDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.ImportDecoderManifest' = 0 }
+	export enum ImportDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.ImportDecoderManifest' = 'IoTAutobahnControlPlane.ImportDecoderManifest' }
 
-	export enum ImportSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.ImportSignalCatalog' = 0 }
+	export enum ImportSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.ImportSignalCatalog' = 'IoTAutobahnControlPlane.ImportSignalCatalog' }
 
-	export enum ListCampaignsX_Amz_Target { 'IoTAutobahnControlPlane.ListCampaigns' = 0 }
+	export enum ListCampaignsX_Amz_Target { 'IoTAutobahnControlPlane.ListCampaigns' = 'IoTAutobahnControlPlane.ListCampaigns' }
 
-	export enum ListDecoderManifestNetworkInterfacesX_Amz_Target { 'IoTAutobahnControlPlane.ListDecoderManifestNetworkInterfaces' = 0 }
+	export enum ListDecoderManifestNetworkInterfacesX_Amz_Target { 'IoTAutobahnControlPlane.ListDecoderManifestNetworkInterfaces' = 'IoTAutobahnControlPlane.ListDecoderManifestNetworkInterfaces' }
 
-	export enum ListDecoderManifestSignalsX_Amz_Target { 'IoTAutobahnControlPlane.ListDecoderManifestSignals' = 0 }
+	export enum ListDecoderManifestSignalsX_Amz_Target { 'IoTAutobahnControlPlane.ListDecoderManifestSignals' = 'IoTAutobahnControlPlane.ListDecoderManifestSignals' }
 
-	export enum ListDecoderManifestsX_Amz_Target { 'IoTAutobahnControlPlane.ListDecoderManifests' = 0 }
+	export enum ListDecoderManifestsX_Amz_Target { 'IoTAutobahnControlPlane.ListDecoderManifests' = 'IoTAutobahnControlPlane.ListDecoderManifests' }
 
-	export enum ListFleetsX_Amz_Target { 'IoTAutobahnControlPlane.ListFleets' = 0 }
+	export enum ListFleetsX_Amz_Target { 'IoTAutobahnControlPlane.ListFleets' = 'IoTAutobahnControlPlane.ListFleets' }
 
-	export enum ListFleetsForVehicleX_Amz_Target { 'IoTAutobahnControlPlane.ListFleetsForVehicle' = 0 }
+	export enum ListFleetsForVehicleX_Amz_Target { 'IoTAutobahnControlPlane.ListFleetsForVehicle' = 'IoTAutobahnControlPlane.ListFleetsForVehicle' }
 
-	export enum ListModelManifestNodesX_Amz_Target { 'IoTAutobahnControlPlane.ListModelManifestNodes' = 0 }
+	export enum ListModelManifestNodesX_Amz_Target { 'IoTAutobahnControlPlane.ListModelManifestNodes' = 'IoTAutobahnControlPlane.ListModelManifestNodes' }
 
-	export enum ListModelManifestsX_Amz_Target { 'IoTAutobahnControlPlane.ListModelManifests' = 0 }
+	export enum ListModelManifestsX_Amz_Target { 'IoTAutobahnControlPlane.ListModelManifests' = 'IoTAutobahnControlPlane.ListModelManifests' }
 
-	export enum ListSignalCatalogNodesX_Amz_Target { 'IoTAutobahnControlPlane.ListSignalCatalogNodes' = 0 }
+	export enum ListSignalCatalogNodesX_Amz_Target { 'IoTAutobahnControlPlane.ListSignalCatalogNodes' = 'IoTAutobahnControlPlane.ListSignalCatalogNodes' }
 
-	export enum ListSignalCatalogsX_Amz_Target { 'IoTAutobahnControlPlane.ListSignalCatalogs' = 0 }
+	export enum ListSignalCatalogsX_Amz_Target { 'IoTAutobahnControlPlane.ListSignalCatalogs' = 'IoTAutobahnControlPlane.ListSignalCatalogs' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'IoTAutobahnControlPlane.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'IoTAutobahnControlPlane.ListTagsForResource' = 'IoTAutobahnControlPlane.ListTagsForResource' }
 
-	export enum ListVehiclesX_Amz_Target { 'IoTAutobahnControlPlane.ListVehicles' = 0 }
+	export enum ListVehiclesX_Amz_Target { 'IoTAutobahnControlPlane.ListVehicles' = 'IoTAutobahnControlPlane.ListVehicles' }
 
-	export enum ListVehiclesInFleetX_Amz_Target { 'IoTAutobahnControlPlane.ListVehiclesInFleet' = 0 }
+	export enum ListVehiclesInFleetX_Amz_Target { 'IoTAutobahnControlPlane.ListVehiclesInFleet' = 'IoTAutobahnControlPlane.ListVehiclesInFleet' }
 
-	export enum PutLoggingOptionsX_Amz_Target { 'IoTAutobahnControlPlane.PutLoggingOptions' = 0 }
+	export enum PutLoggingOptionsX_Amz_Target { 'IoTAutobahnControlPlane.PutLoggingOptions' = 'IoTAutobahnControlPlane.PutLoggingOptions' }
 
-	export enum RegisterAccountX_Amz_Target { 'IoTAutobahnControlPlane.RegisterAccount' = 0 }
+	export enum RegisterAccountX_Amz_Target { 'IoTAutobahnControlPlane.RegisterAccount' = 'IoTAutobahnControlPlane.RegisterAccount' }
 
-	export enum TagResourceX_Amz_Target { 'IoTAutobahnControlPlane.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'IoTAutobahnControlPlane.TagResource' = 'IoTAutobahnControlPlane.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'IoTAutobahnControlPlane.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'IoTAutobahnControlPlane.UntagResource' = 'IoTAutobahnControlPlane.UntagResource' }
 
-	export enum UpdateCampaignX_Amz_Target { 'IoTAutobahnControlPlane.UpdateCampaign' = 0 }
+	export enum UpdateCampaignX_Amz_Target { 'IoTAutobahnControlPlane.UpdateCampaign' = 'IoTAutobahnControlPlane.UpdateCampaign' }
 
-	export enum UpdateDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.UpdateDecoderManifest' = 0 }
+	export enum UpdateDecoderManifestX_Amz_Target { 'IoTAutobahnControlPlane.UpdateDecoderManifest' = 'IoTAutobahnControlPlane.UpdateDecoderManifest' }
 
-	export enum UpdateFleetX_Amz_Target { 'IoTAutobahnControlPlane.UpdateFleet' = 0 }
+	export enum UpdateFleetX_Amz_Target { 'IoTAutobahnControlPlane.UpdateFleet' = 'IoTAutobahnControlPlane.UpdateFleet' }
 
-	export enum UpdateModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.UpdateModelManifest' = 0 }
+	export enum UpdateModelManifestX_Amz_Target { 'IoTAutobahnControlPlane.UpdateModelManifest' = 'IoTAutobahnControlPlane.UpdateModelManifest' }
 
-	export enum UpdateSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.UpdateSignalCatalog' = 0 }
+	export enum UpdateSignalCatalogX_Amz_Target { 'IoTAutobahnControlPlane.UpdateSignalCatalog' = 'IoTAutobahnControlPlane.UpdateSignalCatalog' }
 
-	export enum UpdateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.UpdateVehicle' = 0 }
+	export enum UpdateVehicleX_Amz_Target { 'IoTAutobahnControlPlane.UpdateVehicle' = 'IoTAutobahnControlPlane.UpdateVehicle' }
 
 }
 

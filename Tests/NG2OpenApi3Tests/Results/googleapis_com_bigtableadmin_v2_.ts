@@ -71,7 +71,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppProfilePriority { PRIORITY_UNSPECIFIED = 0, PRIORITY_LOW = 1, PRIORITY_MEDIUM = 2, PRIORITY_HIGH = 3 }
+	export enum AppProfilePriority { PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED', PRIORITY_LOW = 'PRIORITY_LOW', PRIORITY_MEDIUM = 'PRIORITY_MEDIUM', PRIORITY_HIGH = 'PRIORITY_HIGH' }
 
 
 	/** Unconditionally routes all read/write requests to a specific cluster. This option preserves read-your-writes consistency but does not improve availability. */
@@ -170,7 +170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Limits for the number of nodes a Cluster can autoscale up/down to. */
@@ -363,9 +363,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionInfoEncryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 0, GOOGLE_DEFAULT_ENCRYPTION = 1, CUSTOMER_MANAGED_ENCRYPTION = 2 }
+	export enum EncryptionInfoEncryptionType { ENCRYPTION_TYPE_UNSPECIFIED = 'ENCRYPTION_TYPE_UNSPECIFIED', GOOGLE_DEFAULT_ENCRYPTION = 'GOOGLE_DEFAULT_ENCRYPTION', CUSTOMER_MANAGED_ENCRYPTION = 'CUSTOMER_MANAGED_ENCRYPTION' }
 
-	export enum BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2 }
+	export enum BackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY' }
 
 
 	/** Information about a backup. */
@@ -657,7 +657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterDefaultStorageType { STORAGE_TYPE_UNSPECIFIED = 0, SSD = 1, HDD = 2 }
+	export enum ClusterDefaultStorageType { STORAGE_TYPE_UNSPECIFIED = 'STORAGE_TYPE_UNSPECIFIED', SSD = 'SSD', HDD = 'HDD' }
 
 
 	/** Cloud Key Management Service (Cloud KMS) settings for a CMEK-protected cluster. */
@@ -680,7 +680,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterState { STATE_NOT_KNOWN = 0, READY = 1, CREATING = 2, RESIZING = 3, DISABLED = 4 }
+	export enum ClusterState { STATE_NOT_KNOWN = 'STATE_NOT_KNOWN', READY = 'READY', CREATING = 'CREATING', RESIZING = 'RESIZING', DISABLED = 'DISABLED' }
 
 
 	/** A set of columns within a table which share a common configuration. */
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableProgressState { STATE_UNSPECIFIED = 0, PENDING = 1, COPYING = 2, COMPLETED = 3, CANCELLED = 4 }
+	export enum TableProgressState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', COPYING = 'COPYING', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 
 	/** The metadata for the Operation returned by CreateInstance. */
@@ -1178,9 +1178,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_NOT_KNOWN = 0, READY = 1, CREATING = 2 }
+	export enum InstanceState { STATE_NOT_KNOWN = 'STATE_NOT_KNOWN', READY = 'READY', CREATING = 'CREATING' }
 
-	export enum InstanceType { TYPE_UNSPECIFIED = 0, PRODUCTION = 1, DEVELOPMENT = 2 }
+	export enum InstanceType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PRODUCTION = 'PRODUCTION', DEVELOPMENT = 'DEVELOPMENT' }
 
 
 	/** Request message for google.bigtable.admin.v2.BigtableTableAdmin.CreateTable */
@@ -1288,7 +1288,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableGranularity { TIMESTAMP_GRANULARITY_UNSPECIFIED = 0, MILLIS = 1 }
+	export enum TableGranularity { TIMESTAMP_GRANULARITY_UNSPECIFIED = 'TIMESTAMP_GRANULARITY_UNSPECIFIED', MILLIS = 'MILLIS' }
 
 
 	/** Information about a table restore. */
@@ -1314,7 +1314,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreInfoSourceType { RESTORE_SOURCE_TYPE_UNSPECIFIED = 0, BACKUP = 1 }
+	export enum RestoreInfoSourceType { RESTORE_SOURCE_TYPE_UNSPECIFIED = 'RESTORE_SOURCE_TYPE_UNSPECIFIED', BACKUP = 'BACKUP' }
 
 
 	/** Approximate statistics related to a table. These statistics are calculated infrequently, while simultaneously, data in the table can change rapidly. Thus the values reported here (e.g. row count) are very likely out-of date, even the instant they are received in this API. Thus, only treat these values as approximate. IMPORTANT: Everything below is approximate, unless otherwise specified. */
@@ -2620,7 +2620,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Bigtableadmin_projects_locations_getView { VIEW_UNSPECIFIED = 0, NAME_ONLY = 1, SCHEMA_VIEW = 2, REPLICATION_VIEW = 3, ENCRYPTION_VIEW = 4, STATS_VIEW = 5, FULL = 6 }
+	export enum Bigtableadmin_projects_locations_getView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', NAME_ONLY = 'NAME_ONLY', SCHEMA_VIEW = 'SCHEMA_VIEW', REPLICATION_VIEW = 'REPLICATION_VIEW', ENCRYPTION_VIEW = 'ENCRYPTION_VIEW', STATS_VIEW = 'STATS_VIEW', FULL = 'FULL' }
 
 }
 

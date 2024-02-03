@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1_StudyConfig_MetricSpecGoal { GOAL_TYPE_UNSPECIFIED = 0, MAXIMIZE = 1, MINIMIZE = 2 }
+	export enum GoogleCloudMlV1_StudyConfig_MetricSpecGoal { GOAL_TYPE_UNSPECIFIED = 'GOAL_TYPE_UNSPECIFIED', MAXIMIZE = 'MAXIMIZE', MINIMIZE = 'MINIMIZE' }
 
 
 	/** Represents a single parameter to optimize. */
@@ -334,9 +334,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1_StudyConfig_ParameterSpecScaleType { SCALE_TYPE_UNSPECIFIED = 0, UNIT_LINEAR_SCALE = 1, UNIT_LOG_SCALE = 2, UNIT_REVERSE_LOG_SCALE = 3 }
+	export enum GoogleCloudMlV1_StudyConfig_ParameterSpecScaleType { SCALE_TYPE_UNSPECIFIED = 'SCALE_TYPE_UNSPECIFIED', UNIT_LINEAR_SCALE = 'UNIT_LINEAR_SCALE', UNIT_LOG_SCALE = 'UNIT_LOG_SCALE', UNIT_REVERSE_LOG_SCALE = 'UNIT_REVERSE_LOG_SCALE' }
 
-	export enum GoogleCloudMlV1_StudyConfig_ParameterSpecType { PARAMETER_TYPE_UNSPECIFIED = 0, DOUBLE = 1, INTEGER = 2, CATEGORICAL = 3, DISCRETE = 4 }
+	export enum GoogleCloudMlV1_StudyConfig_ParameterSpecType { PARAMETER_TYPE_UNSPECIFIED = 'PARAMETER_TYPE_UNSPECIFIED', DOUBLE = 'DOUBLE', INTEGER = 'INTEGER', CATEGORICAL = 'CATEGORICAL', DISCRETE = 'DISCRETE' }
 
 
 	/** A message representing a parameter to be tuned. Contains the name of the parameter and the suggested value to use for this trial. */
@@ -408,7 +408,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__AcceleratorConfigType { ACCELERATOR_TYPE_UNSPECIFIED = 0, NVIDIA_TESLA_K80 = 1, NVIDIA_TESLA_P100 = 2, NVIDIA_TESLA_V100 = 3, NVIDIA_TESLA_P4 = 4, NVIDIA_TESLA_T4 = 5, NVIDIA_TESLA_A100 = 6, TPU_V2 = 7, TPU_V3 = 8, TPU_V2_POD = 9, TPU_V3_POD = 10, TPU_V4_POD = 11 }
+	export enum GoogleCloudMlV1__AcceleratorConfigType { ACCELERATOR_TYPE_UNSPECIFIED = 'ACCELERATOR_TYPE_UNSPECIFIED', NVIDIA_TESLA_K80 = 'NVIDIA_TESLA_K80', NVIDIA_TESLA_P100 = 'NVIDIA_TESLA_P100', NVIDIA_TESLA_V100 = 'NVIDIA_TESLA_V100', NVIDIA_TESLA_P4 = 'NVIDIA_TESLA_P4', NVIDIA_TESLA_T4 = 'NVIDIA_TESLA_T4', NVIDIA_TESLA_A100 = 'NVIDIA_TESLA_A100', TPU_V2 = 'TPU_V2', TPU_V3 = 'TPU_V3', TPU_V2_POD = 'TPU_V2_POD', TPU_V3_POD = 'TPU_V3_POD', TPU_V4_POD = 'TPU_V4_POD' }
 
 
 	/** The request message for the AddTrialMeasurement service method. */
@@ -517,7 +517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__MetricSpecName { METRIC_NAME_UNSPECIFIED = 0, CPU_USAGE = 1, GPU_DUTY_CYCLE = 2 }
+	export enum GoogleCloudMlV1__MetricSpecName { METRIC_NAME_UNSPECIFIED = 'METRIC_NAME_UNSPECIFIED', CPU_USAGE = 'CPU_USAGE', GPU_DUTY_CYCLE = 'GPU_DUTY_CYCLE' }
 
 
 	/** Configuration for Automated Early Stopping of Trials. If no implementation_config is set, automated early stopping will not be run. */
@@ -609,7 +609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__CapabilityType { TYPE_UNSPECIFIED = 0, TRAINING = 1, BATCH_PREDICTION = 2, ONLINE_PREDICTION = 3 }
+	export enum GoogleCloudMlV1__CapabilityType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TRAINING = 'TRAINING', BATCH_PREDICTION = 'BATCH_PREDICTION', ONLINE_PREDICTION = 'ONLINE_PREDICTION' }
 
 
 	/** This message will be placed in the metadata field of a google.longrunning.Operation associated with a CheckTrialEarlyStoppingState request. */
@@ -1078,7 +1078,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__HyperparameterOutputState { STATE_UNSPECIFIED = 0, QUEUED = 1, PREPARING = 2, RUNNING = 3, SUCCEEDED = 4, FAILED = 5, CANCELLING = 6, CANCELLED = 7 }
+	export enum GoogleCloudMlV1__HyperparameterOutputState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', QUEUED = 'QUEUED', PREPARING = 'PREPARING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
 
 	/** Represents a set of hyperparameters to optimize. */
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__HyperparameterSpecAlgorithm { ALGORITHM_UNSPECIFIED = 0, GRID_SEARCH = 1, RANDOM_SEARCH = 2 }
+	export enum GoogleCloudMlV1__HyperparameterSpecAlgorithm { ALGORITHM_UNSPECIFIED = 'ALGORITHM_UNSPECIFIED', GRID_SEARCH = 'GRID_SEARCH', RANDOM_SEARCH = 'RANDOM_SEARCH' }
 
 
 	/** Represents a single hyperparameter to optimize. */
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__ParameterSpecScaleType { NONE = 0, UNIT_LINEAR_SCALE = 1, UNIT_LOG_SCALE = 2, UNIT_REVERSE_LOG_SCALE = 3 }
+	export enum GoogleCloudMlV1__ParameterSpecScaleType { NONE = 'NONE', UNIT_LINEAR_SCALE = 'UNIT_LINEAR_SCALE', UNIT_LOG_SCALE = 'UNIT_LOG_SCALE', UNIT_REVERSE_LOG_SCALE = 'UNIT_REVERSE_LOG_SCALE' }
 
 
 	/** Represents a training or prediction job. */
@@ -1395,7 +1395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__PredictionInputDataFormat { DATA_FORMAT_UNSPECIFIED = 0, JSON = 1, TEXT = 2, TF_RECORD = 3, TF_RECORD_GZIP = 4, CSV = 5 }
+	export enum GoogleCloudMlV1__PredictionInputDataFormat { DATA_FORMAT_UNSPECIFIED = 'DATA_FORMAT_UNSPECIFIED', JSON = 'JSON', TEXT = 'TEXT', TF_RECORD = 'TF_RECORD', TF_RECORD_GZIP = 'TF_RECORD_GZIP', CSV = 'CSV' }
 
 
 	/** Represents results of a prediction job. */
@@ -1639,7 +1639,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__TrainingInputScaleTier { BASIC = 0, STANDARD_1 = 1, PREMIUM_1 = 2, BASIC_GPU = 3, BASIC_TPU = 4, CUSTOM = 5 }
+	export enum GoogleCloudMlV1__TrainingInputScaleTier { BASIC = 'BASIC', STANDARD_1 = 'STANDARD_1', PREMIUM_1 = 'PREMIUM_1', BASIC_GPU = 'BASIC_GPU', BASIC_TPU = 'BASIC_TPU', CUSTOM = 'CUSTOM' }
 
 
 	/** All parameters related to scheduling of training jobs. */
@@ -2048,7 +2048,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__VersionFramework { FRAMEWORK_UNSPECIFIED = 0, TENSORFLOW = 1, SCIKIT_LEARN = 2, XGBOOST = 3 }
+	export enum GoogleCloudMlV1__VersionFramework { FRAMEWORK_UNSPECIFIED = 'FRAMEWORK_UNSPECIFIED', TENSORFLOW = 'TENSORFLOW', SCIKIT_LEARN = 'SCIKIT_LEARN', XGBOOST = 'XGBOOST' }
 
 
 	/** Options for manually scaling a model. */
@@ -2127,7 +2127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__VersionState { UNKNOWN = 0, READY = 1, CREATING = 2, FAILED = 3, DELETING = 4, UPDATING = 5 }
+	export enum GoogleCloudMlV1__VersionState { UNKNOWN = 'UNKNOWN', READY = 'READY', CREATING = 'CREATING', FAILED = 'FAILED', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** The request message for the ListTrials service method. */
@@ -2232,7 +2232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__TrialState { STATE_UNSPECIFIED = 0, REQUESTED = 1, ACTIVE = 2, COMPLETED = 3, STOPPING = 4 }
+	export enum GoogleCloudMlV1__TrialState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', REQUESTED = 'REQUESTED', ACTIVE = 'ACTIVE', COMPLETED = 'COMPLETED', STOPPING = 'STOPPING' }
 
 	export interface GoogleCloudMlV1__ListStudiesResponse {
 
@@ -2292,7 +2292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__StudyState { STATE_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2, COMPLETED = 3 }
+	export enum GoogleCloudMlV1__StudyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', COMPLETED = 'COMPLETED' }
 
 
 	/** Represents configuration of a study. */
@@ -2324,7 +2324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__StudyConfigAlgorithm { ALGORITHM_UNSPECIFIED = 0, GAUSSIAN_PROCESS_BANDIT = 1, GRID_SEARCH = 2, RANDOM_SEARCH = 3 }
+	export enum GoogleCloudMlV1__StudyConfigAlgorithm { ALGORITHM_UNSPECIFIED = 'ALGORITHM_UNSPECIFIED', GAUSSIAN_PROCESS_BANDIT = 'GAUSSIAN_PROCESS_BANDIT', GRID_SEARCH = 'GRID_SEARCH', RANDOM_SEARCH = 'RANDOM_SEARCH' }
 
 
 	/** The response message for the ListTrials method. */
@@ -2440,7 +2440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMlV1__OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, CREATE_VERSION = 1, DELETE_VERSION = 2, DELETE_MODEL = 3, UPDATE_MODEL = 4, UPDATE_VERSION = 5, UPDATE_CONFIG = 6 }
+	export enum GoogleCloudMlV1__OperationMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', CREATE_VERSION = 'CREATE_VERSION', DELETE_VERSION = 'DELETE_VERSION', DELETE_MODEL = 'DELETE_MODEL', UPDATE_MODEL = 'UPDATE_MODEL', UPDATE_VERSION = 'UPDATE_VERSION', UPDATE_CONFIG = 'UPDATE_CONFIG' }
 
 
 	/** Request for predictions to be issued against a trained model. */
@@ -2639,7 +2639,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1__AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1__AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */

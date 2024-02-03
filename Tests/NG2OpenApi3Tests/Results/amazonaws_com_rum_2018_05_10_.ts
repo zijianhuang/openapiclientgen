@@ -279,9 +279,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Telemetry { errors = 0, performance = 1, http = 2 }
+	export enum Telemetry { errors = 'errors', performance = 'performance', http = 'http' }
 
-	export enum CustomEventsStatus { ENABLED = 0, DISABLED = 1 }
+	export enum CustomEventsStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DeleteAppMonitorResponse {
 	}
@@ -435,7 +435,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StateEnum { CREATED = 0, DELETING = 1, ACTIVE = 2 }
+	export enum StateEnum { CREATED = 'CREATED', DELETING = 'DELETING', ACTIVE = 'ACTIVE' }
 
 	export interface TagMap {
 	}
@@ -559,7 +559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDestination { CloudWatch = 0, Evidently = 1 }
+	export enum MetricDestination { CloudWatch = 'CloudWatch', Evidently = 'Evidently' }
 
 	export interface ListTagsForResourceResponse {
 

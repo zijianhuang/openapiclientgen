@@ -140,7 +140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EcKeyTypeSignatureAlgorithm { EC_SIGNATURE_ALGORITHM_UNSPECIFIED = 0, ECDSA_P256 = 1, ECDSA_P384 = 2, EDDSA_25519 = 3 }
+	export enum EcKeyTypeSignatureAlgorithm { EC_SIGNATURE_ALGORITHM_UNSPECIFIED = 'EC_SIGNATURE_ALGORITHM_UNSPECIFIED', ECDSA_P256 = 'ECDSA_P256', ECDSA_P384 = 'ECDSA_P384', EDDSA_25519 = 'EDDSA_25519' }
 
 
 	/** Describes an RSA key that may be used in a Certificate issued from a CaPool. */
@@ -218,7 +218,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -789,9 +789,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PublishingOptionsEncodingFormat { ENCODING_FORMAT_UNSPECIFIED = 0, PEM = 1, DER = 2 }
+	export enum PublishingOptionsEncodingFormat { ENCODING_FORMAT_UNSPECIFIED = 'ENCODING_FORMAT_UNSPECIFIED', PEM = 'PEM', DER = 'DER' }
 
-	export enum CaPoolTier { TIER_UNSPECIFIED = 0, ENTERPRISE = 1, DEVOPS = 2 }
+	export enum CaPoolTier { TIER_UNSPECIFIED = 'TIER_UNSPECIFIED', ENTERPRISE = 'ENTERPRISE', DEVOPS = 'DEVOPS' }
 
 
 	/** The request message for Operations.CancelOperation. */
@@ -1024,7 +1024,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublicKeyFormat { KEY_FORMAT_UNSPECIFIED = 0, PEM = 1 }
+	export enum PublicKeyFormat { KEY_FORMAT_UNSPECIFIED = 'KEY_FORMAT_UNSPECIFIED', PEM = 'PEM' }
 
 
 	/** These values describe fields in an issued X.509 certificate such as the distinguished name, subject alternative names, serial number, and lifetime. */
@@ -1244,9 +1244,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RevocationDetailsRevocationState { REVOCATION_REASON_UNSPECIFIED = 0, KEY_COMPROMISE = 1, CERTIFICATE_AUTHORITY_COMPROMISE = 2, AFFILIATION_CHANGED = 3, SUPERSEDED = 4, CESSATION_OF_OPERATION = 5, CERTIFICATE_HOLD = 6, PRIVILEGE_WITHDRAWN = 7, ATTRIBUTE_AUTHORITY_COMPROMISE = 8 }
+	export enum RevocationDetailsRevocationState { REVOCATION_REASON_UNSPECIFIED = 'REVOCATION_REASON_UNSPECIFIED', KEY_COMPROMISE = 'KEY_COMPROMISE', CERTIFICATE_AUTHORITY_COMPROMISE = 'CERTIFICATE_AUTHORITY_COMPROMISE', AFFILIATION_CHANGED = 'AFFILIATION_CHANGED', SUPERSEDED = 'SUPERSEDED', CESSATION_OF_OPERATION = 'CESSATION_OF_OPERATION', CERTIFICATE_HOLD = 'CERTIFICATE_HOLD', PRIVILEGE_WITHDRAWN = 'PRIVILEGE_WITHDRAWN', ATTRIBUTE_AUTHORITY_COMPROMISE = 'ATTRIBUTE_AUTHORITY_COMPROMISE' }
 
-	export enum CertificateSubjectMode { SUBJECT_REQUEST_MODE_UNSPECIFIED = 0, DEFAULT = 1, REFLECTED_SPIFFE = 2 }
+	export enum CertificateSubjectMode { SUBJECT_REQUEST_MODE_UNSPECIFIED = 'SUBJECT_REQUEST_MODE_UNSPECIFIED', DEFAULT = 'DEFAULT', REFLECTED_SPIFFE = 'REFLECTED_SPIFFE' }
 
 
 	/** A CertificateAuthority represents an individual Certificate Authority. A CertificateAuthority can be used to create Certificates. */
@@ -1385,11 +1385,11 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyVersionSpecAlgorithm { SIGN_HASH_ALGORITHM_UNSPECIFIED = 0, RSA_PSS_2048_SHA256 = 1, RSA_PSS_3072_SHA256 = 2, RSA_PSS_4096_SHA256 = 3, RSA_PKCS1_2048_SHA256 = 4, RSA_PKCS1_3072_SHA256 = 5, RSA_PKCS1_4096_SHA256 = 6, EC_P256_SHA256 = 7, EC_P384_SHA384 = 8 }
+	export enum KeyVersionSpecAlgorithm { SIGN_HASH_ALGORITHM_UNSPECIFIED = 'SIGN_HASH_ALGORITHM_UNSPECIFIED', RSA_PSS_2048_SHA256 = 'RSA_PSS_2048_SHA256', RSA_PSS_3072_SHA256 = 'RSA_PSS_3072_SHA256', RSA_PSS_4096_SHA256 = 'RSA_PSS_4096_SHA256', RSA_PKCS1_2048_SHA256 = 'RSA_PKCS1_2048_SHA256', RSA_PKCS1_3072_SHA256 = 'RSA_PKCS1_3072_SHA256', RSA_PKCS1_4096_SHA256 = 'RSA_PKCS1_4096_SHA256', EC_P256_SHA256 = 'EC_P256_SHA256', EC_P384_SHA384 = 'EC_P384_SHA384' }
 
-	export enum CertificateAuthorityState { STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2, STAGED = 3, AWAITING_USER_ACTIVATION = 4, DELETED = 5 }
+	export enum CertificateAuthorityState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED', STAGED = 'STAGED', AWAITING_USER_ACTIVATION = 'AWAITING_USER_ACTIVATION', DELETED = 'DELETED' }
 
-	export enum CertificateAuthorityType { TYPE_UNSPECIFIED = 0, SELF_SIGNED = 1, SUBORDINATE = 2 }
+	export enum CertificateAuthorityType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', SELF_SIGNED = 'SELF_SIGNED', SUBORDINATE = 'SUBORDINATE' }
 
 
 	/** A CertificateRevocationList corresponds to a signed X.509 certificate Revocation List (CRL). A CRL contains the serial numbers of certificates that should no longer be trusted. */
@@ -1506,7 +1506,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateRevocationListState { STATE_UNSPECIFIED = 0, ACTIVE = 1, SUPERSEDED = 2 }
+	export enum CertificateRevocationListState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', SUPERSEDED = 'SUPERSEDED' }
 
 
 	/** A CertificateTemplate refers to a managed template for certificate issuance. */
@@ -2128,7 +2128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReconciliationOperationMetadataExclusiveAction { UNKNOWN_REPAIR_ACTION = 0, DELETE = 1, RETRY = 2 }
+	export enum ReconciliationOperationMetadataExclusiveAction { UNKNOWN_REPAIR_ACTION = 'UNKNOWN_REPAIR_ACTION', DELETE = 'DELETE', RETRY = 'RETRY' }
 
 
 	/** Request message for CertificateAuthorityService.RevokeCertificate. */

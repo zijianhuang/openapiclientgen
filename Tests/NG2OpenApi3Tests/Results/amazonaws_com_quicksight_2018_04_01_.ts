@@ -257,7 +257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceStatus { CREATION_IN_PROGRESS = 0, CREATION_SUCCESSFUL = 1, CREATION_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_SUCCESSFUL = 4, UPDATE_FAILED = 5, DELETED = 6 }
+	export enum ResourceStatus { CREATION_IN_PROGRESS = 'CREATION_IN_PROGRESS', CREATION_SUCCESSFUL = 'CREATION_SUCCESSFUL', CREATION_FAILED = 'CREATION_FAILED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_SUCCESSFUL = 'UPDATE_SUCCESSFUL', UPDATE_FAILED = 'UPDATE_FAILED', DELETED = 'DELETED' }
 
 
 	/** A string parameter. */
@@ -594,7 +594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Visibility { HIDDEN = 0, VISIBLE = 1 }
+	export enum Visibility { HIDDEN = 'HIDDEN', VISIBLE = 'VISIBLE' }
 
 
 	/** Configures the display properties of the given text. */
@@ -638,9 +638,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RelativeFontSize { EXTRA_SMALL = 0, SMALL = 1, MEDIUM = 2, LARGE = 3, EXTRA_LARGE = 4 }
+	export enum RelativeFontSize { EXTRA_SMALL = 'EXTRA_SMALL', SMALL = 'SMALL', MEDIUM = 'MEDIUM', LARGE = 'LARGE', EXTRA_LARGE = 'EXTRA_LARGE' }
 
-	export enum FontDecoration { UNDERLINE = 0, NONE = 1 }
+	export enum FontDecoration { UNDERLINE = 'UNDERLINE', NONE = 'NONE' }
 
 
 	/** The option that determines the text display weight, or boldness. */
@@ -659,9 +659,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FontWeightName { NORMAL = 0, BOLD = 1 }
+	export enum FontWeightName { NORMAL = 'NORMAL', BOLD = 'BOLD' }
 
-	export enum FontStyle { NORMAL = 0, ITALIC = 1 }
+	export enum FontStyle { NORMAL = 'NORMAL', ITALIC = 'ITALIC' }
 
 
 	/** A control to display info icons for filters and parameters. */
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SheetControlListType { MULTI_SELECT = 0, SINGLE_SELECT = 1 }
+	export enum SheetControlListType { MULTI_SELECT = 'MULTI_SELECT', SINGLE_SELECT = 'SINGLE_SELECT' }
 
 
 	/** A list of selectable values that are used in a control. */
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SheetControlDateTimePickerType { SINGLE_VALUED = 0, DATE_RANGE = 1 }
+	export enum SheetControlDateTimePickerType { SINGLE_VALUED = 'SINGLE_VALUED', DATE_RANGE = 'DATE_RANGE' }
 
 
 	/** A control to display a list of buttons or boxes. This is used to select either a single value or multiple values. */
@@ -1406,7 +1406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SheetControlSliderType { SINGLE_POINT = 0, RANGE = 1 }
+	export enum SheetControlSliderType { SINGLE_POINT = 'SINGLE_POINT', RANGE = 'RANGE' }
 
 
 	/** A control from a date filter that is used to specify the relative date. */
@@ -1777,7 +1777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumericSeparatorSymbol { COMMA = 0, DOT = 1, SPACE = 2 }
+	export enum NumericSeparatorSymbol { COMMA = 'COMMA', DOT = 'DOT', SPACE = 'SPACE' }
 
 
 	/** The options that determine the thousands separator configuration. */
@@ -1820,7 +1820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumberScale { NONE = 0, AUTO = 1, THOUSANDS = 2, MILLIONS = 3, BILLIONS = 4, TRILLIONS = 5 }
+	export enum NumberScale { NONE = 'NONE', AUTO = 'AUTO', THOUSANDS = 'THOUSANDS', MILLIONS = 'MILLIONS', BILLIONS = 'BILLIONS', TRILLIONS = 'TRILLIONS' }
 
 
 	/** The options that determine the negative value configuration. */
@@ -1843,7 +1843,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NegativeValueDisplayMode { POSITIVE = 0, NEGATIVE = 1 }
+	export enum NegativeValueDisplayMode { POSITIVE = 'POSITIVE', NEGATIVE = 'NEGATIVE' }
 
 
 	/** The options that determine the null value format configuration. */
@@ -1995,7 +1995,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeGranularity { YEAR = 0, QUARTER = 1, MONTH = 2, WEEK = 3, DAY = 4, HOUR = 5, MINUTE = 6, SECOND = 7, MILLISECOND = 8 }
+	export enum TimeGranularity { YEAR = 'YEAR', QUARTER = 'QUARTER', MONTH = 'MONTH', WEEK = 'WEEK', DAY = 'DAY', HOUR = 'HOUR', MINUTE = 'MINUTE', SECOND = 'SECOND', MILLISECOND = 'MILLISECOND' }
 
 
 	/** Formatting configuration for <code>DateTime</code> fields. */
@@ -2078,7 +2078,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SimpleNumericalAggregationFunction { SUM = 0, AVERAGE = 1, MIN = 2, MAX = 3, COUNT = 4, DISTINCT_COUNT = 5, VAR = 6, VARP = 7, STDEV = 8, STDEVP = 9, MEDIAN = 10 }
+	export enum SimpleNumericalAggregationFunction { SUM = 'SUM', AVERAGE = 'AVERAGE', MIN = 'MIN', MAX = 'MAX', COUNT = 'COUNT', DISTINCT_COUNT = 'DISTINCT_COUNT', VAR = 'VAR', VARP = 'VARP', STDEV = 'STDEV', STDEVP = 'STDEVP', MEDIAN = 'MEDIAN' }
 
 
 	/** An aggregation based on the percentile of values in a dimension or measure. */
@@ -2125,7 +2125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CategoricalAggregationFunction { COUNT = 0, DISTINCT_COUNT = 1 }
+	export enum CategoricalAggregationFunction { COUNT = 'COUNT', DISTINCT_COUNT = 'DISTINCT_COUNT' }
 
 
 	/** The measure type field with date type columns. */
@@ -2155,7 +2155,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DateAggregationFunction { COUNT = 0, DISTINCT_COUNT = 1, MIN = 2, MAX = 3 }
+	export enum DateAggregationFunction { COUNT = 'COUNT', DISTINCT_COUNT = 'DISTINCT_COUNT', MIN = 'MIN', MAX = 'MAX' }
 
 
 	/** The table calculation measure field for pivot tables. */
@@ -2302,7 +2302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortDirection { ASC = 0, DESC = 1 }
+	export enum SortDirection { ASC = 'ASC', DESC = 'DESC' }
 
 
 	/** The sort configuration for a column that is not used in a field well. */
@@ -2374,7 +2374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SimpleAttributeAggregationFunction { UNIQUE_VALUE = 0 }
+	export enum SimpleAttributeAggregationFunction { UNIQUE_VALUE = 'UNIQUE_VALUE' }
 
 
 	/** The pagination configuration for a table visual or boxplot. */
@@ -2424,7 +2424,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableOrientation { VERTICAL = 0, HORIZONTAL = 1 }
+	export enum TableOrientation { VERTICAL = 'VERTICAL', HORIZONTAL = 'HORIZONTAL' }
 
 
 	/** The table cell style for a cell in pivot table or table visual. */
@@ -2460,11 +2460,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TextWrap { NONE = 0, WRAP = 1 }
+	export enum TextWrap { NONE = 'NONE', WRAP = 'WRAP' }
 
-	export enum HorizontalTextAlignment { LEFT = 0, CENTER = 1, RIGHT = 2, AUTO = 3 }
+	export enum HorizontalTextAlignment { LEFT = 'LEFT', CENTER = 'CENTER', RIGHT = 'RIGHT', AUTO = 'AUTO' }
 
-	export enum VerticalTextAlignment { TOP = 0, MIDDLE = 1, BOTTOM = 2 }
+	export enum VerticalTextAlignment { TOP = 'TOP', MIDDLE = 'MIDDLE', BOTTOM = 'BOTTOM' }
 
 
 	/** Determines the border options for a table visual. */
@@ -2505,7 +2505,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableBorderStyle { NONE = 0, SOLID = 1 }
+	export enum TableBorderStyle { NONE = 'NONE', SOLID = 'SOLID' }
 
 
 	/** The side border options for a table. */
@@ -2545,7 +2545,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WidgetStatus { ENABLED = 0, DISABLED = 1 }
+	export enum WidgetStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** The total options for a table visual. */
@@ -2574,9 +2574,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TableTotalsPlacement { START = 0, END = 1 }
+	export enum TableTotalsPlacement { START = 'START', END = 'END' }
 
-	export enum TableTotalsScrollStatus { PINNED = 0, SCROLLED = 1 }
+	export enum TableTotalsScrollStatus { PINNED = 'PINNED', SCROLLED = 'SCROLLED' }
 
 
 	/** The field options for a table visual. */
@@ -2665,7 +2665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum URLTargetConfiguration { NEW_TAB = 0, NEW_WINDOW = 1, SAME_TAB = 2 }
+	export enum URLTargetConfiguration { NEW_TAB = 'NEW_TAB', NEW_WINDOW = 'NEW_WINDOW', SAME_TAB = 'SAME_TAB' }
 
 
 	/** The URL content (text, icon) for the table link configuration. */
@@ -2720,7 +2720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableFieldIconSetType { LINK = 0 }
+	export enum TableFieldIconSetType { LINK = 'LINK' }
 
 
 	/** The image configuration of a table field URL. */
@@ -2754,7 +2754,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableCellImageScalingConfiguration { FIT_TO_CELL_HEIGHT = 0, FIT_TO_CELL_WIDTH = 1, DO_NOT_SCALE = 2 }
+	export enum TableCellImageScalingConfiguration { FIT_TO_CELL_HEIGHT = 'FIT_TO_CELL_HEIGHT', FIT_TO_CELL_WIDTH = 'FIT_TO_CELL_WIDTH', DO_NOT_SCALE = 'DO_NOT_SCALE' }
 
 
 	/** The paginated report options for a table visual. */
@@ -3034,7 +3034,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionalFormattingIconSetType { PLUS_MINUS = 0, CHECK_X = 1, THREE_COLOR_ARROW = 2, THREE_GRAY_ARROW = 3, CARET_UP_MINUS_DOWN = 4, THREE_SHAPE = 5, THREE_CIRCLE = 6, FLAGS = 7, BARS = 8, FOUR_COLOR_ARROW = 9, FOUR_GRAY_ARROW = 10 }
+	export enum ConditionalFormattingIconSetType { PLUS_MINUS = 'PLUS_MINUS', CHECK_X = 'CHECK_X', THREE_COLOR_ARROW = 'THREE_COLOR_ARROW', THREE_GRAY_ARROW = 'THREE_GRAY_ARROW', CARET_UP_MINUS_DOWN = 'CARET_UP_MINUS_DOWN', THREE_SHAPE = 'THREE_SHAPE', THREE_CIRCLE = 'THREE_CIRCLE', FLAGS = 'FLAGS', BARS = 'BARS', FOUR_COLOR_ARROW = 'FOUR_COLOR_ARROW', FOUR_GRAY_ARROW = 'FOUR_GRAY_ARROW' }
 
 
 	/** Determines the custom condition for an icon set. */
@@ -3084,7 +3084,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Icon { CARET_UP = 0, CARET_DOWN = 1, PLUS = 2, MINUS = 3, ARROW_UP = 4, ARROW_DOWN = 5, ARROW_LEFT = 6, ARROW_UP_LEFT = 7, ARROW_DOWN_LEFT = 8, ARROW_RIGHT = 9, ARROW_UP_RIGHT = 10, ARROW_DOWN_RIGHT = 11, FACE_UP = 12, FACE_DOWN = 13, FACE_FLAT = 14, ONE_BAR = 15, TWO_BAR = 16, THREE_BAR = 17, CIRCLE = 18, TRIANGLE = 19, SQUARE = 20, FLAG = 21, THUMBS_UP = 22, THUMBS_DOWN = 23, CHECKMARK = 24, X = 25 }
+	export enum Icon { CARET_UP = 'CARET_UP', CARET_DOWN = 'CARET_DOWN', PLUS = 'PLUS', MINUS = 'MINUS', ARROW_UP = 'ARROW_UP', ARROW_DOWN = 'ARROW_DOWN', ARROW_LEFT = 'ARROW_LEFT', ARROW_UP_LEFT = 'ARROW_UP_LEFT', ARROW_DOWN_LEFT = 'ARROW_DOWN_LEFT', ARROW_RIGHT = 'ARROW_RIGHT', ARROW_UP_RIGHT = 'ARROW_UP_RIGHT', ARROW_DOWN_RIGHT = 'ARROW_DOWN_RIGHT', FACE_UP = 'FACE_UP', FACE_DOWN = 'FACE_DOWN', FACE_FLAT = 'FACE_FLAT', ONE_BAR = 'ONE_BAR', TWO_BAR = 'TWO_BAR', THREE_BAR = 'THREE_BAR', CIRCLE = 'CIRCLE', TRIANGLE = 'TRIANGLE', SQUARE = 'SQUARE', FLAG = 'FLAG', THUMBS_UP = 'THUMBS_UP', THUMBS_DOWN = 'THUMBS_DOWN', CHECKMARK = 'CHECKMARK', X = 'X' }
 
 
 	/** Determines the icon display configuration. */
@@ -3103,7 +3103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionalFormattingIconDisplayOption { ICON_ONLY = 0 }
+	export enum ConditionalFormattingIconDisplayOption { ICON_ONLY = 'ICON_ONLY' }
 
 
 	/** The conditional formatting of a table row. */
@@ -3162,7 +3162,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VisualCustomActionTrigger { DATA_POINT_CLICK = 0, DATA_POINT_MENU = 1 }
+	export enum VisualCustomActionTrigger { DATA_POINT_CLICK = 'DATA_POINT_CLICK', DATA_POINT_MENU = 'DATA_POINT_MENU' }
 
 
 	/** <p>The operation that is defined by the custom action.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p> */
@@ -3221,7 +3221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SelectedFieldOptions { ALL_FIELDS = 0 }
+	export enum SelectedFieldOptions { ALL_FIELDS = 'ALL_FIELDS' }
 
 
 	/** <p>The configuration of target visuals that you want to be filtered.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p> */
@@ -3256,7 +3256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetVisualOptions { ALL_VISUALS = 0 }
+	export enum TargetVisualOptions { ALL_VISUALS = 'ALL_VISUALS' }
 
 
 	/** <p>The navigation operation that navigates between different sheets in the same analysis.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p> */
@@ -3434,7 +3434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SelectAllValueOptions { ALL_VALUES = 0 }
+	export enum SelectAllValueOptions { ALL_VALUES = 'ALL_VALUES' }
 
 
 	/** <p>A pivot table.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.</p> */
@@ -3656,7 +3656,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PivotTableMetricPlacement { ROW = 0, COLUMN = 1 }
+	export enum PivotTableMetricPlacement { ROW = 'ROW', COLUMN = 'COLUMN' }
 
 
 	/** The total options for a pivot table visual. */
@@ -3703,7 +3703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PivotTableSubtotalLevel { ALL = 0, CUSTOM = 1, LAST = 2 }
+	export enum PivotTableSubtotalLevel { ALL = 'ALL', CUSTOM = 'CUSTOM', LAST = 'LAST' }
 
 
 	/** The optional configuration of subtotals cells. */
@@ -3853,7 +3853,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PivotTableFieldCollapseState { COLLAPSED = 0, EXPANDED = 1 }
+	export enum PivotTableFieldCollapseState { COLLAPSED = 'COLLAPSED', EXPANDED = 'EXPANDED' }
 
 
 	/** The paginated report options for a pivot table visual. */
@@ -3946,7 +3946,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PivotTableConditionalFormattingScopeRole { FIELD = 0, FIELD_TOTAL = 1, GRAND_TOTAL = 2 }
+	export enum PivotTableConditionalFormattingScopeRole { FIELD = 'FIELD', FIELD_TOTAL = 'FIELD_TOTAL', GRAND_TOTAL = 'GRAND_TOTAL' }
 
 
 	/** <p>A bar chart.</p> <p>The <code>BarChartVisual</code> structure describes a visual that is a member of the bar chart family. The following charts can be described using this structure:</p> <ul> <li> <p>Horizontal bar chart</p> </li> <li> <p>Vertical bar chart</p> </li> <li> <p>Horizontal stacked bar chart</p> </li> <li> <p>Vertical stacked bar chart</p> </li> <li> <p>Horizontal stacked 100% bar chart</p> </li> <li> <p>Vertical stacked 100% bar chart</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p> */
@@ -4081,11 +4081,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OtherCategories { INCLUDE = 0, EXCLUDE = 1 }
+	export enum OtherCategories { INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
-	export enum BarChartOrientation { HORIZONTAL = 0, VERTICAL = 1 }
+	export enum BarChartOrientation { HORIZONTAL = 'HORIZONTAL', VERTICAL = 'VERTICAL' }
 
-	export enum BarsArrangement { CLUSTERED = 0, STACKED = 1, STACKED_PERCENT = 2 }
+	export enum BarsArrangement { CLUSTERED = 'CLUSTERED', STACKED = 'STACKED', STACKED_PERCENT = 'STACKED_PERCENT' }
 
 
 	/** The visual display options for the visual palette. */
@@ -4217,7 +4217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PanelBorderStyle { SOLID = 0, DASHED = 1, DOTTED = 2 }
+	export enum PanelBorderStyle { SOLID = 'SOLID', DASHED = 'DASHED', DOTTED = 'DOTTED' }
 
 
 	/** Configures the properties of a chart's axes that are used by small multiples panels. */
@@ -4239,9 +4239,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SmallMultiplesAxisScale { SHARED = 0, INDEPENDENT = 1 }
+	export enum SmallMultiplesAxisScale { SHARED = 'SHARED', INDEPENDENT = 'INDEPENDENT' }
 
-	export enum SmallMultiplesAxisPlacement { OUTSIDE = 0, INSIDE = 1 }
+	export enum SmallMultiplesAxisPlacement { OUTSIDE = 'OUTSIDE', INSIDE = 'INSIDE' }
 
 
 	/** The display options for the axis label. */
@@ -4583,7 +4583,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LegendPosition { AUTO = 0, RIGHT = 1, BOTTOM = 2, TOP = 3 }
+	export enum LegendPosition { AUTO = 'AUTO', RIGHT = 'RIGHT', BOTTOM = 'BOTTOM', TOP = 'TOP' }
 
 
 	/** The options that determine the presentation of the data labels. */
@@ -4738,11 +4738,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLabelPosition { INSIDE = 0, OUTSIDE = 1, LEFT = 2, TOP = 3, BOTTOM = 4, RIGHT = 5 }
+	export enum DataLabelPosition { INSIDE = 'INSIDE', OUTSIDE = 'OUTSIDE', LEFT = 'LEFT', TOP = 'TOP', BOTTOM = 'BOTTOM', RIGHT = 'RIGHT' }
 
-	export enum DataLabelContent { VALUE = 0, PERCENT = 1, VALUE_AND_PERCENT = 2 }
+	export enum DataLabelContent { VALUE = 'VALUE', PERCENT = 'PERCENT', VALUE_AND_PERCENT = 'VALUE_AND_PERCENT' }
 
-	export enum DataLabelOverlap { DISABLE_OVERLAP = 0, ENABLE_OVERLAP = 1 }
+	export enum DataLabelOverlap { DISABLE_OVERLAP = 'DISABLE_OVERLAP', ENABLE_OVERLAP = 'ENABLE_OVERLAP' }
 
 
 	/** The display options for the visual tooltip. */
@@ -4765,7 +4765,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SelectedTooltipType { BASIC = 0, DETAILED = 1 }
+	export enum SelectedTooltipType { BASIC = 'BASIC', DETAILED = 'DETAILED' }
 
 
 	/** The setup for the detailed tooltip. */
@@ -4788,7 +4788,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TooltipTitleType { NONE = 0, PRIMARY_VALUE = 1 }
+	export enum TooltipTitleType { NONE = 'NONE', PRIMARY_VALUE = 'PRIMARY_VALUE' }
 
 
 	/** <p>The tooltip.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p> */
@@ -4940,7 +4940,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AxisBinding { PRIMARY_YAXIS = 0, SECONDARY_YAXIS = 1 }
+	export enum AxisBinding { PRIMARY_YAXIS = 'PRIMARY_YAXIS', SECONDARY_YAXIS = 'SECONDARY_YAXIS' }
 
 
 	/** The style configuration of the reference line. */
@@ -5006,7 +5006,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceLineValueLabelRelativePosition { BEFORE_CUSTOM_LABEL = 0, AFTER_CUSTOM_LABEL = 1 }
+	export enum ReferenceLineValueLabelRelativePosition { BEFORE_CUSTOM_LABEL = 'BEFORE_CUSTOM_LABEL', AFTER_CUSTOM_LABEL = 'AFTER_CUSTOM_LABEL' }
 
 
 	/** The configuration for a custom label on a <code>ReferenceLine</code>. */
@@ -5029,9 +5029,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceLineLabelHorizontalPosition { LEFT = 0, CENTER = 1, RIGHT = 2 }
+	export enum ReferenceLineLabelHorizontalPosition { LEFT = 'LEFT', CENTER = 'CENTER', RIGHT = 'RIGHT' }
 
-	export enum ReferenceLineLabelVerticalPosition { ABOVE = 0, BELOW = 1 }
+	export enum ReferenceLineLabelVerticalPosition { ABOVE = 'ABOVE', BELOW = 'BELOW' }
 
 
 	/** The contribution analysis visual display for a line, pie, or bar chart. */
@@ -5413,7 +5413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonMethod { DIFFERENCE = 0, PERCENT_DIFFERENCE = 1, PERCENT = 2 }
+	export enum ComparisonMethod { DIFFERENCE = 'DIFFERENCE', PERCENT_DIFFERENCE = 'PERCENT_DIFFERENCE', PERCENT = 'PERCENT' }
 
 
 	/** <p>The format of the comparison.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p> */
@@ -5431,7 +5431,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrimaryValueDisplayType { HIDDEN = 0, COMPARISON = 1, ACTUAL = 2 }
+	export enum PrimaryValueDisplayType { HIDDEN = 'HIDDEN', COMPARISON = 'COMPARISON', ACTUAL = 'ACTUAL' }
 
 
 	/** The conditional formatting of a KPI visual. */
@@ -5629,7 +5629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArcThickness { SMALL = 0, MEDIUM = 1, LARGE = 2, WHOLE = 3 }
+	export enum ArcThickness { SMALL = 'SMALL', MEDIUM = 'MEDIUM', LARGE = 'LARGE', WHOLE = 'WHOLE' }
 
 
 	/** The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts. */
@@ -5788,7 +5788,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArcThicknessOptions { SMALL = 0, MEDIUM = 1, LARGE = 2 }
+	export enum ArcThicknessOptions { SMALL = 'SMALL', MEDIUM = 'MEDIUM', LARGE = 'LARGE' }
 
 
 	/** The conditional formatting of a <code>GaugeChartVisual</code>. */
@@ -6092,7 +6092,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineChartType { LINE = 0, AREA = 1, STACKED_AREA = 2 }
+	export enum LineChartType { LINE = 'LINE', AREA = 'AREA', STACKED_AREA = 'STACKED_AREA' }
 
 
 	/** The series axis configuration of a line chart. */
@@ -6127,7 +6127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MissingDataTreatmentOption { INTERPOLATE = 0, SHOW_AS_ZERO = 1, SHOW_AS_BLANK = 2 }
+	export enum MissingDataTreatmentOption { INTERPOLATE = 'INTERPOLATE', SHOW_AS_ZERO = 'SHOW_AS_ZERO', SHOW_AS_BLANK = 'SHOW_AS_BLANK' }
 
 
 	/** The options that determine the default presentation of all line series in <code>LineChartVisual</code>. */
@@ -6174,9 +6174,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LineInterpolation { LINEAR = 0, SMOOTH = 1, STEPPED = 2 }
+	export enum LineInterpolation { LINEAR = 'LINEAR', SMOOTH = 'SMOOTH', STEPPED = 'STEPPED' }
 
-	export enum LineChartLineStyle { SOLID = 0, DOTTED = 1, DASHED = 2 }
+	export enum LineChartLineStyle { SOLID = 'SOLID', DOTTED = 'DOTTED', DASHED = 'DASHED' }
 
 
 	/** Marker styles options for a line series in <code>LineChartVisual</code>. */
@@ -6204,7 +6204,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineChartMarkerShape { CIRCLE = 0, TRIANGLE = 1, SQUARE = 2, DIAMOND = 3, ROUNDED_SQUARE = 4 }
+	export enum LineChartMarkerShape { CIRCLE = 'CIRCLE', TRIANGLE = 'TRIANGLE', SQUARE = 'SQUARE', DIAMOND = 'DIAMOND', ROUNDED_SQUARE = 'ROUNDED_SQUARE' }
 
 
 	/** <p>The series item configuration of a line chart.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p> */
@@ -6442,7 +6442,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColorFillType { DISCRETE = 0, GRADIENT = 1 }
+	export enum ColorFillType { DISCRETE = 'DISCRETE', GRADIENT = 'GRADIENT' }
 
 
 	/** <p>A tree map.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html">Using tree maps</a> in the <i>Amazon QuickSight User Guide</i>.</p> */
@@ -6682,7 +6682,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MapZoomMode { AUTO = 0, MANUAL = 1 }
+	export enum MapZoomMode { AUTO = 'AUTO', MANUAL = 'MANUAL' }
 
 
 	/** The map style options of the geospatial map. */
@@ -6701,7 +6701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseMapStyleType { LIGHT_GRAY = 0, DARK_GRAY = 1, STREET = 2, IMAGERY = 3 }
+	export enum BaseMapStyleType { LIGHT_GRAY = 'LIGHT_GRAY', DARK_GRAY = 'DARK_GRAY', STREET = 'STREET', IMAGERY = 'IMAGERY' }
 
 
 	/** The point style of the geospatial map. */
@@ -6722,7 +6722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeospatialSelectedPointStyle { POINT = 0, CLUSTER = 1, HEATMAP = 2 }
+	export enum GeospatialSelectedPointStyle { POINT = 'POINT', CLUSTER = 'CLUSTER', HEATMAP = 'HEATMAP' }
 
 
 	/** The cluster marker configuration of the geospatial map selected point style. */
@@ -7115,7 +7115,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FunnelChartMeasureDataLabelStyle { VALUE_ONLY = 0, PERCENTAGE_BY_FIRST_STAGE = 1, PERCENTAGE_BY_PREVIOUS_STAGE = 2, VALUE_AND_PERCENTAGE_BY_FIRST_STAGE = 3, VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE = 4 }
+	export enum FunnelChartMeasureDataLabelStyle { VALUE_ONLY = 'VALUE_ONLY', PERCENTAGE_BY_FIRST_STAGE = 'PERCENTAGE_BY_FIRST_STAGE', PERCENTAGE_BY_PREVIOUS_STAGE = 'PERCENTAGE_BY_PREVIOUS_STAGE', VALUE_AND_PERCENTAGE_BY_FIRST_STAGE = 'VALUE_AND_PERCENTAGE_BY_FIRST_STAGE', VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE = 'VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE' }
 
 
 	/** <p>A scatter plot.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html">Using scatter plots</a> in the <i>Amazon QuickSight User Guide</i>.</p> */
@@ -7467,7 +7467,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BoxPlotFillStyle { SOLID = 0, TRANSPARENT = 1 }
+	export enum BoxPlotFillStyle { SOLID = 'SOLID', TRANSPARENT = 'TRANSPARENT' }
 
 
 	/** <p>A waterfall chart.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html">Using waterfall charts</a> in the <i>Amazon QuickSight User Guide</i>.</p> */
@@ -7683,7 +7683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistogramBinType { BIN_COUNT = 0, BIN_WIDTH = 1 }
+	export enum HistogramBinType { BIN_COUNT = 'BIN_COUNT', BIN_WIDTH = 'BIN_WIDTH' }
 
 
 	/** The options that determine the bin count of a histogram. */
@@ -7845,15 +7845,15 @@ export namespace MyNS {
 
 	}
 
-	export enum WordCloudWordOrientation { HORIZONTAL = 0, HORIZONTAL_AND_VERTICAL = 1 }
+	export enum WordCloudWordOrientation { HORIZONTAL = 'HORIZONTAL', HORIZONTAL_AND_VERTICAL = 'HORIZONTAL_AND_VERTICAL' }
 
-	export enum WordCloudWordScaling { EMPHASIZE = 0, NORMAL = 1 }
+	export enum WordCloudWordScaling { EMPHASIZE = 'EMPHASIZE', NORMAL = 'NORMAL' }
 
-	export enum WordCloudCloudLayout { FLUID = 0, NORMAL = 1 }
+	export enum WordCloudCloudLayout { FLUID = 'FLUID', NORMAL = 'NORMAL' }
 
-	export enum WordCloudWordCasing { LOWER_CASE = 0, EXISTING_CASE = 1 }
+	export enum WordCloudWordCasing { LOWER_CASE = 'LOWER_CASE', EXISTING_CASE = 'EXISTING_CASE' }
 
-	export enum WordCloudWordPadding { NONE = 0, SMALL = 1, MEDIUM = 2, LARGE = 3 }
+	export enum WordCloudWordPadding { NONE = 'NONE', SMALL = 'SMALL', MEDIUM = 'MEDIUM', LARGE = 'LARGE' }
 
 
 	/** <p>An insight visual.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working with insights</a> in the <i>Amazon QuickSight User Guide</i>.</p> */
@@ -7965,7 +7965,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopBottomComputationType { TOP = 0, BOTTOM = 1 }
+	export enum TopBottomComputationType { TOP = 'TOP', BOTTOM = 'BOTTOM' }
 
 
 	/** The top movers and bottom movers computation setup. */
@@ -8011,7 +8011,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopBottomSortOrder { PERCENT_DIFFERENCE = 0, ABSOLUTE_DIFFERENCE = 1 }
+	export enum TopBottomSortOrder { PERCENT_DIFFERENCE = 'PERCENT_DIFFERENCE', ABSOLUTE_DIFFERENCE = 'ABSOLUTE_DIFFERENCE' }
 
 
 	/** The total aggregation computation configuration. */
@@ -8075,7 +8075,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaximumMinimumComputationType { MAXIMUM = 0, MINIMUM = 1 }
+	export enum MaximumMinimumComputationType { MAXIMUM = 'MAXIMUM', MINIMUM = 'MINIMUM' }
 
 
 	/** The metric comparison computation configuration. */
@@ -8276,7 +8276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ForecastComputationSeasonality { AUTOMATIC = 0, CUSTOM = 1 }
+	export enum ForecastComputationSeasonality { AUTOMATIC = 'AUTOMATIC', CUSTOM = 'CUSTOM' }
 
 
 	/** The custom narrative options. */
@@ -8445,9 +8445,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomContentType { IMAGE = 0, OTHER_EMBEDDED_CONTENT = 1 }
+	export enum CustomContentType { IMAGE = 'IMAGE', OTHER_EMBEDDED_CONTENT = 'OTHER_EMBEDDED_CONTENT' }
 
-	export enum CustomContentImageScalingConfiguration { FIT_TO_HEIGHT = 0, FIT_TO_WIDTH = 1, DO_NOT_SCALE = 2, SCALE_TO_VISUAL = 3 }
+	export enum CustomContentImageScalingConfiguration { FIT_TO_HEIGHT = 'FIT_TO_HEIGHT', FIT_TO_WIDTH = 'FIT_TO_WIDTH', DO_NOT_SCALE = 'DO_NOT_SCALE', SCALE_TO_VISUAL = 'SCALE_TO_VISUAL' }
 
 
 	/** <p>An empty visual.</p> <p>Empty visuals are used in layouts but have not been configured to show any data. A new visual created in the Amazon QuickSight console is considered an <code>EmptyVisual</code> until a visual type is selected.</p> */
@@ -8595,7 +8595,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RadarChartShape { CIRCLE = 0, POLYGON = 1 }
+	export enum RadarChartShape { CIRCLE = 'CIRCLE', POLYGON = 'POLYGON' }
 
 
 	/** The series settings of a radar chart. */
@@ -8629,7 +8629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RadarChartAxesRangeScale { AUTO = 0, INDEPENDENT = 1, SHARED = 2 }
+	export enum RadarChartAxesRangeScale { AUTO = 'AUTO', INDEPENDENT = 'INDEPENDENT', SHARED = 'SHARED' }
 
 
 	/** A text box. */
@@ -8757,7 +8757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LayoutElementType { VISUAL = 0, FILTER_CONTROL = 1, PARAMETER_CONTROL = 2, TEXT_BOX = 3 }
+	export enum LayoutElementType { VISUAL = 'VISUAL', FILTER_CONTROL = 'FILTER_CONTROL', PARAMETER_CONTROL = 'PARAMETER_CONTROL', TEXT_BOX = 'TEXT_BOX' }
 
 
 	/** Configuration options for the canvas of a grid layout. */
@@ -8798,7 +8798,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResizeOption { FIXED = 0, RESPONSIVE = 1 }
+	export enum ResizeOption { FIXED = 'FIXED', RESPONSIVE = 'RESPONSIVE' }
 
 
 	/** The configuration of a free-form layout. */
@@ -9256,9 +9256,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PaperSize { US_LETTER = 0, US_LEGAL = 1, US_TABLOID_LEDGER = 2, A0 = 3, A1 = 4, A2 = 5, A3 = 6, A4 = 7, A5 = 8, JIS_B4 = 9, JIS_B5 = 10 }
+	export enum PaperSize { US_LETTER = 'US_LETTER', US_LEGAL = 'US_LEGAL', US_TABLOID_LEDGER = 'US_TABLOID_LEDGER', A0 = 'A0', A1 = 'A1', A2 = 'A2', A3 = 'A3', A4 = 'A4', A5 = 'A5', JIS_B4 = 'JIS_B4', JIS_B5 = 'JIS_B5' }
 
-	export enum PaperOrientation { PORTRAIT = 0, LANDSCAPE = 1 }
+	export enum PaperOrientation { PORTRAIT = 'PORTRAIT', LANDSCAPE = 'LANDSCAPE' }
 
 
 	/** A grid layout to define the placement of sheet control. */
@@ -9292,7 +9292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SheetContentType { PAGINATED = 0, INTERACTIVE = 1 }
+	export enum SheetContentType { PAGINATED = 'PAGINATED', INTERACTIVE = 'INTERACTIVE' }
 
 
 	/** The calculated field of an analysis. */
@@ -9384,7 +9384,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterValueType { MULTI_VALUED = 0, SINGLE_VALUED = 1 }
+	export enum ParameterValueType { MULTI_VALUED = 'MULTI_VALUED', SINGLE_VALUED = 'SINGLE_VALUED' }
 
 
 	/** The default values of the <code>StringParameterDeclaration</code>. */
@@ -9441,7 +9441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValueWhenUnsetOption { RECOMMENDED_VALUE = 0, NULL = 1 }
+	export enum ValueWhenUnsetOption { RECOMMENDED_VALUE = 'RECOMMENDED_VALUE', NULL = 'NULL' }
 
 
 	/** A dataset parameter that is mapped to an analysis parameter. */
@@ -9838,9 +9838,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CategoryFilterMatchOperator { EQUALS = 0, DOES_NOT_EQUAL = 1, CONTAINS = 2, DOES_NOT_CONTAIN = 3, STARTS_WITH = 4, ENDS_WITH = 5 }
+	export enum CategoryFilterMatchOperator { EQUALS = 'EQUALS', DOES_NOT_EQUAL = 'DOES_NOT_EQUAL', CONTAINS = 'CONTAINS', DOES_NOT_CONTAIN = 'DOES_NOT_CONTAIN', STARTS_WITH = 'STARTS_WITH', ENDS_WITH = 'ENDS_WITH' }
 
-	export enum CategoryFilterSelectAllOptions { FILTER_ALL_VALUES = 0 }
+	export enum CategoryFilterSelectAllOptions { FILTER_ALL_VALUES = 'FILTER_ALL_VALUES' }
 
 
 	/** A list of custom filter values. */
@@ -9874,7 +9874,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterNullOption { ALL_VALUES = 0, NULLS_ONLY = 1, NON_NULLS_ONLY = 2 }
+	export enum FilterNullOption { ALL_VALUES = 'ALL_VALUES', NULLS_ONLY = 'NULLS_ONLY', NON_NULLS_ONLY = 'NON_NULLS_ONLY' }
 
 
 	/** A custom filter that filters based on a single value. This filter can be partially matched. */
@@ -10024,7 +10024,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumericEqualityMatchOperator { EQUALS = 0, DOES_NOT_EQUAL = 1 }
+	export enum NumericEqualityMatchOperator { EQUALS = 'EQUALS', DOES_NOT_EQUAL = 'DOES_NOT_EQUAL' }
 
 
 	/** A <code>TimeEqualityFilter</code> filters values that are equal to a given value. */
@@ -10232,9 +10232,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AnchorOption { NOW = 0 }
+	export enum AnchorOption { NOW = 'NOW' }
 
-	export enum RelativeDateType { PREVIOUS = 0, THIS = 1, LAST = 2, NOW = 3, NEXT = 4 }
+	export enum RelativeDateType { PREVIOUS = 'PREVIOUS', THIS = 'THIS', LAST = 'LAST', NOW = 'NOW', NEXT = 'NEXT' }
 
 
 	/** A <code>TopBottomFilter</code> filters values that are at the top or the bottom. */
@@ -10356,9 +10356,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterVisualScope { ALL_VISUALS = 0, SELECTED_VISUALS = 1 }
+	export enum FilterVisualScope { ALL_VISUALS = 'ALL_VISUALS', SELECTED_VISUALS = 'SELECTED_VISUALS' }
 
-	export enum CrossDatasetTypes { ALL_DATASETS = 0, SINGLE_DATASET = 1 }
+	export enum CrossDatasetTypes { ALL_DATASETS = 'ALL_DATASETS', SINGLE_DATASET = 'SINGLE_DATASET' }
 
 
 	/** The general configuration of a column. */
@@ -10382,7 +10382,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnRole { DIMENSION = 0, MEASURE = 1 }
+	export enum ColumnRole { DIMENSION = 'DIMENSION', MEASURE = 'MEASURE' }
 
 
 	/** The color configurations for a column. */
@@ -10426,7 +10426,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpecialValue { EMPTY = 0, NULL = 1, OTHER = 2 }
+	export enum SpecialValue { EMPTY = 'EMPTY', NULL = 'NULL', OTHER = 'OTHER' }
 
 
 	/** The configuration for default analysis settings. */
@@ -10669,7 +10669,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DashboardUIState { EXPANDED = 0, COLLAPSED = 1 }
+	export enum DashboardUIState { EXPANDED = 'EXPANDED', COLLAPSED = 'COLLAPSED' }
 
 
 	/** The visual publish options of a visual in a dashboard */
@@ -10932,7 +10932,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputColumnDataType { STRING = 0, INTEGER = 1, DECIMAL = 2, DATETIME = 3, BIT = 4, BOOLEAN = 5, JSON = 6 }
+	export enum InputColumnDataType { STRING = 'STRING', INTEGER = 'INTEGER', DECIMAL = 'DECIMAL', DATETIME = 'DATETIME', BIT = 'BIT', BOOLEAN = 'BOOLEAN', JSON = 'JSON' }
 
 
 	/** A physical table type built from the results of the custom SQL query. */
@@ -11024,9 +11024,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FileFormat { CSV = 0, TSV = 1, CLF = 2, ELF = 3, XLSX = 4, JSON = 5 }
+	export enum FileFormat { CSV = 'CSV', TSV = 'TSV', CLF = 'CLF', ELF = 'ELF', XLSX = 'XLSX', JSON = 'JSON' }
 
-	export enum TextQualifier { DOUBLE_QUOTE = 0, SINGLE_QUOTE = 1 }
+	export enum TextQualifier { DOUBLE_QUOTE = 'DOUBLE_QUOTE', SINGLE_QUOTE = 'SINGLE_QUOTE' }
 
 
 	/** A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations. */
@@ -11228,7 +11228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnDataType { STRING = 0, INTEGER = 1, DECIMAL = 2, DATETIME = 3 }
+	export enum ColumnDataType { STRING = 'STRING', INTEGER = 'INTEGER', DECIMAL = 'DECIMAL', DATETIME = 'DATETIME' }
 
 
 	/** A transform operation that tags a column with additional information. */
@@ -11272,7 +11272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoSpatialDataRole { COUNTRY = 0, STATE = 1, COUNTY = 2, CITY = 3, POSTCODE = 4, LONGITUDE = 5, LATITUDE = 6 }
+	export enum GeoSpatialDataRole { COUNTRY = 'COUNTRY', STATE = 'STATE', COUNTY = 'COUNTY', CITY = 'CITY', POSTCODE = 'POSTCODE', LONGITUDE = 'LONGITUDE', LATITUDE = 'LATITUDE' }
 
 
 	/** Metadata that contains a description for a column. */
@@ -11315,7 +11315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnTagName { COLUMN_GEOGRAPHIC_ROLE = 0, COLUMN_DESCRIPTION = 1 }
+	export enum ColumnTagName { COLUMN_GEOGRAPHIC_ROLE = 'COLUMN_GEOGRAPHIC_ROLE', COLUMN_DESCRIPTION = 'COLUMN_DESCRIPTION' }
 
 
 	/** A transform operation that overrides the dataset parameter values that are defined in another dataset. */
@@ -11442,7 +11442,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JoinType { INNER = 0, OUTER = 1, LEFT = 2, RIGHT = 3 }
+	export enum JoinType { INNER = 'INNER', OUTER = 'OUTER', LEFT = 'LEFT', RIGHT = 'RIGHT' }
 
 
 	/** Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
@@ -11486,7 +11486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoSpatialCountryCode { US = 0 }
+	export enum GeoSpatialCountryCode { US = 'US' }
 
 
 	/** A FieldFolder element is a folder that contains fields and nested subfolders. */
@@ -11506,11 +11506,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RowLevelPermissionPolicy { GRANT_ACCESS = 0, DENY_ACCESS = 1 }
+	export enum RowLevelPermissionPolicy { GRANT_ACCESS = 'GRANT_ACCESS', DENY_ACCESS = 'DENY_ACCESS' }
 
-	export enum RowLevelPermissionFormatVersion { VERSION_1 = 0, VERSION_2 = 1 }
+	export enum RowLevelPermissionFormatVersion { VERSION_1 = 'VERSION_1', VERSION_2 = 'VERSION_2' }
 
-	export enum Status { ENABLED = 0, DISABLED = 1 }
+	export enum Status { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** A set of rules associated with a tag. */
@@ -12637,7 +12637,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberType { DASHBOARD = 0, ANALYSIS = 1, DATASET = 2 }
+	export enum MemberType { DASHBOARD = 'DASHBOARD', ANALYSIS = 'ANALYSIS', DATASET = 'DATASET' }
 
 
 	/** The response object for this operation. */
@@ -12752,7 +12752,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentStatus { ENABLED = 0, DRAFT = 1, DISABLED = 2 }
+	export enum AssignmentStatus { ENABLED = 'ENABLED', DRAFT = 'DRAFT', DISABLED = 'DISABLED' }
 
 	export interface IdentityMap {
 	}
@@ -12799,7 +12799,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionStatus { INITIALIZED = 0, QUEUED = 1, RUNNING = 2, FAILED = 3, COMPLETED = 4, CANCELLED = 5 }
+	export enum IngestionStatus { INITIALIZED = 'INITIALIZED', QUEUED = 'QUEUED', RUNNING = 'RUNNING', FAILED = 'FAILED', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 	export interface CreateNamespaceResponse {
 		Arn?: string;
@@ -12832,9 +12832,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespaceStatus { CREATED = 0, CREATING = 1, DELETING = 2, RETRYABLE_FAILURE = 3, NON_RETRYABLE_FAILURE = 4 }
+	export enum NamespaceStatus { CREATED = 'CREATED', CREATING = 'CREATING', DELETING = 'DELETING', RETRYABLE_FAILURE = 'RETRYABLE_FAILURE', NON_RETRYABLE_FAILURE = 'NON_RETRYABLE_FAILURE' }
 
-	export enum IdentityStore { QUICKSIGHT = 0 }
+	export enum IdentityStore { QUICKSIGHT = 'QUICKSIGHT' }
 
 	export interface CreateRefreshScheduleResponse {
 		Status?: number | null;
@@ -12886,7 +12886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RefreshInterval { MINUTE15 = 0, MINUTE30 = 1, HOURLY = 2, DAILY = 3, WEEKLY = 4, MONTHLY = 5 }
+	export enum RefreshInterval { MINUTE15 = 'MINUTE15', MINUTE30 = 'MINUTE30', HOURLY = 'HOURLY', DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 
 	/** The refresh on entity for weekly or monthly schedules. */
@@ -12908,11 +12908,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DayOfWeek { SUNDAY = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6 }
+	export enum DayOfWeek { SUNDAY = 'SUNDAY', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY' }
 
 
 	/** This defines the type of ingestion user wants to trigger. This is part of create ingestion request. */
-	export enum IngestionType { INCREMENTAL_REFRESH = 0, FULL_REFRESH = 1 }
+	export enum IngestionType { INCREMENTAL_REFRESH = 'INCREMENTAL_REFRESH', FULL_REFRESH = 'FULL_REFRESH' }
 
 	export interface CreateTemplateResponse {
 		Arn?: string;
@@ -13475,7 +13475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicTimeGranularity { SECOND = 0, MINUTE = 1, HOUR = 2, DAY = 3, WEEK = 4, MONTH = 5, QUARTER = 6, YEAR = 7 }
+	export enum TopicTimeGranularity { SECOND = 'SECOND', MINUTE = 'MINUTE', HOUR = 'HOUR', DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH', QUARTER = 'QUARTER', YEAR = 'YEAR' }
 
 
 	/** A structure that represents a filter used to select items for a topic. */
@@ -13520,9 +13520,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterClass { ENFORCED_VALUE_FILTER = 0, CONDITIONAL_VALUE_FILTER = 1, NAMED_VALUE_FILTER = 2 }
+	export enum FilterClass { ENFORCED_VALUE_FILTER = 'ENFORCED_VALUE_FILTER', CONDITIONAL_VALUE_FILTER = 'CONDITIONAL_VALUE_FILTER', NAMED_VALUE_FILTER = 'NAMED_VALUE_FILTER' }
 
-	export enum NamedFilterType { CATEGORY_FILTER = 0, NUMERIC_EQUALITY_FILTER = 1, NUMERIC_RANGE_FILTER = 2, DATE_RANGE_FILTER = 3, RELATIVE_DATE_FILTER = 4 }
+	export enum NamedFilterType { CATEGORY_FILTER = 'CATEGORY_FILTER', NUMERIC_EQUALITY_FILTER = 'NUMERIC_EQUALITY_FILTER', NUMERIC_RANGE_FILTER = 'NUMERIC_RANGE_FILTER', DATE_RANGE_FILTER = 'DATE_RANGE_FILTER', RELATIVE_DATE_FILTER = 'RELATIVE_DATE_FILTER' }
 
 
 	/** A structure that represents a category filter. */
@@ -13548,9 +13548,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CategoryFilterFunction { EXACT = 0, CONTAINS = 1 }
+	export enum CategoryFilterFunction { EXACT = 'EXACT', CONTAINS = 'CONTAINS' }
 
-	export enum CategoryFilterType { CUSTOM_FILTER = 0, CUSTOM_FILTER_LIST = 1, FILTER_LIST = 2 }
+	export enum CategoryFilterType { CUSTOM_FILTER = 'CUSTOM_FILTER', CUSTOM_FILTER_LIST = 'CUSTOM_FILTER_LIST', FILTER_LIST = 'FILTER_LIST' }
 
 
 	/** A constant used in a category filter. */
@@ -13573,7 +13573,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConstantType { SINGULAR = 0, RANGE = 1, COLLECTIVE = 2 }
+	export enum ConstantType { SINGULAR = 'SINGULAR', RANGE = 'RANGE', COLLECTIVE = 'COLLECTIVE' }
 
 
 	/** A structure that represents a collective constant. */
@@ -13628,7 +13628,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NamedFilterAggType { NO_AGGREGATION = 0, SUM = 1, AVERAGE = 2, COUNT = 3, DISTINCT_COUNT = 4, MAX = 5, MEDIAN = 6, MIN = 7, STDEV = 8, STDEVP = 9, VAR = 10, VARP = 11 }
+	export enum NamedFilterAggType { NO_AGGREGATION = 'NO_AGGREGATION', SUM = 'SUM', AVERAGE = 'AVERAGE', COUNT = 'COUNT', DISTINCT_COUNT = 'DISTINCT_COUNT', MAX = 'MAX', MEDIAN = 'MEDIAN', MIN = 'MIN', STDEV = 'STDEV', STDEVP = 'STDEVP', VAR = 'VAR', VARP = 'VARP' }
 
 
 	/** A filter that filters topics based on the value of a numeric field. The filter includes only topics whose numeric field value falls within the specified range. */
@@ -13728,7 +13728,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicRelativeDateFilterFunction { PREVIOUS = 0, THIS = 1, LAST = 2, NEXT = 3, NOW = 4 }
+	export enum TopicRelativeDateFilterFunction { PREVIOUS = 'PREVIOUS', THIS = 'THIS', LAST = 'LAST', NEXT = 'NEXT', NOW = 'NOW' }
 
 
 	/** Represents a column in a dataset. */
@@ -13782,7 +13782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DefaultAggregation { SUM = 0, MAX = 1, MIN = 2, COUNT = 3, DISTINCT_COUNT = 4, AVERAGE = 5 }
+	export enum DefaultAggregation { SUM = 'SUM', MAX = 'MAX', MIN = 'MIN', COUNT = 'COUNT', DISTINCT_COUNT = 'DISTINCT_COUNT', AVERAGE = 'AVERAGE' }
 
 
 	/** A structure that represents a comparative order. */
@@ -13805,9 +13805,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnOrderingType { GREATER_IS_BETTER = 0, LESSER_IS_BETTER = 1, SPECIFIED = 2 }
+	export enum ColumnOrderingType { GREATER_IS_BETTER = 'GREATER_IS_BETTER', LESSER_IS_BETTER = 'LESSER_IS_BETTER', SPECIFIED = 'SPECIFIED' }
 
-	export enum UndefinedSpecifiedValueType { LEAST = 0, MOST = 1 }
+	export enum UndefinedSpecifiedValueType { LEAST = 'LEAST', MOST = 'MOST' }
 
 
 	/** A structure that represents a semantic type. */
@@ -13848,7 +13848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorSpecifiedAggregation { COUNT = 0, DISTINCT_COUNT = 1, MIN = 2, MAX = 3, MEDIAN = 4, SUM = 5, AVERAGE = 6, STDEV = 7, STDEVP = 8, VAR = 9, VARP = 10, PERCENTILE = 11 }
+	export enum AuthorSpecifiedAggregation { COUNT = 'COUNT', DISTINCT_COUNT = 'DISTINCT_COUNT', MIN = 'MIN', MAX = 'MAX', MEDIAN = 'MEDIAN', SUM = 'SUM', AVERAGE = 'AVERAGE', STDEV = 'STDEV', STDEVP = 'STDEVP', VAR = 'VAR', VARP = 'VARP', PERCENTILE = 'PERCENTILE' }
 
 
 	/** A structure that represents a default formatting definition. */
@@ -13868,7 +13868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisplayFormat { AUTO = 0, PERCENT = 1, CURRENCY = 2, NUMBER = 3, DATE = 4, STRING = 5 }
+	export enum DisplayFormat { AUTO = 'AUTO', PERCENT = 'PERCENT', CURRENCY = 'CURRENCY', NUMBER = 'NUMBER', DATE = 'DATE', STRING = 'STRING' }
 
 
 	/** A structure that represents additional options for display formatting. */
@@ -13918,7 +13918,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicNumericSeparatorSymbol { COMMA = 0, DOT = 1 }
+	export enum TopicNumericSeparatorSymbol { COMMA = 'COMMA', DOT = 'DOT' }
 
 
 	/** A structure that represents a negative format. */
@@ -14089,9 +14089,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertyRole { PRIMARY = 0, ID = 1 }
+	export enum PropertyRole { PRIMARY = 'PRIMARY', ID = 'ID' }
 
-	export enum PropertyUsage { INHERIT = 0, DIMENSION = 1, MEASURE = 2 }
+	export enum PropertyUsage { INHERIT = 'INHERIT', DIMENSION = 'DIMENSION', MEASURE = 'MEASURE' }
 
 
 	/** A structure that represents a metric. */
@@ -14111,7 +14111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NamedEntityAggType { SUM = 0, MIN = 1, MAX = 2, COUNT = 3, AVERAGE = 4, DISTINCT_COUNT = 5, STDEV = 6, STDEVP = 7, VAR = 8, VARP = 9, PERCENTILE = 10, MEDIAN = 11, CUSTOM = 12 }
+	export enum NamedEntityAggType { SUM = 'SUM', MIN = 'MIN', MAX = 'MAX', COUNT = 'COUNT', AVERAGE = 'AVERAGE', DISTINCT_COUNT = 'DISTINCT_COUNT', STDEV = 'STDEV', STDEVP = 'STDEVP', VAR = 'VAR', VARP = 'VARP', PERCENTILE = 'PERCENTILE', MEDIAN = 'MEDIAN', CUSTOM = 'CUSTOM' }
 
 	export interface AggregationFunctionParameters {
 	}
@@ -14148,7 +14148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicScheduleType { HOURLY = 0, DAILY = 1, WEEKLY = 2, MONTHLY = 3 }
+	export enum TopicScheduleType { HOURLY = 'HOURLY', DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY' }
 
 	export interface CreateVPCConnectionResponse {
 		Arn?: string;
@@ -14178,9 +14178,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VPCConnectionResourceStatus { CREATION_IN_PROGRESS = 0, CREATION_SUCCESSFUL = 1, CREATION_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_SUCCESSFUL = 4, UPDATE_FAILED = 5, DELETION_IN_PROGRESS = 6, DELETION_FAILED = 7, DELETED = 8 }
+	export enum VPCConnectionResourceStatus { CREATION_IN_PROGRESS = 'CREATION_IN_PROGRESS', CREATION_SUCCESSFUL = 'CREATION_SUCCESSFUL', CREATION_FAILED = 'CREATION_FAILED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_SUCCESSFUL = 'UPDATE_SUCCESSFUL', UPDATE_FAILED = 'UPDATE_FAILED', DELETION_IN_PROGRESS = 'DELETION_IN_PROGRESS', DELETION_FAILED = 'DELETION_FAILED', DELETED = 'DELETED' }
 
-	export enum VPCConnectionAvailabilityStatus { AVAILABLE = 0, UNAVAILABLE = 1, PARTIALLY_AVAILABLE = 2 }
+	export enum VPCConnectionAvailabilityStatus { AVAILABLE = 'AVAILABLE', UNAVAILABLE = 'UNAVAILABLE', PARTIALLY_AVAILABLE = 'PARTIALLY_AVAILABLE' }
 
 	export interface DeleteAccountCustomizationResponse {
 		RequestId?: string;
@@ -14724,7 +14724,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Edition { STANDARD = 0, ENTERPRISE = 1, ENTERPRISE_AND_Q = 2 }
+	export enum Edition { STANDARD = 'STANDARD', ENTERPRISE = 'ENTERPRISE', ENTERPRISE_AND_Q = 'ENTERPRISE_AND_Q' }
 
 	export interface DescribeAccountSubscriptionResponse {
 		AccountInfo?: AccountInfo;
@@ -14848,7 +14848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisErrorType { ACCESS_DENIED = 0, SOURCE_NOT_FOUND = 1, DATA_SET_NOT_FOUND = 2, INTERNAL_FAILURE = 3, PARAMETER_VALUE_INCOMPATIBLE = 4, PARAMETER_TYPE_INVALID = 5, PARAMETER_NOT_FOUND = 6, COLUMN_TYPE_MISMATCH = 7, COLUMN_GEOGRAPHIC_ROLE_MISMATCH = 8, COLUMN_REPLACEMENT_MISSING = 9 }
+	export enum AnalysisErrorType { ACCESS_DENIED = 'ACCESS_DENIED', SOURCE_NOT_FOUND = 'SOURCE_NOT_FOUND', DATA_SET_NOT_FOUND = 'DATA_SET_NOT_FOUND', INTERNAL_FAILURE = 'INTERNAL_FAILURE', PARAMETER_VALUE_INCOMPATIBLE = 'PARAMETER_VALUE_INCOMPATIBLE', PARAMETER_TYPE_INVALID = 'PARAMETER_TYPE_INVALID', PARAMETER_NOT_FOUND = 'PARAMETER_NOT_FOUND', COLUMN_TYPE_MISMATCH = 'COLUMN_TYPE_MISMATCH', COLUMN_GEOGRAPHIC_ROLE_MISMATCH = 'COLUMN_GEOGRAPHIC_ROLE_MISMATCH', COLUMN_REPLACEMENT_MISSING = 'COLUMN_REPLACEMENT_MISSING' }
 
 
 	/** An object, structure, or sub-structure of an analysis, template, or dashboard. */
@@ -15008,7 +15008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobStatus { QUEUED_FOR_IMMEDIATE_EXECUTION = 0, IN_PROGRESS = 1, SUCCESSFUL = 2, FAILED = 3 }
+	export enum AssetBundleExportJobStatus { QUEUED_FOR_IMMEDIATE_EXECUTION = 'QUEUED_FOR_IMMEDIATE_EXECUTION', IN_PROGRESS = 'IN_PROGRESS', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED' }
 
 
 	/** Describes an error that occurred during an Asset Bundle export job. */
@@ -15033,7 +15033,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportFormat { CLOUDFORMATION_JSON = 0, QUICKSIGHT_JSON = 1 }
+	export enum AssetBundleExportFormat { CLOUDFORMATION_JSON = 'CLOUDFORMATION_JSON', QUICKSIGHT_JSON = 'QUICKSIGHT_JSON' }
 
 
 	/** An optional collection of CloudFormation property configurations that control how the export job is generated. */
@@ -15094,7 +15094,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobVPCConnectionPropertyToOverride { Name = 0, DnsResolvers = 1, RoleArn = 2 }
+	export enum AssetBundleExportJobVPCConnectionPropertyToOverride { Name = 'Name', DnsResolvers = 'DnsResolvers', RoleArn = 'RoleArn' }
 
 
 	/** Controls how a specific <code>RefreshSchedule</code> resource is parameterized in the returned CloudFormation template. */
@@ -15116,7 +15116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobRefreshSchedulePropertyToOverride { StartAfterDateTime = 0 }
+	export enum AssetBundleExportJobRefreshSchedulePropertyToOverride { StartAfterDateTime = 'StartAfterDateTime' }
 
 
 	/** Controls how a specific <code>DataSource</code> resource is parameterized in the returned CloudFormation template. */
@@ -15138,7 +15138,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobDataSourcePropertyToOverride { Name = 0, DisableSsl = 1, SecretArn = 2, Username = 3, Password = 4, Domain = 5, WorkGroup = 6, Host = 7, Port = 8, Database = 9, DataSetName = 10, Catalog = 11, InstanceId = 12, ClusterId = 13, ManifestFileLocation = 14, Warehouse = 15, RoleArn = 16 }
+	export enum AssetBundleExportJobDataSourcePropertyToOverride { Name = 'Name', DisableSsl = 'DisableSsl', SecretArn = 'SecretArn', Username = 'Username', Password = 'Password', Domain = 'Domain', WorkGroup = 'WorkGroup', Host = 'Host', Port = 'Port', Database = 'Database', DataSetName = 'DataSetName', Catalog = 'Catalog', InstanceId = 'InstanceId', ClusterId = 'ClusterId', ManifestFileLocation = 'ManifestFileLocation', Warehouse = 'Warehouse', RoleArn = 'RoleArn' }
 
 
 	/** Controls how a specific <code>DataSet</code> resource is parameterized in the returned CloudFormation template. */
@@ -15160,7 +15160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobDataSetPropertyToOverride { Name = 0 }
+	export enum AssetBundleExportJobDataSetPropertyToOverride { Name = 'Name' }
 
 
 	/** Controls how a specific <code>Theme</code> resource is parameterized in the returned CloudFormation template. */
@@ -15182,7 +15182,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobThemePropertyToOverride { Name = 0 }
+	export enum AssetBundleExportJobThemePropertyToOverride { Name = 'Name' }
 
 
 	/** Controls how a specific <code>Analysis</code> resource is parameterized in the returned CloudFormation template. */
@@ -15204,7 +15204,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobAnalysisPropertyToOverride { Name = 0 }
+	export enum AssetBundleExportJobAnalysisPropertyToOverride { Name = 'Name' }
 
 
 	/** Controls how a specific <code>Dashboard</code> resource is parameterized in the returned CloudFormation template. */
@@ -15226,7 +15226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleExportJobDashboardPropertyToOverride { Name = 0 }
+	export enum AssetBundleExportJobDashboardPropertyToOverride { Name = 'Name' }
 
 	export interface DescribeAssetBundleImportJobResponse {
 		JobStatus?: AssetBundleImportJobStatus;
@@ -15266,7 +15266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleImportJobStatus { QUEUED_FOR_IMMEDIATE_EXECUTION = 0, IN_PROGRESS = 1, SUCCESSFUL = 2, FAILED = 3, FAILED_ROLLBACK_IN_PROGRESS = 4, FAILED_ROLLBACK_COMPLETED = 5, FAILED_ROLLBACK_ERROR = 6 }
+	export enum AssetBundleImportJobStatus { QUEUED_FOR_IMMEDIATE_EXECUTION = 'QUEUED_FOR_IMMEDIATE_EXECUTION', IN_PROGRESS = 'IN_PROGRESS', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', FAILED_ROLLBACK_IN_PROGRESS = 'FAILED_ROLLBACK_IN_PROGRESS', FAILED_ROLLBACK_COMPLETED = 'FAILED_ROLLBACK_COMPLETED', FAILED_ROLLBACK_ERROR = 'FAILED_ROLLBACK_ERROR' }
 
 
 	/** Describes an error that occurred within an Asset Bundle import execution. */
@@ -15625,7 +15625,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetBundleImportFailureAction { DO_NOTHING = 0, ROLLBACK = 1 }
+	export enum AssetBundleImportFailureAction { DO_NOTHING = 'DO_NOTHING', ROLLBACK = 'ROLLBACK' }
 
 	export interface DescribeDashboardResponse {
 		Dashboard?: Dashboard;
@@ -16014,7 +16014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotFileFormatType { CSV = 0, PDF = 1 }
+	export enum SnapshotFileFormatType { CSV = 'CSV', PDF = 'PDF' }
 
 
 	/** A structure that contains information on the Amazon S3 destinations of the generated snapshot. */
@@ -16099,7 +16099,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotJobStatus { QUEUED = 0, RUNNING = 1, COMPLETED = 2, FAILED = 3 }
+	export enum SnapshotJobStatus { QUEUED = 'QUEUED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 	export interface DescribeDashboardSnapshotJobResultResponse {
 		Arn?: string;
@@ -16341,7 +16341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSetImportMode { SPICE = 0, DIRECT_QUERY = 1 }
+	export enum DataSetImportMode { SPICE = 'SPICE', DIRECT_QUERY = 'DIRECT_QUERY' }
 
 	export interface FieldFolderMap {
 	}
@@ -16557,7 +16557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LookbackWindowSizeUnit { HOUR = 0, DAY = 1, WEEK = 2 }
+	export enum LookbackWindowSizeUnit { HOUR = 'HOUR', DAY = 'DAY', WEEK = 'WEEK' }
 
 	export interface DescribeDataSourceResponse {
 		DataSource?: DataSource;
@@ -16619,7 +16619,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceType { ADOBE_ANALYTICS = 0, AMAZON_ELASTICSEARCH = 1, ATHENA = 2, AURORA = 3, AURORA_POSTGRESQL = 4, AWS_IOT_ANALYTICS = 5, GITHUB = 6, JIRA = 7, MARIADB = 8, MYSQL = 9, ORACLE = 10, POSTGRESQL = 11, PRESTO = 12, REDSHIFT = 13, S3 = 14, SALESFORCE = 15, SERVICENOW = 16, SNOWFLAKE = 17, SPARK = 18, SQLSERVER = 19, TERADATA = 20, TWITTER = 21, TIMESTREAM = 22, AMAZON_OPENSEARCH = 23, EXASOL = 24, DATABRICKS = 25 }
+	export enum DataSourceType { ADOBE_ANALYTICS = 'ADOBE_ANALYTICS', AMAZON_ELASTICSEARCH = 'AMAZON_ELASTICSEARCH', ATHENA = 'ATHENA', AURORA = 'AURORA', AURORA_POSTGRESQL = 'AURORA_POSTGRESQL', AWS_IOT_ANALYTICS = 'AWS_IOT_ANALYTICS', GITHUB = 'GITHUB', JIRA = 'JIRA', MARIADB = 'MARIADB', MYSQL = 'MYSQL', ORACLE = 'ORACLE', POSTGRESQL = 'POSTGRESQL', PRESTO = 'PRESTO', REDSHIFT = 'REDSHIFT', S3 = 'S3', SALESFORCE = 'SALESFORCE', SERVICENOW = 'SERVICENOW', SNOWFLAKE = 'SNOWFLAKE', SPARK = 'SPARK', SQLSERVER = 'SQLSERVER', TERADATA = 'TERADATA', TWITTER = 'TWITTER', TIMESTREAM = 'TIMESTREAM', AMAZON_OPENSEARCH = 'AMAZON_OPENSEARCH', EXASOL = 'EXASOL', DATABRICKS = 'DATABRICKS' }
 
 
 	/** Error information for the data source creation or update. */
@@ -16641,7 +16641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceErrorInfoType { ACCESS_DENIED = 0, COPY_SOURCE_NOT_FOUND = 1, TIMEOUT = 2, ENGINE_VERSION_NOT_SUPPORTED = 3, UNKNOWN_HOST = 4, GENERIC_SQL_FAILURE = 5, CONFLICT = 6, UNKNOWN = 7 }
+	export enum DataSourceErrorInfoType { ACCESS_DENIED = 'ACCESS_DENIED', COPY_SOURCE_NOT_FOUND = 'COPY_SOURCE_NOT_FOUND', TIMEOUT = 'TIMEOUT', ENGINE_VERSION_NOT_SUPPORTED = 'ENGINE_VERSION_NOT_SUPPORTED', UNKNOWN_HOST = 'UNKNOWN_HOST', GENERIC_SQL_FAILURE = 'GENERIC_SQL_FAILURE', CONFLICT = 'CONFLICT', UNKNOWN = 'UNKNOWN' }
 
 	export interface DescribeDataSourcePermissionsResponse {
 		DataSourceArn?: string;
@@ -16716,7 +16716,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FolderType { SHARED = 0 }
+	export enum FolderType { SHARED = 'SHARED' }
 
 	export interface DescribeFolderPermissionsResponse {
 		Status?: number | null;
@@ -16951,7 +16951,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionErrorType { FAILURE_TO_ASSUME_ROLE = 0, INGESTION_SUPERSEDED = 1, INGESTION_CANCELED = 2, DATA_SET_DELETED = 3, DATA_SET_NOT_SPICE = 4, S3_UPLOADED_FILE_DELETED = 5, S3_MANIFEST_ERROR = 6, DATA_TOLERANCE_EXCEPTION = 7, SPICE_TABLE_NOT_FOUND = 8, DATA_SET_SIZE_LIMIT_EXCEEDED = 9, ROW_SIZE_LIMIT_EXCEEDED = 10, ACCOUNT_CAPACITY_LIMIT_EXCEEDED = 11, CUSTOMER_ERROR = 12, DATA_SOURCE_NOT_FOUND = 13, IAM_ROLE_NOT_AVAILABLE = 14, CONNECTION_FAILURE = 15, SQL_TABLE_NOT_FOUND = 16, PERMISSION_DENIED = 17, SSL_CERTIFICATE_VALIDATION_FAILURE = 18, OAUTH_TOKEN_FAILURE = 19, SOURCE_API_LIMIT_EXCEEDED_FAILURE = 20, PASSWORD_AUTHENTICATION_FAILURE = 21, SQL_SCHEMA_MISMATCH_ERROR = 22, INVALID_DATE_FORMAT = 23, INVALID_DATAPREP_SYNTAX = 24, SOURCE_RESOURCE_LIMIT_EXCEEDED = 25, SQL_INVALID_PARAMETER_VALUE = 26, QUERY_TIMEOUT = 27, SQL_NUMERIC_OVERFLOW = 28, UNRESOLVABLE_HOST = 29, UNROUTABLE_HOST = 30, SQL_EXCEPTION = 31, S3_FILE_INACCESSIBLE = 32, IOT_FILE_NOT_FOUND = 33, IOT_DATA_SET_FILE_EMPTY = 34, INVALID_DATA_SOURCE_CONFIG = 35, DATA_SOURCE_AUTH_FAILED = 36, DATA_SOURCE_CONNECTION_FAILED = 37, FAILURE_TO_PROCESS_JSON_FILE = 38, INTERNAL_SERVICE_ERROR = 39, REFRESH_SUPPRESSED_BY_EDIT = 40, PERMISSION_NOT_FOUND = 41, ELASTICSEARCH_CURSOR_NOT_ENABLED = 42, CURSOR_NOT_ENABLED = 43, DUPLICATE_COLUMN_NAMES_FOUND = 44 }
+	export enum IngestionErrorType { FAILURE_TO_ASSUME_ROLE = 'FAILURE_TO_ASSUME_ROLE', INGESTION_SUPERSEDED = 'INGESTION_SUPERSEDED', INGESTION_CANCELED = 'INGESTION_CANCELED', DATA_SET_DELETED = 'DATA_SET_DELETED', DATA_SET_NOT_SPICE = 'DATA_SET_NOT_SPICE', S3_UPLOADED_FILE_DELETED = 'S3_UPLOADED_FILE_DELETED', S3_MANIFEST_ERROR = 'S3_MANIFEST_ERROR', DATA_TOLERANCE_EXCEPTION = 'DATA_TOLERANCE_EXCEPTION', SPICE_TABLE_NOT_FOUND = 'SPICE_TABLE_NOT_FOUND', DATA_SET_SIZE_LIMIT_EXCEEDED = 'DATA_SET_SIZE_LIMIT_EXCEEDED', ROW_SIZE_LIMIT_EXCEEDED = 'ROW_SIZE_LIMIT_EXCEEDED', ACCOUNT_CAPACITY_LIMIT_EXCEEDED = 'ACCOUNT_CAPACITY_LIMIT_EXCEEDED', CUSTOMER_ERROR = 'CUSTOMER_ERROR', DATA_SOURCE_NOT_FOUND = 'DATA_SOURCE_NOT_FOUND', IAM_ROLE_NOT_AVAILABLE = 'IAM_ROLE_NOT_AVAILABLE', CONNECTION_FAILURE = 'CONNECTION_FAILURE', SQL_TABLE_NOT_FOUND = 'SQL_TABLE_NOT_FOUND', PERMISSION_DENIED = 'PERMISSION_DENIED', SSL_CERTIFICATE_VALIDATION_FAILURE = 'SSL_CERTIFICATE_VALIDATION_FAILURE', OAUTH_TOKEN_FAILURE = 'OAUTH_TOKEN_FAILURE', SOURCE_API_LIMIT_EXCEEDED_FAILURE = 'SOURCE_API_LIMIT_EXCEEDED_FAILURE', PASSWORD_AUTHENTICATION_FAILURE = 'PASSWORD_AUTHENTICATION_FAILURE', SQL_SCHEMA_MISMATCH_ERROR = 'SQL_SCHEMA_MISMATCH_ERROR', INVALID_DATE_FORMAT = 'INVALID_DATE_FORMAT', INVALID_DATAPREP_SYNTAX = 'INVALID_DATAPREP_SYNTAX', SOURCE_RESOURCE_LIMIT_EXCEEDED = 'SOURCE_RESOURCE_LIMIT_EXCEEDED', SQL_INVALID_PARAMETER_VALUE = 'SQL_INVALID_PARAMETER_VALUE', QUERY_TIMEOUT = 'QUERY_TIMEOUT', SQL_NUMERIC_OVERFLOW = 'SQL_NUMERIC_OVERFLOW', UNRESOLVABLE_HOST = 'UNRESOLVABLE_HOST', UNROUTABLE_HOST = 'UNROUTABLE_HOST', SQL_EXCEPTION = 'SQL_EXCEPTION', S3_FILE_INACCESSIBLE = 'S3_FILE_INACCESSIBLE', IOT_FILE_NOT_FOUND = 'IOT_FILE_NOT_FOUND', IOT_DATA_SET_FILE_EMPTY = 'IOT_DATA_SET_FILE_EMPTY', INVALID_DATA_SOURCE_CONFIG = 'INVALID_DATA_SOURCE_CONFIG', DATA_SOURCE_AUTH_FAILED = 'DATA_SOURCE_AUTH_FAILED', DATA_SOURCE_CONNECTION_FAILED = 'DATA_SOURCE_CONNECTION_FAILED', FAILURE_TO_PROCESS_JSON_FILE = 'FAILURE_TO_PROCESS_JSON_FILE', INTERNAL_SERVICE_ERROR = 'INTERNAL_SERVICE_ERROR', REFRESH_SUPPRESSED_BY_EDIT = 'REFRESH_SUPPRESSED_BY_EDIT', PERMISSION_NOT_FOUND = 'PERMISSION_NOT_FOUND', ELASTICSEARCH_CURSOR_NOT_ENABLED = 'ELASTICSEARCH_CURSOR_NOT_ENABLED', CURSOR_NOT_ENABLED = 'CURSOR_NOT_ENABLED', DUPLICATE_COLUMN_NAMES_FOUND = 'DUPLICATE_COLUMN_NAMES_FOUND' }
 
 
 	/** Information about rows for a data set SPICE ingestion. */
@@ -17004,11 +17004,11 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionRequestSource { MANUAL = 0, SCHEDULED = 1 }
+	export enum IngestionRequestSource { MANUAL = 'MANUAL', SCHEDULED = 'SCHEDULED' }
 
 
 	/** This defines the type of ingestion request. This is returned as part of create ingestion response. */
-	export enum IngestionRequestType { INITIAL_INGESTION = 0, EDIT = 1, INCREMENTAL_REFRESH = 2, FULL_REFRESH = 3 }
+	export enum IngestionRequestType { INITIAL_INGESTION = 'INITIAL_INGESTION', EDIT = 'EDIT', INCREMENTAL_REFRESH = 'INCREMENTAL_REFRESH', FULL_REFRESH = 'FULL_REFRESH' }
 
 	export interface DescribeIpRestrictionResponse {
 		AwsAccountId?: string;
@@ -17110,7 +17110,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NamespaceErrorType { PERMISSION_DENIED = 0, INTERNAL_SERVICE_ERROR = 1 }
+	export enum NamespaceErrorType { PERMISSION_DENIED = 'PERMISSION_DENIED', INTERNAL_SERVICE_ERROR = 'INTERNAL_SERVICE_ERROR' }
 
 	export interface DescribeRefreshScheduleResponse {
 		RefreshSchedule?: RefreshSchedule;
@@ -17272,7 +17272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateErrorType { SOURCE_NOT_FOUND = 0, DATA_SET_NOT_FOUND = 1, INTERNAL_FAILURE = 2, ACCESS_DENIED = 3 }
+	export enum TemplateErrorType { SOURCE_NOT_FOUND = 'SOURCE_NOT_FOUND', DATA_SET_NOT_FOUND = 'DATA_SET_NOT_FOUND', INTERNAL_FAILURE = 'INTERNAL_FAILURE', ACCESS_DENIED = 'ACCESS_DENIED' }
 
 	export interface DescribeTemplateAliasResponse {
 		TemplateAlias?: TemplateAlias;
@@ -17495,9 +17495,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ThemeErrorType { INTERNAL_FAILURE = 0 }
+	export enum ThemeErrorType { INTERNAL_FAILURE = 'INTERNAL_FAILURE' }
 
-	export enum ThemeType { QUICKSIGHT = 0, CUSTOM = 1, ALL = 2 }
+	export enum ThemeType { QUICKSIGHT = 'QUICKSIGHT', CUSTOM = 'CUSTOM', ALL = 'ALL' }
 
 	export interface DescribeThemeAliasResponse {
 		ThemeAlias?: ThemeAlias;
@@ -17646,7 +17646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TopicRefreshStatus { INITIALIZED = 0, RUNNING = 1, FAILED = 2, COMPLETED = 3, CANCELLED = 4 }
+	export enum TopicRefreshStatus { INITIALIZED = 'INITIALIZED', RUNNING = 'RUNNING', FAILED = 'FAILED', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 	export interface DescribeTopicRefreshScheduleResponse {
 		TopicId?: string;
@@ -17778,9 +17778,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UserRole { ADMIN = 0, AUTHOR = 1, READER = 2, RESTRICTED_AUTHOR = 3, RESTRICTED_READER = 4 }
+	export enum UserRole { ADMIN = 'ADMIN', AUTHOR = 'AUTHOR', READER = 'READER', RESTRICTED_AUTHOR = 'RESTRICTED_AUTHOR', RESTRICTED_READER = 'RESTRICTED_READER' }
 
-	export enum IdentityType { IAM = 0, QUICKSIGHT = 1 }
+	export enum IdentityType { IAM = 'IAM', QUICKSIGHT = 'QUICKSIGHT' }
 
 	export interface DescribeVPCConnectionResponse {
 		VPCConnection?: VPCConnection;
@@ -17872,7 +17872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkInterfaceStatus { CREATING = 0, AVAILABLE = 1, CREATION_FAILED = 2, UPDATING = 3, UPDATE_FAILED = 4, DELETING = 5, DELETED = 6, DELETION_FAILED = 7, DELETION_SCHEDULED = 8, ATTACHMENT_FAILED_ROLLBACK_FAILED = 9 }
+	export enum NetworkInterfaceStatus { CREATING = 'CREATING', AVAILABLE = 'AVAILABLE', CREATION_FAILED = 'CREATION_FAILED', UPDATING = 'UPDATING', UPDATE_FAILED = 'UPDATE_FAILED', DELETING = 'DELETING', DELETED = 'DELETED', DELETION_FAILED = 'DELETION_FAILED', DELETION_SCHEDULED = 'DELETION_SCHEDULED', ATTACHMENT_FAILED_ROLLBACK_FAILED = 'ATTACHMENT_FAILED_ROLLBACK_FAILED' }
 
 	export interface GenerateEmbedUrlForAnonymousUserResponse {
 
@@ -19466,9 +19466,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterOperator { StringEquals = 0, StringLike = 1 }
+	export enum FilterOperator { StringEquals = 'StringEquals', StringLike = 'StringLike' }
 
-	export enum AnalysisFilterAttribute { QUICKSIGHT_USER = 0, QUICKSIGHT_VIEWER_OR_OWNER = 1, DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 2, QUICKSIGHT_OWNER = 3, DIRECT_QUICKSIGHT_OWNER = 4, DIRECT_QUICKSIGHT_SOLE_OWNER = 5, ANALYSIS_NAME = 6 }
+	export enum AnalysisFilterAttribute { QUICKSIGHT_USER = 'QUICKSIGHT_USER', QUICKSIGHT_VIEWER_OR_OWNER = 'QUICKSIGHT_VIEWER_OR_OWNER', DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 'DIRECT_QUICKSIGHT_VIEWER_OR_OWNER', QUICKSIGHT_OWNER = 'QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_OWNER = 'DIRECT_QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_SOLE_OWNER = 'DIRECT_QUICKSIGHT_SOLE_OWNER', ANALYSIS_NAME = 'ANALYSIS_NAME' }
 
 	export interface SearchDashboardsResponse {
 		DashboardSummaryList?: Array<DashboardSummary>;
@@ -19517,7 +19517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DashboardFilterAttribute { QUICKSIGHT_USER = 0, QUICKSIGHT_VIEWER_OR_OWNER = 1, DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 2, QUICKSIGHT_OWNER = 3, DIRECT_QUICKSIGHT_OWNER = 4, DIRECT_QUICKSIGHT_SOLE_OWNER = 5, DASHBOARD_NAME = 6 }
+	export enum DashboardFilterAttribute { QUICKSIGHT_USER = 'QUICKSIGHT_USER', QUICKSIGHT_VIEWER_OR_OWNER = 'QUICKSIGHT_VIEWER_OR_OWNER', DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 'DIRECT_QUICKSIGHT_VIEWER_OR_OWNER', QUICKSIGHT_OWNER = 'QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_OWNER = 'DIRECT_QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_SOLE_OWNER = 'DIRECT_QUICKSIGHT_SOLE_OWNER', DASHBOARD_NAME = 'DASHBOARD_NAME' }
 
 	export interface SearchDataSetsResponse {
 		DataSetSummaries?: Array<DataSetSummary>;
@@ -19574,7 +19574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSetFilterAttribute { QUICKSIGHT_VIEWER_OR_OWNER = 0, QUICKSIGHT_OWNER = 1, DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 2, DIRECT_QUICKSIGHT_OWNER = 3, DIRECT_QUICKSIGHT_SOLE_OWNER = 4, DATASET_NAME = 5 }
+	export enum DataSetFilterAttribute { QUICKSIGHT_VIEWER_OR_OWNER = 'QUICKSIGHT_VIEWER_OR_OWNER', QUICKSIGHT_OWNER = 'QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 'DIRECT_QUICKSIGHT_VIEWER_OR_OWNER', DIRECT_QUICKSIGHT_OWNER = 'DIRECT_QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_SOLE_OWNER = 'DIRECT_QUICKSIGHT_SOLE_OWNER', DATASET_NAME = 'DATASET_NAME' }
 
 	export interface SearchDataSourcesResponse {
 		DataSourceSummaries?: Array<DataSourceSummary>;
@@ -19663,7 +19663,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceFilterAttribute { DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 0, DIRECT_QUICKSIGHT_OWNER = 1, DIRECT_QUICKSIGHT_SOLE_OWNER = 2, DATASOURCE_NAME = 3 }
+	export enum DataSourceFilterAttribute { DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 'DIRECT_QUICKSIGHT_VIEWER_OR_OWNER', DIRECT_QUICKSIGHT_OWNER = 'DIRECT_QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_SOLE_OWNER = 'DIRECT_QUICKSIGHT_SOLE_OWNER', DATASOURCE_NAME = 'DATASOURCE_NAME' }
 
 	export interface SearchFoldersResponse {
 		Status?: number | null;
@@ -19708,7 +19708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FolderFilterAttribute { PARENT_FOLDER_ARN = 0, DIRECT_QUICKSIGHT_OWNER = 1, DIRECT_QUICKSIGHT_SOLE_OWNER = 2, DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 3, QUICKSIGHT_OWNER = 4, QUICKSIGHT_VIEWER_OR_OWNER = 5, FOLDER_NAME = 6 }
+	export enum FolderFilterAttribute { PARENT_FOLDER_ARN = 'PARENT_FOLDER_ARN', DIRECT_QUICKSIGHT_OWNER = 'DIRECT_QUICKSIGHT_OWNER', DIRECT_QUICKSIGHT_SOLE_OWNER = 'DIRECT_QUICKSIGHT_SOLE_OWNER', DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = 'DIRECT_QUICKSIGHT_VIEWER_OR_OWNER', QUICKSIGHT_OWNER = 'QUICKSIGHT_OWNER', QUICKSIGHT_VIEWER_OR_OWNER = 'QUICKSIGHT_VIEWER_OR_OWNER', FOLDER_NAME = 'FOLDER_NAME' }
 
 	export interface InvalidRequestException {
 	}
@@ -19775,9 +19775,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupFilterOperator { StartsWith = 0 }
+	export enum GroupFilterOperator { StartsWith = 'StartsWith' }
 
-	export enum GroupFilterAttribute { GROUP_NAME = 0 }
+	export enum GroupFilterAttribute { GROUP_NAME = 'GROUP_NAME' }
 
 	export interface StartAssetBundleExportJobResponse {
 		Arn?: string;
@@ -20555,7 +20555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DashboardBehavior { ENABLED = 0, DISABLED = 1 }
+	export enum DashboardBehavior { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** The source entity of an analysis. */
@@ -20609,7 +20609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationMethodOption { IAM_AND_QUICKSIGHT = 0, IAM_ONLY = 1, ACTIVE_DIRECTORY = 2 }
+	export enum AuthenticationMethodOption { IAM_AND_QUICKSIGHT = 'IAM_AND_QUICKSIGHT', IAM_ONLY = 'IAM_ONLY', ACTIVE_DIRECTORY = 'ACTIVE_DIRECTORY' }
 
 	export interface CancelIngestionRequest {
 	}
@@ -20621,7 +20621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnDataRole { DIMENSION = 0, MEASURE = 1 }
+	export enum ColumnDataRole { DIMENSION = 'DIMENSION', MEASURE = 'MEASURE' }
 
 	export interface CreateAccountCustomizationRequest {
 
@@ -21201,9 +21201,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DashboardErrorType { ACCESS_DENIED = 0, SOURCE_NOT_FOUND = 1, DATA_SET_NOT_FOUND = 2, INTERNAL_FAILURE = 3, PARAMETER_VALUE_INCOMPATIBLE = 4, PARAMETER_TYPE_INVALID = 5, PARAMETER_NOT_FOUND = 6, COLUMN_TYPE_MISMATCH = 7, COLUMN_GEOGRAPHIC_ROLE_MISMATCH = 8, COLUMN_REPLACEMENT_MISSING = 9 }
+	export enum DashboardErrorType { ACCESS_DENIED = 'ACCESS_DENIED', SOURCE_NOT_FOUND = 'SOURCE_NOT_FOUND', DATA_SET_NOT_FOUND = 'DATA_SET_NOT_FOUND', INTERNAL_FAILURE = 'INTERNAL_FAILURE', PARAMETER_VALUE_INCOMPATIBLE = 'PARAMETER_VALUE_INCOMPATIBLE', PARAMETER_TYPE_INVALID = 'PARAMETER_TYPE_INVALID', PARAMETER_NOT_FOUND = 'PARAMETER_NOT_FOUND', COLUMN_TYPE_MISMATCH = 'COLUMN_TYPE_MISMATCH', COLUMN_GEOGRAPHIC_ROLE_MISMATCH = 'COLUMN_GEOGRAPHIC_ROLE_MISMATCH', COLUMN_REPLACEMENT_MISSING = 'COLUMN_REPLACEMENT_MISSING' }
 
-	export enum DatasetParameterValueType { MULTI_VALUED = 0, SINGLE_VALUED = 1 }
+	export enum DatasetParameterValueType { MULTI_VALUED = 'MULTI_VALUED', SINGLE_VALUED = 'SINGLE_VALUED' }
 
 	export interface DeleteAccountCustomizationRequest {
 	}
@@ -21849,7 +21849,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmbeddingIdentityType { IAM = 0, QUICKSIGHT = 1, ANONYMOUS = 2 }
+	export enum EmbeddingIdentityType { IAM = 'IAM', QUICKSIGHT = 'QUICKSIGHT', ANONYMOUS = 'ANONYMOUS' }
 
 	export interface GenerateEmbedUrlForAnonymousUserRequest {
 		SessionLifetimeInMinutes?: number | null;
@@ -22221,7 +22221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumericFilterSelectAllOptions { FILTER_ALL_VALUES = 0 }
+	export enum NumericFilterSelectAllOptions { FILTER_ALL_VALUES = 'FILTER_ALL_VALUES' }
 
 	export interface PutDataSetRefreshPropertiesRequest {
 
@@ -22236,7 +22236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceLinePatternType { SOLID = 0, DASHED = 1, DOTTED = 2 }
+	export enum ReferenceLinePatternType { SOLID = 'SOLID', DASHED = 'DASHED', DOTTED = 'DOTTED' }
 
 	export interface RegisterUserRequest {
 
@@ -22408,9 +22408,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SectionPageBreakStatus { ENABLED = 0, DISABLED = 1 }
+	export enum SectionPageBreakStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum SnapshotFileSheetSelectionScope { ALL_VISUALS = 0, SELECTED_VISUALS = 1 }
+	export enum SnapshotFileSheetSelectionScope { ALL_VISUALS = 'ALL_VISUALS', SELECTED_VISUALS = 'SELECTED_VISUALS' }
 
 
 	/** A structure that contains information about the users that the dashboard snapshot is generated for. */

@@ -98,7 +98,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentUploadAttributesStatus { pending = 0, uploaded = 1, received = 2, processing = 3, success = 4, vbms = 5, error = 6 }
+	export enum DocumentUploadAttributesStatus { pending = 'pending', uploaded = 'uploaded', received = 'received', processing = 'processing', success = 'success', vbms = 'vbms', error = 'error' }
 
 
 	/** Document upload failed */
@@ -243,7 +243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentUploadMetadataBusinessLine { CMP = 0, PMC = 1, INS = 2, EDU = 3, VRE = 4, BVA = 5, FID = 6, NCA = 7, OTH = 8 }
+	export enum DocumentUploadMetadataBusinessLine { CMP = 'CMP', PMC = 'PMC', INS = 'INS', EDU = 'EDU', VRE = 'VRE', BVA = 'BVA', FID = 'FID', NCA = 'NCA', OTH = 'OTH' }
 
 
 	/** Status record for a previously initiated document submission. */

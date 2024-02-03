@@ -447,7 +447,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ViewerProtocolPolicy { 'allow-all' = 0, 'https-only' = 1, 'redirect-to-https' = 2 }
+	export enum ViewerProtocolPolicy { 'allow-all' = 'allow-all', 'https-only' = 'https-only', 'redirect-to-https' = 'redirect-to-https' }
 
 
 	/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
@@ -592,7 +592,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemSelection { none = 0, whitelist = 1, all = 2 }
+	export enum ItemSelection { none = 'none', whitelist = 'whitelist', all = 'all' }
 
 
 	/** Contains a list of cookie names. */
@@ -746,7 +746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriceClass { PriceClass_100 = 0, PriceClass_200 = 1, PriceClass_All = 2 }
+	export enum PriceClass { PriceClass_100 = 'PriceClass_100', PriceClass_200 = 'PriceClass_200', PriceClass_All = 'PriceClass_All' }
 
 
 	/** <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p> <p>If the distribution doesn't use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.</p> <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:</p> <ul> <li> <p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don't support SNI.</p> <ul> <li> <p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients support SNI. </p> </li> <li> <p>To accept HTTPS connections from all viewers, including those that don't support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront.</p> </li> </ul> </li> <li> <p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li> <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p> <ul> <li> <p> <code>ACMCertificateArn</code> </p> </li> <li> <p> <code>IAMCertificateId</code> </p> </li> </ul> </li> </ul> <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
@@ -783,11 +783,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SSLSupportMethod { 'sni-only' = 0, vip = 1, 'static-ip' = 2 }
+	export enum SSLSupportMethod { 'sni-only' = 'sni-only', vip = 'vip', 'static-ip' = 'static-ip' }
 
-	export enum MinimumProtocolVersion { SSLv3 = 0, TLSv1 = 1, TLSv1_2016 = 2, 'TLSv1.1_2016' = 3, 'TLSv1.2_2018' = 4, 'TLSv1.2_2019' = 5, 'TLSv1.2_2021' = 6 }
+	export enum MinimumProtocolVersion { SSLv3 = 'SSLv3', TLSv1 = 'TLSv1', TLSv1_2016 = 'TLSv1_2016', 'TLSv1.1_2016' = 'TLSv1.1_2016', 'TLSv1.2_2018' = 'TLSv1.2_2018', 'TLSv1.2_2019' = 'TLSv1.2_2019', 'TLSv1.2_2021' = 'TLSv1.2_2021' }
 
-	export enum CertificateSource { cloudfront = 0, iam = 1, acm = 2 }
+	export enum CertificateSource { cloudfront = 'cloudfront', iam = 'iam', acm = 'acm' }
 
 
 	/** A complex type that identifies ways in which you want to restrict distribution of your content. */
@@ -835,9 +835,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoRestrictionType { blacklist = 0, whitelist = 1, none = 2 }
+	export enum GeoRestrictionType { blacklist = 'blacklist', whitelist = 'whitelist', none = 'none' }
 
-	export enum HttpVersion { 'http1.1' = 0, http2 = 1, http3 = 2, http2and3 = 3 }
+	export enum HttpVersion { 'http1.1' = 'http1.1', http2 = 'http2', http3 = 'http3', http2and3 = 'http2and3' }
 
 	export interface CNAMEAlreadyExists {
 	}
@@ -1576,7 +1576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CachePolicyHeaderBehavior { none = 0, whitelist = 1 }
+	export enum CachePolicyHeaderBehavior { none = 'none', whitelist = 'whitelist' }
 
 
 	/** An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin. */
@@ -1602,7 +1602,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CachePolicyCookieBehavior { none = 0, whitelist = 1, allExcept = 2, all = 3 }
+	export enum CachePolicyCookieBehavior { none = 'none', whitelist = 'whitelist', allExcept = 'allExcept', all = 'all' }
 
 
 	/** An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin. */
@@ -1985,7 +1985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContinuousDeploymentPolicyType { SingleWeight = 0, SingleHeader = 1 }
+	export enum ContinuousDeploymentPolicyType { SingleWeight = 'SingleWeight', SingleHeader = 'SingleHeader' }
 
 	export interface ContinuousDeploymentPolicyAlreadyExists {
 	}
@@ -2555,7 +2555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FunctionRuntime { 'cloudfront-js-1.0' = 0, 'cloudfront-js-2.0' = 1 }
+	export enum FunctionRuntime { 'cloudfront-js-1.0' = 'cloudfront-js-1.0', 'cloudfront-js-2.0' = 'cloudfront-js-2.0' }
 
 
 	/** Contains metadata about a CloudFront function. */
@@ -2591,7 +2591,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FunctionStage { DEVELOPMENT = 0, LIVE = 1 }
+	export enum FunctionStage { DEVELOPMENT = 'DEVELOPMENT', LIVE = 'LIVE' }
 
 	export interface TooManyFunctions {
 	}
@@ -2898,7 +2898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RealtimeMetricsSubscriptionStatus { Enabled = 0, Disabled = 1 }
+	export enum RealtimeMetricsSubscriptionStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface MonitoringSubscriptionAlreadyExists {
 	}
@@ -2988,11 +2988,11 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginAccessControlSigningProtocols { sigv4 = 0 }
+	export enum OriginAccessControlSigningProtocols { sigv4 = 'sigv4' }
 
-	export enum OriginAccessControlSigningBehaviors { never = 0, always = 1, 'no-override' = 2 }
+	export enum OriginAccessControlSigningBehaviors { never = 'never', always = 'always', 'no-override' = 'no-override' }
 
-	export enum OriginAccessControlOriginTypes { s3 = 0, mediastore = 1 }
+	export enum OriginAccessControlOriginTypes { s3 = 's3', mediastore = 'mediastore' }
 
 	export interface OriginAccessControlAlreadyExists {
 	}
@@ -3113,7 +3113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginRequestPolicyHeaderBehavior { none = 0, whitelist = 1, allViewer = 2, allViewerAndWhitelistCloudFront = 3, allExcept = 4 }
+	export enum OriginRequestPolicyHeaderBehavior { none = 'none', whitelist = 'whitelist', allViewer = 'allViewer', allViewerAndWhitelistCloudFront = 'allViewerAndWhitelistCloudFront', allExcept = 'allExcept' }
 
 
 	/** An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin. */
@@ -3139,7 +3139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginRequestPolicyCookieBehavior { none = 0, whitelist = 1, all = 2, allExcept = 3 }
+	export enum OriginRequestPolicyCookieBehavior { none = 'none', whitelist = 'whitelist', all = 'all', allExcept = 'allExcept' }
 
 
 	/** An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin. */
@@ -3723,7 +3723,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FrameOptionsList { DENY = 0, SAMEORIGIN = 1 }
+	export enum FrameOptionsList { DENY = 'DENY', SAMEORIGIN = 'SAMEORIGIN' }
 
 
 	/** <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's value.</p> <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p> */
@@ -3753,7 +3753,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferrerPolicyList { 'no-referrer' = 0, 'no-referrer-when-downgrade' = 1, origin = 2, 'origin-when-cross-origin' = 3, 'same-origin' = 4, 'strict-origin' = 5, 'strict-origin-when-cross-origin' = 6, 'unsafe-url' = 7 }
+	export enum ReferrerPolicyList { 'no-referrer' = 'no-referrer', 'no-referrer-when-downgrade' = 'no-referrer-when-downgrade', origin = 'origin', 'origin-when-cross-origin' = 'origin-when-cross-origin', 'same-origin' = 'same-origin', 'strict-origin' = 'strict-origin', 'strict-origin-when-cross-origin' = 'strict-origin-when-cross-origin', 'unsafe-url' = 'unsafe-url' }
 
 
 	/** <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p> <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p> */
@@ -5905,9 +5905,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseHeadersPolicyAccessControlAllowMethodsValues { GET = 0, POST = 1, OPTIONS = 2, PUT = 3, DELETE = 4, PATCH = 5, HEAD = 6, ALL = 7 }
+	export enum ResponseHeadersPolicyAccessControlAllowMethodsValues { GET = 'GET', POST = 'POST', OPTIONS = 'OPTIONS', PUT = 'PUT', DELETE = 'DELETE', PATCH = 'PATCH', HEAD = 'HEAD', ALL = 'ALL' }
 
-	export enum ICPRecordalStatus { APPROVED = 0, SUSPENDED = 1, PENDING = 2 }
+	export enum ICPRecordalStatus { APPROVED = 'APPROVED', SUSPENDED = 'SUSPENDED', PENDING = 'PENDING' }
 
 
 	/** <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.</p> <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p> */
@@ -6012,9 +6012,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CachePolicyQueryStringBehavior { none = 0, whitelist = 1, allExcept = 2, all = 3 }
+	export enum CachePolicyQueryStringBehavior { none = 'none', whitelist = 'whitelist', allExcept = 'allExcept', all = 'all' }
 
-	export enum CachePolicyType { managed = 0, custom = 1 }
+	export enum CachePolicyType { managed = 'managed', custom = 'custom' }
 
 
 	/** Contains a cache policy. */
@@ -6098,7 +6098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Format { URLEncoded = 0 }
+	export enum Format { URLEncoded = 'URLEncoded' }
 
 
 	/** A field-level encryption content type profile. */
@@ -6549,7 +6549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginProtocolPolicy { 'http-only' = 0, 'match-viewer' = 1, 'https-only' = 2 }
+	export enum OriginProtocolPolicy { 'http-only' = 'http-only', 'match-viewer' = 'match-viewer', 'https-only' = 'https-only' }
 
 
 	/** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin. */
@@ -6969,7 +6969,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { 'viewer-request' = 0, 'viewer-response' = 1, 'origin-request' = 2, 'origin-response' = 3 }
+	export enum EventType { 'viewer-request' = 'viewer-request', 'viewer-response' = 'viewer-response', 'origin-request' = 'origin-request', 'origin-response' = 'origin-response' }
 
 
 	/** The field-level encryption profile summary. */
@@ -7710,7 +7710,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginRequestPolicyType { managed = 0, custom = 1 }
+	export enum OriginRequestPolicyType { managed = 'managed', custom = 'custom' }
 
 	export interface ListOriginRequestPoliciesRequest {
 	}
@@ -7742,7 +7742,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseHeadersPolicyType { managed = 0, custom = 1 }
+	export enum ResponseHeadersPolicyType { managed = 'managed', custom = 'custom' }
 
 	export interface ListResponseHeadersPoliciesRequest {
 	}
@@ -7782,7 +7782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Method { GET = 0, HEAD = 1, POST = 2, PUT = 3, PATCH = 4, OPTIONS = 5, DELETE = 6 }
+	export enum Method { GET = 'GET', HEAD = 'HEAD', POST = 'POST', PUT = 'PUT', PATCH = 'PATCH', OPTIONS = 'OPTIONS', DELETE = 'DELETE' }
 
 
 	/** A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead. */
@@ -8070,7 +8070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginRequestPolicyQueryStringBehavior { none = 0, whitelist = 1, all = 2, allExcept = 3 }
+	export enum OriginRequestPolicyQueryStringBehavior { none = 'none', whitelist = 'whitelist', all = 'all', allExcept = 'allExcept' }
 
 
 	/** Contains an origin request policy. */
@@ -8277,7 +8277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslProtocol { SSLv3 = 0, TLSv1 = 1, 'TLSv1.1' = 2, 'TLSv1.2' = 3 }
+	export enum SslProtocol { SSLv3 = 'SSLv3', TLSv1 = 'TLSv1', 'TLSv1.1' = 'TLSv1.1', 'TLSv1.2' = 'TLSv1.2' }
 
 
 	/** A summary of the information for a CloudFront streaming distribution. */
@@ -9384,9 +9384,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum TagResource2020_05_31Operation { Tag = 0 }
+	export enum TagResource2020_05_31Operation { Tag = 'Tag' }
 
-	export enum UntagResource2020_05_31Operation { Untag = 0 }
+	export enum UntagResource2020_05_31Operation { Untag = 'Untag' }
 
 }
 

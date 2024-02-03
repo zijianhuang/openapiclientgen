@@ -246,19 +246,19 @@ export namespace MyNS {
 
 	}
 
-	export enum BackgroundTaskFinishedEventDataStatus { finished = 0, failed = 1 }
+	export enum BackgroundTaskFinishedEventDataStatus { finished = 'finished', failed = 'failed' }
 
-	export enum BackgroundTaskFinishedEventDataTask { 'application.stats' = 0 }
+	export enum BackgroundTaskFinishedEventDataTask { 'application.stats' = 'application.stats' }
 
-	export enum BackgroundTaskFinishedEventType { 'background_task.finished' = 0 }
-
-
-	/** An enumeration. */
-	export enum BackgroundTaskOpWebhookStatus { finished = 0, failed = 1 }
+	export enum BackgroundTaskFinishedEventType { 'background_task.finished' = 'background_task.finished' }
 
 
 	/** An enumeration. */
-	export enum BackgroundTaskOpWebhookType { 'application.stats' = 0 }
+	export enum BackgroundTaskOpWebhookStatus { finished = 'finished', failed = 'failed' }
+
+
+	/** An enumeration. */
+	export enum BackgroundTaskOpWebhookType { 'application.stats' = 'application.stats' }
 
 	export interface BackgroundTaskOut {
 
@@ -310,17 +310,17 @@ export namespace MyNS {
 
 	}
 
-	export enum BackgroundTaskOutStatus { running = 0, finished = 1, failed = 2 }
+	export enum BackgroundTaskOutStatus { running = 'running', finished = 'finished', failed = 'failed' }
 
-	export enum BackgroundTaskOutTask { 'endpoint.replay' = 0, 'endpoint.recover' = 1, 'application.stats' = 2 }
-
-
-	/** An enumeration. */
-	export enum BackgroundTaskStatus { running = 0, finished = 1, failed = 2 }
+	export enum BackgroundTaskOutTask { 'endpoint.replay' = 'endpoint.replay', 'endpoint.recover' = 'endpoint.recover', 'application.stats' = 'application.stats' }
 
 
 	/** An enumeration. */
-	export enum BackgroundTaskType { 'endpoint.replay' = 0, 'endpoint.recover' = 1, 'application.stats' = 2 }
+	export enum BackgroundTaskStatus { running = 'running', finished = 'finished', failed = 'failed' }
+
+
+	/** An enumeration. */
+	export enum BackgroundTaskType { 'endpoint.replay' = 'endpoint.replay', 'endpoint.recover' = 'endpoint.recover', 'application.stats' = 'application.stats' }
 
 	export interface DashboardAccessOut {
 
@@ -428,7 +428,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointCreatedEventType { 'endpoint.created' = 0 }
+	export enum EndpointCreatedEventType { 'endpoint.created' = 'endpoint.created' }
 
 
 	/** Sent when an endpoint is deleted. */
@@ -504,7 +504,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointDeletedEventType { 'endpoint.deleted' = 0 }
+	export enum EndpointDeletedEventType { 'endpoint.deleted' = 'endpoint.deleted' }
 
 
 	/** Sent when an endpoint has been automatically disabled after continuous failures. */
@@ -587,7 +587,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointDisabledEventType { 'endpoint.disabled' = 0 }
+	export enum EndpointDisabledEventType { 'endpoint.disabled' = 'endpoint.disabled' }
 
 	export interface EndpointHeadersIn {
 
@@ -1240,7 +1240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointUpdatedEventType { 'endpoint.updated' = 0 }
+	export enum EndpointUpdatedEventType { 'endpoint.updated' = 'endpoint.updated' }
 
 	export interface EventExampleIn {
 
@@ -2334,7 +2334,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageAttemptExhaustedEventType { 'message.attempt.exhausted' = 0 }
+	export enum MessageAttemptExhaustedEventType { 'message.attempt.exhausted' = 'message.attempt.exhausted' }
 
 
 	/**
@@ -2426,7 +2426,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageAttemptFailingEventType { 'message.attempt.failing' = 0 }
+	export enum MessageAttemptFailingEventType { 'message.attempt.failing' = 'message.attempt.failing' }
 
 	export interface MessageIn {
 		application?: ApplicationIn;
@@ -2498,7 +2498,7 @@ export namespace MyNS {
 
 
 	/** Defines the ordering in a listing of results. */
-	export enum Ordering { ascending = 0, descending = 1 }
+	export enum Ordering { ascending = 'ascending', descending = 'descending' }
 
 	export interface RecoverIn {
 
@@ -2553,7 +2553,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecoverOutTask { 'endpoint.recover' = 0 }
+	export enum RecoverOutTask { 'endpoint.recover' = 'endpoint.recover' }
 
 	export interface ReplayIn {
 
@@ -2608,7 +2608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplayOutTask { 'endpoint.replay' = 0 }
+	export enum ReplayOutTask { 'endpoint.replay' = 'endpoint.replay' }
 
 
 	/**

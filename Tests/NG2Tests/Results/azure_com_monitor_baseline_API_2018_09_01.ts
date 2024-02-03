@@ -42,7 +42,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaselineSensitivity { Low = 0, Medium = 1, High = 2 }
+	export enum BaselineSensitivity { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** Represents a baseline metadata value. */
@@ -252,7 +252,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Baseline_GetResultType { Data = 0, Metadata = 1 }
+	export enum Baseline_GetResultType { Data = 'Data', Metadata = 'Metadata' }
 
 }
 

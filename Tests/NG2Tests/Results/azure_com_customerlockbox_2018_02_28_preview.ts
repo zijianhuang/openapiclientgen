@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApprovalDecision { Approve = 0, Deny = 1 }
+	export enum ApprovalDecision { Approve = 'Approve', Deny = 'Deny' }
 
 
 	/** An error additional info for the Lockbox service. */
@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorAdditionalInfoInfoCurrentStatus { Initializing = 0, Pending = 1, Approving = 2, Denying = 3, Approved = 4, Denied = 5, Expired = 6, Revoking = 7, Revoked = 8, Error = 9, Unknown = 10, Completed = 11, Completing = 12 }
+	export enum ErrorAdditionalInfoInfoCurrentStatus { Initializing = 'Initializing', Pending = 'Pending', Approving = 'Approving', Denying = 'Denying', Approved = 'Approved', Denied = 'Denied', Expired = 'Expired', Revoking = 'Revoking', Revoked = 'Revoked', Error = 'Error', Unknown = 'Unknown', Completed = 'Completed', Completing = 'Completing' }
 
 
 	/** An error response body from the Lockbox service. */
@@ -256,7 +256,7 @@ export namespace MyNS {
 
 
 	/** The status of the request. */
-	export enum LockboxRequestStatus { Initializing = 0, Pending = 1, Approving = 2, Denying = 3, Approved = 4, Denied = 5, Expired = 6, Revoking = 7, Revoked = 8, Error = 9, Unknown = 10, Completed = 11, Completing = 12 }
+	export enum LockboxRequestStatus { Initializing = 'Initializing', Pending = 'Pending', Approving = 'Approving', Denying = 'Denying', Approved = 'Approved', Denied = 'Denied', Expired = 'Expired', Revoking = 'Revoking', Revoked = 'Revoked', Error = 'Error', Unknown = 'Unknown', Completed = 'Completed', Completing = 'Completing' }
 
 
 	/** Operation result model for ARM RP */

@@ -380,9 +380,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SasPortalDeviceAirInterfaceRadioTechnology { RADIO_TECHNOLOGY_UNSPECIFIED = 0, E_UTRA = 1, CAMBIUM_NETWORKS = 2, FOUR_G_BBW_SAA_1 = 3, NR = 4, DOODLE_CBRS = 5, CW = 6, REDLINE = 7, TARANA_WIRELESS = 8 }
+	export enum SasPortalDeviceAirInterfaceRadioTechnology { RADIO_TECHNOLOGY_UNSPECIFIED = 'RADIO_TECHNOLOGY_UNSPECIFIED', E_UTRA = 'E_UTRA', CAMBIUM_NETWORKS = 'CAMBIUM_NETWORKS', FOUR_G_BBW_SAA_1 = 'FOUR_G_BBW_SAA_1', NR = 'NR', DOODLE_CBRS = 'DOODLE_CBRS', CW = 'CW', REDLINE = 'REDLINE', TARANA_WIRELESS = 'TARANA_WIRELESS' }
 
-	export enum SasPortalDeviceConfigCategory { DEVICE_CATEGORY_UNSPECIFIED = 0, DEVICE_CATEGORY_A = 1, DEVICE_CATEGORY_B = 2 }
+	export enum SasPortalDeviceConfigCategory { DEVICE_CATEGORY_UNSPECIFIED = 'DEVICE_CATEGORY_UNSPECIFIED', DEVICE_CATEGORY_A = 'DEVICE_CATEGORY_A', DEVICE_CATEGORY_B = 'DEVICE_CATEGORY_B' }
 
 
 	/** Information about the device installation parameters. */
@@ -496,7 +496,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SasPortalInstallationParamsHeightType { HEIGHT_TYPE_UNSPECIFIED = 0, HEIGHT_TYPE_AGL = 1, HEIGHT_TYPE_AMSL = 2 }
+	export enum SasPortalInstallationParamsHeightType { HEIGHT_TYPE_UNSPECIFIED = 'HEIGHT_TYPE_UNSPECIFIED', HEIGHT_TYPE_AGL = 'HEIGHT_TYPE_AGL', HEIGHT_TYPE_AMSL = 'HEIGHT_TYPE_AMSL' }
 
 
 	/** Information about the model of the device. */
@@ -547,7 +547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SasPortalDeviceConfigState { DEVICE_CONFIG_STATE_UNSPECIFIED = 0, DRAFT = 1, FINAL = 2 }
+	export enum SasPortalDeviceConfigState { DEVICE_CONFIG_STATE_UNSPECIFIED = 'DEVICE_CONFIG_STATE_UNSPECIFIED', DRAFT = 'DRAFT', FINAL = 'FINAL' }
 
 
 	/** Device data overridable by both SAS Portal and registration requests. */
@@ -643,7 +643,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SasPortalNrqzValidationState { STATE_UNSPECIFIED = 0, DRAFT = 1, FINAL = 2 }
+	export enum SasPortalNrqzValidationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DRAFT = 'DRAFT', FINAL = 'FINAL' }
 
 
 	/** Device grant. It is an authorization provided by the Spectrum Access System to a device to transmit using specified operating parameters after a successful heartbeat by the device. */
@@ -710,7 +710,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SasPortalDeviceGrantChannelType { CHANNEL_TYPE_UNSPECIFIED = 0, CHANNEL_TYPE_GAA = 1, CHANNEL_TYPE_PAL = 2 }
+	export enum SasPortalDeviceGrantChannelType { CHANNEL_TYPE_UNSPECIFIED = 'CHANNEL_TYPE_UNSPECIFIED', CHANNEL_TYPE_GAA = 'CHANNEL_TYPE_GAA', CHANNEL_TYPE_PAL = 'CHANNEL_TYPE_PAL' }
 
 
 	/** An entry in a DPA's move list. */
@@ -736,9 +736,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SasPortalDeviceGrantState { GRANT_STATE_UNSPECIFIED = 0, GRANT_STATE_GRANTED = 1, GRANT_STATE_TERMINATED = 2, GRANT_STATE_SUSPENDED = 3, GRANT_STATE_AUTHORIZED = 4, GRANT_STATE_EXPIRED = 5 }
+	export enum SasPortalDeviceGrantState { GRANT_STATE_UNSPECIFIED = 'GRANT_STATE_UNSPECIFIED', GRANT_STATE_GRANTED = 'GRANT_STATE_GRANTED', GRANT_STATE_TERMINATED = 'GRANT_STATE_TERMINATED', GRANT_STATE_SUSPENDED = 'GRANT_STATE_SUSPENDED', GRANT_STATE_AUTHORIZED = 'GRANT_STATE_AUTHORIZED', GRANT_STATE_EXPIRED = 'GRANT_STATE_EXPIRED' }
 
-	export enum SasPortalDeviceState { DEVICE_STATE_UNSPECIFIED = 0, RESERVED = 1, REGISTERED = 2, DEREGISTERED = 3 }
+	export enum SasPortalDeviceState { DEVICE_STATE_UNSPECIFIED = 'DEVICE_STATE_UNSPECIFIED', RESERVED = 'RESERVED', REGISTERED = 'REGISTERED', DEREGISTERED = 'DEREGISTERED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -1003,7 +1003,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SasPortalMigrateOrganizationMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 0, OPERATION_STATE_PENDING = 1, OPERATION_STATE_RUNNING = 2, OPERATION_STATE_SUCCEEDED = 3, OPERATION_STATE_FAILED = 4 }
+	export enum SasPortalMigrateOrganizationMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 'OPERATION_STATE_UNSPECIFIED', OPERATION_STATE_PENDING = 'OPERATION_STATE_PENDING', OPERATION_STATE_RUNNING = 'OPERATION_STATE_RUNNING', OPERATION_STATE_SUCCEEDED = 'OPERATION_STATE_SUCCEEDED', OPERATION_STATE_FAILED = 'OPERATION_STATE_FAILED' }
 
 
 	/** Request for [MigrateOrganization]. [spectrum.sas.portal.v1alpha1.Provisioning.MigrateOrganization]. GCP Project, Organization Info, and caller's GAIA ID should be retrieved from the RPC handler, and used to check authorization on SAS Portal organization and to create GCP Projects. */

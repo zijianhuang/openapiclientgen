@@ -144,7 +144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentType { PlainText = 0, SSML = 1, CustomPayload = 2 }
+	export enum ContentType { PlainText = 'PlainText', SSML = 'SSML', CustomPayload = 'CustomPayload' }
 
 
 	/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.  */
@@ -166,9 +166,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { BUILDING = 0, READY = 1, READY_BASIC_TESTING = 2, FAILED = 3, NOT_BUILT = 4 }
+	export enum Status { BUILDING = 'BUILDING', READY = 'READY', READY_BASIC_TESTING = 'READY_BASIC_TESTING', FAILED = 'FAILED', NOT_BUILT = 'NOT_BUILT' }
 
-	export enum Locale { 'de-DE' = 0, 'en-AU' = 1, 'en-GB' = 2, 'en-IN' = 3, 'en-US' = 4, 'es-419' = 5, 'es-ES' = 6, 'es-US' = 7, 'fr-FR' = 8, 'fr-CA' = 9, 'it-IT' = 10, 'ja-JP' = 11, 'ko-KR' = 12 }
+	export enum Locale { 'de-DE' = 'de-DE', 'en-AU' = 'en-AU', 'en-GB' = 'en-GB', 'en-IN' = 'en-IN', 'en-US' = 'en-US', 'es-419' = 'es-419', 'es-ES' = 'es-ES', 'es-US' = 'es-US', 'fr-FR' = 'fr-FR', 'fr-CA' = 'fr-CA', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'ko-KR' = 'ko-KR' }
 
 	export interface NotFoundException {
 	}
@@ -321,9 +321,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotConstraint { Required = 0, Optional = 1 }
+	export enum SlotConstraint { Required = 'Required', Optional = 'Optional' }
 
-	export enum ObfuscationSetting { NONE = 0, DEFAULT_OBFUSCATION = 1 }
+	export enum ObfuscationSetting { NONE = 'NONE', DEFAULT_OBFUSCATION = 'DEFAULT_OBFUSCATION' }
 
 
 	/** Contains the default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. */
@@ -433,7 +433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FulfillmentActivityType { ReturnIntent = 0, CodeHook = 1 }
+	export enum FulfillmentActivityType { ReturnIntent = 'ReturnIntent', CodeHook = 'CodeHook' }
 
 
 	/** Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>. */
@@ -580,7 +580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotValueSelectionStrategy { ORIGINAL_VALUE = 0, TOP_RESOLUTION = 1 }
+	export enum SlotValueSelectionStrategy { ORIGINAL_VALUE = 'ORIGINAL_VALUE', TOP_RESOLUTION = 'TOP_RESOLUTION' }
 
 
 	/** Provides configuration information for a slot type. */
@@ -765,9 +765,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogType { AUDIO = 0, TEXT = 1 }
+	export enum LogType { AUDIO = 'AUDIO', TEXT = 'TEXT' }
 
-	export enum Destination { CLOUDWATCH_LOGS = 0, S3 = 1 }
+	export enum Destination { CLOUDWATCH_LOGS = 'CLOUDWATCH_LOGS', S3 = 'S3' }
 
 	export interface GetBotAliasesResponse {
 		BotAliases?: Array<BotAliasMetadata>;
@@ -854,7 +854,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { Facebook = 0, Slack = 1, 'Twilio-Sms' = 2, Kik = 3 }
+	export enum ChannelType { Facebook = 'Facebook', Slack = 'Slack', 'Twilio-Sms' = 'Twilio-Sms', Kik = 'Kik' }
 
 	export interface ChannelConfigurationMap {
 	}
@@ -866,7 +866,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelStatus { IN_PROGRESS = 0, CREATED = 1, FAILED = 2 }
+	export enum ChannelStatus { IN_PROGRESS = 'IN_PROGRESS', CREATED = 'CREATED', FAILED = 'FAILED' }
 
 	export interface GetBotChannelAssociationsResponse {
 		botChannelAssociations?: Array<BotChannelAssociation>;
@@ -1108,11 +1108,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { BOT = 0, INTENT = 1, SLOT_TYPE = 2 }
+	export enum ResourceType { BOT = 'BOT', INTENT = 'INTENT', SLOT_TYPE = 'SLOT_TYPE' }
 
-	export enum ExportType { ALEXA_SKILLS_KIT = 0, LEX = 1 }
+	export enum ExportType { ALEXA_SKILLS_KIT = 'ALEXA_SKILLS_KIT', LEX = 'LEX' }
 
-	export enum ExportStatus { IN_PROGRESS = 0, READY = 1, FAILED = 2 }
+	export enum ExportStatus { IN_PROGRESS = 'IN_PROGRESS', READY = 'READY', FAILED = 'FAILED' }
 
 	export interface GetImportResponse {
 		name?: string;
@@ -1143,9 +1143,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MergeStrategy { OVERWRITE_LATEST = 0, FAIL_ON_CONFLICT = 1 }
+	export enum MergeStrategy { OVERWRITE_LATEST = 'OVERWRITE_LATEST', FAIL_ON_CONFLICT = 'FAIL_ON_CONFLICT' }
 
-	export enum ImportStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILED = 2 }
+	export enum ImportStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', FAILED = 'FAILED' }
 
 	export interface GetIntentResponse {
 		name?: string;
@@ -1284,9 +1284,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
+	export enum MigrationStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
-	export enum MigrationStrategy { CREATE_NEW = 0, UPDATE_EXISTING = 1 }
+	export enum MigrationStrategy { CREATE_NEW = 'CREATE_NEW', UPDATE_EXISTING = 'UPDATE_EXISTING' }
 
 
 	/** Provides information about alerts and warnings that Amazon Lex sends during a migration. The alerts include information about how to resolve the issue. */
@@ -1310,7 +1310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationAlertType { ERROR = 0, WARN = 1 }
+	export enum MigrationAlertType { ERROR = 'ERROR', WARN = 'WARN' }
 
 	export interface GetMigrationsResponse {
 		migrationSummaries?: Array<MigrationSummary>;
@@ -2183,9 +2183,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationSortAttribute { V1_BOT_NAME = 0, MIGRATION_DATE_TIME = 1 }
+	export enum MigrationSortAttribute { V1_BOT_NAME = 'V1_BOT_NAME', MIGRATION_DATE_TIME = 'MIGRATION_DATE_TIME' }
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface GetMigrationsRequest {
 	}
@@ -2227,7 +2227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusType { Detected = 0, Missed = 1 }
+	export enum StatusType { Detected = 'Detected', Missed = 'Missed' }
 
 	export interface GetUtterancesViewRequest {
 	}
@@ -2249,7 +2249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessBehavior { SAVE = 0, BUILD = 1 }
+	export enum ProcessBehavior { SAVE = 'SAVE', BUILD = 'BUILD' }
 
 	export interface PutBotAliasRequest {
 		description?: string;
@@ -3180,7 +3180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetUtterancesViewView { aggregation = 0 }
+	export enum GetUtterancesViewView { aggregation = 'aggregation' }
 
 	export interface TagResourcePostBody {
 

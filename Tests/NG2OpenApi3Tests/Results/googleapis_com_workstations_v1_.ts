@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -413,7 +413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GceRegionalPersistentDiskReclaimPolicy { RECLAIM_POLICY_UNSPECIFIED = 0, DELETE = 1, RETAIN = 2 }
+	export enum GceRegionalPersistentDiskReclaimPolicy { RECLAIM_POLICY_UNSPECIFIED = 'RECLAIM_POLICY_UNSPECIFIED', DELETE = 'DELETE', RETAIN = 'RETAIN' }
 
 
 	/** Request message for GenerateAccessToken. */
@@ -1026,7 +1026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkstationState { STATE_UNSPECIFIED = 0, STATE_STARTING = 1, STATE_RUNNING = 2, STATE_STOPPING = 3, STATE_STOPPED = 4 }
+	export enum WorkstationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STATE_STARTING = 'STATE_STARTING', STATE_RUNNING = 'STATE_RUNNING', STATE_STOPPING = 'STATE_STOPPING', STATE_STOPPED = 'STATE_STOPPED' }
 
 
 	/** Response message for ListWorkstationClusters. */

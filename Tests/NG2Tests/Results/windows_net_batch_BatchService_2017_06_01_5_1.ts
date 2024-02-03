@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeAgentSkuOsType { linux = 0, windows = 1 }
+	export enum NodeAgentSkuOsType { linux = 'linux', windows = 'windows' }
 
 	export interface ImageReference {
 
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoPoolSpecificationPoolLifetimeOption { jobSchedule = 0, job = 1 }
+	export enum AutoPoolSpecificationPoolLifetimeOption { jobSchedule = 'jobSchedule', job = 'job' }
 
 	export interface AutoScaleRun {
 		error?: AutoScaleRunError;
@@ -339,9 +339,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoUserSpecificationElevationLevel { nonAdmin = 0, admin = 1 }
+	export enum AutoUserSpecificationElevationLevel { nonAdmin = 'nonAdmin', admin = 'admin' }
 
-	export enum AutoUserSpecificationScope { task = 0, pool = 1 }
+	export enum AutoUserSpecificationScope { task = 'task', pool = 'pool' }
 
 	export interface BatchError {
 		code?: string | null;
@@ -445,7 +445,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificatePreviousState { active = 0, deleting = 1, deleteFailed = 2 }
+	export enum CertificatePreviousState { active = 'active', deleting = 'deleting', deleteFailed = 'deleteFailed' }
 
 	export interface CertificateAddParameter {
 		certificateFormat?: CertificateAddParameterCertificateFormat | null;
@@ -488,7 +488,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateAddParameterCertificateFormat { pfx = 0, cer = 1 }
+	export enum CertificateAddParameterCertificateFormat { pfx = 'pfx', cer = 'cer' }
 
 	export interface CertificateListResult {
 		'odata.nextLink'?: string | null;
@@ -551,7 +551,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateReferenceStoreLocation { currentUser = 0, localMachine = 1 }
+	export enum CertificateReferenceStoreLocation { currentUser = 'currentUser', localMachine = 'localMachine' }
 
 
 	/**
@@ -560,7 +560,7 @@ export namespace MyNS {
 	 *  deleting - The user has requested that the certificate be deleted, but the delete operation has not yet completed. You may not reference the certificate when creating or updating pools.
 	 *  deletefailed - The user requested that the certificate be deleted, but there are pools that still have references to the certificate, or it is still installed on one or more compute nodes. (The latter can occur if the certificate has been removed from the pool, but the node has not yet restarted. Nodes refresh their certificates only when they restart.) You may use the cancel certificate delete operation to cancel the delete, or the delete certificate operation to retry the delete.
 	 */
-	export enum CertificateState { active = 0, deleting = 1, deleteFailed = 2 }
+	export enum CertificateState { active = 'active', deleting = 'deleting', deleteFailed = 'deleteFailed' }
 
 	export interface CloudJob {
 
@@ -771,11 +771,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudJobOnAllTasksComplete { noAction = 0, terminateJob = 1 }
+	export enum CloudJobOnAllTasksComplete { noAction = 'noAction', terminateJob = 'terminateJob' }
 
-	export enum CloudJobOnTaskFailure { noAction = 0, performExitOptionsJobAction = 1 }
+	export enum CloudJobOnTaskFailure { noAction = 'noAction', performExitOptionsJobAction = 'performExitOptionsJobAction' }
 
-	export enum CloudJobPreviousState { active = 0, disabling = 1, disabled = 2, enabling = 3, terminating = 4, completed = 5, deleting = 6 }
+	export enum CloudJobPreviousState { active = 'active', disabling = 'disabling', disabled = 'disabled', enabling = 'enabling', terminating = 'terminating', completed = 'completed', deleting = 'deleting' }
 
 	export interface CloudJobListPreparationAndReleaseTaskStatusResult {
 		'odata.nextLink'?: string | null;
@@ -921,7 +921,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudJobSchedulePreviousState { active = 0, completed = 1, disabled = 2, terminating = 3, deleting = 4 }
+	export enum CloudJobSchedulePreviousState { active = 'active', completed = 'completed', disabled = 'disabled', terminating = 'terminating', deleting = 'deleting' }
 
 	export interface CloudJobScheduleListResult {
 		'odata.nextLink'?: string | null;
@@ -1103,7 +1103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudPoolAllocationState { steady = 0, resizing = 1, stopping = 2 }
+	export enum CloudPoolAllocationState { steady = 'steady', resizing = 'resizing', stopping = 'stopping' }
 
 	export interface ResizeError {
 		code?: string | null;
@@ -1122,7 +1122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudPoolState { active = 0, deleting = 1, upgrading = 2 }
+	export enum CloudPoolState { active = 'active', deleting = 'deleting', upgrading = 'upgrading' }
 
 	export interface UserAccount {
 
@@ -1363,7 +1363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudTaskPreviousState { active = 0, preparing = 1, running = 2, completed = 3 }
+	export enum CloudTaskPreviousState { active = 'active', preparing = 'preparing', running = 'running', completed = 'completed' }
 
 	export interface ResourceFile {
 
@@ -1518,9 +1518,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubtaskInformationPreviousState { preparing = 0, running = 1, completed = 2 }
+	export enum SubtaskInformationPreviousState { preparing = 'preparing', running = 'running', completed = 'completed' }
 
-	export enum SubtaskInformationResult { success = 0, failure = 1 }
+	export enum SubtaskInformationResult { success = 'success', failure = 'failure' }
 
 	export interface ComputeNode {
 
@@ -1711,9 +1711,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeNodeSchedulingState { enabled = 0, disabled = 1 }
+	export enum ComputeNodeSchedulingState { enabled = 'enabled', disabled = 'disabled' }
 
-	export enum ComputeNodeState { idle = 0, rebooting = 1, reimaging = 2, running = 3, unusable = 4, creating = 5, starting = 6, waitingForStartTask = 7, startTaskFailed = 8, unknown = 9, leavingPool = 10, offline = 11, preempted = 12 }
+	export enum ComputeNodeState { idle = 'idle', rebooting = 'rebooting', reimaging = 'reimaging', running = 'running', unusable = 'unusable', creating = 'creating', starting = 'starting', waitingForStartTask = 'waitingForStartTask', startTaskFailed = 'startTaskFailed', unknown = 'unknown', leavingPool = 'leavingPool', offline = 'offline', preempted = 'preempted' }
 
 
 	/**
@@ -1724,7 +1724,7 @@ export namespace MyNS {
 	 *  retaineddata - Allow currently running tasks to complete, then wait for all task data retention periods to expire. Schedule no new tasks while waiting. Remove nodes when all task retention periods have expired.
 	 *  The default value is requeue.
 	 */
-	export enum ComputeNodeDeallocationOption { requeue = 0, terminate = 1, taskCompletion = 2, retainedData = 3 }
+	export enum ComputeNodeDeallocationOption { requeue = 'requeue', terminate = 'terminate', taskCompletion = 'taskCompletion', retainedData = 'retainedData' }
 
 	export interface ComputeNodeEndpointConfiguration {
 
@@ -1791,7 +1791,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InboundEndpointProtocol { tcp = 0, udp = 1 }
+	export enum InboundEndpointProtocol { tcp = 'tcp', udp = 'udp' }
 
 	export interface ComputeNodeGetRemoteLoginSettingsResult {
 
@@ -1929,9 +1929,9 @@ export namespace MyNS {
 	 *  nonAdmin - The user is a standard user without elevated access.
 	 *  admin - The user is a user with elevated access and operates with full Administrator permissions.
 	 */
-	export enum ElevationLevel { nonAdmin = 0, admin = 1 }
+	export enum ElevationLevel { nonAdmin = 'nonAdmin', admin = 'admin' }
 
-	export enum ErrorCategory { userError = 0, serverError = 1 }
+	export enum ErrorCategory { userError = 'userError', serverError = 'serverError' }
 
 	export interface ErrorMessage {
 		lang?: string | null;
@@ -2057,9 +2057,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExitOptionsDependencyAction { satisfy = 0, block = 1 }
+	export enum ExitOptionsDependencyAction { satisfy = 'satisfy', block = 'block' }
 
-	export enum ExitOptionsJobAction { none = 0, disable = 1, terminate = 2 }
+	export enum ExitOptionsJobAction { none = 'none', disable = 'disable', terminate = 'terminate' }
 
 	export interface FileProperties {
 
@@ -2217,7 +2217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkSecurityGroupRuleAccess { allow = 0, deny = 1 }
+	export enum NetworkSecurityGroupRuleAccess { allow = 'allow', deny = 'deny' }
 
 	export interface JobAddParameter {
 
@@ -2363,7 +2363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobDisableParameterDisableTasks { requeue = 0, terminate = 1, wait = 2 }
+	export enum JobDisableParameterDisableTasks { requeue = 'requeue', terminate = 'terminate', wait = 'wait' }
 
 	export interface JobExecutionInformation {
 
@@ -2682,7 +2682,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPreparationTaskExecutionInformationState { running = 0, completed = 1 }
+	export enum JobPreparationTaskExecutionInformationState { running = 'running', completed = 'completed' }
 
 
 	/** The Job Release task runs when the job ends, because of one of the following: The user calls the Terminate Job API, or the Delete Job API while the job is still active, the job's maximum wall clock time constraint is reached, and the job is still active, or the job's Job Manager task completed, and the job is configured to terminate when the Job Manager completes. The Job Release task runs on each compute node where tasks of the job have run and the Job Preparation task ran and completed. If you reimage a compute node after it has run the Job Preparation task, and the job ends without any further tasks of the job running on that compute node (and hence the Job Preparation task does not re-run), then the Job Release task does not run on that node. If a compute node reboots while the Job Release task is still running, the Job Release task runs again when the compute node starts up. The job is not marked as complete until all Job Release tasks have completed. The Job Release task runs in the background. It does not occupy a scheduling slot; that is, it does not count towards the maxTasksPerNode limit specified on the pool. */
@@ -2899,7 +2899,7 @@ export namespace MyNS {
 	 *  completed - The schedule has terminated, either by reaching its end time or by the user terminating it explicitly.
 	 *  deleting - The user has requested that the schedule be deleted, but the delete operation is still in progress. The scheduler will not initiate any new jobs for this schedule, and will delete any existing jobs and tasks under the schedule, including any active job. The schedule will be deleted when all jobs and tasks under the schedule have been deleted.
 	 */
-	export enum JobScheduleState { active = 0, completed = 1, disabled = 2, terminating = 3, deleting = 4 }
+	export enum JobScheduleState { active = 'active', completed = 'completed', disabled = 'disabled', terminating = 'terminating', deleting = 'deleting' }
 
 	export interface JobScheduleStatistics {
 
@@ -3153,7 +3153,7 @@ export namespace MyNS {
 	 *  completed - all tasks have terminated, and the system will not accept any more tasks or any further changes to the job.
 	 *  deleting - a user has requested that the job be deleted, but the delete operation is still in progress (for example, because the system is still terminating running tasks).
 	 */
-	export enum JobState { active = 0, disabling = 1, disabled = 2, enabling = 3, terminating = 4, completed = 5, deleting = 6 }
+	export enum JobState { active = 'active', disabling = 'disabling', disabled = 'disabled', enabling = 'enabling', terminating = 'terminating', completed = 'completed', deleting = 'deleting' }
 
 	export interface JobStatistics {
 
@@ -3452,7 +3452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeDisableSchedulingParameterNodeDisableSchedulingOption { requeue = 0, terminate = 1, taskCompletion = 2 }
+	export enum NodeDisableSchedulingParameterNodeDisableSchedulingOption { requeue = 'requeue', terminate = 'terminate', taskCompletion = 'taskCompletion' }
 
 	export interface NodeFile {
 		isDirectory?: boolean | null;
@@ -3660,7 +3660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSDiskCaching { none = 0, readOnly = 1, readWrite = 2 }
+	export enum OSDiskCaching { none = 'none', readOnly = 'readOnly', readWrite = 'readWrite' }
 
 
 	/**
@@ -3668,7 +3668,7 @@ export namespace MyNS {
 	 *  noAction - do nothing. The job remains active unless terminated or disabled by some other means.
 	 *  terminateJob - terminate the job. The job's terminateReason is set to 'AllTasksComplete'.
 	 */
-	export enum OnAllTasksComplete { noAction = 0, terminateJob = 1 }
+	export enum OnAllTasksComplete { noAction = 'noAction', terminateJob = 'terminateJob' }
 
 
 	/**
@@ -3677,7 +3677,7 @@ export namespace MyNS {
 	 *  performExitOptionsJobAction - take the action associated with the task exit condition in the task's exitConditions collection. (This may still result in no action being taken, if that is what the task specifies.)
 	 *  The default is noAction.
 	 */
-	export enum OnTaskFailure { noAction = 0, performExitOptionsJobAction = 1 }
+	export enum OnTaskFailure { noAction = 'noAction', performExitOptionsJobAction = 'performExitOptionsJobAction' }
 
 	export interface OutputFileBlobContainerDestination {
 
@@ -3727,7 +3727,7 @@ export namespace MyNS {
 	 *  taskFailure - Upload the file(s) only after the task process exits with a nonzero exit code.
 	 *  taskCompletion - Upload the file(s) after the task process exits, no matter what the exit code was.
 	 */
-	export enum OutputFileUploadCondition { taskSuccess = 0, taskFailure = 1, taskCompletion = 2 }
+	export enum OutputFileUploadCondition { taskSuccess = 'taskSuccess', taskFailure = 'taskFailure', taskCompletion = 'taskCompletion' }
 
 	export interface OutputFileUploadOptions {
 
@@ -4578,7 +4578,7 @@ export namespace MyNS {
 	 *  running - The subtask is running on a compute node.
 	 *  completed - The subtask is no longer eligible to run, usually because the subtask has finished successfully, or the subtask has finished unsuccessfully and has exhausted its retry limit. A subtask is also marked as completed if an error occurred launching the subtask, or when the task has been terminated.
 	 */
-	export enum SubtaskState { preparing = 0, running = 1, completed = 2 }
+	export enum SubtaskState { preparing = 'preparing', running = 'running', completed = 'completed' }
 
 	export interface TaskAddCollectionParameter {
 
@@ -4722,7 +4722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskAddResultStatus { success = 0, clientError = 1, serverError = 2 }
+	export enum TaskAddResultStatus { success = 'success', clientError = 'clientError', serverError = 'serverError' }
 
 	export interface TaskConstraints {
 
@@ -4813,7 +4813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskCountsValidationStatus { validated = 0, unvalidated = 1 }
+	export enum TaskCountsValidationStatus { validated = 'validated', unvalidated = 'unvalidated' }
 
 	export interface TaskDependencies {
 		taskIdRanges?: Array<TaskIdRange>;
@@ -4950,7 +4950,7 @@ export namespace MyNS {
 	 *  success - The task ran successfully.
 	 *  failure - There was an error during processing of the task. The failure may have occurred before the task process was launched, while the task process was executing, or after the task process exited.
 	 */
-	export enum TaskExecutionResult { success = 0, failure = 1 }
+	export enum TaskExecutionResult { success = 'success', failure = 'failure' }
 
 	export interface TaskFailureInformation {
 
@@ -4993,7 +4993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskSchedulingPolicyNodeFillType { spread = 0, pack = 1 }
+	export enum TaskSchedulingPolicyNodeFillType { spread = 'spread', pack = 'pack' }
 
 
 	/**
@@ -5003,7 +5003,7 @@ export namespace MyNS {
 	 *  running - The task is running on a compute node. This includes task-level preparation such as downloading resource files or deploying application packages specified on the task - it does not necessarily mean that the task command line has started executing.
 	 *  completed - The task is no longer eligible to run, usually because the task has finished successfully, or the task has finished unsuccessfully and has exhausted its retry limit. A task is also marked as completed if an error occurred launching the task, or when the task has been terminated.
 	 */
-	export enum TaskState { active = 0, preparing = 1, running = 2, completed = 3 }
+	export enum TaskState { active = 'active', preparing = 'preparing', running = 'running', completed = 'completed' }
 
 	export interface TaskStatistics {
 

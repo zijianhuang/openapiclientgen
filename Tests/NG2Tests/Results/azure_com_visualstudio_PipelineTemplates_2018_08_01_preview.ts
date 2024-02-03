@@ -81,7 +81,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputDescriptorType { String = 0, SecureString = 1, Int = 2, Bool = 3, Authorization = 4 }
+	export enum InputDescriptorType { String = 'String', SecureString = 'SecureString', Int = 'Int', Bool = 'Bool', Authorization = 'Authorization' }
 
 
 	/** Defines a pipeline template resource. */

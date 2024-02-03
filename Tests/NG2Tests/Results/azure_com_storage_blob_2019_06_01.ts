@@ -133,13 +133,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerPropertiesLeaseDuration { Infinite = 0, Fixed = 1 }
+	export enum ContainerPropertiesLeaseDuration { Infinite = 'Infinite', Fixed = 'Fixed' }
 
-	export enum ContainerPropertiesLeaseState { Available = 0, Leased = 1, Expired = 2, Breaking = 3, Broken = 4 }
+	export enum ContainerPropertiesLeaseState { Available = 'Available', Leased = 'Leased', Expired = 'Expired', Breaking = 'Breaking', Broken = 'Broken' }
 
-	export enum ContainerPropertiesLeaseStatus { Locked = 0, Unlocked = 1 }
+	export enum ContainerPropertiesLeaseStatus { Locked = 'Locked', Unlocked = 'Unlocked' }
 
-	export enum ContainerPropertiesPublicAccess { Container = 0, Blob = 1, None = 2 }
+	export enum ContainerPropertiesPublicAccess { Container = 'Container', Blob = 'Blob', None = 'None' }
 
 	export interface ImmutabilityPolicy {
 	}
@@ -234,7 +234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateHistoryPropertyUpdate { put = 0, lock = 1, extend = 2 }
+	export enum UpdateHistoryPropertyUpdate { put = 'put', lock = 'lock', extend = 'extend' }
 
 
 	/** The properties of an ImmutabilityPolicy of a blob container. */
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LeaseContainerRequestAction { Acquire = 0, Renew = 1, Change = 2, Release = 3, Break = 4 }
+	export enum LeaseContainerRequestAction { Acquire = 'Acquire', Renew = 'Renew', Change = 'Change', Release = 'Release', Break = 'Break' }
 
 
 	/** Lease Container response schema. */
@@ -772,7 +772,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BlobContainers_GetImmutabilityPolicyImmutabilityPolicyName { default = 0 }
+	export enum BlobContainers_GetImmutabilityPolicyImmutabilityPolicyName { default = 'default' }
 
 }
 

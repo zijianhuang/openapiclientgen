@@ -415,7 +415,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AS2MdnSettingsMicHashingAlgorithm { NotSpecified = 0, None = 1, MD5 = 2, SHA1 = 3, SHA2256 = 4, SHA2384 = 5, SHA2512 = 6 }
+	export enum AS2MdnSettingsMicHashingAlgorithm { NotSpecified = 'NotSpecified', None = 'None', MD5 = 'MD5', SHA1 = 'SHA1', SHA2256 = 'SHA2256', SHA2384 = 'SHA2384', SHA2512 = 'SHA2512' }
 
 
 	/** The AS2 agreement message connection settings. */
@@ -747,9 +747,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AS2ValidationSettingsEncryptionAlgorithm { NotSpecified = 0, None = 1, DES3 = 2, RC2 = 3, AES128 = 4, AES192 = 5, AES256 = 6 }
+	export enum AS2ValidationSettingsEncryptionAlgorithm { NotSpecified = 'NotSpecified', None = 'None', DES3 = 'DES3', RC2 = 'RC2', AES128 = 'AES128', AES192 = 'AES192', AES256 = 'AES256' }
 
-	export enum AS2ValidationSettingsSigningAlgorithm { NotSpecified = 0, Default = 1, SHA1 = 2, SHA2256 = 3, SHA2384 = 4, SHA2512 = 5 }
+	export enum AS2ValidationSettingsSigningAlgorithm { NotSpecified = 'NotSpecified', Default = 'Default', SHA1 = 'SHA1', SHA2256 = 'SHA2256', SHA2384 = 'SHA2384', SHA2512 = 'SHA2512' }
 
 
 	/** The integration account partner's business identity. */
@@ -1225,9 +1225,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EdifactDelimiterOverrideDecimalPointIndicator { NotSpecified = 0, Comma = 1, Decimal = 2 }
+	export enum EdifactDelimiterOverrideDecimalPointIndicator { NotSpecified = 'NotSpecified', Comma = 'Comma', Decimal = 'Decimal' }
 
-	export enum EdifactDelimiterOverrideSegmentTerminatorSuffix { NotSpecified = 0, None = 1, CR = 2, LF = 3, CRLF = 4 }
+	export enum EdifactDelimiterOverrideSegmentTerminatorSuffix { NotSpecified = 'NotSpecified', None = 'None', CR = 'CR', LF = 'LF', CRLF = 'CRLF' }
 
 
 	/** The Edifact envelope override settings. */
@@ -1878,7 +1878,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EdifactFramingSettingsCharacterSet { NotSpecified = 0, UNOB = 1, UNOA = 2, UNOC = 3, UNOD = 4, UNOE = 5, UNOF = 6, UNOG = 7, UNOH = 8, UNOI = 9, UNOJ = 10, UNOK = 11, UNOX = 12, UNOY = 13, KECA = 14 }
+	export enum EdifactFramingSettingsCharacterSet { NotSpecified = 'NotSpecified', UNOB = 'UNOB', UNOA = 'UNOA', UNOC = 'UNOC', UNOD = 'UNOD', UNOE = 'UNOE', UNOF = 'UNOF', UNOG = 'UNOG', UNOH = 'UNOH', UNOI = 'UNOI', UNOJ = 'UNOJ', UNOK = 'UNOK', UNOX = 'UNOX', UNOY = 'UNOY', KECA = 'KECA' }
 
 
 	/** The Edifact message filter for odata query. */
@@ -1907,7 +1907,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EdifactMessageFilterMessageFilterType { NotSpecified = 0, Include = 1, Exclude = 2 }
+	export enum EdifactMessageFilterMessageFilterType { NotSpecified = 'NotSpecified', Include = 'Include', Exclude = 'Exclude' }
 
 
 	/** The Edifact message identifier. */
@@ -2207,7 +2207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EdifactValidationOverrideTrailingSeparatorPolicy { NotSpecified = 0, NotAllowed = 1, Optional = 2, Mandatory = 3 }
+	export enum EdifactValidationOverrideTrailingSeparatorPolicy { NotSpecified = 'NotSpecified', NotAllowed = 'NotAllowed', Optional = 'Optional', Mandatory = 'Mandatory' }
 
 
 	/** The Edifact agreement validation settings. */
@@ -2808,9 +2808,9 @@ export namespace MyNS {
 
 	}
 
-	export enum X12EnvelopeOverrideDateFormat { NotSpecified = 0, CCYYMMDD = 1, YYMMDD = 2 }
+	export enum X12EnvelopeOverrideDateFormat { NotSpecified = 'NotSpecified', CCYYMMDD = 'CCYYMMDD', YYMMDD = 'YYMMDD' }
 
-	export enum X12EnvelopeOverrideTimeFormat { NotSpecified = 0, HHMM = 1, HHMMSS = 2, HHMMSSdd = 3, HHMMSSd = 4 }
+	export enum X12EnvelopeOverrideTimeFormat { NotSpecified = 'NotSpecified', HHMM = 'HHMM', HHMMSS = 'HHMMSS', HHMMSSdd = 'HHMMSSdd', HHMMSSd = 'HHMMSSd' }
 
 
 	/** The X12 agreement envelope settings. */
@@ -3120,7 +3120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum X12EnvelopeSettingsUsageIndicator { NotSpecified = 0, Test = 1, Information = 2, Production = 3 }
+	export enum X12EnvelopeSettingsUsageIndicator { NotSpecified = 'NotSpecified', Test = 'Test', Information = 'Information', Production = 'Production' }
 
 
 	/** The X12 agreement framing settings. */
@@ -3227,7 +3227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum X12FramingSettingsCharacterSet { NotSpecified = 0, Basic = 1, Extended = 2, UTF8 = 3 }
+	export enum X12FramingSettingsCharacterSet { NotSpecified = 'NotSpecified', Basic = 'Basic', Extended = 'Extended', UTF8 = 'UTF8' }
 
 
 	/** The X12 message filter for odata query. */
@@ -3853,7 +3853,7 @@ export namespace MyNS {
 
 
 	/** The agreement type. */
-	export enum AgreementType { NotSpecified = 0, AS2 = 1, X12 = 2, Edifact = 3 }
+	export enum AgreementType { NotSpecified = 'NotSpecified', AS2 = 'AS2', X12 = 'X12', Edifact = 'Edifact' }
 
 
 	/** The API deployment parameter metadata. */
@@ -3904,7 +3904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiDeploymentParameterMetadataVisibility { NotSpecified = 0, Default = 1, Internal = 2 }
+	export enum ApiDeploymentParameterMetadataVisibility { NotSpecified = 'NotSpecified', Default = 'Default', Internal = 'Internal' }
 
 
 	/** The API deployment parameters metadata. */
@@ -3928,7 +3928,7 @@ export namespace MyNS {
 
 
 	/** The Api deployment parameter visibility. */
-	export enum ApiDeploymentParameterVisibility { NotSpecified = 0, Default = 1, Internal = 2 }
+	export enum ApiDeploymentParameterVisibility { NotSpecified = 'NotSpecified', Default = 'Default', Internal = 'Internal' }
 
 
 	/** The api operation. */
@@ -4068,7 +4068,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiOperationAnnotationStatus { NotSpecified = 0, Preview = 1, Production = 2 }
+	export enum ApiOperationAnnotationStatus { NotSpecified = 'NotSpecified', Preview = 'Preview', Production = 'Production' }
 
 
 	/** The Api reference. */
@@ -4123,7 +4123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiReferenceCategory { NotSpecified = 0, Enterprise = 1, Standard = 2, Premium = 3 }
+	export enum ApiReferenceCategory { NotSpecified = 'NotSpecified', Enterprise = 'Enterprise', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The resource reference. */
@@ -4590,7 +4590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SwaggerSchemaType { String = 0, Number = 1, Integer = 2, Boolean = 3, Array = 4, File = 5, Object = 6, Null = 7 }
+	export enum SwaggerSchemaType { String = 'String', Number = 'Number', Integer = 'Integer', Boolean = 'Boolean', Array = 'Array', File = 'File', Object = 'Object', Null = 'Null' }
 
 
 	/** The Swagger XML. */
@@ -4849,11 +4849,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiResourceMetadataApiType { NotSpecified = 0, Rest = 1, Soap = 2 }
+	export enum ApiResourceMetadataApiType { NotSpecified = 'NotSpecified', Rest = 'Rest', Soap = 'Soap' }
 
-	export enum ApiResourceMetadataProvisioningState { NotSpecified = 0, Accepted = 1, Running = 2, Ready = 3, Creating = 4, Created = 5, Deleting = 6, Deleted = 7, Canceled = 8, Failed = 9, Succeeded = 10, Moving = 11, Updating = 12, Registering = 13, Registered = 14, Unregistering = 15, Unregistered = 16, Completed = 17 }
+	export enum ApiResourceMetadataProvisioningState { NotSpecified = 'NotSpecified', Accepted = 'Accepted', Running = 'Running', Ready = 'Ready', Creating = 'Creating', Created = 'Created', Deleting = 'Deleting', Deleted = 'Deleted', Canceled = 'Canceled', Failed = 'Failed', Succeeded = 'Succeeded', Moving = 'Moving', Updating = 'Updating', Registering = 'Registering', Registered = 'Registered', Unregistering = 'Unregistering', Unregistered = 'Unregistered', Completed = 'Completed' }
 
-	export enum ApiResourceMetadataWsdlImportMethod { NotSpecified = 0, SoapToRest = 1, SoapPassThrough = 2 }
+	export enum ApiResourceMetadataWsdlImportMethod { NotSpecified = 'NotSpecified', SoapToRest = 'SoapToRest', SoapPassThrough = 'SoapPassThrough' }
 
 
 	/** The WSDL service. */
@@ -4982,9 +4982,9 @@ export namespace MyNS {
 
 
 	/** The Api tier. */
-	export enum ApiTier { NotSpecified = 0, Enterprise = 1, Standard = 2, Premium = 3 }
+	export enum ApiTier { NotSpecified = 'NotSpecified', Enterprise = 'Enterprise', Standard = 'Standard', Premium = 'Premium' }
 
-	export enum ApiType { NotSpecified = 0, Rest = 1, Soap = 2 }
+	export enum ApiType { NotSpecified = 'NotSpecified', Rest = 'Rest', Soap = 'Soap' }
 
 
 	/** The artifact content properties definition. */
@@ -5196,7 +5196,7 @@ export namespace MyNS {
 
 
 	/** The Azure async operation state. */
-	export enum AzureAsyncOperationState { Failed = 0, Succeeded = 1, Pending = 2, Canceled = 3 }
+	export enum AzureAsyncOperationState { Failed = 'Failed', Succeeded = 'Succeeded', Pending = 'Pending', Canceled = 'Canceled' }
 
 
 	/** The azure resource error info. */
@@ -5395,7 +5395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowTriggerRecurrenceFrequency { NotSpecified = 0, Second = 1, Minute = 2, Hour = 3, Day = 4, Week = 5, Month = 6, Year = 7 }
+	export enum WorkflowTriggerRecurrenceFrequency { NotSpecified = 'NotSpecified', Second = 'Second', Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month', Year = 'Year' }
 
 
 	/** The recurrence schedule. */
@@ -5454,7 +5454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecurrenceScheduleOccurrenceDay { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6 }
+	export enum RecurrenceScheduleOccurrenceDay { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday' }
 
 
 	/** A collection of batch configurations. */
@@ -5515,19 +5515,19 @@ export namespace MyNS {
 
 
 	/** The day of the week. */
-	export enum DayOfWeek { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6 }
+	export enum DayOfWeek { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday' }
 
 
 	/** The edifact character set. */
-	export enum EdifactCharacterSet { NotSpecified = 0, UNOB = 1, UNOA = 2, UNOC = 3, UNOD = 4, UNOE = 5, UNOF = 6, UNOG = 7, UNOH = 8, UNOI = 9, UNOJ = 10, UNOK = 11, UNOX = 12, UNOY = 13, KECA = 14 }
+	export enum EdifactCharacterSet { NotSpecified = 'NotSpecified', UNOB = 'UNOB', UNOA = 'UNOA', UNOC = 'UNOC', UNOD = 'UNOD', UNOE = 'UNOE', UNOF = 'UNOF', UNOG = 'UNOG', UNOH = 'UNOH', UNOI = 'UNOI', UNOJ = 'UNOJ', UNOK = 'UNOK', UNOX = 'UNOX', UNOY = 'UNOY', KECA = 'KECA' }
 
 
 	/** The edifact decimal indicator. */
-	export enum EdifactDecimalIndicator { NotSpecified = 0, Comma = 1, Decimal = 2 }
+	export enum EdifactDecimalIndicator { NotSpecified = 'NotSpecified', Comma = 'Comma', Decimal = 'Decimal' }
 
 
 	/** The encryption algorithm. */
-	export enum EncryptionAlgorithm { NotSpecified = 0, None = 1, DES3 = 2, RC2 = 3, AES128 = 4, AES192 = 5, AES256 = 6 }
+	export enum EncryptionAlgorithm { NotSpecified = 'NotSpecified', None = 'None', DES3 = 'DES3', RC2 = 'RC2', AES128 = 'AES128', AES192 = 'AES192', AES256 = 'AES256' }
 
 
 	/** The error info. */
@@ -5603,11 +5603,11 @@ export namespace MyNS {
 
 
 	/** The error response code. */
-	export enum ErrorResponseCode { NotSpecified = 0, IntegrationServiceEnvironmentNotFound = 1, InternalServerError = 2, InvalidOperationId = 3 }
+	export enum ErrorResponseCode { NotSpecified = 'NotSpecified', IntegrationServiceEnvironmentNotFound = 'IntegrationServiceEnvironmentNotFound', InternalServerError = 'InternalServerError', InvalidOperationId = 'InvalidOperationId' }
 
 
 	/** The event level. */
-	export enum EventLevel { LogAlways = 0, Critical = 1, Error = 2, Warning = 3, Informational = 4, Verbose = 5 }
+	export enum EventLevel { LogAlways = 'LogAlways', Critical = 'Critical', Error = 'Error', Warning = 'Warning', Informational = 'Informational', Verbose = 'Verbose' }
 
 
 	/** The expression. */
@@ -5829,11 +5829,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCallbackUrlParametersKeyType { NotSpecified = 0, Primary = 1, Secondary = 2 }
+	export enum GetCallbackUrlParametersKeyType { NotSpecified = 'NotSpecified', Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** The signing or hashing algorithm. */
-	export enum HashingAlgorithm { NotSpecified = 0, None = 1, MD5 = 2, SHA1 = 3, SHA2256 = 4, SHA2384 = 5, SHA2512 = 6 }
+	export enum HashingAlgorithm { NotSpecified = 'NotSpecified', None = 'None', MD5 = 'MD5', SHA1 = 'SHA1', SHA2256 = 'SHA2256', SHA2384 = 'SHA2384', SHA2512 = 'SHA2512' }
 
 
 	/** The integration account. */
@@ -5988,9 +5988,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationServiceEnvironmentAccessEndpointType { NotSpecified = 0, External = 1, Internal = 2 }
+	export enum IntegrationServiceEnvironmentAccessEndpointType { NotSpecified = 'NotSpecified', External = 'External', Internal = 'Internal' }
 
-	export enum IntegrationServiceEnvironmentPropertiesState { NotSpecified = 0, Completed = 1, Enabled = 2, Disabled = 3, Deleted = 4, Suspended = 5 }
+	export enum IntegrationServiceEnvironmentPropertiesState { NotSpecified = 'NotSpecified', Completed = 'Completed', Enabled = 'Enabled', Disabled = 'Disabled', Deleted = 'Deleted', Suspended = 'Suspended' }
 
 
 	/** The integration service environment sku. */
@@ -6020,7 +6020,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationServiceEnvironmentSkuName { NotSpecified = 0, Premium = 1, Developer = 2 }
+	export enum IntegrationServiceEnvironmentSkuName { NotSpecified = 'NotSpecified', Premium = 'Premium', Developer = 'Developer' }
 
 
 	/** The integration account sku. */
@@ -6049,7 +6049,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationAccountSkuName { NotSpecified = 0, Free = 1, Basic = 2, Standard = 3 }
+	export enum IntegrationAccountSkuName { NotSpecified = 'NotSpecified', Free = 'Free', Basic = 'Basic', Standard = 'Standard' }
 
 
 	/** The integration account agreement. */
@@ -6486,7 +6486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationAccountMapPropertiesMapType { NotSpecified = 0, Xslt = 1, Xslt20 = 2, Xslt30 = 3, Liquid = 4 }
+	export enum IntegrationAccountMapPropertiesMapType { NotSpecified = 'NotSpecified', Xslt = 'Xslt', Xslt20 = 'Xslt20', Xslt30 = 'Xslt30', Liquid = 'Liquid' }
 
 	export interface IntegrationAccountMapPropertiesParametersSchema {
 
@@ -6647,7 +6647,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationAccountPartnerPropertiesPartnerType { NotSpecified = 0, B2B = 1 }
+	export enum IntegrationAccountPartnerPropertiesPartnerType { NotSpecified = 'NotSpecified', B2B = 'B2B' }
 
 
 	/** The integration account partner filter for odata query. */
@@ -6806,7 +6806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationAccountSchemaPropertiesSchemaType { NotSpecified = 0, Xml = 1 }
+	export enum IntegrationAccountSchemaPropertiesSchemaType { NotSpecified = 'NotSpecified', Xml = 'Xml' }
 
 
 	/** The integration account schema filter for odata query. */
@@ -7012,7 +7012,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationServiceEnvironmentNetworkDependencyCategory { NotSpecified = 0, AzureStorage = 1, AzureManagement = 2, AzureActiveDirectory = 3, SSLCertificateVerification = 4, DiagnosticLogsAndMetrics = 5, IntegrationServiceEnvironmentConnectors = 6, RedisCache = 7, AccessEndpoints = 8, RecoveryService = 9, SQL = 10, RegionalService = 11 }
+	export enum IntegrationServiceEnvironmentNetworkDependencyCategory { NotSpecified = 'NotSpecified', AzureStorage = 'AzureStorage', AzureManagement = 'AzureManagement', AzureActiveDirectory = 'AzureActiveDirectory', SSLCertificateVerification = 'SSLCertificateVerification', DiagnosticLogsAndMetrics = 'DiagnosticLogsAndMetrics', IntegrationServiceEnvironmentConnectors = 'IntegrationServiceEnvironmentConnectors', RedisCache = 'RedisCache', AccessEndpoints = 'AccessEndpoints', RecoveryService = 'RecoveryService', SQL = 'SQL', RegionalService = 'RegionalService' }
 
 
 	/** The network endpoint. */
@@ -7045,11 +7045,11 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationServiceEnvironmentNetworkEndpointAccessibility { NotSpecified = 0, Unknown = 1, Available = 2, NotAvailable = 3 }
+	export enum IntegrationServiceEnvironmentNetworkEndpointAccessibility { NotSpecified = 'NotSpecified', Unknown = 'Unknown', Available = 'Available', NotAvailable = 'NotAvailable' }
 
 
 	/** The integration service environment network dependency category type. */
-	export enum IntegrationServiceEnvironmentNetworkDependencyCategoryType { NotSpecified = 0, AzureStorage = 1, AzureManagement = 2, AzureActiveDirectory = 3, SSLCertificateVerification = 4, DiagnosticLogsAndMetrics = 5, IntegrationServiceEnvironmentConnectors = 6, RedisCache = 7, AccessEndpoints = 8, RecoveryService = 9, SQL = 10, RegionalService = 11 }
+	export enum IntegrationServiceEnvironmentNetworkDependencyCategoryType { NotSpecified = 'NotSpecified', AzureStorage = 'AzureStorage', AzureManagement = 'AzureManagement', AzureActiveDirectory = 'AzureActiveDirectory', SSLCertificateVerification = 'SSLCertificateVerification', DiagnosticLogsAndMetrics = 'DiagnosticLogsAndMetrics', IntegrationServiceEnvironmentConnectors = 'IntegrationServiceEnvironmentConnectors', RedisCache = 'RedisCache', AccessEndpoints = 'AccessEndpoints', RecoveryService = 'RecoveryService', SQL = 'SQL', RegionalService = 'RegionalService' }
 
 
 	/** The integration service environment subnet network health. */
@@ -7075,11 +7075,11 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationServiceEnvironmentNetworkDependencyHealthState { NotSpecified = 0, Healthy = 1, Unhealthy = 2, Unknown = 3 }
+	export enum IntegrationServiceEnvironmentNetworkDependencyHealthState { NotSpecified = 'NotSpecified', Healthy = 'Healthy', Unhealthy = 'Unhealthy', Unknown = 'Unknown' }
 
 
 	/** The integration service environment network endpoint accessibility state. */
-	export enum IntegrationServiceEnvironmentNetworkEndPointAccessibilityState { NotSpecified = 0, Unknown = 1, Available = 2, NotAvailable = 3 }
+	export enum IntegrationServiceEnvironmentNetworkEndPointAccessibilityState { NotSpecified = 'NotSpecified', Unknown = 'Unknown', Available = 'Available', NotAvailable = 'NotAvailable' }
 
 
 	/** The integration service environment network health of all the subnets. */
@@ -7137,7 +7137,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntegrationServiceEnvironmentSkuCapacityScaleType { Manual = 0, Automatic = 1, None = 2 }
+	export enum IntegrationServiceEnvironmentSkuCapacityScaleType { Manual = 'Manual', Automatic = 'Automatic', None = 'None' }
 
 
 	/** The integration service environment sku definition. */
@@ -7216,7 +7216,7 @@ export namespace MyNS {
 
 
 	/** The integration service environment sku scale type. */
-	export enum IntegrationServiceEnvironmentSkuScaleType { Manual = 0, Automatic = 1, None = 2 }
+	export enum IntegrationServiceEnvironmentSkuScaleType { Manual = 'Manual', Automatic = 'Automatic', None = 'None' }
 
 
 	/** The integration service environment subnet network health. */
@@ -7281,7 +7281,7 @@ export namespace MyNS {
 
 
 	/** The key type. */
-	export enum KeyType { NotSpecified = 0, Primary = 1, Secondary = 2 }
+	export enum KeyType { NotSpecified = 'NotSpecified', Primary = 'Primary', Secondary = 'Secondary' }
 
 
 	/** The key vault key. */
@@ -7453,11 +7453,11 @@ export namespace MyNS {
 
 
 	/** The map type. */
-	export enum MapType { NotSpecified = 0, Xslt = 1, Xslt20 = 2, Xslt30 = 3, Liquid = 4 }
+	export enum MapType { NotSpecified = 'NotSpecified', Xslt = 'Xslt', Xslt20 = 'Xslt20', Xslt30 = 'Xslt30', Liquid = 'Liquid' }
 
 
 	/** The message filter type. */
-	export enum MessageFilterType { NotSpecified = 0, Include = 1, Exclude = 2 }
+	export enum MessageFilterType { NotSpecified = 'NotSpecified', Include = 'Include', Exclude = 'Exclude' }
 
 
 	/** Logic REST API operation */
@@ -7695,19 +7695,19 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationResultPropertiesStatus { NotSpecified = 0, Paused = 1, Running = 2, Waiting = 3, Succeeded = 4, Skipped = 5, Suspended = 6, Cancelled = 7, Failed = 8, Faulted = 9, TimedOut = 10, Aborted = 11, Ignored = 12 }
+	export enum OperationResultPropertiesStatus { NotSpecified = 'NotSpecified', Paused = 'Paused', Running = 'Running', Waiting = 'Waiting', Succeeded = 'Succeeded', Skipped = 'Skipped', Suspended = 'Suspended', Cancelled = 'Cancelled', Failed = 'Failed', Faulted = 'Faulted', TimedOut = 'TimedOut', Aborted = 'Aborted', Ignored = 'Ignored' }
 
 
 	/** The parameter type. */
-	export enum ParameterType { NotSpecified = 0, String = 1, SecureString = 2, Int = 3, Float = 4, Bool = 5, Array = 6, Object = 7, SecureObject = 8 }
+	export enum ParameterType { NotSpecified = 'NotSpecified', String = 'String', SecureString = 'SecureString', Int = 'Int', Float = 'Float', Bool = 'Bool', Array = 'Array', Object = 'Object', SecureObject = 'SecureObject' }
 
 
 	/** The partner type. */
-	export enum PartnerType { NotSpecified = 0, B2B = 1 }
+	export enum PartnerType { NotSpecified = 'NotSpecified', B2B = 'B2B' }
 
 
 	/** The recurrence frequency. */
-	export enum RecurrenceFrequency { NotSpecified = 0, Second = 1, Minute = 2, Hour = 3, Day = 4, Week = 5, Month = 6, Year = 7 }
+	export enum RecurrenceFrequency { NotSpecified = 'NotSpecified', Second = 'Second', Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month', Year = 'Year' }
 
 
 	/** The access key regenerate action content. */
@@ -7968,11 +7968,11 @@ export namespace MyNS {
 
 
 	/** The schema type. */
-	export enum SchemaType { NotSpecified = 0, Xml = 1 }
+	export enum SchemaType { NotSpecified = 'NotSpecified', Xml = 'Xml' }
 
 
 	/** The segment terminator suffix. */
-	export enum SegmentTerminatorSuffix { NotSpecified = 0, None = 1, CR = 2, LF = 3, CRLF = 4 }
+	export enum SegmentTerminatorSuffix { NotSpecified = 'NotSpecified', None = 'None', CR = 'CR', LF = 'LF', CRLF = 'CRLF' }
 
 
 	/** The set trigger state action definition. */
@@ -8096,7 +8096,7 @@ export namespace MyNS {
 
 
 	/** The signing or hashing algorithm. */
-	export enum SigningAlgorithm { NotSpecified = 0, Default = 1, SHA1 = 2, SHA2256 = 3, SHA2384 = 4, SHA2512 = 5 }
+	export enum SigningAlgorithm { NotSpecified = 'NotSpecified', Default = 'Default', SHA1 = 'SHA1', SHA2256 = 'SHA2256', SHA2384 = 'SHA2384', SHA2512 = 'SHA2512' }
 
 
 	/** The sku type. */
@@ -8128,11 +8128,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { NotSpecified = 0, Free = 1, Shared = 2, Basic = 3, Standard = 4, Premium = 5 }
+	export enum SkuName { NotSpecified = 'NotSpecified', Free = 'Free', Shared = 'Shared', Basic = 'Basic', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The status annotation. */
-	export enum StatusAnnotation { NotSpecified = 0, Preview = 1, Production = 2 }
+	export enum StatusAnnotation { NotSpecified = 'NotSpecified', Preview = 'Preview', Production = 'Production' }
 
 
 	/** The sub resource type. */
@@ -8157,7 +8157,7 @@ export namespace MyNS {
 
 
 	/** The track events operation options. */
-	export enum TrackEventsOperationOptions { None = 0, DisableSourceInfoEnrich = 1 }
+	export enum TrackEventsOperationOptions { None = 'None', DisableSourceInfoEnrich = 'DisableSourceInfoEnrich' }
 
 
 	/** The tracking event. */
@@ -8243,7 +8243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrackingEventRecordType { NotSpecified = 0, Custom = 1, AS2Message = 2, AS2MDN = 3, X12Interchange = 4, X12FunctionalGroup = 5, X12TransactionSet = 6, X12InterchangeAcknowledgment = 7, X12FunctionalGroupAcknowledgment = 8, X12TransactionSetAcknowledgment = 9, EdifactInterchange = 10, EdifactFunctionalGroup = 11, EdifactTransactionSet = 12, EdifactInterchangeAcknowledgment = 13, EdifactFunctionalGroupAcknowledgment = 14, EdifactTransactionSetAcknowledgment = 15 }
+	export enum TrackingEventRecordType { NotSpecified = 'NotSpecified', Custom = 'Custom', AS2Message = 'AS2Message', AS2MDN = 'AS2MDN', X12Interchange = 'X12Interchange', X12FunctionalGroup = 'X12FunctionalGroup', X12TransactionSet = 'X12TransactionSet', X12InterchangeAcknowledgment = 'X12InterchangeAcknowledgment', X12FunctionalGroupAcknowledgment = 'X12FunctionalGroupAcknowledgment', X12TransactionSetAcknowledgment = 'X12TransactionSetAcknowledgment', EdifactInterchange = 'EdifactInterchange', EdifactFunctionalGroup = 'EdifactFunctionalGroup', EdifactTransactionSet = 'EdifactTransactionSet', EdifactInterchangeAcknowledgment = 'EdifactInterchangeAcknowledgment', EdifactFunctionalGroupAcknowledgment = 'EdifactFunctionalGroupAcknowledgment', EdifactTransactionSetAcknowledgment = 'EdifactTransactionSetAcknowledgment' }
 
 
 	/** The tracking events definition. */
@@ -8287,15 +8287,15 @@ export namespace MyNS {
 
 
 	/** The tracking record type. */
-	export enum TrackingRecordType { NotSpecified = 0, Custom = 1, AS2Message = 2, AS2MDN = 3, X12Interchange = 4, X12FunctionalGroup = 5, X12TransactionSet = 6, X12InterchangeAcknowledgment = 7, X12FunctionalGroupAcknowledgment = 8, X12TransactionSetAcknowledgment = 9, EdifactInterchange = 10, EdifactFunctionalGroup = 11, EdifactTransactionSet = 12, EdifactInterchangeAcknowledgment = 13, EdifactFunctionalGroupAcknowledgment = 14, EdifactTransactionSetAcknowledgment = 15 }
+	export enum TrackingRecordType { NotSpecified = 'NotSpecified', Custom = 'Custom', AS2Message = 'AS2Message', AS2MDN = 'AS2MDN', X12Interchange = 'X12Interchange', X12FunctionalGroup = 'X12FunctionalGroup', X12TransactionSet = 'X12TransactionSet', X12InterchangeAcknowledgment = 'X12InterchangeAcknowledgment', X12FunctionalGroupAcknowledgment = 'X12FunctionalGroupAcknowledgment', X12TransactionSetAcknowledgment = 'X12TransactionSetAcknowledgment', EdifactInterchange = 'EdifactInterchange', EdifactFunctionalGroup = 'EdifactFunctionalGroup', EdifactTransactionSet = 'EdifactTransactionSet', EdifactInterchangeAcknowledgment = 'EdifactInterchangeAcknowledgment', EdifactFunctionalGroupAcknowledgment = 'EdifactFunctionalGroupAcknowledgment', EdifactTransactionSetAcknowledgment = 'EdifactTransactionSetAcknowledgment' }
 
 
 	/** The trailing separator policy. */
-	export enum TrailingSeparatorPolicy { NotSpecified = 0, NotAllowed = 1, Optional = 2, Mandatory = 3 }
+	export enum TrailingSeparatorPolicy { NotSpecified = 'NotSpecified', NotAllowed = 'NotAllowed', Optional = 'Optional', Mandatory = 'Mandatory' }
 
 
 	/** The usage indicator. */
-	export enum UsageIndicator { NotSpecified = 0, Test = 1, Information = 2, Production = 3 }
+	export enum UsageIndicator { NotSpecified = 'NotSpecified', Test = 'Test', Information = 'Information', Production = 'Production' }
 
 
 	/** The workflow type. */
@@ -8482,7 +8482,7 @@ export namespace MyNS {
 
 
 	/** The workflow provisioning state. */
-	export enum WorkflowProvisioningState { NotSpecified = 0, Accepted = 1, Running = 2, Ready = 3, Creating = 4, Created = 5, Deleting = 6, Deleted = 7, Canceled = 8, Failed = 9, Succeeded = 10, Moving = 11, Updating = 12, Registering = 13, Registered = 14, Unregistering = 15, Unregistered = 16, Completed = 17 }
+	export enum WorkflowProvisioningState { NotSpecified = 'NotSpecified', Accepted = 'Accepted', Running = 'Running', Ready = 'Ready', Creating = 'Creating', Created = 'Created', Deleting = 'Deleting', Deleted = 'Deleted', Canceled = 'Canceled', Failed = 'Failed', Succeeded = 'Succeeded', Moving = 'Moving', Updating = 'Updating', Registering = 'Registering', Registered = 'Registered', Unregistering = 'Unregistering', Unregistered = 'Unregistered', Completed = 'Completed' }
 
 
 	/** The workflow run. */
@@ -8912,11 +8912,11 @@ export namespace MyNS {
 
 
 	/** The workflow state. */
-	export enum WorkflowState { NotSpecified = 0, Completed = 1, Enabled = 2, Disabled = 3, Deleted = 4, Suspended = 5 }
+	export enum WorkflowState { NotSpecified = 'NotSpecified', Completed = 'Completed', Enabled = 'Enabled', Disabled = 'Disabled', Deleted = 'Deleted', Suspended = 'Suspended' }
 
 
 	/** The workflow status. */
-	export enum WorkflowStatus { NotSpecified = 0, Paused = 1, Running = 2, Waiting = 3, Succeeded = 4, Skipped = 5, Suspended = 6, Cancelled = 7, Failed = 8, Faulted = 9, TimedOut = 10, Aborted = 11, Ignored = 12 }
+	export enum WorkflowStatus { NotSpecified = 'NotSpecified', Paused = 'Paused', Running = 'Running', Waiting = 'Waiting', Succeeded = 'Succeeded', Skipped = 'Skipped', Suspended = 'Suspended', Cancelled = 'Cancelled', Failed = 'Failed', Faulted = 'Faulted', TimedOut = 'TimedOut', Aborted = 'Aborted', Ignored = 'Ignored' }
 
 
 	/** The workflow trigger callback URL. */
@@ -9207,7 +9207,7 @@ export namespace MyNS {
 
 
 	/** The workflow trigger provisioning state. */
-	export enum WorkflowTriggerProvisioningState { NotSpecified = 0, Accepted = 1, Running = 2, Ready = 3, Creating = 4, Created = 5, Deleting = 6, Deleted = 7, Canceled = 8, Failed = 9, Succeeded = 10, Moving = 11, Updating = 12, Registering = 13, Registered = 14, Unregistering = 15, Unregistered = 16, Completed = 17 }
+	export enum WorkflowTriggerProvisioningState { NotSpecified = 'NotSpecified', Accepted = 'Accepted', Running = 'Running', Ready = 'Ready', Creating = 'Creating', Created = 'Created', Deleting = 'Deleting', Deleted = 'Deleted', Canceled = 'Canceled', Failed = 'Failed', Succeeded = 'Succeeded', Moving = 'Moving', Updating = 'Updating', Registering = 'Registering', Registered = 'Registered', Unregistering = 'Unregistering', Unregistered = 'Unregistered', Completed = 'Completed' }
 
 
 	/** The workflow version. */
@@ -9315,19 +9315,19 @@ export namespace MyNS {
 
 
 	/** The WSDL import method. */
-	export enum WsdlImportMethod { NotSpecified = 0, SoapToRest = 1, SoapPassThrough = 2 }
+	export enum WsdlImportMethod { NotSpecified = 'NotSpecified', SoapToRest = 'SoapToRest', SoapPassThrough = 'SoapPassThrough' }
 
 
 	/** The X12 character set. */
-	export enum X12CharacterSet { NotSpecified = 0, Basic = 1, Extended = 2, UTF8 = 3 }
+	export enum X12CharacterSet { NotSpecified = 'NotSpecified', Basic = 'Basic', Extended = 'Extended', UTF8 = 'UTF8' }
 
 
 	/** The x12 date format. */
-	export enum X12DateFormat { NotSpecified = 0, CCYYMMDD = 1, YYMMDD = 2 }
+	export enum X12DateFormat { NotSpecified = 'NotSpecified', CCYYMMDD = 'CCYYMMDD', YYMMDD = 'YYMMDD' }
 
 
 	/** The x12 time format. */
-	export enum X12TimeFormat { NotSpecified = 0, HHMM = 1, HHMMSS = 2, HHMMSSdd = 3, HHMMSSd = 4 }
+	export enum X12TimeFormat { NotSpecified = 'NotSpecified', HHMM = 'HHMM', HHMMSS = 'HHMMSS', HHMMSSdd = 'HHMMSSdd', HHMMSSd = 'HHMMSSd' }
 
 	@Injectable()
 	export class MyClient {

@@ -648,7 +648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlueprintStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, FAILED = 3 }
+	export enum BlueprintStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', FAILED = 'FAILED' }
 
 
 	/** When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service. */
@@ -842,7 +842,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JdbcMetadataEntry { COMMENTS = 0, RAWTYPES = 1 }
+	export enum JdbcMetadataEntry { COMMENTS = 'COMMENTS', RAWTYPES = 'RAWTYPES' }
 
 
 	/** Specifies an Amazon DocumentDB or MongoDB data store to crawl. */
@@ -1008,7 +1008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecrawlBehavior { CRAWL_EVERYTHING = 0, CRAWL_NEW_FOLDERS_ONLY = 1, CRAWL_EVENT_MODE = 2 }
+	export enum RecrawlBehavior { CRAWL_EVERYTHING = 'CRAWL_EVERYTHING', CRAWL_NEW_FOLDERS_ONLY = 'CRAWL_NEW_FOLDERS_ONLY', CRAWL_EVENT_MODE = 'CRAWL_EVENT_MODE' }
 
 
 	/** A policy that specifies update and deletion behaviors for the crawler. */
@@ -1030,9 +1030,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateBehavior { LOG = 0, UPDATE_IN_DATABASE = 1 }
+	export enum UpdateBehavior { LOG = 'LOG', UPDATE_IN_DATABASE = 'UPDATE_IN_DATABASE' }
 
-	export enum DeleteBehavior { LOG = 0, DELETE_FROM_DATABASE = 1, DEPRECATE_IN_DATABASE = 2 }
+	export enum DeleteBehavior { LOG = 'LOG', DELETE_FROM_DATABASE = 'DELETE_FROM_DATABASE', DEPRECATE_IN_DATABASE = 'DEPRECATE_IN_DATABASE' }
 
 
 	/** Specifies data lineage configuration settings for the crawler. */
@@ -1051,9 +1051,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CrawlerLineageSettings { ENABLE = 0, DISABLE = 1 }
+	export enum CrawlerLineageSettings { ENABLE = 'ENABLE', DISABLE = 'DISABLE' }
 
-	export enum CrawlerState { READY = 0, RUNNING = 1, STOPPING = 2 }
+	export enum CrawlerState { READY = 'READY', RUNNING = 'RUNNING', STOPPING = 'STOPPING' }
 
 
 	/** A scheduling object using a <code>cron</code> statement to schedule an event. */
@@ -1075,7 +1075,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleState { SCHEDULED = 0, NOT_SCHEDULED = 1, TRANSITIONING = 2 }
+	export enum ScheduleState { SCHEDULED = 'SCHEDULED', NOT_SCHEDULED = 'NOT_SCHEDULED', TRANSITIONING = 'TRANSITIONING' }
 
 
 	/** Status and error information about the most recent crawl. */
@@ -1109,7 +1109,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LastCrawlStatus { SUCCEEDED = 0, CANCELLED = 1, FAILED = 2 }
+	export enum LastCrawlStatus { SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 
 	/** Specifies Lake Formation configuration settings for the crawler. */
@@ -1344,7 +1344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataQualityRuleResultStatus { PASS = 0, FAIL = 1, ERROR = 2 }
+	export enum DataQualityRuleResultStatus { PASS = 'PASS', FAIL = 'FAIL', ERROR = 'ERROR' }
 
 	export interface EvaluatedMetricsMap {
 	}
@@ -1464,7 +1464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkerType { Standard = 0, 'G.1X' = 1, 'G.2X' = 2, 'G.025X' = 3, 'G.4X' = 4, 'G.8X' = 5, 'Z.2X' = 6 }
+	export enum WorkerType { Standard = 'Standard', 'G.1X' = 'G.1X', 'G.2X' = 'G.2X', 'G.025X' = 'G.025X', 'G.4X' = 'G.4X', 'G.8X' = 'G.8X', 'Z.2X' = 'Z.2X' }
 
 	export interface MapValue {
 	}
@@ -1673,7 +1673,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionClass { FLEX = 0, STANDARD = 1 }
+	export enum ExecutionClass { FLEX = 'FLEX', STANDARD = 'STANDARD' }
 
 
 	/** The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository. */
@@ -1713,9 +1713,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceControlProvider { GITHUB = 0, AWS_CODE_COMMIT = 1 }
+	export enum SourceControlProvider { GITHUB = 'GITHUB', AWS_CODE_COMMIT = 'AWS_CODE_COMMIT' }
 
-	export enum SourceControlAuthStrategy { PERSONAL_ACCESS_TOKEN = 0, AWS_SECRETS_MANAGER = 1 }
+	export enum SourceControlAuthStrategy { PERSONAL_ACCESS_TOKEN = 'PERSONAL_ACCESS_TOKEN', AWS_SECRETS_MANAGER = 'AWS_SECRETS_MANAGER' }
 
 	export interface BatchGetJobsRequest {
 
@@ -1887,9 +1887,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerType { SCHEDULED = 0, CONDITIONAL = 1, ON_DEMAND = 2, EVENT = 3 }
+	export enum TriggerType { SCHEDULED = 'SCHEDULED', CONDITIONAL = 'CONDITIONAL', ON_DEMAND = 'ON_DEMAND', EVENT = 'EVENT' }
 
-	export enum TriggerState { CREATING = 0, CREATED = 1, ACTIVATING = 2, ACTIVATED = 3, DEACTIVATING = 4, DEACTIVATED = 5, DELETING = 6, UPDATING = 7 }
+	export enum TriggerState { CREATING = 'CREATING', CREATED = 'CREATED', ACTIVATING = 'ACTIVATING', ACTIVATED = 'ACTIVATED', DEACTIVATING = 'DEACTIVATING', DEACTIVATED = 'DEACTIVATED', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** Defines an action to be initiated by a trigger. */
@@ -1937,7 +1937,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Logical { AND = 0, ANY = 1 }
+	export enum Logical { AND = 'AND', ANY = 'ANY' }
 
 
 	/** Defines a condition under which a trigger fires. */
@@ -1968,11 +1968,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LogicalOperator { EQUALS = 0 }
+	export enum LogicalOperator { EQUALS = 'EQUALS' }
 
-	export enum JobRunState { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3, SUCCEEDED = 4, FAILED = 5, TIMEOUT = 6, ERROR = 7, WAITING = 8 }
+	export enum JobRunState { STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', TIMEOUT = 'TIMEOUT', ERROR = 'ERROR', WAITING = 'WAITING' }
 
-	export enum CrawlState { RUNNING = 0, CANCELLING = 1, CANCELLED = 2, SUCCEEDED = 3, FAILED = 4, ERROR = 5 }
+	export enum CrawlState { RUNNING = 'RUNNING', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', ERROR = 'ERROR' }
 
 
 	/** Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. */
@@ -2105,7 +2105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowRunStatus { RUNNING = 0, COMPLETED = 1, STOPPING = 2, STOPPED = 3, ERROR = 4 }
+	export enum WorkflowRunStatus { RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', STOPPING = 'STOPPING', STOPPED = 'STOPPED', ERROR = 'ERROR' }
 
 
 	/** Workflow run statistics provides statistics about the workflow run. */
@@ -2187,7 +2187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeType { CRAWLER = 0, JOB = 1, TRIGGER = 2 }
+	export enum NodeType { CRAWLER = 'CRAWLER', JOB = 'JOB', TRIGGER = 'TRIGGER' }
 
 
 	/** The details of a Trigger node present in the workflow. */
@@ -2665,7 +2665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatusType { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3, SUCCEEDED = 4, FAILED = 5, TIMEOUT = 6 }
+	export enum TaskStatusType { STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', TIMEOUT = 'TIMEOUT' }
 
 	export interface CancelMLTaskRunRequest {
 
@@ -2778,7 +2778,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataFormat { AVRO = 0, JSON = 1, PROTOBUF = 2 }
+	export enum DataFormat { AVRO = 'AVRO', JSON = 'JSON', PROTOBUF = 'PROTOBUF' }
 
 	export interface CreateBlueprintResponse {
 		Name?: string;
@@ -2993,7 +2993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsvHeaderOption { UNKNOWN = 0, PRESENT = 1, ABSENT = 2 }
+	export enum CsvHeaderOption { UNKNOWN = 'UNKNOWN', PRESENT = 'PRESENT', ABSENT = 'ABSENT' }
 
 	export interface CreateConnectionResponse {
 	}
@@ -3058,7 +3058,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionType { JDBC = 0, SFTP = 1, MONGODB = 2, KAFKA = 3, NETWORK = 4, MARKETPLACE = 5, CUSTOM = 6 }
+	export enum ConnectionType { JDBC = 'JDBC', SFTP = 'SFTP', MONGODB = 'MONGODB', KAFKA = 'KAFKA', NETWORK = 'NETWORK', MARKETPLACE = 'MARKETPLACE', CUSTOM = 'CUSTOM' }
 
 	export interface ConnectionProperties {
 	}
@@ -3368,7 +3368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Permission { ALL = 0, SELECT = 1, ALTER = 2, DROP = 3, DELETE = 4, INSERT = 5, CREATE_DATABASE = 6, CREATE_TABLE = 7, DATA_LOCATION_ACCESS = 8 }
+	export enum Permission { ALL = 'ALL', SELECT = 'SELECT', ALTER = 'ALTER', DROP = 'DROP', DELETE = 'DELETE', INSERT = 'INSERT', CREATE_DATABASE = 'CREATE_DATABASE', CREATE_TABLE = 'CREATE_TABLE', DATA_LOCATION_ACCESS = 'DATA_LOCATION_ACCESS' }
 
 
 	/** A structure that describes a target database for resource linking. */
@@ -3730,7 +3730,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransformType { FIND_MATCHES = 0 }
+	export enum TransformType { FIND_MATCHES = 'FIND_MATCHES' }
 
 
 	/** The parameters to configure the find matches transform. */
@@ -3800,7 +3800,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MLUserDataEncryptionModeString { DISABLED = 0, 'SSE-KMS' = 1 }
+	export enum MLUserDataEncryptionModeString { DISABLED = 'DISABLED', 'SSE-KMS' = 'SSE-KMS' }
 
 	export interface CreatePartitionResponse {
 	}
@@ -3997,11 +3997,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Compatibility { NONE = 0, DISABLED = 1, BACKWARD = 2, BACKWARD_ALL = 3, FORWARD = 4, FORWARD_ALL = 5, FULL = 6, FULL_ALL = 7 }
+	export enum Compatibility { NONE = 'NONE', DISABLED = 'DISABLED', BACKWARD = 'BACKWARD', BACKWARD_ALL = 'BACKWARD_ALL', FORWARD = 'FORWARD', FORWARD_ALL = 'FORWARD_ALL', FULL = 'FULL', FULL_ALL = 'FULL_ALL' }
 
-	export enum SchemaStatus { AVAILABLE = 0, PENDING = 1, DELETING = 2 }
+	export enum SchemaStatus { AVAILABLE = 'AVAILABLE', PENDING = 'PENDING', DELETING = 'DELETING' }
 
-	export enum SchemaVersionStatus { AVAILABLE = 0, PENDING = 1, FAILURE = 2, DELETING = 3 }
+	export enum SchemaVersionStatus { AVAILABLE = 'AVAILABLE', PENDING = 'PENDING', FAILURE = 'FAILURE', DELETING = 'DELETING' }
 
 	export interface CreateSchemaInput {
 		RegistryId?: RegistryId;
@@ -4185,7 +4185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Language { PYTHON = 0, SCALA = 1 }
+	export enum Language { PYTHON = 'PYTHON', SCALA = 'SCALA' }
 
 	export interface CreateSecurityConfigurationResponse {
 		Name?: string;
@@ -4260,7 +4260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3EncryptionMode { DISABLED = 0, 'SSE-KMS' = 1, 'SSE-S3' = 2 }
+	export enum S3EncryptionMode { DISABLED = 'DISABLED', 'SSE-KMS' = 'SSE-KMS', 'SSE-S3' = 'SSE-S3' }
 
 
 	/** Specifies how Amazon CloudWatch data should be encrypted. */
@@ -4302,7 +4302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobBookmarksEncryptionMode { DISABLED = 0, 'CSE-KMS' = 1 }
+	export enum JobBookmarksEncryptionMode { DISABLED = 'DISABLED', 'CSE-KMS' = 'CSE-KMS' }
 
 	export interface CreateSessionResponse {
 		Session?: Session;
@@ -4362,7 +4362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionStatus { PROVISIONING = 0, READY = 1, FAILED = 2, TIMEOUT = 3, STOPPING = 4, STOPPED = 5 }
+	export enum SessionStatus { PROVISIONING = 'PROVISIONING', READY = 'READY', FAILED = 'FAILED', TIMEOUT = 'TIMEOUT', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** The <code>SessionCommand</code> that runs the job. */
@@ -4607,7 +4607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetadataOperation { CREATE = 0 }
+	export enum MetadataOperation { CREATE = 'CREATE' }
 
 	export interface CreateTriggerResponse {
 		Name?: string;
@@ -4724,7 +4724,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrincipalType { USER = 0, ROLE = 1, GROUP = 2 }
+	export enum PrincipalType { USER = 'USER', ROLE = 'ROLE', GROUP = 'GROUP' }
 
 
 	/** The URIs for function resources. */
@@ -4746,7 +4746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { JAR = 0, FILE = 1, ARCHIVE = 2 }
+	export enum ResourceType { JAR = 'JAR', FILE = 'FILE', ARCHIVE = 'ARCHIVE' }
 
 	export interface CreateWorkflowResponse {
 		Name?: string;
@@ -5298,7 +5298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistryStatus { AVAILABLE = 0, DELETING = 1 }
+	export enum RegistryStatus { AVAILABLE = 'AVAILABLE', DELETING = 'DELETING' }
 
 	export interface DeleteRegistryInput {
 
@@ -5780,7 +5780,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlueprintRunState { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, ROLLING_BACK = 3 }
+	export enum BlueprintRunState { RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', ROLLING_BACK = 'ROLLING_BACK' }
 
 	export interface GetBlueprintRunRequest {
 
@@ -6218,7 +6218,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnStatisticsType { BOOLEAN = 0, DATE = 1, DECIMAL = 2, DOUBLE = 3, LONG = 4, STRING = 5, BINARY = 6 }
+	export enum ColumnStatisticsType { BOOLEAN = 'BOOLEAN', DATE = 'DATE', DECIMAL = 'DECIMAL', DOUBLE = 'DOUBLE', LONG = 'LONG', STRING = 'STRING', BINARY = 'BINARY' }
 
 
 	/** Defines column statistics supported for Boolean data columns. */
@@ -7322,7 +7322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceShareType { FOREIGN = 0, ALL = 1, FEDERATED = 2 }
+	export enum ResourceShareType { FOREIGN = 'FOREIGN', ALL = 'ALL', FEDERATED = 'FEDERATED' }
 
 	export interface GetDataflowGraphResponse {
 		DagNodes?: Array<CodeGenNode>;
@@ -7665,7 +7665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskType { EVALUATION = 0, LABELING_SET_GENERATION = 1, IMPORT_LABELS = 2, EXPORT_LABELS = 3, FIND_MATCHES = 4 }
+	export enum TaskType { EVALUATION = 'EVALUATION', LABELING_SET_GENERATION = 'LABELING_SET_GENERATION', IMPORT_LABELS = 'IMPORT_LABELS', EXPORT_LABELS = 'EXPORT_LABELS', FIND_MATCHES = 'FIND_MATCHES' }
 
 
 	/** Specifies configuration properties for an importing labels task run. */
@@ -7903,9 +7903,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskRunSortColumnType { TASK_RUN_TYPE = 0, STATUS = 1, STARTED = 2 }
+	export enum TaskRunSortColumnType { TASK_RUN_TYPE = 'TASK_RUN_TYPE', STATUS = 'STATUS', STARTED = 'STARTED' }
 
-	export enum SortDirectionType { DESCENDING = 0, ASCENDING = 1 }
+	export enum SortDirectionType { DESCENDING = 'DESCENDING', ASCENDING = 'ASCENDING' }
 
 	export interface GetMLTransformResponse {
 		TransformId?: string;
@@ -7964,7 +7964,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransformStatusType { NOT_READY = 0, READY = 1, DELETING = 2 }
+	export enum TransformStatusType { NOT_READY = 'NOT_READY', READY = 'READY', DELETING = 'DELETING' }
 
 
 	/** Evaluation metrics provide an estimate of the quality of your machine learning transform. */
@@ -8261,7 +8261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransformSortColumnType { NAME = 0, TRANSFORM_TYPE = 1, STATUS = 2, CREATED = 3, LAST_MODIFIED = 4 }
+	export enum TransformSortColumnType { NAME = 'NAME', TRANSFORM_TYPE = 'TRANSFORM_TYPE', STATUS = 'STATUS', CREATED = 'CREATED', LAST_MODIFIED = 'LAST_MODIFIED' }
 
 	export interface GetMappingResponse {
 
@@ -8483,7 +8483,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartitionIndexStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3 }
+	export enum PartitionIndexStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** <p>A list of errors that can occur when registering partition indexes for an existing table.</p> <p>These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows:</p> <ul> <li> <p>EncryptedPartitionError: The partitions are encrypted.</p> </li> <li> <p>InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column.</p> </li> <li> <p>MissingPartitionValueError: The partitions are encrypted.</p> </li> <li> <p>UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002.</p> </li> <li> <p>InternalError: Any error which does not belong to other error codes.</p> </li> </ul> */
@@ -8503,7 +8503,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackfillErrorCode { ENCRYPTED_PARTITION_ERROR = 0, INTERNAL_ERROR = 1, INVALID_PARTITION_TYPE_DATA_ERROR = 2, MISSING_PARTITION_VALUE_ERROR = 3, UNSUPPORTED_PARTITION_CHARACTER_ERROR = 4 }
+	export enum BackfillErrorCode { ENCRYPTED_PARTITION_ERROR = 'ENCRYPTED_PARTITION_ERROR', INTERNAL_ERROR = 'INTERNAL_ERROR', INVALID_PARTITION_TYPE_DATA_ERROR = 'INVALID_PARTITION_TYPE_DATA_ERROR', MISSING_PARTITION_VALUE_ERROR = 'MISSING_PARTITION_VALUE_ERROR', UNSUPPORTED_PARTITION_CHARACTER_ERROR = 'UNSUPPORTED_PARTITION_CHARACTER_ERROR' }
 
 	export interface GetPartitionIndexesRequest {
 		CatalogId?: string;
@@ -9015,7 +9015,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaDiffType { SYNTAX_DIFF = 0 }
+	export enum SchemaDiffType { SYNTAX_DIFF = 'SYNTAX_DIFF' }
 
 	export interface GetSecurityConfigurationResponse {
 		SecurityConfiguration?: SecurityConfiguration;
@@ -9171,7 +9171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatementState { WAITING = 0, RUNNING = 1, AVAILABLE = 2, CANCELLING = 3, CANCELLED = 4, ERROR = 5 }
+	export enum StatementState { WAITING = 'WAITING', RUNNING = 'RUNNING', AVAILABLE = 'AVAILABLE', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', ERROR = 'ERROR' }
 
 
 	/** The code execution output in JSON format. */
@@ -9701,7 +9701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionType { COLUMN_PERMISSION = 0, CELL_FILTER_PERMISSION = 1, NESTED_PERMISSION = 2, NESTED_CELL_PERMISSION = 3 }
+	export enum PermissionType { COLUMN_PERMISSION = 'COLUMN_PERMISSION', CELL_FILTER_PERMISSION = 'CELL_FILTER_PERMISSION', NESTED_PERMISSION = 'NESTED_PERMISSION', NESTED_CELL_PERMISSION = 'NESTED_CELL_PERMISSION' }
 
 	export interface PermissionTypeMismatchException {
 	}
@@ -10266,7 +10266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CrawlerHistoryState { RUNNING = 0, COMPLETED = 1, FAILED = 2, STOPPED = 3 }
+	export enum CrawlerHistoryState { RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', STOPPED = 'STOPPED' }
 
 	export interface ListCrawlsRequest {
 
@@ -10315,9 +10315,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldName { CRAWL_ID = 0, STATE = 1, START_TIME = 2, END_TIME = 3, DPU_HOUR = 4 }
+	export enum FieldName { CRAWL_ID = 'CRAWL_ID', STATE = 'STATE', START_TIME = 'START_TIME', END_TIME = 'END_TIME', DPU_HOUR = 'DPU_HOUR' }
 
-	export enum FilterOperator { GT = 0, GE = 1, LT = 2, LE = 3, EQ = 4, NE = 5 }
+	export enum FilterOperator { GT = 'GT', GE = 'GE', LT = 'LT', LE = 'LE', EQ = 'EQ', NE = 'NE' }
 
 	export interface ListCustomEntityTypesResponse {
 		CustomEntityTypes?: Array<CustomEntityType>;
@@ -11182,9 +11182,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExistCondition { MUST_EXIST = 0, NOT_EXIST = 1, NONE = 2 }
+	export enum ExistCondition { MUST_EXIST = 'MUST_EXIST', NOT_EXIST = 'NOT_EXIST', NONE = 'NONE' }
 
-	export enum EnableHybridValues { TRUE = 0, FALSE = 1 }
+	export enum EnableHybridValues { TRUE = 'TRUE', FALSE = 'FALSE' }
 
 	export interface PutSchemaVersionMetadataResponse {
 		SchemaArn?: string;
@@ -11631,7 +11631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Comparator { EQUALS = 0, GREATER_THAN = 1, LESS_THAN = 2, GREATER_THAN_EQUALS = 3, LESS_THAN_EQUALS = 4 }
+	export enum Comparator { EQUALS = 'EQUALS', GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN', GREATER_THAN_EQUALS = 'GREATER_THAN_EQUALS', LESS_THAN_EQUALS = 'LESS_THAN_EQUALS' }
 
 
 	/** Specifies a field to sort by and a sort order. */
@@ -11653,7 +11653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Sort { ASC = 0, DESC = 1 }
+	export enum Sort { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface StartBlueprintRunResponse {
 		RunId?: string;
@@ -13473,7 +13473,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdditionalOptionKeys { 'performanceTuning.caching' = 0 }
+	export enum AdditionalOptionKeys { 'performanceTuning.caching' = 'performanceTuning.caching' }
 
 	export interface AdditionalOptions {
 	}
@@ -13485,7 +13485,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggFunction { avg = 0, countDistinct = 1, count = 2, first = 3, last = 4, kurtosis = 5, max = 6, min = 7, skewness = 8, stddev_samp = 9, stddev_pop = 10, sum = 11, sumDistinct = 12, var_samp = 13, var_pop = 14 }
+	export enum AggFunction { avg = 'avg', countDistinct = 'countDistinct', count = 'count', first = 'first', last = 'last', kurtosis = 'kurtosis', max = 'max', min = 'min', skewness = 'skewness', stddev_samp = 'stddev_samp', stddev_pop = 'stddev_pop', sum = 'sum', sumDistinct = 'sumDistinct', var_samp = 'var_samp', var_pop = 'var_pop' }
 
 
 	/** Specifies the set of parameters needed to perform aggregation in the aggregate transform. */
@@ -13917,7 +13917,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogEncryptionMode { DISABLED = 0, 'SSE-KMS' = 1 }
+	export enum CatalogEncryptionMode { DISABLED = 'DISABLED', 'SSE-KMS' = 'SSE-KMS' }
 
 
 	/** Specifies a Hudi data source that is registered in the Glue Data Catalog. */
@@ -14167,7 +14167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartingPosition { latest = 0, trim_horizon = 1, earliest = 2, timestamp = 3 }
+	export enum StartingPosition { latest = 'latest', trim_horizon = 'trim_horizon', earliest = 'earliest', timestamp = 'timestamp' }
 
 
 	/** Specifies a Kinesis data source in the Glue Data Catalog. */
@@ -14212,7 +14212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateCatalogBehavior { UPDATE_IN_DATABASE = 0, LOG = 1 }
+	export enum UpdateCatalogBehavior { UPDATE_IN_DATABASE = 'UPDATE_IN_DATABASE', LOG = 'LOG' }
 
 
 	/** A policy that specifies update behavior for the crawler. */
@@ -14269,7 +14269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudWatchEncryptionMode { DISABLED = 0, 'SSE-KMS' = 1 }
+	export enum CloudWatchEncryptionMode { DISABLED = 'DISABLED', 'SSE-KMS' = 'SSE-KMS' }
 
 
 	/** Specifies a connector to a JDBC data source. */
@@ -14586,7 +14586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompressionType { gzip = 0, bzip2 = 1 }
+	export enum CompressionType { gzip = 'gzip', bzip2 = 'bzip2' }
 
 
 	/** Specifies additional connection options for the Amazon S3 data store. */
@@ -14614,9 +14614,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Separator { comma = 0, ctrla = 1, pipe = 2, semicolon = 3, tab = 4 }
+	export enum Separator { comma = 'comma', ctrla = 'ctrla', pipe = 'pipe', semicolon = 'semicolon', tab = 'tab' }
 
-	export enum QuoteChar { quote = 0, quillemet = 1, single_quote = 2, disabled = 3 }
+	export enum QuoteChar { quote = 'quote', quillemet = 'quillemet', single_quote = 'single_quote', disabled = 'disabled' }
 
 
 	/** Specifies a JSON data store stored in Amazon S3. */
@@ -14714,7 +14714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParquetCompressionType { snappy = 0, lzo = 1, gzip = 2, uncompressed = 3, none = 4 }
+	export enum ParquetCompressionType { snappy = 'snappy', lzo = 'lzo', gzip = 'gzip', uncompressed = 'uncompressed', none = 'none' }
 
 
 	/** Specifies a Relational database data source in the Glue Data Catalog. */
@@ -15098,7 +15098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetFormat { json = 0, csv = 1, avro = 2, orc = 3, parquet = 4, hudi = 5, delta = 6 }
+	export enum TargetFormat { json = 'json', csv = 'csv', avro = 'avro', orc = 'orc', parquet = 'parquet', hudi = 'hudi', delta = 'delta' }
 
 
 	/** Specifies a transform that chooses the data property keys that you want to keep. */
@@ -15255,7 +15255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JoinType { equijoin = 0, left = 1, right = 2, outer = 3, leftsemi = 4, leftanti = 5 }
+	export enum JoinType { equijoin = 'equijoin', left = 'left', right = 'right', outer = 'outer', leftsemi = 'leftsemi', leftanti = 'leftanti' }
 
 
 	/** Specifies a column to be joined. */
@@ -15407,7 +15407,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterLogicalOperator { AND = 0, OR = 1 }
+	export enum FilterLogicalOperator { AND = 'AND', OR = 'OR' }
 
 
 	/** Specifies a filter expression. */
@@ -15436,7 +15436,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterOperation { EQ = 0, LT = 1, GT = 2, LTE = 3, GTE = 4, REGEX = 5, ISNULL = 6 }
+	export enum FilterOperation { EQ = 'EQ', LT = 'LT', GT = 'GT', LTE = 'LTE', GTE = 'GTE', REGEX = 'REGEX', ISNULL = 'ISNULL' }
 
 
 	/** Represents a single entry in the list of values for a <code>FilterExpression</code>.  */
@@ -15462,7 +15462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterValueType { COLUMNEXTRACTED = 0, CONSTANT = 1 }
+	export enum FilterValueType { COLUMNEXTRACTED = 'COLUMNEXTRACTED', CONSTANT = 'CONSTANT' }
 
 
 	/** Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames. */
@@ -15790,7 +15790,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnionType { ALL = 0, DISTINCT = 1 }
+	export enum UnionType { ALL = 'ALL', DISTINCT = 'DISTINCT' }
 
 
 	/** Specifies a transform that identifies, removes or masks PII data. */
@@ -15838,7 +15838,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PiiType { RowAudit = 0, RowMasking = 1, ColumnAudit = 2, ColumnMasking = 3 }
+	export enum PiiType { RowAudit = 'RowAudit', RowMasking = 'RowMasking', ColumnAudit = 'ColumnAudit', ColumnMasking = 'ColumnMasking' }
 
 
 	/** Specifies a transform that removes rows of repeating data from a data set.  */
@@ -16327,7 +16327,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParamType { str = 0, int = 1, float = 2, complex = 3, bool = 4, list = 5, null = 6 }
+	export enum ParamType { str = 'str', int = 'int', float = 'float', complex = 'complex', bool = 'bool', list = 'list', null = 'null' }
 
 
 	/** Specifies your data quality evaluation criteria. */
@@ -16365,7 +16365,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DQTransformOutput { PrimaryInput = 0, EvaluationResults = 1 }
+	export enum DQTransformOutput { PrimaryInput = 'PrimaryInput', EvaluationResults = 'EvaluationResults' }
 
 
 	/** Options to configure how your data quality evaluation results are published. */
@@ -16410,7 +16410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DQStopJobOnFailureTiming { Immediate = 0, AfterDataLoad = 1 }
+	export enum DQStopJobOnFailureTiming { Immediate = 'Immediate', AfterDataLoad = 'AfterDataLoad' }
 
 
 	/** Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3. */
@@ -16569,7 +16569,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HudiTargetCompressionType { gzip = 0, lzo = 1, uncompressed = 2, snappy = 3 }
+	export enum HudiTargetCompressionType { gzip = 'gzip', lzo = 'lzo', uncompressed = 'uncompressed', snappy = 'snappy' }
 
 
 	/** Specifies the direct JDBC source connection. */
@@ -16623,7 +16623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JDBCConnectionType { sqlserver = 0, mysql = 1, oracle = 2, postgresql = 3, redshift = 4 }
+	export enum JDBCConnectionType { sqlserver = 'sqlserver', mysql = 'mysql', oracle = 'oracle', postgresql = 'postgresql', redshift = 'redshift' }
 
 
 	/** Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3. */
@@ -16778,7 +16778,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeltaTargetCompressionType { uncompressed = 0, snappy = 1 }
+	export enum DeltaTargetCompressionType { uncompressed = 'uncompressed', snappy = 'snappy' }
 
 
 	/** Specifies your data quality evaluation criteria. */
@@ -17092,11 +17092,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionPropertyKey { HOST = 0, PORT = 1, USERNAME = 2, PASSWORD = 3, ENCRYPTED_PASSWORD = 4, JDBC_DRIVER_JAR_URI = 5, JDBC_DRIVER_CLASS_NAME = 6, JDBC_ENGINE = 7, JDBC_ENGINE_VERSION = 8, CONFIG_FILES = 9, INSTANCE_ID = 10, JDBC_CONNECTION_URL = 11, JDBC_ENFORCE_SSL = 12, CUSTOM_JDBC_CERT = 13, SKIP_CUSTOM_JDBC_CERT_VALIDATION = 14, CUSTOM_JDBC_CERT_STRING = 15, CONNECTION_URL = 16, KAFKA_BOOTSTRAP_SERVERS = 17, KAFKA_SSL_ENABLED = 18, KAFKA_CUSTOM_CERT = 19, KAFKA_SKIP_CUSTOM_CERT_VALIDATION = 20, KAFKA_CLIENT_KEYSTORE = 21, KAFKA_CLIENT_KEYSTORE_PASSWORD = 22, KAFKA_CLIENT_KEY_PASSWORD = 23, ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD = 24, ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD = 25, SECRET_ID = 26, CONNECTOR_URL = 27, CONNECTOR_TYPE = 28, CONNECTOR_CLASS_NAME = 29, KAFKA_SASL_MECHANISM = 30, KAFKA_SASL_SCRAM_USERNAME = 31, KAFKA_SASL_SCRAM_PASSWORD = 32, KAFKA_SASL_SCRAM_SECRETS_ARN = 33, ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD = 34, KAFKA_SASL_GSSAPI_KEYTAB = 35, KAFKA_SASL_GSSAPI_KRB5_CONF = 36, KAFKA_SASL_GSSAPI_SERVICE = 37, KAFKA_SASL_GSSAPI_PRINCIPAL = 38 }
+	export enum ConnectionPropertyKey { HOST = 'HOST', PORT = 'PORT', USERNAME = 'USERNAME', PASSWORD = 'PASSWORD', ENCRYPTED_PASSWORD = 'ENCRYPTED_PASSWORD', JDBC_DRIVER_JAR_URI = 'JDBC_DRIVER_JAR_URI', JDBC_DRIVER_CLASS_NAME = 'JDBC_DRIVER_CLASS_NAME', JDBC_ENGINE = 'JDBC_ENGINE', JDBC_ENGINE_VERSION = 'JDBC_ENGINE_VERSION', CONFIG_FILES = 'CONFIG_FILES', INSTANCE_ID = 'INSTANCE_ID', JDBC_CONNECTION_URL = 'JDBC_CONNECTION_URL', JDBC_ENFORCE_SSL = 'JDBC_ENFORCE_SSL', CUSTOM_JDBC_CERT = 'CUSTOM_JDBC_CERT', SKIP_CUSTOM_JDBC_CERT_VALIDATION = 'SKIP_CUSTOM_JDBC_CERT_VALIDATION', CUSTOM_JDBC_CERT_STRING = 'CUSTOM_JDBC_CERT_STRING', CONNECTION_URL = 'CONNECTION_URL', KAFKA_BOOTSTRAP_SERVERS = 'KAFKA_BOOTSTRAP_SERVERS', KAFKA_SSL_ENABLED = 'KAFKA_SSL_ENABLED', KAFKA_CUSTOM_CERT = 'KAFKA_CUSTOM_CERT', KAFKA_SKIP_CUSTOM_CERT_VALIDATION = 'KAFKA_SKIP_CUSTOM_CERT_VALIDATION', KAFKA_CLIENT_KEYSTORE = 'KAFKA_CLIENT_KEYSTORE', KAFKA_CLIENT_KEYSTORE_PASSWORD = 'KAFKA_CLIENT_KEYSTORE_PASSWORD', KAFKA_CLIENT_KEY_PASSWORD = 'KAFKA_CLIENT_KEY_PASSWORD', ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD = 'ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD', ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD = 'ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD', SECRET_ID = 'SECRET_ID', CONNECTOR_URL = 'CONNECTOR_URL', CONNECTOR_TYPE = 'CONNECTOR_TYPE', CONNECTOR_CLASS_NAME = 'CONNECTOR_CLASS_NAME', KAFKA_SASL_MECHANISM = 'KAFKA_SASL_MECHANISM', KAFKA_SASL_SCRAM_USERNAME = 'KAFKA_SASL_SCRAM_USERNAME', KAFKA_SASL_SCRAM_PASSWORD = 'KAFKA_SASL_SCRAM_PASSWORD', KAFKA_SASL_SCRAM_SECRETS_ARN = 'KAFKA_SASL_SCRAM_SECRETS_ARN', ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD = 'ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD', KAFKA_SASL_GSSAPI_KEYTAB = 'KAFKA_SASL_GSSAPI_KEYTAB', KAFKA_SASL_GSSAPI_KRB5_CONF = 'KAFKA_SASL_GSSAPI_KRB5_CONF', KAFKA_SASL_GSSAPI_SERVICE = 'KAFKA_SASL_GSSAPI_SERVICE', KAFKA_SASL_GSSAPI_PRINCIPAL = 'KAFKA_SASL_GSSAPI_PRINCIPAL' }
 
-	export enum GlueRecordType { DATE = 0, STRING = 1, TIMESTAMP = 2, INT = 3, FLOAT = 4, LONG = 5, BIGDECIMAL = 6, BYTE = 7, SHORT = 8, DOUBLE = 9 }
+	export enum GlueRecordType { DATE = 'DATE', STRING = 'STRING', TIMESTAMP = 'TIMESTAMP', INT = 'INT', FLOAT = 'FLOAT', LONG = 'LONG', BIGDECIMAL = 'BIGDECIMAL', BYTE = 'BYTE', SHORT = 'SHORT', DOUBLE = 'DOUBLE' }
 
-	export enum JDBCDataType { ARRAY = 0, BIGINT = 1, BINARY = 2, BIT = 3, BLOB = 4, BOOLEAN = 5, CHAR = 6, CLOB = 7, DATALINK = 8, DATE = 9, DECIMAL = 10, DISTINCT = 11, DOUBLE = 12, FLOAT = 13, INTEGER = 14, JAVA_OBJECT = 15, LONGNVARCHAR = 16, LONGVARBINARY = 17, LONGVARCHAR = 18, NCHAR = 19, NCLOB = 20, NULL = 21, NUMERIC = 22, NVARCHAR = 23, OTHER = 24, REAL = 25, REF = 26, REF_CURSOR = 27, ROWID = 28, SMALLINT = 29, SQLXML = 30, STRUCT = 31, TIME = 32, TIME_WITH_TIMEZONE = 33, TIMESTAMP = 34, TIMESTAMP_WITH_TIMEZONE = 35, TINYINT = 36, VARBINARY = 37, VARCHAR = 38 }
+	export enum JDBCDataType { ARRAY = 'ARRAY', BIGINT = 'BIGINT', BINARY = 'BINARY', BIT = 'BIT', BLOB = 'BLOB', BOOLEAN = 'BOOLEAN', CHAR = 'CHAR', CLOB = 'CLOB', DATALINK = 'DATALINK', DATE = 'DATE', DECIMAL = 'DECIMAL', DISTINCT = 'DISTINCT', DOUBLE = 'DOUBLE', FLOAT = 'FLOAT', INTEGER = 'INTEGER', JAVA_OBJECT = 'JAVA_OBJECT', LONGNVARCHAR = 'LONGNVARCHAR', LONGVARBINARY = 'LONGVARBINARY', LONGVARCHAR = 'LONGVARCHAR', NCHAR = 'NCHAR', NCLOB = 'NCLOB', NULL = 'NULL', NUMERIC = 'NUMERIC', NVARCHAR = 'NVARCHAR', OTHER = 'OTHER', REAL = 'REAL', REF = 'REF', REF_CURSOR = 'REF_CURSOR', ROWID = 'ROWID', SMALLINT = 'SMALLINT', SQLXML = 'SQLXML', STRUCT = 'STRUCT', TIME = 'TIME', TIME_WITH_TIMEZONE = 'TIME_WITH_TIMEZONE', TIMESTAMP = 'TIMESTAMP', TIMESTAMP_WITH_TIMEZONE = 'TIMESTAMP_WITH_TIMEZONE', TINYINT = 'TINYINT', VARBINARY = 'VARBINARY', VARCHAR = 'VARCHAR' }
 
 
 	/** A structure containing other metadata for a schema version belonging to the same metadata key. */
@@ -19038,409 +19038,409 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchCreatePartitionX_Amz_Target { 'AWSGlue.BatchCreatePartition' = 0 }
+	export enum BatchCreatePartitionX_Amz_Target { 'AWSGlue.BatchCreatePartition' = 'AWSGlue.BatchCreatePartition' }
 
-	export enum BatchDeleteConnectionX_Amz_Target { 'AWSGlue.BatchDeleteConnection' = 0 }
+	export enum BatchDeleteConnectionX_Amz_Target { 'AWSGlue.BatchDeleteConnection' = 'AWSGlue.BatchDeleteConnection' }
 
-	export enum BatchDeletePartitionX_Amz_Target { 'AWSGlue.BatchDeletePartition' = 0 }
+	export enum BatchDeletePartitionX_Amz_Target { 'AWSGlue.BatchDeletePartition' = 'AWSGlue.BatchDeletePartition' }
 
-	export enum BatchDeleteTableX_Amz_Target { 'AWSGlue.BatchDeleteTable' = 0 }
+	export enum BatchDeleteTableX_Amz_Target { 'AWSGlue.BatchDeleteTable' = 'AWSGlue.BatchDeleteTable' }
 
-	export enum BatchDeleteTableVersionX_Amz_Target { 'AWSGlue.BatchDeleteTableVersion' = 0 }
+	export enum BatchDeleteTableVersionX_Amz_Target { 'AWSGlue.BatchDeleteTableVersion' = 'AWSGlue.BatchDeleteTableVersion' }
 
-	export enum BatchGetBlueprintsX_Amz_Target { 'AWSGlue.BatchGetBlueprints' = 0 }
+	export enum BatchGetBlueprintsX_Amz_Target { 'AWSGlue.BatchGetBlueprints' = 'AWSGlue.BatchGetBlueprints' }
 
-	export enum BatchGetCrawlersX_Amz_Target { 'AWSGlue.BatchGetCrawlers' = 0 }
+	export enum BatchGetCrawlersX_Amz_Target { 'AWSGlue.BatchGetCrawlers' = 'AWSGlue.BatchGetCrawlers' }
 
-	export enum BatchGetCustomEntityTypesX_Amz_Target { 'AWSGlue.BatchGetCustomEntityTypes' = 0 }
+	export enum BatchGetCustomEntityTypesX_Amz_Target { 'AWSGlue.BatchGetCustomEntityTypes' = 'AWSGlue.BatchGetCustomEntityTypes' }
 
-	export enum BatchGetDataQualityResultX_Amz_Target { 'AWSGlue.BatchGetDataQualityResult' = 0 }
+	export enum BatchGetDataQualityResultX_Amz_Target { 'AWSGlue.BatchGetDataQualityResult' = 'AWSGlue.BatchGetDataQualityResult' }
 
-	export enum BatchGetDevEndpointsX_Amz_Target { 'AWSGlue.BatchGetDevEndpoints' = 0 }
+	export enum BatchGetDevEndpointsX_Amz_Target { 'AWSGlue.BatchGetDevEndpoints' = 'AWSGlue.BatchGetDevEndpoints' }
 
-	export enum BatchGetJobsX_Amz_Target { 'AWSGlue.BatchGetJobs' = 0 }
+	export enum BatchGetJobsX_Amz_Target { 'AWSGlue.BatchGetJobs' = 'AWSGlue.BatchGetJobs' }
 
-	export enum BatchGetPartitionX_Amz_Target { 'AWSGlue.BatchGetPartition' = 0 }
+	export enum BatchGetPartitionX_Amz_Target { 'AWSGlue.BatchGetPartition' = 'AWSGlue.BatchGetPartition' }
 
-	export enum BatchGetTriggersX_Amz_Target { 'AWSGlue.BatchGetTriggers' = 0 }
+	export enum BatchGetTriggersX_Amz_Target { 'AWSGlue.BatchGetTriggers' = 'AWSGlue.BatchGetTriggers' }
 
-	export enum BatchGetWorkflowsX_Amz_Target { 'AWSGlue.BatchGetWorkflows' = 0 }
+	export enum BatchGetWorkflowsX_Amz_Target { 'AWSGlue.BatchGetWorkflows' = 'AWSGlue.BatchGetWorkflows' }
 
-	export enum BatchStopJobRunX_Amz_Target { 'AWSGlue.BatchStopJobRun' = 0 }
+	export enum BatchStopJobRunX_Amz_Target { 'AWSGlue.BatchStopJobRun' = 'AWSGlue.BatchStopJobRun' }
 
-	export enum BatchUpdatePartitionX_Amz_Target { 'AWSGlue.BatchUpdatePartition' = 0 }
+	export enum BatchUpdatePartitionX_Amz_Target { 'AWSGlue.BatchUpdatePartition' = 'AWSGlue.BatchUpdatePartition' }
 
-	export enum CancelDataQualityRuleRecommendationRunX_Amz_Target { 'AWSGlue.CancelDataQualityRuleRecommendationRun' = 0 }
+	export enum CancelDataQualityRuleRecommendationRunX_Amz_Target { 'AWSGlue.CancelDataQualityRuleRecommendationRun' = 'AWSGlue.CancelDataQualityRuleRecommendationRun' }
 
-	export enum CancelDataQualityRulesetEvaluationRunX_Amz_Target { 'AWSGlue.CancelDataQualityRulesetEvaluationRun' = 0 }
+	export enum CancelDataQualityRulesetEvaluationRunX_Amz_Target { 'AWSGlue.CancelDataQualityRulesetEvaluationRun' = 'AWSGlue.CancelDataQualityRulesetEvaluationRun' }
 
-	export enum CancelMLTaskRunX_Amz_Target { 'AWSGlue.CancelMLTaskRun' = 0 }
+	export enum CancelMLTaskRunX_Amz_Target { 'AWSGlue.CancelMLTaskRun' = 'AWSGlue.CancelMLTaskRun' }
 
-	export enum CancelStatementX_Amz_Target { 'AWSGlue.CancelStatement' = 0 }
+	export enum CancelStatementX_Amz_Target { 'AWSGlue.CancelStatement' = 'AWSGlue.CancelStatement' }
 
-	export enum CheckSchemaVersionValidityX_Amz_Target { 'AWSGlue.CheckSchemaVersionValidity' = 0 }
+	export enum CheckSchemaVersionValidityX_Amz_Target { 'AWSGlue.CheckSchemaVersionValidity' = 'AWSGlue.CheckSchemaVersionValidity' }
 
-	export enum CreateBlueprintX_Amz_Target { 'AWSGlue.CreateBlueprint' = 0 }
+	export enum CreateBlueprintX_Amz_Target { 'AWSGlue.CreateBlueprint' = 'AWSGlue.CreateBlueprint' }
 
-	export enum CreateClassifierX_Amz_Target { 'AWSGlue.CreateClassifier' = 0 }
+	export enum CreateClassifierX_Amz_Target { 'AWSGlue.CreateClassifier' = 'AWSGlue.CreateClassifier' }
 
-	export enum CreateConnectionX_Amz_Target { 'AWSGlue.CreateConnection' = 0 }
+	export enum CreateConnectionX_Amz_Target { 'AWSGlue.CreateConnection' = 'AWSGlue.CreateConnection' }
 
-	export enum CreateCrawlerX_Amz_Target { 'AWSGlue.CreateCrawler' = 0 }
+	export enum CreateCrawlerX_Amz_Target { 'AWSGlue.CreateCrawler' = 'AWSGlue.CreateCrawler' }
 
-	export enum CreateCustomEntityTypeX_Amz_Target { 'AWSGlue.CreateCustomEntityType' = 0 }
+	export enum CreateCustomEntityTypeX_Amz_Target { 'AWSGlue.CreateCustomEntityType' = 'AWSGlue.CreateCustomEntityType' }
 
-	export enum CreateDataQualityRulesetX_Amz_Target { 'AWSGlue.CreateDataQualityRuleset' = 0 }
+	export enum CreateDataQualityRulesetX_Amz_Target { 'AWSGlue.CreateDataQualityRuleset' = 'AWSGlue.CreateDataQualityRuleset' }
 
-	export enum CreateDatabaseX_Amz_Target { 'AWSGlue.CreateDatabase' = 0 }
+	export enum CreateDatabaseX_Amz_Target { 'AWSGlue.CreateDatabase' = 'AWSGlue.CreateDatabase' }
 
-	export enum CreateDevEndpointX_Amz_Target { 'AWSGlue.CreateDevEndpoint' = 0 }
+	export enum CreateDevEndpointX_Amz_Target { 'AWSGlue.CreateDevEndpoint' = 'AWSGlue.CreateDevEndpoint' }
 
-	export enum CreateJobX_Amz_Target { 'AWSGlue.CreateJob' = 0 }
+	export enum CreateJobX_Amz_Target { 'AWSGlue.CreateJob' = 'AWSGlue.CreateJob' }
 
-	export enum CreateMLTransformX_Amz_Target { 'AWSGlue.CreateMLTransform' = 0 }
+	export enum CreateMLTransformX_Amz_Target { 'AWSGlue.CreateMLTransform' = 'AWSGlue.CreateMLTransform' }
 
-	export enum CreatePartitionX_Amz_Target { 'AWSGlue.CreatePartition' = 0 }
+	export enum CreatePartitionX_Amz_Target { 'AWSGlue.CreatePartition' = 'AWSGlue.CreatePartition' }
 
-	export enum CreatePartitionIndexX_Amz_Target { 'AWSGlue.CreatePartitionIndex' = 0 }
+	export enum CreatePartitionIndexX_Amz_Target { 'AWSGlue.CreatePartitionIndex' = 'AWSGlue.CreatePartitionIndex' }
 
-	export enum CreateRegistryX_Amz_Target { 'AWSGlue.CreateRegistry' = 0 }
+	export enum CreateRegistryX_Amz_Target { 'AWSGlue.CreateRegistry' = 'AWSGlue.CreateRegistry' }
 
-	export enum CreateSchemaX_Amz_Target { 'AWSGlue.CreateSchema' = 0 }
+	export enum CreateSchemaX_Amz_Target { 'AWSGlue.CreateSchema' = 'AWSGlue.CreateSchema' }
 
-	export enum CreateScriptX_Amz_Target { 'AWSGlue.CreateScript' = 0 }
+	export enum CreateScriptX_Amz_Target { 'AWSGlue.CreateScript' = 'AWSGlue.CreateScript' }
 
-	export enum CreateSecurityConfigurationX_Amz_Target { 'AWSGlue.CreateSecurityConfiguration' = 0 }
+	export enum CreateSecurityConfigurationX_Amz_Target { 'AWSGlue.CreateSecurityConfiguration' = 'AWSGlue.CreateSecurityConfiguration' }
 
-	export enum CreateSessionX_Amz_Target { 'AWSGlue.CreateSession' = 0 }
+	export enum CreateSessionX_Amz_Target { 'AWSGlue.CreateSession' = 'AWSGlue.CreateSession' }
 
-	export enum CreateTableX_Amz_Target { 'AWSGlue.CreateTable' = 0 }
+	export enum CreateTableX_Amz_Target { 'AWSGlue.CreateTable' = 'AWSGlue.CreateTable' }
 
-	export enum CreateTriggerX_Amz_Target { 'AWSGlue.CreateTrigger' = 0 }
+	export enum CreateTriggerX_Amz_Target { 'AWSGlue.CreateTrigger' = 'AWSGlue.CreateTrigger' }
 
-	export enum CreateUserDefinedFunctionX_Amz_Target { 'AWSGlue.CreateUserDefinedFunction' = 0 }
+	export enum CreateUserDefinedFunctionX_Amz_Target { 'AWSGlue.CreateUserDefinedFunction' = 'AWSGlue.CreateUserDefinedFunction' }
 
-	export enum CreateWorkflowX_Amz_Target { 'AWSGlue.CreateWorkflow' = 0 }
+	export enum CreateWorkflowX_Amz_Target { 'AWSGlue.CreateWorkflow' = 'AWSGlue.CreateWorkflow' }
 
-	export enum DeleteBlueprintX_Amz_Target { 'AWSGlue.DeleteBlueprint' = 0 }
+	export enum DeleteBlueprintX_Amz_Target { 'AWSGlue.DeleteBlueprint' = 'AWSGlue.DeleteBlueprint' }
 
-	export enum DeleteClassifierX_Amz_Target { 'AWSGlue.DeleteClassifier' = 0 }
+	export enum DeleteClassifierX_Amz_Target { 'AWSGlue.DeleteClassifier' = 'AWSGlue.DeleteClassifier' }
 
-	export enum DeleteColumnStatisticsForPartitionX_Amz_Target { 'AWSGlue.DeleteColumnStatisticsForPartition' = 0 }
+	export enum DeleteColumnStatisticsForPartitionX_Amz_Target { 'AWSGlue.DeleteColumnStatisticsForPartition' = 'AWSGlue.DeleteColumnStatisticsForPartition' }
 
-	export enum DeleteColumnStatisticsForTableX_Amz_Target { 'AWSGlue.DeleteColumnStatisticsForTable' = 0 }
+	export enum DeleteColumnStatisticsForTableX_Amz_Target { 'AWSGlue.DeleteColumnStatisticsForTable' = 'AWSGlue.DeleteColumnStatisticsForTable' }
 
-	export enum DeleteConnectionX_Amz_Target { 'AWSGlue.DeleteConnection' = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'AWSGlue.DeleteConnection' = 'AWSGlue.DeleteConnection' }
 
-	export enum DeleteCrawlerX_Amz_Target { 'AWSGlue.DeleteCrawler' = 0 }
+	export enum DeleteCrawlerX_Amz_Target { 'AWSGlue.DeleteCrawler' = 'AWSGlue.DeleteCrawler' }
 
-	export enum DeleteCustomEntityTypeX_Amz_Target { 'AWSGlue.DeleteCustomEntityType' = 0 }
+	export enum DeleteCustomEntityTypeX_Amz_Target { 'AWSGlue.DeleteCustomEntityType' = 'AWSGlue.DeleteCustomEntityType' }
 
-	export enum DeleteDataQualityRulesetX_Amz_Target { 'AWSGlue.DeleteDataQualityRuleset' = 0 }
+	export enum DeleteDataQualityRulesetX_Amz_Target { 'AWSGlue.DeleteDataQualityRuleset' = 'AWSGlue.DeleteDataQualityRuleset' }
 
-	export enum DeleteDatabaseX_Amz_Target { 'AWSGlue.DeleteDatabase' = 0 }
+	export enum DeleteDatabaseX_Amz_Target { 'AWSGlue.DeleteDatabase' = 'AWSGlue.DeleteDatabase' }
 
-	export enum DeleteDevEndpointX_Amz_Target { 'AWSGlue.DeleteDevEndpoint' = 0 }
+	export enum DeleteDevEndpointX_Amz_Target { 'AWSGlue.DeleteDevEndpoint' = 'AWSGlue.DeleteDevEndpoint' }
 
-	export enum DeleteJobX_Amz_Target { 'AWSGlue.DeleteJob' = 0 }
+	export enum DeleteJobX_Amz_Target { 'AWSGlue.DeleteJob' = 'AWSGlue.DeleteJob' }
 
-	export enum DeleteMLTransformX_Amz_Target { 'AWSGlue.DeleteMLTransform' = 0 }
+	export enum DeleteMLTransformX_Amz_Target { 'AWSGlue.DeleteMLTransform' = 'AWSGlue.DeleteMLTransform' }
 
-	export enum DeletePartitionX_Amz_Target { 'AWSGlue.DeletePartition' = 0 }
+	export enum DeletePartitionX_Amz_Target { 'AWSGlue.DeletePartition' = 'AWSGlue.DeletePartition' }
 
-	export enum DeletePartitionIndexX_Amz_Target { 'AWSGlue.DeletePartitionIndex' = 0 }
+	export enum DeletePartitionIndexX_Amz_Target { 'AWSGlue.DeletePartitionIndex' = 'AWSGlue.DeletePartitionIndex' }
 
-	export enum DeleteRegistryX_Amz_Target { 'AWSGlue.DeleteRegistry' = 0 }
+	export enum DeleteRegistryX_Amz_Target { 'AWSGlue.DeleteRegistry' = 'AWSGlue.DeleteRegistry' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'AWSGlue.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'AWSGlue.DeleteResourcePolicy' = 'AWSGlue.DeleteResourcePolicy' }
 
-	export enum DeleteSchemaX_Amz_Target { 'AWSGlue.DeleteSchema' = 0 }
+	export enum DeleteSchemaX_Amz_Target { 'AWSGlue.DeleteSchema' = 'AWSGlue.DeleteSchema' }
 
-	export enum DeleteSchemaVersionsX_Amz_Target { 'AWSGlue.DeleteSchemaVersions' = 0 }
+	export enum DeleteSchemaVersionsX_Amz_Target { 'AWSGlue.DeleteSchemaVersions' = 'AWSGlue.DeleteSchemaVersions' }
 
-	export enum DeleteSecurityConfigurationX_Amz_Target { 'AWSGlue.DeleteSecurityConfiguration' = 0 }
+	export enum DeleteSecurityConfigurationX_Amz_Target { 'AWSGlue.DeleteSecurityConfiguration' = 'AWSGlue.DeleteSecurityConfiguration' }
 
-	export enum DeleteSessionX_Amz_Target { 'AWSGlue.DeleteSession' = 0 }
+	export enum DeleteSessionX_Amz_Target { 'AWSGlue.DeleteSession' = 'AWSGlue.DeleteSession' }
 
-	export enum DeleteTableX_Amz_Target { 'AWSGlue.DeleteTable' = 0 }
+	export enum DeleteTableX_Amz_Target { 'AWSGlue.DeleteTable' = 'AWSGlue.DeleteTable' }
 
-	export enum DeleteTableVersionX_Amz_Target { 'AWSGlue.DeleteTableVersion' = 0 }
+	export enum DeleteTableVersionX_Amz_Target { 'AWSGlue.DeleteTableVersion' = 'AWSGlue.DeleteTableVersion' }
 
-	export enum DeleteTriggerX_Amz_Target { 'AWSGlue.DeleteTrigger' = 0 }
+	export enum DeleteTriggerX_Amz_Target { 'AWSGlue.DeleteTrigger' = 'AWSGlue.DeleteTrigger' }
 
-	export enum DeleteUserDefinedFunctionX_Amz_Target { 'AWSGlue.DeleteUserDefinedFunction' = 0 }
+	export enum DeleteUserDefinedFunctionX_Amz_Target { 'AWSGlue.DeleteUserDefinedFunction' = 'AWSGlue.DeleteUserDefinedFunction' }
 
-	export enum DeleteWorkflowX_Amz_Target { 'AWSGlue.DeleteWorkflow' = 0 }
+	export enum DeleteWorkflowX_Amz_Target { 'AWSGlue.DeleteWorkflow' = 'AWSGlue.DeleteWorkflow' }
 
-	export enum GetBlueprintX_Amz_Target { 'AWSGlue.GetBlueprint' = 0 }
+	export enum GetBlueprintX_Amz_Target { 'AWSGlue.GetBlueprint' = 'AWSGlue.GetBlueprint' }
 
-	export enum GetBlueprintRunX_Amz_Target { 'AWSGlue.GetBlueprintRun' = 0 }
+	export enum GetBlueprintRunX_Amz_Target { 'AWSGlue.GetBlueprintRun' = 'AWSGlue.GetBlueprintRun' }
 
-	export enum GetBlueprintRunsX_Amz_Target { 'AWSGlue.GetBlueprintRuns' = 0 }
+	export enum GetBlueprintRunsX_Amz_Target { 'AWSGlue.GetBlueprintRuns' = 'AWSGlue.GetBlueprintRuns' }
 
-	export enum GetCatalogImportStatusX_Amz_Target { 'AWSGlue.GetCatalogImportStatus' = 0 }
+	export enum GetCatalogImportStatusX_Amz_Target { 'AWSGlue.GetCatalogImportStatus' = 'AWSGlue.GetCatalogImportStatus' }
 
-	export enum GetClassifierX_Amz_Target { 'AWSGlue.GetClassifier' = 0 }
+	export enum GetClassifierX_Amz_Target { 'AWSGlue.GetClassifier' = 'AWSGlue.GetClassifier' }
 
-	export enum GetClassifiersX_Amz_Target { 'AWSGlue.GetClassifiers' = 0 }
+	export enum GetClassifiersX_Amz_Target { 'AWSGlue.GetClassifiers' = 'AWSGlue.GetClassifiers' }
 
-	export enum GetColumnStatisticsForPartitionX_Amz_Target { 'AWSGlue.GetColumnStatisticsForPartition' = 0 }
+	export enum GetColumnStatisticsForPartitionX_Amz_Target { 'AWSGlue.GetColumnStatisticsForPartition' = 'AWSGlue.GetColumnStatisticsForPartition' }
 
-	export enum GetColumnStatisticsForTableX_Amz_Target { 'AWSGlue.GetColumnStatisticsForTable' = 0 }
+	export enum GetColumnStatisticsForTableX_Amz_Target { 'AWSGlue.GetColumnStatisticsForTable' = 'AWSGlue.GetColumnStatisticsForTable' }
 
-	export enum GetConnectionX_Amz_Target { 'AWSGlue.GetConnection' = 0 }
+	export enum GetConnectionX_Amz_Target { 'AWSGlue.GetConnection' = 'AWSGlue.GetConnection' }
 
-	export enum GetConnectionsX_Amz_Target { 'AWSGlue.GetConnections' = 0 }
+	export enum GetConnectionsX_Amz_Target { 'AWSGlue.GetConnections' = 'AWSGlue.GetConnections' }
 
-	export enum GetCrawlerX_Amz_Target { 'AWSGlue.GetCrawler' = 0 }
+	export enum GetCrawlerX_Amz_Target { 'AWSGlue.GetCrawler' = 'AWSGlue.GetCrawler' }
 
-	export enum GetCrawlerMetricsX_Amz_Target { 'AWSGlue.GetCrawlerMetrics' = 0 }
+	export enum GetCrawlerMetricsX_Amz_Target { 'AWSGlue.GetCrawlerMetrics' = 'AWSGlue.GetCrawlerMetrics' }
 
-	export enum GetCrawlersX_Amz_Target { 'AWSGlue.GetCrawlers' = 0 }
+	export enum GetCrawlersX_Amz_Target { 'AWSGlue.GetCrawlers' = 'AWSGlue.GetCrawlers' }
 
-	export enum GetCustomEntityTypeX_Amz_Target { 'AWSGlue.GetCustomEntityType' = 0 }
+	export enum GetCustomEntityTypeX_Amz_Target { 'AWSGlue.GetCustomEntityType' = 'AWSGlue.GetCustomEntityType' }
 
-	export enum GetDataCatalogEncryptionSettingsX_Amz_Target { 'AWSGlue.GetDataCatalogEncryptionSettings' = 0 }
+	export enum GetDataCatalogEncryptionSettingsX_Amz_Target { 'AWSGlue.GetDataCatalogEncryptionSettings' = 'AWSGlue.GetDataCatalogEncryptionSettings' }
 
-	export enum GetDataQualityResultX_Amz_Target { 'AWSGlue.GetDataQualityResult' = 0 }
+	export enum GetDataQualityResultX_Amz_Target { 'AWSGlue.GetDataQualityResult' = 'AWSGlue.GetDataQualityResult' }
 
-	export enum GetDataQualityRuleRecommendationRunX_Amz_Target { 'AWSGlue.GetDataQualityRuleRecommendationRun' = 0 }
+	export enum GetDataQualityRuleRecommendationRunX_Amz_Target { 'AWSGlue.GetDataQualityRuleRecommendationRun' = 'AWSGlue.GetDataQualityRuleRecommendationRun' }
 
-	export enum GetDataQualityRulesetX_Amz_Target { 'AWSGlue.GetDataQualityRuleset' = 0 }
+	export enum GetDataQualityRulesetX_Amz_Target { 'AWSGlue.GetDataQualityRuleset' = 'AWSGlue.GetDataQualityRuleset' }
 
-	export enum GetDataQualityRulesetEvaluationRunX_Amz_Target { 'AWSGlue.GetDataQualityRulesetEvaluationRun' = 0 }
+	export enum GetDataQualityRulesetEvaluationRunX_Amz_Target { 'AWSGlue.GetDataQualityRulesetEvaluationRun' = 'AWSGlue.GetDataQualityRulesetEvaluationRun' }
 
-	export enum GetDatabaseX_Amz_Target { 'AWSGlue.GetDatabase' = 0 }
+	export enum GetDatabaseX_Amz_Target { 'AWSGlue.GetDatabase' = 'AWSGlue.GetDatabase' }
 
-	export enum GetDatabasesX_Amz_Target { 'AWSGlue.GetDatabases' = 0 }
+	export enum GetDatabasesX_Amz_Target { 'AWSGlue.GetDatabases' = 'AWSGlue.GetDatabases' }
 
-	export enum GetDataflowGraphX_Amz_Target { 'AWSGlue.GetDataflowGraph' = 0 }
+	export enum GetDataflowGraphX_Amz_Target { 'AWSGlue.GetDataflowGraph' = 'AWSGlue.GetDataflowGraph' }
 
-	export enum GetDevEndpointX_Amz_Target { 'AWSGlue.GetDevEndpoint' = 0 }
+	export enum GetDevEndpointX_Amz_Target { 'AWSGlue.GetDevEndpoint' = 'AWSGlue.GetDevEndpoint' }
 
-	export enum GetDevEndpointsX_Amz_Target { 'AWSGlue.GetDevEndpoints' = 0 }
+	export enum GetDevEndpointsX_Amz_Target { 'AWSGlue.GetDevEndpoints' = 'AWSGlue.GetDevEndpoints' }
 
-	export enum GetJobX_Amz_Target { 'AWSGlue.GetJob' = 0 }
+	export enum GetJobX_Amz_Target { 'AWSGlue.GetJob' = 'AWSGlue.GetJob' }
 
-	export enum GetJobBookmarkX_Amz_Target { 'AWSGlue.GetJobBookmark' = 0 }
+	export enum GetJobBookmarkX_Amz_Target { 'AWSGlue.GetJobBookmark' = 'AWSGlue.GetJobBookmark' }
 
-	export enum GetJobRunX_Amz_Target { 'AWSGlue.GetJobRun' = 0 }
+	export enum GetJobRunX_Amz_Target { 'AWSGlue.GetJobRun' = 'AWSGlue.GetJobRun' }
 
-	export enum GetJobRunsX_Amz_Target { 'AWSGlue.GetJobRuns' = 0 }
+	export enum GetJobRunsX_Amz_Target { 'AWSGlue.GetJobRuns' = 'AWSGlue.GetJobRuns' }
 
-	export enum GetJobsX_Amz_Target { 'AWSGlue.GetJobs' = 0 }
+	export enum GetJobsX_Amz_Target { 'AWSGlue.GetJobs' = 'AWSGlue.GetJobs' }
 
-	export enum GetMLTaskRunX_Amz_Target { 'AWSGlue.GetMLTaskRun' = 0 }
+	export enum GetMLTaskRunX_Amz_Target { 'AWSGlue.GetMLTaskRun' = 'AWSGlue.GetMLTaskRun' }
 
-	export enum GetMLTaskRunsX_Amz_Target { 'AWSGlue.GetMLTaskRuns' = 0 }
+	export enum GetMLTaskRunsX_Amz_Target { 'AWSGlue.GetMLTaskRuns' = 'AWSGlue.GetMLTaskRuns' }
 
-	export enum GetMLTransformX_Amz_Target { 'AWSGlue.GetMLTransform' = 0 }
+	export enum GetMLTransformX_Amz_Target { 'AWSGlue.GetMLTransform' = 'AWSGlue.GetMLTransform' }
 
-	export enum GetMLTransformsX_Amz_Target { 'AWSGlue.GetMLTransforms' = 0 }
+	export enum GetMLTransformsX_Amz_Target { 'AWSGlue.GetMLTransforms' = 'AWSGlue.GetMLTransforms' }
 
-	export enum GetMappingX_Amz_Target { 'AWSGlue.GetMapping' = 0 }
+	export enum GetMappingX_Amz_Target { 'AWSGlue.GetMapping' = 'AWSGlue.GetMapping' }
 
-	export enum GetPartitionX_Amz_Target { 'AWSGlue.GetPartition' = 0 }
+	export enum GetPartitionX_Amz_Target { 'AWSGlue.GetPartition' = 'AWSGlue.GetPartition' }
 
-	export enum GetPartitionIndexesX_Amz_Target { 'AWSGlue.GetPartitionIndexes' = 0 }
+	export enum GetPartitionIndexesX_Amz_Target { 'AWSGlue.GetPartitionIndexes' = 'AWSGlue.GetPartitionIndexes' }
 
-	export enum GetPartitionsX_Amz_Target { 'AWSGlue.GetPartitions' = 0 }
+	export enum GetPartitionsX_Amz_Target { 'AWSGlue.GetPartitions' = 'AWSGlue.GetPartitions' }
 
-	export enum GetPlanX_Amz_Target { 'AWSGlue.GetPlan' = 0 }
+	export enum GetPlanX_Amz_Target { 'AWSGlue.GetPlan' = 'AWSGlue.GetPlan' }
 
-	export enum GetRegistryX_Amz_Target { 'AWSGlue.GetRegistry' = 0 }
+	export enum GetRegistryX_Amz_Target { 'AWSGlue.GetRegistry' = 'AWSGlue.GetRegistry' }
 
-	export enum GetResourcePoliciesX_Amz_Target { 'AWSGlue.GetResourcePolicies' = 0 }
+	export enum GetResourcePoliciesX_Amz_Target { 'AWSGlue.GetResourcePolicies' = 'AWSGlue.GetResourcePolicies' }
 
-	export enum GetResourcePolicyX_Amz_Target { 'AWSGlue.GetResourcePolicy' = 0 }
+	export enum GetResourcePolicyX_Amz_Target { 'AWSGlue.GetResourcePolicy' = 'AWSGlue.GetResourcePolicy' }
 
-	export enum GetSchemaX_Amz_Target { 'AWSGlue.GetSchema' = 0 }
+	export enum GetSchemaX_Amz_Target { 'AWSGlue.GetSchema' = 'AWSGlue.GetSchema' }
 
-	export enum GetSchemaByDefinitionX_Amz_Target { 'AWSGlue.GetSchemaByDefinition' = 0 }
+	export enum GetSchemaByDefinitionX_Amz_Target { 'AWSGlue.GetSchemaByDefinition' = 'AWSGlue.GetSchemaByDefinition' }
 
-	export enum GetSchemaVersionX_Amz_Target { 'AWSGlue.GetSchemaVersion' = 0 }
+	export enum GetSchemaVersionX_Amz_Target { 'AWSGlue.GetSchemaVersion' = 'AWSGlue.GetSchemaVersion' }
 
-	export enum GetSchemaVersionsDiffX_Amz_Target { 'AWSGlue.GetSchemaVersionsDiff' = 0 }
+	export enum GetSchemaVersionsDiffX_Amz_Target { 'AWSGlue.GetSchemaVersionsDiff' = 'AWSGlue.GetSchemaVersionsDiff' }
 
-	export enum GetSecurityConfigurationX_Amz_Target { 'AWSGlue.GetSecurityConfiguration' = 0 }
+	export enum GetSecurityConfigurationX_Amz_Target { 'AWSGlue.GetSecurityConfiguration' = 'AWSGlue.GetSecurityConfiguration' }
 
-	export enum GetSecurityConfigurationsX_Amz_Target { 'AWSGlue.GetSecurityConfigurations' = 0 }
+	export enum GetSecurityConfigurationsX_Amz_Target { 'AWSGlue.GetSecurityConfigurations' = 'AWSGlue.GetSecurityConfigurations' }
 
-	export enum GetSessionX_Amz_Target { 'AWSGlue.GetSession' = 0 }
+	export enum GetSessionX_Amz_Target { 'AWSGlue.GetSession' = 'AWSGlue.GetSession' }
 
-	export enum GetStatementX_Amz_Target { 'AWSGlue.GetStatement' = 0 }
+	export enum GetStatementX_Amz_Target { 'AWSGlue.GetStatement' = 'AWSGlue.GetStatement' }
 
-	export enum GetTableX_Amz_Target { 'AWSGlue.GetTable' = 0 }
+	export enum GetTableX_Amz_Target { 'AWSGlue.GetTable' = 'AWSGlue.GetTable' }
 
-	export enum GetTableVersionX_Amz_Target { 'AWSGlue.GetTableVersion' = 0 }
+	export enum GetTableVersionX_Amz_Target { 'AWSGlue.GetTableVersion' = 'AWSGlue.GetTableVersion' }
 
-	export enum GetTableVersionsX_Amz_Target { 'AWSGlue.GetTableVersions' = 0 }
+	export enum GetTableVersionsX_Amz_Target { 'AWSGlue.GetTableVersions' = 'AWSGlue.GetTableVersions' }
 
-	export enum GetTablesX_Amz_Target { 'AWSGlue.GetTables' = 0 }
+	export enum GetTablesX_Amz_Target { 'AWSGlue.GetTables' = 'AWSGlue.GetTables' }
 
-	export enum GetTagsX_Amz_Target { 'AWSGlue.GetTags' = 0 }
+	export enum GetTagsX_Amz_Target { 'AWSGlue.GetTags' = 'AWSGlue.GetTags' }
 
-	export enum GetTriggerX_Amz_Target { 'AWSGlue.GetTrigger' = 0 }
+	export enum GetTriggerX_Amz_Target { 'AWSGlue.GetTrigger' = 'AWSGlue.GetTrigger' }
 
-	export enum GetTriggersX_Amz_Target { 'AWSGlue.GetTriggers' = 0 }
+	export enum GetTriggersX_Amz_Target { 'AWSGlue.GetTriggers' = 'AWSGlue.GetTriggers' }
 
-	export enum GetUnfilteredPartitionMetadataX_Amz_Target { 'AWSGlue.GetUnfilteredPartitionMetadata' = 0 }
+	export enum GetUnfilteredPartitionMetadataX_Amz_Target { 'AWSGlue.GetUnfilteredPartitionMetadata' = 'AWSGlue.GetUnfilteredPartitionMetadata' }
 
-	export enum GetUnfilteredPartitionsMetadataX_Amz_Target { 'AWSGlue.GetUnfilteredPartitionsMetadata' = 0 }
+	export enum GetUnfilteredPartitionsMetadataX_Amz_Target { 'AWSGlue.GetUnfilteredPartitionsMetadata' = 'AWSGlue.GetUnfilteredPartitionsMetadata' }
 
-	export enum GetUnfilteredTableMetadataX_Amz_Target { 'AWSGlue.GetUnfilteredTableMetadata' = 0 }
+	export enum GetUnfilteredTableMetadataX_Amz_Target { 'AWSGlue.GetUnfilteredTableMetadata' = 'AWSGlue.GetUnfilteredTableMetadata' }
 
-	export enum GetUserDefinedFunctionX_Amz_Target { 'AWSGlue.GetUserDefinedFunction' = 0 }
+	export enum GetUserDefinedFunctionX_Amz_Target { 'AWSGlue.GetUserDefinedFunction' = 'AWSGlue.GetUserDefinedFunction' }
 
-	export enum GetUserDefinedFunctionsX_Amz_Target { 'AWSGlue.GetUserDefinedFunctions' = 0 }
+	export enum GetUserDefinedFunctionsX_Amz_Target { 'AWSGlue.GetUserDefinedFunctions' = 'AWSGlue.GetUserDefinedFunctions' }
 
-	export enum GetWorkflowX_Amz_Target { 'AWSGlue.GetWorkflow' = 0 }
+	export enum GetWorkflowX_Amz_Target { 'AWSGlue.GetWorkflow' = 'AWSGlue.GetWorkflow' }
 
-	export enum GetWorkflowRunX_Amz_Target { 'AWSGlue.GetWorkflowRun' = 0 }
+	export enum GetWorkflowRunX_Amz_Target { 'AWSGlue.GetWorkflowRun' = 'AWSGlue.GetWorkflowRun' }
 
-	export enum GetWorkflowRunPropertiesX_Amz_Target { 'AWSGlue.GetWorkflowRunProperties' = 0 }
+	export enum GetWorkflowRunPropertiesX_Amz_Target { 'AWSGlue.GetWorkflowRunProperties' = 'AWSGlue.GetWorkflowRunProperties' }
 
-	export enum GetWorkflowRunsX_Amz_Target { 'AWSGlue.GetWorkflowRuns' = 0 }
+	export enum GetWorkflowRunsX_Amz_Target { 'AWSGlue.GetWorkflowRuns' = 'AWSGlue.GetWorkflowRuns' }
 
-	export enum ImportCatalogToGlueX_Amz_Target { 'AWSGlue.ImportCatalogToGlue' = 0 }
+	export enum ImportCatalogToGlueX_Amz_Target { 'AWSGlue.ImportCatalogToGlue' = 'AWSGlue.ImportCatalogToGlue' }
 
-	export enum ListBlueprintsX_Amz_Target { 'AWSGlue.ListBlueprints' = 0 }
+	export enum ListBlueprintsX_Amz_Target { 'AWSGlue.ListBlueprints' = 'AWSGlue.ListBlueprints' }
 
-	export enum ListCrawlersX_Amz_Target { 'AWSGlue.ListCrawlers' = 0 }
+	export enum ListCrawlersX_Amz_Target { 'AWSGlue.ListCrawlers' = 'AWSGlue.ListCrawlers' }
 
-	export enum ListCrawlsX_Amz_Target { 'AWSGlue.ListCrawls' = 0 }
+	export enum ListCrawlsX_Amz_Target { 'AWSGlue.ListCrawls' = 'AWSGlue.ListCrawls' }
 
-	export enum ListCustomEntityTypesX_Amz_Target { 'AWSGlue.ListCustomEntityTypes' = 0 }
+	export enum ListCustomEntityTypesX_Amz_Target { 'AWSGlue.ListCustomEntityTypes' = 'AWSGlue.ListCustomEntityTypes' }
 
-	export enum ListDataQualityResultsX_Amz_Target { 'AWSGlue.ListDataQualityResults' = 0 }
+	export enum ListDataQualityResultsX_Amz_Target { 'AWSGlue.ListDataQualityResults' = 'AWSGlue.ListDataQualityResults' }
 
-	export enum ListDataQualityRuleRecommendationRunsX_Amz_Target { 'AWSGlue.ListDataQualityRuleRecommendationRuns' = 0 }
+	export enum ListDataQualityRuleRecommendationRunsX_Amz_Target { 'AWSGlue.ListDataQualityRuleRecommendationRuns' = 'AWSGlue.ListDataQualityRuleRecommendationRuns' }
 
-	export enum ListDataQualityRulesetEvaluationRunsX_Amz_Target { 'AWSGlue.ListDataQualityRulesetEvaluationRuns' = 0 }
+	export enum ListDataQualityRulesetEvaluationRunsX_Amz_Target { 'AWSGlue.ListDataQualityRulesetEvaluationRuns' = 'AWSGlue.ListDataQualityRulesetEvaluationRuns' }
 
-	export enum ListDataQualityRulesetsX_Amz_Target { 'AWSGlue.ListDataQualityRulesets' = 0 }
+	export enum ListDataQualityRulesetsX_Amz_Target { 'AWSGlue.ListDataQualityRulesets' = 'AWSGlue.ListDataQualityRulesets' }
 
-	export enum ListDevEndpointsX_Amz_Target { 'AWSGlue.ListDevEndpoints' = 0 }
+	export enum ListDevEndpointsX_Amz_Target { 'AWSGlue.ListDevEndpoints' = 'AWSGlue.ListDevEndpoints' }
 
-	export enum ListJobsX_Amz_Target { 'AWSGlue.ListJobs' = 0 }
+	export enum ListJobsX_Amz_Target { 'AWSGlue.ListJobs' = 'AWSGlue.ListJobs' }
 
-	export enum ListMLTransformsX_Amz_Target { 'AWSGlue.ListMLTransforms' = 0 }
+	export enum ListMLTransformsX_Amz_Target { 'AWSGlue.ListMLTransforms' = 'AWSGlue.ListMLTransforms' }
 
-	export enum ListRegistriesX_Amz_Target { 'AWSGlue.ListRegistries' = 0 }
+	export enum ListRegistriesX_Amz_Target { 'AWSGlue.ListRegistries' = 'AWSGlue.ListRegistries' }
 
-	export enum ListSchemaVersionsX_Amz_Target { 'AWSGlue.ListSchemaVersions' = 0 }
+	export enum ListSchemaVersionsX_Amz_Target { 'AWSGlue.ListSchemaVersions' = 'AWSGlue.ListSchemaVersions' }
 
-	export enum ListSchemasX_Amz_Target { 'AWSGlue.ListSchemas' = 0 }
+	export enum ListSchemasX_Amz_Target { 'AWSGlue.ListSchemas' = 'AWSGlue.ListSchemas' }
 
-	export enum ListSessionsX_Amz_Target { 'AWSGlue.ListSessions' = 0 }
+	export enum ListSessionsX_Amz_Target { 'AWSGlue.ListSessions' = 'AWSGlue.ListSessions' }
 
-	export enum ListStatementsX_Amz_Target { 'AWSGlue.ListStatements' = 0 }
+	export enum ListStatementsX_Amz_Target { 'AWSGlue.ListStatements' = 'AWSGlue.ListStatements' }
 
-	export enum ListTriggersX_Amz_Target { 'AWSGlue.ListTriggers' = 0 }
+	export enum ListTriggersX_Amz_Target { 'AWSGlue.ListTriggers' = 'AWSGlue.ListTriggers' }
 
-	export enum ListWorkflowsX_Amz_Target { 'AWSGlue.ListWorkflows' = 0 }
+	export enum ListWorkflowsX_Amz_Target { 'AWSGlue.ListWorkflows' = 'AWSGlue.ListWorkflows' }
 
-	export enum PutDataCatalogEncryptionSettingsX_Amz_Target { 'AWSGlue.PutDataCatalogEncryptionSettings' = 0 }
+	export enum PutDataCatalogEncryptionSettingsX_Amz_Target { 'AWSGlue.PutDataCatalogEncryptionSettings' = 'AWSGlue.PutDataCatalogEncryptionSettings' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'AWSGlue.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'AWSGlue.PutResourcePolicy' = 'AWSGlue.PutResourcePolicy' }
 
-	export enum PutSchemaVersionMetadataX_Amz_Target { 'AWSGlue.PutSchemaVersionMetadata' = 0 }
+	export enum PutSchemaVersionMetadataX_Amz_Target { 'AWSGlue.PutSchemaVersionMetadata' = 'AWSGlue.PutSchemaVersionMetadata' }
 
-	export enum PutWorkflowRunPropertiesX_Amz_Target { 'AWSGlue.PutWorkflowRunProperties' = 0 }
+	export enum PutWorkflowRunPropertiesX_Amz_Target { 'AWSGlue.PutWorkflowRunProperties' = 'AWSGlue.PutWorkflowRunProperties' }
 
-	export enum QuerySchemaVersionMetadataX_Amz_Target { 'AWSGlue.QuerySchemaVersionMetadata' = 0 }
+	export enum QuerySchemaVersionMetadataX_Amz_Target { 'AWSGlue.QuerySchemaVersionMetadata' = 'AWSGlue.QuerySchemaVersionMetadata' }
 
-	export enum RegisterSchemaVersionX_Amz_Target { 'AWSGlue.RegisterSchemaVersion' = 0 }
+	export enum RegisterSchemaVersionX_Amz_Target { 'AWSGlue.RegisterSchemaVersion' = 'AWSGlue.RegisterSchemaVersion' }
 
-	export enum RemoveSchemaVersionMetadataX_Amz_Target { 'AWSGlue.RemoveSchemaVersionMetadata' = 0 }
+	export enum RemoveSchemaVersionMetadataX_Amz_Target { 'AWSGlue.RemoveSchemaVersionMetadata' = 'AWSGlue.RemoveSchemaVersionMetadata' }
 
-	export enum ResetJobBookmarkX_Amz_Target { 'AWSGlue.ResetJobBookmark' = 0 }
+	export enum ResetJobBookmarkX_Amz_Target { 'AWSGlue.ResetJobBookmark' = 'AWSGlue.ResetJobBookmark' }
 
-	export enum ResumeWorkflowRunX_Amz_Target { 'AWSGlue.ResumeWorkflowRun' = 0 }
+	export enum ResumeWorkflowRunX_Amz_Target { 'AWSGlue.ResumeWorkflowRun' = 'AWSGlue.ResumeWorkflowRun' }
 
-	export enum RunStatementX_Amz_Target { 'AWSGlue.RunStatement' = 0 }
+	export enum RunStatementX_Amz_Target { 'AWSGlue.RunStatement' = 'AWSGlue.RunStatement' }
 
-	export enum SearchTablesX_Amz_Target { 'AWSGlue.SearchTables' = 0 }
+	export enum SearchTablesX_Amz_Target { 'AWSGlue.SearchTables' = 'AWSGlue.SearchTables' }
 
-	export enum StartBlueprintRunX_Amz_Target { 'AWSGlue.StartBlueprintRun' = 0 }
+	export enum StartBlueprintRunX_Amz_Target { 'AWSGlue.StartBlueprintRun' = 'AWSGlue.StartBlueprintRun' }
 
-	export enum StartCrawlerX_Amz_Target { 'AWSGlue.StartCrawler' = 0 }
+	export enum StartCrawlerX_Amz_Target { 'AWSGlue.StartCrawler' = 'AWSGlue.StartCrawler' }
 
-	export enum StartCrawlerScheduleX_Amz_Target { 'AWSGlue.StartCrawlerSchedule' = 0 }
+	export enum StartCrawlerScheduleX_Amz_Target { 'AWSGlue.StartCrawlerSchedule' = 'AWSGlue.StartCrawlerSchedule' }
 
-	export enum StartDataQualityRuleRecommendationRunX_Amz_Target { 'AWSGlue.StartDataQualityRuleRecommendationRun' = 0 }
+	export enum StartDataQualityRuleRecommendationRunX_Amz_Target { 'AWSGlue.StartDataQualityRuleRecommendationRun' = 'AWSGlue.StartDataQualityRuleRecommendationRun' }
 
-	export enum StartDataQualityRulesetEvaluationRunX_Amz_Target { 'AWSGlue.StartDataQualityRulesetEvaluationRun' = 0 }
+	export enum StartDataQualityRulesetEvaluationRunX_Amz_Target { 'AWSGlue.StartDataQualityRulesetEvaluationRun' = 'AWSGlue.StartDataQualityRulesetEvaluationRun' }
 
-	export enum StartExportLabelsTaskRunX_Amz_Target { 'AWSGlue.StartExportLabelsTaskRun' = 0 }
+	export enum StartExportLabelsTaskRunX_Amz_Target { 'AWSGlue.StartExportLabelsTaskRun' = 'AWSGlue.StartExportLabelsTaskRun' }
 
-	export enum StartImportLabelsTaskRunX_Amz_Target { 'AWSGlue.StartImportLabelsTaskRun' = 0 }
+	export enum StartImportLabelsTaskRunX_Amz_Target { 'AWSGlue.StartImportLabelsTaskRun' = 'AWSGlue.StartImportLabelsTaskRun' }
 
-	export enum StartJobRunX_Amz_Target { 'AWSGlue.StartJobRun' = 0 }
+	export enum StartJobRunX_Amz_Target { 'AWSGlue.StartJobRun' = 'AWSGlue.StartJobRun' }
 
-	export enum StartMLEvaluationTaskRunX_Amz_Target { 'AWSGlue.StartMLEvaluationTaskRun' = 0 }
+	export enum StartMLEvaluationTaskRunX_Amz_Target { 'AWSGlue.StartMLEvaluationTaskRun' = 'AWSGlue.StartMLEvaluationTaskRun' }
 
-	export enum StartMLLabelingSetGenerationTaskRunX_Amz_Target { 'AWSGlue.StartMLLabelingSetGenerationTaskRun' = 0 }
+	export enum StartMLLabelingSetGenerationTaskRunX_Amz_Target { 'AWSGlue.StartMLLabelingSetGenerationTaskRun' = 'AWSGlue.StartMLLabelingSetGenerationTaskRun' }
 
-	export enum StartTriggerX_Amz_Target { 'AWSGlue.StartTrigger' = 0 }
+	export enum StartTriggerX_Amz_Target { 'AWSGlue.StartTrigger' = 'AWSGlue.StartTrigger' }
 
-	export enum StartWorkflowRunX_Amz_Target { 'AWSGlue.StartWorkflowRun' = 0 }
+	export enum StartWorkflowRunX_Amz_Target { 'AWSGlue.StartWorkflowRun' = 'AWSGlue.StartWorkflowRun' }
 
-	export enum StopCrawlerX_Amz_Target { 'AWSGlue.StopCrawler' = 0 }
+	export enum StopCrawlerX_Amz_Target { 'AWSGlue.StopCrawler' = 'AWSGlue.StopCrawler' }
 
-	export enum StopCrawlerScheduleX_Amz_Target { 'AWSGlue.StopCrawlerSchedule' = 0 }
+	export enum StopCrawlerScheduleX_Amz_Target { 'AWSGlue.StopCrawlerSchedule' = 'AWSGlue.StopCrawlerSchedule' }
 
-	export enum StopSessionX_Amz_Target { 'AWSGlue.StopSession' = 0 }
+	export enum StopSessionX_Amz_Target { 'AWSGlue.StopSession' = 'AWSGlue.StopSession' }
 
-	export enum StopTriggerX_Amz_Target { 'AWSGlue.StopTrigger' = 0 }
+	export enum StopTriggerX_Amz_Target { 'AWSGlue.StopTrigger' = 'AWSGlue.StopTrigger' }
 
-	export enum StopWorkflowRunX_Amz_Target { 'AWSGlue.StopWorkflowRun' = 0 }
+	export enum StopWorkflowRunX_Amz_Target { 'AWSGlue.StopWorkflowRun' = 'AWSGlue.StopWorkflowRun' }
 
-	export enum TagResourceX_Amz_Target { 'AWSGlue.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSGlue.TagResource' = 'AWSGlue.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSGlue.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSGlue.UntagResource' = 'AWSGlue.UntagResource' }
 
-	export enum UpdateBlueprintX_Amz_Target { 'AWSGlue.UpdateBlueprint' = 0 }
+	export enum UpdateBlueprintX_Amz_Target { 'AWSGlue.UpdateBlueprint' = 'AWSGlue.UpdateBlueprint' }
 
-	export enum UpdateClassifierX_Amz_Target { 'AWSGlue.UpdateClassifier' = 0 }
+	export enum UpdateClassifierX_Amz_Target { 'AWSGlue.UpdateClassifier' = 'AWSGlue.UpdateClassifier' }
 
-	export enum UpdateColumnStatisticsForPartitionX_Amz_Target { 'AWSGlue.UpdateColumnStatisticsForPartition' = 0 }
+	export enum UpdateColumnStatisticsForPartitionX_Amz_Target { 'AWSGlue.UpdateColumnStatisticsForPartition' = 'AWSGlue.UpdateColumnStatisticsForPartition' }
 
-	export enum UpdateColumnStatisticsForTableX_Amz_Target { 'AWSGlue.UpdateColumnStatisticsForTable' = 0 }
+	export enum UpdateColumnStatisticsForTableX_Amz_Target { 'AWSGlue.UpdateColumnStatisticsForTable' = 'AWSGlue.UpdateColumnStatisticsForTable' }
 
-	export enum UpdateConnectionX_Amz_Target { 'AWSGlue.UpdateConnection' = 0 }
+	export enum UpdateConnectionX_Amz_Target { 'AWSGlue.UpdateConnection' = 'AWSGlue.UpdateConnection' }
 
-	export enum UpdateCrawlerX_Amz_Target { 'AWSGlue.UpdateCrawler' = 0 }
+	export enum UpdateCrawlerX_Amz_Target { 'AWSGlue.UpdateCrawler' = 'AWSGlue.UpdateCrawler' }
 
-	export enum UpdateCrawlerScheduleX_Amz_Target { 'AWSGlue.UpdateCrawlerSchedule' = 0 }
+	export enum UpdateCrawlerScheduleX_Amz_Target { 'AWSGlue.UpdateCrawlerSchedule' = 'AWSGlue.UpdateCrawlerSchedule' }
 
-	export enum UpdateDataQualityRulesetX_Amz_Target { 'AWSGlue.UpdateDataQualityRuleset' = 0 }
+	export enum UpdateDataQualityRulesetX_Amz_Target { 'AWSGlue.UpdateDataQualityRuleset' = 'AWSGlue.UpdateDataQualityRuleset' }
 
-	export enum UpdateDatabaseX_Amz_Target { 'AWSGlue.UpdateDatabase' = 0 }
+	export enum UpdateDatabaseX_Amz_Target { 'AWSGlue.UpdateDatabase' = 'AWSGlue.UpdateDatabase' }
 
-	export enum UpdateDevEndpointX_Amz_Target { 'AWSGlue.UpdateDevEndpoint' = 0 }
+	export enum UpdateDevEndpointX_Amz_Target { 'AWSGlue.UpdateDevEndpoint' = 'AWSGlue.UpdateDevEndpoint' }
 
-	export enum UpdateJobX_Amz_Target { 'AWSGlue.UpdateJob' = 0 }
+	export enum UpdateJobX_Amz_Target { 'AWSGlue.UpdateJob' = 'AWSGlue.UpdateJob' }
 
-	export enum UpdateJobFromSourceControlX_Amz_Target { 'AWSGlue.UpdateJobFromSourceControl' = 0 }
+	export enum UpdateJobFromSourceControlX_Amz_Target { 'AWSGlue.UpdateJobFromSourceControl' = 'AWSGlue.UpdateJobFromSourceControl' }
 
-	export enum UpdateMLTransformX_Amz_Target { 'AWSGlue.UpdateMLTransform' = 0 }
+	export enum UpdateMLTransformX_Amz_Target { 'AWSGlue.UpdateMLTransform' = 'AWSGlue.UpdateMLTransform' }
 
-	export enum UpdatePartitionX_Amz_Target { 'AWSGlue.UpdatePartition' = 0 }
+	export enum UpdatePartitionX_Amz_Target { 'AWSGlue.UpdatePartition' = 'AWSGlue.UpdatePartition' }
 
-	export enum UpdateRegistryX_Amz_Target { 'AWSGlue.UpdateRegistry' = 0 }
+	export enum UpdateRegistryX_Amz_Target { 'AWSGlue.UpdateRegistry' = 'AWSGlue.UpdateRegistry' }
 
-	export enum UpdateSchemaX_Amz_Target { 'AWSGlue.UpdateSchema' = 0 }
+	export enum UpdateSchemaX_Amz_Target { 'AWSGlue.UpdateSchema' = 'AWSGlue.UpdateSchema' }
 
-	export enum UpdateSourceControlFromJobX_Amz_Target { 'AWSGlue.UpdateSourceControlFromJob' = 0 }
+	export enum UpdateSourceControlFromJobX_Amz_Target { 'AWSGlue.UpdateSourceControlFromJob' = 'AWSGlue.UpdateSourceControlFromJob' }
 
-	export enum UpdateTableX_Amz_Target { 'AWSGlue.UpdateTable' = 0 }
+	export enum UpdateTableX_Amz_Target { 'AWSGlue.UpdateTable' = 'AWSGlue.UpdateTable' }
 
-	export enum UpdateTriggerX_Amz_Target { 'AWSGlue.UpdateTrigger' = 0 }
+	export enum UpdateTriggerX_Amz_Target { 'AWSGlue.UpdateTrigger' = 'AWSGlue.UpdateTrigger' }
 
-	export enum UpdateUserDefinedFunctionX_Amz_Target { 'AWSGlue.UpdateUserDefinedFunction' = 0 }
+	export enum UpdateUserDefinedFunctionX_Amz_Target { 'AWSGlue.UpdateUserDefinedFunction' = 'AWSGlue.UpdateUserDefinedFunction' }
 
-	export enum UpdateWorkflowX_Amz_Target { 'AWSGlue.UpdateWorkflow' = 0 }
+	export enum UpdateWorkflowX_Amz_Target { 'AWSGlue.UpdateWorkflow' = 'AWSGlue.UpdateWorkflow' }
 
 }
 

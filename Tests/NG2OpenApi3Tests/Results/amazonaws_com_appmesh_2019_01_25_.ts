@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DefaultGatewayRouteRewrite { ENABLED = 0, DISABLED = 1 }
+	export enum DefaultGatewayRouteRewrite { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** An object that represents a gateway route target. */
@@ -554,7 +554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpMethod { GET = 0, HEAD = 1, POST = 2, PUT = 3, DELETE = 4, CONNECT = 5, OPTIONS = 6, TRACE = 7, PATCH = 8 }
+	export enum HttpMethod { GET = 'GET', HEAD = 'HEAD', POST = 'POST', PUT = 'PUT', DELETE = 'DELETE', CONNECT = 'CONNECT', OPTIONS = 'OPTIONS', TRACE = 'TRACE', PATCH = 'PATCH' }
 
 
 	/** An object representing the path to match in the request. */
@@ -636,7 +636,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayRouteStatusCode { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum GatewayRouteStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
 
 	/** Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
@@ -832,7 +832,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EgressFilterType { ALLOW_ALL = 0, DROP_ALL = 1 }
+	export enum EgressFilterType { ALLOW_ALL = 'ALLOW_ALL', DROP_ALL = 'DROP_ALL' }
 
 
 	/** An object that represents the service discovery information for a service mesh. */
@@ -851,7 +851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpPreference { IPv6_PREFERRED = 0, IPv4_PREFERRED = 1, IPv4_ONLY = 2, IPv6_ONLY = 3 }
+	export enum IpPreference { IPv6_PREFERRED = 'IPv6_PREFERRED', IPv4_PREFERRED = 'IPv4_PREFERRED', IPv4_ONLY = 'IPv4_ONLY', IPv6_ONLY = 'IPv6_ONLY' }
 
 
 	/** An object that represents the status of a service mesh. */
@@ -1125,7 +1125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GrpcRetryPolicyEvent { cancelled = 0, 'deadline-exceeded' = 1, internal = 2, 'resource-exhausted' = 3, unavailable = 4 }
+	export enum GrpcRetryPolicyEvent { cancelled = 'cancelled', 'deadline-exceeded' = 'deadline-exceeded', internal = 'internal', 'resource-exhausted' = 'resource-exhausted', unavailable = 'unavailable' }
 
 
 	/** An object that represents a duration of time. */
@@ -1147,9 +1147,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DurationUnit { s = 0, ms = 1 }
+	export enum DurationUnit { s = 's', ms = 'ms' }
 
-	export enum TcpRetryPolicyEvent { 'connection-error' = 0 }
+	export enum TcpRetryPolicyEvent { 'connection-error' = 'connection-error' }
 
 
 	/** An object that represents types of timeouts.  */
@@ -1260,7 +1260,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpScheme { http = 0, https = 1 }
+	export enum HttpScheme { http = 'http', https = 'https' }
 
 
 	/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>. */
@@ -1870,7 +1870,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualGatewayPortProtocol { http = 0, http2 = 1, grpc = 2 }
+	export enum VirtualGatewayPortProtocol { http = 'http', http2 = 'http2', grpc = 'grpc' }
 
 
 	/** An object that represents a port mapping. */
@@ -1963,7 +1963,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualGatewayListenerTlsMode { STRICT = 0, PERMISSIVE = 1, DISABLED = 2 }
+	export enum VirtualGatewayListenerTlsMode { STRICT = 'STRICT', PERMISSIVE = 'PERMISSIVE', DISABLED = 'DISABLED' }
 
 
 	/** An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context. */
@@ -2621,7 +2621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortProtocol { http = 0, tcp = 1, http2 = 2, grpc = 3 }
+	export enum PortProtocol { http = 'http', tcp = 'tcp', http2 = 'http2', grpc = 'grpc' }
 
 
 	/** An object that represents the outlier detection for a virtual node's listener. */
@@ -2955,7 +2955,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsResponseType { LOADBALANCER = 0, ENDPOINTS = 1 }
+	export enum DnsResponseType { LOADBALANCER = 'LOADBALANCER', ENDPOINTS = 'ENDPOINTS' }
 
 
 	/** An object that represents the current status of the virtual node. */
@@ -4742,11 +4742,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ListenerTlsMode { STRICT = 0, PERMISSIVE = 1, DISABLED = 2 }
+	export enum ListenerTlsMode { STRICT = 'STRICT', PERMISSIVE = 'PERMISSIVE', DISABLED = 'DISABLED' }
 
-	export enum MeshStatusCode { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum MeshStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
-	export enum RouteStatusCode { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum RouteStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
 
 	/** <zonbook></zonbook><xhtml></xhtml> */
@@ -4912,13 +4912,13 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualGatewayStatusCode { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum VirtualGatewayStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
-	export enum VirtualNodeStatusCode { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum VirtualNodeStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
-	export enum VirtualRouterStatusCode { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum VirtualRouterStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
-	export enum VirtualServiceStatusCode { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum VirtualServiceStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
 	@Injectable()
 	export class MyClient {

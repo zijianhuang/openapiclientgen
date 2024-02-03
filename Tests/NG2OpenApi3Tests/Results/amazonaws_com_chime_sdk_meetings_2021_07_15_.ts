@@ -74,7 +74,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaCapabilities { SendReceive = 0, Send = 1, Receive = 2, None = 3 }
+	export enum MediaCapabilities { SendReceive = 'SendReceive', Send = 'Send', Receive = 'Receive', None = 'None' }
 
 
 	/** The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages. */
@@ -369,7 +369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MeetingFeatureStatus { AVAILABLE = 0, UNAVAILABLE = 1 }
+	export enum MeetingFeatureStatus { AVAILABLE = 'AVAILABLE', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** A key-value pair that you define. */
@@ -531,15 +531,15 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscribeLanguageCode { 'en-US' = 0, 'en-GB' = 1, 'es-US' = 2, 'fr-CA' = 3, 'fr-FR' = 4, 'en-AU' = 5, 'it-IT' = 6, 'de-DE' = 7, 'pt-BR' = 8, 'ja-JP' = 9, 'ko-KR' = 10, 'zh-CN' = 11, 'th-TH' = 12, 'hi-IN' = 13 }
+	export enum TranscribeLanguageCode { 'en-US' = 'en-US', 'en-GB' = 'en-GB', 'es-US' = 'es-US', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'en-AU' = 'en-AU', 'it-IT' = 'it-IT', 'de-DE' = 'de-DE', 'pt-BR' = 'pt-BR', 'ja-JP' = 'ja-JP', 'ko-KR' = 'ko-KR', 'zh-CN' = 'zh-CN', 'th-TH' = 'th-TH', 'hi-IN' = 'hi-IN' }
 
-	export enum TranscribeVocabularyFilterMethod { remove = 0, mask = 1, tag = 2 }
+	export enum TranscribeVocabularyFilterMethod { remove = 'remove', mask = 'mask', tag = 'tag' }
 
-	export enum TranscribeRegion { 'us-east-2' = 0, 'us-east-1' = 1, 'us-west-2' = 2, 'ap-northeast-2' = 3, 'ap-southeast-2' = 4, 'ap-northeast-1' = 5, 'ca-central-1' = 6, 'eu-central-1' = 7, 'eu-west-1' = 8, 'eu-west-2' = 9, 'sa-east-1' = 10, auto = 11, 'us-gov-west-1' = 12 }
+	export enum TranscribeRegion { 'us-east-2' = 'us-east-2', 'us-east-1' = 'us-east-1', 'us-west-2' = 'us-west-2', 'ap-northeast-2' = 'ap-northeast-2', 'ap-southeast-2' = 'ap-southeast-2', 'ap-northeast-1' = 'ap-northeast-1', 'ca-central-1' = 'ca-central-1', 'eu-central-1' = 'eu-central-1', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'sa-east-1' = 'sa-east-1', auto = 'auto', 'us-gov-west-1' = 'us-gov-west-1' }
 
-	export enum TranscribePartialResultsStability { low = 0, medium = 1, high = 2 }
+	export enum TranscribePartialResultsStability { low = 'low', medium = 'medium', high = 'high' }
 
-	export enum TranscribeContentIdentificationType { PII = 0 }
+	export enum TranscribeContentIdentificationType { PII = 'PII' }
 
 
 	/** Settings specific to the Amazon Transcribe Medical engine. */
@@ -585,15 +585,15 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscribeMedicalLanguageCode { 'en-US' = 0 }
+	export enum TranscribeMedicalLanguageCode { 'en-US' = 'en-US' }
 
-	export enum TranscribeMedicalSpecialty { PRIMARYCARE = 0, CARDIOLOGY = 1, NEUROLOGY = 2, ONCOLOGY = 3, RADIOLOGY = 4, UROLOGY = 5 }
+	export enum TranscribeMedicalSpecialty { PRIMARYCARE = 'PRIMARYCARE', CARDIOLOGY = 'CARDIOLOGY', NEUROLOGY = 'NEUROLOGY', ONCOLOGY = 'ONCOLOGY', RADIOLOGY = 'RADIOLOGY', UROLOGY = 'UROLOGY' }
 
-	export enum TranscribeMedicalType { CONVERSATION = 0, DICTATION = 1 }
+	export enum TranscribeMedicalType { CONVERSATION = 'CONVERSATION', DICTATION = 'DICTATION' }
 
-	export enum TranscribeMedicalRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-2' = 2, 'ap-southeast-2' = 3, 'ca-central-1' = 4, 'eu-west-1' = 5, auto = 6 }
+	export enum TranscribeMedicalRegion { 'us-east-1' = 'us-east-1', 'us-east-2' = 'us-east-2', 'us-west-2' = 'us-west-2', 'ap-southeast-2' = 'ap-southeast-2', 'ca-central-1' = 'ca-central-1', 'eu-west-1' = 'eu-west-1', auto = 'auto' }
 
-	export enum TranscribeMedicalContentIdentificationType { PHI = 0 }
+	export enum TranscribeMedicalContentIdentificationType { PHI = 'PHI' }
 
 	export interface TagResourceResponse {
 	}
@@ -811,7 +811,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscribeContentRedactionType { PII = 0 }
+	export enum TranscribeContentRedactionType { PII = 'PII' }
 
 	export interface GetAttendeeRequest {
 	}
@@ -1114,7 +1114,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchCreateAttendeeOperation { 'batch-create' = 0 }
+	export enum BatchCreateAttendeeOperation { 'batch-create' = 'batch-create' }
 
 	export interface BatchCreateAttendeePostBody {
 
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchUpdateAttendeeCapabilitiesExceptOperation { 'batch-update-except' = 0 }
+	export enum BatchUpdateAttendeeCapabilitiesExceptOperation { 'batch-update-except' = 'batch-update-except' }
 
 	export interface BatchUpdateAttendeeCapabilitiesExceptPutBody {
 
@@ -1369,7 +1369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateMeetingWithAttendeesOperation { 'create-attendees' = 0 }
+	export enum CreateMeetingWithAttendeesOperation { 'create-attendees' = 'create-attendees' }
 
 	export interface CreateMeetingWithAttendeesPostBody {
 
@@ -1520,7 +1520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartMeetingTranscriptionOperation { start = 0 }
+	export enum StartMeetingTranscriptionOperation { start = 'start' }
 
 	export interface StartMeetingTranscriptionPostBody {
 
@@ -1550,9 +1550,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StopMeetingTranscriptionOperation { stop = 0 }
+	export enum StopMeetingTranscriptionOperation { stop = 'stop' }
 
-	export enum TagResourceOperation { 'tag-resource' = 0 }
+	export enum TagResourceOperation { 'tag-resource' = 'tag-resource' }
 
 	export interface TagResourcePostBody {
 
@@ -1589,7 +1589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UntagResourceOperation { 'untag-resource' = 0 }
+	export enum UntagResourceOperation { 'untag-resource' = 'untag-resource' }
 
 	export interface UntagResourcePostBody {
 

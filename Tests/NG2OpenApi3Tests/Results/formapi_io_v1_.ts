@@ -23,7 +23,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Authentication_errorStatus { error = 0 }
+	export enum Authentication_errorStatus { error = 'error' }
 
 	export interface Combined_submission_action {
 
@@ -77,11 +77,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Combined_submission_actionAction_category { notification = 0, file_upload = 1 }
+	export enum Combined_submission_actionAction_category { notification = 'notification', file_upload = 'file_upload' }
 
-	export enum Combined_submission_actionAction_type { webhook = 0, slack_webhook = 1, email = 2, aws_s3_upload = 3 }
+	export enum Combined_submission_actionAction_type { webhook = 'webhook', slack_webhook = 'slack_webhook', email = 'email', aws_s3_upload = 'aws_s3_upload' }
 
-	export enum Combined_submission_actionState { pending = 0, processed = 1, failed = 2, error = 3 }
+	export enum Combined_submission_actionState { pending = 'pending', processed = 'processed', failed = 'failed', error = 'error' }
 
 	export interface Error {
 
@@ -359,13 +359,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Submission_data_requestAuth_second_factor_type { none = 0, phone_number = 1, totp = 2, mobile_push = 3, security_key = 4, fingerprint = 5 }
+	export enum Submission_data_requestAuth_second_factor_type { none = 'none', phone_number = 'phone_number', totp = 'totp', mobile_push = 'mobile_push', security_key = 'security_key', fingerprint = 'fingerprint' }
 
-	export enum Submission_data_requestAuth_type { none = 0, password = 1, oauth = 2, email_link = 3, phone_number = 4, ldap = 5, saml = 6 }
+	export enum Submission_data_requestAuth_type { none = 'none', password = 'password', oauth = 'oauth', email_link = 'email_link', phone_number = 'phone_number', ldap = 'ldap', saml = 'saml' }
 
-	export enum Submission_data_requestState { pending = 0, completed = 1 }
+	export enum Submission_data_requestState { pending = 'pending', completed = 'completed' }
 
-	export enum SubmissionState { pending = 0, processed = 1, invalid_data = 2, error = 3, image_download_failed = 4, image_processing_failed = 5, waiting_for_data_requests = 6, syntax_error = 7, account_suspended = 8, license_revoked = 9, accidental = 10 }
+	export enum SubmissionState { pending = 'pending', processed = 'processed', invalid_data = 'invalid_data', error = 'error', image_download_failed = 'image_download_failed', image_processing_failed = 'image_processing_failed', waiting_for_data_requests = 'waiting_for_data_requests', syntax_error = 'syntax_error', account_suspended = 'account_suspended', license_revoked = 'license_revoked', accidental = 'accidental' }
 
 	@Injectable()
 	export class MyClient {
@@ -703,7 +703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestAuthenticationReturnStatus { success = 0 }
+	export enum TestAuthenticationReturnStatus { success = 'success' }
 
 	export interface ListCombinedSubmissionsReturn {
 		actions?: Array<Combined_submission_action>;
@@ -764,7 +764,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListCombinedSubmissionsReturnState { pending = 0, processed = 1, error = 2 }
+	export enum ListCombinedSubmissionsReturnState { pending = 'pending', processed = 'processed', error = 'error' }
 
 	export interface CombineSubmissionsPostBody {
 		expires_in?: number | null;
@@ -1028,7 +1028,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateDataRequestReturnStatus { success = 0, error = 1 }
+	export enum UpdateDataRequestReturnStatus { success = 'success', error = 'error' }
 
 	export interface ListFoldersReturn {
 		id?: string | null;
@@ -1379,7 +1379,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchGeneratePdfsReturnSubmissionsStatus { success = 0, error = 1, valid_but_not_saved = 2 }
+	export enum BatchGeneratePdfsReturnSubmissionsStatus { success = 'success', error = 'error', valid_but_not_saved = 'valid_but_not_saved' }
 
 	export interface GetSubmissionBatchReturn {
 
@@ -1594,7 +1594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListTemplatesReturnExpiration_interval { minutes = 0, hours = 1, days = 2 }
+	export enum ListTemplatesReturnExpiration_interval { minutes = 'minutes', hours = 'hours', days = 'days' }
 
 	export interface GetTemplateReturn {
 
@@ -2186,27 +2186,27 @@ export namespace MyNS {
 
 	}
 
-	export enum AddFieldsToTemplatePutBodyFieldsAlignment { left = 0, center = 1, right = 2 }
+	export enum AddFieldsToTemplatePutBodyFieldsAlignment { left = 'left', center = 'center', right = 'right' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsCheckCharacter { '&#10003;' = 0, '&#10004;' = 1, '&#10006;' = 2, '&#10007;' = 3, '&#10008;' = 4 }
+	export enum AddFieldsToTemplatePutBodyFieldsCheckCharacter { '&#10003;' = '&#10003;', '&#10004;' = '&#10004;', '&#10006;' = '&#10006;', '&#10007;' = '&#10007;', '&#10008;' = '&#10008;' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsDisplayType { text = 0, check = 1, qrcode = 2, barcode = 3, image = 4, shape = 5 }
+	export enum AddFieldsToTemplatePutBodyFieldsDisplayType { text = 'text', check = 'check', qrcode = 'qrcode', barcode = 'barcode', image = 'image', shape = 'shape' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsImageGravity { NorthWest = 0, North = 1, NorthEast = 2, West = 3, Center = 4, East = 5, SouthWest = 6, South = 7, SouthEast = 8 }
+	export enum AddFieldsToTemplatePutBodyFieldsImageGravity { NorthWest = 'NorthWest', North = 'North', NorthEast = 'NorthEast', West = 'West', Center = 'Center', East = 'East', SouthWest = 'SouthWest', South = 'South', SouthEast = 'SouthEast' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsImageScaleType { fit = 0, fill = 1, stretch = 2 }
+	export enum AddFieldsToTemplatePutBodyFieldsImageScaleType { fit = 'fit', fill = 'fill', stretch = 'stretch' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsNumberConditionType { equals = 0, range = 1, gte = 2, gt = 3, lte = 4, lt = 5 }
+	export enum AddFieldsToTemplatePutBodyFieldsNumberConditionType { equals = 'equals', range = 'range', gte = 'gte', gt = 'gt', lte = 'lte', lt = 'lt' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsOverflow { shrink_to_fit = 0, truncate = 1 }
+	export enum AddFieldsToTemplatePutBodyFieldsOverflow { shrink_to_fit = 'shrink_to_fit', truncate = 'truncate' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsShapeType { square = 0, rectangle = 1, circle = 2, ellipse = 3 }
+	export enum AddFieldsToTemplatePutBodyFieldsShapeType { square = 'square', rectangle = 'rectangle', circle = 'circle', ellipse = 'ellipse' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsStringConditionType { equals = 0, contains = 1, starts_with = 2, ends_with = 3, regex = 4 }
+	export enum AddFieldsToTemplatePutBodyFieldsStringConditionType { equals = 'equals', contains = 'contains', starts_with = 'starts_with', ends_with = 'ends_with', regex = 'regex' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsType { string = 0, number = 1, boolean = 2, date = 3, address = 4, country = 5, email = 6, url = 7, image = 8, signature = 9, barcode = 10, combined = 11 }
+	export enum AddFieldsToTemplatePutBodyFieldsType { string = 'string', number = 'number', boolean = 'boolean', date = 'date', address = 'address', country = 'country', email = 'email', url = 'url', image = 'image', signature = 'signature', barcode = 'barcode', combined = 'combined' }
 
-	export enum AddFieldsToTemplatePutBodyFieldsVAlignment { bottom = 0, center = 1, top = 2 }
+	export enum AddFieldsToTemplatePutBodyFieldsVAlignment { bottom = 'bottom', center = 'center', top = 'top' }
 
 	export interface AddFieldsToTemplateReturn {
 		errors?: Array<string>;
@@ -3147,11 +3147,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CreatePDFTemplateFromUploadPostBodyTemplateDocumentMetadataMime_type { 'application/pdf' = 0 }
+	export enum CreatePDFTemplateFromUploadPostBodyTemplateDocumentMetadataMime_type { 'application/pdf' = 'application/pdf' }
 
-	export enum CreatePDFTemplateFromUploadPostBodyTemplateDocumentStorage { cache = 0 }
+	export enum CreatePDFTemplateFromUploadPostBodyTemplateDocumentStorage { cache = 'cache' }
 
-	export enum CreatePDFTemplateFromUploadPostBodyTemplateTemplate_type { pdf = 0, html = 1 }
+	export enum CreatePDFTemplateFromUploadPostBodyTemplateTemplate_type { pdf = 'pdf', html = 'html' }
 
 	export interface CreateHTMLTemplatePostBody {
 
@@ -3313,7 +3313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetPresignUrlReturnMethod { post = 0 }
+	export enum GetPresignUrlReturnMethod { post = 'post' }
 
 }
 

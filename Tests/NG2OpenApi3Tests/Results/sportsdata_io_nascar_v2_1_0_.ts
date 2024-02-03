@@ -436,7 +436,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DriverRaceProjectionsEntryListFormat { xml = 0, json = 1 }
+	export enum DriverRaceProjectionsEntryListFormat { xml = 'xml', json = 'json' }
 
 }
 

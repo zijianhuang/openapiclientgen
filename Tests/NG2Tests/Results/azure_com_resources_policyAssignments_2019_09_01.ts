@@ -69,7 +69,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0, None = 1 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned', None = 'None' }
 
 
 	/** The parameter values for the policy rule. The keys are the parameter names. */
@@ -243,7 +243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyAssignmentPropertiesEnforcementMode { Default = 0, DoNotEnforce = 1 }
+	export enum PolicyAssignmentPropertiesEnforcementMode { Default = 'Default', DoNotEnforce = 'DoNotEnforce' }
 
 
 	/** The policy sku. This property is optional, obsolete, and will be ignored. */

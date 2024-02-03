@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceTypeForTagging { Document = 0, ManagedInstance = 1, MaintenanceWindow = 2, Parameter = 3, PatchBaseline = 4, OpsItem = 5, OpsMetadata = 6, Automation = 7, Association = 8 }
+	export enum ResourceTypeForTagging { Document = 'Document', ManagedInstance = 'ManagedInstance', MaintenanceWindow = 'MaintenanceWindow', Parameter = 'Parameter', PatchBaseline = 'PatchBaseline', OpsItem = 'OpsItem', OpsMetadata = 'OpsMetadata', Automation = 'Automation', Association = 'Association' }
 
 
 	/** Metadata that you assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Amazon Web Services Systems Manager, you can apply tags to Systems Manager documents (SSM documents), managed nodes, maintenance windows, parameters, patch baselines, OpsItems, and OpsMetadata. */
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationStatusName { Pending = 0, Success = 1, Failed = 2 }
+	export enum AssociationStatusName { Pending = 'Pending', Success = 'Success', Failed = 'Failed' }
 
 
 	/** Information about the association. */
@@ -630,9 +630,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationComplianceSeverity { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3, UNSPECIFIED = 4 }
+	export enum AssociationComplianceSeverity { CRITICAL = 'CRITICAL', HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW', UNSPECIFIED = 'UNSPECIFIED' }
 
-	export enum AssociationSyncCompliance { AUTO = 0, MANUAL = 1 }
+	export enum AssociationSyncCompliance { AUTO = 'AUTO', MANUAL = 'MANUAL' }
 
 
 	/** The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution. */
@@ -741,7 +741,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalAlarmState { UNKNOWN = 0, ALARM = 1 }
+	export enum ExternalAlarmState { UNKNOWN = 'UNKNOWN', ALARM = 'ALARM' }
 
 	export interface CreateAssociationRequest {
 
@@ -999,7 +999,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Fault { Client = 0, Server = 1, Unknown = 2 }
+	export enum Fault { Client = 'Client', Server = 'Server', Unknown = 'Unknown' }
 
 	export interface CreateAssociationBatchRequest {
 
@@ -1113,11 +1113,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentHashType { Sha256 = 0, Sha1 = 1 }
+	export enum DocumentHashType { Sha256 = 'Sha256', Sha1 = 'Sha1' }
 
 
 	/** The status of a document. */
-	export enum DocumentStatus { Creating = 0, Active = 1, Updating = 2, Deleting = 3, Failed = 4 }
+	export enum DocumentStatus { Creating = 'Creating', Active = 'Active', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** Parameters specified in a Systems Manager document that run on the server when the command is run.  */
@@ -1145,13 +1145,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentParameterType { String = 0, StringList = 1 }
+	export enum DocumentParameterType { String = 'String', StringList = 'StringList' }
 
-	export enum PlatformType { Windows = 0, Linux = 1, MacOS = 2 }
+	export enum PlatformType { Windows = 'Windows', Linux = 'Linux', MacOS = 'MacOS' }
 
-	export enum DocumentType { Command = 0, Policy = 1, Automation = 2, Session = 3, Package = 4, ApplicationConfiguration = 5, ApplicationConfigurationSchema = 6, DeploymentStrategy = 7, ChangeCalendar = 8, 'Automation.ChangeTemplate' = 9, ProblemAnalysis = 10, ProblemAnalysisTemplate = 11, CloudFormation = 12, ConformancePackTemplate = 13, QuickSetup = 14 }
+	export enum DocumentType { Command = 'Command', Policy = 'Policy', Automation = 'Automation', Session = 'Session', Package = 'Package', ApplicationConfiguration = 'ApplicationConfiguration', ApplicationConfigurationSchema = 'ApplicationConfigurationSchema', DeploymentStrategy = 'DeploymentStrategy', ChangeCalendar = 'ChangeCalendar', 'Automation.ChangeTemplate' = 'Automation.ChangeTemplate', ProblemAnalysis = 'ProblemAnalysis', ProblemAnalysisTemplate = 'ProblemAnalysisTemplate', CloudFormation = 'CloudFormation', ConformancePackTemplate = 'ConformancePackTemplate', QuickSetup = 'QuickSetup' }
 
-	export enum DocumentFormat { YAML = 0, JSON = 1, TEXT = 2 }
+	export enum DocumentFormat { YAML = 'YAML', JSON = 'JSON', TEXT = 'TEXT' }
 
 
 	/** An attribute of an attachment, such as the attachment name. */
@@ -1223,7 +1223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReviewStatus { APPROVED = 0, NOT_REVIEWED = 1, PENDING = 2, REJECTED = 3 }
+	export enum ReviewStatus { APPROVED = 'APPROVED', NOT_REVIEWED = 'NOT_REVIEWED', PENDING = 'PENDING', REJECTED = 'REJECTED' }
 
 	export interface CreateDocumentRequest {
 
@@ -1288,7 +1288,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachmentsSourceKey { SourceUrl = 0, S3FileUrl = 1, AttachmentReference = 2 }
+	export enum AttachmentsSourceKey { SourceUrl = 'SourceUrl', S3FileUrl = 'S3FileUrl', AttachmentReference = 'AttachmentReference' }
 
 	export interface DocumentAlreadyExists {
 	}
@@ -1719,7 +1719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatingSystem { WINDOWS = 0, AMAZON_LINUX = 1, AMAZON_LINUX_2 = 2, AMAZON_LINUX_2022 = 3, UBUNTU = 4, REDHAT_ENTERPRISE_LINUX = 5, SUSE = 6, CENTOS = 7, ORACLE_LINUX = 8, DEBIAN = 9, MACOS = 10, RASPBIAN = 11, ROCKY_LINUX = 12, ALMA_LINUX = 13, AMAZON_LINUX_2023 = 14 }
+	export enum OperatingSystem { WINDOWS = 'WINDOWS', AMAZON_LINUX = 'AMAZON_LINUX', AMAZON_LINUX_2 = 'AMAZON_LINUX_2', AMAZON_LINUX_2022 = 'AMAZON_LINUX_2022', UBUNTU = 'UBUNTU', REDHAT_ENTERPRISE_LINUX = 'REDHAT_ENTERPRISE_LINUX', SUSE = 'SUSE', CENTOS = 'CENTOS', ORACLE_LINUX = 'ORACLE_LINUX', DEBIAN = 'DEBIAN', MACOS = 'MACOS', RASPBIAN = 'RASPBIAN', ROCKY_LINUX = 'ROCKY_LINUX', ALMA_LINUX = 'ALMA_LINUX', AMAZON_LINUX_2023 = 'AMAZON_LINUX_2023' }
 
 
 	/** A set of patch filters, typically used for approval rules. */
@@ -1762,7 +1762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchFilterKey { ARCH = 0, ADVISORY_ID = 1, BUGZILLA_ID = 2, PATCH_SET = 3, PRODUCT = 4, PRODUCT_FAMILY = 5, CLASSIFICATION = 6, CVE_ID = 7, EPOCH = 8, MSRC_SEVERITY = 9, NAME = 10, PATCH_ID = 11, SECTION = 12, PRIORITY = 13, REPOSITORY = 14, RELEASE = 15, SEVERITY = 16, SECURITY = 17, VERSION = 18 }
+	export enum PatchFilterKey { ARCH = 'ARCH', ADVISORY_ID = 'ADVISORY_ID', BUGZILLA_ID = 'BUGZILLA_ID', PATCH_SET = 'PATCH_SET', PRODUCT = 'PRODUCT', PRODUCT_FAMILY = 'PRODUCT_FAMILY', CLASSIFICATION = 'CLASSIFICATION', CVE_ID = 'CVE_ID', EPOCH = 'EPOCH', MSRC_SEVERITY = 'MSRC_SEVERITY', NAME = 'NAME', PATCH_ID = 'PATCH_ID', SECTION = 'SECTION', PRIORITY = 'PRIORITY', REPOSITORY = 'REPOSITORY', RELEASE = 'RELEASE', SEVERITY = 'SEVERITY', SECURITY = 'SECURITY', VERSION = 'VERSION' }
 
 
 	/** A set of rules defining the approval rules for a patch baseline. */
@@ -1810,9 +1810,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchComplianceLevel { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3, INFORMATIONAL = 4, UNSPECIFIED = 5 }
+	export enum PatchComplianceLevel { CRITICAL = 'CRITICAL', HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW', INFORMATIONAL = 'INFORMATIONAL', UNSPECIFIED = 'UNSPECIFIED' }
 
-	export enum PatchAction { ALLOW_AS_DEPENDENCY = 0, BLOCK = 1 }
+	export enum PatchAction { ALLOW_AS_DEPENDENCY = 'ALLOW_AS_DEPENDENCY', BLOCK = 'BLOCK' }
 
 
 	/** Information about the patches to use to update the managed nodes, including target operating systems and source repository. Applies to Linux managed nodes only. */
@@ -1919,7 +1919,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceDataSyncS3Format { JsonSerDe = 0 }
+	export enum ResourceDataSyncS3Format { JsonSerDe = 'JsonSerDe' }
 
 
 	/** Synchronize Amazon Web Services Systems Manager Inventory data from multiple Amazon Web Services accounts defined in Organizations to a centralized Amazon S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different Amazon Web Services account ID. */
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InventorySchemaDeleteOption { DisableSchema = 0, DeleteSchema = 1 }
+	export enum InventorySchemaDeleteOption { DisableSchema = 'DisableSchema', DeleteSchema = 'DeleteSchema' }
 
 	export interface InvalidTypeNameException {
 	}
@@ -2830,7 +2830,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DescribeActivationsFilterKeys { ActivationIds = 0, DefaultInstanceName = 1, IamRole = 2 }
+	export enum DescribeActivationsFilterKeys { ActivationIds = 'ActivationIds', DefaultInstanceName = 'DefaultInstanceName', IamRole = 'IamRole' }
 
 	export interface InvalidFilter {
 	}
@@ -3027,7 +3027,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationExecutionTargetsFilterKey { Status = 0, ResourceId = 1, ResourceType = 2 }
+	export enum AssociationExecutionTargetsFilterKey { Status = 'Status', ResourceId = 'ResourceId', ResourceType = 'ResourceType' }
 
 	export interface AssociationExecutionDoesNotExist {
 	}
@@ -3154,9 +3154,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationExecutionFilterKey { ExecutionId = 0, Status = 1, CreatedTime = 2 }
+	export enum AssociationExecutionFilterKey { ExecutionId = 'ExecutionId', Status = 'Status', CreatedTime = 'CreatedTime' }
 
-	export enum AssociationFilterOperatorType { EQUAL = 0, LESS_THAN = 1, GREATER_THAN = 2 }
+	export enum AssociationFilterOperatorType { EQUAL = 'EQUAL', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN' }
 
 	export interface DescribeAutomationExecutionsResult {
 		AutomationExecutionMetadataList?: Array<AutomationExecutionMetadata>;
@@ -3262,7 +3262,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomationExecutionStatus { Pending = 0, InProgress = 1, Waiting = 2, Success = 3, TimedOut = 4, Cancelling = 5, Cancelled = 6, Failed = 7, PendingApproval = 8, Approved = 9, Rejected = 10, Scheduled = 11, RunbookInProgress = 12, PendingChangeCalendarOverride = 13, ChangeCalendarOverrideApproved = 14, ChangeCalendarOverrideRejected = 15, CompletedWithSuccess = 16, CompletedWithFailure = 17 }
+	export enum AutomationExecutionStatus { Pending = 'Pending', InProgress = 'InProgress', Waiting = 'Waiting', Success = 'Success', TimedOut = 'TimedOut', Cancelling = 'Cancelling', Cancelled = 'Cancelled', Failed = 'Failed', PendingApproval = 'PendingApproval', Approved = 'Approved', Rejected = 'Rejected', Scheduled = 'Scheduled', RunbookInProgress = 'RunbookInProgress', PendingChangeCalendarOverride = 'PendingChangeCalendarOverride', ChangeCalendarOverrideApproved = 'ChangeCalendarOverrideApproved', ChangeCalendarOverrideRejected = 'ChangeCalendarOverrideRejected', CompletedWithSuccess = 'CompletedWithSuccess', CompletedWithFailure = 'CompletedWithFailure' }
 
 	export interface AutomationParameterMap {
 	}
@@ -3274,7 +3274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionMode { Auto = 0, Interactive = 1 }
+	export enum ExecutionMode { Auto = 'Auto', Interactive = 'Interactive' }
 
 
 	/** Information about targets that resolved during the Automation execution. */
@@ -3294,9 +3294,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomationType { CrossAccount = 0, Local = 1 }
+	export enum AutomationType { CrossAccount = 'CrossAccount', Local = 'Local' }
 
-	export enum AutomationSubtype { ChangeRequest = 0 }
+	export enum AutomationSubtype { ChangeRequest = 'ChangeRequest' }
 
 
 	/** <p>Information about an Automation runbook used in a runbook workflow in Change Manager.</p> <note> <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p> </note> */
@@ -3376,7 +3376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutomationExecutionFilterKey { DocumentNamePrefix = 0, ExecutionStatus = 1, ExecutionId = 2, ParentExecutionId = 3, CurrentAction = 4, StartTimeBefore = 5, StartTimeAfter = 6, AutomationType = 7, TagKey = 8, TargetResourceGroup = 9, AutomationSubtype = 10, OpsItemId = 11 }
+	export enum AutomationExecutionFilterKey { DocumentNamePrefix = 'DocumentNamePrefix', ExecutionStatus = 'ExecutionStatus', ExecutionId = 'ExecutionId', ParentExecutionId = 'ParentExecutionId', CurrentAction = 'CurrentAction', StartTimeBefore = 'StartTimeBefore', StartTimeAfter = 'StartTimeAfter', AutomationType = 'AutomationType', TagKey = 'TagKey', TargetResourceGroup = 'TargetResourceGroup', AutomationSubtype = 'AutomationSubtype', OpsItemId = 'OpsItemId' }
 
 	export interface InvalidFilterKey {
 	}
@@ -3561,7 +3561,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepExecutionFilterKey { StartTimeBefore = 0, StartTimeAfter = 1, StepExecutionStatus = 2, StepExecutionId = 3, StepName = 4, Action = 5 }
+	export enum StepExecutionFilterKey { StartTimeBefore = 'StartTimeBefore', StartTimeAfter = 'StartTimeAfter', StepExecutionStatus = 'StepExecutionStatus', StepExecutionId = 'StepExecutionId', StepName = 'StepName', Action = 'Action' }
 
 	export interface AutomationExecutionNotFoundException {
 	}
@@ -3798,7 +3798,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentPermissionType { Share = 0 }
+	export enum DocumentPermissionType { Share = 'Share' }
 
 	export interface InvalidPermissionType {
 	}
@@ -3926,7 +3926,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchDeploymentStatus { APPROVED = 0, PENDING_APPROVAL = 1, EXPLICIT_APPROVED = 2, EXPLICIT_REJECTED = 3 }
+	export enum PatchDeploymentStatus { APPROVED = 'APPROVED', PENDING_APPROVAL = 'PENDING_APPROVAL', EXPLICIT_APPROVED = 'EXPLICIT_APPROVED', EXPLICIT_REJECTED = 'EXPLICIT_REJECTED' }
 
 	export interface DescribeEffectivePatchesForPatchBaselineRequest {
 
@@ -4167,9 +4167,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PingStatus { Online = 0, ConnectionLost = 1, Inactive = 2 }
+	export enum PingStatus { Online = 'Online', ConnectionLost = 'ConnectionLost', Inactive = 'Inactive' }
 
-	export enum ResourceType { ManagedInstance = 0, Document = 1, EC2Instance = 2 }
+	export enum ResourceType { ManagedInstance = 'ManagedInstance', Document = 'Document', EC2Instance = 'EC2Instance' }
 
 
 	/** Status information about the aggregated associations. */
@@ -4199,7 +4199,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { 'AWS::EC2::Instance' = 0, 'AWS::IoT::Thing' = 1, 'AWS::SSM::ManagedInstance' = 2 }
+	export enum SourceType { 'AWS::EC2::Instance' = 'AWS::EC2::Instance', 'AWS::IoT::Thing' = 'AWS::IoT::Thing', 'AWS::SSM::ManagedInstance' = 'AWS::SSM::ManagedInstance' }
 
 	export interface DescribeInstanceInformationRequest {
 		InstanceInformationFilterList?: Array<InstanceInformationFilter>;
@@ -4243,7 +4243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceInformationFilterKey { InstanceIds = 0, AgentVersion = 1, PingStatus = 2, PlatformTypes = 3, ActivationIds = 4, IamRole = 5, ResourceType = 6, AssociationStatus = 7 }
+	export enum InstanceInformationFilterKey { InstanceIds = 'InstanceIds', AgentVersion = 'AgentVersion', PingStatus = 'PingStatus', PlatformTypes = 'PlatformTypes', ActivationIds = 'ActivationIds', IamRole = 'IamRole', ResourceType = 'ResourceType', AssociationStatus = 'AssociationStatus' }
 
 
 	/** The filters to describe or get information about your managed nodes. */
@@ -4397,9 +4397,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchOperationType { Scan = 0, Install = 1 }
+	export enum PatchOperationType { Scan = 'Scan', Install = 'Install' }
 
-	export enum RebootOption { RebootIfNeeded = 0, NoReboot = 1 }
+	export enum RebootOption { RebootIfNeeded = 'RebootIfNeeded', NoReboot = 'NoReboot' }
 
 	export interface DescribeInstancePatchStatesRequest {
 
@@ -4489,7 +4489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancePatchStateOperatorType { Equal = 0, NotEqual = 1, LessThan = 2, GreaterThan = 3 }
+	export enum InstancePatchStateOperatorType { Equal = 'Equal', NotEqual = 'NotEqual', LessThan = 'LessThan', GreaterThan = 'GreaterThan' }
 
 	export interface DescribeInstancePatchesResult {
 		Patches?: Array<PatchComplianceData>;
@@ -4564,7 +4564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchComplianceDataState { INSTALLED = 0, INSTALLED_OTHER = 1, INSTALLED_PENDING_REBOOT = 2, INSTALLED_REJECTED = 3, MISSING = 4, NOT_APPLICABLE = 5, FAILED = 6 }
+	export enum PatchComplianceDataState { INSTALLED = 'INSTALLED', INSTALLED_OTHER = 'INSTALLED_OTHER', INSTALLED_PENDING_REBOOT = 'INSTALLED_PENDING_REBOOT', INSTALLED_REJECTED = 'INSTALLED_REJECTED', MISSING = 'MISSING', NOT_APPLICABLE = 'NOT_APPLICABLE', FAILED = 'FAILED' }
 
 	export interface DescribeInstancePatchesRequest {
 
@@ -4637,7 +4637,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InventoryDeletionStatus { InProgress = 0, Complete = 1 }
+	export enum InventoryDeletionStatus { InProgress = 'InProgress', Complete = 'Complete' }
 
 	export interface DescribeInventoryDeletionsRequest {
 		DeletionId?: string;
@@ -4732,9 +4732,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceWindowTaskType { RUN_COMMAND = 0, AUTOMATION = 1, STEP_FUNCTIONS = 2, LAMBDA = 3 }
+	export enum MaintenanceWindowTaskType { RUN_COMMAND = 'RUN_COMMAND', AUTOMATION = 'AUTOMATION', STEP_FUNCTIONS = 'STEP_FUNCTIONS', LAMBDA = 'LAMBDA' }
 
-	export enum MaintenanceWindowExecutionStatus { PENDING = 0, IN_PROGRESS = 1, SUCCESS = 2, FAILED = 3, TIMED_OUT = 4, CANCELLING = 5, CANCELLED = 6, SKIPPED_OVERLAPPING = 7 }
+	export enum MaintenanceWindowExecutionStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', SKIPPED_OVERLAPPING = 'SKIPPED_OVERLAPPING' }
 
 	export interface DescribeMaintenanceWindowExecutionTaskInvocationsRequest {
 
@@ -4994,7 +4994,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceWindowResourceType { INSTANCE = 0, RESOURCE_GROUP = 1 }
+	export enum MaintenanceWindowResourceType { INSTANCE = 'INSTANCE', RESOURCE_GROUP = 'RESOURCE_GROUP' }
 
 	export interface DescribeMaintenanceWindowTargetsResult {
 		Targets?: Array<MaintenanceWindowTarget>;
@@ -5173,7 +5173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceWindowTaskCutoffBehavior { CONTINUE_TASK = 0, CANCEL_TASK = 1 }
+	export enum MaintenanceWindowTaskCutoffBehavior { CONTINUE_TASK = 'CONTINUE_TASK', CANCEL_TASK = 'CANCEL_TASK' }
 
 	export interface DescribeMaintenanceWindowTasksRequest {
 
@@ -5417,7 +5417,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpsItemStatus { Open = 0, InProgress = 1, Resolved = 2, Pending = 3, TimedOut = 4, Cancelling = 5, Cancelled = 6, Failed = 7, CompletedWithSuccess = 8, CompletedWithFailure = 9, Scheduled = 10, RunbookInProgress = 11, PendingChangeCalendarOverride = 12, ChangeCalendarOverrideApproved = 13, ChangeCalendarOverrideRejected = 14, PendingApproval = 15, Approved = 16, Rejected = 17, Closed = 18 }
+	export enum OpsItemStatus { Open = 'Open', InProgress = 'InProgress', Resolved = 'Resolved', Pending = 'Pending', TimedOut = 'TimedOut', Cancelling = 'Cancelling', Cancelled = 'Cancelled', Failed = 'Failed', CompletedWithSuccess = 'CompletedWithSuccess', CompletedWithFailure = 'CompletedWithFailure', Scheduled = 'Scheduled', RunbookInProgress = 'RunbookInProgress', PendingChangeCalendarOverride = 'PendingChangeCalendarOverride', ChangeCalendarOverrideApproved = 'ChangeCalendarOverrideApproved', ChangeCalendarOverrideRejected = 'ChangeCalendarOverrideRejected', PendingApproval = 'PendingApproval', Approved = 'Approved', Rejected = 'Rejected', Closed = 'Closed' }
 
 	export interface DescribeOpsItemsRequest {
 		OpsItemFilters?: Array<OpsItemFilter>;
@@ -5467,9 +5467,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OpsItemFilterKey { Status = 0, CreatedBy = 1, Source = 2, Priority = 3, Title = 4, OpsItemId = 5, CreatedTime = 6, LastModifiedTime = 7, ActualStartTime = 8, ActualEndTime = 9, PlannedStartTime = 10, PlannedEndTime = 11, OperationalData = 12, OperationalDataKey = 13, OperationalDataValue = 14, ResourceId = 15, AutomationId = 16, Category = 17, Severity = 18, OpsItemType = 19, ChangeRequestByRequesterArn = 20, ChangeRequestByRequesterName = 21, ChangeRequestByApproverArn = 22, ChangeRequestByApproverName = 23, ChangeRequestByTemplate = 24, ChangeRequestByTargetsResourceGroup = 25, InsightByType = 26, AccountId = 27 }
+	export enum OpsItemFilterKey { Status = 'Status', CreatedBy = 'CreatedBy', Source = 'Source', Priority = 'Priority', Title = 'Title', OpsItemId = 'OpsItemId', CreatedTime = 'CreatedTime', LastModifiedTime = 'LastModifiedTime', ActualStartTime = 'ActualStartTime', ActualEndTime = 'ActualEndTime', PlannedStartTime = 'PlannedStartTime', PlannedEndTime = 'PlannedEndTime', OperationalData = 'OperationalData', OperationalDataKey = 'OperationalDataKey', OperationalDataValue = 'OperationalDataValue', ResourceId = 'ResourceId', AutomationId = 'AutomationId', Category = 'Category', Severity = 'Severity', OpsItemType = 'OpsItemType', ChangeRequestByRequesterArn = 'ChangeRequestByRequesterArn', ChangeRequestByRequesterName = 'ChangeRequestByRequesterName', ChangeRequestByApproverArn = 'ChangeRequestByApproverArn', ChangeRequestByApproverName = 'ChangeRequestByApproverName', ChangeRequestByTemplate = 'ChangeRequestByTemplate', ChangeRequestByTargetsResourceGroup = 'ChangeRequestByTargetsResourceGroup', InsightByType = 'InsightByType', AccountId = 'AccountId' }
 
-	export enum OpsItemFilterOperator { Equal = 0, Contains = 1, GreaterThan = 2, LessThan = 3 }
+	export enum OpsItemFilterOperator { Equal = 'Equal', Contains = 'Contains', GreaterThan = 'GreaterThan', LessThan = 'LessThan' }
 
 	export interface DescribeParametersResult {
 		Parameters?: Array<ParameterMetadata>;
@@ -5530,9 +5530,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterType { String = 0, StringList = 1, SecureString = 2 }
+	export enum ParameterType { String = 'String', StringList = 'StringList', SecureString = 'SecureString' }
 
-	export enum ParameterTier { Standard = 0, Advanced = 1, 'Intelligent-Tiering' = 2 }
+	export enum ParameterTier { Standard = 'Standard', Advanced = 'Advanced', 'Intelligent-Tiering' = 'Intelligent-Tiering' }
 
 
 	/** One or more policies assigned to a parameter. */
@@ -5599,7 +5599,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParametersFilterKey { Name = 0, Type = 1, KeyId = 2 }
+	export enum ParametersFilterKey { Name = 'Name', Type = 'Type', KeyId = 'KeyId' }
 
 
 	/** One or more filters. Use a filter to return a more specific list of results. */
@@ -5865,9 +5865,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchProperty { PRODUCT = 0, PRODUCT_FAMILY = 1, CLASSIFICATION = 2, MSRC_SEVERITY = 3, PRIORITY = 4, SEVERITY = 5 }
+	export enum PatchProperty { PRODUCT = 'PRODUCT', PRODUCT_FAMILY = 'PRODUCT_FAMILY', CLASSIFICATION = 'CLASSIFICATION', MSRC_SEVERITY = 'MSRC_SEVERITY', PRIORITY = 'PRIORITY', SEVERITY = 'SEVERITY' }
 
-	export enum PatchSet { OS = 0, APPLICATION = 1 }
+	export enum PatchSet { OS = 'OS', APPLICATION = 'APPLICATION' }
 
 	export interface DescribeSessionsResponse {
 		Sessions?: Array<Session>;
@@ -5928,7 +5928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionStatus { Connected = 0, Connecting = 1, Disconnected = 2, Terminated = 3, Terminating = 4, Failed = 5 }
+	export enum SessionStatus { Connected = 'Connected', Connecting = 'Connecting', Disconnected = 'Disconnected', Terminated = 'Terminated', Terminating = 'Terminating', Failed = 'Failed' }
 
 
 	/** Reserved for future use. */
@@ -5974,7 +5974,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionState { Active = 0, History = 1 }
+	export enum SessionState { Active = 'Active', History = 'History' }
 
 
 	/** Describes a filter for Session Manager information. */
@@ -6004,7 +6004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionFilterKey { InvokedAfter = 0, InvokedBefore = 1, Target = 2, Owner = 3, Status = 4, SessionId = 5 }
+	export enum SessionFilterKey { InvokedAfter = 'InvokedAfter', InvokedBefore = 'InvokedBefore', Target = 'Target', Owner = 'Owner', Status = 'Status', SessionId = 'SessionId' }
 
 	export interface DisassociateOpsItemRelatedItemResponse {
 	}
@@ -6217,7 +6217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CalendarState { OPEN = 0, CLOSED = 1 }
+	export enum CalendarState { OPEN = 'OPEN', CLOSED = 'CLOSED' }
 
 	export interface GetCalendarStateRequest {
 
@@ -6314,7 +6314,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommandInvocationStatus { Pending = 0, InProgress = 1, Delayed = 2, Success = 3, Cancelled = 4, TimedOut = 5, Failed = 6, Cancelling = 7 }
+	export enum CommandInvocationStatus { Pending = 'Pending', InProgress = 'InProgress', Delayed = 'Delayed', Success = 'Success', Cancelled = 'Cancelled', TimedOut = 'TimedOut', Failed = 'Failed', Cancelling = 'Cancelling' }
 
 
 	/** Configuration options for sending command output to Amazon CloudWatch Logs. */
@@ -6399,7 +6399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStatus { Connected = 0, NotConnected = 1 }
+	export enum ConnectionStatus { Connected = 'Connected', NotConnected = 'NotConnected' }
 
 	export interface GetConnectionStatusRequest {
 
@@ -6613,7 +6613,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachmentHashType { Sha256 = 0 }
+	export enum AttachmentHashType { Sha256 = 'Sha256' }
 
 	export interface GetDocumentRequest {
 
@@ -6729,7 +6729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InventoryQueryOperatorType { Equal = 0, NotEqual = 1, BeginWith = 2, LessThan = 3, GreaterThan = 4, Exists = 5 }
+	export enum InventoryQueryOperatorType { Equal = 'Equal', NotEqual = 'NotEqual', BeginWith = 'BeginWith', LessThan = 'LessThan', GreaterThan = 'GreaterThan', Exists = 'Exists' }
 
 
 	/** Specifies the inventory type and attribute for the aggregation execution. */
@@ -6897,7 +6897,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InventoryAttributeDataType { string = 0, number = 1 }
+	export enum InventoryAttributeDataType { string = 'string', number = 'number' }
 
 	export interface GetInventorySchemaRequest {
 		TypeName?: string;
@@ -7319,9 +7319,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationEvent { All = 0, InProgress = 1, Success = 2, TimedOut = 3, Cancelled = 4, Failed = 5 }
+	export enum NotificationEvent { All = 'All', InProgress = 'InProgress', Success = 'Success', TimedOut = 'TimedOut', Cancelled = 'Cancelled', Failed = 'Failed' }
 
-	export enum NotificationType { Command = 0, Invocation = 1 }
+	export enum NotificationType { Command = 'Command', Invocation = 'Invocation' }
 
 
 	/** The parameters for an <code>AUTOMATION</code> task type. */
@@ -8437,7 +8437,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationFilterKey { InstanceId = 0, Name = 1, AssociationId = 2, AssociationStatusName = 3, LastExecutedBefore = 4, LastExecutedAfter = 5, AssociationName = 6, ResourceGroupName = 7 }
+	export enum AssociationFilterKey { InstanceId = 'InstanceId', Name = 'Name', AssociationId = 'AssociationId', AssociationStatusName = 'AssociationStatusName', LastExecutedBefore = 'LastExecutedBefore', LastExecutedAfter = 'LastExecutedAfter', AssociationName = 'AssociationName', ResourceGroupName = 'ResourceGroupName' }
 
 	export interface ListCommandInvocationsResult {
 		CommandInvocations?: Array<CommandInvocation>;
@@ -8559,7 +8559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommandPluginStatus { Pending = 0, InProgress = 1, Success = 2, TimedOut = 3, Cancelled = 4, Failed = 5 }
+	export enum CommandPluginStatus { Pending = 'Pending', InProgress = 'InProgress', Success = 'Success', TimedOut = 'TimedOut', Cancelled = 'Cancelled', Failed = 'Failed' }
 
 	export interface ListCommandInvocationsRequest {
 		CommandId?: string;
@@ -8615,7 +8615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommandFilterKey { InvokedAfter = 0, InvokedBefore = 1, Status = 2, ExecutionStage = 3, DocumentName = 4 }
+	export enum CommandFilterKey { InvokedAfter = 'InvokedAfter', InvokedBefore = 'InvokedBefore', Status = 'Status', ExecutionStage = 'ExecutionStage', DocumentName = 'DocumentName' }
 
 	export interface ListCommandsResult {
 		Commands?: Array<Command>;
@@ -8709,7 +8709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommandStatus { Pending = 0, InProgress = 1, Success = 2, Cancelled = 3, Failed = 4, TimedOut = 5, Cancelling = 6 }
+	export enum CommandStatus { Pending = 'Pending', InProgress = 'InProgress', Success = 'Success', Cancelled = 'Cancelled', Failed = 'Failed', TimedOut = 'TimedOut', Cancelling = 'Cancelling' }
 
 	export interface ListCommandsRequest {
 		CommandId?: string;
@@ -8785,7 +8785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceStatus { COMPLIANT = 0, NON_COMPLIANT = 1 }
+	export enum ComplianceStatus { COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT' }
 
 
 	/** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'. */
@@ -8864,7 +8864,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceQueryOperatorType { EQUAL = 0, NOT_EQUAL = 1, BEGIN_WITH = 2, LESS_THAN = 3, GREATER_THAN = 4 }
+	export enum ComplianceQueryOperatorType { EQUAL = 'EQUAL', NOT_EQUAL = 'NOT_EQUAL', BEGIN_WITH = 'BEGIN_WITH', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN' }
 
 	export interface ListComplianceSummariesResult {
 		ComplianceSummaryItems?: Array<ComplianceSummaryItem>;
@@ -9069,7 +9069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentReviewCommentType { Comment = 0 }
+	export enum DocumentReviewCommentType { Comment = 'Comment' }
 
 	export interface ListDocumentMetadataHistoryRequest {
 
@@ -9104,7 +9104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentMetadataEnum { DocumentReviews = 0 }
+	export enum DocumentMetadataEnum { DocumentReviews = 'DocumentReviews' }
 
 	export interface ListDocumentVersionsResult {
 		DocumentVersions?: Array<DocumentVersionInfo>;
@@ -9300,7 +9300,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentFilterKey { Name = 0, Owner = 1, PlatformTypes = 2, DocumentType = 3 }
+	export enum DocumentFilterKey { Name = 'Name', Owner = 'Owner', PlatformTypes = 'PlatformTypes', DocumentType = 'DocumentType' }
 
 
 	/** <p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>You can also use Amazon Web Services-provided keys, some of which have specific allowed values. These keys and their associated values are as follows:</p> <dl> <dt>DocumentType</dt> <dd> <ul> <li> <p> <code>ApplicationConfiguration</code> </p> </li> <li> <p> <code>ApplicationConfigurationSchema</code> </p> </li> <li> <p> <code>Automation</code> </p> </li> <li> <p> <code>ChangeCalendar</code> </p> </li> <li> <p> <code>Command</code> </p> </li> <li> <p> <code>Package</code> </p> </li> <li> <p> <code>Policy</code> </p> </li> <li> <p> <code>Session</code> </p> </li> </ul> </dd> <dt>Owner</dt> <dd> <p>Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <ul> <li> <p> <code>Amazon</code> </p> </li> <li> <p> <code>Private</code> </p> </li> <li> <p> <code>Public</code> </p> </li> <li> <p> <code>Self</code> </p> </li> <li> <p> <code>ThirdParty</code> </p> </li> </ul> </dd> <dt>PlatformTypes</dt> <dd> <ul> <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul> </dd> </dl> <p> <code>Name</code> is another Amazon Web Services-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the Amazon Web Services CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>You can also use the <code>TargetType</code> Amazon Web Services-provided key. For a list of valid resource type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <p>For example, if you created a key called region and are using the Amazon Web Services CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p> */
@@ -9499,9 +9499,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OpsItemEventFilterKey { OpsItemId = 0 }
+	export enum OpsItemEventFilterKey { OpsItemId = 'OpsItemId' }
 
-	export enum OpsItemEventFilterOperator { Equal = 0 }
+	export enum OpsItemEventFilterOperator { Equal = 'Equal' }
 
 	export interface ListOpsItemRelatedItemsResponse {
 		NextToken?: string;
@@ -9609,7 +9609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpsItemRelatedItemsFilterKey { ResourceType = 0, AssociationId = 1, ResourceUri = 2 }
+	export enum OpsItemRelatedItemsFilterKey { ResourceType = 'ResourceType', AssociationId = 'AssociationId', ResourceUri = 'ResourceUri' }
 
 	export interface ListOpsMetadataResult {
 		OpsMetadataList?: Array<OpsMetadata>;
@@ -9840,7 +9840,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LastResourceDataSyncStatus { Successful = 0, Failed = 1, InProgress = 2 }
+	export enum LastResourceDataSyncStatus { Successful = 'Successful', Failed = 'Failed', InProgress = 'InProgress' }
 
 	export interface ListResourceDataSyncRequest {
 		SyncType?: string;
@@ -10033,7 +10033,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceUploadType { COMPLETE = 0, PARTIAL = 1 }
+	export enum ComplianceUploadType { COMPLETE = 'COMPLETE', PARTIAL = 'PARTIAL' }
 
 	export interface InvalidItemContentException {
 	}
@@ -10818,7 +10818,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SignalType { Approve = 0, Reject = 1, StartStep = 2, StopStep = 3, Resume = 4 }
+	export enum SignalType { Approve = 'Approve', Reject = 'Reject', StartStep = 'StartStep', StopStep = 'StopStep', Resume = 'Resume' }
 
 	export interface AutomationStepNotFoundException {
 	}
@@ -11223,7 +11223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StopType { Complete = 0, Cancel = 1 }
+	export enum StopType { Complete = 'Complete', Cancel = 'Cancel' }
 
 	export interface InvalidAutomationStatusUpdateException {
 	}
@@ -11639,7 +11639,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentReviewAction { SendForReview = 0, UpdateReview = 1, Approve = 2, Reject = 3 }
+	export enum DocumentReviewAction { SendForReview = 'SendForReview', UpdateReview = 'UpdateReview', Approve = 'Approve', Reject = 'Reject' }
 
 	export interface UpdateMaintenanceWindowResult {
 		WindowId?: string;
@@ -12215,7 +12215,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceSeverity { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3, INFORMATIONAL = 4, UNSPECIFIED = 5 }
+	export enum ComplianceSeverity { CRITICAL = 'CRITICAL', HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW', INFORMATIONAL = 'INFORMATIONAL', UNSPECIFIED = 'UNSPECIFIED' }
 
 
 	/** The inventory result item. */
@@ -12314,9 +12314,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OpsFilterOperatorType { Equal = 0, NotEqual = 1, BeginWith = 2, LessThan = 3, GreaterThan = 4, Exists = 5 }
+	export enum OpsFilterOperatorType { Equal = 'Equal', NotEqual = 'NotEqual', BeginWith = 'BeginWith', LessThan = 'LessThan', GreaterThan = 'GreaterThan', Exists = 'Exists' }
 
-	export enum OpsItemDataType { SearchableString = 0, String = 1 }
+	export enum OpsItemDataType { SearchableString = 'SearchableString', String = 'String' }
 
 
 	/** An object that defines the value of the key and its type in the OperationalData map. */
@@ -12338,7 +12338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpsItemRelatedItemsFilterOperator { Equal = 0 }
+	export enum OpsItemRelatedItemsFilterOperator { Equal = 'Equal' }
 
 	@Injectable()
 	export class MyClient {
@@ -13682,281 +13682,281 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToResourceX_Amz_Target { 'AmazonSSM.AddTagsToResource' = 0 }
+	export enum AddTagsToResourceX_Amz_Target { 'AmazonSSM.AddTagsToResource' = 'AmazonSSM.AddTagsToResource' }
 
-	export enum AssociateOpsItemRelatedItemX_Amz_Target { 'AmazonSSM.AssociateOpsItemRelatedItem' = 0 }
+	export enum AssociateOpsItemRelatedItemX_Amz_Target { 'AmazonSSM.AssociateOpsItemRelatedItem' = 'AmazonSSM.AssociateOpsItemRelatedItem' }
 
-	export enum CancelCommandX_Amz_Target { 'AmazonSSM.CancelCommand' = 0 }
+	export enum CancelCommandX_Amz_Target { 'AmazonSSM.CancelCommand' = 'AmazonSSM.CancelCommand' }
 
-	export enum CancelMaintenanceWindowExecutionX_Amz_Target { 'AmazonSSM.CancelMaintenanceWindowExecution' = 0 }
+	export enum CancelMaintenanceWindowExecutionX_Amz_Target { 'AmazonSSM.CancelMaintenanceWindowExecution' = 'AmazonSSM.CancelMaintenanceWindowExecution' }
 
-	export enum CreateActivationX_Amz_Target { 'AmazonSSM.CreateActivation' = 0 }
+	export enum CreateActivationX_Amz_Target { 'AmazonSSM.CreateActivation' = 'AmazonSSM.CreateActivation' }
 
-	export enum CreateAssociationX_Amz_Target { 'AmazonSSM.CreateAssociation' = 0 }
+	export enum CreateAssociationX_Amz_Target { 'AmazonSSM.CreateAssociation' = 'AmazonSSM.CreateAssociation' }
 
-	export enum CreateAssociationBatchX_Amz_Target { 'AmazonSSM.CreateAssociationBatch' = 0 }
+	export enum CreateAssociationBatchX_Amz_Target { 'AmazonSSM.CreateAssociationBatch' = 'AmazonSSM.CreateAssociationBatch' }
 
-	export enum CreateDocumentX_Amz_Target { 'AmazonSSM.CreateDocument' = 0 }
+	export enum CreateDocumentX_Amz_Target { 'AmazonSSM.CreateDocument' = 'AmazonSSM.CreateDocument' }
 
-	export enum CreateMaintenanceWindowX_Amz_Target { 'AmazonSSM.CreateMaintenanceWindow' = 0 }
+	export enum CreateMaintenanceWindowX_Amz_Target { 'AmazonSSM.CreateMaintenanceWindow' = 'AmazonSSM.CreateMaintenanceWindow' }
 
-	export enum CreateOpsItemX_Amz_Target { 'AmazonSSM.CreateOpsItem' = 0 }
+	export enum CreateOpsItemX_Amz_Target { 'AmazonSSM.CreateOpsItem' = 'AmazonSSM.CreateOpsItem' }
 
-	export enum CreateOpsMetadataX_Amz_Target { 'AmazonSSM.CreateOpsMetadata' = 0 }
+	export enum CreateOpsMetadataX_Amz_Target { 'AmazonSSM.CreateOpsMetadata' = 'AmazonSSM.CreateOpsMetadata' }
 
-	export enum CreatePatchBaselineX_Amz_Target { 'AmazonSSM.CreatePatchBaseline' = 0 }
+	export enum CreatePatchBaselineX_Amz_Target { 'AmazonSSM.CreatePatchBaseline' = 'AmazonSSM.CreatePatchBaseline' }
 
-	export enum CreateResourceDataSyncX_Amz_Target { 'AmazonSSM.CreateResourceDataSync' = 0 }
+	export enum CreateResourceDataSyncX_Amz_Target { 'AmazonSSM.CreateResourceDataSync' = 'AmazonSSM.CreateResourceDataSync' }
 
-	export enum DeleteActivationX_Amz_Target { 'AmazonSSM.DeleteActivation' = 0 }
+	export enum DeleteActivationX_Amz_Target { 'AmazonSSM.DeleteActivation' = 'AmazonSSM.DeleteActivation' }
 
-	export enum DeleteAssociationX_Amz_Target { 'AmazonSSM.DeleteAssociation' = 0 }
+	export enum DeleteAssociationX_Amz_Target { 'AmazonSSM.DeleteAssociation' = 'AmazonSSM.DeleteAssociation' }
 
-	export enum DeleteDocumentX_Amz_Target { 'AmazonSSM.DeleteDocument' = 0 }
+	export enum DeleteDocumentX_Amz_Target { 'AmazonSSM.DeleteDocument' = 'AmazonSSM.DeleteDocument' }
 
-	export enum DeleteInventoryX_Amz_Target { 'AmazonSSM.DeleteInventory' = 0 }
+	export enum DeleteInventoryX_Amz_Target { 'AmazonSSM.DeleteInventory' = 'AmazonSSM.DeleteInventory' }
 
-	export enum DeleteMaintenanceWindowX_Amz_Target { 'AmazonSSM.DeleteMaintenanceWindow' = 0 }
+	export enum DeleteMaintenanceWindowX_Amz_Target { 'AmazonSSM.DeleteMaintenanceWindow' = 'AmazonSSM.DeleteMaintenanceWindow' }
 
-	export enum DeleteOpsMetadataX_Amz_Target { 'AmazonSSM.DeleteOpsMetadata' = 0 }
+	export enum DeleteOpsMetadataX_Amz_Target { 'AmazonSSM.DeleteOpsMetadata' = 'AmazonSSM.DeleteOpsMetadata' }
 
-	export enum DeleteParameterX_Amz_Target { 'AmazonSSM.DeleteParameter' = 0 }
+	export enum DeleteParameterX_Amz_Target { 'AmazonSSM.DeleteParameter' = 'AmazonSSM.DeleteParameter' }
 
-	export enum DeleteParametersX_Amz_Target { 'AmazonSSM.DeleteParameters' = 0 }
+	export enum DeleteParametersX_Amz_Target { 'AmazonSSM.DeleteParameters' = 'AmazonSSM.DeleteParameters' }
 
-	export enum DeletePatchBaselineX_Amz_Target { 'AmazonSSM.DeletePatchBaseline' = 0 }
+	export enum DeletePatchBaselineX_Amz_Target { 'AmazonSSM.DeletePatchBaseline' = 'AmazonSSM.DeletePatchBaseline' }
 
-	export enum DeleteResourceDataSyncX_Amz_Target { 'AmazonSSM.DeleteResourceDataSync' = 0 }
+	export enum DeleteResourceDataSyncX_Amz_Target { 'AmazonSSM.DeleteResourceDataSync' = 'AmazonSSM.DeleteResourceDataSync' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'AmazonSSM.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'AmazonSSM.DeleteResourcePolicy' = 'AmazonSSM.DeleteResourcePolicy' }
 
-	export enum DeregisterManagedInstanceX_Amz_Target { 'AmazonSSM.DeregisterManagedInstance' = 0 }
+	export enum DeregisterManagedInstanceX_Amz_Target { 'AmazonSSM.DeregisterManagedInstance' = 'AmazonSSM.DeregisterManagedInstance' }
 
-	export enum DeregisterPatchBaselineForPatchGroupX_Amz_Target { 'AmazonSSM.DeregisterPatchBaselineForPatchGroup' = 0 }
+	export enum DeregisterPatchBaselineForPatchGroupX_Amz_Target { 'AmazonSSM.DeregisterPatchBaselineForPatchGroup' = 'AmazonSSM.DeregisterPatchBaselineForPatchGroup' }
 
-	export enum DeregisterTargetFromMaintenanceWindowX_Amz_Target { 'AmazonSSM.DeregisterTargetFromMaintenanceWindow' = 0 }
+	export enum DeregisterTargetFromMaintenanceWindowX_Amz_Target { 'AmazonSSM.DeregisterTargetFromMaintenanceWindow' = 'AmazonSSM.DeregisterTargetFromMaintenanceWindow' }
 
-	export enum DeregisterTaskFromMaintenanceWindowX_Amz_Target { 'AmazonSSM.DeregisterTaskFromMaintenanceWindow' = 0 }
+	export enum DeregisterTaskFromMaintenanceWindowX_Amz_Target { 'AmazonSSM.DeregisterTaskFromMaintenanceWindow' = 'AmazonSSM.DeregisterTaskFromMaintenanceWindow' }
 
-	export enum DescribeActivationsX_Amz_Target { 'AmazonSSM.DescribeActivations' = 0 }
+	export enum DescribeActivationsX_Amz_Target { 'AmazonSSM.DescribeActivations' = 'AmazonSSM.DescribeActivations' }
 
-	export enum DescribeAssociationX_Amz_Target { 'AmazonSSM.DescribeAssociation' = 0 }
+	export enum DescribeAssociationX_Amz_Target { 'AmazonSSM.DescribeAssociation' = 'AmazonSSM.DescribeAssociation' }
 
-	export enum DescribeAssociationExecutionTargetsX_Amz_Target { 'AmazonSSM.DescribeAssociationExecutionTargets' = 0 }
+	export enum DescribeAssociationExecutionTargetsX_Amz_Target { 'AmazonSSM.DescribeAssociationExecutionTargets' = 'AmazonSSM.DescribeAssociationExecutionTargets' }
 
-	export enum DescribeAssociationExecutionsX_Amz_Target { 'AmazonSSM.DescribeAssociationExecutions' = 0 }
+	export enum DescribeAssociationExecutionsX_Amz_Target { 'AmazonSSM.DescribeAssociationExecutions' = 'AmazonSSM.DescribeAssociationExecutions' }
 
-	export enum DescribeAutomationExecutionsX_Amz_Target { 'AmazonSSM.DescribeAutomationExecutions' = 0 }
+	export enum DescribeAutomationExecutionsX_Amz_Target { 'AmazonSSM.DescribeAutomationExecutions' = 'AmazonSSM.DescribeAutomationExecutions' }
 
-	export enum DescribeAutomationStepExecutionsX_Amz_Target { 'AmazonSSM.DescribeAutomationStepExecutions' = 0 }
+	export enum DescribeAutomationStepExecutionsX_Amz_Target { 'AmazonSSM.DescribeAutomationStepExecutions' = 'AmazonSSM.DescribeAutomationStepExecutions' }
 
-	export enum DescribeAvailablePatchesX_Amz_Target { 'AmazonSSM.DescribeAvailablePatches' = 0 }
+	export enum DescribeAvailablePatchesX_Amz_Target { 'AmazonSSM.DescribeAvailablePatches' = 'AmazonSSM.DescribeAvailablePatches' }
 
-	export enum DescribeDocumentX_Amz_Target { 'AmazonSSM.DescribeDocument' = 0 }
+	export enum DescribeDocumentX_Amz_Target { 'AmazonSSM.DescribeDocument' = 'AmazonSSM.DescribeDocument' }
 
-	export enum DescribeDocumentPermissionX_Amz_Target { 'AmazonSSM.DescribeDocumentPermission' = 0 }
+	export enum DescribeDocumentPermissionX_Amz_Target { 'AmazonSSM.DescribeDocumentPermission' = 'AmazonSSM.DescribeDocumentPermission' }
 
-	export enum DescribeEffectiveInstanceAssociationsX_Amz_Target { 'AmazonSSM.DescribeEffectiveInstanceAssociations' = 0 }
+	export enum DescribeEffectiveInstanceAssociationsX_Amz_Target { 'AmazonSSM.DescribeEffectiveInstanceAssociations' = 'AmazonSSM.DescribeEffectiveInstanceAssociations' }
 
-	export enum DescribeEffectivePatchesForPatchBaselineX_Amz_Target { 'AmazonSSM.DescribeEffectivePatchesForPatchBaseline' = 0 }
+	export enum DescribeEffectivePatchesForPatchBaselineX_Amz_Target { 'AmazonSSM.DescribeEffectivePatchesForPatchBaseline' = 'AmazonSSM.DescribeEffectivePatchesForPatchBaseline' }
 
-	export enum DescribeInstanceAssociationsStatusX_Amz_Target { 'AmazonSSM.DescribeInstanceAssociationsStatus' = 0 }
+	export enum DescribeInstanceAssociationsStatusX_Amz_Target { 'AmazonSSM.DescribeInstanceAssociationsStatus' = 'AmazonSSM.DescribeInstanceAssociationsStatus' }
 
-	export enum DescribeInstanceInformationX_Amz_Target { 'AmazonSSM.DescribeInstanceInformation' = 0 }
+	export enum DescribeInstanceInformationX_Amz_Target { 'AmazonSSM.DescribeInstanceInformation' = 'AmazonSSM.DescribeInstanceInformation' }
 
-	export enum DescribeInstancePatchStatesX_Amz_Target { 'AmazonSSM.DescribeInstancePatchStates' = 0 }
+	export enum DescribeInstancePatchStatesX_Amz_Target { 'AmazonSSM.DescribeInstancePatchStates' = 'AmazonSSM.DescribeInstancePatchStates' }
 
-	export enum DescribeInstancePatchStatesForPatchGroupX_Amz_Target { 'AmazonSSM.DescribeInstancePatchStatesForPatchGroup' = 0 }
+	export enum DescribeInstancePatchStatesForPatchGroupX_Amz_Target { 'AmazonSSM.DescribeInstancePatchStatesForPatchGroup' = 'AmazonSSM.DescribeInstancePatchStatesForPatchGroup' }
 
-	export enum DescribeInstancePatchesX_Amz_Target { 'AmazonSSM.DescribeInstancePatches' = 0 }
+	export enum DescribeInstancePatchesX_Amz_Target { 'AmazonSSM.DescribeInstancePatches' = 'AmazonSSM.DescribeInstancePatches' }
 
-	export enum DescribeInventoryDeletionsX_Amz_Target { 'AmazonSSM.DescribeInventoryDeletions' = 0 }
+	export enum DescribeInventoryDeletionsX_Amz_Target { 'AmazonSSM.DescribeInventoryDeletions' = 'AmazonSSM.DescribeInventoryDeletions' }
 
-	export enum DescribeMaintenanceWindowExecutionTaskInvocationsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowExecutionTaskInvocations' = 0 }
+	export enum DescribeMaintenanceWindowExecutionTaskInvocationsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowExecutionTaskInvocations' = 'AmazonSSM.DescribeMaintenanceWindowExecutionTaskInvocations' }
 
-	export enum DescribeMaintenanceWindowExecutionTasksX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowExecutionTasks' = 0 }
+	export enum DescribeMaintenanceWindowExecutionTasksX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowExecutionTasks' = 'AmazonSSM.DescribeMaintenanceWindowExecutionTasks' }
 
-	export enum DescribeMaintenanceWindowExecutionsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowExecutions' = 0 }
+	export enum DescribeMaintenanceWindowExecutionsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowExecutions' = 'AmazonSSM.DescribeMaintenanceWindowExecutions' }
 
-	export enum DescribeMaintenanceWindowScheduleX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowSchedule' = 0 }
+	export enum DescribeMaintenanceWindowScheduleX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowSchedule' = 'AmazonSSM.DescribeMaintenanceWindowSchedule' }
 
-	export enum DescribeMaintenanceWindowTargetsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowTargets' = 0 }
+	export enum DescribeMaintenanceWindowTargetsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowTargets' = 'AmazonSSM.DescribeMaintenanceWindowTargets' }
 
-	export enum DescribeMaintenanceWindowTasksX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowTasks' = 0 }
+	export enum DescribeMaintenanceWindowTasksX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowTasks' = 'AmazonSSM.DescribeMaintenanceWindowTasks' }
 
-	export enum DescribeMaintenanceWindowsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindows' = 0 }
+	export enum DescribeMaintenanceWindowsX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindows' = 'AmazonSSM.DescribeMaintenanceWindows' }
 
-	export enum DescribeMaintenanceWindowsForTargetX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowsForTarget' = 0 }
+	export enum DescribeMaintenanceWindowsForTargetX_Amz_Target { 'AmazonSSM.DescribeMaintenanceWindowsForTarget' = 'AmazonSSM.DescribeMaintenanceWindowsForTarget' }
 
-	export enum DescribeOpsItemsX_Amz_Target { 'AmazonSSM.DescribeOpsItems' = 0 }
+	export enum DescribeOpsItemsX_Amz_Target { 'AmazonSSM.DescribeOpsItems' = 'AmazonSSM.DescribeOpsItems' }
 
-	export enum DescribeParametersX_Amz_Target { 'AmazonSSM.DescribeParameters' = 0 }
+	export enum DescribeParametersX_Amz_Target { 'AmazonSSM.DescribeParameters' = 'AmazonSSM.DescribeParameters' }
 
-	export enum DescribePatchBaselinesX_Amz_Target { 'AmazonSSM.DescribePatchBaselines' = 0 }
+	export enum DescribePatchBaselinesX_Amz_Target { 'AmazonSSM.DescribePatchBaselines' = 'AmazonSSM.DescribePatchBaselines' }
 
-	export enum DescribePatchGroupStateX_Amz_Target { 'AmazonSSM.DescribePatchGroupState' = 0 }
+	export enum DescribePatchGroupStateX_Amz_Target { 'AmazonSSM.DescribePatchGroupState' = 'AmazonSSM.DescribePatchGroupState' }
 
-	export enum DescribePatchGroupsX_Amz_Target { 'AmazonSSM.DescribePatchGroups' = 0 }
+	export enum DescribePatchGroupsX_Amz_Target { 'AmazonSSM.DescribePatchGroups' = 'AmazonSSM.DescribePatchGroups' }
 
-	export enum DescribePatchPropertiesX_Amz_Target { 'AmazonSSM.DescribePatchProperties' = 0 }
+	export enum DescribePatchPropertiesX_Amz_Target { 'AmazonSSM.DescribePatchProperties' = 'AmazonSSM.DescribePatchProperties' }
 
-	export enum DescribeSessionsX_Amz_Target { 'AmazonSSM.DescribeSessions' = 0 }
+	export enum DescribeSessionsX_Amz_Target { 'AmazonSSM.DescribeSessions' = 'AmazonSSM.DescribeSessions' }
 
-	export enum DisassociateOpsItemRelatedItemX_Amz_Target { 'AmazonSSM.DisassociateOpsItemRelatedItem' = 0 }
+	export enum DisassociateOpsItemRelatedItemX_Amz_Target { 'AmazonSSM.DisassociateOpsItemRelatedItem' = 'AmazonSSM.DisassociateOpsItemRelatedItem' }
 
-	export enum GetAutomationExecutionX_Amz_Target { 'AmazonSSM.GetAutomationExecution' = 0 }
+	export enum GetAutomationExecutionX_Amz_Target { 'AmazonSSM.GetAutomationExecution' = 'AmazonSSM.GetAutomationExecution' }
 
-	export enum GetCalendarStateX_Amz_Target { 'AmazonSSM.GetCalendarState' = 0 }
+	export enum GetCalendarStateX_Amz_Target { 'AmazonSSM.GetCalendarState' = 'AmazonSSM.GetCalendarState' }
 
-	export enum GetCommandInvocationX_Amz_Target { 'AmazonSSM.GetCommandInvocation' = 0 }
+	export enum GetCommandInvocationX_Amz_Target { 'AmazonSSM.GetCommandInvocation' = 'AmazonSSM.GetCommandInvocation' }
 
-	export enum GetConnectionStatusX_Amz_Target { 'AmazonSSM.GetConnectionStatus' = 0 }
+	export enum GetConnectionStatusX_Amz_Target { 'AmazonSSM.GetConnectionStatus' = 'AmazonSSM.GetConnectionStatus' }
 
-	export enum GetDefaultPatchBaselineX_Amz_Target { 'AmazonSSM.GetDefaultPatchBaseline' = 0 }
+	export enum GetDefaultPatchBaselineX_Amz_Target { 'AmazonSSM.GetDefaultPatchBaseline' = 'AmazonSSM.GetDefaultPatchBaseline' }
 
-	export enum GetDeployablePatchSnapshotForInstanceX_Amz_Target { 'AmazonSSM.GetDeployablePatchSnapshotForInstance' = 0 }
+	export enum GetDeployablePatchSnapshotForInstanceX_Amz_Target { 'AmazonSSM.GetDeployablePatchSnapshotForInstance' = 'AmazonSSM.GetDeployablePatchSnapshotForInstance' }
 
-	export enum GetDocumentX_Amz_Target { 'AmazonSSM.GetDocument' = 0 }
+	export enum GetDocumentX_Amz_Target { 'AmazonSSM.GetDocument' = 'AmazonSSM.GetDocument' }
 
-	export enum GetInventoryX_Amz_Target { 'AmazonSSM.GetInventory' = 0 }
+	export enum GetInventoryX_Amz_Target { 'AmazonSSM.GetInventory' = 'AmazonSSM.GetInventory' }
 
-	export enum GetInventorySchemaX_Amz_Target { 'AmazonSSM.GetInventorySchema' = 0 }
+	export enum GetInventorySchemaX_Amz_Target { 'AmazonSSM.GetInventorySchema' = 'AmazonSSM.GetInventorySchema' }
 
-	export enum GetMaintenanceWindowX_Amz_Target { 'AmazonSSM.GetMaintenanceWindow' = 0 }
+	export enum GetMaintenanceWindowX_Amz_Target { 'AmazonSSM.GetMaintenanceWindow' = 'AmazonSSM.GetMaintenanceWindow' }
 
-	export enum GetMaintenanceWindowExecutionX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowExecution' = 0 }
+	export enum GetMaintenanceWindowExecutionX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowExecution' = 'AmazonSSM.GetMaintenanceWindowExecution' }
 
-	export enum GetMaintenanceWindowExecutionTaskX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowExecutionTask' = 0 }
+	export enum GetMaintenanceWindowExecutionTaskX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowExecutionTask' = 'AmazonSSM.GetMaintenanceWindowExecutionTask' }
 
-	export enum GetMaintenanceWindowExecutionTaskInvocationX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowExecutionTaskInvocation' = 0 }
+	export enum GetMaintenanceWindowExecutionTaskInvocationX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowExecutionTaskInvocation' = 'AmazonSSM.GetMaintenanceWindowExecutionTaskInvocation' }
 
-	export enum GetMaintenanceWindowTaskX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowTask' = 0 }
+	export enum GetMaintenanceWindowTaskX_Amz_Target { 'AmazonSSM.GetMaintenanceWindowTask' = 'AmazonSSM.GetMaintenanceWindowTask' }
 
-	export enum GetOpsItemX_Amz_Target { 'AmazonSSM.GetOpsItem' = 0 }
+	export enum GetOpsItemX_Amz_Target { 'AmazonSSM.GetOpsItem' = 'AmazonSSM.GetOpsItem' }
 
-	export enum GetOpsMetadataX_Amz_Target { 'AmazonSSM.GetOpsMetadata' = 0 }
+	export enum GetOpsMetadataX_Amz_Target { 'AmazonSSM.GetOpsMetadata' = 'AmazonSSM.GetOpsMetadata' }
 
-	export enum GetOpsSummaryX_Amz_Target { 'AmazonSSM.GetOpsSummary' = 0 }
+	export enum GetOpsSummaryX_Amz_Target { 'AmazonSSM.GetOpsSummary' = 'AmazonSSM.GetOpsSummary' }
 
-	export enum GetParameterX_Amz_Target { 'AmazonSSM.GetParameter' = 0 }
+	export enum GetParameterX_Amz_Target { 'AmazonSSM.GetParameter' = 'AmazonSSM.GetParameter' }
 
-	export enum GetParameterHistoryX_Amz_Target { 'AmazonSSM.GetParameterHistory' = 0 }
+	export enum GetParameterHistoryX_Amz_Target { 'AmazonSSM.GetParameterHistory' = 'AmazonSSM.GetParameterHistory' }
 
-	export enum GetParametersX_Amz_Target { 'AmazonSSM.GetParameters' = 0 }
+	export enum GetParametersX_Amz_Target { 'AmazonSSM.GetParameters' = 'AmazonSSM.GetParameters' }
 
-	export enum GetParametersByPathX_Amz_Target { 'AmazonSSM.GetParametersByPath' = 0 }
+	export enum GetParametersByPathX_Amz_Target { 'AmazonSSM.GetParametersByPath' = 'AmazonSSM.GetParametersByPath' }
 
-	export enum GetPatchBaselineX_Amz_Target { 'AmazonSSM.GetPatchBaseline' = 0 }
+	export enum GetPatchBaselineX_Amz_Target { 'AmazonSSM.GetPatchBaseline' = 'AmazonSSM.GetPatchBaseline' }
 
-	export enum GetPatchBaselineForPatchGroupX_Amz_Target { 'AmazonSSM.GetPatchBaselineForPatchGroup' = 0 }
+	export enum GetPatchBaselineForPatchGroupX_Amz_Target { 'AmazonSSM.GetPatchBaselineForPatchGroup' = 'AmazonSSM.GetPatchBaselineForPatchGroup' }
 
-	export enum GetResourcePoliciesX_Amz_Target { 'AmazonSSM.GetResourcePolicies' = 0 }
+	export enum GetResourcePoliciesX_Amz_Target { 'AmazonSSM.GetResourcePolicies' = 'AmazonSSM.GetResourcePolicies' }
 
-	export enum GetServiceSettingX_Amz_Target { 'AmazonSSM.GetServiceSetting' = 0 }
+	export enum GetServiceSettingX_Amz_Target { 'AmazonSSM.GetServiceSetting' = 'AmazonSSM.GetServiceSetting' }
 
-	export enum LabelParameterVersionX_Amz_Target { 'AmazonSSM.LabelParameterVersion' = 0 }
+	export enum LabelParameterVersionX_Amz_Target { 'AmazonSSM.LabelParameterVersion' = 'AmazonSSM.LabelParameterVersion' }
 
-	export enum ListAssociationVersionsX_Amz_Target { 'AmazonSSM.ListAssociationVersions' = 0 }
+	export enum ListAssociationVersionsX_Amz_Target { 'AmazonSSM.ListAssociationVersions' = 'AmazonSSM.ListAssociationVersions' }
 
-	export enum ListAssociationsX_Amz_Target { 'AmazonSSM.ListAssociations' = 0 }
+	export enum ListAssociationsX_Amz_Target { 'AmazonSSM.ListAssociations' = 'AmazonSSM.ListAssociations' }
 
-	export enum ListCommandInvocationsX_Amz_Target { 'AmazonSSM.ListCommandInvocations' = 0 }
+	export enum ListCommandInvocationsX_Amz_Target { 'AmazonSSM.ListCommandInvocations' = 'AmazonSSM.ListCommandInvocations' }
 
-	export enum ListCommandsX_Amz_Target { 'AmazonSSM.ListCommands' = 0 }
+	export enum ListCommandsX_Amz_Target { 'AmazonSSM.ListCommands' = 'AmazonSSM.ListCommands' }
 
-	export enum ListComplianceItemsX_Amz_Target { 'AmazonSSM.ListComplianceItems' = 0 }
+	export enum ListComplianceItemsX_Amz_Target { 'AmazonSSM.ListComplianceItems' = 'AmazonSSM.ListComplianceItems' }
 
-	export enum ListComplianceSummariesX_Amz_Target { 'AmazonSSM.ListComplianceSummaries' = 0 }
+	export enum ListComplianceSummariesX_Amz_Target { 'AmazonSSM.ListComplianceSummaries' = 'AmazonSSM.ListComplianceSummaries' }
 
-	export enum ListDocumentMetadataHistoryX_Amz_Target { 'AmazonSSM.ListDocumentMetadataHistory' = 0 }
+	export enum ListDocumentMetadataHistoryX_Amz_Target { 'AmazonSSM.ListDocumentMetadataHistory' = 'AmazonSSM.ListDocumentMetadataHistory' }
 
-	export enum ListDocumentVersionsX_Amz_Target { 'AmazonSSM.ListDocumentVersions' = 0 }
+	export enum ListDocumentVersionsX_Amz_Target { 'AmazonSSM.ListDocumentVersions' = 'AmazonSSM.ListDocumentVersions' }
 
-	export enum ListDocumentsX_Amz_Target { 'AmazonSSM.ListDocuments' = 0 }
+	export enum ListDocumentsX_Amz_Target { 'AmazonSSM.ListDocuments' = 'AmazonSSM.ListDocuments' }
 
-	export enum ListInventoryEntriesX_Amz_Target { 'AmazonSSM.ListInventoryEntries' = 0 }
+	export enum ListInventoryEntriesX_Amz_Target { 'AmazonSSM.ListInventoryEntries' = 'AmazonSSM.ListInventoryEntries' }
 
-	export enum ListOpsItemEventsX_Amz_Target { 'AmazonSSM.ListOpsItemEvents' = 0 }
+	export enum ListOpsItemEventsX_Amz_Target { 'AmazonSSM.ListOpsItemEvents' = 'AmazonSSM.ListOpsItemEvents' }
 
-	export enum ListOpsItemRelatedItemsX_Amz_Target { 'AmazonSSM.ListOpsItemRelatedItems' = 0 }
+	export enum ListOpsItemRelatedItemsX_Amz_Target { 'AmazonSSM.ListOpsItemRelatedItems' = 'AmazonSSM.ListOpsItemRelatedItems' }
 
-	export enum ListOpsMetadataX_Amz_Target { 'AmazonSSM.ListOpsMetadata' = 0 }
+	export enum ListOpsMetadataX_Amz_Target { 'AmazonSSM.ListOpsMetadata' = 'AmazonSSM.ListOpsMetadata' }
 
-	export enum ListResourceComplianceSummariesX_Amz_Target { 'AmazonSSM.ListResourceComplianceSummaries' = 0 }
+	export enum ListResourceComplianceSummariesX_Amz_Target { 'AmazonSSM.ListResourceComplianceSummaries' = 'AmazonSSM.ListResourceComplianceSummaries' }
 
-	export enum ListResourceDataSyncX_Amz_Target { 'AmazonSSM.ListResourceDataSync' = 0 }
+	export enum ListResourceDataSyncX_Amz_Target { 'AmazonSSM.ListResourceDataSync' = 'AmazonSSM.ListResourceDataSync' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AmazonSSM.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonSSM.ListTagsForResource' = 'AmazonSSM.ListTagsForResource' }
 
-	export enum ModifyDocumentPermissionX_Amz_Target { 'AmazonSSM.ModifyDocumentPermission' = 0 }
+	export enum ModifyDocumentPermissionX_Amz_Target { 'AmazonSSM.ModifyDocumentPermission' = 'AmazonSSM.ModifyDocumentPermission' }
 
-	export enum PutComplianceItemsX_Amz_Target { 'AmazonSSM.PutComplianceItems' = 0 }
+	export enum PutComplianceItemsX_Amz_Target { 'AmazonSSM.PutComplianceItems' = 'AmazonSSM.PutComplianceItems' }
 
-	export enum PutInventoryX_Amz_Target { 'AmazonSSM.PutInventory' = 0 }
+	export enum PutInventoryX_Amz_Target { 'AmazonSSM.PutInventory' = 'AmazonSSM.PutInventory' }
 
-	export enum PutParameterX_Amz_Target { 'AmazonSSM.PutParameter' = 0 }
+	export enum PutParameterX_Amz_Target { 'AmazonSSM.PutParameter' = 'AmazonSSM.PutParameter' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'AmazonSSM.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'AmazonSSM.PutResourcePolicy' = 'AmazonSSM.PutResourcePolicy' }
 
-	export enum RegisterDefaultPatchBaselineX_Amz_Target { 'AmazonSSM.RegisterDefaultPatchBaseline' = 0 }
+	export enum RegisterDefaultPatchBaselineX_Amz_Target { 'AmazonSSM.RegisterDefaultPatchBaseline' = 'AmazonSSM.RegisterDefaultPatchBaseline' }
 
-	export enum RegisterPatchBaselineForPatchGroupX_Amz_Target { 'AmazonSSM.RegisterPatchBaselineForPatchGroup' = 0 }
+	export enum RegisterPatchBaselineForPatchGroupX_Amz_Target { 'AmazonSSM.RegisterPatchBaselineForPatchGroup' = 'AmazonSSM.RegisterPatchBaselineForPatchGroup' }
 
-	export enum RegisterTargetWithMaintenanceWindowX_Amz_Target { 'AmazonSSM.RegisterTargetWithMaintenanceWindow' = 0 }
+	export enum RegisterTargetWithMaintenanceWindowX_Amz_Target { 'AmazonSSM.RegisterTargetWithMaintenanceWindow' = 'AmazonSSM.RegisterTargetWithMaintenanceWindow' }
 
-	export enum RegisterTaskWithMaintenanceWindowX_Amz_Target { 'AmazonSSM.RegisterTaskWithMaintenanceWindow' = 0 }
+	export enum RegisterTaskWithMaintenanceWindowX_Amz_Target { 'AmazonSSM.RegisterTaskWithMaintenanceWindow' = 'AmazonSSM.RegisterTaskWithMaintenanceWindow' }
 
-	export enum RemoveTagsFromResourceX_Amz_Target { 'AmazonSSM.RemoveTagsFromResource' = 0 }
+	export enum RemoveTagsFromResourceX_Amz_Target { 'AmazonSSM.RemoveTagsFromResource' = 'AmazonSSM.RemoveTagsFromResource' }
 
-	export enum ResetServiceSettingX_Amz_Target { 'AmazonSSM.ResetServiceSetting' = 0 }
+	export enum ResetServiceSettingX_Amz_Target { 'AmazonSSM.ResetServiceSetting' = 'AmazonSSM.ResetServiceSetting' }
 
-	export enum ResumeSessionX_Amz_Target { 'AmazonSSM.ResumeSession' = 0 }
+	export enum ResumeSessionX_Amz_Target { 'AmazonSSM.ResumeSession' = 'AmazonSSM.ResumeSession' }
 
-	export enum SendAutomationSignalX_Amz_Target { 'AmazonSSM.SendAutomationSignal' = 0 }
+	export enum SendAutomationSignalX_Amz_Target { 'AmazonSSM.SendAutomationSignal' = 'AmazonSSM.SendAutomationSignal' }
 
-	export enum SendCommandX_Amz_Target { 'AmazonSSM.SendCommand' = 0 }
+	export enum SendCommandX_Amz_Target { 'AmazonSSM.SendCommand' = 'AmazonSSM.SendCommand' }
 
-	export enum StartAssociationsOnceX_Amz_Target { 'AmazonSSM.StartAssociationsOnce' = 0 }
+	export enum StartAssociationsOnceX_Amz_Target { 'AmazonSSM.StartAssociationsOnce' = 'AmazonSSM.StartAssociationsOnce' }
 
-	export enum StartAutomationExecutionX_Amz_Target { 'AmazonSSM.StartAutomationExecution' = 0 }
+	export enum StartAutomationExecutionX_Amz_Target { 'AmazonSSM.StartAutomationExecution' = 'AmazonSSM.StartAutomationExecution' }
 
-	export enum StartChangeRequestExecutionX_Amz_Target { 'AmazonSSM.StartChangeRequestExecution' = 0 }
+	export enum StartChangeRequestExecutionX_Amz_Target { 'AmazonSSM.StartChangeRequestExecution' = 'AmazonSSM.StartChangeRequestExecution' }
 
-	export enum StartSessionX_Amz_Target { 'AmazonSSM.StartSession' = 0 }
+	export enum StartSessionX_Amz_Target { 'AmazonSSM.StartSession' = 'AmazonSSM.StartSession' }
 
-	export enum StopAutomationExecutionX_Amz_Target { 'AmazonSSM.StopAutomationExecution' = 0 }
+	export enum StopAutomationExecutionX_Amz_Target { 'AmazonSSM.StopAutomationExecution' = 'AmazonSSM.StopAutomationExecution' }
 
-	export enum TerminateSessionX_Amz_Target { 'AmazonSSM.TerminateSession' = 0 }
+	export enum TerminateSessionX_Amz_Target { 'AmazonSSM.TerminateSession' = 'AmazonSSM.TerminateSession' }
 
-	export enum UnlabelParameterVersionX_Amz_Target { 'AmazonSSM.UnlabelParameterVersion' = 0 }
+	export enum UnlabelParameterVersionX_Amz_Target { 'AmazonSSM.UnlabelParameterVersion' = 'AmazonSSM.UnlabelParameterVersion' }
 
-	export enum UpdateAssociationX_Amz_Target { 'AmazonSSM.UpdateAssociation' = 0 }
+	export enum UpdateAssociationX_Amz_Target { 'AmazonSSM.UpdateAssociation' = 'AmazonSSM.UpdateAssociation' }
 
-	export enum UpdateAssociationStatusX_Amz_Target { 'AmazonSSM.UpdateAssociationStatus' = 0 }
+	export enum UpdateAssociationStatusX_Amz_Target { 'AmazonSSM.UpdateAssociationStatus' = 'AmazonSSM.UpdateAssociationStatus' }
 
-	export enum UpdateDocumentX_Amz_Target { 'AmazonSSM.UpdateDocument' = 0 }
+	export enum UpdateDocumentX_Amz_Target { 'AmazonSSM.UpdateDocument' = 'AmazonSSM.UpdateDocument' }
 
-	export enum UpdateDocumentDefaultVersionX_Amz_Target { 'AmazonSSM.UpdateDocumentDefaultVersion' = 0 }
+	export enum UpdateDocumentDefaultVersionX_Amz_Target { 'AmazonSSM.UpdateDocumentDefaultVersion' = 'AmazonSSM.UpdateDocumentDefaultVersion' }
 
-	export enum UpdateDocumentMetadataX_Amz_Target { 'AmazonSSM.UpdateDocumentMetadata' = 0 }
+	export enum UpdateDocumentMetadataX_Amz_Target { 'AmazonSSM.UpdateDocumentMetadata' = 'AmazonSSM.UpdateDocumentMetadata' }
 
-	export enum UpdateMaintenanceWindowX_Amz_Target { 'AmazonSSM.UpdateMaintenanceWindow' = 0 }
+	export enum UpdateMaintenanceWindowX_Amz_Target { 'AmazonSSM.UpdateMaintenanceWindow' = 'AmazonSSM.UpdateMaintenanceWindow' }
 
-	export enum UpdateMaintenanceWindowTargetX_Amz_Target { 'AmazonSSM.UpdateMaintenanceWindowTarget' = 0 }
+	export enum UpdateMaintenanceWindowTargetX_Amz_Target { 'AmazonSSM.UpdateMaintenanceWindowTarget' = 'AmazonSSM.UpdateMaintenanceWindowTarget' }
 
-	export enum UpdateMaintenanceWindowTaskX_Amz_Target { 'AmazonSSM.UpdateMaintenanceWindowTask' = 0 }
+	export enum UpdateMaintenanceWindowTaskX_Amz_Target { 'AmazonSSM.UpdateMaintenanceWindowTask' = 'AmazonSSM.UpdateMaintenanceWindowTask' }
 
-	export enum UpdateManagedInstanceRoleX_Amz_Target { 'AmazonSSM.UpdateManagedInstanceRole' = 0 }
+	export enum UpdateManagedInstanceRoleX_Amz_Target { 'AmazonSSM.UpdateManagedInstanceRole' = 'AmazonSSM.UpdateManagedInstanceRole' }
 
-	export enum UpdateOpsItemX_Amz_Target { 'AmazonSSM.UpdateOpsItem' = 0 }
+	export enum UpdateOpsItemX_Amz_Target { 'AmazonSSM.UpdateOpsItem' = 'AmazonSSM.UpdateOpsItem' }
 
-	export enum UpdateOpsMetadataX_Amz_Target { 'AmazonSSM.UpdateOpsMetadata' = 0 }
+	export enum UpdateOpsMetadataX_Amz_Target { 'AmazonSSM.UpdateOpsMetadata' = 'AmazonSSM.UpdateOpsMetadata' }
 
-	export enum UpdatePatchBaselineX_Amz_Target { 'AmazonSSM.UpdatePatchBaseline' = 0 }
+	export enum UpdatePatchBaselineX_Amz_Target { 'AmazonSSM.UpdatePatchBaseline' = 'AmazonSSM.UpdatePatchBaseline' }
 
-	export enum UpdateResourceDataSyncX_Amz_Target { 'AmazonSSM.UpdateResourceDataSync' = 0 }
+	export enum UpdateResourceDataSyncX_Amz_Target { 'AmazonSSM.UpdateResourceDataSync' = 'AmazonSSM.UpdateResourceDataSync' }
 
-	export enum UpdateServiceSettingX_Amz_Target { 'AmazonSSM.UpdateServiceSetting' = 0 }
+	export enum UpdateServiceSettingX_Amz_Target { 'AmazonSSM.UpdateServiceSetting' = 'AmazonSSM.UpdateServiceSetting' }
 
 }
 

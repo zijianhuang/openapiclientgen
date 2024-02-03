@@ -49,9 +49,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CRType { EC2 = 0, SPOT = 1, FARGATE = 2, FARGATE_SPOT = 3 }
+	export enum CRType { EC2 = 'EC2', SPOT = 'SPOT', FARGATE = 'FARGATE', FARGATE_SPOT = 'FARGATE_SPOT' }
 
-	export enum CRAllocationStrategy { BEST_FIT = 0, BEST_FIT_PROGRESSIVE = 1, SPOT_CAPACITY_OPTIMIZED = 2, SPOT_PRICE_CAPACITY_OPTIMIZED = 3 }
+	export enum CRAllocationStrategy { BEST_FIT = 'BEST_FIT', BEST_FIT_PROGRESSIVE = 'BEST_FIT_PROGRESSIVE', SPOT_CAPACITY_OPTIMIZED = 'SPOT_CAPACITY_OPTIMIZED', SPOT_PRICE_CAPACITY_OPTIMIZED = 'SPOT_PRICE_CAPACITY_OPTIMIZED' }
 
 	export interface TagsMap {
 	}
@@ -336,11 +336,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CEType { MANAGED = 0, UNMANAGED = 1 }
+	export enum CEType { MANAGED = 'MANAGED', UNMANAGED = 'UNMANAGED' }
 
-	export enum CEState { ENABLED = 0, DISABLED = 1 }
+	export enum CEState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum CEStatus { CREATING = 0, UPDATING = 1, DELETING = 2, DELETED = 3, VALID = 4, INVALID = 5 }
+	export enum CEStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', VALID = 'VALID', INVALID = 'INVALID' }
 
 
 	/** An object that represents an Batch compute resource. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>. */
@@ -453,7 +453,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrchestrationType { ECS = 0, EKS = 1 }
+	export enum OrchestrationType { ECS = 'ECS', EKS = 'EKS' }
 
 	export interface DescribeJobDefinitionsResponse {
 		jobDefinitions?: Array<JobDefinition>;
@@ -589,7 +589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RetryAction { RETRY = 0, EXIT = 1 }
+	export enum RetryAction { RETRY = 'RETRY', EXIT = 'EXIT' }
 
 
 	/** Container properties are used for Amazon ECS based job definitions. These properties to describe the container that's launched as part of a job. */
@@ -840,7 +840,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { GPU = 0, VCPU = 1, MEMORY = 2 }
+	export enum ResourceType { GPU = 'GPU', VCPU = 'VCPU', MEMORY = 'MEMORY' }
 
 
 	/** Linux-specific modifications that are applied to the container, such as details for device mappings. */
@@ -895,7 +895,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceCgroupPermission { READ = 0, WRITE = 1, MKNOD = 2 }
+	export enum DeviceCgroupPermission { READ = 'READ', WRITE = 'WRITE', MKNOD = 'MKNOD' }
 
 
 	/** <p>The container path, mount options, and size of the <code>tmpfs</code> mount.</p> <note> <p>This object isn't applicable to jobs that are running on Fargate resources.</p> </note> */
@@ -949,7 +949,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogDriver { 'json-file' = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6 }
+	export enum LogDriver { 'json-file' = 'json-file', syslog = 'syslog', journald = 'journald', gelf = 'gelf', fluentd = 'fluentd', awslogs = 'awslogs', splunk = 'splunk' }
 
 	export interface LogConfigurationOptionsMap {
 	}
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformCapability { EC2 = 0, FARGATE = 1 }
+	export enum PlatformCapability { EC2 = 'EC2', FARGATE = 'FARGATE' }
 
 
 	/** An object that contains the properties for the Kubernetes resources of a job. */
@@ -1608,7 +1608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { SUBMITTED = 0, PENDING = 1, RUNNABLE = 2, STARTING = 3, RUNNING = 4, SUCCEEDED = 5, FAILED = 6 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', PENDING = 'PENDING', RUNNABLE = 'RUNNABLE', STARTING = 'STARTING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** An object that represents a job attempt. */
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArrayJobDependency { N_TO_N = 0, SEQUENTIAL = 1 }
+	export enum ArrayJobDependency { N_TO_N = 'N_TO_N', SEQUENTIAL = 'SEQUENTIAL' }
 
 
 	/** An object that represents the details of a container that's part of a job. */
@@ -2412,7 +2412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CRUpdateAllocationStrategy { BEST_FIT_PROGRESSIVE = 0, SPOT_CAPACITY_OPTIMIZED = 1, SPOT_PRICE_CAPACITY_OPTIMIZED = 2 }
+	export enum CRUpdateAllocationStrategy { BEST_FIT_PROGRESSIVE = 'BEST_FIT_PROGRESSIVE', SPOT_CAPACITY_OPTIMIZED = 'SPOT_CAPACITY_OPTIMIZED', SPOT_PRICE_CAPACITY_OPTIMIZED = 'SPOT_PRICE_CAPACITY_OPTIMIZED' }
 
 	export interface UpdateJobQueueResponse {
 		jobQueueName?: string;
@@ -2457,7 +2457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignPublicIp { ENABLED = 0, DISABLED = 1 }
+	export enum AssignPublicIp { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Contains the parameters for <code>CancelJob</code>. */
@@ -2580,7 +2580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JQState { ENABLED = 0, DISABLED = 1 }
+	export enum JQState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Contains the parameters for <code>CreateJobQueue</code>. */
@@ -2826,9 +2826,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EFSAuthorizationConfigIAM { ENABLED = 0, DISABLED = 1 }
+	export enum EFSAuthorizationConfigIAM { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum EFSTransitEncryption { ENABLED = 0, DISABLED = 1 }
+	export enum EFSTransitEncryption { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** An object that contains overrides for the Kubernetes resources of a job. */
@@ -2845,9 +2845,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JQStatus { CREATING = 0, UPDATING = 1, DELETING = 2, DELETED = 3, VALID = 4, INVALID = 5 }
+	export enum JQStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', VALID = 'VALID', INVALID = 'INVALID' }
 
-	export enum JobDefinitionType { container = 0, multinode = 1 }
+	export enum JobDefinitionType { container = 'container', multinode = 'multinode' }
 
 
 	/** Contains the parameters for <code>ListJobs</code>. */

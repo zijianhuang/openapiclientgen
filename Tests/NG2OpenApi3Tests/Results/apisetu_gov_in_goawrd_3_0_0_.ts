@@ -1320,7 +1320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErcerPostBodyFormat { pdf = 0 }
+	export enum ErcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface PfdawPostBody {
 		certificateParameters?: PfdawPostBodyCertificateParameters;

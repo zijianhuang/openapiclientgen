@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Answered { Any = 0, Answered = 1, Unanswered = 2 }
+	export enum Answered { Any = 'Any', Answered = 'Answered', Unanswered = 'Unanswered' }
 
 	export interface AttachmentViewModel {
 		fileSizeBytes?: number | null;
@@ -49,7 +49,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DailyReportViewModelHouse { Bicameral = 0, Commons = 1, Lords = 2 }
+	export enum DailyReportViewModelHouse { Bicameral = 'Bicameral', Commons = 'Commons', Lords = 'Lords' }
 
 	export interface DailyReportViewModelItem {
 		links?: Array<Link>;
@@ -112,7 +112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HouseEnum { Bicameral = 0, Commons = 1, Lords = 2 }
+	export enum HouseEnum { Bicameral = 'Bicameral', Commons = 'Commons', Lords = 'Lords' }
 
 	export interface LinkedStatements {
 		linkDate?: Date | null;
@@ -133,7 +133,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkedStatementsLinkType { CorrectedStatement = 0, CorrectedAnswer = 1, JointStatement = 2 }
+	export enum LinkedStatementsLinkType { CorrectedStatement = 'CorrectedStatement', CorrectedAnswer = 'CorrectedAnswer', JointStatement = 'JointStatement' }
 
 	export interface MemberViewModel {
 		id?: number | null;
@@ -194,7 +194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuestionStatusEnum { NotAnswered = 0, AnsweredOnly = 1, AllQuestions = 2 }
+	export enum QuestionStatusEnum { NotAnswered = 'NotAnswered', AnsweredOnly = 'AnsweredOnly', AllQuestions = 'AllQuestions' }
 
 	export interface QuestionsViewModel {
 		answerIsCorrection?: boolean | null;
@@ -310,7 +310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatementLinkTypeEnum { CorrectedStatement = 0, CorrectedAnswer = 1, JointStatement = 2 }
+	export enum StatementLinkTypeEnum { CorrectedStatement = 'CorrectedStatement', CorrectedAnswer = 'CorrectedAnswer', JointStatement = 'JointStatement' }
 
 	export interface StatementsViewModel {
 		answeringBodyId?: number | null;

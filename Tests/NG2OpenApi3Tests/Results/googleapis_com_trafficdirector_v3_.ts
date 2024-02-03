@@ -124,7 +124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SocketAddressProtocol { TCP = 0, UDP = 1 }
+	export enum SocketAddressProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 
 	/** BuildVersion combines SemVer version of extension with free-form build information (i.e. 'alpha', 'private-build') as a set of strings. */
@@ -267,9 +267,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GenericXdsConfigClientStatus { UNKNOWN = 0, REQUESTED = 1, DOES_NOT_EXIST = 2, ACKED = 3, NACKED = 4 }
+	export enum GenericXdsConfigClientStatus { UNKNOWN = 'UNKNOWN', REQUESTED = 'REQUESTED', DOES_NOT_EXIST = 'DOES_NOT_EXIST', ACKED = 'ACKED', NACKED = 'NACKED' }
 
-	export enum GenericXdsConfigConfigStatus { UNKNOWN = 0, SYNCED = 1, NOT_SENT = 2, STALE = 3, ERROR = 4 }
+	export enum GenericXdsConfigConfigStatus { UNKNOWN = 'UNKNOWN', SYNCED = 'SYNCED', NOT_SENT = 'NOT_SENT', STALE = 'STALE', ERROR = 'ERROR' }
 
 	export interface UpdateFailureState {
 
@@ -523,7 +523,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PerXdsConfigClientStatus { CLIENT_UNKNOWN = 0, CLIENT_REQUESTED = 1, CLIENT_ACKED = 2, CLIENT_NACKED = 3 }
+	export enum PerXdsConfigClientStatus { CLIENT_UNKNOWN = 'CLIENT_UNKNOWN', CLIENT_REQUESTED = 'CLIENT_REQUESTED', CLIENT_ACKED = 'CLIENT_ACKED', CLIENT_NACKED = 'CLIENT_NACKED' }
 
 
 	/** Envoy's cluster manager fills this message with all currently known clusters. Cluster configuration information can be used to recreate an Envoy configuration by populating all clusters as static clusters or by returning them in a CDS response. */

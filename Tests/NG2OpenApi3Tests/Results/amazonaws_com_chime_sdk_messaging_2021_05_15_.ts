@@ -140,7 +140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelMembershipType { DEFAULT = 0, HIDDEN = 1 }
+	export enum ChannelMembershipType { DEFAULT = 'DEFAULT', HIDDEN = 'HIDDEN' }
 
 
 	/** A list of failed member ARNs, error codes, and error messages. */
@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { BadRequest = 0, Conflict = 1, Forbidden = 2, NotFound = 3, PreconditionFailed = 4, ResourceLimitExceeded = 5, ServiceFailure = 6, AccessDenied = 7, ServiceUnavailable = 8, Throttled = 9, Throttling = 10, Unauthorized = 11, Unprocessable = 12, VoiceConnectorGroupAssociationsExist = 13, PhoneNumberAssociationsExist = 14 }
+	export enum ErrorCode { BadRequest = 'BadRequest', Conflict = 'Conflict', Forbidden = 'Forbidden', NotFound = 'NotFound', PreconditionFailed = 'PreconditionFailed', ResourceLimitExceeded = 'ResourceLimitExceeded', ServiceFailure = 'ServiceFailure', AccessDenied = 'AccessDenied', ServiceUnavailable = 'ServiceUnavailable', Throttled = 'Throttled', Throttling = 'Throttling', Unauthorized = 'Unauthorized', Unprocessable = 'Unprocessable', VoiceConnectorGroupAssociationsExist = 'VoiceConnectorGroupAssociationsExist', PhoneNumberAssociationsExist = 'PhoneNumberAssociationsExist' }
 
 	export interface ResourceLimitExceededException {
 	}
@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PushNotificationType { DEFAULT = 0, VOIP = 1 }
+	export enum PushNotificationType { DEFAULT = 'DEFAULT', VOIP = 'VOIP' }
 
 	export interface MessageAttributeMap {
 	}
@@ -269,7 +269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpirationCriterion { CREATED_TIMESTAMP = 0, LAST_MESSAGE_TIMESTAMP = 1 }
+	export enum ExpirationCriterion { CREATED_TIMESTAMP = 'CREATED_TIMESTAMP', LAST_MESSAGE_TIMESTAMP = 'LAST_MESSAGE_TIMESTAMP' }
 
 	export interface CreateChannelBanResponse {
 		ChannelArn?: string;
@@ -381,9 +381,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InvocationType { ASYNC = 0 }
+	export enum InvocationType { ASYNC = 'ASYNC' }
 
-	export enum FallbackAction { CONTINUE = 0, ABORT = 1 }
+	export enum FallbackAction { CONTINUE = 'CONTINUE', ABORT = 'ABORT' }
 
 	export interface CreateChannelMembershipResponse {
 		ChannelArn?: string;
@@ -471,9 +471,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelMode { UNRESTRICTED = 0, RESTRICTED = 1 }
+	export enum ChannelMode { UNRESTRICTED = 'UNRESTRICTED', RESTRICTED = 'RESTRICTED' }
 
-	export enum ChannelPrivacy { PUBLIC = 0, PRIVATE = 1 }
+	export enum ChannelPrivacy { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE' }
 
 
 	/** The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members. */
@@ -846,7 +846,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowNotifications { ALL = 0, NONE = 1, FILTERED = 2 }
+	export enum AllowNotifications { ALL = 'ALL', NONE = 'NONE', FILTERED = 'FILTERED' }
 
 	export interface GetChannelMessageResponse {
 		ChannelMessage?: ChannelMessage;
@@ -913,9 +913,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelMessageType { STANDARD = 0, CONTROL = 1 }
+	export enum ChannelMessageType { STANDARD = 'STANDARD', CONTROL = 'CONTROL' }
 
-	export enum ChannelMessagePersistenceType { PERSISTENT = 0, NON_PERSISTENT = 1 }
+	export enum ChannelMessagePersistenceType { PERSISTENT = 'PERSISTENT', NON_PERSISTENT = 'NON_PERSISTENT' }
 
 
 	/** Stores information about a message status. */
@@ -937,7 +937,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelMessageStatus { SENT = 0, PENDING = 1, FAILED = 2, DENIED = 3 }
+	export enum ChannelMessageStatus { SENT = 'SENT', PENDING = 'PENDING', FAILED = 'FAILED', DENIED = 'DENIED' }
 
 
 	/** The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. */
@@ -1034,7 +1034,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessagingDataType { Channel = 0, ChannelMessage = 1 }
+	export enum MessagingDataType { Channel = 'Channel', ChannelMessage = 'ChannelMessage' }
 
 	export interface ListChannelBansResponse {
 		ChannelArn?: string;
@@ -1469,9 +1469,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchFieldKey { MEMBERS = 0 }
+	export enum SearchFieldKey { MEMBERS = 'MEMBERS' }
 
-	export enum SearchFieldOperator { EQUALS = 0, INCLUDES = 1 }
+	export enum SearchFieldOperator { EQUALS = 'EQUALS', INCLUDES = 'INCLUDES' }
 
 	export interface SendChannelMessageResponse {
 		ChannelArn?: string;
@@ -2045,7 +2045,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListChannelMessagesRequest {
 	}
@@ -2954,7 +2954,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchCreateChannelMembershipOperation { 'batch-create' = 0 }
+	export enum BatchCreateChannelMembershipOperation { 'batch-create' = 'batch-create' }
 
 	export interface BatchCreateChannelMembershipPostBody {
 
@@ -2996,7 +2996,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelFlowCallbackOperation { 'channel-flow-callback' = 0 }
+	export enum ChannelFlowCallbackOperation { 'channel-flow-callback' = 'channel-flow-callback' }
 
 	export interface ChannelFlowCallbackPostBody {
 
@@ -3587,9 +3587,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DescribeChannelMembershipForAppInstanceUserScope { 'app-instance-user-membership' = 0 }
+	export enum DescribeChannelMembershipForAppInstanceUserScope { 'app-instance-user-membership' = 'app-instance-user-membership' }
 
-	export enum DescribeChannelModeratedByAppInstanceUserScope { 'app-instance-user-moderated-channel' = 0 }
+	export enum DescribeChannelModeratedByAppInstanceUserScope { 'app-instance-user-moderated-channel' = 'app-instance-user-moderated-channel' }
 
 	export interface PutChannelMembershipPreferencesPutBody {
 
@@ -3618,9 +3618,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetChannelMessageStatusScope { 'message-status' = 0 }
+	export enum GetChannelMessageStatusScope { 'message-status' = 'message-status' }
 
-	export enum ListChannelMembershipsForAppInstanceUserScope { 'app-instance-user-memberships' = 0 }
+	export enum ListChannelMembershipsForAppInstanceUserScope { 'app-instance-user-memberships' = 'app-instance-user-memberships' }
 
 	export interface SendChannelMessagePostBody {
 
@@ -3771,9 +3771,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ListChannelsAssociatedWithChannelFlowScope { 'channel-flow-associations' = 0 }
+	export enum ListChannelsAssociatedWithChannelFlowScope { 'channel-flow-associations' = 'channel-flow-associations' }
 
-	export enum ListChannelsModeratedByAppInstanceUserScope { 'app-instance-user-moderated-channels' = 0 }
+	export enum ListChannelsModeratedByAppInstanceUserScope { 'app-instance-user-moderated-channels' = 'app-instance-user-moderated-channels' }
 
 	export interface PutChannelExpirationSettingsPutBody {
 
@@ -3804,7 +3804,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RedactChannelMessageOperation { redact = 0 }
+	export enum RedactChannelMessageOperation { redact = 'redact' }
 
 	export interface RedactChannelMessagePostBody {
 
@@ -3831,7 +3831,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchChannelsOperation { search = 0 }
+	export enum SearchChannelsOperation { search = 'search' }
 
 	export interface SearchChannelsPostBody {
 
@@ -3851,7 +3851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagResourceOperation { 'tag-resource' = 0 }
+	export enum TagResourceOperation { 'tag-resource' = 'tag-resource' }
 
 	export interface TagResourcePostBody {
 
@@ -3888,7 +3888,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UntagResourceOperation { 'untag-resource' = 0 }
+	export enum UntagResourceOperation { 'untag-resource' = 'untag-resource' }
 
 	export interface UntagResourcePostBody {
 

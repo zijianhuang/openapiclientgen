@@ -163,11 +163,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Faxv1faxDirection { inbound = 0, outbound = 1 }
+	export enum Faxv1faxDirection { inbound = 'inbound', outbound = 'outbound' }
 
-	export enum Faxv1faxQuality { standard = 0, fine = 1, superfine = 2 }
+	export enum Faxv1faxQuality { standard = 'standard', fine = 'fine', superfine = 'superfine' }
 
-	export enum Faxv1faxStatus { queued = 0, processing = 1, sending = 2, delivered = 3, receiving = 4, received = 5, 'no-answer' = 6, busy = 7, failed = 8, canceled = 9 }
+	export enum Faxv1faxStatus { queued = 'queued', processing = 'processing', sending = 'sending', delivered = 'delivered', receiving = 'receiving', received = 'received', 'no-answer' = 'no-answer', busy = 'busy', failed = 'failed', canceled = 'canceled' }
 
 	export interface Faxv1faxfax_media {
 

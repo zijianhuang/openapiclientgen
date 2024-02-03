@@ -117,7 +117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateRunModelState { Unknown = 0, Succeeded = 1, InProgress = 2, Failed = 3 }
+	export enum UpdateRunModelState { Unknown = 'Unknown', Succeeded = 'Succeeded', InProgress = 'InProgress', Failed = 'Failed' }
 
 
 	/** Pageable list of update runs. */
@@ -145,7 +145,7 @@ export namespace MyNS {
 
 
 	/** State of the update run. */
-	export enum UpdateRunState { Unknown = 0, Succeeded = 1, InProgress = 2, Failed = 3 }
+	export enum UpdateRunState { Unknown = 'Unknown', Succeeded = 'Succeeded', InProgress = 'InProgress', Failed = 'Failed' }
 
 	@Injectable()
 	export class MyClient {

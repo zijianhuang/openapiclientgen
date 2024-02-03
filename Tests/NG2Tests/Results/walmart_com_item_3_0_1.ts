@@ -65,11 +65,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum V2getFeedItemStatusWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 0 }
+	export enum V2getFeedItemStatusWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 'SWAGGER_CHANNEL_TYPE' }
 
-	export enum V2doPostMultiPartFeedType { item = 0 }
+	export enum V2doPostMultiPartFeedType { item = 'item' }
 
-	export enum V3doPostMultiPartFeedType { item = 0, SUPPLIER_FULL_ITEM = 1, CONTENT_PRODUCT = 2 }
+	export enum V3doPostMultiPartFeedType { item = 'item', SUPPLIER_FULL_ITEM = 'SUPPLIER_FULL_ITEM', CONTENT_PRODUCT = 'CONTENT_PRODUCT' }
 
 }
 

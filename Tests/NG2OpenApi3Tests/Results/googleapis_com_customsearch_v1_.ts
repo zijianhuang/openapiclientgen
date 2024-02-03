@@ -1344,19 +1344,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Search_cse_listImgColorType { imgColorTypeUndefined = 0, mono = 1, gray = 2, color = 3, trans = 4 }
+	export enum Search_cse_listImgColorType { imgColorTypeUndefined = 'imgColorTypeUndefined', mono = 'mono', gray = 'gray', color = 'color', trans = 'trans' }
 
-	export enum Search_cse_listImgDominantColor { imgDominantColorUndefined = 0, black = 1, blue = 2, brown = 3, gray = 4, green = 5, orange = 6, pink = 7, purple = 8, red = 9, teal = 10, white = 11, yellow = 12 }
+	export enum Search_cse_listImgDominantColor { imgDominantColorUndefined = 'imgDominantColorUndefined', black = 'black', blue = 'blue', brown = 'brown', gray = 'gray', green = 'green', orange = 'orange', pink = 'pink', purple = 'purple', red = 'red', teal = 'teal', white = 'white', yellow = 'yellow' }
 
-	export enum Search_cse_listImgSize { imgSizeUndefined = 0, HUGE = 1, ICON = 2, LARGE = 3, MEDIUM = 4, SMALL = 5, XLARGE = 6, XXLARGE = 7 }
+	export enum Search_cse_listImgSize { imgSizeUndefined = 'imgSizeUndefined', HUGE = 'HUGE', ICON = 'ICON', LARGE = 'LARGE', MEDIUM = 'MEDIUM', SMALL = 'SMALL', XLARGE = 'XLARGE', XXLARGE = 'XXLARGE' }
 
-	export enum Search_cse_listImgType { imgTypeUndefined = 0, clipart = 1, face = 2, lineart = 3, stock = 4, photo = 5, animated = 6 }
+	export enum Search_cse_listImgType { imgTypeUndefined = 'imgTypeUndefined', clipart = 'clipart', face = 'face', lineart = 'lineart', stock = 'stock', photo = 'photo', animated = 'animated' }
 
-	export enum Search_cse_listSafe { safeUndefined = 0, active = 1, high = 2, medium = 3, off = 4 }
+	export enum Search_cse_listSafe { safeUndefined = 'safeUndefined', active = 'active', high = 'high', medium = 'medium', off = 'off' }
 
-	export enum Search_cse_listSearchType { searchTypeUndefined = 0, image = 1 }
+	export enum Search_cse_listSearchType { searchTypeUndefined = 'searchTypeUndefined', image = 'image' }
 
-	export enum Search_cse_listSiteSearchFilter { siteSearchFilterUndefined = 0, e = 1, i = 2 }
+	export enum Search_cse_listSiteSearchFilter { siteSearchFilterUndefined = 'siteSearchFilterUndefined', e = 'e', i = 'i' }
 
 }
 

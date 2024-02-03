@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackgroundColoredTextBackgroundColor { UNKNOWN_COLOR = 0, WHITE = 1, YELLOW = 2, ORANGE = 3, GREEN = 4, BLUE = 5, GREY = 6 }
+	export enum BackgroundColoredTextBackgroundColor { UNKNOWN_COLOR = 'UNKNOWN_COLOR', WHITE = 'WHITE', YELLOW = 'YELLOW', ORANGE = 'ORANGE', GREEN = 'GREEN', BLUE = 'BLUE', GREY = 'GREY' }
 
 
 	/** Used to provide a search operator for boolean properties. This is optional. Search operators let users restrict the query to specific fields relevant to the type of item being searched. */
@@ -170,7 +170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompositeFilterLogicOperator { AND = 0, OR = 1, NOT = 2 }
+	export enum CompositeFilterLogicOperator { AND = 'AND', OR = 'OR', NOT = 'NOT' }
 
 
 	/** A generic way of expressing filters in a query, which supports two approaches: **1. Setting a ValueFilter.** The name must match an operator_name defined in the schema for your data source. **2. Setting a CompositeFilter.** The filters are evaluated using the logical operator. The top-level operators can only be either an AND or a NOT. AND can appear only at the top-most level. OR can appear only under a top-level AND. */
@@ -448,7 +448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemCountByStatusStatusCode { CODE_UNSPECIFIED = 0, ERROR = 1, MODIFIED = 2, NEW_ITEM = 3, ACCEPTED = 4 }
+	export enum ItemCountByStatusStatusCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', ERROR = 'ERROR', MODIFIED = 'MODIFIED', NEW_ITEM = 'NEW_ITEM', ACCEPTED = 'ACCEPTED' }
 
 	export interface CustomerQueryStats {
 
@@ -785,7 +785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourcePredefinedSource { NONE = 0, QUERY_HISTORY = 1, PERSON = 2, GOOGLE_DRIVE = 3, GOOGLE_GMAIL = 4, GOOGLE_SITES = 5, GOOGLE_GROUPS = 6, GOOGLE_CALENDAR = 7, GOOGLE_KEEP = 8 }
+	export enum SourcePredefinedSource { NONE = 'NONE', QUERY_HISTORY = 'QUERY_HISTORY', PERSON = 'PERSON', GOOGLE_DRIVE = 'GOOGLE_DRIVE', GOOGLE_GMAIL = 'GOOGLE_GMAIL', GOOGLE_SITES = 'GOOGLE_SITES', GOOGLE_GROUPS = 'GOOGLE_GROUPS', GOOGLE_CALENDAR = 'GOOGLE_CALENDAR', GOOGLE_KEEP = 'GOOGLE_KEEP' }
 
 
 	/** Optional. Provides a search operator for date properties. Search operators let users restrict the query to specific fields relevant to the type of item being searched. */
@@ -993,7 +993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriveFollowUpRestrictType { UNSPECIFIED = 0, FOLLOWUP_SUGGESTIONS = 1, FOLLOWUP_ACTION_ITEMS = 2 }
+	export enum DriveFollowUpRestrictType { UNSPECIFIED = 'UNSPECIFIED', FOLLOWUP_SUGGESTIONS = 'FOLLOWUP_SUGGESTIONS', FOLLOWUP_ACTION_ITEMS = 'FOLLOWUP_ACTION_ITEMS' }
 
 
 	/** Drive location search restricts (e.g. "is:starred"). */
@@ -1012,7 +1012,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriveLocationRestrictType { UNSPECIFIED = 0, TRASHED = 1, STARRED = 2 }
+	export enum DriveLocationRestrictType { UNSPECIFIED = 'UNSPECIFIED', TRASHED = 'TRASHED', STARRED = 'STARRED' }
 
 
 	/** Drive mime-type search restricts (e.g. "type:pdf"). */
@@ -1031,7 +1031,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriveMimeTypeRestrictType { UNSPECIFIED = 0, PDF = 1, DOCUMENT = 2, PRESENTATION = 3, SPREADSHEET = 4, FORM = 5, DRAWING = 6, SCRIPT = 7, MAP = 8, IMAGE = 9, AUDIO = 10, VIDEO = 11, FOLDER = 12, ARCHIVE = 13, SITE = 14 }
+	export enum DriveMimeTypeRestrictType { UNSPECIFIED = 'UNSPECIFIED', PDF = 'PDF', DOCUMENT = 'DOCUMENT', PRESENTATION = 'PRESENTATION', SPREADSHEET = 'SPREADSHEET', FORM = 'FORM', DRAWING = 'DRAWING', SCRIPT = 'SCRIPT', MAP = 'MAP', IMAGE = 'IMAGE', AUDIO = 'AUDIO', VIDEO = 'VIDEO', FOLDER = 'FOLDER', ARCHIVE = 'ARCHIVE', SITE = 'SITE' }
 
 
 	/** The time span search restrict (e.g. "after:2017-09-11 before:2017-09-12"). */
@@ -1050,7 +1050,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriveTimeSpanRestrictType { UNSPECIFIED = 0, TODAY = 1, YESTERDAY = 2, LAST_7_DAYS = 3, LAST_30_DAYS = 4, LAST_90_DAYS = 5 }
+	export enum DriveTimeSpanRestrictType { UNSPECIFIED = 'UNSPECIFIED', TODAY = 'TODAY', YESTERDAY = 'YESTERDAY', LAST_7_DAYS = 'LAST_7_DAYS', LAST_30_DAYS = 'LAST_30_DAYS', LAST_90_DAYS = 'LAST_90_DAYS' }
 
 
 	/** A person's email address. */
@@ -1165,7 +1165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazFrontendTeamsPersonCorePhoneNumberType { UNKNOWN = 0, MOBILE = 1, OFFICE = 2, OTHER = 3 }
+	export enum EnterpriseTopazFrontendTeamsPersonCorePhoneNumberType { UNKNOWN = 'UNKNOWN', MOBILE = 'MOBILE', OFFICE = 'OFFICE', OTHER = 'OTHER' }
 
 
 	/** An AgendaEntry, e.g., a Calendar Event. */
@@ -1365,7 +1365,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickAgendaEntryChronology { STALE = 0, ALL_DAY = 1, PAST = 2, RECENTLY_PAST = 3, PRESENT = 4, NEAR_FUTURE = 5, FUTURE = 6 }
+	export enum EnterpriseTopazSidekickAgendaEntryChronology { STALE = 'STALE', ALL_DAY = 'ALL_DAY', PAST = 'PAST', RECENTLY_PAST = 'RECENTLY_PAST', PRESENT = 'PRESENT', NEAR_FUTURE = 'NEAR_FUTURE', FUTURE = 'FUTURE' }
 
 
 	/** Person. */
@@ -1437,9 +1437,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickPersonAffinityLevel { UNKNOWN = 0, LOW = 1, MEDIUM = 2, HIGH = 3 }
+	export enum EnterpriseTopazSidekickPersonAffinityLevel { UNKNOWN = 'UNKNOWN', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
-	export enum EnterpriseTopazSidekickPersonAttendingStatus { AWAITING = 0, YES = 1, NO = 2, MAYBE = 3 }
+	export enum EnterpriseTopazSidekickPersonAttendingStatus { AWAITING = 'AWAITING', YES = 'YES', NO = 'NO', MAYBE = 'MAYBE' }
 
 
 	/** Representation of a document. NEXT_TAG: 15 */
@@ -1541,7 +1541,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickCommonDocumentAccessType { UNKNOWN_ACCESS = 0, ALLOWED = 1, NOT_ALLOWED = 2 }
+	export enum EnterpriseTopazSidekickCommonDocumentAccessType { UNKNOWN_ACCESS = 'UNKNOWN_ACCESS', ALLOWED = 'ALLOWED', NOT_ALLOWED = 'NOT_ALLOWED' }
 
 
 	/** Container of debugging information in all object levels. Extend as needed. */
@@ -1770,7 +1770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickCommonDocumentDriveDocumentMetadataScope { UNKNOWN_DOCUMENT_SCOPE = 0, LIMITED = 1, DASHER_DOMAIN_WITH_LINK = 2, DASHER_DOMAIN = 3, PUBLIC_WITH_LINK = 4, PUBLIC = 5, TEAM_DRIVE = 6 }
+	export enum EnterpriseTopazSidekickCommonDocumentDriveDocumentMetadataScope { UNKNOWN_DOCUMENT_SCOPE = 'UNKNOWN_DOCUMENT_SCOPE', LIMITED = 'LIMITED', DASHER_DOMAIN_WITH_LINK = 'DASHER_DOMAIN_WITH_LINK', DASHER_DOMAIN = 'DASHER_DOMAIN', PUBLIC_WITH_LINK = 'PUBLIC_WITH_LINK', PUBLIC = 'PUBLIC', TEAM_DRIVE = 'TEAM_DRIVE' }
 
 
 	/** Justification of why we are reporting the document. */
@@ -1800,11 +1800,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickCommonDocumentJustificationReason { UNKNOWN = 0, TRENDING_IN_COLLABORATORS = 1, TRENDING_IN_DOMAIN = 2, FREQUENTLY_VIEWED = 3, FREQUENTLY_EDITED = 4, NEW_UPDATES = 5, NEW_COMMENTS = 6, EVENT_DESCRIPTION = 7, EVENT_ATTACHMENT = 8, EVENT_METADATA_ATTACHMENT = 9, MINED_DOCUMENT = 10, NEW_MENTIONS = 11, NEW_SHARES = 12 }
+	export enum EnterpriseTopazSidekickCommonDocumentJustificationReason { UNKNOWN = 'UNKNOWN', TRENDING_IN_COLLABORATORS = 'TRENDING_IN_COLLABORATORS', TRENDING_IN_DOMAIN = 'TRENDING_IN_DOMAIN', FREQUENTLY_VIEWED = 'FREQUENTLY_VIEWED', FREQUENTLY_EDITED = 'FREQUENTLY_EDITED', NEW_UPDATES = 'NEW_UPDATES', NEW_COMMENTS = 'NEW_COMMENTS', EVENT_DESCRIPTION = 'EVENT_DESCRIPTION', EVENT_ATTACHMENT = 'EVENT_ATTACHMENT', EVENT_METADATA_ATTACHMENT = 'EVENT_METADATA_ATTACHMENT', MINED_DOCUMENT = 'MINED_DOCUMENT', NEW_MENTIONS = 'NEW_MENTIONS', NEW_SHARES = 'NEW_SHARES' }
 
-	export enum EnterpriseTopazSidekickCommonDocumentProvenance { UNKNOWN_PROVENANCE = 0, CALENDAR_DESCRIPTION = 1, CALENDAR_ATTACHMENT = 2, MINED = 3, CALENDAR_ASSIST_ATTACHMENT = 4 }
+	export enum EnterpriseTopazSidekickCommonDocumentProvenance { UNKNOWN_PROVENANCE = 'UNKNOWN_PROVENANCE', CALENDAR_DESCRIPTION = 'CALENDAR_DESCRIPTION', CALENDAR_ATTACHMENT = 'CALENDAR_ATTACHMENT', MINED = 'MINED', CALENDAR_ASSIST_ATTACHMENT = 'CALENDAR_ASSIST_ATTACHMENT' }
 
-	export enum EnterpriseTopazSidekickCommonDocumentType { UNKNOWN = 0, DOCUMENT = 1, PRESENTATION = 2, SPREADSHEET = 3, PDF = 4, IMAGE = 5, BINARY_BLOB = 6, FUSION_TABLE = 7, FOLDER = 8, DRAWING = 9, VIDEO = 10, FORM = 11, LINK_URL = 12, LINK_GO = 13, LINK_GOO_GL = 14, LINK_BIT_LY = 15, LINK_GMAIL = 16, LINK_MAILTO = 17, VIDEO_YOUTUBE = 18, VIDEO_LIVE = 19, GROUPS = 20, NEWS = 21, SITES = 22, HANGOUT = 23, AUDIO = 24, MS_WORD = 25, MS_POWERPOINT = 26, MS_EXCEL = 27, MS_OUTLOOK = 28 }
+	export enum EnterpriseTopazSidekickCommonDocumentType { UNKNOWN = 'UNKNOWN', DOCUMENT = 'DOCUMENT', PRESENTATION = 'PRESENTATION', SPREADSHEET = 'SPREADSHEET', PDF = 'PDF', IMAGE = 'IMAGE', BINARY_BLOB = 'BINARY_BLOB', FUSION_TABLE = 'FUSION_TABLE', FOLDER = 'FOLDER', DRAWING = 'DRAWING', VIDEO = 'VIDEO', FORM = 'FORM', LINK_URL = 'LINK_URL', LINK_GO = 'LINK_GO', LINK_GOO_GL = 'LINK_GOO_GL', LINK_BIT_LY = 'LINK_BIT_LY', LINK_GMAIL = 'LINK_GMAIL', LINK_MAILTO = 'LINK_MAILTO', VIDEO_YOUTUBE = 'VIDEO_YOUTUBE', VIDEO_LIVE = 'VIDEO_LIVE', GROUPS = 'GROUPS', NEWS = 'NEWS', SITES = 'SITES', HANGOUT = 'HANGOUT', AUDIO = 'AUDIO', MS_WORD = 'MS_WORD', MS_POWERPOINT = 'MS_POWERPOINT', MS_EXCEL = 'MS_EXCEL', MS_OUTLOOK = 'MS_OUTLOOK' }
 
 	export interface EnterpriseTopazSidekickAgendaGroupCardProto {
 		agendaItem?: Array<EnterpriseTopazSidekickAgendaItem>;
@@ -1933,7 +1933,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickAgendaGroupCardProtoContextEventsRestrict { NONE = 0, NEXT_MEETING = 1 }
+	export enum EnterpriseTopazSidekickAgendaGroupCardProtoContextEventsRestrict { NONE = 'NONE', NEXT_MEETING = 'NEXT_MEETING' }
 
 
 	/** A list of answers represented as free text. */
@@ -1987,7 +1987,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickAnswerAnswerListType { UNKNOWN = 0, PERSON_ADDRESS = 1, PERSON_BIRTHDAY = 2, PERSON_DEPARTMENT = 3, PERSON_DESK_LOCATION = 4, PERSON_EMAIL = 5, PERSON_JOB_TITLE = 6, PERSON_PHONE = 7 }
+	export enum EnterpriseTopazSidekickAnswerAnswerListType { UNKNOWN = 'UNKNOWN', PERSON_ADDRESS = 'PERSON_ADDRESS', PERSON_BIRTHDAY = 'PERSON_BIRTHDAY', PERSON_DEPARTMENT = 'PERSON_DEPARTMENT', PERSON_DESK_LOCATION = 'PERSON_DESK_LOCATION', PERSON_EMAIL = 'PERSON_EMAIL', PERSON_JOB_TITLE = 'PERSON_JOB_TITLE', PERSON_PHONE = 'PERSON_PHONE' }
 
 
 	/** Contains a list of suggested queries. Allows the user to determine what natural language queries they can ask Cloud Search (e.g. "what can I search for?"). */
@@ -2037,7 +2037,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickAnswerSuggestedQueryCategoryCategory { UNKNOWN = 0, CALENDAR = 1, DOCUMENT = 2, PEOPLE = 3 }
+	export enum EnterpriseTopazSidekickAnswerSuggestedQueryCategoryCategory { UNKNOWN = 'UNKNOWN', CALENDAR = 'CALENDAR', DOCUMENT = 'DOCUMENT', PEOPLE = 'PEOPLE' }
 
 
 	/** Wrapper proto for the Assist cards. */
@@ -2161,9 +2161,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickCardMetadataCardCategory { DEFAULT = 0, ANSWER = 1, KNOWLEDGE = 2, HOMEPAGE = 3 }
+	export enum EnterpriseTopazSidekickCardMetadataCardCategory { DEFAULT = 'DEFAULT', ANSWER = 'ANSWER', KNOWLEDGE = 'KNOWLEDGE', HOMEPAGE = 'HOMEPAGE' }
 
-	export enum EnterpriseTopazSidekickCardMetadataChronology { UNKNOWN = 0, PAST = 1, RECENTLY_PAST = 2, PRESENT = 3, NEAR_FUTURE = 4, FUTURE = 5 }
+	export enum EnterpriseTopazSidekickCardMetadataChronology { UNKNOWN = 'UNKNOWN', PAST = 'PAST', RECENTLY_PAST = 'RECENTLY_PAST', PRESENT = 'PRESENT', NEAR_FUTURE = 'NEAR_FUTURE', FUTURE = 'FUTURE' }
 
 
 	/** Metadata about the NLP interpretation of the query. */
@@ -2242,13 +2242,13 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickRankingParamsPriority { UNKNOWN = 0, CRITICAL = 1, IMPORTANT = 2, HIGH = 3, NORMAL = 4, BEST_EFFORT = 5 }
+	export enum EnterpriseTopazSidekickRankingParamsPriority { UNKNOWN = 'UNKNOWN', CRITICAL = 'CRITICAL', IMPORTANT = 'IMPORTANT', HIGH = 'HIGH', NORMAL = 'NORMAL', BEST_EFFORT = 'BEST_EFFORT' }
 
-	export enum EnterpriseTopazSidekickRankingParamsType { FIXED = 0, FLEXIBLE = 1 }
+	export enum EnterpriseTopazSidekickRankingParamsType { FIXED = 'FIXED', FLEXIBLE = 'FLEXIBLE' }
 
-	export enum EnterpriseTopazSidekickCardMetadataRenderMode { UNKNOWN_RENDER = 0, COLLAPSED = 1, EXPANDED = 2 }
+	export enum EnterpriseTopazSidekickCardMetadataRenderMode { UNKNOWN_RENDER = 'UNKNOWN_RENDER', COLLAPSED = 'COLLAPSED', EXPANDED = 'EXPANDED' }
 
-	export enum EnterpriseTopazSidekickAssistCardProtoCardType { UNKNOWN_TYPE = 0, AGENDA = 1, CHANGELISTS = 2, CONFLICTING_MEETINGS = 3, CREATE_NOTES_FOR_MEETING = 4, CREATE_NOTES_FOR_MEETING_REQUEST = 5, CUSTOMER_NEWS = 6, FIND_MEETING_TIME = 7, NEXT_MEETING = 8, PERSONALIZED_DOCS = 9, TRENDING_DOCS = 10, UPCOMING_TRIP = 11, SUMMARY = 12, MEETINGS = 13, HOMEPAGE = 14, SHARE_MEETING_DOCS = 15, DISCOVER_PEOPLE = 16, HOMEPAGE_V3 = 17, AGENDA_GROUP = 18, WORK_IN_PROGRESS = 19, GET_AND_KEEP_AHEAD = 20, GENERIC_ANSWER_CARD = 21, THIRD_PARTY_ANSWER_CARD = 22, DOMAIN_TRENDING_DOCS = 23, TEAM_TRENDING_DOCS = 24, DOCUMENT_LIST_ANSWER_CARD = 25, SUGGESTED_QUERY_ANSWER_CARD = 26, PERSON_ANSWER_CARD = 27, RELATED_PEOPLE_ANSWER_CARD = 28, PERSON_KNOWLEDGE_CARD = 29, PEOPLE_SEARCH_PROMOTION_CARD = 30 }
+	export enum EnterpriseTopazSidekickAssistCardProtoCardType { UNKNOWN_TYPE = 'UNKNOWN_TYPE', AGENDA = 'AGENDA', CHANGELISTS = 'CHANGELISTS', CONFLICTING_MEETINGS = 'CONFLICTING_MEETINGS', CREATE_NOTES_FOR_MEETING = 'CREATE_NOTES_FOR_MEETING', CREATE_NOTES_FOR_MEETING_REQUEST = 'CREATE_NOTES_FOR_MEETING_REQUEST', CUSTOMER_NEWS = 'CUSTOMER_NEWS', FIND_MEETING_TIME = 'FIND_MEETING_TIME', NEXT_MEETING = 'NEXT_MEETING', PERSONALIZED_DOCS = 'PERSONALIZED_DOCS', TRENDING_DOCS = 'TRENDING_DOCS', UPCOMING_TRIP = 'UPCOMING_TRIP', SUMMARY = 'SUMMARY', MEETINGS = 'MEETINGS', HOMEPAGE = 'HOMEPAGE', SHARE_MEETING_DOCS = 'SHARE_MEETING_DOCS', DISCOVER_PEOPLE = 'DISCOVER_PEOPLE', HOMEPAGE_V3 = 'HOMEPAGE_V3', AGENDA_GROUP = 'AGENDA_GROUP', WORK_IN_PROGRESS = 'WORK_IN_PROGRESS', GET_AND_KEEP_AHEAD = 'GET_AND_KEEP_AHEAD', GENERIC_ANSWER_CARD = 'GENERIC_ANSWER_CARD', THIRD_PARTY_ANSWER_CARD = 'THIRD_PARTY_ANSWER_CARD', DOMAIN_TRENDING_DOCS = 'DOMAIN_TRENDING_DOCS', TEAM_TRENDING_DOCS = 'TEAM_TRENDING_DOCS', DOCUMENT_LIST_ANSWER_CARD = 'DOCUMENT_LIST_ANSWER_CARD', SUGGESTED_QUERY_ANSWER_CARD = 'SUGGESTED_QUERY_ANSWER_CARD', PERSON_ANSWER_CARD = 'PERSON_ANSWER_CARD', RELATED_PEOPLE_ANSWER_CARD = 'RELATED_PEOPLE_ANSWER_CARD', PERSON_KNOWLEDGE_CARD = 'PERSON_KNOWLEDGE_CARD', PEOPLE_SEARCH_PROMOTION_CARD = 'PEOPLE_SEARCH_PROMOTION_CARD' }
 
 	export interface EnterpriseTopazSidekickDocumentPerCategoryList {
 		documents?: Array<EnterpriseTopazSidekickDocumentPerCategoryListDocumentPerCategoryListEntry>;
@@ -2308,9 +2308,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickDocumentPerCategoryListDocumentPerCategoryListEntryCategory { UNKNOWN_DOCUMENT = 0, ACTIONABLE = 1, VIEWED = 2, REPLIED = 3, MENTION_VIEWED = 4, MENTION_REPLIED = 5, MENTION_NOT_VIEWED = 6, SHARED_AND_VIEWED = 7, SHARED_NOT_VIEWED = 8, EDITED = 9 }
+	export enum EnterpriseTopazSidekickDocumentPerCategoryListDocumentPerCategoryListEntryCategory { UNKNOWN_DOCUMENT = 'UNKNOWN_DOCUMENT', ACTIONABLE = 'ACTIONABLE', VIEWED = 'VIEWED', REPLIED = 'REPLIED', MENTION_VIEWED = 'MENTION_VIEWED', MENTION_REPLIED = 'MENTION_REPLIED', MENTION_NOT_VIEWED = 'MENTION_NOT_VIEWED', SHARED_AND_VIEWED = 'SHARED_AND_VIEWED', SHARED_NOT_VIEWED = 'SHARED_NOT_VIEWED', EDITED = 'EDITED' }
 
-	export enum EnterpriseTopazSidekickDocumentPerCategoryListListType { UNKNOWN_LIST_TYPE = 0, MENTIONS = 1, SHARES = 2, NEEDS_ATTENTION = 3, VIEWS = 4, EDITS = 5 }
+	export enum EnterpriseTopazSidekickDocumentPerCategoryListListType { UNKNOWN_LIST_TYPE = 'UNKNOWN_LIST_TYPE', MENTIONS = 'MENTIONS', SHARES = 'SHARES', NEEDS_ATTENTION = 'NEEDS_ATTENTION', VIEWS = 'VIEWS', EDITS = 'EDITS' }
 
 
 	/** Response to find meeting time among a set of people. */
@@ -2588,7 +2588,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickMeetingNotesCardErrorReason { NONE = 0, NOT_OWNER = 1, UNKNOWN = 2 }
+	export enum EnterpriseTopazSidekickMeetingNotesCardErrorReason { NONE = 'NONE', NOT_OWNER = 'NOT_OWNER', UNKNOWN = 'UNKNOWN' }
 
 	export interface EnterpriseTopazSidekickPeopleDisambiguationCard {
 
@@ -2806,7 +2806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PersonCoreAvailabilityStatus { UNKNOWN = 0, OUT_OF_OFFICE = 1, OUTSIDE_WORKING_HOURS = 2, AVAILABLE = 3 }
+	export enum PersonCoreAvailabilityStatus { UNKNOWN = 'UNKNOWN', OUT_OF_OFFICE = 'OUT_OF_OFFICE', OUTSIDE_WORKING_HOURS = 'OUTSIDE_WORKING_HOURS', AVAILABLE = 'AVAILABLE' }
 
 
 	/** Geo information used for rendering a map that shows the user's work location. */
@@ -2992,7 +2992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickPeopleAnswerPersonAnswerCardResponseStatus { UNKNOWN = 0, SUCCESS = 1, MISSING_PERSON = 2, MISSING_DATA = 3 }
+	export enum EnterpriseTopazSidekickPeopleAnswerPersonAnswerCardResponseStatus { UNKNOWN = 'UNKNOWN', SUCCESS = 'SUCCESS', MISSING_PERSON = 'MISSING_PERSON', MISSING_DATA = 'MISSING_DATA' }
 
 	export interface EnterpriseTopazSidekickPersonProfileCard {
 		relatedPeople?: Array<EnterpriseTopazSidekickPersonProfileCardRelatedPeople>;
@@ -3028,7 +3028,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickPersonProfileCardRelatedPeopleRelation { UNKNOWN = 0, MANAGER = 1, DIRECT_REPORT = 2 }
+	export enum EnterpriseTopazSidekickPersonProfileCardRelatedPeopleRelation { UNKNOWN = 'UNKNOWN', MANAGER = 'MANAGER', DIRECT_REPORT = 'DIRECT_REPORT' }
 
 
 	/** Personalized docs card proto. */
@@ -3071,7 +3071,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickDocumentGroupGroupType { UNKNOWN_TYPE = 0, ALL = 1 }
+	export enum EnterpriseTopazSidekickDocumentGroupGroupType { UNKNOWN_TYPE = 'UNKNOWN_TYPE', ALL = 'ALL' }
 
 
 	/** An answer card for a list of people that are related to the subject of the query. */
@@ -3120,7 +3120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseTopazSidekickPeopleAnswerRelatedPeopleAnswerCardRelationType { UNKNOWN = 0, DIRECT_REPORTS = 1, MANAGER = 2, PEERS = 3 }
+	export enum EnterpriseTopazSidekickPeopleAnswerRelatedPeopleAnswerCardRelationType { UNKNOWN = 'UNKNOWN', DIRECT_REPORTS = 'DIRECT_REPORTS', MANAGER = 'MANAGER', PEERS = 'PEERS' }
 
 
 	/** Share meeting docs card proto. */
@@ -3241,7 +3241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnumPropertyOptionsOrderedRanking { NO_ORDER = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum EnumPropertyOptionsOrderedRanking { NO_ORDER = 'NO_ORDER', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** The enumeration value pair defines two things: a required string value and an optional integer value. The string value defines the necessary query term required to retrieve that item, such as *p0* for a priority item. The integer value determines the ranking of that string value relative to other enumerated values for the same property. For example, you might associate *p0* with *0* and define another enum pair such as *p1* and *1*. You must use the integer value in combination with ordered ranking to set the ranking of a given value relative to other enumerated values for the same property name. Here, a ranking order of DESCENDING for *priority* properties results in a ranking boost for items indexed with a value of *p0* compared to items indexed with a value of *p1*. Without a specified ranking order, the integer value has no effect on item ranking. */
@@ -3787,7 +3787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RetrievalImportanceImportance { DEFAULT = 0, HIGHEST = 1, HIGH = 2, LOW = 3, NONE = 4 }
+	export enum RetrievalImportanceImportance { DEFAULT = 'DEFAULT', HIGHEST = 'HIGHEST', HIGH = 'HIGH', LOW = 'LOW', NONE = 'NONE' }
 
 
 	/** List of html values. */
@@ -3955,7 +3955,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemAclAclInheritanceType { NOT_APPLICABLE = 0, CHILD_OVERRIDE = 1, PARENT_OVERRIDE = 2, BOTH_PERMIT = 3 }
+	export enum ItemAclAclInheritanceType { NOT_APPLICABLE = 'NOT_APPLICABLE', CHILD_OVERRIDE = 'CHILD_OVERRIDE', PARENT_OVERRIDE = 'PARENT_OVERRIDE', BOTH_PERMIT = 'BOTH_PERMIT' }
 
 
 	/** Reference to a user, group, or domain. */
@@ -4041,9 +4041,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemContentContentFormat { UNSPECIFIED = 0, HTML = 1, TEXT = 2, RAW = 3 }
+	export enum ItemContentContentFormat { UNSPECIFIED = 'UNSPECIFIED', HTML = 'HTML', TEXT = 'TEXT', RAW = 'RAW' }
 
-	export enum ItemItemType { UNSPECIFIED = 0, CONTENT_ITEM = 1, CONTAINER_ITEM = 2, VIRTUAL_CONTAINER_ITEM = 3 }
+	export enum ItemItemType { UNSPECIFIED = 'UNSPECIFIED', CONTENT_ITEM = 'CONTENT_ITEM', CONTAINER_ITEM = 'CONTAINER_ITEM', VIRTUAL_CONTAINER_ITEM = 'VIRTUAL_CONTAINER_ITEM' }
 
 
 	/** Available metadata fields for the item. */
@@ -4161,7 +4161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InteractionType { UNSPECIFIED = 0, VIEW = 1, EDIT = 2 }
+	export enum InteractionType { UNSPECIFIED = 'UNSPECIFIED', VIEW = 'VIEW', EDIT = 'EDIT' }
 
 
 	/** Additional search quality metadata of the item. */
@@ -4238,7 +4238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessingErrorCode { PROCESSING_ERROR_CODE_UNSPECIFIED = 0, MALFORMED_REQUEST = 1, UNSUPPORTED_CONTENT_FORMAT = 2, INDIRECT_BROKEN_ACL = 3, ACL_CYCLE = 4 }
+	export enum ProcessingErrorCode { PROCESSING_ERROR_CODE_UNSPECIFIED = 'PROCESSING_ERROR_CODE_UNSPECIFIED', MALFORMED_REQUEST = 'MALFORMED_REQUEST', UNSUPPORTED_CONTENT_FORMAT = 'UNSUPPORTED_CONTENT_FORMAT', INDIRECT_BROKEN_ACL = 'INDIRECT_BROKEN_ACL', ACL_CYCLE = 'ACL_CYCLE' }
 
 
 	/** Errors when the connector is communicating to the source repository. */
@@ -4275,7 +4275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryErrorType { UNKNOWN = 0, NETWORK_ERROR = 1, DNS_ERROR = 2, CONNECTION_ERROR = 3, AUTHENTICATION_ERROR = 4, AUTHORIZATION_ERROR = 5, SERVER_ERROR = 6, QUOTA_EXCEEDED = 7, SERVICE_UNAVAILABLE = 8, CLIENT_ERROR = 9 }
+	export enum RepositoryErrorType { UNKNOWN = 'UNKNOWN', NETWORK_ERROR = 'NETWORK_ERROR', DNS_ERROR = 'DNS_ERROR', CONNECTION_ERROR = 'CONNECTION_ERROR', AUTHENTICATION_ERROR = 'AUTHENTICATION_ERROR', AUTHORIZATION_ERROR = 'AUTHORIZATION_ERROR', SERVER_ERROR = 'SERVER_ERROR', QUOTA_EXCEEDED = 'QUOTA_EXCEEDED', SERVICE_UNAVAILABLE = 'SERVICE_UNAVAILABLE', CLIENT_ERROR = 'CLIENT_ERROR' }
 
 
 	/** Available structured data fields for the item. */
@@ -4428,7 +4428,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexItemRequestMode { UNSPECIFIED = 0, SYNCHRONOUS = 1, ASYNCHRONOUS = 2 }
+	export enum IndexItemRequestMode { UNSPECIFIED = 'UNSPECIFIED', SYNCHRONOUS = 'SYNCHRONOUS', ASYNCHRONOUS = 'ASYNCHRONOUS' }
 
 
 	/** Request message for `InitializeCustomer` method. */
@@ -4820,7 +4820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryOperatorType { UNKNOWN = 0, INTEGER = 1, DOUBLE = 2, TIMESTAMP = 3, BOOLEAN = 4, ENUM = 5, DATE = 6, TEXT = 7, HTML = 8 }
+	export enum QueryOperatorType { UNKNOWN = 'UNKNOWN', INTEGER = 'INTEGER', DOUBLE = 'DOUBLE', TIMESTAMP = 'TIMESTAMP', BOOLEAN = 'BOOLEAN', ENUM = 'ENUM', DATE = 'DATE', TEXT = 'TEXT', HTML = 'HTML' }
 
 	export interface ListSearchApplicationsResponse {
 
@@ -4925,7 +4925,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOptionsSortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOptionsSortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** Default options to interpret user query. */
@@ -5055,7 +5055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceScoringConfigSourceImportance { DEFAULT = 0, LOW = 1, HIGH = 2 }
+	export enum SourceScoringConfigSourceImportance { DEFAULT = 'DEFAULT', LOW = 'LOW', HIGH = 'HIGH' }
 
 	export interface ListUnmappedIdentitiesResponse {
 
@@ -5095,7 +5095,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnmappedIdentityResolutionStatusCode { CODE_UNSPECIFIED = 0, NOT_FOUND = 1, IDENTITY_SOURCE_NOT_FOUND = 2, IDENTITY_SOURCE_MISCONFIGURED = 3, TOO_MANY_MAPPINGS_FOUND = 4, INTERNAL_ERROR = 5 }
+	export enum UnmappedIdentityResolutionStatusCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', NOT_FOUND = 'NOT_FOUND', IDENTITY_SOURCE_NOT_FOUND = 'IDENTITY_SOURCE_NOT_FOUND', IDENTITY_SOURCE_MISCONFIGURED = 'IDENTITY_SOURCE_MISCONFIGURED', TOO_MANY_MAPPINGS_FOUND = 'TOO_MANY_MAPPINGS_FOUND', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 
 	/** Matched range of a snippet [start, end). */
@@ -5356,7 +5356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { OTHER = 0, MOBILE = 1, OFFICE = 2 }
+	export enum PhoneNumberType { OTHER = 'OTHER', MOBILE = 'MOBILE', OFFICE = 'OFFICE' }
 
 
 	/** A person's photo. */
@@ -5825,7 +5825,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PushItemType { UNSPECIFIED = 0, MODIFIED = 1, NOT_MODIFIED = 2, REPOSITORY_ERROR = 3, REQUEUE = 4 }
+	export enum PushItemType { UNSPECIFIED = 'UNSPECIFIED', MODIFIED = 'MODIFIED', NOT_MODIFIED = 'NOT_MODIFIED', REPOSITORY_ERROR = 'REPOSITORY_ERROR', REQUEUE = 'REQUEUE' }
 
 	export interface PushItemRequest {
 
@@ -5898,9 +5898,9 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryInterpretationInterpretationType { NONE = 0, BLEND = 1, REPLACE = 2 }
+	export enum QueryInterpretationInterpretationType { NONE = 'NONE', BLEND = 'BLEND', REPLACE = 'REPLACE' }
 
-	export enum QueryInterpretationReason { UNSPECIFIED = 0, QUERY_HAS_NATURAL_LANGUAGE_INTENT = 1, NOT_ENOUGH_RESULTS_FOUND_FOR_USER_QUERY = 2 }
+	export enum QueryInterpretationReason { UNSPECIFIED = 'UNSPECIFIED', QUERY_HAS_NATURAL_LANGUAGE_INTENT = 'QUERY_HAS_NATURAL_LANGUAGE_INTENT', NOT_ENOUGH_RESULTS_FOUND_FOR_USER_QUERY = 'NOT_ENOUGH_RESULTS_FOUND_FOR_USER_QUERY' }
 
 
 	/** Options to interpret user query. */
@@ -6466,7 +6466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpellResultSuggestionType { SUGGESTION_TYPE_UNSPECIFIED = 0, NON_EMPTY_RESULTS_SPELL_SUGGESTION = 1, ZERO_RESULTS_FULL_PAGE_REPLACEMENT = 2 }
+	export enum SpellResultSuggestionType { SUGGESTION_TYPE_UNSPECIFIED = 'SUGGESTION_TYPE_UNSPECIFIED', NON_EMPTY_RESULTS_SPELL_SUGGESTION = 'NON_EMPTY_RESULTS_SPELL_SUGGESTION', ZERO_RESULTS_FULL_PAGE_REPLACEMENT = 'ZERO_RESULTS_FULL_PAGE_REPLACEMENT' }
 
 
 	/** Structured results that are returned as part of search request. */

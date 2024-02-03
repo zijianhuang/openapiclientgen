@@ -313,7 +313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceDetailsSource { Azure = 0, OnPremise = 1 }
+	export enum ResourceDetailsSource { Azure = 'Azure', OnPremise = 'OnPremise' }
 
 
 	/** A list of key value pairs that describe the resource. */

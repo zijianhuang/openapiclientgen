@@ -107,7 +107,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricUnit { count = 0, bytes = 1, seconds = 2, percent = 3, countPerSecond = 4, bytesPerSecond = 5 }
+	export enum MetricUnit { count = 'count', bytes = 'bytes', seconds = 'seconds', percent = 'percent', countPerSecond = 'countPerSecond', bytesPerSecond = 'bytesPerSecond' }
 
 
 	/** A metric availability value. */
@@ -178,9 +178,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDefinitionPrimaryAggregationType { None = 0, Average = 1, Count = 2, Minimum = 3, Maximum = 4, Total = 5 }
+	export enum MetricDefinitionPrimaryAggregationType { None = 'None', Average = 'Average', Count = 'Count', Minimum = 'Minimum', Maximum = 'Maximum', Total = 'Total' }
 
-	export enum MetricDefinitionUnit { Count = 0, Bytes = 1, Seconds = 2, Percent = 3, CountPerSecond = 4, BytesPerSecond = 5 }
+	export enum MetricDefinitionUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', Percent = 'Percent', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 
 	/** The response to a list database metric definitions request. */

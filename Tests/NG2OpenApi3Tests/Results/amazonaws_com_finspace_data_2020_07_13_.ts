@@ -128,7 +128,7 @@ export namespace MyNS {
 
 
 	/** Data View Export File Format */
-	export enum ExportFileFormat { PARQUET = 0, DELIMITED_TEXT = 1 }
+	export enum ExportFileFormat { PARQUET = 'PARQUET', DELIMITED_TEXT = 'DELIMITED_TEXT' }
 
 	export interface S3DestinationFormatOptions {
 	}
@@ -215,7 +215,7 @@ export namespace MyNS {
 
 
 	/** Data type of a column. */
-	export enum ColumnDataType { STRING = 0, CHAR = 1, INTEGER = 2, TINYINT = 3, SMALLINT = 4, BIGINT = 5, FLOAT = 6, DOUBLE = 7, DATE = 8, DATETIME = 9, BOOLEAN = 10, BINARY = 11 }
+	export enum ColumnDataType { STRING = 'STRING', CHAR = 'CHAR', INTEGER = 'INTEGER', TINYINT = 'TINYINT', SMALLINT = 'SMALLINT', BIGINT = 'BIGINT', FLOAT = 'FLOAT', DOUBLE = 'DOUBLE', DATE = 'DATE', DATETIME = 'DATETIME', BOOLEAN = 'BOOLEAN', BINARY = 'BINARY' }
 
 	export interface CreatePermissionGroupResponse {
 		permissionGroupId?: string;
@@ -230,7 +230,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationPermission { CreateDataset = 0, ManageClusters = 1, ManageUsersAndGroups = 2, ManageAttributeSets = 3, ViewAuditData = 4, AccessNotebooks = 5, GetTemporaryCredentials = 6 }
+	export enum ApplicationPermission { CreateDataset = 'CreateDataset', ManageClusters = 'ManageClusters', ManageUsersAndGroups = 'ManageUsersAndGroups', ManageAttributeSets = 'ManageAttributeSets', ViewAuditData = 'ViewAuditData', AccessNotebooks = 'AccessNotebooks', GetTemporaryCredentials = 'GetTemporaryCredentials' }
 
 	export interface CreateUserResponse {
 		userId?: string;
@@ -363,7 +363,7 @@ export namespace MyNS {
 
 
 	/** Indicates how the given change will be applied to the dataset. */
-	export enum ChangeType { REPLACE = 0, APPEND = 1, MODIFY = 2 }
+	export enum ChangeType { REPLACE = 'REPLACE', APPEND = 'APPEND', MODIFY = 'MODIFY' }
 
 
 	/** Source Parameters of a Changeset */
@@ -395,7 +395,7 @@ export namespace MyNS {
 
 
 	/** Status of the ingestion process returned from scheduler service. */
-	export enum IngestionStatus { PENDING = 0, FAILED = 1, SUCCESS = 2, RUNNING = 3, STOP_REQUESTED = 4 }
+	export enum IngestionStatus { PENDING = 'PENDING', FAILED = 'FAILED', SUCCESS = 'SUCCESS', RUNNING = 'RUNNING', STOP_REQUESTED = 'STOP_REQUESTED' }
 
 
 	/** The structure with error messages. */
@@ -419,7 +419,7 @@ export namespace MyNS {
 
 
 	/** Changeset Error Category */
-	export enum ErrorCategory { VALIDATION = 0, SERVICE_QUOTA_EXCEEDED = 1, ACCESS_DENIED = 2, RESOURCE_NOT_FOUND = 3, THROTTLING = 4, INTERNAL_SERVICE_EXCEPTION = 5, CANCELLED = 6, USER_RECOVERABLE = 7 }
+	export enum ErrorCategory { VALIDATION = 'VALIDATION', SERVICE_QUOTA_EXCEEDED = 'SERVICE_QUOTA_EXCEEDED', ACCESS_DENIED = 'ACCESS_DENIED', RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND', THROTTLING = 'THROTTLING', INTERNAL_SERVICE_EXCEPTION = 'INTERNAL_SERVICE_EXCEPTION', CANCELLED = 'CANCELLED', USER_RECOVERABLE = 'USER_RECOVERABLE' }
 
 
 	/** Response from retrieving a dataview, which includes details on the target database and table name */
@@ -510,7 +510,7 @@ export namespace MyNS {
 
 
 	/** Status of a DataView */
-	export enum DataViewStatus { RUNNING = 0, STARTING = 1, FAILED = 2, CANCELLED = 3, TIMEOUT = 4, SUCCESS = 5, PENDING = 6, FAILED_CLEANUP_FAILED = 7 }
+	export enum DataViewStatus { RUNNING = 'RUNNING', STARTING = 'STARTING', FAILED = 'FAILED', CANCELLED = 'CANCELLED', TIMEOUT = 'TIMEOUT', SUCCESS = 'SUCCESS', PENDING = 'PENDING', FAILED_CLEANUP_FAILED = 'FAILED_CLEANUP_FAILED' }
 
 
 	/** Response for the GetDataset operation */
@@ -556,7 +556,7 @@ export namespace MyNS {
 
 
 	/** Dataset Kind */
-	export enum DatasetKind { TABULAR = 0, NON_TABULAR = 1 }
+	export enum DatasetKind { TABULAR = 'TABULAR', NON_TABULAR = 'NON_TABULAR' }
 
 
 	/** A union of schema types. */
@@ -575,7 +575,7 @@ export namespace MyNS {
 
 
 	/** Status of the dataset process returned from scheduler service. */
-	export enum DatasetStatus { PENDING = 0, FAILED = 1, SUCCESS = 2, RUNNING = 3 }
+	export enum DatasetStatus { PENDING = 'PENDING', FAILED = 'FAILED', SUCCESS = 'SUCCESS', RUNNING = 'RUNNING' }
 
 	export interface GetExternalDataViewAccessDetailsResponse {
 		credentials?: AwsCredentials;
@@ -689,7 +689,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionGroupMembershipStatus { ADDITION_IN_PROGRESS = 0, ADDITION_SUCCESS = 1, REMOVAL_IN_PROGRESS = 2 }
+	export enum PermissionGroupMembershipStatus { ADDITION_IN_PROGRESS = 'ADDITION_IN_PROGRESS', ADDITION_SUCCESS = 'ADDITION_SUCCESS', REMOVAL_IN_PROGRESS = 'REMOVAL_IN_PROGRESS' }
 
 
 	/** Response for GetProgrammaticAccessCredentials operation */
@@ -781,11 +781,11 @@ export namespace MyNS {
 
 	}
 
-	export enum UserStatus { CREATING = 0, ENABLED = 1, DISABLED = 2 }
+	export enum UserStatus { CREATING = 'CREATING', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum UserType { SUPER_USER = 0, APP_USER = 1 }
+	export enum UserType { SUPER_USER = 'SUPER_USER', APP_USER = 'APP_USER' }
 
-	export enum ApiAccess { ENABLED = 0, DISABLED = 1 }
+	export enum ApiAccess { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface GetWorkingLocationResponse {
 		s3Uri?: string;
@@ -1602,7 +1602,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationType { INGESTION = 0, SAGEMAKER = 1 }
+	export enum LocationType { INGESTION = 'INGESTION', SAGEMAKER = 'SAGEMAKER' }
 
 	export interface GetWorkingLocationRequest {
 		locationType?: LocationType;

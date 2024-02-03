@@ -127,7 +127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnsFormat { LONG_TEXT = 0, SHORT_TEXT = 1, JSON = 2 }
+	export enum SnsFormat { LONG_TEXT = 'LONG_TEXT', SHORT_TEXT = 'SHORT_TEXT', JSON = 'JSON' }
 
 
 	/** Contains information about a Lambda configuration. */
@@ -198,7 +198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Frequency { P1D = 0, PT1H = 1, PT10M = 2, PT5M = 3 }
+	export enum Frequency { P1D = 'P1D', PT1H = 'PT1H', PT10M = 'PT10M', PT5M = 'PT5M' }
 
 	export interface CreateMetricSetResponse {
 		MetricSetArn?: string;
@@ -244,7 +244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationFunction { AVG = 0, SUM = 1 }
+	export enum AggregationFunction { AVG = 'AVG', SUM = 'SUM' }
 
 
 	/** Contains information about the configuration of the S3 bucket that contains source files. */
@@ -312,7 +312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CSVFileCompression { NONE = 0, GZIP = 1 }
+	export enum CSVFileCompression { NONE = 'NONE', GZIP = 'GZIP' }
 
 
 	/** Contains information about how a source JSON data file should be analyzed. */
@@ -556,7 +556,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterOperation { EQUALS = 0 }
+	export enum FilterOperation { EQUALS = 'EQUALS' }
 
 	export interface DeactivateAnomalyDetectorResponse {
 	}
@@ -658,9 +658,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertType { SNS = 0, LAMBDA = 1 }
+	export enum AlertType { SNS = 'SNS', LAMBDA = 'LAMBDA' }
 
-	export enum AlertStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum AlertStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** The configuration of the alert filters. */
@@ -715,7 +715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalyDetectionTaskStatus { PENDING = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3, FAILED_TO_SCHEDULE = 4 }
+	export enum AnomalyDetectionTaskStatus { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', FAILED_TO_SCHEDULE = 'FAILED_TO_SCHEDULE' }
 
 	export interface DescribeAnomalyDetectorResponse {
 		AnomalyDetectorArn?: string;
@@ -772,9 +772,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AnomalyDetectorStatus { ACTIVE = 0, ACTIVATING = 1, DELETING = 2, FAILED = 3, INACTIVE = 4, LEARNING = 5, BACK_TEST_ACTIVATING = 6, BACK_TEST_ACTIVE = 7, BACK_TEST_COMPLETE = 8, DEACTIVATED = 9, DEACTIVATING = 10 }
+	export enum AnomalyDetectorStatus { ACTIVE = 'ACTIVE', ACTIVATING = 'ACTIVATING', DELETING = 'DELETING', FAILED = 'FAILED', INACTIVE = 'INACTIVE', LEARNING = 'LEARNING', BACK_TEST_ACTIVATING = 'BACK_TEST_ACTIVATING', BACK_TEST_ACTIVE = 'BACK_TEST_ACTIVE', BACK_TEST_COMPLETE = 'BACK_TEST_COMPLETE', DEACTIVATED = 'DEACTIVATED', DEACTIVATING = 'DEACTIVATING' }
 
-	export enum AnomalyDetectorFailureType { ACTIVATION_FAILURE = 0, BACK_TEST_ACTIVATION_FAILURE = 1, DELETION_FAILURE = 2, DEACTIVATION_FAILURE = 3 }
+	export enum AnomalyDetectorFailureType { ACTIVATION_FAILURE = 'ACTIVATION_FAILURE', BACK_TEST_ACTIVATION_FAILURE = 'BACK_TEST_ACTIVATION_FAILURE', DELETION_FAILURE = 'DELETION_FAILURE', DEACTIVATION_FAILURE = 'DEACTIVATION_FAILURE' }
 
 	export interface DescribeMetricSetResponse {
 		MetricSetArn?: string;
@@ -935,7 +935,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Confidence { HIGH = 0, LOW = 1, NONE = 2 }
+	export enum Confidence { HIGH = 'HIGH', LOW = 'LOW', NONE = 'NONE' }
 
 
 	/** An inferred data source. */
@@ -1223,7 +1223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataQualityMetricType { COLUMN_COMPLETENESS = 0, DIMENSION_UNIQUENESS = 1, TIME_SERIES_COUNT = 2, ROWS_PROCESSED = 3, ROWS_PARTIAL_COMPLIANCE = 4, INVALID_ROWS_COMPLIANCE = 5, BACKTEST_TRAINING_DATA_START_TIME_STAMP = 6, BACKTEST_TRAINING_DATA_END_TIME_STAMP = 7, BACKTEST_INFERENCE_DATA_START_TIME_STAMP = 8, BACKTEST_INFERENCE_DATA_END_TIME_STAMP = 9 }
+	export enum DataQualityMetricType { COLUMN_COMPLETENESS = 'COLUMN_COMPLETENESS', DIMENSION_UNIQUENESS = 'DIMENSION_UNIQUENESS', TIME_SERIES_COUNT = 'TIME_SERIES_COUNT', ROWS_PROCESSED = 'ROWS_PROCESSED', ROWS_PARTIAL_COMPLIANCE = 'ROWS_PARTIAL_COMPLIANCE', INVALID_ROWS_COMPLIANCE = 'INVALID_ROWS_COMPLIANCE', BACKTEST_TRAINING_DATA_START_TIME_STAMP = 'BACKTEST_TRAINING_DATA_START_TIME_STAMP', BACKTEST_TRAINING_DATA_END_TIME_STAMP = 'BACKTEST_TRAINING_DATA_END_TIME_STAMP', BACKTEST_INFERENCE_DATA_START_TIME_STAMP = 'BACKTEST_INFERENCE_DATA_START_TIME_STAMP', BACKTEST_INFERENCE_DATA_END_TIME_STAMP = 'BACKTEST_INFERENCE_DATA_END_TIME_STAMP' }
 
 	export interface GetFeedbackResponse {
 		AnomalyGroupTimeSeriesFeedback?: Array<TimeSeriesFeedback>;
@@ -1421,7 +1421,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationshipType { CAUSE_OF_INPUT_ANOMALY_GROUP = 0, EFFECT_OF_INPUT_ANOMALY_GROUP = 1 }
+	export enum RelationshipType { CAUSE_OF_INPUT_ANOMALY_GROUP = 'CAUSE_OF_INPUT_ANOMALY_GROUP', EFFECT_OF_INPUT_ANOMALY_GROUP = 'EFFECT_OF_INPUT_ANOMALY_GROUP' }
 
 	export interface ListAnomalyGroupSummariesResponse {
 		AnomalyGroupSummaryList?: Array<AnomalyGroupSummary>;
@@ -2202,7 +2202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JsonFileCompression { NONE = 0, GZIP = 1 }
+	export enum JsonFileCompression { NONE = 'NONE', GZIP = 'GZIP' }
 
 	export interface ListAlertsRequest {
 		AnomalyDetectorArn?: string;

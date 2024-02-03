@@ -301,7 +301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryConfigDeliveryRequirement { DELIVERY_REQUIREMENT_UNSPECIFIED = 0, DELIVER_IMMEDIATELY = 1, DELIVER_AFTER_STORED = 2 }
+	export enum DeliveryConfigDeliveryRequirement { DELIVERY_REQUIREMENT_UNSPECIFIED = 'DELIVERY_REQUIREMENT_UNSPECIFIED', DELIVER_IMMEDIATELY = 'DELIVER_IMMEDIATELY', DELIVER_AFTER_STORED = 'DELIVER_AFTER_STORED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -355,7 +355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportConfigCurrentState { STATE_UNSPECIFIED = 0, ACTIVE = 1, PAUSED = 2, PERMISSION_DENIED = 3, NOT_FOUND = 4 }
+	export enum ExportConfigCurrentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', PAUSED = 'PAUSED', PERMISSION_DENIED = 'PERMISSION_DENIED', NOT_FOUND = 'NOT_FOUND' }
 
 
 	/** Configuration for exporting to a Pub/Sub topic. */
@@ -884,7 +884,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SeekSubscriptionRequestNamedTarget { NAMED_TARGET_UNSPECIFIED = 0, TAIL = 1, HEAD = 2 }
+	export enum SeekSubscriptionRequestNamedTarget { NAMED_TARGET_UNSPECIFIED = 'NAMED_TARGET_UNSPECIFIED', TAIL = 'TAIL', HEAD = 'HEAD' }
 
 
 	/** Response for SeekSubscription long running operation. */

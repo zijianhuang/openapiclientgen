@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Phone_number_enum_address_requirement { none = 0, any = 1, local = 2, foreign = 3 }
+	export enum Phone_number_enum_address_requirement { none = 'none', any = 'any', local = 'local', foreign = 'foreign' }
 
-	export enum Recording_enum_recording_mode { 'do-not-record' = 0, 'record-from-ringing' = 1, 'record-from-answer' = 2, 'record-from-ringing-dual' = 3, 'record-from-answer-dual' = 4 }
+	export enum Recording_enum_recording_mode { 'do-not-record' = 'do-not-record', 'record-from-ringing' = 'record-from-ringing', 'record-from-answer' = 'record-from-answer', 'record-from-ringing-dual' = 'record-from-ringing-dual', 'record-from-answer-dual' = 'record-from-answer-dual' }
 
-	export enum Recording_enum_recording_trim { 'trim-silence' = 0, 'do-not-trim' = 1 }
+	export enum Recording_enum_recording_trim { 'trim-silence' = 'trim-silence', 'do-not-trim' = 'do-not-trim' }
 
-	export enum Trunk_enum_transfer_caller_id { 'from-transferee' = 0, 'from-transferor' = 1 }
+	export enum Trunk_enum_transfer_caller_id { 'from-transferee' = 'from-transferee', 'from-transferor' = 'from-transferor' }
 
-	export enum Trunk_enum_transfer_setting { 'disable-all' = 0, 'enable-all' = 1, 'sip-only' = 2 }
+	export enum Trunk_enum_transfer_setting { 'disable-all' = 'disable-all', 'enable-all' = 'enable-all', 'sip-only' = 'sip-only' }
 
 	export interface Trunkingv1trunk {
 
@@ -146,7 +146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Trunkingv1trunkDisaster_recovery_method { HEAD = 0, GET = 1, POST = 2, PATCH = 3, PUT = 4, DELETE = 5 }
+	export enum Trunkingv1trunkDisaster_recovery_method { HEAD = 'HEAD', GET = 'GET', POST = 'POST', PATCH = 'PATCH', PUT = 'PUT', DELETE = 'DELETE' }
 
 	export interface Trunkingv1trunkcredential_list {
 

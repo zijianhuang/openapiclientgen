@@ -319,9 +319,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperDriveExperimentBaseGenerator_configName { RANDOM = 0, GRID = 1, BAYESIANOPTIMIZATION = 2 }
+	export enum HyperDriveExperimentBaseGenerator_configName { RANDOM = 'RANDOM', GRID = 'GRID', BAYESIANOPTIMIZATION = 'BAYESIANOPTIMIZATION' }
 
-	export enum HyperDriveExperimentBasePlatform { AML = 0 }
+	export enum HyperDriveExperimentBasePlatform { AML = 'AML' }
 
 
 	/** Early termination policy configuration. */
@@ -350,7 +350,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperDrivePolicyConfigBaseName { Default = 0, Bandit = 1, MedianStopping = 2, TruncationSelection = 3 }
+	export enum HyperDrivePolicyConfigBaseName { Default = 'Default', Bandit = 'Bandit', MedianStopping = 'MedianStopping', TruncationSelection = 'TruncationSelection' }
 
 	export interface HyperDriveExperimentBasePrimary_metric_config {
 
@@ -388,7 +388,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HyperDriveExperimentBasePrimary_metric_configGoal { MAXIMIZE = 0, MINIMIZE = 1 }
+	export enum HyperDriveExperimentBasePrimary_metric_configGoal { MAXIMIZE = 'MAXIMIZE', MINIMIZE = 'MINIMIZE' }
 
 
 	/** Response for HyperDrive_CreateExperiment in case of success. */

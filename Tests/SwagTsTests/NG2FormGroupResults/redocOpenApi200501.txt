@@ -411,7 +411,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class PetClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -476,12 +476,6 @@ export namespace MyNS {
 		FindPetsByTags(tags: Array<string>): Observable<Array<Pet>> {
 			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {});
 		}
-	}
-
-	@Injectable()
-	export class StoreClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * Returns pet inventories by status
@@ -533,12 +527,6 @@ export namespace MyNS {
 		 */
 		Subscribe(requestBody: SubscribePostBody): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'store/subscribe', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
-		}
-	}
-
-	@Injectable()
-	export class UserClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

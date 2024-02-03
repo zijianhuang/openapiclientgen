@@ -179,7 +179,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityType { start = 0, end = 1, service = 2, pickupShipment = 3, deliverShipment = 4, pickup = 5, delivery = 6, break = 7 }
+	export enum ActivityType { start = 'start', end = 'end', service = 'service', pickupShipment = 'pickupShipment', deliverShipment = 'deliverShipment', pickup = 'pickup', delivery = 'delivery', break = 'break' }
 
 	export interface Address {
 
@@ -251,7 +251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressCurbside { right = 0, left = 1, any = 2 }
+	export enum AddressCurbside { right = 'right', left = 'left', any = 'any' }
 
 
 	/** Use `objectives` instead. */
@@ -273,9 +273,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmObjective { transport_time = 0, completion_time = 1 }
+	export enum AlgorithmObjective { transport_time = 'transport_time', completion_time = 'completion_time' }
 
-	export enum AlgorithmProblem_type { min = 0, 'min-max' = 1 }
+	export enum AlgorithmProblem_type { min = 'min', 'min-max' = 'min-max' }
 
 	export interface BadRequest {
 
@@ -522,7 +522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterResponseStatus { waiting_in_queue = 0, processing = 1, finished = 2 }
+	export enum ClusterResponseStatus { waiting_in_queue = 'waiting_in_queue', processing = 'processing', finished = 'finished' }
 
 
 	/** Specifies general configurations that are taken into account when solving the vehicle routing problem. */
@@ -600,9 +600,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutingCurbside_strictness { ignore = 0, soft = 1, strict = 2 }
+	export enum RoutingCurbside_strictness { ignore = 'ignore', soft = 'soft', strict = 'strict' }
 
-	export enum RoutingNetwork_data_provider { openstreetmap = 0, tomtom = 1 }
+	export enum RoutingNetwork_data_provider { openstreetmap = 'openstreetmap', tomtom = 'tomtom' }
 
 	export interface CostMatrix {
 
@@ -665,7 +665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CostMatrixType { default = 0, google = 1 }
+	export enum CostMatrixType { default = 'default', google = 'google' }
 
 	export interface Detail {
 
@@ -1324,7 +1324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VehicleProfileId { car = 0, bike = 1, foot = 2, hike = 3, mtb = 4, racingbike = 5, scooter = 6, truck = 7, small_truck = 8 }
+	export enum VehicleProfileId { car = 'car', bike = 'bike', foot = 'foot', hike = 'hike', mtb = 'mtb', racingbike = 'racingbike', scooter = 'scooter', truck = 'truck', small_truck = 'small_truck' }
 
 	export interface MatrixResponse {
 
@@ -1526,7 +1526,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectiveValue { completion_time = 0, transport_time = 1, vehicles = 2, activities = 3 }
+	export enum ObjectiveValue { completion_time = 'completion_time', transport_time = 'transport_time', vehicles = 'vehicles', activities = 'activities' }
 
 	export interface Pickup {
 		address?: Address;
@@ -1747,7 +1747,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceType { service = 0, pickup = 1, delivery = 2 }
+	export enum ServiceType { service = 'service', pickup = 'pickup', delivery = 'delivery' }
 
 	export interface Shipment {
 
@@ -2601,7 +2601,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteRequestAlgorithm { round_trip = 0, alternative_route = 1 }
+	export enum RouteRequestAlgorithm { round_trip = 'round_trip', alternative_route = 'alternative_route' }
 
 	export interface RouteResponse {
 
@@ -3328,7 +3328,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetIsochroneWeighting { fastest = 0, shortest = 1 }
+	export enum GetIsochroneWeighting { fastest = 'fastest', shortest = 'shortest' }
 
 }
 

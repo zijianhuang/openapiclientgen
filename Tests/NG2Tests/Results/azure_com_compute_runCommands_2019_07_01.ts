@@ -52,7 +52,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceViewStatusLevel { Info = 0, Warning = 1, Error = 2 }
+	export enum InstanceViewStatusLevel { Info = 'Info', Warning = 'Warning', Error = 'Error' }
 
 
 	/** Describes the properties of a Run Command. */
@@ -215,7 +215,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunCommandDocumentBaseOsType { Windows = 0, Linux = 1 }
+	export enum RunCommandDocumentBaseOsType { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/** Capture Virtual Machine parameters. */

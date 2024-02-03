@@ -69,9 +69,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentType { TYPE_UNSPECIFIED = 0, PLAIN_TEXT = 1, HTML = 2 }
+	export enum DocumentType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PLAIN_TEXT = 'PLAIN_TEXT', HTML = 'HTML' }
 
-	export enum AnalyzeEntitiesRequestEncodingType { NONE = 0, UTF8 = 1, UTF16 = 2, UTF32 = 3 }
+	export enum AnalyzeEntitiesRequestEncodingType { NONE = 'NONE', UTF8 = 'UTF8', UTF16 = 'UTF16', UTF32 = 'UTF32' }
 
 
 	/** The entity analysis response message. */
@@ -235,9 +235,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityMentionType { TYPE_UNKNOWN = 0, PROPER = 1, COMMON = 2 }
+	export enum EntityMentionType { TYPE_UNKNOWN = 'TYPE_UNKNOWN', PROPER = 'PROPER', COMMON = 'COMMON' }
 
-	export enum EntityType { UNKNOWN = 0, PERSON = 1, LOCATION = 2, ORGANIZATION = 3, EVENT = 4, WORK_OF_ART = 5, CONSUMER_GOOD = 6, OTHER = 7, PHONE_NUMBER = 8, ADDRESS = 9, DATE = 10, NUMBER = 11, PRICE = 12 }
+	export enum EntityType { UNKNOWN = 'UNKNOWN', PERSON = 'PERSON', LOCATION = 'LOCATION', ORGANIZATION = 'ORGANIZATION', EVENT = 'EVENT', WORK_OF_ART = 'WORK_OF_ART', CONSUMER_GOOD = 'CONSUMER_GOOD', OTHER = 'OTHER', PHONE_NUMBER = 'PHONE_NUMBER', ADDRESS = 'ADDRESS', DATE = 'DATE', NUMBER = 'NUMBER', PRICE = 'PRICE' }
 
 
 	/** The sentiment analysis request message. */

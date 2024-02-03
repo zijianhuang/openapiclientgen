@@ -153,7 +153,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Webfonts_webfonts_listSort { SORT_UNDEFINED = 0, ALPHA = 1, DATE = 2, POPULARITY = 3, STYLE = 4, TRENDING = 5 }
+	export enum Webfonts_webfonts_listSort { SORT_UNDEFINED = 'SORT_UNDEFINED', ALPHA = 'ALPHA', DATE = 'DATE', POPULARITY = 'POPULARITY', STYLE = 'STYLE', TRENDING = 'TRENDING' }
 
 }
 

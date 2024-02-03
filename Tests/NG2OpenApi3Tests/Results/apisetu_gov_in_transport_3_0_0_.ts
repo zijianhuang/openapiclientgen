@@ -2622,7 +2622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DrvlcPostBodyFormat { xml = 0, pdf = 1 }
+	export enum DrvlcPostBodyFormat { xml = 'xml', pdf = 'pdf' }
 
 	export interface FitcerPostBody {
 		certificateParameters?: FitcerPostBodyCertificateParameters;
@@ -2950,7 +2950,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VhinscPostBodyFormat { pdf = 0 }
+	export enum VhinscPostBodyFormat { pdf = 'pdf' }
 
 	export interface VhtaxPostBody {
 		certificateParameters?: VhtaxPostBodyCertificateParameters;

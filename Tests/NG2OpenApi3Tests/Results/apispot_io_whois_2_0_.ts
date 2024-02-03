@@ -148,7 +148,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateBatchPostBodyOperation { whois = 0, check = 1 }
+	export enum CreateBatchPostBodyOperation { whois = 'whois', check = 'check' }
 
 	export interface CreateBatchPostBodyOptions {
 		format?: CreateBatchPostBodyOptionsFormat | null;
@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateBatchPostBodyOptionsFormat { raw = 0, formatted = 1, json = 2 }
+	export enum CreateBatchPostBodyOptionsFormat { raw = 'raw', formatted = 'formatted', json = 'json' }
 
 	export interface CheckDomainReturn {
 		isAvailable?: boolean | null;

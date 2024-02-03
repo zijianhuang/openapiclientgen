@@ -160,7 +160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusType { SUCCEEDED = 0, FAILED = 1, FAULT = 2, TIMED_OUT = 3, IN_PROGRESS = 4, STOPPED = 5 }
+	export enum StatusType { SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', FAULT = 'FAULT', TIMED_OUT = 'TIMED_OUT', IN_PROGRESS = 'IN_PROGRESS', STOPPED = 'STOPPED' }
 
 
 	/** Contains information about a stage for a batch build. */
@@ -192,7 +192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildBatchPhaseType { SUBMITTED = 0, DOWNLOAD_BATCHSPEC = 1, IN_PROGRESS = 2, COMBINE_ARTIFACTS = 3, SUCCEEDED = 4, FAILED = 5, STOPPED = 6 }
+	export enum BuildBatchPhaseType { SUBMITTED = 'SUBMITTED', DOWNLOAD_BATCHSPEC = 'DOWNLOAD_BATCHSPEC', IN_PROGRESS = 'IN_PROGRESS', COMBINE_ARTIFACTS = 'COMBINE_ARTIFACTS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', STOPPED = 'STOPPED' }
 
 
 	/** Additional information about a build phase that has an error. You can use this information for troubleshooting. */
@@ -256,7 +256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { CODECOMMIT = 0, CODEPIPELINE = 1, GITHUB = 2, S3 = 3, BITBUCKET = 4, GITHUB_ENTERPRISE = 5, NO_SOURCE = 6 }
+	export enum SourceType { CODECOMMIT = 'CODECOMMIT', CODEPIPELINE = 'CODEPIPELINE', GITHUB = 'GITHUB', S3 = 'S3', BITBUCKET = 'BITBUCKET', GITHUB_ENTERPRISE = 'GITHUB_ENTERPRISE', NO_SOURCE = 'NO_SOURCE' }
 
 
 	/**  Information about the Git submodules configuration for an CodeBuild build project.  */
@@ -303,7 +303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceAuthType { OAUTH = 0 }
+	export enum SourceAuthType { OAUTH = 'OAUTH' }
 
 
 	/** Contains information that defines how the CodeBuild build project reports the build status to the source provider.  */
@@ -392,7 +392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildArtifactsBucketOwnerAccess { NONE = 0, READ_ONLY = 1, FULL = 2 }
+	export enum BuildArtifactsBucketOwnerAccess { NONE = 'NONE', READ_ONLY = 'READ_ONLY', FULL = 'FULL' }
 
 
 	/** Information about the cache for the build project. */
@@ -419,9 +419,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CacheType { NO_CACHE = 0, S3 = 1, LOCAL = 2 }
+	export enum CacheType { NO_CACHE = 'NO_CACHE', S3 = 'S3', LOCAL = 'LOCAL' }
 
-	export enum CacheMode { LOCAL_DOCKER_LAYER_CACHE = 0, LOCAL_SOURCE_CACHE = 1, LOCAL_CUSTOM_CACHE = 2 }
+	export enum CacheMode { LOCAL_DOCKER_LAYER_CACHE = 'LOCAL_DOCKER_LAYER_CACHE', LOCAL_SOURCE_CACHE = 'LOCAL_SOURCE_CACHE', LOCAL_CUSTOM_CACHE = 'LOCAL_CUSTOM_CACHE' }
 
 
 	/** Information about the build environment of the build project. */
@@ -469,9 +469,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentType { WINDOWS_CONTAINER = 0, LINUX_CONTAINER = 1, LINUX_GPU_CONTAINER = 2, ARM_CONTAINER = 3, WINDOWS_SERVER_2019_CONTAINER = 4 }
+	export enum EnvironmentType { WINDOWS_CONTAINER = 'WINDOWS_CONTAINER', LINUX_CONTAINER = 'LINUX_CONTAINER', LINUX_GPU_CONTAINER = 'LINUX_GPU_CONTAINER', ARM_CONTAINER = 'ARM_CONTAINER', WINDOWS_SERVER_2019_CONTAINER = 'WINDOWS_SERVER_2019_CONTAINER' }
 
-	export enum ComputeType { BUILD_GENERAL1_SMALL = 0, BUILD_GENERAL1_MEDIUM = 1, BUILD_GENERAL1_LARGE = 2, BUILD_GENERAL1_2XLARGE = 3 }
+	export enum ComputeType { BUILD_GENERAL1_SMALL = 'BUILD_GENERAL1_SMALL', BUILD_GENERAL1_MEDIUM = 'BUILD_GENERAL1_MEDIUM', BUILD_GENERAL1_LARGE = 'BUILD_GENERAL1_LARGE', BUILD_GENERAL1_2XLARGE = 'BUILD_GENERAL1_2XLARGE' }
 
 
 	/** Information about an environment variable for a build project or a build. */
@@ -504,7 +504,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentVariableType { PLAINTEXT = 0, PARAMETER_STORE = 1, SECRETS_MANAGER = 2 }
+	export enum EnvironmentVariableType { PLAINTEXT = 'PLAINTEXT', PARAMETER_STORE = 'PARAMETER_STORE', SECRETS_MANAGER = 'SECRETS_MANAGER' }
 
 
 	/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with Secrets Manager Sample for CodeBuild</a>. </p> */
@@ -534,9 +534,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CredentialProviderType { SECRETS_MANAGER = 0 }
+	export enum CredentialProviderType { SECRETS_MANAGER = 'SECRETS_MANAGER' }
 
-	export enum ImagePullCredentialsType { CODEBUILD = 0, SERVICE_ROLE = 1 }
+	export enum ImagePullCredentialsType { CODEBUILD = 'CODEBUILD', SERVICE_ROLE = 'SERVICE_ROLE' }
 
 
 	/**  Information about logs for a build project. These can be logs in CloudWatch Logs, built in a specified S3 bucket, or both.  */
@@ -581,7 +581,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogsConfigStatusType { ENABLED = 0, DISABLED = 1 }
+	export enum LogsConfigStatusType { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/**  Information about S3 logs for a build project.  */
@@ -665,7 +665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileSystemType { EFS = 0 }
+	export enum FileSystemType { EFS = 'EFS' }
 
 
 	/** Contains configuration information about a batch build project. */
@@ -712,7 +712,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchReportModeType { REPORT_INDIVIDUAL_BUILDS = 0, REPORT_AGGREGATED_BATCH = 1 }
+	export enum BatchReportModeType { REPORT_INDIVIDUAL_BUILDS = 'REPORT_INDIVIDUAL_BUILDS', REPORT_AGGREGATED_BATCH = 'REPORT_AGGREGATED_BATCH' }
 
 
 	/** Contains information about a batch build build group. Build groups are used to combine builds that can run in parallel, while still being able to set dependencies on other build groups. */
@@ -785,7 +785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactsType { CODEPIPELINE = 0, S3 = 1, NO_ARTIFACTS = 2 }
+	export enum ArtifactsType { CODEPIPELINE = 'CODEPIPELINE', S3 = 'S3', NO_ARTIFACTS = 'NO_ARTIFACTS' }
 
 	export interface BatchGetBuildBatchesInput {
 
@@ -922,7 +922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildPhaseType { SUBMITTED = 0, QUEUED = 1, PROVISIONING = 2, DOWNLOAD_SOURCE = 3, INSTALL = 4, PRE_BUILD = 5, BUILD = 6, POST_BUILD = 7, UPLOAD_ARTIFACTS = 8, FINALIZING = 9, COMPLETED = 10 }
+	export enum BuildPhaseType { SUBMITTED = 'SUBMITTED', QUEUED = 'QUEUED', PROVISIONING = 'PROVISIONING', DOWNLOAD_SOURCE = 'DOWNLOAD_SOURCE', INSTALL = 'INSTALL', PRE_BUILD = 'PRE_BUILD', BUILD = 'BUILD', POST_BUILD = 'POST_BUILD', UPLOAD_ARTIFACTS = 'UPLOAD_ARTIFACTS', FINALIZING = 'FINALIZING', COMPLETED = 'COMPLETED' }
 
 
 	/** Information about build logs in CloudWatch Logs. */
@@ -1169,9 +1169,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactNamespace { NONE = 0, BUILD_ID = 1 }
+	export enum ArtifactNamespace { NONE = 'NONE', BUILD_ID = 'BUILD_ID' }
 
-	export enum ArtifactPackaging { NONE = 0, ZIP = 1 }
+	export enum ArtifactPackaging { NONE = 'NONE', ZIP = 'ZIP' }
 
 
 	/** <p>A tag, consisting of a key and a value.</p> <p>This tag is available for use by Amazon Web Services services that support tags in CodeBuild.</p> */
@@ -1257,9 +1257,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookFilterType { EVENT = 0, BASE_REF = 1, HEAD_REF = 2, ACTOR_ACCOUNT_ID = 3, FILE_PATH = 4, COMMIT_MESSAGE = 5 }
+	export enum WebhookFilterType { EVENT = 'EVENT', BASE_REF = 'BASE_REF', HEAD_REF = 'HEAD_REF', ACTOR_ACCOUNT_ID = 'ACTOR_ACCOUNT_ID', FILE_PATH = 'FILE_PATH', COMMIT_MESSAGE = 'COMMIT_MESSAGE' }
 
-	export enum WebhookBuildType { BUILD = 0, BUILD_BATCH = 1 }
+	export enum WebhookBuildType { BUILD = 'BUILD', BUILD_BATCH = 'BUILD_BATCH' }
 
 
 	/** Information about the build badge for the build project. */
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectProjectVisibility { PUBLIC_READ = 0, PRIVATE = 1 }
+	export enum ProjectProjectVisibility { PUBLIC_READ = 'PUBLIC_READ', PRIVATE = 'PRIVATE' }
 
 	export interface BatchGetProjectsInput {
 
@@ -1342,7 +1342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportType { TEST = 0, CODE_COVERAGE = 1 }
+	export enum ReportType { TEST = 'TEST', CODE_COVERAGE = 'CODE_COVERAGE' }
 
 
 	/**  Information about the location where the run of a report is exported.  */
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportExportConfigType { S3 = 0, NO_EXPORT = 1 }
+	export enum ReportExportConfigType { S3 = 'S3', NO_EXPORT = 'NO_EXPORT' }
 
 
 	/**  Information about the S3 bucket where the raw data of a report are exported.  */
@@ -1396,9 +1396,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportPackagingType { ZIP = 0, NONE = 1 }
+	export enum ReportPackagingType { ZIP = 'ZIP', NONE = 'NONE' }
 
-	export enum ReportGroupStatusType { ACTIVE = 0, DELETING = 1 }
+	export enum ReportGroupStatusType { ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface BatchGetReportGroupsInput {
 
@@ -1469,7 +1469,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportStatusType { GENERATING = 0, SUCCEEDED = 1, FAILED = 2, INCOMPLETE = 3, DELETING = 4 }
+	export enum ReportStatusType { GENERATING = 'GENERATING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', INCOMPLETE = 'INCOMPLETE', DELETING = 'DELETING' }
 
 
 	/**  Information about a test report.  */
@@ -2038,9 +2038,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrderType { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrderType { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
-	export enum ReportCodeCoverageSortByType { LINE_COVERAGE_PERCENTAGE = 0, FILE_PATH = 1 }
+	export enum ReportCodeCoverageSortByType { LINE_COVERAGE_PERCENTAGE = 'LINE_COVERAGE_PERCENTAGE', FILE_PATH = 'FILE_PATH' }
 
 	export interface DescribeTestCasesOutput {
 		nextToken?: string;
@@ -2220,7 +2220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportGroupTrendFieldType { PASS_RATE = 0, DURATION = 1, TOTAL = 2, LINE_COVERAGE = 3, LINES_COVERED = 4, LINES_MISSED = 5, BRANCH_COVERAGE = 6, BRANCHES_COVERED = 7, BRANCHES_MISSED = 8 }
+	export enum ReportGroupTrendFieldType { PASS_RATE = 'PASS_RATE', DURATION = 'DURATION', TOTAL = 'TOTAL', LINE_COVERAGE = 'LINE_COVERAGE', LINES_COVERED = 'LINES_COVERED', LINES_MISSED = 'LINES_MISSED', BRANCH_COVERAGE = 'BRANCH_COVERAGE', BRANCHES_COVERED = 'BRANCHES_COVERED', BRANCHES_MISSED = 'BRANCHES_MISSED' }
 
 	export interface GetResourcePolicyOutput {
 		policy?: string;
@@ -2302,9 +2302,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerType { GITHUB = 0, BITBUCKET = 1, GITHUB_ENTERPRISE = 2 }
+	export enum ServerType { GITHUB = 'GITHUB', BITBUCKET = 'BITBUCKET', GITHUB_ENTERPRISE = 'GITHUB_ENTERPRISE' }
 
-	export enum AuthType { OAUTH = 0, BASIC_AUTH = 1, PERSONAL_ACCESS_TOKEN = 2 }
+	export enum AuthType { OAUTH = 'OAUTH', BASIC_AUTH = 'BASIC_AUTH', PERSONAL_ACCESS_TOKEN = 'PERSONAL_ACCESS_TOKEN' }
 
 	export interface InvalidateProjectCacheOutput {
 	}
@@ -2517,7 +2517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformType { DEBIAN = 0, AMAZON_LINUX = 1, UBUNTU = 2, WINDOWS_SERVER = 3 }
+	export enum PlatformType { DEBIAN = 'DEBIAN', AMAZON_LINUX = 'AMAZON_LINUX', UBUNTU = 'UBUNTU', WINDOWS_SERVER = 'WINDOWS_SERVER' }
 
 
 	/** A set of Docker images that are related by programming language and are managed by CodeBuild. */
@@ -2537,7 +2537,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LanguageType { JAVA = 0, PYTHON = 1, NODE_JS = 2, RUBY = 3, GOLANG = 4, DOCKER = 5, ANDROID = 6, DOTNET = 7, BASE = 8, PHP = 9 }
+	export enum LanguageType { JAVA = 'JAVA', PYTHON = 'PYTHON', NODE_JS = 'NODE_JS', RUBY = 'RUBY', GOLANG = 'GOLANG', DOCKER = 'DOCKER', ANDROID = 'ANDROID', DOTNET = 'DOTNET', BASE = 'BASE', PHP = 'PHP' }
 
 
 	/** Information about a Docker image that is managed by CodeBuild. */
@@ -2603,7 +2603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectSortByType { NAME = 0, CREATED_TIME = 1, LAST_MODIFIED_TIME = 2 }
+	export enum ProjectSortByType { NAME = 'NAME', CREATED_TIME = 'CREATED_TIME', LAST_MODIFIED_TIME = 'LAST_MODIFIED_TIME' }
 
 	export interface ListReportGroupsOutput {
 		nextToken?: string;
@@ -2769,7 +2769,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharedResourceSortByType { ARN = 0, MODIFIED_TIME = 1 }
+	export enum SharedResourceSortByType { ARN = 'ARN', MODIFIED_TIME = 'MODIFIED_TIME' }
 
 	export interface ListSharedReportGroupsOutput {
 		nextToken?: string;
@@ -2943,7 +2943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RetryBuildBatchType { RETRY_ALL_BUILDS = 0, RETRY_FAILED_BUILDS = 1 }
+	export enum RetryBuildBatchType { RETRY_ALL_BUILDS = 'RETRY_ALL_BUILDS', RETRY_FAILED_BUILDS = 'RETRY_FAILED_BUILDS' }
 
 	export interface StartBuildOutput {
 		build?: Build;
@@ -3381,13 +3381,13 @@ export namespace MyNS {
 
 
 	/** <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note> <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p> </note> <p>This property can be one of the following values:</p> <dl> <dt>NONE</dt> <dd> <p>The bucket owner does not have access to the objects. This is the default.</p> </dd> <dt>READ_ONLY</dt> <dd> <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p> </dd> <dt>FULL</dt> <dd> <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p> <ul> <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li> <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li> </ul> <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> </dd> </dl> */
-	export enum BucketOwnerAccess { NONE = 0, READ_ONLY = 1, FULL = 2 }
+	export enum BucketOwnerAccess { NONE = 'NONE', READ_ONLY = 'READ_ONLY', FULL = 'FULL' }
 
-	export enum ReportGroupSortByType { NAME = 0, CREATED_TIME = 1, LAST_MODIFIED_TIME = 2 }
+	export enum ReportGroupSortByType { NAME = 'NAME', CREATED_TIME = 'CREATED_TIME', LAST_MODIFIED_TIME = 'LAST_MODIFIED_TIME' }
 
 
 	/** <p>Specifies the visibility of the project's builds. Possible values are:</p> <dl> <dt>PUBLIC_READ</dt> <dd> <p>The project builds are visible to the public.</p> </dd> <dt>PRIVATE</dt> <dd> <p>The project builds are not visible to the public.</p> </dd> </dl> */
-	export enum ProjectVisibilityType { PUBLIC_READ = 0, PRIVATE = 1 }
+	export enum ProjectVisibilityType { PUBLIC_READ = 'PUBLIC_READ', PRIVATE = 'PRIVATE' }
 
 	@Injectable()
 	export class MyClient {
@@ -3821,95 +3821,95 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchDeleteBuildsX_Amz_Target { 'CodeBuild_20161006.BatchDeleteBuilds' = 0 }
+	export enum BatchDeleteBuildsX_Amz_Target { 'CodeBuild_20161006.BatchDeleteBuilds' = 'CodeBuild_20161006.BatchDeleteBuilds' }
 
-	export enum BatchGetBuildBatchesX_Amz_Target { 'CodeBuild_20161006.BatchGetBuildBatches' = 0 }
+	export enum BatchGetBuildBatchesX_Amz_Target { 'CodeBuild_20161006.BatchGetBuildBatches' = 'CodeBuild_20161006.BatchGetBuildBatches' }
 
-	export enum BatchGetBuildsX_Amz_Target { 'CodeBuild_20161006.BatchGetBuilds' = 0 }
+	export enum BatchGetBuildsX_Amz_Target { 'CodeBuild_20161006.BatchGetBuilds' = 'CodeBuild_20161006.BatchGetBuilds' }
 
-	export enum BatchGetProjectsX_Amz_Target { 'CodeBuild_20161006.BatchGetProjects' = 0 }
+	export enum BatchGetProjectsX_Amz_Target { 'CodeBuild_20161006.BatchGetProjects' = 'CodeBuild_20161006.BatchGetProjects' }
 
-	export enum BatchGetReportGroupsX_Amz_Target { 'CodeBuild_20161006.BatchGetReportGroups' = 0 }
+	export enum BatchGetReportGroupsX_Amz_Target { 'CodeBuild_20161006.BatchGetReportGroups' = 'CodeBuild_20161006.BatchGetReportGroups' }
 
-	export enum BatchGetReportsX_Amz_Target { 'CodeBuild_20161006.BatchGetReports' = 0 }
+	export enum BatchGetReportsX_Amz_Target { 'CodeBuild_20161006.BatchGetReports' = 'CodeBuild_20161006.BatchGetReports' }
 
-	export enum CreateProjectX_Amz_Target { 'CodeBuild_20161006.CreateProject' = 0 }
+	export enum CreateProjectX_Amz_Target { 'CodeBuild_20161006.CreateProject' = 'CodeBuild_20161006.CreateProject' }
 
-	export enum CreateReportGroupX_Amz_Target { 'CodeBuild_20161006.CreateReportGroup' = 0 }
+	export enum CreateReportGroupX_Amz_Target { 'CodeBuild_20161006.CreateReportGroup' = 'CodeBuild_20161006.CreateReportGroup' }
 
-	export enum CreateWebhookX_Amz_Target { 'CodeBuild_20161006.CreateWebhook' = 0 }
+	export enum CreateWebhookX_Amz_Target { 'CodeBuild_20161006.CreateWebhook' = 'CodeBuild_20161006.CreateWebhook' }
 
-	export enum DeleteBuildBatchX_Amz_Target { 'CodeBuild_20161006.DeleteBuildBatch' = 0 }
+	export enum DeleteBuildBatchX_Amz_Target { 'CodeBuild_20161006.DeleteBuildBatch' = 'CodeBuild_20161006.DeleteBuildBatch' }
 
-	export enum DeleteProjectX_Amz_Target { 'CodeBuild_20161006.DeleteProject' = 0 }
+	export enum DeleteProjectX_Amz_Target { 'CodeBuild_20161006.DeleteProject' = 'CodeBuild_20161006.DeleteProject' }
 
-	export enum DeleteReportX_Amz_Target { 'CodeBuild_20161006.DeleteReport' = 0 }
+	export enum DeleteReportX_Amz_Target { 'CodeBuild_20161006.DeleteReport' = 'CodeBuild_20161006.DeleteReport' }
 
-	export enum DeleteReportGroupX_Amz_Target { 'CodeBuild_20161006.DeleteReportGroup' = 0 }
+	export enum DeleteReportGroupX_Amz_Target { 'CodeBuild_20161006.DeleteReportGroup' = 'CodeBuild_20161006.DeleteReportGroup' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'CodeBuild_20161006.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'CodeBuild_20161006.DeleteResourcePolicy' = 'CodeBuild_20161006.DeleteResourcePolicy' }
 
-	export enum DeleteSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.DeleteSourceCredentials' = 0 }
+	export enum DeleteSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.DeleteSourceCredentials' = 'CodeBuild_20161006.DeleteSourceCredentials' }
 
-	export enum DeleteWebhookX_Amz_Target { 'CodeBuild_20161006.DeleteWebhook' = 0 }
+	export enum DeleteWebhookX_Amz_Target { 'CodeBuild_20161006.DeleteWebhook' = 'CodeBuild_20161006.DeleteWebhook' }
 
-	export enum DescribeCodeCoveragesX_Amz_Target { 'CodeBuild_20161006.DescribeCodeCoverages' = 0 }
+	export enum DescribeCodeCoveragesX_Amz_Target { 'CodeBuild_20161006.DescribeCodeCoverages' = 'CodeBuild_20161006.DescribeCodeCoverages' }
 
-	export enum DescribeTestCasesX_Amz_Target { 'CodeBuild_20161006.DescribeTestCases' = 0 }
+	export enum DescribeTestCasesX_Amz_Target { 'CodeBuild_20161006.DescribeTestCases' = 'CodeBuild_20161006.DescribeTestCases' }
 
-	export enum GetReportGroupTrendX_Amz_Target { 'CodeBuild_20161006.GetReportGroupTrend' = 0 }
+	export enum GetReportGroupTrendX_Amz_Target { 'CodeBuild_20161006.GetReportGroupTrend' = 'CodeBuild_20161006.GetReportGroupTrend' }
 
-	export enum GetResourcePolicyX_Amz_Target { 'CodeBuild_20161006.GetResourcePolicy' = 0 }
+	export enum GetResourcePolicyX_Amz_Target { 'CodeBuild_20161006.GetResourcePolicy' = 'CodeBuild_20161006.GetResourcePolicy' }
 
-	export enum ImportSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.ImportSourceCredentials' = 0 }
+	export enum ImportSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.ImportSourceCredentials' = 'CodeBuild_20161006.ImportSourceCredentials' }
 
-	export enum InvalidateProjectCacheX_Amz_Target { 'CodeBuild_20161006.InvalidateProjectCache' = 0 }
+	export enum InvalidateProjectCacheX_Amz_Target { 'CodeBuild_20161006.InvalidateProjectCache' = 'CodeBuild_20161006.InvalidateProjectCache' }
 
-	export enum ListBuildBatchesX_Amz_Target { 'CodeBuild_20161006.ListBuildBatches' = 0 }
+	export enum ListBuildBatchesX_Amz_Target { 'CodeBuild_20161006.ListBuildBatches' = 'CodeBuild_20161006.ListBuildBatches' }
 
-	export enum ListBuildBatchesForProjectX_Amz_Target { 'CodeBuild_20161006.ListBuildBatchesForProject' = 0 }
+	export enum ListBuildBatchesForProjectX_Amz_Target { 'CodeBuild_20161006.ListBuildBatchesForProject' = 'CodeBuild_20161006.ListBuildBatchesForProject' }
 
-	export enum ListBuildsX_Amz_Target { 'CodeBuild_20161006.ListBuilds' = 0 }
+	export enum ListBuildsX_Amz_Target { 'CodeBuild_20161006.ListBuilds' = 'CodeBuild_20161006.ListBuilds' }
 
-	export enum ListBuildsForProjectX_Amz_Target { 'CodeBuild_20161006.ListBuildsForProject' = 0 }
+	export enum ListBuildsForProjectX_Amz_Target { 'CodeBuild_20161006.ListBuildsForProject' = 'CodeBuild_20161006.ListBuildsForProject' }
 
-	export enum ListCuratedEnvironmentImagesX_Amz_Target { 'CodeBuild_20161006.ListCuratedEnvironmentImages' = 0 }
+	export enum ListCuratedEnvironmentImagesX_Amz_Target { 'CodeBuild_20161006.ListCuratedEnvironmentImages' = 'CodeBuild_20161006.ListCuratedEnvironmentImages' }
 
-	export enum ListProjectsX_Amz_Target { 'CodeBuild_20161006.ListProjects' = 0 }
+	export enum ListProjectsX_Amz_Target { 'CodeBuild_20161006.ListProjects' = 'CodeBuild_20161006.ListProjects' }
 
-	export enum ListReportGroupsX_Amz_Target { 'CodeBuild_20161006.ListReportGroups' = 0 }
+	export enum ListReportGroupsX_Amz_Target { 'CodeBuild_20161006.ListReportGroups' = 'CodeBuild_20161006.ListReportGroups' }
 
-	export enum ListReportsX_Amz_Target { 'CodeBuild_20161006.ListReports' = 0 }
+	export enum ListReportsX_Amz_Target { 'CodeBuild_20161006.ListReports' = 'CodeBuild_20161006.ListReports' }
 
-	export enum ListReportsForReportGroupX_Amz_Target { 'CodeBuild_20161006.ListReportsForReportGroup' = 0 }
+	export enum ListReportsForReportGroupX_Amz_Target { 'CodeBuild_20161006.ListReportsForReportGroup' = 'CodeBuild_20161006.ListReportsForReportGroup' }
 
-	export enum ListSharedProjectsX_Amz_Target { 'CodeBuild_20161006.ListSharedProjects' = 0 }
+	export enum ListSharedProjectsX_Amz_Target { 'CodeBuild_20161006.ListSharedProjects' = 'CodeBuild_20161006.ListSharedProjects' }
 
-	export enum ListSharedReportGroupsX_Amz_Target { 'CodeBuild_20161006.ListSharedReportGroups' = 0 }
+	export enum ListSharedReportGroupsX_Amz_Target { 'CodeBuild_20161006.ListSharedReportGroups' = 'CodeBuild_20161006.ListSharedReportGroups' }
 
-	export enum ListSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.ListSourceCredentials' = 0 }
+	export enum ListSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.ListSourceCredentials' = 'CodeBuild_20161006.ListSourceCredentials' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'CodeBuild_20161006.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'CodeBuild_20161006.PutResourcePolicy' = 'CodeBuild_20161006.PutResourcePolicy' }
 
-	export enum RetryBuildX_Amz_Target { 'CodeBuild_20161006.RetryBuild' = 0 }
+	export enum RetryBuildX_Amz_Target { 'CodeBuild_20161006.RetryBuild' = 'CodeBuild_20161006.RetryBuild' }
 
-	export enum RetryBuildBatchX_Amz_Target { 'CodeBuild_20161006.RetryBuildBatch' = 0 }
+	export enum RetryBuildBatchX_Amz_Target { 'CodeBuild_20161006.RetryBuildBatch' = 'CodeBuild_20161006.RetryBuildBatch' }
 
-	export enum StartBuildX_Amz_Target { 'CodeBuild_20161006.StartBuild' = 0 }
+	export enum StartBuildX_Amz_Target { 'CodeBuild_20161006.StartBuild' = 'CodeBuild_20161006.StartBuild' }
 
-	export enum StartBuildBatchX_Amz_Target { 'CodeBuild_20161006.StartBuildBatch' = 0 }
+	export enum StartBuildBatchX_Amz_Target { 'CodeBuild_20161006.StartBuildBatch' = 'CodeBuild_20161006.StartBuildBatch' }
 
-	export enum StopBuildX_Amz_Target { 'CodeBuild_20161006.StopBuild' = 0 }
+	export enum StopBuildX_Amz_Target { 'CodeBuild_20161006.StopBuild' = 'CodeBuild_20161006.StopBuild' }
 
-	export enum StopBuildBatchX_Amz_Target { 'CodeBuild_20161006.StopBuildBatch' = 0 }
+	export enum StopBuildBatchX_Amz_Target { 'CodeBuild_20161006.StopBuildBatch' = 'CodeBuild_20161006.StopBuildBatch' }
 
-	export enum UpdateProjectX_Amz_Target { 'CodeBuild_20161006.UpdateProject' = 0 }
+	export enum UpdateProjectX_Amz_Target { 'CodeBuild_20161006.UpdateProject' = 'CodeBuild_20161006.UpdateProject' }
 
-	export enum UpdateProjectVisibilityX_Amz_Target { 'CodeBuild_20161006.UpdateProjectVisibility' = 0 }
+	export enum UpdateProjectVisibilityX_Amz_Target { 'CodeBuild_20161006.UpdateProjectVisibility' = 'CodeBuild_20161006.UpdateProjectVisibility' }
 
-	export enum UpdateReportGroupX_Amz_Target { 'CodeBuild_20161006.UpdateReportGroup' = 0 }
+	export enum UpdateReportGroupX_Amz_Target { 'CodeBuild_20161006.UpdateReportGroup' = 'CodeBuild_20161006.UpdateReportGroup' }
 
-	export enum UpdateWebhookX_Amz_Target { 'CodeBuild_20161006.UpdateWebhook' = 0 }
+	export enum UpdateWebhookX_Amz_Target { 'CodeBuild_20161006.UpdateWebhook' = 'CodeBuild_20161006.UpdateWebhook' }
 
 }
 

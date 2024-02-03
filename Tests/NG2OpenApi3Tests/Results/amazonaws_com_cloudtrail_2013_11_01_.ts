@@ -249,7 +249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryStatus { QUEUED = 0, RUNNING = 1, FINISHED = 2, FAILED = 3, CANCELLED = 4, TIMED_OUT = 5 }
+	export enum QueryStatus { QUEUED = 'QUEUED', RUNNING = 'RUNNING', FINISHED = 'FINISHED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', TIMED_OUT = 'TIMED_OUT' }
 
 	export interface CancelQueryRequest {
 		EventDataStore?: string;
@@ -355,7 +355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationType { EVENT_DATA_STORE = 0, AWS_SERVICE = 1 }
+	export enum DestinationType { EVENT_DATA_STORE = 'EVENT_DATA_STORE', AWS_SERVICE = 'AWS_SERVICE' }
 
 	export interface CreateChannelRequest {
 
@@ -477,7 +477,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventDataStoreStatus { CREATED = 0, ENABLED = 1, PENDING_DELETION = 2, STARTING_INGESTION = 3, STOPPING_INGESTION = 4, STOPPED_INGESTION = 5 }
+	export enum EventDataStoreStatus { CREATED = 'CREATED', ENABLED = 'ENABLED', PENDING_DELETION = 'PENDING_DELETION', STARTING_INGESTION = 'STARTING_INGESTION', STOPPING_INGESTION = 'STOPPING_INGESTION', STOPPED_INGESTION = 'STOPPED_INGESTION' }
 
 
 	/** <p>Advanced event selectors let you create fine-grained selectors for the following CloudTrail event record ﬁelds. They help you control costs by logging only those events that are important to you. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>.</p> <ul> <li> <p> <code>readOnly</code> </p> </li> <li> <p> <code>eventSource</code> </p> </li> <li> <p> <code>eventName</code> </p> </li> <li> <p> <code>eventCategory</code> </p> </li> <li> <p> <code>resources.type</code> </p> </li> <li> <p> <code>resources.ARN</code> </p> </li> </ul> <p>You cannot apply both event selectors and advanced event selectors to a trail.</p> */
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryStatus { SUCCESS = 0, FAILED = 1, FAILED_SIGNING_FILE = 2, PENDING = 3, RESOURCE_NOT_FOUND = 4, ACCESS_DENIED = 5, ACCESS_DENIED_SIGNING_FILE = 6, CANCELLED = 7, UNKNOWN = 8 }
+	export enum DeliveryStatus { SUCCESS = 'SUCCESS', FAILED = 'FAILED', FAILED_SIGNING_FILE = 'FAILED_SIGNING_FILE', PENDING = 'PENDING', RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND', ACCESS_DENIED = 'ACCESS_DENIED', ACCESS_DENIED_SIGNING_FILE = 'ACCESS_DENIED_SIGNING_FILE', CANCELLED = 'CANCELLED', UNKNOWN = 'UNKNOWN' }
 
 	export interface DescribeQueryRequest {
 		EventDataStore?: string;
@@ -1548,7 +1548,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadWriteType { ReadOnly = 0, WriteOnly = 1, All = 2 }
+	export enum ReadWriteType { ReadOnly = 'ReadOnly', WriteOnly = 'WriteOnly', All = 'All' }
 
 
 	/** <p>The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors for the trail.</p> <p>If you are using advanced event selectors, the maximum total number of values for all conditions, across all advanced event selectors for the trail, is 500.</p> </note> <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li> <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.</p> </li> </ol> <p>The following example demonstrates how logging works when you configure logging of Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all Lambda functions.</p> <ol> <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </p> </li> </ol> */
@@ -1668,7 +1668,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportStatus { INITIALIZING = 0, IN_PROGRESS = 1, FAILED = 2, STOPPED = 3, COMPLETED = 4 }
+	export enum ImportStatus { INITIALIZING = 'INITIALIZING', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', STOPPED = 'STOPPED', COMPLETED = 'COMPLETED' }
 
 
 	/**  Provides statistics for the specified <code>ImportID</code>. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.  */
@@ -1757,7 +1757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InsightType { ApiCallRateInsight = 0, ApiErrorRateInsight = 1 }
+	export enum InsightType { ApiCallRateInsight = 'ApiCallRateInsight', ApiErrorRateInsight = 'ApiErrorRateInsight' }
 
 	export interface GetInsightSelectorsRequest {
 
@@ -2200,7 +2200,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportFailureStatus { FAILED = 0, RETRY = 1, SUCCEEDED = 2 }
+	export enum ImportFailureStatus { FAILED = 'FAILED', RETRY = 'RETRY', SUCCEEDED = 'SUCCEEDED' }
 
 	export interface ListImportFailuresRequest {
 
@@ -2705,9 +2705,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LookupAttributeKey { EventId = 0, EventName = 1, ReadOnly = 2, Username = 3, ResourceType = 4, ResourceName = 5, EventSource = 6, AccessKeyId = 7 }
+	export enum LookupAttributeKey { EventId = 'EventId', EventName = 'EventName', ReadOnly = 'ReadOnly', Username = 'Username', ResourceType = 'ResourceType', ResourceName = 'ResourceName', EventSource = 'EventSource', AccessKeyId = 'AccessKeyId' }
 
-	export enum EventCategory { insight = 0 }
+	export enum EventCategory { insight = 'insight' }
 
 	export interface InvalidLookupAttributesException {
 	}
@@ -3982,97 +3982,97 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.AddTags' = 0 }
+	export enum AddTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.AddTags' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.AddTags' }
 
-	export enum CancelQueryX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CancelQuery' = 0 }
+	export enum CancelQueryX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CancelQuery' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CancelQuery' }
 
-	export enum CreateChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateChannel' = 0 }
+	export enum CreateChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateChannel' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateChannel' }
 
-	export enum CreateEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateEventDataStore' = 0 }
+	export enum CreateEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateEventDataStore' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateEventDataStore' }
 
-	export enum CreateTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateTrail' = 0 }
+	export enum CreateTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateTrail' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateTrail' }
 
-	export enum DeleteChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteChannel' = 0 }
+	export enum DeleteChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteChannel' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteChannel' }
 
-	export enum DeleteEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteEventDataStore' = 0 }
+	export enum DeleteEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteEventDataStore' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteEventDataStore' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteResourcePolicy' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteResourcePolicy' }
 
-	export enum DeleteTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteTrail' = 0 }
+	export enum DeleteTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteTrail' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteTrail' }
 
-	export enum DeregisterOrganizationDelegatedAdminX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeregisterOrganizationDelegatedAdmin' = 0 }
+	export enum DeregisterOrganizationDelegatedAdminX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeregisterOrganizationDelegatedAdmin' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeregisterOrganizationDelegatedAdmin' }
 
-	export enum DescribeQueryX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeQuery' = 0 }
+	export enum DescribeQueryX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeQuery' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeQuery' }
 
-	export enum DescribeTrailsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeTrails' = 0 }
+	export enum DescribeTrailsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeTrails' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeTrails' }
 
-	export enum GetChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetChannel' = 0 }
+	export enum GetChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetChannel' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetChannel' }
 
-	export enum GetEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetEventDataStore' = 0 }
+	export enum GetEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetEventDataStore' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetEventDataStore' }
 
-	export enum GetEventSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetEventSelectors' = 0 }
+	export enum GetEventSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetEventSelectors' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetEventSelectors' }
 
-	export enum GetImportX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetImport' = 0 }
+	export enum GetImportX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetImport' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetImport' }
 
-	export enum GetInsightSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetInsightSelectors' = 0 }
+	export enum GetInsightSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetInsightSelectors' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetInsightSelectors' }
 
-	export enum GetQueryResultsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetQueryResults' = 0 }
+	export enum GetQueryResultsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetQueryResults' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetQueryResults' }
 
-	export enum GetResourcePolicyX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetResourcePolicy' = 0 }
+	export enum GetResourcePolicyX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetResourcePolicy' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetResourcePolicy' }
 
-	export enum GetTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrail' = 0 }
+	export enum GetTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrail' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrail' }
 
-	export enum GetTrailStatusX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrailStatus' = 0 }
+	export enum GetTrailStatusX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrailStatus' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrailStatus' }
 
-	export enum ListChannelsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListChannels' = 0 }
+	export enum ListChannelsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListChannels' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListChannels' }
 
-	export enum ListEventDataStoresX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListEventDataStores' = 0 }
+	export enum ListEventDataStoresX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListEventDataStores' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListEventDataStores' }
 
-	export enum ListImportFailuresX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListImportFailures' = 0 }
+	export enum ListImportFailuresX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListImportFailures' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListImportFailures' }
 
-	export enum ListImportsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListImports' = 0 }
+	export enum ListImportsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListImports' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListImports' }
 
-	export enum ListPublicKeysX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListPublicKeys' = 0 }
+	export enum ListPublicKeysX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListPublicKeys' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListPublicKeys' }
 
-	export enum ListQueriesX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListQueries' = 0 }
+	export enum ListQueriesX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListQueries' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListQueries' }
 
-	export enum ListTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTags' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTags' }
 
-	export enum ListTrailsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTrails' = 0 }
+	export enum ListTrailsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTrails' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTrails' }
 
-	export enum LookupEventsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents' = 0 }
+	export enum LookupEventsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents' }
 
-	export enum PutEventSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutEventSelectors' = 0 }
+	export enum PutEventSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutEventSelectors' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutEventSelectors' }
 
-	export enum PutInsightSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutInsightSelectors' = 0 }
+	export enum PutInsightSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutInsightSelectors' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutInsightSelectors' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutResourcePolicy' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutResourcePolicy' }
 
-	export enum RegisterOrganizationDelegatedAdminX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RegisterOrganizationDelegatedAdmin' = 0 }
+	export enum RegisterOrganizationDelegatedAdminX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RegisterOrganizationDelegatedAdmin' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RegisterOrganizationDelegatedAdmin' }
 
-	export enum RemoveTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RemoveTags' = 0 }
+	export enum RemoveTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RemoveTags' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RemoveTags' }
 
-	export enum RestoreEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RestoreEventDataStore' = 0 }
+	export enum RestoreEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RestoreEventDataStore' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RestoreEventDataStore' }
 
-	export enum StartEventDataStoreIngestionX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartEventDataStoreIngestion' = 0 }
+	export enum StartEventDataStoreIngestionX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartEventDataStoreIngestion' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartEventDataStoreIngestion' }
 
-	export enum StartImportX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartImport' = 0 }
+	export enum StartImportX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartImport' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartImport' }
 
-	export enum StartLoggingX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartLogging' = 0 }
+	export enum StartLoggingX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartLogging' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartLogging' }
 
-	export enum StartQueryX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartQuery' = 0 }
+	export enum StartQueryX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartQuery' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartQuery' }
 
-	export enum StopEventDataStoreIngestionX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopEventDataStoreIngestion' = 0 }
+	export enum StopEventDataStoreIngestionX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopEventDataStoreIngestion' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopEventDataStoreIngestion' }
 
-	export enum StopImportX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopImport' = 0 }
+	export enum StopImportX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopImport' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopImport' }
 
-	export enum StopLoggingX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopLogging' = 0 }
+	export enum StopLoggingX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopLogging' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopLogging' }
 
-	export enum UpdateChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateChannel' = 0 }
+	export enum UpdateChannelX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateChannel' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateChannel' }
 
-	export enum UpdateEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateEventDataStore' = 0 }
+	export enum UpdateEventDataStoreX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateEventDataStore' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateEventDataStore' }
 
-	export enum UpdateTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateTrail' = 0 }
+	export enum UpdateTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateTrail' = 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateTrail' }
 
 }
 

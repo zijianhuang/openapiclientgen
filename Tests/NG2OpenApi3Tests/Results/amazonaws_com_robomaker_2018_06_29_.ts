@@ -115,11 +115,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SimulationJobStatus { Pending = 0, Preparing = 1, Running = 2, Restarting = 3, Completed = 4, Failed = 5, RunningFailed = 6, Terminating = 7, Terminated = 8, Canceled = 9 }
+	export enum SimulationJobStatus { Pending = 'Pending', Preparing = 'Preparing', Running = 'Running', Restarting = 'Restarting', Completed = 'Completed', Failed = 'Failed', RunningFailed = 'RunningFailed', Terminating = 'Terminating', Terminated = 'Terminated', Canceled = 'Canceled' }
 
-	export enum FailureBehavior { Fail = 0, Continue = 1 }
+	export enum FailureBehavior { Fail = 'Fail', Continue = 'Continue' }
 
-	export enum SimulationJobErrorCode { InternalServiceError = 0, RobotApplicationCrash = 1, SimulationApplicationCrash = 2, RobotApplicationHealthCheckFailure = 3, SimulationApplicationHealthCheckFailure = 4, BadPermissionsRobotApplication = 5, BadPermissionsSimulationApplication = 6, BadPermissionsS3Object = 7, BadPermissionsS3Output = 8, BadPermissionsCloudwatchLogs = 9, SubnetIpLimitExceeded = 10, ENILimitExceeded = 11, BadPermissionsUserCredentials = 12, InvalidBundleRobotApplication = 13, InvalidBundleSimulationApplication = 14, InvalidS3Resource = 15, ThrottlingError = 16, LimitExceeded = 17, MismatchedEtag = 18, RobotApplicationVersionMismatchedEtag = 19, SimulationApplicationVersionMismatchedEtag = 20, ResourceNotFound = 21, RequestThrottled = 22, BatchTimedOut = 23, BatchCanceled = 24, InvalidInput = 25, WrongRegionS3Bucket = 26, WrongRegionS3Output = 27, WrongRegionRobotApplication = 28, WrongRegionSimulationApplication = 29, UploadContentMismatchError = 30 }
+	export enum SimulationJobErrorCode { InternalServiceError = 'InternalServiceError', RobotApplicationCrash = 'RobotApplicationCrash', SimulationApplicationCrash = 'SimulationApplicationCrash', RobotApplicationHealthCheckFailure = 'RobotApplicationHealthCheckFailure', SimulationApplicationHealthCheckFailure = 'SimulationApplicationHealthCheckFailure', BadPermissionsRobotApplication = 'BadPermissionsRobotApplication', BadPermissionsSimulationApplication = 'BadPermissionsSimulationApplication', BadPermissionsS3Object = 'BadPermissionsS3Object', BadPermissionsS3Output = 'BadPermissionsS3Output', BadPermissionsCloudwatchLogs = 'BadPermissionsCloudwatchLogs', SubnetIpLimitExceeded = 'SubnetIpLimitExceeded', ENILimitExceeded = 'ENILimitExceeded', BadPermissionsUserCredentials = 'BadPermissionsUserCredentials', InvalidBundleRobotApplication = 'InvalidBundleRobotApplication', InvalidBundleSimulationApplication = 'InvalidBundleSimulationApplication', InvalidS3Resource = 'InvalidS3Resource', ThrottlingError = 'ThrottlingError', LimitExceeded = 'LimitExceeded', MismatchedEtag = 'MismatchedEtag', RobotApplicationVersionMismatchedEtag = 'RobotApplicationVersionMismatchedEtag', SimulationApplicationVersionMismatchedEtag = 'SimulationApplicationVersionMismatchedEtag', ResourceNotFound = 'ResourceNotFound', RequestThrottled = 'RequestThrottled', BatchTimedOut = 'BatchTimedOut', BatchCanceled = 'BatchCanceled', InvalidInput = 'InvalidInput', WrongRegionS3Bucket = 'WrongRegionS3Bucket', WrongRegionS3Output = 'WrongRegionS3Output', WrongRegionRobotApplication = 'WrongRegionRobotApplication', WrongRegionSimulationApplication = 'WrongRegionSimulationApplication', UploadContentMismatchError = 'UploadContentMismatchError' }
 
 
 	/** The output location. */
@@ -310,7 +310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UploadBehavior { UPLOAD_ON_TERMINATE = 0, UPLOAD_ROLLING_AUTO_REMOVE = 1 }
+	export enum UploadBehavior { UPLOAD_ON_TERMINATE = 'UPLOAD_ON_TERMINATE', UPLOAD_ROLLING_AUTO_REMOVE = 'UPLOAD_ROLLING_AUTO_REMOVE' }
 
 
 	/** Information about a tool. Tools are used in a simulation job. */
@@ -349,7 +349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExitBehavior { FAIL = 0, RESTART = 1 }
+	export enum ExitBehavior { FAIL = 'FAIL', RESTART = 'RESTART' }
 
 
 	/** Information about a simulation application configuration. */
@@ -451,7 +451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceType { Prefix = 0, Archive = 1, File = 2 }
+	export enum DataSourceType { Prefix = 'Prefix', Archive = 'Archive', File = 'File' }
 
 	export interface TagMap {
 	}
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeType { CPU = 0, GPU_AND_CPU = 1 }
+	export enum ComputeType { CPU = 'CPU', GPU_AND_CPU = 'GPU_AND_CPU' }
 
 	export interface ResourceNotFoundException {
 	}
@@ -632,7 +632,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentStatus { Pending = 0, Preparing = 1, InProgress = 2, Failed = 3, Succeeded = 4, Canceled = 5 }
+	export enum DeploymentStatus { Pending = 'Pending', Preparing = 'Preparing', InProgress = 'InProgress', Failed = 'Failed', Succeeded = 'Succeeded', Canceled = 'Canceled' }
 
 
 	/** Information about a deployment application configuration. */
@@ -700,7 +700,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentJobErrorCode { ResourceNotFound = 0, EnvironmentSetupError = 1, EtagMismatch = 2, FailureThresholdBreached = 3, RobotDeploymentAborted = 4, RobotDeploymentNoResponse = 5, RobotAgentConnectionTimeout = 6, GreengrassDeploymentFailed = 7, InvalidGreengrassGroup = 8, MissingRobotArchitecture = 9, MissingRobotApplicationArchitecture = 10, MissingRobotDeploymentResource = 11, GreengrassGroupVersionDoesNotExist = 12, LambdaDeleted = 13, ExtractingBundleFailure = 14, PreLaunchFileFailure = 15, PostLaunchFileFailure = 16, BadPermissionError = 17, DownloadConditionFailed = 18, BadLambdaAssociated = 19, InternalServerError = 20, RobotApplicationDoesNotExist = 21, DeploymentFleetDoesNotExist = 22, FleetDeploymentTimeout = 23 }
+	export enum DeploymentJobErrorCode { ResourceNotFound = 'ResourceNotFound', EnvironmentSetupError = 'EnvironmentSetupError', EtagMismatch = 'EtagMismatch', FailureThresholdBreached = 'FailureThresholdBreached', RobotDeploymentAborted = 'RobotDeploymentAborted', RobotDeploymentNoResponse = 'RobotDeploymentNoResponse', RobotAgentConnectionTimeout = 'RobotAgentConnectionTimeout', GreengrassDeploymentFailed = 'GreengrassDeploymentFailed', InvalidGreengrassGroup = 'InvalidGreengrassGroup', MissingRobotArchitecture = 'MissingRobotArchitecture', MissingRobotApplicationArchitecture = 'MissingRobotApplicationArchitecture', MissingRobotDeploymentResource = 'MissingRobotDeploymentResource', GreengrassGroupVersionDoesNotExist = 'GreengrassGroupVersionDoesNotExist', LambdaDeleted = 'LambdaDeleted', ExtractingBundleFailure = 'ExtractingBundleFailure', PreLaunchFileFailure = 'PreLaunchFileFailure', PostLaunchFileFailure = 'PostLaunchFileFailure', BadPermissionError = 'BadPermissionError', DownloadConditionFailed = 'DownloadConditionFailed', BadLambdaAssociated = 'BadLambdaAssociated', InternalServerError = 'InternalServerError', RobotApplicationDoesNotExist = 'RobotApplicationDoesNotExist', DeploymentFleetDoesNotExist = 'DeploymentFleetDoesNotExist', FleetDeploymentTimeout = 'FleetDeploymentTimeout' }
 
 
 	/** Information about a deployment configuration. */
@@ -841,7 +841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Architecture { X86_64 = 0, ARM64 = 1, ARMHF = 2 }
+	export enum Architecture { X86_64 = 'X86_64', ARM64 = 'ARM64', ARMHF = 'ARMHF' }
 
 	export interface ResourceAlreadyExistsException {
 	}
@@ -928,9 +928,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RobotSoftwareSuiteType { ROS = 0, ROS2 = 1, General = 2 }
+	export enum RobotSoftwareSuiteType { ROS = 'ROS', ROS2 = 'ROS2', General = 'General' }
 
-	export enum RobotSoftwareSuiteVersionType { Kinetic = 0, Melodic = 1, Dashing = 2, Foxy = 3 }
+	export enum RobotSoftwareSuiteVersionType { Kinetic = 'Kinetic', Melodic = 'Melodic', Dashing = 'Dashing', Foxy = 'Foxy' }
 
 
 	/** The object that contains the Docker image URI for either your robot or simulation applications. */
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SimulationSoftwareSuiteType { Gazebo = 0, RosbagPlay = 1, SimulationRuntime = 2 }
+	export enum SimulationSoftwareSuiteType { Gazebo = 'Gazebo', RosbagPlay = 'RosbagPlay', SimulationRuntime = 'SimulationRuntime' }
 
 
 	/** Information about a rendering engine. */
@@ -1073,7 +1073,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RenderingEngineType { OGRE = 0 }
+	export enum RenderingEngineType { OGRE = 'OGRE' }
 
 	export interface CreateSimulationApplicationVersionResponse {
 		arn?: string;
@@ -1232,9 +1232,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorldExportJobStatus { Pending = 0, Running = 1, Completed = 2, Failed = 3, Canceling = 4, Canceled = 5 }
+	export enum WorldExportJobStatus { Pending = 'Pending', Running = 'Running', Completed = 'Completed', Failed = 'Failed', Canceling = 'Canceling', Canceled = 'Canceled' }
 
-	export enum WorldExportJobErrorCode { InternalServiceError = 0, LimitExceeded = 1, ResourceNotFound = 2, RequestThrottled = 3, InvalidInput = 4, AccessDenied = 5 }
+	export enum WorldExportJobErrorCode { InternalServiceError = 'InternalServiceError', LimitExceeded = 'LimitExceeded', ResourceNotFound = 'ResourceNotFound', RequestThrottled = 'RequestThrottled', InvalidInput = 'InvalidInput', AccessDenied = 'AccessDenied' }
 
 	export interface CreateWorldGenerationJobResponse {
 		arn?: string;
@@ -1267,9 +1267,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorldGenerationJobStatus { Pending = 0, Running = 1, Completed = 2, Failed = 3, PartialFailed = 4, Canceling = 5, Canceled = 6 }
+	export enum WorldGenerationJobStatus { Pending = 'Pending', Running = 'Running', Completed = 'Completed', Failed = 'Failed', PartialFailed = 'PartialFailed', Canceling = 'Canceling', Canceled = 'Canceled' }
 
-	export enum WorldGenerationJobErrorCode { InternalServiceError = 0, LimitExceeded = 1, ResourceNotFound = 2, RequestThrottled = 3, InvalidInput = 4, AllWorldGenerationFailed = 5 }
+	export enum WorldGenerationJobErrorCode { InternalServiceError = 'InternalServiceError', LimitExceeded = 'LimitExceeded', ResourceNotFound = 'ResourceNotFound', RequestThrottled = 'RequestThrottled', InvalidInput = 'InvalidInput', AllWorldGenerationFailed = 'AllWorldGenerationFailed' }
 
 
 	/** <p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p> <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans. </p> */
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RobotStatus { Available = 0, Registered = 1, PendingNewDeployment = 2, Deploying = 3, Failed = 4, InSync = 5, NoResponse = 6 }
+	export enum RobotStatus { Available = 'Available', Registered = 'Registered', PendingNewDeployment = 'PendingNewDeployment', Deploying = 'Deploying', Failed = 'Failed', InSync = 'InSync', NoResponse = 'NoResponse' }
 
 
 	/** Information about the progress of a deployment job. */
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RobotDeploymentStep { Validating = 0, DownloadingExtracting = 1, ExecutingDownloadCondition = 2, ExecutingPreLaunch = 3, Launching = 4, ExecutingPostLaunch = 5, Finished = 6 }
+	export enum RobotDeploymentStep { Validating = 'Validating', DownloadingExtracting = 'DownloadingExtracting', ExecutingDownloadCondition = 'ExecutingDownloadCondition', ExecutingPreLaunch = 'ExecutingPreLaunch', Launching = 'Launching', ExecutingPostLaunch = 'ExecutingPostLaunch', Finished = 'Finished' }
 
 
 	/** Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html. */
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SimulationJobBatchStatus { Pending = 0, InProgress = 1, Failed = 2, Completed = 3, Canceled = 4, Canceling = 5, Completing = 6, TimingOut = 7, TimedOut = 8 }
+	export enum SimulationJobBatchStatus { Pending = 'Pending', InProgress = 'InProgress', Failed = 'Failed', Completed = 'Completed', Canceled = 'Canceled', Canceling = 'Canceling', Completing = 'Completing', TimingOut = 'TimingOut', TimedOut = 'TimedOut' }
 
 
 	/** Information about the batch policy. */
@@ -1787,7 +1787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SimulationJobBatchErrorCode { InternalServiceError = 0 }
+	export enum SimulationJobBatchErrorCode { InternalServiceError = 'InternalServiceError' }
 
 
 	/** Information about a failed create simulation job request. */

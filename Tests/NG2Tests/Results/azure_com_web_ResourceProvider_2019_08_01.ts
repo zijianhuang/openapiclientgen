@@ -548,11 +548,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentLocationsHostingEnvironmentsEnvironmentCapacitiesComputeMode { Shared = 0, Dedicated = 1, Dynamic = 2 }
+	export enum DeploymentLocationsHostingEnvironmentsEnvironmentCapacitiesComputeMode { Shared = 'Shared', Dedicated = 'Dedicated', Dynamic = 'Dynamic' }
 
-	export enum DeploymentLocationsHostingEnvironmentsEnvironmentCapacitiesWorkerSize { Small = 0, Medium = 1, Large = 2, D1 = 3, D2 = 4, D3 = 5, NestedSmall = 6, Default = 7 }
+	export enum DeploymentLocationsHostingEnvironmentsEnvironmentCapacitiesWorkerSize { Small = 'Small', Medium = 'Medium', Large = 'Large', D1 = 'D1', D2 = 'D2', D3 = 'D3', NestedSmall = 'NestedSmall', Default = 'Default' }
 
-	export enum DeploymentLocationsHostingEnvironmentsInternalLoadBalancingMode { None = 0, Web = 1, Publishing = 2 }
+	export enum DeploymentLocationsHostingEnvironmentsInternalLoadBalancingMode { None = 'None', Web = 'Web', Publishing = 'Publishing' }
 
 	export interface DeploymentLocationsHostingEnvironmentsNetworkAccessControlList {
 
@@ -592,11 +592,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentLocationsHostingEnvironmentsNetworkAccessControlListAction { Permit = 0, Deny = 1 }
+	export enum DeploymentLocationsHostingEnvironmentsNetworkAccessControlListAction { Permit = 'Permit', Deny = 'Deny' }
 
-	export enum DeploymentLocationsHostingEnvironmentsProvisioningState { Succeeded = 0, Failed = 1, Canceled = 2, InProgress = 3, Deleting = 4 }
+	export enum DeploymentLocationsHostingEnvironmentsProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', InProgress = 'InProgress', Deleting = 'Deleting' }
 
-	export enum DeploymentLocationsHostingEnvironmentsStatus { Preparing = 0, Ready = 1, Scaling = 2, Deleting = 3 }
+	export enum DeploymentLocationsHostingEnvironmentsStatus { Preparing = 'Preparing', Ready = 'Ready', Scaling = 'Scaling', Deleting = 'Deleting' }
 
 	export interface DeploymentLocationsHostingEnvironmentsVipMappings {
 
@@ -973,7 +973,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceNameAvailabilityReason { Invalid = 0, AlreadyExists = 1 }
+	export enum ResourceNameAvailabilityReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** Resource name availability request content. */
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceNameAvailabilityRequestType { Site = 0, Slot = 1, HostingEnvironment = 2, PublishingUser = 3, 'Microsoft.Web/sites' = 4, 'Microsoft.Web/sites/slots' = 5, 'Microsoft.Web/hostingEnvironments' = 6, 'Microsoft.Web/publishingUsers' = 7 }
+	export enum ResourceNameAvailabilityRequestType { Site = 'Site', Slot = 'Slot', HostingEnvironment = 'HostingEnvironment', PublishingUser = 'PublishingUser', 'Microsoft.Web/sites' = 'Microsoft.Web/sites', 'Microsoft.Web/sites/slots' = 'Microsoft.Web/sites/slots', 'Microsoft.Web/hostingEnvironments' = 'Microsoft.Web/hostingEnvironments', 'Microsoft.Web/publishingUsers' = 'Microsoft.Web/publishingUsers' }
 
 
 	/** Collection of SKU information. */
@@ -1266,7 +1266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidateRequestType { ServerFarm = 0, Site = 1 }
+	export enum ValidateRequestType { ServerFarm = 'ServerFarm', Site = 'Site' }
 
 
 	/** Describes the result of resource validation. */
@@ -1646,7 +1646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListGeoRegionsSku { Free = 0, Shared = 1, Basic = 2, Standard = 3, Premium = 4, Dynamic = 5, Isolated = 6, PremiumV2 = 7, ElasticPremium = 8, ElasticIsolated = 9 }
+	export enum ListGeoRegionsSku { Free = 'Free', Shared = 'Shared', Basic = 'Basic', Standard = 'Standard', Premium = 'Premium', Dynamic = 'Dynamic', Isolated = 'Isolated', PremiumV2 = 'PremiumV2', ElasticPremium = 'ElasticPremium', ElasticIsolated = 'ElasticIsolated' }
 
 	export interface ListSiteIdentifiersAssignedToHostNamePostBody {
 

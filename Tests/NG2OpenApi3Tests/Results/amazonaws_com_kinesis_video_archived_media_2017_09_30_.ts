@@ -16,7 +16,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipFragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
+	export enum ClipFragmentSelectorType { PRODUCER_TIMESTAMP = 'PRODUCER_TIMESTAMP', SERVER_TIMESTAMP = 'SERVER_TIMESTAMP' }
 
 
 	/** The range of timestamps for which to return fragments. */
@@ -149,7 +149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DASHFragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
+	export enum DASHFragmentSelectorType { PRODUCER_TIMESTAMP = 'PRODUCER_TIMESTAMP', SERVER_TIMESTAMP = 'SERVER_TIMESTAMP' }
 
 
 	/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <p>The values in <code>DASHimestampRange</code> are inclusive. Fragments that start exactly at or after the start time are included in the session. Fragments that start before the start time and continue past it are not included in the session.</p> */
@@ -184,7 +184,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HLSFragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
+	export enum HLSFragmentSelectorType { PRODUCER_TIMESTAMP = 'PRODUCER_TIMESTAMP', SERVER_TIMESTAMP = 'SERVER_TIMESTAMP' }
 
 
 	/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> */
@@ -243,7 +243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageError { NO_MEDIA = 0, MEDIA_ERROR = 1 }
+	export enum ImageError { NO_MEDIA = 'NO_MEDIA', MEDIA_ERROR = 'MEDIA_ERROR' }
 
 	export interface GetMediaForFragmentListOutput {
 		Payload?: string;
@@ -301,7 +301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
+	export enum FragmentSelectorType { PRODUCER_TIMESTAMP = 'PRODUCER_TIMESTAMP', SERVER_TIMESTAMP = 'SERVER_TIMESTAMP' }
 
 
 	/** The range of timestamps for which to return fragments. */
@@ -355,11 +355,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerFormat { FRAGMENTED_MP4 = 0, MPEG_TS = 1 }
+	export enum ContainerFormat { FRAGMENTED_MP4 = 'FRAGMENTED_MP4', MPEG_TS = 'MPEG_TS' }
 
-	export enum DASHDisplayFragmentNumber { ALWAYS = 0, NEVER = 1 }
+	export enum DASHDisplayFragmentNumber { ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
-	export enum DASHDisplayFragmentTimestamp { ALWAYS = 0, NEVER = 1 }
+	export enum DASHDisplayFragmentTimestamp { ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
 
 	/** Contains the range of timestamps for the requested media, and the source of the timestamps.  */
@@ -379,9 +379,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DASHPlaybackMode { LIVE = 0, LIVE_REPLAY = 1, ON_DEMAND = 2 }
+	export enum DASHPlaybackMode { LIVE = 'LIVE', LIVE_REPLAY = 'LIVE_REPLAY', ON_DEMAND = 'ON_DEMAND' }
 
-	export enum Format { JPEG = 0, PNG = 1 }
+	export enum Format { JPEG = 'JPEG', PNG = 'PNG' }
 
 	export interface FormatConfig {
 	}
@@ -393,7 +393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FormatConfigKey { JPEGQuality = 0 }
+	export enum FormatConfigKey { JPEGQuality = 'JPEGQuality' }
 
 
 	/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p> */
@@ -470,7 +470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HLSPlaybackMode { LIVE = 0, LIVE_REPLAY = 1, ON_DEMAND = 2 }
+	export enum HLSPlaybackMode { LIVE = 'LIVE', LIVE_REPLAY = 'LIVE_REPLAY', ON_DEMAND = 'ON_DEMAND' }
 
 
 	/** Contains the range of timestamps for the requested media, and the source of the timestamps. */
@@ -490,9 +490,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HLSDiscontinuityMode { ALWAYS = 0, NEVER = 1, ON_DISCONTINUITY = 2 }
+	export enum HLSDiscontinuityMode { ALWAYS = 'ALWAYS', NEVER = 'NEVER', ON_DISCONTINUITY = 'ON_DISCONTINUITY' }
 
-	export enum HLSDisplayFragmentTimestamp { ALWAYS = 0, NEVER = 1 }
+	export enum HLSDisplayFragmentTimestamp { ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
 	export interface GetHLSStreamingSessionURLInput {
 		StreamName?: string;
@@ -529,7 +529,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
+	export enum ImageSelectorType { PRODUCER_TIMESTAMP = 'PRODUCER_TIMESTAMP', SERVER_TIMESTAMP = 'SERVER_TIMESTAMP' }
 
 	export interface GetImagesInput {
 		StreamName?: string;

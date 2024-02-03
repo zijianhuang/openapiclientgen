@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BusinessItemHouseHouse { Commons = 0, Lords = 1 }
+	export enum BusinessItemHouseHouse { Commons = 'Commons', Lords = 'Lords' }
 
 	export interface BusinessItemResource {
 		links?: Array<Link>;
@@ -185,11 +185,11 @@ export namespace MyNS {
 
 	}
 
-	export enum House { Commons = 0, Lords = 1 }
+	export enum House { Commons = 'Commons', Lords = 'Lords' }
 
-	export enum ParliamentaryConclusion { NotConcluded = 0, CanRatify = 1, CantRatify = 2 }
+	export enum ParliamentaryConclusion { NotConcluded = 'NotConcluded', CanRatify = 'CanRatify', CantRatify = 'CantRatify' }
 
-	export enum ParliamentaryProcess { NotConcluded = 0, Concluded = 1 }
+	export enum ParliamentaryProcess { NotConcluded = 'NotConcluded', Concluded = 'Concluded' }
 
 	export interface SeriesMembership {
 		description?: string | null;
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SeriesMembershipType { CountrySeriesMembership = 0, EuropeanUnionSeriesMembership = 1, MiscellaneousSeriesMembership = 2 }
+	export enum SeriesMembershipType { CountrySeriesMembership = 'CountrySeriesMembership', EuropeanUnionSeriesMembership = 'EuropeanUnionSeriesMembership', MiscellaneousSeriesMembership = 'MiscellaneousSeriesMembership' }
 
 	export interface Treaty {
 		commandPaperNumber?: number | null;

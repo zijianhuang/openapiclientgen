@@ -90,7 +90,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticLevel { UNKNOWN = 0, INFORMATION = 1, WARNING = 2, ERROR = 3 }
+	export enum DiagnosticLevel { UNKNOWN = 'UNKNOWN', INFORMATION = 'INFORMATION', WARNING = 'WARNING', ERROR = 'ERROR' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -140,7 +140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** BaseType that describes a service-backed Type. */
@@ -320,7 +320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputMappingLocation { UNKNOWN = 0, PATH = 1, QUERY = 2, BODY = 3, HEADER = 4 }
+	export enum InputMappingLocation { UNKNOWN = 'UNKNOWN', PATH = 'PATH', QUERY = 'QUERY', BODY = 'BODY', HEADER = 'HEADER' }
 
 
 	/** Options for how to validate and process properties on a resource. */
@@ -350,9 +350,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationOptionsSchemaValidation { UNKNOWN = 0, IGNORE = 1, IGNORE_WITH_WARNINGS = 2, FAIL = 3 }
+	export enum ValidationOptionsSchemaValidation { UNKNOWN = 'UNKNOWN', IGNORE = 'IGNORE', IGNORE_WITH_WARNINGS = 'IGNORE_WITH_WARNINGS', FAIL = 'FAIL' }
 
-	export enum ValidationOptionsUndeclaredProperties { UNKNOWN = 0, INCLUDE = 1, IGNORE = 2, INCLUDE_WITH_WARNINGS = 3, IGNORE_WITH_WARNINGS = 4, FAIL = 5 }
+	export enum ValidationOptionsUndeclaredProperties { UNKNOWN = 'UNKNOWN', INCLUDE = 'INCLUDE', IGNORE = 'IGNORE', INCLUDE_WITH_WARNINGS = 'INCLUDE_WITH_WARNINGS', IGNORE_WITH_WARNINGS = 'IGNORE_WITH_WARNINGS', FAIL = 'FAIL' }
 
 
 	/** The credential used by Deployment Manager and TypeProvider. Only one of the options is permitted. */
@@ -536,7 +536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BulkInsertOperationStatusStatus { STATUS_UNSPECIFIED = 0, CREATING = 1, ROLLING_BACK = 2, DONE = 3 }
+	export enum BulkInsertOperationStatusStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', CREATING = 'CREATING', ROLLING_BACK = 'ROLLING_BACK', DONE = 'DONE' }
 
 
 	/** Holds the composite type. */
@@ -935,9 +935,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfoState { UNSPECIFIED = 0, PROPAGATING = 1, PROPAGATED = 2, ABANDONED = 3, FAILED = 4, DONE = 5 }
+	export enum SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfoState { UNSPECIFIED = 'UNSPECIFIED', PROPAGATING = 'PROPAGATING', PROPAGATED = 'PROPAGATED', ABANDONED = 'ABANDONED', FAILED = 'FAILED', DONE = 'DONE' }
 
-	export enum OperationStatus { PENDING = 0, RUNNING = 1, DONE = 2 }
+	export enum OperationStatus { PENDING = 'PENDING', RUNNING = 'RUNNING', DONE = 'DONE' }
 
 	export interface OperationWarnings {
 
@@ -966,7 +966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationWarningsCode { DEPRECATED_RESOURCE_USED = 0, NO_RESULTS_ON_PAGE = 1, UNREACHABLE = 2, NEXT_HOP_ADDRESS_NOT_ASSIGNED = 3, NEXT_HOP_INSTANCE_NOT_FOUND = 4, NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 5, NEXT_HOP_CANNOT_IP_FORWARD = 6, NEXT_HOP_NOT_RUNNING = 7, INJECTED_KERNELS_DEPRECATED = 8, REQUIRED_TOS_AGREEMENT = 9, DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 10, RESOURCE_NOT_DELETED = 11, SINGLE_INSTANCE_PROPERTY_TEMPLATE = 12, NOT_CRITICAL_ERROR = 13, CLEANUP_FAILED = 14, FIELD_VALUE_OVERRIDEN = 15, RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 16, MISSING_TYPE_DEPENDENCY = 17, EXTERNAL_API_WARNING = 18, SCHEMA_VALIDATION_IGNORED = 19, UNDECLARED_PROPERTIES = 20, EXPERIMENTAL_TYPE_USED = 21, DEPRECATED_TYPE_USED = 22, PARTIAL_SUCCESS = 23, LARGE_DEPLOYMENT_WARNING = 24, NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 25, INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 26, LIST_OVERHEAD_QUOTA_EXCEED = 27 }
+	export enum OperationWarningsCode { DEPRECATED_RESOURCE_USED = 'DEPRECATED_RESOURCE_USED', NO_RESULTS_ON_PAGE = 'NO_RESULTS_ON_PAGE', UNREACHABLE = 'UNREACHABLE', NEXT_HOP_ADDRESS_NOT_ASSIGNED = 'NEXT_HOP_ADDRESS_NOT_ASSIGNED', NEXT_HOP_INSTANCE_NOT_FOUND = 'NEXT_HOP_INSTANCE_NOT_FOUND', NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 'NEXT_HOP_INSTANCE_NOT_ON_NETWORK', NEXT_HOP_CANNOT_IP_FORWARD = 'NEXT_HOP_CANNOT_IP_FORWARD', NEXT_HOP_NOT_RUNNING = 'NEXT_HOP_NOT_RUNNING', INJECTED_KERNELS_DEPRECATED = 'INJECTED_KERNELS_DEPRECATED', REQUIRED_TOS_AGREEMENT = 'REQUIRED_TOS_AGREEMENT', DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 'DISK_SIZE_LARGER_THAN_IMAGE_SIZE', RESOURCE_NOT_DELETED = 'RESOURCE_NOT_DELETED', SINGLE_INSTANCE_PROPERTY_TEMPLATE = 'SINGLE_INSTANCE_PROPERTY_TEMPLATE', NOT_CRITICAL_ERROR = 'NOT_CRITICAL_ERROR', CLEANUP_FAILED = 'CLEANUP_FAILED', FIELD_VALUE_OVERRIDEN = 'FIELD_VALUE_OVERRIDEN', RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 'RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING', MISSING_TYPE_DEPENDENCY = 'MISSING_TYPE_DEPENDENCY', EXTERNAL_API_WARNING = 'EXTERNAL_API_WARNING', SCHEMA_VALIDATION_IGNORED = 'SCHEMA_VALIDATION_IGNORED', UNDECLARED_PROPERTIES = 'UNDECLARED_PROPERTIES', EXPERIMENTAL_TYPE_USED = 'EXPERIMENTAL_TYPE_USED', DEPRECATED_TYPE_USED = 'DEPRECATED_TYPE_USED', PARTIAL_SUCCESS = 'PARTIAL_SUCCESS', LARGE_DEPLOYMENT_WARNING = 'LARGE_DEPLOYMENT_WARNING', NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 'NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE', INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 'INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB', LIST_OVERHEAD_QUOTA_EXCEED = 'LIST_OVERHEAD_QUOTA_EXCEED' }
 
 	export interface OperationWarningsData {
 
@@ -992,7 +992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompositeTypeStatus { UNKNOWN_STATUS = 0, DEPRECATED = 1, EXPERIMENTAL = 2, SUPPORTED = 3 }
+	export enum CompositeTypeStatus { UNKNOWN_STATUS = 'UNKNOWN_STATUS', DEPRECATED = 'DEPRECATED', EXPERIMENTAL = 'EXPERIMENTAL', SUPPORTED = 'SUPPORTED' }
 
 
 	/** Files that make up the template contents of a template type. */
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateContentsInterpreter { UNKNOWN_INTERPRETER = 0, PYTHON = 1, JINJA = 2 }
+	export enum TemplateContentsInterpreter { UNKNOWN_INTERPRETER = 'UNKNOWN_INTERPRETER', PYTHON = 'PYTHON', JINJA = 'JINJA' }
 
 
 	/** A response that returns all Composite Types supported by Deployment Manager */
@@ -1746,9 +1746,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceUpdateIntent { CREATE_OR_ACQUIRE = 0, DELETE = 1, ACQUIRE = 2, UPDATE = 3, ABANDON = 4, CREATE = 5 }
+	export enum ResourceUpdateIntent { CREATE_OR_ACQUIRE = 'CREATE_OR_ACQUIRE', DELETE = 'DELETE', ACQUIRE = 'ACQUIRE', UPDATE = 'UPDATE', ABANDON = 'ABANDON', CREATE = 'CREATE' }
 
-	export enum ResourceUpdateState { PENDING = 0, IN_PROGRESS = 1, IN_PREVIEW = 2, FAILED = 3, ABORTED = 4 }
+	export enum ResourceUpdateState { PENDING = 'PENDING', IN_PROGRESS = 'IN_PROGRESS', IN_PREVIEW = 'IN_PREVIEW', FAILED = 'FAILED', ABORTED = 'ABORTED' }
 
 	export interface ResourceUpdateWarnings {
 
@@ -2641,9 +2641,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Deploymentmanager_deployments_insertCreatePolicy { CREATE_OR_ACQUIRE = 0, ACQUIRE = 1, CREATE = 2 }
+	export enum Deploymentmanager_deployments_insertCreatePolicy { CREATE_OR_ACQUIRE = 'CREATE_OR_ACQUIRE', ACQUIRE = 'ACQUIRE', CREATE = 'CREATE' }
 
-	export enum Deploymentmanager_deployments_deleteDeletePolicy { DELETE = 0, ABANDON = 1 }
+	export enum Deploymentmanager_deployments_deleteDeletePolicy { DELETE = 'DELETE', ABANDON = 'ABANDON' }
 
 }
 

@@ -401,7 +401,7 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum Language { cs = 0, en = 1, de = 2, es = 3, fr = 4, pl = 5, pt = 6 }
+	export enum Language { cs = 'cs', en = 'en', de = 'de', es = 'es', fr = 'fr', pl = 'pl', pt = 'pt' }
 
 	export interface Point_PointAlerts {
 		data?: string | null;
@@ -4481,7 +4481,7 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum Units { auto = 0, metric = 1, us = 2, uk = 3, ca = 4 }
+	export enum Units { auto = 'auto', metric = 'metric', us = 'us', uk = 'uk', ca = 'ca' }
 
 	@Injectable()
 	export class MyClient {

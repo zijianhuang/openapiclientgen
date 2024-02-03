@@ -28,7 +28,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlarmModelVersionStatus { ACTIVE = 0, ACTIVATING = 1, INACTIVE = 2, FAILED = 3 }
+	export enum AlarmModelVersionStatus { ACTIVE = 'ACTIVE', ACTIVATING = 'ACTIVATING', INACTIVE = 'INACTIVE', FAILED = 'FAILED' }
 
 
 	/** Metadata that can be used to manage the resource. */
@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { GREATER = 0, GREATER_OR_EQUAL = 1, LESS = 2, LESS_OR_EQUAL = 3, EQUAL = 4, NOT_EQUAL = 5 }
+	export enum ComparisonOperator { GREATER = 'GREATER', GREATER_OR_EQUAL = 'GREATER_OR_EQUAL', LESS = 'LESS', LESS_OR_EQUAL = 'LESS_OR_EQUAL', EQUAL = 'EQUAL', NOT_EQUAL = 'NOT_EQUAL' }
 
 
 	/** Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model. */
@@ -181,7 +181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PayloadType { STRING = 0, JSON = 1 }
+	export enum PayloadType { STRING = 'STRING', JSON = 'JSON' }
 
 
 	/** Contains the configuration information of SMS notifications. */
@@ -805,9 +805,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectorModelVersionStatus { ACTIVE = 0, ACTIVATING = 1, INACTIVE = 2, DEPRECATED = 3, DRAFT = 4, PAUSED = 5, FAILED = 6 }
+	export enum DetectorModelVersionStatus { ACTIVE = 'ACTIVE', ACTIVATING = 'ACTIVATING', INACTIVE = 'INACTIVE', DEPRECATED = 'DEPRECATED', DRAFT = 'DRAFT', PAUSED = 'PAUSED', FAILED = 'FAILED' }
 
-	export enum EvaluationMethod { BATCH = 0, SERIAL = 1 }
+	export enum EvaluationMethod { BATCH = 'BATCH', SERIAL = 'SERIAL' }
 
 
 	/** Information that defines a state of a detector. */
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputStatus { CREATING = 0, UPDATING = 1, ACTIVE = 2, DELETING = 3 }
+	export enum InputStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 
 	/** The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors.  */
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisStatus { RUNNING = 0, COMPLETE = 1, FAILED = 2 }
+	export enum AnalysisStatus { RUNNING = 'RUNNING', COMPLETE = 'COMPLETE', FAILED = 'FAILED' }
 
 	export interface DescribeInputResponse {
 		input?: Input;
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingLevel { ERROR = 0, INFO = 1, DEBUG = 2 }
+	export enum LoggingLevel { ERROR = 'ERROR', INFO = 'INFO', DEBUG = 'DEBUG' }
 
 
 	/** The detector model and the specific detectors (instances) for which the logging level is given. */
@@ -1529,7 +1529,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisResultLevel { INFO = 0, WARNING = 1, ERROR = 2 }
+	export enum AnalysisResultLevel { INFO = 'INFO', WARNING = 'WARNING', ERROR = 'ERROR' }
 
 
 	/** Contains information that you can use to locate the field in your detector model that the analysis result references. */

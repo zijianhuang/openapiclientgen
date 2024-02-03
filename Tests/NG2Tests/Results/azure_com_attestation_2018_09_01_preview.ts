@@ -102,9 +102,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Policy_GetApi_version { '2018-09-01-preview' = 0 }
+	export enum Policy_GetApi_version { '2018-09-01-preview' = '2018-09-01-preview' }
 
-	export enum Policy_GetTee { SgxEnclave = 0, OpenEnclave = 1, CyResComponent = 2, AzureGuest = 3 }
+	export enum Policy_GetTee { SgxEnclave = 'SgxEnclave', OpenEnclave = 'OpenEnclave', CyResComponent = 'CyResComponent', AzureGuest = 'AzureGuest' }
 
 }
 

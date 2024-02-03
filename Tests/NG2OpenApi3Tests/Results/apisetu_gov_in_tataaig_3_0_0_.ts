@@ -1298,7 +1298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PodocPostBodyFormat { pdf = 0 }
+	export enum PodocPostBodyFormat { pdf = 'pdf' }
 
 }
 

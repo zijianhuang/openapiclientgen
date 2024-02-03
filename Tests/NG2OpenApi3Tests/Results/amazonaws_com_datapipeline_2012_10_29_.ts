@@ -975,7 +975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatorType { EQ = 0, REF_EQ = 1, LE = 2, GE = 3, BETWEEN = 4 }
+	export enum OperatorType { EQ = 'EQ', REF_EQ = 'REF_EQ', LE = 'LE', GE = 'GE', BETWEEN = 'BETWEEN' }
 
 
 	/** Contains the output of RemoveTags. */
@@ -1188,7 +1188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatus { FINISHED = 0, FAILED = 1, FALSE = 2 }
+	export enum TaskStatus { FINISHED = 'FINISHED', FAILED = 'FAILED', FALSE = 'FALSE' }
 
 
 	/** Contains the output of ValidatePipelineDefinition. */
@@ -1420,43 +1420,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ActivatePipelineX_Amz_Target { 'DataPipeline.ActivatePipeline' = 0 }
+	export enum ActivatePipelineX_Amz_Target { 'DataPipeline.ActivatePipeline' = 'DataPipeline.ActivatePipeline' }
 
-	export enum AddTagsX_Amz_Target { 'DataPipeline.AddTags' = 0 }
+	export enum AddTagsX_Amz_Target { 'DataPipeline.AddTags' = 'DataPipeline.AddTags' }
 
-	export enum CreatePipelineX_Amz_Target { 'DataPipeline.CreatePipeline' = 0 }
+	export enum CreatePipelineX_Amz_Target { 'DataPipeline.CreatePipeline' = 'DataPipeline.CreatePipeline' }
 
-	export enum DeactivatePipelineX_Amz_Target { 'DataPipeline.DeactivatePipeline' = 0 }
+	export enum DeactivatePipelineX_Amz_Target { 'DataPipeline.DeactivatePipeline' = 'DataPipeline.DeactivatePipeline' }
 
-	export enum DeletePipelineX_Amz_Target { 'DataPipeline.DeletePipeline' = 0 }
+	export enum DeletePipelineX_Amz_Target { 'DataPipeline.DeletePipeline' = 'DataPipeline.DeletePipeline' }
 
-	export enum DescribeObjectsX_Amz_Target { 'DataPipeline.DescribeObjects' = 0 }
+	export enum DescribeObjectsX_Amz_Target { 'DataPipeline.DescribeObjects' = 'DataPipeline.DescribeObjects' }
 
-	export enum DescribePipelinesX_Amz_Target { 'DataPipeline.DescribePipelines' = 0 }
+	export enum DescribePipelinesX_Amz_Target { 'DataPipeline.DescribePipelines' = 'DataPipeline.DescribePipelines' }
 
-	export enum EvaluateExpressionX_Amz_Target { 'DataPipeline.EvaluateExpression' = 0 }
+	export enum EvaluateExpressionX_Amz_Target { 'DataPipeline.EvaluateExpression' = 'DataPipeline.EvaluateExpression' }
 
-	export enum GetPipelineDefinitionX_Amz_Target { 'DataPipeline.GetPipelineDefinition' = 0 }
+	export enum GetPipelineDefinitionX_Amz_Target { 'DataPipeline.GetPipelineDefinition' = 'DataPipeline.GetPipelineDefinition' }
 
-	export enum ListPipelinesX_Amz_Target { 'DataPipeline.ListPipelines' = 0 }
+	export enum ListPipelinesX_Amz_Target { 'DataPipeline.ListPipelines' = 'DataPipeline.ListPipelines' }
 
-	export enum PollForTaskX_Amz_Target { 'DataPipeline.PollForTask' = 0 }
+	export enum PollForTaskX_Amz_Target { 'DataPipeline.PollForTask' = 'DataPipeline.PollForTask' }
 
-	export enum PutPipelineDefinitionX_Amz_Target { 'DataPipeline.PutPipelineDefinition' = 0 }
+	export enum PutPipelineDefinitionX_Amz_Target { 'DataPipeline.PutPipelineDefinition' = 'DataPipeline.PutPipelineDefinition' }
 
-	export enum QueryObjectsX_Amz_Target { 'DataPipeline.QueryObjects' = 0 }
+	export enum QueryObjectsX_Amz_Target { 'DataPipeline.QueryObjects' = 'DataPipeline.QueryObjects' }
 
-	export enum RemoveTagsX_Amz_Target { 'DataPipeline.RemoveTags' = 0 }
+	export enum RemoveTagsX_Amz_Target { 'DataPipeline.RemoveTags' = 'DataPipeline.RemoveTags' }
 
-	export enum ReportTaskProgressX_Amz_Target { 'DataPipeline.ReportTaskProgress' = 0 }
+	export enum ReportTaskProgressX_Amz_Target { 'DataPipeline.ReportTaskProgress' = 'DataPipeline.ReportTaskProgress' }
 
-	export enum ReportTaskRunnerHeartbeatX_Amz_Target { 'DataPipeline.ReportTaskRunnerHeartbeat' = 0 }
+	export enum ReportTaskRunnerHeartbeatX_Amz_Target { 'DataPipeline.ReportTaskRunnerHeartbeat' = 'DataPipeline.ReportTaskRunnerHeartbeat' }
 
-	export enum SetStatusX_Amz_Target { 'DataPipeline.SetStatus' = 0 }
+	export enum SetStatusX_Amz_Target { 'DataPipeline.SetStatus' = 'DataPipeline.SetStatus' }
 
-	export enum SetTaskStatusX_Amz_Target { 'DataPipeline.SetTaskStatus' = 0 }
+	export enum SetTaskStatusX_Amz_Target { 'DataPipeline.SetTaskStatus' = 'DataPipeline.SetTaskStatus' }
 
-	export enum ValidatePipelineDefinitionX_Amz_Target { 'DataPipeline.ValidatePipelineDefinition' = 0 }
+	export enum ValidatePipelineDefinitionX_Amz_Target { 'DataPipeline.ValidatePipelineDefinition' = 'DataPipeline.ValidatePipelineDefinition' }
 
 }
 

@@ -132,7 +132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthInfoTokenType { PAT = 0, OAuth = 1 }
+	export enum AuthInfoTokenType { PAT = 'PAT', OAuth = 'OAuth' }
 
 
 	/** The authorization properties for accessing the source code repository. */
@@ -232,7 +232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseImageDependencyType { BuildTime = 0, RunTime = 1 }
+	export enum BaseImageDependencyType { BuildTime = 'BuildTime', RunTime = 'RunTime' }
 
 
 	/** The trigger based on base image dependency. */
@@ -295,11 +295,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BaseImageTriggerBaseImageTriggerType { All = 0, Runtime = 1 }
+	export enum BaseImageTriggerBaseImageTriggerType { All = 'All', Runtime = 'Runtime' }
 
-	export enum BaseImageTriggerStatus { Disabled = 0, Enabled = 1 }
+	export enum BaseImageTriggerStatus { Disabled = 'Disabled', Enabled = 'Enabled' }
 
-	export enum BaseImageTriggerUpdateTriggerPayloadType { Default = 0, Token = 1 }
+	export enum BaseImageTriggerUpdateTriggerPayloadType { Default = 'Default', Token = 'Token' }
 
 
 	/** The properties for updating base image dependency trigger. */
@@ -469,7 +469,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecretObjectType { Opaque = 0, Vaultsecret = 1 }
+	export enum SecretObjectType { Opaque = 'Opaque', Vaultsecret = 'Vaultsecret' }
 
 
 	/** Describes the credential parameters for accessing the source registry. */
@@ -500,7 +500,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceRegistryCredentialsLoginMode { None = 0, Default = 1 }
+	export enum SourceRegistryCredentialsLoginMode { None = 'None', Default = 'Default' }
 
 
 	/** The parameters for a docker quick build. */
@@ -637,11 +637,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformPropertiesArchitecture { amd64 = 0, x86 = 1, _386 = 2, arm = 3, arm64 = 4 }
+	export enum PlatformPropertiesArchitecture { amd64 = 'amd64', x86 = 'x86', _386 = '386', arm = 'arm', arm64 = 'arm64' }
 
-	export enum PlatformPropertiesOs { Windows = 0, Linux = 1 }
+	export enum PlatformPropertiesOs { Windows = 'Windows', Linux = 'Linux' }
 
-	export enum PlatformPropertiesVariant { v6 = 0, v7 = 1, v8 = 2 }
+	export enum PlatformPropertiesVariant { v6 = 'v6', v7 = 'v7', v8 = 'v8' }
 
 
 	/** The Docker build step. */
@@ -1191,7 +1191,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityPropertiesType { SystemAssigned = 0, UserAssigned = 1, 'SystemAssigned, UserAssigned' = 2, None = 3 }
+	export enum IdentityPropertiesType { SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned', None = 'None' }
 
 	export interface UserIdentityProperties {
 
@@ -1603,9 +1603,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunPropertiesProvisioningState { Creating = 0, Updating = 1, Deleting = 2, Succeeded = 3, Failed = 4, Canceled = 5 }
+	export enum RunPropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
-	export enum RunPropertiesRunType { QuickBuild = 0, QuickRun = 1, AutoBuild = 2, AutoRun = 3 }
+	export enum RunPropertiesRunType { QuickBuild = 'QuickBuild', QuickRun = 'QuickRun', AutoBuild = 'AutoBuild', AutoRun = 'AutoRun' }
 
 
 	/** The source trigger that caused a run. */
@@ -1670,7 +1670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunPropertiesStatus { Queued = 0, Started = 1, Running = 2, Succeeded = 3, Failed = 4, Canceled = 5, Error = 6, Timeout = 7 }
+	export enum RunPropertiesStatus { Queued = 'Queued', Started = 'Started', Running = 'Running', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', Error = 'Error', Timeout = 'Timeout' }
 
 	export interface TimerTriggerDescriptor {
 
@@ -1922,7 +1922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourcePropertiesSourceControlType { Github = 0, VisualStudioTeamService = 1 }
+	export enum SourcePropertiesSourceControlType { Github = 'Github', VisualStudioTeamService = 'VisualStudioTeamService' }
 
 
 	/** The properties of a source based trigger. */
@@ -2217,7 +2217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStepPropertiesType { Docker = 0, FileTask = 1, EncodedTask = 2 }
+	export enum TaskStepPropertiesType { Docker = 'Docker', FileTask = 'FileTask', EncodedTask = 'EncodedTask' }
 
 
 	/** The properties of a trigger. */

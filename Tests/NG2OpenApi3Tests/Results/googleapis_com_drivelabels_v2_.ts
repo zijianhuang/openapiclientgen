@@ -255,7 +255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsDriveLabelsV2LabelPermissionRole { LABEL_ROLE_UNSPECIFIED = 0, READER = 1, APPLIER = 2, ORGANIZER = 3, EDITOR = 4 }
+	export enum GoogleAppsDriveLabelsV2LabelPermissionRole { LABEL_ROLE_UNSPECIFIED = 'LABEL_ROLE_UNSPECIFIED', READER = 'READER', APPLIER = 'APPLIER', ORGANIZER = 'ORGANIZER', EDITOR = 'EDITOR' }
 
 
 	/** Response for updating one or more Label Permissions. */
@@ -621,7 +621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsDriveLabelsV2FieldDateOptionsDateFormatType { DATE_FORMAT_UNSPECIFIED = 0, LONG_DATE = 1, SHORT_DATE = 2 }
+	export enum GoogleAppsDriveLabelsV2FieldDateOptionsDateFormatType { DATE_FORMAT_UNSPECIFIED = 'DATE_FORMAT_UNSPECIFIED', LONG_DATE = 'LONG_DATE', SHORT_DATE = 'SHORT_DATE' }
 
 
 	/** UI display hints for rendering a field. */
@@ -752,7 +752,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsDriveLabelsV2LifecycleState { STATE_UNSPECIFIED = 0, UNPUBLISHED_DRAFT = 1, PUBLISHED = 2, DISABLED = 3, DELETED = 4 }
+	export enum GoogleAppsDriveLabelsV2LifecycleState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UNPUBLISHED_DRAFT = 'UNPUBLISHED_DRAFT', PUBLISHED = 'PUBLISHED', DISABLED = 'DISABLED', DELETED = 'DELETED' }
 
 
 	/** Contains information about whether a label component should be considered locked. */
@@ -1535,7 +1535,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestView { LABEL_VIEW_BASIC = 0, LABEL_VIEW_FULL = 1 }
+	export enum GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestView { LABEL_VIEW_BASIC = 'LABEL_VIEW_BASIC', LABEL_VIEW_FULL = 'LABEL_VIEW_FULL' }
 
 
 	/** Provides control over how write requests are executed. When not specified, the last write wins. */
@@ -2014,7 +2014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsDriveLabelsV2LabelAppliedLabelPolicyCopyMode { COPY_MODE_UNSPECIFIED = 0, DO_NOT_COPY = 1, ALWAYS_COPY = 2, COPY_APPLIABLE = 3 }
+	export enum GoogleAppsDriveLabelsV2LabelAppliedLabelPolicyCopyMode { COPY_MODE_UNSPECIFIED = 'COPY_MODE_UNSPECIFIED', DO_NOT_COPY = 'DO_NOT_COPY', ALWAYS_COPY = 'ALWAYS_COPY', COPY_APPLIABLE = 'COPY_APPLIABLE' }
 
 
 	/** UI display hints for rendering the label. */
@@ -2058,7 +2058,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsDriveLabelsV2LabelLabelType { LABEL_TYPE_UNSPECIFIED = 0, SHARED = 1, ADMIN = 2, GOOGLE_APP = 3 }
+	export enum GoogleAppsDriveLabelsV2LabelLabelType { LABEL_TYPE_UNSPECIFIED = 'LABEL_TYPE_UNSPECIFIED', SHARED = 'SHARED', ADMIN = 'ADMIN', GOOGLE_APP = 'GOOGLE_APP' }
 
 
 	/** The capabilities related to this label when editing the label. */
@@ -2536,7 +2536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsDriveLabelsV2LabelLockState { STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETING = 2 }
+	export enum GoogleAppsDriveLabelsV2LabelLockState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 
 	/** The response to a ListLabelLocksRequest. */

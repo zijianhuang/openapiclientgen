@@ -91,9 +91,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageFormat { npm = 0, pypi = 1, maven = 2, nuget = 3, generic = 4 }
+	export enum PackageFormat { npm = 'npm', pypi = 'pypi', maven = 'maven', nuget = 'nuget', generic = 'generic' }
 
-	export enum ExternalConnectionStatus { Available = 0 }
+	export enum ExternalConnectionStatus { Available = 'Available' }
 
 	export interface AccessDeniedException {
 	}
@@ -249,7 +249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { Active = 0, Deleted = 1 }
+	export enum DomainStatus { Active = 'Active', Deleted = 'Deleted' }
 
 
 	/** A tag is a key-value pair that can be used to manage, search for, or filter resources in CodeArtifact. */
@@ -436,7 +436,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowPublish { ALLOW = 0, BLOCK = 1 }
+	export enum AllowPublish { ALLOW = 'ALLOW', BLOCK = 'BLOCK' }
 
 	export interface DeletePackageVersionsResult {
 		successfulVersions?: SuccessfulPackageVersionInfoMap;
@@ -604,7 +604,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageVersionStatus { Published = 0, Unfinished = 1, Unlisted = 2, Archived = 3, Disposed = 4, Deleted = 5 }
+	export enum PackageVersionStatus { Published = 'Published', Unfinished = 'Unfinished', Unlisted = 'Unlisted', Archived = 'Archived', Disposed = 'Disposed', Deleted = 'Deleted' }
 
 
 	/** Information about how a package version was added to a repository. */
@@ -644,7 +644,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageVersionOriginType { INTERNAL = 0, EXTERNAL = 1, UNKNOWN = 2 }
+	export enum PackageVersionOriginType { INTERNAL = 'INTERNAL', EXTERNAL = 'EXTERNAL', UNKNOWN = 'UNKNOWN' }
 
 	export interface DescribeRepositoryResult {
 		repository?: RepositoryDescription;
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowUpstream { ALLOW = 0, BLOCK = 1 }
+	export enum AllowUpstream { ALLOW = 'ALLOW', BLOCK = 'BLOCK' }
 
 	export interface PutRepositoryPermissionsPolicyResult {
 		policy?: ResourcePolicy;
@@ -1450,7 +1450,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HashAlgorithm { MD5 = 0, 'SHA-1' = 1, 'SHA-256' = 2, 'SHA-512' = 3 }
+	export enum HashAlgorithm { MD5 = 'MD5', 'SHA-1' = 'SHA-1', 'SHA-256' = 'SHA-256', 'SHA-512' = 'SHA-512' }
 
 	export interface ListDomainsRequest {
 		maxResults?: number | null;
@@ -1488,7 +1488,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageVersionSortType { PUBLISHED_TIME = 0 }
+	export enum PackageVersionSortType { PUBLISHED_TIME = 'PUBLISHED_TIME' }
 
 	export interface ListPackageVersionsRequest {
 	}
@@ -1540,7 +1540,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageVersionErrorCode { ALREADY_EXISTS = 0, MISMATCHED_REVISION = 1, MISMATCHED_STATUS = 2, NOT_ALLOWED = 3, NOT_FOUND = 4, SKIPPED = 5 }
+	export enum PackageVersionErrorCode { ALREADY_EXISTS = 'ALREADY_EXISTS', MISMATCHED_REVISION = 'MISMATCHED_REVISION', MISMATCHED_STATUS = 'MISMATCHED_STATUS', NOT_ALLOWED = 'NOT_ALLOWED', NOT_FOUND = 'NOT_FOUND', SKIPPED = 'SKIPPED' }
 
 
 	/** l An error associated with package.  */

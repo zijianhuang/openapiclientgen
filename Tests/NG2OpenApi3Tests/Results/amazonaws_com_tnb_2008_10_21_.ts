@@ -99,9 +99,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OnboardingState { CREATED = 0, ONBOARDED = 1, ERROR = 2 }
+	export enum OnboardingState { CREATED = 'CREATED', ONBOARDED = 'ONBOARDED', ERROR = 'ERROR' }
 
-	export enum OperationalState { ENABLED = 0, DISABLED = 1 }
+	export enum OperationalState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface TagMap {
 	}
@@ -113,7 +113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageState { IN_USE = 0, NOT_IN_USE = 1 }
+	export enum UsageState { IN_USE = 'IN_USE', NOT_IN_USE = 'NOT_IN_USE' }
 
 	export interface ServiceQuotaExceededException {
 	}
@@ -299,7 +299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VnfOperationalState { STARTED = 0, STOPPED = 1 }
+	export enum VnfOperationalState { STARTED = 'STARTED', STOPPED = 'STOPPED' }
 
 
 	/** <p>Details of resource associated with a network function.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p> */
@@ -339,7 +339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VnfInstantiationState { INSTANTIATED = 0, NOT_INSTANTIATED = 1 }
+	export enum VnfInstantiationState { INSTANTIATED = 'INSTANTIATED', NOT_INSTANTIATED = 'NOT_INSTANTIATED' }
 
 
 	/** <p>The metadata of a network function instance.</p> <p>A network function instance is a function in a function package .</p> */
@@ -634,7 +634,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NsState { INSTANTIATED = 0, NOT_INSTANTIATED = 1, IMPAIRED = 2, STOPPED = 3, DELETED = 4, INSTANTIATE_IN_PROGRESS = 5, UPDATE_IN_PROGRESS = 6, TERMINATE_IN_PROGRESS = 7 }
+	export enum NsState { INSTANTIATED = 'INSTANTIATED', NOT_INSTANTIATED = 'NOT_INSTANTIATED', IMPAIRED = 'IMPAIRED', STOPPED = 'STOPPED', DELETED = 'DELETED', INSTANTIATE_IN_PROGRESS = 'INSTANTIATE_IN_PROGRESS', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', TERMINATE_IN_PROGRESS = 'TERMINATE_IN_PROGRESS' }
 
 	export interface GetSolNetworkOperationOutput {
 
@@ -693,7 +693,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LcmOperationType { INSTANTIATE = 0, UPDATE = 1, TERMINATE = 2 }
+	export enum LcmOperationType { INSTANTIATE = 'INSTANTIATE', UPDATE = 'UPDATE', TERMINATE = 'TERMINATE' }
 
 
 	/** <p>Metadata related to a network operation occurrence.</p> <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p> */
@@ -723,7 +723,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NsLcmOperationState { PROCESSING = 0, COMPLETED = 1, FAILED = 2, CANCELLING = 3, CANCELLED = 4 }
+	export enum NsLcmOperationState { PROCESSING = 'PROCESSING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
 
 	/** <p>Gets the details of a network operation.</p> <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p> */
@@ -783,7 +783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatus { SCHEDULED = 0, STARTED = 1, IN_PROGRESS = 2, COMPLETED = 3, ERROR = 4, SKIPPED = 5, CANCELLED = 6 }
+	export enum TaskStatus { SCHEDULED = 'SCHEDULED', STARTED = 'STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', ERROR = 'ERROR', SKIPPED = 'SKIPPED', CANCELLED = 'CANCELLED' }
 
 	export interface GetSolNetworkPackageOutput {
 
@@ -1916,11 +1916,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NsdOnboardingState { CREATED = 0, ONBOARDED = 1, ERROR = 2 }
+	export enum NsdOnboardingState { CREATED = 'CREATED', ONBOARDED = 'ONBOARDED', ERROR = 'ERROR' }
 
-	export enum NsdOperationalState { ENABLED = 0, DISABLED = 1 }
+	export enum NsdOperationalState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum NsdUsageState { IN_USE = 0, NOT_IN_USE = 1 }
+	export enum NsdUsageState { IN_USE = 'IN_USE', NOT_IN_USE = 'NOT_IN_USE' }
 
 	export interface DeleteSolFunctionPackageInput {
 	}
@@ -1952,7 +1952,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DescriptorContentType { 'text/plain' = 0 }
+	export enum DescriptorContentType { 'text/plain' = 'text/plain' }
 
 	export interface GetSolFunctionInstanceInput {
 	}
@@ -1964,7 +1964,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageContentType { 'application/zip' = 0 }
+	export enum PackageContentType { 'application/zip' = 'application/zip' }
 
 	export interface GetSolFunctionPackageContentInput {
 	}
@@ -2227,7 +2227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateSolNetworkType { MODIFY_VNF_INFORMATION = 0 }
+	export enum UpdateSolNetworkType { MODIFY_VNF_INFORMATION = 'MODIFY_VNF_INFORMATION' }
 
 	export interface UpdateSolNetworkInstanceInput {
 		modifyVnfInfoData?: UpdateSolNetworkModify;

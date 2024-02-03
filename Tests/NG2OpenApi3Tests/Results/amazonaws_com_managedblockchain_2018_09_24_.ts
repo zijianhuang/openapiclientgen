@@ -274,7 +274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Edition { STARTER = 0, STANDARD = 1 }
+	export enum Edition { STARTER = 'STARTER', STANDARD = 'STANDARD' }
 
 
 	/** <p>A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p> <p>Applies only to Hyperledger Fabric.</p> */
@@ -299,7 +299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThresholdComparator { GREATER_THAN = 0, GREATER_THAN_OR_EQUAL_TO = 1 }
+	export enum ThresholdComparator { GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL_TO = 'GREATER_THAN_OR_EQUAL_TO' }
 
 	export interface CreateNodeOutput {
 		NodeId?: string;
@@ -345,7 +345,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StateDBType { LevelDB = 0, CouchDB = 1 }
+	export enum StateDBType { LevelDB = 'LevelDB', CouchDB = 'CouchDB' }
 
 	export interface CreateProposalOutput {
 		ProposalId?: string;
@@ -476,9 +476,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessorType { BILLING_TOKEN = 0 }
+	export enum AccessorType { BILLING_TOKEN = 'BILLING_TOKEN' }
 
-	export enum AccessorStatus { AVAILABLE = 0, PENDING_DELETION = 1, DELETED = 2 }
+	export enum AccessorStatus { AVAILABLE = 'AVAILABLE', PENDING_DELETION = 'PENDING_DELETION', DELETED = 'DELETED' }
 
 	export interface OutputTagMap {
 	}
@@ -577,7 +577,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberStatus { CREATING = 0, AVAILABLE = 1, CREATE_FAILED = 2, UPDATING = 3, DELETING = 4, DELETED = 5, INACCESSIBLE_ENCRYPTION_KEY = 6 }
+	export enum MemberStatus { CREATING = 'CREATING', AVAILABLE = 'AVAILABLE', CREATE_FAILED = 'CREATE_FAILED', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', INACCESSIBLE_ENCRYPTION_KEY = 'INACCESSIBLE_ENCRYPTION_KEY' }
 
 	export interface GetNetworkOutput {
 		Network?: Network;
@@ -634,7 +634,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Framework { HYPERLEDGER_FABRIC = 0, ETHEREUM = 1 }
+	export enum Framework { HYPERLEDGER_FABRIC = 'HYPERLEDGER_FABRIC', ETHEREUM = 'ETHEREUM' }
 
 
 	/** Attributes relevant to the network for the blockchain framework that the network uses. */
@@ -704,7 +704,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkStatus { CREATING = 0, AVAILABLE = 1, CREATE_FAILED = 2, DELETING = 3, DELETED = 4 }
+	export enum NetworkStatus { CREATING = 'CREATING', AVAILABLE = 'AVAILABLE', CREATE_FAILED = 'CREATE_FAILED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface GetNodeOutput {
 		Node?: Node;
@@ -820,7 +820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeStatus { CREATING = 0, AVAILABLE = 1, UNHEALTHY = 2, CREATE_FAILED = 3, UPDATING = 4, DELETING = 5, DELETED = 6, FAILED = 7, INACCESSIBLE_ENCRYPTION_KEY = 8 }
+	export enum NodeStatus { CREATING = 'CREATING', AVAILABLE = 'AVAILABLE', UNHEALTHY = 'UNHEALTHY', CREATE_FAILED = 'CREATE_FAILED', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', FAILED = 'FAILED', INACCESSIBLE_ENCRYPTION_KEY = 'INACCESSIBLE_ENCRYPTION_KEY' }
 
 	export interface GetProposalOutput {
 		Proposal?: Proposal;
@@ -901,7 +901,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProposalStatus { IN_PROGRESS = 0, APPROVED = 1, REJECTED = 2, EXPIRED = 3, ACTION_FAILED = 4 }
+	export enum ProposalStatus { IN_PROGRESS = 'IN_PROGRESS', APPROVED = 'APPROVED', REJECTED = 'REJECTED', EXPIRED = 'EXPIRED', ACTION_FAILED = 'ACTION_FAILED' }
 
 	export interface ListAccessorsOutput {
 		Accessors?: Array<AccessorSummary>;
@@ -992,7 +992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvitationStatus { PENDING = 0, ACCEPTED = 1, ACCEPTING = 2, REJECTED = 3, EXPIRED = 4 }
+	export enum InvitationStatus { PENDING = 'PENDING', ACCEPTED = 'ACCEPTED', ACCEPTING = 'ACCEPTING', REJECTED = 'REJECTED', EXPIRED = 'EXPIRED' }
 
 
 	/** A summary of network configuration properties. */
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoteValue { YES = 0, NO = 1 }
+	export enum VoteValue { YES = 'YES', NO = 'NO' }
 
 	export interface ListProposalsOutput {
 		Proposals?: Array<ProposalSummary>;

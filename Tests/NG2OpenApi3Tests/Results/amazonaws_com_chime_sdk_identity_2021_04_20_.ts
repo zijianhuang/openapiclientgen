@@ -206,7 +206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RespondsTo { STANDARD_MESSAGES = 0 }
+	export enum RespondsTo { STANDARD_MESSAGES = 'STANDARD_MESSAGES' }
 
 
 	/** Specifies the type of message that triggers a bot. */
@@ -236,9 +236,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StandardMessages { AUTO = 0, ALL = 1, MENTIONS = 2, NONE = 3 }
+	export enum StandardMessages { AUTO = 'AUTO', ALL = 'ALL', MENTIONS = 'MENTIONS', NONE = 'NONE' }
 
-	export enum TargetedMessages { ALL = 0, NONE = 1 }
+	export enum TargetedMessages { ALL = 'ALL', NONE = 'NONE' }
 
 	export interface CreateAppInstanceUserResponse {
 		AppInstanceUserArn?: string;
@@ -253,7 +253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpirationCriterion { CREATED_TIMESTAMP = 0 }
+	export enum ExpirationCriterion { CREATED_TIMESTAMP = 'CREATED_TIMESTAMP' }
 
 	export interface DescribeAppInstanceResponse {
 		AppInstance?: AppInstance;
@@ -515,7 +515,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppInstanceUserEndpointType { APNS = 0, APNS_SANDBOX = 1, GCM = 2 }
+	export enum AppInstanceUserEndpointType { APNS = 'APNS', APNS_SANDBOX = 'APNS_SANDBOX', GCM = 'GCM' }
 
 
 	/** The attributes of an <code>Endpoint</code>. */
@@ -565,9 +565,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum EndpointStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum EndpointStatusReason { INVALID_DEVICE_TOKEN = 0, INVALID_PINPOINT_ARN = 1 }
+	export enum EndpointStatusReason { INVALID_DEVICE_TOKEN = 'INVALID_DEVICE_TOKEN', INVALID_PINPOINT_ARN = 'INVALID_PINPOINT_ARN' }
 
 	export interface GetAppInstanceRetentionSettingsResponse {
 		AppInstanceRetentionSettings?: AppInstanceRetentionSettings;
@@ -918,7 +918,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowMessages { ALL = 0, NONE = 1 }
+	export enum AllowMessages { ALL = 'ALL', NONE = 'NONE' }
 
 	export interface CreateAppInstanceAdminRequest {
 
@@ -2375,7 +2375,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagResourceOperation { 'tag-resource' = 0 }
+	export enum TagResourceOperation { 'tag-resource' = 'tag-resource' }
 
 	export interface TagResourcePostBody {
 
@@ -2412,7 +2412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UntagResourceOperation { 'untag-resource' = 0 }
+	export enum UntagResourceOperation { 'untag-resource' = 'untag-resource' }
 
 	export interface UntagResourcePostBody {
 

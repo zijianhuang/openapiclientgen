@@ -838,7 +838,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaTargetSiteIndexingStatus { INDEXING_STATUS_UNSPECIFIED = 0, PENDING = 1, FAILED = 2, SUCCEEDED = 3, DELETING = 4 }
+	export enum GoogleCloudDiscoveryengineV1alphaTargetSiteIndexingStatus { INDEXING_STATUS_UNSPECIFIED = 'INDEXING_STATUS_UNSPECIFIED', PENDING = 'PENDING', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', DELETING = 'DELETING' }
 
 
 	/** Verification information for target sites in advanced site search. */
@@ -868,9 +868,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaSiteVerificationInfoSiteVerificationState { SITE_VERIFICATION_STATE_UNSPECIFIED = 0, VERIFIED = 1, UNVERIFIED = 2, EXEMPTED = 3 }
+	export enum GoogleCloudDiscoveryengineV1alphaSiteVerificationInfoSiteVerificationState { SITE_VERIFICATION_STATE_UNSPECIFIED = 'SITE_VERIFICATION_STATE_UNSPECIFIED', VERIFIED = 'VERIFIED', UNVERIFIED = 'UNVERIFIED', EXEMPTED = 'EXEMPTED' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaTargetSiteType { TYPE_UNSPECIFIED = 0, INCLUDE = 1, EXCLUDE = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaTargetSiteType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Metadata related to the progress of the DataStoreService.CreateDataStore operation. This will be returned by the google.longrunning.Operation.metadata field. */
@@ -1043,9 +1043,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaDataStoreContentConfig { CONTENT_CONFIG_UNSPECIFIED = 0, NO_CONTENT = 1, CONTENT_REQUIRED = 2, PUBLIC_WEBSITE = 3 }
+	export enum GoogleCloudDiscoveryengineV1alphaDataStoreContentConfig { CONTENT_CONFIG_UNSPECIFIED = 'CONTENT_CONFIG_UNSPECIFIED', NO_CONTENT = 'NO_CONTENT', CONTENT_REQUIRED = 'CONTENT_REQUIRED', PUBLIC_WEBSITE = 'PUBLIC_WEBSITE' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaDataStoreIndustryVertical { INDUSTRY_VERTICAL_UNSPECIFIED = 0, GENERIC = 1, MEDIA = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaDataStoreIndustryVertical { INDUSTRY_VERTICAL_UNSPECIFIED = 'INDUSTRY_VERTICAL_UNSPECIFIED', GENERIC = 'GENERIC', MEDIA = 'MEDIA' }
 
 
 	/** Metadata related to the progress of the DataStoreService.DeleteDataStore operation. This will be returned by the google.longrunning.Operation.metadata field. */
@@ -1552,7 +1552,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigTrainingState { TRAINING_STATE_UNSPECIFIED = 0, PAUSED = 1, TRAINING = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigTrainingState { TRAINING_STATE_UNSPECIFIED = 'TRAINING_STATE_UNSPECIFIED', PAUSED = 'PAUSED', TRAINING = 'TRAINING' }
 
 
 	/** Additional information of a recommendation engine. */
@@ -1596,9 +1596,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaEngineRecommendationMetadataDataState { DATA_STATE_UNSPECIFIED = 0, DATA_OK = 1, DATA_ERROR = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaEngineRecommendationMetadataDataState { DATA_STATE_UNSPECIFIED = 'DATA_STATE_UNSPECIFIED', DATA_OK = 'DATA_OK', DATA_ERROR = 'DATA_ERROR' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaEngineRecommendationMetadataServingState { SERVING_STATE_UNSPECIFIED = 0, INACTIVE = 1, ACTIVE = 2, TUNED = 3 }
+	export enum GoogleCloudDiscoveryengineV1alphaEngineRecommendationMetadataServingState { SERVING_STATE_UNSPECIFIED = 'SERVING_STATE_UNSPECIFIED', INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE', TUNED = 'TUNED' }
 
 
 	/** Configurations for a Search Engine. */
@@ -1624,7 +1624,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaEngineSearchEngineConfigSearchTier { SEARCH_TIER_UNSPECIFIED = 0, SEARCH_TIER_STANDARD = 1, SEARCH_TIER_ENTERPRISE = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaEngineSearchEngineConfigSearchTier { SEARCH_TIER_UNSPECIFIED = 'SEARCH_TIER_UNSPECIFIED', SEARCH_TIER_STANDARD = 'SEARCH_TIER_STANDARD', SEARCH_TIER_ENTERPRISE = 'SEARCH_TIER_ENTERPRISE' }
 
 
 	/** Additional config specs for a `similar-items` engine. */
@@ -1640,7 +1640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaEngineSolutionType { SOLUTION_TYPE_UNSPECIFIED = 0, SOLUTION_TYPE_RECOMMENDATION = 1, SOLUTION_TYPE_SEARCH = 2, SOLUTION_TYPE_CHAT = 3 }
+	export enum GoogleCloudDiscoveryengineV1alphaEngineSolutionType { SOLUTION_TYPE_UNSPECIFIED = 'SOLUTION_TYPE_UNSPECIFIED', SOLUTION_TYPE_RECOMMENDATION = 'SOLUTION_TYPE_RECOMMENDATION', SOLUTION_TYPE_SEARCH = 'SOLUTION_TYPE_SEARCH', SOLUTION_TYPE_CHAT = 'SOLUTION_TYPE_CHAT' }
 
 
 	/** Metadata related to the progress of the EstimateDataSize operation. This is returned by the google.longrunning.Operation.metadata field. */
@@ -1768,19 +1768,19 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigCompletableOption { COMPLETABLE_OPTION_UNSPECIFIED = 0, COMPLETABLE_ENABLED = 1, COMPLETABLE_DISABLED = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigCompletableOption { COMPLETABLE_OPTION_UNSPECIFIED = 'COMPLETABLE_OPTION_UNSPECIFIED', COMPLETABLE_ENABLED = 'COMPLETABLE_ENABLED', COMPLETABLE_DISABLED = 'COMPLETABLE_DISABLED' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigDynamicFacetableOption { DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 0, DYNAMIC_FACETABLE_ENABLED = 1, DYNAMIC_FACETABLE_DISABLED = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigDynamicFacetableOption { DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 'DYNAMIC_FACETABLE_OPTION_UNSPECIFIED', DYNAMIC_FACETABLE_ENABLED = 'DYNAMIC_FACETABLE_ENABLED', DYNAMIC_FACETABLE_DISABLED = 'DYNAMIC_FACETABLE_DISABLED' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigFieldType { FIELD_TYPE_UNSPECIFIED = 0, OBJECT = 1, STRING = 2, NUMBER = 3, INTEGER = 4, BOOLEAN = 5, GEOLOCATION = 6 }
+	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigFieldType { FIELD_TYPE_UNSPECIFIED = 'FIELD_TYPE_UNSPECIFIED', OBJECT = 'OBJECT', STRING = 'STRING', NUMBER = 'NUMBER', INTEGER = 'INTEGER', BOOLEAN = 'BOOLEAN', GEOLOCATION = 'GEOLOCATION' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigIndexableOption { INDEXABLE_OPTION_UNSPECIFIED = 0, INDEXABLE_ENABLED = 1, INDEXABLE_DISABLED = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigIndexableOption { INDEXABLE_OPTION_UNSPECIFIED = 'INDEXABLE_OPTION_UNSPECIFIED', INDEXABLE_ENABLED = 'INDEXABLE_ENABLED', INDEXABLE_DISABLED = 'INDEXABLE_DISABLED' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigRecsFilterableOption { FILTERABLE_OPTION_UNSPECIFIED = 0, FILTERABLE_ENABLED = 1, FILTERABLE_DISABLED = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigRecsFilterableOption { FILTERABLE_OPTION_UNSPECIFIED = 'FILTERABLE_OPTION_UNSPECIFIED', FILTERABLE_ENABLED = 'FILTERABLE_ENABLED', FILTERABLE_DISABLED = 'FILTERABLE_DISABLED' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigRetrievableOption { RETRIEVABLE_OPTION_UNSPECIFIED = 0, RETRIEVABLE_ENABLED = 1, RETRIEVABLE_DISABLED = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigRetrievableOption { RETRIEVABLE_OPTION_UNSPECIFIED = 'RETRIEVABLE_OPTION_UNSPECIFIED', RETRIEVABLE_ENABLED = 'RETRIEVABLE_ENABLED', RETRIEVABLE_DISABLED = 'RETRIEVABLE_DISABLED' }
 
-	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigSearchableOption { SEARCHABLE_OPTION_UNSPECIFIED = 0, SEARCHABLE_ENABLED = 1, SEARCHABLE_DISABLED = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaFieldConfigSearchableOption { SEARCHABLE_OPTION_UNSPECIFIED = 'SEARCHABLE_OPTION_UNSPECIFIED', SEARCHABLE_ENABLED = 'SEARCHABLE_ENABLED', SEARCHABLE_DISABLED = 'SEARCHABLE_DISABLED' }
 
 
 	/** Metadata related to the progress of the ImportDocuments operation. This is returned by the google.longrunning.Operation.metadata field. */
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1alphaRecrawlUrisResponseFailureInfoFailureReasonCorpusType { CORPUS_TYPE_UNSPECIFIED = 0, DESKTOP = 1, MOBILE = 2 }
+	export enum GoogleCloudDiscoveryengineV1alphaRecrawlUrisResponseFailureInfoFailureReasonCorpusType { CORPUS_TYPE_UNSPECIFIED = 'CORPUS_TYPE_UNSPECIFIED', DESKTOP = 'DESKTOP', MOBILE = 'MOBILE' }
 
 
 	/** Defines the structure and layout of a type of document data. */
@@ -3038,7 +3038,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1betaConversationState { STATE_UNSPECIFIED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
+	export enum GoogleCloudDiscoveryengineV1betaConversationState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 
 	/** Request message for ConversationalSearchService.ConverseConversation method. */
@@ -3635,7 +3635,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1betaImportDocumentsRequestReconciliationMode { RECONCILIATION_MODE_UNSPECIFIED = 0, INCREMENTAL = 1, FULL = 2 }
+	export enum GoogleCloudDiscoveryengineV1betaImportDocumentsRequestReconciliationMode { RECONCILIATION_MODE_UNSPECIFIED = 'RECONCILIATION_MODE_UNSPECIFIED', INCREMENTAL = 'INCREMENTAL', FULL = 'FULL' }
 
 
 	/** Response of the ImportDocumentsRequest. If the long running operation is done, then this message is returned by the google.longrunning.Operations.response field if the operation was successful. */
@@ -3750,7 +3750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1betaSuggestionDenyListEntryMatchOperator { MATCH_OPERATOR_UNSPECIFIED = 0, EXACT_MATCH = 1, CONTAINS = 2 }
+	export enum GoogleCloudDiscoveryengineV1betaSuggestionDenyListEntryMatchOperator { MATCH_OPERATOR_UNSPECIFIED = 'MATCH_OPERATOR_UNSPECIFIED', EXACT_MATCH = 'EXACT_MATCH', CONTAINS = 'CONTAINS' }
 
 
 	/** Response message for CompletionService.ImportSuggestionDenyListEntries method. */
@@ -5104,7 +5104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1betaSearchRequestQueryExpansionSpecCondition { CONDITION_UNSPECIFIED = 0, DISABLED = 1, AUTO = 2 }
+	export enum GoogleCloudDiscoveryengineV1betaSearchRequestQueryExpansionSpecCondition { CONDITION_UNSPECIFIED = 'CONDITION_UNSPECIFIED', DISABLED = 'DISABLED', AUTO = 'AUTO' }
 
 
 	/** The specification for query spell correction. */
@@ -5127,7 +5127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudDiscoveryengineV1betaSearchRequestSpellCorrectionSpecMode { MODE_UNSPECIFIED = 0, SUGGESTION_ONLY = 1, AUTO = 2 }
+	export enum GoogleCloudDiscoveryengineV1betaSearchRequestSpellCorrectionSpecMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', SUGGESTION_ONLY = 'SUGGESTION_ONLY', AUTO = 'AUTO' }
 
 
 	/** Response message for SearchService.Search method. */

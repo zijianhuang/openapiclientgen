@@ -23,9 +23,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum UpdatePriceFeedType { price = 0, promo = 1 }
+	export enum UpdatePriceFeedType { price = 'price', promo = 'promo' }
 
-	export enum UpdatePriceWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 0 }
+	export enum UpdatePriceWM_CONSUMER_CHANNEL_TYPE { SWAGGER_CHANNEL_TYPE = 'SWAGGER_CHANNEL_TYPE' }
 
 }
 

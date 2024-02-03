@@ -250,11 +250,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionAlgorithm { RSA = 0, ECDSA = 1 }
+	export enum EncryptionAlgorithm { RSA = 'RSA', ECDSA = 'ECDSA' }
 
-	export enum HashAlgorithm { SHA1 = 0, SHA256 = 1 }
+	export enum HashAlgorithm { SHA1 = 'SHA1', SHA256 = 'SHA256' }
 
-	export enum ImageFormat { JSON = 0, JSONEmbedded = 1, JSONDetached = 2 }
+	export enum ImageFormat { JSON = 'JSON', JSONEmbedded = 'JSONEmbedded', JSONDetached = 'JSONDetached' }
 
 	export interface SigningParameters {
 	}
@@ -266,7 +266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SigningStatus { InProgress = 0, Failed = 1, Succeeded = 2 }
+	export enum SigningStatus { InProgress = 'InProgress', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 
 	/** Revocation information for a signing job. */
@@ -370,7 +370,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Category { AWSIoT = 0 }
+	export enum Category { AWSIoT = 'AWSIoT' }
 
 
 	/** The configuration of a code signing operation. */
@@ -551,9 +551,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidityType { DAYS = 0, MONTHS = 1, YEARS = 2 }
+	export enum ValidityType { DAYS = 'DAYS', MONTHS = 'MONTHS', YEARS = 'YEARS' }
 
-	export enum SigningProfileStatus { Active = 0, Canceled = 1, Revoked = 2 }
+	export enum SigningProfileStatus { Active = 'Active', Canceled = 'Canceled', Revoked = 'Revoked' }
 
 	export interface TagMap {
 	}

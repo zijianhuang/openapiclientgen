@@ -376,7 +376,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExtendedSubscriptionResponseModelCurrency { usd = 0, eur = 1 }
+	export enum ExtendedSubscriptionResponseModelCurrency { usd = 'usd', eur = 'eur' }
 
 	export interface InvoiceResponseModel {
 
@@ -402,7 +402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExtendedSubscriptionResponseModelStatus { trialing = 0, active = 1, incomplete = 2, incomplete_expired = 3, past_due = 4, canceled = 5, unpaid = 6, free = 7 }
+	export enum ExtendedSubscriptionResponseModelStatus { trialing = 'trialing', active = 'active', incomplete = 'incomplete', incomplete_expired = 'incomplete_expired', past_due = 'past_due', canceled = 'canceled', unpaid = 'unpaid', free = 'free' }
 
 	export interface FeedbackResponseModel {
 
@@ -520,7 +520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FineTuningResponseModelFinetuning_state { not_started = 0, is_fine_tuning = 1, fine_tuned = 2 }
+	export enum FineTuningResponseModelFinetuning_state { not_started = 'not_started', is_fine_tuning = 'is_fine_tuning', fine_tuned = 'fine_tuned' }
 
 	export interface VerificationAttemptResponseModel {
 
@@ -718,7 +718,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistoryItemResponseModelState { created = 0, deleted = 1, processing = 2 }
+	export enum HistoryItemResponseModelState { created = 'created', deleted = 'deleted', processing = 'processing' }
 
 	export interface GetVoicesResponseModel {
 

@@ -365,15 +365,15 @@ export namespace MyNS {
 
 	}
 
-	export enum RemoveBgJsonChannels { rgba = 0, alpha = 1 }
+	export enum RemoveBgJsonChannels { rgba = 'rgba', alpha = 'alpha' }
 
-	export enum RemoveBgJsonFormat { auto = 0, png = 1, jpg = 2, zip = 3 }
+	export enum RemoveBgJsonFormat { auto = 'auto', png = 'png', jpg = 'jpg', zip = 'zip' }
 
-	export enum RemoveBgJsonSize { preview = 0, full = 1, auto = 2 }
+	export enum RemoveBgJsonSize { preview = 'preview', full = 'full', auto = 'auto' }
 
-	export enum RemoveBgJsonType { auto = 0, person = 1, product = 2, car = 3 }
+	export enum RemoveBgJsonType { auto = 'auto', person = 'person', product = 'product', car = 'car' }
 
-	export enum RemoveBgJsonType_level { none = 0, _1 = 1, _2 = 2, latest = 3 }
+	export enum RemoveBgJsonType_level { none = 'none', _1 = '1', _2 = '2', latest = 'latest' }
 
 	export interface RemoveBgJsonResponse {
 		data?: RemoveBgJsonResponseData;

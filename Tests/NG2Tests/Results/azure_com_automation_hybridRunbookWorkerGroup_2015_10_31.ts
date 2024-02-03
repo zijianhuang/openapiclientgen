@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HybridRunbookWorkerGroupGroupType { User = 0, System = 1 }
+	export enum HybridRunbookWorkerGroupGroupType { User = 'User', System = 'System' }
 
 
 	/** Parameters supplied to the update operation. */

@@ -456,7 +456,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DevEnvironmentStatus { PENDING = 0, RUNNING = 1, STARTING = 2, STOPPING = 3, STOPPED = 4, FAILED = 5, DELETING = 6, DELETED = 7 }
+	export enum DevEnvironmentStatus { PENDING = 'PENDING', RUNNING = 'RUNNING', STARTING = 'STARTING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', FAILED = 'FAILED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** Information about the source repsitory for a Dev Environment.  */
@@ -502,7 +502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceType { 'dev.standard1.small' = 0, 'dev.standard1.medium' = 1, 'dev.standard1.large' = 2, 'dev.standard1.xlarge' = 3 }
+	export enum InstanceType { 'dev.standard1.small' = 'dev.standard1.small', 'dev.standard1.medium' = 'dev.standard1.medium', 'dev.standard1.large' = 'dev.standard1.large', 'dev.standard1.xlarge' = 'dev.standard1.xlarge' }
 
 
 	/** Information about the persistent storage for a Dev Environment. */
@@ -1032,7 +1032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationType { READONLY = 0, MUTATION = 1 }
+	export enum OperationType { READONLY = 'READONLY', MUTATION = 'MUTATION' }
 
 
 	/** Information about a user whose activity is recorded in an event for a space. */
@@ -1068,7 +1068,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserType { USER = 0, AWS_ACCOUNT = 1, UNKNOWN = 2 }
+	export enum UserType { USER = 'USER', AWS_ACCOUNT = 'AWS_ACCOUNT', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Information about a project in a space. */
@@ -1178,9 +1178,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterKey { hasAccessTo = 0 }
+	export enum FilterKey { hasAccessTo = 'hasAccessTo' }
 
-	export enum ComparisonOperator { EQ = 0, GT = 1, GE = 2, LT = 3, LE = 4 }
+	export enum ComparisonOperator { EQ = 'EQ', GT = 'GT', GE = 'GE', LT = 'LT', LE = 'LE' }
 
 	export interface ListSourceRepositoriesResponse {
 		items?: Array<ListSourceRepositoriesItem>;
@@ -1437,7 +1437,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DevEnvironmentSessionType { SSM = 0, SSH = 1 }
+	export enum DevEnvironmentSessionType { SSM = 'SSM', SSH = 'SSH' }
 
 
 	/** Information about the commands that will be run on a Dev Environment when an SSH session begins. */

@@ -464,9 +464,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DfsSlatesByDateFormat { json = 0, xml = 1 }
+	export enum DfsSlatesByDateFormat { json = 'json', xml = 'xml' }
 
-	export enum ProjectedPlayerGameStatsByDateFormat { xml = 0, json = 1 }
+	export enum ProjectedPlayerGameStatsByDateFormat { xml = 'xml', json = 'json' }
 
 }
 

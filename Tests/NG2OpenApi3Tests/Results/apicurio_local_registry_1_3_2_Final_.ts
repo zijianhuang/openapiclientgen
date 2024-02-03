@@ -114,9 +114,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactMetaDataState { ENABLED = 0, DISABLED = 1, DEPRECATED = 2, DELETED = 3 }
+	export enum ArtifactMetaDataState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DEPRECATED = 'DEPRECATED', DELETED = 'DELETED' }
 
-	export enum ArtifactMetaDataType { AVRO = 0, PROTOBUF = 1, PROTOBUF_FD = 2, JSON = 3, OPENAPI = 4, ASYNCAPI = 5, GRAPHQL = 6, KCONNECT = 7, WSDL = 8, XSD = 9, XML = 10 }
+	export enum ArtifactMetaDataType { AVRO = 'AVRO', PROTOBUF = 'PROTOBUF', PROTOBUF_FD = 'PROTOBUF_FD', JSON = 'JSON', OPENAPI = 'OPENAPI', ASYNCAPI = 'ASYNCAPI', GRAPHQL = 'GRAPHQL', KCONNECT = 'KCONNECT', WSDL = 'WSDL', XSD = 'XSD', XML = 'XML' }
 
 
 	/** Describes the response received when searching for artifacts. */
@@ -235,9 +235,9 @@ export namespace MyNS {
 	 * * DISABLED
 	 * * DEPRECATED
 	 */
-	export enum ArtifactState { ENABLED = 0, DISABLED = 1, DEPRECATED = 2, DELETED = 3 }
+	export enum ArtifactState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DEPRECATED = 'DEPRECATED', DELETED = 'DELETED' }
 
-	export enum ArtifactType { AVRO = 0, PROTOBUF = 1, PROTOBUF_FD = 2, JSON = 3, OPENAPI = 4, ASYNCAPI = 5, GRAPHQL = 6, KCONNECT = 7, WSDL = 8, XSD = 9, XML = 10 }
+	export enum ArtifactType { AVRO = 'AVRO', PROTOBUF = 'PROTOBUF', PROTOBUF_FD = 'PROTOBUF_FD', JSON = 'JSON', OPENAPI = 'OPENAPI', ASYNCAPI = 'ASYNCAPI', GRAPHQL = 'GRAPHQL', KCONNECT = 'KCONNECT', WSDL = 'WSDL', XSD = 'XSD', XML = 'XML' }
 
 	export interface EditableMetaData {
 		description?: string | null;
@@ -320,9 +320,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleType { VALIDITY = 0, COMPATIBILITY = 1 }
+	export enum RuleType { VALIDITY = 'VALIDITY', COMPATIBILITY = 'COMPATIBILITY' }
 
-	export enum SearchOver { everything = 0, name = 1, description = 2, labels = 3 }
+	export enum SearchOver { everything = 'everything', name = 'name', description = 'description', labels = 'labels' }
 
 
 	/** Models a single artifact from the result set returned when searching for artifacts. */
@@ -401,7 +401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { asc = 0, desc = 1 }
+	export enum SortOrder { asc = 'asc', desc = 'desc' }
 
 	export interface UpdateState {
 
@@ -987,7 +987,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateArtifactIfExists { FAIL = 0, UPDATE = 1, RETURN = 2, RETURN_OR_UPDATE = 3 }
+	export enum CreateArtifactIfExists { FAIL = 'FAIL', UPDATE = 'UPDATE', RETURN = 'RETURN', RETURN_OR_UPDATE = 'RETURN_OR_UPDATE' }
 
 }
 

@@ -3,17 +3,17 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Task_enum_status { pending = 0, reserved = 1, assigned = 2, canceled = 3, completed = 4, wrapping = 5 }
+	export enum Task_enum_status { pending = 'pending', reserved = 'reserved', assigned = 'assigned', canceled = 'canceled', completed = 'completed', wrapping = 'wrapping' }
 
-	export enum Task_queue_enum_task_order { FIFO = 0, LIFO = 1 }
+	export enum Task_queue_enum_task_order { FIFO = 'FIFO', LIFO = 'LIFO' }
 
-	export enum Task_reservation_enum_call_status { initiated = 0, ringing = 1, answered = 2, completed = 3 }
+	export enum Task_reservation_enum_call_status { initiated = 'initiated', ringing = 'ringing', answered = 'answered', completed = 'completed' }
 
-	export enum Task_reservation_enum_conference_event { start = 0, end = 1, join = 2, leave = 3, mute = 4, hold = 5, speaker = 6 }
+	export enum Task_reservation_enum_conference_event { start = 'start', end = 'end', join = 'join', leave = 'leave', mute = 'mute', hold = 'hold', speaker = 'speaker' }
 
-	export enum Task_reservation_enum_status { pending = 0, accepted = 1, rejected = 2, timeout = 3, canceled = 4, rescinded = 5, wrapping = 6, completed = 7 }
+	export enum Task_reservation_enum_status { pending = 'pending', accepted = 'accepted', rejected = 'rejected', timeout = 'timeout', canceled = 'canceled', rescinded = 'rescinded', wrapping = 'wrapping', completed = 'completed' }
 
-	export enum Task_reservation_enum_supervisor_mode { monitor = 0, whisper = 1, barge = 2 }
+	export enum Task_reservation_enum_supervisor_mode { monitor = 'monitor', whisper = 'whisper', barge = 'barge' }
 
 	export interface Taskrouterv1workspace {
 
@@ -3069,13 +3069,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Worker_reservation_enum_call_status { initiated = 0, ringing = 1, answered = 2, completed = 3 }
+	export enum Worker_reservation_enum_call_status { initiated = 'initiated', ringing = 'ringing', answered = 'answered', completed = 'completed' }
 
-	export enum Worker_reservation_enum_conference_event { start = 0, end = 1, join = 2, leave = 3, mute = 4, hold = 5, speaker = 6 }
+	export enum Worker_reservation_enum_conference_event { start = 'start', end = 'end', join = 'join', leave = 'leave', mute = 'mute', hold = 'hold', speaker = 'speaker' }
 
-	export enum Worker_reservation_enum_status { pending = 0, accepted = 1, rejected = 2, timeout = 3, canceled = 4, rescinded = 5, wrapping = 6, completed = 7 }
+	export enum Worker_reservation_enum_status { pending = 'pending', accepted = 'accepted', rejected = 'rejected', timeout = 'timeout', canceled = 'canceled', rescinded = 'rescinded', wrapping = 'wrapping', completed = 'completed' }
 
-	export enum Workspace_enum_queue_order { FIFO = 0, LIFO = 1 }
+	export enum Workspace_enum_queue_order { FIFO = 'FIFO', LIFO = 'LIFO' }
 
 	@Injectable()
 	export class MyClient {

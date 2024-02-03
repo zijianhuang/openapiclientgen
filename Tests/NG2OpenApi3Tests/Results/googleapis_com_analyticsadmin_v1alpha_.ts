@@ -254,7 +254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAccessNumericFilterOperation { OPERATION_UNSPECIFIED = 0, EQUAL = 1, LESS_THAN = 2, LESS_THAN_OR_EQUAL = 3, GREATER_THAN = 4, GREATER_THAN_OR_EQUAL = 5 }
+	export enum GoogleAnalyticsAdminV1alphaAccessNumericFilterOperation { OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED', EQUAL = 'EQUAL', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL' }
 
 
 	/** The filter for strings. */
@@ -291,7 +291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAccessStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 0, EXACT = 1, BEGINS_WITH = 2, ENDS_WITH = 3, CONTAINS = 4, FULL_REGEXP = 5, PARTIAL_REGEXP = 6 }
+	export enum GoogleAnalyticsAdminV1alphaAccessStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 'MATCH_TYPE_UNSPECIFIED', EXACT = 'EXACT', BEGINS_WITH = 'BEGINS_WITH', ENDS_WITH = 'ENDS_WITH', CONTAINS = 'CONTAINS', FULL_REGEXP = 'FULL_REGEXP', PARTIAL_REGEXP = 'PARTIAL_REGEXP' }
 
 
 	/** Expresses dimension or metric filters. The fields in the same expression need to be either all dimensions or all metrics. */
@@ -454,7 +454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAccessOrderByDimensionOrderByOrderType { ORDER_TYPE_UNSPECIFIED = 0, ALPHANUMERIC = 1, CASE_INSENSITIVE_ALPHANUMERIC = 2, NUMERIC = 3 }
+	export enum GoogleAnalyticsAdminV1alphaAccessOrderByDimensionOrderByOrderType { ORDER_TYPE_UNSPECIFIED = 'ORDER_TYPE_UNSPECIFIED', ALPHANUMERIC = 'ALPHANUMERIC', CASE_INSENSITIVE_ALPHANUMERIC = 'CASE_INSENSITIVE_ALPHANUMERIC', NUMERIC = 'NUMERIC' }
 
 
 	/** Sorts by metric values. */
@@ -690,7 +690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaPropertySummaryPropertyType { PROPERTY_TYPE_UNSPECIFIED = 0, PROPERTY_TYPE_ORDINARY = 1, PROPERTY_TYPE_SUBPROPERTY = 2, PROPERTY_TYPE_ROLLUP = 3 }
+	export enum GoogleAnalyticsAdminV1alphaPropertySummaryPropertyType { PROPERTY_TYPE_UNSPECIFIED = 'PROPERTY_TYPE_UNSPECIFIED', PROPERTY_TYPE_ORDINARY = 'PROPERTY_TYPE_ORDINARY', PROPERTY_TYPE_SUBPROPERTY = 'PROPERTY_TYPE_SUBPROPERTY', PROPERTY_TYPE_ROLLUP = 'PROPERTY_TYPE_ROLLUP' }
 
 
 	/** Request message for AcknowledgeUserDataCollection RPC. */
@@ -933,13 +933,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsAcquisitionConversionEventLookbackWindow { ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 0, ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS = 1, ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS = 2 }
+	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsAcquisitionConversionEventLookbackWindow { ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 'ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED', ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS = 'ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS', ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS = 'ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS' }
 
-	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsAdsWebConversionDataExportScope { ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 0, NOT_SELECTED_YET = 1, PAID_AND_ORGANIC_CHANNELS = 2, GOOGLE_PAID_CHANNELS = 3 }
+	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsAdsWebConversionDataExportScope { ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 'ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED', NOT_SELECTED_YET = 'NOT_SELECTED_YET', PAID_AND_ORGANIC_CHANNELS = 'PAID_AND_ORGANIC_CHANNELS', GOOGLE_PAID_CHANNELS = 'GOOGLE_PAID_CHANNELS' }
 
-	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsOtherConversionEventLookbackWindow { OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 0, OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS = 1, OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS = 2, OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS = 3 }
+	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsOtherConversionEventLookbackWindow { OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED = 'OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED', OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS = 'OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS', OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS = 'OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS', OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS = 'OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS' }
 
-	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsReportingAttributionModel { REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED = 0, PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 1, PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2, GOOGLE_PAID_CHANNELS_LAST_CLICK = 3 }
+	export enum GoogleAnalyticsAdminV1alphaAttributionSettingsReportingAttributionModel { REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED = 'REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED', PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 'PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN', PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 'PAID_AND_ORGANIC_CHANNELS_LAST_CLICK', GOOGLE_PAID_CHANNELS_LAST_CLICK = 'GOOGLE_PAID_CHANNELS_LAST_CLICK' }
 
 
 	/** A resource message representing a GA4 Audience. */
@@ -1031,9 +1031,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAudienceEventTriggerLogCondition { LOG_CONDITION_UNSPECIFIED = 0, AUDIENCE_JOINED = 1, AUDIENCE_MEMBERSHIP_RENEWED = 2 }
+	export enum GoogleAnalyticsAdminV1alphaAudienceEventTriggerLogCondition { LOG_CONDITION_UNSPECIFIED = 'LOG_CONDITION_UNSPECIFIED', AUDIENCE_JOINED = 'AUDIENCE_JOINED', AUDIENCE_MEMBERSHIP_RENEWED = 'AUDIENCE_MEMBERSHIP_RENEWED' }
 
-	export enum GoogleAnalyticsAdminV1alphaAudienceExclusionDurationMode { AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED = 0, EXCLUDE_TEMPORARILY = 1, EXCLUDE_PERMANENTLY = 2 }
+	export enum GoogleAnalyticsAdminV1alphaAudienceExclusionDurationMode { AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED = 'AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED', EXCLUDE_TEMPORARILY = 'EXCLUDE_TEMPORARILY', EXCLUDE_PERMANENTLY = 'EXCLUDE_PERMANENTLY' }
 
 
 	/** A clause for defining either a simple or sequence filter. A filter can be inclusive (For example, users satisfying the filter clause are included in the Audience) or exclusive (For example, users satisfying the filter clause are excluded from the Audience). */
@@ -1062,7 +1062,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAudienceFilterClauseClauseType { AUDIENCE_CLAUSE_TYPE_UNSPECIFIED = 0, INCLUDE = 1, EXCLUDE = 2 }
+	export enum GoogleAnalyticsAdminV1alphaAudienceFilterClauseClauseType { AUDIENCE_CLAUSE_TYPE_UNSPECIFIED = 'AUDIENCE_CLAUSE_TYPE_UNSPECIFIED', INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** Defines filters that must occur in a specific order for the user to be a member of the Audience. */
@@ -1095,7 +1095,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAudienceSequenceFilterScope { AUDIENCE_FILTER_SCOPE_UNSPECIFIED = 0, AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT = 1, AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION = 2, AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS = 3 }
+	export enum GoogleAnalyticsAdminV1alphaAudienceSequenceFilterScope { AUDIENCE_FILTER_SCOPE_UNSPECIFIED = 'AUDIENCE_FILTER_SCOPE_UNSPECIFIED', AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT = 'AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT', AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION = 'AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION', AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS = 'AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS' }
 
 
 	/** A condition that must occur in the specified step order for this user to match the sequence. */
@@ -1324,7 +1324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericFilterOperation { OPERATION_UNSPECIFIED = 0, EQUAL = 1, LESS_THAN = 2, GREATER_THAN = 3 }
+	export enum GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterNumericFilterOperation { OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED', EQUAL = 'EQUAL', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN' }
 
 
 	/** A filter for a string-type dimension that matches a particular pattern. */
@@ -1361,7 +1361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 0, EXACT = 1, BEGINS_WITH = 2, ENDS_WITH = 3, CONTAINS = 4, FULL_REGEXP = 5 }
+	export enum GoogleAnalyticsAdminV1alphaAudienceDimensionOrMetricFilterStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 'MATCH_TYPE_UNSPECIFIED', EXACT = 'EXACT', BEGINS_WITH = 'BEGINS_WITH', ENDS_WITH = 'ENDS_WITH', CONTAINS = 'CONTAINS', FULL_REGEXP = 'FULL_REGEXP' }
 
 
 	/** A filter that matches events of a single event name. If an event parameter is specified, only the subset of events that match both the single event name and the parameter filter expressions match this event filter. */
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaChangeHistoryChangeAction { ACTION_TYPE_UNSPECIFIED = 0, CREATED = 1, UPDATED = 2, DELETED = 3 }
+	export enum GoogleAnalyticsAdminV1alphaChangeHistoryChangeAction { ACTION_TYPE_UNSPECIFIED = 'ACTION_TYPE_UNSPECIFIED', CREATED = 'CREATED', UPDATED = 'UPDATED', DELETED = 'DELETED' }
 
 
 	/** A snapshot of a resource as before or after the result of a change in change history. */
@@ -2023,7 +2023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaConversionEventCountingMethod { CONVERSION_COUNTING_METHOD_UNSPECIFIED = 0, ONCE_PER_EVENT = 1, ONCE_PER_SESSION = 2 }
+	export enum GoogleAnalyticsAdminV1alphaConversionEventCountingMethod { CONVERSION_COUNTING_METHOD_UNSPECIFIED = 'CONVERSION_COUNTING_METHOD_UNSPECIFIED', ONCE_PER_EVENT = 'ONCE_PER_EVENT', ONCE_PER_SESSION = 'ONCE_PER_SESSION' }
 
 
 	/** Defines a default value/currency for a conversion event. Both value and currency must be provided. */
@@ -2109,7 +2109,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaCustomDimensionScope { DIMENSION_SCOPE_UNSPECIFIED = 0, EVENT = 1, USER = 2, ITEM = 3 }
+	export enum GoogleAnalyticsAdminV1alphaCustomDimensionScope { DIMENSION_SCOPE_UNSPECIFIED = 'DIMENSION_SCOPE_UNSPECIFIED', EVENT = 'EVENT', USER = 'USER', ITEM = 'ITEM' }
 
 
 	/** A definition for a custom metric. */
@@ -2170,9 +2170,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaCustomMetricMeasurementUnit { MEASUREMENT_UNIT_UNSPECIFIED = 0, STANDARD = 1, CURRENCY = 2, FEET = 3, METERS = 4, KILOMETERS = 5, MILES = 6, MILLISECONDS = 7, SECONDS = 8, MINUTES = 9, HOURS = 10 }
+	export enum GoogleAnalyticsAdminV1alphaCustomMetricMeasurementUnit { MEASUREMENT_UNIT_UNSPECIFIED = 'MEASUREMENT_UNIT_UNSPECIFIED', STANDARD = 'STANDARD', CURRENCY = 'CURRENCY', FEET = 'FEET', METERS = 'METERS', KILOMETERS = 'KILOMETERS', MILES = 'MILES', MILLISECONDS = 'MILLISECONDS', SECONDS = 'SECONDS', MINUTES = 'MINUTES', HOURS = 'HOURS' }
 
-	export enum GoogleAnalyticsAdminV1alphaCustomMetricScope { METRIC_SCOPE_UNSPECIFIED = 0, EVENT = 1 }
+	export enum GoogleAnalyticsAdminV1alphaCustomMetricScope { METRIC_SCOPE_UNSPECIFIED = 'METRIC_SCOPE_UNSPECIFIED', EVENT = 'EVENT' }
 
 
 	/** Settings for client-side data redaction. Singleton resource under a Web Stream. */
@@ -2247,7 +2247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaDataRetentionSettingsEventDataRetention { RETENTION_DURATION_UNSPECIFIED = 0, TWO_MONTHS = 1, FOURTEEN_MONTHS = 2, TWENTY_SIX_MONTHS = 3, THIRTY_EIGHT_MONTHS = 4, FIFTY_MONTHS = 5 }
+	export enum GoogleAnalyticsAdminV1alphaDataRetentionSettingsEventDataRetention { RETENTION_DURATION_UNSPECIFIED = 'RETENTION_DURATION_UNSPECIFIED', TWO_MONTHS = 'TWO_MONTHS', FOURTEEN_MONTHS = 'FOURTEEN_MONTHS', TWENTY_SIX_MONTHS = 'TWENTY_SIX_MONTHS', THIRTY_EIGHT_MONTHS = 'THIRTY_EIGHT_MONTHS', FIFTY_MONTHS = 'FIFTY_MONTHS' }
 
 
 	/** A resource message representing a data stream. */
@@ -2363,7 +2363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaDataStreamType { DATA_STREAM_TYPE_UNSPECIFIED = 0, WEB_DATA_STREAM = 1, ANDROID_APP_DATA_STREAM = 2, IOS_APP_DATA_STREAM = 3 }
+	export enum GoogleAnalyticsAdminV1alphaDataStreamType { DATA_STREAM_TYPE_UNSPECIFIED = 'DATA_STREAM_TYPE_UNSPECIFIED', WEB_DATA_STREAM = 'WEB_DATA_STREAM', ANDROID_APP_DATA_STREAM = 'ANDROID_APP_DATA_STREAM', IOS_APP_DATA_STREAM = 'IOS_APP_DATA_STREAM' }
 
 
 	/** Data specific to web streams. */
@@ -2501,9 +2501,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaLinkProposalStatusDetailsLinkProposalInitiatingProduct { LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED = 0, GOOGLE_ANALYTICS = 1, LINKED_PRODUCT = 2 }
+	export enum GoogleAnalyticsAdminV1alphaLinkProposalStatusDetailsLinkProposalInitiatingProduct { LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED = 'LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED', GOOGLE_ANALYTICS = 'GOOGLE_ANALYTICS', LINKED_PRODUCT = 'LINKED_PRODUCT' }
 
-	export enum GoogleAnalyticsAdminV1alphaLinkProposalStatusDetailsLinkProposalState { LINK_PROPOSAL_STATE_UNSPECIFIED = 0, AWAITING_REVIEW_FROM_GOOGLE_ANALYTICS = 1, AWAITING_REVIEW_FROM_LINKED_PRODUCT = 2, WITHDRAWN = 3, DECLINED = 4, EXPIRED = 5, OBSOLETE = 6 }
+	export enum GoogleAnalyticsAdminV1alphaLinkProposalStatusDetailsLinkProposalState { LINK_PROPOSAL_STATE_UNSPECIFIED = 'LINK_PROPOSAL_STATE_UNSPECIFIED', AWAITING_REVIEW_FROM_GOOGLE_ANALYTICS = 'AWAITING_REVIEW_FROM_GOOGLE_ANALYTICS', AWAITING_REVIEW_FROM_LINKED_PRODUCT = 'AWAITING_REVIEW_FROM_LINKED_PRODUCT', WITHDRAWN = 'WITHDRAWN', DECLINED = 'DECLINED', EXPIRED = 'EXPIRED', OBSOLETE = 'OBSOLETE' }
 
 
 	/** Singleton resource under a web DataStream, configuring measurement of additional site interactions and content. */
@@ -2679,7 +2679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaMatchingConditionComparisonType { COMPARISON_TYPE_UNSPECIFIED = 0, EQUALS = 1, EQUALS_CASE_INSENSITIVE = 2, CONTAINS = 3, CONTAINS_CASE_INSENSITIVE = 4, STARTS_WITH = 5, STARTS_WITH_CASE_INSENSITIVE = 6, ENDS_WITH = 7, ENDS_WITH_CASE_INSENSITIVE = 8, GREATER_THAN = 9, GREATER_THAN_OR_EQUAL = 10, LESS_THAN = 11, LESS_THAN_OR_EQUAL = 12, REGULAR_EXPRESSION = 13, REGULAR_EXPRESSION_CASE_INSENSITIVE = 14 }
+	export enum GoogleAnalyticsAdminV1alphaMatchingConditionComparisonType { COMPARISON_TYPE_UNSPECIFIED = 'COMPARISON_TYPE_UNSPECIFIED', EQUALS = 'EQUALS', EQUALS_CASE_INSENSITIVE = 'EQUALS_CASE_INSENSITIVE', CONTAINS = 'CONTAINS', CONTAINS_CASE_INSENSITIVE = 'CONTAINS_CASE_INSENSITIVE', STARTS_WITH = 'STARTS_WITH', STARTS_WITH_CASE_INSENSITIVE = 'STARTS_WITH_CASE_INSENSITIVE', ENDS_WITH = 'ENDS_WITH', ENDS_WITH_CASE_INSENSITIVE = 'ENDS_WITH_CASE_INSENSITIVE', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', REGULAR_EXPRESSION = 'REGULAR_EXPRESSION', REGULAR_EXPRESSION_CASE_INSENSITIVE = 'REGULAR_EXPRESSION_CASE_INSENSITIVE' }
 
 
 	/** Defines an event parameter to mutate. */
@@ -2886,7 +2886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaExpandedDataSetFilterStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 0, EXACT = 1, CONTAINS = 2 }
+	export enum GoogleAnalyticsAdminV1alphaExpandedDataSetFilterStringFilterMatchType { MATCH_TYPE_UNSPECIFIED = 'MATCH_TYPE_UNSPECIFIED', EXACT = 'EXACT', CONTAINS = 'CONTAINS' }
 
 
 	/** A link between a GA4 property and a Firebase project. */
@@ -3021,9 +3021,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaGoogleSignalsSettingsConsent { GOOGLE_SIGNALS_CONSENT_UNSPECIFIED = 0, GOOGLE_SIGNALS_CONSENT_CONSENTED = 1, GOOGLE_SIGNALS_CONSENT_NOT_CONSENTED = 2 }
+	export enum GoogleAnalyticsAdminV1alphaGoogleSignalsSettingsConsent { GOOGLE_SIGNALS_CONSENT_UNSPECIFIED = 'GOOGLE_SIGNALS_CONSENT_UNSPECIFIED', GOOGLE_SIGNALS_CONSENT_CONSENTED = 'GOOGLE_SIGNALS_CONSENT_CONSENTED', GOOGLE_SIGNALS_CONSENT_NOT_CONSENTED = 'GOOGLE_SIGNALS_CONSENT_NOT_CONSENTED' }
 
-	export enum GoogleAnalyticsAdminV1alphaGoogleSignalsSettingsState { GOOGLE_SIGNALS_STATE_UNSPECIFIED = 0, GOOGLE_SIGNALS_ENABLED = 1, GOOGLE_SIGNALS_DISABLED = 2 }
+	export enum GoogleAnalyticsAdminV1alphaGoogleSignalsSettingsState { GOOGLE_SIGNALS_STATE_UNSPECIFIED = 'GOOGLE_SIGNALS_STATE_UNSPECIFIED', GOOGLE_SIGNALS_ENABLED = 'GOOGLE_SIGNALS_ENABLED', GOOGLE_SIGNALS_DISABLED = 'GOOGLE_SIGNALS_DISABLED' }
 
 
 	/** A secret value used for sending hits to Measurement Protocol. */
@@ -3165,9 +3165,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaPropertyIndustryCategory { INDUSTRY_CATEGORY_UNSPECIFIED = 0, AUTOMOTIVE = 1, BUSINESS_AND_INDUSTRIAL_MARKETS = 2, FINANCE = 3, HEALTHCARE = 4, TECHNOLOGY = 5, TRAVEL = 6, OTHER = 7, ARTS_AND_ENTERTAINMENT = 8, BEAUTY_AND_FITNESS = 9, BOOKS_AND_LITERATURE = 10, FOOD_AND_DRINK = 11, GAMES = 12, HOBBIES_AND_LEISURE = 13, HOME_AND_GARDEN = 14, INTERNET_AND_TELECOM = 15, LAW_AND_GOVERNMENT = 16, NEWS = 17, ONLINE_COMMUNITIES = 18, PEOPLE_AND_SOCIETY = 19, PETS_AND_ANIMALS = 20, REAL_ESTATE = 21, REFERENCE = 22, SCIENCE = 23, SPORTS = 24, JOBS_AND_EDUCATION = 25, SHOPPING = 26 }
+	export enum GoogleAnalyticsAdminV1alphaPropertyIndustryCategory { INDUSTRY_CATEGORY_UNSPECIFIED = 'INDUSTRY_CATEGORY_UNSPECIFIED', AUTOMOTIVE = 'AUTOMOTIVE', BUSINESS_AND_INDUSTRIAL_MARKETS = 'BUSINESS_AND_INDUSTRIAL_MARKETS', FINANCE = 'FINANCE', HEALTHCARE = 'HEALTHCARE', TECHNOLOGY = 'TECHNOLOGY', TRAVEL = 'TRAVEL', OTHER = 'OTHER', ARTS_AND_ENTERTAINMENT = 'ARTS_AND_ENTERTAINMENT', BEAUTY_AND_FITNESS = 'BEAUTY_AND_FITNESS', BOOKS_AND_LITERATURE = 'BOOKS_AND_LITERATURE', FOOD_AND_DRINK = 'FOOD_AND_DRINK', GAMES = 'GAMES', HOBBIES_AND_LEISURE = 'HOBBIES_AND_LEISURE', HOME_AND_GARDEN = 'HOME_AND_GARDEN', INTERNET_AND_TELECOM = 'INTERNET_AND_TELECOM', LAW_AND_GOVERNMENT = 'LAW_AND_GOVERNMENT', NEWS = 'NEWS', ONLINE_COMMUNITIES = 'ONLINE_COMMUNITIES', PEOPLE_AND_SOCIETY = 'PEOPLE_AND_SOCIETY', PETS_AND_ANIMALS = 'PETS_AND_ANIMALS', REAL_ESTATE = 'REAL_ESTATE', REFERENCE = 'REFERENCE', SCIENCE = 'SCIENCE', SPORTS = 'SPORTS', JOBS_AND_EDUCATION = 'JOBS_AND_EDUCATION', SHOPPING = 'SHOPPING' }
 
-	export enum GoogleAnalyticsAdminV1alphaPropertyServiceLevel { SERVICE_LEVEL_UNSPECIFIED = 0, GOOGLE_ANALYTICS_STANDARD = 1, GOOGLE_ANALYTICS_360 = 2 }
+	export enum GoogleAnalyticsAdminV1alphaPropertyServiceLevel { SERVICE_LEVEL_UNSPECIFIED = 'SERVICE_LEVEL_UNSPECIFIED', GOOGLE_ANALYTICS_STANDARD = 'GOOGLE_ANALYTICS_STANDARD', GOOGLE_ANALYTICS_360 = 'GOOGLE_ANALYTICS_360' }
 
 
 	/** A link between a GA4 property and a Search Ads 360 entity. */
@@ -3338,7 +3338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaConversionValuesCoarseValue { COARSE_VALUE_UNSPECIFIED = 0, COARSE_VALUE_LOW = 1, COARSE_VALUE_MEDIUM = 2, COARSE_VALUE_HIGH = 3 }
+	export enum GoogleAnalyticsAdminV1alphaConversionValuesCoarseValue { COARSE_VALUE_UNSPECIFIED = 'COARSE_VALUE_UNSPECIFIED', COARSE_VALUE_LOW = 'COARSE_VALUE_LOW', COARSE_VALUE_MEDIUM = 'COARSE_VALUE_MEDIUM', COARSE_VALUE_HIGH = 'COARSE_VALUE_HIGH' }
 
 
 	/** Event setting conditions to match an event. */
@@ -3441,7 +3441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaChangeHistoryEventActorType { ACTOR_TYPE_UNSPECIFIED = 0, USER = 1, SYSTEM = 2, SUPPORT = 3 }
+	export enum GoogleAnalyticsAdminV1alphaChangeHistoryEventActorType { ACTOR_TYPE_UNSPECIFIED = 'ACTOR_TYPE_UNSPECIFIED', USER = 'USER', SYSTEM = 'SYSTEM', SUPPORT = 'SUPPORT' }
 
 
 	/** Configuration for a specific Connected Site Tag. */
@@ -3659,7 +3659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAnalyticsAdminV1alphaSubpropertyEventFilterClauseFilterClauseType { FILTER_CLAUSE_TYPE_UNSPECIFIED = 0, INCLUDE = 1, EXCLUDE = 2 }
+	export enum GoogleAnalyticsAdminV1alphaSubpropertyEventFilterClauseFilterClauseType { FILTER_CLAUSE_TYPE_UNSPECIFIED = 'FILTER_CLAUSE_TYPE_UNSPECIFIED', INCLUDE = 'INCLUDE', EXCLUDE = 'EXCLUDE' }
 
 
 	/** A logical expression of Subproperty event filters. */

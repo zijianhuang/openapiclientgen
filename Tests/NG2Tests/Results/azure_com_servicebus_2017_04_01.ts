@@ -230,7 +230,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CaptureDescriptionEncoding { Avro = 0, AvroDeflate = 1 }
+	export enum CaptureDescriptionEncoding { Avro = 'Avro', AvroDeflate = 'AvroDeflate' }
 
 
 	/** Description of a Check Name availability request properties. */
@@ -294,7 +294,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResultReason { None = 0, InvalidName = 1, SubscriptionIsDisabled = 2, NameInUse = 3, NameInLockdown = 4, TooManyNamespaceInCurrentSubscription = 5 }
+	export enum CheckNameAvailabilityResultReason { None = 'None', InvalidName = 'InvalidName', SubscriptionIsDisabled = 'SubscriptionIsDisabled', NameInUse = 'NameInUse', NameInLockdown = 'NameInLockdown', TooManyNamespaceInCurrentSubscription = 'TooManyNamespaceInCurrentSubscription' }
 
 
 	/** Represents the correlation filter expression. */
@@ -410,7 +410,7 @@ export namespace MyNS {
 
 
 	/** Entity status. */
-	export enum EntityStatus { Active = 0, Disabled = 1, Restoring = 2, SendDisabled = 3, ReceiveDisabled = 4, Creating = 5, Deleting = 6, Renaming = 7, Unknown = 8 }
+	export enum EntityStatus { Active = 'Active', Disabled = 'Disabled', Restoring = 'Restoring', SendDisabled = 'SendDisabled', ReceiveDisabled = 'ReceiveDisabled', Creating = 'Creating', Deleting = 'Deleting', Renaming = 'Renaming', Unknown = 'Unknown' }
 
 
 	/** Error response indicates ServiceBus service is not able to process the incoming request. The reason is provided in the error message. */
@@ -490,7 +490,7 @@ export namespace MyNS {
 
 
 	/** Rule filter types */
-	export enum FilterType { SqlFilter = 0, CorrelationFilter = 1 }
+	export enum FilterType { SqlFilter = 'SqlFilter', CorrelationFilter = 'CorrelationFilter' }
 
 
 	/** Message Count Details. */
@@ -617,7 +617,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NWRuleSetIpRulesAction { Allow = 0 }
+	export enum NWRuleSetIpRulesAction { Allow = 'Allow' }
 
 
 	/** Description of VirtualNetworkRules - NetworkRules resource. */
@@ -823,7 +823,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateAccessKeyParametersKeyType { PrimaryKey = 0, SecondaryKey = 1 }
+	export enum RegenerateAccessKeyParametersKeyType { PrimaryKey = 'PrimaryKey', SecondaryKey = 'SecondaryKey' }
 
 
 	/** The Resource definition for other than namespace. */
@@ -1122,7 +1122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SBSkuName { Basic = 0, Standard = 1, Premium = 2 }
+	export enum SBSkuName { Basic = 'Basic', Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The response of the List Namespace operation. */
@@ -1175,7 +1175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SBNamespaceMigrateTargetNamespaceType { Messaging = 0, NotificationHub = 1, Mixed = 2, EventHub = 3, Relay = 4 }
+	export enum SBNamespaceMigrateTargetNamespaceType { Messaging = 'Messaging', NotificationHub = 'NotificationHub', Mixed = 'Mixed', EventHub = 'EventHub', Relay = 'Relay' }
 
 
 	/** Properties of the namespace. */
@@ -1892,7 +1892,7 @@ export namespace MyNS {
 
 
 	/** Specifies the reason for the unavailability of the service. */
-	export enum UnavailableReason { None = 0, InvalidName = 1, SubscriptionIsDisabled = 2, NameInUse = 3, NameInLockdown = 4, TooManyNamespaceInCurrentSubscription = 5 }
+	export enum UnavailableReason { None = 'None', InvalidName = 'InvalidName', SubscriptionIsDisabled = 'SubscriptionIsDisabled', NameInUse = 'NameInUse', NameInLockdown = 'NameInLockdown', TooManyNamespaceInCurrentSubscription = 'TooManyNamespaceInCurrentSubscription' }
 
 	@Injectable()
 	export class MyClient {
@@ -2826,7 +2826,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum MigrationConfigs_GetConfigName { '$default' = 0 }
+	export enum MigrationConfigs_GetConfigName { '$default' = '$default' }
 
 }
 

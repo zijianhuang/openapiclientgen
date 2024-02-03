@@ -228,7 +228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateStorePropertiesAvailability { enabled = 0, disabled = 1 }
+	export enum PrivateStorePropertiesAvailability { enabled = 'enabled', disabled = 'disabled' }
 
 	export interface OfferObject {
 

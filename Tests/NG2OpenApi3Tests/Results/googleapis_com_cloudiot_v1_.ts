@@ -321,7 +321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublicKeyCredentialFormat { UNSPECIFIED_PUBLIC_KEY_FORMAT = 0, RSA_PEM = 1, RSA_X509_PEM = 2, ES256_PEM = 3, ES256_X509_PEM = 4 }
+	export enum PublicKeyCredentialFormat { UNSPECIFIED_PUBLIC_KEY_FORMAT = 'UNSPECIFIED_PUBLIC_KEY_FORMAT', RSA_PEM = 'RSA_PEM', RSA_X509_PEM = 'RSA_X509_PEM', ES256_PEM = 'ES256_PEM', ES256_X509_PEM = 'ES256_X509_PEM' }
 
 
 	/** Gateway-related configuration and state. */
@@ -365,9 +365,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayConfigGatewayAuthMethod { GATEWAY_AUTH_METHOD_UNSPECIFIED = 0, ASSOCIATION_ONLY = 1, DEVICE_AUTH_TOKEN_ONLY = 2, ASSOCIATION_AND_DEVICE_AUTH_TOKEN = 3 }
+	export enum GatewayConfigGatewayAuthMethod { GATEWAY_AUTH_METHOD_UNSPECIFIED = 'GATEWAY_AUTH_METHOD_UNSPECIFIED', ASSOCIATION_ONLY = 'ASSOCIATION_ONLY', DEVICE_AUTH_TOKEN_ONLY = 'DEVICE_AUTH_TOKEN_ONLY', ASSOCIATION_AND_DEVICE_AUTH_TOKEN = 'ASSOCIATION_AND_DEVICE_AUTH_TOKEN' }
 
-	export enum GatewayConfigGatewayType { GATEWAY_TYPE_UNSPECIFIED = 0, GATEWAY = 1, NON_GATEWAY = 2 }
+	export enum GatewayConfigGatewayType { GATEWAY_TYPE_UNSPECIFIED = 'GATEWAY_TYPE_UNSPECIFIED', GATEWAY = 'GATEWAY', NON_GATEWAY = 'NON_GATEWAY' }
 
 
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -400,7 +400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceLogLevel { LOG_LEVEL_UNSPECIFIED = 0, NONE = 1, ERROR = 2, INFO = 3, DEBUG = 4 }
+	export enum DeviceLogLevel { LOG_LEVEL_UNSPECIFIED = 'LOG_LEVEL_UNSPECIFIED', NONE = 'NONE', ERROR = 'ERROR', INFO = 'INFO', DEBUG = 'DEBUG' }
 
 
 	/** The device state, as reported by the device. */
@@ -528,7 +528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublicKeyCertificateFormat { UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT = 0, X509_CERTIFICATE_PEM = 1 }
+	export enum PublicKeyCertificateFormat { UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT = 'UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT', X509_CERTIFICATE_PEM = 'X509_CERTIFICATE_PEM' }
 
 
 	/** Details of an X.509 certificate. For informational purposes only. */
@@ -635,7 +635,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpConfigHttpEnabledState { HTTP_STATE_UNSPECIFIED = 0, HTTP_ENABLED = 1, HTTP_DISABLED = 2 }
+	export enum HttpConfigHttpEnabledState { HTTP_STATE_UNSPECIFIED = 'HTTP_STATE_UNSPECIFIED', HTTP_ENABLED = 'HTTP_ENABLED', HTTP_DISABLED = 'HTTP_DISABLED' }
 
 
 	/** The configuration of MQTT for a device registry. */
@@ -658,7 +658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MqttConfigMqttEnabledState { MQTT_STATE_UNSPECIFIED = 0, MQTT_ENABLED = 1, MQTT_DISABLED = 2 }
+	export enum MqttConfigMqttEnabledState { MQTT_STATE_UNSPECIFIED = 'MQTT_STATE_UNSPECIFIED', MQTT_ENABLED = 'MQTT_ENABLED', MQTT_DISABLED = 'MQTT_DISABLED' }
 
 
 	/** The configuration for notification of new states received from the device. */

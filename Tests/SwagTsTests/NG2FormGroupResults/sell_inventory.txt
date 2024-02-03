@@ -2864,7 +2864,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class LocationClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -2940,12 +2940,6 @@ export namespace MyNS {
 		UpdateInventoryLocation(merchantLocationKey: string, requestBody: InventoryLocation): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/update_location_details', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class Inventory_itemClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This call retrieves the inventory item record for a given SKU. The SKU value is passed in at the end of the call URI. There is no request payload for this call. The authorization header is the only required HTTP header for this call, and it is required for all Inventory API calls. See the HTTP request headers section for more information. For those who prefer to retrieve numerous inventory item records by SKU value with one call (up to 25 at a time), the bulkGetInventoryItem method can be used. To retrieve all inventory item records defined on the seller's account, the getInventoryItems method can be used (with pagination control if desired).
@@ -3018,12 +3012,6 @@ export namespace MyNS {
 		BulkGetInventoryItem(requestBody: BulkGetInventoryItem): Observable<BulkGetInventoryItemResponse> {
 			return this.http.post<BulkGetInventoryItemResponse>(this.baseUri + 'bulk_get_inventory_item', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
-	}
-
-	@Injectable()
-	export class Product_compatibilityClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This call is used by the seller to retrieve the list of products that are compatible with the inventory item. The SKU value for the inventory item is passed into the call URI, and a successful call with return the compatible vehicle list associated with this inventory item. Product compatibility is currently only applicable to motor vehicle parts and accessory categories, but more categories may be supported in the future.
@@ -3054,12 +3042,6 @@ export namespace MyNS {
 		 */
 		DeleteProductCompatibility(sku: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { observe: 'response', responseType: 'text' });
-		}
-	}
-
-	@Injectable()
-	export class OfferClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -3186,12 +3168,6 @@ export namespace MyNS {
 		WithdrawOffer(offerId: string): Observable<WithdrawResponse> {
 			return this.http.post<WithdrawResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/withdraw', null, {});
 		}
-	}
-
-	@Injectable()
-	export class Inventory_item_groupClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * This call retrieves the inventory item group for a given inventoryItemGroupKey value. The inventoryItemGroupKey value is passed in at the end of the call URI.
@@ -3222,12 +3198,6 @@ export namespace MyNS {
 		 */
 		DeleteInventoryItemGroup(inventoryItemGroupKey: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { observe: 'response', responseType: 'text' });
-		}
-	}
-
-	@Injectable()
-	export class ListingClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

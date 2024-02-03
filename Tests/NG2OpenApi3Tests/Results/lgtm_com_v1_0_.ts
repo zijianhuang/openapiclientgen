@@ -110,7 +110,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Language_statsStatus { success = 0, failure = 1, pending = 2 }
+	export enum Language_statsStatus { success = 'success', failure = 'failure', pending = 'pending' }
 
 	export interface Project {
 
@@ -344,7 +344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Codereview_languagesStatus { pending = 0, failure = 1, success = 2 }
+	export enum Codereview_languagesStatus { pending = 'pending', failure = 'failure', success = 'success' }
 
 	export interface Health {
 
@@ -377,7 +377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthStatus { UNKNOWN = 0, UP = 1, DOWN = 2 }
+	export enum HealthStatus { UNKNOWN = 'UNKNOWN', UP = 'UP', DOWN = 'DOWN' }
 
 	export interface Measurement {
 
@@ -502,9 +502,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationStatus { pending = 0, done = 1 }
+	export enum OperationStatus { pending = 'pending', done = 'done' }
 
-	export enum OperationTask_type { analysis = 0, codereview = 1, queryjob = 2 }
+	export enum OperationTask_type { analysis = 'analysis', codereview = 'codereview', queryjob = 'queryjob' }
 
 	export interface Upload_session {
 
@@ -571,7 +571,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Project_language_statsGrade { 'A+' = 0, A = 1, B = 2, C = 3, D = 4, E = 5 }
+	export enum Project_language_statsGrade { 'A+' = 'A+', A = 'A', B = 'B', C = 'C', D = 'D', E = 'E' }
 
 	export interface Project_list {
 
@@ -781,7 +781,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Queryjob_results_overview_entryStatus { success = 0, error = 1 }
+	export enum Queryjob_results_overview_entryStatus { success = 'success', error = 'error' }
 
 	export interface Version {
 
@@ -1139,9 +1139,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddProjectMode { full = 0, sparse = 1, upload = 2 }
+	export enum AddProjectMode { full = 'full', sparse = 'sparse', upload = 'upload' }
 
-	export enum GetProjectConfigSource { repository = 0, administrator = 1 }
+	export enum GetProjectConfigSource { repository = 'repository', administrator = 'administrator' }
 
 }
 

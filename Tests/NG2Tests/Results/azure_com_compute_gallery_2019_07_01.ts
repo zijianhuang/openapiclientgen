@@ -246,7 +246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GalleryApplicationPropertiesSupportedOSType { Windows = 0, Linux = 1 }
+	export enum GalleryApplicationPropertiesSupportedOSType { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/** Specifies information about the gallery Application Definition that you want to update. */
@@ -348,7 +348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GalleryApplicationVersionPropertiesProvisioningState { Creating = 0, Updating = 1, Failed = 2, Succeeded = 3, Deleting = 4, Migrating = 5 }
+	export enum GalleryApplicationVersionPropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Failed = 'Failed', Succeeded = 'Succeeded', Deleting = 'Deleting', Migrating = 'Migrating' }
 
 
 	/** The publishing profile of a gallery Image Version. */
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GalleryArtifactPublishingProfileBaseStorageAccountType { Standard_LRS = 0, Standard_ZRS = 1 }
+	export enum GalleryArtifactPublishingProfileBaseStorageAccountType { Standard_LRS = 'Standard_LRS', Standard_ZRS = 'Standard_ZRS' }
 
 
 	/** Describes the target region information. */
@@ -612,7 +612,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GalleryDiskImageHostCaching { None = 0, ReadOnly = 1, ReadWrite = 2 }
+	export enum GalleryDiskImageHostCaching { None = 'None', ReadOnly = 'ReadOnly', ReadWrite = 'ReadWrite' }
 
 
 	/** Describes the gallery unique name. */
@@ -841,9 +841,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GalleryImagePropertiesHyperVGeneration { V1 = 0, V2 = 1 }
+	export enum GalleryImagePropertiesHyperVGeneration { V1 = 'V1', V2 = 'V2' }
 
-	export enum GalleryImagePropertiesOsState { Generalized = 0, Specialized = 1 }
+	export enum GalleryImagePropertiesOsState { Generalized = 'Generalized', Specialized = 'Specialized' }
 
 
 	/** Specifies information about the gallery Image Definition that you want to update. */
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionalReplicationStatusState { Unknown = 0, Replicating = 1, Completed = 2, Failed = 3 }
+	export enum RegionalReplicationStatusState { Unknown = 'Unknown', Replicating = 'Replicating', Completed = 'Completed', Failed = 'Failed' }
 
 
 	/** This is the replication status of the gallery Image Version. */
@@ -1277,7 +1277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationStatusAggregatedState { Unknown = 0, InProgress = 1, Completed = 2, Failed = 3 }
+	export enum ReplicationStatusAggregatedState { Unknown = 'Unknown', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed' }
 
 
 	/** The Resource model definition. */
@@ -1823,7 +1823,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GalleryApplicationVersions_GetExpand { ReplicationStatus = 0 }
+	export enum GalleryApplicationVersions_GetExpand { ReplicationStatus = 'ReplicationStatus' }
 
 }
 

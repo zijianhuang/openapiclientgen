@@ -79,7 +79,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountCountErrorErrorType { ERROR_TYPE_UNSPECIFIED = 0, WILDCARD_TOO_BROAD = 1, TOO_MANY_TERMS = 2, LOCATION_UNAVAILABLE = 3, UNKNOWN = 4, DEADLINE_EXCEEDED = 5 }
+	export enum AccountCountErrorErrorType { ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED', WILDCARD_TOO_BROAD = 'WILDCARD_TOO_BROAD', TOO_MANY_TERMS = 'TOO_MANY_TERMS', LOCATION_UNAVAILABLE = 'LOCATION_UNAVAILABLE', UNKNOWN = 'UNKNOWN', DEADLINE_EXCEEDED = 'DEADLINE_EXCEEDED' }
 
 
 	/** The accounts to search */
@@ -294,7 +294,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MatterPermissionRole { ROLE_UNSPECIFIED = 0, COLLABORATOR = 1, OWNER = 2 }
+	export enum MatterPermissionRole { ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED', COLLABORATOR = 'COLLABORATOR', OWNER = 'OWNER' }
 
 
 	/** The options for Calendar exports. */
@@ -317,7 +317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CalendarExportOptionsExportFormat { EXPORT_FORMAT_UNSPECIFIED = 0, MBOX = 1, PST = 2, ICS = 3 }
+	export enum CalendarExportOptionsExportFormat { EXPORT_FORMAT_UNSPECIFIED = 'EXPORT_FORMAT_UNSPECIFIED', MBOX = 'MBOX', PST = 'PST', ICS = 'ICS' }
 
 
 	/** Additional options for Calendar search */
@@ -442,7 +442,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MatterState { STATE_UNSPECIFIED = 0, OPEN = 1, CLOSED = 2, DELETED = 3 }
+	export enum MatterState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', OPEN = 'OPEN', CLOSED = 'CLOSED', DELETED = 'DELETED' }
 
 
 	/** The export file in Cloud Storage */
@@ -809,9 +809,9 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryCorpus { CORPUS_TYPE_UNSPECIFIED = 0, DRIVE = 1, MAIL = 2, GROUPS = 3, HANGOUTS_CHAT = 4, VOICE = 5, CALENDAR = 6 }
+	export enum QueryCorpus { CORPUS_TYPE_UNSPECIFIED = 'CORPUS_TYPE_UNSPECIFIED', DRIVE = 'DRIVE', MAIL = 'MAIL', GROUPS = 'GROUPS', HANGOUTS_CHAT = 'HANGOUTS_CHAT', VOICE = 'VOICE', CALENDAR = 'CALENDAR' }
 
-	export enum QueryDataScope { DATA_SCOPE_UNSPECIFIED = 0, ALL_DATA = 1, HELD_DATA = 2, UNPROCESSED_DATA = 3 }
+	export enum QueryDataScope { DATA_SCOPE_UNSPECIFIED = 'DATA_SCOPE_UNSPECIFIED', ALL_DATA = 'ALL_DATA', HELD_DATA = 'HELD_DATA', UNPROCESSED_DATA = 'UNPROCESSED_DATA' }
 
 
 	/** Additional options for Drive search */
@@ -855,7 +855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriveOptionsClientSideEncryptedOption { CLIENT_SIDE_ENCRYPTED_OPTION_UNSPECIFIED = 0, CLIENT_SIDE_ENCRYPTED_OPTION_ANY = 1, CLIENT_SIDE_ENCRYPTED_OPTION_ENCRYPTED = 2, CLIENT_SIDE_ENCRYPTED_OPTION_UNENCRYPTED = 3 }
+	export enum DriveOptionsClientSideEncryptedOption { CLIENT_SIDE_ENCRYPTED_OPTION_UNSPECIFIED = 'CLIENT_SIDE_ENCRYPTED_OPTION_UNSPECIFIED', CLIENT_SIDE_ENCRYPTED_OPTION_ANY = 'CLIENT_SIDE_ENCRYPTED_OPTION_ANY', CLIENT_SIDE_ENCRYPTED_OPTION_ENCRYPTED = 'CLIENT_SIDE_ENCRYPTED_OPTION_ENCRYPTED', CLIENT_SIDE_ENCRYPTED_OPTION_UNENCRYPTED = 'CLIENT_SIDE_ENCRYPTED_OPTION_UNENCRYPTED' }
 
 
 	/** The Chat spaces to search */
@@ -923,7 +923,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryMethod { SEARCH_METHOD_UNSPECIFIED = 0, ACCOUNT = 1, ORG_UNIT = 2, TEAM_DRIVE = 3, ENTIRE_ORG = 4, ROOM = 5, SITES_URL = 6, SHARED_DRIVE = 7 }
+	export enum QueryMethod { SEARCH_METHOD_UNSPECIFIED = 'SEARCH_METHOD_UNSPECIFIED', ACCOUNT = 'ACCOUNT', ORG_UNIT = 'ORG_UNIT', TEAM_DRIVE = 'TEAM_DRIVE', ENTIRE_ORG = 'ENTIRE_ORG', ROOM = 'ROOM', SITES_URL = 'SITES_URL', SHARED_DRIVE = 'SHARED_DRIVE' }
 
 
 	/** The organizational unit to search */
@@ -1038,7 +1038,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CountArtifactsRequestView { COUNT_RESULT_VIEW_UNSPECIFIED = 0, TOTAL_COUNT = 1, ALL = 2 }
+	export enum CountArtifactsRequestView { COUNT_RESULT_VIEW_UNSPECIFIED = 'COUNT_RESULT_VIEW_UNSPECIFIED', TOTAL_COUNT = 'TOTAL_COUNT', ALL = 'ALL' }
 
 
 	/** Definition of the response for method CountArtifacts. */
@@ -1370,7 +1370,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportOptionsRegion { EXPORT_REGION_UNSPECIFIED = 0, ANY = 1, US = 2, EUROPE = 3 }
+	export enum ExportOptionsRegion { EXPORT_REGION_UNSPECIFIED = 'EXPORT_REGION_UNSPECIFIED', ANY = 'ANY', US = 'US', EUROPE = 'EUROPE' }
 
 
 	/** The options for Voice exports. */
@@ -1428,7 +1428,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportStatus { EXPORT_STATUS_UNSPECIFIED = 0, COMPLETED = 1, FAILED = 2, IN_PROGRESS = 3 }
+	export enum ExportStatus { EXPORT_STATUS_UNSPECIFIED = 'EXPORT_STATUS_UNSPECIFIED', COMPLETED = 'COMPLETED', FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS' }
 
 
 	/** The organizational unit covered by a hold. This structure is immutable. */
@@ -2189,9 +2189,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Vault_matters_listView { VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Vault_matters_listView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum Vault_matters_holds_listView { HOLD_VIEW_UNSPECIFIED = 0, BASIC_HOLD = 1, FULL_HOLD = 2 }
+	export enum Vault_matters_holds_listView { HOLD_VIEW_UNSPECIFIED = 'HOLD_VIEW_UNSPECIFIED', BASIC_HOLD = 'BASIC_HOLD', FULL_HOLD = 'FULL_HOLD' }
 
 }
 

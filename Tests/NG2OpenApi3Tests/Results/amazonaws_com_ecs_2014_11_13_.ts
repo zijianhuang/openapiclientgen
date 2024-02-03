@@ -45,7 +45,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacityProviderStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum CapacityProviderStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** The details of the Auto Scaling group for the capacity provider. */
@@ -101,9 +101,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedScalingStatus { ENABLED = 0, DISABLED = 1 }
+	export enum ManagedScalingStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum CapacityProviderUpdateStatus { DELETE_IN_PROGRESS = 0, DELETE_COMPLETE = 1, DELETE_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_COMPLETE = 4, UPDATE_FAILED = 5 }
+	export enum CapacityProviderUpdateStatus { DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_COMPLETE = 'DELETE_COMPLETE', DELETE_FAILED = 'DELETE_FAILED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_COMPLETE = 'UPDATE_COMPLETE', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 
 	/** <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value. You define them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> </ul> */
@@ -289,7 +289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecuteCommandLogging { NONE = 0, DEFAULT = 1, OVERRIDE = 2 }
+	export enum ExecuteCommandLogging { NONE = 'NONE', DEFAULT = 'DEFAULT', OVERRIDE = 'OVERRIDE' }
 
 
 	/** The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket. */
@@ -360,7 +360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterSettingName { containerInsights = 0 }
+	export enum ClusterSettingName { containerInsights = 'containerInsights' }
 
 
 	/** <p>The details of a capacity provider strategy. A capacity provider strategy can be set when using the <a>RunTask</a> or <a>CreateCluster</a> APIs or as the default capacity provider strategy for a cluster with the <a>CreateCluster</a> API.</p> <p>Only capacity providers that are already associated with a cluster and have an <code>ACTIVE</code> or <code>UPDATING</code> status can be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster.</p> <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used in a capacity provider strategy.</p> <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p> */
@@ -626,7 +626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LaunchType { EC2 = 0, FARGATE = 1, EXTERNAL = 2 }
+	export enum LaunchType { EC2 = 'EC2', FARGATE = 'FARGATE', EXTERNAL = 'EXTERNAL' }
 
 
 	/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
@@ -839,9 +839,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScaleUnit { PERCENT = 0 }
+	export enum ScaleUnit { PERCENT = 'PERCENT' }
 
-	export enum StabilityStatus { STEADY_STATE = 0, STABILIZING = 1 }
+	export enum StabilityStatus { STEADY_STATE = 'STEADY_STATE', STABILIZING = 'STABILIZING' }
 
 
 	/** The details of an Amazon ECS service deployment. This is used only when a service uses the <code>ECS</code> deployment controller type. */
@@ -903,7 +903,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentRolloutState { COMPLETED = 0, FAILED = 1, IN_PROGRESS = 2 }
+	export enum DeploymentRolloutState { COMPLETED = 'COMPLETED', FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS' }
 
 
 	/** <p>The Service Connect configuration of your Amazon ECS service. The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p> <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> */
@@ -1008,7 +1008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogDriver { 'json-file' = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6, awsfirelens = 7 }
+	export enum LogDriver { 'json-file' = 'json-file', syslog = 'syslog', journald = 'journald', gelf = 'gelf', fluentd = 'fluentd', awslogs = 'awslogs', splunk = 'splunk', awsfirelens = 'awsfirelens' }
 
 	export interface LogConfigurationOptionsMap {
 	}
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementConstraintType { distinctInstance = 0, memberOf = 1 }
+	export enum PlacementConstraintType { distinctInstance = 'distinctInstance', memberOf = 'memberOf' }
 
 
 	/** The task placement strategy for a task or service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task placement strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
@@ -1133,9 +1133,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementStrategyType { random = 0, spread = 1, binpack = 2 }
+	export enum PlacementStrategyType { random = 'random', spread = 'spread', binpack = 'binpack' }
 
-	export enum SchedulingStrategy { REPLICA = 0, DAEMON = 1 }
+	export enum SchedulingStrategy { REPLICA = 'REPLICA', DAEMON = 'DAEMON' }
 
 
 	/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
@@ -1158,9 +1158,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentControllerType { ECS = 0, CODE_DEPLOY = 1, EXTERNAL = 2 }
+	export enum DeploymentControllerType { ECS = 'ECS', CODE_DEPLOY = 'CODE_DEPLOY', EXTERNAL = 'EXTERNAL' }
 
-	export enum PropagateTags { TASK_DEFINITION = 0, SERVICE = 1, NONE = 2 }
+	export enum PropagateTags { TASK_DEFINITION = 'TASK_DEFINITION', SERVICE = 'SERVICE', NONE = 'NONE' }
 
 	export interface CreateServiceRequest {
 		cluster?: string;
@@ -1389,7 +1389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SettingName { serviceLongArnFormat = 0, taskLongArnFormat = 1, containerInstanceLongArnFormat = 2, awsvpcTrunking = 3, containerInsights = 4, fargateFIPSMode = 5, tagResourceAuthorization = 6 }
+	export enum SettingName { serviceLongArnFormat = 'serviceLongArnFormat', taskLongArnFormat = 'taskLongArnFormat', containerInstanceLongArnFormat = 'containerInstanceLongArnFormat', awsvpcTrunking = 'awsvpcTrunking', containerInsights = 'containerInsights', fargateFIPSMode = 'fargateFIPSMode', tagResourceAuthorization = 'tagResourceAuthorization' }
 
 	export interface DeleteAccountSettingRequest {
 
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetType { 'container-instance' = 0 }
+	export enum TargetType { 'container-instance' = 'container-instance' }
 
 	export interface DeleteAttributesRequest {
 		cluster?: string;
@@ -1817,9 +1817,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransportProtocol { tcp = 0, udp = 1 }
+	export enum TransportProtocol { tcp = 'tcp', udp = 'udp' }
 
-	export enum ApplicationProtocol { http = 0, http2 = 1, grpc = 2 }
+	export enum ApplicationProtocol { http = 'http', http2 = 'http2', grpc = 'grpc' }
 
 
 	/** <p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information about the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p> <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying environment variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>You must use the following platforms for the Fargate launch type:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> */
@@ -1849,7 +1849,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentFileType { s3 = 0 }
+	export enum EnvironmentFileType { s3 = 's3' }
 
 
 	/** The details for a volume mount point that's used in a container definition. */
@@ -1964,7 +1964,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceCgroupPermission { read = 0, write = 1, mknod = 2 }
+	export enum DeviceCgroupPermission { read = 'read', write = 'write', mknod = 'mknod' }
 
 
 	/** The container path, mount options, and size of the tmpfs mount. */
@@ -2023,7 +2023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerCondition { START = 0, COMPLETE = 1, SUCCESS = 2, HEALTHY = 3 }
+	export enum ContainerCondition { START = 'START', COMPLETE = 'COMPLETE', SUCCESS = 'SUCCESS', HEALTHY = 'HEALTHY' }
 
 
 	/** Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.  */
@@ -2098,7 +2098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UlimitName { core = 0, cpu = 1, data = 2, fsize = 3, locks = 4, memlock = 5, msgqueue = 6, nice = 7, nofile = 8, nproc = 9, rss = 10, rtprio = 11, rttime = 12, sigpending = 13, stack = 14 }
+	export enum UlimitName { core = 'core', cpu = 'cpu', data = 'data', fsize = 'fsize', locks = 'locks', memlock = 'memlock', msgqueue = 'msgqueue', nice = 'nice', nofile = 'nofile', nproc = 'nproc', rss = 'rss', rtprio = 'rtprio', rttime = 'rttime', sigpending = 'sigpending', stack = 'stack' }
 
 
 	/** <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile). This configuration maps to the <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note> <p>The Amazon ECS container agent only monitors and reports on the health checks specified in the task definition. Amazon ECS does not monitor Docker health checks that are embedded in a container image and not specified in the container definition. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image.</p> </note> <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p> <p>The health check is designed to make sure that your containers survive agent restarts, upgrades, or temporary unavailability.</p> <p>The following describes the possible <code>healthStatus</code> values for a container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated or there's no container health check defined.</p> </li> </ul> <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of non-essential containers don't have an effect on the health status of a task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated, there are only nonessential containers with health checks defined, or there are no container health checks defined.</p> </li> </ul> <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p> <p>The following are notes about container health check support:</p> <ul> <li> <p>When the Amazon ECS agent cannot connect to the Amazon ECS service, the service reports the container as <code>UNHEALTHY</code>. </p> </li> <li> <p>The health check statuses are the "last heard from" response from the Amazon ECS agent. There are no assumptions made about the status of the container health checks.</p> </li> <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS container agent</a>.</p> </li> <li> <p>Container health checks are supported for Fargate tasks if you're using platform version <code>1.1.0</code> or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a>.</p> </li> <li> <p>Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.</p> </li> </ul> */
@@ -2177,7 +2177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { GPU = 0, InferenceAccelerator = 1 }
+	export enum ResourceType { GPU = 'GPU', InferenceAccelerator = 'InferenceAccelerator' }
 
 
 	/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
@@ -2201,7 +2201,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirelensConfigurationType { fluentd = 0, fluentbit = 1 }
+	export enum FirelensConfigurationType { fluentd = 'fluentd', fluentbit = 'fluentbit' }
 
 	export interface FirelensConfigurationOptionsMap {
 	}
@@ -2213,7 +2213,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkMode { bridge = 0, host = 1, awsvpc = 2, none = 3 }
+	export enum NetworkMode { bridge = 'bridge', host = 'host', awsvpc = 'awsvpc', none = 'none' }
 
 
 	/** A data volume that's used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in Tasks</a>. */
@@ -2278,7 +2278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Scope { task = 0, shared = 1 }
+	export enum Scope { task = 'task', shared = 'shared' }
 
 	export interface StringMap {
 	}
@@ -2400,7 +2400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskDefinitionStatus { ACTIVE = 0, INACTIVE = 1, DELETE_IN_PROGRESS = 2 }
+	export enum TaskDefinitionStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS' }
 
 
 	/** <p>The constraint on task placement in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task placement constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>Task placement constraints aren't supported for tasks run on Fargate.</p> </note> */
@@ -2422,9 +2422,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskDefinitionPlacementConstraintType { memberOf = 0 }
+	export enum TaskDefinitionPlacementConstraintType { memberOf = 'memberOf' }
 
-	export enum Compatibility { EC2 = 0, FARGATE = 1, EXTERNAL = 2 }
+	export enum Compatibility { EC2 = 'EC2', FARGATE = 'FARGATE', EXTERNAL = 'EXTERNAL' }
 
 
 	/** <p>Information about the platform for the Amazon ECS service or task.</p> <p>For more information about <code>RuntimePlatform</code>, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> */
@@ -2446,9 +2446,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CPUArchitecture { X86_64 = 0, ARM64 = 1 }
+	export enum CPUArchitecture { X86_64 = 'X86_64', ARM64 = 'ARM64' }
 
-	export enum OSFamily { WINDOWS_SERVER_2019_FULL = 0, WINDOWS_SERVER_2019_CORE = 1, WINDOWS_SERVER_2016_FULL = 2, WINDOWS_SERVER_2004_CORE = 3, WINDOWS_SERVER_2022_CORE = 4, WINDOWS_SERVER_2022_FULL = 5, WINDOWS_SERVER_20H2_CORE = 6, LINUX = 7 }
+	export enum OSFamily { WINDOWS_SERVER_2019_FULL = 'WINDOWS_SERVER_2019_FULL', WINDOWS_SERVER_2019_CORE = 'WINDOWS_SERVER_2019_CORE', WINDOWS_SERVER_2016_FULL = 'WINDOWS_SERVER_2016_FULL', WINDOWS_SERVER_2004_CORE = 'WINDOWS_SERVER_2004_CORE', WINDOWS_SERVER_2022_CORE = 'WINDOWS_SERVER_2022_CORE', WINDOWS_SERVER_2022_FULL = 'WINDOWS_SERVER_2022_FULL', WINDOWS_SERVER_20H2_CORE = 'WINDOWS_SERVER_20H2_CORE', LINUX = 'LINUX' }
 
 
 	/** Details on an Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
@@ -2478,9 +2478,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PidMode { host = 0, task = 1 }
+	export enum PidMode { host = 'host', task = 'task' }
 
-	export enum IpcMode { host = 0, task = 1, none = 2 }
+	export enum IpcMode { host = 'host', task = 'task', none = 'none' }
 
 
 	/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> </p> */
@@ -2513,7 +2513,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProxyConfigurationType { APPMESH = 0 }
+	export enum ProxyConfigurationType { APPMESH = 'APPMESH' }
 
 
 	/** <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note> <p>For tasks using the Fargate launch type, the task requires the following platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> </note> */
@@ -2745,7 +2745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentUpdateStatus { PENDING = 0, STAGING = 1, STAGED = 2, UPDATING = 3, UPDATED = 4, FAILED = 5 }
+	export enum AgentUpdateStatus { PENDING = 'PENDING', STAGING = 'STAGING', STAGED = 'STAGED', UPDATING = 'UPDATING', UPDATED = 'UPDATED', FAILED = 'FAILED' }
 
 
 	/** An object representing the health status of the container instance. */
@@ -2765,7 +2765,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceHealthCheckState { OK = 0, IMPAIRED = 1, INSUFFICIENT_DATA = 2, INITIALIZING = 3 }
+	export enum InstanceHealthCheckState { OK = 'OK', IMPAIRED = 'IMPAIRED', INSUFFICIENT_DATA = 'INSUFFICIENT_DATA', INITIALIZING = 'INITIALIZING' }
 
 
 	/** An object representing the result of a container instance health status check. */
@@ -2793,7 +2793,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceHealthCheckType { CONTAINER_RUNTIME = 0 }
+	export enum InstanceHealthCheckType { CONTAINER_RUNTIME = 'CONTAINER_RUNTIME' }
 
 	export interface DeregisterContainerInstanceRequest {
 		cluster?: string;
@@ -2879,7 +2879,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapacityProviderField { TAGS = 0 }
+	export enum CapacityProviderField { TAGS = 'TAGS' }
 
 	export interface DescribeClustersResponse {
 		clusters?: Array<Cluster>;
@@ -2905,7 +2905,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterField { ATTACHMENTS = 0, CONFIGURATIONS = 1, SETTINGS = 2, STATISTICS = 3, TAGS = 4 }
+	export enum ClusterField { ATTACHMENTS = 'ATTACHMENTS', CONFIGURATIONS = 'CONFIGURATIONS', SETTINGS = 'SETTINGS', STATISTICS = 'STATISTICS', TAGS = 'TAGS' }
 
 	export interface DescribeContainerInstancesResponse {
 		containerInstances?: Array<ContainerInstance>;
@@ -2936,7 +2936,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerInstanceField { TAGS = 0, CONTAINER_INSTANCE_HEALTH = 1 }
+	export enum ContainerInstanceField { TAGS = 'TAGS', CONTAINER_INSTANCE_HEALTH = 'CONTAINER_INSTANCE_HEALTH' }
 
 	export interface DescribeServicesResponse {
 		services?: Array<Service>;
@@ -2967,7 +2967,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceField { TAGS = 0 }
+	export enum ServiceField { TAGS = 'TAGS' }
 
 	export interface DescribeTaskDefinitionResponse {
 		taskDefinition?: TaskDefinition;
@@ -2999,7 +2999,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskDefinitionField { TAGS = 0 }
+	export enum TaskDefinitionField { TAGS = 'TAGS' }
 
 	export interface DescribeTaskSetsResponse {
 		taskSets?: Array<TaskSet>;
@@ -3039,7 +3039,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskSetField { TAGS = 0 }
+	export enum TaskSetField { TAGS = 'TAGS' }
 
 	export interface DescribeTasksResponse {
 		tasks?: Array<Task>;
@@ -3161,7 +3161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Connectivity { CONNECTED = 0, DISCONNECTED = 1 }
+	export enum Connectivity { CONNECTED = 'CONNECTED', DISCONNECTED = 'DISCONNECTED' }
 
 
 	/** A Docker container that's part of a task. */
@@ -3275,7 +3275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthStatus { HEALTHY = 0, UNHEALTHY = 1, UNKNOWN = 2 }
+	export enum HealthStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Details about the managed agent status for the container. */
@@ -3303,7 +3303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedAgentName { ExecuteCommandAgent = 0 }
+	export enum ManagedAgentName { ExecuteCommandAgent = 'ExecuteCommandAgent' }
 
 
 	/** The overrides that are associated with a task. */
@@ -3384,7 +3384,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStopCode { TaskFailedToStart = 0, EssentialContainerExited = 1, UserInitiated = 2, ServiceSchedulerInitiated = 3, SpotInterruption = 4, TerminationNotice = 5 }
+	export enum TaskStopCode { TaskFailedToStart = 'TaskFailedToStart', EssentialContainerExited = 'EssentialContainerExited', UserInitiated = 'UserInitiated', ServiceSchedulerInitiated = 'ServiceSchedulerInitiated', SpotInterruption = 'SpotInterruption', TerminationNotice = 'TerminationNotice' }
 
 	export interface DescribeTasksRequest {
 		cluster?: string;
@@ -3403,7 +3403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskField { TAGS = 0 }
+	export enum TaskField { TAGS = 'TAGS' }
 
 	export interface DiscoverPollEndpointResponse {
 		endpoint?: string;
@@ -3756,7 +3756,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerInstanceStatus { ACTIVE = 0, DRAINING = 1, REGISTERING = 2, DEREGISTERING = 3, REGISTRATION_FAILED = 4 }
+	export enum ContainerInstanceStatus { ACTIVE = 'ACTIVE', DRAINING = 'DRAINING', REGISTERING = 'REGISTERING', DEREGISTERING = 'DEREGISTERING', REGISTRATION_FAILED = 'REGISTRATION_FAILED' }
 
 	export interface ListServicesResponse {
 		serviceArns?: Array<string>;
@@ -3898,7 +3898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskDefinitionFamilyStatus { ACTIVE = 0, INACTIVE = 1, ALL = 2 }
+	export enum TaskDefinitionFamilyStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', ALL = 'ALL' }
 
 	export interface ListTaskDefinitionsResponse {
 		taskDefinitionArns?: Array<string>;
@@ -3939,7 +3939,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASC = 0, DESC = 1 }
+	export enum SortOrder { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface ListTasksResponse {
 		taskArns?: Array<string>;
@@ -3992,7 +3992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DesiredStatus { RUNNING = 0, PENDING = 1, STOPPED = 2 }
+	export enum DesiredStatus { RUNNING = 'RUNNING', PENDING = 'PENDING', STOPPED = 'STOPPED' }
 
 	export interface PutAccountSettingResponse {
 		setting?: Setting;
@@ -4214,7 +4214,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformDeviceType { GPU = 0 }
+	export enum PlatformDeviceType { GPU = 'GPU' }
 
 	export interface RegisterTaskDefinitionResponse {
 		taskDefinition?: TaskDefinition;
@@ -5111,13 +5111,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignPublicIp { ENABLED = 0, DISABLED = 1 }
+	export enum AssignPublicIp { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum ManagedTerminationProtection { ENABLED = 0, DISABLED = 1 }
+	export enum ManagedTerminationProtection { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum EFSAuthorizationConfigIAM { ENABLED = 0, DISABLED = 1 }
+	export enum EFSAuthorizationConfigIAM { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum EFSTransitEncryption { ENABLED = 0, DISABLED = 1 }
+	export enum EFSTransitEncryption { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	@Injectable()
 	export class MyClient {
@@ -5647,117 +5647,117 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateCapacityProviderX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateCapacityProvider' = 0 }
+	export enum CreateCapacityProviderX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateCapacityProvider' = 'AmazonEC2ContainerServiceV20141113.CreateCapacityProvider' }
 
-	export enum CreateClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateCluster' = 0 }
+	export enum CreateClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateCluster' = 'AmazonEC2ContainerServiceV20141113.CreateCluster' }
 
-	export enum CreateServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateService' = 0 }
+	export enum CreateServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateService' = 'AmazonEC2ContainerServiceV20141113.CreateService' }
 
-	export enum CreateTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateTaskSet' = 0 }
+	export enum CreateTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateTaskSet' = 'AmazonEC2ContainerServiceV20141113.CreateTaskSet' }
 
-	export enum DeleteAccountSettingX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteAccountSetting' = 0 }
+	export enum DeleteAccountSettingX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteAccountSetting' = 'AmazonEC2ContainerServiceV20141113.DeleteAccountSetting' }
 
-	export enum DeleteAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteAttributes' = 0 }
+	export enum DeleteAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteAttributes' = 'AmazonEC2ContainerServiceV20141113.DeleteAttributes' }
 
-	export enum DeleteCapacityProviderX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteCapacityProvider' = 0 }
+	export enum DeleteCapacityProviderX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteCapacityProvider' = 'AmazonEC2ContainerServiceV20141113.DeleteCapacityProvider' }
 
-	export enum DeleteClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteCluster' = 0 }
+	export enum DeleteClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteCluster' = 'AmazonEC2ContainerServiceV20141113.DeleteCluster' }
 
-	export enum DeleteServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteService' = 0 }
+	export enum DeleteServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteService' = 'AmazonEC2ContainerServiceV20141113.DeleteService' }
 
-	export enum DeleteTaskDefinitionsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteTaskDefinitions' = 0 }
+	export enum DeleteTaskDefinitionsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteTaskDefinitions' = 'AmazonEC2ContainerServiceV20141113.DeleteTaskDefinitions' }
 
-	export enum DeleteTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteTaskSet' = 0 }
+	export enum DeleteTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteTaskSet' = 'AmazonEC2ContainerServiceV20141113.DeleteTaskSet' }
 
-	export enum DeregisterContainerInstanceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance' = 0 }
+	export enum DeregisterContainerInstanceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance' = 'AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance' }
 
-	export enum DeregisterTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition' = 0 }
+	export enum DeregisterTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition' = 'AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition' }
 
-	export enum DescribeCapacityProvidersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders' = 0 }
+	export enum DescribeCapacityProvidersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders' = 'AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders' }
 
-	export enum DescribeClustersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeClusters' = 0 }
+	export enum DescribeClustersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeClusters' = 'AmazonEC2ContainerServiceV20141113.DescribeClusters' }
 
-	export enum DescribeContainerInstancesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeContainerInstances' = 0 }
+	export enum DescribeContainerInstancesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeContainerInstances' = 'AmazonEC2ContainerServiceV20141113.DescribeContainerInstances' }
 
-	export enum DescribeServicesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeServices' = 0 }
+	export enum DescribeServicesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeServices' = 'AmazonEC2ContainerServiceV20141113.DescribeServices' }
 
-	export enum DescribeTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition' = 0 }
+	export enum DescribeTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition' = 'AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition' }
 
-	export enum DescribeTaskSetsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTaskSets' = 0 }
+	export enum DescribeTaskSetsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTaskSets' = 'AmazonEC2ContainerServiceV20141113.DescribeTaskSets' }
 
-	export enum DescribeTasksX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTasks' = 0 }
+	export enum DescribeTasksX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTasks' = 'AmazonEC2ContainerServiceV20141113.DescribeTasks' }
 
-	export enum DiscoverPollEndpointX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint' = 0 }
+	export enum DiscoverPollEndpointX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint' = 'AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint' }
 
-	export enum ExecuteCommandX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ExecuteCommand' = 0 }
+	export enum ExecuteCommandX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ExecuteCommand' = 'AmazonEC2ContainerServiceV20141113.ExecuteCommand' }
 
-	export enum GetTaskProtectionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.GetTaskProtection' = 0 }
+	export enum GetTaskProtectionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.GetTaskProtection' = 'AmazonEC2ContainerServiceV20141113.GetTaskProtection' }
 
-	export enum ListAccountSettingsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListAccountSettings' = 0 }
+	export enum ListAccountSettingsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListAccountSettings' = 'AmazonEC2ContainerServiceV20141113.ListAccountSettings' }
 
-	export enum ListAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListAttributes' = 0 }
+	export enum ListAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListAttributes' = 'AmazonEC2ContainerServiceV20141113.ListAttributes' }
 
-	export enum ListClustersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListClusters' = 0 }
+	export enum ListClustersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListClusters' = 'AmazonEC2ContainerServiceV20141113.ListClusters' }
 
-	export enum ListContainerInstancesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListContainerInstances' = 0 }
+	export enum ListContainerInstancesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListContainerInstances' = 'AmazonEC2ContainerServiceV20141113.ListContainerInstances' }
 
-	export enum ListServicesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListServices' = 0 }
+	export enum ListServicesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListServices' = 'AmazonEC2ContainerServiceV20141113.ListServices' }
 
-	export enum ListServicesByNamespaceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListServicesByNamespace' = 0 }
+	export enum ListServicesByNamespaceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListServicesByNamespace' = 'AmazonEC2ContainerServiceV20141113.ListServicesByNamespace' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTagsForResource' = 'AmazonEC2ContainerServiceV20141113.ListTagsForResource' }
 
-	export enum ListTaskDefinitionFamiliesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies' = 0 }
+	export enum ListTaskDefinitionFamiliesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies' = 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies' }
 
-	export enum ListTaskDefinitionsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitions' = 0 }
+	export enum ListTaskDefinitionsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitions' = 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitions' }
 
-	export enum ListTasksX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTasks' = 0 }
+	export enum ListTasksX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTasks' = 'AmazonEC2ContainerServiceV20141113.ListTasks' }
 
-	export enum PutAccountSettingX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAccountSetting' = 0 }
+	export enum PutAccountSettingX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAccountSetting' = 'AmazonEC2ContainerServiceV20141113.PutAccountSetting' }
 
-	export enum PutAccountSettingDefaultX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAccountSettingDefault' = 0 }
+	export enum PutAccountSettingDefaultX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAccountSettingDefault' = 'AmazonEC2ContainerServiceV20141113.PutAccountSettingDefault' }
 
-	export enum PutAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAttributes' = 0 }
+	export enum PutAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAttributes' = 'AmazonEC2ContainerServiceV20141113.PutAttributes' }
 
-	export enum PutClusterCapacityProvidersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutClusterCapacityProviders' = 0 }
+	export enum PutClusterCapacityProvidersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutClusterCapacityProviders' = 'AmazonEC2ContainerServiceV20141113.PutClusterCapacityProviders' }
 
-	export enum RegisterContainerInstanceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RegisterContainerInstance' = 0 }
+	export enum RegisterContainerInstanceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RegisterContainerInstance' = 'AmazonEC2ContainerServiceV20141113.RegisterContainerInstance' }
 
-	export enum RegisterTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition' = 0 }
+	export enum RegisterTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition' = 'AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition' }
 
-	export enum RunTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RunTask' = 0 }
+	export enum RunTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RunTask' = 'AmazonEC2ContainerServiceV20141113.RunTask' }
 
-	export enum StartTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.StartTask' = 0 }
+	export enum StartTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.StartTask' = 'AmazonEC2ContainerServiceV20141113.StartTask' }
 
-	export enum StopTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.StopTask' = 0 }
+	export enum StopTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.StopTask' = 'AmazonEC2ContainerServiceV20141113.StopTask' }
 
-	export enum SubmitAttachmentStateChangesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges' = 0 }
+	export enum SubmitAttachmentStateChangesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges' = 'AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges' }
 
-	export enum SubmitContainerStateChangeX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange' = 0 }
+	export enum SubmitContainerStateChangeX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange' = 'AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange' }
 
-	export enum SubmitTaskStateChangeX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange' = 0 }
+	export enum SubmitTaskStateChangeX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange' = 'AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange' }
 
-	export enum TagResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.TagResource' = 'AmazonEC2ContainerServiceV20141113.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UntagResource' = 'AmazonEC2ContainerServiceV20141113.UntagResource' }
 
-	export enum UpdateCapacityProviderX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateCapacityProvider' = 0 }
+	export enum UpdateCapacityProviderX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateCapacityProvider' = 'AmazonEC2ContainerServiceV20141113.UpdateCapacityProvider' }
 
-	export enum UpdateClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateCluster' = 0 }
+	export enum UpdateClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateCluster' = 'AmazonEC2ContainerServiceV20141113.UpdateCluster' }
 
-	export enum UpdateClusterSettingsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateClusterSettings' = 0 }
+	export enum UpdateClusterSettingsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateClusterSettings' = 'AmazonEC2ContainerServiceV20141113.UpdateClusterSettings' }
 
-	export enum UpdateContainerAgentX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateContainerAgent' = 0 }
+	export enum UpdateContainerAgentX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateContainerAgent' = 'AmazonEC2ContainerServiceV20141113.UpdateContainerAgent' }
 
-	export enum UpdateContainerInstancesStateX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState' = 0 }
+	export enum UpdateContainerInstancesStateX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState' = 'AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState' }
 
-	export enum UpdateServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateService' = 0 }
+	export enum UpdateServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateService' = 'AmazonEC2ContainerServiceV20141113.UpdateService' }
 
-	export enum UpdateServicePrimaryTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateServicePrimaryTaskSet' = 0 }
+	export enum UpdateServicePrimaryTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateServicePrimaryTaskSet' = 'AmazonEC2ContainerServiceV20141113.UpdateServicePrimaryTaskSet' }
 
-	export enum UpdateTaskProtectionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateTaskProtection' = 0 }
+	export enum UpdateTaskProtectionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateTaskProtection' = 'AmazonEC2ContainerServiceV20141113.UpdateTaskProtection' }
 
-	export enum UpdateTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateTaskSet' = 0 }
+	export enum UpdateTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateTaskSet' = 'AmazonEC2ContainerServiceV20141113.UpdateTaskSet' }
 
 }
 

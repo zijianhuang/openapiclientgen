@@ -719,9 +719,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum PerformAnalysisUsingPOSTAlgorithmVersion { V1 = 0, V2 = 1 }
+	export enum PerformAnalysisUsingPOSTAlgorithmVersion { V1 = 'V1', V2 = 'V2' }
 
-	export enum AddStreamUsingPOSTMethod { WEBRTC_PULL = 0, WEBRTC_PUSH = 1, INGESTION_ENDPOINT = 2 }
+	export enum AddStreamUsingPOSTMethod { WEBRTC_PULL = 'WEBRTC_PULL', WEBRTC_PUSH = 'WEBRTC_PUSH', INGESTION_ENDPOINT = 'INGESTION_ENDPOINT' }
 
 }
 

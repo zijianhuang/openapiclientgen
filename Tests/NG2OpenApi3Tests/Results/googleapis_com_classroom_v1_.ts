@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnnouncementAssigneeMode { ASSIGNEE_MODE_UNSPECIFIED = 0, ALL_STUDENTS = 1, INDIVIDUAL_STUDENTS = 2 }
+	export enum AnnouncementAssigneeMode { ASSIGNEE_MODE_UNSPECIFIED = 'ASSIGNEE_MODE_UNSPECIFIED', ALL_STUDENTS = 'ALL_STUDENTS', INDIVIDUAL_STUDENTS = 'INDIVIDUAL_STUDENTS' }
 
 
 	/** Assignee details about a coursework/announcement. This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`. */
@@ -204,7 +204,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharedDriveFileShareMode { UNKNOWN_SHARE_MODE = 0, VIEW = 1, EDIT = 2, STUDENT_COPY = 3 }
+	export enum SharedDriveFileShareMode { UNKNOWN_SHARE_MODE = 'UNKNOWN_SHARE_MODE', VIEW = 'VIEW', EDIT = 'EDIT', STUDENT_COPY = 'STUDENT_COPY' }
 
 
 	/** Google Forms item. */
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnnouncementState { ANNOUNCEMENT_STATE_UNSPECIFIED = 0, PUBLISHED = 1, DRAFT = 2, DELETED = 3 }
+	export enum AnnouncementState { ANNOUNCEMENT_STATE_UNSPECIFIED = 'ANNOUNCEMENT_STATE_UNSPECIFIED', PUBLISHED = 'PUBLISHED', DRAFT = 'DRAFT', DELETED = 'DELETED' }
 
 
 	/** Additional details for assignments. */
@@ -628,7 +628,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CourseCourseState { COURSE_STATE_UNSPECIFIED = 0, ACTIVE = 1, ARCHIVED = 2, PROVISIONED = 3, DECLINED = 4, SUSPENDED = 5 }
+	export enum CourseCourseState { COURSE_STATE_UNSPECIFIED = 'COURSE_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED', PROVISIONED = 'PROVISIONED', DECLINED = 'DECLINED', SUSPENDED = 'SUSPENDED' }
 
 
 	/** The gradebook settings for a course. See the [help center article](https://support.google.com/edu/classroom/answer/9184995) for details. */
@@ -661,9 +661,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GradebookSettingsCalculationType { CALCULATION_TYPE_UNSPECIFIED = 0, TOTAL_POINTS = 1, WEIGHTED_CATEGORIES = 2 }
+	export enum GradebookSettingsCalculationType { CALCULATION_TYPE_UNSPECIFIED = 'CALCULATION_TYPE_UNSPECIFIED', TOTAL_POINTS = 'TOTAL_POINTS', WEIGHTED_CATEGORIES = 'WEIGHTED_CATEGORIES' }
 
-	export enum GradebookSettingsDisplaySetting { DISPLAY_SETTING_UNSPECIFIED = 0, SHOW_OVERALL_GRADE = 1, HIDE_OVERALL_GRADE = 2, SHOW_TEACHERS_ONLY = 3 }
+	export enum GradebookSettingsDisplaySetting { DISPLAY_SETTING_UNSPECIFIED = 'DISPLAY_SETTING_UNSPECIFIED', SHOW_OVERALL_GRADE = 'SHOW_OVERALL_GRADE', HIDE_OVERALL_GRADE = 'HIDE_OVERALL_GRADE', SHOW_TEACHERS_ONLY = 'SHOW_TEACHERS_ONLY' }
 
 
 	/** Details for a grade category in a course. Coursework may have zero or one grade category, and the category may be used in computing the overall grade. See the [help center article](https://support.google.com/edu/classroom/answer/9184995) for details. */
@@ -990,11 +990,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CourseWorkState { COURSE_WORK_STATE_UNSPECIFIED = 0, PUBLISHED = 1, DRAFT = 2, DELETED = 3 }
+	export enum CourseWorkState { COURSE_WORK_STATE_UNSPECIFIED = 'COURSE_WORK_STATE_UNSPECIFIED', PUBLISHED = 'PUBLISHED', DRAFT = 'DRAFT', DELETED = 'DELETED' }
 
-	export enum CourseWorkSubmissionModificationMode { SUBMISSION_MODIFICATION_MODE_UNSPECIFIED = 0, MODIFIABLE_UNTIL_TURNED_IN = 1, MODIFIABLE = 2 }
+	export enum CourseWorkSubmissionModificationMode { SUBMISSION_MODIFICATION_MODE_UNSPECIFIED = 'SUBMISSION_MODIFICATION_MODE_UNSPECIFIED', MODIFIABLE_UNTIL_TURNED_IN = 'MODIFIABLE_UNTIL_TURNED_IN', MODIFIABLE = 'MODIFIABLE' }
 
-	export enum CourseWorkWorkType { COURSE_WORK_TYPE_UNSPECIFIED = 0, ASSIGNMENT = 1, SHORT_ANSWER_QUESTION = 2, MULTIPLE_CHOICE_QUESTION = 3 }
+	export enum CourseWorkWorkType { COURSE_WORK_TYPE_UNSPECIFIED = 'COURSE_WORK_TYPE_UNSPECIFIED', ASSIGNMENT = 'ASSIGNMENT', SHORT_ANSWER_QUESTION = 'SHORT_ANSWER_QUESTION', MULTIPLE_CHOICE_QUESTION = 'MULTIPLE_CHOICE_QUESTION' }
 
 
 	/** Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`. */
@@ -1121,7 +1121,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CourseWorkMaterialState { COURSEWORK_MATERIAL_STATE_UNSPECIFIED = 0, PUBLISHED = 1, DRAFT = 2, DELETED = 3 }
+	export enum CourseWorkMaterialState { COURSEWORK_MATERIAL_STATE_UNSPECIFIED = 'COURSEWORK_MATERIAL_STATE_UNSPECIFIED', PUBLISHED = 'PUBLISHED', DRAFT = 'DRAFT', DELETED = 'DELETED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -1164,7 +1164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeedFeedType { FEED_TYPE_UNSPECIFIED = 0, DOMAIN_ROSTER_CHANGES = 1, COURSE_ROSTER_CHANGES = 2, COURSE_WORK_CHANGES = 3 }
+	export enum FeedFeedType { FEED_TYPE_UNSPECIFIED = 'FEED_TYPE_UNSPECIFIED', DOMAIN_ROSTER_CHANGES = 'DOMAIN_ROSTER_CHANGES', COURSE_ROSTER_CHANGES = 'COURSE_ROSTER_CHANGES', COURSE_WORK_CHANGES = 'COURSE_WORK_CHANGES' }
 
 
 	/** Global user permission description. */
@@ -1187,7 +1187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GlobalPermissionPermission { PERMISSION_UNSPECIFIED = 0, CREATE_COURSE = 1 }
+	export enum GlobalPermissionPermission { PERMISSION_UNSPECIFIED = 'PERMISSION_UNSPECIFIED', CREATE_COURSE = 'CREATE_COURSE' }
 
 
 	/** The history of each grade on this submission. */
@@ -1238,7 +1238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GradeHistoryGradeChangeType { UNKNOWN_GRADE_CHANGE_TYPE = 0, DRAFT_GRADE_POINTS_EARNED_CHANGE = 1, ASSIGNED_GRADE_POINTS_EARNED_CHANGE = 2, MAX_POINTS_CHANGE = 3 }
+	export enum GradeHistoryGradeChangeType { UNKNOWN_GRADE_CHANGE_TYPE = 'UNKNOWN_GRADE_CHANGE_TYPE', DRAFT_GRADE_POINTS_EARNED_CHANGE = 'DRAFT_GRADE_POINTS_EARNED_CHANGE', ASSIGNED_GRADE_POINTS_EARNED_CHANGE = 'ASSIGNED_GRADE_POINTS_EARNED_CHANGE', MAX_POINTS_CHANGE = 'MAX_POINTS_CHANGE' }
 
 
 	/** Association between a student and a guardian of that student. The guardian may receive information about the student's course work. */
@@ -1410,7 +1410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GuardianInvitationState { GUARDIAN_INVITATION_STATE_UNSPECIFIED = 0, PENDING = 1, COMPLETE = 2 }
+	export enum GuardianInvitationState { GUARDIAN_INVITATION_STATE_UNSPECIFIED = 'GUARDIAN_INVITATION_STATE_UNSPECIFIED', PENDING = 'PENDING', COMPLETE = 'COMPLETE' }
 
 
 	/** An invitation to join a course. */
@@ -1454,7 +1454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvitationRole { COURSE_ROLE_UNSPECIFIED = 0, STUDENT = 1, TEACHER = 2, OWNER = 3 }
+	export enum InvitationRole { COURSE_ROLE_UNSPECIFIED = 'COURSE_ROLE_UNSPECIFIED', STUDENT = 'STUDENT', TEACHER = 'TEACHER', OWNER = 'OWNER' }
 
 
 	/** Response when listing course work. */
@@ -1831,7 +1831,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StudentSubmissionState { SUBMISSION_STATE_UNSPECIFIED = 0, NEW = 1, CREATED = 2, TURNED_IN = 3, RETURNED = 4, RECLAIMED_BY_STUDENT = 5 }
+	export enum StudentSubmissionState { SUBMISSION_STATE_UNSPECIFIED = 'SUBMISSION_STATE_UNSPECIFIED', NEW = 'NEW', CREATED = 'CREATED', TURNED_IN = 'TURNED_IN', RETURNED = 'RETURNED', RECLAIMED_BY_STUDENT = 'RECLAIMED_BY_STUDENT' }
 
 
 	/** The history of the submission. This currently includes state and grade histories. */
@@ -1888,7 +1888,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StateHistoryState { STATE_UNSPECIFIED = 0, CREATED = 1, TURNED_IN = 2, RETURNED = 3, RECLAIMED_BY_STUDENT = 4, STUDENT_EDITED_AFTER_TURN_IN = 5 }
+	export enum StateHistoryState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATED = 'CREATED', TURNED_IN = 'TURNED_IN', RETURNED = 'RETURNED', RECLAIMED_BY_STUDENT = 'RECLAIMED_BY_STUDENT', STUDENT_EDITED_AFTER_TURN_IN = 'STUDENT_EDITED_AFTER_TURN_IN' }
 
 
 	/** Response when listing students. */
@@ -2928,7 +2928,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Classroom_courses_courseWork_studentSubmissions_listLate { LATE_VALUES_UNSPECIFIED = 0, LATE_ONLY = 1, NOT_LATE_ONLY = 2 }
+	export enum Classroom_courses_courseWork_studentSubmissions_listLate { LATE_VALUES_UNSPECIFIED = 'LATE_VALUES_UNSPECIFIED', LATE_ONLY = 'LATE_ONLY', NOT_LATE_ONLY = 'NOT_LATE_ONLY' }
 
 }
 

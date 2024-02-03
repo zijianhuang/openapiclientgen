@@ -398,7 +398,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionAction { read = 0, write = 1 }
+	export enum PermissionAction { read = 'read', write = 'write' }
 
 	export interface Resource {
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { authorizations = 0, buckets = 1, dashboards = 2, orgs = 3, sources = 4, tasks = 5, telegrafs = 6, users = 7, variables = 8, scrapers = 9, secrets = 10, labels = 11, views = 12, documents = 13, notificationRules = 14, notificationEndpoints = 15, checks = 16, dbrp = 17, notebooks = 18 }
+	export enum ResourceType { authorizations = 'authorizations', buckets = 'buckets', dashboards = 'dashboards', orgs = 'orgs', sources = 'sources', tasks = 'tasks', telegrafs = 'telegrafs', users = 'users', variables = 'variables', scrapers = 'scrapers', secrets = 'secrets', labels = 'labels', views = 'views', documents = 'documents', notificationRules = 'notificationRules', notificationEndpoints = 'notificationEndpoints', checks = 'checks', dbrp = 'dbrp', notebooks = 'notebooks' }
 
 	export interface AuthorizationPostRequest extends AuthorizationUpdateRequest {
 
@@ -503,7 +503,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationUpdateRequestStatus { active = 0, inactive = 1 }
+	export enum AuthorizationUpdateRequestStatus { active = 'active', inactive = 'inactive' }
 
 	export interface Authorizations {
 		authorizations?: Array<Authorization>;
@@ -636,9 +636,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AxisBase { '' = 0, _2 = 1, _10 = 2 }
+	export enum AxisBase { '' = '', _2 = '2', _10 = '10' }
 
-	export enum AxisScale { log = 0, linear = 1 }
+	export enum AxisScale { log = 'log', linear = 'linear' }
 
 
 	/** A placeholder for statements for which no correct statement nodes can be created */
@@ -873,11 +873,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DashboardColorType { min = 0, max = 1, threshold = 2, scale = 3, text = 4, background = 5 }
+	export enum DashboardColorType { min = 'min', max = 'max', threshold = 'threshold', scale = 'scale', text = 'text', background = 'background' }
 
-	export enum BandViewPropertiesGeom { line = 0, step = 1, stacked = 2, bar = 3, monotoneX = 4 }
+	export enum BandViewPropertiesGeom { line = 'line', step = 'step', stacked = 'stacked', bar = 'bar', monotoneX = 'monotoneX' }
 
-	export enum BandViewPropertiesHoverDimension { auto = 0, x = 1, y = 2, xy = 3 }
+	export enum BandViewPropertiesHoverDimension { auto = 'auto', x = 'x', y = 'y', xy = 'xy' }
 
 	export interface DashboardQuery {
 		builderConfig?: BuilderConfig;
@@ -963,11 +963,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BuilderTagsTypeAggregateFunctionType { filter = 0, group = 1 }
+	export enum BuilderTagsTypeAggregateFunctionType { filter = 'filter', group = 'group' }
 
-	export enum DashboardQueryEditMode { builder = 0, advanced = 1 }
+	export enum DashboardQueryEditMode { builder = 'builder', advanced = 'advanced' }
 
-	export enum BandViewPropertiesShape { 'chronograf-v2' = 0 }
+	export enum BandViewPropertiesShape { 'chronograf-v2' = 'chronograf-v2' }
 
 
 	/** StaticLegend represents the options specific to the static legend */
@@ -1004,7 +1004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BandViewPropertiesType { band = 0 }
+	export enum BandViewPropertiesType { band = 'band' }
 
 
 	/** uses binary operators to act on two operands in an expression */
@@ -1246,11 +1246,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RetentionRuleType { expire = 0 }
+	export enum RetentionRuleType { expire = 'expire' }
 
-	export enum BucketSchemaType { implicit = 0, explicit = 1 }
+	export enum BucketSchemaType { implicit = 'implicit', explicit = 'explicit' }
 
-	export enum BucketType { user = 0, system = 1 }
+	export enum BucketType { user = 'user', system = 'system' }
 
 	export interface Buckets {
 		buckets?: Array<Bucket>;
@@ -1264,7 +1264,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuilderAggregateFunctionType { filter = 0, group = 1 }
+	export enum BuilderAggregateFunctionType { filter = 'filter', group = 'group' }
 
 
 	/** Declares a builtin identifier and its type */
@@ -1487,7 +1487,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckBaseLastRunStatus { failed = 0, success = 1, canceled = 2 }
+	export enum CheckBaseLastRunStatus { failed = 'failed', success = 'success', canceled = 'canceled' }
 
 	export interface CheckBaseLinks {
 
@@ -1565,7 +1565,7 @@ export namespace MyNS {
 
 
 	/** The state to record if check matches a criteria. */
-	export enum CheckStatusLevel { UNKNOWN = 0, OK = 1, INFO = 2, CRIT = 3, WARN = 4 }
+	export enum CheckStatusLevel { UNKNOWN = 'UNKNOWN', OK = 'OK', INFO = 'INFO', CRIT = 'CRIT', WARN = 'WARN' }
 
 	export interface CheckViewProperties {
 		check?: Check;
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckViewPropertiesType { check = 0 }
+	export enum CheckViewPropertiesType { check = 'check' }
 
 	export interface Checks {
 		checks?: Array<Check>;
@@ -1672,7 +1672,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConstantVariablePropertiesType { constant = 0 }
+	export enum ConstantVariablePropertiesType { constant = 'constant' }
 
 	export interface CreateCell {
 		h?: number | null;
@@ -1778,7 +1778,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomCheckType { custom = 0 }
+	export enum CustomCheckType { custom = 'custom' }
 
 	export interface DBRP {
 
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeadmanCheckType { deadman = 0 }
+	export enum DeadmanCheckType { deadman = 'deadman' }
 
 
 	/** Indicates whether decimal places should be enforced, and how many digits it should show. */
@@ -2170,7 +2170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DialectDateTimeFormat { RFC3339 = 0, RFC3339Nano = 1 }
+	export enum DialectDateTimeFormat { RFC3339 = 'RFC3339', RFC3339Nano = 'RFC3339Nano' }
 
 
 	/** Used to create and directly specify the elements of a dictionary */
@@ -2506,7 +2506,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { 'internal error' = 0, 'not found' = 1, conflict = 2, invalid = 3, 'unprocessable entity' = 4, 'empty value' = 5, unavailable = 6, forbidden = 7, 'too many requests' = 8, unauthorized = 9, 'method not allowed' = 10, 'request too large' = 11, 'unsupported media type' = 12 }
+	export enum ErrorCode { 'internal error' = 'internal error', 'not found' = 'not found', conflict = 'conflict', invalid = 'invalid', 'unprocessable entity' = 'unprocessable entity', 'empty value' = 'empty value', unavailable = 'unavailable', forbidden = 'forbidden', 'too many requests' = 'too many requests', unauthorized = 'unauthorized', 'method not allowed' = 'method not allowed', 'request too large' = 'request too large', 'unsupported media type' = 'unsupported media type' }
 
 
 	/** May consist of an expression that does not return a value and is executed solely for its side-effects */
@@ -2564,7 +2564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldType { func = 0, field = 1, integer = 2, number = 3, regex = 4, wildcard = 5 }
+	export enum FieldType { func = 'func', field = 'field', integer = 'integer', number = 'number', regex = 'regex', wildcard = 'wildcard' }
 
 	export interface Flags {
 	}
@@ -2779,7 +2779,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GaugeViewPropertiesType { gauge = 0 }
+	export enum GaugeViewPropertiesType { gauge = 'gauge' }
 
 	export interface GeoCircleViewLayer extends GeoViewLayerProperties {
 
@@ -3017,7 +3017,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoViewLayerPropertiesType { heatmap = 0, circleMap = 1, pointMap = 2, trackMap = 3 }
+	export enum GeoViewLayerPropertiesType { heatmap = 'heatmap', circleMap = 'circleMap', pointMap = 'pointMap', trackMap = 'trackMap' }
 
 	export interface GeoViewProperties {
 
@@ -3167,7 +3167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoViewPropertiesType { geo = 0 }
+	export enum GeoViewPropertiesType { geo = 'geo' }
 
 	export interface GreaterThreshold extends ThresholdBase {
 
@@ -3195,7 +3195,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GreaterThresholdType { greater = 0 }
+	export enum GreaterThresholdType { greater = 'greater' }
 
 	export interface HTTPNotificationEndpoint {
 	}
@@ -3246,7 +3246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HTTPNotificationRuleType { http = 0 }
+	export enum HTTPNotificationRuleType { http = 'http' }
 
 	export interface HTTPNotificationRuleBase {
 
@@ -3302,7 +3302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthCheckStatus { pass = 0, fail = 1 }
+	export enum HealthCheckStatus { pass = 'pass', fail = 'fail' }
 
 	export interface HeatmapViewProperties {
 
@@ -3467,7 +3467,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HeatmapViewPropertiesType { heatmap = 0 }
+	export enum HeatmapViewPropertiesType { heatmap = 'heatmap' }
 
 	export interface HistogramViewProperties {
 
@@ -3568,9 +3568,9 @@ export namespace MyNS {
 
 	}
 
-	export enum HistogramViewPropertiesPosition { overlaid = 0, stacked = 1 }
+	export enum HistogramViewPropertiesPosition { overlaid = 'overlaid', stacked = 'stacked' }
 
-	export enum HistogramViewPropertiesType { histogram = 0 }
+	export enum HistogramViewPropertiesType { histogram = 'histogram' }
 
 
 	/** Represents indexing into an array */
@@ -3636,7 +3636,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InfluxQLQueryType { influxql = 0 }
+	export enum InfluxQLQueryType { influxql = 'influxql' }
 
 
 	/** Represents integer numbers */
@@ -3820,7 +3820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LesserThresholdType { lesser = 0 }
+	export enum LesserThresholdType { lesser = 'lesser' }
 
 	export interface LinePlusSingleStatProperties {
 
@@ -3958,7 +3958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinePlusSingleStatPropertiesType { 'line-plus-single-stat' = 0 }
+	export enum LinePlusSingleStatPropertiesType { 'line-plus-single-stat' = 'line-plus-single-stat' }
 
 	export interface LineProtocolError {
 
@@ -4029,7 +4029,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineProtocolErrorCode { 'internal error' = 0, 'not found' = 1, conflict = 2, invalid = 3, 'empty value' = 4, unavailable = 5 }
+	export enum LineProtocolErrorCode { 'internal error' = 'internal error', 'not found' = 'not found', conflict = 'conflict', invalid = 'invalid', 'empty value' = 'empty value', unavailable = 'unavailable' }
 
 	export interface LineProtocolLengthError {
 
@@ -4080,7 +4080,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineProtocolLengthErrorCode { invalid = 0 }
+	export enum LineProtocolLengthErrorCode { invalid = 'invalid' }
 
 	export interface LogEvent {
 
@@ -4166,7 +4166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MapVariablePropertiesType { map = 0 }
+	export enum MapVariablePropertiesType { map = 'map' }
 
 	export interface MarkdownViewProperties {
 
@@ -4199,7 +4199,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MarkdownViewPropertiesType { markdown = 0 }
+	export enum MarkdownViewPropertiesType { markdown = 'markdown' }
 
 
 	/** Object property assignment */
@@ -4401,7 +4401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MosaicViewPropertiesType { mosaic = 0 }
+	export enum MosaicViewPropertiesType { mosaic = 'mosaic' }
 
 	export interface Node {
 	}
@@ -4516,7 +4516,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationEndpointBaseType { slack = 0, pagerduty = 1, http = 2, telegram = 3 }
+	export enum NotificationEndpointBaseType { slack = 'slack', pagerduty = 'pagerduty', http = 'http', telegram = 'telegram' }
 
 	export interface NotificationEndpointDiscriminator {
 	}
@@ -4528,7 +4528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationEndpointType { slack = 0, pagerduty = 1, http = 2, telegram = 3 }
+	export enum NotificationEndpointType { slack = 'slack', pagerduty = 'pagerduty', http = 'http', telegram = 'telegram' }
 
 	export interface NotificationEndpointUpdate {
 		description?: string | null;
@@ -4785,7 +4785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusRuleCurrentLevel { UNKNOWN = 0, OK = 1, INFO = 2, CRIT = 3, WARN = 4, ANY = 5 }
+	export enum StatusRuleCurrentLevel { UNKNOWN = 'UNKNOWN', OK = 'OK', INFO = 'INFO', CRIT = 'CRIT', WARN = 'WARN', ANY = 'ANY' }
 
 	export interface TagRule {
 		key?: string | null;
@@ -4806,7 +4806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagRuleOperator { equal = 0, notequal = 1, equalregex = 2, notequalregex = 3 }
+	export enum TagRuleOperator { equal = 'equal', notequal = 'notequal', equalregex = 'equalregex', notequalregex = 'notequalregex' }
 
 	export interface NotificationRuleDiscriminator {
 	}
@@ -5161,7 +5161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PagerDutyNotificationRuleType { pagerduty = 0 }
+	export enum PagerDutyNotificationRuleType { pagerduty = 'pagerduty' }
 
 	export interface PagerDutyNotificationRuleBase {
 
@@ -5517,9 +5517,9 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryType { flux = 0 }
+	export enum QueryType { flux = 'flux' }
 
-	export enum QueryEditMode { builder = 0, advanced = 1 }
+	export enum QueryEditMode { builder = 'builder', advanced = 'advanced' }
 
 	export interface QueryVariableProperties {
 		type?: QueryVariablePropertiesType | null;
@@ -5535,7 +5535,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryVariablePropertiesType { query = 0 }
+	export enum QueryVariablePropertiesType { query = 'query' }
 
 	export interface QueryVariablePropertiesValues {
 		language?: string | null;
@@ -5593,7 +5593,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RangeThresholdType { range = 0 }
+	export enum RangeThresholdType { range = 'range' }
 
 	export interface Ready {
 		started?: Date | null;
@@ -5614,7 +5614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadyStatus { ready = 0 }
+	export enum ReadyStatus { ready = 'ready' }
 
 
 	/** Expressions begin and end with `/` and are regular expressions with syntax accepted by RE2 */
@@ -5692,7 +5692,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceMemberRole { member = 0 }
+	export enum ResourceMemberRole { member = 'member' }
 
 	export interface ResourceMembers {
 		links?: ResourceMembersLinks;
@@ -5736,7 +5736,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceOwnerRole { owner = 0 }
+	export enum ResourceOwnerRole { owner = 'owner' }
 
 	export interface ResourceOwners {
 		links?: ResourceOwnersLinks;
@@ -5899,7 +5899,7 @@ export namespace MyNS {
 
 
 	/** The state to record if check matches a criteria. */
-	export enum RuleStatusLevel { UNKNOWN = 0, OK = 1, INFO = 2, CRIT = 3, WARN = 4, ANY = 5 }
+	export enum RuleStatusLevel { UNKNOWN = 'UNKNOWN', OK = 'OK', INFO = 'INFO', CRIT = 'CRIT', WARN = 'WARN', ANY = 'ANY' }
 
 	export interface Run {
 
@@ -5971,7 +5971,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunStatus { scheduled = 0, started = 1, failed = 2, success = 3, canceled = 4 }
+	export enum RunStatus { scheduled = 'scheduled', started = 'started', failed = 'failed', success = 'success', canceled = 'canceled' }
 
 	export interface RunManually {
 
@@ -6055,7 +6055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SMTPNotificationRuleType { smtp = 0 }
+	export enum SMTPNotificationRuleType { smtp = 'smtp' }
 
 	export interface SMTPNotificationRuleBase {
 		bodyTemplate?: string | null;
@@ -6253,9 +6253,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScatterViewPropertiesType { scatter = 0 }
+	export enum ScatterViewPropertiesType { scatter = 'scatter' }
 
-	export enum SchemaType { implicit = 0, explicit = 1 }
+	export enum SchemaType { implicit = 'implicit', explicit = 'explicit' }
 
 	export interface ScraperTargetRequest {
 
@@ -6309,7 +6309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScraperTargetRequestType { prometheus = 0 }
+	export enum ScraperTargetRequestType { prometheus = 'prometheus' }
 
 	export interface ScraperTargetResponse {
 	}
@@ -6470,7 +6470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SingleStatViewPropertiesType { 'single-stat' = 0 }
+	export enum SingleStatViewPropertiesType { 'single-stat' = 'single-stat' }
 
 	export interface SlackNotificationEndpoint {
 	}
@@ -6528,7 +6528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlackNotificationRuleType { slack = 0 }
+	export enum SlackNotificationRuleType { slack = 'slack' }
 
 	export interface SlackNotificationRuleBase {
 		channel?: string | null;
@@ -6633,7 +6633,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { v1 = 0, v2 = 1, self = 2 }
+	export enum SourceType { v1 = 'v1', v2 = 'v2', self = 'self' }
 
 	export interface Sources {
 		links?: SourcesLinks;
@@ -6745,7 +6745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackEventsResourcesAssociationsKind { Bucket = 0, Check = 1, CheckDeadman = 2, CheckThreshold = 3, Dashboard = 4, Label = 5, NotificationEndpoint = 6, NotificationEndpointHTTP = 7, NotificationEndpointPagerDuty = 8, NotificationEndpointSlack = 9, NotificationRule = 10, Task = 11, Telegraf = 12, Variable = 13 }
+	export enum StackEventsResourcesAssociationsKind { Bucket = 'Bucket', Check = 'Check', CheckDeadman = 'CheckDeadman', CheckThreshold = 'CheckThreshold', Dashboard = 'Dashboard', Label = 'Label', NotificationEndpoint = 'NotificationEndpoint', NotificationEndpointHTTP = 'NotificationEndpointHTTP', NotificationEndpointPagerDuty = 'NotificationEndpointPagerDuty', NotificationEndpointSlack = 'NotificationEndpointSlack', NotificationRule = 'NotificationRule', Task = 'Task', Telegraf = 'Telegraf', Variable = 'Variable' }
 
 	export interface StackEventsResourcesLinks {
 		self?: string | null;
@@ -6875,9 +6875,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TableViewPropertiesTableOptionsWrapping { truncate = 0, wrap = 1, 'single-line' = 2 }
+	export enum TableViewPropertiesTableOptionsWrapping { truncate = 'truncate', wrap = 'wrap', 'single-line' = 'single-line' }
 
-	export enum TableViewPropertiesType { table = 0 }
+	export enum TableViewPropertiesType { table = 'table' }
 
 	export interface Task {
 
@@ -7107,7 +7107,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatusType { active = 0, inactive = 1 }
+	export enum TaskStatusType { active = 'active', inactive = 'inactive' }
 
 	export interface TaskUpdateRequest {
 
@@ -7349,9 +7349,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TelegramNotificationRuleParseMode { MarkdownV2 = 0, HTML = 1, Markdown = 2 }
+	export enum TelegramNotificationRuleParseMode { MarkdownV2 = 'MarkdownV2', HTML = 'HTML', Markdown = 'Markdown' }
 
-	export enum TelegramNotificationRuleType { telegram = 0 }
+	export enum TelegramNotificationRuleType { telegram = 'telegram' }
 
 	export interface TelegramNotificationRuleBase {
 
@@ -7629,7 +7629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateKind { Bucket = 0, Check = 1, CheckDeadman = 2, CheckThreshold = 3, Dashboard = 4, Label = 5, NotificationEndpoint = 6, NotificationEndpointHTTP = 7, NotificationEndpointPagerDuty = 8, NotificationEndpointSlack = 9, NotificationRule = 10, Task = 11, Telegraf = 12, Variable = 13 }
+	export enum TemplateKind { Bucket = 'Bucket', Check = 'Check', CheckDeadman = 'CheckDeadman', CheckThreshold = 'CheckThreshold', Dashboard = 'Dashboard', Label = 'Label', NotificationEndpoint = 'NotificationEndpoint', NotificationEndpointHTTP = 'NotificationEndpointHTTP', NotificationEndpointPagerDuty = 'NotificationEndpointPagerDuty', NotificationEndpointSlack = 'NotificationEndpointSlack', NotificationRule = 'NotificationRule', Task = 'Task', Telegraf = 'Telegraf', Variable = 'Variable' }
 
 	export interface TemplateExportByIDResources {
 
@@ -8841,7 +8841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThresholdCheckType { threshold = 0 }
+	export enum ThresholdCheckType { threshold = 'threshold' }
 
 
 	/** Uses operators to act on a single operand in an expression */
@@ -9135,9 +9135,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WritePrecision { ms = 0, s = 1, us = 2, ns = 3 }
+	export enum WritePrecision { ms = 'ms', s = 's', us = 'us', ns = 'ns' }
 
-	export enum XYGeom { line = 0, step = 1, stacked = 2, bar = 3, monotoneX = 4 }
+	export enum XYGeom { line = 'line', step = 'step', stacked = 'stacked', bar = 'bar', monotoneX = 'monotoneX' }
 
 	export interface XYViewProperties {
 
@@ -9262,7 +9262,7 @@ export namespace MyNS {
 
 	}
 
-	export enum XYViewPropertiesType { xy = 0 }
+	export enum XYViewPropertiesType { xy = 'xy' }
 
 	@Injectable()
 	export class MyClient {
@@ -11341,9 +11341,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetDashboardsSortBy { ID = 0, CreatedAt = 1, UpdatedAt = 2 }
+	export enum GetDashboardsSortBy { ID = 'ID', CreatedAt = 'CreatedAt', UpdatedAt = 'UpdatedAt' }
 
-	export enum GetDashboardsIDInclude { properties = 0 }
+	export enum GetDashboardsIDInclude { properties = 'properties' }
 
 	export interface PatchDashboardsIDPatchBody {
 		cells?: CellWithViewProperties;
@@ -11370,11 +11370,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PostQueryAccept_Encoding { gzip = 0, identity = 1 }
+	export enum PostQueryAccept_Encoding { gzip = 'gzip', identity = 'identity' }
 
-	export enum PostQueryContent_Type { 'application/json' = 0, 'application/vnd.flux' = 1 }
+	export enum PostQueryContent_Type { 'application/json' = 'application/json', 'application/vnd.flux' = 'application/vnd.flux' }
 
-	export enum PostQueryAnalyzeContent_Type { 'application/json' = 0 }
+	export enum PostQueryAnalyzeContent_Type { 'application/json' = 'application/json' }
 
 	export interface ListStacksReturn {
 		stacks?: Array<Stack>;
@@ -11452,7 +11452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetTelegrafsIDAccept { 'application/toml' = 0, 'application/json' = 1, 'application/octet-stream' = 2 }
+	export enum GetTelegrafsIDAccept { 'application/toml' = 'application/toml', 'application/json' = 'application/json', 'application/octet-stream' = 'application/octet-stream' }
 
 	export interface ExportTemplateReturn {
 		apiVersion?: string | null;
@@ -11487,7 +11487,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostWriteContent_Type { 'text/plain' = 0, 'text/plain; charset=utf-8' = 1, 'application/vnd.influx.arrow' = 2 }
+	export enum PostWriteContent_Type { 'text/plain' = 'text/plain', 'text/plain; charset=utf-8' = 'text/plain; charset=utf-8', 'application/vnd.influx.arrow' = 'application/vnd.influx.arrow' }
 
 }
 

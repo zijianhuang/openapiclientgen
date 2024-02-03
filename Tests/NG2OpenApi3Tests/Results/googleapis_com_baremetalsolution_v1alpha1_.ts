@@ -270,11 +270,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigBandwidth { BANDWIDTH_UNSPECIFIED = 0, BW_1_GBPS = 1, BW_2_GBPS = 2, BW_5_GBPS = 3, BW_10_GBPS = 4 }
+	export enum NetworkConfigBandwidth { BANDWIDTH_UNSPECIFIED = 'BANDWIDTH_UNSPECIFIED', BW_1_GBPS = 'BW_1_GBPS', BW_2_GBPS = 'BW_2_GBPS', BW_5_GBPS = 'BW_5_GBPS', BW_10_GBPS = 'BW_10_GBPS' }
 
-	export enum NetworkConfigServiceCidr { SERVICE_CIDR_UNSPECIFIED = 0, DISABLED = 1, HIGH_26 = 2, HIGH_27 = 3, HIGH_28 = 4 }
+	export enum NetworkConfigServiceCidr { SERVICE_CIDR_UNSPECIFIED = 'SERVICE_CIDR_UNSPECIFIED', DISABLED = 'DISABLED', HIGH_26 = 'HIGH_26', HIGH_27 = 'HIGH_27', HIGH_28 = 'HIGH_28' }
 
-	export enum NetworkConfigType { TYPE_UNSPECIFIED = 0, CLIENT = 1, PRIVATE = 2 }
+	export enum NetworkConfigType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CLIENT = 'CLIENT', PRIVATE = 'PRIVATE' }
 
 
 	/** A GCP vlan attachment. */
@@ -367,7 +367,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NfsExportPermissions { PERMISSIONS_UNSPECIFIED = 0, READ_ONLY = 1, READ_WRITE = 2 }
+	export enum NfsExportPermissions { PERMISSIONS_UNSPECIFIED = 'PERMISSIONS_UNSPECIFIED', READ_ONLY = 'READ_ONLY', READ_WRITE = 'READ_WRITE' }
 
 
 	/** An provisioning configuration. */
@@ -471,9 +471,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeConfigProtocol { PROTOCOL_UNSPECIFIED = 0, PROTOCOL_FC = 1, PROTOCOL_NFS = 2 }
+	export enum VolumeConfigProtocol { PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED', PROTOCOL_FC = 'PROTOCOL_FC', PROTOCOL_NFS = 'PROTOCOL_NFS' }
 
-	export enum VolumeConfigType { TYPE_UNSPECIFIED = 0, FLASH = 1, DISK = 2 }
+	export enum VolumeConfigType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', FLASH = 'FLASH', DISK = 'DISK' }
 
 
 	/** Request for SubmitProvisioningConfig. */

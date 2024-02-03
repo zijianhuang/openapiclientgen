@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Protocol { MqttV3_1_1 = 0, MqttV5 = 1, MqttV3_1_1_OverWebSocket = 2, MqttV5_OverWebSocket = 3 }
+	export enum Protocol { MqttV3_1_1 = 'MqttV3_1_1', MqttV5 = 'MqttV5', MqttV3_1_1_OverWebSocket = 'MqttV3_1_1_OverWebSocket', MqttV5_OverWebSocket = 'MqttV5_OverWebSocket' }
 
 	export interface ValidationException {
 	}
@@ -324,7 +324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { PASS = 0, FAIL = 1, CANCELED = 2, PENDING = 3, RUNNING = 4, STOPPING = 5, STOPPED = 6, PASS_WITH_WARNINGS = 7, ERROR = 8 }
+	export enum Status { PASS = 'PASS', FAIL = 'FAIL', CANCELED = 'CANCELED', PENDING = 'PENDING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', PASS_WITH_WARNINGS = 'PASS_WITH_WARNINGS', ERROR = 'ERROR' }
 
 
 	/** Provides test case scenario. */
@@ -355,7 +355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestCaseScenarioType { Advanced = 0, Basic = 1 }
+	export enum TestCaseScenarioType { Advanced = 'Advanced', Basic = 'Basic' }
 
 	export interface GetSuiteRunReportResponse {
 		qualificationReportDownloadUrl?: string;
@@ -576,7 +576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationMethod { X509ClientCertificate = 0, SignatureVersion4 = 1 }
+	export enum AuthenticationMethod { X509ClientCertificate = 'X509ClientCertificate', SignatureVersion4 = 'SignatureVersion4' }
 
 	export interface CreateSuiteDefinitionRequest {
 
@@ -642,7 +642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuiteRunStatus { PASS = 0, FAIL = 1, CANCELED = 2, PENDING = 3, RUNNING = 4, STOPPING = 5, STOPPED = 6, PASS_WITH_WARNINGS = 7, ERROR = 8 }
+	export enum SuiteRunStatus { PASS = 'PASS', FAIL = 'FAIL', CANCELED = 'CANCELED', PENDING = 'PENDING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', PASS_WITH_WARNINGS = 'PASS_WITH_WARNINGS', ERROR = 'ERROR' }
 
 	export interface ListSuiteDefinitionsRequest {
 	}
@@ -714,7 +714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestCaseScenarioStatus { PASS = 0, FAIL = 1, CANCELED = 2, PENDING = 3, RUNNING = 4, STOPPING = 5, STOPPED = 6, PASS_WITH_WARNINGS = 7, ERROR = 8 }
+	export enum TestCaseScenarioStatus { PASS = 'PASS', FAIL = 'FAIL', CANCELED = 'CANCELED', PENDING = 'PENDING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', PASS_WITH_WARNINGS = 'PASS_WITH_WARNINGS', ERROR = 'ERROR' }
 
 	export interface UntagResourceRequest {
 	}

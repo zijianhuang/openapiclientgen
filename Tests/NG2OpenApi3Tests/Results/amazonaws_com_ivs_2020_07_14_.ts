@@ -60,9 +60,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelLatencyMode { NORMAL = 0, LOW = 1 }
+	export enum ChannelLatencyMode { NORMAL = 'NORMAL', LOW = 'LOW' }
 
-	export enum TranscodePreset { HIGHER_BANDWIDTH_DELIVERY = 0, CONSTRAINED_BANDWIDTH_DELIVERY = 1 }
+	export enum TranscodePreset { HIGHER_BANDWIDTH_DELIVERY = 'HIGHER_BANDWIDTH_DELIVERY', CONSTRAINED_BANDWIDTH_DELIVERY = 'CONSTRAINED_BANDWIDTH_DELIVERY' }
 
 	export interface Tags {
 	}
@@ -74,7 +74,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { BASIC = 0, STANDARD = 1, ADVANCED_SD = 2, ADVANCED_HD = 3 }
+	export enum ChannelType { BASIC = 'BASIC', STANDARD = 'STANDARD', ADVANCED_SD = 'ADVANCED_SD', ADVANCED_HD = 'ADVANCED_HD' }
 
 
 	/** Error related to a specific channel, specified by its ARN. */
@@ -388,11 +388,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RenditionConfigurationRenditionSelection { ALL = 0, NONE = 1, CUSTOM = 2 }
+	export enum RenditionConfigurationRenditionSelection { ALL = 'ALL', NONE = 'NONE', CUSTOM = 'CUSTOM' }
 
-	export enum RenditionConfigurationRendition { FULL_HD = 0, HD = 1, SD = 2, LOWEST_RESOLUTION = 3 }
+	export enum RenditionConfigurationRendition { FULL_HD = 'FULL_HD', HD = 'HD', SD = 'SD', LOWEST_RESOLUTION = 'LOWEST_RESOLUTION' }
 
-	export enum RecordingConfigurationState { CREATING = 0, CREATE_FAILED = 1, ACTIVE = 2 }
+	export enum RecordingConfigurationState { CREATING = 'CREATING', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE' }
 
 
 	/** An object representing a configuration of thumbnails for recorded video. */
@@ -418,11 +418,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordingMode { DISABLED = 0, INTERVAL = 1 }
+	export enum RecordingMode { DISABLED = 'DISABLED', INTERVAL = 'INTERVAL' }
 
-	export enum ThumbnailConfigurationStorage { SEQUENTIAL = 0, LATEST = 1 }
+	export enum ThumbnailConfigurationStorage { SEQUENTIAL = 'SEQUENTIAL', LATEST = 'LATEST' }
 
-	export enum ThumbnailConfigurationResolution { FULL_HD = 0, HD = 1, SD = 2, LOWEST_RESOLUTION = 3 }
+	export enum ThumbnailConfigurationResolution { FULL_HD = 'FULL_HD', HD = 'HD', SD = 'SD', LOWEST_RESOLUTION = 'LOWEST_RESOLUTION' }
 
 	export interface InternalServerException {
 	}
@@ -568,9 +568,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamHealth { HEALTHY = 0, STARVING = 1, UNKNOWN = 2 }
+	export enum StreamHealth { HEALTHY = 'HEALTHY', STARVING = 'STARVING', UNKNOWN = 'UNKNOWN' }
 
-	export enum StreamState { LIVE = 0, OFFLINE = 1 }
+	export enum StreamState { LIVE = 'LIVE', OFFLINE = 'OFFLINE' }
 
 	export interface ChannelNotBroadcasting {
 	}

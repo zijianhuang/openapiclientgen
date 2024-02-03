@@ -224,7 +224,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhooksMax_concurrent_requests { _6 = 0, _12 = 1, _18 = 2, _24 = 3 }
+	export enum WebhooksMax_concurrent_requests { _6 = '6', _12 = '12', _18 = '18', _24 = '24' }
 
 
 	/** The media object containing audio */
@@ -495,7 +495,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_ContactStatus { processing = 0, valid = 1, invalid = 2 }
+	export enum Check_ContactStatus { processing = 'processing', valid = 'valid', invalid = 'invalid' }
 
 	export interface Check_Contact_Request_Body {
 
@@ -520,7 +520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Check_Contact_Request_BodyBlocking { no_wait = 0, wait = 1 }
+	export enum Check_Contact_Request_BodyBlocking { no_wait = 'no_wait', wait = 'wait' }
 
 	export interface Check_Contact_Response {
 	}
@@ -545,7 +545,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Gateway_Status { connected = 0, connecting = 1, disconnected = 2, uninitialized = 3, unregistered = 4 }
+	export enum Gateway_Status { connected = 'connected', connecting = 'connecting', disconnected = 'disconnected', uninitialized = 'uninitialized', unregistered = 'unregistered' }
 
 	export interface Config {
 	}
@@ -929,7 +929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Date_Time_ComponentDay_of_week { _1 = 0, _2 = 1, _3 = 2, _4 = 3, _5 = 4, _6 = 5, _7 = 6 }
+	export enum Date_Time_ComponentDay_of_week { _1 = '1', _2 = '2', _3 = '3', _4 = '4', _5 = '5', _6 = '6', _7 = '7' }
 
 
 	/** The Whatsapp Business API Client will attempt to format the date/time based on a specified localization. */
@@ -998,7 +998,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Detailed_User_Response_ItemROLES { ROLE_ADMIN = 0, ROLE_USER = 1 }
+	export enum Detailed_User_Response_ItemROLES { ROLE_ADMIN = 'ROLE_ADMIN', ROLE_USER = 'ROLE_USER' }
 
 
 	/** The media object containing a document */
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Gateway_Node_StatusRole { primary_master = 0, secondary_master = 1, coreapp = 2 }
+	export enum Gateway_Node_StatusRole { primary_master = 'primary_master', secondary_master = 'secondary_master', coreapp = 'coreapp' }
 
 	export interface Get_Business_Profile_Response {
 	}
@@ -1483,7 +1483,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LanguagePolicy { fallback = 0, deterministic = 1 }
+	export enum LanguagePolicy { fallback = 'fallback', deterministic = 'deterministic' }
 
 	export interface LocalizableParam {
 		currency?: Currency;
@@ -1790,7 +1790,7 @@ export namespace MyNS {
 
 
 	/** type of the message */
-	export enum Message_Type { audio = 0, contacts = 1, document = 2, hsm = 3, image = 4, location = 5, text = 6, video = 7, voice = 8, unknown = 9 }
+	export enum Message_Type { audio = 'audio', contacts = 'contacts', document = 'document', hsm = 'hsm', image = 'image', location = 'location', text = 'text', video = 'video', voice = 'voice', unknown = 'unknown' }
 
 
 	/** Contains generic information such as WhatsApp Business API Client version. */
@@ -1812,7 +1812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetaApi_status { deprecated = 0, experimental = 1, stable = 2 }
+	export enum MetaApi_status { deprecated = 'deprecated', experimental = 'experimental', stable = 'stable' }
 
 	export interface Profile_Photo_Settings_Profile {
 		photo?: Profile_Photo_Settings_Profile_Photo;
@@ -1950,7 +1950,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Request_Code_Request_BodyMethod { sms = 0, voice = 1 }
+	export enum Request_Code_Request_BodyMethod { sms = 'sms', voice = 'voice' }
 
 	export interface Request_Code_Response {
 		account?: Array<Request_Code_Account>;
@@ -2094,7 +2094,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Send_Message_Request_BodyRecipient_type { individual = 0, group = 1 }
+	export enum Send_Message_Request_BodyRecipient_type { individual = 'individual', group = 'group' }
 
 	export interface Text {
 
@@ -2165,7 +2165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Set_Shards_Request_BodyShards { _1 = 0, _2 = 1, _4 = 2, _8 = 3, _16 = 4, _32 = 5 }
+	export enum Set_Shards_Request_BodyShards { _1 = '1', _2 = '2', _4 = '4', _8 = '8', _16 = '16', _32 = '32' }
 
 	export interface Update_Group_Info_Request_Body {
 
@@ -2293,7 +2293,7 @@ export namespace MyNS {
 
 	}
 
-	export enum User_Role { ROLE_ADMIN = 0, ROLE_USER = 1 }
+	export enum User_Role { ROLE_ADMIN = 'ROLE_ADMIN', ROLE_USER = 'ROLE_USER' }
 
 	export interface VideoById {
 
@@ -2670,7 +2670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Webhook_SystemType { group_created = 0, group_user_promoted = 1, group_user_demoted = 2, group_user_joined = 3, group_user_left = 4, group_subject_changed = 5, group_description_changed = 6, group_icon_changed = 7, group_icon_deleted = 8, group_invite_link_revoked = 9, user_identity_changed = 10, group_user_changed_number = 11, group_error_fetching_photo = 12, group_error_adding_users = 13, group_error_adding_user = 14, group_error_full_adding_users = 15, group_error_removing_user = 16, broadcast_list_created = 17, group_ended = 18, group_error_blocked_adding_user = 19 }
+	export enum Webhook_SystemType { group_created = 'group_created', group_user_promoted = 'group_user_promoted', group_user_demoted = 'group_user_demoted', group_user_joined = 'group_user_joined', group_user_left = 'group_user_left', group_subject_changed = 'group_subject_changed', group_description_changed = 'group_description_changed', group_icon_changed = 'group_icon_changed', group_icon_deleted = 'group_icon_deleted', group_invite_link_revoked = 'group_invite_link_revoked', user_identity_changed = 'user_identity_changed', group_user_changed_number = 'group_user_changed_number', group_error_fetching_photo = 'group_error_fetching_photo', group_error_adding_users = 'group_error_adding_users', group_error_adding_user = 'group_error_adding_user', group_error_full_adding_users = 'group_error_full_adding_users', group_error_removing_user = 'group_error_removing_user', broadcast_list_created = 'broadcast_list_created', group_ended = 'group_ended', group_error_blocked_adding_user = 'group_error_blocked_adding_user' }
 
 	export interface Webhook_Text {
 
@@ -2824,7 +2824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Webhook_StatusStatus { sent = 0, delivered = 1, read = 2, failed = 3, deleted = 4 }
+	export enum Webhook_StatusStatus { sent = 'sent', delivered = 'delivered', read = 'read', failed = 'failed', deleted = 'deleted' }
 
 	@Injectable()
 	export class MyClient {

@@ -4192,9 +4192,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum TeamsAllFormat { XML = 0, JSON = 1 }
+	export enum TeamsAllFormat { XML = 'XML', JSON = 'JSON' }
 
-	export enum TimeframesType { current = 0, upcoming = 1, completed = 2, recent = 3, all = 4 }
+	export enum TimeframesType { current = 'current', upcoming = 'upcoming', completed = 'completed', recent = 'recent', all = 'all' }
 
 }
 

@@ -66,7 +66,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountStatusEnum { DISCOVERED = 0, PROCESSING = 1, READY = 2, ERROR = 3, SUSPENDED = 4 }
+	export enum AccountStatusEnum { DISCOVERED = 'DISCOVERED', PROCESSING = 'PROCESSING', READY = 'READY', ERROR = 'ERROR', SUSPENDED = 'SUSPENDED' }
 
 
 	/**
@@ -103,7 +103,7 @@ export namespace MyNS {
 	 * * `GB` - United Kingdom
 	 * * `US` - United States of America
 	 */
-	export enum AddressCountryEnum { AT = 0, BE = 1, BG = 2, HR = 3, CY = 4, CZ = 5, DK = 6, EE = 7, FI = 8, FR = 9, DE = 10, GR = 11, HU = 12, IS = 13, IE = 14, IT = 15, LV = 16, LI = 17, LT = 18, LU = 19, MT = 20, NL = 21, NO = 22, PL = 23, PT = 24, RO = 25, SK = 26, SI = 27, ES = 28, SE = 29, GB = 30, US = 31 }
+	export enum AddressCountryEnum { AT = 'AT', BE = 'BE', BG = 'BG', HR = 'HR', CY = 'CY', CZ = 'CZ', DK = 'DK', EE = 'EE', FI = 'FI', FR = 'FR', DE = 'DE', GR = 'GR', HU = 'HU', IS = 'IS', IE = 'IE', IT = 'IT', LV = 'LV', LI = 'LI', LT = 'LT', LU = 'LU', MT = 'MT', NL = 'NL', NO = 'NO', PL = 'PL', PT = 'PT', RO = 'RO', SK = 'SK', SI = 'SI', ES = 'ES', SE = 'SE', GB = 'GB', US = 'US' }
 
 
 	/**
@@ -140,7 +140,7 @@ export namespace MyNS {
 	 * * `GB` - United Kingdom
 	 * * `US` - United States of America
 	 */
-	export enum CountryEnum { AT = 0, BE = 1, BG = 2, HR = 3, CY = 4, CZ = 5, DK = 6, EE = 7, FI = 8, FR = 9, DE = 10, GR = 11, HU = 12, IS = 13, IE = 14, IT = 15, LV = 16, LI = 17, LT = 18, LU = 19, MT = 20, NL = 21, NO = 22, PL = 23, PT = 24, RO = 25, SK = 26, SI = 27, ES = 28, SE = 29, GB = 30, US = 31 }
+	export enum CountryEnum { AT = 'AT', BE = 'BE', BG = 'BG', HR = 'HR', CY = 'CY', CZ = 'CZ', DK = 'DK', EE = 'EE', FI = 'FI', FR = 'FR', DE = 'DE', GR = 'GR', HU = 'HU', IS = 'IS', IE = 'IE', IT = 'IT', LV = 'LV', LI = 'LI', LT = 'LT', LU = 'LU', MT = 'MT', NL = 'NL', NO = 'NO', PL = 'PL', PT = 'PT', RO = 'RO', SK = 'SK', SI = 'SI', ES = 'ES', SE = 'SE', GB = 'GB', US = 'US' }
 
 
 	/** Creditor account read serializer. */
@@ -241,7 +241,7 @@ export namespace MyNS {
 	 * * `IBAN` - IBAN
 	 * * `SCAN` - SortCodeAccountNumber
 	 */
-	export enum TypeEnum { IBAN = 0, SCAN = 1 }
+	export enum TypeEnum { IBAN = 'IBAN', SCAN = 'SCAN' }
 
 
 	/** Creditor account write serializer. */
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 	 * * `following` - following
 	 * * `preceding` - preceding
 	 */
-	export enum ExecutionRuleEnum { following = 0, preceding = 1 }
+	export enum ExecutionRuleEnum { following = 'following', preceding = 'preceding' }
 
 
 	/**
@@ -1142,7 +1142,7 @@ export namespace MyNS {
 	 * * `Annual` - Annual
 	 * * `MonthlyVariable` - MonthlyVariable
 	 */
-	export enum FrequencyEnum { Daily = 0, Weekly = 1, EveryTwoWeeks = 2, Monthly = 3, EveryTwoMonths = 4, Quarterly = 5, SemiAnnual = 6, Annual = 7, MonthlyVariable = 8 }
+	export enum FrequencyEnum { Daily = 'Daily', Weekly = 'Weekly', EveryTwoWeeks = 'EveryTwoWeeks', Monthly = 'Monthly', EveryTwoMonths = 'EveryTwoMonths', Quarterly = 'Quarterly', SemiAnnual = 'SemiAnnual', Annual = 'Annual', MonthlyVariable = 'MonthlyVariable' }
 
 
 	/** InstructedAmountSerializer. */
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 	 * * `BT` - Balance Transfer
 	 * * `MT` - Money Transfer
 	 */
-	export enum PaymentProductEnum { T2P = 0, SCT = 1, ISCT = 2, CBCT = 3, BACS = 4, CHAPS = 5, FPS = 6, SWIFT = 7, BT = 8, MT = 9 }
+	export enum PaymentProductEnum { T2P = 'T2P', SCT = 'SCT', ISCT = 'ISCT', CBCT = 'CBCT', BACS = 'BACS', CHAPS = 'CHAPS', FPS = 'FPS', SWIFT = 'SWIFT', BT = 'BT', MT = 'MT' }
 
 
 	/**
@@ -1665,7 +1665,7 @@ export namespace MyNS {
 	 * * `PATC` - PartiallyAcceptedTechnicalCorrect. The payment initiation needs multiple authentications, where some but not yet all have been performed
 	 * * `PART` - PartiallyAccepted. A number of transactions have been accepted, whereas another number of transactions have not yet achieved 'accepted' status
 	 */
-	export enum PaymentStatusEnum { INIT = 0, ERRE = 1, ERRS = 2, ACCC = 3, ACCP = 4, ACSC = 5, ACSP = 6, ACTC = 7, ACWC = 8, ACWP = 9, RCVD = 10, PDNG = 11, RJCT = 12, CANC = 13, ACFC = 14, PATC = 15, PART = 16 }
+	export enum PaymentStatusEnum { INIT = 'INIT', ERRE = 'ERRE', ERRS = 'ERRS', ACCC = 'ACCC', ACCP = 'ACCP', ACSC = 'ACSC', ACSP = 'ACSP', ACTC = 'ACTC', ACWC = 'ACWC', ACWP = 'ACWP', RCVD = 'RCVD', PDNG = 'PDNG', RJCT = 'RJCT', CANC = 'CANC', ACFC = 'ACFC', PATC = 'PATC', PART = 'PART' }
 
 
 	/**
@@ -1673,7 +1673,7 @@ export namespace MyNS {
 	 * * `bulk-payment` - bulk-payments
 	 * * `periodic-payment` - periodic-payments
 	 */
-	export enum PaymentTypeEnum { 'single-payment' = 0, 'bulk-payment' = 1, 'periodic-payment' = 2 }
+	export enum PaymentTypeEnum { 'single-payment' = 'single-payment', 'bulk-payment' = 'bulk-payment', 'periodic-payment' = 'periodic-payment' }
 
 	export interface PaginatedRequisitionList {
 		count?: number | null;
@@ -1824,7 +1824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status1c5Enum { CR = 0, ID = 1, LN = 2, RJ = 3, ER = 4, SU = 5, EX = 6, GC = 7, UA = 8, GA = 9, SA = 10 }
+	export enum Status1c5Enum { CR = 'CR', ID = 'ID', LN = 'LN', RJ = 'RJ', ER = 'ER', SU = 'SU', EX = 'EX', GC = 'GC', UA = 'UA', GA = 'GA', SA = 'SA' }
 
 
 	/** PaymentReadSerializer. */

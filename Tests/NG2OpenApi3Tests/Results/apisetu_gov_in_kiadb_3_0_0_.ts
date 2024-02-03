@@ -1401,7 +1401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlltrPostBodyFormat { pdf = 0 }
+	export enum AlltrPostBodyFormat { pdf = 'pdf' }
 
 	export interface BknocPostBody {
 		certificateParameters?: BknocPostBodyCertificateParameters;

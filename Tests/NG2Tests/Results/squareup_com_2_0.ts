@@ -152,7 +152,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressCountry { ZZ = 0, AD = 1, AE = 2, AF = 3, AG = 4, AI = 5, AL = 6, AM = 7, AO = 8, AQ = 9, AR = 10, AS = 11, AT = 12, AU = 13, AW = 14, AX = 15, AZ = 16, BA = 17, BB = 18, BD = 19, BE = 20, BF = 21, BG = 22, BH = 23, BI = 24, BJ = 25, BL = 26, BM = 27, BN = 28, BO = 29, BQ = 30, BR = 31, BS = 32, BT = 33, BV = 34, BW = 35, BY = 36, BZ = 37, CA = 38, CC = 39, CD = 40, CF = 41, CG = 42, CH = 43, CI = 44, CK = 45, CL = 46, CM = 47, CN = 48, CO = 49, CR = 50, CU = 51, CV = 52, CW = 53, CX = 54, CY = 55, CZ = 56, DE = 57, DJ = 58, DK = 59, DM = 60, DO = 61, DZ = 62, EC = 63, EE = 64, EG = 65, EH = 66, ER = 67, ES = 68, ET = 69, FI = 70, FJ = 71, FK = 72, FM = 73, FO = 74, FR = 75, GA = 76, GB = 77, GD = 78, GE = 79, GF = 80, GG = 81, GH = 82, GI = 83, GL = 84, GM = 85, GN = 86, GP = 87, GQ = 88, GR = 89, GS = 90, GT = 91, GU = 92, GW = 93, GY = 94, HK = 95, HM = 96, HN = 97, HR = 98, HT = 99, HU = 100, ID = 101, IE = 102, IL = 103, IM = 104, IN = 105, IO = 106, IQ = 107, IR = 108, IS = 109, IT = 110, JE = 111, JM = 112, JO = 113, JP = 114, KE = 115, KG = 116, KH = 117, KI = 118, KM = 119, KN = 120, KP = 121, KR = 122, KW = 123, KY = 124, KZ = 125, LA = 126, LB = 127, LC = 128, LI = 129, LK = 130, LR = 131, LS = 132, LT = 133, LU = 134, LV = 135, LY = 136, MA = 137, MC = 138, MD = 139, ME = 140, MF = 141, MG = 142, MH = 143, MK = 144, ML = 145, MM = 146, MN = 147, MO = 148, MP = 149, MQ = 150, MR = 151, MS = 152, MT = 153, MU = 154, MV = 155, MW = 156, MX = 157, MY = 158, MZ = 159, NA = 160, NC = 161, NE = 162, NF = 163, NG = 164, NI = 165, NL = 166, NO = 167, NP = 168, NR = 169, NU = 170, NZ = 171, OM = 172, PA = 173, PE = 174, PF = 175, PG = 176, PH = 177, PK = 178, PL = 179, PM = 180, PN = 181, PR = 182, PS = 183, PT = 184, PW = 185, PY = 186, QA = 187, RE = 188, RO = 189, RS = 190, RU = 191, RW = 192, SA = 193, SB = 194, SC = 195, SD = 196, SE = 197, SG = 198, SH = 199, SI = 200, SJ = 201, SK = 202, SL = 203, SM = 204, SN = 205, SO = 206, SR = 207, SS = 208, ST = 209, SV = 210, SX = 211, SY = 212, SZ = 213, TC = 214, TD = 215, TF = 216, TG = 217, TH = 218, TJ = 219, TK = 220, TL = 221, TM = 222, TN = 223, TO = 224, TR = 225, TT = 226, TV = 227, TW = 228, TZ = 229, UA = 230, UG = 231, UM = 232, US = 233, UY = 234, UZ = 235, VA = 236, VC = 237, VE = 238, VG = 239, VI = 240, VN = 241, VU = 242, WF = 243, WS = 244, YE = 245, YT = 246, ZA = 247, ZM = 248, ZW = 249 }
+	export enum AddressCountry { ZZ = 'ZZ', AD = 'AD', AE = 'AE', AF = 'AF', AG = 'AG', AI = 'AI', AL = 'AL', AM = 'AM', AO = 'AO', AQ = 'AQ', AR = 'AR', AS = 'AS', AT = 'AT', AU = 'AU', AW = 'AW', AX = 'AX', AZ = 'AZ', BA = 'BA', BB = 'BB', BD = 'BD', BE = 'BE', BF = 'BF', BG = 'BG', BH = 'BH', BI = 'BI', BJ = 'BJ', BL = 'BL', BM = 'BM', BN = 'BN', BO = 'BO', BQ = 'BQ', BR = 'BR', BS = 'BS', BT = 'BT', BV = 'BV', BW = 'BW', BY = 'BY', BZ = 'BZ', CA = 'CA', CC = 'CC', CD = 'CD', CF = 'CF', CG = 'CG', CH = 'CH', CI = 'CI', CK = 'CK', CL = 'CL', CM = 'CM', CN = 'CN', CO = 'CO', CR = 'CR', CU = 'CU', CV = 'CV', CW = 'CW', CX = 'CX', CY = 'CY', CZ = 'CZ', DE = 'DE', DJ = 'DJ', DK = 'DK', DM = 'DM', DO = 'DO', DZ = 'DZ', EC = 'EC', EE = 'EE', EG = 'EG', EH = 'EH', ER = 'ER', ES = 'ES', ET = 'ET', FI = 'FI', FJ = 'FJ', FK = 'FK', FM = 'FM', FO = 'FO', FR = 'FR', GA = 'GA', GB = 'GB', GD = 'GD', GE = 'GE', GF = 'GF', GG = 'GG', GH = 'GH', GI = 'GI', GL = 'GL', GM = 'GM', GN = 'GN', GP = 'GP', GQ = 'GQ', GR = 'GR', GS = 'GS', GT = 'GT', GU = 'GU', GW = 'GW', GY = 'GY', HK = 'HK', HM = 'HM', HN = 'HN', HR = 'HR', HT = 'HT', HU = 'HU', ID = 'ID', IE = 'IE', IL = 'IL', IM = 'IM', IN = 'IN', IO = 'IO', IQ = 'IQ', IR = 'IR', IS = 'IS', IT = 'IT', JE = 'JE', JM = 'JM', JO = 'JO', JP = 'JP', KE = 'KE', KG = 'KG', KH = 'KH', KI = 'KI', KM = 'KM', KN = 'KN', KP = 'KP', KR = 'KR', KW = 'KW', KY = 'KY', KZ = 'KZ', LA = 'LA', LB = 'LB', LC = 'LC', LI = 'LI', LK = 'LK', LR = 'LR', LS = 'LS', LT = 'LT', LU = 'LU', LV = 'LV', LY = 'LY', MA = 'MA', MC = 'MC', MD = 'MD', ME = 'ME', MF = 'MF', MG = 'MG', MH = 'MH', MK = 'MK', ML = 'ML', MM = 'MM', MN = 'MN', MO = 'MO', MP = 'MP', MQ = 'MQ', MR = 'MR', MS = 'MS', MT = 'MT', MU = 'MU', MV = 'MV', MW = 'MW', MX = 'MX', MY = 'MY', MZ = 'MZ', NA = 'NA', NC = 'NC', NE = 'NE', NF = 'NF', NG = 'NG', NI = 'NI', NL = 'NL', NO = 'NO', NP = 'NP', NR = 'NR', NU = 'NU', NZ = 'NZ', OM = 'OM', PA = 'PA', PE = 'PE', PF = 'PF', PG = 'PG', PH = 'PH', PK = 'PK', PL = 'PL', PM = 'PM', PN = 'PN', PR = 'PR', PS = 'PS', PT = 'PT', PW = 'PW', PY = 'PY', QA = 'QA', RE = 'RE', RO = 'RO', RS = 'RS', RU = 'RU', RW = 'RW', SA = 'SA', SB = 'SB', SC = 'SC', SD = 'SD', SE = 'SE', SG = 'SG', SH = 'SH', SI = 'SI', SJ = 'SJ', SK = 'SK', SL = 'SL', SM = 'SM', SN = 'SN', SO = 'SO', SR = 'SR', SS = 'SS', ST = 'ST', SV = 'SV', SX = 'SX', SY = 'SY', SZ = 'SZ', TC = 'TC', TD = 'TD', TF = 'TF', TG = 'TG', TH = 'TH', TJ = 'TJ', TK = 'TK', TL = 'TL', TM = 'TM', TN = 'TN', TO = 'TO', TR = 'TR', TT = 'TT', TV = 'TV', TW = 'TW', TZ = 'TZ', UA = 'UA', UG = 'UG', UM = 'UM', US = 'US', UY = 'UY', UZ = 'UZ', VA = 'VA', VC = 'VC', VE = 'VE', VG = 'VG', VI = 'VI', VN = 'VN', VU = 'VU', WF = 'WF', WS = 'WS', YE = 'YE', YT = 'YT', ZA = 'ZA', ZM = 'ZM', ZW = 'ZW' }
 
 	export interface BatchDeleteCatalogObjectsRequest {
 
@@ -264,9 +264,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCategory { API_ERROR = 0, AUTHENTICATION_ERROR = 1, INVALID_REQUEST_ERROR = 2, RATE_LIMIT_ERROR = 3, PAYMENT_METHOD_ERROR = 4, REFUND_ERROR = 5 }
+	export enum ErrorCategory { API_ERROR = 'API_ERROR', AUTHENTICATION_ERROR = 'AUTHENTICATION_ERROR', INVALID_REQUEST_ERROR = 'INVALID_REQUEST_ERROR', RATE_LIMIT_ERROR = 'RATE_LIMIT_ERROR', PAYMENT_METHOD_ERROR = 'PAYMENT_METHOD_ERROR', REFUND_ERROR = 'REFUND_ERROR' }
 
-	export enum ErrorCode { INTERNAL_SERVER_ERROR = 0, UNAUTHORIZED = 1, ACCESS_TOKEN_EXPIRED = 2, ACCESS_TOKEN_REVOKED = 3, FORBIDDEN = 4, INSUFFICIENT_SCOPES = 5, APPLICATION_DISABLED = 6, V1_APPLICATION = 7, V1_ACCESS_TOKEN = 8, CARD_PROCESSING_NOT_ENABLED = 9, BAD_REQUEST = 10, MISSING_REQUIRED_PARAMETER = 11, INCORRECT_TYPE = 12, INVALID_TIME = 13, INVALID_TIME_RANGE = 14, INVALID_VALUE = 15, INVALID_CURSOR = 16, UNKNOWN_QUERY_PARAMETER = 17, CONFLICTING_PARAMETERS = 18, EXPECTED_JSON_BODY = 19, INVALID_SORT_ORDER = 20, VALUE_REGEX_MISMATCH = 21, VALUE_TOO_SHORT = 22, VALUE_TOO_LONG = 23, VALUE_TOO_LOW = 24, VALUE_TOO_HIGH = 25, VALUE_EMPTY = 26, ARRAY_EMPTY = 27, EXPECTED_BOOLEAN = 28, EXPECTED_INTEGER = 29, EXPECTED_FLOAT = 30, EXPECTED_STRING = 31, EXPECTED_OBJECT = 32, EXPECTED_ARRAY = 33, EXPECTED_BASE64_ENCODED_BYTE_ARRAY = 34, INVALID_ARRAY_VALUE = 35, INVALID_ENUM_VALUE = 36, INVALID_CONTENT_TYPE = 37, INVALID_FORM_VALUE = 38, ONE_INSTRUMENT_EXPECTED = 39, NO_FIELDS_SET = 40, CARD_EXPIRED = 41, INVALID_EXPIRATION = 42, INVALID_EXPIRATION_YEAR = 43, INVALID_EXPIRATION_DATE = 44, UNSUPPORTED_CARD_BRAND = 45, INVALID_CARD = 46, DELAYED_TRANSACTION_EXPIRED = 47, DELAYED_TRANSACTION_CANCELED = 48, DELAYED_TRANSACTION_CAPTURED = 49, DELAYED_TRANSACTION_FAILED = 50, CARD_TOKEN_EXPIRED = 51, CARD_TOKEN_USED = 52, AMOUNT_TOO_HIGH = 53, UNSUPPORTED_INSTRUMENT_TYPE = 54, REFUND_AMOUNT_INVALID = 55, REFUND_ALREADY_PENDING = 56, PAYMENT_NOT_REFUNDABLE = 57, INVALID_CARD_DATA = 58, IDEMPOTENCY_KEY_REUSED = 59, UNEXPECTED_VALUE = 60, SANDBOX_NOT_SUPPORTED = 61, INVALID_EMAIL_ADDRESS = 62, CHECKOUT_EXPIRED = 63, CARD_DECLINED = 64, VERIFY_CVV_FAILURE = 65, VERIFY_AVS_FAILURE = 66, CARD_DECLINED_CALL_ISSUER = 67, NOT_FOUND = 68, REQUEST_TIMEOUT = 69, CONFLICT = 70, REQUEST_ENTITY_TOO_LARGE = 71, UNSUPPORTED_MEDIA_TYPE = 72, RATE_LIMITED = 73, NOT_IMPLEMENTED = 74, SERVICE_UNAVAILABLE = 75 }
+	export enum ErrorCode { INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR', UNAUTHORIZED = 'UNAUTHORIZED', ACCESS_TOKEN_EXPIRED = 'ACCESS_TOKEN_EXPIRED', ACCESS_TOKEN_REVOKED = 'ACCESS_TOKEN_REVOKED', FORBIDDEN = 'FORBIDDEN', INSUFFICIENT_SCOPES = 'INSUFFICIENT_SCOPES', APPLICATION_DISABLED = 'APPLICATION_DISABLED', V1_APPLICATION = 'V1_APPLICATION', V1_ACCESS_TOKEN = 'V1_ACCESS_TOKEN', CARD_PROCESSING_NOT_ENABLED = 'CARD_PROCESSING_NOT_ENABLED', BAD_REQUEST = 'BAD_REQUEST', MISSING_REQUIRED_PARAMETER = 'MISSING_REQUIRED_PARAMETER', INCORRECT_TYPE = 'INCORRECT_TYPE', INVALID_TIME = 'INVALID_TIME', INVALID_TIME_RANGE = 'INVALID_TIME_RANGE', INVALID_VALUE = 'INVALID_VALUE', INVALID_CURSOR = 'INVALID_CURSOR', UNKNOWN_QUERY_PARAMETER = 'UNKNOWN_QUERY_PARAMETER', CONFLICTING_PARAMETERS = 'CONFLICTING_PARAMETERS', EXPECTED_JSON_BODY = 'EXPECTED_JSON_BODY', INVALID_SORT_ORDER = 'INVALID_SORT_ORDER', VALUE_REGEX_MISMATCH = 'VALUE_REGEX_MISMATCH', VALUE_TOO_SHORT = 'VALUE_TOO_SHORT', VALUE_TOO_LONG = 'VALUE_TOO_LONG', VALUE_TOO_LOW = 'VALUE_TOO_LOW', VALUE_TOO_HIGH = 'VALUE_TOO_HIGH', VALUE_EMPTY = 'VALUE_EMPTY', ARRAY_EMPTY = 'ARRAY_EMPTY', EXPECTED_BOOLEAN = 'EXPECTED_BOOLEAN', EXPECTED_INTEGER = 'EXPECTED_INTEGER', EXPECTED_FLOAT = 'EXPECTED_FLOAT', EXPECTED_STRING = 'EXPECTED_STRING', EXPECTED_OBJECT = 'EXPECTED_OBJECT', EXPECTED_ARRAY = 'EXPECTED_ARRAY', EXPECTED_BASE64_ENCODED_BYTE_ARRAY = 'EXPECTED_BASE64_ENCODED_BYTE_ARRAY', INVALID_ARRAY_VALUE = 'INVALID_ARRAY_VALUE', INVALID_ENUM_VALUE = 'INVALID_ENUM_VALUE', INVALID_CONTENT_TYPE = 'INVALID_CONTENT_TYPE', INVALID_FORM_VALUE = 'INVALID_FORM_VALUE', ONE_INSTRUMENT_EXPECTED = 'ONE_INSTRUMENT_EXPECTED', NO_FIELDS_SET = 'NO_FIELDS_SET', CARD_EXPIRED = 'CARD_EXPIRED', INVALID_EXPIRATION = 'INVALID_EXPIRATION', INVALID_EXPIRATION_YEAR = 'INVALID_EXPIRATION_YEAR', INVALID_EXPIRATION_DATE = 'INVALID_EXPIRATION_DATE', UNSUPPORTED_CARD_BRAND = 'UNSUPPORTED_CARD_BRAND', INVALID_CARD = 'INVALID_CARD', DELAYED_TRANSACTION_EXPIRED = 'DELAYED_TRANSACTION_EXPIRED', DELAYED_TRANSACTION_CANCELED = 'DELAYED_TRANSACTION_CANCELED', DELAYED_TRANSACTION_CAPTURED = 'DELAYED_TRANSACTION_CAPTURED', DELAYED_TRANSACTION_FAILED = 'DELAYED_TRANSACTION_FAILED', CARD_TOKEN_EXPIRED = 'CARD_TOKEN_EXPIRED', CARD_TOKEN_USED = 'CARD_TOKEN_USED', AMOUNT_TOO_HIGH = 'AMOUNT_TOO_HIGH', UNSUPPORTED_INSTRUMENT_TYPE = 'UNSUPPORTED_INSTRUMENT_TYPE', REFUND_AMOUNT_INVALID = 'REFUND_AMOUNT_INVALID', REFUND_ALREADY_PENDING = 'REFUND_ALREADY_PENDING', PAYMENT_NOT_REFUNDABLE = 'PAYMENT_NOT_REFUNDABLE', INVALID_CARD_DATA = 'INVALID_CARD_DATA', IDEMPOTENCY_KEY_REUSED = 'IDEMPOTENCY_KEY_REUSED', UNEXPECTED_VALUE = 'UNEXPECTED_VALUE', SANDBOX_NOT_SUPPORTED = 'SANDBOX_NOT_SUPPORTED', INVALID_EMAIL_ADDRESS = 'INVALID_EMAIL_ADDRESS', CHECKOUT_EXPIRED = 'CHECKOUT_EXPIRED', CARD_DECLINED = 'CARD_DECLINED', VERIFY_CVV_FAILURE = 'VERIFY_CVV_FAILURE', VERIFY_AVS_FAILURE = 'VERIFY_AVS_FAILURE', CARD_DECLINED_CALL_ISSUER = 'CARD_DECLINED_CALL_ISSUER', NOT_FOUND = 'NOT_FOUND', REQUEST_TIMEOUT = 'REQUEST_TIMEOUT', CONFLICT = 'CONFLICT', REQUEST_ENTITY_TOO_LARGE = 'REQUEST_ENTITY_TOO_LARGE', UNSUPPORTED_MEDIA_TYPE = 'UNSUPPORTED_MEDIA_TYPE', RATE_LIMITED = 'RATE_LIMITED', NOT_IMPLEMENTED = 'NOT_IMPLEMENTED', SERVICE_UNAVAILABLE = 'SERVICE_UNAVAILABLE' }
 
 	export interface BatchRetrieveCatalogObjectsRequest {
 
@@ -706,9 +706,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MoneyCurrency { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BOV = 19, BRL = 20, BSD = 21, BTN = 22, BWP = 23, BYR = 24, BZD = 25, CAD = 26, CDF = 27, CHE = 28, CHF = 29, CHW = 30, CLF = 31, CLP = 32, CNY = 33, COP = 34, COU = 35, CRC = 36, CUC = 37, CUP = 38, CVE = 39, CZK = 40, DJF = 41, DKK = 42, DOP = 43, DZD = 44, EGP = 45, ERN = 46, ETB = 47, EUR = 48, FJD = 49, FKP = 50, GBP = 51, GEL = 52, GHS = 53, GIP = 54, GMD = 55, GNF = 56, GTQ = 57, GYD = 58, HKD = 59, HNL = 60, HRK = 61, HTG = 62, HUF = 63, IDR = 64, ILS = 65, INR = 66, IQD = 67, IRR = 68, ISK = 69, JMD = 70, JOD = 71, JPY = 72, KES = 73, KGS = 74, KHR = 75, KMF = 76, KPW = 77, KRW = 78, KWD = 79, KYD = 80, KZT = 81, LAK = 82, LBP = 83, LKR = 84, LRD = 85, LSL = 86, LTL = 87, LVL = 88, LYD = 89, MAD = 90, MDL = 91, MGA = 92, MKD = 93, MMK = 94, MNT = 95, MOP = 96, MRO = 97, MUR = 98, MVR = 99, MWK = 100, MXN = 101, MXV = 102, MYR = 103, MZN = 104, NAD = 105, NGN = 106, NIO = 107, NOK = 108, NPR = 109, NZD = 110, OMR = 111, PAB = 112, PEN = 113, PGK = 114, PHP = 115, PKR = 116, PLN = 117, PYG = 118, QAR = 119, RON = 120, RSD = 121, RUB = 122, RWF = 123, SAR = 124, SBD = 125, SCR = 126, SDG = 127, SEK = 128, SGD = 129, SHP = 130, SLL = 131, SOS = 132, SRD = 133, SSP = 134, STD = 135, SVC = 136, SYP = 137, SZL = 138, THB = 139, TJS = 140, TMT = 141, TND = 142, TOP = 143, TRY = 144, TTD = 145, TWD = 146, TZS = 147, UAH = 148, UGX = 149, USD = 150, USN = 151, USS = 152, UYI = 153, UYU = 154, UZS = 155, VEF = 156, VND = 157, VUV = 158, WST = 159, XAF = 160, XAG = 161, XAU = 162, XBA = 163, XBB = 164, XBC = 165, XBD = 166, XCD = 167, XDR = 168, XOF = 169, XPD = 170, XPF = 171, XPT = 172, XTS = 173, XXX = 174, YER = 175, ZAR = 176, ZMK = 177, ZMW = 178, BTC = 179 }
+	export enum MoneyCurrency { AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', USN = 'USN', USS = 'USS', UYI = 'UYI', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', XTS = 'XTS', XXX = 'XXX', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', BTC = 'BTC' }
 
-	export enum CatalogDiscountDiscount_type { FIXED_PERCENTAGE = 0, FIXED_AMOUNT = 1, VARIABLE_PERCENTAGE = 2, VARIABLE_AMOUNT = 3 }
+	export enum CatalogDiscountDiscount_type { FIXED_PERCENTAGE = 'FIXED_PERCENTAGE', FIXED_AMOUNT = 'FIXED_AMOUNT', VARIABLE_PERCENTAGE = 'VARIABLE_PERCENTAGE', VARIABLE_AMOUNT = 'VARIABLE_AMOUNT' }
 
 
 	/** An item (i.e., product family) in the Catalog object model. */
@@ -934,7 +934,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogItemProduct_type { REGULAR = 0, GIFT_CARD = 1, APPOINTMENTS_SERVICE = 2, RETAIL_ITEM = 3, RESTAURANT_ITEM = 4 }
+	export enum CatalogItemProduct_type { REGULAR = 'REGULAR', GIFT_CARD = 'GIFT_CARD', APPOINTMENTS_SERVICE = 'APPOINTMENTS_SERVICE', RETAIL_ITEM = 'RETAIL_ITEM', RESTAURANT_ITEM = 'RESTAURANT_ITEM' }
 
 
 	/** An item variation (i.e., product) in the Catalog object model. */
@@ -1062,7 +1062,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogItemVariationInventory_alert_type { NONE = 0, LOW_QUANTITY = 1 }
+	export enum CatalogItemVariationInventory_alert_type { NONE = 'NONE', LOW_QUANTITY = 'LOW_QUANTITY' }
 
 
 	/** Price and inventory alerting overrides for a [CatalogItemVariation](#type-catalogitemvariation) at a specific [location][#type-location]. */
@@ -1144,7 +1144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemVariationLocationOverridesPricing_type { FIXED_PRICING = 0, VARIABLE_PRICING = 1 }
+	export enum ItemVariationLocationOverridesPricing_type { FIXED_PRICING = 'FIXED_PRICING', VARIABLE_PRICING = 'VARIABLE_PRICING' }
 
 
 	/** A modifier in the Catalog object model. */
@@ -1250,7 +1250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogModifierListSelection_type { SINGLE = 0, MULTIPLE = 1 }
+	export enum CatalogModifierListSelection_type { SINGLE = 'SINGLE', MULTIPLE = 'MULTIPLE' }
 
 
 	/** A tax in the Catalog object model. */
@@ -1328,11 +1328,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogTaxCalculation_phase { TAX_SUBTOTAL_PHASE = 0, TAX_TOTAL_PHASE = 1 }
+	export enum CatalogTaxCalculation_phase { TAX_SUBTOTAL_PHASE = 'TAX_SUBTOTAL_PHASE', TAX_TOTAL_PHASE = 'TAX_TOTAL_PHASE' }
 
-	export enum CatalogTaxInclusion_type { ADDITIVE = 0, INCLUSIVE = 1 }
+	export enum CatalogTaxInclusion_type { ADDITIVE = 'ADDITIVE', INCLUSIVE = 'INCLUSIVE' }
 
-	export enum CatalogObjectType { ITEM = 0, CATEGORY = 1, ITEM_VARIATION = 2, TAX = 3, DISCOUNT = 4, MODIFIER_LIST = 5, MODIFIER = 6 }
+	export enum CatalogObjectType { ITEM = 'ITEM', CATEGORY = 'CATEGORY', ITEM_VARIATION = 'ITEM_VARIATION', TAX = 'TAX', DISCOUNT = 'DISCOUNT', MODIFIER_LIST = 'MODIFIER_LIST', MODIFIER = 'MODIFIER' }
 
 	export interface BatchUpsertCatalogObjectsRequest {
 
@@ -1591,15 +1591,15 @@ export namespace MyNS {
 
 	}
 
-	export enum CardCard_brand { OTHER_BRAND = 0, VISA = 1, MASTERCARD = 2, AMERICAN_EXPRESS = 3, DISCOVER = 4, DISCOVER_DINERS = 5, JCB = 6, CHINA_UNIONPAY = 7, SQUARE_GIFT_CARD = 8 }
+	export enum CardCard_brand { OTHER_BRAND = 'OTHER_BRAND', VISA = 'VISA', MASTERCARD = 'MASTERCARD', AMERICAN_EXPRESS = 'AMERICAN_EXPRESS', DISCOVER = 'DISCOVER', DISCOVER_DINERS = 'DISCOVER_DINERS', JCB = 'JCB', CHINA_UNIONPAY = 'CHINA_UNIONPAY', SQUARE_GIFT_CARD = 'SQUARE_GIFT_CARD' }
 
 
 	/** Indicates a credit card's brand, such as `VISA`. */
-	export enum CardBrand { OTHER_BRAND = 0, VISA = 1, MASTERCARD = 2, AMERICAN_EXPRESS = 3, DISCOVER = 4, DISCOVER_DINERS = 5, JCB = 6, CHINA_UNIONPAY = 7, SQUARE_GIFT_CARD = 8 }
+	export enum CardBrand { OTHER_BRAND = 'OTHER_BRAND', VISA = 'VISA', MASTERCARD = 'MASTERCARD', AMERICAN_EXPRESS = 'AMERICAN_EXPRESS', DISCOVER = 'DISCOVER', DISCOVER_DINERS = 'DISCOVER_DINERS', JCB = 'JCB', CHINA_UNIONPAY = 'CHINA_UNIONPAY', SQUARE_GIFT_CARD = 'SQUARE_GIFT_CARD' }
 
 
 	/** How to apply a [CatalogDiscount](#type-catalogdiscount) to a [CatalogItem](#type-catalogitem). */
-	export enum CatalogDiscountType { FIXED_PERCENTAGE = 0, FIXED_AMOUNT = 1, VARIABLE_PERCENTAGE = 2, VARIABLE_AMOUNT = 3 }
+	export enum CatalogDiscountType { FIXED_PERCENTAGE = 'FIXED_PERCENTAGE', FIXED_AMOUNT = 'FIXED_AMOUNT', VARIABLE_PERCENTAGE = 'VARIABLE_PERCENTAGE', VARIABLE_AMOUNT = 'VARIABLE_AMOUNT' }
 
 	export interface CatalogInfoRequest {
 	}
@@ -1780,15 +1780,15 @@ export namespace MyNS {
 
 
 	/** The type of a [CatalogItem](#type-catalogitem). Connect V2 only allows the creation of `REGULAR` items. */
-	export enum CatalogItemProductType { REGULAR = 0, GIFT_CARD = 1, APPOINTMENTS_SERVICE = 2, RETAIL_ITEM = 3, RESTAURANT_ITEM = 4 }
+	export enum CatalogItemProductType { REGULAR = 'REGULAR', GIFT_CARD = 'GIFT_CARD', APPOINTMENTS_SERVICE = 'APPOINTMENTS_SERVICE', RETAIL_ITEM = 'RETAIL_ITEM', RESTAURANT_ITEM = 'RESTAURANT_ITEM' }
 
 
 	/** Indicates whether a [CatalogModifierList](#type-catalogmodifierlist) supports multiple selections. */
-	export enum CatalogModifierListSelectionType { SINGLE = 0, MULTIPLE = 1 }
+	export enum CatalogModifierListSelectionType { SINGLE = 'SINGLE', MULTIPLE = 'MULTIPLE' }
 
 
 	/** Indicates whether the price of a [CatalogItemVariation](#type-catalogitemvariation) should be entered manually at the time of sale. */
-	export enum CatalogPricingType { FIXED_PRICING = 0, VARIABLE_PRICING = 1 }
+	export enum CatalogPricingType { FIXED_PRICING = 'FIXED_PRICING', VARIABLE_PRICING = 'VARIABLE_PRICING' }
 
 
 	/**
@@ -2031,7 +2031,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CatalogQuerySortedAttributeSort_order { DESC = 0, ASC = 1 }
+	export enum CatalogQuerySortedAttributeSort_order { DESC = 'DESC', ASC = 'ASC' }
 
 	export interface CatalogQueryText {
 
@@ -2617,9 +2617,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderLineItemDiscountScope { LINE_ITEM = 0, ORDER = 1 }
+	export enum OrderLineItemDiscountScope { LINE_ITEM = 'LINE_ITEM', ORDER = 'ORDER' }
 
-	export enum OrderLineItemDiscountType { UNKNOWN = 0, FIXED_PERCENTAGE = 1, FIXED_AMOUNT = 2, VARIABLE_PERCENTAGE = 3, VARIABLE_AMOUNT = 4 }
+	export enum OrderLineItemDiscountType { UNKNOWN = 'UNKNOWN', FIXED_PERCENTAGE = 'FIXED_PERCENTAGE', FIXED_AMOUNT = 'FIXED_AMOUNT', VARIABLE_PERCENTAGE = 'VARIABLE_PERCENTAGE', VARIABLE_AMOUNT = 'VARIABLE_AMOUNT' }
 
 
 	/** Represents a tax that applies to one or more line items in an order. */
@@ -2677,9 +2677,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderLineItemTaxType { UNKNOWN = 0, ADDITIVE = 1, INCLUSIVE = 2 }
+	export enum OrderLineItemTaxType { UNKNOWN = 'UNKNOWN', ADDITIVE = 'ADDITIVE', INCLUSIVE = 'INCLUSIVE' }
 
-	export enum TransactionProduct { REGISTER = 0, EXTERNAL_API = 1, BILLING = 2, APPOINTMENTS = 3, INVOICES = 4, ONLINE_STORE = 5, PAYROLL = 6, OTHER = 7 }
+	export enum TransactionProduct { REGISTER = 'REGISTER', EXTERNAL_API = 'EXTERNAL_API', BILLING = 'BILLING', APPOINTMENTS = 'APPOINTMENTS', INVOICES = 'INVOICES', ONLINE_STORE = 'ONLINE_STORE', PAYROLL = 'PAYROLL', OTHER = 'OTHER' }
 
 
 	/** Represents a refund processed for a Square transaction. */
@@ -2801,7 +2801,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RefundStatus { PENDING = 0, APPROVED = 1, REJECTED = 2, FAILED = 3 }
+	export enum RefundStatus { PENDING = 'PENDING', APPROVED = 'APPROVED', REJECTED = 'REJECTED', FAILED = 'FAILED' }
 
 
 	/** Represents a tender (i.e., a method of payment) used in a Square transaction. */
@@ -2941,9 +2941,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TenderCardDetailsEntry_method { SWIPED = 0, KEYED = 1, EMV = 2, ON_FILE = 3, CONTACTLESS = 4 }
+	export enum TenderCardDetailsEntry_method { SWIPED = 'SWIPED', KEYED = 'KEYED', EMV = 'EMV', ON_FILE = 'ON_FILE', CONTACTLESS = 'CONTACTLESS' }
 
-	export enum TenderCardDetailsStatus { AUTHORIZED = 0, CAPTURED = 1, VOIDED = 2, FAILED = 3 }
+	export enum TenderCardDetailsStatus { AUTHORIZED = 'AUTHORIZED', CAPTURED = 'CAPTURED', VOIDED = 'VOIDED', FAILED = 'FAILED' }
 
 
 	/** Represents the details of a tender with `type` `CASH`. */
@@ -2977,7 +2977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TenderType { CARD = 0, CASH = 1, THIRD_PARTY_CARD = 2, SQUARE_GIFT_CARD = 3, NO_SALE = 4, OTHER = 5 }
+	export enum TenderType { CARD = 'CARD', CASH = 'CASH', THIRD_PARTY_CARD = 'THIRD_PARTY_CARD', SQUARE_GIFT_CARD = 'SQUARE_GIFT_CARD', NO_SALE = 'NO_SALE', OTHER = 'OTHER' }
 
 
 	/**
@@ -3120,7 +3120,7 @@ export namespace MyNS {
 	 * Indicates the country associated with another entity, such as a business.
 	 * Values are in [ISO 3166-1-alpha-2 format](http://www.iso.org/iso/home/standards/country_codes.htm).
 	 */
-	export enum Country { ZZ = 0, AD = 1, AE = 2, AF = 3, AG = 4, AI = 5, AL = 6, AM = 7, AO = 8, AQ = 9, AR = 10, AS = 11, AT = 12, AU = 13, AW = 14, AX = 15, AZ = 16, BA = 17, BB = 18, BD = 19, BE = 20, BF = 21, BG = 22, BH = 23, BI = 24, BJ = 25, BL = 26, BM = 27, BN = 28, BO = 29, BQ = 30, BR = 31, BS = 32, BT = 33, BV = 34, BW = 35, BY = 36, BZ = 37, CA = 38, CC = 39, CD = 40, CF = 41, CG = 42, CH = 43, CI = 44, CK = 45, CL = 46, CM = 47, CN = 48, CO = 49, CR = 50, CU = 51, CV = 52, CW = 53, CX = 54, CY = 55, CZ = 56, DE = 57, DJ = 58, DK = 59, DM = 60, DO = 61, DZ = 62, EC = 63, EE = 64, EG = 65, EH = 66, ER = 67, ES = 68, ET = 69, FI = 70, FJ = 71, FK = 72, FM = 73, FO = 74, FR = 75, GA = 76, GB = 77, GD = 78, GE = 79, GF = 80, GG = 81, GH = 82, GI = 83, GL = 84, GM = 85, GN = 86, GP = 87, GQ = 88, GR = 89, GS = 90, GT = 91, GU = 92, GW = 93, GY = 94, HK = 95, HM = 96, HN = 97, HR = 98, HT = 99, HU = 100, ID = 101, IE = 102, IL = 103, IM = 104, IN = 105, IO = 106, IQ = 107, IR = 108, IS = 109, IT = 110, JE = 111, JM = 112, JO = 113, JP = 114, KE = 115, KG = 116, KH = 117, KI = 118, KM = 119, KN = 120, KP = 121, KR = 122, KW = 123, KY = 124, KZ = 125, LA = 126, LB = 127, LC = 128, LI = 129, LK = 130, LR = 131, LS = 132, LT = 133, LU = 134, LV = 135, LY = 136, MA = 137, MC = 138, MD = 139, ME = 140, MF = 141, MG = 142, MH = 143, MK = 144, ML = 145, MM = 146, MN = 147, MO = 148, MP = 149, MQ = 150, MR = 151, MS = 152, MT = 153, MU = 154, MV = 155, MW = 156, MX = 157, MY = 158, MZ = 159, NA = 160, NC = 161, NE = 162, NF = 163, NG = 164, NI = 165, NL = 166, NO = 167, NP = 168, NR = 169, NU = 170, NZ = 171, OM = 172, PA = 173, PE = 174, PF = 175, PG = 176, PH = 177, PK = 178, PL = 179, PM = 180, PN = 181, PR = 182, PS = 183, PT = 184, PW = 185, PY = 186, QA = 187, RE = 188, RO = 189, RS = 190, RU = 191, RW = 192, SA = 193, SB = 194, SC = 195, SD = 196, SE = 197, SG = 198, SH = 199, SI = 200, SJ = 201, SK = 202, SL = 203, SM = 204, SN = 205, SO = 206, SR = 207, SS = 208, ST = 209, SV = 210, SX = 211, SY = 212, SZ = 213, TC = 214, TD = 215, TF = 216, TG = 217, TH = 218, TJ = 219, TK = 220, TL = 221, TM = 222, TN = 223, TO = 224, TR = 225, TT = 226, TV = 227, TW = 228, TZ = 229, UA = 230, UG = 231, UM = 232, US = 233, UY = 234, UZ = 235, VA = 236, VC = 237, VE = 238, VG = 239, VI = 240, VN = 241, VU = 242, WF = 243, WS = 244, YE = 245, YT = 246, ZA = 247, ZM = 248, ZW = 249 }
+	export enum Country { ZZ = 'ZZ', AD = 'AD', AE = 'AE', AF = 'AF', AG = 'AG', AI = 'AI', AL = 'AL', AM = 'AM', AO = 'AO', AQ = 'AQ', AR = 'AR', AS = 'AS', AT = 'AT', AU = 'AU', AW = 'AW', AX = 'AX', AZ = 'AZ', BA = 'BA', BB = 'BB', BD = 'BD', BE = 'BE', BF = 'BF', BG = 'BG', BH = 'BH', BI = 'BI', BJ = 'BJ', BL = 'BL', BM = 'BM', BN = 'BN', BO = 'BO', BQ = 'BQ', BR = 'BR', BS = 'BS', BT = 'BT', BV = 'BV', BW = 'BW', BY = 'BY', BZ = 'BZ', CA = 'CA', CC = 'CC', CD = 'CD', CF = 'CF', CG = 'CG', CH = 'CH', CI = 'CI', CK = 'CK', CL = 'CL', CM = 'CM', CN = 'CN', CO = 'CO', CR = 'CR', CU = 'CU', CV = 'CV', CW = 'CW', CX = 'CX', CY = 'CY', CZ = 'CZ', DE = 'DE', DJ = 'DJ', DK = 'DK', DM = 'DM', DO = 'DO', DZ = 'DZ', EC = 'EC', EE = 'EE', EG = 'EG', EH = 'EH', ER = 'ER', ES = 'ES', ET = 'ET', FI = 'FI', FJ = 'FJ', FK = 'FK', FM = 'FM', FO = 'FO', FR = 'FR', GA = 'GA', GB = 'GB', GD = 'GD', GE = 'GE', GF = 'GF', GG = 'GG', GH = 'GH', GI = 'GI', GL = 'GL', GM = 'GM', GN = 'GN', GP = 'GP', GQ = 'GQ', GR = 'GR', GS = 'GS', GT = 'GT', GU = 'GU', GW = 'GW', GY = 'GY', HK = 'HK', HM = 'HM', HN = 'HN', HR = 'HR', HT = 'HT', HU = 'HU', ID = 'ID', IE = 'IE', IL = 'IL', IM = 'IM', IN = 'IN', IO = 'IO', IQ = 'IQ', IR = 'IR', IS = 'IS', IT = 'IT', JE = 'JE', JM = 'JM', JO = 'JO', JP = 'JP', KE = 'KE', KG = 'KG', KH = 'KH', KI = 'KI', KM = 'KM', KN = 'KN', KP = 'KP', KR = 'KR', KW = 'KW', KY = 'KY', KZ = 'KZ', LA = 'LA', LB = 'LB', LC = 'LC', LI = 'LI', LK = 'LK', LR = 'LR', LS = 'LS', LT = 'LT', LU = 'LU', LV = 'LV', LY = 'LY', MA = 'MA', MC = 'MC', MD = 'MD', ME = 'ME', MF = 'MF', MG = 'MG', MH = 'MH', MK = 'MK', ML = 'ML', MM = 'MM', MN = 'MN', MO = 'MO', MP = 'MP', MQ = 'MQ', MR = 'MR', MS = 'MS', MT = 'MT', MU = 'MU', MV = 'MV', MW = 'MW', MX = 'MX', MY = 'MY', MZ = 'MZ', NA = 'NA', NC = 'NC', NE = 'NE', NF = 'NF', NG = 'NG', NI = 'NI', NL = 'NL', NO = 'NO', NP = 'NP', NR = 'NR', NU = 'NU', NZ = 'NZ', OM = 'OM', PA = 'PA', PE = 'PE', PF = 'PF', PG = 'PG', PH = 'PH', PK = 'PK', PL = 'PL', PM = 'PM', PN = 'PN', PR = 'PR', PS = 'PS', PT = 'PT', PW = 'PW', PY = 'PY', QA = 'QA', RE = 'RE', RO = 'RO', RS = 'RS', RU = 'RU', RW = 'RW', SA = 'SA', SB = 'SB', SC = 'SC', SD = 'SD', SE = 'SE', SG = 'SG', SH = 'SH', SI = 'SI', SJ = 'SJ', SK = 'SK', SL = 'SL', SM = 'SM', SN = 'SN', SO = 'SO', SR = 'SR', SS = 'SS', ST = 'ST', SV = 'SV', SX = 'SX', SY = 'SY', SZ = 'SZ', TC = 'TC', TD = 'TD', TF = 'TF', TG = 'TG', TH = 'TH', TJ = 'TJ', TK = 'TK', TL = 'TL', TM = 'TM', TN = 'TN', TO = 'TO', TR = 'TR', TT = 'TT', TV = 'TV', TW = 'TW', TZ = 'TZ', UA = 'UA', UG = 'UG', UM = 'UM', US = 'US', UY = 'UY', UZ = 'UZ', VA = 'VA', VC = 'VC', VE = 'VE', VG = 'VG', VI = 'VI', VN = 'VN', VU = 'VU', WF = 'WF', WS = 'WS', YE = 'YE', YT = 'YT', ZA = 'ZA', ZM = 'ZM', ZW = 'ZW' }
 
 
 	/**
@@ -4029,7 +4029,7 @@ export namespace MyNS {
 	 * Indicates the associated currency for an amount of money. Values correspond
 	 * to [ISO 4217](https://wikipedia.org/wiki/ISO_4217).
 	 */
-	export enum Currency { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BOV = 19, BRL = 20, BSD = 21, BTN = 22, BWP = 23, BYR = 24, BZD = 25, CAD = 26, CDF = 27, CHE = 28, CHF = 29, CHW = 30, CLF = 31, CLP = 32, CNY = 33, COP = 34, COU = 35, CRC = 36, CUC = 37, CUP = 38, CVE = 39, CZK = 40, DJF = 41, DKK = 42, DOP = 43, DZD = 44, EGP = 45, ERN = 46, ETB = 47, EUR = 48, FJD = 49, FKP = 50, GBP = 51, GEL = 52, GHS = 53, GIP = 54, GMD = 55, GNF = 56, GTQ = 57, GYD = 58, HKD = 59, HNL = 60, HRK = 61, HTG = 62, HUF = 63, IDR = 64, ILS = 65, INR = 66, IQD = 67, IRR = 68, ISK = 69, JMD = 70, JOD = 71, JPY = 72, KES = 73, KGS = 74, KHR = 75, KMF = 76, KPW = 77, KRW = 78, KWD = 79, KYD = 80, KZT = 81, LAK = 82, LBP = 83, LKR = 84, LRD = 85, LSL = 86, LTL = 87, LVL = 88, LYD = 89, MAD = 90, MDL = 91, MGA = 92, MKD = 93, MMK = 94, MNT = 95, MOP = 96, MRO = 97, MUR = 98, MVR = 99, MWK = 100, MXN = 101, MXV = 102, MYR = 103, MZN = 104, NAD = 105, NGN = 106, NIO = 107, NOK = 108, NPR = 109, NZD = 110, OMR = 111, PAB = 112, PEN = 113, PGK = 114, PHP = 115, PKR = 116, PLN = 117, PYG = 118, QAR = 119, RON = 120, RSD = 121, RUB = 122, RWF = 123, SAR = 124, SBD = 125, SCR = 126, SDG = 127, SEK = 128, SGD = 129, SHP = 130, SLL = 131, SOS = 132, SRD = 133, SSP = 134, STD = 135, SVC = 136, SYP = 137, SZL = 138, THB = 139, TJS = 140, TMT = 141, TND = 142, TOP = 143, TRY = 144, TTD = 145, TWD = 146, TZS = 147, UAH = 148, UGX = 149, USD = 150, USN = 151, USS = 152, UYI = 153, UYU = 154, UZS = 155, VEF = 156, VND = 157, VUV = 158, WST = 159, XAF = 160, XAG = 161, XAU = 162, XBA = 163, XBB = 164, XBC = 165, XBD = 166, XCD = 167, XDR = 168, XOF = 169, XPD = 170, XPF = 171, XPT = 172, XTS = 173, XXX = 174, YER = 175, ZAR = 176, ZMK = 177, ZMW = 178, BTC = 179 }
+	export enum Currency { AED = 'AED', AFN = 'AFN', ALL = 'ALL', AMD = 'AMD', ANG = 'ANG', AOA = 'AOA', ARS = 'ARS', AUD = 'AUD', AWG = 'AWG', AZN = 'AZN', BAM = 'BAM', BBD = 'BBD', BDT = 'BDT', BGN = 'BGN', BHD = 'BHD', BIF = 'BIF', BMD = 'BMD', BND = 'BND', BOB = 'BOB', BOV = 'BOV', BRL = 'BRL', BSD = 'BSD', BTN = 'BTN', BWP = 'BWP', BYR = 'BYR', BZD = 'BZD', CAD = 'CAD', CDF = 'CDF', CHE = 'CHE', CHF = 'CHF', CHW = 'CHW', CLF = 'CLF', CLP = 'CLP', CNY = 'CNY', COP = 'COP', COU = 'COU', CRC = 'CRC', CUC = 'CUC', CUP = 'CUP', CVE = 'CVE', CZK = 'CZK', DJF = 'DJF', DKK = 'DKK', DOP = 'DOP', DZD = 'DZD', EGP = 'EGP', ERN = 'ERN', ETB = 'ETB', EUR = 'EUR', FJD = 'FJD', FKP = 'FKP', GBP = 'GBP', GEL = 'GEL', GHS = 'GHS', GIP = 'GIP', GMD = 'GMD', GNF = 'GNF', GTQ = 'GTQ', GYD = 'GYD', HKD = 'HKD', HNL = 'HNL', HRK = 'HRK', HTG = 'HTG', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', IQD = 'IQD', IRR = 'IRR', ISK = 'ISK', JMD = 'JMD', JOD = 'JOD', JPY = 'JPY', KES = 'KES', KGS = 'KGS', KHR = 'KHR', KMF = 'KMF', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KYD = 'KYD', KZT = 'KZT', LAK = 'LAK', LBP = 'LBP', LKR = 'LKR', LRD = 'LRD', LSL = 'LSL', LTL = 'LTL', LVL = 'LVL', LYD = 'LYD', MAD = 'MAD', MDL = 'MDL', MGA = 'MGA', MKD = 'MKD', MMK = 'MMK', MNT = 'MNT', MOP = 'MOP', MRO = 'MRO', MUR = 'MUR', MVR = 'MVR', MWK = 'MWK', MXN = 'MXN', MXV = 'MXV', MYR = 'MYR', MZN = 'MZN', NAD = 'NAD', NGN = 'NGN', NIO = 'NIO', NOK = 'NOK', NPR = 'NPR', NZD = 'NZD', OMR = 'OMR', PAB = 'PAB', PEN = 'PEN', PGK = 'PGK', PHP = 'PHP', PKR = 'PKR', PLN = 'PLN', PYG = 'PYG', QAR = 'QAR', RON = 'RON', RSD = 'RSD', RUB = 'RUB', RWF = 'RWF', SAR = 'SAR', SBD = 'SBD', SCR = 'SCR', SDG = 'SDG', SEK = 'SEK', SGD = 'SGD', SHP = 'SHP', SLL = 'SLL', SOS = 'SOS', SRD = 'SRD', SSP = 'SSP', STD = 'STD', SVC = 'SVC', SYP = 'SYP', SZL = 'SZL', THB = 'THB', TJS = 'TJS', TMT = 'TMT', TND = 'TND', TOP = 'TOP', TRY = 'TRY', TTD = 'TTD', TWD = 'TWD', TZS = 'TZS', UAH = 'UAH', UGX = 'UGX', USD = 'USD', USN = 'USN', USS = 'USS', UYI = 'UYI', UYU = 'UYU', UZS = 'UZS', VEF = 'VEF', VND = 'VND', VUV = 'VUV', WST = 'WST', XAF = 'XAF', XAG = 'XAG', XAU = 'XAU', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XCD = 'XCD', XDR = 'XDR', XOF = 'XOF', XPD = 'XPD', XPF = 'XPF', XPT = 'XPT', XTS = 'XTS', XXX = 'XXX', YER = 'YER', ZAR = 'ZAR', ZMK = 'ZMK', ZMW = 'ZMW', BTC = 'BTC' }
 
 	export interface DeleteCatalogObjectRequest {
 	}
@@ -4167,7 +4167,7 @@ export namespace MyNS {
 
 
 	/** Indicates whether Square should alert the merchant when the inventory quantity of a [CatalogItemVariation](#type-catalogitemvariation) is low. */
-	export enum InventoryAlertType { NONE = 0, LOW_QUANTITY = 1 }
+	export enum InventoryAlertType { NONE = 'NONE', LOW_QUANTITY = 'LOW_QUANTITY' }
 
 	export interface ListCatalogRequest {
 
@@ -4663,7 +4663,7 @@ export namespace MyNS {
 	 * Indicates account capabilities that a business's location might or
 	 * might not have enabled.
 	 */
-	export enum LocationCapability { CREDIT_CARD_PROCESSING = 0 }
+	export enum LocationCapability { CREDIT_CARD_PROCESSING = 'CREDIT_CARD_PROCESSING' }
 
 	export interface RetrieveCatalogObjectRequest {
 
@@ -4967,19 +4967,19 @@ export namespace MyNS {
 
 
 	/** The order (e.g., chronological or alphabetical) in which results from a request are returned. */
-	export enum SortOrder { DESC = 0, ASC = 1 }
+	export enum SortOrder { DESC = 'DESC', ASC = 'ASC' }
 
 
 	/** When to calculate the taxes due on a cart. */
-	export enum TaxCalculationPhase { TAX_SUBTOTAL_PHASE = 0, TAX_TOTAL_PHASE = 1 }
+	export enum TaxCalculationPhase { TAX_SUBTOTAL_PHASE = 'TAX_SUBTOTAL_PHASE', TAX_TOTAL_PHASE = 'TAX_TOTAL_PHASE' }
 
 
 	/** Whether to the tax amount should be additional to or included in to the [CatalogItem](#type-catalogitem) price. */
-	export enum TaxInclusionType { ADDITIVE = 0, INCLUSIVE = 1 }
+	export enum TaxInclusionType { ADDITIVE = 'ADDITIVE', INCLUSIVE = 'INCLUSIVE' }
 
 
 	/** Indicates the method used to enter the card's details. */
-	export enum TenderCardDetailsEntryMethod { SWIPED = 0, KEYED = 1, EMV = 2, ON_FILE = 3, CONTACTLESS = 4 }
+	export enum TenderCardDetailsEntryMethod { SWIPED = 'SWIPED', KEYED = 'KEYED', EMV = 'EMV', ON_FILE = 'ON_FILE', CONTACTLESS = 'CONTACTLESS' }
 
 
 	/**
@@ -5333,7 +5333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1AdjustInventoryRequestAdjustment_type { SALE = 0, RECEIVE_STOCK = 1, MANUAL_ADJUST = 2 }
+	export enum V1AdjustInventoryRequestAdjustment_type { SALE = 'SALE', RECEIVE_STOCK = 'RECEIVE_STOCK', MANUAL_ADJUST = 'MANUAL_ADJUST' }
 
 	export interface V1BankAccount {
 
@@ -5401,7 +5401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1BankAccountType { BUSINESS_CHECKING = 0, CHECKING = 1, INVESTMENT = 2, LOAN = 3, SAVINGS = 4, OTHER = 5 }
+	export enum V1BankAccountType { BUSINESS_CHECKING = 'BUSINESS_CHECKING', CHECKING = 'CHECKING', INVESTMENT = 'INVESTMENT', LOAN = 'LOAN', SAVINGS = 'SAVINGS', OTHER = 'OTHER' }
 
 	export interface V1CashDrawerEvent {
 
@@ -5475,7 +5475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1CashDrawerEventEvent_type { NO_SALE = 0, CASH_TENDER_PAYMENT = 1, OTHER_TENDER_PAYMENT = 2, CASH_TENDER_CANCELED_PAYMENT = 3, OTHER_TENDER_CANCELED_PAYMENT = 4, CASH_TENDER_REFUND = 5, OTHER_TENDER_REFUND = 6, PAID_IN = 7, PAID_OUT = 8 }
+	export enum V1CashDrawerEventEvent_type { NO_SALE = 'NO_SALE', CASH_TENDER_PAYMENT = 'CASH_TENDER_PAYMENT', OTHER_TENDER_PAYMENT = 'OTHER_TENDER_PAYMENT', CASH_TENDER_CANCELED_PAYMENT = 'CASH_TENDER_CANCELED_PAYMENT', OTHER_TENDER_CANCELED_PAYMENT = 'OTHER_TENDER_CANCELED_PAYMENT', CASH_TENDER_REFUND = 'CASH_TENDER_REFUND', OTHER_TENDER_REFUND = 'OTHER_TENDER_REFUND', PAID_IN = 'PAID_IN', PAID_OUT = 'PAID_OUT' }
 
 	export interface V1CashDrawerShift {
 		cash_paid_in_money?: V1Money;
@@ -5564,7 +5564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1CashDrawerShiftEvent_type { OPEN = 0, ENDED = 1, CLOSED = 2 }
+	export enum V1CashDrawerShiftEvent_type { OPEN = 'OPEN', ENDED = 'ENDED', CLOSED = 'CLOSED' }
 
 	export interface V1Category {
 
@@ -5647,7 +5647,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1CreateRefundRequestType { FULL = 0, PARTIAL = 1 }
+	export enum V1CreateRefundRequestType { FULL = 'FULL', PARTIAL = 'PARTIAL' }
 
 	export interface V1Discount {
 		amount_money?: V1Money;
@@ -5702,9 +5702,9 @@ export namespace MyNS {
 
 	}
 
-	export enum V1DiscountColor { '9da2a6' = 0, '4ab200' = 1, '0b8000' = 2, '2952cc' = 3, a82ee5 = 4, e5457a = 5, b21212 = 6, '593c00' = 7, e5BF00 = 8 }
+	export enum V1DiscountColor { '9da2a6' = '9da2a6', '4ab200' = '4ab200', '0b8000' = '0b8000', '2952cc' = '2952cc', a82ee5 = 'a82ee5', e5457a = 'e5457a', b21212 = 'b21212', '593c00' = '593c00', e5BF00 = 'e5BF00' }
 
-	export enum V1DiscountDiscount_type { FIXED = 0, VARIABLE_PERCENTAGE = 1, VARIABLE_AMOUNT = 2 }
+	export enum V1DiscountDiscount_type { FIXED = 'FIXED', VARIABLE_PERCENTAGE = 'VARIABLE_PERCENTAGE', VARIABLE_AMOUNT = 'VARIABLE_AMOUNT' }
 
 
 	/** Represents one of a business's employees. */
@@ -5794,7 +5794,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1EmployeeStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum V1EmployeeStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface V1EmployeeRole {
 
@@ -5926,11 +5926,11 @@ export namespace MyNS {
 
 	}
 
-	export enum V1FeeAdjustment_type { TAX = 0 }
+	export enum V1FeeAdjustment_type { TAX = 'TAX' }
 
-	export enum V1FeeCalculation_phase { FEE_SUBTOTAL_PHASE = 0, OTHER = 1, FEE_TOTAL_PHASE = 2 }
+	export enum V1FeeCalculation_phase { FEE_SUBTOTAL_PHASE = 'FEE_SUBTOTAL_PHASE', OTHER = 'OTHER', FEE_TOTAL_PHASE = 'FEE_TOTAL_PHASE' }
 
-	export enum V1FeeType { CA_GST = 0, CA_HST = 1, CA_PST = 2, CA_QST = 3, JP_CONSUMPTION_TAX = 4, CA_PEI_PST = 5, US_SALES_TAX = 6, OTHER = 7 }
+	export enum V1FeeType { CA_GST = 'CA_GST', CA_HST = 'CA_HST', CA_PST = 'CA_PST', CA_QST = 'CA_QST', JP_CONSUMPTION_TAX = 'JP_CONSUMPTION_TAX', CA_PEI_PST = 'CA_PEI_PST', US_SALES_TAX = 'US_SALES_TAX', OTHER = 'OTHER' }
 
 	export interface V1InventoryEntry {
 
@@ -6145,11 +6145,11 @@ export namespace MyNS {
 
 	}
 
-	export enum V1VariationInventory_alert_type { LOW_QUANTITY = 0, NONE = 1, INVESTMENT = 2, LOAN = 3, SAVINGS = 4, OTHER = 5 }
+	export enum V1VariationInventory_alert_type { LOW_QUANTITY = 'LOW_QUANTITY', NONE = 'NONE', INVESTMENT = 'INVESTMENT', LOAN = 'LOAN', SAVINGS = 'SAVINGS', OTHER = 'OTHER' }
 
-	export enum V1ItemType { NORMAL = 0, GIFT_CARD = 1, OTHER = 2 }
+	export enum V1ItemType { NORMAL = 'NORMAL', GIFT_CARD = 'GIFT_CARD', OTHER = 'OTHER' }
 
-	export enum V1ItemVisibility { PUBLIC = 0, PRIVATE = 1 }
+	export enum V1ItemVisibility { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE' }
 
 
 	/**
@@ -6256,7 +6256,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1MerchantAccount_type { LOCATION = 0, BUSINESS = 1 }
+	export enum V1MerchantAccount_type { LOCATION = 'LOCATION', BUSINESS = 'BUSINESS' }
 
 
 	/** Represents a phone number. */
@@ -6298,7 +6298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1MerchantBusiness_type { ACCOUNTING = 0, APPAREL_AND_ACCESSORY_SHOPS = 1, ART_DEALERS_GALLERIES = 2, ART_DESIGN_AND_PHOTOGRAPHY = 3, BAR_CLUB_LOUNGE = 4, BEAUTY_AND_BARBER_SHOPS = 5, BOOK_STORES = 6, BUSINESS_SERVICES = 7, CATERING = 8, CHARITABLE_SOCIAL_SERVICE_ORGANIZATIONS = 9, CHARITIBLE_ORGS = 10, CLEANING_SERVICES = 11, COMPUTER_EQUIPMENT_SOFTWARE_MAINTENANCE_REPAIR_SERVICES = 12, CONSULTANT = 13, CONTRACTORS = 14, DELIVERY_SERVICES = 15, DENTISTRY = 16, EDUCATION = 17, FOOD_STORES_CONVENIENCE_STORES_AND_SPECIALTY_MARKETS = 18, FOOD_TRUCK_CART = 19, FURNITURE_HOME_AND_OFFICE_EQUIPMENT = 20, FURNITURE_HOME_GOODS = 21, HOTELS_AND_LODGING = 22, INDIVIDUAL_USE = 23, JEWELRY_AND_WATCHES = 24, LANDSCAPING_AND_HORTICULTURAL_SERVICES = 25, LANGUAGE_SCHOOLS = 26, LEGAL_SERVICES = 27, MEDICAL_PRACTITIONERS = 28, MEDICAL_SERVICES_AND_HEALTH_PRACTITIONERS = 29, MEMBERSHIP_ORGANIZATIONS = 30, MUSIC_AND_ENTERTAINMENT = 31, OTHER = 32, OUTDOOR_MARKETS = 33, PERSONAL_SERVICES = 34, POLITICAL_ORGANIZATIONS = 35, PROFESSIONAL_SERVICES = 36, REAL_ESTATE = 37, RECREATION_SERVICES = 38, REPAIR_SHOPS_AND_RELATED_SERVICES = 39, RESTAURANTS = 40, RETAIL_SHOPS = 41, SCHOOLS_AND_EDUCATIONAL_SERVICES = 42, SPORTING_GOODS = 43, TAXICABS_AND_LIMOUSINES = 44, TICKET_SALES = 45, TOURISM = 46, TRAVEL_TOURISM = 47, VETERINARY_SERVICES = 48, WEB_DEV_DESIGN = 49 }
+	export enum V1MerchantBusiness_type { ACCOUNTING = 'ACCOUNTING', APPAREL_AND_ACCESSORY_SHOPS = 'APPAREL_AND_ACCESSORY_SHOPS', ART_DEALERS_GALLERIES = 'ART_DEALERS_GALLERIES', ART_DESIGN_AND_PHOTOGRAPHY = 'ART_DESIGN_AND_PHOTOGRAPHY', BAR_CLUB_LOUNGE = 'BAR_CLUB_LOUNGE', BEAUTY_AND_BARBER_SHOPS = 'BEAUTY_AND_BARBER_SHOPS', BOOK_STORES = 'BOOK_STORES', BUSINESS_SERVICES = 'BUSINESS_SERVICES', CATERING = 'CATERING', CHARITABLE_SOCIAL_SERVICE_ORGANIZATIONS = 'CHARITABLE_SOCIAL_SERVICE_ORGANIZATIONS', CHARITIBLE_ORGS = 'CHARITIBLE_ORGS', CLEANING_SERVICES = 'CLEANING_SERVICES', COMPUTER_EQUIPMENT_SOFTWARE_MAINTENANCE_REPAIR_SERVICES = 'COMPUTER_EQUIPMENT_SOFTWARE_MAINTENANCE_REPAIR_SERVICES', CONSULTANT = 'CONSULTANT', CONTRACTORS = 'CONTRACTORS', DELIVERY_SERVICES = 'DELIVERY_SERVICES', DENTISTRY = 'DENTISTRY', EDUCATION = 'EDUCATION', FOOD_STORES_CONVENIENCE_STORES_AND_SPECIALTY_MARKETS = 'FOOD_STORES_CONVENIENCE_STORES_AND_SPECIALTY_MARKETS', FOOD_TRUCK_CART = 'FOOD_TRUCK_CART', FURNITURE_HOME_AND_OFFICE_EQUIPMENT = 'FURNITURE_HOME_AND_OFFICE_EQUIPMENT', FURNITURE_HOME_GOODS = 'FURNITURE_HOME_GOODS', HOTELS_AND_LODGING = 'HOTELS_AND_LODGING', INDIVIDUAL_USE = 'INDIVIDUAL_USE', JEWELRY_AND_WATCHES = 'JEWELRY_AND_WATCHES', LANDSCAPING_AND_HORTICULTURAL_SERVICES = 'LANDSCAPING_AND_HORTICULTURAL_SERVICES', LANGUAGE_SCHOOLS = 'LANGUAGE_SCHOOLS', LEGAL_SERVICES = 'LEGAL_SERVICES', MEDICAL_PRACTITIONERS = 'MEDICAL_PRACTITIONERS', MEDICAL_SERVICES_AND_HEALTH_PRACTITIONERS = 'MEDICAL_SERVICES_AND_HEALTH_PRACTITIONERS', MEMBERSHIP_ORGANIZATIONS = 'MEMBERSHIP_ORGANIZATIONS', MUSIC_AND_ENTERTAINMENT = 'MUSIC_AND_ENTERTAINMENT', OTHER = 'OTHER', OUTDOOR_MARKETS = 'OUTDOOR_MARKETS', PERSONAL_SERVICES = 'PERSONAL_SERVICES', POLITICAL_ORGANIZATIONS = 'POLITICAL_ORGANIZATIONS', PROFESSIONAL_SERVICES = 'PROFESSIONAL_SERVICES', REAL_ESTATE = 'REAL_ESTATE', RECREATION_SERVICES = 'RECREATION_SERVICES', REPAIR_SHOPS_AND_RELATED_SERVICES = 'REPAIR_SHOPS_AND_RELATED_SERVICES', RESTAURANTS = 'RESTAURANTS', RETAIL_SHOPS = 'RETAIL_SHOPS', SCHOOLS_AND_EDUCATIONAL_SERVICES = 'SCHOOLS_AND_EDUCATIONAL_SERVICES', SPORTING_GOODS = 'SPORTING_GOODS', TAXICABS_AND_LIMOUSINES = 'TAXICABS_AND_LIMOUSINES', TICKET_SALES = 'TICKET_SALES', TOURISM = 'TOURISM', TRAVEL_TOURISM = 'TRAVEL_TOURISM', VETERINARY_SERVICES = 'VETERINARY_SERVICES', WEB_DEV_DESIGN = 'WEB_DEV_DESIGN' }
 
 	export interface V1MerchantLocation_details {
 
@@ -6558,9 +6558,9 @@ export namespace MyNS {
 
 	}
 
-	export enum V1OrderHistoryEntryAction { ORDER_PLACED = 0, DECLINED = 1, PAYMENT_RECEIVED = 2, CANCELED = 3, COMPLETED = 4, REFUNDED = 5, EXPIRED = 6 }
+	export enum V1OrderHistoryEntryAction { ORDER_PLACED = 'ORDER_PLACED', DECLINED = 'DECLINED', PAYMENT_RECEIVED = 'PAYMENT_RECEIVED', CANCELED = 'CANCELED', COMPLETED = 'COMPLETED', REFUNDED = 'REFUNDED', EXPIRED = 'EXPIRED' }
 
-	export enum V1OrderState { PENDING = 0, OPEN = 1, COMPLETED = 2, CANCELED = 3, REFUNDED = 4, REJECTED = 5 }
+	export enum V1OrderState { PENDING = 'PENDING', OPEN = 'OPEN', COMPLETED = 'COMPLETED', CANCELED = 'CANCELED', REFUNDED = 'REFUNDED', REJECTED = 'REJECTED' }
 
 	export interface V1Tender {
 
@@ -6639,11 +6639,11 @@ export namespace MyNS {
 
 	}
 
-	export enum V1TenderCard_brand { OTHER_BRAND = 0, VISA = 1, MASTER_CARD = 2, AMERICAN_EXPRESS = 3, DISCOVER = 4, DISCOVER_DINERS = 5, JCB = 6, CHINA_UNIONPAY = 7, SQUARE_GIFT_CARD = 8 }
+	export enum V1TenderCard_brand { OTHER_BRAND = 'OTHER_BRAND', VISA = 'VISA', MASTER_CARD = 'MASTER_CARD', AMERICAN_EXPRESS = 'AMERICAN_EXPRESS', DISCOVER = 'DISCOVER', DISCOVER_DINERS = 'DISCOVER_DINERS', JCB = 'JCB', CHINA_UNIONPAY = 'CHINA_UNIONPAY', SQUARE_GIFT_CARD = 'SQUARE_GIFT_CARD' }
 
-	export enum V1TenderEntry_method { MANUAL = 0, SCANNED = 1, SQUARE_CASH = 2, SQUARE_WALLET = 3, SWIPED = 4, WEB_FORM = 5, OTHER = 6 }
+	export enum V1TenderEntry_method { MANUAL = 'MANUAL', SCANNED = 'SCANNED', SQUARE_CASH = 'SQUARE_CASH', SQUARE_WALLET = 'SQUARE_WALLET', SWIPED = 'SWIPED', WEB_FORM = 'WEB_FORM', OTHER = 'OTHER' }
 
-	export enum V1TenderType { CREDIT_CARD = 0, CASH = 1, THIRD_PARTY_CARD = 2, NO_SALE = 3, SQUARE_WALLET = 4, SQUARE_GIFT_CARD = 5, UNKNOWN = 6, OTHER = 7 }
+	export enum V1TenderType { CREDIT_CARD = 'CREDIT_CARD', CASH = 'CASH', THIRD_PARTY_CARD = 'THIRD_PARTY_CARD', NO_SALE = 'NO_SALE', SQUARE_WALLET = 'SQUARE_WALLET', SQUARE_GIFT_CARD = 'SQUARE_GIFT_CARD', UNKNOWN = 'UNKNOWN', OTHER = 'OTHER' }
 
 	export interface V1Page {
 
@@ -6968,7 +6968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1PaymentItemizationItemization_type { ITEM = 0, CUSTOM_AMOUNT = 1, GIFT_CARD_ACTIVATION = 2, GIFT_CARD_RELOAD = 3, GIFT_CARD_UNKNOWN = 4, OTHER = 5 }
+	export enum V1PaymentItemizationItemization_type { ITEM = 'ITEM', CUSTOM_AMOUNT = 'CUSTOM_AMOUNT', GIFT_CARD_ACTIVATION = 'GIFT_CARD_ACTIVATION', GIFT_CARD_RELOAD = 'GIFT_CARD_RELOAD', GIFT_CARD_UNKNOWN = 'GIFT_CARD_UNKNOWN', OTHER = 'OTHER' }
 
 	export interface V1PaymentModifier {
 		applied_money?: V1Money;
@@ -7117,9 +7117,9 @@ export namespace MyNS {
 
 	}
 
-	export enum V1SettlementEntryType { ADJUSTMENT = 0, BALANCE_CHARGE = 1, CHARGE = 2, FREE_PROCESSING = 3, HOLD_ADJUSTMENT = 4, PAID_SERVICE_FEE = 5, PAID_SERVICE_FEE_REFUND = 6, REDEMPTION_CODE = 7, REFUND = 8, RETURNED_PAYOUT = 9, SQUARE_CAPITAL_ADVANCE = 10, SQUARE_CAPITAL_PAYMENT = 11, SQUARE_CAPITAL_REVERSED_PAYMENT = 12, SUBSCRIPTION_FEE = 13, SUBSCRIPTION_FEE_REFUND = 14, INCENTED_PAYMENT = 15, RETURNED_ACH_ENTRY = 16, RETURNED_SQUARE_275 = 17, SQUARE_275 = 18 }
+	export enum V1SettlementEntryType { ADJUSTMENT = 'ADJUSTMENT', BALANCE_CHARGE = 'BALANCE_CHARGE', CHARGE = 'CHARGE', FREE_PROCESSING = 'FREE_PROCESSING', HOLD_ADJUSTMENT = 'HOLD_ADJUSTMENT', PAID_SERVICE_FEE = 'PAID_SERVICE_FEE', PAID_SERVICE_FEE_REFUND = 'PAID_SERVICE_FEE_REFUND', REDEMPTION_CODE = 'REDEMPTION_CODE', REFUND = 'REFUND', RETURNED_PAYOUT = 'RETURNED_PAYOUT', SQUARE_CAPITAL_ADVANCE = 'SQUARE_CAPITAL_ADVANCE', SQUARE_CAPITAL_PAYMENT = 'SQUARE_CAPITAL_PAYMENT', SQUARE_CAPITAL_REVERSED_PAYMENT = 'SQUARE_CAPITAL_REVERSED_PAYMENT', SUBSCRIPTION_FEE = 'SUBSCRIPTION_FEE', SUBSCRIPTION_FEE_REFUND = 'SUBSCRIPTION_FEE_REFUND', INCENTED_PAYMENT = 'INCENTED_PAYMENT', RETURNED_ACH_ENTRY = 'RETURNED_ACH_ENTRY', RETURNED_SQUARE_275 = 'RETURNED_SQUARE_275', SQUARE_275 = 'SQUARE_275' }
 
-	export enum V1SettlementStatus { FAILED = 0, SENT = 1 }
+	export enum V1SettlementStatus { FAILED = 'FAILED', SENT = 'SENT' }
 
 
 	/** Represents a timecard for an employee. */
@@ -7249,7 +7249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1TimecardEventEvent_type { API_CREATE = 0, API_EDIT = 1, API_DELETE = 2, REGISTER_CLOCKIN = 3, REGISTER_CLOCKOUT = 4, DASHBOARD_SUPERVISOR_CLOSE = 5, DASHBOARD_EDIT = 6, DASHBOARD_DELETE = 7 }
+	export enum V1TimecardEventEvent_type { API_CREATE = 'API_CREATE', API_EDIT = 'API_EDIT', API_DELETE = 'API_DELETE', REGISTER_CLOCKIN = 'REGISTER_CLOCKIN', REGISTER_CLOCKOUT = 'REGISTER_CLOCKOUT', DASHBOARD_SUPERVISOR_CLOSE = 'DASHBOARD_SUPERVISOR_CLOSE', DASHBOARD_EDIT = 'DASHBOARD_EDIT', DASHBOARD_DELETE = 'DASHBOARD_DELETE' }
 
 	export interface V1UpdateModifierListRequest {
 
@@ -7326,7 +7326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum V1UpdateOrderRequestAction { COMPLETE = 0, CANCEL = 1, REFUND = 2 }
+	export enum V1UpdateOrderRequestAction { COMPLETE = 'COMPLETE', CANCEL = 'CANCEL', REFUND = 'REFUND' }
 
 	@Injectable()
 	export class MyClient {
@@ -8689,9 +8689,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListEmployeesOrder { ASC = 0, DESC = 1 }
+	export enum ListEmployeesOrder { ASC = 'ASC', DESC = 'DESC' }
 
-	export enum ListSettlementsStatus { SENT = 0, FAILED = 1 }
+	export enum ListSettlementsStatus { SENT = 'SENT', FAILED = 'FAILED' }
 
 }
 

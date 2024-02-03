@@ -20,7 +20,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { Created = 0, Queued = 1, Dispatched = 2, InProgress = 3, TimedOut = 4, Succeeded = 5, Failed = 6 }
+	export enum JobStatus { Created = 'Created', Queued = 'Queued', Dispatched = 'Dispatched', InProgress = 'InProgress', TimedOut = 'TimedOut', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Represents the input of an AcknowledgeJob action. */
@@ -227,9 +227,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionCategory { Source = 0, Build = 1, Deploy = 2, Test = 3, Invoke = 4, Approval = 5 }
+	export enum ActionCategory { Source = 'Source', Build = 'Build', Deploy = 'Deploy', Test = 'Test', Invoke = 'Invoke', Approval = 'Approval' }
 
-	export enum ActionOwner { AWS = 0, ThirdParty = 1, Custom = 2 }
+	export enum ActionOwner { AWS = 'AWS', ThirdParty = 'ThirdParty', Custom = 'Custom' }
 
 
 	/** Returns information about the settings for an action type. */
@@ -308,7 +308,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionConfigurationPropertyType { String = 0, Number = 1, Boolean = 2 }
+	export enum ActionConfigurationPropertyType { String = 'String', Number = 'Number', Boolean = 'Boolean' }
 
 
 	/** Returns information about the details of an artifact. */
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactStoreType { S3 = 0 }
+	export enum ArtifactStoreType { S3 = 'S3' }
 
 
 	/** Represents information about the key used to encrypt data in the artifact store, such as an Amazon Web Services Key Management Service (Key Management Service) key. */
@@ -561,7 +561,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionKeyType { KMS = 0 }
+	export enum EncryptionKeyType { KMS = 'KMS' }
 
 	export interface ArtifactStoreMap {
 	}
@@ -626,7 +626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BlockerType { Schedule = 0 }
+	export enum BlockerType { Schedule = 'Schedule' }
 
 
 	/** Represents information about an action declaration. */
@@ -945,7 +945,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StageTransitionType { Inbound = 0, Outbound = 1 }
+	export enum StageTransitionType { Inbound = 'Inbound', Outbound = 'Outbound' }
 
 	export interface PipelineNotFoundException {
 	}
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutorType { JobWorker = 0, Lambda = 1 }
+	export enum ExecutorType { JobWorker = 'JobWorker', Lambda = 'Lambda' }
 
 
 	/** Specifies the category, owner, provider, and version of the action type. */
@@ -1678,7 +1678,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineExecutionStatus { Cancelled = 0, InProgress = 1, Stopped = 2, Stopping = 3, Succeeded = 4, Superseded = 5, Failed = 6 }
+	export enum PipelineExecutionStatus { Cancelled = 'Cancelled', InProgress = 'InProgress', Stopped = 'Stopped', Stopping = 'Stopping', Succeeded = 'Succeeded', Superseded = 'Superseded', Failed = 'Failed' }
 
 
 	/** Represents revision details of an artifact.  */
@@ -1828,7 +1828,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StageExecutionStatus { Cancelled = 0, InProgress = 1, Failed = 2, Stopped = 3, Stopping = 4, Succeeded = 5 }
+	export enum StageExecutionStatus { Cancelled = 'Cancelled', InProgress = 'InProgress', Failed = 'Failed', Stopped = 'Stopped', Stopping = 'Stopping', Succeeded = 'Succeeded' }
 
 
 	/** Represents information about the state of transitions between one stage and another stage. */
@@ -1958,7 +1958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionExecutionStatus { InProgress = 0, Abandoned = 1, Succeeded = 2, Failed = 3 }
+	export enum ActionExecutionStatus { InProgress = 'InProgress', Abandoned = 'Abandoned', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Represents information about an error in CodePipeline. */
@@ -2471,7 +2471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerType { CreatePipeline = 0, StartPipelineExecution = 1, PollForSourceChanges = 2, Webhook = 3, CloudWatchEvent = 4, PutActionRevision = 5 }
+	export enum TriggerType { CreatePipeline = 'CreatePipeline', StartPipelineExecution = 'StartPipelineExecution', PollForSourceChanges = 'PollForSourceChanges', Webhook = 'Webhook', CloudWatchEvent = 'CloudWatchEvent', PutActionRevision = 'PutActionRevision' }
 
 
 	/** The interaction that stopped a pipeline execution. */
@@ -2761,7 +2761,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookAuthenticationType { GITHUB_HMAC = 0, IP = 1, UNAUTHENTICATED = 2 }
+	export enum WebhookAuthenticationType { GITHUB_HMAC = 'GITHUB_HMAC', IP = 'IP', UNAUTHENTICATED = 'UNAUTHENTICATED' }
 
 
 	/** The authentication applied to incoming webhook trigger requests. */
@@ -3082,7 +3082,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApprovalStatus { Approved = 0, Rejected = 1 }
+	export enum ApprovalStatus { Approved = 'Approved', Rejected = 'Rejected' }
 
 	export interface InvalidApprovalTokenException {
 	}
@@ -3159,7 +3159,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailureType { JobFailed = 0, ConfigurationError = 1, PermissionError = 2, RevisionOutOfSync = 3, RevisionUnavailable = 4, SystemUnavailable = 5 }
+	export enum FailureType { JobFailed = 'JobFailed', ConfigurationError = 'ConfigurationError', PermissionError = 'PermissionError', RevisionOutOfSync = 'RevisionOutOfSync', RevisionUnavailable = 'RevisionUnavailable', SystemUnavailable = 'SystemUnavailable' }
 
 	export interface InvalidJobStateException {
 	}
@@ -3456,7 +3456,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StageRetryMode { FAILED_ACTIONS = 0 }
+	export enum StageRetryMode { FAILED_ACTIONS = 'FAILED_ACTIONS' }
 
 	export interface ConflictException {
 	}
@@ -3755,7 +3755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactLocationType { S3 = 0 }
+	export enum ArtifactLocationType { S3 = 'S3' }
 
 	@Injectable()
 	export class MyClient {
@@ -4125,83 +4125,83 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcknowledgeJobX_Amz_Target { 'CodePipeline_20150709.AcknowledgeJob' = 0 }
+	export enum AcknowledgeJobX_Amz_Target { 'CodePipeline_20150709.AcknowledgeJob' = 'CodePipeline_20150709.AcknowledgeJob' }
 
-	export enum AcknowledgeThirdPartyJobX_Amz_Target { 'CodePipeline_20150709.AcknowledgeThirdPartyJob' = 0 }
+	export enum AcknowledgeThirdPartyJobX_Amz_Target { 'CodePipeline_20150709.AcknowledgeThirdPartyJob' = 'CodePipeline_20150709.AcknowledgeThirdPartyJob' }
 
-	export enum CreateCustomActionTypeX_Amz_Target { 'CodePipeline_20150709.CreateCustomActionType' = 0 }
+	export enum CreateCustomActionTypeX_Amz_Target { 'CodePipeline_20150709.CreateCustomActionType' = 'CodePipeline_20150709.CreateCustomActionType' }
 
-	export enum CreatePipelineX_Amz_Target { 'CodePipeline_20150709.CreatePipeline' = 0 }
+	export enum CreatePipelineX_Amz_Target { 'CodePipeline_20150709.CreatePipeline' = 'CodePipeline_20150709.CreatePipeline' }
 
-	export enum DeleteCustomActionTypeX_Amz_Target { 'CodePipeline_20150709.DeleteCustomActionType' = 0 }
+	export enum DeleteCustomActionTypeX_Amz_Target { 'CodePipeline_20150709.DeleteCustomActionType' = 'CodePipeline_20150709.DeleteCustomActionType' }
 
-	export enum DeletePipelineX_Amz_Target { 'CodePipeline_20150709.DeletePipeline' = 0 }
+	export enum DeletePipelineX_Amz_Target { 'CodePipeline_20150709.DeletePipeline' = 'CodePipeline_20150709.DeletePipeline' }
 
-	export enum DeleteWebhookX_Amz_Target { 'CodePipeline_20150709.DeleteWebhook' = 0 }
+	export enum DeleteWebhookX_Amz_Target { 'CodePipeline_20150709.DeleteWebhook' = 'CodePipeline_20150709.DeleteWebhook' }
 
-	export enum DeregisterWebhookWithThirdPartyX_Amz_Target { 'CodePipeline_20150709.DeregisterWebhookWithThirdParty' = 0 }
+	export enum DeregisterWebhookWithThirdPartyX_Amz_Target { 'CodePipeline_20150709.DeregisterWebhookWithThirdParty' = 'CodePipeline_20150709.DeregisterWebhookWithThirdParty' }
 
-	export enum DisableStageTransitionX_Amz_Target { 'CodePipeline_20150709.DisableStageTransition' = 0 }
+	export enum DisableStageTransitionX_Amz_Target { 'CodePipeline_20150709.DisableStageTransition' = 'CodePipeline_20150709.DisableStageTransition' }
 
-	export enum EnableStageTransitionX_Amz_Target { 'CodePipeline_20150709.EnableStageTransition' = 0 }
+	export enum EnableStageTransitionX_Amz_Target { 'CodePipeline_20150709.EnableStageTransition' = 'CodePipeline_20150709.EnableStageTransition' }
 
-	export enum GetActionTypeX_Amz_Target { 'CodePipeline_20150709.GetActionType' = 0 }
+	export enum GetActionTypeX_Amz_Target { 'CodePipeline_20150709.GetActionType' = 'CodePipeline_20150709.GetActionType' }
 
-	export enum GetJobDetailsX_Amz_Target { 'CodePipeline_20150709.GetJobDetails' = 0 }
+	export enum GetJobDetailsX_Amz_Target { 'CodePipeline_20150709.GetJobDetails' = 'CodePipeline_20150709.GetJobDetails' }
 
-	export enum GetPipelineX_Amz_Target { 'CodePipeline_20150709.GetPipeline' = 0 }
+	export enum GetPipelineX_Amz_Target { 'CodePipeline_20150709.GetPipeline' = 'CodePipeline_20150709.GetPipeline' }
 
-	export enum GetPipelineExecutionX_Amz_Target { 'CodePipeline_20150709.GetPipelineExecution' = 0 }
+	export enum GetPipelineExecutionX_Amz_Target { 'CodePipeline_20150709.GetPipelineExecution' = 'CodePipeline_20150709.GetPipelineExecution' }
 
-	export enum GetPipelineStateX_Amz_Target { 'CodePipeline_20150709.GetPipelineState' = 0 }
+	export enum GetPipelineStateX_Amz_Target { 'CodePipeline_20150709.GetPipelineState' = 'CodePipeline_20150709.GetPipelineState' }
 
-	export enum GetThirdPartyJobDetailsX_Amz_Target { 'CodePipeline_20150709.GetThirdPartyJobDetails' = 0 }
+	export enum GetThirdPartyJobDetailsX_Amz_Target { 'CodePipeline_20150709.GetThirdPartyJobDetails' = 'CodePipeline_20150709.GetThirdPartyJobDetails' }
 
-	export enum ListActionExecutionsX_Amz_Target { 'CodePipeline_20150709.ListActionExecutions' = 0 }
+	export enum ListActionExecutionsX_Amz_Target { 'CodePipeline_20150709.ListActionExecutions' = 'CodePipeline_20150709.ListActionExecutions' }
 
-	export enum ListActionTypesX_Amz_Target { 'CodePipeline_20150709.ListActionTypes' = 0 }
+	export enum ListActionTypesX_Amz_Target { 'CodePipeline_20150709.ListActionTypes' = 'CodePipeline_20150709.ListActionTypes' }
 
-	export enum ListPipelineExecutionsX_Amz_Target { 'CodePipeline_20150709.ListPipelineExecutions' = 0 }
+	export enum ListPipelineExecutionsX_Amz_Target { 'CodePipeline_20150709.ListPipelineExecutions' = 'CodePipeline_20150709.ListPipelineExecutions' }
 
-	export enum ListPipelinesX_Amz_Target { 'CodePipeline_20150709.ListPipelines' = 0 }
+	export enum ListPipelinesX_Amz_Target { 'CodePipeline_20150709.ListPipelines' = 'CodePipeline_20150709.ListPipelines' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'CodePipeline_20150709.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'CodePipeline_20150709.ListTagsForResource' = 'CodePipeline_20150709.ListTagsForResource' }
 
-	export enum ListWebhooksX_Amz_Target { 'CodePipeline_20150709.ListWebhooks' = 0 }
+	export enum ListWebhooksX_Amz_Target { 'CodePipeline_20150709.ListWebhooks' = 'CodePipeline_20150709.ListWebhooks' }
 
-	export enum PollForJobsX_Amz_Target { 'CodePipeline_20150709.PollForJobs' = 0 }
+	export enum PollForJobsX_Amz_Target { 'CodePipeline_20150709.PollForJobs' = 'CodePipeline_20150709.PollForJobs' }
 
-	export enum PollForThirdPartyJobsX_Amz_Target { 'CodePipeline_20150709.PollForThirdPartyJobs' = 0 }
+	export enum PollForThirdPartyJobsX_Amz_Target { 'CodePipeline_20150709.PollForThirdPartyJobs' = 'CodePipeline_20150709.PollForThirdPartyJobs' }
 
-	export enum PutActionRevisionX_Amz_Target { 'CodePipeline_20150709.PutActionRevision' = 0 }
+	export enum PutActionRevisionX_Amz_Target { 'CodePipeline_20150709.PutActionRevision' = 'CodePipeline_20150709.PutActionRevision' }
 
-	export enum PutApprovalResultX_Amz_Target { 'CodePipeline_20150709.PutApprovalResult' = 0 }
+	export enum PutApprovalResultX_Amz_Target { 'CodePipeline_20150709.PutApprovalResult' = 'CodePipeline_20150709.PutApprovalResult' }
 
-	export enum PutJobFailureResultX_Amz_Target { 'CodePipeline_20150709.PutJobFailureResult' = 0 }
+	export enum PutJobFailureResultX_Amz_Target { 'CodePipeline_20150709.PutJobFailureResult' = 'CodePipeline_20150709.PutJobFailureResult' }
 
-	export enum PutJobSuccessResultX_Amz_Target { 'CodePipeline_20150709.PutJobSuccessResult' = 0 }
+	export enum PutJobSuccessResultX_Amz_Target { 'CodePipeline_20150709.PutJobSuccessResult' = 'CodePipeline_20150709.PutJobSuccessResult' }
 
-	export enum PutThirdPartyJobFailureResultX_Amz_Target { 'CodePipeline_20150709.PutThirdPartyJobFailureResult' = 0 }
+	export enum PutThirdPartyJobFailureResultX_Amz_Target { 'CodePipeline_20150709.PutThirdPartyJobFailureResult' = 'CodePipeline_20150709.PutThirdPartyJobFailureResult' }
 
-	export enum PutThirdPartyJobSuccessResultX_Amz_Target { 'CodePipeline_20150709.PutThirdPartyJobSuccessResult' = 0 }
+	export enum PutThirdPartyJobSuccessResultX_Amz_Target { 'CodePipeline_20150709.PutThirdPartyJobSuccessResult' = 'CodePipeline_20150709.PutThirdPartyJobSuccessResult' }
 
-	export enum PutWebhookX_Amz_Target { 'CodePipeline_20150709.PutWebhook' = 0 }
+	export enum PutWebhookX_Amz_Target { 'CodePipeline_20150709.PutWebhook' = 'CodePipeline_20150709.PutWebhook' }
 
-	export enum RegisterWebhookWithThirdPartyX_Amz_Target { 'CodePipeline_20150709.RegisterWebhookWithThirdParty' = 0 }
+	export enum RegisterWebhookWithThirdPartyX_Amz_Target { 'CodePipeline_20150709.RegisterWebhookWithThirdParty' = 'CodePipeline_20150709.RegisterWebhookWithThirdParty' }
 
-	export enum RetryStageExecutionX_Amz_Target { 'CodePipeline_20150709.RetryStageExecution' = 0 }
+	export enum RetryStageExecutionX_Amz_Target { 'CodePipeline_20150709.RetryStageExecution' = 'CodePipeline_20150709.RetryStageExecution' }
 
-	export enum StartPipelineExecutionX_Amz_Target { 'CodePipeline_20150709.StartPipelineExecution' = 0 }
+	export enum StartPipelineExecutionX_Amz_Target { 'CodePipeline_20150709.StartPipelineExecution' = 'CodePipeline_20150709.StartPipelineExecution' }
 
-	export enum StopPipelineExecutionX_Amz_Target { 'CodePipeline_20150709.StopPipelineExecution' = 0 }
+	export enum StopPipelineExecutionX_Amz_Target { 'CodePipeline_20150709.StopPipelineExecution' = 'CodePipeline_20150709.StopPipelineExecution' }
 
-	export enum TagResourceX_Amz_Target { 'CodePipeline_20150709.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'CodePipeline_20150709.TagResource' = 'CodePipeline_20150709.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'CodePipeline_20150709.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'CodePipeline_20150709.UntagResource' = 'CodePipeline_20150709.UntagResource' }
 
-	export enum UpdateActionTypeX_Amz_Target { 'CodePipeline_20150709.UpdateActionType' = 0 }
+	export enum UpdateActionTypeX_Amz_Target { 'CodePipeline_20150709.UpdateActionType' = 'CodePipeline_20150709.UpdateActionType' }
 
-	export enum UpdatePipelineX_Amz_Target { 'CodePipeline_20150709.UpdatePipeline' = 0 }
+	export enum UpdatePipelineX_Amz_Target { 'CodePipeline_20150709.UpdatePipeline' = 'CodePipeline_20150709.UpdatePipeline' }
 
 }
 

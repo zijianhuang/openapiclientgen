@@ -220,7 +220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostListsIdInterestCategoriesBodyType { checkboxes = 0, dropdown = 1, radio = 2, hidden = 3 }
+	export enum PostListsIdInterestCategoriesBodyType { checkboxes = 'checkboxes', dropdown = 'dropdown', radio = 'radio', hidden = 'hidden' }
 
 
 	/** Assign subscribers to interests to group them together. Interests are referred to as 'group names' in the Mailchimp application. */
@@ -4233,7 +4233,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetRootReturn_linksMethod { GET = 0, POST = 1, PUT = 2, PATCH = 3, DELETE = 4, OPTIONS = 5, HEAD = 6 }
+	export enum GetRootReturn_linksMethod { GET = 'GET', POST = 'POST', PUT = 'PUT', PATCH = 'PATCH', DELETE = 'DELETE', OPTIONS = 'OPTIONS', HEAD = 'HEAD' }
 
 	export interface GetRootReturnContact {
 
@@ -4325,7 +4325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetRootReturnPricing_plan_type { monthly = 0, pay_as_you_go = 1, forever_free = 2 }
+	export enum GetRootReturnPricing_plan_type { monthly = 'monthly', pay_as_you_go = 'pay_as_you_go', forever_free = 'forever_free' }
 
 	export interface GetAccountExportsReturn {
 
@@ -4816,7 +4816,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetActivityFeedChimpChatterReturnChimp_chatterType { 'lists:new-subscriber' = 0, 'lists:unsubscribes' = 1, 'lists:profile-updates' = 2, 'campaigns:facebook-likes' = 3, 'campaigns:forward-to-friend' = 4, 'lists:imports' = 5 }
+	export enum GetActivityFeedChimpChatterReturnChimp_chatterType { 'lists:new-subscriber' = 'lists:new-subscriber', 'lists:unsubscribes' = 'lists:unsubscribes', 'lists:profile-updates' = 'lists:profile-updates', 'campaigns:facebook-likes' = 'campaigns:facebook-likes', 'campaigns:forward-to-friend' = 'campaigns:forward-to-friend', 'lists:imports' = 'lists:imports' }
 
 	export interface GetAuthorizedAppsReturn {
 
@@ -5050,7 +5050,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAutomationsStatus { save = 0, paused = 1, sending = 2 }
+	export enum GetAutomationsStatus { save = 'save', paused = 'paused', sending = 'sending' }
 
 	export interface GetAutomationsReturn {
 
@@ -5296,7 +5296,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAutomationsReturnAutomationsRecipientsSegment_optsMatch { any = 0, all = 1 }
+	export enum GetAutomationsReturnAutomationsRecipientsSegment_optsMatch { any = 'any', all = 'all' }
 
 	export interface GetAutomationsReturnAutomationsReport_summary {
 
@@ -5601,9 +5601,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAutomationsReturnAutomationsTrigger_settingsRuntimeHoursType { send_asap = 0, send_between = 1, send_at = 2 }
+	export enum GetAutomationsReturnAutomationsTrigger_settingsRuntimeHoursType { send_asap = 'send_asap', send_between = 'send_between', send_at = 'send_at' }
 
-	export enum GetAutomationsReturnAutomationsTrigger_settingsWorkflow_type { abandonedBrowse = 0, abandonedCart = 1, api = 2, bestCustomers = 3, categoryFollowup = 4, dateAdded = 5, emailFollowup = 6, emailSeries = 7, groupAdd = 8, groupRemove = 9, mandrill = 10, productFollowup = 11, purchaseFollowup = 12, recurringEvent = 13, specialEvent = 14, visitUrl = 15, welcomeSeries = 16 }
+	export enum GetAutomationsReturnAutomationsTrigger_settingsWorkflow_type { abandonedBrowse = 'abandonedBrowse', abandonedCart = 'abandonedCart', api = 'api', bestCustomers = 'bestCustomers', categoryFollowup = 'categoryFollowup', dateAdded = 'dateAdded', emailFollowup = 'emailFollowup', emailSeries = 'emailSeries', groupAdd = 'groupAdd', groupRemove = 'groupRemove', mandrill = 'mandrill', productFollowup = 'productFollowup', purchaseFollowup = 'purchaseFollowup', recurringEvent = 'recurringEvent', specialEvent = 'specialEvent', visitUrl = 'visitUrl', welcomeSeries = 'welcomeSeries' }
 
 	export interface PostAutomationsPostBody {
 
@@ -6949,11 +6949,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAutomationsIdEmailsReturnEmailsDelayAction { previous_campaign_sent = 0, previous_campaign_opened = 1, previous_campaign_not_opened = 2, previous_campaign_clicked_any = 3, previous_campaign_not_clicked_any = 4, previous_campaign_specific_clicked = 5, ecomm_bought_any = 6, ecomm_bought_product = 7, ecomm_bought_category = 8, ecomm_not_bought_any = 9, ecomm_abandoned_cart = 10, campaign_sent = 11, opened_email = 12, not_opened_email = 13, clicked_email = 14, not_clicked_email = 15, campaign_specific_clicked = 16, manual = 17, signup = 18, merge_changed = 19, group_add = 20, group_remove = 21, mandrill_sent = 22, mandrill_opened = 23, mandrill_clicked = 24, mandrill_any = 25, api = 26, goal = 27, annual = 28, birthday = 29, date = 30, date_added = 31, tag_add = 32 }
+	export enum GetAutomationsIdEmailsReturnEmailsDelayAction { previous_campaign_sent = 'previous_campaign_sent', previous_campaign_opened = 'previous_campaign_opened', previous_campaign_not_opened = 'previous_campaign_not_opened', previous_campaign_clicked_any = 'previous_campaign_clicked_any', previous_campaign_not_clicked_any = 'previous_campaign_not_clicked_any', previous_campaign_specific_clicked = 'previous_campaign_specific_clicked', ecomm_bought_any = 'ecomm_bought_any', ecomm_bought_product = 'ecomm_bought_product', ecomm_bought_category = 'ecomm_bought_category', ecomm_not_bought_any = 'ecomm_not_bought_any', ecomm_abandoned_cart = 'ecomm_abandoned_cart', campaign_sent = 'campaign_sent', opened_email = 'opened_email', not_opened_email = 'not_opened_email', clicked_email = 'clicked_email', not_clicked_email = 'not_clicked_email', campaign_specific_clicked = 'campaign_specific_clicked', manual = 'manual', signup = 'signup', merge_changed = 'merge_changed', group_add = 'group_add', group_remove = 'group_remove', mandrill_sent = 'mandrill_sent', mandrill_opened = 'mandrill_opened', mandrill_clicked = 'mandrill_clicked', mandrill_any = 'mandrill_any', api = 'api', goal = 'goal', annual = 'annual', birthday = 'birthday', date = 'date', date_added = 'date_added', tag_add = 'tag_add' }
 
-	export enum GetAutomationsIdEmailsReturnEmailsDelayDirection { before = 0, after = 1 }
+	export enum GetAutomationsIdEmailsReturnEmailsDelayDirection { before = 'before', after = 'after' }
 
-	export enum GetAutomationsIdEmailsReturnEmailsDelayType { now = 0, day = 1, hour = 2, week = 3 }
+	export enum GetAutomationsIdEmailsReturnEmailsDelayType { now = 'now', day = 'day', hour = 'hour', week = 'week' }
 
 	export interface GetAutomationsIdEmailsReturnEmailsRecipients {
 
@@ -8131,9 +8131,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchAutomationEmailWorkflowIdPatchBodyDelayAction { signup = 0, ecomm_abandoned_browse = 1, ecomm_abandoned_cart = 2 }
+	export enum PatchAutomationEmailWorkflowIdPatchBodyDelayAction { signup = 'signup', ecomm_abandoned_browse = 'ecomm_abandoned_browse', ecomm_abandoned_cart = 'ecomm_abandoned_cart' }
 
-	export enum PatchAutomationEmailWorkflowIdPatchBodyDelayDirection { after = 0 }
+	export enum PatchAutomationEmailWorkflowIdPatchBodyDelayDirection { after = 'after' }
 
 	export interface PatchAutomationEmailWorkflowIdPatchBodySettings {
 
@@ -10204,7 +10204,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetBatchesReturnBatchesStatus { pending = 0, preprocessing = 1, started = 2, finalizing = 3, finished = 4 }
+	export enum GetBatchesReturnBatchesStatus { pending = 'pending', preprocessing = 'preprocessing', started = 'started', finalizing = 'finalizing', finished = 'finished' }
 
 	export interface PostBatchesPostBody {
 
@@ -10279,7 +10279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostBatchesPostBodyOperationsMethod { GET = 0, POST = 1, PUT = 2, PATCH = 3, DELETE = 4 }
+	export enum PostBatchesPostBodyOperationsMethod { GET = 'GET', POST = 'POST', PUT = 'PUT', PATCH = 'PATCH', DELETE = 'DELETE' }
 
 	export interface PostBatchesReturn {
 
@@ -10893,13 +10893,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsType { regular = 0, plaintext = 1, absplit = 2, rss = 3, variate = 4 }
+	export enum GetCampaignsType { regular = 'regular', plaintext = 'plaintext', absplit = 'absplit', rss = 'rss', variate = 'variate' }
 
-	export enum GetCampaignsStatus { save = 0, paused = 1, schedule = 2, sending = 3, sent = 4 }
+	export enum GetCampaignsStatus { save = 'save', paused = 'paused', schedule = 'schedule', sending = 'sending', sent = 'sent' }
 
-	export enum GetCampaignsSort_field { create_time = 0, send_time = 1 }
+	export enum GetCampaignsSort_field { create_time = 'create_time', send_time = 'send_time' }
 
-	export enum GetCampaignsSort_dir { ASC = 0, DESC = 1 }
+	export enum GetCampaignsSort_dir { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface GetCampaignsReturn {
 
@@ -11261,13 +11261,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsReturnCampaignsAb_split_optsPick_winner { opens = 0, clicks = 1, manual = 2 }
+	export enum GetCampaignsReturnCampaignsAb_split_optsPick_winner { opens = 'opens', clicks = 'clicks', manual = 'manual' }
 
-	export enum GetCampaignsReturnCampaignsAb_split_optsSplit_test { subject = 0, from_name = 1, schedule = 2 }
+	export enum GetCampaignsReturnCampaignsAb_split_optsSplit_test { subject = 'subject', from_name = 'from_name', schedule = 'schedule' }
 
-	export enum GetCampaignsReturnCampaignsAb_split_optsWait_units { hours = 0, days = 1 }
+	export enum GetCampaignsReturnCampaignsAb_split_optsWait_units { hours = 'hours', days = 'days' }
 
-	export enum GetCampaignsReturnCampaignsContent_type { template = 0, html = 1, url = 2, multichannel = 3 }
+	export enum GetCampaignsReturnCampaignsContent_type { template = 'template', html = 'html', url = 'url', multichannel = 'multichannel' }
 
 	export interface GetCampaignsReturnCampaignsDelivery_status {
 
@@ -11314,7 +11314,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsReturnCampaignsDelivery_statusStatus { delivering = 0, delivered = 1, canceling = 2, canceled = 3 }
+	export enum GetCampaignsReturnCampaignsDelivery_statusStatus { delivering = 'delivering', delivered = 'delivered', canceling = 'canceling', canceled = 'canceled' }
 
 	export interface GetCampaignsReturnCampaignsRecipients {
 
@@ -11525,7 +11525,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsReturnCampaignsRss_optsFrequency { daily = 0, weekly = 1, monthly = 2 }
+	export enum GetCampaignsReturnCampaignsRss_optsFrequency { daily = 'daily', weekly = 'weekly', monthly = 'monthly' }
 
 	export interface GetCampaignsReturnCampaignsRss_optsSchedule {
 
@@ -11636,7 +11636,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsReturnCampaignsRss_optsScheduleWeekly_send_day { sunday = 0, monday = 1, tuesday = 2, wednesday = 3, thursday = 4, friday = 5, saturday = 6 }
+	export enum GetCampaignsReturnCampaignsRss_optsScheduleWeekly_send_day { sunday = 'sunday', monday = 'monday', tuesday = 'tuesday', wednesday = 'wednesday', thursday = 'thursday', friday = 'friday', saturday = 'saturday' }
 
 	export interface GetCampaignsReturnCampaignsSettings {
 
@@ -11794,7 +11794,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsReturnCampaignsStatus { save = 0, paused = 1, schedule = 2, sending = 3, sent = 4, canceled = 5, canceling = 6, archived = 7 }
+	export enum GetCampaignsReturnCampaignsStatus { save = 'save', paused = 'paused', schedule = 'schedule', sending = 'sending', sent = 'sent', canceled = 'canceled', canceling = 'canceling', archived = 'archived' }
 
 	export interface GetCampaignsReturnCampaignsTracking {
 
@@ -12024,7 +12024,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsReturnCampaignsVariate_settingsWinner_criteria { opens = 0, clicks = 1, manual = 2, total_revenue = 3 }
+	export enum GetCampaignsReturnCampaignsVariate_settingsWinner_criteria { opens = 'opens', clicks = 'clicks', manual = 'manual', total_revenue = 'total_revenue' }
 
 	export interface PostCampaignsPostBody {
 
@@ -12074,7 +12074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostCampaignsPostBodyContent_type { template = 0, multichannel = 1 }
+	export enum PostCampaignsPostBodyContent_type { template = 'template', multichannel = 'multichannel' }
 
 	export interface PostCampaignsPostBodyRecipients {
 
@@ -18481,7 +18481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostCampaignsIdActionsTestPostBodySend_type { html = 0, plaintext = 1 }
+	export enum PostCampaignsIdActionsTestPostBodySend_type { html = 'html', plaintext = 'plaintext' }
 
 	export interface GetCampaignsIdContentReturn {
 
@@ -18666,7 +18666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PutCampaignsIdContentPutBodyArchiveArchive_type { zip = 0, 'tar.gz' = 1, 'tar.bz2' = 2, tar = 3, tgz = 4, tbz = 5 }
+	export enum PutCampaignsIdContentPutBodyArchiveArchive_type { zip = 'zip', 'tar.gz' = 'tar.gz', 'tar.bz2' = 'tar.bz2', tar = 'tar', tgz = 'tgz', tbz = 'tbz' }
 
 	export interface PutCampaignsIdContentPutBodyTemplate {
 
@@ -19130,7 +19130,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsIdFeedbackReturnFeedbackSource { api = 0, email = 1, sms = 2, web = 3, ios = 4, android = 5 }
+	export enum GetCampaignsIdFeedbackReturnFeedbackSource { api = 'api', email = 'email', sms = 'sms', web = 'web', ios = 'ios', android = 'android' }
 
 	export interface PostCampaignsIdFeedbackPostBody {
 
@@ -19690,7 +19690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignsIdSendChecklistReturnItemsType { success = 0, warning = 1, error = 2 }
+	export enum GetCampaignsIdSendChecklistReturnItemsType { success = 'success', warning = 'warning', error = 'error' }
 
 	export interface GetConnectedSitesReturn {
 
@@ -20177,7 +20177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetConversationsHas_unread_messages { true = 0, false = 1 }
+	export enum GetConversationsHas_unread_messages { true = 'true', false = 'false' }
 
 	export interface GetConversationsReturn {
 
@@ -21690,7 +21690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetEcommerceOrdersReturnOrdersPromosType { fixed = 0, percentage = 1 }
+	export enum GetEcommerceOrdersReturnOrdersPromosType { fixed = 'fixed', percentage = 'percentage' }
 
 	export interface GetEcommerceOrdersReturnOrdersShipping_address {
 
@@ -21793,7 +21793,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetEcommerceOrdersReturnOrdersTracking_code { prec = 0 }
+	export enum GetEcommerceOrdersReturnOrdersTracking_code { prec = 'prec' }
 
 	export interface GetEcommerceStoresReturn {
 
@@ -22162,7 +22162,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetEcommerceStoresReturnStoresAutomationsAbandoned_browseStatus { save = 0, sending = 1, paused = 2 }
+	export enum GetEcommerceStoresReturnStoresAutomationsAbandoned_browseStatus { save = 'save', sending = 'sending', paused = 'paused' }
 
 	export interface GetEcommerceStoresReturnStoresAutomationsAbandoned_cart {
 
@@ -36549,7 +36549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetEcommerceStoresIdPromorulesReturnPromo_rulesTarget { per_item = 0, total = 1, shipping = 2 }
+	export enum GetEcommerceStoresIdPromorulesReturnPromo_rulesTarget { per_item = 'per_item', total = 'total', shipping = 'shipping' }
 
 	export interface PostEcommerceStoresIdPromorulesPostBody {
 
@@ -37785,7 +37785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAllFacebookAdsSort_field { created_at = 0, updated_at = 1, end_time = 2 }
+	export enum GetAllFacebookAdsSort_field { created_at = 'created_at', updated_at = 'updated_at', end_time = 'end_time' }
 
 	export interface GetAllFacebookAdsReturn {
 
@@ -38114,11 +38114,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetFacebookAdsIdReturnStatus { save = 0, paused = 1, schedule = 2, scheduled = 3, sending = 4, sent = 5, canceled = 6, canceling = 7, active = 8, disconnected = 9, somepaused = 10, draft = 11, completed = 12, partialRejected = 13, pending = 14, rejected = 15, published = 16, unpublished = 17 }
+	export enum GetFacebookAdsIdReturnStatus { save = 'save', paused = 'paused', schedule = 'schedule', scheduled = 'scheduled', sending = 'sending', sent = 'sent', canceled = 'canceled', canceling = 'canceling', active = 'active', disconnected = 'disconnected', somepaused = 'somepaused', draft = 'draft', completed = 'completed', partialRejected = 'partialRejected', pending = 'pending', rejected = 'rejected', published = 'published', unpublished = 'unpublished' }
 
-	export enum GetFacebookAdsIdReturnType { regular = 0, 'email-touchpoint' = 1, plaintext = 2, rss = 3, reconfirm = 4, variate = 5, absplit = 6, automation = 7, facebook = 8, google = 9, autoresponder = 10, transactional = 11, page = 12, website = 13, social_post = 14, survey = 15, customer_journey = 16 }
+	export enum GetFacebookAdsIdReturnType { regular = 'regular', 'email-touchpoint' = 'email-touchpoint', plaintext = 'plaintext', rss = 'rss', reconfirm = 'reconfirm', variate = 'variate', absplit = 'absplit', automation = 'automation', facebook = 'facebook', google = 'google', autoresponder = 'autoresponder', transactional = 'transactional', page = 'page', website = 'website', social_post = 'social_post', survey = 'survey', customer_journey = 'customer_journey' }
 
-	export enum GetFileManagerFilesSort_field { added_date = 0, name = 1, size = 2 }
+	export enum GetFileManagerFilesSort_field { added_date = 'added_date', name = 'name', size = 'size' }
 
 	export interface GetFileManagerFilesReturn {
 
@@ -38330,7 +38330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetFileManagerFilesReturnFilesType { image = 0, file = 1 }
+	export enum GetFileManagerFilesReturnFilesType { image = 'image', file = 'file' }
 
 	export interface PostFileManagerFilesPostBody {
 
@@ -39454,7 +39454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAllLandingPagesSort_field { created_at = 0, updated_at = 1 }
+	export enum GetAllLandingPagesSort_field { created_at = 'created_at', updated_at = 'updated_at' }
 
 	export interface GetAllLandingPagesReturn {
 
@@ -39690,7 +39690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAllLandingPagesReturnLanding_pagesStatus { published = 0, unpublished = 1, draft = 2 }
+	export enum GetAllLandingPagesReturnLanding_pagesStatus { published = 'published', unpublished = 'unpublished', draft = 'draft' }
 
 	export interface GetAllLandingPagesReturnLanding_pagesTracking {
 
@@ -39802,7 +39802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostAllLandingPagesPostBodyType { signup = 0, product = 1 }
+	export enum PostAllLandingPagesPostBodyType { signup = 'signup', product = 'product' }
 
 	export interface PostAllLandingPagesReturn {
 
@@ -40518,7 +40518,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsSort_field { date_created = 0 }
+	export enum GetListsSort_field { date_created = 'date_created' }
 
 	export interface GetListsReturn {
 
@@ -41059,7 +41059,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsReturnListsVisibility { pub = 0, prv = 1 }
+	export enum GetListsReturnListsVisibility { pub = 'pub', prv = 'prv' }
 
 	export interface PostListsPostBody {
 
@@ -42979,7 +42979,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostListsIdPostBodyMembersStatus { subscribed = 0, unsubscribed = 1, cleaned = 2, pending = 3, transactional = 4 }
+	export enum PostListsIdPostBodyMembersStatus { subscribed = 'subscribed', unsubscribed = 'unsubscribed', cleaned = 'cleaned', pending = 'pending', transactional = 'transactional' }
 
 	export interface PostListsIdReturn {
 
@@ -43114,7 +43114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostListsIdReturnErrorsError_code { ERROR_CONTACT_EXISTS = 0, ERROR_GENERIC = 1 }
+	export enum PostListsIdReturnErrorsError_code { ERROR_CONTACT_EXISTS = 'ERROR_CONTACT_EXISTS', ERROR_GENERIC = 'ERROR_GENERIC' }
 
 	export interface PostListsIdReturnNew_members {
 
@@ -44389,7 +44389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsIdGrowthHistorySort_field { month = 0 }
+	export enum GetListsIdGrowthHistorySort_field { month = 'month' }
 
 	export interface GetListsIdGrowthHistoryReturn {
 
@@ -45792,11 +45792,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsIdMembersStatus { subscribed = 0, unsubscribed = 1, cleaned = 2, pending = 3, transactional = 4, archived = 5 }
+	export enum GetListsIdMembersStatus { subscribed = 'subscribed', unsubscribed = 'unsubscribed', cleaned = 'cleaned', pending = 'pending', transactional = 'transactional', archived = 'archived' }
 
-	export enum GetListsIdMembersInterest_match { any = 0, all = 1, none = 2 }
+	export enum GetListsIdMembersInterest_match { any = 'any', all = 'all', none = 'none' }
 
-	export enum GetListsIdMembersSort_field { timestamp_opt = 0, timestamp_signup = 1, last_changed = 2 }
+	export enum GetListsIdMembersSort_field { timestamp_opt = 'timestamp_opt', timestamp_signup = 'timestamp_signup', last_changed = 'last_changed' }
 
 	export interface GetListsIdMembersReturn {
 
@@ -47523,7 +47523,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchListsIdMembersIdPatchBodyStatus { subscribed = 0, unsubscribed = 1, cleaned = 2, pending = 3 }
+	export enum PatchListsIdMembersIdPatchBodyStatus { subscribed = 'subscribed', unsubscribed = 'unsubscribed', cleaned = 'cleaned', pending = 'pending' }
 
 	export interface PatchListsIdMembersIdReturn {
 
@@ -49073,7 +49073,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsIdMembersIdNotesSort_field { created_at = 0, updated_at = 1, note_id = 2 }
+	export enum GetListsIdMembersIdNotesSort_field { created_at = 'created_at', updated_at = 'updated_at', note_id = 'note_id' }
 
 	export interface GetListsIdMembersIdNotesReturn {
 
@@ -49771,7 +49771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostListMemberTagsPostBodyTagsStatus { inactive = 0, active = 1 }
+	export enum PostListMemberTagsPostBodyTagsStatus { inactive = 'inactive', active = 'active' }
 
 	export interface GetListsIdMergeFieldsReturn {
 
@@ -50020,7 +50020,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsIdMergeFieldsReturnMerge_fieldsType { text = 0, number = 1, address = 2, phone = 3, date = 4, url = 5, imageurl = 6, radio = 7, dropdown = 8, birthday = 9, zip = 10 }
+	export enum GetListsIdMergeFieldsReturnMerge_fieldsType { text = 'text', number = 'number', address = 'address', phone = 'phone', date = 'date', url = 'url', imageurl = 'imageurl', radio = 'radio', dropdown = 'dropdown', birthday = 'birthday', zip = 'zip' }
 
 	export interface PostListsIdMergeFieldsPostBody {
 
@@ -50967,7 +50967,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreviewASegmentReturnSegmentsType { saved = 0, static = 1, fuzzy = 2 }
+	export enum PreviewASegmentReturnSegmentsType { saved = 'saved', static = 'static', fuzzy = 'fuzzy' }
 
 	export interface PostListsIdSegmentsPostBody {
 
@@ -53120,7 +53120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsIdSignupFormsReturnSignup_formsContentsSection { signup_message = 0, unsub_message = 1, signup_thank_you_title = 2 }
+	export enum GetListsIdSignupFormsReturnSignup_formsContentsSection { signup_message = 'signup_message', unsub_message = 'unsub_message', signup_thank_you_title = 'signup_thank_you_title' }
 
 	export interface GetListsIdSignupFormsReturnSignup_formsHeader {
 
@@ -53209,11 +53209,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_align { none = 0, left = 1, center = 2, right = 3 }
+	export enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_align { none = 'none', left = 'left', center = 'center', right = 'right' }
 
-	export enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_border_style { none = 0, solid = 1, dotted = 2, dashed = 3, double = 4, groove = 5, outset = 6, inset = 7, ridge = 8 }
+	export enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_border_style { none = 'none', solid = 'solid', dotted = 'dotted', dashed = 'dashed', double = 'double', groove = 'groove', outset = 'outset', inset = 'inset', ridge = 'ridge' }
 
-	export enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_target { _blank = 0, null = 1 }
+	export enum GetListsIdSignupFormsReturnSignup_formsHeaderImage_target { _blank = '_blank', null = 'null' }
 
 	export interface GetListsIdSignupFormsReturnSignup_formsStyles {
 
@@ -53259,7 +53259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListsIdSignupFormsReturnSignup_formsStylesSelector { page_background = 0, page_header = 1, page_outer_wrapper = 2, body_background = 3, body_link_style = 4, forms_buttons = 5, forms_buttons_hovered = 6, forms_field_label = 7, forms_field_text = 8, forms_required = 9, forms_required_legend = 10, forms_help_text = 11, forms_errors = 12, monkey_rewards_badge = 13 }
+	export enum GetListsIdSignupFormsReturnSignup_formsStylesSelector { page_background = 'page_background', page_header = 'page_header', page_outer_wrapper = 'page_outer_wrapper', body_background = 'body_background', body_link_style = 'body_link_style', forms_buttons = 'forms_buttons', forms_buttons_hovered = 'forms_buttons_hovered', forms_field_label = 'forms_field_label', forms_field_text = 'forms_field_text', forms_required = 'forms_required', forms_required_legend = 'forms_required_legend', forms_help_text = 'forms_help_text', forms_errors = 'forms_errors', monkey_rewards_badge = 'monkey_rewards_badge' }
 
 	export interface PostListsIdSignupFormsPostBody {
 
@@ -55868,7 +55868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportingFacebookAdsIdEcommerceProductActivitySort_field { title = 0, total_revenue = 1, total_purchased = 2 }
+	export enum GetReportingFacebookAdsIdEcommerceProductActivitySort_field { title = 'title', total_revenue = 'total_revenue', total_purchased = 'total_purchased' }
 
 	export interface GetReportingFacebookAdsIdEcommerceProductActivityReturn {
 
@@ -56935,7 +56935,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportingSurveysReturnSurveysStatus { published = 0, unpublished = 1 }
+	export enum GetReportingSurveysReturnSurveysStatus { published = 'published', unpublished = 'unpublished' }
 
 	export interface GetReportingSurveysIdReturn {
 
@@ -57302,7 +57302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportingSurveysIdQuestionsReturnQuestionsType { pickOne = 0, pickMany = 1, range = 2, text = 3, email = 4 }
+	export enum GetReportingSurveysIdQuestionsReturnQuestionsType { pickOne = 'pickOne', pickMany = 'pickMany', range = 'range', text = 'text', email = 'email' }
 
 	export interface GetReportingSurveysIdQuestionsIdReturn {
 
@@ -57514,7 +57514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportingSurveysIdQuestionsIdAnswersRespondent_familiarity_is { new = 0, known = 1, unknown = 2 }
+	export enum GetReportingSurveysIdQuestionsIdAnswersRespondent_familiarity_is { new = 'new', known = 'known', unknown = 'unknown' }
 
 	export interface GetReportingSurveysIdQuestionsIdAnswersReturn {
 
@@ -57691,7 +57691,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportingSurveysIdQuestionsIdAnswersReturnAnswersContactStatus { Subscribed = 0, Unsubscribed = 1, 'Non-Subscribed' = 2, Cleaned = 3, Archived = 4 }
+	export enum GetReportingSurveysIdQuestionsIdAnswersReturnAnswersContactStatus { Subscribed = 'Subscribed', Unsubscribed = 'Unsubscribed', 'Non-Subscribed' = 'Non-Subscribed', Cleaned = 'Cleaned', Archived = 'Archived' }
 
 	export interface GetReportingSurveysIdResponsesReturn {
 
@@ -60166,9 +60166,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportsIdAdviceReturnAdviceType { negative = 0, positive = 1, neutral = 2 }
+	export enum GetReportsIdAdviceReturnAdviceType { negative = 'negative', positive = 'positive', neutral = 'neutral' }
 
-	export enum GetReportsIdClickDetailsSort_field { total_clicks = 0, unique_clicks = 1 }
+	export enum GetReportsIdClickDetailsSort_field { total_clicks = 'total_clicks', unique_clicks = 'unique_clicks' }
 
 	export interface GetReportsIdClickDetailsReturn {
 
@@ -62010,7 +62010,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportsIdOpenDetailsSort_field { opens_count = 0 }
+	export enum GetReportsIdOpenDetailsSort_field { opens_count = 'opens_count' }
 
 	export interface GetReportsIdOpenDetailsReturn {
 
@@ -62593,9 +62593,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetReportsIdSentToReturnSent_toAbsplit_group { a = 0, b = 1, winner = 2 }
+	export enum GetReportsIdSentToReturnSent_toAbsplit_group { a = 'a', b = 'b', winner = 'winner' }
 
-	export enum GetReportsIdSentToReturnSent_toStatus { sent = 0, hard = 1, soft = 2 }
+	export enum GetReportsIdSentToReturnSent_toStatus { sent = 'sent', hard = 'hard', soft = 'soft' }
 
 	export interface GetReportsIdSentToIdReturn {
 
@@ -66467,9 +66467,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetTemplatesSort_field { date_created = 0, date_edited = 1, name = 2 }
+	export enum GetTemplatesSort_field { date_created = 'date_created', date_edited = 'date_edited', name = 'name' }
 
-	export enum GetTemplatesContent_type { html = 0, template = 1, multichannel = 2 }
+	export enum GetTemplatesContent_type { html = 'html', template = 'template', multichannel = 'multichannel' }
 
 	export interface GetTemplatesReturn {
 
@@ -66702,7 +66702,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetTemplatesReturnTemplatesContent_type { template = 0, multichannel = 1, html = 2 }
+	export enum GetTemplatesReturnTemplatesContent_type { template = 'template', multichannel = 'multichannel', html = 'html' }
 
 	export interface PostTemplatesReturn {
 

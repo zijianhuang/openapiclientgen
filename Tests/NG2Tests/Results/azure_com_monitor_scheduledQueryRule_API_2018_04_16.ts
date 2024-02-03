@@ -32,7 +32,7 @@ export namespace MyNS {
 
 
 	/** Severity Level of Alert */
-	export enum AlertSeverity { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4 }
+	export enum AlertSeverity { _0 = '0', _1 = '1', _2 = '2', _3 = '3', _4 = '4' }
 
 
 	/** Specify action need to be taken when rule type is Alert */
@@ -193,13 +193,13 @@ export namespace MyNS {
 
 	}
 
-	export enum LogMetricTriggerMetricTriggerType { Consecutive = 0, Total = 1 }
+	export enum LogMetricTriggerMetricTriggerType { Consecutive = 'Consecutive', Total = 'Total' }
 
-	export enum LogMetricTriggerThresholdOperator { GreaterThan = 0, LessThan = 1, Equal = 2 }
+	export enum LogMetricTriggerThresholdOperator { GreaterThan = 'GreaterThan', LessThan = 'LessThan', Equal = 'Equal' }
 
 
 	/** Result Condition Evaluation criteria. Supported Values - 'GreaterThan' or 'LessThan' or 'Equal'. */
-	export enum ConditionalOperator { GreaterThan = 0, LessThan = 1, Equal = 2 }
+	export enum ConditionalOperator { GreaterThan = 'GreaterThan', LessThan = 'LessThan', Equal = 'Equal' }
 
 
 	/** Specifies the criteria for converting log to metric. */
@@ -277,7 +277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionOperator { Include = 0 }
+	export enum DimensionOperator { Include = 'Include' }
 
 
 	/** Describes the format of Error response. */
@@ -364,9 +364,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogSearchRuleEnabled { true = 0, false = 1 }
+	export enum LogSearchRuleEnabled { true = 'true', false = 'false' }
 
-	export enum LogSearchRuleProvisioningState { Succeeded = 0, Deploying = 1, Canceled = 2, Failed = 3 }
+	export enum LogSearchRuleProvisioningState { Succeeded = 'Succeeded', Deploying = 'Deploying', Canceled = 'Canceled', Failed = 'Failed' }
 
 
 	/** Defines how often to run the search and the time interval. */
@@ -452,7 +452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceQueryType { ResultCount = 0 }
+	export enum SourceQueryType { ResultCount = 'ResultCount' }
 
 
 	/** Log Search Rule Definition for Patching */
@@ -558,11 +558,11 @@ export namespace MyNS {
 
 
 	/** Metric Trigger Evaluation Type */
-	export enum MetricTriggerType { Consecutive = 0, Total = 1 }
+	export enum MetricTriggerType { Consecutive = 'Consecutive', Total = 'Total' }
 
 
 	/** Set value to 'ResultAccount' */
-	export enum QueryType { ResultCount = 0 }
+	export enum QueryType { ResultCount = 'ResultCount' }
 
 
 	/** An azure resource object */

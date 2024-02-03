@@ -166,7 +166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PosixAccountOperatingSystemType { OPERATING_SYSTEM_TYPE_UNSPECIFIED = 0, LINUX = 1, WINDOWS = 2 }
+	export enum PosixAccountOperatingSystemType { OPERATING_SYSTEM_TYPE_UNSPECIFIED = 'OPERATING_SYSTEM_TYPE_UNSPECIFIED', LINUX = 'LINUX', WINDOWS = 'WINDOWS' }
 
 
 	/** The credential information for a Google registered security key. */
@@ -412,7 +412,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Oslogin_users_getLoginProfileView { LOGIN_PROFILE_VIEW_UNSPECIFIED = 0, BASIC = 1, SECURITY_KEY = 2 }
+	export enum Oslogin_users_getLoginProfileView { LOGIN_PROFILE_VIEW_UNSPECIFIED = 'LOGIN_PROFILE_VIEW_UNSPECIFIED', BASIC = 'BASIC', SECURITY_KEY = 'SECURITY_KEY' }
 
 }
 

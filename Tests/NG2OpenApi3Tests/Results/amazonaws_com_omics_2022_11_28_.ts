@@ -221,7 +221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetPartSource { SOURCE1 = 0, SOURCE2 = 1 }
+	export enum ReadSetPartSource { SOURCE1 = 'SOURCE1', SOURCE2 = 'SOURCE2' }
 
 	export interface CreateAnnotationStoreResponse {
 
@@ -283,7 +283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StoreFormat { GFF = 0, TSV = 1, VCF = 2 }
+	export enum StoreFormat { GFF = 'GFF', TSV = 'TSV', VCF = 'VCF' }
 
 
 	/** Settings for a store. */
@@ -319,7 +319,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnnotationType { GENERIC = 0, CHR_POS = 1, CHR_POS_REF_ALT = 2, CHR_START_END_ONE_BASE = 3, CHR_START_END_REF_ALT_ONE_BASE = 4, CHR_START_END_ZERO_BASE = 5, CHR_START_END_REF_ALT_ZERO_BASE = 6 }
+	export enum AnnotationType { GENERIC = 'GENERIC', CHR_POS = 'CHR_POS', CHR_POS_REF_ALT = 'CHR_POS_REF_ALT', CHR_START_END_ONE_BASE = 'CHR_START_END_ONE_BASE', CHR_START_END_REF_ALT_ONE_BASE = 'CHR_START_END_REF_ALT_ONE_BASE', CHR_START_END_ZERO_BASE = 'CHR_START_END_ZERO_BASE', CHR_START_END_REF_ALT_ZERO_BASE = 'CHR_START_END_REF_ALT_ZERO_BASE' }
 
 	export interface FormatToHeader {
 	}
@@ -341,9 +341,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StoreStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3, FAILED = 4 }
+	export enum StoreStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
-	export enum EncryptionType { KMS = 0 }
+	export enum EncryptionType { KMS = 'KMS' }
 
 	export interface CreateMultipartReadSetUploadResponse {
 
@@ -414,7 +414,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileType { FASTQ = 0, BAM = 1, CRAM = 2 }
+	export enum FileType { FASTQ = 'FASTQ', BAM = 'BAM', CRAM = 'CRAM' }
 
 	export interface TagMap {
 	}
@@ -605,7 +605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETED = 3, FAILED = 4, INACTIVE = 5 }
+	export enum WorkflowStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETED = 'DELETED', FAILED = 'FAILED', INACTIVE = 'INACTIVE' }
 
 
 	/** A workflow parameter. */
@@ -774,7 +774,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { SUBMITTED = 0, IN_PROGRESS = 1, CANCELLED = 2, COMPLETED = 3, FAILED = 4, COMPLETED_WITH_FAILURES = 5 }
+	export enum JobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', CANCELLED = 'CANCELLED', COMPLETED = 'COMPLETED', FAILED = 'FAILED', COMPLETED_WITH_FAILURES = 'COMPLETED_WITH_FAILURES' }
 
 
 	/** Details about an imported annotation item. */
@@ -1060,7 +1060,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetActivationJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, CANCELLING = 2, CANCELLED = 3, FAILED = 4, COMPLETED = 5, COMPLETED_WITH_FAILURES = 6 }
+	export enum ReadSetActivationJobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', FAILED = 'FAILED', COMPLETED = 'COMPLETED', COMPLETED_WITH_FAILURES = 'COMPLETED_WITH_FAILURES' }
 
 
 	/** A source for a read set activation job. */
@@ -1093,7 +1093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetActivationJobItemStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FINISHED = 2, FAILED = 3 }
+	export enum ReadSetActivationJobItemStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FINISHED = 'FINISHED', FAILED = 'FAILED' }
 
 	export interface GetReadSetExportJobResponse {
 
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetStatus { ARCHIVED = 0, ACTIVATING = 1, ACTIVE = 2, DELETING = 3, DELETED = 4, PROCESSING_UPLOAD = 5, UPLOAD_FAILED = 6 }
+	export enum ReadSetStatus { ARCHIVED = 'ARCHIVED', ACTIVATING = 'ACTIVATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETED = 'DELETED', PROCESSING_UPLOAD = 'PROCESSING_UPLOAD', UPLOAD_FAILED = 'UPLOAD_FAILED' }
 
 
 	/** Details about a sequence. */
@@ -1460,7 +1460,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreationType { IMPORT = 0, UPLOAD = 1 }
+	export enum CreationType { IMPORT = 'IMPORT', UPLOAD = 'UPLOAD' }
 
 	export interface GetReferenceResponse {
 		payload?: string;
@@ -1625,7 +1625,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceStatus { ACTIVE = 0, DELETING = 1, DELETED = 2 }
+	export enum ReferenceStatus { ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 
 	/** A set of genome reference files. */
@@ -1757,9 +1757,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunStatus { PENDING = 0, STARTING = 1, RUNNING = 2, STOPPING = 3, COMPLETED = 4, DELETED = 5, CANCELLED = 6, FAILED = 7 }
+	export enum RunStatus { PENDING = 'PENDING', STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', COMPLETED = 'COMPLETED', DELETED = 'DELETED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
-	export enum WorkflowType { PRIVATE = 0, READY2RUN = 1 }
+	export enum WorkflowType { PRIVATE = 'PRIVATE', READY2RUN = 'READY2RUN' }
 
 	export interface RunParameters {
 	}
@@ -1771,7 +1771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunLogLevel { OFF = 0, FATAL = 1, ERROR = 2, ALL = 3 }
+	export enum RunLogLevel { OFF = 'OFF', FATAL = 'FATAL', ERROR = 'ERROR', ALL = 'ALL' }
 
 	export interface RunResourceDigests {
 	}
@@ -1783,9 +1783,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Accelerators { GPU = 0 }
+	export enum Accelerators { GPU = 'GPU' }
 
-	export enum RunExport { DEFINITION = 0 }
+	export enum RunExport { DEFINITION = 'DEFINITION' }
 
 	export interface GetRunGroupResponse {
 		arn?: string;
@@ -1865,7 +1865,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskStatus { PENDING = 0, STARTING = 1, RUNNING = 2, STOPPING = 3, COMPLETED = 4, CANCELLED = 5, FAILED = 6 }
+	export enum TaskStatus { PENDING = 'PENDING', STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 	export interface GetSequenceStoreResponse {
 
@@ -2149,7 +2149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowEngine { WDL = 0, NEXTFLOW = 1, CWL = 2 }
+	export enum WorkflowEngine { WDL = 'WDL', NEXTFLOW = 'NEXTFLOW', CWL = 'CWL' }
 
 	export interface WorkflowParameterTemplate {
 	}
@@ -2171,7 +2171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowExport { DEFINITION = 0 }
+	export enum WorkflowExport { DEFINITION = 'DEFINITION' }
 
 	export interface ListAnnotationImportJobsResponse {
 		annotationImportJobs?: Array<AnnotationImportJobItem>;
@@ -2570,7 +2570,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetExportJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, CANCELLING = 2, CANCELLED = 3, FAILED = 4, COMPLETED = 5, COMPLETED_WITH_FAILURES = 6 }
+	export enum ReadSetExportJobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', FAILED = 'FAILED', COMPLETED = 'COMPLETED', COMPLETED_WITH_FAILURES = 'COMPLETED_WITH_FAILURES' }
 
 	export interface ListReadSetImportJobsResponse {
 		nextToken?: string;
@@ -2638,7 +2638,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetImportJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, CANCELLING = 2, CANCELLED = 3, FAILED = 4, COMPLETED = 5, COMPLETED_WITH_FAILURES = 6 }
+	export enum ReadSetImportJobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', FAILED = 'FAILED', COMPLETED = 'COMPLETED', COMPLETED_WITH_FAILURES = 'COMPLETED_WITH_FAILURES' }
 
 	export interface ListReadSetUploadPartsResponse {
 		nextToken?: string;
@@ -2864,7 +2864,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceImportJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, CANCELLING = 2, CANCELLED = 3, FAILED = 4, COMPLETED = 5, COMPLETED_WITH_FAILURES = 6 }
+	export enum ReferenceImportJobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', FAILED = 'FAILED', COMPLETED = 'COMPLETED', COMPLETED_WITH_FAILURES = 'COMPLETED_WITH_FAILURES' }
 
 	export interface ListReferenceStoresResponse {
 		nextToken?: string;
@@ -4418,7 +4418,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetExportJobItemStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FINISHED = 2, FAILED = 3 }
+	export enum ReadSetExportJobItemStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FINISHED = 'FINISHED', FAILED = 'FAILED' }
 
 
 	/** An read set export job filter. */
@@ -4443,7 +4443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FormatToHeaderKey { CHR = 0, START = 1, END = 2, REF = 3, ALT = 4, POS = 5 }
+	export enum FormatToHeaderKey { CHR = 'CHR', START = 'START', END = 'END', REF = 'REF', ALT = 'ALT', POS = 'POS' }
 
 	export interface GetAnnotationImportRequest {
 	}
@@ -4505,7 +4505,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetFile { SOURCE1 = 0, SOURCE2 = 1, INDEX = 2 }
+	export enum ReadSetFile { SOURCE1 = 'SOURCE1', SOURCE2 = 'SOURCE2', INDEX = 'INDEX' }
 
 	export interface GetReadSetRequest {
 	}
@@ -4537,7 +4537,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceFile { SOURCE = 0, INDEX = 1 }
+	export enum ReferenceFile { SOURCE = 'SOURCE', INDEX = 'INDEX' }
 
 	export interface GetReferenceRequest {
 	}
@@ -4652,7 +4652,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadSetImportJobItemStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FINISHED = 2, FAILED = 3 }
+	export enum ReadSetImportJobItemStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FINISHED = 'FINISHED', FAILED = 'FAILED' }
 
 
 	/** A filter for import references. */
@@ -4677,7 +4677,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReferenceImportJobItemStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FINISHED = 2, FAILED = 3 }
+	export enum ReferenceImportJobItemStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FINISHED = 'FINISHED', FAILED = 'FAILED' }
 
 
 	/** A filter for annotation import jobs. */
@@ -5100,7 +5100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaValueType { LONG = 0, INT = 1, STRING = 2, FLOAT = 3, DOUBLE = 4, BOOLEAN = 5 }
+	export enum SchemaValueType { LONG = 'LONG', INT = 'INT', STRING = 'STRING', FLOAT = 'FLOAT', DOUBLE = 'DOUBLE', BOOLEAN = 'BOOLEAN' }
 
 	export interface StartAnnotationImportRequest {
 

@@ -317,7 +317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConversionAdUserDataConsent { UNKNOWN = 0, GRANTED = 1, DENIED = 2 }
+	export enum ConversionAdUserDataConsent { UNKNOWN = 'UNKNOWN', GRANTED = 'GRANTED', DENIED = 'DENIED' }
 
 
 	/** A message containing the custom dimension. */

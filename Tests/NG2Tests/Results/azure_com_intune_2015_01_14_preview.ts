@@ -83,9 +83,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AndroidMAMPolicyPropertiesFileEncryption { required = 0, notRequired = 1 }
+	export enum AndroidMAMPolicyPropertiesFileEncryption { required = 'required', notRequired = 'notRequired' }
 
-	export enum AndroidMAMPolicyPropertiesScreenCapture { allow = 0, block = 1 }
+	export enum AndroidMAMPolicyPropertiesScreenCapture { allow = 'allow', block = 'block' }
 
 
 	/** Application entity for Intune MAM. */
@@ -154,7 +154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationPropertiesPlatform { ios = 0, android = 1, windows = 2 }
+	export enum ApplicationPropertiesPlatform { ios = 'ios', android = 'android', windows = 'windows' }
 
 
 	/** Device entity for Intune. */
@@ -670,13 +670,13 @@ export namespace MyNS {
 
 	}
 
-	export enum MAMPolicyPropertiesAppSharingFromLevel { none = 0, policyManagedApps = 1, allApps = 2 }
+	export enum MAMPolicyPropertiesAppSharingFromLevel { none = 'none', policyManagedApps = 'policyManagedApps', allApps = 'allApps' }
 
-	export enum MAMPolicyPropertiesClipboardSharingLevel { blocked = 0, policyManagedApps = 1, policyManagedAppsWithPasteIn = 2, allApps = 3 }
+	export enum MAMPolicyPropertiesClipboardSharingLevel { blocked = 'blocked', policyManagedApps = 'policyManagedApps', policyManagedAppsWithPasteIn = 'policyManagedAppsWithPasteIn', allApps = 'allApps' }
 
-	export enum MAMPolicyPropertiesDeviceCompliance { enable = 0, disable = 1 }
+	export enum MAMPolicyPropertiesDeviceCompliance { enable = 'enable', disable = 'disable' }
 
-	export enum MAMPolicyPropertiesGroupStatus { notTargeted = 0, targeted = 1 }
+	export enum MAMPolicyPropertiesGroupStatus { notTargeted = 'notTargeted', targeted = 'targeted' }
 
 
 	/** OperationResult entity for Intune. */
@@ -955,7 +955,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IOSMAMPolicyPropertiesFileEncryptionLevel { deviceLocked = 0, deviceLockedExceptFilesOpen = 1, afterDeviceRestart = 2, useDeviceSettings = 3 }
+	export enum IOSMAMPolicyPropertiesFileEncryptionLevel { deviceLocked = 'deviceLocked', deviceLockedExceptFilesOpen = 'deviceLockedExceptFilesOpen', afterDeviceRestart = 'afterDeviceRestart', useDeviceSettings = 'useDeviceSettings' }
 
 	@Injectable()
 	export class MyClient {

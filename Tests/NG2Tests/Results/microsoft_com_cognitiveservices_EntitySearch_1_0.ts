@@ -324,7 +324,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntitiesEntityPresentationInfoEntityScenario { DominantEntity = 0, DisambiguationItem = 1, ListItem = 2 }
+	export enum EntitiesEntityPresentationInfoEntityScenario { DominantEntity = 'DominantEntity', DisambiguationItem = 'DisambiguationItem', ListItem = 'ListItem' }
 
 
 	/** Defines an image */
@@ -380,7 +380,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntitiesQueryScenario { DominantEntity = 0, DominantEntityWithDisambiguation = 1, Disambiguation = 2, List = 3, ListWithPivot = 4 }
+	export enum EntitiesQueryScenario { DominantEntity = 'DominantEntity', DominantEntityWithDisambiguation = 'DominantEntityWithDisambiguation', Disambiguation = 'Disambiguation', List = 'List', ListWithPivot = 'ListWithPivot' }
 
 
 	/** Defines the error that occurred. */
@@ -450,9 +450,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { None = 0, ServerError = 1, InvalidRequest = 2, RateLimitExceeded = 3, InvalidAuthorization = 4, InsufficientAuthorization = 5 }
+	export enum ErrorCode { None = 'None', ServerError = 'ServerError', InvalidRequest = 'InvalidRequest', RateLimitExceeded = 'RateLimitExceeded', InvalidAuthorization = 'InvalidAuthorization', InsufficientAuthorization = 'InsufficientAuthorization' }
 
-	export enum ErrorSubCode { UnexpectedError = 0, ResourceError = 1, NotImplemented = 2, ParameterMissing = 3, ParameterInvalidValue = 4, HttpNotAllowed = 5, Blocked = 6, AuthorizationMissing = 7, AuthorizationRedundancy = 8, AuthorizationDisabled = 9, AuthorizationExpired = 10 }
+	export enum ErrorSubCode { UnexpectedError = 'UnexpectedError', ResourceError = 'ResourceError', NotImplemented = 'NotImplemented', ParameterMissing = 'ParameterMissing', ParameterInvalidValue = 'ParameterInvalidValue', HttpNotAllowed = 'HttpNotAllowed', Blocked = 'Blocked', AuthorizationMissing = 'AuthorizationMissing', AuthorizationRedundancy = 'AuthorizationRedundancy', AuthorizationDisabled = 'AuthorizationDisabled', AuthorizationExpired = 'AuthorizationExpired' }
 
 
 	/** The top-level response that represents a failed request. */
@@ -945,9 +945,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Entities_SearchX_BingApis_SDK { true = 0 }
+	export enum Entities_SearchX_BingApis_SDK { true = 'true' }
 
-	export enum Entities_SearchSafeSearch { Off = 0, Moderate = 1, Strict = 2 }
+	export enum Entities_SearchSafeSearch { Off = 'Off', Moderate = 'Moderate', Strict = 'Strict' }
 
 }
 

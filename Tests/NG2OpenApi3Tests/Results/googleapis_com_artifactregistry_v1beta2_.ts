@@ -59,7 +59,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AptArtifactPackageType { PACKAGE_TYPE_UNSPECIFIED = 0, BINARY = 1, SOURCE = 2 }
+	export enum AptArtifactPackageType { PACKAGE_TYPE_UNSPECIFIED = 'PACKAGE_TYPE_UNSPECIFIED', BINARY = 'BINARY', SOURCE = 'SOURCE' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -224,7 +224,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HashType { HASH_TYPE_UNSPECIFIED = 0, SHA256 = 1, MD5 = 2 }
+	export enum HashType { HASH_TYPE_UNSPECIFIED = 'HASH_TYPE_UNSPECIFIED', SHA256 = 'SHA256', MD5 = 'MD5' }
 
 
 	/** Error information explaining why a package was not imported. */
@@ -756,7 +756,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryFormat { FORMAT_UNSPECIFIED = 0, DOCKER = 1, MAVEN = 2, NPM = 3, APT = 4, YUM = 5, GOOGET = 6, PYTHON = 7 }
+	export enum RepositoryFormat { FORMAT_UNSPECIFIED = 'FORMAT_UNSPECIFIED', DOCKER = 'DOCKER', MAVEN = 'MAVEN', NPM = 'NPM', APT = 'APT', YUM = 'YUM', GOOGET = 'GOOGET', PYTHON = 'PYTHON' }
 
 
 	/** MavenRepositoryConfig is maven related repository details. Provides additional configuration details for repositories of the maven format type. */
@@ -786,7 +786,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MavenRepositoryConfigVersionPolicy { VERSION_POLICY_UNSPECIFIED = 0, RELEASE = 1, SNAPSHOT = 2 }
+	export enum MavenRepositoryConfigVersionPolicy { VERSION_POLICY_UNSPECIFIED = 'VERSION_POLICY_UNSPECIFIED', RELEASE = 'RELEASE', SNAPSHOT = 'SNAPSHOT' }
 
 
 	/** The response from listing tags. */
@@ -1034,7 +1034,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectSettingsLegacyRedirectionState { REDIRECTION_STATE_UNSPECIFIED = 0, REDIRECTION_FROM_GCR_IO_DISABLED = 1, REDIRECTION_FROM_GCR_IO_ENABLED = 2, REDIRECTION_FROM_GCR_IO_FINALIZED = 3 }
+	export enum ProjectSettingsLegacyRedirectionState { REDIRECTION_STATE_UNSPECIFIED = 'REDIRECTION_STATE_UNSPECIFIED', REDIRECTION_FROM_GCR_IO_DISABLED = 'REDIRECTION_FROM_GCR_IO_DISABLED', REDIRECTION_FROM_GCR_IO_ENABLED = 'REDIRECTION_FROM_GCR_IO_ENABLED', REDIRECTION_FROM_GCR_IO_FINALIZED = 'REDIRECTION_FROM_GCR_IO_FINALIZED' }
 
 
 	/** Request message for `SetIamPolicy` method. */
@@ -1400,7 +1400,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Artifactregistry_projects_locations_repositories_packages_versions_getView { VERSION_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Artifactregistry_projects_locations_repositories_packages_versions_getView { VERSION_VIEW_UNSPECIFIED = 'VERSION_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

@@ -154,7 +154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColorStyleThemeColor { THEME_COLOR_TYPE_UNSPECIFIED = 0, TEXT = 1, BACKGROUND = 2, ACCENT1 = 3, ACCENT2 = 4, ACCENT3 = 5, ACCENT4 = 6, ACCENT5 = 7, ACCENT6 = 8, LINK = 9 }
+	export enum ColorStyleThemeColor { THEME_COLOR_TYPE_UNSPECIFIED = 'THEME_COLOR_TYPE_UNSPECIFIED', TEXT = 'TEXT', BACKGROUND = 'BACKGROUND', ACCENT1 = 'ACCENT1', ACCENT2 = 'ACCENT2', ACCENT3 = 'ACCENT3', ACCENT4 = 'ACCENT4', ACCENT5 = 'ACCENT5', ACCENT6 = 'ACCENT6', LINK = 'LINK' }
 
 
 	/** A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `"Sheet1"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`. */
@@ -715,7 +715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BasicChartAxisPosition { BASIC_CHART_AXIS_POSITION_UNSPECIFIED = 0, BOTTOM_AXIS = 1, LEFT_AXIS = 2, RIGHT_AXIS = 3 }
+	export enum BasicChartAxisPosition { BASIC_CHART_AXIS_POSITION_UNSPECIFIED = 'BASIC_CHART_AXIS_POSITION_UNSPECIFIED', BOTTOM_AXIS = 'BOTTOM_AXIS', LEFT_AXIS = 'LEFT_AXIS', RIGHT_AXIS = 'RIGHT_AXIS' }
 
 
 	/** Position settings for text. */
@@ -738,7 +738,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextPositionHorizontalAlignment { HORIZONTAL_ALIGN_UNSPECIFIED = 0, LEFT = 1, CENTER = 2, RIGHT = 3 }
+	export enum TextPositionHorizontalAlignment { HORIZONTAL_ALIGN_UNSPECIFIED = 'HORIZONTAL_ALIGN_UNSPECIFIED', LEFT = 'LEFT', CENTER = 'CENTER', RIGHT = 'RIGHT' }
 
 
 	/** The options that define a "view window" for a chart (such as the visible values in an axis). */
@@ -775,11 +775,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ChartAxisViewWindowOptionsViewWindowMode { DEFAULT_VIEW_WINDOW_MODE = 0, VIEW_WINDOW_MODE_UNSUPPORTED = 1, EXPLICIT = 2, PRETTY = 3 }
+	export enum ChartAxisViewWindowOptionsViewWindowMode { DEFAULT_VIEW_WINDOW_MODE = 'DEFAULT_VIEW_WINDOW_MODE', VIEW_WINDOW_MODE_UNSUPPORTED = 'VIEW_WINDOW_MODE_UNSUPPORTED', EXPLICIT = 'EXPLICIT', PRETTY = 'PRETTY' }
 
-	export enum BasicChartSpecChartType { BASIC_CHART_TYPE_UNSPECIFIED = 0, BAR = 1, LINE = 2, AREA = 3, COLUMN = 4, SCATTER = 5, COMBO = 6, STEPPED_AREA = 7 }
+	export enum BasicChartSpecChartType { BASIC_CHART_TYPE_UNSPECIFIED = 'BASIC_CHART_TYPE_UNSPECIFIED', BAR = 'BAR', LINE = 'LINE', AREA = 'AREA', COLUMN = 'COLUMN', SCATTER = 'SCATTER', COMBO = 'COMBO', STEPPED_AREA = 'STEPPED_AREA' }
 
-	export enum BasicChartSpecCompareMode { BASIC_CHART_COMPARE_MODE_UNSPECIFIED = 0, DATUM = 1, CATEGORY = 2 }
+	export enum BasicChartSpecCompareMode { BASIC_CHART_COMPARE_MODE_UNSPECIFIED = 'BASIC_CHART_COMPARE_MODE_UNSPECIFIED', DATUM = 'DATUM', CATEGORY = 'CATEGORY' }
 
 
 	/** The domain of a chart. For example, if charting stock prices over time, this would be the date. */
@@ -835,7 +835,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChartDataAggregateType { CHART_AGGREGATE_TYPE_UNSPECIFIED = 0, AVERAGE = 1, COUNT = 2, MAX = 3, MEDIAN = 4, MIN = 5, SUM = 6 }
+	export enum ChartDataAggregateType { CHART_AGGREGATE_TYPE_UNSPECIFIED = 'CHART_AGGREGATE_TYPE_UNSPECIFIED', AVERAGE = 'AVERAGE', COUNT = 'COUNT', MAX = 'MAX', MEDIAN = 'MEDIAN', MIN = 'MIN', SUM = 'SUM' }
 
 
 	/** An unique identifier that references a data source column. */
@@ -899,7 +899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChartDateTimeRuleType { CHART_DATE_TIME_RULE_TYPE_UNSPECIFIED = 0, SECOND = 1, MINUTE = 2, HOUR = 3, HOUR_MINUTE = 4, HOUR_MINUTE_AMPM = 5, DAY_OF_WEEK = 6, DAY_OF_YEAR = 7, DAY_OF_MONTH = 8, DAY_MONTH = 9, MONTH = 10, QUARTER = 11, YEAR = 12, YEAR_MONTH = 13, YEAR_QUARTER = 14, YEAR_MONTH_DAY = 15 }
+	export enum ChartDateTimeRuleType { CHART_DATE_TIME_RULE_TYPE_UNSPECIFIED = 'CHART_DATE_TIME_RULE_TYPE_UNSPECIFIED', SECOND = 'SECOND', MINUTE = 'MINUTE', HOUR = 'HOUR', HOUR_MINUTE = 'HOUR_MINUTE', HOUR_MINUTE_AMPM = 'HOUR_MINUTE_AMPM', DAY_OF_WEEK = 'DAY_OF_WEEK', DAY_OF_YEAR = 'DAY_OF_YEAR', DAY_OF_MONTH = 'DAY_OF_MONTH', DAY_MONTH = 'DAY_MONTH', MONTH = 'MONTH', QUARTER = 'QUARTER', YEAR = 'YEAR', YEAR_MONTH = 'YEAR_MONTH', YEAR_QUARTER = 'YEAR_QUARTER', YEAR_MONTH_DAY = 'YEAR_MONTH_DAY' }
 
 
 	/** Allows you to organize numeric values in a source data column into buckets of constant size. */
@@ -953,7 +953,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BasicChartSpecLegendPosition { BASIC_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5 }
+	export enum BasicChartSpecLegendPosition { BASIC_CHART_LEGEND_POSITION_UNSPECIFIED = 'BASIC_CHART_LEGEND_POSITION_UNSPECIFIED', BOTTOM_LEGEND = 'BOTTOM_LEGEND', LEFT_LEGEND = 'LEFT_LEGEND', RIGHT_LEGEND = 'RIGHT_LEGEND', TOP_LEGEND = 'TOP_LEGEND', NO_LEGEND = 'NO_LEGEND' }
 
 
 	/** A single series of data in a chart. For example, if charting stock prices over time, multiple series may exist, one for the "Open Price", "High Price", "Low Price" and "Close Price". */
@@ -1038,9 +1038,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLabelPlacement { DATA_LABEL_PLACEMENT_UNSPECIFIED = 0, CENTER = 1, LEFT = 2, RIGHT = 3, ABOVE = 4, BELOW = 5, INSIDE_END = 6, INSIDE_BASE = 7, OUTSIDE_END = 8 }
+	export enum DataLabelPlacement { DATA_LABEL_PLACEMENT_UNSPECIFIED = 'DATA_LABEL_PLACEMENT_UNSPECIFIED', CENTER = 'CENTER', LEFT = 'LEFT', RIGHT = 'RIGHT', ABOVE = 'ABOVE', BELOW = 'BELOW', INSIDE_END = 'INSIDE_END', INSIDE_BASE = 'INSIDE_BASE', OUTSIDE_END = 'OUTSIDE_END' }
 
-	export enum DataLabelType { DATA_LABEL_TYPE_UNSPECIFIED = 0, NONE = 1, DATA = 2, CUSTOM = 3 }
+	export enum DataLabelType { DATA_LABEL_TYPE_UNSPECIFIED = 'DATA_LABEL_TYPE_UNSPECIFIED', NONE = 'NONE', DATA = 'DATA', CUSTOM = 'CUSTOM' }
 
 
 	/** Properties that describe the style of a line. */
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineStyleType { LINE_DASH_TYPE_UNSPECIFIED = 0, INVISIBLE = 1, CUSTOM = 2, SOLID = 3, DOTTED = 4, MEDIUM_DASHED = 5, MEDIUM_DASHED_DOTTED = 6, LONG_DASHED = 7, LONG_DASHED_DOTTED = 8 }
+	export enum LineStyleType { LINE_DASH_TYPE_UNSPECIFIED = 'LINE_DASH_TYPE_UNSPECIFIED', INVISIBLE = 'INVISIBLE', CUSTOM = 'CUSTOM', SOLID = 'SOLID', DOTTED = 'DOTTED', MEDIUM_DASHED = 'MEDIUM_DASHED', MEDIUM_DASHED_DOTTED = 'MEDIUM_DASHED_DOTTED', LONG_DASHED = 'LONG_DASHED', LONG_DASHED_DOTTED = 'LONG_DASHED_DOTTED' }
 
 
 	/** The style of a point on the chart. */
@@ -1100,7 +1100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PointStyleShape { POINT_SHAPE_UNSPECIFIED = 0, CIRCLE = 1, DIAMOND = 2, HEXAGON = 3, PENTAGON = 4, SQUARE = 5, STAR = 6, TRIANGLE = 7, X_MARK = 8 }
+	export enum PointStyleShape { POINT_SHAPE_UNSPECIFIED = 'POINT_SHAPE_UNSPECIFIED', CIRCLE = 'CIRCLE', DIAMOND = 'DIAMOND', HEXAGON = 'HEXAGON', PENTAGON = 'PENTAGON', SQUARE = 'SQUARE', STAR = 'STAR', TRIANGLE = 'TRIANGLE', X_MARK = 'X_MARK' }
 
 
 	/** Style override settings for a single series data point. */
@@ -1132,7 +1132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BasicChartSpecStackedType { BASIC_CHART_STACKED_TYPE_UNSPECIFIED = 0, NOT_STACKED = 1, STACKED = 2, PERCENT_STACKED = 3 }
+	export enum BasicChartSpecStackedType { BASIC_CHART_STACKED_TYPE_UNSPECIFIED = 'BASIC_CHART_STACKED_TYPE_UNSPECIFIED', NOT_STACKED = 'NOT_STACKED', STACKED = 'STACKED', PERCENT_STACKED = 'PERCENT_STACKED' }
 
 
 	/** A bubble chart. */
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BubbleChartSpecLegendPosition { BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5, INSIDE_LEGEND = 6 }
+	export enum BubbleChartSpecLegendPosition { BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED = 'BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED', BOTTOM_LEGEND = 'BOTTOM_LEGEND', LEFT_LEGEND = 'LEFT_LEGEND', RIGHT_LEGEND = 'RIGHT_LEGEND', TOP_LEGEND = 'TOP_LEGEND', NO_LEGEND = 'NO_LEGEND', INSIDE_LEGEND = 'INSIDE_LEGEND' }
 
 
 	/** A candlestick chart. */
@@ -1355,9 +1355,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataExecutionStatusErrorCode { DATA_EXECUTION_ERROR_CODE_UNSPECIFIED = 0, TIMED_OUT = 1, TOO_MANY_ROWS = 2, TOO_MANY_COLUMNS = 3, TOO_MANY_CELLS = 4, ENGINE = 5, PARAMETER_INVALID = 6, UNSUPPORTED_DATA_TYPE = 7, DUPLICATE_COLUMN_NAMES = 8, INTERRUPTED = 9, CONCURRENT_QUERY = 10, OTHER = 11, TOO_MANY_CHARS_PER_CELL = 12, DATA_NOT_FOUND = 13, PERMISSION_DENIED = 14, MISSING_COLUMN_ALIAS = 15, OBJECT_NOT_FOUND = 16, OBJECT_IN_ERROR_STATE = 17, OBJECT_SPEC_INVALID = 18 }
+	export enum DataExecutionStatusErrorCode { DATA_EXECUTION_ERROR_CODE_UNSPECIFIED = 'DATA_EXECUTION_ERROR_CODE_UNSPECIFIED', TIMED_OUT = 'TIMED_OUT', TOO_MANY_ROWS = 'TOO_MANY_ROWS', TOO_MANY_COLUMNS = 'TOO_MANY_COLUMNS', TOO_MANY_CELLS = 'TOO_MANY_CELLS', ENGINE = 'ENGINE', PARAMETER_INVALID = 'PARAMETER_INVALID', UNSUPPORTED_DATA_TYPE = 'UNSUPPORTED_DATA_TYPE', DUPLICATE_COLUMN_NAMES = 'DUPLICATE_COLUMN_NAMES', INTERRUPTED = 'INTERRUPTED', CONCURRENT_QUERY = 'CONCURRENT_QUERY', OTHER = 'OTHER', TOO_MANY_CHARS_PER_CELL = 'TOO_MANY_CHARS_PER_CELL', DATA_NOT_FOUND = 'DATA_NOT_FOUND', PERMISSION_DENIED = 'PERMISSION_DENIED', MISSING_COLUMN_ALIAS = 'MISSING_COLUMN_ALIAS', OBJECT_NOT_FOUND = 'OBJECT_NOT_FOUND', OBJECT_IN_ERROR_STATE = 'OBJECT_IN_ERROR_STATE', OBJECT_SPEC_INVALID = 'OBJECT_SPEC_INVALID' }
 
-	export enum DataExecutionStatusState { DATA_EXECUTION_STATE_UNSPECIFIED = 0, NOT_STARTED = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum DataExecutionStatusState { DATA_EXECUTION_STATE_UNSPECIFIED = 'DATA_EXECUTION_STATE_UNSPECIFIED', NOT_STARTED = 'NOT_STARTED', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** The filter criteria associated with a specific column. */
@@ -1442,7 +1442,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BooleanConditionType { CONDITION_TYPE_UNSPECIFIED = 0, NUMBER_GREATER = 1, NUMBER_GREATER_THAN_EQ = 2, NUMBER_LESS = 3, NUMBER_LESS_THAN_EQ = 4, NUMBER_EQ = 5, NUMBER_NOT_EQ = 6, NUMBER_BETWEEN = 7, NUMBER_NOT_BETWEEN = 8, TEXT_CONTAINS = 9, TEXT_NOT_CONTAINS = 10, TEXT_STARTS_WITH = 11, TEXT_ENDS_WITH = 12, TEXT_EQ = 13, TEXT_IS_EMAIL = 14, TEXT_IS_URL = 15, DATE_EQ = 16, DATE_BEFORE = 17, DATE_AFTER = 18, DATE_ON_OR_BEFORE = 19, DATE_ON_OR_AFTER = 20, DATE_BETWEEN = 21, DATE_NOT_BETWEEN = 22, DATE_IS_VALID = 23, ONE_OF_RANGE = 24, ONE_OF_LIST = 25, BLANK = 26, NOT_BLANK = 27, CUSTOM_FORMULA = 28, BOOLEAN = 29, TEXT_NOT_EQ = 30, DATE_NOT_EQ = 31, FILTER_EXPRESSION = 32 }
+	export enum BooleanConditionType { CONDITION_TYPE_UNSPECIFIED = 'CONDITION_TYPE_UNSPECIFIED', NUMBER_GREATER = 'NUMBER_GREATER', NUMBER_GREATER_THAN_EQ = 'NUMBER_GREATER_THAN_EQ', NUMBER_LESS = 'NUMBER_LESS', NUMBER_LESS_THAN_EQ = 'NUMBER_LESS_THAN_EQ', NUMBER_EQ = 'NUMBER_EQ', NUMBER_NOT_EQ = 'NUMBER_NOT_EQ', NUMBER_BETWEEN = 'NUMBER_BETWEEN', NUMBER_NOT_BETWEEN = 'NUMBER_NOT_BETWEEN', TEXT_CONTAINS = 'TEXT_CONTAINS', TEXT_NOT_CONTAINS = 'TEXT_NOT_CONTAINS', TEXT_STARTS_WITH = 'TEXT_STARTS_WITH', TEXT_ENDS_WITH = 'TEXT_ENDS_WITH', TEXT_EQ = 'TEXT_EQ', TEXT_IS_EMAIL = 'TEXT_IS_EMAIL', TEXT_IS_URL = 'TEXT_IS_URL', DATE_EQ = 'DATE_EQ', DATE_BEFORE = 'DATE_BEFORE', DATE_AFTER = 'DATE_AFTER', DATE_ON_OR_BEFORE = 'DATE_ON_OR_BEFORE', DATE_ON_OR_AFTER = 'DATE_ON_OR_AFTER', DATE_BETWEEN = 'DATE_BETWEEN', DATE_NOT_BETWEEN = 'DATE_NOT_BETWEEN', DATE_IS_VALID = 'DATE_IS_VALID', ONE_OF_RANGE = 'ONE_OF_RANGE', ONE_OF_LIST = 'ONE_OF_LIST', BLANK = 'BLANK', NOT_BLANK = 'NOT_BLANK', CUSTOM_FORMULA = 'CUSTOM_FORMULA', BOOLEAN = 'BOOLEAN', TEXT_NOT_EQ = 'TEXT_NOT_EQ', DATE_NOT_EQ = 'DATE_NOT_EQ', FILTER_EXPRESSION = 'FILTER_EXPRESSION' }
 
 
 	/** The value of the condition. */
@@ -1472,9 +1472,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionValueRelativeDate { RELATIVE_DATE_UNSPECIFIED = 0, PAST_YEAR = 1, PAST_MONTH = 2, PAST_WEEK = 3, YESTERDAY = 4, TODAY = 5, TOMORROW = 6 }
+	export enum ConditionValueRelativeDate { RELATIVE_DATE_UNSPECIFIED = 'RELATIVE_DATE_UNSPECIFIED', PAST_YEAR = 'PAST_YEAR', PAST_MONTH = 'PAST_MONTH', PAST_WEEK = 'PAST_WEEK', YESTERDAY = 'YESTERDAY', TODAY = 'TODAY', TOMORROW = 'TOMORROW' }
 
-	export enum ChartSpecHiddenDimensionStrategy { CHART_HIDDEN_DIMENSION_STRATEGY_UNSPECIFIED = 0, SKIP_HIDDEN_ROWS_AND_COLUMNS = 1, SKIP_HIDDEN_ROWS = 2, SKIP_HIDDEN_COLUMNS = 3, SHOW_ALL = 4 }
+	export enum ChartSpecHiddenDimensionStrategy { CHART_HIDDEN_DIMENSION_STRATEGY_UNSPECIFIED = 'CHART_HIDDEN_DIMENSION_STRATEGY_UNSPECIFIED', SKIP_HIDDEN_ROWS_AND_COLUMNS = 'SKIP_HIDDEN_ROWS_AND_COLUMNS', SKIP_HIDDEN_ROWS = 'SKIP_HIDDEN_ROWS', SKIP_HIDDEN_COLUMNS = 'SKIP_HIDDEN_COLUMNS', SHOW_ALL = 'SHOW_ALL' }
 
 
 	/** A histogram chart. A histogram chart groups data items into bins, displaying each bin as a column of stacked items. Histograms are used to display the distribution of a dataset. Each column of items represents a range into which those items fall. The number of bins can be chosen automatically or specified explicitly. */
@@ -1521,7 +1521,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistogramChartSpecLegendPosition { HISTOGRAM_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5, INSIDE_LEGEND = 6 }
+	export enum HistogramChartSpecLegendPosition { HISTOGRAM_CHART_LEGEND_POSITION_UNSPECIFIED = 'HISTOGRAM_CHART_LEGEND_POSITION_UNSPECIFIED', BOTTOM_LEGEND = 'BOTTOM_LEGEND', LEFT_LEGEND = 'LEFT_LEGEND', RIGHT_LEGEND = 'RIGHT_LEGEND', TOP_LEGEND = 'TOP_LEGEND', NO_LEGEND = 'NO_LEGEND', INSIDE_LEGEND = 'INSIDE_LEGEND' }
 
 
 	/** A histogram series containing the series color and data. */
@@ -1588,7 +1588,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrgChartSpecNodeSize { ORG_CHART_LABEL_SIZE_UNSPECIFIED = 0, SMALL = 1, MEDIUM = 2, LARGE = 3 }
+	export enum OrgChartSpecNodeSize { ORG_CHART_LABEL_SIZE_UNSPECIFIED = 'ORG_CHART_LABEL_SIZE_UNSPECIFIED', SMALL = 'SMALL', MEDIUM = 'MEDIUM', LARGE = 'LARGE' }
 
 
 	/** A pie chart. */
@@ -1631,7 +1631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PieChartSpecLegendPosition { PIE_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5, LABELED_LEGEND = 6 }
+	export enum PieChartSpecLegendPosition { PIE_CHART_LEGEND_POSITION_UNSPECIFIED = 'PIE_CHART_LEGEND_POSITION_UNSPECIFIED', BOTTOM_LEGEND = 'BOTTOM_LEGEND', LEFT_LEGEND = 'LEFT_LEGEND', RIGHT_LEGEND = 'RIGHT_LEGEND', TOP_LEGEND = 'TOP_LEGEND', NO_LEGEND = 'NO_LEGEND', LABELED_LEGEND = 'LABELED_LEGEND' }
 
 
 	/** A scorecard chart. Scorecard charts are used to highlight key performance indicators, known as KPIs, on the spreadsheet. A scorecard chart can represent things like total sales, average cost, or a top selling item. You can specify a single data value, or aggregate over a range of data. Percentage or absolute difference from a baseline value can be highlighted, like changes over time. */
@@ -1729,7 +1729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BaselineValueFormatComparisonType { COMPARISON_TYPE_UNDEFINED = 0, ABSOLUTE_DIFFERENCE = 1, PERCENTAGE_DIFFERENCE = 2 }
+	export enum BaselineValueFormatComparisonType { COMPARISON_TYPE_UNDEFINED = 'COMPARISON_TYPE_UNDEFINED', ABSOLUTE_DIFFERENCE = 'ABSOLUTE_DIFFERENCE', PERCENTAGE_DIFFERENCE = 'PERCENTAGE_DIFFERENCE' }
 
 
 	/** Custom number formatting options for chart attributes. */
@@ -1779,7 +1779,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScorecardChartSpecNumberFormatSource { CHART_NUMBER_FORMAT_SOURCE_UNDEFINED = 0, FROM_DATA = 1, CUSTOM = 2 }
+	export enum ScorecardChartSpecNumberFormatSource { CHART_NUMBER_FORMAT_SOURCE_UNDEFINED = 'CHART_NUMBER_FORMAT_SOURCE_UNDEFINED', FROM_DATA = 'FROM_DATA', CUSTOM = 'CUSTOM' }
 
 
 	/** A sort order associated with a specific column or row. */
@@ -1824,7 +1824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortSpecSortOrder { SORT_ORDER_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum SortSpecSortOrder { SORT_ORDER_UNSPECIFIED = 'SORT_ORDER_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** A Treemap chart. */
@@ -2109,7 +2109,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WaterfallChartSpecStackedType { WATERFALL_STACKED_TYPE_UNSPECIFIED = 0, STACKED = 1, SEQUENTIAL = 2 }
+	export enum WaterfallChartSpecStackedType { WATERFALL_STACKED_TYPE_UNSPECIFIED = 'WATERFALL_STACKED_TYPE_UNSPECIFIED', STACKED = 'STACKED', SEQUENTIAL = 'SEQUENTIAL' }
 
 
 	/** The result of adding a chart to a spreadsheet. */
@@ -2325,9 +2325,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BorderStyle { STYLE_UNSPECIFIED = 0, DOTTED = 1, DASHED = 2, SOLID = 3, SOLID_MEDIUM = 4, SOLID_THICK = 5, NONE = 6, DOUBLE = 7 }
+	export enum BorderStyle { STYLE_UNSPECIFIED = 'STYLE_UNSPECIFIED', DOTTED = 'DOTTED', DASHED = 'DASHED', SOLID = 'SOLID', SOLID_MEDIUM = 'SOLID_MEDIUM', SOLID_THICK = 'SOLID_THICK', NONE = 'NONE', DOUBLE = 'DOUBLE' }
 
-	export enum CellFormatHyperlinkDisplayType { HYPERLINK_DISPLAY_TYPE_UNSPECIFIED = 0, LINKED = 1, PLAIN_TEXT = 2 }
+	export enum CellFormatHyperlinkDisplayType { HYPERLINK_DISPLAY_TYPE_UNSPECIFIED = 'HYPERLINK_DISPLAY_TYPE_UNSPECIFIED', LINKED = 'LINKED', PLAIN_TEXT = 'PLAIN_TEXT' }
 
 
 	/** The number format of a cell. */
@@ -2357,7 +2357,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NumberFormatType { NUMBER_FORMAT_TYPE_UNSPECIFIED = 0, TEXT = 1, NUMBER = 2, PERCENT = 3, CURRENCY = 4, DATE = 5, TIME = 6, DATE_TIME = 7, SCIENTIFIC = 8 }
+	export enum NumberFormatType { NUMBER_FORMAT_TYPE_UNSPECIFIED = 'NUMBER_FORMAT_TYPE_UNSPECIFIED', TEXT = 'TEXT', NUMBER = 'NUMBER', PERCENT = 'PERCENT', CURRENCY = 'CURRENCY', DATE = 'DATE', TIME = 'TIME', DATE_TIME = 'DATE_TIME', SCIENTIFIC = 'SCIENTIFIC' }
 
 
 	/** The amount of padding around the cell, in pixels. When updating padding, every field must be specified. */
@@ -2401,7 +2401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CellFormatTextDirection { TEXT_DIRECTION_UNSPECIFIED = 0, LEFT_TO_RIGHT = 1, RIGHT_TO_LEFT = 2 }
+	export enum CellFormatTextDirection { TEXT_DIRECTION_UNSPECIFIED = 'TEXT_DIRECTION_UNSPECIFIED', LEFT_TO_RIGHT = 'LEFT_TO_RIGHT', RIGHT_TO_LEFT = 'RIGHT_TO_LEFT' }
 
 
 	/** The rotation applied to text in a cell. */
@@ -2431,9 +2431,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CellFormatVerticalAlignment { VERTICAL_ALIGN_UNSPECIFIED = 0, TOP = 1, MIDDLE = 2, BOTTOM = 3 }
+	export enum CellFormatVerticalAlignment { VERTICAL_ALIGN_UNSPECIFIED = 'VERTICAL_ALIGN_UNSPECIFIED', TOP = 'TOP', MIDDLE = 'MIDDLE', BOTTOM = 'BOTTOM' }
 
-	export enum CellFormatWrapStrategy { WRAP_STRATEGY_UNSPECIFIED = 0, OVERFLOW_CELL = 1, LEGACY_WRAP = 2, CLIP = 3, WRAP = 4 }
+	export enum CellFormatWrapStrategy { WRAP_STRATEGY_UNSPECIFIED = 'WRAP_STRATEGY_UNSPECIFIED', OVERFLOW_CELL = 'OVERFLOW_CELL', LEGACY_WRAP = 'LEGACY_WRAP', CLIP = 'CLIP', WRAP = 'WRAP' }
 
 
 	/** A rule that applies a gradient color scale format, based on the interpolation points listed. The format of a cell will vary based on its contents as compared to the values of the interpolation points. */
@@ -2492,7 +2492,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterpolationPointType { INTERPOLATION_POINT_TYPE_UNSPECIFIED = 0, MIN = 1, MAX = 2, NUMBER = 3, PERCENT = 4, PERCENTILE = 5 }
+	export enum InterpolationPointType { INTERPOLATION_POINT_TYPE_UNSPECIFIED = 'INTERPOLATION_POINT_TYPE_UNSPECIFIED', MIN = 'MIN', MAX = 'MAX', NUMBER = 'NUMBER', PERCENT = 'PERCENT', PERCENTILE = 'PERCENTILE' }
 
 
 	/** Adds a data source. After the data source is added successfully, an associated DATA_SOURCE sheet is created and an execution is triggered to refresh the sheet to read data from the data source. The request requires an additional `bigquery.readonly` OAuth scope. */
@@ -2782,7 +2782,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionRangeDimension { DIMENSION_UNSPECIFIED = 0, ROWS = 1, COLUMNS = 2 }
+	export enum DimensionRangeDimension { DIMENSION_UNSPECIFIED = 'DIMENSION_UNSPECIFIED', ROWS = 'ROWS', COLUMNS = 'COLUMNS' }
 
 
 	/** The result of adding a group. */
@@ -3276,7 +3276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SheetPropertiesSheetType { SHEET_TYPE_UNSPECIFIED = 0, GRID = 1, OBJECT = 2, DATA_SOURCE = 3 }
+	export enum SheetPropertiesSheetType { SHEET_TYPE_UNSPECIFIED = 'SHEET_TYPE_UNSPECIFIED', GRID = 'GRID', OBJECT = 'OBJECT', DATA_SOURCE = 'DATA_SOURCE' }
 
 
 	/** The result of adding a sheet. */
@@ -3594,7 +3594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceTableColumnSelectionType { DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED = 0, SELECTED = 1, SYNC_ALL = 2 }
+	export enum DataSourceTableColumnSelectionType { DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED = 'DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED', SELECTED = 'SELECTED', SYNC_ALL = 'SYNC_ALL' }
 
 
 	/** A data validation rule. */
@@ -3707,7 +3707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorValueType { ERROR_TYPE_UNSPECIFIED = 0, ERROR = 1, NULL_VALUE = 2, DIVIDE_BY_ZERO = 3, VALUE = 4, REF = 5, NAME = 6, NUM = 7, N_A = 8, LOADING = 9 }
+	export enum ErrorValueType { ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED', ERROR = 'ERROR', NULL_VALUE = 'NULL_VALUE', DIVIDE_BY_ZERO = 'DIVIDE_BY_ZERO', VALUE = 'VALUE', REF = 'REF', NAME = 'NAME', NUM = 'NUM', N_A = 'N_A', LOADING = 'LOADING' }
 
 
 	/** A pivot table. */
@@ -3898,7 +3898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DateTimeRuleType { DATE_TIME_RULE_TYPE_UNSPECIFIED = 0, SECOND = 1, MINUTE = 2, HOUR = 3, HOUR_MINUTE = 4, HOUR_MINUTE_AMPM = 5, DAY_OF_WEEK = 6, DAY_OF_YEAR = 7, DAY_OF_MONTH = 8, DAY_MONTH = 9, MONTH = 10, QUARTER = 11, YEAR = 12, YEAR_MONTH = 13, YEAR_QUARTER = 14, YEAR_MONTH_DAY = 15 }
+	export enum DateTimeRuleType { DATE_TIME_RULE_TYPE_UNSPECIFIED = 'DATE_TIME_RULE_TYPE_UNSPECIFIED', SECOND = 'SECOND', MINUTE = 'MINUTE', HOUR = 'HOUR', HOUR_MINUTE = 'HOUR_MINUTE', HOUR_MINUTE_AMPM = 'HOUR_MINUTE_AMPM', DAY_OF_WEEK = 'DAY_OF_WEEK', DAY_OF_YEAR = 'DAY_OF_YEAR', DAY_OF_MONTH = 'DAY_OF_MONTH', DAY_MONTH = 'DAY_MONTH', MONTH = 'MONTH', QUARTER = 'QUARTER', YEAR = 'YEAR', YEAR_MONTH = 'YEAR_MONTH', YEAR_QUARTER = 'YEAR_QUARTER', YEAR_MONTH_DAY = 'YEAR_MONTH_DAY' }
 
 
 	/** Allows you to organize the numeric values in a source data column into buckets of a constant size. All values from HistogramRule.start to HistogramRule.end are placed into groups of size HistogramRule.interval. In addition, all values below HistogramRule.start are placed in one group, and all values above HistogramRule.end are placed in another. Only HistogramRule.interval is required, though if HistogramRule.start and HistogramRule.end are both provided, HistogramRule.start must be less than HistogramRule.end. For example, a pivot table showing average purchase amount by age that has 50+ rows: +-----+-------------------+ | Age | AVERAGE of Amount | +-----+-------------------+ | 16 | $27.13 | | 17 | $5.24 | | 18 | $20.15 | ... +-----+-------------------+ could be turned into a pivot table that looks like the one below by applying a histogram group rule with a HistogramRule.start of 25, an HistogramRule.interval of 20, and an HistogramRule.end of 65. +-------------+-------------------+ | Grouped Age | AVERAGE of Amount | +-------------+-------------------+ | < 25 | $19.34 | | 25-45 | $31.43 | | 45-65 | $35.87 | | > 65 | $27.55 | +-------------+-------------------+ | Grand Total | $29.12 | +-------------+-------------------+ */
@@ -4074,7 +4074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PivotTableValueLayout { HORIZONTAL = 0, VERTICAL = 1 }
+	export enum PivotTableValueLayout { HORIZONTAL = 'HORIZONTAL', VERTICAL = 'VERTICAL' }
 
 
 	/** The definition of how a value in a pivot table should be calculated. */
@@ -4128,9 +4128,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PivotValueCalculatedDisplayType { PIVOT_VALUE_CALCULATED_DISPLAY_TYPE_UNSPECIFIED = 0, PERCENT_OF_ROW_TOTAL = 1, PERCENT_OF_COLUMN_TOTAL = 2, PERCENT_OF_GRAND_TOTAL = 3 }
+	export enum PivotValueCalculatedDisplayType { PIVOT_VALUE_CALCULATED_DISPLAY_TYPE_UNSPECIFIED = 'PIVOT_VALUE_CALCULATED_DISPLAY_TYPE_UNSPECIFIED', PERCENT_OF_ROW_TOTAL = 'PERCENT_OF_ROW_TOTAL', PERCENT_OF_COLUMN_TOTAL = 'PERCENT_OF_COLUMN_TOTAL', PERCENT_OF_GRAND_TOTAL = 'PERCENT_OF_GRAND_TOTAL' }
 
-	export enum PivotValueSummarizeFunction { PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED = 0, SUM = 1, COUNTA = 2, COUNT = 3, COUNTUNIQUE = 4, AVERAGE = 5, MAX = 6, MIN = 7, MEDIAN = 8, PRODUCT = 9, STDEV = 10, STDEVP = 11, VAR = 12, VARP = 13, CUSTOM = 14 }
+	export enum PivotValueSummarizeFunction { PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED = 'PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED', SUM = 'SUM', COUNTA = 'COUNTA', COUNT = 'COUNT', COUNTUNIQUE = 'COUNTUNIQUE', AVERAGE = 'AVERAGE', MAX = 'MAX', MIN = 'MIN', MEDIAN = 'MEDIAN', PRODUCT = 'PRODUCT', STDEV = 'STDEV', STDEVP = 'STDEVP', VAR = 'VAR', VARP = 'VARP', CUSTOM = 'CUSTOM' }
 
 
 	/** A run of a text format. The format of this run continues until the start index of the next run. When updating, all fields must be set. */
@@ -4540,9 +4540,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeveloperMetadataLookupLocationMatchingStrategy { DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED = 0, EXACT_LOCATION = 1, INTERSECTING_LOCATION = 2 }
+	export enum DeveloperMetadataLookupLocationMatchingStrategy { DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED = 'DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED', EXACT_LOCATION = 'EXACT_LOCATION', INTERSECTING_LOCATION = 'INTERSECTING_LOCATION' }
 
-	export enum DeveloperMetadataLookupLocationType { DEVELOPER_METADATA_LOCATION_TYPE_UNSPECIFIED = 0, ROW = 1, COLUMN = 2, SHEET = 3, SPREADSHEET = 4 }
+	export enum DeveloperMetadataLookupLocationType { DEVELOPER_METADATA_LOCATION_TYPE_UNSPECIFIED = 'DEVELOPER_METADATA_LOCATION_TYPE_UNSPECIFIED', ROW = 'ROW', COLUMN = 'COLUMN', SHEET = 'SHEET', SPREADSHEET = 'SPREADSHEET' }
 
 
 	/** A location where metadata may be associated in a spreadsheet. */
@@ -4582,7 +4582,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeveloperMetadataLookupVisibility { DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED = 0, DOCUMENT = 1, PROJECT = 2 }
+	export enum DeveloperMetadataLookupVisibility { DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED = 'DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED', DOCUMENT = 'DOCUMENT', PROJECT = 'PROJECT' }
 
 
 	/** The response when clearing a range of values selected with DataFilters in a spreadsheet. */
@@ -4687,9 +4687,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchGetValuesByDataFilterRequestDateTimeRenderOption { SERIAL_NUMBER = 0, FORMATTED_STRING = 1 }
+	export enum BatchGetValuesByDataFilterRequestDateTimeRenderOption { SERIAL_NUMBER = 'SERIAL_NUMBER', FORMATTED_STRING = 'FORMATTED_STRING' }
 
-	export enum BatchGetValuesByDataFilterRequestValueRenderOption { FORMATTED_VALUE = 0, UNFORMATTED_VALUE = 1, FORMULA = 2 }
+	export enum BatchGetValuesByDataFilterRequestValueRenderOption { FORMATTED_VALUE = 'FORMATTED_VALUE', UNFORMATTED_VALUE = 'UNFORMATTED_VALUE', FORMULA = 'FORMULA' }
 
 
 	/** The response when retrieving more than one range of values in a spreadsheet selected by DataFilters. */
@@ -5057,9 +5057,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CopyPasteRequestPasteOrientation { NORMAL = 0, TRANSPOSE = 1 }
+	export enum CopyPasteRequestPasteOrientation { NORMAL = 'NORMAL', TRANSPOSE = 'TRANSPOSE' }
 
-	export enum CopyPasteRequestPasteType { PASTE_NORMAL = 0, PASTE_VALUES = 1, PASTE_FORMAT = 2, PASTE_NO_BORDERS = 3, PASTE_FORMULA = 4, PASTE_DATA_VALIDATION = 5, PASTE_CONDITIONAL_FORMATTING = 6 }
+	export enum CopyPasteRequestPasteType { PASTE_NORMAL = 'PASTE_NORMAL', PASTE_VALUES = 'PASTE_VALUES', PASTE_FORMAT = 'PASTE_FORMAT', PASTE_NO_BORDERS = 'PASTE_NO_BORDERS', PASTE_FORMULA = 'PASTE_FORMULA', PASTE_DATA_VALIDATION = 'PASTE_DATA_VALIDATION', PASTE_CONDITIONAL_FORMATTING = 'PASTE_CONDITIONAL_FORMATTING' }
 
 
 	/** A request to create developer metadata. */
@@ -5628,7 +5628,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MergeCellsRequestMergeType { MERGE_ALL = 0, MERGE_COLUMNS = 1, MERGE_ROWS = 2 }
+	export enum MergeCellsRequestMergeType { MERGE_ALL = 'MERGE_ALL', MERGE_COLUMNS = 'MERGE_COLUMNS', MERGE_ROWS = 'MERGE_ROWS' }
 
 
 	/** Moves one or more rows or columns. */
@@ -5923,7 +5923,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextToColumnsRequestDelimiterType { DELIMITER_TYPE_UNSPECIFIED = 0, COMMA = 1, SEMICOLON = 2, PERIOD = 3, SPACE = 4, CUSTOM = 5, AUTODETECT = 6 }
+	export enum TextToColumnsRequestDelimiterType { DELIMITER_TYPE_UNSPECIFIED = 'DELIMITER_TYPE_UNSPECIFIED', COMMA = 'COMMA', SEMICOLON = 'SEMICOLON', PERIOD = 'PERIOD', SPACE = 'SPACE', CUSTOM = 'CUSTOM', AUTODETECT = 'AUTODETECT' }
 
 
 	/** Trims the whitespace (such as spaces, tabs, or new lines) in every cell in the specified range. This request removes all whitespace from the start and end of each cell's text, and reduces any subsequence of remaining whitespace characters to a single space. If the resulting trimmed text starts with a '+' or '=' character, the text remains as a string value and isn't interpreted as a formula. */
@@ -6520,7 +6520,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpreadsheetPropertiesAutoRecalc { RECALCULATION_INTERVAL_UNSPECIFIED = 0, ON_CHANGE = 1, MINUTE = 2, HOUR = 3 }
+	export enum SpreadsheetPropertiesAutoRecalc { RECALCULATION_INTERVAL_UNSPECIFIED = 'RECALCULATION_INTERVAL_UNSPECIFIED', ON_CHANGE = 'ON_CHANGE', MINUTE = 'MINUTE', HOUR = 'HOUR' }
 
 
 	/** Settings to control how circular dependencies are resolved with iterative calculation. */
@@ -7219,7 +7219,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceRefreshScheduleRefreshScope { DATA_SOURCE_REFRESH_SCOPE_UNSPECIFIED = 0, ALL_DATA_SOURCES = 1 }
+	export enum DataSourceRefreshScheduleRefreshScope { DATA_SOURCE_REFRESH_SCOPE_UNSPECIFIED = 'DATA_SOURCE_REFRESH_SCOPE_UNSPECIFIED', ALL_DATA_SOURCES = 'ALL_DATA_SOURCES' }
 
 
 	/** A weekly schedule for data to refresh on specific days in a given time interval. */
@@ -7403,7 +7403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchUpdateValuesByDataFilterRequestValueInputOption { INPUT_VALUE_OPTION_UNSPECIFIED = 0, RAW = 1, USER_ENTERED = 2 }
+	export enum BatchUpdateValuesByDataFilterRequestValueInputOption { INPUT_VALUE_OPTION_UNSPECIFIED = 'INPUT_VALUE_OPTION_UNSPECIFIED', RAW = 'RAW', USER_ENTERED = 'USER_ENTERED' }
 
 
 	/** The response when updating a range of values in a spreadsheet. */
@@ -7942,7 +7942,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Sheets_spreadsheets_values_appendInsertDataOption { OVERWRITE = 0, INSERT_ROWS = 1 }
+	export enum Sheets_spreadsheets_values_appendInsertDataOption { OVERWRITE = 'OVERWRITE', INSERT_ROWS = 'INSERT_ROWS' }
 
 }
 

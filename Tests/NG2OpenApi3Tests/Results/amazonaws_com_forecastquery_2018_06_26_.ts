@@ -214,9 +214,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum QueryForecastX_Amz_Target { 'AmazonForecastRuntime.QueryForecast' = 0 }
+	export enum QueryForecastX_Amz_Target { 'AmazonForecastRuntime.QueryForecast' = 'AmazonForecastRuntime.QueryForecast' }
 
-	export enum QueryWhatIfForecastX_Amz_Target { 'AmazonForecastRuntime.QueryWhatIfForecast' = 0 }
+	export enum QueryWhatIfForecastX_Amz_Target { 'AmazonForecastRuntime.QueryWhatIfForecast' = 'AmazonForecastRuntime.QueryWhatIfForecast' }
 
 }
 

@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AliasContextKind { KIND_UNSPECIFIED = 0, FIXED = 1, MOVABLE = 2, OTHER = 3 }
+	export enum AliasContextKind { KIND_UNSPECIFIED = 'KIND_UNSPECIFIED', FIXED = 'FIXED', MOVABLE = 'MOVABLE', OTHER = 'OTHER' }
 
 
 	/** Indicates which analysis completed successfully. Multiple types of analysis can be performed on a single resource. */
@@ -316,7 +316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageDataPackageType { PACKAGE_TYPE_UNSPECIFIED = 0, OS = 1, MAVEN = 2, GO = 3, GO_STDLIB = 4, PYPI = 5, NPM = 6, NUGET = 7, RUBYGEMS = 8, RUST = 9, COMPOSER = 10 }
+	export enum PackageDataPackageType { PACKAGE_TYPE_UNSPECIFIED = 'PACKAGE_TYPE_UNSPECIFIED', OS = 'OS', MAVEN = 'MAVEN', GO = 'GO', GO_STDLIB = 'GO_STDLIB', PYPI = 'PYPI', NPM = 'NPM', NUGET = 'NUGET', RUBYGEMS = 'RUBYGEMS', RUST = 'RUST', COMPOSER = 'COMPOSER' }
 
 
 	/** AnalyzePackagesResponse contains the information necessary to find results for the given scan. */
@@ -1632,19 +1632,19 @@ export namespace MyNS {
 
 	}
 
-	export enum CVSSAttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 0, ATTACK_COMPLEXITY_LOW = 1, ATTACK_COMPLEXITY_HIGH = 2, ATTACK_COMPLEXITY_MEDIUM = 3 }
+	export enum CVSSAttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 'ATTACK_COMPLEXITY_UNSPECIFIED', ATTACK_COMPLEXITY_LOW = 'ATTACK_COMPLEXITY_LOW', ATTACK_COMPLEXITY_HIGH = 'ATTACK_COMPLEXITY_HIGH', ATTACK_COMPLEXITY_MEDIUM = 'ATTACK_COMPLEXITY_MEDIUM' }
 
-	export enum CVSSAttackVector { ATTACK_VECTOR_UNSPECIFIED = 0, ATTACK_VECTOR_NETWORK = 1, ATTACK_VECTOR_ADJACENT = 2, ATTACK_VECTOR_LOCAL = 3, ATTACK_VECTOR_PHYSICAL = 4 }
+	export enum CVSSAttackVector { ATTACK_VECTOR_UNSPECIFIED = 'ATTACK_VECTOR_UNSPECIFIED', ATTACK_VECTOR_NETWORK = 'ATTACK_VECTOR_NETWORK', ATTACK_VECTOR_ADJACENT = 'ATTACK_VECTOR_ADJACENT', ATTACK_VECTOR_LOCAL = 'ATTACK_VECTOR_LOCAL', ATTACK_VECTOR_PHYSICAL = 'ATTACK_VECTOR_PHYSICAL' }
 
-	export enum CVSSAuthentication { AUTHENTICATION_UNSPECIFIED = 0, AUTHENTICATION_MULTIPLE = 1, AUTHENTICATION_SINGLE = 2, AUTHENTICATION_NONE = 3 }
+	export enum CVSSAuthentication { AUTHENTICATION_UNSPECIFIED = 'AUTHENTICATION_UNSPECIFIED', AUTHENTICATION_MULTIPLE = 'AUTHENTICATION_MULTIPLE', AUTHENTICATION_SINGLE = 'AUTHENTICATION_SINGLE', AUTHENTICATION_NONE = 'AUTHENTICATION_NONE' }
 
-	export enum CVSSAvailabilityImpact { IMPACT_UNSPECIFIED = 0, IMPACT_HIGH = 1, IMPACT_LOW = 2, IMPACT_NONE = 3, IMPACT_PARTIAL = 4, IMPACT_COMPLETE = 5 }
+	export enum CVSSAvailabilityImpact { IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED', IMPACT_HIGH = 'IMPACT_HIGH', IMPACT_LOW = 'IMPACT_LOW', IMPACT_NONE = 'IMPACT_NONE', IMPACT_PARTIAL = 'IMPACT_PARTIAL', IMPACT_COMPLETE = 'IMPACT_COMPLETE' }
 
-	export enum CVSSPrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 0, PRIVILEGES_REQUIRED_NONE = 1, PRIVILEGES_REQUIRED_LOW = 2, PRIVILEGES_REQUIRED_HIGH = 3 }
+	export enum CVSSPrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 'PRIVILEGES_REQUIRED_UNSPECIFIED', PRIVILEGES_REQUIRED_NONE = 'PRIVILEGES_REQUIRED_NONE', PRIVILEGES_REQUIRED_LOW = 'PRIVILEGES_REQUIRED_LOW', PRIVILEGES_REQUIRED_HIGH = 'PRIVILEGES_REQUIRED_HIGH' }
 
-	export enum CVSSScope { SCOPE_UNSPECIFIED = 0, SCOPE_UNCHANGED = 1, SCOPE_CHANGED = 2 }
+	export enum CVSSScope { SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED', SCOPE_UNCHANGED = 'SCOPE_UNCHANGED', SCOPE_CHANGED = 'SCOPE_CHANGED' }
 
-	export enum CVSSUserInteraction { USER_INTERACTION_UNSPECIFIED = 0, USER_INTERACTION_NONE = 1, USER_INTERACTION_REQUIRED = 2 }
+	export enum CVSSUserInteraction { USER_INTERACTION_UNSPECIFIED = 'USER_INTERACTION_UNSPECIFIED', USER_INTERACTION_NONE = 'USER_INTERACTION_NONE', USER_INTERACTION_REQUIRED = 'USER_INTERACTION_REQUIRED' }
 
 
 	/** The category to which the update belongs. */
@@ -1843,7 +1843,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentOccurrencePlatform { PLATFORM_UNSPECIFIED = 0, GKE = 1, FLEX = 2, CUSTOM = 3 }
+	export enum DeploymentOccurrencePlatform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', GKE = 'GKE', FLEX = 'FLEX', CUSTOM = 'CUSTOM' }
 
 
 	/** Provides information about the analysis status of a discovered resource. */
@@ -1937,9 +1937,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryOccurrenceAnalysisStatus { ANALYSIS_STATUS_UNSPECIFIED = 0, PENDING = 1, SCANNING = 2, FINISHED_SUCCESS = 3, COMPLETE = 4, FINISHED_FAILED = 5, FINISHED_UNSUPPORTED = 6 }
+	export enum DiscoveryOccurrenceAnalysisStatus { ANALYSIS_STATUS_UNSPECIFIED = 'ANALYSIS_STATUS_UNSPECIFIED', PENDING = 'PENDING', SCANNING = 'SCANNING', FINISHED_SUCCESS = 'FINISHED_SUCCESS', COMPLETE = 'COMPLETE', FINISHED_FAILED = 'FINISHED_FAILED', FINISHED_UNSUPPORTED = 'FINISHED_UNSUPPORTED' }
 
-	export enum DiscoveryOccurrenceContinuousAnalysis { CONTINUOUS_ANALYSIS_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2 }
+	export enum DiscoveryOccurrenceContinuousAnalysis { CONTINUOUS_ANALYSIS_UNSPECIFIED = 'CONTINUOUS_ANALYSIS_UNSPECIFIED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** The status of an SBOM generation. */
@@ -1969,7 +1969,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SBOMStatusSbomState { SBOM_STATE_UNSPECIFIED = 0, PENDING = 1, COMPLETE = 2 }
+	export enum SBOMStatusSbomState { SBOM_STATE_UNSPECIFIED = 'SBOM_STATE_UNSPECIFIED', PENDING = 'PENDING', COMPLETE = 'COMPLETE' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -2155,7 +2155,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JustificationJustificationType { JUSTIFICATION_TYPE_UNSPECIFIED = 0, COMPONENT_NOT_PRESENT = 1, VULNERABLE_CODE_NOT_PRESENT = 2, VULNERABLE_CODE_NOT_IN_EXECUTE_PATH = 3, VULNERABLE_CODE_CANNOT_BE_CONTROLLED_BY_ADVERSARY = 4, INLINE_MITIGATIONS_ALREADY_EXIST = 5 }
+	export enum JustificationJustificationType { JUSTIFICATION_TYPE_UNSPECIFIED = 'JUSTIFICATION_TYPE_UNSPECIFIED', COMPONENT_NOT_PRESENT = 'COMPONENT_NOT_PRESENT', VULNERABLE_CODE_NOT_PRESENT = 'VULNERABLE_CODE_NOT_PRESENT', VULNERABLE_CODE_NOT_IN_EXECUTE_PATH = 'VULNERABLE_CODE_NOT_IN_EXECUTE_PATH', VULNERABLE_CODE_CANNOT_BE_CONTROLLED_BY_ADVERSARY = 'VULNERABLE_CODE_CANNOT_BE_CONTROLLED_BY_ADVERSARY', INLINE_MITIGATIONS_ALREADY_EXIST = 'INLINE_MITIGATIONS_ALREADY_EXIST' }
 
 
 	/** License information. */
@@ -2377,7 +2377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OccurrenceKind { NOTE_KIND_UNSPECIFIED = 0, VULNERABILITY = 1, BUILD = 2, IMAGE = 3, PACKAGE = 4, DEPLOYMENT = 5, DISCOVERY = 6, ATTESTATION = 7, UPGRADE = 8, COMPLIANCE = 9, DSSE_ATTESTATION = 10, VULNERABILITY_ASSESSMENT = 11, SBOM_REFERENCE = 12 }
+	export enum OccurrenceKind { NOTE_KIND_UNSPECIFIED = 'NOTE_KIND_UNSPECIFIED', VULNERABILITY = 'VULNERABILITY', BUILD = 'BUILD', IMAGE = 'IMAGE', PACKAGE = 'PACKAGE', DEPLOYMENT = 'DEPLOYMENT', DISCOVERY = 'DISCOVERY', ATTESTATION = 'ATTESTATION', UPGRADE = 'UPGRADE', COMPLIANCE = 'COMPLIANCE', DSSE_ATTESTATION = 'DSSE_ATTESTATION', VULNERABILITY_ASSESSMENT = 'VULNERABILITY_ASSESSMENT', SBOM_REFERENCE = 'SBOM_REFERENCE' }
 
 
 	/** Details on how a particular software package was installed on a system. */
@@ -2430,7 +2430,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageOccurrenceArchitecture { ARCHITECTURE_UNSPECIFIED = 0, X86 = 1, X64 = 2 }
+	export enum PackageOccurrenceArchitecture { ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED', X86 = 'X86', X64 = 'X64' }
 
 
 	/** An occurrence of a particular package installation found within a system's filesystem. E.g., glibc was found in `/var/lib/dpkg/status`. */
@@ -2519,7 +2519,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionKind { VERSION_KIND_UNSPECIFIED = 0, NORMAL = 1, MINIMUM = 2, MAXIMUM = 3 }
+	export enum VersionKind { VERSION_KIND_UNSPECIFIED = 'VERSION_KIND_UNSPECIFIED', NORMAL = 'NORMAL', MINIMUM = 'MINIMUM', MAXIMUM = 'MAXIMUM' }
 
 
 	/** The occurrence representing an SBOM reference as applied to a specific resource. The occurrence follows the DSSE specification. See https://github.com/secure-systems-lab/dsse/blob/master/envelope.md for more details. */
@@ -2835,9 +2835,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VulnerabilityOccurrenceCvssVersion { CVSS_VERSION_UNSPECIFIED = 0, CVSS_VERSION_2 = 1, CVSS_VERSION_3 = 2 }
+	export enum VulnerabilityOccurrenceCvssVersion { CVSS_VERSION_UNSPECIFIED = 'CVSS_VERSION_UNSPECIFIED', CVSS_VERSION_2 = 'CVSS_VERSION_2', CVSS_VERSION_3 = 'CVSS_VERSION_3' }
 
-	export enum VulnerabilityOccurrenceEffectiveSeverity { SEVERITY_UNSPECIFIED = 0, MINIMAL = 1, LOW = 2, MEDIUM = 3, HIGH = 4, CRITICAL = 5 }
+	export enum VulnerabilityOccurrenceEffectiveSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', MINIMAL = 'MINIMAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL' }
 
 
 	/** A detail for a distro and package this vulnerability occurrence was found in and its associated fix (if one is available). */
@@ -3024,9 +3024,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RemediationRemediationType { REMEDIATION_TYPE_UNSPECIFIED = 0, MITIGATION = 1, NO_FIX_PLANNED = 2, NONE_AVAILABLE = 3, VENDOR_FIX = 4, WORKAROUND = 5 }
+	export enum RemediationRemediationType { REMEDIATION_TYPE_UNSPECIFIED = 'REMEDIATION_TYPE_UNSPECIFIED', MITIGATION = 'MITIGATION', NO_FIX_PLANNED = 'NO_FIX_PLANNED', NONE_AVAILABLE = 'NONE_AVAILABLE', VENDOR_FIX = 'VENDOR_FIX', WORKAROUND = 'WORKAROUND' }
 
-	export enum VexAssessmentState { STATE_UNSPECIFIED = 0, AFFECTED = 1, NOT_AFFECTED = 2, FIXED = 3, UNDER_INVESTIGATION = 4 }
+	export enum VexAssessmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', AFFECTED = 'AFFECTED', NOT_AFFECTED = 'NOT_AFFECTED', FIXED = 'FIXED', UNDER_INVESTIGATION = 'UNDER_INVESTIGATION' }
 
 	@Injectable()
 	export class MyClient {

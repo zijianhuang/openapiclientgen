@@ -72,13 +72,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationPropertiesFormatAuthorizationUseStatus { Available = 0, InUse = 1 }
+	export enum AuthorizationPropertiesFormatAuthorizationUseStatus { Available = 'Available', InUse = 'InUse' }
 
-	export enum AuthorizationPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum AuthorizationPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** Express Route Circuit connection state. */
-	export enum CircuitConnectionStatus { Connected = 0, Connecting = 1, Disconnected = 2 }
+	export enum CircuitConnectionStatus { Connected = 'Connected', Connecting = 'Connecting', Disconnected = 'Disconnected' }
 
 	export interface ExpressRouteCircuit {
 	}
@@ -304,7 +304,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteCircuitPeeringConfigAdvertisedPublicPrefixesState { NotConfigured = 0, Configuring = 1, Configured = 2, ValidationNeeded = 3 }
+	export enum ExpressRouteCircuitPeeringConfigAdvertisedPublicPrefixesState { NotConfigured = 'NotConfigured', Configuring = 'Configuring', Configured = 'Configured', ValidationNeeded = 'ValidationNeeded' }
 
 
 	/** Response for ListPeering API service call retrieves all peerings that belong to an ExpressRouteCircuit. */
@@ -482,9 +482,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteCircuitPeeringPropertiesFormatPeeringType { AzurePublicPeering = 0, AzurePrivatePeering = 1, MicrosoftPeering = 2 }
+	export enum ExpressRouteCircuitPeeringPropertiesFormatPeeringType { AzurePublicPeering = 'AzurePublicPeering', AzurePrivatePeering = 'AzurePrivatePeering', MicrosoftPeering = 'MicrosoftPeering' }
 
-	export enum ExpressRouteCircuitPeeringPropertiesFormatState { Disabled = 0, Enabled = 1 }
+	export enum ExpressRouteCircuitPeeringPropertiesFormatState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Properties of ExpressRouteCircuit. */
@@ -586,7 +586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteCircuitPropertiesFormatServiceProviderProvisioningState { NotProvisioned = 0, Provisioning = 1, Provisioned = 2, Deprovisioning = 3 }
+	export enum ExpressRouteCircuitPropertiesFormatServiceProviderProvisioningState { NotProvisioned = 'NotProvisioned', Provisioning = 'Provisioning', Provisioned = 'Provisioned', Deprovisioning = 'Deprovisioning' }
 
 
 	/** The routes table associated with the ExpressRouteCircuit. */
@@ -756,9 +756,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteCircuitSkuFamily { UnlimitedData = 0, MeteredData = 1 }
+	export enum ExpressRouteCircuitSkuFamily { UnlimitedData = 'UnlimitedData', MeteredData = 'MeteredData' }
 
-	export enum ExpressRouteCircuitSkuTier { Standard = 0, Premium = 1, Basic = 2, Local = 3 }
+	export enum ExpressRouteCircuitSkuTier { Standard = 'Standard', Premium = 'Premium', Basic = 'Basic', Local = 'Local' }
 
 
 	/** Contains stats associated with the peering. */
@@ -876,11 +876,11 @@ export namespace MyNS {
 
 
 	/** The state of peering. */
-	export enum ExpressRoutePeeringState { Disabled = 0, Enabled = 1 }
+	export enum ExpressRoutePeeringState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** The peering type. */
-	export enum ExpressRoutePeeringType { AzurePublicPeering = 0, AzurePrivatePeering = 1, MicrosoftPeering = 2 }
+	export enum ExpressRoutePeeringType { AzurePublicPeering = 'AzurePublicPeering', AzurePrivatePeering = 'AzurePrivatePeering', MicrosoftPeering = 'MicrosoftPeering' }
 
 	export interface ExpressRouteServiceProvider {
 	}
@@ -1105,7 +1105,7 @@ export namespace MyNS {
 
 
 	/** The ServiceProviderProvisioningState state of the resource. */
-	export enum ServiceProviderProvisioningState { NotProvisioned = 0, Provisioning = 1, Provisioned = 2, Deprovisioning = 3 }
+	export enum ServiceProviderProvisioningState { NotProvisioned = 'NotProvisioned', Provisioning = 'Provisioning', Provisioned = 'Provisioned', Deprovisioning = 'Deprovisioning' }
 
 	@Injectable()
 	export class MyClient {

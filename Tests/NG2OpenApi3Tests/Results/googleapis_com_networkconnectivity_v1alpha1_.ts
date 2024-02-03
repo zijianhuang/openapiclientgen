@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -316,7 +316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HubState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, DELETING = 3, UPDATING = 4 }
+	export enum HubState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** The internal range resource for IPAM operations within a VPC network. Used to represent a private address range along with behavioral characterstics of that range (its usage and peering behavior). Networking resources can link to this range if they are created as belonging to it. */
@@ -411,9 +411,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InternalRangePeering { PEERING_UNSPECIFIED = 0, FOR_SELF = 1, FOR_PEER = 2, NOT_SHARED = 3 }
+	export enum InternalRangePeering { PEERING_UNSPECIFIED = 'PEERING_UNSPECIFIED', FOR_SELF = 'FOR_SELF', FOR_PEER = 'FOR_PEER', NOT_SHARED = 'NOT_SHARED' }
 
-	export enum InternalRangeUsage { USAGE_UNSPECIFIED = 0, FOR_VPC = 1, EXTERNAL_TO_VPC = 2 }
+	export enum InternalRangeUsage { USAGE_UNSPECIFIED = 'USAGE_UNSPECIFIED', FOR_VPC = 'FOR_VPC', EXTERNAL_TO_VPC = 'EXTERNAL_TO_VPC' }
 
 
 	/** Response for HubService.ListHubs method. */

@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductProvisioningState { Stopped = 0, Starting = 1, Running = 2, Stopping = 3, Succeeded = 4, Downloading = 5 }
+	export enum ProductProvisioningState { Stopped = 'Stopped', Starting = 'Starting', Running = 'Running', Stopping = 'Stopping', Succeeded = 'Succeeded', Downloading = 'Downloading' }
 
 
 	/** Product resource. */

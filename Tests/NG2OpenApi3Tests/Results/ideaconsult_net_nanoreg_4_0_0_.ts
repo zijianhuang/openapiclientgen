@@ -524,21 +524,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetInvestigationResultsDb { calibrate = 0, enanomapper = 1, enpra = 2, marina = 3, nanogenotox = 4, nanoinformatix = 5, nanoreg1 = 6, nanoreg2 = 7, nanotest = 8 }
+	export enum GetInvestigationResultsDb { calibrate = 'calibrate', enanomapper = 'enanomapper', enpra = 'enpra', marina = 'marina', nanogenotox = 'nanogenotox', nanoinformatix = 'nanoinformatix', nanoreg1 = 'nanoreg1', nanoreg2 = 'nanoreg2', nanotest = 'nanotest' }
 
-	export enum GetInvestigationResultsType { byinvestigation = 0, byassay = 1, bysubstance = 2, byprovider = 3, bycitation = 4, bystudytype = 5, bystructure_inchikey = 6, bystructure_smiles = 7, bystructure_name = 8, bysubstance_name = 9, bysubstance_type = 10 }
+	export enum GetInvestigationResultsType { byinvestigation = 'byinvestigation', byassay = 'byassay', bysubstance = 'bysubstance', byprovider = 'byprovider', bycitation = 'bycitation', bystudytype = 'bystudytype', bystructure_inchikey = 'bystructure_inchikey', bystructure_smiles = 'bystructure_smiles', bystructure_name = 'bystructure_name', bysubstance_name = 'bysubstance_name', bysubstance_type = 'bysubstance_type' }
 
-	export enum SearchByIdentifierTerm { search = 0, url = 1, inchikey = 2 }
+	export enum SearchByIdentifierTerm { search = 'search', url = 'url', inchikey = 'inchikey' }
 
-	export enum SearchByIdentifierRepresentation { all = 0, smiles = 1, reach = 2, stdinchi = 3, stdinchikey = 4, names = 5, iupac_name = 6, synonym = 7, cas = 8, einecs = 9 }
+	export enum SearchByIdentifierRepresentation { all = 'all', smiles = 'smiles', reach = 'reach', stdinchi = 'stdinchi', stdinchikey = 'stdinchikey', names = 'names', iupac_name = 'iupac_name', synonym = 'synonym', cas = 'cas', einecs = 'einecs' }
 
-	export enum SearchBySimilarityType { smiles = 0, mol = 1, url = 2 }
+	export enum SearchBySimilarityType { smiles = 'smiles', mol = 'mol', url = 'url' }
 
-	export enum GetEndpointSummaryTop { 'P-CHEM' = 0, ECOTOX = 1, 'ENV FATE' = 2, TOX = 3, EXPOSURE = 4 }
+	export enum GetEndpointSummaryTop { 'P-CHEM' = 'P-CHEM', ECOTOX = 'ECOTOX', 'ENV FATE' = 'ENV FATE', TOX = 'TOX', EXPOSURE = 'EXPOSURE' }
 
-	export enum GetSubstancesType { substancetype = 0, name = 1, like = 2, regexp = 3, uuif = 4, CompTox = 5, DOI = 6, reliability = 7, purposeFlag = 8, studyResultType = 9, isRobustStudy = 10, citation = 11, citationowner = 12, topcategory = 13, endpointcategory = 14, params = 15, owner_name = 16, owner_uuid = 17, related = 18, reference = 19, facet = 20 }
+	export enum GetSubstancesType { substancetype = 'substancetype', name = 'name', like = 'like', regexp = 'regexp', uuif = 'uuif', CompTox = 'CompTox', DOI = 'DOI', reliability = 'reliability', purposeFlag = 'purposeFlag', studyResultType = 'studyResultType', isRobustStudy = 'isRobustStudy', citation = 'citation', citationowner = 'citationowner', topcategory = 'topcategory', endpointcategory = 'endpointcategory', params = 'params', owner_name = 'owner_name', owner_uuid = 'owner_uuid', related = 'related', reference = 'reference', facet = 'facet' }
 
-	export enum Solrquery_getWt { json = 0, xml = 1 }
+	export enum Solrquery_getWt { json = 'json', xml = 'xml' }
 
 }
 

@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BulkCallResponseMessage { 'BulkCalls Request Executed' = 0, 'Mandatory Parameters Missing' = 1, 'This Delimiter is not allowed' = 2, 'BulkCalls should be used for at least 2 numbers' = 3, '\'To\' parameter length does not match \'Gateways\' Length' = 4, 'AnswerUrl is not Valid' = 5, 'HangupUrl is not Valid' = 6, 'RingUrl is not Valid' = 7, 'Unknown Core UUID' = 8 }
+	export enum BulkCallResponseMessage { 'BulkCalls Request Executed' = 'BulkCalls Request Executed', 'Mandatory Parameters Missing' = 'Mandatory Parameters Missing', 'This Delimiter is not allowed' = 'This Delimiter is not allowed', 'BulkCalls should be used for at least 2 numbers' = 'BulkCalls should be used for at least 2 numbers', '\'To\' parameter length does not match \'Gateways\' Length' = '\'To\' parameter length does not match \'Gateways\' Length', 'AnswerUrl is not Valid' = 'AnswerUrl is not Valid', 'HangupUrl is not Valid' = 'HangupUrl is not Valid', 'RingUrl is not Valid' = 'RingUrl is not Valid', 'Unknown Core UUID' = 'Unknown Core UUID' }
 
 	export interface CallNotificationParameters {
 
@@ -408,11 +408,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CallNotificationParametersAnsweredBy { machine_start = 0, machine_end_beep = 1, machine_end_other = 2, human = 3, unknown = 4 }
+	export enum CallNotificationParametersAnsweredBy { machine_start = 'machine_start', machine_end_beep = 'machine_end_beep', machine_end_other = 'machine_end_other', human = 'human', unknown = 'unknown' }
 
-	export enum CallNotificationParametersCallStatus { ringing = 0, 'early-media' = 1, answer = 2, 'in-progress' = 3, completed = 4 }
+	export enum CallNotificationParametersCallStatus { ringing = 'ringing', 'early-media' = 'early-media', answer = 'answer', 'in-progress' = 'in-progress', completed = 'completed' }
 
-	export enum CallNotificationParametersDirection { inbound = 0, outbound = 1 }
+	export enum CallNotificationParametersDirection { inbound = 'inbound', outbound = 'outbound' }
 
 	export interface CallParameters {
 
@@ -660,9 +660,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CallParametersAsyncAmdStatusCallbackMethod { POST = 0, GET = 1 }
+	export enum CallParametersAsyncAmdStatusCallbackMethod { POST = 'POST', GET = 'GET' }
 
-	export enum CallParametersMachineDetection { Enable = 0, DetectMessageEnd = 1 }
+	export enum CallParametersMachineDetection { Enable = 'Enable', DetectMessageEnd = 'DetectMessageEnd' }
 
 	export interface CallResponse {
 
@@ -726,7 +726,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CallResponseMessage { 'Call Request Executed' = 0, 'Mandatory Parameters Missing' = 1, 'AnswerUrl is not Valid' = 2, 'HangupUrl is not Valid' = 3, 'RingUrl is not Valid' = 4, 'Unknown Core UUID' = 5 }
+	export enum CallResponseMessage { 'Call Request Executed' = 'Call Request Executed', 'Mandatory Parameters Missing' = 'Mandatory Parameters Missing', 'AnswerUrl is not Valid' = 'AnswerUrl is not Valid', 'HangupUrl is not Valid' = 'HangupUrl is not Valid', 'RingUrl is not Valid' = 'RingUrl is not Valid', 'Unknown Core UUID' = 'Unknown Core UUID' }
 
 	export interface CancelScheduledHangupParameters {
 
@@ -787,7 +787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelScheduledHangupResponseMessage { 'Scheduled Hangup Cancelation Executed' = 0, 'SchedHangupId Parameter must be present' = 1, 'Scheduled Hangup Cancelation Failed -- ID not found' = 2, 'Scheduled Hangup Cancelation Failed' = 3 }
+	export enum CancelScheduledHangupResponseMessage { 'Scheduled Hangup Cancelation Executed' = 'Scheduled Hangup Cancelation Executed', 'SchedHangupId Parameter must be present' = 'SchedHangupId Parameter must be present', 'Scheduled Hangup Cancelation Failed -- ID not found' = 'Scheduled Hangup Cancelation Failed -- ID not found', 'Scheduled Hangup Cancelation Failed' = 'Scheduled Hangup Cancelation Failed' }
 
 	export interface CancelScheduledPlayParameters {
 
@@ -848,7 +848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelScheduledPlayResponseMessage { 'Scheduled Play Cancelation Executed' = 0, 'SchedPlayId Parameter must be present' = 1, 'Scheduled Play Cancelation Failed -- ID not found' = 2, 'Scheduled Play Cancelation Failed' = 3 }
+	export enum CancelScheduledPlayResponseMessage { 'Scheduled Play Cancelation Executed' = 'Scheduled Play Cancelation Executed', 'SchedPlayId Parameter must be present' = 'SchedPlayId Parameter must be present', 'Scheduled Play Cancelation Failed -- ID not found' = 'Scheduled Play Cancelation Failed -- ID not found', 'Scheduled Play Cancelation Failed' = 'Scheduled Play Cancelation Failed' }
 
 	export interface ConferenceDeafParameters {
 
@@ -925,7 +925,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceDeafResponseMessage { 'Conference Deaf Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'MemberID Parameter must be present' = 2, 'Conference Deaf Failed -- Conference not found' = 3 }
+	export enum ConferenceDeafResponseMessage { 'Conference Deaf Executed' = 'Conference Deaf Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Deaf Failed -- Conference not found' = 'Conference Deaf Failed -- Conference not found' }
 
 	export interface ConferenceHangupParameters {
 
@@ -1002,7 +1002,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceHangupResponseMessage { 'Conference Hangup Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'MemberID Parameter must be present' = 2, 'Conference Hangup Failed -- Conference not found' = 3 }
+	export enum ConferenceHangupResponseMessage { 'Conference Hangup Executed' = 'Conference Hangup Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Hangup Failed -- Conference not found' = 'Conference Hangup Failed -- Conference not found' }
 
 	export interface ConferenceKickParameters {
 
@@ -1079,7 +1079,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceKickResponseMessage { 'Conference Kick Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'MemberID Parameter must be present' = 2, 'Conference Kick Failed -- Conference not found' = 3 }
+	export enum ConferenceKickResponseMessage { 'Conference Kick Executed' = 'Conference Kick Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Kick Failed -- Conference not found' = 'Conference Kick Failed -- Conference not found' }
 
 	export interface ConferenceListMembersParameters {
 
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceListMembersResponseMessage { 'Conference ListMembers Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'Conference ListMembers Failed to parse result' = 2, 'Conference ListMembers Failed -- Conference not found' = 3 }
+	export enum ConferenceListMembersResponseMessage { 'Conference ListMembers Executed' = 'Conference ListMembers Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'Conference ListMembers Failed to parse result' = 'Conference ListMembers Failed to parse result', 'Conference ListMembers Failed -- Conference not found' = 'Conference ListMembers Failed -- Conference not found' }
 
 	export interface ConferenceListParameters {
 
@@ -1270,7 +1270,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceListResponseMessage { 'Conference List Executed' = 0, 'Conference List Failed to parse result' = 1 }
+	export enum ConferenceListResponseMessage { 'Conference List Executed' = 'Conference List Executed', 'Conference List Failed to parse result' = 'Conference List Failed to parse result' }
 
 	export interface ConferenceMuteParameters {
 
@@ -1347,7 +1347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceMuteResponseMessage { 'Conference Mute Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'MemberID Parameter must be present' = 2, 'Conference Mute Failed -- Conference not found' = 3 }
+	export enum ConferenceMuteResponseMessage { 'Conference Mute Executed' = 'Conference Mute Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Mute Failed -- Conference not found' = 'Conference Mute Failed -- Conference not found' }
 
 	export interface ConferencePlayParameters {
 
@@ -1434,7 +1434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferencePlayResponseMessage { 'Conference Play Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'FilePath Parameter must be present' = 2, 'MemberID Parameter must be present' = 3, 'Conference Play Failed -- Conference not found' = 4, 'Conference Play Failed' = 5 }
+	export enum ConferencePlayResponseMessage { 'Conference Play Executed' = 'Conference Play Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'FilePath Parameter must be present' = 'FilePath Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Play Failed -- Conference not found' = 'Conference Play Failed -- Conference not found', 'Conference Play Failed' = 'Conference Play Failed' }
 
 	export interface ConferenceRecordStartParameters {
 
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceRecordStartParametersFileFormat { wav = 0, mp3 = 1 }
+	export enum ConferenceRecordStartParametersFileFormat { wav = 'wav', mp3 = 'mp3' }
 
 	export interface ConferenceRecordStartResponse {
 
@@ -1531,7 +1531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceRecordStartResponseMessage { 'Conference RecordStart Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'FileFormat Parameter must be' = 2, 'Conference RecordStart Failed' = 3, 'Conference RecordStart Failed -- Conference not found' = 4 }
+	export enum ConferenceRecordStartResponseMessage { 'Conference RecordStart Executed' = 'Conference RecordStart Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'FileFormat Parameter must be' = 'FileFormat Parameter must be', 'Conference RecordStart Failed' = 'Conference RecordStart Failed', 'Conference RecordStart Failed -- Conference not found' = 'Conference RecordStart Failed -- Conference not found' }
 
 	export interface ConferenceRecordStopParameters {
 
@@ -1605,7 +1605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceRecordStopResponseMessage { 'Conference RecordStop Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'RecordFile Parameter must be present' = 2, 'Conference RecordStop Failed' = 3, 'Conference RecordStop Failed -- Conference not found' = 4 }
+	export enum ConferenceRecordStopResponseMessage { 'Conference RecordStop Executed' = 'Conference RecordStop Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'RecordFile Parameter must be present' = 'RecordFile Parameter must be present', 'Conference RecordStop Failed' = 'Conference RecordStop Failed', 'Conference RecordStop Failed -- Conference not found' = 'Conference RecordStop Failed -- Conference not found' }
 
 	export interface ConferenceSpeakParameters {
 
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceSpeakResponseMessage { 'Conference Speak Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'Text Parameter must be present' = 2, 'MemberID Parameter must be present' = 3, 'Conference Speak Failed -- Conference not found' = 4, 'Conference Speak Failed' = 5 }
+	export enum ConferenceSpeakResponseMessage { 'Conference Speak Executed' = 'Conference Speak Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'Text Parameter must be present' = 'Text Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Speak Failed -- Conference not found' = 'Conference Speak Failed -- Conference not found', 'Conference Speak Failed' = 'Conference Speak Failed' }
 
 	export interface ConferenceUndeafParameters {
 
@@ -1769,7 +1769,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceUndeafResponseMessage { 'Conference Undeaf Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'MemberID Parameter must be present' = 2, 'Conference Undeaf Failed -- Conference not found' = 3 }
+	export enum ConferenceUndeafResponseMessage { 'Conference Undeaf Executed' = 'Conference Undeaf Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Undeaf Failed -- Conference not found' = 'Conference Undeaf Failed -- Conference not found' }
 
 	export interface ConferenceUnmuteParameters {
 
@@ -1846,7 +1846,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceUnmuteResponseMessage { 'Conference Unmute Executed' = 0, 'ConferenceName Parameter must be present' = 1, 'MemberID Parameter must be present' = 2, 'Conference Unmute Failed -- Conference not found' = 3 }
+	export enum ConferenceUnmuteResponseMessage { 'Conference Unmute Executed' = 'Conference Unmute Executed', 'ConferenceName Parameter must be present' = 'ConferenceName Parameter must be present', 'MemberID Parameter must be present' = 'MemberID Parameter must be present', 'Conference Unmute Failed -- Conference not found' = 'Conference Unmute Failed -- Conference not found' }
 
 	export interface GroupCallParameters {
 
@@ -2102,7 +2102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupCallResponseMessage { 'GroupCall Request Executed' = 0, 'Mandatory Parameters Missing' = 1, 'This Delimiter is not allowed' = 2, 'GroupCall should be used for at least 2 numbers' = 3, '\'To\' parameter length does not match \'Gateways\' Length' = 4, 'AnswerUrl is not Valid' = 5, 'HangupUrl is not Valid' = 6, 'RingUrl is not Valid' = 7, 'ConfirmSound is not Valid' = 8, 'Unknown Core UUID' = 9, 'GroupCall Request Failed' = 10 }
+	export enum GroupCallResponseMessage { 'GroupCall Request Executed' = 'GroupCall Request Executed', 'Mandatory Parameters Missing' = 'Mandatory Parameters Missing', 'This Delimiter is not allowed' = 'This Delimiter is not allowed', 'GroupCall should be used for at least 2 numbers' = 'GroupCall should be used for at least 2 numbers', '\'To\' parameter length does not match \'Gateways\' Length' = '\'To\' parameter length does not match \'Gateways\' Length', 'AnswerUrl is not Valid' = 'AnswerUrl is not Valid', 'HangupUrl is not Valid' = 'HangupUrl is not Valid', 'RingUrl is not Valid' = 'RingUrl is not Valid', 'ConfirmSound is not Valid' = 'ConfirmSound is not Valid', 'Unknown Core UUID' = 'Unknown Core UUID', 'GroupCall Request Failed' = 'GroupCall Request Failed' }
 
 	export interface HangupAllCallsParameters {
 	}
@@ -2150,7 +2150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HangupAllCallsResponseMessage { 'All Calls Hungup' = 0, 'Hangup Call Failed' = 1 }
+	export enum HangupAllCallsResponseMessage { 'All Calls Hungup' = 'All Calls Hungup', 'Hangup Call Failed' = 'Hangup Call Failed' }
 
 	export interface HangupCallParameters {
 
@@ -2212,7 +2212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HangupCallResponseMessage { 'Hangup Call Executed' = 0, 'CallUUID or RequestUUID Parameter must be present' = 1, 'Both CallUUID and RequestUUID Parameters cannot be present' = 2, 'Hangup Call Failed' = 3 }
+	export enum HangupCallResponseMessage { 'Hangup Call Executed' = 'Hangup Call Executed', 'CallUUID or RequestUUID Parameter must be present' = 'CallUUID or RequestUUID Parameter must be present', 'Both CallUUID and RequestUUID Parameters cannot be present' = 'Both CallUUID and RequestUUID Parameters cannot be present', 'Hangup Call Failed' = 'Hangup Call Failed' }
 
 	export interface PlayParameters {
 
@@ -2284,7 +2284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayParametersLegs { aleg = 0, bleg = 1, both = 2 }
+	export enum PlayParametersLegs { aleg = 'aleg', bleg = 'bleg', both = 'both' }
 
 	export interface PlayResponse {
 
@@ -2322,7 +2322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayResponseMessage { 'Play Executed' = 0, 'CallUUID Parameter Missing' = 1, 'Sounds Parameter Missing' = 2, 'Legs Parameter is Invalid' = 3, 'Length Parameter must be a positive integer' = 4, 'Sounds Parameter is Invalid' = 5, 'Play Failed -- Call not found' = 6, 'Play Failed' = 7 }
+	export enum PlayResponseMessage { 'Play Executed' = 'Play Executed', 'CallUUID Parameter Missing' = 'CallUUID Parameter Missing', 'Sounds Parameter Missing' = 'Sounds Parameter Missing', 'Legs Parameter is Invalid' = 'Legs Parameter is Invalid', 'Length Parameter must be a positive integer' = 'Length Parameter must be a positive integer', 'Sounds Parameter is Invalid' = 'Sounds Parameter is Invalid', 'Play Failed -- Call not found' = 'Play Failed -- Call not found', 'Play Failed' = 'Play Failed' }
 
 	export interface PlayStopParameters {
 
@@ -2383,7 +2383,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayStopResponseMessage { 'PlayStop Executed' = 0, 'CallUUID Parameter Missing' = 1, 'PlayStop Failed -- Call not found' = 2, 'PlayStop Failed' = 3 }
+	export enum PlayStopResponseMessage { 'PlayStop Executed' = 'PlayStop Executed', 'CallUUID Parameter Missing' = 'CallUUID Parameter Missing', 'PlayStop Failed -- Call not found' = 'PlayStop Failed -- Call not found', 'PlayStop Failed' = 'PlayStop Failed' }
 
 	export interface RecordStartParameters {
 
@@ -2485,7 +2485,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordStartResponseMessage { 'RecordStart Executed' = 0, 'CallUUID Parameter must be present' = 1, 'FileFormat Parameter must be' = 2, 'RecordStart Failed: invalid TimeLimit' = 3, 'RecordStart Failed -- Call not found' = 4, 'RecordStart Failed' = 5 }
+	export enum RecordStartResponseMessage { 'RecordStart Executed' = 'RecordStart Executed', 'CallUUID Parameter must be present' = 'CallUUID Parameter must be present', 'FileFormat Parameter must be' = 'FileFormat Parameter must be', 'RecordStart Failed: invalid TimeLimit' = 'RecordStart Failed: invalid TimeLimit', 'RecordStart Failed -- Call not found' = 'RecordStart Failed -- Call not found', 'RecordStart Failed' = 'RecordStart Failed' }
 
 	export interface RecordStopParameters {
 
@@ -2559,7 +2559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordStopResponseMessage { 'RecordStop Executed' = 0, 'CallUUID Parameter must be present' = 1, 'RecordFile Parameter must be present' = 2, 'RecordStop Failed -- Call not found' = 3, 'RecordStop Failed' = 4 }
+	export enum RecordStopResponseMessage { 'RecordStop Executed' = 'RecordStop Executed', 'CallUUID Parameter must be present' = 'CallUUID Parameter must be present', 'RecordFile Parameter must be present' = 'RecordFile Parameter must be present', 'RecordStop Failed -- Call not found' = 'RecordStop Failed -- Call not found', 'RecordStop Failed' = 'RecordStop Failed' }
 
 	export interface ScheduleHangupParameters {
 
@@ -2648,7 +2648,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleHangupResponseMessage { 'ScheduleHangup Executed' = 0, 'CallUUID Parameter must be present' = 1, 'Time Parameter must be present' = 2, 'Time Parameter must be > 0!' = 3, 'ScheduleHangup Failed -- Call not found' = 4, 'ScheduleHangup Failed' = 5 }
+	export enum ScheduleHangupResponseMessage { 'ScheduleHangup Executed' = 'ScheduleHangup Executed', 'CallUUID Parameter must be present' = 'CallUUID Parameter must be present', 'Time Parameter must be present' = 'Time Parameter must be present', 'Time Parameter must be > 0!' = 'Time Parameter must be > 0!', 'ScheduleHangup Failed -- Call not found' = 'ScheduleHangup Failed -- Call not found', 'ScheduleHangup Failed' = 'ScheduleHangup Failed' }
 
 	export interface SchedulePlayParameters {
 
@@ -2784,7 +2784,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchedulePlayResponseMessage { 'Play Executed' = 0, 'CallUUID Parameter Missing' = 1, 'Sounds Parameter Missing' = 2, 'Time Parameter Missing' = 3, 'Time Parameter must be > 0' = 4, 'Legs Parameter is Invalid' = 5, 'Length Parameter must be a positive integer' = 6, 'Sounds Parameter is Invalid' = 7, 'Play Failed -- Call not found' = 8, 'Play Failed' = 9 }
+	export enum SchedulePlayResponseMessage { 'Play Executed' = 'Play Executed', 'CallUUID Parameter Missing' = 'CallUUID Parameter Missing', 'Sounds Parameter Missing' = 'Sounds Parameter Missing', 'Time Parameter Missing' = 'Time Parameter Missing', 'Time Parameter must be > 0' = 'Time Parameter must be > 0', 'Legs Parameter is Invalid' = 'Legs Parameter is Invalid', 'Length Parameter must be a positive integer' = 'Length Parameter must be a positive integer', 'Sounds Parameter is Invalid' = 'Sounds Parameter is Invalid', 'Play Failed -- Call not found' = 'Play Failed -- Call not found', 'Play Failed' = 'Play Failed' }
 
 	export interface SendDigitsParameters {
 
@@ -2865,7 +2865,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SendDigitsResponseMessage { 'SendDigits Executed' = 0, 'CallUUID Parameter Missing' = 1, 'Digits Parameter Missing' = 2, 'Invalid Leg Parameter' = 3, 'SendDigits Failed -- Call not found' = 4, 'SendDigits Failed' = 5 }
+	export enum SendDigitsResponseMessage { 'SendDigits Executed' = 'SendDigits Executed', 'CallUUID Parameter Missing' = 'CallUUID Parameter Missing', 'Digits Parameter Missing' = 'Digits Parameter Missing', 'Invalid Leg Parameter' = 'Invalid Leg Parameter', 'SendDigits Failed -- Call not found' = 'SendDigits Failed -- Call not found', 'SendDigits Failed' = 'SendDigits Failed' }
 
 	export interface SoundTouchParameters {
 
@@ -2966,7 +2966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SoundTouchParametersAudioDirection { in = 0, out = 1 }
+	export enum SoundTouchParametersAudioDirection { in = 'in', out = 'out' }
 
 	export interface SoundTouchResponse {
 
@@ -3004,7 +3004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SoundTouchResponseMessage { 'SoundTouch Executed' = 0, 'CallUUID Parameter Missing' = 1, 'AudioDirection Parameter Must be \'in\' or \'out\'' = 2, 'PitchSemiTones Parameter must be float' = 3, 'PitchSemiTones Parameter must be between -14 and 14' = 4, 'PitchOctaves Parameter must be float' = 5, 'PitchOctaves Parameter must be between -1 and 1' = 6, 'Pitch Parameter must be float' = 7, 'Pitch Parameter must be > 0' = 8, 'Rate Parameter must be float' = 9, 'Rate Parameter must be > 0' = 10, 'Tempo Parameter must be float' = 11, 'Tempo Parameter must be > 0' = 12, 'SoundTouch Failed -- Call not found' = 13, 'SoundTouch Failed' = 14 }
+	export enum SoundTouchResponseMessage { 'SoundTouch Executed' = 'SoundTouch Executed', 'CallUUID Parameter Missing' = 'CallUUID Parameter Missing', 'AudioDirection Parameter Must be \'in\' or \'out\'' = 'AudioDirection Parameter Must be \'in\' or \'out\'', 'PitchSemiTones Parameter must be float' = 'PitchSemiTones Parameter must be float', 'PitchSemiTones Parameter must be between -14 and 14' = 'PitchSemiTones Parameter must be between -14 and 14', 'PitchOctaves Parameter must be float' = 'PitchOctaves Parameter must be float', 'PitchOctaves Parameter must be between -1 and 1' = 'PitchOctaves Parameter must be between -1 and 1', 'Pitch Parameter must be float' = 'Pitch Parameter must be float', 'Pitch Parameter must be > 0' = 'Pitch Parameter must be > 0', 'Rate Parameter must be float' = 'Rate Parameter must be float', 'Rate Parameter must be > 0' = 'Rate Parameter must be > 0', 'Tempo Parameter must be float' = 'Tempo Parameter must be float', 'Tempo Parameter must be > 0' = 'Tempo Parameter must be > 0', 'SoundTouch Failed -- Call not found' = 'SoundTouch Failed -- Call not found', 'SoundTouch Failed' = 'SoundTouch Failed' }
 
 	export interface SoundTouchStopParameters {
 
@@ -3065,7 +3065,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SoundTouchStopResponseMessage { 'SoundTouchStop Executed' = 0, 'CallUUID Parameter Missing' = 1, 'SoundTouchStop Failed -- Call not found' = 2, 'SoundTouchStop Failed' = 3 }
+	export enum SoundTouchStopResponseMessage { 'SoundTouchStop Executed' = 'SoundTouchStop Executed', 'CallUUID Parameter Missing' = 'CallUUID Parameter Missing', 'SoundTouchStop Failed -- Call not found' = 'SoundTouchStop Failed -- Call not found', 'SoundTouchStop Failed' = 'SoundTouchStop Failed' }
 
 	export interface TransferCallParameters {
 
@@ -3139,7 +3139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferCallResponseMessage { 'Transfer Call Executed' = 0, 'CallUUID Parameter must be present' = 1, 'Url Parameter must be present' = 2, 'Url is not Valid' = 3, 'Transfer Call Failed -- Call not found' = 4, 'Transfer Call Failed' = 5 }
+	export enum TransferCallResponseMessage { 'Transfer Call Executed' = 'Transfer Call Executed', 'CallUUID Parameter must be present' = 'CallUUID Parameter must be present', 'Url Parameter must be present' = 'Url Parameter must be present', 'Url is not Valid' = 'Url is not Valid', 'Transfer Call Failed -- Call not found' = 'Transfer Call Failed -- Call not found', 'Transfer Call Failed' = 'Transfer Call Failed' }
 
 	@Injectable()
 	export class MyClient {

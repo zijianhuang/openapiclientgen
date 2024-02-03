@@ -69,7 +69,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyzeEntitiesRequestAlternativeOutputFormat { ALTERNATIVE_OUTPUT_FORMAT_UNSPECIFIED = 0, FHIR_BUNDLE = 1 }
+	export enum AnalyzeEntitiesRequestAlternativeOutputFormat { ALTERNATIVE_OUTPUT_FORMAT_UNSPECIFIED = 'ALTERNATIVE_OUTPUT_FORMAT_UNSPECIFIED', FHIR_BUNDLE = 'FHIR_BUNDLE' }
 
 
 	/** Includes recognized entity mentions and relationships between them. */
@@ -394,7 +394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeDefinitionCategory { CATEGORY_UNSPECIFIED = 0, RESOURCE = 1, REQUEST = 2 }
+	export enum AttributeDefinitionCategory { CATEGORY_UNSPECIFIED = 'CATEGORY_UNSPECIFIED', RESOURCE = 'RESOURCE', REQUEST = 'REQUEST' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -444,7 +444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -605,7 +605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckDataAccessRequestResponseView { RESPONSE_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum CheckDataAccessRequestResponseView { RESPONSE_VIEW_UNSPECIFIED = 'RESPONSE_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 
 	/** Checks if a particular data_id of a User data mapping in the given consent store is consented for a given use. */
@@ -656,7 +656,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsentEvaluationEvaluationResult { EVALUATION_RESULT_UNSPECIFIED = 0, NOT_APPLICABLE = 1, NO_MATCHING_POLICY = 2, NO_SATISFIED_POLICY = 3, HAS_SATISFIED_POLICY = 4 }
+	export enum ConsentEvaluationEvaluationResult { EVALUATION_RESULT_UNSPECIFIED = 'EVALUATION_RESULT_UNSPECIFIED', NOT_APPLICABLE = 'NOT_APPLICABLE', NO_MATCHING_POLICY = 'NO_MATCHING_POLICY', NO_SATISFIED_POLICY = 'NO_SATISFIED_POLICY', HAS_SATISFIED_POLICY = 'HAS_SATISFIED_POLICY' }
 
 
 	/** Represents a user's consent. */
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsentState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ARCHIVED = 2, REVOKED = 3, DRAFT = 4, REJECTED = 5 }
+	export enum ConsentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED', REVOKED = 'REVOKED', DRAFT = 'DRAFT', REJECTED = 'REJECTED' }
 
 
 	/** Documentation of a user's consent. */
@@ -1310,7 +1310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DicomConfigFilterProfile { TAG_FILTER_PROFILE_UNSPECIFIED = 0, MINIMAL_KEEP_LIST_PROFILE = 1, ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE = 2, KEEP_ALL_PROFILE = 3, DEIDENTIFY_TAG_CONTENTS = 4 }
+	export enum DicomConfigFilterProfile { TAG_FILTER_PROFILE_UNSPECIFIED = 'TAG_FILTER_PROFILE_UNSPECIFIED', MINIMAL_KEEP_LIST_PROFILE = 'MINIMAL_KEEP_LIST_PROFILE', ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE = 'ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE', KEEP_ALL_PROFILE = 'KEEP_ALL_PROFILE', DEIDENTIFY_TAG_CONTENTS = 'DEIDENTIFY_TAG_CONTENTS' }
 
 
 	/** List of tags to be filtered. */
@@ -1377,7 +1377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldMetadataAction { ACTION_UNSPECIFIED = 0, TRANSFORM = 1, INSPECT_AND_TRANSFORM = 2, DO_NOT_TRANSFORM = 3 }
+	export enum FieldMetadataAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', TRANSFORM = 'TRANSFORM', INSPECT_AND_TRANSFORM = 'INSPECT_AND_TRANSFORM', DO_NOT_TRANSFORM = 'DO_NOT_TRANSFORM' }
 
 
 	/** Specifies how to handle de-identification of image pixels. */
@@ -1400,7 +1400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageConfigTextRedactionMode { TEXT_REDACTION_MODE_UNSPECIFIED = 0, REDACT_ALL_TEXT = 1, REDACT_SENSITIVE_TEXT = 2, REDACT_NO_TEXT = 3 }
+	export enum ImageConfigTextRedactionMode { TEXT_REDACTION_MODE_UNSPECIFIED = 'TEXT_REDACTION_MODE_UNSPECIFIED', REDACT_ALL_TEXT = 'REDACT_ALL_TEXT', REDACT_SENSITIVE_TEXT = 'REDACT_SENSITIVE_TEXT', REDACT_NO_TEXT = 'REDACT_NO_TEXT' }
 
 	export interface TextConfig {
 
@@ -1770,7 +1770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition { WRITE_DISPOSITION_UNSPECIFIED = 0, WRITE_EMPTY = 1, WRITE_TRUNCATE = 2, WRITE_APPEND = 3 }
+	export enum GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition { WRITE_DISPOSITION_UNSPECIFIED = 'WRITE_DISPOSITION_UNSPECIFIED', WRITE_EMPTY = 'WRITE_EMPTY', WRITE_TRUNCATE = 'WRITE_TRUNCATE', WRITE_APPEND = 'WRITE_APPEND' }
 
 
 	/** DicomStoreMetrics contains metrics describing a DICOM store. */
@@ -2094,9 +2094,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GcsDestinationContentStructure { CONTENT_STRUCTURE_UNSPECIFIED = 0, MESSAGE_JSON = 1 }
+	export enum GcsDestinationContentStructure { CONTENT_STRUCTURE_UNSPECIFIED = 'CONTENT_STRUCTURE_UNSPECIFIED', MESSAGE_JSON = 'MESSAGE_JSON' }
 
-	export enum GcsDestinationMessageView { MESSAGE_VIEW_UNSPECIFIED = 0, RAW_ONLY = 1, PARSED_ONLY = 2, FULL = 3, SCHEMATIZED_ONLY = 4, BASIC = 5 }
+	export enum GcsDestinationMessageView { MESSAGE_VIEW_UNSPECIFIED = 'MESSAGE_VIEW_UNSPECIFIED', RAW_ONLY = 'RAW_ONLY', PARSED_ONLY = 'PARSED_ONLY', FULL = 'FULL', SCHEMATIZED_ONLY = 'SCHEMATIZED_ONLY', BASIC = 'BASIC' }
 
 
 	/** The Pub/Sub output destination. The Cloud Healthcare Service Agent requires the `roles/pubsub.publisher` Cloud IAM role on the Pub/Sub topic. */
@@ -2264,9 +2264,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TimePartitioningType { PARTITION_TYPE_UNSPECIFIED = 0, HOUR = 1, DAY = 2, MONTH = 3, YEAR = 4 }
+	export enum TimePartitioningType { PARTITION_TYPE_UNSPECIFIED = 'PARTITION_TYPE_UNSPECIFIED', HOUR = 'HOUR', DAY = 'DAY', MONTH = 'MONTH', YEAR = 'YEAR' }
 
-	export enum SchemaConfigSchemaType { SCHEMA_TYPE_UNSPECIFIED = 0, ANALYTICS = 1, ANALYTICS_V2 = 2 }
+	export enum SchemaConfigSchemaType { SCHEMA_TYPE_UNSPECIFIED = 'SCHEMA_TYPE_UNSPECIFIED', ANALYTICS = 'ANALYTICS', ANALYTICS_V2 = 'ANALYTICS_V2' }
 
 
 	/** The configuration for exporting to Cloud Storage. */
@@ -2420,7 +2420,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FhirStoreComplexDataTypeReferenceParsing { COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2 }
+	export enum FhirStoreComplexDataTypeReferenceParsing { COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED = 'COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** Contains configuration for streaming FHIR export. */
@@ -2490,7 +2490,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FhirStoreVersion { VERSION_UNSPECIFIED = 0, DSTU2 = 1, STU3 = 2, R4 = 3 }
+	export enum FhirStoreVersion { VERSION_UNSPECIFIED = 'VERSION_UNSPECIFIED', DSTU2 = 'DSTU2', STU3 = 'STU3', R4 = 'R4' }
 
 
 	/** Count of resources and total storage size by type for a given FHIR store. */
@@ -2915,7 +2915,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypePrimitive { PRIMITIVE_UNSPECIFIED = 0, STRING = 1, VARIES = 2, UNESCAPED_STRING = 3 }
+	export enum TypePrimitive { PRIMITIVE_UNSPECIFIED = 'PRIMITIVE_UNSPECIFIED', STRING = 'STRING', VARIES = 'VARIES', UNESCAPED_STRING = 'UNESCAPED_STRING' }
 
 
 	/** Specifies where and whether to send notifications upon changes to a data store. */
@@ -3065,11 +3065,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaPackageSchematizedParsingType { SCHEMATIZED_PARSING_TYPE_UNSPECIFIED = 0, SOFT_FAIL = 1, HARD_FAIL = 2 }
+	export enum SchemaPackageSchematizedParsingType { SCHEMATIZED_PARSING_TYPE_UNSPECIFIED = 'SCHEMATIZED_PARSING_TYPE_UNSPECIFIED', SOFT_FAIL = 'SOFT_FAIL', HARD_FAIL = 'HARD_FAIL' }
 
-	export enum SchemaPackageUnexpectedSegmentHandling { UNEXPECTED_SEGMENT_HANDLING_MODE_UNSPECIFIED = 0, FAIL = 1, SKIP = 2, PARSE = 3 }
+	export enum SchemaPackageUnexpectedSegmentHandling { UNEXPECTED_SEGMENT_HANDLING_MODE_UNSPECIFIED = 'UNEXPECTED_SEGMENT_HANDLING_MODE_UNSPECIFIED', FAIL = 'FAIL', SKIP = 'SKIP', PARSE = 'PARSE' }
 
-	export enum ParserConfigVersion { PARSER_VERSION_UNSPECIFIED = 0, V1 = 1, V2 = 2, V3 = 3 }
+	export enum ParserConfigVersion { PARSER_VERSION_UNSPECIFIED = 'PARSER_VERSION_UNSPECIFIED', V1 = 'V1', V2 = 'V2', V3 = 'V3' }
 
 
 	/** Count of messages and total storage size by type for a given HL7 store. */
@@ -3247,7 +3247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportResourcesRequestContentStructure { CONTENT_STRUCTURE_UNSPECIFIED = 0, BUNDLE = 1, RESOURCE = 2, BUNDLE_PRETTY = 3, RESOURCE_PRETTY = 4 }
+	export enum ImportResourcesRequestContentStructure { CONTENT_STRUCTURE_UNSPECIFIED = 'CONTENT_STRUCTURE_UNSPECIFIED', BUNDLE = 'BUNDLE', RESOURCE = 'RESOURCE', BUNDLE_PRETTY = 'BUNDLE_PRETTY', RESOURCE_PRETTY = 'RESOURCE_PRETTY' }
 
 
 	/** Final response of importing resources. This structure is included in the response to describe the detailed outcome after the operation finishes successfully. */

@@ -263,9 +263,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageStatus { STATUS_UNSPECIFIED = 0, PENDING_PROCESSING = 1, PENDING_CRAWL = 2, OK = 3, ROBOTED = 4, XROBOTED = 5, CRAWL_ERROR = 6, PROCESSING_ERROR = 7, DECODING_ERROR = 8, TOO_BIG = 9, CRAWL_SKIPPED = 10, HOSTLOADED = 11, HTTP_404 = 12 }
+	export enum ImageStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', PENDING_PROCESSING = 'PENDING_PROCESSING', PENDING_CRAWL = 'PENDING_CRAWL', OK = 'OK', ROBOTED = 'ROBOTED', XROBOTED = 'XROBOTED', CRAWL_ERROR = 'CRAWL_ERROR', PROCESSING_ERROR = 'PROCESSING_ERROR', DECODING_ERROR = 'DECODING_ERROR', TOO_BIG = 'TOO_BIG', CRAWL_SKIPPED = 'CRAWL_SKIPPED', HOSTLOADED = 'HOSTLOADED', HTTP_404 = 'HTTP_404' }
 
-	export enum ImageType { TYPE_UNSPECIFIED = 0, CRAWLED = 1, UPLOADED = 2 }
+	export enum ImageType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CRAWLED = 'CRAWLED', UPLOADED = 'UPLOADED' }
 
 
 	/** The capacity of a product. For more information, see https://support.google.com/manufacturers/answer/6124116#capacity. */
@@ -886,7 +886,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationStatusStatus { UNKNOWN = 0, ACTIVE = 1, PENDING = 2, DISAPPROVED = 3 }
+	export enum DestinationStatusStatus { UNKNOWN = 'UNKNOWN', ACTIVE = 'ACTIVE', PENDING = 'PENDING', DISAPPROVED = 'DISAPPROVED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -972,9 +972,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IssueResolution { RESOLUTION_UNSPECIFIED = 0, USER_ACTION = 1, PENDING_PROCESSING = 2 }
+	export enum IssueResolution { RESOLUTION_UNSPECIFIED = 'RESOLUTION_UNSPECIFIED', USER_ACTION = 'USER_ACTION', PENDING_PROCESSING = 'PENDING_PROCESSING' }
 
-	export enum IssueSeverity { SEVERITY_UNSPECIFIED = 0, ERROR = 1, WARNING = 2, INFO = 3 }
+	export enum IssueSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', ERROR = 'ERROR', WARNING = 'WARNING', INFO = 'INFO' }
 
 
 	/** Response for ListProductCertifications method. */

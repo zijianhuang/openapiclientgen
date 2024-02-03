@@ -162,7 +162,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomClassState { STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETED = 2 }
+	export enum CustomClassState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DELETED = 'DELETED' }
 
 
 	/** Message sent by the client for the `CreatePhraseSet` method. */
@@ -803,7 +803,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecognitionConfigEncoding { ENCODING_UNSPECIFIED = 0, LINEAR16 = 1, FLAC = 2, MULAW = 3, AMR = 4, AMR_WB = 5, OGG_OPUS = 6, SPEEX_WITH_HEADER_BYTE = 7, MP3 = 8, WEBM_OPUS = 9 }
+	export enum RecognitionConfigEncoding { ENCODING_UNSPECIFIED = 'ENCODING_UNSPECIFIED', LINEAR16 = 'LINEAR16', FLAC = 'FLAC', MULAW = 'MULAW', AMR = 'AMR', AMR_WB = 'AMR_WB', OGG_OPUS = 'OGG_OPUS', SPEEX_WITH_HEADER_BYTE = 'SPEEX_WITH_HEADER_BYTE', MP3 = 'MP3', WEBM_OPUS = 'WEBM_OPUS' }
 
 
 	/** Description of audio data to be recognized. */
@@ -875,13 +875,13 @@ export namespace MyNS {
 
 	}
 
-	export enum RecognitionMetadataInteractionType { INTERACTION_TYPE_UNSPECIFIED = 0, DISCUSSION = 1, PRESENTATION = 2, PHONE_CALL = 3, VOICEMAIL = 4, PROFESSIONALLY_PRODUCED = 5, VOICE_SEARCH = 6, VOICE_COMMAND = 7, DICTATION = 8 }
+	export enum RecognitionMetadataInteractionType { INTERACTION_TYPE_UNSPECIFIED = 'INTERACTION_TYPE_UNSPECIFIED', DISCUSSION = 'DISCUSSION', PRESENTATION = 'PRESENTATION', PHONE_CALL = 'PHONE_CALL', VOICEMAIL = 'VOICEMAIL', PROFESSIONALLY_PRODUCED = 'PROFESSIONALLY_PRODUCED', VOICE_SEARCH = 'VOICE_SEARCH', VOICE_COMMAND = 'VOICE_COMMAND', DICTATION = 'DICTATION' }
 
-	export enum RecognitionMetadataMicrophoneDistance { MICROPHONE_DISTANCE_UNSPECIFIED = 0, NEARFIELD = 1, MIDFIELD = 2, FARFIELD = 3 }
+	export enum RecognitionMetadataMicrophoneDistance { MICROPHONE_DISTANCE_UNSPECIFIED = 'MICROPHONE_DISTANCE_UNSPECIFIED', NEARFIELD = 'NEARFIELD', MIDFIELD = 'MIDFIELD', FARFIELD = 'FARFIELD' }
 
-	export enum RecognitionMetadataOriginalMediaType { ORIGINAL_MEDIA_TYPE_UNSPECIFIED = 0, AUDIO = 1, VIDEO = 2 }
+	export enum RecognitionMetadataOriginalMediaType { ORIGINAL_MEDIA_TYPE_UNSPECIFIED = 'ORIGINAL_MEDIA_TYPE_UNSPECIFIED', AUDIO = 'AUDIO', VIDEO = 'VIDEO' }
 
-	export enum RecognitionMetadataRecordingDeviceType { RECORDING_DEVICE_TYPE_UNSPECIFIED = 0, SMARTPHONE = 1, PC = 2, PHONE_LINE = 3, VEHICLE = 4, OTHER_OUTDOOR_DEVICE = 5, OTHER_INDOOR_DEVICE = 6 }
+	export enum RecognitionMetadataRecordingDeviceType { RECORDING_DEVICE_TYPE_UNSPECIFIED = 'RECORDING_DEVICE_TYPE_UNSPECIFIED', SMARTPHONE = 'SMARTPHONE', PC = 'PC', PHONE_LINE = 'PHONE_LINE', VEHICLE = 'VEHICLE', OTHER_OUTDOOR_DEVICE = 'OTHER_OUTDOOR_DEVICE', OTHER_INDOOR_DEVICE = 'OTHER_INDOOR_DEVICE' }
 
 
 	/** Provides "hints" to the speech recognizer to favor specific words and phrases in the results. */

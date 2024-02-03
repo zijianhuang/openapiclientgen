@@ -1322,7 +1322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EscerPostBodyFormat { pdf = 0 }
+	export enum EscerPostBodyFormat { pdf = 'pdf' }
 
 	export interface SkcerPostBody {
 		certificateParameters?: SkcerPostBodyCertificateParameters;

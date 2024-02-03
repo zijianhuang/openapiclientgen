@@ -575,7 +575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Autopilotv1assistantmodel_buildStatus { enqueued = 0, building = 1, completed = 2, failed = 3, canceled = 4 }
+	export enum Autopilotv1assistantmodel_buildStatus { enqueued = 'enqueued', building = 'building', completed = 'completed', failed = 'failed', canceled = 'canceled' }
 
 	export interface Autopilotv1assistantquery {
 
@@ -1475,7 +1475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Model_build_enum_status { enqueued = 0, building = 1, completed = 2, failed = 3, canceled = 4 }
+	export enum Model_build_enum_status { enqueued = 'enqueued', building = 'building', completed = 'completed', failed = 'failed', canceled = 'canceled' }
 
 	@Injectable()
 	export class MyClient {

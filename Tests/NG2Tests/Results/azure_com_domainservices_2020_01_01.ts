@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainSecuritySettingsNtlmV1 { Enabled = 0, Disabled = 1 }
+	export enum DomainSecuritySettingsNtlmV1 { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Domain service. */

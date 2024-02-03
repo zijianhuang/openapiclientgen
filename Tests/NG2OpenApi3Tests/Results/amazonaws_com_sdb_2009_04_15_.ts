@@ -855,13 +855,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_BatchDeleteAttributesAction { BatchDeleteAttributes = 0 }
+	export enum GET_BatchDeleteAttributesAction { BatchDeleteAttributes = 'BatchDeleteAttributes' }
 
-	export enum GET_BatchDeleteAttributesVersion { '2009-04-15' = 0 }
+	export enum GET_BatchDeleteAttributesVersion { '2009-04-15' = '2009-04-15' }
 
-	export enum GET_BatchPutAttributesAction { BatchPutAttributes = 0 }
+	export enum GET_BatchPutAttributesAction { BatchPutAttributes = 'BatchPutAttributes' }
 
-	export enum GET_CreateDomainAction { CreateDomain = 0 }
+	export enum GET_CreateDomainAction { CreateDomain = 'CreateDomain' }
 
 	export interface GET_DeleteAttributesExpected {
 		Name?: string;
@@ -882,15 +882,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_DeleteAttributesAction { DeleteAttributes = 0 }
+	export enum GET_DeleteAttributesAction { DeleteAttributes = 'DeleteAttributes' }
 
-	export enum GET_DeleteDomainAction { DeleteDomain = 0 }
+	export enum GET_DeleteDomainAction { DeleteDomain = 'DeleteDomain' }
 
-	export enum GET_DomainMetadataAction { DomainMetadata = 0 }
+	export enum GET_DomainMetadataAction { DomainMetadata = 'DomainMetadata' }
 
-	export enum GET_GetAttributesAction { GetAttributes = 0 }
+	export enum GET_GetAttributesAction { GetAttributes = 'GetAttributes' }
 
-	export enum GET_ListDomainsAction { ListDomains = 0 }
+	export enum GET_ListDomainsAction { ListDomains = 'ListDomains' }
 
 	export interface GET_PutAttributesExpected {
 		Name?: string;
@@ -911,9 +911,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_PutAttributesAction { PutAttributes = 0 }
+	export enum GET_PutAttributesAction { PutAttributes = 'PutAttributes' }
 
-	export enum GET_SelectAction { Select = 0 }
+	export enum GET_SelectAction { Select = 'Select' }
 
 }
 

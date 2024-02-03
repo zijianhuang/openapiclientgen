@@ -160,9 +160,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionResponseEventType { 'contact.propertyChange' = 0, 'company.propertyChange' = 1, 'deal.propertyChange' = 2, 'ticket.propertyChange' = 3, 'product.propertyChange' = 4, 'line_item.propertyChange' = 5, 'contact.creation' = 6, 'contact.deletion' = 7, 'contact.privacyDeletion' = 8, 'company.creation' = 9, 'company.deletion' = 10, 'deal.creation' = 11, 'deal.deletion' = 12, 'ticket.creation' = 13, 'ticket.deletion' = 14, 'product.creation' = 15, 'product.deletion' = 16, 'line_item.creation' = 17, 'line_item.deletion' = 18, 'conversation.creation' = 19, 'conversation.deletion' = 20, 'conversation.newMessage' = 21, 'conversation.privacyDeletion' = 22, 'conversation.propertyChange' = 23, 'contact.merge' = 24, 'company.merge' = 25, 'deal.merge' = 26, 'ticket.merge' = 27, 'product.merge' = 28, 'line_item.merge' = 29, 'contact.restore' = 30, 'company.restore' = 31, 'deal.restore' = 32, 'ticket.restore' = 33, 'product.restore' = 34, 'line_item.restore' = 35, 'contact.associationChange' = 36, 'company.associationChange' = 37, 'deal.associationChange' = 38, 'ticket.associationChange' = 39, 'line_item.associationChange' = 40 }
+	export enum SubscriptionResponseEventType { 'contact.propertyChange' = 'contact.propertyChange', 'company.propertyChange' = 'company.propertyChange', 'deal.propertyChange' = 'deal.propertyChange', 'ticket.propertyChange' = 'ticket.propertyChange', 'product.propertyChange' = 'product.propertyChange', 'line_item.propertyChange' = 'line_item.propertyChange', 'contact.creation' = 'contact.creation', 'contact.deletion' = 'contact.deletion', 'contact.privacyDeletion' = 'contact.privacyDeletion', 'company.creation' = 'company.creation', 'company.deletion' = 'company.deletion', 'deal.creation' = 'deal.creation', 'deal.deletion' = 'deal.deletion', 'ticket.creation' = 'ticket.creation', 'ticket.deletion' = 'ticket.deletion', 'product.creation' = 'product.creation', 'product.deletion' = 'product.deletion', 'line_item.creation' = 'line_item.creation', 'line_item.deletion' = 'line_item.deletion', 'conversation.creation' = 'conversation.creation', 'conversation.deletion' = 'conversation.deletion', 'conversation.newMessage' = 'conversation.newMessage', 'conversation.privacyDeletion' = 'conversation.privacyDeletion', 'conversation.propertyChange' = 'conversation.propertyChange', 'contact.merge' = 'contact.merge', 'company.merge' = 'company.merge', 'deal.merge' = 'deal.merge', 'ticket.merge' = 'ticket.merge', 'product.merge' = 'product.merge', 'line_item.merge' = 'line_item.merge', 'contact.restore' = 'contact.restore', 'company.restore' = 'company.restore', 'deal.restore' = 'deal.restore', 'ticket.restore' = 'ticket.restore', 'product.restore' = 'product.restore', 'line_item.restore' = 'line_item.restore', 'contact.associationChange' = 'contact.associationChange', 'company.associationChange' = 'company.associationChange', 'deal.associationChange' = 'deal.associationChange', 'ticket.associationChange' = 'ticket.associationChange', 'line_item.associationChange' = 'line_item.associationChange' }
 
-	export enum BatchResponseSubscriptionResponseStatus { PENDING = 0, PROCESSING = 1, CANCELED = 2, COMPLETE = 3 }
+	export enum BatchResponseSubscriptionResponseStatus { PENDING = 'PENDING', PROCESSING = 'PROCESSING', CANCELED = 'CANCELED', COMPLETE = 'COMPLETE' }
 
 	export interface BatchResponseSubscriptionResponseWithErrors {
 
@@ -459,7 +459,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThrottlingSettingsPeriod { SECONDLY = 0, ROLLING_MINUTE = 1 }
+	export enum ThrottlingSettingsPeriod { SECONDLY = 'SECONDLY', ROLLING_MINUTE = 'ROLLING_MINUTE' }
 
 
 	/** Webhook settings for an app. */

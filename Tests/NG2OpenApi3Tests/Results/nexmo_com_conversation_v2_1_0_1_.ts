@@ -198,7 +198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberChannelType { app = 0 }
+	export enum MemberChannelType { app = 'app' }
 
 	export interface MemberInitiator {
 		invited?: MemberInitiatorInvited;
@@ -403,7 +403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Member_listState { INVITED = 0, JOINED = 1 }
+	export enum Member_listState { INVITED = 'INVITED', JOINED = 'JOINED' }
 
 	export interface Text_event {
 	}
@@ -532,7 +532,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Get_conversationsOrder { asc = 0, desc = 1 }
+	export enum Get_conversationsOrder { asc = 'asc', desc = 'desc' }
 
 }
 

@@ -356,7 +356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileModeTypeEnum { EXECUTABLE = 0, NORMAL = 1, SYMLINK = 2 }
+	export enum FileModeTypeEnum { EXECUTABLE = 'EXECUTABLE', NORMAL = 'NORMAL', SYMLINK = 'SYMLINK' }
 
 
 	/** Information about the type of an object in a merge operation. */
@@ -381,7 +381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectTypeEnum { FILE = 0, DIRECTORY = 1, GIT_LINK = 2, SYMBOLIC_LINK = 3 }
+	export enum ObjectTypeEnum { FILE = 'FILE', DIRECTORY = 'DIRECTORY', GIT_LINK = 'GIT_LINK', SYMBOLIC_LINK = 'SYMBOLIC_LINK' }
 
 
 	/** Information about whether a file is binary or textual in a merge or pull request operation. */
@@ -426,7 +426,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeTypeEnum { A = 0, M = 1, D = 2 }
+	export enum ChangeTypeEnum { A = 'A', M = 'M', D = 'D' }
 
 
 	/** Information about merge hunks in a merge or pull request operation. */
@@ -560,11 +560,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MergeOptionTypeEnum { FAST_FORWARD_MERGE = 0, SQUASH_MERGE = 1, THREE_WAY_MERGE = 2 }
+	export enum MergeOptionTypeEnum { FAST_FORWARD_MERGE = 'FAST_FORWARD_MERGE', SQUASH_MERGE = 'SQUASH_MERGE', THREE_WAY_MERGE = 'THREE_WAY_MERGE' }
 
-	export enum ConflictDetailLevelTypeEnum { FILE_LEVEL = 0, LINE_LEVEL = 1 }
+	export enum ConflictDetailLevelTypeEnum { FILE_LEVEL = 'FILE_LEVEL', LINE_LEVEL = 'LINE_LEVEL' }
 
-	export enum ConflictResolutionStrategyTypeEnum { NONE = 0, ACCEPT_SOURCE = 1, ACCEPT_DESTINATION = 2, AUTOMERGE = 3 }
+	export enum ConflictResolutionStrategyTypeEnum { NONE = 'NONE', ACCEPT_SOURCE = 'ACCEPT_SOURCE', ACCEPT_DESTINATION = 'ACCEPT_DESTINATION', AUTOMERGE = 'AUTOMERGE' }
 
 	export interface MergeOptionRequiredException {
 	}
@@ -1693,7 +1693,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullRequestStatusEnum { OPEN = 0, CLOSED = 1 }
+	export enum PullRequestStatusEnum { OPEN = 'OPEN', CLOSED = 'CLOSED' }
 
 
 	/** Returns information about a pull request target. */
@@ -2425,7 +2425,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplacementTypeEnum { KEEP_BASE = 0, KEEP_SOURCE = 1, KEEP_DESTINATION = 2, USE_NEW_CONTENT = 3 }
+	export enum ReplacementTypeEnum { KEEP_BASE = 'KEEP_BASE', KEEP_SOURCE = 'KEEP_SOURCE', KEEP_DESTINATION = 'KEEP_DESTINATION', USE_NEW_CONTENT = 'USE_NEW_CONTENT' }
 
 	export interface InvalidConflictResolutionException {
 	}
@@ -3071,7 +3071,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PullRequestEventType { PULL_REQUEST_CREATED = 0, PULL_REQUEST_STATUS_CHANGED = 1, PULL_REQUEST_SOURCE_REFERENCE_UPDATED = 2, PULL_REQUEST_MERGE_STATE_CHANGED = 3, PULL_REQUEST_APPROVAL_RULE_CREATED = 4, PULL_REQUEST_APPROVAL_RULE_UPDATED = 5, PULL_REQUEST_APPROVAL_RULE_DELETED = 6, PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = 7, PULL_REQUEST_APPROVAL_STATE_CHANGED = 8 }
+	export enum PullRequestEventType { PULL_REQUEST_CREATED = 'PULL_REQUEST_CREATED', PULL_REQUEST_STATUS_CHANGED = 'PULL_REQUEST_STATUS_CHANGED', PULL_REQUEST_SOURCE_REFERENCE_UPDATED = 'PULL_REQUEST_SOURCE_REFERENCE_UPDATED', PULL_REQUEST_MERGE_STATE_CHANGED = 'PULL_REQUEST_MERGE_STATE_CHANGED', PULL_REQUEST_APPROVAL_RULE_CREATED = 'PULL_REQUEST_APPROVAL_RULE_CREATED', PULL_REQUEST_APPROVAL_RULE_UPDATED = 'PULL_REQUEST_APPROVAL_RULE_UPDATED', PULL_REQUEST_APPROVAL_RULE_DELETED = 'PULL_REQUEST_APPROVAL_RULE_DELETED', PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = 'PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN', PULL_REQUEST_APPROVAL_STATE_CHANGED = 'PULL_REQUEST_APPROVAL_STATE_CHANGED' }
 
 
 	/** Metadata about the pull request that is used when comparing the pull request source with its destination. */
@@ -3206,7 +3206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApprovalState { APPROVE = 0, REVOKE = 1 }
+	export enum ApprovalState { APPROVE = 'APPROVE', REVOKE = 'REVOKE' }
 
 
 	/** Returns information about an override event for approval rules for a pull request. */
@@ -3228,7 +3228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OverrideStatus { OVERRIDE = 0, REVOKE = 1 }
+	export enum OverrideStatus { OVERRIDE = 'OVERRIDE', REVOKE = 'REVOKE' }
 
 	export interface DescribePullRequestEventsInput {
 
@@ -3756,7 +3756,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelativeFileVersionEnum { BEFORE = 0, AFTER = 1 }
+	export enum RelativeFileVersionEnum { BEFORE = 'BEFORE', AFTER = 'AFTER' }
 
 	export interface GetCommentsForComparedCommitInput {
 
@@ -4740,7 +4740,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryTriggerEventEnum { all = 0, updateReference = 1, createReference = 2, deleteReference = 3 }
+	export enum RepositoryTriggerEventEnum { all = 'all', updateReference = 'updateReference', createReference = 'createReference', deleteReference = 'deleteReference' }
 
 
 	/** Represents the input of a get repository triggers operation. */
@@ -5008,9 +5008,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SortByEnum { repositoryName = 0, lastModifiedDate = 1 }
+	export enum SortByEnum { repositoryName = 'repositoryName', lastModifiedDate = 'lastModifiedDate' }
 
-	export enum OrderEnum { ascending = 0, descending = 1 }
+	export enum OrderEnum { ascending = 'ascending', descending = 'descending' }
 
 	export interface InvalidSortByException {
 	}
@@ -7503,159 +7503,159 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateApprovalRuleTemplateWithRepositoryX_Amz_Target { 'CodeCommit_20150413.AssociateApprovalRuleTemplateWithRepository' = 0 }
+	export enum AssociateApprovalRuleTemplateWithRepositoryX_Amz_Target { 'CodeCommit_20150413.AssociateApprovalRuleTemplateWithRepository' = 'CodeCommit_20150413.AssociateApprovalRuleTemplateWithRepository' }
 
-	export enum BatchAssociateApprovalRuleTemplateWithRepositoriesX_Amz_Target { 'CodeCommit_20150413.BatchAssociateApprovalRuleTemplateWithRepositories' = 0 }
+	export enum BatchAssociateApprovalRuleTemplateWithRepositoriesX_Amz_Target { 'CodeCommit_20150413.BatchAssociateApprovalRuleTemplateWithRepositories' = 'CodeCommit_20150413.BatchAssociateApprovalRuleTemplateWithRepositories' }
 
-	export enum BatchDescribeMergeConflictsX_Amz_Target { 'CodeCommit_20150413.BatchDescribeMergeConflicts' = 0 }
+	export enum BatchDescribeMergeConflictsX_Amz_Target { 'CodeCommit_20150413.BatchDescribeMergeConflicts' = 'CodeCommit_20150413.BatchDescribeMergeConflicts' }
 
-	export enum BatchDisassociateApprovalRuleTemplateFromRepositoriesX_Amz_Target { 'CodeCommit_20150413.BatchDisassociateApprovalRuleTemplateFromRepositories' = 0 }
+	export enum BatchDisassociateApprovalRuleTemplateFromRepositoriesX_Amz_Target { 'CodeCommit_20150413.BatchDisassociateApprovalRuleTemplateFromRepositories' = 'CodeCommit_20150413.BatchDisassociateApprovalRuleTemplateFromRepositories' }
 
-	export enum BatchGetCommitsX_Amz_Target { 'CodeCommit_20150413.BatchGetCommits' = 0 }
+	export enum BatchGetCommitsX_Amz_Target { 'CodeCommit_20150413.BatchGetCommits' = 'CodeCommit_20150413.BatchGetCommits' }
 
-	export enum BatchGetRepositoriesX_Amz_Target { 'CodeCommit_20150413.BatchGetRepositories' = 0 }
+	export enum BatchGetRepositoriesX_Amz_Target { 'CodeCommit_20150413.BatchGetRepositories' = 'CodeCommit_20150413.BatchGetRepositories' }
 
-	export enum CreateApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.CreateApprovalRuleTemplate' = 0 }
+	export enum CreateApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.CreateApprovalRuleTemplate' = 'CodeCommit_20150413.CreateApprovalRuleTemplate' }
 
-	export enum CreateBranchX_Amz_Target { 'CodeCommit_20150413.CreateBranch' = 0 }
+	export enum CreateBranchX_Amz_Target { 'CodeCommit_20150413.CreateBranch' = 'CodeCommit_20150413.CreateBranch' }
 
-	export enum CreateCommitX_Amz_Target { 'CodeCommit_20150413.CreateCommit' = 0 }
+	export enum CreateCommitX_Amz_Target { 'CodeCommit_20150413.CreateCommit' = 'CodeCommit_20150413.CreateCommit' }
 
-	export enum CreatePullRequestX_Amz_Target { 'CodeCommit_20150413.CreatePullRequest' = 0 }
+	export enum CreatePullRequestX_Amz_Target { 'CodeCommit_20150413.CreatePullRequest' = 'CodeCommit_20150413.CreatePullRequest' }
 
-	export enum CreatePullRequestApprovalRuleX_Amz_Target { 'CodeCommit_20150413.CreatePullRequestApprovalRule' = 0 }
+	export enum CreatePullRequestApprovalRuleX_Amz_Target { 'CodeCommit_20150413.CreatePullRequestApprovalRule' = 'CodeCommit_20150413.CreatePullRequestApprovalRule' }
 
-	export enum CreateRepositoryX_Amz_Target { 'CodeCommit_20150413.CreateRepository' = 0 }
+	export enum CreateRepositoryX_Amz_Target { 'CodeCommit_20150413.CreateRepository' = 'CodeCommit_20150413.CreateRepository' }
 
-	export enum CreateUnreferencedMergeCommitX_Amz_Target { 'CodeCommit_20150413.CreateUnreferencedMergeCommit' = 0 }
+	export enum CreateUnreferencedMergeCommitX_Amz_Target { 'CodeCommit_20150413.CreateUnreferencedMergeCommit' = 'CodeCommit_20150413.CreateUnreferencedMergeCommit' }
 
-	export enum DeleteApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.DeleteApprovalRuleTemplate' = 0 }
+	export enum DeleteApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.DeleteApprovalRuleTemplate' = 'CodeCommit_20150413.DeleteApprovalRuleTemplate' }
 
-	export enum DeleteBranchX_Amz_Target { 'CodeCommit_20150413.DeleteBranch' = 0 }
+	export enum DeleteBranchX_Amz_Target { 'CodeCommit_20150413.DeleteBranch' = 'CodeCommit_20150413.DeleteBranch' }
 
-	export enum DeleteCommentContentX_Amz_Target { 'CodeCommit_20150413.DeleteCommentContent' = 0 }
+	export enum DeleteCommentContentX_Amz_Target { 'CodeCommit_20150413.DeleteCommentContent' = 'CodeCommit_20150413.DeleteCommentContent' }
 
-	export enum DeleteFileX_Amz_Target { 'CodeCommit_20150413.DeleteFile' = 0 }
+	export enum DeleteFileX_Amz_Target { 'CodeCommit_20150413.DeleteFile' = 'CodeCommit_20150413.DeleteFile' }
 
-	export enum DeletePullRequestApprovalRuleX_Amz_Target { 'CodeCommit_20150413.DeletePullRequestApprovalRule' = 0 }
+	export enum DeletePullRequestApprovalRuleX_Amz_Target { 'CodeCommit_20150413.DeletePullRequestApprovalRule' = 'CodeCommit_20150413.DeletePullRequestApprovalRule' }
 
-	export enum DeleteRepositoryX_Amz_Target { 'CodeCommit_20150413.DeleteRepository' = 0 }
+	export enum DeleteRepositoryX_Amz_Target { 'CodeCommit_20150413.DeleteRepository' = 'CodeCommit_20150413.DeleteRepository' }
 
-	export enum DescribeMergeConflictsX_Amz_Target { 'CodeCommit_20150413.DescribeMergeConflicts' = 0 }
+	export enum DescribeMergeConflictsX_Amz_Target { 'CodeCommit_20150413.DescribeMergeConflicts' = 'CodeCommit_20150413.DescribeMergeConflicts' }
 
-	export enum DescribePullRequestEventsX_Amz_Target { 'CodeCommit_20150413.DescribePullRequestEvents' = 0 }
+	export enum DescribePullRequestEventsX_Amz_Target { 'CodeCommit_20150413.DescribePullRequestEvents' = 'CodeCommit_20150413.DescribePullRequestEvents' }
 
-	export enum DisassociateApprovalRuleTemplateFromRepositoryX_Amz_Target { 'CodeCommit_20150413.DisassociateApprovalRuleTemplateFromRepository' = 0 }
+	export enum DisassociateApprovalRuleTemplateFromRepositoryX_Amz_Target { 'CodeCommit_20150413.DisassociateApprovalRuleTemplateFromRepository' = 'CodeCommit_20150413.DisassociateApprovalRuleTemplateFromRepository' }
 
-	export enum EvaluatePullRequestApprovalRulesX_Amz_Target { 'CodeCommit_20150413.EvaluatePullRequestApprovalRules' = 0 }
+	export enum EvaluatePullRequestApprovalRulesX_Amz_Target { 'CodeCommit_20150413.EvaluatePullRequestApprovalRules' = 'CodeCommit_20150413.EvaluatePullRequestApprovalRules' }
 
-	export enum GetApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.GetApprovalRuleTemplate' = 0 }
+	export enum GetApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.GetApprovalRuleTemplate' = 'CodeCommit_20150413.GetApprovalRuleTemplate' }
 
-	export enum GetBlobX_Amz_Target { 'CodeCommit_20150413.GetBlob' = 0 }
+	export enum GetBlobX_Amz_Target { 'CodeCommit_20150413.GetBlob' = 'CodeCommit_20150413.GetBlob' }
 
-	export enum GetBranchX_Amz_Target { 'CodeCommit_20150413.GetBranch' = 0 }
+	export enum GetBranchX_Amz_Target { 'CodeCommit_20150413.GetBranch' = 'CodeCommit_20150413.GetBranch' }
 
-	export enum GetCommentX_Amz_Target { 'CodeCommit_20150413.GetComment' = 0 }
+	export enum GetCommentX_Amz_Target { 'CodeCommit_20150413.GetComment' = 'CodeCommit_20150413.GetComment' }
 
-	export enum GetCommentReactionsX_Amz_Target { 'CodeCommit_20150413.GetCommentReactions' = 0 }
+	export enum GetCommentReactionsX_Amz_Target { 'CodeCommit_20150413.GetCommentReactions' = 'CodeCommit_20150413.GetCommentReactions' }
 
-	export enum GetCommentsForComparedCommitX_Amz_Target { 'CodeCommit_20150413.GetCommentsForComparedCommit' = 0 }
+	export enum GetCommentsForComparedCommitX_Amz_Target { 'CodeCommit_20150413.GetCommentsForComparedCommit' = 'CodeCommit_20150413.GetCommentsForComparedCommit' }
 
-	export enum GetCommentsForPullRequestX_Amz_Target { 'CodeCommit_20150413.GetCommentsForPullRequest' = 0 }
+	export enum GetCommentsForPullRequestX_Amz_Target { 'CodeCommit_20150413.GetCommentsForPullRequest' = 'CodeCommit_20150413.GetCommentsForPullRequest' }
 
-	export enum GetCommitX_Amz_Target { 'CodeCommit_20150413.GetCommit' = 0 }
+	export enum GetCommitX_Amz_Target { 'CodeCommit_20150413.GetCommit' = 'CodeCommit_20150413.GetCommit' }
 
-	export enum GetDifferencesX_Amz_Target { 'CodeCommit_20150413.GetDifferences' = 0 }
+	export enum GetDifferencesX_Amz_Target { 'CodeCommit_20150413.GetDifferences' = 'CodeCommit_20150413.GetDifferences' }
 
-	export enum GetFileX_Amz_Target { 'CodeCommit_20150413.GetFile' = 0 }
+	export enum GetFileX_Amz_Target { 'CodeCommit_20150413.GetFile' = 'CodeCommit_20150413.GetFile' }
 
-	export enum GetFolderX_Amz_Target { 'CodeCommit_20150413.GetFolder' = 0 }
+	export enum GetFolderX_Amz_Target { 'CodeCommit_20150413.GetFolder' = 'CodeCommit_20150413.GetFolder' }
 
-	export enum GetMergeCommitX_Amz_Target { 'CodeCommit_20150413.GetMergeCommit' = 0 }
+	export enum GetMergeCommitX_Amz_Target { 'CodeCommit_20150413.GetMergeCommit' = 'CodeCommit_20150413.GetMergeCommit' }
 
-	export enum GetMergeConflictsX_Amz_Target { 'CodeCommit_20150413.GetMergeConflicts' = 0 }
+	export enum GetMergeConflictsX_Amz_Target { 'CodeCommit_20150413.GetMergeConflicts' = 'CodeCommit_20150413.GetMergeConflicts' }
 
-	export enum GetMergeOptionsX_Amz_Target { 'CodeCommit_20150413.GetMergeOptions' = 0 }
+	export enum GetMergeOptionsX_Amz_Target { 'CodeCommit_20150413.GetMergeOptions' = 'CodeCommit_20150413.GetMergeOptions' }
 
-	export enum GetPullRequestX_Amz_Target { 'CodeCommit_20150413.GetPullRequest' = 0 }
+	export enum GetPullRequestX_Amz_Target { 'CodeCommit_20150413.GetPullRequest' = 'CodeCommit_20150413.GetPullRequest' }
 
-	export enum GetPullRequestApprovalStatesX_Amz_Target { 'CodeCommit_20150413.GetPullRequestApprovalStates' = 0 }
+	export enum GetPullRequestApprovalStatesX_Amz_Target { 'CodeCommit_20150413.GetPullRequestApprovalStates' = 'CodeCommit_20150413.GetPullRequestApprovalStates' }
 
-	export enum GetPullRequestOverrideStateX_Amz_Target { 'CodeCommit_20150413.GetPullRequestOverrideState' = 0 }
+	export enum GetPullRequestOverrideStateX_Amz_Target { 'CodeCommit_20150413.GetPullRequestOverrideState' = 'CodeCommit_20150413.GetPullRequestOverrideState' }
 
-	export enum GetRepositoryX_Amz_Target { 'CodeCommit_20150413.GetRepository' = 0 }
+	export enum GetRepositoryX_Amz_Target { 'CodeCommit_20150413.GetRepository' = 'CodeCommit_20150413.GetRepository' }
 
-	export enum GetRepositoryTriggersX_Amz_Target { 'CodeCommit_20150413.GetRepositoryTriggers' = 0 }
+	export enum GetRepositoryTriggersX_Amz_Target { 'CodeCommit_20150413.GetRepositoryTriggers' = 'CodeCommit_20150413.GetRepositoryTriggers' }
 
-	export enum ListApprovalRuleTemplatesX_Amz_Target { 'CodeCommit_20150413.ListApprovalRuleTemplates' = 0 }
+	export enum ListApprovalRuleTemplatesX_Amz_Target { 'CodeCommit_20150413.ListApprovalRuleTemplates' = 'CodeCommit_20150413.ListApprovalRuleTemplates' }
 
-	export enum ListAssociatedApprovalRuleTemplatesForRepositoryX_Amz_Target { 'CodeCommit_20150413.ListAssociatedApprovalRuleTemplatesForRepository' = 0 }
+	export enum ListAssociatedApprovalRuleTemplatesForRepositoryX_Amz_Target { 'CodeCommit_20150413.ListAssociatedApprovalRuleTemplatesForRepository' = 'CodeCommit_20150413.ListAssociatedApprovalRuleTemplatesForRepository' }
 
-	export enum ListBranchesX_Amz_Target { 'CodeCommit_20150413.ListBranches' = 0 }
+	export enum ListBranchesX_Amz_Target { 'CodeCommit_20150413.ListBranches' = 'CodeCommit_20150413.ListBranches' }
 
-	export enum ListPullRequestsX_Amz_Target { 'CodeCommit_20150413.ListPullRequests' = 0 }
+	export enum ListPullRequestsX_Amz_Target { 'CodeCommit_20150413.ListPullRequests' = 'CodeCommit_20150413.ListPullRequests' }
 
-	export enum ListRepositoriesX_Amz_Target { 'CodeCommit_20150413.ListRepositories' = 0 }
+	export enum ListRepositoriesX_Amz_Target { 'CodeCommit_20150413.ListRepositories' = 'CodeCommit_20150413.ListRepositories' }
 
-	export enum ListRepositoriesForApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.ListRepositoriesForApprovalRuleTemplate' = 0 }
+	export enum ListRepositoriesForApprovalRuleTemplateX_Amz_Target { 'CodeCommit_20150413.ListRepositoriesForApprovalRuleTemplate' = 'CodeCommit_20150413.ListRepositoriesForApprovalRuleTemplate' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'CodeCommit_20150413.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'CodeCommit_20150413.ListTagsForResource' = 'CodeCommit_20150413.ListTagsForResource' }
 
-	export enum MergeBranchesByFastForwardX_Amz_Target { 'CodeCommit_20150413.MergeBranchesByFastForward' = 0 }
+	export enum MergeBranchesByFastForwardX_Amz_Target { 'CodeCommit_20150413.MergeBranchesByFastForward' = 'CodeCommit_20150413.MergeBranchesByFastForward' }
 
-	export enum MergeBranchesBySquashX_Amz_Target { 'CodeCommit_20150413.MergeBranchesBySquash' = 0 }
+	export enum MergeBranchesBySquashX_Amz_Target { 'CodeCommit_20150413.MergeBranchesBySquash' = 'CodeCommit_20150413.MergeBranchesBySquash' }
 
-	export enum MergeBranchesByThreeWayX_Amz_Target { 'CodeCommit_20150413.MergeBranchesByThreeWay' = 0 }
+	export enum MergeBranchesByThreeWayX_Amz_Target { 'CodeCommit_20150413.MergeBranchesByThreeWay' = 'CodeCommit_20150413.MergeBranchesByThreeWay' }
 
-	export enum MergePullRequestByFastForwardX_Amz_Target { 'CodeCommit_20150413.MergePullRequestByFastForward' = 0 }
+	export enum MergePullRequestByFastForwardX_Amz_Target { 'CodeCommit_20150413.MergePullRequestByFastForward' = 'CodeCommit_20150413.MergePullRequestByFastForward' }
 
-	export enum MergePullRequestBySquashX_Amz_Target { 'CodeCommit_20150413.MergePullRequestBySquash' = 0 }
+	export enum MergePullRequestBySquashX_Amz_Target { 'CodeCommit_20150413.MergePullRequestBySquash' = 'CodeCommit_20150413.MergePullRequestBySquash' }
 
-	export enum MergePullRequestByThreeWayX_Amz_Target { 'CodeCommit_20150413.MergePullRequestByThreeWay' = 0 }
+	export enum MergePullRequestByThreeWayX_Amz_Target { 'CodeCommit_20150413.MergePullRequestByThreeWay' = 'CodeCommit_20150413.MergePullRequestByThreeWay' }
 
-	export enum OverridePullRequestApprovalRulesX_Amz_Target { 'CodeCommit_20150413.OverridePullRequestApprovalRules' = 0 }
+	export enum OverridePullRequestApprovalRulesX_Amz_Target { 'CodeCommit_20150413.OverridePullRequestApprovalRules' = 'CodeCommit_20150413.OverridePullRequestApprovalRules' }
 
-	export enum PostCommentForComparedCommitX_Amz_Target { 'CodeCommit_20150413.PostCommentForComparedCommit' = 0 }
+	export enum PostCommentForComparedCommitX_Amz_Target { 'CodeCommit_20150413.PostCommentForComparedCommit' = 'CodeCommit_20150413.PostCommentForComparedCommit' }
 
-	export enum PostCommentForPullRequestX_Amz_Target { 'CodeCommit_20150413.PostCommentForPullRequest' = 0 }
+	export enum PostCommentForPullRequestX_Amz_Target { 'CodeCommit_20150413.PostCommentForPullRequest' = 'CodeCommit_20150413.PostCommentForPullRequest' }
 
-	export enum PostCommentReplyX_Amz_Target { 'CodeCommit_20150413.PostCommentReply' = 0 }
+	export enum PostCommentReplyX_Amz_Target { 'CodeCommit_20150413.PostCommentReply' = 'CodeCommit_20150413.PostCommentReply' }
 
-	export enum PutCommentReactionX_Amz_Target { 'CodeCommit_20150413.PutCommentReaction' = 0 }
+	export enum PutCommentReactionX_Amz_Target { 'CodeCommit_20150413.PutCommentReaction' = 'CodeCommit_20150413.PutCommentReaction' }
 
-	export enum PutFileX_Amz_Target { 'CodeCommit_20150413.PutFile' = 0 }
+	export enum PutFileX_Amz_Target { 'CodeCommit_20150413.PutFile' = 'CodeCommit_20150413.PutFile' }
 
-	export enum PutRepositoryTriggersX_Amz_Target { 'CodeCommit_20150413.PutRepositoryTriggers' = 0 }
+	export enum PutRepositoryTriggersX_Amz_Target { 'CodeCommit_20150413.PutRepositoryTriggers' = 'CodeCommit_20150413.PutRepositoryTriggers' }
 
-	export enum TagResourceX_Amz_Target { 'CodeCommit_20150413.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'CodeCommit_20150413.TagResource' = 'CodeCommit_20150413.TagResource' }
 
-	export enum TestRepositoryTriggersX_Amz_Target { 'CodeCommit_20150413.TestRepositoryTriggers' = 0 }
+	export enum TestRepositoryTriggersX_Amz_Target { 'CodeCommit_20150413.TestRepositoryTriggers' = 'CodeCommit_20150413.TestRepositoryTriggers' }
 
-	export enum UntagResourceX_Amz_Target { 'CodeCommit_20150413.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'CodeCommit_20150413.UntagResource' = 'CodeCommit_20150413.UntagResource' }
 
-	export enum UpdateApprovalRuleTemplateContentX_Amz_Target { 'CodeCommit_20150413.UpdateApprovalRuleTemplateContent' = 0 }
+	export enum UpdateApprovalRuleTemplateContentX_Amz_Target { 'CodeCommit_20150413.UpdateApprovalRuleTemplateContent' = 'CodeCommit_20150413.UpdateApprovalRuleTemplateContent' }
 
-	export enum UpdateApprovalRuleTemplateDescriptionX_Amz_Target { 'CodeCommit_20150413.UpdateApprovalRuleTemplateDescription' = 0 }
+	export enum UpdateApprovalRuleTemplateDescriptionX_Amz_Target { 'CodeCommit_20150413.UpdateApprovalRuleTemplateDescription' = 'CodeCommit_20150413.UpdateApprovalRuleTemplateDescription' }
 
-	export enum UpdateApprovalRuleTemplateNameX_Amz_Target { 'CodeCommit_20150413.UpdateApprovalRuleTemplateName' = 0 }
+	export enum UpdateApprovalRuleTemplateNameX_Amz_Target { 'CodeCommit_20150413.UpdateApprovalRuleTemplateName' = 'CodeCommit_20150413.UpdateApprovalRuleTemplateName' }
 
-	export enum UpdateCommentX_Amz_Target { 'CodeCommit_20150413.UpdateComment' = 0 }
+	export enum UpdateCommentX_Amz_Target { 'CodeCommit_20150413.UpdateComment' = 'CodeCommit_20150413.UpdateComment' }
 
-	export enum UpdateDefaultBranchX_Amz_Target { 'CodeCommit_20150413.UpdateDefaultBranch' = 0 }
+	export enum UpdateDefaultBranchX_Amz_Target { 'CodeCommit_20150413.UpdateDefaultBranch' = 'CodeCommit_20150413.UpdateDefaultBranch' }
 
-	export enum UpdatePullRequestApprovalRuleContentX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestApprovalRuleContent' = 0 }
+	export enum UpdatePullRequestApprovalRuleContentX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestApprovalRuleContent' = 'CodeCommit_20150413.UpdatePullRequestApprovalRuleContent' }
 
-	export enum UpdatePullRequestApprovalStateX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestApprovalState' = 0 }
+	export enum UpdatePullRequestApprovalStateX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestApprovalState' = 'CodeCommit_20150413.UpdatePullRequestApprovalState' }
 
-	export enum UpdatePullRequestDescriptionX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestDescription' = 0 }
+	export enum UpdatePullRequestDescriptionX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestDescription' = 'CodeCommit_20150413.UpdatePullRequestDescription' }
 
-	export enum UpdatePullRequestStatusX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestStatus' = 0 }
+	export enum UpdatePullRequestStatusX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestStatus' = 'CodeCommit_20150413.UpdatePullRequestStatus' }
 
-	export enum UpdatePullRequestTitleX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestTitle' = 0 }
+	export enum UpdatePullRequestTitleX_Amz_Target { 'CodeCommit_20150413.UpdatePullRequestTitle' = 'CodeCommit_20150413.UpdatePullRequestTitle' }
 
-	export enum UpdateRepositoryDescriptionX_Amz_Target { 'CodeCommit_20150413.UpdateRepositoryDescription' = 0 }
+	export enum UpdateRepositoryDescriptionX_Amz_Target { 'CodeCommit_20150413.UpdateRepositoryDescription' = 'CodeCommit_20150413.UpdateRepositoryDescription' }
 
-	export enum UpdateRepositoryNameX_Amz_Target { 'CodeCommit_20150413.UpdateRepositoryName' = 0 }
+	export enum UpdateRepositoryNameX_Amz_Target { 'CodeCommit_20150413.UpdateRepositoryName' = 'CodeCommit_20150413.UpdateRepositoryName' }
 
 }
 

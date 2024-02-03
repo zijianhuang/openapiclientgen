@@ -98,7 +98,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommenderV1ImpactCategory { CATEGORY_UNSPECIFIED = 0, COST = 1, SECURITY = 2, PERFORMANCE = 3, MANAGEABILITY = 4, SUSTAINABILITY = 5, RELIABILITY = 6 }
+	export enum GoogleCloudRecommenderV1ImpactCategory { CATEGORY_UNSPECIFIED = 'CATEGORY_UNSPECIFIED', COST = 'COST', SECURITY = 'SECURITY', PERFORMANCE = 'PERFORMANCE', MANAGEABILITY = 'MANAGEABILITY', SUSTAINABILITY = 'SUSTAINABILITY', RELIABILITY = 'RELIABILITY' }
 
 
 	/** Contains information on the impact of a reliability recommendation. */
@@ -280,7 +280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommenderV1InsightSeverity { SEVERITY_UNSPECIFIED = 0, LOW = 1, MEDIUM = 2, HIGH = 3, CRITICAL = 4 }
+	export enum GoogleCloudRecommenderV1InsightSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL' }
 
 
 	/** Information related to insight state. */
@@ -310,7 +310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommenderV1InsightStateInfoState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ACCEPTED = 2, DISMISSED = 3 }
+	export enum GoogleCloudRecommenderV1InsightStateInfoState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', ACCEPTED = 'ACCEPTED', DISMISSED = 'DISMISSED' }
 
 
 	/** Configuration for an InsightType. */
@@ -681,7 +681,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommenderV1RecommendationPriority { PRIORITY_UNSPECIFIED = 0, P4 = 1, P3 = 2, P2 = 3, P1 = 4 }
+	export enum GoogleCloudRecommenderV1RecommendationPriority { PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED', P4 = 'P4', P3 = 'P3', P2 = 'P2', P1 = 'P1' }
 
 
 	/** Information for state. Contains state and metadata. */
@@ -711,7 +711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommenderV1RecommendationStateInfoState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CLAIMED = 2, SUCCEEDED = 3, FAILED = 4, DISMISSED = 5 }
+	export enum GoogleCloudRecommenderV1RecommendationStateInfoState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CLAIMED = 'CLAIMED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', DISMISSED = 'DISMISSED' }
 
 
 	/** Request for the `MarkInsightAccepted` method. */

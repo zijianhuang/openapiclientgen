@@ -513,11 +513,11 @@ export namespace MyNS {
 
 
 	/** Enum listing out all supported route types. The following enum values are supported. 1. Transactional : Non-marketing traffic 2. Promotional : Marketing 3. Premium : Premium routes for OTP delivery to the carriers */
-	export enum RouteType { Transactional = 0, Promotional = 1, Premium = 2 }
+	export enum RouteType { Transactional = 'Transactional', Promotional = 'Promotional', Premium = 'Premium' }
 
 
 	/** Enum listing out all supported number capabilities. */
-	export enum NumberCapability { SMS = 0, MMS = 1, VOICE = 2 }
+	export enum NumberCapability { SMS = 'SMS', MMS = 'MMS', VOICE = 'VOICE' }
 
 	export interface ValidationException {
 	}
@@ -621,7 +621,7 @@ export namespace MyNS {
 
 
 	/** Enum listing out all supported destination phone number verification statuses. The following enum values are supported. 1. PENDING : The destination phone number is pending verification. 2. VERIFIED : The destination phone number is verified. */
-	export enum SMSSandboxPhoneNumberVerificationStatus { Pending = 0, Verified = 1 }
+	export enum SMSSandboxPhoneNumberVerificationStatus { Pending = 'Pending', Verified = 'Verified' }
 
 
 	/** Response for ListSubscriptions action */
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 
 
 	/** Supported language code for sending OTP message */
-	export enum LanguageCodeString { 'en-US' = 0, 'en-GB' = 1, 'es-419' = 2, 'es-ES' = 3, 'de-DE' = 4, 'fr-CA' = 5, 'fr-FR' = 6, 'it-IT' = 7, 'ja-JP' = 8, 'pt-BR' = 9, 'kr-KR' = 10, 'zh-CN' = 11, 'zh-TW' = 12 }
+	export enum LanguageCodeString { 'en-US' = 'en-US', 'en-GB' = 'en-GB', 'es-419' = 'es-419', 'es-ES' = 'es-ES', 'de-DE' = 'de-DE', 'fr-CA' = 'fr-CA', 'fr-FR' = 'fr-FR', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'pt-BR' = 'pt-BR', 'kr-KR' = 'kr-KR', 'zh-CN' = 'zh-CN', 'zh-TW' = 'zh-TW' }
 
 	export interface CreateSMSSandboxPhoneNumberInput {
 
@@ -2542,91 +2542,91 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddPermissionAction { AddPermission = 0 }
+	export enum GET_AddPermissionAction { AddPermission = 'AddPermission' }
 
-	export enum GET_AddPermissionVersion { '2010-03-31' = 0 }
+	export enum GET_AddPermissionVersion { '2010-03-31' = '2010-03-31' }
 
-	export enum GET_CheckIfPhoneNumberIsOptedOutAction { CheckIfPhoneNumberIsOptedOut = 0 }
+	export enum GET_CheckIfPhoneNumberIsOptedOutAction { CheckIfPhoneNumberIsOptedOut = 'CheckIfPhoneNumberIsOptedOut' }
 
-	export enum GET_ConfirmSubscriptionAction { ConfirmSubscription = 0 }
+	export enum GET_ConfirmSubscriptionAction { ConfirmSubscription = 'ConfirmSubscription' }
 
-	export enum GET_CreatePlatformApplicationAction { CreatePlatformApplication = 0 }
+	export enum GET_CreatePlatformApplicationAction { CreatePlatformApplication = 'CreatePlatformApplication' }
 
-	export enum GET_CreatePlatformEndpointAction { CreatePlatformEndpoint = 0 }
+	export enum GET_CreatePlatformEndpointAction { CreatePlatformEndpoint = 'CreatePlatformEndpoint' }
 
-	export enum GET_CreateSMSSandboxPhoneNumberAction { CreateSMSSandboxPhoneNumber = 0 }
+	export enum GET_CreateSMSSandboxPhoneNumberAction { CreateSMSSandboxPhoneNumber = 'CreateSMSSandboxPhoneNumber' }
 
-	export enum GET_CreateTopicAction { CreateTopic = 0 }
+	export enum GET_CreateTopicAction { CreateTopic = 'CreateTopic' }
 
-	export enum GET_DeleteEndpointAction { DeleteEndpoint = 0 }
+	export enum GET_DeleteEndpointAction { DeleteEndpoint = 'DeleteEndpoint' }
 
-	export enum GET_DeletePlatformApplicationAction { DeletePlatformApplication = 0 }
+	export enum GET_DeletePlatformApplicationAction { DeletePlatformApplication = 'DeletePlatformApplication' }
 
-	export enum GET_DeleteSMSSandboxPhoneNumberAction { DeleteSMSSandboxPhoneNumber = 0 }
+	export enum GET_DeleteSMSSandboxPhoneNumberAction { DeleteSMSSandboxPhoneNumber = 'DeleteSMSSandboxPhoneNumber' }
 
-	export enum GET_DeleteTopicAction { DeleteTopic = 0 }
+	export enum GET_DeleteTopicAction { DeleteTopic = 'DeleteTopic' }
 
-	export enum GET_GetDataProtectionPolicyAction { GetDataProtectionPolicy = 0 }
+	export enum GET_GetDataProtectionPolicyAction { GetDataProtectionPolicy = 'GetDataProtectionPolicy' }
 
-	export enum GET_GetEndpointAttributesAction { GetEndpointAttributes = 0 }
+	export enum GET_GetEndpointAttributesAction { GetEndpointAttributes = 'GetEndpointAttributes' }
 
-	export enum GET_GetPlatformApplicationAttributesAction { GetPlatformApplicationAttributes = 0 }
+	export enum GET_GetPlatformApplicationAttributesAction { GetPlatformApplicationAttributes = 'GetPlatformApplicationAttributes' }
 
-	export enum GET_GetSMSAttributesAction { GetSMSAttributes = 0 }
+	export enum GET_GetSMSAttributesAction { GetSMSAttributes = 'GetSMSAttributes' }
 
-	export enum GET_GetSMSSandboxAccountStatusAction { GetSMSSandboxAccountStatus = 0 }
+	export enum GET_GetSMSSandboxAccountStatusAction { GetSMSSandboxAccountStatus = 'GetSMSSandboxAccountStatus' }
 
-	export enum GET_GetSubscriptionAttributesAction { GetSubscriptionAttributes = 0 }
+	export enum GET_GetSubscriptionAttributesAction { GetSubscriptionAttributes = 'GetSubscriptionAttributes' }
 
-	export enum GET_GetTopicAttributesAction { GetTopicAttributes = 0 }
+	export enum GET_GetTopicAttributesAction { GetTopicAttributes = 'GetTopicAttributes' }
 
-	export enum GET_ListEndpointsByPlatformApplicationAction { ListEndpointsByPlatformApplication = 0 }
+	export enum GET_ListEndpointsByPlatformApplicationAction { ListEndpointsByPlatformApplication = 'ListEndpointsByPlatformApplication' }
 
-	export enum GET_ListOriginationNumbersAction { ListOriginationNumbers = 0 }
+	export enum GET_ListOriginationNumbersAction { ListOriginationNumbers = 'ListOriginationNumbers' }
 
-	export enum GET_ListPhoneNumbersOptedOutAction { ListPhoneNumbersOptedOut = 0 }
+	export enum GET_ListPhoneNumbersOptedOutAction { ListPhoneNumbersOptedOut = 'ListPhoneNumbersOptedOut' }
 
-	export enum GET_ListPlatformApplicationsAction { ListPlatformApplications = 0 }
+	export enum GET_ListPlatformApplicationsAction { ListPlatformApplications = 'ListPlatformApplications' }
 
-	export enum GET_ListSMSSandboxPhoneNumbersAction { ListSMSSandboxPhoneNumbers = 0 }
+	export enum GET_ListSMSSandboxPhoneNumbersAction { ListSMSSandboxPhoneNumbers = 'ListSMSSandboxPhoneNumbers' }
 
-	export enum GET_ListSubscriptionsAction { ListSubscriptions = 0 }
+	export enum GET_ListSubscriptionsAction { ListSubscriptions = 'ListSubscriptions' }
 
-	export enum GET_ListSubscriptionsByTopicAction { ListSubscriptionsByTopic = 0 }
+	export enum GET_ListSubscriptionsByTopicAction { ListSubscriptionsByTopic = 'ListSubscriptionsByTopic' }
 
-	export enum GET_ListTagsForResourceAction { ListTagsForResource = 0 }
+	export enum GET_ListTagsForResourceAction { ListTagsForResource = 'ListTagsForResource' }
 
-	export enum GET_ListTopicsAction { ListTopics = 0 }
+	export enum GET_ListTopicsAction { ListTopics = 'ListTopics' }
 
-	export enum GET_OptInPhoneNumberAction { OptInPhoneNumber = 0 }
+	export enum GET_OptInPhoneNumberAction { OptInPhoneNumber = 'OptInPhoneNumber' }
 
-	export enum GET_PublishAction { Publish = 0 }
+	export enum GET_PublishAction { Publish = 'Publish' }
 
-	export enum GET_PublishBatchAction { PublishBatch = 0 }
+	export enum GET_PublishBatchAction { PublishBatch = 'PublishBatch' }
 
-	export enum GET_PutDataProtectionPolicyAction { PutDataProtectionPolicy = 0 }
+	export enum GET_PutDataProtectionPolicyAction { PutDataProtectionPolicy = 'PutDataProtectionPolicy' }
 
-	export enum GET_RemovePermissionAction { RemovePermission = 0 }
+	export enum GET_RemovePermissionAction { RemovePermission = 'RemovePermission' }
 
-	export enum GET_SetEndpointAttributesAction { SetEndpointAttributes = 0 }
+	export enum GET_SetEndpointAttributesAction { SetEndpointAttributes = 'SetEndpointAttributes' }
 
-	export enum GET_SetPlatformApplicationAttributesAction { SetPlatformApplicationAttributes = 0 }
+	export enum GET_SetPlatformApplicationAttributesAction { SetPlatformApplicationAttributes = 'SetPlatformApplicationAttributes' }
 
-	export enum GET_SetSMSAttributesAction { SetSMSAttributes = 0 }
+	export enum GET_SetSMSAttributesAction { SetSMSAttributes = 'SetSMSAttributes' }
 
-	export enum GET_SetSubscriptionAttributesAction { SetSubscriptionAttributes = 0 }
+	export enum GET_SetSubscriptionAttributesAction { SetSubscriptionAttributes = 'SetSubscriptionAttributes' }
 
-	export enum GET_SetTopicAttributesAction { SetTopicAttributes = 0 }
+	export enum GET_SetTopicAttributesAction { SetTopicAttributes = 'SetTopicAttributes' }
 
-	export enum GET_SubscribeAction { Subscribe = 0 }
+	export enum GET_SubscribeAction { Subscribe = 'Subscribe' }
 
-	export enum GET_TagResourceAction { TagResource = 0 }
+	export enum GET_TagResourceAction { TagResource = 'TagResource' }
 
-	export enum GET_UnsubscribeAction { Unsubscribe = 0 }
+	export enum GET_UnsubscribeAction { Unsubscribe = 'Unsubscribe' }
 
-	export enum GET_UntagResourceAction { UntagResource = 0 }
+	export enum GET_UntagResourceAction { UntagResource = 'UntagResource' }
 
-	export enum GET_VerifySMSSandboxPhoneNumberAction { VerifySMSSandboxPhoneNumber = 0 }
+	export enum GET_VerifySMSSandboxPhoneNumberAction { VerifySMSSandboxPhoneNumber = 'VerifySMSSandboxPhoneNumber' }
 
 }
 

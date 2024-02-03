@@ -125,7 +125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1RestoreDatabaseMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 0, INITIALIZING = 1, PROCESSING = 2, CANCELLING = 3, FINALIZING = 4, SUCCESSFUL = 5, FAILED = 6, CANCELLED = 7 }
+	export enum GoogleFirestoreAdminV1RestoreDatabaseMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 'OPERATION_STATE_UNSPECIFIED', INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', CANCELLING = 'CANCELLING', FINALIZING = 'FINALIZING', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** Metadata related to the update database operation. */
@@ -400,13 +400,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1beta2IndexFieldArrayConfig { ARRAY_CONFIG_UNSPECIFIED = 0, CONTAINS = 1 }
+	export enum GoogleFirestoreAdminV1beta2IndexFieldArrayConfig { ARRAY_CONFIG_UNSPECIFIED = 'ARRAY_CONFIG_UNSPECIFIED', CONTAINS = 'CONTAINS' }
 
-	export enum GoogleFirestoreAdminV1beta2IndexFieldOrder { ORDER_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum GoogleFirestoreAdminV1beta2IndexFieldOrder { ORDER_UNSPECIFIED = 'ORDER_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
-	export enum GoogleFirestoreAdminV1beta2IndexQueryScope { QUERY_SCOPE_UNSPECIFIED = 0, COLLECTION = 1, COLLECTION_GROUP = 2 }
+	export enum GoogleFirestoreAdminV1beta2IndexQueryScope { QUERY_SCOPE_UNSPECIFIED = 'QUERY_SCOPE_UNSPECIFIED', COLLECTION = 'COLLECTION', COLLECTION_GROUP = 'COLLECTION_GROUP' }
 
-	export enum GoogleFirestoreAdminV1beta2IndexState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, NEEDS_REPAIR = 3 }
+	export enum GoogleFirestoreAdminV1beta2IndexState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', NEEDS_REPAIR = 'NEEDS_REPAIR' }
 
 
 	/** Metadata for google.longrunning.Operation results from FirestoreAdmin.UpdateField. */
@@ -483,7 +483,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirestoreAdminV1beta2IndexConfigDeltaChangeType { CHANGE_TYPE_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
+	export enum GoogleFirestoreAdminV1beta2IndexConfigDeltaChangeType { CHANGE_TYPE_UNSPECIFIED = 'CHANGE_TYPE_UNSPECIFIED', ADD = 'ADD', REMOVE = 'REMOVE' }
 
 
 	/** Metadata for google.longrunning.Operation results from FirestoreAdmin.ImportDocuments. */

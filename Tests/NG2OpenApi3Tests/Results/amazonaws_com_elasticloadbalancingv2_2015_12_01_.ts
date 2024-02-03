@@ -191,7 +191,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtocolEnum { HTTP = 0, HTTPS = 1, TCP = 2, TLS = 3, UDP = 4, TCP_UDP = 5, GENEVE = 6 }
+	export enum ProtocolEnum { HTTP = 'HTTP', HTTPS = 'HTTPS', TCP = 'TCP', TLS = 'TLS', UDP = 'UDP', TCP_UDP = 'TCP_UDP', GENEVE = 'GENEVE' }
 
 
 	/** <p>Information about an action.</p> <p>Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p> */
@@ -225,7 +225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionTypeEnum { forward = 0, 'authenticate-oidc' = 1, 'authenticate-cognito' = 2, redirect = 3, 'fixed-response' = 4 }
+	export enum ActionTypeEnum { forward = 'forward', 'authenticate-oidc' = 'authenticate-oidc', 'authenticate-cognito' = 'authenticate-cognito', redirect = 'redirect', 'fixed-response' = 'fixed-response' }
 
 
 	/** Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users. */
@@ -305,7 +305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticateOidcActionConditionalBehaviorEnum { deny = 0, allow = 1, authenticate = 2 }
+	export enum AuthenticateOidcActionConditionalBehaviorEnum { deny = 'deny', allow = 'allow', authenticate = 'authenticate' }
 
 
 	/** Request parameters to use when integrating with Amazon Cognito to authenticate users. */
@@ -401,7 +401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RedirectActionStatusCodeEnum { HTTP_301 = 0, HTTP_302 = 1 }
+	export enum RedirectActionStatusCodeEnum { HTTP_301 = 'HTTP_301', HTTP_302 = 'HTTP_302' }
 
 
 	/** Information about an action that returns a custom HTTP response. */
@@ -674,7 +674,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerSchemeEnum { 'internet-facing' = 0, internal = 1 }
+	export enum LoadBalancerSchemeEnum { 'internet-facing' = 'internet-facing', internal = 'internal' }
 
 
 	/** Information about the state of the load balancer. */
@@ -696,9 +696,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerStateEnum { active = 0, provisioning = 1, active_impaired = 2, failed = 3 }
+	export enum LoadBalancerStateEnum { active = 'active', provisioning = 'provisioning', active_impaired = 'active_impaired', failed = 'failed' }
 
-	export enum LoadBalancerTypeEnum { application = 0, network = 1, gateway = 2 }
+	export enum LoadBalancerTypeEnum { application = 'application', network = 'network', gateway = 'gateway' }
 
 
 	/** Information about an Availability Zone. */
@@ -750,7 +750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpAddressType { ipv4 = 0, dualstack = 1 }
+	export enum IpAddressType { ipv4 = 'ipv4', dualstack = 'dualstack' }
 
 
 	/** Information about a subnet mapping. */
@@ -1176,9 +1176,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetTypeEnum { instance = 0, ip = 1, lambda = 2, alb = 3 }
+	export enum TargetTypeEnum { instance = 'instance', ip = 'ip', lambda = 'lambda', alb = 'alb' }
 
-	export enum TargetGroupIpAddressTypeEnum { ipv4 = 0, ipv6 = 1 }
+	export enum TargetGroupIpAddressTypeEnum { ipv4 = 'ipv4', ipv6 = 'ipv6' }
 
 	export interface DuplicateTargetGroupNameException {
 	}
@@ -1579,9 +1579,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetHealthStateEnum { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
+	export enum TargetHealthStateEnum { initial = 'initial', healthy = 'healthy', unhealthy = 'unhealthy', unused = 'unused', draining = 'draining', unavailable = 'unavailable' }
 
-	export enum TargetHealthReasonEnum { 'Elb.RegistrationInProgress' = 0, 'Elb.InitialHealthChecking' = 1, 'Target.ResponseCodeMismatch' = 2, 'Target.Timeout' = 3, 'Target.FailedHealthChecks' = 4, 'Target.NotRegistered' = 5, 'Target.NotInUse' = 6, 'Target.DeregistrationInProgress' = 7, 'Target.InvalidState' = 8, 'Target.IpUnusable' = 9, 'Target.HealthCheckDisabled' = 10, 'Elb.InternalError' = 11 }
+	export enum TargetHealthReasonEnum { 'Elb.RegistrationInProgress' = 'Elb.RegistrationInProgress', 'Elb.InitialHealthChecking' = 'Elb.InitialHealthChecking', 'Target.ResponseCodeMismatch' = 'Target.ResponseCodeMismatch', 'Target.Timeout' = 'Target.Timeout', 'Target.FailedHealthChecks' = 'Target.FailedHealthChecks', 'Target.NotRegistered' = 'Target.NotRegistered', 'Target.NotInUse' = 'Target.NotInUse', 'Target.DeregistrationInProgress' = 'Target.DeregistrationInProgress', 'Target.InvalidState' = 'Target.InvalidState', 'Target.IpUnusable' = 'Target.IpUnusable', 'Target.HealthCheckDisabled' = 'Target.HealthCheckDisabled', 'Elb.InternalError' = 'Elb.InternalError' }
 
 	export interface HealthUnavailableException {
 	}
@@ -1783,7 +1783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticateCognitoActionConditionalBehaviorEnum { deny = 0, allow = 1, authenticate = 2 }
+	export enum AuthenticateCognitoActionConditionalBehaviorEnum { deny = 'deny', allow = 'allow', authenticate = 'authenticate' }
 
 	export interface CreateListenerInput {
 
@@ -2929,17 +2929,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddListenerCertificatesAction { AddListenerCertificates = 0 }
+	export enum GET_AddListenerCertificatesAction { AddListenerCertificates = 'AddListenerCertificates' }
 
-	export enum GET_AddListenerCertificatesVersion { '2015-12-01' = 0 }
+	export enum GET_AddListenerCertificatesVersion { '2015-12-01' = '2015-12-01' }
 
-	export enum GET_AddTagsAction { AddTags = 0 }
+	export enum GET_AddTagsAction { AddTags = 'AddTags' }
 
-	export enum GET_CreateListenerAction { CreateListener = 0 }
+	export enum GET_CreateListenerAction { CreateListener = 'CreateListener' }
 
-	export enum GET_CreateLoadBalancerAction { CreateLoadBalancer = 0 }
+	export enum GET_CreateLoadBalancerAction { CreateLoadBalancer = 'CreateLoadBalancer' }
 
-	export enum GET_CreateRuleAction { CreateRule = 0 }
+	export enum GET_CreateRuleAction { CreateRule = 'CreateRule' }
 
 	export interface GET_CreateTargetGroupMatcher {
 		HttpCode?: string;
@@ -2957,45 +2957,45 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateTargetGroupAction { CreateTargetGroup = 0 }
+	export enum GET_CreateTargetGroupAction { CreateTargetGroup = 'CreateTargetGroup' }
 
-	export enum GET_DeleteListenerAction { DeleteListener = 0 }
+	export enum GET_DeleteListenerAction { DeleteListener = 'DeleteListener' }
 
-	export enum GET_DeleteLoadBalancerAction { DeleteLoadBalancer = 0 }
+	export enum GET_DeleteLoadBalancerAction { DeleteLoadBalancer = 'DeleteLoadBalancer' }
 
-	export enum GET_DeleteRuleAction { DeleteRule = 0 }
+	export enum GET_DeleteRuleAction { DeleteRule = 'DeleteRule' }
 
-	export enum GET_DeleteTargetGroupAction { DeleteTargetGroup = 0 }
+	export enum GET_DeleteTargetGroupAction { DeleteTargetGroup = 'DeleteTargetGroup' }
 
-	export enum GET_DeregisterTargetsAction { DeregisterTargets = 0 }
+	export enum GET_DeregisterTargetsAction { DeregisterTargets = 'DeregisterTargets' }
 
-	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 0 }
+	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 'DescribeAccountLimits' }
 
-	export enum GET_DescribeListenerCertificatesAction { DescribeListenerCertificates = 0 }
+	export enum GET_DescribeListenerCertificatesAction { DescribeListenerCertificates = 'DescribeListenerCertificates' }
 
-	export enum GET_DescribeListenersAction { DescribeListeners = 0 }
+	export enum GET_DescribeListenersAction { DescribeListeners = 'DescribeListeners' }
 
-	export enum GET_DescribeLoadBalancerAttributesAction { DescribeLoadBalancerAttributes = 0 }
+	export enum GET_DescribeLoadBalancerAttributesAction { DescribeLoadBalancerAttributes = 'DescribeLoadBalancerAttributes' }
 
-	export enum GET_DescribeLoadBalancersAction { DescribeLoadBalancers = 0 }
+	export enum GET_DescribeLoadBalancersAction { DescribeLoadBalancers = 'DescribeLoadBalancers' }
 
-	export enum GET_DescribeRulesAction { DescribeRules = 0 }
+	export enum GET_DescribeRulesAction { DescribeRules = 'DescribeRules' }
 
-	export enum GET_DescribeSSLPoliciesAction { DescribeSSLPolicies = 0 }
+	export enum GET_DescribeSSLPoliciesAction { DescribeSSLPolicies = 'DescribeSSLPolicies' }
 
-	export enum GET_DescribeTagsAction { DescribeTags = 0 }
+	export enum GET_DescribeTagsAction { DescribeTags = 'DescribeTags' }
 
-	export enum GET_DescribeTargetGroupAttributesAction { DescribeTargetGroupAttributes = 0 }
+	export enum GET_DescribeTargetGroupAttributesAction { DescribeTargetGroupAttributes = 'DescribeTargetGroupAttributes' }
 
-	export enum GET_DescribeTargetGroupsAction { DescribeTargetGroups = 0 }
+	export enum GET_DescribeTargetGroupsAction { DescribeTargetGroups = 'DescribeTargetGroups' }
 
-	export enum GET_DescribeTargetHealthAction { DescribeTargetHealth = 0 }
+	export enum GET_DescribeTargetHealthAction { DescribeTargetHealth = 'DescribeTargetHealth' }
 
-	export enum GET_ModifyListenerAction { ModifyListener = 0 }
+	export enum GET_ModifyListenerAction { ModifyListener = 'ModifyListener' }
 
-	export enum GET_ModifyLoadBalancerAttributesAction { ModifyLoadBalancerAttributes = 0 }
+	export enum GET_ModifyLoadBalancerAttributesAction { ModifyLoadBalancerAttributes = 'ModifyLoadBalancerAttributes' }
 
-	export enum GET_ModifyRuleAction { ModifyRule = 0 }
+	export enum GET_ModifyRuleAction { ModifyRule = 'ModifyRule' }
 
 	export interface GET_ModifyTargetGroupMatcher {
 		HttpCode?: string;
@@ -3013,23 +3013,23 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ModifyTargetGroupAction { ModifyTargetGroup = 0 }
+	export enum GET_ModifyTargetGroupAction { ModifyTargetGroup = 'ModifyTargetGroup' }
 
-	export enum GET_ModifyTargetGroupAttributesAction { ModifyTargetGroupAttributes = 0 }
+	export enum GET_ModifyTargetGroupAttributesAction { ModifyTargetGroupAttributes = 'ModifyTargetGroupAttributes' }
 
-	export enum GET_RegisterTargetsAction { RegisterTargets = 0 }
+	export enum GET_RegisterTargetsAction { RegisterTargets = 'RegisterTargets' }
 
-	export enum GET_RemoveListenerCertificatesAction { RemoveListenerCertificates = 0 }
+	export enum GET_RemoveListenerCertificatesAction { RemoveListenerCertificates = 'RemoveListenerCertificates' }
 
-	export enum GET_RemoveTagsAction { RemoveTags = 0 }
+	export enum GET_RemoveTagsAction { RemoveTags = 'RemoveTags' }
 
-	export enum GET_SetIpAddressTypeAction { SetIpAddressType = 0 }
+	export enum GET_SetIpAddressTypeAction { SetIpAddressType = 'SetIpAddressType' }
 
-	export enum GET_SetRulePrioritiesAction { SetRulePriorities = 0 }
+	export enum GET_SetRulePrioritiesAction { SetRulePriorities = 'SetRulePriorities' }
 
-	export enum GET_SetSecurityGroupsAction { SetSecurityGroups = 0 }
+	export enum GET_SetSecurityGroupsAction { SetSecurityGroups = 'SetSecurityGroups' }
 
-	export enum GET_SetSubnetsAction { SetSubnets = 0 }
+	export enum GET_SetSubnetsAction { SetSubnets = 'SetSubnets' }
 
 }
 

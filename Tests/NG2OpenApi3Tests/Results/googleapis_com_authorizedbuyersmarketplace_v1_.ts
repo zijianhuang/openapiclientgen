@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdSizeType { TYPE_UNSPECIFIED = 0, PIXEL = 1, INTERSTITIAL = 2, NATIVE = 3, FLUID = 4 }
+	export enum AdSizeType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PIXEL = 'PIXEL', INTERSTITIAL = 'INTERSTITIAL', NATIVE = 'NATIVE', FLUID = 'FLUID' }
 
 
 	/** Request message for adding creative to be used in the bidding process for the finalized deal. */
@@ -162,7 +162,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NoteCreatorRole { BUYER_SELLER_ROLE_UNSPECIFIED = 0, BUYER = 1, SELLER = 2 }
+	export enum NoteCreatorRole { BUYER_SELLER_ROLE_UNSPECIFIED = 'BUYER_SELLER_ROLE_UNSPECIFIED', BUYER = 'BUYER', SELLER = 'SELLER' }
 
 
 	/** Defines a segment of inventory that buyer wants to buy. It's created by buyer and could be shared with multiple buyers. */
@@ -449,17 +449,17 @@ export namespace MyNS {
 
 	}
 
-	export enum CreativeRequirementsCreativeFormat { CREATIVE_FORMAT_UNSPECIFIED = 0, DISPLAY = 1, VIDEO = 2, AUDIO = 3 }
+	export enum CreativeRequirementsCreativeFormat { CREATIVE_FORMAT_UNSPECIFIED = 'CREATIVE_FORMAT_UNSPECIFIED', DISPLAY = 'DISPLAY', VIDEO = 'VIDEO', AUDIO = 'AUDIO' }
 
-	export enum CreativeRequirementsCreativePreApprovalPolicy { CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED = 0, SELLER_PRE_APPROVAL_REQUIRED = 1, SELLER_PRE_APPROVAL_NOT_REQUIRED = 2 }
+	export enum CreativeRequirementsCreativePreApprovalPolicy { CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED = 'CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED', SELLER_PRE_APPROVAL_REQUIRED = 'SELLER_PRE_APPROVAL_REQUIRED', SELLER_PRE_APPROVAL_NOT_REQUIRED = 'SELLER_PRE_APPROVAL_NOT_REQUIRED' }
 
-	export enum CreativeRequirementsCreativeSafeFrameCompatibility { CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED = 0, COMPATIBLE = 1, INCOMPATIBLE = 2 }
+	export enum CreativeRequirementsCreativeSafeFrameCompatibility { CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED = 'CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED', COMPATIBLE = 'COMPATIBLE', INCOMPATIBLE = 'INCOMPATIBLE' }
 
-	export enum CreativeRequirementsProgrammaticCreativeSource { PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED = 0, ADVERTISER = 1, PUBLISHER = 2 }
+	export enum CreativeRequirementsProgrammaticCreativeSource { PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED = 'PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED', ADVERTISER = 'ADVERTISER', PUBLISHER = 'PUBLISHER' }
 
-	export enum CreativeRequirementsSkippableAdType { SKIPPABLE_AD_TYPE_UNSPECIFIED = 0, SKIPPABLE = 1, INSTREAM_SELECT = 2, NOT_SKIPPABLE = 3, ANY = 4 }
+	export enum CreativeRequirementsSkippableAdType { SKIPPABLE_AD_TYPE_UNSPECIFIED = 'SKIPPABLE_AD_TYPE_UNSPECIFIED', SKIPPABLE = 'SKIPPABLE', INSTREAM_SELECT = 'INSTREAM_SELECT', NOT_SKIPPABLE = 'NOT_SKIPPABLE', ANY = 'ANY' }
 
-	export enum DealDealType { DEAL_TYPE_UNSPECIFIED = 0, PREFERRED_DEAL = 1, PRIVATE_AUCTION = 2, PROGRAMMATIC_GUARANTEED = 3 }
+	export enum DealDealType { DEAL_TYPE_UNSPECIFIED = 'DEAL_TYPE_UNSPECIFIED', PREFERRED_DEAL = 'PREFERRED_DEAL', PRIVATE_AUCTION = 'PRIVATE_AUCTION', PROGRAMMATIC_GUARANTEED = 'PROGRAMMATIC_GUARANTEED' }
 
 
 	/** Message contains details about how the deal will be paced. */
@@ -506,11 +506,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryControlCompanionDeliveryType { COMPANION_DELIVERY_TYPE_UNSPECIFIED = 0, DELIVERY_OPTIONAL = 1, DELIVERY_AT_LEAST_ONE = 2, DELIVERY_ALL = 3 }
+	export enum DeliveryControlCompanionDeliveryType { COMPANION_DELIVERY_TYPE_UNSPECIFIED = 'COMPANION_DELIVERY_TYPE_UNSPECIFIED', DELIVERY_OPTIONAL = 'DELIVERY_OPTIONAL', DELIVERY_AT_LEAST_ONE = 'DELIVERY_AT_LEAST_ONE', DELIVERY_ALL = 'DELIVERY_ALL' }
 
-	export enum DeliveryControlCreativeRotationType { CREATIVE_ROTATION_TYPE_UNSPECIFIED = 0, ROTATION_EVEN = 1, ROTATION_OPTIMIZED = 2, ROTATION_MANUAL = 3, ROTATION_SEQUENTIAL = 4 }
+	export enum DeliveryControlCreativeRotationType { CREATIVE_ROTATION_TYPE_UNSPECIFIED = 'CREATIVE_ROTATION_TYPE_UNSPECIFIED', ROTATION_EVEN = 'ROTATION_EVEN', ROTATION_OPTIMIZED = 'ROTATION_OPTIMIZED', ROTATION_MANUAL = 'ROTATION_MANUAL', ROTATION_SEQUENTIAL = 'ROTATION_SEQUENTIAL' }
 
-	export enum DeliveryControlDeliveryRateType { DELIVERY_RATE_TYPE_UNSPECIFIED = 0, EVENLY = 1, FRONT_LOADED = 2, AS_FAST_AS_POSSIBLE = 3 }
+	export enum DeliveryControlDeliveryRateType { DELIVERY_RATE_TYPE_UNSPECIFIED = 'DELIVERY_RATE_TYPE_UNSPECIFIED', EVENLY = 'EVENLY', FRONT_LOADED = 'FRONT_LOADED', AS_FAST_AS_POSSIBLE = 'AS_FAST_AS_POSSIBLE' }
 
 
 	/** Message contains details about publisher-set frequency caps of the delivery. */
@@ -547,9 +547,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FrequencyCapTimeUnitType { TIME_UNIT_TYPE_UNSPECIFIED = 0, MINUTE = 1, HOUR = 2, DAY = 3, WEEK = 4, MONTH = 5, LIFETIME = 6, POD = 7, STREAM = 8 }
+	export enum FrequencyCapTimeUnitType { TIME_UNIT_TYPE_UNSPECIFIED = 'TIME_UNIT_TYPE_UNSPECIFIED', MINUTE = 'MINUTE', HOUR = 'HOUR', DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH', LIFETIME = 'LIFETIME', POD = 'POD', STREAM = 'STREAM' }
 
-	export enum DeliveryControlRoadblockingType { ROADBLOCKING_TYPE_UNSPECIFIED = 0, ONLY_ONE = 1, ONE_OR_MORE = 2, AS_MANY_AS_POSSIBLE = 3, ALL_ROADBLOCK = 4, CREATIVE_SET = 5 }
+	export enum DeliveryControlRoadblockingType { ROADBLOCKING_TYPE_UNSPECIFIED = 'ROADBLOCKING_TYPE_UNSPECIFIED', ONLY_ONE = 'ONLY_ONE', ONE_OR_MORE = 'ONE_OR_MORE', AS_MANY_AS_POSSIBLE = 'AS_MANY_AS_POSSIBLE', ALL_ROADBLOCK = 'ALL_ROADBLOCK', CREATIVE_SET = 'CREATIVE_SET' }
 
 
 	/** Represents an amount of money with its currency type. */
@@ -627,7 +627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriceType { TYPE_UNSPECIFIED = 0, CPM = 1, CPD = 2 }
+	export enum PriceType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CPM = 'CPM', CPD = 'CPD' }
 
 
 	/** Pricing terms for Private Auctions. */
@@ -705,7 +705,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProgrammaticGuaranteedTermsReservationType { RESERVATION_TYPE_UNSPECIFIED = 0, STANDARD = 1, SPONSORSHIP = 2 }
+	export enum ProgrammaticGuaranteedTermsReservationType { RESERVATION_TYPE_UNSPECIFIED = 'RESERVATION_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', SPONSORSHIP = 'SPONSORSHIP' }
 
 
 	/** Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones). */
@@ -824,7 +824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayPartDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum DayPartDayOfWeek { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
@@ -868,7 +868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayPartTargetingTimeZoneType { TIME_ZONE_TYPE_UNSPECIFIED = 0, SELLER = 1, USER = 2 }
+	export enum DayPartTargetingTimeZoneType { TIME_ZONE_TYPE_UNSPECIFIED = 'TIME_ZONE_TYPE_UNSPECIFIED', SELLER = 'SELLER', USER = 'USER' }
 
 
 	/** Generic targeting used for targeting dimensions that contains a list of included and excluded numeric IDs. This cannot be filtered using list filter syntax. */
@@ -1154,9 +1154,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientRole { CLIENT_ROLE_UNSPECIFIED = 0, CLIENT_DEAL_VIEWER = 1, CLIENT_DEAL_NEGOTIATOR = 2, CLIENT_DEAL_APPROVER = 3 }
+	export enum ClientRole { CLIENT_ROLE_UNSPECIFIED = 'CLIENT_ROLE_UNSPECIFIED', CLIENT_DEAL_VIEWER = 'CLIENT_DEAL_VIEWER', CLIENT_DEAL_NEGOTIATOR = 'CLIENT_DEAL_NEGOTIATOR', CLIENT_DEAL_APPROVER = 'CLIENT_DEAL_APPROVER' }
 
-	export enum ClientState { STATE_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2 }
+	export enum ClientState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** A user of a client who has restricted access to the Marketplace and certain other sections of the Authorized Buyers UI based on the role granted to the associated client. */
@@ -1193,7 +1193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientUserState { STATE_UNSPECIFIED = 0, INVITED = 1, ACTIVE = 2, INACTIVE = 3 }
+	export enum ClientUserState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INVITED = 'INVITED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** Contains information on how a buyer or seller can be reached. */
@@ -1344,7 +1344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FinalizedDealDealServingStatus { DEAL_SERVING_STATUS_UNSPECIFIED = 0, ACTIVE = 1, ENDED = 2, PAUSED_BY_BUYER = 3, PAUSED_BY_SELLER = 4 }
+	export enum FinalizedDealDealServingStatus { DEAL_SERVING_STATUS_UNSPECIFIED = 'DEAL_SERVING_STATUS_UNSPECIFIED', ACTIVE = 'ACTIVE', ENDED = 'ENDED', PAUSED_BY_BUYER = 'PAUSED_BY_BUYER', PAUSED_BY_SELLER = 'PAUSED_BY_SELLER' }
 
 
 	/** Real-time bidding metrics. For what each metric means refer to [Report metrics](https://support.google.com/adxbuyer/answer/6115195#report-metrics) */
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProposalState { STATE_UNSPECIFIED = 0, BUYER_REVIEW_REQUESTED = 1, SELLER_REVIEW_REQUESTED = 2, BUYER_ACCEPTANCE_REQUESTED = 3, FINALIZED = 4, TERMINATED = 5 }
+	export enum ProposalState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', BUYER_REVIEW_REQUESTED = 'BUYER_REVIEW_REQUESTED', SELLER_REVIEW_REQUESTED = 'SELLER_REVIEW_REQUESTED', BUYER_ACCEPTANCE_REQUESTED = 'BUYER_ACCEPTANCE_REQUESTED', FINALIZED = 'FINALIZED', TERMINATED = 'TERMINATED' }
 
 
 	/** Response message for profiles visible to the buyer. */
@@ -1866,7 +1866,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublisherProfileMobileApplicationAppStore { APP_STORE_TYPE_UNSPECIFIED = 0, APPLE_ITUNES = 1, GOOGLE_PLAY = 2, ROKU = 3, AMAZON_FIRE_TV = 4, PLAYSTATION = 5, XBOX = 6, SAMSUNG_TV = 7, AMAZON = 8, OPPO = 9, SAMSUNG = 10, VIVO = 11, XIAOMI = 12, LG_TV = 13 }
+	export enum PublisherProfileMobileApplicationAppStore { APP_STORE_TYPE_UNSPECIFIED = 'APP_STORE_TYPE_UNSPECIFIED', APPLE_ITUNES = 'APPLE_ITUNES', GOOGLE_PLAY = 'GOOGLE_PLAY', ROKU = 'ROKU', AMAZON_FIRE_TV = 'AMAZON_FIRE_TV', PLAYSTATION = 'PLAYSTATION', XBOX = 'XBOX', SAMSUNG_TV = 'SAMSUNG_TV', AMAZON = 'AMAZON', OPPO = 'OPPO', SAMSUNG = 'SAMSUNG', VIVO = 'VIVO', XIAOMI = 'XIAOMI', LG_TV = 'LG_TV' }
 
 
 	/** Request message for pausing a finalized deal. */

@@ -115,9 +115,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupSourceInstanceTier { TIER_UNSPECIFIED = 0, STANDARD = 1, PREMIUM = 2, BASIC_HDD = 3, BASIC_SSD = 4, HIGH_SCALE_SSD = 5, ENTERPRISE = 6, ZONAL = 7, REGIONAL = 8 }
+	export enum BackupSourceInstanceTier { TIER_UNSPECIFIED = 'TIER_UNSPECIFIED', STANDARD = 'STANDARD', PREMIUM = 'PREMIUM', BASIC_HDD = 'BASIC_HDD', BASIC_SSD = 'BASIC_SSD', HIGH_SCALE_SSD = 'HIGH_SCALE_SSD', ENTERPRISE = 'ENTERPRISE', ZONAL = 'ZONAL', REGIONAL = 'REGIONAL' }
 
-	export enum BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, FINALIZING = 2, READY = 3, DELETING = 4, INVALID = 5 }
+	export enum BackupState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', FINALIZING = 'FINALIZING', READY = 'READY', DELETING = 'DELETING', INVALID = 'INVALID' }
 
 
 	/** The request message for Operations.CancelOperation. */
@@ -402,9 +402,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NfsExportOptionsAccessMode { ACCESS_MODE_UNSPECIFIED = 0, READ_ONLY = 1, READ_WRITE = 2 }
+	export enum NfsExportOptionsAccessMode { ACCESS_MODE_UNSPECIFIED = 'ACCESS_MODE_UNSPECIFIED', READ_ONLY = 'READ_ONLY', READ_WRITE = 'READ_WRITE' }
 
-	export enum NfsExportOptionsSquashMode { SQUASH_MODE_UNSPECIFIED = 0, NO_ROOT_SQUASH = 1, ROOT_SQUASH = 2 }
+	export enum NfsExportOptionsSquashMode { SQUASH_MODE_UNSPECIFIED = 'SQUASH_MODE_UNSPECIFIED', NO_ROOT_SQUASH = 'NO_ROOT_SQUASH', ROOT_SQUASH = 'ROOT_SQUASH' }
 
 
 	/** Instance represents the interface for SLM services to actuate the state of control plane resources. Example Instance in JSON, where consumer-project-number=123456, producer-project-id=cloud-sql: ```json Instance: { "name": "projects/123456/locations/us-east1/instances/prod-instance", "create_time": { "seconds": 1526406431, }, "labels": { "env": "prod", "foo": "bar" }, "state": READY, "software_versions": { "software_update": "cloud-sql-09-28-2018", }, "maintenance_policy_names": { "UpdatePolicy": "projects/123456/locations/us-east1/maintenancePolicies/prod-update-policy", } "tenant_project_id": "cloud-sql-test-tenant", "producer_metadata": { "cloud-sql-tier": "basic", "cloud-sql-instance-size": "1G", }, "provisioned_resources": [ { "resource-type": "compute-instance", "resource-url": "https://www.googleapis.com/compute/v1/projects/cloud-sql/zones/us-east1-b/instances/vm-1", } ], "maintenance_schedules": { "csa_rollout": { "start_time": { "seconds": 1526406431, }, "end_time": { "seconds": 1535406431, }, }, "ncsa_rollout": { "start_time": { "seconds": 1526406431, }, "end_time": { "seconds": 1535406431, }, } }, "consumer_defined_name": "my-sql-instance1", } ``` LINT.IfChange */
@@ -670,7 +670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 0, READY = 1, DELETING = 2 }
+	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', DELETING = 'DELETING' }
 
 
 	/** Maintenance policy applicable to instance updates. */
@@ -699,7 +699,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 0, EARLIER = 1, LATER = 2, WEEK1 = 3, WEEK2 = 4, WEEK5 = 5 }
+	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 'UPDATE_CHANNEL_UNSPECIFIED', EARLIER = 'EARLIER', LATER = 'LATER', WEEK1 = 'WEEK1', WEEK2 = 'WEEK2', WEEK5 = 'WEEK5' }
 
 
 	/** MaintenanceWindow definition. */
@@ -769,7 +769,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum ScheduleDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Contains notification related data. */
@@ -923,7 +923,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudSaasacceleratorManagementProvidersV1InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, REPAIRING = 4, DELETING = 5, ERROR = 6 }
+	export enum GoogleCloudSaasacceleratorManagementProvidersV1InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', REPAIRING = 'REPAIRING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** A Filestore instance. */
@@ -1111,11 +1111,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigConnectMode { CONNECT_MODE_UNSPECIFIED = 0, DIRECT_PEERING = 1, PRIVATE_SERVICE_ACCESS = 2 }
+	export enum NetworkConfigConnectMode { CONNECT_MODE_UNSPECIFIED = 'CONNECT_MODE_UNSPECIFIED', DIRECT_PEERING = 'DIRECT_PEERING', PRIVATE_SERVICE_ACCESS = 'PRIVATE_SERVICE_ACCESS' }
 
-	export enum InstanceProtocol { FILE_PROTOCOL_UNSPECIFIED = 0, NFS_V3 = 1, NFS_V4_1 = 2 }
+	export enum InstanceProtocol { FILE_PROTOCOL_UNSPECIFIED = 'FILE_PROTOCOL_UNSPECIFIED', NFS_V3 = 'NFS_V3', NFS_V4_1 = 'NFS_V4_1' }
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, REPAIRING = 3, DELETING = 4, ERROR = 5, RESTORING = 6, SUSPENDED = 7, REVERTING = 8, SUSPENDING = 9, RESUMING = 10 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', REPAIRING = 'REPAIRING', DELETING = 'DELETING', ERROR = 'ERROR', RESTORING = 'RESTORING', SUSPENDED = 'SUSPENDED', REVERTING = 'REVERTING', SUSPENDING = 'SUSPENDING', RESUMING = 'RESUMING' }
 
 
 	/** ListBackupsResponse is the result of ListBackupsRequest. */
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3 }
+	export enum ShareState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING' }
 
 
 	/** ListSnapshotsResponse is the result of ListSnapshotsRequest. */

@@ -623,7 +623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterBasePropertiesVmPriority { dedicated = 0, lowpriority = 1 }
+	export enum ClusterBasePropertiesVmPriority { dedicated = 'dedicated', lowpriority = 'lowpriority' }
 
 
 	/** Cluster creation operation. */
@@ -757,9 +757,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterPropertiesAllocationState { steady = 0, resizing = 1 }
+	export enum ClusterPropertiesAllocationState { steady = 'steady', resizing = 'resizing' }
 
-	export enum ClusterPropertiesProvisioningState { creating = 0, succeeded = 1, failed = 2, deleting = 3 }
+	export enum ClusterPropertiesProvisioningState { creating = 'creating', succeeded = 'succeeded', failed = 'failed', deleting = 'deleting' }
 
 
 	/** Cluster update parameters. */
@@ -937,13 +937,13 @@ export namespace MyNS {
 
 	}
 
-	export enum DataDisksCachingType { none = 0, readonly = 1, readwrite = 2 }
+	export enum DataDisksCachingType { none = 'none', readonly = 'readonly', readwrite = 'readwrite' }
 
-	export enum DataDisksStorageAccountType { Standard_LRS = 0, Premium_LRS = 1 }
+	export enum DataDisksStorageAccountType { Standard_LRS = 'Standard_LRS', Premium_LRS = 'Premium_LRS' }
 
 
 	/** Actions which should be performed when compute nodes are removed from the cluster. Possible values are: requeue (default) - Terminate running jobs and requeue them so the jobs will run again. Remove compute nodes as soon as jobs have been terminated; terminate - Terminate running jobs. The jobs will not run again. Remove compute nodes as soon as jobs have been terminated. waitforjobcompletion - Allow currently running jobs to complete. Schedule no new jobs while waiting. Remove compute nodes when all jobs have completed. */
-	export enum DeallocationOption { requeue = 0, terminate = 1, waitforjobcompletion = 2 }
+	export enum DeallocationOption { requeue = 'requeue', terminate = 'terminate', waitforjobcompletion = 'waitforjobcompletion' }
 
 
 	/** An environment variable definition. */
@@ -1101,7 +1101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExperimentPropertiesProvisioningState { creating = 0, deleting = 1, succeeded = 2, failed = 3 }
+	export enum ExperimentPropertiesProvisioningState { creating = 'creating', deleting = 'deleting', succeeded = 'succeeded', failed = 'failed' }
 
 
 	/** Properties of the file or directory. */
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileFileType { file = 0, directory = 1 }
+	export enum FileFileType { file = 'file', directory = 'directory' }
 
 
 	/** Values returned by the List operation. */
@@ -1352,7 +1352,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileServerPropertiesProvisioningState { creating = 0, updating = 1, deleting = 2, succeeded = 3, failed = 4 }
+	export enum FileServerPropertiesProvisioningState { creating = 'creating', updating = 'updating', deleting = 'deleting', succeeded = 'succeeded', failed = 'failed' }
 
 
 	/** File Server mounting configuration. */
@@ -1768,7 +1768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobBasePropertiesSchedulingPriority { low = 0, normal = 1, high = 2 }
+	export enum JobBasePropertiesSchedulingPriority { low = 'low', normal = 'normal', high = 'high' }
 
 
 	/** Job creation parameters. */
@@ -1987,9 +1987,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPropertiesExecutionState { queued = 0, running = 1, terminating = 2, succeeded = 3, failed = 4 }
+	export enum JobPropertiesExecutionState { queued = 'queued', running = 'running', terminating = 'terminating', succeeded = 'succeeded', failed = 'failed' }
 
-	export enum JobPropertiesToolType { cntk = 0, tensorflow = 1, caffe = 2, caffe2 = 3, chainer = 4, horovod = 5, custommpi = 6, custom = 7 }
+	export enum JobPropertiesToolType { cntk = 'cntk', tensorflow = 'tensorflow', caffe = 'caffe', caffe2 = 'caffe2', chainer = 'chainer', horovod = 'horovod', custommpi = 'custommpi', custom = 'custom' }
 
 
 	/** Key Vault Secret reference. */
@@ -2086,7 +2086,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageUnit { Count = 0 }
+	export enum UsageUnit { Count = 'Count' }
 
 
 	/** Manual scale settings for the cluster. */
@@ -2796,7 +2796,7 @@ export namespace MyNS {
 
 
 	/** The toolkit type of the job. */
-	export enum ToolType { cntk = 0, tensorflow = 1, caffe = 2, caffe2 = 3, chainer = 4, horovod = 5, custommpi = 6, custom = 7 }
+	export enum ToolType { cntk = 'cntk', tensorflow = 'tensorflow', caffe = 'caffe', caffe2 = 'caffe2', chainer = 'chainer', horovod = 'horovod', custommpi = 'custommpi', custom = 'custom' }
 
 
 	/** The Usage Names. */

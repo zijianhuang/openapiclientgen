@@ -62,7 +62,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetType { ACCOUNT = 0 }
+	export enum TargetType { ACCOUNT = 'ACCOUNT' }
 
 	export interface CreateHomeRegionControlRequest {
 
@@ -242,11 +242,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateHomeRegionControlX_Amz_Target { 'AWSMigrationHubMultiAccountService.CreateHomeRegionControl' = 0 }
+	export enum CreateHomeRegionControlX_Amz_Target { 'AWSMigrationHubMultiAccountService.CreateHomeRegionControl' = 'AWSMigrationHubMultiAccountService.CreateHomeRegionControl' }
 
-	export enum DescribeHomeRegionControlsX_Amz_Target { 'AWSMigrationHubMultiAccountService.DescribeHomeRegionControls' = 0 }
+	export enum DescribeHomeRegionControlsX_Amz_Target { 'AWSMigrationHubMultiAccountService.DescribeHomeRegionControls' = 'AWSMigrationHubMultiAccountService.DescribeHomeRegionControls' }
 
-	export enum GetHomeRegionX_Amz_Target { 'AWSMigrationHubMultiAccountService.GetHomeRegion' = 0 }
+	export enum GetHomeRegionX_Amz_Target { 'AWSMigrationHubMultiAccountService.GetHomeRegion' = 'AWSMigrationHubMultiAccountService.GetHomeRegion' }
 
 }
 

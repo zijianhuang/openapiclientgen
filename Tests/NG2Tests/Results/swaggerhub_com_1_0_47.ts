@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClosableCommentStatus { OPEN = 0, RESOLVED = 1 }
+	export enum ClosableCommentStatus { OPEN = 'OPEN', RESOLVED = 'RESOLVED' }
 
 	export interface Collaboration {
 
@@ -685,17 +685,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SearchApisState { ALL = 0, PUBLISHED = 1, UNPUBLISHED = 2 }
+	export enum SearchApisState { ALL = 'ALL', PUBLISHED = 'PUBLISHED', UNPUBLISHED = 'UNPUBLISHED' }
 
-	export enum SearchApisSort { NAME = 0, UPDATED = 1, CREATED = 2, OWNER = 3 }
+	export enum SearchApisSort { NAME = 'NAME', UPDATED = 'UPDATED', CREATED = 'CREATED', OWNER = 'OWNER' }
 
-	export enum SearchApisOrder { ASC = 0, DESC = 1 }
+	export enum SearchApisOrder { ASC = 'ASC', DESC = 'DESC' }
 
-	export enum SaveDefinitionOas { _2_0 = 0, '3.0.0' = 1, '3.0.1' = 2 }
+	export enum SaveDefinitionOas { _2_0 = '2.0', '3.0.0' = '3.0.0', '3.0.1' = '3.0.1' }
 
-	export enum SearchApisAndDomainsSpecType { API = 0, DOMAIN = 1, ANY = 2 }
+	export enum SearchApisAndDomainsSpecType { API = 'API', DOMAIN = 'DOMAIN', ANY = 'ANY' }
 
-	export enum SearchApisAndDomainsVisibility { PUBLIC = 0, PRIVATE = 1, ANY = 2 }
+	export enum SearchApisAndDomainsVisibility { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE', ANY = 'ANY' }
 
 }
 

@@ -129,7 +129,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ChapterGetByAccess_tokenAndLanguageLanguage { hi = 0 }
+	export enum ChapterGetByAccess_tokenAndLanguageLanguage { hi = 'hi' }
 
 	export enum ChapterGetByAccess_tokenAndChapter_numberAndLanguageChapter_number { _1 = 0, _2 = 1, _3 = 2 }
 

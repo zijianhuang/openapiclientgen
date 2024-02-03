@@ -168,7 +168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResultReason { None = 0, InvalidName = 1, SubscriptionIsDisabled = 2, NameInUse = 3, NameInLockdown = 4, TooManyNamespaceInCurrentSubscription = 5 }
+	export enum CheckNameAvailabilityResultReason { None = 'None', InvalidName = 'InvalidName', SubscriptionIsDisabled = 'SubscriptionIsDisabled', NameInUse = 'NameInUse', NameInLockdown = 'NameInLockdown', TooManyNamespaceInCurrentSubscription = 'TooManyNamespaceInCurrentSubscription' }
 
 
 	/** Error reponse indicates Relay service is not able to process the incoming request. The reason is provided in the error message. */
@@ -332,7 +332,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegenerateAccessKeyParametersKeyType { PrimaryKey = 0, SecondaryKey = 1 }
+	export enum RegenerateAccessKeyParametersKeyType { PrimaryKey = 'PrimaryKey', SecondaryKey = 'SecondaryKey' }
 
 
 	/** Description of a namespace resource. */
@@ -393,7 +393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { Standard = 0 }
+	export enum SkuName { Standard = 'Standard' }
 
 
 	/** The response from the list namespace operation. */
@@ -464,7 +464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelayNamespacePropertiesProvisioningState { Created = 0, Succeeded = 1, Deleted = 2, Failed = 3, Updating = 4, Unknown = 5 }
+	export enum RelayNamespacePropertiesProvisioningState { Created = 'Created', Succeeded = 'Succeeded', Deleted = 'Deleted', Failed = 'Failed', Updating = 'Updating', Unknown = 'Unknown' }
 
 
 	/** Description of a namespace resource. */
@@ -588,7 +588,7 @@ export namespace MyNS {
 
 
 	/** Specifies the reason for the unavailability of the service. */
-	export enum UnavailableReason { None = 0, InvalidName = 1, SubscriptionIsDisabled = 2, NameInUse = 3, NameInLockdown = 4, TooManyNamespaceInCurrentSubscription = 5 }
+	export enum UnavailableReason { None = 'None', InvalidName = 'InvalidName', SubscriptionIsDisabled = 'SubscriptionIsDisabled', NameInUse = 'NameInUse', NameInLockdown = 'NameInLockdown', TooManyNamespaceInCurrentSubscription = 'TooManyNamespaceInCurrentSubscription' }
 
 
 	/** Description of the WCF relay resource. */

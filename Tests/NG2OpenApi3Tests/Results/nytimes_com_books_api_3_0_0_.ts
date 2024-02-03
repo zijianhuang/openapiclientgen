@@ -107,7 +107,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_lists_formatSort_order { ASC = 0, DESC = 1 }
+	export enum GET_lists_formatSort_order { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface GET_lists_formatReturn {
 		copyright?: string | null;

@@ -3778,7 +3778,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Drive_files_listCorpus { domain = 0, user = 1 }
+	export enum Drive_files_listCorpus { domain = 'domain', user = 'user' }
 
 }
 

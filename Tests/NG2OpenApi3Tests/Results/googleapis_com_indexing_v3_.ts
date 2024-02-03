@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UrlNotificationType { URL_NOTIFICATION_TYPE_UNSPECIFIED = 0, URL_UPDATED = 1, URL_DELETED = 2 }
+	export enum UrlNotificationType { URL_NOTIFICATION_TYPE_UNSPECIFIED = 'URL_NOTIFICATION_TYPE_UNSPECIFIED', URL_UPDATED = 'URL_UPDATED', URL_DELETED = 'URL_DELETED' }
 
 	@Injectable()
 	export class MyClient {

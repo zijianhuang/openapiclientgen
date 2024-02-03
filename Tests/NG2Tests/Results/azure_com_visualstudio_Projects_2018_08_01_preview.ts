@@ -50,9 +50,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationSourceApplicationType { AspDotNet = 0, AspDotNetCore = 1, NodeJs = 2 }
+	export enum ApplicationSourceApplicationType { AspDotNet = 'AspDotNet', AspDotNetCore = 'AspDotNetCore', NodeJs = 'NodeJs' }
 
-	export enum ApplicationSourceSourceType { CodeTemplate = 0, CodeRepository = 1 }
+	export enum ApplicationSourceSourceType { CodeTemplate = 'CodeTemplate', CodeRepository = 'CodeRepository' }
 
 
 	/** Defines the target resources for a VSTS pipeline. */
@@ -134,7 +134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationTargetTargetType { WindowsAppService = 0 }
+	export enum ApplicationTargetTargetType { WindowsAppService = 'WindowsAppService' }
 
 
 	/** Defines the authorization type and its parameters. */
@@ -170,7 +170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationAuthorizationType { authorizationToken = 0, personalAccessToken = 1 }
+	export enum AuthorizationAuthorizationType { authorizationToken = 'authorizationToken', personalAccessToken = 'personalAccessToken' }
 
 
 	/** Defines a code repository. */
@@ -235,7 +235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodeRepositoryRepositoryType { gitHub = 0, vstsGit = 1 }
+	export enum CodeRepositoryRepositoryType { gitHub = 'gitHub', vstsGit = 'vstsGit' }
 
 
 	/** Defines the source application, when it resides in a code repository. */
@@ -451,7 +451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectResourceKind { project = 0, bootstrappedProject = 1 }
+	export enum ProjectResourceKind { project = 'project', bootstrappedProject = 'bootstrappedProject' }
 
 
 	/** Defines the custom properties of project resource. */
@@ -501,9 +501,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectResourcePropertiesProcessTemplateId { Scrum = 0, Agile = 1, Cmmi = 2 }
+	export enum ProjectResourcePropertiesProcessTemplateId { Scrum = 'Scrum', Agile = 'Agile', Cmmi = 'Cmmi' }
 
-	export enum ProjectResourcePropertiesVersionControlOption { Git = 0, Tfvc = 1 }
+	export enum ProjectResourcePropertiesVersionControlOption { Git = 'Git', Tfvc = 'Tfvc' }
 
 
 	/** The response to a request to list Team Services project resources in a resource group/account. */

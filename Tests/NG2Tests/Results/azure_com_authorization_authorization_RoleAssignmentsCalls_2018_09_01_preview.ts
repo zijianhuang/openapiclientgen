@@ -167,7 +167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleAssignmentPropertiesPrincipalType { User = 0, Group = 1, ServicePrincipal = 2, Unknown = 3, DirectoryRoleTemplate = 4, ForeignGroup = 5, Application = 6, MSI = 7, DirectoryObjectOrGroup = 8, Everyone = 9 }
+	export enum RoleAssignmentPropertiesPrincipalType { User = 'User', Group = 'Group', ServicePrincipal = 'ServicePrincipal', Unknown = 'Unknown', DirectoryRoleTemplate = 'DirectoryRoleTemplate', ForeignGroup = 'ForeignGroup', Application = 'Application', MSI = 'MSI', DirectoryObjectOrGroup = 'DirectoryObjectOrGroup', Everyone = 'Everyone' }
 
 
 	/** Role assignment properties with scope. */

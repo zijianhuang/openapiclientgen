@@ -240,7 +240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvinceId { AB = 0, BC = 1, MB = 2, NB = 3, NL = 4, NS = 5, NT = 6, NU = 7, ON = 8, PE = 9, QC = 10, SK = 11, YT = 12 }
+	export enum ProvinceId { AB = 'AB', BC = 'BC', MB = 'MB', NB = 'NB', NL = 'NL', NS = 'NS', NT = 'NT', NU = 'NU', ON = 'ON', PE = 'PE', QC = 'QC', SK = 'SK', YT = 'YT' }
 
 	export enum ProvinceOptional { _1 = 0 }
 
@@ -415,7 +415,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HolidaysFederal { _1 = 0, _0 = 1, true = 2, false = 3 }
+	export enum HolidaysFederal { _1 = '1', _0 = '0', true = 'true', false = 'false' }
 
 	export interface HolidaysReturn {
 		holidays?: Array<Holiday>;

@@ -129,7 +129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageRecordResultStatus { Success = 0, CustomerNotSubscribed = 1, DuplicateRecord = 2 }
+	export enum UsageRecordResultStatus { Success = 'Success', CustomerNotSubscribed = 'CustomerNotSubscribed', DuplicateRecord = 'DuplicateRecord' }
 
 
 	/** A <code>BatchMeterUsageRequest</code> contains <code>UsageRecords</code>, which indicate quantities of usage within your application. */
@@ -505,13 +505,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchMeterUsageX_Amz_Target { 'AWSMPMeteringService.BatchMeterUsage' = 0 }
+	export enum BatchMeterUsageX_Amz_Target { 'AWSMPMeteringService.BatchMeterUsage' = 'AWSMPMeteringService.BatchMeterUsage' }
 
-	export enum MeterUsageX_Amz_Target { 'AWSMPMeteringService.MeterUsage' = 0 }
+	export enum MeterUsageX_Amz_Target { 'AWSMPMeteringService.MeterUsage' = 'AWSMPMeteringService.MeterUsage' }
 
-	export enum RegisterUsageX_Amz_Target { 'AWSMPMeteringService.RegisterUsage' = 0 }
+	export enum RegisterUsageX_Amz_Target { 'AWSMPMeteringService.RegisterUsage' = 'AWSMPMeteringService.RegisterUsage' }
 
-	export enum ResolveCustomerX_Amz_Target { 'AWSMPMeteringService.ResolveCustomer' = 0 }
+	export enum ResolveCustomerX_Amz_Target { 'AWSMPMeteringService.ResolveCustomer' = 'AWSMPMeteringService.ResolveCustomer' }
 
 }
 

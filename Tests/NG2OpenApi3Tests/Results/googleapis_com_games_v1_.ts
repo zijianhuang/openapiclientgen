@@ -108,9 +108,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AchievementDefinitionAchievementType { STANDARD = 0, INCREMENTAL = 1 }
+	export enum AchievementDefinitionAchievementType { STANDARD = 'STANDARD', INCREMENTAL = 'INCREMENTAL' }
 
-	export enum AchievementDefinitionInitialState { HIDDEN = 0, REVEALED = 1, UNLOCKED = 2 }
+	export enum AchievementDefinitionInitialState { HIDDEN = 'HIDDEN', REVEALED = 'REVEALED', UNLOCKED = 'UNLOCKED' }
 
 
 	/** A list of achievement definition objects. */
@@ -206,7 +206,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AchievementRevealResponseCurrentState { REVEALED = 0, UNLOCKED = 1 }
+	export enum AchievementRevealResponseCurrentState { REVEALED = 'REVEALED', UNLOCKED = 'UNLOCKED' }
 
 
 	/** An achievement set steps at least response. */
@@ -399,7 +399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AchievementUpdateRequestUpdateType { REVEAL = 0, UNLOCK = 1, INCREMENT = 2, SET_STEPS_AT_LEAST = 3 }
+	export enum AchievementUpdateRequestUpdateType { REVEAL = 'REVEAL', UNLOCK = 'UNLOCK', INCREMENT = 'INCREMENT', SET_STEPS_AT_LEAST = 'SET_STEPS_AT_LEAST' }
 
 
 	/** Response message for UpdateMultipleAchievements rpc. */
@@ -824,7 +824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstancePlatformType { ANDROID = 0, IOS = 1, WEB_APP = 2 }
+	export enum InstancePlatformType { ANDROID = 'ANDROID', IOS = 'IOS', WEB_APP = 'WEB_APP' }
 
 
 	/** The Web details resource. */
@@ -1042,7 +1042,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventBatchRecordFailureFailureCause { TOO_LARGE = 0, TIME_PERIOD_EXPIRED = 1, TIME_PERIOD_SHORT = 2, TIME_PERIOD_LONG = 3, ALREADY_UPDATED = 4, RECORD_RATE_HIGH = 5 }
+	export enum EventBatchRecordFailureFailureCause { TOO_LARGE = 'TOO_LARGE', TIME_PERIOD_EXPIRED = 'TIME_PERIOD_EXPIRED', TIME_PERIOD_SHORT = 'TIME_PERIOD_SHORT', TIME_PERIOD_LONG = 'TIME_PERIOD_LONG', ALREADY_UPDATED = 'ALREADY_UPDATED', RECORD_RATE_HIGH = 'RECORD_RATE_HIGH' }
 
 
 	/** An event period time range. */
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventDefinitionVisibility { REVEALED = 0, HIDDEN = 1 }
+	export enum EventDefinitionVisibility { REVEALED = 'REVEALED', HIDDEN = 'HIDDEN' }
 
 
 	/** A ListDefinitions response. */
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventRecordFailureFailureCause { NOT_FOUND = 0, INVALID_UPDATE_VALUE = 1 }
+	export enum EventRecordFailureFailureCause { NOT_FOUND = 'NOT_FOUND', INVALID_UPDATE_VALUE = 'INVALID_UPDATE_VALUE' }
 
 
 	/** An event period update resource. */
@@ -1495,7 +1495,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LeaderboardOrder { LARGER_IS_BETTER = 0, SMALLER_IS_BETTER = 1 }
+	export enum LeaderboardOrder { LARGER_IS_BETTER = 'LARGER_IS_BETTER', SMALLER_IS_BETTER = 'SMALLER_IS_BETTER' }
 
 
 	/** The Leaderboard Entry resource. */
@@ -1746,7 +1746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayerFriendStatus { NO_RELATIONSHIP = 0, FRIEND = 1 }
+	export enum PlayerFriendStatus { NO_RELATIONSHIP = 'NO_RELATIONSHIP', FRIEND = 'FRIEND' }
 
 	export interface PlayerName {
 
@@ -1803,9 +1803,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileSettingsFriendsListVisibility { VISIBLE = 0, REQUEST_REQUIRED = 1, UNAVAILABLE = 2 }
+	export enum ProfileSettingsFriendsListVisibility { VISIBLE = 'VISIBLE', REQUEST_REQUIRED = 'REQUEST_REQUIRED', UNAVAILABLE = 'UNAVAILABLE' }
 
-	export enum LeaderboardEntryTimeSpan { ALL_TIME = 0, WEEKLY = 1, DAILY = 2 }
+	export enum LeaderboardEntryTimeSpan { ALL_TIME = 'ALL_TIME', WEEKLY = 'WEEKLY', DAILY = 'DAILY' }
 
 
 	/** A list of leaderboard objects. */
@@ -1998,9 +1998,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkPersonaRequestCardinalityConstraint { ONE_PERSONA_TO_ONE_PLAYER = 0 }
+	export enum LinkPersonaRequestCardinalityConstraint { ONE_PERSONA_TO_ONE_PLAYER = 'ONE_PERSONA_TO_ONE_PLAYER' }
 
-	export enum LinkPersonaRequestConflictingLinksResolutionPolicy { KEEP_EXISTING_LINKS = 0, CREATE_NEW_LINK = 1 }
+	export enum LinkPersonaRequestConflictingLinksResolutionPolicy { KEEP_EXISTING_LINKS = 'KEEP_EXISTING_LINKS', CREATE_NEW_LINK = 'CREATE_NEW_LINK' }
 
 
 	/** Outcome of a persona linking attempt. */
@@ -2023,7 +2023,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkPersonaResponseState { LINK_CREATED = 0, PERSONA_OR_PLAYER_ALREADY_LINKED = 1 }
+	export enum LinkPersonaResponseState { LINK_CREATED = 'LINK_CREATED', PERSONA_OR_PLAYER_ALREADY_LINKED = 'PERSONA_OR_PLAYER_ALREADY_LINKED' }
 
 
 	/** The metagame config resource */
@@ -2641,7 +2641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RevisionCheckResponseRevisionStatus { OK = 0, DEPRECATED = 1, INVALID = 2 }
+	export enum RevisionCheckResponseRevisionStatus { OK = 'OK', DEPRECATED = 'DEPRECATED', INVALID = 'INVALID' }
 
 
 	/** Scoped player identifiers. */
@@ -2807,7 +2807,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotType { SAVE_GAME = 0 }
+	export enum SnapshotType { SAVE_GAME = 'SAVE_GAME' }
 
 
 	/** A third party list snapshots response. */
@@ -3388,19 +3388,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Games_applications_getEndPointEndPointType { PROFILE_CREATION = 0, PROFILE_SETTINGS = 1 }
+	export enum Games_applications_getEndPointEndPointType { PROFILE_CREATION = 'PROFILE_CREATION', PROFILE_SETTINGS = 'PROFILE_SETTINGS' }
 
-	export enum Games_scores_listCollection { PUBLIC = 0, SOCIAL = 1, FRIENDS = 2 }
+	export enum Games_scores_listCollection { PUBLIC = 'PUBLIC', SOCIAL = 'SOCIAL', FRIENDS = 'FRIENDS' }
 
-	export enum Games_players_listCollection { CONNECTED = 0, VISIBLE = 1, FRIENDS_ALL = 2 }
+	export enum Games_players_listCollection { CONNECTED = 'CONNECTED', VISIBLE = 'VISIBLE', FRIENDS_ALL = 'FRIENDS_ALL' }
 
-	export enum Games_achievements_listState { ALL = 0, HIDDEN = 1, REVEALED = 2, UNLOCKED = 3 }
+	export enum Games_achievements_listState { ALL = 'ALL', HIDDEN = 'HIDDEN', REVEALED = 'REVEALED', UNLOCKED = 'UNLOCKED' }
 
-	export enum Games_metagame_listCategoriesByPlayerCollection { ALL = 0 }
+	export enum Games_metagame_listCategoriesByPlayerCollection { ALL = 'ALL' }
 
-	export enum Games_scores_getTimeSpan { ALL = 0, ALL_TIME = 1, WEEKLY = 2, DAILY = 3 }
+	export enum Games_scores_getTimeSpan { ALL = 'ALL', ALL_TIME = 'ALL_TIME', WEEKLY = 'WEEKLY', DAILY = 'DAILY' }
 
-	export enum Games_scores_getIncludeRankType { ALL = 0, PUBLIC = 1, SOCIAL = 2, FRIENDS = 3 }
+	export enum Games_scores_getIncludeRankType { ALL = 'ALL', PUBLIC = 'PUBLIC', SOCIAL = 'SOCIAL', FRIENDS = 'FRIENDS' }
 
 }
 

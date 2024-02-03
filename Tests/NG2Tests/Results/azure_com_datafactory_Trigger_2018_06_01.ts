@@ -99,7 +99,7 @@ export namespace MyNS {
 
 
 	/** The days of the week. */
-	export enum DayOfWeek { Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6 }
+	export enum DayOfWeek { Sunday = 'Sunday', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday' }
 
 
 	/** Referenced dependency. */
@@ -174,7 +174,7 @@ export namespace MyNS {
 
 
 	/** Enumerates possible frequency option for the schedule trigger. */
-	export enum RecurrenceFrequency { NotSpecified = 0, Minute = 1, Hour = 2, Day = 3, Week = 4, Month = 5, Year = 6 }
+	export enum RecurrenceFrequency { NotSpecified = 'NotSpecified', Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month', Year = 'Year' }
 
 
 	/** The recurrence schedule. */
@@ -465,7 +465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerRuntimeState { Started = 0, Stopped = 1, Disabled = 2 }
+	export enum TriggerRuntimeState { Started = 'Started', Stopped = 'Stopped', Disabled = 'Disabled' }
 
 
 	/** Trigger referenced dependency. */
@@ -527,11 +527,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerReferenceType { TriggerReference = 0 }
+	export enum TriggerReferenceType { TriggerReference = 'TriggerReference' }
 
 
 	/** Enumerates possible frequency option for the tumbling window trigger. */
-	export enum TumblingWindowFrequency { Minute = 0, Hour = 1 }
+	export enum TumblingWindowFrequency { Minute = 'Minute', Hour = 'Hour' }
 
 
 	/** Trigger that schedules pipeline runs for all fixed time interval windows from a start time without gaps and also supports backfill scenarios (when start time is in the past). */

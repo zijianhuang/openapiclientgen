@@ -1582,7 +1582,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DepthChartsFormat { XML = 0, JSON = 1 }
+	export enum DepthChartsFormat { XML = 'XML', JSON = 'JSON' }
 
 }
 

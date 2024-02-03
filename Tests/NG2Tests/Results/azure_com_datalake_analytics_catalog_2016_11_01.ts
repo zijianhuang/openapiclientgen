@@ -38,9 +38,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AclAceType { UserObj = 0, GroupObj = 1, Other = 2, User = 3, Group = 4 }
+	export enum AclAceType { UserObj = 'UserObj', GroupObj = 'GroupObj', Other = 'Other', User = 'User', Group = 'Group' }
 
-	export enum AclPermission { None = 0, Use = 1, Create = 2, Drop = 3, Alter = 4, Write = 5, All = 6 }
+	export enum AclPermission { None = 'None', Use = 'Use', Create = 'Create', Drop = 'Drop', Alter = 'Alter', Write = 'Write', All = 'All' }
 
 
 	/** The parameters used to create or update an access control list (ACL) entry. */
@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum USqlAssemblyFileInfoType { Assembly = 0, Resource = 1, Nodeploy = 2 }
+	export enum USqlAssemblyFileInfoType { Assembly = 'Assembly', Resource = 'Resource', Nodeploy = 'Nodeploy' }
 
 
 	/** A Data Lake Analytics catalog U-SQL assembly CLR item. */

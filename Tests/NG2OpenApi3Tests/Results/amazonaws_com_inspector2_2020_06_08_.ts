@@ -162,9 +162,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { ALREADY_ENABLED = 0, ENABLE_IN_PROGRESS = 1, DISABLE_IN_PROGRESS = 2, SUSPEND_IN_PROGRESS = 3, RESOURCE_NOT_FOUND = 4, ACCESS_DENIED = 5, INTERNAL_ERROR = 6, SSM_UNAVAILABLE = 7, SSM_THROTTLED = 8, EVENTBRIDGE_UNAVAILABLE = 9, EVENTBRIDGE_THROTTLED = 10, RESOURCE_SCAN_NOT_DISABLED = 11, DISASSOCIATE_ALL_MEMBERS = 12, ACCOUNT_IS_ISOLATED = 13 }
+	export enum ErrorCode { ALREADY_ENABLED = 'ALREADY_ENABLED', ENABLE_IN_PROGRESS = 'ENABLE_IN_PROGRESS', DISABLE_IN_PROGRESS = 'DISABLE_IN_PROGRESS', SUSPEND_IN_PROGRESS = 'SUSPEND_IN_PROGRESS', RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND', ACCESS_DENIED = 'ACCESS_DENIED', INTERNAL_ERROR = 'INTERNAL_ERROR', SSM_UNAVAILABLE = 'SSM_UNAVAILABLE', SSM_THROTTLED = 'SSM_THROTTLED', EVENTBRIDGE_UNAVAILABLE = 'EVENTBRIDGE_UNAVAILABLE', EVENTBRIDGE_THROTTLED = 'EVENTBRIDGE_THROTTLED', RESOURCE_SCAN_NOT_DISABLED = 'RESOURCE_SCAN_NOT_DISABLED', DISASSOCIATE_ALL_MEMBERS = 'DISASSOCIATE_ALL_MEMBERS', ACCOUNT_IS_ISOLATED = 'ACCOUNT_IS_ISOLATED' }
 
-	export enum Status { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, SUSPENDING = 4, SUSPENDED = 5 }
+	export enum Status { ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED', SUSPENDING = 'SUSPENDING', SUSPENDED = 'SUSPENDED' }
 
 
 	/** An object with details on why an account failed to enable Amazon Inspector. */
@@ -369,7 +369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodeSnippetErrorCode { INTERNAL_ERROR = 0, ACCESS_DENIED = 1, CODE_SNIPPET_NOT_FOUND = 2, INVALID_INPUT = 3 }
+	export enum CodeSnippetErrorCode { INTERNAL_ERROR = 'INTERNAL_ERROR', ACCESS_DENIED = 'ACCESS_DENIED', CODE_SNIPPET_NOT_FOUND = 'CODE_SNIPPET_NOT_FOUND', INVALID_INPUT = 'INVALID_INPUT' }
 
 	export interface BatchGetFindingDetailsResponse {
 		errors?: Array<FindingDetailsError>;
@@ -418,7 +418,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingDetailsErrorCode { INTERNAL_ERROR = 0, ACCESS_DENIED = 1, FINDING_DETAILS_NOT_FOUND = 2, INVALID_INPUT = 3 }
+	export enum FindingDetailsErrorCode { INTERNAL_ERROR = 'INTERNAL_ERROR', ACCESS_DENIED = 'ACCESS_DENIED', FINDING_DETAILS_NOT_FOUND = 'FINDING_DETAILS_NOT_FOUND', INVALID_INPUT = 'INVALID_INPUT' }
 
 
 	/** Details of the vulnerability identified in a finding. */
@@ -602,9 +602,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FreeTrialStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum FreeTrialStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
-	export enum FreeTrialType { EC2 = 0, ECR = 1, LAMBDA = 2, LAMBDA_CODE = 3 }
+	export enum FreeTrialType { EC2 = 'EC2', ECR = 'ECR', LAMBDA = 'LAMBDA', LAMBDA_CODE = 'LAMBDA_CODE' }
 
 
 	/** Information about an error received while accessing free trail data for an account. */
@@ -641,7 +641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FreeTrialInfoErrorCode { ACCESS_DENIED = 0, INTERNAL_ERROR = 1 }
+	export enum FreeTrialInfoErrorCode { ACCESS_DENIED = 'ACCESS_DENIED', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 	export interface BatchGetMemberEc2DeepInspectionStatusResponse {
 		accountIds?: Array<MemberAccountEc2DeepInspectionStatusState>;
@@ -682,7 +682,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ec2DeepInspectionStatus { ACTIVATED = 0, DEACTIVATED = 1, PENDING = 2, FAILED = 3 }
+	export enum Ec2DeepInspectionStatus { ACTIVATED = 'ACTIVATED', DEACTIVATED = 'DEACTIVATED', PENDING = 'PENDING', FAILED = 'FAILED' }
 
 
 	/** An object that contains details about a member account in your organization that failed to activate Amazon Inspector deep inspection. */
@@ -826,7 +826,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StringComparison { EQUALS = 0, PREFIX = 1, NOT_EQUALS = 2 }
+	export enum StringComparison { EQUALS = 'EQUALS', PREFIX = 'PREFIX', NOT_EQUALS = 'NOT_EQUALS' }
 
 
 	/** Contains details on the time range used to filter findings. */
@@ -919,7 +919,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MapComparison { EQUALS = 0 }
+	export enum MapComparison { EQUALS = 'EQUALS' }
 
 
 	/** Contains information on the details of a package filter. */
@@ -1018,7 +1018,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceStringComparison { EQUALS = 0, NOT_EQUALS = 1 }
+	export enum ResourceStringComparison { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS' }
 
 
 	/** A resource map filter for a software bill of material report. */
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceScanType { EC2 = 0, ECR = 1, LAMBDA = 2, LAMBDA_CODE = 3 }
+	export enum ResourceScanType { EC2 = 'EC2', ECR = 'ECR', LAMBDA = 'LAMBDA', LAMBDA_CODE = 'LAMBDA_CODE' }
 
 	export interface DisableDelegatedAdminAccountResponse {
 
@@ -1287,9 +1287,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EcrRescanDuration { LIFETIME = 0, DAYS_30 = 1, DAYS_180 = 2 }
+	export enum EcrRescanDuration { LIFETIME = 'LIFETIME', DAYS_30 = 'DAYS_30', DAYS_180 = 'DAYS_180' }
 
-	export enum EcrRescanDurationStatus { SUCCESS = 0, PENDING = 1, FAILED = 2 }
+	export enum EcrRescanDurationStatus { SUCCESS = 'SUCCESS', PENDING = 'PENDING', FAILED = 'FAILED' }
 
 	export interface GetDelegatedAdminAccountResponse {
 		delegatedAdmin?: DelegatedAdmin;
@@ -1322,7 +1322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationshipStatus { CREATED = 0, INVITED = 1, DISABLED = 2, ENABLED = 3, REMOVED = 4, RESIGNED = 5, DELETED = 6, EMAIL_VERIFICATION_IN_PROGRESS = 7, EMAIL_VERIFICATION_FAILED = 8, REGION_DISABLED = 9, ACCOUNT_SUSPENDED = 10, CANNOT_CREATE_DETECTOR_IN_ORG_MASTER = 11 }
+	export enum RelationshipStatus { CREATED = 'CREATED', INVITED = 'INVITED', DISABLED = 'DISABLED', ENABLED = 'ENABLED', REMOVED = 'REMOVED', RESIGNED = 'RESIGNED', DELETED = 'DELETED', EMAIL_VERIFICATION_IN_PROGRESS = 'EMAIL_VERIFICATION_IN_PROGRESS', EMAIL_VERIFICATION_FAILED = 'EMAIL_VERIFICATION_FAILED', REGION_DISABLED = 'REGION_DISABLED', ACCOUNT_SUSPENDED = 'ACCOUNT_SUSPENDED', CANNOT_CREATE_DETECTOR_IN_ORG_MASTER = 'CANNOT_CREATE_DETECTOR_IN_ORG_MASTER' }
 
 	export interface GetEc2DeepInspectionConfigurationResponse {
 		errorMessage?: string;
@@ -1414,7 +1414,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportingErrorCode { INTERNAL_ERROR = 0, INVALID_PERMISSIONS = 1, NO_FINDINGS_FOUND = 2, BUCKET_NOT_FOUND = 3, INCOMPATIBLE_BUCKET_REGION = 4, MALFORMED_KMS_KEY = 5 }
+	export enum ReportingErrorCode { INTERNAL_ERROR = 'INTERNAL_ERROR', INVALID_PERMISSIONS = 'INVALID_PERMISSIONS', NO_FINDINGS_FOUND = 'NO_FINDINGS_FOUND', BUCKET_NOT_FOUND = 'BUCKET_NOT_FOUND', INCOMPATIBLE_BUCKET_REGION = 'INCOMPATIBLE_BUCKET_REGION', MALFORMED_KMS_KEY = 'MALFORMED_KMS_KEY' }
 
 
 	/** Details on the criteria used to define the filter. */
@@ -1472,7 +1472,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalReportStatus { SUCCEEDED = 0, IN_PROGRESS = 1, CANCELLED = 2, FAILED = 3 }
+	export enum ExternalReportStatus { SUCCEEDED = 'SUCCEEDED', IN_PROGRESS = 'IN_PROGRESS', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 	export interface GetMemberResponse {
 		member?: Member;
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SbomReportFormat { CYCLONEDX_1_4 = 0, SPDX_2_3 = 1 }
+	export enum SbomReportFormat { CYCLONEDX_1_4 = 'CYCLONEDX_1_4', SPDX_2_3 = 'SPDX_2_3' }
 
 	export interface ListAccountPermissionsResponse {
 		nextToken?: string;
@@ -1608,9 +1608,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Operation { ENABLE_SCANNING = 0, DISABLE_SCANNING = 1, ENABLE_REPOSITORY = 2, DISABLE_REPOSITORY = 3 }
+	export enum Operation { ENABLE_SCANNING = 'ENABLE_SCANNING', DISABLE_SCANNING = 'DISABLE_SCANNING', ENABLE_REPOSITORY = 'ENABLE_REPOSITORY', DISABLE_REPOSITORY = 'DISABLE_REPOSITORY' }
 
-	export enum Service { EC2 = 0, ECR = 1, LAMBDA = 2 }
+	export enum Service { EC2 = 'EC2', ECR = 'ECR', LAMBDA = 'LAMBDA' }
 
 	export interface ListCoverageResponse {
 		coveredResources?: Array<CoveredResource>;
@@ -1712,7 +1712,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ec2Platform { WINDOWS = 0, LINUX = 1, UNKNOWN = 2 }
+	export enum Ec2Platform { WINDOWS = 'WINDOWS', LINUX = 'LINUX', UNKNOWN = 'UNKNOWN' }
 
 	export interface TagMap {
 	}
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EcrScanFrequency { MANUAL = 0, SCAN_ON_PUSH = 1, CONTINUOUS_SCAN = 2 }
+	export enum EcrScanFrequency { MANUAL = 'MANUAL', SCAN_ON_PUSH = 'SCAN_ON_PUSH', CONTINUOUS_SCAN = 'CONTINUOUS_SCAN' }
 
 
 	/** The AWS Lambda function metadata. */
@@ -1783,9 +1783,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Runtime { NODEJS = 0, NODEJS_12_X = 1, NODEJS_14_X = 2, NODEJS_16_X = 3, JAVA_8 = 4, JAVA_8_AL2 = 5, JAVA_11 = 6, PYTHON_3_7 = 7, PYTHON_3_8 = 8, PYTHON_3_9 = 9, UNSUPPORTED = 10, NODEJS_18_X = 11, GO_1_X = 12, JAVA_17 = 13, PYTHON_3_10 = 14 }
+	export enum Runtime { NODEJS = 'NODEJS', NODEJS_12_X = 'NODEJS_12_X', NODEJS_14_X = 'NODEJS_14_X', NODEJS_16_X = 'NODEJS_16_X', JAVA_8 = 'JAVA_8', JAVA_8_AL2 = 'JAVA_8_AL2', JAVA_11 = 'JAVA_11', PYTHON_3_7 = 'PYTHON_3_7', PYTHON_3_8 = 'PYTHON_3_8', PYTHON_3_9 = 'PYTHON_3_9', UNSUPPORTED = 'UNSUPPORTED', NODEJS_18_X = 'NODEJS_18_X', GO_1_X = 'GO_1_X', JAVA_17 = 'JAVA_17', PYTHON_3_10 = 'PYTHON_3_10' }
 
-	export enum CoverageResourceType { AWS_EC2_INSTANCE = 0, AWS_ECR_CONTAINER_IMAGE = 1, AWS_ECR_REPOSITORY = 2, AWS_LAMBDA_FUNCTION = 3 }
+	export enum CoverageResourceType { AWS_EC2_INSTANCE = 'AWS_EC2_INSTANCE', AWS_ECR_CONTAINER_IMAGE = 'AWS_ECR_CONTAINER_IMAGE', AWS_ECR_REPOSITORY = 'AWS_ECR_REPOSITORY', AWS_LAMBDA_FUNCTION = 'AWS_LAMBDA_FUNCTION' }
 
 
 	/** The status of the scan. */
@@ -1815,9 +1815,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanStatusReason { PENDING_INITIAL_SCAN = 0, ACCESS_DENIED = 1, INTERNAL_ERROR = 2, UNMANAGED_EC2_INSTANCE = 3, UNSUPPORTED_OS = 4, SCAN_ELIGIBILITY_EXPIRED = 5, RESOURCE_TERMINATED = 6, SUCCESSFUL = 7, NO_RESOURCES_FOUND = 8, IMAGE_SIZE_EXCEEDED = 9, SCAN_FREQUENCY_MANUAL = 10, SCAN_FREQUENCY_SCAN_ON_PUSH = 11, EC2_INSTANCE_STOPPED = 12, PENDING_DISABLE = 13, NO_INVENTORY = 14, STALE_INVENTORY = 15, EXCLUDED_BY_TAG = 16, UNSUPPORTED_RUNTIME = 17, UNSUPPORTED_MEDIA_TYPE = 18, UNSUPPORTED_CONFIG_FILE = 19, DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED = 20, DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED = 21, DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED = 22, DEEP_INSPECTION_NO_INVENTORY = 23 }
+	export enum ScanStatusReason { PENDING_INITIAL_SCAN = 'PENDING_INITIAL_SCAN', ACCESS_DENIED = 'ACCESS_DENIED', INTERNAL_ERROR = 'INTERNAL_ERROR', UNMANAGED_EC2_INSTANCE = 'UNMANAGED_EC2_INSTANCE', UNSUPPORTED_OS = 'UNSUPPORTED_OS', SCAN_ELIGIBILITY_EXPIRED = 'SCAN_ELIGIBILITY_EXPIRED', RESOURCE_TERMINATED = 'RESOURCE_TERMINATED', SUCCESSFUL = 'SUCCESSFUL', NO_RESOURCES_FOUND = 'NO_RESOURCES_FOUND', IMAGE_SIZE_EXCEEDED = 'IMAGE_SIZE_EXCEEDED', SCAN_FREQUENCY_MANUAL = 'SCAN_FREQUENCY_MANUAL', SCAN_FREQUENCY_SCAN_ON_PUSH = 'SCAN_FREQUENCY_SCAN_ON_PUSH', EC2_INSTANCE_STOPPED = 'EC2_INSTANCE_STOPPED', PENDING_DISABLE = 'PENDING_DISABLE', NO_INVENTORY = 'NO_INVENTORY', STALE_INVENTORY = 'STALE_INVENTORY', EXCLUDED_BY_TAG = 'EXCLUDED_BY_TAG', UNSUPPORTED_RUNTIME = 'UNSUPPORTED_RUNTIME', UNSUPPORTED_MEDIA_TYPE = 'UNSUPPORTED_MEDIA_TYPE', UNSUPPORTED_CONFIG_FILE = 'UNSUPPORTED_CONFIG_FILE', DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED = 'DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED', DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED = 'DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED', DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED = 'DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED', DEEP_INSPECTION_NO_INVENTORY = 'DEEP_INSPECTION_NO_INVENTORY' }
 
-	export enum ScanType { NETWORK = 0, PACKAGE = 1, CODE = 2 }
+	export enum ScanType { NETWORK = 'NETWORK', PACKAGE = 'PACKAGE', CODE = 'CODE' }
 
 
 	/** Contains details of a coverage string filter. */
@@ -1939,7 +1939,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupKey { SCAN_STATUS_CODE = 0, SCAN_STATUS_REASON = 1, ACCOUNT_ID = 2, RESOURCE_TYPE = 3, ECR_REPOSITORY_NAME = 4 }
+	export enum GroupKey { SCAN_STATUS_CODE = 'SCAN_STATUS_CODE', SCAN_STATUS_REASON = 'SCAN_STATUS_REASON', ACCOUNT_ID = 'ACCOUNT_ID', RESOURCE_TYPE = 'RESOURCE_TYPE', ECR_REPOSITORY_NAME = 'ECR_REPOSITORY_NAME' }
 
 	export interface ListDelegatedAdminAccountsResponse {
 		delegatedAdminAccounts?: Array<DelegatedAdminAccount>;
@@ -1975,7 +1975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DelegatedAdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
+	export enum DelegatedAdminStatus { ENABLED = 'ENABLED', DISABLE_IN_PROGRESS = 'DISABLE_IN_PROGRESS' }
 
 	export interface ListFiltersResponse {
 
@@ -2059,7 +2059,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterAction { NONE = 0, SUPPRESS = 1 }
+	export enum FilterAction { NONE = 'NONE', SUPPRESS = 'SUPPRESS' }
 
 	export interface ListFindingAggregationsResponse {
 
@@ -2082,7 +2082,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationType { FINDING_TYPE = 0, PACKAGE = 1, TITLE = 2, REPOSITORY = 3, AMI = 4, AWS_EC2_INSTANCE = 5, AWS_ECR_CONTAINER = 6, IMAGE_LAYER = 7, ACCOUNT = 8, AWS_LAMBDA_FUNCTION = 9, LAMBDA_LAYER = 10 }
+	export enum AggregationType { FINDING_TYPE = 'FINDING_TYPE', PACKAGE = 'PACKAGE', TITLE = 'TITLE', REPOSITORY = 'REPOSITORY', AMI = 'AMI', AWS_EC2_INSTANCE = 'AWS_EC2_INSTANCE', AWS_ECR_CONTAINER = 'AWS_ECR_CONTAINER', IMAGE_LAYER = 'IMAGE_LAYER', ACCOUNT = 'ACCOUNT', AWS_LAMBDA_FUNCTION = 'AWS_LAMBDA_FUNCTION', LAMBDA_LAYER = 'LAMBDA_LAYER' }
 
 
 	/** A structure that contains details about the results of an aggregation type. */
@@ -2501,13 +2501,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationFindingType { NETWORK_REACHABILITY = 0, PACKAGE_VULNERABILITY = 1, CODE_VULNERABILITY = 2 }
+	export enum AggregationFindingType { NETWORK_REACHABILITY = 'NETWORK_REACHABILITY', PACKAGE_VULNERABILITY = 'PACKAGE_VULNERABILITY', CODE_VULNERABILITY = 'CODE_VULNERABILITY' }
 
-	export enum AggregationResourceType { AWS_EC2_INSTANCE = 0, AWS_ECR_CONTAINER_IMAGE = 1, AWS_LAMBDA_FUNCTION = 2 }
+	export enum AggregationResourceType { AWS_EC2_INSTANCE = 'AWS_EC2_INSTANCE', AWS_ECR_CONTAINER_IMAGE = 'AWS_ECR_CONTAINER_IMAGE', AWS_LAMBDA_FUNCTION = 'AWS_LAMBDA_FUNCTION' }
 
-	export enum AccountSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum AccountSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
-	export enum SortOrder { ASC = 0, DESC = 1 }
+	export enum SortOrder { ASC = 'ASC', DESC = 'DESC' }
 
 
 	/** The details that define an aggregation based on Amazon machine images (AMIs). */
@@ -2530,7 +2530,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AmiSortBy { CRITICAL = 0, HIGH = 1, ALL = 2, AFFECTED_INSTANCES = 3 }
+	export enum AmiSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL', AFFECTED_INSTANCES = 'AFFECTED_INSTANCES' }
 
 
 	/** An aggregation of information about Amazon ECR containers. */
@@ -2581,7 +2581,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ec2InstanceSortBy { NETWORK_FINDINGS = 0, CRITICAL = 1, HIGH = 2, ALL = 3 }
+	export enum Ec2InstanceSortBy { NETWORK_FINDINGS = 'NETWORK_FINDINGS', CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
 
 	/** The details that define an aggregation based on finding type. */
@@ -2721,7 +2721,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositorySortBy { CRITICAL = 0, HIGH = 1, ALL = 2, AFFECTED_IMAGES = 3 }
+	export enum RepositorySortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL', AFFECTED_IMAGES = 'AFFECTED_IMAGES' }
 
 
 	/** The details that define an aggregation based on finding title. */
@@ -2963,7 +2963,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExploitAvailable { YES = 0, NO = 1 }
+	export enum ExploitAvailable { YES = 'YES', NO = 'NO' }
 
 
 	/** The details of an exploit available for a finding discovered in your environment. */
@@ -2982,7 +2982,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FixAvailable { YES = 0, NO = 1, PARTIAL = 2 }
+	export enum FixAvailable { YES = 'YES', NO = 'NO', PARTIAL = 'PARTIAL' }
 
 
 	/** Information about the Amazon Inspector score given to a finding. */
@@ -3171,7 +3171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkProtocol { TCP = 0, UDP = 1 }
+	export enum NetworkProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 
 	/** Information about a package vulnerability finding. */
@@ -3314,7 +3314,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageManager { BUNDLER = 0, CARGO = 1, COMPOSER = 2, NPM = 3, NUGET = 4, PIPENV = 5, POETRY = 6, YARN = 7, GOBINARY = 8, GOMOD = 9, JAR = 10, OS = 11, PIP = 12, PYTHONPKG = 13, NODEPKG = 14, POM = 15, GEMSPEC = 16 }
+	export enum PackageManager { BUNDLER = 'BUNDLER', CARGO = 'CARGO', COMPOSER = 'COMPOSER', NPM = 'NPM', NUGET = 'NUGET', PIPENV = 'PIPENV', POETRY = 'POETRY', YARN = 'YARN', GOBINARY = 'GOBINARY', GOMOD = 'GOMOD', JAR = 'JAR', OS = 'OS', PIP = 'PIP', PYTHONPKG = 'PYTHONPKG', NODEPKG = 'NODEPKG', POM = 'POM', GEMSPEC = 'GEMSPEC' }
 
 
 	/** Information on how to remediate a finding. */
@@ -3550,9 +3550,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Architecture { X86_64 = 0, ARM64 = 1 }
+	export enum Architecture { X86_64 = 'X86_64', ARM64 = 'ARM64' }
 
-	export enum PackageType { IMAGE = 0, ZIP = 1 }
+	export enum PackageType { IMAGE = 'IMAGE', ZIP = 'ZIP' }
 
 
 	/** The VPC security groups and subnets that are attached to an AWS Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
@@ -3573,11 +3573,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Severity { INFORMATIONAL = 0, LOW = 1, MEDIUM = 2, HIGH = 3, CRITICAL = 4, UNTRIAGED = 5 }
+	export enum Severity { INFORMATIONAL = 'INFORMATIONAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL', UNTRIAGED = 'UNTRIAGED' }
 
-	export enum FindingStatus { ACTIVE = 0, SUPPRESSED = 1, CLOSED = 2 }
+	export enum FindingStatus { ACTIVE = 'ACTIVE', SUPPRESSED = 'SUPPRESSED', CLOSED = 'CLOSED' }
 
-	export enum SortField { AWS_ACCOUNT_ID = 0, FINDING_TYPE = 1, SEVERITY = 2, FIRST_OBSERVED_AT = 3, LAST_OBSERVED_AT = 4, FINDING_STATUS = 5, RESOURCE_TYPE = 6, ECR_IMAGE_PUSHED_AT = 7, ECR_IMAGE_REPOSITORY_NAME = 8, ECR_IMAGE_REGISTRY = 9, NETWORK_PROTOCOL = 10, COMPONENT_TYPE = 11, VULNERABILITY_ID = 12, VULNERABILITY_SOURCE = 13, INSPECTOR_SCORE = 14, VENDOR_SEVERITY = 15, EPSS_SCORE = 16 }
+	export enum SortField { AWS_ACCOUNT_ID = 'AWS_ACCOUNT_ID', FINDING_TYPE = 'FINDING_TYPE', SEVERITY = 'SEVERITY', FIRST_OBSERVED_AT = 'FIRST_OBSERVED_AT', LAST_OBSERVED_AT = 'LAST_OBSERVED_AT', FINDING_STATUS = 'FINDING_STATUS', RESOURCE_TYPE = 'RESOURCE_TYPE', ECR_IMAGE_PUSHED_AT = 'ECR_IMAGE_PUSHED_AT', ECR_IMAGE_REPOSITORY_NAME = 'ECR_IMAGE_REPOSITORY_NAME', ECR_IMAGE_REGISTRY = 'ECR_IMAGE_REGISTRY', NETWORK_PROTOCOL = 'NETWORK_PROTOCOL', COMPONENT_TYPE = 'COMPONENT_TYPE', VULNERABILITY_ID = 'VULNERABILITY_ID', VULNERABILITY_SOURCE = 'VULNERABILITY_SOURCE', INSPECTOR_SCORE = 'INSPECTOR_SCORE', VENDOR_SEVERITY = 'VENDOR_SEVERITY', EPSS_SCORE = 'EPSS_SCORE' }
 
 	export interface ListMembersResponse {
 		members?: Array<Member>;
@@ -3662,9 +3662,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Currency { USD = 0 }
+	export enum Currency { USD = 'USD' }
 
-	export enum UsageType { EC2_INSTANCE_HOURS = 0, ECR_INITIAL_SCAN = 1, ECR_RESCAN = 2, LAMBDA_FUNCTION_HOURS = 3, LAMBDA_FUNCTION_CODE_HOURS = 4 }
+	export enum UsageType { EC2_INSTANCE_HOURS = 'EC2_INSTANCE_HOURS', ECR_INITIAL_SCAN = 'ECR_INITIAL_SCAN', ECR_RESCAN = 'ECR_RESCAN', LAMBDA_FUNCTION_HOURS = 'LAMBDA_FUNCTION_HOURS', LAMBDA_FUNCTION_CODE_HOURS = 'LAMBDA_FUNCTION_CODE_HOURS' }
 
 	export interface ResetEncryptionKeyResponse {
 	}
@@ -3820,7 +3820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VulnerabilitySource { NVD = 0 }
+	export enum VulnerabilitySource { NVD = 'NVD' }
 
 	export interface TagResourceResponse {
 	}
@@ -3962,7 +3962,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsEcrContainerSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum AwsEcrContainerSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
 	export interface BatchGetAccountStatusRequest {
 		accountIds?: Array<string>;
@@ -4099,9 +4099,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CoverageMapComparison { EQUALS = 0 }
+	export enum CoverageMapComparison { EQUALS = 'EQUALS' }
 
-	export enum CoverageStringComparison { EQUALS = 0, NOT_EQUALS = 1 }
+	export enum CoverageStringComparison { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS' }
 
 	export interface CreateFilterRequest {
 
@@ -4137,7 +4137,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportFormat { CSV = 0, JSON = 1 }
+	export enum ReportFormat { CSV = 'CSV', JSON = 'JSON' }
 
 	export interface CreateFindingsReportRequest {
 		filterCriteria?: FilterCriteria;
@@ -4315,9 +4315,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingType { NETWORK_REACHABILITY = 0, PACKAGE_VULNERABILITY = 1, CODE_VULNERABILITY = 2 }
+	export enum FindingType { NETWORK_REACHABILITY = 'NETWORK_REACHABILITY', PACKAGE_VULNERABILITY = 'PACKAGE_VULNERABILITY', CODE_VULNERABILITY = 'CODE_VULNERABILITY' }
 
-	export enum FindingTypeSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum FindingTypeSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
 	export interface GetConfigurationRequest {
 	}
@@ -4349,7 +4349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { AWS_EC2_INSTANCE = 0, AWS_ECR_CONTAINER_IMAGE = 1, AWS_ECR_REPOSITORY = 2, AWS_LAMBDA_FUNCTION = 3 }
+	export enum ResourceType { AWS_EC2_INSTANCE = 'AWS_EC2_INSTANCE', AWS_ECR_CONTAINER_IMAGE = 'AWS_ECR_CONTAINER_IMAGE', AWS_ECR_REPOSITORY = 'AWS_ECR_REPOSITORY', AWS_LAMBDA_FUNCTION = 'AWS_LAMBDA_FUNCTION' }
 
 	export interface GetEncryptionKeyRequest {
 	}
@@ -4408,11 +4408,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageLayerSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum ImageLayerSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
-	export enum LambdaFunctionSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum LambdaFunctionSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
-	export enum LambdaLayerSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum LambdaLayerSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
 	export interface ListAccountPermissionsRequest {
 		maxResults?: number | null;
@@ -4620,7 +4620,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum PackageSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
 	export interface ResetEncryptionKeyRequest {
 
@@ -4646,9 +4646,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceMapComparison { EQUALS = 0 }
+	export enum ResourceMapComparison { EQUALS = 'EQUALS' }
 
-	export enum ScanStatusCode { ACTIVE = 0, INACTIVE = 1 }
+	export enum ScanStatusCode { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** Details on the criteria used to define the filter for a vulnerability search.  */
@@ -4696,7 +4696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TitleSortBy { CRITICAL = 0, HIGH = 1, ALL = 2 }
+	export enum TitleSortBy { CRITICAL = 'CRITICAL', HIGH = 'HIGH', ALL = 'ALL' }
 
 	export interface UntagResourceRequest {
 	}

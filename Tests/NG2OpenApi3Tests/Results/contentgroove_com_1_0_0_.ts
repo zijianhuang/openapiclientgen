@@ -741,7 +741,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetClipsSort { created_at = 0, '-created_at' = 1, original_created_at = 2, '-original_created_at' = 3, name = 4, '-name' = 5 }
+	export enum GetClipsSort { created_at = 'created_at', '-created_at' = '-created_at', original_created_at = 'original_created_at', '-original_created_at' = '-original_created_at', name = 'name', '-name' = '-name' }
 
 	export interface CreateClipPostBody {
 

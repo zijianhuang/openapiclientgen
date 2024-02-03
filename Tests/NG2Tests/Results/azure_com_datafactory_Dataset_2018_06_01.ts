@@ -309,7 +309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvroDatasetTypePropertiesAvroCompressionCodec { none = 0, deflate = 1, snappy = 2, xz = 3, bzip2 = 4 }
+	export enum AvroDatasetTypePropertiesAvroCompressionCodec { none = 'none', deflate = 'deflate', snappy = 'snappy', xz = 'xz', bzip2 = 'bzip2' }
 
 
 	/** Dataset location. */
@@ -1143,7 +1143,7 @@ export namespace MyNS {
 
 
 	/** All available compression levels. */
-	export enum CompressionLevel { Optimal = 0, Fastest = 1 }
+	export enum CompressionLevel { Optimal = 'Optimal', Fastest = 'Fastest' }
 
 
 	/** Concur Service dataset. */
@@ -1415,7 +1415,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetParametersType { Object = 0, String = 1, Int = 2, Float = 3, Bool = 4, Array = 5, SecureString = 6 }
+	export enum DatasetParametersType { Object = 'Object', String = 'String', Int = 'Int', Float = 'Float', Bool = 'Bool', Array = 'Array', SecureString = 'SecureString' }
 
 
 	/** The BZip2 compression method used on a dataset. */
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DelimitedTextDatasetTypePropertiesCompressionCodec { bzip2 = 0, gzip = 1, deflate = 2, zipDeflate = 3, snappy = 4, lz4 = 5 }
+	export enum DelimitedTextDatasetTypePropertiesCompressionCodec { bzip2 = 'bzip2', gzip = 'gzip', deflate = 'deflate', zipDeflate = 'zipDeflate', snappy = 'snappy', lz4 = 'lz4' }
 
 
 	/** Microsoft Azure Document Database Collection dataset. */
@@ -2608,7 +2608,7 @@ export namespace MyNS {
 
 
 	/** JSON format file pattern. A property of JsonFormat. */
-	export enum JsonFormatFilePattern { setOfObjects = 0, arrayOfObjects = 1 }
+	export enum JsonFormatFilePattern { setOfObjects = 'setOfObjects', arrayOfObjects = 'arrayOfObjects' }
 
 
 	/** Magento server dataset. */
@@ -3122,7 +3122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrcDatasetTypePropertiesOrcCompressionCodec { none = 0, zlib = 1, snappy = 2 }
+	export enum OrcDatasetTypePropertiesOrcCompressionCodec { none = 'none', zlib = 'zlib', snappy = 'snappy' }
 
 
 	/** The data stored in Optimized Row Columnar (ORC) format. */
@@ -3178,7 +3178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParquetDatasetTypePropertiesCompressionCodec { none = 0, gzip = 1, snappy = 2, lzo = 3 }
+	export enum ParquetDatasetTypePropertiesCompressionCodec { none = 'none', gzip = 'gzip', snappy = 'snappy', lzo = 'lzo' }
 
 
 	/** The data stored in Parquet format. */

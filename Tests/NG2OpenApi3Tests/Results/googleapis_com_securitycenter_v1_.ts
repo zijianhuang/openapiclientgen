@@ -464,7 +464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetDiscoveryConfigInclusionMode { INCLUSION_MODE_UNSPECIFIED = 0, INCLUDE_ONLY = 1, EXCLUDE = 2 }
+	export enum AssetDiscoveryConfigInclusionMode { INCLUSION_MODE_UNSPECIFIED = 'INCLUSION_MODE_UNSPECIFIED', INCLUDE_ONLY = 'INCLUDE_ONLY', EXCLUDE = 'EXCLUDE' }
 
 
 	/** An attack exposure contains the results of an attack path simulation run. */
@@ -529,7 +529,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttackExposureState { STATE_UNSPECIFIED = 0, CALCULATED = 1, NOT_CALCULATED = 2 }
+	export enum AttackExposureState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CALCULATED = 'CALCULATED', NOT_CALCULATED = 'NOT_CALCULATED' }
 
 
 	/** A path that an attacker could take to reach an exposed resource. */
@@ -718,7 +718,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttackStepNodeType { NODE_TYPE_UNSPECIFIED = 0, NODE_TYPE_AND = 1, NODE_TYPE_OR = 2, NODE_TYPE_DEFENSE = 3, NODE_TYPE_ATTACKER = 4 }
+	export enum AttackStepNodeType { NODE_TYPE_UNSPECIFIED = 'NODE_TYPE_UNSPECIFIED', NODE_TYPE_AND = 'NODE_TYPE_AND', NODE_TYPE_OR = 'NODE_TYPE_OR', NODE_TYPE_DEFENSE = 'NODE_TYPE_DEFENSE', NODE_TYPE_ATTACKER = 'NODE_TYPE_ATTACKER' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -768,7 +768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Information related to Google Cloud Backup and DR Service findings. */
@@ -956,7 +956,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudSecuritycenterV1ResourceValueConfigResourceValue { RESOURCE_VALUE_UNSPECIFIED = 0, HIGH = 1, MEDIUM = 2, LOW = 3, NONE = 4 }
+	export enum GoogleCloudSecuritycenterV1ResourceValueConfigResourceValue { RESOURCE_VALUE_UNSPECIFIED = 'RESOURCE_VALUE_UNSPECIFIED', HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW', NONE = 'NONE' }
 
 
 	/** Response message for BatchCreateResourceValueConfigs */
@@ -1100,7 +1100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudDlpDataProfileParentType { PARENT_TYPE_UNSPECIFIED = 0, ORGANIZATION = 1, PROJECT = 2 }
+	export enum CloudDlpDataProfileParentType { PARENT_TYPE_UNSPECIFIED = 'PARENT_TYPE_UNSPECIFIED', ORGANIZATION = 'ORGANIZATION', PROJECT = 'PROJECT' }
 
 
 	/** Details about the Cloud Data Loss Prevention (Cloud DLP) [inspection job](https://cloud.google.com/dlp/docs/concepts-job-triggers) that produced the finding. */
@@ -1266,7 +1266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionProtocol { PROTOCOL_UNSPECIFIED = 0, ICMP = 1, TCP = 2, UDP = 3, GRE = 4, ESP = 5 }
+	export enum ConnectionProtocol { PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED', ICMP = 'ICMP', TCP = 'TCP', UDP = 'UDP', GRE = 'GRE', ESP = 'ESP' }
 
 
 	/** The email address of a contact. */
@@ -1559,17 +1559,17 @@ export namespace MyNS {
 
 	}
 
-	export enum Cvssv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 0, ATTACK_COMPLEXITY_LOW = 1, ATTACK_COMPLEXITY_HIGH = 2 }
+	export enum Cvssv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 'ATTACK_COMPLEXITY_UNSPECIFIED', ATTACK_COMPLEXITY_LOW = 'ATTACK_COMPLEXITY_LOW', ATTACK_COMPLEXITY_HIGH = 'ATTACK_COMPLEXITY_HIGH' }
 
-	export enum Cvssv3AttackVector { ATTACK_VECTOR_UNSPECIFIED = 0, ATTACK_VECTOR_NETWORK = 1, ATTACK_VECTOR_ADJACENT = 2, ATTACK_VECTOR_LOCAL = 3, ATTACK_VECTOR_PHYSICAL = 4 }
+	export enum Cvssv3AttackVector { ATTACK_VECTOR_UNSPECIFIED = 'ATTACK_VECTOR_UNSPECIFIED', ATTACK_VECTOR_NETWORK = 'ATTACK_VECTOR_NETWORK', ATTACK_VECTOR_ADJACENT = 'ATTACK_VECTOR_ADJACENT', ATTACK_VECTOR_LOCAL = 'ATTACK_VECTOR_LOCAL', ATTACK_VECTOR_PHYSICAL = 'ATTACK_VECTOR_PHYSICAL' }
 
-	export enum Cvssv3AvailabilityImpact { IMPACT_UNSPECIFIED = 0, IMPACT_HIGH = 1, IMPACT_LOW = 2, IMPACT_NONE = 3 }
+	export enum Cvssv3AvailabilityImpact { IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED', IMPACT_HIGH = 'IMPACT_HIGH', IMPACT_LOW = 'IMPACT_LOW', IMPACT_NONE = 'IMPACT_NONE' }
 
-	export enum Cvssv3PrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 0, PRIVILEGES_REQUIRED_NONE = 1, PRIVILEGES_REQUIRED_LOW = 2, PRIVILEGES_REQUIRED_HIGH = 3 }
+	export enum Cvssv3PrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 'PRIVILEGES_REQUIRED_UNSPECIFIED', PRIVILEGES_REQUIRED_NONE = 'PRIVILEGES_REQUIRED_NONE', PRIVILEGES_REQUIRED_LOW = 'PRIVILEGES_REQUIRED_LOW', PRIVILEGES_REQUIRED_HIGH = 'PRIVILEGES_REQUIRED_HIGH' }
 
-	export enum Cvssv3Scope { SCOPE_UNSPECIFIED = 0, SCOPE_UNCHANGED = 1, SCOPE_CHANGED = 2 }
+	export enum Cvssv3Scope { SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED', SCOPE_UNCHANGED = 'SCOPE_UNCHANGED', SCOPE_CHANGED = 'SCOPE_CHANGED' }
 
-	export enum Cvssv3UserInteraction { USER_INTERACTION_UNSPECIFIED = 0, USER_INTERACTION_NONE = 1, USER_INTERACTION_REQUIRED = 2 }
+	export enum Cvssv3UserInteraction { USER_INTERACTION_UNSPECIFIED = 'USER_INTERACTION_UNSPECIFIED', USER_INTERACTION_NONE = 'USER_INTERACTION_NONE', USER_INTERACTION_REQUIRED = 'USER_INTERACTION_REQUIRED' }
 
 
 	/** Additional Links */
@@ -1763,7 +1763,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EffectiveEventThreatDetectionCustomModuleEnablementState { ENABLEMENT_STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum EffectiveEventThreatDetectionCustomModuleEnablementState { ENABLEMENT_STATE_UNSPECIFIED = 'ENABLEMENT_STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -1884,7 +1884,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventThreatDetectionCustomModuleEnablementState { ENABLEMENT_STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2, INHERITED = 3 }
+	export enum EventThreatDetectionCustomModuleEnablementState { ENABLEMENT_STATE_UNSPECIFIED = 'ENABLEMENT_STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED', INHERITED = 'INHERITED' }
 
 
 	/** Resource where data was exfiltrated from or exfiltrated to. */
@@ -2354,7 +2354,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingFindingClass { FINDING_CLASS_UNSPECIFIED = 0, THREAT = 1, VULNERABILITY = 2, MISCONFIGURATION = 3, OBSERVATION = 4, SCC_ERROR = 5, POSTURE_VIOLATION = 6 }
+	export enum FindingFindingClass { FINDING_CLASS_UNSPECIFIED = 'FINDING_CLASS_UNSPECIFIED', THREAT = 'THREAT', VULNERABILITY = 'VULNERABILITY', MISCONFIGURATION = 'MISCONFIGURATION', OBSERVATION = 'OBSERVATION', SCC_ERROR = 'SCC_ERROR', POSTURE_VIOLATION = 'POSTURE_VIOLATION' }
 
 
 	/** Represents a particular IAM binding, which captures a member's role addition, removal, or state. */
@@ -2391,7 +2391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IamBindingAction { ACTION_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
+	export enum IamBindingAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', ADD = 'ADD', REMOVE = 'REMOVE' }
 
 
 	/** Represents what's commonly known as an _indicator of compromise_ (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. For more information, see [Indicator of compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise). */
@@ -2470,7 +2470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessSignatureSignatureType { SIGNATURE_TYPE_UNSPECIFIED = 0, SIGNATURE_TYPE_PROCESS = 1, SIGNATURE_TYPE_FILE = 2 }
+	export enum ProcessSignatureSignatureType { SIGNATURE_TYPE_UNSPECIFIED = 'SIGNATURE_TYPE_UNSPECIFIED', SIGNATURE_TYPE_PROCESS = 'SIGNATURE_TYPE_PROCESS', SIGNATURE_TYPE_FILE = 'SIGNATURE_TYPE_FILE' }
 
 
 	/** A signature corresponding to a YARA rule. */
@@ -2674,7 +2674,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleKind { KIND_UNSPECIFIED = 0, ROLE = 1, CLUSTER_ROLE = 2 }
+	export enum RoleKind { KIND_UNSPECIFIED = 'KIND_UNSPECIFIED', ROLE = 'ROLE', CLUSTER_ROLE = 'CLUSTER_ROLE' }
 
 
 	/** Represents a Kubernetes subject. */
@@ -2711,7 +2711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubjectKind { AUTH_TYPE_UNSPECIFIED = 0, USER = 1, SERVICEACCOUNT = 2, GROUP = 3 }
+	export enum SubjectKind { AUTH_TYPE_UNSPECIFIED = 'AUTH_TYPE_UNSPECIFIED', USER = 'USER', SERVICEACCOUNT = 'SERVICEACCOUNT', GROUP = 'GROUP' }
 
 
 	/** Provides GKE node pool information. */
@@ -2912,9 +2912,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MitreAttackPrimaryTactic { TACTIC_UNSPECIFIED = 0, RECONNAISSANCE = 1, RESOURCE_DEVELOPMENT = 2, INITIAL_ACCESS = 3, EXECUTION = 4, PERSISTENCE = 5, PRIVILEGE_ESCALATION = 6, DEFENSE_EVASION = 7, CREDENTIAL_ACCESS = 8, DISCOVERY = 9, LATERAL_MOVEMENT = 10, COLLECTION = 11, COMMAND_AND_CONTROL = 12, EXFILTRATION = 13, IMPACT = 14 }
+	export enum MitreAttackPrimaryTactic { TACTIC_UNSPECIFIED = 'TACTIC_UNSPECIFIED', RECONNAISSANCE = 'RECONNAISSANCE', RESOURCE_DEVELOPMENT = 'RESOURCE_DEVELOPMENT', INITIAL_ACCESS = 'INITIAL_ACCESS', EXECUTION = 'EXECUTION', PERSISTENCE = 'PERSISTENCE', PRIVILEGE_ESCALATION = 'PRIVILEGE_ESCALATION', DEFENSE_EVASION = 'DEFENSE_EVASION', CREDENTIAL_ACCESS = 'CREDENTIAL_ACCESS', DISCOVERY = 'DISCOVERY', LATERAL_MOVEMENT = 'LATERAL_MOVEMENT', COLLECTION = 'COLLECTION', COMMAND_AND_CONTROL = 'COMMAND_AND_CONTROL', EXFILTRATION = 'EXFILTRATION', IMPACT = 'IMPACT' }
 
-	export enum FindingMute { MUTE_UNSPECIFIED = 0, MUTED = 1, UNMUTED = 2, UNDEFINED = 3 }
+	export enum FindingMute { MUTE_UNSPECIFIED = 'MUTE_UNSPECIFIED', MUTED = 'MUTED', UNMUTED = 'UNMUTED', UNDEFINED = 'UNDEFINED' }
 
 
 	/** Contains information about the org policies associated with the finding. */
@@ -3050,9 +3050,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingSeverity { SEVERITY_UNSPECIFIED = 0, CRITICAL = 1, HIGH = 2, MEDIUM = 3, LOW = 4 }
+	export enum FindingSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', CRITICAL = 'CRITICAL', HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW' }
 
-	export enum FindingState { STATE_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2 }
+	export enum FindingState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** Refers to common vulnerability fields e.g. cve, cvss, cwe etc. */
@@ -3603,7 +3603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState { STATE_UNSPECIFIED = 0, COMPLETED = 1, SUPERSEDED = 2, TERMINATED = 3 }
+	export enum GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', COMPLETED = 'COMPLETED', SUPERSEDED = 'SUPERSEDED', TERMINATED = 'TERMINATED' }
 
 
 	/** Represents an instance of a Security Health Analytics custom module, including its full module name, display name, enablement state, and last updated time. You can create a custom module at the organization, folder, or project level. Custom modules that you create at the organization or folder level are inherited by the child folders and projects. */
@@ -4234,7 +4234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListAssetsResultStateChange { UNUSED = 0, ADDED = 1, REMOVED = 2, ACTIVE = 3 }
+	export enum ListAssetsResultStateChange { UNUSED = 'UNUSED', ADDED = 'ADDED', REMOVED = 'REMOVED', ACTIVE = 'ACTIVE' }
 
 
 	/** Response message for listing the attack paths for a given simulation or valued resource. */
@@ -4535,7 +4535,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListFindingsResultStateChange { UNUSED = 0, CHANGED = 1, UNCHANGED = 2, ADDED = 3, REMOVED = 4 }
+	export enum ListFindingsResultStateChange { UNUSED = 'UNUSED', CHANGED = 'CHANGED', UNCHANGED = 'UNCHANGED', ADDED = 'ADDED', REMOVED = 'REMOVED' }
 
 
 	/** Response message for listing mute configs. */
@@ -4955,7 +4955,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValuedResourceResourceValue { RESOURCE_VALUE_UNSPECIFIED = 0, RESOURCE_VALUE_LOW = 1, RESOURCE_VALUE_MEDIUM = 2, RESOURCE_VALUE_HIGH = 3 }
+	export enum ValuedResourceResourceValue { RESOURCE_VALUE_UNSPECIFIED = 'RESOURCE_VALUE_UNSPECIFIED', RESOURCE_VALUE_LOW = 'RESOURCE_VALUE_LOW', RESOURCE_VALUE_MEDIUM = 'RESOURCE_VALUE_MEDIUM', RESOURCE_VALUE_HIGH = 'RESOURCE_VALUE_HIGH' }
 
 
 	/** Metadata about a ResourceValueConfig. For example, id and name. */

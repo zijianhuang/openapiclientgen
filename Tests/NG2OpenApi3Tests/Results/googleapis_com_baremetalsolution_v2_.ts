@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AllowedClientMountPermissions { MOUNT_PERMISSIONS_UNSPECIFIED = 0, READ = 1, READ_WRITE = 2 }
+	export enum AllowedClientMountPermissions { MOUNT_PERMISSIONS_UNSPECIFIED = 'MOUNT_PERMISSIONS_UNSPECIFIED', READ = 'READ', READ_WRITE = 'READ_WRITE' }
 
 
 	/** Message for detach specific LUN from an Instance. */
@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogicalNetworkInterfaceNetworkType { TYPE_UNSPECIFIED = 0, CLIENT = 1, PRIVATE = 2 }
+	export enum LogicalNetworkInterfaceNetworkType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', CLIENT = 'CLIENT', PRIVATE = 'PRIVATE' }
 
 
 	/** Logical interface. */
@@ -318,7 +318,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBaremetalsolutionV2ServerNetworkTemplateLogicalInterfaceType { INTERFACE_TYPE_UNSPECIFIED = 0, BOND = 1, NIC = 2 }
+	export enum GoogleCloudBaremetalsolutionV2ServerNetworkTemplateLogicalInterfaceType { INTERFACE_TYPE_UNSPECIFIED = 'INTERFACE_TYPE_UNSPECIFIED', BOND = 'BOND', NIC = 'NIC' }
 
 
 	/** A server. */
@@ -555,11 +555,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LunMultiprotocolType { MULTIPROTOCOL_TYPE_UNSPECIFIED = 0, LINUX = 1 }
+	export enum LunMultiprotocolType { MULTIPROTOCOL_TYPE_UNSPECIFIED = 'MULTIPROTOCOL_TYPE_UNSPECIFIED', LINUX = 'LINUX' }
 
-	export enum LunState { STATE_UNSPECIFIED = 0, CREATING = 1, UPDATING = 2, READY = 3, DELETING = 4, COOL_OFF = 5 }
+	export enum LunState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', UPDATING = 'UPDATING', READY = 'READY', DELETING = 'DELETING', COOL_OFF = 'COOL_OFF' }
 
-	export enum LunStorageType { STORAGE_TYPE_UNSPECIFIED = 0, SSD = 1, HDD = 2 }
+	export enum LunStorageType { STORAGE_TYPE_UNSPECIFIED = 'STORAGE_TYPE_UNSPECIFIED', SSD = 'SSD', HDD = 'HDD' }
 
 
 	/** A Network. */
@@ -755,7 +755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkState { STATE_UNSPECIFIED = 0, PROVISIONING = 1, PROVISIONED = 2, DEPROVISIONING = 3, UPDATING = 4 }
+	export enum NetworkState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PROVISIONING = 'PROVISIONING', PROVISIONED = 'PROVISIONED', DEPROVISIONING = 'DEPROVISIONING', UPDATING = 'UPDATING' }
 
 
 	/** A network VRF. */
@@ -812,7 +812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VRFState { STATE_UNSPECIFIED = 0, PROVISIONING = 1, PROVISIONED = 2 }
+	export enum VRFState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PROVISIONING = 'PROVISIONING', PROVISIONED = 'PROVISIONED' }
 
 
 	/** VLAN attachment details. */
@@ -873,7 +873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, PROVISIONING = 1, RUNNING = 2, DELETED = 3, UPDATING = 4, STARTING = 5, STOPPING = 6, SHUTDOWN = 7 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PROVISIONING = 'PROVISIONING', RUNNING = 'RUNNING', DELETED = 'DELETED', UPDATING = 'UPDATING', STARTING = 'STARTING', STOPPING = 'STOPPING', SHUTDOWN = 'SHUTDOWN' }
 
 
 	/** A storage volume. */
@@ -1049,11 +1049,11 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumePerformanceTier { VOLUME_PERFORMANCE_TIER_UNSPECIFIED = 0, VOLUME_PERFORMANCE_TIER_SHARED = 1, VOLUME_PERFORMANCE_TIER_ASSIGNED = 2, VOLUME_PERFORMANCE_TIER_HT = 3 }
+	export enum VolumePerformanceTier { VOLUME_PERFORMANCE_TIER_UNSPECIFIED = 'VOLUME_PERFORMANCE_TIER_UNSPECIFIED', VOLUME_PERFORMANCE_TIER_SHARED = 'VOLUME_PERFORMANCE_TIER_SHARED', VOLUME_PERFORMANCE_TIER_ASSIGNED = 'VOLUME_PERFORMANCE_TIER_ASSIGNED', VOLUME_PERFORMANCE_TIER_HT = 'VOLUME_PERFORMANCE_TIER_HT' }
 
-	export enum VolumeProtocol { PROTOCOL_UNSPECIFIED = 0, FIBRE_CHANNEL = 1, NFS = 2 }
+	export enum VolumeProtocol { PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED', FIBRE_CHANNEL = 'FIBRE_CHANNEL', NFS = 'NFS' }
 
-	export enum VolumeSnapshotAutoDeleteBehavior { SNAPSHOT_AUTO_DELETE_BEHAVIOR_UNSPECIFIED = 0, DISABLED = 1, OLDEST_FIRST = 2, NEWEST_FIRST = 3 }
+	export enum VolumeSnapshotAutoDeleteBehavior { SNAPSHOT_AUTO_DELETE_BEHAVIOR_UNSPECIFIED = 'SNAPSHOT_AUTO_DELETE_BEHAVIOR_UNSPECIFIED', DISABLED = 'DISABLED', OLDEST_FIRST = 'OLDEST_FIRST', NEWEST_FIRST = 'NEWEST_FIRST' }
 
 
 	/** Details about snapshot space reservation and usage on the storage volume. */
@@ -1097,11 +1097,11 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3, UPDATING = 4, COOL_OFF = 5 }
+	export enum VolumeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING', UPDATING = 'UPDATING', COOL_OFF = 'COOL_OFF' }
 
-	export enum VolumeWorkloadProfile { WORKLOAD_PROFILE_UNSPECIFIED = 0, GENERIC = 1, HANA = 2 }
+	export enum VolumeWorkloadProfile { WORKLOAD_PROFILE_UNSPECIFIED = 'WORKLOAD_PROFILE_UNSPECIFIED', GENERIC = 'GENERIC', HANA = 'HANA' }
 
-	export enum InstanceWorkloadProfile { WORKLOAD_PROFILE_UNSPECIFIED = 0, WORKLOAD_PROFILE_GENERIC = 1, WORKLOAD_PROFILE_HANA = 2 }
+	export enum InstanceWorkloadProfile { WORKLOAD_PROFILE_UNSPECIFIED = 'WORKLOAD_PROFILE_UNSPECIFIED', WORKLOAD_PROFILE_GENERIC = 'WORKLOAD_PROFILE_GENERIC', WORKLOAD_PROFILE_HANA = 'WORKLOAD_PROFILE_HANA' }
 
 
 	/** Configuration parameters for a new instance. */
@@ -1234,7 +1234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceConfigNetworkConfig { NETWORKCONFIG_UNSPECIFIED = 0, SINGLE_VLAN = 1, MULTI_VLAN = 2 }
+	export enum InstanceConfigNetworkConfig { NETWORKCONFIG_UNSPECIFIED = 'NETWORKCONFIG_UNSPECIFIED', SINGLE_VLAN = 'SINGLE_VLAN', MULTI_VLAN = 'MULTI_VLAN' }
 
 
 	/** A resource budget. */
@@ -1611,7 +1611,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NfsShareState { STATE_UNSPECIFIED = 0, PROVISIONED = 1, CREATING = 2, UPDATING = 3, DELETING = 4 }
+	export enum NfsShareState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PROVISIONED = 'PROVISIONED', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING' }
 
 
 	/** Request for getting all available OS images. */
@@ -1775,7 +1775,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisioningQuotaAssetType { ASSET_TYPE_UNSPECIFIED = 0, ASSET_TYPE_SERVER = 1, ASSET_TYPE_STORAGE = 2, ASSET_TYPE_NETWORK = 3 }
+	export enum ProvisioningQuotaAssetType { ASSET_TYPE_UNSPECIFIED = 'ASSET_TYPE_UNSPECIFIED', ASSET_TYPE_SERVER = 'ASSET_TYPE_SERVER', ASSET_TYPE_STORAGE = 'ASSET_TYPE_STORAGE', ASSET_TYPE_NETWORK = 'ASSET_TYPE_NETWORK' }
 
 
 	/** Message for response of ListSSHKeys. */
@@ -1912,7 +1912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeSnapshotType { SNAPSHOT_TYPE_UNSPECIFIED = 0, AD_HOC = 1, SCHEDULED = 2 }
+	export enum VolumeSnapshotType { SNAPSHOT_TYPE_UNSPECIFIED = 'SNAPSHOT_TYPE_UNSPECIFIED', AD_HOC = 'AD_HOC', SCHEDULED = 'SCHEDULED' }
 
 
 	/** Response message containing the list of storage volumes. */
@@ -2108,9 +2108,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigBandwidth { BANDWIDTH_UNSPECIFIED = 0, BW_1_GBPS = 1, BW_2_GBPS = 2, BW_5_GBPS = 3, BW_10_GBPS = 4 }
+	export enum NetworkConfigBandwidth { BANDWIDTH_UNSPECIFIED = 'BANDWIDTH_UNSPECIFIED', BW_1_GBPS = 'BW_1_GBPS', BW_2_GBPS = 'BW_2_GBPS', BW_5_GBPS = 'BW_5_GBPS', BW_10_GBPS = 'BW_10_GBPS' }
 
-	export enum NetworkConfigServiceCidr { SERVICE_CIDR_UNSPECIFIED = 0, DISABLED = 1, HIGH_26 = 2, HIGH_27 = 3, HIGH_28 = 4 }
+	export enum NetworkConfigServiceCidr { SERVICE_CIDR_UNSPECIFIED = 'SERVICE_CIDR_UNSPECIFIED', DISABLED = 'DISABLED', HIGH_26 = 'HIGH_26', HIGH_27 = 'HIGH_27', HIGH_28 = 'HIGH_28' }
 
 
 	/** A NFS export entry. */
@@ -2175,7 +2175,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NfsExportPermissions { PERMISSIONS_UNSPECIFIED = 0, READ_ONLY = 1, READ_WRITE = 2 }
+	export enum NfsExportPermissions { PERMISSIONS_UNSPECIFIED = 'PERMISSIONS_UNSPECIFIED', READ_ONLY = 'READ_ONLY', READ_WRITE = 'READ_WRITE' }
 
 
 	/** This resource represents a long-running operation that is the result of a network API call. */
@@ -2360,7 +2360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisioningConfigState { STATE_UNSPECIFIED = 0, DRAFT = 1, SUBMITTED = 2, PROVISIONING = 3, PROVISIONED = 4, VALIDATED = 5, CANCELLED = 6, FAILED = 7 }
+	export enum ProvisioningConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DRAFT = 'DRAFT', SUBMITTED = 'SUBMITTED', PROVISIONING = 'PROVISIONING', PROVISIONED = 'PROVISIONED', VALIDATED = 'VALIDATED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 
 	/** Configuration parameters for a new volume. */
@@ -2448,9 +2448,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VolumeConfigProtocol { PROTOCOL_UNSPECIFIED = 0, PROTOCOL_FC = 1, PROTOCOL_NFS = 2 }
+	export enum VolumeConfigProtocol { PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED', PROTOCOL_FC = 'PROTOCOL_FC', PROTOCOL_NFS = 'PROTOCOL_NFS' }
 
-	export enum VolumeConfigType { TYPE_UNSPECIFIED = 0, FLASH = 1, DISK = 2 }
+	export enum VolumeConfigType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', FLASH = 'FLASH', DISK = 'DISK' }
 
 
 	/** Message requesting rename of a server. */

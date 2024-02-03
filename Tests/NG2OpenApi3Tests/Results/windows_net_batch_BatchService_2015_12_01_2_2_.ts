@@ -169,7 +169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoPoolSpecificationPoolLifetimeOption { jobschedule = 0, job = 1, unmapped = 2 }
+	export enum AutoPoolSpecificationPoolLifetimeOption { jobschedule = 'jobschedule', job = 'job', unmapped = 'unmapped' }
 
 
 	/** The results and errors from an execution of a pool autoscale formula. */
@@ -395,7 +395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificatePreviousState { active = 0, deleting = 1, deletefailed = 2 }
+	export enum CertificatePreviousState { active = 'active', deleting = 'deleting', deletefailed = 'deletefailed' }
 
 
 	/** A certificate that can be installed on compute nodes and can be used to authenticate operations on the machine. */
@@ -464,7 +464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateAddParameterCertificateFormat { pfx = 0, cer = 1, unmapped = 2 }
+	export enum CertificateAddParameterCertificateFormat { pfx = 'pfx', cer = 'cer', unmapped = 'unmapped' }
 
 
 	/** Response to a CertificateOperations.List request. */
@@ -551,7 +551,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateReferenceStoreLocation { currentuser = 0, localmachine = 1, unmapped = 2 }
+	export enum CertificateReferenceStoreLocation { currentuser = 'currentuser', localmachine = 'localmachine', unmapped = 'unmapped' }
 
 
 	/** An Azure Batch job. */
@@ -734,7 +734,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudJobPreviousState { active = 0, disabling = 1, disabled = 2, enabling = 3, terminating = 4, completed = 5, deleting = 6 }
+	export enum CloudJobPreviousState { active = 'active', disabling = 'disabling', disabled = 'disabled', enabling = 'enabling', terminating = 'terminating', completed = 'completed', deleting = 'deleting' }
 
 
 	/** Response to a CloudJobOperations.ListPreparationAndReleaseTaskStatus request. */
@@ -924,7 +924,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudJobSchedulePreviousState { active = 0, completed = 1, disabled = 2, terminating = 3, deleting = 4 }
+	export enum CloudJobSchedulePreviousState { active = 'active', completed = 'completed', disabled = 'disabled', terminating = 'terminating', deleting = 'deleting' }
 
 
 	/** Response to a CloudJobScheduleOperations.List request. */
@@ -1142,9 +1142,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudPoolAllocationState { steady = 0, resizing = 1, stopping = 2 }
+	export enum CloudPoolAllocationState { steady = 'steady', resizing = 'resizing', stopping = 'stopping' }
 
-	export enum CloudPoolState { active = 0, deleting = 1, upgrading = 2 }
+	export enum CloudPoolState { active = 'active', deleting = 'deleting', upgrading = 'upgrading' }
 
 
 	/** Response to a CloudPoolOperations.List request. */
@@ -1295,7 +1295,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudTaskPreviousState { active = 0, preparing = 1, running = 2, completed = 3 }
+	export enum CloudTaskPreviousState { active = 'active', preparing = 'preparing', running = 'running', completed = 'completed' }
 
 
 	/** A file to be downloaded from Azure blob storage to a compute node. */
@@ -1637,9 +1637,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeNodeSchedulingState { enabled = 0, disabled = 1 }
+	export enum ComputeNodeSchedulingState { enabled = 'enabled', disabled = 'disabled' }
 
-	export enum ComputeNodeState { idle = 0, rebooting = 1, reimaging = 2, running = 3, unusable = 4, creating = 5, starting = 6, waitingforstarttask = 7, starttaskfailed = 8, unknown = 9, leavingpool = 10, offline = 11 }
+	export enum ComputeNodeState { idle = 'idle', rebooting = 'rebooting', reimaging = 'reimaging', running = 'running', unusable = 'unusable', creating = 'creating', starting = 'starting', waitingforstarttask = 'waitingforstarttask', starttaskfailed = 'starttaskfailed', unknown = 'unknown', leavingpool = 'leavingpool', offline = 'offline' }
 
 
 	/** Information about the compute node on which a task ran. */
@@ -2015,7 +2015,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobDisableParameterDisableTasks { requeue = 0, terminate = 1, wait = 2 }
+	export enum JobDisableParameterDisableTasks { requeue = 'requeue', terminate = 'terminate', wait = 'wait' }
 
 
 	/** Contains information about the execution of a job in the Azure Batch service. */
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPreparationTaskExecutionInformationState { running = 0, completed = 1 }
+	export enum JobPreparationTaskExecutionInformationState { running = 'running', completed = 'completed' }
 
 
 	/** A Job Release task to run on job completion on any compute node where the job has run. */
@@ -2812,7 +2812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobSchedulingErrorCategory { usererror = 0, servererror = 1, unmapped = 2 }
+	export enum JobSchedulingErrorCategory { usererror = 'usererror', servererror = 'servererror', unmapped = 'unmapped' }
 
 
 	/** Specifies details of the jobs to be created on a schedule. */
@@ -3178,7 +3178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeDisableSchedulingParameterNodeDisableSchedulingOption { requeue = 0, terminate = 1, taskcompletion = 2 }
+	export enum NodeDisableSchedulingParameterNodeDisableSchedulingOption { requeue = 'requeue', terminate = 'terminate', taskcompletion = 'taskcompletion' }
 
 
 	/** Information about a file or directory on a compute node. */
@@ -3263,7 +3263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeRebootParameterNodeRebootOption { requeue = 0, terminate = 1, taskcompletion = 2, retaineddata = 3 }
+	export enum NodeRebootParameterNodeRebootOption { requeue = 'requeue', terminate = 'terminate', taskcompletion = 'taskcompletion', retaineddata = 'retaineddata' }
 
 
 	/** Parameters for a ComputeNodeOperations.Reimage request. */
@@ -4708,7 +4708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskSchedulingPolicyNodeFillType { spread = 0, pack = 1, unmapped = 2 }
+	export enum TaskSchedulingPolicyNodeFillType { spread = 'spread', pack = 'pack', unmapped = 'unmapped' }
 
 
 	/** Resource usage statistics for a task. */

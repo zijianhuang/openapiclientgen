@@ -87,9 +87,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BlockType { KEY_VALUE_SET = 0, PAGE = 1, LINE = 2, WORD = 3, TABLE = 4, CELL = 5, SELECTION_ELEMENT = 6, MERGED_CELL = 7, TITLE = 8, QUERY = 9, QUERY_RESULT = 10, SIGNATURE = 11, TABLE_TITLE = 12, TABLE_FOOTER = 13 }
+	export enum BlockType { KEY_VALUE_SET = 'KEY_VALUE_SET', PAGE = 'PAGE', LINE = 'LINE', WORD = 'WORD', TABLE = 'TABLE', CELL = 'CELL', SELECTION_ELEMENT = 'SELECTION_ELEMENT', MERGED_CELL = 'MERGED_CELL', TITLE = 'TITLE', QUERY = 'QUERY', QUERY_RESULT = 'QUERY_RESULT', SIGNATURE = 'SIGNATURE', TABLE_TITLE = 'TABLE_TITLE', TABLE_FOOTER = 'TABLE_FOOTER' }
 
-	export enum TextType { HANDWRITING = 0, PRINTED = 1 }
+	export enum TextType { HANDWRITING = 'HANDWRITING', PRINTED = 'PRINTED' }
 
 
 	/** Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements. */
@@ -171,11 +171,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationshipType { VALUE = 0, CHILD = 1, COMPLEX_FEATURES = 2, MERGED_CELL = 3, TITLE = 4, ANSWER = 5, TABLE = 6, TABLE_TITLE = 7, TABLE_FOOTER = 8 }
+	export enum RelationshipType { VALUE = 'VALUE', CHILD = 'CHILD', COMPLEX_FEATURES = 'COMPLEX_FEATURES', MERGED_CELL = 'MERGED_CELL', TITLE = 'TITLE', ANSWER = 'ANSWER', TABLE = 'TABLE', TABLE_TITLE = 'TABLE_TITLE', TABLE_FOOTER = 'TABLE_FOOTER' }
 
-	export enum EntityType { KEY = 0, VALUE = 1, COLUMN_HEADER = 2, TABLE_TITLE = 3, TABLE_FOOTER = 4, TABLE_SECTION_TITLE = 5, TABLE_SUMMARY = 6, STRUCTURED_TABLE = 7, SEMI_STRUCTURED_TABLE = 8 }
+	export enum EntityType { KEY = 'KEY', VALUE = 'VALUE', COLUMN_HEADER = 'COLUMN_HEADER', TABLE_TITLE = 'TABLE_TITLE', TABLE_FOOTER = 'TABLE_FOOTER', TABLE_SECTION_TITLE = 'TABLE_SECTION_TITLE', TABLE_SUMMARY = 'TABLE_SUMMARY', STRUCTURED_TABLE = 'STRUCTURED_TABLE', SEMI_STRUCTURED_TABLE = 'SEMI_STRUCTURED_TABLE' }
 
-	export enum SelectionStatus { SELECTED = 0, NOT_SELECTED = 1 }
+	export enum SelectionStatus { SELECTED = 'SELECTED', NOT_SELECTED = 'NOT_SELECTED' }
 
 
 	/** Each query contains the question you want to ask in the Text and the alias you want to associate. */
@@ -282,7 +282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureType { TABLES = 0, FORMS = 1, QUERIES = 2, SIGNATURES = 3 }
+	export enum FeatureType { TABLES = 'TABLES', FORMS = 'FORMS', QUERIES = 'QUERIES', SIGNATURES = 'SIGNATURES' }
 
 
 	/** Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.  */
@@ -328,7 +328,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
+	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 'FreeOfPersonallyIdentifiableInformation', FreeOfAdultContent = 'FreeOfAdultContent' }
 
 
 	/** <p/> */
@@ -734,7 +734,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValueType { DATE = 0 }
+	export enum ValueType { DATE = 'DATE' }
 
 	export interface AnalyzeIDRequest {
 
@@ -802,7 +802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2, PARTIAL_SUCCESS = 3 }
+	export enum JobStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', PARTIAL_SUCCESS = 'PARTIAL_SUCCESS' }
 
 
 	/** A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>) or asynchronous document text detection (<a>StartDocumentTextDetection</a>).  */
@@ -1674,31 +1674,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AnalyzeDocumentX_Amz_Target { 'Textract.AnalyzeDocument' = 0 }
+	export enum AnalyzeDocumentX_Amz_Target { 'Textract.AnalyzeDocument' = 'Textract.AnalyzeDocument' }
 
-	export enum AnalyzeExpenseX_Amz_Target { 'Textract.AnalyzeExpense' = 0 }
+	export enum AnalyzeExpenseX_Amz_Target { 'Textract.AnalyzeExpense' = 'Textract.AnalyzeExpense' }
 
-	export enum AnalyzeIDX_Amz_Target { 'Textract.AnalyzeID' = 0 }
+	export enum AnalyzeIDX_Amz_Target { 'Textract.AnalyzeID' = 'Textract.AnalyzeID' }
 
-	export enum DetectDocumentTextX_Amz_Target { 'Textract.DetectDocumentText' = 0 }
+	export enum DetectDocumentTextX_Amz_Target { 'Textract.DetectDocumentText' = 'Textract.DetectDocumentText' }
 
-	export enum GetDocumentAnalysisX_Amz_Target { 'Textract.GetDocumentAnalysis' = 0 }
+	export enum GetDocumentAnalysisX_Amz_Target { 'Textract.GetDocumentAnalysis' = 'Textract.GetDocumentAnalysis' }
 
-	export enum GetDocumentTextDetectionX_Amz_Target { 'Textract.GetDocumentTextDetection' = 0 }
+	export enum GetDocumentTextDetectionX_Amz_Target { 'Textract.GetDocumentTextDetection' = 'Textract.GetDocumentTextDetection' }
 
-	export enum GetExpenseAnalysisX_Amz_Target { 'Textract.GetExpenseAnalysis' = 0 }
+	export enum GetExpenseAnalysisX_Amz_Target { 'Textract.GetExpenseAnalysis' = 'Textract.GetExpenseAnalysis' }
 
-	export enum GetLendingAnalysisX_Amz_Target { 'Textract.GetLendingAnalysis' = 0 }
+	export enum GetLendingAnalysisX_Amz_Target { 'Textract.GetLendingAnalysis' = 'Textract.GetLendingAnalysis' }
 
-	export enum GetLendingAnalysisSummaryX_Amz_Target { 'Textract.GetLendingAnalysisSummary' = 0 }
+	export enum GetLendingAnalysisSummaryX_Amz_Target { 'Textract.GetLendingAnalysisSummary' = 'Textract.GetLendingAnalysisSummary' }
 
-	export enum StartDocumentAnalysisX_Amz_Target { 'Textract.StartDocumentAnalysis' = 0 }
+	export enum StartDocumentAnalysisX_Amz_Target { 'Textract.StartDocumentAnalysis' = 'Textract.StartDocumentAnalysis' }
 
-	export enum StartDocumentTextDetectionX_Amz_Target { 'Textract.StartDocumentTextDetection' = 0 }
+	export enum StartDocumentTextDetectionX_Amz_Target { 'Textract.StartDocumentTextDetection' = 'Textract.StartDocumentTextDetection' }
 
-	export enum StartExpenseAnalysisX_Amz_Target { 'Textract.StartExpenseAnalysis' = 0 }
+	export enum StartExpenseAnalysisX_Amz_Target { 'Textract.StartExpenseAnalysis' = 'Textract.StartExpenseAnalysis' }
 
-	export enum StartLendingAnalysisX_Amz_Target { 'Textract.StartLendingAnalysis' = 0 }
+	export enum StartLendingAnalysisX_Amz_Target { 'Textract.StartLendingAnalysis' = 'Textract.StartLendingAnalysis' }
 
 }
 

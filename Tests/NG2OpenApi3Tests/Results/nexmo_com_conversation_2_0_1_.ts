@@ -73,7 +73,7 @@ export namespace MyNS {
 
 
 	/** Recording Action */
-	export enum Action { start = 0, stop = 1 }
+	export enum Action { start = 'start', stop = 'stop' }
 
 
 	/** A user who joins a conversation as a member can have one channel per membership type. Channels can be `app`, `phone`, `sip`, `websocket`, or `vbc` */
@@ -161,11 +161,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { app = 0, phone = 1, sip = 2, websocket = 3, vbc = 4 }
+	export enum ChannelType { app = 'app', phone = 'phone', sip = 'sip', websocket = 'websocket', vbc = 'vbc' }
 
 
 	/** Channel type */
-	export enum Channel_type { app = 0, phone = 1, sip = 2, websocket = 3, vbc = 4 }
+	export enum Channel_type { app = 'app', phone = 'phone', sip = 'sip', websocket = 'websocket', vbc = 'vbc' }
 
 
 	/** Conversation properties */
@@ -295,11 +295,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Event_retrievedState { invited = 0, joined = 1, left = 2, unknown = 3 }
+	export enum Event_retrievedState { invited = 'invited', joined = 'joined', left = 'left', unknown = 'unknown' }
 
 
 	/** Record the Conversation in a specific format. */
-	export enum Format { mp3 = 0, wav = 1 }
+	export enum Format { mp3 = 'mp3', wav = 'wav' }
 
 	export interface Initiator {
 		joined?: InitiatorJoined;
@@ -345,7 +345,7 @@ export namespace MyNS {
 
 
 	/** Leg Status */
-	export enum Leg_state { terminated = 0 }
+	export enum Leg_state { terminated = 'terminated' }
 
 
 	/** Media Object */
@@ -363,11 +363,11 @@ export namespace MyNS {
 
 
 	/** Invite or join a member to a conversation */
-	export enum Member_action { invite = 0, join = 1 }
+	export enum Member_action { invite = 'invite', join = 'join' }
 
 
 	/** The state that the member is in. Possible values are `invited`, `joined`, `left`, or `unknown` */
-	export enum Member_state { invited = 0, joined = 1, left = 2, unknown = 3 }
+	export enum Member_state { invited = 'invited', joined = 'joined', left = 'left', unknown = 'unknown' }
 
 	export interface Timestamp_obj_leg {
 
@@ -770,7 +770,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListConversationsOrder { asc = 0, desc = 1, ASC = 2, DESC = 3 }
+	export enum ListConversationsOrder { asc = 'asc', desc = 'desc', ASC = 'ASC', DESC = 'DESC' }
 
 	export interface ListConversationsReturn {
 

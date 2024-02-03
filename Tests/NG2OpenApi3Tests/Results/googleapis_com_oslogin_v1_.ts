@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PosixAccountOperatingSystemType { OPERATING_SYSTEM_TYPE_UNSPECIFIED = 0, LINUX = 1, WINDOWS = 2 }
+	export enum PosixAccountOperatingSystemType { OPERATING_SYSTEM_TYPE_UNSPECIFIED = 'OPERATING_SYSTEM_TYPE_UNSPECIFIED', LINUX = 'LINUX', WINDOWS = 'WINDOWS' }
 
 
 	/** The SSH public key information associated with a Google account. */

@@ -476,9 +476,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RedactTransactionProduct { sms = 0, voice = 1, 'number-insight' = 2, verify = 3, 'verify-sdk' = 4, messages = 5 }
+	export enum RedactTransactionProduct { sms = 'sms', voice = 'voice', 'number-insight' = 'number-insight', verify = 'verify', 'verify-sdk' = 'verify-sdk', messages = 'messages' }
 
-	export enum RedactTransactionType { inbound = 0, outbound = 1 }
+	export enum RedactTransactionType { inbound = 'inbound', outbound = 'outbound' }
 
 	@Injectable()
 	export class MyClient {

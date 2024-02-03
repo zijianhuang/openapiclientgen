@@ -154,7 +154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionRole { ROLE_UNSPECIFIED = 0, OWNER = 1, WRITER = 2 }
+	export enum PermissionRole { ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED', OWNER = 'OWNER', WRITER = 'WRITER' }
 
 
 	/** Describes a single user. */

@@ -32,7 +32,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnnouncementFeedbackCriterionAction { pushed = 0, replied = 1, actioned = 2, exited = 3 }
+	export enum AnnouncementFeedbackCriterionAction { pushed = 'pushed', replied = 'replied', actioned = 'actioned', exited = 'exited' }
 
 	export interface ApiError {
 		error?: ApiErrorError;
@@ -173,7 +173,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppCollectionPropertiesProvisioningState { Creating = 0, Succeeded = 1 }
+	export enum AppCollectionPropertiesProvisioningState { Creating = 'Creating', Succeeded = 'Succeeded' }
 
 
 	/**
@@ -557,11 +557,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CampaignDeliveryTime { any = 0, background = 1, session = 2 }
+	export enum CampaignDeliveryTime { any = 'any', background = 'background', session = 'session' }
 
-	export enum CampaignNotificationType { system = 0, popup = 1 }
+	export enum CampaignNotificationType { system = 'system', popup = 'popup' }
 
-	export enum CampaignPushMode { 'real-time' = 0, 'one-shot' = 1, manual = 2 }
+	export enum CampaignPushMode { 'real-time' = 'real-time', 'one-shot' = 'one-shot', manual = 'manual' }
 
 	export interface PollQuestion extends PollQuestionLocalization {
 
@@ -631,7 +631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CampaignType { 'text/plain' = 0, 'text/html' = 1, only_notif = 2, 'text/base64' = 3 }
+	export enum CampaignType { 'text/plain' = 'text/plain', 'text/html' = 'text/html', only_notif = 'only_notif', 'text/base64' = 'text/base64' }
 
 	export interface CampaignListResult extends CampaignStateResult {
 
@@ -931,7 +931,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CampaignResultState { draft = 0, scheduled = 1, 'in-progress' = 2, finished = 3, queued = 4 }
+	export enum CampaignResultState { draft = 'draft', scheduled = 'scheduled', 'in-progress' = 'in-progress', finished = 'finished', queued = 'queued' }
 
 	export interface CampaignState {
 
@@ -1289,7 +1289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DateTagCriterionOp { EQ = 0, LT = 1, GT = 2, LE = 3, GE = 4 }
+	export enum DateTagCriterionOp { EQ = 'EQ', LT = 'LT', GT = 'GT', LE = 'LE', GE = 'GE' }
 
 	export interface Device {
 
@@ -2379,11 +2379,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DateRangeExportTaskParameterExportFormat { JsonBlob = 0, CsvBlob = 1 }
+	export enum DateRangeExportTaskParameterExportFormat { JsonBlob = 'JsonBlob', CsvBlob = 'CsvBlob' }
 
 
 	/** The format of exported data. */
-	export enum ExportFormat { JsonBlob = 0, CsvBlob = 1 }
+	export enum ExportFormat { JsonBlob = 'JsonBlob', CsvBlob = 'CsvBlob' }
 
 
 	/** Options to control export generation. */
@@ -2404,7 +2404,7 @@ export namespace MyNS {
 
 
 	/** The state of an export task. */
-	export enum ExportState { Queued = 0, Started = 1, Succeeded = 2, Failed = 3 }
+	export enum ExportState { Queued = 'Queued', Started = 'Started', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Gets a paged list of ExportTasks. */
@@ -2516,7 +2516,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportTaskResultExportType { Activity = 0, Tag = 1, Crash = 2, Error = 3, Event = 4, Job = 5, Session = 6, Token = 7, Push = 8 }
+	export enum ExportTaskResultExportType { Activity = 'Activity', Tag = 'Tag', Crash = 'Crash', Error = 'Error', Event = 'Event', Job = 'Job', Session = 'Session', Token = 'Token', Push = 'Push' }
 
 	export interface ExportTaskParameter {
 
@@ -2557,7 +2557,7 @@ export namespace MyNS {
 
 
 	/** The type of export. */
-	export enum ExportType { Activity = 0, Tag = 1, Crash = 2, Error = 3, Event = 4, Job = 5, Session = 6, Token = 7, Push = 8 }
+	export enum ExportType { Activity = 'Activity', Tag = 'Tag', Crash = 'Crash', Error = 'Error', Event = 'Event', Job = 'Job', Session = 'Session', Token = 'Token', Push = 'Push' }
 
 	export interface FeedbackByCampaignParameter {
 
@@ -2616,7 +2616,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeedbackByCampaignParameterCampaignType { Announcement = 0, DataPush = 1, NativePush = 2, Poll = 3 }
+	export enum FeedbackByCampaignParameterCampaignType { Announcement = 'Announcement', DataPush = 'DataPush', NativePush = 'NativePush', Poll = 'Poll' }
 
 	export interface FeedbackByDateRangeParameter {
 
@@ -3342,7 +3342,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Campaigns_ListKind { announcements = 0, polls = 1, dataPushes = 2, nativePushes = 3 }
+	export enum Campaigns_ListKind { announcements = 'announcements', polls = 'polls', dataPushes = 'dataPushes', nativePushes = 'nativePushes' }
 
 }
 

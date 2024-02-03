@@ -93,7 +93,7 @@ export namespace MyNS {
 
 
 	/** Supported permission types. */
-	export enum PermissionTypes { Read = 0, Write = 1, Manage = 2 }
+	export enum PermissionTypes { Read = 'Read', Write = 'Write', Manage = 'Manage' }
 
 
 	/** The response of list authorization policy operation. */
@@ -235,7 +235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CanonicalProfileDefinitionPropertiesType { Numeric = 0, Categorical = 1, DerivedCategorical = 2, DerivedNumeric = 3 }
+	export enum CanonicalProfileDefinitionPropertiesType { Numeric = 'Numeric', Categorical = 'Categorical', DerivedCategorical = 'DerivedCategorical', DerivedNumeric = 'DerivedNumeric' }
 
 
 	/** Properties of connector. */
@@ -340,9 +340,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorConnectorType { None = 0, CRM = 1, AzureBlob = 2, Salesforce = 3, ExchangeOnline = 4, Outbound = 5 }
+	export enum ConnectorConnectorType { None = 'None', CRM = 'CRM', AzureBlob = 'AzureBlob', Salesforce = 'Salesforce', ExchangeOnline = 'ExchangeOnline', Outbound = 'Outbound' }
 
-	export enum ConnectorState { Creating = 0, Created = 1, Ready = 2, Expiring = 3, Deleting = 4, Failed = 5 }
+	export enum ConnectorState { Creating = 'Creating', Created = 'Created', Ready = 'Ready', Expiring = 'Expiring', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** The response of list connector operation. */
@@ -518,9 +518,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorMappingEntityType { None = 0, Profile = 1, Interaction = 2, Relationship = 3 }
+	export enum ConnectorMappingEntityType { None = 'None', Profile = 'Profile', Interaction = 'Interaction', Relationship = 'Relationship' }
 
-	export enum ConnectorMappingState { Creating = 0, Created = 1, Failed = 2, Ready = 3, Running = 4, Stopped = 5, Expiring = 6 }
+	export enum ConnectorMappingState { Creating = 'Creating', Created = 'Created', Failed = 'Failed', Ready = 'Ready', Running = 'Running', Stopped = 'Stopped', Expiring = 'Expiring' }
 
 
 	/** Connector mapping property availability. */
@@ -556,7 +556,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorMappingAvailabilityFrequency { Minute = 0, Hour = 1, Day = 2, Week = 3, Month = 4 }
+	export enum ConnectorMappingAvailabilityFrequency { Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month' }
 
 
 	/** The complete operation. */
@@ -586,7 +586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorMappingCompleteOperationCompletionOperationType { DoNothing = 0, DeleteFile = 1, MoveFile = 2 }
+	export enum ConnectorMappingCompleteOperationCompletionOperationType { DoNothing = 'DoNothing', DeleteFile = 'DeleteFile', MoveFile = 'MoveFile' }
 
 
 	/** The error management. */
@@ -622,7 +622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorMappingErrorManagementErrorManagementType { RejectAndContinue = 0, StopImport = 1, RejectUntilLimit = 2 }
+	export enum ConnectorMappingErrorManagementErrorManagementType { RejectAndContinue = 'RejectAndContinue', StopImport = 'StopImport', RejectUntilLimit = 'RejectUntilLimit' }
 
 
 	/** Connector mapping property format. */
@@ -686,7 +686,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectorMappingFormatFormatType { TextFormat = 0 }
+	export enum ConnectorMappingFormatFormatType { TextFormat = 'TextFormat' }
 
 
 	/** The response of list connector mapping operation. */
@@ -853,7 +853,7 @@ export namespace MyNS {
 
 
 	/** Type of connector. */
-	export enum ConnectorType { None = 0, CRM = 1, AzureBlob = 2, Salesforce = 3, ExchangeOnline = 4, Outbound = 5 }
+	export enum ConnectorType { None = 'None', CRM = 'CRM', AzureBlob = 'AzureBlob', Salesforce = 'Salesforce', ExchangeOnline = 'ExchangeOnline', Outbound = 'Outbound' }
 
 
 	/** The CRM connector entities. */
@@ -1005,9 +1005,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceDataSourceType { Connector = 0, LinkInteraction = 1, SystemDefault = 2 }
+	export enum DataSourceDataSourceType { Connector = 'Connector', LinkInteraction = 'LinkInteraction', SystemDefault = 'SystemDefault' }
 
-	export enum DataSourceStatus { None = 0, Active = 1, Deleted = 2 }
+	export enum DataSourceStatus { None = 'None', Active = 'Active', Deleted = 'Deleted' }
 
 
 	/** The data source precedence is a way to know the precedence of each data source. */
@@ -1292,7 +1292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityTypeDefinitionProvisioningState { Provisioning = 0, Succeeded = 1, Expiring = 2, Deleting = 3, HumanIntervention = 4, Failed = 5 }
+	export enum EntityTypeDefinitionProvisioningState { Provisioning = 'Provisioning', Succeeded = 'Succeeded', Expiring = 'Expiring', Deleting = 'Deleting', HumanIntervention = 'HumanIntervention', Failed = 'Failed' }
 
 
 	/** Input type for getting image upload url. */
@@ -1906,7 +1906,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KpiDefinitionCalculationWindow { Lifetime = 0, Hour = 1, Day = 2, Week = 3, Month = 4 }
+	export enum KpiDefinitionCalculationWindow { Lifetime = 'Lifetime', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month' }
 
 
 	/** The KPI extract. */
@@ -1948,7 +1948,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KpiDefinitionFunction { Sum = 0, Avg = 1, Min = 2, Max = 3, Last = 4, Count = 5, None = 6, CountDistinct = 7 }
+	export enum KpiDefinitionFunction { Sum = 'Sum', Avg = 'Avg', Min = 'Min', Max = 'Max', Last = 'Last', Count = 'Count', None = 'None', CountDistinct = 'CountDistinct' }
 
 
 	/** The KPI GroupBy field metadata. */
@@ -2280,9 +2280,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TypePropertiesMappingLinkType { UpdateAlways = 0, CopyIfNull = 1 }
+	export enum TypePropertiesMappingLinkType { UpdateAlways = 'UpdateAlways', CopyIfNull = 'CopyIfNull' }
 
-	export enum LinkDefinitionOperationType { Upsert = 0, Delete = 1 }
+	export enum LinkDefinitionOperationType { Upsert = 'Upsert', Delete = 'Delete' }
 
 
 	/** The response of list link operation. */
@@ -2932,7 +2932,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PredictionModelStatusStatus { New = 0, Provisioning = 1, ProvisioningFailed = 2, PendingDiscovering = 3, Discovering = 4, PendingFeaturing = 5, Featuring = 6, FeaturingFailed = 7, PendingTraining = 8, Training = 9, TrainingFailed = 10, Evaluating = 11, EvaluatingFailed = 12, PendingModelConfirmation = 13, Active = 14, Deleted = 15, HumanIntervention = 16, Failed = 17 }
+	export enum PredictionModelStatusStatus { New = 'New', Provisioning = 'Provisioning', ProvisioningFailed = 'ProvisioningFailed', PendingDiscovering = 'PendingDiscovering', Discovering = 'Discovering', PendingFeaturing = 'PendingFeaturing', Featuring = 'Featuring', FeaturingFailed = 'FeaturingFailed', PendingTraining = 'PendingTraining', Training = 'Training', TrainingFailed = 'TrainingFailed', Evaluating = 'Evaluating', EvaluatingFailed = 'EvaluatingFailed', PendingModelConfirmation = 'PendingModelConfirmation', Active = 'Active', Deleted = 'Deleted', HumanIntervention = 'HumanIntervention', Failed = 'Failed' }
 
 
 	/** The training results of the prediction. */
@@ -3101,7 +3101,7 @@ export namespace MyNS {
 
 
 	/** Provisioning state. */
-	export enum ProvisioningState { Provisioning = 0, Succeeded = 1, Expiring = 2, Deleting = 3, HumanIntervention = 4, Failed = 5 }
+	export enum ProvisioningState { Provisioning = 'Provisioning', Succeeded = 'Succeeded', Expiring = 'Expiring', Deleting = 'Deleting', HumanIntervention = 'HumanIntervention', Failed = 'Failed' }
 
 
 	/** Common properties of proxy resource. */
@@ -3240,7 +3240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationshipDefinitionCardinality { OneToOne = 0, OneToMany = 1, ManyToMany = 2 }
+	export enum RelationshipDefinitionCardinality { OneToOne = 'OneToOne', OneToMany = 'OneToMany', ManyToMany = 'ManyToMany' }
 
 
 	/** Maps fields in Profile to their corresponding StrongIds in Related Profile. */
@@ -3779,7 +3779,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleAssignmentRole { Admin = 0, Reader = 1, ManageAdmin = 2, ManageReader = 3, DataAdmin = 4, DataReader = 5 }
+	export enum RoleAssignmentRole { Admin = 'Admin', Reader = 'Reader', ManageAdmin = 'ManageAdmin', ManageReader = 'ManageReader', DataAdmin = 'DataAdmin', DataReader = 'DataReader' }
 
 
 	/** The response of list role assignment operation. */

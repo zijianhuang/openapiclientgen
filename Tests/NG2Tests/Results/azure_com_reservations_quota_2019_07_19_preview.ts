@@ -33,7 +33,7 @@ export namespace MyNS {
 
 
 	/** The Auto quota increase state. */
-	export enum AqiState { enabled = 0, disabled = 1 }
+	export enum AqiState { enabled = 'enabled', disabled = 'disabled' }
 
 
 	/** Auto Quota Increase settings. */
@@ -202,7 +202,7 @@ export namespace MyNS {
 
 
 	/** The contact method. */
-	export enum ContactMethod { Email = 0, Phone = 1 }
+	export enum ContactMethod { Email = 'Email', Phone = 'Phone' }
 
 
 	/** Quota change requests information. */
@@ -819,7 +819,7 @@ export namespace MyNS {
 
 
 	/** The quota request status. */
-	export enum QuotaRequestState { Accepted = 0, Invalid = 1, Succeeded = 2, Failed = 3, InProgress = 4 }
+	export enum QuotaRequestState { Accepted = 'Accepted', Invalid = 'Invalid', Succeeded = 'Succeeded', Failed = 'Failed', InProgress = 'InProgress' }
 
 
 	/** Quota submit request response */
@@ -899,15 +899,15 @@ export namespace MyNS {
 
 
 	/** The resource types. */
-	export enum ResourceTypesName { standard = 0, dedicated = 1, shared = 2, serviceSpecific = 3 }
+	export enum ResourceTypesName { standard = 'standard', dedicated = 'dedicated', shared = 'shared', serviceSpecific = 'serviceSpecific' }
 
 
 	/** The Severity types. */
-	export enum SeverityTypes { Critical = 0, Moderate = 1, Minimal = 2 }
+	export enum SeverityTypes { Critical = 'Critical', Moderate = 'Moderate', Minimal = 'Minimal' }
 
 
 	/** The support contact types. */
-	export enum SupportContactTypes { email = 0, phone = 1, chat = 2 }
+	export enum SupportContactTypes { email = 'email', phone = 'phone', chat = 'chat' }
 
 	@Injectable()
 	export class MyClient {

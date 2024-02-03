@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents the state of the offer */
-	export enum AccessibilityState { Private = 0, Public = 1, Decommissioned = 2 }
+	export enum AccessibilityState { Private = 'Private', Public = 'Public', Decommissioned = 'Decommissioned' }
 
 
 	/** The delegated provider offer. */

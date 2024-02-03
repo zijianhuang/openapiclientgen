@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetEntitlementFilterName { CUSTOMER_IDENTIFIER = 0, DIMENSION = 1 }
+	export enum GetEntitlementFilterName { CUSTOMER_IDENTIFIER = 'CUSTOMER_IDENTIFIER', DIMENSION = 'DIMENSION' }
 
 	@Injectable()
 	export class MyClient {
@@ -180,7 +180,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetEntitlementsX_Amz_Target { 'AWSMPEntitlementService.GetEntitlements' = 0 }
+	export enum GetEntitlementsX_Amz_Target { 'AWSMPEntitlementService.GetEntitlements' = 'AWSMPEntitlementService.GetEntitlements' }
 
 }
 

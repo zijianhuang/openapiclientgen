@@ -103,7 +103,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum RotoballerArticlesFormat { xml = 0, json = 1 }
+	export enum RotoballerArticlesFormat { xml = 'xml', json = 'json' }
 
 }
 

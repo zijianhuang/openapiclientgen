@@ -66,9 +66,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachmentType { CONNECT = 0, SITE_TO_SITE_VPN = 1, VPC = 2, TRANSIT_GATEWAY_ROUTE_TABLE = 3 }
+	export enum AttachmentType { CONNECT = 'CONNECT', SITE_TO_SITE_VPN = 'SITE_TO_SITE_VPN', VPC = 'VPC', TRANSIT_GATEWAY_ROUTE_TABLE = 'TRANSIT_GATEWAY_ROUTE_TABLE' }
 
-	export enum AttachmentState { REJECTED = 0, PENDING_ATTACHMENT_ACCEPTANCE = 1, CREATING = 2, FAILED = 3, AVAILABLE = 4, UPDATING = 5, PENDING_NETWORK_UPDATE = 6, PENDING_TAG_ACCEPTANCE = 7, DELETING = 8 }
+	export enum AttachmentState { REJECTED = 'REJECTED', PENDING_ATTACHMENT_ACCEPTANCE = 'PENDING_ATTACHMENT_ACCEPTANCE', CREATING = 'CREATING', FAILED = 'FAILED', AVAILABLE = 'AVAILABLE', UPDATING = 'UPDATING', PENDING_NETWORK_UPDATE = 'PENDING_NETWORK_UPDATE', PENDING_TAG_ACCEPTANCE = 'PENDING_TAG_ACCEPTANCE', DELETING = 'DELETING' }
 
 
 	/** Describes a tag. */
@@ -211,7 +211,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectPeerAssociationState { PENDING = 0, AVAILABLE = 1, DELETING = 2, DELETED = 3 }
+	export enum ConnectPeerAssociationState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface ServiceQuotaExceededException {
 	}
@@ -387,7 +387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TunnelProtocol { GRE = 0 }
+	export enum TunnelProtocol { GRE = 'GRE' }
 
 	export interface CreateConnectPeerResponse {
 		ConnectPeer?: ConnectPeer;
@@ -434,7 +434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectPeerState { CREATING = 0, FAILED = 1, AVAILABLE = 2, DELETING = 3 }
+	export enum ConnectPeerState { CREATING = 'CREATING', FAILED = 'FAILED', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING' }
 
 
 	/** Describes a core network Connect peer configuration. */
@@ -543,7 +543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionState { PENDING = 0, AVAILABLE = 1, DELETING = 2, UPDATING = 3 }
+	export enum ConnectionState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 	export interface CreateCoreNetworkResponse {
 		CoreNetwork?: CoreNetwork;
@@ -591,7 +591,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CoreNetworkState { CREATING = 0, UPDATING = 1, AVAILABLE = 2, DELETING = 3 }
+	export enum CoreNetworkState { CREATING = 'CREATING', UPDATING = 'UPDATING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING' }
 
 
 	/** Describes a core network segment, which are dedicated routes. Only attachments within this segment can communicate with each other. */
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PeeringType { TRANSIT_GATEWAY = 0 }
+	export enum PeeringType { TRANSIT_GATEWAY = 'TRANSIT_GATEWAY' }
 
 	export interface CreateTransitGatewayRouteTableAttachmentResponse {
 		TransitGatewayRouteTableAttachment?: TransitGatewayRouteTableAttachment;
@@ -1185,9 +1185,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CoreNetworkPolicyAlias { LIVE = 0, LATEST = 1 }
+	export enum CoreNetworkPolicyAlias { LIVE = 'LIVE', LATEST = 'LATEST' }
 
-	export enum ChangeSetState { PENDING_GENERATION = 0, FAILED_GENERATION = 1, READY_TO_EXECUTE = 2, EXECUTING = 3, EXECUTION_SUCCEEDED = 4, OUT_OF_DATE = 5 }
+	export enum ChangeSetState { PENDING_GENERATION = 'PENDING_GENERATION', FAILED_GENERATION = 'FAILED_GENERATION', READY_TO_EXECUTE = 'READY_TO_EXECUTE', EXECUTING = 'EXECUTING', EXECUTION_SUCCEEDED = 'EXECUTION_SUCCEEDED', OUT_OF_DATE = 'OUT_OF_DATE' }
 
 
 	/** Provides details about an error in a core network policy. */
@@ -1337,7 +1337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitGatewayRegistrationState { PENDING = 0, AVAILABLE = 1, DELETING = 2, DELETED = 3, FAILED = 4 }
+	export enum TransitGatewayRegistrationState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', DELETED = 'DELETED', FAILED = 'FAILED' }
 
 	export interface DescribeGlobalNetworksResponse {
 		GlobalNetworks?: Array<GlobalNetwork>;
@@ -1512,11 +1512,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeType { CORE_NETWORK_SEGMENT = 0, CORE_NETWORK_EDGE = 1, ATTACHMENT_MAPPING = 2, ATTACHMENT_ROUTE_PROPAGATION = 3, ATTACHMENT_ROUTE_STATIC = 4, CORE_NETWORK_CONFIGURATION = 5, SEGMENTS_CONFIGURATION = 6, SEGMENT_ACTIONS_CONFIGURATION = 7, ATTACHMENT_POLICIES_CONFIGURATION = 8 }
+	export enum ChangeType { CORE_NETWORK_SEGMENT = 'CORE_NETWORK_SEGMENT', CORE_NETWORK_EDGE = 'CORE_NETWORK_EDGE', ATTACHMENT_MAPPING = 'ATTACHMENT_MAPPING', ATTACHMENT_ROUTE_PROPAGATION = 'ATTACHMENT_ROUTE_PROPAGATION', ATTACHMENT_ROUTE_STATIC = 'ATTACHMENT_ROUTE_STATIC', CORE_NETWORK_CONFIGURATION = 'CORE_NETWORK_CONFIGURATION', SEGMENTS_CONFIGURATION = 'SEGMENTS_CONFIGURATION', SEGMENT_ACTIONS_CONFIGURATION = 'SEGMENT_ACTIONS_CONFIGURATION', ATTACHMENT_POLICIES_CONFIGURATION = 'ATTACHMENT_POLICIES_CONFIGURATION' }
 
-	export enum ChangeAction { ADD = 0, MODIFY = 1, REMOVE = 2 }
+	export enum ChangeAction { ADD = 'ADD', MODIFY = 'MODIFY', REMOVE = 'REMOVE' }
 
-	export enum ChangeStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETE = 2, FAILED = 3 }
+	export enum ChangeStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', FAILED = 'FAILED' }
 
 
 	/** Describes a core network change event. */
@@ -1861,7 +1861,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteTableType { TRANSIT_GATEWAY_ROUTE_TABLE = 0, CORE_NETWORK_SEGMENT = 1 }
+	export enum RouteTableType { TRANSIT_GATEWAY_ROUTE_TABLE = 'TRANSIT_GATEWAY_ROUTE_TABLE', CORE_NETWORK_SEGMENT = 'CORE_NETWORK_SEGMENT' }
 
 
 	/** Describes a network route. */
@@ -1922,9 +1922,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteState { ACTIVE = 0, BLACKHOLE = 1 }
+	export enum RouteState { ACTIVE = 'ACTIVE', BLACKHOLE = 'BLACKHOLE' }
 
-	export enum RouteType { PROPAGATED = 0, STATIC = 1 }
+	export enum RouteType { PROPAGATED = 'PROPAGATED', STATIC = 'STATIC' }
 
 	export interface GetNetworkTelemetryResponse {
 		NetworkTelemetry?: Array<NetworkTelemetry>;
@@ -2002,9 +2002,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionType { BGP = 0, IPSEC = 1 }
+	export enum ConnectionType { BGP = 'BGP', IPSEC = 'IPSEC' }
 
-	export enum ConnectionStatus { UP = 0, DOWN = 1 }
+	export enum ConnectionStatus { UP = 'UP', DOWN = 'DOWN' }
 
 	export interface GetResourcePolicyResponse {
 		PolicyDocument?: string;
@@ -2069,7 +2069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteAnalysisStatus { RUNNING = 0, COMPLETED = 1, FAILED = 2 }
+	export enum RouteAnalysisStatus { RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Describes a source or a destination. */
@@ -2131,9 +2131,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteAnalysisCompletionResultCode { CONNECTED = 0, NOT_CONNECTED = 1 }
+	export enum RouteAnalysisCompletionResultCode { CONNECTED = 'CONNECTED', NOT_CONNECTED = 'NOT_CONNECTED' }
 
-	export enum RouteAnalysisCompletionReasonCode { TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND = 0, TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY = 1, CYCLIC_PATH_DETECTED = 2, TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND = 3, ROUTE_NOT_FOUND = 4, BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND = 5, INACTIVE_ROUTE_FOR_DESTINATION_FOUND = 6, TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH = 7, MAX_HOPS_EXCEEDED = 8, POSSIBLE_MIDDLEBOX = 9, NO_DESTINATION_ARN_PROVIDED = 10 }
+	export enum RouteAnalysisCompletionReasonCode { TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND = 'TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND', TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY = 'TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY', CYCLIC_PATH_DETECTED = 'CYCLIC_PATH_DETECTED', TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND = 'TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND', ROUTE_NOT_FOUND = 'ROUTE_NOT_FOUND', BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND = 'BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND', INACTIVE_ROUTE_FOR_DESTINATION_FOUND = 'INACTIVE_ROUTE_FOR_DESTINATION_FOUND', TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH = 'TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH', MAX_HOPS_EXCEEDED = 'MAX_HOPS_EXCEEDED', POSSIBLE_MIDDLEBOX = 'POSSIBLE_MIDDLEBOX', NO_DESTINATION_ARN_PROVIDED = 'NO_DESTINATION_ARN_PROVIDED' }
 
 	export interface ReasonContextMap {
 	}
@@ -3180,7 +3180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerGatewayAssociationState { PENDING = 0, AVAILABLE = 1, DELETING = 2, DELETED = 3 }
+	export enum CustomerGatewayAssociationState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface DeleteAttachmentRequest {
 	}
@@ -3312,7 +3312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceState { PENDING = 0, AVAILABLE = 1, DELETING = 2, UPDATING = 3 }
+	export enum DeviceState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 	export interface DisassociateConnectPeerRequest {
 	}
@@ -3663,11 +3663,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GlobalNetworkState { PENDING = 0, AVAILABLE = 1, DELETING = 2, UPDATING = 3 }
+	export enum GlobalNetworkState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
-	export enum LinkState { PENDING = 0, AVAILABLE = 1, DELETING = 2, UPDATING = 3 }
+	export enum LinkState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
-	export enum LinkAssociationState { PENDING = 0, AVAILABLE = 1, DELETING = 2, DELETED = 3 }
+	export enum LinkAssociationState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface ListAttachmentsRequest {
 	}
@@ -3719,7 +3719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PeeringState { CREATING = 0, FAILED = 1, AVAILABLE = 2, DELETING = 3 }
+	export enum PeeringState { CREATING = 'CREATING', FAILED = 'FAILED', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING' }
 
 	export interface ListPeeringsRequest {
 	}
@@ -3841,7 +3841,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteState { PENDING = 0, AVAILABLE = 1, DELETING = 2, UPDATING = 3 }
+	export enum SiteState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 	export interface StartOrganizationServiceAccessUpdateRequest {
 
@@ -3895,7 +3895,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitGatewayConnectPeerAssociationState { PENDING = 0, AVAILABLE = 1, DELETING = 2, DELETED = 3 }
+	export enum TransitGatewayConnectPeerAssociationState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface UntagResourceRequest {
 	}

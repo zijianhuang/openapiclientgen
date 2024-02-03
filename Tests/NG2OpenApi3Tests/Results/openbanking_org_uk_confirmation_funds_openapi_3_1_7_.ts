@@ -625,7 +625,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBFundsConfirmationConsentResponse1DataStatus { Authorised = 0, AwaitingAuthorisation = 1, Rejected = 2, Revoked = 3 }
+	export enum OBFundsConfirmationConsentResponse1DataStatus { Authorised = 'Authorised', AwaitingAuthorisation = 'AwaitingAuthorisation', Rejected = 'Rejected', Revoked = 'Revoked' }
 
 	export interface OBFundsConfirmationResponse1 {
 

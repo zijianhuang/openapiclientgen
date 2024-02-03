@@ -186,9 +186,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BackupType { AUTOMATED = 0, MANUAL = 1 }
+	export enum BackupType { AUTOMATED = 'AUTOMATED', MANUAL = 'MANUAL' }
 
-	export enum BackupStatus { IN_PROGRESS = 0, OK = 1, FAILED = 2, DELETING = 3 }
+	export enum BackupStatus { IN_PROGRESS = 'IN_PROGRESS', OK = 'OK', FAILED = 'FAILED', DELETING = 'DELETING' }
 
 	export interface CreateBackupRequest {
 
@@ -340,9 +340,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceStatus { SUCCESS = 0, FAILED = 1 }
+	export enum MaintenanceStatus { SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
-	export enum ServerStatus { BACKING_UP = 0, CONNECTION_LOST = 1, CREATING = 2, DELETING = 3, MODIFYING = 4, FAILED = 5, HEALTHY = 6, RUNNING = 7, RESTORING = 8, SETUP = 9, UNDER_MAINTENANCE = 10, UNHEALTHY = 11, TERMINATED = 12 }
+	export enum ServerStatus { BACKING_UP = 'BACKING_UP', CONNECTION_LOST = 'CONNECTION_LOST', CREATING = 'CREATING', DELETING = 'DELETING', MODIFYING = 'MODIFYING', FAILED = 'FAILED', HEALTHY = 'HEALTHY', RUNNING = 'RUNNING', RESTORING = 'RESTORING', SETUP = 'SETUP', UNDER_MAINTENANCE = 'UNDER_MAINTENANCE', UNHEALTHY = 'UNHEALTHY', TERMINATED = 'TERMINATED' }
 
 	export interface CreateServerRequest {
 		AssociatePublicIpAddress?: boolean | null;
@@ -662,7 +662,7 @@ export namespace MyNS {
 
 
 	/** <p>The status of the association or disassociation request. </p> <p class="title"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> </ul> */
-	export enum NodeAssociationStatus { SUCCESS = 0, FAILED = 1, IN_PROGRESS = 2 }
+	export enum NodeAssociationStatus { SUCCESS = 'SUCCESS', FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS' }
 
 	export interface DescribeNodeAssociationStatusRequest {
 
@@ -1250,43 +1250,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateNodeX_Amz_Target { 'OpsWorksCM_V2016_11_01.AssociateNode' = 0 }
+	export enum AssociateNodeX_Amz_Target { 'OpsWorksCM_V2016_11_01.AssociateNode' = 'OpsWorksCM_V2016_11_01.AssociateNode' }
 
-	export enum CreateBackupX_Amz_Target { 'OpsWorksCM_V2016_11_01.CreateBackup' = 0 }
+	export enum CreateBackupX_Amz_Target { 'OpsWorksCM_V2016_11_01.CreateBackup' = 'OpsWorksCM_V2016_11_01.CreateBackup' }
 
-	export enum CreateServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.CreateServer' = 0 }
+	export enum CreateServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.CreateServer' = 'OpsWorksCM_V2016_11_01.CreateServer' }
 
-	export enum DeleteBackupX_Amz_Target { 'OpsWorksCM_V2016_11_01.DeleteBackup' = 0 }
+	export enum DeleteBackupX_Amz_Target { 'OpsWorksCM_V2016_11_01.DeleteBackup' = 'OpsWorksCM_V2016_11_01.DeleteBackup' }
 
-	export enum DeleteServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.DeleteServer' = 0 }
+	export enum DeleteServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.DeleteServer' = 'OpsWorksCM_V2016_11_01.DeleteServer' }
 
-	export enum DescribeAccountAttributesX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeAccountAttributes' = 0 }
+	export enum DescribeAccountAttributesX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeAccountAttributes' = 'OpsWorksCM_V2016_11_01.DescribeAccountAttributes' }
 
-	export enum DescribeBackupsX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeBackups' = 0 }
+	export enum DescribeBackupsX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeBackups' = 'OpsWorksCM_V2016_11_01.DescribeBackups' }
 
-	export enum DescribeEventsX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeEvents' = 0 }
+	export enum DescribeEventsX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeEvents' = 'OpsWorksCM_V2016_11_01.DescribeEvents' }
 
-	export enum DescribeNodeAssociationStatusX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeNodeAssociationStatus' = 0 }
+	export enum DescribeNodeAssociationStatusX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeNodeAssociationStatus' = 'OpsWorksCM_V2016_11_01.DescribeNodeAssociationStatus' }
 
-	export enum DescribeServersX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeServers' = 0 }
+	export enum DescribeServersX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeServers' = 'OpsWorksCM_V2016_11_01.DescribeServers' }
 
-	export enum DisassociateNodeX_Amz_Target { 'OpsWorksCM_V2016_11_01.DisassociateNode' = 0 }
+	export enum DisassociateNodeX_Amz_Target { 'OpsWorksCM_V2016_11_01.DisassociateNode' = 'OpsWorksCM_V2016_11_01.DisassociateNode' }
 
-	export enum ExportServerEngineAttributeX_Amz_Target { 'OpsWorksCM_V2016_11_01.ExportServerEngineAttribute' = 0 }
+	export enum ExportServerEngineAttributeX_Amz_Target { 'OpsWorksCM_V2016_11_01.ExportServerEngineAttribute' = 'OpsWorksCM_V2016_11_01.ExportServerEngineAttribute' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.ListTagsForResource' = 'OpsWorksCM_V2016_11_01.ListTagsForResource' }
 
-	export enum RestoreServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.RestoreServer' = 0 }
+	export enum RestoreServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.RestoreServer' = 'OpsWorksCM_V2016_11_01.RestoreServer' }
 
-	export enum StartMaintenanceX_Amz_Target { 'OpsWorksCM_V2016_11_01.StartMaintenance' = 0 }
+	export enum StartMaintenanceX_Amz_Target { 'OpsWorksCM_V2016_11_01.StartMaintenance' = 'OpsWorksCM_V2016_11_01.StartMaintenance' }
 
-	export enum TagResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.TagResource' = 'OpsWorksCM_V2016_11_01.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.UntagResource' = 'OpsWorksCM_V2016_11_01.UntagResource' }
 
-	export enum UpdateServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.UpdateServer' = 0 }
+	export enum UpdateServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.UpdateServer' = 'OpsWorksCM_V2016_11_01.UpdateServer' }
 
-	export enum UpdateServerEngineAttributesX_Amz_Target { 'OpsWorksCM_V2016_11_01.UpdateServerEngineAttributes' = 0 }
+	export enum UpdateServerEngineAttributesX_Amz_Target { 'OpsWorksCM_V2016_11_01.UpdateServerEngineAttributes' = 'OpsWorksCM_V2016_11_01.UpdateServerEngineAttributes' }
 
 }
 

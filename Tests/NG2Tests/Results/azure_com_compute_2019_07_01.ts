@@ -66,11 +66,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AdditionalUnattendContentComponentName { 'Microsoft-Windows-Shell-Setup' = 0 }
+	export enum AdditionalUnattendContentComponentName { 'Microsoft-Windows-Shell-Setup' = 'Microsoft-Windows-Shell-Setup' }
 
-	export enum AdditionalUnattendContentPassName { OobeSystem = 0 }
+	export enum AdditionalUnattendContentPassName { OobeSystem = 'OobeSystem' }
 
-	export enum AdditionalUnattendContentSettingName { AutoLogon = 0, FirstLogonCommands = 1 }
+	export enum AdditionalUnattendContentSettingName { AutoLogon = 'AutoLogon', FirstLogonCommands = 'FirstLogonCommands' }
 
 
 	/** The API entity reference. */
@@ -388,7 +388,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceViewStatusLevel { Info = 0, Warning = 1, Error = 2 }
+	export enum InstanceViewStatusLevel { Info = 'Info', Warning = 'Warning', Error = 'Error' }
 
 	export interface SubResource {
 
@@ -409,7 +409,7 @@ export namespace MyNS {
 
 
 	/** Specifies the sku of an Availability Set. Use 'Aligned' for virtual machines with managed disks and 'Classic' for virtual machines with unmanaged disks. Default value is 'Classic'. */
-	export enum AvailabilitySetSkuType { Classic = 0, Aligned = 1 }
+	export enum AvailabilitySetSkuType { Classic = 'Classic', Aligned = 'Aligned' }
 
 
 	/** Specifies information about the availability set that the virtual machine should be assigned to. Only tags may be updated. */
@@ -514,7 +514,7 @@ export namespace MyNS {
 
 
 	/** Specifies the caching requirements. <br><br> Possible values are: <br><br> **None** <br><br> **ReadOnly** <br><br> **ReadWrite** <br><br> Default: **None for Standard storage. ReadOnly for Premium storage** */
-	export enum Caching { None = 0, ReadOnly = 1, ReadWrite = 2 }
+	export enum Caching { None = 'None', ReadOnly = 'ReadOnly', ReadWrite = 'ReadWrite' }
 
 
 	/** An error response from the Compute service. */
@@ -625,7 +625,7 @@ export namespace MyNS {
 
 
 	/** Specifies how the virtual machine should be created.<br><br> Possible values are:<br><br> **Attach** \u2013 This value is used when you are using a specialized disk to create the virtual machine.<br><br> **FromImage** \u2013 This value is used when you are using an image to create the virtual machine. If you are using a platform image, you also use the imageReference element described above. If you are using a marketplace image, you  also use the plan element previously described. */
-	export enum CreateOption { FromImage = 0, Empty = 1, Attach = 2 }
+	export enum CreateOption { FromImage = 'FromImage', Empty = 'Empty', Attach = 'Attach' }
 
 
 	/** Describes a data disk. */
@@ -972,7 +972,7 @@ export namespace MyNS {
 
 
 	/** Specifies the software license type that will be applied to the VMs deployed on the dedicated host. <br><br> Possible values are: <br><br> **None** <br><br> **Windows_Server_Hybrid** <br><br> **Windows_Server_Perpetual** <br><br> Default: **None** */
-	export enum DedicatedHostLicenseType { None = 0, Windows_Server_Hybrid = 1, Windows_Server_Perpetual = 2 }
+	export enum DedicatedHostLicenseType { None = 'None', Windows_Server_Hybrid = 'Windows_Server_Hybrid', Windows_Server_Perpetual = 'Windows_Server_Perpetual' }
 
 
 	/** The list dedicated host operation response. */
@@ -1108,7 +1108,7 @@ export namespace MyNS {
 
 
 	/** Specifies the ephemeral disk option for operating system disk. */
-	export enum DiffDiskOption { Local = 0 }
+	export enum DiffDiskOption { Local = 'Local' }
 
 
 	/** Describes the parameters of ephemeral disk settings that can be specified for operating system disk. <br><br> NOTE: The ephemeral disk settings can only be specified for managed disk. */
@@ -1220,11 +1220,11 @@ export namespace MyNS {
 
 	}
 
-	export enum HardwareProfileVmSize { Basic_A0 = 0, Basic_A1 = 1, Basic_A2 = 2, Basic_A3 = 3, Basic_A4 = 4, Standard_A0 = 5, Standard_A1 = 6, Standard_A2 = 7, Standard_A3 = 8, Standard_A4 = 9, Standard_A5 = 10, Standard_A6 = 11, Standard_A7 = 12, Standard_A8 = 13, Standard_A9 = 14, Standard_A10 = 15, Standard_A11 = 16, Standard_A1_v2 = 17, Standard_A2_v2 = 18, Standard_A4_v2 = 19, Standard_A8_v2 = 20, Standard_A2m_v2 = 21, Standard_A4m_v2 = 22, Standard_A8m_v2 = 23, Standard_B1s = 24, Standard_B1ms = 25, Standard_B2s = 26, Standard_B2ms = 27, Standard_B4ms = 28, Standard_B8ms = 29, Standard_D1 = 30, Standard_D2 = 31, Standard_D3 = 32, Standard_D4 = 33, Standard_D11 = 34, Standard_D12 = 35, Standard_D13 = 36, Standard_D14 = 37, Standard_D1_v2 = 38, Standard_D2_v2 = 39, Standard_D3_v2 = 40, Standard_D4_v2 = 41, Standard_D5_v2 = 42, Standard_D2_v3 = 43, Standard_D4_v3 = 44, Standard_D8_v3 = 45, Standard_D16_v3 = 46, Standard_D32_v3 = 47, Standard_D64_v3 = 48, Standard_D2s_v3 = 49, Standard_D4s_v3 = 50, Standard_D8s_v3 = 51, Standard_D16s_v3 = 52, Standard_D32s_v3 = 53, Standard_D64s_v3 = 54, Standard_D11_v2 = 55, Standard_D12_v2 = 56, Standard_D13_v2 = 57, Standard_D14_v2 = 58, Standard_D15_v2 = 59, Standard_DS1 = 60, Standard_DS2 = 61, Standard_DS3 = 62, Standard_DS4 = 63, Standard_DS11 = 64, Standard_DS12 = 65, Standard_DS13 = 66, Standard_DS14 = 67, Standard_DS1_v2 = 68, Standard_DS2_v2 = 69, Standard_DS3_v2 = 70, Standard_DS4_v2 = 71, Standard_DS5_v2 = 72, Standard_DS11_v2 = 73, Standard_DS12_v2 = 74, Standard_DS13_v2 = 75, Standard_DS14_v2 = 76, Standard_DS15_v2 = 77, 'Standard_DS13-4_v2' = 78, 'Standard_DS13-2_v2' = 79, 'Standard_DS14-8_v2' = 80, 'Standard_DS14-4_v2' = 81, Standard_E2_v3 = 82, Standard_E4_v3 = 83, Standard_E8_v3 = 84, Standard_E16_v3 = 85, Standard_E32_v3 = 86, Standard_E64_v3 = 87, Standard_E2s_v3 = 88, Standard_E4s_v3 = 89, Standard_E8s_v3 = 90, Standard_E16s_v3 = 91, Standard_E32s_v3 = 92, Standard_E64s_v3 = 93, 'Standard_E32-16_v3' = 94, 'Standard_E32-8s_v3' = 95, 'Standard_E64-32s_v3' = 96, 'Standard_E64-16s_v3' = 97, Standard_F1 = 98, Standard_F2 = 99, Standard_F4 = 100, Standard_F8 = 101, Standard_F16 = 102, Standard_F1s = 103, Standard_F2s = 104, Standard_F4s = 105, Standard_F8s = 106, Standard_F16s = 107, Standard_F2s_v2 = 108, Standard_F4s_v2 = 109, Standard_F8s_v2 = 110, Standard_F16s_v2 = 111, Standard_F32s_v2 = 112, Standard_F64s_v2 = 113, Standard_F72s_v2 = 114, Standard_G1 = 115, Standard_G2 = 116, Standard_G3 = 117, Standard_G4 = 118, Standard_G5 = 119, Standard_GS1 = 120, Standard_GS2 = 121, Standard_GS3 = 122, Standard_GS4 = 123, Standard_GS5 = 124, 'Standard_GS4-8' = 125, 'Standard_GS4-4' = 126, 'Standard_GS5-16' = 127, 'Standard_GS5-8' = 128, Standard_H8 = 129, Standard_H16 = 130, Standard_H8m = 131, Standard_H16m = 132, Standard_H16r = 133, Standard_H16mr = 134, Standard_L4s = 135, Standard_L8s = 136, Standard_L16s = 137, Standard_L32s = 138, Standard_M64s = 139, Standard_M64ms = 140, Standard_M128s = 141, Standard_M128ms = 142, 'Standard_M64-32ms' = 143, 'Standard_M64-16ms' = 144, 'Standard_M128-64ms' = 145, 'Standard_M128-32ms' = 146, Standard_NC6 = 147, Standard_NC12 = 148, Standard_NC24 = 149, Standard_NC24r = 150, Standard_NC6s_v2 = 151, Standard_NC12s_v2 = 152, Standard_NC24s_v2 = 153, Standard_NC24rs_v2 = 154, Standard_NC6s_v3 = 155, Standard_NC12s_v3 = 156, Standard_NC24s_v3 = 157, Standard_NC24rs_v3 = 158, Standard_ND6s = 159, Standard_ND12s = 160, Standard_ND24s = 161, Standard_ND24rs = 162, Standard_NV6 = 163, Standard_NV12 = 164, Standard_NV24 = 165 }
+	export enum HardwareProfileVmSize { Basic_A0 = 'Basic_A0', Basic_A1 = 'Basic_A1', Basic_A2 = 'Basic_A2', Basic_A3 = 'Basic_A3', Basic_A4 = 'Basic_A4', Standard_A0 = 'Standard_A0', Standard_A1 = 'Standard_A1', Standard_A2 = 'Standard_A2', Standard_A3 = 'Standard_A3', Standard_A4 = 'Standard_A4', Standard_A5 = 'Standard_A5', Standard_A6 = 'Standard_A6', Standard_A7 = 'Standard_A7', Standard_A8 = 'Standard_A8', Standard_A9 = 'Standard_A9', Standard_A10 = 'Standard_A10', Standard_A11 = 'Standard_A11', Standard_A1_v2 = 'Standard_A1_v2', Standard_A2_v2 = 'Standard_A2_v2', Standard_A4_v2 = 'Standard_A4_v2', Standard_A8_v2 = 'Standard_A8_v2', Standard_A2m_v2 = 'Standard_A2m_v2', Standard_A4m_v2 = 'Standard_A4m_v2', Standard_A8m_v2 = 'Standard_A8m_v2', Standard_B1s = 'Standard_B1s', Standard_B1ms = 'Standard_B1ms', Standard_B2s = 'Standard_B2s', Standard_B2ms = 'Standard_B2ms', Standard_B4ms = 'Standard_B4ms', Standard_B8ms = 'Standard_B8ms', Standard_D1 = 'Standard_D1', Standard_D2 = 'Standard_D2', Standard_D3 = 'Standard_D3', Standard_D4 = 'Standard_D4', Standard_D11 = 'Standard_D11', Standard_D12 = 'Standard_D12', Standard_D13 = 'Standard_D13', Standard_D14 = 'Standard_D14', Standard_D1_v2 = 'Standard_D1_v2', Standard_D2_v2 = 'Standard_D2_v2', Standard_D3_v2 = 'Standard_D3_v2', Standard_D4_v2 = 'Standard_D4_v2', Standard_D5_v2 = 'Standard_D5_v2', Standard_D2_v3 = 'Standard_D2_v3', Standard_D4_v3 = 'Standard_D4_v3', Standard_D8_v3 = 'Standard_D8_v3', Standard_D16_v3 = 'Standard_D16_v3', Standard_D32_v3 = 'Standard_D32_v3', Standard_D64_v3 = 'Standard_D64_v3', Standard_D2s_v3 = 'Standard_D2s_v3', Standard_D4s_v3 = 'Standard_D4s_v3', Standard_D8s_v3 = 'Standard_D8s_v3', Standard_D16s_v3 = 'Standard_D16s_v3', Standard_D32s_v3 = 'Standard_D32s_v3', Standard_D64s_v3 = 'Standard_D64s_v3', Standard_D11_v2 = 'Standard_D11_v2', Standard_D12_v2 = 'Standard_D12_v2', Standard_D13_v2 = 'Standard_D13_v2', Standard_D14_v2 = 'Standard_D14_v2', Standard_D15_v2 = 'Standard_D15_v2', Standard_DS1 = 'Standard_DS1', Standard_DS2 = 'Standard_DS2', Standard_DS3 = 'Standard_DS3', Standard_DS4 = 'Standard_DS4', Standard_DS11 = 'Standard_DS11', Standard_DS12 = 'Standard_DS12', Standard_DS13 = 'Standard_DS13', Standard_DS14 = 'Standard_DS14', Standard_DS1_v2 = 'Standard_DS1_v2', Standard_DS2_v2 = 'Standard_DS2_v2', Standard_DS3_v2 = 'Standard_DS3_v2', Standard_DS4_v2 = 'Standard_DS4_v2', Standard_DS5_v2 = 'Standard_DS5_v2', Standard_DS11_v2 = 'Standard_DS11_v2', Standard_DS12_v2 = 'Standard_DS12_v2', Standard_DS13_v2 = 'Standard_DS13_v2', Standard_DS14_v2 = 'Standard_DS14_v2', Standard_DS15_v2 = 'Standard_DS15_v2', 'Standard_DS13-4_v2' = 'Standard_DS13-4_v2', 'Standard_DS13-2_v2' = 'Standard_DS13-2_v2', 'Standard_DS14-8_v2' = 'Standard_DS14-8_v2', 'Standard_DS14-4_v2' = 'Standard_DS14-4_v2', Standard_E2_v3 = 'Standard_E2_v3', Standard_E4_v3 = 'Standard_E4_v3', Standard_E8_v3 = 'Standard_E8_v3', Standard_E16_v3 = 'Standard_E16_v3', Standard_E32_v3 = 'Standard_E32_v3', Standard_E64_v3 = 'Standard_E64_v3', Standard_E2s_v3 = 'Standard_E2s_v3', Standard_E4s_v3 = 'Standard_E4s_v3', Standard_E8s_v3 = 'Standard_E8s_v3', Standard_E16s_v3 = 'Standard_E16s_v3', Standard_E32s_v3 = 'Standard_E32s_v3', Standard_E64s_v3 = 'Standard_E64s_v3', 'Standard_E32-16_v3' = 'Standard_E32-16_v3', 'Standard_E32-8s_v3' = 'Standard_E32-8s_v3', 'Standard_E64-32s_v3' = 'Standard_E64-32s_v3', 'Standard_E64-16s_v3' = 'Standard_E64-16s_v3', Standard_F1 = 'Standard_F1', Standard_F2 = 'Standard_F2', Standard_F4 = 'Standard_F4', Standard_F8 = 'Standard_F8', Standard_F16 = 'Standard_F16', Standard_F1s = 'Standard_F1s', Standard_F2s = 'Standard_F2s', Standard_F4s = 'Standard_F4s', Standard_F8s = 'Standard_F8s', Standard_F16s = 'Standard_F16s', Standard_F2s_v2 = 'Standard_F2s_v2', Standard_F4s_v2 = 'Standard_F4s_v2', Standard_F8s_v2 = 'Standard_F8s_v2', Standard_F16s_v2 = 'Standard_F16s_v2', Standard_F32s_v2 = 'Standard_F32s_v2', Standard_F64s_v2 = 'Standard_F64s_v2', Standard_F72s_v2 = 'Standard_F72s_v2', Standard_G1 = 'Standard_G1', Standard_G2 = 'Standard_G2', Standard_G3 = 'Standard_G3', Standard_G4 = 'Standard_G4', Standard_G5 = 'Standard_G5', Standard_GS1 = 'Standard_GS1', Standard_GS2 = 'Standard_GS2', Standard_GS3 = 'Standard_GS3', Standard_GS4 = 'Standard_GS4', Standard_GS5 = 'Standard_GS5', 'Standard_GS4-8' = 'Standard_GS4-8', 'Standard_GS4-4' = 'Standard_GS4-4', 'Standard_GS5-16' = 'Standard_GS5-16', 'Standard_GS5-8' = 'Standard_GS5-8', Standard_H8 = 'Standard_H8', Standard_H16 = 'Standard_H16', Standard_H8m = 'Standard_H8m', Standard_H16m = 'Standard_H16m', Standard_H16r = 'Standard_H16r', Standard_H16mr = 'Standard_H16mr', Standard_L4s = 'Standard_L4s', Standard_L8s = 'Standard_L8s', Standard_L16s = 'Standard_L16s', Standard_L32s = 'Standard_L32s', Standard_M64s = 'Standard_M64s', Standard_M64ms = 'Standard_M64ms', Standard_M128s = 'Standard_M128s', Standard_M128ms = 'Standard_M128ms', 'Standard_M64-32ms' = 'Standard_M64-32ms', 'Standard_M64-16ms' = 'Standard_M64-16ms', 'Standard_M128-64ms' = 'Standard_M128-64ms', 'Standard_M128-32ms' = 'Standard_M128-32ms', Standard_NC6 = 'Standard_NC6', Standard_NC12 = 'Standard_NC12', Standard_NC24 = 'Standard_NC24', Standard_NC24r = 'Standard_NC24r', Standard_NC6s_v2 = 'Standard_NC6s_v2', Standard_NC12s_v2 = 'Standard_NC12s_v2', Standard_NC24s_v2 = 'Standard_NC24s_v2', Standard_NC24rs_v2 = 'Standard_NC24rs_v2', Standard_NC6s_v3 = 'Standard_NC6s_v3', Standard_NC12s_v3 = 'Standard_NC12s_v3', Standard_NC24s_v3 = 'Standard_NC24s_v3', Standard_NC24rs_v3 = 'Standard_NC24rs_v3', Standard_ND6s = 'Standard_ND6s', Standard_ND12s = 'Standard_ND12s', Standard_ND24s = 'Standard_ND24s', Standard_ND24rs = 'Standard_ND24rs', Standard_NV6 = 'Standard_NV6', Standard_NV12 = 'Standard_NV12', Standard_NV24 = 'Standard_NV24' }
 
 
 	/** Specifies the HyperVGeneration Type */
-	export enum HyperVGenerationType { V1 = 0, V2 = 1 }
+	export enum HyperVGenerationType { V1 = 'V1', V2 = 'V2' }
 
 
 	/** The source user image virtual hard disk. The virtual hard disk will be copied before being attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not exist. */
@@ -1326,7 +1326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageDiskStorageAccountType { Standard_LRS = 0, Premium_LRS = 1, StandardSSD_LRS = 2, UltraSSD_LRS = 3 }
+	export enum ImageDiskStorageAccountType { Standard_LRS = 'Standard_LRS', Premium_LRS = 'Premium_LRS', StandardSSD_LRS = 'StandardSSD_LRS', UltraSSD_LRS = 'UltraSSD_LRS' }
 
 
 	/** The List Image operation response. */
@@ -1399,9 +1399,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageOSDiskOsState { Generalized = 0, Specialized = 1 }
+	export enum ImageOSDiskOsState { Generalized = 'Generalized', Specialized = 'Specialized' }
 
-	export enum ImageOSDiskOsType { Windows = 0, Linux = 1 }
+	export enum ImageOSDiskOsType { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/** Describes the properties of an Image. */
@@ -1735,7 +1735,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageUnit { Count = 0 }
+	export enum UsageUnit { Count = 'Count' }
 
 
 	/** Api input base class for LogAnalytics Api. */
@@ -1912,7 +1912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceRedeployStatusLastOperationResultCode { None = 0, RetryLater = 1, MaintenanceAborted = 2, MaintenanceCompleted = 3 }
+	export enum MaintenanceRedeployStatusLastOperationResultCode { None = 'None', RetryLater = 'RetryLater', MaintenanceAborted = 'MaintenanceAborted', MaintenanceCompleted = 'MaintenanceCompleted' }
 
 
 	/** The parameters of a managed disk. */
@@ -2348,7 +2348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProximityPlacementGroupPropertiesProximityPlacementGroupType { Standard = 0, Ultra = 1 }
+	export enum ProximityPlacementGroupPropertiesProximityPlacementGroupType { Standard = 'Standard', Ultra = 'Ultra' }
 
 
 	/** Specifies information about the proximity placement group. */
@@ -2478,7 +2478,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequestRateByIntervalInputIntervalLength { ThreeMins = 0, FiveMins = 1, ThirtyMins = 2, SixtyMins = 3 }
+	export enum RequestRateByIntervalInputIntervalLength { ThreeMins = 'ThreeMins', FiveMins = 'FiveMins', ThirtyMins = 'ThirtyMins', SixtyMins = 'SixtyMins' }
 
 
 	/** The Resource model definition. */
@@ -2716,9 +2716,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RollingUpgradeRunningStatusCode { RollingForward = 0, Cancelled = 1, Completed = 2, Faulted = 3 }
+	export enum RollingUpgradeRunningStatusCode { RollingForward = 'RollingForward', Cancelled = 'Cancelled', Completed = 'Completed', Faulted = 'Faulted' }
 
-	export enum RollingUpgradeRunningStatusLastAction { Start = 0, Cancel = 1 }
+	export enum RollingUpgradeRunningStatusLastAction { Start = 'Start', Cancel = 'Cancel' }
 
 
 	/** The status of the latest virtual machine scale set rolling upgrade. */
@@ -2902,7 +2902,7 @@ export namespace MyNS {
 
 
 	/** Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks. It cannot be used with OS Disk. Standard_LRS uses Standard HDD. StandardSSD_LRS uses Standard SSD. Premium_LRS uses Premium SSD. UltraSSD_LRS uses Ultra disk. For more information regarding disks supported for Windows Virtual Machines, refer to https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types and, for Linux Virtual Machines, refer to https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disks-types */
-	export enum StorageAccountType { Standard_LRS = 0, Premium_LRS = 1, StandardSSD_LRS = 2, UltraSSD_LRS = 3 }
+	export enum StorageAccountType { Standard_LRS = 'Standard_LRS', Premium_LRS = 'Premium_LRS', StandardSSD_LRS = 'StandardSSD_LRS', UltraSSD_LRS = 'UltraSSD_LRS' }
 
 
 	/** Specifies the storage settings for the virtual machine disks. */
@@ -3029,7 +3029,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeOperationHistoricalStatusInfoPropertiesStartedBy { Unknown = 0, User = 1, Platform = 2 }
+	export enum UpgradeOperationHistoricalStatusInfoPropertiesStartedBy { Unknown = 'Unknown', User = 'User', Platform = 'Platform' }
 
 
 	/** Information about the current running state of the overall upgrade. */
@@ -3093,7 +3093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradePolicyMode { Automatic = 0, Manual = 1, Rolling = 2 }
+	export enum UpgradePolicyMode { Automatic = 'Automatic', Manual = 'Manual', Rolling = 'Rolling' }
 
 
 	/** The Usage Names. */
@@ -3727,7 +3727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualMachineIdentityType { SystemAssigned = 0, UserAssigned = 1, 'SystemAssigned, UserAssigned' = 2, None = 3 }
+	export enum VirtualMachineIdentityType { SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned', None = 'None' }
 
 	export interface VirtualMachineIdentityUserAssignedIdentities {
 
@@ -4038,9 +4038,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualMachinePropertiesEvictionPolicy { Deallocate = 0, Delete = 1 }
+	export enum VirtualMachinePropertiesEvictionPolicy { Deallocate = 'Deallocate', Delete = 'Delete' }
 
-	export enum VirtualMachinePropertiesPriority { Regular = 0, Low = 1, Spot = 2 }
+	export enum VirtualMachinePropertiesPriority { Regular = 'Regular', Low = 'Low', Spot = 'Spot' }
 
 
 	/** Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be reimaged */
@@ -4440,7 +4440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualMachineScaleSetIPConfigurationPropertiesPrivateIPAddressVersion { IPv4 = 0, IPv6 = 1 }
+	export enum VirtualMachineScaleSetIPConfigurationPropertiesPrivateIPAddressVersion { IPv4 = 'IPv4', IPv6 = 'IPv6' }
 
 
 	/** Identity for the virtual machine scale set. */
@@ -5255,7 +5255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualMachineScaleSetSkuCapacityScaleType { Automatic = 0, None = 1 }
+	export enum VirtualMachineScaleSetSkuCapacityScaleType { Automatic = 'Automatic', None = 'None' }
 
 
 	/** Describes a virtual machine scale set storage profile. */
@@ -6204,7 +6204,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WinRMListenerProtocol { Http = 0, Https = 1 }
+	export enum WinRMListenerProtocol { Http = 'Http', Https = 'Https' }
 
 
 	/** Specifies Windows operating system settings on the virtual machine. */
@@ -6249,11 +6249,11 @@ export namespace MyNS {
 
 
 	/** Specifies the eviction policy for the Azure Spot VM/VMSS */
-	export enum EvictionPolicy { Deallocate = 0, Delete = 1 }
+	export enum EvictionPolicy { Deallocate = 'Deallocate', Delete = 'Delete' }
 
 
 	/** Specifies the priority for a standalone virtual machine or the virtual machines in the scale set. <br><br> 'Low' enum will be deprecated in the future, please use 'Spot' as the enum to deploy Azure Spot VM/VMSS. */
-	export enum Priority { Regular = 0, Low = 1, Spot = 2 }
+	export enum Priority { Regular = 'Regular', Low = 'Low', Spot = 'Spot' }
 
 	@Injectable()
 	export class MyClient {
@@ -7835,7 +7835,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DedicatedHosts_GetExpand { instanceView = 0 }
+	export enum DedicatedHosts_GetExpand { instanceView = 'instanceView' }
 
 }
 

@@ -5184,13 +5184,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Drive_files_listCorpus { DEFAULT = 0, DOMAIN = 1 }
+	export enum Drive_files_listCorpus { DEFAULT = 'DEFAULT', DOMAIN = 'DOMAIN' }
 
-	export enum Drive_files_listProjection { BASIC = 0, FULL = 1 }
+	export enum Drive_files_listProjection { BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum Drive_files_insertVisibility { DEFAULT = 0, PRIVATE = 1 }
+	export enum Drive_files_insertVisibility { DEFAULT = 'DEFAULT', PRIVATE = 'PRIVATE' }
 
-	export enum Drive_files_patchModifiedDateBehavior { fromBody = 0, fromBodyIfNeeded = 1, fromBodyOrNow = 2, noChange = 3, now = 4, nowIfNeeded = 5 }
+	export enum Drive_files_patchModifiedDateBehavior { fromBody = 'fromBody', fromBodyIfNeeded = 'fromBodyIfNeeded', fromBodyOrNow = 'fromBodyOrNow', noChange = 'noChange', now = 'now', nowIfNeeded = 'nowIfNeeded' }
 
 }
 

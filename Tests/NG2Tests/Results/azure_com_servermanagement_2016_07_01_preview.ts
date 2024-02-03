@@ -100,7 +100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayParametersPropertiesUpgradeMode { Manual = 0, Automatic = 1 }
+	export enum GatewayParametersPropertiesUpgradeMode { Manual = 'Manual', Automatic = 'Automatic' }
 
 
 	/** JSON properties that the gateway service uses know how to communicate with the resource. */
@@ -783,7 +783,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PromptFieldDescriptionPromptFieldType { String = 0, SecureString = 1, Credential = 2 }
+	export enum PromptFieldDescriptionPromptFieldType { String = 'String', SecureString = 'SecureString', Credential = 'Credential' }
 
 
 	/** A collection of results from a PowerShell command. */
@@ -1101,9 +1101,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionParametersPropertiesCredentialDataFormat { RsaEncrypted = 0 }
+	export enum SessionParametersPropertiesCredentialDataFormat { RsaEncrypted = 'RsaEncrypted' }
 
-	export enum SessionParametersPropertiesRetentionPeriod { Session = 0, Persistent = 1 }
+	export enum SessionParametersPropertiesRetentionPeriod { Session = 'Session', Persistent = 'Persistent' }
 
 
 	/** The session object. */
@@ -1565,9 +1565,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Gateway_GetExpand { status = 0, download = 1 }
+	export enum Gateway_GetExpand { status = 'status', download = 'download' }
 
-	export enum PowerShell_GetCommandStatusExpand { output = 0 }
+	export enum PowerShell_GetCommandStatusExpand { output = 'output' }
 
 }
 

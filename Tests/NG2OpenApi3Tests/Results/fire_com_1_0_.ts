@@ -657,9 +657,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetAccountsReturnAccountsCurrencyCode { EUR = 0, GBP = 1 }
+	export enum GetAccountsReturnAccountsCurrencyCode { EUR = 'EUR', GBP = 'GBP' }
 
-	export enum GetAccountsReturnAccountsStatus { LIVE = 0, BREXIT_MIGRATED = 1 }
+	export enum GetAccountsReturnAccountsStatus { LIVE = 'LIVE', BREXIT_MIGRATED = 'BREXIT_MIGRATED' }
 
 	export interface AddAccountPostBody {
 
@@ -1400,7 +1400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetTransactionsByAccountIdv1ReturnTransactionsRelatedPartyType { FIRE_ACCOUNT = 0 }
+	export enum GetTransactionsByAccountIdv1ReturnTransactionsRelatedPartyType { FIRE_ACCOUNT = 'FIRE_ACCOUNT' }
 
 	export interface GetTransactionsByAccountIdFilteredReturn {
 
@@ -2156,7 +2156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticatePostBodyGrantType { AccessToken = 0 }
+	export enum AuthenticatePostBodyGrantType { AccessToken = 'AccessToken' }
 
 	export interface AuthenticateReturn {
 
@@ -2314,13 +2314,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GetBatchesBatchStatus { SUBMITTED = 0, REMOVED = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum GetBatchesBatchStatus { SUBMITTED = 'SUBMITTED', REMOVED = 'REMOVED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
-	export enum GetBatchesBatchTypes { INTERNAL_TRANSFER = 0, BANK_TRANSFER = 1, INTERNATIONAL_TRANSFER = 2, NEW_PAYEE = 3 }
+	export enum GetBatchesBatchTypes { INTERNAL_TRANSFER = 'INTERNAL_TRANSFER', BANK_TRANSFER = 'BANK_TRANSFER', INTERNATIONAL_TRANSFER = 'INTERNATIONAL_TRANSFER', NEW_PAYEE = 'NEW_PAYEE' }
 
-	export enum GetBatchesOrderBy { DATE = 0 }
+	export enum GetBatchesOrderBy { DATE = 'DATE' }
 
-	export enum GetBatchesOrder { DESC = 0, ASC = 1 }
+	export enum GetBatchesOrder { DESC = 'DESC', ASC = 'ASC' }
 
 	export interface GetBatchesReturn {
 		GetBatchesReturnItems?: Array<GetBatchesReturnItems>;
@@ -2498,7 +2498,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateBatchPaymentPostBodyType { BANK_TRANSFER = 0, INTERNAL_TRANSFER = 1, INTERNATIONAL_TRANSFER = 2 }
+	export enum CreateBatchPaymentPostBodyType { BANK_TRANSFER = 'BANK_TRANSFER', INTERNAL_TRANSFER = 'INTERNAL_TRANSFER', INTERNATIONAL_TRANSFER = 'INTERNATIONAL_TRANSFER' }
 
 	export interface CreateBatchPaymentReturn {
 
@@ -2639,7 +2639,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDetailsSingleBatchReturnStatus { PENDING_APPROVAL = 0, REJECTED = 1, COMPLETE = 2, OPEN = 3, CANCELLED = 4, PENDING_PARENT_BATCH_APPROVAL = 5, READY_FOR_PROCESSING = 6, PROCESSING = 7 }
+	export enum GetDetailsSingleBatchReturnStatus { PENDING_APPROVAL = 'PENDING_APPROVAL', REJECTED = 'REJECTED', COMPLETE = 'COMPLETE', OPEN = 'OPEN', CANCELLED = 'CANCELLED', PENDING_PARENT_BATCH_APPROVAL = 'PENDING_PARENT_BATCH_APPROVAL', READY_FOR_PROCESSING = 'READY_FOR_PROCESSING', PROCESSING = 'PROCESSING' }
 
 	export interface GetListofApproversForBatchReturn {
 		GetListofApproversForBatchReturnApprovals?: Array<GetListofApproversForBatchReturnApprovals>;
@@ -2899,7 +2899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddBankTransferBatchPaymentPostBodyPayeeType { ACCOUNT_DETAILS = 0 }
+	export enum AddBankTransferBatchPaymentPostBodyPayeeType { ACCOUNT_DETAILS = 'ACCOUNT_DETAILS' }
 
 	export interface AddBankTransferBatchPaymentReturn {
 
@@ -3223,11 +3223,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetListofCardsReturnCardsProvider { MASTERCARD = 0 }
+	export enum GetListofCardsReturnCardsProvider { MASTERCARD = 'MASTERCARD' }
 
-	export enum GetListofCardsReturnCardsStatus { LIVE = 0, CREATED_ACTIVE = 1, CREATED_INACTIVE = 2, DEACTIVATED = 3 }
+	export enum GetListofCardsReturnCardsStatus { LIVE = 'LIVE', CREATED_ACTIVE = 'CREATED_ACTIVE', CREATED_INACTIVE = 'CREATED_INACTIVE', DEACTIVATED = 'DEACTIVATED' }
 
-	export enum GetListofCardsReturnCardsStatusReason { LOST_CARD = 0, STOLEN_CARD = 1, CARD_DESTROYED = 2 }
+	export enum GetListofCardsReturnCardsStatusReason { LOST_CARD = 'LOST_CARD', STOLEN_CARD = 'STOLEN_CARD', CARD_DESTROYED = 'CARD_DESTROYED' }
 
 	export interface CreateNewCardPostBody {
 		acceptFeesAndCharges?: boolean | null;
@@ -3257,7 +3257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNewCardPostBodyAddressType { HOME = 0, BUSINESS = 1 }
+	export enum CreateNewCardPostBodyAddressType { HOME = 'HOME', BUSINESS = 'BUSINESS' }
 
 	export interface CreateNewCardReturn {
 		cardId?: number | null;
@@ -3281,7 +3281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateNewCardReturnStatus { CREATED_ACTIVE = 0, CREATED_INACTIVE = 1 }
+	export enum CreateNewCardReturnStatus { CREATED_ACTIVE = 'CREATED_ACTIVE', CREATED_INACTIVE = 'CREATED_INACTIVE' }
 
 	export interface GetListofCardTransactionsReturn {
 
@@ -4061,11 +4061,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDirectDebitsForMandateUuidReturnDirectdebitsSchemeRejectReasonCode { _0 = 0, _1 = 1, _2 = 2, _3 = 3, _4 = 4, _5 = 5, _6 = 6, _7 = 7, _8 = 8, _9 = 9, A = 10, B = 11 }
+	export enum GetDirectDebitsForMandateUuidReturnDirectdebitsSchemeRejectReasonCode { _0 = '0', _1 = '1', _2 = '2', _3 = '3', _4 = '4', _5 = '5', _6 = '6', _7 = '7', _8 = '8', _9 = '9', A = 'A', B = 'B' }
 
-	export enum GetDirectDebitsForMandateUuidReturnDirectdebitsStatus { RECIEVED = 0, REJECT_REQUESTED = 1, REJECT_READY_FOR_PROCESSING = 2, REJECT_RECORD_IN_PROGRESS = 3, REJECT_RECORDED = 4, REJECT_FILE_CREATED = 5, REJECT_FILE_SENT = 6, COLLECTED = 7, REFUND_REQUESTED = 8, REFUND_RECORD_IN_PROGRESS = 9, REFUND_RECORDED = 10, REFUND_FILE_CREATED = 11, REFUND_FILE_SENT = 12 }
+	export enum GetDirectDebitsForMandateUuidReturnDirectdebitsStatus { RECIEVED = 'RECIEVED', REJECT_REQUESTED = 'REJECT_REQUESTED', REJECT_READY_FOR_PROCESSING = 'REJECT_READY_FOR_PROCESSING', REJECT_RECORD_IN_PROGRESS = 'REJECT_RECORD_IN_PROGRESS', REJECT_RECORDED = 'REJECT_RECORDED', REJECT_FILE_CREATED = 'REJECT_FILE_CREATED', REJECT_FILE_SENT = 'REJECT_FILE_SENT', COLLECTED = 'COLLECTED', REFUND_REQUESTED = 'REFUND_REQUESTED', REFUND_RECORD_IN_PROGRESS = 'REFUND_RECORD_IN_PROGRESS', REFUND_RECORDED = 'REFUND_RECORDED', REFUND_FILE_CREATED = 'REFUND_FILE_CREATED', REFUND_FILE_SENT = 'REFUND_FILE_SENT' }
 
-	export enum GetDirectDebitsForMandateUuidReturnDirectdebitsType { FIRST_COLLECTION = 0, ONGOING_COLLECTION = 1, REPRESENTED_COLLECTION = 2, FINAL_COLLECTION = 3 }
+	export enum GetDirectDebitsForMandateUuidReturnDirectdebitsType { FIRST_COLLECTION = 'FIRST_COLLECTION', ONGOING_COLLECTION = 'ONGOING_COLLECTION', REPRESENTED_COLLECTION = 'REPRESENTED_COLLECTION', FINAL_COLLECTION = 'FINAL_COLLECTION' }
 
 	export interface GetDirectDebitByUuidReturn {
 
@@ -4480,9 +4480,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDirectDebitMandatesReturnMandatesFireRejectionReason { ACCOUNT_DOES_NOT_ACCEPT_DIRECT_DEBITS = 0, DDIC = 1, ACCOUNT_NOT_FOUND = 2, ACCOUNT_NOT_LIVE = 3, CUSTOMER_NOT_FOUND = 4, BUSINESS_NOT_LIVE = 5, BUSINESS_NOT_FULL = 6, PERSONAL_USER_NOT_LIVE = 7, PERSONAL_USER_NOT_FULL = 8, MANDATE_ALREADY_EXISTS = 9, MANDATE_WITH_DIFERENT_ACCOUNT = 10, NULL_MANDATE_REFERENCE = 11, INVALID_ACCOUNT_CURRENCY = 12, INVALID_MANDATE_REFERENCE = 13, REQUESTED_BY_CUSTOMER_VIA_SUPPORT = 14, CUSTOMER_ACCOUNT_CLOSED = 15, CUSTOMER_DECEASED = 16, ACCOUNT_TRANSFERRED = 17, MANDATE_NOT_FOUND = 18, ACCOUNT_TRANSFERRED_TO_DIFFERENT_ACCOUNT = 19, INVALID_ACCOUNT_TYPE = 20, MANDATE_EXPIRED = 21, MANDATE_CANCELLED = 22, REQUESTED_BY_CUSTOMER = 23 }
+	export enum GetDirectDebitMandatesReturnMandatesFireRejectionReason { ACCOUNT_DOES_NOT_ACCEPT_DIRECT_DEBITS = 'ACCOUNT_DOES_NOT_ACCEPT_DIRECT_DEBITS', DDIC = 'DDIC', ACCOUNT_NOT_FOUND = 'ACCOUNT_NOT_FOUND', ACCOUNT_NOT_LIVE = 'ACCOUNT_NOT_LIVE', CUSTOMER_NOT_FOUND = 'CUSTOMER_NOT_FOUND', BUSINESS_NOT_LIVE = 'BUSINESS_NOT_LIVE', BUSINESS_NOT_FULL = 'BUSINESS_NOT_FULL', PERSONAL_USER_NOT_LIVE = 'PERSONAL_USER_NOT_LIVE', PERSONAL_USER_NOT_FULL = 'PERSONAL_USER_NOT_FULL', MANDATE_ALREADY_EXISTS = 'MANDATE_ALREADY_EXISTS', MANDATE_WITH_DIFERENT_ACCOUNT = 'MANDATE_WITH_DIFERENT_ACCOUNT', NULL_MANDATE_REFERENCE = 'NULL_MANDATE_REFERENCE', INVALID_ACCOUNT_CURRENCY = 'INVALID_ACCOUNT_CURRENCY', INVALID_MANDATE_REFERENCE = 'INVALID_MANDATE_REFERENCE', REQUESTED_BY_CUSTOMER_VIA_SUPPORT = 'REQUESTED_BY_CUSTOMER_VIA_SUPPORT', CUSTOMER_ACCOUNT_CLOSED = 'CUSTOMER_ACCOUNT_CLOSED', CUSTOMER_DECEASED = 'CUSTOMER_DECEASED', ACCOUNT_TRANSFERRED = 'ACCOUNT_TRANSFERRED', MANDATE_NOT_FOUND = 'MANDATE_NOT_FOUND', ACCOUNT_TRANSFERRED_TO_DIFFERENT_ACCOUNT = 'ACCOUNT_TRANSFERRED_TO_DIFFERENT_ACCOUNT', INVALID_ACCOUNT_TYPE = 'INVALID_ACCOUNT_TYPE', MANDATE_EXPIRED = 'MANDATE_EXPIRED', MANDATE_CANCELLED = 'MANDATE_CANCELLED', REQUESTED_BY_CUSTOMER = 'REQUESTED_BY_CUSTOMER' }
 
-	export enum GetDirectDebitMandatesReturnMandatesStatus { CREATED = 0, LIVE = 1, REJECT_REQUESTED = 2, REJECT_RECORD_IN_PROGRESS = 3, REJECT_RECORDED = 4, REJECT_FILE_CREATED = 5, REJECT_FILE_SENT = 6, CANCEL_REQUESTED = 7, CANCEL_RECORD_IN_PROGRESS = 8, CANCEL_RECORDED = 9, CANCEL_FILE_CREATED = 10, CANCEL_FILE_SENT = 11, COMPLETE = 12, DORMANT = 13 }
+	export enum GetDirectDebitMandatesReturnMandatesStatus { CREATED = 'CREATED', LIVE = 'LIVE', REJECT_REQUESTED = 'REJECT_REQUESTED', REJECT_RECORD_IN_PROGRESS = 'REJECT_RECORD_IN_PROGRESS', REJECT_RECORDED = 'REJECT_RECORDED', REJECT_FILE_CREATED = 'REJECT_FILE_CREATED', REJECT_FILE_SENT = 'REJECT_FILE_SENT', CANCEL_REQUESTED = 'CANCEL_REQUESTED', CANCEL_RECORD_IN_PROGRESS = 'CANCEL_RECORD_IN_PROGRESS', CANCEL_RECORDED = 'CANCEL_RECORDED', CANCEL_FILE_CREATED = 'CANCEL_FILE_CREATED', CANCEL_FILE_SENT = 'CANCEL_FILE_SENT', COMPLETE = 'COMPLETE', DORMANT = 'DORMANT' }
 
 	export interface GetMandateReturn {
 
@@ -4813,7 +4813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetPayeesReturnFundingSourcesCreatedBy { CUSTOMER = 0, LODGEMENT = 1, 'DIRECT DEBIT' = 2, 'OPEN BANKING' = 3, 'FIRE OPEN PAYMENT' = 4, 'FIRE DIRECT' = 5 }
+	export enum GetPayeesReturnFundingSourcesCreatedBy { CUSTOMER = 'CUSTOMER', LODGEMENT = 'LODGEMENT', 'DIRECT DEBIT' = 'DIRECT DEBIT', 'OPEN BANKING' = 'OPEN BANKING', 'FIRE OPEN PAYMENT' = 'FIRE OPEN PAYMENT', 'FIRE DIRECT' = 'FIRE DIRECT' }
 
 	export interface GetPayeesReturnFundingSourcesCurrency {
 
@@ -4839,7 +4839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetPayeesReturnFundingSourcesStatus { CREATED = 0, LIVE = 1, CLOSED = 2, ARCHIVED = 3 }
+	export enum GetPayeesReturnFundingSourcesStatus { CREATED = 'CREATED', LIVE = 'LIVE', CLOSED = 'CLOSED', ARCHIVED = 'ARCHIVED' }
 
 	export interface NewPaymentRequestPostBody {
 
@@ -5067,7 +5067,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NewPaymentRequestPostBodyType { OTHER = 0 }
+	export enum NewPaymentRequestPostBodyType { OTHER = 'OTHER' }
 
 	export interface NewPaymentRequestReturn {
 
@@ -5360,9 +5360,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GetPaymentDetailsReturnStatus { AWAITING_AUTHORISATION = 0, AUTHORISED = 1, AWAITING_MULTI_AUTHORISATION = 2, NOT_AUTHORISED = 3, PAID = 4, REJECTED = 5, ACCEPTED = 6, RECEIVED = 7 }
+	export enum GetPaymentDetailsReturnStatus { AWAITING_AUTHORISATION = 'AWAITING_AUTHORISATION', AUTHORISED = 'AUTHORISED', AWAITING_MULTI_AUTHORISATION = 'AWAITING_MULTI_AUTHORISATION', NOT_AUTHORISED = 'NOT_AUTHORISED', PAID = 'PAID', REJECTED = 'REJECTED', ACCEPTED = 'ACCEPTED', RECEIVED = 'RECEIVED' }
 
-	export enum GetPaymentDetailsReturnTransactionType { REFUND_REQUEST = 0, PAYMENT = 1 }
+	export enum GetPaymentDetailsReturnTransactionType { REFUND_REQUEST = 'REFUND_REQUEST', PAYMENT = 'PAYMENT' }
 
 	export interface GetUserReturn {
 
@@ -5497,15 +5497,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GetUserReturnMobileApplicationDetailsOS { Android = 0, IOS = 1, OTHER = 2 }
+	export enum GetUserReturnMobileApplicationDetailsOS { Android = 'Android', IOS = 'IOS', OTHER = 'OTHER' }
 
-	export enum GetUserReturnMobileApplicationDetailsDeviceName { iPhone = 0, Android = 1, Other = 2 }
+	export enum GetUserReturnMobileApplicationDetailsDeviceName { iPhone = 'iPhone', Android = 'Android', Other = 'Other' }
 
-	export enum GetUserReturnMobileApplicationDetailsStatus { LIVE = 0, CLOSED = 1, LOCKED = 2, SMS_SENT = 3 }
+	export enum GetUserReturnMobileApplicationDetailsStatus { LIVE = 'LIVE', CLOSED = 'CLOSED', LOCKED = 'LOCKED', SMS_SENT = 'SMS_SENT' }
 
-	export enum GetUserReturnRole { ADMIN = 0, FULL_USER = 1, READ_ONLY = 2, CARD_ONLY = 3 }
+	export enum GetUserReturnRole { ADMIN = 'ADMIN', FULL_USER = 'FULL_USER', READ_ONLY = 'READ_ONLY', CARD_ONLY = 'CARD_ONLY' }
 
-	export enum GetUserReturnStatus { LIVE = 0, CLOSED = 1, FROZEN = 2, INVITE_SENT = 3, SMS_CODE_SENT = 4 }
+	export enum GetUserReturnStatus { LIVE = 'LIVE', CLOSED = 'CLOSED', FROZEN = 'FROZEN', INVITE_SENT = 'INVITE_SENT', SMS_CODE_SENT = 'SMS_CODE_SENT' }
 
 	export interface GetUsersReturn {
 

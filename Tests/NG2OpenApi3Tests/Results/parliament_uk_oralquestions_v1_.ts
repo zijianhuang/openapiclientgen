@@ -161,9 +161,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PublishedEarlyDayMotionStatus { Published = 0, Withdrawn = 1 }
+	export enum PublishedEarlyDayMotionStatus { Published = 'Published', Withdrawn = 'Withdrawn' }
 
-	export enum ApiResponse_List_PublishedEarlyDayMotion_StatusCode { Continue = 0, SwitchingProtocols = 1, OK = 2, Created = 3, Accepted = 4, NonAuthoritativeInformation = 5, NoContent = 6, ResetContent = 7, PartialContent = 8, MultipleChoices = 9, Ambiguous = 10, MovedPermanently = 11, Moved = 12, Found = 13, Redirect = 14, SeeOther = 15, RedirectMethod = 16, NotModified = 17, UseProxy = 18, Unused = 19, TemporaryRedirect = 20, RedirectKeepVerb = 21, BadRequest = 22, Unauthorized = 23, PaymentRequired = 24, Forbidden = 25, NotFound = 26, MethodNotAllowed = 27, NotAcceptable = 28, ProxyAuthenticationRequired = 29, RequestTimeout = 30, Conflict = 31, Gone = 32, LengthRequired = 33, PreconditionFailed = 34, RequestEntityTooLarge = 35, RequestUriTooLong = 36, UnsupportedMediaType = 37, RequestedRangeNotSatisfiable = 38, ExpectationFailed = 39, UpgradeRequired = 40, InternalServerError = 41, NotImplemented = 42, BadGateway = 43, ServiceUnavailable = 44, GatewayTimeout = 45, HttpVersionNotSupported = 46 }
+	export enum ApiResponse_List_PublishedEarlyDayMotion_StatusCode { Continue = 'Continue', SwitchingProtocols = 'SwitchingProtocols', OK = 'OK', Created = 'Created', Accepted = 'Accepted', NonAuthoritativeInformation = 'NonAuthoritativeInformation', NoContent = 'NoContent', ResetContent = 'ResetContent', PartialContent = 'PartialContent', MultipleChoices = 'MultipleChoices', Ambiguous = 'Ambiguous', MovedPermanently = 'MovedPermanently', Moved = 'Moved', Found = 'Found', Redirect = 'Redirect', SeeOther = 'SeeOther', RedirectMethod = 'RedirectMethod', NotModified = 'NotModified', UseProxy = 'UseProxy', Unused = 'Unused', TemporaryRedirect = 'TemporaryRedirect', RedirectKeepVerb = 'RedirectKeepVerb', BadRequest = 'BadRequest', Unauthorized = 'Unauthorized', PaymentRequired = 'PaymentRequired', Forbidden = 'Forbidden', NotFound = 'NotFound', MethodNotAllowed = 'MethodNotAllowed', NotAcceptable = 'NotAcceptable', ProxyAuthenticationRequired = 'ProxyAuthenticationRequired', RequestTimeout = 'RequestTimeout', Conflict = 'Conflict', Gone = 'Gone', LengthRequired = 'LengthRequired', PreconditionFailed = 'PreconditionFailed', RequestEntityTooLarge = 'RequestEntityTooLarge', RequestUriTooLong = 'RequestUriTooLong', UnsupportedMediaType = 'UnsupportedMediaType', RequestedRangeNotSatisfiable = 'RequestedRangeNotSatisfiable', ExpectationFailed = 'ExpectationFailed', UpgradeRequired = 'UpgradeRequired', InternalServerError = 'InternalServerError', NotImplemented = 'NotImplemented', BadGateway = 'BadGateway', ServiceUnavailable = 'ServiceUnavailable', GatewayTimeout = 'GatewayTimeout', HttpVersionNotSupported = 'HttpVersionNotSupported' }
 
 	export interface ApiResponse_List_PublishedOralQuestionTime_ {
 		Errors?: Array<string>;
@@ -294,9 +294,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PublishedOralQuestionQuestionType { Substantive = 0, Topical = 1 }
+	export enum PublishedOralQuestionQuestionType { Substantive = 'Substantive', Topical = 'Topical' }
 
-	export enum PublishedOralQuestionStatus { Submitted = 0, Carded = 1, Unsaved = 2, ReadyForShuffle = 3, ToBeAsked = 4, ShuffleUnsuccessful = 5, Withdrawn = 6, Unstarred = 7, Draft = 8, ForReview = 9, Unasked = 10, Transferred = 11 }
+	export enum PublishedOralQuestionStatus { Submitted = 'Submitted', Carded = 'Carded', Unsaved = 'Unsaved', ReadyForShuffle = 'ReadyForShuffle', ToBeAsked = 'ToBeAsked', ShuffleUnsuccessful = 'ShuffleUnsuccessful', Withdrawn = 'Withdrawn', Unstarred = 'Unstarred', Draft = 'Draft', ForReview = 'ForReview', Unasked = 'Unasked', Transferred = 'Transferred' }
 
 	export interface ApiResponse_List_PublishedWrittenQuestion_ {
 		Errors?: Array<string>;
@@ -368,7 +368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublishedWrittenQuestionQuestionType { NamedDay = 0, Ordinary = 1 }
+	export enum PublishedWrittenQuestionQuestionType { NamedDay = 'NamedDay', Ordinary = 'Ordinary' }
 
 	export interface ApiResponse_Object_ {
 		Errors?: Array<string>;
@@ -600,7 +600,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PublishedEarlyDayMotionQueryParametersOrderBy { DateTabledAsc = 0, DateTabledDesc = 1, TitleAsc = 2, TitleDesc = 3, SignatureCountAsc = 4, SignatureCountDesc = 5 }
+	export enum PublishedEarlyDayMotionQueryParametersOrderBy { DateTabledAsc = 'DateTabledAsc', DateTabledDesc = 'DateTabledDesc', TitleAsc = 'TitleAsc', TitleDesc = 'TitleDesc', SignatureCountAsc = 'SignatureCountAsc', SignatureCountDesc = 'SignatureCountDesc' }
 
 	export interface PublishedOralQuestionQueryParameters {
 

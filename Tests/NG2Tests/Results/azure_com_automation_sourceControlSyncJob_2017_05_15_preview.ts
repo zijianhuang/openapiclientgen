@@ -128,9 +128,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceControlSyncJobByIdPropertiesProvisioningState { Completed = 0, Failed = 1, Running = 2 }
+	export enum SourceControlSyncJobByIdPropertiesProvisioningState { Completed = 'Completed', Failed = 'Failed', Running = 'Running' }
 
-	export enum SourceControlSyncJobByIdPropertiesSyncType { PartialSync = 0, FullSync = 1 }
+	export enum SourceControlSyncJobByIdPropertiesSyncType { PartialSync = 'PartialSync', FullSync = 'FullSync' }
 
 
 	/** The parameters supplied to the create source control sync job operation. */

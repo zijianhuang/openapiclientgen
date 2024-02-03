@@ -253,9 +253,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VMInsightsOnboardingStatusPropertiesDataStatus { present = 0, notPresent = 1 }
+	export enum VMInsightsOnboardingStatusPropertiesDataStatus { present = 'present', notPresent = 'notPresent' }
 
-	export enum VMInsightsOnboardingStatusPropertiesOnboardingStatus { onboarded = 0, notOnboarded = 1, unknown = 2 }
+	export enum VMInsightsOnboardingStatusPropertiesOnboardingStatus { onboarded = 'onboarded', notOnboarded = 'notOnboarded', unknown = 'unknown' }
 
 	@Injectable()
 	export class MyClient {

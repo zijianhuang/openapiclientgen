@@ -94,17 +94,17 @@ export namespace MyNS {
 
 	}
 
-	export enum CVSSv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 0, ATTACK_COMPLEXITY_LOW = 1, ATTACK_COMPLEXITY_HIGH = 2 }
+	export enum CVSSv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 'ATTACK_COMPLEXITY_UNSPECIFIED', ATTACK_COMPLEXITY_LOW = 'ATTACK_COMPLEXITY_LOW', ATTACK_COMPLEXITY_HIGH = 'ATTACK_COMPLEXITY_HIGH' }
 
-	export enum CVSSv3AttackVector { ATTACK_VECTOR_UNSPECIFIED = 0, ATTACK_VECTOR_NETWORK = 1, ATTACK_VECTOR_ADJACENT = 2, ATTACK_VECTOR_LOCAL = 3, ATTACK_VECTOR_PHYSICAL = 4 }
+	export enum CVSSv3AttackVector { ATTACK_VECTOR_UNSPECIFIED = 'ATTACK_VECTOR_UNSPECIFIED', ATTACK_VECTOR_NETWORK = 'ATTACK_VECTOR_NETWORK', ATTACK_VECTOR_ADJACENT = 'ATTACK_VECTOR_ADJACENT', ATTACK_VECTOR_LOCAL = 'ATTACK_VECTOR_LOCAL', ATTACK_VECTOR_PHYSICAL = 'ATTACK_VECTOR_PHYSICAL' }
 
-	export enum CVSSv3AvailabilityImpact { IMPACT_UNSPECIFIED = 0, IMPACT_HIGH = 1, IMPACT_LOW = 2, IMPACT_NONE = 3 }
+	export enum CVSSv3AvailabilityImpact { IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED', IMPACT_HIGH = 'IMPACT_HIGH', IMPACT_LOW = 'IMPACT_LOW', IMPACT_NONE = 'IMPACT_NONE' }
 
-	export enum CVSSv3PrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 0, PRIVILEGES_REQUIRED_NONE = 1, PRIVILEGES_REQUIRED_LOW = 2, PRIVILEGES_REQUIRED_HIGH = 3 }
+	export enum CVSSv3PrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 'PRIVILEGES_REQUIRED_UNSPECIFIED', PRIVILEGES_REQUIRED_NONE = 'PRIVILEGES_REQUIRED_NONE', PRIVILEGES_REQUIRED_LOW = 'PRIVILEGES_REQUIRED_LOW', PRIVILEGES_REQUIRED_HIGH = 'PRIVILEGES_REQUIRED_HIGH' }
 
-	export enum CVSSv3Scope { SCOPE_UNSPECIFIED = 0, SCOPE_UNCHANGED = 1, SCOPE_CHANGED = 2 }
+	export enum CVSSv3Scope { SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED', SCOPE_UNCHANGED = 'SCOPE_UNCHANGED', SCOPE_CHANGED = 'SCOPE_CHANGED' }
 
-	export enum CVSSv3UserInteraction { USER_INTERACTION_UNSPECIFIED = 0, USER_INTERACTION_NONE = 1, USER_INTERACTION_REQUIRED = 2 }
+	export enum CVSSv3UserInteraction { USER_INTERACTION_UNSPECIFIED = 'USER_INTERACTION_UNSPECIFIED', USER_INTERACTION_NONE = 'USER_INTERACTION_NONE', USER_INTERACTION_REQUIRED = 'USER_INTERACTION_REQUIRED' }
 
 
 	/** The request message for Operations.CancelOperation. */
@@ -246,9 +246,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod { API_METHOD_UNSPECIFIED = 0, CREATE = 1, UPDATE = 2, DELETE = 3 }
+	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataApiMethod { API_METHOD_UNSPECIFIED = 'API_METHOD_UNSPECIFIED', CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
-	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState { ROLLOUT_STATE_UNSPECIFIED = 0, IN_PROGRESS = 1, CANCELLING = 2, CANCELLED = 3, SUCCEEDED = 4 }
+	export enum GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadataRolloutState { ROLLOUT_STATE_UNSPECIFIED = 'ROLLOUT_STATE_UNSPECIFIED', IN_PROGRESS = 'IN_PROGRESS', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** This API resource represents the OS policies compliance data for a Compute Engine virtual machine (VM) instance at a given point in time. A Compute Engine VM can have multiple OS policy assignments, and each assignment can have multiple OS policies. As a result, multiple OS policies could be applied to a single VM. You can use this API resource to determine both the compliance state of your VM as well as the compliance state of an individual OS policy. For more information, see [View compliance](https://cloud.google.com/compute/docs/os-configuration-management/view-compliance). */
@@ -423,9 +423,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourceConfigStepOutcome { OUTCOME_UNSPECIFIED = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum OSPolicyResourceConfigStepOutcome { OUTCOME_UNSPECIFIED = 'OUTCOME_UNSPECIFIED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
-	export enum OSPolicyResourceConfigStepType { TYPE_UNSPECIFIED = 0, VALIDATION = 1, DESIRED_STATE_CHECK = 2, DESIRED_STATE_ENFORCEMENT = 3, DESIRED_STATE_CHECK_POST_ENFORCEMENT = 4 }
+	export enum OSPolicyResourceConfigStepType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', VALIDATION = 'VALIDATION', DESIRED_STATE_CHECK = 'DESIRED_STATE_CHECK', DESIRED_STATE_ENFORCEMENT = 'DESIRED_STATE_ENFORCEMENT', DESIRED_STATE_CHECK_POST_ENFORCEMENT = 'DESIRED_STATE_CHECK_POST_ENFORCEMENT' }
 
 
 	/** ExecResource specific output. */
@@ -448,7 +448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourceComplianceState { OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED = 0, COMPLIANT = 1, NON_COMPLIANT = 2, UNKNOWN = 3, NO_OS_POLICIES_APPLICABLE = 4 }
+	export enum OSPolicyResourceComplianceState { OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED = 'OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED', COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT', UNKNOWN = 'UNKNOWN', NO_OS_POLICIES_APPLICABLE = 'NO_OS_POLICIES_APPLICABLE' }
 
 
 	/** This API resource represents the available inventory data for a Compute Engine virtual machine (VM) instance at a given point in time. You can use this API resource to determine the inventory data of your VM. For more information, see [Information provided by OS inventory management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected). */
@@ -841,9 +841,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InventoryItemOriginType { ORIGIN_TYPE_UNSPECIFIED = 0, INVENTORY_REPORT = 1 }
+	export enum InventoryItemOriginType { ORIGIN_TYPE_UNSPECIFIED = 'ORIGIN_TYPE_UNSPECIFIED', INVENTORY_REPORT = 'INVENTORY_REPORT' }
 
-	export enum InventoryItemType { TYPE_UNSPECIFIED = 0, INSTALLED_PACKAGE = 1, AVAILABLE_PACKAGE = 2 }
+	export enum InventoryItemType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', INSTALLED_PACKAGE = 'INSTALLED_PACKAGE', AVAILABLE_PACKAGE = 'AVAILABLE_PACKAGE' }
 
 
 	/** Operating system information for the VM. */
@@ -1077,7 +1077,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyAssignmentReportOSPolicyComplianceComplianceState { UNKNOWN = 0, COMPLIANT = 1, NON_COMPLIANT = 2 }
+	export enum OSPolicyAssignmentReportOSPolicyComplianceComplianceState { UNKNOWN = 'UNKNOWN', COMPLIANT = 'COMPLIANT', NON_COMPLIANT = 'NON_COMPLIANT' }
 
 
 	/** Compliance data for an OS policy resource. */
@@ -1413,7 +1413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyMode { MODE_UNSPECIFIED = 0, VALIDATION = 1, ENFORCEMENT = 2 }
+	export enum OSPolicyMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', VALIDATION = 'VALIDATION', ENFORCEMENT = 'ENFORCEMENT' }
 
 
 	/** Resource groups provide a mechanism to group OS policy resources. Resource groups enable OS policy authors to create a single OS policy to be applied to VMs running different operating Systems. When the OS policy is applied to a target VM, the appropriate resource group within the OS policy is selected based on the `OSFilter` specified within the resource group. */
@@ -1685,7 +1685,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourceExecResourceExecInterpreter { INTERPRETER_UNSPECIFIED = 0, NONE = 1, SHELL = 2, POWERSHELL = 3 }
+	export enum OSPolicyResourceExecResourceExecInterpreter { INTERPRETER_UNSPECIFIED = 'INTERPRETER_UNSPECIFIED', NONE = 'NONE', SHELL = 'SHELL', POWERSHELL = 'POWERSHELL' }
 
 
 	/** A resource that manages the state of a file. */
@@ -1732,7 +1732,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourceFileResourceState { DESIRED_STATE_UNSPECIFIED = 0, PRESENT = 1, ABSENT = 2, CONTENTS_MATCH = 3 }
+	export enum OSPolicyResourceFileResourceState { DESIRED_STATE_UNSPECIFIED = 'DESIRED_STATE_UNSPECIFIED', PRESENT = 'PRESENT', ABSENT = 'ABSENT', CONTENTS_MATCH = 'CONTENTS_MATCH' }
 
 
 	/** A resource that manages a system package. */
@@ -1821,7 +1821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourcePackageResourceDesiredState { DESIRED_STATE_UNSPECIFIED = 0, INSTALLED = 1, REMOVED = 2 }
+	export enum OSPolicyResourcePackageResourceDesiredState { DESIRED_STATE_UNSPECIFIED = 'DESIRED_STATE_UNSPECIFIED', INSTALLED = 'INSTALLED', REMOVED = 'REMOVED' }
 
 
 	/** A package managed by GooGet. - install: `googet -noconfirm install package` - remove: `googet -noconfirm remove package` */
@@ -2001,7 +2001,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSPolicyResourceRepositoryResourceAptRepositoryArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 0, DEB = 1, DEB_SRC = 2 }
+	export enum OSPolicyResourceRepositoryResourceAptRepositoryArchiveType { ARCHIVE_TYPE_UNSPECIFIED = 'ARCHIVE_TYPE_UNSPECIFIED', DEB = 'DEB', DEB_SRC = 'DEB_SRC' }
 
 
 	/** Represents a Goo package repository. These are added to a repo file that is managed at `C:/ProgramData/GooGet/repos/google_osconfig.repo`. */
@@ -2629,7 +2629,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Osconfig_projects_locations_osPolicyAssignments_operations_getView { INVENTORY_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Osconfig_projects_locations_osPolicyAssignments_operations_getView { INVENTORY_VIEW_UNSPECIFIED = 'INVENTORY_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

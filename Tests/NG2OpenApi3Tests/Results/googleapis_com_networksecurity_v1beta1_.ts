@@ -100,7 +100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressGroupType { TYPE_UNSPECIFIED = 0, IPV4 = 1, IPV6 = 2 }
+	export enum AddressGroupType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', IPV4 = 'IPV4', IPV6 = 'IPV6' }
 
 
 	/** AuthorizationPolicy is a resource that specifies how a server should authorize incoming connections. This resource in itself does not change the configuration unless it's attached to a target https proxy or endpoint config selector resource. */
@@ -161,7 +161,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationPolicyAction { ACTION_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum AuthorizationPolicyAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Specification of rules. */
@@ -603,7 +603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallEndpointState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, DELETING = 3, INACTIVE = 4 }
+	export enum FirewallEndpointState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', INACTIVE = 'INACTIVE' }
 
 
 	/** Message describing Association object */
@@ -815,7 +815,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewaySecurityPolicyRuleBasicProfile { BASIC_PROFILE_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GatewaySecurityPolicyRuleBasicProfile { BASIC_PROFILE_UNSPECIFIED = 'BASIC_PROFILE_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -865,7 +865,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -1616,9 +1616,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SeverityOverrideAction { THREAT_ACTION_UNSPECIFIED = 0, DEFAULT_ACTION = 1, ALLOW = 2, ALERT = 3, DENY = 4 }
+	export enum SeverityOverrideAction { THREAT_ACTION_UNSPECIFIED = 'THREAT_ACTION_UNSPECIFIED', DEFAULT_ACTION = 'DEFAULT_ACTION', ALLOW = 'ALLOW', ALERT = 'ALERT', DENY = 'DENY' }
 
-	export enum SeverityOverrideSeverity { SEVERITY_UNSPECIFIED = 0, INFORMATIONAL = 1, LOW = 2, MEDIUM = 3, HIGH = 4, CRITICAL = 5 }
+	export enum SeverityOverrideSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', INFORMATIONAL = 'INFORMATIONAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL' }
 
 
 	/** Defines what action to take for a specific threat_id match. */
@@ -1655,9 +1655,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ThreatOverrideType { THREAT_TYPE_UNSPECIFIED = 0, UNKNOWN = 1, VULNERABILITY = 2, ANTIVIRUS = 3, SPYWARE = 4, DNS = 5 }
+	export enum ThreatOverrideType { THREAT_TYPE_UNSPECIFIED = 'THREAT_TYPE_UNSPECIFIED', UNKNOWN = 'UNKNOWN', VULNERABILITY = 'VULNERABILITY', ANTIVIRUS = 'ANTIVIRUS', SPYWARE = 'SPYWARE', DNS = 'DNS' }
 
-	export enum SecurityProfileType { PROFILE_TYPE_UNSPECIFIED = 0, THREAT_PREVENTION = 1 }
+	export enum SecurityProfileType { PROFILE_TYPE_UNSPECIFIED = 'PROFILE_TYPE_UNSPECIFIED', THREAT_PREVENTION = 'THREAT_PREVENTION' }
 
 
 	/** Response returned by the ListServerTlsPolicies method. */
@@ -1776,7 +1776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MTLSPolicyClientValidationMode { CLIENT_VALIDATION_MODE_UNSPECIFIED = 0, ALLOW_INVALID_OR_MISSING_CLIENT_CERT = 1, REJECT_INVALID = 2 }
+	export enum MTLSPolicyClientValidationMode { CLIENT_VALIDATION_MODE_UNSPECIFIED = 'CLIENT_VALIDATION_MODE_UNSPECIFIED', ALLOW_INVALID_OR_MISSING_CLIENT_CERT = 'ALLOW_INVALID_OR_MISSING_CLIENT_CERT', REJECT_INVALID = 'REJECT_INVALID' }
 
 
 	/** Response returned by the ListTlsInspectionPolicies method. */
@@ -1885,9 +1885,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TlsInspectionPolicyMinTlsVersion { TLS_VERSION_UNSPECIFIED = 0, TLS_1_0 = 1, TLS_1_1 = 2, TLS_1_2 = 3, TLS_1_3 = 4 }
+	export enum TlsInspectionPolicyMinTlsVersion { TLS_VERSION_UNSPECIFIED = 'TLS_VERSION_UNSPECIFIED', TLS_1_0 = 'TLS_1_0', TLS_1_1 = 'TLS_1_1', TLS_1_2 = 'TLS_1_2', TLS_1_3 = 'TLS_1_3' }
 
-	export enum TlsInspectionPolicyTlsFeatureProfile { PROFILE_UNSPECIFIED = 0, PROFILE_COMPATIBLE = 1, PROFILE_MODERN = 2, PROFILE_RESTRICTED = 3, PROFILE_CUSTOM = 4 }
+	export enum TlsInspectionPolicyTlsFeatureProfile { PROFILE_UNSPECIFIED = 'PROFILE_UNSPECIFIED', PROFILE_COMPATIBLE = 'PROFILE_COMPATIBLE', PROFILE_MODERN = 'PROFILE_MODERN', PROFILE_RESTRICTED = 'PROFILE_RESTRICTED', PROFILE_CUSTOM = 'PROFILE_CUSTOM' }
 
 
 	/** Response returned by the ListUrlLists method. */

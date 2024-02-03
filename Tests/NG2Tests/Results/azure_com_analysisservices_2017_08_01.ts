@@ -55,7 +55,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisServicesServerPropertiesProvisioningState { Deleting = 0, Succeeded = 1, Failed = 2, Paused = 3, Suspended = 4, Provisioning = 5, Updating = 6, Suspending = 7, Pausing = 8, Resuming = 9, Preparing = 10, Scaling = 11 }
+	export enum AnalysisServicesServerPropertiesProvisioningState { Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Paused = 'Paused', Suspended = 'Suspended', Provisioning = 'Provisioning', Updating = 'Updating', Suspending = 'Suspending', Pausing = 'Pausing', Resuming = 'Resuming', Preparing = 'Preparing', Scaling = 'Scaling' }
 
 
 	/** An object that represents a set of mutable Analysis Services resource properties. */
@@ -205,7 +205,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalysisServicesServerMutablePropertiesQuerypoolConnectionMode { All = 0, ReadOnly = 1 }
+	export enum AnalysisServicesServerMutablePropertiesQuerypoolConnectionMode { All = 'All', ReadOnly = 'ReadOnly' }
 
 
 	/** Provision request specification */
@@ -283,7 +283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSkuTier { Development = 0, Basic = 1, Standard = 2 }
+	export enum ResourceSkuTier { Development = 'Development', Basic = 'Basic', Standard = 'Standard' }
 
 
 	/** An array of Analysis Services resources. */
@@ -470,7 +470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayListStatusLiveStatus { Live = 0 }
+	export enum GatewayListStatusLiveStatus { Live = 'Live' }
 
 
 	/** A Consumption REST API operation. */

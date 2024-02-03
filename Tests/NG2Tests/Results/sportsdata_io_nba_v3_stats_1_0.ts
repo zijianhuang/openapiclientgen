@@ -2064,9 +2064,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AllStarsFormat { XML = 0, JSON = 1 }
+	export enum AllStarsFormat { XML = 'XML', JSON = 'JSON' }
 
-	export enum StadiumsFormat { xml = 0, json = 1 }
+	export enum StadiumsFormat { xml = 'xml', json = 'json' }
 
 }
 

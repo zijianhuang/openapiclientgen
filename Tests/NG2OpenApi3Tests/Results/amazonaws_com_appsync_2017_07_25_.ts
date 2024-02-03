@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociationStatus { PROCESSING = 0, FAILED = 1, SUCCESS = 2 }
+	export enum AssociationStatus { PROCESSING = 'PROCESSING', FAILED = 'FAILED', SUCCESS = 'SUCCESS' }
 
 	export interface AccessDeniedException {
 	}
@@ -155,9 +155,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MergeType { MANUAL_MERGE = 0, AUTO_MERGE = 1 }
+	export enum MergeType { MANUAL_MERGE = 'MANUAL_MERGE', AUTO_MERGE = 'AUTO_MERGE' }
 
-	export enum SourceApiAssociationStatus { MERGE_SCHEDULED = 0, MERGE_FAILED = 1, MERGE_SUCCESS = 2, MERGE_IN_PROGRESS = 3, AUTO_MERGE_SCHEDULE_FAILED = 4, DELETION_SCHEDULED = 5, DELETION_IN_PROGRESS = 6, DELETION_FAILED = 7 }
+	export enum SourceApiAssociationStatus { MERGE_SCHEDULED = 'MERGE_SCHEDULED', MERGE_FAILED = 'MERGE_FAILED', MERGE_SUCCESS = 'MERGE_SUCCESS', MERGE_IN_PROGRESS = 'MERGE_IN_PROGRESS', AUTO_MERGE_SCHEDULE_FAILED = 'AUTO_MERGE_SCHEDULE_FAILED', DELETION_SCHEDULED = 'DELETION_SCHEDULED', DELETION_IN_PROGRESS = 'DELETION_IN_PROGRESS', DELETION_FAILED = 'DELETION_FAILED' }
 
 	export interface UnauthorizedException {
 	}
@@ -247,11 +247,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiCachingBehavior { FULL_REQUEST_CACHING = 0, PER_RESOLVER_CACHING = 1 }
+	export enum ApiCachingBehavior { FULL_REQUEST_CACHING = 'FULL_REQUEST_CACHING', PER_RESOLVER_CACHING = 'PER_RESOLVER_CACHING' }
 
-	export enum ApiCacheType { T2_SMALL = 0, T2_MEDIUM = 1, R4_LARGE = 2, R4_XLARGE = 3, R4_2XLARGE = 4, R4_4XLARGE = 5, R4_8XLARGE = 6, SMALL = 7, MEDIUM = 8, LARGE = 9, XLARGE = 10, LARGE_2X = 11, LARGE_4X = 12, LARGE_8X = 13, LARGE_12X = 14 }
+	export enum ApiCacheType { T2_SMALL = 'T2_SMALL', T2_MEDIUM = 'T2_MEDIUM', R4_LARGE = 'R4_LARGE', R4_XLARGE = 'R4_XLARGE', R4_2XLARGE = 'R4_2XLARGE', R4_4XLARGE = 'R4_4XLARGE', R4_8XLARGE = 'R4_8XLARGE', SMALL = 'SMALL', MEDIUM = 'MEDIUM', LARGE = 'LARGE', XLARGE = 'XLARGE', LARGE_2X = 'LARGE_2X', LARGE_4X = 'LARGE_4X', LARGE_8X = 'LARGE_8X', LARGE_12X = 'LARGE_12X' }
 
-	export enum ApiCacheStatus { AVAILABLE = 0, CREATING = 1, DELETING = 2, MODIFYING = 3, FAILED = 4 }
+	export enum ApiCacheStatus { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', DELETING = 'DELETING', MODIFYING = 'MODIFYING', FAILED = 'FAILED' }
 
 	export interface CreateApiKeyResponse {
 		apiKey?: ApiKey;
@@ -357,7 +357,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceType { AWS_LAMBDA = 0, AMAZON_DYNAMODB = 1, AMAZON_ELASTICSEARCH = 2, NONE = 3, HTTP = 4, RELATIONAL_DATABASE = 5, AMAZON_OPENSEARCH_SERVICE = 6, AMAZON_EVENTBRIDGE = 7 }
+	export enum DataSourceType { AWS_LAMBDA = 'AWS_LAMBDA', AMAZON_DYNAMODB = 'AMAZON_DYNAMODB', AMAZON_ELASTICSEARCH = 'AMAZON_ELASTICSEARCH', NONE = 'NONE', HTTP = 'HTTP', RELATIONAL_DATABASE = 'RELATIONAL_DATABASE', AMAZON_OPENSEARCH_SERVICE = 'AMAZON_OPENSEARCH_SERVICE', AMAZON_EVENTBRIDGE = 'AMAZON_EVENTBRIDGE' }
 
 
 	/** Describes an Amazon DynamoDB data source configuration. */
@@ -534,7 +534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationType { AWS_IAM = 0 }
+	export enum AuthorizationType { AWS_IAM = 'AWS_IAM' }
 
 
 	/** The Identity and Access Management (IAM) configuration. */
@@ -574,7 +574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationalDatabaseSourceType { RDS_HTTP_ENDPOINT = 0 }
+	export enum RelationalDatabaseSourceType { RDS_HTTP_ENDPOINT = 'RDS_HTTP_ENDPOINT' }
 
 
 	/** The Amazon Relational Database Service (Amazon RDS) HTTP endpoint configuration. */
@@ -748,9 +748,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConflictHandlerType { OPTIMISTIC_CONCURRENCY = 0, LAMBDA = 1, AUTOMERGE = 2, NONE = 3 }
+	export enum ConflictHandlerType { OPTIMISTIC_CONCURRENCY = 'OPTIMISTIC_CONCURRENCY', LAMBDA = 'LAMBDA', AUTOMERGE = 'AUTOMERGE', NONE = 'NONE' }
 
-	export enum ConflictDetectionType { VERSION = 0, NONE = 1 }
+	export enum ConflictDetectionType { VERSION = 'VERSION', NONE = 'NONE' }
 
 
 	/** The <code>LambdaConflictHandlerConfig</code> object when configuring <code>LAMBDA</code> as the Conflict Handler. */
@@ -797,7 +797,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeName { APPSYNC_JS = 0 }
+	export enum RuntimeName { APPSYNC_JS = 'APPSYNC_JS' }
 
 	export interface CreateGraphqlApiResponse {
 		graphqlApi?: GraphqlApi;
@@ -865,7 +865,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationType { API_KEY = 0, AWS_IAM = 1, AMAZON_COGNITO_USER_POOLS = 2, OPENID_CONNECT = 3, AWS_LAMBDA = 4 }
+	export enum AuthenticationType { API_KEY = 'API_KEY', AWS_IAM = 'AWS_IAM', AMAZON_COGNITO_USER_POOLS = 'AMAZON_COGNITO_USER_POOLS', OPENID_CONNECT = 'OPENID_CONNECT', AWS_LAMBDA = 'AWS_LAMBDA' }
 
 
 	/** The Amazon CloudWatch Logs configuration. */
@@ -898,7 +898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldLogLevel { NONE = 0, ERROR = 1, ALL = 2 }
+	export enum FieldLogLevel { NONE = 'NONE', ERROR = 'ERROR', ALL = 'ALL' }
 
 
 	/** Describes an Amazon Cognito user pool configuration. */
@@ -938,7 +938,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DefaultAction { ALLOW = 0, DENY = 1 }
+	export enum DefaultAction { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Describes an OpenID Connect (OIDC) configuration. */
@@ -1072,9 +1072,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GraphQLApiVisibility { GLOBAL = 0, PRIVATE = 1 }
+	export enum GraphQLApiVisibility { GLOBAL = 'GLOBAL', PRIVATE = 'PRIVATE' }
 
-	export enum GraphQLApiType { GRAPHQL = 0, MERGED = 1 }
+	export enum GraphQLApiType { GRAPHQL = 'GRAPHQL', MERGED = 'MERGED' }
 
 	export interface ApiLimitExceededException {
 	}
@@ -1144,7 +1144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResolverKind { UNIT = 0, PIPELINE = 1 }
+	export enum ResolverKind { UNIT = 'UNIT', PIPELINE = 'PIPELINE' }
 
 
 	/** The pipeline configuration for a resolver of kind <code>PIPELINE</code>. */
@@ -1223,7 +1223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeDefinitionFormat { SDL = 0, JSON = 1 }
+	export enum TypeDefinitionFormat { SDL = 'SDL', JSON = 'JSON' }
 
 
 	/** Represents the output of a <code>DeleteApiCache</code> operation. */
@@ -1588,7 +1588,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaStatus { PROCESSING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, SUCCESS = 4, NOT_APPLICABLE = 5 }
+	export enum SchemaStatus { PROCESSING = 'PROCESSING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED', SUCCESS = 'SUCCESS', NOT_APPLICABLE = 'NOT_APPLICABLE' }
 
 	export interface GetSourceApiAssociationResponse {
 		sourceApiAssociation?: SourceApiAssociation;
@@ -2531,7 +2531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputType { SDL = 0, JSON = 1 }
+	export enum OutputType { SDL = 'SDL', JSON = 'JSON' }
 
 	export interface GetIntrospectionSchemaRequest {
 	}
@@ -2623,7 +2623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Ownership { CURRENT_ACCOUNT = 0, OTHER_ACCOUNTS = 1 }
+	export enum Ownership { CURRENT_ACCOUNT = 'CURRENT_ACCOUNT', OTHER_ACCOUNTS = 'OTHER_ACCOUNTS' }
 
 	export interface ListGraphqlApisRequest {
 	}

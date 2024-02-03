@@ -76,11 +76,11 @@ export namespace MyNS {
 
 	}
 
-	export enum HandshakePartyType { ACCOUNT = 0, ORGANIZATION = 1, EMAIL = 2 }
+	export enum HandshakePartyType { ACCOUNT = 'ACCOUNT', ORGANIZATION = 'ORGANIZATION', EMAIL = 'EMAIL' }
 
-	export enum HandshakeState { REQUESTED = 0, OPEN = 1, CANCELED = 2, ACCEPTED = 3, DECLINED = 4, EXPIRED = 5 }
+	export enum HandshakeState { REQUESTED = 'REQUESTED', OPEN = 'OPEN', CANCELED = 'CANCELED', ACCEPTED = 'ACCEPTED', DECLINED = 'DECLINED', EXPIRED = 'EXPIRED' }
 
-	export enum ActionType { INVITE = 0, ENABLE_ALL_FEATURES = 1, APPROVE_ALL_FEATURES = 2, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = 3 }
+	export enum ActionType { INVITE = 'INVITE', ENABLE_ALL_FEATURES = 'ENABLE_ALL_FEATURES', APPROVE_ALL_FEATURES = 'APPROVE_ALL_FEATURES', ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = 'ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE' }
 
 
 	/** Contains additional data that is needed to process a handshake. */
@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HandshakeResourceType { ACCOUNT = 0, ORGANIZATION = 1, ORGANIZATION_FEATURE_SET = 2, EMAIL = 3, MASTER_EMAIL = 4, MASTER_NAME = 5, NOTES = 6, PARENT_HANDSHAKE = 7 }
+	export enum HandshakeResourceType { ACCOUNT = 'ACCOUNT', ORGANIZATION = 'ORGANIZATION', ORGANIZATION_FEATURE_SET = 'ORGANIZATION_FEATURE_SET', EMAIL = 'EMAIL', MASTER_EMAIL = 'MASTER_EMAIL', MASTER_NAME = 'MASTER_NAME', NOTES = 'NOTES', PARENT_HANDSHAKE = 'PARENT_HANDSHAKE' }
 
 	export interface AcceptHandshakeRequest {
 
@@ -450,9 +450,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateAccountState { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum CreateAccountState { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
-	export enum CreateAccountFailureReason { ACCOUNT_LIMIT_EXCEEDED = 0, EMAIL_ALREADY_EXISTS = 1, INVALID_ADDRESS = 2, INVALID_EMAIL = 3, CONCURRENT_ACCOUNT_MODIFICATION = 4, INTERNAL_FAILURE = 5, GOVCLOUD_ACCOUNT_ALREADY_EXISTS = 6, MISSING_BUSINESS_VALIDATION = 7, FAILED_BUSINESS_VALIDATION = 8, PENDING_BUSINESS_VALIDATION = 9, INVALID_IDENTITY_FOR_BUSINESS_VALIDATION = 10, UNKNOWN_BUSINESS_VALIDATION = 11, MISSING_PAYMENT_INSTRUMENT = 12, INVALID_PAYMENT_INSTRUMENT = 13, UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED = 14 }
+	export enum CreateAccountFailureReason { ACCOUNT_LIMIT_EXCEEDED = 'ACCOUNT_LIMIT_EXCEEDED', EMAIL_ALREADY_EXISTS = 'EMAIL_ALREADY_EXISTS', INVALID_ADDRESS = 'INVALID_ADDRESS', INVALID_EMAIL = 'INVALID_EMAIL', CONCURRENT_ACCOUNT_MODIFICATION = 'CONCURRENT_ACCOUNT_MODIFICATION', INTERNAL_FAILURE = 'INTERNAL_FAILURE', GOVCLOUD_ACCOUNT_ALREADY_EXISTS = 'GOVCLOUD_ACCOUNT_ALREADY_EXISTS', MISSING_BUSINESS_VALIDATION = 'MISSING_BUSINESS_VALIDATION', FAILED_BUSINESS_VALIDATION = 'FAILED_BUSINESS_VALIDATION', PENDING_BUSINESS_VALIDATION = 'PENDING_BUSINESS_VALIDATION', INVALID_IDENTITY_FOR_BUSINESS_VALIDATION = 'INVALID_IDENTITY_FOR_BUSINESS_VALIDATION', UNKNOWN_BUSINESS_VALIDATION = 'UNKNOWN_BUSINESS_VALIDATION', MISSING_PAYMENT_INSTRUMENT = 'MISSING_PAYMENT_INSTRUMENT', INVALID_PAYMENT_INSTRUMENT = 'INVALID_PAYMENT_INSTRUMENT', UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED = 'UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED' }
 
 	export interface CreateAccountRequest {
 
@@ -485,7 +485,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IAMUserAccessToBilling { ALLOW = 0, DENY = 1 }
+	export enum IAMUserAccessToBilling { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** <p>A custom key-value pair associated with a resource within your organization.</p> <p>You can attach tags to any of the following organization resources.</p> <ul> <li> <p>Amazon Web Services account</p> </li> <li> <p>Organizational unit (OU)</p> </li> <li> <p>Organization root</p> </li> <li> <p>Policy</p> </li> </ul> */
@@ -613,7 +613,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationFeatureSet { ALL = 0, CONSOLIDATED_BILLING = 1 }
+	export enum OrganizationFeatureSet { ALL = 'ALL', CONSOLIDATED_BILLING = 'CONSOLIDATED_BILLING' }
 
 
 	/** Contains information about a policy type and its status in the associated root. */
@@ -635,9 +635,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyType { SERVICE_CONTROL_POLICY = 0, TAG_POLICY = 1, BACKUP_POLICY = 2, AISERVICES_OPT_OUT_POLICY = 3 }
+	export enum PolicyType { SERVICE_CONTROL_POLICY = 'SERVICE_CONTROL_POLICY', TAG_POLICY = 'TAG_POLICY', BACKUP_POLICY = 'BACKUP_POLICY', AISERVICES_OPT_OUT_POLICY = 'AISERVICES_OPT_OUT_POLICY' }
 
-	export enum PolicyTypeStatus { ENABLED = 0, PENDING_ENABLE = 1, PENDING_DISABLE = 2 }
+	export enum PolicyTypeStatus { ENABLED = 'ENABLED', PENDING_ENABLE = 'PENDING_ENABLE', PENDING_DISABLE = 'PENDING_DISABLE' }
 
 	export interface CreateOrganizationRequest {
 		FeatureSet?: OrganizationFeatureSet;
@@ -1063,9 +1063,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountStatus { ACTIVE = 0, SUSPENDED = 1, PENDING_CLOSURE = 2 }
+	export enum AccountStatus { ACTIVE = 'ACTIVE', SUSPENDED = 'SUSPENDED', PENDING_CLOSURE = 'PENDING_CLOSURE' }
 
-	export enum AccountJoinedMethod { INVITED = 0, CREATED = 1 }
+	export enum AccountJoinedMethod { INVITED = 'INVITED', CREATED = 'CREATED' }
 
 	export interface DescribeAccountRequest {
 
@@ -1159,7 +1159,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EffectivePolicyType { TAG_POLICY = 0, BACKUP_POLICY = 1, AISERVICES_OPT_OUT_POLICY = 2 }
+	export enum EffectivePolicyType { TAG_POLICY = 'TAG_POLICY', BACKUP_POLICY = 'BACKUP_POLICY', AISERVICES_OPT_OUT_POLICY = 'AISERVICES_OPT_OUT_POLICY' }
 
 	export interface DescribeEffectivePolicyRequest {
 
@@ -1747,7 +1747,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChildType { ACCOUNT = 0, ORGANIZATIONAL_UNIT = 1 }
+	export enum ChildType { ACCOUNT = 'ACCOUNT', ORGANIZATIONAL_UNIT = 'ORGANIZATIONAL_UNIT' }
 
 	export interface ListChildrenRequest {
 
@@ -2091,7 +2091,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParentType { ROOT = 0, ORGANIZATIONAL_UNIT = 1 }
+	export enum ParentType { ROOT = 'ROOT', ORGANIZATIONAL_UNIT = 'ORGANIZATIONAL_UNIT' }
 
 	export interface ListParentsRequest {
 
@@ -2311,7 +2311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetType { ACCOUNT = 0, ORGANIZATIONAL_UNIT = 1, ROOT = 2 }
+	export enum TargetType { ACCOUNT = 'ACCOUNT', ORGANIZATIONAL_UNIT = 'ORGANIZATIONAL_UNIT', ROOT = 'ROOT' }
 
 	export interface ListTargetsForPolicyRequest {
 
@@ -3117,115 +3117,115 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.AcceptHandshake' = 0 }
+	export enum AcceptHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.AcceptHandshake' = 'AWSOrganizationsV20161128.AcceptHandshake' }
 
-	export enum AttachPolicyX_Amz_Target { 'AWSOrganizationsV20161128.AttachPolicy' = 0 }
+	export enum AttachPolicyX_Amz_Target { 'AWSOrganizationsV20161128.AttachPolicy' = 'AWSOrganizationsV20161128.AttachPolicy' }
 
-	export enum CancelHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.CancelHandshake' = 0 }
+	export enum CancelHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.CancelHandshake' = 'AWSOrganizationsV20161128.CancelHandshake' }
 
-	export enum CloseAccountX_Amz_Target { 'AWSOrganizationsV20161128.CloseAccount' = 0 }
+	export enum CloseAccountX_Amz_Target { 'AWSOrganizationsV20161128.CloseAccount' = 'AWSOrganizationsV20161128.CloseAccount' }
 
-	export enum CreateAccountX_Amz_Target { 'AWSOrganizationsV20161128.CreateAccount' = 0 }
+	export enum CreateAccountX_Amz_Target { 'AWSOrganizationsV20161128.CreateAccount' = 'AWSOrganizationsV20161128.CreateAccount' }
 
-	export enum CreateGovCloudAccountX_Amz_Target { 'AWSOrganizationsV20161128.CreateGovCloudAccount' = 0 }
+	export enum CreateGovCloudAccountX_Amz_Target { 'AWSOrganizationsV20161128.CreateGovCloudAccount' = 'AWSOrganizationsV20161128.CreateGovCloudAccount' }
 
-	export enum CreateOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.CreateOrganization' = 0 }
+	export enum CreateOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.CreateOrganization' = 'AWSOrganizationsV20161128.CreateOrganization' }
 
-	export enum CreateOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.CreateOrganizationalUnit' = 0 }
+	export enum CreateOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.CreateOrganizationalUnit' = 'AWSOrganizationsV20161128.CreateOrganizationalUnit' }
 
-	export enum CreatePolicyX_Amz_Target { 'AWSOrganizationsV20161128.CreatePolicy' = 0 }
+	export enum CreatePolicyX_Amz_Target { 'AWSOrganizationsV20161128.CreatePolicy' = 'AWSOrganizationsV20161128.CreatePolicy' }
 
-	export enum DeclineHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.DeclineHandshake' = 0 }
+	export enum DeclineHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.DeclineHandshake' = 'AWSOrganizationsV20161128.DeclineHandshake' }
 
-	export enum DeleteOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.DeleteOrganization' = 0 }
+	export enum DeleteOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.DeleteOrganization' = 'AWSOrganizationsV20161128.DeleteOrganization' }
 
-	export enum DeleteOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.DeleteOrganizationalUnit' = 0 }
+	export enum DeleteOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.DeleteOrganizationalUnit' = 'AWSOrganizationsV20161128.DeleteOrganizationalUnit' }
 
-	export enum DeletePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DeletePolicy' = 0 }
+	export enum DeletePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DeletePolicy' = 'AWSOrganizationsV20161128.DeletePolicy' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DeleteResourcePolicy' = 'AWSOrganizationsV20161128.DeleteResourcePolicy' }
 
-	export enum DeregisterDelegatedAdministratorX_Amz_Target { 'AWSOrganizationsV20161128.DeregisterDelegatedAdministrator' = 0 }
+	export enum DeregisterDelegatedAdministratorX_Amz_Target { 'AWSOrganizationsV20161128.DeregisterDelegatedAdministrator' = 'AWSOrganizationsV20161128.DeregisterDelegatedAdministrator' }
 
-	export enum DescribeAccountX_Amz_Target { 'AWSOrganizationsV20161128.DescribeAccount' = 0 }
+	export enum DescribeAccountX_Amz_Target { 'AWSOrganizationsV20161128.DescribeAccount' = 'AWSOrganizationsV20161128.DescribeAccount' }
 
-	export enum DescribeCreateAccountStatusX_Amz_Target { 'AWSOrganizationsV20161128.DescribeCreateAccountStatus' = 0 }
+	export enum DescribeCreateAccountStatusX_Amz_Target { 'AWSOrganizationsV20161128.DescribeCreateAccountStatus' = 'AWSOrganizationsV20161128.DescribeCreateAccountStatus' }
 
-	export enum DescribeEffectivePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribeEffectivePolicy' = 0 }
+	export enum DescribeEffectivePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribeEffectivePolicy' = 'AWSOrganizationsV20161128.DescribeEffectivePolicy' }
 
-	export enum DescribeHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.DescribeHandshake' = 0 }
+	export enum DescribeHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.DescribeHandshake' = 'AWSOrganizationsV20161128.DescribeHandshake' }
 
-	export enum DescribeOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.DescribeOrganization' = 0 }
+	export enum DescribeOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.DescribeOrganization' = 'AWSOrganizationsV20161128.DescribeOrganization' }
 
-	export enum DescribeOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.DescribeOrganizationalUnit' = 0 }
+	export enum DescribeOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.DescribeOrganizationalUnit' = 'AWSOrganizationsV20161128.DescribeOrganizationalUnit' }
 
-	export enum DescribePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribePolicy' = 0 }
+	export enum DescribePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribePolicy' = 'AWSOrganizationsV20161128.DescribePolicy' }
 
-	export enum DescribeResourcePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribeResourcePolicy' = 0 }
+	export enum DescribeResourcePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribeResourcePolicy' = 'AWSOrganizationsV20161128.DescribeResourcePolicy' }
 
-	export enum DetachPolicyX_Amz_Target { 'AWSOrganizationsV20161128.DetachPolicy' = 0 }
+	export enum DetachPolicyX_Amz_Target { 'AWSOrganizationsV20161128.DetachPolicy' = 'AWSOrganizationsV20161128.DetachPolicy' }
 
-	export enum DisableAWSServiceAccessX_Amz_Target { 'AWSOrganizationsV20161128.DisableAWSServiceAccess' = 0 }
+	export enum DisableAWSServiceAccessX_Amz_Target { 'AWSOrganizationsV20161128.DisableAWSServiceAccess' = 'AWSOrganizationsV20161128.DisableAWSServiceAccess' }
 
-	export enum DisablePolicyTypeX_Amz_Target { 'AWSOrganizationsV20161128.DisablePolicyType' = 0 }
+	export enum DisablePolicyTypeX_Amz_Target { 'AWSOrganizationsV20161128.DisablePolicyType' = 'AWSOrganizationsV20161128.DisablePolicyType' }
 
-	export enum EnableAWSServiceAccessX_Amz_Target { 'AWSOrganizationsV20161128.EnableAWSServiceAccess' = 0 }
+	export enum EnableAWSServiceAccessX_Amz_Target { 'AWSOrganizationsV20161128.EnableAWSServiceAccess' = 'AWSOrganizationsV20161128.EnableAWSServiceAccess' }
 
-	export enum EnableAllFeaturesX_Amz_Target { 'AWSOrganizationsV20161128.EnableAllFeatures' = 0 }
+	export enum EnableAllFeaturesX_Amz_Target { 'AWSOrganizationsV20161128.EnableAllFeatures' = 'AWSOrganizationsV20161128.EnableAllFeatures' }
 
-	export enum EnablePolicyTypeX_Amz_Target { 'AWSOrganizationsV20161128.EnablePolicyType' = 0 }
+	export enum EnablePolicyTypeX_Amz_Target { 'AWSOrganizationsV20161128.EnablePolicyType' = 'AWSOrganizationsV20161128.EnablePolicyType' }
 
-	export enum InviteAccountToOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.InviteAccountToOrganization' = 0 }
+	export enum InviteAccountToOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.InviteAccountToOrganization' = 'AWSOrganizationsV20161128.InviteAccountToOrganization' }
 
-	export enum LeaveOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.LeaveOrganization' = 0 }
+	export enum LeaveOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.LeaveOrganization' = 'AWSOrganizationsV20161128.LeaveOrganization' }
 
-	export enum ListAWSServiceAccessForOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.ListAWSServiceAccessForOrganization' = 0 }
+	export enum ListAWSServiceAccessForOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.ListAWSServiceAccessForOrganization' = 'AWSOrganizationsV20161128.ListAWSServiceAccessForOrganization' }
 
-	export enum ListAccountsX_Amz_Target { 'AWSOrganizationsV20161128.ListAccounts' = 0 }
+	export enum ListAccountsX_Amz_Target { 'AWSOrganizationsV20161128.ListAccounts' = 'AWSOrganizationsV20161128.ListAccounts' }
 
-	export enum ListAccountsForParentX_Amz_Target { 'AWSOrganizationsV20161128.ListAccountsForParent' = 0 }
+	export enum ListAccountsForParentX_Amz_Target { 'AWSOrganizationsV20161128.ListAccountsForParent' = 'AWSOrganizationsV20161128.ListAccountsForParent' }
 
-	export enum ListChildrenX_Amz_Target { 'AWSOrganizationsV20161128.ListChildren' = 0 }
+	export enum ListChildrenX_Amz_Target { 'AWSOrganizationsV20161128.ListChildren' = 'AWSOrganizationsV20161128.ListChildren' }
 
-	export enum ListCreateAccountStatusX_Amz_Target { 'AWSOrganizationsV20161128.ListCreateAccountStatus' = 0 }
+	export enum ListCreateAccountStatusX_Amz_Target { 'AWSOrganizationsV20161128.ListCreateAccountStatus' = 'AWSOrganizationsV20161128.ListCreateAccountStatus' }
 
-	export enum ListDelegatedAdministratorsX_Amz_Target { 'AWSOrganizationsV20161128.ListDelegatedAdministrators' = 0 }
+	export enum ListDelegatedAdministratorsX_Amz_Target { 'AWSOrganizationsV20161128.ListDelegatedAdministrators' = 'AWSOrganizationsV20161128.ListDelegatedAdministrators' }
 
-	export enum ListDelegatedServicesForAccountX_Amz_Target { 'AWSOrganizationsV20161128.ListDelegatedServicesForAccount' = 0 }
+	export enum ListDelegatedServicesForAccountX_Amz_Target { 'AWSOrganizationsV20161128.ListDelegatedServicesForAccount' = 'AWSOrganizationsV20161128.ListDelegatedServicesForAccount' }
 
-	export enum ListHandshakesForAccountX_Amz_Target { 'AWSOrganizationsV20161128.ListHandshakesForAccount' = 0 }
+	export enum ListHandshakesForAccountX_Amz_Target { 'AWSOrganizationsV20161128.ListHandshakesForAccount' = 'AWSOrganizationsV20161128.ListHandshakesForAccount' }
 
-	export enum ListHandshakesForOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.ListHandshakesForOrganization' = 0 }
+	export enum ListHandshakesForOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.ListHandshakesForOrganization' = 'AWSOrganizationsV20161128.ListHandshakesForOrganization' }
 
-	export enum ListOrganizationalUnitsForParentX_Amz_Target { 'AWSOrganizationsV20161128.ListOrganizationalUnitsForParent' = 0 }
+	export enum ListOrganizationalUnitsForParentX_Amz_Target { 'AWSOrganizationsV20161128.ListOrganizationalUnitsForParent' = 'AWSOrganizationsV20161128.ListOrganizationalUnitsForParent' }
 
-	export enum ListParentsX_Amz_Target { 'AWSOrganizationsV20161128.ListParents' = 0 }
+	export enum ListParentsX_Amz_Target { 'AWSOrganizationsV20161128.ListParents' = 'AWSOrganizationsV20161128.ListParents' }
 
-	export enum ListPoliciesX_Amz_Target { 'AWSOrganizationsV20161128.ListPolicies' = 0 }
+	export enum ListPoliciesX_Amz_Target { 'AWSOrganizationsV20161128.ListPolicies' = 'AWSOrganizationsV20161128.ListPolicies' }
 
-	export enum ListPoliciesForTargetX_Amz_Target { 'AWSOrganizationsV20161128.ListPoliciesForTarget' = 0 }
+	export enum ListPoliciesForTargetX_Amz_Target { 'AWSOrganizationsV20161128.ListPoliciesForTarget' = 'AWSOrganizationsV20161128.ListPoliciesForTarget' }
 
-	export enum ListRootsX_Amz_Target { 'AWSOrganizationsV20161128.ListRoots' = 0 }
+	export enum ListRootsX_Amz_Target { 'AWSOrganizationsV20161128.ListRoots' = 'AWSOrganizationsV20161128.ListRoots' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSOrganizationsV20161128.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSOrganizationsV20161128.ListTagsForResource' = 'AWSOrganizationsV20161128.ListTagsForResource' }
 
-	export enum ListTargetsForPolicyX_Amz_Target { 'AWSOrganizationsV20161128.ListTargetsForPolicy' = 0 }
+	export enum ListTargetsForPolicyX_Amz_Target { 'AWSOrganizationsV20161128.ListTargetsForPolicy' = 'AWSOrganizationsV20161128.ListTargetsForPolicy' }
 
-	export enum MoveAccountX_Amz_Target { 'AWSOrganizationsV20161128.MoveAccount' = 0 }
+	export enum MoveAccountX_Amz_Target { 'AWSOrganizationsV20161128.MoveAccount' = 'AWSOrganizationsV20161128.MoveAccount' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'AWSOrganizationsV20161128.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'AWSOrganizationsV20161128.PutResourcePolicy' = 'AWSOrganizationsV20161128.PutResourcePolicy' }
 
-	export enum RegisterDelegatedAdministratorX_Amz_Target { 'AWSOrganizationsV20161128.RegisterDelegatedAdministrator' = 0 }
+	export enum RegisterDelegatedAdministratorX_Amz_Target { 'AWSOrganizationsV20161128.RegisterDelegatedAdministrator' = 'AWSOrganizationsV20161128.RegisterDelegatedAdministrator' }
 
-	export enum RemoveAccountFromOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.RemoveAccountFromOrganization' = 0 }
+	export enum RemoveAccountFromOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.RemoveAccountFromOrganization' = 'AWSOrganizationsV20161128.RemoveAccountFromOrganization' }
 
-	export enum TagResourceX_Amz_Target { 'AWSOrganizationsV20161128.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSOrganizationsV20161128.TagResource' = 'AWSOrganizationsV20161128.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSOrganizationsV20161128.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSOrganizationsV20161128.UntagResource' = 'AWSOrganizationsV20161128.UntagResource' }
 
-	export enum UpdateOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.UpdateOrganizationalUnit' = 0 }
+	export enum UpdateOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.UpdateOrganizationalUnit' = 'AWSOrganizationsV20161128.UpdateOrganizationalUnit' }
 
-	export enum UpdatePolicyX_Amz_Target { 'AWSOrganizationsV20161128.UpdatePolicy' = 0 }
+	export enum UpdatePolicyX_Amz_Target { 'AWSOrganizationsV20161128.UpdatePolicy' = 'AWSOrganizationsV20161128.UpdatePolicy' }
 
 }
 

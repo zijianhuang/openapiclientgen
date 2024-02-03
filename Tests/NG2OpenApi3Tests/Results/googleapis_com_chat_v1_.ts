@@ -113,7 +113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionStatusStatusCode { OK = 0, CANCELLED = 1, UNKNOWN = 2, INVALID_ARGUMENT = 3, DEADLINE_EXCEEDED = 4, NOT_FOUND = 5, ALREADY_EXISTS = 6, PERMISSION_DENIED = 7, UNAUTHENTICATED = 8, RESOURCE_EXHAUSTED = 9, FAILED_PRECONDITION = 10, ABORTED = 11, OUT_OF_RANGE = 12, UNIMPLEMENTED = 13, INTERNAL = 14, UNAVAILABLE = 15, DATA_LOSS = 16 }
+	export enum ActionStatusStatusCode { OK = 'OK', CANCELLED = 'CANCELLED', UNKNOWN = 'UNKNOWN', INVALID_ARGUMENT = 'INVALID_ARGUMENT', DEADLINE_EXCEEDED = 'DEADLINE_EXCEEDED', NOT_FOUND = 'NOT_FOUND', ALREADY_EXISTS = 'ALREADY_EXISTS', PERMISSION_DENIED = 'PERMISSION_DENIED', UNAUTHENTICATED = 'UNAUTHENTICATED', RESOURCE_EXHAUSTED = 'RESOURCE_EXHAUSTED', FAILED_PRECONDITION = 'FAILED_PRECONDITION', ABORTED = 'ABORTED', OUT_OF_RANGE = 'OUT_OF_RANGE', UNIMPLEMENTED = 'UNIMPLEMENTED', INTERNAL = 'INTERNAL', UNAVAILABLE = 'UNAVAILABLE', DATA_LOSS = 'DATA_LOSS' }
 
 
 	/** Wrapper around the card body of the dialog. */
@@ -277,9 +277,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1ActionInteraction { INTERACTION_UNSPECIFIED = 0, OPEN_DIALOG = 1 }
+	export enum GoogleAppsCardV1ActionInteraction { INTERACTION_UNSPECIFIED = 'INTERACTION_UNSPECIFIED', OPEN_DIALOG = 'OPEN_DIALOG' }
 
-	export enum GoogleAppsCardV1ActionLoadIndicator { SPINNER = 0, NONE = 1 }
+	export enum GoogleAppsCardV1ActionLoadIndicator { SPINNER = 'SPINNER', NONE = 'NONE' }
 
 
 	/** List of string parameters to supply when the action method is invoked. For example, consider three snooze buttons: snooze now, snooze one day, or snooze next week. You might use `action method = snooze()`, passing the snooze type and snooze time in the list of string parameters. To learn more, see [`CommonEventObject`](https://developers.google.com/chat/api/reference/rest/v1/Event#commoneventobject). */
@@ -344,11 +344,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1OpenLinkOnClose { NOTHING = 0, RELOAD = 1 }
+	export enum GoogleAppsCardV1OpenLinkOnClose { NOTHING = 'NOTHING', RELOAD = 'RELOAD' }
 
-	export enum GoogleAppsCardV1OpenLinkOpenAs { FULL_SIZE = 0, OVERLAY = 1 }
+	export enum GoogleAppsCardV1OpenLinkOpenAs { FULL_SIZE = 'FULL_SIZE', OVERLAY = 'OVERLAY' }
 
-	export enum GoogleAppsCardV1CardDisplayStyle { DISPLAY_STYLE_UNSPECIFIED = 0, PEEK = 1, REPLACE = 2 }
+	export enum GoogleAppsCardV1CardDisplayStyle { DISPLAY_STYLE_UNSPECIFIED = 'DISPLAY_STYLE_UNSPECIFIED', PEEK = 'PEEK', REPLACE = 'REPLACE' }
 
 
 	/** A persistent (sticky) footer that that appears at the bottom of the card. For an example in Google Chat apps, see [Card footer](https://developers.google.com/chat/ui/widgets/card-fixed-footer). Setting `fixedFooter` without specifying a `primaryButton` or a `secondaryButton` causes an error. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend): For Chat apps, you can use fixed footers in [dialogs](https://developers.google.com/chat/how-tos/dialogs), but not [card messages](https://developers.google.com/chat/api/guides/v1/messages/create#create). */
@@ -498,7 +498,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1IconImageType { SQUARE = 0, CIRCLE = 1 }
+	export enum GoogleAppsCardV1IconImageType { SQUARE = 'SQUARE', CIRCLE = 'CIRCLE' }
 
 
 	/** Represents a card header. For an example in Google Chat apps, see [Card header](https://developers.google.com/chat/ui/widgets/card-header). */
@@ -549,7 +549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1CardSectionDividerStyle { DIVIDER_STYLE_UNSPECIFIED = 0, SOLID_DIVIDER = 1, NO_DIVIDER = 2 }
+	export enum GoogleAppsCardV1CardSectionDividerStyle { DIVIDER_STYLE_UNSPECIFIED = 'DIVIDER_STYLE_UNSPECIFIED', SOLID_DIVIDER = 'SOLID_DIVIDER', NO_DIVIDER = 'NO_DIVIDER' }
 
 
 	/** A section contains a collection of widgets that are rendered vertically in the order that they're specified. */
@@ -712,11 +712,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1ColumnHorizontalAlignment { HORIZONTAL_ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3 }
+	export enum GoogleAppsCardV1ColumnHorizontalAlignment { HORIZONTAL_ALIGNMENT_UNSPECIFIED = 'HORIZONTAL_ALIGNMENT_UNSPECIFIED', START = 'START', CENTER = 'CENTER', END = 'END' }
 
-	export enum GoogleAppsCardV1ColumnHorizontalSizeStyle { HORIZONTAL_SIZE_STYLE_UNSPECIFIED = 0, FILL_AVAILABLE_SPACE = 1, FILL_MINIMUM_SPACE = 2 }
+	export enum GoogleAppsCardV1ColumnHorizontalSizeStyle { HORIZONTAL_SIZE_STYLE_UNSPECIFIED = 'HORIZONTAL_SIZE_STYLE_UNSPECIFIED', FILL_AVAILABLE_SPACE = 'FILL_AVAILABLE_SPACE', FILL_MINIMUM_SPACE = 'FILL_MINIMUM_SPACE' }
 
-	export enum GoogleAppsCardV1ColumnVerticalAlignment { VERTICAL_ALIGNMENT_UNSPECIFIED = 0, CENTER = 1, TOP = 2, BOTTOM = 3 }
+	export enum GoogleAppsCardV1ColumnVerticalAlignment { VERTICAL_ALIGNMENT_UNSPECIFIED = 'VERTICAL_ALIGNMENT_UNSPECIFIED', CENTER = 'CENTER', TOP = 'TOP', BOTTOM = 'BOTTOM' }
 
 
 	/** The supported widgets that you can include in a column. */
@@ -805,7 +805,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1DateTimePickerType { DATE_AND_TIME = 0, DATE_ONLY = 1, TIME_ONLY = 2 }
+	export enum GoogleAppsCardV1DateTimePickerType { DATE_AND_TIME = 'DATE_AND_TIME', DATE_ONLY = 'DATE_ONLY', TIME_ONLY = 'TIME_ONLY' }
 
 
 	/** A widget that displays text with optional decorations such as a label above or below the text, an icon in front of the text, a selection widget, or a button after the text. For an example in Google Chat apps, see [Decorated text](https://developers.google.com/chat/ui/widgets/decorated-text). */
@@ -912,7 +912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1SwitchControlControlType { SWITCH = 0, CHECKBOX = 1, CHECK_BOX = 2 }
+	export enum GoogleAppsCardV1SwitchControlControlType { SWITCH = 'SWITCH', CHECKBOX = 'CHECKBOX', CHECK_BOX = 'CHECK_BOX' }
 
 
 	/** An image that is specified by a URL and can have an `onClick` action. For an example, see [Image](https://developers.google.com/chat/ui/widgets/image). */
@@ -1079,7 +1079,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1PlatformDataSourceCommonDataSource { UNKNOWN = 0, USER = 1 }
+	export enum GoogleAppsCardV1PlatformDataSourceCommonDataSource { UNKNOWN = 'UNKNOWN', USER = 'USER' }
 
 
 	/** Chat apps only. For a `SelectionInput` widget that uses a multiselect menu, a data source from a Google Workspace application. The data source populates selection items for the multiselect menu. */
@@ -1136,7 +1136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1SelectionInputType { CHECK_BOX = 0, RADIO_BUTTON = 1, SWITCH = 2, DROPDOWN = 3, MULTI_SELECT = 4 }
+	export enum GoogleAppsCardV1SelectionInputType { CHECK_BOX = 'CHECK_BOX', RADIO_BUTTON = 'RADIO_BUTTON', SWITCH = 'SWITCH', DROPDOWN = 'DROPDOWN', MULTI_SELECT = 'MULTI_SELECT' }
 
 
 	/** A field in which users can enter text. Supports suggestions and on-change actions. For an example in Google Chat apps, see [Text input](https://developers.google.com/chat/ui/widgets/text-input). Chat apps receive and can process the value of entered text during form input events. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data). When you need to collect undefined or abstract data from users, use a text input. To collect defined or enumerated data from users, use the SelectionInput widget. */
@@ -1241,7 +1241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1TextInputType { SINGLE_LINE = 0, MULTIPLE_LINE = 1 }
+	export enum GoogleAppsCardV1TextInputType { SINGLE_LINE = 'SINGLE_LINE', MULTIPLE_LINE = 'MULTIPLE_LINE' }
 
 
 	/** A paragraph of text that supports formatting. For an example in Google Chat apps, see [Text paragraph](https://developers.google.com/chat/ui/widgets/text-paragraph). For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting). */
@@ -1346,7 +1346,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1BorderStyleType { BORDER_TYPE_UNSPECIFIED = 0, NO_BORDER = 1, STROKE = 2 }
+	export enum GoogleAppsCardV1BorderStyleType { BORDER_TYPE_UNSPECIFIED = 'BORDER_TYPE_UNSPECIFIED', NO_BORDER = 'NO_BORDER', STROKE = 'STROKE' }
 
 
 	/** Represents an item in a grid layout. Items can contain text, an image, or both text and an image. */
@@ -1455,11 +1455,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAppsCardV1ImageCropStyleType { IMAGE_CROP_TYPE_UNSPECIFIED = 0, SQUARE = 1, CIRCLE = 2, RECTANGLE_CUSTOM = 3, RECTANGLE_4_3 = 4 }
+	export enum GoogleAppsCardV1ImageCropStyleType { IMAGE_CROP_TYPE_UNSPECIFIED = 'IMAGE_CROP_TYPE_UNSPECIFIED', SQUARE = 'SQUARE', CIRCLE = 'CIRCLE', RECTANGLE_CUSTOM = 'RECTANGLE_CUSTOM', RECTANGLE_4_3 = 'RECTANGLE_4_3' }
 
-	export enum GoogleAppsCardV1GridItemLayout { GRID_ITEM_LAYOUT_UNSPECIFIED = 0, TEXT_BELOW = 1, TEXT_ABOVE = 2 }
+	export enum GoogleAppsCardV1GridItemLayout { GRID_ITEM_LAYOUT_UNSPECIFIED = 'GRID_ITEM_LAYOUT_UNSPECIFIED', TEXT_BELOW = 'TEXT_BELOW', TEXT_ABOVE = 'TEXT_ABOVE' }
 
-	export enum ActionResponseType { TYPE_UNSPECIFIED = 0, NEW_MESSAGE = 1, UPDATE_MESSAGE = 2, UPDATE_USER_MESSAGE_CARDS = 3, REQUEST_CONFIG = 4, DIALOG = 5, UPDATE_WIDGET = 6 }
+	export enum ActionResponseType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', NEW_MESSAGE = 'NEW_MESSAGE', UPDATE_MESSAGE = 'UPDATE_MESSAGE', UPDATE_USER_MESSAGE_CARDS = 'UPDATE_USER_MESSAGE_CARDS', REQUEST_CONFIG = 'REQUEST_CONFIG', DIALOG = 'DIALOG', UPDATE_WIDGET = 'UPDATE_WIDGET' }
 
 
 	/** The response of the updated widget. Used to provide autocomplete options for a widget. */
@@ -1637,11 +1637,11 @@ export namespace MyNS {
 
 	}
 
-	export enum UserType { TYPE_UNSPECIFIED = 0, HUMAN = 1, BOT = 2 }
+	export enum UserType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', HUMAN = 'HUMAN', BOT = 'BOT' }
 
-	export enum SlashCommandMetadataType { TYPE_UNSPECIFIED = 0, ADD = 1, INVOKE = 2 }
+	export enum SlashCommandMetadataType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ADD = 'ADD', INVOKE = 'INVOKE' }
 
-	export enum AnnotationType { ANNOTATION_TYPE_UNSPECIFIED = 0, USER_MENTION = 1, SLASH_COMMAND = 2 }
+	export enum AnnotationType { ANNOTATION_TYPE_UNSPECIFIED = 'ANNOTATION_TYPE_UNSPECIFIED', USER_MENTION = 'USER_MENTION', SLASH_COMMAND = 'SLASH_COMMAND' }
 
 
 	/** Annotation metadata for user mentions (@). */
@@ -1667,7 +1667,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserMentionMetadataType { TYPE_UNSPECIFIED = 0, ADD = 1, MENTION = 2 }
+	export enum UserMentionMetadataType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ADD = 'ADD', MENTION = 'MENTION' }
 
 
 	/** A GIF image that's specified by a URL. */
@@ -1795,7 +1795,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachmentSource { SOURCE_UNSPECIFIED = 0, DRIVE_FILE = 1, UPLOADED_CONTENT = 2 }
+	export enum AttachmentSource { SOURCE_UNSPECIFIED = 'SOURCE_UNSPECIFIED', DRIVE_FILE = 'DRIVE_FILE', UPLOADED_CONTENT = 'UPLOADED_CONTENT' }
 
 
 	/** A button. Can be a text button or an image button. */
@@ -1855,7 +1855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageButtonIcon { ICON_UNSPECIFIED = 0, AIRPLANE = 1, BOOKMARK = 2, BUS = 3, CAR = 4, CLOCK = 5, CONFIRMATION_NUMBER_ICON = 6, DOLLAR = 7, DESCRIPTION = 8, EMAIL = 9, EVENT_PERFORMER = 10, EVENT_SEAT = 11, FLIGHT_ARRIVAL = 12, FLIGHT_DEPARTURE = 13, HOTEL = 14, HOTEL_ROOM_TYPE = 15, INVITE = 16, MAP_PIN = 17, MEMBERSHIP = 18, MULTIPLE_PEOPLE = 19, OFFER = 20, PERSON = 21, PHONE = 22, RESTAURANT_ICON = 23, SHOPPING_CART = 24, STAR = 25, STORE = 26, TICKET = 27, TRAIN = 28, VIDEO_CAMERA = 29, VIDEO_PLAY = 30 }
+	export enum ImageButtonIcon { ICON_UNSPECIFIED = 'ICON_UNSPECIFIED', AIRPLANE = 'AIRPLANE', BOOKMARK = 'BOOKMARK', BUS = 'BUS', CAR = 'CAR', CLOCK = 'CLOCK', CONFIRMATION_NUMBER_ICON = 'CONFIRMATION_NUMBER_ICON', DOLLAR = 'DOLLAR', DESCRIPTION = 'DESCRIPTION', EMAIL = 'EMAIL', EVENT_PERFORMER = 'EVENT_PERFORMER', EVENT_SEAT = 'EVENT_SEAT', FLIGHT_ARRIVAL = 'FLIGHT_ARRIVAL', FLIGHT_DEPARTURE = 'FLIGHT_DEPARTURE', HOTEL = 'HOTEL', HOTEL_ROOM_TYPE = 'HOTEL_ROOM_TYPE', INVITE = 'INVITE', MAP_PIN = 'MAP_PIN', MEMBERSHIP = 'MEMBERSHIP', MULTIPLE_PEOPLE = 'MULTIPLE_PEOPLE', OFFER = 'OFFER', PERSON = 'PERSON', PHONE = 'PHONE', RESTAURANT_ICON = 'RESTAURANT_ICON', SHOPPING_CART = 'SHOPPING_CART', STAR = 'STAR', STORE = 'STORE', TICKET = 'TICKET', TRAIN = 'TRAIN', VIDEO_CAMERA = 'VIDEO_CAMERA', VIDEO_PLAY = 'VIDEO_PLAY' }
 
 
 	/** An `onclick` action (for example, open a link). */
@@ -2036,7 +2036,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CardHeaderImageStyle { IMAGE_STYLE_UNSPECIFIED = 0, IMAGE = 1, AVATAR = 2 }
+	export enum CardHeaderImageStyle { IMAGE_STYLE_UNSPECIFIED = 'IMAGE_STYLE_UNSPECIFIED', IMAGE = 'IMAGE', AVATAR = 'AVATAR' }
 
 
 	/** A section contains a collection of widgets that are rendered (vertically) in the order that they are specified. Across all platforms, cards have a narrow fixed width, so there's currently no need for layout properties (for example, float). */
@@ -2470,9 +2470,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CommonEventObjectHostApp { UNSPECIFIED_HOST_APP = 0, GMAIL = 1, CALENDAR = 2, DRIVE = 3, DEMO = 4, DOCS = 5, MEET = 6, SHEETS = 7, SLIDES = 8, DRAWINGS = 9, CHAT = 10 }
+	export enum CommonEventObjectHostApp { UNSPECIFIED_HOST_APP = 'UNSPECIFIED_HOST_APP', GMAIL = 'GMAIL', CALENDAR = 'CALENDAR', DRIVE = 'DRIVE', DEMO = 'DEMO', DOCS = 'DOCS', MEET = 'MEET', SHEETS = 'SHEETS', SLIDES = 'SLIDES', DRAWINGS = 'DRAWINGS', CHAT = 'CHAT' }
 
-	export enum CommonEventObjectPlatform { UNKNOWN_PLATFORM = 0, WEB = 1, IOS = 2, ANDROID = 3 }
+	export enum CommonEventObjectPlatform { UNKNOWN_PLATFORM = 'UNKNOWN_PLATFORM', WEB = 'WEB', IOS = 'IOS', ANDROID = 'ANDROID' }
 
 
 	/** The timezone ID and offset from Coordinated Universal Time (UTC). Only supported for the event types [`CARD_CLICKED`](https://developers.google.com/chat/api/reference/rest/v1/EventType#ENUM_VALUES.CARD_CLICKED) and [`SUBMIT_DIALOG`](https://developers.google.com/chat/api/reference/rest/v1/DialogEventType#ENUM_VALUES.SUBMIT_DIALOG). */
@@ -2658,13 +2658,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SpaceSpaceHistoryState { HISTORY_STATE_UNSPECIFIED = 0, HISTORY_OFF = 1, HISTORY_ON = 2 }
+	export enum SpaceSpaceHistoryState { HISTORY_STATE_UNSPECIFIED = 'HISTORY_STATE_UNSPECIFIED', HISTORY_OFF = 'HISTORY_OFF', HISTORY_ON = 'HISTORY_ON' }
 
-	export enum SpaceSpaceThreadingState { SPACE_THREADING_STATE_UNSPECIFIED = 0, THREADED_MESSAGES = 1, GROUPED_MESSAGES = 2, UNTHREADED_MESSAGES = 3 }
+	export enum SpaceSpaceThreadingState { SPACE_THREADING_STATE_UNSPECIFIED = 'SPACE_THREADING_STATE_UNSPECIFIED', THREADED_MESSAGES = 'THREADED_MESSAGES', GROUPED_MESSAGES = 'GROUPED_MESSAGES', UNTHREADED_MESSAGES = 'UNTHREADED_MESSAGES' }
 
-	export enum SpaceSpaceType { SPACE_TYPE_UNSPECIFIED = 0, SPACE = 1, GROUP_CHAT = 2, DIRECT_MESSAGE = 3 }
+	export enum SpaceSpaceType { SPACE_TYPE_UNSPECIFIED = 'SPACE_TYPE_UNSPECIFIED', SPACE = 'SPACE', GROUP_CHAT = 'GROUP_CHAT', DIRECT_MESSAGE = 'DIRECT_MESSAGE' }
 
-	export enum SpaceType { TYPE_UNSPECIFIED = 0, ROOM = 1, DM = 2 }
+	export enum SpaceType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ROOM = 'ROOM', DM = 'DM' }
 
 
 	/** Represents a custom emoji. */
@@ -2708,7 +2708,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletionMetadataDeletionType { DELETION_TYPE_UNSPECIFIED = 0, CREATOR = 1, SPACE_OWNER = 2, ADMIN = 3, APP_MESSAGE_EXPIRY = 4, CREATOR_VIA_APP = 5, SPACE_OWNER_VIA_APP = 6 }
+	export enum DeletionMetadataDeletionType { DELETION_TYPE_UNSPECIFIED = 'DELETION_TYPE_UNSPECIFIED', CREATOR = 'CREATOR', SPACE_OWNER = 'SPACE_OWNER', ADMIN = 'ADMIN', APP_MESSAGE_EXPIRY = 'APP_MESSAGE_EXPIRY', CREATOR_VIA_APP = 'CREATOR_VIA_APP', SPACE_OWNER_VIA_APP = 'SPACE_OWNER_VIA_APP' }
 
 
 	/** A Google Chat app interaction event. To learn about interaction events, see [Receive and respond to interactions with your Google Chat app](https://developers.google.com/chat/api/guides/message-formats). To learn about event types and for example event payloads, see [Types of Google Chat app interaction events](https://developers.google.com/chat/api/guides/message-formats/events). */
@@ -2788,7 +2788,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeprecatedEventDialogEventType { TYPE_UNSPECIFIED = 0, REQUEST_DIALOG = 1, SUBMIT_DIALOG = 2, CANCEL_DIALOG = 3 }
+	export enum DeprecatedEventDialogEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', REQUEST_DIALOG = 'REQUEST_DIALOG', SUBMIT_DIALOG = 'SUBMIT_DIALOG', CANCEL_DIALOG = 'CANCEL_DIALOG' }
 
 
 	/** A message in a Google Chat space. */
@@ -3065,7 +3065,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeprecatedEventType { UNSPECIFIED = 0, MESSAGE = 1, ADDED_TO_SPACE = 2, REMOVED_FROM_SPACE = 3, CARD_CLICKED = 4, WIDGET_UPDATED = 5 }
+	export enum DeprecatedEventType { UNSPECIFIED = 'UNSPECIFIED', MESSAGE = 'MESSAGE', ADDED_TO_SPACE = 'ADDED_TO_SPACE', REMOVED_FROM_SPACE = 'REMOVED_FROM_SPACE', CARD_CLICKED = 'CARD_CLICKED', WIDGET_UPDATED = 'WIDGET_UPDATED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -3177,9 +3177,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipRole { MEMBERSHIP_ROLE_UNSPECIFIED = 0, ROLE_MEMBER = 1, ROLE_MANAGER = 2 }
+	export enum MembershipRole { MEMBERSHIP_ROLE_UNSPECIFIED = 'MEMBERSHIP_ROLE_UNSPECIFIED', ROLE_MEMBER = 'ROLE_MEMBER', ROLE_MANAGER = 'ROLE_MANAGER' }
 
-	export enum MembershipState { MEMBERSHIP_STATE_UNSPECIFIED = 0, JOINED = 1, INVITED = 2, NOT_A_MEMBER = 3 }
+	export enum MembershipState { MEMBERSHIP_STATE_UNSPECIFIED = 'MEMBERSHIP_STATE_UNSPECIFIED', JOINED = 'JOINED', INVITED = 'INVITED', NOT_A_MEMBER = 'NOT_A_MEMBER' }
 
 	export interface ListMessagesResponse {
 
@@ -3529,7 +3529,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Chat_spaces_messages_createMessageReplyOption { MESSAGE_REPLY_OPTION_UNSPECIFIED = 0, REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD = 1, REPLY_MESSAGE_OR_FAIL = 2 }
+	export enum Chat_spaces_messages_createMessageReplyOption { MESSAGE_REPLY_OPTION_UNSPECIFIED = 'MESSAGE_REPLY_OPTION_UNSPECIFIED', REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD = 'REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD', REPLY_MESSAGE_OR_FAIL = 'REPLY_MESSAGE_OR_FAIL' }
 
 }
 

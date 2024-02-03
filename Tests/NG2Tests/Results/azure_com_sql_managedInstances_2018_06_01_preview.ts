@@ -57,7 +57,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedInstanceIdentityType { SystemAssigned = 0 }
+	export enum ManagedInstanceIdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** The properties of a managed instance. */
@@ -221,11 +221,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedInstancePropertiesLicenseType { LicenseIncluded = 0, BasePrice = 1 }
+	export enum ManagedInstancePropertiesLicenseType { LicenseIncluded = 'LicenseIncluded', BasePrice = 'BasePrice' }
 
-	export enum ManagedInstancePropertiesManagedInstanceCreateMode { Default = 0, PointInTimeRestore = 1 }
+	export enum ManagedInstancePropertiesManagedInstanceCreateMode { Default = 'Default', PointInTimeRestore = 'PointInTimeRestore' }
 
-	export enum ManagedInstancePropertiesProxyOverride { Proxy = 0, Redirect = 1, Default = 2 }
+	export enum ManagedInstancePropertiesProxyOverride { Proxy = 'Proxy', Redirect = 'Redirect', Default = 'Default' }
 
 	export interface ManagedInstanceSku {
 

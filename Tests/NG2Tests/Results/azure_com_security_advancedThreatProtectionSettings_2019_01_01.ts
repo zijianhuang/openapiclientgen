@@ -72,7 +72,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AdvancedThreatProtection_GetSettingName { current = 0 }
+	export enum AdvancedThreatProtection_GetSettingName { current = 'current' }
 
 }
 

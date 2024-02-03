@@ -153,7 +153,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlbumBaseAlbum_type { album = 0, single = 1, compilation = 2 }
+	export enum AlbumBaseAlbum_type { album = 'album', single = 'single', compilation = 'compilation' }
 
 	export interface ExternalUrlObject {
 
@@ -225,7 +225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlbumBaseRelease_date_precision { year = 0, month = 1, day = 2 }
+	export enum AlbumBaseRelease_date_precision { year = 'year', month = 'month', day = 'day' }
 
 	export interface AlbumRestrictionObject {
 
@@ -250,9 +250,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AlbumRestrictionObjectReason { market = 0, product = 1, explicit = 2 }
+	export enum AlbumRestrictionObjectReason { market = 'market', product = 'product', explicit = 'explicit' }
 
-	export enum AlbumBaseType { album = 0 }
+	export enum AlbumBaseType { album = 'album' }
 
 	export interface AlbumObject extends AlbumBase {
 
@@ -378,7 +378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SimplifiedArtistObjectType { artist = 0 }
+	export enum SimplifiedArtistObjectType { artist = 'artist' }
 
 	export interface CopyrightObject {
 
@@ -1421,7 +1421,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioFeaturesObjectType { audio_features = 0 }
+	export enum AudioFeaturesObjectType { audio_features = 'audio_features' }
 
 	export interface AudiobookBase {
 
@@ -1671,7 +1671,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudiobookBaseType { audiobook = 0 }
+	export enum AudiobookBaseType { audiobook = 'audiobook' }
 
 	export interface AudiobookObject extends AudiobookBase {
 
@@ -2054,7 +2054,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChapterBaseType { episode = 0 }
+	export enum ChapterBaseType { episode = 'episode' }
 
 	export interface ChapterObject {
 	}
@@ -2603,7 +2603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrackObjectType { track = 0 }
+	export enum TrackObjectType { track = 'track' }
 
 	export interface CurrentlyPlayingObject {
 
@@ -3427,7 +3427,7 @@ export namespace MyNS {
 	 * * `PREMIUM_REQUIRED` - The request is prohibited for non-premium users.
 	 * * `UNKNOWN` - Certain actions are restricted because of unknown reasons.
 	 */
-	export enum PlayerErrorReasons { NO_PREV_TRACK = 0, NO_NEXT_TRACK = 1, NO_SPECIFIC_TRACK = 2, ALREADY_PAUSED = 3, NOT_PAUSED = 4, NOT_PLAYING_LOCALLY = 5, NOT_PLAYING_TRACK = 6, NOT_PLAYING_CONTEXT = 7, ENDLESS_CONTEXT = 8, CONTEXT_DISALLOW = 9, ALREADY_PLAYING = 10, RATE_LIMITED = 11, REMOTE_CONTROL_DISALLOW = 12, DEVICE_NOT_CONTROLLABLE = 13, VOLUME_CONTROL_DISALLOW = 14, NO_ACTIVE_DEVICE = 15, PREMIUM_REQUIRED = 16, UNKNOWN = 17 }
+	export enum PlayerErrorReasons { NO_PREV_TRACK = 'NO_PREV_TRACK', NO_NEXT_TRACK = 'NO_NEXT_TRACK', NO_SPECIFIC_TRACK = 'NO_SPECIFIC_TRACK', ALREADY_PAUSED = 'ALREADY_PAUSED', NOT_PAUSED = 'NOT_PAUSED', NOT_PLAYING_LOCALLY = 'NOT_PLAYING_LOCALLY', NOT_PLAYING_TRACK = 'NOT_PLAYING_TRACK', NOT_PLAYING_CONTEXT = 'NOT_PLAYING_CONTEXT', ENDLESS_CONTEXT = 'ENDLESS_CONTEXT', CONTEXT_DISALLOW = 'CONTEXT_DISALLOW', ALREADY_PLAYING = 'ALREADY_PLAYING', RATE_LIMITED = 'RATE_LIMITED', REMOTE_CONTROL_DISALLOW = 'REMOTE_CONTROL_DISALLOW', DEVICE_NOT_CONTROLLABLE = 'DEVICE_NOT_CONTROLLABLE', VOLUME_CONTROL_DISALLOW = 'VOLUME_CONTROL_DISALLOW', NO_ACTIVE_DEVICE = 'NO_ACTIVE_DEVICE', PREMIUM_REQUIRED = 'PREMIUM_REQUIRED', UNKNOWN = 'UNKNOWN' }
 
 	export interface PlaylistObject {
 
@@ -3696,7 +3696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlaylistUserObjectType { user = 0 }
+	export enum PlaylistUserObjectType { user = 'user' }
 
 	export interface PlaylistTracksRefObject {
 
@@ -4370,7 +4370,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShowBaseType { show = 0 }
+	export enum ShowBaseType { show = 'show' }
 
 	export interface ShowObject extends ShowBase {
 
@@ -4443,7 +4443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SimplifiedAlbumObjectAlbum_group { album = 0, single = 1, compilation = 2, appears_on = 3 }
+	export enum SimplifiedAlbumObjectAlbum_group { album = 'album', single = 'single', compilation = 'compilation', appears_on = 'appears_on' }
 
 	export interface SimplifiedAudiobookObject {
 	}
@@ -6016,7 +6016,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Unfollow_artists_usersType { artist = 0, user = 1 }
+	export enum Unfollow_artists_usersType { artist = 'artist', user = 'user' }
 
 	export interface Get_followedReturn {
 
@@ -6361,7 +6361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchInclude_external { audio = 0 }
+	export enum SearchInclude_external { audio = 'audio' }
 
 	export interface SearchReturn {
 		albums?: PagingSimplifiedAlbumObject;

@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Enumeration of aggregate values */
-	export enum Aggregate { ok = 0, test = 1, staging = 2, no = 3 }
+	export enum Aggregate { ok = 'ok', test = 'test', staging = 'staging', no = 'no' }
 
 
 	/**
@@ -377,7 +377,7 @@ export namespace MyNS {
 	 * Optimade Data Types
 	 * See the section "Data types" in the OPTIMADE API specification for more information.
 	 */
-	export enum DataType { string = 0, integer = 1, float = 2, boolean = 3, timestamp = 4, list = 5, dictionary = 6, unknown = 7 }
+	export enum DataType { string = 'string', integer = 'integer', float = 'float', boolean = 'boolean', timestamp = 'timestamp', list = 'list', dictionary = 'dictionary', unknown = 'unknown' }
 
 	export interface EntryInfoProperty {
 
@@ -1626,7 +1626,7 @@ export namespace MyNS {
 
 
 	/** Enumeration of link_type values */
-	export enum LinkType { child = 0, root = 1, external = 2, providers = 3 }
+	export enum LinkType { child = 'child', root = 'root', external = 'external', providers = 'providers' }
 
 
 	/** A Links endpoint resource object */
@@ -2463,7 +2463,7 @@ export namespace MyNS {
 
 
 	/** Enumeration of structure_features values */
-	export enum StructureFeatures { disorder = 0, implicit_atoms = 1, site_attachments = 2, assemblies = 3 }
+	export enum StructureFeatures { disorder = 'disorder', implicit_atoms = 'implicit_atoms', site_attachments = 'site_attachments', assemblies = 'assemblies' }
 
 
 	/** Representing a structure. */

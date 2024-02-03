@@ -1305,7 +1305,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Mirror_timeline_listOrderBy { displayTime = 0, writeTime = 1 }
+	export enum Mirror_timeline_listOrderBy { displayTime = 'displayTime', writeTime = 'writeTime' }
 
 }
 

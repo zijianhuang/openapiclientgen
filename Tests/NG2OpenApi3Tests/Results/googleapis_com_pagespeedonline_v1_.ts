@@ -469,7 +469,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Pagespeedonline_pagespeedapi_runpagespeedStrategy { desktop = 0, mobile = 1 }
+	export enum Pagespeedonline_pagespeedapi_runpagespeedStrategy { desktop = 'desktop', mobile = 'mobile' }
 
 }
 

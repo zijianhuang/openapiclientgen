@@ -30,7 +30,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactKind { template = 0, roleAssignment = 1, policyAssignment = 2 }
+	export enum ArtifactKind { template = 'template', roleAssignment = 'roleAssignment', policyAssignment = 'policyAssignment' }
 
 
 	/** List of blueprint artifacts. */
@@ -355,7 +355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterDefinitionType { string = 0, array = 1, bool = 2, int = 3, object = 4, secureObject = 5, secureString = 6 }
+	export enum ParameterDefinitionType { string = 'string', array = 'array', bool = 'bool', int = 'int', object = 'object', secureObject = 'secureObject', secureString = 'secureString' }
 
 
 	/** A dictionary hold parameter name and its metadata. */
@@ -885,7 +885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharedBlueprintPropertiesTargetScope { subscription = 0, managementGroup = 1 }
+	export enum SharedBlueprintPropertiesTargetScope { subscription = 'subscription', managementGroup = 'managementGroup' }
 
 
 	/** Blueprint artifact that deploys a Resource Manager template. */

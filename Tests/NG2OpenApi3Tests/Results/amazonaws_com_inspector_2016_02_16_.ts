@@ -491,7 +491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentRunState { CREATED = 0, START_DATA_COLLECTION_PENDING = 1, START_DATA_COLLECTION_IN_PROGRESS = 2, COLLECTING_DATA = 3, STOP_DATA_COLLECTION_PENDING = 4, DATA_COLLECTED = 5, START_EVALUATING_RULES_PENDING = 6, EVALUATING_RULES = 7, FAILED = 8, ERROR = 9, COMPLETED = 10, COMPLETED_WITH_ERRORS = 11, CANCELED = 12 }
+	export enum AssessmentRunState { CREATED = 'CREATED', START_DATA_COLLECTION_PENDING = 'START_DATA_COLLECTION_PENDING', START_DATA_COLLECTION_IN_PROGRESS = 'START_DATA_COLLECTION_IN_PROGRESS', COLLECTING_DATA = 'COLLECTING_DATA', STOP_DATA_COLLECTION_PENDING = 'STOP_DATA_COLLECTION_PENDING', DATA_COLLECTED = 'DATA_COLLECTED', START_EVALUATING_RULES_PENDING = 'START_EVALUATING_RULES_PENDING', EVALUATING_RULES = 'EVALUATING_RULES', FAILED = 'FAILED', ERROR = 'ERROR', COMPLETED = 'COMPLETED', COMPLETED_WITH_ERRORS = 'COMPLETED_WITH_ERRORS', CANCELED = 'CANCELED' }
 
 
 	/** Used as one of the elements of the <a>AssessmentRun</a> data type. */
@@ -565,9 +565,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InspectorEvent { ASSESSMENT_RUN_STARTED = 0, ASSESSMENT_RUN_COMPLETED = 1, ASSESSMENT_RUN_STATE_CHANGED = 2, FINDING_REPORTED = 3, OTHER = 4 }
+	export enum InspectorEvent { ASSESSMENT_RUN_STARTED = 'ASSESSMENT_RUN_STARTED', ASSESSMENT_RUN_COMPLETED = 'ASSESSMENT_RUN_COMPLETED', ASSESSMENT_RUN_STATE_CHANGED = 'ASSESSMENT_RUN_STATE_CHANGED', FINDING_REPORTED = 'FINDING_REPORTED', OTHER = 'OTHER' }
 
-	export enum AssessmentRunNotificationSnsStatusCode { SUCCESS = 0, TOPIC_DOES_NOT_EXIST = 1, ACCESS_DENIED = 2, INTERNAL_ERROR = 3 }
+	export enum AssessmentRunNotificationSnsStatusCode { SUCCESS = 'SUCCESS', TOPIC_DOES_NOT_EXIST = 'TOPIC_DOES_NOT_EXIST', ACCESS_DENIED = 'ACCESS_DENIED', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 	export interface AssessmentRunFindingCounts {
 	}
@@ -837,7 +837,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Locale { EN_US = 0 }
+	export enum Locale { EN_US = 'EN_US' }
 
 	export interface DescribeFindingsResponse {
 
@@ -958,7 +958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetType { 'ec2-instance' = 0 }
+	export enum AssetType { 'ec2-instance' = 'ec2-instance' }
 
 
 	/** A collection of attributes of the host from which the finding is generated. */
@@ -1098,7 +1098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Severity { Low = 0, Medium = 1, High = 2, Informational = 3, Undefined = 4 }
+	export enum Severity { Low = 'Low', Medium = 'Medium', High = 'High', Informational = 'Informational', Undefined = 'Undefined' }
 
 	export interface DescribeFindingsRequest {
 
@@ -1273,7 +1273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportStatus { WORK_IN_PROGRESS = 0, FAILED = 1, COMPLETED = 2 }
+	export enum ReportStatus { WORK_IN_PROGRESS = 'WORK_IN_PROGRESS', FAILED = 'FAILED', COMPLETED = 'COMPLETED' }
 
 	export interface GetAssessmentReportRequest {
 
@@ -1306,9 +1306,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportFileFormat { HTML = 0, PDF = 1 }
+	export enum ReportFileFormat { HTML = 'HTML', PDF = 'PDF' }
 
-	export enum ReportType { FINDING = 0, FULL = 1 }
+	export enum ReportType { FINDING = 'FINDING', FULL = 'FULL' }
 
 	export interface UnsupportedFeatureException {
 	}
@@ -1341,7 +1341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreviewStatus { WORK_IN_PROGRESS = 0, COMPLETED = 1 }
+	export enum PreviewStatus { WORK_IN_PROGRESS = 'WORK_IN_PROGRESS', COMPLETED = 'COMPLETED' }
 
 
 	/** Contains information about what is excluded from an assessment run given the current state of the assessment template. */
@@ -1402,7 +1402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScopeType { INSTANCE_ID = 0, RULES_PACKAGE_ARN = 1 }
+	export enum ScopeType { INSTANCE_ID = 'INSTANCE_ID', RULES_PACKAGE_ARN = 'RULES_PACKAGE_ARN' }
 
 	export interface GetExclusionsPreviewRequest {
 
@@ -1565,9 +1565,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentHealth { HEALTHY = 0, UNHEALTHY = 1, UNKNOWN = 2 }
+	export enum AgentHealth { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY', UNKNOWN = 'UNKNOWN' }
 
-	export enum AgentHealthCode { IDLE = 0, RUNNING = 1, SHUTDOWN = 2, UNHEALTHY = 3, THROTTLED = 4, UNKNOWN = 5 }
+	export enum AgentHealthCode { IDLE = 'IDLE', RUNNING = 'RUNNING', SHUTDOWN = 'SHUTDOWN', UNHEALTHY = 'UNHEALTHY', THROTTLED = 'THROTTLED', UNKNOWN = 'UNKNOWN' }
 
 	export interface ListAssessmentRunAgentsRequest {
 
@@ -2276,7 +2276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StopAction { START_EVALUATION = 0, SKIP_EVALUATION = 1 }
+	export enum StopAction { START_EVALUATION = 'START_EVALUATION', SKIP_EVALUATION = 'SKIP_EVALUATION' }
 
 	export interface SubscribeToEventRequest {
 
@@ -2413,7 +2413,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailedItemErrorCode { INVALID_ARN = 0, DUPLICATE_ARN = 1, ITEM_DOES_NOT_EXIST = 2, ACCESS_DENIED = 3, LIMIT_EXCEEDED = 4, INTERNAL_ERROR = 5 }
+	export enum FailedItemErrorCode { INVALID_ARN = 'INVALID_ARN', DUPLICATE_ARN = 'DUPLICATE_ARN', ITEM_DOES_NOT_EXIST = 'ITEM_DOES_NOT_EXIST', ACCESS_DENIED = 'ACCESS_DENIED', LIMIT_EXCEEDED = 'LIMIT_EXCEEDED', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 
 	/** Includes details about the failed items. */
@@ -2802,79 +2802,79 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddAttributesToFindingsX_Amz_Target { 'InspectorService.AddAttributesToFindings' = 0 }
+	export enum AddAttributesToFindingsX_Amz_Target { 'InspectorService.AddAttributesToFindings' = 'InspectorService.AddAttributesToFindings' }
 
-	export enum CreateAssessmentTargetX_Amz_Target { 'InspectorService.CreateAssessmentTarget' = 0 }
+	export enum CreateAssessmentTargetX_Amz_Target { 'InspectorService.CreateAssessmentTarget' = 'InspectorService.CreateAssessmentTarget' }
 
-	export enum CreateAssessmentTemplateX_Amz_Target { 'InspectorService.CreateAssessmentTemplate' = 0 }
+	export enum CreateAssessmentTemplateX_Amz_Target { 'InspectorService.CreateAssessmentTemplate' = 'InspectorService.CreateAssessmentTemplate' }
 
-	export enum CreateExclusionsPreviewX_Amz_Target { 'InspectorService.CreateExclusionsPreview' = 0 }
+	export enum CreateExclusionsPreviewX_Amz_Target { 'InspectorService.CreateExclusionsPreview' = 'InspectorService.CreateExclusionsPreview' }
 
-	export enum CreateResourceGroupX_Amz_Target { 'InspectorService.CreateResourceGroup' = 0 }
+	export enum CreateResourceGroupX_Amz_Target { 'InspectorService.CreateResourceGroup' = 'InspectorService.CreateResourceGroup' }
 
-	export enum DeleteAssessmentRunX_Amz_Target { 'InspectorService.DeleteAssessmentRun' = 0 }
+	export enum DeleteAssessmentRunX_Amz_Target { 'InspectorService.DeleteAssessmentRun' = 'InspectorService.DeleteAssessmentRun' }
 
-	export enum DeleteAssessmentTargetX_Amz_Target { 'InspectorService.DeleteAssessmentTarget' = 0 }
+	export enum DeleteAssessmentTargetX_Amz_Target { 'InspectorService.DeleteAssessmentTarget' = 'InspectorService.DeleteAssessmentTarget' }
 
-	export enum DeleteAssessmentTemplateX_Amz_Target { 'InspectorService.DeleteAssessmentTemplate' = 0 }
+	export enum DeleteAssessmentTemplateX_Amz_Target { 'InspectorService.DeleteAssessmentTemplate' = 'InspectorService.DeleteAssessmentTemplate' }
 
-	export enum DescribeAssessmentRunsX_Amz_Target { 'InspectorService.DescribeAssessmentRuns' = 0 }
+	export enum DescribeAssessmentRunsX_Amz_Target { 'InspectorService.DescribeAssessmentRuns' = 'InspectorService.DescribeAssessmentRuns' }
 
-	export enum DescribeAssessmentTargetsX_Amz_Target { 'InspectorService.DescribeAssessmentTargets' = 0 }
+	export enum DescribeAssessmentTargetsX_Amz_Target { 'InspectorService.DescribeAssessmentTargets' = 'InspectorService.DescribeAssessmentTargets' }
 
-	export enum DescribeAssessmentTemplatesX_Amz_Target { 'InspectorService.DescribeAssessmentTemplates' = 0 }
+	export enum DescribeAssessmentTemplatesX_Amz_Target { 'InspectorService.DescribeAssessmentTemplates' = 'InspectorService.DescribeAssessmentTemplates' }
 
-	export enum DescribeCrossAccountAccessRoleX_Amz_Target { 'InspectorService.DescribeCrossAccountAccessRole' = 0 }
+	export enum DescribeCrossAccountAccessRoleX_Amz_Target { 'InspectorService.DescribeCrossAccountAccessRole' = 'InspectorService.DescribeCrossAccountAccessRole' }
 
-	export enum DescribeExclusionsX_Amz_Target { 'InspectorService.DescribeExclusions' = 0 }
+	export enum DescribeExclusionsX_Amz_Target { 'InspectorService.DescribeExclusions' = 'InspectorService.DescribeExclusions' }
 
-	export enum DescribeFindingsX_Amz_Target { 'InspectorService.DescribeFindings' = 0 }
+	export enum DescribeFindingsX_Amz_Target { 'InspectorService.DescribeFindings' = 'InspectorService.DescribeFindings' }
 
-	export enum DescribeResourceGroupsX_Amz_Target { 'InspectorService.DescribeResourceGroups' = 0 }
+	export enum DescribeResourceGroupsX_Amz_Target { 'InspectorService.DescribeResourceGroups' = 'InspectorService.DescribeResourceGroups' }
 
-	export enum DescribeRulesPackagesX_Amz_Target { 'InspectorService.DescribeRulesPackages' = 0 }
+	export enum DescribeRulesPackagesX_Amz_Target { 'InspectorService.DescribeRulesPackages' = 'InspectorService.DescribeRulesPackages' }
 
-	export enum GetAssessmentReportX_Amz_Target { 'InspectorService.GetAssessmentReport' = 0 }
+	export enum GetAssessmentReportX_Amz_Target { 'InspectorService.GetAssessmentReport' = 'InspectorService.GetAssessmentReport' }
 
-	export enum GetExclusionsPreviewX_Amz_Target { 'InspectorService.GetExclusionsPreview' = 0 }
+	export enum GetExclusionsPreviewX_Amz_Target { 'InspectorService.GetExclusionsPreview' = 'InspectorService.GetExclusionsPreview' }
 
-	export enum GetTelemetryMetadataX_Amz_Target { 'InspectorService.GetTelemetryMetadata' = 0 }
+	export enum GetTelemetryMetadataX_Amz_Target { 'InspectorService.GetTelemetryMetadata' = 'InspectorService.GetTelemetryMetadata' }
 
-	export enum ListAssessmentRunAgentsX_Amz_Target { 'InspectorService.ListAssessmentRunAgents' = 0 }
+	export enum ListAssessmentRunAgentsX_Amz_Target { 'InspectorService.ListAssessmentRunAgents' = 'InspectorService.ListAssessmentRunAgents' }
 
-	export enum ListAssessmentRunsX_Amz_Target { 'InspectorService.ListAssessmentRuns' = 0 }
+	export enum ListAssessmentRunsX_Amz_Target { 'InspectorService.ListAssessmentRuns' = 'InspectorService.ListAssessmentRuns' }
 
-	export enum ListAssessmentTargetsX_Amz_Target { 'InspectorService.ListAssessmentTargets' = 0 }
+	export enum ListAssessmentTargetsX_Amz_Target { 'InspectorService.ListAssessmentTargets' = 'InspectorService.ListAssessmentTargets' }
 
-	export enum ListAssessmentTemplatesX_Amz_Target { 'InspectorService.ListAssessmentTemplates' = 0 }
+	export enum ListAssessmentTemplatesX_Amz_Target { 'InspectorService.ListAssessmentTemplates' = 'InspectorService.ListAssessmentTemplates' }
 
-	export enum ListEventSubscriptionsX_Amz_Target { 'InspectorService.ListEventSubscriptions' = 0 }
+	export enum ListEventSubscriptionsX_Amz_Target { 'InspectorService.ListEventSubscriptions' = 'InspectorService.ListEventSubscriptions' }
 
-	export enum ListExclusionsX_Amz_Target { 'InspectorService.ListExclusions' = 0 }
+	export enum ListExclusionsX_Amz_Target { 'InspectorService.ListExclusions' = 'InspectorService.ListExclusions' }
 
-	export enum ListFindingsX_Amz_Target { 'InspectorService.ListFindings' = 0 }
+	export enum ListFindingsX_Amz_Target { 'InspectorService.ListFindings' = 'InspectorService.ListFindings' }
 
-	export enum ListRulesPackagesX_Amz_Target { 'InspectorService.ListRulesPackages' = 0 }
+	export enum ListRulesPackagesX_Amz_Target { 'InspectorService.ListRulesPackages' = 'InspectorService.ListRulesPackages' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'InspectorService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'InspectorService.ListTagsForResource' = 'InspectorService.ListTagsForResource' }
 
-	export enum PreviewAgentsX_Amz_Target { 'InspectorService.PreviewAgents' = 0 }
+	export enum PreviewAgentsX_Amz_Target { 'InspectorService.PreviewAgents' = 'InspectorService.PreviewAgents' }
 
-	export enum RegisterCrossAccountAccessRoleX_Amz_Target { 'InspectorService.RegisterCrossAccountAccessRole' = 0 }
+	export enum RegisterCrossAccountAccessRoleX_Amz_Target { 'InspectorService.RegisterCrossAccountAccessRole' = 'InspectorService.RegisterCrossAccountAccessRole' }
 
-	export enum RemoveAttributesFromFindingsX_Amz_Target { 'InspectorService.RemoveAttributesFromFindings' = 0 }
+	export enum RemoveAttributesFromFindingsX_Amz_Target { 'InspectorService.RemoveAttributesFromFindings' = 'InspectorService.RemoveAttributesFromFindings' }
 
-	export enum SetTagsForResourceX_Amz_Target { 'InspectorService.SetTagsForResource' = 0 }
+	export enum SetTagsForResourceX_Amz_Target { 'InspectorService.SetTagsForResource' = 'InspectorService.SetTagsForResource' }
 
-	export enum StartAssessmentRunX_Amz_Target { 'InspectorService.StartAssessmentRun' = 0 }
+	export enum StartAssessmentRunX_Amz_Target { 'InspectorService.StartAssessmentRun' = 'InspectorService.StartAssessmentRun' }
 
-	export enum StopAssessmentRunX_Amz_Target { 'InspectorService.StopAssessmentRun' = 0 }
+	export enum StopAssessmentRunX_Amz_Target { 'InspectorService.StopAssessmentRun' = 'InspectorService.StopAssessmentRun' }
 
-	export enum SubscribeToEventX_Amz_Target { 'InspectorService.SubscribeToEvent' = 0 }
+	export enum SubscribeToEventX_Amz_Target { 'InspectorService.SubscribeToEvent' = 'InspectorService.SubscribeToEvent' }
 
-	export enum UnsubscribeFromEventX_Amz_Target { 'InspectorService.UnsubscribeFromEvent' = 0 }
+	export enum UnsubscribeFromEventX_Amz_Target { 'InspectorService.UnsubscribeFromEvent' = 'InspectorService.UnsubscribeFromEvent' }
 
-	export enum UpdateAssessmentTargetX_Amz_Target { 'InspectorService.UpdateAssessmentTarget' = 0 }
+	export enum UpdateAssessmentTargetX_Amz_Target { 'InspectorService.UpdateAssessmentTarget' = 'InspectorService.UpdateAssessmentTarget' }
 
 }
 

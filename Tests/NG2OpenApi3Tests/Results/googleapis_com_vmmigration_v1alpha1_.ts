@@ -143,7 +143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppliedLicenseType { TYPE_UNSPECIFIED = 0, NONE = 1, PAYG = 2, BYOL = 3 }
+	export enum AppliedLicenseType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', NONE = 'NONE', PAYG = 'PAYG', BYOL = 'BYOL' }
 
 
 	/** Holds informatiom about the available versions for upgrade. */
@@ -341,7 +341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsSourceDetailsState { STATE_UNSPECIFIED = 0, PENDING = 1, FAILED = 2, ACTIVE = 3 }
+	export enum AwsSourceDetailsState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', FAILED = 'FAILED', ACTIVE = 'ACTIVE' }
 
 
 	/** Represent the source AWS VM details. */
@@ -377,7 +377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsSourceVmDetailsFirmware { FIRMWARE_UNSPECIFIED = 0, EFI = 1, BIOS = 2 }
+	export enum AwsSourceVmDetailsFirmware { FIRMWARE_UNSPECIFIED = 'FIRMWARE_UNSPECIFIED', EFI = 'EFI', BIOS = 'BIOS' }
 
 
 	/** Migrating VM source information about the VM capabilities needed for some Compute Engine features. */
@@ -539,13 +539,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsVmDetailsArchitecture { VM_ARCHITECTURE_UNSPECIFIED = 0, I386 = 1, X86_64 = 2, ARM64 = 3, X86_64_MAC = 4 }
+	export enum AwsVmDetailsArchitecture { VM_ARCHITECTURE_UNSPECIFIED = 'VM_ARCHITECTURE_UNSPECIFIED', I386 = 'I386', X86_64 = 'X86_64', ARM64 = 'ARM64', X86_64_MAC = 'X86_64_MAC' }
 
-	export enum AwsVmDetailsBootOption { BOOT_OPTION_UNSPECIFIED = 0, EFI = 1, BIOS = 2 }
+	export enum AwsVmDetailsBootOption { BOOT_OPTION_UNSPECIFIED = 'BOOT_OPTION_UNSPECIFIED', EFI = 'EFI', BIOS = 'BIOS' }
 
-	export enum AwsVmDetailsPowerState { POWER_STATE_UNSPECIFIED = 0, ON = 1, OFF = 2, SUSPENDED = 3, PENDING = 4 }
+	export enum AwsVmDetailsPowerState { POWER_STATE_UNSPECIFIED = 'POWER_STATE_UNSPECIFIED', ON = 'ON', OFF = 'OFF', SUSPENDED = 'SUSPENDED', PENDING = 'PENDING' }
 
-	export enum AwsVmDetailsVirtualizationType { VM_VIRTUALIZATION_TYPE_UNSPECIFIED = 0, HVM = 1, PARAVIRTUAL = 2 }
+	export enum AwsVmDetailsVirtualizationType { VM_VIRTUALIZATION_TYPE_UNSPECIFIED = 'VM_VIRTUALIZATION_TYPE_UNSPECIFIED', HVM = 'HVM', PARAVIRTUAL = 'PARAVIRTUAL' }
 
 
 	/** AWSVmsDetails describes VMs in AWS. */
@@ -928,7 +928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureVmDetailsPowerState { POWER_STATE_UNSPECIFIED = 0, STARTING = 1, RUNNING = 2, STOPPING = 3, STOPPED = 4, DEALLOCATING = 5, DEALLOCATED = 6, UNKNOWN = 7 }
+	export enum AzureVmDetailsPowerState { POWER_STATE_UNSPECIFIED = 'POWER_STATE_UNSPECIFIED', STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', DEALLOCATING = 'DEALLOCATING', DEALLOCATED = 'DEALLOCATED', UNKNOWN = 'UNKNOWN' }
 
 
 	/** AzureVmsDetails describes VMs in Azure. */
@@ -988,7 +988,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BootDiskDefaultsDiskType { COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED = 0, COMPUTE_ENGINE_DISK_TYPE_STANDARD = 1, COMPUTE_ENGINE_DISK_TYPE_SSD = 2, COMPUTE_ENGINE_DISK_TYPE_BALANCED = 3 }
+	export enum BootDiskDefaultsDiskType { COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED = 'COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED', COMPUTE_ENGINE_DISK_TYPE_STANDARD = 'COMPUTE_ENGINE_DISK_TYPE_STANDARD', COMPUTE_ENGINE_DISK_TYPE_SSD = 'COMPUTE_ENGINE_DISK_TYPE_SSD', COMPUTE_ENGINE_DISK_TYPE_BALANCED = 'COMPUTE_ENGINE_DISK_TYPE_BALANCED' }
 
 
 	/** Encryption message describes the details of the applied encryption. */
@@ -1350,7 +1350,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeEngineTargetDetailsBootOption { COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED = 0, COMPUTE_ENGINE_BOOT_OPTION_EFI = 1, COMPUTE_ENGINE_BOOT_OPTION_BIOS = 2 }
+	export enum ComputeEngineTargetDetailsBootOption { COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED = 'COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED', COMPUTE_ENGINE_BOOT_OPTION_EFI = 'COMPUTE_ENGINE_BOOT_OPTION_EFI', COMPUTE_ENGINE_BOOT_OPTION_BIOS = 'COMPUTE_ENGINE_BOOT_OPTION_BIOS' }
 
 
 	/** Scheduling information for VM on maintenance/restart behaviour and node allocation in sole tenant nodes. */
@@ -1424,13 +1424,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SchedulingNodeAffinityOperator { OPERATOR_UNSPECIFIED = 0, IN = 1, NOT_IN = 2 }
+	export enum SchedulingNodeAffinityOperator { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', IN = 'IN', NOT_IN = 'NOT_IN' }
 
-	export enum ComputeSchedulingOnHostMaintenance { ON_HOST_MAINTENANCE_UNSPECIFIED = 0, TERMINATE = 1, MIGRATE = 2 }
+	export enum ComputeSchedulingOnHostMaintenance { ON_HOST_MAINTENANCE_UNSPECIFIED = 'ON_HOST_MAINTENANCE_UNSPECIFIED', TERMINATE = 'TERMINATE', MIGRATE = 'MIGRATE' }
 
-	export enum ComputeSchedulingRestartType { RESTART_TYPE_UNSPECIFIED = 0, AUTOMATIC_RESTART = 1, NO_AUTOMATIC_RESTART = 2 }
+	export enum ComputeSchedulingRestartType { RESTART_TYPE_UNSPECIFIED = 'RESTART_TYPE_UNSPECIFIED', AUTOMATIC_RESTART = 'AUTOMATIC_RESTART', NO_AUTOMATIC_RESTART = 'NO_AUTOMATIC_RESTART' }
 
-	export enum ComputeEngineTargetDetailsLicenseType { COMPUTE_ENGINE_LICENSE_TYPE_DEFAULT = 0, COMPUTE_ENGINE_LICENSE_TYPE_PAYG = 1, COMPUTE_ENGINE_LICENSE_TYPE_BYOL = 2 }
+	export enum ComputeEngineTargetDetailsLicenseType { COMPUTE_ENGINE_LICENSE_TYPE_DEFAULT = 'COMPUTE_ENGINE_LICENSE_TYPE_DEFAULT', COMPUTE_ENGINE_LICENSE_TYPE_PAYG = 'COMPUTE_ENGINE_LICENSE_TYPE_PAYG', COMPUTE_ENGINE_LICENSE_TYPE_BYOL = 'COMPUTE_ENGINE_LICENSE_TYPE_BYOL' }
 
 
 	/** NetworkInterface represents a NIC of a VM. */
@@ -1619,11 +1619,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetVMDetailsDiskType { DISK_TYPE_UNSPECIFIED = 0, STANDARD = 1, BALANCED = 2, SSD = 3 }
+	export enum TargetVMDetailsDiskType { DISK_TYPE_UNSPECIFIED = 'DISK_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', BALANCED = 'BALANCED', SSD = 'SSD' }
 
-	export enum TargetVMDetailsLicenseType { DEFAULT = 0, PAYG = 1, BYOL = 2 }
+	export enum TargetVMDetailsLicenseType { DEFAULT = 'DEFAULT', PAYG = 'PAYG', BYOL = 'BYOL' }
 
-	export enum CloneJobState { STATE_UNSPECIFIED = 0, PENDING = 1, ACTIVE = 2, FAILED = 3, SUCCEEDED = 4, CANCELLED = 5, CANCELLING = 6, ADAPTING_OS = 7 }
+	export enum CloneJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', CANCELLING = 'CANCELLING', ADAPTING_OS = 'ADAPTING_OS' }
 
 
 	/** CloneStep holds information about the clone step progress. */
@@ -2130,7 +2130,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CutoverJobState { STATE_UNSPECIFIED = 0, PENDING = 1, FAILED = 2, SUCCEEDED = 3, CANCELLED = 4, CANCELLING = 5, ACTIVE = 6, ADAPTING_OS = 7 }
+	export enum CutoverJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', CANCELLING = 'CANCELLING', ACTIVE = 'ACTIVE', ADAPTING_OS = 'ADAPTING_OS' }
 
 
 	/** CutoverStep holds information about the cutover step progress. */
@@ -2254,7 +2254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationCycleState { STATE_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, FAILED = 3, SUCCEEDED = 4 }
+	export enum ReplicationCycleState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** CycleStep holds information about a step progress. */
@@ -2428,7 +2428,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationWarningCode { WARNING_CODE_UNSPECIFIED = 0, ADAPTATION_WARNING = 1 }
+	export enum MigrationWarningCode { WARNING_CODE_UNSPECIFIED = 'WARNING_CODE_UNSPECIFIED', ADAPTATION_WARNING = 'ADAPTATION_WARNING' }
 
 
 	/** Describes a URL link. */
@@ -2572,7 +2572,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatacenterConnectorState { STATE_UNSPECIFIED = 0, PENDING = 1, OFFLINE = 2, FAILED = 3, ACTIVE = 4 }
+	export enum DatacenterConnectorState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', OFFLINE = 'OFFLINE', FAILED = 'FAILED', ACTIVE = 'ACTIVE' }
 
 
 	/** UpgradeStatus contains information about upgradeAppliance operation. */
@@ -2619,7 +2619,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpgradeStatusState { STATE_UNSPECIFIED = 0, RUNNING = 1, FAILED = 2, SUCCEEDED = 3 }
+	export enum UpgradeStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', RUNNING = 'RUNNING', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -2794,7 +2794,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VmwareVmDetailsPowerState { POWER_STATE_UNSPECIFIED = 0, ON = 1, OFF = 2, SUSPENDED = 3 }
+	export enum VmwareVmDetailsPowerState { POWER_STATE_UNSPECIFIED = 'POWER_STATE_UNSPECIFIED', ON = 'ON', OFF = 'OFF', SUSPENDED = 'SUSPENDED' }
 
 
 	/** Request message for 'FinalizeMigration' request. */
@@ -2866,7 +2866,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupMigrationTargetType { MIGRATION_TARGET_TYPE_UNSPECIFIED = 0, MIGRATION_TARGET_TYPE_GCE = 1, MIGRATION_TARGET_TYPE_DISKS = 2 }
+	export enum GroupMigrationTargetType { MIGRATION_TARGET_TYPE_UNSPECIFIED = 'MIGRATION_TARGET_TYPE_UNSPECIFIED', MIGRATION_TARGET_TYPE_GCE = 'MIGRATION_TARGET_TYPE_GCE', MIGRATION_TARGET_TYPE_DISKS = 'MIGRATION_TARGET_TYPE_DISKS' }
 
 
 	/** Response message for 'ListCloneJobs' request. */
@@ -3254,7 +3254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigratingVmState { STATE_UNSPECIFIED = 0, PENDING = 1, READY = 2, FIRST_SYNC = 3, ACTIVE = 4, CUTTING_OVER = 5, CUTOVER = 6, FINAL_SYNC = 7, PAUSED = 8, FINALIZING = 9, FINALIZED = 10, ERROR = 11 }
+	export enum MigratingVmState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', READY = 'READY', FIRST_SYNC = 'FIRST_SYNC', ACTIVE = 'ACTIVE', CUTTING_OVER = 'CUTTING_OVER', CUTOVER = 'CUTOVER', FINAL_SYNC = 'FINAL_SYNC', PAUSED = 'PAUSED', FINALIZING = 'FINALIZING', FINALIZED = 'FINALIZED', ERROR = 'ERROR' }
 
 
 	/** Represent the source Vmware VM details. */
@@ -3747,9 +3747,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UtilizationReportState { STATE_UNSPECIFIED = 0, CREATING = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum UtilizationReportState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
-	export enum UtilizationReportTimeFrame { TIME_FRAME_UNSPECIFIED = 0, WEEK = 1, MONTH = 2, YEAR = 3 }
+	export enum UtilizationReportTimeFrame { TIME_FRAME_UNSPECIFIED = 'TIME_FRAME_UNSPECIFIED', WEEK = 'WEEK', MONTH = 'MONTH', YEAR = 'YEAR' }
 
 
 	/** Utilization information of a single VM. */
@@ -3941,7 +3941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationErrorCode { ERROR_CODE_UNSPECIFIED = 0, UNKNOWN_ERROR = 1, SOURCE_VALIDATION_ERROR = 2, SOURCE_REPLICATION_ERROR = 3, TARGET_REPLICATION_ERROR = 4, OS_ADAPTATION_ERROR = 5, CLONE_ERROR = 6, CUTOVER_ERROR = 7, UTILIZATION_REPORT_ERROR = 8, APPLIANCE_UPGRADE_ERROR = 9 }
+	export enum MigrationErrorCode { ERROR_CODE_UNSPECIFIED = 'ERROR_CODE_UNSPECIFIED', UNKNOWN_ERROR = 'UNKNOWN_ERROR', SOURCE_VALIDATION_ERROR = 'SOURCE_VALIDATION_ERROR', SOURCE_REPLICATION_ERROR = 'SOURCE_REPLICATION_ERROR', TARGET_REPLICATION_ERROR = 'TARGET_REPLICATION_ERROR', OS_ADAPTATION_ERROR = 'OS_ADAPTATION_ERROR', CLONE_ERROR = 'CLONE_ERROR', CUTOVER_ERROR = 'CUTOVER_ERROR', UTILIZATION_REPORT_ERROR = 'UTILIZATION_REPORT_ERROR', APPLIANCE_UPGRADE_ERROR = 'APPLIANCE_UPGRADE_ERROR' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -4473,9 +4473,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Vmmigration_projects_locations_targetProjects_getView { UTILIZATION_REPORT_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Vmmigration_projects_locations_targetProjects_getView { UTILIZATION_REPORT_VIEW_UNSPECIFIED = 'UTILIZATION_REPORT_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum Vmmigration_projects_locations_sources_migratingVms_listView { MIGRATING_VM_VIEW_UNSPECIFIED = 0, MIGRATING_VM_VIEW_BASIC = 1, MIGRATING_VM_VIEW_FULL = 2 }
+	export enum Vmmigration_projects_locations_sources_migratingVms_listView { MIGRATING_VM_VIEW_UNSPECIFIED = 'MIGRATING_VM_VIEW_UNSPECIFIED', MIGRATING_VM_VIEW_BASIC = 'MIGRATING_VM_VIEW_BASIC', MIGRATING_VM_VIEW_FULL = 'MIGRATING_VM_VIEW_FULL' }
 
 }
 

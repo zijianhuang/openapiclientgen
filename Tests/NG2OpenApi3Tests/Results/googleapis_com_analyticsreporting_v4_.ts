@@ -96,7 +96,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityActivityType { ACTIVITY_TYPE_UNSPECIFIED = 0, PAGEVIEW = 1, SCREENVIEW = 2, GOAL = 3, ECOMMERCE = 4, EVENT = 5 }
+	export enum ActivityActivityType { ACTIVITY_TYPE_UNSPECIFIED = 'ACTIVITY_TYPE_UNSPECIFIED', PAGEVIEW = 'PAGEVIEW', SCREENVIEW = 'SCREENVIEW', GOAL = 'GOAL', ECOMMERCE = 'ECOMMERCE', EVENT = 'EVENT' }
 
 	export interface ScreenviewData {
 
@@ -198,9 +198,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EcommerceDataActionType { UNKNOWN = 0, CLICK = 1, DETAILS_VIEW = 2, ADD_TO_CART = 3, REMOVE_FROM_CART = 4, CHECKOUT = 5, PAYMENT = 6, REFUND = 7, CHECKOUT_OPTION = 8 }
+	export enum EcommerceDataActionType { UNKNOWN = 'UNKNOWN', CLICK = 'CLICK', DETAILS_VIEW = 'DETAILS_VIEW', ADD_TO_CART = 'ADD_TO_CART', REMOVE_FROM_CART = 'REMOVE_FROM_CART', CHECKOUT = 'CHECKOUT', PAYMENT = 'PAYMENT', REFUND = 'REFUND', CHECKOUT_OPTION = 'CHECKOUT_OPTION' }
 
-	export enum EcommerceDataEcommerceType { ECOMMERCE_TYPE_UNSPECIFIED = 0, CLASSIC = 1, ENHANCED = 2 }
+	export enum EcommerceDataEcommerceType { ECOMMERCE_TYPE_UNSPECIFIED = 'ECOMMERCE_TYPE_UNSPECIFIED', CLASSIC = 'CLASSIC', ENHANCED = 'ENHANCED' }
 
 
 	/** Details of the products in an e-commerce transaction. */
@@ -509,7 +509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CohortType { UNSPECIFIED_COHORT_TYPE = 0, FIRST_VISIT_DATE = 1 }
+	export enum CohortType { UNSPECIFIED_COHORT_TYPE = 'UNSPECIFIED_COHORT_TYPE', FIRST_VISIT_DATE = 'FIRST_VISIT_DATE' }
 
 
 	/** Defines a cohort group. For example: "cohortGroup": { "cohorts": [{ "name": "cohort 1", "type": "FIRST_VISIT_DATE", "dateRange": { "startDate": "2015-08-01", "endDate": "2015-08-01" } },{ "name": "cohort 2" "type": "FIRST_VISIT_DATE" "dateRange": { "startDate": "2015-07-01", "endDate": "2015-07-01" } }] } */
@@ -603,7 +603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricHeaderEntryType { METRIC_TYPE_UNSPECIFIED = 0, INTEGER = 1, FLOAT = 2, CURRENCY = 3, PERCENT = 4, TIME = 5 }
+	export enum MetricHeaderEntryType { METRIC_TYPE_UNSPECIFIED = 'METRIC_TYPE_UNSPECIFIED', INTEGER = 'INTEGER', FLOAT = 'FLOAT', CURRENCY = 'CURRENCY', PERCENT = 'PERCENT', TIME = 'TIME' }
 
 
 	/** The headers for each of the pivot sections defined in the request. */
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionFilterOperator { OPERATOR_UNSPECIFIED = 0, REGEXP = 1, BEGINS_WITH = 2, ENDS_WITH = 3, PARTIAL = 4, EXACT = 5, NUMERIC_EQUAL = 6, NUMERIC_GREATER_THAN = 7, NUMERIC_LESS_THAN = 8, IN_LIST = 9 }
+	export enum DimensionFilterOperator { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', REGEXP = 'REGEXP', BEGINS_WITH = 'BEGINS_WITH', ENDS_WITH = 'ENDS_WITH', PARTIAL = 'PARTIAL', EXACT = 'EXACT', NUMERIC_EQUAL = 'NUMERIC_EQUAL', NUMERIC_GREATER_THAN = 'NUMERIC_GREATER_THAN', NUMERIC_LESS_THAN = 'NUMERIC_LESS_THAN', IN_LIST = 'IN_LIST' }
 
 
 	/** A group of dimension filters. Set the operator value to specify how the filters are logically combined. */
@@ -784,7 +784,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionFilterClauseOperator { OPERATOR_UNSPECIFIED = 0, OR = 1, AND = 2 }
+	export enum DimensionFilterClauseOperator { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', OR = 'OR', AND = 'AND' }
 
 
 	/** Dynamic segment definition for defining the segment within the request. A segment can select users, sessions or both. */
@@ -905,7 +905,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SegmentSequenceStepMatchType { UNSPECIFIED_MATCH_TYPE = 0, PRECEDES = 1, IMMEDIATELY_PRECEDES = 2 }
+	export enum SegmentSequenceStepMatchType { UNSPECIFIED_MATCH_TYPE = 'UNSPECIFIED_MATCH_TYPE', PRECEDES = 'PRECEDES', IMMEDIATELY_PRECEDES = 'IMMEDIATELY_PRECEDES' }
 
 
 	/** A list of segment filters in the `OR` group are combined with the logical OR operator. */
@@ -1003,7 +1003,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SegmentDimensionFilterOperator { OPERATOR_UNSPECIFIED = 0, REGEXP = 1, BEGINS_WITH = 2, ENDS_WITH = 3, PARTIAL = 4, EXACT = 5, IN_LIST = 6, NUMERIC_LESS_THAN = 7, NUMERIC_GREATER_THAN = 8, NUMERIC_BETWEEN = 9 }
+	export enum SegmentDimensionFilterOperator { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', REGEXP = 'REGEXP', BEGINS_WITH = 'BEGINS_WITH', ENDS_WITH = 'ENDS_WITH', PARTIAL = 'PARTIAL', EXACT = 'EXACT', IN_LIST = 'IN_LIST', NUMERIC_LESS_THAN = 'NUMERIC_LESS_THAN', NUMERIC_GREATER_THAN = 'NUMERIC_GREATER_THAN', NUMERIC_BETWEEN = 'NUMERIC_BETWEEN' }
 
 
 	/** Metric filter to be used in a segment filter clause. */
@@ -1054,9 +1054,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SegmentMetricFilterOperator { UNSPECIFIED_OPERATOR = 0, LESS_THAN = 1, GREATER_THAN = 2, EQUAL = 3, BETWEEN = 4 }
+	export enum SegmentMetricFilterOperator { UNSPECIFIED_OPERATOR = 'UNSPECIFIED_OPERATOR', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', EQUAL = 'EQUAL', BETWEEN = 'BETWEEN' }
 
-	export enum SegmentMetricFilterScope { UNSPECIFIED_SCOPE = 0, PRODUCT = 1, HIT = 2, SESSION = 3, USER = 4 }
+	export enum SegmentMetricFilterScope { UNSPECIFIED_SCOPE = 'UNSPECIFIED_SCOPE', PRODUCT = 'PRODUCT', HIT = 'HIT', SESSION = 'SESSION', USER = 'USER' }
 
 
 	/** A Simple segment conditions consist of one or more dimension/metric conditions that can be combined. */
@@ -1262,7 +1262,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricFilterOperator { OPERATOR_UNSPECIFIED = 0, EQUAL = 1, LESS_THAN = 2, GREATER_THAN = 3, IS_MISSING = 4 }
+	export enum MetricFilterOperator { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', EQUAL = 'EQUAL', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', IS_MISSING = 'IS_MISSING' }
 
 
 	/** [Metrics](https://support.google.com/analytics/answer/1033861) are the quantitative measurements. For example, the metric `ga:users` indicates the total number of users for the requested time period. */
@@ -1334,9 +1334,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderByOrderType { ORDER_TYPE_UNSPECIFIED = 0, VALUE = 1, DELTA = 2, SMART = 3, HISTOGRAM_BUCKET = 4, DIMENSION_AS_INTEGER = 5 }
+	export enum OrderByOrderType { ORDER_TYPE_UNSPECIFIED = 'ORDER_TYPE_UNSPECIFIED', VALUE = 'VALUE', DELTA = 'DELTA', SMART = 'SMART', HISTOGRAM_BUCKET = 'HISTOGRAM_BUCKET', DIMENSION_AS_INTEGER = 'DIMENSION_AS_INTEGER' }
 
-	export enum OrderBySortOrder { SORT_ORDER_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum OrderBySortOrder { SORT_ORDER_UNSPECIFIED = 'SORT_ORDER_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** The Pivot describes the pivot section in the request. The Pivot helps rearrange the information in the table for certain reports by pivoting your data on a second dimension. */
@@ -1375,7 +1375,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportRequestSamplingLevel { SAMPLING_UNSPECIFIED = 0, DEFAULT = 1, SMALL = 2, LARGE = 3 }
+	export enum ReportRequestSamplingLevel { SAMPLING_UNSPECIFIED = 'SAMPLING_UNSPECIFIED', DEFAULT = 'DEFAULT', SMALL = 'SMALL', LARGE = 'LARGE' }
 
 
 	/** The segment definition, if the report needs to be segmented. A Segment is a subset of the Analytics data. For example, of the entire set of users, one Segment might be users from a particular country or city. */
@@ -1635,7 +1635,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserType { USER_ID_TYPE_UNSPECIFIED = 0, USER_ID = 1, CLIENT_ID = 2 }
+	export enum UserType { USER_ID_TYPE_UNSPECIFIED = 'USER_ID_TYPE_UNSPECIFIED', USER_ID = 'USER_ID', CLIENT_ID = 'CLIENT_ID' }
 
 
 	/** The response from `userActivity:get` call. */

@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentAccountConnectionStatus { PENDING = 0, CONNECTED = 1, REJECTED = 2 }
+	export enum EnvironmentAccountConnectionStatus { PENDING = 'PENDING', CONNECTED = 'CONNECTED', REJECTED = 'REJECTED' }
 
 	export interface AcceptEnvironmentAccountConnectionInput {
 
@@ -277,7 +277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentStatus { IN_PROGRESS = 0, FAILED = 1, SUCCEEDED = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4, DELETE_COMPLETE = 5, CANCELLING = 6, CANCELLED = 7 }
+	export enum DeploymentStatus { IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', DELETE_COMPLETE = 'DELETE_COMPLETE', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
 	export interface CancelComponentDeploymentInput {
 
@@ -420,7 +420,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Provisioning { CUSTOMER_MANAGED = 0 }
+	export enum Provisioning { CUSTOMER_MANAGED = 'CUSTOMER_MANAGED' }
 
 
 	/** Detail data for a linked repository branch. */
@@ -464,7 +464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryProvider { GITHUB = 0, GITHUB_ENTERPRISE = 1, BITBUCKET = 2 }
+	export enum RepositoryProvider { GITHUB = 'GITHUB', GITHUB_ENTERPRISE = 'GITHUB_ENTERPRISE', BITBUCKET = 'BITBUCKET' }
 
 	export interface CancelEnvironmentDeploymentInput {
 
@@ -1183,7 +1183,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateVersionStatus { REGISTRATION_IN_PROGRESS = 0, REGISTRATION_FAILED = 1, DRAFT = 2, PUBLISHED = 3 }
+	export enum TemplateVersionStatus { REGISTRATION_IN_PROGRESS = 'REGISTRATION_IN_PROGRESS', REGISTRATION_FAILED = 'REGISTRATION_FAILED', DRAFT = 'DRAFT', PUBLISHED = 'PUBLISHED' }
 
 	export interface CreateEnvironmentTemplateVersionInput {
 		clientToken?: string;
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED_CLEANUP_IN_PROGRESS = 1, CREATE_FAILED_CLEANUP_COMPLETE = 2, CREATE_FAILED_CLEANUP_FAILED = 3, CREATE_FAILED = 4, ACTIVE = 5, DELETE_IN_PROGRESS = 6, DELETE_FAILED = 7, UPDATE_IN_PROGRESS = 8, UPDATE_FAILED_CLEANUP_IN_PROGRESS = 9, UPDATE_FAILED_CLEANUP_COMPLETE = 10, UPDATE_FAILED_CLEANUP_FAILED = 11, UPDATE_FAILED = 12, UPDATE_COMPLETE_CLEANUP_FAILED = 13 }
+	export enum ServiceStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED_CLEANUP_IN_PROGRESS = 'CREATE_FAILED_CLEANUP_IN_PROGRESS', CREATE_FAILED_CLEANUP_COMPLETE = 'CREATE_FAILED_CLEANUP_COMPLETE', CREATE_FAILED_CLEANUP_FAILED = 'CREATE_FAILED_CLEANUP_FAILED', CREATE_FAILED = 'CREATE_FAILED', ACTIVE = 'ACTIVE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_FAILED_CLEANUP_IN_PROGRESS = 'UPDATE_FAILED_CLEANUP_IN_PROGRESS', UPDATE_FAILED_CLEANUP_COMPLETE = 'UPDATE_FAILED_CLEANUP_COMPLETE', UPDATE_FAILED_CLEANUP_FAILED = 'UPDATE_FAILED_CLEANUP_FAILED', UPDATE_FAILED = 'UPDATE_FAILED', UPDATE_COMPLETE_CLEANUP_FAILED = 'UPDATE_COMPLETE_CLEANUP_FAILED' }
 
 	export interface CreateServiceInput {
 		branchName?: string;
@@ -1878,7 +1878,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceTemplateSupportedComponentSourceType { DIRECTLY_DEFINED = 0 }
+	export enum ServiceTemplateSupportedComponentSourceType { DIRECTLY_DEFINED = 'DIRECTLY_DEFINED' }
 
 	export interface CreateServiceTemplateVersionInput {
 		clientToken?: string;
@@ -2005,7 +2005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateType { ENVIRONMENT = 0, SERVICE = 1 }
+	export enum TemplateType { ENVIRONMENT = 'ENVIRONMENT', SERVICE = 'SERVICE' }
 
 	export interface CreateTemplateSyncConfigInput {
 
@@ -2363,7 +2363,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentTargetResourceType { ENVIRONMENT = 0, SERVICE_PIPELINE = 1, SERVICE_INSTANCE = 2, COMPONENT = 3 }
+	export enum DeploymentTargetResourceType { ENVIRONMENT = 'ENVIRONMENT', SERVICE_PIPELINE = 'SERVICE_PIPELINE', SERVICE_INSTANCE = 'SERVICE_INSTANCE', COMPONENT = 'COMPONENT' }
 
 	export interface DeleteDeploymentInput {
 
@@ -3065,7 +3065,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositorySyncStatus { INITIATED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, QUEUED = 4 }
+	export enum RepositorySyncStatus { INITIATED = 'INITIATED', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', QUEUED = 'QUEUED' }
 
 	export interface GetRepositorySyncStatusInput {
 
@@ -3105,7 +3105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncType { TEMPLATE_SYNC = 0, SERVICE_SYNC = 1 }
+	export enum SyncType { TEMPLATE_SYNC = 'TEMPLATE_SYNC', SERVICE_SYNC = 'SERVICE_SYNC' }
 
 	export interface GetResourcesSummaryOutput {
 
@@ -3393,7 +3393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSyncStatus { INITIATED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum ResourceSyncStatus { INITIATED = 'INITIATED', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface GetServiceInstanceSyncStatusInput {
 
@@ -3539,9 +3539,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BlockerStatus { ACTIVE = 0, RESOLVED = 1 }
+	export enum BlockerStatus { ACTIVE = 'ACTIVE', RESOLVED = 'RESOLVED' }
 
-	export enum BlockerType { AUTOMATED = 0 }
+	export enum BlockerType { AUTOMATED = 'AUTOMATED' }
 
 	export interface GetServiceSyncBlockerSummaryInput {
 		serviceInstanceName?: string;
@@ -3844,7 +3844,7 @@ export namespace MyNS {
 
 
 	/** List of provisioning engines */
-	export enum ProvisionedResourceEngine { CLOUDFORMATION = 0, TERRAFORM = 1 }
+	export enum ProvisionedResourceEngine { CLOUDFORMATION = 'CLOUDFORMATION', TERRAFORM = 'TERRAFORM' }
 
 	export interface ListComponentProvisionedResourcesInput {
 
@@ -4246,7 +4246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentAccountConnectionRequesterAccountType { MANAGEMENT_ACCOUNT = 0, ENVIRONMENT_ACCOUNT = 1 }
+	export enum EnvironmentAccountConnectionRequesterAccountType { MANAGEMENT_ACCOUNT = 'MANAGEMENT_ACCOUNT', ENVIRONMENT_ACCOUNT = 'ENVIRONMENT_ACCOUNT' }
 
 	export interface ListEnvironmentOutputsOutput {
 		nextToken?: string;
@@ -5105,11 +5105,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ListServiceInstancesFilterBy { name = 0, deploymentStatus = 1, templateName = 2, serviceName = 3, deployedTemplateVersionStatus = 4, environmentName = 5, lastDeploymentAttemptedAtBefore = 6, lastDeploymentAttemptedAtAfter = 7, createdAtBefore = 8, createdAtAfter = 9 }
+	export enum ListServiceInstancesFilterBy { name = 'name', deploymentStatus = 'deploymentStatus', templateName = 'templateName', serviceName = 'serviceName', deployedTemplateVersionStatus = 'deployedTemplateVersionStatus', environmentName = 'environmentName', lastDeploymentAttemptedAtBefore = 'lastDeploymentAttemptedAtBefore', lastDeploymentAttemptedAtAfter = 'lastDeploymentAttemptedAtAfter', createdAtBefore = 'createdAtBefore', createdAtAfter = 'createdAtAfter' }
 
-	export enum ListServiceInstancesSortBy { name = 0, deploymentStatus = 1, templateName = 2, serviceName = 3, environmentName = 4, lastDeploymentAttemptedAt = 5, createdAt = 6 }
+	export enum ListServiceInstancesSortBy { name = 'name', deploymentStatus = 'deploymentStatus', templateName = 'templateName', serviceName = 'serviceName', environmentName = 'environmentName', lastDeploymentAttemptedAt = 'lastDeploymentAttemptedAt', createdAt = 'createdAt' }
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListServicePipelineOutputsOutput {
 		nextToken?: string;
@@ -5558,7 +5558,7 @@ export namespace MyNS {
 
 
 	/** The state that a PR-based deployment can be updated to. */
-	export enum ResourceDeploymentStatus { IN_PROGRESS = 0, FAILED = 1, SUCCEEDED = 2 }
+	export enum ResourceDeploymentStatus { IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
 	export interface RejectEnvironmentAccountConnectionOutput {
 
@@ -5738,7 +5738,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentDeploymentUpdateType { NONE = 0, CURRENT_VERSION = 1 }
+	export enum ComponentDeploymentUpdateType { NONE = 'NONE', CURRENT_VERSION = 'CURRENT_VERSION' }
 
 	export interface UpdateEnvironmentOutput {
 
@@ -5802,7 +5802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentUpdateType { NONE = 0, CURRENT_VERSION = 1, MINOR_VERSION = 2, MAJOR_VERSION = 3 }
+	export enum DeploymentUpdateType { NONE = 'NONE', CURRENT_VERSION = 'CURRENT_VERSION', MINOR_VERSION = 'MINOR_VERSION', MAJOR_VERSION = 'MAJOR_VERSION' }
 
 	export interface UpdateEnvironmentAccountConnectionOutput {
 
@@ -7143,179 +7143,179 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.AcceptEnvironmentAccountConnection' = 0 }
+	export enum AcceptEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.AcceptEnvironmentAccountConnection' = 'AwsProton20200720.AcceptEnvironmentAccountConnection' }
 
-	export enum CancelComponentDeploymentX_Amz_Target { 'AwsProton20200720.CancelComponentDeployment' = 0 }
+	export enum CancelComponentDeploymentX_Amz_Target { 'AwsProton20200720.CancelComponentDeployment' = 'AwsProton20200720.CancelComponentDeployment' }
 
-	export enum CancelEnvironmentDeploymentX_Amz_Target { 'AwsProton20200720.CancelEnvironmentDeployment' = 0 }
+	export enum CancelEnvironmentDeploymentX_Amz_Target { 'AwsProton20200720.CancelEnvironmentDeployment' = 'AwsProton20200720.CancelEnvironmentDeployment' }
 
-	export enum CancelServiceInstanceDeploymentX_Amz_Target { 'AwsProton20200720.CancelServiceInstanceDeployment' = 0 }
+	export enum CancelServiceInstanceDeploymentX_Amz_Target { 'AwsProton20200720.CancelServiceInstanceDeployment' = 'AwsProton20200720.CancelServiceInstanceDeployment' }
 
-	export enum CancelServicePipelineDeploymentX_Amz_Target { 'AwsProton20200720.CancelServicePipelineDeployment' = 0 }
+	export enum CancelServicePipelineDeploymentX_Amz_Target { 'AwsProton20200720.CancelServicePipelineDeployment' = 'AwsProton20200720.CancelServicePipelineDeployment' }
 
-	export enum CreateComponentX_Amz_Target { 'AwsProton20200720.CreateComponent' = 0 }
+	export enum CreateComponentX_Amz_Target { 'AwsProton20200720.CreateComponent' = 'AwsProton20200720.CreateComponent' }
 
-	export enum CreateEnvironmentX_Amz_Target { 'AwsProton20200720.CreateEnvironment' = 0 }
+	export enum CreateEnvironmentX_Amz_Target { 'AwsProton20200720.CreateEnvironment' = 'AwsProton20200720.CreateEnvironment' }
 
-	export enum CreateEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.CreateEnvironmentAccountConnection' = 0 }
+	export enum CreateEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.CreateEnvironmentAccountConnection' = 'AwsProton20200720.CreateEnvironmentAccountConnection' }
 
-	export enum CreateEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.CreateEnvironmentTemplate' = 0 }
+	export enum CreateEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.CreateEnvironmentTemplate' = 'AwsProton20200720.CreateEnvironmentTemplate' }
 
-	export enum CreateEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.CreateEnvironmentTemplateVersion' = 0 }
+	export enum CreateEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.CreateEnvironmentTemplateVersion' = 'AwsProton20200720.CreateEnvironmentTemplateVersion' }
 
-	export enum CreateRepositoryX_Amz_Target { 'AwsProton20200720.CreateRepository' = 0 }
+	export enum CreateRepositoryX_Amz_Target { 'AwsProton20200720.CreateRepository' = 'AwsProton20200720.CreateRepository' }
 
-	export enum CreateServiceX_Amz_Target { 'AwsProton20200720.CreateService' = 0 }
+	export enum CreateServiceX_Amz_Target { 'AwsProton20200720.CreateService' = 'AwsProton20200720.CreateService' }
 
-	export enum CreateServiceInstanceX_Amz_Target { 'AwsProton20200720.CreateServiceInstance' = 0 }
+	export enum CreateServiceInstanceX_Amz_Target { 'AwsProton20200720.CreateServiceInstance' = 'AwsProton20200720.CreateServiceInstance' }
 
-	export enum CreateServiceSyncConfigX_Amz_Target { 'AwsProton20200720.CreateServiceSyncConfig' = 0 }
+	export enum CreateServiceSyncConfigX_Amz_Target { 'AwsProton20200720.CreateServiceSyncConfig' = 'AwsProton20200720.CreateServiceSyncConfig' }
 
-	export enum CreateServiceTemplateX_Amz_Target { 'AwsProton20200720.CreateServiceTemplate' = 0 }
+	export enum CreateServiceTemplateX_Amz_Target { 'AwsProton20200720.CreateServiceTemplate' = 'AwsProton20200720.CreateServiceTemplate' }
 
-	export enum CreateServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.CreateServiceTemplateVersion' = 0 }
+	export enum CreateServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.CreateServiceTemplateVersion' = 'AwsProton20200720.CreateServiceTemplateVersion' }
 
-	export enum CreateTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.CreateTemplateSyncConfig' = 0 }
+	export enum CreateTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.CreateTemplateSyncConfig' = 'AwsProton20200720.CreateTemplateSyncConfig' }
 
-	export enum DeleteComponentX_Amz_Target { 'AwsProton20200720.DeleteComponent' = 0 }
+	export enum DeleteComponentX_Amz_Target { 'AwsProton20200720.DeleteComponent' = 'AwsProton20200720.DeleteComponent' }
 
-	export enum DeleteDeploymentX_Amz_Target { 'AwsProton20200720.DeleteDeployment' = 0 }
+	export enum DeleteDeploymentX_Amz_Target { 'AwsProton20200720.DeleteDeployment' = 'AwsProton20200720.DeleteDeployment' }
 
-	export enum DeleteEnvironmentX_Amz_Target { 'AwsProton20200720.DeleteEnvironment' = 0 }
+	export enum DeleteEnvironmentX_Amz_Target { 'AwsProton20200720.DeleteEnvironment' = 'AwsProton20200720.DeleteEnvironment' }
 
-	export enum DeleteEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.DeleteEnvironmentAccountConnection' = 0 }
+	export enum DeleteEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.DeleteEnvironmentAccountConnection' = 'AwsProton20200720.DeleteEnvironmentAccountConnection' }
 
-	export enum DeleteEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.DeleteEnvironmentTemplate' = 0 }
+	export enum DeleteEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.DeleteEnvironmentTemplate' = 'AwsProton20200720.DeleteEnvironmentTemplate' }
 
-	export enum DeleteEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.DeleteEnvironmentTemplateVersion' = 0 }
+	export enum DeleteEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.DeleteEnvironmentTemplateVersion' = 'AwsProton20200720.DeleteEnvironmentTemplateVersion' }
 
-	export enum DeleteRepositoryX_Amz_Target { 'AwsProton20200720.DeleteRepository' = 0 }
+	export enum DeleteRepositoryX_Amz_Target { 'AwsProton20200720.DeleteRepository' = 'AwsProton20200720.DeleteRepository' }
 
-	export enum DeleteServiceX_Amz_Target { 'AwsProton20200720.DeleteService' = 0 }
+	export enum DeleteServiceX_Amz_Target { 'AwsProton20200720.DeleteService' = 'AwsProton20200720.DeleteService' }
 
-	export enum DeleteServiceSyncConfigX_Amz_Target { 'AwsProton20200720.DeleteServiceSyncConfig' = 0 }
+	export enum DeleteServiceSyncConfigX_Amz_Target { 'AwsProton20200720.DeleteServiceSyncConfig' = 'AwsProton20200720.DeleteServiceSyncConfig' }
 
-	export enum DeleteServiceTemplateX_Amz_Target { 'AwsProton20200720.DeleteServiceTemplate' = 0 }
+	export enum DeleteServiceTemplateX_Amz_Target { 'AwsProton20200720.DeleteServiceTemplate' = 'AwsProton20200720.DeleteServiceTemplate' }
 
-	export enum DeleteServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.DeleteServiceTemplateVersion' = 0 }
+	export enum DeleteServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.DeleteServiceTemplateVersion' = 'AwsProton20200720.DeleteServiceTemplateVersion' }
 
-	export enum DeleteTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.DeleteTemplateSyncConfig' = 0 }
+	export enum DeleteTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.DeleteTemplateSyncConfig' = 'AwsProton20200720.DeleteTemplateSyncConfig' }
 
-	export enum GetAccountSettingsX_Amz_Target { 'AwsProton20200720.GetAccountSettings' = 0 }
+	export enum GetAccountSettingsX_Amz_Target { 'AwsProton20200720.GetAccountSettings' = 'AwsProton20200720.GetAccountSettings' }
 
-	export enum GetComponentX_Amz_Target { 'AwsProton20200720.GetComponent' = 0 }
+	export enum GetComponentX_Amz_Target { 'AwsProton20200720.GetComponent' = 'AwsProton20200720.GetComponent' }
 
-	export enum GetDeploymentX_Amz_Target { 'AwsProton20200720.GetDeployment' = 0 }
+	export enum GetDeploymentX_Amz_Target { 'AwsProton20200720.GetDeployment' = 'AwsProton20200720.GetDeployment' }
 
-	export enum GetEnvironmentX_Amz_Target { 'AwsProton20200720.GetEnvironment' = 0 }
+	export enum GetEnvironmentX_Amz_Target { 'AwsProton20200720.GetEnvironment' = 'AwsProton20200720.GetEnvironment' }
 
-	export enum GetEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.GetEnvironmentAccountConnection' = 0 }
+	export enum GetEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.GetEnvironmentAccountConnection' = 'AwsProton20200720.GetEnvironmentAccountConnection' }
 
-	export enum GetEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.GetEnvironmentTemplate' = 0 }
+	export enum GetEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.GetEnvironmentTemplate' = 'AwsProton20200720.GetEnvironmentTemplate' }
 
-	export enum GetEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.GetEnvironmentTemplateVersion' = 0 }
+	export enum GetEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.GetEnvironmentTemplateVersion' = 'AwsProton20200720.GetEnvironmentTemplateVersion' }
 
-	export enum GetRepositoryX_Amz_Target { 'AwsProton20200720.GetRepository' = 0 }
+	export enum GetRepositoryX_Amz_Target { 'AwsProton20200720.GetRepository' = 'AwsProton20200720.GetRepository' }
 
-	export enum GetRepositorySyncStatusX_Amz_Target { 'AwsProton20200720.GetRepositorySyncStatus' = 0 }
+	export enum GetRepositorySyncStatusX_Amz_Target { 'AwsProton20200720.GetRepositorySyncStatus' = 'AwsProton20200720.GetRepositorySyncStatus' }
 
-	export enum GetResourcesSummaryX_Amz_Target { 'AwsProton20200720.GetResourcesSummary' = 0 }
+	export enum GetResourcesSummaryX_Amz_Target { 'AwsProton20200720.GetResourcesSummary' = 'AwsProton20200720.GetResourcesSummary' }
 
-	export enum GetServiceX_Amz_Target { 'AwsProton20200720.GetService' = 0 }
+	export enum GetServiceX_Amz_Target { 'AwsProton20200720.GetService' = 'AwsProton20200720.GetService' }
 
-	export enum GetServiceInstanceX_Amz_Target { 'AwsProton20200720.GetServiceInstance' = 0 }
+	export enum GetServiceInstanceX_Amz_Target { 'AwsProton20200720.GetServiceInstance' = 'AwsProton20200720.GetServiceInstance' }
 
-	export enum GetServiceInstanceSyncStatusX_Amz_Target { 'AwsProton20200720.GetServiceInstanceSyncStatus' = 0 }
+	export enum GetServiceInstanceSyncStatusX_Amz_Target { 'AwsProton20200720.GetServiceInstanceSyncStatus' = 'AwsProton20200720.GetServiceInstanceSyncStatus' }
 
-	export enum GetServiceSyncBlockerSummaryX_Amz_Target { 'AwsProton20200720.GetServiceSyncBlockerSummary' = 0 }
+	export enum GetServiceSyncBlockerSummaryX_Amz_Target { 'AwsProton20200720.GetServiceSyncBlockerSummary' = 'AwsProton20200720.GetServiceSyncBlockerSummary' }
 
-	export enum GetServiceSyncConfigX_Amz_Target { 'AwsProton20200720.GetServiceSyncConfig' = 0 }
+	export enum GetServiceSyncConfigX_Amz_Target { 'AwsProton20200720.GetServiceSyncConfig' = 'AwsProton20200720.GetServiceSyncConfig' }
 
-	export enum GetServiceTemplateX_Amz_Target { 'AwsProton20200720.GetServiceTemplate' = 0 }
+	export enum GetServiceTemplateX_Amz_Target { 'AwsProton20200720.GetServiceTemplate' = 'AwsProton20200720.GetServiceTemplate' }
 
-	export enum GetServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.GetServiceTemplateVersion' = 0 }
+	export enum GetServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.GetServiceTemplateVersion' = 'AwsProton20200720.GetServiceTemplateVersion' }
 
-	export enum GetTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.GetTemplateSyncConfig' = 0 }
+	export enum GetTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.GetTemplateSyncConfig' = 'AwsProton20200720.GetTemplateSyncConfig' }
 
-	export enum GetTemplateSyncStatusX_Amz_Target { 'AwsProton20200720.GetTemplateSyncStatus' = 0 }
+	export enum GetTemplateSyncStatusX_Amz_Target { 'AwsProton20200720.GetTemplateSyncStatus' = 'AwsProton20200720.GetTemplateSyncStatus' }
 
-	export enum ListComponentOutputsX_Amz_Target { 'AwsProton20200720.ListComponentOutputs' = 0 }
+	export enum ListComponentOutputsX_Amz_Target { 'AwsProton20200720.ListComponentOutputs' = 'AwsProton20200720.ListComponentOutputs' }
 
-	export enum ListComponentProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListComponentProvisionedResources' = 0 }
+	export enum ListComponentProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListComponentProvisionedResources' = 'AwsProton20200720.ListComponentProvisionedResources' }
 
-	export enum ListComponentsX_Amz_Target { 'AwsProton20200720.ListComponents' = 0 }
+	export enum ListComponentsX_Amz_Target { 'AwsProton20200720.ListComponents' = 'AwsProton20200720.ListComponents' }
 
-	export enum ListDeploymentsX_Amz_Target { 'AwsProton20200720.ListDeployments' = 0 }
+	export enum ListDeploymentsX_Amz_Target { 'AwsProton20200720.ListDeployments' = 'AwsProton20200720.ListDeployments' }
 
-	export enum ListEnvironmentAccountConnectionsX_Amz_Target { 'AwsProton20200720.ListEnvironmentAccountConnections' = 0 }
+	export enum ListEnvironmentAccountConnectionsX_Amz_Target { 'AwsProton20200720.ListEnvironmentAccountConnections' = 'AwsProton20200720.ListEnvironmentAccountConnections' }
 
-	export enum ListEnvironmentOutputsX_Amz_Target { 'AwsProton20200720.ListEnvironmentOutputs' = 0 }
+	export enum ListEnvironmentOutputsX_Amz_Target { 'AwsProton20200720.ListEnvironmentOutputs' = 'AwsProton20200720.ListEnvironmentOutputs' }
 
-	export enum ListEnvironmentProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListEnvironmentProvisionedResources' = 0 }
+	export enum ListEnvironmentProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListEnvironmentProvisionedResources' = 'AwsProton20200720.ListEnvironmentProvisionedResources' }
 
-	export enum ListEnvironmentTemplateVersionsX_Amz_Target { 'AwsProton20200720.ListEnvironmentTemplateVersions' = 0 }
+	export enum ListEnvironmentTemplateVersionsX_Amz_Target { 'AwsProton20200720.ListEnvironmentTemplateVersions' = 'AwsProton20200720.ListEnvironmentTemplateVersions' }
 
-	export enum ListEnvironmentTemplatesX_Amz_Target { 'AwsProton20200720.ListEnvironmentTemplates' = 0 }
+	export enum ListEnvironmentTemplatesX_Amz_Target { 'AwsProton20200720.ListEnvironmentTemplates' = 'AwsProton20200720.ListEnvironmentTemplates' }
 
-	export enum ListEnvironmentsX_Amz_Target { 'AwsProton20200720.ListEnvironments' = 0 }
+	export enum ListEnvironmentsX_Amz_Target { 'AwsProton20200720.ListEnvironments' = 'AwsProton20200720.ListEnvironments' }
 
-	export enum ListRepositoriesX_Amz_Target { 'AwsProton20200720.ListRepositories' = 0 }
+	export enum ListRepositoriesX_Amz_Target { 'AwsProton20200720.ListRepositories' = 'AwsProton20200720.ListRepositories' }
 
-	export enum ListRepositorySyncDefinitionsX_Amz_Target { 'AwsProton20200720.ListRepositorySyncDefinitions' = 0 }
+	export enum ListRepositorySyncDefinitionsX_Amz_Target { 'AwsProton20200720.ListRepositorySyncDefinitions' = 'AwsProton20200720.ListRepositorySyncDefinitions' }
 
-	export enum ListServiceInstanceOutputsX_Amz_Target { 'AwsProton20200720.ListServiceInstanceOutputs' = 0 }
+	export enum ListServiceInstanceOutputsX_Amz_Target { 'AwsProton20200720.ListServiceInstanceOutputs' = 'AwsProton20200720.ListServiceInstanceOutputs' }
 
-	export enum ListServiceInstanceProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListServiceInstanceProvisionedResources' = 0 }
+	export enum ListServiceInstanceProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListServiceInstanceProvisionedResources' = 'AwsProton20200720.ListServiceInstanceProvisionedResources' }
 
-	export enum ListServiceInstancesX_Amz_Target { 'AwsProton20200720.ListServiceInstances' = 0 }
+	export enum ListServiceInstancesX_Amz_Target { 'AwsProton20200720.ListServiceInstances' = 'AwsProton20200720.ListServiceInstances' }
 
-	export enum ListServicePipelineOutputsX_Amz_Target { 'AwsProton20200720.ListServicePipelineOutputs' = 0 }
+	export enum ListServicePipelineOutputsX_Amz_Target { 'AwsProton20200720.ListServicePipelineOutputs' = 'AwsProton20200720.ListServicePipelineOutputs' }
 
-	export enum ListServicePipelineProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListServicePipelineProvisionedResources' = 0 }
+	export enum ListServicePipelineProvisionedResourcesX_Amz_Target { 'AwsProton20200720.ListServicePipelineProvisionedResources' = 'AwsProton20200720.ListServicePipelineProvisionedResources' }
 
-	export enum ListServiceTemplateVersionsX_Amz_Target { 'AwsProton20200720.ListServiceTemplateVersions' = 0 }
+	export enum ListServiceTemplateVersionsX_Amz_Target { 'AwsProton20200720.ListServiceTemplateVersions' = 'AwsProton20200720.ListServiceTemplateVersions' }
 
-	export enum ListServiceTemplatesX_Amz_Target { 'AwsProton20200720.ListServiceTemplates' = 0 }
+	export enum ListServiceTemplatesX_Amz_Target { 'AwsProton20200720.ListServiceTemplates' = 'AwsProton20200720.ListServiceTemplates' }
 
-	export enum ListServicesX_Amz_Target { 'AwsProton20200720.ListServices' = 0 }
+	export enum ListServicesX_Amz_Target { 'AwsProton20200720.ListServices' = 'AwsProton20200720.ListServices' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AwsProton20200720.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AwsProton20200720.ListTagsForResource' = 'AwsProton20200720.ListTagsForResource' }
 
-	export enum NotifyResourceDeploymentStatusChangeX_Amz_Target { 'AwsProton20200720.NotifyResourceDeploymentStatusChange' = 0 }
+	export enum NotifyResourceDeploymentStatusChangeX_Amz_Target { 'AwsProton20200720.NotifyResourceDeploymentStatusChange' = 'AwsProton20200720.NotifyResourceDeploymentStatusChange' }
 
-	export enum RejectEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.RejectEnvironmentAccountConnection' = 0 }
+	export enum RejectEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.RejectEnvironmentAccountConnection' = 'AwsProton20200720.RejectEnvironmentAccountConnection' }
 
-	export enum TagResourceX_Amz_Target { 'AwsProton20200720.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AwsProton20200720.TagResource' = 'AwsProton20200720.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AwsProton20200720.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AwsProton20200720.UntagResource' = 'AwsProton20200720.UntagResource' }
 
-	export enum UpdateAccountSettingsX_Amz_Target { 'AwsProton20200720.UpdateAccountSettings' = 0 }
+	export enum UpdateAccountSettingsX_Amz_Target { 'AwsProton20200720.UpdateAccountSettings' = 'AwsProton20200720.UpdateAccountSettings' }
 
-	export enum UpdateComponentX_Amz_Target { 'AwsProton20200720.UpdateComponent' = 0 }
+	export enum UpdateComponentX_Amz_Target { 'AwsProton20200720.UpdateComponent' = 'AwsProton20200720.UpdateComponent' }
 
-	export enum UpdateEnvironmentX_Amz_Target { 'AwsProton20200720.UpdateEnvironment' = 0 }
+	export enum UpdateEnvironmentX_Amz_Target { 'AwsProton20200720.UpdateEnvironment' = 'AwsProton20200720.UpdateEnvironment' }
 
-	export enum UpdateEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.UpdateEnvironmentAccountConnection' = 0 }
+	export enum UpdateEnvironmentAccountConnectionX_Amz_Target { 'AwsProton20200720.UpdateEnvironmentAccountConnection' = 'AwsProton20200720.UpdateEnvironmentAccountConnection' }
 
-	export enum UpdateEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.UpdateEnvironmentTemplate' = 0 }
+	export enum UpdateEnvironmentTemplateX_Amz_Target { 'AwsProton20200720.UpdateEnvironmentTemplate' = 'AwsProton20200720.UpdateEnvironmentTemplate' }
 
-	export enum UpdateEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.UpdateEnvironmentTemplateVersion' = 0 }
+	export enum UpdateEnvironmentTemplateVersionX_Amz_Target { 'AwsProton20200720.UpdateEnvironmentTemplateVersion' = 'AwsProton20200720.UpdateEnvironmentTemplateVersion' }
 
-	export enum UpdateServiceX_Amz_Target { 'AwsProton20200720.UpdateService' = 0 }
+	export enum UpdateServiceX_Amz_Target { 'AwsProton20200720.UpdateService' = 'AwsProton20200720.UpdateService' }
 
-	export enum UpdateServiceInstanceX_Amz_Target { 'AwsProton20200720.UpdateServiceInstance' = 0 }
+	export enum UpdateServiceInstanceX_Amz_Target { 'AwsProton20200720.UpdateServiceInstance' = 'AwsProton20200720.UpdateServiceInstance' }
 
-	export enum UpdateServicePipelineX_Amz_Target { 'AwsProton20200720.UpdateServicePipeline' = 0 }
+	export enum UpdateServicePipelineX_Amz_Target { 'AwsProton20200720.UpdateServicePipeline' = 'AwsProton20200720.UpdateServicePipeline' }
 
-	export enum UpdateServiceSyncBlockerX_Amz_Target { 'AwsProton20200720.UpdateServiceSyncBlocker' = 0 }
+	export enum UpdateServiceSyncBlockerX_Amz_Target { 'AwsProton20200720.UpdateServiceSyncBlocker' = 'AwsProton20200720.UpdateServiceSyncBlocker' }
 
-	export enum UpdateServiceSyncConfigX_Amz_Target { 'AwsProton20200720.UpdateServiceSyncConfig' = 0 }
+	export enum UpdateServiceSyncConfigX_Amz_Target { 'AwsProton20200720.UpdateServiceSyncConfig' = 'AwsProton20200720.UpdateServiceSyncConfig' }
 
-	export enum UpdateServiceTemplateX_Amz_Target { 'AwsProton20200720.UpdateServiceTemplate' = 0 }
+	export enum UpdateServiceTemplateX_Amz_Target { 'AwsProton20200720.UpdateServiceTemplate' = 'AwsProton20200720.UpdateServiceTemplate' }
 
-	export enum UpdateServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.UpdateServiceTemplateVersion' = 0 }
+	export enum UpdateServiceTemplateVersionX_Amz_Target { 'AwsProton20200720.UpdateServiceTemplateVersion' = 'AwsProton20200720.UpdateServiceTemplateVersion' }
 
-	export enum UpdateTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.UpdateTemplateSyncConfig' = 0 }
+	export enum UpdateTemplateSyncConfigX_Amz_Target { 'AwsProton20200720.UpdateTemplateSyncConfig' = 'AwsProton20200720.UpdateTemplateSyncConfig' }
 
 }
 

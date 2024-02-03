@@ -208,7 +208,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SingleBaselineSensitivity { Low = 0, Medium = 1, High = 2 }
+	export enum SingleBaselineSensitivity { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** The metric dimension name and value. */
@@ -351,7 +351,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Baselines_ListResultType { Data = 0, Metadata = 1 }
+	export enum Baselines_ListResultType { Data = 'Data', Metadata = 'Metadata' }
 
 }
 

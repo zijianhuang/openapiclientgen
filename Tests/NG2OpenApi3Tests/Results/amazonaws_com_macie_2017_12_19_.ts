@@ -177,9 +177,9 @@ export namespace MyNS {
 
 	}
 
-	export enum S3OneTimeClassificationType { FULL = 0, NONE = 1 }
+	export enum S3OneTimeClassificationType { FULL = 'FULL', NONE = 'NONE' }
 
-	export enum S3ContinuousClassificationType { FULL = 0 }
+	export enum S3ContinuousClassificationType { FULL = 'FULL' }
 
 	export interface AccessDeniedException {
 	}
@@ -462,19 +462,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateMemberAccountX_Amz_Target { 'MacieService.AssociateMemberAccount' = 0 }
+	export enum AssociateMemberAccountX_Amz_Target { 'MacieService.AssociateMemberAccount' = 'MacieService.AssociateMemberAccount' }
 
-	export enum AssociateS3ResourcesX_Amz_Target { 'MacieService.AssociateS3Resources' = 0 }
+	export enum AssociateS3ResourcesX_Amz_Target { 'MacieService.AssociateS3Resources' = 'MacieService.AssociateS3Resources' }
 
-	export enum DisassociateMemberAccountX_Amz_Target { 'MacieService.DisassociateMemberAccount' = 0 }
+	export enum DisassociateMemberAccountX_Amz_Target { 'MacieService.DisassociateMemberAccount' = 'MacieService.DisassociateMemberAccount' }
 
-	export enum DisassociateS3ResourcesX_Amz_Target { 'MacieService.DisassociateS3Resources' = 0 }
+	export enum DisassociateS3ResourcesX_Amz_Target { 'MacieService.DisassociateS3Resources' = 'MacieService.DisassociateS3Resources' }
 
-	export enum ListMemberAccountsX_Amz_Target { 'MacieService.ListMemberAccounts' = 0 }
+	export enum ListMemberAccountsX_Amz_Target { 'MacieService.ListMemberAccounts' = 'MacieService.ListMemberAccounts' }
 
-	export enum ListS3ResourcesX_Amz_Target { 'MacieService.ListS3Resources' = 0 }
+	export enum ListS3ResourcesX_Amz_Target { 'MacieService.ListS3Resources' = 'MacieService.ListS3Resources' }
 
-	export enum UpdateS3ResourcesX_Amz_Target { 'MacieService.UpdateS3Resources' = 0 }
+	export enum UpdateS3ResourcesX_Amz_Target { 'MacieService.UpdateS3Resources' = 'MacieService.UpdateS3Resources' }
 
 }
 

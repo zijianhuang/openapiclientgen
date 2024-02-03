@@ -172,7 +172,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressType { CUST_PICKUP = 0, AWS_SHIP = 1 }
+	export enum AddressType { CUST_PICKUP = 'CUST_PICKUP', AWS_SHIP = 'AWS_SHIP' }
 
 	export interface InvalidAddressException {
 	}
@@ -243,11 +243,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JobState { New = 0, PreparingAppliance = 1, PreparingShipment = 2, InTransitToCustomer = 3, WithCustomer = 4, InTransitToAWS = 5, WithAWSSortingFacility = 6, WithAWS = 7, InProgress = 8, Complete = 9, Cancelled = 10, Listing = 11, Pending = 12 }
+	export enum JobState { New = 'New', PreparingAppliance = 'PreparingAppliance', PreparingShipment = 'PreparingShipment', InTransitToCustomer = 'InTransitToCustomer', WithCustomer = 'WithCustomer', InTransitToAWS = 'InTransitToAWS', WithAWSSortingFacility = 'WithAWSSortingFacility', WithAWS = 'WithAWS', InProgress = 'InProgress', Complete = 'Complete', Cancelled = 'Cancelled', Listing = 'Listing', Pending = 'Pending' }
 
-	export enum JobType { IMPORT = 0, EXPORT = 1, LOCAL_USE = 2 }
+	export enum JobType { IMPORT = 'IMPORT', EXPORT = 'EXPORT', LOCAL_USE = 'LOCAL_USE' }
 
-	export enum SnowballType { STANDARD = 0, EDGE = 1, EDGE_C = 2, EDGE_CG = 3, EDGE_S = 4, SNC1_HDD = 5, SNC1_SSD = 6, V3_5C = 7, V3_5S = 8, RACK_5U_C = 9 }
+	export enum SnowballType { STANDARD = 'STANDARD', EDGE = 'EDGE', EDGE_C = 'EDGE_C', EDGE_CG = 'EDGE_CG', EDGE_S = 'EDGE_S', SNC1_HDD = 'SNC1_HDD', SNC1_SSD = 'SNC1_SSD', V3_5C = 'V3_5C', V3_5S = 'V3_5S', RACK_5U_C = 'RACK_5U_C' }
 
 	export interface CreateClusterRequest {
 
@@ -392,7 +392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceServiceName { NFS_ON_DEVICE_SERVICE = 0, S3_ON_DEVICE_SERVICE = 1 }
+	export enum DeviceServiceName { NFS_ON_DEVICE_SERVICE = 'NFS_ON_DEVICE_SERVICE', S3_ON_DEVICE_SERVICE = 'S3_ON_DEVICE_SERVICE' }
 
 
 	/** Identifies  */
@@ -491,7 +491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageUnit { TB = 0 }
+	export enum StorageUnit { TB = 'TB' }
 
 
 	/** An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device. */
@@ -559,7 +559,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShippingOption { SECOND_DAY = 0, NEXT_DAY = 1, EXPRESS = 2, STANDARD = 3 }
+	export enum ShippingOption { SECOND_DAY = 'SECOND_DAY', NEXT_DAY = 'NEXT_DAY', EXPRESS = 'EXPRESS', STANDARD = 'STANDARD' }
 
 
 	/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
@@ -619,9 +619,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RemoteManagement { INSTALLED_ONLY = 0, INSTALLED_AUTOSTART = 1, NOT_INSTALLED = 2 }
+	export enum RemoteManagement { INSTALLED_ONLY = 'INSTALLED_ONLY', INSTALLED_AUTOSTART = 'INSTALLED_AUTOSTART', NOT_INSTALLED = 'NOT_INSTALLED' }
 
-	export enum SnowballCapacity { T50 = 0, T80 = 1, T100 = 2, T42 = 3, T98 = 4, T8 = 5, T14 = 6, T32 = 7, NoPreference = 8, T240 = 9, T13 = 10 }
+	export enum SnowballCapacity { T50 = 'T50', T80 = 'T80', T100 = 'T100', T42 = 'T42', T98 = 'T98', T8 = 'T8', T14 = 'T14', T32 = 'T32', NoPreference = 'NoPreference', T240 = 'T240', T13 = 'T13' }
 
 	export interface InvalidInputCombinationException {
 	}
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImpactLevel { IL2 = 0, IL4 = 1, IL5 = 2, IL6 = 3, IL99 = 4 }
+	export enum ImpactLevel { IL2 = 'IL2', IL4 = 'IL4', IL5 = 'IL5', IL6 = 'IL6', IL99 = 'IL99' }
 
 
 	/** Information identifying the person picking up the device. */
@@ -845,7 +845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LongTermPricingType { OneYear = 0, ThreeYear = 1, OneMonth = 2 }
+	export enum LongTermPricingType { OneYear = 'OneYear', ThreeYear = 'ThreeYear', OneMonth = 'OneMonth' }
 
 	export interface CreateReturnShippingLabelResult {
 		Status?: ShippingLabelStatus;
@@ -860,7 +860,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShippingLabelStatus { InProgress = 0, TimedOut = 1, Succeeded = 2, Failed = 3 }
+	export enum ShippingLabelStatus { InProgress = 'InProgress', TimedOut = 'TimedOut', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 	export interface CreateReturnShippingLabelRequest {
 
@@ -1032,7 +1032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterState { AwaitingQuorum = 0, Pending = 1, InUse = 2, Complete = 3, Cancelled = 4 }
+	export enum ClusterState { AwaitingQuorum = 'AwaitingQuorum', Pending = 'Pending', InUse = 'InUse', Complete = 'Complete', Cancelled = 'Cancelled' }
 
 	export interface DescribeClusterRequest {
 
@@ -1709,7 +1709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceName { KUBERNETES = 0, EKS_ANYWHERE = 1 }
+	export enum ServiceName { KUBERNETES = 'KUBERNETES', EKS_ANYWHERE = 'EKS_ANYWHERE' }
 
 
 	/** The name and version of the service dependant on the requested service. */
@@ -1883,7 +1883,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShipmentState { RECEIVED = 0, RETURNED = 1 }
+	export enum ShipmentState { RECEIVED = 'RECEIVED', RETURNED = 'RETURNED' }
 
 	export interface UpdateLongTermPricingResult {
 	}
@@ -1918,7 +1918,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferOption { IMPORT = 0, EXPORT = 1, LOCAL_USE = 2 }
+	export enum TransferOption { IMPORT = 'IMPORT', EXPORT = 'EXPORT', LOCAL_USE = 'LOCAL_USE' }
 
 	@Injectable()
 	export class MyClient {
@@ -2183,59 +2183,59 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelClusterX_Amz_Target { 'AWSIESnowballJobManagementService.CancelCluster' = 0 }
+	export enum CancelClusterX_Amz_Target { 'AWSIESnowballJobManagementService.CancelCluster' = 'AWSIESnowballJobManagementService.CancelCluster' }
 
-	export enum CancelJobX_Amz_Target { 'AWSIESnowballJobManagementService.CancelJob' = 0 }
+	export enum CancelJobX_Amz_Target { 'AWSIESnowballJobManagementService.CancelJob' = 'AWSIESnowballJobManagementService.CancelJob' }
 
-	export enum CreateAddressX_Amz_Target { 'AWSIESnowballJobManagementService.CreateAddress' = 0 }
+	export enum CreateAddressX_Amz_Target { 'AWSIESnowballJobManagementService.CreateAddress' = 'AWSIESnowballJobManagementService.CreateAddress' }
 
-	export enum CreateClusterX_Amz_Target { 'AWSIESnowballJobManagementService.CreateCluster' = 0 }
+	export enum CreateClusterX_Amz_Target { 'AWSIESnowballJobManagementService.CreateCluster' = 'AWSIESnowballJobManagementService.CreateCluster' }
 
-	export enum CreateJobX_Amz_Target { 'AWSIESnowballJobManagementService.CreateJob' = 0 }
+	export enum CreateJobX_Amz_Target { 'AWSIESnowballJobManagementService.CreateJob' = 'AWSIESnowballJobManagementService.CreateJob' }
 
-	export enum CreateLongTermPricingX_Amz_Target { 'AWSIESnowballJobManagementService.CreateLongTermPricing' = 0 }
+	export enum CreateLongTermPricingX_Amz_Target { 'AWSIESnowballJobManagementService.CreateLongTermPricing' = 'AWSIESnowballJobManagementService.CreateLongTermPricing' }
 
-	export enum CreateReturnShippingLabelX_Amz_Target { 'AWSIESnowballJobManagementService.CreateReturnShippingLabel' = 0 }
+	export enum CreateReturnShippingLabelX_Amz_Target { 'AWSIESnowballJobManagementService.CreateReturnShippingLabel' = 'AWSIESnowballJobManagementService.CreateReturnShippingLabel' }
 
-	export enum DescribeAddressX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeAddress' = 0 }
+	export enum DescribeAddressX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeAddress' = 'AWSIESnowballJobManagementService.DescribeAddress' }
 
-	export enum DescribeAddressesX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeAddresses' = 0 }
+	export enum DescribeAddressesX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeAddresses' = 'AWSIESnowballJobManagementService.DescribeAddresses' }
 
-	export enum DescribeClusterX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeCluster' = 0 }
+	export enum DescribeClusterX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeCluster' = 'AWSIESnowballJobManagementService.DescribeCluster' }
 
-	export enum DescribeJobX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeJob' = 0 }
+	export enum DescribeJobX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeJob' = 'AWSIESnowballJobManagementService.DescribeJob' }
 
-	export enum DescribeReturnShippingLabelX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeReturnShippingLabel' = 0 }
+	export enum DescribeReturnShippingLabelX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeReturnShippingLabel' = 'AWSIESnowballJobManagementService.DescribeReturnShippingLabel' }
 
-	export enum GetJobManifestX_Amz_Target { 'AWSIESnowballJobManagementService.GetJobManifest' = 0 }
+	export enum GetJobManifestX_Amz_Target { 'AWSIESnowballJobManagementService.GetJobManifest' = 'AWSIESnowballJobManagementService.GetJobManifest' }
 
-	export enum GetJobUnlockCodeX_Amz_Target { 'AWSIESnowballJobManagementService.GetJobUnlockCode' = 0 }
+	export enum GetJobUnlockCodeX_Amz_Target { 'AWSIESnowballJobManagementService.GetJobUnlockCode' = 'AWSIESnowballJobManagementService.GetJobUnlockCode' }
 
-	export enum GetSnowballUsageX_Amz_Target { 'AWSIESnowballJobManagementService.GetSnowballUsage' = 0 }
+	export enum GetSnowballUsageX_Amz_Target { 'AWSIESnowballJobManagementService.GetSnowballUsage' = 'AWSIESnowballJobManagementService.GetSnowballUsage' }
 
-	export enum GetSoftwareUpdatesX_Amz_Target { 'AWSIESnowballJobManagementService.GetSoftwareUpdates' = 0 }
+	export enum GetSoftwareUpdatesX_Amz_Target { 'AWSIESnowballJobManagementService.GetSoftwareUpdates' = 'AWSIESnowballJobManagementService.GetSoftwareUpdates' }
 
-	export enum ListClusterJobsX_Amz_Target { 'AWSIESnowballJobManagementService.ListClusterJobs' = 0 }
+	export enum ListClusterJobsX_Amz_Target { 'AWSIESnowballJobManagementService.ListClusterJobs' = 'AWSIESnowballJobManagementService.ListClusterJobs' }
 
-	export enum ListClustersX_Amz_Target { 'AWSIESnowballJobManagementService.ListClusters' = 0 }
+	export enum ListClustersX_Amz_Target { 'AWSIESnowballJobManagementService.ListClusters' = 'AWSIESnowballJobManagementService.ListClusters' }
 
-	export enum ListCompatibleImagesX_Amz_Target { 'AWSIESnowballJobManagementService.ListCompatibleImages' = 0 }
+	export enum ListCompatibleImagesX_Amz_Target { 'AWSIESnowballJobManagementService.ListCompatibleImages' = 'AWSIESnowballJobManagementService.ListCompatibleImages' }
 
-	export enum ListJobsX_Amz_Target { 'AWSIESnowballJobManagementService.ListJobs' = 0 }
+	export enum ListJobsX_Amz_Target { 'AWSIESnowballJobManagementService.ListJobs' = 'AWSIESnowballJobManagementService.ListJobs' }
 
-	export enum ListLongTermPricingX_Amz_Target { 'AWSIESnowballJobManagementService.ListLongTermPricing' = 0 }
+	export enum ListLongTermPricingX_Amz_Target { 'AWSIESnowballJobManagementService.ListLongTermPricing' = 'AWSIESnowballJobManagementService.ListLongTermPricing' }
 
-	export enum ListPickupLocationsX_Amz_Target { 'AWSIESnowballJobManagementService.ListPickupLocations' = 0 }
+	export enum ListPickupLocationsX_Amz_Target { 'AWSIESnowballJobManagementService.ListPickupLocations' = 'AWSIESnowballJobManagementService.ListPickupLocations' }
 
-	export enum ListServiceVersionsX_Amz_Target { 'AWSIESnowballJobManagementService.ListServiceVersions' = 0 }
+	export enum ListServiceVersionsX_Amz_Target { 'AWSIESnowballJobManagementService.ListServiceVersions' = 'AWSIESnowballJobManagementService.ListServiceVersions' }
 
-	export enum UpdateClusterX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateCluster' = 0 }
+	export enum UpdateClusterX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateCluster' = 'AWSIESnowballJobManagementService.UpdateCluster' }
 
-	export enum UpdateJobX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateJob' = 0 }
+	export enum UpdateJobX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateJob' = 'AWSIESnowballJobManagementService.UpdateJob' }
 
-	export enum UpdateJobShipmentStateX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateJobShipmentState' = 0 }
+	export enum UpdateJobShipmentStateX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateJobShipmentState' = 'AWSIESnowballJobManagementService.UpdateJobShipmentState' }
 
-	export enum UpdateLongTermPricingX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateLongTermPricing' = 0 }
+	export enum UpdateLongTermPricingX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateLongTermPricing' = 'AWSIESnowballJobManagementService.UpdateLongTermPricing' }
 
 }
 

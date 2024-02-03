@@ -307,7 +307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRestrictionsSchemaRestrictionRestrictionValueType { bool = 0, string = 1, integer = 2, choice = 3, multiselect = 4, hidden = 5, bundle = 6, bundleArray = 7 }
+	export enum AppRestrictionsSchemaRestrictionRestrictionValueType { bool = 'bool', string = 'string', integer = 'integer', choice = 'choice', multiselect = 'multiselect', hidden = 'hidden', bundle = 'bundle', bundleArray = 'bundleArray' }
 
 
 	/** An event generated when a new app version is uploaded to Google Play and its app restrictions schema changed. To fetch the app restrictions schema for an app, use Products.getAppRestrictionsSchema on the EMM API. */
@@ -403,7 +403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyedAppStateSeverity { severityUnknown = 0, severityInfo = 1, severityError = 2 }
+	export enum KeyedAppStateSeverity { severityUnknown = 'severityUnknown', severityInfo = 'severityInfo', severityError = 'severityError' }
 
 
 	/** An event generated when a new version of an app is uploaded to Google Play. Notifications are sent for new public versions only: alpha, beta, or canary versions do not generate this event. To fetch up-to-date version history for an app, use Products.Get on the EMM API. */
@@ -478,7 +478,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppVersionTrack { appTrackUnspecified = 0, production = 1, beta = 2, alpha = 3 }
+	export enum AppVersionTrack { appTrackUnspecified = 'appTrackUnspecified', production = 'production', beta = 'beta', alpha = 'alpha' }
 
 
 	/** Information on an approval URL. */
@@ -557,11 +557,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoInstallConstraintChargingStateConstraint { chargingStateConstraintUnspecified = 0, chargingNotRequired = 1, chargingRequired = 2 }
+	export enum AutoInstallConstraintChargingStateConstraint { chargingStateConstraintUnspecified = 'chargingStateConstraintUnspecified', chargingNotRequired = 'chargingNotRequired', chargingRequired = 'chargingRequired' }
 
-	export enum AutoInstallConstraintDeviceIdleStateConstraint { deviceIdleStateConstraintUnspecified = 0, deviceIdleNotRequired = 1, deviceIdleRequired = 2 }
+	export enum AutoInstallConstraintDeviceIdleStateConstraint { deviceIdleStateConstraintUnspecified = 'deviceIdleStateConstraintUnspecified', deviceIdleNotRequired = 'deviceIdleNotRequired', deviceIdleRequired = 'deviceIdleRequired' }
 
-	export enum AutoInstallConstraintNetworkTypeConstraint { networkTypeConstraintUnspecified = 0, anyNetwork = 1, unmeteredNetwork = 2 }
+	export enum AutoInstallConstraintNetworkTypeConstraint { networkTypeConstraintUnspecified = 'networkTypeConstraintUnspecified', anyNetwork = 'anyNetwork', unmeteredNetwork = 'unmeteredNetwork' }
 
 	export interface AutoInstallPolicy {
 
@@ -597,7 +597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoInstallPolicyAutoInstallMode { autoInstallModeUnspecified = 0, doNotAutoInstall = 1, autoInstallOnce = 2, forceAutoInstall = 3 }
+	export enum AutoInstallPolicyAutoInstallMode { autoInstallModeUnspecified = 'autoInstallModeUnspecified', doNotAutoInstall = 'doNotAutoInstall', autoInstallOnce = 'autoInstallOnce', forceAutoInstall = 'forceAutoInstall' }
 
 
 	/** A configuration variables resource contains the managed configuration settings ID to be applied to a single user, as well as the variable set that is attributed to the user. The variable set will be used to replace placeholders in the managed configuration settings. */
@@ -755,7 +755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceManagementType { managedDevice = 0, managedProfile = 1, containerApp = 2, unmanagedProfile = 3 }
+	export enum DeviceManagementType { managedDevice = 'managedDevice', managedProfile = 'managedProfile', containerApp = 'containerApp', unmanagedProfile = 'unmanagedProfile' }
 
 
 	/** The device policy for a given managed device. */
@@ -798,9 +798,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyAutoUpdatePolicy { autoUpdatePolicyUnspecified = 0, choiceToTheUser = 1, never = 2, wifiOnly = 3, always = 4 }
+	export enum PolicyAutoUpdatePolicy { autoUpdatePolicyUnspecified = 'autoUpdatePolicyUnspecified', choiceToTheUser = 'choiceToTheUser', never = 'never', wifiOnly = 'wifiOnly', always = 'always' }
 
-	export enum PolicyDeviceReportPolicy { deviceReportPolicyUnspecified = 0, deviceReportDisabled = 1, deviceReportEnabled = 2 }
+	export enum PolicyDeviceReportPolicy { deviceReportPolicyUnspecified = 'deviceReportPolicyUnspecified', deviceReportDisabled = 'deviceReportDisabled', deviceReportEnabled = 'deviceReportEnabled' }
 
 
 	/** Maintenance window for managed Google Play Accounts. This allows Play store to update the apps on the foreground in the designated window. */
@@ -830,7 +830,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyProductAvailabilityPolicy { productAvailabilityPolicyUnspecified = 0, whitelist = 1, all = 2 }
+	export enum PolicyProductAvailabilityPolicy { productAvailabilityPolicyUnspecified = 'productAvailabilityPolicyUnspecified', whitelist = 'whitelist', all = 'all' }
 
 
 	/** The policy for a product. */
@@ -873,7 +873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductPolicyAutoUpdateMode { autoUpdateModeUnspecified = 0, autoUpdateDefault = 1, autoUpdatePostponed = 2, autoUpdateHighPriority = 3 }
+	export enum ProductPolicyAutoUpdateMode { autoUpdateModeUnspecified = 'autoUpdateModeUnspecified', autoUpdateDefault = 'autoUpdateDefault', autoUpdatePostponed = 'autoUpdatePostponed', autoUpdateHighPriority = 'autoUpdateHighPriority' }
 
 
 	/** An authentication URL configuration for the authenticator app of an identity provider. */
@@ -1074,7 +1074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceStateAccountState { enabled = 0, disabled = 1 }
+	export enum DeviceStateAccountState { enabled = 'enabled', disabled = 'disabled' }
 
 	export interface DevicesListResponse {
 
@@ -1158,9 +1158,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleAuthenticationSettingsDedicatedDevicesAllowed { dedicatedDevicesAllowedUnspecified = 0, disallowed = 1, allowed = 2 }
+	export enum GoogleAuthenticationSettingsDedicatedDevicesAllowed { dedicatedDevicesAllowedUnspecified = 'dedicatedDevicesAllowedUnspecified', disallowed = 'disallowed', allowed = 'allowed' }
 
-	export enum GoogleAuthenticationSettingsGoogleAuthenticationRequired { googleAuthenticationRequiredUnspecified = 0, notRequired = 1, required = 2 }
+	export enum GoogleAuthenticationSettingsGoogleAuthenticationRequired { googleAuthenticationRequiredUnspecified = 'googleAuthenticationRequiredUnspecified', notRequired = 'notRequired', required = 'required' }
 
 
 	/** A service account that can be used to authenticate as the enterprise to API calls that require such authentication. */
@@ -1248,7 +1248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntitlementReason { free = 0, groupLicense = 1, userPurchase = 2 }
+	export enum EntitlementReason { free = 'free', groupLicense = 'groupLicense', userPurchase = 'userPurchase' }
 
 	export interface EntitlementsListResponse {
 
@@ -1319,11 +1319,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupLicenseAcquisitionKind { free = 0, bulkPurchase = 1 }
+	export enum GroupLicenseAcquisitionKind { free = 'free', bulkPurchase = 'bulkPurchase' }
 
-	export enum GroupLicenseApproval { approved = 0, unapproved = 1 }
+	export enum GroupLicenseApproval { approved = 'approved', unapproved = 'unapproved' }
 
-	export enum GroupLicensePermissions { currentApproved = 0, needsReapproval = 1, allCurrentAndFutureApproved = 2 }
+	export enum GroupLicensePermissions { currentApproved = 'currentApproved', needsReapproval = 'needsReapproval', allCurrentAndFutureApproved = 'allCurrentAndFutureApproved' }
 
 	export interface GroupLicenseUsersListResponse {
 
@@ -1394,9 +1394,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UserAccountType { deviceAccount = 0, userAccount = 1 }
+	export enum UserAccountType { deviceAccount = 'deviceAccount', userAccount = 'userAccount' }
 
-	export enum UserManagementType { googleManaged = 0, emmManaged = 1 }
+	export enum UserManagementType { googleManaged = 'googleManaged', emmManaged = 'emmManaged' }
 
 	export interface GroupLicensesListResponse {
 
@@ -1446,7 +1446,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstallInstallState { installed = 0, installPending = 1 }
+	export enum InstallInstallState { installed = 'installed', installPending = 'installPending' }
 
 
 	/** An event generated when an app installation failed on a device */
@@ -1497,7 +1497,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstallFailureEventFailureReason { unknown = 0, timeout = 1 }
+	export enum InstallFailureEventFailureReason { unknown = 'unknown', timeout = 'timeout' }
 
 	export interface InstallsListResponse {
 
@@ -1656,7 +1656,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NewDeviceEventManagementType { managedDevice = 0, managedProfile = 1 }
+	export enum NewDeviceEventManagementType { managedDevice = 'managedDevice', managedProfile = 'managedProfile' }
 
 
 	/** An event generated when new permissions are added to an app. */
@@ -1744,7 +1744,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationNotificationType { unknown = 0, testNotification = 1, productApproval = 2, installFailure = 3, appUpdate = 4, newPermissions = 5, appRestricionsSchemaChange = 6, productAvailabilityChange = 7, newDevice = 8, deviceReportUpdate = 9 }
+	export enum NotificationNotificationType { unknown = 'unknown', testNotification = 'testNotification', productApproval = 'productApproval', installFailure = 'installFailure', appUpdate = 'appUpdate', newPermissions = 'newPermissions', appRestricionsSchemaChange = 'appRestricionsSchemaChange', productAvailabilityChange = 'productAvailabilityChange', newDevice = 'newDevice', deviceReportUpdate = 'deviceReportUpdate' }
 
 
 	/** An event generated when a product's approval status is changed. */
@@ -1774,7 +1774,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductApprovalEventApproved { unknown = 0, approved = 1, unapproved = 2 }
+	export enum ProductApprovalEventApproved { unknown = 'unknown', approved = 'approved', unapproved = 'unapproved' }
 
 
 	/** An event generated whenever a product's availability changes. */
@@ -1804,7 +1804,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductAvailabilityChangeEventAvailabilityStatus { unknown = 0, available = 1, removed = 2, unpublished = 3 }
+	export enum ProductAvailabilityChangeEventAvailabilityStatus { unknown = 'unknown', available = 'available', removed = 'removed', unpublished = 'unpublished' }
 
 
 	/** A resource returned by the PullNotificationSet API, which contains a collection of notifications for enterprises associated with the service account authenticated for the request. */
@@ -2086,9 +2086,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductContentRating { ratingUnknown = 0, all = 1, preTeen = 2, teen = 3, mature = 4 }
+	export enum ProductContentRating { ratingUnknown = 'ratingUnknown', all = 'all', preTeen = 'preTeen', teen = 'teen', mature = 'mature' }
 
-	export enum ProductDistributionChannel { publicGoogleHosted = 0, privateGoogleHosted = 1, privateSelfHosted = 2 }
+	export enum ProductDistributionChannel { publicGoogleHosted = 'publicGoogleHosted', privateGoogleHosted = 'privateGoogleHosted', privateSelfHosted = 'privateSelfHosted' }
 
 
 	/** A product permissions resource represents the set of permissions required by a specific app and whether or not they have been accepted by an enterprise admin. The API can be used to read the set of permissions, and also to update the set to indicate that permissions have been accepted. */
@@ -2118,9 +2118,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductPermissionState { required = 0, accepted = 1 }
+	export enum ProductPermissionState { required = 'required', accepted = 'accepted' }
 
-	export enum ProductProductPricing { unknown = 0, free = 1, freeWithInAppPurchase = 2, paid = 3 }
+	export enum ProductProductPricing { unknown = 'unknown', free = 'free', freeWithInAppPurchase = 'freeWithInAppPurchase', paid = 'paid' }
 
 	export interface ProductSigningCertificate {
 
@@ -2197,7 +2197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductSetProductSetBehavior { unknown = 0, whitelist = 1, includeAll = 2, allApproved = 3 }
+	export enum ProductSetProductSetBehavior { unknown = 'unknown', whitelist = 'whitelist', includeAll = 'includeAll', allApproved = 'allApproved' }
 
 
 	/** A product to be made visible to a user. */
@@ -2246,7 +2246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductsApproveRequestApprovedPermissions { currentPermissionsOnly = 0, allPermissions = 1 }
+	export enum ProductsApproveRequestApprovedPermissions { currentPermissionsOnly = 'currentPermissionsOnly', allPermissions = 'allPermissions' }
 
 	export interface ProductsGenerateApprovalUrlResponse {
 
@@ -2374,7 +2374,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceAccountKeyType { googleCredentials = 0, pkcs12 = 1 }
+	export enum ServiceAccountKeyType { googleCredentials = 'googleCredentials', pkcs12 = 'pkcs12' }
 
 	export interface ServiceAccountKeysListResponse {
 
@@ -2486,7 +2486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StoreLayoutStoreLayoutType { unknown = 0, basic = 1, custom = 2 }
+	export enum StoreLayoutStoreLayoutType { unknown = 'unknown', basic = 'basic', custom = 'custom' }
 
 	export interface StoreLayoutClustersListResponse {
 
@@ -2613,7 +2613,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebAppDisplayMode { displayModeUnspecified = 0, minimalUi = 1, standalone = 2, fullScreen = 3 }
+	export enum WebAppDisplayMode { displayModeUnspecified = 'displayModeUnspecified', minimalUi = 'minimalUi', standalone = 'standalone', fullScreen = 'fullScreen' }
 
 
 	/** Icon for a web app. */
@@ -3508,9 +3508,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Androidenterprise_enterprises_pullNotificationSetRequestMode { waitForNotifications = 0, returnImmediately = 1 }
+	export enum Androidenterprise_enterprises_pullNotificationSetRequestMode { waitForNotifications = 'waitForNotifications', returnImmediately = 'returnImmediately' }
 
-	export enum Androidenterprise_enterprises_createEnrollmentTokenDeviceType { unknown = 0, dedicatedDevice = 1, knowledgeWorker = 2 }
+	export enum Androidenterprise_enterprises_createEnrollmentTokenDeviceType { unknown = 'unknown', dedicatedDevice = 'dedicatedDevice', knowledgeWorker = 'knowledgeWorker' }
 
 }
 

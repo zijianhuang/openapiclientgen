@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppServiceCertificateProvisioningState { Initialized = 0, WaitingOnCertificateOrder = 1, Succeeded = 2, CertificateOrderFailed = 3, OperationNotPermittedOnKeyVault = 4, AzureServiceUnauthorizedToAccessKeyVault = 5, KeyVaultDoesNotExist = 6, KeyVaultSecretDoesNotExist = 7, UnknownError = 8, ExternalPrivateKey = 9, Unknown = 10 }
+	export enum AppServiceCertificateProvisioningState { Initialized = 'Initialized', WaitingOnCertificateOrder = 'WaitingOnCertificateOrder', Succeeded = 'Succeeded', CertificateOrderFailed = 'CertificateOrderFailed', OperationNotPermittedOnKeyVault = 'OperationNotPermittedOnKeyVault', AzureServiceUnauthorizedToAccessKeyVault = 'AzureServiceUnauthorizedToAccessKeyVault', KeyVaultDoesNotExist = 'KeyVaultDoesNotExist', KeyVaultSecretDoesNotExist = 'KeyVaultSecretDoesNotExist', UnknownError = 'UnknownError', ExternalPrivateKey = 'ExternalPrivateKey', Unknown = 'Unknown' }
 
 
 	/** Collection of certificate order certificates. */

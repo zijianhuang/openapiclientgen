@@ -118,7 +118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AzureMachineLearningWebServiceFunctionBindingRetrievalPropertiesUdfType { Scalar = 0 }
+	export enum AzureMachineLearningWebServiceFunctionBindingRetrievalPropertiesUdfType { Scalar = 'Scalar' }
 
 
 	/** The parameters needed to retrieve the default function definition for an Azure Machine Learning web service function. */
@@ -524,7 +524,7 @@ export namespace MyNS {
 
 
 	/** The function type. */
-	export enum UdfType { Scalar = 0 }
+	export enum UdfType { Scalar = 'Scalar' }
 
 	@Injectable()
 	export class MyClient {

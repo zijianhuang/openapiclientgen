@@ -477,7 +477,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentPropertiesMode { Incremental = 0, Complete = 1 }
+	export enum DeploymentPropertiesMode { Incremental = 'Incremental', Complete = 'Complete' }
 
 
 	/** Deployment properties with additional details. */
@@ -748,7 +748,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentWhatIfSettingsResultFormat { ResourceIdOnly = 0, FullResourcePayloads = 1 }
+	export enum DeploymentWhatIfSettingsResultFormat { ResourceIdOnly = 'ResourceIdOnly', FullResourcePayloads = 'FullResourcePayloads' }
 
 	export interface ErrorResponse {
 	}
@@ -931,7 +931,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0, UserAssigned = 1, 'SystemAssigned, UserAssigned' = 2, None = 3 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned', None = 'None' }
 
 	export interface IdentityUserAssignedIdentities {
 
@@ -985,7 +985,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OnErrorDeploymentType { LastSuccessful = 0, SpecificDeployment = 1 }
+	export enum OnErrorDeploymentType { LastSuccessful = 'LastSuccessful', SpecificDeployment = 'SpecificDeployment' }
 
 
 	/** Deployment on error behavior with additional details. */
@@ -1799,7 +1799,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagsPatchResourceOperation { Replace = 0, Merge = 1, Delete = 2 }
+	export enum TagsPatchResourceOperation { Replace = 'Replace', Merge = 'Merge', Delete = 'Delete' }
 
 
 	/** Wrapper resource for tags API requests and responses. */
@@ -1996,7 +1996,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WhatIfChangeChangeType { Create = 0, Delete = 1, Ignore = 2, Deploy = 3, NoChange = 4, Modify = 5 }
+	export enum WhatIfChangeChangeType { Create = 'Create', Delete = 'Delete', Ignore = 'Ignore', Deploy = 'Deploy', NoChange = 'NoChange', Modify = 'Modify' }
 
 
 	/** The predicted change to the resource property. */
@@ -2055,7 +2055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WhatIfPropertyChangePropertyChangeType { Create = 0, Delete = 1, Modify = 2, Array = 3 }
+	export enum WhatIfPropertyChangePropertyChangeType { Create = 'Create', Delete = 'Delete', Modify = 'Modify', Array = 'Array' }
 
 
 	/** Deployment operation properties. */

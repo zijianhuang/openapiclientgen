@@ -105,7 +105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomVisionErrorCode { NoError = 0, BadRequest = 1, BadRequestExceededBatchSize = 2, BadRequestNotSupported = 3, BadRequestInvalidIds = 4, BadRequestProjectName = 5, BadRequestProjectNameNotUnique = 6, BadRequestProjectDescription = 7, BadRequestProjectUnknownDomain = 8, BadRequestProjectUnknownClassification = 9, BadRequestProjectUnsupportedDomainTypeChange = 10, BadRequestProjectUnsupportedExportPlatform = 11, BadRequestProjectImagePreprocessingSettings = 12, BadRequestProjectDuplicated = 13, BadRequestIterationName = 14, BadRequestIterationNameNotUnique = 15, BadRequestIterationDescription = 16, BadRequestIterationIsNotTrained = 17, BadRequestIterationValidationFailed = 18, BadRequestWorkspaceCannotBeModified = 19, BadRequestWorkspaceNotDeletable = 20, BadRequestTagName = 21, BadRequestTagNameNotUnique = 22, BadRequestTagDescription = 23, BadRequestTagType = 24, BadRequestMultipleNegativeTag = 25, BadRequestImageTags = 26, BadRequestImageRegions = 27, BadRequestNegativeAndRegularTagOnSameImage = 28, BadRequestRequiredParamIsNull = 29, BadRequestIterationIsPublished = 30, BadRequestInvalidPublishName = 31, BadRequestInvalidPublishTarget = 32, BadRequestUnpublishFailed = 33, BadRequestIterationNotPublished = 34, BadRequestSubscriptionApi = 35, BadRequestExceedProjectLimit = 36, BadRequestExceedIterationPerProjectLimit = 37, BadRequestExceedTagPerProjectLimit = 38, BadRequestExceedTagPerImageLimit = 39, BadRequestExceededQuota = 40, BadRequestCannotMigrateProjectWithName = 41, BadRequestNotLimitedTrial = 42, BadRequestImageBatch = 43, BadRequestImageStream = 44, BadRequestImageUrl = 45, BadRequestImageFormat = 46, BadRequestImageSizeBytes = 47, BadRequestImageExceededCount = 48, BadRequestTrainingNotNeeded = 49, BadRequestTrainingNotNeededButTrainingPipelineUpdated = 50, BadRequestTrainingValidationFailed = 51, BadRequestClassificationTrainingValidationFailed = 52, BadRequestMultiClassClassificationTrainingValidationFailed = 53, BadRequestMultiLabelClassificationTrainingValidationFailed = 54, BadRequestDetectionTrainingValidationFailed = 55, BadRequestTrainingAlreadyInProgress = 56, BadRequestDetectionTrainingNotAllowNegativeTag = 57, BadRequestInvalidEmailAddress = 58, BadRequestDomainNotSupportedForAdvancedTraining = 59, BadRequestExportPlatformNotSupportedForAdvancedTraining = 60, BadRequestReservedBudgetInHoursNotEnoughForAdvancedTraining = 61, BadRequestExportValidationFailed = 62, BadRequestExportAlreadyInProgress = 63, BadRequestPredictionIdsMissing = 64, BadRequestPredictionIdsExceededCount = 65, BadRequestPredictionTagsExceededCount = 66, BadRequestPredictionResultsExceededCount = 67, BadRequestPredictionInvalidApplicationName = 68, BadRequestPredictionInvalidQueryParameters = 69, BadRequestInvalidImportToken = 70, BadRequestExportWhileTraining = 71, BadRequestInvalid = 72, UnsupportedMediaType = 73, Forbidden = 74, ForbiddenUser = 75, ForbiddenUserResource = 76, ForbiddenUserSignupDisabled = 77, ForbiddenUserSignupAllowanceExceeded = 78, ForbiddenUserDoesNotExist = 79, ForbiddenUserDisabled = 80, ForbiddenUserInsufficientCapability = 81, ForbiddenDRModeEnabled = 82, ForbiddenInvalid = 83, NotFound = 84, NotFoundProject = 85, NotFoundProjectDefaultIteration = 86, NotFoundIteration = 87, NotFoundIterationPerformance = 88, NotFoundTag = 89, NotFoundImage = 90, NotFoundDomain = 91, NotFoundApimSubscription = 92, NotFoundInvalid = 93, Conflict = 94, ConflictInvalid = 95, ErrorUnknown = 96, ErrorIterationCopyFailed = 97, ErrorPreparePerformanceMigrationFailed = 98, ErrorProjectInvalidWorkspace = 99, ErrorProjectInvalidPipelineConfiguration = 100, ErrorProjectInvalidDomain = 101, ErrorProjectTrainingRequestFailed = 102, ErrorProjectImportRequestFailed = 103, ErrorProjectExportRequestFailed = 104, ErrorFeaturizationServiceUnavailable = 105, ErrorFeaturizationQueueTimeout = 106, ErrorFeaturizationInvalidFeaturizer = 107, ErrorFeaturizationAugmentationUnavailable = 108, ErrorFeaturizationUnrecognizedJob = 109, ErrorFeaturizationAugmentationError = 110, ErrorExporterInvalidPlatform = 111, ErrorExporterInvalidFeaturizer = 112, ErrorExporterInvalidClassifier = 113, ErrorPredictionServiceUnavailable = 114, ErrorPredictionModelNotFound = 115, ErrorPredictionModelNotCached = 116, ErrorPrediction = 117, ErrorPredictionStorage = 118, ErrorRegionProposal = 119, ErrorInvalid = 120 }
+	export enum CustomVisionErrorCode { NoError = 'NoError', BadRequest = 'BadRequest', BadRequestExceededBatchSize = 'BadRequestExceededBatchSize', BadRequestNotSupported = 'BadRequestNotSupported', BadRequestInvalidIds = 'BadRequestInvalidIds', BadRequestProjectName = 'BadRequestProjectName', BadRequestProjectNameNotUnique = 'BadRequestProjectNameNotUnique', BadRequestProjectDescription = 'BadRequestProjectDescription', BadRequestProjectUnknownDomain = 'BadRequestProjectUnknownDomain', BadRequestProjectUnknownClassification = 'BadRequestProjectUnknownClassification', BadRequestProjectUnsupportedDomainTypeChange = 'BadRequestProjectUnsupportedDomainTypeChange', BadRequestProjectUnsupportedExportPlatform = 'BadRequestProjectUnsupportedExportPlatform', BadRequestProjectImagePreprocessingSettings = 'BadRequestProjectImagePreprocessingSettings', BadRequestProjectDuplicated = 'BadRequestProjectDuplicated', BadRequestIterationName = 'BadRequestIterationName', BadRequestIterationNameNotUnique = 'BadRequestIterationNameNotUnique', BadRequestIterationDescription = 'BadRequestIterationDescription', BadRequestIterationIsNotTrained = 'BadRequestIterationIsNotTrained', BadRequestIterationValidationFailed = 'BadRequestIterationValidationFailed', BadRequestWorkspaceCannotBeModified = 'BadRequestWorkspaceCannotBeModified', BadRequestWorkspaceNotDeletable = 'BadRequestWorkspaceNotDeletable', BadRequestTagName = 'BadRequestTagName', BadRequestTagNameNotUnique = 'BadRequestTagNameNotUnique', BadRequestTagDescription = 'BadRequestTagDescription', BadRequestTagType = 'BadRequestTagType', BadRequestMultipleNegativeTag = 'BadRequestMultipleNegativeTag', BadRequestImageTags = 'BadRequestImageTags', BadRequestImageRegions = 'BadRequestImageRegions', BadRequestNegativeAndRegularTagOnSameImage = 'BadRequestNegativeAndRegularTagOnSameImage', BadRequestRequiredParamIsNull = 'BadRequestRequiredParamIsNull', BadRequestIterationIsPublished = 'BadRequestIterationIsPublished', BadRequestInvalidPublishName = 'BadRequestInvalidPublishName', BadRequestInvalidPublishTarget = 'BadRequestInvalidPublishTarget', BadRequestUnpublishFailed = 'BadRequestUnpublishFailed', BadRequestIterationNotPublished = 'BadRequestIterationNotPublished', BadRequestSubscriptionApi = 'BadRequestSubscriptionApi', BadRequestExceedProjectLimit = 'BadRequestExceedProjectLimit', BadRequestExceedIterationPerProjectLimit = 'BadRequestExceedIterationPerProjectLimit', BadRequestExceedTagPerProjectLimit = 'BadRequestExceedTagPerProjectLimit', BadRequestExceedTagPerImageLimit = 'BadRequestExceedTagPerImageLimit', BadRequestExceededQuota = 'BadRequestExceededQuota', BadRequestCannotMigrateProjectWithName = 'BadRequestCannotMigrateProjectWithName', BadRequestNotLimitedTrial = 'BadRequestNotLimitedTrial', BadRequestImageBatch = 'BadRequestImageBatch', BadRequestImageStream = 'BadRequestImageStream', BadRequestImageUrl = 'BadRequestImageUrl', BadRequestImageFormat = 'BadRequestImageFormat', BadRequestImageSizeBytes = 'BadRequestImageSizeBytes', BadRequestImageExceededCount = 'BadRequestImageExceededCount', BadRequestTrainingNotNeeded = 'BadRequestTrainingNotNeeded', BadRequestTrainingNotNeededButTrainingPipelineUpdated = 'BadRequestTrainingNotNeededButTrainingPipelineUpdated', BadRequestTrainingValidationFailed = 'BadRequestTrainingValidationFailed', BadRequestClassificationTrainingValidationFailed = 'BadRequestClassificationTrainingValidationFailed', BadRequestMultiClassClassificationTrainingValidationFailed = 'BadRequestMultiClassClassificationTrainingValidationFailed', BadRequestMultiLabelClassificationTrainingValidationFailed = 'BadRequestMultiLabelClassificationTrainingValidationFailed', BadRequestDetectionTrainingValidationFailed = 'BadRequestDetectionTrainingValidationFailed', BadRequestTrainingAlreadyInProgress = 'BadRequestTrainingAlreadyInProgress', BadRequestDetectionTrainingNotAllowNegativeTag = 'BadRequestDetectionTrainingNotAllowNegativeTag', BadRequestInvalidEmailAddress = 'BadRequestInvalidEmailAddress', BadRequestDomainNotSupportedForAdvancedTraining = 'BadRequestDomainNotSupportedForAdvancedTraining', BadRequestExportPlatformNotSupportedForAdvancedTraining = 'BadRequestExportPlatformNotSupportedForAdvancedTraining', BadRequestReservedBudgetInHoursNotEnoughForAdvancedTraining = 'BadRequestReservedBudgetInHoursNotEnoughForAdvancedTraining', BadRequestExportValidationFailed = 'BadRequestExportValidationFailed', BadRequestExportAlreadyInProgress = 'BadRequestExportAlreadyInProgress', BadRequestPredictionIdsMissing = 'BadRequestPredictionIdsMissing', BadRequestPredictionIdsExceededCount = 'BadRequestPredictionIdsExceededCount', BadRequestPredictionTagsExceededCount = 'BadRequestPredictionTagsExceededCount', BadRequestPredictionResultsExceededCount = 'BadRequestPredictionResultsExceededCount', BadRequestPredictionInvalidApplicationName = 'BadRequestPredictionInvalidApplicationName', BadRequestPredictionInvalidQueryParameters = 'BadRequestPredictionInvalidQueryParameters', BadRequestInvalidImportToken = 'BadRequestInvalidImportToken', BadRequestExportWhileTraining = 'BadRequestExportWhileTraining', BadRequestInvalid = 'BadRequestInvalid', UnsupportedMediaType = 'UnsupportedMediaType', Forbidden = 'Forbidden', ForbiddenUser = 'ForbiddenUser', ForbiddenUserResource = 'ForbiddenUserResource', ForbiddenUserSignupDisabled = 'ForbiddenUserSignupDisabled', ForbiddenUserSignupAllowanceExceeded = 'ForbiddenUserSignupAllowanceExceeded', ForbiddenUserDoesNotExist = 'ForbiddenUserDoesNotExist', ForbiddenUserDisabled = 'ForbiddenUserDisabled', ForbiddenUserInsufficientCapability = 'ForbiddenUserInsufficientCapability', ForbiddenDRModeEnabled = 'ForbiddenDRModeEnabled', ForbiddenInvalid = 'ForbiddenInvalid', NotFound = 'NotFound', NotFoundProject = 'NotFoundProject', NotFoundProjectDefaultIteration = 'NotFoundProjectDefaultIteration', NotFoundIteration = 'NotFoundIteration', NotFoundIterationPerformance = 'NotFoundIterationPerformance', NotFoundTag = 'NotFoundTag', NotFoundImage = 'NotFoundImage', NotFoundDomain = 'NotFoundDomain', NotFoundApimSubscription = 'NotFoundApimSubscription', NotFoundInvalid = 'NotFoundInvalid', Conflict = 'Conflict', ConflictInvalid = 'ConflictInvalid', ErrorUnknown = 'ErrorUnknown', ErrorIterationCopyFailed = 'ErrorIterationCopyFailed', ErrorPreparePerformanceMigrationFailed = 'ErrorPreparePerformanceMigrationFailed', ErrorProjectInvalidWorkspace = 'ErrorProjectInvalidWorkspace', ErrorProjectInvalidPipelineConfiguration = 'ErrorProjectInvalidPipelineConfiguration', ErrorProjectInvalidDomain = 'ErrorProjectInvalidDomain', ErrorProjectTrainingRequestFailed = 'ErrorProjectTrainingRequestFailed', ErrorProjectImportRequestFailed = 'ErrorProjectImportRequestFailed', ErrorProjectExportRequestFailed = 'ErrorProjectExportRequestFailed', ErrorFeaturizationServiceUnavailable = 'ErrorFeaturizationServiceUnavailable', ErrorFeaturizationQueueTimeout = 'ErrorFeaturizationQueueTimeout', ErrorFeaturizationInvalidFeaturizer = 'ErrorFeaturizationInvalidFeaturizer', ErrorFeaturizationAugmentationUnavailable = 'ErrorFeaturizationAugmentationUnavailable', ErrorFeaturizationUnrecognizedJob = 'ErrorFeaturizationUnrecognizedJob', ErrorFeaturizationAugmentationError = 'ErrorFeaturizationAugmentationError', ErrorExporterInvalidPlatform = 'ErrorExporterInvalidPlatform', ErrorExporterInvalidFeaturizer = 'ErrorExporterInvalidFeaturizer', ErrorExporterInvalidClassifier = 'ErrorExporterInvalidClassifier', ErrorPredictionServiceUnavailable = 'ErrorPredictionServiceUnavailable', ErrorPredictionModelNotFound = 'ErrorPredictionModelNotFound', ErrorPredictionModelNotCached = 'ErrorPredictionModelNotCached', ErrorPrediction = 'ErrorPrediction', ErrorPredictionStorage = 'ErrorPredictionStorage', ErrorRegionProposal = 'ErrorRegionProposal', ErrorInvalid = 'ErrorInvalid' }
 
 	export interface Domain {
 		enabled?: boolean | null;
@@ -132,7 +132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainType { Classification = 0, ObjectDetection = 1 }
+	export enum DomainType { Classification = 'Classification', ObjectDetection = 'ObjectDetection' }
 
 	export interface Export {
 
@@ -189,11 +189,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportFlavor { Linux = 0, Windows = 1, ONNX10 = 2, ONNX12 = 3, ARM = 4, TensorFlowNormal = 5, TensorFlowLite = 6 }
+	export enum ExportFlavor { Linux = 'Linux', Windows = 'Windows', ONNX10 = 'ONNX10', ONNX12 = 'ONNX12', ARM = 'ARM', TensorFlowNormal = 'TensorFlowNormal', TensorFlowLite = 'TensorFlowLite' }
 
-	export enum ExportPlatform { CoreML = 0, TensorFlow = 1, DockerFile = 2, ONNX = 3, VAIDK = 4 }
+	export enum ExportPlatform { CoreML = 'CoreML', TensorFlow = 'TensorFlow', DockerFile = 'DockerFile', ONNX = 'ONNX', VAIDK = 'VAIDK' }
 
-	export enum ExportStatus { Exporting = 0, Failed = 1, Done = 2 }
+	export enum ExportStatus { Exporting = 'Exporting', Failed = 'Failed', Done = 'Done' }
 
 
 	/** Image model to be sent as JSON. */
@@ -394,7 +394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageCreateResultStatus { OK = 0, OKDuplicate = 1, ErrorSource = 2, ErrorImageFormat = 3, ErrorImageSize = 4, ErrorStorage = 5, ErrorLimitExceed = 6, ErrorTagLimitExceed = 7, ErrorRegionLimitExceed = 8, ErrorUnknown = 9, ErrorNegativeAndRegularTagOnSameImage = 10 }
+	export enum ImageCreateResultStatus { OK = 'OK', OKDuplicate = 'OKDuplicate', ErrorSource = 'ErrorSource', ErrorImageFormat = 'ErrorImageFormat', ErrorImageSize = 'ErrorImageSize', ErrorStorage = 'ErrorStorage', ErrorLimitExceed = 'ErrorLimitExceed', ErrorTagLimitExceed = 'ErrorTagLimitExceed', ErrorRegionLimitExceed = 'ErrorRegionLimitExceed', ErrorUnknown = 'ErrorUnknown', ErrorNegativeAndRegularTagOnSameImage = 'ErrorNegativeAndRegularTagOnSameImage' }
 
 	export interface ImageCreateSummary {
 
@@ -1187,9 +1187,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IterationClassificationType { Multiclass = 0, Multilabel = 1 }
+	export enum IterationClassificationType { Multiclass = 'Multiclass', Multilabel = 'Multilabel' }
 
-	export enum IterationTrainingType { Regular = 0, Advanced = 1 }
+	export enum IterationTrainingType { Regular = 'Regular', Advanced = 'Advanced' }
 
 
 	/** Represents the detailed performance data for a trained iteration. */
@@ -1424,7 +1424,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PredictionQueryTokenOrderBy { Newest = 0, Oldest = 1, Suggested = 2 }
+	export enum PredictionQueryTokenOrderBy { Newest = 'Newest', Oldest = 'Oldest', Suggested = 'Suggested' }
 
 	export interface PredictionQueryTag {
 		id?: string | null;
@@ -1581,7 +1581,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectStatus { Succeeded = 0, Importing = 1, Failed = 2 }
+	export enum ProjectStatus { Succeeded = 'Succeeded', Importing = 'Importing', Failed = 'Failed' }
 
 
 	/** Represents information about a project export. */
@@ -1878,7 +1878,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuggestedTagAndRegionQueryTokenSortBy { UncertaintyAscending = 0, UncertaintyDescending = 1 }
+	export enum SuggestedTagAndRegionQueryTokenSortBy { UncertaintyAscending = 'UncertaintyAscending', UncertaintyDescending = 'UncertaintyDescending' }
 
 
 	/** Represents a Tag. */
@@ -1947,7 +1947,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagType { Regular = 0, Negative = 1 }
+	export enum TagType { Regular = 'Regular', Negative = 'Negative' }
 
 
 	/** Model that query for counting of images whose suggested tags match given tags and their probability are greater than or equal to the given threshold. */
@@ -2562,7 +2562,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetTaggedImagesOrderBy { Newest = 0, Oldest = 1 }
+	export enum GetTaggedImagesOrderBy { Newest = 'Newest', Oldest = 'Oldest' }
 
 }
 

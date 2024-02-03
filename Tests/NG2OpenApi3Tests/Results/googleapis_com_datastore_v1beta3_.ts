@@ -230,7 +230,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 0, AND = 1, OR = 2 }
+	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', AND = 'AND', OR = 'OR' }
 
 
 	/** A filter on a specific property. */
@@ -259,7 +259,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertyFilterOp { OPERATOR_UNSPECIFIED = 0, LESS_THAN = 1, LESS_THAN_OR_EQUAL = 2, GREATER_THAN = 3, GREATER_THAN_OR_EQUAL = 4, EQUAL = 5, IN = 6, NOT_EQUAL = 7, HAS_ANCESTOR = 8, NOT_IN = 9 }
+	export enum PropertyFilterOp { OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL', EQUAL = 'EQUAL', IN = 'IN', NOT_EQUAL = 'NOT_EQUAL', HAS_ANCESTOR = 'HAS_ANCESTOR', NOT_IN = 'NOT_IN' }
 
 
 	/** A message that can hold any of the supported value types and associated metadata. */
@@ -502,7 +502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValueNullValue { NULL_VALUE = 0 }
+	export enum ValueNullValue { NULL_VALUE = 'NULL_VALUE' }
 
 
 	/** A representation of a kind. */
@@ -549,7 +549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertyOrderDirection { DIRECTION_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
+	export enum PropertyOrderDirection { DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED', ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** A representation of a property in a projection. */
@@ -620,7 +620,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationResultBatchMoreResults { MORE_RESULTS_TYPE_UNSPECIFIED = 0, NOT_FINISHED = 1, MORE_RESULTS_AFTER_LIMIT = 2, MORE_RESULTS_AFTER_CURSOR = 3, NO_MORE_RESULTS = 4 }
+	export enum AggregationResultBatchMoreResults { MORE_RESULTS_TYPE_UNSPECIFIED = 'MORE_RESULTS_TYPE_UNSPECIFIED', NOT_FINISHED = 'NOT_FINISHED', MORE_RESULTS_AFTER_LIMIT = 'MORE_RESULTS_AFTER_LIMIT', MORE_RESULTS_AFTER_CURSOR = 'MORE_RESULTS_AFTER_CURSOR', NO_MORE_RESULTS = 'NO_MORE_RESULTS' }
 
 
 	/** The request for Datastore.AllocateIds. */
@@ -787,7 +787,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommitRequestMode { MODE_UNSPECIFIED = 0, TRANSACTIONAL = 1, NON_TRANSACTIONAL = 2 }
+	export enum CommitRequestMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', TRANSACTIONAL = 'TRANSACTIONAL', NON_TRANSACTIONAL = 'NON_TRANSACTIONAL' }
 
 
 	/** A mutation to apply to an entity. */
@@ -999,9 +999,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2, CREATE_INDEX = 3, DELETE_INDEX = 4 }
+	export enum GoogleDatastoreAdminV1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', EXPORT_ENTITIES = 'EXPORT_ENTITIES', IMPORT_ENTITIES = 'IMPORT_ENTITIES', CREATE_INDEX = 'CREATE_INDEX', DELETE_INDEX = 'DELETE_INDEX' }
 
-	export enum GoogleDatastoreAdminV1CommonMetadataState { STATE_UNSPECIFIED = 0, INITIALIZING = 1, PROCESSING = 2, CANCELLING = 3, FINALIZING = 4, SUCCESSFUL = 5, FAILED = 6, CANCELLED = 7 }
+	export enum GoogleDatastoreAdminV1CommonMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', CANCELLING = 'CANCELLING', FINALIZING = 'FINALIZING', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** Metadata for Datastore to Firestore migration operations. The DatastoreFirestoreMigration operation is not started by the end-user via an explicit "creation" method. This is an intentional deviation from the LRO design pattern. This singleton resource can be accessed at: "projects/{project_id}/operations/datastore-firestore-migration" */
@@ -1031,9 +1031,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState { MIGRATION_STATE_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, COMPLETE = 3 }
+	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState { MIGRATION_STATE_UNSPECIFIED = 'MIGRATION_STATE_UNSPECIFIED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', COMPLETE = 'COMPLETE' }
 
-	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep { MIGRATION_STEP_UNSPECIFIED = 0, PREPARE = 1, START = 2, APPLY_WRITES_SYNCHRONOUSLY = 3, COPY_AND_VERIFY = 4, REDIRECT_EVENTUALLY_CONSISTENT_READS = 5, REDIRECT_STRONGLY_CONSISTENT_READS = 6, REDIRECT_WRITES = 7 }
+	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep { MIGRATION_STEP_UNSPECIFIED = 'MIGRATION_STEP_UNSPECIFIED', PREPARE = 'PREPARE', START = 'START', APPLY_WRITES_SYNCHRONOUSLY = 'APPLY_WRITES_SYNCHRONOUSLY', COPY_AND_VERIFY = 'COPY_AND_VERIFY', REDIRECT_EVENTUALLY_CONSISTENT_READS = 'REDIRECT_EVENTUALLY_CONSISTENT_READS', REDIRECT_STRONGLY_CONSISTENT_READS = 'REDIRECT_STRONGLY_CONSISTENT_READS', REDIRECT_WRITES = 'REDIRECT_WRITES' }
 
 
 	/** Identifies a subset of entities in a project. This is specified as combinations of kinds and namespaces (either or both of which may be all, as described in the following examples). Example usage: Entire project: kinds=[], namespace_ids=[] Kinds Foo and Bar in all namespaces: kinds=['Foo', 'Bar'], namespace_ids=[] Kinds Foo and Bar only in the default namespace: kinds=['Foo', 'Bar'], namespace_ids=[''] Kinds Foo and Bar in both the default and Baz namespaces: kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz'] The entire Baz namespace: kinds=[], namespace_ids=['Baz'] */
@@ -1245,7 +1245,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode { CONCURRENCY_MODE_UNSPECIFIED = 0, PESSIMISTIC = 1, OPTIMISTIC = 2, OPTIMISTIC_WITH_ENTITY_GROUPS = 3 }
+	export enum GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode { CONCURRENCY_MODE_UNSPECIFIED = 'CONCURRENCY_MODE_UNSPECIFIED', PESSIMISTIC = 'PESSIMISTIC', OPTIMISTIC = 'OPTIMISTIC', OPTIMISTIC_WITH_ENTITY_GROUPS = 'OPTIMISTIC_WITH_ENTITY_GROUPS' }
 
 
 	/** Details for the `REDIRECT_WRITES` step. */
@@ -1338,7 +1338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1beta1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2 }
+	export enum GoogleDatastoreAdminV1beta1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', EXPORT_ENTITIES = 'EXPORT_ENTITIES', IMPORT_ENTITIES = 'IMPORT_ENTITIES' }
 
 
 	/** Identifies a subset of entities in a project. This is specified as combinations of kinds and namespaces (either or both of which may be all, as described in the following examples). Example usage: Entire project: kinds=[], namespace_ids=[] Kinds Foo and Bar in all namespaces: kinds=['Foo', 'Bar'], namespace_ids=[] Kinds Foo and Bar only in the default namespace: kinds=['Foo', 'Bar'], namespace_ids=[''] Kinds Foo and Bar in both the default and Baz namespaces: kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz'] The entire Baz namespace: kinds=[], namespace_ids=['Baz'] */
@@ -1592,7 +1592,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReadOptionsReadConsistency { READ_CONSISTENCY_UNSPECIFIED = 0, STRONG = 1, EVENTUAL = 2 }
+	export enum ReadOptionsReadConsistency { READ_CONSISTENCY_UNSPECIFIED = 'READ_CONSISTENCY_UNSPECIFIED', STRONG = 'STRONG', EVENTUAL = 'EVENTUAL' }
 
 
 	/** The response for Datastore.Lookup. */
@@ -1690,7 +1690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryResultBatchEntityResultType { RESULT_TYPE_UNSPECIFIED = 0, FULL = 1, PROJECTION = 2, KEY_ONLY = 3 }
+	export enum QueryResultBatchEntityResultType { RESULT_TYPE_UNSPECIFIED = 'RESULT_TYPE_UNSPECIFIED', FULL = 'FULL', PROJECTION = 'PROJECTION', KEY_ONLY = 'KEY_ONLY' }
 
 
 	/** The request for Datastore.ReserveIds. */

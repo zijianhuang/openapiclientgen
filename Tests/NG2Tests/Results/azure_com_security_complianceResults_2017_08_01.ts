@@ -41,7 +41,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComplianceResultPropertiesResourceStatus { Healthy = 0, NotApplicable = 1, OffByPolicy = 2, NotHealthy = 3 }
+	export enum ComplianceResultPropertiesResourceStatus { Healthy = 'Healthy', NotApplicable = 'NotApplicable', OffByPolicy = 'OffByPolicy', NotHealthy = 'NotHealthy' }
 
 
 	/** List of compliance results response */

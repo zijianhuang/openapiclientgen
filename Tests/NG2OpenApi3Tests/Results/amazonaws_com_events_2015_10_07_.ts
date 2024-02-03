@@ -89,7 +89,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplayState { STARTING = 0, RUNNING = 1, CANCELLING = 2, COMPLETED = 3, CANCELLED = 4, FAILED = 5 }
+	export enum ReplayState { STARTING = 'STARTING', RUNNING = 'RUNNING', CANCELLING = 'CANCELLING', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
 	export interface CancelReplayRequest {
 
@@ -140,7 +140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiDestinationState { ACTIVE = 0, INACTIVE = 1 }
+	export enum ApiDestinationState { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface CreateApiDestinationRequest {
 
@@ -186,7 +186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiDestinationHttpMethod { POST = 0, GET = 1, HEAD = 2, OPTIONS = 3, PUT = 4, PATCH = 5, DELETE = 6 }
+	export enum ApiDestinationHttpMethod { POST = 'POST', GET = 'GET', HEAD = 'HEAD', OPTIONS = 'OPTIONS', PUT = 'PUT', PATCH = 'PATCH', DELETE = 'DELETE' }
 
 	export interface ResourceAlreadyExistsException {
 	}
@@ -230,7 +230,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArchiveState { ENABLED = 0, DISABLED = 1, CREATING = 2, UPDATING = 3, CREATE_FAILED = 4, UPDATE_FAILED = 5 }
+	export enum ArchiveState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', CREATING = 'CREATING', UPDATING = 'UPDATING', CREATE_FAILED = 'CREATE_FAILED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface CreateArchiveRequest {
 
@@ -297,7 +297,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionState { CREATING = 0, UPDATING = 1, DELETING = 2, AUTHORIZED = 3, DEAUTHORIZED = 4, AUTHORIZING = 5, DEAUTHORIZING = 6 }
+	export enum ConnectionState { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', AUTHORIZED = 'AUTHORIZED', DEAUTHORIZED = 'DEAUTHORIZED', AUTHORIZING = 'AUTHORIZING', DEAUTHORIZING = 'DEAUTHORIZING' }
 
 	export interface CreateConnectionRequest {
 
@@ -329,7 +329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionAuthorizationType { BASIC = 0, OAUTH_CLIENT_CREDENTIALS = 1, API_KEY = 2 }
+	export enum ConnectionAuthorizationType { BASIC = 'BASIC', OAUTH_CLIENT_CREDENTIALS = 'OAUTH_CLIENT_CREDENTIALS', API_KEY = 'API_KEY' }
 
 
 	/** Contains the authorization parameters for the connection. */
@@ -437,7 +437,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionOAuthHttpMethod { GET = 0, POST = 1, PUT = 2 }
+	export enum ConnectionOAuthHttpMethod { GET = 'GET', POST = 'POST', PUT = 'PUT' }
 
 
 	/** Contains additional parameters for the connection. */
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceState { PENDING = 0, ACTIVE = 1, DELETED = 2 }
+	export enum EventSourceState { PENDING = 'PENDING', ACTIVE = 'ACTIVE', DELETED = 'DELETED' }
 
 	export interface DescribeEventSourceRequest {
 
@@ -1382,7 +1382,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleState { ENABLED = 0, DISABLED = 1 }
+	export enum RuleState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DescribeRuleRequest {
 
@@ -2344,7 +2344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LaunchType { EC2 = 0, FARGATE = 1, EXTERNAL = 2 }
+	export enum LaunchType { EC2 = 'EC2', FARGATE = 'FARGATE', EXTERNAL = 'EXTERNAL' }
 
 
 	/** This structure specifies the network configuration for an ECS task. */
@@ -2429,7 +2429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementConstraintType { distinctInstance = 0, memberOf = 1 }
+	export enum PlacementConstraintType { distinctInstance = 'distinctInstance', memberOf = 'memberOf' }
 
 
 	/** The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Service Developer Guide. */
@@ -2451,9 +2451,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlacementStrategyType { random = 0, spread = 1, binpack = 2 }
+	export enum PlacementStrategyType { random = 'random', spread = 'spread', binpack = 'binpack' }
 
-	export enum PropagateTags { TASK_DEFINITION = 0 }
+	export enum PropagateTags { TASK_DEFINITION = 'TASK_DEFINITION' }
 
 
 	/** The custom parameters to be used when the target is an Batch job. */
@@ -3555,7 +3555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignPublicIp { ENABLED = 0, DISABLED = 1 }
+	export enum AssignPublicIp { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	@Injectable()
 	export class MyClient {
@@ -4022,107 +4022,107 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ActivateEventSourceX_Amz_Target { 'AWSEvents.ActivateEventSource' = 0 }
+	export enum ActivateEventSourceX_Amz_Target { 'AWSEvents.ActivateEventSource' = 'AWSEvents.ActivateEventSource' }
 
-	export enum CancelReplayX_Amz_Target { 'AWSEvents.CancelReplay' = 0 }
+	export enum CancelReplayX_Amz_Target { 'AWSEvents.CancelReplay' = 'AWSEvents.CancelReplay' }
 
-	export enum CreateApiDestinationX_Amz_Target { 'AWSEvents.CreateApiDestination' = 0 }
+	export enum CreateApiDestinationX_Amz_Target { 'AWSEvents.CreateApiDestination' = 'AWSEvents.CreateApiDestination' }
 
-	export enum CreateArchiveX_Amz_Target { 'AWSEvents.CreateArchive' = 0 }
+	export enum CreateArchiveX_Amz_Target { 'AWSEvents.CreateArchive' = 'AWSEvents.CreateArchive' }
 
-	export enum CreateConnectionX_Amz_Target { 'AWSEvents.CreateConnection' = 0 }
+	export enum CreateConnectionX_Amz_Target { 'AWSEvents.CreateConnection' = 'AWSEvents.CreateConnection' }
 
-	export enum CreateEventBusX_Amz_Target { 'AWSEvents.CreateEventBus' = 0 }
+	export enum CreateEventBusX_Amz_Target { 'AWSEvents.CreateEventBus' = 'AWSEvents.CreateEventBus' }
 
-	export enum CreatePartnerEventSourceX_Amz_Target { 'AWSEvents.CreatePartnerEventSource' = 0 }
+	export enum CreatePartnerEventSourceX_Amz_Target { 'AWSEvents.CreatePartnerEventSource' = 'AWSEvents.CreatePartnerEventSource' }
 
-	export enum DeactivateEventSourceX_Amz_Target { 'AWSEvents.DeactivateEventSource' = 0 }
+	export enum DeactivateEventSourceX_Amz_Target { 'AWSEvents.DeactivateEventSource' = 'AWSEvents.DeactivateEventSource' }
 
-	export enum DeauthorizeConnectionX_Amz_Target { 'AWSEvents.DeauthorizeConnection' = 0 }
+	export enum DeauthorizeConnectionX_Amz_Target { 'AWSEvents.DeauthorizeConnection' = 'AWSEvents.DeauthorizeConnection' }
 
-	export enum DeleteApiDestinationX_Amz_Target { 'AWSEvents.DeleteApiDestination' = 0 }
+	export enum DeleteApiDestinationX_Amz_Target { 'AWSEvents.DeleteApiDestination' = 'AWSEvents.DeleteApiDestination' }
 
-	export enum DeleteArchiveX_Amz_Target { 'AWSEvents.DeleteArchive' = 0 }
+	export enum DeleteArchiveX_Amz_Target { 'AWSEvents.DeleteArchive' = 'AWSEvents.DeleteArchive' }
 
-	export enum DeleteConnectionX_Amz_Target { 'AWSEvents.DeleteConnection' = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'AWSEvents.DeleteConnection' = 'AWSEvents.DeleteConnection' }
 
-	export enum DeleteEventBusX_Amz_Target { 'AWSEvents.DeleteEventBus' = 0 }
+	export enum DeleteEventBusX_Amz_Target { 'AWSEvents.DeleteEventBus' = 'AWSEvents.DeleteEventBus' }
 
-	export enum DeletePartnerEventSourceX_Amz_Target { 'AWSEvents.DeletePartnerEventSource' = 0 }
+	export enum DeletePartnerEventSourceX_Amz_Target { 'AWSEvents.DeletePartnerEventSource' = 'AWSEvents.DeletePartnerEventSource' }
 
-	export enum DeleteRuleX_Amz_Target { 'AWSEvents.DeleteRule' = 0 }
+	export enum DeleteRuleX_Amz_Target { 'AWSEvents.DeleteRule' = 'AWSEvents.DeleteRule' }
 
-	export enum DescribeApiDestinationX_Amz_Target { 'AWSEvents.DescribeApiDestination' = 0 }
+	export enum DescribeApiDestinationX_Amz_Target { 'AWSEvents.DescribeApiDestination' = 'AWSEvents.DescribeApiDestination' }
 
-	export enum DescribeArchiveX_Amz_Target { 'AWSEvents.DescribeArchive' = 0 }
+	export enum DescribeArchiveX_Amz_Target { 'AWSEvents.DescribeArchive' = 'AWSEvents.DescribeArchive' }
 
-	export enum DescribeConnectionX_Amz_Target { 'AWSEvents.DescribeConnection' = 0 }
+	export enum DescribeConnectionX_Amz_Target { 'AWSEvents.DescribeConnection' = 'AWSEvents.DescribeConnection' }
 
-	export enum DescribeEventBusX_Amz_Target { 'AWSEvents.DescribeEventBus' = 0 }
+	export enum DescribeEventBusX_Amz_Target { 'AWSEvents.DescribeEventBus' = 'AWSEvents.DescribeEventBus' }
 
-	export enum DescribeEventSourceX_Amz_Target { 'AWSEvents.DescribeEventSource' = 0 }
+	export enum DescribeEventSourceX_Amz_Target { 'AWSEvents.DescribeEventSource' = 'AWSEvents.DescribeEventSource' }
 
-	export enum DescribePartnerEventSourceX_Amz_Target { 'AWSEvents.DescribePartnerEventSource' = 0 }
+	export enum DescribePartnerEventSourceX_Amz_Target { 'AWSEvents.DescribePartnerEventSource' = 'AWSEvents.DescribePartnerEventSource' }
 
-	export enum DescribeReplayX_Amz_Target { 'AWSEvents.DescribeReplay' = 0 }
+	export enum DescribeReplayX_Amz_Target { 'AWSEvents.DescribeReplay' = 'AWSEvents.DescribeReplay' }
 
-	export enum DescribeRuleX_Amz_Target { 'AWSEvents.DescribeRule' = 0 }
+	export enum DescribeRuleX_Amz_Target { 'AWSEvents.DescribeRule' = 'AWSEvents.DescribeRule' }
 
-	export enum DisableRuleX_Amz_Target { 'AWSEvents.DisableRule' = 0 }
+	export enum DisableRuleX_Amz_Target { 'AWSEvents.DisableRule' = 'AWSEvents.DisableRule' }
 
-	export enum EnableRuleX_Amz_Target { 'AWSEvents.EnableRule' = 0 }
+	export enum EnableRuleX_Amz_Target { 'AWSEvents.EnableRule' = 'AWSEvents.EnableRule' }
 
-	export enum ListApiDestinationsX_Amz_Target { 'AWSEvents.ListApiDestinations' = 0 }
+	export enum ListApiDestinationsX_Amz_Target { 'AWSEvents.ListApiDestinations' = 'AWSEvents.ListApiDestinations' }
 
-	export enum ListArchivesX_Amz_Target { 'AWSEvents.ListArchives' = 0 }
+	export enum ListArchivesX_Amz_Target { 'AWSEvents.ListArchives' = 'AWSEvents.ListArchives' }
 
-	export enum ListConnectionsX_Amz_Target { 'AWSEvents.ListConnections' = 0 }
+	export enum ListConnectionsX_Amz_Target { 'AWSEvents.ListConnections' = 'AWSEvents.ListConnections' }
 
-	export enum ListEventBusesX_Amz_Target { 'AWSEvents.ListEventBuses' = 0 }
+	export enum ListEventBusesX_Amz_Target { 'AWSEvents.ListEventBuses' = 'AWSEvents.ListEventBuses' }
 
-	export enum ListEventSourcesX_Amz_Target { 'AWSEvents.ListEventSources' = 0 }
+	export enum ListEventSourcesX_Amz_Target { 'AWSEvents.ListEventSources' = 'AWSEvents.ListEventSources' }
 
-	export enum ListPartnerEventSourceAccountsX_Amz_Target { 'AWSEvents.ListPartnerEventSourceAccounts' = 0 }
+	export enum ListPartnerEventSourceAccountsX_Amz_Target { 'AWSEvents.ListPartnerEventSourceAccounts' = 'AWSEvents.ListPartnerEventSourceAccounts' }
 
-	export enum ListPartnerEventSourcesX_Amz_Target { 'AWSEvents.ListPartnerEventSources' = 0 }
+	export enum ListPartnerEventSourcesX_Amz_Target { 'AWSEvents.ListPartnerEventSources' = 'AWSEvents.ListPartnerEventSources' }
 
-	export enum ListReplaysX_Amz_Target { 'AWSEvents.ListReplays' = 0 }
+	export enum ListReplaysX_Amz_Target { 'AWSEvents.ListReplays' = 'AWSEvents.ListReplays' }
 
-	export enum ListRuleNamesByTargetX_Amz_Target { 'AWSEvents.ListRuleNamesByTarget' = 0 }
+	export enum ListRuleNamesByTargetX_Amz_Target { 'AWSEvents.ListRuleNamesByTarget' = 'AWSEvents.ListRuleNamesByTarget' }
 
-	export enum ListRulesX_Amz_Target { 'AWSEvents.ListRules' = 0 }
+	export enum ListRulesX_Amz_Target { 'AWSEvents.ListRules' = 'AWSEvents.ListRules' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSEvents.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSEvents.ListTagsForResource' = 'AWSEvents.ListTagsForResource' }
 
-	export enum ListTargetsByRuleX_Amz_Target { 'AWSEvents.ListTargetsByRule' = 0 }
+	export enum ListTargetsByRuleX_Amz_Target { 'AWSEvents.ListTargetsByRule' = 'AWSEvents.ListTargetsByRule' }
 
-	export enum PutEventsX_Amz_Target { 'AWSEvents.PutEvents' = 0 }
+	export enum PutEventsX_Amz_Target { 'AWSEvents.PutEvents' = 'AWSEvents.PutEvents' }
 
-	export enum PutPartnerEventsX_Amz_Target { 'AWSEvents.PutPartnerEvents' = 0 }
+	export enum PutPartnerEventsX_Amz_Target { 'AWSEvents.PutPartnerEvents' = 'AWSEvents.PutPartnerEvents' }
 
-	export enum PutPermissionX_Amz_Target { 'AWSEvents.PutPermission' = 0 }
+	export enum PutPermissionX_Amz_Target { 'AWSEvents.PutPermission' = 'AWSEvents.PutPermission' }
 
-	export enum PutRuleX_Amz_Target { 'AWSEvents.PutRule' = 0 }
+	export enum PutRuleX_Amz_Target { 'AWSEvents.PutRule' = 'AWSEvents.PutRule' }
 
-	export enum PutTargetsX_Amz_Target { 'AWSEvents.PutTargets' = 0 }
+	export enum PutTargetsX_Amz_Target { 'AWSEvents.PutTargets' = 'AWSEvents.PutTargets' }
 
-	export enum RemovePermissionX_Amz_Target { 'AWSEvents.RemovePermission' = 0 }
+	export enum RemovePermissionX_Amz_Target { 'AWSEvents.RemovePermission' = 'AWSEvents.RemovePermission' }
 
-	export enum RemoveTargetsX_Amz_Target { 'AWSEvents.RemoveTargets' = 0 }
+	export enum RemoveTargetsX_Amz_Target { 'AWSEvents.RemoveTargets' = 'AWSEvents.RemoveTargets' }
 
-	export enum StartReplayX_Amz_Target { 'AWSEvents.StartReplay' = 0 }
+	export enum StartReplayX_Amz_Target { 'AWSEvents.StartReplay' = 'AWSEvents.StartReplay' }
 
-	export enum TagResourceX_Amz_Target { 'AWSEvents.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSEvents.TagResource' = 'AWSEvents.TagResource' }
 
-	export enum TestEventPatternX_Amz_Target { 'AWSEvents.TestEventPattern' = 0 }
+	export enum TestEventPatternX_Amz_Target { 'AWSEvents.TestEventPattern' = 'AWSEvents.TestEventPattern' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSEvents.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSEvents.UntagResource' = 'AWSEvents.UntagResource' }
 
-	export enum UpdateApiDestinationX_Amz_Target { 'AWSEvents.UpdateApiDestination' = 0 }
+	export enum UpdateApiDestinationX_Amz_Target { 'AWSEvents.UpdateApiDestination' = 'AWSEvents.UpdateApiDestination' }
 
-	export enum UpdateArchiveX_Amz_Target { 'AWSEvents.UpdateArchive' = 0 }
+	export enum UpdateArchiveX_Amz_Target { 'AWSEvents.UpdateArchive' = 'AWSEvents.UpdateArchive' }
 
-	export enum UpdateConnectionX_Amz_Target { 'AWSEvents.UpdateConnection' = 0 }
+	export enum UpdateConnectionX_Amz_Target { 'AWSEvents.UpdateConnection' = 'AWSEvents.UpdateConnection' }
 
 }
 

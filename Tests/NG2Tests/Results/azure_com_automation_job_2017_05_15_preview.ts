@@ -106,7 +106,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobCollectionItemPropertiesStatus { New = 0, Activating = 1, Running = 2, Completed = 3, Failed = 4, Stopped = 5, Blocked = 6, Suspended = 7, Disconnected = 8, Suspending = 9, Stopping = 10, Resuming = 11, Removing = 12 }
+	export enum JobCollectionItemPropertiesStatus { New = 'New', Activating = 'Activating', Running = 'Running', Completed = 'Completed', Failed = 'Failed', Stopped = 'Stopped', Blocked = 'Blocked', Suspended = 'Suspended', Disconnected = 'Disconnected', Suspending = 'Suspending', Stopping = 'Stopping', Resuming = 'Resuming', Removing = 'Removing' }
 
 
 	/** The parameters supplied to the create job operation. */
@@ -284,11 +284,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JobPropertiesProvisioningState { Failed = 0, Succeeded = 1, Suspended = 2, Processing = 3 }
+	export enum JobPropertiesProvisioningState { Failed = 'Failed', Succeeded = 'Succeeded', Suspended = 'Suspended', Processing = 'Processing' }
 
 
 	/** The provisioning state of the resource. */
-	export enum JobProvisioningStateProperty { Failed = 0, Succeeded = 1, Suspended = 2, Processing = 3 }
+	export enum JobProvisioningStateProperty { Failed = 'Failed', Succeeded = 'Succeeded', Suspended = 'Suspended', Processing = 'Processing' }
 
 
 	/** Definition of the job stream. */
@@ -394,7 +394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStreamPropertiesStreamType { Progress = 0, Output = 1, Warning = 2, Error = 3, Debug = 4, Verbose = 5, Any = 6 }
+	export enum JobStreamPropertiesStreamType { Progress = 'Progress', Output = 'Output', Warning = 'Warning', Error = 'Error', Debug = 'Debug', Verbose = 'Verbose', Any = 'Any' }
 
 
 	/** The runbook property associated with the entity. */

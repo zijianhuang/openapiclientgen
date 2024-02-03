@@ -602,7 +602,7 @@ export namespace MyNS {
 
 	export enum NewMessageMessage_class { _0 = 0, _1 = 1, _2 = 2, _3 = 3 }
 
-	export enum NewMessageType { text = 0, binary = 1, unicode = 2 }
+	export enum NewMessageType { text = 'text', binary = 'binary', unicode = 'unicode' }
 
 
 	/** Message sent */
@@ -647,7 +647,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Send_an_smsFormat { json = 0, xml = 1 }
+	export enum Send_an_smsFormat { json = 'json', xml = 'xml' }
 
 }
 

@@ -1552,43 +1552,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateGroupX_Amz_Target { 'AWSIdentityStore.CreateGroup' = 0 }
+	export enum CreateGroupX_Amz_Target { 'AWSIdentityStore.CreateGroup' = 'AWSIdentityStore.CreateGroup' }
 
-	export enum CreateGroupMembershipX_Amz_Target { 'AWSIdentityStore.CreateGroupMembership' = 0 }
+	export enum CreateGroupMembershipX_Amz_Target { 'AWSIdentityStore.CreateGroupMembership' = 'AWSIdentityStore.CreateGroupMembership' }
 
-	export enum CreateUserX_Amz_Target { 'AWSIdentityStore.CreateUser' = 0 }
+	export enum CreateUserX_Amz_Target { 'AWSIdentityStore.CreateUser' = 'AWSIdentityStore.CreateUser' }
 
-	export enum DeleteGroupX_Amz_Target { 'AWSIdentityStore.DeleteGroup' = 0 }
+	export enum DeleteGroupX_Amz_Target { 'AWSIdentityStore.DeleteGroup' = 'AWSIdentityStore.DeleteGroup' }
 
-	export enum DeleteGroupMembershipX_Amz_Target { 'AWSIdentityStore.DeleteGroupMembership' = 0 }
+	export enum DeleteGroupMembershipX_Amz_Target { 'AWSIdentityStore.DeleteGroupMembership' = 'AWSIdentityStore.DeleteGroupMembership' }
 
-	export enum DeleteUserX_Amz_Target { 'AWSIdentityStore.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'AWSIdentityStore.DeleteUser' = 'AWSIdentityStore.DeleteUser' }
 
-	export enum DescribeGroupX_Amz_Target { 'AWSIdentityStore.DescribeGroup' = 0 }
+	export enum DescribeGroupX_Amz_Target { 'AWSIdentityStore.DescribeGroup' = 'AWSIdentityStore.DescribeGroup' }
 
-	export enum DescribeGroupMembershipX_Amz_Target { 'AWSIdentityStore.DescribeGroupMembership' = 0 }
+	export enum DescribeGroupMembershipX_Amz_Target { 'AWSIdentityStore.DescribeGroupMembership' = 'AWSIdentityStore.DescribeGroupMembership' }
 
-	export enum DescribeUserX_Amz_Target { 'AWSIdentityStore.DescribeUser' = 0 }
+	export enum DescribeUserX_Amz_Target { 'AWSIdentityStore.DescribeUser' = 'AWSIdentityStore.DescribeUser' }
 
-	export enum GetGroupIdX_Amz_Target { 'AWSIdentityStore.GetGroupId' = 0 }
+	export enum GetGroupIdX_Amz_Target { 'AWSIdentityStore.GetGroupId' = 'AWSIdentityStore.GetGroupId' }
 
-	export enum GetGroupMembershipIdX_Amz_Target { 'AWSIdentityStore.GetGroupMembershipId' = 0 }
+	export enum GetGroupMembershipIdX_Amz_Target { 'AWSIdentityStore.GetGroupMembershipId' = 'AWSIdentityStore.GetGroupMembershipId' }
 
-	export enum GetUserIdX_Amz_Target { 'AWSIdentityStore.GetUserId' = 0 }
+	export enum GetUserIdX_Amz_Target { 'AWSIdentityStore.GetUserId' = 'AWSIdentityStore.GetUserId' }
 
-	export enum IsMemberInGroupsX_Amz_Target { 'AWSIdentityStore.IsMemberInGroups' = 0 }
+	export enum IsMemberInGroupsX_Amz_Target { 'AWSIdentityStore.IsMemberInGroups' = 'AWSIdentityStore.IsMemberInGroups' }
 
-	export enum ListGroupMembershipsX_Amz_Target { 'AWSIdentityStore.ListGroupMemberships' = 0 }
+	export enum ListGroupMembershipsX_Amz_Target { 'AWSIdentityStore.ListGroupMemberships' = 'AWSIdentityStore.ListGroupMemberships' }
 
-	export enum ListGroupMembershipsForMemberX_Amz_Target { 'AWSIdentityStore.ListGroupMembershipsForMember' = 0 }
+	export enum ListGroupMembershipsForMemberX_Amz_Target { 'AWSIdentityStore.ListGroupMembershipsForMember' = 'AWSIdentityStore.ListGroupMembershipsForMember' }
 
-	export enum ListGroupsX_Amz_Target { 'AWSIdentityStore.ListGroups' = 0 }
+	export enum ListGroupsX_Amz_Target { 'AWSIdentityStore.ListGroups' = 'AWSIdentityStore.ListGroups' }
 
-	export enum ListUsersX_Amz_Target { 'AWSIdentityStore.ListUsers' = 0 }
+	export enum ListUsersX_Amz_Target { 'AWSIdentityStore.ListUsers' = 'AWSIdentityStore.ListUsers' }
 
-	export enum UpdateGroupX_Amz_Target { 'AWSIdentityStore.UpdateGroup' = 0 }
+	export enum UpdateGroupX_Amz_Target { 'AWSIdentityStore.UpdateGroup' = 'AWSIdentityStore.UpdateGroup' }
 
-	export enum UpdateUserX_Amz_Target { 'AWSIdentityStore.UpdateUser' = 0 }
+	export enum UpdateUserX_Amz_Target { 'AWSIdentityStore.UpdateUser' = 'AWSIdentityStore.UpdateUser' }
 
 }
 

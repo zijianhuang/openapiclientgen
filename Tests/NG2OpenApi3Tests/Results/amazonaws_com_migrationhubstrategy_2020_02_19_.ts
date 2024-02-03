@@ -88,7 +88,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SrcCodeOrDbAnalysisStatus { ANALYSIS_TO_BE_SCHEDULED = 0, ANALYSIS_STARTED = 1, ANALYSIS_SUCCESS = 2, ANALYSIS_FAILED = 3, ANALYSIS_PARTIAL_SUCCESS = 4, UNCONFIGURED = 5, CONFIGURED = 6 }
+	export enum SrcCodeOrDbAnalysisStatus { ANALYSIS_TO_BE_SCHEDULED = 'ANALYSIS_TO_BE_SCHEDULED', ANALYSIS_STARTED = 'ANALYSIS_STARTED', ANALYSIS_SUCCESS = 'ANALYSIS_SUCCESS', ANALYSIS_FAILED = 'ANALYSIS_FAILED', ANALYSIS_PARTIAL_SUCCESS = 'ANALYSIS_PARTIAL_SUCCESS', UNCONFIGURED = 'UNCONFIGURED', CONFIGURED = 'CONFIGURED' }
 
 
 	/**  Contains the S3 bucket name and the Amazon S3 key name.  */
@@ -110,9 +110,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AntipatternReportStatus { FAILED = 0, IN_PROGRESS = 1, SUCCESS = 2 }
+	export enum AntipatternReportStatus { FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS' }
 
-	export enum AppType { DotNetFramework = 0, Java = 1, SQLServer = 2, IIS = 3, Oracle = 4, Other = 5, Tomcat = 6, JBoss = 7, Spring = 8, 'Mongo DB' = 9, DB2 = 10, 'Maria DB' = 11, MySQL = 12, Sybase = 13, PostgreSQLServer = 14, Cassandra = 15, 'IBM WebSphere' = 16, 'Oracle WebLogic' = 17, 'Visual Basic' = 18, Unknown = 19, DotnetCore = 20, Dotnet = 21 }
+	export enum AppType { DotNetFramework = 'DotNetFramework', Java = 'Java', SQLServer = 'SQLServer', IIS = 'IIS', Oracle = 'Oracle', Other = 'Other', Tomcat = 'Tomcat', JBoss = 'JBoss', Spring = 'Spring', 'Mongo DB' = 'Mongo DB', DB2 = 'DB2', 'Maria DB' = 'Maria DB', MySQL = 'MySQL', Sybase = 'Sybase', PostgreSQLServer = 'PostgreSQLServer', Cassandra = 'Cassandra', 'IBM WebSphere' = 'IBM WebSphere', 'Oracle WebLogic' = 'Oracle WebLogic', 'Visual Basic' = 'Visual Basic', Unknown = 'Unknown', DotnetCore = 'DotnetCore', Dotnet = 'Dotnet' }
 
 
 	/** Error in the analysis of the application unit. */
@@ -131,7 +131,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppUnitErrorCategory { CREDENTIAL_ERROR = 0, CONNECTIVITY_ERROR = 1, PERMISSION_ERROR = 2, UNSUPPORTED_ERROR = 3, OTHER_ERROR = 4 }
+	export enum AppUnitErrorCategory { CREDENTIAL_ERROR = 'CREDENTIAL_ERROR', CONNECTIVITY_ERROR = 'CONNECTIVITY_ERROR', PERMISSION_ERROR = 'PERMISSION_ERROR', UNSUPPORTED_ERROR = 'UNSUPPORTED_ERROR', OTHER_ERROR = 'OTHER_ERROR' }
 
 
 	/**  Configuration information used for assessing databases.  */
@@ -150,7 +150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InclusionStatus { excludeFromAssessment = 0, includeInAssessment = 1 }
+	export enum InclusionStatus { excludeFromAssessment = 'excludeFromAssessment', includeInAssessment = 'includeInAssessment' }
 
 
 	/**  Contains the summary of anti-patterns and their severity.  */
@@ -172,7 +172,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Severity { HIGH = 0, MEDIUM = 1, LOW = 2 }
+	export enum Severity { HIGH = 'HIGH', MEDIUM = 'MEDIUM', LOW = 'LOW' }
 
 
 	/**  Contains a recommendation set.  */
@@ -195,9 +195,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Strategy { Rehost = 0, Retirement = 1, Refactor = 2, Replatform = 3, Retain = 4, Relocate = 5, Repurchase = 6 }
+	export enum Strategy { Rehost = 'Rehost', Retirement = 'Retirement', Refactor = 'Refactor', Replatform = 'Replatform', Retain = 'Retain', Relocate = 'Relocate', Repurchase = 'Repurchase' }
 
-	export enum TargetDestination { 'None specified' = 0, 'AWS Elastic BeanStalk' = 1, 'AWS Fargate' = 2, 'Amazon Elastic Cloud Compute (EC2)' = 3, 'Amazon Elastic Container Service (ECS)' = 4, 'Amazon Elastic Kubernetes Service (EKS)' = 5, 'Aurora MySQL' = 6, 'Aurora PostgreSQL' = 7, 'Amazon Relational Database Service on MySQL' = 8, 'Amazon Relational Database Service on PostgreSQL' = 9, 'Amazon DocumentDB' = 10, 'Amazon DynamoDB' = 11, 'Amazon Relational Database Service' = 12, 'Babelfish for Aurora PostgreSQL' = 13 }
+	export enum TargetDestination { 'None specified' = 'None specified', 'AWS Elastic BeanStalk' = 'AWS Elastic BeanStalk', 'AWS Fargate' = 'AWS Fargate', 'Amazon Elastic Cloud Compute (EC2)' = 'Amazon Elastic Cloud Compute (EC2)', 'Amazon Elastic Container Service (ECS)' = 'Amazon Elastic Container Service (ECS)', 'Amazon Elastic Kubernetes Service (EKS)' = 'Amazon Elastic Kubernetes Service (EKS)', 'Aurora MySQL' = 'Aurora MySQL', 'Aurora PostgreSQL' = 'Aurora PostgreSQL', 'Amazon Relational Database Service on MySQL' = 'Amazon Relational Database Service on MySQL', 'Amazon Relational Database Service on PostgreSQL' = 'Amazon Relational Database Service on PostgreSQL', 'Amazon DocumentDB' = 'Amazon DocumentDB', 'Amazon DynamoDB' = 'Amazon DynamoDB', 'Amazon Relational Database Service' = 'Amazon Relational Database Service', 'Babelfish for Aurora PostgreSQL' = 'Babelfish for Aurora PostgreSQL' }
 
 
 	/**  Information of the transformation tool that can be used to migrate and modernize the application.  */
@@ -222,9 +222,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransformationToolName { App2Container = 0, 'Porting Assistant For .NET' = 1, 'End of Support Migration' = 2, 'Windows Web Application Migration Assistant' = 3, 'Application Migration Service' = 4, 'Strategy Recommendation Support' = 5, 'In Place Operating System Upgrade' = 6, 'Schema Conversion Tool' = 7, 'Database Migration Service' = 8, 'Native SQL Server Backup/Restore' = 9 }
+	export enum TransformationToolName { App2Container = 'App2Container', 'Porting Assistant For .NET' = 'Porting Assistant For .NET', 'End of Support Migration' = 'End of Support Migration', 'Windows Web Application Migration Assistant' = 'Windows Web Application Migration Assistant', 'Application Migration Service' = 'Application Migration Service', 'Strategy Recommendation Support' = 'Strategy Recommendation Support', 'In Place Operating System Upgrade' = 'In Place Operating System Upgrade', 'Schema Conversion Tool' = 'Schema Conversion Tool', 'Database Migration Service' = 'Database Migration Service', 'Native SQL Server Backup/Restore' = 'Native SQL Server Backup/Restore' }
 
-	export enum ResourceSubType { Database = 0, Process = 1, DatabaseProcess = 2 }
+	export enum ResourceSubType { Database = 'Database', Process = 'Process', DatabaseProcess = 'DatabaseProcess' }
 
 
 	/** The error in server analysis. */
@@ -268,9 +268,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeAnalysisStatus { ANALYSIS_TO_BE_SCHEDULED = 0, ANALYSIS_STARTED = 1, ANALYSIS_SUCCESS = 2, ANALYSIS_FAILED = 3 }
+	export enum RuntimeAnalysisStatus { ANALYSIS_TO_BE_SCHEDULED = 'ANALYSIS_TO_BE_SCHEDULED', ANALYSIS_STARTED = 'ANALYSIS_STARTED', ANALYSIS_SUCCESS = 'ANALYSIS_SUCCESS', ANALYSIS_FAILED = 'ANALYSIS_FAILED' }
 
-	export enum AnalysisType { SOURCE_CODE_ANALYSIS = 0, DATABASE_ANALYSIS = 1, RUNTIME_ANALYSIS = 2, BINARY_ANALYSIS = 3 }
+	export enum AnalysisType { SOURCE_CODE_ANALYSIS = 'SOURCE_CODE_ANALYSIS', DATABASE_ANALYSIS = 'DATABASE_ANALYSIS', RUNTIME_ANALYSIS = 'RUNTIME_ANALYSIS', BINARY_ANALYSIS = 'BINARY_ANALYSIS' }
 
 
 	/** The anti-pattern report result. */
@@ -319,11 +319,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BinaryAnalyzerName { DLL_ANALYZER = 0, BYTECODE_ANALYZER = 1 }
+	export enum BinaryAnalyzerName { DLL_ANALYZER = 'DLL_ANALYZER', BYTECODE_ANALYZER = 'BYTECODE_ANALYZER' }
 
-	export enum RunTimeAnalyzerName { A2C_ANALYZER = 0, REHOST_ANALYZER = 1, EMP_PA_ANALYZER = 2, DATABASE_ANALYZER = 3, SCT_ANALYZER = 4 }
+	export enum RunTimeAnalyzerName { A2C_ANALYZER = 'A2C_ANALYZER', REHOST_ANALYZER = 'REHOST_ANALYZER', EMP_PA_ANALYZER = 'EMP_PA_ANALYZER', DATABASE_ANALYZER = 'DATABASE_ANALYZER', SCT_ANALYZER = 'SCT_ANALYZER' }
 
-	export enum SourceCodeAnalyzerName { CSHARP_ANALYZER = 0, JAVA_ANALYZER = 1, BYTECODE_ANALYZER = 2, PORTING_ASSISTANT = 3 }
+	export enum SourceCodeAnalyzerName { CSHARP_ANALYZER = 'CSHARP_ANALYZER', JAVA_ANALYZER = 'JAVA_ANALYZER', BYTECODE_ANALYZER = 'BYTECODE_ANALYZER', PORTING_ASSISTANT = 'PORTING_ASSISTANT' }
 
 
 	/**  Object containing source code information that is linked to an application component.  */
@@ -433,7 +433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StrategyRecommendation { recommended = 0, viableOption = 1, notRecommended = 2, potential = 3 }
+	export enum StrategyRecommendation { recommended = 'recommended', viableOption = 'viableOption', notRecommended = 'notRecommended', potential = 'potential' }
 
 	export interface GetAssessmentResponse {
 		assessmentTargets?: Array<AssessmentTarget>;
@@ -481,7 +481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Condition { EQUALS = 0, NOT_EQUALS = 1, CONTAINS = 2, NOT_CONTAINS = 3 }
+	export enum Condition { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS' }
 
 
 	/**  Detailed information about an assessment.  */
@@ -521,7 +521,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILED = 2, STOPPED = 3 }
+	export enum AssessmentStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', FAILED = 'FAILED', STOPPED = 'STOPPED' }
 
 	export interface AccessDeniedException {
 	}
@@ -576,7 +576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportFileTaskStatus { ImportInProgress = 0, ImportFailed = 1, ImportPartialSuccess = 2, ImportSuccess = 3, DeleteInProgress = 4, DeleteFailed = 5, DeletePartialSuccess = 6, DeleteSuccess = 7 }
+	export enum ImportFileTaskStatus { ImportInProgress = 'ImportInProgress', ImportFailed = 'ImportFailed', ImportPartialSuccess = 'ImportPartialSuccess', ImportSuccess = 'ImportSuccess', DeleteInProgress = 'DeleteInProgress', DeleteFailed = 'DeleteFailed', DeletePartialSuccess = 'DeletePartialSuccess', DeleteSuccess = 'DeleteSuccess' }
 
 	export interface ValidationException {
 	}
@@ -627,7 +627,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationMode { ALL = 0, KNOWN = 1, UNKNOWN = 2 }
+	export enum ApplicationMode { ALL = 'ALL', KNOWN = 'KNOWN', UNKNOWN = 'UNKNOWN' }
 
 
 	/**  Application preferences that you specify.  */
@@ -678,7 +678,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AwsManagedTargetDestination { 'None specified' = 0, 'AWS Elastic BeanStalk' = 1, 'AWS Fargate' = 2 }
+	export enum AwsManagedTargetDestination { 'None specified' = 'None specified', 'AWS Elastic BeanStalk' = 'AWS Elastic BeanStalk', 'AWS Fargate' = 'AWS Fargate' }
 
 
 	/**  Object containing the choice of application destination that you specify.  */
@@ -697,7 +697,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NoPreferenceTargetDestination { 'None specified' = 0, 'AWS Elastic BeanStalk' = 1, 'AWS Fargate' = 2, 'Amazon Elastic Cloud Compute (EC2)' = 3, 'Amazon Elastic Container Service (ECS)' = 4, 'Amazon Elastic Kubernetes Service (EKS)' = 5 }
+	export enum NoPreferenceTargetDestination { 'None specified' = 'None specified', 'AWS Elastic BeanStalk' = 'AWS Elastic BeanStalk', 'AWS Fargate' = 'AWS Fargate', 'Amazon Elastic Cloud Compute (EC2)' = 'Amazon Elastic Cloud Compute (EC2)', 'Amazon Elastic Container Service (ECS)' = 'Amazon Elastic Container Service (ECS)', 'Amazon Elastic Kubernetes Service (EKS)' = 'Amazon Elastic Kubernetes Service (EKS)' }
 
 
 	/**  Self-managed resources.  */
@@ -716,7 +716,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SelfManageTargetDestination { 'None specified' = 0, 'Amazon Elastic Cloud Compute (EC2)' = 1, 'Amazon Elastic Container Service (ECS)' = 2, 'Amazon Elastic Kubernetes Service (EKS)' = 3 }
+	export enum SelfManageTargetDestination { 'None specified' = 'None specified', 'Amazon Elastic Cloud Compute (EC2)' = 'Amazon Elastic Cloud Compute (EC2)', 'Amazon Elastic Container Service (ECS)' = 'Amazon Elastic Container Service (ECS)', 'Amazon Elastic Kubernetes Service (EKS)' = 'Amazon Elastic Kubernetes Service (EKS)' }
 
 
 	/**  Preferences on managing your databases on AWS.  */
@@ -736,7 +736,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseManagementPreference { 'AWS-managed' = 0, 'Self-manage' = 1, 'No preference' = 2 }
+	export enum DatabaseManagementPreference { 'AWS-managed' = 'AWS-managed', 'Self-manage' = 'Self-manage', 'No preference' = 'No preference' }
 
 
 	/**  Preferences for migrating a database to AWS.  */
@@ -772,7 +772,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HeterogeneousTargetDatabaseEngine { 'None specified' = 0, 'Amazon Aurora' = 1, 'AWS PostgreSQL' = 2, MySQL = 3, 'Microsoft SQL Server' = 4, 'Oracle Database' = 5, MariaDB = 6, SAP = 7, 'Db2 LUW' = 8, MongoDB = 9 }
+	export enum HeterogeneousTargetDatabaseEngine { 'None specified' = 'None specified', 'Amazon Aurora' = 'Amazon Aurora', 'AWS PostgreSQL' = 'AWS PostgreSQL', MySQL = 'MySQL', 'Microsoft SQL Server' = 'Microsoft SQL Server', 'Oracle Database' = 'Oracle Database', MariaDB = 'MariaDB', SAP = 'SAP', 'Db2 LUW' = 'Db2 LUW', MongoDB = 'MongoDB' }
 
 
 	/**  The object containing details about homogeneous database preferences.  */
@@ -789,7 +789,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HomogeneousTargetDatabaseEngine { 'None specified' = 0 }
+	export enum HomogeneousTargetDatabaseEngine { 'None specified' = 'None specified' }
 
 
 	/**  The object containing details about database migration preferences, when you have no particular preference.  */
@@ -808,7 +808,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetDatabaseEngine { 'None specified' = 0, 'Amazon Aurora' = 1, 'AWS PostgreSQL' = 2, MySQL = 3, 'Microsoft SQL Server' = 4, 'Oracle Database' = 5, MariaDB = 6, SAP = 7, 'Db2 LUW' = 8, MongoDB = 9 }
+	export enum TargetDatabaseEngine { 'None specified' = 'None specified', 'Amazon Aurora' = 'Amazon Aurora', 'AWS PostgreSQL' = 'AWS PostgreSQL', MySQL = 'MySQL', 'Microsoft SQL Server' = 'Microsoft SQL Server', 'Oracle Database' = 'Oracle Database', MariaDB = 'MariaDB', SAP = 'SAP', 'Db2 LUW' = 'Db2 LUW', MongoDB = 'MongoDB' }
 
 
 	/**  Rank of business goals based on priority.  */
@@ -973,7 +973,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RunTimeAssessmentStatus { dataCollectionTaskToBeScheduled = 0, dataCollectionTaskScheduled = 1, dataCollectionTaskStarted = 2, dataCollectionTaskStopped = 3, dataCollectionTaskSuccess = 4, dataCollectionTaskFailed = 5, dataCollectionTaskPartialSuccess = 6 }
+	export enum RunTimeAssessmentStatus { dataCollectionTaskToBeScheduled = 'dataCollectionTaskToBeScheduled', dataCollectionTaskScheduled = 'dataCollectionTaskScheduled', dataCollectionTaskStarted = 'dataCollectionTaskStarted', dataCollectionTaskStopped = 'dataCollectionTaskStopped', dataCollectionTaskSuccess = 'dataCollectionTaskSuccess', dataCollectionTaskFailed = 'dataCollectionTaskFailed', dataCollectionTaskPartialSuccess = 'dataCollectionTaskPartialSuccess' }
 
 
 	/**  Object containing details about the servers imported by Application Discovery Service  */
@@ -995,7 +995,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerOsType { WindowsServer = 0, AmazonLinux = 1, EndOfSupportWindowsServer = 2, Redhat = 3, Other = 4 }
+	export enum ServerOsType { WindowsServer = 'WindowsServer', AmazonLinux = 'AmazonLinux', EndOfSupportWindowsServer = 'EndOfSupportWindowsServer', Redhat = 'Redhat', Other = 'Other' }
 
 	export interface GetRecommendationReportDetailsResponse {
 		id?: string;
@@ -1117,7 +1117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerErrorCategory { CONNECTIVITY_ERROR = 0, CREDENTIAL_ERROR = 1, PERMISSION_ERROR = 2, ARCHITECTURE_ERROR = 3, OTHER_ERROR = 4 }
+	export enum ServerErrorCategory { CONNECTIVITY_ERROR = 'CONNECTIVITY_ERROR', CREDENTIAL_ERROR = 'CREDENTIAL_ERROR', PERMISSION_ERROR = 'PERMISSION_ERROR', ARCHITECTURE_ERROR = 'ARCHITECTURE_ERROR', OTHER_ERROR = 'OTHER_ERROR' }
 
 
 	/**  Information about the server that hosts application components.  */
@@ -1203,7 +1203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OSType { LINUX = 0, WINDOWS = 1 }
+	export enum OSType { LINUX = 'LINUX', WINDOWS = 'WINDOWS' }
 
 	export interface GetServerStrategiesResponse {
 		serverStrategies?: Array<ServerStrategy>;
@@ -1274,7 +1274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupName { ExternalId = 0, ExternalSourceType = 1 }
+	export enum GroupName { ExternalId = 'ExternalId', ExternalSourceType = 'ExternalSourceType' }
 
 	export interface ServiceLinkedRoleLockClientException {
 	}
@@ -1336,7 +1336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CollectorHealth { COLLECTOR_HEALTHY = 0, COLLECTOR_UNHEALTHY = 1 }
+	export enum CollectorHealth { COLLECTOR_HEALTHY = 'COLLECTOR_HEALTHY', COLLECTOR_UNHEALTHY = 'COLLECTOR_UNHEALTHY' }
 
 
 	/** Summary of the collector configuration. */
@@ -1380,7 +1380,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthType { NTLM = 0, SSH = 1, CERT = 2 }
+	export enum AuthType { NTLM = 'NTLM', SSH = 'SSH', CERT = 'CERT' }
 
 
 	/** Detailed information of the pipeline. */
@@ -1402,7 +1402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PipelineType { AZURE_DEVOPS = 0 }
+	export enum PipelineType { AZURE_DEVOPS = 'AZURE_DEVOPS' }
 
 
 	/** Information about the server configured for source code analysis. */
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionControlType { GITHUB = 0, GITHUB_ENTERPRISE = 1, AZURE_DEVOPS_GIT = 2 }
+	export enum VersionControlType { GITHUB = 'GITHUB', GITHUB_ENTERPRISE = 'GITHUB_ENTERPRISE', AZURE_DEVOPS_GIT = 'AZURE_DEVOPS_GIT' }
 
 	export interface ListImportFileTaskResponse {
 		nextToken?: string;
@@ -1663,9 +1663,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationComponentCriteria { NOT_DEFINED = 0, APP_NAME = 1, SERVER_ID = 2, APP_TYPE = 3, STRATEGY = 4, DESTINATION = 5, ANALYSIS_STATUS = 6, ERROR_CATEGORY = 7 }
+	export enum ApplicationComponentCriteria { NOT_DEFINED = 'NOT_DEFINED', APP_NAME = 'APP_NAME', SERVER_ID = 'SERVER_ID', APP_TYPE = 'APP_TYPE', STRATEGY = 'STRATEGY', DESTINATION = 'DESTINATION', ANALYSIS_STATUS = 'ANALYSIS_STATUS', ERROR_CATEGORY = 'ERROR_CATEGORY' }
 
-	export enum DataSourceType { ApplicationDiscoveryService = 0, MPA = 1, Import = 2 }
+	export enum DataSourceType { ApplicationDiscoveryService = 'ApplicationDiscoveryService', MPA = 'MPA', Import = 'Import' }
 
 	export interface GetApplicationComponentDetailsRequest {
 	}
@@ -1767,7 +1767,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASC = 0, DESC = 1 }
+	export enum SortOrder { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface ListApplicationComponentsRequest {
 		applicationComponentCriteria?: ApplicationComponentCriteria;
@@ -1815,7 +1815,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerCriteria { NOT_DEFINED = 0, OS_NAME = 1, STRATEGY = 2, DESTINATION = 3, SERVER_ID = 4, ANALYSIS_STATUS = 5, ERROR_CATEGORY = 6 }
+	export enum ServerCriteria { NOT_DEFINED = 'NOT_DEFINED', OS_NAME = 'OS_NAME', STRATEGY = 'STRATEGY', DESTINATION = 'DESTINATION', SERVER_ID = 'SERVER_ID', ANALYSIS_STATUS = 'ANALYSIS_STATUS', ERROR_CATEGORY = 'ERROR_CATEGORY' }
 
 	export interface ListServersRequest {
 		filterValue?: string;
@@ -1843,7 +1843,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputFormat { Excel = 0, Json = 1 }
+	export enum OutputFormat { Excel = 'Excel', Json = 'Json' }
 
 	export interface PutPortfolioPreferencesRequest {
 		applicationMode?: ApplicationMode;
@@ -1861,9 +1861,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationReportStatus { FAILED = 0, IN_PROGRESS = 1, SUCCESS = 2 }
+	export enum RecommendationReportStatus { FAILED = 'FAILED', IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS' }
 
-	export enum VersionControl { GITHUB = 0, GITHUB_ENTERPRISE = 1, AZURE_DEVOPS_GIT = 2 }
+	export enum VersionControl { GITHUB = 'GITHUB', GITHUB_ENTERPRISE = 'GITHUB_ENTERPRISE', AZURE_DEVOPS_GIT = 'AZURE_DEVOPS_GIT' }
 
 	export interface StartAssessmentRequest {
 		assessmentTargets?: Array<AssessmentTarget>;

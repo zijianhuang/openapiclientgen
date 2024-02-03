@@ -1903,7 +1903,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum MembershipsActiveFormat { xml = 0, json = 1 }
+	export enum MembershipsActiveFormat { xml = 'xml', json = 'json' }
 
 }
 

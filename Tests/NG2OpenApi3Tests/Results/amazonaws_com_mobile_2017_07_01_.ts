@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectDetailsState { NORMAL = 0, SYNCING = 1, IMPORTING = 2 }
+	export enum ProjectDetailsState { NORMAL = 'NORMAL', SYNCING = 'SYNCING', IMPORTING = 'IMPORTING' }
 
 
 	/**  Information about an instance of an AWS resource associated with a project.  */
@@ -365,7 +365,7 @@ export namespace MyNS {
 
 
 	/**  Developer desktop or target mobile app or website platform.  */
-	export enum Platform { OSX = 0, WINDOWS = 1, LINUX = 2, OBJC = 3, SWIFT = 4, ANDROID = 5, JAVASCRIPT = 6 }
+	export enum Platform { OSX = 'OSX', WINDOWS = 'WINDOWS', LINUX = 'LINUX', OBJC = 'OBJC', SWIFT = 'SWIFT', ANDROID = 'ANDROID', JAVASCRIPT = 'JAVASCRIPT' }
 
 
 	/**  Result structure used for requests of project details.  */
@@ -639,7 +639,7 @@ export namespace MyNS {
 
 
 	/**  Synchronization state for a project.  */
-	export enum ProjectState { NORMAL = 0, SYNCING = 1, IMPORTING = 2 }
+	export enum ProjectState { NORMAL = 'NORMAL', SYNCING = 'SYNCING', IMPORTING = 'IMPORTING' }
 
 
 	/**  Request structure used for requests to update project configuration.  */

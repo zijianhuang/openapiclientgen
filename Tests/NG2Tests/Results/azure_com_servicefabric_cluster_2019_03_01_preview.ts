@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Available cluster add-on features */
-	export enum AddOnFeatures { RepairManager = 0, DnsService = 1, BackupRestoreService = 2, ResourceMonitorService = 3 }
+	export enum AddOnFeatures { RepairManager = 'RepairManager', DnsService = 'DnsService', BackupRestoreService = 'BackupRestoreService', ResourceMonitorService = 'ResourceMonitorService' }
 
 
 	/**
@@ -353,7 +353,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateDescriptionX509StoreName { AddressBook = 0, AuthRoot = 1, CertificateAuthority = 2, Disallowed = 3, My = 4, Root = 5, TrustedPeople = 6, TrustedPublisher = 7 }
+	export enum CertificateDescriptionX509StoreName { AddressBook = 'AddressBook', AuthRoot = 'AuthRoot', CertificateAuthority = 'CertificateAuthority', Disallowed = 'Disallowed', My = 'My', Root = 'Root', TrustedPeople = 'TrustedPeople', TrustedPublisher = 'TrustedPublisher' }
 
 
 	/** Describes the client certificate details using common name. */
@@ -528,7 +528,7 @@ export namespace MyNS {
 
 
 	/** Cluster operating system, the default will be Windows */
-	export enum ClusterEnvironment { Windows = 0, Linux = 1 }
+	export enum ClusterEnvironment { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/**
@@ -839,7 +839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterPropertiesClusterState { WaitingForNodes = 0, Deploying = 1, BaselineUpgrade = 2, UpdatingUserConfiguration = 3, UpdatingUserCertificate = 4, UpdatingInfrastructure = 5, EnforcingClusterVersion = 6, UpgradeServiceUnreachable = 7, AutoScale = 8, Ready = 9 }
+	export enum ClusterPropertiesClusterState { WaitingForNodes = 'WaitingForNodes', Deploying = 'Deploying', BaselineUpgrade = 'BaselineUpgrade', UpdatingUserConfiguration = 'UpdatingUserConfiguration', UpdatingUserCertificate = 'UpdatingUserCertificate', UpdatingInfrastructure = 'UpdatingInfrastructure', EnforcingClusterVersion = 'EnforcingClusterVersion', UpgradeServiceUnreachable = 'UpgradeServiceUnreachable', AutoScale = 'AutoScale', Ready = 'Ready' }
 
 
 	/** Describes a section in the fabric settings of the cluster. */
@@ -1041,13 +1041,13 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeTypeDescriptionDurabilityLevel { Bronze = 0, Silver = 1, Gold = 2 }
+	export enum NodeTypeDescriptionDurabilityLevel { Bronze = 'Bronze', Silver = 'Silver', Gold = 'Gold' }
 
-	export enum ClusterPropertiesProvisioningState { Updating = 0, Succeeded = 1, Failed = 2, Canceled = 3 }
+	export enum ClusterPropertiesProvisioningState { Updating = 'Updating', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
-	export enum ClusterPropertiesReliabilityLevel { None = 0, Bronze = 1, Silver = 2, Gold = 3, Platinum = 4 }
+	export enum ClusterPropertiesReliabilityLevel { None = 'None', Bronze = 'Bronze', Silver = 'Silver', Gold = 'Gold', Platinum = 'Platinum' }
 
-	export enum ClusterPropertiesUpgradeMode { Automatic = 0, Manual = 1 }
+	export enum ClusterPropertiesUpgradeMode { Automatic = 'Automatic', Manual = 'Manual' }
 
 
 	/** Describes the cluster resource properties that can be updated during PATCH operation. */
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 	 *   - AutoScale - Indicates that the ReliabilityLevel of the cluster is being adjusted.
 	 *   - Ready - Indicates that the cluster is in a stable state.
 	 */
-	export enum ClusterState { WaitingForNodes = 0, Deploying = 1, BaselineUpgrade = 2, UpdatingUserConfiguration = 3, UpdatingUserCertificate = 4, UpdatingInfrastructure = 5, EnforcingClusterVersion = 6, UpgradeServiceUnreachable = 7, AutoScale = 8, Ready = 9 }
+	export enum ClusterState { WaitingForNodes = 'WaitingForNodes', Deploying = 'Deploying', BaselineUpgrade = 'BaselineUpgrade', UpdatingUserConfiguration = 'UpdatingUserConfiguration', UpdatingUserCertificate = 'UpdatingUserCertificate', UpdatingInfrastructure = 'UpdatingInfrastructure', EnforcingClusterVersion = 'EnforcingClusterVersion', UpgradeServiceUnreachable = 'UpgradeServiceUnreachable', AutoScale = 'AutoScale', Ready = 'Ready' }
 
 
 	/** Cluster update request */
@@ -1459,7 +1459,7 @@ export namespace MyNS {
 	 *   - Silver - The infrastructure jobs can be paused for a duration of 10 minutes per UD.
 	 *   - Gold - The infrastructure jobs can be paused for a duration of 2 hours per UD. Gold durability can be enabled only on full node VM skus like D15_V2, G5 etc.
 	 */
-	export enum DurabilityLevel { Bronze = 0, Silver = 1, Gold = 2 }
+	export enum DurabilityLevel { Bronze = 'Bronze', Silver = 'Silver', Gold = 'Gold' }
 
 
 	/** Port range details */
@@ -1617,7 +1617,7 @@ export namespace MyNS {
 	 *   - Gold - Run the System services with a target replica set count of 7.
 	 *   - Platinum - Run the System services with a target replica set count of 9.
 	 */
-	export enum ReliabilityLevel { None = 0, Bronze = 1, Silver = 2, Gold = 3, Platinum = 4 }
+	export enum ReliabilityLevel { None = 'None', Bronze = 'Bronze', Silver = 'Silver', Gold = 'Gold', Platinum = 'Platinum' }
 
 
 	/** The resource model definition. */
@@ -1747,7 +1747,7 @@ export namespace MyNS {
 
 
 	/** The local certificate store location. */
-	export enum StoreName { AddressBook = 0, AuthRoot = 1, CertificateAuthority = 2, Disallowed = 3, My = 4, Root = 5, TrustedPeople = 6, TrustedPublisher = 7 }
+	export enum StoreName { AddressBook = 'AddressBook', AuthRoot = 'AuthRoot', CertificateAuthority = 'CertificateAuthority', Disallowed = 'Disallowed', My = 'My', Root = 'Root', TrustedPeople = 'TrustedPeople', TrustedPublisher = 'TrustedPublisher' }
 
 
 	/**
@@ -1755,7 +1755,7 @@ export namespace MyNS {
 	 *   - Automatic - The cluster will be automatically upgraded to the latest Service Fabric runtime version as soon as it is available.
 	 *   - Manual - The cluster will not be automatically upgraded to the latest Service Fabric runtime version. The cluster is upgraded by setting the **clusterCodeVersion** property in the cluster resource.
 	 */
-	export enum UpgradeMode { Automatic = 0, Manual = 1 }
+	export enum UpgradeMode { Automatic = 'Automatic', Manual = 'Manual' }
 
 	@Injectable()
 	export class MyClient {
@@ -1913,7 +1913,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Clusters_ListApi_version { '2019-03-01-preview' = 0 }
+	export enum Clusters_ListApi_version { '2019-03-01-preview' = '2019-03-01-preview' }
 
 }
 

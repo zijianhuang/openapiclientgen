@@ -132,7 +132,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BackupShortTermRetentionPolicies_GetPolicyName { default = 0 }
+	export enum BackupShortTermRetentionPolicies_GetPolicyName { default = 'default' }
 
 }
 

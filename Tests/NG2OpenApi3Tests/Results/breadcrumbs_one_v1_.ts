@@ -110,7 +110,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BreadcrumbsAPIModelsNodeNodeRequestChain { ETH = 0, BTC = 1, MATIC = 2, RON = 3, SOL = 4, TRX = 5 }
+	export enum BreadcrumbsAPIModelsNodeNodeRequestChain { ETH = 'ETH', BTC = 'BTC', MATIC = 'MATIC', RON = 'RON', SOL = 'SOL', TRX = 'TRX' }
 
 	export interface BreadcrumbsAPIModelsNodeNodeResponse {
 		entity_tags?: Array<string>;
@@ -203,11 +203,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BreadcrumbsAPIModelsPathfinderPathfinderRequestChain { ETH = 0, BTC = 1, SOL = 2 }
+	export enum BreadcrumbsAPIModelsPathfinderPathfinderRequestChain { ETH = 'ETH', BTC = 'BTC', SOL = 'SOL' }
 
-	export enum BreadcrumbsAPIModelsPathfinderPathfinderRequestDirection_type { Incoming = 0, Outgoing = 1 }
+	export enum BreadcrumbsAPIModelsPathfinderPathfinderRequestDirection_type { Incoming = 'Incoming', Outgoing = 'Outgoing' }
 
-	export enum BreadcrumbsAPIModelsPathfinderPathfinderRequestSearch_type { ShortestPath = 0, MultiplePath = 1, ClosestEntity = 2, ClosestIllicit = 3 }
+	export enum BreadcrumbsAPIModelsPathfinderPathfinderRequestSearch_type { ShortestPath = 'ShortestPath', MultiplePath = 'MultiplePath', ClosestEntity = 'ClosestEntity', ClosestIllicit = 'ClosestIllicit' }
 
 	export interface BreadcrumbsAPIModelsPathfinderPathfinderResponse {
 		path_found?: boolean | null;

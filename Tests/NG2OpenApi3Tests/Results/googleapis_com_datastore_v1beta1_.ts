@@ -52,9 +52,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2, CREATE_INDEX = 3, DELETE_INDEX = 4 }
+	export enum GoogleDatastoreAdminV1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', EXPORT_ENTITIES = 'EXPORT_ENTITIES', IMPORT_ENTITIES = 'IMPORT_ENTITIES', CREATE_INDEX = 'CREATE_INDEX', DELETE_INDEX = 'DELETE_INDEX' }
 
-	export enum GoogleDatastoreAdminV1CommonMetadataState { STATE_UNSPECIFIED = 0, INITIALIZING = 1, PROCESSING = 2, CANCELLING = 3, FINALIZING = 4, SUCCESSFUL = 5, FAILED = 6, CANCELLED = 7 }
+	export enum GoogleDatastoreAdminV1CommonMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', CANCELLING = 'CANCELLING', FINALIZING = 'FINALIZING', SUCCESSFUL = 'SUCCESSFUL', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 
 	/** Metadata for Datastore to Firestore migration operations. The DatastoreFirestoreMigration operation is not started by the end-user via an explicit "creation" method. This is an intentional deviation from the LRO design pattern. This singleton resource can be accessed at: "projects/{project_id}/operations/datastore-firestore-migration" */
@@ -84,9 +84,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState { MIGRATION_STATE_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, COMPLETE = 3 }
+	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState { MIGRATION_STATE_UNSPECIFIED = 'MIGRATION_STATE_UNSPECIFIED', RUNNING = 'RUNNING', PAUSED = 'PAUSED', COMPLETE = 'COMPLETE' }
 
-	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep { MIGRATION_STEP_UNSPECIFIED = 0, PREPARE = 1, START = 2, APPLY_WRITES_SYNCHRONOUSLY = 3, COPY_AND_VERIFY = 4, REDIRECT_EVENTUALLY_CONSISTENT_READS = 5, REDIRECT_STRONGLY_CONSISTENT_READS = 6, REDIRECT_WRITES = 7 }
+	export enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep { MIGRATION_STEP_UNSPECIFIED = 'MIGRATION_STEP_UNSPECIFIED', PREPARE = 'PREPARE', START = 'START', APPLY_WRITES_SYNCHRONOUSLY = 'APPLY_WRITES_SYNCHRONOUSLY', COPY_AND_VERIFY = 'COPY_AND_VERIFY', REDIRECT_EVENTUALLY_CONSISTENT_READS = 'REDIRECT_EVENTUALLY_CONSISTENT_READS', REDIRECT_STRONGLY_CONSISTENT_READS = 'REDIRECT_STRONGLY_CONSISTENT_READS', REDIRECT_WRITES = 'REDIRECT_WRITES' }
 
 
 	/** Identifies a subset of entities in a project. This is specified as combinations of kinds and namespaces (either or both of which may be all, as described in the following examples). Example usage: Entire project: kinds=[], namespace_ids=[] Kinds Foo and Bar in all namespaces: kinds=['Foo', 'Bar'], namespace_ids=[] Kinds Foo and Bar only in the default namespace: kinds=['Foo', 'Bar'], namespace_ids=[''] Kinds Foo and Bar in both the default and Baz namespaces: kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz'] The entire Baz namespace: kinds=[], namespace_ids=['Baz'] */
@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode { CONCURRENCY_MODE_UNSPECIFIED = 0, PESSIMISTIC = 1, OPTIMISTIC = 2, OPTIMISTIC_WITH_ENTITY_GROUPS = 3 }
+	export enum GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode { CONCURRENCY_MODE_UNSPECIFIED = 'CONCURRENCY_MODE_UNSPECIFIED', PESSIMISTIC = 'PESSIMISTIC', OPTIMISTIC = 'OPTIMISTIC', OPTIMISTIC_WITH_ENTITY_GROUPS = 'OPTIMISTIC_WITH_ENTITY_GROUPS' }
 
 
 	/** Details for the `REDIRECT_WRITES` step. */
@@ -391,7 +391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDatastoreAdminV1beta1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2 }
+	export enum GoogleDatastoreAdminV1beta1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', EXPORT_ENTITIES = 'EXPORT_ENTITIES', IMPORT_ENTITIES = 'IMPORT_ENTITIES' }
 
 
 	/** Identifies a subset of entities in a project. This is specified as combinations of kinds and namespaces (either or both of which may be all, as described in the following examples). Example usage: Entire project: kinds=[], namespace_ids=[] Kinds Foo and Bar in all namespaces: kinds=['Foo', 'Bar'], namespace_ids=[] Kinds Foo and Bar only in the default namespace: kinds=['Foo', 'Bar'], namespace_ids=[''] Kinds Foo and Bar in both the default and Baz namespaces: kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz'] The entire Baz namespace: kinds=[], namespace_ids=['Baz'] */

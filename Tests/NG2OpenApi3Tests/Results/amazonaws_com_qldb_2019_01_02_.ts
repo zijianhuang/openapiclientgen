@@ -77,9 +77,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LedgerState { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3 }
+	export enum LedgerState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETED = 'DELETED' }
 
-	export enum PermissionsMode { ALLOW_ALL = 0, STANDARD = 1 }
+	export enum PermissionsMode { ALLOW_ALL = 'ALLOW_ALL', STANDARD = 'STANDARD' }
 
 	export interface ResourceAlreadyExistsException {
 	}
@@ -189,7 +189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamStatus { ACTIVE = 0, COMPLETED = 1, CANCELED = 2, FAILED = 3, IMPAIRED = 4 }
+	export enum StreamStatus { ACTIVE = 'ACTIVE', COMPLETED = 'COMPLETED', CANCELED = 'CANCELED', FAILED = 'FAILED', IMPAIRED = 'IMPAIRED' }
 
 
 	/** The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal stream. */
@@ -215,7 +215,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCause { KINESIS_STREAM_NOT_FOUND = 0, IAM_PERMISSION_REVOKED = 1 }
+	export enum ErrorCause { KINESIS_STREAM_NOT_FOUND = 'KINESIS_STREAM_NOT_FOUND', IAM_PERMISSION_REVOKED = 'IAM_PERMISSION_REVOKED' }
 
 	export interface DescribeJournalS3ExportResponse {
 
@@ -302,7 +302,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportStatus { IN_PROGRESS = 0, COMPLETED = 1, CANCELLED = 2 }
+	export enum ExportStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 
 	/** The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents. */
@@ -359,9 +359,9 @@ export namespace MyNS {
 
 	}
 
-	export enum S3ObjectEncryptionType { SSE_KMS = 0, SSE_S3 = 1, NO_ENCRYPTION = 2 }
+	export enum S3ObjectEncryptionType { SSE_KMS = 'SSE_KMS', SSE_S3 = 'SSE_S3', NO_ENCRYPTION = 'NO_ENCRYPTION' }
 
-	export enum OutputFormat { ION_BINARY = 0, ION_TEXT = 1, JSON = 2 }
+	export enum OutputFormat { ION_BINARY = 'ION_BINARY', ION_TEXT = 'ION_TEXT', JSON = 'JSON' }
 
 	export interface DescribeLedgerResponse {
 		Name?: string;
@@ -423,7 +423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionStatus { ENABLED = 0, UPDATING = 1, KMS_KEY_INACCESSIBLE = 2 }
+	export enum EncryptionStatus { ENABLED = 'ENABLED', UPDATING = 'UPDATING', KMS_KEY_INACCESSIBLE = 'KMS_KEY_INACCESSIBLE' }
 
 	export interface ExportJournalToS3Response {
 

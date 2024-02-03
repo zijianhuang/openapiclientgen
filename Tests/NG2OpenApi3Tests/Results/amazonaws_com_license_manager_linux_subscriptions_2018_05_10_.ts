@@ -22,7 +22,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinuxSubscriptionsDiscovery { Enabled = 0, Disabled = 1 }
+	export enum LinuxSubscriptionsDiscovery { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Lists the settings defined for discovering Linux subscriptions. */
@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { InProgress = 0, Completed = 1, Successful = 2, Failed = 3 }
+	export enum Status { InProgress = 'InProgress', Completed = 'Completed', Successful = 'Successful', Failed = 'Failed' }
 
 	export interface StringMap {
 	}
@@ -167,7 +167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator { Equal = 0, NotEqual = 1, Contains = 2 }
+	export enum Operator { Equal = 'Equal', NotEqual = 'NotEqual', Contains = 'Contains' }
 
 	export interface ListLinuxSubscriptionsResponse {
 		NextToken?: string;
@@ -225,7 +225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationIntegration { Enabled = 0, Disabled = 1 }
+	export enum OrganizationIntegration { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	export interface GetServiceSettingsRequest {
 	}

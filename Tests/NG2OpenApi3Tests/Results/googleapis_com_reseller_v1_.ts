@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerCustomerType { customerTypeUnspecified = 0, domain = 1, team = 2 }
+	export enum CustomerCustomerType { customerTypeUnspecified = 'customerTypeUnspecified', domain = 'domain', team = 'team' }
 
 
 	/** JSON template for primary admin in case of TEAM customers */
@@ -790,9 +790,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Reseller_subscriptions_insertAction { actionUnspecified = 0, buy = 1, switch = 2 }
+	export enum Reseller_subscriptions_insertAction { actionUnspecified = 'actionUnspecified', buy = 'buy', switch = 'switch' }
 
-	export enum Reseller_subscriptions_deleteDeletionType { deletion_type_undefined = 0, cancel = 1, transfer_to_direct = 2 }
+	export enum Reseller_subscriptions_deleteDeletionType { deletion_type_undefined = 'deletion_type_undefined', cancel = 'cancel', transfer_to_direct = 'transfer_to_direct' }
 
 }
 

@@ -68,7 +68,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AclGroupOriginOutputStatus { INACTIVE = 0, ACTIVE = 1, EXPIRED = 2 }
+	export enum AclGroupOriginOutputStatus { INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED' }
 
 	export interface AclListCollectionOutput {
 		asns?: Array<string>;
@@ -287,9 +287,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutonomousSystemOutputCountry_code { AF = 0, AP = 1, AX = 2, AL = 3, DZ = 4, AS = 5, AD = 6, AO = 7, AI = 8, AQ = 9, AG = 10, AR = 11, AM = 12, AW = 13, AU = 14, AT = 15, AZ = 16, BS = 17, BH = 18, BD = 19, BB = 20, BY = 21, BE = 22, BZ = 23, BJ = 24, BM = 25, BT = 26, BO = 27, BQ = 28, BA = 29, BW = 30, BV = 31, BR = 32, IO = 33, BN = 34, BG = 35, BF = 36, BI = 37, CV = 38, KH = 39, CM = 40, CA = 41, KY = 42, CF = 43, TD = 44, CL = 45, CN = 46, CX = 47, CC = 48, CO = 49, KM = 50, CG = 51, CD = 52, CK = 53, CR = 54, CI = 55, HR = 56, CU = 57, CW = 58, CY = 59, CZ = 60, DK = 61, DJ = 62, DM = 63, DO = 64, EC = 65, EG = 66, SV = 67, GQ = 68, ER = 69, EE = 70, ET = 71, FK = 72, FO = 73, FJ = 74, FI = 75, FR = 76, GF = 77, PF = 78, TF = 79, GA = 80, GM = 81, GE = 82, DE = 83, GH = 84, GI = 85, GR = 86, GL = 87, GD = 88, GP = 89, GU = 90, GT = 91, GG = 92, GN = 93, GW = 94, GY = 95, HT = 96, HM = 97, VA = 98, HN = 99, HK = 100, HU = 101, IS = 102, IN = 103, ID = 104, IR = 105, IQ = 106, IE = 107, IM = 108, IL = 109, IT = 110, JM = 111, JP = 112, JE = 113, JO = 114, KZ = 115, KE = 116, KI = 117, KP = 118, KR = 119, KW = 120, KG = 121, LA = 122, LV = 123, LB = 124, LS = 125, LR = 126, LY = 127, LI = 128, LT = 129, LU = 130, MO = 131, MK = 132, MG = 133, MW = 134, MY = 135, MV = 136, ML = 137, MT = 138, MH = 139, MQ = 140, MR = 141, MU = 142, YT = 143, MX = 144, FM = 145, MD = 146, MC = 147, MN = 148, ME = 149, MS = 150, MA = 151, MZ = 152, MM = 153, NA = 154, NR = 155, NP = 156, NL = 157, NC = 158, NZ = 159, NI = 160, NE = 161, NG = 162, NU = 163, NF = 164, MP = 165, NO = 166, OM = 167, PK = 168, PW = 169, PS = 170, PA = 171, PG = 172, PY = 173, PE = 174, PH = 175, PN = 176, PL = 177, PT = 178, PR = 179, QA = 180, RE = 181, RO = 182, RU = 183, RW = 184, BL = 185, SH = 186, KN = 187, LC = 188, MF = 189, PM = 190, VC = 191, WS = 192, SM = 193, ST = 194, SA = 195, SN = 196, RS = 197, SC = 198, SL = 199, SG = 200, SX = 201, SK = 202, SI = 203, SB = 204, SO = 205, ZA = 206, GS = 207, SS = 208, ES = 209, LK = 210, SD = 211, SR = 212, SJ = 213, SZ = 214, SE = 215, CH = 216, SY = 217, TW = 218, TJ = 219, TZ = 220, TH = 221, TL = 222, TG = 223, TK = 224, TO = 225, TT = 226, TN = 227, TR = 228, TM = 229, TC = 230, TV = 231, UG = 232, UA = 233, AE = 234, GB = 235, US = 236, UM = 237, UY = 238, UZ = 239, VU = 240, VE = 241, VN = 242, VG = 243, VI = 244, WF = 245, EH = 246, YE = 247, ZM = 248, ZW = 249, ZZ = 250, EU = 251, 'RESERVED BY RFC6793' = 252 }
+	export enum AutonomousSystemOutputCountry_code { AF = 'AF', AP = 'AP', AX = 'AX', AL = 'AL', DZ = 'DZ', AS = 'AS', AD = 'AD', AO = 'AO', AI = 'AI', AQ = 'AQ', AG = 'AG', AR = 'AR', AM = 'AM', AW = 'AW', AU = 'AU', AT = 'AT', AZ = 'AZ', BS = 'BS', BH = 'BH', BD = 'BD', BB = 'BB', BY = 'BY', BE = 'BE', BZ = 'BZ', BJ = 'BJ', BM = 'BM', BT = 'BT', BO = 'BO', BQ = 'BQ', BA = 'BA', BW = 'BW', BV = 'BV', BR = 'BR', IO = 'IO', BN = 'BN', BG = 'BG', BF = 'BF', BI = 'BI', CV = 'CV', KH = 'KH', CM = 'CM', CA = 'CA', KY = 'KY', CF = 'CF', TD = 'TD', CL = 'CL', CN = 'CN', CX = 'CX', CC = 'CC', CO = 'CO', KM = 'KM', CG = 'CG', CD = 'CD', CK = 'CK', CR = 'CR', CI = 'CI', HR = 'HR', CU = 'CU', CW = 'CW', CY = 'CY', CZ = 'CZ', DK = 'DK', DJ = 'DJ', DM = 'DM', DO = 'DO', EC = 'EC', EG = 'EG', SV = 'SV', GQ = 'GQ', ER = 'ER', EE = 'EE', ET = 'ET', FK = 'FK', FO = 'FO', FJ = 'FJ', FI = 'FI', FR = 'FR', GF = 'GF', PF = 'PF', TF = 'TF', GA = 'GA', GM = 'GM', GE = 'GE', DE = 'DE', GH = 'GH', GI = 'GI', GR = 'GR', GL = 'GL', GD = 'GD', GP = 'GP', GU = 'GU', GT = 'GT', GG = 'GG', GN = 'GN', GW = 'GW', GY = 'GY', HT = 'HT', HM = 'HM', VA = 'VA', HN = 'HN', HK = 'HK', HU = 'HU', IS = 'IS', IN = 'IN', ID = 'ID', IR = 'IR', IQ = 'IQ', IE = 'IE', IM = 'IM', IL = 'IL', IT = 'IT', JM = 'JM', JP = 'JP', JE = 'JE', JO = 'JO', KZ = 'KZ', KE = 'KE', KI = 'KI', KP = 'KP', KR = 'KR', KW = 'KW', KG = 'KG', LA = 'LA', LV = 'LV', LB = 'LB', LS = 'LS', LR = 'LR', LY = 'LY', LI = 'LI', LT = 'LT', LU = 'LU', MO = 'MO', MK = 'MK', MG = 'MG', MW = 'MW', MY = 'MY', MV = 'MV', ML = 'ML', MT = 'MT', MH = 'MH', MQ = 'MQ', MR = 'MR', MU = 'MU', YT = 'YT', MX = 'MX', FM = 'FM', MD = 'MD', MC = 'MC', MN = 'MN', ME = 'ME', MS = 'MS', MA = 'MA', MZ = 'MZ', MM = 'MM', NA = 'NA', NR = 'NR', NP = 'NP', NL = 'NL', NC = 'NC', NZ = 'NZ', NI = 'NI', NE = 'NE', NG = 'NG', NU = 'NU', NF = 'NF', MP = 'MP', NO = 'NO', OM = 'OM', PK = 'PK', PW = 'PW', PS = 'PS', PA = 'PA', PG = 'PG', PY = 'PY', PE = 'PE', PH = 'PH', PN = 'PN', PL = 'PL', PT = 'PT', PR = 'PR', QA = 'QA', RE = 'RE', RO = 'RO', RU = 'RU', RW = 'RW', BL = 'BL', SH = 'SH', KN = 'KN', LC = 'LC', MF = 'MF', PM = 'PM', VC = 'VC', WS = 'WS', SM = 'SM', ST = 'ST', SA = 'SA', SN = 'SN', RS = 'RS', SC = 'SC', SL = 'SL', SG = 'SG', SX = 'SX', SK = 'SK', SI = 'SI', SB = 'SB', SO = 'SO', ZA = 'ZA', GS = 'GS', SS = 'SS', ES = 'ES', LK = 'LK', SD = 'SD', SR = 'SR', SJ = 'SJ', SZ = 'SZ', SE = 'SE', CH = 'CH', SY = 'SY', TW = 'TW', TJ = 'TJ', TZ = 'TZ', TH = 'TH', TL = 'TL', TG = 'TG', TK = 'TK', TO = 'TO', TT = 'TT', TN = 'TN', TR = 'TR', TM = 'TM', TC = 'TC', TV = 'TV', UG = 'UG', UA = 'UA', AE = 'AE', GB = 'GB', US = 'US', UM = 'UM', UY = 'UY', UZ = 'UZ', VU = 'VU', VE = 'VE', VN = 'VN', VG = 'VG', VI = 'VI', WF = 'WF', EH = 'EH', YE = 'YE', ZM = 'ZM', ZW = 'ZW', ZZ = 'ZZ', EU = 'EU', 'RESERVED BY RFC6793' = 'RESERVED BY RFC6793' }
 
-	export enum AutonomousSystemOutputRisk { UNKNOWN = 0, LOW = 1, MEDIUM = 2, HIGH = 3 }
+	export enum AutonomousSystemOutputRisk { UNKNOWN = 'UNKNOWN', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 
 	/** AutonomousSystemPrefixResponse class to return the information to the user */
@@ -509,7 +509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__putStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__putStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface Body_change_status_of_the_denylist_v1_denylist_public__denylist_id__put {
 
@@ -574,7 +574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_putStatus { ACTIVE = 0, INACTIVE = 1, DELETED = 2 }
+	export enum Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_putStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETED = 'DELETED' }
 
 	export interface Body_change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put {
 
@@ -749,7 +749,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateAclGroupListInputResource_type { UNKNOWN = 0, CIDR = 1, COUNTRY = 2, CONTINENT = 3, AS = 4, DATACENTER = 5, USERAGENT = 6 }
+	export enum PrivateAclGroupListInputResource_type { UNKNOWN = 'UNKNOWN', CIDR = 'CIDR', COUNTRY = 'COUNTRY', CONTINENT = 'CONTINENT', AS = 'AS', DATACENTER = 'DATACENTER', USERAGENT = 'USERAGENT' }
 
 	export interface Body_create_private_denylist_of_the_user_v1_denylist_private_post {
 
@@ -977,9 +977,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Body_update_origin_status_v1_origin_status_putScope { address_and_cookie = 0, address = 1, cookie = 2 }
+	export enum Body_update_origin_status_v1_origin_status_putScope { address_and_cookie = 'address_and_cookie', address = 'address', cookie = 'cookie' }
 
-	export enum Body_update_origin_status_v1_origin_status_putStatus { pass = 0, block = 1, challenge = 2, bypass = 3, ignore = 4 }
+	export enum Body_update_origin_status_v1_origin_status_putStatus { pass = 'pass', block = 'block', challenge = 'challenge', bypass = 'bypass', ignore = 'ignore' }
 
 	export interface Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put {
 
@@ -1138,7 +1138,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatacenterOutputStatus { disabled = 0, enabled = 1 }
+	export enum DatacenterOutputStatus { disabled = 'disabled', enabled = 'enabled' }
 
 	export interface DatacenterPrefixOutput {
 
@@ -1274,9 +1274,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetTypeOutputStatus { ENABLED = 0, DISABLED = 1 }
+	export enum DatasetTypeOutputStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum DatasetTypeOutputType { ip = 0, domain = 1 }
+	export enum DatasetTypeOutputType { ip = 'ip', domain = 'domain' }
 
 	export interface DeviceOutput {
 
@@ -1661,7 +1661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IPListOutputProtocol { ALL = 0, IPV4 = 1, IPV6 = 2 }
+	export enum IPListOutputProtocol { ALL = 'ALL', IPV4 = 'IPV4', IPV6 = 'IPV6' }
 
 	export interface IPLogCollectionOutput {
 
@@ -1740,9 +1740,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IPLogOutputAction { ADD = 0, DELETE = 1 }
+	export enum IPLogOutputAction { ADD = 'ADD', DELETE = 'DELETE' }
 
-	export enum IPLogOutputLapse { '1H' = 0, '6H' = 1, '12H' = 2, '1D' = 3, '7D' = 4, '30D' = 5, '90D' = 6, '180D' = 7, '365D' = 8 }
+	export enum IPLogOutputLapse { '1H' = '1H', '6H' = '6H', '12H' = '12H', '1D' = '1D', '7D' = '7D', '30D' = '30D', '90D' = '90D', '180D' = '180D', '365D' = '365D' }
 
 	export interface OSOutput {
 
@@ -2680,7 +2680,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateAclGroupListOutputList_type { UNKNOWN = 0, ALLOW = 1, DENY = 2 }
+	export enum PrivateAclGroupListOutputList_type { UNKNOWN = 'UNKNOWN', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 	export interface PrivateAclListCollectionOutput {
 		asns?: Array<number>;
@@ -3098,7 +3098,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeOutputType { INTERACTIVE = 0, CRAWLER = 1, UNKNOWN = 2 }
+	export enum TypeOutputType { INTERACTIVE = 'INTERACTIVE', CRAWLER = 'CRAWLER', UNKNOWN = 'UNKNOWN' }
 
 	export interface UACollectionOutput {
 
@@ -3217,9 +3217,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UAOutputClassification { CRAWLER = 0, CLIENT = 1, UNKNOWN = 2 }
+	export enum UAOutputClassification { CRAWLER = 'CRAWLER', CLIENT = 'CLIENT', UNKNOWN = 'UNKNOWN' }
 
-	export enum UAOutputFrequent { COMMON = 0, RARE = 1, VERY_RARE = 2, UNKNOWN = 3 }
+	export enum UAOutputFrequent { COMMON = 'COMMON', RARE = 'RARE', VERY_RARE = 'VERY_RARE', UNKNOWN = 'UNKNOWN' }
 
 	export interface VendorOutput {
 
@@ -6190,15 +6190,15 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Get_all_private_allowlists_by_resource_type_v1_allowlist_private_all__resource_type__getResource_type { cidr = 0, country = 1, continent = 2, as = 3, datacenter = 4, useragent = 5 }
+	export enum Get_all_private_allowlists_by_resource_type_v1_allowlist_private_all__resource_type__getResource_type { cidr = 'cidr', country = 'country', continent = 'continent', as = 'as', datacenter = 'datacenter', useragent = 'useragent' }
 
-	export enum Query_registry_by_the_name_v1_asn_registry__code__getCode { iana = 0, arin = 1, ripencc = 2, afrinic = 3, apnic = 4, lacnic = 5 }
+	export enum Query_registry_by_the_name_v1_asn_registry__code__getCode { iana = 'iana', arin = 'arin', ripencc = 'ripencc', afrinic = 'afrinic', apnic = 'apnic', lacnic = 'lacnic' }
 
-	export enum Query_status_by_the_name_v1_asn_status__code__getCode { assigned = 0, reserved = 1, available = 2, allocated = 3 }
+	export enum Query_status_by_the_name_v1_asn_status__code__getCode { assigned = 'assigned', reserved = 'reserved', available = 'available', allocated = 'allocated' }
 
-	export enum Query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_getOutput_format { JSON = 0, CSV = 1, 'AWS-WAF' = 2 }
+	export enum Query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_getOutput_format { JSON = 'JSON', CSV = 'CSV', 'AWS-WAF' = 'AWS-WAF' }
 
-	export enum Query_origin_traffic_client_v1_origin_client_analysis_getInterval { HOURLY = 0 }
+	export enum Query_origin_traffic_client_v1_origin_client_analysis_getInterval { HOURLY = 'HOURLY' }
 
 }
 

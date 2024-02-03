@@ -267,9 +267,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { None = 0, ServerError = 1, InvalidRequest = 2, RateLimitExceeded = 3, InvalidAuthorization = 4, InsufficientAuthorization = 5 }
+	export enum ErrorCode { None = 'None', ServerError = 'ServerError', InvalidRequest = 'InvalidRequest', RateLimitExceeded = 'RateLimitExceeded', InvalidAuthorization = 'InvalidAuthorization', InsufficientAuthorization = 'InsufficientAuthorization' }
 
-	export enum ErrorSubCode { UnexpectedError = 0, ResourceError = 1, NotImplemented = 2, ParameterMissing = 3, ParameterInvalidValue = 4, HttpNotAllowed = 5, Blocked = 6, AuthorizationMissing = 7, AuthorizationRedundancy = 8, AuthorizationDisabled = 9, AuthorizationExpired = 10 }
+	export enum ErrorSubCode { UnexpectedError = 'UnexpectedError', ResourceError = 'ResourceError', NotImplemented = 'NotImplemented', ParameterMissing = 'ParameterMissing', ParameterInvalidValue = 'ParameterInvalidValue', HttpNotAllowed = 'HttpNotAllowed', Blocked = 'Blocked', AuthorizationMissing = 'AuthorizationMissing', AuthorizationRedundancy = 'AuthorizationRedundancy', AuthorizationDisabled = 'AuthorizationDisabled', AuthorizationExpired = 'AuthorizationExpired' }
 
 
 	/** The top-level response that represents a failed request. */
@@ -567,7 +567,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RankingRankingItemAnswerType { WebPages = 0, Images = 1, SpellSuggestions = 2, News = 3, RelatedSearches = 4, Videos = 5, Computation = 6, TimeZone = 7 }
+	export enum RankingRankingItemAnswerType { WebPages = 'WebPages', Images = 'Images', SpellSuggestions = 'SpellSuggestions', News = 'News', RelatedSearches = 'RelatedSearches', Videos = 'Videos', Computation = 'Computation', TimeZone = 'TimeZone' }
 
 
 	/** Defines where on the search results page content should be placed and in what order. */
@@ -1036,13 +1036,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Web_SearchX_BingApis_SDK { true = 0 }
+	export enum Web_SearchX_BingApis_SDK { true = 'true' }
 
-	export enum Web_SearchFreshness { Day = 0, Week = 1, Month = 2 }
+	export enum Web_SearchFreshness { Day = 'Day', Week = 'Week', Month = 'Month' }
 
-	export enum Web_SearchSafeSearch { Off = 0, Moderate = 1, Strict = 2 }
+	export enum Web_SearchSafeSearch { Off = 'Off', Moderate = 'Moderate', Strict = 'Strict' }
 
-	export enum Web_SearchTextFormat { Raw = 0, Html = 1 }
+	export enum Web_SearchTextFormat { Raw = 'Raw', Html = 'Html' }
 
 }
 

@@ -88,7 +88,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AreaType { TRIANGLE_FAN = 0, INDEXED_TRIANGLES = 1, TRIANGLE_STRIP = 2 }
+	export enum AreaType { TRIANGLE_FAN = 'TRIANGLE_FAN', INDEXED_TRIANGLES = 'INDEXED_TRIANGLES', TRIANGLE_STRIP = 'TRIANGLE_STRIP' }
 
 
 	/** 2D vertex list used for lines and areas. Each entry represents an offset from the previous one in local tile coordinates. The first entry is offset from (0, 0). For example, the list of vertices [(1,1), (2, 2), (1, 2)] would be encoded in vertex offsets as [(1, 1), (1, 1), (-1, 0)]. */
@@ -326,7 +326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationRelationType { RELATION_TYPE_UNSPECIFIED = 0, OCCUPIES = 1, PRIMARILY_OCCUPIED_BY = 2 }
+	export enum RelationRelationType { RELATION_TYPE_UNSPECIFIED = 'RELATION_TYPE_UNSPECIFIED', OCCUPIES = 'OCCUPIES', PRIMARILY_OCCUPIED_BY = 'PRIMARILY_OCCUPIED_BY' }
 
 
 	/** Extra metadata relating to segments. */
@@ -366,7 +366,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureType { FEATURE_TYPE_UNSPECIFIED = 0, STRUCTURE = 1, BAR = 2, BANK = 3, LODGING = 4, CAFE = 5, RESTAURANT = 6, EVENT_VENUE = 7, TOURIST_DESTINATION = 8, SHOPPING = 9, SCHOOL = 10, SEGMENT = 11, ROAD = 12, LOCAL_ROAD = 13, ARTERIAL_ROAD = 14, HIGHWAY = 15, CONTROLLED_ACCESS_HIGHWAY = 16, FOOTPATH = 17, RAIL = 18, FERRY = 19, REGION = 20, PARK = 21, BEACH = 22, FOREST = 23, POLITICAL = 24, ADMINISTRATIVE_AREA1 = 25, LOCALITY = 26, SUBLOCALITY = 27, WATER = 28 }
+	export enum FeatureType { FEATURE_TYPE_UNSPECIFIED = 'FEATURE_TYPE_UNSPECIFIED', STRUCTURE = 'STRUCTURE', BAR = 'BAR', BANK = 'BANK', LODGING = 'LODGING', CAFE = 'CAFE', RESTAURANT = 'RESTAURANT', EVENT_VENUE = 'EVENT_VENUE', TOURIST_DESTINATION = 'TOURIST_DESTINATION', SHOPPING = 'SHOPPING', SCHOOL = 'SCHOOL', SEGMENT = 'SEGMENT', ROAD = 'ROAD', LOCAL_ROAD = 'LOCAL_ROAD', ARTERIAL_ROAD = 'ARTERIAL_ROAD', HIGHWAY = 'HIGHWAY', CONTROLLED_ACCESS_HIGHWAY = 'CONTROLLED_ACCESS_HIGHWAY', FOOTPATH = 'FOOTPATH', RAIL = 'RAIL', FERRY = 'FERRY', REGION = 'REGION', PARK = 'PARK', BEACH = 'BEACH', FOREST = 'FOREST', POLITICAL = 'POLITICAL', ADMINISTRATIVE_AREA1 = 'ADMINISTRATIVE_AREA1', LOCALITY = 'LOCALITY', SUBLOCALITY = 'SUBLOCALITY', WATER = 'WATER' }
 
 
 	/** A tile containing information about the map features located in the region it covers. */
@@ -468,7 +468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureTileStatus { STATUS_OK = 0, STATUS_OK_DATA_UNCHANGED = 1 }
+	export enum FeatureTileStatus { STATUS_OK = 'STATUS_OK', STATUS_OK_DATA_UNCHANGED = 'STATUS_OK_DATA_UNCHANGED' }
 
 
 	/** A packed representation of a 2D grid of uniformly spaced points containing elevation data. Each point within the grid represents the altitude in meters above average sea level at that location within the tile. Elevations provided are (generally) relative to the EGM96 geoid, however some areas will be relative to NAVD88. EGM96 and NAVD88 are off by no more than 2 meters. The grid is oriented north-west to south-east, as illustrated: rows[0].a[0] rows[0].a[m] +-----------------+ | | | N | | ^ | | | | | W <-----> E | | | | | v | | S | | | +-----------------+ rows[n].a[0] rows[n].a[m] Rather than storing the altitudes directly, we store the diffs between them as integers at some requested level of precision to take advantage of integer packing. The actual altitude values a[] can be reconstructed using the scale and each row's first_altitude and altitude_diff fields. More details in go/elevation-encoding-options-for-enduro under "Recommended implementation". */
@@ -616,7 +616,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Vectortile_terraintiles_getClientInfo_platform { PLATFORM_UNSPECIFIED = 0, EDITOR = 1, MAC_OS = 2, WINDOWS = 3, LINUX = 4, ANDROID = 5, IOS = 6, WEB_GL = 7 }
+	export enum Vectortile_terraintiles_getClientInfo_platform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', EDITOR = 'EDITOR', MAC_OS = 'MAC_OS', WINDOWS = 'WINDOWS', LINUX = 'LINUX', ANDROID = 'ANDROID', IOS = 'IOS', WEB_GL = 'WEB_GL' }
 
 }
 

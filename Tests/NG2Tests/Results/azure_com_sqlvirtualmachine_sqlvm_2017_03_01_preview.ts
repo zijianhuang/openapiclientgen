@@ -122,9 +122,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoBackupSettingsBackupScheduleType { Manual = 0, Automated = 1 }
+	export enum AutoBackupSettingsBackupScheduleType { Manual = 'Manual', Automated = 'Automated' }
 
-	export enum AutoBackupSettingsFullBackupFrequency { Daily = 0, Weekly = 1 }
+	export enum AutoBackupSettingsFullBackupFrequency { Daily = 'Daily', Weekly = 'Weekly' }
 
 
 	/** Set a patching window during which Windows and SQL patches will be applied. */
@@ -168,7 +168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoPatchingSettingsDayOfWeek { Monday = 0, Tuesday = 1, Wednesday = 2, Thursday = 3, Friday = 4, Saturday = 5, Sunday = 6 }
+	export enum AutoPatchingSettingsDayOfWeek { Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', Saturday = 'Saturday', Sunday = 'Sunday' }
 
 
 	/** A SQL Server availability group listener. */
@@ -454,7 +454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationOrigin { user = 0, system = 1 }
+	export enum OperationOrigin { user = 'user', system = 'system' }
 
 
 	/** Result of the request to list SQL operations. */
@@ -564,7 +564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceIdentityType { SystemAssigned = 0 }
+	export enum ResourceIdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** Set disk storage settings for SQL Server. */
@@ -658,7 +658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SqlConnectivityUpdateSettingsConnectivityType { LOCAL = 0, PRIVATE = 1, PUBLIC = 2 }
+	export enum SqlConnectivityUpdateSettingsConnectivityType { LOCAL = 'LOCAL', PRIVATE = 'PRIVATE', PUBLIC = 'PUBLIC' }
 
 
 	/** Set disk storage settings for SQL Server. */
@@ -695,7 +695,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SqlStorageUpdateSettingsDiskConfigurationType { NEW = 0, EXTEND = 1, ADD = 2 }
+	export enum SqlStorageUpdateSettingsDiskConfigurationType { NEW = 'NEW', EXTEND = 'EXTEND', ADD = 'ADD' }
 
 
 	/** Set workload type to optimize storage for SQL Server. */
@@ -718,7 +718,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SqlWorkloadTypeUpdateSettingsSqlWorkloadType { GENERAL = 0, OLTP = 1, DW = 2 }
+	export enum SqlWorkloadTypeUpdateSettingsSqlWorkloadType { GENERAL = 'GENERAL', OLTP = 'OLTP', DW = 'DW' }
 
 
 	/** A SQL virtual machine. */
@@ -821,11 +821,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SqlVirtualMachinePropertiesSqlImageSku { Developer = 0, Express = 1, Standard = 2, Enterprise = 3, Web = 4 }
+	export enum SqlVirtualMachinePropertiesSqlImageSku { Developer = 'Developer', Express = 'Express', Standard = 'Standard', Enterprise = 'Enterprise', Web = 'Web' }
 
-	export enum SqlVirtualMachinePropertiesSqlManagement { Full = 0, LightWeight = 1, NoAgent = 2 }
+	export enum SqlVirtualMachinePropertiesSqlManagement { Full = 'Full', LightWeight = 'LightWeight', NoAgent = 'NoAgent' }
 
-	export enum SqlVirtualMachinePropertiesSqlServerLicenseType { PAYG = 0, AHUB = 1, DR = 2 }
+	export enum SqlVirtualMachinePropertiesSqlServerLicenseType { PAYG = 'PAYG', AHUB = 'AHUB', DR = 'DR' }
 
 
 	/** Storage Configurations for SQL Data, Log and TempDb. */
@@ -975,13 +975,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SqlVirtualMachineGroupPropertiesClusterConfiguration { Domainful = 0 }
+	export enum SqlVirtualMachineGroupPropertiesClusterConfiguration { Domainful = 'Domainful' }
 
-	export enum SqlVirtualMachineGroupPropertiesClusterManagerType { WSFC = 0 }
+	export enum SqlVirtualMachineGroupPropertiesClusterManagerType { WSFC = 'WSFC' }
 
-	export enum SqlVirtualMachineGroupPropertiesScaleType { HA = 0 }
+	export enum SqlVirtualMachineGroupPropertiesScaleType { HA = 'HA' }
 
-	export enum SqlVirtualMachineGroupPropertiesSqlImageSku { Developer = 0, Enterprise = 1 }
+	export enum SqlVirtualMachineGroupPropertiesSqlImageSku { Developer = 'Developer', Enterprise = 'Enterprise' }
 
 
 	/** Active Directory account details to operate Windows Server Failover Cluster. */

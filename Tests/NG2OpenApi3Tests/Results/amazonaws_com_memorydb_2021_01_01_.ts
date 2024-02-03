@@ -185,7 +185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceUpdateStatus { available = 0, 'in-progress' = 1, complete = 2, scheduled = 3 }
+	export enum ServiceUpdateStatus { available = 'available', 'in-progress' = 'in-progress', complete = 'complete', scheduled = 'scheduled' }
 
 
 	/** Represents a collection of nodes in a cluster. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes. */
@@ -261,7 +261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AZStatus { singleaz = 0, multiaz = 1 }
+	export enum AZStatus { singleaz = 'singleaz', multiaz = 'multiaz' }
 
 
 	/** Represents a single security group and its status. */
@@ -283,7 +283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataTieringStatus { true = 0, false = 1 }
+	export enum DataTieringStatus { true = 'true', false = 'false' }
 
 
 	/** A cluster whose updates have failed */
@@ -1323,7 +1323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationType { password = 0, 'no-password' = 1, iam = 2 }
+	export enum AuthenticationType { password = 'password', 'no-password' = 'no-password', iam = 'iam' }
 
 	export interface CreateUserRequest {
 
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputAuthenticationType { password = 0, iam = 1 }
+	export enum InputAuthenticationType { password = 'password', iam = 'iam' }
 
 	export interface UserAlreadyExistsFault {
 	}
@@ -1755,7 +1755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { node = 0, 'parameter-group' = 1, 'subnet-group' = 2, cluster = 3, user = 4, acl = 5 }
+	export enum SourceType { node = 'node', 'parameter-group' = 'parameter-group', 'subnet-group' = 'subnet-group', cluster = 'cluster', user = 'user', acl = 'acl' }
 
 	export interface DescribeEventsRequest {
 		SourceName?: string;
@@ -2144,7 +2144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceUpdateType { 'security-update' = 0 }
+	export enum ServiceUpdateType { 'security-update' = 'security-update' }
 
 	export interface DescribeServiceUpdatesRequest {
 		ServiceUpdateName?: string;
@@ -3243,81 +3243,81 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchUpdateClusterX_Amz_Target { 'AmazonMemoryDB.BatchUpdateCluster' = 0 }
+	export enum BatchUpdateClusterX_Amz_Target { 'AmazonMemoryDB.BatchUpdateCluster' = 'AmazonMemoryDB.BatchUpdateCluster' }
 
-	export enum CopySnapshotX_Amz_Target { 'AmazonMemoryDB.CopySnapshot' = 0 }
+	export enum CopySnapshotX_Amz_Target { 'AmazonMemoryDB.CopySnapshot' = 'AmazonMemoryDB.CopySnapshot' }
 
-	export enum CreateACLX_Amz_Target { 'AmazonMemoryDB.CreateACL' = 0 }
+	export enum CreateACLX_Amz_Target { 'AmazonMemoryDB.CreateACL' = 'AmazonMemoryDB.CreateACL' }
 
-	export enum CreateClusterX_Amz_Target { 'AmazonMemoryDB.CreateCluster' = 0 }
+	export enum CreateClusterX_Amz_Target { 'AmazonMemoryDB.CreateCluster' = 'AmazonMemoryDB.CreateCluster' }
 
-	export enum CreateParameterGroupX_Amz_Target { 'AmazonMemoryDB.CreateParameterGroup' = 0 }
+	export enum CreateParameterGroupX_Amz_Target { 'AmazonMemoryDB.CreateParameterGroup' = 'AmazonMemoryDB.CreateParameterGroup' }
 
-	export enum CreateSnapshotX_Amz_Target { 'AmazonMemoryDB.CreateSnapshot' = 0 }
+	export enum CreateSnapshotX_Amz_Target { 'AmazonMemoryDB.CreateSnapshot' = 'AmazonMemoryDB.CreateSnapshot' }
 
-	export enum CreateSubnetGroupX_Amz_Target { 'AmazonMemoryDB.CreateSubnetGroup' = 0 }
+	export enum CreateSubnetGroupX_Amz_Target { 'AmazonMemoryDB.CreateSubnetGroup' = 'AmazonMemoryDB.CreateSubnetGroup' }
 
-	export enum CreateUserX_Amz_Target { 'AmazonMemoryDB.CreateUser' = 0 }
+	export enum CreateUserX_Amz_Target { 'AmazonMemoryDB.CreateUser' = 'AmazonMemoryDB.CreateUser' }
 
-	export enum DeleteACLX_Amz_Target { 'AmazonMemoryDB.DeleteACL' = 0 }
+	export enum DeleteACLX_Amz_Target { 'AmazonMemoryDB.DeleteACL' = 'AmazonMemoryDB.DeleteACL' }
 
-	export enum DeleteClusterX_Amz_Target { 'AmazonMemoryDB.DeleteCluster' = 0 }
+	export enum DeleteClusterX_Amz_Target { 'AmazonMemoryDB.DeleteCluster' = 'AmazonMemoryDB.DeleteCluster' }
 
-	export enum DeleteParameterGroupX_Amz_Target { 'AmazonMemoryDB.DeleteParameterGroup' = 0 }
+	export enum DeleteParameterGroupX_Amz_Target { 'AmazonMemoryDB.DeleteParameterGroup' = 'AmazonMemoryDB.DeleteParameterGroup' }
 
-	export enum DeleteSnapshotX_Amz_Target { 'AmazonMemoryDB.DeleteSnapshot' = 0 }
+	export enum DeleteSnapshotX_Amz_Target { 'AmazonMemoryDB.DeleteSnapshot' = 'AmazonMemoryDB.DeleteSnapshot' }
 
-	export enum DeleteSubnetGroupX_Amz_Target { 'AmazonMemoryDB.DeleteSubnetGroup' = 0 }
+	export enum DeleteSubnetGroupX_Amz_Target { 'AmazonMemoryDB.DeleteSubnetGroup' = 'AmazonMemoryDB.DeleteSubnetGroup' }
 
-	export enum DeleteUserX_Amz_Target { 'AmazonMemoryDB.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'AmazonMemoryDB.DeleteUser' = 'AmazonMemoryDB.DeleteUser' }
 
-	export enum DescribeACLsX_Amz_Target { 'AmazonMemoryDB.DescribeACLs' = 0 }
+	export enum DescribeACLsX_Amz_Target { 'AmazonMemoryDB.DescribeACLs' = 'AmazonMemoryDB.DescribeACLs' }
 
-	export enum DescribeClustersX_Amz_Target { 'AmazonMemoryDB.DescribeClusters' = 0 }
+	export enum DescribeClustersX_Amz_Target { 'AmazonMemoryDB.DescribeClusters' = 'AmazonMemoryDB.DescribeClusters' }
 
-	export enum DescribeEngineVersionsX_Amz_Target { 'AmazonMemoryDB.DescribeEngineVersions' = 0 }
+	export enum DescribeEngineVersionsX_Amz_Target { 'AmazonMemoryDB.DescribeEngineVersions' = 'AmazonMemoryDB.DescribeEngineVersions' }
 
-	export enum DescribeEventsX_Amz_Target { 'AmazonMemoryDB.DescribeEvents' = 0 }
+	export enum DescribeEventsX_Amz_Target { 'AmazonMemoryDB.DescribeEvents' = 'AmazonMemoryDB.DescribeEvents' }
 
-	export enum DescribeParameterGroupsX_Amz_Target { 'AmazonMemoryDB.DescribeParameterGroups' = 0 }
+	export enum DescribeParameterGroupsX_Amz_Target { 'AmazonMemoryDB.DescribeParameterGroups' = 'AmazonMemoryDB.DescribeParameterGroups' }
 
-	export enum DescribeParametersX_Amz_Target { 'AmazonMemoryDB.DescribeParameters' = 0 }
+	export enum DescribeParametersX_Amz_Target { 'AmazonMemoryDB.DescribeParameters' = 'AmazonMemoryDB.DescribeParameters' }
 
-	export enum DescribeReservedNodesX_Amz_Target { 'AmazonMemoryDB.DescribeReservedNodes' = 0 }
+	export enum DescribeReservedNodesX_Amz_Target { 'AmazonMemoryDB.DescribeReservedNodes' = 'AmazonMemoryDB.DescribeReservedNodes' }
 
-	export enum DescribeReservedNodesOfferingsX_Amz_Target { 'AmazonMemoryDB.DescribeReservedNodesOfferings' = 0 }
+	export enum DescribeReservedNodesOfferingsX_Amz_Target { 'AmazonMemoryDB.DescribeReservedNodesOfferings' = 'AmazonMemoryDB.DescribeReservedNodesOfferings' }
 
-	export enum DescribeServiceUpdatesX_Amz_Target { 'AmazonMemoryDB.DescribeServiceUpdates' = 0 }
+	export enum DescribeServiceUpdatesX_Amz_Target { 'AmazonMemoryDB.DescribeServiceUpdates' = 'AmazonMemoryDB.DescribeServiceUpdates' }
 
-	export enum DescribeSnapshotsX_Amz_Target { 'AmazonMemoryDB.DescribeSnapshots' = 0 }
+	export enum DescribeSnapshotsX_Amz_Target { 'AmazonMemoryDB.DescribeSnapshots' = 'AmazonMemoryDB.DescribeSnapshots' }
 
-	export enum DescribeSubnetGroupsX_Amz_Target { 'AmazonMemoryDB.DescribeSubnetGroups' = 0 }
+	export enum DescribeSubnetGroupsX_Amz_Target { 'AmazonMemoryDB.DescribeSubnetGroups' = 'AmazonMemoryDB.DescribeSubnetGroups' }
 
-	export enum DescribeUsersX_Amz_Target { 'AmazonMemoryDB.DescribeUsers' = 0 }
+	export enum DescribeUsersX_Amz_Target { 'AmazonMemoryDB.DescribeUsers' = 'AmazonMemoryDB.DescribeUsers' }
 
-	export enum FailoverShardX_Amz_Target { 'AmazonMemoryDB.FailoverShard' = 0 }
+	export enum FailoverShardX_Amz_Target { 'AmazonMemoryDB.FailoverShard' = 'AmazonMemoryDB.FailoverShard' }
 
-	export enum ListAllowedNodeTypeUpdatesX_Amz_Target { 'AmazonMemoryDB.ListAllowedNodeTypeUpdates' = 0 }
+	export enum ListAllowedNodeTypeUpdatesX_Amz_Target { 'AmazonMemoryDB.ListAllowedNodeTypeUpdates' = 'AmazonMemoryDB.ListAllowedNodeTypeUpdates' }
 
-	export enum ListTagsX_Amz_Target { 'AmazonMemoryDB.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'AmazonMemoryDB.ListTags' = 'AmazonMemoryDB.ListTags' }
 
-	export enum PurchaseReservedNodesOfferingX_Amz_Target { 'AmazonMemoryDB.PurchaseReservedNodesOffering' = 0 }
+	export enum PurchaseReservedNodesOfferingX_Amz_Target { 'AmazonMemoryDB.PurchaseReservedNodesOffering' = 'AmazonMemoryDB.PurchaseReservedNodesOffering' }
 
-	export enum ResetParameterGroupX_Amz_Target { 'AmazonMemoryDB.ResetParameterGroup' = 0 }
+	export enum ResetParameterGroupX_Amz_Target { 'AmazonMemoryDB.ResetParameterGroup' = 'AmazonMemoryDB.ResetParameterGroup' }
 
-	export enum TagResourceX_Amz_Target { 'AmazonMemoryDB.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonMemoryDB.TagResource' = 'AmazonMemoryDB.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AmazonMemoryDB.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonMemoryDB.UntagResource' = 'AmazonMemoryDB.UntagResource' }
 
-	export enum UpdateACLX_Amz_Target { 'AmazonMemoryDB.UpdateACL' = 0 }
+	export enum UpdateACLX_Amz_Target { 'AmazonMemoryDB.UpdateACL' = 'AmazonMemoryDB.UpdateACL' }
 
-	export enum UpdateClusterX_Amz_Target { 'AmazonMemoryDB.UpdateCluster' = 0 }
+	export enum UpdateClusterX_Amz_Target { 'AmazonMemoryDB.UpdateCluster' = 'AmazonMemoryDB.UpdateCluster' }
 
-	export enum UpdateParameterGroupX_Amz_Target { 'AmazonMemoryDB.UpdateParameterGroup' = 0 }
+	export enum UpdateParameterGroupX_Amz_Target { 'AmazonMemoryDB.UpdateParameterGroup' = 'AmazonMemoryDB.UpdateParameterGroup' }
 
-	export enum UpdateSubnetGroupX_Amz_Target { 'AmazonMemoryDB.UpdateSubnetGroup' = 0 }
+	export enum UpdateSubnetGroupX_Amz_Target { 'AmazonMemoryDB.UpdateSubnetGroup' = 'AmazonMemoryDB.UpdateSubnetGroup' }
 
-	export enum UpdateUserX_Amz_Target { 'AmazonMemoryDB.UpdateUser' = 0 }
+	export enum UpdateUserX_Amz_Target { 'AmazonMemoryDB.UpdateUser' = 'AmazonMemoryDB.UpdateUser' }
 
 }
 

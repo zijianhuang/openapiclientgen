@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerConnectionPolicyPropertiesConnectionType { Default = 0, Proxy = 1, Redirect = 2 }
+	export enum ServerConnectionPolicyPropertiesConnectionType { Default = 'Default', Proxy = 'Proxy', Redirect = 'Redirect' }
 
 	@Injectable()
 	export class MyClient {
@@ -77,7 +77,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ServerConnectionPolicies_GetConnectionPolicyName { default = 0 }
+	export enum ServerConnectionPolicies_GetConnectionPolicyName { default = 'default' }
 
 }
 

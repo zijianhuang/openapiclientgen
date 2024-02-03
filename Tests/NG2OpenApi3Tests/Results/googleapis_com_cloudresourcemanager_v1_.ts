@@ -96,7 +96,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -272,7 +272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudresourcemanagerGoogleCloudResourcemanagerV2alpha1FolderOperationOperationType { OPERATION_TYPE_UNSPECIFIED = 0, CREATE = 1, MOVE = 2 }
+	export enum CloudresourcemanagerGoogleCloudResourcemanagerV2alpha1FolderOperationOperationType { OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED', CREATE = 'CREATE', MOVE = 'MOVE' }
 
 
 	/** Metadata describing a long running folder operation */
@@ -371,7 +371,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConstraintConstraintDefault { CONSTRAINT_DEFAULT_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum ConstraintConstraintDefault { CONSTRAINT_DEFAULT_UNSPECIFIED = 'CONSTRAINT_DEFAULT_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** A `Constraint` that allows or disallows a list of string values, which are configured by an Organization's policy administrator with a `Policy`. */
@@ -667,7 +667,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FolderOperationErrorErrorMessageId { ERROR_TYPE_UNSPECIFIED = 0, ACTIVE_FOLDER_HEIGHT_VIOLATION = 1, MAX_CHILD_FOLDERS_VIOLATION = 2, FOLDER_NAME_UNIQUENESS_VIOLATION = 3, RESOURCE_DELETED_VIOLATION = 4, PARENT_DELETED_VIOLATION = 5, CYCLE_INTRODUCED_VIOLATION = 6, FOLDER_BEING_MOVED_VIOLATION = 7, FOLDER_TO_DELETE_NON_EMPTY_VIOLATION = 8, DELETED_FOLDER_HEIGHT_VIOLATION = 9 }
+	export enum FolderOperationErrorErrorMessageId { ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED', ACTIVE_FOLDER_HEIGHT_VIOLATION = 'ACTIVE_FOLDER_HEIGHT_VIOLATION', MAX_CHILD_FOLDERS_VIOLATION = 'MAX_CHILD_FOLDERS_VIOLATION', FOLDER_NAME_UNIQUENESS_VIOLATION = 'FOLDER_NAME_UNIQUENESS_VIOLATION', RESOURCE_DELETED_VIOLATION = 'RESOURCE_DELETED_VIOLATION', PARENT_DELETED_VIOLATION = 'PARENT_DELETED_VIOLATION', CYCLE_INTRODUCED_VIOLATION = 'CYCLE_INTRODUCED_VIOLATION', FOLDER_BEING_MOVED_VIOLATION = 'FOLDER_BEING_MOVED_VIOLATION', FOLDER_TO_DELETE_NON_EMPTY_VIOLATION = 'FOLDER_TO_DELETE_NON_EMPTY_VIOLATION', DELETED_FOLDER_HEIGHT_VIOLATION = 'DELETED_FOLDER_HEIGHT_VIOLATION' }
 
 
 	/** The request sent to the GetAncestry method. */
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListPolicyAllValues { ALL_VALUES_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum ListPolicyAllValues { ALL_VALUES_UNSPECIFIED = 'ALL_VALUES_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Ignores policies set above this resource and restores the `constraint_default` enforcement behavior of the specific `Constraint` at this resource. Suppose that `constraint_default` is set to `ALLOW` for the `Constraint` `constraints/serviceuser.services`. Suppose that organization foo.com sets a `Policy` at their Organization resource node that restricts the allowed service activations to deny all service activations. They could then set a `Policy` with the `policy_type` `restore_default` on several experimental projects, restoring the `constraint_default` enforcement of the `Constraint` for only those projects, allowing those projects to have all services activated. */
@@ -1151,7 +1151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETE_REQUESTED = 2, DELETE_IN_PROGRESS = 3 }
+	export enum ProjectLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 'LIFECYCLE_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DELETE_REQUESTED = 'DELETE_REQUESTED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS' }
 
 
 	/** Metadata pertaining to the folder move process. */
@@ -1323,7 +1323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETE_REQUESTED = 2 }
+	export enum OrganizationLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 'LIFECYCLE_STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DELETE_REQUESTED = 'DELETE_REQUESTED' }
 
 
 	/** The entity that owns an Organization. The lifetime of the Organization and all of its descendants are bound to the `OrganizationOwner`. If the `OrganizationOwner` is deleted, the Organization and all its descendants will be deleted. */

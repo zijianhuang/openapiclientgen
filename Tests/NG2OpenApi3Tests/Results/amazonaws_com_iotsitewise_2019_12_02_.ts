@@ -119,7 +119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetErrorCode { INTERNAL_FAILURE = 0 }
+	export enum AssetErrorCode { INTERNAL_FAILURE = 'INTERNAL_FAILURE' }
 
 	export interface BatchDisassociateProjectAssetsResponse {
 		errors?: Array<AssetErrorDetails>;
@@ -189,7 +189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchGetAssetPropertyAggregatesErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, AccessDeniedException = 2 }
+	export enum BatchGetAssetPropertyAggregatesErrorCode { ResourceNotFoundException = 'ResourceNotFoundException', InvalidRequestException = 'InvalidRequestException', AccessDeniedException = 'AccessDeniedException' }
 
 
 	/** Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API. */
@@ -242,7 +242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Quality { GOOD = 0, BAD = 1, UNCERTAIN = 2 }
+	export enum Quality { GOOD = 'GOOD', BAD = 'BAD', UNCERTAIN = 'UNCERTAIN' }
 
 
 	/** Contains the (pre-calculated) aggregate values for an asset property. */
@@ -305,7 +305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchEntryCompletionStatus { SUCCESS = 0, ERROR = 1 }
+	export enum BatchEntryCompletionStatus { SUCCESS = 'SUCCESS', ERROR = 'ERROR' }
 
 
 	/** Contains the error code and the timestamp for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API. */
@@ -393,9 +393,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregateType { AVERAGE = 0, COUNT = 1, MAXIMUM = 2, MINIMUM = 3, SUM = 4, STANDARD_DEVIATION = 5 }
+	export enum AggregateType { AVERAGE = 'AVERAGE', COUNT = 'COUNT', MAXIMUM = 'MAXIMUM', MINIMUM = 'MINIMUM', SUM = 'SUM', STANDARD_DEVIATION = 'STANDARD_DEVIATION' }
 
-	export enum TimeOrdering { ASCENDING = 0, DESCENDING = 1 }
+	export enum TimeOrdering { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ServiceUnavailableException {
 	}
@@ -894,7 +894,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchPutAssetPropertyValueErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4, LimitExceededException = 5, ConflictingOperationException = 6, TimestampOutOfRangeException = 7, AccessDeniedException = 8 }
+	export enum BatchPutAssetPropertyValueErrorCode { ResourceNotFoundException = 'ResourceNotFoundException', InvalidRequestException = 'InvalidRequestException', InternalFailureException = 'InternalFailureException', ServiceUnavailableException = 'ServiceUnavailableException', ThrottlingException = 'ThrottlingException', LimitExceededException = 'LimitExceededException', ConflictingOperationException = 'ConflictingOperationException', TimestampOutOfRangeException = 'TimestampOutOfRangeException', AccessDeniedException = 'AccessDeniedException' }
 
 
 	/** Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API operation. */
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetState { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
+	export enum AssetState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** Contains the details of an IoT SiteWise error. */
@@ -1159,7 +1159,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { VALIDATION_ERROR = 0, INTERNAL_FAILURE = 1 }
+	export enum ErrorCode { VALIDATION_ERROR = 'VALIDATION_ERROR', INTERNAL_FAILURE = 'INTERNAL_FAILURE' }
 
 
 	/** Contains detailed error information.  */
@@ -1189,7 +1189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetailedErrorCode { INCOMPATIBLE_COMPUTE_LOCATION = 0, INCOMPATIBLE_FORWARDING_CONFIGURATION = 1 }
+	export enum DetailedErrorCode { INCOMPATIBLE_COMPUTE_LOCATION = 'INCOMPATIBLE_COMPUTE_LOCATION', INCOMPATIBLE_FORWARDING_CONFIGURATION = 'INCOMPATIBLE_FORWARDING_CONFIGURATION' }
 
 	export interface CreateAssetModelResponse {
 
@@ -1240,7 +1240,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetModelState { CREATING = 0, ACTIVE = 1, UPDATING = 2, PROPAGATING = 3, DELETING = 4, FAILED = 5 }
+	export enum AssetModelState { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', PROPAGATING = 'PROPAGATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** Contains an asset model property definition. This property definition is applied to all assets created from the asset model. */
@@ -1279,7 +1279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertyDataType { STRING = 0, INTEGER = 1, DOUBLE = 2, BOOLEAN = 3, STRUCT = 4 }
+	export enum PropertyDataType { STRING = 'STRING', INTEGER = 'INTEGER', DOUBLE = 'DOUBLE', BOOLEAN = 'BOOLEAN', STRUCT = 'STRUCT' }
 
 
 	/** Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>. */
@@ -1369,7 +1369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ForwardingConfigState { DISABLED = 0, ENABLED = 1 }
+	export enum ForwardingConfigState { DISABLED = 'DISABLED', ENABLED = 'ENABLED' }
 
 
 	/** <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p> */
@@ -1468,7 +1468,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputeLocation { EDGE = 0, CLOUD = 1 }
+	export enum ComputeLocation { EDGE = 'EDGE', CLOUD = 'CLOUD' }
 
 
 	/** <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p> <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>IoT SiteWise User Guide</i>.</p> */
@@ -1655,7 +1655,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { PENDING = 0, CANCELLED = 1, RUNNING = 2, COMPLETED = 3, FAILED = 4, COMPLETED_WITH_FAILURES = 5 }
+	export enum JobStatus { PENDING = 'PENDING', CANCELLED = 'CANCELLED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', COMPLETED_WITH_FAILURES = 'COMPLETED_WITH_FAILURES' }
 
 
 	/** The file in Amazon S3 where your data is saved.  */
@@ -1718,7 +1718,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnName { ALIAS = 0, ASSET_ID = 1, PROPERTY_ID = 2, DATA_TYPE = 3, TIMESTAMP_SECONDS = 4, TIMESTAMP_NANO_OFFSET = 5, QUALITY = 6, VALUE = 7 }
+	export enum ColumnName { ALIAS = 'ALIAS', ASSET_ID = 'ASSET_ID', PROPERTY_ID = 'PROPERTY_ID', DATA_TYPE = 'DATA_TYPE', TIMESTAMP_SECONDS = 'TIMESTAMP_SECONDS', TIMESTAMP_NANO_OFFSET = 'TIMESTAMP_NANO_OFFSET', QUALITY = 'QUALITY', VALUE = 'VALUE' }
 
 	export interface CreateDashboardResponse {
 
@@ -1873,7 +1873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortalState { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3, FAILED = 4 }
+	export enum PortalState { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 
 	/** Contains IoT SiteWise Monitor error details. */
@@ -1895,9 +1895,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorErrorCode { INTERNAL_FAILURE = 0, VALIDATION_ERROR = 1, LIMIT_EXCEEDED = 2 }
+	export enum MonitorErrorCode { INTERNAL_FAILURE = 'INTERNAL_FAILURE', VALIDATION_ERROR = 'VALIDATION_ERROR', LIMIT_EXCEEDED = 'LIMIT_EXCEEDED' }
 
-	export enum ImageFileType { PNG = 0 }
+	export enum ImageFileType { PNG = 'PNG' }
 
 	export interface CreateProjectResponse {
 
@@ -2077,7 +2077,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Permission { ADMINISTRATOR = 0, VIEWER = 1 }
+	export enum Permission { ADMINISTRATOR = 'ADMINISTRATOR', VIEWER = 'VIEWER' }
 
 	export interface DescribeAssetResponse {
 
@@ -2217,7 +2217,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertyNotificationState { ENABLED = 0, DISABLED = 1 }
+	export enum PropertyNotificationState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Describes an asset hierarchy that contains a hierarchy's name and ID. */
@@ -2768,7 +2768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { SITEWISE_DEFAULT_ENCRYPTION = 0, KMS_BASED_ENCRYPTION = 1 }
+	export enum EncryptionType { SITEWISE_DEFAULT_ENCRYPTION = 'SITEWISE_DEFAULT_ENCRYPTION', KMS_BASED_ENCRYPTION = 'KMS_BASED_ENCRYPTION' }
 
 
 	/** Contains current status information for the configuration. */
@@ -2792,7 +2792,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationState { ACTIVE = 0, UPDATE_IN_PROGRESS = 1, UPDATE_FAILED = 2 }
+	export enum ConfigurationState { ACTIVE = 'ACTIVE', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 
 	/** Contains the details of an IoT SiteWise configuration error. */
@@ -2915,7 +2915,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapabilitySyncStatus { IN_SYNC = 0, OUT_OF_SYNC = 1, SYNC_FAILED = 2, UNKNOWN = 3 }
+	export enum CapabilitySyncStatus { IN_SYNC = 'IN_SYNC', OUT_OF_SYNC = 'OUT_OF_SYNC', SYNC_FAILED = 'SYNC_FAILED', UNKNOWN = 'UNKNOWN' }
 
 	export interface DescribeGatewayCapabilityConfigurationResponse {
 
@@ -2989,7 +2989,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingLevel { ERROR = 0, INFO = 1, OFF = 2 }
+	export enum LoggingLevel { ERROR = 'ERROR', INFO = 'INFO', OFF = 'OFF' }
 
 	export interface DescribePortalResponse {
 
@@ -3102,7 +3102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthMode { IAM = 0, SSO = 1 }
+	export enum AuthMode { IAM = 'IAM', SSO = 'SSO' }
 
 
 	/** Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>. */
@@ -3214,7 +3214,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageType { SITEWISE_DEFAULT_STORAGE = 0, MULTI_LAYER_STORAGE = 1 }
+	export enum StorageType { SITEWISE_DEFAULT_STORAGE = 'SITEWISE_DEFAULT_STORAGE', MULTI_LAYER_STORAGE = 'MULTI_LAYER_STORAGE' }
 
 
 	/** Contains information about the storage destination. */
@@ -3719,7 +3719,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetRelationshipType { HIERARCHY = 0 }
+	export enum AssetRelationshipType { HIERARCHY = 'HIERARCHY' }
 
 	export interface ListAssetsResponse {
 
@@ -4598,9 +4598,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchGetAssetPropertyValueErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, AccessDeniedException = 2 }
+	export enum BatchGetAssetPropertyValueErrorCode { ResourceNotFoundException = 'ResourceNotFoundException', InvalidRequestException = 'InvalidRequestException', AccessDeniedException = 'AccessDeniedException' }
 
-	export enum BatchGetAssetPropertyValueHistoryErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, AccessDeniedException = 2 }
+	export enum BatchGetAssetPropertyValueHistoryErrorCode { ResourceNotFoundException = 'ResourceNotFoundException', InvalidRequestException = 'InvalidRequestException', AccessDeniedException = 'AccessDeniedException' }
 
 	export interface BatchGetAssetPropertyValueHistoryRequest {
 
@@ -5117,7 +5117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisassociatedDataStorageState { ENABLED = 0, DISABLED = 1 }
+	export enum DisassociatedDataStorageState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DescribeTimeSeriesRequest {
 	}
@@ -5209,7 +5209,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { USER = 0, GROUP = 1, IAM = 2 }
+	export enum IdentityType { USER = 'USER', GROUP = 'GROUP', IAM = 'IAM' }
 
 
 	/** <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul> */
@@ -5231,7 +5231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { PORTAL = 0, PROJECT = 1 }
+	export enum ResourceType { PORTAL = 'PORTAL', PROJECT = 'PROJECT' }
 
 	export interface ListAccessPoliciesRequest {
 	}
@@ -5243,7 +5243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListAssetModelPropertiesFilter { ALL = 0, BASE = 1 }
+	export enum ListAssetModelPropertiesFilter { ALL = 'ALL', BASE = 'BASE' }
 
 	export interface ListAssetModelPropertiesRequest {
 	}
@@ -5265,7 +5265,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListAssetPropertiesFilter { ALL = 0, BASE = 1 }
+	export enum ListAssetPropertiesFilter { ALL = 'ALL', BASE = 'BASE' }
 
 	export interface ListAssetPropertiesRequest {
 	}
@@ -5277,7 +5277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TraversalType { PATH_TO_ROOT = 0 }
+	export enum TraversalType { PATH_TO_ROOT = 'PATH_TO_ROOT' }
 
 	export interface ListAssetRelationshipsRequest {
 	}
@@ -5289,7 +5289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListAssetsFilter { ALL = 0, TOP_LEVEL = 1 }
+	export enum ListAssetsFilter { ALL = 'ALL', TOP_LEVEL = 'TOP_LEVEL' }
 
 	export interface ListAssetsRequest {
 	}
@@ -5301,7 +5301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TraversalDirection { PARENT = 0, CHILD = 1 }
+	export enum TraversalDirection { PARENT = 'PARENT', CHILD = 'CHILD' }
 
 	export interface ListAssociatedAssetsRequest {
 	}
@@ -5313,7 +5313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListBulkImportJobsFilter { ALL = 0, PENDING = 1, RUNNING = 2, CANCELLED = 3, FAILED = 4, COMPLETED_WITH_FAILURES = 5, COMPLETED = 6 }
+	export enum ListBulkImportJobsFilter { ALL = 'ALL', PENDING = 'PENDING', RUNNING = 'RUNNING', CANCELLED = 'CANCELLED', FAILED = 'FAILED', COMPLETED_WITH_FAILURES = 'COMPLETED_WITH_FAILURES', COMPLETED = 'COMPLETED' }
 
 	export interface ListBulkImportJobsRequest {
 	}
@@ -5385,7 +5385,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListTimeSeriesType { ASSOCIATED = 0, DISASSOCIATED = 1 }
+	export enum ListTimeSeriesType { ASSOCIATED = 'ASSOCIATED', DISASSOCIATED = 'DISASSOCIATED' }
 
 	export interface ListTimeSeriesRequest {
 	}

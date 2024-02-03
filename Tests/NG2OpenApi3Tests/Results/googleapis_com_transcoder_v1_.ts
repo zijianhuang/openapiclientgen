@@ -120,7 +120,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnimationFadeFadeType { FADE_TYPE_UNSPECIFIED = 0, FADE_IN = 1, FADE_OUT = 2 }
+	export enum AnimationFadeFadeType { FADE_TYPE_UNSPECIFIED = 'FADE_TYPE_UNSPECIFIED', FADE_IN = 'FADE_IN', FADE_OUT = 'FADE_OUT' }
 
 
 	/** 2D normalized coordinates. Default: `{0.0, 0.0}` */
@@ -474,7 +474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DashConfigSegmentReferenceScheme { SEGMENT_REFERENCE_SCHEME_UNSPECIFIED = 0, SEGMENT_LIST = 1, SEGMENT_TEMPLATE_NUMBER = 2 }
+	export enum DashConfigSegmentReferenceScheme { SEGMENT_REFERENCE_SCHEME_UNSPECIFIED = 'SEGMENT_REFERENCE_SCHEME_UNSPECIFIED', SEGMENT_LIST = 'SEGMENT_LIST', SEGMENT_TEMPLATE_NUMBER = 'SEGMENT_TEMPLATE_NUMBER' }
 
 
 	/** Deblock preprocessing configuration. **Note:** This configuration is not supported. */
@@ -1669,7 +1669,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManifestType { MANIFEST_TYPE_UNSPECIFIED = 0, HLS = 1, DASH = 2 }
+	export enum ManifestType { MANIFEST_TYPE_UNSPECIFIED = 'MANIFEST_TYPE_UNSPECIFIED', HLS = 'HLS', DASH = 'DASH' }
 
 
 	/** Multiplexing settings for output stream. */
@@ -1934,11 +1934,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JobMode { PROCESSING_MODE_UNSPECIFIED = 0, PROCESSING_MODE_INTERACTIVE = 1, PROCESSING_MODE_BATCH = 2 }
+	export enum JobMode { PROCESSING_MODE_UNSPECIFIED = 'PROCESSING_MODE_UNSPECIFIED', PROCESSING_MODE_INTERACTIVE = 'PROCESSING_MODE_INTERACTIVE', PROCESSING_MODE_BATCH = 'PROCESSING_MODE_BATCH' }
 
-	export enum JobOptimization { OPTIMIZATION_STRATEGY_UNSPECIFIED = 0, AUTODETECT = 1, DISABLED = 2 }
+	export enum JobOptimization { OPTIMIZATION_STRATEGY_UNSPECIFIED = 'OPTIMIZATION_STRATEGY_UNSPECIFIED', AUTODETECT = 'AUTODETECT', DISABLED = 'DISABLED' }
 
-	export enum JobState { PROCESSING_STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum JobState { PROCESSING_STATE_UNSPECIFIED = 'PROCESSING_STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Transcoding job template resource. */

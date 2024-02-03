@@ -2313,13 +2313,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddTagsAction { AddTags = 0 }
+	export enum GET_AddTagsAction { AddTags = 'AddTags' }
 
-	export enum GET_AddTagsVersion { '2012-06-01' = 0 }
+	export enum GET_AddTagsVersion { '2012-06-01' = '2012-06-01' }
 
-	export enum GET_ApplySecurityGroupsToLoadBalancerAction { ApplySecurityGroupsToLoadBalancer = 0 }
+	export enum GET_ApplySecurityGroupsToLoadBalancerAction { ApplySecurityGroupsToLoadBalancer = 'ApplySecurityGroupsToLoadBalancer' }
 
-	export enum GET_AttachLoadBalancerToSubnetsAction { AttachLoadBalancerToSubnets = 0 }
+	export enum GET_AttachLoadBalancerToSubnetsAction { AttachLoadBalancerToSubnets = 'AttachLoadBalancerToSubnets' }
 
 	export interface GET_ConfigureHealthCheckHealthCheck {
 
@@ -2366,45 +2366,45 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ConfigureHealthCheckAction { ConfigureHealthCheck = 0 }
+	export enum GET_ConfigureHealthCheckAction { ConfigureHealthCheck = 'ConfigureHealthCheck' }
 
-	export enum GET_CreateAppCookieStickinessPolicyAction { CreateAppCookieStickinessPolicy = 0 }
+	export enum GET_CreateAppCookieStickinessPolicyAction { CreateAppCookieStickinessPolicy = 'CreateAppCookieStickinessPolicy' }
 
-	export enum GET_CreateLBCookieStickinessPolicyAction { CreateLBCookieStickinessPolicy = 0 }
+	export enum GET_CreateLBCookieStickinessPolicyAction { CreateLBCookieStickinessPolicy = 'CreateLBCookieStickinessPolicy' }
 
-	export enum GET_CreateLoadBalancerAction { CreateLoadBalancer = 0 }
+	export enum GET_CreateLoadBalancerAction { CreateLoadBalancer = 'CreateLoadBalancer' }
 
-	export enum GET_CreateLoadBalancerListenersAction { CreateLoadBalancerListeners = 0 }
+	export enum GET_CreateLoadBalancerListenersAction { CreateLoadBalancerListeners = 'CreateLoadBalancerListeners' }
 
-	export enum GET_CreateLoadBalancerPolicyAction { CreateLoadBalancerPolicy = 0 }
+	export enum GET_CreateLoadBalancerPolicyAction { CreateLoadBalancerPolicy = 'CreateLoadBalancerPolicy' }
 
-	export enum GET_DeleteLoadBalancerAction { DeleteLoadBalancer = 0 }
+	export enum GET_DeleteLoadBalancerAction { DeleteLoadBalancer = 'DeleteLoadBalancer' }
 
-	export enum GET_DeleteLoadBalancerListenersAction { DeleteLoadBalancerListeners = 0 }
+	export enum GET_DeleteLoadBalancerListenersAction { DeleteLoadBalancerListeners = 'DeleteLoadBalancerListeners' }
 
-	export enum GET_DeleteLoadBalancerPolicyAction { DeleteLoadBalancerPolicy = 0 }
+	export enum GET_DeleteLoadBalancerPolicyAction { DeleteLoadBalancerPolicy = 'DeleteLoadBalancerPolicy' }
 
-	export enum GET_DeregisterInstancesFromLoadBalancerAction { DeregisterInstancesFromLoadBalancer = 0 }
+	export enum GET_DeregisterInstancesFromLoadBalancerAction { DeregisterInstancesFromLoadBalancer = 'DeregisterInstancesFromLoadBalancer' }
 
-	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 0 }
+	export enum GET_DescribeAccountLimitsAction { DescribeAccountLimits = 'DescribeAccountLimits' }
 
-	export enum GET_DescribeInstanceHealthAction { DescribeInstanceHealth = 0 }
+	export enum GET_DescribeInstanceHealthAction { DescribeInstanceHealth = 'DescribeInstanceHealth' }
 
-	export enum GET_DescribeLoadBalancerAttributesAction { DescribeLoadBalancerAttributes = 0 }
+	export enum GET_DescribeLoadBalancerAttributesAction { DescribeLoadBalancerAttributes = 'DescribeLoadBalancerAttributes' }
 
-	export enum GET_DescribeLoadBalancerPoliciesAction { DescribeLoadBalancerPolicies = 0 }
+	export enum GET_DescribeLoadBalancerPoliciesAction { DescribeLoadBalancerPolicies = 'DescribeLoadBalancerPolicies' }
 
-	export enum GET_DescribeLoadBalancerPolicyTypesAction { DescribeLoadBalancerPolicyTypes = 0 }
+	export enum GET_DescribeLoadBalancerPolicyTypesAction { DescribeLoadBalancerPolicyTypes = 'DescribeLoadBalancerPolicyTypes' }
 
-	export enum GET_DescribeLoadBalancersAction { DescribeLoadBalancers = 0 }
+	export enum GET_DescribeLoadBalancersAction { DescribeLoadBalancers = 'DescribeLoadBalancers' }
 
-	export enum GET_DescribeTagsAction { DescribeTags = 0 }
+	export enum GET_DescribeTagsAction { DescribeTags = 'DescribeTags' }
 
-	export enum GET_DetachLoadBalancerFromSubnetsAction { DetachLoadBalancerFromSubnets = 0 }
+	export enum GET_DetachLoadBalancerFromSubnetsAction { DetachLoadBalancerFromSubnets = 'DetachLoadBalancerFromSubnets' }
 
-	export enum GET_DisableAvailabilityZonesForLoadBalancerAction { DisableAvailabilityZonesForLoadBalancer = 0 }
+	export enum GET_DisableAvailabilityZonesForLoadBalancerAction { DisableAvailabilityZonesForLoadBalancer = 'DisableAvailabilityZonesForLoadBalancer' }
 
-	export enum GET_EnableAvailabilityZonesForLoadBalancerAction { EnableAvailabilityZonesForLoadBalancer = 0 }
+	export enum GET_EnableAvailabilityZonesForLoadBalancerAction { EnableAvailabilityZonesForLoadBalancer = 'EnableAvailabilityZonesForLoadBalancer' }
 
 	export interface GET_ModifyLoadBalancerAttributesLoadBalancerAttributes {
 		CrossZoneLoadBalancing?: CrossZoneLoadBalancing;
@@ -2421,17 +2421,17 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_ModifyLoadBalancerAttributesAction { ModifyLoadBalancerAttributes = 0 }
+	export enum GET_ModifyLoadBalancerAttributesAction { ModifyLoadBalancerAttributes = 'ModifyLoadBalancerAttributes' }
 
-	export enum GET_RegisterInstancesWithLoadBalancerAction { RegisterInstancesWithLoadBalancer = 0 }
+	export enum GET_RegisterInstancesWithLoadBalancerAction { RegisterInstancesWithLoadBalancer = 'RegisterInstancesWithLoadBalancer' }
 
-	export enum GET_RemoveTagsAction { RemoveTags = 0 }
+	export enum GET_RemoveTagsAction { RemoveTags = 'RemoveTags' }
 
-	export enum GET_SetLoadBalancerListenerSSLCertificateAction { SetLoadBalancerListenerSSLCertificate = 0 }
+	export enum GET_SetLoadBalancerListenerSSLCertificateAction { SetLoadBalancerListenerSSLCertificate = 'SetLoadBalancerListenerSSLCertificate' }
 
-	export enum GET_SetLoadBalancerPoliciesForBackendServerAction { SetLoadBalancerPoliciesForBackendServer = 0 }
+	export enum GET_SetLoadBalancerPoliciesForBackendServerAction { SetLoadBalancerPoliciesForBackendServer = 'SetLoadBalancerPoliciesForBackendServer' }
 
-	export enum GET_SetLoadBalancerPoliciesOfListenerAction { SetLoadBalancerPoliciesOfListener = 0 }
+	export enum GET_SetLoadBalancerPoliciesOfListenerAction { SetLoadBalancerPoliciesOfListener = 'SetLoadBalancerPoliciesOfListener' }
 
 }
 

@@ -263,7 +263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrbitClassOrbit_class_type { IEO = 0, ATE = 1, APO = 2, AMO = 3, MCA = 4, IMB = 5, MBA = 6, OMB = 7, TJN = 8, CEN = 9, TNO = 10, PAA = 11, HYA = 12, HYP = 13, PAR = 14, COM = 15, JFC = 16, HTC = 17, ETC = 18, CTC = 19, JFc = 20 }
+	export enum OrbitClassOrbit_class_type { IEO = 'IEO', ATE = 'ATE', APO = 'APO', AMO = 'AMO', MCA = 'MCA', IMB = 'IMB', MBA = 'MBA', OMB = 'OMB', TJN = 'TJN', CEN = 'CEN', TNO = 'TNO', PAA = 'PAA', HYA = 'HYA', HYP = 'HYP', PAR = 'PAR', COM = 'COM', JFC = 'JFC', HTC = 'HTC', ETC = 'ETC', CTC = 'CTC', JFc = 'JFc' }
 
 	export interface NearEarthObjectList {
 

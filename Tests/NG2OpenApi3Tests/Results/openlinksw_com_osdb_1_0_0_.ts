@@ -129,7 +129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntryPointHttp_method { GET = 0, PUT = 1, POST = 2, DELETE = 3 }
+	export enum EntryPointHttp_method { GET = 'GET', PUT = 'PUT', POST = 'POST', DELETE = 'DELETE' }
 
 	export interface EntryPointParameter {
 
@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntryPointParameterType { query = 0, header = 1, uri = 2, path = 3, body = 4 }
+	export enum EntryPointParameterType { query = 'query', header = 'header', uri = 'uri', path = 'path', body = 'body' }
 
 	export interface ActionHelp {
 
@@ -313,7 +313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionHelpResponseStatus { success = 0 }
+	export enum ActionHelpResponseStatus { success = 'success' }
 
 	export interface DescribeActionResponse {
 
@@ -497,7 +497,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorModelStatus { error = 0 }
+	export enum ErrorModelStatus { error = 'error' }
 
 	export interface ExecBody {
 
@@ -558,7 +558,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecBodyOsdb_output_type { url_only = 0, generate_rdf = 1, display_rdf = 2 }
+	export enum ExecBodyOsdb_output_type { url_only = 'url_only', generate_rdf = 'generate_rdf', display_rdf = 'display_rdf' }
 
 	export interface ListActionsResponse {
 

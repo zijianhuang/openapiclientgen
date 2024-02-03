@@ -89,7 +89,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionProtectorPropertiesServerKeyType { ServiceManaged = 0, AzureKeyVault = 1 }
+	export enum EncryptionProtectorPropertiesServerKeyType { ServiceManaged = 'ServiceManaged', AzureKeyVault = 'AzureKeyVault' }
 
 
 	/** A list of server encryption protectors. */
@@ -177,7 +177,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum EncryptionProtectors_GetEncryptionProtectorName { current = 0 }
+	export enum EncryptionProtectors_GetEncryptionProtectorName { current = 'current' }
 
 }
 

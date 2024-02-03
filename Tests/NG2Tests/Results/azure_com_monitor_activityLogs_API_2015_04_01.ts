@@ -177,7 +177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventDataLevel { Critical = 0, Error = 1, Warning = 2, Informational = 3, Verbose = 4 }
+	export enum EventDataLevel { Critical = 'Critical', Error = 'Error', Warning = 'Warning', Informational = 'Informational', Verbose = 'Verbose' }
 
 
 	/** Represents collection of events. */

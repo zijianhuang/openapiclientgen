@@ -92,7 +92,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogSettingsCategory { AuditLogs = 0, SignInLogs = 1 }
+	export enum LogSettingsCategory { AuditLogs = 'AuditLogs', SignInLogs = 'SignInLogs' }
 
 
 	/** The diagnostic settings Category. */
@@ -115,7 +115,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiagnosticSettingsCategoryCategoryType { Logs = 0 }
+	export enum DiagnosticSettingsCategoryCategoryType { Logs = 'Logs' }
 
 
 	/** The diagnostic settings category resource. */

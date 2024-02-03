@@ -41,7 +41,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddressCountry_code { '' = 0, AC = 1, AD = 2, AE = 3, AF = 4, AG = 5, AI = 6, AL = 7, AM = 8, AO = 9, AQ = 10, AR = 11, AS = 12, AT = 13, AU = 14, AW = 15, AX = 16, AZ = 17, BA = 18, BB = 19, BD = 20, BE = 21, BF = 22, BG = 23, BH = 24, BI = 25, BJ = 26, BL = 27, BM = 28, BN = 29, BO = 30, BQ = 31, BR = 32, BS = 33, BT = 34, BW = 35, BY = 36, BZ = 37, CA = 38, CC = 39, CD = 40, CF = 41, CG = 42, CH = 43, CI = 44, CK = 45, CL = 46, CM = 47, CN = 48, CO = 49, CR = 50, CU = 51, CV = 52, CW = 53, CX = 54, CY = 55, CZ = 56, DE = 57, DG = 58, DJ = 59, DK = 60, DM = 61, DO = 62, DZ = 63, EA = 64, EC = 65, EE = 66, EG = 67, EH = 68, ER = 69, ES = 70, ET = 71, FI = 72, FJ = 73, FK = 74, FM = 75, FO = 76, FR = 77, GA = 78, GB = 79, GD = 80, GE = 81, GF = 82, GG = 83, GH = 84, GI = 85, GL = 86, GM = 87, GN = 88, GP = 89, GQ = 90, GR = 91, GS = 92, GT = 93, GU = 94, GW = 95, GY = 96, HK = 97, HN = 98, HR = 99, HT = 100, HU = 101, IC = 102, ID = 103, IE = 104, IL = 105, IM = 106, IN = 107, IO = 108, IQ = 109, IR = 110, IS = 111, IT = 112, JE = 113, JM = 114, JO = 115, JP = 116, KE = 117, KG = 118, KH = 119, KI = 120, KM = 121, KN = 122, KP = 123, KR = 124, KW = 125, KY = 126, KZ = 127, LA = 128, LB = 129, LC = 130, LI = 131, LK = 132, LR = 133, LS = 134, LT = 135, LU = 136, LV = 137, LY = 138, MA = 139, MC = 140, MD = 141, ME = 142, MF = 143, MG = 144, MH = 145, MK = 146, ML = 147, MM = 148, MN = 149, MO = 150, MP = 151, MQ = 152, MR = 153, MS = 154, MT = 155, MU = 156, MV = 157, MW = 158, MX = 159, MY = 160, MZ = 161, NA = 162, NC = 163, NE = 164, NF = 165, NG = 166, NI = 167, NL = 168, NO = 169, NP = 170, NR = 171, NU = 172, NZ = 173, OM = 174, PA = 175, PE = 176, PF = 177, PG = 178, PH = 179, PK = 180, PL = 181, PM = 182, PN = 183, PR = 184, PS = 185, PT = 186, PW = 187, PY = 188, QA = 189, RE = 190, RO = 191, RS = 192, RU = 193, RW = 194, SA = 195, SB = 196, SC = 197, SD = 198, SE = 199, SG = 200, SH = 201, SI = 202, SJ = 203, SK = 204, SL = 205, SM = 206, SN = 207, SO = 208, SR = 209, SS = 210, ST = 211, SV = 212, SX = 213, SY = 214, SZ = 215, TA = 216, TC = 217, TD = 218, TF = 219, TG = 220, TH = 221, TJ = 222, TK = 223, TL = 224, TM = 225, TN = 226, TO = 227, TR = 228, TT = 229, TV = 230, TW = 231, TZ = 232, UA = 233, UG = 234, UM = 235, US = 236, UY = 237, UZ = 238, VA = 239, VC = 240, VE = 241, VG = 242, VI = 243, VN = 244, VU = 245, WF = 246, WS = 247, XA = 248, XB = 249, XK = 250, YE = 251, YT = 252, ZA = 253, ZM = 254, ZW = 255 }
+	export enum AddressCountry_code { '' = '', AC = 'AC', AD = 'AD', AE = 'AE', AF = 'AF', AG = 'AG', AI = 'AI', AL = 'AL', AM = 'AM', AO = 'AO', AQ = 'AQ', AR = 'AR', AS = 'AS', AT = 'AT', AU = 'AU', AW = 'AW', AX = 'AX', AZ = 'AZ', BA = 'BA', BB = 'BB', BD = 'BD', BE = 'BE', BF = 'BF', BG = 'BG', BH = 'BH', BI = 'BI', BJ = 'BJ', BL = 'BL', BM = 'BM', BN = 'BN', BO = 'BO', BQ = 'BQ', BR = 'BR', BS = 'BS', BT = 'BT', BW = 'BW', BY = 'BY', BZ = 'BZ', CA = 'CA', CC = 'CC', CD = 'CD', CF = 'CF', CG = 'CG', CH = 'CH', CI = 'CI', CK = 'CK', CL = 'CL', CM = 'CM', CN = 'CN', CO = 'CO', CR = 'CR', CU = 'CU', CV = 'CV', CW = 'CW', CX = 'CX', CY = 'CY', CZ = 'CZ', DE = 'DE', DG = 'DG', DJ = 'DJ', DK = 'DK', DM = 'DM', DO = 'DO', DZ = 'DZ', EA = 'EA', EC = 'EC', EE = 'EE', EG = 'EG', EH = 'EH', ER = 'ER', ES = 'ES', ET = 'ET', FI = 'FI', FJ = 'FJ', FK = 'FK', FM = 'FM', FO = 'FO', FR = 'FR', GA = 'GA', GB = 'GB', GD = 'GD', GE = 'GE', GF = 'GF', GG = 'GG', GH = 'GH', GI = 'GI', GL = 'GL', GM = 'GM', GN = 'GN', GP = 'GP', GQ = 'GQ', GR = 'GR', GS = 'GS', GT = 'GT', GU = 'GU', GW = 'GW', GY = 'GY', HK = 'HK', HN = 'HN', HR = 'HR', HT = 'HT', HU = 'HU', IC = 'IC', ID = 'ID', IE = 'IE', IL = 'IL', IM = 'IM', IN = 'IN', IO = 'IO', IQ = 'IQ', IR = 'IR', IS = 'IS', IT = 'IT', JE = 'JE', JM = 'JM', JO = 'JO', JP = 'JP', KE = 'KE', KG = 'KG', KH = 'KH', KI = 'KI', KM = 'KM', KN = 'KN', KP = 'KP', KR = 'KR', KW = 'KW', KY = 'KY', KZ = 'KZ', LA = 'LA', LB = 'LB', LC = 'LC', LI = 'LI', LK = 'LK', LR = 'LR', LS = 'LS', LT = 'LT', LU = 'LU', LV = 'LV', LY = 'LY', MA = 'MA', MC = 'MC', MD = 'MD', ME = 'ME', MF = 'MF', MG = 'MG', MH = 'MH', MK = 'MK', ML = 'ML', MM = 'MM', MN = 'MN', MO = 'MO', MP = 'MP', MQ = 'MQ', MR = 'MR', MS = 'MS', MT = 'MT', MU = 'MU', MV = 'MV', MW = 'MW', MX = 'MX', MY = 'MY', MZ = 'MZ', NA = 'NA', NC = 'NC', NE = 'NE', NF = 'NF', NG = 'NG', NI = 'NI', NL = 'NL', NO = 'NO', NP = 'NP', NR = 'NR', NU = 'NU', NZ = 'NZ', OM = 'OM', PA = 'PA', PE = 'PE', PF = 'PF', PG = 'PG', PH = 'PH', PK = 'PK', PL = 'PL', PM = 'PM', PN = 'PN', PR = 'PR', PS = 'PS', PT = 'PT', PW = 'PW', PY = 'PY', QA = 'QA', RE = 'RE', RO = 'RO', RS = 'RS', RU = 'RU', RW = 'RW', SA = 'SA', SB = 'SB', SC = 'SC', SD = 'SD', SE = 'SE', SG = 'SG', SH = 'SH', SI = 'SI', SJ = 'SJ', SK = 'SK', SL = 'SL', SM = 'SM', SN = 'SN', SO = 'SO', SR = 'SR', SS = 'SS', ST = 'ST', SV = 'SV', SX = 'SX', SY = 'SY', SZ = 'SZ', TA = 'TA', TC = 'TC', TD = 'TD', TF = 'TF', TG = 'TG', TH = 'TH', TJ = 'TJ', TK = 'TK', TL = 'TL', TM = 'TM', TN = 'TN', TO = 'TO', TR = 'TR', TT = 'TT', TV = 'TV', TW = 'TW', TZ = 'TZ', UA = 'UA', UG = 'UG', UM = 'UM', US = 'US', UY = 'UY', UZ = 'UZ', VA = 'VA', VC = 'VC', VE = 'VE', VG = 'VG', VI = 'VI', VN = 'VN', VU = 'VU', WF = 'WF', WS = 'WS', XA = 'XA', XB = 'XB', XK = 'XK', YE = 'YE', YT = 'YT', ZA = 'ZA', ZM = 'ZM', ZW = 'ZW' }
 
 	export interface BankAccount {
 
@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BankAccountCurrency { AUD = 0, BGN = 1, BRL = 2, CAD = 3, CHF = 4, CNY = 5, CZK = 6, DKK = 7, EUR = 8, GBP = 9, HKD = 10, HRK = 11, HUF = 12, IDR = 13, ILS = 14, INR = 15, ISK = 16, JPY = 17, KRW = 18, LTL = 19, LVL = 20, MXN = 21, MYR = 22, NOK = 23, NZD = 24, PHP = 25, PLN = 26, RON = 27, RSD = 28, RUB = 29, SEK = 30, SGD = 31, THB = 32, TRY = 33, UAH = 34, USD = 35, ZAR = 36 }
+	export enum BankAccountCurrency { AUD = 'AUD', BGN = 'BGN', BRL = 'BRL', CAD = 'CAD', CHF = 'CHF', CNY = 'CNY', CZK = 'CZK', DKK = 'DKK', EUR = 'EUR', GBP = 'GBP', HKD = 'HKD', HRK = 'HRK', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', ISK = 'ISK', JPY = 'JPY', KRW = 'KRW', LTL = 'LTL', LVL = 'LVL', MXN = 'MXN', MYR = 'MYR', NOK = 'NOK', NZD = 'NZD', PHP = 'PHP', PLN = 'PLN', RON = 'RON', RSD = 'RSD', RUB = 'RUB', SEK = 'SEK', SGD = 'SGD', THB = 'THB', TRY = 'TRY', UAH = 'UAH', USD = 'USD', ZAR = 'ZAR' }
 
 
 	/** A object with a data property that contains an array of up to limit bank accounts. Each entry in the array is a separate bank account object. If no more bank accounts are available, the resulting array will be empty. */
@@ -164,9 +164,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Country { '' = 0, AC = 1, AD = 2, AE = 3, AF = 4, AG = 5, AI = 6, AL = 7, AM = 8, AO = 9, AQ = 10, AR = 11, AS = 12, AT = 13, AU = 14, AW = 15, AX = 16, AZ = 17, BA = 18, BB = 19, BD = 20, BE = 21, BF = 22, BG = 23, BH = 24, BI = 25, BJ = 26, BL = 27, BM = 28, BN = 29, BO = 30, BQ = 31, BR = 32, BS = 33, BT = 34, BW = 35, BY = 36, BZ = 37, CA = 38, CC = 39, CD = 40, CF = 41, CG = 42, CH = 43, CI = 44, CK = 45, CL = 46, CM = 47, CN = 48, CO = 49, CR = 50, CU = 51, CV = 52, CW = 53, CX = 54, CY = 55, CZ = 56, DE = 57, DG = 58, DJ = 59, DK = 60, DM = 61, DO = 62, DZ = 63, EA = 64, EC = 65, EE = 66, EG = 67, EH = 68, ER = 69, ES = 70, ET = 71, FI = 72, FJ = 73, FK = 74, FM = 75, FO = 76, FR = 77, GA = 78, GB = 79, GD = 80, GE = 81, GF = 82, GG = 83, GH = 84, GI = 85, GL = 86, GM = 87, GN = 88, GP = 89, GQ = 90, GR = 91, GS = 92, GT = 93, GU = 94, GW = 95, GY = 96, HK = 97, HN = 98, HR = 99, HT = 100, HU = 101, IC = 102, ID = 103, IE = 104, IL = 105, IM = 106, IN = 107, IO = 108, IQ = 109, IR = 110, IS = 111, IT = 112, JE = 113, JM = 114, JO = 115, JP = 116, KE = 117, KG = 118, KH = 119, KI = 120, KM = 121, KN = 122, KP = 123, KR = 124, KW = 125, KY = 126, KZ = 127, LA = 128, LB = 129, LC = 130, LI = 131, LK = 132, LR = 133, LS = 134, LT = 135, LU = 136, LV = 137, LY = 138, MA = 139, MC = 140, MD = 141, ME = 142, MF = 143, MG = 144, MH = 145, MK = 146, ML = 147, MM = 148, MN = 149, MO = 150, MP = 151, MQ = 152, MR = 153, MS = 154, MT = 155, MU = 156, MV = 157, MW = 158, MX = 159, MY = 160, MZ = 161, NA = 162, NC = 163, NE = 164, NF = 165, NG = 166, NI = 167, NL = 168, NO = 169, NP = 170, NR = 171, NU = 172, NZ = 173, OM = 174, PA = 175, PE = 176, PF = 177, PG = 178, PH = 179, PK = 180, PL = 181, PM = 182, PN = 183, PR = 184, PS = 185, PT = 186, PW = 187, PY = 188, QA = 189, RE = 190, RO = 191, RS = 192, RU = 193, RW = 194, SA = 195, SB = 196, SC = 197, SD = 198, SE = 199, SG = 200, SH = 201, SI = 202, SJ = 203, SK = 204, SL = 205, SM = 206, SN = 207, SO = 208, SR = 209, SS = 210, ST = 211, SV = 212, SX = 213, SY = 214, SZ = 215, TA = 216, TC = 217, TD = 218, TF = 219, TG = 220, TH = 221, TJ = 222, TK = 223, TL = 224, TM = 225, TN = 226, TO = 227, TR = 228, TT = 229, TV = 230, TW = 231, TZ = 232, UA = 233, UG = 234, UM = 235, US = 236, UY = 237, UZ = 238, VA = 239, VC = 240, VE = 241, VG = 242, VI = 243, VN = 244, VU = 245, WF = 246, WS = 247, XA = 248, XB = 249, XK = 250, YE = 251, YT = 252, ZA = 253, ZM = 254, ZW = 255 }
+	export enum Country { '' = '', AC = 'AC', AD = 'AD', AE = 'AE', AF = 'AF', AG = 'AG', AI = 'AI', AL = 'AL', AM = 'AM', AO = 'AO', AQ = 'AQ', AR = 'AR', AS = 'AS', AT = 'AT', AU = 'AU', AW = 'AW', AX = 'AX', AZ = 'AZ', BA = 'BA', BB = 'BB', BD = 'BD', BE = 'BE', BF = 'BF', BG = 'BG', BH = 'BH', BI = 'BI', BJ = 'BJ', BL = 'BL', BM = 'BM', BN = 'BN', BO = 'BO', BQ = 'BQ', BR = 'BR', BS = 'BS', BT = 'BT', BW = 'BW', BY = 'BY', BZ = 'BZ', CA = 'CA', CC = 'CC', CD = 'CD', CF = 'CF', CG = 'CG', CH = 'CH', CI = 'CI', CK = 'CK', CL = 'CL', CM = 'CM', CN = 'CN', CO = 'CO', CR = 'CR', CU = 'CU', CV = 'CV', CW = 'CW', CX = 'CX', CY = 'CY', CZ = 'CZ', DE = 'DE', DG = 'DG', DJ = 'DJ', DK = 'DK', DM = 'DM', DO = 'DO', DZ = 'DZ', EA = 'EA', EC = 'EC', EE = 'EE', EG = 'EG', EH = 'EH', ER = 'ER', ES = 'ES', ET = 'ET', FI = 'FI', FJ = 'FJ', FK = 'FK', FM = 'FM', FO = 'FO', FR = 'FR', GA = 'GA', GB = 'GB', GD = 'GD', GE = 'GE', GF = 'GF', GG = 'GG', GH = 'GH', GI = 'GI', GL = 'GL', GM = 'GM', GN = 'GN', GP = 'GP', GQ = 'GQ', GR = 'GR', GS = 'GS', GT = 'GT', GU = 'GU', GW = 'GW', GY = 'GY', HK = 'HK', HN = 'HN', HR = 'HR', HT = 'HT', HU = 'HU', IC = 'IC', ID = 'ID', IE = 'IE', IL = 'IL', IM = 'IM', IN = 'IN', IO = 'IO', IQ = 'IQ', IR = 'IR', IS = 'IS', IT = 'IT', JE = 'JE', JM = 'JM', JO = 'JO', JP = 'JP', KE = 'KE', KG = 'KG', KH = 'KH', KI = 'KI', KM = 'KM', KN = 'KN', KP = 'KP', KR = 'KR', KW = 'KW', KY = 'KY', KZ = 'KZ', LA = 'LA', LB = 'LB', LC = 'LC', LI = 'LI', LK = 'LK', LR = 'LR', LS = 'LS', LT = 'LT', LU = 'LU', LV = 'LV', LY = 'LY', MA = 'MA', MC = 'MC', MD = 'MD', ME = 'ME', MF = 'MF', MG = 'MG', MH = 'MH', MK = 'MK', ML = 'ML', MM = 'MM', MN = 'MN', MO = 'MO', MP = 'MP', MQ = 'MQ', MR = 'MR', MS = 'MS', MT = 'MT', MU = 'MU', MV = 'MV', MW = 'MW', MX = 'MX', MY = 'MY', MZ = 'MZ', NA = 'NA', NC = 'NC', NE = 'NE', NF = 'NF', NG = 'NG', NI = 'NI', NL = 'NL', NO = 'NO', NP = 'NP', NR = 'NR', NU = 'NU', NZ = 'NZ', OM = 'OM', PA = 'PA', PE = 'PE', PF = 'PF', PG = 'PG', PH = 'PH', PK = 'PK', PL = 'PL', PM = 'PM', PN = 'PN', PR = 'PR', PS = 'PS', PT = 'PT', PW = 'PW', PY = 'PY', QA = 'QA', RE = 'RE', RO = 'RO', RS = 'RS', RU = 'RU', RW = 'RW', SA = 'SA', SB = 'SB', SC = 'SC', SD = 'SD', SE = 'SE', SG = 'SG', SH = 'SH', SI = 'SI', SJ = 'SJ', SK = 'SK', SL = 'SL', SM = 'SM', SN = 'SN', SO = 'SO', SR = 'SR', SS = 'SS', ST = 'ST', SV = 'SV', SX = 'SX', SY = 'SY', SZ = 'SZ', TA = 'TA', TC = 'TC', TD = 'TD', TF = 'TF', TG = 'TG', TH = 'TH', TJ = 'TJ', TK = 'TK', TL = 'TL', TM = 'TM', TN = 'TN', TO = 'TO', TR = 'TR', TT = 'TT', TV = 'TV', TW = 'TW', TZ = 'TZ', UA = 'UA', UG = 'UG', UM = 'UM', US = 'US', UY = 'UY', UZ = 'UZ', VA = 'VA', VC = 'VC', VE = 'VE', VG = 'VG', VI = 'VI', VN = 'VN', VU = 'VU', WF = 'WF', WS = 'WS', XA = 'XA', XB = 'XB', XK = 'XK', YE = 'YE', YT = 'YT', ZA = 'ZA', ZM = 'ZM', ZW = 'ZW' }
 
-	export enum Currency { AUD = 0, BGN = 1, BRL = 2, CAD = 3, CHF = 4, CNY = 5, CZK = 6, DKK = 7, EUR = 8, GBP = 9, HKD = 10, HRK = 11, HUF = 12, IDR = 13, ILS = 14, INR = 15, ISK = 16, JPY = 17, KRW = 18, LTL = 19, LVL = 20, MXN = 21, MYR = 22, NOK = 23, NZD = 24, PHP = 25, PLN = 26, RON = 27, RSD = 28, RUB = 29, SEK = 30, SGD = 31, THB = 32, TRY = 33, UAH = 34, USD = 35, ZAR = 36 }
+	export enum Currency { AUD = 'AUD', BGN = 'BGN', BRL = 'BRL', CAD = 'CAD', CHF = 'CHF', CNY = 'CNY', CZK = 'CZK', DKK = 'DKK', EUR = 'EUR', GBP = 'GBP', HKD = 'HKD', HRK = 'HRK', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', ISK = 'ISK', JPY = 'JPY', KRW = 'KRW', LTL = 'LTL', LVL = 'LVL', MXN = 'MXN', MYR = 'MYR', NOK = 'NOK', NZD = 'NZD', PHP = 'PHP', PLN = 'PLN', RON = 'RON', RSD = 'RSD', RUB = 'RUB', SEK = 'SEK', SGD = 'SGD', THB = 'THB', TRY = 'TRY', UAH = 'UAH', USD = 'USD', ZAR = 'ZAR' }
 
 
 	/** Document object representing your invoice. */
@@ -292,11 +292,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentItemVat { '0%' = 0, '1%' = 1, '10%' = 2, '11%' = 3, '12%' = 4, '13%' = 5, '14%' = 6, '15%' = 7, '16%' = 8, '17%' = 9, '18%' = 10, '19%' = 11, '2%' = 12, '20%' = 13, '21%' = 14, '22%' = 15, '23%' = 16, '24%' = 17, '25%' = 18, '26%' = 19, '27%' = 20, '3%' = 21, '4%' = 22, '5%' = 23, '6%' = 24, '7%' = 25, '8%' = 26, '9%' = 27, AAM = 28, AM = 29, EU = 30, EUK = 31, 'F.AFA' = 32, FAD = 33, 'K.AFA' = 34, MAA = 35, TAM = 36, ÁKK = 37, ÁTHK = 38 }
+	export enum DocumentItemVat { '0%' = '0%', '1%' = '1%', '10%' = '10%', '11%' = '11%', '12%' = '12%', '13%' = '13%', '14%' = '14%', '15%' = '15%', '16%' = '16%', '17%' = '17%', '18%' = '18%', '19%' = '19%', '2%' = '2%', '20%' = '20%', '21%' = '21%', '22%' = '22%', '23%' = '23%', '24%' = '24%', '25%' = '25%', '26%' = '26%', '27%' = '27%', '3%' = '3%', '4%' = '4%', '5%' = '5%', '6%' = '6%', '7%' = '7%', '8%' = '8%', '9%' = '9%', AAM = 'AAM', AM = 'AM', EU = 'EU', EUK = 'EUK', 'F.AFA' = 'F.AFA', FAD = 'FAD', 'K.AFA' = 'K.AFA', MAA = 'MAA', TAM = 'TAM', ÁKK = 'ÁKK', ÁTHK = 'ÁTHK' }
 
-	export enum DocumentLanguage { de = 0, en = 1, fr = 2, hr = 3, hu = 4, it = 5, ro = 6, sk = 7 }
+	export enum DocumentLanguage { de = 'de', en = 'en', fr = 'fr', hr = 'hr', hu = 'hu', it = 'it', ro = 'ro', sk = 'sk' }
 
-	export enum DocumentNotification_status { closed = 0, downloaded = 1, failed = 2, none = 3, opened = 4, readed = 5 }
+	export enum DocumentNotification_status { closed = 'closed', downloaded = 'downloaded', failed = 'failed', none = 'none', opened = 'opened', readed = 'readed' }
 
 	export interface DocumentOrganization {
 		address?: Address;
@@ -361,9 +361,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentPayment_method { aruhitel = 0, bankcard = 1, barion = 2, barter = 3, cash = 4, cash_on_delivery = 5, coupon = 6, elore_utalas = 7, ep_kartya = 8, kompenzacio = 9, levonas = 10, online_bankcard = 11, payoneer = 12, paypal = 13, paypal_utolag = 14, payu = 15, pick_pack_pont = 16, postai_csekk = 17, postautalvany = 18, skrill = 19, szep_card = 20, transferwise = 21, upwork = 22, utalvany = 23, valto = 24, wire_transfer = 25 }
+	export enum DocumentPayment_method { aruhitel = 'aruhitel', bankcard = 'bankcard', barion = 'barion', barter = 'barter', cash = 'cash', cash_on_delivery = 'cash_on_delivery', coupon = 'coupon', elore_utalas = 'elore_utalas', ep_kartya = 'ep_kartya', kompenzacio = 'kompenzacio', levonas = 'levonas', online_bankcard = 'online_bankcard', payoneer = 'payoneer', paypal = 'paypal', paypal_utolag = 'paypal_utolag', payu = 'payu', pick_pack_pont = 'pick_pack_pont', postai_csekk = 'postai_csekk', postautalvany = 'postautalvany', skrill = 'skrill', szep_card = 'szep_card', transferwise = 'transferwise', upwork = 'upwork', utalvany = 'utalvany', valto = 'valto', wire_transfer = 'wire_transfer' }
 
-	export enum DocumentPayment_status { expired = 0, none = 1, outstanding = 2, paid = 3, partially_paid = 4 }
+	export enum DocumentPayment_status { expired = 'expired', none = 'none', outstanding = 'outstanding', paid = 'paid', partially_paid = 'partially_paid' }
 
 	export interface DocumentSettings {
 		mediated_service?: boolean | null;
@@ -390,9 +390,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentSettingsOnline_payment { '' = 0, Barion = 1, SimplePay = 2, no = 3 }
+	export enum DocumentSettingsOnline_payment { '' = '', Barion = 'Barion', SimplePay = 'SimplePay', no = 'no' }
 
-	export enum DocumentSettingsRound { five = 0, none = 1, one = 2, ten = 3 }
+	export enum DocumentSettingsRound { five = 'five', none = 'none', one = 'one', ten = 'ten' }
 
 	export interface DocumentSummary {
 		gross_amount_local?: number | null;
@@ -448,7 +448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentType { advance = 0, canceled = 1, cancellation = 2, draft = 3, invoice = 4, proforma = 5 }
+	export enum DocumentType { advance = 'advance', canceled = 'canceled', cancellation = 'cancellation', draft = 'draft', invoice = 'invoice', proforma = 'proforma' }
 
 	export interface DocumentBlock {
 		custom_field1?: string | null;
@@ -594,7 +594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentInsertType { advance = 0, draft = 1, invoice = 2, proforma = 3 }
+	export enum DocumentInsertType { advance = 'advance', draft = 'draft', invoice = 'invoice', proforma = 'proforma' }
 
 	export interface DocumentItemData {
 
@@ -653,7 +653,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentNotificationStatus { closed = 0, downloaded = 1, failed = 2, none = 3, opened = 4, readed = 5 }
+	export enum DocumentNotificationStatus { closed = 'closed', downloaded = 'downloaded', failed = 'failed', none = 'none', opened = 'opened', readed = 'readed' }
 
 	export interface DocumentProductData {
 		comment?: string | null;
@@ -710,7 +710,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentProductDataUnit_price_type { gross = 0, net = 1 }
+	export enum DocumentProductDataUnit_price_type { gross = 'gross', net = 'net' }
 
 	export interface DocumentPublicUrl {
 		public_url?: string | null;
@@ -741,7 +741,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OnlinePayment { '' = 0, Barion = 1, SimplePay = 2, no = 3 }
+	export enum OnlinePayment { '' = '', Barion = 'Barion', SimplePay = 'SimplePay', no = 'no' }
 
 	export interface OnlineSzamlaStatus {
 		messages?: Array<OnlineSzamlaStatusMessage>;
@@ -921,9 +921,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentMethod { aruhitel = 0, bankcard = 1, barion = 2, barter = 3, cash = 4, cash_on_delivery = 5, coupon = 6, elore_utalas = 7, ep_kartya = 8, kompenzacio = 9, levonas = 10, online_bankcard = 11, payoneer = 12, paypal = 13, paypal_utolag = 14, payu = 15, pick_pack_pont = 16, postai_csekk = 17, postautalvany = 18, skrill = 19, szep_card = 20, transferwise = 21, upwork = 22, utalvany = 23, valto = 24, wire_transfer = 25 }
+	export enum PaymentMethod { aruhitel = 'aruhitel', bankcard = 'bankcard', barion = 'barion', barter = 'barter', cash = 'cash', cash_on_delivery = 'cash_on_delivery', coupon = 'coupon', elore_utalas = 'elore_utalas', ep_kartya = 'ep_kartya', kompenzacio = 'kompenzacio', levonas = 'levonas', online_bankcard = 'online_bankcard', payoneer = 'payoneer', paypal = 'paypal', paypal_utolag = 'paypal_utolag', payu = 'payu', pick_pack_pont = 'pick_pack_pont', postai_csekk = 'postai_csekk', postautalvany = 'postautalvany', skrill = 'skrill', szep_card = 'szep_card', transferwise = 'transferwise', upwork = 'upwork', utalvany = 'utalvany', valto = 'valto', wire_transfer = 'wire_transfer' }
 
-	export enum PaymentStatus { expired = 0, none = 1, outstanding = 2, paid = 3, partially_paid = 4 }
+	export enum PaymentStatus { expired = 'expired', none = 'none', outstanding = 'outstanding', paid = 'paid', partially_paid = 'partially_paid' }
 
 	export interface Product {
 		comment?: string | null;
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Round { five = 0, none = 1, one = 2, ten = 3 }
+	export enum Round { five = 'five', none = 'none', one = 'one', ten = 'ten' }
 
 	export interface SendDocument {
 		emails?: Array<string>;
@@ -1055,7 +1055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnitPriceType { gross = 0, net = 1 }
+	export enum UnitPriceType { gross = 'gross', net = 'net' }
 
 	export interface ValidationError {
 		field?: string | null;
@@ -1087,7 +1087,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Vat { '0%' = 0, '1%' = 1, '10%' = 2, '11%' = 3, '12%' = 4, '13%' = 5, '14%' = 6, '15%' = 7, '16%' = 8, '17%' = 9, '18%' = 10, '19%' = 11, '2%' = 12, '20%' = 13, '21%' = 14, '22%' = 15, '23%' = 16, '24%' = 17, '25%' = 18, '26%' = 19, '27%' = 20, '3%' = 21, '4%' = 22, '5%' = 23, '6%' = 24, '7%' = 25, '8%' = 26, '9%' = 27, AAM = 28, AM = 29, EU = 30, EUK = 31, 'F.AFA' = 32, FAD = 33, 'K.AFA' = 34, MAA = 35, TAM = 36, ÁKK = 37, ÁTHK = 38 }
+	export enum Vat { '0%' = '0%', '1%' = '1%', '10%' = '10%', '11%' = '11%', '12%' = '12%', '13%' = '13%', '14%' = '14%', '15%' = '15%', '16%' = '16%', '17%' = '17%', '18%' = '18%', '19%' = '19%', '2%' = '2%', '20%' = '20%', '21%' = '21%', '22%' = '22%', '23%' = '23%', '24%' = '24%', '25%' = '25%', '26%' = '26%', '27%' = '27%', '3%' = '3%', '4%' = '4%', '5%' = '5%', '6%' = '6%', '7%' = '7%', '8%' = '8%', '9%' = '9%', AAM = 'AAM', AM = 'AM', EU = 'EU', EUK = 'EUK', 'F.AFA' = 'F.AFA', FAD = 'FAD', 'K.AFA' = 'K.AFA', MAA = 'MAA', TAM = 'TAM', ÁKK = 'ÁKK', ÁTHK = 'ÁTHK' }
 
 	@Injectable()
 	export class MyClient {

@@ -91,7 +91,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TunnelStatus { OPEN = 0, CLOSED = 1 }
+	export enum TunnelStatus { OPEN = 'OPEN', CLOSED = 'CLOSED' }
 
 
 	/** The state of a connection. */
@@ -113,7 +113,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStatus { CONNECTED = 0, DISCONNECTED = 1 }
+	export enum ConnectionStatus { CONNECTED = 'CONNECTED', DISCONNECTED = 'DISCONNECTED' }
 
 
 	/** The destination configuration. */
@@ -384,7 +384,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientMode { SOURCE = 0, DESTINATION = 1, ALL = 2 }
+	export enum ClientMode { SOURCE = 'SOURCE', DESTINATION = 'DESTINATION', ALL = 'ALL' }
 
 	export interface TagResourceResponse {
 	}
@@ -526,21 +526,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CloseTunnelX_Amz_Target { 'IoTSecuredTunneling.CloseTunnel' = 0 }
+	export enum CloseTunnelX_Amz_Target { 'IoTSecuredTunneling.CloseTunnel' = 'IoTSecuredTunneling.CloseTunnel' }
 
-	export enum DescribeTunnelX_Amz_Target { 'IoTSecuredTunneling.DescribeTunnel' = 0 }
+	export enum DescribeTunnelX_Amz_Target { 'IoTSecuredTunneling.DescribeTunnel' = 'IoTSecuredTunneling.DescribeTunnel' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'IoTSecuredTunneling.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'IoTSecuredTunneling.ListTagsForResource' = 'IoTSecuredTunneling.ListTagsForResource' }
 
-	export enum ListTunnelsX_Amz_Target { 'IoTSecuredTunneling.ListTunnels' = 0 }
+	export enum ListTunnelsX_Amz_Target { 'IoTSecuredTunneling.ListTunnels' = 'IoTSecuredTunneling.ListTunnels' }
 
-	export enum OpenTunnelX_Amz_Target { 'IoTSecuredTunneling.OpenTunnel' = 0 }
+	export enum OpenTunnelX_Amz_Target { 'IoTSecuredTunneling.OpenTunnel' = 'IoTSecuredTunneling.OpenTunnel' }
 
-	export enum RotateTunnelAccessTokenX_Amz_Target { 'IoTSecuredTunneling.RotateTunnelAccessToken' = 0 }
+	export enum RotateTunnelAccessTokenX_Amz_Target { 'IoTSecuredTunneling.RotateTunnelAccessToken' = 'IoTSecuredTunneling.RotateTunnelAccessToken' }
 
-	export enum TagResourceX_Amz_Target { 'IoTSecuredTunneling.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'IoTSecuredTunneling.TagResource' = 'IoTSecuredTunneling.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'IoTSecuredTunneling.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'IoTSecuredTunneling.UntagResource' = 'IoTSecuredTunneling.UntagResource' }
 
 }
 

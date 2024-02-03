@@ -266,7 +266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CartItemDtoType { goods = 0, shipment = 1, handling = 2, voucher = 3 }
+	export enum CartItemDtoType { goods = 'goods', shipment = 'shipment', handling = 'handling', voucher = 'voucher' }
 
 
 	/** relevant information for the invoice module */
@@ -523,13 +523,13 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkCreateRequestCurrency { ALL = 0, DZD = 1, ARS = 2, AUD = 3, BSD = 4, BHD = 5, BDT = 6, AMD = 7, BBD = 8, BMD = 9, BTN = 10, BOB = 11, BWP = 12, BZD = 13, SBD = 14, BND = 15, MMK = 16, BIF = 17, KHR = 18, CAD = 19, CVE = 20, KYD = 21, LKR = 22, CLP = 23, CNY = 24, COP = 25, KMF = 26, CRC = 27, HRK = 28, CUP = 29, CZK = 30, DKK = 31, DOP = 32, SVC = 33, ETB = 34, ERN = 35, FKP = 36, FJD = 37, DJF = 38, GMD = 39, GIP = 40, GTQ = 41, GNF = 42, GYD = 43, HTG = 44, HNL = 45, HKD = 46, HUF = 47, ISK = 48, INR = 49, IDR = 50, IRR = 51, IQD = 52, ILS = 53, JMD = 54, JPY = 55, KZT = 56, JOD = 57, KES = 58, KPW = 59, KRW = 60, KWD = 61, KGS = 62, LAK = 63, LBP = 64, LSL = 65, LRD = 66, LYD = 67, MOP = 68, MWK = 69, MYR = 70, MVR = 71, MUR = 72, MXN = 73, MNT = 74, MDL = 75, MAD = 76, OMR = 77, NAD = 78, NPR = 79, ANG = 80, AWG = 81, VUV = 82, NZD = 83, NIO = 84, NGN = 85, NOK = 86, PKR = 87, PAB = 88, PGK = 89, PYG = 90, PEN = 91, PHP = 92, QAR = 93, RUB = 94, RWF = 95, SHP = 96, SAR = 97, SCR = 98, SLL = 99, SGD = 100, VND = 101, SOS = 102, ZAR = 103, SSP = 104, SZL = 105, SEK = 106, CHF = 107, SYP = 108, THB = 109, TOP = 110, TTD = 111, AED = 112, TND = 113, UGX = 114, MKD = 115, EGP = 116, GBP = 117, TZS = 118, USD = 119, UYU = 120, UZS = 121, WST = 122, YER = 123, TWD = 124, UYW = 125, VES = 126, MRU = 127, STN = 128, CUC = 129, ZWL = 130, BYN = 131, TMT = 132, GHS = 133, SDG = 134, UYI = 135, RSD = 136, MZN = 137, AZN = 138, RON = 139, CHE = 140, CHW = 141, TRY = 142, XAF = 143, XCD = 144, XOF = 145, XPF = 146, XBA = 147, XBB = 148, XBC = 149, XBD = 150, XAU = 151, XDR = 152, XAG = 153, XPT = 154, XTS = 155, XPD = 156, XUA = 157, ZMW = 158, SRD = 159, MGA = 160, COU = 161, AFN = 162, TJS = 163, AOA = 164, BGN = 165, CDF = 166, BAM = 167, EUR = 168, MXV = 169, UAH = 170, GEL = 171, BOV = 172, PLN = 173, BRL = 174, CLF = 175, XSU = 176, USN = 177 }
+	export enum LinkCreateRequestCurrency { ALL = 'ALL', DZD = 'DZD', ARS = 'ARS', AUD = 'AUD', BSD = 'BSD', BHD = 'BHD', BDT = 'BDT', AMD = 'AMD', BBD = 'BBD', BMD = 'BMD', BTN = 'BTN', BOB = 'BOB', BWP = 'BWP', BZD = 'BZD', SBD = 'SBD', BND = 'BND', MMK = 'MMK', BIF = 'BIF', KHR = 'KHR', CAD = 'CAD', CVE = 'CVE', KYD = 'KYD', LKR = 'LKR', CLP = 'CLP', CNY = 'CNY', COP = 'COP', KMF = 'KMF', CRC = 'CRC', HRK = 'HRK', CUP = 'CUP', CZK = 'CZK', DKK = 'DKK', DOP = 'DOP', SVC = 'SVC', ETB = 'ETB', ERN = 'ERN', FKP = 'FKP', FJD = 'FJD', DJF = 'DJF', GMD = 'GMD', GIP = 'GIP', GTQ = 'GTQ', GNF = 'GNF', GYD = 'GYD', HTG = 'HTG', HNL = 'HNL', HKD = 'HKD', HUF = 'HUF', ISK = 'ISK', INR = 'INR', IDR = 'IDR', IRR = 'IRR', IQD = 'IQD', ILS = 'ILS', JMD = 'JMD', JPY = 'JPY', KZT = 'KZT', JOD = 'JOD', KES = 'KES', KPW = 'KPW', KRW = 'KRW', KWD = 'KWD', KGS = 'KGS', LAK = 'LAK', LBP = 'LBP', LSL = 'LSL', LRD = 'LRD', LYD = 'LYD', MOP = 'MOP', MWK = 'MWK', MYR = 'MYR', MVR = 'MVR', MUR = 'MUR', MXN = 'MXN', MNT = 'MNT', MDL = 'MDL', MAD = 'MAD', OMR = 'OMR', NAD = 'NAD', NPR = 'NPR', ANG = 'ANG', AWG = 'AWG', VUV = 'VUV', NZD = 'NZD', NIO = 'NIO', NGN = 'NGN', NOK = 'NOK', PKR = 'PKR', PAB = 'PAB', PGK = 'PGK', PYG = 'PYG', PEN = 'PEN', PHP = 'PHP', QAR = 'QAR', RUB = 'RUB', RWF = 'RWF', SHP = 'SHP', SAR = 'SAR', SCR = 'SCR', SLL = 'SLL', SGD = 'SGD', VND = 'VND', SOS = 'SOS', ZAR = 'ZAR', SSP = 'SSP', SZL = 'SZL', SEK = 'SEK', CHF = 'CHF', SYP = 'SYP', THB = 'THB', TOP = 'TOP', TTD = 'TTD', AED = 'AED', TND = 'TND', UGX = 'UGX', MKD = 'MKD', EGP = 'EGP', GBP = 'GBP', TZS = 'TZS', USD = 'USD', UYU = 'UYU', UZS = 'UZS', WST = 'WST', YER = 'YER', TWD = 'TWD', UYW = 'UYW', VES = 'VES', MRU = 'MRU', STN = 'STN', CUC = 'CUC', ZWL = 'ZWL', BYN = 'BYN', TMT = 'TMT', GHS = 'GHS', SDG = 'SDG', UYI = 'UYI', RSD = 'RSD', MZN = 'MZN', AZN = 'AZN', RON = 'RON', CHE = 'CHE', CHW = 'CHW', TRY = 'TRY', XAF = 'XAF', XCD = 'XCD', XOF = 'XOF', XPF = 'XPF', XBA = 'XBA', XBB = 'XBB', XBC = 'XBC', XBD = 'XBD', XAU = 'XAU', XDR = 'XDR', XAG = 'XAG', XPT = 'XPT', XTS = 'XTS', XPD = 'XPD', XUA = 'XUA', ZMW = 'ZMW', SRD = 'SRD', MGA = 'MGA', COU = 'COU', AFN = 'AFN', TJS = 'TJS', AOA = 'AOA', BGN = 'BGN', CDF = 'CDF', BAM = 'BAM', EUR = 'EUR', MXV = 'MXV', UAH = 'UAH', GEL = 'GEL', BOV = 'BOV', PLN = 'PLN', BRL = 'BRL', CLF = 'CLF', XSU = 'XSU', USN = 'USN' }
 
-	export enum LinkCreateRequestIntent { authorization = 0, preauthorization = 1 }
+	export enum LinkCreateRequestIntent { authorization = 'authorization', preauthorization = 'preauthorization' }
 
-	export enum LinkCreateRequestLanguage { de_DE = 0, en_US = 1 }
+	export enum LinkCreateRequestLanguage { de_DE = 'de_DE', en_US = 'en_US' }
 
-	export enum LinkCreateRequestMode { live = 0, test = 1 }
+	export enum LinkCreateRequestMode { live = 'live', test = 'test' }
 
 	export interface LinkResponse {
 
@@ -792,9 +792,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkResponsePaymentMethod { visa = 0, mastercard = 1, amex = 2, paypal = 3, sofort = 4, paydirekt = 5, 'postfinance-e' = 6, 'postfinance-card' = 7, bancontact = 8, przelewy24 = 9, alipay = 10, ideal = 11, eps = 12, giropay = 13, sepa = 14 }
+	export enum LinkResponsePaymentMethod { visa = 'visa', mastercard = 'mastercard', amex = 'amex', paypal = 'paypal', sofort = 'sofort', paydirekt = 'paydirekt', 'postfinance-e' = 'postfinance-e', 'postfinance-card' = 'postfinance-card', bancontact = 'bancontact', przelewy24 = 'przelewy24', alipay = 'alipay', ideal = 'ideal', eps = 'eps', giropay = 'giropay', sepa = 'sepa' }
 
-	export enum LinkResponseStatus { ready = 0, created = 1, executed = 2, expired = 3, deactivated = 4 }
+	export enum LinkResponseStatus { ready = 'ready', created = 'created', executed = 'executed', expired = 'expired', deactivated = 'deactivated' }
 
 	export interface PageLinkResponse {
 		content?: Array<LinkResponse>;

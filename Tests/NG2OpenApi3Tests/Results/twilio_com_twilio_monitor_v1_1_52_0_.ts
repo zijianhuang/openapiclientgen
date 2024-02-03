@@ -150,7 +150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Monitorv1alertRequest_method { HEAD = 0, GET = 1, POST = 2, PATCH = 3, PUT = 4, DELETE = 5 }
+	export enum Monitorv1alertRequest_method { HEAD = 'HEAD', GET = 'GET', POST = 'POST', PATCH = 'PATCH', PUT = 'PUT', DELETE = 'DELETE' }
 
 	export interface Monitorv1alert_instance {
 

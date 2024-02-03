@@ -102,7 +102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeValueType { ATTRIBUTE_VALUE_TYPE_UNSPECIFIED = 0, BOOL = 1, ENUM = 2, URL = 3, REPEATED_ENUM = 4 }
+	export enum AttributeValueType { ATTRIBUTE_VALUE_TYPE_UNSPECIFIED = 'ATTRIBUTE_VALUE_TYPE_UNSPECIFIED', BOOL = 'BOOL', ENUM = 'ENUM', URL = 'URL', REPEATED_ENUM = 'REPEATED_ENUM' }
 
 
 	/** Metadata for an attribute. Contains display information for the attribute, including a localized name and a heading for grouping related attributes together. */
@@ -380,7 +380,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimePeriodCloseDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum TimePeriodCloseDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
@@ -955,7 +955,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OpenInfoStatus { OPEN_FOR_BUSINESS_UNSPECIFIED = 0, OPEN = 1, CLOSED_PERMANENTLY = 2, CLOSED_TEMPORARILY = 3 }
+	export enum OpenInfoStatus { OPEN_FOR_BUSINESS_UNSPECIFIED = 'OPEN_FOR_BUSINESS_UNSPECIFIED', OPEN = 'OPEN', CLOSED_PERMANENTLY = 'CLOSED_PERMANENTLY', CLOSED_TEMPORARILY = 'CLOSED_TEMPORARILY' }
 
 
 	/** A collection of phone numbers for the business. During updates, both fields must be set. Clients may not update just the primary or additional phone numbers using the update mask. International phone format is preferred, such as "+1 415 555 0132", see more in (https://developers.google.com/style/phone-numbers#international-phone-numbers). */
@@ -1057,7 +1057,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelevantLocationRelationType { RELATION_TYPE_UNSPECIFIED = 0, DEPARTMENT_OF = 1, INDEPENDENT_ESTABLISHMENT_IN = 2 }
+	export enum RelevantLocationRelationType { RELATION_TYPE_UNSPECIFIED = 'RELATION_TYPE_UNSPECIFIED', DEPARTMENT_OF = 'DEPARTMENT_OF', INDEPENDENT_ESTABLISHMENT_IN = 'INDEPENDENT_ESTABLISHMENT_IN' }
 
 
 	/** Service area businesses provide their service at the customer's location (for example, a locksmith or plumber). */
@@ -1090,7 +1090,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceAreaBusinessBusinessType { BUSINESS_TYPE_UNSPECIFIED = 0, CUSTOMER_LOCATION_ONLY = 1, CUSTOMER_AND_BUSINESS_LOCATION = 2 }
+	export enum ServiceAreaBusinessBusinessType { BUSINESS_TYPE_UNSPECIFIED = 'BUSINESS_TYPE_UNSPECIFIED', CUSTOMER_LOCATION_ONLY = 'CUSTOMER_LOCATION_ONLY', CUSTOMER_AND_BUSINESS_LOCATION = 'CUSTOMER_AND_BUSINESS_LOCATION' }
 
 
 	/** Defines the union of areas represented by a set of places. */
@@ -1670,7 +1670,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Mybusinessbusinessinformation_categories_listView { CATEGORY_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Mybusinessbusinessinformation_categories_listView { CATEGORY_VIEW_UNSPECIFIED = 'CATEGORY_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

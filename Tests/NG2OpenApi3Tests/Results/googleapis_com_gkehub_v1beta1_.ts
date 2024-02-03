@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Authority encodes how Google will recognize identities from this Membership. See the workload identity documentation for more details: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity */
@@ -840,9 +840,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OnPremClusterClusterType { CLUSTERTYPE_UNSPECIFIED = 0, BOOTSTRAP = 1, HYBRID = 2, STANDALONE = 3, USER = 4 }
+	export enum OnPremClusterClusterType { CLUSTERTYPE_UNSPECIFIED = 'CLUSTERTYPE_UNSPECIFIED', BOOTSTRAP = 'BOOTSTRAP', HYBRID = 'HYBRID', STANDALONE = 'STANDALONE', USER = 'USER' }
 
-	export enum MembershipInfrastructureType { INFRASTRUCTURE_TYPE_UNSPECIFIED = 0, ON_PREM = 1, MULTI_CLOUD = 2 }
+	export enum MembershipInfrastructureType { INFRASTRUCTURE_TYPE_UNSPECIFIED = 'INFRASTRUCTURE_TYPE_UNSPECIFIED', ON_PREM = 'ON_PREM', MULTI_CLOUD = 'MULTI_CLOUD' }
 
 
 	/** MonitoringConfig informs Fleet-based applications/services/UIs how the metrics for the underlying cluster is reported to cloud monitoring services. It can be set from empty to non-empty, but can't be mutated directly to prevent accidentally breaking the constinousty of metrics. */
@@ -928,7 +928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MembershipStateCode { CODE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3, UPDATING = 4, SERVICE_UPDATING = 5 }
+	export enum MembershipStateCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING', UPDATING = 'UPDATING', SERVICE_UPDATING = 'SERVICE_UPDATING' }
 
 
 	/** The response message for Operations.ListOperations. */

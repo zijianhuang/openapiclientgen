@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailableOperationOrigin { user = 0, system = 1, 'user,system' = 2 }
+	export enum AvailableOperationOrigin { user = 'user', system = 'system', 'user,system' = 'user,system' }
 
 
 	/** Available operation display property service specification model */
@@ -184,7 +184,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailableOperationDisplayPropertyServiceSpecificationMetricsItemAggregationType { Average = 0, Total = 1 }
+	export enum AvailableOperationDisplayPropertyServiceSpecificationMetricsItemAggregationType { Average = 'Average', Total = 'Total' }
 
 
 	/** List of available operation display property service specification metrics */
@@ -310,7 +310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomizationHostNameType { USER_DEFINED = 0, PREFIX_BASED = 1, FIXED = 2, VIRTUAL_MACHINE_NAME = 3, CUSTOM_NAME = 4 }
+	export enum CustomizationHostNameType { USER_DEFINED = 'USER_DEFINED', PREFIX_BASED = 'PREFIX_BASED', FIXED = 'FIXED', VIRTUAL_MACHINE_NAME = 'VIRTUAL_MACHINE_NAME', CUSTOM_NAME = 'CUSTOM_NAME' }
 
 	export interface CustomizationIPAddress {
 
@@ -343,7 +343,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomizationIPAddressType { CUSTOM = 0, DHCP_IP = 1, FIXED_IP = 2, USER_DEFINED = 3 }
+	export enum CustomizationIPAddressType { CUSTOM = 'CUSTOM', DHCP_IP = 'DHCP_IP', FIXED_IP = 'FIXED_IP', USER_DEFINED = 'USER_DEFINED' }
 
 	export interface CustomizationIPSettings {
 
@@ -396,7 +396,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomizationIdentityType { WINDOWS_TEXT = 0, WINDOWS = 1, LINUX = 2 }
+	export enum CustomizationIdentityType { WINDOWS_TEXT = 'WINDOWS_TEXT', WINDOWS = 'WINDOWS', LINUX = 'LINUX' }
 
 	export interface CustomizationIdentityUserData {
 
@@ -561,7 +561,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomizationPolicyPropertiesType { LINUX = 0, WINDOWS = 1 }
+	export enum CustomizationPolicyPropertiesType { LINUX = 'LINUX', WINDOWS = 'WINDOWS' }
 
 
 	/** Dedicated cloud node model */
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DedicatedCloudNodePropertiesStatus { unused = 0, used = 1 }
+	export enum DedicatedCloudNodePropertiesStatus { unused = 'unused', used = 'used' }
 
 
 	/** Dedicated cloud service model */
@@ -904,7 +904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DedicatedCloudServicePropertiesIsAccountOnboarded { notOnBoarded = 0, onBoarded = 1, onBoardingFailed = 2, onBoarding = 3 }
+	export enum DedicatedCloudServicePropertiesIsAccountOnboarded { notOnBoarded = 'notOnBoarded', onBoarded = 'onBoarded', onBoardingFailed = 'onBoardingFailed', onBoarding = 'onBoarding' }
 
 
 	/** Guest OS Customization properties */
@@ -990,7 +990,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GuestOSNICCustomizationAllocation { static = 0, dynamic = 1 }
+	export enum GuestOSNICCustomizationAllocation { static = 'static', dynamic = 'dynamic' }
 
 
 	/** Operation error model */
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateCloudType { 'Microsoft.VMwareCloudSimple/privateClouds' = 0 }
+	export enum PrivateCloudType { 'Microsoft.VMwareCloudSimple/privateClouds' = 'Microsoft.VMwareCloudSimple/privateClouds' }
 
 
 	/** List of private clouds */
@@ -1791,7 +1791,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageUnit { Count = 0, Bytes = 1, Seconds = 2, Percent = 3, CountPerSecond = 4, BytesPerSecond = 5 }
+	export enum UsageUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', Percent = 'Percent', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 
 	/** List of usages */
@@ -1912,7 +1912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualDiskIndependenceMode { persistent = 0, independent_persistent = 1, independent_nonpersistent = 2 }
+	export enum VirtualDiskIndependenceMode { persistent = 'persistent', independent_persistent = 'independent_persistent', independent_nonpersistent = 'independent_nonpersistent' }
 
 
 	/** Virtual disk controller model */
@@ -2196,7 +2196,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualMachinePropertiesGuestOSType { linux = 0, windows = 1, other = 2 }
+	export enum VirtualMachinePropertiesGuestOSType { linux = 'linux', windows = 'windows', other = 'other' }
 
 
 	/** Virtual NIC model */
@@ -2265,9 +2265,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualNicNicType { E1000 = 0, E1000E = 1, PCNET32 = 2, VMXNET = 3, VMXNET2 = 4, VMXNET3 = 5 }
+	export enum VirtualNicNicType { E1000 = 'E1000', E1000E = 'E1000E', PCNET32 = 'PCNET32', VMXNET = 'VMXNET', VMXNET2 = 'VMXNET2', VMXNET3 = 'VMXNET3' }
 
-	export enum VirtualMachinePropertiesStatus { running = 0, suspended = 1, poweredoff = 2, updating = 3, deallocating = 4, deleting = 5 }
+	export enum VirtualMachinePropertiesStatus { running = 'running', suspended = 'suspended', poweredoff = 'poweredoff', updating = 'updating', deallocating = 'deallocating', deleting = 'deleting' }
 
 
 	/** List of virtual machine stop modes */
@@ -2290,7 +2290,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VirtualMachineStopModeMode { reboot = 0, suspend = 1, shutdown = 2, poweroff = 3 }
+	export enum VirtualMachineStopModeMode { reboot = 'reboot', suspend = 'suspend', shutdown = 'shutdown', poweroff = 'poweroff' }
 
 
 	/** List of virtual machine templates */

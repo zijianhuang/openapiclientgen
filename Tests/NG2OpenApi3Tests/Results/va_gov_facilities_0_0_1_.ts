@@ -786,9 +786,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FacilityAttributesActive_status { A = 0, T = 1 }
+	export enum FacilityAttributesActive_status { A = 'A', T = 'T' }
 
-	export enum FacilityAttributesFacility_type { va_benefits_facility = 0, va_cemetery = 1, va_health_facility = 2, vet_center = 3 }
+	export enum FacilityAttributesFacility_type { va_benefits_facility = 'va_benefits_facility', va_cemetery = 'va_cemetery', va_health_facility = 'va_health_facility', vet_center = 'vet_center' }
 
 
 	/** Standard hours of operation. Currently formatted as descriptive text suitable for display, with no guarantee of a standard parseable format. Hours of operation may vary due to holidays or other events. */
@@ -898,7 +898,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatingStatusCode { NORMAL = 0, NOTICE = 1, LIMITED = 2, CLOSED = 3 }
+	export enum OperatingStatusCode { NORMAL = 'NORMAL', NOTICE = 'NOTICE', LIMITED = 'LIMITED', CLOSED = 'CLOSED' }
 
 
 	/** Supplemental status for VA facility. */
@@ -1167,9 +1167,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PatientWaitTimeService { Audiology = 0, Cardiology = 1, CaregiverSupport = 2, Covid19Vaccine = 3, DentalServices = 4, Dermatology = 5, EmergencyCare = 6, Gastroenterology = 7, Gynecology = 8, MentalHealthCare = 9, Ophthalmology = 10, Optometry = 11, Orthopedics = 12, Nutrition = 13, Podiatry = 14, PrimaryCare = 15, SpecialtyCare = 16, UrgentCare = 17, Urology = 18, WomensHealth = 19 }
+	export enum PatientWaitTimeService { Audiology = 'Audiology', Cardiology = 'Cardiology', CaregiverSupport = 'CaregiverSupport', Covid19Vaccine = 'Covid19Vaccine', DentalServices = 'DentalServices', Dermatology = 'Dermatology', EmergencyCare = 'EmergencyCare', Gastroenterology = 'Gastroenterology', Gynecology = 'Gynecology', MentalHealthCare = 'MentalHealthCare', Ophthalmology = 'Ophthalmology', Optometry = 'Optometry', Orthopedics = 'Orthopedics', Nutrition = 'Nutrition', Podiatry = 'Podiatry', PrimaryCare = 'PrimaryCare', SpecialtyCare = 'SpecialtyCare', UrgentCare = 'UrgentCare', Urology = 'Urology', WomensHealth = 'WomensHealth' }
 
-	export enum FacilityType { va_facilities = 0 }
+	export enum FacilityType { va_facilities = 'va_facilities' }
 
 
 	/** Links for first page, next page, previous and last page of response. */
@@ -1369,7 +1369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GeometryType { Point = 0 }
+	export enum GeometryType { Point = 'Point' }
 
 
 	/** Details describing a facility. */
@@ -1484,9 +1484,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GeoFacilityType { Feature = 0 }
+	export enum GeoFacilityType { Feature = 'Feature' }
 
-	export enum GeoFacilitiesResponseType { FeatureCollection = 0 }
+	export enum GeoFacilitiesResponseType { FeatureCollection = 'FeatureCollection' }
 
 
 	/** Response that contains GeoFacility data. */
@@ -1621,7 +1621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NearbyType { nearby_facility = 0 }
+	export enum NearbyType { nearby_facility = 'nearby_facility' }
 
 
 	/** Response which contains minimum and maximum time it takes to reach facility. */
@@ -1734,9 +1734,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetFacilitiesByLocationType { health = 0, cemetery = 1, benefits = 2, vet_center = 3 }
+	export enum GetFacilitiesByLocationType { health = 'health', cemetery = 'cemetery', benefits = 'benefits', vet_center = 'vet_center' }
 
-	export enum GetAllFacilitiesAccept { 'application/geo+json' = 0, 'application/vnd.geo+json' = 1, 'text/csv' = 2 }
+	export enum GetAllFacilitiesAccept { 'application/geo+json' = 'application/geo+json', 'application/vnd.geo+json' = 'application/vnd.geo+json', 'text/csv' = 'text/csv' }
 
 	export enum GetNearbyFacilitiesDrive_time { _10 = 0, _20 = 1, _30 = 2, _40 = 3, _50 = 4, _60 = 5, _70 = 6, _80 = 7, _90 = 8 }
 

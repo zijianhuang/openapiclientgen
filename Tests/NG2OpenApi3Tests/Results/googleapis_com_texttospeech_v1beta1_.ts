@@ -55,7 +55,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 0, LINEAR16 = 1, MP3 = 2, MP3_64_KBPS = 3, OGG_OPUS = 4, MULAW = 5, ALAW = 6 }
+	export enum AudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 'AUDIO_ENCODING_UNSPECIFIED', LINEAR16 = 'LINEAR16', MP3 = 'MP3', MP3_64_KBPS = 'MP3_64_KBPS', OGG_OPUS = 'OGG_OPUS', MULAW = 'MULAW', ALAW = 'ALAW' }
 
 
 	/** Description of the custom voice to be synthesized. */
@@ -85,7 +85,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomVoiceParamsReportedUsage { REPORTED_USAGE_UNSPECIFIED = 0, REALTIME = 1, OFFLINE = 2 }
+	export enum CustomVoiceParamsReportedUsage { REPORTED_USAGE_UNSPECIFIED = 'REPORTED_USAGE_UNSPECIFIED', REALTIME = 'REALTIME', OFFLINE = 'OFFLINE' }
 
 
 	/** Metadata for response returned by the `SynthesizeLongAudio` method. */
@@ -270,7 +270,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 0, MALE = 1, FEMALE = 2, NEUTRAL = 3 }
+	export enum VoiceSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 'SSML_VOICE_GENDER_UNSPECIFIED', MALE = 'MALE', FEMALE = 'FEMALE', NEUTRAL = 'NEUTRAL' }
 
 
 	/** Contains text input to be synthesized. Either `text` or `ssml` must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000 bytes. */

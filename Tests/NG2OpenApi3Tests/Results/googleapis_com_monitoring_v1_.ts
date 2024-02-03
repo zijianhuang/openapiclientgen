@@ -41,9 +41,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationCrossSeriesReducer { REDUCE_NONE = 0, REDUCE_MEAN = 1, REDUCE_MIN = 2, REDUCE_MAX = 3, REDUCE_SUM = 4, REDUCE_STDDEV = 5, REDUCE_COUNT = 6, REDUCE_COUNT_TRUE = 7, REDUCE_COUNT_FALSE = 8, REDUCE_FRACTION_TRUE = 9, REDUCE_PERCENTILE_99 = 10, REDUCE_PERCENTILE_95 = 11, REDUCE_PERCENTILE_50 = 12, REDUCE_PERCENTILE_05 = 13 }
+	export enum AggregationCrossSeriesReducer { REDUCE_NONE = 'REDUCE_NONE', REDUCE_MEAN = 'REDUCE_MEAN', REDUCE_MIN = 'REDUCE_MIN', REDUCE_MAX = 'REDUCE_MAX', REDUCE_SUM = 'REDUCE_SUM', REDUCE_STDDEV = 'REDUCE_STDDEV', REDUCE_COUNT = 'REDUCE_COUNT', REDUCE_COUNT_TRUE = 'REDUCE_COUNT_TRUE', REDUCE_COUNT_FALSE = 'REDUCE_COUNT_FALSE', REDUCE_FRACTION_TRUE = 'REDUCE_FRACTION_TRUE', REDUCE_PERCENTILE_99 = 'REDUCE_PERCENTILE_99', REDUCE_PERCENTILE_95 = 'REDUCE_PERCENTILE_95', REDUCE_PERCENTILE_50 = 'REDUCE_PERCENTILE_50', REDUCE_PERCENTILE_05 = 'REDUCE_PERCENTILE_05' }
 
-	export enum AggregationPerSeriesAligner { ALIGN_NONE = 0, ALIGN_DELTA = 1, ALIGN_RATE = 2, ALIGN_INTERPOLATE = 3, ALIGN_NEXT_OLDER = 4, ALIGN_MIN = 5, ALIGN_MAX = 6, ALIGN_MEAN = 7, ALIGN_COUNT = 8, ALIGN_SUM = 9, ALIGN_STDDEV = 10, ALIGN_COUNT_TRUE = 11, ALIGN_COUNT_FALSE = 12, ALIGN_FRACTION_TRUE = 13, ALIGN_PERCENTILE_99 = 14, ALIGN_PERCENTILE_95 = 15, ALIGN_PERCENTILE_50 = 16, ALIGN_PERCENTILE_05 = 17, ALIGN_PERCENT_CHANGE = 18 }
+	export enum AggregationPerSeriesAligner { ALIGN_NONE = 'ALIGN_NONE', ALIGN_DELTA = 'ALIGN_DELTA', ALIGN_RATE = 'ALIGN_RATE', ALIGN_INTERPOLATE = 'ALIGN_INTERPOLATE', ALIGN_NEXT_OLDER = 'ALIGN_NEXT_OLDER', ALIGN_MIN = 'ALIGN_MIN', ALIGN_MAX = 'ALIGN_MAX', ALIGN_MEAN = 'ALIGN_MEAN', ALIGN_COUNT = 'ALIGN_COUNT', ALIGN_SUM = 'ALIGN_SUM', ALIGN_STDDEV = 'ALIGN_STDDEV', ALIGN_COUNT_TRUE = 'ALIGN_COUNT_TRUE', ALIGN_COUNT_FALSE = 'ALIGN_COUNT_FALSE', ALIGN_FRACTION_TRUE = 'ALIGN_FRACTION_TRUE', ALIGN_PERCENTILE_99 = 'ALIGN_PERCENTILE_99', ALIGN_PERCENTILE_95 = 'ALIGN_PERCENTILE_95', ALIGN_PERCENTILE_50 = 'ALIGN_PERCENTILE_50', ALIGN_PERCENTILE_05 = 'ALIGN_PERCENTILE_05', ALIGN_PERCENT_CHANGE = 'ALIGN_PERCENT_CHANGE' }
 
 
 	/** Preview: An identifier for an aggregation function. Aggregation functions are SQL functions that group or transform data from multiple points to a single point. This is a preview feature and may be subject to change before final release. */
@@ -146,7 +146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AxisScale { SCALE_UNSPECIFIED = 0, LINEAR = 1, LOG10 = 2 }
+	export enum AxisScale { SCALE_UNSPECIFIED = 'SCALE_UNSPECIFIED', LINEAR = 'LINEAR', LOG10 = 'LOG10' }
 
 
 	/** Preview: A breakdown is an aggregation applied to the measures over a specified column. A breakdown can result in multiple series across a category for the provided measure. This is a preview feature and may be subject to change before final release. */
@@ -186,7 +186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BreakdownSortOrder { SORT_ORDER_UNSPECIFIED = 0, SORT_ORDER_NONE = 1, SORT_ORDER_ASCENDING = 2, SORT_ORDER_DESCENDING = 3 }
+	export enum BreakdownSortOrder { SORT_ORDER_UNSPECIFIED = 'SORT_ORDER_UNSPECIFIED', SORT_ORDER_NONE = 'SORT_ORDER_NONE', SORT_ORDER_ASCENDING = 'SORT_ORDER_ASCENDING', SORT_ORDER_DESCENDING = 'SORT_ORDER_DESCENDING' }
 
 
 	/** Options to control visual rendering of a chart. */
@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChartOptionsMode { MODE_UNSPECIFIED = 0, COLOR = 1, X_RAY = 2, STATS = 3 }
+	export enum ChartOptionsMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', COLOR = 'COLOR', X_RAY = 'X_RAY', STATS = 'STATS' }
 
 
 	/** A widget that groups the other widgets. All widgets that are within the area spanned by the grouping widget are considered member widgets. */
@@ -470,7 +470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PieChartChartType { PIE_CHART_TYPE_UNSPECIFIED = 0, PIE = 1, DONUT = 2 }
+	export enum PieChartChartType { PIE_CHART_TYPE_UNSPECIFIED = 'PIE_CHART_TYPE_UNSPECIFIED', PIE = 'PIE', DONUT = 'DONUT' }
 
 
 	/** Groups a time series query definition. */
@@ -746,7 +746,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PickTimeSeriesFilterDirection { DIRECTION_UNSPECIFIED = 0, TOP = 1, BOTTOM = 2 }
+	export enum PickTimeSeriesFilterDirection { DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED', TOP = 'TOP', BOTTOM = 'BOTTOM' }
 
 
 	/** Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive).The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time. */
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PickTimeSeriesFilterRankingMethod { METHOD_UNSPECIFIED = 0, METHOD_MEAN = 1, METHOD_MAX = 2, METHOD_MIN = 3, METHOD_SUM = 4, METHOD_LATEST = 5 }
+	export enum PickTimeSeriesFilterRankingMethod { METHOD_UNSPECIFIED = 'METHOD_UNSPECIFIED', METHOD_MEAN = 'METHOD_MEAN', METHOD_MAX = 'METHOD_MAX', METHOD_MIN = 'METHOD_MIN', METHOD_SUM = 'METHOD_SUM', METHOD_LATEST = 'METHOD_LATEST' }
 
 
 	/** A filter that ranks streams based on their statistical relation to other streams in a request. Note: This field is deprecated and completely ignored by the API. */
@@ -806,7 +806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatisticalTimeSeriesFilterRankingMethod { METHOD_UNSPECIFIED = 0, METHOD_CLUSTER_OUTLIER = 1 }
+	export enum StatisticalTimeSeriesFilterRankingMethod { METHOD_UNSPECIFIED = 'METHOD_UNSPECIFIED', METHOD_CLUSTER_OUTLIER = 'METHOD_CLUSTER_OUTLIER' }
 
 
 	/** A pair of time series filters that define a ratio computation. The output time series is the pair-wise division of each aligned element from the numerator and denominator time series. */
@@ -946,7 +946,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SparkChartViewSparkChartType { SPARK_CHART_TYPE_UNSPECIFIED = 0, SPARK_LINE = 1, SPARK_BAR = 2 }
+	export enum SparkChartViewSparkChartType { SPARK_CHART_TYPE_UNSPECIFIED = 'SPARK_CHART_TYPE_UNSPECIFIED', SPARK_LINE = 'SPARK_LINE', SPARK_BAR = 'SPARK_BAR' }
 
 
 	/** Defines a threshold for categorizing time series values. */
@@ -997,11 +997,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ThresholdColor { COLOR_UNSPECIFIED = 0, YELLOW = 1, RED = 2 }
+	export enum ThresholdColor { COLOR_UNSPECIFIED = 'COLOR_UNSPECIFIED', YELLOW = 'YELLOW', RED = 'RED' }
 
-	export enum ThresholdDirection { DIRECTION_UNSPECIFIED = 0, ABOVE = 1, BELOW = 2 }
+	export enum ThresholdDirection { DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED', ABOVE = 'ABOVE', BELOW = 'BELOW' }
 
-	export enum ThresholdTargetAxis { TARGET_AXIS_UNSPECIFIED = 0, Y1 = 1, Y2 = 2 }
+	export enum ThresholdTargetAxis { TARGET_AXIS_UNSPECIFIED = 'TARGET_AXIS_UNSPECIFIED', Y1 = 'Y1', Y2 = 'Y2' }
 
 
 	/** A widget that defines a new section header. Sections populate a table of contents and allow easier navigation of long-form content. */
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextFormat { FORMAT_UNSPECIFIED = 0, MARKDOWN = 1, RAW = 2 }
+	export enum TextFormat { FORMAT_UNSPECIFIED = 'FORMAT_UNSPECIFIED', MARKDOWN = 'MARKDOWN', RAW = 'RAW' }
 
 
 	/** Properties that determine how the title and content are styled */
@@ -1141,15 +1141,15 @@ export namespace MyNS {
 
 	}
 
-	export enum TextStyleFontSize { FONT_SIZE_UNSPECIFIED = 0, FS_EXTRA_SMALL = 1, FS_SMALL = 2, FS_MEDIUM = 3, FS_LARGE = 4, FS_EXTRA_LARGE = 5 }
+	export enum TextStyleFontSize { FONT_SIZE_UNSPECIFIED = 'FONT_SIZE_UNSPECIFIED', FS_EXTRA_SMALL = 'FS_EXTRA_SMALL', FS_SMALL = 'FS_SMALL', FS_MEDIUM = 'FS_MEDIUM', FS_LARGE = 'FS_LARGE', FS_EXTRA_LARGE = 'FS_EXTRA_LARGE' }
 
-	export enum TextStyleHorizontalAlignment { HORIZONTAL_ALIGNMENT_UNSPECIFIED = 0, H_LEFT = 1, H_CENTER = 2, H_RIGHT = 3 }
+	export enum TextStyleHorizontalAlignment { HORIZONTAL_ALIGNMENT_UNSPECIFIED = 'HORIZONTAL_ALIGNMENT_UNSPECIFIED', H_LEFT = 'H_LEFT', H_CENTER = 'H_CENTER', H_RIGHT = 'H_RIGHT' }
 
-	export enum TextStylePadding { PADDING_SIZE_UNSPECIFIED = 0, P_EXTRA_SMALL = 1, P_SMALL = 2, P_MEDIUM = 3, P_LARGE = 4, P_EXTRA_LARGE = 5 }
+	export enum TextStylePadding { PADDING_SIZE_UNSPECIFIED = 'PADDING_SIZE_UNSPECIFIED', P_EXTRA_SMALL = 'P_EXTRA_SMALL', P_SMALL = 'P_SMALL', P_MEDIUM = 'P_MEDIUM', P_LARGE = 'P_LARGE', P_EXTRA_LARGE = 'P_EXTRA_LARGE' }
 
-	export enum TextStylePointerLocation { POINTER_LOCATION_UNSPECIFIED = 0, PL_TOP = 1, PL_RIGHT = 2, PL_BOTTOM = 3, PL_LEFT = 4, PL_TOP_LEFT = 5, PL_TOP_RIGHT = 6, PL_RIGHT_TOP = 7, PL_RIGHT_BOTTOM = 8, PL_BOTTOM_RIGHT = 9, PL_BOTTOM_LEFT = 10, PL_LEFT_BOTTOM = 11, PL_LEFT_TOP = 12 }
+	export enum TextStylePointerLocation { POINTER_LOCATION_UNSPECIFIED = 'POINTER_LOCATION_UNSPECIFIED', PL_TOP = 'PL_TOP', PL_RIGHT = 'PL_RIGHT', PL_BOTTOM = 'PL_BOTTOM', PL_LEFT = 'PL_LEFT', PL_TOP_LEFT = 'PL_TOP_LEFT', PL_TOP_RIGHT = 'PL_TOP_RIGHT', PL_RIGHT_TOP = 'PL_RIGHT_TOP', PL_RIGHT_BOTTOM = 'PL_RIGHT_BOTTOM', PL_BOTTOM_RIGHT = 'PL_BOTTOM_RIGHT', PL_BOTTOM_LEFT = 'PL_BOTTOM_LEFT', PL_LEFT_BOTTOM = 'PL_LEFT_BOTTOM', PL_LEFT_TOP = 'PL_LEFT_TOP' }
 
-	export enum TextStyleVerticalAlignment { VERTICAL_ALIGNMENT_UNSPECIFIED = 0, V_TOP = 1, V_CENTER = 2, V_BOTTOM = 3 }
+	export enum TextStyleVerticalAlignment { VERTICAL_ALIGNMENT_UNSPECIFIED = 'VERTICAL_ALIGNMENT_UNSPECIFIED', V_TOP = 'V_TOP', V_CENTER = 'V_CENTER', V_BOTTOM = 'V_BOTTOM' }
 
 
 	/** A table that displays time series data. */
@@ -1257,7 +1257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeSeriesTableMetricVisualization { METRIC_VISUALIZATION_UNSPECIFIED = 0, NUMBER = 1, BAR = 2 }
+	export enum TimeSeriesTableMetricVisualization { METRIC_VISUALIZATION_UNSPECIFIED = 'METRIC_VISUALIZATION_UNSPECIFIED', NUMBER = 'NUMBER', BAR = 'BAR' }
 
 
 	/** A chart that displays data on a 2D (X and Y axes) plane. */
@@ -1352,7 +1352,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSetPlotType { PLOT_TYPE_UNSPECIFIED = 0, LINE = 1, STACKED_AREA = 2, STACKED_BAR = 3, HEATMAP = 4 }
+	export enum DataSetPlotType { PLOT_TYPE_UNSPECIFIED = 'PLOT_TYPE_UNSPECIFIED', LINE = 'LINE', STACKED_AREA = 'STACKED_AREA', STACKED_BAR = 'STACKED_BAR', HEATMAP = 'HEATMAP' }
 
 
 	/** A simplified layout that divides the available space into vertical columns and arranges a set of widgets vertically in each column. */
@@ -1470,7 +1470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DashboardFilterFilterType { FILTER_TYPE_UNSPECIFIED = 0, RESOURCE_LABEL = 1, METRIC_LABEL = 2, USER_METADATA_LABEL = 3, SYSTEM_METADATA_LABEL = 4, GROUP = 5 }
+	export enum DashboardFilterFilterType { FILTER_TYPE_UNSPECIFIED = 'FILTER_TYPE_UNSPECIFIED', RESOURCE_LABEL = 'RESOURCE_LABEL', METRIC_LABEL = 'METRIC_LABEL', USER_METADATA_LABEL = 'USER_METADATA_LABEL', SYSTEM_METADATA_LABEL = 'SYSTEM_METADATA_LABEL', GROUP = 'GROUP' }
 
 
 	/** A basic layout divides the available space into vertical columns of equal width and arranges a list of widgets using a row-first strategy. */
@@ -1707,9 +1707,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldCardinality { CARDINALITY_UNKNOWN = 0, CARDINALITY_OPTIONAL = 1, CARDINALITY_REQUIRED = 2, CARDINALITY_REPEATED = 3 }
+	export enum FieldCardinality { CARDINALITY_UNKNOWN = 'CARDINALITY_UNKNOWN', CARDINALITY_OPTIONAL = 'CARDINALITY_OPTIONAL', CARDINALITY_REQUIRED = 'CARDINALITY_REQUIRED', CARDINALITY_REPEATED = 'CARDINALITY_REPEATED' }
 
-	export enum FieldKind { TYPE_UNKNOWN = 0, TYPE_DOUBLE = 1, TYPE_FLOAT = 2, TYPE_INT64 = 3, TYPE_UINT64 = 4, TYPE_INT32 = 5, TYPE_FIXED64 = 6, TYPE_FIXED32 = 7, TYPE_BOOL = 8, TYPE_STRING = 9, TYPE_GROUP = 10, TYPE_MESSAGE = 11, TYPE_BYTES = 12, TYPE_UINT32 = 13, TYPE_ENUM = 14, TYPE_SFIXED32 = 15, TYPE_SFIXED64 = 16, TYPE_SINT32 = 17, TYPE_SINT64 = 18 }
+	export enum FieldKind { TYPE_UNKNOWN = 'TYPE_UNKNOWN', TYPE_DOUBLE = 'TYPE_DOUBLE', TYPE_FLOAT = 'TYPE_FLOAT', TYPE_INT64 = 'TYPE_INT64', TYPE_UINT64 = 'TYPE_UINT64', TYPE_INT32 = 'TYPE_INT32', TYPE_FIXED64 = 'TYPE_FIXED64', TYPE_FIXED32 = 'TYPE_FIXED32', TYPE_BOOL = 'TYPE_BOOL', TYPE_STRING = 'TYPE_STRING', TYPE_GROUP = 'TYPE_GROUP', TYPE_MESSAGE = 'TYPE_MESSAGE', TYPE_BYTES = 'TYPE_BYTES', TYPE_UINT32 = 'TYPE_UINT32', TYPE_ENUM = 'TYPE_ENUM', TYPE_SFIXED32 = 'TYPE_SFIXED32', TYPE_SFIXED64 = 'TYPE_SFIXED64', TYPE_SINT32 = 'TYPE_SINT32', TYPE_SINT64 = 'TYPE_SINT64' }
 
 
 	/** A protocol buffer option, which can be attached to a message, field, enumeration, etc. */
@@ -1988,7 +1988,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationMetadataState { STATE_UNSPECIFIED = 0, CREATED = 1, RUNNING = 2, DONE = 3, CANCELLED = 4 }
+	export enum OperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATED = 'CREATED', RUNNING = 'RUNNING', DONE = 'DONE', CANCELLED = 'CANCELLED' }
 
 
 	/** QueryExemplarsRequest holds all parameters of the Prometheus upstream API for querying exemplars. */
@@ -2261,7 +2261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeSyntax { SYNTAX_PROTO2 = 0, SYNTAX_PROTO3 = 1, SYNTAX_EDITIONS = 2 }
+	export enum TypeSyntax { SYNTAX_PROTO2 = 'SYNTAX_PROTO2', SYNTAX_PROTO3 = 'SYNTAX_PROTO3', SYNTAX_EDITIONS = 'SYNTAX_EDITIONS' }
 
 	@Injectable()
 	export class MyClient {

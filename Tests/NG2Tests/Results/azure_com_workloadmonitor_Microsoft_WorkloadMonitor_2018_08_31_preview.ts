@@ -156,11 +156,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentPropertiesHealthState { Error = 0, Warning = 1, Success = 2, Unknown = 3, Uninitialized = 4 }
+	export enum ComponentPropertiesHealthState { Error = 'Error', Warning = 'Warning', Success = 'Success', Unknown = 'Unknown', Uninitialized = 'Uninitialized' }
 
-	export enum ComponentPropertiesHealthStateCategory { Identity = 0, CustomGroup = 1 }
+	export enum ComponentPropertiesHealthStateCategory { Identity = 'Identity', CustomGroup = 'CustomGroup' }
 
-	export enum ComponentPropertiesWorkloadType { BaseOS = 0, SQL = 1, IIS = 2, Apache = 3 }
+	export enum ComponentPropertiesWorkloadType { BaseOS = 'BaseOS', SQL = 'SQL', IIS = 'IIS', Apache = 'Apache' }
 
 
 	/** Model for collection of components. */
@@ -447,7 +447,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorPropertiesAlertGeneration { Enabled = 0, Disabled = 1 }
+	export enum MonitorPropertiesAlertGeneration { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Criteria for monitor configuration */
@@ -484,11 +484,11 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorCriteriaComparisonOperator { Equals = 0, GreaterThan = 1, GreaterThanOrEqual = 2, LessThan = 3, LessThanOrEqual = 4, NotEquals = 5 }
+	export enum MonitorCriteriaComparisonOperator { Equals = 'Equals', GreaterThan = 'GreaterThan', GreaterThanOrEqual = 'GreaterThanOrEqual', LessThan = 'LessThan', LessThanOrEqual = 'LessThanOrEqual', NotEquals = 'NotEquals' }
 
-	export enum MonitorPropertiesMonitorCategory { AvailabilityHealth = 0, Configuration = 1, EntityHealth = 2, PerformanceHealth = 3, Security = 4 }
+	export enum MonitorPropertiesMonitorCategory { AvailabilityHealth = 'AvailabilityHealth', Configuration = 'Configuration', EntityHealth = 'EntityHealth', PerformanceHealth = 'PerformanceHealth', Security = 'Security' }
 
-	export enum MonitorPropertiesMonitorType { Aggregate = 0, Dependency = 1, Unit = 2 }
+	export enum MonitorPropertiesMonitorType { Aggregate = 'Aggregate', Dependency = 'Dependency', Unit = 'Unit' }
 
 
 	/** Model for monitor instance. */
@@ -1100,9 +1100,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Operations_ListApi_version { '2018-08-31-preview' = 0 }
+	export enum Operations_ListApi_version { '2018-08-31-preview' = '2018-08-31-preview' }
 
-	export enum NotificationSettings_GetNotificationSettingName { default = 0 }
+	export enum NotificationSettings_GetNotificationSettingName { default = 'default' }
 
 }
 

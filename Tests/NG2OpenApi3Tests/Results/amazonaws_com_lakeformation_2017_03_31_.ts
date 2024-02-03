@@ -309,7 +309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { DATABASE = 0, TABLE = 1 }
+	export enum ResourceType { DATABASE = 'DATABASE', TABLE = 'TABLE' }
 
 
 	/** A structure that allows an admin to grant user permissions on certain conditions. For example, granting a role access to all columns that do not have the LF-tag 'PII' in tables that have the LF-tag 'Prod'. */
@@ -508,7 +508,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Permission { ALL = 0, SELECT = 1, ALTER = 2, DROP = 3, DELETE = 4, INSERT = 5, DESCRIBE = 6, CREATE_DATABASE = 7, CREATE_TABLE = 8, DATA_LOCATION_ACCESS = 9, CREATE_LF_TAG = 10, ASSOCIATE = 11, GRANT_WITH_LF_TAG_EXPRESSION = 12 }
+	export enum Permission { ALL = 'ALL', SELECT = 'SELECT', ALTER = 'ALTER', DROP = 'DROP', DELETE = 'DELETE', INSERT = 'INSERT', DESCRIBE = 'DESCRIBE', CREATE_DATABASE = 'CREATE_DATABASE', CREATE_TABLE = 'CREATE_TABLE', DATA_LOCATION_ACCESS = 'DATA_LOCATION_ACCESS', CREATE_LF_TAG = 'CREATE_LF_TAG', ASSOCIATE = 'ASSOCIATE', GRANT_WITH_LF_TAG_EXPRESSION = 'GRANT_WITH_LF_TAG_EXPRESSION' }
 
 	export interface BatchRevokePermissionsResponse {
 		Failures?: Array<BatchPermissionsFailureEntry>;
@@ -564,7 +564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionStatus { ACTIVE = 0, COMMITTED = 1, ABORTED = 2, COMMIT_IN_PROGRESS = 3 }
+	export enum TransactionStatus { ACTIVE = 'ACTIVE', COMMITTED = 'COMMITTED', ABORTED = 'ABORTED', COMMIT_IN_PROGRESS = 'COMMIT_IN_PROGRESS' }
 
 	export interface TransactionCanceledException {
 	}
@@ -1019,7 +1019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryStateString { PENDING = 0, WORKUNITS_AVAILABLE = 1, ERROR = 2, FINISHED = 3, EXPIRED = 4 }
+	export enum QueryStateString { PENDING = 'PENDING', WORKUNITS_AVAILABLE = 'WORKUNITS_AVAILABLE', ERROR = 'ERROR', FINISHED = 'FINISHED', EXPIRED = 'EXPIRED' }
 
 	export interface GetQueryStatisticsResponse {
 		ExecutionStatistics?: ExecutionStatistics;
@@ -1231,7 +1231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionType { COLUMN_PERMISSION = 0, CELL_FILTER_PERMISSION = 1, NESTED_PERMISSION = 2, NESTED_CELL_PERMISSION = 3 }
+	export enum PermissionType { COLUMN_PERMISSION = 'COLUMN_PERMISSION', CELL_FILTER_PERMISSION = 'CELL_FILTER_PERMISSION', NESTED_PERMISSION = 'NESTED_PERMISSION', NESTED_CELL_PERMISSION = 'NESTED_CELL_PERMISSION' }
 
 	export interface PermissionTypeMismatchException {
 	}
@@ -1441,9 +1441,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldNameString { RESOURCE_ARN = 0, ROLE_ARN = 1, LAST_MODIFIED = 2 }
+	export enum FieldNameString { RESOURCE_ARN = 'RESOURCE_ARN', ROLE_ARN = 'ROLE_ARN', LAST_MODIFIED = 'LAST_MODIFIED' }
 
-	export enum ComparisonOperator { EQ = 0, NE = 1, LE = 2, LT = 3, GE = 4, GT = 5, CONTAINS = 6, NOT_CONTAINS = 7, BEGINS_WITH = 8, IN = 9, BETWEEN = 10 }
+	export enum ComparisonOperator { EQ = 'EQ', NE = 'NE', LE = 'LE', LT = 'LT', GE = 'GE', GT = 'GT', CONTAINS = 'CONTAINS', NOT_CONTAINS = 'NOT_CONTAINS', BEGINS_WITH = 'BEGINS_WITH', IN = 'IN', BETWEEN = 'BETWEEN' }
 
 	export interface ListTableStorageOptimizersResponse {
 		StorageOptimizerList?: Array<StorageOptimizer>;
@@ -1486,7 +1486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OptimizerType { COMPACTION = 0, GARBAGE_COLLECTION = 1, ALL = 2 }
+	export enum OptimizerType { COMPACTION = 'COMPACTION', GARBAGE_COLLECTION = 'GARBAGE_COLLECTION', ALL = 'ALL' }
 
 	export interface StorageOptimizerConfig {
 	}
@@ -1961,7 +1961,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLakeResourceType { CATALOG = 0, DATABASE = 1, TABLE = 2, DATA_LOCATION = 3, LF_TAG = 4, LF_TAG_POLICY = 5, LF_TAG_POLICY_DATABASE = 6, LF_TAG_POLICY_TABLE = 7 }
+	export enum DataLakeResourceType { CATALOG = 'CATALOG', DATABASE = 'DATABASE', TABLE = 'TABLE', DATA_LOCATION = 'DATA_LOCATION', LF_TAG = 'LF_TAG', LF_TAG_POLICY = 'LF_TAG_POLICY', LF_TAG_POLICY_DATABASE = 'LF_TAG_POLICY_DATABASE', LF_TAG_POLICY_TABLE = 'LF_TAG_POLICY_TABLE' }
 
 	export interface DeleteDataCellsFilterRequest {
 		TableCatalogId?: string;
@@ -2458,7 +2458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceShareType { FOREIGN = 0, ALL = 1 }
+	export enum ResourceShareType { FOREIGN = 'FOREIGN', ALL = 'ALL' }
 
 	export interface ListLFTagsRequest {
 		CatalogId?: string;
@@ -2562,7 +2562,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionStatusFilter { ALL = 0, COMPLETED = 1, ACTIVE = 2, COMMITTED = 3, ABORTED = 4 }
+	export enum TransactionStatusFilter { ALL = 'ALL', COMPLETED = 'COMPLETED', ACTIVE = 'ACTIVE', COMMITTED = 'COMMITTED', ABORTED = 'ABORTED' }
 
 	export interface ListTransactionsRequest {
 		CatalogId?: string;
@@ -2765,7 +2765,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransactionType { READ_AND_WRITE = 0, READ_ONLY = 1 }
+	export enum TransactionType { READ_AND_WRITE = 'READ_AND_WRITE', READ_ONLY = 'READ_ONLY' }
 
 	export interface StartTransactionRequest {
 		TransactionType?: TransactionType;

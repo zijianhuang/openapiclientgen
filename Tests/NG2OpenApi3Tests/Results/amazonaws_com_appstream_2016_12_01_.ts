@@ -354,9 +354,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationType { API = 0, SAML = 1, USERPOOL = 2, AWS_AD = 3 }
+	export enum AuthenticationType { API = 'API', SAML = 'SAML', USERPOOL = 'USERPOOL', AWS_AD = 'AWS_AD' }
 
-	export enum UserStackAssociationErrorCode { STACK_NOT_FOUND = 0, USER_NAME_NOT_FOUND = 1, DIRECTORY_NOT_FOUND = 2, INTERNAL_ERROR = 3 }
+	export enum UserStackAssociationErrorCode { STACK_NOT_FOUND = 'STACK_NOT_FOUND', USER_NAME_NOT_FOUND = 'USER_NAME_NOT_FOUND', DIRECTORY_NOT_FOUND = 'DIRECTORY_NOT_FOUND', INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 	export interface BatchAssociateUserStackRequest {
 
@@ -578,9 +578,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PackagingType { CUSTOM = 0, APPSTREAM2 = 1 }
+	export enum PackagingType { CUSTOM = 'CUSTOM', APPSTREAM2 = 'APPSTREAM2' }
 
-	export enum AppBlockState { INACTIVE = 0, ACTIVE = 1 }
+	export enum AppBlockState { INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE' }
 
 
 	/** The error details. */
@@ -727,7 +727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppBlockBuilderPlatformType { WINDOWS_SERVER_2019 = 0 }
+	export enum AppBlockBuilderPlatformType { WINDOWS_SERVER_2019 = 'WINDOWS_SERVER_2019' }
 
 
 	/** Describes VPC configuration information for fleets and image builders. */
@@ -745,7 +745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppBlockBuilderState { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3 }
+	export enum AppBlockBuilderState { STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 
 	/** Describes a resource error. */
@@ -770,7 +770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetErrorCode { IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = 0, IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = 1, IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = 2, NETWORK_INTERFACE_LIMIT_EXCEEDED = 3, INTERNAL_SERVICE_ERROR = 4, IAM_SERVICE_ROLE_IS_MISSING = 5, MACHINE_ROLE_IS_MISSING = 6, STS_DISABLED_IN_REGION = 7, SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = 8, IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = 9, SUBNET_NOT_FOUND = 10, IMAGE_NOT_FOUND = 11, INVALID_SUBNET_CONFIGURATION = 12, SECURITY_GROUPS_NOT_FOUND = 13, IGW_NOT_ATTACHED = 14, IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = 15, FLEET_STOPPED = 16, FLEET_INSTANCE_PROVISIONING_FAILURE = 17, DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = 18, DOMAIN_JOIN_ERROR_ACCESS_DENIED = 19, DOMAIN_JOIN_ERROR_LOGON_FAILURE = 20, DOMAIN_JOIN_ERROR_INVALID_PARAMETER = 21, DOMAIN_JOIN_ERROR_MORE_DATA = 22, DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = 23, DOMAIN_JOIN_ERROR_NOT_SUPPORTED = 24, DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = 25, DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = 26, DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = 27, DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = 28, DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = 29 }
+	export enum FleetErrorCode { IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = 'IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION', IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = 'IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION', IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = 'IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION', NETWORK_INTERFACE_LIMIT_EXCEEDED = 'NETWORK_INTERFACE_LIMIT_EXCEEDED', INTERNAL_SERVICE_ERROR = 'INTERNAL_SERVICE_ERROR', IAM_SERVICE_ROLE_IS_MISSING = 'IAM_SERVICE_ROLE_IS_MISSING', MACHINE_ROLE_IS_MISSING = 'MACHINE_ROLE_IS_MISSING', STS_DISABLED_IN_REGION = 'STS_DISABLED_IN_REGION', SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = 'SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES', IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = 'IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION', SUBNET_NOT_FOUND = 'SUBNET_NOT_FOUND', IMAGE_NOT_FOUND = 'IMAGE_NOT_FOUND', INVALID_SUBNET_CONFIGURATION = 'INVALID_SUBNET_CONFIGURATION', SECURITY_GROUPS_NOT_FOUND = 'SECURITY_GROUPS_NOT_FOUND', IGW_NOT_ATTACHED = 'IGW_NOT_ATTACHED', IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = 'IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION', FLEET_STOPPED = 'FLEET_STOPPED', FLEET_INSTANCE_PROVISIONING_FAILURE = 'FLEET_INSTANCE_PROVISIONING_FAILURE', DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = 'DOMAIN_JOIN_ERROR_FILE_NOT_FOUND', DOMAIN_JOIN_ERROR_ACCESS_DENIED = 'DOMAIN_JOIN_ERROR_ACCESS_DENIED', DOMAIN_JOIN_ERROR_LOGON_FAILURE = 'DOMAIN_JOIN_ERROR_LOGON_FAILURE', DOMAIN_JOIN_ERROR_INVALID_PARAMETER = 'DOMAIN_JOIN_ERROR_INVALID_PARAMETER', DOMAIN_JOIN_ERROR_MORE_DATA = 'DOMAIN_JOIN_ERROR_MORE_DATA', DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = 'DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN', DOMAIN_JOIN_ERROR_NOT_SUPPORTED = 'DOMAIN_JOIN_ERROR_NOT_SUPPORTED', DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = 'DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME', DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = 'DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED', DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = 'DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED', DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = 'DOMAIN_JOIN_NERR_PASSWORD_EXPIRED', DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = 'DOMAIN_JOIN_INTERNAL_SERVICE_ERROR' }
 
 
 	/** Describes the reason why the last app block builder state change occurred. */
@@ -792,7 +792,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppBlockBuilderStateChangeReasonCode { INTERNAL_ERROR = 0 }
+	export enum AppBlockBuilderStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR' }
 
 
 	/** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint. */
@@ -818,7 +818,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessEndpointType { STREAMING = 0 }
+	export enum AccessEndpointType { STREAMING = 'STREAMING' }
 
 	export interface CreateAppBlockBuilderRequest {
 
@@ -998,7 +998,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformType { WINDOWS = 0, WINDOWS_SERVER_2016 = 1, WINDOWS_SERVER_2019 = 2, AMAZON_LINUX2 = 3 }
+	export enum PlatformType { WINDOWS = 'WINDOWS', WINDOWS_SERVER_2016 = 'WINDOWS_SERVER_2016', WINDOWS_SERVER_2019 = 'WINDOWS_SERVER_2019', AMAZON_LINUX2 = 'AMAZON_LINUX2' }
 
 	export interface CreateApplicationRequest {
 
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateBasedAuthStatus { DISABLED = 0, ENABLED = 1, ENABLED_NO_DIRECTORY_LOGIN_FALLBACK = 2 }
+	export enum CertificateBasedAuthStatus { DISABLED = 'DISABLED', ENABLED = 'ENABLED', ENABLED_NO_DIRECTORY_LOGIN_FALLBACK = 'ENABLED_NO_DIRECTORY_LOGIN_FALLBACK' }
 
 	export interface CreateDirectoryConfigRequest {
 
@@ -1221,7 +1221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppVisibility { ALL = 0, ASSOCIATED = 1 }
+	export enum AppVisibility { ALL = 'ALL', ASSOCIATED = 'ASSOCIATED' }
 
 
 	/** An attribute associated with an entitlement. Application entitlements work by matching a supported SAML 2.0 attribute name to a value when a user identity federates to an Amazon AppStream 2.0 SAML application. */
@@ -1401,7 +1401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetType { ALWAYS_ON = 0, ON_DEMAND = 1, ELASTIC = 2 }
+	export enum FleetType { ALWAYS_ON = 'ALWAYS_ON', ON_DEMAND = 'ON_DEMAND', ELASTIC = 'ELASTIC' }
 
 
 	/** Describes the capacity status for a fleet. */
@@ -1473,7 +1473,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamView { APP = 0, DESKTOP = 1 }
+	export enum StreamView { APP = 'APP', DESKTOP = 'DESKTOP' }
 
 	export interface CreateFleetRequest {
 
@@ -1638,7 +1638,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageBuilderState { PENDING = 0, UPDATING_AGENT = 1, RUNNING = 2, STOPPING = 3, STOPPED = 4, REBOOTING = 5, SNAPSHOTTING = 6, DELETING = 7, FAILED = 8, UPDATING = 9, PENDING_QUALIFICATION = 10 }
+	export enum ImageBuilderState { PENDING = 'PENDING', UPDATING_AGENT = 'UPDATING_AGENT', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', REBOOTING = 'REBOOTING', SNAPSHOTTING = 'SNAPSHOTTING', DELETING = 'DELETING', FAILED = 'FAILED', UPDATING = 'UPDATING', PENDING_QUALIFICATION = 'PENDING_QUALIFICATION' }
 
 
 	/** Describes the reason why the last image builder state change occurred. */
@@ -1660,7 +1660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageBuilderStateChangeReasonCode { INTERNAL_ERROR = 0, IMAGE_UNAVAILABLE = 1 }
+	export enum ImageBuilderStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', IMAGE_UNAVAILABLE = 'IMAGE_UNAVAILABLE' }
 
 
 	/** Describes the network details of the fleet or image builder instance. */
@@ -1851,7 +1851,7 @@ export namespace MyNS {
 
 
 	/** The type of storage connector. */
-	export enum StorageConnectorType { HOMEFOLDERS = 0, GOOGLE_DRIVE = 1, ONE_DRIVE = 2 }
+	export enum StorageConnectorType { HOMEFOLDERS = 'HOMEFOLDERS', GOOGLE_DRIVE = 'GOOGLE_DRIVE', ONE_DRIVE = 'ONE_DRIVE' }
 
 
 	/** Describes a stack error. */
@@ -1873,7 +1873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackErrorCode { STORAGE_CONNECTOR_ERROR = 0, INTERNAL_SERVICE_ERROR = 1 }
+	export enum StackErrorCode { STORAGE_CONNECTOR_ERROR = 'STORAGE_CONNECTOR_ERROR', INTERNAL_SERVICE_ERROR = 'INTERNAL_SERVICE_ERROR' }
 
 
 	/** Describes an action and whether the action is enabled or disabled for users during their streaming sessions. */
@@ -1903,9 +1903,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Action { CLIPBOARD_COPY_FROM_LOCAL_DEVICE = 0, CLIPBOARD_COPY_TO_LOCAL_DEVICE = 1, FILE_UPLOAD = 2, FILE_DOWNLOAD = 3, PRINTING_TO_LOCAL_DEVICE = 4, DOMAIN_PASSWORD_SIGNIN = 5, DOMAIN_SMART_CARD_SIGNIN = 6 }
+	export enum Action { CLIPBOARD_COPY_FROM_LOCAL_DEVICE = 'CLIPBOARD_COPY_FROM_LOCAL_DEVICE', CLIPBOARD_COPY_TO_LOCAL_DEVICE = 'CLIPBOARD_COPY_TO_LOCAL_DEVICE', FILE_UPLOAD = 'FILE_UPLOAD', FILE_DOWNLOAD = 'FILE_DOWNLOAD', PRINTING_TO_LOCAL_DEVICE = 'PRINTING_TO_LOCAL_DEVICE', DOMAIN_PASSWORD_SIGNIN = 'DOMAIN_PASSWORD_SIGNIN', DOMAIN_SMART_CARD_SIGNIN = 'DOMAIN_SMART_CARD_SIGNIN' }
 
-	export enum Permission { ENABLED = 0, DISABLED = 1 }
+	export enum Permission { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Describes the persistent application settings for users of a stack. */
@@ -1947,7 +1947,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreferredProtocol { TCP = 0, UDP = 1 }
+	export enum PreferredProtocol { TCP = 'TCP', UDP = 'UDP' }
 
 	export interface CreateStackRequest {
 
@@ -2142,9 +2142,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageState { PENDING = 0, AVAILABLE = 1, FAILED = 2, COPYING = 3, DELETING = 4, CREATING = 5, IMPORTING = 6 }
+	export enum ImageState { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', FAILED = 'FAILED', COPYING = 'COPYING', DELETING = 'DELETING', CREATING = 'CREATING', IMPORTING = 'IMPORTING' }
 
-	export enum VisibilityType { PUBLIC = 0, PRIVATE = 1, SHARED = 2 }
+	export enum VisibilityType { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE', SHARED = 'SHARED' }
 
 
 	/** Describes the reason why the last image state change occurred. */
@@ -2166,7 +2166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageStateChangeReasonCode { INTERNAL_ERROR = 0, IMAGE_BUILDER_NOT_AVAILABLE = 1, IMAGE_COPY_FAILURE = 2 }
+	export enum ImageStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', IMAGE_BUILDER_NOT_AVAILABLE = 'IMAGE_BUILDER_NOT_AVAILABLE', IMAGE_COPY_FAILURE = 'IMAGE_COPY_FAILURE' }
 
 
 	/** Describes the permissions for an image.  */
@@ -2238,7 +2238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageReportSchedule { DAILY = 0 }
+	export enum UsageReportSchedule { DAILY = 'DAILY' }
 
 	export interface CreateUsageReportSubscriptionRequest {
 	}
@@ -2293,7 +2293,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageAction { SUPPRESS = 0, RESEND = 1 }
+	export enum MessageAction { SUPPRESS = 'SUPPRESS', RESEND = 'RESEND' }
 
 	export interface DeleteAppBlockResult {
 	}
@@ -3118,9 +3118,9 @@ export namespace MyNS {
 
 
 	/** Possible values for the state of a streaming session. */
-	export enum SessionState { ACTIVE = 0, PENDING = 1, EXPIRED = 2 }
+	export enum SessionState { ACTIVE = 'ACTIVE', PENDING = 'PENDING', EXPIRED = 'EXPIRED' }
 
-	export enum SessionConnectionState { CONNECTED = 0, NOT_CONNECTED = 1 }
+	export enum SessionConnectionState { CONNECTED = 'CONNECTED', NOT_CONNECTED = 'NOT_CONNECTED' }
 
 	export interface DescribeSessionsRequest {
 
@@ -3244,7 +3244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageReportExecutionErrorCode { RESOURCE_NOT_FOUND = 0, ACCESS_DENIED = 1, INTERNAL_SERVICE_ERROR = 2 }
+	export enum UsageReportExecutionErrorCode { RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND', ACCESS_DENIED = 'ACCESS_DENIED', INTERNAL_SERVICE_ERROR = 'INTERNAL_SERVICE_ERROR' }
 
 	export interface DescribeUsageReportSubscriptionsRequest {
 		MaxResults?: number | null;
@@ -4063,7 +4063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppBlockBuilderAttribute { IAM_ROLE_ARN = 0, ACCESS_ENDPOINTS = 1, VPC_CONFIGURATION_SECURITY_GROUP_IDS = 2 }
+	export enum AppBlockBuilderAttribute { IAM_ROLE_ARN = 'IAM_ROLE_ARN', ACCESS_ENDPOINTS = 'ACCESS_ENDPOINTS', VPC_CONFIGURATION_SECURITY_GROUP_IDS = 'VPC_CONFIGURATION_SECURITY_GROUP_IDS' }
 
 	export interface UpdateApplicationResult {
 
@@ -4115,7 +4115,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationAttribute { LAUNCH_PARAMETERS = 0, WORKING_DIRECTORY = 1 }
+	export enum ApplicationAttribute { LAUNCH_PARAMETERS = 'LAUNCH_PARAMETERS', WORKING_DIRECTORY = 'WORKING_DIRECTORY' }
 
 	export interface UpdateDirectoryConfigResult {
 		DirectoryConfig?: DirectoryConfig;
@@ -4264,7 +4264,7 @@ export namespace MyNS {
 
 
 	/** The fleet attribute. */
-	export enum FleetAttribute { VPC_CONFIGURATION = 0, VPC_CONFIGURATION_SECURITY_GROUP_IDS = 1, DOMAIN_JOIN_INFO = 2, IAM_ROLE_ARN = 3, USB_DEVICE_FILTER_STRINGS = 4, SESSION_SCRIPT_S3_LOCATION = 5 }
+	export enum FleetAttribute { VPC_CONFIGURATION = 'VPC_CONFIGURATION', VPC_CONFIGURATION_SECURITY_GROUP_IDS = 'VPC_CONFIGURATION_SECURITY_GROUP_IDS', DOMAIN_JOIN_INFO = 'DOMAIN_JOIN_INFO', IAM_ROLE_ARN = 'IAM_ROLE_ARN', USB_DEVICE_FILTER_STRINGS = 'USB_DEVICE_FILTER_STRINGS', SESSION_SCRIPT_S3_LOCATION = 'SESSION_SCRIPT_S3_LOCATION' }
 
 	export interface UpdateImagePermissionsResult {
 	}
@@ -4353,9 +4353,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StackAttribute { STORAGE_CONNECTORS = 0, STORAGE_CONNECTOR_HOMEFOLDERS = 1, STORAGE_CONNECTOR_GOOGLE_DRIVE = 2, STORAGE_CONNECTOR_ONE_DRIVE = 3, REDIRECT_URL = 4, FEEDBACK_URL = 5, THEME_NAME = 6, USER_SETTINGS = 7, EMBED_HOST_DOMAINS = 8, IAM_ROLE_ARN = 9, ACCESS_ENDPOINTS = 10, STREAMING_EXPERIENCE_SETTINGS = 11 }
+	export enum StackAttribute { STORAGE_CONNECTORS = 'STORAGE_CONNECTORS', STORAGE_CONNECTOR_HOMEFOLDERS = 'STORAGE_CONNECTOR_HOMEFOLDERS', STORAGE_CONNECTOR_GOOGLE_DRIVE = 'STORAGE_CONNECTOR_GOOGLE_DRIVE', STORAGE_CONNECTOR_ONE_DRIVE = 'STORAGE_CONNECTOR_ONE_DRIVE', REDIRECT_URL = 'REDIRECT_URL', FEEDBACK_URL = 'FEEDBACK_URL', THEME_NAME = 'THEME_NAME', USER_SETTINGS = 'USER_SETTINGS', EMBED_HOST_DOMAINS = 'EMBED_HOST_DOMAINS', IAM_ROLE_ARN = 'IAM_ROLE_ARN', ACCESS_ENDPOINTS = 'ACCESS_ENDPOINTS', STREAMING_EXPERIENCE_SETTINGS = 'STREAMING_EXPERIENCE_SETTINGS' }
 
-	export enum FleetState { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3 }
+	export enum FleetState { STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 	@Injectable()
 	export class MyClient {
@@ -5046,155 +5046,155 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateAppBlockBuilderAppBlockX_Amz_Target { 'PhotonAdminProxyService.AssociateAppBlockBuilderAppBlock' = 0 }
+	export enum AssociateAppBlockBuilderAppBlockX_Amz_Target { 'PhotonAdminProxyService.AssociateAppBlockBuilderAppBlock' = 'PhotonAdminProxyService.AssociateAppBlockBuilderAppBlock' }
 
-	export enum AssociateApplicationFleetX_Amz_Target { 'PhotonAdminProxyService.AssociateApplicationFleet' = 0 }
+	export enum AssociateApplicationFleetX_Amz_Target { 'PhotonAdminProxyService.AssociateApplicationFleet' = 'PhotonAdminProxyService.AssociateApplicationFleet' }
 
-	export enum AssociateApplicationToEntitlementX_Amz_Target { 'PhotonAdminProxyService.AssociateApplicationToEntitlement' = 0 }
+	export enum AssociateApplicationToEntitlementX_Amz_Target { 'PhotonAdminProxyService.AssociateApplicationToEntitlement' = 'PhotonAdminProxyService.AssociateApplicationToEntitlement' }
 
-	export enum AssociateFleetX_Amz_Target { 'PhotonAdminProxyService.AssociateFleet' = 0 }
+	export enum AssociateFleetX_Amz_Target { 'PhotonAdminProxyService.AssociateFleet' = 'PhotonAdminProxyService.AssociateFleet' }
 
-	export enum BatchAssociateUserStackX_Amz_Target { 'PhotonAdminProxyService.BatchAssociateUserStack' = 0 }
+	export enum BatchAssociateUserStackX_Amz_Target { 'PhotonAdminProxyService.BatchAssociateUserStack' = 'PhotonAdminProxyService.BatchAssociateUserStack' }
 
-	export enum BatchDisassociateUserStackX_Amz_Target { 'PhotonAdminProxyService.BatchDisassociateUserStack' = 0 }
+	export enum BatchDisassociateUserStackX_Amz_Target { 'PhotonAdminProxyService.BatchDisassociateUserStack' = 'PhotonAdminProxyService.BatchDisassociateUserStack' }
 
-	export enum CopyImageX_Amz_Target { 'PhotonAdminProxyService.CopyImage' = 0 }
+	export enum CopyImageX_Amz_Target { 'PhotonAdminProxyService.CopyImage' = 'PhotonAdminProxyService.CopyImage' }
 
-	export enum CreateAppBlockX_Amz_Target { 'PhotonAdminProxyService.CreateAppBlock' = 0 }
+	export enum CreateAppBlockX_Amz_Target { 'PhotonAdminProxyService.CreateAppBlock' = 'PhotonAdminProxyService.CreateAppBlock' }
 
-	export enum CreateAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.CreateAppBlockBuilder' = 0 }
+	export enum CreateAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.CreateAppBlockBuilder' = 'PhotonAdminProxyService.CreateAppBlockBuilder' }
 
-	export enum CreateAppBlockBuilderStreamingURLX_Amz_Target { 'PhotonAdminProxyService.CreateAppBlockBuilderStreamingURL' = 0 }
+	export enum CreateAppBlockBuilderStreamingURLX_Amz_Target { 'PhotonAdminProxyService.CreateAppBlockBuilderStreamingURL' = 'PhotonAdminProxyService.CreateAppBlockBuilderStreamingURL' }
 
-	export enum CreateApplicationX_Amz_Target { 'PhotonAdminProxyService.CreateApplication' = 0 }
+	export enum CreateApplicationX_Amz_Target { 'PhotonAdminProxyService.CreateApplication' = 'PhotonAdminProxyService.CreateApplication' }
 
-	export enum CreateDirectoryConfigX_Amz_Target { 'PhotonAdminProxyService.CreateDirectoryConfig' = 0 }
+	export enum CreateDirectoryConfigX_Amz_Target { 'PhotonAdminProxyService.CreateDirectoryConfig' = 'PhotonAdminProxyService.CreateDirectoryConfig' }
 
-	export enum CreateEntitlementX_Amz_Target { 'PhotonAdminProxyService.CreateEntitlement' = 0 }
+	export enum CreateEntitlementX_Amz_Target { 'PhotonAdminProxyService.CreateEntitlement' = 'PhotonAdminProxyService.CreateEntitlement' }
 
-	export enum CreateFleetX_Amz_Target { 'PhotonAdminProxyService.CreateFleet' = 0 }
+	export enum CreateFleetX_Amz_Target { 'PhotonAdminProxyService.CreateFleet' = 'PhotonAdminProxyService.CreateFleet' }
 
-	export enum CreateImageBuilderX_Amz_Target { 'PhotonAdminProxyService.CreateImageBuilder' = 0 }
+	export enum CreateImageBuilderX_Amz_Target { 'PhotonAdminProxyService.CreateImageBuilder' = 'PhotonAdminProxyService.CreateImageBuilder' }
 
-	export enum CreateImageBuilderStreamingURLX_Amz_Target { 'PhotonAdminProxyService.CreateImageBuilderStreamingURL' = 0 }
+	export enum CreateImageBuilderStreamingURLX_Amz_Target { 'PhotonAdminProxyService.CreateImageBuilderStreamingURL' = 'PhotonAdminProxyService.CreateImageBuilderStreamingURL' }
 
-	export enum CreateStackX_Amz_Target { 'PhotonAdminProxyService.CreateStack' = 0 }
+	export enum CreateStackX_Amz_Target { 'PhotonAdminProxyService.CreateStack' = 'PhotonAdminProxyService.CreateStack' }
 
-	export enum CreateStreamingURLX_Amz_Target { 'PhotonAdminProxyService.CreateStreamingURL' = 0 }
+	export enum CreateStreamingURLX_Amz_Target { 'PhotonAdminProxyService.CreateStreamingURL' = 'PhotonAdminProxyService.CreateStreamingURL' }
 
-	export enum CreateUpdatedImageX_Amz_Target { 'PhotonAdminProxyService.CreateUpdatedImage' = 0 }
+	export enum CreateUpdatedImageX_Amz_Target { 'PhotonAdminProxyService.CreateUpdatedImage' = 'PhotonAdminProxyService.CreateUpdatedImage' }
 
-	export enum CreateUsageReportSubscriptionX_Amz_Target { 'PhotonAdminProxyService.CreateUsageReportSubscription' = 0 }
+	export enum CreateUsageReportSubscriptionX_Amz_Target { 'PhotonAdminProxyService.CreateUsageReportSubscription' = 'PhotonAdminProxyService.CreateUsageReportSubscription' }
 
-	export enum CreateUserX_Amz_Target { 'PhotonAdminProxyService.CreateUser' = 0 }
+	export enum CreateUserX_Amz_Target { 'PhotonAdminProxyService.CreateUser' = 'PhotonAdminProxyService.CreateUser' }
 
-	export enum DeleteAppBlockX_Amz_Target { 'PhotonAdminProxyService.DeleteAppBlock' = 0 }
+	export enum DeleteAppBlockX_Amz_Target { 'PhotonAdminProxyService.DeleteAppBlock' = 'PhotonAdminProxyService.DeleteAppBlock' }
 
-	export enum DeleteAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.DeleteAppBlockBuilder' = 0 }
+	export enum DeleteAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.DeleteAppBlockBuilder' = 'PhotonAdminProxyService.DeleteAppBlockBuilder' }
 
-	export enum DeleteApplicationX_Amz_Target { 'PhotonAdminProxyService.DeleteApplication' = 0 }
+	export enum DeleteApplicationX_Amz_Target { 'PhotonAdminProxyService.DeleteApplication' = 'PhotonAdminProxyService.DeleteApplication' }
 
-	export enum DeleteDirectoryConfigX_Amz_Target { 'PhotonAdminProxyService.DeleteDirectoryConfig' = 0 }
+	export enum DeleteDirectoryConfigX_Amz_Target { 'PhotonAdminProxyService.DeleteDirectoryConfig' = 'PhotonAdminProxyService.DeleteDirectoryConfig' }
 
-	export enum DeleteEntitlementX_Amz_Target { 'PhotonAdminProxyService.DeleteEntitlement' = 0 }
+	export enum DeleteEntitlementX_Amz_Target { 'PhotonAdminProxyService.DeleteEntitlement' = 'PhotonAdminProxyService.DeleteEntitlement' }
 
-	export enum DeleteFleetX_Amz_Target { 'PhotonAdminProxyService.DeleteFleet' = 0 }
+	export enum DeleteFleetX_Amz_Target { 'PhotonAdminProxyService.DeleteFleet' = 'PhotonAdminProxyService.DeleteFleet' }
 
-	export enum DeleteImageX_Amz_Target { 'PhotonAdminProxyService.DeleteImage' = 0 }
+	export enum DeleteImageX_Amz_Target { 'PhotonAdminProxyService.DeleteImage' = 'PhotonAdminProxyService.DeleteImage' }
 
-	export enum DeleteImageBuilderX_Amz_Target { 'PhotonAdminProxyService.DeleteImageBuilder' = 0 }
+	export enum DeleteImageBuilderX_Amz_Target { 'PhotonAdminProxyService.DeleteImageBuilder' = 'PhotonAdminProxyService.DeleteImageBuilder' }
 
-	export enum DeleteImagePermissionsX_Amz_Target { 'PhotonAdminProxyService.DeleteImagePermissions' = 0 }
+	export enum DeleteImagePermissionsX_Amz_Target { 'PhotonAdminProxyService.DeleteImagePermissions' = 'PhotonAdminProxyService.DeleteImagePermissions' }
 
-	export enum DeleteStackX_Amz_Target { 'PhotonAdminProxyService.DeleteStack' = 0 }
+	export enum DeleteStackX_Amz_Target { 'PhotonAdminProxyService.DeleteStack' = 'PhotonAdminProxyService.DeleteStack' }
 
-	export enum DeleteUsageReportSubscriptionX_Amz_Target { 'PhotonAdminProxyService.DeleteUsageReportSubscription' = 0 }
+	export enum DeleteUsageReportSubscriptionX_Amz_Target { 'PhotonAdminProxyService.DeleteUsageReportSubscription' = 'PhotonAdminProxyService.DeleteUsageReportSubscription' }
 
-	export enum DeleteUserX_Amz_Target { 'PhotonAdminProxyService.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'PhotonAdminProxyService.DeleteUser' = 'PhotonAdminProxyService.DeleteUser' }
 
-	export enum DescribeAppBlockBuilderAppBlockAssociationsX_Amz_Target { 'PhotonAdminProxyService.DescribeAppBlockBuilderAppBlockAssociations' = 0 }
+	export enum DescribeAppBlockBuilderAppBlockAssociationsX_Amz_Target { 'PhotonAdminProxyService.DescribeAppBlockBuilderAppBlockAssociations' = 'PhotonAdminProxyService.DescribeAppBlockBuilderAppBlockAssociations' }
 
-	export enum DescribeAppBlockBuildersX_Amz_Target { 'PhotonAdminProxyService.DescribeAppBlockBuilders' = 0 }
+	export enum DescribeAppBlockBuildersX_Amz_Target { 'PhotonAdminProxyService.DescribeAppBlockBuilders' = 'PhotonAdminProxyService.DescribeAppBlockBuilders' }
 
-	export enum DescribeAppBlocksX_Amz_Target { 'PhotonAdminProxyService.DescribeAppBlocks' = 0 }
+	export enum DescribeAppBlocksX_Amz_Target { 'PhotonAdminProxyService.DescribeAppBlocks' = 'PhotonAdminProxyService.DescribeAppBlocks' }
 
-	export enum DescribeApplicationFleetAssociationsX_Amz_Target { 'PhotonAdminProxyService.DescribeApplicationFleetAssociations' = 0 }
+	export enum DescribeApplicationFleetAssociationsX_Amz_Target { 'PhotonAdminProxyService.DescribeApplicationFleetAssociations' = 'PhotonAdminProxyService.DescribeApplicationFleetAssociations' }
 
-	export enum DescribeApplicationsX_Amz_Target { 'PhotonAdminProxyService.DescribeApplications' = 0 }
+	export enum DescribeApplicationsX_Amz_Target { 'PhotonAdminProxyService.DescribeApplications' = 'PhotonAdminProxyService.DescribeApplications' }
 
-	export enum DescribeDirectoryConfigsX_Amz_Target { 'PhotonAdminProxyService.DescribeDirectoryConfigs' = 0 }
+	export enum DescribeDirectoryConfigsX_Amz_Target { 'PhotonAdminProxyService.DescribeDirectoryConfigs' = 'PhotonAdminProxyService.DescribeDirectoryConfigs' }
 
-	export enum DescribeEntitlementsX_Amz_Target { 'PhotonAdminProxyService.DescribeEntitlements' = 0 }
+	export enum DescribeEntitlementsX_Amz_Target { 'PhotonAdminProxyService.DescribeEntitlements' = 'PhotonAdminProxyService.DescribeEntitlements' }
 
-	export enum DescribeFleetsX_Amz_Target { 'PhotonAdminProxyService.DescribeFleets' = 0 }
+	export enum DescribeFleetsX_Amz_Target { 'PhotonAdminProxyService.DescribeFleets' = 'PhotonAdminProxyService.DescribeFleets' }
 
-	export enum DescribeImageBuildersX_Amz_Target { 'PhotonAdminProxyService.DescribeImageBuilders' = 0 }
+	export enum DescribeImageBuildersX_Amz_Target { 'PhotonAdminProxyService.DescribeImageBuilders' = 'PhotonAdminProxyService.DescribeImageBuilders' }
 
-	export enum DescribeImagePermissionsX_Amz_Target { 'PhotonAdminProxyService.DescribeImagePermissions' = 0 }
+	export enum DescribeImagePermissionsX_Amz_Target { 'PhotonAdminProxyService.DescribeImagePermissions' = 'PhotonAdminProxyService.DescribeImagePermissions' }
 
-	export enum DescribeImagesX_Amz_Target { 'PhotonAdminProxyService.DescribeImages' = 0 }
+	export enum DescribeImagesX_Amz_Target { 'PhotonAdminProxyService.DescribeImages' = 'PhotonAdminProxyService.DescribeImages' }
 
-	export enum DescribeSessionsX_Amz_Target { 'PhotonAdminProxyService.DescribeSessions' = 0 }
+	export enum DescribeSessionsX_Amz_Target { 'PhotonAdminProxyService.DescribeSessions' = 'PhotonAdminProxyService.DescribeSessions' }
 
-	export enum DescribeStacksX_Amz_Target { 'PhotonAdminProxyService.DescribeStacks' = 0 }
+	export enum DescribeStacksX_Amz_Target { 'PhotonAdminProxyService.DescribeStacks' = 'PhotonAdminProxyService.DescribeStacks' }
 
-	export enum DescribeUsageReportSubscriptionsX_Amz_Target { 'PhotonAdminProxyService.DescribeUsageReportSubscriptions' = 0 }
+	export enum DescribeUsageReportSubscriptionsX_Amz_Target { 'PhotonAdminProxyService.DescribeUsageReportSubscriptions' = 'PhotonAdminProxyService.DescribeUsageReportSubscriptions' }
 
-	export enum DescribeUserStackAssociationsX_Amz_Target { 'PhotonAdminProxyService.DescribeUserStackAssociations' = 0 }
+	export enum DescribeUserStackAssociationsX_Amz_Target { 'PhotonAdminProxyService.DescribeUserStackAssociations' = 'PhotonAdminProxyService.DescribeUserStackAssociations' }
 
-	export enum DescribeUsersX_Amz_Target { 'PhotonAdminProxyService.DescribeUsers' = 0 }
+	export enum DescribeUsersX_Amz_Target { 'PhotonAdminProxyService.DescribeUsers' = 'PhotonAdminProxyService.DescribeUsers' }
 
-	export enum DisableUserX_Amz_Target { 'PhotonAdminProxyService.DisableUser' = 0 }
+	export enum DisableUserX_Amz_Target { 'PhotonAdminProxyService.DisableUser' = 'PhotonAdminProxyService.DisableUser' }
 
-	export enum DisassociateAppBlockBuilderAppBlockX_Amz_Target { 'PhotonAdminProxyService.DisassociateAppBlockBuilderAppBlock' = 0 }
+	export enum DisassociateAppBlockBuilderAppBlockX_Amz_Target { 'PhotonAdminProxyService.DisassociateAppBlockBuilderAppBlock' = 'PhotonAdminProxyService.DisassociateAppBlockBuilderAppBlock' }
 
-	export enum DisassociateApplicationFleetX_Amz_Target { 'PhotonAdminProxyService.DisassociateApplicationFleet' = 0 }
+	export enum DisassociateApplicationFleetX_Amz_Target { 'PhotonAdminProxyService.DisassociateApplicationFleet' = 'PhotonAdminProxyService.DisassociateApplicationFleet' }
 
-	export enum DisassociateApplicationFromEntitlementX_Amz_Target { 'PhotonAdminProxyService.DisassociateApplicationFromEntitlement' = 0 }
+	export enum DisassociateApplicationFromEntitlementX_Amz_Target { 'PhotonAdminProxyService.DisassociateApplicationFromEntitlement' = 'PhotonAdminProxyService.DisassociateApplicationFromEntitlement' }
 
-	export enum DisassociateFleetX_Amz_Target { 'PhotonAdminProxyService.DisassociateFleet' = 0 }
+	export enum DisassociateFleetX_Amz_Target { 'PhotonAdminProxyService.DisassociateFleet' = 'PhotonAdminProxyService.DisassociateFleet' }
 
-	export enum EnableUserX_Amz_Target { 'PhotonAdminProxyService.EnableUser' = 0 }
+	export enum EnableUserX_Amz_Target { 'PhotonAdminProxyService.EnableUser' = 'PhotonAdminProxyService.EnableUser' }
 
-	export enum ExpireSessionX_Amz_Target { 'PhotonAdminProxyService.ExpireSession' = 0 }
+	export enum ExpireSessionX_Amz_Target { 'PhotonAdminProxyService.ExpireSession' = 'PhotonAdminProxyService.ExpireSession' }
 
-	export enum ListAssociatedFleetsX_Amz_Target { 'PhotonAdminProxyService.ListAssociatedFleets' = 0 }
+	export enum ListAssociatedFleetsX_Amz_Target { 'PhotonAdminProxyService.ListAssociatedFleets' = 'PhotonAdminProxyService.ListAssociatedFleets' }
 
-	export enum ListAssociatedStacksX_Amz_Target { 'PhotonAdminProxyService.ListAssociatedStacks' = 0 }
+	export enum ListAssociatedStacksX_Amz_Target { 'PhotonAdminProxyService.ListAssociatedStacks' = 'PhotonAdminProxyService.ListAssociatedStacks' }
 
-	export enum ListEntitledApplicationsX_Amz_Target { 'PhotonAdminProxyService.ListEntitledApplications' = 0 }
+	export enum ListEntitledApplicationsX_Amz_Target { 'PhotonAdminProxyService.ListEntitledApplications' = 'PhotonAdminProxyService.ListEntitledApplications' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'PhotonAdminProxyService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'PhotonAdminProxyService.ListTagsForResource' = 'PhotonAdminProxyService.ListTagsForResource' }
 
-	export enum StartAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.StartAppBlockBuilder' = 0 }
+	export enum StartAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.StartAppBlockBuilder' = 'PhotonAdminProxyService.StartAppBlockBuilder' }
 
-	export enum StartFleetX_Amz_Target { 'PhotonAdminProxyService.StartFleet' = 0 }
+	export enum StartFleetX_Amz_Target { 'PhotonAdminProxyService.StartFleet' = 'PhotonAdminProxyService.StartFleet' }
 
-	export enum StartImageBuilderX_Amz_Target { 'PhotonAdminProxyService.StartImageBuilder' = 0 }
+	export enum StartImageBuilderX_Amz_Target { 'PhotonAdminProxyService.StartImageBuilder' = 'PhotonAdminProxyService.StartImageBuilder' }
 
-	export enum StopAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.StopAppBlockBuilder' = 0 }
+	export enum StopAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.StopAppBlockBuilder' = 'PhotonAdminProxyService.StopAppBlockBuilder' }
 
-	export enum StopFleetX_Amz_Target { 'PhotonAdminProxyService.StopFleet' = 0 }
+	export enum StopFleetX_Amz_Target { 'PhotonAdminProxyService.StopFleet' = 'PhotonAdminProxyService.StopFleet' }
 
-	export enum StopImageBuilderX_Amz_Target { 'PhotonAdminProxyService.StopImageBuilder' = 0 }
+	export enum StopImageBuilderX_Amz_Target { 'PhotonAdminProxyService.StopImageBuilder' = 'PhotonAdminProxyService.StopImageBuilder' }
 
-	export enum TagResourceX_Amz_Target { 'PhotonAdminProxyService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'PhotonAdminProxyService.TagResource' = 'PhotonAdminProxyService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'PhotonAdminProxyService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'PhotonAdminProxyService.UntagResource' = 'PhotonAdminProxyService.UntagResource' }
 
-	export enum UpdateAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.UpdateAppBlockBuilder' = 0 }
+	export enum UpdateAppBlockBuilderX_Amz_Target { 'PhotonAdminProxyService.UpdateAppBlockBuilder' = 'PhotonAdminProxyService.UpdateAppBlockBuilder' }
 
-	export enum UpdateApplicationX_Amz_Target { 'PhotonAdminProxyService.UpdateApplication' = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'PhotonAdminProxyService.UpdateApplication' = 'PhotonAdminProxyService.UpdateApplication' }
 
-	export enum UpdateDirectoryConfigX_Amz_Target { 'PhotonAdminProxyService.UpdateDirectoryConfig' = 0 }
+	export enum UpdateDirectoryConfigX_Amz_Target { 'PhotonAdminProxyService.UpdateDirectoryConfig' = 'PhotonAdminProxyService.UpdateDirectoryConfig' }
 
-	export enum UpdateEntitlementX_Amz_Target { 'PhotonAdminProxyService.UpdateEntitlement' = 0 }
+	export enum UpdateEntitlementX_Amz_Target { 'PhotonAdminProxyService.UpdateEntitlement' = 'PhotonAdminProxyService.UpdateEntitlement' }
 
-	export enum UpdateFleetX_Amz_Target { 'PhotonAdminProxyService.UpdateFleet' = 0 }
+	export enum UpdateFleetX_Amz_Target { 'PhotonAdminProxyService.UpdateFleet' = 'PhotonAdminProxyService.UpdateFleet' }
 
-	export enum UpdateImagePermissionsX_Amz_Target { 'PhotonAdminProxyService.UpdateImagePermissions' = 0 }
+	export enum UpdateImagePermissionsX_Amz_Target { 'PhotonAdminProxyService.UpdateImagePermissions' = 'PhotonAdminProxyService.UpdateImagePermissions' }
 
-	export enum UpdateStackX_Amz_Target { 'PhotonAdminProxyService.UpdateStack' = 0 }
+	export enum UpdateStackX_Amz_Target { 'PhotonAdminProxyService.UpdateStack' = 'PhotonAdminProxyService.UpdateStack' }
 
 }
 

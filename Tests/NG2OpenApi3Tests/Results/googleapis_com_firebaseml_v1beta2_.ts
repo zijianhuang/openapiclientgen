@@ -45,7 +45,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DownloadModelResponseModelFormat { MODEL_FORMAT_UNSPECIFIED = 0, TFLITE = 1 }
+	export enum DownloadModelResponseModelFormat { MODEL_FORMAT_UNSPECIFIED = 'MODEL_FORMAT_UNSPECIFIED', TFLITE = 'TFLITE' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -312,7 +312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ModelOperationMetadataBasicOperationStatus { BASIC_OPERATION_STATUS_UNSPECIFIED = 0, BASIC_OPERATION_STATUS_UPLOADING = 1, BASIC_OPERATION_STATUS_VERIFYING = 2 }
+	export enum ModelOperationMetadataBasicOperationStatus { BASIC_OPERATION_STATUS_UNSPECIFIED = 'BASIC_OPERATION_STATUS_UNSPECIFIED', BASIC_OPERATION_STATUS_UPLOADING = 'BASIC_OPERATION_STATUS_UPLOADING', BASIC_OPERATION_STATUS_VERIFYING = 'BASIC_OPERATION_STATUS_VERIFYING' }
 
 	@Injectable()
 	export class MyClient {

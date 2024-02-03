@@ -61,7 +61,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataMaskingPolicyPropertiesDataMaskingState { Disabled = 0, Enabled = 1 }
+	export enum DataMaskingPolicyPropertiesDataMaskingState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 	export interface DataMaskingRule {
 	}
@@ -212,7 +212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataMaskingRulePropertiesMaskingFunction { Default = 0, CCN = 1, Email = 2, Number = 3, SSN = 4, Text = 5 }
+	export enum DataMaskingRulePropertiesMaskingFunction { Default = 'Default', CCN = 'CCN', Email = 'Email', Number = 'Number', SSN = 'SSN', Text = 'Text' }
 
 	@Injectable()
 	export class MyClient {
@@ -283,7 +283,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DataMaskingPolicies_GetDataMaskingPolicyName { Default = 0 }
+	export enum DataMaskingPolicies_GetDataMaskingPolicyName { Default = 'Default' }
 
 }
 

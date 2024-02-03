@@ -159,9 +159,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MessagesWebhooksEndpoint_type { inbound_url = 0, status_url = 1 }
+	export enum MessagesWebhooksEndpoint_type { inbound_url = 'inbound_url', status_url = 'status_url' }
 
-	export enum MessagesWebhooksHttp_method { GET = 0, POST = 1 }
+	export enum MessagesWebhooksHttp_method { GET = 'GET', POST = 'POST' }
 
 
 	/** The Nexmo product that you access with this application. */
@@ -221,7 +221,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceWebhooksEndpoint_type { answer_url = 0, event_url = 1 }
+	export enum VoiceWebhooksEndpoint_type { answer_url = 'answer_url', event_url = 'event_url' }
 
 	export interface ApplicationCreated extends Application {
 		keys?: KeysWithPrivateKey;
@@ -508,7 +508,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateApplicationPostBodyType { voice = 0, messages = 1 }
+	export enum CreateApplicationPostBodyType { voice = 'voice', messages = 'messages' }
 
 	export interface UpdateApplicationPutBody {
 

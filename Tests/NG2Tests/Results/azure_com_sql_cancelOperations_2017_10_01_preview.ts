@@ -132,7 +132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseOperationPropertiesState { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, CancelInProgress = 4, Cancelled = 5 }
+	export enum DatabaseOperationPropertiesState { Pending = 'Pending', InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed', CancelInProgress = 'CancelInProgress', Cancelled = 'Cancelled' }
 
 
 	/** The response to a list database operations request */

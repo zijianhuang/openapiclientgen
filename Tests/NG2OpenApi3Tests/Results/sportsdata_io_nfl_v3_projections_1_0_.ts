@@ -2398,7 +2398,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DfsSlateOwnershipProjectionsBySlateidFormat { XML = 0, JSON = 1 }
+	export enum DfsSlateOwnershipProjectionsBySlateidFormat { XML = 'XML', JSON = 'JSON' }
 
 }
 

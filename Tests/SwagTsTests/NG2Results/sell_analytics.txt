@@ -317,7 +317,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class Customer_service_metricClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -331,12 +331,6 @@ export namespace MyNS {
 		 */
 		GetCustomerServiceMetric(customer_service_metric_type: string, evaluation_marketplace_id: string, evaluation_type: string): Observable<GetCustomerServiceMetricResponse> {
 			return this.http.get<GetCustomerServiceMetricResponse>(this.baseUri + 'customer_service_metric/' + (customer_service_metric_type == null ? '' : encodeURIComponent(customer_service_metric_type)) + '/' + (evaluation_type == null ? '' : encodeURIComponent(evaluation_type)) + '&evaluation_marketplace_id=' + (evaluation_marketplace_id == null ? '' : encodeURIComponent(evaluation_marketplace_id)), {});
-		}
-	}
-
-	@Injectable()
-	export class Seller_standards_profileClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -357,12 +351,6 @@ export namespace MyNS {
 		 */
 		GetSellerStandardsProfile(cycle: string, program: string): Observable<StandardsProfile> {
 			return this.http.get<StandardsProfile>(this.baseUri + 'seller_standards_profile/' + (program == null ? '' : encodeURIComponent(program)) + '/' + (cycle == null ? '' : encodeURIComponent(cycle)), {});
-		}
-	}
-
-	@Injectable()
-	export class Traffic_reportClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

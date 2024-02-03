@@ -95,15 +95,15 @@ export namespace MyNS {
 
 
 	/** OsType to be used to specify os type. Choose from Linux and Windows. Default to Linux. */
-	export enum OSType { Linux = 0, Windows = 1 }
+	export enum OSType { Linux = 'Linux', Windows = 'Windows' }
 
 
 	/** OpenShiftAgentPoolProfileRole represents the role of the AgentPoolProfile. */
-	export enum OpenShiftAgentPoolProfileRole { compute = 0, infra = 1 }
+	export enum OpenShiftAgentPoolProfileRole { compute = 'compute', infra = 'infra' }
 
 
 	/** Size of OpenShift VMs. */
-	export enum OpenShiftContainerServiceVMSize { Standard_D2s_v3 = 0, Standard_D4s_v3 = 1, Standard_D8s_v3 = 2, Standard_D16s_v3 = 3, Standard_D32s_v3 = 4, Standard_D64s_v3 = 5, Standard_DS4_v2 = 6, Standard_DS5_v2 = 7, Standard_F8s_v2 = 8, Standard_F16s_v2 = 9, Standard_F32s_v2 = 10, Standard_F64s_v2 = 11, Standard_F72s_v2 = 12, Standard_F8s = 13, Standard_F16s = 14, Standard_E4s_v3 = 15, Standard_E8s_v3 = 16, Standard_E16s_v3 = 17, Standard_E20s_v3 = 18, Standard_E32s_v3 = 19, Standard_E64s_v3 = 20, Standard_GS2 = 21, Standard_GS3 = 22, Standard_GS4 = 23, Standard_GS5 = 24, Standard_DS12_v2 = 25, Standard_DS13_v2 = 26, Standard_DS14_v2 = 27, Standard_DS15_v2 = 28, Standard_L4s = 29, Standard_L8s = 30, Standard_L16s = 31, Standard_L32s = 32 }
+	export enum OpenShiftContainerServiceVMSize { Standard_D2s_v3 = 'Standard_D2s_v3', Standard_D4s_v3 = 'Standard_D4s_v3', Standard_D8s_v3 = 'Standard_D8s_v3', Standard_D16s_v3 = 'Standard_D16s_v3', Standard_D32s_v3 = 'Standard_D32s_v3', Standard_D64s_v3 = 'Standard_D64s_v3', Standard_DS4_v2 = 'Standard_DS4_v2', Standard_DS5_v2 = 'Standard_DS5_v2', Standard_F8s_v2 = 'Standard_F8s_v2', Standard_F16s_v2 = 'Standard_F16s_v2', Standard_F32s_v2 = 'Standard_F32s_v2', Standard_F64s_v2 = 'Standard_F64s_v2', Standard_F72s_v2 = 'Standard_F72s_v2', Standard_F8s = 'Standard_F8s', Standard_F16s = 'Standard_F16s', Standard_E4s_v3 = 'Standard_E4s_v3', Standard_E8s_v3 = 'Standard_E8s_v3', Standard_E16s_v3 = 'Standard_E16s_v3', Standard_E20s_v3 = 'Standard_E20s_v3', Standard_E32s_v3 = 'Standard_E32s_v3', Standard_E64s_v3 = 'Standard_E64s_v3', Standard_GS2 = 'Standard_GS2', Standard_GS3 = 'Standard_GS3', Standard_GS4 = 'Standard_GS4', Standard_GS5 = 'Standard_GS5', Standard_DS12_v2 = 'Standard_DS12_v2', Standard_DS13_v2 = 'Standard_DS13_v2', Standard_DS14_v2 = 'Standard_DS14_v2', Standard_DS15_v2 = 'Standard_DS15_v2', Standard_L4s = 'Standard_L4s', Standard_L8s = 'Standard_L8s', Standard_L16s = 'Standard_L16s', Standard_L32s = 'Standard_L32s' }
 
 
 	/** OpenShift Managed cluster. */

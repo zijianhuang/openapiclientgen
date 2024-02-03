@@ -450,7 +450,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2ProviderConfigState { MFA_STATE_UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2, MANDATORY = 3 }
+	export enum GoogleCloudIdentitytoolkitAdminV2ProviderConfigState { MFA_STATE_UNSPECIFIED = 'MFA_STATE_UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED', MANDATORY = 'MANDATORY' }
 
 
 	/** TotpMFAProviderConfig represents the TOTP based MFA provider. */
@@ -473,7 +473,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2MultiFactorAuthConfigState { STATE_UNSPECIFIED = 0, DISABLED = 1, ENABLED = 2, MANDATORY = 3 }
+	export enum GoogleCloudIdentitytoolkitAdminV2MultiFactorAuthConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DISABLED = 'DISABLED', ENABLED = 'ENABLED', MANDATORY = 'MANDATORY' }
 
 
 	/** Configuration related to monitoring project activity. */
@@ -680,7 +680,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2EmailTemplateBodyFormat { BODY_FORMAT_UNSPECIFIED = 0, PLAIN_TEXT = 1, HTML = 2 }
+	export enum GoogleCloudIdentitytoolkitAdminV2EmailTemplateBodyFormat { BODY_FORMAT_UNSPECIFIED = 'BODY_FORMAT_UNSPECIFIED', PLAIN_TEXT = 'PLAIN_TEXT', HTML = 'HTML' }
 
 
 	/** Information of custom domain DNS verification. By default, default_domain will be used. A custom domain can be configured using VerifyCustomDomain. */
@@ -731,9 +731,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2DnsInfoCustomDomainState { VERIFICATION_STATE_UNSPECIFIED = 0, NOT_STARTED = 1, IN_PROGRESS = 2, FAILED = 3, SUCCEEDED = 4 }
+	export enum GoogleCloudIdentitytoolkitAdminV2DnsInfoCustomDomainState { VERIFICATION_STATE_UNSPECIFIED = 'VERIFICATION_STATE_UNSPECIFIED', NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED' }
 
-	export enum GoogleCloudIdentitytoolkitAdminV2SendEmailMethod { METHOD_UNSPECIFIED = 0, DEFAULT = 1, CUSTOM_SMTP = 2 }
+	export enum GoogleCloudIdentitytoolkitAdminV2SendEmailMethod { METHOD_UNSPECIFIED = 'METHOD_UNSPECIFIED', DEFAULT = 'DEFAULT', CUSTOM_SMTP = 'CUSTOM_SMTP' }
 
 
 	/** Configuration for SMTP relay */
@@ -791,7 +791,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2SmtpSecurityMode { SECURITY_MODE_UNSPECIFIED = 0, SSL = 1, START_TLS = 2 }
+	export enum GoogleCloudIdentitytoolkitAdminV2SmtpSecurityMode { SECURITY_MODE_UNSPECIFIED = 'SECURITY_MODE_UNSPECIFIED', SSL = 'SSL', START_TLS = 'START_TLS' }
 
 
 	/** Options for SMS sending. */
@@ -876,7 +876,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2PasswordPolicyConfigPasswordPolicyEnforcementState { PASSWORD_POLICY_ENFORCEMENT_STATE_UNSPECIFIED = 0, OFF = 1, ENFORCE = 2 }
+	export enum GoogleCloudIdentitytoolkitAdminV2PasswordPolicyConfigPasswordPolicyEnforcementState { PASSWORD_POLICY_ENFORCEMENT_STATE_UNSPECIFIED = 'PASSWORD_POLICY_ENFORCEMENT_STATE_UNSPECIFIED', OFF = 'OFF', ENFORCE = 'ENFORCE' }
 
 
 	/** The strength attributes for the password policy on the project. */
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2RecaptchaConfigEmailPasswordEnforcementState { RECAPTCHA_PROVIDER_ENFORCEMENT_STATE_UNSPECIFIED = 0, OFF = 1, AUDIT = 2, ENFORCE = 3 }
+	export enum GoogleCloudIdentitytoolkitAdminV2RecaptchaConfigEmailPasswordEnforcementState { RECAPTCHA_PROVIDER_ENFORCEMENT_STATE_UNSPECIFIED = 'RECAPTCHA_PROVIDER_ENFORCEMENT_STATE_UNSPECIFIED', OFF = 'OFF', AUDIT = 'AUDIT', ENFORCE = 'ENFORCE' }
 
 
 	/** The config for a reCAPTCHA managed rule. Models a single interval [start_score, end_score]. The start_score is implicit. It is either the closest smaller end_score (if one is available) or 0. Intervals in aggregate span [0, 1] without overlapping. */
@@ -1074,7 +1074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2RecaptchaManagedRuleAction { RECAPTCHA_ACTION_UNSPECIFIED = 0, BLOCK = 1 }
+	export enum GoogleCloudIdentitytoolkitAdminV2RecaptchaManagedRuleAction { RECAPTCHA_ACTION_UNSPECIFIED = 'RECAPTCHA_ACTION_UNSPECIFIED', BLOCK = 'BLOCK' }
 
 
 	/** The reCAPTCHA key config. reCAPTCHA Enterprise offers different keys for different client platforms. */
@@ -1104,7 +1104,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2RecaptchaKeyType { CLIENT_TYPE_UNSPECIFIED = 0, WEB = 1, IOS = 2, ANDROID = 3 }
+	export enum GoogleCloudIdentitytoolkitAdminV2RecaptchaKeyType { CLIENT_TYPE_UNSPECIFIED = 'CLIENT_TYPE_UNSPECIFIED', WEB = 'WEB', IOS = 'IOS', ANDROID = 'ANDROID' }
 
 
 	/** Configuration related to local sign in methods. */
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2HashConfigAlgorithm { HASH_ALGORITHM_UNSPECIFIED = 0, HMAC_SHA256 = 1, HMAC_SHA1 = 2, HMAC_MD5 = 3, SCRYPT = 4, PBKDF_SHA1 = 5, MD5 = 6, HMAC_SHA512 = 7, SHA1 = 8, BCRYPT = 9, PBKDF2_SHA256 = 10, SHA256 = 11, SHA512 = 12, STANDARD_SCRYPT = 13 }
+	export enum GoogleCloudIdentitytoolkitAdminV2HashConfigAlgorithm { HASH_ALGORITHM_UNSPECIFIED = 'HASH_ALGORITHM_UNSPECIFIED', HMAC_SHA256 = 'HMAC_SHA256', HMAC_SHA1 = 'HMAC_SHA1', HMAC_MD5 = 'HMAC_MD5', SCRYPT = 'SCRYPT', PBKDF_SHA1 = 'PBKDF_SHA1', MD5 = 'MD5', HMAC_SHA512 = 'HMAC_SHA512', SHA1 = 'SHA1', BCRYPT = 'BCRYPT', PBKDF2_SHA256 = 'PBKDF2_SHA256', SHA256 = 'SHA256', SHA512 = 'SHA512', STANDARD_SCRYPT = 'STANDARD_SCRYPT' }
 
 
 	/** Configuration options related to authenticated a user by their phone number. */
@@ -1266,7 +1266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitAdminV2ConfigSubtype { SUBTYPE_UNSPECIFIED = 0, IDENTITY_PLATFORM = 1, FIREBASE_AUTH = 2 }
+	export enum GoogleCloudIdentitytoolkitAdminV2ConfigSubtype { SUBTYPE_UNSPECIFIED = 'SUBTYPE_UNSPECIFIED', IDENTITY_PLATFORM = 'IDENTITY_PLATFORM', FIREBASE_AUTH = 'FIREBASE_AUTH' }
 
 
 	/** Standard Identity Toolkit-trusted IDPs. */
@@ -2265,7 +2265,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitV2PasswordPolicyEnforcementState { ENFORCEMENT_STATE_UNSPECIFIED = 0, OFF = 1, ENFORCE = 2 }
+	export enum GoogleCloudIdentitytoolkitV2PasswordPolicyEnforcementState { ENFORCEMENT_STATE_UNSPECIFIED = 'ENFORCEMENT_STATE_UNSPECIFIED', OFF = 'OFF', ENFORCE = 'ENFORCE' }
 
 
 	/** Configuration for reCAPTCHA */
@@ -2319,9 +2319,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitV2RecaptchaEnforcementStateEnforcementState { ENFORCEMENT_STATE_UNSPECIFIED = 0, OFF = 1, AUDIT = 2, ENFORCE = 3 }
+	export enum GoogleCloudIdentitytoolkitV2RecaptchaEnforcementStateEnforcementState { ENFORCEMENT_STATE_UNSPECIFIED = 'ENFORCEMENT_STATE_UNSPECIFIED', OFF = 'OFF', AUDIT = 'AUDIT', ENFORCE = 'ENFORCE' }
 
-	export enum GoogleCloudIdentitytoolkitV2RecaptchaEnforcementStateProvider { RECAPTCHA_PROVIDER_UNSPECIFIED = 0, EMAIL_PASSWORD_PROVIDER = 1 }
+	export enum GoogleCloudIdentitytoolkitV2RecaptchaEnforcementStateProvider { RECAPTCHA_PROVIDER_UNSPECIFIED = 'RECAPTCHA_PROVIDER_UNSPECIFIED', EMAIL_PASSWORD_PROVIDER = 'EMAIL_PASSWORD_PROVIDER' }
 
 
 	/** Request message for RevokeToken. */
@@ -2379,7 +2379,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIdentitytoolkitV2RevokeTokenRequestTokenType { TOKEN_TYPE_UNSPECIFIED = 0, REFRESH_TOKEN = 1, ACCESS_TOKEN = 2, CODE = 3 }
+	export enum GoogleCloudIdentitytoolkitV2RevokeTokenRequestTokenType { TOKEN_TYPE_UNSPECIFIED = 'TOKEN_TYPE_UNSPECIFIED', REFRESH_TOKEN = 'REFRESH_TOKEN', ACCESS_TOKEN = 'ACCESS_TOKEN', CODE = 'CODE' }
 
 
 	/** Response message for RevokeToken. Empty for now. */
@@ -2765,7 +2765,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -3235,9 +3235,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Identitytoolkit_getRecaptchaConfigClientType { CLIENT_TYPE_UNSPECIFIED = 0, CLIENT_TYPE_WEB = 1, CLIENT_TYPE_ANDROID = 2, CLIENT_TYPE_IOS = 3 }
+	export enum Identitytoolkit_getRecaptchaConfigClientType { CLIENT_TYPE_UNSPECIFIED = 'CLIENT_TYPE_UNSPECIFIED', CLIENT_TYPE_WEB = 'CLIENT_TYPE_WEB', CLIENT_TYPE_ANDROID = 'CLIENT_TYPE_ANDROID', CLIENT_TYPE_IOS = 'CLIENT_TYPE_IOS' }
 
-	export enum Identitytoolkit_getRecaptchaConfigVersion { RECAPTCHA_VERSION_UNSPECIFIED = 0, RECAPTCHA_ENTERPRISE = 1 }
+	export enum Identitytoolkit_getRecaptchaConfigVersion { RECAPTCHA_VERSION_UNSPECIFIED = 'RECAPTCHA_VERSION_UNSPECIFIED', RECAPTCHA_ENTERPRISE = 'RECAPTCHA_ENTERPRISE' }
 
 }
 

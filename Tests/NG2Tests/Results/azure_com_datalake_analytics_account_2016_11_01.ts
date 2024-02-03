@@ -207,7 +207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapabilityInformationState { Registered = 0, Suspended = 1, Deleted = 2, Unregistered = 3, Warned = 4 }
+	export enum CapabilityInformationState { Registered = 'Registered', Suspended = 'Suspended', Deleted = 'Deleted', Unregistered = 'Unregistered', Warned = 'Warned' }
 
 
 	/** Data Lake Analytics account name availability check parameters. */
@@ -249,7 +249,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityParametersType { 'Microsoft.DataLakeAnalytics/accounts' = 0 }
+	export enum CheckNameAvailabilityParametersType { 'Microsoft.DataLakeAnalytics/accounts' = 'Microsoft.DataLakeAnalytics/accounts' }
 
 
 	/** Data Lake Analytics compute policy information. */
@@ -349,7 +349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputePolicyPropertiesObjectType { User = 0, Group = 1, ServicePrincipal = 2 }
+	export enum ComputePolicyPropertiesObjectType { User = 'User', Group = 'Group', ServicePrincipal = 'ServicePrincipal' }
 
 
 	/** The parameters used to create a new compute policy while creating a new Data Lake Analytics account. */
@@ -547,7 +547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateDataLakeAnalyticsAccountPropertiesFirewallAllowAzureIps { Enabled = 0, Disabled = 1 }
+	export enum CreateDataLakeAnalyticsAccountPropertiesFirewallAllowAzureIps { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** The parameters used to create a new firewall rule while creating a new Data Lake Analytics account. */
@@ -582,7 +582,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateDataLakeAnalyticsAccountPropertiesNewTier { Consumption = 0, Commitment_100AUHours = 1, Commitment_500AUHours = 2, Commitment_1000AUHours = 3, Commitment_5000AUHours = 4, Commitment_10000AUHours = 5, Commitment_50000AUHours = 6, Commitment_100000AUHours = 7, Commitment_500000AUHours = 8 }
+	export enum CreateDataLakeAnalyticsAccountPropertiesNewTier { Consumption = 'Consumption', Commitment_100AUHours = 'Commitment_100AUHours', Commitment_500AUHours = 'Commitment_500AUHours', Commitment_1000AUHours = 'Commitment_1000AUHours', Commitment_5000AUHours = 'Commitment_5000AUHours', Commitment_10000AUHours = 'Commitment_10000AUHours', Commitment_50000AUHours = 'Commitment_50000AUHours', Commitment_100000AUHours = 'Commitment_100000AUHours', Commitment_500000AUHours = 'Commitment_500000AUHours' }
 
 
 	/** The parameters used to create a new compute policy. */
@@ -1062,9 +1062,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLakeAnalyticsAccountPropertiesBasicProvisioningState { Failed = 0, Creating = 1, Running = 2, Succeeded = 3, Patching = 4, Suspending = 5, Resuming = 6, Deleting = 7, Deleted = 8, Undeleting = 9, Canceled = 10 }
+	export enum DataLakeAnalyticsAccountPropertiesBasicProvisioningState { Failed = 'Failed', Creating = 'Creating', Running = 'Running', Succeeded = 'Succeeded', Patching = 'Patching', Suspending = 'Suspending', Resuming = 'Resuming', Deleting = 'Deleting', Deleted = 'Deleted', Undeleting = 'Undeleting', Canceled = 'Canceled' }
 
-	export enum DataLakeAnalyticsAccountPropertiesBasicState { Active = 0, Suspended = 1 }
+	export enum DataLakeAnalyticsAccountPropertiesBasicState { Active = 'Active', Suspended = 'Suspended' }
 
 
 	/** Data Lake Store account list information. */
@@ -1229,7 +1229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationOrigin { user = 0, system = 1, 'user,system' = 2 }
+	export enum OperationOrigin { user = 'user', system = 'system', 'user,system' = 'user,system' }
 
 
 	/** The display information for a particular operation. */

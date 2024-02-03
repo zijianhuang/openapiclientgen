@@ -448,7 +448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetCampaignStateResponseState { Initialized = 0, Running = 1, Paused = 2, Stopped = 3, Failed = 4 }
+	export enum GetCampaignStateResponseState { Initialized = 'Initialized', Running = 'Running', Paused = 'Paused', Stopped = 'Stopped', Failed = 'Failed' }
 
 
 	/** GetCampaignStateBatchResponse */
@@ -514,7 +514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailedCampaignStateResponseFailureCode { ResourceNotFound = 0, UnknownError = 1 }
+	export enum FailedCampaignStateResponseFailureCode { ResourceNotFound = 'ResourceNotFound', UnknownError = 'UnknownError' }
 
 
 	/** Successful response of campaign state */
@@ -672,7 +672,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionConfigEncryptionType { KMS = 0 }
+	export enum EncryptionConfigEncryptionType { KMS = 'KMS' }
 
 
 	/** GetInstanceOnboardingJobStatusResponse */
@@ -742,9 +742,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceOnboardingJobStatusFailureCode { EVENT_BRIDGE_ACCESS_DENIED = 0, EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED = 1, IAM_ACCESS_DENIED = 2, KMS_ACCESS_DENIED = 3, KMS_KEY_NOT_FOUND = 4, INTERNAL_FAILURE = 5 }
+	export enum InstanceOnboardingJobStatusFailureCode { EVENT_BRIDGE_ACCESS_DENIED = 'EVENT_BRIDGE_ACCESS_DENIED', EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED = 'EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED', IAM_ACCESS_DENIED = 'IAM_ACCESS_DENIED', KMS_ACCESS_DENIED = 'KMS_ACCESS_DENIED', KMS_KEY_NOT_FOUND = 'KMS_KEY_NOT_FOUND', INTERNAL_FAILURE = 'INTERNAL_FAILURE' }
 
-	export enum InstanceOnboardingJobStatusStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum InstanceOnboardingJobStatusStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** ListCampaignsResponse */
@@ -904,7 +904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceIdFilterOperator { Eq = 0 }
+	export enum InstanceIdFilterOperator { Eq = 'Eq' }
 
 
 	/** ListTagsForResponse */
@@ -1004,7 +1004,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FailedRequestFailureCode { InvalidInput = 0, RequestThrottled = 1, UnknownError = 2 }
+	export enum FailedRequestFailureCode { InvalidInput = 'InvalidInput', RequestThrottled = 'RequestThrottled', UnknownError = 'UnknownError' }
 
 
 	/** A successful request identified by the unique client token. */
@@ -1142,7 +1142,7 @@ export namespace MyNS {
 
 
 	/** Server-side encryption type. */
-	export enum EncryptionType { KMS = 0 }
+	export enum EncryptionType { KMS = 'KMS' }
 
 
 	/** Filter model by type */
@@ -1163,7 +1163,7 @@ export namespace MyNS {
 
 
 	/** State of a campaign */
-	export enum CampaignState { Initialized = 0, Running = 1, Paused = 2, Stopped = 3, Failed = 4 }
+	export enum CampaignState { Initialized = 'Initialized', Running = 'Running', Paused = 'Paused', Stopped = 'Stopped', Failed = 'Failed' }
 
 
 	/** The request for Create Campaign API. */
@@ -1286,11 +1286,11 @@ export namespace MyNS {
 
 
 	/** A predefined code indicating the error that caused the failure in getting state of campaigns */
-	export enum GetCampaignStateBatchFailureCode { ResourceNotFound = 0, UnknownError = 1 }
+	export enum GetCampaignStateBatchFailureCode { ResourceNotFound = 'ResourceNotFound', UnknownError = 'UnknownError' }
 
 
 	/** A predefined code indicating the error that caused the failure. */
-	export enum FailureCode { InvalidInput = 0, RequestThrottled = 1, UnknownError = 2 }
+	export enum FailureCode { InvalidInput = 'InvalidInput', RequestThrottled = 'RequestThrottled', UnknownError = 'UnknownError' }
 
 
 	/** GetCampaignStateBatchRequest */
@@ -1358,11 +1358,11 @@ export namespace MyNS {
 
 
 	/** Enumeration of the possible failure codes for instance onboarding job */
-	export enum InstanceOnboardingJobFailureCode { EVENT_BRIDGE_ACCESS_DENIED = 0, EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED = 1, IAM_ACCESS_DENIED = 2, KMS_ACCESS_DENIED = 3, KMS_KEY_NOT_FOUND = 4, INTERNAL_FAILURE = 5 }
+	export enum InstanceOnboardingJobFailureCode { EVENT_BRIDGE_ACCESS_DENIED = 'EVENT_BRIDGE_ACCESS_DENIED', EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED = 'EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED', IAM_ACCESS_DENIED = 'IAM_ACCESS_DENIED', KMS_ACCESS_DENIED = 'KMS_ACCESS_DENIED', KMS_KEY_NOT_FOUND = 'KMS_KEY_NOT_FOUND', INTERNAL_FAILURE = 'INTERNAL_FAILURE' }
 
 
 	/** Enumeration of the possible states for instance onboarding job */
-	export enum InstanceOnboardingJobStatusCode { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum InstanceOnboardingJobStatusCode { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** ListCampaignsRequest */

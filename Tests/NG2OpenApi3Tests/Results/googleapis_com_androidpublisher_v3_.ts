@@ -24,7 +24,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AbiAlias { UNSPECIFIED_CPU_ARCHITECTURE = 0, ARMEABI = 1, ARMEABI_V7A = 2, ARM64_V8A = 3, X86 = 4, X86_64 = 5, RISCV64 = 6 }
+	export enum AbiAlias { UNSPECIFIED_CPU_ARCHITECTURE = 'UNSPECIFIED_CPU_ARCHITECTURE', ARMEABI = 'ARMEABI', ARMEABI_V7A = 'ARMEABI_V7A', ARM64_V8A = 'ARM64_V8A', X86 = 'X86', X86_64 = 'X86_64', RISCV64 = 'RISCV64' }
 
 
 	/** Targeting based on Abi. */
@@ -126,7 +126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivateBasePlanRequestLatencyTolerance { PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED = 0, PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE = 1, PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT = 2 }
+	export enum ActivateBasePlanRequestLatencyTolerance { PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED', PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE', PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT' }
 
 
 	/** Request message for ActivateSubscriptionOffer. */
@@ -556,7 +556,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScreenDensityDensityAlias { DENSITY_UNSPECIFIED = 0, NODPI = 1, LDPI = 2, MDPI = 3, TVDPI = 4, HDPI = 5, XHDPI = 6, XXHDPI = 7, XXXHDPI = 8 }
+	export enum ScreenDensityDensityAlias { DENSITY_UNSPECIFIED = 'DENSITY_UNSPECIFIED', NODPI = 'NODPI', LDPI = 'LDPI', MDPI = 'MDPI', TVDPI = 'TVDPI', HDPI = 'HDPI', XHDPI = 'XHDPI', XXHDPI = 'XXHDPI', XXXHDPI = 'XXXHDPI' }
 
 
 	/** Targeting based on sdk version. */
@@ -640,7 +640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextureCompressionFormatAlias { UNSPECIFIED_TEXTURE_COMPRESSION_FORMAT = 0, ETC1_RGB8 = 1, PALETTED = 2, THREE_DC = 3, ATC = 4, LATC = 5, DXT1 = 6, S3TC = 7, PVRTC = 8, ASTC = 9, ETC2 = 10 }
+	export enum TextureCompressionFormatAlias { UNSPECIFIED_TEXTURE_COMPRESSION_FORMAT = 'UNSPECIFIED_TEXTURE_COMPRESSION_FORMAT', ETC1_RGB8 = 'ETC1_RGB8', PALETTED = 'PALETTED', THREE_DC = 'THREE_DC', ATC = 'ATC', LATC = 'LATC', DXT1 = 'DXT1', S3TC = 'S3TC', PVRTC = 'PVRTC', ASTC = 'ASTC', ETC2 = 'ETC2' }
 
 
 	/** A set of apks representing a module. */
@@ -703,9 +703,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ModuleMetadataDeliveryType { UNKNOWN_DELIVERY_TYPE = 0, INSTALL_TIME = 1, ON_DEMAND = 2, FAST_FOLLOW = 3 }
+	export enum ModuleMetadataDeliveryType { UNKNOWN_DELIVERY_TYPE = 'UNKNOWN_DELIVERY_TYPE', INSTALL_TIME = 'INSTALL_TIME', ON_DEMAND = 'ON_DEMAND', FAST_FOLLOW = 'FAST_FOLLOW' }
 
-	export enum ModuleMetadataModuleType { UNKNOWN_MODULE_TYPE = 0, FEATURE_MODULE = 1 }
+	export enum ModuleMetadataModuleType { UNKNOWN_MODULE_TYPE = 'UNKNOWN_MODULE_TYPE', FEATURE_MODULE = 'FEATURE_MODULE' }
 
 
 	/** Targeting on the module level. */
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppRecoveryActionStatus { RECOVERY_STATUS_UNSPECIFIED = 0, RECOVERY_STATUS_ACTIVE = 1, RECOVERY_STATUS_CANCELED = 2, RECOVERY_STATUS_DRAFT = 3 }
+	export enum AppRecoveryActionStatus { RECOVERY_STATUS_UNSPECIFIED = 'RECOVERY_STATUS_UNSPECIFIED', RECOVERY_STATUS_ACTIVE = 'RECOVERY_STATUS_ACTIVE', RECOVERY_STATUS_CANCELED = 'RECOVERY_STATUS_CANCELED', RECOVERY_STATUS_DRAFT = 'RECOVERY_STATUS_DRAFT' }
 
 
 	/** Targeting details for a recovery action such as regions, android sdk levels, app versions etc. */
@@ -1366,9 +1366,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoRenewingBasePlanTypeProrationMode { SUBSCRIPTION_PRORATION_MODE_UNSPECIFIED = 0, SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE = 1, SUBSCRIPTION_PRORATION_MODE_CHARGE_FULL_PRICE_IMMEDIATELY = 2 }
+	export enum AutoRenewingBasePlanTypeProrationMode { SUBSCRIPTION_PRORATION_MODE_UNSPECIFIED = 'SUBSCRIPTION_PRORATION_MODE_UNSPECIFIED', SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE = 'SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE', SUBSCRIPTION_PRORATION_MODE_CHARGE_FULL_PRICE_IMMEDIATELY = 'SUBSCRIPTION_PRORATION_MODE_CHARGE_FULL_PRICE_IMMEDIATELY' }
 
-	export enum AutoRenewingBasePlanTypeResubscribeState { RESUBSCRIBE_STATE_UNSPECIFIED = 0, RESUBSCRIBE_STATE_ACTIVE = 1, RESUBSCRIBE_STATE_INACTIVE = 2 }
+	export enum AutoRenewingBasePlanTypeResubscribeState { RESUBSCRIBE_STATE_UNSPECIFIED = 'RESUBSCRIBE_STATE_UNSPECIFIED', RESUBSCRIBE_STATE_ACTIVE = 'RESUBSCRIBE_STATE_ACTIVE', RESUBSCRIBE_STATE_INACTIVE = 'RESUBSCRIBE_STATE_INACTIVE' }
 
 
 	/** Information related to an auto renewing plan. */
@@ -1467,9 +1467,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionItemPriceChangeDetailsPriceChangeMode { PRICE_CHANGE_MODE_UNSPECIFIED = 0, PRICE_DECREASE = 1, PRICE_INCREASE = 2, OPT_OUT_PRICE_INCREASE = 3 }
+	export enum SubscriptionItemPriceChangeDetailsPriceChangeMode { PRICE_CHANGE_MODE_UNSPECIFIED = 'PRICE_CHANGE_MODE_UNSPECIFIED', PRICE_DECREASE = 'PRICE_DECREASE', PRICE_INCREASE = 'PRICE_INCREASE', OPT_OUT_PRICE_INCREASE = 'OPT_OUT_PRICE_INCREASE' }
 
-	export enum SubscriptionItemPriceChangeDetailsPriceChangeState { PRICE_CHANGE_STATE_UNSPECIFIED = 0, OUTSTANDING = 1, CONFIRMED = 2, APPLIED = 3 }
+	export enum SubscriptionItemPriceChangeDetailsPriceChangeState { PRICE_CHANGE_STATE_UNSPECIFIED = 'PRICE_CHANGE_STATE_UNSPECIFIED', OUTSTANDING = 'OUTSTANDING', CONFIRMED = 'CONFIRMED', APPLIED = 'APPLIED' }
 
 
 	/** A single base plan for a subscription. */
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrepaidBasePlanTypeTimeExtension { TIME_EXTENSION_UNSPECIFIED = 0, TIME_EXTENSION_ACTIVE = 1, TIME_EXTENSION_INACTIVE = 2 }
+	export enum PrepaidBasePlanTypeTimeExtension { TIME_EXTENSION_UNSPECIFIED = 'TIME_EXTENSION_UNSPECIFIED', TIME_EXTENSION_ACTIVE = 'TIME_EXTENSION_ACTIVE', TIME_EXTENSION_INACTIVE = 'TIME_EXTENSION_INACTIVE' }
 
 
 	/** Configuration for a base plan specific to a region. */
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BasePlanState { STATE_UNSPECIFIED = 0, DRAFT = 1, ACTIVE = 2, INACTIVE = 3 }
+	export enum BasePlanState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DRAFT = 'DRAFT', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** Request message for BatchGetSubscriptionOffers endpoint. */
@@ -2112,7 +2112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionTaxAndComplianceSettingsEeaWithdrawalRightType { WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED = 0, WITHDRAWAL_RIGHT_DIGITAL_CONTENT = 1, WITHDRAWAL_RIGHT_SERVICE = 2 }
+	export enum SubscriptionTaxAndComplianceSettingsEeaWithdrawalRightType { WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED = 'WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED', WITHDRAWAL_RIGHT_DIGITAL_CONTENT = 'WITHDRAWAL_RIGHT_DIGITAL_CONTENT', WITHDRAWAL_RIGHT_SERVICE = 'WITHDRAWAL_RIGHT_SERVICE' }
 
 
 	/** Specified details about taxation in a given geographical region. */
@@ -2149,9 +2149,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionalTaxRateInfoStreamingTaxType { STREAMING_TAX_TYPE_UNSPECIFIED = 0, STREAMING_TAX_TYPE_TELCO_VIDEO_RENTAL = 1, STREAMING_TAX_TYPE_TELCO_VIDEO_SALES = 2, STREAMING_TAX_TYPE_TELCO_VIDEO_MULTI_CHANNEL = 3, STREAMING_TAX_TYPE_TELCO_AUDIO_RENTAL = 4, STREAMING_TAX_TYPE_TELCO_AUDIO_SALES = 5, STREAMING_TAX_TYPE_TELCO_AUDIO_MULTI_CHANNEL = 6 }
+	export enum RegionalTaxRateInfoStreamingTaxType { STREAMING_TAX_TYPE_UNSPECIFIED = 'STREAMING_TAX_TYPE_UNSPECIFIED', STREAMING_TAX_TYPE_TELCO_VIDEO_RENTAL = 'STREAMING_TAX_TYPE_TELCO_VIDEO_RENTAL', STREAMING_TAX_TYPE_TELCO_VIDEO_SALES = 'STREAMING_TAX_TYPE_TELCO_VIDEO_SALES', STREAMING_TAX_TYPE_TELCO_VIDEO_MULTI_CHANNEL = 'STREAMING_TAX_TYPE_TELCO_VIDEO_MULTI_CHANNEL', STREAMING_TAX_TYPE_TELCO_AUDIO_RENTAL = 'STREAMING_TAX_TYPE_TELCO_AUDIO_RENTAL', STREAMING_TAX_TYPE_TELCO_AUDIO_SALES = 'STREAMING_TAX_TYPE_TELCO_AUDIO_SALES', STREAMING_TAX_TYPE_TELCO_AUDIO_MULTI_CHANNEL = 'STREAMING_TAX_TYPE_TELCO_AUDIO_MULTI_CHANNEL' }
 
-	export enum RegionalTaxRateInfoTaxTier { TAX_TIER_UNSPECIFIED = 0, TAX_TIER_BOOKS_1 = 1, TAX_TIER_NEWS_1 = 2, TAX_TIER_NEWS_2 = 3, TAX_TIER_MUSIC_OR_AUDIO_1 = 4, TAX_TIER_LIVE_OR_BROADCAST_1 = 5 }
+	export enum RegionalTaxRateInfoTaxTier { TAX_TIER_UNSPECIFIED = 'TAX_TIER_UNSPECIFIED', TAX_TIER_BOOKS_1 = 'TAX_TIER_BOOKS_1', TAX_TIER_NEWS_1 = 'TAX_TIER_NEWS_1', TAX_TIER_NEWS_2 = 'TAX_TIER_NEWS_2', TAX_TIER_MUSIC_OR_AUDIO_1 = 'TAX_TIER_MUSIC_OR_AUDIO_1', TAX_TIER_LIVE_OR_BROADCAST_1 = 'TAX_TIER_LIVE_OR_BROADCAST_1' }
 
 
 	/** Request message for BatchMigrateBasePlanPrices. */
@@ -2253,7 +2253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionalPriceMigrationConfigPriceIncreaseType { PRICE_INCREASE_TYPE_UNSPECIFIED = 0, PRICE_INCREASE_TYPE_OPT_IN = 1, PRICE_INCREASE_TYPE_OPT_OUT = 2 }
+	export enum RegionalPriceMigrationConfigPriceIncreaseType { PRICE_INCREASE_TYPE_UNSPECIFIED = 'PRICE_INCREASE_TYPE_UNSPECIFIED', PRICE_INCREASE_TYPE_OPT_IN = 'PRICE_INCREASE_TYPE_OPT_IN', PRICE_INCREASE_TYPE_OPT_OUT = 'PRICE_INCREASE_TYPE_OPT_OUT' }
 
 
 	/** The version of the available regions being used for the specified resource. */
@@ -2771,7 +2771,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CancelSurveyResultReason { CANCEL_SURVEY_REASON_UNSPECIFIED = 0, CANCEL_SURVEY_REASON_NOT_ENOUGH_USAGE = 1, CANCEL_SURVEY_REASON_TECHNICAL_ISSUES = 2, CANCEL_SURVEY_REASON_COST_RELATED = 3, CANCEL_SURVEY_REASON_FOUND_BETTER_APP = 4, CANCEL_SURVEY_REASON_OTHERS = 5 }
+	export enum CancelSurveyResultReason { CANCEL_SURVEY_REASON_UNSPECIFIED = 'CANCEL_SURVEY_REASON_UNSPECIFIED', CANCEL_SURVEY_REASON_NOT_ENOUGH_USAGE = 'CANCEL_SURVEY_REASON_NOT_ENOUGH_USAGE', CANCEL_SURVEY_REASON_TECHNICAL_ISSUES = 'CANCEL_SURVEY_REASON_TECHNICAL_ISSUES', CANCEL_SURVEY_REASON_COST_RELATED = 'CANCEL_SURVEY_REASON_COST_RELATED', CANCEL_SURVEY_REASON_FOUND_BETTER_APP = 'CANCEL_SURVEY_REASON_FOUND_BETTER_APP', CANCEL_SURVEY_REASON_OTHERS = 'CANCEL_SURVEY_REASON_OTHERS' }
 
 
 	/** Information specific to a subscription in canceled state. */
@@ -3313,7 +3313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeobfuscationFileSymbolType { deobfuscationFileTypeUnspecified = 0, proguard = 1, nativeCode = 2 }
+	export enum DeobfuscationFileSymbolType { deobfuscationFileTypeUnspecified = 'deobfuscationFileTypeUnspecified', proguard = 'proguard', nativeCode = 'nativeCode' }
 
 
 	/** Responses for the upload. */
@@ -3713,7 +3713,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalSubscriptionSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 0, RECURRING = 1, PREPAID = 2 }
+	export enum ExternalSubscriptionSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 'SUBSCRIPTION_TYPE_UNSPECIFIED', RECURRING = 'RECURRING', PREPAID = 'PREPAID' }
 
 
 	/** The details of an external transaction. */
@@ -3875,7 +3875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecurringExternalTransactionMigratedTransactionProgram { EXTERNAL_TRANSACTION_PROGRAM_UNSPECIFIED = 0, USER_CHOICE_BILLING = 1, ALTERTNATIVE_BILLING_ONLY = 2 }
+	export enum RecurringExternalTransactionMigratedTransactionProgram { EXTERNAL_TRANSACTION_PROGRAM_UNSPECIFIED = 'EXTERNAL_TRANSACTION_PROGRAM_UNSPECIFIED', USER_CHOICE_BILLING = 'USER_CHOICE_BILLING', ALTERTNATIVE_BILLING_ONLY = 'ALTERTNATIVE_BILLING_ONLY' }
 
 
 	/** Represents a transaction performed using a test account. These transactions will not be charged by Google. */
@@ -3891,7 +3891,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalTransactionTransactionState { TRANSACTION_STATE_UNSPECIFIED = 0, TRANSACTION_REPORTED = 1, TRANSACTION_CANCELED = 2 }
+	export enum ExternalTransactionTransactionState { TRANSACTION_STATE_UNSPECIFIED = 'TRANSACTION_STATE_UNSPECIFIED', TRANSACTION_REPORTED = 'TRANSACTION_REPORTED', TRANSACTION_CANCELED = 'TRANSACTION_CANCELED' }
 
 
 	/** User's address for the external transaction. */
@@ -4532,9 +4532,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InAppProductPurchaseType { purchaseTypeUnspecified = 0, managedUser = 1, subscription = 2 }
+	export enum InAppProductPurchaseType { purchaseTypeUnspecified = 'purchaseTypeUnspecified', managedUser = 'managedUser', subscription = 'subscription' }
 
-	export enum InAppProductStatus { statusUnspecified = 0, active = 1, inactive = 2 }
+	export enum InAppProductStatus { statusUnspecified = 'statusUnspecified', active = 'active', inactive = 'inactive' }
 
 
 	/** Request to delete multiple in-app products. */
@@ -5025,7 +5025,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserAccessState { ACCESS_STATE_UNSPECIFIED = 0, INVITED = 1, INVITATION_EXPIRED = 2, ACCESS_GRANTED = 3, ACCESS_EXPIRED = 4 }
+	export enum UserAccessState { ACCESS_STATE_UNSPECIFIED = 'ACCESS_STATE_UNSPECIFIED', INVITED = 'INVITED', INVITATION_EXPIRED = 'INVITATION_EXPIRED', ACCESS_GRANTED = 'ACCESS_GRANTED', ACCESS_EXPIRED = 'ACCESS_EXPIRED' }
 
 
 	/** A localized store listing. The resource for ListingsService. */
@@ -6018,9 +6018,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionPurchaseV2AcknowledgementState { ACKNOWLEDGEMENT_STATE_UNSPECIFIED = 0, ACKNOWLEDGEMENT_STATE_PENDING = 1, ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED = 2 }
+	export enum SubscriptionPurchaseV2AcknowledgementState { ACKNOWLEDGEMENT_STATE_UNSPECIFIED = 'ACKNOWLEDGEMENT_STATE_UNSPECIFIED', ACKNOWLEDGEMENT_STATE_PENDING = 'ACKNOWLEDGEMENT_STATE_PENDING', ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED = 'ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED' }
 
-	export enum SubscriptionPurchaseV2SubscriptionState { SUBSCRIPTION_STATE_UNSPECIFIED = 0, SUBSCRIPTION_STATE_PENDING = 1, SUBSCRIPTION_STATE_ACTIVE = 2, SUBSCRIPTION_STATE_PAUSED = 3, SUBSCRIPTION_STATE_IN_GRACE_PERIOD = 4, SUBSCRIPTION_STATE_ON_HOLD = 5, SUBSCRIPTION_STATE_CANCELED = 6, SUBSCRIPTION_STATE_EXPIRED = 7 }
+	export enum SubscriptionPurchaseV2SubscriptionState { SUBSCRIPTION_STATE_UNSPECIFIED = 'SUBSCRIPTION_STATE_UNSPECIFIED', SUBSCRIPTION_STATE_PENDING = 'SUBSCRIPTION_STATE_PENDING', SUBSCRIPTION_STATE_ACTIVE = 'SUBSCRIPTION_STATE_ACTIVE', SUBSCRIPTION_STATE_PAUSED = 'SUBSCRIPTION_STATE_PAUSED', SUBSCRIPTION_STATE_IN_GRACE_PERIOD = 'SUBSCRIPTION_STATE_IN_GRACE_PERIOD', SUBSCRIPTION_STATE_ON_HOLD = 'SUBSCRIPTION_STATE_ON_HOLD', SUBSCRIPTION_STATE_CANCELED = 'SUBSCRIPTION_STATE_CANCELED', SUBSCRIPTION_STATE_EXPIRED = 'SUBSCRIPTION_STATE_EXPIRED' }
 
 
 	/** Whether this subscription purchase is a test purchase. */
@@ -6266,7 +6266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrackReleaseStatus { statusUnspecified = 0, draft = 1, inProgress = 2, halted = 3, completed = 4 }
+	export enum TrackReleaseStatus { statusUnspecified = 'statusUnspecified', draft = 'draft', inProgress = 'inProgress', halted = 'halted', completed = 'completed' }
 
 
 	/** Configurations of the new track. */
@@ -6303,9 +6303,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TrackConfigFormFactor { FORM_FACTOR_UNSPECIFIED = 0, DEFAULT = 1, WEAR = 2, AUTOMOTIVE = 3 }
+	export enum TrackConfigFormFactor { FORM_FACTOR_UNSPECIFIED = 'FORM_FACTOR_UNSPECIFIED', DEFAULT = 'DEFAULT', WEAR = 'WEAR', AUTOMOTIVE = 'AUTOMOTIVE' }
 
-	export enum TrackConfigType { TRACK_TYPE_UNSPECIFIED = 0, CLOSED_TESTING = 1 }
+	export enum TrackConfigType { TRACK_TYPE_UNSPECIFIED = 'TRACK_TYPE_UNSPECIFIED', CLOSED_TESTING = 'CLOSED_TESTING' }
 
 
 	/** Resource for per-track country availability information. */
@@ -7769,9 +7769,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Androidpublisher_edits_expansionfiles_getExpansionFileType { expansionFileTypeUnspecified = 0, main = 1, patch = 2 }
+	export enum Androidpublisher_edits_expansionfiles_getExpansionFileType { expansionFileTypeUnspecified = 'expansionFileTypeUnspecified', main = 'main', patch = 'patch' }
 
-	export enum Androidpublisher_edits_images_deleteallImageType { appImageTypeUnspecified = 0, phoneScreenshots = 1, sevenInchScreenshots = 2, tenInchScreenshots = 3, tvScreenshots = 4, wearScreenshots = 5, icon = 6, featureGraphic = 7, tvBanner = 8 }
+	export enum Androidpublisher_edits_images_deleteallImageType { appImageTypeUnspecified = 'appImageTypeUnspecified', phoneScreenshots = 'phoneScreenshots', sevenInchScreenshots = 'sevenInchScreenshots', tenInchScreenshots = 'tenInchScreenshots', tvScreenshots = 'tvScreenshots', wearScreenshots = 'wearScreenshots', icon = 'icon', featureGraphic = 'featureGraphic', tvBanner = 'tvBanner' }
 
 }
 

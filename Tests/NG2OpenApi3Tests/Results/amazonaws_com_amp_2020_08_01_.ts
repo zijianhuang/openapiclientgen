@@ -46,7 +46,7 @@ export namespace MyNS {
 
 
 	/** State of an alert manager definition. */
-	export enum AlertManagerDefinitionStatusCode { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATION_FAILED = 4, UPDATE_FAILED = 5 }
+	export enum AlertManagerDefinitionStatusCode { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', CREATION_FAILED = 'CREATION_FAILED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface ThrottlingException {
 	}
@@ -284,7 +284,7 @@ export namespace MyNS {
 
 
 	/** State of a workspace. */
-	export enum WorkspaceStatusCode { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATION_FAILED = 4 }
+	export enum WorkspaceStatusCode { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', CREATION_FAILED = 'CREATION_FAILED' }
 
 
 	/** Represents the output of a DescribeAlertManagerDefinition operation. */
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 
 
 	/** State of a logging configuration. */
-	export enum LoggingConfigurationStatusCode { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATION_FAILED = 4, UPDATE_FAILED = 5 }
+	export enum LoggingConfigurationStatusCode { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', CREATION_FAILED = 'CREATION_FAILED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 
 	/** Represents the input of a PutAlertManagerDefinition operation. */
@@ -1067,7 +1067,7 @@ export namespace MyNS {
 
 
 	/** State of a namespace. */
-	export enum RuleGroupsNamespaceStatusCode { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATION_FAILED = 4, UPDATE_FAILED = 5 }
+	export enum RuleGroupsNamespaceStatusCode { CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', CREATION_FAILED = 'CREATION_FAILED', UPDATE_FAILED = 'UPDATE_FAILED' }
 
 	export interface TagResourceRequest {
 

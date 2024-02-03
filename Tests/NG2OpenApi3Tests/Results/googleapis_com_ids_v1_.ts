@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -244,9 +244,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointSeverity { SEVERITY_UNSPECIFIED = 0, INFORMATIONAL = 1, LOW = 2, MEDIUM = 3, HIGH = 4, CRITICAL = 5 }
+	export enum EndpointSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', INFORMATIONAL = 'INFORMATIONAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL' }
 
-	export enum EndpointState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3, UPDATING = 4 }
+	export enum EndpointState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 	export interface ListEndpointsResponse {
 

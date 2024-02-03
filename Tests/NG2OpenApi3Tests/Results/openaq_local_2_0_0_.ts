@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** An enumeration. */
-	export enum CitiesOrder { city = 0, country = 1, firstUpdated = 2, lastUpdated = 3 }
+	export enum CitiesOrder { city = 'city', country = 'country', firstUpdated = 'firstUpdated', lastUpdated = 'lastUpdated' }
 
 	export interface CitiesRow {
 
@@ -60,7 +60,7 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum CountriesOrder { country = 0, firstUpdated = 1, lastUpdated = 2, locations = 3, count = 4 }
+	export enum CountriesOrder { country = 'country', firstUpdated = 'firstUpdated', lastUpdated = 'lastUpdated', locations = 'locations', count = 'count' }
 
 	export interface CountriesRow {
 
@@ -133,7 +133,7 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum EntityTypes { government = 0, community = 1, research = 2 }
+	export enum EntityTypes { government = 'government', community = 'community', research = 'research' }
 
 	export interface HTTPValidationError {
 		detail?: Array<ValidationError>;
@@ -175,11 +175,11 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum LocationsOrder { city = 0, country = 1, location = 2, sourceName = 3, firstUpdated = 4, lastUpdated = 5, count = 6, random = 7 }
+	export enum LocationsOrder { city = 'city', country = 'country', location = 'location', sourceName = 'sourceName', firstUpdated = 'firstUpdated', lastUpdated = 'lastUpdated', count = 'count', random = 'random' }
 
 
 	/** An enumeration. */
-	export enum MeasOrder { city = 0, country = 1, location = 2, datetime = 3 }
+	export enum MeasOrder { city = 'city', country = 'country', location = 'location', datetime = 'datetime' }
 
 	export interface Meta {
 		found?: number | null;
@@ -486,31 +486,31 @@ export namespace MyNS {
 
 
 	/** An enumeration. */
-	export enum ProjectsOrder { id = 0, name = 1, subtitle = 2, firstUpdated = 3, lastUpdated = 4 }
+	export enum ProjectsOrder { id = 'id', name = 'name', subtitle = 'subtitle', firstUpdated = 'firstUpdated', lastUpdated = 'lastUpdated' }
 
 
 	/** An enumeration. */
-	export enum SensorTypes { 'reference grade' = 0, 'low-cost sensor' = 1 }
+	export enum SensorTypes { 'reference grade' = 'reference grade', 'low-cost sensor' = 'low-cost sensor' }
 
 
 	/** An enumeration. */
-	export enum Sort { asc = 0, desc = 1 }
+	export enum Sort { asc = 'asc', desc = 'desc' }
 
 
 	/** An enumeration. */
-	export enum SourcesOrder { sourceName = 0, firstUpdated = 1, lastUpdated = 2 }
+	export enum SourcesOrder { sourceName = 'sourceName', firstUpdated = 'firstUpdated', lastUpdated = 'lastUpdated' }
 
 
 	/** An enumeration. */
-	export enum SourcesV1Order { name = 0 }
+	export enum SourcesV1Order { name = 'name' }
 
 
 	/** An enumeration. */
-	export enum Spatial { country = 0, location = 1, project = 2, total = 3 }
+	export enum Spatial { country = 'country', location = 'location', project = 'project', total = 'total' }
 
 
 	/** An enumeration. */
-	export enum Temporal { day = 0, month = 1, year = 2, moy = 3, dow = 4, hour = 5, hod = 6 }
+	export enum Temporal { day = 'day', month = 'month', year = 'year', moy = 'moy', dow = 'dow', hour = 'hour', hod = 'hod' }
 
 
 	/**

@@ -698,7 +698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LandlordPhotoModelPhotoType { Photo = 0, Map = 1, FloorPlan = 2, SiteMap = 3, AerialPhoto = 4 }
+	export enum LandlordPhotoModelPhotoType { Photo = 'Photo', Map = 'Map', FloorPlan = 'FloorPlan', SiteMap = 'SiteMap', AerialPhoto = 'AerialPhoto' }
 
 
 	/** Holds results from a paged query returning LandlordPhotoModel values */

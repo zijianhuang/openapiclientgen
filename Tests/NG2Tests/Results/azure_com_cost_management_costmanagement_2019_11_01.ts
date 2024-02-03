@@ -36,7 +36,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommonExportPropertiesFormat { Csv = 0 }
+	export enum CommonExportPropertiesFormat { Csv = 'Csv' }
 
 	export interface Dimension {
 		properties?: DimensionProperties;
@@ -379,9 +379,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportExecutionPropertiesExecutionType { OnDemand = 0, Scheduled = 1 }
+	export enum ExportExecutionPropertiesExecutionType { OnDemand = 'OnDemand', Scheduled = 'Scheduled' }
 
-	export enum ExportExecutionPropertiesStatus { Queued = 0, InProgress = 1, Completed = 2, Failed = 3, Timeout = 4, NewDataNotAvailable = 5, DataNotAvailable = 6 }
+	export enum ExportExecutionPropertiesStatus { Queued = 'Queued', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Timeout = 'Timeout', NewDataNotAvailable = 'NewDataNotAvailable', DataNotAvailable = 'DataNotAvailable' }
 
 
 	/** Result of listing exports. It contains a list of available exports in the scope provided. */
@@ -471,9 +471,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportScheduleRecurrence { Daily = 0, Weekly = 1, Monthly = 2, Annually = 3 }
+	export enum ExportScheduleRecurrence { Daily = 'Daily', Weekly = 'Weekly', Monthly = 'Monthly', Annually = 'Annually' }
 
-	export enum ExportScheduleStatus { Active = 0, Inactive = 1 }
+	export enum ExportScheduleStatus { Active = 'Active', Inactive = 'Inactive' }
 
 
 	/** A Cost management REST API operation. */
@@ -567,7 +567,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryAggregationFunction { Sum = 0 }
+	export enum QueryAggregationFunction { Sum = 'Sum' }
 
 	export interface QueryColumn {
 
@@ -595,7 +595,7 @@ export namespace MyNS {
 
 
 	/** The type of the column in the export. */
-	export enum QueryColumnType { Tag = 0, Dimension = 1 }
+	export enum QueryColumnType { Tag = 'Tag', Dimension = 'Dimension' }
 
 
 	/** The comparison expression to be used in the query. */
@@ -644,7 +644,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryComparisonExpressionOperator { In = 0 }
+	export enum QueryComparisonExpressionOperator { In = 'In' }
 
 
 	/** The definition of data present in the query. */
@@ -692,7 +692,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryDatasetGranularity { Daily = 0 }
+	export enum QueryDatasetGranularity { Daily = 'Daily' }
 
 
 	/** The group by expression to be used in the query. */
@@ -797,9 +797,9 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryDefinitionTimeframe { MonthToDate = 0, BillingMonthToDate = 1, TheLastMonth = 2, TheLastBillingMonth = 3, WeekToDate = 4, Custom = 5 }
+	export enum QueryDefinitionTimeframe { MonthToDate = 'MonthToDate', BillingMonthToDate = 'BillingMonthToDate', TheLastMonth = 'TheLastMonth', TheLastBillingMonth = 'TheLastBillingMonth', WeekToDate = 'WeekToDate', Custom = 'Custom' }
 
-	export enum QueryDefinitionType { Usage = 0, ActualCost = 1, AmortizedCost = 2 }
+	export enum QueryDefinitionType { Usage = 'Usage', ActualCost = 'ActualCost', AmortizedCost = 'AmortizedCost' }
 
 
 	/** The filter expression to be used in the export. */

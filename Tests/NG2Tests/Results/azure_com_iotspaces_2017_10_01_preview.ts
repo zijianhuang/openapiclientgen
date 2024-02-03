@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IoTSpacesPropertiesProvisioningState { Provisioning = 0, Deleting = 1, Succeeded = 2, Failed = 3, Canceled = 4 }
+	export enum IoTSpacesPropertiesProvisioningState { Provisioning = 'Provisioning', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** The properties of the Azure Storage Container for file archive. */
@@ -170,7 +170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IoTSpacesSkuInfoName { F1 = 0, S1 = 1, S2 = 2, S3 = 3 }
+	export enum IoTSpacesSkuInfoName { F1 = 'F1', S1 = 'S1', S2 = 'S2', S3 = 'S3' }
 
 
 	/** A list of IoTSpaces description objects with a next link. */
@@ -231,7 +231,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IoTSpacesNameAvailabilityInfoReason { Invalid = 0, AlreadyExists = 1 }
+	export enum IoTSpacesNameAvailabilityInfoReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The description of the IoTSpaces service. */
@@ -534,7 +534,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Operations_ListApi_version { '2017-10-01-preview' = 0 }
+	export enum Operations_ListApi_version { '2017-10-01-preview' = '2017-10-01-preview' }
 
 }
 

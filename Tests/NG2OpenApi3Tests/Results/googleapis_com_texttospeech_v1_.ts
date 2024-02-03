@@ -55,7 +55,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 0, LINEAR16 = 1, MP3 = 2, OGG_OPUS = 3, MULAW = 4, ALAW = 5 }
+	export enum AudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 'AUDIO_ENCODING_UNSPECIFIED', LINEAR16 = 'LINEAR16', MP3 = 'MP3', OGG_OPUS = 'OGG_OPUS', MULAW = 'MULAW', ALAW = 'ALAW' }
 
 
 	/** The request message for Operations.CancelOperation. */
@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomVoiceParamsReportedUsage { REPORTED_USAGE_UNSPECIFIED = 0, REALTIME = 1, OFFLINE = 2 }
+	export enum CustomVoiceParamsReportedUsage { REPORTED_USAGE_UNSPECIFIED = 'REPORTED_USAGE_UNSPECIFIED', REALTIME = 'REALTIME', OFFLINE = 'OFFLINE' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 0, MALE = 1, FEMALE = 2, NEUTRAL = 3 }
+	export enum VoiceSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 'SSML_VOICE_GENDER_UNSPECIFIED', MALE = 'MALE', FEMALE = 'FEMALE', NEUTRAL = 'NEUTRAL' }
 
 
 	/** Contains text input to be synthesized. Either `text` or `ssml` must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000 bytes. */

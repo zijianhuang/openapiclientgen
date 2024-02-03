@@ -149,7 +149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Platform { WEB = 0, WEB_DYNAMIC = 1, WEB_COMPUTE = 2 }
+	export enum Platform { WEB = 'WEB', WEB_DYNAMIC = 'WEB_DYNAMIC', WEB_COMPUTE = 'WEB_COMPUTE' }
 
 	export interface EnvironmentVariables {
 	}
@@ -263,9 +263,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Stage { PRODUCTION = 0, BETA = 1, DEVELOPMENT = 2, EXPERIMENTAL = 3, PULL_REQUEST = 4 }
+	export enum Stage { PRODUCTION = 'PRODUCTION', BETA = 'BETA', DEVELOPMENT = 'DEVELOPMENT', EXPERIMENTAL = 'EXPERIMENTAL', PULL_REQUEST = 'PULL_REQUEST' }
 
-	export enum RepositoryCloneMethod { SSH = 0, TOKEN = 1, SIGV4 = 2 }
+	export enum RepositoryCloneMethod { SSH = 'SSH', TOKEN = 'TOKEN', SIGV4 = 'SIGV4' }
 
 	export interface BadRequestException {
 	}
@@ -673,7 +673,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { PENDING_VERIFICATION = 0, IN_PROGRESS = 1, AVAILABLE = 2, PENDING_DEPLOYMENT = 3, FAILED = 4, CREATING = 5, REQUESTING_CERTIFICATE = 6, UPDATING = 7 }
+	export enum DomainStatus { PENDING_VERIFICATION = 'PENDING_VERIFICATION', IN_PROGRESS = 'IN_PROGRESS', AVAILABLE = 'AVAILABLE', PENDING_DEPLOYMENT = 'PENDING_DEPLOYMENT', FAILED = 'FAILED', CREATING = 'CREATING', REQUESTING_CERTIFICATE = 'REQUESTING_CERTIFICATE', UPDATING = 'UPDATING' }
 
 
 	/**  The subdomain for the domain association.  */
@@ -977,9 +977,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { PENDING = 0, PROVISIONING = 1, RUNNING = 2, FAILED = 3, SUCCEED = 4, CANCELLING = 5, CANCELLED = 6 }
+	export enum JobStatus { PENDING = 'PENDING', PROVISIONING = 'PROVISIONING', RUNNING = 'RUNNING', FAILED = 'FAILED', SUCCEED = 'SUCCEED', CANCELLING = 'CANCELLING', CANCELLED = 'CANCELLED' }
 
-	export enum JobType { RELEASE = 0, RETRY = 1, MANUAL = 2, WEB_HOOK = 3 }
+	export enum JobType { RELEASE = 'RELEASE', RETRY = 'RETRY', MANUAL = 'MANUAL', WEB_HOOK = 'WEB_HOOK' }
 
 
 	/**  The result structure for the delete webhook request.  */

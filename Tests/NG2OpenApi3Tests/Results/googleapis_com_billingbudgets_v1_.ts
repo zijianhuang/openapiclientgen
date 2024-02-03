@@ -175,9 +175,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBillingBudgetsV1FilterCalendarPeriod { CALENDAR_PERIOD_UNSPECIFIED = 0, MONTH = 1, QUARTER = 2, YEAR = 3 }
+	export enum GoogleCloudBillingBudgetsV1FilterCalendarPeriod { CALENDAR_PERIOD_UNSPECIFIED = 'CALENDAR_PERIOD_UNSPECIFIED', MONTH = 'MONTH', QUARTER = 'QUARTER', YEAR = 'YEAR' }
 
-	export enum GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment { CREDIT_TYPES_TREATMENT_UNSPECIFIED = 0, INCLUDE_ALL_CREDITS = 1, EXCLUDE_ALL_CREDITS = 2, INCLUDE_SPECIFIED_CREDITS = 3 }
+	export enum GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment { CREDIT_TYPES_TREATMENT_UNSPECIFIED = 'CREDIT_TYPES_TREATMENT_UNSPECIFIED', INCLUDE_ALL_CREDITS = 'INCLUDE_ALL_CREDITS', EXCLUDE_ALL_CREDITS = 'EXCLUDE_ALL_CREDITS', INCLUDE_SPECIFIED_CREDITS = 'INCLUDE_SPECIFIED_CREDITS' }
 
 
 	/** All date times begin at 12 AM US and Canadian Pacific Time (UTC-8). */
@@ -279,7 +279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBillingBudgetsV1BudgetOwnershipScope { OWNERSHIP_SCOPE_UNSPECIFIED = 0, ALL_USERS = 1, BILLING_ACCOUNT = 2 }
+	export enum GoogleCloudBillingBudgetsV1BudgetOwnershipScope { OWNERSHIP_SCOPE_UNSPECIFIED = 'OWNERSHIP_SCOPE_UNSPECIFIED', ALL_USERS = 'ALL_USERS', BILLING_ACCOUNT = 'BILLING_ACCOUNT' }
 
 
 	/** ThresholdRule contains the definition of a threshold. Threshold rules define the triggering events used to generate a budget notification email. When a threshold is crossed (spend exceeds the specified percentages of the budget), budget alert emails are sent to the email recipients you specify in the [NotificationsRule](#notificationsrule). Threshold rules also affect the fields included in the [JSON data object](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format) sent to a Pub/Sub topic. Threshold rules are _required_ if using email notifications. Threshold rules are _optional_ if only setting a [`pubsubTopic` NotificationsRule](#NotificationsRule), unless you want your JSON data object to include data about the thresholds you set. For more information, see [set budget threshold rules and actions](https://cloud.google.com/billing/docs/how-to/budgets#budget-actions). */
@@ -309,7 +309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudBillingBudgetsV1ThresholdRuleSpendBasis { BASIS_UNSPECIFIED = 0, CURRENT_SPEND = 1, FORECASTED_SPEND = 2 }
+	export enum GoogleCloudBillingBudgetsV1ThresholdRuleSpendBasis { BASIS_UNSPECIFIED = 'BASIS_UNSPECIFIED', CURRENT_SPEND = 'CURRENT_SPEND', FORECASTED_SPEND = 'FORECASTED_SPEND' }
 
 
 	/** Response for ListBudgets */

@@ -134,7 +134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StoredProcedureParameterType { String = 0, Int = 1, Decimal = 2, Guid = 3, Boolean = 4, Date = 5 }
+	export enum StoredProcedureParameterType { String = 'String', Int = 'Int', Decimal = 'Decimal', Guid = 'Guid', Boolean = 'Boolean', Date = 'Date' }
 
 
 	/** Details of the Artifact Container's shared access signature. */

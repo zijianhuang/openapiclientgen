@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** the aggregation type of the metric. */
-	export enum AggregationType { None = 0, Average = 1, Count = 2, Minimum = 3, Maximum = 4, Total = 5 }
+	export enum AggregationType { None = 'None', Average = 'Average', Count = 'Count', Minimum = 'Minimum', Maximum = 'Maximum', Total = 'Total' }
 
 
 	/** Describes the format of Error response. */
@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDefinitionUnit { Count = 0, Bytes = 1, Seconds = 2, CountPerSecond = 3, BytesPerSecond = 4, Percent = 5, MilliSeconds = 6, ByteSeconds = 7, Unspecified = 8, Cores = 9, MilliCores = 10, NanoCores = 11, BitsPerSecond = 12 }
+	export enum MetricDefinitionUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond', Percent = 'Percent', MilliSeconds = 'MilliSeconds', ByteSeconds = 'ByteSeconds', Unspecified = 'Unspecified', Cores = 'Cores', MilliCores = 'MilliCores', NanoCores = 'NanoCores', BitsPerSecond = 'BitsPerSecond' }
 
 
 	/** Represents collection of metric definitions. */
@@ -189,7 +189,7 @@ export namespace MyNS {
 
 
 	/** the unit of the metric. */
-	export enum Unit { Count = 0, Bytes = 1, Seconds = 2, CountPerSecond = 3, BytesPerSecond = 4, Percent = 5, MilliSeconds = 6, ByteSeconds = 7, Unspecified = 8, Cores = 9, MilliCores = 10, NanoCores = 11, BitsPerSecond = 12 }
+	export enum Unit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond', Percent = 'Percent', MilliSeconds = 'MilliSeconds', ByteSeconds = 'ByteSeconds', Unspecified = 'Unspecified', Cores = 'Cores', MilliCores = 'MilliCores', NanoCores = 'NanoCores', BitsPerSecond = 'BitsPerSecond' }
 
 	@Injectable()
 	export class MyClient {

@@ -107,7 +107,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceControlSyncJobStreamByIdPropertiesStreamType { Error = 0, Output = 1 }
+	export enum SourceControlSyncJobStreamByIdPropertiesStreamType { Error = 'Error', Output = 'Output' }
 
 
 	/** Definition of source control sync job stream properties. */

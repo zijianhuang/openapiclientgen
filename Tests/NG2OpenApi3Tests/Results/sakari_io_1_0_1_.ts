@@ -19,7 +19,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountEventType { account = 0, messageStatus = 1, messageIncoming = 2 }
+	export enum AccountEventType { account = 'account', messageStatus = 'messageStatus', messageIncoming = 'messageIncoming' }
 
 	export interface AccountEventPayload {
 		balance?: number | null;
@@ -53,7 +53,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeFilterComparator { '=' = 0, '<' = 1, '<=' = 2, '>' = 3, '>=' = 4, '!=' = 5 }
+	export enum AttributeFilterComparator { '=' = '=', '<' = '<', '<=' = '<=', '>' = '>', '>=' = '>=', '!=' = '!=' }
 
 	export interface Campaign {
 		id?: string | null;
@@ -123,7 +123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CampaignRequestTriggerCode { M = 0, S = 1, FU = 2 }
+	export enum CampaignRequestTriggerCode { M = 'M', S = 'S', FU = 'FU' }
 
 	export interface CampaignResponse {
 		data?: Campaign;
@@ -556,7 +556,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { account = 0, messageStatus = 1, messageIncoming = 2 }
+	export enum EventType { account = 'account', messageStatus = 'messageStatus', messageIncoming = 'messageIncoming' }
 
 	export interface MessageEventPayload {
 		contact?: ContactIdentifiers;
@@ -731,7 +731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SendMessagesRequestType { SMS = 0, MMS = 1 }
+	export enum SendMessagesRequestType { SMS = 'SMS', MMS = 'MMS' }
 
 	export interface SendMessagesResponse {
 		data?: SendMessagesResponseData;
@@ -833,7 +833,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateRequestType { SMS = 0, Web = 1 }
+	export enum TemplateRequestType { SMS = 'SMS', Web = 'Web' }
 
 	export interface TemplateResponse {
 		data?: Template;
@@ -1241,7 +1241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Contacts_createMergeStrategy { append = 0, core = 1, remove = 2 }
+	export enum Contacts_createMergeStrategy { append = 'append', core = 'core', remove = 'remove' }
 
 	export interface Contacts_removeReturn {
 		success?: boolean | null;

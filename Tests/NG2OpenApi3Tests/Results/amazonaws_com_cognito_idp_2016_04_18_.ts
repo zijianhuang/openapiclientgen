@@ -72,7 +72,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeDataType { String = 0, Number = 1, DateTime = 2, Boolean = 3 }
+	export enum AttributeDataType { String = 'String', Number = 'Number', DateTime = 'DateTime', Boolean = 'Boolean' }
 
 
 	/** The minimum and maximum values of an attribute that is of the number data type. */
@@ -388,7 +388,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserStatusType { UNCONFIRMED = 0, CONFIRMED = 1, ARCHIVED = 2, COMPROMISED = 3, UNKNOWN = 4, RESET_REQUIRED = 5, FORCE_CHANGE_PASSWORD = 6 }
+	export enum UserStatusType { UNCONFIRMED = 'UNCONFIRMED', CONFIRMED = 'CONFIRMED', ARCHIVED = 'ARCHIVED', COMPROMISED = 'COMPROMISED', UNKNOWN = 'UNKNOWN', RESET_REQUIRED = 'RESET_REQUIRED', FORCE_CHANGE_PASSWORD = 'FORCE_CHANGE_PASSWORD' }
 
 
 	/**  <i>This data type is no longer supported.</i> Applies only to SMS multi-factor authentication (MFA) configurations. Does not apply to time-based one-time password (TOTP) software token MFA configurations. */
@@ -410,7 +410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryMediumType { SMS = 0, EMAIL = 1 }
+	export enum DeliveryMediumType { SMS = 'SMS', EMAIL = 'EMAIL' }
 
 
 	/** Represents the request to create a user in the specified user pool. */
@@ -453,7 +453,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageActionType { RESEND = 0, SUPPRESS = 1 }
+	export enum MessageActionType { RESEND = 'RESEND', SUPPRESS = 'SUPPRESS' }
 
 	export interface UsernameExistsException {
 	}
@@ -958,7 +958,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChallengeNameType { SMS_MFA = 0, SOFTWARE_TOKEN_MFA = 1, SELECT_MFA_TYPE = 2, MFA_SETUP = 3, PASSWORD_VERIFIER = 4, CUSTOM_CHALLENGE = 5, DEVICE_SRP_AUTH = 6, DEVICE_PASSWORD_VERIFIER = 7, ADMIN_NO_SRP_AUTH = 8, NEW_PASSWORD_REQUIRED = 9 }
+	export enum ChallengeNameType { SMS_MFA = 'SMS_MFA', SOFTWARE_TOKEN_MFA = 'SOFTWARE_TOKEN_MFA', SELECT_MFA_TYPE = 'SELECT_MFA_TYPE', MFA_SETUP = 'MFA_SETUP', PASSWORD_VERIFIER = 'PASSWORD_VERIFIER', CUSTOM_CHALLENGE = 'CUSTOM_CHALLENGE', DEVICE_SRP_AUTH = 'DEVICE_SRP_AUTH', DEVICE_PASSWORD_VERIFIER = 'DEVICE_PASSWORD_VERIFIER', ADMIN_NO_SRP_AUTH = 'ADMIN_NO_SRP_AUTH', NEW_PASSWORD_REQUIRED = 'NEW_PASSWORD_REQUIRED' }
 
 	export interface ChallengeParametersType {
 	}
@@ -1059,7 +1059,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthFlowType { USER_SRP_AUTH = 0, REFRESH_TOKEN_AUTH = 1, REFRESH_TOKEN = 2, CUSTOM_AUTH = 3, ADMIN_NO_SRP_AUTH = 4, USER_PASSWORD_AUTH = 5, ADMIN_USER_PASSWORD_AUTH = 6 }
+	export enum AuthFlowType { USER_SRP_AUTH = 'USER_SRP_AUTH', REFRESH_TOKEN_AUTH = 'REFRESH_TOKEN_AUTH', REFRESH_TOKEN = 'REFRESH_TOKEN', CUSTOM_AUTH = 'CUSTOM_AUTH', ADMIN_NO_SRP_AUTH = 'ADMIN_NO_SRP_AUTH', USER_PASSWORD_AUTH = 'USER_PASSWORD_AUTH', ADMIN_USER_PASSWORD_AUTH = 'ADMIN_USER_PASSWORD_AUTH' }
 
 	export interface AuthParametersType {
 	}
@@ -1387,9 +1387,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { SignIn = 0, SignUp = 1, ForgotPassword = 2, PasswordChange = 3, ResendCode = 4 }
+	export enum EventType { SignIn = 'SignIn', SignUp = 'SignUp', ForgotPassword = 'ForgotPassword', PasswordChange = 'PasswordChange', ResendCode = 'ResendCode' }
 
-	export enum EventResponseType { Pass = 0, Fail = 1, InProgress = 2 }
+	export enum EventResponseType { Pass = 'Pass', Fail = 'Fail', InProgress = 'InProgress' }
 
 
 	/** The event risk type. */
@@ -1414,9 +1414,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RiskDecisionType { NoRisk = 0, AccountTakeover = 1, Block = 2 }
+	export enum RiskDecisionType { NoRisk = 'NoRisk', AccountTakeover = 'AccountTakeover', Block = 'Block' }
 
-	export enum RiskLevelType { Low = 0, Medium = 1, High = 2 }
+	export enum RiskLevelType { Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** The challenge response type. */
@@ -1438,9 +1438,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChallengeName { Password = 0, Mfa = 1 }
+	export enum ChallengeName { Password = 'Password', Mfa = 'Mfa' }
 
-	export enum ChallengeResponse { Success = 0, Failure = 1 }
+	export enum ChallengeResponse { Success = 'Success', Failure = 'Failure' }
 
 
 	/** Specifies the user context data captured at the time of an event request. */
@@ -1502,7 +1502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeedbackValueType { Valid = 0, Invalid = 1 }
+	export enum FeedbackValueType { Valid = 'Valid', Invalid = 'Invalid' }
 
 	export interface AdminListUserAuthEventsRequest {
 
@@ -1997,7 +1997,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceRememberedStatusType { remembered = 0, not_remembered = 1 }
+	export enum DeviceRememberedStatusType { remembered = 'remembered', not_remembered = 'not_remembered' }
 
 
 	/** Represents the response from the server for the request to update user attributes as an administrator. */
@@ -2496,7 +2496,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityProviderTypeType { SAML = 0, Facebook = 1, Google = 2, LoginWithAmazon = 3, SignInWithApple = 4, OIDC = 5 }
+	export enum IdentityProviderTypeType { SAML = 'SAML', Facebook = 'Facebook', Google = 'Google', LoginWithAmazon = 'LoginWithAmazon', SignInWithApple = 'SignInWithApple', OIDC = 'OIDC' }
 
 	export interface ProviderDetailsType {
 	}
@@ -2729,7 +2729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserImportJobStatusType { Created = 0, Pending = 1, InProgress = 2, Stopping = 3, Expired = 4, Stopped = 5, Failed = 6, Succeeded = 7 }
+	export enum UserImportJobStatusType { Created = 'Created', Pending = 'Pending', InProgress = 'InProgress', Stopping = 'Stopping', Expired = 'Expired', Stopped = 'Stopped', Failed = 'Failed', Succeeded = 'Succeeded' }
 
 
 	/** Represents the request to create the user import job. */
@@ -2909,7 +2909,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletionProtectionType { ACTIVE = 0, INACTIVE = 1 }
+	export enum DeletionProtectionType { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** Specifies the configuration for Lambda triggers. */
@@ -2988,7 +2988,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomSMSSenderLambdaVersionType { V1_0 = 0 }
+	export enum CustomSMSSenderLambdaVersionType { V1_0 = 'V1_0' }
 
 
 	/** A custom email sender Lambda configuration type. */
@@ -3018,13 +3018,13 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusType { Enabled = 0, Disabled = 1 }
+	export enum StatusType { Enabled = 'Enabled', Disabled = 'Disabled' }
 
-	export enum VerifiedAttributeType { phone_number = 0, email = 1 }
+	export enum VerifiedAttributeType { phone_number = 'phone_number', email = 'email' }
 
-	export enum AliasAttributeType { phone_number = 0, email = 1, preferred_username = 2 }
+	export enum AliasAttributeType { phone_number = 'phone_number', email = 'email', preferred_username = 'preferred_username' }
 
-	export enum UsernameAttributeType { phone_number = 0, email = 1 }
+	export enum UsernameAttributeType { phone_number = 'phone_number', email = 'email' }
 
 
 	/** The template for verification messages. */
@@ -3058,7 +3058,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DefaultEmailOptionType { CONFIRM_WITH_LINK = 0, CONFIRM_WITH_CODE = 1 }
+	export enum DefaultEmailOptionType { CONFIRM_WITH_LINK = 'CONFIRM_WITH_LINK', CONFIRM_WITH_CODE = 'CONFIRM_WITH_CODE' }
 
 
 	/** The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>. */
@@ -3075,7 +3075,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserPoolMfaType { OFF = 0, ON = 1, OPTIONAL = 2 }
+	export enum UserPoolMfaType { OFF = 'OFF', ON = 'ON', OPTIONAL = 'OPTIONAL' }
 
 
 	/** <p>The device-remembering configuration for a user pool. A <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html"> DescribeUserPool</a> request returns a null value for this object when the user pool isn't configured to remember devices. When device remembering is active, you can remember a user's device with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a> API request. Additionally. when the property <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>true</code>, you must follow <code>ConfirmDevice</code> with an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request that sets the user's device to <code>remembered</code> or <code>not_remembered</code>.</p> <p>To sign in with a remembered device, include <code>DEVICE_KEY</code> in the authentication parameters in your user's <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"> InitiateAuth</a> request. If your app doesn't include a <code>DEVICE_KEY</code> parameter, the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html#API_InitiateAuth_ResponseSyntax">response</a> from Amazon Cognito includes newly-generated <code>DEVICE_KEY</code> and <code>DEVICE_GROUP_KEY</code> values under <code>NewDeviceMetadata</code>. Store these values to use in future device-authentication requests.</p> <note> <p>When you provide a value for any property of <code>DeviceConfiguration</code>, you activate the device remembering for the user pool.</p> </note> */
@@ -3126,7 +3126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmailSendingAccountType { COGNITO_DEFAULT = 0, DEVELOPER = 1 }
+	export enum EmailSendingAccountType { COGNITO_DEFAULT = 'COGNITO_DEFAULT', DEVELOPER = 'DEVELOPER' }
 
 
 	/** The SMS configuration type is the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account. */
@@ -3230,7 +3230,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvancedSecurityModeType { OFF = 0, AUDIT = 1, ENFORCED = 2 }
+	export enum AdvancedSecurityModeType { OFF = 'OFF', AUDIT = 'AUDIT', ENFORCED = 'ENFORCED' }
 
 
 	/** The username configuration type.  */
@@ -3296,7 +3296,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecoveryOptionNameType { verified_email = 0, verified_phone_number = 1, admin_only = 2 }
+	export enum RecoveryOptionNameType { verified_email = 'verified_email', verified_phone_number = 'verified_phone_number', admin_only = 'admin_only' }
 
 
 	/** Represents the request to create a user pool. */
@@ -3470,11 +3470,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeUnitsType { seconds = 0, minutes = 1, hours = 2, days = 3 }
+	export enum TimeUnitsType { seconds = 'seconds', minutes = 'minutes', hours = 'hours', days = 'days' }
 
-	export enum ExplicitAuthFlowsType { ADMIN_NO_SRP_AUTH = 0, CUSTOM_AUTH_FLOW_ONLY = 1, USER_PASSWORD_AUTH = 2, ALLOW_ADMIN_USER_PASSWORD_AUTH = 3, ALLOW_CUSTOM_AUTH = 4, ALLOW_USER_PASSWORD_AUTH = 5, ALLOW_USER_SRP_AUTH = 6, ALLOW_REFRESH_TOKEN_AUTH = 7 }
+	export enum ExplicitAuthFlowsType { ADMIN_NO_SRP_AUTH = 'ADMIN_NO_SRP_AUTH', CUSTOM_AUTH_FLOW_ONLY = 'CUSTOM_AUTH_FLOW_ONLY', USER_PASSWORD_AUTH = 'USER_PASSWORD_AUTH', ALLOW_ADMIN_USER_PASSWORD_AUTH = 'ALLOW_ADMIN_USER_PASSWORD_AUTH', ALLOW_CUSTOM_AUTH = 'ALLOW_CUSTOM_AUTH', ALLOW_USER_PASSWORD_AUTH = 'ALLOW_USER_PASSWORD_AUTH', ALLOW_USER_SRP_AUTH = 'ALLOW_USER_SRP_AUTH', ALLOW_REFRESH_TOKEN_AUTH = 'ALLOW_REFRESH_TOKEN_AUTH' }
 
-	export enum OAuthFlowType { code = 0, implicit = 1, client_credentials = 2 }
+	export enum OAuthFlowType { code = 'code', implicit = 'implicit', client_credentials = 'client_credentials' }
 
 
 	/** <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for a user pool.</p> <note> <p>In Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p> </note> */
@@ -3505,7 +3505,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PreventUserExistenceErrorTypes { LEGACY = 0, ENABLED = 1 }
+	export enum PreventUserExistenceErrorTypes { LEGACY = 'LEGACY', ENABLED = 'ENABLED' }
 
 
 	/** Represents the request to create a user pool client. */
@@ -4009,7 +4009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventFilterType { SIGN_IN = 0, PASSWORD_CHANGE = 1, SIGN_UP = 2 }
+	export enum EventFilterType { SIGN_IN = 'SIGN_IN', PASSWORD_CHANGE = 'PASSWORD_CHANGE', SIGN_UP = 'SIGN_UP' }
 
 
 	/** The compromised credentials actions type. */
@@ -4032,7 +4032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompromisedCredentialsEventActionType { BLOCK = 0, NO_ACTION = 1 }
+	export enum CompromisedCredentialsEventActionType { BLOCK = 'BLOCK', NO_ACTION = 'NO_ACTION' }
 
 
 	/** Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover. */
@@ -4154,7 +4154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountTakeoverEventActionType { BLOCK = 0, MFA_IF_CONFIGURED = 1, MFA_REQUIRED = 2, NO_ACTION = 3 }
+	export enum AccountTakeoverEventActionType { BLOCK = 'BLOCK', MFA_IF_CONFIGURED = 'MFA_IF_CONFIGURED', MFA_REQUIRED = 'MFA_REQUIRED', NO_ACTION = 'NO_ACTION' }
 
 
 	/** The type of the configuration to override the risk decision. */
@@ -4361,7 +4361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatusType { CREATING = 0, DELETING = 1, UPDATING = 2, ACTIVE = 3, FAILED = 4 }
+	export enum DomainStatusType { CREATING = 'CREATING', DELETING = 'DELETING', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE', FAILED = 'FAILED' }
 
 	export interface DescribeUserPoolDomainRequest {
 
@@ -4692,9 +4692,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LogLevel { ERROR = 0 }
+	export enum LogLevel { ERROR = 'ERROR' }
 
-	export enum EventSourceName { userNotification = 0 }
+	export enum EventSourceName { userNotification = 'userNotification' }
 
 
 	/** The CloudWatch logging destination of a user pool detailed activity logging configuration. */
@@ -6664,7 +6664,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerifySoftwareTokenResponseType { SUCCESS = 0, ERROR = 1 }
+	export enum VerifySoftwareTokenResponseType { SUCCESS = 'SUCCESS', ERROR = 'ERROR' }
 
 	export interface VerifySoftwareTokenRequest {
 		AccessToken?: string;
@@ -6751,7 +6751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomEmailSenderLambdaVersionType { V1_0 = 0 }
+	export enum CustomEmailSenderLambdaVersionType { V1_0 = 'V1_0' }
 
 	@Injectable()
 	export class MyClient {
@@ -7704,211 +7704,211 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddCustomAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.AddCustomAttributes' = 0 }
+	export enum AddCustomAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.AddCustomAttributes' = 'AWSCognitoIdentityProviderService.AddCustomAttributes' }
 
-	export enum AdminAddUserToGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminAddUserToGroup' = 0 }
+	export enum AdminAddUserToGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminAddUserToGroup' = 'AWSCognitoIdentityProviderService.AdminAddUserToGroup' }
 
-	export enum AdminConfirmSignUpX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminConfirmSignUp' = 0 }
+	export enum AdminConfirmSignUpX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminConfirmSignUp' = 'AWSCognitoIdentityProviderService.AdminConfirmSignUp' }
 
-	export enum AdminCreateUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminCreateUser' = 0 }
+	export enum AdminCreateUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminCreateUser' = 'AWSCognitoIdentityProviderService.AdminCreateUser' }
 
-	export enum AdminDeleteUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDeleteUser' = 0 }
+	export enum AdminDeleteUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDeleteUser' = 'AWSCognitoIdentityProviderService.AdminDeleteUser' }
 
-	export enum AdminDeleteUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDeleteUserAttributes' = 0 }
+	export enum AdminDeleteUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDeleteUserAttributes' = 'AWSCognitoIdentityProviderService.AdminDeleteUserAttributes' }
 
-	export enum AdminDisableProviderForUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDisableProviderForUser' = 0 }
+	export enum AdminDisableProviderForUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDisableProviderForUser' = 'AWSCognitoIdentityProviderService.AdminDisableProviderForUser' }
 
-	export enum AdminDisableUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDisableUser' = 0 }
+	export enum AdminDisableUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminDisableUser' = 'AWSCognitoIdentityProviderService.AdminDisableUser' }
 
-	export enum AdminEnableUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminEnableUser' = 0 }
+	export enum AdminEnableUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminEnableUser' = 'AWSCognitoIdentityProviderService.AdminEnableUser' }
 
-	export enum AdminForgetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminForgetDevice' = 0 }
+	export enum AdminForgetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminForgetDevice' = 'AWSCognitoIdentityProviderService.AdminForgetDevice' }
 
-	export enum AdminGetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminGetDevice' = 0 }
+	export enum AdminGetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminGetDevice' = 'AWSCognitoIdentityProviderService.AdminGetDevice' }
 
-	export enum AdminGetUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminGetUser' = 0 }
+	export enum AdminGetUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminGetUser' = 'AWSCognitoIdentityProviderService.AdminGetUser' }
 
-	export enum AdminInitiateAuthX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminInitiateAuth' = 0 }
+	export enum AdminInitiateAuthX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminInitiateAuth' = 'AWSCognitoIdentityProviderService.AdminInitiateAuth' }
 
-	export enum AdminLinkProviderForUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminLinkProviderForUser' = 0 }
+	export enum AdminLinkProviderForUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminLinkProviderForUser' = 'AWSCognitoIdentityProviderService.AdminLinkProviderForUser' }
 
-	export enum AdminListDevicesX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminListDevices' = 0 }
+	export enum AdminListDevicesX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminListDevices' = 'AWSCognitoIdentityProviderService.AdminListDevices' }
 
-	export enum AdminListGroupsForUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminListGroupsForUser' = 0 }
+	export enum AdminListGroupsForUserX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminListGroupsForUser' = 'AWSCognitoIdentityProviderService.AdminListGroupsForUser' }
 
-	export enum AdminListUserAuthEventsX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminListUserAuthEvents' = 0 }
+	export enum AdminListUserAuthEventsX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminListUserAuthEvents' = 'AWSCognitoIdentityProviderService.AdminListUserAuthEvents' }
 
-	export enum AdminRemoveUserFromGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminRemoveUserFromGroup' = 0 }
+	export enum AdminRemoveUserFromGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminRemoveUserFromGroup' = 'AWSCognitoIdentityProviderService.AdminRemoveUserFromGroup' }
 
-	export enum AdminResetUserPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminResetUserPassword' = 0 }
+	export enum AdminResetUserPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminResetUserPassword' = 'AWSCognitoIdentityProviderService.AdminResetUserPassword' }
 
-	export enum AdminRespondToAuthChallengeX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminRespondToAuthChallenge' = 0 }
+	export enum AdminRespondToAuthChallengeX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminRespondToAuthChallenge' = 'AWSCognitoIdentityProviderService.AdminRespondToAuthChallenge' }
 
-	export enum AdminSetUserMFAPreferenceX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminSetUserMFAPreference' = 0 }
+	export enum AdminSetUserMFAPreferenceX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminSetUserMFAPreference' = 'AWSCognitoIdentityProviderService.AdminSetUserMFAPreference' }
 
-	export enum AdminSetUserPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminSetUserPassword' = 0 }
+	export enum AdminSetUserPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminSetUserPassword' = 'AWSCognitoIdentityProviderService.AdminSetUserPassword' }
 
-	export enum AdminSetUserSettingsX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminSetUserSettings' = 0 }
+	export enum AdminSetUserSettingsX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminSetUserSettings' = 'AWSCognitoIdentityProviderService.AdminSetUserSettings' }
 
-	export enum AdminUpdateAuthEventFeedbackX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUpdateAuthEventFeedback' = 0 }
+	export enum AdminUpdateAuthEventFeedbackX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUpdateAuthEventFeedback' = 'AWSCognitoIdentityProviderService.AdminUpdateAuthEventFeedback' }
 
-	export enum AdminUpdateDeviceStatusX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUpdateDeviceStatus' = 0 }
+	export enum AdminUpdateDeviceStatusX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUpdateDeviceStatus' = 'AWSCognitoIdentityProviderService.AdminUpdateDeviceStatus' }
 
-	export enum AdminUpdateUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUpdateUserAttributes' = 0 }
+	export enum AdminUpdateUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUpdateUserAttributes' = 'AWSCognitoIdentityProviderService.AdminUpdateUserAttributes' }
 
-	export enum AdminUserGlobalSignOutX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUserGlobalSignOut' = 0 }
+	export enum AdminUserGlobalSignOutX_Amz_Target { 'AWSCognitoIdentityProviderService.AdminUserGlobalSignOut' = 'AWSCognitoIdentityProviderService.AdminUserGlobalSignOut' }
 
-	export enum AssociateSoftwareTokenX_Amz_Target { 'AWSCognitoIdentityProviderService.AssociateSoftwareToken' = 0 }
+	export enum AssociateSoftwareTokenX_Amz_Target { 'AWSCognitoIdentityProviderService.AssociateSoftwareToken' = 'AWSCognitoIdentityProviderService.AssociateSoftwareToken' }
 
-	export enum ChangePasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.ChangePassword' = 0 }
+	export enum ChangePasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.ChangePassword' = 'AWSCognitoIdentityProviderService.ChangePassword' }
 
-	export enum ConfirmDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.ConfirmDevice' = 0 }
+	export enum ConfirmDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.ConfirmDevice' = 'AWSCognitoIdentityProviderService.ConfirmDevice' }
 
-	export enum ConfirmForgotPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.ConfirmForgotPassword' = 0 }
+	export enum ConfirmForgotPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.ConfirmForgotPassword' = 'AWSCognitoIdentityProviderService.ConfirmForgotPassword' }
 
-	export enum ConfirmSignUpX_Amz_Target { 'AWSCognitoIdentityProviderService.ConfirmSignUp' = 0 }
+	export enum ConfirmSignUpX_Amz_Target { 'AWSCognitoIdentityProviderService.ConfirmSignUp' = 'AWSCognitoIdentityProviderService.ConfirmSignUp' }
 
-	export enum CreateGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateGroup' = 0 }
+	export enum CreateGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateGroup' = 'AWSCognitoIdentityProviderService.CreateGroup' }
 
-	export enum CreateIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateIdentityProvider' = 0 }
+	export enum CreateIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateIdentityProvider' = 'AWSCognitoIdentityProviderService.CreateIdentityProvider' }
 
-	export enum CreateResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateResourceServer' = 0 }
+	export enum CreateResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateResourceServer' = 'AWSCognitoIdentityProviderService.CreateResourceServer' }
 
-	export enum CreateUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserImportJob' = 0 }
+	export enum CreateUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserImportJob' = 'AWSCognitoIdentityProviderService.CreateUserImportJob' }
 
-	export enum CreateUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserPool' = 0 }
+	export enum CreateUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserPool' = 'AWSCognitoIdentityProviderService.CreateUserPool' }
 
-	export enum CreateUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserPoolClient' = 0 }
+	export enum CreateUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserPoolClient' = 'AWSCognitoIdentityProviderService.CreateUserPoolClient' }
 
-	export enum CreateUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserPoolDomain' = 0 }
+	export enum CreateUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.CreateUserPoolDomain' = 'AWSCognitoIdentityProviderService.CreateUserPoolDomain' }
 
-	export enum DeleteGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteGroup' = 0 }
+	export enum DeleteGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteGroup' = 'AWSCognitoIdentityProviderService.DeleteGroup' }
 
-	export enum DeleteIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteIdentityProvider' = 0 }
+	export enum DeleteIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteIdentityProvider' = 'AWSCognitoIdentityProviderService.DeleteIdentityProvider' }
 
-	export enum DeleteResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteResourceServer' = 0 }
+	export enum DeleteResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteResourceServer' = 'AWSCognitoIdentityProviderService.DeleteResourceServer' }
 
-	export enum DeleteUserX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUser' = 'AWSCognitoIdentityProviderService.DeleteUser' }
 
-	export enum DeleteUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserAttributes' = 0 }
+	export enum DeleteUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserAttributes' = 'AWSCognitoIdentityProviderService.DeleteUserAttributes' }
 
-	export enum DeleteUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserPool' = 0 }
+	export enum DeleteUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserPool' = 'AWSCognitoIdentityProviderService.DeleteUserPool' }
 
-	export enum DeleteUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserPoolClient' = 0 }
+	export enum DeleteUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserPoolClient' = 'AWSCognitoIdentityProviderService.DeleteUserPoolClient' }
 
-	export enum DeleteUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserPoolDomain' = 0 }
+	export enum DeleteUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.DeleteUserPoolDomain' = 'AWSCognitoIdentityProviderService.DeleteUserPoolDomain' }
 
-	export enum DescribeIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeIdentityProvider' = 0 }
+	export enum DescribeIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeIdentityProvider' = 'AWSCognitoIdentityProviderService.DescribeIdentityProvider' }
 
-	export enum DescribeResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeResourceServer' = 0 }
+	export enum DescribeResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeResourceServer' = 'AWSCognitoIdentityProviderService.DescribeResourceServer' }
 
-	export enum DescribeRiskConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeRiskConfiguration' = 0 }
+	export enum DescribeRiskConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeRiskConfiguration' = 'AWSCognitoIdentityProviderService.DescribeRiskConfiguration' }
 
-	export enum DescribeUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserImportJob' = 0 }
+	export enum DescribeUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserImportJob' = 'AWSCognitoIdentityProviderService.DescribeUserImportJob' }
 
-	export enum DescribeUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserPool' = 0 }
+	export enum DescribeUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserPool' = 'AWSCognitoIdentityProviderService.DescribeUserPool' }
 
-	export enum DescribeUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserPoolClient' = 0 }
+	export enum DescribeUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserPoolClient' = 'AWSCognitoIdentityProviderService.DescribeUserPoolClient' }
 
-	export enum DescribeUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserPoolDomain' = 0 }
+	export enum DescribeUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.DescribeUserPoolDomain' = 'AWSCognitoIdentityProviderService.DescribeUserPoolDomain' }
 
-	export enum ForgetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.ForgetDevice' = 0 }
+	export enum ForgetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.ForgetDevice' = 'AWSCognitoIdentityProviderService.ForgetDevice' }
 
-	export enum ForgotPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.ForgotPassword' = 0 }
+	export enum ForgotPasswordX_Amz_Target { 'AWSCognitoIdentityProviderService.ForgotPassword' = 'AWSCognitoIdentityProviderService.ForgotPassword' }
 
-	export enum GetCSVHeaderX_Amz_Target { 'AWSCognitoIdentityProviderService.GetCSVHeader' = 0 }
+	export enum GetCSVHeaderX_Amz_Target { 'AWSCognitoIdentityProviderService.GetCSVHeader' = 'AWSCognitoIdentityProviderService.GetCSVHeader' }
 
-	export enum GetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.GetDevice' = 0 }
+	export enum GetDeviceX_Amz_Target { 'AWSCognitoIdentityProviderService.GetDevice' = 'AWSCognitoIdentityProviderService.GetDevice' }
 
-	export enum GetGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.GetGroup' = 0 }
+	export enum GetGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.GetGroup' = 'AWSCognitoIdentityProviderService.GetGroup' }
 
-	export enum GetIdentityProviderByIdentifierX_Amz_Target { 'AWSCognitoIdentityProviderService.GetIdentityProviderByIdentifier' = 0 }
+	export enum GetIdentityProviderByIdentifierX_Amz_Target { 'AWSCognitoIdentityProviderService.GetIdentityProviderByIdentifier' = 'AWSCognitoIdentityProviderService.GetIdentityProviderByIdentifier' }
 
-	export enum GetLogDeliveryConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.GetLogDeliveryConfiguration' = 0 }
+	export enum GetLogDeliveryConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.GetLogDeliveryConfiguration' = 'AWSCognitoIdentityProviderService.GetLogDeliveryConfiguration' }
 
-	export enum GetSigningCertificateX_Amz_Target { 'AWSCognitoIdentityProviderService.GetSigningCertificate' = 0 }
+	export enum GetSigningCertificateX_Amz_Target { 'AWSCognitoIdentityProviderService.GetSigningCertificate' = 'AWSCognitoIdentityProviderService.GetSigningCertificate' }
 
-	export enum GetUICustomizationX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUICustomization' = 0 }
+	export enum GetUICustomizationX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUICustomization' = 'AWSCognitoIdentityProviderService.GetUICustomization' }
 
-	export enum GetUserX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUser' = 0 }
+	export enum GetUserX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUser' = 'AWSCognitoIdentityProviderService.GetUser' }
 
-	export enum GetUserAttributeVerificationCodeX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUserAttributeVerificationCode' = 0 }
+	export enum GetUserAttributeVerificationCodeX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUserAttributeVerificationCode' = 'AWSCognitoIdentityProviderService.GetUserAttributeVerificationCode' }
 
-	export enum GetUserPoolMfaConfigX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUserPoolMfaConfig' = 0 }
+	export enum GetUserPoolMfaConfigX_Amz_Target { 'AWSCognitoIdentityProviderService.GetUserPoolMfaConfig' = 'AWSCognitoIdentityProviderService.GetUserPoolMfaConfig' }
 
-	export enum GlobalSignOutX_Amz_Target { 'AWSCognitoIdentityProviderService.GlobalSignOut' = 0 }
+	export enum GlobalSignOutX_Amz_Target { 'AWSCognitoIdentityProviderService.GlobalSignOut' = 'AWSCognitoIdentityProviderService.GlobalSignOut' }
 
-	export enum InitiateAuthX_Amz_Target { 'AWSCognitoIdentityProviderService.InitiateAuth' = 0 }
+	export enum InitiateAuthX_Amz_Target { 'AWSCognitoIdentityProviderService.InitiateAuth' = 'AWSCognitoIdentityProviderService.InitiateAuth' }
 
-	export enum ListDevicesX_Amz_Target { 'AWSCognitoIdentityProviderService.ListDevices' = 0 }
+	export enum ListDevicesX_Amz_Target { 'AWSCognitoIdentityProviderService.ListDevices' = 'AWSCognitoIdentityProviderService.ListDevices' }
 
-	export enum ListGroupsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListGroups' = 0 }
+	export enum ListGroupsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListGroups' = 'AWSCognitoIdentityProviderService.ListGroups' }
 
-	export enum ListIdentityProvidersX_Amz_Target { 'AWSCognitoIdentityProviderService.ListIdentityProviders' = 0 }
+	export enum ListIdentityProvidersX_Amz_Target { 'AWSCognitoIdentityProviderService.ListIdentityProviders' = 'AWSCognitoIdentityProviderService.ListIdentityProviders' }
 
-	export enum ListResourceServersX_Amz_Target { 'AWSCognitoIdentityProviderService.ListResourceServers' = 0 }
+	export enum ListResourceServersX_Amz_Target { 'AWSCognitoIdentityProviderService.ListResourceServers' = 'AWSCognitoIdentityProviderService.ListResourceServers' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSCognitoIdentityProviderService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSCognitoIdentityProviderService.ListTagsForResource' = 'AWSCognitoIdentityProviderService.ListTagsForResource' }
 
-	export enum ListUserImportJobsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUserImportJobs' = 0 }
+	export enum ListUserImportJobsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUserImportJobs' = 'AWSCognitoIdentityProviderService.ListUserImportJobs' }
 
-	export enum ListUserPoolClientsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUserPoolClients' = 0 }
+	export enum ListUserPoolClientsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUserPoolClients' = 'AWSCognitoIdentityProviderService.ListUserPoolClients' }
 
-	export enum ListUserPoolsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUserPools' = 0 }
+	export enum ListUserPoolsX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUserPools' = 'AWSCognitoIdentityProviderService.ListUserPools' }
 
-	export enum ListUsersX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUsers' = 0 }
+	export enum ListUsersX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUsers' = 'AWSCognitoIdentityProviderService.ListUsers' }
 
-	export enum ListUsersInGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUsersInGroup' = 0 }
+	export enum ListUsersInGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.ListUsersInGroup' = 'AWSCognitoIdentityProviderService.ListUsersInGroup' }
 
-	export enum ResendConfirmationCodeX_Amz_Target { 'AWSCognitoIdentityProviderService.ResendConfirmationCode' = 0 }
+	export enum ResendConfirmationCodeX_Amz_Target { 'AWSCognitoIdentityProviderService.ResendConfirmationCode' = 'AWSCognitoIdentityProviderService.ResendConfirmationCode' }
 
-	export enum RespondToAuthChallengeX_Amz_Target { 'AWSCognitoIdentityProviderService.RespondToAuthChallenge' = 0 }
+	export enum RespondToAuthChallengeX_Amz_Target { 'AWSCognitoIdentityProviderService.RespondToAuthChallenge' = 'AWSCognitoIdentityProviderService.RespondToAuthChallenge' }
 
-	export enum RevokeTokenX_Amz_Target { 'AWSCognitoIdentityProviderService.RevokeToken' = 0 }
+	export enum RevokeTokenX_Amz_Target { 'AWSCognitoIdentityProviderService.RevokeToken' = 'AWSCognitoIdentityProviderService.RevokeToken' }
 
-	export enum SetLogDeliveryConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.SetLogDeliveryConfiguration' = 0 }
+	export enum SetLogDeliveryConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.SetLogDeliveryConfiguration' = 'AWSCognitoIdentityProviderService.SetLogDeliveryConfiguration' }
 
-	export enum SetRiskConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.SetRiskConfiguration' = 0 }
+	export enum SetRiskConfigurationX_Amz_Target { 'AWSCognitoIdentityProviderService.SetRiskConfiguration' = 'AWSCognitoIdentityProviderService.SetRiskConfiguration' }
 
-	export enum SetUICustomizationX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUICustomization' = 0 }
+	export enum SetUICustomizationX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUICustomization' = 'AWSCognitoIdentityProviderService.SetUICustomization' }
 
-	export enum SetUserMFAPreferenceX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUserMFAPreference' = 0 }
+	export enum SetUserMFAPreferenceX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUserMFAPreference' = 'AWSCognitoIdentityProviderService.SetUserMFAPreference' }
 
-	export enum SetUserPoolMfaConfigX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUserPoolMfaConfig' = 0 }
+	export enum SetUserPoolMfaConfigX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUserPoolMfaConfig' = 'AWSCognitoIdentityProviderService.SetUserPoolMfaConfig' }
 
-	export enum SetUserSettingsX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUserSettings' = 0 }
+	export enum SetUserSettingsX_Amz_Target { 'AWSCognitoIdentityProviderService.SetUserSettings' = 'AWSCognitoIdentityProviderService.SetUserSettings' }
 
-	export enum SignUpX_Amz_Target { 'AWSCognitoIdentityProviderService.SignUp' = 0 }
+	export enum SignUpX_Amz_Target { 'AWSCognitoIdentityProviderService.SignUp' = 'AWSCognitoIdentityProviderService.SignUp' }
 
-	export enum StartUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.StartUserImportJob' = 0 }
+	export enum StartUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.StartUserImportJob' = 'AWSCognitoIdentityProviderService.StartUserImportJob' }
 
-	export enum StopUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.StopUserImportJob' = 0 }
+	export enum StopUserImportJobX_Amz_Target { 'AWSCognitoIdentityProviderService.StopUserImportJob' = 'AWSCognitoIdentityProviderService.StopUserImportJob' }
 
-	export enum TagResourceX_Amz_Target { 'AWSCognitoIdentityProviderService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSCognitoIdentityProviderService.TagResource' = 'AWSCognitoIdentityProviderService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSCognitoIdentityProviderService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSCognitoIdentityProviderService.UntagResource' = 'AWSCognitoIdentityProviderService.UntagResource' }
 
-	export enum UpdateAuthEventFeedbackX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateAuthEventFeedback' = 0 }
+	export enum UpdateAuthEventFeedbackX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateAuthEventFeedback' = 'AWSCognitoIdentityProviderService.UpdateAuthEventFeedback' }
 
-	export enum UpdateDeviceStatusX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateDeviceStatus' = 0 }
+	export enum UpdateDeviceStatusX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateDeviceStatus' = 'AWSCognitoIdentityProviderService.UpdateDeviceStatus' }
 
-	export enum UpdateGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateGroup' = 0 }
+	export enum UpdateGroupX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateGroup' = 'AWSCognitoIdentityProviderService.UpdateGroup' }
 
-	export enum UpdateIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateIdentityProvider' = 0 }
+	export enum UpdateIdentityProviderX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateIdentityProvider' = 'AWSCognitoIdentityProviderService.UpdateIdentityProvider' }
 
-	export enum UpdateResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateResourceServer' = 0 }
+	export enum UpdateResourceServerX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateResourceServer' = 'AWSCognitoIdentityProviderService.UpdateResourceServer' }
 
-	export enum UpdateUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserAttributes' = 0 }
+	export enum UpdateUserAttributesX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserAttributes' = 'AWSCognitoIdentityProviderService.UpdateUserAttributes' }
 
-	export enum UpdateUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserPool' = 0 }
+	export enum UpdateUserPoolX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserPool' = 'AWSCognitoIdentityProviderService.UpdateUserPool' }
 
-	export enum UpdateUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserPoolClient' = 0 }
+	export enum UpdateUserPoolClientX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserPoolClient' = 'AWSCognitoIdentityProviderService.UpdateUserPoolClient' }
 
-	export enum UpdateUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserPoolDomain' = 0 }
+	export enum UpdateUserPoolDomainX_Amz_Target { 'AWSCognitoIdentityProviderService.UpdateUserPoolDomain' = 'AWSCognitoIdentityProviderService.UpdateUserPoolDomain' }
 
-	export enum VerifySoftwareTokenX_Amz_Target { 'AWSCognitoIdentityProviderService.VerifySoftwareToken' = 0 }
+	export enum VerifySoftwareTokenX_Amz_Target { 'AWSCognitoIdentityProviderService.VerifySoftwareToken' = 'AWSCognitoIdentityProviderService.VerifySoftwareToken' }
 
-	export enum VerifyUserAttributeX_Amz_Target { 'AWSCognitoIdentityProviderService.VerifyUserAttribute' = 0 }
+	export enum VerifyUserAttributeX_Amz_Target { 'AWSCognitoIdentityProviderService.VerifyUserAttribute' = 'AWSCognitoIdentityProviderService.VerifyUserAttribute' }
 
 }
 

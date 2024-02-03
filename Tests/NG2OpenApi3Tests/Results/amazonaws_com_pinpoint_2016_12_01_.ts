@@ -312,7 +312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum __EndpointTypesElement { PUSH = 0, GCM = 1, APNS = 2, APNS_SANDBOX = 3, APNS_VOIP = 4, APNS_VOIP_SANDBOX = 5, ADM = 6, SMS = 7, VOICE = 8, EMAIL = 9, BAIDU = 10, CUSTOM = 11, IN_APP = 12 }
+	export enum __EndpointTypesElement { PUSH = 'PUSH', GCM = 'GCM', APNS = 'APNS', APNS_SANDBOX = 'APNS_SANDBOX', APNS_VOIP = 'APNS_VOIP', APNS_VOIP_SANDBOX = 'APNS_VOIP_SANDBOX', ADM = 'ADM', SMS = 'SMS', VOICE = 'VOICE', EMAIL = 'EMAIL', BAIDU = 'BAIDU', CUSTOM = 'CUSTOM', IN_APP = 'IN_APP' }
 
 
 	/** Specifies the message configuration settings for a campaign. */
@@ -387,7 +387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Action { OPEN_APP = 0, DEEP_LINK = 1, URL = 2 }
+	export enum Action { OPEN_APP = 'OPEN_APP', DEEP_LINK = 'DEEP_LINK', URL = 'URL' }
 
 
 	/** Specifies the contents of a message that's sent through a custom channel to recipients of a campaign. */
@@ -464,7 +464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageType { TRANSACTIONAL = 0, PROMOTIONAL = 1 }
+	export enum MessageType { TRANSACTIONAL = 'TRANSACTIONAL', PROMOTIONAL = 'PROMOTIONAL' }
 
 
 	/** In-app message configuration. */
@@ -547,7 +547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Alignment { LEFT = 0, CENTER = 1, RIGHT = 2 }
+	export enum Alignment { LEFT = 'LEFT', CENTER = 'CENTER', RIGHT = 'RIGHT' }
 
 
 	/** Text config for Message Header. */
@@ -626,7 +626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ButtonAction { LINK = 0, DEEP_LINK = 1, CLOSE = 2 }
+	export enum ButtonAction { LINK = 'LINK', DEEP_LINK = 'DEEP_LINK', CLOSE = 'CLOSE' }
 
 
 	/** Default button configuration. */
@@ -668,7 +668,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Layout { BOTTOM_BANNER = 0, TOP_BANNER = 1, OVERLAYS = 2, MOBILE_FEED = 3, MIDDLE_BANNER = 4, CAROUSEL = 5 }
+	export enum Layout { BOTTOM_BANNER = 'BOTTOM_BANNER', TOP_BANNER = 'TOP_BANNER', OVERLAYS = 'OVERLAYS', MOBILE_FEED = 'MOBILE_FEED', MIDDLE_BANNER = 'MIDDLE_BANNER', CAROUSEL = 'CAROUSEL' }
 
 
 	/** Specifies the schedule settings for a campaign. */
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionType { INCLUSIVE = 0, EXCLUSIVE = 1 }
+	export enum DimensionType { INCLUSIVE = 'INCLUSIVE', EXCLUSIVE = 'EXCLUSIVE' }
 
 	export interface MapOfMetricDimension {
 	}
@@ -788,9 +788,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterType { SYSTEM = 0, ENDPOINT = 1 }
+	export enum FilterType { SYSTEM = 'SYSTEM', ENDPOINT = 'ENDPOINT' }
 
-	export enum Frequency { ONCE = 0, HOURLY = 1, DAILY = 2, WEEKLY = 3, MONTHLY = 4, EVENT = 5, IN_APP_EVENT = 6 }
+	export enum Frequency { ONCE = 'ONCE', HOURLY = 'HOURLY', DAILY = 'DAILY', WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY', EVENT = 'EVENT', IN_APP_EVENT = 'IN_APP_EVENT' }
 
 
 	/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
@@ -829,7 +829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CampaignStatus { SCHEDULED = 0, EXECUTING = 1, PENDING_NEXT_RUN = 2, COMPLETED = 3, PAUSED = 4, DELETED = 5, INVALID = 6 }
+	export enum CampaignStatus { SCHEDULED = 'SCHEDULED', EXECUTING = 'EXECUTING', PENDING_NEXT_RUN = 'PENDING_NEXT_RUN', COMPLETED = 'COMPLETED', PAUSED = 'PAUSED', DELETED = 'DELETED', INVALID = 'INVALID' }
 
 
 	/** Specifies the message template to use for the message, for each type of channel. */
@@ -893,7 +893,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Mode { DELIVERY = 0, FILTER = 1 }
+	export enum Mode { DELIVERY = 'DELIVERY', FILTER = 'FILTER' }
 
 
 	/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send. */
@@ -1115,7 +1115,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { CREATED = 0, PREPARING_FOR_INITIALIZATION = 1, INITIALIZING = 2, PROCESSING = 3, PENDING_JOB = 4, COMPLETING = 5, COMPLETED = 6, FAILING = 7, FAILED = 8 }
+	export enum JobStatus { CREATED = 'CREATED', PREPARING_FOR_INITIALIZATION = 'PREPARING_FOR_INITIALIZATION', INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', PENDING_JOB = 'PENDING_JOB', COMPLETING = 'COMPLETING', COMPLETED = 'COMPLETED', FAILING = 'FAILING', FAILED = 'FAILED' }
 
 	export interface CreateImportJobResponse {
 
@@ -1254,7 +1254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Format { CSV = 0, JSON = 1 }
+	export enum Format { CSV = 'CSV', JSON = 'JSON' }
 
 	export interface CreateInAppTemplateResponse {
 
@@ -1552,7 +1552,7 @@ export namespace MyNS {
 
 	}
 
-	export enum State { DRAFT = 0, ACTIVE = 1, COMPLETED = 2, CANCELLED = 3, CLOSED = 4, PAUSED = 5 }
+	export enum State { DRAFT = 'DRAFT', ACTIVE = 'ACTIVE', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED', CLOSED = 'CLOSED', PAUSED = 'PAUSED' }
 
 
 	/** The channel-specific configurations for the journey. */
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum __TimezoneEstimationMethodsElement { PHONE_NUMBER = 0, POSTAL_CODE = 1 }
+	export enum __TimezoneEstimationMethodsElement { PHONE_NUMBER = 'PHONE_NUMBER', POSTAL_CODE = 'POSTAL_CODE' }
 
 	export interface CreatePushTemplateResponse {
 
@@ -1970,9 +1970,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Duration { HR_24 = 0, DAY_7 = 1, DAY_14 = 2, DAY_30 = 3 }
+	export enum Duration { HR_24 = 'HR_24', DAY_7 = 'DAY_7', DAY_14 = 'DAY_14', DAY_30 = 'DAY_30' }
 
-	export enum RecencyType { ACTIVE = 0, INACTIVE = 1 }
+	export enum RecencyType { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model. */
@@ -2182,9 +2182,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { ALL = 0, ANY = 1, NONE = 2 }
+	export enum SourceType { ALL = 'ALL', ANY = 'ANY', NONE = 'NONE' }
 
-	export enum SegmentType { DIMENSIONAL = 0, IMPORT = 1 }
+	export enum SegmentType { DIMENSIONAL = 'DIMENSIONAL', IMPORT = 'IMPORT' }
 
 	export interface CreateSmsTemplateResponse {
 
@@ -4117,7 +4117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateType { EMAIL = 0, SMS = 1, VOICE = 2, PUSH = 3, INAPP = 4 }
+	export enum TemplateType { EMAIL = 'EMAIL', SMS = 'SMS', VOICE = 'VOICE', PUSH = 'PUSH', INAPP = 'INAPP' }
 
 	export interface GetEndpointResponse {
 
@@ -4870,7 +4870,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JourneyRunStatus { SCHEDULED = 0, RUNNING = 1, COMPLETED = 2, CANCELLED = 3 }
+	export enum JourneyRunStatus { SCHEDULED = 'SCHEDULED', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', CANCELLED = 'CANCELLED' }
 
 	export interface GetPushTemplateResponse {
 
@@ -6543,7 +6543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { PUSH = 0, GCM = 1, APNS = 2, APNS_SANDBOX = 3, APNS_VOIP = 4, APNS_VOIP_SANDBOX = 5, ADM = 6, SMS = 7, VOICE = 8, EMAIL = 9, BAIDU = 10, CUSTOM = 11, IN_APP = 12 }
+	export enum ChannelType { PUSH = 'PUSH', GCM = 'GCM', APNS = 'APNS', APNS_SANDBOX = 'APNS_SANDBOX', APNS_VOIP = 'APNS_VOIP', APNS_VOIP_SANDBOX = 'APNS_VOIP_SANDBOX', ADM = 'ADM', SMS = 'SMS', VOICE = 'VOICE', EMAIL = 'EMAIL', BAIDU = 'BAIDU', CUSTOM = 'CUSTOM', IN_APP = 'IN_APP' }
 
 	export interface UpdateEndpointsBatchResponse {
 
@@ -7139,7 +7139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operator { ALL = 0, ANY = 1 }
+	export enum Operator { ALL = 'ALL', ANY = 'ANY' }
 
 
 	/** Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey. */
@@ -7478,7 +7478,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeType { INCLUSIVE = 0, EXCLUSIVE = 1, CONTAINS = 2, BEFORE = 3, AFTER = 4, ON = 5, BETWEEN = 6 }
+	export enum AttributeType { INCLUSIVE = 'INCLUSIVE', EXCLUSIVE = 'EXCLUSIVE', CONTAINS = 'CONTAINS', BEFORE = 'BEFORE', AFTER = 'AFTER', ON = 'ON', BETWEEN = 'BETWEEN' }
 
 
 	/** Specifies attribute-based criteria for including or excluding endpoints from a segment. */
@@ -8415,7 +8415,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeliveryStatus { SUCCESSFUL = 0, THROTTLED = 1, TEMPORARY_FAILURE = 2, PERMANENT_FAILURE = 3, UNKNOWN_FAILURE = 4, OPT_OUT = 5, DUPLICATE = 6 }
+	export enum DeliveryStatus { SUCCESSFUL = 'SUCCESSFUL', THROTTLED = 'THROTTLED', TEMPORARY_FAILURE = 'TEMPORARY_FAILURE', PERMANENT_FAILURE = 'PERMANENT_FAILURE', UNKNOWN_FAILURE = 'UNKNOWN_FAILURE', OPT_OUT = 'OPT_OUT', DUPLICATE = 'DUPLICATE' }
 
 
 	/** Specifies the status and settings of the email channel for an application. */
@@ -9293,7 +9293,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Include { ALL = 0, ANY = 1, NONE = 2 }
+	export enum Include { ALL = 'ALL', ANY = 'ANY', NONE = 'NONE' }
 
 	export interface MapOfEventItemResponse {
 	}
@@ -9617,7 +9617,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { ALL = 0, ANY = 1, NONE = 2 }
+	export enum Type { ALL = 'ALL', ANY = 'ANY', NONE = 'NONE' }
 
 	export interface SendMessagesRequest {
 
@@ -10325,7 +10325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DayOfWeek { MONDAY = 0, TUESDAY = 1, WEDNESDAY = 2, THURSDAY = 3, FRIDAY = 4, SATURDAY = 5, SUNDAY = 6 }
+	export enum DayOfWeek { MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Specifies the start and end time for OpenHours. */

@@ -150,7 +150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CachePropertiesProvisioningState { Succeeded = 0, Failed = 1, Cancelled = 2, Creating = 3, Deleting = 4, Updating = 5 }
+	export enum CachePropertiesProvisioningState { Succeeded = 'Succeeded', Failed = 'Failed', Cancelled = 'Cancelled', Creating = 'Creating', Deleting = 'Deleting', Updating = 'Updating' }
 
 
 	/** Properties describing the software upgrade state of the Cache. */
@@ -201,7 +201,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CacheUpgradeStatusFirmwareUpdateStatus { available = 0, unavailable = 1 }
+	export enum CacheUpgradeStatusFirmwareUpdateStatus { available = 'available', unavailable = 'unavailable' }
 
 	export interface CacheSku {
 
@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CacheHealthState { Unknown = 0, Healthy = 1, Degraded = 2, Down = 3, Transitioning = 4, Stopping = 5, Stopped = 6, Upgrading = 7, Flushing = 8 }
+	export enum CacheHealthState { Unknown = 'Unknown', Healthy = 'Healthy', Degraded = 'Degraded', Down = 'Down', Transitioning = 'Transitioning', Stopping = 'Stopping', Stopped = 'Stopped', Upgrading = 'Upgrading', Flushing = 'Flushing' }
 
 
 	/** Result of the request to list Caches. It contains a list of Caches and a URL link to get the next set of results. */
@@ -536,7 +536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestrictionReasonCode { QuotaId = 0, NotAvailableForSubscription = 1 }
+	export enum RestrictionReasonCode { QuotaId = 'QuotaId', NotAvailableForSubscription = 'NotAvailableForSubscription' }
 
 
 	/** The response from the List Cache SKUs operation. */
@@ -636,7 +636,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageTargetPropertiesTargetType { nfs3 = 0, clfs = 1, unknown = 2 }
+	export enum StorageTargetPropertiesTargetType { nfs3 = 'nfs3', clfs = 'clfs', unknown = 'unknown' }
 
 
 	/** Storage container for use as an Unknown Storage Target. */

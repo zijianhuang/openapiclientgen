@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GraphQueryPropertiesResultKind { basic = 0 }
+	export enum GraphQueryPropertiesResultKind { basic = 'basic' }
 
 
 	/** Properties that contain a workbook for PATCH operation. */

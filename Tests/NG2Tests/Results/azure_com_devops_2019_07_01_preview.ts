@@ -37,7 +37,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationAuthorizationType { personalAccessToken = 0 }
+	export enum AuthorizationAuthorizationType { personalAccessToken = 'personalAccessToken' }
 
 
 	/** Configuration used to bootstrap a Pipeline. */
@@ -125,7 +125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodeRepositoryRepositoryType { gitHub = 0, vstsGit = 1 }
+	export enum CodeRepositoryRepositoryType { gitHub = 'gitHub', vstsGit = 'vstsGit' }
 
 
 	/** Template used to bootstrap the pipeline. */
@@ -294,7 +294,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputDescriptorType { String = 0, SecureString = 1, Int = 2, Bool = 3, Authorization = 4 }
+	export enum InputDescriptorType { String = 'String', SecureString = 'SecureString', Int = 'Int', Bool = 'Bool', Authorization = 'Authorization' }
 
 
 	/** Properties of an Operation. */

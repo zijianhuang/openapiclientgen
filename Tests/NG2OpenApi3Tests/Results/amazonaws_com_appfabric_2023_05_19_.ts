@@ -62,7 +62,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResultStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, EXPIRED = 3 }
+	export enum ResultStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', EXPIRED = 'EXPIRED' }
 
 
 	/** Contains information about an error returned from a user access task. */
@@ -227,7 +227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppAuthorizationStatus { PendingConnect = 0, Connected = 1, ConnectionValidationFailed = 2, TokenAutoRotationFailed = 3 }
+	export enum AppAuthorizationStatus { PendingConnect = 'PendingConnect', Connected = 'Connected', ConnectionValidationFailed = 'ConnectionValidationFailed', TokenAutoRotationFailed = 'TokenAutoRotationFailed' }
 
 	export interface CreateAppAuthorizationResponse {
 
@@ -314,9 +314,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthType { oauth2 = 0, apiKey = 1 }
+	export enum AuthType { oauth2 = 'oauth2', apiKey = 'apiKey' }
 
-	export enum Persona { admin = 0, endUser = 1 }
+	export enum Persona { admin = 'admin', endUser = 'endUser' }
 
 
 	/** Contains OAuth2 client credential information. */
@@ -535,9 +535,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionState { enabled = 0, disabled = 1 }
+	export enum IngestionState { enabled = 'enabled', disabled = 'disabled' }
 
-	export enum IngestionType { auditLog = 0 }
+	export enum IngestionType { auditLog = 'auditLog' }
 
 	export interface CreateIngestionDestinationResponse {
 
@@ -641,9 +641,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Schema { ocsf = 0, raw = 1 }
+	export enum Schema { ocsf = 'ocsf', raw = 'raw' }
 
-	export enum Format { json = 0, parquet = 1 }
+	export enum Format { json = 'json', parquet = 'parquet' }
 
 
 	/** Contains information about the destination of ingested data. */
@@ -738,7 +738,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionDestinationStatus { Active = 0, Failed = 1 }
+	export enum IngestionDestinationStatus { Active = 'Active', Failed = 'Failed' }
 
 	export interface DeleteAppAuthorizationResponse {
 	}

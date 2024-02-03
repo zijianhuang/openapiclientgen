@@ -47,7 +47,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { DUPLICATE_INPUT = 0, RESOURCE_DOES_NOT_EXIST = 1, RESOURCE_ALREADY_EXISTS = 2, INTERNAL_SERVER_FAILURE = 3 }
+	export enum ErrorCode { DUPLICATE_INPUT = 'DUPLICATE_INPUT', RESOURCE_DOES_NOT_EXIST = 'RESOURCE_DOES_NOT_EXIST', RESOURCE_ALREADY_EXISTS = 'RESOURCE_ALREADY_EXISTS', INTERNAL_SERVER_FAILURE = 'INTERNAL_SERVER_FAILURE' }
 
 
 	/** The unique custom vocabulary item from the custom vocabulary list. */
@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotLocaleStatus { Creating = 0, Building = 1, Built = 2, ReadyExpressTesting = 3, Failed = 4, Deleting = 5, NotBuilt = 6, Importing = 7, Processing = 8 }
+	export enum BotLocaleStatus { Creating = 'Creating', Building = 'Building', Built = 'Built', ReadyExpressTesting = 'ReadyExpressTesting', Failed = 'Failed', Deleting = 'Deleting', NotBuilt = 'NotBuilt', Importing = 'Importing', Processing = 'Processing' }
 
 	export interface PreconditionFailedException {
 	}
@@ -329,7 +329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotStatus { Creating = 0, Available = 1, Inactive = 2, Deleting = 3, Failed = 4, Versioning = 5, Importing = 6, Updating = 7 }
+	export enum BotStatus { Creating = 'Creating', Available = 'Available', Inactive = 'Inactive', Deleting = 'Deleting', Failed = 'Failed', Versioning = 'Versioning', Importing = 'Importing', Updating = 'Updating' }
 
 	export interface TagMap {
 	}
@@ -341,7 +341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotType { Bot = 0, BotNetwork = 1 }
+	export enum BotType { Bot = 'Bot', BotNetwork = 'BotNetwork' }
 
 
 	/** A bot that is a member of a network of bots. */
@@ -623,7 +623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotAliasStatus { Creating = 0, Available = 1, Deleting = 2, Failed = 3 }
+	export enum BotAliasStatus { Creating = 'Creating', Available = 'Available', Deleting = 'Deleting', Failed = 'Failed' }
 
 
 	/** Specifies settings that are unique to a locale. For example, you can use different Lambda function depending on the bot's locale. */
@@ -754,7 +754,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceEngine { standard = 0, neural = 1 }
+	export enum VoiceEngine { standard = 'standard', neural = 'neural' }
 
 	export interface CreateBotVersionResponse {
 		botId?: string;
@@ -973,9 +973,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportExportFileFormat { LexJson = 0, TSV = 1, CSV = 2 }
+	export enum ImportExportFileFormat { LexJson = 'LexJson', TSV = 'TSV', CSV = 'CSV' }
 
-	export enum ExportStatus { InProgress = 0, Completed = 1, Failed = 2, Deleting = 3 }
+	export enum ExportStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Deleting = 'Deleting' }
 
 	export interface CreateIntentResponse {
 		intentId?: string;
@@ -1340,7 +1340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DialogActionType { ElicitIntent = 0, StartIntent = 1, ElicitSlot = 2, EvaluateConditional = 3, InvokeDialogCodeHook = 4, ConfirmIntent = 5, FulfillIntent = 6, CloseIntent = 7, EndConversation = 8 }
+	export enum DialogActionType { ElicitIntent = 'ElicitIntent', StartIntent = 'StartIntent', ElicitSlot = 'ElicitSlot', EvaluateConditional = 'EvaluateConditional', InvokeDialogCodeHook = 'InvokeDialogCodeHook', ConfirmIntent = 'ConfirmIntent', FulfillIntent = 'FulfillIntent', CloseIntent = 'CloseIntent', EndConversation = 'EndConversation' }
 
 
 	/** Override settings to configure the intent state. */
@@ -1624,7 +1624,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageSelectionStrategy { Random = 0, Ordered = 1 }
+	export enum MessageSelectionStrategy { Random = 'Random', Ordered = 'Ordered' }
 
 	export interface PromptAttemptsSpecificationMap {
 	}
@@ -2019,7 +2019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotConstraint { Required = 0, Optional = 1 }
+	export enum SlotConstraint { Required = 'Required', Optional = 'Optional' }
 
 
 	/** Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input.  */
@@ -2126,7 +2126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObfuscationSettingType { None = 0, DefaultObfuscation = 1 }
+	export enum ObfuscationSettingType { None = 'None', DefaultObfuscation = 'DefaultObfuscation' }
 
 
 	/** Indicates whether a slot can return multiple values. */
@@ -2271,7 +2271,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotValueResolutionStrategy { OriginalValue = 0, TopResolution = 1, Concatenation = 2 }
+	export enum SlotValueResolutionStrategy { OriginalValue = 'OriginalValue', TopResolution = 'TopResolution', Concatenation = 'Concatenation' }
 
 
 	/** Provides a regular expression used to validate the value of a slot. */
@@ -2311,7 +2311,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioRecognitionStrategy { UseSlotValuesAsCustomVocabulary = 0 }
+	export enum AudioRecognitionStrategy { UseSlotValuesAsCustomVocabulary = 'UseSlotValuesAsCustomVocabulary' }
 
 
 	/** Provides information about the external source of the slot type's definition. */
@@ -2601,7 +2601,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomVocabularyStatus { Ready = 0, Deleting = 1, Exporting = 2, Importing = 3, Creating = 4 }
+	export enum CustomVocabularyStatus { Ready = 'Ready', Deleting = 'Deleting', Exporting = 'Exporting', Importing = 'Importing', Creating = 'Creating' }
 
 	export interface DeleteExportResponse {
 		exportId?: string;
@@ -2922,7 +2922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotRecommendationStatus { Processing = 0, Deleting = 1, Deleted = 2, Downloading = 3, Updating = 4, Available = 5, Failed = 6, Stopping = 7, Stopped = 8 }
+	export enum BotRecommendationStatus { Processing = 'Processing', Deleting = 'Deleting', Deleted = 'Deleted', Downloading = 'Downloading', Updating = 'Updating', Available = 'Available', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
 
 	/** Indicates the setting of the location where the transcript is stored. */
@@ -2987,7 +2987,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TranscriptFormat { Lex = 0 }
+	export enum TranscriptFormat { Lex = 'Lex' }
 
 
 	/** The object representing the filter that Amazon Lex will use to select the appropriate transcript. */
@@ -3512,9 +3512,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TestSetModality { Text = 0, Audio = 1 }
+	export enum TestSetModality { Text = 'Text', Audio = 'Audio' }
 
-	export enum MergeStrategy { Overwrite = 0, FailOnConflict = 1, Append = 2 }
+	export enum MergeStrategy { Overwrite = 'Overwrite', FailOnConflict = 'FailOnConflict', Append = 'Append' }
 
 	export interface DescribeIntentResponse {
 		intentId?: string;
@@ -3733,7 +3733,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestExecutionStatus { Pending = 0, Waiting = 1, InProgress = 2, Completed = 3, Failed = 4, Stopping = 5, Stopped = 6 }
+	export enum TestExecutionStatus { Pending = 'Pending', Waiting = 'Waiting', InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Stopping = 'Stopping', Stopped = 'Stopped' }
 
 
 	/** Contains information about the bot used for the test execution. */
@@ -3785,7 +3785,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestExecutionApiMode { Streaming = 0, NonStreaming = 1 }
+	export enum TestExecutionApiMode { Streaming = 'Streaming', NonStreaming = 'NonStreaming' }
 
 	export interface DescribeTestSetResponse {
 		testSetId?: string;
@@ -3825,7 +3825,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestSetStatus { Importing = 0, PendingAnnotation = 1, Deleting = 2, ValidationError = 3, Ready = 4 }
+	export enum TestSetStatus { Importing = 'Importing', PendingAnnotation = 'PendingAnnotation', Deleting = 'Deleting', ValidationError = 'ValidationError', Ready = 'Ready' }
 
 	export interface DescribeTestSetDiscrepancyReportResponse {
 		testSetDiscrepancyReportId?: string;
@@ -3858,7 +3858,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestSetDiscrepancyReportStatus { InProgress = 0, Completed = 1, Failed = 2 }
+	export enum TestSetDiscrepancyReportStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed' }
 
 
 	/** Contains details about the errors in the test set discrepancy report */
@@ -3980,7 +3980,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestSetGenerationStatus { Generating = 0, Ready = 1, Failed = 2, Pending = 3 }
+	export enum TestSetGenerationStatus { Generating = 'Generating', Ready = 'Ready', Failed = 'Failed', Pending = 'Pending' }
 
 
 	/** Contains information about the data source from which the test set is generated. */
@@ -4070,7 +4070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConversationLogsInputModeFilter { Speech = 0, Text = 1 }
+	export enum ConversationLogsInputModeFilter { Speech = 'Speech', Text = 'Text' }
 
 	export interface GetTestExecutionArtifactsUrlResponse {
 		testExecutionId?: string;
@@ -4169,7 +4169,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeDimension { Hours = 0, Days = 1, Weeks = 2 }
+	export enum TimeDimension { Hours = 'Hours', Days = 'Days', Weeks = 'Weeks' }
 
 
 	/** Provides summary information for aggregated utterances. The <code>ListAggregatedUtterances</code> operations combines all instances of the same utterance into a single aggregated summary. */
@@ -4203,9 +4203,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregatedUtterancesSortAttribute { HitCount = 0, MissedCount = 1 }
+	export enum AggregatedUtterancesSortAttribute { HitCount = 'HitCount', MissedCount = 'MissedCount' }
 
-	export enum SortOrder { Ascending = 0, Descending = 1 }
+	export enum SortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 
 	/** Filters responses returned by the <code>ListAggregatedUtterances</code> operation. */
@@ -4238,9 +4238,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregatedUtterancesFilterName { Utterance = 0 }
+	export enum AggregatedUtterancesFilterName { Utterance = 'Utterance' }
 
-	export enum AggregatedUtterancesFilterOperator { CO = 0, EQ = 1 }
+	export enum AggregatedUtterancesFilterOperator { CO = 'CO', EQ = 'EQ' }
 
 	export interface ListBotAliasesResponse {
 		botAliasSummaries?: Array<BotAliasSummary>;
@@ -4346,7 +4346,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotLocaleSortAttribute { BotLocaleName = 0 }
+	export enum BotLocaleSortAttribute { BotLocaleName = 'BotLocaleName' }
 
 
 	/** Filters responses returned by the <code>ListBotLocales</code> operation. */
@@ -4482,7 +4482,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotVersionSortAttribute { BotVersion = 0 }
+	export enum BotVersionSortAttribute { BotVersion = 'BotVersion' }
 
 	export interface ListBotsResponse {
 		botSummaries?: Array<BotSummary>;
@@ -4533,7 +4533,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BotSortAttribute { BotName = 0 }
+	export enum BotSortAttribute { BotName = 'BotName' }
 
 
 	/** Filters the responses returned by the <code>ListBots</code> operation. */
@@ -4566,9 +4566,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BotFilterName { BotName = 0, BotType = 1 }
+	export enum BotFilterName { BotName = 'BotName', BotType = 'BotType' }
 
-	export enum BotFilterOperator { CO = 0, EQ = 1, NE = 2 }
+	export enum BotFilterOperator { CO = 'CO', EQ = 'EQ', NE = 'NE' }
 
 	export interface ListBuiltInIntentsResponse {
 		builtInIntentSummaries?: Array<BuiltInIntentSummary>;
@@ -4607,7 +4607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuiltInIntentSortAttribute { IntentSignature = 0 }
+	export enum BuiltInIntentSortAttribute { IntentSignature = 'IntentSignature' }
 
 	export interface ListBuiltInSlotTypesResponse {
 		builtInSlotTypeSummaries?: Array<BuiltInSlotTypeSummary>;
@@ -4646,7 +4646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuiltInSlotTypeSortAttribute { SlotTypeSignature = 0 }
+	export enum BuiltInSlotTypeSortAttribute { SlotTypeSignature = 'SlotTypeSignature' }
 
 	export interface ListCustomVocabularyItemsResponse {
 		botId?: string;
@@ -4724,7 +4724,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportSortAttribute { LastUpdatedDateTime = 0 }
+	export enum ExportSortAttribute { LastUpdatedDateTime = 'LastUpdatedDateTime' }
 
 
 	/** Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation */
@@ -4757,7 +4757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportFilterName { ExportResourceType = 0 }
+	export enum ExportFilterName { ExportResourceType = 'ExportResourceType' }
 
 	export interface ListImportsResponse {
 		botId?: string;
@@ -4820,9 +4820,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportResourceType { Bot = 0, BotLocale = 1, CustomVocabulary = 2, TestSet = 3 }
+	export enum ImportResourceType { Bot = 'Bot', BotLocale = 'BotLocale', CustomVocabulary = 'CustomVocabulary', TestSet = 'TestSet' }
 
-	export enum ImportSortAttribute { LastUpdatedDateTime = 0 }
+	export enum ImportSortAttribute { LastUpdatedDateTime = 'LastUpdatedDateTime' }
 
 
 	/** Filters the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a> operation. */
@@ -4855,7 +4855,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportFilterName { ImportResourceType = 0 }
+	export enum ImportFilterName { ImportResourceType = 'ImportResourceType' }
 
 	export interface ListIntentMetricsResponse {
 		botId?: string;
@@ -4911,7 +4911,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsBinByName { ConversationStartTime = 0, UtteranceTimestamp = 1 }
+	export enum AnalyticsBinByName { ConversationStartTime = 'ConversationStartTime', UtteranceTimestamp = 'UtteranceTimestamp' }
 
 
 	/** Contains the category by which the intent analytics were grouped and a member of that category. */
@@ -4933,7 +4933,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsIntentField { IntentName = 0, IntentEndState = 1, IntentLevel = 2 }
+	export enum AnalyticsIntentField { IntentName = 'IntentName', IntentEndState = 'IntentEndState', IntentLevel = 'IntentLevel' }
 
 
 	/** An object containing the results for the intent metric you requested. */
@@ -4958,9 +4958,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsIntentMetricName { Count = 0, Success = 1, Failure = 2, Switched = 3, Dropped = 4 }
+	export enum AnalyticsIntentMetricName { Count = 'Count', Success = 'Success', Failure = 'Failure', Switched = 'Switched', Dropped = 'Dropped' }
 
-	export enum AnalyticsMetricStatistic { Sum = 0, Avg = 1, Max = 2 }
+	export enum AnalyticsMetricStatistic { Sum = 'Sum', Avg = 'Avg', Max = 'Max' }
 
 
 	/** Contains the metric and the summary statistic you want to calculate, and the order in which to sort the results, for the intents in the bot. */
@@ -5024,7 +5024,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsInterval { OneHour = 0, OneDay = 1 }
+	export enum AnalyticsInterval { OneHour = 'OneHour', OneDay = 'OneDay' }
 
 
 	/** Contains the category by which to group the intents. */
@@ -5078,9 +5078,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsIntentFilterName { BotAliasId = 0, BotVersion = 1, LocaleId = 2, Modality = 3, Channel = 4, SessionId = 5, OriginatingRequestId = 6, IntentName = 7, IntentEndState = 8 }
+	export enum AnalyticsIntentFilterName { BotAliasId = 'BotAliasId', BotVersion = 'BotVersion', LocaleId = 'LocaleId', Modality = 'Modality', Channel = 'Channel', SessionId = 'SessionId', OriginatingRequestId = 'OriginatingRequestId', IntentName = 'IntentName', IntentEndState = 'IntentEndState' }
 
-	export enum AnalyticsFilterOperator { EQ = 0, GT = 1, LT = 2 }
+	export enum AnalyticsFilterOperator { EQ = 'EQ', GT = 'GT', LT = 'LT' }
 
 	export interface ListIntentPathsResponse {
 		nodeSummaries?: Array<AnalyticsIntentNodeSummary>;
@@ -5122,7 +5122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsNodeType { Inner = 0, Exit = 1 }
+	export enum AnalyticsNodeType { Inner = 'Inner', Exit = 'Exit' }
 
 
 	/** <p>Contains fields describing a condition by which to filter the paths. The expression may be understood as <code>name</code> <code>operator</code> <code>values</code>. For example:</p> <ul> <li> <p> <code>LocaleId EQ en</code> – The locale is "en".</p> </li> <li> <p> <code>BotVersion EQ 2</code> – The bot version is equal to two.</p> </li> </ul> <p>The operators that each filter supports are listed below:</p> <ul> <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li> <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li> <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li> <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li> <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li> </ul> */
@@ -5155,7 +5155,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsCommonFilterName { BotAliasId = 0, BotVersion = 1, LocaleId = 2, Modality = 3, Channel = 4 }
+	export enum AnalyticsCommonFilterName { BotAliasId = 'BotAliasId', BotVersion = 'BotVersion', LocaleId = 'LocaleId', Modality = 'Modality', Channel = 'Channel' }
 
 	export interface ListIntentStageMetricsResponse {
 		botId?: string;
@@ -5211,7 +5211,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsIntentStageField { IntentStageName = 0, SwitchedToIntent = 1 }
+	export enum AnalyticsIntentStageField { IntentStageName = 'IntentStageName', SwitchedToIntent = 'SwitchedToIntent' }
 
 
 	/** An object containing the results for an intent stage metric you requested. */
@@ -5236,7 +5236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsIntentStageMetricName { Count = 0, Success = 1, Failed = 2, Dropped = 3, Retry = 4 }
+	export enum AnalyticsIntentStageMetricName { Count = 'Count', Success = 'Success', Failed = 'Failed', Dropped = 'Dropped', Retry = 'Retry' }
 
 
 	/** Contains the metric and the summary statistic you want to calculate, and the order in which to sort the results, for the intent stages across the user sessions with the bot. */
@@ -5321,7 +5321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsIntentStageFilterName { BotAliasId = 0, BotVersion = 1, LocaleId = 2, Modality = 3, Channel = 4, SessionId = 5, OriginatingRequestId = 6, IntentName = 7, IntentStageName = 8 }
+	export enum AnalyticsIntentStageFilterName { BotAliasId = 'BotAliasId', BotVersion = 'BotVersion', LocaleId = 'LocaleId', Modality = 'Modality', Channel = 'Channel', SessionId = 'SessionId', OriginatingRequestId = 'OriginatingRequestId', IntentName = 'IntentName', IntentStageName = 'IntentStageName' }
 
 	export interface ListIntentsResponse {
 		botId?: string;
@@ -5377,7 +5377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntentSortAttribute { IntentName = 0, LastUpdatedDateTime = 1 }
+	export enum IntentSortAttribute { IntentName = 'IntentName', LastUpdatedDateTime = 'LastUpdatedDateTime' }
 
 
 	/** Filters the response from the <code>ListIntents</code> operation. */
@@ -5410,7 +5410,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntentFilterName { IntentName = 0 }
+	export enum IntentFilterName { IntentName = 'IntentName' }
 
 	export interface ListRecommendedIntentsResponse {
 		botId?: string;
@@ -5529,9 +5529,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConversationEndState { Success = 0, Failure = 1, Dropped = 2 }
+	export enum ConversationEndState { Success = 'Success', Failure = 'Failure', Dropped = 'Dropped' }
 
-	export enum AnalyticsModality { Speech = 0, Text = 1, DTMF = 2, MultiMode = 3 }
+	export enum AnalyticsModality { Speech = 'Speech', Text = 'Text', DTMF = 'DTMF', MultiMode = 'MultiMode' }
 
 
 	/** An object containing the name of an intent that was invoked. */
@@ -5550,9 +5550,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsSessionSortByName { ConversationStartTime = 0, NumberOfTurns = 1, Duration = 2 }
+	export enum AnalyticsSessionSortByName { ConversationStartTime = 'ConversationStartTime', NumberOfTurns = 'NumberOfTurns', Duration = 'Duration' }
 
-	export enum AnalyticsSortOrder { Ascending = 0, Descending = 1 }
+	export enum AnalyticsSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 
 	/** <p>Contains fields describing a condition by which to filter the sessions. The expression may be understood as <code>name</code> <code>operator</code> <code>values</code>. For example:</p> <ul> <li> <p> <code>LocaleId EQ en</code> – The locale is "en".</p> </li> <li> <p> <code>Duration GT 200</code> – The duration is greater than 200 seconds.</p> </li> </ul> <p>The operators that each filter supports are listed below:</p> <ul> <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li> <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li> <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li> <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li> <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li> <li> <p> <code>Duration</code> – <code>EQ</code>, <code>GT</code>, <code>LT</code>.</p> </li> <li> <p> <code>conversationEndState</code> – <code>EQ</code>, <code>CO</code>.</p> </li> <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li> <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li> <li> <p> <code>IntentPath</code> – <code>EQ</code>.</p> </li> </ul> */
@@ -5585,7 +5585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsSessionFilterName { BotAliasId = 0, BotVersion = 1, LocaleId = 2, Modality = 3, Channel = 4, Duration = 5, ConversationEndState = 6, SessionId = 7, OriginatingRequestId = 8, IntentPath = 9 }
+	export enum AnalyticsSessionFilterName { BotAliasId = 'BotAliasId', BotVersion = 'BotVersion', LocaleId = 'LocaleId', Modality = 'Modality', Channel = 'Channel', Duration = 'Duration', ConversationEndState = 'ConversationEndState', SessionId = 'SessionId', OriginatingRequestId = 'OriginatingRequestId', IntentPath = 'IntentPath' }
 
 	export interface ListSessionMetricsResponse {
 		botId?: string;
@@ -5641,7 +5641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsSessionField { ConversationEndState = 0, LocaleId = 1 }
+	export enum AnalyticsSessionField { ConversationEndState = 'ConversationEndState', LocaleId = 'LocaleId' }
 
 
 	/** An object containing the results for a session metric you requested. */
@@ -5666,7 +5666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsSessionMetricName { Count = 0, Success = 1, Failure = 2, Dropped = 3, Duration = 4, TurnsPerConversation = 5, Concurrency = 6 }
+	export enum AnalyticsSessionMetricName { Count = 'Count', Success = 'Success', Failure = 'Failure', Dropped = 'Dropped', Duration = 'Duration', TurnsPerConversation = 'TurnsPerConversation', Concurrency = 'Concurrency' }
 
 
 	/** Contains the metric and the summary statistic you want to calculate, and the order in which to sort the results, for the user sessions with the bot. */
@@ -5775,9 +5775,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotTypeCategory { Custom = 0, Extended = 1, ExternalGrammar = 2, Composite = 3 }
+	export enum SlotTypeCategory { Custom = 'Custom', Extended = 'Extended', ExternalGrammar = 'ExternalGrammar', Composite = 'Composite' }
 
-	export enum SlotTypeSortAttribute { SlotTypeName = 0, LastUpdatedDateTime = 1 }
+	export enum SlotTypeSortAttribute { SlotTypeName = 'SlotTypeName', LastUpdatedDateTime = 'LastUpdatedDateTime' }
 
 
 	/** Filters the response from the <code>ListSlotTypes</code> operation. */
@@ -5810,7 +5810,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotTypeFilterName { SlotTypeName = 0, ExternalSourceType = 1 }
+	export enum SlotTypeFilterName { SlotTypeName = 'SlotTypeName', ExternalSourceType = 'ExternalSourceType' }
 
 	export interface ListSlotsResponse {
 		botId?: string;
@@ -5871,7 +5871,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotSortAttribute { SlotName = 0, LastUpdatedDateTime = 1 }
+	export enum SlotSortAttribute { SlotName = 'SlotName', LastUpdatedDateTime = 'LastUpdatedDateTime' }
 
 
 	/** Filters the response from the <code>ListSlots</code> operation. */
@@ -5904,7 +5904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotFilterName { SlotName = 0 }
+	export enum SlotFilterName { SlotName = 'SlotName' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagMap;
@@ -6063,7 +6063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestResultMatchStatus { Matched = 0, Mismatched = 1, ExecutionError = 2 }
+	export enum TestResultMatchStatus { Matched = 'Matched', Mismatched = 'Mismatched', ExecutionError = 'ExecutionError' }
 
 
 	/** The item listing the evaluation of intent level success or failure. */
@@ -6654,7 +6654,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestResultTypeFilter { OverallTestResults = 0, ConversationLevelTestResults = 1, IntentClassificationTestResults = 2, SlotResolutionTestResults = 3, UtteranceLevelResults = 4 }
+	export enum TestResultTypeFilter { OverallTestResults = 'OverallTestResults', ConversationLevelTestResults = 'ConversationLevelTestResults', IntentClassificationTestResults = 'IntentClassificationTestResults', SlotResolutionTestResults = 'SlotResolutionTestResults', UtteranceLevelResults = 'UtteranceLevelResults' }
 
 
 	/** The selection to filter the test set results data at the conversation level. */
@@ -6726,7 +6726,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestExecutionSortAttribute { TestSetName = 0, CreationDateTime = 1 }
+	export enum TestExecutionSortAttribute { TestSetName = 'TestSetName', CreationDateTime = 'CreationDateTime' }
 
 	export interface ListTestSetRecordsResponse {
 		testSetRecords?: Array<TestSetTurnRecord>;
@@ -6885,7 +6885,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestSetSortAttribute { TestSetName = 0, LastUpdatedDateTime = 1 }
+	export enum TestSetSortAttribute { TestSetName = 'TestSetName', LastUpdatedDateTime = 'LastUpdatedDateTime' }
 
 	export interface ListUtteranceAnalyticsDataResponse {
 		botId?: string;
@@ -6982,7 +6982,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntentState { Failed = 0, Fulfilled = 1, InProgress = 2, ReadyForFulfillment = 3, Waiting = 4, FulfillmentInProgress = 5 }
+	export enum IntentState { Failed = 'Failed', Fulfilled = 'Fulfilled', InProgress = 'InProgress', ReadyForFulfillment = 'ReadyForFulfillment', Waiting = 'Waiting', FulfillmentInProgress = 'FulfillmentInProgress' }
 
 
 	/** An object that contains a response to the utterance from the bot. */
@@ -7007,9 +7007,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UtteranceContentType { PlainText = 0, CustomPayload = 1, SSML = 2, ImageResponseCard = 3 }
+	export enum UtteranceContentType { PlainText = 'PlainText', CustomPayload = 'CustomPayload', SSML = 'SSML', ImageResponseCard = 'ImageResponseCard' }
 
-	export enum AnalyticsUtteranceSortByName { UtteranceTimestamp = 0 }
+	export enum AnalyticsUtteranceSortByName { UtteranceTimestamp = 'UtteranceTimestamp' }
 
 
 	/** <p>Contains fields describing a condition by which to filter the utterances. The expression may be understood as <code>name</code> <code>operator</code> <code>values</code>. For example:</p> <ul> <li> <p> <code>LocaleId EQ Book</code> – The locale is the string "en".</p> </li> <li> <p> <code>UtteranceText CO help</code> – The text of the utterance contains the string "help".</p> </li> </ul> <p>The operators that each filter supports are listed below:</p> <ul> <li> <p> <code>BotAlias</code> – <code>EQ</code>.</p> </li> <li> <p> <code>BotVersion</code> – <code>EQ</code>.</p> </li> <li> <p> <code>LocaleId</code> – <code>EQ</code>.</p> </li> <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li> <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li> <li> <p> <code>SessionId</code> – <code>EQ</code>.</p> </li> <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li> <li> <p> <code>UtteranceState</code> – <code>EQ</code>.</p> </li> <li> <p> <code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p> </li> </ul> */
@@ -7042,7 +7042,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsUtteranceFilterName { BotAliasId = 0, BotVersion = 1, LocaleId = 2, Modality = 3, Channel = 4, SessionId = 5, OriginatingRequestId = 6, UtteranceState = 7, UtteranceText = 8 }
+	export enum AnalyticsUtteranceFilterName { BotAliasId = 'BotAliasId', BotVersion = 'BotVersion', LocaleId = 'LocaleId', Modality = 'Modality', Channel = 'Channel', SessionId = 'SessionId', OriginatingRequestId = 'OriginatingRequestId', UtteranceState = 'UtteranceState', UtteranceText = 'UtteranceText' }
 
 	export interface ListUtteranceMetricsResponse {
 		botId?: string;
@@ -7099,7 +7099,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsUtteranceField { UtteranceText = 0, UtteranceState = 1 }
+	export enum AnalyticsUtteranceField { UtteranceText = 'UtteranceText', UtteranceState = 'UtteranceState' }
 
 
 	/** An object containing the results for the utterance metric you requested. */
@@ -7124,7 +7124,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsUtteranceMetricName { Count = 0, Missed = 1, Detected = 2, UtteranceTimestamp = 3 }
+	export enum AnalyticsUtteranceMetricName { Count = 'Count', Missed = 'Missed', Detected = 'Detected', UtteranceTimestamp = 'UtteranceTimestamp' }
 
 
 	/** An object containing the intent that the bot mapped the utterance to. */
@@ -7216,7 +7216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsUtteranceAttributeName { LastUsedIntent = 0 }
+	export enum AnalyticsUtteranceAttributeName { LastUsedIntent = 'LastUsedIntent' }
 
 	export interface SearchAssociatedTranscriptsResponse {
 		botId?: string;
@@ -7288,7 +7288,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociatedTranscriptFilterName { IntentId = 0, SlotTypeId = 1 }
+	export enum AssociatedTranscriptFilterName { IntentId = 'IntentId', SlotTypeId = 'SlotTypeId' }
 
 	export interface StartBotRecommendationResponse {
 		botId?: string;
@@ -7998,9 +7998,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BotLocaleFilterName { BotLocaleName = 0 }
+	export enum BotLocaleFilterName { BotLocaleName = 'BotLocaleName' }
 
-	export enum BotLocaleFilterOperator { CO = 0, EQ = 1 }
+	export enum BotLocaleFilterOperator { CO = 'CO', EQ = 'EQ' }
 
 
 	/** Specifies attributes for sorting a list of bot locales. */
@@ -8350,7 +8350,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Effect { Allow = 0, Deny = 1 }
+	export enum Effect { Allow = 'Allow', Deny = 'Deny' }
 
 	export interface CreateResourcePolicyStatementRequest {
 
@@ -8532,7 +8532,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportStatus { InProgress = 0, Completed = 1, Failed = 2, Deleting = 3 }
+	export enum ImportStatus { InProgress = 'InProgress', Completed = 'Completed', Failed = 'Failed', Deleting = 'Deleting' }
 
 	export interface DeleteIntentRequest {
 	}
@@ -8734,7 +8734,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestExecutionModality { Text = 0, Audio = 1 }
+	export enum TestExecutionModality { Text = 'Text', Audio = 'Audio' }
 
 	export interface DescribeTestSetDiscrepancyReportRequest {
 	}
@@ -8766,7 +8766,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportFilterOperator { CO = 0, EQ = 1 }
+	export enum ExportFilterOperator { CO = 'CO', EQ = 'EQ' }
 
 
 	/** Provides information about sorting a list of exports. */
@@ -8806,7 +8806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportFilterOperator { CO = 0, EQ = 1 }
+	export enum ImportFilterOperator { CO = 'CO', EQ = 'EQ' }
 
 
 	/** Provides information for sorting a list of imports. */
@@ -8836,7 +8836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntentFilterOperator { CO = 0, EQ = 1 }
+	export enum IntentFilterOperator { CO = 'CO', EQ = 'EQ' }
 
 
 	/** Specifies attributes for sorting a list of intents. */
@@ -9671,7 +9671,7 @@ export namespace MyNS {
 
 
 	/** The attempt name of attempts of a prompt. */
-	export enum PromptAttempt { Initial = 0, Retry1 = 1, Retry2 = 2, Retry3 = 3, Retry4 = 4, Retry5 = 5 }
+	export enum PromptAttempt { Initial = 'Initial', Retry1 = 'Retry1', Retry2 = 'Retry2', Retry3 = 'Retry3', Retry4 = 'Retry4', Retry5 = 'Retry5' }
 
 
 	/** Specifies the text input specifications. */
@@ -9763,7 +9763,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchOrder { Ascending = 0, Descending = 1 }
+	export enum SearchOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 	export interface SearchAssociatedTranscriptsRequest {
 		searchOrder?: SortOrder;
@@ -9787,11 +9787,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SlotFilterOperator { CO = 0, EQ = 1 }
+	export enum SlotFilterOperator { CO = 'CO', EQ = 'EQ' }
 
-	export enum SlotShape { Scalar = 0, List = 1 }
+	export enum SlotShape { Scalar = 'Scalar', List = 'List' }
 
-	export enum SlotTypeFilterOperator { CO = 0, EQ = 1 }
+	export enum SlotTypeFilterOperator { CO = 'CO', EQ = 'EQ' }
 
 
 	/** The value to set in a slot. */

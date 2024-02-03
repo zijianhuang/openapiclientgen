@@ -135,7 +135,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetResponseAttributesStatus { importing = 0, ready = 1, failed = 2, deleted = 3 }
+	export enum AssetResponseAttributesStatus { importing = 'importing', ready = 'ready', failed = 'failed', deleted = 'deleted' }
 
 
 	/** The response returned by the Serve API [get asset](#get-asset) request. Includes details of a hosted video, image, audio file, thumbnail or poster image. The response follows the [json:api](https://jsonapi.org/) specification. */
@@ -227,7 +227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AudioAssetEffect { fadeIn = 0, fadeOut = 1, fadeInFadeOut = 2 }
+	export enum AudioAssetEffect { fadeIn = 'fadeIn', fadeOut = 'fadeOut', fadeInFadeOut = 'fadeInFadeOut' }
 
 
 	/** A clip is a container for a specific type of asset, i.e. a title, image, video, audio or html. You use a Clip to define when an asset will display on the timeline, how long it will play for and transitions, filters and effects to apply to it. */
@@ -532,11 +532,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipEffect { zoomIn = 0, zoomOut = 1, slideLeft = 2, slideRight = 3, slideUp = 4, slideDown = 5 }
+	export enum ClipEffect { zoomIn = 'zoomIn', zoomOut = 'zoomOut', slideLeft = 'slideLeft', slideRight = 'slideRight', slideUp = 'slideUp', slideDown = 'slideDown' }
 
-	export enum ClipFilter { boost = 0, contrast = 1, darken = 2, greyscale = 3, lighten = 4, muted = 5, negative = 6 }
+	export enum ClipFilter { boost = 'boost', contrast = 'contrast', darken = 'darken', greyscale = 'greyscale', lighten = 'lighten', muted = 'muted', negative = 'negative' }
 
-	export enum ClipFit { cover = 0, contain = 1, crop = 2, none = 3 }
+	export enum ClipFit { cover = 'cover', contain = 'contain', crop = 'crop', none = 'none' }
 
 
 	/** Offsets the position of an asset horizontally or vertically by a relative distance. */
@@ -582,7 +582,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClipPosition { top = 0, topRight = 1, right = 2, bottomRight = 3, bottom = 4, bottomLeft = 5, left = 6, topLeft = 7, center = 8 }
+	export enum ClipPosition { top = 'top', topRight = 'topRight', right = 'right', bottomRight = 'bottomRight', bottom = 'bottom', bottomLeft = 'bottomLeft', left = 'left', topLeft = 'topLeft', center = 'center' }
 
 
 	/** In and out transitions for a clip - i.e. fade in and fade out */
@@ -716,7 +716,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitionIn { fade = 0, fadeSlow = 1, fadeFast = 2, reveal = 3, revealSlow = 4, revealFast = 5, wipeLeft = 6, wipeLeftSlow = 7, wipeLeftFast = 8, wipeRight = 9, wipeRightSlow = 10, wipeRightFast = 11, slideLeft = 12, slideLeftSlow = 13, slideLeftFast = 14, slideRight = 15, slideRightSlow = 16, slideRightFast = 17, slideUp = 18, slideUpSlow = 19, slideUpFast = 20, slideDown = 21, slideDownSlow = 22, slideDownFast = 23, carouselLeft = 24, carouselLeftSlow = 25, carouselLeftFast = 26, carouselRight = 27, carouselRightSlow = 28, carouselRightFast = 29, carouselUp = 30, carouselUpSlow = 31, carouselUpFast = 32, carouselDown = 33, carouselDownSlow = 34, carouselDownFast = 35, shuffleTopRight = 36, shuffleTopRightSlow = 37, shuffleTopRightFast = 38, shuffleRightTop = 39, shuffleRightTopSlow = 40, shuffleRightTopFast = 41, shuffleRightBottom = 42, shuffleRightBottomSlow = 43, shuffleRightBottomFast = 44, shuffleBottomRight = 45, shuffleBottomRightSlow = 46, shuffleBottomRightFast = 47, shuffleBottomLeft = 48, shuffleBottomLeftSlow = 49, shuffleBottomLeftFast = 50, shuffleLeftBottom = 51, shuffleLeftBottomSlow = 52, shuffleLeftBottomFast = 53, shuffleLeftTop = 54, shuffleLeftTopSlow = 55, shuffleLeftTopFast = 56, shuffleTopLeft = 57, shuffleTopLeftSlow = 58, shuffleTopLeftFast = 59, zoom = 60 }
+	export enum TransitionIn { fade = 'fade', fadeSlow = 'fadeSlow', fadeFast = 'fadeFast', reveal = 'reveal', revealSlow = 'revealSlow', revealFast = 'revealFast', wipeLeft = 'wipeLeft', wipeLeftSlow = 'wipeLeftSlow', wipeLeftFast = 'wipeLeftFast', wipeRight = 'wipeRight', wipeRightSlow = 'wipeRightSlow', wipeRightFast = 'wipeRightFast', slideLeft = 'slideLeft', slideLeftSlow = 'slideLeftSlow', slideLeftFast = 'slideLeftFast', slideRight = 'slideRight', slideRightSlow = 'slideRightSlow', slideRightFast = 'slideRightFast', slideUp = 'slideUp', slideUpSlow = 'slideUpSlow', slideUpFast = 'slideUpFast', slideDown = 'slideDown', slideDownSlow = 'slideDownSlow', slideDownFast = 'slideDownFast', carouselLeft = 'carouselLeft', carouselLeftSlow = 'carouselLeftSlow', carouselLeftFast = 'carouselLeftFast', carouselRight = 'carouselRight', carouselRightSlow = 'carouselRightSlow', carouselRightFast = 'carouselRightFast', carouselUp = 'carouselUp', carouselUpSlow = 'carouselUpSlow', carouselUpFast = 'carouselUpFast', carouselDown = 'carouselDown', carouselDownSlow = 'carouselDownSlow', carouselDownFast = 'carouselDownFast', shuffleTopRight = 'shuffleTopRight', shuffleTopRightSlow = 'shuffleTopRightSlow', shuffleTopRightFast = 'shuffleTopRightFast', shuffleRightTop = 'shuffleRightTop', shuffleRightTopSlow = 'shuffleRightTopSlow', shuffleRightTopFast = 'shuffleRightTopFast', shuffleRightBottom = 'shuffleRightBottom', shuffleRightBottomSlow = 'shuffleRightBottomSlow', shuffleRightBottomFast = 'shuffleRightBottomFast', shuffleBottomRight = 'shuffleBottomRight', shuffleBottomRightSlow = 'shuffleBottomRightSlow', shuffleBottomRightFast = 'shuffleBottomRightFast', shuffleBottomLeft = 'shuffleBottomLeft', shuffleBottomLeftSlow = 'shuffleBottomLeftSlow', shuffleBottomLeftFast = 'shuffleBottomLeftFast', shuffleLeftBottom = 'shuffleLeftBottom', shuffleLeftBottomSlow = 'shuffleLeftBottomSlow', shuffleLeftBottomFast = 'shuffleLeftBottomFast', shuffleLeftTop = 'shuffleLeftTop', shuffleLeftTopSlow = 'shuffleLeftTopSlow', shuffleLeftTopFast = 'shuffleLeftTopFast', shuffleTopLeft = 'shuffleTopLeft', shuffleTopLeftSlow = 'shuffleTopLeftSlow', shuffleTopLeftFast = 'shuffleTopLeftFast', zoom = 'zoom' }
 
 
 	/** An edit defines the arrangement of a video on a timeline, an audio edit or an image design and the output format. */
@@ -768,7 +768,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EditDisk { local = 0, mount = 1 }
+	export enum EditDisk { local = 'local', mount = 'mount' }
 
 
 	/** The output format, render range and type of media to generate. */
@@ -937,9 +937,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputAspectRatio { '16:9' = 0, '9:16' = 1, '1:1' = 2, '4:5' = 3, '4:3' = 4 }
+	export enum OutputAspectRatio { '16:9' = '16:9', '9:16' = '9:16', '1:1' = '1:1', '4:5' = '4:5', '4:3' = '4:3' }
 
-	export enum OutputFormat { mp4 = 0, gif = 1, mp3 = 2, jpg = 3, png = 4, bmp = 5 }
+	export enum OutputFormat { mp4 = 'mp4', gif = 'gif', mp3 = 'mp3', jpg = 'jpg', png = 'png', bmp = 'bmp' }
 
 	export enum OutputFps { _12 = 0, _15 = 1, _24 = 2, _25 = 3, _30 = 4 }
 
@@ -970,7 +970,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputQuality { low = 0, medium = 1, high = 2 }
+	export enum OutputQuality { low = 'low', medium = 'medium', high = 'high' }
 
 
 	/** Specify a time range to render, i.e. to render only a portion of a video or audio file. Omit this setting to  export the entire video. Range can also be used to render a frame at a specific time point - setting a range and output format as `jpg` will output a single frame image at the range `start` point. */
@@ -1012,7 +1012,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputResolution { preview = 0, mobile = 1, sd = 2, hd = 3, _1080 = 4 }
+	export enum OutputResolution { preview = 'preview', mobile = 'mobile', sd = 'sd', hd = 'hd', _1080 = '1080' }
 
 
 	/** Set a custom size for a video or image. When using a custom size omit the `resolution` and `aspectRatio`. Custom sizes must be divisible by 2 based on the encoder specifications. */
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RenderResponseDataStatus { queued = 0, fetching = 1, rendering = 2, saving = 3, done = 4, failed = 5 }
+	export enum RenderResponseDataStatus { queued = 'queued', fetching = 'fetching', rendering = 'rendering', saving = 'saving', done = 'done', failed = 'failed' }
 
 
 	/** Send rendered assets to the Shotstack hosting and CDN service. This destination is enabled by default. */
@@ -1891,9 +1891,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TitleAssetSize { 'xx-small' = 0, 'x-small' = 1, small = 2, medium = 3, large = 4, 'x-large' = 5, 'xx-large' = 6 }
+	export enum TitleAssetSize { 'xx-small' = 'xx-small', 'x-small' = 'x-small', small = 'small', medium = 'medium', large = 'large', 'x-large' = 'x-large', 'xx-large' = 'xx-large' }
 
-	export enum TitleAssetStyle { minimal = 0, blockbuster = 1, vogue = 2, sketchy = 3, skinny = 4, chunk = 5, chunkLight = 6, marker = 7, future = 8, subtitle = 9 }
+	export enum TitleAssetStyle { minimal = 'minimal', blockbuster = 'blockbuster', vogue = 'vogue', sketchy = 'sketchy', skinny = 'skinny', chunk = 'chunk', chunkLight = 'chunkLight', marker = 'marker', future = 'future', subtitle = 'subtitle' }
 
 	@Injectable()
 	export class MyClient {

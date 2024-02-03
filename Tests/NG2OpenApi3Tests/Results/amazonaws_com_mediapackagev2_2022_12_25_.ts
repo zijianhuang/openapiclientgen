@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerType { TS = 0, CMAF = 1 }
+	export enum ContainerType { TS = 'TS', CMAF = 'CMAF' }
 
 
 	/** The segment configuration, including the segment name, duration, and other configuration values. */
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScteFilter { SPLICE_INSERT = 0, BREAK = 1, PROVIDER_ADVERTISEMENT = 2, DISTRIBUTOR_ADVERTISEMENT = 3, PROVIDER_PLACEMENT_OPPORTUNITY = 4, DISTRIBUTOR_PLACEMENT_OPPORTUNITY = 5, PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = 6, DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = 7, PROGRAM = 8 }
+	export enum ScteFilter { SPLICE_INSERT = 'SPLICE_INSERT', BREAK = 'BREAK', PROVIDER_ADVERTISEMENT = 'PROVIDER_ADVERTISEMENT', DISTRIBUTOR_ADVERTISEMENT = 'DISTRIBUTOR_ADVERTISEMENT', PROVIDER_PLACEMENT_OPPORTUNITY = 'PROVIDER_PLACEMENT_OPPORTUNITY', DISTRIBUTOR_PLACEMENT_OPPORTUNITY = 'DISTRIBUTOR_PLACEMENT_OPPORTUNITY', PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = 'PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY', DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = 'DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY', PROGRAM = 'PROGRAM' }
 
 
 	/** The parameters for encrypting content. */
@@ -373,9 +373,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TsEncryptionMethod { AES_128 = 0, SAMPLE_AES = 1 }
+	export enum TsEncryptionMethod { AES_128 = 'AES_128', SAMPLE_AES = 'SAMPLE_AES' }
 
-	export enum CmafEncryptionMethod { CENC = 0, CBCS = 1 }
+	export enum CmafEncryptionMethod { CENC = 'CENC', CBCS = 'CBCS' }
 
 
 	/** The parameters for the SPEKE key provider. */
@@ -446,11 +446,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PresetSpeke20Audio { PRESET_AUDIO_1 = 0, PRESET_AUDIO_2 = 1, PRESET_AUDIO_3 = 2, SHARED = 3, UNENCRYPTED = 4 }
+	export enum PresetSpeke20Audio { PRESET_AUDIO_1 = 'PRESET_AUDIO_1', PRESET_AUDIO_2 = 'PRESET_AUDIO_2', PRESET_AUDIO_3 = 'PRESET_AUDIO_3', SHARED = 'SHARED', UNENCRYPTED = 'UNENCRYPTED' }
 
-	export enum PresetSpeke20Video { PRESET_VIDEO_1 = 0, PRESET_VIDEO_2 = 1, PRESET_VIDEO_3 = 2, PRESET_VIDEO_4 = 3, PRESET_VIDEO_5 = 4, PRESET_VIDEO_6 = 5, PRESET_VIDEO_7 = 6, PRESET_VIDEO_8 = 7, SHARED = 8, UNENCRYPTED = 9 }
+	export enum PresetSpeke20Video { PRESET_VIDEO_1 = 'PRESET_VIDEO_1', PRESET_VIDEO_2 = 'PRESET_VIDEO_2', PRESET_VIDEO_3 = 'PRESET_VIDEO_3', PRESET_VIDEO_4 = 'PRESET_VIDEO_4', PRESET_VIDEO_5 = 'PRESET_VIDEO_5', PRESET_VIDEO_6 = 'PRESET_VIDEO_6', PRESET_VIDEO_7 = 'PRESET_VIDEO_7', PRESET_VIDEO_8 = 'PRESET_VIDEO_8', SHARED = 'SHARED', UNENCRYPTED = 'UNENCRYPTED' }
 
-	export enum DrmSystem { CLEAR_KEY_AES_128 = 0, FAIRPLAY = 1, PLAYREADY = 2, WIDEVINE = 3 }
+	export enum DrmSystem { CLEAR_KEY_AES_128 = 'CLEAR_KEY_AES_128', FAIRPLAY = 'FAIRPLAY', PLAYREADY = 'PLAYREADY', WIDEVINE = 'WIDEVINE' }
 
 
 	/** Retrieve the HTTP live streaming (HLS) manifest configuration. */
@@ -509,7 +509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdMarkerHls { DATERANGE = 0 }
+	export enum AdMarkerHls { DATERANGE = 'DATERANGE' }
 
 
 	/** Retrieve the low-latency HTTP live streaming (HLS) manifest configuration. */

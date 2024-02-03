@@ -1285,7 +1285,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NncerPostBodyFormat { pdf = 0 }
+	export enum NncerPostBodyFormat { pdf = 'pdf' }
 
 }
 

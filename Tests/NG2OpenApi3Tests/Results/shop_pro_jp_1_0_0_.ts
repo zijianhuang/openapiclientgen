@@ -182,9 +182,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InlineScriptTagDisplay_scope { all = 0, thanks_page = 1, cart = 2 }
+	export enum InlineScriptTagDisplay_scope { all = 'all', thanks_page = 'thanks_page', cart = 'cart' }
 
-	export enum InlineScriptTagTrigger_event { object_builded = 0 }
+	export enum InlineScriptTagTrigger_event { object_builded = 'object_builded' }
 
 	export interface ScriptTag {
 
@@ -243,7 +243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScriptTagDisplay_scope { all = 0, shop = 1, thanks_page = 2, cart = 3 }
+	export enum ScriptTagDisplay_scope { all = 'all', shop = 'shop', thanks_page = 'thanks_page', cart = 'cart' }
 
 	export interface ShopScriptTag {
 
@@ -319,7 +319,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShopScriptTagDisplay_scope { shop = 0, thanks_page = 1 }
+	export enum ShopScriptTagDisplay_scope { shop = 'shop', thanks_page = 'thanks_page' }
 
 	export interface UsageCharge {
 

@@ -288,7 +288,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RegistrationDefinitionPropertiesProvisioningState { NotSpecified = 0, Accepted = 1, Running = 2, Ready = 3, Creating = 4, Created = 5, Deleting = 6, Deleted = 7, Canceled = 8, Failed = 9, Succeeded = 10, Updating = 11 }
+	export enum RegistrationDefinitionPropertiesProvisioningState { NotSpecified = 'NotSpecified', Accepted = 'Accepted', Running = 'Running', Ready = 'Ready', Creating = 'Creating', Created = 'Created', Deleting = 'Deleting', Deleted = 'Deleted', Canceled = 'Canceled', Failed = 'Failed', Succeeded = 'Succeeded', Updating = 'Updating' }
 
 
 	/** Object that describes a single Microsoft.ManagedServices operation. */

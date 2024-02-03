@@ -125,13 +125,13 @@ export namespace MyNS {
 
 	}
 
-	export enum CurrencyCode { CNY = 0, USD = 1 }
+	export enum CurrencyCode { CNY = 'CNY', USD = 'USD' }
 
-	export enum SavingsPlanRateUnit { Hrs = 0, 'Lambda-GB-Second' = 1, Request = 2 }
+	export enum SavingsPlanRateUnit { Hrs = 'Hrs', 'Lambda-GB-Second' = 'Lambda-GB-Second', Request = 'Request' }
 
-	export enum SavingsPlanProductType { EC2 = 0, Fargate = 1, Lambda = 2, SageMaker = 3 }
+	export enum SavingsPlanProductType { EC2 = 'EC2', Fargate = 'Fargate', Lambda = 'Lambda', SageMaker = 'SageMaker' }
 
-	export enum SavingsPlanRateServiceCode { AmazonEC2 = 0, AmazonECS = 1, AmazonEKS = 2, AWSLambda = 3, AmazonSageMaker = 4 }
+	export enum SavingsPlanRateServiceCode { AmazonEC2 = 'AmazonEC2', AmazonECS = 'AmazonECS', AmazonEKS = 'AmazonEKS', AWSLambda = 'AWSLambda', AmazonSageMaker = 'AmazonSageMaker' }
 
 
 	/** Information about a filter. */
@@ -151,7 +151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanRateFilterName { region = 0, instanceType = 1, productDescription = 2, tenancy = 3, productType = 4, serviceCode = 5, usageType = 6, operation = 7 }
+	export enum SavingsPlanRateFilterName { region = 'region', instanceType = 'instanceType', productDescription = 'productDescription', tenancy = 'tenancy', productType = 'productType', serviceCode = 'serviceCode', usageType = 'usageType', operation = 'operation' }
 
 	export interface DescribeSavingsPlansResponse {
 		savingsPlans?: Array<SavingsPlan>;
@@ -231,11 +231,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanState { 'payment-pending' = 0, 'payment-failed' = 1, active = 2, retired = 3, queued = 4, 'queued-deleted' = 5 }
+	export enum SavingsPlanState { 'payment-pending' = 'payment-pending', 'payment-failed' = 'payment-failed', active = 'active', retired = 'retired', queued = 'queued', 'queued-deleted' = 'queued-deleted' }
 
-	export enum SavingsPlanType { Compute = 0, EC2Instance = 1, SageMaker = 2 }
+	export enum SavingsPlanType { Compute = 'Compute', EC2Instance = 'EC2Instance', SageMaker = 'SageMaker' }
 
-	export enum SavingsPlanPaymentOption { 'All Upfront' = 0, 'Partial Upfront' = 1, 'No Upfront' = 2 }
+	export enum SavingsPlanPaymentOption { 'All Upfront' = 'All Upfront', 'Partial Upfront' = 'Partial Upfront', 'No Upfront' = 'No Upfront' }
 
 	export interface TagMap {
 	}
@@ -265,7 +265,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlansFilterName { region = 0, 'ec2-instance-family' = 1, commitment = 2, upfront = 3, term = 4, 'savings-plan-type' = 5, 'payment-option' = 6, start = 7, end = 8 }
+	export enum SavingsPlansFilterName { region = 'region', 'ec2-instance-family' = 'ec2-instance-family', commitment = 'commitment', upfront = 'upfront', term = 'term', 'savings-plan-type' = 'savings-plan-type', 'payment-option' = 'payment-option', start = 'start', end = 'end' }
 
 	export interface DescribeSavingsPlansOfferingRatesResponse {
 		searchResults?: Array<SavingsPlanOfferingRate>;
@@ -371,7 +371,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanRateFilterAttribute { region = 0, instanceFamily = 1, instanceType = 2, productDescription = 3, tenancy = 4, productId = 5 }
+	export enum SavingsPlanRateFilterAttribute { region = 'region', instanceFamily = 'instanceFamily', instanceType = 'instanceType', productDescription = 'productDescription', tenancy = 'tenancy', productId = 'productId' }
 
 	export interface DescribeSavingsPlansOfferingsResponse {
 		searchResults?: Array<SavingsPlanOffering>;
@@ -454,7 +454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanOfferingFilterAttribute { region = 0, instanceFamily = 1 }
+	export enum SavingsPlanOfferingFilterAttribute { region = 'region', instanceFamily = 'instanceFamily' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagMap;
@@ -652,7 +652,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanOfferingPropertyKey { region = 0, instanceFamily = 1 }
+	export enum SavingsPlanOfferingPropertyKey { region = 'region', instanceFamily = 'instanceFamily' }
 
 
 	/** Information about a property. */
@@ -694,7 +694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanRatePropertyKey { region = 0, instanceType = 1, instanceFamily = 2, productDescription = 3, tenancy = 4 }
+	export enum SavingsPlanRatePropertyKey { region = 'region', instanceType = 'instanceType', instanceFamily = 'instanceFamily', productDescription = 'productDescription', tenancy = 'tenancy' }
 
 
 	/** Information about a property. */

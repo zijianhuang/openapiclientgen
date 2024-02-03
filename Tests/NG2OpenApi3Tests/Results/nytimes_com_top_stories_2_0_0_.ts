@@ -130,9 +130,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum StoriesGetBySectionAndFormatAndCallbackSection { home = 0, opinion = 1, world = 2, national = 3, politics = 4, upshot = 5, nyregion = 6, business = 7, technology = 8, science = 9, health = 10, sports = 11, arts = 12, books = 13, movies = 14, theater = 15, sundayreview = 16, fashion = 17, tmagazine = 18, food = 19, travel = 20, magazine = 21, realestate = 22, automobiles = 23, obituaries = 24, insider = 25 }
+	export enum StoriesGetBySectionAndFormatAndCallbackSection { home = 'home', opinion = 'opinion', world = 'world', national = 'national', politics = 'politics', upshot = 'upshot', nyregion = 'nyregion', business = 'business', technology = 'technology', science = 'science', health = 'health', sports = 'sports', arts = 'arts', books = 'books', movies = 'movies', theater = 'theater', sundayreview = 'sundayreview', fashion = 'fashion', tmagazine = 'tmagazine', food = 'food', travel = 'travel', magazine = 'magazine', realestate = 'realestate', automobiles = 'automobiles', obituaries = 'obituaries', insider = 'insider' }
 
-	export enum StoriesGetBySectionAndFormatAndCallbackFormat { json = 0, jsonp = 1 }
+	export enum StoriesGetBySectionAndFormatAndCallbackFormat { json = 'json', jsonp = 'jsonp' }
 
 	export interface StoriesGetBySectionAndFormatAndCallbackReturn {
 		results?: Array<Article>;

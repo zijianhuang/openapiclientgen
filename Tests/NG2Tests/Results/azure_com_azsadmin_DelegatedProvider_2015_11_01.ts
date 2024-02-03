@@ -112,9 +112,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DelegatedProviders_GetReturnRoutingResourceManagerType { Default = 0, Admin = 1 }
+	export enum DelegatedProviders_GetReturnRoutingResourceManagerType { Default = 'Default', Admin = 'Admin' }
 
-	export enum DelegatedProviders_GetReturnState { NotDefined = 0, Enabled = 1, Warned = 2, PastDue = 3, Disabled = 4, Deleted = 5, Deleting = 6, PartiallyDeleted = 7 }
+	export enum DelegatedProviders_GetReturnState { NotDefined = 'NotDefined', Enabled = 'Enabled', Warned = 'Warned', PastDue = 'PastDue', Disabled = 'Disabled', Deleted = 'Deleted', Deleting = 'Deleting', PartiallyDeleted = 'PartiallyDeleted' }
 
 }
 

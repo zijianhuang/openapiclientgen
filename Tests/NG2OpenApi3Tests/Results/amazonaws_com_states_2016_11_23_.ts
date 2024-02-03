@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StateMachineType { STANDARD = 0, EXPRESS = 1 }
+	export enum StateMachineType { STANDARD = 'STANDARD', EXPRESS = 'EXPRESS' }
 
 
 	/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
@@ -188,7 +188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogLevel { ALL = 0, ERROR = 1, FATAL = 2, OFF = 3 }
+	export enum LogLevel { ALL = 'ALL', ERROR = 'ERROR', FATAL = 'FATAL', OFF = 'OFF' }
 
 
 	/** <p/> */
@@ -674,7 +674,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, TIMED_OUT = 3, ABORTED = 4 }
+	export enum ExecutionStatus { RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT', ABORTED = 'ABORTED' }
 
 
 	/** Provides details about execution input or output. */
@@ -788,7 +788,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MapRunStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, ABORTED = 3 }
+	export enum MapRunStatus { RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', ABORTED = 'ABORTED' }
 
 
 	/** Contains details about items that were processed in all of the child workflow executions that were started by a Map Run. */
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StateMachineStatus { ACTIVE = 0, DELETING = 1 }
+	export enum StateMachineStatus { ACTIVE = 'ACTIVE', DELETING = 'DELETING' }
 
 	export interface DescribeStateMachineInput {
 
@@ -1328,7 +1328,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistoryEventType { ActivityFailed = 0, ActivityScheduled = 1, ActivityScheduleFailed = 2, ActivityStarted = 3, ActivitySucceeded = 4, ActivityTimedOut = 5, ChoiceStateEntered = 6, ChoiceStateExited = 7, ExecutionAborted = 8, ExecutionFailed = 9, ExecutionStarted = 10, ExecutionSucceeded = 11, ExecutionTimedOut = 12, FailStateEntered = 13, LambdaFunctionFailed = 14, LambdaFunctionScheduled = 15, LambdaFunctionScheduleFailed = 16, LambdaFunctionStarted = 17, LambdaFunctionStartFailed = 18, LambdaFunctionSucceeded = 19, LambdaFunctionTimedOut = 20, MapIterationAborted = 21, MapIterationFailed = 22, MapIterationStarted = 23, MapIterationSucceeded = 24, MapStateAborted = 25, MapStateEntered = 26, MapStateExited = 27, MapStateFailed = 28, MapStateStarted = 29, MapStateSucceeded = 30, ParallelStateAborted = 31, ParallelStateEntered = 32, ParallelStateExited = 33, ParallelStateFailed = 34, ParallelStateStarted = 35, ParallelStateSucceeded = 36, PassStateEntered = 37, PassStateExited = 38, SucceedStateEntered = 39, SucceedStateExited = 40, TaskFailed = 41, TaskScheduled = 42, TaskStarted = 43, TaskStartFailed = 44, TaskStateAborted = 45, TaskStateEntered = 46, TaskStateExited = 47, TaskSubmitFailed = 48, TaskSubmitted = 49, TaskSucceeded = 50, TaskTimedOut = 51, WaitStateAborted = 52, WaitStateEntered = 53, WaitStateExited = 54, MapRunAborted = 55, MapRunFailed = 56, MapRunStarted = 57, MapRunSucceeded = 58 }
+	export enum HistoryEventType { ActivityFailed = 'ActivityFailed', ActivityScheduled = 'ActivityScheduled', ActivityScheduleFailed = 'ActivityScheduleFailed', ActivityStarted = 'ActivityStarted', ActivitySucceeded = 'ActivitySucceeded', ActivityTimedOut = 'ActivityTimedOut', ChoiceStateEntered = 'ChoiceStateEntered', ChoiceStateExited = 'ChoiceStateExited', ExecutionAborted = 'ExecutionAborted', ExecutionFailed = 'ExecutionFailed', ExecutionStarted = 'ExecutionStarted', ExecutionSucceeded = 'ExecutionSucceeded', ExecutionTimedOut = 'ExecutionTimedOut', FailStateEntered = 'FailStateEntered', LambdaFunctionFailed = 'LambdaFunctionFailed', LambdaFunctionScheduled = 'LambdaFunctionScheduled', LambdaFunctionScheduleFailed = 'LambdaFunctionScheduleFailed', LambdaFunctionStarted = 'LambdaFunctionStarted', LambdaFunctionStartFailed = 'LambdaFunctionStartFailed', LambdaFunctionSucceeded = 'LambdaFunctionSucceeded', LambdaFunctionTimedOut = 'LambdaFunctionTimedOut', MapIterationAborted = 'MapIterationAborted', MapIterationFailed = 'MapIterationFailed', MapIterationStarted = 'MapIterationStarted', MapIterationSucceeded = 'MapIterationSucceeded', MapStateAborted = 'MapStateAborted', MapStateEntered = 'MapStateEntered', MapStateExited = 'MapStateExited', MapStateFailed = 'MapStateFailed', MapStateStarted = 'MapStateStarted', MapStateSucceeded = 'MapStateSucceeded', ParallelStateAborted = 'ParallelStateAborted', ParallelStateEntered = 'ParallelStateEntered', ParallelStateExited = 'ParallelStateExited', ParallelStateFailed = 'ParallelStateFailed', ParallelStateStarted = 'ParallelStateStarted', ParallelStateSucceeded = 'ParallelStateSucceeded', PassStateEntered = 'PassStateEntered', PassStateExited = 'PassStateExited', SucceedStateEntered = 'SucceedStateEntered', SucceedStateExited = 'SucceedStateExited', TaskFailed = 'TaskFailed', TaskScheduled = 'TaskScheduled', TaskStarted = 'TaskStarted', TaskStartFailed = 'TaskStartFailed', TaskStateAborted = 'TaskStateAborted', TaskStateEntered = 'TaskStateEntered', TaskStateExited = 'TaskStateExited', TaskSubmitFailed = 'TaskSubmitFailed', TaskSubmitted = 'TaskSubmitted', TaskSucceeded = 'TaskSucceeded', TaskTimedOut = 'TaskTimedOut', WaitStateAborted = 'WaitStateAborted', WaitStateEntered = 'WaitStateEntered', WaitStateExited = 'WaitStateExited', MapRunAborted = 'MapRunAborted', MapRunFailed = 'MapRunFailed', MapRunStarted = 'MapRunStarted', MapRunSucceeded = 'MapRunSucceeded' }
 
 
 	/** Contains details about an activity that failed during an execution. */
@@ -2971,7 +2971,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncExecutionStatus { SUCCEEDED = 0, FAILED = 1, TIMED_OUT = 2 }
+	export enum SyncExecutionStatus { SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', TIMED_OUT = 'TIMED_OUT' }
 
 
 	/** An object that describes workflow billing details. */
@@ -3579,73 +3579,73 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateActivityX_Amz_Target { 'AWSStepFunctions.CreateActivity' = 0 }
+	export enum CreateActivityX_Amz_Target { 'AWSStepFunctions.CreateActivity' = 'AWSStepFunctions.CreateActivity' }
 
-	export enum CreateStateMachineX_Amz_Target { 'AWSStepFunctions.CreateStateMachine' = 0 }
+	export enum CreateStateMachineX_Amz_Target { 'AWSStepFunctions.CreateStateMachine' = 'AWSStepFunctions.CreateStateMachine' }
 
-	export enum CreateStateMachineAliasX_Amz_Target { 'AWSStepFunctions.CreateStateMachineAlias' = 0 }
+	export enum CreateStateMachineAliasX_Amz_Target { 'AWSStepFunctions.CreateStateMachineAlias' = 'AWSStepFunctions.CreateStateMachineAlias' }
 
-	export enum DeleteActivityX_Amz_Target { 'AWSStepFunctions.DeleteActivity' = 0 }
+	export enum DeleteActivityX_Amz_Target { 'AWSStepFunctions.DeleteActivity' = 'AWSStepFunctions.DeleteActivity' }
 
-	export enum DeleteStateMachineX_Amz_Target { 'AWSStepFunctions.DeleteStateMachine' = 0 }
+	export enum DeleteStateMachineX_Amz_Target { 'AWSStepFunctions.DeleteStateMachine' = 'AWSStepFunctions.DeleteStateMachine' }
 
-	export enum DeleteStateMachineAliasX_Amz_Target { 'AWSStepFunctions.DeleteStateMachineAlias' = 0 }
+	export enum DeleteStateMachineAliasX_Amz_Target { 'AWSStepFunctions.DeleteStateMachineAlias' = 'AWSStepFunctions.DeleteStateMachineAlias' }
 
-	export enum DeleteStateMachineVersionX_Amz_Target { 'AWSStepFunctions.DeleteStateMachineVersion' = 0 }
+	export enum DeleteStateMachineVersionX_Amz_Target { 'AWSStepFunctions.DeleteStateMachineVersion' = 'AWSStepFunctions.DeleteStateMachineVersion' }
 
-	export enum DescribeActivityX_Amz_Target { 'AWSStepFunctions.DescribeActivity' = 0 }
+	export enum DescribeActivityX_Amz_Target { 'AWSStepFunctions.DescribeActivity' = 'AWSStepFunctions.DescribeActivity' }
 
-	export enum DescribeExecutionX_Amz_Target { 'AWSStepFunctions.DescribeExecution' = 0 }
+	export enum DescribeExecutionX_Amz_Target { 'AWSStepFunctions.DescribeExecution' = 'AWSStepFunctions.DescribeExecution' }
 
-	export enum DescribeMapRunX_Amz_Target { 'AWSStepFunctions.DescribeMapRun' = 0 }
+	export enum DescribeMapRunX_Amz_Target { 'AWSStepFunctions.DescribeMapRun' = 'AWSStepFunctions.DescribeMapRun' }
 
-	export enum DescribeStateMachineX_Amz_Target { 'AWSStepFunctions.DescribeStateMachine' = 0 }
+	export enum DescribeStateMachineX_Amz_Target { 'AWSStepFunctions.DescribeStateMachine' = 'AWSStepFunctions.DescribeStateMachine' }
 
-	export enum DescribeStateMachineAliasX_Amz_Target { 'AWSStepFunctions.DescribeStateMachineAlias' = 0 }
+	export enum DescribeStateMachineAliasX_Amz_Target { 'AWSStepFunctions.DescribeStateMachineAlias' = 'AWSStepFunctions.DescribeStateMachineAlias' }
 
-	export enum DescribeStateMachineForExecutionX_Amz_Target { 'AWSStepFunctions.DescribeStateMachineForExecution' = 0 }
+	export enum DescribeStateMachineForExecutionX_Amz_Target { 'AWSStepFunctions.DescribeStateMachineForExecution' = 'AWSStepFunctions.DescribeStateMachineForExecution' }
 
-	export enum GetActivityTaskX_Amz_Target { 'AWSStepFunctions.GetActivityTask' = 0 }
+	export enum GetActivityTaskX_Amz_Target { 'AWSStepFunctions.GetActivityTask' = 'AWSStepFunctions.GetActivityTask' }
 
-	export enum GetExecutionHistoryX_Amz_Target { 'AWSStepFunctions.GetExecutionHistory' = 0 }
+	export enum GetExecutionHistoryX_Amz_Target { 'AWSStepFunctions.GetExecutionHistory' = 'AWSStepFunctions.GetExecutionHistory' }
 
-	export enum ListActivitiesX_Amz_Target { 'AWSStepFunctions.ListActivities' = 0 }
+	export enum ListActivitiesX_Amz_Target { 'AWSStepFunctions.ListActivities' = 'AWSStepFunctions.ListActivities' }
 
-	export enum ListExecutionsX_Amz_Target { 'AWSStepFunctions.ListExecutions' = 0 }
+	export enum ListExecutionsX_Amz_Target { 'AWSStepFunctions.ListExecutions' = 'AWSStepFunctions.ListExecutions' }
 
-	export enum ListMapRunsX_Amz_Target { 'AWSStepFunctions.ListMapRuns' = 0 }
+	export enum ListMapRunsX_Amz_Target { 'AWSStepFunctions.ListMapRuns' = 'AWSStepFunctions.ListMapRuns' }
 
-	export enum ListStateMachineAliasesX_Amz_Target { 'AWSStepFunctions.ListStateMachineAliases' = 0 }
+	export enum ListStateMachineAliasesX_Amz_Target { 'AWSStepFunctions.ListStateMachineAliases' = 'AWSStepFunctions.ListStateMachineAliases' }
 
-	export enum ListStateMachineVersionsX_Amz_Target { 'AWSStepFunctions.ListStateMachineVersions' = 0 }
+	export enum ListStateMachineVersionsX_Amz_Target { 'AWSStepFunctions.ListStateMachineVersions' = 'AWSStepFunctions.ListStateMachineVersions' }
 
-	export enum ListStateMachinesX_Amz_Target { 'AWSStepFunctions.ListStateMachines' = 0 }
+	export enum ListStateMachinesX_Amz_Target { 'AWSStepFunctions.ListStateMachines' = 'AWSStepFunctions.ListStateMachines' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSStepFunctions.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSStepFunctions.ListTagsForResource' = 'AWSStepFunctions.ListTagsForResource' }
 
-	export enum PublishStateMachineVersionX_Amz_Target { 'AWSStepFunctions.PublishStateMachineVersion' = 0 }
+	export enum PublishStateMachineVersionX_Amz_Target { 'AWSStepFunctions.PublishStateMachineVersion' = 'AWSStepFunctions.PublishStateMachineVersion' }
 
-	export enum SendTaskFailureX_Amz_Target { 'AWSStepFunctions.SendTaskFailure' = 0 }
+	export enum SendTaskFailureX_Amz_Target { 'AWSStepFunctions.SendTaskFailure' = 'AWSStepFunctions.SendTaskFailure' }
 
-	export enum SendTaskHeartbeatX_Amz_Target { 'AWSStepFunctions.SendTaskHeartbeat' = 0 }
+	export enum SendTaskHeartbeatX_Amz_Target { 'AWSStepFunctions.SendTaskHeartbeat' = 'AWSStepFunctions.SendTaskHeartbeat' }
 
-	export enum SendTaskSuccessX_Amz_Target { 'AWSStepFunctions.SendTaskSuccess' = 0 }
+	export enum SendTaskSuccessX_Amz_Target { 'AWSStepFunctions.SendTaskSuccess' = 'AWSStepFunctions.SendTaskSuccess' }
 
-	export enum StartExecutionX_Amz_Target { 'AWSStepFunctions.StartExecution' = 0 }
+	export enum StartExecutionX_Amz_Target { 'AWSStepFunctions.StartExecution' = 'AWSStepFunctions.StartExecution' }
 
-	export enum StartSyncExecutionX_Amz_Target { 'AWSStepFunctions.StartSyncExecution' = 0 }
+	export enum StartSyncExecutionX_Amz_Target { 'AWSStepFunctions.StartSyncExecution' = 'AWSStepFunctions.StartSyncExecution' }
 
-	export enum StopExecutionX_Amz_Target { 'AWSStepFunctions.StopExecution' = 0 }
+	export enum StopExecutionX_Amz_Target { 'AWSStepFunctions.StopExecution' = 'AWSStepFunctions.StopExecution' }
 
-	export enum TagResourceX_Amz_Target { 'AWSStepFunctions.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSStepFunctions.TagResource' = 'AWSStepFunctions.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSStepFunctions.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSStepFunctions.UntagResource' = 'AWSStepFunctions.UntagResource' }
 
-	export enum UpdateMapRunX_Amz_Target { 'AWSStepFunctions.UpdateMapRun' = 0 }
+	export enum UpdateMapRunX_Amz_Target { 'AWSStepFunctions.UpdateMapRun' = 'AWSStepFunctions.UpdateMapRun' }
 
-	export enum UpdateStateMachineX_Amz_Target { 'AWSStepFunctions.UpdateStateMachine' = 0 }
+	export enum UpdateStateMachineX_Amz_Target { 'AWSStepFunctions.UpdateStateMachine' = 'AWSStepFunctions.UpdateStateMachine' }
 
-	export enum UpdateStateMachineAliasX_Amz_Target { 'AWSStepFunctions.UpdateStateMachineAlias' = 0 }
+	export enum UpdateStateMachineAliasX_Amz_Target { 'AWSStepFunctions.UpdateStateMachineAlias' = 'AWSStepFunctions.UpdateStateMachineAlias' }
 
 }
 

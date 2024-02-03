@@ -25,7 +25,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CarrierNetwork_type { fixed_line = 0, fixed_line_or_mobile = 1, mobile = 2, pager = 3, personal_number = 4, premium_rate = 5, shared_cost = 6, toll_free = 7, uan = 8, unknown = 9, voicemail = 10, voip = 11 }
+	export enum CarrierNetwork_type { fixed_line = 'fixed_line', fixed_line_or_mobile = 'fixed_line_or_mobile', mobile = 'mobile', pager = 'pager', personal_number = 'personal_number', premium_rate = 'premium_rate', shared_cost = 'shared_cost', toll_free = 'toll_free', uan = 'uan', unknown = 'unknown', voicemail = 'voicemail', voip = 'voip' }
 
 	export interface Mnp {
 		country?: string | null;
@@ -80,7 +80,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoamingStatus { unknown = 0, roaming = 1, not_roaming = 2 }
+	export enum RoamingStatus { unknown = 'unknown', roaming = 'roaming', not_roaming = 'not_roaming' }
 
 	@Injectable()
 	export class MyClient {
@@ -268,7 +268,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AnalyticsGroup_by { date = 0, label = 1, subaccount = 2, country = 3 }
+	export enum AnalyticsGroup_by { date = 'date', label = 'label', subaccount = 'subaccount', country = 'country' }
 
 	export interface AnalyticsReturn {
 		date?: string | null;
@@ -304,11 +304,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactsGetAction { read = 0 }
+	export enum ContactsGetAction { read = 'read' }
 
 	export enum ContactsGetJson { _0 = 0, _1 = 1 }
 
-	export enum ContactsPOSTAction { del = 0, write = 1 }
+	export enum ContactsPOSTAction { del = 'del', write = 'write' }
 
 	export enum ContactsPOSTJson { _0 = 0, _1 = 1 }
 
@@ -351,11 +351,11 @@ export namespace MyNS {
 
 	}
 
-	export enum HooksPOSTAction { subscribe = 0, unsubscribe = 1 }
+	export enum HooksPOSTAction { subscribe = 'subscribe', unsubscribe = 'unsubscribe' }
 
-	export enum HooksPOSTEvent_type { all = 0, sms_mo = 1, dlr = 2, voice_status = 3 }
+	export enum HooksPOSTEvent_type { all = 'all', sms_mo = 'sms_mo', dlr = 'dlr', voice_status = 'voice_status' }
 
-	export enum HooksPOSTRequest_method { POST = 0, JSON = 1, GET = 2 }
+	export enum HooksPOSTRequest_method { POST = 'POST', JSON = 'JSON', GET = 'GET' }
 
 	export interface HooksPOSTReturn {
 		id?: number | null;
@@ -458,7 +458,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SmsReturnSms_type { economy = 0, direct = 1 }
+	export enum SmsReturnSms_type { economy = 'economy', direct = 'direct' }
 
 	export interface ValidateForVoiceReturn {
 		code?: string | null;

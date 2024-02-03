@@ -242,15 +242,15 @@ export namespace MyNS {
 
 	}
 
-	export enum EssentialsAlertState { New = 0, Acknowledged = 1, Closed = 2 }
+	export enum EssentialsAlertState { New = 'New', Acknowledged = 'Acknowledged', Closed = 'Closed' }
 
-	export enum EssentialsMonitorCondition { Fired = 0, Resolved = 1 }
+	export enum EssentialsMonitorCondition { Fired = 'Fired', Resolved = 'Resolved' }
 
-	export enum EssentialsMonitorService { 'Application Insights' = 0, 'ActivityLog Administrative' = 1, 'ActivityLog Security' = 2, 'ActivityLog Recommendation' = 3, 'ActivityLog Policy' = 4, 'ActivityLog Autoscale' = 5, 'Log Analytics' = 6, Nagios = 7, Platform = 8, SCOM = 9, ServiceHealth = 10, SmartDetector = 11, 'VM Insights' = 12, Zabbix = 13, 'Resource Health' = 14 }
+	export enum EssentialsMonitorService { 'Application Insights' = 'Application Insights', 'ActivityLog Administrative' = 'ActivityLog Administrative', 'ActivityLog Security' = 'ActivityLog Security', 'ActivityLog Recommendation' = 'ActivityLog Recommendation', 'ActivityLog Policy' = 'ActivityLog Policy', 'ActivityLog Autoscale' = 'ActivityLog Autoscale', 'Log Analytics' = 'Log Analytics', Nagios = 'Nagios', Platform = 'Platform', SCOM = 'SCOM', ServiceHealth = 'ServiceHealth', SmartDetector = 'SmartDetector', 'VM Insights' = 'VM Insights', Zabbix = 'Zabbix', 'Resource Health' = 'Resource Health' }
 
-	export enum EssentialsSeverity { Sev0 = 0, Sev1 = 1, Sev2 = 2, Sev3 = 3, Sev4 = 4 }
+	export enum EssentialsSeverity { Sev0 = 'Sev0', Sev1 = 'Sev1', Sev2 = 'Sev2', Sev3 = 'Sev3', Sev4 = 'Sev4' }
 
-	export enum EssentialsSignalType { Metric = 0, Log = 1, Unknown = 2 }
+	export enum EssentialsSignalType { Metric = 'Metric', Log = 'Log', Unknown = 'Unknown' }
 
 
 	/** Alert Modification details */
@@ -359,7 +359,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertModificationItemModificationEvent { AlertCreated = 0, StateChange = 1, MonitorConditionChange = 2 }
+	export enum AlertModificationItemModificationEvent { AlertCreated = 'AlertCreated', StateChange = 'StateChange', MonitorConditionChange = 'MonitorConditionChange' }
 
 
 	/** List the alerts. */
@@ -840,7 +840,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SmartGroupModificationItemModificationEvent { SmartGroupCreated = 0, StateChange = 1, AlertAdded = 2, AlertRemoved = 3 }
+	export enum SmartGroupModificationItemModificationEvent { SmartGroupCreated = 'SmartGroupCreated', StateChange = 'StateChange', AlertAdded = 'AlertAdded', AlertRemoved = 'AlertRemoved' }
 
 
 	/** Properties of the smartGroup modification item. */
@@ -1063,17 +1063,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Operations_ListApi_version { '2018-05-05' = 0 }
+	export enum Operations_ListApi_version { '2018-05-05' = '2018-05-05' }
 
-	export enum SmartGroups_GetAllTimeRange { '1h' = 0, '1d' = 1, '7d' = 2, '30d' = 3 }
+	export enum SmartGroups_GetAllTimeRange { '1h' = '1h', '1d' = '1d', '7d' = '7d', '30d' = '30d' }
 
-	export enum SmartGroups_GetAllSortBy { alertsCount = 0, state = 1, severity = 2, startDateTime = 3, lastModifiedDateTime = 4 }
+	export enum SmartGroups_GetAllSortBy { alertsCount = 'alertsCount', state = 'state', severity = 'severity', startDateTime = 'startDateTime', lastModifiedDateTime = 'lastModifiedDateTime' }
 
-	export enum SmartGroups_GetAllSortOrder { asc = 0, desc = 1 }
+	export enum SmartGroups_GetAllSortOrder { asc = 'asc', desc = 'desc' }
 
-	export enum Alerts_GetAllSortBy { name = 0, severity = 1, alertState = 2, monitorCondition = 3, targetResource = 4, targetResourceName = 5, targetResourceGroup = 6, targetResourceType = 7, startDateTime = 8, lastModifiedDateTime = 9 }
+	export enum Alerts_GetAllSortBy { name = 'name', severity = 'severity', alertState = 'alertState', monitorCondition = 'monitorCondition', targetResource = 'targetResource', targetResourceName = 'targetResourceName', targetResourceGroup = 'targetResourceGroup', targetResourceType = 'targetResourceType', startDateTime = 'startDateTime', lastModifiedDateTime = 'lastModifiedDateTime' }
 
-	export enum Alerts_GetSummaryGroupby { severity = 0, alertState = 1, monitorCondition = 2, monitorService = 3, signalType = 4, alertRule = 5 }
+	export enum Alerts_GetSummaryGroupby { severity = 'severity', alertState = 'alertState', monitorCondition = 'monitorCondition', monitorService = 'monitorService', signalType = 'signalType', alertRule = 'alertRule' }
 
 }
 

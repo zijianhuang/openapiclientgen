@@ -351,7 +351,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FormActionType { create = 0, update = 1 }
+	export enum FormActionType { create = 'create', update = 'update' }
 
 
 	/** Describes the configuration for the form's style. */
@@ -418,7 +418,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FormDataSourceType { DataStore = 0, Custom = 1 }
+	export enum FormDataSourceType { DataStore = 'DataStore', Custom = 'Custom' }
 
 	export interface FieldsMap {
 	}
@@ -460,7 +460,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FormButtonsPosition { top = 0, bottom = 1, top_and_bottom = 2 }
+	export enum FormButtonsPosition { top = 'top', bottom = 'bottom', top_and_bottom = 'top_and_bottom' }
 
 
 	/** Describes the configuration for a button UI element that is a part of a form. */
@@ -506,9 +506,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FixedPosition { first = 0 }
+	export enum FixedPosition { first = 'first' }
 
-	export enum LabelDecorator { required = 0, optional = 1, none = 2 }
+	export enum LabelDecorator { required = 'required', optional = 'optional', none = 'none' }
 
 	export interface CreateThemeResponse {
 		entity?: Theme;
@@ -820,11 +820,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JSModule { es2020 = 0, esnext = 1 }
+	export enum JSModule { es2020 = 'es2020', esnext = 'esnext' }
 
-	export enum JSTarget { es2015 = 0, es2020 = 1 }
+	export enum JSTarget { es2015 = 'es2015', es2020 = 'es2020' }
 
-	export enum JSScript { jsx = 0, tsx = 1, js = 2 }
+	export enum JSScript { jsx = 'jsx', tsx = 'tsx', js = 'js' }
 
 
 	/** Describes the API configuration for a code generation job. */
@@ -950,7 +950,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodegenJobGenericDataSourceType { DataStore = 0 }
+	export enum CodegenJobGenericDataSourceType { DataStore = 'DataStore' }
 
 	export interface CodegenGenericDataModels {
 	}
@@ -1002,7 +1002,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodegenJobStatus { in_progress = 0, failed = 1, succeeded = 2 }
+	export enum CodegenJobStatus { in_progress = 'in_progress', failed = 'failed', succeeded = 'succeeded' }
 
 
 	/** Describes an asset for a code generation job. */
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodegenGenericDataFieldDataType { ID = 0, String = 1, Int = 2, Float = 3, AWSDate = 4, AWSTime = 5, AWSDateTime = 6, AWSTimestamp = 7, AWSEmail = 8, AWSURL = 9, AWSIPAddress = 10, Boolean = 11, AWSJSON = 12, AWSPhone = 13, Enum = 14, Model = 15, NonModel = 16 }
+	export enum CodegenGenericDataFieldDataType { ID = 'ID', String = 'String', Int = 'Int', Float = 'Float', AWSDate = 'AWSDate', AWSTime = 'AWSTime', AWSDateTime = 'AWSDateTime', AWSTimestamp = 'AWSTimestamp', AWSEmail = 'AWSEmail', AWSURL = 'AWSURL', AWSIPAddress = 'AWSIPAddress', Boolean = 'Boolean', AWSJSON = 'AWSJSON', AWSPhone = 'AWSPhone', Enum = 'Enum', Model = 'Model', NonModel = 'NonModel' }
 
 
 	/** Describes the relationship between generic data models. */
@@ -1657,7 +1657,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GenericDataRelationshipType { HAS_MANY = 0, HAS_ONE = 1, BELONGS_TO = 2 }
+	export enum GenericDataRelationshipType { HAS_MANY = 'HAS_MANY', HAS_ONE = 'HAS_ONE', BELONGS_TO = 'BELONGS_TO' }
 
 
 	/** Describes a field in a generic data schema. */
@@ -1906,7 +1906,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortDirection { ASC = 0, DESC = 1 }
+	export enum SortDirection { ASC = 'ASC', DESC = 'DESC' }
 
 
 	/** Describes the configuration of an event. You can bind an event and a corresponding action to a <code>Component</code> or a <code>ComponentChild</code>. A button click is an example of an event.  */
@@ -2146,7 +2146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TokenProviders { figma = 0 }
+	export enum TokenProviders { figma = 'figma' }
 
 
 	/** Describes the configuration of a request to exchange an access code for a token. */
@@ -2409,7 +2409,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StorageAccessLevel { public = 0, protected = 1, private = 2 }
+	export enum StorageAccessLevel { public = 'public', protected = 'protected', private = 'private' }
 
 
 	/** Describes the validation configuration for a field. */

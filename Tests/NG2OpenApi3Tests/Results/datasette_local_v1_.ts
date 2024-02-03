@@ -21,7 +21,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Query_shape { array = 0 }
+	export enum Query_shape { array = 'array' }
 
 }
 

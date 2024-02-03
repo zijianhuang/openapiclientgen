@@ -1372,7 +1372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CripcPostBodyFormat { pdf = 0 }
+	export enum CripcPostBodyFormat { pdf = 'pdf' }
 
 	export interface CvipcPostBody {
 		certificateParameters?: CvipcPostBodyCertificateParameters;

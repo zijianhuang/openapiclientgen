@@ -252,7 +252,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyType { DATA_PROTECTION_POLICY = 0 }
+	export enum PolicyType { DATA_PROTECTION_POLICY = 'DATA_PROTECTION_POLICY' }
 
 	export interface DeleteDataProtectionPolicyRequest {
 
@@ -480,7 +480,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Scope { ALL = 0 }
+	export enum Scope { ALL = 'ALL' }
 
 	export interface DescribeAccountPoliciesRequest {
 
@@ -659,7 +659,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportTaskStatusCode { CANCELLED = 0, COMPLETED = 1, FAILED = 2, PENDING = 3, PENDING_CANCEL = 4, RUNNING = 5 }
+	export enum ExportTaskStatusCode { CANCELLED = 'CANCELLED', COMPLETED = 'COMPLETED', FAILED = 'FAILED', PENDING = 'PENDING', PENDING_CANCEL = 'PENDING_CANCEL', RUNNING = 'RUNNING' }
 
 
 	/** Represents the status of an export task. */
@@ -770,9 +770,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataProtectionStatus { ACTIVATED = 0, DELETED = 1, ARCHIVED = 2, DISABLED = 3 }
+	export enum DataProtectionStatus { ACTIVATED = 'ACTIVATED', DELETED = 'DELETED', ARCHIVED = 'ARCHIVED', DISABLED = 'DISABLED' }
 
-	export enum InheritedProperty { ACCOUNT_DATA_PROTECTION = 0 }
+	export enum InheritedProperty { ACCOUNT_DATA_PROTECTION = 'ACCOUNT_DATA_PROTECTION' }
 
 	export interface DescribeLogGroupsRequest {
 		accountIdentifiers?: Array<string>;
@@ -893,7 +893,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderBy { LogStreamName = 0, LastEventTime = 1 }
+	export enum OrderBy { LogStreamName = 'LogStreamName', LastEventTime = 'LastEventTime' }
 
 	export interface DescribeMetricFiltersResponse {
 		metricFilters?: Array<MetricFilter>;
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StandardUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
+	export enum StandardUnit { Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', Count = 'Count', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second', None = 'None' }
 
 	export interface DescribeMetricFiltersRequest {
 		logGroupName?: string;
@@ -1093,7 +1093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryStatus { Scheduled = 0, Running = 1, Complete = 2, Failed = 3, Cancelled = 4, Timeout = 5, Unknown = 6 }
+	export enum QueryStatus { Scheduled = 'Scheduled', Running = 'Running', Complete = 'Complete', Failed = 'Failed', Cancelled = 'Cancelled', Timeout = 'Timeout', Unknown = 'Unknown' }
 
 	export interface DescribeQueriesRequest {
 		logGroupName?: string;
@@ -1355,7 +1355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionFilterDistribution { Random = 0, ByLogStream = 1 }
+	export enum SubscriptionFilterDistribution { Random = 'Random', ByLogStream = 'ByLogStream' }
 
 	export interface DescribeSubscriptionFiltersRequest {
 
@@ -2577,7 +2577,7 @@ export namespace MyNS {
 
 
 	/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
-	export enum Distribution { Random = 0, ByLogStream = 1 }
+	export enum Distribution { Random = 'Random', ByLogStream = 'ByLogStream' }
 
 	@Injectable()
 	export class MyClient {
@@ -3058,107 +3058,107 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateKmsKeyX_Amz_Target { 'Logs_20140328.AssociateKmsKey' = 0 }
+	export enum AssociateKmsKeyX_Amz_Target { 'Logs_20140328.AssociateKmsKey' = 'Logs_20140328.AssociateKmsKey' }
 
-	export enum CancelExportTaskX_Amz_Target { 'Logs_20140328.CancelExportTask' = 0 }
+	export enum CancelExportTaskX_Amz_Target { 'Logs_20140328.CancelExportTask' = 'Logs_20140328.CancelExportTask' }
 
-	export enum CreateExportTaskX_Amz_Target { 'Logs_20140328.CreateExportTask' = 0 }
+	export enum CreateExportTaskX_Amz_Target { 'Logs_20140328.CreateExportTask' = 'Logs_20140328.CreateExportTask' }
 
-	export enum CreateLogGroupX_Amz_Target { 'Logs_20140328.CreateLogGroup' = 0 }
+	export enum CreateLogGroupX_Amz_Target { 'Logs_20140328.CreateLogGroup' = 'Logs_20140328.CreateLogGroup' }
 
-	export enum CreateLogStreamX_Amz_Target { 'Logs_20140328.CreateLogStream' = 0 }
+	export enum CreateLogStreamX_Amz_Target { 'Logs_20140328.CreateLogStream' = 'Logs_20140328.CreateLogStream' }
 
-	export enum DeleteAccountPolicyX_Amz_Target { 'Logs_20140328.DeleteAccountPolicy' = 0 }
+	export enum DeleteAccountPolicyX_Amz_Target { 'Logs_20140328.DeleteAccountPolicy' = 'Logs_20140328.DeleteAccountPolicy' }
 
-	export enum DeleteDataProtectionPolicyX_Amz_Target { 'Logs_20140328.DeleteDataProtectionPolicy' = 0 }
+	export enum DeleteDataProtectionPolicyX_Amz_Target { 'Logs_20140328.DeleteDataProtectionPolicy' = 'Logs_20140328.DeleteDataProtectionPolicy' }
 
-	export enum DeleteDestinationX_Amz_Target { 'Logs_20140328.DeleteDestination' = 0 }
+	export enum DeleteDestinationX_Amz_Target { 'Logs_20140328.DeleteDestination' = 'Logs_20140328.DeleteDestination' }
 
-	export enum DeleteLogGroupX_Amz_Target { 'Logs_20140328.DeleteLogGroup' = 0 }
+	export enum DeleteLogGroupX_Amz_Target { 'Logs_20140328.DeleteLogGroup' = 'Logs_20140328.DeleteLogGroup' }
 
-	export enum DeleteLogStreamX_Amz_Target { 'Logs_20140328.DeleteLogStream' = 0 }
+	export enum DeleteLogStreamX_Amz_Target { 'Logs_20140328.DeleteLogStream' = 'Logs_20140328.DeleteLogStream' }
 
-	export enum DeleteMetricFilterX_Amz_Target { 'Logs_20140328.DeleteMetricFilter' = 0 }
+	export enum DeleteMetricFilterX_Amz_Target { 'Logs_20140328.DeleteMetricFilter' = 'Logs_20140328.DeleteMetricFilter' }
 
-	export enum DeleteQueryDefinitionX_Amz_Target { 'Logs_20140328.DeleteQueryDefinition' = 0 }
+	export enum DeleteQueryDefinitionX_Amz_Target { 'Logs_20140328.DeleteQueryDefinition' = 'Logs_20140328.DeleteQueryDefinition' }
 
-	export enum DeleteResourcePolicyX_Amz_Target { 'Logs_20140328.DeleteResourcePolicy' = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'Logs_20140328.DeleteResourcePolicy' = 'Logs_20140328.DeleteResourcePolicy' }
 
-	export enum DeleteRetentionPolicyX_Amz_Target { 'Logs_20140328.DeleteRetentionPolicy' = 0 }
+	export enum DeleteRetentionPolicyX_Amz_Target { 'Logs_20140328.DeleteRetentionPolicy' = 'Logs_20140328.DeleteRetentionPolicy' }
 
-	export enum DeleteSubscriptionFilterX_Amz_Target { 'Logs_20140328.DeleteSubscriptionFilter' = 0 }
+	export enum DeleteSubscriptionFilterX_Amz_Target { 'Logs_20140328.DeleteSubscriptionFilter' = 'Logs_20140328.DeleteSubscriptionFilter' }
 
-	export enum DescribeAccountPoliciesX_Amz_Target { 'Logs_20140328.DescribeAccountPolicies' = 0 }
+	export enum DescribeAccountPoliciesX_Amz_Target { 'Logs_20140328.DescribeAccountPolicies' = 'Logs_20140328.DescribeAccountPolicies' }
 
-	export enum DescribeDestinationsX_Amz_Target { 'Logs_20140328.DescribeDestinations' = 0 }
+	export enum DescribeDestinationsX_Amz_Target { 'Logs_20140328.DescribeDestinations' = 'Logs_20140328.DescribeDestinations' }
 
-	export enum DescribeExportTasksX_Amz_Target { 'Logs_20140328.DescribeExportTasks' = 0 }
+	export enum DescribeExportTasksX_Amz_Target { 'Logs_20140328.DescribeExportTasks' = 'Logs_20140328.DescribeExportTasks' }
 
-	export enum DescribeLogGroupsX_Amz_Target { 'Logs_20140328.DescribeLogGroups' = 0 }
+	export enum DescribeLogGroupsX_Amz_Target { 'Logs_20140328.DescribeLogGroups' = 'Logs_20140328.DescribeLogGroups' }
 
-	export enum DescribeLogStreamsX_Amz_Target { 'Logs_20140328.DescribeLogStreams' = 0 }
+	export enum DescribeLogStreamsX_Amz_Target { 'Logs_20140328.DescribeLogStreams' = 'Logs_20140328.DescribeLogStreams' }
 
-	export enum DescribeMetricFiltersX_Amz_Target { 'Logs_20140328.DescribeMetricFilters' = 0 }
+	export enum DescribeMetricFiltersX_Amz_Target { 'Logs_20140328.DescribeMetricFilters' = 'Logs_20140328.DescribeMetricFilters' }
 
-	export enum DescribeQueriesX_Amz_Target { 'Logs_20140328.DescribeQueries' = 0 }
+	export enum DescribeQueriesX_Amz_Target { 'Logs_20140328.DescribeQueries' = 'Logs_20140328.DescribeQueries' }
 
-	export enum DescribeQueryDefinitionsX_Amz_Target { 'Logs_20140328.DescribeQueryDefinitions' = 0 }
+	export enum DescribeQueryDefinitionsX_Amz_Target { 'Logs_20140328.DescribeQueryDefinitions' = 'Logs_20140328.DescribeQueryDefinitions' }
 
-	export enum DescribeResourcePoliciesX_Amz_Target { 'Logs_20140328.DescribeResourcePolicies' = 0 }
+	export enum DescribeResourcePoliciesX_Amz_Target { 'Logs_20140328.DescribeResourcePolicies' = 'Logs_20140328.DescribeResourcePolicies' }
 
-	export enum DescribeSubscriptionFiltersX_Amz_Target { 'Logs_20140328.DescribeSubscriptionFilters' = 0 }
+	export enum DescribeSubscriptionFiltersX_Amz_Target { 'Logs_20140328.DescribeSubscriptionFilters' = 'Logs_20140328.DescribeSubscriptionFilters' }
 
-	export enum DisassociateKmsKeyX_Amz_Target { 'Logs_20140328.DisassociateKmsKey' = 0 }
+	export enum DisassociateKmsKeyX_Amz_Target { 'Logs_20140328.DisassociateKmsKey' = 'Logs_20140328.DisassociateKmsKey' }
 
-	export enum FilterLogEventsX_Amz_Target { 'Logs_20140328.FilterLogEvents' = 0 }
+	export enum FilterLogEventsX_Amz_Target { 'Logs_20140328.FilterLogEvents' = 'Logs_20140328.FilterLogEvents' }
 
-	export enum GetDataProtectionPolicyX_Amz_Target { 'Logs_20140328.GetDataProtectionPolicy' = 0 }
+	export enum GetDataProtectionPolicyX_Amz_Target { 'Logs_20140328.GetDataProtectionPolicy' = 'Logs_20140328.GetDataProtectionPolicy' }
 
-	export enum GetLogEventsX_Amz_Target { 'Logs_20140328.GetLogEvents' = 0 }
+	export enum GetLogEventsX_Amz_Target { 'Logs_20140328.GetLogEvents' = 'Logs_20140328.GetLogEvents' }
 
-	export enum GetLogGroupFieldsX_Amz_Target { 'Logs_20140328.GetLogGroupFields' = 0 }
+	export enum GetLogGroupFieldsX_Amz_Target { 'Logs_20140328.GetLogGroupFields' = 'Logs_20140328.GetLogGroupFields' }
 
-	export enum GetLogRecordX_Amz_Target { 'Logs_20140328.GetLogRecord' = 0 }
+	export enum GetLogRecordX_Amz_Target { 'Logs_20140328.GetLogRecord' = 'Logs_20140328.GetLogRecord' }
 
-	export enum GetQueryResultsX_Amz_Target { 'Logs_20140328.GetQueryResults' = 0 }
+	export enum GetQueryResultsX_Amz_Target { 'Logs_20140328.GetQueryResults' = 'Logs_20140328.GetQueryResults' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'Logs_20140328.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Logs_20140328.ListTagsForResource' = 'Logs_20140328.ListTagsForResource' }
 
-	export enum ListTagsLogGroupX_Amz_Target { 'Logs_20140328.ListTagsLogGroup' = 0 }
+	export enum ListTagsLogGroupX_Amz_Target { 'Logs_20140328.ListTagsLogGroup' = 'Logs_20140328.ListTagsLogGroup' }
 
-	export enum PutAccountPolicyX_Amz_Target { 'Logs_20140328.PutAccountPolicy' = 0 }
+	export enum PutAccountPolicyX_Amz_Target { 'Logs_20140328.PutAccountPolicy' = 'Logs_20140328.PutAccountPolicy' }
 
-	export enum PutDataProtectionPolicyX_Amz_Target { 'Logs_20140328.PutDataProtectionPolicy' = 0 }
+	export enum PutDataProtectionPolicyX_Amz_Target { 'Logs_20140328.PutDataProtectionPolicy' = 'Logs_20140328.PutDataProtectionPolicy' }
 
-	export enum PutDestinationX_Amz_Target { 'Logs_20140328.PutDestination' = 0 }
+	export enum PutDestinationX_Amz_Target { 'Logs_20140328.PutDestination' = 'Logs_20140328.PutDestination' }
 
-	export enum PutDestinationPolicyX_Amz_Target { 'Logs_20140328.PutDestinationPolicy' = 0 }
+	export enum PutDestinationPolicyX_Amz_Target { 'Logs_20140328.PutDestinationPolicy' = 'Logs_20140328.PutDestinationPolicy' }
 
-	export enum PutLogEventsX_Amz_Target { 'Logs_20140328.PutLogEvents' = 0 }
+	export enum PutLogEventsX_Amz_Target { 'Logs_20140328.PutLogEvents' = 'Logs_20140328.PutLogEvents' }
 
-	export enum PutMetricFilterX_Amz_Target { 'Logs_20140328.PutMetricFilter' = 0 }
+	export enum PutMetricFilterX_Amz_Target { 'Logs_20140328.PutMetricFilter' = 'Logs_20140328.PutMetricFilter' }
 
-	export enum PutQueryDefinitionX_Amz_Target { 'Logs_20140328.PutQueryDefinition' = 0 }
+	export enum PutQueryDefinitionX_Amz_Target { 'Logs_20140328.PutQueryDefinition' = 'Logs_20140328.PutQueryDefinition' }
 
-	export enum PutResourcePolicyX_Amz_Target { 'Logs_20140328.PutResourcePolicy' = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'Logs_20140328.PutResourcePolicy' = 'Logs_20140328.PutResourcePolicy' }
 
-	export enum PutRetentionPolicyX_Amz_Target { 'Logs_20140328.PutRetentionPolicy' = 0 }
+	export enum PutRetentionPolicyX_Amz_Target { 'Logs_20140328.PutRetentionPolicy' = 'Logs_20140328.PutRetentionPolicy' }
 
-	export enum PutSubscriptionFilterX_Amz_Target { 'Logs_20140328.PutSubscriptionFilter' = 0 }
+	export enum PutSubscriptionFilterX_Amz_Target { 'Logs_20140328.PutSubscriptionFilter' = 'Logs_20140328.PutSubscriptionFilter' }
 
-	export enum StartQueryX_Amz_Target { 'Logs_20140328.StartQuery' = 0 }
+	export enum StartQueryX_Amz_Target { 'Logs_20140328.StartQuery' = 'Logs_20140328.StartQuery' }
 
-	export enum StopQueryX_Amz_Target { 'Logs_20140328.StopQuery' = 0 }
+	export enum StopQueryX_Amz_Target { 'Logs_20140328.StopQuery' = 'Logs_20140328.StopQuery' }
 
-	export enum TagLogGroupX_Amz_Target { 'Logs_20140328.TagLogGroup' = 0 }
+	export enum TagLogGroupX_Amz_Target { 'Logs_20140328.TagLogGroup' = 'Logs_20140328.TagLogGroup' }
 
-	export enum TagResourceX_Amz_Target { 'Logs_20140328.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Logs_20140328.TagResource' = 'Logs_20140328.TagResource' }
 
-	export enum TestMetricFilterX_Amz_Target { 'Logs_20140328.TestMetricFilter' = 0 }
+	export enum TestMetricFilterX_Amz_Target { 'Logs_20140328.TestMetricFilter' = 'Logs_20140328.TestMetricFilter' }
 
-	export enum UntagLogGroupX_Amz_Target { 'Logs_20140328.UntagLogGroup' = 0 }
+	export enum UntagLogGroupX_Amz_Target { 'Logs_20140328.UntagLogGroup' = 'Logs_20140328.UntagLogGroup' }
 
-	export enum UntagResourceX_Amz_Target { 'Logs_20140328.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Logs_20140328.UntagResource' = 'Logs_20140328.UntagResource' }
 
 }
 

@@ -395,7 +395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointHealthDataHealthStatus { unknown = 0, healthy = 1, unhealthy = 2, dead = 3 }
+	export enum EndpointHealthDataHealthStatus { unknown = 'unknown', healthy = 'healthy', unhealthy = 'unhealthy', dead = 'dead' }
 
 
 	/** The JSON-serialized array of EndpointHealthData objects with a next link. */
@@ -757,7 +757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FallbackRoutePropertiesSource { DeviceMessages = 0 }
+	export enum FallbackRoutePropertiesSource { DeviceMessages = 'DeviceMessages' }
 
 
 	/** Use to provide parameters when requesting an import of all devices in the hub. */
@@ -849,7 +849,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IotHubCapacityScaleType { Automatic = 0, Manual = 1, None = 2 }
+	export enum IotHubCapacityScaleType { Automatic = 'Automatic', Manual = 'Manual', None = 'None' }
 
 
 	/** The description of the IoT hub. */
@@ -1027,9 +1027,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SharedAccessSignatureAuthorizationRuleRights { RegistryRead = 0, RegistryWrite = 1, ServiceConnect = 2, DeviceConnect = 3, 'RegistryRead, RegistryWrite' = 4, 'RegistryRead, ServiceConnect' = 5, 'RegistryRead, DeviceConnect' = 6, 'RegistryWrite, ServiceConnect' = 7, 'RegistryWrite, DeviceConnect' = 8, 'ServiceConnect, DeviceConnect' = 9, 'RegistryRead, RegistryWrite, ServiceConnect' = 10, 'RegistryRead, RegistryWrite, DeviceConnect' = 11, 'RegistryRead, ServiceConnect, DeviceConnect' = 12, 'RegistryWrite, ServiceConnect, DeviceConnect' = 13, 'RegistryRead, RegistryWrite, ServiceConnect, DeviceConnect' = 14 }
+	export enum SharedAccessSignatureAuthorizationRuleRights { RegistryRead = 'RegistryRead', RegistryWrite = 'RegistryWrite', ServiceConnect = 'ServiceConnect', DeviceConnect = 'DeviceConnect', 'RegistryRead, RegistryWrite' = 'RegistryRead, RegistryWrite', 'RegistryRead, ServiceConnect' = 'RegistryRead, ServiceConnect', 'RegistryRead, DeviceConnect' = 'RegistryRead, DeviceConnect', 'RegistryWrite, ServiceConnect' = 'RegistryWrite, ServiceConnect', 'RegistryWrite, DeviceConnect' = 'RegistryWrite, DeviceConnect', 'ServiceConnect, DeviceConnect' = 'ServiceConnect, DeviceConnect', 'RegistryRead, RegistryWrite, ServiceConnect' = 'RegistryRead, RegistryWrite, ServiceConnect', 'RegistryRead, RegistryWrite, DeviceConnect' = 'RegistryRead, RegistryWrite, DeviceConnect', 'RegistryRead, ServiceConnect, DeviceConnect' = 'RegistryRead, ServiceConnect, DeviceConnect', 'RegistryWrite, ServiceConnect, DeviceConnect' = 'RegistryWrite, ServiceConnect, DeviceConnect', 'RegistryRead, RegistryWrite, ServiceConnect, DeviceConnect' = 'RegistryRead, RegistryWrite, ServiceConnect, DeviceConnect' }
 
-	export enum IotHubPropertiesFeatures { None = 0, DeviceManagement = 1 }
+	export enum IotHubPropertiesFeatures { None = 'None', DeviceManagement = 'DeviceManagement' }
 
 
 	/** The IP filter rules for the IoT hub. */
@@ -1084,7 +1084,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpFilterRuleAction { Accept = 0, Reject = 1 }
+	export enum IpFilterRuleAction { Accept = 'Accept', Reject = 'Reject' }
 
 
 	/** Public representation of one of the locations where a resource is provisioned. */
@@ -1114,7 +1114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IotHubLocationDescriptionRole { primary = 0, secondary = 1 }
+	export enum IotHubLocationDescriptionRole { primary = 'primary', secondary = 'secondary' }
 
 
 	/** The properties of the messaging endpoints used by this IoT hub. */
@@ -1484,7 +1484,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutingStorageContainerPropertiesEncoding { Avro = 0, AvroDeflate = 1, JSON = 2 }
+	export enum RoutingStorageContainerPropertiesEncoding { Avro = 'Avro', AvroDeflate = 'AvroDeflate', JSON = 'JSON' }
 
 
 	/** The properties of a routing rule that your IoT hub uses to route messages to endpoints. */
@@ -1554,7 +1554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutePropertiesSource { Invalid = 0, DeviceMessages = 1, TwinChangeEvents = 2, DeviceLifecycleEvents = 3, DeviceJobLifecycleEvents = 4 }
+	export enum RoutePropertiesSource { Invalid = 'Invalid', DeviceMessages = 'DeviceMessages', TwinChangeEvents = 'TwinChangeEvents', DeviceLifecycleEvents = 'DeviceLifecycleEvents', DeviceJobLifecycleEvents = 'DeviceJobLifecycleEvents' }
 
 
 	/** The properties of the Azure Storage endpoint for file upload. */
@@ -1644,9 +1644,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IotHubSkuInfoName { F1 = 0, S1 = 1, S2 = 2, S3 = 3, B1 = 4, B2 = 5, B3 = 6 }
+	export enum IotHubSkuInfoName { F1 = 'F1', S1 = 'S1', S2 = 'S2', S3 = 'S3', B1 = 'B1', B2 = 'B2', B3 = 'B3' }
 
-	export enum IotHubSkuInfoTier { Free = 0, Standard = 1, Basic = 2 }
+	export enum IotHubSkuInfoTier { Free = 'Free', Standard = 'Standard', Basic = 'Basic' }
 
 
 	/** The JSON-serialized array of IotHubDescription objects with a next link. */
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IotHubNameAvailabilityInfoReason { Invalid = 0, AlreadyExists = 1 }
+	export enum IotHubNameAvailabilityInfoReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** Quota metrics properties. */
@@ -1895,9 +1895,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JobResponseStatus { unknown = 0, enqueued = 1, running = 2, completed = 3, failed = 4, cancelled = 5 }
+	export enum JobResponseStatus { unknown = 'unknown', enqueued = 'enqueued', running = 'running', completed = 'completed', failed = 'failed', cancelled = 'cancelled' }
 
-	export enum JobResponseType { unknown = 0, export = 1, import = 2, backup = 3, readDeviceProperties = 4, writeDeviceProperties = 5, updateDeviceConfiguration = 6, rebootDevice = 7, factoryResetDevice = 8, firmwareUpdate = 9 }
+	export enum JobResponseType { unknown = 'unknown', export = 'export', import = 'import', backup = 'backup', readDeviceProperties = 'readDeviceProperties', writeDeviceProperties = 'writeDeviceProperties', updateDeviceConfiguration = 'updateDeviceConfiguration', rebootDevice = 'rebootDevice', factoryResetDevice = 'factoryResetDevice', firmwareUpdate = 'firmwareUpdate' }
 
 
 	/** The JSON-serialized array of JobResponse objects with a next link. */
@@ -2216,7 +2216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteCompilationErrorSeverity { error = 0, warning = 1 }
+	export enum RouteCompilationErrorSeverity { error = 'error', warning = 'warning' }
 
 
 	/** Routing message */
@@ -2433,7 +2433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestRouteResultResult { undefined = 0, false = 1, true = 2 }
+	export enum TestRouteResultResult { undefined = 'undefined', false = 'false', true = 'true' }
 
 
 	/** User subscription quota response */

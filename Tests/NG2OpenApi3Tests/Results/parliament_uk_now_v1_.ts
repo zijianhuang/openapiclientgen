@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum AnnunciatorMessageType { CommonsMain = 0, LordsMain = 1 }
+	export enum AnnunciatorMessageType { CommonsMain = 'CommonsMain', LordsMain = 'LordsMain' }
 
-	export enum ContentStyle { DividerSolid = 0, EmptyLine = 1, Member = 2, Footer = 3, AnsweringBody = 4, WestminsterHallInfo = 5, GrandCommitteeInfo = 6, DividerDotted = 7, DividerDashed = 8, Division = 9, Text150 = 10, Text140 = 11, Text130 = 12, Text120 = 13, Text110 = 14, Text100 = 15, Text90 = 16, Text80 = 17, Text70 = 18 }
+	export enum ContentStyle { DividerSolid = 'DividerSolid', EmptyLine = 'EmptyLine', Member = 'Member', Footer = 'Footer', AnsweringBody = 'AnsweringBody', WestminsterHallInfo = 'WestminsterHallInfo', GrandCommitteeInfo = 'GrandCommitteeInfo', DividerDotted = 'DividerDotted', DividerDashed = 'DividerDashed', Division = 'Division', Text150 = 'Text150', Text140 = 'Text140', Text130 = 'Text130', Text120 = 'Text120', Text110 = 'Text110', Text100 = 'Text100', Text90 = 'Text90', Text80 = 'Text80', Text70 = 'Text70' }
 
-	export enum ContentType { Generic = 0, Member = 1, OralQuestionTime = 2, AnsweringBody = 3, Bill = 4 }
+	export enum ContentType { Generic = 'Generic', Member = 'Member', OralQuestionTime = 'OralQuestionTime', AnsweringBody = 'AnsweringBody', Bill = 'Bill' }
 
-	export enum HorizontalAlignment { Left = 0, Right = 1, Centre = 2 }
+	export enum HorizontalAlignment { Left = 'Left', Right = 'Right', Centre = 'Centre' }
 
 	export interface HouseMembershipViewModel {
 		membershipFrom?: string | null;
@@ -111,7 +111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LineViewModelVerticalAlignment { Top = 0, Middle = 1, Bottom = 2 }
+	export enum LineViewModelVerticalAlignment { Top = 'Top', Middle = 'Middle', Bottom = 'Bottom' }
 
 	export interface MessageViewModel {
 		annunciatorDisabled?: boolean | null;
@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScrollingMessageViewModelAlertType { Standard = 0, SecondaryChamber = 1, Alert = 2, SecurityNormal = 3, SecurityHigh = 4 }
+	export enum ScrollingMessageViewModelAlertType { Standard = 'Standard', SecondaryChamber = 'SecondaryChamber', Alert = 'Alert', SecurityNormal = 'SecurityNormal', SecurityHigh = 'SecurityHigh' }
 
 	export interface SlideViewModel {
 		carouselDisplaySeconds?: number | null;
@@ -208,17 +208,17 @@ export namespace MyNS {
 
 	}
 
-	export enum SlideViewModelSoundToPlay { NewSlide = 0, DivisionBell = 1, Alert = 2, GenericBeep = 3 }
+	export enum SlideViewModelSoundToPlay { NewSlide = 'NewSlide', DivisionBell = 'DivisionBell', Alert = 'Alert', GenericBeep = 'GenericBeep' }
 
-	export enum SlideViewModelType { Debate = 0, Division = 1, OralQuestionTime = 2, UrgentQuestion = 3, Statement = 4, Prayers = 5, HouseRisen = 6, Generic = 7, NotSitting = 8, PrimeMinistersQuestions = 9, PointsOfOrder = 10, BlankSlide = 11 }
+	export enum SlideViewModelType { Debate = 'Debate', Division = 'Division', OralQuestionTime = 'OralQuestionTime', UrgentQuestion = 'UrgentQuestion', Statement = 'Statement', Prayers = 'Prayers', HouseRisen = 'HouseRisen', Generic = 'Generic', NotSitting = 'NotSitting', PrimeMinistersQuestions = 'PrimeMinistersQuestions', PointsOfOrder = 'PointsOfOrder', BlankSlide = 'BlankSlide' }
 
-	export enum ScrollingMessageAlertType { Standard = 0, SecondaryChamber = 1, Alert = 2, SecurityNormal = 3, SecurityHigh = 4 }
+	export enum ScrollingMessageAlertType { Standard = 'Standard', SecondaryChamber = 'SecondaryChamber', Alert = 'Alert', SecurityNormal = 'SecurityNormal', SecurityHigh = 'SecurityHigh' }
 
-	export enum SlideType { Debate = 0, Division = 1, OralQuestionTime = 2, UrgentQuestion = 3, Statement = 4, Prayers = 5, HouseRisen = 6, Generic = 7, NotSitting = 8, PrimeMinistersQuestions = 9, PointsOfOrder = 10, BlankSlide = 11 }
+	export enum SlideType { Debate = 'Debate', Division = 'Division', OralQuestionTime = 'OralQuestionTime', UrgentQuestion = 'UrgentQuestion', Statement = 'Statement', Prayers = 'Prayers', HouseRisen = 'HouseRisen', Generic = 'Generic', NotSitting = 'NotSitting', PrimeMinistersQuestions = 'PrimeMinistersQuestions', PointsOfOrder = 'PointsOfOrder', BlankSlide = 'BlankSlide' }
 
-	export enum Sounds { NewSlide = 0, DivisionBell = 1, Alert = 2, GenericBeep = 3 }
+	export enum Sounds { NewSlide = 'NewSlide', DivisionBell = 'DivisionBell', Alert = 'Alert', GenericBeep = 'GenericBeep' }
 
-	export enum VerticalAlignment { Top = 0, Middle = 1, Bottom = 2 }
+	export enum VerticalAlignment { Top = 'Top', Middle = 'Middle', Bottom = 'Bottom' }
 
 	@Injectable()
 	export class MyClient {

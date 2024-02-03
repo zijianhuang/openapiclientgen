@@ -317,7 +317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PictureType { caution = 0, custom = 1, default = 2 }
+	export enum PictureType { caution = 'caution', custom = 'custom', default = 'default' }
 
 	export interface CategoryMetadata {
 
@@ -1185,7 +1185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelMetadataInteractionsFollowType { moderator = 0, subscriber = 1 }
+	export enum ChannelMetadataInteractionsFollowType { moderator = 'moderator', subscriber = 'subscriber' }
 
 	export interface ChannelMetadataInteractionsModerate_videos {
 
@@ -1247,7 +1247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelPrivacyView { anybody = 0, moderators = 1, users = 2 }
+	export enum ChannelPrivacyView { anybody = 'anybody', moderators = 'moderators', users = 'users' }
 
 	export interface Tag {
 
@@ -1569,7 +1569,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserAccount { basic = 0, business = 1, live_business = 2, live_premium = 3, live_pro = 4, plus = 5, pro = 6, pro_unlimited = 7, producer = 8 }
+	export enum UserAccount { basic = 'basic', business = 'business', live_business = 'live_business', live_premium = 'live_premium', live_pro = 'live_pro', plus = 'plus', pro = 'pro', pro_unlimited = 'pro_unlimited', producer = 'producer' }
 
 	export interface UserMetadata {
 
@@ -2839,11 +2839,11 @@ export namespace MyNS {
 
 	}
 
-	export enum UserPreferencesVideosPrivacyComments { anybody = 0, contacts = 1, nobody = 2 }
+	export enum UserPreferencesVideosPrivacyComments { anybody = 'anybody', contacts = 'contacts', nobody = 'nobody' }
 
-	export enum UserPreferencesVideosPrivacyEmbed { private = 0, public = 1, whitelist = 2 }
+	export enum UserPreferencesVideosPrivacyEmbed { private = 'private', public = 'public', whitelist = 'whitelist' }
 
-	export enum UserPreferencesVideosPrivacyView { anybody = 0, contacts = 1, disable = 2, nobody = 3, password = 4, unlisted = 5, users = 6 }
+	export enum UserPreferencesVideosPrivacyView { anybody = 'anybody', contacts = 'contacts', disable = 'disable', nobody = 'nobody', password = 'password', unlisted = 'unlisted', users = 'users' }
 
 	export interface UserUpload_quota {
 
@@ -3046,7 +3046,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserUpload_quotaSpaceShowing { lifetime = 0, periodic = 1 }
+	export enum UserUpload_quotaSpaceShowing { lifetime = 'lifetime', periodic = 'periodic' }
 
 	export interface UserWebsites {
 
@@ -3479,7 +3479,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoContextAction { 'Added to' = 0, 'Appearance by' = 1, 'Liked by' = 2, 'Uploaded by' = 3 }
+	export enum VideoContextAction { 'Added to' = 'Added to', 'Appearance by' = 'Appearance by', 'Liked by' = 'Liked by', 'Uploaded by' = 'Uploaded by' }
 
 	export interface Embed_settings {
 
@@ -3814,9 +3814,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Embed_settingsTitleName { hide = 0, show = 1, user = 2 }
+	export enum Embed_settingsTitleName { hide = 'hide', show = 'show', user = 'user' }
 
-	export enum VideoLicense { by = 0, 'by-nc' = 1, 'by-nc-nd' = 2, 'by-nc-sa' = 3, 'by-nd' = 4, 'by-sa' = 5, cc0 = 6 }
+	export enum VideoLicense { by = 'by', 'by-nc' = 'by-nc', 'by-nc-nd' = 'by-nc-nd', 'by-nc-sa' = 'by-nc-sa', 'by-nd' = 'by-nd', 'by-sa' = 'by-sa', cc0 = 'cc0' }
 
 	export interface VideoMetadata {
 
@@ -4611,7 +4611,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoMetadataInteractionsBuyDownload { available = 0, purchased = 1, restricted = 2, unavailable = 3 }
+	export enum VideoMetadataInteractionsBuyDownload { available = 'available', purchased = 'purchased', restricted = 'restricted', unavailable = 'unavailable' }
 
 	export interface VideoMetadataInteractionsChannel {
 
@@ -5283,7 +5283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoPrivacyEmbed { private = 0, public = 1 }
+	export enum VideoPrivacyEmbed { private = 'private', public = 'public' }
 
 	export interface VideoSpatial {
 
@@ -5398,9 +5398,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoSpatialProjection { cubical = 0, cylindrical = 1, dome = 2, equirectangular = 3, pyramid = 4 }
+	export enum VideoSpatialProjection { cubical = 'cubical', cylindrical = 'cylindrical', dome = 'dome', equirectangular = 'equirectangular', pyramid = 'pyramid' }
 
-	export enum VideoSpatialStereo_format { 'left-right' = 0, mono = 1, 'top-bottom' = 2 }
+	export enum VideoSpatialStereo_format { 'left-right' = 'left-right', mono = 'mono', 'top-bottom' = 'top-bottom' }
 
 	export interface VideoStats {
 
@@ -5425,7 +5425,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoStatus { available = 0, quota_exceeded = 1, total_cap_exceeded = 2, transcode_starting = 3, transcoding = 4, transcoding_error = 5, unavailable = 6, uploading = 7, uploading_error = 8 }
+	export enum VideoStatus { available = 'available', quota_exceeded = 'quota_exceeded', total_cap_exceeded = 'total_cap_exceeded', transcode_starting = 'transcode_starting', transcoding = 'transcoding', transcoding_error = 'transcoding_error', unavailable = 'unavailable', uploading = 'uploading', uploading_error = 'uploading_error' }
 
 	export interface VideoTranscode {
 
@@ -5444,7 +5444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoTranscodeStatus { complete = 0, error = 1, in_progress = 2 }
+	export enum VideoTranscodeStatus { complete = 'complete', error = 'error', in_progress = 'in_progress' }
 
 	export interface VideoUpload {
 
@@ -5526,7 +5526,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoUploadApproach { post = 0, pull = 1, streaming = 2, tus = 3 }
+	export enum VideoUploadApproach { post = 'post', pull = 'pull', streaming = 'streaming', tus = 'tus' }
 
 	export interface Group {
 
@@ -5875,7 +5875,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupMetadataInteractionsJoinType { member = 0, moderator = 1 }
+	export enum GroupMetadataInteractionsJoinType { member = 'member', moderator = 'moderator' }
 
 	export interface GroupPrivacy {
 
@@ -5982,9 +5982,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupPrivacyComment { all = 0, members = 1 }
+	export enum GroupPrivacyComment { all = 'all', members = 'members' }
 
-	export enum GroupPrivacyJoin { anybody = 0, members = 1 }
+	export enum GroupPrivacyJoin { anybody = 'anybody', members = 'members' }
 
 	export interface Activity_3_1Metadata {
 
@@ -6047,7 +6047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Activity_3_1Type { appearance = 0, category = 1, channel = 2, facebook_feed = 3, group = 4, like = 5, ondemand = 6, share = 7, tag = 8, twitter_timeline = 9, upload = 10 }
+	export enum Activity_3_1Type { appearance = 'appearance', category = 'category', channel = 'channel', facebook_feed = 'facebook_feed', group = 'group', like = 'like', ondemand = 'ondemand', share = 'share', tag = 'tag', twitter_timeline = 'twitter_timeline', upload = 'upload' }
 
 	export interface Album {
 
@@ -6443,7 +6443,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlbumLayout { grid = 0, player = 1 }
+	export enum AlbumLayout { grid = 'grid', player = 'player' }
 
 	export interface AlbumMetadata {
 
@@ -6678,11 +6678,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AlbumPrivacyView { anybody = 0, embed_only = 1, password = 2 }
+	export enum AlbumPrivacyView { anybody = 'anybody', embed_only = 'embed_only', password = 'password' }
 
-	export enum AlbumSort { added_first = 0, added_last = 1, alphabetical = 2, arranged = 3, comments = 4, likes = 5, newest = 6, oldest = 7, plays = 8 }
+	export enum AlbumSort { added_first = 'added_first', added_last = 'added_last', alphabetical = 'alphabetical', arranged = 'arranged', comments = 'comments', likes = 'likes', newest = 'newest', oldest = 'oldest', plays = 'plays' }
 
-	export enum AlbumTheme { dark = 0, standard = 1 }
+	export enum AlbumTheme { dark = 'dark', standard = 'standard' }
 
 	export interface Api_app {
 
@@ -6796,7 +6796,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthToken_type { bearer = 0 }
+	export enum AuthToken_type { bearer = 'bearer' }
 
 	export interface Auth_error {
 
@@ -6993,7 +6993,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommentType { video = 0 }
+	export enum CommentType { video = 'video' }
 
 	export interface Content_rating {
 
@@ -7058,7 +7058,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Content_ratingCode { drugs = 0, language = 1, nudity = 2, safe = 3, unrated = 4, violence = 5 }
+	export enum Content_ratingCode { drugs = 'drugs', language = 'language', nudity = 'nudity', safe = 'safe', unrated = 'unrated', violence = 'violence' }
 
 	export interface Creative_commons {
 
@@ -7962,7 +7962,7 @@ export namespace MyNS {
 
 	}
 
-	export enum On_demand_pageEpisodesRentPeriod { '1 day' = 0, '1 month' = 1, '1 week' = 2, '1 year' = 3, '2 day' = 4, '24 hour' = 5, '3 day' = 6, '3 month' = 7, '30 day' = 8, '48 hour' = 9, '6 month' = 10, '60 day' = 11, '7 day' = 12, '72 hour' = 13 }
+	export enum On_demand_pageEpisodesRentPeriod { '1 day' = '1 day', '1 month' = '1 month', '1 week' = '1 week', '1 year' = '1 year', '2 day' = '2 day', '24 hour' = '24 hour', '3 day' = '3 day', '3 month' = '3 month', '30 day' = '30 day', '48 hour' = '48 hour', '6 month' = '6 month', '60 day' = '60 day', '7 day' = '7 day', '72 hour' = '72 hour' }
 
 	export interface On_demand_pageMetadata {
 
@@ -8609,7 +8609,7 @@ export namespace MyNS {
 
 	}
 
-	export enum On_demand_pageType { film = 0, series = 1 }
+	export enum On_demand_pageType { film = 'film', series = 'series' }
 
 	export interface On_demand_promotion {
 
@@ -8811,9 +8811,9 @@ export namespace MyNS {
 
 	}
 
-	export enum On_demand_promotionAccess_type { default = 0, vip = 1 }
+	export enum On_demand_promotionAccess_type { default = 'default', vip = 'vip' }
 
-	export enum On_demand_promotionDiscount_type { dollars = 0, free = 1, percent = 2 }
+	export enum On_demand_promotionDiscount_type { dollars = 'dollars', free = 'free', percent = 'percent' }
 
 	export interface On_demand_promotionMetadata {
 
@@ -8889,11 +8889,11 @@ export namespace MyNS {
 
 	}
 
-	export enum On_demand_promotionProduct_type { any = 0, buy = 1, buy_episode = 2, rent = 3, rent_episode = 4, subscribe = 5 }
+	export enum On_demand_promotionProduct_type { any = 'any', buy = 'buy', buy_episode = 'buy_episode', rent = 'rent', rent_episode = 'rent_episode', subscribe = 'subscribe' }
 
-	export enum On_demand_promotionStream_period { '1_week' = 0, '1_year' = 1, '24_hour' = 2, '30_days' = 3, '3_month' = 4, '48_hour' = 5, '6_month' = 6, '72_hour' = 7 }
+	export enum On_demand_promotionStream_period { '1_week' = '1_week', '1_year' = '1_year', '24_hour' = '24_hour', '30_days' = '30_days', '3_month' = '3_month', '48_hour' = '48_hour', '6_month' = '6_month', '72_hour' = '72_hour' }
 
-	export enum On_demand_promotionType { batch = 0, batch_prefix = 1, single = 2 }
+	export enum On_demand_promotionType { batch = 'batch', batch_prefix = 'batch_prefix', single = 'single' }
 
 	export interface On_demand_promotion_code {
 
@@ -9670,7 +9670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum On_demand_videoType { extra = 0, main = 1, trailer = 2 }
+	export enum On_demand_videoType { extra = 'extra', main = 'main', trailer = 'trailer' }
 
 	export interface Play {
 
@@ -9852,9 +9852,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayProgressiveType { source = 0, 'video/mp4' = 1, 'video/webm' = 2, 'vp6/x-video' = 3 }
+	export enum PlayProgressiveType { source = 'source', 'video/mp4' = 'video/mp4', 'video/webm' = 'video/webm', 'vp6/x-video' = 'vp6/x-video' }
 
-	export enum PlayStatus { playable = 0, purchase_required = 1, restricted = 2, unavailable = 3 }
+	export enum PlayStatus { playable = 'playable', purchase_required = 'purchase_required', restricted = 'restricted', unavailable = 'unavailable' }
 
 	export interface Portfolio {
 
@@ -10047,7 +10047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortfolioSort { alphabetical = 0, clips = 1, modified = 2, recent = 3 }
+	export enum PortfolioSort { alphabetical = 'alphabetical', clips = 'clips', modified = 'modified', recent = 'recent' }
 
 	export interface Presets {
 
@@ -10404,7 +10404,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PresetsSettingsOutroType { link = 0, 'no idea' = 1, text = 2, uploaded_clips = 3, uploaded_videos = 4 }
+	export enum PresetsSettingsOutroType { link = 'link', 'no idea' = 'no idea', text = 'text', uploaded_clips = 'uploaded_clips', uploaded_videos = 'uploaded_videos' }
 
 	export interface Text_track {
 
@@ -10541,7 +10541,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Text_trackType { captions = 0, subtitles = 1 }
+	export enum Text_trackType { captions = 'captions', subtitles = 'subtitles' }
 
 	export interface Upload_attempt {
 
@@ -14284,21 +14284,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Get_categoriesDirection { asc = 0, desc = 1 }
+	export enum Get_categoriesDirection { asc = 'asc', desc = 'desc' }
 
-	export enum Get_categoriesSort { last_video_featured_time = 0, name = 1 }
+	export enum Get_categoriesSort { last_video_featured_time = 'last_video_featured_time', name = 'name' }
 
-	export enum Get_category_channelsSort { alphabetical = 0, date = 1, followers = 2, videos = 3 }
+	export enum Get_category_channelsSort { alphabetical = 'alphabetical', date = 'date', followers = 'followers', videos = 'videos' }
 
-	export enum Get_category_groupsSort { alphabetical = 0, date = 1, members = 2, videos = 3 }
+	export enum Get_category_groupsSort { alphabetical = 'alphabetical', date = 'date', members = 'members', videos = 'videos' }
 
-	export enum Get_category_videosFilter { conditional_featured = 0, embeddable = 1 }
+	export enum Get_category_videosFilter { conditional_featured = 'conditional_featured', embeddable = 'embeddable' }
 
-	export enum Get_category_videosSort { alphabetical = 0, comments = 1, date = 2, duration = 3, featured = 4, likes = 5, plays = 6, relevant = 7 }
+	export enum Get_category_videosSort { alphabetical = 'alphabetical', comments = 'comments', date = 'date', duration = 'duration', featured = 'featured', likes = 'likes', plays = 'plays', relevant = 'relevant' }
 
-	export enum Get_channelsFilter { featured = 0 }
+	export enum Get_channelsFilter { featured = 'featured' }
 
-	export enum Get_channelsSort { alphabetical = 0, date = 1, followers = 2, relevant = 3, videos = 4 }
+	export enum Get_channelsSort { alphabetical = 'alphabetical', date = 'date', followers = 'followers', relevant = 'relevant', videos = 'videos' }
 
 	export interface Add_channel_categoriesPutBody {
 
@@ -14316,7 +14316,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_channel_moderatorsSort { alphabetical = 0, date = 1 }
+	export enum Get_channel_moderatorsSort { alphabetical = 'alphabetical', date = 'date' }
 
 	export interface Replace_channel_moderatorsPatchBody {
 
@@ -14364,11 +14364,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_channel_subscribersFilter { moderators = 0 }
+	export enum Get_channel_subscribersFilter { moderators = 'moderators' }
 
-	export enum Get_channel_videosFilter { embeddable = 0 }
+	export enum Get_channel_videosFilter { embeddable = 'embeddable' }
 
-	export enum Get_channel_videosSort { added = 0, alphabetical = 1, comments = 2, date = 3, default = 4, duration = 5, likes = 6, manual = 7, modified_time = 8, plays = 9 }
+	export enum Get_channel_videosSort { added = 'added', alphabetical = 'alphabetical', comments = 'comments', date = 'date', default = 'default', duration = 'duration', likes = 'likes', manual = 'manual', modified_time = 'modified_time', plays = 'plays' }
 
 	export interface Add_videos_to_channelPutBody {
 
@@ -14393,13 +14393,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_group_videosSort { alphabetical = 0, comments = 1, date = 2, duration = 3, likes = 4, plays = 5 }
+	export enum Get_group_videosSort { alphabetical = 'alphabetical', comments = 'comments', date = 'date', duration = 'duration', likes = 'likes', plays = 'plays' }
 
-	export enum Get_languagesFilter { texttracks = 0 }
+	export enum Get_languagesFilter { texttracks = 'texttracks' }
 
-	export enum Get_albums_alt1Sort { alphabetical = 0, date = 1, duration = 2, videos = 3 }
+	export enum Get_albums_alt1Sort { alphabetical = 'alphabetical', date = 'date', duration = 'duration', videos = 'videos' }
 
-	export enum Get_album_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, default = 3, duration = 4, likes = 5, manual = 6, modified_time = 7, plays = 8 }
+	export enum Get_album_videos_alt1Sort { alphabetical = 'alphabetical', comments = 'comments', date = 'date', default = 'default', duration = 'duration', likes = 'likes', manual = 'manual', modified_time = 'modified_time', plays = 'plays' }
 
 	export interface Replace_videos_in_album_alt1PutBody {
 
@@ -14441,13 +14441,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_category_subscriptions_alt1Sort { alphabetical = 0, date = 1, name = 2 }
+	export enum Get_category_subscriptions_alt1Sort { alphabetical = 'alphabetical', date = 'date', name = 'name' }
 
-	export enum Get_channel_subscriptions_alt1Filter { moderated = 0 }
+	export enum Get_channel_subscriptions_alt1Filter { moderated = 'moderated' }
 
-	export enum Get_feed_alt1Type { appears = 0, category_featured = 1, channel = 2, facebook_feed = 3, following = 4, group = 5, likes = 6, ondemand_publish = 7, share = 8, tagged_with = 9, twitter_timeline = 10, uploads = 11 }
+	export enum Get_feed_alt1Type { appears = 'appears', category_featured = 'category_featured', channel = 'channel', facebook_feed = 'facebook_feed', following = 'following', group = 'group', likes = 'likes', ondemand_publish = 'ondemand_publish', share = 'share', tagged_with = 'tagged_with', twitter_timeline = 'twitter_timeline', uploads = 'uploads' }
 
-	export enum Get_user_following_alt1Filter { online = 0 }
+	export enum Get_user_following_alt1Filter { online = 'online' }
 
 	export interface Follow_users_alt1PostBody {
 
@@ -14465,7 +14465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_user_vods_alt1Sort { added = 0, alphabetical = 1, date = 2, modified_time = 3, name = 4, 'publish.time' = 5, rating = 6 }
+	export enum Get_user_vods_alt1Sort { added = 'added', alphabetical = 'alphabetical', date = 'date', modified_time = 'modified_time', name = 'name', 'publish.time' = 'publish.time', rating = 'rating' }
 
 	export interface Create_vod_alt1PostBody {
 
@@ -14584,7 +14584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_vod_alt1PostBodyAccepted_currencies { AUD = 0, CAD = 1, CHF = 2, DKK = 3, EUR = 4, GBP = 5, JPY = 6, KRW = 7, NOK = 8, PLN = 9, SEK = 10, USD = 11 }
+	export enum Create_vod_alt1PostBodyAccepted_currencies { AUD = 'AUD', CAD = 'CAD', CHF = 'CHF', DKK = 'DKK', EUR = 'EUR', GBP = 'GBP', JPY = 'JPY', KRW = 'KRW', NOK = 'NOK', PLN = 'PLN', SEK = 'SEK', USD = 'USD' }
 
 	export interface Create_vod_alt1PostBodyBuy {
 
@@ -14784,7 +14784,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Create_vod_alt1PostBodyEpisodesRentPeriod { '1 week' = 0, '1 year' = 1, '24 hour' = 2, '3 month' = 3, '30 day' = 4, '48 hour' = 5, '6 month' = 6, '72 hour' = 7 }
+	export enum Create_vod_alt1PostBodyEpisodesRentPeriod { '1 week' = '1 week', '1 year' = '1 year', '24 hour' = '24 hour', '3 month' = '3 month', '30 day' = '30 day', '48 hour' = '48 hour', '6 month' = '6 month', '72 hour' = '72 hour' }
 
 	export interface Create_vod_alt1PostBodyEpisodesRentPrice {
 
@@ -14968,13 +14968,13 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_vod_purchasesFilter { all = 0, expiring_soon = 1, film = 2, important = 3, purchased = 4, rented = 5, series = 6, subscription = 7, unwatched = 8, watched = 9 }
+	export enum Get_vod_purchasesFilter { all = 'all', expiring_soon = 'expiring_soon', film = 'film', important = 'important', purchased = 'purchased', rented = 'rented', series = 'series', subscription = 'subscription', unwatched = 'unwatched', watched = 'watched' }
 
-	export enum Get_vod_purchasesSort { added = 0, alphabetical = 1, date = 2, name = 3, purchase_time = 4, rating = 5, release_date = 6 }
+	export enum Get_vod_purchasesSort { added = 'added', alphabetical = 'alphabetical', date = 'date', name = 'name', purchase_time = 'purchase_time', rating = 'rating', release_date = 'release_date' }
 
-	export enum Get_portfolio_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, default = 3, likes = 4, manual = 5, plays = 6 }
+	export enum Get_portfolio_videos_alt1Sort { alphabetical = 'alphabetical', comments = 'comments', date = 'date', default = 'default', likes = 'likes', manual = 'manual', plays = 'plays' }
 
-	export enum Get_projects_alt1Sort { date = 0, default = 1, modified_time = 2, name = 3 }
+	export enum Get_projects_alt1Sort { date = 'date', default = 'default', modified_time = 'modified_time', name = 'name' }
 
 	export interface Create_project_alt1PostBody {
 
@@ -15022,29 +15022,29 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_project_videos_alt1Sort { alphabetical = 0, date = 1, default = 2, duration = 3, last_user_action_event_date = 4 }
+	export enum Get_project_videos_alt1Sort { alphabetical = 'alphabetical', date = 'date', default = 'default', duration = 'duration', last_user_action_event_date = 'last_user_action_event_date' }
 
-	export enum Get_videos_alt1Filter { app_only = 0, embeddable = 1, featured = 2, playable = 3 }
+	export enum Get_videos_alt1Filter { app_only = 'app_only', embeddable = 'embeddable', featured = 'featured', playable = 'playable' }
 
-	export enum Get_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, default = 3, duration = 4, last_user_action_event_date = 5, likes = 6, modified_time = 7, plays = 8 }
+	export enum Get_videos_alt1Sort { alphabetical = 'alphabetical', comments = 'comments', date = 'date', default = 'default', duration = 'duration', last_user_action_event_date = 'last_user_action_event_date', likes = 'likes', modified_time = 'modified_time', plays = 'plays' }
 
-	export enum Get_genre_vodsFilter { country = 0, my_region = 1 }
+	export enum Get_genre_vodsFilter { country = 'country', my_region = 'my_region' }
 
-	export enum Get_genre_vodsSort { alphabetical = 0, date = 1, name = 2, 'publish.time' = 3, videos = 4 }
+	export enum Get_genre_vodsSort { alphabetical = 'alphabetical', date = 'date', name = 'name', 'publish.time' = 'publish.time', videos = 'videos' }
 
-	export enum Get_vod_promotionsFilter { batch = 0, default = 1, single = 2, vip = 3 }
+	export enum Get_vod_promotionsFilter { batch = 'batch', default = 'default', single = 'single', vip = 'vip' }
 
-	export enum Get_vod_seasonsFilter { viewable = 0 }
+	export enum Get_vod_seasonsFilter { viewable = 'viewable' }
 
-	export enum Get_vod_seasonsSort { date = 0, manual = 1 }
+	export enum Get_vod_seasonsSort { date = 'date', manual = 'manual' }
 
-	export enum Get_vod_season_videosSort { date = 0, default = 1, manual = 2, name = 3, purchase_time = 4, release_date = 5 }
+	export enum Get_vod_season_videosSort { date = 'date', default = 'default', manual = 'manual', name = 'name', purchase_time = 'purchase_time', release_date = 'release_date' }
 
-	export enum Get_vod_videosFilter { all = 0, buy = 1, expiring_soon = 2, extra = 3, main = 4, 'main.viewable' = 5, rent = 6, trailer = 7, unwatched = 8, viewable = 9, watched = 10 }
+	export enum Get_vod_videosFilter { all = 'all', buy = 'buy', expiring_soon = 'expiring_soon', extra = 'extra', main = 'main', 'main.viewable' = 'main.viewable', rent = 'rent', trailer = 'trailer', unwatched = 'unwatched', viewable = 'viewable', watched = 'watched' }
 
-	export enum Get_vod_videosSort { date = 0, default = 1, episode = 2, manual = 3, name = 4, purchase_time = 5, release_date = 6 }
+	export enum Get_vod_videosSort { date = 'date', default = 'default', episode = 'episode', manual = 'manual', name = 'name', purchase_time = 'purchase_time', release_date = 'release_date' }
 
-	export enum Get_videos_with_tagSort { created_time = 0, duration = 1, name = 2 }
+	export enum Get_videos_with_tagSort { created_time = 'created_time', duration = 'duration', name = 'name' }
 
 	export interface Replace_videos_in_albumPutBody {
 
@@ -15645,11 +15645,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Search_videosFilter { CC = 0, 'CC-BY' = 1, 'CC-BY-NC' = 2, 'CC-BY-NC-ND' = 3, 'CC-BY-NC-SA' = 4, 'CC-BY-ND' = 5, 'CC-BY-SA' = 6, CC0 = 7, categories = 8, duration = 9, 'in-progress' = 10, minimum_likes = 11, trending = 12, upload_date = 13 }
+	export enum Search_videosFilter { CC = 'CC', 'CC-BY' = 'CC-BY', 'CC-BY-NC' = 'CC-BY-NC', 'CC-BY-NC-ND' = 'CC-BY-NC-ND', 'CC-BY-NC-SA' = 'CC-BY-NC-SA', 'CC-BY-ND' = 'CC-BY-ND', 'CC-BY-SA' = 'CC-BY-SA', CC0 = 'CC0', categories = 'categories', duration = 'duration', 'in-progress' = 'in-progress', minimum_likes = 'minimum_likes', trending = 'trending', upload_date = 'upload_date' }
 
-	export enum Search_videosSort { alphabetical = 0, comments = 1, date = 2, duration = 3, likes = 4, plays = 5, relevant = 6 }
+	export enum Search_videosSort { alphabetical = 'alphabetical', comments = 'comments', date = 'date', duration = 'duration', likes = 'likes', plays = 'plays', relevant = 'relevant' }
 
-	export enum Get_related_videosFilter { related = 0 }
+	export enum Get_related_videosFilter { related = 'related' }
 
 }
 

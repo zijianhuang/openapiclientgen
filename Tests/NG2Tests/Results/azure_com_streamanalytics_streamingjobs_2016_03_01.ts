@@ -5,11 +5,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Controls certain runtime behaviors of the streaming job. */
-	export enum CompatibilityLevel { _1_0 = 0 }
+	export enum CompatibilityLevel { _1_0 = '1.0' }
 
 
 	/** Indicates the policy to apply to events that arrive out of order in the input event stream. */
-	export enum EventsOutOfOrderPolicy { Adjust = 0, Drop = 1 }
+	export enum EventsOutOfOrderPolicy { Adjust = 'Adjust', Drop = 'Drop' }
 
 
 	/** A Stream Analytics REST API operation */
@@ -65,11 +65,11 @@ export namespace MyNS {
 
 
 	/** Indicates the policy to apply to events that arrive at the output and cannot be written to the external storage due to being malformed (missing column values, column values of wrong type or size). */
-	export enum OutputErrorPolicy { Stop = 0, Drop = 1 }
+	export enum OutputErrorPolicy { Stop = 'Stop', Drop = 'Drop' }
 
 
 	/** Value may be JobStartTime, CustomTime, or LastOutputEventTime to indicate whether the starting point of the output event stream should start whenever the job is started, start at a custom user time stamp specified via the outputStartTime property, or start from the last event output time. */
-	export enum OutputStartMode { JobStartTime = 0, CustomTime = 1, LastOutputEventTime = 2 }
+	export enum OutputStartMode { JobStartTime = 'JobStartTime', CustomTime = 'CustomTime', LastOutputEventTime = 'LastOutputEventTime' }
 
 
 	/** The base resource model definition. */
@@ -141,7 +141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { Standard = 0 }
+	export enum SkuName { Standard = 'Standard' }
 
 
 	/** Parameters supplied to the Start Streaming Job operation. */

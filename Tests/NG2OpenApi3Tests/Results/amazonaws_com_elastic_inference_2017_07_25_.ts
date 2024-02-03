@@ -37,7 +37,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationType { region = 0, 'availability-zone' = 1, 'availability-zone-id' = 2 }
+	export enum LocationType { region = 'region', 'availability-zone' = 'availability-zone', 'availability-zone-id' = 'availability-zone-id' }
 
 	export interface BadRequestException {
 	}

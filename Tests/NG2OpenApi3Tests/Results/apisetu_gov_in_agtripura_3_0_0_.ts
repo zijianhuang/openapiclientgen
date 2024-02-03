@@ -1309,7 +1309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PecerPostBodyFormat { pdf = 0 }
+	export enum PecerPostBodyFormat { pdf = 'pdf' }
 
 	export interface PrfndPostBody {
 		certificateParameters?: PrfndPostBodyCertificateParameters;

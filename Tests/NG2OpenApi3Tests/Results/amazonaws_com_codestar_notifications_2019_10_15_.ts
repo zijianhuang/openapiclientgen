@@ -209,11 +209,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetStatus { PENDING = 0, ACTIVE = 1, UNREACHABLE = 2, INACTIVE = 3, DEACTIVATED = 4 }
+	export enum TargetStatus { PENDING = 'PENDING', ACTIVE = 'ACTIVE', UNREACHABLE = 'UNREACHABLE', INACTIVE = 'INACTIVE', DEACTIVATED = 'DEACTIVATED' }
 
-	export enum DetailType { BASIC = 0, FULL = 1 }
+	export enum DetailType { BASIC = 'BASIC', FULL = 'FULL' }
 
-	export enum NotificationRuleStatus { ENABLED = 0, DISABLED = 1 }
+	export enum NotificationRuleStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface Tags {
 	}
@@ -277,7 +277,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListEventTypesFilterName { RESOURCE_TYPE = 0, SERVICE_NAME = 1 }
+	export enum ListEventTypesFilterName { RESOURCE_TYPE = 'RESOURCE_TYPE', SERVICE_NAME = 'SERVICE_NAME' }
 
 	export interface InvalidNextTokenException {
 	}
@@ -351,7 +351,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListNotificationRulesFilterName { EVENT_TYPE_ID = 0, CREATED_BY = 1, RESOURCE = 2, TARGET_ADDRESS = 3 }
+	export enum ListNotificationRulesFilterName { EVENT_TYPE_ID = 'EVENT_TYPE_ID', CREATED_BY = 'CREATED_BY', RESOURCE = 'RESOURCE', TARGET_ADDRESS = 'TARGET_ADDRESS' }
 
 	export interface ListTagsForResourceResult {
 		Tags?: Tags;
@@ -406,7 +406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ListTargetsFilterName { TARGET_TYPE = 0, TARGET_ADDRESS = 1, TARGET_STATUS = 2 }
+	export enum ListTargetsFilterName { TARGET_TYPE = 'TARGET_TYPE', TARGET_ADDRESS = 'TARGET_ADDRESS', TARGET_STATUS = 'TARGET_STATUS' }
 
 	export interface SubscribeResult {
 		Arn?: string;

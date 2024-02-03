@@ -277,9 +277,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterCreatePropertiesOsType { Windows = 0, Linux = 1 }
+	export enum ClusterCreatePropertiesOsType { Windows = 'Windows', Linux = 'Linux' }
 
-	export enum ClusterCreatePropertiesTier { Standard = 0, Premium = 1 }
+	export enum ClusterCreatePropertiesTier { Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The cluster definition. */
@@ -511,7 +511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterGetPropertiesProvisioningState { InProgress = 0, Failed = 1, Succeeded = 2, Canceled = 3, Deleting = 4 }
+	export enum ClusterGetPropertiesProvisioningState { InProgress = 'InProgress', Failed = 'Failed', Succeeded = 'Succeeded', Canceled = 'Canceled', Deleting = 'Deleting' }
 
 
 	/** Identity for the cluster. */
@@ -555,7 +555,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterIdentityType { SystemAssigned = 0, UserAssigned = 1, 'SystemAssigned, UserAssigned' = 2, None = 3 }
+	export enum ClusterIdentityType { SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned', 'SystemAssigned, UserAssigned' = 'SystemAssigned, UserAssigned', None = 'None' }
 
 	export interface ClusterIdentityUserAssignedIdentities {
 
@@ -1047,7 +1047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskEncryptionPropertiesEncryptionAlgorithm { 'RSA-OAEP' = 0, 'RSA-OAEP-256' = 1, RSA1_5 = 2 }
+	export enum DiskEncryptionPropertiesEncryptionAlgorithm { 'RSA-OAEP' = 'RSA-OAEP', 'RSA-OAEP-256' = 'RSA-OAEP-256', RSA1_5 = 'RSA1_5' }
 
 
 	/** The parameters for the script actions to execute on a running cluster. */
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationResourceStatus { InProgress = 0, Succeeded = 1, Failed = 2 }
+	export enum OperationResourceStatus { InProgress = 'InProgress', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** The Linux operation systems profile. */
@@ -1365,7 +1365,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityProfileDirectoryType { ActiveDirectory = 0 }
+	export enum SecurityProfileDirectoryType { ActiveDirectory = 'ActiveDirectory' }
 
 
 	/** The list of SSH public keys. */
@@ -1718,7 +1718,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Clusters_ResizeRoleName { workernode = 0 }
+	export enum Clusters_ResizeRoleName { workernode = 'workernode' }
 
 }
 

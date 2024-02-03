@@ -176,7 +176,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseBlobAuditingPolicyPropertiesState { Enabled = 0, Disabled = 1 }
+	export enum DatabaseBlobAuditingPolicyPropertiesState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** A list of database auditing settings. */
@@ -891,7 +891,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ServerBlobAuditingPolicies_GetBlobAuditingPolicyName { default = 0 }
+	export enum ServerBlobAuditingPolicies_GetBlobAuditingPolicyName { default = 'default' }
 
 }
 

@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOrgpolicyV2CustomConstraintActionType { ACTION_TYPE_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GoogleCloudOrgpolicyV2CustomConstraintActionType { ACTION_TYPE_UNSPECIFIED = 'ACTION_TYPE_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Defines an organization policy which is used to specify constraints for configurations of Google Cloud resources. */
@@ -338,7 +338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicysimulatorV1ReplayConfigLogSource { LOG_SOURCE_UNSPECIFIED = 0, RECENT_ACCESSES = 1 }
+	export enum GoogleCloudPolicysimulatorV1ReplayConfigLogSource { LOG_SOURCE_UNSPECIFIED = 'LOG_SOURCE_UNSPECIFIED', RECENT_ACCESSES = 'RECENT_ACCESSES' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */
@@ -422,7 +422,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -534,7 +534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicysimulatorV1ReplayState { STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum GoogleCloudPolicysimulatorV1ReplayState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Metadata about a Replay operation. */
@@ -584,7 +584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicysimulatorV1alphaAccessStateDiffAccessChange { ACCESS_CHANGE_TYPE_UNSPECIFIED = 0, NO_CHANGE = 1, UNKNOWN_CHANGE = 2, ACCESS_REVOKED = 3, ACCESS_GAINED = 4, ACCESS_MAYBE_REVOKED = 5, ACCESS_MAYBE_GAINED = 6 }
+	export enum GoogleCloudPolicysimulatorV1alphaAccessStateDiffAccessChange { ACCESS_CHANGE_TYPE_UNSPECIFIED = 'ACCESS_CHANGE_TYPE_UNSPECIFIED', NO_CHANGE = 'NO_CHANGE', UNKNOWN_CHANGE = 'UNKNOWN_CHANGE', ACCESS_REVOKED = 'ACCESS_REVOKED', ACCESS_GAINED = 'ACCESS_GAINED', ACCESS_MAYBE_REVOKED = 'ACCESS_MAYBE_REVOKED', ACCESS_MAYBE_GAINED = 'ACCESS_MAYBE_GAINED' }
 
 
 	/** Details about how a set of policies, listed in ExplainedPolicy, resulted in a certain AccessState when replaying an access tuple. */
@@ -613,7 +613,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicysimulatorV1alphaExplainedAccessAccessState { ACCESS_STATE_UNSPECIFIED = 0, GRANTED = 1, NOT_GRANTED = 2, UNKNOWN_CONDITIONAL = 3, UNKNOWN_INFO_DENIED = 4 }
+	export enum GoogleCloudPolicysimulatorV1alphaExplainedAccessAccessState { ACCESS_STATE_UNSPECIFIED = 'ACCESS_STATE_UNSPECIFIED', GRANTED = 'GRANTED', NOT_GRANTED = 'NOT_GRANTED', UNKNOWN_CONDITIONAL = 'UNKNOWN_CONDITIONAL', UNKNOWN_INFO_DENIED = 'UNKNOWN_INFO_DENIED' }
 
 
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -774,11 +774,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicysimulatorV1alphaBindingExplanationAnnotatedMembershipMembership { MEMBERSHIP_UNSPECIFIED = 0, MEMBERSHIP_INCLUDED = 1, MEMBERSHIP_NOT_INCLUDED = 2, MEMBERSHIP_UNKNOWN_INFO_DENIED = 3, MEMBERSHIP_UNKNOWN_UNSUPPORTED = 4 }
+	export enum GoogleCloudPolicysimulatorV1alphaBindingExplanationAnnotatedMembershipMembership { MEMBERSHIP_UNSPECIFIED = 'MEMBERSHIP_UNSPECIFIED', MEMBERSHIP_INCLUDED = 'MEMBERSHIP_INCLUDED', MEMBERSHIP_NOT_INCLUDED = 'MEMBERSHIP_NOT_INCLUDED', MEMBERSHIP_UNKNOWN_INFO_DENIED = 'MEMBERSHIP_UNKNOWN_INFO_DENIED', MEMBERSHIP_UNKNOWN_UNSUPPORTED = 'MEMBERSHIP_UNKNOWN_UNSUPPORTED' }
 
-	export enum GoogleCloudPolicysimulatorV1alphaBindingExplanationAnnotatedMembershipRelevance { HEURISTIC_RELEVANCE_UNSPECIFIED = 0, NORMAL = 1, HIGH = 2 }
+	export enum GoogleCloudPolicysimulatorV1alphaBindingExplanationAnnotatedMembershipRelevance { HEURISTIC_RELEVANCE_UNSPECIFIED = 'HEURISTIC_RELEVANCE_UNSPECIFIED', NORMAL = 'NORMAL', HIGH = 'HIGH' }
 
-	export enum GoogleCloudPolicysimulatorV1alphaBindingExplanationRolePermission { ROLE_PERMISSION_UNSPECIFIED = 0, ROLE_PERMISSION_INCLUDED = 1, ROLE_PERMISSION_NOT_INCLUDED = 2, ROLE_PERMISSION_UNKNOWN_INFO_DENIED = 3 }
+	export enum GoogleCloudPolicysimulatorV1alphaBindingExplanationRolePermission { ROLE_PERMISSION_UNSPECIFIED = 'ROLE_PERMISSION_UNSPECIFIED', ROLE_PERMISSION_INCLUDED = 'ROLE_PERMISSION_INCLUDED', ROLE_PERMISSION_NOT_INCLUDED = 'ROLE_PERMISSION_NOT_INCLUDED', ROLE_PERMISSION_UNKNOWN_INFO_DENIED = 'ROLE_PERMISSION_UNKNOWN_INFO_DENIED' }
 
 
 	/** Information about the principal, resource, and permission to check. */
@@ -871,7 +871,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudPolicysimulatorV1alphaGenerateOrgPolicyViolationsPreviewOperationMetadataState { PREVIEW_STATE_UNSPECIFIED = 0, PREVIEW_PENDING = 1, PREVIEW_RUNNING = 2, PREVIEW_SUCCEEDED = 3, PREVIEW_FAILED = 4 }
+	export enum GoogleCloudPolicysimulatorV1alphaGenerateOrgPolicyViolationsPreviewOperationMetadataState { PREVIEW_STATE_UNSPECIFIED = 'PREVIEW_STATE_UNSPECIFIED', PREVIEW_PENDING = 'PREVIEW_PENDING', PREVIEW_RUNNING = 'PREVIEW_RUNNING', PREVIEW_SUCCEEDED = 'PREVIEW_SUCCEEDED', PREVIEW_FAILED = 'PREVIEW_FAILED' }
 
 
 	/** ListOrgPolicyViolationsPreviewsResponse is the response message for OrgPolicyViolationsPreviewService.ListOrgPolicyViolationsPreviews. */

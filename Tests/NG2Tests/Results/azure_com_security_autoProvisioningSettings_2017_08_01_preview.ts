@@ -47,7 +47,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoProvisioningSettingPropertiesAutoProvision { On = 0, Off = 1 }
+	export enum AutoProvisioningSettingPropertiesAutoProvision { On = 'On', Off = 'Off' }
 
 
 	/** List of all the auto provisioning settings response */

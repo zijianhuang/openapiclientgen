@@ -119,15 +119,15 @@ export namespace MyNS {
 
 	}
 
-	export enum AssetAssetStatus { Draft = 0, Registered = 1, Disposed = 2 }
+	export enum AssetAssetStatus { Draft = 'Draft', Registered = 'Registered', Disposed = 'Disposed' }
 
 
 	/** See Asset Status Codes. */
-	export enum AssetStatus { Draft = 0, Registered = 1, Disposed = 2 }
+	export enum AssetStatus { Draft = 'Draft', Registered = 'Registered', Disposed = 'Disposed' }
 
 
 	/** See Asset Status Codes. */
-	export enum AssetStatusQueryParam { DRAFT = 0, REGISTERED = 1, DISPOSED = 2 }
+	export enum AssetStatusQueryParam { DRAFT = 'DRAFT', REGISTERED = 'REGISTERED', DISPOSED = 'DISPOSED' }
 
 	export interface AssetType {
 
@@ -327,11 +327,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BookDepreciationSettingAveragingMethod { FullMonth = 0, ActualDays = 1 }
+	export enum BookDepreciationSettingAveragingMethod { FullMonth = 'FullMonth', ActualDays = 'ActualDays' }
 
-	export enum BookDepreciationSettingDepreciationCalculationMethod { Rate = 0, Life = 1, None = 2 }
+	export enum BookDepreciationSettingDepreciationCalculationMethod { Rate = 'Rate', Life = 'Life', None = 'None' }
 
-	export enum BookDepreciationSettingDepreciationMethod { NoDepreciation = 0, StraightLine = 1, DiminishingValue100 = 2, DiminishingValue150 = 3, DiminishingValue200 = 4, FullDepreciation = 5 }
+	export enum BookDepreciationSettingDepreciationMethod { NoDepreciation = 'NoDepreciation', StraightLine = 'StraightLine', DiminishingValue100 = 'DiminishingValue100', DiminishingValue150 = 'DiminishingValue150', DiminishingValue200 = 'DiminishingValue200', FullDepreciation = 'FullDepreciation' }
 
 	export interface Error {
 
@@ -631,9 +631,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetAssetsOrderBy { AssetType = 0, AssetName = 1, AssetNumber = 2, PurchaseDate = 3, PurchasePrice = 4, DisposalDate = 5, DisposalPrice = 6 }
+	export enum GetAssetsOrderBy { AssetType = 'AssetType', AssetName = 'AssetName', AssetNumber = 'AssetNumber', PurchaseDate = 'PurchaseDate', PurchasePrice = 'PurchasePrice', DisposalDate = 'DisposalDate', DisposalPrice = 'DisposalPrice' }
 
-	export enum GetAssetsSortDirection { asc = 0, desc = 1 }
+	export enum GetAssetsSortDirection { asc = 'asc', desc = 'desc' }
 
 }
 

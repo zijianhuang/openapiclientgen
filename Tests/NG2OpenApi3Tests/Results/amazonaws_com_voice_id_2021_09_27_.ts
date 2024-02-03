@@ -190,7 +190,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { ACTIVE = 0, PENDING = 1, SUSPENDED = 2 }
+	export enum DomainStatus { ACTIVE = 'ACTIVE', PENDING = 'PENDING', SUSPENDED = 'SUSPENDED' }
 
 
 	/** The configuration containing information about the customer managed key used for encrypting customer data. */
@@ -236,7 +236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerSideEncryptionUpdateStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
+	export enum ServerSideEncryptionUpdateStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** Details of the watchlists in a domain. */
@@ -651,7 +651,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FraudsterRegistrationJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERRORS = 3, FAILED = 4 }
+	export enum FraudsterRegistrationJobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', COMPLETED_WITH_ERRORS = 'COMPLETED_WITH_ERRORS', FAILED = 'FAILED' }
 
 
 	/** The configuration containing output file information for a batch job. */
@@ -698,7 +698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DuplicateRegistrationAction { SKIP = 0, REGISTER_AS_NEW = 1 }
+	export enum DuplicateRegistrationAction { SKIP = 'SKIP', REGISTER_AS_NEW = 'REGISTER_AS_NEW' }
 
 	export interface DescribeFraudsterRegistrationJobRequest {
 
@@ -770,7 +770,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpeakerStatus { ENROLLED = 0, EXPIRED = 1, OPTED_OUT = 2, PENDING = 3 }
+	export enum SpeakerStatus { ENROLLED = 'ENROLLED', EXPIRED = 'EXPIRED', OPTED_OUT = 'OPTED_OUT', PENDING = 'PENDING' }
 
 	export interface DescribeSpeakerRequest {
 
@@ -865,7 +865,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExistingEnrollmentAction { SKIP = 0, OVERWRITE = 1 }
+	export enum ExistingEnrollmentAction { SKIP = 'SKIP', OVERWRITE = 'OVERWRITE' }
 
 
 	/** The fraud detection configuration to be used during the batch speaker enrollment job. */
@@ -888,7 +888,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FraudDetectionAction { IGNORE = 0, FAIL = 1 }
+	export enum FraudDetectionAction { IGNORE = 'IGNORE', FAIL = 'FAIL' }
 
 	export interface DescribeSpeakerEnrollmentJobRequest {
 
@@ -1074,7 +1074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationDecision { ACCEPT = 0, REJECT = 1, NOT_ENOUGH_SPEECH = 2, SPEAKER_NOT_ENROLLED = 3, SPEAKER_OPTED_OUT = 4, SPEAKER_ID_NOT_PROVIDED = 5, SPEAKER_EXPIRED = 6 }
+	export enum AuthenticationDecision { ACCEPT = 'ACCEPT', REJECT = 'REJECT', NOT_ENOUGH_SPEECH = 'NOT_ENOUGH_SPEECH', SPEAKER_NOT_ENROLLED = 'SPEAKER_NOT_ENROLLED', SPEAKER_OPTED_OUT = 'SPEAKER_OPTED_OUT', SPEAKER_ID_NOT_PROVIDED = 'SPEAKER_ID_NOT_PROVIDED', SPEAKER_EXPIRED = 'SPEAKER_EXPIRED' }
 
 
 	/** The fraud detection result produced by Voice ID, processed against the current session state and streamed audio of the speaker. */
@@ -1125,9 +1125,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FraudDetectionDecision { HIGH_RISK = 0, LOW_RISK = 1, NOT_ENOUGH_SPEECH = 2 }
+	export enum FraudDetectionDecision { HIGH_RISK = 'HIGH_RISK', LOW_RISK = 'LOW_RISK', NOT_ENOUGH_SPEECH = 'NOT_ENOUGH_SPEECH' }
 
-	export enum FraudDetectionReason { KNOWN_FRAUDSTER = 0, VOICE_SPOOFING = 1 }
+	export enum FraudDetectionReason { KNOWN_FRAUDSTER = 'KNOWN_FRAUDSTER', VOICE_SPOOFING = 'VOICE_SPOOFING' }
 
 
 	/** Details regarding various fraud risk analyses performed against the current session state and streamed audio of the speaker. */
@@ -1194,7 +1194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamingStatus { PENDING_CONFIGURATION = 0, ONGOING = 1, ENDED = 2 }
+	export enum StreamingStatus { PENDING_CONFIGURATION = 'PENDING_CONFIGURATION', ONGOING = 'ONGOING', ENDED = 'ENDED' }
 
 	export interface EvaluateSessionRequest {
 
@@ -1945,7 +1945,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SpeakerEnrollmentJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERRORS = 3, FAILED = 4 }
+	export enum SpeakerEnrollmentJobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', COMPLETED_WITH_ERRORS = 'COMPLETED_WITH_ERRORS', FAILED = 'FAILED' }
 
 	@Injectable()
 	export class MyClient {
@@ -2226,63 +2226,63 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateFraudsterX_Amz_Target { 'VoiceID.AssociateFraudster' = 0 }
+	export enum AssociateFraudsterX_Amz_Target { 'VoiceID.AssociateFraudster' = 'VoiceID.AssociateFraudster' }
 
-	export enum CreateDomainX_Amz_Target { 'VoiceID.CreateDomain' = 0 }
+	export enum CreateDomainX_Amz_Target { 'VoiceID.CreateDomain' = 'VoiceID.CreateDomain' }
 
-	export enum CreateWatchlistX_Amz_Target { 'VoiceID.CreateWatchlist' = 0 }
+	export enum CreateWatchlistX_Amz_Target { 'VoiceID.CreateWatchlist' = 'VoiceID.CreateWatchlist' }
 
-	export enum DeleteDomainX_Amz_Target { 'VoiceID.DeleteDomain' = 0 }
+	export enum DeleteDomainX_Amz_Target { 'VoiceID.DeleteDomain' = 'VoiceID.DeleteDomain' }
 
-	export enum DeleteFraudsterX_Amz_Target { 'VoiceID.DeleteFraudster' = 0 }
+	export enum DeleteFraudsterX_Amz_Target { 'VoiceID.DeleteFraudster' = 'VoiceID.DeleteFraudster' }
 
-	export enum DeleteSpeakerX_Amz_Target { 'VoiceID.DeleteSpeaker' = 0 }
+	export enum DeleteSpeakerX_Amz_Target { 'VoiceID.DeleteSpeaker' = 'VoiceID.DeleteSpeaker' }
 
-	export enum DeleteWatchlistX_Amz_Target { 'VoiceID.DeleteWatchlist' = 0 }
+	export enum DeleteWatchlistX_Amz_Target { 'VoiceID.DeleteWatchlist' = 'VoiceID.DeleteWatchlist' }
 
-	export enum DescribeDomainX_Amz_Target { 'VoiceID.DescribeDomain' = 0 }
+	export enum DescribeDomainX_Amz_Target { 'VoiceID.DescribeDomain' = 'VoiceID.DescribeDomain' }
 
-	export enum DescribeFraudsterX_Amz_Target { 'VoiceID.DescribeFraudster' = 0 }
+	export enum DescribeFraudsterX_Amz_Target { 'VoiceID.DescribeFraudster' = 'VoiceID.DescribeFraudster' }
 
-	export enum DescribeFraudsterRegistrationJobX_Amz_Target { 'VoiceID.DescribeFraudsterRegistrationJob' = 0 }
+	export enum DescribeFraudsterRegistrationJobX_Amz_Target { 'VoiceID.DescribeFraudsterRegistrationJob' = 'VoiceID.DescribeFraudsterRegistrationJob' }
 
-	export enum DescribeSpeakerX_Amz_Target { 'VoiceID.DescribeSpeaker' = 0 }
+	export enum DescribeSpeakerX_Amz_Target { 'VoiceID.DescribeSpeaker' = 'VoiceID.DescribeSpeaker' }
 
-	export enum DescribeSpeakerEnrollmentJobX_Amz_Target { 'VoiceID.DescribeSpeakerEnrollmentJob' = 0 }
+	export enum DescribeSpeakerEnrollmentJobX_Amz_Target { 'VoiceID.DescribeSpeakerEnrollmentJob' = 'VoiceID.DescribeSpeakerEnrollmentJob' }
 
-	export enum DescribeWatchlistX_Amz_Target { 'VoiceID.DescribeWatchlist' = 0 }
+	export enum DescribeWatchlistX_Amz_Target { 'VoiceID.DescribeWatchlist' = 'VoiceID.DescribeWatchlist' }
 
-	export enum DisassociateFraudsterX_Amz_Target { 'VoiceID.DisassociateFraudster' = 0 }
+	export enum DisassociateFraudsterX_Amz_Target { 'VoiceID.DisassociateFraudster' = 'VoiceID.DisassociateFraudster' }
 
-	export enum EvaluateSessionX_Amz_Target { 'VoiceID.EvaluateSession' = 0 }
+	export enum EvaluateSessionX_Amz_Target { 'VoiceID.EvaluateSession' = 'VoiceID.EvaluateSession' }
 
-	export enum ListDomainsX_Amz_Target { 'VoiceID.ListDomains' = 0 }
+	export enum ListDomainsX_Amz_Target { 'VoiceID.ListDomains' = 'VoiceID.ListDomains' }
 
-	export enum ListFraudsterRegistrationJobsX_Amz_Target { 'VoiceID.ListFraudsterRegistrationJobs' = 0 }
+	export enum ListFraudsterRegistrationJobsX_Amz_Target { 'VoiceID.ListFraudsterRegistrationJobs' = 'VoiceID.ListFraudsterRegistrationJobs' }
 
-	export enum ListFraudstersX_Amz_Target { 'VoiceID.ListFraudsters' = 0 }
+	export enum ListFraudstersX_Amz_Target { 'VoiceID.ListFraudsters' = 'VoiceID.ListFraudsters' }
 
-	export enum ListSpeakerEnrollmentJobsX_Amz_Target { 'VoiceID.ListSpeakerEnrollmentJobs' = 0 }
+	export enum ListSpeakerEnrollmentJobsX_Amz_Target { 'VoiceID.ListSpeakerEnrollmentJobs' = 'VoiceID.ListSpeakerEnrollmentJobs' }
 
-	export enum ListSpeakersX_Amz_Target { 'VoiceID.ListSpeakers' = 0 }
+	export enum ListSpeakersX_Amz_Target { 'VoiceID.ListSpeakers' = 'VoiceID.ListSpeakers' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'VoiceID.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'VoiceID.ListTagsForResource' = 'VoiceID.ListTagsForResource' }
 
-	export enum ListWatchlistsX_Amz_Target { 'VoiceID.ListWatchlists' = 0 }
+	export enum ListWatchlistsX_Amz_Target { 'VoiceID.ListWatchlists' = 'VoiceID.ListWatchlists' }
 
-	export enum OptOutSpeakerX_Amz_Target { 'VoiceID.OptOutSpeaker' = 0 }
+	export enum OptOutSpeakerX_Amz_Target { 'VoiceID.OptOutSpeaker' = 'VoiceID.OptOutSpeaker' }
 
-	export enum StartFraudsterRegistrationJobX_Amz_Target { 'VoiceID.StartFraudsterRegistrationJob' = 0 }
+	export enum StartFraudsterRegistrationJobX_Amz_Target { 'VoiceID.StartFraudsterRegistrationJob' = 'VoiceID.StartFraudsterRegistrationJob' }
 
-	export enum StartSpeakerEnrollmentJobX_Amz_Target { 'VoiceID.StartSpeakerEnrollmentJob' = 0 }
+	export enum StartSpeakerEnrollmentJobX_Amz_Target { 'VoiceID.StartSpeakerEnrollmentJob' = 'VoiceID.StartSpeakerEnrollmentJob' }
 
-	export enum TagResourceX_Amz_Target { 'VoiceID.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'VoiceID.TagResource' = 'VoiceID.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'VoiceID.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'VoiceID.UntagResource' = 'VoiceID.UntagResource' }
 
-	export enum UpdateDomainX_Amz_Target { 'VoiceID.UpdateDomain' = 0 }
+	export enum UpdateDomainX_Amz_Target { 'VoiceID.UpdateDomain' = 'VoiceID.UpdateDomain' }
 
-	export enum UpdateWatchlistX_Amz_Target { 'VoiceID.UpdateWatchlist' = 0 }
+	export enum UpdateWatchlistX_Amz_Target { 'VoiceID.UpdateWatchlist' = 'VoiceID.UpdateWatchlist' }
 
 }
 

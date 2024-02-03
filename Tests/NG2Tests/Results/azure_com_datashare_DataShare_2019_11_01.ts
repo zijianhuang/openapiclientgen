@@ -441,11 +441,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ADLSGen2FileDataSetMappingPropertiesDataSetMappingStatus { Ok = 0, Broken = 1 }
+	export enum ADLSGen2FileDataSetMappingPropertiesDataSetMappingStatus { Ok = 'Ok', Broken = 'Broken' }
 
-	export enum ADLSGen2FileDataSetMappingPropertiesOutputType { Csv = 0, Parquet = 1 }
+	export enum ADLSGen2FileDataSetMappingPropertiesOutputType { Csv = 'Csv', Parquet = 'Parquet' }
 
-	export enum ADLSGen2FileDataSetMappingPropertiesProvisioningState { Succeeded = 0, Creating = 1, Deleting = 2, Moving = 3, Failed = 4 }
+	export enum ADLSGen2FileDataSetMappingPropertiesProvisioningState { Succeeded = 'Succeeded', Creating = 'Creating', Deleting = 'Deleting', Moving = 'Moving', Failed = 'Failed' }
 
 
 	/** An ADLS Gen 2 file system data set. */
@@ -943,7 +943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { SystemAssigned = 0 }
+	export enum IdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** Account property bag. */
@@ -1850,7 +1850,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsumerInvitationPropertiesInvitationStatus { Pending = 0, Accepted = 1, Rejected = 2, Withdrawn = 3 }
+	export enum ConsumerInvitationPropertiesInvitationStatus { Pending = 'Pending', Accepted = 'Accepted', Rejected = 'Rejected', Withdrawn = 'Withdrawn' }
 
 
 	/** List response for get InvitationList */
@@ -1945,7 +1945,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsumerSourceDataSetPropertiesDataSetType { Blob = 0, Container = 1, BlobFolder = 2, AdlsGen2FileSystem = 3, AdlsGen2Folder = 4, AdlsGen2File = 5, AdlsGen1Folder = 6, AdlsGen1File = 7, KustoCluster = 8, KustoDatabase = 9, SqlDBTable = 10, SqlDWTable = 11 }
+	export enum ConsumerSourceDataSetPropertiesDataSetType { Blob = 'Blob', Container = 'Container', BlobFolder = 'BlobFolder', AdlsGen2FileSystem = 'AdlsGen2FileSystem', AdlsGen2Folder = 'AdlsGen2Folder', AdlsGen2File = 'AdlsGen2File', AdlsGen1Folder = 'AdlsGen1Folder', AdlsGen1File = 'AdlsGen1File', KustoCluster = 'KustoCluster', KustoDatabase = 'KustoDatabase', SqlDBTable = 'SqlDBTable', SqlDWTable = 'SqlDWTable' }
 
 
 	/** A consumer side list of source dataSets */
@@ -2055,7 +2055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSetMappingKind { Blob = 0, Container = 1, BlobFolder = 2, AdlsGen2FileSystem = 3, AdlsGen2Folder = 4, AdlsGen2File = 5, KustoCluster = 6, KustoDatabase = 7, SqlDBTable = 8, SqlDWTable = 9 }
+	export enum DataSetMappingKind { Blob = 'Blob', Container = 'Container', BlobFolder = 'BlobFolder', AdlsGen2FileSystem = 'AdlsGen2FileSystem', AdlsGen2Folder = 'AdlsGen2Folder', AdlsGen2File = 'AdlsGen2File', KustoCluster = 'KustoCluster', KustoDatabase = 'KustoDatabase', SqlDBTable = 'SqlDBTable', SqlDWTable = 'SqlDWTable' }
 
 
 	/** List response for get DataSetMappings */
@@ -2956,7 +2956,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationResponseStatus { Accepted = 0, InProgress = 1, TransientFailure = 2, Succeeded = 3, Failed = 4, Canceled = 5 }
+	export enum OperationResponseStatus { Accepted = 'Accepted', InProgress = 'InProgress', TransientFailure = 'TransientFailure', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** A provider side share subscription data transfer object. */
@@ -3052,7 +3052,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProviderShareSubscriptionPropertiesShareSubscriptionStatus { Active = 0, Revoked = 1, SourceDeleted = 2, Revoking = 3 }
+	export enum ProviderShareSubscriptionPropertiesShareSubscriptionStatus { Active = 'Active', Revoked = 'Revoked', SourceDeleted = 'SourceDeleted', Revoking = 'Revoking' }
 
 
 	/** List response for get ShareSubscription. */
@@ -3144,7 +3144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledSourceShareSynchronizationSettingPropertiesRecurrenceInterval { Hour = 0, Day = 1 }
+	export enum ScheduledSourceShareSynchronizationSettingPropertiesRecurrenceInterval { Hour = 'Hour', Day = 'Day' }
 
 
 	/** A type of synchronization setting based on schedule */
@@ -3339,9 +3339,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledTriggerPropertiesSynchronizationMode { Incremental = 0, FullSync = 1 }
+	export enum ScheduledTriggerPropertiesSynchronizationMode { Incremental = 'Incremental', FullSync = 'FullSync' }
 
-	export enum ScheduledTriggerPropertiesTriggerStatus { Active = 0, Inactive = 1, SourceSynchronizationSettingDeleted = 2 }
+	export enum ScheduledTriggerPropertiesTriggerStatus { Active = 'Active', Inactive = 'Inactive', SourceSynchronizationSettingDeleted = 'SourceSynchronizationSettingDeleted' }
 
 
 	/** A share data transfer object. */
@@ -3423,7 +3423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SharePropertiesShareKind { CopyBased = 0, InPlace = 1 }
+	export enum SharePropertiesShareKind { CopyBased = 'CopyBased', InPlace = 'InPlace' }
 
 
 	/** List response for get Shares. */
@@ -3857,7 +3857,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceShareSynchronizationSettingKind { ScheduleBased = 0 }
+	export enum SourceShareSynchronizationSettingKind { ScheduleBased = 'ScheduleBased' }
 
 
 	/** List response for get source share Synchronization settings */

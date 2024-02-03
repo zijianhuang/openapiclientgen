@@ -470,11 +470,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendedIndexPropertiesAction { Create = 0, Drop = 1, Rebuild = 2 }
+	export enum RecommendedIndexPropertiesAction { Create = 'Create', Drop = 'Drop', Rebuild = 'Rebuild' }
 
-	export enum RecommendedIndexPropertiesIndexType { CLUSTERED = 0, NONCLUSTERED = 1, COLUMNSTORE = 2, 'CLUSTERED COLUMNSTORE' = 3 }
+	export enum RecommendedIndexPropertiesIndexType { CLUSTERED = 'CLUSTERED', NONCLUSTERED = 'NONCLUSTERED', COLUMNSTORE = 'COLUMNSTORE', 'CLUSTERED COLUMNSTORE' = 'CLUSTERED COLUMNSTORE' }
 
-	export enum RecommendedIndexPropertiesState { Active = 0, Pending = 1, Executing = 2, Verifying = 3, 'Pending Revert' = 4, Reverting = 5, Reverted = 6, Ignored = 7, Expired = 8, Blocked = 9, Success = 10 }
+	export enum RecommendedIndexPropertiesState { Active = 'Active', Pending = 'Pending', Executing = 'Executing', Verifying = 'Verifying', 'Pending Revert' = 'Pending Revert', Reverting = 'Reverting', Reverted = 'Reverted', Ignored = 'Ignored', Expired = 'Expired', Blocked = 'Blocked', Success = 'Success' }
 
 	export interface ServiceTierAdvisor {
 	}
@@ -684,7 +684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SloUsageMetricServiceLevelObjective { System = 0, System0 = 1, System1 = 2, System2 = 3, System3 = 4, System4 = 5, System2L = 6, System3L = 7, System4L = 8, Free = 9, Basic = 10, S0 = 11, S1 = 12, S2 = 13, S3 = 14, S4 = 15, S6 = 16, S7 = 17, S9 = 18, S12 = 19, P1 = 20, P2 = 21, P3 = 22, P4 = 23, P6 = 24, P11 = 25, P15 = 26, PRS1 = 27, PRS2 = 28, PRS4 = 29, PRS6 = 30, DW100 = 31, DW200 = 32, DW300 = 33, DW400 = 34, DW500 = 35, DW600 = 36, DW1000 = 37, DW1200 = 38, DW1000c = 39, DW1500 = 40, DW1500c = 41, DW2000 = 42, DW2000c = 43, DW3000 = 44, DW2500c = 45, DW3000c = 46, DW6000 = 47, DW5000c = 48, DW6000c = 49, DW7500c = 50, DW10000c = 51, DW15000c = 52, DW30000c = 53, DS100 = 54, DS200 = 55, DS300 = 56, DS400 = 57, DS500 = 58, DS600 = 59, DS1000 = 60, DS1200 = 61, DS1500 = 62, DS2000 = 63, ElasticPool = 64 }
+	export enum SloUsageMetricServiceLevelObjective { System = 'System', System0 = 'System0', System1 = 'System1', System2 = 'System2', System3 = 'System3', System4 = 'System4', System2L = 'System2L', System3L = 'System3L', System4L = 'System4L', Free = 'Free', Basic = 'Basic', S0 = 'S0', S1 = 'S1', S2 = 'S2', S3 = 'S3', S4 = 'S4', S6 = 'S6', S7 = 'S7', S9 = 'S9', S12 = 'S12', P1 = 'P1', P2 = 'P2', P3 = 'P3', P4 = 'P4', P6 = 'P6', P11 = 'P11', P15 = 'P15', PRS1 = 'PRS1', PRS2 = 'PRS2', PRS4 = 'PRS4', PRS6 = 'PRS6', DW100 = 'DW100', DW200 = 'DW200', DW300 = 'DW300', DW400 = 'DW400', DW500 = 'DW500', DW600 = 'DW600', DW1000 = 'DW1000', DW1200 = 'DW1200', DW1000c = 'DW1000c', DW1500 = 'DW1500', DW1500c = 'DW1500c', DW2000 = 'DW2000', DW2000c = 'DW2000c', DW3000 = 'DW3000', DW2500c = 'DW2500c', DW3000c = 'DW3000c', DW6000 = 'DW6000', DW5000c = 'DW5000c', DW6000c = 'DW6000c', DW7500c = 'DW7500c', DW10000c = 'DW10000c', DW15000c = 'DW15000c', DW30000c = 'DW30000c', DS100 = 'DS100', DS200 = 'DS200', DS300 = 'DS300', DS400 = 'DS400', DS500 = 'DS500', DS600 = 'DS600', DS1000 = 'DS1000', DS1200 = 'DS1200', DS1500 = 'DS1500', DS2000 = 'DS2000', ElasticPool = 'ElasticPool' }
 
 	export interface TransparentDataEncryption {
 	}
@@ -754,7 +754,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransparentDataEncryptionActivityPropertiesStatus { Encrypting = 0, Decrypting = 1 }
+	export enum TransparentDataEncryptionActivityPropertiesStatus { Encrypting = 'Encrypting', Decrypting = 'Decrypting' }
 
 
 	/** Represents the properties of a database transparent data encryption. */
@@ -777,7 +777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransparentDataEncryptionPropertiesStatus { Enabled = 0, Disabled = 1 }
+	export enum TransparentDataEncryptionPropertiesStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	@Injectable()
 	export class MyClient {
@@ -888,7 +888,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum TransparentDataEncryptions_GetTransparentDataEncryptionName { current = 0 }
+	export enum TransparentDataEncryptions_GetTransparentDataEncryptionName { current = 'current' }
 
 }
 

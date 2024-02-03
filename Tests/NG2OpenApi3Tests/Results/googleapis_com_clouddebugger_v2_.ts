@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AliasContextKind { ANY = 0, FIXED = 1, MOVABLE = 2, OTHER = 3 }
+	export enum AliasContextKind { ANY = 'ANY', FIXED = 'FIXED', MOVABLE = 'MOVABLE', OTHER = 'OTHER' }
 
 
 	/** ------------------------------------------------------------------------------ ## Breakpoint (the resource) Represents the breakpoint specification, status and results. */
@@ -149,7 +149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BreakpointAction { CAPTURE = 0, LOG = 1 }
+	export enum BreakpointAction { CAPTURE = 'CAPTURE', LOG = 'LOG' }
 
 
 	/** Represents a variable or an argument possibly of a compound object type. Note how the following variables are represented: 1) A simple variable: int x = 5 { name: "x", value: "5", type: "int" } // Captured variable 2) A compound object: struct T { int m1; int m2; }; T x = { 3, 7 }; { // Captured variable name: "x", type: "T", members { name: "m1", value: "3", type: "int" }, members { name: "m2", value: "7", type: "int" } } 3) A pointer where the pointee was captured: T x = { 3, 7 }; T* p = &x; { // Captured variable name: "p", type: "T*", value: "0x00500500", members { name: "m1", value: "3", type: "int" }, members { name: "m2", value: "7", type: "int" } } 4) A pointer where the pointee was not captured: T* p = new T; { // Captured variable name: "p", type: "T*", value: "0x00400400" status { is_error: true, description { format: "unavailable" } } } The status should describe the reason for the missing value, such as ``, ``, ``. Note that a null pointer should not have members. 5) An unnamed value: int* p = new int(7); { // Captured variable name: "p", value: "0x00500500", type: "int*", members { value: "7", type: "int" } } 6) An unnamed pointer where the pointee was not captured: int* p = new int(7); int** pp = &p; { // Captured variable name: "pp", value: "0x00500500", type: "int**", members { value: "0x00400400", type: "int*" status { is_error: true, description: { format: "unavailable" } } } } } To optimize computation, memory and network traffic, variables that repeat in the output multiple times can be stored once in a shared variable table and be referenced using the `var_table_index` field. The variables stored in the shared table are nameless and are essentially a partition of the complete variable. To reconstruct the complete variable, merge the referencing variable with the referenced variable. When using the shared variable table, the following variables: T x = { 3, 7 }; T* p = &x; T& r = x; { name: "x", var_table_index: 3, type: "T" } // Captured variables { name: "p", value "0x00500500", type="T*", var_table_index: 3 } { name: "r", type="T&", var_table_index: 3 } { // Shared variable table entry #3: members { name: "m1", value: "3", type: "int" }, members { name: "m2", value: "7", type: "int" } } Note that the pointer address is stored with the referencing variable and not with the referenced variable. This allows the referenced variable to be shared between pointers and references. The type field is optional. The debugger agent may or may not support it. */
@@ -254,7 +254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusMessageRefersTo { UNSPECIFIED = 0, BREAKPOINT_SOURCE_LOCATION = 1, BREAKPOINT_CONDITION = 2, BREAKPOINT_EXPRESSION = 3, BREAKPOINT_AGE = 4, BREAKPOINT_CANARY_FAILED = 5, VARIABLE_NAME = 6, VARIABLE_VALUE = 7 }
+	export enum StatusMessageRefersTo { UNSPECIFIED = 'UNSPECIFIED', BREAKPOINT_SOURCE_LOCATION = 'BREAKPOINT_SOURCE_LOCATION', BREAKPOINT_CONDITION = 'BREAKPOINT_CONDITION', BREAKPOINT_EXPRESSION = 'BREAKPOINT_EXPRESSION', BREAKPOINT_AGE = 'BREAKPOINT_AGE', BREAKPOINT_CANARY_FAILED = 'BREAKPOINT_CANARY_FAILED', VARIABLE_NAME = 'VARIABLE_NAME', VARIABLE_VALUE = 'VARIABLE_VALUE' }
 
 
 	/** Represents a location in the source code. */
@@ -291,7 +291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BreakpointLogLevel { INFO = 0, WARNING = 1, ERROR = 2 }
+	export enum BreakpointLogLevel { INFO = 'INFO', WARNING = 'WARNING', ERROR = 'ERROR' }
 
 
 	/** Represents a stack frame context. */
@@ -323,7 +323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BreakpointState { STATE_UNSPECIFIED = 0, STATE_CANARY_PENDING_AGENTS = 1, STATE_CANARY_ACTIVE = 2, STATE_ROLLING_TO_ALL = 3, STATE_IS_FINAL = 4 }
+	export enum BreakpointState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', STATE_CANARY_PENDING_AGENTS = 'STATE_CANARY_PENDING_AGENTS', STATE_CANARY_ACTIVE = 'STATE_CANARY_ACTIVE', STATE_ROLLING_TO_ALL = 'STATE_ROLLING_TO_ALL', STATE_IS_FINAL = 'STATE_IS_FINAL' }
 
 
 	/** A CloudRepoSourceContext denotes a particular revision in a cloud repo (a repo hosted by the Google Cloud Platform). */
@@ -545,7 +545,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DebuggeeCanaryMode { CANARY_MODE_UNSPECIFIED = 0, CANARY_MODE_ALWAYS_ENABLED = 1, CANARY_MODE_ALWAYS_DISABLED = 2, CANARY_MODE_DEFAULT_ENABLED = 3, CANARY_MODE_DEFAULT_DISABLED = 4 }
+	export enum DebuggeeCanaryMode { CANARY_MODE_UNSPECIFIED = 'CANARY_MODE_UNSPECIFIED', CANARY_MODE_ALWAYS_ENABLED = 'CANARY_MODE_ALWAYS_ENABLED', CANARY_MODE_ALWAYS_DISABLED = 'CANARY_MODE_ALWAYS_DISABLED', CANARY_MODE_DEFAULT_ENABLED = 'CANARY_MODE_DEFAULT_ENABLED', CANARY_MODE_DEFAULT_DISABLED = 'CANARY_MODE_DEFAULT_DISABLED' }
 
 
 	/** An ExtendedSourceContext is a SourceContext combined with additional details describing the context. */
@@ -965,7 +965,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Clouddebugger_debugger_debuggees_breakpoints_setCanaryOption { CANARY_OPTION_UNSPECIFIED = 0, CANARY_OPTION_TRY_ENABLE = 1, CANARY_OPTION_TRY_DISABLE = 2 }
+	export enum Clouddebugger_debugger_debuggees_breakpoints_setCanaryOption { CANARY_OPTION_UNSPECIFIED = 'CANARY_OPTION_UNSPECIFIED', CANARY_OPTION_TRY_ENABLE = 'CANARY_OPTION_TRY_ENABLE', CANARY_OPTION_TRY_DISABLE = 'CANARY_OPTION_TRY_DISABLE' }
 
 }
 

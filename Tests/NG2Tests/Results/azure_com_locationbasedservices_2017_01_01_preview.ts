@@ -279,7 +279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationBasedServicesKeySpecificationKeyType { primary = 0, secondary = 1 }
+	export enum LocationBasedServicesKeySpecificationKeyType { primary = 'primary', secondary = 'secondary' }
 
 
 	/** The set of operations available for Location Based Services. */

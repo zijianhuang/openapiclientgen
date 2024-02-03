@@ -762,7 +762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseChannelNodeState { Creating = 0, CreateFailed = 1, Started = 2, Starting = 3, StartFailed = 4, Stopped = 5, Stopping = 6, StopFailed = 7, Deleting = 8, DeleteFailed = 9 }
+	export enum EnterpriseChannelNodeState { Creating = 'Creating', CreateFailed = 'CreateFailed', Started = 'Started', Starting = 'Starting', StartFailed = 'StartFailed', Stopped = 'Stopped', Stopping = 'Stopping', StopFailed = 'StopFailed', Deleting = 'Deleting', DeleteFailed = 'DeleteFailed' }
 
 
 	/** The parameters to provide for the Enterprise Channel. */
@@ -1078,7 +1078,7 @@ export namespace MyNS {
 
 
 	/** Indicates the type of bot service */
-	export enum Kind { sdk = 0, designer = 1, bot = 2, function = 3 }
+	export enum Kind { sdk = 'sdk', designer = 'designer', bot = 'bot', function = 'function' }
 
 
 	/** Microsoft Teams channel definition */
@@ -1491,9 +1491,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SkuName { F0 = 0, S1 = 1 }
+	export enum SkuName { F0 = 'F0', S1 = 'S1' }
 
-	export enum SkuTier { Free = 0, Standard = 1 }
+	export enum SkuTier { Free = 'Free', Standard = 'Standard' }
 
 
 	/** Skype channel definition */
@@ -2382,7 +2382,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Channels_CreateChannelName { FacebookChannel = 0, EmailChannel = 1, KikChannel = 2, TelegramChannel = 3, SlackChannel = 4, MsTeamsChannel = 5, SkypeChannel = 6, WebChatChannel = 7, DirectLineChannel = 8, SmsChannel = 9 }
+	export enum Channels_CreateChannelName { FacebookChannel = 'FacebookChannel', EmailChannel = 'EmailChannel', KikChannel = 'KikChannel', TelegramChannel = 'TelegramChannel', SlackChannel = 'SlackChannel', MsTeamsChannel = 'MsTeamsChannel', SkypeChannel = 'SkypeChannel', WebChatChannel = 'WebChatChannel', DirectLineChannel = 'DirectLineChannel', SmsChannel = 'SmsChannel' }
 
 }
 

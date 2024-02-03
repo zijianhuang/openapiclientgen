@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogoType { LOGO = 0, BANNER = 1, SCREENSHOT = 2 }
+	export enum LogoType { LOGO = 'LOGO', BANNER = 'BANNER', SCREENSHOT = 'SCREENSHOT' }
 
 	export interface Translation {
 
@@ -719,9 +719,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ListingSettingsNaming { LISTING = 0, LISTINGS = 1, INTEGRATIONS = 2, APPS = 3, CONNECTORS = 4, DATASOURCES = 5, ADDONS = 6, PLUGINS = 7, PARTNERS = 8, CHANNELS = 9, CONNECTIONS = 10, EXTENSIONS = 11 }
+	export enum ListingSettingsNaming { LISTING = 'LISTING', LISTINGS = 'LISTINGS', INTEGRATIONS = 'INTEGRATIONS', APPS = 'APPS', CONNECTORS = 'CONNECTORS', DATASOURCES = 'DATASOURCES', ADDONS = 'ADDONS', PLUGINS = 'PLUGINS', PARTNERS = 'PARTNERS', CHANNELS = 'CHANNELS', CONNECTIONS = 'CONNECTIONS', EXTENSIONS = 'EXTENSIONS' }
 
-	export enum ListingSettingsSidebar_position { TOP = 0, LEFT = 1, RIGHT = 2, HIDDEN = 3 }
+	export enum ListingSettingsSidebar_position { TOP = 'TOP', LEFT = 'LEFT', RIGHT = 'RIGHT', HIDDEN = 'HIDDEN' }
 
 	export interface MastheadSettings {
 		background?: string | null;
@@ -751,7 +751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EcosystemMenu_style { LIST = 0, PILL = 1, FILTER = 2 }
+	export enum EcosystemMenu_style { LIST = 'LIST', PILL = 'PILL', FILTER = 'FILTER' }
 
 	export interface MetaTagSettings {
 		description?: string | null;
@@ -784,7 +784,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EcosystemNavigation_mobile_menu_type { ICON = 0, TEXT = 1 }
+	export enum EcosystemNavigation_mobile_menu_type { ICON = 'ICON', TEXT = 'TEXT' }
 
 	export interface GetCategoriesResponse {
 
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaType { SCREENSHOT = 0, VIDEO = 1 }
+	export enum MediaType { SCREENSHOT = 'SCREENSHOT', VIDEO = 'VIDEO' }
 
 	export interface Partner {
 

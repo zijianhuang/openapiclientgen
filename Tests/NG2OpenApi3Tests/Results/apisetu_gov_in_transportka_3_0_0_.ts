@@ -2576,7 +2576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DrvlcPostBodyFormat { xml = 0, pdf = 1 }
+	export enum DrvlcPostBodyFormat { xml = 'xml', pdf = 'pdf' }
 
 	export interface RvcerPostBody {
 		certificateParameters?: RvcerPostBodyCertificateParameters;

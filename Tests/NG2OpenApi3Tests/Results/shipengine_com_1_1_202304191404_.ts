@@ -22,7 +22,7 @@ export namespace MyNS {
 
 
 	/** The possible default label layout values */
-	export enum Default_label_layout { '4x6' = 0, Letter = 1 }
+	export enum Default_label_layout { '4x6' = '4x6', Letter = 'Letter' }
 
 
 	/** A ShipEngine account images body */
@@ -111,7 +111,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Account_settings_imagesImage_content_type { 'image/png' = 0, 'image/jpeg' = 1 }
+	export enum Account_settings_imagesImage_content_type { 'image/png' = 'image/png', 'image/jpeg' = 'image/jpeg' }
 
 
 	/** An add funds to carrier request body */
@@ -251,7 +251,7 @@ export namespace MyNS {
 
 
 	/** Indicates whether an address is residential. */
-	export enum Address_residential_indicator { unknown = 0, yes = 1, no = 2 }
+	export enum Address_residential_indicator { unknown = 'unknown', yes = 'yes', no = 'no' }
 
 
 	/**
@@ -287,15 +287,15 @@ export namespace MyNS {
 
 
 	/** The error codes that can be returned by the address validation API */
-	export enum Address_validation_code { a1000 = 0, a1001 = 1, a1002 = 2, a1003 = 3, a1004 = 4, a1005 = 5, a1006 = 6, a1007 = 7, a1008 = 8, r1000 = 9, r1001 = 10, r1002 = 11, r1003 = 12 }
+	export enum Address_validation_code { a1000 = 'a1000', a1001 = 'a1001', a1002 = 'a1002', a1003 = 'a1003', a1004 = 'a1004', a1005 = 'a1005', a1006 = 'a1006', a1007 = 'a1007', a1008 = 'a1008', r1000 = 'r1000', r1001 = 'r1001', r1002 = 'r1002', r1003 = 'r1003' }
 
 
 	/** The detailed error codes that can be returned by the address validation API */
-	export enum Address_validation_detail_code { unsupported_country = 0, non_supported_country = 1, minimum_postal_code_verification_failed = 2, street_does_not_match_unique_street_name = 3, multiple_directionals = 4, multiple_matches = 5, suite_not_valid = 6, suite_missing = 7, incompatible_paired_labels = 8, invalid_house_number = 9, missing_house_number = 10, invalid_box_number = 11, invalid_charge_event = 12, missing_box_number = 13, missing_cmra_or_private_mail_box_number = 14, suite_has_no_secondaries = 15, postal_code_changed_or_added = 16, state_province_changed_or_added = 17, city_locality_changed_or_added = 18, urbanization_changed = 19, street_name_spelling_changed_or_added = 20, street_name_type_changed_or_added = 21, street_direction_changed_or_added = 22, suite_type_changed_or_added = 23, suite_unit_number_changed_or_added = 24, double_dependent_locality_changed_or_added = 25, subadministrative_area_changed_or_added = 26, subnational_area_changed_or_added = 27, po_box_changed_or_added = 28, premise_type_changed_or_added = 29, house_number_changed = 30, organization_changed_or_added = 31, partially_verified_to_state_level = 32, partially_verified_to_city_level = 33, partially_verified_to_street_level = 34, partially_verified_to_premise_level = 35, verified_to_state_level = 36, verified_to_city_level = 37, verified_to_street_level = 38, verified_to_premise_level = 39, verified_to_suite_level = 40, coded_to_street_lavel = 41, coded_to_neighborhood_level = 42, coded_to_community_level = 43, coded_to_state_level = 44, coded_to_rooftop_level = 45, coded_to_rooftop_interpolation_level = 46, name_max_length_exceeded = 47, phone_max_length_exceeded = 48, company_name_max_length_exceeded = 49, line1_min_max_length = 50, line2_max_length_exceeded = 51, line3_max_length_exceeded = 52, city_locality_max_length_exceeded = 53, state_province_max_length_exceeded = 54, invalid_postal_code = 55, country_invalid_length = 56, address_not_found = 57 }
+	export enum Address_validation_detail_code { unsupported_country = 'unsupported_country', non_supported_country = 'non_supported_country', minimum_postal_code_verification_failed = 'minimum_postal_code_verification_failed', street_does_not_match_unique_street_name = 'street_does_not_match_unique_street_name', multiple_directionals = 'multiple_directionals', multiple_matches = 'multiple_matches', suite_not_valid = 'suite_not_valid', suite_missing = 'suite_missing', incompatible_paired_labels = 'incompatible_paired_labels', invalid_house_number = 'invalid_house_number', missing_house_number = 'missing_house_number', invalid_box_number = 'invalid_box_number', invalid_charge_event = 'invalid_charge_event', missing_box_number = 'missing_box_number', missing_cmra_or_private_mail_box_number = 'missing_cmra_or_private_mail_box_number', suite_has_no_secondaries = 'suite_has_no_secondaries', postal_code_changed_or_added = 'postal_code_changed_or_added', state_province_changed_or_added = 'state_province_changed_or_added', city_locality_changed_or_added = 'city_locality_changed_or_added', urbanization_changed = 'urbanization_changed', street_name_spelling_changed_or_added = 'street_name_spelling_changed_or_added', street_name_type_changed_or_added = 'street_name_type_changed_or_added', street_direction_changed_or_added = 'street_direction_changed_or_added', suite_type_changed_or_added = 'suite_type_changed_or_added', suite_unit_number_changed_or_added = 'suite_unit_number_changed_or_added', double_dependent_locality_changed_or_added = 'double_dependent_locality_changed_or_added', subadministrative_area_changed_or_added = 'subadministrative_area_changed_or_added', subnational_area_changed_or_added = 'subnational_area_changed_or_added', po_box_changed_or_added = 'po_box_changed_or_added', premise_type_changed_or_added = 'premise_type_changed_or_added', house_number_changed = 'house_number_changed', organization_changed_or_added = 'organization_changed_or_added', partially_verified_to_state_level = 'partially_verified_to_state_level', partially_verified_to_city_level = 'partially_verified_to_city_level', partially_verified_to_street_level = 'partially_verified_to_street_level', partially_verified_to_premise_level = 'partially_verified_to_premise_level', verified_to_state_level = 'verified_to_state_level', verified_to_city_level = 'verified_to_city_level', verified_to_street_level = 'verified_to_street_level', verified_to_premise_level = 'verified_to_premise_level', verified_to_suite_level = 'verified_to_suite_level', coded_to_street_lavel = 'coded_to_street_lavel', coded_to_neighborhood_level = 'coded_to_neighborhood_level', coded_to_community_level = 'coded_to_community_level', coded_to_state_level = 'coded_to_state_level', coded_to_rooftop_level = 'coded_to_rooftop_level', coded_to_rooftop_interpolation_level = 'coded_to_rooftop_interpolation_level', name_max_length_exceeded = 'name_max_length_exceeded', phone_max_length_exceeded = 'phone_max_length_exceeded', company_name_max_length_exceeded = 'company_name_max_length_exceeded', line1_min_max_length = 'line1_min_max_length', line2_max_length_exceeded = 'line2_max_length_exceeded', line3_max_length_exceeded = 'line3_max_length_exceeded', city_locality_max_length_exceeded = 'city_locality_max_length_exceeded', state_province_max_length_exceeded = 'state_province_max_length_exceeded', invalid_postal_code = 'invalid_postal_code', country_invalid_length = 'country_invalid_length', address_not_found = 'address_not_found' }
 
 
 	/** The different types of messages that can be returned by the address validation API */
-	export enum Address_validation_message_type { error = 0, warning = 1, info = 2 }
+	export enum Address_validation_message_type { error = 'error', warning = 'warning', info = 'info' }
 
 
 	/** An address validation result */
@@ -388,7 +388,7 @@ export namespace MyNS {
 
 
 	/** The possible address validation status values */
-	export enum Address_validation_status { unverified = 0, verified = 1, warning = 2, error = 3 }
+	export enum Address_validation_status { unverified = 'unverified', verified = 'verified', warning = 'warning', error = 'error' }
 
 
 	/** Advanced shipment options */
@@ -576,7 +576,7 @@ export namespace MyNS {
 
 
 	/** The possible bill to party values */
-	export enum Bill_to_party { recipient = 0, third_party = 1 }
+	export enum Bill_to_party { recipient = 'recipient', third_party = 'third_party' }
 
 
 	/** Defer payment until package is delivered, instead of when it is ordered. */
@@ -618,7 +618,7 @@ export namespace MyNS {
 
 
 	/** Types of payment that are supported */
-	export enum Collect_on_delivery_payment_type { any = 0, cash = 1, cash_equivalent = 2, none = 3 }
+	export enum Collect_on_delivery_payment_type { any = 'any', cash = 'cash', cash_equivalent = 'cash_equivalent', none = 'none' }
 
 
 	/** The weight of a package */
@@ -658,7 +658,7 @@ export namespace MyNS {
 
 
 	/** The possible weight unit values */
-	export enum Weight_unit { pound = 0, ounce = 1, gram = 2, kilogram = 3 }
+	export enum Weight_unit { pound = 'pound', ounce = 'ounce', gram = 'gram', kilogram = 'kilogram' }
 
 	export interface Advanced_shipment_optionsFedex_freight {
 		booking_confirmation?: string | null;
@@ -678,7 +678,7 @@ export namespace MyNS {
 
 
 	/** Indicates if the package will be picked up or dropped off by the carrier */
-	export enum Origin_type { pickup = 0, drop_off = 1 }
+	export enum Origin_type { pickup = 'pickup', drop_off = 'drop_off' }
 
 
 	/**
@@ -736,7 +736,7 @@ export namespace MyNS {
 	 * | `change_service_requested`     | The package is discarded. If possible, notification of the new address is sent to the sender.
 	 * | `leave_if_no_response`         |
 	 */
-	export enum Ancillary_service_endorsement { none = 0, return_service_requested = 1, forwarding_service_requested = 2, address_service_requested = 3, change_service_requested = 4, leave_if_no_response = 5 }
+	export enum Ancillary_service_endorsement { none = 'none', return_service_requested = 'return_service_requested', forwarding_service_requested = 'forwarding_service_requested', address_service_requested = 'address_service_requested', change_service_requested = 'change_service_requested', leave_if_no_response = 'leave_if_no_response' }
 
 
 	/**
@@ -1061,17 +1061,17 @@ export namespace MyNS {
 	 * |`png`         | `fedex` <br> `stamps_com` <br> `ups` <br> `usps`
 	 * |`zpl`         | `access_worldwide` <br> `apc` <br> `asendia` <br> `dhl_global_mail` <br> `dhl_express` <br> `dhl_express_australia` <br> `dhl_express_canada` <br> `dhl_express_worldwide` <br> `dhl_express_uk` <br> `dpd` <br> `endicia` <br> `fedex` <br> `fedex_uk` <br> `firstmile` <br> `imex` <br> `newgistics` <br> `ontrac` <br> `rr_donnelley` <br> `stamps_com` <br> `ups` <br> `usps`
 	 */
-	export enum Label_format { pdf = 0, png = 1, zpl = 2 }
+	export enum Label_format { pdf = 'pdf', png = 'png', zpl = 'zpl' }
 
 
 	/**
 	 * The available layouts (sizes) in which shipping labels can be downloaded.  The label format determines which sizes are supported.  `4x6` is supported for all label formats, whereas `letter` (8.5" x 11") is only supported for `pdf` format.
 	 */
-	export enum Label_layout { '4x6' = 0, letter = 1 }
+	export enum Label_layout { '4x6' = '4x6', letter = 'letter' }
 
 
 	/** The possible batch status values */
-	export enum Batch_status { open = 0, queued = 1, processing = 2, completed = 3, completed_with_errors = 4, archived = 5, notifying = 6, invalid = 7 }
+	export enum Batch_status { open = 'open', queued = 'queued', processing = 'processing', completed = 'completed', completed_with_errors = 'completed_with_errors', archived = 'archived', notifying = 'notifying', invalid = 'invalid' }
 
 
 	/** A batch response error */
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 
 
 	/** The possible batches sort by values */
-	export enum Batches_sort_by { ship_date = 0, processed_at = 1, created_at = 2 }
+	export enum Batches_sort_by { ship_date = 'ship_date', processed_at = 'processed_at', created_at = 'created_at' }
 
 
 	/** A bulk rate */
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 
 
 	/** The possible rate response status values */
-	export enum Rate_response_status { working = 0, completed = 1, partial = 2, error = 3 }
+	export enum Rate_response_status { working = 'working', completed = 'completed', partial = 'partial', error = 'error' }
 
 
 	/** A rate shipment request body */
@@ -1388,11 +1388,11 @@ export namespace MyNS {
 
 
 	/** The shipping carriers that are supported by ShipEngine */
-	export enum Carrier_name { access_worldwide = 0, amazon_buy_shipping = 1, amazon_shipping_uk = 2, apc = 3, asendia = 4, australia_post = 5, canada_post = 6, dhl_ecommerce = 7, dhl_express = 8, dhl_express_au = 9, dhl_express_ca = 10, dhl_express_uk = 11, dpd = 12, endicia = 13, fedex = 14, fedex_uk = 15, firstmile = 16, imex = 17, newgistics = 18, ontrac = 19, purolator_canada = 20, royal_mail = 21, rr_donnelley = 22, seko = 23, sendle = 24, stamps_com = 25, ups = 26 }
+	export enum Carrier_name { access_worldwide = 'access_worldwide', amazon_buy_shipping = 'amazon_buy_shipping', amazon_shipping_uk = 'amazon_shipping_uk', apc = 'apc', asendia = 'asendia', australia_post = 'australia_post', canada_post = 'canada_post', dhl_ecommerce = 'dhl_ecommerce', dhl_express = 'dhl_express', dhl_express_au = 'dhl_express_au', dhl_express_ca = 'dhl_express_ca', dhl_express_uk = 'dhl_express_uk', dpd = 'dpd', endicia = 'endicia', fedex = 'fedex', fedex_uk = 'fedex_uk', firstmile = 'firstmile', imex = 'imex', newgistics = 'newgistics', ontrac = 'ontrac', purolator_canada = 'purolator_canada', royal_mail = 'royal_mail', rr_donnelley = 'rr_donnelley', seko = 'seko', sendle = 'sendle', stamps_com = 'stamps_com', ups = 'ups' }
 
 
 	/** The shipping carriers for which ShipEngine supports carrier settings */
-	export enum Carrier_name_with_settings { dhl_express = 0, fedex = 1, newgistics = 2, ups = 3 }
+	export enum Carrier_name_with_settings { dhl_express = 'dhl_express', fedex = 'fedex', newgistics = 'newgistics', ups = 'ups' }
 
 
 	/** A rate shipments request body */
@@ -4173,7 +4173,7 @@ export namespace MyNS {
 
 
 	/** The display format that the label should be shown in. */
-	export enum Display_scheme { label = 0, qr_code = 1, label_and_qr_code = 2 }
+	export enum Display_scheme { label = 'label', qr_code = 'qr_code', label_and_qr_code = 'label_and_qr_code' }
 
 
 	/**
@@ -4183,11 +4183,11 @@ export namespace MyNS {
 	 * |`url`               |You will receive a URL, which you can use to download the label in a separate request. The URL will remain valid for 90 days.<br><br>This is the default if `label_download_type` is unspecified.
 	 * |`inline`            |You will receive the Base64-encoded label as part of the response. No need for a second request to download the label.
 	 */
-	export enum Label_download_type { url = 0, inline = 1 }
+	export enum Label_download_type { url = 'url', inline = 'inline' }
 
 
 	/** The possible validate address values */
-	export enum Validate_address { no_validation = 0, validate_only = 1, validate_and_clean = 2 }
+	export enum Validate_address { no_validation = 'no_validation', validate_only = 'validate_only', validate_and_clean = 'validate_and_clean' }
 
 
 	/** A create label from shipment response body */
@@ -4444,7 +4444,7 @@ export namespace MyNS {
 
 
 	/** Determines when the user's account will be charged for the label. */
-	export enum Label_charge_event { carrier_default = 0, on_creation = 1, on_carrier_acceptance = 2 }
+	export enum Label_charge_event { carrier_default = 'carrier_default', on_creation = 'on_creation', on_carrier_acceptance = 'on_carrier_acceptance' }
 
 
 	/** A create return label response body */
@@ -4608,7 +4608,7 @@ export namespace MyNS {
 
 
 	/** The possible webook event values */
-	export enum Webhook_event { batch = 0, carrier_connected = 1, order_source_refresh_complete = 2, rate = 3, report_complete = 4, sales_orders_imported = 5, track = 6 }
+	export enum Webhook_event { batch = 'batch', carrier_connected = 'carrier_connected', order_source_refresh_complete = 'order_source_refresh_complete', rate = 'rate', report_complete = 'report_complete', sales_orders_imported = 'sales_orders_imported', track = 'track' }
 
 
 	/** A webhook response body */
@@ -4759,7 +4759,7 @@ export namespace MyNS {
 
 
 	/** The possible delivery confirmation values */
-	export enum Delivery_confirmation { none = 0, delivery = 1, signature = 2, adult_signature = 3, direct_signature = 4, delivery_mailed = 5, verbal_confirmation = 6 }
+	export enum Delivery_confirmation { none = 'none', delivery = 'delivery', signature = 'signature', adult_signature = 'adult_signature', direct_signature = 'direct_signature', delivery_mailed = 'delivery_mailed', verbal_confirmation = 'verbal_confirmation' }
 
 
 	/** Deprecated manifest resource */
@@ -4937,7 +4937,7 @@ export namespace MyNS {
 
 
 	/** The dimension units that are supported by ShipEngine. */
-	export enum Dimension_unit { inch = 0, centimeter = 1 }
+	export enum Dimension_unit { inch = 'inch', centimeter = 'centimeter' }
 
 
 	/** The dimensions of a package */
@@ -5071,20 +5071,20 @@ export namespace MyNS {
 
 
 	/** The error code specified for the failed API Call */
-	export enum Error_code { auto_fund_not_supported = 0, batch_cannot_be_modified = 1, carrier_conflict = 2, carrier_disconnected = 3, carrier_not_connected = 4, carrier_not_supported = 5, confirmation_not_supported = 6, default_warehouse_cannot_be_deleted = 7, field_conflict = 8, field_value_required = 9, forbidden = 10, identifier_conflict = 11, identifiers_must_match = 12, insufficient_funds = 13, invalid_address = 14, invalid_billing_plan = 15, invalid_field_value = 16, invalid_identifier = 17, invalid_status = 18, invalid_string_length = 19, label_images_not_supported = 20, meter_failure = 21, order_source_not_active = 22, rate_limit_exceeded = 23, refresh_not_supported = 24, request_body_required = 25, return_label_not_supported = 26, settings_not_supported = 27, subscription_inactive = 28, terms_not_accepted = 29, tracking_not_supported = 30, trial_expired = 31, unauthorized = 32, unknown = 33, unspecified = 34, verification_failure = 35, warehouse_conflict = 36, webhook_event_type_conflict = 37 }
+	export enum Error_code { auto_fund_not_supported = 'auto_fund_not_supported', batch_cannot_be_modified = 'batch_cannot_be_modified', carrier_conflict = 'carrier_conflict', carrier_disconnected = 'carrier_disconnected', carrier_not_connected = 'carrier_not_connected', carrier_not_supported = 'carrier_not_supported', confirmation_not_supported = 'confirmation_not_supported', default_warehouse_cannot_be_deleted = 'default_warehouse_cannot_be_deleted', field_conflict = 'field_conflict', field_value_required = 'field_value_required', forbidden = 'forbidden', identifier_conflict = 'identifier_conflict', identifiers_must_match = 'identifiers_must_match', insufficient_funds = 'insufficient_funds', invalid_address = 'invalid_address', invalid_billing_plan = 'invalid_billing_plan', invalid_field_value = 'invalid_field_value', invalid_identifier = 'invalid_identifier', invalid_status = 'invalid_status', invalid_string_length = 'invalid_string_length', label_images_not_supported = 'label_images_not_supported', meter_failure = 'meter_failure', order_source_not_active = 'order_source_not_active', rate_limit_exceeded = 'rate_limit_exceeded', refresh_not_supported = 'refresh_not_supported', request_body_required = 'request_body_required', return_label_not_supported = 'return_label_not_supported', settings_not_supported = 'settings_not_supported', subscription_inactive = 'subscription_inactive', terms_not_accepted = 'terms_not_accepted', tracking_not_supported = 'tracking_not_supported', trial_expired = 'trial_expired', unauthorized = 'unauthorized', unknown = 'unknown', unspecified = 'unspecified', verification_failure = 'verification_failure', warehouse_conflict = 'warehouse_conflict', webhook_event_type_conflict = 'webhook_event_type_conflict' }
 
 
 	/**
 	 * The source of the error, as indicated by the name this informs us if the API call failed because of the
 	 * carrier, the order source, or the ShipEngine API itself.
 	 */
-	export enum Error_source { carrier = 0, order_source = 1, shipengine = 2 }
+	export enum Error_source { carrier = 'carrier', order_source = 'order_source', shipengine = 'shipengine' }
 
 
 	/**
 	 * The type of error
 	 */
-	export enum Error_type { account_status = 0, business_rules = 1, validation = 2, security = 3, system = 4, integrations = 5 }
+	export enum Error_type { account_status = 'account_status', business_rules = 'business_rules', validation = 'validation', security = 'security', system = 'system', integrations = 'integrations' }
 
 
 	/** An error response body */
@@ -5227,11 +5227,11 @@ export namespace MyNS {
 	 * |`business_service_center` | You will drop-off packages at an authorized FedEx business service center
 	 * |`station`                 | You will drop-off the package at a FedEx Station
 	 */
-	export enum Fedex_pickup_type { none = 0, regular_pickup = 1, request_courier = 2, drop_box = 3, business_service_center = 4, station = 5 }
+	export enum Fedex_pickup_type { none = 'none', regular_pickup = 'regular_pickup', request_courier = 'request_courier', drop_box = 'drop_box', business_service_center = 'business_service_center', station = 'station' }
 
 
 	/** The possible smart post hub values */
-	export enum Smart_post_hub { none = 0, allentown_pa = 1, atlanta_ga = 2, baltimore_md = 3, charlotte_nc = 4, chino_ca = 5, dallas_tx = 6, denver_co = 7, detroit_mi = 8, edison_nj = 9, grove_city_oh = 10, groveport_oh = 11, houston_tx = 12, indianapolis_in = 13, kansas_city_ks = 14, los_angeles_ca = 15, martinsburg_wv = 16, memphis_tn = 17, minneapolis_mn = 18, new_berlin_wi = 19, northborough_ma = 20, orlando_fl = 21, phoneix_az = 22, pittsburgh_pa = 23, reno_nv = 24, sacramento_ca = 25, salt_lake_city_ut = 26, seattle_wa = 27, st_louis_mo = 28, windsor_ct = 29, newark_ny = 30, south_brunswick_nj = 31, scranton_pa = 32, wheeling_il = 33 }
+	export enum Smart_post_hub { none = 'none', allentown_pa = 'allentown_pa', atlanta_ga = 'atlanta_ga', baltimore_md = 'baltimore_md', charlotte_nc = 'charlotte_nc', chino_ca = 'chino_ca', dallas_tx = 'dallas_tx', denver_co = 'denver_co', detroit_mi = 'detroit_mi', edison_nj = 'edison_nj', grove_city_oh = 'grove_city_oh', groveport_oh = 'groveport_oh', houston_tx = 'houston_tx', indianapolis_in = 'indianapolis_in', kansas_city_ks = 'kansas_city_ks', los_angeles_ca = 'los_angeles_ca', martinsburg_wv = 'martinsburg_wv', memphis_tn = 'memphis_tn', minneapolis_mn = 'minneapolis_mn', new_berlin_wi = 'new_berlin_wi', northborough_ma = 'northborough_ma', orlando_fl = 'orlando_fl', phoneix_az = 'phoneix_az', pittsburgh_pa = 'pittsburgh_pa', reno_nv = 'reno_nv', sacramento_ca = 'sacramento_ca', salt_lake_city_ut = 'salt_lake_city_ut', seattle_wa = 'seattle_wa', st_louis_mo = 'st_louis_mo', windsor_ct = 'windsor_ct', newark_ny = 'newark_ny', south_brunswick_nj = 'south_brunswick_nj', scranton_pa = 'scranton_pa', wheeling_il = 'wheeling_il' }
 
 
 	/** A Fedex account settings request body */
@@ -5727,7 +5727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_service_point_by_id_response_bodyService_pointType { pudo = 0, locker = 1 }
+	export enum Get_service_point_by_id_response_bodyService_pointType { pudo = 'pudo', locker = 'locker' }
 
 	export interface Get_service_points_request {
 	}
@@ -5948,11 +5948,11 @@ export namespace MyNS {
 	 * |`pan`          | The tax identifier is a Permanent Account Number (PAN).
 	 * |`voec`         | The tax identifier is a Norwegian VAT On E-Commerce(VOEC).
 	 */
-	export enum Identifier_type { vat = 0, eori = 1, ssn = 2, ein = 3, tin = 4, ioss = 5, pan = 6, voec = 7 }
+	export enum Identifier_type { vat = 'vat', eori = 'eori', ssn = 'ssn', ein = 'ein', tin = 'tin', ioss = 'ioss', pan = 'pan', voec = 'voec' }
 
 
 	/** The possible insurance provider values */
-	export enum Insurance_provider { none = 0, shipsurance = 1, carrier = 2, third_party = 3 }
+	export enum Insurance_provider { none = 'none', shipsurance = 'shipsurance', carrier = 'carrier', third_party = 'third_party' }
 
 
 	/** Options for international shipments, such as customs declarations. */
@@ -6002,11 +6002,11 @@ export namespace MyNS {
 
 
 	/** The possible package contents values */
-	export enum Package_contents { merchandise = 0, documents = 1, gift = 2, returned_goods = 3, sample = 4 }
+	export enum Package_contents { merchandise = 'merchandise', documents = 'documents', gift = 'gift', returned_goods = 'returned_goods', sample = 'sample' }
 
 
 	/** The possible non delivery values */
-	export enum Non_delivery { return_to_sender = 0, treat_as_abandoned = 1 }
+	export enum Non_delivery { return_to_sender = 'return_to_sender', treat_as_abandoned = 'treat_as_abandoned' }
 
 
 	/**
@@ -6534,11 +6534,11 @@ export namespace MyNS {
 	 * |`error`      |The label could not be created due to an error, such as an invalid delivery address
 	 * |`voided`     |The label has been [voided](https://www.shipengine.com/docs/labels/voiding/)
 	 */
-	export enum Label_status { processing = 0, completed = 1, error = 2, voided = 3 }
+	export enum Label_status { processing = 'processing', completed = 'completed', error = 'error', voided = 'voided' }
 
 
 	/** The different statuses that can apply to a shipment. */
-	export enum Tracking_status { unknown = 0, in_transit = 1, error = 2, delivered = 3 }
+	export enum Tracking_status { unknown = 'unknown', in_transit = 'in_transit', error = 'error', delivered = 'delivered' }
 
 
 	/** A list account images response body */
@@ -7701,7 +7701,7 @@ export namespace MyNS {
 
 
 	/** The possible statuses of a manifest request */
-	export enum Manifest_request_status { in_progress = 0, completed = 1 }
+	export enum Manifest_request_status { in_progress = 'in_progress', completed = 'completed' }
 
 
 	/** An array of manifest resources */
@@ -7781,7 +7781,7 @@ export namespace MyNS {
 
 
 	/** The order sources that are supported by ShipEngine */
-	export enum Order_source_name { amazon_ca = 0, amazon_us = 1, brightpearl = 2, channel_advisor = 3, cratejoy = 4, ebay = 5, etsy = 6, jane = 7, groupon_goods = 8, magento = 9, paypal = 10, seller_active = 11, shopify = 12, stitch_labs = 13, squarespace = 14, three_dcart = 15, tophatter = 16, walmart = 17, woo_commerce = 18, volusion = 19 }
+	export enum Order_source_name { amazon_ca = 'amazon_ca', amazon_us = 'amazon_us', brightpearl = 'brightpearl', channel_advisor = 'channel_advisor', cratejoy = 'cratejoy', ebay = 'ebay', etsy = 'etsy', jane = 'jane', groupon_goods = 'groupon_goods', magento = 'magento', paypal = 'paypal', seller_active = 'seller_active', shopify = 'shopify', stitch_labs = 'stitch_labs', squarespace = 'squarespace', three_dcart = 'three_dcart', tophatter = 'tophatter', walmart = 'walmart', woo_commerce = 'woo_commerce', volusion = 'volusion' }
 
 
 	/** A package type that a carrier supports for shipment. */
@@ -8495,7 +8495,7 @@ export namespace MyNS {
 
 
 	/** The possible shipment status values */
-	export enum Shipment_status { pending = 0, processing = 1, label_purchased = 2, cancelled = 3 }
+	export enum Shipment_status { pending = 'pending', processing = 'processing', label_purchased = 'label_purchased', cancelled = 'cancelled' }
 
 
 	/**
@@ -9067,11 +9067,11 @@ export namespace MyNS {
 
 
 	/** The possible rate type values */
-	export enum Rate_type { check = 0, shipment = 1 }
+	export enum Rate_type { check = 'check', shipment = 'shipment' }
 
 
 	/** The possible validation status values */
-	export enum Validation_status { valid = 0, invalid = 1, has_warnings = 2, unknown = 3 }
+	export enum Validation_status { valid = 'valid', invalid = 'invalid', has_warnings = 'has_warnings', unknown = 'unknown' }
 
 
 	/** A rate estimate */
@@ -9630,7 +9630,7 @@ export namespace MyNS {
 
 
 	/** The resource to return a redirect URL to. */
-	export enum Redirect { 'shipengine-dashboard' = 0 }
+	export enum Redirect { 'shipengine-dashboard' = 'shipengine-dashboard' }
 
 
 	/** A modify batch request body */
@@ -9894,7 +9894,7 @@ export namespace MyNS {
 
 
 	/** The possible shipments sort by values */
-	export enum Shipments_sort_by { modified_at = 0, created_at = 1 }
+	export enum Shipments_sort_by { modified_at = 'modified_at', created_at = 'created_at' }
 
 
 	/**
@@ -9904,7 +9904,7 @@ export namespace MyNS {
 	 * |`asc`     |Return results in ascending order
 	 * |`desc`    |Return results in descending order
 	 */
-	export enum Sort_dir { asc = 0, desc = 1 }
+	export enum Sort_dir { asc = 'asc', desc = 'desc' }
 
 
 	/**
@@ -9919,7 +9919,7 @@ export namespace MyNS {
 	 * |`at` | Delivery Attempt
 	 * |`ny` | Not Yet In System
 	 */
-	export enum Status_code { un = 0, ac = 1, it = 2, de = 3, ex = 4, at = 5, ny = 6 }
+	export enum Status_code { un = 'un', ac = 'ac', it = 'it', de = 'de', ex = 'ex', at = 'at', ny = 'ny' }
 
 
 	/**
@@ -10049,7 +10049,7 @@ export namespace MyNS {
 	 * |`shipper`   | The shipper is responsible for this tax.
 	 * |`recipient` | The recipient of the shipment is responsible for this tax.
 	 */
-	export enum Taxable_entity_type { shipper = 0, recipient = 1 }
+	export enum Taxable_entity_type { shipper = 'shipper', recipient = 'recipient' }
 
 	export interface Tokens_get_ephemeral_token_response_bodyyaml {
 
@@ -10746,7 +10746,7 @@ export namespace MyNS {
 
 
 	/** The possible ups pickup type values */
-	export enum Ups_pickup_type { daily_pickup = 0, occasional_pickup = 1, customer_counter = 2 }
+	export enum Ups_pickup_type { daily_pickup = 'daily_pickup', occasional_pickup = 'occasional_pickup', customer_counter = 'customer_counter' }
 
 
 	/** A UPS settings response body */

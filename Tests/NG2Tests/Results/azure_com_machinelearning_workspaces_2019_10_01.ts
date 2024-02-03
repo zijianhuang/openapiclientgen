@@ -273,9 +273,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkspacePropertiesWorkspaceState { Deleted = 0, Enabled = 1, Disabled = 2, Migrated = 3, Updated = 4, Registered = 5, Unregistered = 6 }
+	export enum WorkspacePropertiesWorkspaceState { Deleted = 'Deleted', Enabled = 'Enabled', Disabled = 'Disabled', Migrated = 'Migrated', Updated = 'Updated', Registered = 'Registered', Unregistered = 'Unregistered' }
 
-	export enum WorkspacePropertiesWorkspaceType { Production = 0, Free = 1, Anonymous = 2, PaidStandard = 3, PaidPremium = 4 }
+	export enum WorkspacePropertiesWorkspaceType { Production = 'Production', Free = 'Free', Anonymous = 'Anonymous', PaidStandard = 'PaidStandard', PaidPremium = 'PaidPremium' }
 
 
 	/** Workspace authorization keys for a workspace. */

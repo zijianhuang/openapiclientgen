@@ -85,7 +85,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoProvisioningSettingPropertiesAutoProvision { On = 0, Off = 1 }
+	export enum AutoProvisioningSettingPropertiesAutoProvision { On = 'On', Off = 'Off' }
 
 
 	/** List of all the auto provisioning settings response */
@@ -570,7 +570,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PricingPropertiesPricingTier { Free = 0, Standard = 1 }
+	export enum PricingPropertiesPricingTier { Free = 'Free', Standard = 'Standard' }
 
 
 	/** List of pricing configurations response */
@@ -776,7 +776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SettingResourceKind { DataExportSetting = 0, AlertSuppressionSetting = 1 }
+	export enum SettingResourceKind { DataExportSetting = 'DataExportSetting', AlertSuppressionSetting = 'AlertSuppressionSetting' }
 
 
 	/** Subscription settings list. */
@@ -1244,13 +1244,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AutoProvisioningSettings_ListApi_version { '2017-08-01-preview' = 0 }
+	export enum AutoProvisioningSettings_ListApi_version { '2017-08-01-preview' = '2017-08-01-preview' }
 
-	export enum Settings_GetSettingName { MCAS = 0, WDATP = 1 }
+	export enum Settings_GetSettingName { MCAS = 'MCAS', WDATP = 'WDATP' }
 
-	export enum AdvancedThreatProtection_GetSettingName { current = 0 }
+	export enum AdvancedThreatProtection_GetSettingName { current = 'current' }
 
-	export enum InformationProtectionPolicies_GetInformationProtectionPolicyName { effective = 0, custom = 1 }
+	export enum InformationProtectionPolicies_GetInformationProtectionPolicyName { effective = 'effective', custom = 'custom' }
 
 }
 

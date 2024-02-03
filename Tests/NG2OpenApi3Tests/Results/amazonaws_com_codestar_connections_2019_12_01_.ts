@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProviderType { Bitbucket = 0, GitHub = 1, GitHubEnterpriseServer = 2, GitLab = 3 }
+	export enum ProviderType { Bitbucket = 'Bitbucket', GitHub = 'GitHub', GitHubEnterpriseServer = 'GitHubEnterpriseServer', GitLab = 'GitLab' }
 
 	export interface LimitExceededException {
 	}
@@ -289,7 +289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStatus { PENDING = 0, AVAILABLE = 1, ERROR = 2 }
+	export enum ConnectionStatus { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', ERROR = 'ERROR' }
 
 	export interface GetConnectionInput {
 
@@ -704,29 +704,29 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateConnection' = 0 }
+	export enum CreateConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateConnection' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateConnection' }
 
-	export enum CreateHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateHost' = 0 }
+	export enum CreateHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateHost' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateHost' }
 
-	export enum DeleteConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteConnection' = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteConnection' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteConnection' }
 
-	export enum DeleteHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteHost' = 0 }
+	export enum DeleteHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteHost' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteHost' }
 
-	export enum GetConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetConnection' = 0 }
+	export enum GetConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetConnection' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetConnection' }
 
-	export enum GetHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetHost' = 0 }
+	export enum GetHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetHost' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetHost' }
 
-	export enum ListConnectionsX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListConnections' = 0 }
+	export enum ListConnectionsX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListConnections' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListConnections' }
 
-	export enum ListHostsX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListHosts' = 0 }
+	export enum ListHostsX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListHosts' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListHosts' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListTagsForResource' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListTagsForResource' }
 
-	export enum TagResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.TagResource' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.UntagResource' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.UntagResource' }
 
-	export enum UpdateHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.UpdateHost' = 0 }
+	export enum UpdateHostX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.UpdateHost' = 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.UpdateHost' }
 
 }
 

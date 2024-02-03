@@ -210,7 +210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SystemEventType { TYPE_UNSPECIFIED = 0, USER_DELETION = 1, TRASH_AUTO_PURGE = 2 }
+	export enum SystemEventType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', USER_DELETION = 'USER_DELETION', TRASH_AUTO_PURGE = 'TRASH_AUTO_PURGE' }
 
 
 	/** Data describing the type and additional information of an action. */
@@ -598,7 +598,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentSubtype { SUBTYPE_UNSPECIFIED = 0, ADDED = 1, DELETED = 2, REPLY_ADDED = 3, REPLY_DELETED = 4, RESOLVED = 5, REOPENED = 6, REASSIGNED = 7 }
+	export enum AssignmentSubtype { SUBTYPE_UNSPECIFIED = 'SUBTYPE_UNSPECIFIED', ADDED = 'ADDED', DELETED = 'DELETED', REPLY_ADDED = 'REPLY_ADDED', REPLY_DELETED = 'REPLY_DELETED', RESOLVED = 'RESOLVED', REOPENED = 'REOPENED', REASSIGNED = 'REASSIGNED' }
 
 
 	/** A regular posted comment. */
@@ -621,7 +621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostSubtype { SUBTYPE_UNSPECIFIED = 0, ADDED = 1, DELETED = 2, REPLY_ADDED = 3, REPLY_DELETED = 4, RESOLVED = 5, REOPENED = 6 }
+	export enum PostSubtype { SUBTYPE_UNSPECIFIED = 'SUBTYPE_UNSPECIFIED', ADDED = 'ADDED', DELETED = 'DELETED', REPLY_ADDED = 'REPLY_ADDED', REPLY_DELETED = 'REPLY_DELETED', RESOLVED = 'RESOLVED', REOPENED = 'REOPENED' }
 
 
 	/** A suggestion. */
@@ -644,7 +644,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuggestionSubtype { SUBTYPE_UNSPECIFIED = 0, ADDED = 1, DELETED = 2, REPLY_ADDED = 3, REPLY_DELETED = 4, ACCEPTED = 5, REJECTED = 6, ACCEPT_DELETED = 7, REJECT_DELETED = 8 }
+	export enum SuggestionSubtype { SUBTYPE_UNSPECIFIED = 'SUBTYPE_UNSPECIFIED', ADDED = 'ADDED', DELETED = 'DELETED', REPLY_ADDED = 'REPLY_ADDED', REPLY_DELETED = 'REPLY_DELETED', ACCEPTED = 'ACCEPTED', REJECTED = 'REJECTED', ACCEPT_DELETED = 'ACCEPT_DELETED', REJECT_DELETED = 'REJECT_DELETED' }
 
 
 	/** An object was created. */
@@ -812,7 +812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriveFolderType { TYPE_UNSPECIFIED = 0, MY_DRIVE_ROOT = 1, SHARED_DRIVE_ROOT = 2, STANDARD_FOLDER = 3 }
+	export enum DriveFolderType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', MY_DRIVE_ROOT = 'MY_DRIVE_ROOT', SHARED_DRIVE_ROOT = 'SHARED_DRIVE_ROOT', STANDARD_FOLDER = 'STANDARD_FOLDER' }
 
 
 	/** This item is deprecated; please see `DriveFile` instead. */
@@ -849,7 +849,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FolderType { TYPE_UNSPECIFIED = 0, MY_DRIVE_ROOT = 1, TEAM_DRIVE_ROOT = 2, STANDARD_FOLDER = 3 }
+	export enum FolderType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', MY_DRIVE_ROOT = 'MY_DRIVE_ROOT', TEAM_DRIVE_ROOT = 'TEAM_DRIVE_ROOT', STANDARD_FOLDER = 'STANDARD_FOLDER' }
 
 
 	/** This item is deprecated; please see `DriveReference` instead. */
@@ -928,7 +928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeleteType { TYPE_UNSPECIFIED = 0, TRASH = 1, PERMANENT_DELETE = 2 }
+	export enum DeleteType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TRASH = 'TRASH', PERMANENT_DELETE = 'PERMANENT_DELETE' }
 
 
 	/** A change in the object's data leak prevention status. */
@@ -951,7 +951,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLeakPreventionChangeType { TYPE_UNSPECIFIED = 0, FLAGGED = 1, CLEARED = 2 }
+	export enum DataLeakPreventionChangeType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', FLAGGED = 'FLAGGED', CLEARED = 'CLEARED' }
 
 
 	/** An empty message indicating an object was edited. */
@@ -1117,7 +1117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionRole { ROLE_UNSPECIFIED = 0, OWNER = 1, ORGANIZER = 2, FILE_ORGANIZER = 3, EDITOR = 4, COMMENTER = 5, VIEWER = 6, PUBLISHED_VIEWER = 7 }
+	export enum PermissionRole { ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED', OWNER = 'OWNER', ORGANIZER = 'ORGANIZER', FILE_ORGANIZER = 'FILE_ORGANIZER', EDITOR = 'EDITOR', COMMENTER = 'COMMENTER', VIEWER = 'VIEWER', PUBLISHED_VIEWER = 'PUBLISHED_VIEWER' }
 
 
 	/** Activity in applications other than Drive. */
@@ -1140,7 +1140,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationReferenceType { UNSPECIFIED_REFERENCE_TYPE = 0, LINK = 1, DISCUSS = 2 }
+	export enum ApplicationReferenceType { UNSPECIFIED_REFERENCE_TYPE = 'UNSPECIFIED_REFERENCE_TYPE', LINK = 'LINK', DISCUSS = 'DISCUSS' }
 
 
 	/** An object was renamed. */
@@ -1191,7 +1191,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestoreType { TYPE_UNSPECIFIED = 0, UNTRASH = 1 }
+	export enum RestoreType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', UNTRASH = 'UNTRASH' }
 
 
 	/** Information about settings changes. */
@@ -1238,9 +1238,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RestrictionChangeFeature { FEATURE_UNSPECIFIED = 0, SHARING_OUTSIDE_DOMAIN = 1, DIRECT_SHARING = 2, ITEM_DUPLICATION = 3, DRIVE_FILE_STREAM = 4, FILE_ORGANIZER_CAN_SHARE_FOLDERS = 5 }
+	export enum RestrictionChangeFeature { FEATURE_UNSPECIFIED = 'FEATURE_UNSPECIFIED', SHARING_OUTSIDE_DOMAIN = 'SHARING_OUTSIDE_DOMAIN', DIRECT_SHARING = 'DIRECT_SHARING', ITEM_DUPLICATION = 'ITEM_DUPLICATION', DRIVE_FILE_STREAM = 'DRIVE_FILE_STREAM', FILE_ORGANIZER_CAN_SHARE_FOLDERS = 'FILE_ORGANIZER_CAN_SHARE_FOLDERS' }
 
-	export enum RestrictionChangeNewRestriction { RESTRICTION_UNSPECIFIED = 0, UNRESTRICTED = 1, FULLY_RESTRICTED = 2 }
+	export enum RestrictionChangeNewRestriction { RESTRICTION_UNSPECIFIED = 'RESTRICTION_UNSPECIFIED', UNRESTRICTED = 'UNRESTRICTED', FULLY_RESTRICTED = 'FULLY_RESTRICTED' }
 
 
 	/** Information about the target of activity. For more information on how activity history is shared with users, see [Activity history visibility](https://developers.google.com/drive/activity/v2#activityhistory). */

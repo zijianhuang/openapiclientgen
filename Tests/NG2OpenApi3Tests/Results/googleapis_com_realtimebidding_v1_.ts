@@ -64,7 +64,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddTargetedAppsRequestTargetingMode { TARGETING_MODE_UNSPECIFIED = 0, INCLUSIVE = 1, EXCLUSIVE = 2 }
+	export enum AddTargetedAppsRequestTargetingMode { TARGETING_MODE_UNSPECIFIED = 'TARGETING_MODE_UNSPECIFIED', INCLUSIVE = 'INCLUSIVE', EXCLUSIVE = 'EXCLUSIVE' }
 
 
 	/** A request to start targeting the provided publishers in a specific pretargeting configuration. The pretargeting configuration itself specifies how these publishers are targeted in PretargetingConfig.publisherTargeting. */
@@ -303,9 +303,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PublisherConnectionBiddingState { STATE_UNSPECIFIED = 0, PENDING = 1, REJECTED = 2, APPROVED = 3 }
+	export enum PublisherConnectionBiddingState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', REJECTED = 'REJECTED', APPROVED = 'APPROVED' }
 
-	export enum PublisherConnectionPublisherPlatform { PUBLISHER_PLATFORM_UNSPECIFIED = 0, GOOGLE_AD_MANAGER = 1, ADMOB = 2 }
+	export enum PublisherConnectionPublisherPlatform { PUBLISHER_PLATFORM_UNSPECIFIED = 'PUBLISHER_PLATFORM_UNSPECIFIED', GOOGLE_AD_MANAGER = 'GOOGLE_AD_MANAGER', ADMOB = 'ADMOB' }
 
 
 	/** A request to reject a batch of publisher connections. */
@@ -573,7 +573,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreativeCreativeFormat { CREATIVE_FORMAT_UNSPECIFIED = 0, HTML = 1, VIDEO = 2, NATIVE = 3 }
+	export enum CreativeCreativeFormat { CREATIVE_FORMAT_UNSPECIFIED = 'CREATIVE_FORMAT_UNSPECIFIED', HTML = 'HTML', VIDEO = 'VIDEO', NATIVE = 'NATIVE' }
 
 
 	/** Top level status and detected attributes of a creative. */
@@ -662,7 +662,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyComplianceStatus { STATUS_UNSPECIFIED = 0, PENDING_REVIEW = 1, DISAPPROVED = 2, APPROVED = 3, CERTIFICATE_REQUIRED = 4 }
+	export enum PolicyComplianceStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', PENDING_REVIEW = 'PENDING_REVIEW', DISAPPROVED = 'DISAPPROVED', APPROVED = 'APPROVED', CERTIFICATE_REQUIRED = 'CERTIFICATE_REQUIRED' }
 
 
 	/** Each policy topic entry will represent a violation of a policy topic for a creative, with the policy topic information and optional evidence for the policy violation. */
@@ -772,7 +772,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationNotCrawlableEvidenceReason { REASON_UNSPECIFIED = 0, UNREACHABLE_ROBOTS = 1, TIMEOUT_ROBOTS = 2, ROBOTED_DENIED = 3, UNKNOWN = 4 }
+	export enum DestinationNotCrawlableEvidenceReason { REASON_UNSPECIFIED = 'REASON_UNSPECIFIED', UNREACHABLE_ROBOTS = 'UNREACHABLE_ROBOTS', TIMEOUT_ROBOTS = 'TIMEOUT_ROBOTS', ROBOTED_DENIED = 'ROBOTED_DENIED', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Evidence of the creative's destination URL not functioning properly or having been incorrectly set up. */
@@ -844,15 +844,15 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationNotWorkingEvidenceDnsError { DNS_ERROR_UNSPECIFIED = 0, ERROR_DNS = 1, GOOGLE_CRAWLER_DNS_ISSUE = 2 }
+	export enum DestinationNotWorkingEvidenceDnsError { DNS_ERROR_UNSPECIFIED = 'DNS_ERROR_UNSPECIFIED', ERROR_DNS = 'ERROR_DNS', GOOGLE_CRAWLER_DNS_ISSUE = 'GOOGLE_CRAWLER_DNS_ISSUE' }
 
-	export enum DestinationNotWorkingEvidenceInvalidPage { INVALID_PAGE_UNSPECIFIED = 0, EMPTY_OR_ERROR_PAGE = 1 }
+	export enum DestinationNotWorkingEvidenceInvalidPage { INVALID_PAGE_UNSPECIFIED = 'INVALID_PAGE_UNSPECIFIED', EMPTY_OR_ERROR_PAGE = 'EMPTY_OR_ERROR_PAGE' }
 
-	export enum DestinationNotWorkingEvidencePlatform { PLATFORM_UNSPECIFIED = 0, PERSONAL_COMPUTER = 1, ANDROID = 2, IOS = 3 }
+	export enum DestinationNotWorkingEvidencePlatform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', PERSONAL_COMPUTER = 'PERSONAL_COMPUTER', ANDROID = 'ANDROID', IOS = 'IOS' }
 
-	export enum DestinationNotWorkingEvidenceRedirectionError { REDIRECTION_ERROR_UNSPECIFIED = 0, TOO_MANY_REDIRECTS = 1, INVALID_REDIRECT = 2, EMPTY_REDIRECT = 3, REDIRECT_ERROR_UNKNOWN = 4 }
+	export enum DestinationNotWorkingEvidenceRedirectionError { REDIRECTION_ERROR_UNSPECIFIED = 'REDIRECTION_ERROR_UNSPECIFIED', TOO_MANY_REDIRECTS = 'TOO_MANY_REDIRECTS', INVALID_REDIRECT = 'INVALID_REDIRECT', EMPTY_REDIRECT = 'EMPTY_REDIRECT', REDIRECT_ERROR_UNKNOWN = 'REDIRECT_ERROR_UNKNOWN' }
 
-	export enum DestinationNotWorkingEvidenceUrlRejected { URL_REJECTED_UNSPECIFIED = 0, BAD_REQUEST = 1, MALFORMED_URL = 2, URL_REJECTED_UNKNOWN = 3 }
+	export enum DestinationNotWorkingEvidenceUrlRejected { URL_REJECTED_UNSPECIFIED = 'URL_REJECTED_UNSPECIFIED', BAD_REQUEST = 'BAD_REQUEST', MALFORMED_URL = 'MALFORMED_URL', URL_REJECTED_UNKNOWN = 'URL_REJECTED_UNKNOWN' }
 
 
 	/** The full landing page URL of the destination. */
@@ -1294,9 +1294,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaFileMimeType { VIDEO_MIME_TYPE_UNSPECIFIED = 0, MIME_VIDEO_XFLV = 1, MIME_VIDEO_WEBM = 2, MIME_VIDEO_MP4 = 3, MIME_VIDEO_OGG = 4, MIME_VIDEO_YT_HOSTED = 5, MIME_VIDEO_X_MS_WMV = 6, MIME_VIDEO_3GPP = 7, MIME_VIDEO_MOV = 8, MIME_APPLICATION_SWF = 9, MIME_APPLICATION_SURVEY = 10, MIME_APPLICATION_JAVASCRIPT = 11, MIME_APPLICATION_SILVERLIGHT = 12, MIME_APPLICATION_MPEGURL = 13, MIME_APPLICATION_MPEGDASH = 14, MIME_AUDIO_MP4A = 15, MIME_AUDIO_MP3 = 16, MIME_AUDIO_OGG = 17 }
+	export enum MediaFileMimeType { VIDEO_MIME_TYPE_UNSPECIFIED = 'VIDEO_MIME_TYPE_UNSPECIFIED', MIME_VIDEO_XFLV = 'MIME_VIDEO_XFLV', MIME_VIDEO_WEBM = 'MIME_VIDEO_WEBM', MIME_VIDEO_MP4 = 'MIME_VIDEO_MP4', MIME_VIDEO_OGG = 'MIME_VIDEO_OGG', MIME_VIDEO_YT_HOSTED = 'MIME_VIDEO_YT_HOSTED', MIME_VIDEO_X_MS_WMV = 'MIME_VIDEO_X_MS_WMV', MIME_VIDEO_3GPP = 'MIME_VIDEO_3GPP', MIME_VIDEO_MOV = 'MIME_VIDEO_MOV', MIME_APPLICATION_SWF = 'MIME_APPLICATION_SWF', MIME_APPLICATION_SURVEY = 'MIME_APPLICATION_SURVEY', MIME_APPLICATION_JAVASCRIPT = 'MIME_APPLICATION_JAVASCRIPT', MIME_APPLICATION_SILVERLIGHT = 'MIME_APPLICATION_SILVERLIGHT', MIME_APPLICATION_MPEGURL = 'MIME_APPLICATION_MPEGURL', MIME_APPLICATION_MPEGDASH = 'MIME_APPLICATION_MPEGDASH', MIME_AUDIO_MP4A = 'MIME_AUDIO_MP4A', MIME_AUDIO_MP3 = 'MIME_AUDIO_MP3', MIME_AUDIO_OGG = 'MIME_AUDIO_OGG' }
 
-	export enum VideoMetadataVastVersion { VAST_VERSION_UNSPECIFIED = 0, VAST_VERSION_1_0 = 1, VAST_VERSION_2_0 = 2, VAST_VERSION_3_0 = 3, VAST_VERSION_4_0 = 4 }
+	export enum VideoMetadataVastVersion { VAST_VERSION_UNSPECIFIED = 'VAST_VERSION_UNSPECIFIED', VAST_VERSION_1_0 = 'VAST_VERSION_1_0', VAST_VERSION_2_0 = 'VAST_VERSION_2_0', VAST_VERSION_3_0 = 'VAST_VERSION_3_0', VAST_VERSION_4_0 = 'VAST_VERSION_4_0' }
 
 
 	/** The dimensions of a creative. This applies to only HTML and Native creatives. */
@@ -1424,9 +1424,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EndpointBidProtocol { BID_PROTOCOL_UNSPECIFIED = 0, GOOGLE_RTB = 1, OPENRTB_JSON = 2, OPENRTB_PROTOBUF = 3 }
+	export enum EndpointBidProtocol { BID_PROTOCOL_UNSPECIFIED = 'BID_PROTOCOL_UNSPECIFIED', GOOGLE_RTB = 'GOOGLE_RTB', OPENRTB_JSON = 'OPENRTB_JSON', OPENRTB_PROTOBUF = 'OPENRTB_PROTOBUF' }
 
-	export enum EndpointTradingLocation { TRADING_LOCATION_UNSPECIFIED = 0, US_WEST = 1, US_EAST = 2, EUROPE = 3, ASIA = 4 }
+	export enum EndpointTradingLocation { TRADING_LOCATION_UNSPECIFIED = 'TRADING_LOCATION_UNSPECIFIED', US_WEST = 'US_WEST', US_EAST = 'US_EAST', EUROPE = 'EUROPE', ASIA = 'ASIA' }
 
 
 	/** This has been sunset as of October 2023, and will return an error response if called. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api Response for a request to get remarketing tag. */
@@ -1680,9 +1680,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PretargetingConfigInterstitialTargeting { INTERSTITIAL_TARGETING_UNSPECIFIED = 0, ONLY_INTERSTITIAL_REQUESTS = 1, ONLY_NON_INTERSTITIAL_REQUESTS = 2 }
+	export enum PretargetingConfigInterstitialTargeting { INTERSTITIAL_TARGETING_UNSPECIFIED = 'INTERSTITIAL_TARGETING_UNSPECIFIED', ONLY_INTERSTITIAL_REQUESTS = 'ONLY_INTERSTITIAL_REQUESTS', ONLY_NON_INTERSTITIAL_REQUESTS = 'ONLY_NON_INTERSTITIAL_REQUESTS' }
 
-	export enum PretargetingConfigState { STATE_UNSPECIFIED = 0, ACTIVE = 1, SUSPENDED = 2 }
+	export enum PretargetingConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', SUSPENDED = 'SUSPENDED' }
 
 
 	/** A response to a request for listing publisher connections. */
@@ -1784,7 +1784,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserListStatus { STATUS_UNSPECIFIED = 0, OPEN = 1, CLOSED = 2 }
+	export enum UserListStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', OPEN = 'OPEN', CLOSED = 'CLOSED' }
 
 
 	/** Deprecated. This will be removed in October 2023. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api Represents the URL restriction (for the URL captured by the pixel callback) for a user list. */
@@ -1820,7 +1820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UrlRestrictionRestrictionType { RESTRICTION_TYPE_UNSPECIFIED = 0, CONTAINS = 1, EQUALS = 2, STARTS_WITH = 3, ENDS_WITH = 4, DOES_NOT_EQUAL = 5, DOES_NOT_CONTAIN = 6, DOES_NOT_START_WITH = 7, DOES_NOT_END_WITH = 8 }
+	export enum UrlRestrictionRestrictionType { RESTRICTION_TYPE_UNSPECIFIED = 'RESTRICTION_TYPE_UNSPECIFIED', CONTAINS = 'CONTAINS', EQUALS = 'EQUALS', STARTS_WITH = 'STARTS_WITH', ENDS_WITH = 'ENDS_WITH', DOES_NOT_EQUAL = 'DOES_NOT_EQUAL', DOES_NOT_CONTAIN = 'DOES_NOT_CONTAIN', DOES_NOT_START_WITH = 'DOES_NOT_START_WITH', DOES_NOT_END_WITH = 'DOES_NOT_END_WITH' }
 
 
 	/** A request to open a specified user list. */
@@ -2247,7 +2247,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Realtimebidding_buyers_userLists_getView { CREATIVE_VIEW_UNSPECIFIED = 0, SERVING_DECISION_ONLY = 1, FULL = 2 }
+	export enum Realtimebidding_buyers_userLists_getView { CREATIVE_VIEW_UNSPECIFIED = 'CREATIVE_VIEW_UNSPECIFIED', SERVING_DECISION_ONLY = 'SERVING_DECISION_ONLY', FULL = 'FULL' }
 
 }
 

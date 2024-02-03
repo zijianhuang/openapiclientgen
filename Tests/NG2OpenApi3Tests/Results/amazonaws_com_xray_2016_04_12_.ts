@@ -383,9 +383,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionStatus { UPDATING = 0, ACTIVE = 1 }
+	export enum EncryptionStatus { UPDATING = 'UPDATING', ACTIVE = 'ACTIVE' }
 
-	export enum EncryptionType { NONE = 0, KMS = 1 }
+	export enum EncryptionType { NONE = 'NONE', KMS = 'KMS' }
 
 	export interface GetGroupResult {
 		Group?: Group;
@@ -513,9 +513,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InsightCategory { FAULT = 0 }
+	export enum InsightCategory { FAULT = 'FAULT' }
 
-	export enum InsightState { ACTIVE = 0, CLOSED = 1 }
+	export enum InsightState { ACTIVE = 'ACTIVE', CLOSED = 'CLOSED' }
 
 
 	/** Statistics that describe how the incident has impacted a service. */
@@ -1612,7 +1612,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SamplingStrategyName { PartialScan = 0, FixedRate = 1 }
+	export enum SamplingStrategyName { PartialScan = 'PartialScan', FixedRate = 'FixedRate' }
 
 	export interface ListResourcePoliciesResult {
 		ResourcePolicies?: Array<ResourcePolicy>;
@@ -2325,7 +2325,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeRangeType { TraceId = 0, Event = 1 }
+	export enum TimeRangeType { TraceId = 'TraceId', Event = 'Event' }
 
 
 	/** The name and value of a sampling rule to apply to a trace summary. */

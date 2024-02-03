@@ -92,9 +92,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckAvailabilityTaskState { pending = 0, queued = 1, running = 2, timedout = 3, completed = 4 }
+	export enum CheckAvailabilityTaskState { pending = 'pending', queued = 'queued', running = 'running', timedout = 'timedout', completed = 'completed' }
 
-	export enum CheckAvailabilityTaskStatus { ok = 0, warn = 1, unchanged = 2, error = 3 }
+	export enum CheckAvailabilityTaskStatus { ok = 'ok', warn = 'warn', unchanged = 'unchanged', error = 'error' }
 
 	export interface CollectionLinks {
 		first?: string | null;

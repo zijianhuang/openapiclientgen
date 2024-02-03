@@ -114,7 +114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentCls { labelComponent = 0, numberComponent = 1, textComponent = 2, imageComponent = 3, dateComponent = 4, hlineComponent = 5, vlineComponent = 6, tableComponent = 7, compositeComponent = 8, barcodeComponent = 9, qrcodeComponent = 10, chartComponent = 11, rectangleComponent = 12, headerComponent = 13, footerComponent = 14, checkboxComponent = 15, radioComponent = 16 }
+	export enum ComponentCls { labelComponent = 'labelComponent', numberComponent = 'numberComponent', textComponent = 'textComponent', imageComponent = 'imageComponent', dateComponent = 'dateComponent', hlineComponent = 'hlineComponent', vlineComponent = 'vlineComponent', tableComponent = 'tableComponent', compositeComponent = 'compositeComponent', barcodeComponent = 'barcodeComponent', qrcodeComponent = 'qrcodeComponent', chartComponent = 'chartComponent', rectangleComponent = 'rectangleComponent', headerComponent = 'headerComponent', footerComponent = 'footerComponent', checkboxComponent = 'checkboxComponent', radioComponent = 'radioComponent' }
 
 
 	/** Template object */
@@ -297,7 +297,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateDefinitionLayoutFormat { A4 = 0, letter = 1, custom = 2 }
+	export enum TemplateDefinitionLayoutFormat { A4 = 'A4', letter = 'letter', custom = 'custom' }
 
 	export interface TemplateDefinitionLayoutMargins {
 		bottom?: number | null;
@@ -321,7 +321,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateDefinitionLayoutOrientation { portrait = 0, landscape = 1 }
+	export enum TemplateDefinitionLayoutOrientation { portrait = 'portrait', landscape = 'landscape' }
 
 	export interface TemplateDefinitionLayoutRepeatLayout {
 
@@ -356,7 +356,7 @@ export namespace MyNS {
 
 	export enum TemplateDefinitionLayoutRotation { _0 = 0, _90 = 1, _180 = 2, _270 = 3 }
 
-	export enum TemplateDefinitionLayoutUnit { cm = 0, in = 1 }
+	export enum TemplateDefinitionLayoutUnit { cm = 'cm', in = 'in' }
 
 	export interface TemplateDefinitionPages {
 		components?: Array<Component>;
@@ -814,9 +814,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MergeTemplatesFormat { pdf = 0, html = 1, zip = 2, xlsx = 3 }
+	export enum MergeTemplatesFormat { pdf = 'pdf', html = 'html', zip = 'zip', xlsx = 'xlsx' }
 
-	export enum MergeTemplatesOutput { base64 = 0, url = 1, I = 2 }
+	export enum MergeTemplatesOutput { base64 = 'base64', url = 'url', I = 'I' }
 
 	export interface MergeTemplatesPostBody {
 		data?: Data;
@@ -949,7 +949,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetEditorUrlLanguage { en = 0, et = 1, cs = 2, sk = 3, ru = 4 }
+	export enum GetEditorUrlLanguage { en = 'en', et = 'et', cs = 'cs', sk = 'sk', ru = 'ru' }
 
 	export interface GetEditorUrlReturn {
 		response?: string | null;

@@ -135,7 +135,7 @@ export namespace MyNS {
 
 
 	/** Identifies the nature of the postal address. */
-	export enum OBAddressTypeCode { Business = 0, Correspondence = 1, DeliveryTo = 2, MailTo = 3, POBox = 4, Postal = 5, Residential = 6, Statement = 7 }
+	export enum OBAddressTypeCode { Business = 'Business', Correspondence = 'Correspondence', DeliveryTo = 'DeliveryTo', MailTo = 'MailTo', POBox = 'POBox', Postal = 'Postal', Residential = 'Residential', Statement = 'Statement' }
 
 	export interface OBCashAccountCreditor3 {
 
@@ -245,7 +245,7 @@ export namespace MyNS {
 
 
 	/** Specifies which party/parties will bear the charges associated with the processing of the payment transaction. */
-	export enum OBChargeBearerType1Code { BorneByCreditor = 0, BorneByDebtor = 1, FollowingServiceLevel = 2, Shared = 3 }
+	export enum OBChargeBearerType1Code { BorneByCreditor = 'BorneByCreditor', BorneByDebtor = 'BorneByDebtor', FollowingServiceLevel = 'FollowingServiceLevel', Shared = 'Shared' }
 
 	export interface OBError1 {
 
@@ -679,7 +679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBRisk1PaymentContextCode { BillPayment = 0, EcommerceGoods = 1, EcommerceServices = 2, Other = 3, PartyToParty = 4 }
+	export enum OBRisk1PaymentContextCode { BillPayment = 'BillPayment', EcommerceGoods = 'EcommerceGoods', EcommerceServices = 'EcommerceServices', Other = 'Other', PartyToParty = 'PartyToParty' }
 
 
 	/** Supporting Data provided by TPP, when requesting SCA Exemption. */
@@ -732,9 +732,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OBSCASupportData1AppliedAuthenticationApproach { CA = 0, SCA = 1 }
+	export enum OBSCASupportData1AppliedAuthenticationApproach { CA = 'CA', SCA = 'SCA' }
 
-	export enum OBSCASupportData1RequestedSCAExemptionType { BillPayment = 0, ContactlessTravel = 1, EcommerceGoods = 2, EcommerceServices = 3, Kiosk = 4, Parking = 5, PartyToParty = 6 }
+	export enum OBSCASupportData1RequestedSCAExemptionType { BillPayment = 'BillPayment', ContactlessTravel = 'ContactlessTravel', EcommerceGoods = 'EcommerceGoods', EcommerceServices = 'EcommerceServices', Kiosk = 'Kiosk', Parking = 'Parking', PartyToParty = 'PartyToParty' }
 
 
 	/** Additional information that can not be captured in the structured fields and/or any other specific block. */
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteDomesticConsent4DataAuthorisationAuthorisationType { Any = 0, Single = 1 }
+	export enum OBWriteDomesticConsent4DataAuthorisationAuthorisationType { Any = 'Any', Single = 'Single' }
 
 	export interface OBWriteDomesticConsent4DataInitiation {
 
@@ -1534,7 +1534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteDomesticConsent4DataReadRefundAccount { No = 0, Yes = 1 }
+	export enum OBWriteDomesticConsent4DataReadRefundAccount { No = 'No', Yes = 'Yes' }
 
 	export interface OBWriteDomesticConsentResponse5 {
 
@@ -2105,7 +2105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteDomesticConsentResponse5DataStatus { Authorised = 0, AwaitingAuthorisation = 1, Consumed = 2, Rejected = 3 }
+	export enum OBWriteDomesticConsentResponse5DataStatus { Authorised = 'Authorised', AwaitingAuthorisation = 'AwaitingAuthorisation', Consumed = 'Consumed', Rejected = 'Rejected' }
 
 	export interface OBWriteDomesticResponse5 {
 
@@ -2694,7 +2694,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteDomesticResponse5DataMultiAuthorisationStatus { Authorised = 0, AwaitingFurtherAuthorisation = 1, Rejected = 2 }
+	export enum OBWriteDomesticResponse5DataMultiAuthorisationStatus { Authorised = 'Authorised', AwaitingFurtherAuthorisation = 'AwaitingFurtherAuthorisation', Rejected = 'Rejected' }
 
 	export interface OBWriteDomesticResponse5DataRefund {
 
@@ -2790,7 +2790,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteDomesticResponse5DataStatus { AcceptedCreditSettlementCompleted = 0, AcceptedSettlementCompleted = 1, AcceptedSettlementInProcess = 2, AcceptedWithoutPosting = 3, Pending = 4, Rejected = 5 }
+	export enum OBWriteDomesticResponse5DataStatus { AcceptedCreditSettlementCompleted = 'AcceptedCreditSettlementCompleted', AcceptedSettlementCompleted = 'AcceptedSettlementCompleted', AcceptedSettlementInProcess = 'AcceptedSettlementInProcess', AcceptedWithoutPosting = 'AcceptedWithoutPosting', Pending = 'Pending', Rejected = 'Rejected' }
 
 	export interface OBWriteDomesticScheduled2 {
 
@@ -3621,7 +3621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteDomesticScheduledConsent4DataPermission { Create = 0 }
+	export enum OBWriteDomesticScheduledConsent4DataPermission { Create = 'Create' }
 
 	export interface OBWriteDomesticScheduledConsentResponse5 {
 
@@ -4920,7 +4920,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteDomesticScheduledResponse5DataStatus { Cancelled = 0, InitiationCompleted = 1, InitiationFailed = 2, InitiationPending = 3 }
+	export enum OBWriteDomesticScheduledResponse5DataStatus { Cancelled = 'Cancelled', InitiationCompleted = 'InitiationCompleted', InitiationFailed = 'InitiationFailed', InitiationPending = 'InitiationPending' }
 
 	export interface OBWriteDomesticStandingOrder3 {
 
@@ -8399,7 +8399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteFileConsentResponse4DataStatus { Authorised = 0, AwaitingAuthorisation = 1, AwaitingUpload = 2, Consumed = 3, Rejected = 4 }
+	export enum OBWriteFileConsentResponse4DataStatus { Authorised = 'Authorised', AwaitingAuthorisation = 'AwaitingAuthorisation', AwaitingUpload = 'AwaitingUpload', Consumed = 'Consumed', Rejected = 'Rejected' }
 
 	export interface OBWriteFileResponse3 {
 
@@ -8861,7 +8861,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteFileResponse3DataStatus { InitiationCompleted = 0, InitiationFailed = 1, InitiationPending = 2 }
+	export enum OBWriteFileResponse3DataStatus { InitiationCompleted = 'InitiationCompleted', InitiationFailed = 'InitiationFailed', InitiationPending = 'InitiationPending' }
 
 	export interface OBWriteFundsConfirmationResponse1 {
 
@@ -9440,7 +9440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteInternational3DataInitiationExchangeRateInformationRateType { Actual = 0, Agreed = 1, Indicative = 2 }
+	export enum OBWriteInternational3DataInitiationExchangeRateInformationRateType { Actual = 'Actual', Agreed = 'Agreed', Indicative = 'Indicative' }
 
 	export interface OBWriteInternational3DataInitiationInstructedAmount {
 
@@ -9478,7 +9478,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWriteInternational3DataInitiationInstructionPriority { Normal = 0, Urgent = 1 }
+	export enum OBWriteInternational3DataInitiationInstructionPriority { Normal = 'Normal', Urgent = 'Urgent' }
 
 	export interface OBWriteInternational3DataInitiationRemittanceInformation {
 
@@ -18130,7 +18130,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWritePaymentDetailsResponse1DataPaymentStatusStatus { Accepted = 0, AcceptedCancellationRequest = 1, AcceptedCreditSettlementCompleted = 2, AcceptedCustomerProfile = 3, AcceptedFundsChecked = 4, AcceptedSettlementCompleted = 5, AcceptedSettlementInProcess = 6, AcceptedTechnicalValidation = 7, AcceptedWithChange = 8, AcceptedWithoutPosting = 9, Cancelled = 10, NoCancellationProcess = 11, PartiallyAcceptedCancellationRequest = 12, PartiallyAcceptedTechnicalCorrect = 13, PaymentCancelled = 14, Pending = 15, PendingCancellationRequest = 16, Received = 17, Rejected = 18, RejectedCancellationRequest = 19 }
+	export enum OBWritePaymentDetailsResponse1DataPaymentStatusStatus { Accepted = 'Accepted', AcceptedCancellationRequest = 'AcceptedCancellationRequest', AcceptedCreditSettlementCompleted = 'AcceptedCreditSettlementCompleted', AcceptedCustomerProfile = 'AcceptedCustomerProfile', AcceptedFundsChecked = 'AcceptedFundsChecked', AcceptedSettlementCompleted = 'AcceptedSettlementCompleted', AcceptedSettlementInProcess = 'AcceptedSettlementInProcess', AcceptedTechnicalValidation = 'AcceptedTechnicalValidation', AcceptedWithChange = 'AcceptedWithChange', AcceptedWithoutPosting = 'AcceptedWithoutPosting', Cancelled = 'Cancelled', NoCancellationProcess = 'NoCancellationProcess', PartiallyAcceptedCancellationRequest = 'PartiallyAcceptedCancellationRequest', PartiallyAcceptedTechnicalCorrect = 'PartiallyAcceptedTechnicalCorrect', PaymentCancelled = 'PaymentCancelled', Pending = 'Pending', PendingCancellationRequest = 'PendingCancellationRequest', Received = 'Received', Rejected = 'Rejected', RejectedCancellationRequest = 'RejectedCancellationRequest' }
 
 	export interface OBWritePaymentDetailsResponse1DataPaymentStatusStatusDetail {
 
@@ -18194,7 +18194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OBWritePaymentDetailsResponse1DataPaymentStatusStatusDetailStatusReason { Cancelled = 0, PendingFailingSettlement = 1, PendingSettlement = 2, Proprietary = 3, ProprietaryRejection = 4, Suspended = 5, Unmatched = 6 }
+	export enum OBWritePaymentDetailsResponse1DataPaymentStatusStatusDetailStatusReason { Cancelled = 'Cancelled', PendingFailingSettlement = 'PendingFailingSettlement', PendingSettlement = 'PendingSettlement', Proprietary = 'Proprietary', ProprietaryRejection = 'ProprietaryRejection', Suspended = 'Suspended', Unmatched = 'Unmatched' }
 
 	@Injectable()
 	export class MyClient {

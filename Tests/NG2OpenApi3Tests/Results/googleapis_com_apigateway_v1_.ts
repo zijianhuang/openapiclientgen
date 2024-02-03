@@ -66,7 +66,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApigatewayApiState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, FAILED = 3, DELETING = 4, UPDATING = 5 }
+	export enum ApigatewayApiState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** An API Configuration is a combination of settings for both the Managed Service and Gateways serving this API Config. */
@@ -212,7 +212,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApigatewayApiConfigState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, FAILED = 3, DELETING = 4, UPDATING = 5, ACTIVATING = 6 }
+	export enum ApigatewayApiConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', FAILED = 'FAILED', DELETING = 'DELETING', UPDATING = 'UPDATING', ACTIVATING = 'ACTIVATING' }
 
 
 	/** Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose@example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya@example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose@example.com` from DATA_READ logging, and `aliya@example.com` from DATA_WRITE logging. */
@@ -262,7 +262,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApigatewayAuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum ApigatewayAuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Apigateway_projects_locations_operations_getView { CONFIG_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Apigateway_projects_locations_operations_getView { CONFIG_VIEW_UNSPECIFIED = 'CONFIG_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

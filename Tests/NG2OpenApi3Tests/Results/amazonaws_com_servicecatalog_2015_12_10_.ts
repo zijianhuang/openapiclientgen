@@ -36,7 +36,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortfolioShareType { IMPORTED = 0, AWS_SERVICECATALOG = 1, AWS_ORGANIZATIONS = 2 }
+	export enum PortfolioShareType { IMPORTED = 'IMPORTED', AWS_SERVICECATALOG = 'AWS_SERVICECATALOG', AWS_ORGANIZATIONS = 'AWS_ORGANIZATIONS' }
 
 	export interface InvalidParametersException {
 	}
@@ -156,7 +156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrincipalType { IAM = 0, IAM_PATTERN = 1 }
+	export enum PrincipalType { IAM = 'IAM', IAM_PATTERN = 'IAM_PATTERN' }
 
 	export interface AssociateProductWithPortfolioOutput {
 	}
@@ -336,7 +336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceActionAssociationErrorCode { DUPLICATE_RESOURCE = 0, INTERNAL_FAILURE = 1, LIMIT_EXCEEDED = 2, RESOURCE_NOT_FOUND = 3, THROTTLING = 4, INVALID_PARAMETER = 5 }
+	export enum ServiceActionAssociationErrorCode { DUPLICATE_RESOURCE = 'DUPLICATE_RESOURCE', INTERNAL_FAILURE = 'INTERNAL_FAILURE', LIMIT_EXCEEDED = 'LIMIT_EXCEEDED', RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND', THROTTLING = 'THROTTLING', INVALID_PARAMETER = 'INVALID_PARAMETER' }
 
 	export interface BatchAssociateServiceActionWithProvisioningArtifactInput {
 
@@ -474,7 +474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CopyOption { CopyTags = 0 }
+	export enum CopyOption { CopyTags = 'CopyTags' }
 
 	export interface CreateConstraintOutput {
 		ConstraintDetail?: ConstraintDetail;
@@ -525,7 +525,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { AVAILABLE = 0, CREATING = 1, FAILED = 2 }
+	export enum Status { AVAILABLE = 'AVAILABLE', CREATING = 'CREATING', FAILED = 'FAILED' }
 
 	export interface CreateConstraintInput {
 		AcceptLanguage?: string;
@@ -751,7 +751,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationNodeType { ORGANIZATION = 0, ORGANIZATIONAL_UNIT = 1, ACCOUNT = 2 }
+	export enum OrganizationNodeType { ORGANIZATION = 'ORGANIZATION', ORGANIZATIONAL_UNIT = 'ORGANIZATIONAL_UNIT', ACCOUNT = 'ACCOUNT' }
 
 	export interface OperationNotSupportedException {
 	}
@@ -848,7 +848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductType { CLOUD_FORMATION_TEMPLATE = 0, MARKETPLACE = 1, TERRAFORM_OPEN_SOURCE = 2 }
+	export enum ProductType { CLOUD_FORMATION_TEMPLATE = 'CLOUD_FORMATION_TEMPLATE', MARKETPLACE = 'MARKETPLACE', TERRAFORM_OPEN_SOURCE = 'TERRAFORM_OPEN_SOURCE' }
 
 
 	/** Provides details about the configured <code>SourceConnection</code>.  */
@@ -869,7 +869,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { CODESTAR = 0 }
+	export enum SourceType { CODESTAR = 'CODESTAR' }
 
 
 	/** Provides connection details. */
@@ -957,7 +957,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LastSyncStatus { SUCCEEDED = 0, FAILED = 1 }
+	export enum LastSyncStatus { SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Information about a provisioning artifact (also known as a version) for a product. */
@@ -997,9 +997,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisioningArtifactType { CLOUD_FORMATION_TEMPLATE = 0, MARKETPLACE_AMI = 1, MARKETPLACE_CAR = 2, TERRAFORM_OPEN_SOURCE = 3 }
+	export enum ProvisioningArtifactType { CLOUD_FORMATION_TEMPLATE = 'CLOUD_FORMATION_TEMPLATE', MARKETPLACE_AMI = 'MARKETPLACE_AMI', MARKETPLACE_CAR = 'MARKETPLACE_CAR', TERRAFORM_OPEN_SOURCE = 'TERRAFORM_OPEN_SOURCE' }
 
-	export enum ProvisioningArtifactGuidance { DEFAULT = 0, DEPRECATED = 1 }
+	export enum ProvisioningArtifactGuidance { DEFAULT = 'DEFAULT', DEPRECATED = 'DEPRECATED' }
 
 	export interface CreateProductInput {
 		AcceptLanguage?: string;
@@ -1203,7 +1203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionedProductPlanType { CLOUDFORMATION = 0 }
+	export enum ProvisionedProductPlanType { CLOUDFORMATION = 'CLOUDFORMATION' }
 
 
 	/** The parameter key-value pair used to update a provisioned product. */
@@ -1326,7 +1326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceActionDefinitionType { SSM_AUTOMATION = 0 }
+	export enum ServiceActionDefinitionType { SSM_AUTOMATION = 'SSM_AUTOMATION' }
 
 	export interface ServiceActionDefinitionMap {
 	}
@@ -1762,7 +1762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CopyProductStatus { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2 }
+	export enum CopyProductStatus { SUCCEEDED = 'SUCCEEDED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED' }
 
 	export interface DescribeCopyProductStatusInput {
 		AcceptLanguage?: string;
@@ -1858,7 +1858,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShareStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERRORS = 3, ERROR = 4 }
+	export enum ShareStatus { NOT_STARTED = 'NOT_STARTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', COMPLETED_WITH_ERRORS = 'COMPLETED_WITH_ERRORS', ERROR = 'ERROR' }
 
 
 	/** Information about the portfolio share operation. */
@@ -1957,7 +1957,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DescribePortfolioShareType { ACCOUNT = 0, ORGANIZATION = 1, ORGANIZATIONAL_UNIT = 2, ORGANIZATION_MEMBER_ACCOUNT = 3 }
+	export enum DescribePortfolioShareType { ACCOUNT = 'ACCOUNT', ORGANIZATION = 'ORGANIZATION', ORGANIZATIONAL_UNIT = 'ORGANIZATIONAL_UNIT', ORGANIZATION_MEMBER_ACCOUNT = 'ORGANIZATION_MEMBER_ACCOUNT' }
 
 	export interface DescribePortfolioSharesInput {
 
@@ -2235,7 +2235,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionedProductStatus { AVAILABLE = 0, UNDER_CHANGE = 1, TAINTED = 2, ERROR = 3, PLAN_IN_PROGRESS = 4 }
+	export enum ProvisionedProductStatus { AVAILABLE = 'AVAILABLE', UNDER_CHANGE = 'UNDER_CHANGE', TAINTED = 'TAINTED', ERROR = 'ERROR', PLAN_IN_PROGRESS = 'PLAN_IN_PROGRESS' }
 
 
 	/** Information about a CloudWatch dashboard. */
@@ -2345,7 +2345,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionedProductPlanStatus { CREATE_IN_PROGRESS = 0, CREATE_SUCCESS = 1, CREATE_FAILED = 2, EXECUTE_IN_PROGRESS = 3, EXECUTE_SUCCESS = 4, EXECUTE_FAILED = 5 }
+	export enum ProvisionedProductPlanStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_SUCCESS = 'CREATE_SUCCESS', CREATE_FAILED = 'CREATE_FAILED', EXECUTE_IN_PROGRESS = 'EXECUTE_IN_PROGRESS', EXECUTE_SUCCESS = 'EXECUTE_SUCCESS', EXECUTE_FAILED = 'EXECUTE_FAILED' }
 
 
 	/** Information about a resource change that will occur when a plan is executed. */
@@ -2378,11 +2378,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeAction { ADD = 0, MODIFY = 1, REMOVE = 2 }
+	export enum ChangeAction { ADD = 'ADD', MODIFY = 'MODIFY', REMOVE = 'REMOVE' }
 
-	export enum Replacement { TRUE = 0, FALSE = 1, CONDITIONAL = 2 }
+	export enum Replacement { TRUE = 'TRUE', FALSE = 'FALSE', CONDITIONAL = 'CONDITIONAL' }
 
-	export enum ResourceAttribute { PROPERTIES = 0, METADATA = 1, CREATIONPOLICY = 2, UPDATEPOLICY = 3, DELETIONPOLICY = 4, TAGS = 5 }
+	export enum ResourceAttribute { PROPERTIES = 'PROPERTIES', METADATA = 'METADATA', CREATIONPOLICY = 'CREATIONPOLICY', UPDATEPOLICY = 'UPDATEPOLICY', DELETIONPOLICY = 'DELETIONPOLICY', TAGS = 'TAGS' }
 
 
 	/** Information about a change to a resource attribute. */
@@ -2428,9 +2428,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RequiresRecreation { NEVER = 0, CONDITIONALLY = 1, ALWAYS = 2 }
+	export enum RequiresRecreation { NEVER = 'NEVER', CONDITIONALLY = 'CONDITIONALLY', ALWAYS = 'ALWAYS' }
 
-	export enum EvaluationType { STATIC = 0, DYNAMIC = 1 }
+	export enum EvaluationType { STATIC = 'STATIC', DYNAMIC = 'DYNAMIC' }
 
 	export interface DescribeProvisionedProductPlanInput {
 		AcceptLanguage?: string;
@@ -2777,7 +2777,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordStatus { CREATED = 0, IN_PROGRESS = 1, IN_PROGRESS_IN_ERROR = 2, SUCCEEDED = 3, FAILED = 4 }
+	export enum RecordStatus { CREATED = 'CREATED', IN_PROGRESS = 'IN_PROGRESS', IN_PROGRESS_IN_ERROR = 'IN_PROGRESS_IN_ERROR', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** The error code and description resulting from an operation. */
@@ -3322,7 +3322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessStatus { ENABLED = 0, UNDER_CHANGE = 1, DISABLED = 2 }
+	export enum AccessStatus { ENABLED = 'ENABLED', UNDER_CHANGE = 'UNDER_CHANGE', DISABLED = 'DISABLED' }
 
 	export interface GetAWSOrganizationsAccessStatusInput {
 	}
@@ -3928,7 +3928,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessLevelFilterKey { Account = 0, Role = 1, User = 2 }
+	export enum AccessLevelFilterKey { Account = 'Account', Role = 'Role', User = 'User' }
 
 	export interface ListProvisioningArtifactsOutput {
 		ProvisioningArtifactDetails?: Array<ProvisioningArtifactDetail>;
@@ -4261,7 +4261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackInstanceStatus { CURRENT = 0, OUTDATED = 1, INOPERABLE = 2 }
+	export enum StackInstanceStatus { CURRENT = 'CURRENT', OUTDATED = 'OUTDATED', INOPERABLE = 'INOPERABLE' }
 
 	export interface ListStackInstancesForProvisionedProductInput {
 		AcceptLanguage?: string;
@@ -4770,9 +4770,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductViewSortBy { Title = 0, VersionCount = 1, CreationDate = 2 }
+	export enum ProductViewSortBy { Title = 'Title', VersionCount = 'VersionCount', CreationDate = 'CreationDate' }
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface SearchProductsAsAdminOutput {
 		ProductViewDetails?: Array<ProductViewDetail>;
@@ -4820,7 +4820,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductSource { ACCOUNT = 0 }
+	export enum ProductSource { ACCOUNT = 'ACCOUNT' }
 
 	export interface SearchProvisionedProductsOutput {
 		ProvisionedProducts?: Array<ProvisionedProductAttribute>;
@@ -5267,7 +5267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StackSetOperationType { CREATE = 0, UPDATE = 1, DELETE = 2 }
+	export enum StackSetOperationType { CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
 	export interface UpdateProvisionedProductPropertiesOutput {
 		ProvisionedProductId?: string;
@@ -5455,7 +5455,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EngineWorkflowStatus { SUCCEEDED = 0, FAILED = 1 }
+	export enum EngineWorkflowStatus { SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access. */
@@ -5477,15 +5477,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductViewFilterBy { FullTextSearch = 0, Owner = 1, ProductType = 2, SourceProductId = 3 }
+	export enum ProductViewFilterBy { FullTextSearch = 'FullTextSearch', Owner = 'Owner', ProductType = 'ProductType', SourceProductId = 'SourceProductId' }
 
-	export enum PropertyKey { OWNER = 0, LAUNCH_ROLE = 1 }
+	export enum PropertyKey { OWNER = 'OWNER', LAUNCH_ROLE = 'LAUNCH_ROLE' }
 
-	export enum ProvisionedProductViewFilterBy { SearchQuery = 0 }
+	export enum ProvisionedProductViewFilterBy { SearchQuery = 'SearchQuery' }
 
-	export enum ProvisioningArtifactPropertyName { Id = 0 }
+	export enum ProvisioningArtifactPropertyName { Id = 'Id' }
 
-	export enum ServiceActionDefinitionKey { Name = 0, Version = 1, AssumeRole = 2, Parameters = 3 }
+	export enum ServiceActionDefinitionKey { Name = 'Name', Version = 'Version', AssumeRole = 'AssumeRole', Parameters = 'Parameters' }
 
 	@Injectable()
 	export class MyClient {
@@ -6341,185 +6341,185 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptPortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.AcceptPortfolioShare' = 0 }
+	export enum AcceptPortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.AcceptPortfolioShare' = 'AWS242ServiceCatalogService.AcceptPortfolioShare' }
 
-	export enum AssociateBudgetWithResourceX_Amz_Target { 'AWS242ServiceCatalogService.AssociateBudgetWithResource' = 0 }
+	export enum AssociateBudgetWithResourceX_Amz_Target { 'AWS242ServiceCatalogService.AssociateBudgetWithResource' = 'AWS242ServiceCatalogService.AssociateBudgetWithResource' }
 
-	export enum AssociatePrincipalWithPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.AssociatePrincipalWithPortfolio' = 0 }
+	export enum AssociatePrincipalWithPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.AssociatePrincipalWithPortfolio' = 'AWS242ServiceCatalogService.AssociatePrincipalWithPortfolio' }
 
-	export enum AssociateProductWithPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.AssociateProductWithPortfolio' = 0 }
+	export enum AssociateProductWithPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.AssociateProductWithPortfolio' = 'AWS242ServiceCatalogService.AssociateProductWithPortfolio' }
 
-	export enum AssociateServiceActionWithProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.AssociateServiceActionWithProvisioningArtifact' = 0 }
+	export enum AssociateServiceActionWithProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.AssociateServiceActionWithProvisioningArtifact' = 'AWS242ServiceCatalogService.AssociateServiceActionWithProvisioningArtifact' }
 
-	export enum AssociateTagOptionWithResourceX_Amz_Target { 'AWS242ServiceCatalogService.AssociateTagOptionWithResource' = 0 }
+	export enum AssociateTagOptionWithResourceX_Amz_Target { 'AWS242ServiceCatalogService.AssociateTagOptionWithResource' = 'AWS242ServiceCatalogService.AssociateTagOptionWithResource' }
 
-	export enum BatchAssociateServiceActionWithProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.BatchAssociateServiceActionWithProvisioningArtifact' = 0 }
+	export enum BatchAssociateServiceActionWithProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.BatchAssociateServiceActionWithProvisioningArtifact' = 'AWS242ServiceCatalogService.BatchAssociateServiceActionWithProvisioningArtifact' }
 
-	export enum BatchDisassociateServiceActionFromProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.BatchDisassociateServiceActionFromProvisioningArtifact' = 0 }
+	export enum BatchDisassociateServiceActionFromProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.BatchDisassociateServiceActionFromProvisioningArtifact' = 'AWS242ServiceCatalogService.BatchDisassociateServiceActionFromProvisioningArtifact' }
 
-	export enum CopyProductX_Amz_Target { 'AWS242ServiceCatalogService.CopyProduct' = 0 }
+	export enum CopyProductX_Amz_Target { 'AWS242ServiceCatalogService.CopyProduct' = 'AWS242ServiceCatalogService.CopyProduct' }
 
-	export enum CreateConstraintX_Amz_Target { 'AWS242ServiceCatalogService.CreateConstraint' = 0 }
+	export enum CreateConstraintX_Amz_Target { 'AWS242ServiceCatalogService.CreateConstraint' = 'AWS242ServiceCatalogService.CreateConstraint' }
 
-	export enum CreatePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.CreatePortfolio' = 0 }
+	export enum CreatePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.CreatePortfolio' = 'AWS242ServiceCatalogService.CreatePortfolio' }
 
-	export enum CreatePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.CreatePortfolioShare' = 0 }
+	export enum CreatePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.CreatePortfolioShare' = 'AWS242ServiceCatalogService.CreatePortfolioShare' }
 
-	export enum CreateProductX_Amz_Target { 'AWS242ServiceCatalogService.CreateProduct' = 0 }
+	export enum CreateProductX_Amz_Target { 'AWS242ServiceCatalogService.CreateProduct' = 'AWS242ServiceCatalogService.CreateProduct' }
 
-	export enum CreateProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.CreateProvisionedProductPlan' = 0 }
+	export enum CreateProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.CreateProvisionedProductPlan' = 'AWS242ServiceCatalogService.CreateProvisionedProductPlan' }
 
-	export enum CreateProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.CreateProvisioningArtifact' = 0 }
+	export enum CreateProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.CreateProvisioningArtifact' = 'AWS242ServiceCatalogService.CreateProvisioningArtifact' }
 
-	export enum CreateServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.CreateServiceAction' = 0 }
+	export enum CreateServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.CreateServiceAction' = 'AWS242ServiceCatalogService.CreateServiceAction' }
 
-	export enum CreateTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.CreateTagOption' = 0 }
+	export enum CreateTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.CreateTagOption' = 'AWS242ServiceCatalogService.CreateTagOption' }
 
-	export enum DeleteConstraintX_Amz_Target { 'AWS242ServiceCatalogService.DeleteConstraint' = 0 }
+	export enum DeleteConstraintX_Amz_Target { 'AWS242ServiceCatalogService.DeleteConstraint' = 'AWS242ServiceCatalogService.DeleteConstraint' }
 
-	export enum DeletePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DeletePortfolio' = 0 }
+	export enum DeletePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DeletePortfolio' = 'AWS242ServiceCatalogService.DeletePortfolio' }
 
-	export enum DeletePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.DeletePortfolioShare' = 0 }
+	export enum DeletePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.DeletePortfolioShare' = 'AWS242ServiceCatalogService.DeletePortfolioShare' }
 
-	export enum DeleteProductX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProduct' = 0 }
+	export enum DeleteProductX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProduct' = 'AWS242ServiceCatalogService.DeleteProduct' }
 
-	export enum DeleteProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProvisionedProductPlan' = 0 }
+	export enum DeleteProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProvisionedProductPlan' = 'AWS242ServiceCatalogService.DeleteProvisionedProductPlan' }
 
-	export enum DeleteProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProvisioningArtifact' = 0 }
+	export enum DeleteProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProvisioningArtifact' = 'AWS242ServiceCatalogService.DeleteProvisioningArtifact' }
 
-	export enum DeleteServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.DeleteServiceAction' = 0 }
+	export enum DeleteServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.DeleteServiceAction' = 'AWS242ServiceCatalogService.DeleteServiceAction' }
 
-	export enum DeleteTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.DeleteTagOption' = 0 }
+	export enum DeleteTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.DeleteTagOption' = 'AWS242ServiceCatalogService.DeleteTagOption' }
 
-	export enum DescribeConstraintX_Amz_Target { 'AWS242ServiceCatalogService.DescribeConstraint' = 0 }
+	export enum DescribeConstraintX_Amz_Target { 'AWS242ServiceCatalogService.DescribeConstraint' = 'AWS242ServiceCatalogService.DescribeConstraint' }
 
-	export enum DescribeCopyProductStatusX_Amz_Target { 'AWS242ServiceCatalogService.DescribeCopyProductStatus' = 0 }
+	export enum DescribeCopyProductStatusX_Amz_Target { 'AWS242ServiceCatalogService.DescribeCopyProductStatus' = 'AWS242ServiceCatalogService.DescribeCopyProductStatus' }
 
-	export enum DescribePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolio' = 0 }
+	export enum DescribePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolio' = 'AWS242ServiceCatalogService.DescribePortfolio' }
 
-	export enum DescribePortfolioShareStatusX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolioShareStatus' = 0 }
+	export enum DescribePortfolioShareStatusX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolioShareStatus' = 'AWS242ServiceCatalogService.DescribePortfolioShareStatus' }
 
-	export enum DescribePortfolioSharesX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolioShares' = 0 }
+	export enum DescribePortfolioSharesX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolioShares' = 'AWS242ServiceCatalogService.DescribePortfolioShares' }
 
-	export enum DescribeProductX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProduct' = 0 }
+	export enum DescribeProductX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProduct' = 'AWS242ServiceCatalogService.DescribeProduct' }
 
-	export enum DescribeProductAsAdminX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProductAsAdmin' = 0 }
+	export enum DescribeProductAsAdminX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProductAsAdmin' = 'AWS242ServiceCatalogService.DescribeProductAsAdmin' }
 
-	export enum DescribeProductViewX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProductView' = 0 }
+	export enum DescribeProductViewX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProductView' = 'AWS242ServiceCatalogService.DescribeProductView' }
 
-	export enum DescribeProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisionedProduct' = 0 }
+	export enum DescribeProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisionedProduct' = 'AWS242ServiceCatalogService.DescribeProvisionedProduct' }
 
-	export enum DescribeProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisionedProductPlan' = 0 }
+	export enum DescribeProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisionedProductPlan' = 'AWS242ServiceCatalogService.DescribeProvisionedProductPlan' }
 
-	export enum DescribeProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisioningArtifact' = 0 }
+	export enum DescribeProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisioningArtifact' = 'AWS242ServiceCatalogService.DescribeProvisioningArtifact' }
 
-	export enum DescribeProvisioningParametersX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisioningParameters' = 0 }
+	export enum DescribeProvisioningParametersX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisioningParameters' = 'AWS242ServiceCatalogService.DescribeProvisioningParameters' }
 
-	export enum DescribeRecordX_Amz_Target { 'AWS242ServiceCatalogService.DescribeRecord' = 0 }
+	export enum DescribeRecordX_Amz_Target { 'AWS242ServiceCatalogService.DescribeRecord' = 'AWS242ServiceCatalogService.DescribeRecord' }
 
-	export enum DescribeServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.DescribeServiceAction' = 0 }
+	export enum DescribeServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.DescribeServiceAction' = 'AWS242ServiceCatalogService.DescribeServiceAction' }
 
-	export enum DescribeServiceActionExecutionParametersX_Amz_Target { 'AWS242ServiceCatalogService.DescribeServiceActionExecutionParameters' = 0 }
+	export enum DescribeServiceActionExecutionParametersX_Amz_Target { 'AWS242ServiceCatalogService.DescribeServiceActionExecutionParameters' = 'AWS242ServiceCatalogService.DescribeServiceActionExecutionParameters' }
 
-	export enum DescribeTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.DescribeTagOption' = 0 }
+	export enum DescribeTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.DescribeTagOption' = 'AWS242ServiceCatalogService.DescribeTagOption' }
 
-	export enum DisableAWSOrganizationsAccessX_Amz_Target { 'AWS242ServiceCatalogService.DisableAWSOrganizationsAccess' = 0 }
+	export enum DisableAWSOrganizationsAccessX_Amz_Target { 'AWS242ServiceCatalogService.DisableAWSOrganizationsAccess' = 'AWS242ServiceCatalogService.DisableAWSOrganizationsAccess' }
 
-	export enum DisassociateBudgetFromResourceX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateBudgetFromResource' = 0 }
+	export enum DisassociateBudgetFromResourceX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateBudgetFromResource' = 'AWS242ServiceCatalogService.DisassociateBudgetFromResource' }
 
-	export enum DisassociatePrincipalFromPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DisassociatePrincipalFromPortfolio' = 0 }
+	export enum DisassociatePrincipalFromPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DisassociatePrincipalFromPortfolio' = 'AWS242ServiceCatalogService.DisassociatePrincipalFromPortfolio' }
 
-	export enum DisassociateProductFromPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateProductFromPortfolio' = 0 }
+	export enum DisassociateProductFromPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateProductFromPortfolio' = 'AWS242ServiceCatalogService.DisassociateProductFromPortfolio' }
 
-	export enum DisassociateServiceActionFromProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateServiceActionFromProvisioningArtifact' = 0 }
+	export enum DisassociateServiceActionFromProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateServiceActionFromProvisioningArtifact' = 'AWS242ServiceCatalogService.DisassociateServiceActionFromProvisioningArtifact' }
 
-	export enum DisassociateTagOptionFromResourceX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateTagOptionFromResource' = 0 }
+	export enum DisassociateTagOptionFromResourceX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateTagOptionFromResource' = 'AWS242ServiceCatalogService.DisassociateTagOptionFromResource' }
 
-	export enum EnableAWSOrganizationsAccessX_Amz_Target { 'AWS242ServiceCatalogService.EnableAWSOrganizationsAccess' = 0 }
+	export enum EnableAWSOrganizationsAccessX_Amz_Target { 'AWS242ServiceCatalogService.EnableAWSOrganizationsAccess' = 'AWS242ServiceCatalogService.EnableAWSOrganizationsAccess' }
 
-	export enum ExecuteProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.ExecuteProvisionedProductPlan' = 0 }
+	export enum ExecuteProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.ExecuteProvisionedProductPlan' = 'AWS242ServiceCatalogService.ExecuteProvisionedProductPlan' }
 
-	export enum ExecuteProvisionedProductServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.ExecuteProvisionedProductServiceAction' = 0 }
+	export enum ExecuteProvisionedProductServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.ExecuteProvisionedProductServiceAction' = 'AWS242ServiceCatalogService.ExecuteProvisionedProductServiceAction' }
 
-	export enum GetAWSOrganizationsAccessStatusX_Amz_Target { 'AWS242ServiceCatalogService.GetAWSOrganizationsAccessStatus' = 0 }
+	export enum GetAWSOrganizationsAccessStatusX_Amz_Target { 'AWS242ServiceCatalogService.GetAWSOrganizationsAccessStatus' = 'AWS242ServiceCatalogService.GetAWSOrganizationsAccessStatus' }
 
-	export enum GetProvisionedProductOutputsX_Amz_Target { 'AWS242ServiceCatalogService.GetProvisionedProductOutputs' = 0 }
+	export enum GetProvisionedProductOutputsX_Amz_Target { 'AWS242ServiceCatalogService.GetProvisionedProductOutputs' = 'AWS242ServiceCatalogService.GetProvisionedProductOutputs' }
 
-	export enum ImportAsProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.ImportAsProvisionedProduct' = 0 }
+	export enum ImportAsProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.ImportAsProvisionedProduct' = 'AWS242ServiceCatalogService.ImportAsProvisionedProduct' }
 
-	export enum ListAcceptedPortfolioSharesX_Amz_Target { 'AWS242ServiceCatalogService.ListAcceptedPortfolioShares' = 0 }
+	export enum ListAcceptedPortfolioSharesX_Amz_Target { 'AWS242ServiceCatalogService.ListAcceptedPortfolioShares' = 'AWS242ServiceCatalogService.ListAcceptedPortfolioShares' }
 
-	export enum ListBudgetsForResourceX_Amz_Target { 'AWS242ServiceCatalogService.ListBudgetsForResource' = 0 }
+	export enum ListBudgetsForResourceX_Amz_Target { 'AWS242ServiceCatalogService.ListBudgetsForResource' = 'AWS242ServiceCatalogService.ListBudgetsForResource' }
 
-	export enum ListConstraintsForPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.ListConstraintsForPortfolio' = 0 }
+	export enum ListConstraintsForPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.ListConstraintsForPortfolio' = 'AWS242ServiceCatalogService.ListConstraintsForPortfolio' }
 
-	export enum ListLaunchPathsX_Amz_Target { 'AWS242ServiceCatalogService.ListLaunchPaths' = 0 }
+	export enum ListLaunchPathsX_Amz_Target { 'AWS242ServiceCatalogService.ListLaunchPaths' = 'AWS242ServiceCatalogService.ListLaunchPaths' }
 
-	export enum ListOrganizationPortfolioAccessX_Amz_Target { 'AWS242ServiceCatalogService.ListOrganizationPortfolioAccess' = 0 }
+	export enum ListOrganizationPortfolioAccessX_Amz_Target { 'AWS242ServiceCatalogService.ListOrganizationPortfolioAccess' = 'AWS242ServiceCatalogService.ListOrganizationPortfolioAccess' }
 
-	export enum ListPortfolioAccessX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfolioAccess' = 0 }
+	export enum ListPortfolioAccessX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfolioAccess' = 'AWS242ServiceCatalogService.ListPortfolioAccess' }
 
-	export enum ListPortfoliosX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfolios' = 0 }
+	export enum ListPortfoliosX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfolios' = 'AWS242ServiceCatalogService.ListPortfolios' }
 
-	export enum ListPortfoliosForProductX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfoliosForProduct' = 0 }
+	export enum ListPortfoliosForProductX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfoliosForProduct' = 'AWS242ServiceCatalogService.ListPortfoliosForProduct' }
 
-	export enum ListPrincipalsForPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.ListPrincipalsForPortfolio' = 0 }
+	export enum ListPrincipalsForPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.ListPrincipalsForPortfolio' = 'AWS242ServiceCatalogService.ListPrincipalsForPortfolio' }
 
-	export enum ListProvisionedProductPlansX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisionedProductPlans' = 0 }
+	export enum ListProvisionedProductPlansX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisionedProductPlans' = 'AWS242ServiceCatalogService.ListProvisionedProductPlans' }
 
-	export enum ListProvisioningArtifactsX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisioningArtifacts' = 0 }
+	export enum ListProvisioningArtifactsX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisioningArtifacts' = 'AWS242ServiceCatalogService.ListProvisioningArtifacts' }
 
-	export enum ListProvisioningArtifactsForServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisioningArtifactsForServiceAction' = 0 }
+	export enum ListProvisioningArtifactsForServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisioningArtifactsForServiceAction' = 'AWS242ServiceCatalogService.ListProvisioningArtifactsForServiceAction' }
 
-	export enum ListRecordHistoryX_Amz_Target { 'AWS242ServiceCatalogService.ListRecordHistory' = 0 }
+	export enum ListRecordHistoryX_Amz_Target { 'AWS242ServiceCatalogService.ListRecordHistory' = 'AWS242ServiceCatalogService.ListRecordHistory' }
 
-	export enum ListResourcesForTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.ListResourcesForTagOption' = 0 }
+	export enum ListResourcesForTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.ListResourcesForTagOption' = 'AWS242ServiceCatalogService.ListResourcesForTagOption' }
 
-	export enum ListServiceActionsX_Amz_Target { 'AWS242ServiceCatalogService.ListServiceActions' = 0 }
+	export enum ListServiceActionsX_Amz_Target { 'AWS242ServiceCatalogService.ListServiceActions' = 'AWS242ServiceCatalogService.ListServiceActions' }
 
-	export enum ListServiceActionsForProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.ListServiceActionsForProvisioningArtifact' = 0 }
+	export enum ListServiceActionsForProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.ListServiceActionsForProvisioningArtifact' = 'AWS242ServiceCatalogService.ListServiceActionsForProvisioningArtifact' }
 
-	export enum ListStackInstancesForProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.ListStackInstancesForProvisionedProduct' = 0 }
+	export enum ListStackInstancesForProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.ListStackInstancesForProvisionedProduct' = 'AWS242ServiceCatalogService.ListStackInstancesForProvisionedProduct' }
 
-	export enum ListTagOptionsX_Amz_Target { 'AWS242ServiceCatalogService.ListTagOptions' = 0 }
+	export enum ListTagOptionsX_Amz_Target { 'AWS242ServiceCatalogService.ListTagOptions' = 'AWS242ServiceCatalogService.ListTagOptions' }
 
-	export enum NotifyProvisionProductEngineWorkflowResultX_Amz_Target { 'AWS242ServiceCatalogService.NotifyProvisionProductEngineWorkflowResult' = 0 }
+	export enum NotifyProvisionProductEngineWorkflowResultX_Amz_Target { 'AWS242ServiceCatalogService.NotifyProvisionProductEngineWorkflowResult' = 'AWS242ServiceCatalogService.NotifyProvisionProductEngineWorkflowResult' }
 
-	export enum NotifyTerminateProvisionedProductEngineWorkflowResultX_Amz_Target { 'AWS242ServiceCatalogService.NotifyTerminateProvisionedProductEngineWorkflowResult' = 0 }
+	export enum NotifyTerminateProvisionedProductEngineWorkflowResultX_Amz_Target { 'AWS242ServiceCatalogService.NotifyTerminateProvisionedProductEngineWorkflowResult' = 'AWS242ServiceCatalogService.NotifyTerminateProvisionedProductEngineWorkflowResult' }
 
-	export enum NotifyUpdateProvisionedProductEngineWorkflowResultX_Amz_Target { 'AWS242ServiceCatalogService.NotifyUpdateProvisionedProductEngineWorkflowResult' = 0 }
+	export enum NotifyUpdateProvisionedProductEngineWorkflowResultX_Amz_Target { 'AWS242ServiceCatalogService.NotifyUpdateProvisionedProductEngineWorkflowResult' = 'AWS242ServiceCatalogService.NotifyUpdateProvisionedProductEngineWorkflowResult' }
 
-	export enum ProvisionProductX_Amz_Target { 'AWS242ServiceCatalogService.ProvisionProduct' = 0 }
+	export enum ProvisionProductX_Amz_Target { 'AWS242ServiceCatalogService.ProvisionProduct' = 'AWS242ServiceCatalogService.ProvisionProduct' }
 
-	export enum RejectPortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.RejectPortfolioShare' = 0 }
+	export enum RejectPortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.RejectPortfolioShare' = 'AWS242ServiceCatalogService.RejectPortfolioShare' }
 
-	export enum ScanProvisionedProductsX_Amz_Target { 'AWS242ServiceCatalogService.ScanProvisionedProducts' = 0 }
+	export enum ScanProvisionedProductsX_Amz_Target { 'AWS242ServiceCatalogService.ScanProvisionedProducts' = 'AWS242ServiceCatalogService.ScanProvisionedProducts' }
 
-	export enum SearchProductsX_Amz_Target { 'AWS242ServiceCatalogService.SearchProducts' = 0 }
+	export enum SearchProductsX_Amz_Target { 'AWS242ServiceCatalogService.SearchProducts' = 'AWS242ServiceCatalogService.SearchProducts' }
 
-	export enum SearchProductsAsAdminX_Amz_Target { 'AWS242ServiceCatalogService.SearchProductsAsAdmin' = 0 }
+	export enum SearchProductsAsAdminX_Amz_Target { 'AWS242ServiceCatalogService.SearchProductsAsAdmin' = 'AWS242ServiceCatalogService.SearchProductsAsAdmin' }
 
-	export enum SearchProvisionedProductsX_Amz_Target { 'AWS242ServiceCatalogService.SearchProvisionedProducts' = 0 }
+	export enum SearchProvisionedProductsX_Amz_Target { 'AWS242ServiceCatalogService.SearchProvisionedProducts' = 'AWS242ServiceCatalogService.SearchProvisionedProducts' }
 
-	export enum TerminateProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.TerminateProvisionedProduct' = 0 }
+	export enum TerminateProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.TerminateProvisionedProduct' = 'AWS242ServiceCatalogService.TerminateProvisionedProduct' }
 
-	export enum UpdateConstraintX_Amz_Target { 'AWS242ServiceCatalogService.UpdateConstraint' = 0 }
+	export enum UpdateConstraintX_Amz_Target { 'AWS242ServiceCatalogService.UpdateConstraint' = 'AWS242ServiceCatalogService.UpdateConstraint' }
 
-	export enum UpdatePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.UpdatePortfolio' = 0 }
+	export enum UpdatePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.UpdatePortfolio' = 'AWS242ServiceCatalogService.UpdatePortfolio' }
 
-	export enum UpdatePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.UpdatePortfolioShare' = 0 }
+	export enum UpdatePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.UpdatePortfolioShare' = 'AWS242ServiceCatalogService.UpdatePortfolioShare' }
 
-	export enum UpdateProductX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProduct' = 0 }
+	export enum UpdateProductX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProduct' = 'AWS242ServiceCatalogService.UpdateProduct' }
 
-	export enum UpdateProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisionedProduct' = 0 }
+	export enum UpdateProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisionedProduct' = 'AWS242ServiceCatalogService.UpdateProvisionedProduct' }
 
-	export enum UpdateProvisionedProductPropertiesX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisionedProductProperties' = 0 }
+	export enum UpdateProvisionedProductPropertiesX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisionedProductProperties' = 'AWS242ServiceCatalogService.UpdateProvisionedProductProperties' }
 
-	export enum UpdateProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisioningArtifact' = 0 }
+	export enum UpdateProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisioningArtifact' = 'AWS242ServiceCatalogService.UpdateProvisioningArtifact' }
 
-	export enum UpdateServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.UpdateServiceAction' = 0 }
+	export enum UpdateServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.UpdateServiceAction' = 'AWS242ServiceCatalogService.UpdateServiceAction' }
 
-	export enum UpdateTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.UpdateTagOption' = 0 }
+	export enum UpdateTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.UpdateTagOption' = 'AWS242ServiceCatalogService.UpdateTagOption' }
 
 }
 

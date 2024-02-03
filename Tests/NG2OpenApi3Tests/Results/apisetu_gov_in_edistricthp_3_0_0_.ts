@@ -1626,7 +1626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AecmwPostBodyFormat { pdf = 0 }
+	export enum AecmwPostBodyFormat { pdf = 'pdf' }
 
 	export interface AemtwPostBody {
 		certificateParameters?: AemtwPostBodyCertificateParameters;

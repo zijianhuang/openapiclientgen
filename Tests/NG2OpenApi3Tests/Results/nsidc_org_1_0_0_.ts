@@ -68,9 +68,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum FacetsSortKeys { 'score,,desc' = 0, 'spatial_area,,asc' = 1, 'spatial_area,,desc' = 2, 'temporal_duration,,asc' = 3, 'temporal_duration,,desc' = 4, 'updated,,desc' = 5 }
+	export enum FacetsSortKeys { 'score,,desc' = 'score,,desc', 'spatial_area,,asc' = 'spatial_area,,asc', 'spatial_area,,desc' = 'spatial_area,,desc', 'temporal_duration,,asc' = 'temporal_duration,,asc', 'temporal_duration,,desc' = 'temporal_duration,,desc', 'updated,,desc' = 'updated,,desc' }
 
-	export enum FacetsSource { NSIDC = 0, ADE = 1 }
+	export enum FacetsSource { NSIDC = 'NSIDC', ADE = 'ADE' }
 
 }
 

@@ -197,7 +197,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyDefinitionPropertiesPolicyType { NotSpecified = 0, BuiltIn = 1, Custom = 2 }
+	export enum PolicyDefinitionPropertiesPolicyType { NotSpecified = 'NotSpecified', BuiltIn = 'BuiltIn', Custom = 'Custom' }
 
 	@Injectable()
 	export class MyClient {

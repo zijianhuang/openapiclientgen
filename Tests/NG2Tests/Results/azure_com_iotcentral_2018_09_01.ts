@@ -95,7 +95,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppSkuInfoName { F1 = 0, S1 = 1, ST0 = 2, ST1 = 3, ST2 = 4 }
+	export enum AppSkuInfoName { F1 = 'F1', S1 = 'S1', ST0 = 'ST0', ST1 = 'ST1', ST2 = 'ST2' }
 
 
 	/** The properties indicating whether a given IoT Central application name or subdomain is available. */

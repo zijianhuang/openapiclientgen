@@ -200,7 +200,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Environment { 'us-west1-gcp' = 0, 'us-west4-gcp' = 1, 'us-central1-gcp' = 2, 'us-east1-gcp' = 3, 'us-east4-gcp' = 4, 'eu-west1-gcp' = 5, 'us-east1-aws' = 6 }
+	export enum Environment { 'us-west1-gcp' = 'us-west1-gcp', 'us-west4-gcp' = 'us-west4-gcp', 'us-central1-gcp' = 'us-central1-gcp', 'us-east1-gcp' = 'us-east1-gcp', 'us-east4-gcp' = 'us-east4-gcp', 'eu-west1-gcp' = 'eu-west1-gcp', 'us-east1-aws' = 'us-east1-aws' }
 
 	export interface FetchRequest {
 
@@ -332,9 +332,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexDatabaseMetric { euclidean = 0, cosine = 1, dotproduct = 2 }
+	export enum IndexDatabaseMetric { euclidean = 'euclidean', cosine = 'cosine', dotproduct = 'dotproduct' }
 
-	export enum IndexDatabasePod_type { 's1.x1' = 0, 's1.x2' = 1, 's1.x4' = 2, 's1.x8' = 3, 'p1.x1' = 4, 'p1.x2' = 5, 'p1.x4' = 6, 'p1.x8' = 7, 'p2.x1' = 8, 'p2.x2' = 9, 'p2.x4' = 10, 'p2.x8' = 11 }
+	export enum IndexDatabasePod_type { 's1.x1' = 's1.x1', 's1.x2' = 's1.x2', 's1.x4' = 's1.x4', 's1.x8' = 's1.x8', 'p1.x1' = 'p1.x1', 'p1.x2' = 'p1.x2', 'p1.x4' = 'p1.x4', 'p1.x8' = 'p1.x8', 'p2.x1' = 'p2.x1', 'p2.x2' = 'p2.x2', 'p2.x4' = 'p2.x4', 'p2.x8' = 'p2.x8' }
 
 	export interface IndexStatus {
 		host?: string | null;
@@ -362,7 +362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IndexStatusState { Initializing = 0, ScalingUp = 1, ScalingDown = 2, Terminating = 3, Ready = 4 }
+	export enum IndexStatusState { Initializing = 'Initializing', ScalingUp = 'ScalingUp', ScalingDown = 'ScalingDown', Terminating = 'Terminating', Ready = 'Ready' }
 
 	export interface IndexConfiguration {
 
@@ -507,15 +507,15 @@ export namespace MyNS {
 
 
 	/** The vector similarity metric of the index */
-	export enum IndexMetric { euclidean = 0, cosine = 1, dotproduct = 2 }
+	export enum IndexMetric { euclidean = 'euclidean', cosine = 'cosine', dotproduct = 'dotproduct' }
 
 
 	/** The current status of a index. */
-	export enum IndexState { Initializing = 0, ScalingUp = 1, ScalingDown = 2, Terminating = 3, Ready = 4 }
+	export enum IndexState { Initializing = 'Initializing', ScalingUp = 'ScalingUp', ScalingDown = 'ScalingDown', Terminating = 'Terminating', Ready = 'Ready' }
 
 
 	/** The pod type */
-	export enum PodType { 's1.x1' = 0, 's1.x2' = 1, 's1.x4' = 2, 's1.x8' = 3, 'p1.x1' = 4, 'p1.x2' = 5, 'p1.x4' = 6, 'p1.x8' = 7, 'p2.x1' = 8, 'p2.x2' = 9, 'p2.x4' = 10, 'p2.x8' = 11 }
+	export enum PodType { 's1.x1' = 's1.x1', 's1.x2' = 's1.x2', 's1.x4' = 's1.x4', 's1.x8' = 's1.x8', 'p1.x1' = 'p1.x1', 'p1.x2' = 'p1.x2', 'p1.x4' = 'p1.x4', 'p1.x8' = 'p1.x8', 'p2.x1' = 'p2.x1', 'p2.x2' = 'p2.x2', 'p2.x4' = 'p2.x4', 'p2.x8' = 'p2.x8' }
 
 	export interface QueryMatch {
 

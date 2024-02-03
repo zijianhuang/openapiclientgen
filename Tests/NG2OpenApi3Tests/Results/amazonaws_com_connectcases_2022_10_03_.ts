@@ -103,7 +103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldNamespace { System = 0, Custom = 1 }
+	export enum FieldNamespace { System = 'System', Custom = 'Custom' }
 
 	export interface Tags {
 	}
@@ -115,7 +115,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldType { Text = 0, Number = 1, Boolean = 2, DateTime = 3, SingleSelect = 4, Url = 5 }
+	export enum FieldType { Text = 'Text', Number = 'Number', Boolean = 'Boolean', DateTime = 'DateTime', SingleSelect = 'SingleSelect', Url = 'Url' }
 
 
 	/** Object for unique identifier of a field. */
@@ -406,7 +406,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { Active = 0, CreationInProgress = 1, CreationFailed = 2 }
+	export enum DomainStatus { Active = 'Active', CreationInProgress = 'CreationInProgress', CreationFailed = 'CreationFailed' }
 
 	export interface CreateFieldResponse {
 
@@ -601,7 +601,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommentBodyTextType { 'Text/Plain' = 0 }
+	export enum CommentBodyTextType { 'Text/Plain' = 'Text/Plain' }
 
 
 	/** An object that represents an Amazon Connect contact object.  */
@@ -949,7 +949,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateStatus { Active = 0, Inactive = 1 }
+	export enum TemplateStatus { Active = 'Active', Inactive = 'Inactive' }
 
 	export interface ListCasesForContactResponse {
 
@@ -1373,7 +1373,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Order { Asc = 0, Desc = 1 }
+	export enum Order { Asc = 'Asc', Desc = 'Desc' }
 
 	export interface SearchRelatedItemsResponse {
 		nextToken?: string;
@@ -1481,7 +1481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelatedItemType { Contact = 0, Comment = 1 }
+	export enum RelatedItemType { Contact = 'Contact', Comment = 'Comment' }
 
 
 	/** The list of types of related items and their parameters to use for filtering. */

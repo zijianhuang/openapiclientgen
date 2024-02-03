@@ -278,7 +278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum Status { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface CreateOriginEndpointResponse {
 		Arn?: string;
@@ -406,7 +406,7 @@ export namespace MyNS {
 
 
 	/** The encryption method to use. */
-	export enum CmafEncryptionMethod { SAMPLE_AES = 0, AES_CTR = 1 }
+	export enum CmafEncryptionMethod { SAMPLE_AES = 'SAMPLE_AES', AES_CTR = 'AES_CTR' }
 
 
 	/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
@@ -492,9 +492,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PresetSpeke20Audio { 'PRESET-AUDIO-1' = 0, 'PRESET-AUDIO-2' = 1, 'PRESET-AUDIO-3' = 2, SHARED = 3, UNENCRYPTED = 4 }
+	export enum PresetSpeke20Audio { 'PRESET-AUDIO-1' = 'PRESET-AUDIO-1', 'PRESET-AUDIO-2' = 'PRESET-AUDIO-2', 'PRESET-AUDIO-3' = 'PRESET-AUDIO-3', SHARED = 'SHARED', UNENCRYPTED = 'UNENCRYPTED' }
 
-	export enum PresetSpeke20Video { 'PRESET-VIDEO-1' = 0, 'PRESET-VIDEO-2' = 1, 'PRESET-VIDEO-3' = 2, 'PRESET-VIDEO-4' = 3, 'PRESET-VIDEO-5' = 4, 'PRESET-VIDEO-6' = 5, 'PRESET-VIDEO-7' = 6, 'PRESET-VIDEO-8' = 7, SHARED = 8, UNENCRYPTED = 9 }
+	export enum PresetSpeke20Video { 'PRESET-VIDEO-1' = 'PRESET-VIDEO-1', 'PRESET-VIDEO-2' = 'PRESET-VIDEO-2', 'PRESET-VIDEO-3' = 'PRESET-VIDEO-3', 'PRESET-VIDEO-4' = 'PRESET-VIDEO-4', 'PRESET-VIDEO-5' = 'PRESET-VIDEO-5', 'PRESET-VIDEO-6' = 'PRESET-VIDEO-6', 'PRESET-VIDEO-7' = 'PRESET-VIDEO-7', 'PRESET-VIDEO-8' = 'PRESET-VIDEO-8', SHARED = 'SHARED', UNENCRYPTED = 'UNENCRYPTED' }
 
 
 	/** A HTTP Live Streaming (HLS) manifest configuration. */
@@ -542,11 +542,11 @@ export namespace MyNS {
 
 	}
 
-	export enum AdMarkers { NONE = 0, SCTE35_ENHANCED = 1, PASSTHROUGH = 2, DATERANGE = 3 }
+	export enum AdMarkers { NONE = 'NONE', SCTE35_ENHANCED = 'SCTE35_ENHANCED', PASSTHROUGH = 'PASSTHROUGH', DATERANGE = 'DATERANGE' }
 
-	export enum PlaylistType { NONE = 0, EVENT = 1, VOD = 2 }
+	export enum PlaylistType { NONE = 'NONE', EVENT = 'EVENT', VOD = 'VOD' }
 
-	export enum __AdTriggersElement { SPLICE_INSERT = 0, BREAK = 1, PROVIDER_ADVERTISEMENT = 2, DISTRIBUTOR_ADVERTISEMENT = 3, PROVIDER_PLACEMENT_OPPORTUNITY = 4, DISTRIBUTOR_PLACEMENT_OPPORTUNITY = 5, PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = 6, DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = 7 }
+	export enum __AdTriggersElement { SPLICE_INSERT = 'SPLICE_INSERT', BREAK = 'BREAK', PROVIDER_ADVERTISEMENT = 'PROVIDER_ADVERTISEMENT', DISTRIBUTOR_ADVERTISEMENT = 'DISTRIBUTOR_ADVERTISEMENT', PROVIDER_PLACEMENT_OPPORTUNITY = 'PROVIDER_PLACEMENT_OPPORTUNITY', DISTRIBUTOR_PLACEMENT_OPPORTUNITY = 'DISTRIBUTOR_PLACEMENT_OPPORTUNITY', PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = 'PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY', DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = 'DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY' }
 
 
 	/**
@@ -559,7 +559,7 @@ export namespace MyNS {
 	 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 	 * and are always treated as ads if specified in AdTriggers.
 	 */
-	export enum AdsOnDeliveryRestrictions { NONE = 0, RESTRICTED = 1, UNRESTRICTED = 2, BOTH = 3 }
+	export enum AdsOnDeliveryRestrictions { NONE = 'NONE', RESTRICTED = 'RESTRICTED', UNRESTRICTED = 'UNRESTRICTED', BOTH = 'BOTH' }
 
 
 	/** A StreamSelection configuration. */
@@ -584,7 +584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamOrder { ORIGINAL = 0, VIDEO_BITRATE_ASCENDING = 1, VIDEO_BITRATE_DESCENDING = 2 }
+	export enum StreamOrder { ORIGINAL = 'ORIGINAL', VIDEO_BITRATE_ASCENDING = 'VIDEO_BITRATE_ASCENDING', VIDEO_BITRATE_DESCENDING = 'VIDEO_BITRATE_DESCENDING' }
 
 
 	/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
@@ -660,15 +660,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ManifestLayout { FULL = 0, COMPACT = 1 }
+	export enum ManifestLayout { FULL = 'FULL', COMPACT = 'COMPACT' }
 
-	export enum __PeriodTriggersElement { ADS = 0 }
+	export enum __PeriodTriggersElement { ADS = 'ADS' }
 
-	export enum Profile { NONE = 0, HBBTV_1_5 = 1, HYBRIDCAST = 2, DVB_DASH_2014 = 3 }
+	export enum Profile { NONE = 'NONE', HBBTV_1_5 = 'HBBTV_1_5', HYBRIDCAST = 'HYBRIDCAST', DVB_DASH_2014 = 'DVB_DASH_2014' }
 
-	export enum SegmentTemplateFormat { NUMBER_WITH_TIMELINE = 0, TIME_WITH_TIMELINE = 1, NUMBER_WITH_DURATION = 2 }
+	export enum SegmentTemplateFormat { NUMBER_WITH_TIMELINE = 'NUMBER_WITH_TIMELINE', TIME_WITH_TIMELINE = 'TIME_WITH_TIMELINE', NUMBER_WITH_DURATION = 'NUMBER_WITH_DURATION' }
 
-	export enum UtcTiming { NONE = 0, 'HTTP-HEAD' = 1, 'HTTP-ISO' = 2, 'HTTP-XSDATE' = 3 }
+	export enum UtcTiming { NONE = 'NONE', 'HTTP-HEAD' = 'HTTP-HEAD', 'HTTP-ISO' = 'HTTP-ISO', 'HTTP-XSDATE' = 'HTTP-XSDATE' }
 
 
 	/** An HTTP Live Streaming (HLS) packaging configuration. */
@@ -743,7 +743,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionMethod { AES_128 = 0, SAMPLE_AES = 1 }
+	export enum EncryptionMethod { AES_128 = 'AES_128', SAMPLE_AES = 'SAMPLE_AES' }
 
 
 	/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
@@ -784,7 +784,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Origination { ALLOW = 0, DENY = 1 }
+	export enum Origination { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** A HTTP Live Streaming (HLS) manifest configuration. */

@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodeSigningPolicy { Warn = 0, Enforce = 1 }
+	export enum CodeSigningPolicy { Warn = 'Warn', Enforce = 'Enforce' }
 
 
 	/** A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>. */
@@ -323,7 +323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourcePosition { TRIM_HORIZON = 0, LATEST = 1, AT_TIMESTAMP = 2 }
+	export enum EventSourcePosition { TRIM_HORIZON = 'TRIM_HORIZON', LATEST = 'LATEST', AT_TIMESTAMP = 'AT_TIMESTAMP' }
 
 
 	/**  An object that contains the filters for an event source.  */
@@ -427,7 +427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceAccessType { BASIC_AUTH = 0, VPC_SUBNET = 1, VPC_SECURITY_GROUP = 2, SASL_SCRAM_512_AUTH = 3, SASL_SCRAM_256_AUTH = 4, VIRTUAL_HOST = 5, CLIENT_CERTIFICATE_TLS_AUTH = 6, SERVER_ROOT_CA_CERTIFICATE = 7 }
+	export enum SourceAccessType { BASIC_AUTH = 'BASIC_AUTH', VPC_SUBNET = 'VPC_SUBNET', VPC_SECURITY_GROUP = 'VPC_SECURITY_GROUP', SASL_SCRAM_512_AUTH = 'SASL_SCRAM_512_AUTH', SASL_SCRAM_256_AUTH = 'SASL_SCRAM_256_AUTH', VIRTUAL_HOST = 'VIRTUAL_HOST', CLIENT_CERTIFICATE_TLS_AUTH = 'CLIENT_CERTIFICATE_TLS_AUTH', SERVER_ROOT_CA_CERTIFICATE = 'SERVER_ROOT_CA_CERTIFICATE' }
 
 
 	/** The self-managed Apache Kafka cluster for your event source. */
@@ -454,7 +454,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FunctionResponseType { ReportBatchItemFailures = 0 }
+	export enum FunctionResponseType { ReportBatchItemFailures = 'ReportBatchItemFailures' }
 
 
 	/** Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source. */
@@ -530,7 +530,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FullDocument { UpdateLookup = 0, Default = 1 }
+	export enum FullDocument { UpdateLookup = 'UpdateLookup', Default = 'Default' }
 
 
 	/** Details about a function's configuration. */
@@ -629,7 +629,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Runtime { nodejs = 0, 'nodejs4.3' = 1, 'nodejs6.10' = 2, 'nodejs8.10' = 3, 'nodejs10.x' = 4, 'nodejs12.x' = 5, 'nodejs14.x' = 6, 'nodejs16.x' = 7, java8 = 8, 'java8.al2' = 9, java11 = 10, 'python2.7' = 11, 'python3.6' = 12, 'python3.7' = 13, 'python3.8' = 14, 'python3.9' = 15, 'dotnetcore1.0' = 16, 'dotnetcore2.0' = 17, 'dotnetcore2.1' = 18, 'dotnetcore3.1' = 19, dotnet6 = 20, 'nodejs4.3-edge' = 21, 'go1.x' = 22, 'ruby2.5' = 23, 'ruby2.7' = 24, provided = 25, 'provided.al2' = 26, 'nodejs18.x' = 27, 'python3.10' = 28, java17 = 29, 'ruby3.2' = 30, 'python3.11' = 31 }
+	export enum Runtime { nodejs = 'nodejs', 'nodejs4.3' = 'nodejs4.3', 'nodejs6.10' = 'nodejs6.10', 'nodejs8.10' = 'nodejs8.10', 'nodejs10.x' = 'nodejs10.x', 'nodejs12.x' = 'nodejs12.x', 'nodejs14.x' = 'nodejs14.x', 'nodejs16.x' = 'nodejs16.x', java8 = 'java8', 'java8.al2' = 'java8.al2', java11 = 'java11', 'python2.7' = 'python2.7', 'python3.6' = 'python3.6', 'python3.7' = 'python3.7', 'python3.8' = 'python3.8', 'python3.9' = 'python3.9', 'dotnetcore1.0' = 'dotnetcore1.0', 'dotnetcore2.0' = 'dotnetcore2.0', 'dotnetcore2.1' = 'dotnetcore2.1', 'dotnetcore3.1' = 'dotnetcore3.1', dotnet6 = 'dotnet6', 'nodejs4.3-edge' = 'nodejs4.3-edge', 'go1.x' = 'go1.x', 'ruby2.5' = 'ruby2.5', 'ruby2.7' = 'ruby2.7', provided = 'provided', 'provided.al2' = 'provided.al2', 'nodejs18.x' = 'nodejs18.x', 'python3.10' = 'python3.10', java17 = 'java17', 'ruby3.2' = 'ruby3.2', 'python3.11' = 'python3.11' }
 
 
 	/** The VPC security groups and subnets that are attached to a Lambda function. */
@@ -730,7 +730,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TracingMode { Active = 0, PassThrough = 1 }
+	export enum TracingMode { Active = 'Active', PassThrough = 'PassThrough' }
 
 
 	/** An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. */
@@ -758,13 +758,13 @@ export namespace MyNS {
 
 	}
 
-	export enum State { Pending = 0, Active = 1, Inactive = 2, Failed = 3 }
+	export enum State { Pending = 'Pending', Active = 'Active', Inactive = 'Inactive', Failed = 'Failed' }
 
-	export enum StateReasonCode { Idle = 0, Creating = 1, Restoring = 2, EniLimitExceeded = 3, InsufficientRolePermissions = 4, InvalidConfiguration = 5, InternalError = 6, SubnetOutOfIPAddresses = 7, InvalidSubnet = 8, InvalidSecurityGroup = 9, ImageDeleted = 10, ImageAccessDenied = 11, InvalidImage = 12, KMSKeyAccessDenied = 13, KMSKeyNotFound = 14, InvalidStateKMSKey = 15, DisabledKMSKey = 16, EFSIOError = 17, EFSMountConnectivityError = 18, EFSMountFailure = 19, EFSMountTimeout = 20, InvalidRuntime = 21, InvalidZipFileException = 22, FunctionError = 23 }
+	export enum StateReasonCode { Idle = 'Idle', Creating = 'Creating', Restoring = 'Restoring', EniLimitExceeded = 'EniLimitExceeded', InsufficientRolePermissions = 'InsufficientRolePermissions', InvalidConfiguration = 'InvalidConfiguration', InternalError = 'InternalError', SubnetOutOfIPAddresses = 'SubnetOutOfIPAddresses', InvalidSubnet = 'InvalidSubnet', InvalidSecurityGroup = 'InvalidSecurityGroup', ImageDeleted = 'ImageDeleted', ImageAccessDenied = 'ImageAccessDenied', InvalidImage = 'InvalidImage', KMSKeyAccessDenied = 'KMSKeyAccessDenied', KMSKeyNotFound = 'KMSKeyNotFound', InvalidStateKMSKey = 'InvalidStateKMSKey', DisabledKMSKey = 'DisabledKMSKey', EFSIOError = 'EFSIOError', EFSMountConnectivityError = 'EFSMountConnectivityError', EFSMountFailure = 'EFSMountFailure', EFSMountTimeout = 'EFSMountTimeout', InvalidRuntime = 'InvalidRuntime', InvalidZipFileException = 'InvalidZipFileException', FunctionError = 'FunctionError' }
 
-	export enum LastUpdateStatus { Successful = 0, Failed = 1, InProgress = 2 }
+	export enum LastUpdateStatus { Successful = 'Successful', Failed = 'Failed', InProgress = 'InProgress' }
 
-	export enum LastUpdateStatusReasonCode { EniLimitExceeded = 0, InsufficientRolePermissions = 1, InvalidConfiguration = 2, InternalError = 3, SubnetOutOfIPAddresses = 4, InvalidSubnet = 5, InvalidSecurityGroup = 6, ImageDeleted = 7, ImageAccessDenied = 8, InvalidImage = 9, KMSKeyAccessDenied = 10, KMSKeyNotFound = 11, InvalidStateKMSKey = 12, DisabledKMSKey = 13, EFSIOError = 14, EFSMountConnectivityError = 15, EFSMountFailure = 16, EFSMountTimeout = 17, InvalidRuntime = 18, InvalidZipFileException = 19, FunctionError = 20 }
+	export enum LastUpdateStatusReasonCode { EniLimitExceeded = 'EniLimitExceeded', InsufficientRolePermissions = 'InsufficientRolePermissions', InvalidConfiguration = 'InvalidConfiguration', InternalError = 'InternalError', SubnetOutOfIPAddresses = 'SubnetOutOfIPAddresses', InvalidSubnet = 'InvalidSubnet', InvalidSecurityGroup = 'InvalidSecurityGroup', ImageDeleted = 'ImageDeleted', ImageAccessDenied = 'ImageAccessDenied', InvalidImage = 'InvalidImage', KMSKeyAccessDenied = 'KMSKeyAccessDenied', KMSKeyNotFound = 'KMSKeyNotFound', InvalidStateKMSKey = 'InvalidStateKMSKey', DisabledKMSKey = 'DisabledKMSKey', EFSIOError = 'EFSIOError', EFSMountConnectivityError = 'EFSMountConnectivityError', EFSMountFailure = 'EFSMountFailure', EFSMountTimeout = 'EFSMountTimeout', InvalidRuntime = 'InvalidRuntime', InvalidZipFileException = 'InvalidZipFileException', FunctionError = 'FunctionError' }
 
 
 	/** Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>. */
@@ -794,7 +794,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageType { Zip = 0, Image = 1 }
+	export enum PackageType { Zip = 'Zip', Image = 'Image' }
 
 
 	/** Response to a <code>GetFunctionConfiguration</code> request. */
@@ -851,7 +851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Architecture { x86_64 = 0, arm64 = 1 }
+	export enum Architecture { x86_64 = 'x86_64', arm64 = 'arm64' }
 
 
 	/** The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB. */
@@ -894,9 +894,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapStartApplyOn { PublishedVersions = 0, None = 1 }
+	export enum SnapStartApplyOn { PublishedVersions = 'PublishedVersions', None = 'None' }
 
-	export enum SnapStartOptimizationStatus { On = 0, Off = 1 }
+	export enum SnapStartOptimizationStatus { On = 'On', Off = 'Off' }
 
 
 	/** The ARN of the runtime and any errors that occured. */
@@ -1018,7 +1018,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FunctionUrlAuthType { NONE = 0, AWS_IAM = 1 }
+	export enum FunctionUrlAuthType { NONE = 'NONE', AWS_IAM = 'AWS_IAM' }
 
 
 	/** The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your Lambda function URL. Use CORS to grant access to your function URL from any origin. You can also use CORS to control access for specific HTTP headers and methods in requests to your function URL. */
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvokeMode { BUFFERED = 0, RESPONSE_STREAM = 1 }
+	export enum InvokeMode { BUFFERED = 'BUFFERED', RESPONSE_STREAM = 'RESPONSE_STREAM' }
 
 	export interface DeleteCodeSigningConfigResponse {
 	}
@@ -1432,7 +1432,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisionedConcurrencyStatusEnum { IN_PROGRESS = 0, READY = 1, FAILED = 2 }
+	export enum ProvisionedConcurrencyStatusEnum { IN_PROGRESS = 'IN_PROGRESS', READY = 'READY', FAILED = 'FAILED' }
 
 	export interface ProvisionedConcurrencyConfigNotFoundException {
 	}
@@ -1463,7 +1463,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateRuntimeOn { Auto = 0, Manual = 1, FunctionUpdate = 2 }
+	export enum UpdateRuntimeOn { Auto = 'Auto', Manual = 'Manual', FunctionUpdate = 'FunctionUpdate' }
 
 	export interface InvocationResponse {
 		StatusCode?: number | null;
@@ -2770,9 +2770,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EndPointType { KAFKA_BOOTSTRAP_SERVERS = 0 }
+	export enum EndPointType { KAFKA_BOOTSTRAP_SERVERS = 'KAFKA_BOOTSTRAP_SERVERS' }
 
-	export enum FunctionVersion { ALL = 0 }
+	export enum FunctionVersion { ALL = 'ALL' }
 
 	export interface GetAccountSettingsRequest {
 	}
@@ -2934,9 +2934,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InvocationType { Event = 0, RequestResponse = 1, DryRun = 2 }
+	export enum InvocationType { Event = 'Event', RequestResponse = 'RequestResponse', DryRun = 'DryRun' }
 
-	export enum LogType { None = 0, Tail = 1 }
+	export enum LogType { None = 'None', Tail = 'Tail' }
 
 	export interface InvocationRequest {
 		Payload?: string;
@@ -2968,7 +2968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseStreamingInvocationType { RequestResponse = 0, DryRun = 1 }
+	export enum ResponseStreamingInvocationType { RequestResponse = 'RequestResponse', DryRun = 'DryRun' }
 
 	export interface InvokeWithResponseStreamRequest {
 		Payload?: string;
@@ -5950,7 +5950,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetLayerVersionByArnFind { LayerVersion = 0 }
+	export enum GetLayerVersionByArnFind { LayerVersion = 'LayerVersion' }
 
 	export interface PutRuntimeManagementConfigPutBody {
 

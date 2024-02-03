@@ -50,7 +50,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationWorkflowStatusEnum { CREATING = 0, NOT_STARTED = 1, CREATION_FAILED = 2, STARTING = 3, IN_PROGRESS = 4, WORKFLOW_FAILED = 5, PAUSED = 6, PAUSING = 7, PAUSING_FAILED = 8, USER_ATTENTION_REQUIRED = 9, DELETING = 10, DELETION_FAILED = 11, DELETED = 12, COMPLETED = 13 }
+	export enum MigrationWorkflowStatusEnum { CREATING = 'CREATING', NOT_STARTED = 'NOT_STARTED', CREATION_FAILED = 'CREATION_FAILED', STARTING = 'STARTING', IN_PROGRESS = 'IN_PROGRESS', WORKFLOW_FAILED = 'WORKFLOW_FAILED', PAUSED = 'PAUSED', PAUSING = 'PAUSING', PAUSING_FAILED = 'PAUSING_FAILED', USER_ATTENTION_REQUIRED = 'USER_ATTENTION_REQUIRED', DELETING = 'DELETING', DELETION_FAILED = 'DELETION_FAILED', DELETED = 'DELETED', COMPLETED = 'COMPLETED' }
 
 	export interface StringMap {
 	}
@@ -186,9 +186,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RunEnvironment { AWS = 0, ONPREMISE = 1 }
+	export enum RunEnvironment { AWS = 'AWS', ONPREMISE = 'ONPREMISE' }
 
-	export enum TargetType { SINGLE = 0, ALL = 1, NONE = 2 }
+	export enum TargetType { SINGLE = 'SINGLE', ALL = 'ALL', NONE = 'NONE' }
 
 
 	/** The output of a step. */
@@ -214,7 +214,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataType { STRING = 0, INTEGER = 1, STRINGLIST = 2, STRINGMAP = 3 }
+	export enum DataType { STRING = 'STRING', INTEGER = 'INTEGER', STRINGLIST = 'STRINGLIST', STRINGMAP = 'STRINGMAP' }
 
 
 	/** A structure to hold multiple values of an output. */
@@ -384,7 +384,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateStatus { CREATED = 0 }
+	export enum TemplateStatus { CREATED = 'CREATED' }
 
 	export interface GetTemplateStepResponse {
 		id?: string;
@@ -421,7 +421,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepActionType { MANUAL = 0, AUTOMATED = 1 }
+	export enum StepActionType { MANUAL = 'MANUAL', AUTOMATED = 'AUTOMATED' }
 
 
 	/** The output of the step. */
@@ -505,7 +505,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepGroupStatus { AWAITING_DEPENDENCIES = 0, READY = 1, IN_PROGRESS = 2, COMPLETED = 3, FAILED = 4, PAUSED = 5, PAUSING = 6, USER_ATTENTION_REQUIRED = 7 }
+	export enum StepGroupStatus { AWAITING_DEPENDENCIES = 'AWAITING_DEPENDENCIES', READY = 'READY', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', PAUSED = 'PAUSED', PAUSING = 'PAUSING', USER_ATTENTION_REQUIRED = 'USER_ATTENTION_REQUIRED' }
 
 	export interface GetMigrationWorkflowResponse {
 		id?: string;
@@ -634,7 +634,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Owner { AWS_MANAGED = 0, CUSTOM = 1 }
+	export enum Owner { AWS_MANAGED = 'AWS_MANAGED', CUSTOM = 'CUSTOM' }
 
 
 	/** The custom script to run tests on source or target environments. */
@@ -661,7 +661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepStatus { AWAITING_DEPENDENCIES = 0, READY = 1, IN_PROGRESS = 2, COMPLETED = 3, FAILED = 4, PAUSED = 5, USER_ATTENTION_REQUIRED = 6 }
+	export enum StepStatus { AWAITING_DEPENDENCIES = 'AWAITING_DEPENDENCIES', READY = 'READY', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED', PAUSED = 'PAUSED', USER_ATTENTION_REQUIRED = 'USER_ATTENTION_REQUIRED' }
 
 	export interface GetWorkflowStepGroupResponse {
 		id?: string;
@@ -749,7 +749,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PluginHealth { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum PluginHealth { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagMap;

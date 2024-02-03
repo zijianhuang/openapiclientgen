@@ -42,7 +42,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountStatus { PENDING = 0, ACTIVE = 1, DELETED = 2, ARCHIVED = 3 }
+	export enum AccountStatus { PENDING = 'PENDING', ACTIVE = 'ACTIVE', DELETED = 'DELETED', ARCHIVED = 'ARCHIVED' }
 
 	export interface AccountUcis {
 		health?: AccountUcisHealth;
@@ -251,11 +251,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CallDirection { INBOUND = 0, OUTBOUND = 1 }
+	export enum CallDirection { INBOUND = 'INBOUND', OUTBOUND = 'OUTBOUND' }
 
-	export enum CallState { INITIALIZING = 0, RINGING = 1, ACTIVE = 2, HELD = 3, REMOTE_HELD = 4, DETACHED = 5, REJECTED = 6, CANCELLED = 7, ANSWERED = 8, MISSED = 9 }
+	export enum CallState { INITIALIZING = 'INITIALIZING', RINGING = 'RINGING', ACTIVE = 'ACTIVE', HELD = 'HELD', REMOTE_HELD = 'REMOTE_HELD', DETACHED = 'DETACHED', REJECTED = 'REJECTED', CANCELLED = 'CANCELLED', ANSWERED = 'ANSWERED', MISSED = 'MISSED' }
 
-	export enum CallType { CALL = 0 }
+	export enum CallType { CALL = 'CALL' }
 
 	export interface CallCreate {
 
@@ -744,9 +744,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookMetadataPolicy { NONE = 0, HEADER = 1, BODY = 2 }
+	export enum WebhookMetadataPolicy { NONE = 'NONE', HEADER = 'HEADER', BODY = 'BODY' }
 
-	export enum WebhookSigningAlgo { HMAC_SHA256 = 0, NONE = 1 }
+	export enum WebhookSigningAlgo { HMAC_SHA256 = 'HMAC_SHA256', NONE = 'NONE' }
 
 	export interface WebhookStatistics {
 
@@ -786,7 +786,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookStatus { ACTIVE = 0, PAUSED = 1 }
+	export enum WebhookStatus { ACTIVE = 'ACTIVE', PAUSED = 'PAUSED' }
 
 	export interface WebhookCreate {
 
@@ -829,7 +829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WebhookCreateSigningAlgo { HMAC_SHA256 = 0 }
+	export enum WebhookCreateSigningAlgo { HMAC_SHA256 = 'HMAC_SHA256' }
 
 	@Injectable()
 	export class MyClient {
@@ -1057,9 +1057,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListCallsStates { INITIALIZING = 0, RINGING = 1, ACTIVE = 2, HELD = 3, REMOTE_HELD = 4 }
+	export enum ListCallsStates { INITIALIZING = 'INITIALIZING', RINGING = 'RINGING', ACTIVE = 'ACTIVE', HELD = 'HELD', REMOTE_HELD = 'REMOTE_HELD' }
 
-	export enum ListCallsOrder { DESC = 0, ASC = 1 }
+	export enum ListCallsOrder { DESC = 'DESC', ASC = 'ASC' }
 
 }
 

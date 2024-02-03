@@ -100,7 +100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobTypeResourceLimitJobType { get_spec = 0, check_connection = 1, discover_schema = 2, sync = 3, reset_connection = 4, connection_updater = 5, replicate = 6 }
+	export enum JobTypeResourceLimitJobType { get_spec = 'get_spec', check_connection = 'check_connection', discover_schema = 'discover_schema', sync = 'sync', reset_connection = 'reset_connection', connection_updater = 'connection_updater', replicate = 'replicate' }
 
 	export interface AdvancedAuth {
 		authFlowType?: AdvancedAuthAuthFlowType | null;
@@ -126,7 +126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdvancedAuthAuthFlowType { 'oauth2.0' = 0, 'oauth1.0' = 1 }
+	export enum AdvancedAuthAuthFlowType { 'oauth2.0' = 'oauth2.0', 'oauth1.0' = 'oauth1.0' }
 
 	export interface OAuthConfigSpecification {
 
@@ -252,7 +252,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AirbyteStreamConfigurationDestinationSyncMode { append = 0, overwrite = 1, append_dedup = 2 }
+	export enum AirbyteStreamConfigurationDestinationSyncMode { append = 'append', overwrite = 'overwrite', append_dedup = 'append_dedup' }
 
 
 	/** Path to a field/column/property in a stream to be selected. For example, if the field to be selected is a database column called "foo", this will be ["foo"]. Use multiple path elements for nested schemas. */
@@ -269,7 +269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AirbyteStreamConfigurationSyncMode { full_refresh = 0, incremental = 1 }
+	export enum AirbyteStreamConfigurationSyncMode { full_refresh = 'full_refresh', incremental = 'incremental' }
 
 
 	/** the immutable schema defined by the source */
@@ -336,11 +336,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncMode { full_refresh = 0, incremental = 1 }
+	export enum SyncMode { full_refresh = 'full_refresh', incremental = 'incremental' }
 
 
 	/** Indicates where the error originated. If not set, the origin of error is not well known. */
-	export enum AttemptFailureOrigin { source = 0, destination = 1, replication = 2, persistence = 3, normalization = 4, dbt = 5, airbyte_platform = 6, unknown = 7 }
+	export enum AttemptFailureOrigin { source = 'source', destination = 'destination', replication = 'replication', persistence = 'persistence', normalization = 'normalization', dbt = 'dbt', airbyte_platform = 'airbyte_platform', unknown = 'unknown' }
 
 	export interface AttemptFailureReason {
 		externalMessage?: string | null;
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttemptFailureReasonFailureType { config_error = 0, system_error = 1, manual_cancellation = 2, refresh_schema = 3 }
+	export enum AttemptFailureReasonFailureType { config_error = 'config_error', system_error = 'system_error', manual_cancellation = 'manual_cancellation', refresh_schema = 'refresh_schema' }
 
 	export interface AttemptFailureSummary {
 
@@ -413,7 +413,7 @@ export namespace MyNS {
 
 
 	/** Categorizes well known errors into types for programmatic handling. If not set, the type of error is not well known. */
-	export enum AttemptFailureType { config_error = 0, system_error = 1, manual_cancellation = 2, refresh_schema = 3 }
+	export enum AttemptFailureType { config_error = 'config_error', system_error = 'system_error', manual_cancellation = 'manual_cancellation', refresh_schema = 'refresh_schema' }
 
 	export interface AttemptInfoRead {
 
@@ -481,7 +481,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttemptReadStatus { running = 0, failed = 1, succeeded = 2 }
+	export enum AttemptReadStatus { running = 'running', failed = 'failed', succeeded = 'succeeded' }
 
 	export interface AttemptStreamStats {
 
@@ -580,7 +580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttemptStatus { running = 0, failed = 1, succeeded = 2 }
+	export enum AttemptStatus { running = 'running', failed = 'failed', succeeded = 'succeeded' }
 
 	export interface AttemptSyncConfig {
 
@@ -696,7 +696,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStateStateType { global = 0, stream = 1, legacy = 2, not_set = 3 }
+	export enum ConnectionStateStateType { global = 'global', stream = 'stream', legacy = 'legacy', not_set = 'not_set' }
 
 	export interface AuthSpecification {
 		auth_type?: AuthSpecificationAuth_type | null;
@@ -714,7 +714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthSpecificationAuth_type { 'oauth2.0' = 0 }
+	export enum AuthSpecificationAuth_type { 'oauth2.0' = 'oauth2.0' }
 
 
 	/** An object containing any metadata needed to describe this connector's Oauth flow */
@@ -793,7 +793,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamTransformTransformType { add_stream = 0, remove_stream = 1, update_stream = 2 }
+	export enum StreamTransformTransformType { add_stream = 'add_stream', remove_stream = 'remove_stream', update_stream = 'update_stream' }
 
 
 	/** Describes the difference between two Streams. */
@@ -872,7 +872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldTransformTransformType { add_field = 0, remove_field = 1, update_field_schema = 2 }
+	export enum FieldTransformTransformType { add_field = 'add_field', remove_field = 'remove_field', update_field_schema = 'update_field_schema' }
 
 	export interface FieldSchemaUpdate {
 
@@ -975,9 +975,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SynchronousJobReadConfigType { check_connection_source = 0, check_connection_destination = 1, discover_schema = 2, get_spec = 3, sync = 4, reset_connection = 5 }
+	export enum SynchronousJobReadConfigType { check_connection_source = 'check_connection_source', check_connection_destination = 'check_connection_destination', discover_schema = 'discover_schema', get_spec = 'get_spec', sync = 'sync', reset_connection = 'reset_connection' }
 
-	export enum CheckConnectionReadStatus { succeeded = 0, failed = 1 }
+	export enum CheckConnectionReadStatus { succeeded = 'succeeded', failed = 'failed' }
 
 	export interface CheckOperationRead {
 		message?: string | null;
@@ -1194,11 +1194,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionCreateGeography { auto = 0, us = 1, eu = 2 }
+	export enum ConnectionCreateGeography { auto = 'auto', us = 'us', eu = 'eu' }
 
-	export enum ConnectionCreateNamespaceDefinition { source = 0, destination = 1, customformat = 2 }
+	export enum ConnectionCreateNamespaceDefinition { source = 'source', destination = 'destination', customformat = 'customformat' }
 
-	export enum ConnectionCreateNonBreakingChangesPreference { ignore = 0, disable = 1 }
+	export enum ConnectionCreateNonBreakingChangesPreference { ignore = 'ignore', disable = 'disable' }
 
 
 	/** if null, then no schedule is set. */
@@ -1228,7 +1228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionScheduleTimeUnit { minutes = 0, hours = 1, days = 2, weeks = 3, months = 4 }
+	export enum ConnectionScheduleTimeUnit { minutes = 'minutes', hours = 'hours', days = 'days', weeks = 'weeks', months = 'months' }
 
 
 	/** schedule for when the the connection should run, per the schedule type */
@@ -1294,9 +1294,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionCreateScheduleType { manual = 0, basic = 1, cron = 2 }
+	export enum ConnectionCreateScheduleType { manual = 'manual', basic = 'basic', cron = 'cron' }
 
-	export enum ConnectionCreateStatus { active = 0, inactive = 1, deprecated = 2 }
+	export enum ConnectionCreateStatus { active = 'active', inactive = 'inactive', deprecated = 'deprecated' }
 
 	export interface ConnectionIdRequestBody {
 
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 
 
 	/** determine how the schedule data should be interpreted */
-	export enum ConnectionScheduleType { manual = 0, basic = 1, cron = 2 }
+	export enum ConnectionScheduleType { manual = 'manual', basic = 'basic', cron = 'cron' }
 
 	export interface ConnectionSearch {
 		connectionId?: string | null;
@@ -1590,11 +1590,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionStateType { global = 0, stream = 1, legacy = 2, not_set = 3 }
+	export enum ConnectionStateType { global = 'global', stream = 'stream', legacy = 'legacy', not_set = 'not_set' }
 
 
 	/** Active means that data is flowing through the connection. Inactive means it is not. Deprecated means the connection is off and cannot be re-activated. the schema field describes the elements of the schema that will be synced. */
-	export enum ConnectionStatus { active = 0, inactive = 1, deprecated = 2 }
+	export enum ConnectionStatus { active = 'active', inactive = 'inactive', deprecated = 'deprecated' }
 
 
 	/** Used to apply a patch-style update to a connection, which means that null properties remain unchanged */
@@ -1825,7 +1825,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataType { string = 0, number = 1, boolean = 2, object = 3, array = 4 }
+	export enum DataType { string = 'string', number = 'number', boolean = 'boolean', object = 'object', array = 'array' }
 
 	export interface DbMigrationExecutionRead {
 		executedMigrations?: Array<DbMigrationRead>;
@@ -1887,7 +1887,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DbMigrationReadMigrationState { pending = 0, above_target = 1, below_baseline = 2, baseline = 3, ignored = 4, missing_success = 5, missing_failed = 6, success = 7, undone = 8, available = 9, failed = 10, out_of_order = 11, future_success = 12, future_failed = 13, outdated = 14, superseded = 15, deleted = 16 }
+	export enum DbMigrationReadMigrationState { pending = 'pending', above_target = 'above_target', below_baseline = 'below_baseline', baseline = 'baseline', ignored = 'ignored', missing_success = 'missing_success', missing_failed = 'missing_failed', success = 'success', undone = 'undone', available = 'available', failed = 'failed', out_of_order = 'out_of_order', future_success = 'future_success', future_failed = 'future_failed', outdated = 'outdated', superseded = 'superseded', deleted = 'deleted' }
 
 	export interface DbMigrationReadList {
 		migrations?: Array<DbMigrationRead>;
@@ -1917,7 +1917,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DbMigrationState { pending = 0, above_target = 1, below_baseline = 2, baseline = 3, ignored = 4, missing_success = 5, missing_failed = 6, success = 7, undone = 8, available = 9, failed = 10, out_of_order = 11, future_success = 12, future_failed = 13, outdated = 14, superseded = 15, deleted = 16 }
+	export enum DbMigrationState { pending = 'pending', above_target = 'above_target', below_baseline = 'below_baseline', baseline = 'baseline', ignored = 'ignored', missing_success = 'missing_success', missing_failed = 'missing_failed', success = 'success', undone = 'undone', available = 'available', failed = 'failed', out_of_order = 'out_of_order', future_success = 'future_success', future_failed = 'future_failed', outdated = 'outdated', superseded = 'superseded', deleted = 'deleted' }
 
 	export interface DestinationAuthSpecification {
 		auth_type?: AuthSpecificationAuth_type | null;
@@ -2233,7 +2233,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationDefinitionReadReleaseStage { alpha = 0, beta = 1, generally_available = 2, custom = 3 }
+	export enum DestinationDefinitionReadReleaseStage { alpha = 'alpha', beta = 'beta', generally_available = 'generally_available', custom = 'custom' }
 
 	export interface DestinationDefinitionReadList {
 
@@ -2291,7 +2291,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationSyncMode { append = 0, overwrite = 1, append_dedup = 2 }
+	export enum DestinationSyncMode { append = 'append', overwrite = 'overwrite', append_dedup = 'append_dedup' }
 
 	export interface DestinationDefinitionUpdate {
 
@@ -2531,7 +2531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Geography { auto = 0, us = 1, eu = 2 }
+	export enum Geography { auto = 'auto', us = 'us', eu = 'eu' }
 
 	export interface HealthCheckRead {
 
@@ -2658,7 +2658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobConfigType { check_connection_source = 0, check_connection_destination = 1, discover_schema = 2, get_spec = 3, sync = 4, reset_connection = 5 }
+	export enum JobConfigType { check_connection_source = 'check_connection_source', check_connection_destination = 'check_connection_destination', discover_schema = 'discover_schema', get_spec = 'get_spec', sync = 'sync', reset_connection = 'reset_connection' }
 
 	export interface JobDebugInfoRead {
 
@@ -2795,9 +2795,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceDefinitionReadSourceType { api = 0, file = 1, database = 2, custom = 3 }
+	export enum SourceDefinitionReadSourceType { api = 'api', file = 'file', database = 'database', custom = 'custom' }
 
-	export enum JobDebugReadStatus { pending = 0, running = 1, incomplete = 2, failed = 3, succeeded = 4, cancelled = 5 }
+	export enum JobDebugReadStatus { pending = 'pending', running = 'running', incomplete = 'incomplete', failed = 'failed', succeeded = 'succeeded', cancelled = 'cancelled' }
 
 	export interface WorkflowStateRead {
 
@@ -3024,11 +3024,11 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { pending = 0, running = 1, incomplete = 2, failed = 3, succeeded = 4, cancelled = 5 }
+	export enum JobStatus { pending = 'pending', running = 'running', incomplete = 'incomplete', failed = 'failed', succeeded = 'succeeded', cancelled = 'cancelled' }
 
 
 	/** enum that describes the different types of jobs that the platform runs. */
-	export enum JobType { get_spec = 0, check_connection = 1, discover_schema = 2, sync = 3, reset_connection = 4, connection_updater = 5, replicate = 6 }
+	export enum JobType { get_spec = 'get_spec', check_connection = 'check_connection', discover_schema = 'discover_schema', sync = 'sync', reset_connection = 'reset_connection', connection_updater = 'connection_updater', replicate = 'replicate' }
 
 	export interface KnownExceptionInfo {
 		exceptionClassName?: string | null;
@@ -3057,7 +3057,7 @@ export namespace MyNS {
 
 
 	/** type/source of logs produced */
-	export enum LogType { server = 0, scheduler = 1 }
+	export enum LogType { server = 'server', scheduler = 'scheduler' }
 
 	export interface LogsRequestBody {
 
@@ -3084,9 +3084,9 @@ export namespace MyNS {
 
 
 	/** Method used for computing final namespace in destination */
-	export enum NamespaceDefinitionType { source = 0, destination = 1, customformat = 2 }
+	export enum NamespaceDefinitionType { source = 'source', destination = 'destination', customformat = 'customformat' }
 
-	export enum NonBreakingChangesPreference { ignore = 0, disable = 1 }
+	export enum NonBreakingChangesPreference { ignore = 'ignore', disable = 'disable' }
 
 	export interface NotFoundKnownExceptionInfo {
 		exceptionClassName?: string | null;
@@ -3149,7 +3149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationNotificationType { slack = 0, customerio = 1 }
+	export enum NotificationNotificationType { slack = 'slack', customerio = 'customerio' }
 
 	export interface SlackNotificationConfiguration {
 
@@ -3188,7 +3188,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationType { slack = 0, customerio = 1 }
+	export enum NotificationType { slack = 'slack', customerio = 'customerio' }
 
 
 	/** The values required to configure OAuth flows. The schema for this must match the `OAuthConfigSpecification.oauthUserInputFromConnectorConfigSpecification` schema. */
@@ -3321,9 +3321,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatorNormalizationOption { basic = 0 }
+	export enum OperatorNormalizationOption { basic = 'basic' }
 
-	export enum OperatorConfigurationOperatorType { normalization = 0, dbt = 1, webhook = 2 }
+	export enum OperatorConfigurationOperatorType { normalization = 'normalization', dbt = 'dbt', webhook = 'webhook' }
 
 	export interface OperatorWebhook {
 		dbtCloud?: OperatorWebhookDbtCloud;
@@ -3396,7 +3396,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatorWebhookWebhookType { dbtCloud = 0 }
+	export enum OperatorWebhookWebhookType { dbtCloud = 'dbtCloud' }
 
 	export interface OperationIdRequestBody {
 
@@ -3489,7 +3489,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperatorType { normalization = 0, dbt = 1, webhook = 2 }
+	export enum OperatorType { normalization = 'normalization', dbt = 'dbt', webhook = 'webhook' }
 
 	export interface PrivateDestinationDefinitionRead {
 
@@ -3557,7 +3557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReleaseStage { alpha = 0, beta = 1, generally_available = 2, custom = 3 }
+	export enum ReleaseStage { alpha = 'alpha', beta = 'beta', generally_available = 'generally_available', custom = 'custom' }
 
 	export interface SaveAttemptSyncConfigRequestBody {
 
@@ -3614,7 +3614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SchemaChange { no_change = 0, non_breaking = 1, breaking = 2 }
+	export enum SchemaChange { no_change = 'no_change', non_breaking = 'non_breaking', breaking = 'breaking' }
 
 	export interface SetInstancewideDestinationOauthParamsRequestBody {
 

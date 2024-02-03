@@ -80,7 +80,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityContactPropertiesAlertNotifications { On = 0, Off = 1 }
+	export enum SecurityContactPropertiesAlertNotifications { On = 'On', Off = 'Off' }
 
 
 	/** List of security contacts response */

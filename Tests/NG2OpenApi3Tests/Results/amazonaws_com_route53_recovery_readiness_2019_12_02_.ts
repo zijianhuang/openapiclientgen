@@ -356,7 +356,7 @@ export namespace MyNS {
 
 
 	/** The readiness status. */
-	export enum Readiness { READY = 0, NOT_READY = 1, UNKNOWN = 2, NOT_AUTHORIZED = 3 }
+	export enum Readiness { READY = 'READY', NOT_READY = 'NOT_READY', UNKNOWN = 'UNKNOWN', NOT_AUTHORIZED = 'NOT_AUTHORIZED' }
 
 
 	/** Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary. */

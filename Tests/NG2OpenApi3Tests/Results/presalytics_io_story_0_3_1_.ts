@@ -202,7 +202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Manage_eventAction { create = 0, fire = 1, change = 2, delete = 3 }
+	export enum Manage_eventAction { create = 'create', fire = 'fire', change = 'change', delete = 'delete' }
 
 
 	/** A conversation message */

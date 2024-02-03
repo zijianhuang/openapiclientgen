@@ -166,9 +166,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationMetadataRegionCategory { Recommended = 0, Other = 1 }
+	export enum LocationMetadataRegionCategory { Recommended = 'Recommended', Other = 'Other' }
 
-	export enum LocationMetadataRegionType { Physical = 0, Logical = 1 }
+	export enum LocationMetadataRegionType { Physical = 'Physical', Logical = 'Logical' }
 
 
 	/** Information about a tenant managing the subscription. */
@@ -305,7 +305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionState { Enabled = 0, Warned = 1, PastDue = 2, Disabled = 3, Deleted = 4 }
+	export enum SubscriptionState { Enabled = 'Enabled', Warned = 'Warned', PastDue = 'PastDue', Disabled = 'Disabled', Deleted = 'Deleted' }
 
 
 	/** Subscription list operation response. */
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionPoliciesSpendingLimit { On = 0, Off = 1, CurrentPeriodOff = 2 }
+	export enum SubscriptionPoliciesSpendingLimit { On = 'On', Off = 'Off', CurrentPeriodOff = 'CurrentPeriodOff' }
 
 
 	/** Tenant Id information. */

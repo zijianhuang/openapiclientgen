@@ -116,7 +116,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountAccessType { CURRENT_ACCOUNT = 0, ORGANIZATION = 1 }
+	export enum AccountAccessType { CURRENT_ACCOUNT = 'CURRENT_ACCOUNT', ORGANIZATION = 'ORGANIZATION' }
 
 
 	/** A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication, and whether that authentication is fully configured. */
@@ -138,13 +138,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthenticationProviderTypes { AWS_SSO = 0, SAML = 1 }
+	export enum AuthenticationProviderTypes { AWS_SSO = 'AWS_SSO', SAML = 'SAML' }
 
-	export enum SamlConfigurationStatus { CONFIGURED = 0, NOT_CONFIGURED = 1 }
+	export enum SamlConfigurationStatus { CONFIGURED = 'CONFIGURED', NOT_CONFIGURED = 'NOT_CONFIGURED' }
 
-	export enum DataSourceType { AMAZON_OPENSEARCH_SERVICE = 0, CLOUDWATCH = 1, PROMETHEUS = 2, XRAY = 3, TIMESTREAM = 4, SITEWISE = 5, ATHENA = 6, REDSHIFT = 7, TWINMAKER = 8 }
+	export enum DataSourceType { AMAZON_OPENSEARCH_SERVICE = 'AMAZON_OPENSEARCH_SERVICE', CLOUDWATCH = 'CLOUDWATCH', PROMETHEUS = 'PROMETHEUS', XRAY = 'XRAY', TIMESTREAM = 'TIMESTREAM', SITEWISE = 'SITEWISE', ATHENA = 'ATHENA', REDSHIFT = 'REDSHIFT', TWINMAKER = 'TWINMAKER' }
 
-	export enum LicenseType { ENTERPRISE = 0, ENTERPRISE_FREE_TRIAL = 1 }
+	export enum LicenseType { ENTERPRISE = 'ENTERPRISE', ENTERPRISE_FREE_TRIAL = 'ENTERPRISE_FREE_TRIAL' }
 
 
 	/** <p>The configuration settings for in-bound network access to your workspace.</p> <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization are still required.</p> <p>Access is granted to a caller that is in either the IP address list or the VPC endpoint list - they do not need to be in both.</p> <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints are allowed. Standard Grafana authentication and authorization are still required.</p> <note> <p>While both <code>prefixListIds</code> and <code>vpceIds</code> are required, you can pass in an empty array of strings for either parameter if you do not want to allow any of that type.</p> <p>If both are passed as empty arrays, no traffic is allowed to the workspace, because only <i>explicitly</i> allowed connections are accepted.</p> </note> */
@@ -166,11 +166,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationDestinationType { SNS = 0 }
+	export enum NotificationDestinationType { SNS = 'SNS' }
 
-	export enum PermissionType { CUSTOMER_MANAGED = 0, SERVICE_MANAGED = 1 }
+	export enum PermissionType { CUSTOMER_MANAGED = 'CUSTOMER_MANAGED', SERVICE_MANAGED = 'SERVICE_MANAGED' }
 
-	export enum WorkspaceStatus { ACTIVE = 0, CREATING = 1, DELETING = 2, FAILED = 3, UPDATING = 4, UPGRADING = 5, DELETION_FAILED = 6, CREATION_FAILED = 7, UPDATE_FAILED = 8, UPGRADE_FAILED = 9, LICENSE_REMOVAL_FAILED = 10, VERSION_UPDATING = 11, VERSION_UPDATE_FAILED = 12 }
+	export enum WorkspaceStatus { ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', UPDATING = 'UPDATING', UPGRADING = 'UPGRADING', DELETION_FAILED = 'DELETION_FAILED', CREATION_FAILED = 'CREATION_FAILED', UPDATE_FAILED = 'UPDATE_FAILED', UPGRADE_FAILED = 'UPGRADE_FAILED', LICENSE_REMOVAL_FAILED = 'LICENSE_REMOVAL_FAILED', VERSION_UPDATING = 'VERSION_UPDATING', VERSION_UPDATE_FAILED = 'VERSION_UPDATE_FAILED' }
 
 	export interface TagMap {
 	}
@@ -601,7 +601,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Role { ADMIN = 0, EDITOR = 1, VIEWER = 2 }
+	export enum Role { ADMIN = 'ADMIN', EDITOR = 'EDITOR', VIEWER = 'VIEWER' }
 
 
 	/** A structure that specifies one user or group in the workspace. */
@@ -631,7 +631,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserType { SSO_USER = 0, SSO_GROUP = 1 }
+	export enum UserType { SSO_USER = 'SSO_USER', SSO_GROUP = 'SSO_GROUP' }
 
 	export interface ListTagsForResourceResponse {
 		tags?: TagMap;
@@ -836,7 +836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateAction { ADD = 0, REVOKE = 1 }
+	export enum UpdateAction { ADD = 'ADD', REVOKE = 'REVOKE' }
 
 	export interface UpdateWorkspaceResponse {
 

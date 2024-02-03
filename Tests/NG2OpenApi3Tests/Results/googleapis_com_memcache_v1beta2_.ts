@@ -303,7 +303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WeeklyMaintenanceWindowDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum WeeklyMaintenanceWindowDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Represents the metadata of a long-running operation. */
@@ -389,7 +389,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudMemcacheV1beta2UpgradeInstanceRequestMemcacheVersion { MEMCACHE_VERSION_UNSPECIFIED = 0, MEMCACHE_1_5 = 1, MEMCACHE_1_6_15 = 2 }
+	export enum GoogleCloudMemcacheV1beta2UpgradeInstanceRequestMemcacheVersion { MEMCACHE_VERSION_UNSPECIFIED = 'MEMCACHE_VERSION_UNSPECIFIED', MEMCACHE_1_5 = 'MEMCACHE_1_5', MEMCACHE_1_6_15 = 'MEMCACHE_1_6_15' }
 
 
 	/** Instance represents the interface for SLM services to actuate the state of control plane resources. Example Instance in JSON, where consumer-project-number=123456, producer-project-id=cloud-sql: ```json Instance: { "name": "projects/123456/locations/us-east1/instances/prod-instance", "create_time": { "seconds": 1526406431, }, "labels": { "env": "prod", "foo": "bar" }, "state": READY, "software_versions": { "software_update": "cloud-sql-09-28-2018", }, "maintenance_policy_names": { "UpdatePolicy": "projects/123456/locations/us-east1/maintenancePolicies/prod-update-policy", } "tenant_project_id": "cloud-sql-test-tenant", "producer_metadata": { "cloud-sql-tier": "basic", "cloud-sql-instance-size": "1G", }, "provisioned_resources": [ { "resource-type": "compute-instance", "resource-url": "https://www.googleapis.com/compute/v1/projects/cloud-sql/zones/us-east1-b/instances/vm-1", } ], "maintenance_schedules": { "csa_rollout": { "start_time": { "seconds": 1526406431, }, "end_time": { "seconds": 1535406431, }, }, "ncsa_rollout": { "start_time": { "seconds": 1526406431, }, "end_time": { "seconds": 1535406431, }, } }, "consumer_defined_name": "my-sql-instance1", } ``` LINT.IfChange */
@@ -655,7 +655,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 0, READY = 1, DELETING = 2 }
+	export enum MaintenancePolicyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', READY = 'READY', DELETING = 'DELETING' }
 
 
 	/** Maintenance policy applicable to instance updates. */
@@ -684,7 +684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 0, EARLIER = 1, LATER = 2, WEEK1 = 3, WEEK2 = 4, WEEK5 = 5 }
+	export enum UpdatePolicyChannel { UPDATE_CHANNEL_UNSPECIFIED = 'UPDATE_CHANNEL_UNSPECIFIED', EARLIER = 'EARLIER', LATER = 'LATER', WEEK1 = 'WEEK1', WEEK2 = 'WEEK2', WEEK5 = 'WEEK5' }
 
 
 	/** MaintenanceWindow definition. */
@@ -906,7 +906,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudSaasacceleratorManagementProvidersV1InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, REPAIRING = 4, DELETING = 5, ERROR = 6 }
+	export enum GoogleCloudSaasacceleratorManagementProvidersV1InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', REPAIRING = 'REPAIRING', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 
 	/** A Memorystore for Memcached instance */
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceMessageCode { CODE_UNSPECIFIED = 0, ZONE_DISTRIBUTION_UNBALANCED = 1 }
+	export enum InstanceMessageCode { CODE_UNSPECIFIED = 'CODE_UNSPECIFIED', ZONE_DISTRIBUTION_UNBALANCED = 'ZONE_DISTRIBUTION_UNBALANCED' }
 
 
 	/** Upcoming maintenance schedule. */
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3, UPDATING = 4 }
+	export enum NodeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING', UPDATING = 'UPDATING' }
 
 
 	/** Configuration for a Memcached Node. */
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, DELETING = 4, PERFORMING_MAINTENANCE = 5, MEMCACHE_VERSION_UPGRADING = 6 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', DELETING = 'DELETING', PERFORMING_MAINTENANCE = 'PERFORMING_MAINTENANCE', MEMCACHE_VERSION_UPGRADING = 'MEMCACHE_VERSION_UPGRADING' }
 
 
 	/** Response for ListInstances. */
@@ -1534,7 +1534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RescheduleMaintenanceRequestRescheduleType { RESCHEDULE_TYPE_UNSPECIFIED = 0, IMMEDIATE = 1, NEXT_AVAILABLE_WINDOW = 2, SPECIFIC_TIME = 3 }
+	export enum RescheduleMaintenanceRequestRescheduleType { RESCHEDULE_TYPE_UNSPECIFIED = 'RESCHEDULE_TYPE_UNSPECIFIED', IMMEDIATE = 'IMMEDIATE', NEXT_AVAILABLE_WINDOW = 'NEXT_AVAILABLE_WINDOW', SPECIFIC_TIME = 'SPECIFIC_TIME' }
 
 
 	/** Request for UpdateParameters. */

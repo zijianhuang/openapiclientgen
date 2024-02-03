@@ -100,7 +100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskBillingMetersTier { Standard = 0, Premium = 1 }
+	export enum DiskBillingMetersTier { Standard = 'Standard', Premium = 'Premium' }
 
 
 	/** The response for the operation to get regional billingSpecs for a subscription. */
@@ -164,7 +164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VmSizeCompatibilityFilterV2FilterMode { Exclude = 0, Include = 1 }
+	export enum VmSizeCompatibilityFilterV2FilterMode { Exclude = 'Exclude', Include = 'Include' }
 
 
 	/** The Get Capabilities operation response. */

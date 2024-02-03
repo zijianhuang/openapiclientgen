@@ -213,7 +213,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateHsmRequestSubscriptionType { PRODUCTION = 0 }
+	export enum CreateHsmRequestSubscriptionType { PRODUCTION = 'PRODUCTION' }
 
 
 	/** Contains the output of the <a>CreateLunaClient</a> action. */
@@ -407,7 +407,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudHsmObjectState { READY = 0, UPDATING = 1, DEGRADED = 2 }
+	export enum CloudHsmObjectState { READY = 'READY', UPDATING = 'UPDATING', DEGRADED = 'DEGRADED' }
 
 
 	/** Contains the inputs for the <a>DescribeHapg</a> action. */
@@ -509,7 +509,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HsmStatus { PENDING = 0, RUNNING = 1, UPDATING = 2, SUSPENDED = 3, TERMINATING = 4, TERMINATED = 5, DEGRADED = 6 }
+	export enum HsmStatus { PENDING = 'PENDING', RUNNING = 'RUNNING', UPDATING = 'UPDATING', SUSPENDED = 'SUSPENDED', TERMINATING = 'TERMINATING', TERMINATED = 'TERMINATED', DEGRADED = 'DEGRADED' }
 
 
 	/** Contains the inputs for the <a>DescribeHsm</a> operation. */
@@ -618,7 +618,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClientVersion { _5_1 = 0, _5_3 = 1 }
+	export enum ClientVersion { _5_1 = '5.1', _5_3 = '5.3' }
 
 	export interface ListAvailableZonesResponse {
 		AZList?: Array<string>;
@@ -927,7 +927,7 @@ export namespace MyNS {
 
 
 	/** <p>Specifies the type of subscription for the HSM.</p> <ul> <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> </ul> */
-	export enum SubscriptionType { PRODUCTION = 0 }
+	export enum SubscriptionType { PRODUCTION = 'PRODUCTION' }
 
 	@Injectable()
 	export class MyClient {
@@ -1115,45 +1115,45 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToResourceX_Amz_Target { 'CloudHsmFrontendService.AddTagsToResource' = 0 }
+	export enum AddTagsToResourceX_Amz_Target { 'CloudHsmFrontendService.AddTagsToResource' = 'CloudHsmFrontendService.AddTagsToResource' }
 
-	export enum CreateHapgX_Amz_Target { 'CloudHsmFrontendService.CreateHapg' = 0 }
+	export enum CreateHapgX_Amz_Target { 'CloudHsmFrontendService.CreateHapg' = 'CloudHsmFrontendService.CreateHapg' }
 
-	export enum CreateHsmX_Amz_Target { 'CloudHsmFrontendService.CreateHsm' = 0 }
+	export enum CreateHsmX_Amz_Target { 'CloudHsmFrontendService.CreateHsm' = 'CloudHsmFrontendService.CreateHsm' }
 
-	export enum CreateLunaClientX_Amz_Target { 'CloudHsmFrontendService.CreateLunaClient' = 0 }
+	export enum CreateLunaClientX_Amz_Target { 'CloudHsmFrontendService.CreateLunaClient' = 'CloudHsmFrontendService.CreateLunaClient' }
 
-	export enum DeleteHapgX_Amz_Target { 'CloudHsmFrontendService.DeleteHapg' = 0 }
+	export enum DeleteHapgX_Amz_Target { 'CloudHsmFrontendService.DeleteHapg' = 'CloudHsmFrontendService.DeleteHapg' }
 
-	export enum DeleteHsmX_Amz_Target { 'CloudHsmFrontendService.DeleteHsm' = 0 }
+	export enum DeleteHsmX_Amz_Target { 'CloudHsmFrontendService.DeleteHsm' = 'CloudHsmFrontendService.DeleteHsm' }
 
-	export enum DeleteLunaClientX_Amz_Target { 'CloudHsmFrontendService.DeleteLunaClient' = 0 }
+	export enum DeleteLunaClientX_Amz_Target { 'CloudHsmFrontendService.DeleteLunaClient' = 'CloudHsmFrontendService.DeleteLunaClient' }
 
-	export enum DescribeHapgX_Amz_Target { 'CloudHsmFrontendService.DescribeHapg' = 0 }
+	export enum DescribeHapgX_Amz_Target { 'CloudHsmFrontendService.DescribeHapg' = 'CloudHsmFrontendService.DescribeHapg' }
 
-	export enum DescribeHsmX_Amz_Target { 'CloudHsmFrontendService.DescribeHsm' = 0 }
+	export enum DescribeHsmX_Amz_Target { 'CloudHsmFrontendService.DescribeHsm' = 'CloudHsmFrontendService.DescribeHsm' }
 
-	export enum DescribeLunaClientX_Amz_Target { 'CloudHsmFrontendService.DescribeLunaClient' = 0 }
+	export enum DescribeLunaClientX_Amz_Target { 'CloudHsmFrontendService.DescribeLunaClient' = 'CloudHsmFrontendService.DescribeLunaClient' }
 
-	export enum GetConfigX_Amz_Target { 'CloudHsmFrontendService.GetConfig' = 0 }
+	export enum GetConfigX_Amz_Target { 'CloudHsmFrontendService.GetConfig' = 'CloudHsmFrontendService.GetConfig' }
 
-	export enum ListAvailableZonesX_Amz_Target { 'CloudHsmFrontendService.ListAvailableZones' = 0 }
+	export enum ListAvailableZonesX_Amz_Target { 'CloudHsmFrontendService.ListAvailableZones' = 'CloudHsmFrontendService.ListAvailableZones' }
 
-	export enum ListHapgsX_Amz_Target { 'CloudHsmFrontendService.ListHapgs' = 0 }
+	export enum ListHapgsX_Amz_Target { 'CloudHsmFrontendService.ListHapgs' = 'CloudHsmFrontendService.ListHapgs' }
 
-	export enum ListHsmsX_Amz_Target { 'CloudHsmFrontendService.ListHsms' = 0 }
+	export enum ListHsmsX_Amz_Target { 'CloudHsmFrontendService.ListHsms' = 'CloudHsmFrontendService.ListHsms' }
 
-	export enum ListLunaClientsX_Amz_Target { 'CloudHsmFrontendService.ListLunaClients' = 0 }
+	export enum ListLunaClientsX_Amz_Target { 'CloudHsmFrontendService.ListLunaClients' = 'CloudHsmFrontendService.ListLunaClients' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'CloudHsmFrontendService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'CloudHsmFrontendService.ListTagsForResource' = 'CloudHsmFrontendService.ListTagsForResource' }
 
-	export enum ModifyHapgX_Amz_Target { 'CloudHsmFrontendService.ModifyHapg' = 0 }
+	export enum ModifyHapgX_Amz_Target { 'CloudHsmFrontendService.ModifyHapg' = 'CloudHsmFrontendService.ModifyHapg' }
 
-	export enum ModifyHsmX_Amz_Target { 'CloudHsmFrontendService.ModifyHsm' = 0 }
+	export enum ModifyHsmX_Amz_Target { 'CloudHsmFrontendService.ModifyHsm' = 'CloudHsmFrontendService.ModifyHsm' }
 
-	export enum ModifyLunaClientX_Amz_Target { 'CloudHsmFrontendService.ModifyLunaClient' = 0 }
+	export enum ModifyLunaClientX_Amz_Target { 'CloudHsmFrontendService.ModifyLunaClient' = 'CloudHsmFrontendService.ModifyLunaClient' }
 
-	export enum RemoveTagsFromResourceX_Amz_Target { 'CloudHsmFrontendService.RemoveTagsFromResource' = 0 }
+	export enum RemoveTagsFromResourceX_Amz_Target { 'CloudHsmFrontendService.RemoveTagsFromResource' = 'CloudHsmFrontendService.RemoveTagsFromResource' }
 
 }
 

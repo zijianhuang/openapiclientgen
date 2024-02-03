@@ -55,7 +55,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplyUpdatePropertiesStatus { Pending = 0, InProgress = 1, Completed = 2, RetryNow = 3, RetryLater = 4 }
+	export enum ApplyUpdatePropertiesStatus { Pending = 'Pending', InProgress = 'InProgress', Completed = 'Completed', RetryNow = 'RetryNow', RetryLater = 'RetryLater' }
 
 
 	/** Configuration Assignment */
@@ -237,7 +237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MaintenanceConfigurationPropertiesMaintenanceScope { All = 0, Host = 1, Resource = 2, InResource = 3 }
+	export enum MaintenanceConfigurationPropertiesMaintenanceScope { All = 'All', Host = 'Host', Resource = 'Resource', InResource = 'InResource' }
 
 
 	/** Response for Updates list */
@@ -308,7 +308,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateImpactType { None = 0, Freeze = 1, Restart = 2, Redeploy = 3 }
+	export enum UpdateImpactType { None = 'None', Freeze = 'Freeze', Restart = 'Restart', Redeploy = 'Redeploy' }
 
 
 	/** Properties for update */

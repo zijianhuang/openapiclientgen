@@ -221,9 +221,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VehicleMotStatus { 'No details held by DVLA' = 0, 'No results returned' = 1, 'Not valid' = 2, Valid = 3 }
+	export enum VehicleMotStatus { 'No details held by DVLA' = 'No details held by DVLA', 'No results returned' = 'No results returned', 'Not valid' = 'Not valid', Valid = 'Valid' }
 
-	export enum VehicleTaxStatus { 'Not Taxed for on Road Use' = 0, SORN = 1, Taxed = 2, Untaxed = 3 }
+	export enum VehicleTaxStatus { 'Not Taxed for on Road Use' = 'Not Taxed for on Road Use', SORN = 'SORN', Taxed = 'Taxed', Untaxed = 'Untaxed' }
 
 	export interface VehicleRequest {
 		registrationNumber?: string | null;

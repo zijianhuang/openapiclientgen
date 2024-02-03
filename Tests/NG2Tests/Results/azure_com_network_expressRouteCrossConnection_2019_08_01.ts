@@ -219,11 +219,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteCrossConnectionPeeringPropertiesPeeringType { AzurePublicPeering = 0, AzurePrivatePeering = 1, MicrosoftPeering = 2 }
+	export enum ExpressRouteCrossConnectionPeeringPropertiesPeeringType { AzurePublicPeering = 'AzurePublicPeering', AzurePrivatePeering = 'AzurePrivatePeering', MicrosoftPeering = 'MicrosoftPeering' }
 
-	export enum ExpressRouteCrossConnectionPeeringPropertiesProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum ExpressRouteCrossConnectionPeeringPropertiesProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
-	export enum ExpressRouteCrossConnectionPeeringPropertiesState { Disabled = 0, Enabled = 1 }
+	export enum ExpressRouteCrossConnectionPeeringPropertiesState { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Properties of ExpressRouteCrossConnection. */
@@ -301,7 +301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExpressRouteCrossConnectionPropertiesServiceProviderProvisioningState { NotProvisioned = 0, Provisioning = 1, Provisioned = 2, Deprovisioning = 3 }
+	export enum ExpressRouteCrossConnectionPropertiesServiceProviderProvisioningState { NotProvisioned = 'NotProvisioned', Provisioning = 'Provisioning', Provisioned = 'Provisioned', Deprovisioning = 'Deprovisioning' }
 
 
 	/** The routes table associated with the ExpressRouteCircuit. */

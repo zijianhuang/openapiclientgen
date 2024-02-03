@@ -52,7 +52,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CapabilityInformationState { Registered = 0, Suspended = 1, Deleted = 2, Unregistered = 3, Warned = 4 }
+	export enum CapabilityInformationState { Registered = 'Registered', Suspended = 'Suspended', Deleted = 'Deleted', Unregistered = 'Unregistered', Warned = 'Warned' }
 
 
 	/** Data Lake Store account name availability check parameters. */
@@ -94,7 +94,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityParametersType { 'Microsoft.DataLakeStore/accounts' = 0 }
+	export enum CheckNameAvailabilityParametersType { 'Microsoft.DataLakeStore/accounts' = 'Microsoft.DataLakeStore/accounts' }
 
 	export interface CreateDataLakeStoreAccountParameters {
 
@@ -194,7 +194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateDataLakeStoreAccountPropertiesEncryptionState { Enabled = 0, Disabled = 1 }
+	export enum CreateDataLakeStoreAccountPropertiesEncryptionState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** The parameters used to create a new firewall rule while creating a new Data Lake Store account. */
@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateDataLakeStoreAccountPropertiesNewTier { Consumption = 0, Commitment_1TB = 1, Commitment_10TB = 2, Commitment_100TB = 3, Commitment_500TB = 4, Commitment_1PB = 5, Commitment_5PB = 6 }
+	export enum CreateDataLakeStoreAccountPropertiesNewTier { Consumption = 'Consumption', Commitment_1TB = 'Commitment_1TB', Commitment_10TB = 'Commitment_10TB', Commitment_100TB = 'Commitment_100TB', Commitment_500TB = 'Commitment_500TB', Commitment_1PB = 'Commitment_1PB', Commitment_5PB = 'Commitment_5PB' }
 
 
 	/** The parameters used to create a new trusted identity provider while creating a new Data Lake Store account. */
@@ -610,7 +610,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLakeStoreAccountPropertiesEncryptionProvisioningState { Creating = 0, Succeeded = 1 }
+	export enum DataLakeStoreAccountPropertiesEncryptionProvisioningState { Creating = 'Creating', Succeeded = 'Succeeded' }
 
 
 	/** Data Lake Store firewall rule information. */
@@ -728,9 +728,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DataLakeStoreAccountPropertiesBasicProvisioningState { Failed = 0, Creating = 1, Running = 2, Succeeded = 3, Patching = 4, Suspending = 5, Resuming = 6, Deleting = 7, Deleted = 8, Undeleting = 9, Canceled = 10 }
+	export enum DataLakeStoreAccountPropertiesBasicProvisioningState { Failed = 'Failed', Creating = 'Creating', Running = 'Running', Succeeded = 'Succeeded', Patching = 'Patching', Suspending = 'Suspending', Resuming = 'Resuming', Deleting = 'Deleting', Deleted = 'Deleted', Undeleting = 'Undeleting', Canceled = 'Canceled' }
 
-	export enum DataLakeStoreAccountPropertiesBasicState { Active = 0, Suspended = 1 }
+	export enum DataLakeStoreAccountPropertiesBasicState { Active = 'Active', Suspended = 'Suspended' }
 
 
 	/** The encryption configuration for the account. */
@@ -762,7 +762,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionConfigType { UserManaged = 0, ServiceManaged = 1 }
+	export enum EncryptionConfigType { UserManaged = 'UserManaged', ServiceManaged = 'ServiceManaged' }
 
 
 	/** The encryption identity properties. */
@@ -805,7 +805,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionIdentityType { SystemAssigned = 0 }
+	export enum EncryptionIdentityType { SystemAssigned = 'SystemAssigned' }
 
 
 	/** Data Lake Store firewall rule list information. */
@@ -978,7 +978,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationOrigin { user = 0, system = 1, 'user,system' = 2 }
+	export enum OperationOrigin { user = 'user', system = 'system', 'user,system' = 'user,system' }
 
 
 	/** The display information for a particular operation. */
@@ -1554,7 +1554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageUnit { Count = 0, Bytes = 1, Seconds = 2, Percent = 3, CountsPerSecond = 4, BytesPerSecond = 5 }
+	export enum UsageUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', Percent = 'Percent', CountsPerSecond = 'CountsPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 
 	/** The response from the List Usages operation. */

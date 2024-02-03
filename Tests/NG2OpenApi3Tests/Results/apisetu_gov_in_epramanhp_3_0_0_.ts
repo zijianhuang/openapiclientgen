@@ -1441,7 +1441,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgcerPostBodyFormat { pdf = 0 }
+	export enum AgcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface BacerPostBody {
 		certificateParameters?: BacerPostBodyCertificateParameters;

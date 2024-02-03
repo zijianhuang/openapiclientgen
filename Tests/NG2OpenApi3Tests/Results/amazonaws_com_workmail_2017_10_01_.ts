@@ -542,7 +542,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImpersonationRoleType { FULL_ACCESS = 0, READ_ONLY = 1 }
+	export enum ImpersonationRoleType { FULL_ACCESS = 'FULL_ACCESS', READ_ONLY = 'READ_ONLY' }
 
 
 	/** The rules for the given impersonation role. */
@@ -580,7 +580,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessEffect { ALLOW = 0, DENY = 1 }
+	export enum AccessEffect { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 	export interface CreateMobileDeviceAccessRuleResponse {
 		MobileDeviceAccessRuleId?: string;
@@ -757,7 +757,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { ROOM = 0, EQUIPMENT = 1 }
+	export enum ResourceType { ROOM = 'ROOM', EQUIPMENT = 'EQUIPMENT' }
 
 	export interface CreateUserResponse {
 		UserId?: string;
@@ -1434,7 +1434,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityState { ENABLED = 0, DISABLED = 1, DELETED = 2 }
+	export enum EntityState { ENABLED = 'ENABLED', DISABLED = 'DISABLED', DELETED = 'DELETED' }
 
 	export interface DescribeGroupRequest {
 
@@ -1536,7 +1536,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MailboxExportJobState { RUNNING = 0, COMPLETED = 1, FAILED = 2, CANCELLED = 3 }
+	export enum MailboxExportJobState { RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', CANCELLED = 'CANCELLED' }
 
 	export interface DescribeMailboxExportJobRequest {
 
@@ -1729,7 +1729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UserRole { USER = 0, RESOURCE = 1, SYSTEM_USER = 2 }
+	export enum UserRole { USER = 'USER', RESOURCE = 'RESOURCE', SYSTEM_USER = 'SYSTEM_USER' }
 
 	export interface DescribeUserRequest {
 
@@ -1939,9 +1939,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FolderName { INBOX = 0, DELETED_ITEMS = 1, SENT_ITEMS = 2, DRAFTS = 3, JUNK_EMAIL = 4 }
+	export enum FolderName { INBOX = 'INBOX', DELETED_ITEMS = 'DELETED_ITEMS', SENT_ITEMS = 'SENT_ITEMS', DRAFTS = 'DRAFTS', JUNK_EMAIL = 'JUNK_EMAIL' }
 
-	export enum RetentionAction { NONE = 0, DELETE = 1, PERMANENTLY_DELETE = 2 }
+	export enum RetentionAction { NONE = 'NONE', DELETE = 'DELETE', PERMANENTLY_DELETE = 'PERMANENTLY_DELETE' }
 
 	export interface GetDefaultRetentionPolicyRequest {
 
@@ -2127,7 +2127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsRecordVerificationStatus { PENDING = 0, VERIFIED = 1, FAILED = 2 }
+	export enum DnsRecordVerificationStatus { PENDING = 'PENDING', VERIFIED = 'VERIFIED', FAILED = 'FAILED' }
 
 	export interface GetMailDomainRequest {
 
@@ -2466,7 +2466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AvailabilityProviderType { EWS = 0, LAMBDA = 1 }
+	export enum AvailabilityProviderType { EWS = 'EWS', LAMBDA = 'LAMBDA' }
 
 
 	/** Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint. */
@@ -2557,7 +2557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MemberType { GROUP = 0, USER = 1 }
+	export enum MemberType { GROUP = 'GROUP', USER = 'USER' }
 
 	export interface ListGroupMembersRequest {
 
@@ -2904,7 +2904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionType { FULL_ACCESS = 0, SEND_AS = 1, SEND_ON_BEHALF = 2 }
+	export enum PermissionType { FULL_ACCESS = 'FULL_ACCESS', SEND_AS = 'SEND_AS', SEND_ON_BEHALF = 'SEND_ON_BEHALF' }
 
 	export interface ListMailboxPermissionsRequest {
 
@@ -4311,9 +4311,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessControlRuleEffect { ALLOW = 0, DENY = 1 }
+	export enum AccessControlRuleEffect { ALLOW = 'ALLOW', DENY = 'DENY' }
 
-	export enum MobileDeviceAccessRuleEffect { ALLOW = 0, DENY = 1 }
+	export enum MobileDeviceAccessRuleEffect { ALLOW = 'ALLOW', DENY = 'DENY' }
 
 	@Injectable()
 	export class MyClient {
@@ -5067,165 +5067,165 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateDelegateToResourceX_Amz_Target { 'WorkMailService.AssociateDelegateToResource' = 0 }
+	export enum AssociateDelegateToResourceX_Amz_Target { 'WorkMailService.AssociateDelegateToResource' = 'WorkMailService.AssociateDelegateToResource' }
 
-	export enum AssociateMemberToGroupX_Amz_Target { 'WorkMailService.AssociateMemberToGroup' = 0 }
+	export enum AssociateMemberToGroupX_Amz_Target { 'WorkMailService.AssociateMemberToGroup' = 'WorkMailService.AssociateMemberToGroup' }
 
-	export enum AssumeImpersonationRoleX_Amz_Target { 'WorkMailService.AssumeImpersonationRole' = 0 }
+	export enum AssumeImpersonationRoleX_Amz_Target { 'WorkMailService.AssumeImpersonationRole' = 'WorkMailService.AssumeImpersonationRole' }
 
-	export enum CancelMailboxExportJobX_Amz_Target { 'WorkMailService.CancelMailboxExportJob' = 0 }
+	export enum CancelMailboxExportJobX_Amz_Target { 'WorkMailService.CancelMailboxExportJob' = 'WorkMailService.CancelMailboxExportJob' }
 
-	export enum CreateAliasX_Amz_Target { 'WorkMailService.CreateAlias' = 0 }
+	export enum CreateAliasX_Amz_Target { 'WorkMailService.CreateAlias' = 'WorkMailService.CreateAlias' }
 
-	export enum CreateAvailabilityConfigurationX_Amz_Target { 'WorkMailService.CreateAvailabilityConfiguration' = 0 }
+	export enum CreateAvailabilityConfigurationX_Amz_Target { 'WorkMailService.CreateAvailabilityConfiguration' = 'WorkMailService.CreateAvailabilityConfiguration' }
 
-	export enum CreateGroupX_Amz_Target { 'WorkMailService.CreateGroup' = 0 }
+	export enum CreateGroupX_Amz_Target { 'WorkMailService.CreateGroup' = 'WorkMailService.CreateGroup' }
 
-	export enum CreateImpersonationRoleX_Amz_Target { 'WorkMailService.CreateImpersonationRole' = 0 }
+	export enum CreateImpersonationRoleX_Amz_Target { 'WorkMailService.CreateImpersonationRole' = 'WorkMailService.CreateImpersonationRole' }
 
-	export enum CreateMobileDeviceAccessRuleX_Amz_Target { 'WorkMailService.CreateMobileDeviceAccessRule' = 0 }
+	export enum CreateMobileDeviceAccessRuleX_Amz_Target { 'WorkMailService.CreateMobileDeviceAccessRule' = 'WorkMailService.CreateMobileDeviceAccessRule' }
 
-	export enum CreateOrganizationX_Amz_Target { 'WorkMailService.CreateOrganization' = 0 }
+	export enum CreateOrganizationX_Amz_Target { 'WorkMailService.CreateOrganization' = 'WorkMailService.CreateOrganization' }
 
-	export enum CreateResourceX_Amz_Target { 'WorkMailService.CreateResource' = 0 }
+	export enum CreateResourceX_Amz_Target { 'WorkMailService.CreateResource' = 'WorkMailService.CreateResource' }
 
-	export enum CreateUserX_Amz_Target { 'WorkMailService.CreateUser' = 0 }
+	export enum CreateUserX_Amz_Target { 'WorkMailService.CreateUser' = 'WorkMailService.CreateUser' }
 
-	export enum DeleteAccessControlRuleX_Amz_Target { 'WorkMailService.DeleteAccessControlRule' = 0 }
+	export enum DeleteAccessControlRuleX_Amz_Target { 'WorkMailService.DeleteAccessControlRule' = 'WorkMailService.DeleteAccessControlRule' }
 
-	export enum DeleteAliasX_Amz_Target { 'WorkMailService.DeleteAlias' = 0 }
+	export enum DeleteAliasX_Amz_Target { 'WorkMailService.DeleteAlias' = 'WorkMailService.DeleteAlias' }
 
-	export enum DeleteAvailabilityConfigurationX_Amz_Target { 'WorkMailService.DeleteAvailabilityConfiguration' = 0 }
+	export enum DeleteAvailabilityConfigurationX_Amz_Target { 'WorkMailService.DeleteAvailabilityConfiguration' = 'WorkMailService.DeleteAvailabilityConfiguration' }
 
-	export enum DeleteEmailMonitoringConfigurationX_Amz_Target { 'WorkMailService.DeleteEmailMonitoringConfiguration' = 0 }
+	export enum DeleteEmailMonitoringConfigurationX_Amz_Target { 'WorkMailService.DeleteEmailMonitoringConfiguration' = 'WorkMailService.DeleteEmailMonitoringConfiguration' }
 
-	export enum DeleteGroupX_Amz_Target { 'WorkMailService.DeleteGroup' = 0 }
+	export enum DeleteGroupX_Amz_Target { 'WorkMailService.DeleteGroup' = 'WorkMailService.DeleteGroup' }
 
-	export enum DeleteImpersonationRoleX_Amz_Target { 'WorkMailService.DeleteImpersonationRole' = 0 }
+	export enum DeleteImpersonationRoleX_Amz_Target { 'WorkMailService.DeleteImpersonationRole' = 'WorkMailService.DeleteImpersonationRole' }
 
-	export enum DeleteMailboxPermissionsX_Amz_Target { 'WorkMailService.DeleteMailboxPermissions' = 0 }
+	export enum DeleteMailboxPermissionsX_Amz_Target { 'WorkMailService.DeleteMailboxPermissions' = 'WorkMailService.DeleteMailboxPermissions' }
 
-	export enum DeleteMobileDeviceAccessOverrideX_Amz_Target { 'WorkMailService.DeleteMobileDeviceAccessOverride' = 0 }
+	export enum DeleteMobileDeviceAccessOverrideX_Amz_Target { 'WorkMailService.DeleteMobileDeviceAccessOverride' = 'WorkMailService.DeleteMobileDeviceAccessOverride' }
 
-	export enum DeleteMobileDeviceAccessRuleX_Amz_Target { 'WorkMailService.DeleteMobileDeviceAccessRule' = 0 }
+	export enum DeleteMobileDeviceAccessRuleX_Amz_Target { 'WorkMailService.DeleteMobileDeviceAccessRule' = 'WorkMailService.DeleteMobileDeviceAccessRule' }
 
-	export enum DeleteOrganizationX_Amz_Target { 'WorkMailService.DeleteOrganization' = 0 }
+	export enum DeleteOrganizationX_Amz_Target { 'WorkMailService.DeleteOrganization' = 'WorkMailService.DeleteOrganization' }
 
-	export enum DeleteResourceX_Amz_Target { 'WorkMailService.DeleteResource' = 0 }
+	export enum DeleteResourceX_Amz_Target { 'WorkMailService.DeleteResource' = 'WorkMailService.DeleteResource' }
 
-	export enum DeleteRetentionPolicyX_Amz_Target { 'WorkMailService.DeleteRetentionPolicy' = 0 }
+	export enum DeleteRetentionPolicyX_Amz_Target { 'WorkMailService.DeleteRetentionPolicy' = 'WorkMailService.DeleteRetentionPolicy' }
 
-	export enum DeleteUserX_Amz_Target { 'WorkMailService.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'WorkMailService.DeleteUser' = 'WorkMailService.DeleteUser' }
 
-	export enum DeregisterFromWorkMailX_Amz_Target { 'WorkMailService.DeregisterFromWorkMail' = 0 }
+	export enum DeregisterFromWorkMailX_Amz_Target { 'WorkMailService.DeregisterFromWorkMail' = 'WorkMailService.DeregisterFromWorkMail' }
 
-	export enum DeregisterMailDomainX_Amz_Target { 'WorkMailService.DeregisterMailDomain' = 0 }
+	export enum DeregisterMailDomainX_Amz_Target { 'WorkMailService.DeregisterMailDomain' = 'WorkMailService.DeregisterMailDomain' }
 
-	export enum DescribeEmailMonitoringConfigurationX_Amz_Target { 'WorkMailService.DescribeEmailMonitoringConfiguration' = 0 }
+	export enum DescribeEmailMonitoringConfigurationX_Amz_Target { 'WorkMailService.DescribeEmailMonitoringConfiguration' = 'WorkMailService.DescribeEmailMonitoringConfiguration' }
 
-	export enum DescribeGroupX_Amz_Target { 'WorkMailService.DescribeGroup' = 0 }
+	export enum DescribeGroupX_Amz_Target { 'WorkMailService.DescribeGroup' = 'WorkMailService.DescribeGroup' }
 
-	export enum DescribeInboundDmarcSettingsX_Amz_Target { 'WorkMailService.DescribeInboundDmarcSettings' = 0 }
+	export enum DescribeInboundDmarcSettingsX_Amz_Target { 'WorkMailService.DescribeInboundDmarcSettings' = 'WorkMailService.DescribeInboundDmarcSettings' }
 
-	export enum DescribeMailboxExportJobX_Amz_Target { 'WorkMailService.DescribeMailboxExportJob' = 0 }
+	export enum DescribeMailboxExportJobX_Amz_Target { 'WorkMailService.DescribeMailboxExportJob' = 'WorkMailService.DescribeMailboxExportJob' }
 
-	export enum DescribeOrganizationX_Amz_Target { 'WorkMailService.DescribeOrganization' = 0 }
+	export enum DescribeOrganizationX_Amz_Target { 'WorkMailService.DescribeOrganization' = 'WorkMailService.DescribeOrganization' }
 
-	export enum DescribeResourceX_Amz_Target { 'WorkMailService.DescribeResource' = 0 }
+	export enum DescribeResourceX_Amz_Target { 'WorkMailService.DescribeResource' = 'WorkMailService.DescribeResource' }
 
-	export enum DescribeUserX_Amz_Target { 'WorkMailService.DescribeUser' = 0 }
+	export enum DescribeUserX_Amz_Target { 'WorkMailService.DescribeUser' = 'WorkMailService.DescribeUser' }
 
-	export enum DisassociateDelegateFromResourceX_Amz_Target { 'WorkMailService.DisassociateDelegateFromResource' = 0 }
+	export enum DisassociateDelegateFromResourceX_Amz_Target { 'WorkMailService.DisassociateDelegateFromResource' = 'WorkMailService.DisassociateDelegateFromResource' }
 
-	export enum DisassociateMemberFromGroupX_Amz_Target { 'WorkMailService.DisassociateMemberFromGroup' = 0 }
+	export enum DisassociateMemberFromGroupX_Amz_Target { 'WorkMailService.DisassociateMemberFromGroup' = 'WorkMailService.DisassociateMemberFromGroup' }
 
-	export enum GetAccessControlEffectX_Amz_Target { 'WorkMailService.GetAccessControlEffect' = 0 }
+	export enum GetAccessControlEffectX_Amz_Target { 'WorkMailService.GetAccessControlEffect' = 'WorkMailService.GetAccessControlEffect' }
 
-	export enum GetDefaultRetentionPolicyX_Amz_Target { 'WorkMailService.GetDefaultRetentionPolicy' = 0 }
+	export enum GetDefaultRetentionPolicyX_Amz_Target { 'WorkMailService.GetDefaultRetentionPolicy' = 'WorkMailService.GetDefaultRetentionPolicy' }
 
-	export enum GetImpersonationRoleX_Amz_Target { 'WorkMailService.GetImpersonationRole' = 0 }
+	export enum GetImpersonationRoleX_Amz_Target { 'WorkMailService.GetImpersonationRole' = 'WorkMailService.GetImpersonationRole' }
 
-	export enum GetImpersonationRoleEffectX_Amz_Target { 'WorkMailService.GetImpersonationRoleEffect' = 0 }
+	export enum GetImpersonationRoleEffectX_Amz_Target { 'WorkMailService.GetImpersonationRoleEffect' = 'WorkMailService.GetImpersonationRoleEffect' }
 
-	export enum GetMailDomainX_Amz_Target { 'WorkMailService.GetMailDomain' = 0 }
+	export enum GetMailDomainX_Amz_Target { 'WorkMailService.GetMailDomain' = 'WorkMailService.GetMailDomain' }
 
-	export enum GetMailboxDetailsX_Amz_Target { 'WorkMailService.GetMailboxDetails' = 0 }
+	export enum GetMailboxDetailsX_Amz_Target { 'WorkMailService.GetMailboxDetails' = 'WorkMailService.GetMailboxDetails' }
 
-	export enum GetMobileDeviceAccessEffectX_Amz_Target { 'WorkMailService.GetMobileDeviceAccessEffect' = 0 }
+	export enum GetMobileDeviceAccessEffectX_Amz_Target { 'WorkMailService.GetMobileDeviceAccessEffect' = 'WorkMailService.GetMobileDeviceAccessEffect' }
 
-	export enum GetMobileDeviceAccessOverrideX_Amz_Target { 'WorkMailService.GetMobileDeviceAccessOverride' = 0 }
+	export enum GetMobileDeviceAccessOverrideX_Amz_Target { 'WorkMailService.GetMobileDeviceAccessOverride' = 'WorkMailService.GetMobileDeviceAccessOverride' }
 
-	export enum ListAccessControlRulesX_Amz_Target { 'WorkMailService.ListAccessControlRules' = 0 }
+	export enum ListAccessControlRulesX_Amz_Target { 'WorkMailService.ListAccessControlRules' = 'WorkMailService.ListAccessControlRules' }
 
-	export enum ListAliasesX_Amz_Target { 'WorkMailService.ListAliases' = 0 }
+	export enum ListAliasesX_Amz_Target { 'WorkMailService.ListAliases' = 'WorkMailService.ListAliases' }
 
-	export enum ListAvailabilityConfigurationsX_Amz_Target { 'WorkMailService.ListAvailabilityConfigurations' = 0 }
+	export enum ListAvailabilityConfigurationsX_Amz_Target { 'WorkMailService.ListAvailabilityConfigurations' = 'WorkMailService.ListAvailabilityConfigurations' }
 
-	export enum ListGroupMembersX_Amz_Target { 'WorkMailService.ListGroupMembers' = 0 }
+	export enum ListGroupMembersX_Amz_Target { 'WorkMailService.ListGroupMembers' = 'WorkMailService.ListGroupMembers' }
 
-	export enum ListGroupsX_Amz_Target { 'WorkMailService.ListGroups' = 0 }
+	export enum ListGroupsX_Amz_Target { 'WorkMailService.ListGroups' = 'WorkMailService.ListGroups' }
 
-	export enum ListImpersonationRolesX_Amz_Target { 'WorkMailService.ListImpersonationRoles' = 0 }
+	export enum ListImpersonationRolesX_Amz_Target { 'WorkMailService.ListImpersonationRoles' = 'WorkMailService.ListImpersonationRoles' }
 
-	export enum ListMailDomainsX_Amz_Target { 'WorkMailService.ListMailDomains' = 0 }
+	export enum ListMailDomainsX_Amz_Target { 'WorkMailService.ListMailDomains' = 'WorkMailService.ListMailDomains' }
 
-	export enum ListMailboxExportJobsX_Amz_Target { 'WorkMailService.ListMailboxExportJobs' = 0 }
+	export enum ListMailboxExportJobsX_Amz_Target { 'WorkMailService.ListMailboxExportJobs' = 'WorkMailService.ListMailboxExportJobs' }
 
-	export enum ListMailboxPermissionsX_Amz_Target { 'WorkMailService.ListMailboxPermissions' = 0 }
+	export enum ListMailboxPermissionsX_Amz_Target { 'WorkMailService.ListMailboxPermissions' = 'WorkMailService.ListMailboxPermissions' }
 
-	export enum ListMobileDeviceAccessOverridesX_Amz_Target { 'WorkMailService.ListMobileDeviceAccessOverrides' = 0 }
+	export enum ListMobileDeviceAccessOverridesX_Amz_Target { 'WorkMailService.ListMobileDeviceAccessOverrides' = 'WorkMailService.ListMobileDeviceAccessOverrides' }
 
-	export enum ListMobileDeviceAccessRulesX_Amz_Target { 'WorkMailService.ListMobileDeviceAccessRules' = 0 }
+	export enum ListMobileDeviceAccessRulesX_Amz_Target { 'WorkMailService.ListMobileDeviceAccessRules' = 'WorkMailService.ListMobileDeviceAccessRules' }
 
-	export enum ListOrganizationsX_Amz_Target { 'WorkMailService.ListOrganizations' = 0 }
+	export enum ListOrganizationsX_Amz_Target { 'WorkMailService.ListOrganizations' = 'WorkMailService.ListOrganizations' }
 
-	export enum ListResourceDelegatesX_Amz_Target { 'WorkMailService.ListResourceDelegates' = 0 }
+	export enum ListResourceDelegatesX_Amz_Target { 'WorkMailService.ListResourceDelegates' = 'WorkMailService.ListResourceDelegates' }
 
-	export enum ListResourcesX_Amz_Target { 'WorkMailService.ListResources' = 0 }
+	export enum ListResourcesX_Amz_Target { 'WorkMailService.ListResources' = 'WorkMailService.ListResources' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'WorkMailService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'WorkMailService.ListTagsForResource' = 'WorkMailService.ListTagsForResource' }
 
-	export enum ListUsersX_Amz_Target { 'WorkMailService.ListUsers' = 0 }
+	export enum ListUsersX_Amz_Target { 'WorkMailService.ListUsers' = 'WorkMailService.ListUsers' }
 
-	export enum PutAccessControlRuleX_Amz_Target { 'WorkMailService.PutAccessControlRule' = 0 }
+	export enum PutAccessControlRuleX_Amz_Target { 'WorkMailService.PutAccessControlRule' = 'WorkMailService.PutAccessControlRule' }
 
-	export enum PutEmailMonitoringConfigurationX_Amz_Target { 'WorkMailService.PutEmailMonitoringConfiguration' = 0 }
+	export enum PutEmailMonitoringConfigurationX_Amz_Target { 'WorkMailService.PutEmailMonitoringConfiguration' = 'WorkMailService.PutEmailMonitoringConfiguration' }
 
-	export enum PutInboundDmarcSettingsX_Amz_Target { 'WorkMailService.PutInboundDmarcSettings' = 0 }
+	export enum PutInboundDmarcSettingsX_Amz_Target { 'WorkMailService.PutInboundDmarcSettings' = 'WorkMailService.PutInboundDmarcSettings' }
 
-	export enum PutMailboxPermissionsX_Amz_Target { 'WorkMailService.PutMailboxPermissions' = 0 }
+	export enum PutMailboxPermissionsX_Amz_Target { 'WorkMailService.PutMailboxPermissions' = 'WorkMailService.PutMailboxPermissions' }
 
-	export enum PutMobileDeviceAccessOverrideX_Amz_Target { 'WorkMailService.PutMobileDeviceAccessOverride' = 0 }
+	export enum PutMobileDeviceAccessOverrideX_Amz_Target { 'WorkMailService.PutMobileDeviceAccessOverride' = 'WorkMailService.PutMobileDeviceAccessOverride' }
 
-	export enum PutRetentionPolicyX_Amz_Target { 'WorkMailService.PutRetentionPolicy' = 0 }
+	export enum PutRetentionPolicyX_Amz_Target { 'WorkMailService.PutRetentionPolicy' = 'WorkMailService.PutRetentionPolicy' }
 
-	export enum RegisterMailDomainX_Amz_Target { 'WorkMailService.RegisterMailDomain' = 0 }
+	export enum RegisterMailDomainX_Amz_Target { 'WorkMailService.RegisterMailDomain' = 'WorkMailService.RegisterMailDomain' }
 
-	export enum RegisterToWorkMailX_Amz_Target { 'WorkMailService.RegisterToWorkMail' = 0 }
+	export enum RegisterToWorkMailX_Amz_Target { 'WorkMailService.RegisterToWorkMail' = 'WorkMailService.RegisterToWorkMail' }
 
-	export enum ResetPasswordX_Amz_Target { 'WorkMailService.ResetPassword' = 0 }
+	export enum ResetPasswordX_Amz_Target { 'WorkMailService.ResetPassword' = 'WorkMailService.ResetPassword' }
 
-	export enum StartMailboxExportJobX_Amz_Target { 'WorkMailService.StartMailboxExportJob' = 0 }
+	export enum StartMailboxExportJobX_Amz_Target { 'WorkMailService.StartMailboxExportJob' = 'WorkMailService.StartMailboxExportJob' }
 
-	export enum TagResourceX_Amz_Target { 'WorkMailService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'WorkMailService.TagResource' = 'WorkMailService.TagResource' }
 
-	export enum TestAvailabilityConfigurationX_Amz_Target { 'WorkMailService.TestAvailabilityConfiguration' = 0 }
+	export enum TestAvailabilityConfigurationX_Amz_Target { 'WorkMailService.TestAvailabilityConfiguration' = 'WorkMailService.TestAvailabilityConfiguration' }
 
-	export enum UntagResourceX_Amz_Target { 'WorkMailService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'WorkMailService.UntagResource' = 'WorkMailService.UntagResource' }
 
-	export enum UpdateAvailabilityConfigurationX_Amz_Target { 'WorkMailService.UpdateAvailabilityConfiguration' = 0 }
+	export enum UpdateAvailabilityConfigurationX_Amz_Target { 'WorkMailService.UpdateAvailabilityConfiguration' = 'WorkMailService.UpdateAvailabilityConfiguration' }
 
-	export enum UpdateDefaultMailDomainX_Amz_Target { 'WorkMailService.UpdateDefaultMailDomain' = 0 }
+	export enum UpdateDefaultMailDomainX_Amz_Target { 'WorkMailService.UpdateDefaultMailDomain' = 'WorkMailService.UpdateDefaultMailDomain' }
 
-	export enum UpdateImpersonationRoleX_Amz_Target { 'WorkMailService.UpdateImpersonationRole' = 0 }
+	export enum UpdateImpersonationRoleX_Amz_Target { 'WorkMailService.UpdateImpersonationRole' = 'WorkMailService.UpdateImpersonationRole' }
 
-	export enum UpdateMailboxQuotaX_Amz_Target { 'WorkMailService.UpdateMailboxQuota' = 0 }
+	export enum UpdateMailboxQuotaX_Amz_Target { 'WorkMailService.UpdateMailboxQuota' = 'WorkMailService.UpdateMailboxQuota' }
 
-	export enum UpdateMobileDeviceAccessRuleX_Amz_Target { 'WorkMailService.UpdateMobileDeviceAccessRule' = 0 }
+	export enum UpdateMobileDeviceAccessRuleX_Amz_Target { 'WorkMailService.UpdateMobileDeviceAccessRule' = 'WorkMailService.UpdateMobileDeviceAccessRule' }
 
-	export enum UpdatePrimaryEmailAddressX_Amz_Target { 'WorkMailService.UpdatePrimaryEmailAddress' = 0 }
+	export enum UpdatePrimaryEmailAddressX_Amz_Target { 'WorkMailService.UpdatePrimaryEmailAddress' = 'WorkMailService.UpdatePrimaryEmailAddress' }
 
-	export enum UpdateResourceX_Amz_Target { 'WorkMailService.UpdateResource' = 0 }
+	export enum UpdateResourceX_Amz_Target { 'WorkMailService.UpdateResource' = 'WorkMailService.UpdateResource' }
 
 }
 

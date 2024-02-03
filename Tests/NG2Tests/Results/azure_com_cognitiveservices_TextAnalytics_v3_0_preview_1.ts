@@ -279,7 +279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextAnalyticsErrorCode { invalidRequest = 0, invalidArgument = 1, internalServerError = 2, serviceUnavailable = 3 }
+	export enum TextAnalyticsErrorCode { invalidRequest = 'invalidRequest', invalidArgument = 'invalidArgument', internalServerError = 'internalServerError', serviceUnavailable = 'serviceUnavailable' }
 
 	export interface InnerError {
 
@@ -332,7 +332,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InnerErrorCode { invalidParameterValue = 0, invalidRequestBodyFormat = 1, emptyRequest = 2, missingInputRecords = 3, invalidDocument = 4, modelVersionIncorrect = 5, invalidDocumentBatch = 6, unsupportedLanguageCode = 7, invalidCountryHint = 8 }
+	export enum InnerErrorCode { invalidParameterValue = 'invalidParameterValue', invalidRequestBodyFormat = 'invalidRequestBodyFormat', emptyRequest = 'emptyRequest', missingInputRecords = 'missingInputRecords', invalidDocument = 'invalidDocument', modelVersionIncorrect = 'modelVersionIncorrect', invalidDocumentBatch = 'invalidDocumentBatch', unsupportedLanguageCode = 'unsupportedLanguageCode', invalidCountryHint = 'invalidCountryHint' }
 
 	export interface DocumentKeyPhrases {
 
@@ -711,9 +711,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SentenceSentimentSentiment { positive = 0, neutral = 1, negative = 2 }
+	export enum SentenceSentimentSentiment { positive = 'positive', neutral = 'neutral', negative = 'negative' }
 
-	export enum DocumentSentimentSentiment { positive = 0, neutral = 1, negative = 2, mixed = 3 }
+	export enum DocumentSentimentSentiment { positive = 'positive', neutral = 'neutral', negative = 'negative', mixed = 'mixed' }
 
 	export interface EntitiesResult {
 

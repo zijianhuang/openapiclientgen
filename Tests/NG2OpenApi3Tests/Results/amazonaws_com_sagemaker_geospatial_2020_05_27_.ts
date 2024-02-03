@@ -127,7 +127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EarthObservationJobExportStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum EarthObservationJobExportStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** The response structure for an OutputConfig returned by an ExportEarthObservationJob. */
@@ -346,7 +346,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EarthObservationJobErrorType { CLIENT_ERROR = 0, SERVER_ERROR = 1 }
+	export enum EarthObservationJobErrorType { CLIENT_ERROR = 'CLIENT_ERROR', SERVER_ERROR = 'SERVER_ERROR' }
 
 
 	/** The structure for returning the export error details in a GetEarthObservationJob. */
@@ -518,7 +518,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogicalOperator { AND = 0 }
+	export enum LogicalOperator { AND = 'AND' }
 
 
 	/** The structure representing a single PropertyFilter. */
@@ -637,7 +637,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { EQUALS = 0, NOT_EQUALS = 1, STARTS_WITH = 2 }
+	export enum ComparisonOperator { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS', STARTS_WITH = 'STARTS_WITH' }
 
 
 	/** The input structure for specifying ViewOffNadir property filter. ViewOffNadir refers to the angle from the sensor between nadir (straight down) and the scene center. Measured in degrees (0-90). */
@@ -836,7 +836,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OutputType { INT32 = 0, FLOAT32 = 1, INT16 = 2, FLOAT64 = 3, UINT16 = 4 }
+	export enum OutputType { INT32 = 'INT32', FLOAT32 = 'FLOAT32', INT16 = 'INT16', FLOAT64 = 'FLOAT64', UINT16 = 'UINT16' }
 
 
 	/** Input structure for CloudMasking operation type. */
@@ -873,7 +873,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmNameCloudRemoval { INTERPOLATION = 0 }
+	export enum AlgorithmNameCloudRemoval { INTERPOLATION = 'INTERPOLATION' }
 
 
 	/** Input configuration information for the geomosaic. */
@@ -893,7 +893,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmNameGeoMosaic { NEAR = 0, BILINEAR = 1, CUBIC = 2, CUBICSPLINE = 3, LANCZOS = 4, AVERAGE = 5, RMS = 6, MODE = 7, MAX = 8, MIN = 9, MED = 10, Q1 = 11, Q3 = 12, SUM = 13 }
+	export enum AlgorithmNameGeoMosaic { NEAR = 'NEAR', BILINEAR = 'BILINEAR', CUBIC = 'CUBIC', CUBICSPLINE = 'CUBICSPLINE', LANCZOS = 'LANCZOS', AVERAGE = 'AVERAGE', RMS = 'RMS', MODE = 'MODE', MAX = 'MAX', MIN = 'MIN', MED = 'MED', Q1 = 'Q1', Q3 = 'Q3', SUM = 'SUM' }
 
 
 	/** The input structure for Land Cover Operation type. */
@@ -975,7 +975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Unit { METERS = 0 }
+	export enum Unit { METERS = 'METERS' }
 
 
 	/** The input structure for Stacking Operation. */
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PredefinedResolution { HIGHEST = 0, LOWEST = 1, AVERAGE = 2 }
+	export enum PredefinedResolution { HIGHEST = 'HIGHEST', LOWEST = 'LOWEST', AVERAGE = 'AVERAGE' }
 
 
 	/** The structure representing the configuration for Temporal Statistics operation. */
@@ -1034,9 +1034,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupBy { ALL = 0, YEARLY = 1 }
+	export enum GroupBy { ALL = 'ALL', YEARLY = 'YEARLY' }
 
-	export enum TemporalStatistics { MEAN = 0, MEDIAN = 1, STANDARD_DEVIATION = 2 }
+	export enum TemporalStatistics { MEAN = 'MEAN', MEDIAN = 'MEDIAN', STANDARD_DEVIATION = 'STANDARD_DEVIATION' }
 
 
 	/** The structure representing input configuration of ZonalStatistics operation. */
@@ -1066,7 +1066,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ZonalStatistics { MEAN = 0, MEDIAN = 1, STANDARD_DEVIATION = 2, MAX = 3, MIN = 4, SUM = 5 }
+	export enum ZonalStatistics { MEAN = 'MEAN', MEDIAN = 'MEDIAN', STANDARD_DEVIATION = 'STANDARD_DEVIATION', MAX = 'MAX', MIN = 'MIN', SUM = 'SUM' }
 
 
 	/** A single EarthObservationJob output band. */
@@ -1096,7 +1096,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EarthObservationJobStatus { INITIALIZING = 0, IN_PROGRESS = 1, STOPPING = 2, COMPLETED = 3, STOPPED = 4, FAILED = 5, DELETING = 6, DELETED = 7 }
+	export enum EarthObservationJobStatus { INITIALIZING = 'INITIALIZING', IN_PROGRESS = 'IN_PROGRESS', STOPPING = 'STOPPING', COMPLETED = 'COMPLETED', STOPPED = 'STOPPED', FAILED = 'FAILED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
 	export interface Tags {
 	}
@@ -1194,7 +1194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataCollectionType { PUBLIC = 0, PREMIUM = 1, USER = 2 }
+	export enum DataCollectionType { PUBLIC = 'PUBLIC', PREMIUM = 'PREMIUM', USER = 'USER' }
 
 	export interface GetTileOutput {
 		BinaryFile?: string;
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VectorEnrichmentJobDocumentType { CSV = 0 }
+	export enum VectorEnrichmentJobDocumentType { CSV = 'CSV' }
 
 
 	/** It contains configs such as ReverseGeocodingConfig and MapMatchingConfig. */
@@ -1450,9 +1450,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VectorEnrichmentJobStatus { INITIALIZING = 0, IN_PROGRESS = 1, STOPPING = 2, STOPPED = 3, COMPLETED = 4, FAILED = 5, DELETING = 6, DELETED = 7 }
+	export enum VectorEnrichmentJobStatus { INITIALIZING = 'INITIALIZING', IN_PROGRESS = 'IN_PROGRESS', STOPPING = 'STOPPING', STOPPED = 'STOPPED', COMPLETED = 'COMPLETED', FAILED = 'FAILED', DELETING = 'DELETING', DELETED = 'DELETED' }
 
-	export enum VectorEnrichmentJobType { REVERSE_GEOCODING = 0, MAP_MATCHING = 1 }
+	export enum VectorEnrichmentJobType { REVERSE_GEOCODING = 'REVERSE_GEOCODING', MAP_MATCHING = 'MAP_MATCHING' }
 
 	export interface ListEarthObservationJobOutput {
 
@@ -2019,7 +2019,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmNameResampling { NEAR = 0, BILINEAR = 1, CUBIC = 2, CUBICSPLINE = 3, LANCZOS = 4, AVERAGE = 5, RMS = 6, MODE = 7, MAX = 8, MIN = 9, MED = 10, Q1 = 11, Q3 = 12, SUM = 13 }
+	export enum AlgorithmNameResampling { NEAR = 'NEAR', BILINEAR = 'BILINEAR', CUBIC = 'CUBIC', CUBICSPLINE = 'CUBICSPLINE', LANCZOS = 'LANCZOS', AVERAGE = 'AVERAGE', RMS = 'RMS', MODE = 'MODE', MAX = 'MAX', MIN = 'MIN', MED = 'MED', Q1 = 'Q1', Q3 = 'Q3', SUM = 'SUM' }
 
 
 	/** The structure containing the asset properties. */
@@ -2091,7 +2091,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportErrorType { CLIENT_ERROR = 0, SERVER_ERROR = 1 }
+	export enum ExportErrorType { CLIENT_ERROR = 'CLIENT_ERROR', SERVER_ERROR = 'SERVER_ERROR' }
 
 	export interface ExportVectorEnrichmentJobInput {
 
@@ -2123,7 +2123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VectorEnrichmentJobExportStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum VectorEnrichmentJobExportStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 	export interface GetEarthObservationJobInput {
 	}
@@ -2145,7 +2145,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetOptions { INPUT = 0, OUTPUT = 1 }
+	export enum TargetOptions { INPUT = 'INPUT', OUTPUT = 'OUTPUT' }
 
 	export interface GetTileInput {
 	}
@@ -2185,7 +2185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListEarthObservationJobInput {
 		MaxResults?: number | null;
@@ -2431,9 +2431,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VectorEnrichmentJobErrorType { CLIENT_ERROR = 0, SERVER_ERROR = 1 }
+	export enum VectorEnrichmentJobErrorType { CLIENT_ERROR = 'CLIENT_ERROR', SERVER_ERROR = 'SERVER_ERROR' }
 
-	export enum VectorEnrichmentJobExportErrorType { CLIENT_ERROR = 0, SERVER_ERROR = 1 }
+	export enum VectorEnrichmentJobExportErrorType { CLIENT_ERROR = 'CLIENT_ERROR', SERVER_ERROR = 'SERVER_ERROR' }
 
 	@Injectable()
 	export class MyClient {

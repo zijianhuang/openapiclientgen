@@ -298,7 +298,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ProjectedPlayerGameStatsByCompetitionWDfsSalariesFormat { xml = 0, json = 1 }
+	export enum ProjectedPlayerGameStatsByCompetitionWDfsSalariesFormat { xml = 'xml', json = 'json' }
 
 }
 

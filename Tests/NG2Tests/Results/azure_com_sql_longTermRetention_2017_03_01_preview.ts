@@ -365,9 +365,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum LongTermRetentionBackups_ListByLocationDatabaseState { All = 0, Live = 1, Deleted = 2 }
+	export enum LongTermRetentionBackups_ListByLocationDatabaseState { All = 'All', Live = 'Live', Deleted = 'Deleted' }
 
-	export enum BackupLongTermRetentionPolicies_GetPolicyName { default = 0 }
+	export enum BackupLongTermRetentionPolicies_GetPolicyName { default = 'default' }
 
 }
 

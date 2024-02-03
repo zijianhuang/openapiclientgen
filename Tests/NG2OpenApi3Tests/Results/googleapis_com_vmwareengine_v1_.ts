@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClusterState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, UPDATING = 3, DELETING = 4, REPAIRING = 5 }
+	export enum ClusterState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', REPAIRING = 'REPAIRING' }
 
 
 	/** Configuration of a stretched cluster. */
@@ -491,7 +491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalAccessRuleAction { ACTION_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum ExternalAccessRuleAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** An IP range provided in any one of the supported formats. */
@@ -528,7 +528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalAccessRuleState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, UPDATING = 3, DELETING = 4 }
+	export enum ExternalAccessRuleState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING' }
 
 
 	/** Represents an allocated external IP address and its corresponding internal IP address in a private cloud. */
@@ -690,7 +690,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HcxState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2 }
+	export enum HcxState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING' }
 
 
 	/** HCX activation key. A default key is created during private cloud provisioning, but this behavior is subject to change and you should always verify active keys. Use VmwareEngine.ListHcxActivationKeys to retrieve existing keys and VmwareEngine.CreateHcxActivationKey to create new ones. */
@@ -741,7 +741,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HcxActivationKeyState { STATE_UNSPECIFIED = 0, AVAILABLE = 1, CONSUMED = 2, CREATING = 3 }
+	export enum HcxActivationKeyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', AVAILABLE = 'AVAILABLE', CONSUMED = 'CONSUMED', CREATING = 'CREATING' }
 
 
 	/** Response message for VmwareEngine.ListClusters */
@@ -1021,9 +1021,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LoggingServerProtocol { PROTOCOL_UNSPECIFIED = 0, UDP = 1, TCP = 2 }
+	export enum LoggingServerProtocol { PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED', UDP = 'UDP', TCP = 'TCP' }
 
-	export enum LoggingServerSourceType { SOURCE_TYPE_UNSPECIFIED = 0, ESXI = 1, VCSA = 2 }
+	export enum LoggingServerSourceType { SOURCE_TYPE_UNSPECIFIED = 'SOURCE_TYPE_UNSPECIFIED', ESXI = 'ESXI', VCSA = 'VCSA' }
 
 
 	/** Response message for VmwareEngine.ListManagementDnsZoneBindings */
@@ -1122,7 +1122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagementDnsZoneBindingState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, UPDATING = 3, DELETING = 4, FAILED = 5 }
+	export enum ManagementDnsZoneBindingState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** Response message for VmwareEngine.ListNetworkPeerings */
@@ -1277,9 +1277,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkPeeringPeerNetworkType { PEER_NETWORK_TYPE_UNSPECIFIED = 0, STANDARD = 1, VMWARE_ENGINE_NETWORK = 2, PRIVATE_SERVICES_ACCESS = 3, NETAPP_CLOUD_VOLUMES = 4, THIRD_PARTY_SERVICE = 5, DELL_POWERSCALE = 6 }
+	export enum NetworkPeeringPeerNetworkType { PEER_NETWORK_TYPE_UNSPECIFIED = 'PEER_NETWORK_TYPE_UNSPECIFIED', STANDARD = 'STANDARD', VMWARE_ENGINE_NETWORK = 'VMWARE_ENGINE_NETWORK', PRIVATE_SERVICES_ACCESS = 'PRIVATE_SERVICES_ACCESS', NETAPP_CLOUD_VOLUMES = 'NETAPP_CLOUD_VOLUMES', THIRD_PARTY_SERVICE = 'THIRD_PARTY_SERVICE', DELL_POWERSCALE = 'DELL_POWERSCALE' }
 
-	export enum NetworkPeeringState { STATE_UNSPECIFIED = 0, INACTIVE = 1, ACTIVE = 2, CREATING = 3, DELETING = 4 }
+	export enum NetworkPeeringState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INACTIVE = 'INACTIVE', ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING' }
 
 
 	/** Response message for VmwareEngine.ListNetworkPolicies */
@@ -1412,7 +1412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkServiceState { STATE_UNSPECIFIED = 0, UNPROVISIONED = 1, RECONCILING = 2, ACTIVE = 3 }
+	export enum NetworkServiceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', UNPROVISIONED = 'UNPROVISIONED', RECONCILING = 'RECONCILING', ACTIVE = 'ACTIVE' }
 
 
 	/** Response message for VmwareEngine.ListNodeTypes */
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, FAILED = 3, UPGRADING = 4 }
+	export enum NodeState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', FAILED = 'FAILED', UPGRADING = 'UPGRADING' }
 
 
 	/** The response message for Operations.ListOperations. */
@@ -1779,9 +1779,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PeeringRouteDirection { DIRECTION_UNSPECIFIED = 0, INCOMING = 1, OUTGOING = 2 }
+	export enum PeeringRouteDirection { DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED', INCOMING = 'INCOMING', OUTGOING = 'OUTGOING' }
 
-	export enum PeeringRouteType { TYPE_UNSPECIFIED = 0, DYNAMIC_PEERING_ROUTE = 1, STATIC_PEERING_ROUTE = 2, SUBNET_PEERING_ROUTE = 3 }
+	export enum PeeringRouteType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DYNAMIC_PEERING_ROUTE = 'DYNAMIC_PEERING_ROUTE', STATIC_PEERING_ROUTE = 'STATIC_PEERING_ROUTE', SUBNET_PEERING_ROUTE = 'SUBNET_PEERING_ROUTE' }
 
 
 	/** Response message for VmwareEngine.ListPrivateClouds */
@@ -2024,9 +2024,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateCloudState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, UPDATING = 3, FAILED = 4, DELETED = 5, PURGING = 6 }
+	export enum PrivateCloudState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', UPDATING = 'UPDATING', FAILED = 'FAILED', DELETED = 'DELETED', PURGING = 'PURGING' }
 
-	export enum PrivateCloudType { STANDARD = 0, TIME_LIMITED = 1, STRETCHED = 2 }
+	export enum PrivateCloudType { STANDARD = 'STANDARD', TIME_LIMITED = 'TIME_LIMITED', STRETCHED = 'STRETCHED' }
 
 
 	/** Details about a vCenter Server management appliance. */
@@ -2226,13 +2226,13 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateConnectionPeeringState { PEERING_STATE_UNSPECIFIED = 0, PEERING_ACTIVE = 1, PEERING_INACTIVE = 2 }
+	export enum PrivateConnectionPeeringState { PEERING_STATE_UNSPECIFIED = 'PEERING_STATE_UNSPECIFIED', PEERING_ACTIVE = 'PEERING_ACTIVE', PEERING_INACTIVE = 'PEERING_INACTIVE' }
 
-	export enum PrivateConnectionRoutingMode { ROUTING_MODE_UNSPECIFIED = 0, GLOBAL = 1, REGIONAL = 2 }
+	export enum PrivateConnectionRoutingMode { ROUTING_MODE_UNSPECIFIED = 'ROUTING_MODE_UNSPECIFIED', GLOBAL = 'GLOBAL', REGIONAL = 'REGIONAL' }
 
-	export enum PrivateConnectionState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, UPDATING = 3, DELETING = 4, UNPROVISIONED = 5, FAILED = 6 }
+	export enum PrivateConnectionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', UNPROVISIONED = 'UNPROVISIONED', FAILED = 'FAILED' }
 
-	export enum PrivateConnectionType { TYPE_UNSPECIFIED = 0, PRIVATE_SERVICE_ACCESS = 1, NETAPP_CLOUD_VOLUMES = 2, DELL_POWERSCALE = 3, THIRD_PARTY_SERVICE = 4 }
+	export enum PrivateConnectionType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', PRIVATE_SERVICE_ACCESS = 'PRIVATE_SERVICE_ACCESS', NETAPP_CLOUD_VOLUMES = 'NETAPP_CLOUD_VOLUMES', DELL_POWERSCALE = 'DELL_POWERSCALE', THIRD_PARTY_SERVICE = 'THIRD_PARTY_SERVICE' }
 
 
 	/** Response message for VmwareEngine.ListSubnets */
@@ -2317,7 +2317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubnetState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CREATING = 2, UPDATING = 3, DELETING = 4, RECONCILING = 5, FAILED = 6 }
+	export enum SubnetState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', RECONCILING = 'RECONCILING', FAILED = 'FAILED' }
 
 
 	/** Response message for VmwareEngine.ListVmwareEngineNetworks */
@@ -2419,9 +2419,9 @@ export namespace MyNS {
 
 	}
 
-	export enum VmwareEngineNetworkState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, UPDATING = 3, DELETING = 4 }
+	export enum VmwareEngineNetworkState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING' }
 
-	export enum VmwareEngineNetworkType { TYPE_UNSPECIFIED = 0, LEGACY = 1, STANDARD = 2 }
+	export enum VmwareEngineNetworkType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', LEGACY = 'LEGACY', STANDARD = 'STANDARD' }
 
 
 	/** Represents a VMware Engine VPC network that is managed by a VMware Engine network resource. */
@@ -2451,7 +2451,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpcNetworkType { TYPE_UNSPECIFIED = 0, INTRANET = 1, INTERNET = 2, GOOGLE_CLOUD = 3 }
+	export enum VpcNetworkType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', INTRANET = 'INTRANET', INTERNET = 'INTERNET', GOOGLE_CLOUD = 'GOOGLE_CLOUD' }
 
 
 	/** VmwareEngine specific metadata for the given google.cloud.location.Location. It is returned as a content of the `google.cloud.location.Location.metadata` field. */

@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Type of authorization used by the connector */
-	export enum AuthType { oauth2 = 0, apiKey = 1, basic = 2, custom = 3, none = 4 }
+	export enum AuthType { oauth2 = 'oauth2', apiKey = 'apiKey', basic = 'basic', custom = 'custom', none = 'none' }
 
 	export interface BadRequestResponse {
 
@@ -268,7 +268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionConfigurationDefaultsTarget { custom_fields = 0, resource = 1 }
+	export enum ConnectionConfigurationDefaultsTarget { custom_fields = 'custom_fields', resource = 'resource' }
 
 	export interface CustomMapping {
 
@@ -430,15 +430,15 @@ export namespace MyNS {
 
 	}
 
-	export enum FormFieldType { text = 0, checkbox = 1, tel = 2, email = 3, url = 4, textarea = 5, select = 6, 'filtered-select' = 7, 'multi-select' = 8, datetime = 9, date = 10, time = 11, number = 12 }
+	export enum FormFieldType { text = 'text', checkbox = 'checkbox', tel = 'tel', email = 'email', url = 'url', textarea = 'textarea', select = 'select', 'filtered-select' = 'filtered-select', 'multi-select' = 'multi-select', datetime = 'datetime', date = 'date', time = 'time', number = 'number' }
 
-	export enum ConnectionIntegration_state { disabled = 0, needs_configuration = 1, configured = 2 }
+	export enum ConnectionIntegration_state { disabled = 'disabled', needs_configuration = 'needs_configuration', configured = 'configured' }
 
-	export enum ConnectionOauth_grant_type { authorization_code = 0, client_credentials = 1, password = 2 }
+	export enum ConnectionOauth_grant_type { authorization_code = 'authorization_code', client_credentials = 'client_credentials', password = 'password' }
 
-	export enum ConnectionState { available = 0, callable = 1, added = 2, authorized = 3, invalid = 4 }
+	export enum ConnectionState { available = 'available', callable = 'callable', added = 'added', authorized = 'authorized', invalid = 'invalid' }
 
-	export enum ConnectionStatus { live = 0, upcoming = 1, requested = 2 }
+	export enum ConnectionStatus { live = 'live', upcoming = 'upcoming', requested = 'requested' }
 
 	export interface WebhookSubscription {
 
@@ -603,9 +603,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsumerConnectionState { available = 0, callable = 1, added = 2, configured = 3, authorized = 4 }
+	export enum ConsumerConnectionState { available = 'available', callable = 'callable', added = 'added', configured = 'configured', authorized = 'authorized' }
 
-	export enum ConnectionEventEvent_type { '*' = 0, 'vault.connection.created' = 1, 'vault.connection.updated' = 2, 'vault.connection.disabled' = 3, 'vault.connection.deleted' = 4, 'vault.connection.callable' = 5, 'vault.connection.revoked' = 6, 'vault.connection.token_refresh.failed' = 7 }
+	export enum ConnectionEventEvent_type { '*' = '*', 'vault.connection.created' = 'vault.connection.created', 'vault.connection.updated' = 'vault.connection.updated', 'vault.connection.disabled' = 'vault.connection.disabled', 'vault.connection.deleted' = 'vault.connection.deleted', 'vault.connection.callable' = 'vault.connection.callable', 'vault.connection.revoked' = 'vault.connection.revoked', 'vault.connection.token_refresh.failed' = 'vault.connection.token_refresh.failed' }
 
 	export interface ConnectionImportData {
 		credentials?: ConnectionImportDataCredentials;
@@ -791,11 +791,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionWebhookDisabled_reason { none = 0, retry_limit = 1, usage_limit = 2 }
+	export enum ConnectionWebhookDisabled_reason { none = 'none', retry_limit = 'retry_limit', usage_limit = 'usage_limit' }
 
-	export enum ConnectionWebhookStatus { enabled = 0, disabled = 1 }
+	export enum ConnectionWebhookStatus { enabled = 'enabled', disabled = 'disabled' }
 
-	export enum ConnectionWebhookUnified_api { accounting = 0, ats = 1, calendar = 2, crm = 3, csp = 4, 'customer-support' = 5, ecommerce = 6, email = 7, 'email-marketing' = 8, 'expense-management' = 9, 'file-storage' = 10, form = 11, hris = 12, lead = 13, payroll = 14, pos = 15, procurement = 16, 'project-management' = 17, script = 18, sms = 19, spreadsheet = 20, 'team-messaging' = 21, 'issue-tracking' = 22, 'time-registration' = 23, 'transactional-email' = 24, vault = 25, 'data-warehouse' = 26 }
+	export enum ConnectionWebhookUnified_api { accounting = 'accounting', ats = 'ats', calendar = 'calendar', crm = 'crm', csp = 'csp', 'customer-support' = 'customer-support', ecommerce = 'ecommerce', email = 'email', 'email-marketing' = 'email-marketing', 'expense-management' = 'expense-management', 'file-storage' = 'file-storage', form = 'form', hris = 'hris', lead = 'lead', payroll = 'payroll', pos = 'pos', procurement = 'procurement', 'project-management' = 'project-management', script = 'script', sms = 'sms', spreadsheet = 'spreadsheet', 'team-messaging' = 'team-messaging', 'issue-tracking' = 'issue-tracking', 'time-registration' = 'time-registration', 'transactional-email' = 'transactional-email', vault = 'vault', 'data-warehouse' = 'data-warehouse' }
 
 	export interface Consumer {
 		aggregated_request_count?: number | null;
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogUnified_api { crm = 0, lead = 1, proxy = 2, vault = 3, accounting = 4, hris = 5, ats = 6, ecommerce = 7, 'issue-tracking' = 8, pos = 9, 'file-storage' = 10, sms = 11 }
+	export enum LogUnified_api { crm = 'crm', lead = 'lead', proxy = 'proxy', vault = 'vault', accounting = 'accounting', hris = 'hris', ats = 'ats', ecommerce = 'ecommerce', 'issue-tracking' = 'issue-tracking', pos = 'pos', 'file-storage' = 'file-storage', sms = 'sms' }
 
 	export interface GetResourceExampleResponse {
 
@@ -2150,7 +2150,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinkedConnectorResourceStatus { live = 0, beta = 1, development = 2, upcoming = 3, considering = 4 }
+	export enum LinkedConnectorResourceStatus { live = 'live', beta = 'beta', development = 'development', upcoming = 'upcoming', considering = 'considering' }
 
 	export interface GetResourceSchemaResponse {
 
@@ -2203,7 +2203,7 @@ export namespace MyNS {
 
 
 	/** The current state of the Integration. */
-	export enum IntegrationState { disabled = 0, needs_configuration = 1, configured = 2 }
+	export enum IntegrationState { disabled = 'disabled', needs_configuration = 'needs_configuration', configured = 'configured' }
 
 	export interface LogsFilter {
 		connector_id?: string | null;
@@ -2330,7 +2330,7 @@ export namespace MyNS {
 
 
 	/** OAuth grant type used by the connector. More info: https://oauth.net/2/grant-types */
-	export enum OAuthGrantType { authorization_code = 0, client_credentials = 1, password = 2 }
+	export enum OAuthGrantType { authorization_code = 'authorization_code', client_credentials = 'client_credentials', password = 'password' }
 
 	export interface PaymentRequiredResponse {
 
@@ -2396,7 +2396,7 @@ export namespace MyNS {
 
 
 	/** Status of the resource. Resources with status live or beta are callable. */
-	export enum ResourceStatus { live = 0, beta = 1, development = 2, upcoming = 3, considering = 4 }
+	export enum ResourceStatus { live = 'live', beta = 'beta', development = 'development', upcoming = 'upcoming', considering = 'considering' }
 
 	export interface Session {
 
@@ -2516,7 +2516,7 @@ export namespace MyNS {
 
 
 	/** Name of Apideck Unified API */
-	export enum UnifiedApiId { accounting = 0, ats = 1, calendar = 2, crm = 3, csp = 4, 'customer-support' = 5, ecommerce = 6, email = 7, 'email-marketing' = 8, 'expense-management' = 9, 'file-storage' = 10, form = 11, hris = 12, lead = 13, payroll = 14, pos = 15, procurement = 16, 'project-management' = 17, script = 18, sms = 19, spreadsheet = 20, 'team-messaging' = 21, 'issue-tracking' = 22, 'time-registration' = 23, 'transactional-email' = 24, vault = 25, 'data-warehouse' = 26 }
+	export enum UnifiedApiId { accounting = 'accounting', ats = 'ats', calendar = 'calendar', crm = 'crm', csp = 'csp', 'customer-support' = 'customer-support', ecommerce = 'ecommerce', email = 'email', 'email-marketing' = 'email-marketing', 'expense-management' = 'expense-management', 'file-storage' = 'file-storage', form = 'form', hris = 'hris', lead = 'lead', payroll = 'payroll', pos = 'pos', procurement = 'procurement', 'project-management' = 'project-management', script = 'script', sms = 'sms', spreadsheet = 'spreadsheet', 'team-messaging' = 'team-messaging', 'issue-tracking' = 'issue-tracking', 'time-registration' = 'time-registration', 'transactional-email' = 'transactional-email', vault = 'vault', 'data-warehouse' = 'data-warehouse' }
 
 	export interface SessionTheme {
 
@@ -2893,7 +2893,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VaultEventType { '*' = 0, 'vault.connection.created' = 1, 'vault.connection.updated' = 2, 'vault.connection.disabled' = 3, 'vault.connection.deleted' = 4, 'vault.connection.callable' = 5, 'vault.connection.revoked' = 6, 'vault.connection.token_refresh.failed' = 7 }
+	export enum VaultEventType { '*' = '*', 'vault.connection.created' = 'vault.connection.created', 'vault.connection.updated' = 'vault.connection.updated', 'vault.connection.disabled' = 'vault.connection.disabled', 'vault.connection.deleted' = 'vault.connection.deleted', 'vault.connection.callable' = 'vault.connection.callable', 'vault.connection.revoked' = 'vault.connection.revoked', 'vault.connection.token_refresh.failed' = 'vault.connection.token_refresh.failed' }
 
 	@Injectable()
 	export class MyClient {

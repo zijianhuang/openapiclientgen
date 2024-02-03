@@ -149,7 +149,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction { AND = 0, OR = 1 }
+	export enum GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction { AND = 'AND', OR = 'OR' }
 
 
 	/** A condition necessary for an `AccessLevel` to be granted. The Condition is an AND over its fields. So a Condition is true if: 1) the request IP is from one of the listed subnetworks AND 2) the originating device complies with the listed device policy AND 3) all listed access levels are granted AND 4) the request was sent at a time allowed by the DateTimeRestriction. */
@@ -269,7 +269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1OsConstraintOsType { OS_UNSPECIFIED = 0, DESKTOP_MAC = 1, DESKTOP_WINDOWS = 2, DESKTOP_LINUX = 3, DESKTOP_CHROME_OS = 4, ANDROID = 5, IOS = 6 }
+	export enum GoogleIdentityAccesscontextmanagerV1OsConstraintOsType { OS_UNSPECIFIED = 'OS_UNSPECIFIED', DESKTOP_MAC = 'DESKTOP_MAC', DESKTOP_WINDOWS = 'DESKTOP_WINDOWS', DESKTOP_LINUX = 'DESKTOP_LINUX', DESKTOP_CHROME_OS = 'DESKTOP_CHROME_OS', ANDROID = 'ANDROID', IOS = 'IOS' }
 
 
 	/** The originating network source in Google Cloud. */
@@ -498,7 +498,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -640,7 +640,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOrgpolicyV1ListPolicyAllValues { ALL_VALUES_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GoogleCloudOrgpolicyV1ListPolicyAllValues { ALL_VALUES_UNSPECIFIED = 'ALL_VALUES_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Ignores policies set above this resource and restores the `constraint_default` enforcement behavior of the specific `Constraint` at this resource. Suppose that `constraint_default` is set to `ALLOW` for the `Constraint` `constraints/serviceuser.services`. Suppose that organization foo.com sets a `Policy` at their Organization resource node that restricts the allowed service activations to deny all service activations. They could then set a `Policy` with the `policy_type` `restore_default` on several experimental projects, restoring the `constraint_default` enforcement of the `Constraint` for only those projects, allowing those projects to have all services activated. */
@@ -767,7 +767,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 0, PERIMETER_TYPE_BRIDGE = 1 }
+	export enum GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 'PERIMETER_TYPE_REGULAR', PERIMETER_TYPE_BRIDGE = 'PERIMETER_TYPE_BRIDGE' }
 
 
 	/** `ServicePerimeterConfig` specifies a set of Google Cloud resources that describe specific Service Perimeter configuration. */
@@ -855,9 +855,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType { IDENTITY_TYPE_UNSPECIFIED = 0, ANY_IDENTITY = 1, ANY_USER_ACCOUNT = 2, ANY_SERVICE_ACCOUNT = 3 }
+	export enum GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType { IDENTITY_TYPE_UNSPECIFIED = 'IDENTITY_TYPE_UNSPECIFIED', ANY_IDENTITY = 'ANY_IDENTITY', ANY_USER_ACCOUNT = 'ANY_USER_ACCOUNT', ANY_SERVICE_ACCOUNT = 'ANY_SERVICE_ACCOUNT' }
 
-	export enum GoogleIdentityAccesscontextmanagerV1EgressFromSourceRestriction { SOURCE_RESTRICTION_UNSPECIFIED = 0, SOURCE_RESTRICTION_ENABLED = 1, SOURCE_RESTRICTION_DISABLED = 2 }
+	export enum GoogleIdentityAccesscontextmanagerV1EgressFromSourceRestriction { SOURCE_RESTRICTION_UNSPECIFIED = 'SOURCE_RESTRICTION_UNSPECIFIED', SOURCE_RESTRICTION_ENABLED = 'SOURCE_RESTRICTION_ENABLED', SOURCE_RESTRICTION_DISABLED = 'SOURCE_RESTRICTION_DISABLED' }
 
 
 	/** The source that EgressPolicy authorizes access from inside the ServicePerimeter to somewhere outside the ServicePerimeter boundaries. */
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportAssetsRequestContentType { CONTENT_TYPE_UNSPECIFIED = 0, RESOURCE = 1, IAM_POLICY = 2 }
+	export enum ExportAssetsRequestContentType { CONTENT_TYPE_UNSPECIFIED = 'CONTENT_TYPE_UNSPECIFIED', RESOURCE = 'RESOURCE', IAM_POLICY = 'IAM_POLICY' }
 
 
 	/** Output configuration for export assets destination. */

@@ -460,7 +460,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ServerTableAuditingPolicies_GetTableAuditingPolicyName { default = 0 }
+	export enum ServerTableAuditingPolicies_GetTableAuditingPolicyName { default = 'default' }
 
 }
 

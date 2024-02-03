@@ -288,7 +288,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudAssetV1BigQueryDestinationPartitionKey { PARTITION_KEY_UNSPECIFIED = 0, REQUEST_TIME = 1 }
+	export enum GoogleCloudAssetV1BigQueryDestinationPartitionKey { PARTITION_KEY_UNSPECIFIED = 'PARTITION_KEY_UNSPECIFIED', REQUEST_TIME = 'REQUEST_TIME' }
 
 
 	/** A Cloud Storage location. */
@@ -504,7 +504,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IamPolicyAnalysisStateCode { OK = 0, CANCELLED = 1, UNKNOWN = 2, INVALID_ARGUMENT = 3, DEADLINE_EXCEEDED = 4, NOT_FOUND = 5, ALREADY_EXISTS = 6, PERMISSION_DENIED = 7, UNAUTHENTICATED = 8, RESOURCE_EXHAUSTED = 9, FAILED_PRECONDITION = 10, ABORTED = 11, OUT_OF_RANGE = 12, UNIMPLEMENTED = 13, INTERNAL = 14, UNAVAILABLE = 15, DATA_LOSS = 16 }
+	export enum IamPolicyAnalysisStateCode { OK = 'OK', CANCELLED = 'CANCELLED', UNKNOWN = 'UNKNOWN', INVALID_ARGUMENT = 'INVALID_ARGUMENT', DEADLINE_EXCEEDED = 'DEADLINE_EXCEEDED', NOT_FOUND = 'NOT_FOUND', ALREADY_EXISTS = 'ALREADY_EXISTS', PERMISSION_DENIED = 'PERMISSION_DENIED', UNAUTHENTICATED = 'UNAUTHENTICATED', RESOURCE_EXHAUSTED = 'RESOURCE_EXHAUSTED', FAILED_PRECONDITION = 'FAILED_PRECONDITION', ABORTED = 'ABORTED', OUT_OF_RANGE = 'OUT_OF_RANGE', UNIMPLEMENTED = 'UNIMPLEMENTED', INTERNAL = 'INTERNAL', UNAVAILABLE = 'UNAVAILABLE', DATA_LOSS = 'DATA_LOSS' }
 
 
 	/** The Condition evaluation. */
@@ -527,7 +527,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConditionEvaluationEvaluationValue { EVALUATION_VALUE_UNSPECIFIED = 0, TRUE = 1, FALSE = 2, CONDITIONAL = 3 }
+	export enum ConditionEvaluationEvaluationValue { EVALUATION_VALUE_UNSPECIFIED = 'EVALUATION_VALUE_UNSPECIFIED', TRUE = 'TRUE', FALSE = 'FALSE', CONDITIONAL = 'CONDITIONAL' }
 
 
 	/** A directional edge. */
@@ -912,7 +912,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudAssetV1CustomConstraintActionType { ACTION_TYPE_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GoogleCloudAssetV1CustomConstraintActionType { ACTION_TYPE_UNSPECIFIED = 'ACTION_TYPE_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** The definition of a constraint. */
@@ -976,7 +976,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudAssetV1ConstraintConstraintDefault { CONSTRAINT_DEFAULT_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GoogleCloudAssetV1ConstraintConstraintDefault { CONSTRAINT_DEFAULT_UNSPECIFIED = 'CONSTRAINT_DEFAULT_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** A `Constraint` that allows or disallows a list of string values, which are configured by an organization's policy administrator with a `Policy`. */
@@ -1308,7 +1308,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** The Google Cloud resources governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint. */
@@ -1546,7 +1546,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction { AND = 0, OR = 1 }
+	export enum GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction { AND = 'AND', OR = 'OR' }
 
 
 	/** A condition necessary for an `AccessLevel` to be granted. The Condition is an AND over its fields. So a Condition is true if: 1) the request IP is from one of the listed subnetworks AND 2) the originating device complies with the listed device policy AND 3) all listed access levels are granted AND 4) the request was sent at a time allowed by the DateTimeRestriction. */
@@ -1666,7 +1666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1OsConstraintOsType { OS_UNSPECIFIED = 0, DESKTOP_MAC = 1, DESKTOP_WINDOWS = 2, DESKTOP_LINUX = 3, DESKTOP_CHROME_OS = 4, ANDROID = 5, IOS = 6 }
+	export enum GoogleIdentityAccesscontextmanagerV1OsConstraintOsType { OS_UNSPECIFIED = 'OS_UNSPECIFIED', DESKTOP_MAC = 'DESKTOP_MAC', DESKTOP_WINDOWS = 'DESKTOP_WINDOWS', DESKTOP_LINUX = 'DESKTOP_LINUX', DESKTOP_CHROME_OS = 'DESKTOP_CHROME_OS', ANDROID = 'ANDROID', IOS = 'IOS' }
 
 
 	/** The originating network source in Google Cloud. */
@@ -1884,7 +1884,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudOrgpolicyV1ListPolicyAllValues { ALL_VALUES_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
+	export enum GoogleCloudOrgpolicyV1ListPolicyAllValues { ALL_VALUES_UNSPECIFIED = 'ALL_VALUES_UNSPECIFIED', ALLOW = 'ALLOW', DENY = 'DENY' }
 
 
 	/** Ignores policies set above this resource and restores the `constraint_default` enforcement behavior of the specific `Constraint` at this resource. Suppose that `constraint_default` is set to `ALLOW` for the `Constraint` `constraints/serviceuser.services`. Suppose that organization foo.com sets a `Policy` at their Organization resource node that restricts the allowed service activations to deny all service activations. They could then set a `Policy` with the `policy_type` `restore_default` on several experimental projects, restoring the `constraint_default` enforcement of the `Constraint` for only those projects, allowing those projects to have all services activated. */
@@ -2326,9 +2326,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemOriginType { ORIGIN_TYPE_UNSPECIFIED = 0, INVENTORY_REPORT = 1 }
+	export enum ItemOriginType { ORIGIN_TYPE_UNSPECIFIED = 'ORIGIN_TYPE_UNSPECIFIED', INVENTORY_REPORT = 'INVENTORY_REPORT' }
 
-	export enum ItemType { TYPE_UNSPECIFIED = 0, INSTALLED_PACKAGE = 1, AVAILABLE_PACKAGE = 2 }
+	export enum ItemType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', INSTALLED_PACKAGE = 'INSTALLED_PACKAGE', AVAILABLE_PACKAGE = 'AVAILABLE_PACKAGE' }
 
 
 	/** Operating system information for the VM. */
@@ -2618,7 +2618,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 0, PERIMETER_TYPE_BRIDGE = 1 }
+	export enum GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 'PERIMETER_TYPE_REGULAR', PERIMETER_TYPE_BRIDGE = 'PERIMETER_TYPE_BRIDGE' }
 
 
 	/** `ServicePerimeterConfig` specifies a set of Google Cloud resources that describe specific Service Perimeter configuration. */
@@ -2706,9 +2706,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType { IDENTITY_TYPE_UNSPECIFIED = 0, ANY_IDENTITY = 1, ANY_USER_ACCOUNT = 2, ANY_SERVICE_ACCOUNT = 3 }
+	export enum GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType { IDENTITY_TYPE_UNSPECIFIED = 'IDENTITY_TYPE_UNSPECIFIED', ANY_IDENTITY = 'ANY_IDENTITY', ANY_USER_ACCOUNT = 'ANY_USER_ACCOUNT', ANY_SERVICE_ACCOUNT = 'ANY_SERVICE_ACCOUNT' }
 
-	export enum GoogleIdentityAccesscontextmanagerV1EgressFromSourceRestriction { SOURCE_RESTRICTION_UNSPECIFIED = 0, SOURCE_RESTRICTION_ENABLED = 1, SOURCE_RESTRICTION_DISABLED = 2 }
+	export enum GoogleIdentityAccesscontextmanagerV1EgressFromSourceRestriction { SOURCE_RESTRICTION_UNSPECIFIED = 'SOURCE_RESTRICTION_UNSPECIFIED', SOURCE_RESTRICTION_ENABLED = 'SOURCE_RESTRICTION_ENABLED', SOURCE_RESTRICTION_DISABLED = 'SOURCE_RESTRICTION_DISABLED' }
 
 
 	/** The source that EgressPolicy authorizes access from inside the ServicePerimeter to somewhere outside the ServicePerimeter boundaries. */
@@ -3031,7 +3031,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemporalAssetPriorAssetState { PRIOR_ASSET_STATE_UNSPECIFIED = 0, PRESENT = 1, INVALID = 2, DOES_NOT_EXIST = 3, DELETED = 4 }
+	export enum TemporalAssetPriorAssetState { PRIOR_ASSET_STATE_UNSPECIFIED = 'PRIOR_ASSET_STATE_UNSPECIFIED', PRESENT = 'PRESENT', INVALID = 'INVALID', DOES_NOT_EXIST = 'DOES_NOT_EXIST', DELETED = 'DELETED' }
 
 
 	/** A time window specified by its `start_time` and `end_time`. */
@@ -3192,7 +3192,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PartitionSpecPartitionKey { PARTITION_KEY_UNSPECIFIED = 0, READ_TIME = 1, REQUEST_TIME = 2 }
+	export enum PartitionSpecPartitionKey { PARTITION_KEY_UNSPECIFIED = 'PARTITION_KEY_UNSPECIFIED', READ_TIME = 'READ_TIME', REQUEST_TIME = 'REQUEST_TIME' }
 
 
 	/** Create asset feed request. */
@@ -3261,7 +3261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeedContentType { CONTENT_TYPE_UNSPECIFIED = 0, RESOURCE = 1, IAM_POLICY = 2, ORG_POLICY = 3, ACCESS_POLICY = 4, OS_INVENTORY = 5, RELATIONSHIP = 6 }
+	export enum FeedContentType { CONTENT_TYPE_UNSPECIFIED = 'CONTENT_TYPE_UNSPECIFIED', RESOURCE = 'RESOURCE', IAM_POLICY = 'IAM_POLICY', ORG_POLICY = 'ORG_POLICY', ACCESS_POLICY = 'ACCESS_POLICY', OS_INVENTORY = 'OS_INVENTORY', RELATIONSHIP = 'RELATIONSHIP' }
 
 
 	/** Output configuration for asset feed destination. */
@@ -4740,7 +4740,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Cloudasset_analyzeMoveView { ANALYSIS_VIEW_UNSPECIFIED = 0, FULL = 1, BASIC = 2 }
+	export enum Cloudasset_analyzeMoveView { ANALYSIS_VIEW_UNSPECIFIED = 'ANALYSIS_VIEW_UNSPECIFIED', FULL = 'FULL', BASIC = 'BASIC' }
 
 }
 

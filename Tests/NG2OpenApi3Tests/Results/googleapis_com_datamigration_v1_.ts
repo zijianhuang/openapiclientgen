@@ -71,7 +71,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlloyDbSettingsDatabaseVersion { DATABASE_VERSION_UNSPECIFIED = 0, POSTGRES_14 = 1, POSTGRES_15 = 2 }
+	export enum AlloyDbSettingsDatabaseVersion { DATABASE_VERSION_UNSPECIFIED = 'DATABASE_VERSION_UNSPECIFIED', POSTGRES_14 = 'POSTGRES_14', POSTGRES_15 = 'POSTGRES_15' }
 
 
 	/** EncryptionConfig describes the encryption config of a cluster that is encrypted with a CMEK (customer-managed encryption key). */
@@ -365,7 +365,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Execution log of a background job. */
@@ -442,7 +442,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BackgroundJobLogEntryCompletionState { JOB_COMPLETION_STATE_UNSPECIFIED = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum BackgroundJobLogEntryCompletionState { JOB_COMPLETION_STATE_UNSPECIFIED = 'JOB_COMPLETION_STATE_UNSPECIFIED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Details regarding a Convert background job. */
@@ -489,9 +489,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportRulesJobDetailsFileFormat { IMPORT_RULES_FILE_FORMAT_UNSPECIFIED = 0, IMPORT_RULES_FILE_FORMAT_HARBOUR_BRIDGE_SESSION_FILE = 1, IMPORT_RULES_FILE_FORMAT_ORATOPG_CONFIG_FILE = 2 }
+	export enum ImportRulesJobDetailsFileFormat { IMPORT_RULES_FILE_FORMAT_UNSPECIFIED = 'IMPORT_RULES_FILE_FORMAT_UNSPECIFIED', IMPORT_RULES_FILE_FORMAT_HARBOUR_BRIDGE_SESSION_FILE = 'IMPORT_RULES_FILE_FORMAT_HARBOUR_BRIDGE_SESSION_FILE', IMPORT_RULES_FILE_FORMAT_ORATOPG_CONFIG_FILE = 'IMPORT_RULES_FILE_FORMAT_ORATOPG_CONFIG_FILE' }
 
-	export enum BackgroundJobLogEntryJobType { BACKGROUND_JOB_TYPE_UNSPECIFIED = 0, BACKGROUND_JOB_TYPE_SOURCE_SEED = 1, BACKGROUND_JOB_TYPE_CONVERT = 2, BACKGROUND_JOB_TYPE_APPLY_DESTINATION = 3, BACKGROUND_JOB_TYPE_IMPORT_RULES_FILE = 4 }
+	export enum BackgroundJobLogEntryJobType { BACKGROUND_JOB_TYPE_UNSPECIFIED = 'BACKGROUND_JOB_TYPE_UNSPECIFIED', BACKGROUND_JOB_TYPE_SOURCE_SEED = 'BACKGROUND_JOB_TYPE_SOURCE_SEED', BACKGROUND_JOB_TYPE_CONVERT = 'BACKGROUND_JOB_TYPE_CONVERT', BACKGROUND_JOB_TYPE_APPLY_DESTINATION = 'BACKGROUND_JOB_TYPE_APPLY_DESTINATION', BACKGROUND_JOB_TYPE_IMPORT_RULES_FILE = 'BACKGROUND_JOB_TYPE_IMPORT_RULES_FILE' }
 
 
 	/** Details regarding a Seed background job. */
@@ -788,9 +788,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudSqlSettingsActivationPolicy { SQL_ACTIVATION_POLICY_UNSPECIFIED = 0, ALWAYS = 1, NEVER = 2 }
+	export enum CloudSqlSettingsActivationPolicy { SQL_ACTIVATION_POLICY_UNSPECIFIED = 'SQL_ACTIVATION_POLICY_UNSPECIFIED', ALWAYS = 'ALWAYS', NEVER = 'NEVER' }
 
-	export enum CloudSqlSettingsAvailabilityType { SQL_AVAILABILITY_TYPE_UNSPECIFIED = 0, ZONAL = 1, REGIONAL = 2 }
+	export enum CloudSqlSettingsAvailabilityType { SQL_AVAILABILITY_TYPE_UNSPECIFIED = 'SQL_AVAILABILITY_TYPE_UNSPECIFIED', ZONAL = 'ZONAL', REGIONAL = 'REGIONAL' }
 
 
 	/** Data cache is an optional feature available for Cloud SQL for MySQL Enterprise Plus edition only. For more information on data cache, see [Data cache overview](https://cloud.google.com/sql/help/mysql-data-cache) in Cloud SQL documentation. */
@@ -813,11 +813,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudSqlSettingsDataDiskType { SQL_DATA_DISK_TYPE_UNSPECIFIED = 0, PD_SSD = 1, PD_HDD = 2 }
+	export enum CloudSqlSettingsDataDiskType { SQL_DATA_DISK_TYPE_UNSPECIFIED = 'SQL_DATA_DISK_TYPE_UNSPECIFIED', PD_SSD = 'PD_SSD', PD_HDD = 'PD_HDD' }
 
-	export enum CloudSqlSettingsDatabaseVersion { SQL_DATABASE_VERSION_UNSPECIFIED = 0, MYSQL_5_6 = 1, MYSQL_5_7 = 2, MYSQL_8_0 = 3, MYSQL_8_0_18 = 4, MYSQL_8_0_26 = 5, MYSQL_8_0_27 = 6, MYSQL_8_0_28 = 7, MYSQL_8_0_30 = 8, MYSQL_8_0_31 = 9, MYSQL_8_0_32 = 10, MYSQL_8_0_33 = 11, MYSQL_8_0_34 = 12, MYSQL_8_0_35 = 13, POSTGRES_9_6 = 14, POSTGRES_11 = 15, POSTGRES_10 = 16, POSTGRES_12 = 17, POSTGRES_13 = 18, POSTGRES_14 = 19, POSTGRES_15 = 20 }
+	export enum CloudSqlSettingsDatabaseVersion { SQL_DATABASE_VERSION_UNSPECIFIED = 'SQL_DATABASE_VERSION_UNSPECIFIED', MYSQL_5_6 = 'MYSQL_5_6', MYSQL_5_7 = 'MYSQL_5_7', MYSQL_8_0 = 'MYSQL_8_0', MYSQL_8_0_18 = 'MYSQL_8_0_18', MYSQL_8_0_26 = 'MYSQL_8_0_26', MYSQL_8_0_27 = 'MYSQL_8_0_27', MYSQL_8_0_28 = 'MYSQL_8_0_28', MYSQL_8_0_30 = 'MYSQL_8_0_30', MYSQL_8_0_31 = 'MYSQL_8_0_31', MYSQL_8_0_32 = 'MYSQL_8_0_32', MYSQL_8_0_33 = 'MYSQL_8_0_33', MYSQL_8_0_34 = 'MYSQL_8_0_34', MYSQL_8_0_35 = 'MYSQL_8_0_35', POSTGRES_9_6 = 'POSTGRES_9_6', POSTGRES_11 = 'POSTGRES_11', POSTGRES_10 = 'POSTGRES_10', POSTGRES_12 = 'POSTGRES_12', POSTGRES_13 = 'POSTGRES_13', POSTGRES_14 = 'POSTGRES_14', POSTGRES_15 = 'POSTGRES_15' }
 
-	export enum CloudSqlSettingsEdition { EDITION_UNSPECIFIED = 0, ENTERPRISE = 1, ENTERPRISE_PLUS = 2 }
+	export enum CloudSqlSettingsEdition { EDITION_UNSPECIFIED = 'EDITION_UNSPECIFIED', ENTERPRISE = 'ENTERPRISE', ENTERPRISE_PLUS = 'ENTERPRISE_PLUS' }
 
 
 	/** IP Management configuration. */
@@ -1142,7 +1142,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceNumericFilterNumericFilterOption { NUMERIC_FILTER_OPTION_UNSPECIFIED = 0, NUMERIC_FILTER_OPTION_ALL = 1, NUMERIC_FILTER_OPTION_LIMIT = 2, NUMERIC_FILTER_OPTION_LIMITLESS = 3 }
+	export enum SourceNumericFilterNumericFilterOption { NUMERIC_FILTER_OPTION_UNSPECIFIED = 'NUMERIC_FILTER_OPTION_UNSPECIFIED', NUMERIC_FILTER_OPTION_ALL = 'NUMERIC_FILTER_OPTION_ALL', NUMERIC_FILTER_OPTION_LIMIT = 'NUMERIC_FILTER_OPTION_LIMIT', NUMERIC_FILTER_OPTION_LIMITLESS = 'NUMERIC_FILTER_OPTION_LIMITLESS' }
 
 
 	/** Filter for text-based data types like varchar. */
@@ -1244,7 +1244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DoubleComparisonFilterValueComparison { VALUE_COMPARISON_UNSPECIFIED = 0, VALUE_COMPARISON_IF_VALUE_SMALLER_THAN = 1, VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN = 2, VALUE_COMPARISON_IF_VALUE_LARGER_THAN = 3, VALUE_COMPARISON_IF_VALUE_LARGER_EQUAL_THAN = 4 }
+	export enum DoubleComparisonFilterValueComparison { VALUE_COMPARISON_UNSPECIFIED = 'VALUE_COMPARISON_UNSPECIFIED', VALUE_COMPARISON_IF_VALUE_SMALLER_THAN = 'VALUE_COMPARISON_IF_VALUE_SMALLER_THAN', VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN = 'VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN', VALUE_COMPARISON_IF_VALUE_LARGER_THAN = 'VALUE_COMPARISON_IF_VALUE_LARGER_THAN', VALUE_COMPARISON_IF_VALUE_LARGER_EQUAL_THAN = 'VALUE_COMPARISON_IF_VALUE_LARGER_EQUAL_THAN' }
 
 
 	/** Filter based on relation between source value and compare value of type integer in ConditionalColumnSetValue */
@@ -1326,7 +1326,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValueListFilterValuePresentList { VALUE_PRESENT_IN_LIST_UNSPECIFIED = 0, VALUE_PRESENT_IN_LIST_IF_VALUE_LIST = 1, VALUE_PRESENT_IN_LIST_IF_VALUE_NOT_LIST = 2 }
+	export enum ValueListFilterValuePresentList { VALUE_PRESENT_IN_LIST_UNSPECIFIED = 'VALUE_PRESENT_IN_LIST_UNSPECIFIED', VALUE_PRESENT_IN_LIST_IF_VALUE_LIST = 'VALUE_PRESENT_IN_LIST_IF_VALUE_LIST', VALUE_PRESENT_IN_LIST_IF_VALUE_NOT_LIST = 'VALUE_PRESENT_IN_LIST_IF_VALUE_NOT_LIST' }
 
 
 	/** A connection profile definition. */
@@ -1541,7 +1541,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslConfigType { SSL_TYPE_UNSPECIFIED = 0, SERVER_ONLY = 1, SERVER_CLIENT = 2 }
+	export enum SslConfigType { SSL_TYPE_UNSPECIFIED = 'SSL_TYPE_UNSPECIFIED', SERVER_ONLY = 'SERVER_ONLY', SERVER_CLIENT = 'SERVER_CLIENT' }
 
 
 	/** Specifies connection parameters required specifically for Oracle databases. */
@@ -1774,7 +1774,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PostgreSqlConnectionProfileNetworkArchitecture { NETWORK_ARCHITECTURE_UNSPECIFIED = 0, NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER = 1, NETWORK_ARCHITECTURE_NEW_CSQL_PRODUCER = 2 }
+	export enum PostgreSqlConnectionProfileNetworkArchitecture { NETWORK_ARCHITECTURE_UNSPECIFIED = 'NETWORK_ARCHITECTURE_UNSPECIFIED', NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER = 'NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER', NETWORK_ARCHITECTURE_NEW_CSQL_PRODUCER = 'NETWORK_ARCHITECTURE_NEW_CSQL_PRODUCER' }
 
 
 	/** [Private Service Connect connectivity](https://cloud.google.com/vpc/docs/private-service-connect#service-attachments) */
@@ -1811,9 +1811,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionProfileProvider { DATABASE_PROVIDER_UNSPECIFIED = 0, CLOUDSQL = 1, RDS = 2, AURORA = 3, ALLOYDB = 4 }
+	export enum ConnectionProfileProvider { DATABASE_PROVIDER_UNSPECIFIED = 'DATABASE_PROVIDER_UNSPECIFIED', CLOUDSQL = 'CLOUDSQL', RDS = 'RDS', AURORA = 'AURORA', ALLOYDB = 'ALLOYDB' }
 
-	export enum ConnectionProfileState { STATE_UNSPECIFIED = 0, DRAFT = 1, CREATING = 2, READY = 3, UPDATING = 4, DELETING = 5, DELETED = 6, FAILED = 7 }
+	export enum ConnectionProfileState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', DRAFT = 'DRAFT', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', DELETING = 'DELETING', DELETED = 'DELETED', FAILED = 'FAILED' }
 
 
 	/** Constraint is not used as an independent entity, it is retrieved as part of another entity such as Table or View. */
@@ -1974,7 +1974,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseEngineInfoEngine { DATABASE_ENGINE_UNSPECIFIED = 0, MYSQL = 1, POSTGRESQL = 2, ORACLE = 3 }
+	export enum DatabaseEngineInfoEngine { DATABASE_ENGINE_UNSPECIFIED = 'DATABASE_ENGINE_UNSPECIFIED', MYSQL = 'MYSQL', POSTGRESQL = 'POSTGRESQL', ORACLE = 'ORACLE' }
 
 
 	/** A conversion workspace's version. */
@@ -2273,7 +2273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityDdlEntityType { DATABASE_ENTITY_TYPE_UNSPECIFIED = 0, DATABASE_ENTITY_TYPE_SCHEMA = 1, DATABASE_ENTITY_TYPE_TABLE = 2, DATABASE_ENTITY_TYPE_COLUMN = 3, DATABASE_ENTITY_TYPE_CONSTRAINT = 4, DATABASE_ENTITY_TYPE_INDEX = 5, DATABASE_ENTITY_TYPE_TRIGGER = 6, DATABASE_ENTITY_TYPE_VIEW = 7, DATABASE_ENTITY_TYPE_SEQUENCE = 8, DATABASE_ENTITY_TYPE_STORED_PROCEDURE = 9, DATABASE_ENTITY_TYPE_FUNCTION = 10, DATABASE_ENTITY_TYPE_SYNONYM = 11, DATABASE_ENTITY_TYPE_DATABASE_PACKAGE = 12, DATABASE_ENTITY_TYPE_UDT = 13, DATABASE_ENTITY_TYPE_MATERIALIZED_VIEW = 14, DATABASE_ENTITY_TYPE_DATABASE = 15 }
+	export enum EntityDdlEntityType { DATABASE_ENTITY_TYPE_UNSPECIFIED = 'DATABASE_ENTITY_TYPE_UNSPECIFIED', DATABASE_ENTITY_TYPE_SCHEMA = 'DATABASE_ENTITY_TYPE_SCHEMA', DATABASE_ENTITY_TYPE_TABLE = 'DATABASE_ENTITY_TYPE_TABLE', DATABASE_ENTITY_TYPE_COLUMN = 'DATABASE_ENTITY_TYPE_COLUMN', DATABASE_ENTITY_TYPE_CONSTRAINT = 'DATABASE_ENTITY_TYPE_CONSTRAINT', DATABASE_ENTITY_TYPE_INDEX = 'DATABASE_ENTITY_TYPE_INDEX', DATABASE_ENTITY_TYPE_TRIGGER = 'DATABASE_ENTITY_TYPE_TRIGGER', DATABASE_ENTITY_TYPE_VIEW = 'DATABASE_ENTITY_TYPE_VIEW', DATABASE_ENTITY_TYPE_SEQUENCE = 'DATABASE_ENTITY_TYPE_SEQUENCE', DATABASE_ENTITY_TYPE_STORED_PROCEDURE = 'DATABASE_ENTITY_TYPE_STORED_PROCEDURE', DATABASE_ENTITY_TYPE_FUNCTION = 'DATABASE_ENTITY_TYPE_FUNCTION', DATABASE_ENTITY_TYPE_SYNONYM = 'DATABASE_ENTITY_TYPE_SYNONYM', DATABASE_ENTITY_TYPE_DATABASE_PACKAGE = 'DATABASE_ENTITY_TYPE_DATABASE_PACKAGE', DATABASE_ENTITY_TYPE_UDT = 'DATABASE_ENTITY_TYPE_UDT', DATABASE_ENTITY_TYPE_MATERIALIZED_VIEW = 'DATABASE_ENTITY_TYPE_MATERIALIZED_VIEW', DATABASE_ENTITY_TYPE_DATABASE = 'DATABASE_ENTITY_TYPE_DATABASE' }
 
 
 	/** Issue related to the entity. */
@@ -2383,9 +2383,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityIssueSeverity { ISSUE_SEVERITY_UNSPECIFIED = 0, ISSUE_SEVERITY_INFO = 1, ISSUE_SEVERITY_WARNING = 2, ISSUE_SEVERITY_ERROR = 3 }
+	export enum EntityIssueSeverity { ISSUE_SEVERITY_UNSPECIFIED = 'ISSUE_SEVERITY_UNSPECIFIED', ISSUE_SEVERITY_INFO = 'ISSUE_SEVERITY_INFO', ISSUE_SEVERITY_WARNING = 'ISSUE_SEVERITY_WARNING', ISSUE_SEVERITY_ERROR = 'ISSUE_SEVERITY_ERROR' }
 
-	export enum EntityIssueType { ISSUE_TYPE_UNSPECIFIED = 0, ISSUE_TYPE_DDL = 1, ISSUE_TYPE_APPLY = 2, ISSUE_TYPE_CONVERT = 3 }
+	export enum EntityIssueType { ISSUE_TYPE_UNSPECIFIED = 'ISSUE_TYPE_UNSPECIFIED', ISSUE_TYPE_DDL = 'ISSUE_TYPE_DDL', ISSUE_TYPE_APPLY = 'ISSUE_TYPE_APPLY', ISSUE_TYPE_CONVERT = 'ISSUE_TYPE_CONVERT' }
 
 
 	/** Details of the mappings of a database entity. */
@@ -2772,7 +2772,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseEntityTree { TREE_TYPE_UNSPECIFIED = 0, SOURCE = 1, DRAFT = 2, DESTINATION = 3 }
+	export enum DatabaseEntityTree { TREE_TYPE_UNSPECIFIED = 'TREE_TYPE_UNSPECIFIED', SOURCE = 'SOURCE', DRAFT = 'DRAFT', DESTINATION = 'DESTINATION' }
 
 
 	/** UDT's parent is a schema. */
@@ -3679,7 +3679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MultiEntityRenameSourceNameTransformation { ENTITY_NAME_TRANSFORMATION_UNSPECIFIED = 0, ENTITY_NAME_TRANSFORMATION_NO_TRANSFORMATION = 1, ENTITY_NAME_TRANSFORMATION_LOWER_CASE = 2, ENTITY_NAME_TRANSFORMATION_UPPER_CASE = 3, ENTITY_NAME_TRANSFORMATION_CAPITALIZED_CASE = 4 }
+	export enum MultiEntityRenameSourceNameTransformation { ENTITY_NAME_TRANSFORMATION_UNSPECIFIED = 'ENTITY_NAME_TRANSFORMATION_UNSPECIFIED', ENTITY_NAME_TRANSFORMATION_NO_TRANSFORMATION = 'ENTITY_NAME_TRANSFORMATION_NO_TRANSFORMATION', ENTITY_NAME_TRANSFORMATION_LOWER_CASE = 'ENTITY_NAME_TRANSFORMATION_LOWER_CASE', ENTITY_NAME_TRANSFORMATION_UPPER_CASE = 'ENTITY_NAME_TRANSFORMATION_UPPER_CASE', ENTITY_NAME_TRANSFORMATION_CAPITALIZED_CASE = 'ENTITY_NAME_TRANSFORMATION_CAPITALIZED_CASE' }
 
 
 	/** Options to configure rule type SetTablePrimaryKey. The rule is used to specify the columns and name to configure/alter the primary key of a table. The rule filter field can refer to one entity. The rule scope can be one of: Table. */
@@ -3890,7 +3890,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MappingRuleState { STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2, DELETED = 3 }
+	export enum MappingRuleState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED', DELETED = 'DELETED' }
 
 
 	/** Response message for 'ListMigrationJobs' request. */
@@ -4086,9 +4086,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PerformanceConfigDumpParallelLevel { DUMP_PARALLEL_LEVEL_UNSPECIFIED = 0, MIN = 1, OPTIMAL = 2, MAX = 3 }
+	export enum PerformanceConfigDumpParallelLevel { DUMP_PARALLEL_LEVEL_UNSPECIFIED = 'DUMP_PARALLEL_LEVEL_UNSPECIFIED', MIN = 'MIN', OPTIMAL = 'OPTIMAL', MAX = 'MAX' }
 
-	export enum MigrationJobPhase { PHASE_UNSPECIFIED = 0, FULL_DUMP = 1, CDC = 2, PROMOTE_IN_PROGRESS = 3, WAITING_FOR_SOURCE_WRITES_TO_STOP = 4, PREPARING_THE_DUMP = 5 }
+	export enum MigrationJobPhase { PHASE_UNSPECIFIED = 'PHASE_UNSPECIFIED', FULL_DUMP = 'FULL_DUMP', CDC = 'CDC', PROMOTE_IN_PROGRESS = 'PROMOTE_IN_PROGRESS', WAITING_FOR_SOURCE_WRITES_TO_STOP = 'WAITING_FOR_SOURCE_WRITES_TO_STOP', PREPARING_THE_DUMP = 'PREPARING_THE_DUMP' }
 
 
 	/** The details needed to configure a reverse SSH tunnel between the source and destination databases. These details will be used when calling the generateSshScript method (see https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/generateSshScript) to produce the script that will help set up the reverse SSH tunnel, and to set up the VPC peering between the Cloud SQL private network and the VPC. */
@@ -4132,9 +4132,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationJobState { STATE_UNSPECIFIED = 0, MAINTENANCE = 1, DRAFT = 2, CREATING = 3, NOT_STARTED = 4, RUNNING = 5, FAILED = 6, COMPLETED = 7, DELETING = 8, STOPPING = 9, STOPPED = 10, DELETED = 11, UPDATING = 12, STARTING = 13, RESTARTING = 14, RESUMING = 15 }
+	export enum MigrationJobState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', MAINTENANCE = 'MAINTENANCE', DRAFT = 'DRAFT', CREATING = 'CREATING', NOT_STARTED = 'NOT_STARTED', RUNNING = 'RUNNING', FAILED = 'FAILED', COMPLETED = 'COMPLETED', DELETING = 'DELETING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', DELETED = 'DELETED', UPDATING = 'UPDATING', STARTING = 'STARTING', RESTARTING = 'RESTARTING', RESUMING = 'RESUMING' }
 
-	export enum MigrationJobType { TYPE_UNSPECIFIED = 0, ONE_TIME = 1, CONTINUOUS = 2 }
+	export enum MigrationJobType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', ONE_TIME = 'ONE_TIME', CONTINUOUS = 'CONTINUOUS' }
 
 
 	/** The details of the VPC where the source database is located in Google Cloud. We will use this information to set up the VPC peering connection between Cloud SQL and this VPC. */
@@ -4315,7 +4315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PrivateConnectionState { STATE_UNSPECIFIED = 0, CREATING = 1, CREATED = 2, FAILED = 3, DELETING = 4, FAILED_TO_DELETE = 5, DELETED = 6 }
+	export enum PrivateConnectionState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', CREATED = 'CREATED', FAILED = 'FAILED', DELETING = 'DELETING', FAILED_TO_DELETE = 'FAILED_TO_DELETE', DELETED = 'DELETED' }
 
 
 	/** The VPC peering configuration is used to create VPC peering with the consumer's VPC. */
@@ -4380,7 +4380,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MigrationJobVerificationErrorErrorCode { ERROR_CODE_UNSPECIFIED = 0, CONNECTION_FAILURE = 1, AUTHENTICATION_FAILURE = 2, INVALID_CONNECTION_PROFILE_CONFIG = 3, VERSION_INCOMPATIBILITY = 4, CONNECTION_PROFILE_TYPES_INCOMPATIBILITY = 5, NO_PGLOGICAL_INSTALLED = 6, PGLOGICAL_NODE_ALREADY_EXISTS = 7, INVALID_WAL_LEVEL = 8, INVALID_SHARED_PRELOAD_LIBRARY = 9, INSUFFICIENT_MAX_REPLICATION_SLOTS = 10, INSUFFICIENT_MAX_WAL_SENDERS = 11, INSUFFICIENT_MAX_WORKER_PROCESSES = 12, UNSUPPORTED_EXTENSIONS = 13, UNSUPPORTED_MIGRATION_TYPE = 14, INVALID_RDS_LOGICAL_REPLICATION = 15, UNSUPPORTED_GTID_MODE = 16, UNSUPPORTED_TABLE_DEFINITION = 17, UNSUPPORTED_DEFINER = 18, CANT_RESTART_RUNNING_MIGRATION = 19, SOURCE_ALREADY_SETUP = 20, TABLES_WITH_LIMITED_SUPPORT = 21, UNSUPPORTED_DATABASE_LOCALE = 22, UNSUPPORTED_DATABASE_FDW_CONFIG = 23, ERROR_RDBMS = 24, SOURCE_SIZE_EXCEEDS_THRESHOLD = 25, EXISTING_CONFLICTING_DATABASES = 26, PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 27, EXISTING_DATA = 28 }
+	export enum MigrationJobVerificationErrorErrorCode { ERROR_CODE_UNSPECIFIED = 'ERROR_CODE_UNSPECIFIED', CONNECTION_FAILURE = 'CONNECTION_FAILURE', AUTHENTICATION_FAILURE = 'AUTHENTICATION_FAILURE', INVALID_CONNECTION_PROFILE_CONFIG = 'INVALID_CONNECTION_PROFILE_CONFIG', VERSION_INCOMPATIBILITY = 'VERSION_INCOMPATIBILITY', CONNECTION_PROFILE_TYPES_INCOMPATIBILITY = 'CONNECTION_PROFILE_TYPES_INCOMPATIBILITY', NO_PGLOGICAL_INSTALLED = 'NO_PGLOGICAL_INSTALLED', PGLOGICAL_NODE_ALREADY_EXISTS = 'PGLOGICAL_NODE_ALREADY_EXISTS', INVALID_WAL_LEVEL = 'INVALID_WAL_LEVEL', INVALID_SHARED_PRELOAD_LIBRARY = 'INVALID_SHARED_PRELOAD_LIBRARY', INSUFFICIENT_MAX_REPLICATION_SLOTS = 'INSUFFICIENT_MAX_REPLICATION_SLOTS', INSUFFICIENT_MAX_WAL_SENDERS = 'INSUFFICIENT_MAX_WAL_SENDERS', INSUFFICIENT_MAX_WORKER_PROCESSES = 'INSUFFICIENT_MAX_WORKER_PROCESSES', UNSUPPORTED_EXTENSIONS = 'UNSUPPORTED_EXTENSIONS', UNSUPPORTED_MIGRATION_TYPE = 'UNSUPPORTED_MIGRATION_TYPE', INVALID_RDS_LOGICAL_REPLICATION = 'INVALID_RDS_LOGICAL_REPLICATION', UNSUPPORTED_GTID_MODE = 'UNSUPPORTED_GTID_MODE', UNSUPPORTED_TABLE_DEFINITION = 'UNSUPPORTED_TABLE_DEFINITION', UNSUPPORTED_DEFINER = 'UNSUPPORTED_DEFINER', CANT_RESTART_RUNNING_MIGRATION = 'CANT_RESTART_RUNNING_MIGRATION', SOURCE_ALREADY_SETUP = 'SOURCE_ALREADY_SETUP', TABLES_WITH_LIMITED_SUPPORT = 'TABLES_WITH_LIMITED_SUPPORT', UNSUPPORTED_DATABASE_LOCALE = 'UNSUPPORTED_DATABASE_LOCALE', UNSUPPORTED_DATABASE_FDW_CONFIG = 'UNSUPPORTED_DATABASE_FDW_CONFIG', ERROR_RDBMS = 'ERROR_RDBMS', SOURCE_SIZE_EXCEEDS_THRESHOLD = 'SOURCE_SIZE_EXCEEDS_THRESHOLD', EXISTING_CONFLICTING_DATABASES = 'EXISTING_CONFLICTING_DATABASES', PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 'PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE', EXISTING_DATA = 'EXISTING_DATA' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */
@@ -5130,9 +5130,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Datamigration_projects_locations_conversionWorkspaces_describeDatabaseEntitiesTree { DB_TREE_TYPE_UNSPECIFIED = 0, SOURCE_TREE = 1, DRAFT_TREE = 2, DESTINATION_TREE = 3 }
+	export enum Datamigration_projects_locations_conversionWorkspaces_describeDatabaseEntitiesTree { DB_TREE_TYPE_UNSPECIFIED = 'DB_TREE_TYPE_UNSPECIFIED', SOURCE_TREE = 'SOURCE_TREE', DRAFT_TREE = 'DRAFT_TREE', DESTINATION_TREE = 'DESTINATION_TREE' }
 
-	export enum Datamigration_projects_locations_conversionWorkspaces_describeDatabaseEntitiesView { DATABASE_ENTITY_VIEW_UNSPECIFIED = 0, DATABASE_ENTITY_VIEW_BASIC = 1, DATABASE_ENTITY_VIEW_FULL = 2, DATABASE_ENTITY_VIEW_ROOT_SUMMARY = 3 }
+	export enum Datamigration_projects_locations_conversionWorkspaces_describeDatabaseEntitiesView { DATABASE_ENTITY_VIEW_UNSPECIFIED = 'DATABASE_ENTITY_VIEW_UNSPECIFIED', DATABASE_ENTITY_VIEW_BASIC = 'DATABASE_ENTITY_VIEW_BASIC', DATABASE_ENTITY_VIEW_FULL = 'DATABASE_ENTITY_VIEW_FULL', DATABASE_ENTITY_VIEW_ROOT_SUMMARY = 'DATABASE_ENTITY_VIEW_ROOT_SUMMARY' }
 
 }
 

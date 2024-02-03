@@ -39,7 +39,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIRequestAction { READ = 0, CREATE = 1, UPDATE = 2, DELETE = 3 }
+	export enum APIRequestAction { READ = 'READ', CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
 	export interface APIRequestActor {
 		account?: string | null;
@@ -97,7 +97,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIRequestResourceType { ITEM = 0, VAULT = 1 }
+	export enum APIRequestResourceType { ITEM = 'ITEM', VAULT = 'VAULT' }
 
 	export interface APIRequestResourceVault {
 		id?: string | null;
@@ -112,7 +112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum APIRequestResult { SUCCESS = 0, DENY = 1 }
+	export enum APIRequestResult { SUCCESS = 'SUCCESS', DENY = 'DENY' }
 
 	export interface ErrorResponse {
 
@@ -193,7 +193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldPurpose { '' = 0, USERNAME = 1, PASSWORD = 2, NOTES = 3 }
+	export enum FieldPurpose { '' = '', USERNAME = 'USERNAME', PASSWORD = 'PASSWORD', NOTES = 'NOTES' }
 
 
 	/** The recipe is used in conjunction with the "generate" property to set the character set used to generate a new secure value */
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldType { STRING = 0, EMAIL = 1, CONCEALED = 2, URL = 3, TOTP = 4, DATE = 5, MONTH_YEAR = 6, MENU = 7 }
+	export enum FieldType { STRING = 'STRING', EMAIL = 'EMAIL', CONCEALED = 'CONCEALED', URL = 'URL', TOTP = 'TOTP', DATE = 'DATE', MONTH_YEAR = 'MONTH_YEAR', MENU = 'MENU' }
 
 	export interface File {
 
@@ -397,9 +397,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ItemCategory { LOGIN = 0, PASSWORD = 1, API_CREDENTIAL = 2, SERVER = 3, DATABASE = 4, CREDIT_CARD = 5, MEMBERSHIP = 6, PASSPORT = 7, SOFTWARE_LICENSE = 8, OUTDOOR_LICENSE = 9, SECURE_NOTE = 10, WIRELESS_ROUTER = 11, BANK_ACCOUNT = 12, DRIVER_LICENSE = 13, IDENTITY = 14, REWARD_PROGRAM = 15, DOCUMENT = 16, EMAIL_ACCOUNT = 17, SOCIAL_SECURITY_NUMBER = 18, MEDICAL_RECORD = 19, SSH_KEY = 20, CUSTOM = 21 }
+	export enum ItemCategory { LOGIN = 'LOGIN', PASSWORD = 'PASSWORD', API_CREDENTIAL = 'API_CREDENTIAL', SERVER = 'SERVER', DATABASE = 'DATABASE', CREDIT_CARD = 'CREDIT_CARD', MEMBERSHIP = 'MEMBERSHIP', PASSPORT = 'PASSPORT', SOFTWARE_LICENSE = 'SOFTWARE_LICENSE', OUTDOOR_LICENSE = 'OUTDOOR_LICENSE', SECURE_NOTE = 'SECURE_NOTE', WIRELESS_ROUTER = 'WIRELESS_ROUTER', BANK_ACCOUNT = 'BANK_ACCOUNT', DRIVER_LICENSE = 'DRIVER_LICENSE', IDENTITY = 'IDENTITY', REWARD_PROGRAM = 'REWARD_PROGRAM', DOCUMENT = 'DOCUMENT', EMAIL_ACCOUNT = 'EMAIL_ACCOUNT', SOCIAL_SECURITY_NUMBER = 'SOCIAL_SECURITY_NUMBER', MEDICAL_RECORD = 'MEDICAL_RECORD', SSH_KEY = 'SSH_KEY', CUSTOM = 'CUSTOM' }
 
-	export enum ItemState { ARCHIVED = 0, DELETED = 1 }
+	export enum ItemState { ARCHIVED = 'ARCHIVED', DELETED = 'DELETED' }
 
 	export interface ItemUrls {
 
@@ -474,7 +474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatchElementOp { add = 0, remove = 1, replace = 2 }
+	export enum PatchElementOp { add = 'add', remove = 'remove', replace = 'replace' }
 
 
 	/** The state of a registered server dependency. */
@@ -552,7 +552,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VaultType { USER_CREATED = 0, PERSONAL = 1, EVERYONE = 2, TRANSFER = 3 }
+	export enum VaultType { USER_CREATED = 'USER_CREATED', PERSONAL = 'PERSONAL', EVERYONE = 'EVERYONE', TRANSFER = 'TRANSFER' }
 
 	@Injectable()
 	export class MyClient {

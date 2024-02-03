@@ -330,7 +330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordFormatType { JSON = 0, CSV = 1 }
+	export enum RecordFormatType { JSON = 'JSON', CSV = 'CSV' }
 
 
 	/** When you configure a SQL-based Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. */
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputStartingPosition { NOW = 0, TRIM_HORIZON = 1, LAST_STOPPED_POINT = 2 }
+	export enum InputStartingPosition { NOW = 'NOW', TRIM_HORIZON = 'TRIM_HORIZON', LAST_STOPPED_POINT = 'LAST_STOPPED_POINT' }
 
 	export interface AddApplicationInputRequest {
 
@@ -1255,9 +1255,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RuntimeEnvironment { 'SQL-1_0' = 0, 'FLINK-1_6' = 1, 'FLINK-1_8' = 2, 'ZEPPELIN-FLINK-1_0' = 3, 'FLINK-1_11' = 4, 'FLINK-1_13' = 5, 'ZEPPELIN-FLINK-2_0' = 6, 'FLINK-1_15' = 7, 'ZEPPELIN-FLINK-3_0' = 8 }
+	export enum RuntimeEnvironment { 'SQL-1_0' = 'SQL-1_0', 'FLINK-1_6' = 'FLINK-1_6', 'FLINK-1_8' = 'FLINK-1_8', 'ZEPPELIN-FLINK-1_0' = 'ZEPPELIN-FLINK-1_0', 'FLINK-1_11' = 'FLINK-1_11', 'FLINK-1_13' = 'FLINK-1_13', 'ZEPPELIN-FLINK-2_0' = 'ZEPPELIN-FLINK-2_0', 'FLINK-1_15' = 'FLINK-1_15', 'ZEPPELIN-FLINK-3_0' = 'ZEPPELIN-FLINK-3_0' }
 
-	export enum ApplicationStatus { DELETING = 0, STARTING = 1, STOPPING = 2, READY = 3, RUNNING = 4, UPDATING = 5, AUTOSCALING = 6, FORCE_STOPPING = 7, ROLLING_BACK = 8, MAINTENANCE = 9, ROLLED_BACK = 10 }
+	export enum ApplicationStatus { DELETING = 'DELETING', STARTING = 'STARTING', STOPPING = 'STOPPING', READY = 'READY', RUNNING = 'RUNNING', UPDATING = 'UPDATING', AUTOSCALING = 'AUTOSCALING', FORCE_STOPPING = 'FORCE_STOPPING', ROLLING_BACK = 'ROLLING_BACK', MAINTENANCE = 'MAINTENANCE', ROLLED_BACK = 'ROLLED_BACK' }
 
 
 	/** Describes details about the application code and starting parameters for a Kinesis Data Analytics application. */
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CodeContentType { PLAINTEXT = 0, ZIPFILE = 1 }
+	export enum CodeContentType { PLAINTEXT = 'PLAINTEXT', ZIPFILE = 'ZIPFILE' }
 
 
 	/** Describes details about the code of a Kinesis Data Analytics application. */
@@ -1419,7 +1419,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationRestoreType { SKIP_RESTORE_FROM_SNAPSHOT = 0, RESTORE_FROM_LATEST_SNAPSHOT = 1, RESTORE_FROM_CUSTOM_SNAPSHOT = 2 }
+	export enum ApplicationRestoreType { SKIP_RESTORE_FROM_SNAPSHOT = 'SKIP_RESTORE_FROM_SNAPSHOT', RESTORE_FROM_LATEST_SNAPSHOT = 'RESTORE_FROM_LATEST_SNAPSHOT', RESTORE_FROM_CUSTOM_SNAPSHOT = 'RESTORE_FROM_CUSTOM_SNAPSHOT' }
 
 
 	/** Describes the starting parameters for a Flink-based Kinesis Data Analytics application. */
@@ -1484,7 +1484,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationType { DEFAULT = 0, CUSTOM = 1 }
+	export enum ConfigurationType { DEFAULT = 'DEFAULT', CUSTOM = 'CUSTOM' }
 
 
 	/** Describes configuration parameters for CloudWatch logging for an application. */
@@ -1509,9 +1509,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricsLevel { APPLICATION = 0, TASK = 1, OPERATOR = 2, PARALLELISM = 3 }
+	export enum MetricsLevel { APPLICATION = 'APPLICATION', TASK = 'TASK', OPERATOR = 'OPERATOR', PARALLELISM = 'PARALLELISM' }
 
-	export enum LogLevel { INFO = 0, WARN = 1, ERROR = 2, DEBUG = 3 }
+	export enum LogLevel { INFO = 'INFO', WARN = 'WARN', ERROR = 'ERROR', DEBUG = 'DEBUG' }
 
 
 	/** Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously. */
@@ -1749,7 +1749,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactType { UDF = 0, DEPENDENCY_JAR = 1 }
+	export enum ArtifactType { UDF = 'UDF', DEPENDENCY_JAR = 'DEPENDENCY_JAR' }
 
 
 	/** For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.  */
@@ -1845,7 +1845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationMode { STREAMING = 0, INTERACTIVE = 1 }
+	export enum ApplicationMode { STREAMING = 'STREAMING', INTERACTIVE = 'INTERACTIVE' }
 
 	export interface CreateApplicationRequest {
 
@@ -2347,7 +2347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UrlType { FLINK_DASHBOARD_URL = 0, ZEPPELIN_UI_URL = 1 }
+	export enum UrlType { FLINK_DASHBOARD_URL = 'FLINK_DASHBOARD_URL', ZEPPELIN_UI_URL = 'ZEPPELIN_UI_URL' }
 
 	export interface CreateApplicationSnapshotResponse {
 	}
@@ -2776,7 +2776,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotStatus { CREATING = 0, READY = 1, DELETING = 2, FAILED = 3 }
+	export enum SnapshotStatus { CREATING = 'CREATING', READY = 'READY', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface DescribeApplicationSnapshotRequest {
 
@@ -4422,67 +4422,67 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationCloudWatchLoggingOption' = 0 }
+	export enum AddApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationCloudWatchLoggingOption' = 'KinesisAnalytics_20180523.AddApplicationCloudWatchLoggingOption' }
 
-	export enum AddApplicationInputX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationInput' = 0 }
+	export enum AddApplicationInputX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationInput' = 'KinesisAnalytics_20180523.AddApplicationInput' }
 
-	export enum AddApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationInputProcessingConfiguration' = 0 }
+	export enum AddApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationInputProcessingConfiguration' = 'KinesisAnalytics_20180523.AddApplicationInputProcessingConfiguration' }
 
-	export enum AddApplicationOutputX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationOutput' = 0 }
+	export enum AddApplicationOutputX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationOutput' = 'KinesisAnalytics_20180523.AddApplicationOutput' }
 
-	export enum AddApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationReferenceDataSource' = 0 }
+	export enum AddApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationReferenceDataSource' = 'KinesisAnalytics_20180523.AddApplicationReferenceDataSource' }
 
-	export enum AddApplicationVpcConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationVpcConfiguration' = 0 }
+	export enum AddApplicationVpcConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.AddApplicationVpcConfiguration' = 'KinesisAnalytics_20180523.AddApplicationVpcConfiguration' }
 
-	export enum CreateApplicationX_Amz_Target { 'KinesisAnalytics_20180523.CreateApplication' = 0 }
+	export enum CreateApplicationX_Amz_Target { 'KinesisAnalytics_20180523.CreateApplication' = 'KinesisAnalytics_20180523.CreateApplication' }
 
-	export enum CreateApplicationPresignedUrlX_Amz_Target { 'KinesisAnalytics_20180523.CreateApplicationPresignedUrl' = 0 }
+	export enum CreateApplicationPresignedUrlX_Amz_Target { 'KinesisAnalytics_20180523.CreateApplicationPresignedUrl' = 'KinesisAnalytics_20180523.CreateApplicationPresignedUrl' }
 
-	export enum CreateApplicationSnapshotX_Amz_Target { 'KinesisAnalytics_20180523.CreateApplicationSnapshot' = 0 }
+	export enum CreateApplicationSnapshotX_Amz_Target { 'KinesisAnalytics_20180523.CreateApplicationSnapshot' = 'KinesisAnalytics_20180523.CreateApplicationSnapshot' }
 
-	export enum DeleteApplicationX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplication' = 0 }
+	export enum DeleteApplicationX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplication' = 'KinesisAnalytics_20180523.DeleteApplication' }
 
-	export enum DeleteApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationCloudWatchLoggingOption' = 0 }
+	export enum DeleteApplicationCloudWatchLoggingOptionX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationCloudWatchLoggingOption' = 'KinesisAnalytics_20180523.DeleteApplicationCloudWatchLoggingOption' }
 
-	export enum DeleteApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationInputProcessingConfiguration' = 0 }
+	export enum DeleteApplicationInputProcessingConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationInputProcessingConfiguration' = 'KinesisAnalytics_20180523.DeleteApplicationInputProcessingConfiguration' }
 
-	export enum DeleteApplicationOutputX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationOutput' = 0 }
+	export enum DeleteApplicationOutputX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationOutput' = 'KinesisAnalytics_20180523.DeleteApplicationOutput' }
 
-	export enum DeleteApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationReferenceDataSource' = 0 }
+	export enum DeleteApplicationReferenceDataSourceX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationReferenceDataSource' = 'KinesisAnalytics_20180523.DeleteApplicationReferenceDataSource' }
 
-	export enum DeleteApplicationSnapshotX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationSnapshot' = 0 }
+	export enum DeleteApplicationSnapshotX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationSnapshot' = 'KinesisAnalytics_20180523.DeleteApplicationSnapshot' }
 
-	export enum DeleteApplicationVpcConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationVpcConfiguration' = 0 }
+	export enum DeleteApplicationVpcConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.DeleteApplicationVpcConfiguration' = 'KinesisAnalytics_20180523.DeleteApplicationVpcConfiguration' }
 
-	export enum DescribeApplicationX_Amz_Target { 'KinesisAnalytics_20180523.DescribeApplication' = 0 }
+	export enum DescribeApplicationX_Amz_Target { 'KinesisAnalytics_20180523.DescribeApplication' = 'KinesisAnalytics_20180523.DescribeApplication' }
 
-	export enum DescribeApplicationSnapshotX_Amz_Target { 'KinesisAnalytics_20180523.DescribeApplicationSnapshot' = 0 }
+	export enum DescribeApplicationSnapshotX_Amz_Target { 'KinesisAnalytics_20180523.DescribeApplicationSnapshot' = 'KinesisAnalytics_20180523.DescribeApplicationSnapshot' }
 
-	export enum DescribeApplicationVersionX_Amz_Target { 'KinesisAnalytics_20180523.DescribeApplicationVersion' = 0 }
+	export enum DescribeApplicationVersionX_Amz_Target { 'KinesisAnalytics_20180523.DescribeApplicationVersion' = 'KinesisAnalytics_20180523.DescribeApplicationVersion' }
 
-	export enum DiscoverInputSchemaX_Amz_Target { 'KinesisAnalytics_20180523.DiscoverInputSchema' = 0 }
+	export enum DiscoverInputSchemaX_Amz_Target { 'KinesisAnalytics_20180523.DiscoverInputSchema' = 'KinesisAnalytics_20180523.DiscoverInputSchema' }
 
-	export enum ListApplicationSnapshotsX_Amz_Target { 'KinesisAnalytics_20180523.ListApplicationSnapshots' = 0 }
+	export enum ListApplicationSnapshotsX_Amz_Target { 'KinesisAnalytics_20180523.ListApplicationSnapshots' = 'KinesisAnalytics_20180523.ListApplicationSnapshots' }
 
-	export enum ListApplicationVersionsX_Amz_Target { 'KinesisAnalytics_20180523.ListApplicationVersions' = 0 }
+	export enum ListApplicationVersionsX_Amz_Target { 'KinesisAnalytics_20180523.ListApplicationVersions' = 'KinesisAnalytics_20180523.ListApplicationVersions' }
 
-	export enum ListApplicationsX_Amz_Target { 'KinesisAnalytics_20180523.ListApplications' = 0 }
+	export enum ListApplicationsX_Amz_Target { 'KinesisAnalytics_20180523.ListApplications' = 'KinesisAnalytics_20180523.ListApplications' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'KinesisAnalytics_20180523.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'KinesisAnalytics_20180523.ListTagsForResource' = 'KinesisAnalytics_20180523.ListTagsForResource' }
 
-	export enum RollbackApplicationX_Amz_Target { 'KinesisAnalytics_20180523.RollbackApplication' = 0 }
+	export enum RollbackApplicationX_Amz_Target { 'KinesisAnalytics_20180523.RollbackApplication' = 'KinesisAnalytics_20180523.RollbackApplication' }
 
-	export enum StartApplicationX_Amz_Target { 'KinesisAnalytics_20180523.StartApplication' = 0 }
+	export enum StartApplicationX_Amz_Target { 'KinesisAnalytics_20180523.StartApplication' = 'KinesisAnalytics_20180523.StartApplication' }
 
-	export enum StopApplicationX_Amz_Target { 'KinesisAnalytics_20180523.StopApplication' = 0 }
+	export enum StopApplicationX_Amz_Target { 'KinesisAnalytics_20180523.StopApplication' = 'KinesisAnalytics_20180523.StopApplication' }
 
-	export enum TagResourceX_Amz_Target { 'KinesisAnalytics_20180523.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'KinesisAnalytics_20180523.TagResource' = 'KinesisAnalytics_20180523.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'KinesisAnalytics_20180523.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'KinesisAnalytics_20180523.UntagResource' = 'KinesisAnalytics_20180523.UntagResource' }
 
-	export enum UpdateApplicationX_Amz_Target { 'KinesisAnalytics_20180523.UpdateApplication' = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'KinesisAnalytics_20180523.UpdateApplication' = 'KinesisAnalytics_20180523.UpdateApplication' }
 
-	export enum UpdateApplicationMaintenanceConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.UpdateApplicationMaintenanceConfiguration' = 0 }
+	export enum UpdateApplicationMaintenanceConfigurationX_Amz_Target { 'KinesisAnalytics_20180523.UpdateApplicationMaintenanceConfiguration' = 'KinesisAnalytics_20180523.UpdateApplicationMaintenanceConfiguration' }
 
 }
 

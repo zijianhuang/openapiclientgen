@@ -20,7 +20,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CrmlogErrorCodeCommonErrorCode { COMMON_ERROR_CODE_UNSPECIFIED = 0, INVALID_CREDENTIALS = 1, REQUIRED_FIELDS_MISSING = 2, INVALID_FIELDS = 3, BACKEND = 4, GENERAL = 5, INTERNAL = 6, IO_ERROR = 7, NOT_FOUND = 8, EVENT_BUS = 9, ALREADY_EXISTS = 10, CONCORD = 11, CONVERSION = 12, FLUME = 13, PERMISSION = 14, SALES_FORCE = 15, SPANNER = 16, UNIMPLEMENTED = 17, RELTIO = 18, WORKFLOW_NOT_FOUND = 19, QUOTA_THROTTLED = 20, QUOTA_ENQUEUED = 21, INVALID_QUOTA_CONFIGURATION = 22, TASK_NOT_FOUND = 23, EXECUTION_TIMEOUT = 24, INVALID_EVENT_EXECUTION_STATE = 25, INVALID_ATTRIBUTE = 26, MISSING_ATTRIBUTE = 27, CLIENT_UNAUTHORIZED_FOR_WORKFLOW = 28, INVALID_PARAMETER = 29, MISSING_PARAMETER = 30, UNAUTHROIZED_WORKFLOW_EDITOR_ACTION = 31, FAILED_PRECONDITION = 32, INVALID_CLIENT = 33, MISSING_CLIENT = 34, INVALID_WORKFLOW = 35, MISSING_QUOTA_CONFIGURATION = 36, UNHANDLED_TASK_ERROR = 37, SCRIPT_TASK_RUNTIME_ERROR = 38, RPC = 39, INVALID_PROTO = 40, UNHANDLED_EVENTBUS_ERROR = 41, INVALID_TASK_STATE = 42, TYPED_TASK_INVALID_INPUT_OPERATION = 43, TYPED_TASK_INVALID_OUTPUT_OPERATION = 44, VALIDATION_ERROR = 45, RESUME_ERROR = 46, APPS_SCRIPT_EXECUTION_ERROR = 47, INVALID_VECTOR_USER = 48, INFORMATICA = 49, RETRYABLE_TASK_ERROR = 50, INVALID_TENANT = 51, WRONG_TENANT = 52, INFORMATICA_BACKEND_UNAVAILABLE = 53, RPC_PERMISSION_DENIED = 54, SYNC_EVENTBUS_EXECUTION_TIMEOUT = 55, ASYNC_EVENTBUS_EXECUTION_TIMEOUT = 56, NOT_SUPPORTED_DATA_TYPE = 57, UNSANITIZED_USER_INPUT = 58, TRANSFORM_EXPRESSION_EVALUATION_ERROR = 59, HTTP_EXCEPTION = 60, EXECUTION_CANCELLED = 61 }
+	export enum CrmlogErrorCodeCommonErrorCode { COMMON_ERROR_CODE_UNSPECIFIED = 'COMMON_ERROR_CODE_UNSPECIFIED', INVALID_CREDENTIALS = 'INVALID_CREDENTIALS', REQUIRED_FIELDS_MISSING = 'REQUIRED_FIELDS_MISSING', INVALID_FIELDS = 'INVALID_FIELDS', BACKEND = 'BACKEND', GENERAL = 'GENERAL', INTERNAL = 'INTERNAL', IO_ERROR = 'IO_ERROR', NOT_FOUND = 'NOT_FOUND', EVENT_BUS = 'EVENT_BUS', ALREADY_EXISTS = 'ALREADY_EXISTS', CONCORD = 'CONCORD', CONVERSION = 'CONVERSION', FLUME = 'FLUME', PERMISSION = 'PERMISSION', SALES_FORCE = 'SALES_FORCE', SPANNER = 'SPANNER', UNIMPLEMENTED = 'UNIMPLEMENTED', RELTIO = 'RELTIO', WORKFLOW_NOT_FOUND = 'WORKFLOW_NOT_FOUND', QUOTA_THROTTLED = 'QUOTA_THROTTLED', QUOTA_ENQUEUED = 'QUOTA_ENQUEUED', INVALID_QUOTA_CONFIGURATION = 'INVALID_QUOTA_CONFIGURATION', TASK_NOT_FOUND = 'TASK_NOT_FOUND', EXECUTION_TIMEOUT = 'EXECUTION_TIMEOUT', INVALID_EVENT_EXECUTION_STATE = 'INVALID_EVENT_EXECUTION_STATE', INVALID_ATTRIBUTE = 'INVALID_ATTRIBUTE', MISSING_ATTRIBUTE = 'MISSING_ATTRIBUTE', CLIENT_UNAUTHORIZED_FOR_WORKFLOW = 'CLIENT_UNAUTHORIZED_FOR_WORKFLOW', INVALID_PARAMETER = 'INVALID_PARAMETER', MISSING_PARAMETER = 'MISSING_PARAMETER', UNAUTHROIZED_WORKFLOW_EDITOR_ACTION = 'UNAUTHROIZED_WORKFLOW_EDITOR_ACTION', FAILED_PRECONDITION = 'FAILED_PRECONDITION', INVALID_CLIENT = 'INVALID_CLIENT', MISSING_CLIENT = 'MISSING_CLIENT', INVALID_WORKFLOW = 'INVALID_WORKFLOW', MISSING_QUOTA_CONFIGURATION = 'MISSING_QUOTA_CONFIGURATION', UNHANDLED_TASK_ERROR = 'UNHANDLED_TASK_ERROR', SCRIPT_TASK_RUNTIME_ERROR = 'SCRIPT_TASK_RUNTIME_ERROR', RPC = 'RPC', INVALID_PROTO = 'INVALID_PROTO', UNHANDLED_EVENTBUS_ERROR = 'UNHANDLED_EVENTBUS_ERROR', INVALID_TASK_STATE = 'INVALID_TASK_STATE', TYPED_TASK_INVALID_INPUT_OPERATION = 'TYPED_TASK_INVALID_INPUT_OPERATION', TYPED_TASK_INVALID_OUTPUT_OPERATION = 'TYPED_TASK_INVALID_OUTPUT_OPERATION', VALIDATION_ERROR = 'VALIDATION_ERROR', RESUME_ERROR = 'RESUME_ERROR', APPS_SCRIPT_EXECUTION_ERROR = 'APPS_SCRIPT_EXECUTION_ERROR', INVALID_VECTOR_USER = 'INVALID_VECTOR_USER', INFORMATICA = 'INFORMATICA', RETRYABLE_TASK_ERROR = 'RETRYABLE_TASK_ERROR', INVALID_TENANT = 'INVALID_TENANT', WRONG_TENANT = 'WRONG_TENANT', INFORMATICA_BACKEND_UNAVAILABLE = 'INFORMATICA_BACKEND_UNAVAILABLE', RPC_PERMISSION_DENIED = 'RPC_PERMISSION_DENIED', SYNC_EVENTBUS_EXECUTION_TIMEOUT = 'SYNC_EVENTBUS_EXECUTION_TIMEOUT', ASYNC_EVENTBUS_EXECUTION_TIMEOUT = 'ASYNC_EVENTBUS_EXECUTION_TIMEOUT', NOT_SUPPORTED_DATA_TYPE = 'NOT_SUPPORTED_DATA_TYPE', UNSANITIZED_USER_INPUT = 'UNSANITIZED_USER_INPUT', TRANSFORM_EXPRESSION_EVALUATION_ERROR = 'TRANSFORM_EXPRESSION_EVALUATION_ERROR', HTTP_EXCEPTION = 'HTTP_EXCEPTION', EXECUTION_CANCELLED = 'EXECUTION_CANCELLED' }
 
 	export interface EnterpriseCrmEventbusAuthconfigAuthConfigTaskParam {
 
@@ -143,7 +143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoAttributesDataType { DATA_TYPE_UNSPECIFIED = 0, EMAIL = 1, URL = 2, CURRENCY = 3, TIMESTAMP = 4, DOMAIN_NAME = 5 }
+	export enum EnterpriseCrmEventbusProtoAttributesDataType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', EMAIL = 'EMAIL', URL = 'URL', CURRENCY = 'CURRENCY', TIMESTAMP = 'TIMESTAMP', DOMAIN_NAME = 'DOMAIN_NAME' }
 
 
 	/** Used for define type for values. Currently supported value types include int, string, double, array, and any proto message. */
@@ -273,13 +273,13 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmLoggingGwsSanitizeOptionsPrivacy { PRIVACY_TYPE_UNSPECIFIED = 0, NOT_PII = 1, PII = 2, SPII = 3, UNSURE = 4 }
+	export enum EnterpriseCrmLoggingGwsSanitizeOptionsPrivacy { PRIVACY_TYPE_UNSPECIFIED = 'PRIVACY_TYPE_UNSPECIFIED', NOT_PII = 'NOT_PII', PII = 'PII', SPII = 'SPII', UNSURE = 'UNSURE' }
 
-	export enum EnterpriseCrmLoggingGwsSanitizeOptionsSanitizeType { SANITIZE_TYPE_UNSPECIFIED = 0, SCRUB = 1, ANONYMIZE = 2, ANONYMIZE_LIMITED_REPEATABLE = 3, OBFUSCATE = 4, ENCRYPT = 5, DO_NOT_SANITIZE = 6 }
+	export enum EnterpriseCrmLoggingGwsSanitizeOptionsSanitizeType { SANITIZE_TYPE_UNSPECIFIED = 'SANITIZE_TYPE_UNSPECIFIED', SCRUB = 'SCRUB', ANONYMIZE = 'ANONYMIZE', ANONYMIZE_LIMITED_REPEATABLE = 'ANONYMIZE_LIMITED_REPEATABLE', OBFUSCATE = 'OBFUSCATE', ENCRYPT = 'ENCRYPT', DO_NOT_SANITIZE = 'DO_NOT_SANITIZE' }
 
-	export enum EnterpriseCrmEventbusProtoLogSettingsSeedPeriod { SEED_PERIOD_UNSPECIFIED = 0, DAY = 1, WEEK = 2, MONTH = 3 }
+	export enum EnterpriseCrmEventbusProtoLogSettingsSeedPeriod { SEED_PERIOD_UNSPECIFIED = 'SEED_PERIOD_UNSPECIFIED', DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH' }
 
-	export enum EnterpriseCrmEventbusProtoLogSettingsSeedScope { SEED_SCOPE_UNSPECIFIED = 0, EVENT_NAME = 1, TIME_PERIOD = 2, PARAM_NAME = 3 }
+	export enum EnterpriseCrmEventbusProtoLogSettingsSeedScope { SEED_SCOPE_UNSPECIFIED = 'SEED_SCOPE_UNSPECIFIED', EVENT_NAME = 'EVENT_NAME', TIME_PERIOD = 'TIME_PERIOD', PARAM_NAME = 'PARAM_NAME' }
 
 
 	/** Describes string and array limits when writing to logs. When a limit is exceeded the *shortener_type* describes how to shorten the field. next_id: 6 */
@@ -318,11 +318,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmLoggingGwsFieldLimitsLogAction { LOG_ACTION_UNSPECIFIED = 0, DONT_LOG = 1, LOG = 2 }
+	export enum EnterpriseCrmLoggingGwsFieldLimitsLogAction { LOG_ACTION_UNSPECIFIED = 'LOG_ACTION_UNSPECIFIED', DONT_LOG = 'DONT_LOG', LOG = 'LOG' }
 
-	export enum EnterpriseCrmLoggingGwsFieldLimitsShortenerType { SHORTENER_TYPE_UNSPECIFIED = 0, SHORTEN = 1, HASH = 2, SHORTEN_WITH_HASH = 3, SHORTEN_EMAIL = 4, SHORTEN_EMAIL_WITH_HASH = 5, SHORTEN_DOMAIN = 6 }
+	export enum EnterpriseCrmLoggingGwsFieldLimitsShortenerType { SHORTENER_TYPE_UNSPECIFIED = 'SHORTENER_TYPE_UNSPECIFIED', SHORTEN = 'SHORTEN', HASH = 'HASH', SHORTEN_WITH_HASH = 'SHORTEN_WITH_HASH', SHORTEN_EMAIL = 'SHORTEN_EMAIL', SHORTEN_EMAIL_WITH_HASH = 'SHORTEN_EMAIL_WITH_HASH', SHORTEN_DOMAIN = 'SHORTEN_DOMAIN' }
 
-	export enum EnterpriseCrmEventbusProtoAttributesSearchable { UNSPECIFIED = 0, YES = 1, NO = 2 }
+	export enum EnterpriseCrmEventbusProtoAttributesSearchable { UNSPECIFIED = 'UNSPECIFIED', YES = 'YES', NO = 'NO' }
 
 
 	/** List of error enums for alerts. */
@@ -342,7 +342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumListFilterType { DEFAULT_INCLUSIVE = 0, EXCLUSIVE = 1 }
+	export enum EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumListFilterType { DEFAULT_INCLUSIVE = 'DEFAULT_INCLUSIVE', EXCLUSIVE = 'EXCLUSIVE' }
 
 
 	/** The threshold value of the metric, above or below which the alert should be triggered. See EventAlertConfig or TaskAlertConfig for the different alert metric types in each case. For the *RATE metrics, one or both of these fields may be set. Zero is the default value and can be left at that. For *PERCENTILE_DURATION metrics, one or both of these fields may be set, and also, the duration threshold value should be specified in the threshold_duration_ms member below. For *AVERAGE_DURATION metrics, these fields should not be set at all. A different member, threshold_duration_ms, must be set in the EventAlertConfig or the TaskAlertConfig. */
@@ -377,7 +377,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoBaseFunctionFunctionName { UNSPECIFIED = 0, NOW_IN_MILLIS = 1, INT_LIST = 2, ENVIRONMENT = 3, GET_EXECUTION_ID = 4, GET_INTEGRATION_NAME = 5, GET_REGION = 6, GET_UUID = 7, GET_PROJECT_ID = 8 }
+	export enum EnterpriseCrmEventbusProtoBaseFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', NOW_IN_MILLIS = 'NOW_IN_MILLIS', INT_LIST = 'INT_LIST', ENVIRONMENT = 'ENVIRONMENT', GET_EXECUTION_ID = 'GET_EXECUTION_ID', GET_INTEGRATION_NAME = 'GET_INTEGRATION_NAME', GET_REGION = 'GET_REGION', GET_UUID = 'GET_UUID', GET_PROJECT_ID = 'GET_PROJECT_ID' }
 
 	export interface EnterpriseCrmEventbusProtoBaseValue {
 		baseFunction?: EnterpriseCrmEventbusProtoFunction;
@@ -449,7 +449,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoBooleanArrayFunctionFunctionName { UNSPECIFIED = 0, GET = 1, APPEND = 2, SIZE = 3, TO_SET = 4, APPEND_ALL = 5, TO_JSON = 6, SET = 7, REMOVE = 8, REMOVE_AT = 9, CONTAINS = 10, FOR_EACH = 11, FILTER = 12 }
+	export enum EnterpriseCrmEventbusProtoBooleanArrayFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', GET = 'GET', APPEND = 'APPEND', SIZE = 'SIZE', TO_SET = 'TO_SET', APPEND_ALL = 'APPEND_ALL', TO_JSON = 'TO_JSON', SET = 'SET', REMOVE = 'REMOVE', REMOVE_AT = 'REMOVE_AT', CONTAINS = 'CONTAINS', FOR_EACH = 'FOR_EACH', FILTER = 'FILTER' }
 
 	export interface EnterpriseCrmEventbusProtoBooleanFunction {
 		functionName?: EnterpriseCrmEventbusProtoBooleanFunctionFunctionName | null;
@@ -464,7 +464,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoBooleanFunctionFunctionName { UNSPECIFIED = 0, TO_JSON = 1, NOT = 2, AND = 3, NAND = 4, OR = 5, XOR = 6, NOR = 7, XNOR = 8, TO_STRING = 9, EQUALS = 10 }
+	export enum EnterpriseCrmEventbusProtoBooleanFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', TO_JSON = 'TO_JSON', NOT = 'NOT', AND = 'AND', NAND = 'NAND', OR = 'OR', XOR = 'XOR', NOR = 'NOR', XNOR = 'XNOR', TO_STRING = 'TO_STRING', EQUALS = 'EQUALS' }
 
 	export interface EnterpriseCrmEventbusProtoDoubleArrayFunction {
 		functionName?: EnterpriseCrmEventbusProtoDoubleArrayFunctionFunctionName | null;
@@ -479,7 +479,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoDoubleArrayFunctionFunctionName { UNSPECIFIED = 0, GET = 1, APPEND = 2, SIZE = 3, SUM = 4, AVG = 5, MAX = 6, MIN = 7, TO_SET = 8, APPEND_ALL = 9, TO_JSON = 10, SET = 11, REMOVE = 12, REMOVE_AT = 13, CONTAINS = 14, FOR_EACH = 15, FILTER = 16 }
+	export enum EnterpriseCrmEventbusProtoDoubleArrayFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', GET = 'GET', APPEND = 'APPEND', SIZE = 'SIZE', SUM = 'SUM', AVG = 'AVG', MAX = 'MAX', MIN = 'MIN', TO_SET = 'TO_SET', APPEND_ALL = 'APPEND_ALL', TO_JSON = 'TO_JSON', SET = 'SET', REMOVE = 'REMOVE', REMOVE_AT = 'REMOVE_AT', CONTAINS = 'CONTAINS', FOR_EACH = 'FOR_EACH', FILTER = 'FILTER' }
 
 	export interface EnterpriseCrmEventbusProtoDoubleFunction {
 		functionName?: EnterpriseCrmEventbusProtoDoubleFunctionFunctionName | null;
@@ -494,7 +494,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoDoubleFunctionFunctionName { UNSPECIFIED = 0, TO_JSON = 1, TO_STRING = 2, ADD = 3, SUBTRACT = 4, MULTIPLY = 5, DIVIDE = 6, EXPONENT = 7, ROUND = 8, FLOOR = 9, CEIL = 10, GREATER_THAN = 11, LESS_THAN = 12, EQUALS = 13, GREATER_THAN_EQUALS = 14, LESS_THAN_EQUALS = 15, MOD = 16 }
+	export enum EnterpriseCrmEventbusProtoDoubleFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', TO_JSON = 'TO_JSON', TO_STRING = 'TO_STRING', ADD = 'ADD', SUBTRACT = 'SUBTRACT', MULTIPLY = 'MULTIPLY', DIVIDE = 'DIVIDE', EXPONENT = 'EXPONENT', ROUND = 'ROUND', FLOOR = 'FLOOR', CEIL = 'CEIL', GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN', EQUALS = 'EQUALS', GREATER_THAN_EQUALS = 'GREATER_THAN_EQUALS', LESS_THAN_EQUALS = 'LESS_THAN_EQUALS', MOD = 'MOD' }
 
 	export interface EnterpriseCrmEventbusProtoIntArrayFunction {
 		functionName?: EnterpriseCrmEventbusProtoDoubleArrayFunctionFunctionName | null;
@@ -522,7 +522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoIntFunctionFunctionName { UNSPECIFIED = 0, ADD = 1, SUBTRACT = 2, MULTIPLY = 3, DIVIDE = 4, EXPONENT = 5, GREATER_THAN_EQUAL_TO = 6, GREATER_THAN = 7, LESS_THAN_EQUAL_TO = 8, LESS_THAN = 9, TO_DOUBLE = 10, TO_STRING = 11, EQUALS = 12, TO_JSON = 13, MOD = 14, EPOCH_TO_HUMAN_READABLE_TIME = 15 }
+	export enum EnterpriseCrmEventbusProtoIntFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', ADD = 'ADD', SUBTRACT = 'SUBTRACT', MULTIPLY = 'MULTIPLY', DIVIDE = 'DIVIDE', EXPONENT = 'EXPONENT', GREATER_THAN_EQUAL_TO = 'GREATER_THAN_EQUAL_TO', GREATER_THAN = 'GREATER_THAN', LESS_THAN_EQUAL_TO = 'LESS_THAN_EQUAL_TO', LESS_THAN = 'LESS_THAN', TO_DOUBLE = 'TO_DOUBLE', TO_STRING = 'TO_STRING', EQUALS = 'EQUALS', TO_JSON = 'TO_JSON', MOD = 'MOD', EPOCH_TO_HUMAN_READABLE_TIME = 'EPOCH_TO_HUMAN_READABLE_TIME' }
 
 	export interface EnterpriseCrmEventbusProtoJsonFunction {
 		functionName?: EnterpriseCrmEventbusProtoJsonFunctionFunctionName | null;
@@ -537,7 +537,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoJsonFunctionFunctionName { UNSPECIFIED = 0, GET_PROPERTY = 1, GET_ELEMENT = 2, APPEND_ELEMENT = 3, SIZE = 4, SET_PROPERTY = 5, FLATTEN = 6, FLATTEN_ONCE = 7, MERGE = 8, TO_STRING = 9, TO_INT = 10, TO_DOUBLE = 11, TO_BOOLEAN = 12, TO_PROTO = 13, TO_STRING_ARRAY = 14, TO_INT_ARRAY = 15, TO_DOUBLE_ARRAY = 16, TO_PROTO_ARRAY = 17, TO_BOOLEAN_ARRAY = 18, REMOVE_PROPERTY = 19, RESOLVE_TEMPLATE = 20, EQUALS = 21, FOR_EACH = 22, FILTER_ELEMENTS = 23 }
+	export enum EnterpriseCrmEventbusProtoJsonFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', GET_PROPERTY = 'GET_PROPERTY', GET_ELEMENT = 'GET_ELEMENT', APPEND_ELEMENT = 'APPEND_ELEMENT', SIZE = 'SIZE', SET_PROPERTY = 'SET_PROPERTY', FLATTEN = 'FLATTEN', FLATTEN_ONCE = 'FLATTEN_ONCE', MERGE = 'MERGE', TO_STRING = 'TO_STRING', TO_INT = 'TO_INT', TO_DOUBLE = 'TO_DOUBLE', TO_BOOLEAN = 'TO_BOOLEAN', TO_PROTO = 'TO_PROTO', TO_STRING_ARRAY = 'TO_STRING_ARRAY', TO_INT_ARRAY = 'TO_INT_ARRAY', TO_DOUBLE_ARRAY = 'TO_DOUBLE_ARRAY', TO_PROTO_ARRAY = 'TO_PROTO_ARRAY', TO_BOOLEAN_ARRAY = 'TO_BOOLEAN_ARRAY', REMOVE_PROPERTY = 'REMOVE_PROPERTY', RESOLVE_TEMPLATE = 'RESOLVE_TEMPLATE', EQUALS = 'EQUALS', FOR_EACH = 'FOR_EACH', FILTER_ELEMENTS = 'FILTER_ELEMENTS' }
 
 	export interface EnterpriseCrmEventbusProtoProtoArrayFunction {
 		functionName?: EnterpriseCrmEventbusProtoBooleanArrayFunctionFunctionName | null;
@@ -565,7 +565,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoProtoFunctionFunctionName { UNSPECIFIED = 0, GET_STRING_SUBFIELD = 1, GET_INT_SUBFIELD = 2, GET_DOUBLE_SUBFIELD = 3, GET_BOOLEAN_SUBFIELD = 4, GET_STRING_ARRAY_SUBFIELD = 5, GET_INT_ARRAY_SUBFIELD = 6, GET_DOUBLE_ARRAY_SUBFIELD = 7, GET_BOOLEAN_ARRAY_SUBFIELD = 8, GET_PROTO_ARRAY_SUBFIELD = 9, GET_PROTO_SUBFIELD = 10, TO_JSON = 11, GET_BYTES_SUBFIELD_AS_UTF_8_STRING = 12, GET_BYTES_SUBFIELD_AS_PROTO = 13, EQUALS = 14 }
+	export enum EnterpriseCrmEventbusProtoProtoFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', GET_STRING_SUBFIELD = 'GET_STRING_SUBFIELD', GET_INT_SUBFIELD = 'GET_INT_SUBFIELD', GET_DOUBLE_SUBFIELD = 'GET_DOUBLE_SUBFIELD', GET_BOOLEAN_SUBFIELD = 'GET_BOOLEAN_SUBFIELD', GET_STRING_ARRAY_SUBFIELD = 'GET_STRING_ARRAY_SUBFIELD', GET_INT_ARRAY_SUBFIELD = 'GET_INT_ARRAY_SUBFIELD', GET_DOUBLE_ARRAY_SUBFIELD = 'GET_DOUBLE_ARRAY_SUBFIELD', GET_BOOLEAN_ARRAY_SUBFIELD = 'GET_BOOLEAN_ARRAY_SUBFIELD', GET_PROTO_ARRAY_SUBFIELD = 'GET_PROTO_ARRAY_SUBFIELD', GET_PROTO_SUBFIELD = 'GET_PROTO_SUBFIELD', TO_JSON = 'TO_JSON', GET_BYTES_SUBFIELD_AS_UTF_8_STRING = 'GET_BYTES_SUBFIELD_AS_UTF_8_STRING', GET_BYTES_SUBFIELD_AS_PROTO = 'GET_BYTES_SUBFIELD_AS_PROTO', EQUALS = 'EQUALS' }
 
 	export interface EnterpriseCrmEventbusProtoStringArrayFunction {
 		functionName?: EnterpriseCrmEventbusProtoBooleanArrayFunctionFunctionName | null;
@@ -593,7 +593,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoStringFunctionFunctionName { UNSPECIFIED = 0, CONCAT = 1, TO_UPPERCASE = 2, TO_LOWERCASE = 3, CONTAINS = 4, SPLIT = 5, LENGTH = 6, EQUALS = 7, TO_INT = 8, TO_DOUBLE = 9, TO_BOOLEAN = 10, TO_BASE_64 = 11, TO_JSON = 12, EQUALS_IGNORE_CASE = 13, REPLACE_ALL = 14, SUBSTRING = 15, RESOLVE_TEMPLATE = 16, DECODE_BASE64_STRING = 17 }
+	export enum EnterpriseCrmEventbusProtoStringFunctionFunctionName { UNSPECIFIED = 'UNSPECIFIED', CONCAT = 'CONCAT', TO_UPPERCASE = 'TO_UPPERCASE', TO_LOWERCASE = 'TO_LOWERCASE', CONTAINS = 'CONTAINS', SPLIT = 'SPLIT', LENGTH = 'LENGTH', EQUALS = 'EQUALS', TO_INT = 'TO_INT', TO_DOUBLE = 'TO_DOUBLE', TO_BOOLEAN = 'TO_BOOLEAN', TO_BASE_64 = 'TO_BASE_64', TO_JSON = 'TO_JSON', EQUALS_IGNORE_CASE = 'EQUALS_IGNORE_CASE', REPLACE_ALL = 'REPLACE_ALL', SUBSTRING = 'SUBSTRING', RESOLVE_TEMPLATE = 'RESOLVE_TEMPLATE', DECODE_BASE64_STRING = 'DECODE_BASE64_STRING' }
 
 	export interface EnterpriseCrmEventbusProtoTransformExpression {
 		initialValue?: EnterpriseCrmEventbusProtoBaseValue;
@@ -892,7 +892,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoConditionOperator { UNSET = 0, EQUALS = 1, CONTAINS = 2, LESS_THAN = 3, GREATER_THAN = 4, EXISTS = 5, DOES_NOT_EXIST = 6, IS_EMPTY = 7, IS_NOT_EMPTY = 8 }
+	export enum EnterpriseCrmEventbusProtoConditionOperator { UNSET = 'UNSET', EQUALS = 'EQUALS', CONTAINS = 'CONTAINS', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN', EXISTS = 'EXISTS', DOES_NOT_EXIST = 'DOES_NOT_EXIST', IS_EMPTY = 'IS_EMPTY', IS_NOT_EMPTY = 'IS_NOT_EMPTY' }
 
 
 	/** Contains the combined condition calculation results. */
@@ -978,7 +978,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoConnectorsGenericConnectorTaskConfigOperation { OPERATION_UNSPECIFIED = 0, EXECUTE_ACTION = 1, LIST_ENTITIES = 2, GET_ENTITY = 3, CREATE_ENTITY = 4, UPDATE_ENTITY = 5, DELETE_ENTITY = 6 }
+	export enum EnterpriseCrmEventbusProtoConnectorsGenericConnectorTaskConfigOperation { OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED', EXECUTE_ACTION = 'EXECUTE_ACTION', LIST_ENTITIES = 'LIST_ENTITIES', GET_ENTITY = 'GET_ENTITY', CREATE_ENTITY = 'CREATE_ENTITY', UPDATE_ENTITY = 'UPDATE_ENTITY', DELETE_ENTITY = 'DELETE_ENTITY' }
 
 
 	/** Represents two-dimensional positions. */
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleInternalCloudCrmEventbusV3PostToQueueWithTriggerIdRequestPriority { UNSPCIFIED = 0, SHEDDABLE = 1, SHEDDABLE_PLUS = 2, CRITICAL = 3, CRITICAL_PLUS = 4 }
+	export enum GoogleInternalCloudCrmEventbusV3PostToQueueWithTriggerIdRequestPriority { UNSPCIFIED = 'UNSPCIFIED', SHEDDABLE = 'SHEDDABLE', SHEDDABLE_PLUS = 'SHEDDABLE_PLUS', CRITICAL = 'CRITICAL', CRITICAL_PLUS = 'CRITICAL_PLUS' }
 
 
 	/** An error, warning, or information message associated with a workflow. */
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoErrorDetailSeverity { SEVERITY_UNSPECIFIED = 0, ERROR = 1, WARN = 2, INFO = 3 }
+	export enum EnterpriseCrmEventbusProtoErrorDetailSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', ERROR = 'ERROR', WARN = 'WARN', INFO = 'INFO' }
 
 
 	/** LINT.IfChange This message is used for storing key value pair properties for each Event / Task in the EventBus. */
@@ -1465,9 +1465,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoTaskExecutionDetailsTaskExecutionState { UNSPECIFIED = 0, PENDING_EXECUTION = 1, IN_PROCESS = 2, SUCCEED = 3, FAILED = 4, FATAL = 5, RETRY_ON_HOLD = 6, SKIPPED = 7, CANCELED = 8, PENDING_ROLLBACK = 9, ROLLBACK_IN_PROCESS = 10, ROLLEDBACK = 11, SUSPENDED = 12 }
+	export enum EnterpriseCrmEventbusProtoTaskExecutionDetailsTaskExecutionState { UNSPECIFIED = 'UNSPECIFIED', PENDING_EXECUTION = 'PENDING_EXECUTION', IN_PROCESS = 'IN_PROCESS', SUCCEED = 'SUCCEED', FAILED = 'FAILED', FATAL = 'FATAL', RETRY_ON_HOLD = 'RETRY_ON_HOLD', SKIPPED = 'SKIPPED', CANCELED = 'CANCELED', PENDING_ROLLBACK = 'PENDING_ROLLBACK', ROLLBACK_IN_PROCESS = 'ROLLBACK_IN_PROCESS', ROLLEDBACK = 'ROLLEDBACK', SUSPENDED = 'SUSPENDED' }
 
-	export enum EnterpriseCrmEventbusProtoEventExecutionDetailsEventExecutionState { UNSPECIFIED = 0, ON_HOLD = 1, IN_PROCESS = 2, SUCCEEDED = 3, FAILED = 4, CANCELED = 5, RETRY_ON_HOLD = 6, SUSPENDED = 7 }
+	export enum EnterpriseCrmEventbusProtoEventExecutionDetailsEventExecutionState { UNSPECIFIED = 'UNSPECIFIED', ON_HOLD = 'ON_HOLD', IN_PROCESS = 'IN_PROCESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELED = 'CANCELED', RETRY_ON_HOLD = 'RETRY_ON_HOLD', SUSPENDED = 'SUSPENDED' }
 
 
 	/** Message that helps aggregate all sub-executions triggered by one execution and keeps track of child-parent relationships. */
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoExternalTrafficSource { SOURCE_UNSPECIFIED = 0, APIGEE = 1, SECURITY = 2 }
+	export enum EnterpriseCrmEventbusProtoExternalTrafficSource { SOURCE_UNSPECIFIED = 'SOURCE_UNSPECIFIED', APIGEE = 'APIGEE', SECURITY = 'SECURITY' }
 
 
 	/** Policy that defines the task retry logic and failure type. If no FailurePolicy is defined for a task, all its dependent tasks will not be executed (i.e, a `retry_strategy` of NONE will be applied). */
@@ -1576,7 +1576,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoFailurePolicyRetryStrategy { UNSPECIFIED = 0, IGNORE = 1, NONE = 2, FATAL = 3, FIXED_INTERVAL = 4, LINEAR_BACKOFF = 5, EXPONENTIAL_BACKOFF = 6, RESTART_WORKFLOW_WITH_BACKOFF = 7 }
+	export enum EnterpriseCrmEventbusProtoFailurePolicyRetryStrategy { UNSPECIFIED = 'UNSPECIFIED', IGNORE = 'IGNORE', NONE = 'NONE', FATAL = 'FATAL', FIXED_INTERVAL = 'FIXED_INTERVAL', LINEAR_BACKOFF = 'LINEAR_BACKOFF', EXPONENTIAL_BACKOFF = 'EXPONENTIAL_BACKOFF', RESTART_WORKFLOW_WITH_BACKOFF = 'RESTART_WORKFLOW_WITH_BACKOFF' }
 
 
 	/** Information about the value and type of the field. */
@@ -1624,9 +1624,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoFieldCardinality { UNSPECIFIED = 0, OPTIONAL = 1 }
+	export enum EnterpriseCrmEventbusProtoFieldCardinality { UNSPECIFIED = 'UNSPECIFIED', OPTIONAL = 'OPTIONAL' }
 
-	export enum EnterpriseCrmEventbusProtoFieldFieldType { DATA_TYPE_UNSPECIFIED = 0, STRING_VALUE = 1, INT_VALUE = 2, DOUBLE_VALUE = 3, BOOLEAN_VALUE = 4, PROTO_VALUE = 5, SERIALIZED_OBJECT_VALUE = 6, STRING_ARRAY = 7, INT_ARRAY = 8, DOUBLE_ARRAY = 9, PROTO_ARRAY = 10, PROTO_ENUM = 11, BOOLEAN_ARRAY = 12, PROTO_ENUM_ARRAY = 13, BYTES = 14, BYTES_ARRAY = 15, NON_SERIALIZABLE_OBJECT = 16, JSON_VALUE = 17 }
+	export enum EnterpriseCrmEventbusProtoFieldFieldType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', STRING_VALUE = 'STRING_VALUE', INT_VALUE = 'INT_VALUE', DOUBLE_VALUE = 'DOUBLE_VALUE', BOOLEAN_VALUE = 'BOOLEAN_VALUE', PROTO_VALUE = 'PROTO_VALUE', SERIALIZED_OBJECT_VALUE = 'SERIALIZED_OBJECT_VALUE', STRING_ARRAY = 'STRING_ARRAY', INT_ARRAY = 'INT_ARRAY', DOUBLE_ARRAY = 'DOUBLE_ARRAY', PROTO_ARRAY = 'PROTO_ARRAY', PROTO_ENUM = 'PROTO_ENUM', BOOLEAN_ARRAY = 'BOOLEAN_ARRAY', PROTO_ENUM_ARRAY = 'PROTO_ENUM_ARRAY', BYTES = 'BYTES', BYTES_ARRAY = 'BYTES_ARRAY', NON_SERIALIZABLE_OBJECT = 'NON_SERIALIZABLE_OBJECT', JSON_VALUE = 'JSON_VALUE' }
 
 
 	/** Field Mapping Config to map multiple output fields values from input fields values. */
@@ -1701,7 +1701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoLoopMetadataFailureLocation { UNKNOWN = 0, SUBWORKFLOW = 1, PARAM_OVERRIDING = 2, PARAM_AGGREGATING = 3, SETTING_ITERATION_ELEMENT = 4, GETTING_LIST_TO_ITERATE = 5, CONDITION_EVALUATION = 6, BUILDING_REQUEST = 7 }
+	export enum EnterpriseCrmEventbusProtoLoopMetadataFailureLocation { UNKNOWN = 'UNKNOWN', SUBWORKFLOW = 'SUBWORKFLOW', PARAM_OVERRIDING = 'PARAM_OVERRIDING', PARAM_AGGREGATING = 'PARAM_AGGREGATING', SETTING_ITERATION_ELEMENT = 'SETTING_ITERATION_ELEMENT', GETTING_LIST_TO_ITERATE = 'GETTING_LIST_TO_ITERATE', CONDITION_EVALUATION = 'CONDITION_EVALUATION', BUILDING_REQUEST = 'BUILDING_REQUEST' }
 
 
 	/** The task that is next in line to be executed, if the condition specified evaluated to true. */
@@ -1804,7 +1804,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoNodeIdentifierElementType { UNKNOWN_TYPE = 0, TASK_CONFIG = 1, TRIGGER_CONFIG = 2 }
+	export enum EnterpriseCrmEventbusProtoNodeIdentifierElementType { UNKNOWN_TYPE = 'UNKNOWN_TYPE', TASK_CONFIG = 'TASK_CONFIG', TRIGGER_CONFIG = 'TRIGGER_CONFIG' }
 
 	export interface EnterpriseCrmEventbusProtoNotification {
 		buganizerNotification?: EnterpriseCrmEventbusProtoBuganizerNotification;
@@ -1892,9 +1892,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoParamSpecEntryConfigInputDisplayOption { DEFAULT = 0, STRING_MULTI_LINE = 1, NUMBER_SLIDER = 2, BOOLEAN_TOGGLE = 3 }
+	export enum EnterpriseCrmEventbusProtoParamSpecEntryConfigInputDisplayOption { DEFAULT = 'DEFAULT', STRING_MULTI_LINE = 'STRING_MULTI_LINE', NUMBER_SLIDER = 'NUMBER_SLIDER', BOOLEAN_TOGGLE = 'BOOLEAN_TOGGLE' }
 
-	export enum EnterpriseCrmEventbusProtoParamSpecEntryConfigParameterNameOption { DEFAULT_NOT_PARAMETER_NAME = 0, IS_PARAMETER_NAME = 1, KEY_IS_PARAMETER_NAME = 2, VALUE_IS_PARAMETER_NAME = 3 }
+	export enum EnterpriseCrmEventbusProtoParamSpecEntryConfigParameterNameOption { DEFAULT_NOT_PARAMETER_NAME = 'DEFAULT_NOT_PARAMETER_NAME', IS_PARAMETER_NAME = 'IS_PARAMETER_NAME', KEY_IS_PARAMETER_NAME = 'KEY_IS_PARAMETER_NAME', VALUE_IS_PARAMETER_NAME = 'VALUE_IS_PARAMETER_NAME' }
 
 	export interface EnterpriseCrmEventbusProtoParamSpecEntryProtoDefinition {
 
@@ -2146,7 +2146,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoSuccessPolicyFinalState { UNSPECIFIED = 0, SUCCEEDED = 1, SUSPENDED = 2 }
+	export enum EnterpriseCrmEventbusProtoSuccessPolicyFinalState { UNSPECIFIED = 'UNSPECIFIED', SUCCEEDED = 'SUCCEEDED', SUSPENDED = 'SUSPENDED' }
 
 
 	/** LINT.IfChange */
@@ -2347,9 +2347,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoSuspensionResolutionInfoProduct { UNSPECIFIED_PRODUCT = 0, IP = 1, APIGEE = 2, SECURITY = 3 }
+	export enum EnterpriseCrmEventbusProtoSuspensionResolutionInfoProduct { UNSPECIFIED_PRODUCT = 'UNSPECIFIED_PRODUCT', IP = 'IP', APIGEE = 'APIGEE', SECURITY = 'SECURITY' }
 
-	export enum EnterpriseCrmEventbusProtoSuspensionResolutionInfoStatus { PENDING_UNSPECIFIED = 0, REJECTED = 1, LIFTED = 2, CANCELED = 3 }
+	export enum EnterpriseCrmEventbusProtoSuspensionResolutionInfoStatus { PENDING_UNSPECIFIED = 'PENDING_UNSPECIFIED', REJECTED = 'REJECTED', LIFTED = 'LIFTED', CANCELED = 'CANCELED' }
 
 
 	/** Message to be used to configure alerting in the {@code TaskConfig} protos for tasks in an event. */
@@ -2440,9 +2440,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoTaskAlertConfigMetricType { METRIC_TYPE_UNSPECIFIED = 0, TASK_ERROR_RATE = 1, TASK_WARNING_RATE = 2, TASK_RATE = 3, TASK_AVERAGE_DURATION = 4, TASK_PERCENTILE_DURATION = 5 }
+	export enum EnterpriseCrmEventbusProtoTaskAlertConfigMetricType { METRIC_TYPE_UNSPECIFIED = 'METRIC_TYPE_UNSPECIFIED', TASK_ERROR_RATE = 'TASK_ERROR_RATE', TASK_WARNING_RATE = 'TASK_WARNING_RATE', TASK_RATE = 'TASK_RATE', TASK_AVERAGE_DURATION = 'TASK_AVERAGE_DURATION', TASK_PERCENTILE_DURATION = 'TASK_PERCENTILE_DURATION' }
 
-	export enum EnterpriseCrmEventbusProtoTaskAlertConfigThresholdType { UNSPECIFIED_THRESHOLD_TYPE = 0, EXPECTED_MIN = 1, EXPECTED_MAX = 2 }
+	export enum EnterpriseCrmEventbusProtoTaskAlertConfigThresholdType { UNSPECIFIED_THRESHOLD_TYPE = 'UNSPECIFIED_THRESHOLD_TYPE', EXPECTED_MIN = 'EXPECTED_MIN', EXPECTED_MAX = 'EXPECTED_MAX' }
 
 
 	/** TaskMetadata are attributes that are associated to every common Task we have. */
@@ -2610,15 +2610,15 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoTaskMetadataCategory { UNSPECIFIED_CATEGORY = 0, CUSTOM = 1, FLOW_CONTROL = 2, DATA_MANIPULATION = 3, SCRIPTING = 4, CONNECTOR = 5, HIDDEN = 6, CLOUD_SYSTEMS = 7, CUSTOM_TASK_TEMPLATE = 8, TASK_RECOMMENDATIONS = 9 }
+	export enum EnterpriseCrmEventbusProtoTaskMetadataCategory { UNSPECIFIED_CATEGORY = 'UNSPECIFIED_CATEGORY', CUSTOM = 'CUSTOM', FLOW_CONTROL = 'FLOW_CONTROL', DATA_MANIPULATION = 'DATA_MANIPULATION', SCRIPTING = 'SCRIPTING', CONNECTOR = 'CONNECTOR', HIDDEN = 'HIDDEN', CLOUD_SYSTEMS = 'CLOUD_SYSTEMS', CUSTOM_TASK_TEMPLATE = 'CUSTOM_TASK_TEMPLATE', TASK_RECOMMENDATIONS = 'TASK_RECOMMENDATIONS' }
 
-	export enum EnterpriseCrmEventbusProtoTaskMetadataDefaultJsonValidationOption { UNSPECIFIED_JSON_VALIDATION_OPTION = 0, SKIP = 1, PRE_EXECUTION = 2, POST_EXECUTION = 3, PRE_POST_EXECUTION = 4 }
+	export enum EnterpriseCrmEventbusProtoTaskMetadataDefaultJsonValidationOption { UNSPECIFIED_JSON_VALIDATION_OPTION = 'UNSPECIFIED_JSON_VALIDATION_OPTION', SKIP = 'SKIP', PRE_EXECUTION = 'PRE_EXECUTION', POST_EXECUTION = 'POST_EXECUTION', PRE_POST_EXECUTION = 'PRE_POST_EXECUTION' }
 
-	export enum EnterpriseCrmEventbusProtoTaskMetadataExternalCategory { UNSPECIFIED_EXTERNAL_CATEGORY = 0, CORE = 1, CONNECTORS = 2, EXTERNAL_HTTP = 3, EXTERNAL_INTEGRATION_SERVICES = 4, EXTERNAL_CUSTOMER_ACTIONS = 5, EXTERNAL_FLOW_CONTROL = 6, EXTERNAL_WORKSPACE = 7, EXTERNAL_SECURITY = 8, EXTERNAL_DATABASES = 9, EXTERNAL_ANALYTICS = 10, EXTERNAL_BYOC = 11, EXTERNAL_BYOT = 12, EXTERNAL_ARTIFICIAL_INTELIGENCE = 13, EXTERNAL_DATA_MANIPULATION = 14 }
+	export enum EnterpriseCrmEventbusProtoTaskMetadataExternalCategory { UNSPECIFIED_EXTERNAL_CATEGORY = 'UNSPECIFIED_EXTERNAL_CATEGORY', CORE = 'CORE', CONNECTORS = 'CONNECTORS', EXTERNAL_HTTP = 'EXTERNAL_HTTP', EXTERNAL_INTEGRATION_SERVICES = 'EXTERNAL_INTEGRATION_SERVICES', EXTERNAL_CUSTOMER_ACTIONS = 'EXTERNAL_CUSTOMER_ACTIONS', EXTERNAL_FLOW_CONTROL = 'EXTERNAL_FLOW_CONTROL', EXTERNAL_WORKSPACE = 'EXTERNAL_WORKSPACE', EXTERNAL_SECURITY = 'EXTERNAL_SECURITY', EXTERNAL_DATABASES = 'EXTERNAL_DATABASES', EXTERNAL_ANALYTICS = 'EXTERNAL_ANALYTICS', EXTERNAL_BYOC = 'EXTERNAL_BYOC', EXTERNAL_BYOT = 'EXTERNAL_BYOT', EXTERNAL_ARTIFICIAL_INTELIGENCE = 'EXTERNAL_ARTIFICIAL_INTELIGENCE', EXTERNAL_DATA_MANIPULATION = 'EXTERNAL_DATA_MANIPULATION' }
 
-	export enum EnterpriseCrmEventbusProtoTaskMetadataStatus { UNSPECIFIED_STATUS = 0, DEFAULT_INACTIVE = 1, ACTIVE = 2 }
+	export enum EnterpriseCrmEventbusProtoTaskMetadataStatus { UNSPECIFIED_STATUS = 'UNSPECIFIED_STATUS', DEFAULT_INACTIVE = 'DEFAULT_INACTIVE', ACTIVE = 'ACTIVE' }
 
-	export enum EnterpriseCrmEventbusProtoTaskMetadataSystem { UNSPECIFIED_SYSTEM = 0, GENERIC = 1, BUGANIZER = 2, SALESFORCE = 3, CLOUD_SQL = 4, PLX = 5, SHEETS = 6, GOOGLE_GROUPS = 7, EMAIL = 8, SPANNER = 9, DATA_BRIDGE = 10 }
+	export enum EnterpriseCrmEventbusProtoTaskMetadataSystem { UNSPECIFIED_SYSTEM = 'UNSPECIFIED_SYSTEM', GENERIC = 'GENERIC', BUGANIZER = 'BUGANIZER', SALESFORCE = 'SALESFORCE', CLOUD_SQL = 'CLOUD_SQL', PLX = 'PLX', SHEETS = 'SHEETS', GOOGLE_GROUPS = 'GOOGLE_GROUPS', EMAIL = 'EMAIL', SPANNER = 'SPANNER', DATA_BRIDGE = 'DATA_BRIDGE' }
 
 
 	/** Task authors would use this type to configure the UI for a particular task by specifying what UI config modules should be included to compose the UI. Learn more about config module framework: */
@@ -2658,7 +2658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoTaskUiModuleConfigModuleId { UNSPECIFIED_TASK_MODULE = 0, LABEL = 1, ERROR_HANDLING = 2, TASK_PARAM_TABLE = 3, TASK_PARAM_FORM = 4, PRECONDITION = 5, SCRIPT_EDITOR = 6, RPC = 7, TASK_SUMMARY = 8, SUSPENSION = 9, RPC_TYPED = 10, SUB_WORKFLOW = 11, APPS_SCRIPT_NAVIGATOR = 12, SUB_WORKFLOW_FOR_EACH_LOOP = 13, FIELD_MAPPING = 14, README = 15, REST_CALLER = 16, SUB_WORKFLOW_SCATTER_GATHER = 17, CLOUD_SQL = 18, GENERIC_CONNECTOR_TASK = 19 }
+	export enum EnterpriseCrmEventbusProtoTaskUiModuleConfigModuleId { UNSPECIFIED_TASK_MODULE = 'UNSPECIFIED_TASK_MODULE', LABEL = 'LABEL', ERROR_HANDLING = 'ERROR_HANDLING', TASK_PARAM_TABLE = 'TASK_PARAM_TABLE', TASK_PARAM_FORM = 'TASK_PARAM_FORM', PRECONDITION = 'PRECONDITION', SCRIPT_EDITOR = 'SCRIPT_EDITOR', RPC = 'RPC', TASK_SUMMARY = 'TASK_SUMMARY', SUSPENSION = 'SUSPENSION', RPC_TYPED = 'RPC_TYPED', SUB_WORKFLOW = 'SUB_WORKFLOW', APPS_SCRIPT_NAVIGATOR = 'APPS_SCRIPT_NAVIGATOR', SUB_WORKFLOW_FOR_EACH_LOOP = 'SUB_WORKFLOW_FOR_EACH_LOOP', FIELD_MAPPING = 'FIELD_MAPPING', README = 'README', REST_CALLER = 'REST_CALLER', SUB_WORKFLOW_SCATTER_GATHER = 'SUB_WORKFLOW_SCATTER_GATHER', CLOUD_SQL = 'CLOUD_SQL', GENERIC_CONNECTOR_TASK = 'GENERIC_CONNECTOR_TASK' }
 
 	export interface EnterpriseCrmEventbusProtoTeardown {
 
@@ -2829,7 +2829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusProtoWorkflowAlertConfigMetricType { METRIC_TYPE_UNSPECIFIED = 0, EVENT_ERROR_RATE = 1, EVENT_WARNING_RATE = 2, TASK_ERROR_RATE = 3, TASK_WARNING_RATE = 4, TASK_RATE = 5, EVENT_RATE = 6, EVENT_AVERAGE_DURATION = 7, EVENT_PERCENTILE_DURATION = 8, TASK_AVERAGE_DURATION = 9, TASK_PERCENTILE_DURATION = 10 }
+	export enum EnterpriseCrmEventbusProtoWorkflowAlertConfigMetricType { METRIC_TYPE_UNSPECIFIED = 'METRIC_TYPE_UNSPECIFIED', EVENT_ERROR_RATE = 'EVENT_ERROR_RATE', EVENT_WARNING_RATE = 'EVENT_WARNING_RATE', TASK_ERROR_RATE = 'TASK_ERROR_RATE', TASK_WARNING_RATE = 'TASK_WARNING_RATE', TASK_RATE = 'TASK_RATE', EVENT_RATE = 'EVENT_RATE', EVENT_AVERAGE_DURATION = 'EVENT_AVERAGE_DURATION', EVENT_PERCENTILE_DURATION = 'EVENT_PERCENTILE_DURATION', TASK_AVERAGE_DURATION = 'TASK_AVERAGE_DURATION', TASK_PERCENTILE_DURATION = 'TASK_PERCENTILE_DURATION' }
 
 
 	/** Stats for the requested dimensions: QPS, duration, and error/warning rate */
@@ -2922,7 +2922,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmEventbusStatsDimensionsRetryAttempt { UNSPECIFIED = 0, FINAL = 1, RETRYABLE = 2, CANCELED = 3 }
+	export enum EnterpriseCrmEventbusStatsDimensionsRetryAttempt { UNSPECIFIED = 'UNSPECIFIED', FINAL = 'FINAL', RETRYABLE = 'RETRYABLE', CANCELED = 'CANCELED' }
 
 	export interface EnterpriseCrmFrontendsEventbusProtoBooleanParameterArray {
 		booleanValues?: Array<boolean>;
@@ -3319,7 +3319,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmFrontendsEventbusProtoEventExecutionInfoPostMethod { UNSPECIFIED = 0, POST = 1, POST_TO_QUEUE = 2, SCHEDULE = 3, POST_BY_EVENT_CONFIG_ID = 4, POST_WITH_EVENT_DETAILS = 5 }
+	export enum EnterpriseCrmFrontendsEventbusProtoEventExecutionInfoPostMethod { UNSPECIFIED = 'UNSPECIFIED', POST = 'POST', POST_TO_QUEUE = 'POST_TO_QUEUE', SCHEDULE = 'SCHEDULE', POST_BY_EVENT_CONFIG_ID = 'POST_BY_EVENT_CONFIG_ID', POST_WITH_EVENT_DETAILS = 'POST_WITH_EVENT_DETAILS' }
 
 
 	/** Key-value pair of EventBus task parameters. Next id: 13 */
@@ -3674,9 +3674,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmFrontendsEventbusProtoTaskConfigExternalTaskType { EXTERNAL_TASK_TYPE_UNSPECIFIED = 0, NORMAL_TASK = 1, ERROR_TASK = 2 }
+	export enum EnterpriseCrmFrontendsEventbusProtoTaskConfigExternalTaskType { EXTERNAL_TASK_TYPE_UNSPECIFIED = 'EXTERNAL_TASK_TYPE_UNSPECIFIED', NORMAL_TASK = 'NORMAL_TASK', ERROR_TASK = 'ERROR_TASK' }
 
-	export enum EnterpriseCrmFrontendsEventbusProtoTaskConfigNextTasksExecutionPolicy { UNSPECIFIED = 0, RUN_ALL_MATCH = 1, RUN_FIRST_MATCH = 2 }
+	export enum EnterpriseCrmFrontendsEventbusProtoTaskConfigNextTasksExecutionPolicy { UNSPECIFIED = 'UNSPECIFIED', RUN_ALL_MATCH = 'RUN_ALL_MATCH', RUN_FIRST_MATCH = 'RUN_FIRST_MATCH' }
 
 
 	/** Contains a task's metadata and associated information. Next available id: 7 */
@@ -3716,9 +3716,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmFrontendsEventbusProtoTaskEntityTaskType { TASK = 0, ASIS_TEMPLATE = 1, IO_TEMPLATE = 2 }
+	export enum EnterpriseCrmFrontendsEventbusProtoTaskEntityTaskType { TASK = 'TASK', ASIS_TEMPLATE = 'ASIS_TEMPLATE', IO_TEMPLATE = 'IO_TEMPLATE' }
 
-	export enum EnterpriseCrmFrontendsEventbusProtoTaskConfigTaskExecutionStrategy { WHEN_ALL_SUCCEED = 0, WHEN_ANY_SUCCEED = 1, WHEN_ALL_TASKS_AND_CONDITIONS_SUCCEED = 2 }
+	export enum EnterpriseCrmFrontendsEventbusProtoTaskConfigTaskExecutionStrategy { WHEN_ALL_SUCCEED = 'WHEN_ALL_SUCCEED', WHEN_ANY_SUCCEED = 'WHEN_ANY_SUCCEED', WHEN_ALL_TASKS_AND_CONDITIONS_SUCCEED = 'WHEN_ALL_TASKS_AND_CONDITIONS_SUCCEED' }
 
 
 	/** Configuration detail of a trigger. Next available id: 20 */
@@ -3816,7 +3816,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmFrontendsEventbusProtoTriggerConfigTriggerType { UNKNOWN = 0, CLOUD_PUBSUB = 1, GOOPS = 2, SFDC_SYNC = 3, CRON = 4, API = 5, MANIFOLD_TRIGGER = 6, DATALAYER_DATA_CHANGE = 7, SFDC_CHANNEL = 8, CLOUD_PUBSUB_EXTERNAL = 9, SFDC_CDC_CHANNEL = 10, SFDC_PLATFORM_EVENTS_CHANNEL = 11, CLOUD_SCHEDULER = 12, INTEGRATION_CONNECTOR_TRIGGER = 13 }
+	export enum EnterpriseCrmFrontendsEventbusProtoTriggerConfigTriggerType { UNKNOWN = 'UNKNOWN', CLOUD_PUBSUB = 'CLOUD_PUBSUB', GOOPS = 'GOOPS', SFDC_SYNC = 'SFDC_SYNC', CRON = 'CRON', API = 'API', MANIFOLD_TRIGGER = 'MANIFOLD_TRIGGER', DATALAYER_DATA_CHANGE = 'DATALAYER_DATA_CHANGE', SFDC_CHANNEL = 'SFDC_CHANNEL', CLOUD_PUBSUB_EXTERNAL = 'CLOUD_PUBSUB_EXTERNAL', SFDC_CDC_CHANNEL = 'SFDC_CDC_CHANNEL', SFDC_PLATFORM_EVENTS_CHANNEL = 'SFDC_PLATFORM_EVENTS_CHANNEL', CLOUD_SCHEDULER = 'CLOUD_SCHEDULER', INTEGRATION_CONNECTOR_TRIGGER = 'INTEGRATION_CONNECTOR_TRIGGER' }
 
 	export interface EnterpriseCrmFrontendsEventbusProtoWorkflowParameterEntry {
 
@@ -3899,7 +3899,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnterpriseCrmFrontendsEventbusProtoWorkflowParameterEntryInOutType { IN_OUT_TYPE_UNSPECIFIED = 0, IN = 1, OUT = 2, IN_OUT = 3 }
+	export enum EnterpriseCrmFrontendsEventbusProtoWorkflowParameterEntryInOutType { IN_OUT_TYPE_UNSPECIFIED = 'IN_OUT_TYPE_UNSPECIFIED', IN = 'IN', OUT = 'OUT', IN_OUT = 'IN_OUT' }
 
 
 	/** LINT.IfChange This is the frontend version of WorkflowParameters. It's exactly like the backend version except that instead of flattening protobuf parameters and treating every field and subfield of a protobuf parameter as a separate parameter, the fields/subfields of a protobuf parameter will be nested as "children" (see 'children' field below) parameters of the parent parameter. Please refer to enterprise/crm/eventbus/proto/workflow_parameters.proto for more information about WorkflowParameters. */
@@ -4040,7 +4040,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudConnectorsV1EncryptionKeyType { TYPE_UNSPECIFIED = 0, GOOGLE_MANAGED = 1, CUSTOMER_MANAGED = 2 }
+	export enum GoogleCloudConnectorsV1EncryptionKeyType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GOOGLE_MANAGED = 'GOOGLE_MANAGED', CUSTOMER_MANAGED = 'CUSTOMER_MANAGED' }
 
 
 	/** Secret provides a reference to entries in Secret Manager. */
@@ -4063,7 +4063,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudConnectorsV1AuthConfigAuthType { AUTH_TYPE_UNSPECIFIED = 0, USER_PASSWORD = 1, OAUTH2_JWT_BEARER = 2, OAUTH2_CLIENT_CREDENTIALS = 3, SSH_PUBLIC_KEY = 4, OAUTH2_AUTH_CODE_FLOW = 5 }
+	export enum GoogleCloudConnectorsV1AuthConfigAuthType { AUTH_TYPE_UNSPECIFIED = 'AUTH_TYPE_UNSPECIFIED', USER_PASSWORD = 'USER_PASSWORD', OAUTH2_JWT_BEARER = 'OAUTH2_JWT_BEARER', OAUTH2_CLIENT_CREDENTIALS = 'OAUTH2_CLIENT_CREDENTIALS', SSH_PUBLIC_KEY = 'SSH_PUBLIC_KEY', OAUTH2_AUTH_CODE_FLOW = 'OAUTH2_AUTH_CODE_FLOW' }
 
 
 	/** Parameters to support Oauth 2.0 Auth Code Grant Authentication. See https://www.rfc-editor.org/rfc/rfc6749#section-1.3.1 for more details. */
@@ -4400,7 +4400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudConnectorsV1ConnectionConnectorVersionLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 0, PREVIEW = 1, GA = 2, DEPRECATED = 3, PRIVATE_PREVIEW = 4 }
+	export enum GoogleCloudConnectorsV1ConnectionConnectorVersionLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 'LAUNCH_STAGE_UNSPECIFIED', PREVIEW = 'PREVIEW', GA = 'GA', DEPRECATED = 'DEPRECATED', PRIVATE_PREVIEW = 'PRIVATE_PREVIEW' }
 
 
 	/** Define the Connectors target endpoint. */
@@ -4598,11 +4598,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudConnectorsV1SslConfigClientCertType { CERT_TYPE_UNSPECIFIED = 0, PEM = 1 }
+	export enum GoogleCloudConnectorsV1SslConfigClientCertType { CERT_TYPE_UNSPECIFIED = 'CERT_TYPE_UNSPECIFIED', PEM = 'PEM' }
 
-	export enum GoogleCloudConnectorsV1SslConfigTrustModel { PUBLIC = 0, PRIVATE = 1, INSECURE = 2 }
+	export enum GoogleCloudConnectorsV1SslConfigTrustModel { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE', INSECURE = 'INSECURE' }
 
-	export enum GoogleCloudConnectorsV1SslConfigType { SSL_TYPE_UNSPECIFIED = 0, TLS = 1, MTLS = 2 }
+	export enum GoogleCloudConnectorsV1SslConfigType { SSL_TYPE_UNSPECIFIED = 'SSL_TYPE_UNSPECIFIED', TLS = 'TLS', MTLS = 'MTLS' }
 
 
 	/** ConnectionStatus indicates the state of the connection. */
@@ -4639,9 +4639,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudConnectorsV1ConnectionStatusState { STATE_UNSPECIFIED = 0, CREATING = 1, ACTIVE = 2, INACTIVE = 3, DELETING = 4, UPDATING = 5, ERROR = 6, AUTHORIZATION_REQUIRED = 7 }
+	export enum GoogleCloudConnectorsV1ConnectionStatusState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATING = 'CREATING', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DELETING = 'DELETING', UPDATING = 'UPDATING', ERROR = 'ERROR', AUTHORIZATION_REQUIRED = 'AUTHORIZATION_REQUIRED' }
 
-	export enum GoogleCloudConnectorsV1ConnectionSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 0, PAY_G = 1, PAID = 2 }
+	export enum GoogleCloudConnectorsV1ConnectionSubscriptionType { SUBSCRIPTION_TYPE_UNSPECIFIED = 'SUBSCRIPTION_TYPE_UNSPECIFIED', PAY_G = 'PAY_G', PAID = 'PAID' }
 
 
 	/** The access token represents the authorization of a specific application to access specific parts of a user’s data. */
@@ -4845,7 +4845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaAuthConfigCredentialType { CREDENTIAL_TYPE_UNSPECIFIED = 0, USERNAME_AND_PASSWORD = 1, API_KEY = 2, OAUTH2_AUTHORIZATION_CODE = 3, OAUTH2_IMPLICIT = 4, OAUTH2_CLIENT_CREDENTIALS = 5, OAUTH2_RESOURCE_OWNER_CREDENTIALS = 6, JWT = 7, AUTH_TOKEN = 8, SERVICE_ACCOUNT = 9, CLIENT_CERTIFICATE_ONLY = 10, OIDC_TOKEN = 11 }
+	export enum GoogleCloudIntegrationsV1alphaAuthConfigCredentialType { CREDENTIAL_TYPE_UNSPECIFIED = 'CREDENTIAL_TYPE_UNSPECIFIED', USERNAME_AND_PASSWORD = 'USERNAME_AND_PASSWORD', API_KEY = 'API_KEY', OAUTH2_AUTHORIZATION_CODE = 'OAUTH2_AUTHORIZATION_CODE', OAUTH2_IMPLICIT = 'OAUTH2_IMPLICIT', OAUTH2_CLIENT_CREDENTIALS = 'OAUTH2_CLIENT_CREDENTIALS', OAUTH2_RESOURCE_OWNER_CREDENTIALS = 'OAUTH2_RESOURCE_OWNER_CREDENTIALS', JWT = 'JWT', AUTH_TOKEN = 'AUTH_TOKEN', SERVICE_ACCOUNT = 'SERVICE_ACCOUNT', CLIENT_CERTIFICATE_ONLY = 'CLIENT_CERTIFICATE_ONLY', OIDC_TOKEN = 'OIDC_TOKEN' }
 
 
 	/** Defines parameters for a single, canonical credential. */
@@ -5245,9 +5245,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaParameterMapKeyType { INTEGRATION_PARAMETER_DATA_TYPE_UNSPECIFIED = 0, STRING_VALUE = 1, INT_VALUE = 2, DOUBLE_VALUE = 3, BOOLEAN_VALUE = 4, STRING_ARRAY = 5, INT_ARRAY = 6, DOUBLE_ARRAY = 7, BOOLEAN_ARRAY = 8, JSON_VALUE = 9, PROTO_VALUE = 10, PROTO_ARRAY = 11 }
+	export enum GoogleCloudIntegrationsV1alphaParameterMapKeyType { INTEGRATION_PARAMETER_DATA_TYPE_UNSPECIFIED = 'INTEGRATION_PARAMETER_DATA_TYPE_UNSPECIFIED', STRING_VALUE = 'STRING_VALUE', INT_VALUE = 'INT_VALUE', DOUBLE_VALUE = 'DOUBLE_VALUE', BOOLEAN_VALUE = 'BOOLEAN_VALUE', STRING_ARRAY = 'STRING_ARRAY', INT_ARRAY = 'INT_ARRAY', DOUBLE_ARRAY = 'DOUBLE_ARRAY', BOOLEAN_ARRAY = 'BOOLEAN_ARRAY', JSON_VALUE = 'JSON_VALUE', PROTO_VALUE = 'PROTO_VALUE', PROTO_ARRAY = 'PROTO_ARRAY' }
 
-	export enum GoogleCloudIntegrationsV1alphaOAuth2AuthorizationCodeRequestType { REQUEST_TYPE_UNSPECIFIED = 0, REQUEST_BODY = 1, QUERY_PARAMETERS = 2, ENCODED_HEADER = 3 }
+	export enum GoogleCloudIntegrationsV1alphaOAuth2AuthorizationCodeRequestType { REQUEST_TYPE_UNSPECIFIED = 'REQUEST_TYPE_UNSPECIFIED', REQUEST_BODY = 'REQUEST_BODY', QUERY_PARAMETERS = 'QUERY_PARAMETERS', ENCODED_HEADER = 'ENCODED_HEADER' }
 
 
 	/** For client credentials grant, the client sends a POST request with grant_type as 'client_credentials' to the authorization server. The authorization server will respond with a JSON object containing the access token. */
@@ -5471,9 +5471,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaAuthConfigState { STATE_UNSPECIFIED = 0, VALID = 1, INVALID = 2, SOFT_DELETED = 3, EXPIRED = 4, UNAUTHORIZED = 5, UNSUPPORTED = 6 }
+	export enum GoogleCloudIntegrationsV1alphaAuthConfigState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', VALID = 'VALID', INVALID = 'INVALID', SOFT_DELETED = 'SOFT_DELETED', EXPIRED = 'EXPIRED', UNAUTHORIZED = 'UNAUTHORIZED', UNSUPPORTED = 'UNSUPPORTED' }
 
-	export enum GoogleCloudIntegrationsV1alphaAuthConfigVisibility { AUTH_CONFIG_VISIBILITY_UNSPECIFIED = 0, PRIVATE = 1, CLIENT_VISIBLE = 2 }
+	export enum GoogleCloudIntegrationsV1alphaAuthConfigVisibility { AUTH_CONFIG_VISIBILITY_UNSPECIFIED = 'AUTH_CONFIG_VISIBILITY_UNSPECIFIED', PRIVATE = 'PRIVATE', CLIENT_VISIBLE = 'CLIENT_VISIBLE' }
 
 
 	/** Request for cancelling an execution. */
@@ -5583,7 +5583,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaCertificateCertificateStatus { STATE_UNSPECIFIED = 0, ACTIVE = 1, EXPIRED = 2 }
+	export enum GoogleCloudIntegrationsV1alphaCertificateCertificateStatus { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', EXPIRED = 'EXPIRED' }
 
 
 	/** Contains client certificate information */
@@ -5696,9 +5696,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaClientConfigBillingType { BILLING_TYPE_UNSPECIFIED = 0, BILLING_TYPE_APIGEE_TRIALS = 1, BILLING_TYPE_APIGEE_SUBSCRIPTION = 2, BILLING_TYPE_PAYG = 3 }
+	export enum GoogleCloudIntegrationsV1alphaClientConfigBillingType { BILLING_TYPE_UNSPECIFIED = 'BILLING_TYPE_UNSPECIFIED', BILLING_TYPE_APIGEE_TRIALS = 'BILLING_TYPE_APIGEE_TRIALS', BILLING_TYPE_APIGEE_SUBSCRIPTION = 'BILLING_TYPE_APIGEE_SUBSCRIPTION', BILLING_TYPE_PAYG = 'BILLING_TYPE_PAYG' }
 
-	export enum GoogleCloudIntegrationsV1alphaClientConfigClientState { CLIENT_STATE_UNSPECIFIED = 0, CLIENT_STATE_ACTIVE = 1, CLIENT_STATE_DISABLED = 2 }
+	export enum GoogleCloudIntegrationsV1alphaClientConfigClientState { CLIENT_STATE_UNSPECIFIED = 'CLIENT_STATE_UNSPECIFIED', CLIENT_STATE_ACTIVE = 'CLIENT_STATE_ACTIVE', CLIENT_STATE_DISABLED = 'CLIENT_STATE_DISABLED' }
 
 
 	/** Configuration information for Client's Cloud KMS information */
@@ -6481,11 +6481,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaTaskExecutionDetailsTaskExecutionState { TASK_EXECUTION_STATE_UNSPECIFIED = 0, PENDING_EXECUTION = 1, IN_PROCESS = 2, SUCCEED = 3, FAILED = 4, FATAL = 5, RETRY_ON_HOLD = 6, SKIPPED = 7, CANCELLED = 8, PENDING_ROLLBACK = 9, ROLLBACK_IN_PROCESS = 10, ROLLEDBACK = 11, SUSPENDED = 12 }
+	export enum GoogleCloudIntegrationsV1alphaTaskExecutionDetailsTaskExecutionState { TASK_EXECUTION_STATE_UNSPECIFIED = 'TASK_EXECUTION_STATE_UNSPECIFIED', PENDING_EXECUTION = 'PENDING_EXECUTION', IN_PROCESS = 'IN_PROCESS', SUCCEED = 'SUCCEED', FAILED = 'FAILED', FATAL = 'FATAL', RETRY_ON_HOLD = 'RETRY_ON_HOLD', SKIPPED = 'SKIPPED', CANCELLED = 'CANCELLED', PENDING_ROLLBACK = 'PENDING_ROLLBACK', ROLLBACK_IN_PROCESS = 'ROLLBACK_IN_PROCESS', ROLLEDBACK = 'ROLLEDBACK', SUSPENDED = 'SUSPENDED' }
 
-	export enum GoogleCloudIntegrationsV1alphaExecutionDetailsState { STATE_UNSPECIFIED = 0, PENDING = 1, PROCESSING = 2, SUCCEEDED = 3, FAILED = 4, CANCELLED = 5, RETRY_ON_HOLD = 6, SUSPENDED = 7 }
+	export enum GoogleCloudIntegrationsV1alphaExecutionDetailsState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', PROCESSING = 'PROCESSING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', CANCELLED = 'CANCELLED', RETRY_ON_HOLD = 'RETRY_ON_HOLD', SUSPENDED = 'SUSPENDED' }
 
-	export enum GoogleCloudIntegrationsV1alphaExecutionExecutionMethod { EXECUTION_METHOD_UNSPECIFIED = 0, POST = 1, POST_TO_QUEUE = 2, SCHEDULE = 3 }
+	export enum GoogleCloudIntegrationsV1alphaExecutionExecutionMethod { EXECUTION_METHOD_UNSPECIFIED = 'EXECUTION_METHOD_UNSPECIFIED', POST = 'POST', POST_TO_QUEUE = 'POST_TO_QUEUE', SCHEDULE = 'SCHEDULE' }
 
 
 	/** Policy that defines the task retry logic and failure type. If no FailurePolicy is defined for a task, all its dependent tasks will not be executed (i.e, a `retry_strategy` of NONE will be applied). */
@@ -6522,7 +6522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaFailurePolicyRetryStrategy { RETRY_STRATEGY_UNSPECIFIED = 0, IGNORE = 1, NONE = 2, FATAL = 3, FIXED_INTERVAL = 4, LINEAR_BACKOFF = 5, EXPONENTIAL_BACKOFF = 6, RESTART_INTEGRATION_WITH_BACKOFF = 7 }
+	export enum GoogleCloudIntegrationsV1alphaFailurePolicyRetryStrategy { RETRY_STRATEGY_UNSPECIFIED = 'RETRY_STRATEGY_UNSPECIFIED', IGNORE = 'IGNORE', NONE = 'NONE', FATAL = 'FATAL', FIXED_INTERVAL = 'FIXED_INTERVAL', LINEAR_BACKOFF = 'LINEAR_BACKOFF', EXPONENTIAL_BACKOFF = 'EXPONENTIAL_BACKOFF', RESTART_INTEGRATION_WITH_BACKOFF = 'RESTART_INTEGRATION_WITH_BACKOFF' }
 
 
 	/** Returns success or error message */
@@ -6586,7 +6586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaProjectPropertiesIpEnablementState { IP_ENABLEMENT_STATE_UNSPECIFIED = 0, IP_ENABLEMENT_STATE_STANDALONE = 1, IP_ENABLEMENT_STATE_APIGEE = 2, IP_ENABLEMENT_STATE_APIGEE_ENTITLED = 3 }
+	export enum GoogleCloudIntegrationsV1alphaProjectPropertiesIpEnablementState { IP_ENABLEMENT_STATE_UNSPECIFIED = 'IP_ENABLEMENT_STATE_UNSPECIFIED', IP_ENABLEMENT_STATE_STANDALONE = 'IP_ENABLEMENT_STATE_STANDALONE', IP_ENABLEMENT_STATE_APIGEE = 'IP_ENABLEMENT_STATE_APIGEE', IP_ENABLEMENT_STATE_APIGEE_ENTITLED = 'IP_ENABLEMENT_STATE_APIGEE_ENTITLED' }
 
 
 	/** Response for the GetClient rpc */
@@ -6720,7 +6720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaIntegrationAlertConfigThresholdType { THRESHOLD_TYPE_UNSPECIFIED = 0, EXPECTED_MIN = 1, EXPECTED_MAX = 2 }
+	export enum GoogleCloudIntegrationsV1alphaIntegrationAlertConfigThresholdType { THRESHOLD_TYPE_UNSPECIFIED = 'THRESHOLD_TYPE_UNSPECIFIED', EXPECTED_MIN = 'EXPECTED_MIN', EXPECTED_MAX = 'EXPECTED_MAX' }
 
 
 	/** The threshold value of the metric, above or below which the alert should be triggered. See EventAlertConfig or TaskAlertConfig for the different alert metric types in each case. For the *RATE metrics, one or both of these fields may be set. Zero is the default value and can be left at that. For *PERCENTILE_DURATION metrics, one or both of these fields may be set, and also, the duration threshold value should be specified in the threshold_duration_ms member below. For *AVERAGE_DURATION metrics, these fields should not be set at all. A different member, threshold_duration_ms, must be set in the EventAlertConfig or the TaskAlertConfig. */
@@ -6957,13 +6957,13 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionDatabasePersistencePolicy { DATABASE_PERSISTENCE_POLICY_UNSPECIFIED = 0, DATABASE_PERSISTENCE_DISABLED = 1 }
+	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionDatabasePersistencePolicy { DATABASE_PERSISTENCE_POLICY_UNSPECIFIED = 'DATABASE_PERSISTENCE_POLICY_UNSPECIFIED', DATABASE_PERSISTENCE_DISABLED = 'DATABASE_PERSISTENCE_DISABLED' }
 
-	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionOrigin { UNSPECIFIED = 0, UI = 1, PIPER_V2 = 2, PIPER_V3 = 3, APPLICATION_IP_PROVISIONING = 4 }
+	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionOrigin { UNSPECIFIED = 'UNSPECIFIED', UI = 'UI', PIPER_V2 = 'PIPER_V2', PIPER_V3 = 'PIPER_V3', APPLICATION_IP_PROVISIONING = 'APPLICATION_IP_PROVISIONING' }
 
-	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionState { INTEGRATION_STATE_UNSPECIFIED = 0, DRAFT = 1, ACTIVE = 2, ARCHIVED = 3, SNAPSHOT = 4 }
+	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionState { INTEGRATION_STATE_UNSPECIFIED = 'INTEGRATION_STATE_UNSPECIFIED', DRAFT = 'DRAFT', ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED', SNAPSHOT = 'SNAPSHOT' }
 
-	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionStatus { UNKNOWN = 0, DRAFT = 1, ACTIVE = 2, ARCHIVED = 3, SNAPSHOT = 4 }
+	export enum GoogleCloudIntegrationsV1alphaIntegrationVersionStatus { UNKNOWN = 'UNKNOWN', DRAFT = 'DRAFT', ACTIVE = 'ACTIVE', ARCHIVED = 'ARCHIVED', SNAPSHOT = 'SNAPSHOT' }
 
 
 	/** The task configuration details. This is not the implementation of Task. There might be multiple TaskConfigs for the same Task. */
@@ -7071,9 +7071,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaTaskConfigJsonValidationOption { JSON_VALIDATION_OPTION_UNSPECIFIED = 0, SKIP = 1, PRE_EXECUTION = 2, POST_EXECUTION = 3, PRE_POST_EXECUTION = 4 }
+	export enum GoogleCloudIntegrationsV1alphaTaskConfigJsonValidationOption { JSON_VALIDATION_OPTION_UNSPECIFIED = 'JSON_VALIDATION_OPTION_UNSPECIFIED', SKIP = 'SKIP', PRE_EXECUTION = 'PRE_EXECUTION', POST_EXECUTION = 'POST_EXECUTION', PRE_POST_EXECUTION = 'PRE_POST_EXECUTION' }
 
-	export enum GoogleCloudIntegrationsV1alphaTaskConfigNextTasksExecutionPolicy { NEXT_TASKS_EXECUTION_POLICY_UNSPECIFIED = 0, RUN_ALL_MATCH = 1, RUN_FIRST_MATCH = 2 }
+	export enum GoogleCloudIntegrationsV1alphaTaskConfigNextTasksExecutionPolicy { NEXT_TASKS_EXECUTION_POLICY_UNSPECIFIED = 'NEXT_TASKS_EXECUTION_POLICY_UNSPECIFIED', RUN_ALL_MATCH = 'RUN_ALL_MATCH', RUN_FIRST_MATCH = 'RUN_FIRST_MATCH' }
 
 
 	/** Policy that dictates the behavior for the task after it completes successfully. */
@@ -7096,9 +7096,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaSuccessPolicyFinalState { FINAL_STATE_UNSPECIFIED = 0, SUCCEEDED = 1, SUSPENDED = 2 }
+	export enum GoogleCloudIntegrationsV1alphaSuccessPolicyFinalState { FINAL_STATE_UNSPECIFIED = 'FINAL_STATE_UNSPECIFIED', SUCCEEDED = 'SUCCEEDED', SUSPENDED = 'SUSPENDED' }
 
-	export enum GoogleCloudIntegrationsV1alphaTaskConfigTaskExecutionStrategy { TASK_EXECUTION_STRATEGY_UNSPECIFIED = 0, WHEN_ALL_SUCCEED = 1, WHEN_ANY_SUCCEED = 2, WHEN_ALL_TASKS_AND_CONDITIONS_SUCCEED = 3 }
+	export enum GoogleCloudIntegrationsV1alphaTaskConfigTaskExecutionStrategy { TASK_EXECUTION_STRATEGY_UNSPECIFIED = 'TASK_EXECUTION_STRATEGY_UNSPECIFIED', WHEN_ALL_SUCCEED = 'WHEN_ALL_SUCCEED', WHEN_ANY_SUCCEED = 'WHEN_ANY_SUCCEED', WHEN_ALL_TASKS_AND_CONDITIONS_SUCCEED = 'WHEN_ALL_TASKS_AND_CONDITIONS_SUCCEED' }
 
 
 	/** Configuration detail of a trigger. */
@@ -7189,7 +7189,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaTriggerConfigTriggerType { TRIGGER_TYPE_UNSPECIFIED = 0, CRON = 1, API = 2, SFDC_CHANNEL = 3, CLOUD_PUBSUB_EXTERNAL = 4, SFDC_CDC_CHANNEL = 5, CLOUD_SCHEDULER = 6, INTEGRATION_CONNECTOR_TRIGGER = 7 }
+	export enum GoogleCloudIntegrationsV1alphaTriggerConfigTriggerType { TRIGGER_TYPE_UNSPECIFIED = 'TRIGGER_TYPE_UNSPECIFIED', CRON = 'CRON', API = 'API', SFDC_CHANNEL = 'SFDC_CHANNEL', CLOUD_PUBSUB_EXTERNAL = 'CLOUD_PUBSUB_EXTERNAL', SFDC_CDC_CHANNEL = 'SFDC_CDC_CHANNEL', CLOUD_SCHEDULER = 'CLOUD_SCHEDULER', INTEGRATION_CONNECTOR_TRIGGER = 'INTEGRATION_CONNECTOR_TRIGGER' }
 
 
 	/** Request for lift Suspension */
@@ -7929,7 +7929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaSuspensionState { RESOLUTION_STATE_UNSPECIFIED = 0, PENDING = 1, REJECTED = 2, LIFTED = 3 }
+	export enum GoogleCloudIntegrationsV1alphaSuspensionState { RESOLUTION_STATE_UNSPECIFIED = 'RESOLUTION_STATE_UNSPECIFIED', PENDING = 'PENDING', REJECTED = 'REJECTED', LIFTED = 'LIFTED' }
 
 
 	/** Request for the Provision rpc */
@@ -8272,7 +8272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudIntegrationsV1alphaUploadIntegrationVersionRequestFileFormat { FILE_FORMAT_UNSPECIFIED = 0, JSON = 1, YAML = 2 }
+	export enum GoogleCloudIntegrationsV1alphaUploadIntegrationVersionRequestFileFormat { FILE_FORMAT_UNSPECIFIED = 'FILE_FORMAT_UNSPECIFIED', JSON = 'JSON', YAML = 'YAML' }
 
 
 	/** Response for UploadIntegrationVersion. */

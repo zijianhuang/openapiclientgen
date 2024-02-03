@@ -194,7 +194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { None = 0, ServerError = 1, InvalidRequest = 2, RateLimitExceeded = 3, InvalidAuthorization = 4, InsufficientAuthorization = 5 }
+	export enum ErrorCode { None = 'None', ServerError = 'ServerError', InvalidRequest = 'InvalidRequest', RateLimitExceeded = 'RateLimitExceeded', InvalidAuthorization = 'InvalidAuthorization', InsufficientAuthorization = 'InsufficientAuthorization' }
 
 
 	/** The top-level response that represents a failed request. */
@@ -378,7 +378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SearchActionSearchKind { WebSearch = 0, HistorySearch = 1, DocumentSearch = 2, TagSearch = 3, LocationSearch = 4, CustomSearch = 5 }
+	export enum SearchActionSearchKind { WebSearch = 'WebSearch', HistorySearch = 'HistorySearch', DocumentSearch = 'DocumentSearch', TagSearch = 'TagSearch', LocationSearch = 'LocationSearch', CustomSearch = 'CustomSearch' }
 
 
 	/** Defines a search result answer. */
@@ -437,7 +437,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuggestionsSuggestionGroupName { Unknown = 0, Web = 1, StoreApps = 2, SearchHistory = 3, PersonalSearchDocuments = 4, PersonalSearchTags = 5, Custom = 6 }
+	export enum SuggestionsSuggestionGroupName { Unknown = 'Unknown', Web = 'Web', StoreApps = 'StoreApps', SearchHistory = 'SearchHistory', PersonalSearchDocuments = 'PersonalSearchDocuments', PersonalSearchTags = 'PersonalSearchTags', Custom = 'Custom' }
 
 	@Injectable()
 	export class MyClient {
@@ -460,9 +460,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AutoSuggestX_BingApis_SDK { true = 0 }
+	export enum AutoSuggestX_BingApis_SDK { true = 'true' }
 
-	export enum AutoSuggestSafeSearch { Off = 0, Moderate = 1, Strict = 2 }
+	export enum AutoSuggestSafeSearch { Off = 'Off', Moderate = 'Moderate', Strict = 'Strict' }
 
 }
 

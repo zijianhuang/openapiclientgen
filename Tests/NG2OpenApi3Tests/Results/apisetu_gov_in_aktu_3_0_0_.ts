@@ -1348,7 +1348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DgcerPostBodyFormat { pdf = 0 }
+	export enum DgcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface DgmstPostBody {
 		certificateParameters?: DgmstPostBodyCertificateParameters;

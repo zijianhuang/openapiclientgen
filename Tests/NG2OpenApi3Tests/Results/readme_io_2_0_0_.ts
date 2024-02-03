@@ -49,7 +49,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangelogType { '' = 0, added = 1, fixed = 2, improved = 3, deprecated = 4, removed = 5 }
+	export enum ChangelogType { '' = '', added = 'added', fixed = 'fixed', improved = 'improved', deprecated = 'deprecated', removed = 'removed' }
 
 	export interface CustomPage {
 
@@ -166,7 +166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocType { basic = 0, error = 1, link = 2 }
+	export enum DocType { basic = 'basic', error = 'error', link = 'link' }
 
 	export interface Version {
 

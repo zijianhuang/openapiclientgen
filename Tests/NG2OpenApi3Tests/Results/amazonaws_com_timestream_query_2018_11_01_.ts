@@ -295,7 +295,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionValueType { VARCHAR = 0 }
+	export enum DimensionValueType { VARCHAR = 'VARCHAR' }
 
 
 	/** Only one of MixedMeasureMappings or MultiMeasureMappings is to be provided. MultiMeasureMappings can be used to ingest data as multi measures in the derived table. */
@@ -348,7 +348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalarMeasureValueType { BIGINT = 0, BOOLEAN = 1, DOUBLE = 2, VARCHAR = 3, TIMESTAMP = 4 }
+	export enum ScalarMeasureValueType { BIGINT = 'BIGINT', BOOLEAN = 'BOOLEAN', DOUBLE = 'DOUBLE', VARCHAR = 'VARCHAR', TIMESTAMP = 'TIMESTAMP' }
 
 
 	/** MixedMeasureMappings are mappings that can be used to ingest data into a mixture of narrow and multi measures in the derived table. */
@@ -381,7 +381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MeasureValueType { BIGINT = 0, BOOLEAN = 1, DOUBLE = 2, VARCHAR = 3, MULTI = 4 }
+	export enum MeasureValueType { BIGINT = 'BIGINT', BOOLEAN = 'BOOLEAN', DOUBLE = 'DOUBLE', VARCHAR = 'VARCHAR', MULTI = 'MULTI' }
 
 
 	/** A tag is a label that you assign to a Timestream database and/or table. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize databases and/or tables, for example, by purpose, owner, or environment.  */
@@ -455,7 +455,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3EncryptionOption { SSE_S3 = 0, SSE_KMS = 1 }
+	export enum S3EncryptionOption { SSE_S3 = 'SSE_S3', SSE_KMS = 'SSE_KMS' }
 
 	export interface ConflictException {
 	}
@@ -635,7 +635,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledQueryState { ENABLED = 0, DISABLED = 1 }
+	export enum ScheduledQueryState { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Run summary for the scheduled query */
@@ -665,7 +665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledQueryRunStatus { AUTO_TRIGGER_SUCCESS = 0, AUTO_TRIGGER_FAILURE = 1, MANUAL_TRIGGER_SUCCESS = 2, MANUAL_TRIGGER_FAILURE = 3 }
+	export enum ScheduledQueryRunStatus { AUTO_TRIGGER_SUCCESS = 'AUTO_TRIGGER_SUCCESS', AUTO_TRIGGER_FAILURE = 'AUTO_TRIGGER_FAILURE', MANUAL_TRIGGER_SUCCESS = 'MANUAL_TRIGGER_SUCCESS', MANUAL_TRIGGER_FAILURE = 'MANUAL_TRIGGER_FAILURE' }
 
 
 	/** Statistics for a single scheduled query run. */
@@ -1002,7 +1002,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalarType { VARCHAR = 0, BOOLEAN = 1, BIGINT = 2, DOUBLE = 3, TIMESTAMP = 4, DATE = 5, TIME = 6, INTERVAL_DAY_TO_SECOND = 7, INTERVAL_YEAR_TO_MONTH = 8, UNKNOWN = 9, INTEGER = 10 }
+	export enum ScalarType { VARCHAR = 'VARCHAR', BOOLEAN = 'BOOLEAN', BIGINT = 'BIGINT', DOUBLE = 'DOUBLE', TIMESTAMP = 'TIMESTAMP', DATE = 'DATE', TIME = 'TIME', INTERVAL_DAY_TO_SECOND = 'INTERVAL_DAY_TO_SECOND', INTERVAL_YEAR_TO_MONTH = 'INTERVAL_YEAR_TO_MONTH', UNKNOWN = 'UNKNOWN', INTEGER = 'INTEGER' }
 
 
 	/**  Contains the metadata for query results such as the column names, data types, and other attributes.  */
@@ -1434,31 +1434,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelQueryX_Amz_Target { 'Timestream_20181101.CancelQuery' = 0 }
+	export enum CancelQueryX_Amz_Target { 'Timestream_20181101.CancelQuery' = 'Timestream_20181101.CancelQuery' }
 
-	export enum CreateScheduledQueryX_Amz_Target { 'Timestream_20181101.CreateScheduledQuery' = 0 }
+	export enum CreateScheduledQueryX_Amz_Target { 'Timestream_20181101.CreateScheduledQuery' = 'Timestream_20181101.CreateScheduledQuery' }
 
-	export enum DeleteScheduledQueryX_Amz_Target { 'Timestream_20181101.DeleteScheduledQuery' = 0 }
+	export enum DeleteScheduledQueryX_Amz_Target { 'Timestream_20181101.DeleteScheduledQuery' = 'Timestream_20181101.DeleteScheduledQuery' }
 
-	export enum DescribeEndpointsX_Amz_Target { 'Timestream_20181101.DescribeEndpoints' = 0 }
+	export enum DescribeEndpointsX_Amz_Target { 'Timestream_20181101.DescribeEndpoints' = 'Timestream_20181101.DescribeEndpoints' }
 
-	export enum DescribeScheduledQueryX_Amz_Target { 'Timestream_20181101.DescribeScheduledQuery' = 0 }
+	export enum DescribeScheduledQueryX_Amz_Target { 'Timestream_20181101.DescribeScheduledQuery' = 'Timestream_20181101.DescribeScheduledQuery' }
 
-	export enum ExecuteScheduledQueryX_Amz_Target { 'Timestream_20181101.ExecuteScheduledQuery' = 0 }
+	export enum ExecuteScheduledQueryX_Amz_Target { 'Timestream_20181101.ExecuteScheduledQuery' = 'Timestream_20181101.ExecuteScheduledQuery' }
 
-	export enum ListScheduledQueriesX_Amz_Target { 'Timestream_20181101.ListScheduledQueries' = 0 }
+	export enum ListScheduledQueriesX_Amz_Target { 'Timestream_20181101.ListScheduledQueries' = 'Timestream_20181101.ListScheduledQueries' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'Timestream_20181101.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Timestream_20181101.ListTagsForResource' = 'Timestream_20181101.ListTagsForResource' }
 
-	export enum PrepareQueryX_Amz_Target { 'Timestream_20181101.PrepareQuery' = 0 }
+	export enum PrepareQueryX_Amz_Target { 'Timestream_20181101.PrepareQuery' = 'Timestream_20181101.PrepareQuery' }
 
-	export enum QueryX_Amz_Target { 'Timestream_20181101.Query' = 0 }
+	export enum QueryX_Amz_Target { 'Timestream_20181101.Query' = 'Timestream_20181101.Query' }
 
-	export enum TagResourceX_Amz_Target { 'Timestream_20181101.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Timestream_20181101.TagResource' = 'Timestream_20181101.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'Timestream_20181101.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Timestream_20181101.UntagResource' = 'Timestream_20181101.UntagResource' }
 
-	export enum UpdateScheduledQueryX_Amz_Target { 'Timestream_20181101.UpdateScheduledQuery' = 0 }
+	export enum UpdateScheduledQueryX_Amz_Target { 'Timestream_20181101.UpdateScheduledQuery' = 'Timestream_20181101.UpdateScheduledQuery' }
 
 }
 

@@ -1333,7 +1333,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RdcerPostBodyFormat { pdf = 0 }
+	export enum RdcerPostBodyFormat { pdf = 'pdf' }
 
 	export interface RegriiPostBody {
 		certificateParameters?: RegriiPostBodyCertificateParameters;

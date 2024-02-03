@@ -43,7 +43,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityRequestType { 'Microsoft.Sql/servers' = 0 }
+	export enum CheckNameAvailabilityRequestType { 'Microsoft.Sql/servers' = 'Microsoft.Sql/servers' }
 
 
 	/** A response indicating whether the specified name for a resource is available. */
@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResponseReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameAvailabilityResponseReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 	@Injectable()
 	export class MyClient {

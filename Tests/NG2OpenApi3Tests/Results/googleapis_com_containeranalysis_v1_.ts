@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AliasContextKind { KIND_UNSPECIFIED = 0, FIXED = 1, MOVABLE = 2, OTHER = 3 }
+	export enum AliasContextKind { KIND_UNSPECIFIED = 'KIND_UNSPECIFIED', FIXED = 'FIXED', MOVABLE = 'MOVABLE', OTHER = 'OTHER' }
 
 
 	/** Indicates which analysis completed successfully. Multiple types of analysis can be performed on a single resource. */
@@ -168,7 +168,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JustificationJustificationType { JUSTIFICATION_TYPE_UNSPECIFIED = 0, COMPONENT_NOT_PRESENT = 1, VULNERABLE_CODE_NOT_PRESENT = 2, VULNERABLE_CODE_NOT_IN_EXECUTE_PATH = 3, VULNERABLE_CODE_CANNOT_BE_CONTROLLED_BY_ADVERSARY = 4, INLINE_MITIGATIONS_ALREADY_EXIST = 5 }
+	export enum JustificationJustificationType { JUSTIFICATION_TYPE_UNSPECIFIED = 'JUSTIFICATION_TYPE_UNSPECIFIED', COMPONENT_NOT_PRESENT = 'COMPONENT_NOT_PRESENT', VULNERABLE_CODE_NOT_PRESENT = 'VULNERABLE_CODE_NOT_PRESENT', VULNERABLE_CODE_NOT_IN_EXECUTE_PATH = 'VULNERABLE_CODE_NOT_IN_EXECUTE_PATH', VULNERABLE_CODE_CANNOT_BE_CONTROLLED_BY_ADVERSARY = 'VULNERABLE_CODE_CANNOT_BE_CONTROLLED_BY_ADVERSARY', INLINE_MITIGATIONS_ALREADY_EXIST = 'INLINE_MITIGATIONS_ALREADY_EXIST' }
 
 
 	/** Metadata for any related URL information. */
@@ -229,9 +229,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RemediationRemediationType { REMEDIATION_TYPE_UNSPECIFIED = 0, MITIGATION = 1, NO_FIX_PLANNED = 2, NONE_AVAILABLE = 3, VENDOR_FIX = 4, WORKAROUND = 5 }
+	export enum RemediationRemediationType { REMEDIATION_TYPE_UNSPECIFIED = 'REMEDIATION_TYPE_UNSPECIFIED', MITIGATION = 'MITIGATION', NO_FIX_PLANNED = 'NO_FIX_PLANNED', NONE_AVAILABLE = 'NONE_AVAILABLE', VENDOR_FIX = 'VENDOR_FIX', WORKAROUND = 'WORKAROUND' }
 
-	export enum AssessmentState { STATE_UNSPECIFIED = 0, AFFECTED = 1, NOT_AFFECTED = 2, FIXED = 3, UNDER_INVESTIGATION = 4 }
+	export enum AssessmentState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', AFFECTED = 'AFFECTED', NOT_AFFECTED = 'NOT_AFFECTED', FIXED = 'FIXED', UNDER_INVESTIGATION = 'UNDER_INVESTIGATION' }
 
 
 	/** Note kind that represents a logical attestation "role" or "authority". For example, an organization might have one `Authority` for "QA" and one for "build". This note is intended to act strictly as a grouping mechanism for the attached occurrences (Attestations). This grouping mechanism also provides a security boundary, since IAM ACLs gate the ability for a principle to attach an occurrence to a given note. It also provides a single point of lookup to find all attached attestation occurrences, even if they don't all live in the same project. */
@@ -557,7 +557,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CisBenchmarkSeverity { SEVERITY_UNSPECIFIED = 0, MINIMAL = 1, LOW = 2, MEDIUM = 3, HIGH = 4, CRITICAL = 5 }
+	export enum CisBenchmarkSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', MINIMAL = 'MINIMAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL' }
 
 
 	/** Describes the CIS benchmark version that is applicable to a given OS and os version. */
@@ -632,7 +632,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryNoteAnalysisKind { NOTE_KIND_UNSPECIFIED = 0, VULNERABILITY = 1, BUILD = 2, IMAGE = 3, PACKAGE = 4, DEPLOYMENT = 5, DISCOVERY = 6, ATTESTATION = 7, UPGRADE = 8, COMPLIANCE = 9, DSSE_ATTESTATION = 10, VULNERABILITY_ASSESSMENT = 11, SBOM_REFERENCE = 12 }
+	export enum DiscoveryNoteAnalysisKind { NOTE_KIND_UNSPECIFIED = 'NOTE_KIND_UNSPECIFIED', VULNERABILITY = 'VULNERABILITY', BUILD = 'BUILD', IMAGE = 'IMAGE', PACKAGE = 'PACKAGE', DEPLOYMENT = 'DEPLOYMENT', DISCOVERY = 'DISCOVERY', ATTESTATION = 'ATTESTATION', UPGRADE = 'UPGRADE', COMPLIANCE = 'COMPLIANCE', DSSE_ATTESTATION = 'DSSE_ATTESTATION', VULNERABILITY_ASSESSMENT = 'VULNERABILITY_ASSESSMENT', SBOM_REFERENCE = 'SBOM_REFERENCE' }
 
 	export interface DSSEAttestationNote {
 
@@ -798,7 +798,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageNoteArchitecture { ARCHITECTURE_UNSPECIFIED = 0, X86 = 1, X64 = 2 }
+	export enum PackageNoteArchitecture { ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED', X86 = 'X86', X64 = 'X64' }
 
 
 	/** Digest information. */
@@ -936,7 +936,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionKind { VERSION_KIND_UNSPECIFIED = 0, NORMAL = 1, MINIMUM = 2, MAXIMUM = 3 }
+	export enum VersionKind { VERSION_KIND_UNSPECIFIED = 'VERSION_KIND_UNSPECIFIED', NORMAL = 'NORMAL', MINIMUM = 'MINIMUM', MAXIMUM = 'MAXIMUM' }
 
 
 	/** License information. */
@@ -1281,19 +1281,19 @@ export namespace MyNS {
 
 	}
 
-	export enum CVSSAttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 0, ATTACK_COMPLEXITY_LOW = 1, ATTACK_COMPLEXITY_HIGH = 2, ATTACK_COMPLEXITY_MEDIUM = 3 }
+	export enum CVSSAttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 'ATTACK_COMPLEXITY_UNSPECIFIED', ATTACK_COMPLEXITY_LOW = 'ATTACK_COMPLEXITY_LOW', ATTACK_COMPLEXITY_HIGH = 'ATTACK_COMPLEXITY_HIGH', ATTACK_COMPLEXITY_MEDIUM = 'ATTACK_COMPLEXITY_MEDIUM' }
 
-	export enum CVSSAttackVector { ATTACK_VECTOR_UNSPECIFIED = 0, ATTACK_VECTOR_NETWORK = 1, ATTACK_VECTOR_ADJACENT = 2, ATTACK_VECTOR_LOCAL = 3, ATTACK_VECTOR_PHYSICAL = 4 }
+	export enum CVSSAttackVector { ATTACK_VECTOR_UNSPECIFIED = 'ATTACK_VECTOR_UNSPECIFIED', ATTACK_VECTOR_NETWORK = 'ATTACK_VECTOR_NETWORK', ATTACK_VECTOR_ADJACENT = 'ATTACK_VECTOR_ADJACENT', ATTACK_VECTOR_LOCAL = 'ATTACK_VECTOR_LOCAL', ATTACK_VECTOR_PHYSICAL = 'ATTACK_VECTOR_PHYSICAL' }
 
-	export enum CVSSAuthentication { AUTHENTICATION_UNSPECIFIED = 0, AUTHENTICATION_MULTIPLE = 1, AUTHENTICATION_SINGLE = 2, AUTHENTICATION_NONE = 3 }
+	export enum CVSSAuthentication { AUTHENTICATION_UNSPECIFIED = 'AUTHENTICATION_UNSPECIFIED', AUTHENTICATION_MULTIPLE = 'AUTHENTICATION_MULTIPLE', AUTHENTICATION_SINGLE = 'AUTHENTICATION_SINGLE', AUTHENTICATION_NONE = 'AUTHENTICATION_NONE' }
 
-	export enum CVSSAvailabilityImpact { IMPACT_UNSPECIFIED = 0, IMPACT_HIGH = 1, IMPACT_LOW = 2, IMPACT_NONE = 3, IMPACT_PARTIAL = 4, IMPACT_COMPLETE = 5 }
+	export enum CVSSAvailabilityImpact { IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED', IMPACT_HIGH = 'IMPACT_HIGH', IMPACT_LOW = 'IMPACT_LOW', IMPACT_NONE = 'IMPACT_NONE', IMPACT_PARTIAL = 'IMPACT_PARTIAL', IMPACT_COMPLETE = 'IMPACT_COMPLETE' }
 
-	export enum CVSSPrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 0, PRIVILEGES_REQUIRED_NONE = 1, PRIVILEGES_REQUIRED_LOW = 2, PRIVILEGES_REQUIRED_HIGH = 3 }
+	export enum CVSSPrivilegesRequired { PRIVILEGES_REQUIRED_UNSPECIFIED = 'PRIVILEGES_REQUIRED_UNSPECIFIED', PRIVILEGES_REQUIRED_NONE = 'PRIVILEGES_REQUIRED_NONE', PRIVILEGES_REQUIRED_LOW = 'PRIVILEGES_REQUIRED_LOW', PRIVILEGES_REQUIRED_HIGH = 'PRIVILEGES_REQUIRED_HIGH' }
 
-	export enum CVSSScope { SCOPE_UNSPECIFIED = 0, SCOPE_UNCHANGED = 1, SCOPE_CHANGED = 2 }
+	export enum CVSSScope { SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED', SCOPE_UNCHANGED = 'SCOPE_UNCHANGED', SCOPE_CHANGED = 'SCOPE_CHANGED' }
 
-	export enum CVSSUserInteraction { USER_INTERACTION_UNSPECIFIED = 0, USER_INTERACTION_NONE = 1, USER_INTERACTION_REQUIRED = 2 }
+	export enum CVSSUserInteraction { USER_INTERACTION_UNSPECIFIED = 'USER_INTERACTION_UNSPECIFIED', USER_INTERACTION_NONE = 'USER_INTERACTION_NONE', USER_INTERACTION_REQUIRED = 'USER_INTERACTION_REQUIRED' }
 
 
 	/** Common Vulnerability Scoring System version 3. For details, see https://www.first.org/cvss/specification-document */
@@ -1350,11 +1350,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CVSSv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 0, ATTACK_COMPLEXITY_LOW = 1, ATTACK_COMPLEXITY_HIGH = 2 }
+	export enum CVSSv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 'ATTACK_COMPLEXITY_UNSPECIFIED', ATTACK_COMPLEXITY_LOW = 'ATTACK_COMPLEXITY_LOW', ATTACK_COMPLEXITY_HIGH = 'ATTACK_COMPLEXITY_HIGH' }
 
-	export enum CVSSv3AvailabilityImpact { IMPACT_UNSPECIFIED = 0, IMPACT_HIGH = 1, IMPACT_LOW = 2, IMPACT_NONE = 3 }
+	export enum CVSSv3AvailabilityImpact { IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED', IMPACT_HIGH = 'IMPACT_HIGH', IMPACT_LOW = 'IMPACT_LOW', IMPACT_NONE = 'IMPACT_NONE' }
 
-	export enum VulnerabilityNoteCvssVersion { CVSS_VERSION_UNSPECIFIED = 0, CVSS_VERSION_2 = 1, CVSS_VERSION_3 = 2 }
+	export enum VulnerabilityNoteCvssVersion { CVSS_VERSION_UNSPECIFIED = 'CVSS_VERSION_UNSPECIFIED', CVSS_VERSION_2 = 'CVSS_VERSION_2', CVSS_VERSION_3 = 'CVSS_VERSION_3' }
 
 
 	/** A detail for a distro and package affected by this vulnerability and its associated fix (if one is available). */
@@ -2991,7 +2991,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentOccurrencePlatform { PLATFORM_UNSPECIFIED = 0, GKE = 1, FLEX = 2, CUSTOM = 3 }
+	export enum DeploymentOccurrencePlatform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', GKE = 'GKE', FLEX = 'FLEX', CUSTOM = 'CUSTOM' }
 
 
 	/** Provides information about the analysis status of a discovered resource. */
@@ -3085,9 +3085,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveryOccurrenceAnalysisStatus { ANALYSIS_STATUS_UNSPECIFIED = 0, PENDING = 1, SCANNING = 2, FINISHED_SUCCESS = 3, COMPLETE = 4, FINISHED_FAILED = 5, FINISHED_UNSUPPORTED = 6 }
+	export enum DiscoveryOccurrenceAnalysisStatus { ANALYSIS_STATUS_UNSPECIFIED = 'ANALYSIS_STATUS_UNSPECIFIED', PENDING = 'PENDING', SCANNING = 'SCANNING', FINISHED_SUCCESS = 'FINISHED_SUCCESS', COMPLETE = 'COMPLETE', FINISHED_FAILED = 'FINISHED_FAILED', FINISHED_UNSUPPORTED = 'FINISHED_UNSUPPORTED' }
 
-	export enum DiscoveryOccurrenceContinuousAnalysis { CONTINUOUS_ANALYSIS_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2 }
+	export enum DiscoveryOccurrenceContinuousAnalysis { CONTINUOUS_ANALYSIS_UNSPECIFIED = 'CONTINUOUS_ANALYSIS_UNSPECIFIED', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 
 	/** The status of an SBOM generation. */
@@ -3117,7 +3117,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SBOMStatusSbomState { SBOM_STATE_UNSPECIFIED = 0, PENDING = 1, COMPLETE = 2 }
+	export enum SBOMStatusSbomState { SBOM_STATE_UNSPECIFIED = 'SBOM_STATE_UNSPECIFIED', PENDING = 'PENDING', COMPLETE = 'COMPLETE' }
 
 
 	/** Deprecated. Prefer to use a regular Occurrence, and populate the Envelope at the top level of the Occurrence. */
@@ -3914,7 +3914,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BuildStepStatus { STATUS_UNKNOWN = 0, PENDING = 1, QUEUING = 2, QUEUED = 3, WORKING = 4, SUCCESS = 5, FAILURE = 6, INTERNAL_ERROR = 7, TIMEOUT = 8, CANCELLED = 9, EXPIRED = 10 }
+	export enum BuildStepStatus { STATUS_UNKNOWN = 'STATUS_UNKNOWN', PENDING = 'PENDING', QUEUING = 'QUEUING', QUEUED = 'QUEUED', WORKING = 'WORKING', SUCCESS = 'SUCCESS', FAILURE = 'FAILURE', INTERNAL_ERROR = 'INTERNAL_ERROR', TIMEOUT = 'TIMEOUT', CANCELLED = 'CANCELLED', EXPIRED = 'EXPIRED' }
 
 
 	/** Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution. Next ID: 3 */
@@ -4014,7 +4014,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalResultDecision { DECISION_UNSPECIFIED = 0, APPROVED = 1, REJECTED = 2 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalResultDecision { DECISION_UNSPECIFIED = 'DECISION_UNSPECIFIED', APPROVED = 'APPROVED', REJECTED = 'REJECTED' }
 
 
 	/** Artifacts produced by a build that should be uploaded upon successful completion of all build steps. */
@@ -4393,7 +4393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildApprovalState { STATE_UNSPECIFIED = 0, PENDING = 1, APPROVED = 2, REJECTED = 3, CANCELLED = 4 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildApprovalState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PENDING = 'PENDING', APPROVED = 'APPROVED', REJECTED = 'REJECTED', CANCELLED = 'CANCELLED' }
 
 
 	/** Secrets and secret environment variables. */
@@ -4499,7 +4499,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildFailureInfoType { FAILURE_TYPE_UNSPECIFIED = 0, PUSH_FAILED = 1, PUSH_IMAGE_NOT_FOUND = 2, PUSH_NOT_AUTHORIZED = 3, LOGGING_FAILURE = 4, USER_BUILD_STEP = 5, FETCH_SOURCE_FAILED = 6 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildFailureInfoType { FAILURE_TYPE_UNSPECIFIED = 'FAILURE_TYPE_UNSPECIFIED', PUSH_FAILED = 'PUSH_FAILED', PUSH_IMAGE_NOT_FOUND = 'PUSH_IMAGE_NOT_FOUND', PUSH_NOT_AUTHORIZED = 'PUSH_NOT_AUTHORIZED', LOGGING_FAILURE = 'LOGGING_FAILURE', USER_BUILD_STEP = 'USER_BUILD_STEP', FETCH_SOURCE_FAILED = 'FETCH_SOURCE_FAILED' }
 
 
 	/** Optional arguments to enable specific features of builds. */
@@ -4600,13 +4600,13 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsDefaultLogsBucketBehavior { DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED = 0, REGIONAL_USER_OWNED_BUCKET = 1 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsDefaultLogsBucketBehavior { DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED = 'DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED', REGIONAL_USER_OWNED_BUCKET = 'REGIONAL_USER_OWNED_BUCKET' }
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsLogStreamingOption { STREAM_DEFAULT = 0, STREAM_ON = 1, STREAM_OFF = 2 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsLogStreamingOption { STREAM_DEFAULT = 'STREAM_DEFAULT', STREAM_ON = 'STREAM_ON', STREAM_OFF = 'STREAM_OFF' }
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsLogging { LOGGING_UNSPECIFIED = 0, LEGACY = 1, GCS_ONLY = 2, STACKDRIVER_ONLY = 3, CLOUD_LOGGING_ONLY = 4, NONE = 5 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsLogging { LOGGING_UNSPECIFIED = 'LOGGING_UNSPECIFIED', LEGACY = 'LEGACY', GCS_ONLY = 'GCS_ONLY', STACKDRIVER_ONLY = 'STACKDRIVER_ONLY', CLOUD_LOGGING_ONLY = 'CLOUD_LOGGING_ONLY', NONE = 'NONE' }
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsMachineType { UNSPECIFIED = 0, N1_HIGHCPU_8 = 1, N1_HIGHCPU_32 = 2, E2_HIGHCPU_8 = 3, E2_HIGHCPU_32 = 4, E2_MEDIUM = 5 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsMachineType { UNSPECIFIED = 'UNSPECIFIED', N1_HIGHCPU_8 = 'N1_HIGHCPU_8', N1_HIGHCPU_32 = 'N1_HIGHCPU_32', E2_HIGHCPU_8 = 'E2_HIGHCPU_8', E2_HIGHCPU_32 = 'E2_HIGHCPU_32', E2_MEDIUM = 'E2_MEDIUM' }
 
 
 	/** Details about how a build should be executed on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information. */
@@ -4629,9 +4629,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsRequestedVerifyOption { NOT_VERIFIED = 0, VERIFIED = 1 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsRequestedVerifyOption { NOT_VERIFIED = 'NOT_VERIFIED', VERIFIED = 'VERIFIED' }
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsSubstitutionOption { MUST_MATCH = 0, ALLOW_LOOSE = 1 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsSubstitutionOption { MUST_MATCH = 'MUST_MATCH', ALLOW_LOOSE = 'ALLOW_LOOSE' }
 
 
 	/** Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution. */
@@ -4813,7 +4813,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1HashType { NONE = 0, SHA256 = 1, MD5 = 2, SHA512 = 3 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1HashType { NONE = 'NONE', SHA256 = 'SHA256', MD5 = 'MD5', SHA512 = 'SHA512' }
 
 
 	/** An npm package uploaded to Artifact Registry using the NpmPackage directive. */
@@ -5108,7 +5108,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSourceSourceFetcher { SOURCE_FETCHER_UNSPECIFIED = 0, GSUTIL = 1, GCS_FETCHER = 2 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSourceSourceFetcher { SOURCE_FETCHER_UNSPECIFIED = 'SOURCE_FETCHER_UNSPECIFIED', GSUTIL = 'GSUTIL', GCS_FETCHER = 'GCS_FETCHER' }
 
 
 	/** Location of the source manifest in Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher). */
@@ -5181,7 +5181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildStatus { STATUS_UNKNOWN = 0, PENDING = 1, QUEUED = 2, WORKING = 3, SUCCESS = 4, FAILURE = 5, INTERNAL_ERROR = 6, TIMEOUT = 7, CANCELLED = 8, EXPIRED = 9 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildStatus { STATUS_UNKNOWN = 'STATUS_UNKNOWN', PENDING = 'PENDING', QUEUED = 'QUEUED', WORKING = 'WORKING', SUCCESS = 'SUCCESS', FAILURE = 'FAILURE', INTERNAL_ERROR = 'INTERNAL_ERROR', TIMEOUT = 'TIMEOUT', CANCELLED = 'CANCELLED', EXPIRED = 'EXPIRED' }
 
 
 	/** A step in the build pipeline. */
@@ -5319,7 +5319,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildWarningPriority { PRIORITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ALERT = 3 }
+	export enum ContaineranalysisGoogleDevtoolsCloudbuildV1BuildWarningPriority { PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED', INFO = 'INFO', WARNING = 'WARNING', ALERT = 'ALERT' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */

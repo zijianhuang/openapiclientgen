@@ -92,7 +92,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseBlobAuditingPolicyPropertiesState { Enabled = 0, Disabled = 1 }
+	export enum DatabaseBlobAuditingPolicyPropertiesState { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 	@Injectable()
 	export class MyClient {
@@ -131,7 +131,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DatabaseBlobAuditingPolicies_GetBlobAuditingPolicyName { default = 0 }
+	export enum DatabaseBlobAuditingPolicies_GetBlobAuditingPolicyName { default = 'default' }
 
 }
 

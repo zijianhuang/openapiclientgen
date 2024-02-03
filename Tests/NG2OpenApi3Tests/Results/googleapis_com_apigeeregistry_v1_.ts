@@ -711,7 +711,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceState { STATE_UNSPECIFIED = 0, INACTIVE = 1, CREATING = 2, ACTIVE = 3, UPDATING = 4, DELETING = 5, FAILED = 6 }
+	export enum InstanceState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', INACTIVE = 'INACTIVE', CREATING = 'CREATING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** Response message for ListApiDeploymentRevisionsResponse. */

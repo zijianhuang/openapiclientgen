@@ -279,7 +279,7 @@ export namespace MyNS {
 
 	}
 
-	export enum State { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3, ERROR = 4 }
+	export enum State { CREATING = 'CREATING', UPDATING = 'UPDATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', ERROR = 'ERROR' }
 
 
 	/** An object that sets information about a property. */
@@ -340,7 +340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Type { RELATIONSHIP = 0, STRING = 1, LONG = 2, BOOLEAN = 3, INTEGER = 4, DOUBLE = 5, LIST = 6, MAP = 7 }
+	export enum Type { RELATIONSHIP = 'RELATIONSHIP', STRING = 'STRING', LONG = 'LONG', BOOLEAN = 'BOOLEAN', INTEGER = 'INTEGER', DOUBLE = 'DOUBLE', LIST = 'LIST', MAP = 'MAP' }
 
 
 	/** An object that specifies a relationship with another component type. */
@@ -391,7 +391,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Scope { ENTITY = 0, WORKSPACE = 1 }
+	export enum Scope { ENTITY = 'ENTITY', WORKSPACE = 'WORKSPACE' }
 
 
 	/** The data connector. */
@@ -450,7 +450,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupType { TABULAR = 0 }
+	export enum GroupType { TABULAR = 'TABULAR' }
 
 	export interface AccessDeniedException {
 	}
@@ -613,7 +613,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncJobState { CREATING = 0, INITIALIZING = 1, ACTIVE = 2, DELETING = 3, ERROR = 4 }
+	export enum SyncJobState { CREATING = 'CREATING', INITIALIZING = 'INITIALIZING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', ERROR = 'ERROR' }
 
 	export interface CreateWorkspaceResponse {
 
@@ -745,7 +745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ColumnType { NODE = 0, EDGE = 1, VALUE = 2 }
+	export enum ColumnType { NODE = 'NODE', EDGE = 'EDGE', VALUE = 'VALUE' }
 
 
 	/** Represents a single row in the query results. */
@@ -908,7 +908,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { VALIDATION_ERROR = 0, INTERNAL_FAILURE = 1, SYNC_INITIALIZING_ERROR = 2, SYNC_CREATING_ERROR = 3, SYNC_PROCESSING_ERROR = 4 }
+	export enum ErrorCode { VALIDATION_ERROR = 'VALIDATION_ERROR', INTERNAL_FAILURE = 'INTERNAL_FAILURE', SYNC_INITIALIZING_ERROR = 'SYNC_INITIALIZING_ERROR', SYNC_CREATING_ERROR = 'SYNC_CREATING_ERROR', SYNC_PROCESSING_ERROR = 'SYNC_PROCESSING_ERROR' }
 
 	export interface PropertyGroupsResponse {
 	}
@@ -1086,11 +1086,11 @@ export namespace MyNS {
 
 	}
 
-	export enum PricingTier { TIER_1 = 0, TIER_2 = 1, TIER_3 = 2, TIER_4 = 3 }
+	export enum PricingTier { TIER_1 = 'TIER_1', TIER_2 = 'TIER_2', TIER_3 = 'TIER_3', TIER_4 = 'TIER_4' }
 
-	export enum PricingMode { BASIC = 0, STANDARD = 1, TIERED_BUNDLE = 2 }
+	export enum PricingMode { BASIC = 'BASIC', STANDARD = 'STANDARD', TIERED_BUNDLE = 'TIERED_BUNDLE' }
 
-	export enum UpdateReason { DEFAULT = 0, PRICING_TIER_UPDATE = 1, ENTITY_COUNT_UPDATE = 2, PRICING_MODE_UPDATE = 3, OVERWRITTEN = 4 }
+	export enum UpdateReason { DEFAULT = 'DEFAULT', PRICING_TIER_UPDATE = 'PRICING_TIER_UPDATE', ENTITY_COUNT_UPDATE = 'ENTITY_COUNT_UPDATE', PRICING_MODE_UPDATE = 'PRICING_MODE_UPDATE', OVERWRITTEN = 'OVERWRITTEN' }
 
 	export interface GetPropertyValueResponse {
 		propertyValues?: PropertyLatestValueMap;
@@ -1151,7 +1151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Order { ASCENDING = 0, DESCENDING = 1 }
+	export enum Order { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 
 	/** An object that filters items returned by a property request. */
@@ -1228,7 +1228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InterpolationType { LINEAR = 0 }
+	export enum InterpolationType { LINEAR = 'LINEAR' }
 
 	export interface GetSceneResponse {
 
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SceneErrorCode { MATTERPORT_ERROR = 0 }
+	export enum SceneErrorCode { MATTERPORT_ERROR = 'MATTERPORT_ERROR' }
 
 	export interface GetSyncJobResponse {
 
@@ -1806,7 +1806,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncResourceType { ENTITY = 0, COMPONENT_TYPE = 1 }
+	export enum SyncResourceType { ENTITY = 'ENTITY', COMPONENT_TYPE = 'COMPONENT_TYPE' }
 
 
 	/** The sync resource status. */
@@ -1826,7 +1826,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncResourceState { INITIALIZING = 0, PROCESSING = 1, DELETED = 2, IN_SYNC = 3, ERROR = 4 }
+	export enum SyncResourceState { INITIALIZING = 'INITIALIZING', PROCESSING = 'PROCESSING', DELETED = 'DELETED', IN_SYNC = 'IN_SYNC', ERROR = 'ERROR' }
 
 
 	/** The sync resource filter. */
@@ -2054,7 +2054,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComponentUpdateType { CREATE = 0, UPDATE = 1, DELETE = 2 }
+	export enum ComponentUpdateType { CREATE = 'CREATE', UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
 	export interface PropertyRequests {
 	}
@@ -2066,7 +2066,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParentEntityUpdateType { UPDATE = 0, DELETE = 1 }
+	export enum ParentEntityUpdateType { UPDATE = 'UPDATE', DELETE = 'DELETE' }
 
 	export interface UpdatePricingPlanResponse {
 
@@ -2129,7 +2129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertyGroupUpdateType { UPDATE = 0, DELETE = 1, CREATE = 2 }
+	export enum PropertyGroupUpdateType { UPDATE = 'UPDATE', DELETE = 'DELETE', CREATE = 'CREATE' }
 
 
 	/** The component property group request. */
@@ -2561,7 +2561,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderByTime { ASCENDING = 0, DESCENDING = 1 }
+	export enum OrderByTime { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface GetPropertyValueHistoryRequest {
 		entityId?: string;
@@ -2952,7 +2952,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PropertyUpdateType { UPDATE = 0, DELETE = 1, CREATE = 2 }
+	export enum PropertyUpdateType { UPDATE = 'UPDATE', DELETE = 'DELETE', CREATE = 'CREATE' }
 
 
 	/** An object that sets information about a property. */

@@ -121,7 +121,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceControlCreateOrUpdatePropertiesSourceType { VsoGit = 0, VsoTfvc = 1, GitHub = 2 }
+	export enum SourceControlCreateOrUpdatePropertiesSourceType { VsoGit = 'VsoGit', VsoTfvc = 'VsoTfvc', GitHub = 'GitHub' }
 
 
 	/** The response model for the list source controls operation. */
@@ -267,7 +267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceControlSecurityTokenPropertiesTokenType { PersonalAccessToken = 0, Oauth = 1 }
+	export enum SourceControlSecurityTokenPropertiesTokenType { PersonalAccessToken = 'PersonalAccessToken', Oauth = 'Oauth' }
 
 
 	/** The parameters supplied to the update source control operation. */

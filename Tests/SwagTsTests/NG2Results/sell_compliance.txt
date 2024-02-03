@@ -198,7 +198,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class Listing_violation_summaryClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -210,12 +210,6 @@ export namespace MyNS {
 		 */
 		GetListingViolationsSummary(compliance_type: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'listing_violation_summary?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)), { observe: 'response', responseType: 'text' });
-		}
-	}
-
-	@Injectable()
-	export class Listing_violationClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

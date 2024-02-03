@@ -342,7 +342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregateBucketType { unknown = 0, time = 1, session = 2, activityType = 3, activitySegment = 4 }
+	export enum AggregateBucketType { unknown = 'unknown', time = 'time', session = 'session', activityType = 'activityType', activitySegment = 'activitySegment' }
 
 
 	/** The specification of which data to aggregate. */
@@ -492,7 +492,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BucketByTimePeriodType { day = 0, week = 1, month = 2 }
+	export enum BucketByTimePeriodType { day = 'day', week = 'week', month = 'month' }
 
 	export interface AggregateResponse {
 
@@ -608,7 +608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataTypeFieldFormat { integer = 0, floatPoint = 1, string = 2, map = 3, integerList = 4, floatList = 5, blob = 6 }
+	export enum DataTypeFieldFormat { integer = 'integer', floatPoint = 'floatPoint', string = 'string', map = 'map', integerList = 'integerList', floatList = 'floatList', blob = 'blob' }
 
 
 	/** Representation of an integrated device (such as a phone or a wearable) that can hold sensors. Each sensor is exposed as a data source. The main purpose of the device information contained in this class is to identify the hardware of a particular data source. This can be useful in different ways, including: - Distinguishing two similar sensors on different devices (the step counter on two nexus 5 phones, for instance) - Display the source of data to the user (by using the device make / model) - Treat data differently depending on sensor type (accelerometers on a watch may give different patterns than those on a phone) - Build different analysis models for each device/version.  */
@@ -659,9 +659,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceType { unknown = 0, phone = 1, tablet = 2, watch = 3, chestStrap = 4, scale = 5, headMounted = 6, smartDisplay = 7 }
+	export enum DeviceType { unknown = 'unknown', phone = 'phone', tablet = 'tablet', watch = 'watch', chestStrap = 'chestStrap', scale = 'scale', headMounted = 'headMounted', smartDisplay = 'smartDisplay' }
 
-	export enum DataSourceType { raw = 0, derived = 1 }
+	export enum DataSourceType { raw = 'raw', derived = 'derived' }
 
 	export interface ListDataPointChangesResponse {
 

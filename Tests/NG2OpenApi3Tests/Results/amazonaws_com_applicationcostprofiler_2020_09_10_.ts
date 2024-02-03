@@ -111,9 +111,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportFrequency { MONTHLY = 0, DAILY = 1, ALL = 2 }
+	export enum ReportFrequency { MONTHLY = 'MONTHLY', DAILY = 'DAILY', ALL = 'ALL' }
 
-	export enum Format { CSV = 0, PARQUET = 1 }
+	export enum Format { CSV = 'CSV', PARQUET = 'PARQUET' }
 
 
 	/** Represents the Amazon Simple Storage Service (Amazon S3) location where AWS Application Cost Profiler reports are generated and then written to. */
@@ -160,7 +160,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3BucketRegion { 'ap-east-1' = 0, 'me-south-1' = 1, 'eu-south-1' = 2, 'af-south-1' = 3 }
+	export enum S3BucketRegion { 'ap-east-1' = 'ap-east-1', 'me-south-1' = 'me-south-1', 'eu-south-1' = 'eu-south-1', 'af-south-1' = 'af-south-1' }
 
 	export interface ListReportDefinitionsResult {
 		reportDefinitions?: Array<ReportDefinition>;

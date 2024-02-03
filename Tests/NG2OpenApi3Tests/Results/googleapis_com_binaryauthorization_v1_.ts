@@ -34,9 +34,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AdmissionRuleEnforcementMode { ENFORCEMENT_MODE_UNSPECIFIED = 0, ENFORCED_BLOCK_AND_AUDIT_LOG = 1, DRYRUN_AUDIT_LOG_ONLY = 2 }
+	export enum AdmissionRuleEnforcementMode { ENFORCEMENT_MODE_UNSPECIFIED = 'ENFORCEMENT_MODE_UNSPECIFIED', ENFORCED_BLOCK_AND_AUDIT_LOG = 'ENFORCED_BLOCK_AND_AUDIT_LOG', DRYRUN_AUDIT_LOG_ONLY = 'DRYRUN_AUDIT_LOG_ONLY' }
 
-	export enum AdmissionRuleEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 0, ALWAYS_ALLOW = 1, REQUIRE_ATTESTATION = 2, ALWAYS_DENY = 3 }
+	export enum AdmissionRuleEvaluationMode { EVALUATION_MODE_UNSPECIFIED = 'EVALUATION_MODE_UNSPECIFIED', ALWAYS_ALLOW = 'ALWAYS_ALLOW', REQUIRE_ATTESTATION = 'REQUIRE_ATTESTATION', ALWAYS_DENY = 'ALWAYS_DENY' }
 
 
 	/** An admission allowlist pattern exempts images from checks by admission rules. */
@@ -135,7 +135,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PkixPublicKeySignatureAlgorithm { SIGNATURE_ALGORITHM_UNSPECIFIED = 0, RSA_PSS_2048_SHA256 = 1, RSA_SIGN_PSS_2048_SHA256 = 2, RSA_PSS_3072_SHA256 = 3, RSA_SIGN_PSS_3072_SHA256 = 4, RSA_PSS_4096_SHA256 = 5, RSA_SIGN_PSS_4096_SHA256 = 6, RSA_PSS_4096_SHA512 = 7, RSA_SIGN_PSS_4096_SHA512 = 8, RSA_SIGN_PKCS1_2048_SHA256 = 9, RSA_SIGN_PKCS1_3072_SHA256 = 10, RSA_SIGN_PKCS1_4096_SHA256 = 11, RSA_SIGN_PKCS1_4096_SHA512 = 12, ECDSA_P256_SHA256 = 13, EC_SIGN_P256_SHA256 = 14, ECDSA_P384_SHA384 = 15, EC_SIGN_P384_SHA384 = 16, ECDSA_P521_SHA512 = 17, EC_SIGN_P521_SHA512 = 18 }
+	export enum PkixPublicKeySignatureAlgorithm { SIGNATURE_ALGORITHM_UNSPECIFIED = 'SIGNATURE_ALGORITHM_UNSPECIFIED', RSA_PSS_2048_SHA256 = 'RSA_PSS_2048_SHA256', RSA_SIGN_PSS_2048_SHA256 = 'RSA_SIGN_PSS_2048_SHA256', RSA_PSS_3072_SHA256 = 'RSA_PSS_3072_SHA256', RSA_SIGN_PSS_3072_SHA256 = 'RSA_SIGN_PSS_3072_SHA256', RSA_PSS_4096_SHA256 = 'RSA_PSS_4096_SHA256', RSA_SIGN_PSS_4096_SHA256 = 'RSA_SIGN_PSS_4096_SHA256', RSA_PSS_4096_SHA512 = 'RSA_PSS_4096_SHA512', RSA_SIGN_PSS_4096_SHA512 = 'RSA_SIGN_PSS_4096_SHA512', RSA_SIGN_PKCS1_2048_SHA256 = 'RSA_SIGN_PKCS1_2048_SHA256', RSA_SIGN_PKCS1_3072_SHA256 = 'RSA_SIGN_PKCS1_3072_SHA256', RSA_SIGN_PKCS1_4096_SHA256 = 'RSA_SIGN_PKCS1_4096_SHA256', RSA_SIGN_PKCS1_4096_SHA512 = 'RSA_SIGN_PKCS1_4096_SHA512', ECDSA_P256_SHA256 = 'ECDSA_P256_SHA256', EC_SIGN_P256_SHA256 = 'EC_SIGN_P256_SHA256', ECDSA_P384_SHA384 = 'ECDSA_P384_SHA384', EC_SIGN_P384_SHA384 = 'EC_SIGN_P384_SHA384', ECDSA_P521_SHA512 = 'ECDSA_P521_SHA512', EC_SIGN_P521_SHA512 = 'EC_SIGN_P521_SHA512' }
 
 
 	/** Occurrence that represents a single "attestation". The authenticity of an attestation can be verified using the attached signature. If the verifier trusts the public key of the signer, then verifying the signature is sufficient to establish trust. In this circumstance, the authority to which this attestation is attached is primarily useful for lookup (how to find this attestation if you already know the authority and artifact to be verified) and intent (for which authority this attestation was intended to sign. */
@@ -564,7 +564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerificationRuleTrustedBuilder { BUILDER_UNSPECIFIED = 0, GOOGLE_CLOUD_BUILD = 1 }
+	export enum VerificationRuleTrustedBuilder { BUILDER_UNSPECIFIED = 'BUILDER_UNSPECIFIED', GOOGLE_CLOUD_BUILD = 'GOOGLE_CLOUD_BUILD' }
 
 
 	/** A trusted directory check, which rejects images that do not come from the set of user-configured trusted directories. */
@@ -620,7 +620,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VulnerabilityCheckMaximumFixableSeverity { MAXIMUM_ALLOWED_SEVERITY_UNSPECIFIED = 0, BLOCK_ALL = 1, MINIMAL = 2, LOW = 3, MEDIUM = 4, HIGH = 5, CRITICAL = 6, ALLOW_ALL = 7 }
+	export enum VulnerabilityCheckMaximumFixableSeverity { MAXIMUM_ALLOWED_SEVERITY_UNSPECIFIED = 'MAXIMUM_ALLOWED_SEVERITY_UNSPECIFIED', BLOCK_ALL = 'BLOCK_ALL', MINIMAL = 'MINIMAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL', ALLOW_ALL = 'ALLOW_ALL' }
 
 
 	/** A conjunction of policy checks, scoped to a particular namespace or Kubernetes service account. In order for evaluation of a `CheckSet` to return "allowed" for a given image in a given Pod, one of the following conditions must be satisfied: * The image is explicitly exempted by an entry in `image_allowlist`, OR * ALL of the `checks` evaluate to "allowed". */
@@ -914,7 +914,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyGlobalPolicyEvaluationMode { GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 0, ENABLE = 1, DISABLE = 2 }
+	export enum PolicyGlobalPolicyEvaluationMode { GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 'GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED', ENABLE = 'ENABLE', DISABLE = 'DISABLE' }
 
 
 	/** Request message for `SetIamPolicy` method. */
@@ -1026,7 +1026,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidateAttestationOccurrenceResponseResult { RESULT_UNSPECIFIED = 0, VERIFIED = 1, ATTESTATION_NOT_VERIFIABLE = 2 }
+	export enum ValidateAttestationOccurrenceResponseResult { RESULT_UNSPECIFIED = 'RESULT_UNSPECIFIED', VERIFIED = 'VERIFIED', ATTESTATION_NOT_VERIFIABLE = 'ATTESTATION_NOT_VERIFIABLE' }
 
 	@Injectable()
 	export class MyClient {

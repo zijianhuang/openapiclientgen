@@ -143,7 +143,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchItemErrorCode { AccessDeniedError = 0, ConflictError = 1, InternalServerError = 2, ResourceNotFoundError = 3, ThrottlingError = 4, ValidationError = 5 }
+	export enum BatchItemErrorCode { AccessDeniedError = 'AccessDeniedError', ConflictError = 'ConflictError', InternalServerError = 'InternalServerError', ResourceNotFoundError = 'ResourceNotFoundError', ThrottlingError = 'ThrottlingError', ValidationError = 'ValidationError' }
 
 	export interface BatchDeleteGeofenceResponse {
 
@@ -705,7 +705,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DistanceUnit { Kilometers = 0, Miles = 1 }
+	export enum DistanceUnit { Kilometers = 'Kilometers', Miles = 'Miles' }
 
 
 	/** Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>. */
@@ -733,7 +733,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionUnit { Meters = 0, Feet = 1 }
+	export enum DimensionUnit { Meters = 'Meters', Feet = 'Feet' }
 
 
 	/** Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>. */
@@ -755,7 +755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VehicleWeightUnit { Kilograms = 0, Pounds = 1 }
+	export enum VehicleWeightUnit { Kilograms = 'Kilograms', Pounds = 'Pounds' }
 
 
 	/** Returns the result of the route matrix calculation. */
@@ -824,7 +824,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RouteMatrixErrorCode { RouteNotFound = 0, RouteTooLong = 1, PositionsNotFound = 2, DestinationPositionNotFound = 3, DeparturePositionNotFound = 4, OtherValidationError = 5 }
+	export enum RouteMatrixErrorCode { RouteNotFound = 'RouteNotFound', RouteTooLong = 'RouteTooLong', PositionsNotFound = 'PositionsNotFound', DestinationPositionNotFound = 'DestinationPositionNotFound', DeparturePositionNotFound = 'DeparturePositionNotFound', OtherValidationError = 'OtherValidationError' }
 
 
 	/** A summary of the calculated route matrix. */
@@ -999,7 +999,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IntendedUse { SingleUse = 0, Storage = 1 }
+	export enum IntendedUse { SingleUse = 'SingleUse', Storage = 'Storage' }
 
 	export interface CreateRouteCalculatorResponse {
 
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PricingPlan { RequestBasedUsage = 0, MobileAssetTracking = 1, MobileAssetManagement = 2 }
+	export enum PricingPlan { RequestBasedUsage = 'RequestBasedUsage', MobileAssetTracking = 'MobileAssetTracking', MobileAssetManagement = 'MobileAssetManagement' }
 
 	export interface TagMap {
 	}
@@ -1549,7 +1549,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PositionFiltering { TimeBased = 0, DistanceBased = 1, AccuracyBased = 2 }
+	export enum PositionFiltering { TimeBased = 'TimeBased', DistanceBased = 'DistanceBased', AccuracyBased = 'AccuracyBased' }
 
 	export interface DisassociateTrackerConsumerResponse {
 	}
@@ -2056,7 +2056,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { Active = 0, Expired = 1 }
+	export enum Status { Active = 'Active', Expired = 'Expired' }
 
 	export interface ListMapsResponse {
 
@@ -2956,7 +2956,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TravelMode { Car = 0, Truck = 1, Walking = 2, Bicycle = 3, Motorcycle = 4 }
+	export enum TravelMode { Car = 'Car', Truck = 'Truck', Walking = 'Walking', Bicycle = 'Bicycle', Motorcycle = 'Motorcycle' }
 
 
 	/** Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Truck</code>. */

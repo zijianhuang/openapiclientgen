@@ -62,9 +62,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformSummaryBetterAdsStatus { UNKNOWN = 0, PASSING = 1, WARNING = 2, FAILING = 3 }
+	export enum PlatformSummaryBetterAdsStatus { UNKNOWN = 'UNKNOWN', PASSING = 'PASSING', WARNING = 'WARNING', FAILING = 'FAILING' }
 
-	export enum PlatformSummaryFilterStatus { UNKNOWN = 0, ON = 1, OFF = 2, PAUSED = 3, PENDING = 4 }
+	export enum PlatformSummaryFilterStatus { UNKNOWN = 'UNKNOWN', ON = 'ON', OFF = 'OFF', PAUSED = 'PAUSED', PENDING = 'PENDING' }
 
 
 	/** Response message for GetSiteSummary. */

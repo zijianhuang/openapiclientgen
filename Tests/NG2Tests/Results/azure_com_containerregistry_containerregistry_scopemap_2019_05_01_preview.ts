@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GenerateCredentialsParametersName { password1 = 0, password2 = 1 }
+	export enum GenerateCredentialsParametersName { password1 = 'password1', password2 = 'password2' }
 
 
 	/** The response from the GenerateCredentials operation. */
@@ -208,7 +208,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScopeMapPropertiesProvisioningState { Creating = 0, Updating = 1, Deleting = 2, Succeeded = 3, Failed = 4, Canceled = 5 }
+	export enum ScopeMapPropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Deleting = 'Deleting', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled' }
 
 
 	/** The result of a request to list scope maps for a container registry. */
@@ -402,9 +402,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TokenCertificateName { certificate1 = 0, certificate2 = 1 }
+	export enum TokenCertificateName { certificate1 = 'certificate1', certificate2 = 'certificate2' }
 
-	export enum TokenPropertiesStatus { enabled = 0, disabled = 1 }
+	export enum TokenPropertiesStatus { enabled = 'enabled', disabled = 'disabled' }
 
 
 	/** The result of a request to list tokens for a container registry. */

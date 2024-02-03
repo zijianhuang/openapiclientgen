@@ -139,7 +139,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSourceStatus { ENABLED = 0, DISABLED = 1 }
+	export enum DataSourceStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Describes whether S3 data event logs will be enabled as a data source. */
@@ -253,7 +253,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectorFeature { S3_DATA_EVENTS = 0, EKS_AUDIT_LOGS = 1, EBS_MALWARE_PROTECTION = 2, RDS_LOGIN_EVENTS = 3, EKS_RUNTIME_MONITORING = 4, LAMBDA_NETWORK_LOGS = 5 }
+	export enum DetectorFeature { S3_DATA_EVENTS = 'S3_DATA_EVENTS', EKS_AUDIT_LOGS = 'EKS_AUDIT_LOGS', EBS_MALWARE_PROTECTION = 'EBS_MALWARE_PROTECTION', RDS_LOGIN_EVENTS = 'RDS_LOGIN_EVENTS', EKS_RUNTIME_MONITORING = 'EKS_RUNTIME_MONITORING', LAMBDA_NETWORK_LOGS = 'LAMBDA_NETWORK_LOGS' }
 
 
 	/** Information about the additional configuration for a feature in your GuardDuty account. */
@@ -275,7 +275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureAdditionalConfiguration { EKS_ADDON_MANAGEMENT = 0 }
+	export enum FeatureAdditionalConfiguration { EKS_ADDON_MANAGEMENT = 'EKS_ADDON_MANAGEMENT' }
 
 	export interface CreateFilterResponse {
 
@@ -590,7 +590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanStatus { RUNNING = 0, COMPLETED = 1, FAILED = 2, SKIPPED = 3 }
+	export enum ScanStatus { RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', FAILED = 'FAILED', SKIPPED = 'SKIPPED' }
 
 
 	/** Represents the reason the scan was triggered. */
@@ -646,7 +646,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanResult { CLEAN = 0, INFECTED = 1 }
+	export enum ScanResult { CLEAN = 'CLEAN', INFECTED = 'INFECTED' }
 
 
 	/** Contains EBS volume details. */
@@ -683,7 +683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanType { GUARDDUTY_INITIATED = 0, ON_DEMAND = 1 }
+	export enum ScanType { GUARDDUTY_INITIATED = 'GUARDDUTY_INITIATED', ON_DEMAND = 'ON_DEMAND' }
 
 
 	/** Represents a condition that when matched will be added to the response of the operation. Irrespective of using any filter criteria, an administrator account can view the scan entries for all of its member accounts. However, each member account can view the scan entries only for their own account. */
@@ -703,7 +703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CriterionKey { EC2_INSTANCE_ARN = 0, SCAN_ID = 1, ACCOUNT_ID = 2, GUARDDUTY_FINDING_ID = 3, SCAN_START_TIME = 4, SCAN_STATUS = 5, SCAN_TYPE = 6 }
+	export enum CriterionKey { EC2_INSTANCE_ARN = 'EC2_INSTANCE_ARN', SCAN_ID = 'SCAN_ID', ACCOUNT_ID = 'ACCOUNT_ID', GUARDDUTY_FINDING_ID = 'GUARDDUTY_FINDING_ID', SCAN_START_TIME = 'SCAN_START_TIME', SCAN_STATUS = 'SCAN_STATUS', SCAN_TYPE = 'SCAN_TYPE' }
 
 
 	/** Contains information about the condition. */
@@ -728,7 +728,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderBy { ASC = 0, DESC = 1 }
+	export enum OrderBy { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface DescribeOrganizationConfigurationResponse {
 		AutoEnable?: boolean | null;
@@ -904,7 +904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrgFeatureStatus { NEW = 0, NONE = 1 }
+	export enum OrgFeatureStatus { NEW = 'NEW', NONE = 'NONE' }
 
 
 	/** A list of additional configuration which will be configured for the organization. */
@@ -926,7 +926,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoEnableMembers { NEW = 0, ALL = 1, NONE = 2 }
+	export enum AutoEnableMembers { NEW = 'NEW', ALL = 'ALL', NONE = 'NONE' }
 
 	export interface DescribePublishingDestinationResponse {
 
@@ -969,9 +969,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DestinationType { S3 = 0 }
+	export enum DestinationType { S3 = 'S3' }
 
-	export enum PublishingStatus { PENDING_VERIFICATION = 0, PUBLISHING = 1, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = 2, STOPPED = 3 }
+	export enum PublishingStatus { PENDING_VERIFICATION = 'PENDING_VERIFICATION', PUBLISHING = 'PUBLISHING', UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = 'UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY', STOPPED = 'STOPPED' }
 
 
 	/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CoverageFilterCriterionKey { ACCOUNT_ID = 0, CLUSTER_NAME = 1, RESOURCE_TYPE = 2, COVERAGE_STATUS = 3, ADDON_VERSION = 4 }
+	export enum CoverageFilterCriterionKey { ACCOUNT_ID = 'ACCOUNT_ID', CLUSTER_NAME = 'CLUSTER_NAME', RESOURCE_TYPE = 'RESOURCE_TYPE', COVERAGE_STATUS = 'COVERAGE_STATUS', ADDON_VERSION = 'ADDON_VERSION' }
 
 
 	/** Represents a condition that when matched will be added to the response of the operation. */
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CoverageStatisticsType { COUNT_BY_RESOURCE_TYPE = 0, COUNT_BY_COVERAGE_STATUS = 1 }
+	export enum CoverageStatisticsType { COUNT_BY_RESOURCE_TYPE = 'COUNT_BY_RESOURCE_TYPE', COUNT_BY_COVERAGE_STATUS = 'COUNT_BY_COVERAGE_STATUS' }
 
 	export interface GetDetectorResponse {
 		CreatedAt?: string;
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingPublishingFrequency { FIFTEEN_MINUTES = 0, ONE_HOUR = 1, SIX_HOURS = 2 }
+	export enum FindingPublishingFrequency { FIFTEEN_MINUTES = 'FIFTEEN_MINUTES', ONE_HOUR = 'ONE_HOUR', SIX_HOURS = 'SIX_HOURS' }
 
 
 	/** Contains information on the status of data sources for the detector. */
@@ -1396,7 +1396,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectorFeatureResult { FLOW_LOGS = 0, CLOUD_TRAIL = 1, DNS_LOGS = 2, S3_DATA_EVENTS = 3, EKS_AUDIT_LOGS = 4, EBS_MALWARE_PROTECTION = 5, RDS_LOGIN_EVENTS = 6, EKS_RUNTIME_MONITORING = 7, LAMBDA_NETWORK_LOGS = 8 }
+	export enum DetectorFeatureResult { FLOW_LOGS = 'FLOW_LOGS', CLOUD_TRAIL = 'CLOUD_TRAIL', DNS_LOGS = 'DNS_LOGS', S3_DATA_EVENTS = 'S3_DATA_EVENTS', EKS_AUDIT_LOGS = 'EKS_AUDIT_LOGS', EBS_MALWARE_PROTECTION = 'EBS_MALWARE_PROTECTION', RDS_LOGIN_EVENTS = 'RDS_LOGIN_EVENTS', EKS_RUNTIME_MONITORING = 'EKS_RUNTIME_MONITORING', LAMBDA_NETWORK_LOGS = 'LAMBDA_NETWORK_LOGS' }
 
 
 	/** Information about the additional configuration. */
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterAction { NOOP = 0, ARCHIVE = 1 }
+	export enum FilterAction { NOOP = 'NOOP', ARCHIVE = 'ARCHIVE' }
 
 
 	/** Contains information about the criteria used for querying findings. */
@@ -3338,7 +3338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingStatisticType { COUNT_BY_SEVERITY = 0 }
+	export enum FindingStatisticType { COUNT_BY_SEVERITY = 'COUNT_BY_SEVERITY' }
 
 	export interface GetIPSetResponse {
 
@@ -3379,9 +3379,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IpSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
+	export enum IpSetFormat { TXT = 'TXT', STIX = 'STIX', OTX_CSV = 'OTX_CSV', ALIEN_VAULT = 'ALIEN_VAULT', PROOF_POINT = 'PROOF_POINT', FIRE_EYE = 'FIRE_EYE' }
 
-	export enum IpSetStatus { INACTIVE = 0, ACTIVATING = 1, ACTIVE = 2, DEACTIVATING = 3, ERROR = 4, DELETE_PENDING = 5, DELETED = 6 }
+	export enum IpSetStatus { INACTIVE = 'INACTIVE', ACTIVATING = 'ACTIVATING', ACTIVE = 'ACTIVE', DEACTIVATING = 'DEACTIVATING', ERROR = 'ERROR', DELETE_PENDING = 'DELETE_PENDING', DELETED = 'DELETED' }
 
 	export interface GetInvitationsCountResponse {
 		InvitationsCount?: number | null;
@@ -3440,7 +3440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EbsSnapshotPreservation { NO_RETENTION = 0, RETENTION_WITH_FINDING = 1 }
+	export enum EbsSnapshotPreservation { NO_RETENTION = 'NO_RETENTION', RETENTION_WITH_FINDING = 'RETENTION_WITH_FINDING' }
 
 
 	/** This output is deprecated, use GetAdministratorAccountResponse instead */
@@ -3891,7 +3891,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSource { FLOW_LOGS = 0, CLOUD_TRAIL = 1, DNS_LOGS = 2, S3_LOGS = 3, KUBERNETES_AUDIT_LOGS = 4, EC2_MALWARE_SCAN = 5 }
+	export enum DataSource { FLOW_LOGS = 'FLOW_LOGS', CLOUD_TRAIL = 'CLOUD_TRAIL', DNS_LOGS = 'DNS_LOGS', S3_LOGS = 'S3_LOGS', KUBERNETES_AUDIT_LOGS = 'KUBERNETES_AUDIT_LOGS', EC2_MALWARE_SCAN = 'EC2_MALWARE_SCAN' }
 
 
 	/** Contains information on the sum of usage based on an Amazon Web Services resource. */
@@ -3929,7 +3929,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageFeature { FLOW_LOGS = 0, CLOUD_TRAIL = 1, DNS_LOGS = 2, S3_DATA_EVENTS = 3, EKS_AUDIT_LOGS = 4, EBS_MALWARE_PROTECTION = 5, RDS_LOGIN_EVENTS = 6, LAMBDA_NETWORK_LOGS = 7, EKS_RUNTIME_MONITORING = 8 }
+	export enum UsageFeature { FLOW_LOGS = 'FLOW_LOGS', CLOUD_TRAIL = 'CLOUD_TRAIL', DNS_LOGS = 'DNS_LOGS', S3_DATA_EVENTS = 'S3_DATA_EVENTS', EKS_AUDIT_LOGS = 'EKS_AUDIT_LOGS', EBS_MALWARE_PROTECTION = 'EBS_MALWARE_PROTECTION', RDS_LOGIN_EVENTS = 'RDS_LOGIN_EVENTS', LAMBDA_NETWORK_LOGS = 'LAMBDA_NETWORK_LOGS', EKS_RUNTIME_MONITORING = 'EKS_RUNTIME_MONITORING' }
 
 	export interface InviteMembersResponse {
 
@@ -4055,11 +4055,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { EKS = 0 }
+	export enum ResourceType { EKS = 'EKS' }
 
-	export enum CoverageStatus { HEALTHY = 0, UNHEALTHY = 1 }
+	export enum CoverageStatus { HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
-	export enum CoverageSortKey { ACCOUNT_ID = 0, CLUSTER_NAME = 1, COVERAGE_STATUS = 2, ISSUE = 3, ADDON_VERSION = 4, UPDATED_AT = 5 }
+	export enum CoverageSortKey { ACCOUNT_ID = 'ACCOUNT_ID', CLUSTER_NAME = 'CLUSTER_NAME', COVERAGE_STATUS = 'COVERAGE_STATUS', ISSUE = 'ISSUE', ADDON_VERSION = 'ADDON_VERSION', UPDATED_AT = 'UPDATED_AT' }
 
 	export interface ListDetectorsResponse {
 
@@ -4213,7 +4213,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
+	export enum AdminStatus { ENABLED = 'ENABLED', DISABLE_IN_PROGRESS = 'DISABLE_IN_PROGRESS' }
 
 	export interface ListPublishingDestinationsResponse {
 
@@ -4977,7 +4977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThreatIntelSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
+	export enum ThreatIntelSetFormat { TXT = 'TXT', STIX = 'STIX', OTX_CSV = 'OTX_CSV', ALIEN_VAULT = 'ALIEN_VAULT', PROOF_POINT = 'PROOF_POINT', FIRE_EYE = 'FIRE_EYE' }
 
 	export interface CreateThreatIntelSetRequest {
 
@@ -5183,9 +5183,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FeatureStatus { ENABLED = 0, DISABLED = 1 }
+	export enum FeatureStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
-	export enum DetectorStatus { ENABLED = 0, DISABLED = 1 }
+	export enum DetectorStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface DisableOrganizationAdminAccountRequest {
 
@@ -5258,9 +5258,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Feedback { USEFUL = 0, NOT_USEFUL = 1 }
+	export enum Feedback { USEFUL = 'USEFUL', NOT_USEFUL = 'NOT_USEFUL' }
 
-	export enum FreeTrialFeatureResult { FLOW_LOGS = 0, CLOUD_TRAIL = 1, DNS_LOGS = 2, S3_DATA_EVENTS = 3, EKS_AUDIT_LOGS = 4, EBS_MALWARE_PROTECTION = 5, RDS_LOGIN_EVENTS = 6, EKS_RUNTIME_MONITORING = 7, LAMBDA_NETWORK_LOGS = 8 }
+	export enum FreeTrialFeatureResult { FLOW_LOGS = 'FLOW_LOGS', CLOUD_TRAIL = 'CLOUD_TRAIL', DNS_LOGS = 'DNS_LOGS', S3_DATA_EVENTS = 'S3_DATA_EVENTS', EKS_AUDIT_LOGS = 'EKS_AUDIT_LOGS', EBS_MALWARE_PROTECTION = 'EBS_MALWARE_PROTECTION', RDS_LOGIN_EVENTS = 'RDS_LOGIN_EVENTS', EKS_RUNTIME_MONITORING = 'EKS_RUNTIME_MONITORING', LAMBDA_NETWORK_LOGS = 'LAMBDA_NETWORK_LOGS' }
 
 	export interface GetAdministratorAccountRequest {
 	}
@@ -5425,9 +5425,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ThreatIntelSetStatus { INACTIVE = 0, ACTIVATING = 1, ACTIVE = 2, DEACTIVATING = 3, ERROR = 4, DELETE_PENDING = 5, DELETED = 6 }
+	export enum ThreatIntelSetStatus { INACTIVE = 'INACTIVE', ACTIVATING = 'ACTIVATING', ACTIVE = 'ACTIVE', DEACTIVATING = 'DEACTIVATING', ERROR = 'ERROR', DELETE_PENDING = 'DELETE_PENDING', DELETED = 'DELETED' }
 
-	export enum UsageStatisticType { SUM_BY_ACCOUNT = 0, SUM_BY_DATA_SOURCE = 1, SUM_BY_RESOURCE = 2, TOP_RESOURCES = 3, SUM_BY_FEATURES = 4 }
+	export enum UsageStatisticType { SUM_BY_ACCOUNT = 'SUM_BY_ACCOUNT', SUM_BY_DATA_SOURCE = 'SUM_BY_DATA_SOURCE', SUM_BY_RESOURCE = 'SUM_BY_RESOURCE', TOP_RESOURCES = 'TOP_RESOURCES', SUM_BY_FEATURES = 'SUM_BY_FEATURES' }
 
 
 	/** Contains information about the criteria used to query usage statistics. */
@@ -5645,9 +5645,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrgFeatureAdditionalConfiguration { EKS_ADDON_MANAGEMENT = 0 }
+	export enum OrgFeatureAdditionalConfiguration { EKS_ADDON_MANAGEMENT = 'EKS_ADDON_MANAGEMENT' }
 
-	export enum OrgFeature { S3_DATA_EVENTS = 0, EKS_AUDIT_LOGS = 1, EBS_MALWARE_PROTECTION = 2, RDS_LOGIN_EVENTS = 3, EKS_RUNTIME_MONITORING = 4, LAMBDA_NETWORK_LOGS = 5 }
+	export enum OrgFeature { S3_DATA_EVENTS = 'S3_DATA_EVENTS', EKS_AUDIT_LOGS = 'EKS_AUDIT_LOGS', EBS_MALWARE_PROTECTION = 'EBS_MALWARE_PROTECTION', RDS_LOGIN_EVENTS = 'RDS_LOGIN_EVENTS', EKS_RUNTIME_MONITORING = 'EKS_RUNTIME_MONITORING', LAMBDA_NETWORK_LOGS = 'LAMBDA_NETWORK_LOGS' }
 
 
 	/** An object that contains information on which data sources will be configured to be automatically enabled for new members within the organization. */
@@ -5685,7 +5685,7 @@ export namespace MyNS {
 
 
 	/** An enum value representing possible resource properties to match with given scan condition. */
-	export enum ScanCriterionKey { EC2_INSTANCE_TAG = 0 }
+	export enum ScanCriterionKey { EC2_INSTANCE_TAG = 'EC2_INSTANCE_TAG' }
 
 	export interface StartMalwareScanRequest {
 

@@ -115,15 +115,15 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessedDiskRecommendedDiskSize { Unknown = 0, Standard_S4 = 1, Standard_S6 = 2, Standard_S10 = 3, Standard_S15 = 4, Standard_S20 = 5, Standard_S30 = 6, Standard_S40 = 7, Standard_S50 = 8, Premium_P4 = 9, Premium_P6 = 10, Premium_P10 = 11, Premium_P15 = 12, Premium_P20 = 13, Premium_P30 = 14, Premium_P40 = 15, Premium_P50 = 16, Standard_S60 = 17, Standard_S70 = 18, Standard_S80 = 19, Premium_P60 = 20, Premium_P70 = 21, Premium_P80 = 22, StandardSSD_E10 = 23, StandardSSD_E15 = 24, StandardSSD_E20 = 25, StandardSSD_E30 = 26, StandardSSD_E40 = 27, StandardSSD_E50 = 28, StandardSSD_E60 = 29, StandardSSD_E70 = 30, StandardSSD_E80 = 31, StandardSSD_E4 = 32, StandardSSD_E6 = 33 }
+	export enum AssessedDiskRecommendedDiskSize { Unknown = 'Unknown', Standard_S4 = 'Standard_S4', Standard_S6 = 'Standard_S6', Standard_S10 = 'Standard_S10', Standard_S15 = 'Standard_S15', Standard_S20 = 'Standard_S20', Standard_S30 = 'Standard_S30', Standard_S40 = 'Standard_S40', Standard_S50 = 'Standard_S50', Premium_P4 = 'Premium_P4', Premium_P6 = 'Premium_P6', Premium_P10 = 'Premium_P10', Premium_P15 = 'Premium_P15', Premium_P20 = 'Premium_P20', Premium_P30 = 'Premium_P30', Premium_P40 = 'Premium_P40', Premium_P50 = 'Premium_P50', Standard_S60 = 'Standard_S60', Standard_S70 = 'Standard_S70', Standard_S80 = 'Standard_S80', Premium_P60 = 'Premium_P60', Premium_P70 = 'Premium_P70', Premium_P80 = 'Premium_P80', StandardSSD_E10 = 'StandardSSD_E10', StandardSSD_E15 = 'StandardSSD_E15', StandardSSD_E20 = 'StandardSSD_E20', StandardSSD_E30 = 'StandardSSD_E30', StandardSSD_E40 = 'StandardSSD_E40', StandardSSD_E50 = 'StandardSSD_E50', StandardSSD_E60 = 'StandardSSD_E60', StandardSSD_E70 = 'StandardSSD_E70', StandardSSD_E80 = 'StandardSSD_E80', StandardSSD_E4 = 'StandardSSD_E4', StandardSSD_E6 = 'StandardSSD_E6' }
 
-	export enum AssessedDiskRecommendedDiskType { Unknown = 0, Standard = 1, Premium = 2, StandardSSD = 3, StandardOrPremium = 4 }
+	export enum AssessedDiskRecommendedDiskType { Unknown = 'Unknown', Standard = 'Standard', Premium = 'Premium', StandardSSD = 'StandardSSD', StandardOrPremium = 'StandardOrPremium' }
 
-	export enum AssessedDiskSuitability { Unknown = 0, NotSuitable = 1, Suitable = 2, ConditionallySuitable = 3, ReadinessUnknown = 4 }
+	export enum AssessedDiskSuitability { Unknown = 'Unknown', NotSuitable = 'NotSuitable', Suitable = 'Suitable', ConditionallySuitable = 'ConditionallySuitable', ReadinessUnknown = 'ReadinessUnknown' }
 
-	export enum AssessedDiskSuitabilityDetail { None = 0, NumberOfReadOperationsPerSecondMissing = 1, NumberOfWriteOperationsPerSecondMissing = 2, MegabytesPerSecondOfReadMissing = 3, MegabytesPerSecondOfWriteMissing = 4, DiskGigabytesConsumedMissing = 5, DiskGigabytesProvisionedMissing = 6, NumberOfReadOperationsPerSecondOutOfRange = 7, NumberOfWriteOperationsPerSecondOutOfRange = 8, MegabytesPerSecondOfReadOutOfRange = 9, MegabytesPerSecondOfWriteOutOfRange = 10, DiskGigabytesConsumedOutOfRange = 11, DiskGigabytesProvisionedOutOfRange = 12 }
+	export enum AssessedDiskSuitabilityDetail { None = 'None', NumberOfReadOperationsPerSecondMissing = 'NumberOfReadOperationsPerSecondMissing', NumberOfWriteOperationsPerSecondMissing = 'NumberOfWriteOperationsPerSecondMissing', MegabytesPerSecondOfReadMissing = 'MegabytesPerSecondOfReadMissing', MegabytesPerSecondOfWriteMissing = 'MegabytesPerSecondOfWriteMissing', DiskGigabytesConsumedMissing = 'DiskGigabytesConsumedMissing', DiskGigabytesProvisionedMissing = 'DiskGigabytesProvisionedMissing', NumberOfReadOperationsPerSecondOutOfRange = 'NumberOfReadOperationsPerSecondOutOfRange', NumberOfWriteOperationsPerSecondOutOfRange = 'NumberOfWriteOperationsPerSecondOutOfRange', MegabytesPerSecondOfReadOutOfRange = 'MegabytesPerSecondOfReadOutOfRange', MegabytesPerSecondOfWriteOutOfRange = 'MegabytesPerSecondOfWriteOutOfRange', DiskGigabytesConsumedOutOfRange = 'DiskGigabytesConsumedOutOfRange', DiskGigabytesProvisionedOutOfRange = 'DiskGigabytesProvisionedOutOfRange' }
 
-	export enum AssessedDiskSuitabilityExplanation { Unknown = 0, NotApplicable = 1, DiskSizeGreaterThanSupported = 2, NoSuitableDiskSizeForIops = 3, NoSuitableDiskSizeForThroughput = 4, NoDiskSizeFoundInSelectedLocation = 5, NoDiskSizeFoundForSelectedRedundancy = 6, InternalErrorOccurredForDiskEvaluation = 7, NoEaPriceFoundForDiskSize = 8 }
+	export enum AssessedDiskSuitabilityExplanation { Unknown = 'Unknown', NotApplicable = 'NotApplicable', DiskSizeGreaterThanSupported = 'DiskSizeGreaterThanSupported', NoSuitableDiskSizeForIops = 'NoSuitableDiskSizeForIops', NoSuitableDiskSizeForThroughput = 'NoSuitableDiskSizeForThroughput', NoDiskSizeFoundInSelectedLocation = 'NoDiskSizeFoundInSelectedLocation', NoDiskSizeFoundForSelectedRedundancy = 'NoDiskSizeFoundForSelectedRedundancy', InternalErrorOccurredForDiskEvaluation = 'InternalErrorOccurredForDiskEvaluation', NoEaPriceFoundForDiskSize = 'NoEaPriceFoundForDiskSize' }
 
 
 	/** A machine evaluated as part of an assessment. */
@@ -387,7 +387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessedMachinePropertiesBootType { Unknown = 0, EFI = 1, BIOS = 2 }
+	export enum AssessedMachinePropertiesBootType { Unknown = 'Unknown', EFI = 'EFI', BIOS = 'BIOS' }
 
 
 	/** A network adapter assessed for an assessment. */
@@ -469,15 +469,15 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessedNetworkAdapterSuitabilityDetail { None = 0, MegabytesOfDataTransmittedMissing = 1, MegabytesOfDataTransmittedOutOfRange = 2 }
+	export enum AssessedNetworkAdapterSuitabilityDetail { None = 'None', MegabytesOfDataTransmittedMissing = 'MegabytesOfDataTransmittedMissing', MegabytesOfDataTransmittedOutOfRange = 'MegabytesOfDataTransmittedOutOfRange' }
 
-	export enum AssessedNetworkAdapterSuitabilityExplanation { Unknown = 0, NotApplicable = 1, InternalErrorOccurred = 2 }
+	export enum AssessedNetworkAdapterSuitabilityExplanation { Unknown = 'Unknown', NotApplicable = 'NotApplicable', InternalErrorOccurred = 'InternalErrorOccurred' }
 
-	export enum AssessedMachinePropertiesRecommendedSize { Unknown = 0, Basic_A0 = 1, Basic_A1 = 2, Basic_A2 = 3, Basic_A3 = 4, Basic_A4 = 5, Standard_A0 = 6, Standard_A1 = 7, Standard_A2 = 8, Standard_A3 = 9, Standard_A4 = 10, Standard_A5 = 11, Standard_A6 = 12, Standard_A7 = 13, Standard_A8 = 14, Standard_A9 = 15, Standard_A10 = 16, Standard_A11 = 17, Standard_A1_v2 = 18, Standard_A2_v2 = 19, Standard_A4_v2 = 20, Standard_A8_v2 = 21, Standard_A2m_v2 = 22, Standard_A4m_v2 = 23, Standard_A8m_v2 = 24, Standard_D1 = 25, Standard_D2 = 26, Standard_D3 = 27, Standard_D4 = 28, Standard_D11 = 29, Standard_D12 = 30, Standard_D13 = 31, Standard_D14 = 32, Standard_D1_v2 = 33, Standard_D2_v2 = 34, Standard_D3_v2 = 35, Standard_D4_v2 = 36, Standard_D5_v2 = 37, Standard_D11_v2 = 38, Standard_D12_v2 = 39, Standard_D13_v2 = 40, Standard_D14_v2 = 41, Standard_D15_v2 = 42, Standard_DS1 = 43, Standard_DS2 = 44, Standard_DS3 = 45, Standard_DS4 = 46, Standard_DS11 = 47, Standard_DS12 = 48, Standard_DS13 = 49, Standard_DS14 = 50, Standard_DS1_v2 = 51, Standard_DS2_v2 = 52, Standard_DS3_v2 = 53, Standard_DS4_v2 = 54, Standard_DS5_v2 = 55, Standard_DS11_v2 = 56, Standard_DS12_v2 = 57, Standard_DS13_v2 = 58, Standard_DS14_v2 = 59, Standard_DS15_v2 = 60, Standard_F1 = 61, Standard_F2 = 62, Standard_F4 = 63, Standard_F8 = 64, Standard_F16 = 65, Standard_F1s = 66, Standard_F2s = 67, Standard_F4s = 68, Standard_F8s = 69, Standard_F16s = 70, Standard_G1 = 71, Standard_G2 = 72, Standard_G3 = 73, Standard_G4 = 74, Standard_G5 = 75, Standard_GS1 = 76, Standard_GS2 = 77, Standard_GS3 = 78, Standard_GS4 = 79, Standard_GS5 = 80, Standard_H8 = 81, Standard_H16 = 82, Standard_H8m = 83, Standard_H16m = 84, Standard_H16r = 85, Standard_H16mr = 86, Standard_L4s = 87, Standard_L8s = 88, Standard_L16s = 89, Standard_L32s = 90, Standard_D2s_v3 = 91, Standard_D4s_v3 = 92, Standard_D8s_v3 = 93, Standard_D16s_v3 = 94, Standard_D32s_v3 = 95, Standard_D64s_v3 = 96, Standard_D2_v3 = 97, Standard_D4_v3 = 98, Standard_D8_v3 = 99, Standard_D16_v3 = 100, Standard_D32_v3 = 101, Standard_D64_v3 = 102, Standard_F2s_v2 = 103, Standard_F4s_v2 = 104, Standard_F8s_v2 = 105, Standard_F16s_v2 = 106, Standard_F32s_v2 = 107, Standard_F64s_v2 = 108, Standard_F72s_v2 = 109, Standard_E2_v3 = 110, Standard_E4_v3 = 111, Standard_E8_v3 = 112, Standard_E16_v3 = 113, Standard_E32_v3 = 114, Standard_E64_v3 = 115, Standard_E2s_v3 = 116, Standard_E4s_v3 = 117, Standard_E8s_v3 = 118, Standard_E16s_v3 = 119, Standard_E32s_v3 = 120, Standard_E64s_v3 = 121, Standard_M64s = 122, Standard_M64ms = 123, Standard_M128s = 124, Standard_M128ms = 125 }
+	export enum AssessedMachinePropertiesRecommendedSize { Unknown = 'Unknown', Basic_A0 = 'Basic_A0', Basic_A1 = 'Basic_A1', Basic_A2 = 'Basic_A2', Basic_A3 = 'Basic_A3', Basic_A4 = 'Basic_A4', Standard_A0 = 'Standard_A0', Standard_A1 = 'Standard_A1', Standard_A2 = 'Standard_A2', Standard_A3 = 'Standard_A3', Standard_A4 = 'Standard_A4', Standard_A5 = 'Standard_A5', Standard_A6 = 'Standard_A6', Standard_A7 = 'Standard_A7', Standard_A8 = 'Standard_A8', Standard_A9 = 'Standard_A9', Standard_A10 = 'Standard_A10', Standard_A11 = 'Standard_A11', Standard_A1_v2 = 'Standard_A1_v2', Standard_A2_v2 = 'Standard_A2_v2', Standard_A4_v2 = 'Standard_A4_v2', Standard_A8_v2 = 'Standard_A8_v2', Standard_A2m_v2 = 'Standard_A2m_v2', Standard_A4m_v2 = 'Standard_A4m_v2', Standard_A8m_v2 = 'Standard_A8m_v2', Standard_D1 = 'Standard_D1', Standard_D2 = 'Standard_D2', Standard_D3 = 'Standard_D3', Standard_D4 = 'Standard_D4', Standard_D11 = 'Standard_D11', Standard_D12 = 'Standard_D12', Standard_D13 = 'Standard_D13', Standard_D14 = 'Standard_D14', Standard_D1_v2 = 'Standard_D1_v2', Standard_D2_v2 = 'Standard_D2_v2', Standard_D3_v2 = 'Standard_D3_v2', Standard_D4_v2 = 'Standard_D4_v2', Standard_D5_v2 = 'Standard_D5_v2', Standard_D11_v2 = 'Standard_D11_v2', Standard_D12_v2 = 'Standard_D12_v2', Standard_D13_v2 = 'Standard_D13_v2', Standard_D14_v2 = 'Standard_D14_v2', Standard_D15_v2 = 'Standard_D15_v2', Standard_DS1 = 'Standard_DS1', Standard_DS2 = 'Standard_DS2', Standard_DS3 = 'Standard_DS3', Standard_DS4 = 'Standard_DS4', Standard_DS11 = 'Standard_DS11', Standard_DS12 = 'Standard_DS12', Standard_DS13 = 'Standard_DS13', Standard_DS14 = 'Standard_DS14', Standard_DS1_v2 = 'Standard_DS1_v2', Standard_DS2_v2 = 'Standard_DS2_v2', Standard_DS3_v2 = 'Standard_DS3_v2', Standard_DS4_v2 = 'Standard_DS4_v2', Standard_DS5_v2 = 'Standard_DS5_v2', Standard_DS11_v2 = 'Standard_DS11_v2', Standard_DS12_v2 = 'Standard_DS12_v2', Standard_DS13_v2 = 'Standard_DS13_v2', Standard_DS14_v2 = 'Standard_DS14_v2', Standard_DS15_v2 = 'Standard_DS15_v2', Standard_F1 = 'Standard_F1', Standard_F2 = 'Standard_F2', Standard_F4 = 'Standard_F4', Standard_F8 = 'Standard_F8', Standard_F16 = 'Standard_F16', Standard_F1s = 'Standard_F1s', Standard_F2s = 'Standard_F2s', Standard_F4s = 'Standard_F4s', Standard_F8s = 'Standard_F8s', Standard_F16s = 'Standard_F16s', Standard_G1 = 'Standard_G1', Standard_G2 = 'Standard_G2', Standard_G3 = 'Standard_G3', Standard_G4 = 'Standard_G4', Standard_G5 = 'Standard_G5', Standard_GS1 = 'Standard_GS1', Standard_GS2 = 'Standard_GS2', Standard_GS3 = 'Standard_GS3', Standard_GS4 = 'Standard_GS4', Standard_GS5 = 'Standard_GS5', Standard_H8 = 'Standard_H8', Standard_H16 = 'Standard_H16', Standard_H8m = 'Standard_H8m', Standard_H16m = 'Standard_H16m', Standard_H16r = 'Standard_H16r', Standard_H16mr = 'Standard_H16mr', Standard_L4s = 'Standard_L4s', Standard_L8s = 'Standard_L8s', Standard_L16s = 'Standard_L16s', Standard_L32s = 'Standard_L32s', Standard_D2s_v3 = 'Standard_D2s_v3', Standard_D4s_v3 = 'Standard_D4s_v3', Standard_D8s_v3 = 'Standard_D8s_v3', Standard_D16s_v3 = 'Standard_D16s_v3', Standard_D32s_v3 = 'Standard_D32s_v3', Standard_D64s_v3 = 'Standard_D64s_v3', Standard_D2_v3 = 'Standard_D2_v3', Standard_D4_v3 = 'Standard_D4_v3', Standard_D8_v3 = 'Standard_D8_v3', Standard_D16_v3 = 'Standard_D16_v3', Standard_D32_v3 = 'Standard_D32_v3', Standard_D64_v3 = 'Standard_D64_v3', Standard_F2s_v2 = 'Standard_F2s_v2', Standard_F4s_v2 = 'Standard_F4s_v2', Standard_F8s_v2 = 'Standard_F8s_v2', Standard_F16s_v2 = 'Standard_F16s_v2', Standard_F32s_v2 = 'Standard_F32s_v2', Standard_F64s_v2 = 'Standard_F64s_v2', Standard_F72s_v2 = 'Standard_F72s_v2', Standard_E2_v3 = 'Standard_E2_v3', Standard_E4_v3 = 'Standard_E4_v3', Standard_E8_v3 = 'Standard_E8_v3', Standard_E16_v3 = 'Standard_E16_v3', Standard_E32_v3 = 'Standard_E32_v3', Standard_E64_v3 = 'Standard_E64_v3', Standard_E2s_v3 = 'Standard_E2s_v3', Standard_E4s_v3 = 'Standard_E4s_v3', Standard_E8s_v3 = 'Standard_E8s_v3', Standard_E16s_v3 = 'Standard_E16s_v3', Standard_E32s_v3 = 'Standard_E32s_v3', Standard_E64s_v3 = 'Standard_E64s_v3', Standard_M64s = 'Standard_M64s', Standard_M64ms = 'Standard_M64ms', Standard_M128s = 'Standard_M128s', Standard_M128ms = 'Standard_M128ms' }
 
-	export enum AssessedMachinePropertiesSuitabilityDetail { None = 0, RecommendedSizeHasLessNetworkAdapters = 1, CannotReportComputeCost = 2, CannotReportStorageCost = 3, CannotReportBandwidthCosts = 4, PercentageOfCoresUtilizedMissing = 5, PercentageOfMemoryUtilizedMissing = 6, PercentageOfCoresUtilizedOutOfRange = 7, PercentageOfMemoryUtilizedOutOfRange = 8 }
+	export enum AssessedMachinePropertiesSuitabilityDetail { None = 'None', RecommendedSizeHasLessNetworkAdapters = 'RecommendedSizeHasLessNetworkAdapters', CannotReportComputeCost = 'CannotReportComputeCost', CannotReportStorageCost = 'CannotReportStorageCost', CannotReportBandwidthCosts = 'CannotReportBandwidthCosts', PercentageOfCoresUtilizedMissing = 'PercentageOfCoresUtilizedMissing', PercentageOfMemoryUtilizedMissing = 'PercentageOfMemoryUtilizedMissing', PercentageOfCoresUtilizedOutOfRange = 'PercentageOfCoresUtilizedOutOfRange', PercentageOfMemoryUtilizedOutOfRange = 'PercentageOfMemoryUtilizedOutOfRange' }
 
-	export enum AssessedMachinePropertiesSuitabilityExplanation { Unknown = 0, NotApplicable = 1, GuestOperatingSystemArchitectureNotSupported = 2, GuestOperatingSystemNotSupported = 3, BootTypeNotSupported = 4, MoreDisksThanSupported = 5, NoSuitableVmSizeFound = 6, OneOrMoreDisksNotSuitable = 7, OneOrMoreAdaptersNotSuitable = 8, InternalErrorOccurredDuringComputeEvaluation = 9, InternalErrorOccurredDuringStorageEvaluation = 10, InternalErrorOccurredDuringNetworkEvaluation = 11, NoVmSizeSupportsStoragePerformance = 12, NoVmSizeSupportsNetworkPerformance = 13, NoVmSizeForSelectedPricingTier = 14, NoVmSizeForSelectedAzureLocation = 15, CheckRedHatLinuxVersion = 16, CheckOpenSuseLinuxVersion = 17, CheckWindowsServer2008R2Version = 18, CheckCentOsVersion = 19, CheckDebianLinuxVersion = 20, CheckSuseLinuxVersion = 21, CheckOracleLinuxVersion = 22, CheckUbuntuLinuxVersion = 23, CheckCoreOsLinuxVersion = 24, WindowsServerVersionConditionallySupported = 25, NoGuestOperatingSystemConditionallySupported = 26, WindowsClientVersionsConditionallySupported = 27, BootTypeUnknown = 28, GuestOperatingSystemUnknown = 29, WindowsServerVersionsSupportedWithCaveat = 30, WindowsOSNoLongerUnderMSSupport = 31, EndorsedWithConditionsLinuxDistributions = 32, UnendorsedLinuxDistributions = 33, NoVmSizeForStandardPricingTier = 34, NoVmSizeForBasicPricingTier = 35 }
+	export enum AssessedMachinePropertiesSuitabilityExplanation { Unknown = 'Unknown', NotApplicable = 'NotApplicable', GuestOperatingSystemArchitectureNotSupported = 'GuestOperatingSystemArchitectureNotSupported', GuestOperatingSystemNotSupported = 'GuestOperatingSystemNotSupported', BootTypeNotSupported = 'BootTypeNotSupported', MoreDisksThanSupported = 'MoreDisksThanSupported', NoSuitableVmSizeFound = 'NoSuitableVmSizeFound', OneOrMoreDisksNotSuitable = 'OneOrMoreDisksNotSuitable', OneOrMoreAdaptersNotSuitable = 'OneOrMoreAdaptersNotSuitable', InternalErrorOccurredDuringComputeEvaluation = 'InternalErrorOccurredDuringComputeEvaluation', InternalErrorOccurredDuringStorageEvaluation = 'InternalErrorOccurredDuringStorageEvaluation', InternalErrorOccurredDuringNetworkEvaluation = 'InternalErrorOccurredDuringNetworkEvaluation', NoVmSizeSupportsStoragePerformance = 'NoVmSizeSupportsStoragePerformance', NoVmSizeSupportsNetworkPerformance = 'NoVmSizeSupportsNetworkPerformance', NoVmSizeForSelectedPricingTier = 'NoVmSizeForSelectedPricingTier', NoVmSizeForSelectedAzureLocation = 'NoVmSizeForSelectedAzureLocation', CheckRedHatLinuxVersion = 'CheckRedHatLinuxVersion', CheckOpenSuseLinuxVersion = 'CheckOpenSuseLinuxVersion', CheckWindowsServer2008R2Version = 'CheckWindowsServer2008R2Version', CheckCentOsVersion = 'CheckCentOsVersion', CheckDebianLinuxVersion = 'CheckDebianLinuxVersion', CheckSuseLinuxVersion = 'CheckSuseLinuxVersion', CheckOracleLinuxVersion = 'CheckOracleLinuxVersion', CheckUbuntuLinuxVersion = 'CheckUbuntuLinuxVersion', CheckCoreOsLinuxVersion = 'CheckCoreOsLinuxVersion', WindowsServerVersionConditionallySupported = 'WindowsServerVersionConditionallySupported', NoGuestOperatingSystemConditionallySupported = 'NoGuestOperatingSystemConditionallySupported', WindowsClientVersionsConditionallySupported = 'WindowsClientVersionsConditionallySupported', BootTypeUnknown = 'BootTypeUnknown', GuestOperatingSystemUnknown = 'GuestOperatingSystemUnknown', WindowsServerVersionsSupportedWithCaveat = 'WindowsServerVersionsSupportedWithCaveat', WindowsOSNoLongerUnderMSSupport = 'WindowsOSNoLongerUnderMSSupport', EndorsedWithConditionsLinuxDistributions = 'EndorsedWithConditionsLinuxDistributions', UnendorsedLinuxDistributions = 'UnendorsedLinuxDistributions', NoVmSizeForStandardPricingTier = 'NoVmSizeForStandardPricingTier', NoVmSizeForBasicPricingTier = 'NoVmSizeForBasicPricingTier' }
 
 
 	/** List of assessed machines. */
@@ -850,29 +850,29 @@ export namespace MyNS {
 
 	}
 
-	export enum AssessmentPropertiesAzureHybridUseBenefit { Unknown = 0, Yes = 1, No = 2 }
+	export enum AssessmentPropertiesAzureHybridUseBenefit { Unknown = 'Unknown', Yes = 'Yes', No = 'No' }
 
-	export enum AssessmentPropertiesAzureLocation { Unknown = 0, EastAsia = 1, SoutheastAsia = 2, AustraliaEast = 3, AustraliaSoutheast = 4, BrazilSouth = 5, CanadaCentral = 6, CanadaEast = 7, WestEurope = 8, NorthEurope = 9, CentralIndia = 10, SouthIndia = 11, WestIndia = 12, JapanEast = 13, JapanWest = 14, KoreaCentral = 15, KoreaSouth = 16, UkWest = 17, UkSouth = 18, NorthCentralUs = 19, EastUs = 20, WestUs2 = 21, SouthCentralUs = 22, CentralUs = 23, EastUs2 = 24, WestUs = 25, WestCentralUs = 26, GermanyCentral = 27, GermanyNortheast = 28, ChinaNorth = 29, ChinaEast = 30, USGovArizona = 31, USGovTexas = 32, USGovIowa = 33, USGovVirginia = 34, USDoDCentral = 35, USDoDEast = 36 }
+	export enum AssessmentPropertiesAzureLocation { Unknown = 'Unknown', EastAsia = 'EastAsia', SoutheastAsia = 'SoutheastAsia', AustraliaEast = 'AustraliaEast', AustraliaSoutheast = 'AustraliaSoutheast', BrazilSouth = 'BrazilSouth', CanadaCentral = 'CanadaCentral', CanadaEast = 'CanadaEast', WestEurope = 'WestEurope', NorthEurope = 'NorthEurope', CentralIndia = 'CentralIndia', SouthIndia = 'SouthIndia', WestIndia = 'WestIndia', JapanEast = 'JapanEast', JapanWest = 'JapanWest', KoreaCentral = 'KoreaCentral', KoreaSouth = 'KoreaSouth', UkWest = 'UkWest', UkSouth = 'UkSouth', NorthCentralUs = 'NorthCentralUs', EastUs = 'EastUs', WestUs2 = 'WestUs2', SouthCentralUs = 'SouthCentralUs', CentralUs = 'CentralUs', EastUs2 = 'EastUs2', WestUs = 'WestUs', WestCentralUs = 'WestCentralUs', GermanyCentral = 'GermanyCentral', GermanyNortheast = 'GermanyNortheast', ChinaNorth = 'ChinaNorth', ChinaEast = 'ChinaEast', USGovArizona = 'USGovArizona', USGovTexas = 'USGovTexas', USGovIowa = 'USGovIowa', USGovVirginia = 'USGovVirginia', USDoDCentral = 'USDoDCentral', USDoDEast = 'USDoDEast' }
 
-	export enum AssessmentPropertiesAzureOfferCode { Unknown = 0, MSAZR0003P = 1, MSAZR0044P = 2, MSAZR0059P = 3, MSAZR0060P = 4, MSAZR0062P = 5, MSAZR0063P = 6, MSAZR0064P = 7, MSAZR0029P = 8, MSAZR0022P = 9, MSAZR0023P = 10, MSAZR0148P = 11, MSAZR0025P = 12, MSAZR0036P = 13, MSAZR0120P = 14, MSAZR0121P = 15, MSAZR0122P = 16, MSAZR0123P = 17, MSAZR0124P = 18, MSAZR0125P = 19, MSAZR0126P = 20, MSAZR0127P = 21, MSAZR0128P = 22, MSAZR0129P = 23, MSAZR0130P = 24, MSAZR0111P = 25, MSAZR0144P = 26, MSAZR0149P = 27, MSMCAZR0044P = 28, MSMCAZR0059P = 29, MSMCAZR0060P = 30, MSMCAZR0063P = 31, MSMCAZR0120P = 32, MSMCAZR0121P = 33, MSMCAZR0125P = 34, MSMCAZR0128P = 35, MSAZRDE0003P = 36, MSAZRDE0044P = 37, MSAZRUSGOV0003P = 38, EA = 39 }
+	export enum AssessmentPropertiesAzureOfferCode { Unknown = 'Unknown', MSAZR0003P = 'MSAZR0003P', MSAZR0044P = 'MSAZR0044P', MSAZR0059P = 'MSAZR0059P', MSAZR0060P = 'MSAZR0060P', MSAZR0062P = 'MSAZR0062P', MSAZR0063P = 'MSAZR0063P', MSAZR0064P = 'MSAZR0064P', MSAZR0029P = 'MSAZR0029P', MSAZR0022P = 'MSAZR0022P', MSAZR0023P = 'MSAZR0023P', MSAZR0148P = 'MSAZR0148P', MSAZR0025P = 'MSAZR0025P', MSAZR0036P = 'MSAZR0036P', MSAZR0120P = 'MSAZR0120P', MSAZR0121P = 'MSAZR0121P', MSAZR0122P = 'MSAZR0122P', MSAZR0123P = 'MSAZR0123P', MSAZR0124P = 'MSAZR0124P', MSAZR0125P = 'MSAZR0125P', MSAZR0126P = 'MSAZR0126P', MSAZR0127P = 'MSAZR0127P', MSAZR0128P = 'MSAZR0128P', MSAZR0129P = 'MSAZR0129P', MSAZR0130P = 'MSAZR0130P', MSAZR0111P = 'MSAZR0111P', MSAZR0144P = 'MSAZR0144P', MSAZR0149P = 'MSAZR0149P', MSMCAZR0044P = 'MSMCAZR0044P', MSMCAZR0059P = 'MSMCAZR0059P', MSMCAZR0060P = 'MSMCAZR0060P', MSMCAZR0063P = 'MSMCAZR0063P', MSMCAZR0120P = 'MSMCAZR0120P', MSMCAZR0121P = 'MSMCAZR0121P', MSMCAZR0125P = 'MSMCAZR0125P', MSMCAZR0128P = 'MSMCAZR0128P', MSAZRDE0003P = 'MSAZRDE0003P', MSAZRDE0044P = 'MSAZRDE0044P', MSAZRUSGOV0003P = 'MSAZRUSGOV0003P', EA = 'EA' }
 
-	export enum AssessmentPropertiesAzurePricingTier { Standard = 0, Basic = 1 }
+	export enum AssessmentPropertiesAzurePricingTier { Standard = 'Standard', Basic = 'Basic' }
 
-	export enum AssessmentPropertiesAzureStorageRedundancy { Unknown = 0, LocallyRedundant = 1, ZoneRedundant = 2, GeoRedundant = 3, ReadAccessGeoRedundant = 4 }
+	export enum AssessmentPropertiesAzureStorageRedundancy { Unknown = 'Unknown', LocallyRedundant = 'LocallyRedundant', ZoneRedundant = 'ZoneRedundant', GeoRedundant = 'GeoRedundant', ReadAccessGeoRedundant = 'ReadAccessGeoRedundant' }
 
-	export enum AssessmentPropertiesCurrency { Unknown = 0, USD = 1, DKK = 2, CAD = 3, IDR = 4, JPY = 5, KRW = 6, NZD = 7, NOK = 8, RUB = 9, SAR = 10, ZAR = 11, SEK = 12, TRY = 13, GBP = 14, MXN = 15, MYR = 16, INR = 17, HKD = 18, BRL = 19, TWD = 20, EUR = 21, CHF = 22, ARS = 23, AUD = 24, CNY = 25 }
+	export enum AssessmentPropertiesCurrency { Unknown = 'Unknown', USD = 'USD', DKK = 'DKK', CAD = 'CAD', IDR = 'IDR', JPY = 'JPY', KRW = 'KRW', NZD = 'NZD', NOK = 'NOK', RUB = 'RUB', SAR = 'SAR', ZAR = 'ZAR', SEK = 'SEK', TRY = 'TRY', GBP = 'GBP', MXN = 'MXN', MYR = 'MYR', INR = 'INR', HKD = 'HKD', BRL = 'BRL', TWD = 'TWD', EUR = 'EUR', CHF = 'CHF', ARS = 'ARS', AUD = 'AUD', CNY = 'CNY' }
 
-	export enum AssessmentPropertiesPercentile { Percentile50 = 0, Percentile90 = 1, Percentile95 = 2, Percentile99 = 3 }
+	export enum AssessmentPropertiesPercentile { Percentile50 = 'Percentile50', Percentile90 = 'Percentile90', Percentile95 = 'Percentile95', Percentile99 = 'Percentile99' }
 
-	export enum AssessmentPropertiesReservedInstance { None = 0, RI1Year = 1, RI3Year = 2 }
+	export enum AssessmentPropertiesReservedInstance { None = 'None', RI1Year = 'RI1Year', RI3Year = 'RI3Year' }
 
-	export enum AssessmentPropertiesSizingCriterion { PerformanceBased = 0, AsOnPremises = 1 }
+	export enum AssessmentPropertiesSizingCriterion { PerformanceBased = 'PerformanceBased', AsOnPremises = 'AsOnPremises' }
 
-	export enum AssessmentPropertiesStage { InProgress = 0, UnderReview = 1, Approved = 2 }
+	export enum AssessmentPropertiesStage { InProgress = 'InProgress', UnderReview = 'UnderReview', Approved = 'Approved' }
 
-	export enum AssessmentPropertiesStatus { Created = 0, Updated = 1, Running = 2, Completed = 3, Invalid = 4, OutOfSync = 5, OutDated = 6 }
+	export enum AssessmentPropertiesStatus { Created = 'Created', Updated = 'Updated', Running = 'Running', Completed = 'Completed', Invalid = 'Invalid', OutOfSync = 'OutOfSync', OutDated = 'OutDated' }
 
-	export enum AssessmentPropertiesTimeRange { Day = 0, Week = 1, Month = 2, Custom = 3 }
+	export enum AssessmentPropertiesTimeRange { Day = 'Day', Week = 'Week', Month = 'Month', Custom = 'Custom' }
 
 	export interface VmUptime {
 
@@ -1330,7 +1330,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupPropertiesGroupStatus { Created = 0, Updated = 1, Running = 2, Completed = 3, Invalid = 4 }
+	export enum GroupPropertiesGroupStatus { Created = 'Created', Updated = 'Updated', Running = 'Running', Completed = 'Completed', Invalid = 'Invalid' }
 
 
 	/** Body properties of group update. */
@@ -1356,7 +1356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupBodyPropertiesOperationType { Add = 0, Remove = 1 }
+	export enum GroupBodyPropertiesOperationType { Add = 'Add', Remove = 'Remove' }
 
 
 	/** List of groups. */
@@ -1880,9 +1880,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectPropertiesProjectStatus { Active = 0, Inactive = 1 }
+	export enum ProjectPropertiesProjectStatus { Active = 'Active', Inactive = 'Inactive' }
 
-	export enum ProjectPropertiesProvisioningState { Accepted = 0, Creating = 1, Deleting = 2, Failed = 3, Moving = 4, Succeeded = 5 }
+	export enum ProjectPropertiesProvisioningState { Accepted = 'Accepted', Creating = 'Creating', Deleting = 'Deleting', Failed = 'Failed', Moving = 'Moving', Succeeded = 'Succeeded' }
 
 
 	/** List of projects. */
@@ -2454,7 +2454,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Projects_ListBySubscriptionApi_version { '2019-10-01' = 0 }
+	export enum Projects_ListBySubscriptionApi_version { '2019-10-01' = '2019-10-01' }
 
 }
 

@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusType { Active = 0, Inactive = 1 }
+	export enum StatusType { Active = 'Active', Inactive = 'Inactive' }
 
 	export interface ConcurrentModificationException {
 	}
@@ -394,7 +394,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionsBoundaryAttachmentType { PermissionsBoundaryPolicy = 0 }
+	export enum PermissionsBoundaryAttachmentType { PermissionsBoundaryPolicy = 'PermissionsBoundaryPolicy' }
 
 
 	/** A structure that represents user-provided metadata that can be associated with an IAM resource. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>. */
@@ -941,7 +941,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportStateType { STARTED = 0, INPROGRESS = 1, COMPLETE = 2 }
+	export enum ReportStateType { STARTED = 'STARTED', INPROGRESS = 'INPROGRESS', COMPLETE = 'COMPLETE' }
 
 	export interface GenerateOrganizationsAccessReportResponse {
 		JobId?: string;
@@ -1307,7 +1307,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntityType { User = 0, Role = 1, Group = 2, LocalManagedPolicy = 3, AWSManagedPolicy = 4 }
+	export enum EntityType { User = 'User', Role = 'Role', Group = 'Group', LocalManagedPolicy = 'LocalManagedPolicy', AWSManagedPolicy = 'AWSManagedPolicy' }
 
 
 	/** Contains the response to a successful <a>GetAccountPasswordPolicy</a> request.  */
@@ -1433,7 +1433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReportFormatType { 'text/csv' = 0 }
+	export enum ReportFormatType { 'text/csv' = 'text/csv' }
 
 	export interface CredentialReportNotPresentException {
 	}
@@ -1660,7 +1660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatusType { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
+	export enum JobStatusType { IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** <p>An object that contains details about when a principal in the reported Organizations entity last attempted to access an Amazon Web Services service. A principal can be an IAM user, an IAM role, or the Amazon Web Services account root user within the reported Organizations entity.</p> <p>This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.</p> */
@@ -2050,7 +2050,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessAdvisorUsageGranularityType { SERVICE_LEVEL = 0, ACTION_LEVEL = 1 }
+	export enum AccessAdvisorUsageGranularityType { SERVICE_LEVEL = 'SERVICE_LEVEL', ACTION_LEVEL = 'ACTION_LEVEL' }
 
 
 	/** <p>Contains details about the most recent attempt to access the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
@@ -2247,7 +2247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyOwnerEntityType { USER = 0, ROLE = 1, GROUP = 2 }
+	export enum PolicyOwnerEntityType { USER = 'USER', ROLE = 'ROLE', GROUP = 'GROUP' }
 
 	export interface GetServiceLinkedRoleDeletionStatusResponse {
 
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeletionTaskStatusType { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2, NOT_STARTED = 3 }
+	export enum DeletionTaskStatusType { SUCCEEDED = 'SUCCEEDED', IN_PROGRESS = 'IN_PROGRESS', FAILED = 'FAILED', NOT_STARTED = 'NOT_STARTED' }
 
 
 	/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
@@ -2956,7 +2956,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyType { INLINE = 0, MANAGED = 1 }
+	export enum PolicyType { INLINE = 'INLINE', MANAGED = 'MANAGED' }
 
 	export interface ListPolicyTagsResponse {
 
@@ -3517,7 +3517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyEvaluationDecisionType { allowed = 0, explicitDeny = 1, implicitDeny = 2 }
+	export enum PolicyEvaluationDecisionType { allowed = 'allowed', explicitDeny = 'explicitDeny', implicitDeny = 'implicitDeny' }
 
 
 	/** <p>Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.</p> <p>This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.</p> */
@@ -3541,7 +3541,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicySourceType { user = 0, group = 1, role = 2, 'aws-managed' = 3, 'user-managed' = 4, resource = 5, none = 6 }
+	export enum PolicySourceType { user = 'user', group = 'group', role = 'role', 'aws-managed' = 'aws-managed', 'user-managed' = 'user-managed', resource = 'resource', none = 'none' }
 
 
 	/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
@@ -3660,7 +3660,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContextKeyTypeEnum { string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
+	export enum ContextKeyTypeEnum { string = 'string', stringList = 'stringList', numeric = 'numeric', numericList = 'numericList', boolean = 'boolean', booleanList = 'booleanList', ip = 'ip', ipList = 'ipList', binary = 'binary', binaryList = 'binaryList', date = 'date', dateList = 'dateList' }
 
 	export interface PolicyEvaluationException {
 	}
@@ -5093,7 +5093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortKeyType { SERVICE_NAMESPACE_ASCENDING = 0, SERVICE_NAMESPACE_DESCENDING = 1, LAST_AUTHENTICATED_TIME_ASCENDING = 2, LAST_AUTHENTICATED_TIME_DESCENDING = 3 }
+	export enum SortKeyType { SERVICE_NAMESPACE_ASCENDING = 'SERVICE_NAMESPACE_ASCENDING', SERVICE_NAMESPACE_DESCENDING = 'SERVICE_NAMESPACE_DESCENDING', LAST_AUTHENTICATED_TIME_ASCENDING = 'LAST_AUTHENTICATED_TIME_ASCENDING', LAST_AUTHENTICATED_TIME_DESCENDING = 'LAST_AUTHENTICATED_TIME_DESCENDING' }
 
 	export interface GetOrganizationsAccessReportRequest {
 
@@ -5220,7 +5220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncodingType { SSH = 0, PEM = 1 }
+	export enum EncodingType { SSH = 'SSH', PEM = 'PEM' }
 
 	export interface GetSSHPublicKeyRequest {
 
@@ -5492,7 +5492,7 @@ export namespace MyNS {
 
 
 	/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p> */
-	export enum PolicyUsageType { PermissionsPolicy = 0, PermissionsBoundary = 1 }
+	export enum PolicyUsageType { PermissionsPolicy = 'PermissionsPolicy', PermissionsBoundary = 'PermissionsBoundary' }
 
 	export interface ListEntitiesForPolicyRequest {
 
@@ -5754,7 +5754,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyScopeType { All = 0, AWS = 1, Local = 2 }
+	export enum PolicyScopeType { All = 'All', AWS = 'AWS', Local = 'Local' }
 
 	export interface ListPoliciesRequest {
 		Scope?: PolicyScopeType;
@@ -6089,7 +6089,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentStatusType { Assigned = 0, Unassigned = 1, Any = 2 }
+	export enum AssignmentStatusType { Assigned = 'Assigned', Unassigned = 'Unassigned', Any = 'Any' }
 
 	export interface ListVirtualMFADevicesRequest {
 		AssignmentStatus?: AssignmentStatusType;
@@ -6405,7 +6405,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GlobalEndpointTokenVersion { v1Token = 0, v2Token = 1 }
+	export enum GlobalEndpointTokenVersion { v1Token = 'v1Token', v2Token = 'v2Token' }
 
 	export interface SetSecurityTokenServicePreferencesRequest {
 
@@ -7261,7 +7261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SummaryKeyType { Users = 0, UsersQuota = 1, Groups = 2, GroupsQuota = 3, ServerCertificates = 4, ServerCertificatesQuota = 5, UserPolicySizeQuota = 6, GroupPolicySizeQuota = 7, GroupsPerUserQuota = 8, SigningCertificatesPerUserQuota = 9, AccessKeysPerUserQuota = 10, MFADevices = 11, MFADevicesInUse = 12, AccountMFAEnabled = 13, AccountAccessKeysPresent = 14, AccountSigningCertificatesPresent = 15, AttachedPoliciesPerGroupQuota = 16, AttachedPoliciesPerRoleQuota = 17, AttachedPoliciesPerUserQuota = 18, Policies = 19, PoliciesQuota = 20, PolicySizeQuota = 21, PolicyVersionsInUse = 22, PolicyVersionsInUseQuota = 23, VersionsPerPolicyQuota = 24, GlobalEndpointTokenVersion = 25 }
+	export enum SummaryKeyType { Users = 'Users', UsersQuota = 'UsersQuota', Groups = 'Groups', GroupsQuota = 'GroupsQuota', ServerCertificates = 'ServerCertificates', ServerCertificatesQuota = 'ServerCertificatesQuota', UserPolicySizeQuota = 'UserPolicySizeQuota', GroupPolicySizeQuota = 'GroupPolicySizeQuota', GroupsPerUserQuota = 'GroupsPerUserQuota', SigningCertificatesPerUserQuota = 'SigningCertificatesPerUserQuota', AccessKeysPerUserQuota = 'AccessKeysPerUserQuota', MFADevices = 'MFADevices', MFADevicesInUse = 'MFADevicesInUse', AccountMFAEnabled = 'AccountMFAEnabled', AccountAccessKeysPresent = 'AccountAccessKeysPresent', AccountSigningCertificatesPresent = 'AccountSigningCertificatesPresent', AttachedPoliciesPerGroupQuota = 'AttachedPoliciesPerGroupQuota', AttachedPoliciesPerRoleQuota = 'AttachedPoliciesPerRoleQuota', AttachedPoliciesPerUserQuota = 'AttachedPoliciesPerUserQuota', Policies = 'Policies', PoliciesQuota = 'PoliciesQuota', PolicySizeQuota = 'PolicySizeQuota', PolicyVersionsInUse = 'PolicyVersionsInUse', PolicyVersionsInUseQuota = 'PolicyVersionsInUseQuota', VersionsPerPolicyQuota = 'VersionsPerPolicyQuota', GlobalEndpointTokenVersion = 'GlobalEndpointTokenVersion' }
 
 	@Injectable()
 	export class MyClient {
@@ -9132,325 +9132,325 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_AddClientIDToOpenIDConnectProviderAction { AddClientIDToOpenIDConnectProvider = 0 }
+	export enum GET_AddClientIDToOpenIDConnectProviderAction { AddClientIDToOpenIDConnectProvider = 'AddClientIDToOpenIDConnectProvider' }
 
-	export enum GET_AddClientIDToOpenIDConnectProviderVersion { '2010-05-08' = 0 }
+	export enum GET_AddClientIDToOpenIDConnectProviderVersion { '2010-05-08' = '2010-05-08' }
 
-	export enum GET_AddRoleToInstanceProfileAction { AddRoleToInstanceProfile = 0 }
+	export enum GET_AddRoleToInstanceProfileAction { AddRoleToInstanceProfile = 'AddRoleToInstanceProfile' }
 
-	export enum GET_AddUserToGroupAction { AddUserToGroup = 0 }
+	export enum GET_AddUserToGroupAction { AddUserToGroup = 'AddUserToGroup' }
 
-	export enum GET_AttachGroupPolicyAction { AttachGroupPolicy = 0 }
+	export enum GET_AttachGroupPolicyAction { AttachGroupPolicy = 'AttachGroupPolicy' }
 
-	export enum GET_AttachRolePolicyAction { AttachRolePolicy = 0 }
+	export enum GET_AttachRolePolicyAction { AttachRolePolicy = 'AttachRolePolicy' }
 
-	export enum GET_AttachUserPolicyAction { AttachUserPolicy = 0 }
+	export enum GET_AttachUserPolicyAction { AttachUserPolicy = 'AttachUserPolicy' }
 
-	export enum GET_ChangePasswordAction { ChangePassword = 0 }
+	export enum GET_ChangePasswordAction { ChangePassword = 'ChangePassword' }
 
-	export enum GET_CreateAccessKeyAction { CreateAccessKey = 0 }
+	export enum GET_CreateAccessKeyAction { CreateAccessKey = 'CreateAccessKey' }
 
-	export enum GET_CreateAccountAliasAction { CreateAccountAlias = 0 }
+	export enum GET_CreateAccountAliasAction { CreateAccountAlias = 'CreateAccountAlias' }
 
-	export enum GET_CreateGroupAction { CreateGroup = 0 }
+	export enum GET_CreateGroupAction { CreateGroup = 'CreateGroup' }
 
-	export enum GET_CreateInstanceProfileAction { CreateInstanceProfile = 0 }
+	export enum GET_CreateInstanceProfileAction { CreateInstanceProfile = 'CreateInstanceProfile' }
 
-	export enum GET_CreateLoginProfileAction { CreateLoginProfile = 0 }
+	export enum GET_CreateLoginProfileAction { CreateLoginProfile = 'CreateLoginProfile' }
 
-	export enum GET_CreateOpenIDConnectProviderAction { CreateOpenIDConnectProvider = 0 }
+	export enum GET_CreateOpenIDConnectProviderAction { CreateOpenIDConnectProvider = 'CreateOpenIDConnectProvider' }
 
-	export enum GET_CreatePolicyAction { CreatePolicy = 0 }
+	export enum GET_CreatePolicyAction { CreatePolicy = 'CreatePolicy' }
 
-	export enum GET_CreatePolicyVersionAction { CreatePolicyVersion = 0 }
+	export enum GET_CreatePolicyVersionAction { CreatePolicyVersion = 'CreatePolicyVersion' }
 
-	export enum GET_CreateRoleAction { CreateRole = 0 }
+	export enum GET_CreateRoleAction { CreateRole = 'CreateRole' }
 
-	export enum GET_CreateSAMLProviderAction { CreateSAMLProvider = 0 }
+	export enum GET_CreateSAMLProviderAction { CreateSAMLProvider = 'CreateSAMLProvider' }
 
-	export enum GET_CreateServiceLinkedRoleAction { CreateServiceLinkedRole = 0 }
+	export enum GET_CreateServiceLinkedRoleAction { CreateServiceLinkedRole = 'CreateServiceLinkedRole' }
 
-	export enum GET_CreateServiceSpecificCredentialAction { CreateServiceSpecificCredential = 0 }
+	export enum GET_CreateServiceSpecificCredentialAction { CreateServiceSpecificCredential = 'CreateServiceSpecificCredential' }
 
-	export enum GET_CreateUserAction { CreateUser = 0 }
+	export enum GET_CreateUserAction { CreateUser = 'CreateUser' }
 
-	export enum GET_CreateVirtualMFADeviceAction { CreateVirtualMFADevice = 0 }
+	export enum GET_CreateVirtualMFADeviceAction { CreateVirtualMFADevice = 'CreateVirtualMFADevice' }
 
-	export enum GET_DeactivateMFADeviceAction { DeactivateMFADevice = 0 }
+	export enum GET_DeactivateMFADeviceAction { DeactivateMFADevice = 'DeactivateMFADevice' }
 
-	export enum GET_DeleteAccessKeyAction { DeleteAccessKey = 0 }
+	export enum GET_DeleteAccessKeyAction { DeleteAccessKey = 'DeleteAccessKey' }
 
-	export enum GET_DeleteAccountAliasAction { DeleteAccountAlias = 0 }
+	export enum GET_DeleteAccountAliasAction { DeleteAccountAlias = 'DeleteAccountAlias' }
 
-	export enum GET_DeleteAccountPasswordPolicyAction { DeleteAccountPasswordPolicy = 0 }
+	export enum GET_DeleteAccountPasswordPolicyAction { DeleteAccountPasswordPolicy = 'DeleteAccountPasswordPolicy' }
 
-	export enum GET_DeleteGroupAction { DeleteGroup = 0 }
+	export enum GET_DeleteGroupAction { DeleteGroup = 'DeleteGroup' }
 
-	export enum GET_DeleteGroupPolicyAction { DeleteGroupPolicy = 0 }
+	export enum GET_DeleteGroupPolicyAction { DeleteGroupPolicy = 'DeleteGroupPolicy' }
 
-	export enum GET_DeleteInstanceProfileAction { DeleteInstanceProfile = 0 }
+	export enum GET_DeleteInstanceProfileAction { DeleteInstanceProfile = 'DeleteInstanceProfile' }
 
-	export enum GET_DeleteLoginProfileAction { DeleteLoginProfile = 0 }
+	export enum GET_DeleteLoginProfileAction { DeleteLoginProfile = 'DeleteLoginProfile' }
 
-	export enum GET_DeleteOpenIDConnectProviderAction { DeleteOpenIDConnectProvider = 0 }
+	export enum GET_DeleteOpenIDConnectProviderAction { DeleteOpenIDConnectProvider = 'DeleteOpenIDConnectProvider' }
 
-	export enum GET_DeletePolicyAction { DeletePolicy = 0 }
+	export enum GET_DeletePolicyAction { DeletePolicy = 'DeletePolicy' }
 
-	export enum GET_DeletePolicyVersionAction { DeletePolicyVersion = 0 }
+	export enum GET_DeletePolicyVersionAction { DeletePolicyVersion = 'DeletePolicyVersion' }
 
-	export enum GET_DeleteRoleAction { DeleteRole = 0 }
+	export enum GET_DeleteRoleAction { DeleteRole = 'DeleteRole' }
 
-	export enum GET_DeleteRolePermissionsBoundaryAction { DeleteRolePermissionsBoundary = 0 }
+	export enum GET_DeleteRolePermissionsBoundaryAction { DeleteRolePermissionsBoundary = 'DeleteRolePermissionsBoundary' }
 
-	export enum GET_DeleteRolePolicyAction { DeleteRolePolicy = 0 }
+	export enum GET_DeleteRolePolicyAction { DeleteRolePolicy = 'DeleteRolePolicy' }
 
-	export enum GET_DeleteSAMLProviderAction { DeleteSAMLProvider = 0 }
+	export enum GET_DeleteSAMLProviderAction { DeleteSAMLProvider = 'DeleteSAMLProvider' }
 
-	export enum GET_DeleteSSHPublicKeyAction { DeleteSSHPublicKey = 0 }
+	export enum GET_DeleteSSHPublicKeyAction { DeleteSSHPublicKey = 'DeleteSSHPublicKey' }
 
-	export enum GET_DeleteServerCertificateAction { DeleteServerCertificate = 0 }
+	export enum GET_DeleteServerCertificateAction { DeleteServerCertificate = 'DeleteServerCertificate' }
 
-	export enum GET_DeleteServiceLinkedRoleAction { DeleteServiceLinkedRole = 0 }
+	export enum GET_DeleteServiceLinkedRoleAction { DeleteServiceLinkedRole = 'DeleteServiceLinkedRole' }
 
-	export enum GET_DeleteServiceSpecificCredentialAction { DeleteServiceSpecificCredential = 0 }
+	export enum GET_DeleteServiceSpecificCredentialAction { DeleteServiceSpecificCredential = 'DeleteServiceSpecificCredential' }
 
-	export enum GET_DeleteSigningCertificateAction { DeleteSigningCertificate = 0 }
+	export enum GET_DeleteSigningCertificateAction { DeleteSigningCertificate = 'DeleteSigningCertificate' }
 
-	export enum GET_DeleteUserAction { DeleteUser = 0 }
+	export enum GET_DeleteUserAction { DeleteUser = 'DeleteUser' }
 
-	export enum GET_DeleteUserPermissionsBoundaryAction { DeleteUserPermissionsBoundary = 0 }
+	export enum GET_DeleteUserPermissionsBoundaryAction { DeleteUserPermissionsBoundary = 'DeleteUserPermissionsBoundary' }
 
-	export enum GET_DeleteUserPolicyAction { DeleteUserPolicy = 0 }
+	export enum GET_DeleteUserPolicyAction { DeleteUserPolicy = 'DeleteUserPolicy' }
 
-	export enum GET_DeleteVirtualMFADeviceAction { DeleteVirtualMFADevice = 0 }
+	export enum GET_DeleteVirtualMFADeviceAction { DeleteVirtualMFADevice = 'DeleteVirtualMFADevice' }
 
-	export enum GET_DetachGroupPolicyAction { DetachGroupPolicy = 0 }
+	export enum GET_DetachGroupPolicyAction { DetachGroupPolicy = 'DetachGroupPolicy' }
 
-	export enum GET_DetachRolePolicyAction { DetachRolePolicy = 0 }
+	export enum GET_DetachRolePolicyAction { DetachRolePolicy = 'DetachRolePolicy' }
 
-	export enum GET_DetachUserPolicyAction { DetachUserPolicy = 0 }
+	export enum GET_DetachUserPolicyAction { DetachUserPolicy = 'DetachUserPolicy' }
 
-	export enum GET_EnableMFADeviceAction { EnableMFADevice = 0 }
+	export enum GET_EnableMFADeviceAction { EnableMFADevice = 'EnableMFADevice' }
 
-	export enum GET_GenerateCredentialReportAction { GenerateCredentialReport = 0 }
+	export enum GET_GenerateCredentialReportAction { GenerateCredentialReport = 'GenerateCredentialReport' }
 
-	export enum GET_GenerateOrganizationsAccessReportAction { GenerateOrganizationsAccessReport = 0 }
+	export enum GET_GenerateOrganizationsAccessReportAction { GenerateOrganizationsAccessReport = 'GenerateOrganizationsAccessReport' }
 
-	export enum GET_GenerateServiceLastAccessedDetailsAction { GenerateServiceLastAccessedDetails = 0 }
+	export enum GET_GenerateServiceLastAccessedDetailsAction { GenerateServiceLastAccessedDetails = 'GenerateServiceLastAccessedDetails' }
 
-	export enum GET_GetAccessKeyLastUsedAction { GetAccessKeyLastUsed = 0 }
+	export enum GET_GetAccessKeyLastUsedAction { GetAccessKeyLastUsed = 'GetAccessKeyLastUsed' }
 
-	export enum GET_GetAccountAuthorizationDetailsAction { GetAccountAuthorizationDetails = 0 }
+	export enum GET_GetAccountAuthorizationDetailsAction { GetAccountAuthorizationDetails = 'GetAccountAuthorizationDetails' }
 
-	export enum GET_GetAccountPasswordPolicyAction { GetAccountPasswordPolicy = 0 }
+	export enum GET_GetAccountPasswordPolicyAction { GetAccountPasswordPolicy = 'GetAccountPasswordPolicy' }
 
-	export enum GET_GetAccountSummaryAction { GetAccountSummary = 0 }
+	export enum GET_GetAccountSummaryAction { GetAccountSummary = 'GetAccountSummary' }
 
-	export enum GET_GetContextKeysForCustomPolicyAction { GetContextKeysForCustomPolicy = 0 }
+	export enum GET_GetContextKeysForCustomPolicyAction { GetContextKeysForCustomPolicy = 'GetContextKeysForCustomPolicy' }
 
-	export enum GET_GetContextKeysForPrincipalPolicyAction { GetContextKeysForPrincipalPolicy = 0 }
+	export enum GET_GetContextKeysForPrincipalPolicyAction { GetContextKeysForPrincipalPolicy = 'GetContextKeysForPrincipalPolicy' }
 
-	export enum GET_GetCredentialReportAction { GetCredentialReport = 0 }
+	export enum GET_GetCredentialReportAction { GetCredentialReport = 'GetCredentialReport' }
 
-	export enum GET_GetGroupAction { GetGroup = 0 }
+	export enum GET_GetGroupAction { GetGroup = 'GetGroup' }
 
-	export enum GET_GetGroupPolicyAction { GetGroupPolicy = 0 }
+	export enum GET_GetGroupPolicyAction { GetGroupPolicy = 'GetGroupPolicy' }
 
-	export enum GET_GetInstanceProfileAction { GetInstanceProfile = 0 }
+	export enum GET_GetInstanceProfileAction { GetInstanceProfile = 'GetInstanceProfile' }
 
-	export enum GET_GetLoginProfileAction { GetLoginProfile = 0 }
+	export enum GET_GetLoginProfileAction { GetLoginProfile = 'GetLoginProfile' }
 
-	export enum GET_GetMFADeviceAction { GetMFADevice = 0 }
+	export enum GET_GetMFADeviceAction { GetMFADevice = 'GetMFADevice' }
 
-	export enum GET_GetOpenIDConnectProviderAction { GetOpenIDConnectProvider = 0 }
+	export enum GET_GetOpenIDConnectProviderAction { GetOpenIDConnectProvider = 'GetOpenIDConnectProvider' }
 
-	export enum GET_GetOrganizationsAccessReportAction { GetOrganizationsAccessReport = 0 }
+	export enum GET_GetOrganizationsAccessReportAction { GetOrganizationsAccessReport = 'GetOrganizationsAccessReport' }
 
-	export enum GET_GetPolicyAction { GetPolicy = 0 }
+	export enum GET_GetPolicyAction { GetPolicy = 'GetPolicy' }
 
-	export enum GET_GetPolicyVersionAction { GetPolicyVersion = 0 }
+	export enum GET_GetPolicyVersionAction { GetPolicyVersion = 'GetPolicyVersion' }
 
-	export enum GET_GetRoleAction { GetRole = 0 }
+	export enum GET_GetRoleAction { GetRole = 'GetRole' }
 
-	export enum GET_GetRolePolicyAction { GetRolePolicy = 0 }
+	export enum GET_GetRolePolicyAction { GetRolePolicy = 'GetRolePolicy' }
 
-	export enum GET_GetSAMLProviderAction { GetSAMLProvider = 0 }
+	export enum GET_GetSAMLProviderAction { GetSAMLProvider = 'GetSAMLProvider' }
 
-	export enum GET_GetSSHPublicKeyAction { GetSSHPublicKey = 0 }
+	export enum GET_GetSSHPublicKeyAction { GetSSHPublicKey = 'GetSSHPublicKey' }
 
-	export enum GET_GetServerCertificateAction { GetServerCertificate = 0 }
+	export enum GET_GetServerCertificateAction { GetServerCertificate = 'GetServerCertificate' }
 
-	export enum GET_GetServiceLastAccessedDetailsAction { GetServiceLastAccessedDetails = 0 }
+	export enum GET_GetServiceLastAccessedDetailsAction { GetServiceLastAccessedDetails = 'GetServiceLastAccessedDetails' }
 
-	export enum GET_GetServiceLastAccessedDetailsWithEntitiesAction { GetServiceLastAccessedDetailsWithEntities = 0 }
+	export enum GET_GetServiceLastAccessedDetailsWithEntitiesAction { GetServiceLastAccessedDetailsWithEntities = 'GetServiceLastAccessedDetailsWithEntities' }
 
-	export enum GET_GetServiceLinkedRoleDeletionStatusAction { GetServiceLinkedRoleDeletionStatus = 0 }
+	export enum GET_GetServiceLinkedRoleDeletionStatusAction { GetServiceLinkedRoleDeletionStatus = 'GetServiceLinkedRoleDeletionStatus' }
 
-	export enum GET_GetUserAction { GetUser = 0 }
+	export enum GET_GetUserAction { GetUser = 'GetUser' }
 
-	export enum GET_GetUserPolicyAction { GetUserPolicy = 0 }
+	export enum GET_GetUserPolicyAction { GetUserPolicy = 'GetUserPolicy' }
 
-	export enum GET_ListAccessKeysAction { ListAccessKeys = 0 }
+	export enum GET_ListAccessKeysAction { ListAccessKeys = 'ListAccessKeys' }
 
-	export enum GET_ListAccountAliasesAction { ListAccountAliases = 0 }
+	export enum GET_ListAccountAliasesAction { ListAccountAliases = 'ListAccountAliases' }
 
-	export enum GET_ListAttachedGroupPoliciesAction { ListAttachedGroupPolicies = 0 }
+	export enum GET_ListAttachedGroupPoliciesAction { ListAttachedGroupPolicies = 'ListAttachedGroupPolicies' }
 
-	export enum GET_ListAttachedRolePoliciesAction { ListAttachedRolePolicies = 0 }
+	export enum GET_ListAttachedRolePoliciesAction { ListAttachedRolePolicies = 'ListAttachedRolePolicies' }
 
-	export enum GET_ListAttachedUserPoliciesAction { ListAttachedUserPolicies = 0 }
+	export enum GET_ListAttachedUserPoliciesAction { ListAttachedUserPolicies = 'ListAttachedUserPolicies' }
 
-	export enum GET_ListEntitiesForPolicyAction { ListEntitiesForPolicy = 0 }
+	export enum GET_ListEntitiesForPolicyAction { ListEntitiesForPolicy = 'ListEntitiesForPolicy' }
 
-	export enum GET_ListGroupPoliciesAction { ListGroupPolicies = 0 }
+	export enum GET_ListGroupPoliciesAction { ListGroupPolicies = 'ListGroupPolicies' }
 
-	export enum GET_ListGroupsAction { ListGroups = 0 }
+	export enum GET_ListGroupsAction { ListGroups = 'ListGroups' }
 
-	export enum GET_ListGroupsForUserAction { ListGroupsForUser = 0 }
+	export enum GET_ListGroupsForUserAction { ListGroupsForUser = 'ListGroupsForUser' }
 
-	export enum GET_ListInstanceProfileTagsAction { ListInstanceProfileTags = 0 }
+	export enum GET_ListInstanceProfileTagsAction { ListInstanceProfileTags = 'ListInstanceProfileTags' }
 
-	export enum GET_ListInstanceProfilesAction { ListInstanceProfiles = 0 }
+	export enum GET_ListInstanceProfilesAction { ListInstanceProfiles = 'ListInstanceProfiles' }
 
-	export enum GET_ListInstanceProfilesForRoleAction { ListInstanceProfilesForRole = 0 }
+	export enum GET_ListInstanceProfilesForRoleAction { ListInstanceProfilesForRole = 'ListInstanceProfilesForRole' }
 
-	export enum GET_ListMFADeviceTagsAction { ListMFADeviceTags = 0 }
+	export enum GET_ListMFADeviceTagsAction { ListMFADeviceTags = 'ListMFADeviceTags' }
 
-	export enum GET_ListMFADevicesAction { ListMFADevices = 0 }
+	export enum GET_ListMFADevicesAction { ListMFADevices = 'ListMFADevices' }
 
-	export enum GET_ListOpenIDConnectProviderTagsAction { ListOpenIDConnectProviderTags = 0 }
+	export enum GET_ListOpenIDConnectProviderTagsAction { ListOpenIDConnectProviderTags = 'ListOpenIDConnectProviderTags' }
 
-	export enum GET_ListOpenIDConnectProvidersAction { ListOpenIDConnectProviders = 0 }
+	export enum GET_ListOpenIDConnectProvidersAction { ListOpenIDConnectProviders = 'ListOpenIDConnectProviders' }
 
-	export enum GET_ListPoliciesAction { ListPolicies = 0 }
+	export enum GET_ListPoliciesAction { ListPolicies = 'ListPolicies' }
 
-	export enum GET_ListPoliciesGrantingServiceAccessAction { ListPoliciesGrantingServiceAccess = 0 }
+	export enum GET_ListPoliciesGrantingServiceAccessAction { ListPoliciesGrantingServiceAccess = 'ListPoliciesGrantingServiceAccess' }
 
-	export enum GET_ListPolicyTagsAction { ListPolicyTags = 0 }
+	export enum GET_ListPolicyTagsAction { ListPolicyTags = 'ListPolicyTags' }
 
-	export enum GET_ListPolicyVersionsAction { ListPolicyVersions = 0 }
+	export enum GET_ListPolicyVersionsAction { ListPolicyVersions = 'ListPolicyVersions' }
 
-	export enum GET_ListRolePoliciesAction { ListRolePolicies = 0 }
+	export enum GET_ListRolePoliciesAction { ListRolePolicies = 'ListRolePolicies' }
 
-	export enum GET_ListRoleTagsAction { ListRoleTags = 0 }
+	export enum GET_ListRoleTagsAction { ListRoleTags = 'ListRoleTags' }
 
-	export enum GET_ListRolesAction { ListRoles = 0 }
+	export enum GET_ListRolesAction { ListRoles = 'ListRoles' }
 
-	export enum GET_ListSAMLProviderTagsAction { ListSAMLProviderTags = 0 }
+	export enum GET_ListSAMLProviderTagsAction { ListSAMLProviderTags = 'ListSAMLProviderTags' }
 
-	export enum GET_ListSAMLProvidersAction { ListSAMLProviders = 0 }
+	export enum GET_ListSAMLProvidersAction { ListSAMLProviders = 'ListSAMLProviders' }
 
-	export enum GET_ListSSHPublicKeysAction { ListSSHPublicKeys = 0 }
+	export enum GET_ListSSHPublicKeysAction { ListSSHPublicKeys = 'ListSSHPublicKeys' }
 
-	export enum GET_ListServerCertificateTagsAction { ListServerCertificateTags = 0 }
+	export enum GET_ListServerCertificateTagsAction { ListServerCertificateTags = 'ListServerCertificateTags' }
 
-	export enum GET_ListServerCertificatesAction { ListServerCertificates = 0 }
+	export enum GET_ListServerCertificatesAction { ListServerCertificates = 'ListServerCertificates' }
 
-	export enum GET_ListServiceSpecificCredentialsAction { ListServiceSpecificCredentials = 0 }
+	export enum GET_ListServiceSpecificCredentialsAction { ListServiceSpecificCredentials = 'ListServiceSpecificCredentials' }
 
-	export enum GET_ListSigningCertificatesAction { ListSigningCertificates = 0 }
+	export enum GET_ListSigningCertificatesAction { ListSigningCertificates = 'ListSigningCertificates' }
 
-	export enum GET_ListUserPoliciesAction { ListUserPolicies = 0 }
+	export enum GET_ListUserPoliciesAction { ListUserPolicies = 'ListUserPolicies' }
 
-	export enum GET_ListUserTagsAction { ListUserTags = 0 }
+	export enum GET_ListUserTagsAction { ListUserTags = 'ListUserTags' }
 
-	export enum GET_ListUsersAction { ListUsers = 0 }
+	export enum GET_ListUsersAction { ListUsers = 'ListUsers' }
 
-	export enum GET_ListVirtualMFADevicesAction { ListVirtualMFADevices = 0 }
+	export enum GET_ListVirtualMFADevicesAction { ListVirtualMFADevices = 'ListVirtualMFADevices' }
 
-	export enum GET_PutGroupPolicyAction { PutGroupPolicy = 0 }
+	export enum GET_PutGroupPolicyAction { PutGroupPolicy = 'PutGroupPolicy' }
 
-	export enum GET_PutRolePermissionsBoundaryAction { PutRolePermissionsBoundary = 0 }
+	export enum GET_PutRolePermissionsBoundaryAction { PutRolePermissionsBoundary = 'PutRolePermissionsBoundary' }
 
-	export enum GET_PutRolePolicyAction { PutRolePolicy = 0 }
+	export enum GET_PutRolePolicyAction { PutRolePolicy = 'PutRolePolicy' }
 
-	export enum GET_PutUserPermissionsBoundaryAction { PutUserPermissionsBoundary = 0 }
+	export enum GET_PutUserPermissionsBoundaryAction { PutUserPermissionsBoundary = 'PutUserPermissionsBoundary' }
 
-	export enum GET_PutUserPolicyAction { PutUserPolicy = 0 }
+	export enum GET_PutUserPolicyAction { PutUserPolicy = 'PutUserPolicy' }
 
-	export enum GET_RemoveClientIDFromOpenIDConnectProviderAction { RemoveClientIDFromOpenIDConnectProvider = 0 }
+	export enum GET_RemoveClientIDFromOpenIDConnectProviderAction { RemoveClientIDFromOpenIDConnectProvider = 'RemoveClientIDFromOpenIDConnectProvider' }
 
-	export enum GET_RemoveRoleFromInstanceProfileAction { RemoveRoleFromInstanceProfile = 0 }
+	export enum GET_RemoveRoleFromInstanceProfileAction { RemoveRoleFromInstanceProfile = 'RemoveRoleFromInstanceProfile' }
 
-	export enum GET_RemoveUserFromGroupAction { RemoveUserFromGroup = 0 }
+	export enum GET_RemoveUserFromGroupAction { RemoveUserFromGroup = 'RemoveUserFromGroup' }
 
-	export enum GET_ResetServiceSpecificCredentialAction { ResetServiceSpecificCredential = 0 }
+	export enum GET_ResetServiceSpecificCredentialAction { ResetServiceSpecificCredential = 'ResetServiceSpecificCredential' }
 
-	export enum GET_ResyncMFADeviceAction { ResyncMFADevice = 0 }
+	export enum GET_ResyncMFADeviceAction { ResyncMFADevice = 'ResyncMFADevice' }
 
-	export enum GET_SetDefaultPolicyVersionAction { SetDefaultPolicyVersion = 0 }
+	export enum GET_SetDefaultPolicyVersionAction { SetDefaultPolicyVersion = 'SetDefaultPolicyVersion' }
 
-	export enum GET_SetSecurityTokenServicePreferencesAction { SetSecurityTokenServicePreferences = 0 }
+	export enum GET_SetSecurityTokenServicePreferencesAction { SetSecurityTokenServicePreferences = 'SetSecurityTokenServicePreferences' }
 
-	export enum GET_SimulateCustomPolicyAction { SimulateCustomPolicy = 0 }
+	export enum GET_SimulateCustomPolicyAction { SimulateCustomPolicy = 'SimulateCustomPolicy' }
 
-	export enum GET_SimulatePrincipalPolicyAction { SimulatePrincipalPolicy = 0 }
+	export enum GET_SimulatePrincipalPolicyAction { SimulatePrincipalPolicy = 'SimulatePrincipalPolicy' }
 
-	export enum GET_TagInstanceProfileAction { TagInstanceProfile = 0 }
+	export enum GET_TagInstanceProfileAction { TagInstanceProfile = 'TagInstanceProfile' }
 
-	export enum GET_TagMFADeviceAction { TagMFADevice = 0 }
+	export enum GET_TagMFADeviceAction { TagMFADevice = 'TagMFADevice' }
 
-	export enum GET_TagOpenIDConnectProviderAction { TagOpenIDConnectProvider = 0 }
+	export enum GET_TagOpenIDConnectProviderAction { TagOpenIDConnectProvider = 'TagOpenIDConnectProvider' }
 
-	export enum GET_TagPolicyAction { TagPolicy = 0 }
+	export enum GET_TagPolicyAction { TagPolicy = 'TagPolicy' }
 
-	export enum GET_TagRoleAction { TagRole = 0 }
+	export enum GET_TagRoleAction { TagRole = 'TagRole' }
 
-	export enum GET_TagSAMLProviderAction { TagSAMLProvider = 0 }
+	export enum GET_TagSAMLProviderAction { TagSAMLProvider = 'TagSAMLProvider' }
 
-	export enum GET_TagServerCertificateAction { TagServerCertificate = 0 }
+	export enum GET_TagServerCertificateAction { TagServerCertificate = 'TagServerCertificate' }
 
-	export enum GET_TagUserAction { TagUser = 0 }
+	export enum GET_TagUserAction { TagUser = 'TagUser' }
 
-	export enum GET_UntagInstanceProfileAction { UntagInstanceProfile = 0 }
+	export enum GET_UntagInstanceProfileAction { UntagInstanceProfile = 'UntagInstanceProfile' }
 
-	export enum GET_UntagMFADeviceAction { UntagMFADevice = 0 }
+	export enum GET_UntagMFADeviceAction { UntagMFADevice = 'UntagMFADevice' }
 
-	export enum GET_UntagOpenIDConnectProviderAction { UntagOpenIDConnectProvider = 0 }
+	export enum GET_UntagOpenIDConnectProviderAction { UntagOpenIDConnectProvider = 'UntagOpenIDConnectProvider' }
 
-	export enum GET_UntagPolicyAction { UntagPolicy = 0 }
+	export enum GET_UntagPolicyAction { UntagPolicy = 'UntagPolicy' }
 
-	export enum GET_UntagRoleAction { UntagRole = 0 }
+	export enum GET_UntagRoleAction { UntagRole = 'UntagRole' }
 
-	export enum GET_UntagSAMLProviderAction { UntagSAMLProvider = 0 }
+	export enum GET_UntagSAMLProviderAction { UntagSAMLProvider = 'UntagSAMLProvider' }
 
-	export enum GET_UntagServerCertificateAction { UntagServerCertificate = 0 }
+	export enum GET_UntagServerCertificateAction { UntagServerCertificate = 'UntagServerCertificate' }
 
-	export enum GET_UntagUserAction { UntagUser = 0 }
+	export enum GET_UntagUserAction { UntagUser = 'UntagUser' }
 
-	export enum GET_UpdateAccessKeyAction { UpdateAccessKey = 0 }
+	export enum GET_UpdateAccessKeyAction { UpdateAccessKey = 'UpdateAccessKey' }
 
-	export enum GET_UpdateAccountPasswordPolicyAction { UpdateAccountPasswordPolicy = 0 }
+	export enum GET_UpdateAccountPasswordPolicyAction { UpdateAccountPasswordPolicy = 'UpdateAccountPasswordPolicy' }
 
-	export enum GET_UpdateAssumeRolePolicyAction { UpdateAssumeRolePolicy = 0 }
+	export enum GET_UpdateAssumeRolePolicyAction { UpdateAssumeRolePolicy = 'UpdateAssumeRolePolicy' }
 
-	export enum GET_UpdateGroupAction { UpdateGroup = 0 }
+	export enum GET_UpdateGroupAction { UpdateGroup = 'UpdateGroup' }
 
-	export enum GET_UpdateLoginProfileAction { UpdateLoginProfile = 0 }
+	export enum GET_UpdateLoginProfileAction { UpdateLoginProfile = 'UpdateLoginProfile' }
 
-	export enum GET_UpdateOpenIDConnectProviderThumbprintAction { UpdateOpenIDConnectProviderThumbprint = 0 }
+	export enum GET_UpdateOpenIDConnectProviderThumbprintAction { UpdateOpenIDConnectProviderThumbprint = 'UpdateOpenIDConnectProviderThumbprint' }
 
-	export enum GET_UpdateRoleAction { UpdateRole = 0 }
+	export enum GET_UpdateRoleAction { UpdateRole = 'UpdateRole' }
 
-	export enum GET_UpdateRoleDescriptionAction { UpdateRoleDescription = 0 }
+	export enum GET_UpdateRoleDescriptionAction { UpdateRoleDescription = 'UpdateRoleDescription' }
 
-	export enum GET_UpdateSAMLProviderAction { UpdateSAMLProvider = 0 }
+	export enum GET_UpdateSAMLProviderAction { UpdateSAMLProvider = 'UpdateSAMLProvider' }
 
-	export enum GET_UpdateSSHPublicKeyAction { UpdateSSHPublicKey = 0 }
+	export enum GET_UpdateSSHPublicKeyAction { UpdateSSHPublicKey = 'UpdateSSHPublicKey' }
 
-	export enum GET_UpdateServerCertificateAction { UpdateServerCertificate = 0 }
+	export enum GET_UpdateServerCertificateAction { UpdateServerCertificate = 'UpdateServerCertificate' }
 
-	export enum GET_UpdateServiceSpecificCredentialAction { UpdateServiceSpecificCredential = 0 }
+	export enum GET_UpdateServiceSpecificCredentialAction { UpdateServiceSpecificCredential = 'UpdateServiceSpecificCredential' }
 
-	export enum GET_UpdateSigningCertificateAction { UpdateSigningCertificate = 0 }
+	export enum GET_UpdateSigningCertificateAction { UpdateSigningCertificate = 'UpdateSigningCertificate' }
 
-	export enum GET_UpdateUserAction { UpdateUser = 0 }
+	export enum GET_UpdateUserAction { UpdateUser = 'UpdateUser' }
 
-	export enum GET_UploadSSHPublicKeyAction { UploadSSHPublicKey = 0 }
+	export enum GET_UploadSSHPublicKeyAction { UploadSSHPublicKey = 'UploadSSHPublicKey' }
 
-	export enum GET_UploadServerCertificateAction { UploadServerCertificate = 0 }
+	export enum GET_UploadServerCertificateAction { UploadServerCertificate = 'UploadServerCertificate' }
 
-	export enum GET_UploadSigningCertificateAction { UploadSigningCertificate = 0 }
+	export enum GET_UploadSigningCertificateAction { UploadSigningCertificate = 'UploadSigningCertificate' }
 
 }
 

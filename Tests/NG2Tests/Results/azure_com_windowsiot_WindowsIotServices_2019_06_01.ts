@@ -162,7 +162,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceServiceNameAvailabilityInfoReason { Invalid = 0, AlreadyExists = 1 }
+	export enum DeviceServiceNameAvailabilityInfoReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The details of the error. */

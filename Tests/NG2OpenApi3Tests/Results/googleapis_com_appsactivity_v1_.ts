@@ -203,9 +203,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionRole { commenter = 0, fileOrganizer = 1, owner = 2, publishedReader = 3, reader = 4, writer = 5 }
+	export enum PermissionRole { commenter = 'commenter', fileOrganizer = 'fileOrganizer', owner = 'owner', publishedReader = 'publishedReader', reader = 'reader', writer = 'writer' }
 
-	export enum PermissionType { anyone = 0, domain = 1, group = 2, user = 3 }
+	export enum PermissionType { anyone = 'anyone', domain = 'domain', group = 'group', user = 'user' }
 
 
 	/** A representation of a user. */
@@ -273,7 +273,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventPrimaryEventType { comment = 0, create = 1, edit = 2, emptyTrash = 3, move = 4, permissionChange = 5, rename = 6, trash = 7, unknown = 8, untrash = 9, upload = 10 }
+	export enum EventPrimaryEventType { comment = 'comment', create = 'create', edit = 'edit', emptyTrash = 'emptyTrash', move = 'move', permissionChange = 'permissionChange', rename = 'rename', trash = 'trash', unknown = 'unknown', untrash = 'untrash', upload = 'upload' }
 
 
 	/** Contains information about a renametype event. */
@@ -385,7 +385,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Appsactivity_activities_listGroupingStrategy { driveUi = 0, none = 1 }
+	export enum Appsactivity_activities_listGroupingStrategy { driveUi = 'driveUi', none = 'none' }
 
 }
 

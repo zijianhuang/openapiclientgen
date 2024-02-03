@@ -509,15 +509,15 @@ export namespace MyNS {
 
 	}
 
-	export enum CompanyIdSuperLang { '' = 0, OG = 1, EN = 2 }
+	export enum CompanyIdSuperLang { '' = '', OG = 'OG', EN = 'EN' }
 
-	export enum CompanyIdDatasetDataset { '' = 0, mini = 1, master = 2, full = 3, refresh = 4 }
+	export enum CompanyIdDatasetDataset { '' = '', mini = 'mini', master = 'master', full = 'full', refresh = 'refresh' }
 
-	export enum CompanyIdDatasetLang { '' = 0, EN = 1, ES = 2, FR = 3 }
+	export enum CompanyIdDatasetLang { '' = '', EN = 'EN', ES = 'ES', FR = 'FR' }
 
-	export enum PepOrderType { '' = 0, B = 1, P = 2 }
+	export enum PepOrderType { '' = '', B = 'B', P = 'P' }
 
-	export enum PepRetrieveAccept { 'application/json' = 0, 'application/pdf' = 1 }
+	export enum PepRetrieveAccept { 'application/json' = 'application/json', 'application/pdf' = 'application/pdf' }
 
 	export interface ProductSearchReturn {
 		availability?: string | null;

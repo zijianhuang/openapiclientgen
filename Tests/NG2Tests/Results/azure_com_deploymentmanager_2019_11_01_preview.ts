@@ -56,7 +56,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiKeyAuthenticationIn { Query = 0, Header = 1 }
+	export enum ApiKeyAuthenticationIn { Query = 'Query', Header = 'Header' }
 
 	export interface ArtifactSource {
 	}
@@ -614,9 +614,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RestRequestAuthenticationType { ApiKey = 0, RolloutIdentity = 1 }
+	export enum RestRequestAuthenticationType { ApiKey = 'ApiKey', RolloutIdentity = 'RolloutIdentity' }
 
-	export enum RestRequestMethod { GET = 0, POST = 1 }
+	export enum RestRequestMethod { GET = 'GET', POST = 'POST' }
 
 
 	/** The properties that make up the expected REST response */
@@ -658,7 +658,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RestResponseRegexMatchQuantifier { All = 0, Any = 1 }
+	export enum RestResponseRegexMatchQuantifier { All = 'All', Any = 'Any' }
 
 
 	/** Defines the REST health check step properties. */
@@ -1234,7 +1234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceUnitPropertiesDeploymentMode { Incremental = 0, Complete = 1 }
+	export enum ServiceUnitPropertiesDeploymentMode { Incremental = 'Incremental', Complete = 'Complete' }
 
 
 	/** Detailed information of a specific step run. */
@@ -1315,7 +1315,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StepPropertiesStepType { Wait = 0, HealthCheck = 1 }
+	export enum StepPropertiesStepType { Wait = 'Wait', HealthCheck = 'HealthCheck' }
 
 	export interface StepResource {
 	}

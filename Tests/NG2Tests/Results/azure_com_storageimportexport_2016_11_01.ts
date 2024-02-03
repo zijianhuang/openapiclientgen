@@ -129,7 +129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DriveStatusState { Specified = 0, Received = 1, NeverReceived = 2, Transferring = 3, Completed = 4, CompletedMoreInfo = 5, ShippedBack = 6 }
+	export enum DriveStatusState { Specified = 'Specified', Received = 'Received', NeverReceived = 'NeverReceived', Transferring = 'Transferring', Completed = 'Completed', CompletedMoreInfo = 'CompletedMoreInfo', ShippedBack = 'ShippedBack' }
 
 
 	/** Response when errors occurred */
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Locations_ListApi_version { '2016-11-01' = 0 }
+	export enum Locations_ListApi_version { '2016-11-01' = '2016-11-01' }
 
 }
 

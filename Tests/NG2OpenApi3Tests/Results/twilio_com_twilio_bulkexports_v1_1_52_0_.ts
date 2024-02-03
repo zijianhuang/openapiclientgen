@@ -330,9 +330,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Export_custom_job_enum_status { ErrorDuringRun = 0, Submitted = 1, Running = 2, CompletedEmptyRecords = 3, Completed = 4, Failed = 5, RunningToBeDeleted = 6, DeletedByUserRequest = 7 }
+	export enum Export_custom_job_enum_status { ErrorDuringRun = 'ErrorDuringRun', Submitted = 'Submitted', Running = 'Running', CompletedEmptyRecords = 'CompletedEmptyRecords', Completed = 'Completed', Failed = 'Failed', RunningToBeDeleted = 'RunningToBeDeleted', DeletedByUserRequest = 'DeletedByUserRequest' }
 
-	export enum Job_enum_status { ErrorDuringRun = 0, Submitted = 1, Running = 2, CompletedEmptyRecords = 3, Completed = 4, Failed = 5, RunningToBeDeleted = 6, DeletedByUserRequest = 7 }
+	export enum Job_enum_status { ErrorDuringRun = 'ErrorDuringRun', Submitted = 'Submitted', Running = 'Running', CompletedEmptyRecords = 'CompletedEmptyRecords', Completed = 'Completed', Failed = 'Failed', RunningToBeDeleted = 'RunningToBeDeleted', DeletedByUserRequest = 'DeletedByUserRequest' }
 
 	@Injectable()
 	export class MyClient {

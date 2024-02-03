@@ -348,9 +348,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PresetSpeke20Audio { 'PRESET-AUDIO-1' = 0, 'PRESET-AUDIO-2' = 1, 'PRESET-AUDIO-3' = 2, SHARED = 3, UNENCRYPTED = 4 }
+	export enum PresetSpeke20Audio { 'PRESET-AUDIO-1' = 'PRESET-AUDIO-1', 'PRESET-AUDIO-2' = 'PRESET-AUDIO-2', 'PRESET-AUDIO-3' = 'PRESET-AUDIO-3', SHARED = 'SHARED', UNENCRYPTED = 'UNENCRYPTED' }
 
-	export enum PresetSpeke20Video { 'PRESET-VIDEO-1' = 0, 'PRESET-VIDEO-2' = 1, 'PRESET-VIDEO-3' = 2, 'PRESET-VIDEO-4' = 3, 'PRESET-VIDEO-5' = 4, 'PRESET-VIDEO-6' = 5, 'PRESET-VIDEO-7' = 6, 'PRESET-VIDEO-8' = 7, SHARED = 8, UNENCRYPTED = 9 }
+	export enum PresetSpeke20Video { 'PRESET-VIDEO-1' = 'PRESET-VIDEO-1', 'PRESET-VIDEO-2' = 'PRESET-VIDEO-2', 'PRESET-VIDEO-3' = 'PRESET-VIDEO-3', 'PRESET-VIDEO-4' = 'PRESET-VIDEO-4', 'PRESET-VIDEO-5' = 'PRESET-VIDEO-5', 'PRESET-VIDEO-6' = 'PRESET-VIDEO-6', 'PRESET-VIDEO-7' = 'PRESET-VIDEO-7', 'PRESET-VIDEO-8' = 'PRESET-VIDEO-8', SHARED = 'SHARED', UNENCRYPTED = 'UNENCRYPTED' }
 
 
 	/** An HTTP Live Streaming (HLS) manifest configuration. */
@@ -382,7 +382,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdMarkers { NONE = 0, SCTE35_ENHANCED = 1, PASSTHROUGH = 2 }
+	export enum AdMarkers { NONE = 'NONE', SCTE35_ENHANCED = 'SCTE35_ENHANCED', PASSTHROUGH = 'PASSTHROUGH' }
 
 
 	/** A StreamSelection configuration. */
@@ -407,7 +407,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamOrder { ORIGINAL = 0, VIDEO_BITRATE_ASCENDING = 1, VIDEO_BITRATE_DESCENDING = 2 }
+	export enum StreamOrder { ORIGINAL = 'ORIGINAL', VIDEO_BITRATE_ASCENDING = 'VIDEO_BITRATE_ASCENDING', VIDEO_BITRATE_DESCENDING = 'VIDEO_BITRATE_DESCENDING' }
 
 
 	/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
@@ -470,11 +470,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ManifestLayout { FULL = 0, COMPACT = 1 }
+	export enum ManifestLayout { FULL = 'FULL', COMPACT = 'COMPACT' }
 
-	export enum Profile { NONE = 0, HBBTV_1_5 = 1 }
+	export enum Profile { NONE = 'NONE', HBBTV_1_5 = 'HBBTV_1_5' }
 
-	export enum ScteMarkersSource { SEGMENTS = 0, MANIFEST = 1 }
+	export enum ScteMarkersSource { SEGMENTS = 'SEGMENTS', MANIFEST = 'MANIFEST' }
 
 
 	/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
@@ -493,9 +493,9 @@ export namespace MyNS {
 
 	}
 
-	export enum __PeriodTriggersElement { ADS = 0 }
+	export enum __PeriodTriggersElement { ADS = 'ADS' }
 
-	export enum SegmentTemplateFormat { NUMBER_WITH_TIMELINE = 0, TIME_WITH_TIMELINE = 1, NUMBER_WITH_DURATION = 2 }
+	export enum SegmentTemplateFormat { NUMBER_WITH_TIMELINE = 'NUMBER_WITH_TIMELINE', TIME_WITH_TIMELINE = 'TIME_WITH_TIMELINE', NUMBER_WITH_DURATION = 'NUMBER_WITH_DURATION' }
 
 
 	/** An HTTP Live Streaming (HLS) packaging configuration. */
@@ -547,7 +547,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionMethod { AES_128 = 0, SAMPLE_AES = 1 }
+	export enum EncryptionMethod { AES_128 = 'AES_128', SAMPLE_AES = 'SAMPLE_AES' }
 
 
 	/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */

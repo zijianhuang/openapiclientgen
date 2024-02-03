@@ -631,9 +631,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Farms_ListMetricDefinitionsReturnValuePrimaryAggregationType { None = 0, Average = 1, Total = 2, Minimum = 3, Maximum = 4, Last = 5 }
+	export enum Farms_ListMetricDefinitionsReturnValuePrimaryAggregationType { None = 'None', Average = 'Average', Total = 'Total', Minimum = 'Minimum', Maximum = 'Maximum', Last = 'Last' }
 
-	export enum Farms_ListMetricDefinitionsReturnValueUnit { Count = 0, Bytes = 1, Seconds = 2, CountPerSecond = 3, BytesPerSecond = 4 }
+	export enum Farms_ListMetricDefinitionsReturnValueUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 	export interface Farms_ListMetricsReturn {
 

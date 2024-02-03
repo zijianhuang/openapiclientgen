@@ -194,7 +194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogicalInterfaceType { INTERFACE_TYPE_UNSPECIFIED = 0, BOND = 1, NIC = 2 }
+	export enum LogicalInterfaceType { INTERFACE_TYPE_UNSPECIFIED = 'INTERFACE_TYPE_UNSPECIFIED', BOND = 'BOND', NIC = 'NIC' }
 
 
 	/** Represents the metadata of the long-running operation. */
@@ -287,7 +287,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReconciliationOperationMetadataExclusiveAction { UNKNOWN_REPAIR_ACTION = 0, DELETE = 1, RETRY = 2 }
+	export enum ReconciliationOperationMetadataExclusiveAction { UNKNOWN_REPAIR_ACTION = 'UNKNOWN_REPAIR_ACTION', DELETE = 'DELETE', RETRY = 'RETRY' }
 
 
 	/** Response message from resetting a server. */

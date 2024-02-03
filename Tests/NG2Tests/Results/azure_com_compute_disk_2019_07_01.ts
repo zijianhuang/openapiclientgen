@@ -182,7 +182,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreationDataCreateOption { Empty = 0, Attach = 1, FromImage = 2, Import = 3, Copy = 4, Restore = 5, Upload = 6 }
+	export enum CreationDataCreateOption { Empty = 'Empty', Attach = 'Attach', FromImage = 'FromImage', Import = 'Import', Copy = 'Copy', Restore = 'Restore', Upload = 'Upload' }
 
 
 	/** Disk resource. */
@@ -433,11 +433,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskPropertiesDiskState { Unattached = 0, Attached = 1, Reserved = 2, ActiveSAS = 3, ReadyToUpload = 4, ActiveUpload = 5 }
+	export enum DiskPropertiesDiskState { Unattached = 'Unattached', Attached = 'Attached', Reserved = 'Reserved', ActiveSAS = 'ActiveSAS', ReadyToUpload = 'ReadyToUpload', ActiveUpload = 'ActiveUpload' }
 
-	export enum DiskPropertiesHyperVGeneration { V1 = 0, V2 = 1 }
+	export enum DiskPropertiesHyperVGeneration { V1 = 'V1', V2 = 'V2' }
 
-	export enum DiskPropertiesOsType { Windows = 0, Linux = 1 }
+	export enum DiskPropertiesOsType { Windows = 'Windows', Linux = 'Linux' }
 
 
 	/** The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, or UltraSSD_LRS. */
@@ -467,7 +467,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskSkuName { Standard_LRS = 0, Premium_LRS = 1, StandardSSD_LRS = 2, UltraSSD_LRS = 3 }
+	export enum DiskSkuName { Standard_LRS = 'Standard_LRS', Premium_LRS = 'Premium_LRS', StandardSSD_LRS = 'StandardSSD_LRS', UltraSSD_LRS = 'UltraSSD_LRS' }
 
 
 	/** Disk update resource. */
@@ -578,7 +578,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { EncryptionAtRestWithPlatformKey = 0, EncryptionAtRestWithCustomerKey = 1 }
+	export enum EncryptionType { EncryptionAtRestWithPlatformKey = 'EncryptionAtRestWithPlatformKey', EncryptionAtRestWithCustomerKey = 'EncryptionAtRestWithCustomerKey' }
 
 
 	/** The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks. */
@@ -615,7 +615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionSetIdentityType { SystemAssigned = 0 }
+	export enum EncryptionSetIdentityType { SystemAssigned = 'SystemAssigned' }
 
 	export interface EncryptionSetProperties {
 
@@ -764,7 +764,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GrantAccessDataAccess { None = 0, Read = 1, Write = 2 }
+	export enum GrantAccessDataAccess { None = 'None', Read = 'Read', Write = 'Write' }
 
 
 	/** The source image used for creating the disk. */
@@ -1085,7 +1085,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotSkuName { Standard_LRS = 0, Premium_LRS = 1, Standard_ZRS = 2 }
+	export enum SnapshotSkuName { Standard_LRS = 'Standard_LRS', Premium_LRS = 'Premium_LRS', Standard_ZRS = 'Standard_ZRS' }
 
 
 	/** Snapshot update resource. */

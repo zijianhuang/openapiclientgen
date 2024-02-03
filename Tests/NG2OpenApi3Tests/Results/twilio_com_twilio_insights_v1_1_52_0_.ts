@@ -3,51 +3,51 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export enum Annotation_enum_answered_by { unknown_answered_by = 0, human = 1, machine = 2 }
+	export enum Annotation_enum_answered_by { unknown_answered_by = 'unknown_answered_by', human = 'human', machine = 'machine' }
 
-	export enum Annotation_enum_connectivity_issue { unknown_connectivity_issue = 0, no_connectivity_issue = 1, invalid_number = 2, caller_id = 3, dropped_call = 4, number_reachability = 5 }
+	export enum Annotation_enum_connectivity_issue { unknown_connectivity_issue = 'unknown_connectivity_issue', no_connectivity_issue = 'no_connectivity_issue', invalid_number = 'invalid_number', caller_id = 'caller_id', dropped_call = 'dropped_call', number_reachability = 'number_reachability' }
 
-	export enum Annotation_enum_quality_issues { unknown_quality_issue = 0, no_quality_issue = 1, low_volume = 2, choppy_robotic = 3, echo = 4, dtmf = 5, latency = 6, owa = 7, static_noise = 8 }
+	export enum Annotation_enum_quality_issues { unknown_quality_issue = 'unknown_quality_issue', no_quality_issue = 'no_quality_issue', low_volume = 'low_volume', choppy_robotic = 'choppy_robotic', echo = 'echo', dtmf = 'dtmf', latency = 'latency', owa = 'owa', static_noise = 'static_noise' }
 
-	export enum Call_summaries_enum_answered_by { unknown = 0, machine_start = 1, machine_end_beep = 2, machine_end_silence = 3, machine_end_other = 4, human = 5, fax = 6 }
+	export enum Call_summaries_enum_answered_by { unknown = 'unknown', machine_start = 'machine_start', machine_end_beep = 'machine_end_beep', machine_end_silence = 'machine_end_silence', machine_end_other = 'machine_end_other', human = 'human', fax = 'fax' }
 
-	export enum Call_summaries_enum_call_direction { outbound_api = 0, outbound_dial = 1, inbound = 2, trunking_originating = 3, trunking_terminating = 4 }
+	export enum Call_summaries_enum_call_direction { outbound_api = 'outbound_api', outbound_dial = 'outbound_dial', inbound = 'inbound', trunking_originating = 'trunking_originating', trunking_terminating = 'trunking_terminating' }
 
-	export enum Call_summaries_enum_call_state { ringing = 0, completed = 1, busy = 2, fail = 3, noanswer = 4, canceled = 5, answered = 6, undialed = 7 }
+	export enum Call_summaries_enum_call_state { ringing = 'ringing', completed = 'completed', busy = 'busy', fail = 'fail', noanswer = 'noanswer', canceled = 'canceled', answered = 'answered', undialed = 'undialed' }
 
-	export enum Call_summaries_enum_call_type { carrier = 0, sip = 1, trunking = 2, client = 3 }
+	export enum Call_summaries_enum_call_type { carrier = 'carrier', sip = 'sip', trunking = 'trunking', client = 'client' }
 
-	export enum Call_summaries_enum_processing_state { complete = 0, partial = 1 }
+	export enum Call_summaries_enum_processing_state { complete = 'complete', partial = 'partial' }
 
-	export enum Call_summaries_enum_processing_state_request { completed = 0, started = 1, partial = 2, all = 3 }
+	export enum Call_summaries_enum_processing_state_request { completed = 'completed', started = 'started', partial = 'partial', all = 'all' }
 
-	export enum Call_summaries_enum_sort_by { start_time = 0, end_time = 1 }
+	export enum Call_summaries_enum_sort_by { start_time = 'start_time', end_time = 'end_time' }
 
-	export enum Conference_enum_conference_end_reason { last_participant_left = 0, conference_ended_via_api = 1, participant_with_end_conference_on_exit_left = 2, last_participant_kicked = 3, participant_with_end_conference_on_exit_kicked = 4 }
+	export enum Conference_enum_conference_end_reason { last_participant_left = 'last_participant_left', conference_ended_via_api = 'conference_ended_via_api', participant_with_end_conference_on_exit_left = 'participant_with_end_conference_on_exit_left', last_participant_kicked = 'last_participant_kicked', participant_with_end_conference_on_exit_kicked = 'participant_with_end_conference_on_exit_kicked' }
 
-	export enum Conference_enum_conference_status { in_progress = 0, not_started = 1, completed = 2, summary_timeout = 3 }
+	export enum Conference_enum_conference_status { in_progress = 'in_progress', not_started = 'not_started', completed = 'completed', summary_timeout = 'summary_timeout' }
 
-	export enum Conference_enum_processing_state { complete = 0, in_progress = 1, timeout = 2 }
+	export enum Conference_enum_processing_state { complete = 'complete', in_progress = 'in_progress', timeout = 'timeout' }
 
-	export enum Conference_enum_region { us1 = 0, au1 = 1, br1 = 2, ie1 = 3, jp1 = 4, sg1 = 5, de1 = 6 }
+	export enum Conference_enum_region { us1 = 'us1', au1 = 'au1', br1 = 'br1', ie1 = 'ie1', jp1 = 'jp1', sg1 = 'sg1', de1 = 'de1' }
 
-	export enum Conference_enum_tag { invalid_requested_region = 0, duplicate_identity = 1, start_failure = 2, region_configuration_issues = 3, quality_warnings = 4, participant_behavior_issues = 5, high_packet_loss = 6, high_jitter = 7, high_latency = 8, low_mos = 9, detected_silence = 10 }
+	export enum Conference_enum_tag { invalid_requested_region = 'invalid_requested_region', duplicate_identity = 'duplicate_identity', start_failure = 'start_failure', region_configuration_issues = 'region_configuration_issues', quality_warnings = 'quality_warnings', participant_behavior_issues = 'participant_behavior_issues', high_packet_loss = 'high_packet_loss', high_jitter = 'high_jitter', high_latency = 'high_latency', low_mos = 'low_mos', detected_silence = 'detected_silence' }
 
-	export enum Conference_participant_enum_call_direction { inbound = 0, outbound = 1 }
+	export enum Conference_participant_enum_call_direction { inbound = 'inbound', outbound = 'outbound' }
 
-	export enum Conference_participant_enum_call_status { answered = 0, completed = 1, busy = 2, fail = 3, noanswer = 4, ringing = 5, canceled = 6 }
+	export enum Conference_participant_enum_call_status { answered = 'answered', completed = 'completed', busy = 'busy', fail = 'fail', noanswer = 'noanswer', ringing = 'ringing', canceled = 'canceled' }
 
-	export enum Conference_participant_enum_call_type { carrier = 0, client = 1, sip = 2 }
+	export enum Conference_participant_enum_call_type { carrier = 'carrier', client = 'client', sip = 'sip' }
 
-	export enum Conference_participant_enum_jitter_buffer_size { large = 0, small = 1, medium = 2, off = 3 }
+	export enum Conference_participant_enum_jitter_buffer_size { large = 'large', small = 'small', medium = 'medium', off = 'off' }
 
-	export enum Conference_participant_enum_processing_state { complete = 0, in_progress = 1, timeout = 2 }
+	export enum Conference_participant_enum_processing_state { complete = 'complete', in_progress = 'in_progress', timeout = 'timeout' }
 
-	export enum Conference_participant_enum_region { us1 = 0, us2 = 1, au1 = 2, br1 = 3, ie1 = 4, jp1 = 5, sg1 = 6, de1 = 7 }
+	export enum Conference_participant_enum_region { us1 = 'us1', us2 = 'us2', au1 = 'au1', br1 = 'br1', ie1 = 'ie1', jp1 = 'jp1', sg1 = 'sg1', de1 = 'de1' }
 
-	export enum Event_enum_level { UNKNOWN = 0, DEBUG = 1, INFO = 2, WARNING = 3, ERROR = 4 }
+	export enum Event_enum_level { UNKNOWN = 'UNKNOWN', DEBUG = 'DEBUG', INFO = 'INFO', WARNING = 'WARNING', ERROR = 'ERROR' }
 
-	export enum Event_enum_twilio_edge { unknown_edge = 0, carrier_edge = 1, sip_edge = 2, sdk_edge = 3, client_edge = 4 }
+	export enum Event_enum_twilio_edge { unknown_edge = 'unknown_edge', carrier_edge = 'carrier_edge', sip_edge = 'sip_edge', sdk_edge = 'sdk_edge', client_edge = 'client_edge' }
 
 	export interface Insightsv1account_settings {
 
@@ -380,7 +380,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Insightsv1callmetricDirection { unknown = 0, inbound = 1, outbound = 2, both = 3 }
+	export enum Insightsv1callmetricDirection { unknown = 'unknown', inbound = 'inbound', outbound = 'outbound', both = 'both' }
 
 	export interface Insightsv1callsummary {
 
@@ -1258,23 +1258,23 @@ export namespace MyNS {
 
 	}
 
-	export enum Video_room_summary_enum_codec { VP8 = 0, H264 = 1, VP9 = 2 }
+	export enum Video_room_summary_enum_codec { VP8 = 'VP8', H264 = 'H264', VP9 = 'VP9' }
 
-	export enum Insightsv1video_room_summaryCreated_method { sdk = 0, ad_hoc = 1, api = 2 }
+	export enum Insightsv1video_room_summaryCreated_method { sdk = 'sdk', ad_hoc = 'ad_hoc', api = 'api' }
 
-	export enum Insightsv1video_room_summaryEdge_location { ashburn = 0, dublin = 1, frankfurt = 2, singapore = 3, sydney = 4, sao_paulo = 5, roaming = 6, umatilla = 7, tokyo = 8 }
+	export enum Insightsv1video_room_summaryEdge_location { ashburn = 'ashburn', dublin = 'dublin', frankfurt = 'frankfurt', singapore = 'singapore', sydney = 'sydney', sao_paulo = 'sao_paulo', roaming = 'roaming', umatilla = 'umatilla', tokyo = 'tokyo' }
 
-	export enum Insightsv1video_room_summaryEnd_reason { room_ended_via_api = 0, timeout = 1 }
+	export enum Insightsv1video_room_summaryEnd_reason { room_ended_via_api = 'room_ended_via_api', timeout = 'timeout' }
 
-	export enum Insightsv1video_room_summaryMedia_region { us1 = 0, us2 = 1, au1 = 2, br1 = 3, ie1 = 4, jp1 = 5, sg1 = 6, in1 = 7, de1 = 8, gll = 9 }
+	export enum Insightsv1video_room_summaryMedia_region { us1 = 'us1', us2 = 'us2', au1 = 'au1', br1 = 'br1', ie1 = 'ie1', jp1 = 'jp1', sg1 = 'sg1', in1 = 'in1', de1 = 'de1', gll = 'gll' }
 
-	export enum Insightsv1video_room_summaryProcessing_state { complete = 0, in_progress = 1 }
+	export enum Insightsv1video_room_summaryProcessing_state { complete = 'complete', in_progress = 'in_progress' }
 
-	export enum Insightsv1video_room_summaryRoom_status { in_progress = 0, completed = 1 }
+	export enum Insightsv1video_room_summaryRoom_status { in_progress = 'in_progress', completed = 'completed' }
 
-	export enum Insightsv1video_room_summaryRoom_type { go = 0, peer_to_peer = 1, group = 2, group_small = 3 }
+	export enum Insightsv1video_room_summaryRoom_type { go = 'go', peer_to_peer = 'peer_to_peer', group = 'group', group_small = 'group_small' }
 
-	export enum Insightsv1video_room_summaryStatus_callback_method { HEAD = 0, GET = 1, POST = 2, PATCH = 3, PUT = 4, DELETE = 5 }
+	export enum Insightsv1video_room_summaryStatus_callback_method { HEAD = 'HEAD', GET = 'GET', POST = 'POST', PATCH = 'PATCH', PUT = 'PUT', DELETE = 'DELETE' }
 
 	export interface Insightsv1video_room_summaryvideo_participant_summary {
 
@@ -1413,39 +1413,39 @@ export namespace MyNS {
 
 	}
 
-	export enum Video_participant_summary_enum_codec { VP8 = 0, H264 = 1, VP9 = 2 }
+	export enum Video_participant_summary_enum_codec { VP8 = 'VP8', H264 = 'H264', VP9 = 'VP9' }
 
-	export enum Metric_enum_stream_direction { unknown = 0, inbound = 1, outbound = 2, both = 3 }
+	export enum Metric_enum_stream_direction { unknown = 'unknown', inbound = 'inbound', outbound = 'outbound', both = 'both' }
 
-	export enum Metric_enum_twilio_edge { unknown_edge = 0, carrier_edge = 1, sip_edge = 2, sdk_edge = 3, client_edge = 4 }
+	export enum Metric_enum_twilio_edge { unknown_edge = 'unknown_edge', carrier_edge = 'carrier_edge', sip_edge = 'sip_edge', sdk_edge = 'sdk_edge', client_edge = 'client_edge' }
 
-	export enum Summary_enum_answered_by { unknown = 0, machine_start = 1, machine_end_beep = 2, machine_end_silence = 3, machine_end_other = 4, human = 5, fax = 6 }
+	export enum Summary_enum_answered_by { unknown = 'unknown', machine_start = 'machine_start', machine_end_beep = 'machine_end_beep', machine_end_silence = 'machine_end_silence', machine_end_other = 'machine_end_other', human = 'human', fax = 'fax' }
 
-	export enum Summary_enum_call_state { ringing = 0, completed = 1, busy = 2, fail = 3, noanswer = 4, canceled = 5, answered = 6, undialed = 7 }
+	export enum Summary_enum_call_state { ringing = 'ringing', completed = 'completed', busy = 'busy', fail = 'fail', noanswer = 'noanswer', canceled = 'canceled', answered = 'answered', undialed = 'undialed' }
 
-	export enum Summary_enum_call_type { carrier = 0, sip = 1, trunking = 2, client = 3 }
+	export enum Summary_enum_call_type { carrier = 'carrier', sip = 'sip', trunking = 'trunking', client = 'client' }
 
-	export enum Summary_enum_processing_state { complete = 0, partial = 1 }
+	export enum Summary_enum_processing_state { complete = 'complete', partial = 'partial' }
 
-	export enum Video_participant_summary_enum_edge_location { ashburn = 0, dublin = 1, frankfurt = 2, singapore = 3, sydney = 4, sao_paulo = 5, roaming = 6, umatilla = 7, tokyo = 8 }
+	export enum Video_participant_summary_enum_edge_location { ashburn = 'ashburn', dublin = 'dublin', frankfurt = 'frankfurt', singapore = 'singapore', sydney = 'sydney', sao_paulo = 'sao_paulo', roaming = 'roaming', umatilla = 'umatilla', tokyo = 'tokyo' }
 
-	export enum Video_participant_summary_enum_room_status { in_progress = 0, completed = 1 }
+	export enum Video_participant_summary_enum_room_status { in_progress = 'in_progress', completed = 'completed' }
 
-	export enum Video_participant_summary_enum_twilio_realm { us1 = 0, us2 = 1, au1 = 2, br1 = 3, ie1 = 4, jp1 = 5, sg1 = 6, in1 = 7, de1 = 8, gll = 9 }
+	export enum Video_participant_summary_enum_twilio_realm { us1 = 'us1', us2 = 'us2', au1 = 'au1', br1 = 'br1', ie1 = 'ie1', jp1 = 'jp1', sg1 = 'sg1', in1 = 'in1', de1 = 'de1', gll = 'gll' }
 
-	export enum Video_room_summary_enum_created_method { sdk = 0, ad_hoc = 1, api = 2 }
+	export enum Video_room_summary_enum_created_method { sdk = 'sdk', ad_hoc = 'ad_hoc', api = 'api' }
 
-	export enum Video_room_summary_enum_edge_location { ashburn = 0, dublin = 1, frankfurt = 2, singapore = 3, sydney = 4, sao_paulo = 5, roaming = 6, umatilla = 7, tokyo = 8 }
+	export enum Video_room_summary_enum_edge_location { ashburn = 'ashburn', dublin = 'dublin', frankfurt = 'frankfurt', singapore = 'singapore', sydney = 'sydney', sao_paulo = 'sao_paulo', roaming = 'roaming', umatilla = 'umatilla', tokyo = 'tokyo' }
 
-	export enum Video_room_summary_enum_end_reason { room_ended_via_api = 0, timeout = 1 }
+	export enum Video_room_summary_enum_end_reason { room_ended_via_api = 'room_ended_via_api', timeout = 'timeout' }
 
-	export enum Video_room_summary_enum_processing_state { complete = 0, in_progress = 1 }
+	export enum Video_room_summary_enum_processing_state { complete = 'complete', in_progress = 'in_progress' }
 
-	export enum Video_room_summary_enum_room_status { in_progress = 0, completed = 1 }
+	export enum Video_room_summary_enum_room_status { in_progress = 'in_progress', completed = 'completed' }
 
-	export enum Video_room_summary_enum_room_type { go = 0, peer_to_peer = 1, group = 2, group_small = 3 }
+	export enum Video_room_summary_enum_room_type { go = 'go', peer_to_peer = 'peer_to_peer', group = 'group', group_small = 'group_small' }
 
-	export enum Video_room_summary_enum_twilio_realm { us1 = 0, us2 = 1, au1 = 2, br1 = 3, ie1 = 4, jp1 = 5, sg1 = 6, in1 = 7, de1 = 8, gll = 9 }
+	export enum Video_room_summary_enum_twilio_realm { us1 = 'us1', us2 = 'us2', au1 = 'au1', br1 = 'br1', ie1 = 'ie1', jp1 = 'jp1', sg1 = 'sg1', in1 = 'in1', de1 = 'de1', gll = 'gll' }
 
 	@Injectable()
 	export class MyClient {

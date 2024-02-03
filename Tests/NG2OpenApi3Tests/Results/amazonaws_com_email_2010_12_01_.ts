@@ -95,7 +95,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { send = 0, reject = 1, bounce = 2, complaint = 3, delivery = 4, open = 5, click = 6, renderingFailure = 7 }
+	export enum EventType { send = 'send', reject = 'reject', bounce = 'bounce', complaint = 'complaint', delivery = 'delivery', open = 'open', click = 'click', renderingFailure = 'renderingFailure' }
 
 
 	/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
@@ -177,7 +177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DimensionValueSource { messageTag = 0, emailHeader = 1, linkTag = 2 }
+	export enum DimensionValueSource { messageTag = 'messageTag', emailHeader = 'emailHeader', linkTag = 'linkTag' }
 
 
 	/** <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
@@ -356,7 +356,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReceiptFilterPolicy { Block = 0, Allow = 1 }
+	export enum ReceiptFilterPolicy { Block = 'Block', Allow = 'Allow' }
 
 
 	/** An empty element returned on a successful request. */
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TlsPolicy { Require = 0, Optional = 1 }
+	export enum TlsPolicy { Require = 'Require', Optional = 'Optional' }
 
 
 	/** <p>An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or domains that you own. An instance of this data type can represent only one action.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p> */
@@ -517,7 +517,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InvocationType { Event = 0, RequestResponse = 1 }
+	export enum InvocationType { Event = 'Event', RequestResponse = 'RequestResponse' }
 
 
 	/** <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p> */
@@ -543,7 +543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StopScope { RuleSet = 0 }
+	export enum StopScope { RuleSet = 'RuleSet' }
 
 
 	/** <p>When included in a receipt rule, this action adds a header to the received email.</p> <p>For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon SES Developer Guide</a>.</p> */
@@ -597,7 +597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SNSActionEncoding { 'UTF-8' = 0, Base64 = 1 }
+	export enum SNSActionEncoding { 'UTF-8' = 'UTF-8', Base64 = 'Base64' }
 
 	export interface InvalidSnsTopicException {
 	}
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigurationSetAttribute { eventDestinations = 0, trackingOptions = 1, deliveryOptions = 2, reputationOptions = 3 }
+	export enum ConfigurationSetAttribute { eventDestinations = 'eventDestinations', trackingOptions = 'trackingOptions', deliveryOptions = 'deliveryOptions', reputationOptions = 'reputationOptions' }
 
 
 	/** Represents the details of a receipt rule. */
@@ -1712,7 +1712,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BounceType { DoesNotExist = 0, MessageTooLarge = 1, ExceededQuota = 2, ContentRejected = 3, Undefined = 4, TemporaryFailure = 5 }
+	export enum BounceType { DoesNotExist = 'DoesNotExist', MessageTooLarge = 'MessageTooLarge', ExceededQuota = 'ExceededQuota', ContentRejected = 'ContentRejected', Undefined = 'Undefined', TemporaryFailure = 'TemporaryFailure' }
 
 
 	/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
@@ -1755,7 +1755,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DsnAction { failed = 0, delayed = 1, delivered = 2, relayed = 3, expanded = 4 }
+	export enum DsnAction { failed = 'failed', delayed = 'delayed', delivered = 'delivered', relayed = 'relayed', expanded = 'expanded' }
 
 	export interface MessageRejected {
 	}
@@ -1803,7 +1803,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BulkEmailStatus { Success = 0, MessageRejected = 1, MailFromDomainNotVerified = 2, ConfigurationSetDoesNotExist = 3, TemplateDoesNotExist = 4, AccountSuspended = 5, AccountThrottled = 6, AccountDailyQuotaExceeded = 7, InvalidSendingPoolName = 8, AccountSendingPaused = 9, ConfigurationSetSendingPaused = 10, InvalidParameterValue = 11, TransientFailure = 12, Failed = 13 }
+	export enum BulkEmailStatus { Success = 'Success', MessageRejected = 'MessageRejected', MailFromDomainNotVerified = 'MailFromDomainNotVerified', ConfigurationSetDoesNotExist = 'ConfigurationSetDoesNotExist', TemplateDoesNotExist = 'TemplateDoesNotExist', AccountSuspended = 'AccountSuspended', AccountThrottled = 'AccountThrottled', AccountDailyQuotaExceeded = 'AccountDailyQuotaExceeded', InvalidSendingPoolName = 'InvalidSendingPoolName', AccountSendingPaused = 'AccountSendingPaused', ConfigurationSetSendingPaused = 'ConfigurationSetSendingPaused', InvalidParameterValue = 'InvalidParameterValue', TransientFailure = 'TransientFailure', Failed = 'Failed' }
 
 
 	/** <p>Contains the name and value of a tag that you can provide to <code>SendEmail</code> or <code>SendRawEmail</code> to apply to an email.</p> <p>Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
@@ -2265,7 +2265,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BehaviorOnMXFailure { UseDefaultValue = 0, RejectMessage = 1 }
+	export enum BehaviorOnMXFailure { UseDefaultValue = 'UseDefaultValue', RejectMessage = 'RejectMessage' }
 
 
 	/** Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
@@ -2501,7 +2501,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomMailFromStatus { Pending = 0, Success = 1, Failed = 2, TemporaryFailure = 3 }
+	export enum CustomMailFromStatus { Pending = 'Pending', Success = 'Success', Failed = 'Failed', TemporaryFailure = 'TemporaryFailure' }
 
 
 	/** Represents a request to delete a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
@@ -2869,7 +2869,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VerificationStatus { Pending = 0, Success = 1, Failed = 2, TemporaryFailure = 3, NotStarted = 4 }
+	export enum VerificationStatus { Pending = 'Pending', Success = 'Success', Failed = 'Failed', TemporaryFailure = 'TemporaryFailure', NotStarted = 'NotStarted' }
 
 
 	/** Represents a request to retrieve an existing custom verification email template. */
@@ -3087,7 +3087,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityType { EmailAddress = 0, Domain = 1 }
+	export enum IdentityType { EmailAddress = 'EmailAddress', Domain = 'Domain' }
 
 
 	/** Represents the verification attributes of a single identity. */
@@ -3289,7 +3289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationType { Bounce = 0, Complaint = 1, Delivery = 2 }
+	export enum NotificationType { Bounce = 'Bounce', Complaint = 'Complaint', Delivery = 'Delivery' }
 
 
 	/** A request to modify the delivery options for a configuration set. */
@@ -4979,9 +4979,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GET_CloneReceiptRuleSetAction { CloneReceiptRuleSet = 0 }
+	export enum GET_CloneReceiptRuleSetAction { CloneReceiptRuleSet = 'CloneReceiptRuleSet' }
 
-	export enum GET_CloneReceiptRuleSetVersion { '2010-12-01' = 0 }
+	export enum GET_CloneReceiptRuleSetVersion { '2010-12-01' = '2010-12-01' }
 
 	export interface GET_CreateConfigurationSetConfigurationSet {
 
@@ -5000,7 +5000,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateConfigurationSetAction { CreateConfigurationSet = 0 }
+	export enum GET_CreateConfigurationSetAction { CreateConfigurationSet = 'CreateConfigurationSet' }
 
 	export interface GET_CreateConfigurationSetEventDestinationEventDestination {
 
@@ -5028,7 +5028,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateConfigurationSetEventDestinationAction { CreateConfigurationSetEventDestination = 0 }
+	export enum GET_CreateConfigurationSetEventDestinationAction { CreateConfigurationSetEventDestination = 'CreateConfigurationSetEventDestination' }
 
 	export interface GET_CreateConfigurationSetTrackingOptionsTrackingOptions {
 		CustomRedirectDomain?: string;
@@ -5043,9 +5043,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateConfigurationSetTrackingOptionsAction { CreateConfigurationSetTrackingOptions = 0 }
+	export enum GET_CreateConfigurationSetTrackingOptionsAction { CreateConfigurationSetTrackingOptions = 'CreateConfigurationSetTrackingOptions' }
 
-	export enum GET_CreateCustomVerificationEmailTemplateAction { CreateCustomVerificationEmailTemplate = 0 }
+	export enum GET_CreateCustomVerificationEmailTemplateAction { CreateCustomVerificationEmailTemplate = 'CreateCustomVerificationEmailTemplate' }
 
 	export interface GET_CreateReceiptFilterFilter {
 
@@ -5067,7 +5067,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateReceiptFilterAction { CreateReceiptFilter = 0 }
+	export enum GET_CreateReceiptFilterAction { CreateReceiptFilter = 'CreateReceiptFilter' }
 
 	export interface GET_CreateReceiptRuleRule {
 
@@ -5097,9 +5097,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateReceiptRuleAction { CreateReceiptRule = 0 }
+	export enum GET_CreateReceiptRuleAction { CreateReceiptRule = 'CreateReceiptRule' }
 
-	export enum GET_CreateReceiptRuleSetAction { CreateReceiptRuleSet = 0 }
+	export enum GET_CreateReceiptRuleSetAction { CreateReceiptRuleSet = 'CreateReceiptRuleSet' }
 
 	export interface GET_CreateTemplateTemplate {
 
@@ -5127,73 +5127,73 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_CreateTemplateAction { CreateTemplate = 0 }
+	export enum GET_CreateTemplateAction { CreateTemplate = 'CreateTemplate' }
 
-	export enum GET_DeleteConfigurationSetAction { DeleteConfigurationSet = 0 }
+	export enum GET_DeleteConfigurationSetAction { DeleteConfigurationSet = 'DeleteConfigurationSet' }
 
-	export enum GET_DeleteConfigurationSetEventDestinationAction { DeleteConfigurationSetEventDestination = 0 }
+	export enum GET_DeleteConfigurationSetEventDestinationAction { DeleteConfigurationSetEventDestination = 'DeleteConfigurationSetEventDestination' }
 
-	export enum GET_DeleteConfigurationSetTrackingOptionsAction { DeleteConfigurationSetTrackingOptions = 0 }
+	export enum GET_DeleteConfigurationSetTrackingOptionsAction { DeleteConfigurationSetTrackingOptions = 'DeleteConfigurationSetTrackingOptions' }
 
-	export enum GET_DeleteCustomVerificationEmailTemplateAction { DeleteCustomVerificationEmailTemplate = 0 }
+	export enum GET_DeleteCustomVerificationEmailTemplateAction { DeleteCustomVerificationEmailTemplate = 'DeleteCustomVerificationEmailTemplate' }
 
-	export enum GET_DeleteIdentityAction { DeleteIdentity = 0 }
+	export enum GET_DeleteIdentityAction { DeleteIdentity = 'DeleteIdentity' }
 
-	export enum GET_DeleteIdentityPolicyAction { DeleteIdentityPolicy = 0 }
+	export enum GET_DeleteIdentityPolicyAction { DeleteIdentityPolicy = 'DeleteIdentityPolicy' }
 
-	export enum GET_DeleteReceiptFilterAction { DeleteReceiptFilter = 0 }
+	export enum GET_DeleteReceiptFilterAction { DeleteReceiptFilter = 'DeleteReceiptFilter' }
 
-	export enum GET_DeleteReceiptRuleAction { DeleteReceiptRule = 0 }
+	export enum GET_DeleteReceiptRuleAction { DeleteReceiptRule = 'DeleteReceiptRule' }
 
-	export enum GET_DeleteReceiptRuleSetAction { DeleteReceiptRuleSet = 0 }
+	export enum GET_DeleteReceiptRuleSetAction { DeleteReceiptRuleSet = 'DeleteReceiptRuleSet' }
 
-	export enum GET_DeleteTemplateAction { DeleteTemplate = 0 }
+	export enum GET_DeleteTemplateAction { DeleteTemplate = 'DeleteTemplate' }
 
-	export enum GET_DeleteVerifiedEmailAddressAction { DeleteVerifiedEmailAddress = 0 }
+	export enum GET_DeleteVerifiedEmailAddressAction { DeleteVerifiedEmailAddress = 'DeleteVerifiedEmailAddress' }
 
-	export enum GET_DescribeActiveReceiptRuleSetAction { DescribeActiveReceiptRuleSet = 0 }
+	export enum GET_DescribeActiveReceiptRuleSetAction { DescribeActiveReceiptRuleSet = 'DescribeActiveReceiptRuleSet' }
 
-	export enum GET_DescribeConfigurationSetAction { DescribeConfigurationSet = 0 }
+	export enum GET_DescribeConfigurationSetAction { DescribeConfigurationSet = 'DescribeConfigurationSet' }
 
-	export enum GET_DescribeReceiptRuleAction { DescribeReceiptRule = 0 }
+	export enum GET_DescribeReceiptRuleAction { DescribeReceiptRule = 'DescribeReceiptRule' }
 
-	export enum GET_DescribeReceiptRuleSetAction { DescribeReceiptRuleSet = 0 }
+	export enum GET_DescribeReceiptRuleSetAction { DescribeReceiptRuleSet = 'DescribeReceiptRuleSet' }
 
-	export enum GET_GetAccountSendingEnabledAction { GetAccountSendingEnabled = 0 }
+	export enum GET_GetAccountSendingEnabledAction { GetAccountSendingEnabled = 'GetAccountSendingEnabled' }
 
-	export enum GET_GetCustomVerificationEmailTemplateAction { GetCustomVerificationEmailTemplate = 0 }
+	export enum GET_GetCustomVerificationEmailTemplateAction { GetCustomVerificationEmailTemplate = 'GetCustomVerificationEmailTemplate' }
 
-	export enum GET_GetIdentityDkimAttributesAction { GetIdentityDkimAttributes = 0 }
+	export enum GET_GetIdentityDkimAttributesAction { GetIdentityDkimAttributes = 'GetIdentityDkimAttributes' }
 
-	export enum GET_GetIdentityMailFromDomainAttributesAction { GetIdentityMailFromDomainAttributes = 0 }
+	export enum GET_GetIdentityMailFromDomainAttributesAction { GetIdentityMailFromDomainAttributes = 'GetIdentityMailFromDomainAttributes' }
 
-	export enum GET_GetIdentityNotificationAttributesAction { GetIdentityNotificationAttributes = 0 }
+	export enum GET_GetIdentityNotificationAttributesAction { GetIdentityNotificationAttributes = 'GetIdentityNotificationAttributes' }
 
-	export enum GET_GetIdentityPoliciesAction { GetIdentityPolicies = 0 }
+	export enum GET_GetIdentityPoliciesAction { GetIdentityPolicies = 'GetIdentityPolicies' }
 
-	export enum GET_GetIdentityVerificationAttributesAction { GetIdentityVerificationAttributes = 0 }
+	export enum GET_GetIdentityVerificationAttributesAction { GetIdentityVerificationAttributes = 'GetIdentityVerificationAttributes' }
 
-	export enum GET_GetSendQuotaAction { GetSendQuota = 0 }
+	export enum GET_GetSendQuotaAction { GetSendQuota = 'GetSendQuota' }
 
-	export enum GET_GetSendStatisticsAction { GetSendStatistics = 0 }
+	export enum GET_GetSendStatisticsAction { GetSendStatistics = 'GetSendStatistics' }
 
-	export enum GET_GetTemplateAction { GetTemplate = 0 }
+	export enum GET_GetTemplateAction { GetTemplate = 'GetTemplate' }
 
-	export enum GET_ListConfigurationSetsAction { ListConfigurationSets = 0 }
+	export enum GET_ListConfigurationSetsAction { ListConfigurationSets = 'ListConfigurationSets' }
 
-	export enum GET_ListCustomVerificationEmailTemplatesAction { ListCustomVerificationEmailTemplates = 0 }
+	export enum GET_ListCustomVerificationEmailTemplatesAction { ListCustomVerificationEmailTemplates = 'ListCustomVerificationEmailTemplates' }
 
-	export enum GET_ListIdentitiesAction { ListIdentities = 0 }
+	export enum GET_ListIdentitiesAction { ListIdentities = 'ListIdentities' }
 
-	export enum GET_ListIdentityPoliciesAction { ListIdentityPolicies = 0 }
+	export enum GET_ListIdentityPoliciesAction { ListIdentityPolicies = 'ListIdentityPolicies' }
 
-	export enum GET_ListReceiptFiltersAction { ListReceiptFilters = 0 }
+	export enum GET_ListReceiptFiltersAction { ListReceiptFilters = 'ListReceiptFilters' }
 
-	export enum GET_ListReceiptRuleSetsAction { ListReceiptRuleSets = 0 }
+	export enum GET_ListReceiptRuleSetsAction { ListReceiptRuleSets = 'ListReceiptRuleSets' }
 
-	export enum GET_ListTemplatesAction { ListTemplates = 0 }
+	export enum GET_ListTemplatesAction { ListTemplates = 'ListTemplates' }
 
-	export enum GET_ListVerifiedEmailAddressesAction { ListVerifiedEmailAddresses = 0 }
+	export enum GET_ListVerifiedEmailAddressesAction { ListVerifiedEmailAddresses = 'ListVerifiedEmailAddresses' }
 
 	export interface GET_PutConfigurationSetDeliveryOptionsDeliveryOptions {
 		TlsPolicy?: TlsPolicy;
@@ -5208,11 +5208,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_PutConfigurationSetDeliveryOptionsAction { PutConfigurationSetDeliveryOptions = 0 }
+	export enum GET_PutConfigurationSetDeliveryOptionsAction { PutConfigurationSetDeliveryOptions = 'PutConfigurationSetDeliveryOptions' }
 
-	export enum GET_PutIdentityPolicyAction { PutIdentityPolicy = 0 }
+	export enum GET_PutIdentityPolicyAction { PutIdentityPolicy = 'PutIdentityPolicy' }
 
-	export enum GET_ReorderReceiptRuleSetAction { ReorderReceiptRuleSet = 0 }
+	export enum GET_ReorderReceiptRuleSetAction { ReorderReceiptRuleSet = 'ReorderReceiptRuleSet' }
 
 	export interface GET_SendBounceMessageDsn {
 
@@ -5235,11 +5235,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_SendBounceAction { SendBounce = 0 }
+	export enum GET_SendBounceAction { SendBounce = 'SendBounce' }
 
-	export enum GET_SendBulkTemplatedEmailAction { SendBulkTemplatedEmail = 0 }
+	export enum GET_SendBulkTemplatedEmailAction { SendBulkTemplatedEmail = 'SendBulkTemplatedEmail' }
 
-	export enum GET_SendCustomVerificationEmailAction { SendCustomVerificationEmail = 0 }
+	export enum GET_SendCustomVerificationEmailAction { SendCustomVerificationEmail = 'SendCustomVerificationEmail' }
 
 	export interface GET_SendEmailDestination {
 		ToAddresses?: Array<string>;
@@ -5270,7 +5270,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_SendEmailAction { SendEmail = 0 }
+	export enum GET_SendEmailAction { SendEmail = 'SendEmail' }
 
 	export interface GET_SendRawEmailRawMessage {
 
@@ -5289,7 +5289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_SendRawEmailAction { SendRawEmail = 0 }
+	export enum GET_SendRawEmailAction { SendRawEmail = 'SendRawEmail' }
 
 	export interface GET_SendTemplatedEmailDestination {
 		ToAddresses?: Array<string>;
@@ -5304,25 +5304,25 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_SendTemplatedEmailAction { SendTemplatedEmail = 0 }
+	export enum GET_SendTemplatedEmailAction { SendTemplatedEmail = 'SendTemplatedEmail' }
 
-	export enum GET_SetActiveReceiptRuleSetAction { SetActiveReceiptRuleSet = 0 }
+	export enum GET_SetActiveReceiptRuleSetAction { SetActiveReceiptRuleSet = 'SetActiveReceiptRuleSet' }
 
-	export enum GET_SetIdentityDkimEnabledAction { SetIdentityDkimEnabled = 0 }
+	export enum GET_SetIdentityDkimEnabledAction { SetIdentityDkimEnabled = 'SetIdentityDkimEnabled' }
 
-	export enum GET_SetIdentityFeedbackForwardingEnabledAction { SetIdentityFeedbackForwardingEnabled = 0 }
+	export enum GET_SetIdentityFeedbackForwardingEnabledAction { SetIdentityFeedbackForwardingEnabled = 'SetIdentityFeedbackForwardingEnabled' }
 
-	export enum GET_SetIdentityHeadersInNotificationsEnabledAction { SetIdentityHeadersInNotificationsEnabled = 0 }
+	export enum GET_SetIdentityHeadersInNotificationsEnabledAction { SetIdentityHeadersInNotificationsEnabled = 'SetIdentityHeadersInNotificationsEnabled' }
 
-	export enum GET_SetIdentityMailFromDomainAction { SetIdentityMailFromDomain = 0 }
+	export enum GET_SetIdentityMailFromDomainAction { SetIdentityMailFromDomain = 'SetIdentityMailFromDomain' }
 
-	export enum GET_SetIdentityNotificationTopicAction { SetIdentityNotificationTopic = 0 }
+	export enum GET_SetIdentityNotificationTopicAction { SetIdentityNotificationTopic = 'SetIdentityNotificationTopic' }
 
-	export enum GET_SetReceiptRulePositionAction { SetReceiptRulePosition = 0 }
+	export enum GET_SetReceiptRulePositionAction { SetReceiptRulePosition = 'SetReceiptRulePosition' }
 
-	export enum GET_TestRenderTemplateAction { TestRenderTemplate = 0 }
+	export enum GET_TestRenderTemplateAction { TestRenderTemplate = 'TestRenderTemplate' }
 
-	export enum GET_UpdateAccountSendingEnabledAction { UpdateAccountSendingEnabled = 0 }
+	export enum GET_UpdateAccountSendingEnabledAction { UpdateAccountSendingEnabled = 'UpdateAccountSendingEnabled' }
 
 	export interface GET_UpdateConfigurationSetEventDestinationEventDestination {
 
@@ -5350,11 +5350,11 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateConfigurationSetEventDestinationAction { UpdateConfigurationSetEventDestination = 0 }
+	export enum GET_UpdateConfigurationSetEventDestinationAction { UpdateConfigurationSetEventDestination = 'UpdateConfigurationSetEventDestination' }
 
-	export enum GET_UpdateConfigurationSetReputationMetricsEnabledAction { UpdateConfigurationSetReputationMetricsEnabled = 0 }
+	export enum GET_UpdateConfigurationSetReputationMetricsEnabledAction { UpdateConfigurationSetReputationMetricsEnabled = 'UpdateConfigurationSetReputationMetricsEnabled' }
 
-	export enum GET_UpdateConfigurationSetSendingEnabledAction { UpdateConfigurationSetSendingEnabled = 0 }
+	export enum GET_UpdateConfigurationSetSendingEnabledAction { UpdateConfigurationSetSendingEnabled = 'UpdateConfigurationSetSendingEnabled' }
 
 	export interface GET_UpdateConfigurationSetTrackingOptionsTrackingOptions {
 		CustomRedirectDomain?: string;
@@ -5369,9 +5369,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateConfigurationSetTrackingOptionsAction { UpdateConfigurationSetTrackingOptions = 0 }
+	export enum GET_UpdateConfigurationSetTrackingOptionsAction { UpdateConfigurationSetTrackingOptions = 'UpdateConfigurationSetTrackingOptions' }
 
-	export enum GET_UpdateCustomVerificationEmailTemplateAction { UpdateCustomVerificationEmailTemplate = 0 }
+	export enum GET_UpdateCustomVerificationEmailTemplateAction { UpdateCustomVerificationEmailTemplate = 'UpdateCustomVerificationEmailTemplate' }
 
 	export interface GET_UpdateReceiptRuleRule {
 
@@ -5401,7 +5401,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateReceiptRuleAction { UpdateReceiptRule = 0 }
+	export enum GET_UpdateReceiptRuleAction { UpdateReceiptRule = 'UpdateReceiptRule' }
 
 	export interface GET_UpdateTemplateTemplate {
 
@@ -5429,15 +5429,15 @@ export namespace MyNS {
 
 	}
 
-	export enum GET_UpdateTemplateAction { UpdateTemplate = 0 }
+	export enum GET_UpdateTemplateAction { UpdateTemplate = 'UpdateTemplate' }
 
-	export enum GET_VerifyDomainDkimAction { VerifyDomainDkim = 0 }
+	export enum GET_VerifyDomainDkimAction { VerifyDomainDkim = 'VerifyDomainDkim' }
 
-	export enum GET_VerifyDomainIdentityAction { VerifyDomainIdentity = 0 }
+	export enum GET_VerifyDomainIdentityAction { VerifyDomainIdentity = 'VerifyDomainIdentity' }
 
-	export enum GET_VerifyEmailAddressAction { VerifyEmailAddress = 0 }
+	export enum GET_VerifyEmailAddressAction { VerifyEmailAddress = 'VerifyEmailAddress' }
 
-	export enum GET_VerifyEmailIdentityAction { VerifyEmailIdentity = 0 }
+	export enum GET_VerifyEmailIdentityAction { VerifyEmailIdentity = 'VerifyEmailIdentity' }
 
 }
 

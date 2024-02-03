@@ -76,9 +76,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountType { BANK = 0, CURRENT = 1, CURRLIAB = 2, DEPRECIATN = 3, DIRECTCOSTS = 4, EQUITY = 5, EXPENSE = 6, FIXED = 7, INVENTORY = 8, LIABILITY = 9, NONCURRENT = 10, OTHERINCOME = 11, OVERHEADS = 12, PREPAYMENT = 13, REVENUE = 14, SALES = 15, TERMLIAB = 16, PAYGLIABILITY = 17, PAYG = 18, SUPERANNUATIONEXPENSE = 19, SUPERANNUATIONLIABILITY = 20, WAGESEXPENSE = 21, WAGESPAYABLELIABILITY = 22 }
+	export enum AccountType { BANK = 'BANK', CURRENT = 'CURRENT', CURRLIAB = 'CURRLIAB', DEPRECIATN = 'DEPRECIATN', DIRECTCOSTS = 'DIRECTCOSTS', EQUITY = 'EQUITY', EXPENSE = 'EXPENSE', FIXED = 'FIXED', INVENTORY = 'INVENTORY', LIABILITY = 'LIABILITY', NONCURRENT = 'NONCURRENT', OTHERINCOME = 'OTHERINCOME', OVERHEADS = 'OVERHEADS', PREPAYMENT = 'PREPAYMENT', REVENUE = 'REVENUE', SALES = 'SALES', TERMLIAB = 'TERMLIAB', PAYGLIABILITY = 'PAYGLIABILITY', PAYG = 'PAYG', SUPERANNUATIONEXPENSE = 'SUPERANNUATIONEXPENSE', SUPERANNUATIONLIABILITY = 'SUPERANNUATIONLIABILITY', WAGESEXPENSE = 'WAGESEXPENSE', WAGESPAYABLELIABILITY = 'WAGESPAYABLELIABILITY' }
 
-	export enum AllowanceType { CAR = 0, TRANSPORT = 1, TRAVEL = 2, LAUNDRY = 3, MEALS = 4, JOBKEEPER = 5, OTHER = 6 }
+	export enum AllowanceType { CAR = 'CAR', TRANSPORT = 'TRANSPORT', TRAVEL = 'TRAVEL', LAUNDRY = 'LAUNDRY', MEALS = 'MEALS', JOBKEEPER = 'JOBKEEPER', OTHER = 'OTHER' }
 
 	export interface BankAccount {
 
@@ -132,7 +132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CalendarType { WEEKLY = 0, FORTNIGHTLY = 1, FOURWEEKLY = 2, MONTHLY = 3, TWICEMONTHLY = 4, QUARTERLY = 5 }
+	export enum CalendarType { WEEKLY = 'WEEKLY', FORTNIGHTLY = 'FORTNIGHTLY', FOURWEEKLY = 'FOURWEEKLY', MONTHLY = 'MONTHLY', TWICEMONTHLY = 'TWICEMONTHLY', QUARTERLY = 'QUARTERLY' }
 
 	export interface DeductionLine {
 
@@ -185,7 +185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeductionLineCalculationType { FIXEDAMOUNT = 0, PRETAX = 1, POSTTAX = 2 }
+	export enum DeductionLineCalculationType { FIXEDAMOUNT = 'FIXEDAMOUNT', PRETAX = 'PRETAX', POSTTAX = 'POSTTAX' }
 
 	export interface DeductionType {
 
@@ -262,9 +262,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeductionTypeDeductionCategory { NONE = 0, UNIONFEES = 1, WORKPLACEGIVING = 2 }
+	export enum DeductionTypeDeductionCategory { NONE = 'NONE', UNIONFEES = 'UNIONFEES', WORKPLACEGIVING = 'WORKPLACEGIVING' }
 
-	export enum DeductionTypeCalculationType { FIXEDAMOUNT = 0, PRETAX = 1, POSTTAX = 2 }
+	export enum DeductionTypeCalculationType { FIXEDAMOUNT = 'FIXEDAMOUNT', PRETAX = 'PRETAX', POSTTAX = 'POSTTAX' }
 
 	export interface EarningsLine {
 
@@ -341,7 +341,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EarningsLineCalculationType { USEEARNINGSRATE = 0, ENTEREARNINGSRATE = 1, ANNUALSALARY = 2 }
+	export enum EarningsLineCalculationType { USEEARNINGSRATE = 'USEEARNINGSRATE', ENTEREARNINGSRATE = 'ENTEREARNINGSRATE', ANNUALSALARY = 'ANNUALSALARY' }
 
 	export interface EarningsRate {
 
@@ -468,15 +468,15 @@ export namespace MyNS {
 
 	}
 
-	export enum EarningsRateEarningsType { FIXED = 0, ORDINARYTIMEEARNINGS = 1, OVERTIMEEARNINGS = 2, ALLOWANCE = 3, LUMPSUMD = 4, EMPLOYMENTTERMINATIONPAYMENT = 5, LUMPSUMA = 6, LUMPSUMB = 7, BONUSESANDCOMMISSIONS = 8, LUMPSUME = 9 }
+	export enum EarningsRateEarningsType { FIXED = 'FIXED', ORDINARYTIMEEARNINGS = 'ORDINARYTIMEEARNINGS', OVERTIMEEARNINGS = 'OVERTIMEEARNINGS', ALLOWANCE = 'ALLOWANCE', LUMPSUMD = 'LUMPSUMD', EMPLOYMENTTERMINATIONPAYMENT = 'EMPLOYMENTTERMINATIONPAYMENT', LUMPSUMA = 'LUMPSUMA', LUMPSUMB = 'LUMPSUMB', BONUSESANDCOMMISSIONS = 'BONUSESANDCOMMISSIONS', LUMPSUME = 'LUMPSUME' }
 
-	export enum EarningsRateEmploymentTerminationPaymentType { O = 0, R = 1 }
+	export enum EarningsRateEmploymentTerminationPaymentType { O = 'O', R = 'R' }
 
-	export enum EarningsRateRateType { FIXEDAMOUNT = 0, MULTIPLE = 1, RATEPERUNIT = 2 }
+	export enum EarningsRateRateType { FIXEDAMOUNT = 'FIXEDAMOUNT', MULTIPLE = 'MULTIPLE', RATEPERUNIT = 'RATEPERUNIT' }
 
-	export enum EarningsRateCalculationType { USEEARNINGSRATE = 0, ENTEREARNINGSRATE = 1, ANNUALSALARY = 2 }
+	export enum EarningsRateCalculationType { USEEARNINGSRATE = 'USEEARNINGSRATE', ENTEREARNINGSRATE = 'ENTEREARNINGSRATE', ANNUALSALARY = 'ANNUALSALARY' }
 
-	export enum EarningsType { FIXED = 0, ORDINARYTIMEEARNINGS = 1, OVERTIMEEARNINGS = 2, ALLOWANCE = 3, LUMPSUMD = 4, EMPLOYMENTTERMINATIONPAYMENT = 5, LUMPSUMA = 6, LUMPSUMB = 7, BONUSESANDCOMMISSIONS = 8, LUMPSUME = 9 }
+	export enum EarningsType { FIXED = 'FIXED', ORDINARYTIMEEARNINGS = 'ORDINARYTIMEEARNINGS', OVERTIMEEARNINGS = 'OVERTIMEEARNINGS', ALLOWANCE = 'ALLOWANCE', LUMPSUMD = 'LUMPSUMD', EMPLOYMENTTERMINATIONPAYMENT = 'EMPLOYMENTTERMINATIONPAYMENT', LUMPSUMA = 'LUMPSUMA', LUMPSUMB = 'LUMPSUMB', BONUSESANDCOMMISSIONS = 'BONUSESANDCOMMISSIONS', LUMPSUME = 'LUMPSUME' }
 
 	export interface Employee {
 		BankAccounts?: Array<BankAccount>;
@@ -671,7 +671,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeGender { N = 0, M = 1, F = 2, I = 3 }
+	export enum EmployeeGender { N = 'N', M = 'M', F = 'F', I = 'I' }
 
 	export interface HomeAddress {
 
@@ -731,7 +731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HomeAddressRegion { ACT = 0, NSW = 1, NT = 2, QLD = 3, SA = 4, TAS = 5, VIC = 6, WA = 7 }
+	export enum HomeAddressRegion { ACT = 'ACT', NSW = 'NSW', NT = 'NT', QLD = 'QLD', SA = 'SA', TAS = 'TAS', VIC = 'VIC', WA = 'WA' }
 
 	export interface LeaveBalance {
 
@@ -829,9 +829,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LeaveLineCalculationType { NOCALCULATIONREQUIRED = 0, FIXEDAMOUNTEACHPERIOD = 1, ENTERRATEINPAYTEMPLATE = 2, BASEDONORDINARYEARNINGS = 3, '' = 4 }
+	export enum LeaveLineCalculationType { NOCALCULATIONREQUIRED = 'NOCALCULATIONREQUIRED', FIXEDAMOUNTEACHPERIOD = 'FIXEDAMOUNTEACHPERIOD', ENTERRATEINPAYTEMPLATE = 'ENTERRATEINPAYTEMPLATE', BASEDONORDINARYEARNINGS = 'BASEDONORDINARYEARNINGS', '' = '' }
 
-	export enum LeaveLineEntitlementFinalPayPayoutType { NOTPAIDOUT = 0, PAIDOUT = 1 }
+	export enum LeaveLineEntitlementFinalPayPayoutType { NOTPAIDOUT = 'NOTPAIDOUT', PAIDOUT = 'PAIDOUT' }
 
 	export interface OpeningBalances {
 		DeductionLines?: Array<DeductionLine>;
@@ -964,9 +964,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SuperLineCalculationType { FIXEDAMOUNT = 0, PERCENTAGEOFEARNINGS = 1, STATUTORY = 2 }
+	export enum SuperLineCalculationType { FIXEDAMOUNT = 'FIXEDAMOUNT', PERCENTAGEOFEARNINGS = 'PERCENTAGEOFEARNINGS', STATUTORY = 'STATUTORY' }
 
-	export enum SuperLineContributionType { SGC = 0, SALARYSACRIFICE = 1, EMPLOYERADDITIONAL = 2, EMPLOYEE = 3 }
+	export enum SuperLineContributionType { SGC = 'SGC', SALARYSACRIFICE = 'SALARYSACRIFICE', EMPLOYERADDITIONAL = 'EMPLOYERADDITIONAL', EMPLOYEE = 'EMPLOYEE' }
 
 	export interface PayTemplate {
 		DeductionLines?: Array<DeductionLine>;
@@ -983,7 +983,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeStatus { ACTIVE = 0, TERMINATED = 1 }
+	export enum EmployeeStatus { ACTIVE = 'ACTIVE', TERMINATED = 'TERMINATED' }
 
 	export interface SuperMembership {
 
@@ -1138,11 +1138,11 @@ export namespace MyNS {
 
 	}
 
-	export enum TaxDeclarationEmploymentBasis { FULLTIME = 0, PARTTIME = 1, CASUAL = 2, LABOURHIRE = 3, SUPERINCOMESTREAM = 4 }
+	export enum TaxDeclarationEmploymentBasis { FULLTIME = 'FULLTIME', PARTTIME = 'PARTTIME', CASUAL = 'CASUAL', LABOURHIRE = 'LABOURHIRE', SUPERINCOMESTREAM = 'SUPERINCOMESTREAM' }
 
-	export enum TaxDeclarationResidencyStatus { AUSTRALIANRESIDENT = 0, FOREIGNRESIDENT = 1, WORKINGHOLIDAYMAKER = 2 }
+	export enum TaxDeclarationResidencyStatus { AUSTRALIANRESIDENT = 'AUSTRALIANRESIDENT', FOREIGNRESIDENT = 'FOREIGNRESIDENT', WORKINGHOLIDAYMAKER = 'WORKINGHOLIDAYMAKER' }
 
-	export enum TaxDeclarationTFNExemptionType { NOTQUOTED = 0, PENDING = 1, PENSIONER = 2, UNDER18 = 3 }
+	export enum TaxDeclarationTFNExemptionType { NOTQUOTED = 'NOTQUOTED', PENDING = 'PENDING', PENSIONER = 'PENSIONER', UNDER18 = 'UNDER18' }
 
 	export interface ValidationError {
 
@@ -1172,11 +1172,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EmploymentBasis { FULLTIME = 0, PARTTIME = 1, CASUAL = 2, LABOURHIRE = 3, SUPERINCOMESTREAM = 4 }
+	export enum EmploymentBasis { FULLTIME = 'FULLTIME', PARTTIME = 'PARTTIME', CASUAL = 'CASUAL', LABOURHIRE = 'LABOURHIRE', SUPERINCOMESTREAM = 'SUPERINCOMESTREAM' }
 
-	export enum EmploymentTerminationPaymentType { O = 0, R = 1 }
+	export enum EmploymentTerminationPaymentType { O = 'O', R = 'R' }
 
-	export enum EntitlementFinalPayPayoutType { NOTPAIDOUT = 0, PAIDOUT = 1 }
+	export enum EntitlementFinalPayPayoutType { NOTPAIDOUT = 'NOTPAIDOUT', PAIDOUT = 'PAIDOUT' }
 
 	export interface LeaveAccrualLine {
 
@@ -1313,7 +1313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LeavePeriodLeavePeriodStatus { SCHEDULED = 0, PROCESSED = 1 }
+	export enum LeavePeriodLeavePeriodStatus { SCHEDULED = 'SCHEDULED', PROCESSED = 'PROCESSED' }
 
 	export interface LeaveApplications {
 		LeaveApplications1?: Array<LeaveApplication>;
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LeavePeriodStatus { SCHEDULED = 0, PROCESSED = 1 }
+	export enum LeavePeriodStatus { SCHEDULED = 'SCHEDULED', PROCESSED = 'PROCESSED' }
 
 	export interface LeaveType {
 
@@ -1453,9 +1453,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LeaveTypeContributionType { SGC = 0, SALARYSACRIFICE = 1, EMPLOYERADDITIONAL = 2, EMPLOYEE = 3 }
+	export enum LeaveTypeContributionType { SGC = 'SGC', SALARYSACRIFICE = 'SALARYSACRIFICE', EMPLOYERADDITIONAL = 'EMPLOYERADDITIONAL', EMPLOYEE = 'EMPLOYEE' }
 
-	export enum ManualTaxType { PAYGMANUAL = 0, ETPOMANUAL = 1, ETPRMANUAL = 2, SCHEDULE5MANUAL = 3, SCHEDULE5STSLMANUAL = 4 }
+	export enum ManualTaxType { PAYGMANUAL = 'PAYGMANUAL', ETPOMANUAL = 'ETPOMANUAL', ETPRMANUAL = 'ETPRMANUAL', SCHEDULE5MANUAL = 'SCHEDULE5MANUAL', SCHEDULE5STSLMANUAL = 'SCHEDULE5STSLMANUAL' }
 
 	export interface PayItem {
 		DeductionTypes?: Array<DeductionType>;
@@ -1649,7 +1649,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PayRunPayRunStatus { DRAFT = 0, POSTED = 1 }
+	export enum PayRunPayRunStatus { DRAFT = 'DRAFT', POSTED = 'POSTED' }
 
 	export interface PayslipSummary {
 
@@ -1745,7 +1745,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PayRunStatus { DRAFT = 0, POSTED = 1 }
+	export enum PayRunStatus { DRAFT = 'DRAFT', POSTED = 'POSTED' }
 
 	export interface PayRuns {
 		PayRuns1?: Array<PayRun>;
@@ -1758,7 +1758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PaymentFrequencyType { WEEKLY = 0, MONTHLY = 1, FORTNIGHTLY = 2, QUARTERLY = 3, TWICEMONTHLY = 4, FOURWEEKLY = 5, YEARLY = 6 }
+	export enum PaymentFrequencyType { WEEKLY = 'WEEKLY', MONTHLY = 'MONTHLY', FORTNIGHTLY = 'FORTNIGHTLY', QUARTERLY = 'QUARTERLY', TWICEMONTHLY = 'TWICEMONTHLY', FOURWEEKLY = 'FOURWEEKLY', YEARLY = 'YEARLY' }
 
 	export interface PayrollCalendar {
 		CalendarType?: CalendarType | null;
@@ -2070,7 +2070,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RateType { FIXEDAMOUNT = 0, MULTIPLE = 1, RATEPERUNIT = 2 }
+	export enum RateType { FIXEDAMOUNT = 'FIXEDAMOUNT', MULTIPLE = 'MULTIPLE', RATEPERUNIT = 'RATEPERUNIT' }
 
 
 	/** The reimbursement type lines */
@@ -2087,7 +2087,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResidencyStatus { AUSTRALIANRESIDENT = 0, FOREIGNRESIDENT = 1, WORKINGHOLIDAYMAKER = 2 }
+	export enum ResidencyStatus { AUSTRALIANRESIDENT = 'AUSTRALIANRESIDENT', FOREIGNRESIDENT = 'FOREIGNRESIDENT', WORKINGHOLIDAYMAKER = 'WORKINGHOLIDAYMAKER' }
 
 	export interface Settings {
 
@@ -2189,7 +2189,7 @@ export namespace MyNS {
 
 
 	/** State abbreviation for employee home address */
-	export enum State { ACT = 0, NSW = 1, NT = 2, QLD = 3, SA = 4, TAS = 5, VIC = 6, WA = 7 }
+	export enum State { ACT = 'ACT', NSW = 'NSW', NT = 'NT', QLD = 'QLD', SA = 'SA', TAS = 'TAS', VIC = 'VIC', WA = 'WA' }
 
 	export interface SuperFund {
 
@@ -2288,7 +2288,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SuperFundType { REGULATED = 0, SMSF = 1 }
+	export enum SuperFundType { REGULATED = 'REGULATED', SMSF = 'SMSF' }
 
 	export interface SuperFundProduct {
 
@@ -2350,11 +2350,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SuperannuationCalculationType { FIXEDAMOUNT = 0, PERCENTAGEOFEARNINGS = 1, STATUTORY = 2 }
+	export enum SuperannuationCalculationType { FIXEDAMOUNT = 'FIXEDAMOUNT', PERCENTAGEOFEARNINGS = 'PERCENTAGEOFEARNINGS', STATUTORY = 'STATUTORY' }
 
-	export enum SuperannuationContributionType { SGC = 0, SALARYSACRIFICE = 1, EMPLOYERADDITIONAL = 2, EMPLOYEE = 3 }
+	export enum SuperannuationContributionType { SGC = 'SGC', SALARYSACRIFICE = 'SALARYSACRIFICE', EMPLOYERADDITIONAL = 'EMPLOYERADDITIONAL', EMPLOYEE = 'EMPLOYEE' }
 
-	export enum TFNExemptionType { NOTQUOTED = 0, PENDING = 1, PENSIONER = 2, UNDER18 = 3 }
+	export enum TFNExemptionType { NOTQUOTED = 'NOTQUOTED', PENDING = 'PENDING', PENSIONER = 'PENSIONER', UNDER18 = 'UNDER18' }
 
 	export interface Timesheet {
 
@@ -2433,7 +2433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimesheetStatus { DRAFT = 0, PROCESSED = 1, APPROVED = 2, REJECTED = 3, REQUESTED = 4 }
+	export enum TimesheetStatus { DRAFT = 'DRAFT', PROCESSED = 'PROCESSED', APPROVED = 'APPROVED', REJECTED = 'REJECTED', REQUESTED = 'REQUESTED' }
 
 	export interface TimesheetLine {
 

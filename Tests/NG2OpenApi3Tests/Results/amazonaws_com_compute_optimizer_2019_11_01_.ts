@@ -34,7 +34,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { Ec2Instance = 0, AutoScalingGroup = 1, EbsVolume = 2, LambdaFunction = 3, NotApplicable = 4, EcsService = 5 }
+	export enum ResourceType { Ec2Instance = 'Ec2Instance', AutoScalingGroup = 'AutoScalingGroup', EbsVolume = 'EbsVolume', LambdaFunction = 'LambdaFunction', NotApplicable = 'NotApplicable', EcsService = 'EcsService' }
 
 
 	/** <p>Describes the scope of a recommendation preference.</p> <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note> <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p> </note> */
@@ -56,9 +56,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScopeName { Organization = 0, AccountId = 1, ResourceArn = 2 }
+	export enum ScopeName { Organization = 'Organization', AccountId = 'AccountId', ResourceArn = 'ResourceArn' }
 
-	export enum RecommendationPreferenceName { EnhancedInfrastructureMetrics = 0, InferredWorkloadTypes = 1, ExternalMetricsPreference = 2 }
+	export enum RecommendationPreferenceName { EnhancedInfrastructureMetrics = 'EnhancedInfrastructureMetrics', InferredWorkloadTypes = 'InferredWorkloadTypes', ExternalMetricsPreference = 'ExternalMetricsPreference' }
 
 	export interface OptInRequiredException {
 	}
@@ -225,7 +225,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobStatus { Queued = 0, InProgress = 1, Complete = 2, Failed = 3 }
+	export enum JobStatus { Queued = 'Queued', InProgress = 'InProgress', Complete = 'Complete', Failed = 'Failed' }
 
 	export interface DescribeRecommendationExportJobsRequest {
 		jobIds?: Array<string>;
@@ -263,7 +263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobFilterName { ResourceType = 0, JobStatus = 1 }
+	export enum JobFilterName { ResourceType = 'ResourceType', JobStatus = 'JobStatus' }
 
 	export interface ExportAutoScalingGroupRecommendationsResponse {
 		jobId?: string;
@@ -320,9 +320,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterName { Finding = 0, FindingReasonCodes = 1, RecommendationSourceType = 2, InferredWorkloadTypes = 3 }
+	export enum FilterName { Finding = 'Finding', FindingReasonCodes = 'FindingReasonCodes', RecommendationSourceType = 'RecommendationSourceType', InferredWorkloadTypes = 'InferredWorkloadTypes' }
 
-	export enum ExportableAutoScalingGroupField { AccountId = 0, AutoScalingGroupArn = 1, AutoScalingGroupName = 2, Finding = 3, UtilizationMetricsCpuMaximum = 4, UtilizationMetricsMemoryMaximum = 5, UtilizationMetricsEbsReadOpsPerSecondMaximum = 6, UtilizationMetricsEbsWriteOpsPerSecondMaximum = 7, UtilizationMetricsEbsReadBytesPerSecondMaximum = 8, UtilizationMetricsEbsWriteBytesPerSecondMaximum = 9, UtilizationMetricsDiskReadOpsPerSecondMaximum = 10, UtilizationMetricsDiskWriteOpsPerSecondMaximum = 11, UtilizationMetricsDiskReadBytesPerSecondMaximum = 12, UtilizationMetricsDiskWriteBytesPerSecondMaximum = 13, UtilizationMetricsNetworkInBytesPerSecondMaximum = 14, UtilizationMetricsNetworkOutBytesPerSecondMaximum = 15, UtilizationMetricsNetworkPacketsInPerSecondMaximum = 16, UtilizationMetricsNetworkPacketsOutPerSecondMaximum = 17, LookbackPeriodInDays = 18, CurrentConfigurationInstanceType = 19, CurrentConfigurationDesiredCapacity = 20, CurrentConfigurationMinSize = 21, CurrentConfigurationMaxSize = 22, CurrentOnDemandPrice = 23, CurrentStandardOneYearNoUpfrontReservedPrice = 24, CurrentStandardThreeYearNoUpfrontReservedPrice = 25, CurrentVCpus = 26, CurrentMemory = 27, CurrentStorage = 28, CurrentNetwork = 29, RecommendationOptionsConfigurationInstanceType = 30, RecommendationOptionsConfigurationDesiredCapacity = 31, RecommendationOptionsConfigurationMinSize = 32, RecommendationOptionsConfigurationMaxSize = 33, RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 34, RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 35, RecommendationOptionsPerformanceRisk = 36, RecommendationOptionsOnDemandPrice = 37, RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = 38, RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = 39, RecommendationOptionsVcpus = 40, RecommendationOptionsMemory = 41, RecommendationOptionsStorage = 42, RecommendationOptionsNetwork = 43, LastRefreshTimestamp = 44, CurrentPerformanceRisk = 45, RecommendationOptionsSavingsOpportunityPercentage = 46, RecommendationOptionsEstimatedMonthlySavingsCurrency = 47, RecommendationOptionsEstimatedMonthlySavingsValue = 48, EffectiveRecommendationPreferencesCpuVendorArchitectures = 49, EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = 50, EffectiveRecommendationPreferencesInferredWorkloadTypes = 51, InferredWorkloadTypes = 52, RecommendationOptionsMigrationEffort = 53 }
+	export enum ExportableAutoScalingGroupField { AccountId = 'AccountId', AutoScalingGroupArn = 'AutoScalingGroupArn', AutoScalingGroupName = 'AutoScalingGroupName', Finding = 'Finding', UtilizationMetricsCpuMaximum = 'UtilizationMetricsCpuMaximum', UtilizationMetricsMemoryMaximum = 'UtilizationMetricsMemoryMaximum', UtilizationMetricsEbsReadOpsPerSecondMaximum = 'UtilizationMetricsEbsReadOpsPerSecondMaximum', UtilizationMetricsEbsWriteOpsPerSecondMaximum = 'UtilizationMetricsEbsWriteOpsPerSecondMaximum', UtilizationMetricsEbsReadBytesPerSecondMaximum = 'UtilizationMetricsEbsReadBytesPerSecondMaximum', UtilizationMetricsEbsWriteBytesPerSecondMaximum = 'UtilizationMetricsEbsWriteBytesPerSecondMaximum', UtilizationMetricsDiskReadOpsPerSecondMaximum = 'UtilizationMetricsDiskReadOpsPerSecondMaximum', UtilizationMetricsDiskWriteOpsPerSecondMaximum = 'UtilizationMetricsDiskWriteOpsPerSecondMaximum', UtilizationMetricsDiskReadBytesPerSecondMaximum = 'UtilizationMetricsDiskReadBytesPerSecondMaximum', UtilizationMetricsDiskWriteBytesPerSecondMaximum = 'UtilizationMetricsDiskWriteBytesPerSecondMaximum', UtilizationMetricsNetworkInBytesPerSecondMaximum = 'UtilizationMetricsNetworkInBytesPerSecondMaximum', UtilizationMetricsNetworkOutBytesPerSecondMaximum = 'UtilizationMetricsNetworkOutBytesPerSecondMaximum', UtilizationMetricsNetworkPacketsInPerSecondMaximum = 'UtilizationMetricsNetworkPacketsInPerSecondMaximum', UtilizationMetricsNetworkPacketsOutPerSecondMaximum = 'UtilizationMetricsNetworkPacketsOutPerSecondMaximum', LookbackPeriodInDays = 'LookbackPeriodInDays', CurrentConfigurationInstanceType = 'CurrentConfigurationInstanceType', CurrentConfigurationDesiredCapacity = 'CurrentConfigurationDesiredCapacity', CurrentConfigurationMinSize = 'CurrentConfigurationMinSize', CurrentConfigurationMaxSize = 'CurrentConfigurationMaxSize', CurrentOnDemandPrice = 'CurrentOnDemandPrice', CurrentStandardOneYearNoUpfrontReservedPrice = 'CurrentStandardOneYearNoUpfrontReservedPrice', CurrentStandardThreeYearNoUpfrontReservedPrice = 'CurrentStandardThreeYearNoUpfrontReservedPrice', CurrentVCpus = 'CurrentVCpus', CurrentMemory = 'CurrentMemory', CurrentStorage = 'CurrentStorage', CurrentNetwork = 'CurrentNetwork', RecommendationOptionsConfigurationInstanceType = 'RecommendationOptionsConfigurationInstanceType', RecommendationOptionsConfigurationDesiredCapacity = 'RecommendationOptionsConfigurationDesiredCapacity', RecommendationOptionsConfigurationMinSize = 'RecommendationOptionsConfigurationMinSize', RecommendationOptionsConfigurationMaxSize = 'RecommendationOptionsConfigurationMaxSize', RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 'RecommendationOptionsProjectedUtilizationMetricsCpuMaximum', RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 'RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum', RecommendationOptionsPerformanceRisk = 'RecommendationOptionsPerformanceRisk', RecommendationOptionsOnDemandPrice = 'RecommendationOptionsOnDemandPrice', RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = 'RecommendationOptionsStandardOneYearNoUpfrontReservedPrice', RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = 'RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice', RecommendationOptionsVcpus = 'RecommendationOptionsVcpus', RecommendationOptionsMemory = 'RecommendationOptionsMemory', RecommendationOptionsStorage = 'RecommendationOptionsStorage', RecommendationOptionsNetwork = 'RecommendationOptionsNetwork', LastRefreshTimestamp = 'LastRefreshTimestamp', CurrentPerformanceRisk = 'CurrentPerformanceRisk', RecommendationOptionsSavingsOpportunityPercentage = 'RecommendationOptionsSavingsOpportunityPercentage', RecommendationOptionsEstimatedMonthlySavingsCurrency = 'RecommendationOptionsEstimatedMonthlySavingsCurrency', RecommendationOptionsEstimatedMonthlySavingsValue = 'RecommendationOptionsEstimatedMonthlySavingsValue', EffectiveRecommendationPreferencesCpuVendorArchitectures = 'EffectiveRecommendationPreferencesCpuVendorArchitectures', EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = 'EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics', EffectiveRecommendationPreferencesInferredWorkloadTypes = 'EffectiveRecommendationPreferencesInferredWorkloadTypes', InferredWorkloadTypes = 'InferredWorkloadTypes', RecommendationOptionsMigrationEffort = 'RecommendationOptionsMigrationEffort' }
 
 
 	/** <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p> <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> */
@@ -344,7 +344,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FileFormat { Csv = 0 }
+	export enum FileFormat { Csv = 'Csv' }
 
 
 	/** Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, and <a>GetEC2RecommendationProjectedMetrics</a> request. */
@@ -361,7 +361,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CpuVendorArchitecture { AWS_ARM64 = 0, CURRENT = 1 }
+	export enum CpuVendorArchitecture { AWS_ARM64 = 'AWS_ARM64', CURRENT = 'CURRENT' }
 
 	export interface LimitExceededException {
 	}
@@ -432,9 +432,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EBSFilterName { Finding = 0 }
+	export enum EBSFilterName { Finding = 'Finding' }
 
-	export enum ExportableVolumeField { AccountId = 0, VolumeArn = 1, Finding = 2, UtilizationMetricsVolumeReadOpsPerSecondMaximum = 3, UtilizationMetricsVolumeWriteOpsPerSecondMaximum = 4, UtilizationMetricsVolumeReadBytesPerSecondMaximum = 5, UtilizationMetricsVolumeWriteBytesPerSecondMaximum = 6, LookbackPeriodInDays = 7, CurrentConfigurationVolumeType = 8, CurrentConfigurationVolumeBaselineIOPS = 9, CurrentConfigurationVolumeBaselineThroughput = 10, CurrentConfigurationVolumeBurstIOPS = 11, CurrentConfigurationVolumeBurstThroughput = 12, CurrentConfigurationVolumeSize = 13, CurrentMonthlyPrice = 14, RecommendationOptionsConfigurationVolumeType = 15, RecommendationOptionsConfigurationVolumeBaselineIOPS = 16, RecommendationOptionsConfigurationVolumeBaselineThroughput = 17, RecommendationOptionsConfigurationVolumeBurstIOPS = 18, RecommendationOptionsConfigurationVolumeBurstThroughput = 19, RecommendationOptionsConfigurationVolumeSize = 20, RecommendationOptionsMonthlyPrice = 21, RecommendationOptionsPerformanceRisk = 22, LastRefreshTimestamp = 23, CurrentPerformanceRisk = 24, RecommendationOptionsSavingsOpportunityPercentage = 25, RecommendationOptionsEstimatedMonthlySavingsCurrency = 26, RecommendationOptionsEstimatedMonthlySavingsValue = 27, RootVolume = 28, Tags = 29 }
+	export enum ExportableVolumeField { AccountId = 'AccountId', VolumeArn = 'VolumeArn', Finding = 'Finding', UtilizationMetricsVolumeReadOpsPerSecondMaximum = 'UtilizationMetricsVolumeReadOpsPerSecondMaximum', UtilizationMetricsVolumeWriteOpsPerSecondMaximum = 'UtilizationMetricsVolumeWriteOpsPerSecondMaximum', UtilizationMetricsVolumeReadBytesPerSecondMaximum = 'UtilizationMetricsVolumeReadBytesPerSecondMaximum', UtilizationMetricsVolumeWriteBytesPerSecondMaximum = 'UtilizationMetricsVolumeWriteBytesPerSecondMaximum', LookbackPeriodInDays = 'LookbackPeriodInDays', CurrentConfigurationVolumeType = 'CurrentConfigurationVolumeType', CurrentConfigurationVolumeBaselineIOPS = 'CurrentConfigurationVolumeBaselineIOPS', CurrentConfigurationVolumeBaselineThroughput = 'CurrentConfigurationVolumeBaselineThroughput', CurrentConfigurationVolumeBurstIOPS = 'CurrentConfigurationVolumeBurstIOPS', CurrentConfigurationVolumeBurstThroughput = 'CurrentConfigurationVolumeBurstThroughput', CurrentConfigurationVolumeSize = 'CurrentConfigurationVolumeSize', CurrentMonthlyPrice = 'CurrentMonthlyPrice', RecommendationOptionsConfigurationVolumeType = 'RecommendationOptionsConfigurationVolumeType', RecommendationOptionsConfigurationVolumeBaselineIOPS = 'RecommendationOptionsConfigurationVolumeBaselineIOPS', RecommendationOptionsConfigurationVolumeBaselineThroughput = 'RecommendationOptionsConfigurationVolumeBaselineThroughput', RecommendationOptionsConfigurationVolumeBurstIOPS = 'RecommendationOptionsConfigurationVolumeBurstIOPS', RecommendationOptionsConfigurationVolumeBurstThroughput = 'RecommendationOptionsConfigurationVolumeBurstThroughput', RecommendationOptionsConfigurationVolumeSize = 'RecommendationOptionsConfigurationVolumeSize', RecommendationOptionsMonthlyPrice = 'RecommendationOptionsMonthlyPrice', RecommendationOptionsPerformanceRisk = 'RecommendationOptionsPerformanceRisk', LastRefreshTimestamp = 'LastRefreshTimestamp', CurrentPerformanceRisk = 'CurrentPerformanceRisk', RecommendationOptionsSavingsOpportunityPercentage = 'RecommendationOptionsSavingsOpportunityPercentage', RecommendationOptionsEstimatedMonthlySavingsCurrency = 'RecommendationOptionsEstimatedMonthlySavingsCurrency', RecommendationOptionsEstimatedMonthlySavingsValue = 'RecommendationOptionsEstimatedMonthlySavingsValue', RootVolume = 'RootVolume', Tags = 'Tags' }
 
 	export interface ExportEC2InstanceRecommendationsResponse {
 		jobId?: string;
@@ -473,7 +473,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportableInstanceField { AccountId = 0, InstanceArn = 1, InstanceName = 2, Finding = 3, FindingReasonCodes = 4, LookbackPeriodInDays = 5, CurrentInstanceType = 6, UtilizationMetricsCpuMaximum = 7, UtilizationMetricsMemoryMaximum = 8, UtilizationMetricsEbsReadOpsPerSecondMaximum = 9, UtilizationMetricsEbsWriteOpsPerSecondMaximum = 10, UtilizationMetricsEbsReadBytesPerSecondMaximum = 11, UtilizationMetricsEbsWriteBytesPerSecondMaximum = 12, UtilizationMetricsDiskReadOpsPerSecondMaximum = 13, UtilizationMetricsDiskWriteOpsPerSecondMaximum = 14, UtilizationMetricsDiskReadBytesPerSecondMaximum = 15, UtilizationMetricsDiskWriteBytesPerSecondMaximum = 16, UtilizationMetricsNetworkInBytesPerSecondMaximum = 17, UtilizationMetricsNetworkOutBytesPerSecondMaximum = 18, UtilizationMetricsNetworkPacketsInPerSecondMaximum = 19, UtilizationMetricsNetworkPacketsOutPerSecondMaximum = 20, CurrentOnDemandPrice = 21, CurrentStandardOneYearNoUpfrontReservedPrice = 22, CurrentStandardThreeYearNoUpfrontReservedPrice = 23, CurrentVCpus = 24, CurrentMemory = 25, CurrentStorage = 26, CurrentNetwork = 27, RecommendationOptionsInstanceType = 28, RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 29, RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 30, RecommendationOptionsPlatformDifferences = 31, RecommendationOptionsPerformanceRisk = 32, RecommendationOptionsVcpus = 33, RecommendationOptionsMemory = 34, RecommendationOptionsStorage = 35, RecommendationOptionsNetwork = 36, RecommendationOptionsOnDemandPrice = 37, RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = 38, RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = 39, RecommendationsSourcesRecommendationSourceArn = 40, RecommendationsSourcesRecommendationSourceType = 41, LastRefreshTimestamp = 42, CurrentPerformanceRisk = 43, RecommendationOptionsSavingsOpportunityPercentage = 44, RecommendationOptionsEstimatedMonthlySavingsCurrency = 45, RecommendationOptionsEstimatedMonthlySavingsValue = 46, EffectiveRecommendationPreferencesCpuVendorArchitectures = 47, EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = 48, EffectiveRecommendationPreferencesInferredWorkloadTypes = 49, InferredWorkloadTypes = 50, RecommendationOptionsMigrationEffort = 51, EffectiveRecommendationPreferencesExternalMetricsSource = 52, InstanceState = 53, Tags = 54, ExternalMetricStatusCode = 55, ExternalMetricStatusReason = 56 }
+	export enum ExportableInstanceField { AccountId = 'AccountId', InstanceArn = 'InstanceArn', InstanceName = 'InstanceName', Finding = 'Finding', FindingReasonCodes = 'FindingReasonCodes', LookbackPeriodInDays = 'LookbackPeriodInDays', CurrentInstanceType = 'CurrentInstanceType', UtilizationMetricsCpuMaximum = 'UtilizationMetricsCpuMaximum', UtilizationMetricsMemoryMaximum = 'UtilizationMetricsMemoryMaximum', UtilizationMetricsEbsReadOpsPerSecondMaximum = 'UtilizationMetricsEbsReadOpsPerSecondMaximum', UtilizationMetricsEbsWriteOpsPerSecondMaximum = 'UtilizationMetricsEbsWriteOpsPerSecondMaximum', UtilizationMetricsEbsReadBytesPerSecondMaximum = 'UtilizationMetricsEbsReadBytesPerSecondMaximum', UtilizationMetricsEbsWriteBytesPerSecondMaximum = 'UtilizationMetricsEbsWriteBytesPerSecondMaximum', UtilizationMetricsDiskReadOpsPerSecondMaximum = 'UtilizationMetricsDiskReadOpsPerSecondMaximum', UtilizationMetricsDiskWriteOpsPerSecondMaximum = 'UtilizationMetricsDiskWriteOpsPerSecondMaximum', UtilizationMetricsDiskReadBytesPerSecondMaximum = 'UtilizationMetricsDiskReadBytesPerSecondMaximum', UtilizationMetricsDiskWriteBytesPerSecondMaximum = 'UtilizationMetricsDiskWriteBytesPerSecondMaximum', UtilizationMetricsNetworkInBytesPerSecondMaximum = 'UtilizationMetricsNetworkInBytesPerSecondMaximum', UtilizationMetricsNetworkOutBytesPerSecondMaximum = 'UtilizationMetricsNetworkOutBytesPerSecondMaximum', UtilizationMetricsNetworkPacketsInPerSecondMaximum = 'UtilizationMetricsNetworkPacketsInPerSecondMaximum', UtilizationMetricsNetworkPacketsOutPerSecondMaximum = 'UtilizationMetricsNetworkPacketsOutPerSecondMaximum', CurrentOnDemandPrice = 'CurrentOnDemandPrice', CurrentStandardOneYearNoUpfrontReservedPrice = 'CurrentStandardOneYearNoUpfrontReservedPrice', CurrentStandardThreeYearNoUpfrontReservedPrice = 'CurrentStandardThreeYearNoUpfrontReservedPrice', CurrentVCpus = 'CurrentVCpus', CurrentMemory = 'CurrentMemory', CurrentStorage = 'CurrentStorage', CurrentNetwork = 'CurrentNetwork', RecommendationOptionsInstanceType = 'RecommendationOptionsInstanceType', RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 'RecommendationOptionsProjectedUtilizationMetricsCpuMaximum', RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 'RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum', RecommendationOptionsPlatformDifferences = 'RecommendationOptionsPlatformDifferences', RecommendationOptionsPerformanceRisk = 'RecommendationOptionsPerformanceRisk', RecommendationOptionsVcpus = 'RecommendationOptionsVcpus', RecommendationOptionsMemory = 'RecommendationOptionsMemory', RecommendationOptionsStorage = 'RecommendationOptionsStorage', RecommendationOptionsNetwork = 'RecommendationOptionsNetwork', RecommendationOptionsOnDemandPrice = 'RecommendationOptionsOnDemandPrice', RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = 'RecommendationOptionsStandardOneYearNoUpfrontReservedPrice', RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = 'RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice', RecommendationsSourcesRecommendationSourceArn = 'RecommendationsSourcesRecommendationSourceArn', RecommendationsSourcesRecommendationSourceType = 'RecommendationsSourcesRecommendationSourceType', LastRefreshTimestamp = 'LastRefreshTimestamp', CurrentPerformanceRisk = 'CurrentPerformanceRisk', RecommendationOptionsSavingsOpportunityPercentage = 'RecommendationOptionsSavingsOpportunityPercentage', RecommendationOptionsEstimatedMonthlySavingsCurrency = 'RecommendationOptionsEstimatedMonthlySavingsCurrency', RecommendationOptionsEstimatedMonthlySavingsValue = 'RecommendationOptionsEstimatedMonthlySavingsValue', EffectiveRecommendationPreferencesCpuVendorArchitectures = 'EffectiveRecommendationPreferencesCpuVendorArchitectures', EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = 'EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics', EffectiveRecommendationPreferencesInferredWorkloadTypes = 'EffectiveRecommendationPreferencesInferredWorkloadTypes', InferredWorkloadTypes = 'InferredWorkloadTypes', RecommendationOptionsMigrationEffort = 'RecommendationOptionsMigrationEffort', EffectiveRecommendationPreferencesExternalMetricsSource = 'EffectiveRecommendationPreferencesExternalMetricsSource', InstanceState = 'InstanceState', Tags = 'Tags', ExternalMetricStatusCode = 'ExternalMetricStatusCode', ExternalMetricStatusReason = 'ExternalMetricStatusReason' }
 
 	export interface ExportECSServiceRecommendationsResponse {
 		jobId?: string;
@@ -534,9 +534,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ECSServiceRecommendationFilterName { Finding = 0, FindingReasonCode = 1 }
+	export enum ECSServiceRecommendationFilterName { Finding = 'Finding', FindingReasonCode = 'FindingReasonCode' }
 
-	export enum ExportableECSServiceField { AccountId = 0, ServiceArn = 1, LookbackPeriodInDays = 2, LastRefreshTimestamp = 3, LaunchType = 4, CurrentPerformanceRisk = 5, CurrentServiceConfigurationMemory = 6, CurrentServiceConfigurationCpu = 7, CurrentServiceConfigurationTaskDefinitionArn = 8, CurrentServiceConfigurationAutoScalingConfiguration = 9, CurrentServiceContainerConfigurations = 10, UtilizationMetricsCpuMaximum = 11, UtilizationMetricsMemoryMaximum = 12, Finding = 13, FindingReasonCodes = 14, RecommendationOptionsMemory = 15, RecommendationOptionsCpu = 16, RecommendationOptionsSavingsOpportunityPercentage = 17, RecommendationOptionsEstimatedMonthlySavingsCurrency = 18, RecommendationOptionsEstimatedMonthlySavingsValue = 19, RecommendationOptionsContainerRecommendations = 20, RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 21, RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 22, Tags = 23 }
+	export enum ExportableECSServiceField { AccountId = 'AccountId', ServiceArn = 'ServiceArn', LookbackPeriodInDays = 'LookbackPeriodInDays', LastRefreshTimestamp = 'LastRefreshTimestamp', LaunchType = 'LaunchType', CurrentPerformanceRisk = 'CurrentPerformanceRisk', CurrentServiceConfigurationMemory = 'CurrentServiceConfigurationMemory', CurrentServiceConfigurationCpu = 'CurrentServiceConfigurationCpu', CurrentServiceConfigurationTaskDefinitionArn = 'CurrentServiceConfigurationTaskDefinitionArn', CurrentServiceConfigurationAutoScalingConfiguration = 'CurrentServiceConfigurationAutoScalingConfiguration', CurrentServiceContainerConfigurations = 'CurrentServiceContainerConfigurations', UtilizationMetricsCpuMaximum = 'UtilizationMetricsCpuMaximum', UtilizationMetricsMemoryMaximum = 'UtilizationMetricsMemoryMaximum', Finding = 'Finding', FindingReasonCodes = 'FindingReasonCodes', RecommendationOptionsMemory = 'RecommendationOptionsMemory', RecommendationOptionsCpu = 'RecommendationOptionsCpu', RecommendationOptionsSavingsOpportunityPercentage = 'RecommendationOptionsSavingsOpportunityPercentage', RecommendationOptionsEstimatedMonthlySavingsCurrency = 'RecommendationOptionsEstimatedMonthlySavingsCurrency', RecommendationOptionsEstimatedMonthlySavingsValue = 'RecommendationOptionsEstimatedMonthlySavingsValue', RecommendationOptionsContainerRecommendations = 'RecommendationOptionsContainerRecommendations', RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = 'RecommendationOptionsProjectedUtilizationMetricsCpuMaximum', RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = 'RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum', Tags = 'Tags' }
 
 	export interface ExportLambdaFunctionRecommendationsResponse {
 		jobId?: string;
@@ -597,7 +597,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportableLambdaFunctionField { AccountId = 0, FunctionArn = 1, FunctionVersion = 2, Finding = 3, FindingReasonCodes = 4, NumberOfInvocations = 5, UtilizationMetricsDurationMaximum = 6, UtilizationMetricsDurationAverage = 7, UtilizationMetricsMemoryMaximum = 8, UtilizationMetricsMemoryAverage = 9, LookbackPeriodInDays = 10, CurrentConfigurationMemorySize = 11, CurrentConfigurationTimeout = 12, CurrentCostTotal = 13, CurrentCostAverage = 14, RecommendationOptionsConfigurationMemorySize = 15, RecommendationOptionsCostLow = 16, RecommendationOptionsCostHigh = 17, RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound = 18, RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound = 19, RecommendationOptionsProjectedUtilizationMetricsDurationExpected = 20, LastRefreshTimestamp = 21, CurrentPerformanceRisk = 22, RecommendationOptionsSavingsOpportunityPercentage = 23, RecommendationOptionsEstimatedMonthlySavingsCurrency = 24, RecommendationOptionsEstimatedMonthlySavingsValue = 25, Tags = 26 }
+	export enum ExportableLambdaFunctionField { AccountId = 'AccountId', FunctionArn = 'FunctionArn', FunctionVersion = 'FunctionVersion', Finding = 'Finding', FindingReasonCodes = 'FindingReasonCodes', NumberOfInvocations = 'NumberOfInvocations', UtilizationMetricsDurationMaximum = 'UtilizationMetricsDurationMaximum', UtilizationMetricsDurationAverage = 'UtilizationMetricsDurationAverage', UtilizationMetricsMemoryMaximum = 'UtilizationMetricsMemoryMaximum', UtilizationMetricsMemoryAverage = 'UtilizationMetricsMemoryAverage', LookbackPeriodInDays = 'LookbackPeriodInDays', CurrentConfigurationMemorySize = 'CurrentConfigurationMemorySize', CurrentConfigurationTimeout = 'CurrentConfigurationTimeout', CurrentCostTotal = 'CurrentCostTotal', CurrentCostAverage = 'CurrentCostAverage', RecommendationOptionsConfigurationMemorySize = 'RecommendationOptionsConfigurationMemorySize', RecommendationOptionsCostLow = 'RecommendationOptionsCostLow', RecommendationOptionsCostHigh = 'RecommendationOptionsCostHigh', RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound = 'RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound', RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound = 'RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound', RecommendationOptionsProjectedUtilizationMetricsDurationExpected = 'RecommendationOptionsProjectedUtilizationMetricsDurationExpected', LastRefreshTimestamp = 'LastRefreshTimestamp', CurrentPerformanceRisk = 'CurrentPerformanceRisk', RecommendationOptionsSavingsOpportunityPercentage = 'RecommendationOptionsSavingsOpportunityPercentage', RecommendationOptionsEstimatedMonthlySavingsCurrency = 'RecommendationOptionsEstimatedMonthlySavingsCurrency', RecommendationOptionsEstimatedMonthlySavingsValue = 'RecommendationOptionsEstimatedMonthlySavingsValue', Tags = 'Tags' }
 
 	export interface GetAutoScalingGroupRecommendationsResponse {
 		nextToken?: string;
@@ -654,7 +654,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Finding { Underprovisioned = 0, Overprovisioned = 1, Optimized = 2, NotOptimized = 3 }
+	export enum Finding { Underprovisioned = 'Underprovisioned', Overprovisioned = 'Overprovisioned', Optimized = 'Optimized', NotOptimized = 'NotOptimized' }
 
 
 	/** <p>Describes a utilization metric of a resource, such as an Amazon EC2 instance.</p> <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p> */
@@ -679,9 +679,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricName { Cpu = 0, Memory = 1, EBS_READ_OPS_PER_SECOND = 2, EBS_WRITE_OPS_PER_SECOND = 3, EBS_READ_BYTES_PER_SECOND = 4, EBS_WRITE_BYTES_PER_SECOND = 5, DISK_READ_OPS_PER_SECOND = 6, DISK_WRITE_OPS_PER_SECOND = 7, DISK_READ_BYTES_PER_SECOND = 8, DISK_WRITE_BYTES_PER_SECOND = 9, NETWORK_IN_BYTES_PER_SECOND = 10, NETWORK_OUT_BYTES_PER_SECOND = 11, NETWORK_PACKETS_IN_PER_SECOND = 12, NETWORK_PACKETS_OUT_PER_SECOND = 13 }
+	export enum MetricName { Cpu = 'Cpu', Memory = 'Memory', EBS_READ_OPS_PER_SECOND = 'EBS_READ_OPS_PER_SECOND', EBS_WRITE_OPS_PER_SECOND = 'EBS_WRITE_OPS_PER_SECOND', EBS_READ_BYTES_PER_SECOND = 'EBS_READ_BYTES_PER_SECOND', EBS_WRITE_BYTES_PER_SECOND = 'EBS_WRITE_BYTES_PER_SECOND', DISK_READ_OPS_PER_SECOND = 'DISK_READ_OPS_PER_SECOND', DISK_WRITE_OPS_PER_SECOND = 'DISK_WRITE_OPS_PER_SECOND', DISK_READ_BYTES_PER_SECOND = 'DISK_READ_BYTES_PER_SECOND', DISK_WRITE_BYTES_PER_SECOND = 'DISK_WRITE_BYTES_PER_SECOND', NETWORK_IN_BYTES_PER_SECOND = 'NETWORK_IN_BYTES_PER_SECOND', NETWORK_OUT_BYTES_PER_SECOND = 'NETWORK_OUT_BYTES_PER_SECOND', NETWORK_PACKETS_IN_PER_SECOND = 'NETWORK_PACKETS_IN_PER_SECOND', NETWORK_PACKETS_OUT_PER_SECOND = 'NETWORK_PACKETS_OUT_PER_SECOND' }
 
-	export enum MetricStatistic { Maximum = 0, Average = 1 }
+	export enum MetricStatistic { Maximum = 'Maximum', Average = 'Average' }
 
 
 	/** Describes the configuration of an Auto Scaling group. */
@@ -773,9 +773,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Currency { USD = 0, CNY = 1 }
+	export enum Currency { USD = 'USD', CNY = 'CNY' }
 
-	export enum MigrationEffort { VeryLow = 0, Low = 1, Medium = 2, High = 3 }
+	export enum MigrationEffort { VeryLow = 'VeryLow', Low = 'Low', Medium = 'Medium', High = 'High' }
 
 
 	/** Describes the effective recommendation preferences for a resource. */
@@ -799,7 +799,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnhancedInfrastructureMetrics { Active = 0, Inactive = 1 }
+	export enum EnhancedInfrastructureMetrics { Active = 'Active', Inactive = 'Inactive' }
 
 
 	/**  Describes the external metrics preferences for EC2 rightsizing recommendations.  */
@@ -818,9 +818,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalMetricsSource { Datadog = 0, Dynatrace = 1, NewRelic = 2, Instana = 3 }
+	export enum ExternalMetricsSource { Datadog = 'Datadog', Dynatrace = 'Dynatrace', NewRelic = 'NewRelic', Instana = 'Instana' }
 
-	export enum InferredWorkloadType { AmazonEmr = 0, ApacheCassandra = 1, ApacheHadoop = 2, Memcached = 3, Nginx = 4, PostgreSql = 5, Redis = 6, Kafka = 7, SQLServer = 8 }
+	export enum InferredWorkloadType { AmazonEmr = 'AmazonEmr', ApacheCassandra = 'ApacheCassandra', ApacheHadoop = 'ApacheHadoop', Memcached = 'Memcached', Nginx = 'Nginx', PostgreSql = 'PostgreSql', Redis = 'Redis', Kafka = 'Kafka', SQLServer = 'SQLServer' }
 
 
 	/** <p>Describes an error experienced when getting recommendations.</p> <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p> */
@@ -951,7 +951,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EBSFinding { Optimized = 0, NotOptimized = 1 }
+	export enum EBSFinding { Optimized = 'Optimized', NotOptimized = 'NotOptimized' }
 
 
 	/** <p>Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume.</p> <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p> */
@@ -976,7 +976,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EBSMetricName { VolumeReadOpsPerSecond = 0, VolumeWriteOpsPerSecond = 1, VolumeReadBytesPerSecond = 2, VolumeWriteBytesPerSecond = 3 }
+	export enum EBSMetricName { VolumeReadOpsPerSecond = 'VolumeReadOpsPerSecond', VolumeWriteOpsPerSecond = 'VolumeWriteOpsPerSecond', VolumeReadBytesPerSecond = 'VolumeReadBytesPerSecond', VolumeWriteBytesPerSecond = 'VolumeWriteBytesPerSecond' }
 
 
 	/** Describes a recommendation option for an Amazon Elastic Block Store (Amazon EBS) instance. */
@@ -1103,7 +1103,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceRecommendationFindingReasonCode { CPUOverprovisioned = 0, CPUUnderprovisioned = 1, MemoryOverprovisioned = 2, MemoryUnderprovisioned = 3, EBSThroughputOverprovisioned = 4, EBSThroughputUnderprovisioned = 5, EBSIOPSOverprovisioned = 6, EBSIOPSUnderprovisioned = 7, NetworkBandwidthOverprovisioned = 8, NetworkBandwidthUnderprovisioned = 9, NetworkPPSOverprovisioned = 10, NetworkPPSUnderprovisioned = 11, DiskIOPSOverprovisioned = 12, DiskIOPSUnderprovisioned = 13, DiskThroughputOverprovisioned = 14, DiskThroughputUnderprovisioned = 15 }
+	export enum InstanceRecommendationFindingReasonCode { CPUOverprovisioned = 'CPUOverprovisioned', CPUUnderprovisioned = 'CPUUnderprovisioned', MemoryOverprovisioned = 'MemoryOverprovisioned', MemoryUnderprovisioned = 'MemoryUnderprovisioned', EBSThroughputOverprovisioned = 'EBSThroughputOverprovisioned', EBSThroughputUnderprovisioned = 'EBSThroughputUnderprovisioned', EBSIOPSOverprovisioned = 'EBSIOPSOverprovisioned', EBSIOPSUnderprovisioned = 'EBSIOPSUnderprovisioned', NetworkBandwidthOverprovisioned = 'NetworkBandwidthOverprovisioned', NetworkBandwidthUnderprovisioned = 'NetworkBandwidthUnderprovisioned', NetworkPPSOverprovisioned = 'NetworkPPSOverprovisioned', NetworkPPSUnderprovisioned = 'NetworkPPSUnderprovisioned', DiskIOPSOverprovisioned = 'DiskIOPSOverprovisioned', DiskIOPSUnderprovisioned = 'DiskIOPSUnderprovisioned', DiskThroughputOverprovisioned = 'DiskThroughputOverprovisioned', DiskThroughputUnderprovisioned = 'DiskThroughputUnderprovisioned' }
 
 
 	/** Describes a recommendation option for an Amazon EC2 instance. */
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlatformDifference { Hypervisor = 0, NetworkInterface = 1, StorageInterface = 2, InstanceStoreAvailability = 3, VirtualizationType = 4, Architecture = 5 }
+	export enum PlatformDifference { Hypervisor = 'Hypervisor', NetworkInterface = 'NetworkInterface', StorageInterface = 'StorageInterface', InstanceStoreAvailability = 'InstanceStoreAvailability', VirtualizationType = 'VirtualizationType', Architecture = 'Architecture' }
 
 
 	/** Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group. */
@@ -1156,9 +1156,9 @@ export namespace MyNS {
 
 	}
 
-	export enum RecommendationSourceType { Ec2Instance = 0, AutoScalingGroup = 1, EbsVolume = 2, LambdaFunction = 3, EcsService = 4 }
+	export enum RecommendationSourceType { Ec2Instance = 'Ec2Instance', AutoScalingGroup = 'AutoScalingGroup', EbsVolume = 'EbsVolume', LambdaFunction = 'LambdaFunction', EcsService = 'EcsService' }
 
-	export enum InstanceState { pending = 0, running = 1, 'shutting-down' = 2, terminated = 3, stopping = 4, stopped = 5 }
+	export enum InstanceState { pending = 'pending', running = 'running', 'shutting-down' = 'shutting-down', terminated = 'terminated', stopping = 'stopping', stopped = 'stopped' }
 
 
 	/**  Describes Compute Optimizer's integration status with your chosen external metric provider. For example, Datadog.  */
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExternalMetricStatusCode { NO_EXTERNAL_METRIC_SET = 0, INTEGRATION_SUCCESS = 1, DATADOG_INTEGRATION_ERROR = 2, DYNATRACE_INTEGRATION_ERROR = 3, NEWRELIC_INTEGRATION_ERROR = 4, INSTANA_INTEGRATION_ERROR = 5, INSUFFICIENT_DATADOG_METRICS = 6, INSUFFICIENT_DYNATRACE_METRICS = 7, INSUFFICIENT_NEWRELIC_METRICS = 8, INSUFFICIENT_INSTANA_METRICS = 9 }
+	export enum ExternalMetricStatusCode { NO_EXTERNAL_METRIC_SET = 'NO_EXTERNAL_METRIC_SET', INTEGRATION_SUCCESS = 'INTEGRATION_SUCCESS', DATADOG_INTEGRATION_ERROR = 'DATADOG_INTEGRATION_ERROR', DYNATRACE_INTEGRATION_ERROR = 'DYNATRACE_INTEGRATION_ERROR', NEWRELIC_INTEGRATION_ERROR = 'NEWRELIC_INTEGRATION_ERROR', INSTANA_INTEGRATION_ERROR = 'INSTANA_INTEGRATION_ERROR', INSUFFICIENT_DATADOG_METRICS = 'INSUFFICIENT_DATADOG_METRICS', INSUFFICIENT_DYNATRACE_METRICS = 'INSUFFICIENT_DYNATRACE_METRICS', INSUFFICIENT_NEWRELIC_METRICS = 'INSUFFICIENT_NEWRELIC_METRICS', INSUFFICIENT_INSTANA_METRICS = 'INSUFFICIENT_INSTANA_METRICS' }
 
 	export interface GetEC2InstanceRecommendationsRequest {
 		instanceArns?: Array<string>;
@@ -1351,7 +1351,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ECSServiceMetricName { Cpu = 0, Memory = 1 }
+	export enum ECSServiceMetricName { Cpu = 'Cpu', Memory = 'Memory' }
 
 	export interface GetECSServiceRecommendationProjectedMetricsRequest {
 
@@ -1521,7 +1521,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoScalingConfiguration { TargetTrackingScalingCpu = 0, TargetTrackingScalingMemory = 1 }
+	export enum AutoScalingConfiguration { TargetTrackingScalingCpu = 'TargetTrackingScalingCpu', TargetTrackingScalingMemory = 'TargetTrackingScalingMemory' }
 
 
 	/** <p> Describes the utilization metric of an Amazon ECS service. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p> */
@@ -1546,11 +1546,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ECSServiceLaunchType { EC2 = 0, Fargate = 1 }
+	export enum ECSServiceLaunchType { EC2 = 'EC2', Fargate = 'Fargate' }
 
-	export enum ECSServiceRecommendationFinding { Optimized = 0, Underprovisioned = 1, Overprovisioned = 2 }
+	export enum ECSServiceRecommendationFinding { Optimized = 'Optimized', Underprovisioned = 'Underprovisioned', Overprovisioned = 'Overprovisioned' }
 
-	export enum ECSServiceRecommendationFindingReasonCode { MemoryOverprovisioned = 0, MemoryUnderprovisioned = 1, CPUOverprovisioned = 2, CPUUnderprovisioned = 3 }
+	export enum ECSServiceRecommendationFindingReasonCode { MemoryOverprovisioned = 'MemoryOverprovisioned', MemoryUnderprovisioned = 'MemoryUnderprovisioned', CPUOverprovisioned = 'CPUOverprovisioned', CPUUnderprovisioned = 'CPUUnderprovisioned' }
 
 
 	/**  Describes the recommendation options for an Amazon ECS service.  */
@@ -1699,7 +1699,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { Active = 0, Inactive = 1, Pending = 2, Failed = 3 }
+	export enum Status { Active = 'Active', Inactive = 'Inactive', Pending = 'Pending', Failed = 'Failed' }
 
 	export interface GetEnrollmentStatusRequest {
 	}
@@ -1786,7 +1786,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnrollmentFilterName { Status = 0 }
+	export enum EnrollmentFilterName { Status = 'Status' }
 
 	export interface GetLambdaFunctionRecommendationsResponse {
 		nextToken?: string;
@@ -1870,11 +1870,11 @@ export namespace MyNS {
 
 	}
 
-	export enum LambdaFunctionMetricName { Duration = 0, Memory = 1 }
+	export enum LambdaFunctionMetricName { Duration = 'Duration', Memory = 'Memory' }
 
-	export enum LambdaFunctionRecommendationFinding { Optimized = 0, NotOptimized = 1, Unavailable = 2 }
+	export enum LambdaFunctionRecommendationFinding { Optimized = 'Optimized', NotOptimized = 'NotOptimized', Unavailable = 'Unavailable' }
 
-	export enum LambdaFunctionRecommendationFindingReasonCode { MemoryOverprovisioned = 0, MemoryUnderprovisioned = 1, InsufficientData = 2, Inconclusive = 3 }
+	export enum LambdaFunctionRecommendationFindingReasonCode { MemoryOverprovisioned = 'MemoryOverprovisioned', MemoryUnderprovisioned = 'MemoryUnderprovisioned', InsufficientData = 'InsufficientData', Inconclusive = 'Inconclusive' }
 
 
 	/** Describes a recommendation option for an Lambda function. */
@@ -1921,9 +1921,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LambdaFunctionMemoryMetricName { Duration = 0 }
+	export enum LambdaFunctionMemoryMetricName { Duration = 'Duration' }
 
-	export enum LambdaFunctionMemoryMetricStatistic { LowerBound = 0, UpperBound = 1, Expected = 2 }
+	export enum LambdaFunctionMemoryMetricStatistic { LowerBound = 'LowerBound', UpperBound = 'UpperBound', Expected = 'Expected' }
 
 	export interface GetLambdaFunctionRecommendationsRequest {
 		functionArns?: Array<string>;
@@ -2086,7 +2086,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingReasonCode { MemoryOverprovisioned = 0, MemoryUnderprovisioned = 1 }
+	export enum FindingReasonCode { MemoryOverprovisioned = 'MemoryOverprovisioned', MemoryUnderprovisioned = 'MemoryUnderprovisioned' }
 
 
 	/** <p>Describes the performance risk ratings for a given resource type.</p> <p>Resources with a <code>high</code> or <code>medium</code> rating are at risk of not meeting the performance needs of their workloads, while resources with a <code>low</code> rating are performing well in their workloads.</p> */
@@ -2218,15 +2218,15 @@ export namespace MyNS {
 
 	}
 
-	export enum CurrentPerformanceRisk { VeryLow = 0, Low = 1, Medium = 2, High = 3 }
+	export enum CurrentPerformanceRisk { VeryLow = 'VeryLow', Low = 'Low', Medium = 'Medium', High = 'High' }
 
-	export enum ECSServiceMetricStatistic { Maximum = 0, Average = 1 }
+	export enum ECSServiceMetricStatistic { Maximum = 'Maximum', Average = 'Average' }
 
-	export enum InferredWorkloadTypesPreference { Active = 0, Inactive = 1 }
+	export enum InferredWorkloadTypesPreference { Active = 'Active', Inactive = 'Inactive' }
 
-	export enum LambdaFunctionMetricStatistic { Maximum = 0, Average = 1 }
+	export enum LambdaFunctionMetricStatistic { Maximum = 'Maximum', Average = 'Average' }
 
-	export enum LambdaFunctionRecommendationFilterName { Finding = 0, FindingReasonCode = 1 }
+	export enum LambdaFunctionRecommendationFilterName { Finding = 'Finding', FindingReasonCode = 'FindingReasonCode' }
 
 	@Injectable()
 	export class MyClient {
@@ -2433,47 +2433,47 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DeleteRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.DeleteRecommendationPreferences' = 0 }
+	export enum DeleteRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.DeleteRecommendationPreferences' = 'ComputeOptimizerService.DeleteRecommendationPreferences' }
 
-	export enum DescribeRecommendationExportJobsX_Amz_Target { 'ComputeOptimizerService.DescribeRecommendationExportJobs' = 0 }
+	export enum DescribeRecommendationExportJobsX_Amz_Target { 'ComputeOptimizerService.DescribeRecommendationExportJobs' = 'ComputeOptimizerService.DescribeRecommendationExportJobs' }
 
-	export enum ExportAutoScalingGroupRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportAutoScalingGroupRecommendations' = 0 }
+	export enum ExportAutoScalingGroupRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportAutoScalingGroupRecommendations' = 'ComputeOptimizerService.ExportAutoScalingGroupRecommendations' }
 
-	export enum ExportEBSVolumeRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportEBSVolumeRecommendations' = 0 }
+	export enum ExportEBSVolumeRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportEBSVolumeRecommendations' = 'ComputeOptimizerService.ExportEBSVolumeRecommendations' }
 
-	export enum ExportEC2InstanceRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportEC2InstanceRecommendations' = 0 }
+	export enum ExportEC2InstanceRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportEC2InstanceRecommendations' = 'ComputeOptimizerService.ExportEC2InstanceRecommendations' }
 
-	export enum ExportECSServiceRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportECSServiceRecommendations' = 0 }
+	export enum ExportECSServiceRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportECSServiceRecommendations' = 'ComputeOptimizerService.ExportECSServiceRecommendations' }
 
-	export enum ExportLambdaFunctionRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportLambdaFunctionRecommendations' = 0 }
+	export enum ExportLambdaFunctionRecommendationsX_Amz_Target { 'ComputeOptimizerService.ExportLambdaFunctionRecommendations' = 'ComputeOptimizerService.ExportLambdaFunctionRecommendations' }
 
-	export enum GetAutoScalingGroupRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetAutoScalingGroupRecommendations' = 0 }
+	export enum GetAutoScalingGroupRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetAutoScalingGroupRecommendations' = 'ComputeOptimizerService.GetAutoScalingGroupRecommendations' }
 
-	export enum GetEBSVolumeRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetEBSVolumeRecommendations' = 0 }
+	export enum GetEBSVolumeRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetEBSVolumeRecommendations' = 'ComputeOptimizerService.GetEBSVolumeRecommendations' }
 
-	export enum GetEC2InstanceRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetEC2InstanceRecommendations' = 0 }
+	export enum GetEC2InstanceRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetEC2InstanceRecommendations' = 'ComputeOptimizerService.GetEC2InstanceRecommendations' }
 
-	export enum GetEC2RecommendationProjectedMetricsX_Amz_Target { 'ComputeOptimizerService.GetEC2RecommendationProjectedMetrics' = 0 }
+	export enum GetEC2RecommendationProjectedMetricsX_Amz_Target { 'ComputeOptimizerService.GetEC2RecommendationProjectedMetrics' = 'ComputeOptimizerService.GetEC2RecommendationProjectedMetrics' }
 
-	export enum GetECSServiceRecommendationProjectedMetricsX_Amz_Target { 'ComputeOptimizerService.GetECSServiceRecommendationProjectedMetrics' = 0 }
+	export enum GetECSServiceRecommendationProjectedMetricsX_Amz_Target { 'ComputeOptimizerService.GetECSServiceRecommendationProjectedMetrics' = 'ComputeOptimizerService.GetECSServiceRecommendationProjectedMetrics' }
 
-	export enum GetECSServiceRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetECSServiceRecommendations' = 0 }
+	export enum GetECSServiceRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetECSServiceRecommendations' = 'ComputeOptimizerService.GetECSServiceRecommendations' }
 
-	export enum GetEffectiveRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.GetEffectiveRecommendationPreferences' = 0 }
+	export enum GetEffectiveRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.GetEffectiveRecommendationPreferences' = 'ComputeOptimizerService.GetEffectiveRecommendationPreferences' }
 
-	export enum GetEnrollmentStatusX_Amz_Target { 'ComputeOptimizerService.GetEnrollmentStatus' = 0 }
+	export enum GetEnrollmentStatusX_Amz_Target { 'ComputeOptimizerService.GetEnrollmentStatus' = 'ComputeOptimizerService.GetEnrollmentStatus' }
 
-	export enum GetEnrollmentStatusesForOrganizationX_Amz_Target { 'ComputeOptimizerService.GetEnrollmentStatusesForOrganization' = 0 }
+	export enum GetEnrollmentStatusesForOrganizationX_Amz_Target { 'ComputeOptimizerService.GetEnrollmentStatusesForOrganization' = 'ComputeOptimizerService.GetEnrollmentStatusesForOrganization' }
 
-	export enum GetLambdaFunctionRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetLambdaFunctionRecommendations' = 0 }
+	export enum GetLambdaFunctionRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetLambdaFunctionRecommendations' = 'ComputeOptimizerService.GetLambdaFunctionRecommendations' }
 
-	export enum GetRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.GetRecommendationPreferences' = 0 }
+	export enum GetRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.GetRecommendationPreferences' = 'ComputeOptimizerService.GetRecommendationPreferences' }
 
-	export enum GetRecommendationSummariesX_Amz_Target { 'ComputeOptimizerService.GetRecommendationSummaries' = 0 }
+	export enum GetRecommendationSummariesX_Amz_Target { 'ComputeOptimizerService.GetRecommendationSummaries' = 'ComputeOptimizerService.GetRecommendationSummaries' }
 
-	export enum PutRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.PutRecommendationPreferences' = 0 }
+	export enum PutRecommendationPreferencesX_Amz_Target { 'ComputeOptimizerService.PutRecommendationPreferences' = 'ComputeOptimizerService.PutRecommendationPreferences' }
 
-	export enum UpdateEnrollmentStatusX_Amz_Target { 'ComputeOptimizerService.UpdateEnrollmentStatus' = 0 }
+	export enum UpdateEnrollmentStatusX_Amz_Target { 'ComputeOptimizerService.UpdateEnrollmentStatus' = 'ComputeOptimizerService.UpdateEnrollmentStatus' }
 
 }
 

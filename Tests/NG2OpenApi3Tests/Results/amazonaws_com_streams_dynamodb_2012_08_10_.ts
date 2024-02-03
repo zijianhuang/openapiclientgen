@@ -55,9 +55,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3 }
+	export enum StreamStatus { ENABLING = 'ENABLING', ENABLED = 'ENABLED', DISABLING = 'DISABLING', DISABLED = 'DISABLED' }
 
-	export enum StreamViewType { NEW_IMAGE = 0, OLD_IMAGE = 1, NEW_AND_OLD_IMAGES = 2, KEYS_ONLY = 3 }
+	export enum StreamViewType { NEW_IMAGE = 'NEW_IMAGE', OLD_IMAGE = 'OLD_IMAGE', NEW_AND_OLD_IMAGES = 'NEW_AND_OLD_IMAGES', KEYS_ONLY = 'KEYS_ONLY' }
 
 
 	/** <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p> */
@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyType { HASH = 0, RANGE = 1 }
+	export enum KeyType { HASH = 'HASH', RANGE = 'RANGE' }
 
 
 	/** A uniquely identified group of stream records within a stream. */
@@ -226,7 +226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationType { INSERT = 0, MODIFY = 1, REMOVE = 2 }
+	export enum OperationType { INSERT = 'INSERT', MODIFY = 'MODIFY', REMOVE = 'REMOVE' }
 
 
 	/** A description of a single data modification that was performed on an item in a DynamoDB table. */
@@ -396,7 +396,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShardIteratorType { TRIM_HORIZON = 0, LATEST = 1, AT_SEQUENCE_NUMBER = 2, AFTER_SEQUENCE_NUMBER = 3 }
+	export enum ShardIteratorType { TRIM_HORIZON = 'TRIM_HORIZON', LATEST = 'LATEST', AT_SEQUENCE_NUMBER = 'AT_SEQUENCE_NUMBER', AFTER_SEQUENCE_NUMBER = 'AFTER_SEQUENCE_NUMBER' }
 
 
 	/** Represents the output of a <code>ListStreams</code> operation. */
@@ -548,13 +548,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeStreamX_Amz_Target { 'DynamoDBStreams_20120810.DescribeStream' = 0 }
+	export enum DescribeStreamX_Amz_Target { 'DynamoDBStreams_20120810.DescribeStream' = 'DynamoDBStreams_20120810.DescribeStream' }
 
-	export enum GetRecordsX_Amz_Target { 'DynamoDBStreams_20120810.GetRecords' = 0 }
+	export enum GetRecordsX_Amz_Target { 'DynamoDBStreams_20120810.GetRecords' = 'DynamoDBStreams_20120810.GetRecords' }
 
-	export enum GetShardIteratorX_Amz_Target { 'DynamoDBStreams_20120810.GetShardIterator' = 0 }
+	export enum GetShardIteratorX_Amz_Target { 'DynamoDBStreams_20120810.GetShardIterator' = 'DynamoDBStreams_20120810.GetShardIterator' }
 
-	export enum ListStreamsX_Amz_Target { 'DynamoDBStreams_20120810.ListStreams' = 0 }
+	export enum ListStreamsX_Amz_Target { 'DynamoDBStreams_20120810.ListStreams' = 'DynamoDBStreams_20120810.ListStreams' }
 
 }
 

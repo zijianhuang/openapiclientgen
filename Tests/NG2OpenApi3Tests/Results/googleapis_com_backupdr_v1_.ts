@@ -51,7 +51,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Associates `members`, or principals, with a `role`. */
@@ -395,11 +395,11 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkConfigPeeringMode { PEERING_MODE_UNSPECIFIED = 0, PRIVATE_SERVICE_ACCESS = 1 }
+	export enum NetworkConfigPeeringMode { PEERING_MODE_UNSPECIFIED = 'PEERING_MODE_UNSPECIFIED', PRIVATE_SERVICE_ACCESS = 'PRIVATE_SERVICE_ACCESS' }
 
-	export enum ManagementServerState { INSTANCE_STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, DELETING = 4, REPAIRING = 5, MAINTENANCE = 6, ERROR = 7 }
+	export enum ManagementServerState { INSTANCE_STATE_UNSPECIFIED = 'INSTANCE_STATE_UNSPECIFIED', CREATING = 'CREATING', READY = 'READY', UPDATING = 'UPDATING', DELETING = 'DELETING', REPAIRING = 'REPAIRING', MAINTENANCE = 'MAINTENANCE', ERROR = 'ERROR' }
 
-	export enum ManagementServerType { INSTANCE_TYPE_UNSPECIFIED = 0, BACKUP_RESTORE = 1 }
+	export enum ManagementServerType { INSTANCE_TYPE_UNSPECIFIED = 'INSTANCE_TYPE_UNSPECIFIED', BACKUP_RESTORE = 'BACKUP_RESTORE' }
 
 
 	/** ManagementURI depending on the Workforce Identity i.e. either 1p or 3p. */

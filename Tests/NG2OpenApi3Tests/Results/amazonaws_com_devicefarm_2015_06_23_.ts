@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DevicePoolType { CURATED = 0, PRIVATE = 1 }
+	export enum DevicePoolType { CURATED = 'CURATED', PRIVATE = 'PRIVATE' }
 
 
 	/** Represents a condition for a device pool. */
@@ -73,9 +73,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceAttribute { ARN = 0, PLATFORM = 1, FORM_FACTOR = 2, MANUFACTURER = 3, REMOTE_ACCESS_ENABLED = 4, REMOTE_DEBUG_ENABLED = 5, APPIUM_VERSION = 6, INSTANCE_ARN = 7, INSTANCE_LABELS = 8, FLEET_TYPE = 9, OS_VERSION = 10, MODEL = 11, AVAILABILITY = 12 }
+	export enum DeviceAttribute { ARN = 'ARN', PLATFORM = 'PLATFORM', FORM_FACTOR = 'FORM_FACTOR', MANUFACTURER = 'MANUFACTURER', REMOTE_ACCESS_ENABLED = 'REMOTE_ACCESS_ENABLED', REMOTE_DEBUG_ENABLED = 'REMOTE_DEBUG_ENABLED', APPIUM_VERSION = 'APPIUM_VERSION', INSTANCE_ARN = 'INSTANCE_ARN', INSTANCE_LABELS = 'INSTANCE_LABELS', FLEET_TYPE = 'FLEET_TYPE', OS_VERSION = 'OS_VERSION', MODEL = 'MODEL', AVAILABILITY = 'AVAILABILITY' }
 
-	export enum RuleOperator { EQUALS = 0, LESS_THAN = 1, LESS_THAN_OR_EQUALS = 2, GREATER_THAN = 3, GREATER_THAN_OR_EQUALS = 4, IN = 5, NOT_IN = 6, CONTAINS = 7 }
+	export enum RuleOperator { EQUALS = 'EQUALS', LESS_THAN = 'LESS_THAN', LESS_THAN_OR_EQUALS = 'LESS_THAN_OR_EQUALS', GREATER_THAN = 'GREATER_THAN', GREATER_THAN_OR_EQUALS = 'GREATER_THAN_OR_EQUALS', IN = 'IN', NOT_IN = 'NOT_IN', CONTAINS = 'CONTAINS' }
 
 
 	/** Represents a request to the create device pool operation. */
@@ -530,9 +530,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStatus { PENDING = 0, PENDING_CONCURRENCY = 1, PENDING_DEVICE = 2, PROCESSING = 3, SCHEDULING = 4, PREPARING = 5, RUNNING = 6, COMPLETED = 7, STOPPING = 8 }
+	export enum ExecutionStatus { PENDING = 'PENDING', PENDING_CONCURRENCY = 'PENDING_CONCURRENCY', PENDING_DEVICE = 'PENDING_DEVICE', PROCESSING = 'PROCESSING', SCHEDULING = 'SCHEDULING', PREPARING = 'PREPARING', RUNNING = 'RUNNING', COMPLETED = 'COMPLETED', STOPPING = 'STOPPING' }
 
-	export enum ExecutionResult { PENDING = 0, PASSED = 1, WARNED = 2, FAILED = 3, SKIPPED = 4, ERRORED = 5, STOPPED = 6 }
+	export enum ExecutionResult { PENDING = 'PENDING', PASSED = 'PASSED', WARNED = 'WARNED', FAILED = 'FAILED', SKIPPED = 'SKIPPED', ERRORED = 'ERRORED', STOPPED = 'STOPPED' }
 
 
 	/** Represents a device type that an app is tested against. */
@@ -605,9 +605,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceFormFactor { PHONE = 0, TABLET = 1 }
+	export enum DeviceFormFactor { PHONE = 'PHONE', TABLET = 'TABLET' }
 
-	export enum DevicePlatform { ANDROID = 0, IOS = 1 }
+	export enum DevicePlatform { ANDROID = 'ANDROID', IOS = 'IOS' }
 
 
 	/** Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage. */
@@ -680,11 +680,11 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceStatus { IN_USE = 0, PREPARING = 1, AVAILABLE = 2, NOT_AVAILABLE = 3 }
+	export enum InstanceStatus { IN_USE = 'IN_USE', PREPARING = 'PREPARING', AVAILABLE = 'AVAILABLE', NOT_AVAILABLE = 'NOT_AVAILABLE' }
 
-	export enum DeviceAvailability { TEMPORARY_NOT_AVAILABLE = 0, BUSY = 1, AVAILABLE = 2, HIGHLY_AVAILABLE = 3 }
+	export enum DeviceAvailability { TEMPORARY_NOT_AVAILABLE = 'TEMPORARY_NOT_AVAILABLE', BUSY = 'BUSY', AVAILABLE = 'AVAILABLE', HIGHLY_AVAILABLE = 'HIGHLY_AVAILABLE' }
 
-	export enum BillingMethod { METERED = 0, UNMETERED = 1 }
+	export enum BillingMethod { METERED = 'METERED', UNMETERED = 'UNMETERED' }
 
 
 	/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
@@ -709,7 +709,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InteractionMode { INTERACTIVE = 0, NO_VIDEO = 1, VIDEO_ONLY = 2 }
+	export enum InteractionMode { INTERACTIVE = 'INTERACTIVE', NO_VIDEO = 'NO_VIDEO', VIDEO_ONLY = 'VIDEO_ONLY' }
 
 
 	/** Creates and submits a request to start a remote access session. */
@@ -980,9 +980,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UploadType { ANDROID_APP = 0, IOS_APP = 1, WEB_APP = 2, EXTERNAL_DATA = 3, APPIUM_JAVA_JUNIT_TEST_PACKAGE = 4, APPIUM_JAVA_TESTNG_TEST_PACKAGE = 5, APPIUM_PYTHON_TEST_PACKAGE = 6, APPIUM_NODE_TEST_PACKAGE = 7, APPIUM_RUBY_TEST_PACKAGE = 8, APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = 9, APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = 10, APPIUM_WEB_PYTHON_TEST_PACKAGE = 11, APPIUM_WEB_NODE_TEST_PACKAGE = 12, APPIUM_WEB_RUBY_TEST_PACKAGE = 13, CALABASH_TEST_PACKAGE = 14, INSTRUMENTATION_TEST_PACKAGE = 15, UIAUTOMATION_TEST_PACKAGE = 16, UIAUTOMATOR_TEST_PACKAGE = 17, XCTEST_TEST_PACKAGE = 18, XCTEST_UI_TEST_PACKAGE = 19, APPIUM_JAVA_JUNIT_TEST_SPEC = 20, APPIUM_JAVA_TESTNG_TEST_SPEC = 21, APPIUM_PYTHON_TEST_SPEC = 22, APPIUM_NODE_TEST_SPEC = 23, APPIUM_RUBY_TEST_SPEC = 24, APPIUM_WEB_JAVA_JUNIT_TEST_SPEC = 25, APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = 26, APPIUM_WEB_PYTHON_TEST_SPEC = 27, APPIUM_WEB_NODE_TEST_SPEC = 28, APPIUM_WEB_RUBY_TEST_SPEC = 29, INSTRUMENTATION_TEST_SPEC = 30, XCTEST_UI_TEST_SPEC = 31 }
+	export enum UploadType { ANDROID_APP = 'ANDROID_APP', IOS_APP = 'IOS_APP', WEB_APP = 'WEB_APP', EXTERNAL_DATA = 'EXTERNAL_DATA', APPIUM_JAVA_JUNIT_TEST_PACKAGE = 'APPIUM_JAVA_JUNIT_TEST_PACKAGE', APPIUM_JAVA_TESTNG_TEST_PACKAGE = 'APPIUM_JAVA_TESTNG_TEST_PACKAGE', APPIUM_PYTHON_TEST_PACKAGE = 'APPIUM_PYTHON_TEST_PACKAGE', APPIUM_NODE_TEST_PACKAGE = 'APPIUM_NODE_TEST_PACKAGE', APPIUM_RUBY_TEST_PACKAGE = 'APPIUM_RUBY_TEST_PACKAGE', APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = 'APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE', APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = 'APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE', APPIUM_WEB_PYTHON_TEST_PACKAGE = 'APPIUM_WEB_PYTHON_TEST_PACKAGE', APPIUM_WEB_NODE_TEST_PACKAGE = 'APPIUM_WEB_NODE_TEST_PACKAGE', APPIUM_WEB_RUBY_TEST_PACKAGE = 'APPIUM_WEB_RUBY_TEST_PACKAGE', CALABASH_TEST_PACKAGE = 'CALABASH_TEST_PACKAGE', INSTRUMENTATION_TEST_PACKAGE = 'INSTRUMENTATION_TEST_PACKAGE', UIAUTOMATION_TEST_PACKAGE = 'UIAUTOMATION_TEST_PACKAGE', UIAUTOMATOR_TEST_PACKAGE = 'UIAUTOMATOR_TEST_PACKAGE', XCTEST_TEST_PACKAGE = 'XCTEST_TEST_PACKAGE', XCTEST_UI_TEST_PACKAGE = 'XCTEST_UI_TEST_PACKAGE', APPIUM_JAVA_JUNIT_TEST_SPEC = 'APPIUM_JAVA_JUNIT_TEST_SPEC', APPIUM_JAVA_TESTNG_TEST_SPEC = 'APPIUM_JAVA_TESTNG_TEST_SPEC', APPIUM_PYTHON_TEST_SPEC = 'APPIUM_PYTHON_TEST_SPEC', APPIUM_NODE_TEST_SPEC = 'APPIUM_NODE_TEST_SPEC', APPIUM_RUBY_TEST_SPEC = 'APPIUM_RUBY_TEST_SPEC', APPIUM_WEB_JAVA_JUNIT_TEST_SPEC = 'APPIUM_WEB_JAVA_JUNIT_TEST_SPEC', APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = 'APPIUM_WEB_JAVA_TESTNG_TEST_SPEC', APPIUM_WEB_PYTHON_TEST_SPEC = 'APPIUM_WEB_PYTHON_TEST_SPEC', APPIUM_WEB_NODE_TEST_SPEC = 'APPIUM_WEB_NODE_TEST_SPEC', APPIUM_WEB_RUBY_TEST_SPEC = 'APPIUM_WEB_RUBY_TEST_SPEC', INSTRUMENTATION_TEST_SPEC = 'INSTRUMENTATION_TEST_SPEC', XCTEST_UI_TEST_SPEC = 'XCTEST_UI_TEST_SPEC' }
 
-	export enum UploadStatus { INITIALIZED = 0, PROCESSING = 1, SUCCEEDED = 2, FAILED = 3 }
+	export enum UploadStatus { INITIALIZED = 'INITIALIZED', PROCESSING = 'PROCESSING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Represents a request to the create upload operation. */
@@ -1682,7 +1682,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestType { BUILTIN_FUZZ = 0, BUILTIN_EXPLORER = 1, WEB_PERFORMANCE_PROFILE = 2, APPIUM_JAVA_JUNIT = 3, APPIUM_JAVA_TESTNG = 4, APPIUM_PYTHON = 5, APPIUM_NODE = 6, APPIUM_RUBY = 7, APPIUM_WEB_JAVA_JUNIT = 8, APPIUM_WEB_JAVA_TESTNG = 9, APPIUM_WEB_PYTHON = 10, APPIUM_WEB_NODE = 11, APPIUM_WEB_RUBY = 12, CALABASH = 13, INSTRUMENTATION = 14, UIAUTOMATION = 15, UIAUTOMATOR = 16, XCTEST = 17, XCTEST_UI = 18, REMOTE_ACCESS_RECORD = 19, REMOTE_ACCESS_REPLAY = 20 }
+	export enum TestType { BUILTIN_FUZZ = 'BUILTIN_FUZZ', BUILTIN_EXPLORER = 'BUILTIN_EXPLORER', WEB_PERFORMANCE_PROFILE = 'WEB_PERFORMANCE_PROFILE', APPIUM_JAVA_JUNIT = 'APPIUM_JAVA_JUNIT', APPIUM_JAVA_TESTNG = 'APPIUM_JAVA_TESTNG', APPIUM_PYTHON = 'APPIUM_PYTHON', APPIUM_NODE = 'APPIUM_NODE', APPIUM_RUBY = 'APPIUM_RUBY', APPIUM_WEB_JAVA_JUNIT = 'APPIUM_WEB_JAVA_JUNIT', APPIUM_WEB_JAVA_TESTNG = 'APPIUM_WEB_JAVA_TESTNG', APPIUM_WEB_PYTHON = 'APPIUM_WEB_PYTHON', APPIUM_WEB_NODE = 'APPIUM_WEB_NODE', APPIUM_WEB_RUBY = 'APPIUM_WEB_RUBY', CALABASH = 'CALABASH', INSTRUMENTATION = 'INSTRUMENTATION', UIAUTOMATION = 'UIAUTOMATION', UIAUTOMATOR = 'UIAUTOMATOR', XCTEST = 'XCTEST', XCTEST_UI = 'XCTEST_UI', REMOTE_ACCESS_RECORD = 'REMOTE_ACCESS_RECORD', REMOTE_ACCESS_REPLAY = 'REMOTE_ACCESS_REPLAY' }
 
 
 	/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
@@ -2244,7 +2244,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionResultCode { PARSING_FAILED = 0, VPC_ENDPOINT_SETUP_FAILED = 1 }
+	export enum ExecutionResultCode { PARSING_FAILED = 'PARSING_FAILED', VPC_ENDPOINT_SETUP_FAILED = 'VPC_ENDPOINT_SETUP_FAILED' }
 
 
 	/** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>. */
@@ -2298,7 +2298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceFilterAttribute { ARN = 0, PLATFORM = 1, OS_VERSION = 2, MODEL = 3, AVAILABILITY = 4, FORM_FACTOR = 5, MANUFACTURER = 6, REMOTE_ACCESS_ENABLED = 7, REMOTE_DEBUG_ENABLED = 8, INSTANCE_ARN = 9, INSTANCE_LABELS = 10, FLEET_TYPE = 11 }
+	export enum DeviceFilterAttribute { ARN = 'ARN', PLATFORM = 'PLATFORM', OS_VERSION = 'OS_VERSION', MODEL = 'MODEL', AVAILABILITY = 'AVAILABILITY', FORM_FACTOR = 'FORM_FACTOR', MANUFACTURER = 'MANUFACTURER', REMOTE_ACCESS_ENABLED = 'REMOTE_ACCESS_ENABLED', REMOTE_DEBUG_ENABLED = 'REMOTE_DEBUG_ENABLED', INSTANCE_ARN = 'INSTANCE_ARN', INSTANCE_LABELS = 'INSTANCE_LABELS', FLEET_TYPE = 'FLEET_TYPE' }
 
 
 	/** Represents a request to the get run operation. */
@@ -2550,7 +2550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestGridSessionStatus { ACTIVE = 0, CLOSED = 1, ERRORED = 2 }
+	export enum TestGridSessionStatus { ACTIVE = 'ACTIVE', CLOSED = 'CLOSED', ERRORED = 'ERRORED' }
 
 	export interface GetTestGridSessionRequest {
 		projectArn?: string;
@@ -2725,7 +2725,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactType { UNKNOWN = 0, SCREENSHOT = 1, DEVICE_LOG = 2, MESSAGE_LOG = 3, VIDEO_LOG = 4, RESULT_LOG = 5, SERVICE_LOG = 6, WEBKIT_LOG = 7, INSTRUMENTATION_OUTPUT = 8, EXERCISER_MONKEY_OUTPUT = 9, CALABASH_JSON_OUTPUT = 10, CALABASH_PRETTY_OUTPUT = 11, CALABASH_STANDARD_OUTPUT = 12, CALABASH_JAVA_XML_OUTPUT = 13, AUTOMATION_OUTPUT = 14, APPIUM_SERVER_OUTPUT = 15, APPIUM_JAVA_OUTPUT = 16, APPIUM_JAVA_XML_OUTPUT = 17, APPIUM_PYTHON_OUTPUT = 18, APPIUM_PYTHON_XML_OUTPUT = 19, EXPLORER_EVENT_LOG = 20, EXPLORER_SUMMARY_LOG = 21, APPLICATION_CRASH_REPORT = 22, XCTEST_LOG = 23, VIDEO = 24, CUSTOMER_ARTIFACT = 25, CUSTOMER_ARTIFACT_LOG = 26, TESTSPEC_OUTPUT = 27 }
+	export enum ArtifactType { UNKNOWN = 'UNKNOWN', SCREENSHOT = 'SCREENSHOT', DEVICE_LOG = 'DEVICE_LOG', MESSAGE_LOG = 'MESSAGE_LOG', VIDEO_LOG = 'VIDEO_LOG', RESULT_LOG = 'RESULT_LOG', SERVICE_LOG = 'SERVICE_LOG', WEBKIT_LOG = 'WEBKIT_LOG', INSTRUMENTATION_OUTPUT = 'INSTRUMENTATION_OUTPUT', EXERCISER_MONKEY_OUTPUT = 'EXERCISER_MONKEY_OUTPUT', CALABASH_JSON_OUTPUT = 'CALABASH_JSON_OUTPUT', CALABASH_PRETTY_OUTPUT = 'CALABASH_PRETTY_OUTPUT', CALABASH_STANDARD_OUTPUT = 'CALABASH_STANDARD_OUTPUT', CALABASH_JAVA_XML_OUTPUT = 'CALABASH_JAVA_XML_OUTPUT', AUTOMATION_OUTPUT = 'AUTOMATION_OUTPUT', APPIUM_SERVER_OUTPUT = 'APPIUM_SERVER_OUTPUT', APPIUM_JAVA_OUTPUT = 'APPIUM_JAVA_OUTPUT', APPIUM_JAVA_XML_OUTPUT = 'APPIUM_JAVA_XML_OUTPUT', APPIUM_PYTHON_OUTPUT = 'APPIUM_PYTHON_OUTPUT', APPIUM_PYTHON_XML_OUTPUT = 'APPIUM_PYTHON_XML_OUTPUT', EXPLORER_EVENT_LOG = 'EXPLORER_EVENT_LOG', EXPLORER_SUMMARY_LOG = 'EXPLORER_SUMMARY_LOG', APPLICATION_CRASH_REPORT = 'APPLICATION_CRASH_REPORT', XCTEST_LOG = 'XCTEST_LOG', VIDEO = 'VIDEO', CUSTOMER_ARTIFACT = 'CUSTOMER_ARTIFACT', CUSTOMER_ARTIFACT_LOG = 'CUSTOMER_ARTIFACT_LOG', TESTSPEC_OUTPUT = 'TESTSPEC_OUTPUT' }
 
 
 	/** Represents a request to the list artifacts operation. */
@@ -2758,7 +2758,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactCategory { SCREENSHOT = 0, FILE = 1, LOG = 2 }
+	export enum ArtifactCategory { SCREENSHOT = 'SCREENSHOT', FILE = 'FILE', LOG = 'LOG' }
 
 	export interface ListDeviceInstancesResult {
 		deviceInstances?: Array<DeviceInstance>;
@@ -3097,7 +3097,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OfferingTransactionType { PURCHASE = 0, RENEW = 1, SYSTEM = 2 }
+	export enum OfferingTransactionType { PURCHASE = 'PURCHASE', RENEW = 'RENEW', SYSTEM = 'SYSTEM' }
 
 
 	/** Represents the metadata of a device offering. */
@@ -3126,7 +3126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OfferingType { RECURRING = 0 }
+	export enum OfferingType { RECURRING = 'RECURRING' }
 
 
 	/** Specifies whether charges for devices are recurring. */
@@ -3166,9 +3166,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CurrencyCode { USD = 0 }
+	export enum CurrencyCode { USD = 'USD' }
 
-	export enum RecurringChargeFrequency { MONTHLY = 0 }
+	export enum RecurringChargeFrequency { MONTHLY = 'MONTHLY' }
 
 
 	/** Represents the request to list the offering transaction history. */
@@ -3385,7 +3385,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SampleType { CPU = 0, MEMORY = 1, THREADS = 2, RX_RATE = 3, TX_RATE = 4, RX = 5, TX = 6, NATIVE_FRAMES = 7, NATIVE_FPS = 8, NATIVE_MIN_DRAWTIME = 9, NATIVE_AVG_DRAWTIME = 10, NATIVE_MAX_DRAWTIME = 11, OPENGL_FRAMES = 12, OPENGL_FPS = 13, OPENGL_MIN_DRAWTIME = 14, OPENGL_AVG_DRAWTIME = 15, OPENGL_MAX_DRAWTIME = 16 }
+	export enum SampleType { CPU = 'CPU', MEMORY = 'MEMORY', THREADS = 'THREADS', RX_RATE = 'RX_RATE', TX_RATE = 'TX_RATE', RX = 'RX', TX = 'TX', NATIVE_FRAMES = 'NATIVE_FRAMES', NATIVE_FPS = 'NATIVE_FPS', NATIVE_MIN_DRAWTIME = 'NATIVE_MIN_DRAWTIME', NATIVE_AVG_DRAWTIME = 'NATIVE_AVG_DRAWTIME', NATIVE_MAX_DRAWTIME = 'NATIVE_MAX_DRAWTIME', OPENGL_FRAMES = 'OPENGL_FRAMES', OPENGL_FPS = 'OPENGL_FPS', OPENGL_MIN_DRAWTIME = 'OPENGL_MIN_DRAWTIME', OPENGL_AVG_DRAWTIME = 'OPENGL_AVG_DRAWTIME', OPENGL_MAX_DRAWTIME = 'OPENGL_MAX_DRAWTIME' }
 
 
 	/** Represents a request to the list samples operation. */
@@ -3642,7 +3642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestGridSessionArtifactType { UNKNOWN = 0, VIDEO = 1, SELENIUM_LOG = 2 }
+	export enum TestGridSessionArtifactType { UNKNOWN = 'UNKNOWN', VIDEO = 'VIDEO', SELENIUM_LOG = 'SELENIUM_LOG' }
 
 	export interface ListTestGridSessionArtifactsRequest {
 
@@ -3670,7 +3670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TestGridSessionArtifactCategory { VIDEO = 0, LOG = 1 }
+	export enum TestGridSessionArtifactCategory { VIDEO = 'VIDEO', LOG = 'LOG' }
 
 	export interface ListTestGridSessionsResult {
 		testGridSessions?: Array<TestGridSession>;
@@ -4614,7 +4614,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkProfileType { CURATED = 0, PRIVATE = 1 }
+	export enum NetworkProfileType { CURATED = 'CURATED', PRIVATE = 'PRIVATE' }
 
 
 	/** Information about a problem detail. */
@@ -4679,7 +4679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UploadCategory { CURATED = 0, PRIVATE = 1 }
+	export enum UploadCategory { CURATED = 'CURATED', PRIVATE = 'PRIVATE' }
 
 	@Injectable()
 	export class MyClient {
@@ -5402,159 +5402,159 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateDevicePoolX_Amz_Target { 'DeviceFarm_20150623.CreateDevicePool' = 0 }
+	export enum CreateDevicePoolX_Amz_Target { 'DeviceFarm_20150623.CreateDevicePool' = 'DeviceFarm_20150623.CreateDevicePool' }
 
-	export enum CreateInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.CreateInstanceProfile' = 0 }
+	export enum CreateInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.CreateInstanceProfile' = 'DeviceFarm_20150623.CreateInstanceProfile' }
 
-	export enum CreateNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.CreateNetworkProfile' = 0 }
+	export enum CreateNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.CreateNetworkProfile' = 'DeviceFarm_20150623.CreateNetworkProfile' }
 
-	export enum CreateProjectX_Amz_Target { 'DeviceFarm_20150623.CreateProject' = 0 }
+	export enum CreateProjectX_Amz_Target { 'DeviceFarm_20150623.CreateProject' = 'DeviceFarm_20150623.CreateProject' }
 
-	export enum CreateRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.CreateRemoteAccessSession' = 0 }
+	export enum CreateRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.CreateRemoteAccessSession' = 'DeviceFarm_20150623.CreateRemoteAccessSession' }
 
-	export enum CreateTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.CreateTestGridProject' = 0 }
+	export enum CreateTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.CreateTestGridProject' = 'DeviceFarm_20150623.CreateTestGridProject' }
 
-	export enum CreateTestGridUrlX_Amz_Target { 'DeviceFarm_20150623.CreateTestGridUrl' = 0 }
+	export enum CreateTestGridUrlX_Amz_Target { 'DeviceFarm_20150623.CreateTestGridUrl' = 'DeviceFarm_20150623.CreateTestGridUrl' }
 
-	export enum CreateUploadX_Amz_Target { 'DeviceFarm_20150623.CreateUpload' = 0 }
+	export enum CreateUploadX_Amz_Target { 'DeviceFarm_20150623.CreateUpload' = 'DeviceFarm_20150623.CreateUpload' }
 
-	export enum CreateVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.CreateVPCEConfiguration' = 0 }
+	export enum CreateVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.CreateVPCEConfiguration' = 'DeviceFarm_20150623.CreateVPCEConfiguration' }
 
-	export enum DeleteDevicePoolX_Amz_Target { 'DeviceFarm_20150623.DeleteDevicePool' = 0 }
+	export enum DeleteDevicePoolX_Amz_Target { 'DeviceFarm_20150623.DeleteDevicePool' = 'DeviceFarm_20150623.DeleteDevicePool' }
 
-	export enum DeleteInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.DeleteInstanceProfile' = 0 }
+	export enum DeleteInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.DeleteInstanceProfile' = 'DeviceFarm_20150623.DeleteInstanceProfile' }
 
-	export enum DeleteNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.DeleteNetworkProfile' = 0 }
+	export enum DeleteNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.DeleteNetworkProfile' = 'DeviceFarm_20150623.DeleteNetworkProfile' }
 
-	export enum DeleteProjectX_Amz_Target { 'DeviceFarm_20150623.DeleteProject' = 0 }
+	export enum DeleteProjectX_Amz_Target { 'DeviceFarm_20150623.DeleteProject' = 'DeviceFarm_20150623.DeleteProject' }
 
-	export enum DeleteRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.DeleteRemoteAccessSession' = 0 }
+	export enum DeleteRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.DeleteRemoteAccessSession' = 'DeviceFarm_20150623.DeleteRemoteAccessSession' }
 
-	export enum DeleteRunX_Amz_Target { 'DeviceFarm_20150623.DeleteRun' = 0 }
+	export enum DeleteRunX_Amz_Target { 'DeviceFarm_20150623.DeleteRun' = 'DeviceFarm_20150623.DeleteRun' }
 
-	export enum DeleteTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.DeleteTestGridProject' = 0 }
+	export enum DeleteTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.DeleteTestGridProject' = 'DeviceFarm_20150623.DeleteTestGridProject' }
 
-	export enum DeleteUploadX_Amz_Target { 'DeviceFarm_20150623.DeleteUpload' = 0 }
+	export enum DeleteUploadX_Amz_Target { 'DeviceFarm_20150623.DeleteUpload' = 'DeviceFarm_20150623.DeleteUpload' }
 
-	export enum DeleteVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.DeleteVPCEConfiguration' = 0 }
+	export enum DeleteVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.DeleteVPCEConfiguration' = 'DeviceFarm_20150623.DeleteVPCEConfiguration' }
 
-	export enum GetAccountSettingsX_Amz_Target { 'DeviceFarm_20150623.GetAccountSettings' = 0 }
+	export enum GetAccountSettingsX_Amz_Target { 'DeviceFarm_20150623.GetAccountSettings' = 'DeviceFarm_20150623.GetAccountSettings' }
 
-	export enum GetDeviceX_Amz_Target { 'DeviceFarm_20150623.GetDevice' = 0 }
+	export enum GetDeviceX_Amz_Target { 'DeviceFarm_20150623.GetDevice' = 'DeviceFarm_20150623.GetDevice' }
 
-	export enum GetDeviceInstanceX_Amz_Target { 'DeviceFarm_20150623.GetDeviceInstance' = 0 }
+	export enum GetDeviceInstanceX_Amz_Target { 'DeviceFarm_20150623.GetDeviceInstance' = 'DeviceFarm_20150623.GetDeviceInstance' }
 
-	export enum GetDevicePoolX_Amz_Target { 'DeviceFarm_20150623.GetDevicePool' = 0 }
+	export enum GetDevicePoolX_Amz_Target { 'DeviceFarm_20150623.GetDevicePool' = 'DeviceFarm_20150623.GetDevicePool' }
 
-	export enum GetDevicePoolCompatibilityX_Amz_Target { 'DeviceFarm_20150623.GetDevicePoolCompatibility' = 0 }
+	export enum GetDevicePoolCompatibilityX_Amz_Target { 'DeviceFarm_20150623.GetDevicePoolCompatibility' = 'DeviceFarm_20150623.GetDevicePoolCompatibility' }
 
-	export enum GetInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.GetInstanceProfile' = 0 }
+	export enum GetInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.GetInstanceProfile' = 'DeviceFarm_20150623.GetInstanceProfile' }
 
-	export enum GetJobX_Amz_Target { 'DeviceFarm_20150623.GetJob' = 0 }
+	export enum GetJobX_Amz_Target { 'DeviceFarm_20150623.GetJob' = 'DeviceFarm_20150623.GetJob' }
 
-	export enum GetNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.GetNetworkProfile' = 0 }
+	export enum GetNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.GetNetworkProfile' = 'DeviceFarm_20150623.GetNetworkProfile' }
 
-	export enum GetOfferingStatusX_Amz_Target { 'DeviceFarm_20150623.GetOfferingStatus' = 0 }
+	export enum GetOfferingStatusX_Amz_Target { 'DeviceFarm_20150623.GetOfferingStatus' = 'DeviceFarm_20150623.GetOfferingStatus' }
 
-	export enum GetProjectX_Amz_Target { 'DeviceFarm_20150623.GetProject' = 0 }
+	export enum GetProjectX_Amz_Target { 'DeviceFarm_20150623.GetProject' = 'DeviceFarm_20150623.GetProject' }
 
-	export enum GetRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.GetRemoteAccessSession' = 0 }
+	export enum GetRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.GetRemoteAccessSession' = 'DeviceFarm_20150623.GetRemoteAccessSession' }
 
-	export enum GetRunX_Amz_Target { 'DeviceFarm_20150623.GetRun' = 0 }
+	export enum GetRunX_Amz_Target { 'DeviceFarm_20150623.GetRun' = 'DeviceFarm_20150623.GetRun' }
 
-	export enum GetSuiteX_Amz_Target { 'DeviceFarm_20150623.GetSuite' = 0 }
+	export enum GetSuiteX_Amz_Target { 'DeviceFarm_20150623.GetSuite' = 'DeviceFarm_20150623.GetSuite' }
 
-	export enum GetTestX_Amz_Target { 'DeviceFarm_20150623.GetTest' = 0 }
+	export enum GetTestX_Amz_Target { 'DeviceFarm_20150623.GetTest' = 'DeviceFarm_20150623.GetTest' }
 
-	export enum GetTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.GetTestGridProject' = 0 }
+	export enum GetTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.GetTestGridProject' = 'DeviceFarm_20150623.GetTestGridProject' }
 
-	export enum GetTestGridSessionX_Amz_Target { 'DeviceFarm_20150623.GetTestGridSession' = 0 }
+	export enum GetTestGridSessionX_Amz_Target { 'DeviceFarm_20150623.GetTestGridSession' = 'DeviceFarm_20150623.GetTestGridSession' }
 
-	export enum GetUploadX_Amz_Target { 'DeviceFarm_20150623.GetUpload' = 0 }
+	export enum GetUploadX_Amz_Target { 'DeviceFarm_20150623.GetUpload' = 'DeviceFarm_20150623.GetUpload' }
 
-	export enum GetVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.GetVPCEConfiguration' = 0 }
+	export enum GetVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.GetVPCEConfiguration' = 'DeviceFarm_20150623.GetVPCEConfiguration' }
 
-	export enum InstallToRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.InstallToRemoteAccessSession' = 0 }
+	export enum InstallToRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.InstallToRemoteAccessSession' = 'DeviceFarm_20150623.InstallToRemoteAccessSession' }
 
-	export enum ListArtifactsX_Amz_Target { 'DeviceFarm_20150623.ListArtifacts' = 0 }
+	export enum ListArtifactsX_Amz_Target { 'DeviceFarm_20150623.ListArtifacts' = 'DeviceFarm_20150623.ListArtifacts' }
 
-	export enum ListDeviceInstancesX_Amz_Target { 'DeviceFarm_20150623.ListDeviceInstances' = 0 }
+	export enum ListDeviceInstancesX_Amz_Target { 'DeviceFarm_20150623.ListDeviceInstances' = 'DeviceFarm_20150623.ListDeviceInstances' }
 
-	export enum ListDevicePoolsX_Amz_Target { 'DeviceFarm_20150623.ListDevicePools' = 0 }
+	export enum ListDevicePoolsX_Amz_Target { 'DeviceFarm_20150623.ListDevicePools' = 'DeviceFarm_20150623.ListDevicePools' }
 
-	export enum ListDevicesX_Amz_Target { 'DeviceFarm_20150623.ListDevices' = 0 }
+	export enum ListDevicesX_Amz_Target { 'DeviceFarm_20150623.ListDevices' = 'DeviceFarm_20150623.ListDevices' }
 
-	export enum ListInstanceProfilesX_Amz_Target { 'DeviceFarm_20150623.ListInstanceProfiles' = 0 }
+	export enum ListInstanceProfilesX_Amz_Target { 'DeviceFarm_20150623.ListInstanceProfiles' = 'DeviceFarm_20150623.ListInstanceProfiles' }
 
-	export enum ListJobsX_Amz_Target { 'DeviceFarm_20150623.ListJobs' = 0 }
+	export enum ListJobsX_Amz_Target { 'DeviceFarm_20150623.ListJobs' = 'DeviceFarm_20150623.ListJobs' }
 
-	export enum ListNetworkProfilesX_Amz_Target { 'DeviceFarm_20150623.ListNetworkProfiles' = 0 }
+	export enum ListNetworkProfilesX_Amz_Target { 'DeviceFarm_20150623.ListNetworkProfiles' = 'DeviceFarm_20150623.ListNetworkProfiles' }
 
-	export enum ListOfferingPromotionsX_Amz_Target { 'DeviceFarm_20150623.ListOfferingPromotions' = 0 }
+	export enum ListOfferingPromotionsX_Amz_Target { 'DeviceFarm_20150623.ListOfferingPromotions' = 'DeviceFarm_20150623.ListOfferingPromotions' }
 
-	export enum ListOfferingTransactionsX_Amz_Target { 'DeviceFarm_20150623.ListOfferingTransactions' = 0 }
+	export enum ListOfferingTransactionsX_Amz_Target { 'DeviceFarm_20150623.ListOfferingTransactions' = 'DeviceFarm_20150623.ListOfferingTransactions' }
 
-	export enum ListOfferingsX_Amz_Target { 'DeviceFarm_20150623.ListOfferings' = 0 }
+	export enum ListOfferingsX_Amz_Target { 'DeviceFarm_20150623.ListOfferings' = 'DeviceFarm_20150623.ListOfferings' }
 
-	export enum ListProjectsX_Amz_Target { 'DeviceFarm_20150623.ListProjects' = 0 }
+	export enum ListProjectsX_Amz_Target { 'DeviceFarm_20150623.ListProjects' = 'DeviceFarm_20150623.ListProjects' }
 
-	export enum ListRemoteAccessSessionsX_Amz_Target { 'DeviceFarm_20150623.ListRemoteAccessSessions' = 0 }
+	export enum ListRemoteAccessSessionsX_Amz_Target { 'DeviceFarm_20150623.ListRemoteAccessSessions' = 'DeviceFarm_20150623.ListRemoteAccessSessions' }
 
-	export enum ListRunsX_Amz_Target { 'DeviceFarm_20150623.ListRuns' = 0 }
+	export enum ListRunsX_Amz_Target { 'DeviceFarm_20150623.ListRuns' = 'DeviceFarm_20150623.ListRuns' }
 
-	export enum ListSamplesX_Amz_Target { 'DeviceFarm_20150623.ListSamples' = 0 }
+	export enum ListSamplesX_Amz_Target { 'DeviceFarm_20150623.ListSamples' = 'DeviceFarm_20150623.ListSamples' }
 
-	export enum ListSuitesX_Amz_Target { 'DeviceFarm_20150623.ListSuites' = 0 }
+	export enum ListSuitesX_Amz_Target { 'DeviceFarm_20150623.ListSuites' = 'DeviceFarm_20150623.ListSuites' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'DeviceFarm_20150623.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'DeviceFarm_20150623.ListTagsForResource' = 'DeviceFarm_20150623.ListTagsForResource' }
 
-	export enum ListTestGridProjectsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridProjects' = 0 }
+	export enum ListTestGridProjectsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridProjects' = 'DeviceFarm_20150623.ListTestGridProjects' }
 
-	export enum ListTestGridSessionActionsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridSessionActions' = 0 }
+	export enum ListTestGridSessionActionsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridSessionActions' = 'DeviceFarm_20150623.ListTestGridSessionActions' }
 
-	export enum ListTestGridSessionArtifactsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridSessionArtifacts' = 0 }
+	export enum ListTestGridSessionArtifactsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridSessionArtifacts' = 'DeviceFarm_20150623.ListTestGridSessionArtifacts' }
 
-	export enum ListTestGridSessionsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridSessions' = 0 }
+	export enum ListTestGridSessionsX_Amz_Target { 'DeviceFarm_20150623.ListTestGridSessions' = 'DeviceFarm_20150623.ListTestGridSessions' }
 
-	export enum ListTestsX_Amz_Target { 'DeviceFarm_20150623.ListTests' = 0 }
+	export enum ListTestsX_Amz_Target { 'DeviceFarm_20150623.ListTests' = 'DeviceFarm_20150623.ListTests' }
 
-	export enum ListUniqueProblemsX_Amz_Target { 'DeviceFarm_20150623.ListUniqueProblems' = 0 }
+	export enum ListUniqueProblemsX_Amz_Target { 'DeviceFarm_20150623.ListUniqueProblems' = 'DeviceFarm_20150623.ListUniqueProblems' }
 
-	export enum ListUploadsX_Amz_Target { 'DeviceFarm_20150623.ListUploads' = 0 }
+	export enum ListUploadsX_Amz_Target { 'DeviceFarm_20150623.ListUploads' = 'DeviceFarm_20150623.ListUploads' }
 
-	export enum ListVPCEConfigurationsX_Amz_Target { 'DeviceFarm_20150623.ListVPCEConfigurations' = 0 }
+	export enum ListVPCEConfigurationsX_Amz_Target { 'DeviceFarm_20150623.ListVPCEConfigurations' = 'DeviceFarm_20150623.ListVPCEConfigurations' }
 
-	export enum PurchaseOfferingX_Amz_Target { 'DeviceFarm_20150623.PurchaseOffering' = 0 }
+	export enum PurchaseOfferingX_Amz_Target { 'DeviceFarm_20150623.PurchaseOffering' = 'DeviceFarm_20150623.PurchaseOffering' }
 
-	export enum RenewOfferingX_Amz_Target { 'DeviceFarm_20150623.RenewOffering' = 0 }
+	export enum RenewOfferingX_Amz_Target { 'DeviceFarm_20150623.RenewOffering' = 'DeviceFarm_20150623.RenewOffering' }
 
-	export enum ScheduleRunX_Amz_Target { 'DeviceFarm_20150623.ScheduleRun' = 0 }
+	export enum ScheduleRunX_Amz_Target { 'DeviceFarm_20150623.ScheduleRun' = 'DeviceFarm_20150623.ScheduleRun' }
 
-	export enum StopJobX_Amz_Target { 'DeviceFarm_20150623.StopJob' = 0 }
+	export enum StopJobX_Amz_Target { 'DeviceFarm_20150623.StopJob' = 'DeviceFarm_20150623.StopJob' }
 
-	export enum StopRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.StopRemoteAccessSession' = 0 }
+	export enum StopRemoteAccessSessionX_Amz_Target { 'DeviceFarm_20150623.StopRemoteAccessSession' = 'DeviceFarm_20150623.StopRemoteAccessSession' }
 
-	export enum StopRunX_Amz_Target { 'DeviceFarm_20150623.StopRun' = 0 }
+	export enum StopRunX_Amz_Target { 'DeviceFarm_20150623.StopRun' = 'DeviceFarm_20150623.StopRun' }
 
-	export enum TagResourceX_Amz_Target { 'DeviceFarm_20150623.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'DeviceFarm_20150623.TagResource' = 'DeviceFarm_20150623.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'DeviceFarm_20150623.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'DeviceFarm_20150623.UntagResource' = 'DeviceFarm_20150623.UntagResource' }
 
-	export enum UpdateDeviceInstanceX_Amz_Target { 'DeviceFarm_20150623.UpdateDeviceInstance' = 0 }
+	export enum UpdateDeviceInstanceX_Amz_Target { 'DeviceFarm_20150623.UpdateDeviceInstance' = 'DeviceFarm_20150623.UpdateDeviceInstance' }
 
-	export enum UpdateDevicePoolX_Amz_Target { 'DeviceFarm_20150623.UpdateDevicePool' = 0 }
+	export enum UpdateDevicePoolX_Amz_Target { 'DeviceFarm_20150623.UpdateDevicePool' = 'DeviceFarm_20150623.UpdateDevicePool' }
 
-	export enum UpdateInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.UpdateInstanceProfile' = 0 }
+	export enum UpdateInstanceProfileX_Amz_Target { 'DeviceFarm_20150623.UpdateInstanceProfile' = 'DeviceFarm_20150623.UpdateInstanceProfile' }
 
-	export enum UpdateNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.UpdateNetworkProfile' = 0 }
+	export enum UpdateNetworkProfileX_Amz_Target { 'DeviceFarm_20150623.UpdateNetworkProfile' = 'DeviceFarm_20150623.UpdateNetworkProfile' }
 
-	export enum UpdateProjectX_Amz_Target { 'DeviceFarm_20150623.UpdateProject' = 0 }
+	export enum UpdateProjectX_Amz_Target { 'DeviceFarm_20150623.UpdateProject' = 'DeviceFarm_20150623.UpdateProject' }
 
-	export enum UpdateTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.UpdateTestGridProject' = 0 }
+	export enum UpdateTestGridProjectX_Amz_Target { 'DeviceFarm_20150623.UpdateTestGridProject' = 'DeviceFarm_20150623.UpdateTestGridProject' }
 
-	export enum UpdateUploadX_Amz_Target { 'DeviceFarm_20150623.UpdateUpload' = 0 }
+	export enum UpdateUploadX_Amz_Target { 'DeviceFarm_20150623.UpdateUpload' = 'DeviceFarm_20150623.UpdateUpload' }
 
-	export enum UpdateVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.UpdateVPCEConfiguration' = 0 }
+	export enum UpdateVPCEConfigurationX_Amz_Target { 'DeviceFarm_20150623.UpdateVPCEConfiguration' = 'DeviceFarm_20150623.UpdateVPCEConfiguration' }
 
 }
 

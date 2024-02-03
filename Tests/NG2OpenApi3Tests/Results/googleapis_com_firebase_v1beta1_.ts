@@ -255,7 +255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AndroidAppState { STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETED = 2 }
+	export enum AndroidAppState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DELETED = 'DELETED' }
 
 
 	/** Configuration metadata of a single Firebase App for Android. */
@@ -428,7 +428,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirebaseAppInfoPlatform { PLATFORM_UNSPECIFIED = 0, IOS = 1, ANDROID = 2, WEB = 3 }
+	export enum FirebaseAppInfoPlatform { PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED', IOS = 'IOS', ANDROID = 'ANDROID', WEB = 'WEB' }
 
 
 	/** A `FirebaseProject` is the top-level Firebase entity. It is the container for Firebase Apps, Firebase Hosting sites, storage systems (Firebase Realtime Database, Cloud Firestore, Cloud Storage buckets), and other Firebase and Google Cloud Platform (GCP) resources. You create a `FirebaseProject` by calling AddFirebase and specifying an *existing* [GCP `Project`](https://cloud.google.com/resource-manager/reference/rest/v1/projects). This adds Firebase resources to the existing GCP `Project`. Since a FirebaseProject is actually also a GCP `Project`, a `FirebaseProject` has the same underlying GCP identifiers (`projectNumber` and `projectId`). This allows for easy interop with Google APIs. */
@@ -686,7 +686,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationType { LOCATION_TYPE_UNSPECIFIED = 0, REGIONAL = 1, MULTI_REGIONAL = 2 }
+	export enum LocationType { LOCATION_TYPE_UNSPECIFIED = 'LOCATION_TYPE_UNSPECIFIED', REGIONAL = 'REGIONAL', MULTI_REGIONAL = 'MULTI_REGIONAL' }
 
 	export interface ListAvailableProjectsResponse {
 
@@ -831,7 +831,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShaCertificateCertType { SHA_CERTIFICATE_TYPE_UNSPECIFIED = 0, SHA_1 = 1, SHA_256 = 2 }
+	export enum ShaCertificateCertType { SHA_CERTIFICATE_TYPE_UNSPECIFIED = 'SHA_CERTIFICATE_TYPE_UNSPECIFIED', SHA_1 = 'SHA_1', SHA_256 = 'SHA_256' }
 
 	export interface ListWebAppsResponse {
 

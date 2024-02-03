@@ -187,7 +187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceStatus { ACTIVE = 0, SIGNED_OUT = 1 }
+	export enum DeviceStatus { ACTIVE = 'ACTIVE', SIGNED_OUT = 'SIGNED_OUT' }
 
 	export interface DescribeDevicePolicyConfigurationResponse {
 		DeviceCaCertificate?: string;
@@ -227,7 +227,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainStatus { PENDING_VALIDATION = 0, ASSOCIATING = 1, ACTIVE = 2, INACTIVE = 3, DISASSOCIATING = 4, DISASSOCIATED = 5, FAILED_TO_ASSOCIATE = 6, FAILED_TO_DISASSOCIATE = 7 }
+	export enum DomainStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', ASSOCIATING = 'ASSOCIATING', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', DISASSOCIATING = 'DISASSOCIATING', DISASSOCIATED = 'DISASSOCIATED', FAILED_TO_ASSOCIATE = 'FAILED_TO_ASSOCIATE', FAILED_TO_DISASSOCIATE = 'FAILED_TO_DISASSOCIATE' }
 
 	export interface DescribeFleetMetadataResponse {
 		CreatedTime?: Date;
@@ -261,7 +261,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FleetStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3, FAILED_TO_CREATE = 4, FAILED_TO_DELETE = 5 }
+	export enum FleetStatus { CREATING = 'CREATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETED = 'DELETED', FAILED_TO_CREATE = 'FAILED_TO_CREATE', FAILED_TO_DELETE = 'FAILED_TO_DELETE' }
 
 	export interface TagMap {
 	}
@@ -292,7 +292,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IdentityProviderType { SAML = 0 }
+	export enum IdentityProviderType { SAML = 'SAML' }
 
 	export interface DescribeWebsiteCertificateAuthorityResponse {
 		Certificate?: string;
@@ -715,7 +715,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthorizationProviderType { SAML = 0 }
+	export enum AuthorizationProviderType { SAML = 'SAML' }
 
 	export interface AssociateWebsiteAuthorizationProviderRequest {
 

@@ -59,9 +59,9 @@ export namespace MyNS {
 
 	}
 
-	export enum UnsuccessfulFaceAssociationReason { FACE_NOT_FOUND = 0, ASSOCIATED_TO_A_DIFFERENT_USER = 1, LOW_MATCH_CONFIDENCE = 2 }
+	export enum UnsuccessfulFaceAssociationReason { FACE_NOT_FOUND = 'FACE_NOT_FOUND', ASSOCIATED_TO_A_DIFFERENT_USER = 'ASSOCIATED_TO_A_DIFFERENT_USER', LOW_MATCH_CONFIDENCE = 'LOW_MATCH_CONFIDENCE' }
 
-	export enum UserStatus { ACTIVE = 0, UPDATING = 1, CREATING = 2, CREATED = 3 }
+	export enum UserStatus { ACTIVE = 'ACTIVE', UPDATING = 'UPDATING', CREATING = 'CREATING', CREATED = 'CREATED' }
 
 	export interface AssociateFacesRequest {
 
@@ -313,7 +313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LandmarkType { eyeLeft = 0, eyeRight = 1, nose = 2, mouthLeft = 3, mouthRight = 4, leftEyeBrowLeft = 5, leftEyeBrowRight = 6, leftEyeBrowUp = 7, rightEyeBrowLeft = 8, rightEyeBrowRight = 9, rightEyeBrowUp = 10, leftEyeLeft = 11, leftEyeRight = 12, leftEyeUp = 13, leftEyeDown = 14, rightEyeLeft = 15, rightEyeRight = 16, rightEyeUp = 17, rightEyeDown = 18, noseLeft = 19, noseRight = 20, mouthUp = 21, mouthDown = 22, leftPupil = 23, rightPupil = 24, upperJawlineLeft = 25, midJawlineLeft = 26, chinBottom = 27, midJawlineRight = 28, upperJawlineRight = 29 }
+	export enum LandmarkType { eyeLeft = 'eyeLeft', eyeRight = 'eyeRight', nose = 'nose', mouthLeft = 'mouthLeft', mouthRight = 'mouthRight', leftEyeBrowLeft = 'leftEyeBrowLeft', leftEyeBrowRight = 'leftEyeBrowRight', leftEyeBrowUp = 'leftEyeBrowUp', rightEyeBrowLeft = 'rightEyeBrowLeft', rightEyeBrowRight = 'rightEyeBrowRight', rightEyeBrowUp = 'rightEyeBrowUp', leftEyeLeft = 'leftEyeLeft', leftEyeRight = 'leftEyeRight', leftEyeUp = 'leftEyeUp', leftEyeDown = 'leftEyeDown', rightEyeLeft = 'rightEyeLeft', rightEyeRight = 'rightEyeRight', rightEyeUp = 'rightEyeUp', rightEyeDown = 'rightEyeDown', noseLeft = 'noseLeft', noseRight = 'noseRight', mouthUp = 'mouthUp', mouthDown = 'mouthDown', leftPupil = 'leftPupil', rightPupil = 'rightPupil', upperJawlineLeft = 'upperJawlineLeft', midJawlineLeft = 'midJawlineLeft', chinBottom = 'chinBottom', midJawlineRight = 'midJawlineRight', upperJawlineRight = 'upperJawlineRight' }
 
 
 	/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
@@ -378,7 +378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmotionName { HAPPY = 0, SAD = 1, ANGRY = 2, CONFUSED = 3, DISGUSTED = 4, SURPRISED = 5, CALM = 6, UNKNOWN = 7, FEAR = 8 }
+	export enum EmotionName { HAPPY = 'HAPPY', SAD = 'SAD', ANGRY = 'ANGRY', CONFUSED = 'CONFUSED', DISGUSTED = 'DISGUSTED', SURPRISED = 'SURPRISED', CALM = 'CALM', UNKNOWN = 'UNKNOWN', FEAR = 'FEAR' }
 
 
 	/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
@@ -400,7 +400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrientationCorrection { ROTATE_0 = 0, ROTATE_90 = 1, ROTATE_180 = 2, ROTATE_270 = 3 }
+	export enum OrientationCorrection { ROTATE_0 = 'ROTATE_0', ROTATE_90 = 'ROTATE_90', ROTATE_180 = 'ROTATE_180', ROTATE_270 = 'ROTATE_270' }
 
 	export interface CompareFacesRequest {
 
@@ -465,7 +465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QualityFilter { NONE = 0, AUTO = 1, LOW = 2, MEDIUM = 3, HIGH = 4 }
+	export enum QualityFilter { NONE = 'NONE', AUTO = 'AUTO', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH' }
 
 	export interface InvalidS3ObjectException {
 	}
@@ -727,7 +727,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetType { TRAIN = 0, TEST = 1 }
+	export enum DatasetType { TRAIN = 'TRAIN', TEST = 'TEST' }
 
 	export interface CreateFaceLivenessSessionResponse {
 
@@ -1334,7 +1334,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnsuccessfulFaceDeletionReason { ASSOCIATED_TO_AN_EXISTING_USER = 0, FACE_NOT_FOUND = 1 }
+	export enum UnsuccessfulFaceDeletionReason { ASSOCIATED_TO_AN_EXISTING_USER = 'ASSOCIATED_TO_AN_EXISTING_USER', FACE_NOT_FOUND = 'FACE_NOT_FOUND' }
 
 	export interface DeleteFacesRequest {
 
@@ -1369,7 +1369,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectStatus { CREATING = 0, CREATED = 1, DELETING = 2 }
+	export enum ProjectStatus { CREATING = 'CREATING', CREATED = 'CREATED', DELETING = 'DELETING' }
 
 	export interface DeleteProjectRequest {
 
@@ -1448,7 +1448,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectVersionStatus { TRAINING_IN_PROGRESS = 0, TRAINING_COMPLETED = 1, TRAINING_FAILED = 2, STARTING = 3, RUNNING = 4, FAILED = 5, STOPPING = 6, STOPPED = 7, DELETING = 8, COPYING_IN_PROGRESS = 9, COPYING_COMPLETED = 10, COPYING_FAILED = 11 }
+	export enum ProjectVersionStatus { TRAINING_IN_PROGRESS = 'TRAINING_IN_PROGRESS', TRAINING_COMPLETED = 'TRAINING_COMPLETED', TRAINING_FAILED = 'TRAINING_FAILED', STARTING = 'STARTING', RUNNING = 'RUNNING', FAILED = 'FAILED', STOPPING = 'STOPPING', STOPPED = 'STOPPED', DELETING = 'DELETING', COPYING_IN_PROGRESS = 'COPYING_IN_PROGRESS', COPYING_COMPLETED = 'COPYING_COMPLETED', COPYING_FAILED = 'COPYING_FAILED' }
 
 	export interface DeleteProjectVersionRequest {
 
@@ -1614,9 +1614,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DatasetStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_COMPLETE = 4, UPDATE_FAILED = 5, DELETE_IN_PROGRESS = 6 }
+	export enum DatasetStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_COMPLETE = 'CREATE_COMPLETE', CREATE_FAILED = 'CREATE_FAILED', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_COMPLETE = 'UPDATE_COMPLETE', UPDATE_FAILED = 'UPDATE_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS' }
 
-	export enum DatasetStatusMessageCode { SUCCESS = 0, SERVICE_ERROR = 1, CLIENT_ERROR = 2 }
+	export enum DatasetStatusMessageCode { SUCCESS = 'SUCCESS', SERVICE_ERROR = 'SERVICE_ERROR', CLIENT_ERROR = 'CLIENT_ERROR' }
 
 
 	/**  Provides statistics about a dataset. For more information, see <a>DescribeDataset</a>.  */
@@ -1971,7 +1971,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamProcessorStatus { STOPPED = 0, STARTING = 1, RUNNING = 2, FAILED = 3, STOPPING = 4, UPDATING = 5 }
+	export enum StreamProcessorStatus { STOPPED = 'STOPPED', STARTING = 'STARTING', RUNNING = 'RUNNING', FAILED = 'FAILED', STOPPING = 'STOPPING', UPDATING = 'UPDATING' }
 
 	export interface DescribeStreamProcessorRequest {
 
@@ -2204,7 +2204,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GenderType { Male = 0, Female = 1 }
+	export enum GenderType { Male = 'Male', Female = 'Female' }
 
 
 	/** Indicates whether or not the face has a beard, and the confidence level in the determination. */
@@ -2343,7 +2343,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Attribute { DEFAULT = 0, ALL = 1, AGE_RANGE = 2, BEARD = 3, EMOTIONS = 4, EYE_DIRECTION = 5, EYEGLASSES = 6, EYES_OPEN = 7, GENDER = 8, MOUTH_OPEN = 9, MUSTACHE = 10, FACE_OCCLUDED = 11, SMILE = 12, SUNGLASSES = 13 }
+	export enum Attribute { DEFAULT = 'DEFAULT', ALL = 'ALL', AGE_RANGE = 'AGE_RANGE', BEARD = 'BEARD', EMOTIONS = 'EMOTIONS', EYE_DIRECTION = 'EYE_DIRECTION', EYEGLASSES = 'EYEGLASSES', EYES_OPEN = 'EYES_OPEN', GENDER = 'GENDER', MOUTH_OPEN = 'MOUTH_OPEN', MUSTACHE = 'MUSTACHE', FACE_OCCLUDED = 'FACE_OCCLUDED', SMILE = 'SMILE', SUNGLASSES = 'SUNGLASSES' }
 
 	export interface DetectLabelsResponse {
 		Labels?: Array<Label>;
@@ -2586,7 +2586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DetectLabelsFeatureName { GENERAL_LABELS = 0, IMAGE_PROPERTIES = 1 }
+	export enum DetectLabelsFeatureName { GENERAL_LABELS = 'GENERAL_LABELS', IMAGE_PROPERTIES = 'IMAGE_PROPERTIES' }
 
 
 	/** Settings for the DetectLabels request. Settings can include filters for both GENERAL_LABELS and IMAGE_PROPERTIES. GENERAL_LABELS filters can be inclusive or exclusive and applied to individual labels or label categories. IMAGE_PROPERTIES filters allow specification of a maximum number of dominant colors. */
@@ -2759,7 +2759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
+	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 'FreeOfPersonallyIdentifiableInformation', FreeOfAdultContent = 'FreeOfAdultContent' }
 
 	export interface HumanLoopQuotaExceededException {
 	}
@@ -2829,7 +2829,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BodyPart { FACE = 0, HEAD = 1, LEFT_HAND = 2, RIGHT_HAND = 3 }
+	export enum BodyPart { FACE = 'FACE', HEAD = 'HEAD', LEFT_HAND = 'LEFT_HAND', RIGHT_HAND = 'RIGHT_HAND' }
 
 
 	/** Information about an item of Personal Protective Equipment (PPE) detected by <a>DetectProtectiveEquipment</a>. For more information, see <a>DetectProtectiveEquipment</a>. */
@@ -2853,7 +2853,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProtectiveEquipmentType { FACE_COVER = 0, HAND_COVER = 1, HEAD_COVER = 2 }
+	export enum ProtectiveEquipmentType { FACE_COVER = 'FACE_COVER', HAND_COVER = 'HAND_COVER', HEAD_COVER = 'HEAD_COVER' }
 
 
 	/** Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <a>DetectProtectiveEquipment</a>. */
@@ -2974,7 +2974,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TextTypes { LINE = 0, WORD = 1 }
+	export enum TextTypes { LINE = 'LINE', WORD = 'WORD' }
 
 	export interface DetectTextRequest {
 
@@ -3084,7 +3084,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnsuccessfulFaceDisassociationReason { FACE_NOT_FOUND = 0, ASSOCIATED_TO_A_DIFFERENT_USER = 1 }
+	export enum UnsuccessfulFaceDisassociationReason { FACE_NOT_FOUND = 'FACE_NOT_FOUND', ASSOCIATED_TO_A_DIFFERENT_USER = 'ASSOCIATED_TO_A_DIFFERENT_USER' }
 
 	export interface DisassociateFacesRequest {
 
@@ -3194,7 +3194,7 @@ export namespace MyNS {
 
 
 	/** A list of enum string of possible gender values that Celebrity returns. */
-	export enum KnownGenderType { Male = 0, Female = 1, Nonbinary = 2, Unlisted = 3 }
+	export enum KnownGenderType { Male = 'Male', Female = 'Female', Nonbinary = 'Nonbinary', Unlisted = 'Unlisted' }
 
 	export interface GetCelebrityInfoRequest {
 
@@ -3243,7 +3243,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoJobStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum VideoJobStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
 
 	/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
@@ -3280,7 +3280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoColorRange { FULL = 0, LIMITED = 1 }
+	export enum VideoColorRange { FULL = 'FULL', LIMITED = 'LIMITED' }
 
 
 	/** Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide. */
@@ -3368,7 +3368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CelebrityRecognitionSortBy { ID = 0, TIMESTAMP = 1 }
+	export enum CelebrityRecognitionSortBy { ID = 'ID', TIMESTAMP = 'TIMESTAMP' }
 
 	export interface GetContentModerationResponse {
 		JobStatus?: VideoJobStatus;
@@ -3451,9 +3451,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentModerationSortBy { NAME = 0, TIMESTAMP = 1 }
+	export enum ContentModerationSortBy { NAME = 'NAME', TIMESTAMP = 'TIMESTAMP' }
 
-	export enum ContentModerationAggregateBy { TIMESTAMPS = 0, SEGMENTS = 1 }
+	export enum ContentModerationAggregateBy { TIMESTAMPS = 'TIMESTAMPS', SEGMENTS = 'SEGMENTS' }
 
 	export interface GetContentModerationRequest {
 
@@ -3584,7 +3584,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LivenessSessionStatus { CREATED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, EXPIRED = 4 }
+	export enum LivenessSessionStatus { CREATED = 'CREATED', IN_PROGRESS = 'IN_PROGRESS', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', EXPIRED = 'EXPIRED' }
 
 
 	/** An image that is picked from the Face Liveness video and returned for audit trail purposes, returned as Base64-encoded bytes. */
@@ -3781,7 +3781,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FaceSearchSortBy { INDEX = 0, TIMESTAMP = 1 }
+	export enum FaceSearchSortBy { INDEX = 'INDEX', TIMESTAMP = 'TIMESTAMP' }
 
 	export interface GetLabelDetectionResponse {
 		JobStatus?: VideoJobStatus;
@@ -4071,7 +4071,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SegmentType { TECHNICAL_CUE = 0, SHOT = 1 }
+	export enum SegmentType { TECHNICAL_CUE = 'TECHNICAL_CUE', SHOT = 'SHOT' }
 
 
 	/** Information about a technical cue segment. For more information, see <a>SegmentDetection</a>. */
@@ -4093,7 +4093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TechnicalCueType { ColorBars = 0, EndCredits = 1, BlackFrames = 2, OpeningCredits = 3, StudioLogo = 4, Slate = 5, Content = 6 }
+	export enum TechnicalCueType { ColorBars = 'ColorBars', EndCredits = 'EndCredits', BlackFrames = 'BlackFrames', OpeningCredits = 'OpeningCredits', StudioLogo = 'StudioLogo', Slate = 'Slate', Content = 'Content' }
 
 
 	/** Information about a shot detection segment detected in a video. For more information, see <a>SegmentDetection</a>. */
@@ -4284,7 +4284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Reason { EXCEEDS_MAX_FACES = 0, EXTREME_POSE = 1, LOW_BRIGHTNESS = 2, LOW_SHARPNESS = 3, LOW_CONFIDENCE = 4, SMALL_BOUNDING_BOX = 5, LOW_FACE_QUALITY = 6 }
+	export enum Reason { EXCEEDS_MAX_FACES = 'EXCEEDS_MAX_FACES', EXTREME_POSE = 'EXTREME_POSE', LOW_BRIGHTNESS = 'LOW_BRIGHTNESS', LOW_SHARPNESS = 'LOW_SHARPNESS', LOW_CONFIDENCE = 'LOW_CONFIDENCE', SMALL_BOUNDING_BOX = 'SMALL_BOUNDING_BOX', LOW_FACE_QUALITY = 'LOW_FACE_QUALITY' }
 
 	export interface IndexFacesRequest {
 
@@ -5092,7 +5092,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnsearchedFaceReason { FACE_NOT_LARGEST = 0, EXCEEDS_MAX_FACES = 1, EXTREME_POSE = 2, LOW_BRIGHTNESS = 3, LOW_SHARPNESS = 4, LOW_CONFIDENCE = 5, SMALL_BOUNDING_BOX = 6, LOW_FACE_QUALITY = 7 }
+	export enum UnsearchedFaceReason { FACE_NOT_LARGEST = 'FACE_NOT_LARGEST', EXCEEDS_MAX_FACES = 'EXCEEDS_MAX_FACES', EXTREME_POSE = 'EXTREME_POSE', LOW_BRIGHTNESS = 'LOW_BRIGHTNESS', LOW_SHARPNESS = 'LOW_SHARPNESS', LOW_CONFIDENCE = 'LOW_CONFIDENCE', SMALL_BOUNDING_BOX = 'SMALL_BOUNDING_BOX', LOW_FACE_QUALITY = 'LOW_FACE_QUALITY' }
 
 	export interface SearchUsersByImageRequest {
 
@@ -5269,7 +5269,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FaceAttributes { DEFAULT = 0, ALL = 1 }
+	export enum FaceAttributes { DEFAULT = 'DEFAULT', ALL = 'ALL' }
 
 	export interface StartFaceSearchResponse {
 		JobId?: string;
@@ -5352,7 +5352,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelDetectionFeatureName { GENERAL_LABELS = 0 }
+	export enum LabelDetectionFeatureName { GENERAL_LABELS = 'GENERAL_LABELS' }
 
 
 	/** Contains the specified filters that should be applied to a list of returned GENERAL_LABELS. */
@@ -5926,13 +5926,13 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamProcessorParameterToDelete { ConnectedHomeMinConfidence = 0, RegionsOfInterest = 1 }
+	export enum StreamProcessorParameterToDelete { ConnectedHomeMinConfidence = 'ConnectedHomeMinConfidence', RegionsOfInterest = 'RegionsOfInterest' }
 
-	export enum LabelDetectionSortBy { NAME = 0, TIMESTAMP = 1 }
+	export enum LabelDetectionSortBy { NAME = 'NAME', TIMESTAMP = 'TIMESTAMP' }
 
-	export enum LabelDetectionAggregateBy { TIMESTAMPS = 0, SEGMENTS = 1 }
+	export enum LabelDetectionAggregateBy { TIMESTAMPS = 'TIMESTAMPS', SEGMENTS = 'SEGMENTS' }
 
-	export enum PersonTrackingSortBy { INDEX = 0, TIMESTAMP = 1 }
+	export enum PersonTrackingSortBy { INDEX = 'INDEX', TIMESTAMP = 'TIMESTAMP' }
 
 	@Injectable()
 	export class MyClient {
@@ -6622,149 +6622,149 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateFacesX_Amz_Target { 'RekognitionService.AssociateFaces' = 0 }
+	export enum AssociateFacesX_Amz_Target { 'RekognitionService.AssociateFaces' = 'RekognitionService.AssociateFaces' }
 
-	export enum CompareFacesX_Amz_Target { 'RekognitionService.CompareFaces' = 0 }
+	export enum CompareFacesX_Amz_Target { 'RekognitionService.CompareFaces' = 'RekognitionService.CompareFaces' }
 
-	export enum CopyProjectVersionX_Amz_Target { 'RekognitionService.CopyProjectVersion' = 0 }
+	export enum CopyProjectVersionX_Amz_Target { 'RekognitionService.CopyProjectVersion' = 'RekognitionService.CopyProjectVersion' }
 
-	export enum CreateCollectionX_Amz_Target { 'RekognitionService.CreateCollection' = 0 }
+	export enum CreateCollectionX_Amz_Target { 'RekognitionService.CreateCollection' = 'RekognitionService.CreateCollection' }
 
-	export enum CreateDatasetX_Amz_Target { 'RekognitionService.CreateDataset' = 0 }
+	export enum CreateDatasetX_Amz_Target { 'RekognitionService.CreateDataset' = 'RekognitionService.CreateDataset' }
 
-	export enum CreateFaceLivenessSessionX_Amz_Target { 'RekognitionService.CreateFaceLivenessSession' = 0 }
+	export enum CreateFaceLivenessSessionX_Amz_Target { 'RekognitionService.CreateFaceLivenessSession' = 'RekognitionService.CreateFaceLivenessSession' }
 
-	export enum CreateProjectX_Amz_Target { 'RekognitionService.CreateProject' = 0 }
+	export enum CreateProjectX_Amz_Target { 'RekognitionService.CreateProject' = 'RekognitionService.CreateProject' }
 
-	export enum CreateProjectVersionX_Amz_Target { 'RekognitionService.CreateProjectVersion' = 0 }
+	export enum CreateProjectVersionX_Amz_Target { 'RekognitionService.CreateProjectVersion' = 'RekognitionService.CreateProjectVersion' }
 
-	export enum CreateStreamProcessorX_Amz_Target { 'RekognitionService.CreateStreamProcessor' = 0 }
+	export enum CreateStreamProcessorX_Amz_Target { 'RekognitionService.CreateStreamProcessor' = 'RekognitionService.CreateStreamProcessor' }
 
-	export enum CreateUserX_Amz_Target { 'RekognitionService.CreateUser' = 0 }
+	export enum CreateUserX_Amz_Target { 'RekognitionService.CreateUser' = 'RekognitionService.CreateUser' }
 
-	export enum DeleteCollectionX_Amz_Target { 'RekognitionService.DeleteCollection' = 0 }
+	export enum DeleteCollectionX_Amz_Target { 'RekognitionService.DeleteCollection' = 'RekognitionService.DeleteCollection' }
 
-	export enum DeleteDatasetX_Amz_Target { 'RekognitionService.DeleteDataset' = 0 }
+	export enum DeleteDatasetX_Amz_Target { 'RekognitionService.DeleteDataset' = 'RekognitionService.DeleteDataset' }
 
-	export enum DeleteFacesX_Amz_Target { 'RekognitionService.DeleteFaces' = 0 }
+	export enum DeleteFacesX_Amz_Target { 'RekognitionService.DeleteFaces' = 'RekognitionService.DeleteFaces' }
 
-	export enum DeleteProjectX_Amz_Target { 'RekognitionService.DeleteProject' = 0 }
+	export enum DeleteProjectX_Amz_Target { 'RekognitionService.DeleteProject' = 'RekognitionService.DeleteProject' }
 
-	export enum DeleteProjectPolicyX_Amz_Target { 'RekognitionService.DeleteProjectPolicy' = 0 }
+	export enum DeleteProjectPolicyX_Amz_Target { 'RekognitionService.DeleteProjectPolicy' = 'RekognitionService.DeleteProjectPolicy' }
 
-	export enum DeleteProjectVersionX_Amz_Target { 'RekognitionService.DeleteProjectVersion' = 0 }
+	export enum DeleteProjectVersionX_Amz_Target { 'RekognitionService.DeleteProjectVersion' = 'RekognitionService.DeleteProjectVersion' }
 
-	export enum DeleteStreamProcessorX_Amz_Target { 'RekognitionService.DeleteStreamProcessor' = 0 }
+	export enum DeleteStreamProcessorX_Amz_Target { 'RekognitionService.DeleteStreamProcessor' = 'RekognitionService.DeleteStreamProcessor' }
 
-	export enum DeleteUserX_Amz_Target { 'RekognitionService.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'RekognitionService.DeleteUser' = 'RekognitionService.DeleteUser' }
 
-	export enum DescribeCollectionX_Amz_Target { 'RekognitionService.DescribeCollection' = 0 }
+	export enum DescribeCollectionX_Amz_Target { 'RekognitionService.DescribeCollection' = 'RekognitionService.DescribeCollection' }
 
-	export enum DescribeDatasetX_Amz_Target { 'RekognitionService.DescribeDataset' = 0 }
+	export enum DescribeDatasetX_Amz_Target { 'RekognitionService.DescribeDataset' = 'RekognitionService.DescribeDataset' }
 
-	export enum DescribeProjectVersionsX_Amz_Target { 'RekognitionService.DescribeProjectVersions' = 0 }
+	export enum DescribeProjectVersionsX_Amz_Target { 'RekognitionService.DescribeProjectVersions' = 'RekognitionService.DescribeProjectVersions' }
 
-	export enum DescribeProjectsX_Amz_Target { 'RekognitionService.DescribeProjects' = 0 }
+	export enum DescribeProjectsX_Amz_Target { 'RekognitionService.DescribeProjects' = 'RekognitionService.DescribeProjects' }
 
-	export enum DescribeStreamProcessorX_Amz_Target { 'RekognitionService.DescribeStreamProcessor' = 0 }
+	export enum DescribeStreamProcessorX_Amz_Target { 'RekognitionService.DescribeStreamProcessor' = 'RekognitionService.DescribeStreamProcessor' }
 
-	export enum DetectCustomLabelsX_Amz_Target { 'RekognitionService.DetectCustomLabels' = 0 }
+	export enum DetectCustomLabelsX_Amz_Target { 'RekognitionService.DetectCustomLabels' = 'RekognitionService.DetectCustomLabels' }
 
-	export enum DetectFacesX_Amz_Target { 'RekognitionService.DetectFaces' = 0 }
+	export enum DetectFacesX_Amz_Target { 'RekognitionService.DetectFaces' = 'RekognitionService.DetectFaces' }
 
-	export enum DetectLabelsX_Amz_Target { 'RekognitionService.DetectLabels' = 0 }
+	export enum DetectLabelsX_Amz_Target { 'RekognitionService.DetectLabels' = 'RekognitionService.DetectLabels' }
 
-	export enum DetectModerationLabelsX_Amz_Target { 'RekognitionService.DetectModerationLabels' = 0 }
+	export enum DetectModerationLabelsX_Amz_Target { 'RekognitionService.DetectModerationLabels' = 'RekognitionService.DetectModerationLabels' }
 
-	export enum DetectProtectiveEquipmentX_Amz_Target { 'RekognitionService.DetectProtectiveEquipment' = 0 }
+	export enum DetectProtectiveEquipmentX_Amz_Target { 'RekognitionService.DetectProtectiveEquipment' = 'RekognitionService.DetectProtectiveEquipment' }
 
-	export enum DetectTextX_Amz_Target { 'RekognitionService.DetectText' = 0 }
+	export enum DetectTextX_Amz_Target { 'RekognitionService.DetectText' = 'RekognitionService.DetectText' }
 
-	export enum DisassociateFacesX_Amz_Target { 'RekognitionService.DisassociateFaces' = 0 }
+	export enum DisassociateFacesX_Amz_Target { 'RekognitionService.DisassociateFaces' = 'RekognitionService.DisassociateFaces' }
 
-	export enum DistributeDatasetEntriesX_Amz_Target { 'RekognitionService.DistributeDatasetEntries' = 0 }
+	export enum DistributeDatasetEntriesX_Amz_Target { 'RekognitionService.DistributeDatasetEntries' = 'RekognitionService.DistributeDatasetEntries' }
 
-	export enum GetCelebrityInfoX_Amz_Target { 'RekognitionService.GetCelebrityInfo' = 0 }
+	export enum GetCelebrityInfoX_Amz_Target { 'RekognitionService.GetCelebrityInfo' = 'RekognitionService.GetCelebrityInfo' }
 
-	export enum GetCelebrityRecognitionX_Amz_Target { 'RekognitionService.GetCelebrityRecognition' = 0 }
+	export enum GetCelebrityRecognitionX_Amz_Target { 'RekognitionService.GetCelebrityRecognition' = 'RekognitionService.GetCelebrityRecognition' }
 
-	export enum GetContentModerationX_Amz_Target { 'RekognitionService.GetContentModeration' = 0 }
+	export enum GetContentModerationX_Amz_Target { 'RekognitionService.GetContentModeration' = 'RekognitionService.GetContentModeration' }
 
-	export enum GetFaceDetectionX_Amz_Target { 'RekognitionService.GetFaceDetection' = 0 }
+	export enum GetFaceDetectionX_Amz_Target { 'RekognitionService.GetFaceDetection' = 'RekognitionService.GetFaceDetection' }
 
-	export enum GetFaceLivenessSessionResultsX_Amz_Target { 'RekognitionService.GetFaceLivenessSessionResults' = 0 }
+	export enum GetFaceLivenessSessionResultsX_Amz_Target { 'RekognitionService.GetFaceLivenessSessionResults' = 'RekognitionService.GetFaceLivenessSessionResults' }
 
-	export enum GetFaceSearchX_Amz_Target { 'RekognitionService.GetFaceSearch' = 0 }
+	export enum GetFaceSearchX_Amz_Target { 'RekognitionService.GetFaceSearch' = 'RekognitionService.GetFaceSearch' }
 
-	export enum GetLabelDetectionX_Amz_Target { 'RekognitionService.GetLabelDetection' = 0 }
+	export enum GetLabelDetectionX_Amz_Target { 'RekognitionService.GetLabelDetection' = 'RekognitionService.GetLabelDetection' }
 
-	export enum GetPersonTrackingX_Amz_Target { 'RekognitionService.GetPersonTracking' = 0 }
+	export enum GetPersonTrackingX_Amz_Target { 'RekognitionService.GetPersonTracking' = 'RekognitionService.GetPersonTracking' }
 
-	export enum GetSegmentDetectionX_Amz_Target { 'RekognitionService.GetSegmentDetection' = 0 }
+	export enum GetSegmentDetectionX_Amz_Target { 'RekognitionService.GetSegmentDetection' = 'RekognitionService.GetSegmentDetection' }
 
-	export enum GetTextDetectionX_Amz_Target { 'RekognitionService.GetTextDetection' = 0 }
+	export enum GetTextDetectionX_Amz_Target { 'RekognitionService.GetTextDetection' = 'RekognitionService.GetTextDetection' }
 
-	export enum IndexFacesX_Amz_Target { 'RekognitionService.IndexFaces' = 0 }
+	export enum IndexFacesX_Amz_Target { 'RekognitionService.IndexFaces' = 'RekognitionService.IndexFaces' }
 
-	export enum ListCollectionsX_Amz_Target { 'RekognitionService.ListCollections' = 0 }
+	export enum ListCollectionsX_Amz_Target { 'RekognitionService.ListCollections' = 'RekognitionService.ListCollections' }
 
-	export enum ListDatasetEntriesX_Amz_Target { 'RekognitionService.ListDatasetEntries' = 0 }
+	export enum ListDatasetEntriesX_Amz_Target { 'RekognitionService.ListDatasetEntries' = 'RekognitionService.ListDatasetEntries' }
 
-	export enum ListDatasetLabelsX_Amz_Target { 'RekognitionService.ListDatasetLabels' = 0 }
+	export enum ListDatasetLabelsX_Amz_Target { 'RekognitionService.ListDatasetLabels' = 'RekognitionService.ListDatasetLabels' }
 
-	export enum ListFacesX_Amz_Target { 'RekognitionService.ListFaces' = 0 }
+	export enum ListFacesX_Amz_Target { 'RekognitionService.ListFaces' = 'RekognitionService.ListFaces' }
 
-	export enum ListProjectPoliciesX_Amz_Target { 'RekognitionService.ListProjectPolicies' = 0 }
+	export enum ListProjectPoliciesX_Amz_Target { 'RekognitionService.ListProjectPolicies' = 'RekognitionService.ListProjectPolicies' }
 
-	export enum ListStreamProcessorsX_Amz_Target { 'RekognitionService.ListStreamProcessors' = 0 }
+	export enum ListStreamProcessorsX_Amz_Target { 'RekognitionService.ListStreamProcessors' = 'RekognitionService.ListStreamProcessors' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'RekognitionService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'RekognitionService.ListTagsForResource' = 'RekognitionService.ListTagsForResource' }
 
-	export enum ListUsersX_Amz_Target { 'RekognitionService.ListUsers' = 0 }
+	export enum ListUsersX_Amz_Target { 'RekognitionService.ListUsers' = 'RekognitionService.ListUsers' }
 
-	export enum PutProjectPolicyX_Amz_Target { 'RekognitionService.PutProjectPolicy' = 0 }
+	export enum PutProjectPolicyX_Amz_Target { 'RekognitionService.PutProjectPolicy' = 'RekognitionService.PutProjectPolicy' }
 
-	export enum RecognizeCelebritiesX_Amz_Target { 'RekognitionService.RecognizeCelebrities' = 0 }
+	export enum RecognizeCelebritiesX_Amz_Target { 'RekognitionService.RecognizeCelebrities' = 'RekognitionService.RecognizeCelebrities' }
 
-	export enum SearchFacesX_Amz_Target { 'RekognitionService.SearchFaces' = 0 }
+	export enum SearchFacesX_Amz_Target { 'RekognitionService.SearchFaces' = 'RekognitionService.SearchFaces' }
 
-	export enum SearchFacesByImageX_Amz_Target { 'RekognitionService.SearchFacesByImage' = 0 }
+	export enum SearchFacesByImageX_Amz_Target { 'RekognitionService.SearchFacesByImage' = 'RekognitionService.SearchFacesByImage' }
 
-	export enum SearchUsersX_Amz_Target { 'RekognitionService.SearchUsers' = 0 }
+	export enum SearchUsersX_Amz_Target { 'RekognitionService.SearchUsers' = 'RekognitionService.SearchUsers' }
 
-	export enum SearchUsersByImageX_Amz_Target { 'RekognitionService.SearchUsersByImage' = 0 }
+	export enum SearchUsersByImageX_Amz_Target { 'RekognitionService.SearchUsersByImage' = 'RekognitionService.SearchUsersByImage' }
 
-	export enum StartCelebrityRecognitionX_Amz_Target { 'RekognitionService.StartCelebrityRecognition' = 0 }
+	export enum StartCelebrityRecognitionX_Amz_Target { 'RekognitionService.StartCelebrityRecognition' = 'RekognitionService.StartCelebrityRecognition' }
 
-	export enum StartContentModerationX_Amz_Target { 'RekognitionService.StartContentModeration' = 0 }
+	export enum StartContentModerationX_Amz_Target { 'RekognitionService.StartContentModeration' = 'RekognitionService.StartContentModeration' }
 
-	export enum StartFaceDetectionX_Amz_Target { 'RekognitionService.StartFaceDetection' = 0 }
+	export enum StartFaceDetectionX_Amz_Target { 'RekognitionService.StartFaceDetection' = 'RekognitionService.StartFaceDetection' }
 
-	export enum StartFaceSearchX_Amz_Target { 'RekognitionService.StartFaceSearch' = 0 }
+	export enum StartFaceSearchX_Amz_Target { 'RekognitionService.StartFaceSearch' = 'RekognitionService.StartFaceSearch' }
 
-	export enum StartLabelDetectionX_Amz_Target { 'RekognitionService.StartLabelDetection' = 0 }
+	export enum StartLabelDetectionX_Amz_Target { 'RekognitionService.StartLabelDetection' = 'RekognitionService.StartLabelDetection' }
 
-	export enum StartPersonTrackingX_Amz_Target { 'RekognitionService.StartPersonTracking' = 0 }
+	export enum StartPersonTrackingX_Amz_Target { 'RekognitionService.StartPersonTracking' = 'RekognitionService.StartPersonTracking' }
 
-	export enum StartProjectVersionX_Amz_Target { 'RekognitionService.StartProjectVersion' = 0 }
+	export enum StartProjectVersionX_Amz_Target { 'RekognitionService.StartProjectVersion' = 'RekognitionService.StartProjectVersion' }
 
-	export enum StartSegmentDetectionX_Amz_Target { 'RekognitionService.StartSegmentDetection' = 0 }
+	export enum StartSegmentDetectionX_Amz_Target { 'RekognitionService.StartSegmentDetection' = 'RekognitionService.StartSegmentDetection' }
 
-	export enum StartStreamProcessorX_Amz_Target { 'RekognitionService.StartStreamProcessor' = 0 }
+	export enum StartStreamProcessorX_Amz_Target { 'RekognitionService.StartStreamProcessor' = 'RekognitionService.StartStreamProcessor' }
 
-	export enum StartTextDetectionX_Amz_Target { 'RekognitionService.StartTextDetection' = 0 }
+	export enum StartTextDetectionX_Amz_Target { 'RekognitionService.StartTextDetection' = 'RekognitionService.StartTextDetection' }
 
-	export enum StopProjectVersionX_Amz_Target { 'RekognitionService.StopProjectVersion' = 0 }
+	export enum StopProjectVersionX_Amz_Target { 'RekognitionService.StopProjectVersion' = 'RekognitionService.StopProjectVersion' }
 
-	export enum StopStreamProcessorX_Amz_Target { 'RekognitionService.StopStreamProcessor' = 0 }
+	export enum StopStreamProcessorX_Amz_Target { 'RekognitionService.StopStreamProcessor' = 'RekognitionService.StopStreamProcessor' }
 
-	export enum TagResourceX_Amz_Target { 'RekognitionService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'RekognitionService.TagResource' = 'RekognitionService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'RekognitionService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'RekognitionService.UntagResource' = 'RekognitionService.UntagResource' }
 
-	export enum UpdateDatasetEntriesX_Amz_Target { 'RekognitionService.UpdateDatasetEntries' = 0 }
+	export enum UpdateDatasetEntriesX_Amz_Target { 'RekognitionService.UpdateDatasetEntries' = 'RekognitionService.UpdateDatasetEntries' }
 
-	export enum UpdateStreamProcessorX_Amz_Target { 'RekognitionService.UpdateStreamProcessor' = 0 }
+	export enum UpdateStreamProcessorX_Amz_Target { 'RekognitionService.UpdateStreamProcessor' = 'RekognitionService.UpdateStreamProcessor' }
 
 }
 

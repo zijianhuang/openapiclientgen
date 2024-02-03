@@ -442,7 +442,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetCallLogsDirection { Inbound = 0, Outbound = 1 }
+	export enum GetCallLogsDirection { Inbound = 'Inbound', Outbound = 'Outbound' }
 
 }
 

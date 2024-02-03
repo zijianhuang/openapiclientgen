@@ -322,9 +322,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowCallLogLevel { CALL_LOG_LEVEL_UNSPECIFIED = 0, LOG_ALL_CALLS = 1, LOG_ERRORS_ONLY = 2, LOG_NONE = 3 }
+	export enum WorkflowCallLogLevel { CALL_LOG_LEVEL_UNSPECIFIED = 'CALL_LOG_LEVEL_UNSPECIFIED', LOG_ALL_CALLS = 'LOG_ALL_CALLS', LOG_ERRORS_ONLY = 'LOG_ERRORS_ONLY', LOG_NONE = 'LOG_NONE' }
 
-	export enum WorkflowState { STATE_UNSPECIFIED = 0, ACTIVE = 1, UNAVAILABLE = 2 }
+	export enum WorkflowState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** Describes an error related to the current state of the workflow. */
@@ -354,7 +354,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StateErrorType { TYPE_UNSPECIFIED = 0, KMS_ERROR = 1 }
+	export enum StateErrorType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', KMS_ERROR = 'KMS_ERROR' }
 
 
 	/** Response for the ListWorkflows method. */

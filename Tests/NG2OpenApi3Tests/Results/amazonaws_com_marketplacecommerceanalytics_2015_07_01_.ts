@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataSetType { customer_subscriber_hourly_monthly_subscriptions = 0, customer_subscriber_annual_subscriptions = 1, daily_business_usage_by_instance_type = 2, daily_business_fees = 3, daily_business_free_trial_conversions = 4, daily_business_new_instances = 5, daily_business_new_product_subscribers = 6, daily_business_canceled_product_subscribers = 7, monthly_revenue_billing_and_revenue_data = 8, monthly_revenue_annual_subscriptions = 9, monthly_revenue_field_demonstration_usage = 10, monthly_revenue_flexible_payment_schedule = 11, disbursed_amount_by_product = 12, disbursed_amount_by_product_with_uncollected_funds = 13, disbursed_amount_by_instance_hours = 14, disbursed_amount_by_customer_geo = 15, disbursed_amount_by_age_of_uncollected_funds = 16, disbursed_amount_by_age_of_disbursed_funds = 17, disbursed_amount_by_age_of_past_due_funds = 18, disbursed_amount_by_uncollected_funds_breakdown = 19, customer_profile_by_industry = 20, customer_profile_by_revenue = 21, customer_profile_by_geography = 22, sales_compensation_billed_revenue = 23, us_sales_and_use_tax_records = 24 }
+	export enum DataSetType { customer_subscriber_hourly_monthly_subscriptions = 'customer_subscriber_hourly_monthly_subscriptions', customer_subscriber_annual_subscriptions = 'customer_subscriber_annual_subscriptions', daily_business_usage_by_instance_type = 'daily_business_usage_by_instance_type', daily_business_fees = 'daily_business_fees', daily_business_free_trial_conversions = 'daily_business_free_trial_conversions', daily_business_new_instances = 'daily_business_new_instances', daily_business_new_product_subscribers = 'daily_business_new_product_subscribers', daily_business_canceled_product_subscribers = 'daily_business_canceled_product_subscribers', monthly_revenue_billing_and_revenue_data = 'monthly_revenue_billing_and_revenue_data', monthly_revenue_annual_subscriptions = 'monthly_revenue_annual_subscriptions', monthly_revenue_field_demonstration_usage = 'monthly_revenue_field_demonstration_usage', monthly_revenue_flexible_payment_schedule = 'monthly_revenue_flexible_payment_schedule', disbursed_amount_by_product = 'disbursed_amount_by_product', disbursed_amount_by_product_with_uncollected_funds = 'disbursed_amount_by_product_with_uncollected_funds', disbursed_amount_by_instance_hours = 'disbursed_amount_by_instance_hours', disbursed_amount_by_customer_geo = 'disbursed_amount_by_customer_geo', disbursed_amount_by_age_of_uncollected_funds = 'disbursed_amount_by_age_of_uncollected_funds', disbursed_amount_by_age_of_disbursed_funds = 'disbursed_amount_by_age_of_disbursed_funds', disbursed_amount_by_age_of_past_due_funds = 'disbursed_amount_by_age_of_past_due_funds', disbursed_amount_by_uncollected_funds_breakdown = 'disbursed_amount_by_uncollected_funds_breakdown', customer_profile_by_industry = 'customer_profile_by_industry', customer_profile_by_revenue = 'customer_profile_by_revenue', customer_profile_by_geography = 'customer_profile_by_geography', sales_compensation_billed_revenue = 'sales_compensation_billed_revenue', us_sales_and_use_tax_records = 'us_sales_and_use_tax_records' }
 
 	export interface CustomerDefinedValues {
 	}
@@ -165,7 +165,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SupportDataSetType { customer_support_contacts_data = 0, test_customer_support_contacts_data = 1 }
+	export enum SupportDataSetType { customer_support_contacts_data = 'customer_support_contacts_data', test_customer_support_contacts_data = 'test_customer_support_contacts_data' }
 
 	@Injectable()
 	export class MyClient {
@@ -191,9 +191,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GenerateDataSetX_Amz_Target { 'MarketplaceCommerceAnalytics20150701.GenerateDataSet' = 0 }
+	export enum GenerateDataSetX_Amz_Target { 'MarketplaceCommerceAnalytics20150701.GenerateDataSet' = 'MarketplaceCommerceAnalytics20150701.GenerateDataSet' }
 
-	export enum StartSupportDataExportX_Amz_Target { 'MarketplaceCommerceAnalytics20150701.StartSupportDataExport' = 0 }
+	export enum StartSupportDataExportX_Amz_Target { 'MarketplaceCommerceAnalytics20150701.StartSupportDataExport' = 'MarketplaceCommerceAnalytics20150701.StartSupportDataExport' }
 
 }
 

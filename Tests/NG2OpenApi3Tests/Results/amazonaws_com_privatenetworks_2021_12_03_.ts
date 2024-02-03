@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AcknowledgmentStatus { ACKNOWLEDGING = 0, ACKNOWLEDGED = 1, UNACKNOWLEDGED = 2 }
+	export enum AcknowledgmentStatus { ACKNOWLEDGING = 'ACKNOWLEDGING', ACKNOWLEDGED = 'ACKNOWLEDGED', UNACKNOWLEDGED = 'UNACKNOWLEDGED' }
 
 
 	/** Details of the network resources in the order. */
@@ -107,9 +107,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CommitmentLength { SIXTY_DAYS = 0, ONE_YEAR = 1, THREE_YEARS = 2 }
+	export enum CommitmentLength { SIXTY_DAYS = 'SIXTY_DAYS', ONE_YEAR = 'ONE_YEAR', THREE_YEARS = 'THREE_YEARS' }
 
-	export enum NetworkResourceDefinitionType { RADIO_UNIT = 0, DEVICE_IDENTIFIER = 1 }
+	export enum NetworkResourceDefinitionType { RADIO_UNIT = 'RADIO_UNIT', DEVICE_IDENTIFIER = 'DEVICE_IDENTIFIER' }
 
 
 	/** Information about an address. */
@@ -284,7 +284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceIdentifierStatus { ACTIVE = 0, INACTIVE = 1 }
+	export enum DeviceIdentifierStatus { ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE' }
 
 	export interface TagMap {
 	}
@@ -435,7 +435,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkSiteStatus { CREATED = 0, PROVISIONING = 1, AVAILABLE = 2, DEPROVISIONING = 3, DELETED = 4 }
+	export enum NetworkSiteStatus { CREATED = 'CREATED', PROVISIONING = 'PROVISIONING', AVAILABLE = 'AVAILABLE', DEPROVISIONING = 'DEPROVISIONING', DELETED = 'DELETED' }
 
 	export interface ConfigureAccessPointResponse {
 
@@ -530,7 +530,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthStatus { INITIAL = 0, HEALTHY = 1, UNHEALTHY = 2 }
+	export enum HealthStatus { INITIAL = 'INITIAL', HEALTHY = 'HEALTHY', UNHEALTHY = 'UNHEALTHY' }
 
 
 	/** Information about a position. */
@@ -561,9 +561,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ElevationReference { AGL = 0, AMSL = 1 }
+	export enum ElevationReference { AGL = 'AGL', AMSL = 'AMSL' }
 
-	export enum ElevationUnit { FEET = 0 }
+	export enum ElevationUnit { FEET = 'FEET' }
 
 
 	/** Information about a request to return a network resource. */
@@ -589,9 +589,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkResourceStatus { PENDING = 0, SHIPPED = 1, PROVISIONING = 2, PROVISIONED = 3, AVAILABLE = 4, DELETING = 5, PENDING_RETURN = 6, DELETED = 7, CREATING_SHIPPING_LABEL = 8 }
+	export enum NetworkResourceStatus { PENDING = 'PENDING', SHIPPED = 'SHIPPED', PROVISIONING = 'PROVISIONING', PROVISIONED = 'PROVISIONED', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', PENDING_RETURN = 'PENDING_RETURN', DELETED = 'DELETED', CREATING_SHIPPING_LABEL = 'CREATING_SHIPPING_LABEL' }
 
-	export enum NetworkResourceType { RADIO_UNIT = 0 }
+	export enum NetworkResourceType { RADIO_UNIT = 'RADIO_UNIT' }
 
 	export interface CreateNetworkResponse {
 
@@ -1126,7 +1126,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceIdentifierFilterKeys { STATUS = 0, ORDER = 1, TRAFFIC_GROUP = 2 }
+	export enum DeviceIdentifierFilterKeys { STATUS = 'STATUS', ORDER = 'ORDER', TRAFFIC_GROUP = 'TRAFFIC_GROUP' }
 
 	export interface DeviceIdentifierFilters {
 	}
@@ -1351,17 +1351,17 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkStatus { CREATED = 0, PROVISIONING = 1, AVAILABLE = 2, DEPROVISIONING = 3, DELETED = 4 }
+	export enum NetworkStatus { CREATED = 'CREATED', PROVISIONING = 'PROVISIONING', AVAILABLE = 'AVAILABLE', DEPROVISIONING = 'DEPROVISIONING', DELETED = 'DELETED' }
 
-	export enum NetworkFilterKeys { STATUS = 0 }
+	export enum NetworkFilterKeys { STATUS = 'STATUS' }
 
-	export enum NetworkResourceFilterKeys { ORDER = 0, STATUS = 1 }
+	export enum NetworkResourceFilterKeys { ORDER = 'ORDER', STATUS = 'STATUS' }
 
-	export enum NetworkSiteFilterKeys { STATUS = 0 }
+	export enum NetworkSiteFilterKeys { STATUS = 'STATUS' }
 
-	export enum OrderFilterKeys { STATUS = 0, NETWORK_SITE = 1 }
+	export enum OrderFilterKeys { STATUS = 'STATUS', NETWORK_SITE = 'NETWORK_SITE' }
 
-	export enum UpdateType { REPLACE = 0, RETURN = 1, COMMITMENT = 2 }
+	export enum UpdateType { REPLACE = 'REPLACE', RETURN = 'RETURN', COMMITMENT = 'COMMITMENT' }
 
 	export interface StartNetworkResourceUpdateRequest {
 		commitmentConfiguration?: CommitmentConfiguration;

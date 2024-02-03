@@ -32,7 +32,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCalculateMinMaxType { Minimum = 0, Maximum = 1 }
+	export enum InputCalculateMinMaxType { Minimum = 'Minimum', Maximum = 'Maximum' }
 
 	export interface InputCalculateNumber {
 
@@ -241,7 +241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCaseConversionAlphacase { Upper = 0, Lower = 1, Title = 2 }
+	export enum InputCaseConversionAlphacase { Upper = 'Upper', Lower = 'Lower', Title = 'Title' }
 
 	export interface InputCollectionConversion {
 
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCollectionFilterMatch { Any = 0, All = 1, None = 2 }
+	export enum InputCollectionFilterMatch { Any = 'Any', All = 'All', None = 'None' }
 
 	export interface InputCollectionModify {
 
@@ -462,7 +462,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCollectionReplaceIgnoreCase { true = 0, false = 1 }
+	export enum InputCollectionReplaceIgnoreCase { true = 'true', false = 'false' }
 
 	export interface InputCollectionSearch {
 
@@ -543,7 +543,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCollectionSearchNumericType { Integer = 0, Decimal = 1 }
+	export enum InputCollectionSearchNumericType { Integer = 'Integer', Decimal = 'Decimal' }
 
 	export interface InputCollectionSort {
 
@@ -574,7 +574,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCollectionSortOrder { Ascending = 0, Descending = 1 }
+	export enum InputCollectionSortOrder { Ascending = 'Ascending', Descending = 'Descending' }
 
 	export interface InputCollectionSplit {
 
@@ -637,7 +637,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertAngleSource { Arcminute = 0, Arcsecond = 1, Centiradian = 2, Deciradian = 3, Degree = 4, Gradian = 5, Microdegree = 6, Microradian = 7, Millidegree = 8, Milliradian = 9, Nanodegree = 10, Nanoradian = 11, Radian = 12, Revolution = 13 }
+	export enum InputConvertAngleSource { Arcminute = 'Arcminute', Arcsecond = 'Arcsecond', Centiradian = 'Centiradian', Deciradian = 'Deciradian', Degree = 'Degree', Gradian = 'Gradian', Microdegree = 'Microdegree', Microradian = 'Microradian', Millidegree = 'Millidegree', Milliradian = 'Milliradian', Nanodegree = 'Nanodegree', Nanoradian = 'Nanoradian', Radian = 'Radian', Revolution = 'Revolution' }
 
 	export interface InputConvertArea {
 
@@ -670,7 +670,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertAreaSource { Acre = 0, Hectare = 1, SquareCentimeter = 2, SquareDecimeter = 3, SquareFoot = 4, SquareInch = 5, SquareKilometer = 6, SquareMeter = 7, SquareMicrometer = 8, SquareMile = 9, SquareMillimeter = 10, SquareYard = 11 }
+	export enum InputConvertAreaSource { Acre = 'Acre', Hectare = 'Hectare', SquareCentimeter = 'SquareCentimeter', SquareDecimeter = 'SquareDecimeter', SquareFoot = 'SquareFoot', SquareInch = 'SquareInch', SquareKilometer = 'SquareKilometer', SquareMeter = 'SquareMeter', SquareMicrometer = 'SquareMicrometer', SquareMile = 'SquareMile', SquareMillimeter = 'SquareMillimeter', SquareYard = 'SquareYard' }
 
 	export interface InputConvertDistance {
 
@@ -703,7 +703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertDistanceSource { Centimeter = 0, Decimeter = 1, Fathom = 2, Foot = 3, Hectometer = 4, Inch = 5, Kilometer = 6, LightYear = 7, Meter = 8, Micrometer = 9, Mile = 10, Millimeter = 11, Nanometer = 12, NauticalMile = 13, Yard = 14 }
+	export enum InputConvertDistanceSource { Centimeter = 'Centimeter', Decimeter = 'Decimeter', Fathom = 'Fathom', Foot = 'Foot', Hectometer = 'Hectometer', Inch = 'Inch', Kilometer = 'Kilometer', LightYear = 'LightYear', Meter = 'Meter', Micrometer = 'Micrometer', Mile = 'Mile', Millimeter = 'Millimeter', Nanometer = 'Nanometer', NauticalMile = 'NauticalMile', Yard = 'Yard' }
 
 	export interface InputConvertDuration {
 
@@ -736,7 +736,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertDurationSource { Day = 0, Hour = 1, Microsecond = 2, Millisecond = 3, Minute = 4, Month = 5, Nanosecond = 6, Second = 7, Week = 8, Year = 9 }
+	export enum InputConvertDurationSource { Day = 'Day', Hour = 'Hour', Microsecond = 'Microsecond', Millisecond = 'Millisecond', Minute = 'Minute', Month = 'Month', Nanosecond = 'Nanosecond', Second = 'Second', Week = 'Week', Year = 'Year' }
 
 	export interface InputConvertEnergy {
 
@@ -769,7 +769,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertEnergySource { BritishThermalUnit = 0, Calorie = 1, ElectronVolt = 2, FootPound = 3, GigawattHour = 4, Joule = 5, Kilocalorie = 6, Kilojoule = 7, KilowattHour = 8, Megajoule = 9, MegawattHour = 10, TerawattHour = 11, 'Therm (EU)' = 12, 'Therm (UK)' = 13, 'Therm (US)' = 14, WattHour = 15 }
+	export enum InputConvertEnergySource { BritishThermalUnit = 'BritishThermalUnit', Calorie = 'Calorie', ElectronVolt = 'ElectronVolt', FootPound = 'FootPound', GigawattHour = 'GigawattHour', Joule = 'Joule', Kilocalorie = 'Kilocalorie', Kilojoule = 'Kilojoule', KilowattHour = 'KilowattHour', Megajoule = 'Megajoule', MegawattHour = 'MegawattHour', TerawattHour = 'TerawattHour', 'Therm (EU)' = 'Therm (EU)', 'Therm (UK)' = 'Therm (UK)', 'Therm (US)' = 'Therm (US)', WattHour = 'WattHour' }
 
 	export interface InputConvertPower {
 
@@ -802,7 +802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertPowerSource { BritishThermalUnitPerHour = 0, Decawatt = 1, Deciwatt = 2, ElectricalHorsepower = 3, Femtowatt = 4, Gigawatt = 5, HydraulicHorsepower = 6, Kilowatt = 7, MechanicalHorsepower = 8, Megawatt = 9, Microwatt = 10, Milliwatt = 11, Nanowatt = 12, Petawatt = 13, Picowatt = 14, Terawatt = 15, Watt = 16 }
+	export enum InputConvertPowerSource { BritishThermalUnitPerHour = 'BritishThermalUnitPerHour', Decawatt = 'Decawatt', Deciwatt = 'Deciwatt', ElectricalHorsepower = 'ElectricalHorsepower', Femtowatt = 'Femtowatt', Gigawatt = 'Gigawatt', HydraulicHorsepower = 'HydraulicHorsepower', Kilowatt = 'Kilowatt', MechanicalHorsepower = 'MechanicalHorsepower', Megawatt = 'Megawatt', Microwatt = 'Microwatt', Milliwatt = 'Milliwatt', Nanowatt = 'Nanowatt', Petawatt = 'Petawatt', Picowatt = 'Picowatt', Terawatt = 'Terawatt', Watt = 'Watt' }
 
 	export interface InputConvertSpeed {
 
@@ -835,7 +835,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertSpeedSource { CentimeterPerHour = 0, CentimeterPerMinute = 1, CentimeterPerSecond = 2, DecimeterPerMinute = 3, DecimeterPerSecond = 4, FootPerHour = 5, FootPerMinute = 6, FootPerSecond = 7, InchPerHour = 8, InchPerMinute = 9, InchPerSecond = 10, KilometerPerHour = 11, KilometerPerMinute = 12, KilometerPerSecond = 13, Knot = 14, MeterPerHour = 15, MeterPerMinute = 16, MeterPerSecond = 17, MicrometerPerMinute = 18, MicrometerPerSecond = 19, MilePerHour = 20, MillimeterPerHour = 21, MillimeterPerMinute = 22, MillimeterPerSecond = 23, NanometerPerMinute = 24, NanometerPerSecond = 25, YardPerHour = 26, YardPerMinute = 27, YardPerSecond = 28 }
+	export enum InputConvertSpeedSource { CentimeterPerHour = 'CentimeterPerHour', CentimeterPerMinute = 'CentimeterPerMinute', CentimeterPerSecond = 'CentimeterPerSecond', DecimeterPerMinute = 'DecimeterPerMinute', DecimeterPerSecond = 'DecimeterPerSecond', FootPerHour = 'FootPerHour', FootPerMinute = 'FootPerMinute', FootPerSecond = 'FootPerSecond', InchPerHour = 'InchPerHour', InchPerMinute = 'InchPerMinute', InchPerSecond = 'InchPerSecond', KilometerPerHour = 'KilometerPerHour', KilometerPerMinute = 'KilometerPerMinute', KilometerPerSecond = 'KilometerPerSecond', Knot = 'Knot', MeterPerHour = 'MeterPerHour', MeterPerMinute = 'MeterPerMinute', MeterPerSecond = 'MeterPerSecond', MicrometerPerMinute = 'MicrometerPerMinute', MicrometerPerSecond = 'MicrometerPerSecond', MilePerHour = 'MilePerHour', MillimeterPerHour = 'MillimeterPerHour', MillimeterPerMinute = 'MillimeterPerMinute', MillimeterPerSecond = 'MillimeterPerSecond', NanometerPerMinute = 'NanometerPerMinute', NanometerPerSecond = 'NanometerPerSecond', YardPerHour = 'YardPerHour', YardPerMinute = 'YardPerMinute', YardPerSecond = 'YardPerSecond' }
 
 	export interface InputConvertTemperature {
 
@@ -868,7 +868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertTemperatureSource { Celsius = 0, Fahrenheit = 1, Newton = 2, Kelvin = 3 }
+	export enum InputConvertTemperatureSource { Celsius = 'Celsius', Fahrenheit = 'Fahrenheit', Newton = 'Newton', Kelvin = 'Kelvin' }
 
 	export interface InputConvertVolume {
 
@@ -901,7 +901,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertVolumeSource { Centiliter = 0, CubicCentimeter = 1, CubicDecimeter = 2, CubicFoot = 3, CubicHectometer = 4, CubicInch = 5, CubicKilometer = 6, CubicMeter = 7, CubicMillimeter = 8, CubicYard = 9, Deciliter = 10, ImperialBeerBarrel = 11, ImperialGallon = 12, ImperialOunce = 13, ImperialPint = 14, Kiloliter = 15, Liter = 16, Microliter = 17, Milliliter = 18, Gallon = 19, Cup = 20, Ounce = 21, Pint = 22, Quart = 23, Tablespoon = 24, Teaspoon = 25 }
+	export enum InputConvertVolumeSource { Centiliter = 'Centiliter', CubicCentimeter = 'CubicCentimeter', CubicDecimeter = 'CubicDecimeter', CubicFoot = 'CubicFoot', CubicHectometer = 'CubicHectometer', CubicInch = 'CubicInch', CubicKilometer = 'CubicKilometer', CubicMeter = 'CubicMeter', CubicMillimeter = 'CubicMillimeter', CubicYard = 'CubicYard', Deciliter = 'Deciliter', ImperialBeerBarrel = 'ImperialBeerBarrel', ImperialGallon = 'ImperialGallon', ImperialOunce = 'ImperialOunce', ImperialPint = 'ImperialPint', Kiloliter = 'Kiloliter', Liter = 'Liter', Microliter = 'Microliter', Milliliter = 'Milliliter', Gallon = 'Gallon', Cup = 'Cup', Ounce = 'Ounce', Pint = 'Pint', Quart = 'Quart', Tablespoon = 'Tablespoon', Teaspoon = 'Teaspoon' }
 
 	export interface InputConvertWeight {
 
@@ -934,9 +934,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InputConvertWeightSource { Centigram = 0, Decagram = 1, Decigram = 2, Grain = 3, Gram = 4, Hectogram = 5, Kilogram = 6, Microgram = 7, Milligram = 8, Nanogram = 9, Ounce = 10, Pound = 11, Stone = 12, 'Solar Mass' = 13, 'Earth Mass' = 14, Slug = 15, 'Short Ton' = 16, 'Long Ton' = 17, Ton = 18, Megaton = 19, 'Short Hundredweight' = 20, 'Long Hundredweight' = 21 }
+	export enum InputConvertWeightSource { Centigram = 'Centigram', Decagram = 'Decagram', Decigram = 'Decigram', Grain = 'Grain', Gram = 'Gram', Hectogram = 'Hectogram', Kilogram = 'Kilogram', Microgram = 'Microgram', Milligram = 'Milligram', Nanogram = 'Nanogram', Ounce = 'Ounce', Pound = 'Pound', Stone = 'Stone', 'Solar Mass' = 'Solar Mass', 'Earth Mass' = 'Earth Mass', Slug = 'Slug', 'Short Ton' = 'Short Ton', 'Long Ton' = 'Long Ton', Ton = 'Ton', Megaton = 'Megaton', 'Short Hundredweight' = 'Short Hundredweight', 'Long Hundredweight' = 'Long Hundredweight' }
 
-	export enum InputConvertWeightTarget { Centigram = 0, Decagram = 1, Decigram = 2, Grain = 3, Gram = 4, Hectogram = 5, Kilogram = 6, Microgram = 7, Milligram = 8, Nanogram = 9, Ounce = 10, Pound = 11, Stone = 12, Ton = 13 }
+	export enum InputConvertWeightTarget { Centigram = 'Centigram', Decagram = 'Decagram', Decigram = 'Decigram', Grain = 'Grain', Gram = 'Gram', Hectogram = 'Hectogram', Kilogram = 'Kilogram', Microgram = 'Microgram', Milligram = 'Milligram', Nanogram = 'Nanogram', Ounce = 'Ounce', Pound = 'Pound', Stone = 'Stone', Ton = 'Ton' }
 
 	export interface InputCsvConversionJSON {
 
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputCurrencyConversionSource { USD = 0, AUD = 1, BGN = 2, BRL = 3, CAD = 4, CHF = 5, CNY = 6, CZK = 7, DKK = 8, EUR = 9, GBP = 10, HKD = 11, HRK = 12, HUF = 13, IDR = 14, ILS = 15, INR = 16, ISK = 17, JPY = 18, KRW = 19, MXN = 20, MYR = 21, NOK = 22, NZD = 23, PHP = 24, PLN = 25, RON = 26, RUB = 27, SGD = 28, SEK = 29, THB = 30, TRY = 31, ZAR = 32 }
+	export enum InputCurrencyConversionSource { USD = 'USD', AUD = 'AUD', BGN = 'BGN', BRL = 'BRL', CAD = 'CAD', CHF = 'CHF', CNY = 'CNY', CZK = 'CZK', DKK = 'DKK', EUR = 'EUR', GBP = 'GBP', HKD = 'HKD', HRK = 'HRK', HUF = 'HUF', IDR = 'IDR', ILS = 'ILS', INR = 'INR', ISK = 'ISK', JPY = 'JPY', KRW = 'KRW', MXN = 'MXN', MYR = 'MYR', NOK = 'NOK', NZD = 'NZD', PHP = 'PHP', PLN = 'PLN', RON = 'RON', RUB = 'RUB', SGD = 'SGD', SEK = 'SEK', THB = 'THB', TRY = 'TRY', ZAR = 'ZAR' }
 
 	export interface InputCurrencyFormat {
 
@@ -1123,7 +1123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputDateTimeConversionSource { 'GMT Standard Time - (GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London' = 0, 'Greenwich Standard Time - (GMT) Monrovia, Reykjavik' = 1, 'W. Europe Standard Time - (GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna' = 2, 'Central Europe Standard Time - (GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague' = 3, 'Central European Standard Time - (GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb' = 4, 'W. Central Africa Standard Time - (GMT+01:00) West Central Africa' = 5, 'GTB Standard Time - (GMT+02:00) Athens, Bucharest, Istanbul' = 6, 'Middle East Standard Time - (GMT+02:00) Beirut' = 7, 'Egypt Standard Time - (GMT+02:00) Cairo' = 8, 'South Africa Standard Time - (GMT+02:00) Harare, Pretoria' = 9, 'FLE Standard Time - (GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius' = 10, 'Israel Standard Time - (GMT+02:00) Jerusalem' = 11, 'E. Europe Standard Time - (GMT+02:00) Minsk' = 12, 'Namibia Standard Time - (GMT+02:00) Windhoek' = 13, 'Arabic Standard Time - (GMT+03:00) Baghdad' = 14, 'Arab Standard Time - (GMT+03:00) Kuwait, Riyadh' = 15, 'Russian Standard Time - (GMT+03:00) Moscow, St. Petersburg, Volgograd' = 16, 'E. Africa Standard Time - (GMT+03:00) Nairobi' = 17, 'Georgian Standard Time - (GMT+03:00) Tbilisi' = 18, 'Iran Standard Time - (GMT+03:30) Tehran' = 19, 'Arabian Standard Time - (GMT+04:00) Abu Dhabi, Muscat' = 20, 'Azerbaijan Standard Time - (GMT+04:00) Baku' = 21, 'Mauritius Standard Time - (GMT+04:00) Port Louis' = 22, 'Caucasus Standard Time - (GMT+04:00) Yerevan' = 23, 'Afghanistan Standard Time - (GMT+04:30) Kabul' = 24, 'Ekaterinburg Standard Time - (GMT+05:00) Ekaterinburg' = 25, 'Pakistan Standard Time - (GMT+05:00) Islamabad, Karachi' = 26, 'West Asia Standard Time - (GMT+05:00) Tashkent' = 27, 'India Standard Time - (GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi' = 28, 'Sri Lanka Standard Time - (GMT+05:30) Sri Jayawardenepura' = 29, 'Nepal Standard Time - (GMT+05:45) Kathmandu' = 30, 'N. Central Asia Standard Time - (GMT+06:00) Almaty, Novosibirsk' = 31, 'Central Asia Standard Time - (GMT+06:00) Astana, Dhaka' = 32, 'Myanmar Standard Time - (GMT+06:30) Yangon (Rangoon)' = 33, 'SE Asia Standard Time - (GMT+07:00) Bangkok, Hanoi, Jakarta' = 34, 'North Asia Standard Time - (GMT+07:00) Krasnoyarsk' = 35, 'China Standard Time - (GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi' = 36, 'North Asia East Standard Time - (GMT+08:00) Irkutsk, Ulaan Bataar' = 37, 'Singapore Standard Time - (GMT+08:00) Kuala Lumpur, Singapore' = 38, 'W. Australia Standard Time - (GMT+08:00) Perth' = 39, 'Taipei Standard Time - (GMT+08:00) Taipei' = 40, 'Tokyo Standard Time - (GMT+09:00) Osaka, Sapporo, Tokyo' = 41, 'Korea Standard Time - (GMT+09:00) Seoul' = 42, 'Yakutsk Standard Time - (GMT+09:00) Yakutsk' = 43, 'Cen. Australia Standard Time - (GMT+09:30) Adelaide' = 44, 'AUS Central Standard Time - (GMT+09:30) Darwin' = 45, 'E. Australia Standard Time - (GMT+10:00) Brisbane' = 46, 'AUS Eastern Standard Time - (GMT+10:00) Canberra, Melbourne, Sydney' = 47, 'West Pacific Standard Time - (GMT+10:00) Guam, Port Moresby' = 48, 'Tasmania Standard Time - (GMT+10:00) Hobart' = 49, 'Vladivostok Standard Time - (GMT+10:00) Vladivostok' = 50, 'Central Pacific Standard Time - (GMT+11:00) Magadan, Solomon Is., New Caledonia' = 51, 'New Zealand Standard Time - (GMT+12:00) Auckland, Wellington' = 52, 'Fiji Standard Time - (GMT+12:00) Fiji, Kamchatka, Marshall Is.' = 53, 'Tonga Standard Time - (GMT+13:00) Nuku\'alofa' = 54, 'Azores Standard Time - (GMT-01:00) Azores' = 55, 'Cape Verde Standard Time - (GMT-01:00) Cape Verde Is.' = 56, 'Mid-Atlantic Standard Time - (GMT-02:00) Mid-Atlantic' = 57, 'E. South America Standard Time - (GMT-03:00) Brasilia' = 58, 'Argentina Standard Time - (GMT-03:00) Buenos Aires' = 59, 'SA Eastern Standard Time - (GMT-03:00) Georgetown' = 60, 'Greenland Standard Time - (GMT-03:00) Greenland' = 61, 'Montevideo Standard Time - (GMT-03:00) Montevideo' = 62, 'Newfoundland Standard Time - (GMT-03:30) Newfoundland' = 63, 'Atlantic Standard Time - (GMT-04:00) Atlantic Time (Canada)' = 64, 'SA Western Standard Time - (GMT-04:00) La Paz' = 65, 'Central Brazilian Standard Time - (GMT-04:00) Manaus' = 66, 'Pacific SA Standard Time - (GMT-04:00) Santiago' = 67, 'Venezuela Standard Time - (GMT-04:30) Caracas' = 68, 'SA Pacific Standard Time - (GMT-05:00) Bogota, Lima, Quito, Rio Branco' = 69, 'Eastern Standard Time - (GMT-05:00) Eastern Time (US & Canada)' = 70, 'US Eastern Standard Time - (GMT-05:00) Indiana (East)' = 71, 'Central America Standard Time - (GMT-06:00) Central America' = 72, 'Central Standard Time - (GMT-06:00) Central Time (US & Canada)' = 73, 'Central Standard Time (Mexico) - (GMT-06:00) Guadalajara, Mexico City, Monterrey' = 74, 'Canada Central Standard Time - (GMT-06:00) Saskatchewan' = 75, 'US Mountain Standard Time - (GMT-07:00) Arizona' = 76, 'Mountain Standard Time (Mexico) - (GMT-07:00) Chihuahua, La Paz, Mazatlan' = 77, 'Mountain Standard Time - (GMT-07:00) Mountain Time (US & Canada)' = 78, 'Pacific Standard Time - (GMT-08:00) Pacific Time (US & Canada)' = 79, 'Pacific Standard Time (Mexico) - (GMT-08:00) Tijuana, Baja California' = 80, 'Alaskan Standard Time - (GMT-09:00) Alaska' = 81, 'Hawaiian Standard Time - (GMT-10:00) Hawaii' = 82, 'Samoa Standard Time - (GMT-11:00) Midway Island, Samoa' = 83, 'Dateline Standard Time - (GMT-12:00) International Date Line West' = 84 }
+	export enum InputDateTimeConversionSource { 'GMT Standard Time - (GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London' = 'GMT Standard Time - (GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London', 'Greenwich Standard Time - (GMT) Monrovia, Reykjavik' = 'Greenwich Standard Time - (GMT) Monrovia, Reykjavik', 'W. Europe Standard Time - (GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna' = 'W. Europe Standard Time - (GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna', 'Central Europe Standard Time - (GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague' = 'Central Europe Standard Time - (GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague', 'Central European Standard Time - (GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb' = 'Central European Standard Time - (GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb', 'W. Central Africa Standard Time - (GMT+01:00) West Central Africa' = 'W. Central Africa Standard Time - (GMT+01:00) West Central Africa', 'GTB Standard Time - (GMT+02:00) Athens, Bucharest, Istanbul' = 'GTB Standard Time - (GMT+02:00) Athens, Bucharest, Istanbul', 'Middle East Standard Time - (GMT+02:00) Beirut' = 'Middle East Standard Time - (GMT+02:00) Beirut', 'Egypt Standard Time - (GMT+02:00) Cairo' = 'Egypt Standard Time - (GMT+02:00) Cairo', 'South Africa Standard Time - (GMT+02:00) Harare, Pretoria' = 'South Africa Standard Time - (GMT+02:00) Harare, Pretoria', 'FLE Standard Time - (GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius' = 'FLE Standard Time - (GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius', 'Israel Standard Time - (GMT+02:00) Jerusalem' = 'Israel Standard Time - (GMT+02:00) Jerusalem', 'E. Europe Standard Time - (GMT+02:00) Minsk' = 'E. Europe Standard Time - (GMT+02:00) Minsk', 'Namibia Standard Time - (GMT+02:00) Windhoek' = 'Namibia Standard Time - (GMT+02:00) Windhoek', 'Arabic Standard Time - (GMT+03:00) Baghdad' = 'Arabic Standard Time - (GMT+03:00) Baghdad', 'Arab Standard Time - (GMT+03:00) Kuwait, Riyadh' = 'Arab Standard Time - (GMT+03:00) Kuwait, Riyadh', 'Russian Standard Time - (GMT+03:00) Moscow, St. Petersburg, Volgograd' = 'Russian Standard Time - (GMT+03:00) Moscow, St. Petersburg, Volgograd', 'E. Africa Standard Time - (GMT+03:00) Nairobi' = 'E. Africa Standard Time - (GMT+03:00) Nairobi', 'Georgian Standard Time - (GMT+03:00) Tbilisi' = 'Georgian Standard Time - (GMT+03:00) Tbilisi', 'Iran Standard Time - (GMT+03:30) Tehran' = 'Iran Standard Time - (GMT+03:30) Tehran', 'Arabian Standard Time - (GMT+04:00) Abu Dhabi, Muscat' = 'Arabian Standard Time - (GMT+04:00) Abu Dhabi, Muscat', 'Azerbaijan Standard Time - (GMT+04:00) Baku' = 'Azerbaijan Standard Time - (GMT+04:00) Baku', 'Mauritius Standard Time - (GMT+04:00) Port Louis' = 'Mauritius Standard Time - (GMT+04:00) Port Louis', 'Caucasus Standard Time - (GMT+04:00) Yerevan' = 'Caucasus Standard Time - (GMT+04:00) Yerevan', 'Afghanistan Standard Time - (GMT+04:30) Kabul' = 'Afghanistan Standard Time - (GMT+04:30) Kabul', 'Ekaterinburg Standard Time - (GMT+05:00) Ekaterinburg' = 'Ekaterinburg Standard Time - (GMT+05:00) Ekaterinburg', 'Pakistan Standard Time - (GMT+05:00) Islamabad, Karachi' = 'Pakistan Standard Time - (GMT+05:00) Islamabad, Karachi', 'West Asia Standard Time - (GMT+05:00) Tashkent' = 'West Asia Standard Time - (GMT+05:00) Tashkent', 'India Standard Time - (GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi' = 'India Standard Time - (GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi', 'Sri Lanka Standard Time - (GMT+05:30) Sri Jayawardenepura' = 'Sri Lanka Standard Time - (GMT+05:30) Sri Jayawardenepura', 'Nepal Standard Time - (GMT+05:45) Kathmandu' = 'Nepal Standard Time - (GMT+05:45) Kathmandu', 'N. Central Asia Standard Time - (GMT+06:00) Almaty, Novosibirsk' = 'N. Central Asia Standard Time - (GMT+06:00) Almaty, Novosibirsk', 'Central Asia Standard Time - (GMT+06:00) Astana, Dhaka' = 'Central Asia Standard Time - (GMT+06:00) Astana, Dhaka', 'Myanmar Standard Time - (GMT+06:30) Yangon (Rangoon)' = 'Myanmar Standard Time - (GMT+06:30) Yangon (Rangoon)', 'SE Asia Standard Time - (GMT+07:00) Bangkok, Hanoi, Jakarta' = 'SE Asia Standard Time - (GMT+07:00) Bangkok, Hanoi, Jakarta', 'North Asia Standard Time - (GMT+07:00) Krasnoyarsk' = 'North Asia Standard Time - (GMT+07:00) Krasnoyarsk', 'China Standard Time - (GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi' = 'China Standard Time - (GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi', 'North Asia East Standard Time - (GMT+08:00) Irkutsk, Ulaan Bataar' = 'North Asia East Standard Time - (GMT+08:00) Irkutsk, Ulaan Bataar', 'Singapore Standard Time - (GMT+08:00) Kuala Lumpur, Singapore' = 'Singapore Standard Time - (GMT+08:00) Kuala Lumpur, Singapore', 'W. Australia Standard Time - (GMT+08:00) Perth' = 'W. Australia Standard Time - (GMT+08:00) Perth', 'Taipei Standard Time - (GMT+08:00) Taipei' = 'Taipei Standard Time - (GMT+08:00) Taipei', 'Tokyo Standard Time - (GMT+09:00) Osaka, Sapporo, Tokyo' = 'Tokyo Standard Time - (GMT+09:00) Osaka, Sapporo, Tokyo', 'Korea Standard Time - (GMT+09:00) Seoul' = 'Korea Standard Time - (GMT+09:00) Seoul', 'Yakutsk Standard Time - (GMT+09:00) Yakutsk' = 'Yakutsk Standard Time - (GMT+09:00) Yakutsk', 'Cen. Australia Standard Time - (GMT+09:30) Adelaide' = 'Cen. Australia Standard Time - (GMT+09:30) Adelaide', 'AUS Central Standard Time - (GMT+09:30) Darwin' = 'AUS Central Standard Time - (GMT+09:30) Darwin', 'E. Australia Standard Time - (GMT+10:00) Brisbane' = 'E. Australia Standard Time - (GMT+10:00) Brisbane', 'AUS Eastern Standard Time - (GMT+10:00) Canberra, Melbourne, Sydney' = 'AUS Eastern Standard Time - (GMT+10:00) Canberra, Melbourne, Sydney', 'West Pacific Standard Time - (GMT+10:00) Guam, Port Moresby' = 'West Pacific Standard Time - (GMT+10:00) Guam, Port Moresby', 'Tasmania Standard Time - (GMT+10:00) Hobart' = 'Tasmania Standard Time - (GMT+10:00) Hobart', 'Vladivostok Standard Time - (GMT+10:00) Vladivostok' = 'Vladivostok Standard Time - (GMT+10:00) Vladivostok', 'Central Pacific Standard Time - (GMT+11:00) Magadan, Solomon Is., New Caledonia' = 'Central Pacific Standard Time - (GMT+11:00) Magadan, Solomon Is., New Caledonia', 'New Zealand Standard Time - (GMT+12:00) Auckland, Wellington' = 'New Zealand Standard Time - (GMT+12:00) Auckland, Wellington', 'Fiji Standard Time - (GMT+12:00) Fiji, Kamchatka, Marshall Is.' = 'Fiji Standard Time - (GMT+12:00) Fiji, Kamchatka, Marshall Is.', 'Tonga Standard Time - (GMT+13:00) Nuku\'alofa' = 'Tonga Standard Time - (GMT+13:00) Nuku\'alofa', 'Azores Standard Time - (GMT-01:00) Azores' = 'Azores Standard Time - (GMT-01:00) Azores', 'Cape Verde Standard Time - (GMT-01:00) Cape Verde Is.' = 'Cape Verde Standard Time - (GMT-01:00) Cape Verde Is.', 'Mid-Atlantic Standard Time - (GMT-02:00) Mid-Atlantic' = 'Mid-Atlantic Standard Time - (GMT-02:00) Mid-Atlantic', 'E. South America Standard Time - (GMT-03:00) Brasilia' = 'E. South America Standard Time - (GMT-03:00) Brasilia', 'Argentina Standard Time - (GMT-03:00) Buenos Aires' = 'Argentina Standard Time - (GMT-03:00) Buenos Aires', 'SA Eastern Standard Time - (GMT-03:00) Georgetown' = 'SA Eastern Standard Time - (GMT-03:00) Georgetown', 'Greenland Standard Time - (GMT-03:00) Greenland' = 'Greenland Standard Time - (GMT-03:00) Greenland', 'Montevideo Standard Time - (GMT-03:00) Montevideo' = 'Montevideo Standard Time - (GMT-03:00) Montevideo', 'Newfoundland Standard Time - (GMT-03:30) Newfoundland' = 'Newfoundland Standard Time - (GMT-03:30) Newfoundland', 'Atlantic Standard Time - (GMT-04:00) Atlantic Time (Canada)' = 'Atlantic Standard Time - (GMT-04:00) Atlantic Time (Canada)', 'SA Western Standard Time - (GMT-04:00) La Paz' = 'SA Western Standard Time - (GMT-04:00) La Paz', 'Central Brazilian Standard Time - (GMT-04:00) Manaus' = 'Central Brazilian Standard Time - (GMT-04:00) Manaus', 'Pacific SA Standard Time - (GMT-04:00) Santiago' = 'Pacific SA Standard Time - (GMT-04:00) Santiago', 'Venezuela Standard Time - (GMT-04:30) Caracas' = 'Venezuela Standard Time - (GMT-04:30) Caracas', 'SA Pacific Standard Time - (GMT-05:00) Bogota, Lima, Quito, Rio Branco' = 'SA Pacific Standard Time - (GMT-05:00) Bogota, Lima, Quito, Rio Branco', 'Eastern Standard Time - (GMT-05:00) Eastern Time (US & Canada)' = 'Eastern Standard Time - (GMT-05:00) Eastern Time (US & Canada)', 'US Eastern Standard Time - (GMT-05:00) Indiana (East)' = 'US Eastern Standard Time - (GMT-05:00) Indiana (East)', 'Central America Standard Time - (GMT-06:00) Central America' = 'Central America Standard Time - (GMT-06:00) Central America', 'Central Standard Time - (GMT-06:00) Central Time (US & Canada)' = 'Central Standard Time - (GMT-06:00) Central Time (US & Canada)', 'Central Standard Time (Mexico) - (GMT-06:00) Guadalajara, Mexico City, Monterrey' = 'Central Standard Time (Mexico) - (GMT-06:00) Guadalajara, Mexico City, Monterrey', 'Canada Central Standard Time - (GMT-06:00) Saskatchewan' = 'Canada Central Standard Time - (GMT-06:00) Saskatchewan', 'US Mountain Standard Time - (GMT-07:00) Arizona' = 'US Mountain Standard Time - (GMT-07:00) Arizona', 'Mountain Standard Time (Mexico) - (GMT-07:00) Chihuahua, La Paz, Mazatlan' = 'Mountain Standard Time (Mexico) - (GMT-07:00) Chihuahua, La Paz, Mazatlan', 'Mountain Standard Time - (GMT-07:00) Mountain Time (US & Canada)' = 'Mountain Standard Time - (GMT-07:00) Mountain Time (US & Canada)', 'Pacific Standard Time - (GMT-08:00) Pacific Time (US & Canada)' = 'Pacific Standard Time - (GMT-08:00) Pacific Time (US & Canada)', 'Pacific Standard Time (Mexico) - (GMT-08:00) Tijuana, Baja California' = 'Pacific Standard Time (Mexico) - (GMT-08:00) Tijuana, Baja California', 'Alaskan Standard Time - (GMT-09:00) Alaska' = 'Alaskan Standard Time - (GMT-09:00) Alaska', 'Hawaiian Standard Time - (GMT-10:00) Hawaii' = 'Hawaiian Standard Time - (GMT-10:00) Hawaii', 'Samoa Standard Time - (GMT-11:00) Midway Island, Samoa' = 'Samoa Standard Time - (GMT-11:00) Midway Island, Samoa', 'Dateline Standard Time - (GMT-12:00) International Date Line West' = 'Dateline Standard Time - (GMT-12:00) International Date Line West' }
 
 	export interface InputDateTimeDifference {
 
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputDateTimeFormatCulture { 'en-US' = 0, 'af-ZA' = 1, 'ar-AE' = 2, 'ar-BH' = 3, 'ar-DZ' = 4, 'ar-EG' = 5, 'ar-IQ' = 6, 'ar-JO' = 7, 'ar-KW' = 8, 'ar-LB' = 9, 'ar-LY' = 10, 'ar-MA' = 11, 'ar-OM' = 12, 'ar-QA' = 13, 'ar-SA' = 14, 'ar-SY' = 15, 'ar-TN' = 16, 'ar-YE' = 17, 'az-AZ' = 18, 'be-BY' = 19, 'bg-BG' = 20, 'bs-BA' = 21, 'ca-ES' = 22, 'cs-CZ' = 23, 'cy-GB' = 24, 'da-DK' = 25, 'de-AT' = 26, 'de-CH' = 27, 'de-DE' = 28, 'de-LI' = 29, 'de-LU' = 30, 'el-GR' = 31, 'en-AU' = 32, 'en-BZ' = 33, 'en-CA' = 34, 'en-CB' = 35, 'en-GB' = 36, 'en-IE' = 37, 'en-JM' = 38, 'en-NZ' = 39, 'en-PH' = 40, 'en-TT' = 41, 'en-ZA' = 42, 'en-ZW' = 43, 'es-AR' = 44, 'es-BO' = 45, 'es-CL' = 46, 'es-CO' = 47, 'es-CR' = 48, 'es-DO' = 49, 'es-EC' = 50, 'es-ES' = 51, 'es-GT' = 52, 'es-HN' = 53, 'es-MX' = 54, 'es-NI' = 55, 'es-PA' = 56, 'es-PE' = 57, 'es-PR' = 58, 'es-PY' = 59, 'es-SV' = 60, 'es-UY' = 61, 'es-VE' = 62, 'et-EE' = 63, 'eu-ES' = 64, 'fa-IR' = 65, 'fi-FI' = 66, 'fo-FO' = 67, 'fr-BE' = 68, 'fr-CA' = 69, 'fr-CH' = 70, 'fr-FR' = 71, 'fr-LU' = 72, 'fr-MC' = 73, 'gl-ES' = 74, 'gu-IN' = 75, 'he-IL' = 76, 'hi-IN' = 77, 'hr-BA' = 78, 'hr-HR' = 79, 'hu-HU' = 80, 'hy-AM' = 81, 'id-ID' = 82, 'is-IS' = 83, 'it-CH' = 84, 'it-IT' = 85, 'ja-JP' = 86, 'ka-GE' = 87, 'kk-KZ' = 88, 'kn-IN' = 89, 'ko-KR' = 90, 'ky-KG' = 91, 'lt-LT' = 92, 'lv-LV' = 93, 'mi-NZ' = 94, 'mn-MN' = 95, 'mr-IN' = 96, 'ms-BN' = 97, 'ms-MY' = 98, 'mt-MT' = 99, 'nl-BE' = 100, 'nl-NL' = 101, 'nn-NO' = 102, 'ns-ZA' = 103, 'pa-IN' = 104, 'pl-PL' = 105, 'ps-AR' = 106, 'pt-BR' = 107, 'pt-PT' = 108, 'ro-RO' = 109, 'ru-RU' = 110, 'sa-IN' = 111, 'sk-SK' = 112, 'sl-SI' = 113, 'sq-AL' = 114, 'sr-BA' = 115, 'sr-SP' = 116, 'sv-FI' = 117, 'sv-SE' = 118, 'sw-KE' = 119, 'ta-IN' = 120, 'te-IN' = 121, 'th-TH' = 122, 'tl-PH' = 123, 'tn-ZA' = 124, 'tr-TR' = 125, 'uk-UA' = 126, 'ur-PK' = 127, 'uz-UZ' = 128, 'vi-VN' = 129, 'zh-CN' = 130, 'zh-HK' = 131, 'zh-MO' = 132, 'zh-SG' = 133, 'zh-TW' = 134, 'zu-ZA' = 135 }
+	export enum InputDateTimeFormatCulture { 'en-US' = 'en-US', 'af-ZA' = 'af-ZA', 'ar-AE' = 'ar-AE', 'ar-BH' = 'ar-BH', 'ar-DZ' = 'ar-DZ', 'ar-EG' = 'ar-EG', 'ar-IQ' = 'ar-IQ', 'ar-JO' = 'ar-JO', 'ar-KW' = 'ar-KW', 'ar-LB' = 'ar-LB', 'ar-LY' = 'ar-LY', 'ar-MA' = 'ar-MA', 'ar-OM' = 'ar-OM', 'ar-QA' = 'ar-QA', 'ar-SA' = 'ar-SA', 'ar-SY' = 'ar-SY', 'ar-TN' = 'ar-TN', 'ar-YE' = 'ar-YE', 'az-AZ' = 'az-AZ', 'be-BY' = 'be-BY', 'bg-BG' = 'bg-BG', 'bs-BA' = 'bs-BA', 'ca-ES' = 'ca-ES', 'cs-CZ' = 'cs-CZ', 'cy-GB' = 'cy-GB', 'da-DK' = 'da-DK', 'de-AT' = 'de-AT', 'de-CH' = 'de-CH', 'de-DE' = 'de-DE', 'de-LI' = 'de-LI', 'de-LU' = 'de-LU', 'el-GR' = 'el-GR', 'en-AU' = 'en-AU', 'en-BZ' = 'en-BZ', 'en-CA' = 'en-CA', 'en-CB' = 'en-CB', 'en-GB' = 'en-GB', 'en-IE' = 'en-IE', 'en-JM' = 'en-JM', 'en-NZ' = 'en-NZ', 'en-PH' = 'en-PH', 'en-TT' = 'en-TT', 'en-ZA' = 'en-ZA', 'en-ZW' = 'en-ZW', 'es-AR' = 'es-AR', 'es-BO' = 'es-BO', 'es-CL' = 'es-CL', 'es-CO' = 'es-CO', 'es-CR' = 'es-CR', 'es-DO' = 'es-DO', 'es-EC' = 'es-EC', 'es-ES' = 'es-ES', 'es-GT' = 'es-GT', 'es-HN' = 'es-HN', 'es-MX' = 'es-MX', 'es-NI' = 'es-NI', 'es-PA' = 'es-PA', 'es-PE' = 'es-PE', 'es-PR' = 'es-PR', 'es-PY' = 'es-PY', 'es-SV' = 'es-SV', 'es-UY' = 'es-UY', 'es-VE' = 'es-VE', 'et-EE' = 'et-EE', 'eu-ES' = 'eu-ES', 'fa-IR' = 'fa-IR', 'fi-FI' = 'fi-FI', 'fo-FO' = 'fo-FO', 'fr-BE' = 'fr-BE', 'fr-CA' = 'fr-CA', 'fr-CH' = 'fr-CH', 'fr-FR' = 'fr-FR', 'fr-LU' = 'fr-LU', 'fr-MC' = 'fr-MC', 'gl-ES' = 'gl-ES', 'gu-IN' = 'gu-IN', 'he-IL' = 'he-IL', 'hi-IN' = 'hi-IN', 'hr-BA' = 'hr-BA', 'hr-HR' = 'hr-HR', 'hu-HU' = 'hu-HU', 'hy-AM' = 'hy-AM', 'id-ID' = 'id-ID', 'is-IS' = 'is-IS', 'it-CH' = 'it-CH', 'it-IT' = 'it-IT', 'ja-JP' = 'ja-JP', 'ka-GE' = 'ka-GE', 'kk-KZ' = 'kk-KZ', 'kn-IN' = 'kn-IN', 'ko-KR' = 'ko-KR', 'ky-KG' = 'ky-KG', 'lt-LT' = 'lt-LT', 'lv-LV' = 'lv-LV', 'mi-NZ' = 'mi-NZ', 'mn-MN' = 'mn-MN', 'mr-IN' = 'mr-IN', 'ms-BN' = 'ms-BN', 'ms-MY' = 'ms-MY', 'mt-MT' = 'mt-MT', 'nl-BE' = 'nl-BE', 'nl-NL' = 'nl-NL', 'nn-NO' = 'nn-NO', 'ns-ZA' = 'ns-ZA', 'pa-IN' = 'pa-IN', 'pl-PL' = 'pl-PL', 'ps-AR' = 'ps-AR', 'pt-BR' = 'pt-BR', 'pt-PT' = 'pt-PT', 'ro-RO' = 'ro-RO', 'ru-RU' = 'ru-RU', 'sa-IN' = 'sa-IN', 'sk-SK' = 'sk-SK', 'sl-SI' = 'sl-SI', 'sq-AL' = 'sq-AL', 'sr-BA' = 'sr-BA', 'sr-SP' = 'sr-SP', 'sv-FI' = 'sv-FI', 'sv-SE' = 'sv-SE', 'sw-KE' = 'sw-KE', 'ta-IN' = 'ta-IN', 'te-IN' = 'te-IN', 'th-TH' = 'th-TH', 'tl-PH' = 'tl-PH', 'tn-ZA' = 'tn-ZA', 'tr-TR' = 'tr-TR', 'uk-UA' = 'uk-UA', 'ur-PK' = 'ur-PK', 'uz-UZ' = 'uz-UZ', 'vi-VN' = 'vi-VN', 'zh-CN' = 'zh-CN', 'zh-HK' = 'zh-HK', 'zh-MO' = 'zh-MO', 'zh-SG' = 'zh-SG', 'zh-TW' = 'zh-TW', 'zu-ZA' = 'zu-ZA' }
 
 	export interface InputDateTimeInfo {
 
@@ -1284,7 +1284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputGenerateHashAlgorithm { MD5 = 0, SHA1 = 1, SHA256 = 2, SHA384 = 3, SHA512 = 4 }
+	export enum InputGenerateHashAlgorithm { MD5 = 'MD5', SHA1 = 'SHA1', SHA256 = 'SHA256', SHA384 = 'SHA384', SHA512 = 'SHA512' }
 
 	export interface InputGenerateUniqueID {
 
@@ -1544,7 +1544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputMarketIndexSymbol { 'DJA.INDX (Dow Jones Composite Average)' = 0, 'DJI.INDX (Dow Jones Industrial Average)' = 1, 'DJT.INDX (Dow Jones Transportation)' = 2, 'DJUS.INDX (Dow Jones US)' = 3, 'DXY.INDX (US Dollar Index)' = 4, 'GDOW.INDX (Global Dow USD)' = 5, 'NY.INDX (NYSE US 100 Index)' = 6, 'NYA.INDX (NYSE Composite)' = 7, 'IXIC.INDX (NASDAQ Composite)' = 8, 'NDX.INDX (NASDAQ 100)' = 9, 'GSPC.INDX (S&P 500)' = 10, 'ES.INDX (S&P 500 Futures)' = 11, 'MID.INDX (S&P Midcap 400)' = 12, 'GPTSE.INDX (S&P TSX Composite Index [Canada])' = 13, 'FTSE.INDX (FTSE 100 Index [UK])' = 14, 'CDAXX.INDX (DAX Composite Index [Germany])' = 15, 'GDAXI.INDX (DAX Index [Germany])' = 16, 'HSCE.INDX (Hang Seng China Enterprise (CEI))' = 17, 'HSI.INDX (Hang Seng Index [Hong Kong])' = 18, 'N100.INDX (EuroNext 100)' = 19, 'N225.INDX (Nikkei 225 Index)' = 20, 'RTSI.INDX (RTSI Index [Russia])' = 21, 'SSEC.INDX (Shanghai Composite)' = 22, 'SSMI.INDX (Swiss Market Index)' = 23 }
+	export enum InputMarketIndexSymbol { 'DJA.INDX (Dow Jones Composite Average)' = 'DJA.INDX (Dow Jones Composite Average)', 'DJI.INDX (Dow Jones Industrial Average)' = 'DJI.INDX (Dow Jones Industrial Average)', 'DJT.INDX (Dow Jones Transportation)' = 'DJT.INDX (Dow Jones Transportation)', 'DJUS.INDX (Dow Jones US)' = 'DJUS.INDX (Dow Jones US)', 'DXY.INDX (US Dollar Index)' = 'DXY.INDX (US Dollar Index)', 'GDOW.INDX (Global Dow USD)' = 'GDOW.INDX (Global Dow USD)', 'NY.INDX (NYSE US 100 Index)' = 'NY.INDX (NYSE US 100 Index)', 'NYA.INDX (NYSE Composite)' = 'NYA.INDX (NYSE Composite)', 'IXIC.INDX (NASDAQ Composite)' = 'IXIC.INDX (NASDAQ Composite)', 'NDX.INDX (NASDAQ 100)' = 'NDX.INDX (NASDAQ 100)', 'GSPC.INDX (S&P 500)' = 'GSPC.INDX (S&P 500)', 'ES.INDX (S&P 500 Futures)' = 'ES.INDX (S&P 500 Futures)', 'MID.INDX (S&P Midcap 400)' = 'MID.INDX (S&P Midcap 400)', 'GPTSE.INDX (S&P TSX Composite Index [Canada])' = 'GPTSE.INDX (S&P TSX Composite Index [Canada])', 'FTSE.INDX (FTSE 100 Index [UK])' = 'FTSE.INDX (FTSE 100 Index [UK])', 'CDAXX.INDX (DAX Composite Index [Germany])' = 'CDAXX.INDX (DAX Composite Index [Germany])', 'GDAXI.INDX (DAX Index [Germany])' = 'GDAXI.INDX (DAX Index [Germany])', 'HSCE.INDX (Hang Seng China Enterprise (CEI))' = 'HSCE.INDX (Hang Seng China Enterprise (CEI))', 'HSI.INDX (Hang Seng Index [Hong Kong])' = 'HSI.INDX (Hang Seng Index [Hong Kong])', 'N100.INDX (EuroNext 100)' = 'N100.INDX (EuroNext 100)', 'N225.INDX (Nikkei 225 Index)' = 'N225.INDX (Nikkei 225 Index)', 'RTSI.INDX (RTSI Index [Russia])' = 'RTSI.INDX (RTSI Index [Russia])', 'SSEC.INDX (Shanghai Composite)' = 'SSEC.INDX (Shanghai Composite)', 'SSMI.INDX (Swiss Market Index)' = 'SSMI.INDX (Swiss Market Index)' }
 
 	export interface InputNumberRange {
 
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputQRCodePayload { 'Plain Text (string)' = 0, 'Bitcoin Payment (address|amount|label|message)' = 1, 'Bookmark (url|title)' = 2, 'Calendar Event (subject|description|location|start|end|allDayEvent[\'true\' or \'false\']|format [\'universal\' or \'iCal\'])' = 3, 'Geolocation (latitude|longitude)' = 4, 'Mail (recipient|subject|message)' = 5, 'Phone Number (string)' = 6, 'SMS (number|message)' = 7, 'URL (string)' = 8, 'WiFi (ssid|password|authenticationMode [\'WEP\', \'WPA\' or \'WPA2\'])' = 9 }
+	export enum InputQRCodePayload { 'Plain Text (string)' = 'Plain Text (string)', 'Bitcoin Payment (address|amount|label|message)' = 'Bitcoin Payment (address|amount|label|message)', 'Bookmark (url|title)' = 'Bookmark (url|title)', 'Calendar Event (subject|description|location|start|end|allDayEvent[\'true\' or \'false\']|format [\'universal\' or \'iCal\'])' = 'Calendar Event (subject|description|location|start|end|allDayEvent[\'true\' or \'false\']|format [\'universal\' or \'iCal\'])', 'Geolocation (latitude|longitude)' = 'Geolocation (latitude|longitude)', 'Mail (recipient|subject|message)' = 'Mail (recipient|subject|message)', 'Phone Number (string)' = 'Phone Number (string)', 'SMS (number|message)' = 'SMS (number|message)', 'URL (string)' = 'URL (string)', 'WiFi (ssid|password|authenticationMode [\'WEP\', \'WPA\' or \'WPA2\'])' = 'WiFi (ssid|password|authenticationMode [\'WEP\', \'WPA\' or \'WPA2\'])' }
 
 	export interface InputRedactString {
 
@@ -1786,7 +1786,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputStockPricesExchange { 'XNYS (New York Stock Exchange)' = 0, 'XNAS (NASDAQ Stock Exchange)' = 1, 'XBRU (Euronext Brussels)' = 2, 'XTSE (Toronto Stock Exchange)' = 3, 'XCNQ (Candadian Securities Exchange)' = 4, 'XSHG (Shanghai Stock Exchange)' = 5, 'XCSE (Copenhagen Stock Exchange)' = 6, 'XPAR (Euronext Paris)' = 7, 'XFRA (Deutsche Borse)' = 8, 'XHKG (Hong Kong Stock Exchange)' = 9, 'XNSE (National Stock Exchange India)' = 10, 'XTAE (Tel Aviv Stock Exchange)' = 11, 'XNGO (Nagoya Stock Exchange)' = 12, 'XFKA (Fukuoka Stock Exchange)' = 13, 'XSAP (Sapporo Stock Exchange)' = 14, 'XMEX (Mexican Stock Exchange)' = 15, 'XNZE (New Zealand Stock Exchange)' = 16, 'XLIS (Euronext Lisbon)' = 17, 'MISX (Moscow Stock Exchange)' = 18, 'XSES (Singapore Stock Exchange)' = 19, 'XLON (London Stock Exchange)' = 20, 'XASE (American Stock Exchange)' = 21, 'XASX (Australia Stock Exchange)' = 22, 'XDFM (Dubai Financial Market)' = 23, 'XBKK (Stock Exchange of Thailand)' = 24, 'XSWX (SIX Swiss Exchange)' = 25, 'XSTO (Stockholm Stock Exchange)' = 26, 'BMEX (Bolsas y Mercados Españoles)' = 27, 'XJSE (Johannesburg Stock Exchange)' = 28 }
+	export enum InputStockPricesExchange { 'XNYS (New York Stock Exchange)' = 'XNYS (New York Stock Exchange)', 'XNAS (NASDAQ Stock Exchange)' = 'XNAS (NASDAQ Stock Exchange)', 'XBRU (Euronext Brussels)' = 'XBRU (Euronext Brussels)', 'XTSE (Toronto Stock Exchange)' = 'XTSE (Toronto Stock Exchange)', 'XCNQ (Candadian Securities Exchange)' = 'XCNQ (Candadian Securities Exchange)', 'XSHG (Shanghai Stock Exchange)' = 'XSHG (Shanghai Stock Exchange)', 'XCSE (Copenhagen Stock Exchange)' = 'XCSE (Copenhagen Stock Exchange)', 'XPAR (Euronext Paris)' = 'XPAR (Euronext Paris)', 'XFRA (Deutsche Borse)' = 'XFRA (Deutsche Borse)', 'XHKG (Hong Kong Stock Exchange)' = 'XHKG (Hong Kong Stock Exchange)', 'XNSE (National Stock Exchange India)' = 'XNSE (National Stock Exchange India)', 'XTAE (Tel Aviv Stock Exchange)' = 'XTAE (Tel Aviv Stock Exchange)', 'XNGO (Nagoya Stock Exchange)' = 'XNGO (Nagoya Stock Exchange)', 'XFKA (Fukuoka Stock Exchange)' = 'XFKA (Fukuoka Stock Exchange)', 'XSAP (Sapporo Stock Exchange)' = 'XSAP (Sapporo Stock Exchange)', 'XMEX (Mexican Stock Exchange)' = 'XMEX (Mexican Stock Exchange)', 'XNZE (New Zealand Stock Exchange)' = 'XNZE (New Zealand Stock Exchange)', 'XLIS (Euronext Lisbon)' = 'XLIS (Euronext Lisbon)', 'MISX (Moscow Stock Exchange)' = 'MISX (Moscow Stock Exchange)', 'XSES (Singapore Stock Exchange)' = 'XSES (Singapore Stock Exchange)', 'XLON (London Stock Exchange)' = 'XLON (London Stock Exchange)', 'XASE (American Stock Exchange)' = 'XASE (American Stock Exchange)', 'XASX (Australia Stock Exchange)' = 'XASX (Australia Stock Exchange)', 'XDFM (Dubai Financial Market)' = 'XDFM (Dubai Financial Market)', 'XBKK (Stock Exchange of Thailand)' = 'XBKK (Stock Exchange of Thailand)', 'XSWX (SIX Swiss Exchange)' = 'XSWX (SIX Swiss Exchange)', 'XSTO (Stockholm Stock Exchange)' = 'XSTO (Stockholm Stock Exchange)', 'BMEX (Bolsas y Mercados Españoles)' = 'BMEX (Bolsas y Mercados Españoles)', 'XJSE (Johannesburg Stock Exchange)' = 'XJSE (Johannesburg Stock Exchange)' }
 
 	export interface InputString {
 
@@ -1971,7 +1971,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputStringToFileExtension { TXT = 0, CSV = 1, HTML = 2, XML = 3, CSS = 4, JSON = 5, JS = 6 }
+	export enum InputStringToFileExtension { TXT = 'TXT', CSV = 'CSV', HTML = 'HTML', XML = 'XML', CSS = 'CSS', JSON = 'JSON', JS = 'JS' }
 
 	export interface InputTextToSpeech {
 
@@ -2022,9 +2022,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InputTextToSpeechType { PlainText = 0, SSML = 1 }
+	export enum InputTextToSpeechType { PlainText = 'PlainText', SSML = 'SSML' }
 
-	export enum InputTextToSpeechVoice { 'ar-EG, Hoda (Female)' = 0, 'ar-SA, Naayf (Male)' = 1, 'bg-BG, Ivan (Male)' = 2, 'ca-ES, Herena (Female)' = 3, 'cs-CZ, Jakub (Male)' = 4, 'da-DK, Helle (Female)' = 5, 'de-AT, Michael (Male)' = 6, 'de-CH, Karsten (Male)' = 7, 'de-DE, Hedda (Female)' = 8, 'de-DE, Stefan (Male)' = 9, 'el-GR, Stefanos (Male)' = 10, 'en-AU, Catherine (Female)' = 11, 'en-AU, Hayley (Female)' = 12, 'en-CA, Heather (Female)' = 13, 'en-CA, Linda (Female)' = 14, 'en-GB, George (Male)' = 15, 'en-GB, Hazel (Female)' = 16, 'en-GB, Susan (Female)' = 17, 'en-IE, Sean (Male)' = 18, 'en-IN, Heera (Female)' = 19, 'en-IN, Priya (Female)' = 20, 'en-IN, Ravi (Male)' = 21, 'en-US, Aria (Female)' = 22, 'en-US, Benjamin (Male)' = 23, 'en-US, Guy (Male)' = 24, 'en-US, Zira (Female)' = 25, 'es-ES, Helena (Female)' = 26, 'es-ES, Laura (Female)' = 27, 'es-ES, Pablo (Male)' = 28, 'es-MX, Hilda (Female)' = 29, 'es-MX, Raul (Male)' = 30, 'fi-FI, Heidi (Female)' = 31, 'fr-CA, Caroline (Female)' = 32, 'fr-CA, Harmonie (Female)' = 33, 'fr-CH, Guillaume (Male)' = 34, 'fr-FR, Hortense (Female)' = 35, 'fr-FR, Julie (Female)' = 36, 'fr-FR, Paul (Male)' = 37, 'he-IL, Asaf (Male)' = 38, 'hi-IN, Hemant (Male)' = 39, 'hi-IN, Kalpana (Female)' = 40, 'hr-HR, Matej (Male)' = 41, 'hu-HU, Szabolcs (Male)' = 42, 'id-ID, Andika (Male)' = 43, 'it-IT, Cosimo (Male)' = 44, 'it-IT, Lucia (Female)' = 45, 'ja-JP, Ayumi (Female)' = 46, 'ja-JP, Haruka (Female)' = 47, 'ja-JP, Ichiro (Male)' = 48, 'ko-KR, Heami (Female)' = 49, 'ms-MY, Rizwan (Male)' = 50, 'nb-NO, Hulda (Female)' = 51, 'nl-NL, Hanna (Female)' = 52, 'pl-PL, Paulina (Female)' = 53, 'pt-BR, Daniel (Male)' = 54, 'pt-BR, Heloisa (Female)' = 55, 'pt-PT, Helia (Female)' = 56, 'ro-RO, Andrei (Male)' = 57, 'ru-RU, Ekaterina (Female)' = 58, 'ru-RU, Irina (Female)' = 59, 'ru-RU, Pavel (Male)' = 60, 'sk-SK, Filip (Male)' = 61, 'sl-SI, Lado (Male)' = 62, 'sv-SE, Hedvig (Female)' = 63, 'ta-IN, Valluvar (Male)' = 64, 'te-IN, Chitra (Female)' = 65, 'th-TH, Pattara (Male)' = 66, 'tr-TR, Seda (Female)' = 67, 'vi-VN, An (Male)' = 68, 'zh-CN, Huihui (Female)' = 69, 'zh-CN, Kangkang (Male)' = 70, 'zh-CN, Yaoyao (Female)' = 71, 'zh-HK, Danny (Male)' = 72, 'zh-HK, Tracy (Female)' = 73, 'zh-TW, HanHan (Female)' = 74, 'zh-TW, Yating (Female)' = 75, 'zh-TW, Zhiwei (Male)' = 76 }
+	export enum InputTextToSpeechVoice { 'ar-EG, Hoda (Female)' = 'ar-EG, Hoda (Female)', 'ar-SA, Naayf (Male)' = 'ar-SA, Naayf (Male)', 'bg-BG, Ivan (Male)' = 'bg-BG, Ivan (Male)', 'ca-ES, Herena (Female)' = 'ca-ES, Herena (Female)', 'cs-CZ, Jakub (Male)' = 'cs-CZ, Jakub (Male)', 'da-DK, Helle (Female)' = 'da-DK, Helle (Female)', 'de-AT, Michael (Male)' = 'de-AT, Michael (Male)', 'de-CH, Karsten (Male)' = 'de-CH, Karsten (Male)', 'de-DE, Hedda (Female)' = 'de-DE, Hedda (Female)', 'de-DE, Stefan (Male)' = 'de-DE, Stefan (Male)', 'el-GR, Stefanos (Male)' = 'el-GR, Stefanos (Male)', 'en-AU, Catherine (Female)' = 'en-AU, Catherine (Female)', 'en-AU, Hayley (Female)' = 'en-AU, Hayley (Female)', 'en-CA, Heather (Female)' = 'en-CA, Heather (Female)', 'en-CA, Linda (Female)' = 'en-CA, Linda (Female)', 'en-GB, George (Male)' = 'en-GB, George (Male)', 'en-GB, Hazel (Female)' = 'en-GB, Hazel (Female)', 'en-GB, Susan (Female)' = 'en-GB, Susan (Female)', 'en-IE, Sean (Male)' = 'en-IE, Sean (Male)', 'en-IN, Heera (Female)' = 'en-IN, Heera (Female)', 'en-IN, Priya (Female)' = 'en-IN, Priya (Female)', 'en-IN, Ravi (Male)' = 'en-IN, Ravi (Male)', 'en-US, Aria (Female)' = 'en-US, Aria (Female)', 'en-US, Benjamin (Male)' = 'en-US, Benjamin (Male)', 'en-US, Guy (Male)' = 'en-US, Guy (Male)', 'en-US, Zira (Female)' = 'en-US, Zira (Female)', 'es-ES, Helena (Female)' = 'es-ES, Helena (Female)', 'es-ES, Laura (Female)' = 'es-ES, Laura (Female)', 'es-ES, Pablo (Male)' = 'es-ES, Pablo (Male)', 'es-MX, Hilda (Female)' = 'es-MX, Hilda (Female)', 'es-MX, Raul (Male)' = 'es-MX, Raul (Male)', 'fi-FI, Heidi (Female)' = 'fi-FI, Heidi (Female)', 'fr-CA, Caroline (Female)' = 'fr-CA, Caroline (Female)', 'fr-CA, Harmonie (Female)' = 'fr-CA, Harmonie (Female)', 'fr-CH, Guillaume (Male)' = 'fr-CH, Guillaume (Male)', 'fr-FR, Hortense (Female)' = 'fr-FR, Hortense (Female)', 'fr-FR, Julie (Female)' = 'fr-FR, Julie (Female)', 'fr-FR, Paul (Male)' = 'fr-FR, Paul (Male)', 'he-IL, Asaf (Male)' = 'he-IL, Asaf (Male)', 'hi-IN, Hemant (Male)' = 'hi-IN, Hemant (Male)', 'hi-IN, Kalpana (Female)' = 'hi-IN, Kalpana (Female)', 'hr-HR, Matej (Male)' = 'hr-HR, Matej (Male)', 'hu-HU, Szabolcs (Male)' = 'hu-HU, Szabolcs (Male)', 'id-ID, Andika (Male)' = 'id-ID, Andika (Male)', 'it-IT, Cosimo (Male)' = 'it-IT, Cosimo (Male)', 'it-IT, Lucia (Female)' = 'it-IT, Lucia (Female)', 'ja-JP, Ayumi (Female)' = 'ja-JP, Ayumi (Female)', 'ja-JP, Haruka (Female)' = 'ja-JP, Haruka (Female)', 'ja-JP, Ichiro (Male)' = 'ja-JP, Ichiro (Male)', 'ko-KR, Heami (Female)' = 'ko-KR, Heami (Female)', 'ms-MY, Rizwan (Male)' = 'ms-MY, Rizwan (Male)', 'nb-NO, Hulda (Female)' = 'nb-NO, Hulda (Female)', 'nl-NL, Hanna (Female)' = 'nl-NL, Hanna (Female)', 'pl-PL, Paulina (Female)' = 'pl-PL, Paulina (Female)', 'pt-BR, Daniel (Male)' = 'pt-BR, Daniel (Male)', 'pt-BR, Heloisa (Female)' = 'pt-BR, Heloisa (Female)', 'pt-PT, Helia (Female)' = 'pt-PT, Helia (Female)', 'ro-RO, Andrei (Male)' = 'ro-RO, Andrei (Male)', 'ru-RU, Ekaterina (Female)' = 'ru-RU, Ekaterina (Female)', 'ru-RU, Irina (Female)' = 'ru-RU, Irina (Female)', 'ru-RU, Pavel (Male)' = 'ru-RU, Pavel (Male)', 'sk-SK, Filip (Male)' = 'sk-SK, Filip (Male)', 'sl-SI, Lado (Male)' = 'sl-SI, Lado (Male)', 'sv-SE, Hedvig (Female)' = 'sv-SE, Hedvig (Female)', 'ta-IN, Valluvar (Male)' = 'ta-IN, Valluvar (Male)', 'te-IN, Chitra (Female)' = 'te-IN, Chitra (Female)', 'th-TH, Pattara (Male)' = 'th-TH, Pattara (Male)', 'tr-TR, Seda (Female)' = 'tr-TR, Seda (Female)', 'vi-VN, An (Male)' = 'vi-VN, An (Male)', 'zh-CN, Huihui (Female)' = 'zh-CN, Huihui (Female)', 'zh-CN, Kangkang (Male)' = 'zh-CN, Kangkang (Male)', 'zh-CN, Yaoyao (Female)' = 'zh-CN, Yaoyao (Female)', 'zh-HK, Danny (Male)' = 'zh-HK, Danny (Male)', 'zh-HK, Tracy (Female)' = 'zh-HK, Tracy (Female)', 'zh-TW, HanHan (Female)' = 'zh-TW, HanHan (Female)', 'zh-TW, Yating (Female)' = 'zh-TW, Yating (Female)', 'zh-TW, Zhiwei (Male)' = 'zh-TW, Zhiwei (Male)' }
 
 	export interface InputTranslateString {
 
@@ -2062,7 +2062,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputTranslateStringLanguage { Arabic = 0, 'Chinese (Simplified)' = 1, Czech = 2, Danish = 3, Dutch = 4, English = 5, Finnish = 6, French = 7, German = 8, Greek = 9, Hindi = 10, Hungarian = 11, Italian = 12, Japanese = 13, Klingon = 14, Korean = 15, Norweigan = 16, Polish = 17, Portuguese = 18, Russian = 19, Spanish = 20, Swedish = 21, Turkish = 22, Vietnamese = 23, Welsh = 24 }
+	export enum InputTranslateStringLanguage { Arabic = 'Arabic', 'Chinese (Simplified)' = 'Chinese (Simplified)', Czech = 'Czech', Danish = 'Danish', Dutch = 'Dutch', English = 'English', Finnish = 'Finnish', French = 'French', German = 'German', Greek = 'Greek', Hindi = 'Hindi', Hungarian = 'Hungarian', Italian = 'Italian', Japanese = 'Japanese', Klingon = 'Klingon', Korean = 'Korean', Norweigan = 'Norweigan', Polish = 'Polish', Portuguese = 'Portuguese', Russian = 'Russian', Spanish = 'Spanish', Swedish = 'Swedish', Turkish = 'Turkish', Vietnamese = 'Vietnamese', Welsh = 'Welsh' }
 
 	export interface InputTrimString {
 
@@ -2100,7 +2100,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputTrimStringType { Start = 0, End = 1, Both = 2 }
+	export enum InputTrimStringType { Start = 'Start', End = 'End', Both = 'Both' }
 
 	export interface InputVerifyHash {
 

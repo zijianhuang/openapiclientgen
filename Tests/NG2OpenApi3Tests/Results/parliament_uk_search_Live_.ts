@@ -37,7 +37,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixesExtension { atom = 0, rss = 1, html = 2, json = 3 }
+	export enum QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixesExtension { atom = 'atom', rss = 'rss', html = 'html', json = 'json' }
 
 }
 

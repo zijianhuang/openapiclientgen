@@ -200,7 +200,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class PetClient {
+	export class MyClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
@@ -281,12 +281,6 @@ export namespace MyNS {
 		DeletePet(petId: number): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
 		}
-	}
-
-	@Injectable()
-	export class StoreClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
-		}
 
 		/**
 		 * Returns pet inventories by status
@@ -328,12 +322,6 @@ export namespace MyNS {
 		 */
 		DeleteOrder(orderId: number): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'store/order/' + orderId, { observe: 'response', responseType: 'text' });
-		}
-	}
-
-	@Injectable()
-	export class UserClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

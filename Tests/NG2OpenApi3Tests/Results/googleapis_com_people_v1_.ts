@@ -204,9 +204,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ProfileMetadataObjectType { OBJECT_TYPE_UNSPECIFIED = 0, PERSON = 1, PAGE = 2 }
+	export enum ProfileMetadataObjectType { OBJECT_TYPE_UNSPECIFIED = 'OBJECT_TYPE_UNSPECIFIED', PERSON = 'PERSON', PAGE = 'PAGE' }
 
-	export enum SourceType { SOURCE_TYPE_UNSPECIFIED = 0, ACCOUNT = 1, PROFILE = 2, DOMAIN_PROFILE = 3, CONTACT = 4, OTHER_CONTACT = 5, DOMAIN_CONTACT = 6 }
+	export enum SourceType { SOURCE_TYPE_UNSPECIFIED = 'SOURCE_TYPE_UNSPECIFIED', ACCOUNT = 'ACCOUNT', PROFILE = 'PROFILE', DOMAIN_PROFILE = 'DOMAIN_PROFILE', CONTACT = 'CONTACT', OTHER_CONTACT = 'OTHER_CONTACT', DOMAIN_CONTACT = 'DOMAIN_CONTACT' }
 
 
 	/** A person's age range. */
@@ -232,7 +232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgeRangeTypeAgeRange { AGE_RANGE_UNSPECIFIED = 0, LESS_THAN_EIGHTEEN = 1, EIGHTEEN_TO_TWENTY = 2, TWENTY_ONE_OR_OLDER = 3 }
+	export enum AgeRangeTypeAgeRange { AGE_RANGE_UNSPECIFIED = 'AGE_RANGE_UNSPECIFIED', LESS_THAN_EIGHTEEN = 'LESS_THAN_EIGHTEEN', EIGHTEEN_TO_TWENTY = 'EIGHTEEN_TO_TWENTY', TWENTY_ONE_OR_OLDER = 'TWENTY_ONE_OR_OLDER' }
 
 
 	/** A request to create a batch of contacts. */
@@ -449,7 +449,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BiographyContentType { CONTENT_TYPE_UNSPECIFIED = 0, TEXT_PLAIN = 1, TEXT_HTML = 2 }
+	export enum BiographyContentType { CONTENT_TYPE_UNSPECIFIED = 'CONTENT_TYPE_UNSPECIFIED', TEXT_PLAIN = 'TEXT_PLAIN', TEXT_HTML = 'TEXT_HTML' }
 
 
 	/** A person's birthday. At least one of the `date` and `text` fields are specified. The `date` and `text` fields typically represent the same date, but are not guaranteed to. Clients should always set the `date` field when mutating birthdays. */
@@ -1122,7 +1122,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MiscKeywordType { TYPE_UNSPECIFIED = 0, OUTLOOK_BILLING_INFORMATION = 1, OUTLOOK_DIRECTORY_SERVER = 2, OUTLOOK_KEYWORD = 3, OUTLOOK_MILEAGE = 4, OUTLOOK_PRIORITY = 5, OUTLOOK_SENSITIVITY = 6, OUTLOOK_SUBJECT = 7, OUTLOOK_USER = 8, HOME = 9, WORK = 10, OTHER = 11 }
+	export enum MiscKeywordType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', OUTLOOK_BILLING_INFORMATION = 'OUTLOOK_BILLING_INFORMATION', OUTLOOK_DIRECTORY_SERVER = 'OUTLOOK_DIRECTORY_SERVER', OUTLOOK_KEYWORD = 'OUTLOOK_KEYWORD', OUTLOOK_MILEAGE = 'OUTLOOK_MILEAGE', OUTLOOK_PRIORITY = 'OUTLOOK_PRIORITY', OUTLOOK_SENSITIVITY = 'OUTLOOK_SENSITIVITY', OUTLOOK_SUBJECT = 'OUTLOOK_SUBJECT', OUTLOOK_USER = 'OUTLOOK_USER', HOME = 'HOME', WORK = 'WORK', OTHER = 'OTHER' }
 
 
 	/** A person's name. If the name is a mononym, the family name is empty. */
@@ -1270,7 +1270,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NicknameType { DEFAULT = 0, MAIDEN_NAME = 1, INITIALS = 2, GPLUS = 3, OTHER_NAME = 4, ALTERNATE_NAME = 5, SHORT_NAME = 6 }
+	export enum NicknameType { DEFAULT = 'DEFAULT', MAIDEN_NAME = 'MAIDEN_NAME', INITIALS = 'INITIALS', GPLUS = 'GPLUS', OTHER_NAME = 'OTHER_NAME', ALTERNATE_NAME = 'ALTERNATE_NAME', SHORT_NAME = 'SHORT_NAME' }
 
 
 	/** A person's occupation. */
@@ -2001,7 +2001,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactGroupGroupType { GROUP_TYPE_UNSPECIFIED = 0, USER_CONTACT_GROUP = 1, SYSTEM_CONTACT_GROUP = 2 }
+	export enum ContactGroupGroupType { GROUP_TYPE_UNSPECIFIED = 'GROUP_TYPE_UNSPECIFIED', USER_CONTACT_GROUP = 'USER_CONTACT_GROUP', SYSTEM_CONTACT_GROUP = 'SYSTEM_CONTACT_GROUP' }
 
 
 	/** The metadata about a contact group. */
@@ -2808,7 +2808,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum People_people_connections_listSortOrder { LAST_MODIFIED_ASCENDING = 0, LAST_MODIFIED_DESCENDING = 1, FIRST_NAME_ASCENDING = 2, LAST_NAME_ASCENDING = 3 }
+	export enum People_people_connections_listSortOrder { LAST_MODIFIED_ASCENDING = 'LAST_MODIFIED_ASCENDING', LAST_MODIFIED_DESCENDING = 'LAST_MODIFIED_DESCENDING', FIRST_NAME_ASCENDING = 'FIRST_NAME_ASCENDING', LAST_NAME_ASCENDING = 'LAST_NAME_ASCENDING' }
 
 }
 

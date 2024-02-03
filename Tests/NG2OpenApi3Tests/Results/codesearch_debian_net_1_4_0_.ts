@@ -132,7 +132,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SearchMatch_mode { literal = 0, regexp = 1 }
+	export enum SearchMatch_mode { literal = 'literal', regexp = 'regexp' }
 
 }
 

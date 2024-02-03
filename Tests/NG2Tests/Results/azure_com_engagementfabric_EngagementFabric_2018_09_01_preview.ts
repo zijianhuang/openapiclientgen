@@ -249,11 +249,11 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResultReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameAvailabilityResultReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The reason of name availability result */
-	export enum CheckNameUnavailableReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameUnavailableReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** The default error response */
@@ -345,7 +345,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyDescriptionRank { PrimaryKey = 0, SecondaryKey = 1 }
+	export enum KeyDescriptionRank { PrimaryKey = 'PrimaryKey', SecondaryKey = 'SecondaryKey' }
 
 
 	/** The list of the EngagementFabric account keys */
@@ -366,7 +366,7 @@ export namespace MyNS {
 
 
 	/** The rank of the EngagementFabric account key */
-	export enum KeyRank { PrimaryKey = 0, SecondaryKey = 1 }
+	export enum KeyRank { PrimaryKey = 'PrimaryKey', SecondaryKey = 'SecondaryKey' }
 
 
 	/** The EngagementFabric operation */

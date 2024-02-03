@@ -62,7 +62,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { ContainerService = 0, Instance = 1, StaticIp = 2, KeyPair = 3, InstanceSnapshot = 4, Domain = 5, PeeredVpc = 6, LoadBalancer = 7, LoadBalancerTlsCertificate = 8, Disk = 9, DiskSnapshot = 10, RelationalDatabase = 11, RelationalDatabaseSnapshot = 12, ExportSnapshotRecord = 13, CloudFormationStackRecord = 14, Alarm = 15, ContactMethod = 16, Distribution = 17, Certificate = 18, Bucket = 19 }
+	export enum ResourceType { ContainerService = 'ContainerService', Instance = 'Instance', StaticIp = 'StaticIp', KeyPair = 'KeyPair', InstanceSnapshot = 'InstanceSnapshot', Domain = 'Domain', PeeredVpc = 'PeeredVpc', LoadBalancer = 'LoadBalancer', LoadBalancerTlsCertificate = 'LoadBalancerTlsCertificate', Disk = 'Disk', DiskSnapshot = 'DiskSnapshot', RelationalDatabase = 'RelationalDatabase', RelationalDatabaseSnapshot = 'RelationalDatabaseSnapshot', ExportSnapshotRecord = 'ExportSnapshotRecord', CloudFormationStackRecord = 'CloudFormationStackRecord', Alarm = 'Alarm', ContactMethod = 'ContactMethod', Distribution = 'Distribution', Certificate = 'Certificate', Bucket = 'Bucket' }
 
 
 	/** Describes the resource location. */
@@ -84,11 +84,11 @@ export namespace MyNS {
 
 	}
 
-	export enum RegionName { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'eu-west-1' = 4, 'eu-west-2' = 5, 'eu-west-3' = 6, 'eu-central-1' = 7, 'ca-central-1' = 8, 'ap-south-1' = 9, 'ap-southeast-1' = 10, 'ap-southeast-2' = 11, 'ap-northeast-1' = 12, 'ap-northeast-2' = 13, 'eu-north-1' = 14 }
+	export enum RegionName { 'us-east-1' = 'us-east-1', 'us-east-2' = 'us-east-2', 'us-west-1' = 'us-west-1', 'us-west-2' = 'us-west-2', 'eu-west-1' = 'eu-west-1', 'eu-west-2' = 'eu-west-2', 'eu-west-3' = 'eu-west-3', 'eu-central-1' = 'eu-central-1', 'ca-central-1' = 'ca-central-1', 'ap-south-1' = 'ap-south-1', 'ap-southeast-1' = 'ap-southeast-1', 'ap-southeast-2' = 'ap-southeast-2', 'ap-northeast-1' = 'ap-northeast-1', 'ap-northeast-2' = 'ap-northeast-2', 'eu-north-1' = 'eu-north-1' }
 
-	export enum OperationType { DeleteKnownHostKeys = 0, DeleteInstance = 1, CreateInstance = 2, StopInstance = 3, StartInstance = 4, RebootInstance = 5, OpenInstancePublicPorts = 6, PutInstancePublicPorts = 7, CloseInstancePublicPorts = 8, AllocateStaticIp = 9, ReleaseStaticIp = 10, AttachStaticIp = 11, DetachStaticIp = 12, UpdateDomainEntry = 13, DeleteDomainEntry = 14, CreateDomain = 15, DeleteDomain = 16, CreateInstanceSnapshot = 17, DeleteInstanceSnapshot = 18, CreateInstancesFromSnapshot = 19, CreateLoadBalancer = 20, DeleteLoadBalancer = 21, AttachInstancesToLoadBalancer = 22, DetachInstancesFromLoadBalancer = 23, UpdateLoadBalancerAttribute = 24, CreateLoadBalancerTlsCertificate = 25, DeleteLoadBalancerTlsCertificate = 26, AttachLoadBalancerTlsCertificate = 27, CreateDisk = 28, DeleteDisk = 29, AttachDisk = 30, DetachDisk = 31, CreateDiskSnapshot = 32, DeleteDiskSnapshot = 33, CreateDiskFromSnapshot = 34, CreateRelationalDatabase = 35, UpdateRelationalDatabase = 36, DeleteRelationalDatabase = 37, CreateRelationalDatabaseFromSnapshot = 38, CreateRelationalDatabaseSnapshot = 39, DeleteRelationalDatabaseSnapshot = 40, UpdateRelationalDatabaseParameters = 41, StartRelationalDatabase = 42, RebootRelationalDatabase = 43, StopRelationalDatabase = 44, EnableAddOn = 45, DisableAddOn = 46, PutAlarm = 47, GetAlarms = 48, DeleteAlarm = 49, TestAlarm = 50, CreateContactMethod = 51, GetContactMethods = 52, SendContactMethodVerification = 53, DeleteContactMethod = 54, CreateDistribution = 55, UpdateDistribution = 56, DeleteDistribution = 57, ResetDistributionCache = 58, AttachCertificateToDistribution = 59, DetachCertificateFromDistribution = 60, UpdateDistributionBundle = 61, SetIpAddressType = 62, CreateCertificate = 63, DeleteCertificate = 64, CreateContainerService = 65, UpdateContainerService = 66, DeleteContainerService = 67, CreateContainerServiceDeployment = 68, CreateContainerServiceRegistryLogin = 69, RegisterContainerImage = 70, DeleteContainerImage = 71, CreateBucket = 72, DeleteBucket = 73, CreateBucketAccessKey = 74, DeleteBucketAccessKey = 75, UpdateBucketBundle = 76, UpdateBucket = 77, SetResourceAccessForBucket = 78, UpdateInstanceMetadataOptions = 79, StartGUISession = 80, StopGUISession = 81 }
+	export enum OperationType { DeleteKnownHostKeys = 'DeleteKnownHostKeys', DeleteInstance = 'DeleteInstance', CreateInstance = 'CreateInstance', StopInstance = 'StopInstance', StartInstance = 'StartInstance', RebootInstance = 'RebootInstance', OpenInstancePublicPorts = 'OpenInstancePublicPorts', PutInstancePublicPorts = 'PutInstancePublicPorts', CloseInstancePublicPorts = 'CloseInstancePublicPorts', AllocateStaticIp = 'AllocateStaticIp', ReleaseStaticIp = 'ReleaseStaticIp', AttachStaticIp = 'AttachStaticIp', DetachStaticIp = 'DetachStaticIp', UpdateDomainEntry = 'UpdateDomainEntry', DeleteDomainEntry = 'DeleteDomainEntry', CreateDomain = 'CreateDomain', DeleteDomain = 'DeleteDomain', CreateInstanceSnapshot = 'CreateInstanceSnapshot', DeleteInstanceSnapshot = 'DeleteInstanceSnapshot', CreateInstancesFromSnapshot = 'CreateInstancesFromSnapshot', CreateLoadBalancer = 'CreateLoadBalancer', DeleteLoadBalancer = 'DeleteLoadBalancer', AttachInstancesToLoadBalancer = 'AttachInstancesToLoadBalancer', DetachInstancesFromLoadBalancer = 'DetachInstancesFromLoadBalancer', UpdateLoadBalancerAttribute = 'UpdateLoadBalancerAttribute', CreateLoadBalancerTlsCertificate = 'CreateLoadBalancerTlsCertificate', DeleteLoadBalancerTlsCertificate = 'DeleteLoadBalancerTlsCertificate', AttachLoadBalancerTlsCertificate = 'AttachLoadBalancerTlsCertificate', CreateDisk = 'CreateDisk', DeleteDisk = 'DeleteDisk', AttachDisk = 'AttachDisk', DetachDisk = 'DetachDisk', CreateDiskSnapshot = 'CreateDiskSnapshot', DeleteDiskSnapshot = 'DeleteDiskSnapshot', CreateDiskFromSnapshot = 'CreateDiskFromSnapshot', CreateRelationalDatabase = 'CreateRelationalDatabase', UpdateRelationalDatabase = 'UpdateRelationalDatabase', DeleteRelationalDatabase = 'DeleteRelationalDatabase', CreateRelationalDatabaseFromSnapshot = 'CreateRelationalDatabaseFromSnapshot', CreateRelationalDatabaseSnapshot = 'CreateRelationalDatabaseSnapshot', DeleteRelationalDatabaseSnapshot = 'DeleteRelationalDatabaseSnapshot', UpdateRelationalDatabaseParameters = 'UpdateRelationalDatabaseParameters', StartRelationalDatabase = 'StartRelationalDatabase', RebootRelationalDatabase = 'RebootRelationalDatabase', StopRelationalDatabase = 'StopRelationalDatabase', EnableAddOn = 'EnableAddOn', DisableAddOn = 'DisableAddOn', PutAlarm = 'PutAlarm', GetAlarms = 'GetAlarms', DeleteAlarm = 'DeleteAlarm', TestAlarm = 'TestAlarm', CreateContactMethod = 'CreateContactMethod', GetContactMethods = 'GetContactMethods', SendContactMethodVerification = 'SendContactMethodVerification', DeleteContactMethod = 'DeleteContactMethod', CreateDistribution = 'CreateDistribution', UpdateDistribution = 'UpdateDistribution', DeleteDistribution = 'DeleteDistribution', ResetDistributionCache = 'ResetDistributionCache', AttachCertificateToDistribution = 'AttachCertificateToDistribution', DetachCertificateFromDistribution = 'DetachCertificateFromDistribution', UpdateDistributionBundle = 'UpdateDistributionBundle', SetIpAddressType = 'SetIpAddressType', CreateCertificate = 'CreateCertificate', DeleteCertificate = 'DeleteCertificate', CreateContainerService = 'CreateContainerService', UpdateContainerService = 'UpdateContainerService', DeleteContainerService = 'DeleteContainerService', CreateContainerServiceDeployment = 'CreateContainerServiceDeployment', CreateContainerServiceRegistryLogin = 'CreateContainerServiceRegistryLogin', RegisterContainerImage = 'RegisterContainerImage', DeleteContainerImage = 'DeleteContainerImage', CreateBucket = 'CreateBucket', DeleteBucket = 'DeleteBucket', CreateBucketAccessKey = 'CreateBucketAccessKey', DeleteBucketAccessKey = 'DeleteBucketAccessKey', UpdateBucketBundle = 'UpdateBucketBundle', UpdateBucket = 'UpdateBucket', SetResourceAccessForBucket = 'SetResourceAccessForBucket', UpdateInstanceMetadataOptions = 'UpdateInstanceMetadataOptions', StartGUISession = 'StartGUISession', StopGUISession = 'StopGUISession' }
 
-	export enum OperationStatus { NotStarted = 0, Started = 1, Failed = 2, Completed = 3, Succeeded = 4 }
+	export enum OperationStatus { NotStarted = 'NotStarted', Started = 'Started', Failed = 'Failed', Completed = 'Completed', Succeeded = 'Succeeded' }
 
 	export interface AllocateStaticIpRequest {
 
@@ -415,7 +415,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkProtocol { tcp = 0, all = 1, udp = 2, icmp = 3 }
+	export enum NetworkProtocol { tcp = 'tcp', all = 'all', udp = 'udp', icmp = 'icmp' }
 
 	export interface CopySnapshotResult {
 		operations?: Array<Operation>;
@@ -544,7 +544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccessType { public = 0, private = 1 }
+	export enum AccessType { public = 'public', private = 'private' }
 
 
 	/** <p>Describes a tag key and optional value assigned to an Amazon Lightsail resource.</p> <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p> */
@@ -700,7 +700,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StatusType { Active = 0, Inactive = 1 }
+	export enum StatusType { Active = 'Active', Inactive = 'Inactive' }
 
 
 	/** <p>Describes the last time an access key was used.</p> <note> <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action.</p> </note> */
@@ -848,7 +848,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateStatus { PENDING_VALIDATION = 0, ISSUED = 1, INACTIVE = 2, EXPIRED = 3, VALIDATION_TIMED_OUT = 4, REVOKED = 5, FAILED = 6 }
+	export enum CertificateStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', ISSUED = 'ISSUED', INACTIVE = 'INACTIVE', EXPIRED = 'EXPIRED', VALIDATION_TIMED_OUT = 'VALIDATION_TIMED_OUT', REVOKED = 'REVOKED', FAILED = 'FAILED' }
 
 
 	/** Describes the domain name system (DNS) records that you must add to the DNS of your registered domain to validate ownership for an Amazon Lightsail SSL/TLS certificate. */
@@ -915,9 +915,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsRecordCreationStateCode { SUCCEEDED = 0, STARTED = 1, FAILED = 2 }
+	export enum DnsRecordCreationStateCode { SUCCEEDED = 'SUCCEEDED', STARTED = 'STARTED', FAILED = 'FAILED' }
 
-	export enum CertificateDomainValidationStatus { PENDING_VALIDATION = 0, FAILED = 1, SUCCESS = 2 }
+	export enum CertificateDomainValidationStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', FAILED = 'FAILED', SUCCESS = 'SUCCESS' }
 
 
 	/** Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail. */
@@ -943,7 +943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RenewalStatus { PendingAutoRenewal = 0, PendingValidation = 1, Success = 2, Failed = 3 }
+	export enum RenewalStatus { PendingAutoRenewal = 'PendingAutoRenewal', PendingValidation = 'PendingValidation', Success = 'Success', Failed = 'Failed' }
 
 	export interface CreateCertificateRequest {
 
@@ -1040,7 +1040,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortInfoSourceType { DEFAULT = 0, INSTANCE = 1, NONE = 2, CLOSED = 3 }
+	export enum PortInfoSourceType { DEFAULT = 'DEFAULT', INSTANCE = 'INSTANCE', NONE = 'NONE', CLOSED = 'CLOSED' }
 
 	export interface CreateContactMethodResult {
 		operations?: Array<Operation>;
@@ -1077,7 +1077,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactProtocol { Email = 0, SMS = 1 }
+	export enum ContactProtocol { Email = 'Email', SMS = 'SMS' }
 
 	export interface CreateContainerServiceResult {
 		containerService?: ContainerService;
@@ -1147,9 +1147,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerServicePowerName { nano = 0, micro = 1, small = 2, medium = 3, large = 4, xlarge = 5 }
+	export enum ContainerServicePowerName { nano = 'nano', micro = 'micro', small = 'small', medium = 'medium', large = 'large', xlarge = 'xlarge' }
 
-	export enum ContainerServiceState { PENDING = 0, READY = 1, RUNNING = 2, UPDATING = 3, DELETING = 4, DISABLED = 5, DEPLOYING = 6 }
+	export enum ContainerServiceState { PENDING = 'PENDING', READY = 'READY', RUNNING = 'RUNNING', UPDATING = 'UPDATING', DELETING = 'DELETING', DISABLED = 'DISABLED', DEPLOYING = 'DEPLOYING' }
 
 
 	/** Describes the current state of a container service. */
@@ -1171,7 +1171,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerServiceStateDetailCode { CREATING_SYSTEM_RESOURCES = 0, CREATING_NETWORK_INFRASTRUCTURE = 1, PROVISIONING_CERTIFICATE = 2, PROVISIONING_SERVICE = 3, CREATING_DEPLOYMENT = 4, EVALUATING_HEALTH_CHECK = 5, ACTIVATING_DEPLOYMENT = 6, CERTIFICATE_LIMIT_EXCEEDED = 7, UNKNOWN_ERROR = 8 }
+	export enum ContainerServiceStateDetailCode { CREATING_SYSTEM_RESOURCES = 'CREATING_SYSTEM_RESOURCES', CREATING_NETWORK_INFRASTRUCTURE = 'CREATING_NETWORK_INFRASTRUCTURE', PROVISIONING_CERTIFICATE = 'PROVISIONING_CERTIFICATE', PROVISIONING_SERVICE = 'PROVISIONING_SERVICE', CREATING_DEPLOYMENT = 'CREATING_DEPLOYMENT', EVALUATING_HEALTH_CHECK = 'EVALUATING_HEALTH_CHECK', ACTIVATING_DEPLOYMENT = 'ACTIVATING_DEPLOYMENT', CERTIFICATE_LIMIT_EXCEEDED = 'CERTIFICATE_LIMIT_EXCEEDED', UNKNOWN_ERROR = 'UNKNOWN_ERROR' }
 
 
 	/** <p>Describes a container deployment configuration of an Amazon Lightsail container service.</p> <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p> */
@@ -1198,7 +1198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerServiceDeploymentState { ACTIVATING = 0, ACTIVE = 1, INACTIVE = 2, FAILED = 3 }
+	export enum ContainerServiceDeploymentState { ACTIVATING = 'ACTIVATING', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', FAILED = 'FAILED' }
 
 	export interface ContainerMap {
 	}
@@ -1564,7 +1564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AddOnType { AutoSnapshot = 0, StopInstanceOnIdle = 1 }
+	export enum AddOnType { AutoSnapshot = 'AutoSnapshot', StopInstanceOnIdle = 'StopInstanceOnIdle' }
 
 
 	/** <p>Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.</p> <p>When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:</p> <ul> <li> <p>If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> </ul> */
@@ -1792,7 +1792,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginProtocolPolicyEnum { 'http-only' = 0, 'https-only' = 1 }
+	export enum OriginProtocolPolicyEnum { 'http-only' = 'http-only', 'https-only' = 'https-only' }
 
 
 	/** Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution. */
@@ -1811,7 +1811,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BehaviorEnum { 'dont-cache' = 0, cache = 1 }
+	export enum BehaviorEnum { 'dont-cache' = 'dont-cache', cache = 'cache' }
 
 
 	/** <p>Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.</p> <p>These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.</p> */
@@ -1863,7 +1863,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ForwardValues { none = 0, 'allow-list' = 1, all = 2 }
+	export enum ForwardValues { none = 'none', 'allow-list' = 'allow-list', all = 'all' }
 
 
 	/** <p>Describes the request headers that a Lightsail distribution bases caching on.</p> <p>For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. </p> */
@@ -1883,7 +1883,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HeaderEnum { Accept = 0, 'Accept-Charset' = 1, 'Accept-Datetime' = 2, 'Accept-Encoding' = 3, 'Accept-Language' = 4, Authorization = 5, 'CloudFront-Forwarded-Proto' = 6, 'CloudFront-Is-Desktop-Viewer' = 7, 'CloudFront-Is-Mobile-Viewer' = 8, 'CloudFront-Is-SmartTV-Viewer' = 9, 'CloudFront-Is-Tablet-Viewer' = 10, 'CloudFront-Viewer-Country' = 11, Host = 12, Origin = 13, Referer = 14 }
+	export enum HeaderEnum { Accept = 'Accept', 'Accept-Charset' = 'Accept-Charset', 'Accept-Datetime' = 'Accept-Datetime', 'Accept-Encoding' = 'Accept-Encoding', 'Accept-Language' = 'Accept-Language', Authorization = 'Authorization', 'CloudFront-Forwarded-Proto' = 'CloudFront-Forwarded-Proto', 'CloudFront-Is-Desktop-Viewer' = 'CloudFront-Is-Desktop-Viewer', 'CloudFront-Is-Mobile-Viewer' = 'CloudFront-Is-Mobile-Viewer', 'CloudFront-Is-SmartTV-Viewer' = 'CloudFront-Is-SmartTV-Viewer', 'CloudFront-Is-Tablet-Viewer' = 'CloudFront-Is-Tablet-Viewer', 'CloudFront-Viewer-Country' = 'CloudFront-Viewer-Country', Host = 'Host', Origin = 'Origin', Referer = 'Referer' }
 
 
 	/** <p>Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.</p> <p>For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.</p> */
@@ -1923,7 +1923,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IpAddressType { dualstack = 0, ipv4 = 1 }
+	export enum IpAddressType { dualstack = 'dualstack', ipv4 = 'ipv4' }
 
 	export interface CreateDistributionRequest {
 
@@ -2107,7 +2107,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Status { startExpired = 0, notStarted = 1, started = 2, starting = 3, stopped = 4, stopping = 5, settingUpInstance = 6, failedInstanceCreation = 7, failedStartingGUISession = 8, failedStoppingGUISession = 9 }
+	export enum Status { startExpired = 'startExpired', notStarted = 'notStarted', started = 'started', starting = 'starting', stopped = 'stopped', stopping = 'stopping', settingUpInstance = 'settingUpInstance', failedInstanceCreation = 'failedInstanceCreation', failedStartingGUISession = 'failedStartingGUISession', failedStoppingGUISession = 'failedStoppingGUISession' }
 
 
 	/** Describes a web-based, remote graphical user interface (GUI), NICE DCV session. The session is used to access a virtual computer’s operating system or application. */
@@ -3642,17 +3642,17 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
+	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 'GreaterThanOrEqualToThreshold', GreaterThanThreshold = 'GreaterThanThreshold', LessThanThreshold = 'LessThanThreshold', LessThanOrEqualToThreshold = 'LessThanOrEqualToThreshold' }
 
-	export enum TreatMissingData { breaching = 0, notBreaching = 1, ignore = 2, missing = 3 }
+	export enum TreatMissingData { breaching = 'breaching', notBreaching = 'notBreaching', ignore = 'ignore', missing = 'missing' }
 
-	export enum MetricStatistic { Minimum = 0, Maximum = 1, Sum = 2, Average = 3, SampleCount = 4 }
+	export enum MetricStatistic { Minimum = 'Minimum', Maximum = 'Maximum', Sum = 'Sum', Average = 'Average', SampleCount = 'SampleCount' }
 
-	export enum MetricName { CPUUtilization = 0, NetworkIn = 1, NetworkOut = 2, StatusCheckFailed = 3, StatusCheckFailed_Instance = 4, StatusCheckFailed_System = 5, ClientTLSNegotiationErrorCount = 6, HealthyHostCount = 7, UnhealthyHostCount = 8, HTTPCode_LB_4XX_Count = 9, HTTPCode_LB_5XX_Count = 10, HTTPCode_Instance_2XX_Count = 11, HTTPCode_Instance_3XX_Count = 12, HTTPCode_Instance_4XX_Count = 13, HTTPCode_Instance_5XX_Count = 14, InstanceResponseTime = 15, RejectedConnectionCount = 16, RequestCount = 17, DatabaseConnections = 18, DiskQueueDepth = 19, FreeStorageSpace = 20, NetworkReceiveThroughput = 21, NetworkTransmitThroughput = 22, BurstCapacityTime = 23, BurstCapacityPercentage = 24 }
+	export enum MetricName { CPUUtilization = 'CPUUtilization', NetworkIn = 'NetworkIn', NetworkOut = 'NetworkOut', StatusCheckFailed = 'StatusCheckFailed', StatusCheckFailed_Instance = 'StatusCheckFailed_Instance', StatusCheckFailed_System = 'StatusCheckFailed_System', ClientTLSNegotiationErrorCount = 'ClientTLSNegotiationErrorCount', HealthyHostCount = 'HealthyHostCount', UnhealthyHostCount = 'UnhealthyHostCount', HTTPCode_LB_4XX_Count = 'HTTPCode_LB_4XX_Count', HTTPCode_LB_5XX_Count = 'HTTPCode_LB_5XX_Count', HTTPCode_Instance_2XX_Count = 'HTTPCode_Instance_2XX_Count', HTTPCode_Instance_3XX_Count = 'HTTPCode_Instance_3XX_Count', HTTPCode_Instance_4XX_Count = 'HTTPCode_Instance_4XX_Count', HTTPCode_Instance_5XX_Count = 'HTTPCode_Instance_5XX_Count', InstanceResponseTime = 'InstanceResponseTime', RejectedConnectionCount = 'RejectedConnectionCount', RequestCount = 'RequestCount', DatabaseConnections = 'DatabaseConnections', DiskQueueDepth = 'DiskQueueDepth', FreeStorageSpace = 'FreeStorageSpace', NetworkReceiveThroughput = 'NetworkReceiveThroughput', NetworkTransmitThroughput = 'NetworkTransmitThroughput', BurstCapacityTime = 'BurstCapacityTime', BurstCapacityPercentage = 'BurstCapacityPercentage' }
 
-	export enum AlarmState { OK = 0, ALARM = 1, INSUFFICIENT_DATA = 2 }
+	export enum AlarmState { OK = 'OK', ALARM = 'ALARM', INSUFFICIENT_DATA = 'INSUFFICIENT_DATA' }
 
-	export enum MetricUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
+	export enum MetricUnit { Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', Count = 'Count', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second', None = 'None' }
 
 	export interface GetAlarmsRequest {
 		alarmName?: string;
@@ -3714,7 +3714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoSnapshotStatus { Success = 0, Failed = 1, InProgress = 2, NotFound = 3 }
+	export enum AutoSnapshotStatus { Success = 'Success', Failed = 'Failed', InProgress = 'InProgress', NotFound = 'NotFound' }
 
 
 	/** Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot. */
@@ -3820,11 +3820,11 @@ export namespace MyNS {
 
 	}
 
-	export enum BlueprintType { os = 0, app = 1 }
+	export enum BlueprintType { os = 'os', app = 'app' }
 
-	export enum InstancePlatform { LINUX_UNIX = 0, WINDOWS = 1 }
+	export enum InstancePlatform { LINUX_UNIX = 'LINUX_UNIX', WINDOWS = 'WINDOWS' }
 
-	export enum AppCategory { LfR = 0 }
+	export enum AppCategory { LfR = 'LfR' }
 
 	export interface GetBlueprintsRequest {
 		includeInactive?: boolean | null;
@@ -3943,7 +3943,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BucketMetricName { BucketSizeBytes = 0, NumberOfObjects = 1 }
+	export enum BucketMetricName { BucketSizeBytes = 'BucketSizeBytes', NumberOfObjects = 'NumberOfObjects' }
 
 
 	/** Describes the metric data point. */
@@ -4076,9 +4076,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountLevelBpaSyncStatus { InSync = 0, Failed = 1, NeverSynced = 2, Defaulted = 3 }
+	export enum AccountLevelBpaSyncStatus { InSync = 'InSync', Failed = 'Failed', NeverSynced = 'NeverSynced', Defaulted = 'Defaulted' }
 
-	export enum BPAStatusMessage { DEFAULTED_FOR_SLR_MISSING = 0, SYNC_ON_HOLD = 1, DEFAULTED_FOR_SLR_MISSING_ON_HOLD = 2, Unknown = 3 }
+	export enum BPAStatusMessage { DEFAULTED_FOR_SLR_MISSING = 'DEFAULTED_FOR_SLR_MISSING', SYNC_ON_HOLD = 'SYNC_ON_HOLD', DEFAULTED_FOR_SLR_MISSING_ON_HOLD = 'DEFAULTED_FOR_SLR_MISSING_ON_HOLD', Unknown = 'Unknown' }
 
 	export interface GetBucketsRequest {
 		bucketName?: string;
@@ -4258,7 +4258,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RecordState { Started = 0, Succeeded = 1, Failed = 2 }
+	export enum RecordState { Started = 'Started', Succeeded = 'Succeeded', Failed = 'Failed' }
 
 
 	/** Describes the source of a CloudFormation stack record (i.e., the export snapshot record). */
@@ -4283,7 +4283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudFormationStackRecordSourceType { ExportSnapshotRecord = 0 }
+	export enum CloudFormationStackRecordSourceType { ExportSnapshotRecord = 'ExportSnapshotRecord' }
 
 
 	/** Describes the destination of a record. */
@@ -4368,7 +4368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactMethodStatus { PendingVerification = 0, Valid = 1, Invalid = 2 }
+	export enum ContactMethodStatus { PendingVerification = 'PendingVerification', Valid = 'Valid', Invalid = 'Invalid' }
 
 	export interface GetContactMethodsRequest {
 		protocols?: Array<ContactProtocol>;
@@ -4575,7 +4575,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerServiceMetricName { CPUUtilization = 0, MemoryUtilization = 1 }
+	export enum ContainerServiceMetricName { CPUUtilization = 'CPUUtilization', MemoryUtilization = 'MemoryUtilization' }
 
 	export interface GetContainerServiceMetricDataRequest {
 
@@ -4785,9 +4785,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PricingUnit { GB = 0, Hrs = 1, 'GB-Mo' = 2, Bundles = 3, Queries = 4 }
+	export enum PricingUnit { GB = 'GB', Hrs = 'Hrs', 'GB-Mo' = 'GB-Mo', Bundles = 'Bundles', Queries = 'Queries' }
 
-	export enum Currency { USD = 0 }
+	export enum Currency { USD = 'USD' }
 
 
 	/** Sets the start date and end date for retrieving a cost estimate. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. */
@@ -4945,9 +4945,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskState { pending = 0, error = 1, available = 2, 'in-use' = 3, unknown = 4 }
+	export enum DiskState { pending = 'pending', error = 'error', available = 'available', 'in-use' = 'in-use', unknown = 'unknown' }
 
-	export enum AutoMountStatus { Failed = 0, Pending = 1, Mounted = 2, NotMounted = 3 }
+	export enum AutoMountStatus { Failed = 'Failed', Pending = 'Pending', Mounted = 'Mounted', NotMounted = 'NotMounted' }
 
 	export interface GetDiskRequest {
 
@@ -5032,7 +5032,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiskSnapshotState { pending = 0, completed = 1, error = 2, unknown = 3 }
+	export enum DiskSnapshotState { pending = 'pending', completed = 'completed', error = 'error', unknown = 'unknown' }
 
 	export interface GetDiskSnapshotRequest {
 
@@ -5198,7 +5198,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DistributionMetricName { Requests = 0, BytesDownloaded = 1, BytesUploaded = 2, TotalErrorRate = 3, Http4xxErrorRate = 4, Http5xxErrorRate = 5 }
+	export enum DistributionMetricName { Requests = 'Requests', BytesDownloaded = 'BytesDownloaded', BytesUploaded = 'BytesUploaded', TotalErrorRate = 'TotalErrorRate', Http4xxErrorRate = 'Http4xxErrorRate', Http5xxErrorRate = 'Http5xxErrorRate' }
 
 	export interface GetDistributionMetricDataRequest {
 
@@ -5365,7 +5365,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NameServersUpdateStateCode { SUCCEEDED = 0, PENDING = 1, FAILED = 2, STARTED = 3 }
+	export enum NameServersUpdateStateCode { SUCCEEDED = 'SUCCEEDED', PENDING = 'PENDING', FAILED = 'FAILED', STARTED = 'STARTED' }
 
 
 	/** Describes the deletion state of an Amazon Route 53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone. */
@@ -5511,7 +5511,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportSnapshotRecordSourceType { InstanceSnapshot = 0, DiskSnapshot = 1 }
+	export enum ExportSnapshotRecordSourceType { InstanceSnapshot = 'InstanceSnapshot', DiskSnapshot = 'DiskSnapshot' }
 
 
 	/** Describes an instance snapshot. */
@@ -5757,9 +5757,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PortAccessType { Public = 0, Private = 1 }
+	export enum PortAccessType { Public = 'Public', Private = 'Private' }
 
-	export enum AccessDirection { inbound = 0, outbound = 1 }
+	export enum AccessDirection { inbound = 'inbound', outbound = 'outbound' }
 
 
 	/** Describes the virtual private server (or <i>instance</i>) status. */
@@ -5810,11 +5810,11 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceMetadataState { pending = 0, applied = 1 }
+	export enum InstanceMetadataState { pending = 'pending', applied = 'applied' }
 
-	export enum HttpTokens { optional = 0, required = 1 }
+	export enum HttpTokens { optional = 'optional', required = 'required' }
 
-	export enum HttpEndpoint { disabled = 0, enabled = 1 }
+	export enum HttpEndpoint { disabled = 'disabled', enabled = 'enabled' }
 
 	export interface GetInstanceRequest {
 
@@ -5904,7 +5904,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceAccessProtocol { ssh = 0, rdp = 1 }
+	export enum InstanceAccessProtocol { ssh = 'ssh', rdp = 'rdp' }
 
 
 	/** Describes the public SSH host keys or the RDP certificate. */
@@ -5975,7 +5975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceMetricName { CPUUtilization = 0, NetworkIn = 1, NetworkOut = 2, StatusCheckFailed = 3, StatusCheckFailed_Instance = 4, StatusCheckFailed_System = 5, BurstCapacityTime = 6, BurstCapacityPercentage = 7, MetadataNoToken = 8 }
+	export enum InstanceMetricName { CPUUtilization = 'CPUUtilization', NetworkIn = 'NetworkIn', NetworkOut = 'NetworkOut', StatusCheckFailed = 'StatusCheckFailed', StatusCheckFailed_Instance = 'StatusCheckFailed_Instance', StatusCheckFailed_System = 'StatusCheckFailed_System', BurstCapacityTime = 'BurstCapacityTime', BurstCapacityPercentage = 'BurstCapacityPercentage', MetadataNoToken = 'MetadataNoToken' }
 
 	export interface GetInstanceMetricDataRequest {
 
@@ -6072,7 +6072,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PortState { open = 0, closed = 1 }
+	export enum PortState { open = 'open', closed = 'closed' }
 
 	export interface GetInstancePortStatesRequest {
 
@@ -6158,7 +6158,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceSnapshotState { pending = 0, error = 1, available = 2 }
+	export enum InstanceSnapshotState { pending = 'pending', error = 'error', available = 'available' }
 
 	export interface GetInstanceSnapshotRequest {
 
@@ -6387,9 +6387,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerState { active = 0, provisioning = 1, active_impaired = 2, failed = 3, unknown = 4 }
+	export enum LoadBalancerState { active = 'active', provisioning = 'provisioning', active_impaired = 'active_impaired', failed = 'failed', unknown = 'unknown' }
 
-	export enum LoadBalancerProtocol { HTTP_HTTPS = 0, HTTP = 1 }
+	export enum LoadBalancerProtocol { HTTP_HTTPS = 'HTTP_HTTPS', HTTP = 'HTTP' }
 
 
 	/** Describes information about the health of the instance. */
@@ -6414,9 +6414,9 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceHealthState { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
+	export enum InstanceHealthState { initial = 'initial', healthy = 'healthy', unhealthy = 'unhealthy', unused = 'unused', draining = 'draining', unavailable = 'unavailable' }
 
-	export enum InstanceHealthReason { 'Lb.RegistrationInProgress' = 0, 'Lb.InitialHealthChecking' = 1, 'Lb.InternalError' = 2, 'Instance.ResponseCodeMismatch' = 3, 'Instance.Timeout' = 4, 'Instance.FailedHealthChecks' = 5, 'Instance.NotRegistered' = 6, 'Instance.NotInUse' = 7, 'Instance.DeregistrationInProgress' = 8, 'Instance.InvalidState' = 9, 'Instance.IpUnusable' = 10 }
+	export enum InstanceHealthReason { 'Lb.RegistrationInProgress' = 'Lb.RegistrationInProgress', 'Lb.InitialHealthChecking' = 'Lb.InitialHealthChecking', 'Lb.InternalError' = 'Lb.InternalError', 'Instance.ResponseCodeMismatch' = 'Instance.ResponseCodeMismatch', 'Instance.Timeout' = 'Instance.Timeout', 'Instance.FailedHealthChecks' = 'Instance.FailedHealthChecks', 'Instance.NotRegistered' = 'Instance.NotRegistered', 'Instance.NotInUse' = 'Instance.NotInUse', 'Instance.DeregistrationInProgress' = 'Instance.DeregistrationInProgress', 'Instance.InvalidState' = 'Instance.InvalidState', 'Instance.IpUnusable' = 'Instance.IpUnusable' }
 
 
 	/** Provides a summary of SSL/TLS certificate metadata. */
@@ -6479,7 +6479,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerMetricName { ClientTLSNegotiationErrorCount = 0, HealthyHostCount = 1, UnhealthyHostCount = 2, HTTPCode_LB_4XX_Count = 3, HTTPCode_LB_5XX_Count = 4, HTTPCode_Instance_2XX_Count = 5, HTTPCode_Instance_3XX_Count = 6, HTTPCode_Instance_4XX_Count = 7, HTTPCode_Instance_5XX_Count = 8, InstanceResponseTime = 9, RejectedConnectionCount = 10, RequestCount = 11 }
+	export enum LoadBalancerMetricName { ClientTLSNegotiationErrorCount = 'ClientTLSNegotiationErrorCount', HealthyHostCount = 'HealthyHostCount', UnhealthyHostCount = 'UnhealthyHostCount', HTTPCode_LB_4XX_Count = 'HTTPCode_LB_4XX_Count', HTTPCode_LB_5XX_Count = 'HTTPCode_LB_5XX_Count', HTTPCode_Instance_2XX_Count = 'HTTPCode_Instance_2XX_Count', HTTPCode_Instance_3XX_Count = 'HTTPCode_Instance_3XX_Count', HTTPCode_Instance_4XX_Count = 'HTTPCode_Instance_4XX_Count', HTTPCode_Instance_5XX_Count = 'HTTPCode_Instance_5XX_Count', InstanceResponseTime = 'InstanceResponseTime', RejectedConnectionCount = 'RejectedConnectionCount', RequestCount = 'RequestCount' }
 
 	export interface GetLoadBalancerMetricDataRequest {
 
@@ -6626,7 +6626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerTlsCertificateStatus { PENDING_VALIDATION = 0, ISSUED = 1, INACTIVE = 2, EXPIRED = 3, VALIDATION_TIMED_OUT = 4, REVOKED = 5, FAILED = 6, UNKNOWN = 7 }
+	export enum LoadBalancerTlsCertificateStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', ISSUED = 'ISSUED', INACTIVE = 'INACTIVE', EXPIRED = 'EXPIRED', VALIDATION_TIMED_OUT = 'VALIDATION_TIMED_OUT', REVOKED = 'REVOKED', FAILED = 'FAILED', UNKNOWN = 'UNKNOWN' }
 
 
 	/** Describes the validation record of each domain name in the SSL/TLS certificate. */
@@ -6678,7 +6678,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerTlsCertificateFailureReason { NO_AVAILABLE_CONTACTS = 0, ADDITIONAL_VERIFICATION_REQUIRED = 1, DOMAIN_NOT_ALLOWED = 2, INVALID_PUBLIC_DOMAIN = 3, OTHER = 4 }
+	export enum LoadBalancerTlsCertificateFailureReason { NO_AVAILABLE_CONTACTS = 'NO_AVAILABLE_CONTACTS', ADDITIONAL_VERIFICATION_REQUIRED = 'ADDITIONAL_VERIFICATION_REQUIRED', DOMAIN_NOT_ALLOWED = 'DOMAIN_NOT_ALLOWED', INVALID_PUBLIC_DOMAIN = 'INVALID_PUBLIC_DOMAIN', OTHER = 'OTHER' }
 
 
 	/** <p>Contains information about the status of Lightsail's managed renewal for the certificate.</p> <p>The renewal status of the certificate.</p> <p>The following renewal status are possible:</p> <ul> <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names in the certificate. No further action is required. </p> </li> <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names in the certificate. You must take action to validate these domain names or the certificate won't be renewed. If you used DNS validation, check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li> <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li> <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li> </ul> */
@@ -6698,7 +6698,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerTlsCertificateRenewalStatus { PENDING_AUTO_RENEWAL = 0, PENDING_VALIDATION = 1, SUCCESS = 2, FAILED = 3 }
+	export enum LoadBalancerTlsCertificateRenewalStatus { PENDING_AUTO_RENEWAL = 'PENDING_AUTO_RENEWAL', PENDING_VALIDATION = 'PENDING_VALIDATION', SUCCESS = 'SUCCESS', FAILED = 'FAILED' }
 
 
 	/** Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership. */
@@ -6720,7 +6720,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerTlsCertificateRevocationReason { UNSPECIFIED = 0, KEY_COMPROMISE = 1, CA_COMPROMISE = 2, AFFILIATION_CHANGED = 3, SUPERCEDED = 4, CESSATION_OF_OPERATION = 5, CERTIFICATE_HOLD = 6, REMOVE_FROM_CRL = 7, PRIVILEGE_WITHDRAWN = 8, A_A_COMPROMISE = 9 }
+	export enum LoadBalancerTlsCertificateRevocationReason { UNSPECIFIED = 'UNSPECIFIED', KEY_COMPROMISE = 'KEY_COMPROMISE', CA_COMPROMISE = 'CA_COMPROMISE', AFFILIATION_CHANGED = 'AFFILIATION_CHANGED', SUPERCEDED = 'SUPERCEDED', CESSATION_OF_OPERATION = 'CESSATION_OF_OPERATION', CERTIFICATE_HOLD = 'CERTIFICATE_HOLD', REMOVE_FROM_CRL = 'REMOVE_FROM_CRL', PRIVILEGE_WITHDRAWN = 'PRIVILEGE_WITHDRAWN', A_A_COMPROMISE = 'A_A_COMPROMISE' }
 
 	export interface GetLoadBalancerTlsCertificatesRequest {
 
@@ -7228,7 +7228,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationalDatabaseEngine { mysql = 0 }
+	export enum RelationalDatabaseEngine { mysql = 'mysql' }
 
 	export interface GetRelationalDatabaseBlueprintsRequest {
 		pageToken?: string;
@@ -7512,7 +7512,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationalDatabasePasswordVersion { CURRENT = 0, PREVIOUS = 1, PENDING = 2 }
+	export enum RelationalDatabasePasswordVersion { CURRENT = 'CURRENT', PREVIOUS = 'PREVIOUS', PENDING = 'PENDING' }
 
 	export interface GetRelationalDatabaseMetricDataResult {
 		metricName?: RelationalDatabaseMetricName;
@@ -7528,7 +7528,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RelationalDatabaseMetricName { CPUUtilization = 0, DatabaseConnections = 1, DiskQueueDepth = 2, FreeStorageSpace = 3, NetworkReceiveThroughput = 4, NetworkTransmitThroughput = 5 }
+	export enum RelationalDatabaseMetricName { CPUUtilization = 'CPUUtilization', DatabaseConnections = 'DatabaseConnections', DiskQueueDepth = 'DiskQueueDepth', FreeStorageSpace = 'FreeStorageSpace', NetworkReceiveThroughput = 'NetworkReceiveThroughput', NetworkTransmitThroughput = 'NetworkTransmitThroughput' }
 
 	export interface GetRelationalDatabaseMetricDataRequest {
 
@@ -8287,7 +8287,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContactMethodVerificationProtocol { Email = 0 }
+	export enum ContactMethodVerificationProtocol { Email = 'Email' }
 
 	export interface SetIpAddressTypeResult {
 		operations?: Array<Operation>;
@@ -8373,7 +8373,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceBucketAccess { allow = 0, deny = 1 }
+	export enum ResourceBucketAccess { allow = 'allow', deny = 'deny' }
 
 	export interface StartGUISessionResult {
 		operations?: Array<Operation>;
@@ -8957,7 +8957,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerAttributeName { HealthCheckPath = 0, SessionStickinessEnabled = 1, SessionStickiness_LB_CookieDurationSeconds = 2, HttpsRedirectionEnabled = 3, TlsPolicyName = 4 }
+	export enum LoadBalancerAttributeName { HealthCheckPath = 'HealthCheckPath', SessionStickinessEnabled = 'SessionStickinessEnabled', SessionStickiness_LB_CookieDurationSeconds = 'SessionStickiness_LB_CookieDurationSeconds', HttpsRedirectionEnabled = 'HttpsRedirectionEnabled', TlsPolicyName = 'TlsPolicyName' }
 
 	export interface UpdateRelationalDatabaseResult {
 		operations?: Array<Operation>;
@@ -9105,15 +9105,15 @@ export namespace MyNS {
 
 	}
 
-	export enum ContainerServiceProtocol { HTTP = 0, HTTPS = 1, TCP = 2, UDP = 3 }
+	export enum ContainerServiceProtocol { HTTP = 'HTTP', HTTPS = 'HTTPS', TCP = 'TCP', UDP = 'UDP' }
 
-	export enum HttpProtocolIpv6 { disabled = 0, enabled = 1 }
+	export enum HttpProtocolIpv6 { disabled = 'disabled', enabled = 'enabled' }
 
-	export enum LoadBalancerTlsCertificateDnsRecordCreationStateCode { SUCCEEDED = 0, STARTED = 1, FAILED = 2 }
+	export enum LoadBalancerTlsCertificateDnsRecordCreationStateCode { SUCCEEDED = 'SUCCEEDED', STARTED = 'STARTED', FAILED = 'FAILED' }
 
-	export enum LoadBalancerTlsCertificateDomainStatus { PENDING_VALIDATION = 0, FAILED = 1, SUCCESS = 2 }
+	export enum LoadBalancerTlsCertificateDomainStatus { PENDING_VALIDATION = 'PENDING_VALIDATION', FAILED = 'FAILED', SUCCESS = 'SUCCESS' }
 
-	export enum R53HostedZoneDeletionStateCode { SUCCEEDED = 0, PENDING = 1, FAILED = 2, STARTED = 3 }
+	export enum R53HostedZoneDeletionStateCode { SUCCEEDED = 'SUCCEEDED', PENDING = 'PENDING', FAILED = 'FAILED', STARTED = 'STARTED' }
 
 	@Injectable()
 	export class MyClient {
@@ -10552,323 +10552,323 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AllocateStaticIpX_Amz_Target { 'Lightsail_20161128.AllocateStaticIp' = 0 }
+	export enum AllocateStaticIpX_Amz_Target { 'Lightsail_20161128.AllocateStaticIp' = 'Lightsail_20161128.AllocateStaticIp' }
 
-	export enum AttachCertificateToDistributionX_Amz_Target { 'Lightsail_20161128.AttachCertificateToDistribution' = 0 }
+	export enum AttachCertificateToDistributionX_Amz_Target { 'Lightsail_20161128.AttachCertificateToDistribution' = 'Lightsail_20161128.AttachCertificateToDistribution' }
 
-	export enum AttachDiskX_Amz_Target { 'Lightsail_20161128.AttachDisk' = 0 }
+	export enum AttachDiskX_Amz_Target { 'Lightsail_20161128.AttachDisk' = 'Lightsail_20161128.AttachDisk' }
 
-	export enum AttachInstancesToLoadBalancerX_Amz_Target { 'Lightsail_20161128.AttachInstancesToLoadBalancer' = 0 }
+	export enum AttachInstancesToLoadBalancerX_Amz_Target { 'Lightsail_20161128.AttachInstancesToLoadBalancer' = 'Lightsail_20161128.AttachInstancesToLoadBalancer' }
 
-	export enum AttachLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.AttachLoadBalancerTlsCertificate' = 0 }
+	export enum AttachLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.AttachLoadBalancerTlsCertificate' = 'Lightsail_20161128.AttachLoadBalancerTlsCertificate' }
 
-	export enum AttachStaticIpX_Amz_Target { 'Lightsail_20161128.AttachStaticIp' = 0 }
+	export enum AttachStaticIpX_Amz_Target { 'Lightsail_20161128.AttachStaticIp' = 'Lightsail_20161128.AttachStaticIp' }
 
-	export enum CloseInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.CloseInstancePublicPorts' = 0 }
+	export enum CloseInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.CloseInstancePublicPorts' = 'Lightsail_20161128.CloseInstancePublicPorts' }
 
-	export enum CopySnapshotX_Amz_Target { 'Lightsail_20161128.CopySnapshot' = 0 }
+	export enum CopySnapshotX_Amz_Target { 'Lightsail_20161128.CopySnapshot' = 'Lightsail_20161128.CopySnapshot' }
 
-	export enum CreateBucketX_Amz_Target { 'Lightsail_20161128.CreateBucket' = 0 }
+	export enum CreateBucketX_Amz_Target { 'Lightsail_20161128.CreateBucket' = 'Lightsail_20161128.CreateBucket' }
 
-	export enum CreateBucketAccessKeyX_Amz_Target { 'Lightsail_20161128.CreateBucketAccessKey' = 0 }
+	export enum CreateBucketAccessKeyX_Amz_Target { 'Lightsail_20161128.CreateBucketAccessKey' = 'Lightsail_20161128.CreateBucketAccessKey' }
 
-	export enum CreateCertificateX_Amz_Target { 'Lightsail_20161128.CreateCertificate' = 0 }
+	export enum CreateCertificateX_Amz_Target { 'Lightsail_20161128.CreateCertificate' = 'Lightsail_20161128.CreateCertificate' }
 
-	export enum CreateCloudFormationStackX_Amz_Target { 'Lightsail_20161128.CreateCloudFormationStack' = 0 }
+	export enum CreateCloudFormationStackX_Amz_Target { 'Lightsail_20161128.CreateCloudFormationStack' = 'Lightsail_20161128.CreateCloudFormationStack' }
 
-	export enum CreateContactMethodX_Amz_Target { 'Lightsail_20161128.CreateContactMethod' = 0 }
+	export enum CreateContactMethodX_Amz_Target { 'Lightsail_20161128.CreateContactMethod' = 'Lightsail_20161128.CreateContactMethod' }
 
-	export enum CreateContainerServiceX_Amz_Target { 'Lightsail_20161128.CreateContainerService' = 0 }
+	export enum CreateContainerServiceX_Amz_Target { 'Lightsail_20161128.CreateContainerService' = 'Lightsail_20161128.CreateContainerService' }
 
-	export enum CreateContainerServiceDeploymentX_Amz_Target { 'Lightsail_20161128.CreateContainerServiceDeployment' = 0 }
+	export enum CreateContainerServiceDeploymentX_Amz_Target { 'Lightsail_20161128.CreateContainerServiceDeployment' = 'Lightsail_20161128.CreateContainerServiceDeployment' }
 
-	export enum CreateContainerServiceRegistryLoginX_Amz_Target { 'Lightsail_20161128.CreateContainerServiceRegistryLogin' = 0 }
+	export enum CreateContainerServiceRegistryLoginX_Amz_Target { 'Lightsail_20161128.CreateContainerServiceRegistryLogin' = 'Lightsail_20161128.CreateContainerServiceRegistryLogin' }
 
-	export enum CreateDiskX_Amz_Target { 'Lightsail_20161128.CreateDisk' = 0 }
+	export enum CreateDiskX_Amz_Target { 'Lightsail_20161128.CreateDisk' = 'Lightsail_20161128.CreateDisk' }
 
-	export enum CreateDiskFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateDiskFromSnapshot' = 0 }
+	export enum CreateDiskFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateDiskFromSnapshot' = 'Lightsail_20161128.CreateDiskFromSnapshot' }
 
-	export enum CreateDiskSnapshotX_Amz_Target { 'Lightsail_20161128.CreateDiskSnapshot' = 0 }
+	export enum CreateDiskSnapshotX_Amz_Target { 'Lightsail_20161128.CreateDiskSnapshot' = 'Lightsail_20161128.CreateDiskSnapshot' }
 
-	export enum CreateDistributionX_Amz_Target { 'Lightsail_20161128.CreateDistribution' = 0 }
+	export enum CreateDistributionX_Amz_Target { 'Lightsail_20161128.CreateDistribution' = 'Lightsail_20161128.CreateDistribution' }
 
-	export enum CreateDomainX_Amz_Target { 'Lightsail_20161128.CreateDomain' = 0 }
+	export enum CreateDomainX_Amz_Target { 'Lightsail_20161128.CreateDomain' = 'Lightsail_20161128.CreateDomain' }
 
-	export enum CreateDomainEntryX_Amz_Target { 'Lightsail_20161128.CreateDomainEntry' = 0 }
+	export enum CreateDomainEntryX_Amz_Target { 'Lightsail_20161128.CreateDomainEntry' = 'Lightsail_20161128.CreateDomainEntry' }
 
-	export enum CreateGUISessionAccessDetailsX_Amz_Target { 'Lightsail_20161128.CreateGUISessionAccessDetails' = 0 }
+	export enum CreateGUISessionAccessDetailsX_Amz_Target { 'Lightsail_20161128.CreateGUISessionAccessDetails' = 'Lightsail_20161128.CreateGUISessionAccessDetails' }
 
-	export enum CreateInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.CreateInstanceSnapshot' = 0 }
+	export enum CreateInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.CreateInstanceSnapshot' = 'Lightsail_20161128.CreateInstanceSnapshot' }
 
-	export enum CreateInstancesX_Amz_Target { 'Lightsail_20161128.CreateInstances' = 0 }
+	export enum CreateInstancesX_Amz_Target { 'Lightsail_20161128.CreateInstances' = 'Lightsail_20161128.CreateInstances' }
 
-	export enum CreateInstancesFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateInstancesFromSnapshot' = 0 }
+	export enum CreateInstancesFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateInstancesFromSnapshot' = 'Lightsail_20161128.CreateInstancesFromSnapshot' }
 
-	export enum CreateKeyPairX_Amz_Target { 'Lightsail_20161128.CreateKeyPair' = 0 }
+	export enum CreateKeyPairX_Amz_Target { 'Lightsail_20161128.CreateKeyPair' = 'Lightsail_20161128.CreateKeyPair' }
 
-	export enum CreateLoadBalancerX_Amz_Target { 'Lightsail_20161128.CreateLoadBalancer' = 0 }
+	export enum CreateLoadBalancerX_Amz_Target { 'Lightsail_20161128.CreateLoadBalancer' = 'Lightsail_20161128.CreateLoadBalancer' }
 
-	export enum CreateLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.CreateLoadBalancerTlsCertificate' = 0 }
+	export enum CreateLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.CreateLoadBalancerTlsCertificate' = 'Lightsail_20161128.CreateLoadBalancerTlsCertificate' }
 
-	export enum CreateRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabase' = 0 }
+	export enum CreateRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabase' = 'Lightsail_20161128.CreateRelationalDatabase' }
 
-	export enum CreateRelationalDatabaseFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabaseFromSnapshot' = 0 }
+	export enum CreateRelationalDatabaseFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabaseFromSnapshot' = 'Lightsail_20161128.CreateRelationalDatabaseFromSnapshot' }
 
-	export enum CreateRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabaseSnapshot' = 0 }
+	export enum CreateRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabaseSnapshot' = 'Lightsail_20161128.CreateRelationalDatabaseSnapshot' }
 
-	export enum DeleteAlarmX_Amz_Target { 'Lightsail_20161128.DeleteAlarm' = 0 }
+	export enum DeleteAlarmX_Amz_Target { 'Lightsail_20161128.DeleteAlarm' = 'Lightsail_20161128.DeleteAlarm' }
 
-	export enum DeleteAutoSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteAutoSnapshot' = 0 }
+	export enum DeleteAutoSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteAutoSnapshot' = 'Lightsail_20161128.DeleteAutoSnapshot' }
 
-	export enum DeleteBucketX_Amz_Target { 'Lightsail_20161128.DeleteBucket' = 0 }
+	export enum DeleteBucketX_Amz_Target { 'Lightsail_20161128.DeleteBucket' = 'Lightsail_20161128.DeleteBucket' }
 
-	export enum DeleteBucketAccessKeyX_Amz_Target { 'Lightsail_20161128.DeleteBucketAccessKey' = 0 }
+	export enum DeleteBucketAccessKeyX_Amz_Target { 'Lightsail_20161128.DeleteBucketAccessKey' = 'Lightsail_20161128.DeleteBucketAccessKey' }
 
-	export enum DeleteCertificateX_Amz_Target { 'Lightsail_20161128.DeleteCertificate' = 0 }
+	export enum DeleteCertificateX_Amz_Target { 'Lightsail_20161128.DeleteCertificate' = 'Lightsail_20161128.DeleteCertificate' }
 
-	export enum DeleteContactMethodX_Amz_Target { 'Lightsail_20161128.DeleteContactMethod' = 0 }
+	export enum DeleteContactMethodX_Amz_Target { 'Lightsail_20161128.DeleteContactMethod' = 'Lightsail_20161128.DeleteContactMethod' }
 
-	export enum DeleteContainerImageX_Amz_Target { 'Lightsail_20161128.DeleteContainerImage' = 0 }
+	export enum DeleteContainerImageX_Amz_Target { 'Lightsail_20161128.DeleteContainerImage' = 'Lightsail_20161128.DeleteContainerImage' }
 
-	export enum DeleteContainerServiceX_Amz_Target { 'Lightsail_20161128.DeleteContainerService' = 0 }
+	export enum DeleteContainerServiceX_Amz_Target { 'Lightsail_20161128.DeleteContainerService' = 'Lightsail_20161128.DeleteContainerService' }
 
-	export enum DeleteDiskX_Amz_Target { 'Lightsail_20161128.DeleteDisk' = 0 }
+	export enum DeleteDiskX_Amz_Target { 'Lightsail_20161128.DeleteDisk' = 'Lightsail_20161128.DeleteDisk' }
 
-	export enum DeleteDiskSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteDiskSnapshot' = 0 }
+	export enum DeleteDiskSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteDiskSnapshot' = 'Lightsail_20161128.DeleteDiskSnapshot' }
 
-	export enum DeleteDistributionX_Amz_Target { 'Lightsail_20161128.DeleteDistribution' = 0 }
+	export enum DeleteDistributionX_Amz_Target { 'Lightsail_20161128.DeleteDistribution' = 'Lightsail_20161128.DeleteDistribution' }
 
-	export enum DeleteDomainX_Amz_Target { 'Lightsail_20161128.DeleteDomain' = 0 }
+	export enum DeleteDomainX_Amz_Target { 'Lightsail_20161128.DeleteDomain' = 'Lightsail_20161128.DeleteDomain' }
 
-	export enum DeleteDomainEntryX_Amz_Target { 'Lightsail_20161128.DeleteDomainEntry' = 0 }
+	export enum DeleteDomainEntryX_Amz_Target { 'Lightsail_20161128.DeleteDomainEntry' = 'Lightsail_20161128.DeleteDomainEntry' }
 
-	export enum DeleteInstanceX_Amz_Target { 'Lightsail_20161128.DeleteInstance' = 0 }
+	export enum DeleteInstanceX_Amz_Target { 'Lightsail_20161128.DeleteInstance' = 'Lightsail_20161128.DeleteInstance' }
 
-	export enum DeleteInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteInstanceSnapshot' = 0 }
+	export enum DeleteInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteInstanceSnapshot' = 'Lightsail_20161128.DeleteInstanceSnapshot' }
 
-	export enum DeleteKeyPairX_Amz_Target { 'Lightsail_20161128.DeleteKeyPair' = 0 }
+	export enum DeleteKeyPairX_Amz_Target { 'Lightsail_20161128.DeleteKeyPair' = 'Lightsail_20161128.DeleteKeyPair' }
 
-	export enum DeleteKnownHostKeysX_Amz_Target { 'Lightsail_20161128.DeleteKnownHostKeys' = 0 }
+	export enum DeleteKnownHostKeysX_Amz_Target { 'Lightsail_20161128.DeleteKnownHostKeys' = 'Lightsail_20161128.DeleteKnownHostKeys' }
 
-	export enum DeleteLoadBalancerX_Amz_Target { 'Lightsail_20161128.DeleteLoadBalancer' = 0 }
+	export enum DeleteLoadBalancerX_Amz_Target { 'Lightsail_20161128.DeleteLoadBalancer' = 'Lightsail_20161128.DeleteLoadBalancer' }
 
-	export enum DeleteLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.DeleteLoadBalancerTlsCertificate' = 0 }
+	export enum DeleteLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.DeleteLoadBalancerTlsCertificate' = 'Lightsail_20161128.DeleteLoadBalancerTlsCertificate' }
 
-	export enum DeleteRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.DeleteRelationalDatabase' = 0 }
+	export enum DeleteRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.DeleteRelationalDatabase' = 'Lightsail_20161128.DeleteRelationalDatabase' }
 
-	export enum DeleteRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteRelationalDatabaseSnapshot' = 0 }
+	export enum DeleteRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteRelationalDatabaseSnapshot' = 'Lightsail_20161128.DeleteRelationalDatabaseSnapshot' }
 
-	export enum DetachCertificateFromDistributionX_Amz_Target { 'Lightsail_20161128.DetachCertificateFromDistribution' = 0 }
+	export enum DetachCertificateFromDistributionX_Amz_Target { 'Lightsail_20161128.DetachCertificateFromDistribution' = 'Lightsail_20161128.DetachCertificateFromDistribution' }
 
-	export enum DetachDiskX_Amz_Target { 'Lightsail_20161128.DetachDisk' = 0 }
+	export enum DetachDiskX_Amz_Target { 'Lightsail_20161128.DetachDisk' = 'Lightsail_20161128.DetachDisk' }
 
-	export enum DetachInstancesFromLoadBalancerX_Amz_Target { 'Lightsail_20161128.DetachInstancesFromLoadBalancer' = 0 }
+	export enum DetachInstancesFromLoadBalancerX_Amz_Target { 'Lightsail_20161128.DetachInstancesFromLoadBalancer' = 'Lightsail_20161128.DetachInstancesFromLoadBalancer' }
 
-	export enum DetachStaticIpX_Amz_Target { 'Lightsail_20161128.DetachStaticIp' = 0 }
+	export enum DetachStaticIpX_Amz_Target { 'Lightsail_20161128.DetachStaticIp' = 'Lightsail_20161128.DetachStaticIp' }
 
-	export enum DisableAddOnX_Amz_Target { 'Lightsail_20161128.DisableAddOn' = 0 }
+	export enum DisableAddOnX_Amz_Target { 'Lightsail_20161128.DisableAddOn' = 'Lightsail_20161128.DisableAddOn' }
 
-	export enum DownloadDefaultKeyPairX_Amz_Target { 'Lightsail_20161128.DownloadDefaultKeyPair' = 0 }
+	export enum DownloadDefaultKeyPairX_Amz_Target { 'Lightsail_20161128.DownloadDefaultKeyPair' = 'Lightsail_20161128.DownloadDefaultKeyPair' }
 
-	export enum EnableAddOnX_Amz_Target { 'Lightsail_20161128.EnableAddOn' = 0 }
+	export enum EnableAddOnX_Amz_Target { 'Lightsail_20161128.EnableAddOn' = 'Lightsail_20161128.EnableAddOn' }
 
-	export enum ExportSnapshotX_Amz_Target { 'Lightsail_20161128.ExportSnapshot' = 0 }
+	export enum ExportSnapshotX_Amz_Target { 'Lightsail_20161128.ExportSnapshot' = 'Lightsail_20161128.ExportSnapshot' }
 
-	export enum GetActiveNamesX_Amz_Target { 'Lightsail_20161128.GetActiveNames' = 0 }
+	export enum GetActiveNamesX_Amz_Target { 'Lightsail_20161128.GetActiveNames' = 'Lightsail_20161128.GetActiveNames' }
 
-	export enum GetAlarmsX_Amz_Target { 'Lightsail_20161128.GetAlarms' = 0 }
+	export enum GetAlarmsX_Amz_Target { 'Lightsail_20161128.GetAlarms' = 'Lightsail_20161128.GetAlarms' }
 
-	export enum GetAutoSnapshotsX_Amz_Target { 'Lightsail_20161128.GetAutoSnapshots' = 0 }
+	export enum GetAutoSnapshotsX_Amz_Target { 'Lightsail_20161128.GetAutoSnapshots' = 'Lightsail_20161128.GetAutoSnapshots' }
 
-	export enum GetBlueprintsX_Amz_Target { 'Lightsail_20161128.GetBlueprints' = 0 }
+	export enum GetBlueprintsX_Amz_Target { 'Lightsail_20161128.GetBlueprints' = 'Lightsail_20161128.GetBlueprints' }
 
-	export enum GetBucketAccessKeysX_Amz_Target { 'Lightsail_20161128.GetBucketAccessKeys' = 0 }
+	export enum GetBucketAccessKeysX_Amz_Target { 'Lightsail_20161128.GetBucketAccessKeys' = 'Lightsail_20161128.GetBucketAccessKeys' }
 
-	export enum GetBucketBundlesX_Amz_Target { 'Lightsail_20161128.GetBucketBundles' = 0 }
+	export enum GetBucketBundlesX_Amz_Target { 'Lightsail_20161128.GetBucketBundles' = 'Lightsail_20161128.GetBucketBundles' }
 
-	export enum GetBucketMetricDataX_Amz_Target { 'Lightsail_20161128.GetBucketMetricData' = 0 }
+	export enum GetBucketMetricDataX_Amz_Target { 'Lightsail_20161128.GetBucketMetricData' = 'Lightsail_20161128.GetBucketMetricData' }
 
-	export enum GetBucketsX_Amz_Target { 'Lightsail_20161128.GetBuckets' = 0 }
+	export enum GetBucketsX_Amz_Target { 'Lightsail_20161128.GetBuckets' = 'Lightsail_20161128.GetBuckets' }
 
-	export enum GetBundlesX_Amz_Target { 'Lightsail_20161128.GetBundles' = 0 }
+	export enum GetBundlesX_Amz_Target { 'Lightsail_20161128.GetBundles' = 'Lightsail_20161128.GetBundles' }
 
-	export enum GetCertificatesX_Amz_Target { 'Lightsail_20161128.GetCertificates' = 0 }
+	export enum GetCertificatesX_Amz_Target { 'Lightsail_20161128.GetCertificates' = 'Lightsail_20161128.GetCertificates' }
 
-	export enum GetCloudFormationStackRecordsX_Amz_Target { 'Lightsail_20161128.GetCloudFormationStackRecords' = 0 }
+	export enum GetCloudFormationStackRecordsX_Amz_Target { 'Lightsail_20161128.GetCloudFormationStackRecords' = 'Lightsail_20161128.GetCloudFormationStackRecords' }
 
-	export enum GetContactMethodsX_Amz_Target { 'Lightsail_20161128.GetContactMethods' = 0 }
+	export enum GetContactMethodsX_Amz_Target { 'Lightsail_20161128.GetContactMethods' = 'Lightsail_20161128.GetContactMethods' }
 
-	export enum GetContainerAPIMetadataX_Amz_Target { 'Lightsail_20161128.GetContainerAPIMetadata' = 0 }
+	export enum GetContainerAPIMetadataX_Amz_Target { 'Lightsail_20161128.GetContainerAPIMetadata' = 'Lightsail_20161128.GetContainerAPIMetadata' }
 
-	export enum GetContainerImagesX_Amz_Target { 'Lightsail_20161128.GetContainerImages' = 0 }
+	export enum GetContainerImagesX_Amz_Target { 'Lightsail_20161128.GetContainerImages' = 'Lightsail_20161128.GetContainerImages' }
 
-	export enum GetContainerLogX_Amz_Target { 'Lightsail_20161128.GetContainerLog' = 0 }
+	export enum GetContainerLogX_Amz_Target { 'Lightsail_20161128.GetContainerLog' = 'Lightsail_20161128.GetContainerLog' }
 
-	export enum GetContainerServiceDeploymentsX_Amz_Target { 'Lightsail_20161128.GetContainerServiceDeployments' = 0 }
+	export enum GetContainerServiceDeploymentsX_Amz_Target { 'Lightsail_20161128.GetContainerServiceDeployments' = 'Lightsail_20161128.GetContainerServiceDeployments' }
 
-	export enum GetContainerServiceMetricDataX_Amz_Target { 'Lightsail_20161128.GetContainerServiceMetricData' = 0 }
+	export enum GetContainerServiceMetricDataX_Amz_Target { 'Lightsail_20161128.GetContainerServiceMetricData' = 'Lightsail_20161128.GetContainerServiceMetricData' }
 
-	export enum GetContainerServicePowersX_Amz_Target { 'Lightsail_20161128.GetContainerServicePowers' = 0 }
+	export enum GetContainerServicePowersX_Amz_Target { 'Lightsail_20161128.GetContainerServicePowers' = 'Lightsail_20161128.GetContainerServicePowers' }
 
-	export enum GetContainerServicesX_Amz_Target { 'Lightsail_20161128.GetContainerServices' = 0 }
+	export enum GetContainerServicesX_Amz_Target { 'Lightsail_20161128.GetContainerServices' = 'Lightsail_20161128.GetContainerServices' }
 
-	export enum GetCostEstimateX_Amz_Target { 'Lightsail_20161128.GetCostEstimate' = 0 }
+	export enum GetCostEstimateX_Amz_Target { 'Lightsail_20161128.GetCostEstimate' = 'Lightsail_20161128.GetCostEstimate' }
 
-	export enum GetDiskX_Amz_Target { 'Lightsail_20161128.GetDisk' = 0 }
+	export enum GetDiskX_Amz_Target { 'Lightsail_20161128.GetDisk' = 'Lightsail_20161128.GetDisk' }
 
-	export enum GetDiskSnapshotX_Amz_Target { 'Lightsail_20161128.GetDiskSnapshot' = 0 }
+	export enum GetDiskSnapshotX_Amz_Target { 'Lightsail_20161128.GetDiskSnapshot' = 'Lightsail_20161128.GetDiskSnapshot' }
 
-	export enum GetDiskSnapshotsX_Amz_Target { 'Lightsail_20161128.GetDiskSnapshots' = 0 }
+	export enum GetDiskSnapshotsX_Amz_Target { 'Lightsail_20161128.GetDiskSnapshots' = 'Lightsail_20161128.GetDiskSnapshots' }
 
-	export enum GetDisksX_Amz_Target { 'Lightsail_20161128.GetDisks' = 0 }
+	export enum GetDisksX_Amz_Target { 'Lightsail_20161128.GetDisks' = 'Lightsail_20161128.GetDisks' }
 
-	export enum GetDistributionBundlesX_Amz_Target { 'Lightsail_20161128.GetDistributionBundles' = 0 }
+	export enum GetDistributionBundlesX_Amz_Target { 'Lightsail_20161128.GetDistributionBundles' = 'Lightsail_20161128.GetDistributionBundles' }
 
-	export enum GetDistributionLatestCacheResetX_Amz_Target { 'Lightsail_20161128.GetDistributionLatestCacheReset' = 0 }
+	export enum GetDistributionLatestCacheResetX_Amz_Target { 'Lightsail_20161128.GetDistributionLatestCacheReset' = 'Lightsail_20161128.GetDistributionLatestCacheReset' }
 
-	export enum GetDistributionMetricDataX_Amz_Target { 'Lightsail_20161128.GetDistributionMetricData' = 0 }
+	export enum GetDistributionMetricDataX_Amz_Target { 'Lightsail_20161128.GetDistributionMetricData' = 'Lightsail_20161128.GetDistributionMetricData' }
 
-	export enum GetDistributionsX_Amz_Target { 'Lightsail_20161128.GetDistributions' = 0 }
+	export enum GetDistributionsX_Amz_Target { 'Lightsail_20161128.GetDistributions' = 'Lightsail_20161128.GetDistributions' }
 
-	export enum GetDomainX_Amz_Target { 'Lightsail_20161128.GetDomain' = 0 }
+	export enum GetDomainX_Amz_Target { 'Lightsail_20161128.GetDomain' = 'Lightsail_20161128.GetDomain' }
 
-	export enum GetDomainsX_Amz_Target { 'Lightsail_20161128.GetDomains' = 0 }
+	export enum GetDomainsX_Amz_Target { 'Lightsail_20161128.GetDomains' = 'Lightsail_20161128.GetDomains' }
 
-	export enum GetExportSnapshotRecordsX_Amz_Target { 'Lightsail_20161128.GetExportSnapshotRecords' = 0 }
+	export enum GetExportSnapshotRecordsX_Amz_Target { 'Lightsail_20161128.GetExportSnapshotRecords' = 'Lightsail_20161128.GetExportSnapshotRecords' }
 
-	export enum GetInstanceX_Amz_Target { 'Lightsail_20161128.GetInstance' = 0 }
+	export enum GetInstanceX_Amz_Target { 'Lightsail_20161128.GetInstance' = 'Lightsail_20161128.GetInstance' }
 
-	export enum GetInstanceAccessDetailsX_Amz_Target { 'Lightsail_20161128.GetInstanceAccessDetails' = 0 }
+	export enum GetInstanceAccessDetailsX_Amz_Target { 'Lightsail_20161128.GetInstanceAccessDetails' = 'Lightsail_20161128.GetInstanceAccessDetails' }
 
-	export enum GetInstanceMetricDataX_Amz_Target { 'Lightsail_20161128.GetInstanceMetricData' = 0 }
+	export enum GetInstanceMetricDataX_Amz_Target { 'Lightsail_20161128.GetInstanceMetricData' = 'Lightsail_20161128.GetInstanceMetricData' }
 
-	export enum GetInstancePortStatesX_Amz_Target { 'Lightsail_20161128.GetInstancePortStates' = 0 }
+	export enum GetInstancePortStatesX_Amz_Target { 'Lightsail_20161128.GetInstancePortStates' = 'Lightsail_20161128.GetInstancePortStates' }
 
-	export enum GetInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.GetInstanceSnapshot' = 0 }
+	export enum GetInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.GetInstanceSnapshot' = 'Lightsail_20161128.GetInstanceSnapshot' }
 
-	export enum GetInstanceSnapshotsX_Amz_Target { 'Lightsail_20161128.GetInstanceSnapshots' = 0 }
+	export enum GetInstanceSnapshotsX_Amz_Target { 'Lightsail_20161128.GetInstanceSnapshots' = 'Lightsail_20161128.GetInstanceSnapshots' }
 
-	export enum GetInstanceStateX_Amz_Target { 'Lightsail_20161128.GetInstanceState' = 0 }
+	export enum GetInstanceStateX_Amz_Target { 'Lightsail_20161128.GetInstanceState' = 'Lightsail_20161128.GetInstanceState' }
 
-	export enum GetInstancesX_Amz_Target { 'Lightsail_20161128.GetInstances' = 0 }
+	export enum GetInstancesX_Amz_Target { 'Lightsail_20161128.GetInstances' = 'Lightsail_20161128.GetInstances' }
 
-	export enum GetKeyPairX_Amz_Target { 'Lightsail_20161128.GetKeyPair' = 0 }
+	export enum GetKeyPairX_Amz_Target { 'Lightsail_20161128.GetKeyPair' = 'Lightsail_20161128.GetKeyPair' }
 
-	export enum GetKeyPairsX_Amz_Target { 'Lightsail_20161128.GetKeyPairs' = 0 }
+	export enum GetKeyPairsX_Amz_Target { 'Lightsail_20161128.GetKeyPairs' = 'Lightsail_20161128.GetKeyPairs' }
 
-	export enum GetLoadBalancerX_Amz_Target { 'Lightsail_20161128.GetLoadBalancer' = 0 }
+	export enum GetLoadBalancerX_Amz_Target { 'Lightsail_20161128.GetLoadBalancer' = 'Lightsail_20161128.GetLoadBalancer' }
 
-	export enum GetLoadBalancerMetricDataX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerMetricData' = 0 }
+	export enum GetLoadBalancerMetricDataX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerMetricData' = 'Lightsail_20161128.GetLoadBalancerMetricData' }
 
-	export enum GetLoadBalancerTlsCertificatesX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerTlsCertificates' = 0 }
+	export enum GetLoadBalancerTlsCertificatesX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerTlsCertificates' = 'Lightsail_20161128.GetLoadBalancerTlsCertificates' }
 
-	export enum GetLoadBalancerTlsPoliciesX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerTlsPolicies' = 0 }
+	export enum GetLoadBalancerTlsPoliciesX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerTlsPolicies' = 'Lightsail_20161128.GetLoadBalancerTlsPolicies' }
 
-	export enum GetLoadBalancersX_Amz_Target { 'Lightsail_20161128.GetLoadBalancers' = 0 }
+	export enum GetLoadBalancersX_Amz_Target { 'Lightsail_20161128.GetLoadBalancers' = 'Lightsail_20161128.GetLoadBalancers' }
 
-	export enum GetOperationX_Amz_Target { 'Lightsail_20161128.GetOperation' = 0 }
+	export enum GetOperationX_Amz_Target { 'Lightsail_20161128.GetOperation' = 'Lightsail_20161128.GetOperation' }
 
-	export enum GetOperationsX_Amz_Target { 'Lightsail_20161128.GetOperations' = 0 }
+	export enum GetOperationsX_Amz_Target { 'Lightsail_20161128.GetOperations' = 'Lightsail_20161128.GetOperations' }
 
-	export enum GetOperationsForResourceX_Amz_Target { 'Lightsail_20161128.GetOperationsForResource' = 0 }
+	export enum GetOperationsForResourceX_Amz_Target { 'Lightsail_20161128.GetOperationsForResource' = 'Lightsail_20161128.GetOperationsForResource' }
 
-	export enum GetRegionsX_Amz_Target { 'Lightsail_20161128.GetRegions' = 0 }
+	export enum GetRegionsX_Amz_Target { 'Lightsail_20161128.GetRegions' = 'Lightsail_20161128.GetRegions' }
 
-	export enum GetRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabase' = 0 }
+	export enum GetRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabase' = 'Lightsail_20161128.GetRelationalDatabase' }
 
-	export enum GetRelationalDatabaseBlueprintsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseBlueprints' = 0 }
+	export enum GetRelationalDatabaseBlueprintsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseBlueprints' = 'Lightsail_20161128.GetRelationalDatabaseBlueprints' }
 
-	export enum GetRelationalDatabaseBundlesX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseBundles' = 0 }
+	export enum GetRelationalDatabaseBundlesX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseBundles' = 'Lightsail_20161128.GetRelationalDatabaseBundles' }
 
-	export enum GetRelationalDatabaseEventsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseEvents' = 0 }
+	export enum GetRelationalDatabaseEventsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseEvents' = 'Lightsail_20161128.GetRelationalDatabaseEvents' }
 
-	export enum GetRelationalDatabaseLogEventsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseLogEvents' = 0 }
+	export enum GetRelationalDatabaseLogEventsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseLogEvents' = 'Lightsail_20161128.GetRelationalDatabaseLogEvents' }
 
-	export enum GetRelationalDatabaseLogStreamsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseLogStreams' = 0 }
+	export enum GetRelationalDatabaseLogStreamsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseLogStreams' = 'Lightsail_20161128.GetRelationalDatabaseLogStreams' }
 
-	export enum GetRelationalDatabaseMasterUserPasswordX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseMasterUserPassword' = 0 }
+	export enum GetRelationalDatabaseMasterUserPasswordX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseMasterUserPassword' = 'Lightsail_20161128.GetRelationalDatabaseMasterUserPassword' }
 
-	export enum GetRelationalDatabaseMetricDataX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseMetricData' = 0 }
+	export enum GetRelationalDatabaseMetricDataX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseMetricData' = 'Lightsail_20161128.GetRelationalDatabaseMetricData' }
 
-	export enum GetRelationalDatabaseParametersX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseParameters' = 0 }
+	export enum GetRelationalDatabaseParametersX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseParameters' = 'Lightsail_20161128.GetRelationalDatabaseParameters' }
 
-	export enum GetRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseSnapshot' = 0 }
+	export enum GetRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseSnapshot' = 'Lightsail_20161128.GetRelationalDatabaseSnapshot' }
 
-	export enum GetRelationalDatabaseSnapshotsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseSnapshots' = 0 }
+	export enum GetRelationalDatabaseSnapshotsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseSnapshots' = 'Lightsail_20161128.GetRelationalDatabaseSnapshots' }
 
-	export enum GetRelationalDatabasesX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabases' = 0 }
+	export enum GetRelationalDatabasesX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabases' = 'Lightsail_20161128.GetRelationalDatabases' }
 
-	export enum GetStaticIpX_Amz_Target { 'Lightsail_20161128.GetStaticIp' = 0 }
+	export enum GetStaticIpX_Amz_Target { 'Lightsail_20161128.GetStaticIp' = 'Lightsail_20161128.GetStaticIp' }
 
-	export enum GetStaticIpsX_Amz_Target { 'Lightsail_20161128.GetStaticIps' = 0 }
+	export enum GetStaticIpsX_Amz_Target { 'Lightsail_20161128.GetStaticIps' = 'Lightsail_20161128.GetStaticIps' }
 
-	export enum ImportKeyPairX_Amz_Target { 'Lightsail_20161128.ImportKeyPair' = 0 }
+	export enum ImportKeyPairX_Amz_Target { 'Lightsail_20161128.ImportKeyPair' = 'Lightsail_20161128.ImportKeyPair' }
 
-	export enum IsVpcPeeredX_Amz_Target { 'Lightsail_20161128.IsVpcPeered' = 0 }
+	export enum IsVpcPeeredX_Amz_Target { 'Lightsail_20161128.IsVpcPeered' = 'Lightsail_20161128.IsVpcPeered' }
 
-	export enum OpenInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.OpenInstancePublicPorts' = 0 }
+	export enum OpenInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.OpenInstancePublicPorts' = 'Lightsail_20161128.OpenInstancePublicPorts' }
 
-	export enum PeerVpcX_Amz_Target { 'Lightsail_20161128.PeerVpc' = 0 }
+	export enum PeerVpcX_Amz_Target { 'Lightsail_20161128.PeerVpc' = 'Lightsail_20161128.PeerVpc' }
 
-	export enum PutAlarmX_Amz_Target { 'Lightsail_20161128.PutAlarm' = 0 }
+	export enum PutAlarmX_Amz_Target { 'Lightsail_20161128.PutAlarm' = 'Lightsail_20161128.PutAlarm' }
 
-	export enum PutInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.PutInstancePublicPorts' = 0 }
+	export enum PutInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.PutInstancePublicPorts' = 'Lightsail_20161128.PutInstancePublicPorts' }
 
-	export enum RebootInstanceX_Amz_Target { 'Lightsail_20161128.RebootInstance' = 0 }
+	export enum RebootInstanceX_Amz_Target { 'Lightsail_20161128.RebootInstance' = 'Lightsail_20161128.RebootInstance' }
 
-	export enum RebootRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.RebootRelationalDatabase' = 0 }
+	export enum RebootRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.RebootRelationalDatabase' = 'Lightsail_20161128.RebootRelationalDatabase' }
 
-	export enum RegisterContainerImageX_Amz_Target { 'Lightsail_20161128.RegisterContainerImage' = 0 }
+	export enum RegisterContainerImageX_Amz_Target { 'Lightsail_20161128.RegisterContainerImage' = 'Lightsail_20161128.RegisterContainerImage' }
 
-	export enum ReleaseStaticIpX_Amz_Target { 'Lightsail_20161128.ReleaseStaticIp' = 0 }
+	export enum ReleaseStaticIpX_Amz_Target { 'Lightsail_20161128.ReleaseStaticIp' = 'Lightsail_20161128.ReleaseStaticIp' }
 
-	export enum ResetDistributionCacheX_Amz_Target { 'Lightsail_20161128.ResetDistributionCache' = 0 }
+	export enum ResetDistributionCacheX_Amz_Target { 'Lightsail_20161128.ResetDistributionCache' = 'Lightsail_20161128.ResetDistributionCache' }
 
-	export enum SendContactMethodVerificationX_Amz_Target { 'Lightsail_20161128.SendContactMethodVerification' = 0 }
+	export enum SendContactMethodVerificationX_Amz_Target { 'Lightsail_20161128.SendContactMethodVerification' = 'Lightsail_20161128.SendContactMethodVerification' }
 
-	export enum SetIpAddressTypeX_Amz_Target { 'Lightsail_20161128.SetIpAddressType' = 0 }
+	export enum SetIpAddressTypeX_Amz_Target { 'Lightsail_20161128.SetIpAddressType' = 'Lightsail_20161128.SetIpAddressType' }
 
-	export enum SetResourceAccessForBucketX_Amz_Target { 'Lightsail_20161128.SetResourceAccessForBucket' = 0 }
+	export enum SetResourceAccessForBucketX_Amz_Target { 'Lightsail_20161128.SetResourceAccessForBucket' = 'Lightsail_20161128.SetResourceAccessForBucket' }
 
-	export enum StartGUISessionX_Amz_Target { 'Lightsail_20161128.StartGUISession' = 0 }
+	export enum StartGUISessionX_Amz_Target { 'Lightsail_20161128.StartGUISession' = 'Lightsail_20161128.StartGUISession' }
 
-	export enum StartInstanceX_Amz_Target { 'Lightsail_20161128.StartInstance' = 0 }
+	export enum StartInstanceX_Amz_Target { 'Lightsail_20161128.StartInstance' = 'Lightsail_20161128.StartInstance' }
 
-	export enum StartRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.StartRelationalDatabase' = 0 }
+	export enum StartRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.StartRelationalDatabase' = 'Lightsail_20161128.StartRelationalDatabase' }
 
-	export enum StopGUISessionX_Amz_Target { 'Lightsail_20161128.StopGUISession' = 0 }
+	export enum StopGUISessionX_Amz_Target { 'Lightsail_20161128.StopGUISession' = 'Lightsail_20161128.StopGUISession' }
 
-	export enum StopInstanceX_Amz_Target { 'Lightsail_20161128.StopInstance' = 0 }
+	export enum StopInstanceX_Amz_Target { 'Lightsail_20161128.StopInstance' = 'Lightsail_20161128.StopInstance' }
 
-	export enum StopRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.StopRelationalDatabase' = 0 }
+	export enum StopRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.StopRelationalDatabase' = 'Lightsail_20161128.StopRelationalDatabase' }
 
-	export enum TagResourceX_Amz_Target { 'Lightsail_20161128.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'Lightsail_20161128.TagResource' = 'Lightsail_20161128.TagResource' }
 
-	export enum TestAlarmX_Amz_Target { 'Lightsail_20161128.TestAlarm' = 0 }
+	export enum TestAlarmX_Amz_Target { 'Lightsail_20161128.TestAlarm' = 'Lightsail_20161128.TestAlarm' }
 
-	export enum UnpeerVpcX_Amz_Target { 'Lightsail_20161128.UnpeerVpc' = 0 }
+	export enum UnpeerVpcX_Amz_Target { 'Lightsail_20161128.UnpeerVpc' = 'Lightsail_20161128.UnpeerVpc' }
 
-	export enum UntagResourceX_Amz_Target { 'Lightsail_20161128.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'Lightsail_20161128.UntagResource' = 'Lightsail_20161128.UntagResource' }
 
-	export enum UpdateBucketX_Amz_Target { 'Lightsail_20161128.UpdateBucket' = 0 }
+	export enum UpdateBucketX_Amz_Target { 'Lightsail_20161128.UpdateBucket' = 'Lightsail_20161128.UpdateBucket' }
 
-	export enum UpdateBucketBundleX_Amz_Target { 'Lightsail_20161128.UpdateBucketBundle' = 0 }
+	export enum UpdateBucketBundleX_Amz_Target { 'Lightsail_20161128.UpdateBucketBundle' = 'Lightsail_20161128.UpdateBucketBundle' }
 
-	export enum UpdateContainerServiceX_Amz_Target { 'Lightsail_20161128.UpdateContainerService' = 0 }
+	export enum UpdateContainerServiceX_Amz_Target { 'Lightsail_20161128.UpdateContainerService' = 'Lightsail_20161128.UpdateContainerService' }
 
-	export enum UpdateDistributionX_Amz_Target { 'Lightsail_20161128.UpdateDistribution' = 0 }
+	export enum UpdateDistributionX_Amz_Target { 'Lightsail_20161128.UpdateDistribution' = 'Lightsail_20161128.UpdateDistribution' }
 
-	export enum UpdateDistributionBundleX_Amz_Target { 'Lightsail_20161128.UpdateDistributionBundle' = 0 }
+	export enum UpdateDistributionBundleX_Amz_Target { 'Lightsail_20161128.UpdateDistributionBundle' = 'Lightsail_20161128.UpdateDistributionBundle' }
 
-	export enum UpdateDomainEntryX_Amz_Target { 'Lightsail_20161128.UpdateDomainEntry' = 0 }
+	export enum UpdateDomainEntryX_Amz_Target { 'Lightsail_20161128.UpdateDomainEntry' = 'Lightsail_20161128.UpdateDomainEntry' }
 
-	export enum UpdateInstanceMetadataOptionsX_Amz_Target { 'Lightsail_20161128.UpdateInstanceMetadataOptions' = 0 }
+	export enum UpdateInstanceMetadataOptionsX_Amz_Target { 'Lightsail_20161128.UpdateInstanceMetadataOptions' = 'Lightsail_20161128.UpdateInstanceMetadataOptions' }
 
-	export enum UpdateLoadBalancerAttributeX_Amz_Target { 'Lightsail_20161128.UpdateLoadBalancerAttribute' = 0 }
+	export enum UpdateLoadBalancerAttributeX_Amz_Target { 'Lightsail_20161128.UpdateLoadBalancerAttribute' = 'Lightsail_20161128.UpdateLoadBalancerAttribute' }
 
-	export enum UpdateRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.UpdateRelationalDatabase' = 0 }
+	export enum UpdateRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.UpdateRelationalDatabase' = 'Lightsail_20161128.UpdateRelationalDatabase' }
 
-	export enum UpdateRelationalDatabaseParametersX_Amz_Target { 'Lightsail_20161128.UpdateRelationalDatabaseParameters' = 0 }
+	export enum UpdateRelationalDatabaseParametersX_Amz_Target { 'Lightsail_20161128.UpdateRelationalDatabaseParameters' = 'Lightsail_20161128.UpdateRelationalDatabaseParameters' }
 
 }
 

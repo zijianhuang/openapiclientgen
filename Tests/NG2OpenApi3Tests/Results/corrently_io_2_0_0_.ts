@@ -87,7 +87,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BalanceVariation { gsb = 0, erzeugung = 1, eigenstrom = 2, co2 = 3, baeume = 4 }
+	export enum BalanceVariation { gsb = 'gsb', erzeugung = 'erzeugung', eigenstrom = 'eigenstrom', co2 = 'co2', baeume = 'baeume' }
 
 	export interface DispatchLocation {
 
@@ -1144,7 +1144,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StromkontoLoginReturnStatus { registered = 0, unregistered = 1 }
+	export enum StromkontoLoginReturnStatus { registered = 'registered', unregistered = 'unregistered' }
 
 	export interface PrepareTransactionPostBody {
 

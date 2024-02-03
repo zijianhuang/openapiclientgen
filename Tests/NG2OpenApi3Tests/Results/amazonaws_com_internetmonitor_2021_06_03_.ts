@@ -27,7 +27,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorConfigState { PENDING = 0, ACTIVE = 1, INACTIVE = 2, ERROR = 3 }
+	export enum MonitorConfigState { PENDING = 'PENDING', ACTIVE = 'ACTIVE', INACTIVE = 'INACTIVE', ERROR = 'ERROR' }
 
 
 	/** The configuration for publishing Amazon CloudWatch Internet Monitor internet measurements to Amazon S3. The configuration includes the bucket name and (optionally) prefix for the S3 bucket to store the measurements, and the delivery status. The delivery status is <code>ENABLED</code> or <code>DISABLED</code>, depending on whether you choose to deliver internet measurements to S3 logs. */
@@ -52,7 +52,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogDeliveryStatus { ENABLED = 0, DISABLED = 1 }
+	export enum LogDeliveryStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** <p>A complex type with the configuration information that determines the threshold and other conditions for when Internet Monitor creates a health event for a local performance or availability issue, when scores cross a threshold for one or more city-networks.</p> <p>Defines the percentages, for performance scores or availability scores, that are the local thresholds for when Amazon CloudWatch Internet Monitor creates a health event. Also defines whether a local threshold is enabled or disabled, and the minimum percentage of overall traffic that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p> */
@@ -282,7 +282,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthEventStatus { ACTIVE = 0, RESOLVED = 1 }
+	export enum HealthEventStatus { ACTIVE = 'ACTIVE', RESOLVED = 'RESOLVED' }
 
 
 	/** Information about the network impairment for a specific network measured by Amazon CloudWatch Internet Monitor. */
@@ -339,7 +339,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriangulationEventType { AWS = 0, Internet = 1 }
+	export enum TriangulationEventType { AWS = 'AWS', Internet = 'Internet' }
 
 
 	/** Internet health includes measurements calculated by Amazon CloudWatch Internet Monitor about the performance and availability for your application on the internet. Amazon Web Services has substantial historical data about internet performance and availability between Amazon Web Services services and different network providers and geographies. By applying statistical analysis to the data, Internet Monitor can detect when the performance and availability for your application has dropped, compared to an estimated baseline that's already calculated. To make it easier to see those drops, Internet Monitor reports the information to you in the form of health scores: a performance score and an availability score. */
@@ -427,7 +427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthEventImpactType { AVAILABILITY = 0, PERFORMANCE = 1, LOCAL_AVAILABILITY = 2, LOCAL_PERFORMANCE = 3 }
+	export enum HealthEventImpactType { AVAILABILITY = 'AVAILABILITY', PERFORMANCE = 'PERFORMANCE', LOCAL_AVAILABILITY = 'LOCAL_AVAILABILITY', LOCAL_PERFORMANCE = 'LOCAL_PERFORMANCE' }
 
 	export interface GetMonitorOutput {
 
@@ -492,7 +492,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitorProcessingStatusCode { OK = 0, INACTIVE = 1, COLLECTING_DATA = 2, INSUFFICIENT_DATA = 3, FAULT_SERVICE = 4, FAULT_ACCESS_CLOUDWATCH = 5 }
+	export enum MonitorProcessingStatusCode { OK = 'OK', INACTIVE = 'INACTIVE', COLLECTING_DATA = 'COLLECTING_DATA', INSUFFICIENT_DATA = 'INSUFFICIENT_DATA', FAULT_SERVICE = 'FAULT_SERVICE', FAULT_ACCESS_CLOUDWATCH = 'FAULT_ACCESS_CLOUDWATCH' }
 
 	export interface TagMap {
 	}
@@ -877,7 +877,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocalHealthEventsConfigStatus { ENABLED = 0, DISABLED = 1 }
+	export enum LocalHealthEventsConfigStatus { ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 	export interface TagResourceInput {
 

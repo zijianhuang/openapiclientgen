@@ -83,7 +83,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationOrigin { user = 0, system = 1 }
+	export enum OperationOrigin { user = 'user', system = 'system' }
 
 
 	/** Result of the request to list SQL operations. */

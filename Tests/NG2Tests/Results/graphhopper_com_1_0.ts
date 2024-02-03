@@ -75,7 +75,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivityType { start = 0, end = 1, service = 2, pickupShipment = 3, deliverShipment = 4, pickup = 5, delivery = 6 }
+	export enum ActivityType { start = 'start', end = 'end', service = 'service', pickupShipment = 'pickupShipment', deliverShipment = 'deliverShipment', pickup = 'pickup', delivery = 'delivery' }
 
 	export interface Address {
 
@@ -124,9 +124,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AlgorithmObjective { transport_time = 0, completion_time = 1 }
+	export enum AlgorithmObjective { transport_time = 'transport_time', completion_time = 'completion_time' }
 
-	export enum AlgorithmProblem_type { min = 0, 'min-max' = 1 }
+	export enum AlgorithmProblem_type { min = 'min', 'min-max' = 'min-max' }
 
 	export interface Break {
 
@@ -207,7 +207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CostMatrixType { default = 0, google = 1 }
+	export enum CostMatrixType { default = 'default', google = 'google' }
 
 	export interface JobId {
 
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ObjectiveValue { completion_time = 0, transport_time = 1, vehicles = 2 }
+	export enum ObjectiveValue { completion_time = 'completion_time', transport_time = 'transport_time', vehicles = 'vehicles' }
 
 	export interface Relation {
 
@@ -393,7 +393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceType { service = 0, pickup = 1, delivery = 2 }
+	export enum ServiceType { service = 'service', pickup = 'pickup', delivery = 'delivery' }
 
 	export interface Shipment {
 
@@ -499,7 +499,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VehicleTypeProfile { car = 0, bike = 1, foot = 2, mtb = 3, motorcycle = 4, racingbike = 5, truck = 6, small_truck = 7, bus = 8 }
+	export enum VehicleTypeProfile { car = 'car', bike = 'bike', foot = 'foot', mtb = 'mtb', motorcycle = 'motorcycle', racingbike = 'racingbike', truck = 'truck', small_truck = 'small_truck', bus = 'bus' }
 
 	export interface Vehicle {
 		break?: Break;
@@ -726,7 +726,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseStatus { waiting_in_queue = 0, processing = 1, finished = 2 }
+	export enum ResponseStatus { waiting_in_queue = 'waiting_in_queue', processing = 'processing', finished = 'finished' }
 
 	@Injectable()
 	export class MyClient {

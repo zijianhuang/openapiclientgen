@@ -41,7 +41,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LayerAvailability { AVAILABLE = 0, UNAVAILABLE = 1 }
+	export enum LayerAvailability { AVAILABLE = 'AVAILABLE', UNAVAILABLE = 'UNAVAILABLE' }
 
 
 	/** An object representing an Amazon ECR image layer failure. */
@@ -66,7 +66,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LayerFailureCode { InvalidLayerDigest = 0, MissingLayerDigest = 1 }
+	export enum LayerFailureCode { InvalidLayerDigest = 'InvalidLayerDigest', MissingLayerDigest = 'MissingLayerDigest' }
 
 	export interface BatchCheckLayerAvailabilityRequest {
 		registryId?: string;
@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageFailureCode { InvalidImageDigest = 0, InvalidImageTag = 1, ImageTagDoesNotMatchDigest = 2, ImageNotFound = 3, MissingDigestAndTag = 4, ImageReferencedByManifestList = 5, KmsError = 6 }
+	export enum ImageFailureCode { InvalidImageDigest = 'InvalidImageDigest', InvalidImageTag = 'InvalidImageTag', ImageTagDoesNotMatchDigest = 'ImageTagDoesNotMatchDigest', ImageNotFound = 'ImageNotFound', MissingDigestAndTag = 'MissingDigestAndTag', ImageReferencedByManifestList = 'ImageReferencedByManifestList', KmsError = 'KmsError' }
 
 
 	/** Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>. */
@@ -305,7 +305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanFrequency { SCAN_ON_PUSH = 0, CONTINUOUS_SCAN = 1, MANUAL = 2 }
+	export enum ScanFrequency { SCAN_ON_PUSH = 'SCAN_ON_PUSH', CONTINUOUS_SCAN = 'CONTINUOUS_SCAN', MANUAL = 'MANUAL' }
 
 
 	/** The details of a scanning repository filter. For more information on how to use filters, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html#image-scanning-filters">Using filters</a> in the <i>Amazon Elastic Container Registry User Guide</i>. */
@@ -335,7 +335,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanningRepositoryFilterType { WILDCARD = 0 }
+	export enum ScanningRepositoryFilterType { WILDCARD = 'WILDCARD' }
 
 
 	/** The details about any failures associated with the scanning configuration of a repository. */
@@ -360,7 +360,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanningConfigurationFailureCode { REPOSITORY_NOT_FOUND = 0 }
+	export enum ScanningConfigurationFailureCode { REPOSITORY_NOT_FOUND = 'REPOSITORY_NOT_FOUND' }
 
 	export interface BatchGetRepositoryScanningConfigurationRequest {
 
@@ -623,7 +623,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageTagMutability { MUTABLE = 0, IMMUTABLE = 1 }
+	export enum ImageTagMutability { MUTABLE = 'MUTABLE', IMMUTABLE = 'IMMUTABLE' }
 
 
 	/** The image scanning configuration for a repository. */
@@ -666,7 +666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { AES256 = 0, KMS = 1 }
+	export enum EncryptionType { AES256 = 'AES256', KMS = 'KMS' }
 
 	export interface CreateRepositoryRequest {
 		registryId?: string;
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILED = 2 }
+	export enum ReplicationStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', FAILED = 'FAILED' }
 
 	export interface DescribeImageReplicationStatusRequest {
 
@@ -1102,7 +1102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILED = 2, UNSUPPORTED_IMAGE = 3, ACTIVE = 4, PENDING = 5, SCAN_ELIGIBILITY_EXPIRED = 6, FINDINGS_UNAVAILABLE = 7 }
+	export enum ScanStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', FAILED = 'FAILED', UNSUPPORTED_IMAGE = 'UNSUPPORTED_IMAGE', ACTIVE = 'ACTIVE', PENDING = 'PENDING', SCAN_ELIGIBILITY_EXPIRED = 'SCAN_ELIGIBILITY_EXPIRED', FINDINGS_UNAVAILABLE = 'FINDINGS_UNAVAILABLE' }
 
 
 	/** The details of an image scan. */
@@ -1164,7 +1164,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FindingSeverity { INFORMATIONAL = 0, LOW = 1, MEDIUM = 2, HIGH = 3, CRITICAL = 4, UNDEFINED = 5 }
+	export enum FindingSeverity { INFORMATIONAL = 'INFORMATIONAL', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', CRITICAL = 'CRITICAL', UNDEFINED = 'UNDEFINED' }
 
 
 	/** This data type is used in the <a>ImageScanFinding</a> data type. */
@@ -1684,7 +1684,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagStatus { TAGGED = 0, UNTAGGED = 1, ANY = 2 }
+	export enum TagStatus { TAGGED = 'TAGGED', UNTAGGED = 'UNTAGGED', ANY = 'ANY' }
 
 	export interface DescribePullThroughCacheRulesResponse {
 		pullThroughCacheRules?: Array<PullThroughCacheRule>;
@@ -1851,7 +1851,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryFilterType { PREFIX_MATCH = 0 }
+	export enum RepositoryFilterType { PREFIX_MATCH = 'PREFIX_MATCH' }
 
 	export interface DescribeRegistryRequest {
 	}
@@ -2074,7 +2074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LifecyclePolicyPreviewStatus { IN_PROGRESS = 0, COMPLETE = 1, EXPIRED = 2, FAILED = 3 }
+	export enum LifecyclePolicyPreviewStatus { IN_PROGRESS = 'IN_PROGRESS', COMPLETE = 'COMPLETE', EXPIRED = 'EXPIRED', FAILED = 'FAILED' }
 
 
 	/** The result of the lifecycle policy preview. */
@@ -2118,7 +2118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageActionType { EXPIRE = 0 }
+	export enum ImageActionType { EXPIRE = 'EXPIRE' }
 
 
 	/** The summary of the lifecycle policy preview request. */
@@ -2250,7 +2250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanType { BASIC = 0, ENHANCED = 1 }
+	export enum ScanType { BASIC = 'BASIC', ENHANCED = 'ENHANCED' }
 
 
 	/** The details of a scanning rule for a private registry. */
@@ -3435,87 +3435,87 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchCheckLayerAvailabilityX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchCheckLayerAvailability' = 0 }
+	export enum BatchCheckLayerAvailabilityX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchCheckLayerAvailability' = 'AmazonEC2ContainerRegistry_V20150921.BatchCheckLayerAvailability' }
 
-	export enum BatchDeleteImageX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchDeleteImage' = 0 }
+	export enum BatchDeleteImageX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchDeleteImage' = 'AmazonEC2ContainerRegistry_V20150921.BatchDeleteImage' }
 
-	export enum BatchGetImageX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchGetImage' = 0 }
+	export enum BatchGetImageX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchGetImage' = 'AmazonEC2ContainerRegistry_V20150921.BatchGetImage' }
 
-	export enum BatchGetRepositoryScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchGetRepositoryScanningConfiguration' = 0 }
+	export enum BatchGetRepositoryScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.BatchGetRepositoryScanningConfiguration' = 'AmazonEC2ContainerRegistry_V20150921.BatchGetRepositoryScanningConfiguration' }
 
-	export enum CompleteLayerUploadX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.CompleteLayerUpload' = 0 }
+	export enum CompleteLayerUploadX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.CompleteLayerUpload' = 'AmazonEC2ContainerRegistry_V20150921.CompleteLayerUpload' }
 
-	export enum CreatePullThroughCacheRuleX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.CreatePullThroughCacheRule' = 0 }
+	export enum CreatePullThroughCacheRuleX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.CreatePullThroughCacheRule' = 'AmazonEC2ContainerRegistry_V20150921.CreatePullThroughCacheRule' }
 
-	export enum CreateRepositoryX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.CreateRepository' = 0 }
+	export enum CreateRepositoryX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.CreateRepository' = 'AmazonEC2ContainerRegistry_V20150921.CreateRepository' }
 
-	export enum DeleteLifecyclePolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteLifecyclePolicy' = 0 }
+	export enum DeleteLifecyclePolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteLifecyclePolicy' = 'AmazonEC2ContainerRegistry_V20150921.DeleteLifecyclePolicy' }
 
-	export enum DeletePullThroughCacheRuleX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeletePullThroughCacheRule' = 0 }
+	export enum DeletePullThroughCacheRuleX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeletePullThroughCacheRule' = 'AmazonEC2ContainerRegistry_V20150921.DeletePullThroughCacheRule' }
 
-	export enum DeleteRegistryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteRegistryPolicy' = 0 }
+	export enum DeleteRegistryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteRegistryPolicy' = 'AmazonEC2ContainerRegistry_V20150921.DeleteRegistryPolicy' }
 
-	export enum DeleteRepositoryX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteRepository' = 0 }
+	export enum DeleteRepositoryX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteRepository' = 'AmazonEC2ContainerRegistry_V20150921.DeleteRepository' }
 
-	export enum DeleteRepositoryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteRepositoryPolicy' = 0 }
+	export enum DeleteRepositoryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DeleteRepositoryPolicy' = 'AmazonEC2ContainerRegistry_V20150921.DeleteRepositoryPolicy' }
 
-	export enum DescribeImageReplicationStatusX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeImageReplicationStatus' = 0 }
+	export enum DescribeImageReplicationStatusX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeImageReplicationStatus' = 'AmazonEC2ContainerRegistry_V20150921.DescribeImageReplicationStatus' }
 
-	export enum DescribeImageScanFindingsX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings' = 0 }
+	export enum DescribeImageScanFindingsX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings' = 'AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings' }
 
-	export enum DescribeImagesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeImages' = 0 }
+	export enum DescribeImagesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeImages' = 'AmazonEC2ContainerRegistry_V20150921.DescribeImages' }
 
-	export enum DescribePullThroughCacheRulesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribePullThroughCacheRules' = 0 }
+	export enum DescribePullThroughCacheRulesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribePullThroughCacheRules' = 'AmazonEC2ContainerRegistry_V20150921.DescribePullThroughCacheRules' }
 
-	export enum DescribeRegistryX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeRegistry' = 0 }
+	export enum DescribeRegistryX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeRegistry' = 'AmazonEC2ContainerRegistry_V20150921.DescribeRegistry' }
 
-	export enum DescribeRepositoriesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeRepositories' = 0 }
+	export enum DescribeRepositoriesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.DescribeRepositories' = 'AmazonEC2ContainerRegistry_V20150921.DescribeRepositories' }
 
-	export enum GetAuthorizationTokenX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken' = 0 }
+	export enum GetAuthorizationTokenX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken' = 'AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken' }
 
-	export enum GetDownloadUrlForLayerX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetDownloadUrlForLayer' = 0 }
+	export enum GetDownloadUrlForLayerX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetDownloadUrlForLayer' = 'AmazonEC2ContainerRegistry_V20150921.GetDownloadUrlForLayer' }
 
-	export enum GetLifecyclePolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy' = 0 }
+	export enum GetLifecyclePolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy' = 'AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy' }
 
-	export enum GetLifecyclePolicyPreviewX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview' = 0 }
+	export enum GetLifecyclePolicyPreviewX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview' = 'AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview' }
 
-	export enum GetRegistryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetRegistryPolicy' = 0 }
+	export enum GetRegistryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetRegistryPolicy' = 'AmazonEC2ContainerRegistry_V20150921.GetRegistryPolicy' }
 
-	export enum GetRegistryScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetRegistryScanningConfiguration' = 0 }
+	export enum GetRegistryScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetRegistryScanningConfiguration' = 'AmazonEC2ContainerRegistry_V20150921.GetRegistryScanningConfiguration' }
 
-	export enum GetRepositoryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetRepositoryPolicy' = 0 }
+	export enum GetRepositoryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.GetRepositoryPolicy' = 'AmazonEC2ContainerRegistry_V20150921.GetRepositoryPolicy' }
 
-	export enum InitiateLayerUploadX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.InitiateLayerUpload' = 0 }
+	export enum InitiateLayerUploadX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.InitiateLayerUpload' = 'AmazonEC2ContainerRegistry_V20150921.InitiateLayerUpload' }
 
-	export enum ListImagesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.ListImages' = 0 }
+	export enum ListImagesX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.ListImages' = 'AmazonEC2ContainerRegistry_V20150921.ListImages' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.ListTagsForResource' = 'AmazonEC2ContainerRegistry_V20150921.ListTagsForResource' }
 
-	export enum PutImageX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutImage' = 0 }
+	export enum PutImageX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutImage' = 'AmazonEC2ContainerRegistry_V20150921.PutImage' }
 
-	export enum PutImageScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutImageScanningConfiguration' = 0 }
+	export enum PutImageScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutImageScanningConfiguration' = 'AmazonEC2ContainerRegistry_V20150921.PutImageScanningConfiguration' }
 
-	export enum PutImageTagMutabilityX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutImageTagMutability' = 0 }
+	export enum PutImageTagMutabilityX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutImageTagMutability' = 'AmazonEC2ContainerRegistry_V20150921.PutImageTagMutability' }
 
-	export enum PutLifecyclePolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutLifecyclePolicy' = 0 }
+	export enum PutLifecyclePolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutLifecyclePolicy' = 'AmazonEC2ContainerRegistry_V20150921.PutLifecyclePolicy' }
 
-	export enum PutRegistryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutRegistryPolicy' = 0 }
+	export enum PutRegistryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutRegistryPolicy' = 'AmazonEC2ContainerRegistry_V20150921.PutRegistryPolicy' }
 
-	export enum PutRegistryScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutRegistryScanningConfiguration' = 0 }
+	export enum PutRegistryScanningConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutRegistryScanningConfiguration' = 'AmazonEC2ContainerRegistry_V20150921.PutRegistryScanningConfiguration' }
 
-	export enum PutReplicationConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutReplicationConfiguration' = 0 }
+	export enum PutReplicationConfigurationX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.PutReplicationConfiguration' = 'AmazonEC2ContainerRegistry_V20150921.PutReplicationConfiguration' }
 
-	export enum SetRepositoryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.SetRepositoryPolicy' = 0 }
+	export enum SetRepositoryPolicyX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.SetRepositoryPolicy' = 'AmazonEC2ContainerRegistry_V20150921.SetRepositoryPolicy' }
 
-	export enum StartImageScanX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.StartImageScan' = 0 }
+	export enum StartImageScanX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.StartImageScan' = 'AmazonEC2ContainerRegistry_V20150921.StartImageScan' }
 
-	export enum StartLifecyclePolicyPreviewX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.StartLifecyclePolicyPreview' = 0 }
+	export enum StartLifecyclePolicyPreviewX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.StartLifecyclePolicyPreview' = 'AmazonEC2ContainerRegistry_V20150921.StartLifecyclePolicyPreview' }
 
-	export enum TagResourceX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.TagResource' = 'AmazonEC2ContainerRegistry_V20150921.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.UntagResource' = 'AmazonEC2ContainerRegistry_V20150921.UntagResource' }
 
-	export enum UploadLayerPartX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.UploadLayerPart' = 0 }
+	export enum UploadLayerPartX_Amz_Target { 'AmazonEC2ContainerRegistry_V20150921.UploadLayerPart' = 'AmazonEC2ContainerRegistry_V20150921.UploadLayerPart' }
 
 }
 

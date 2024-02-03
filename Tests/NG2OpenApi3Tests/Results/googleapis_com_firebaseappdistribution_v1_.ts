@@ -170,7 +170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GdataCompositeMediaReferenceType { PATH = 0, BLOB_REF = 1, INLINE = 2, BIGSTORE_REF = 3, COSMO_BINARY_REFERENCE = 4 }
+	export enum GdataCompositeMediaReferenceType { PATH = 'PATH', BLOB_REF = 'BLOB_REF', INLINE = 'INLINE', BIGSTORE_REF = 'BIGSTORE_REF', COSMO_BINARY_REFERENCE = 'COSMO_BINARY_REFERENCE' }
 
 
 	/** Detailed Content-Type information from Scotty. The Content-Type of the media will typically be filled in by the header or Scotty's best_guess, but this extended information provides the backend with more information so that it can make a better decision if needed. This is only used on media upload requests from Scotty. */
@@ -570,7 +570,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GdataMediaReferenceType { PATH = 0, BLOB_REF = 1, INLINE = 2, GET_MEDIA = 3, COMPOSITE_MEDIA = 4, BIGSTORE_REF = 5, DIFF_VERSION_RESPONSE = 6, DIFF_CHECKSUMS_RESPONSE = 7, DIFF_DOWNLOAD_RESPONSE = 8, DIFF_UPLOAD_REQUEST = 9, DIFF_UPLOAD_RESPONSE = 10, COSMO_BINARY_REFERENCE = 11, ARBITRARY_BYTES = 12 }
+	export enum GdataMediaReferenceType { PATH = 'PATH', BLOB_REF = 'BLOB_REF', INLINE = 'INLINE', GET_MEDIA = 'GET_MEDIA', COMPOSITE_MEDIA = 'COMPOSITE_MEDIA', BIGSTORE_REF = 'BIGSTORE_REF', DIFF_VERSION_RESPONSE = 'DIFF_VERSION_RESPONSE', DIFF_CHECKSUMS_RESPONSE = 'DIFF_CHECKSUMS_RESPONSE', DIFF_DOWNLOAD_RESPONSE = 'DIFF_DOWNLOAD_RESPONSE', DIFF_UPLOAD_REQUEST = 'DIFF_UPLOAD_REQUEST', DIFF_UPLOAD_RESPONSE = 'DIFF_UPLOAD_RESPONSE', COSMO_BINARY_REFERENCE = 'COSMO_BINARY_REFERENCE', ARBITRARY_BYTES = 'ARBITRARY_BYTES' }
 
 
 	/** Android App Bundle (AAB) information for a Firebase app. */
@@ -603,7 +603,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirebaseAppdistroV1AabInfoIntegrationState { AAB_INTEGRATION_STATE_UNSPECIFIED = 0, INTEGRATED = 1, PLAY_ACCOUNT_NOT_LINKED = 2, NO_APP_WITH_GIVEN_BUNDLE_ID_IN_PLAY_ACCOUNT = 3, APP_NOT_PUBLISHED = 4, AAB_STATE_UNAVAILABLE = 5, PLAY_IAS_TERMS_NOT_ACCEPTED = 6 }
+	export enum GoogleFirebaseAppdistroV1AabInfoIntegrationState { AAB_INTEGRATION_STATE_UNSPECIFIED = 'AAB_INTEGRATION_STATE_UNSPECIFIED', INTEGRATED = 'INTEGRATED', PLAY_ACCOUNT_NOT_LINKED = 'PLAY_ACCOUNT_NOT_LINKED', NO_APP_WITH_GIVEN_BUNDLE_ID_IN_PLAY_ACCOUNT = 'NO_APP_WITH_GIVEN_BUNDLE_ID_IN_PLAY_ACCOUNT', APP_NOT_PUBLISHED = 'APP_NOT_PUBLISHED', AAB_STATE_UNAVAILABLE = 'AAB_STATE_UNAVAILABLE', PLAY_IAS_TERMS_NOT_ACCEPTED = 'PLAY_IAS_TERMS_NOT_ACCEPTED' }
 
 
 	/** App bundle test certificate */
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleFirebaseAppdistroV1UploadReleaseResponseResult { UPLOAD_RELEASE_RESULT_UNSPECIFIED = 0, RELEASE_CREATED = 1, RELEASE_UPDATED = 2, RELEASE_UNMODIFIED = 3 }
+	export enum GoogleFirebaseAppdistroV1UploadReleaseResponseResult { UPLOAD_RELEASE_RESULT_UNSPECIFIED = 'UPLOAD_RELEASE_RESULT_UNSPECIFIED', RELEASE_CREATED = 'RELEASE_CREATED', RELEASE_UPDATED = 'RELEASE_UPDATED', RELEASE_UNMODIFIED = 'RELEASE_UNMODIFIED' }
 
 
 	/** The request message for Operations.CancelOperation. */

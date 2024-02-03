@@ -132,7 +132,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamMode { PROVISIONED = 0, ON_DEMAND = 1 }
+	export enum StreamMode { PROVISIONED = 'PROVISIONED', ON_DEMAND = 'ON_DEMAND' }
 
 
 	/** Represents the input for <a>DecreaseStreamRetentionPeriod</a>. */
@@ -337,7 +337,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamStatus { CREATING = 0, DELETING = 1, ACTIVE = 2, UPDATING = 3 }
+	export enum StreamStatus { CREATING = 'CREATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', UPDATING = 'UPDATING' }
 
 
 	/** A uniquely identified group of data records in a Kinesis data stream. */
@@ -439,9 +439,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricsName { IncomingBytes = 0, IncomingRecords = 1, OutgoingBytes = 2, OutgoingRecords = 3, WriteProvisionedThroughputExceeded = 4, ReadProvisionedThroughputExceeded = 5, IteratorAgeMilliseconds = 6, ALL = 7 }
+	export enum MetricsName { IncomingBytes = 'IncomingBytes', IncomingRecords = 'IncomingRecords', OutgoingBytes = 'OutgoingBytes', OutgoingRecords = 'OutgoingRecords', WriteProvisionedThroughputExceeded = 'WriteProvisionedThroughputExceeded', ReadProvisionedThroughputExceeded = 'ReadProvisionedThroughputExceeded', IteratorAgeMilliseconds = 'IteratorAgeMilliseconds', ALL = 'ALL' }
 
-	export enum EncryptionType { NONE = 0, KMS = 1 }
+	export enum EncryptionType { NONE = 'NONE', KMS = 'KMS' }
 
 
 	/** Represents the input for <code>DescribeStream</code>. */
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConsumerStatus { CREATING = 0, DELETING = 1, ACTIVE = 2 }
+	export enum ConsumerStatus { CREATING = 'CREATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE' }
 
 	export interface DescribeStreamConsumerInput {
 		StreamARN?: string;
@@ -977,7 +977,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShardIteratorType { AT_SEQUENCE_NUMBER = 0, AFTER_SEQUENCE_NUMBER = 1, TRIM_HORIZON = 2, LATEST = 3, AT_TIMESTAMP = 4 }
+	export enum ShardIteratorType { AT_SEQUENCE_NUMBER = 'AT_SEQUENCE_NUMBER', AFTER_SEQUENCE_NUMBER = 'AFTER_SEQUENCE_NUMBER', TRIM_HORIZON = 'TRIM_HORIZON', LATEST = 'LATEST', AT_TIMESTAMP = 'AT_TIMESTAMP' }
 
 
 	/** Represents the input for <a>IncreaseStreamRetentionPeriod</a>. */
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ShardFilterType { AFTER_SHARD_ID = 0, AT_TRIM_HORIZON = 1, FROM_TRIM_HORIZON = 2, AT_LATEST = 3, AT_TIMESTAMP = 4, FROM_TIMESTAMP = 5 }
+	export enum ShardFilterType { AFTER_SHARD_ID = 'AFTER_SHARD_ID', AT_TRIM_HORIZON = 'AT_TRIM_HORIZON', FROM_TRIM_HORIZON = 'FROM_TRIM_HORIZON', AT_LATEST = 'AT_LATEST', AT_TIMESTAMP = 'AT_TIMESTAMP', FROM_TIMESTAMP = 'FROM_TIMESTAMP' }
 
 	export interface ExpiredNextTokenException {
 	}
@@ -1760,7 +1760,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingType { UNIFORM_SCALING = 0 }
+	export enum ScalingType { UNIFORM_SCALING = 'UNIFORM_SCALING' }
 
 	export interface UpdateStreamModeInput {
 
@@ -2046,61 +2046,61 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToStreamX_Amz_Target { 'Kinesis_20131202.AddTagsToStream' = 0 }
+	export enum AddTagsToStreamX_Amz_Target { 'Kinesis_20131202.AddTagsToStream' = 'Kinesis_20131202.AddTagsToStream' }
 
-	export enum CreateStreamX_Amz_Target { 'Kinesis_20131202.CreateStream' = 0 }
+	export enum CreateStreamX_Amz_Target { 'Kinesis_20131202.CreateStream' = 'Kinesis_20131202.CreateStream' }
 
-	export enum DecreaseStreamRetentionPeriodX_Amz_Target { 'Kinesis_20131202.DecreaseStreamRetentionPeriod' = 0 }
+	export enum DecreaseStreamRetentionPeriodX_Amz_Target { 'Kinesis_20131202.DecreaseStreamRetentionPeriod' = 'Kinesis_20131202.DecreaseStreamRetentionPeriod' }
 
-	export enum DeleteStreamX_Amz_Target { 'Kinesis_20131202.DeleteStream' = 0 }
+	export enum DeleteStreamX_Amz_Target { 'Kinesis_20131202.DeleteStream' = 'Kinesis_20131202.DeleteStream' }
 
-	export enum DeregisterStreamConsumerX_Amz_Target { 'Kinesis_20131202.DeregisterStreamConsumer' = 0 }
+	export enum DeregisterStreamConsumerX_Amz_Target { 'Kinesis_20131202.DeregisterStreamConsumer' = 'Kinesis_20131202.DeregisterStreamConsumer' }
 
-	export enum DescribeLimitsX_Amz_Target { 'Kinesis_20131202.DescribeLimits' = 0 }
+	export enum DescribeLimitsX_Amz_Target { 'Kinesis_20131202.DescribeLimits' = 'Kinesis_20131202.DescribeLimits' }
 
-	export enum DescribeStreamX_Amz_Target { 'Kinesis_20131202.DescribeStream' = 0 }
+	export enum DescribeStreamX_Amz_Target { 'Kinesis_20131202.DescribeStream' = 'Kinesis_20131202.DescribeStream' }
 
-	export enum DescribeStreamConsumerX_Amz_Target { 'Kinesis_20131202.DescribeStreamConsumer' = 0 }
+	export enum DescribeStreamConsumerX_Amz_Target { 'Kinesis_20131202.DescribeStreamConsumer' = 'Kinesis_20131202.DescribeStreamConsumer' }
 
-	export enum DescribeStreamSummaryX_Amz_Target { 'Kinesis_20131202.DescribeStreamSummary' = 0 }
+	export enum DescribeStreamSummaryX_Amz_Target { 'Kinesis_20131202.DescribeStreamSummary' = 'Kinesis_20131202.DescribeStreamSummary' }
 
-	export enum DisableEnhancedMonitoringX_Amz_Target { 'Kinesis_20131202.DisableEnhancedMonitoring' = 0 }
+	export enum DisableEnhancedMonitoringX_Amz_Target { 'Kinesis_20131202.DisableEnhancedMonitoring' = 'Kinesis_20131202.DisableEnhancedMonitoring' }
 
-	export enum EnableEnhancedMonitoringX_Amz_Target { 'Kinesis_20131202.EnableEnhancedMonitoring' = 0 }
+	export enum EnableEnhancedMonitoringX_Amz_Target { 'Kinesis_20131202.EnableEnhancedMonitoring' = 'Kinesis_20131202.EnableEnhancedMonitoring' }
 
-	export enum GetRecordsX_Amz_Target { 'Kinesis_20131202.GetRecords' = 0 }
+	export enum GetRecordsX_Amz_Target { 'Kinesis_20131202.GetRecords' = 'Kinesis_20131202.GetRecords' }
 
-	export enum GetShardIteratorX_Amz_Target { 'Kinesis_20131202.GetShardIterator' = 0 }
+	export enum GetShardIteratorX_Amz_Target { 'Kinesis_20131202.GetShardIterator' = 'Kinesis_20131202.GetShardIterator' }
 
-	export enum IncreaseStreamRetentionPeriodX_Amz_Target { 'Kinesis_20131202.IncreaseStreamRetentionPeriod' = 0 }
+	export enum IncreaseStreamRetentionPeriodX_Amz_Target { 'Kinesis_20131202.IncreaseStreamRetentionPeriod' = 'Kinesis_20131202.IncreaseStreamRetentionPeriod' }
 
-	export enum ListShardsX_Amz_Target { 'Kinesis_20131202.ListShards' = 0 }
+	export enum ListShardsX_Amz_Target { 'Kinesis_20131202.ListShards' = 'Kinesis_20131202.ListShards' }
 
-	export enum ListStreamConsumersX_Amz_Target { 'Kinesis_20131202.ListStreamConsumers' = 0 }
+	export enum ListStreamConsumersX_Amz_Target { 'Kinesis_20131202.ListStreamConsumers' = 'Kinesis_20131202.ListStreamConsumers' }
 
-	export enum ListStreamsX_Amz_Target { 'Kinesis_20131202.ListStreams' = 0 }
+	export enum ListStreamsX_Amz_Target { 'Kinesis_20131202.ListStreams' = 'Kinesis_20131202.ListStreams' }
 
-	export enum ListTagsForStreamX_Amz_Target { 'Kinesis_20131202.ListTagsForStream' = 0 }
+	export enum ListTagsForStreamX_Amz_Target { 'Kinesis_20131202.ListTagsForStream' = 'Kinesis_20131202.ListTagsForStream' }
 
-	export enum MergeShardsX_Amz_Target { 'Kinesis_20131202.MergeShards' = 0 }
+	export enum MergeShardsX_Amz_Target { 'Kinesis_20131202.MergeShards' = 'Kinesis_20131202.MergeShards' }
 
-	export enum PutRecordX_Amz_Target { 'Kinesis_20131202.PutRecord' = 0 }
+	export enum PutRecordX_Amz_Target { 'Kinesis_20131202.PutRecord' = 'Kinesis_20131202.PutRecord' }
 
-	export enum PutRecordsX_Amz_Target { 'Kinesis_20131202.PutRecords' = 0 }
+	export enum PutRecordsX_Amz_Target { 'Kinesis_20131202.PutRecords' = 'Kinesis_20131202.PutRecords' }
 
-	export enum RegisterStreamConsumerX_Amz_Target { 'Kinesis_20131202.RegisterStreamConsumer' = 0 }
+	export enum RegisterStreamConsumerX_Amz_Target { 'Kinesis_20131202.RegisterStreamConsumer' = 'Kinesis_20131202.RegisterStreamConsumer' }
 
-	export enum RemoveTagsFromStreamX_Amz_Target { 'Kinesis_20131202.RemoveTagsFromStream' = 0 }
+	export enum RemoveTagsFromStreamX_Amz_Target { 'Kinesis_20131202.RemoveTagsFromStream' = 'Kinesis_20131202.RemoveTagsFromStream' }
 
-	export enum SplitShardX_Amz_Target { 'Kinesis_20131202.SplitShard' = 0 }
+	export enum SplitShardX_Amz_Target { 'Kinesis_20131202.SplitShard' = 'Kinesis_20131202.SplitShard' }
 
-	export enum StartStreamEncryptionX_Amz_Target { 'Kinesis_20131202.StartStreamEncryption' = 0 }
+	export enum StartStreamEncryptionX_Amz_Target { 'Kinesis_20131202.StartStreamEncryption' = 'Kinesis_20131202.StartStreamEncryption' }
 
-	export enum StopStreamEncryptionX_Amz_Target { 'Kinesis_20131202.StopStreamEncryption' = 0 }
+	export enum StopStreamEncryptionX_Amz_Target { 'Kinesis_20131202.StopStreamEncryption' = 'Kinesis_20131202.StopStreamEncryption' }
 
-	export enum UpdateShardCountX_Amz_Target { 'Kinesis_20131202.UpdateShardCount' = 0 }
+	export enum UpdateShardCountX_Amz_Target { 'Kinesis_20131202.UpdateShardCount' = 'Kinesis_20131202.UpdateShardCount' }
 
-	export enum UpdateStreamModeX_Amz_Target { 'Kinesis_20131202.UpdateStreamMode' = 0 }
+	export enum UpdateStreamModeX_Amz_Target { 'Kinesis_20131202.UpdateStreamMode' = 'Kinesis_20131202.UpdateStreamMode' }
 
 }
 

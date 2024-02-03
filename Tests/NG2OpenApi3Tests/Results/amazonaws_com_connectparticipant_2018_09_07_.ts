@@ -125,7 +125,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConnectionType { WEBSOCKET = 0, CONNECTION_CREDENTIALS = 1 }
+	export enum ConnectionType { WEBSOCKET = 'WEBSOCKET', CONNECTION_CREDENTIALS = 'CONNECTION_CREDENTIALS' }
 
 	export interface DisconnectParticipantResponse {
 	}
@@ -216,9 +216,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChatItemType { TYPING = 0, PARTICIPANT_JOINED = 1, PARTICIPANT_LEFT = 2, CHAT_ENDED = 3, TRANSFER_SUCCEEDED = 4, TRANSFER_FAILED = 5, MESSAGE = 6, EVENT = 7, ATTACHMENT = 8, CONNECTION_ACK = 9, MESSAGE_DELIVERED = 10, MESSAGE_READ = 11 }
+	export enum ChatItemType { TYPING = 'TYPING', PARTICIPANT_JOINED = 'PARTICIPANT_JOINED', PARTICIPANT_LEFT = 'PARTICIPANT_LEFT', CHAT_ENDED = 'CHAT_ENDED', TRANSFER_SUCCEEDED = 'TRANSFER_SUCCEEDED', TRANSFER_FAILED = 'TRANSFER_FAILED', MESSAGE = 'MESSAGE', EVENT = 'EVENT', ATTACHMENT = 'ATTACHMENT', CONNECTION_ACK = 'CONNECTION_ACK', MESSAGE_DELIVERED = 'MESSAGE_DELIVERED', MESSAGE_READ = 'MESSAGE_READ' }
 
-	export enum ParticipantRole { AGENT = 0, CUSTOMER = 1, SYSTEM = 2 }
+	export enum ParticipantRole { AGENT = 'AGENT', CUSTOMER = 'CUSTOMER', SYSTEM = 'SYSTEM' }
 
 
 	/** The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded. */
@@ -246,7 +246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactStatus { APPROVED = 0, REJECTED = 1, IN_PROGRESS = 2 }
+	export enum ArtifactStatus { APPROVED = 'APPROVED', REJECTED = 'REJECTED', IN_PROGRESS = 'IN_PROGRESS' }
 
 
 	/** Contains metadata related to a message. */
@@ -430,9 +430,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ScanDirection { FORWARD = 0, BACKWARD = 1 }
+	export enum ScanDirection { FORWARD = 'FORWARD', BACKWARD = 'BACKWARD' }
 
-	export enum SortKey { DESCENDING = 0, ASCENDING = 1 }
+	export enum SortKey { DESCENDING = 'DESCENDING', ASCENDING = 'ASCENDING' }
 
 
 	/** A filtering option for where to start. For example, if you sent 100 messages, start with message 50.  */

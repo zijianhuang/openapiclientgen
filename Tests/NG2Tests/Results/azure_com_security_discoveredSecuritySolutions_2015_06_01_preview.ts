@@ -78,7 +78,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoveredSecuritySolutionPropertiesSecurityFamily { Waf = 0, Ngfw = 1, SaasWaf = 2, Va = 3 }
+	export enum DiscoveredSecuritySolutionPropertiesSecurityFamily { Waf = 'Waf', Ngfw = 'Ngfw', SaasWaf = 'SaasWaf', Va = 'Va' }
 
 	export interface DiscoveredSecuritySolutionList {
 

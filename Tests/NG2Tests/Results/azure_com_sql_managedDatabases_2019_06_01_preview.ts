@@ -159,11 +159,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedDatabasePropertiesCatalogCollation { DATABASE_DEFAULT = 0, SQL_Latin1_General_CP1_CI_AS = 1 }
+	export enum ManagedDatabasePropertiesCatalogCollation { DATABASE_DEFAULT = 'DATABASE_DEFAULT', SQL_Latin1_General_CP1_CI_AS = 'SQL_Latin1_General_CP1_CI_AS' }
 
-	export enum ManagedDatabasePropertiesCreateMode { Default = 0, RestoreExternalBackup = 1, PointInTimeRestore = 2, Recovery = 3 }
+	export enum ManagedDatabasePropertiesCreateMode { Default = 'Default', RestoreExternalBackup = 'RestoreExternalBackup', PointInTimeRestore = 'PointInTimeRestore', Recovery = 'Recovery' }
 
-	export enum ManagedDatabasePropertiesStatus { Online = 0, Offline = 1, Shutdown = 2, Creating = 3, Inaccessible = 4, Restoring = 5, Updating = 6 }
+	export enum ManagedDatabasePropertiesStatus { Online = 'Online', Offline = 'Offline', Shutdown = 'Shutdown', Creating = 'Creating', Inaccessible = 'Inaccessible', Restoring = 'Restoring', Updating = 'Updating' }
 
 
 	/** A list of managed databases. */

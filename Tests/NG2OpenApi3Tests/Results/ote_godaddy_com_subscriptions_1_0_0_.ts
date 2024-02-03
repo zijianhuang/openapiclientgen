@@ -410,9 +410,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionAddonCommitment { PAID = 0, FREE = 1, TRIAL = 2 }
+	export enum SubscriptionAddonCommitment { PAID = 'PAID', FREE = 'FREE', TRIAL = 'TRIAL' }
 
-	export enum SubscriptionStatus { ACTIVE = 0, PENDING = 1, CANCELED = 2 }
+	export enum SubscriptionStatus { ACTIVE = 'ACTIVE', PENDING = 'PENDING', CANCELED = 'CANCELED' }
 
 	export interface SubscriptionBilling {
 
@@ -466,7 +466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionBillingStatus { CURRENT = 0, PAST_DUE = 1 }
+	export enum SubscriptionBillingStatus { CURRENT = 'CURRENT', PAST_DUE = 'PAST_DUE' }
 
 	export interface SubscriptionList {
 
@@ -601,7 +601,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionProductRenewalPeriodUnit { MONTH = 0, QUARTER = 1, SEMI_ANNUAL = 2, YEAR = 3 }
+	export enum SubscriptionProductRenewalPeriodUnit { MONTH = 'MONTH', QUARTER = 'QUARTER', SEMI_ANNUAL = 'SEMI_ANNUAL', YEAR = 'YEAR' }
 
 	export interface SubscriptionRelations {
 
@@ -708,7 +708,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ListSort { expiresAt = 0, '-expiresAt' = 1 }
+	export enum ListSort { expiresAt = 'expiresAt', '-expiresAt' = '-expiresAt' }
 
 }
 

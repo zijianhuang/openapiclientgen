@@ -77,7 +77,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedServiceIdentityType { None = 0, SystemAssigned = 1, UserAssigned = 2 }
+	export enum ManagedServiceIdentityType { None = 'None', SystemAssigned = 'SystemAssigned', UserAssigned = 'UserAssigned' }
 
 
 	/** User-assigned managed identity. */
@@ -177,7 +177,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentLockSettingsMode { None = 0, AllResourcesReadOnly = 1, AllResourcesDoNotDelete = 2 }
+	export enum AssignmentLockSettingsMode { None = 'None', AllResourcesReadOnly = 'AllResourcesReadOnly', AllResourcesDoNotDelete = 'AllResourcesDoNotDelete' }
 
 
 	/** A dictionary for parameters and their corresponding values. */
@@ -193,7 +193,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssignmentPropertiesProvisioningState { creating = 0, validating = 1, waiting = 2, deploying = 3, cancelling = 4, locking = 5, succeeded = 6, failed = 7, canceled = 8, deleting = 9 }
+	export enum AssignmentPropertiesProvisioningState { creating = 'creating', validating = 'validating', waiting = 'waiting', deploying = 'deploying', cancelling = 'cancelling', locking = 'locking', succeeded = 'succeeded', failed = 'failed', canceled = 'canceled', deleting = 'deleting' }
 
 
 	/** A dictionary which maps resource group placeholders to the resource groups which will be created. */

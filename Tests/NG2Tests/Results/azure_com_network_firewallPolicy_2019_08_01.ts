@@ -71,7 +71,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyRuleConditionApplicationProtocolProtocolType { Http = 0, Https = 1 }
+	export enum FirewallPolicyRuleConditionApplicationProtocolProtocolType { Http = 'Http', Https = 'Https' }
 
 	export interface FirewallPolicy {
 	}
@@ -147,7 +147,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyRuleConditionRuleConditionType { ApplicationRuleCondition = 0, NetworkRuleCondition = 1 }
+	export enum FirewallPolicyRuleConditionRuleConditionType { ApplicationRuleCondition = 'ApplicationRuleCondition', NetworkRuleCondition = 'NetworkRuleCondition' }
 
 
 	/** Properties of the FirewallPolicyFilterRuleAction. */
@@ -170,7 +170,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyFilterRuleActionType { Allow = 0, Deny = 1 }
+	export enum FirewallPolicyFilterRuleActionType { Allow = 'Allow', Deny = 'Deny' }
 
 
 	/** Response for ListFirewallPolicies API service call. */
@@ -254,7 +254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyNatRuleActionType { DNAT = 0 }
+	export enum FirewallPolicyNatRuleActionType { DNAT = 'DNAT' }
 
 
 	/** Firewall Policy definition. */
@@ -334,7 +334,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyPropertiesFormatProvisioningState { Succeeded = 0, Updating = 1, Deleting = 2, Failed = 3 }
+	export enum FirewallPolicyPropertiesFormatProvisioningState { Succeeded = 'Succeeded', Updating = 'Updating', Deleting = 'Deleting', Failed = 'Failed' }
 
 	export interface FirewallPolicyPropertiesFormatRuleGroups {
 
@@ -353,7 +353,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyPropertiesFormatThreatIntelMode { Alert = 0, Deny = 1, Off = 2 }
+	export enum FirewallPolicyPropertiesFormatThreatIntelMode { Alert = 'Alert', Deny = 'Deny', Off = 'Off' }
 
 
 	/** Properties of the rule. */
@@ -404,15 +404,15 @@ export namespace MyNS {
 
 	}
 
-	export enum FirewallPolicyRuleRuleType { FirewallPolicyNatRule = 0, FirewallPolicyFilterRule = 1 }
+	export enum FirewallPolicyRuleRuleType { FirewallPolicyNatRule = 'FirewallPolicyNatRule', FirewallPolicyFilterRule = 'FirewallPolicyFilterRule' }
 
 
 	/** The application protocol type of a Rule condition. */
-	export enum FirewallPolicyRuleConditionApplicationProtocolType { Http = 0, Https = 1 }
+	export enum FirewallPolicyRuleConditionApplicationProtocolType { Http = 'Http', Https = 'Https' }
 
 
 	/** The Network protocol of a Rule condition. */
-	export enum FirewallPolicyRuleConditionNetworkProtocol { TCP = 0, UDP = 1, Any = 2, ICMP = 3 }
+	export enum FirewallPolicyRuleConditionNetworkProtocol { TCP = 'TCP', UDP = 'UDP', Any = 'Any', ICMP = 'ICMP' }
 
 	export interface FirewallPolicyRuleGroup {
 	}

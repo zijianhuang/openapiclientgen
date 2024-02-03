@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageTemplateIdentityType { UserAssigned = 0, None = 1 }
+	export enum ImageTemplateIdentityType { UserAssigned = 'UserAssigned', None = 'None' }
 
 	export interface ImageTemplateIdentityUserAssignedIdentities {
 
@@ -366,9 +366,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageTemplateLastRunStatusRunState { Running = 0, Succeeded = 1, PartiallySucceeded = 2, Failed = 3 }
+	export enum ImageTemplateLastRunStatusRunState { Running = 'Running', Succeeded = 'Succeeded', PartiallySucceeded = 'PartiallySucceeded', Failed = 'Failed' }
 
-	export enum ImageTemplateLastRunStatusRunSubState { Queued = 0, Building = 1, Customizing = 2, Distributing = 3 }
+	export enum ImageTemplateLastRunStatusRunSubState { Queued = 'Queued', Building = 'Building', Customizing = 'Customizing', Distributing = 'Distributing' }
 
 
 	/** The result of List image templates operation */
@@ -608,7 +608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageTemplatePropertiesProvisioningState { Creating = 0, Updating = 1, Succeeded = 2, Failed = 3, Deleting = 4 }
+	export enum ImageTemplatePropertiesProvisioningState { Creating = 'Creating', Updating = 'Updating', Succeeded = 'Succeeded', Failed = 'Failed', Deleting = 'Deleting' }
 
 
 	/** Reboots a VM and waits for it to come back online (Windows). Corresponds to Packer windows-restart provisioner */
@@ -923,11 +923,11 @@ export namespace MyNS {
 
 	}
 
-	export enum ProvisioningErrorProvisioningErrorCode { BadSourceType = 0, BadPIRSource = 1, BadISOSource = 2, BadManagedImageSource = 3, BadSharedImageVersionSource = 4, BadCustomizerType = 5, UnsupportedCustomizerType = 6, NoCustomizerScript = 7, BadDistributeType = 8, BadSharedImageDistribute = 9, ServerError = 10, Other = 11 }
+	export enum ProvisioningErrorProvisioningErrorCode { BadSourceType = 'BadSourceType', BadPIRSource = 'BadPIRSource', BadISOSource = 'BadISOSource', BadManagedImageSource = 'BadManagedImageSource', BadSharedImageVersionSource = 'BadSharedImageVersionSource', BadCustomizerType = 'BadCustomizerType', UnsupportedCustomizerType = 'UnsupportedCustomizerType', NoCustomizerScript = 'NoCustomizerScript', BadDistributeType = 'BadDistributeType', BadSharedImageDistribute = 'BadSharedImageDistribute', ServerError = 'ServerError', Other = 'Other' }
 
 
 	/** Provisioning state of the resource */
-	export enum ProvisioningState { Creating = 0, Updating = 1, Succeeded = 2, Failed = 3, Deleting = 4 }
+	export enum ProvisioningState { Creating = 'Creating', Updating = 'Updating', Succeeded = 'Succeeded', Failed = 'Failed', Deleting = 'Deleting' }
 
 
 	/** The Resource model definition. */

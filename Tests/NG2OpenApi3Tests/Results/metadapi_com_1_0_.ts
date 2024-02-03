@@ -1607,7 +1607,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_radiusUom { mi = 0, km = 1 }
+	export enum Get_radiusUom { mi = 'mi', km = 'km' }
 
 	export interface Get_radiusReturn {
 

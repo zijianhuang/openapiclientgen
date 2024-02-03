@@ -75,7 +75,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ManagedInstanceKeyPropertiesServerKeyType { ServiceManaged = 0, AzureKeyVault = 1 }
+	export enum ManagedInstanceKeyPropertiesServerKeyType { ServiceManaged = 'ServiceManaged', AzureKeyVault = 'AzureKeyVault' }
 
 
 	/** A list of managed instance keys. */

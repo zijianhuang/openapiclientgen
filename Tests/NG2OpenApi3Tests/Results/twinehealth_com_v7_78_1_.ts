@@ -232,7 +232,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionResourceAttributesType { other_lifestyle = 0 }
+	export enum ActionResourceAttributesType { other_lifestyle = 'other_lifestyle' }
 
 	export interface ActionWindow {
 		_id?: string | null;
@@ -604,9 +604,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CalendarEventResourceAttributesAttendeesResponse_status { needsAction = 0, declined = 1, tentative = 2, accepted = 3 }
+	export enum CalendarEventResourceAttributesAttendeesResponse_status { needsAction = 'needsAction', declined = 'declined', tentative = 'tentative', accepted = 'accepted' }
 
-	export enum CalendarEventResourceAttributesType { 'plan-check-in' = 0, reminder = 1, 'telephone-call' = 2, 'office-visit' = 3, 'video-call' = 4 }
+	export enum CalendarEventResourceAttributesType { 'plan-check-in' = 'plan-check-in', reminder = 'reminder', 'telephone-call' = 'telephone-call', 'office-visit' = 'office-visit', 'video-call' = 'video-call' }
 
 	export interface CalendarEventResourceLinks {
 		self?: string | null;
@@ -677,7 +677,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CalendarEventResourceType { calendar_event = 0 }
+	export enum CalendarEventResourceType { calendar_event = 'calendar_event' }
 
 	export interface CalendarEventResponseResource {
 		attributes?: CalendarEventResponseResourceAttributes;
@@ -722,7 +722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CalendarEventResponseResourceAttributesResponse_status { accepted = 0, declined = 1, tentative = 2 }
+	export enum CalendarEventResponseResourceAttributesResponse_status { accepted = 'accepted', declined = 'declined', tentative = 'tentative' }
 
 	export interface CalendarEventResponseResourceLinks {
 		self?: string | null;
@@ -839,7 +839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CalendarEventResponseResourceType { calendar_event_response = 0 }
+	export enum CalendarEventResponseResourceType { calendar_event_response = 'calendar_event_response' }
 
 	export interface CoachResource {
 
@@ -902,7 +902,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CoachResourceType { coach = 0 }
+	export enum CoachResourceType { coach = 'coach' }
 
 	export interface CollectionResponseLinks {
 		last?: string | null;
@@ -1220,7 +1220,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupResourceType { group = 0 }
+	export enum GroupResourceType { group = 'group' }
 
 	export interface CreateGroupResponse {
 
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { Forbidden = 0, InvalidParameter = 1, InvalidBodyParameter = 2, ResourceNotFound = 3, Unauthorized = 4, InvalidCredentials = 5, InvalidGrantType = 6 }
+	export enum ErrorCode { Forbidden = 'Forbidden', InvalidParameter = 'InvalidParameter', InvalidBodyParameter = 'InvalidBodyParameter', ResourceNotFound = 'ResourceNotFound', Unauthorized = 'Unauthorized', InvalidCredentials = 'InvalidCredentials', InvalidGrantType = 'InvalidGrantType' }
 
 	export interface ErrorSource {
 		parameter?: string | null;
@@ -1433,7 +1433,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatientHealthMetricResourceAttributesType { blood_pressure_systolic = 0, blood_pressure_diastolic = 1, hemoglobin_a1c = 2, hdl_cholesterol = 3, ldl_cholesterol = 4, total_cholesterol = 5, triglycerides = 6, blood_urea_nitrogen = 7, creatinine = 8, hemoglobin = 9, hematocrit = 10, total_serum_iron = 11, thyroid_stimulating_hormone = 12, free_thyroxine = 13, free_triiodothyronine = 14, total_triiodothyronine = 15, cd4_cell_count = 16, hiv_viral_load = 17, inr = 18, free_testosterone = 19, total_testosterone = 20, c_reactive_protein = 21, prostate_specific_antigen = 22, cotinine = 23, c_peptide = 24, blood_pressure = 25, blood_glucose = 26, weight = 27, heart_rate = 28, body_fat_percentage = 29, body_mass_index = 30, body_temperature = 31, forced_expiratory_volume1 = 32, forced_vital_capacity = 33, lean_body_mass = 34, nausea_level = 35, oxygen_saturation = 36, pain_level = 37, peak_expiratory_flow_rate = 38, peripheral_perfusion_index = 39, respiratory_rate = 40, inhaler_usage = 41 }
+	export enum PatientHealthMetricResourceAttributesType { blood_pressure_systolic = 'blood_pressure_systolic', blood_pressure_diastolic = 'blood_pressure_diastolic', hemoglobin_a1c = 'hemoglobin_a1c', hdl_cholesterol = 'hdl_cholesterol', ldl_cholesterol = 'ldl_cholesterol', total_cholesterol = 'total_cholesterol', triglycerides = 'triglycerides', blood_urea_nitrogen = 'blood_urea_nitrogen', creatinine = 'creatinine', hemoglobin = 'hemoglobin', hematocrit = 'hematocrit', total_serum_iron = 'total_serum_iron', thyroid_stimulating_hormone = 'thyroid_stimulating_hormone', free_thyroxine = 'free_thyroxine', free_triiodothyronine = 'free_triiodothyronine', total_triiodothyronine = 'total_triiodothyronine', cd4_cell_count = 'cd4_cell_count', hiv_viral_load = 'hiv_viral_load', inr = 'inr', free_testosterone = 'free_testosterone', total_testosterone = 'total_testosterone', c_reactive_protein = 'c_reactive_protein', prostate_specific_antigen = 'prostate_specific_antigen', cotinine = 'cotinine', c_peptide = 'c_peptide', blood_pressure = 'blood_pressure', blood_glucose = 'blood_glucose', weight = 'weight', heart_rate = 'heart_rate', body_fat_percentage = 'body_fat_percentage', body_mass_index = 'body_mass_index', body_temperature = 'body_temperature', forced_expiratory_volume1 = 'forced_expiratory_volume1', forced_vital_capacity = 'forced_vital_capacity', lean_body_mass = 'lean_body_mass', nausea_level = 'nausea_level', oxygen_saturation = 'oxygen_saturation', pain_level = 'pain_level', peak_expiratory_flow_rate = 'peak_expiratory_flow_rate', peripheral_perfusion_index = 'peripheral_perfusion_index', respiratory_rate = 'respiratory_rate', inhaler_usage = 'inhaler_usage' }
 
 	export interface PatientHealthMetricResourceRelationships {
 		patient?: PatientHealthMetricResourceRelationshipsPatient;
@@ -1683,7 +1683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatientResourceAttributesGender { male = 0, female = 1, other = 2 }
+	export enum PatientResourceAttributesGender { male = 'male', female = 'female', other = 'other' }
 
 	export interface PatientIdentifier {
 		label?: string | null;
@@ -1750,7 +1750,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PhoneNumberType { home = 0, work = 1, mobile = 2, 'home-fax' = 3, 'work-fax' = 4, other = 5 }
+	export enum PhoneNumberType { home = 'home', work = 'work', mobile = 'mobile', 'home-fax' = 'home-fax', 'work-fax' = 'work-fax', other = 'other' }
 
 	export interface PatientResourceAttributesStatement {
 		updated_at?: string | null;
@@ -1811,7 +1811,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatientResourceType { patient = 0 }
+	export enum PatientResourceType { patient = 'patient' }
 
 	export interface CreateRewardEarningFulfillmentRequest {
 
@@ -2554,7 +2554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RewardProgramResourceAttributesBudget_unit { dollar = 0, point = 1, credit = 2 }
+	export enum RewardProgramResourceAttributesBudget_unit { dollar = 'dollar', point = 'point', credit = 'credit' }
 
 	export interface RewardProgramResourceRelationships {
 
@@ -2908,9 +2908,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateTokenRequestDataAttributesGrant_type { refresh_token = 0, client_credentials = 1 }
+	export enum CreateTokenRequestDataAttributesGrant_type { refresh_token = 'refresh_token', client_credentials = 'client_credentials' }
 
-	export enum CreateTokenRequestDataType { token = 0 }
+	export enum CreateTokenRequestDataType { token = 'token' }
 
 	export interface CreateTokenResponse {
 
@@ -3872,7 +3872,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthProfileResourceAttributesStatsCategory { lifestyle_behaviors = 0, mental_wellbeing = 1, preventative_care = 2, overall = 3 }
+	export enum HealthProfileResourceAttributesStatsCategory { lifestyle_behaviors = 'lifestyle_behaviors', mental_wellbeing = 'mental_wellbeing', preventative_care = 'preventative_care', overall = 'overall' }
 
 	export interface HealthProfileResourceLinks {
 
@@ -4080,7 +4080,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HealthQuestionDefinitionResourceAttributesCategory { lifestyle_behaviors = 0, mental_wellbeing = 1, preventative_care = 2 }
+	export enum HealthQuestionDefinitionResourceAttributesCategory { lifestyle_behaviors = 'lifestyle_behaviors', mental_wellbeing = 'mental_wellbeing', preventative_care = 'preventative_care' }
 
 	export interface HealthQuestionDefinitionResourceAttributesFormat {
 		HealthQuestionDefinitionResourceAttributesFormatData?: Array<HealthQuestionDefinitionResourceAttributesFormatData>;
@@ -4236,7 +4236,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrganizationResourceType { organization = 0 }
+	export enum OrganizationResourceType { organization = 'organization' }
 
 	export interface FetchPatientHealthMetricResponse {
 
@@ -4901,7 +4901,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PatientPlanSummaryResourceType { patient_plan_summary = 0 }
+	export enum PatientPlanSummaryResourceType { patient_plan_summary = 'patient_plan_summary' }
 
 	export interface FetchPatientPlanSummaryResponse {
 
@@ -5920,17 +5920,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum FetchCalendarEventsInclude { owner = 0 }
+	export enum FetchCalendarEventsInclude { owner = 'owner' }
 
-	export enum FetchEmailHistoriesSort { send_time = 0, '-send_time' = 1 }
+	export enum FetchEmailHistoriesSort { send_time = 'send_time', '-send_time' = '-send_time' }
 
-	export enum FetchHealthProfilesInclude { patient = 0, questions = 1 }
+	export enum FetchHealthProfilesInclude { patient = 'patient', questions = 'questions' }
 
-	export enum FetchHealthProfileQuestionsInclude { question_definition = 0, answer = 1 }
+	export enum FetchHealthProfileQuestionsInclude { question_definition = 'question_definition', answer = 'answer' }
 
-	export enum CreateTokenInclude { groups = 0, organization = 1 }
+	export enum CreateTokenInclude { groups = 'groups', organization = 'organization' }
 
-	export enum FetchPatientPlanSummariesInclude { actions = 0, bundles = 1, patient = 2, current_results = 3 }
+	export enum FetchPatientPlanSummariesInclude { actions = 'actions', bundles = 'bundles', patient = 'patient', current_results = 'current_results' }
 
 }
 

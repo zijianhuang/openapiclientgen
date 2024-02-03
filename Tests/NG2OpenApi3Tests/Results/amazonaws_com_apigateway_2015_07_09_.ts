@@ -177,7 +177,7 @@ export namespace MyNS {
 
 
 	/** The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool. */
-	export enum AuthorizerType { TOKEN = 0, REQUEST = 1, COGNITO_USER_POOLS = 2 }
+	export enum AuthorizerType { TOKEN = 'TOKEN', REQUEST = 'REQUEST', COGNITO_USER_POOLS = 'COGNITO_USER_POOLS' }
 
 
 	/** Represents the base path that callers of the API must provide as part of the URL after the domain name. */
@@ -304,7 +304,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DocumentationPartType { API = 0, AUTHORIZER = 1, MODEL = 2, RESOURCE = 3, METHOD = 4, PATH_PARAMETER = 5, QUERY_PARAMETER = 6, REQUEST_HEADER = 7, REQUEST_BODY = 8, RESPONSE = 9, RESPONSE_HEADER = 10, RESPONSE_BODY = 11 }
+	export enum DocumentationPartType { API = 'API', AUTHORIZER = 'AUTHORIZER', MODEL = 'MODEL', RESOURCE = 'RESOURCE', METHOD = 'METHOD', PATH_PARAMETER = 'PATH_PARAMETER', QUERY_PARAMETER = 'QUERY_PARAMETER', REQUEST_HEADER = 'REQUEST_HEADER', REQUEST_BODY = 'REQUEST_BODY', RESPONSE = 'RESPONSE', RESPONSE_HEADER = 'RESPONSE_HEADER', RESPONSE_BODY = 'RESPONSE_BODY' }
 
 
 	/** A snapshot of the documentation of an API. */
@@ -406,11 +406,11 @@ export namespace MyNS {
 
 
 	/** The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs. */
-	export enum EndpointType { REGIONAL = 0, EDGE = 1, PRIVATE = 2 }
+	export enum EndpointType { REGIONAL = 'REGIONAL', EDGE = 'EDGE', PRIVATE = 'PRIVATE' }
 
-	export enum DomainNameStatus { AVAILABLE = 0, UPDATING = 1, PENDING = 2, PENDING_CERTIFICATE_REIMPORT = 3, PENDING_OWNERSHIP_VERIFICATION = 4 }
+	export enum DomainNameStatus { AVAILABLE = 'AVAILABLE', UPDATING = 'UPDATING', PENDING = 'PENDING', PENDING_CERTIFICATE_REIMPORT = 'PENDING_CERTIFICATE_REIMPORT', PENDING_OWNERSHIP_VERIFICATION = 'PENDING_OWNERSHIP_VERIFICATION' }
 
-	export enum SecurityPolicy { TLS_1_0 = 0, TLS_1_2 = 1 }
+	export enum SecurityPolicy { TLS_1_0 = 'TLS_1_0', TLS_1_2 = 'TLS_1_2' }
 
 
 	/** The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API. */
@@ -570,7 +570,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApiKeySourceType { HEADER = 0, AUTHORIZER = 1 }
+	export enum ApiKeySourceType { HEADER = 'HEADER', AUTHORIZER = 'AUTHORIZER' }
 
 
 	/** Represents a unique identifier for a version of a deployed RestApi that is callable by users. */
@@ -629,11 +629,11 @@ export namespace MyNS {
 
 
 	/** Returns the size of the CacheCluster. */
-	export enum CacheClusterSize { _0_5 = 0, _1_6 = 1, _6_1 = 2, _13_5 = 3, _28_4 = 4, _58_2 = 5, _118 = 6, _237 = 7 }
+	export enum CacheClusterSize { _0_5 = '0.5', _1_6 = '1.6', _6_1 = '6.1', _13_5 = '13.5', _28_4 = '28.4', _58_2 = '58.2', _118 = '118', _237 = '237' }
 
 
 	/** Returns the status of the CacheCluster. */
-	export enum CacheClusterStatus { CREATE_IN_PROGRESS = 0, AVAILABLE = 1, DELETE_IN_PROGRESS = 2, NOT_AVAILABLE = 3, FLUSH_IN_PROGRESS = 4 }
+	export enum CacheClusterStatus { CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', AVAILABLE = 'AVAILABLE', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', NOT_AVAILABLE = 'NOT_AVAILABLE', FLUSH_IN_PROGRESS = 'FLUSH_IN_PROGRESS' }
 
 	export interface MapOfMethodSettings {
 	}
@@ -793,7 +793,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QuotaPeriodType { DAY = 0, WEEK = 1, MONTH = 2 }
+	export enum QuotaPeriodType { DAY = 'DAY', WEEK = 'WEEK', MONTH = 'MONTH' }
 
 
 	/** Represents a usage plan key to identify a plan customer. */
@@ -852,7 +852,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VpcLinkStatus { AVAILABLE = 0, PENDING = 1, DELETING = 2, FAILED = 3 }
+	export enum VpcLinkStatus { AVAILABLE = 'AVAILABLE', PENDING = 'PENDING', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 
 	/** Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint. */
@@ -1093,7 +1093,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GatewayResponseType { DEFAULT_4XX = 0, DEFAULT_5XX = 1, RESOURCE_NOT_FOUND = 2, UNAUTHORIZED = 3, INVALID_API_KEY = 4, ACCESS_DENIED = 5, AUTHORIZER_FAILURE = 6, AUTHORIZER_CONFIGURATION_ERROR = 7, INVALID_SIGNATURE = 8, EXPIRED_TOKEN = 9, MISSING_AUTHENTICATION_TOKEN = 10, INTEGRATION_FAILURE = 11, INTEGRATION_TIMEOUT = 12, API_CONFIGURATION_ERROR = 13, UNSUPPORTED_MEDIA_TYPE = 14, BAD_REQUEST_PARAMETERS = 15, BAD_REQUEST_BODY = 16, REQUEST_TOO_LARGE = 17, THROTTLED = 18, QUOTA_EXCEEDED = 19, WAF_FILTERED = 20 }
+	export enum GatewayResponseType { DEFAULT_4XX = 'DEFAULT_4XX', DEFAULT_5XX = 'DEFAULT_5XX', RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND', UNAUTHORIZED = 'UNAUTHORIZED', INVALID_API_KEY = 'INVALID_API_KEY', ACCESS_DENIED = 'ACCESS_DENIED', AUTHORIZER_FAILURE = 'AUTHORIZER_FAILURE', AUTHORIZER_CONFIGURATION_ERROR = 'AUTHORIZER_CONFIGURATION_ERROR', INVALID_SIGNATURE = 'INVALID_SIGNATURE', EXPIRED_TOKEN = 'EXPIRED_TOKEN', MISSING_AUTHENTICATION_TOKEN = 'MISSING_AUTHENTICATION_TOKEN', INTEGRATION_FAILURE = 'INTEGRATION_FAILURE', INTEGRATION_TIMEOUT = 'INTEGRATION_TIMEOUT', API_CONFIGURATION_ERROR = 'API_CONFIGURATION_ERROR', UNSUPPORTED_MEDIA_TYPE = 'UNSUPPORTED_MEDIA_TYPE', BAD_REQUEST_PARAMETERS = 'BAD_REQUEST_PARAMETERS', BAD_REQUEST_BODY = 'BAD_REQUEST_BODY', REQUEST_TOO_LARGE = 'REQUEST_TOO_LARGE', THROTTLED = 'THROTTLED', QUOTA_EXCEEDED = 'QUOTA_EXCEEDED', WAF_FILTERED = 'WAF_FILTERED' }
 
 
 	/** The collection of the GatewayResponse instances of a RestApi as a <code>responseType</code>-to-GatewayResponse object map of key-value pairs. As such, pagination is not supported for querying this collection. */
@@ -1164,11 +1164,11 @@ export namespace MyNS {
 
 
 	/** The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any AWS service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration.  */
-	export enum IntegrationType { HTTP = 0, AWS = 1, MOCK = 2, HTTP_PROXY = 3, AWS_PROXY = 4 }
+	export enum IntegrationType { HTTP = 'HTTP', AWS = 'AWS', MOCK = 'MOCK', HTTP_PROXY = 'HTTP_PROXY', AWS_PROXY = 'AWS_PROXY' }
 
-	export enum ConnectionType { INTERNET = 0, VPC_LINK = 1 }
+	export enum ConnectionType { INTERNET = 'INTERNET', VPC_LINK = 'VPC_LINK' }
 
-	export enum ContentHandlingStrategy { CONVERT_TO_BINARY = 0, CONVERT_TO_TEXT = 1 }
+	export enum ContentHandlingStrategy { CONVERT_TO_BINARY = 'CONVERT_TO_BINARY', CONVERT_TO_TEXT = 'CONVERT_TO_TEXT' }
 
 	export interface MapOfIntegrationResponse {
 	}
@@ -1723,9 +1723,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Op { add = 0, remove = 1, replace = 2, move = 3, copy = 4, test = 5 }
+	export enum Op { add = 'add', remove = 'remove', replace = 'replace', move = 'move', copy = 'copy', test = 'test' }
 
-	export enum ApiKeysFormat { csv = 0 }
+	export enum ApiKeysFormat { csv = 'csv' }
 
 
 	/** Request to create an ApiKey resource. */
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LocationStatusType { DOCUMENTED = 0, UNDOCUMENTED = 1 }
+	export enum LocationStatusType { DOCUMENTED = 'DOCUMENTED', UNDOCUMENTED = 'UNDOCUMENTED' }
 
 
 	/** Gets the documentation parts of an API. The result may be filtered by the type, name, or path of API entities (targets). */
@@ -3280,7 +3280,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PutMode { merge = 0, overwrite = 1 }
+	export enum PutMode { merge = 'merge', overwrite = 'overwrite' }
 
 
 	/** Import documentation parts from an external (e.g., OpenAPI) definition file.  */
@@ -3368,7 +3368,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnauthorizedCacheControlHeaderStrategy { FAIL_WITH_403 = 0, SUCCEED_WITH_RESPONSE_HEADER = 1, SUCCEED_WITHOUT_RESPONSE_HEADER = 2 }
+	export enum UnauthorizedCacheControlHeaderStrategy { FAIL_WITH_403 = 'FAIL_WITH_403', SUCCEED_WITH_RESPONSE_HEADER = 'SUCCEED_WITH_RESPONSE_HEADER', SUCCEED_WITHOUT_RESPONSE_HEADER = 'SUCCEED_WITHOUT_RESPONSE_HEADER' }
 
 
 	/** Represents a summary of a Method resource, given a particular date and time. */
@@ -7017,7 +7017,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportApiKeysMode { import = 0 }
+	export enum ImportApiKeysMode { import = 'import' }
 
 	export interface ImportApiKeysPostBody {
 

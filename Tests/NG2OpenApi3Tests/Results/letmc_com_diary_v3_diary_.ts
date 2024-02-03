@@ -839,7 +839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiaryAppointmentModelRemindBefore { Min = 0, Min2 = 1, Min5 = 2, Min10 = 3, Min15 = 4, Min30 = 5, Min45 = 6, Hour = 7, Hour2 = 8, Hour3 = 9, Hour6 = 10, Hour12 = 11, Day = 12, Day2 = 13, Day3 = 14, Week = 15, NoReminder = 16 }
+	export enum DiaryAppointmentModelRemindBefore { Min = 'Min', Min2 = 'Min2', Min5 = 'Min5', Min10 = 'Min10', Min15 = 'Min15', Min30 = 'Min30', Min45 = 'Min45', Hour = 'Hour', Hour2 = 'Hour2', Hour3 = 'Hour3', Hour6 = 'Hour6', Hour12 = 'Hour12', Day = 'Day', Day2 = 'Day2', Day3 = 'Day3', Week = 'Week', NoReminder = 'NoReminder' }
 
 
 	/** Holds results from a paged query returning DiaryAppointmentModel values */
@@ -907,7 +907,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiaryAppointmentTypeModelSystemType { Viewing = 0, ViewAndValue = 1, OpeningInspection = 2, InterimInspection = 3, ClosingInspection = 4, SalesAppraisal = 5, Custom = 6 }
+	export enum DiaryAppointmentTypeModelSystemType { Viewing = 'Viewing', ViewAndValue = 'ViewAndValue', OpeningInspection = 'OpeningInspection', InterimInspection = 'InterimInspection', ClosingInspection = 'ClosingInspection', SalesAppraisal = 'SalesAppraisal', Custom = 'Custom' }
 
 
 	/** Holds results from a paged query returning DiaryAppointmentTypeModel values */

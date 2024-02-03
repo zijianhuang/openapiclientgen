@@ -128,7 +128,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceIdentifierDeviceType { DEVICE_TYPE_UNSPECIFIED = 0, DEVICE_TYPE_ANDROID = 1, DEVICE_TYPE_CHROME_OS = 2 }
+	export enum DeviceIdentifierDeviceType { DEVICE_TYPE_UNSPECIFIED = 'DEVICE_TYPE_UNSPECIFIED', DEVICE_TYPE_ANDROID = 'DEVICE_TYPE_ANDROID', DEVICE_TYPE_CHROME_OS = 'DEVICE_TYPE_CHROME_OS' }
 
 
 	/** Metadata entries that can be attached to a `Device`. To learn more, read [Device metadata](https://developers.google.com/zero-touch/guides/metadata). */
@@ -151,7 +151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ClaimDeviceRequestSectionType { SECTION_TYPE_UNSPECIFIED = 0, SECTION_TYPE_SIM_LOCK = 1, SECTION_TYPE_ZERO_TOUCH = 2 }
+	export enum ClaimDeviceRequestSectionType { SECTION_TYPE_UNSPECIFIED = 'SECTION_TYPE_UNSPECIFIED', SECTION_TYPE_SIM_LOCK = 'SECTION_TYPE_SIM_LOCK', SECTION_TYPE_ZERO_TOUCH = 'SECTION_TYPE_ZERO_TOUCH' }
 
 
 	/** Response message containing device id of the claim. */
@@ -349,7 +349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompanyTermsStatus { TERMS_STATUS_UNSPECIFIED = 0, TERMS_STATUS_NOT_ACCEPTED = 1, TERMS_STATUS_ACCEPTED = 2, TERMS_STATUS_STALE = 3 }
+	export enum CompanyTermsStatus { TERMS_STATUS_UNSPECIFIED = 'TERMS_STATUS_UNSPECIFIED', TERMS_STATUS_NOT_ACCEPTED = 'TERMS_STATUS_NOT_ACCEPTED', TERMS_STATUS_ACCEPTED = 'TERMS_STATUS_ACCEPTED', TERMS_STATUS_STALE = 'TERMS_STATUS_STALE' }
 
 
 	/** A configuration collects the provisioning options for Android devices. Each configuration combines the following: * The EMM device policy controller (DPC) installed on the devices. * EMM policies enforced on the devices. * Metadata displayed on the device to help users during setup. Customers can add as many configurations as they need. However, zero-touch enrollment works best when a customer sets a default configuration that's applied to any new devices the organization purchases. */
@@ -679,7 +679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceClaimAdditionalService { ADDITIONAL_SERVICE_UNSPECIFIED = 0, DEVICE_PROTECTION = 1 }
+	export enum DeviceClaimAdditionalService { ADDITIONAL_SERVICE_UNSPECIFIED = 'ADDITIONAL_SERVICE_UNSPECIFIED', DEVICE_PROTECTION = 'DEVICE_PROTECTION' }
 
 
 	/** Response message of customer's listing DPCs. */
@@ -802,7 +802,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DevicesLongRunningOperationMetadataProcessingStatus { BATCH_PROCESS_STATUS_UNSPECIFIED = 0, BATCH_PROCESS_PENDING = 1, BATCH_PROCESS_IN_PROGRESS = 2, BATCH_PROCESS_PROCESSED = 3 }
+	export enum DevicesLongRunningOperationMetadataProcessingStatus { BATCH_PROCESS_STATUS_UNSPECIFIED = 'BATCH_PROCESS_STATUS_UNSPECIFIED', BATCH_PROCESS_PENDING = 'BATCH_PROCESS_PENDING', BATCH_PROCESS_IN_PROGRESS = 'BATCH_PROCESS_IN_PROGRESS', BATCH_PROCESS_PROCESSED = 'BATCH_PROCESS_PROCESSED' }
 
 
 	/** Tracks the status of a long-running operation to claim, unclaim, or attach metadata to devices. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). */
@@ -896,7 +896,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PerDeviceStatusInBatchStatus { SINGLE_DEVICE_STATUS_UNSPECIFIED = 0, SINGLE_DEVICE_STATUS_UNKNOWN_ERROR = 1, SINGLE_DEVICE_STATUS_OTHER_ERROR = 2, SINGLE_DEVICE_STATUS_SUCCESS = 3, SINGLE_DEVICE_STATUS_PERMISSION_DENIED = 4, SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER = 5, SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE = 6, SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS = 7, SINGLE_DEVICE_STATUS_INVALID_TOKEN = 8, SINGLE_DEVICE_STATUS_REVOKED_TOKEN = 9, SINGLE_DEVICE_STATUS_DEVICE_LIMIT_EXCEEDED = 10 }
+	export enum PerDeviceStatusInBatchStatus { SINGLE_DEVICE_STATUS_UNSPECIFIED = 'SINGLE_DEVICE_STATUS_UNSPECIFIED', SINGLE_DEVICE_STATUS_UNKNOWN_ERROR = 'SINGLE_DEVICE_STATUS_UNKNOWN_ERROR', SINGLE_DEVICE_STATUS_OTHER_ERROR = 'SINGLE_DEVICE_STATUS_OTHER_ERROR', SINGLE_DEVICE_STATUS_SUCCESS = 'SINGLE_DEVICE_STATUS_SUCCESS', SINGLE_DEVICE_STATUS_PERMISSION_DENIED = 'SINGLE_DEVICE_STATUS_PERMISSION_DENIED', SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER = 'SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER', SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE = 'SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE', SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS = 'SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS', SINGLE_DEVICE_STATUS_INVALID_TOKEN = 'SINGLE_DEVICE_STATUS_INVALID_TOKEN', SINGLE_DEVICE_STATUS_REVOKED_TOKEN = 'SINGLE_DEVICE_STATUS_REVOKED_TOKEN', SINGLE_DEVICE_STATUS_DEVICE_LIMIT_EXCEEDED = 'SINGLE_DEVICE_STATUS_DEVICE_LIMIT_EXCEEDED' }
 
 
 	/** Identifies one unclaim request. */
@@ -1152,7 +1152,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetDeviceSimLockStateResponseSimLockState { SIM_LOCK_STATE_UNSPECIFIED = 0, UNLOCKED = 1, LOCKED_TO_PARTNER = 2, LOCKED_TO_OTHER_PARTNER = 3 }
+	export enum GetDeviceSimLockStateResponseSimLockState { SIM_LOCK_STATE_UNSPECIFIED = 'SIM_LOCK_STATE_UNSPECIFIED', UNLOCKED = 'UNLOCKED', LOCKED_TO_PARTNER = 'LOCKED_TO_PARTNER', LOCKED_TO_OTHER_PARTNER = 'LOCKED_TO_OTHER_PARTNER' }
 
 
 	/** Response message of all customers related to this partner. */

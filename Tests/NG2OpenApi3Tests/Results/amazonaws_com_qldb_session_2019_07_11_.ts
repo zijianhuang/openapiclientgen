@@ -460,7 +460,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SendCommandX_Amz_Target { 'QLDBSession.SendCommand' = 0 }
+	export enum SendCommandX_Amz_Target { 'QLDBSession.SendCommand' = 'QLDBSession.SendCommand' }
 
 }
 

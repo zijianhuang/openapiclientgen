@@ -145,7 +145,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HistoryKeyFormFactor { ALL_FORM_FACTORS = 0, PHONE = 1, DESKTOP = 2, TABLET = 3 }
+	export enum HistoryKeyFormFactor { ALL_FORM_FACTORS = 'ALL_FORM_FACTORS', PHONE = 'PHONE', DESKTOP = 'DESKTOP', TABLET = 'TABLET' }
 
 
 	/** HistoryRecord is a timeseries of Chrome UX Report data. It contains user experience statistics for a single url pattern and a set of dimensions. */

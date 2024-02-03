@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActivationStatusState { UNKNOWN_STATE = 0, NOT_ACTIVATED = 1, not_activated = 2, ACTIVATED = 3, activated = 4 }
+	export enum ActivationStatusState { UNKNOWN_STATE = 'UNKNOWN_STATE', NOT_ACTIVATED = 'NOT_ACTIVATED', not_activated = 'not_activated', ACTIVATED = 'ACTIVATED', activated = 'activated' }
 
 
 	/** Resource used when the AddMessage endpoints are called. */
@@ -207,7 +207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MessageMessageType { MESSAGE_TYPE_UNSPECIFIED = 0, TEXT = 1, text = 2, EXPIRATION_NOTIFICATION = 3, expirationNotification = 4 }
+	export enum MessageMessageType { MESSAGE_TYPE_UNSPECIFIED = 'MESSAGE_TYPE_UNSPECIFIED', TEXT = 'TEXT', text = 'text', EXPIRATION_NOTIFICATION = 'EXPIRATION_NOTIFICATION', expirationNotification = 'expirationNotification' }
 
 	export interface AirportInfo {
 
@@ -445,9 +445,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BarcodeRenderEncoding { RENDER_ENCODING_UNSPECIFIED = 0, UTF_8 = 1 }
+	export enum BarcodeRenderEncoding { RENDER_ENCODING_UNSPECIFIED = 'RENDER_ENCODING_UNSPECIFIED', UTF_8 = 'UTF_8' }
 
-	export enum BarcodeType { BARCODE_TYPE_UNSPECIFIED = 0, AZTEC = 1, aztec = 2, CODE_39 = 3, code39 = 4, CODE_128 = 5, code128 = 6, CODABAR = 7, codabar = 8, DATA_MATRIX = 9, dataMatrix = 10, EAN_8 = 11, ean8 = 12, EAN_13 = 13, ean13 = 14, EAN13 = 15, ITF_14 = 16, itf14 = 17, PDF_417 = 18, pdf417 = 19, PDF417 = 20, QR_CODE = 21, qrCode = 22, qrcode = 23, UPC_A = 24, upcA = 25, TEXT_ONLY = 26, textOnly = 27 }
+	export enum BarcodeType { BARCODE_TYPE_UNSPECIFIED = 'BARCODE_TYPE_UNSPECIFIED', AZTEC = 'AZTEC', aztec = 'aztec', CODE_39 = 'CODE_39', code39 = 'code39', CODE_128 = 'CODE_128', code128 = 'code128', CODABAR = 'CODABAR', codabar = 'codabar', DATA_MATRIX = 'DATA_MATRIX', dataMatrix = 'dataMatrix', EAN_8 = 'EAN_8', ean8 = 'ean8', EAN_13 = 'EAN_13', ean13 = 'ean13', EAN13 = 'EAN13', ITF_14 = 'ITF_14', itf14 = 'itf14', PDF_417 = 'PDF_417', pdf417 = 'pdf417', PDF417 = 'PDF417', QR_CODE = 'QR_CODE', qrCode = 'qrCode', qrcode = 'qrcode', UPC_A = 'UPC_A', upcA = 'upcA', TEXT_ONLY = 'TEXT_ONLY', textOnly = 'textOnly' }
 
 	export interface BarcodeSectionDetail {
 
@@ -507,7 +507,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldReferenceDateFormat { DATE_FORMAT_UNSPECIFIED = 0, DATE_TIME = 1, dateTime = 2, DATE_ONLY = 3, dateOnly = 4, TIME_ONLY = 5, timeOnly = 6, DATE_TIME_YEAR = 7, dateTimeYear = 8, DATE_YEAR = 9, dateYear = 10, YEAR_MONTH = 11, YEAR_MONTH_DAY = 12 }
+	export enum FieldReferenceDateFormat { DATE_FORMAT_UNSPECIFIED = 'DATE_FORMAT_UNSPECIFIED', DATE_TIME = 'DATE_TIME', dateTime = 'dateTime', DATE_ONLY = 'DATE_ONLY', dateOnly = 'dateOnly', TIME_ONLY = 'TIME_ONLY', timeOnly = 'timeOnly', DATE_TIME_YEAR = 'DATE_TIME_YEAR', dateTimeYear = 'dateTimeYear', DATE_YEAR = 'DATE_YEAR', dateYear = 'dateYear', YEAR_MONTH = 'YEAR_MONTH', YEAR_MONTH_DAY = 'YEAR_MONTH_DAY' }
 
 
 	/** Information to read/write to blobstore2. */
@@ -621,7 +621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BoardingAndSeatingInfoBoardingDoor { BOARDING_DOOR_UNSPECIFIED = 0, FRONT = 1, front = 2, BACK = 3, back = 4 }
+	export enum BoardingAndSeatingInfoBoardingDoor { BOARDING_DOOR_UNSPECIFIED = 'BOARDING_DOOR_UNSPECIFIED', FRONT = 'FRONT', front = 'front', BACK = 'BACK', back = 'back' }
 
 	export interface BoardingAndSeatingPolicy {
 
@@ -654,9 +654,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BoardingAndSeatingPolicyBoardingPolicy { BOARDING_POLICY_UNSPECIFIED = 0, ZONE_BASED = 1, zoneBased = 2, GROUP_BASED = 3, groupBased = 4, BOARDING_POLICY_OTHER = 5, boardingPolicyOther = 6 }
+	export enum BoardingAndSeatingPolicyBoardingPolicy { BOARDING_POLICY_UNSPECIFIED = 'BOARDING_POLICY_UNSPECIFIED', ZONE_BASED = 'ZONE_BASED', zoneBased = 'zoneBased', GROUP_BASED = 'GROUP_BASED', groupBased = 'groupBased', BOARDING_POLICY_OTHER = 'BOARDING_POLICY_OTHER', boardingPolicyOther = 'boardingPolicyOther' }
 
-	export enum BoardingAndSeatingPolicySeatClassPolicy { SEAT_CLASS_POLICY_UNSPECIFIED = 0, CABIN_BASED = 1, cabinBased = 2, CLASS_BASED = 3, classBased = 4, TIER_BASED = 5, tierBased = 6, SEAT_CLASS_POLICY_OTHER = 7, seatClassPolicyOther = 8 }
+	export enum BoardingAndSeatingPolicySeatClassPolicy { SEAT_CLASS_POLICY_UNSPECIFIED = 'SEAT_CLASS_POLICY_UNSPECIFIED', CABIN_BASED = 'CABIN_BASED', cabinBased = 'cabinBased', CLASS_BASED = 'CLASS_BASED', classBased = 'classBased', TIER_BASED = 'TIER_BASED', tierBased = 'tierBased', SEAT_CLASS_POLICY_OTHER = 'SEAT_CLASS_POLICY_OTHER', seatClassPolicyOther = 'seatClassPolicyOther' }
 
 	export interface CallbackOptions {
 
@@ -729,7 +729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateItemPredefinedItem { PREDEFINED_ITEM_UNSPECIFIED = 0, FREQUENT_FLYER_PROGRAM_NAME_AND_NUMBER = 1, frequentFlyerProgramNameAndNumber = 2, FLIGHT_NUMBER_AND_OPERATING_FLIGHT_NUMBER = 3, flightNumberAndOperatingFlightNumber = 4 }
+	export enum TemplateItemPredefinedItem { PREDEFINED_ITEM_UNSPECIFIED = 'PREDEFINED_ITEM_UNSPECIFIED', FREQUENT_FLYER_PROGRAM_NAME_AND_NUMBER = 'FREQUENT_FLYER_PROGRAM_NAME_AND_NUMBER', frequentFlyerProgramNameAndNumber = 'frequentFlyerProgramNameAndNumber', FLIGHT_NUMBER_AND_OPERATING_FLIGHT_NUMBER = 'FLIGHT_NUMBER_AND_OPERATING_FLIGHT_NUMBER', flightNumberAndOperatingFlightNumber = 'flightNumberAndOperatingFlightNumber' }
 
 	export interface CardRowTemplateInfo {
 		oneItem?: CardRowOneItem;
@@ -853,7 +853,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FirstRowOptionTransitOption { TRANSIT_OPTION_UNSPECIFIED = 0, ORIGIN_AND_DESTINATION_NAMES = 1, originAndDestinationNames = 2, ORIGIN_AND_DESTINATION_CODES = 3, originAndDestinationCodes = 4, ORIGIN_NAME = 5, originName = 6 }
+	export enum FirstRowOptionTransitOption { TRANSIT_OPTION_UNSPECIFIED = 'TRANSIT_OPTION_UNSPECIFIED', ORIGIN_AND_DESTINATION_NAMES = 'ORIGIN_AND_DESTINATION_NAMES', originAndDestinationNames = 'originAndDestinationNames', ORIGIN_AND_DESTINATION_CODES = 'ORIGIN_AND_DESTINATION_CODES', originAndDestinationCodes = 'originAndDestinationCodes', ORIGIN_NAME = 'ORIGIN_NAME', originName = 'originName' }
 
 
 	/** A sequence of media data references representing composite data. Introduced to support Bigstore composite objects. For details, visit http://go/bigstore-composites. */
@@ -973,7 +973,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CompositeMediaReferenceType { PATH = 0, BLOB_REF = 1, INLINE = 2, BIGSTORE_REF = 3, COSMO_BINARY_REFERENCE = 4 }
+	export enum CompositeMediaReferenceType { PATH = 'PATH', BLOB_REF = 'BLOB_REF', INLINE = 'INLINE', BIGSTORE_REF = 'BIGSTORE_REF', COSMO_BINARY_REFERENCE = 'COSMO_BINARY_REFERENCE' }
 
 
 	/** Detailed Content-Type information from Scotty. The Content-Type of the media will typically be filled in by the header or Scotty's best_guess, but this extended information provides the backend with more information so that it can make a better decision if needed. This is only used on media upload requests from Scotty. */
@@ -1242,7 +1242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DiscoverableProgramState { STATE_UNSPECIFIED = 0, TRUSTED_TESTERS = 1, trustedTesters = 2, LIVE = 3, live = 4, DISABLED = 5, disabled = 6 }
+	export enum DiscoverableProgramState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', TRUSTED_TESTERS = 'TRUSTED_TESTERS', trustedTesters = 'trustedTesters', LIVE = 'LIVE', live = 'live', DISABLED = 'DISABLED', disabled = 'disabled' }
 
 
 	/** Parameters specific to media downloads. */
@@ -1318,7 +1318,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventDateTimeDoorsOpenLabel { DOORS_OPEN_LABEL_UNSPECIFIED = 0, DOORS_OPEN = 1, doorsOpen = 2, GATES_OPEN = 3, gatesOpen = 4 }
+	export enum EventDateTimeDoorsOpenLabel { DOORS_OPEN_LABEL_UNSPECIFIED = 'DOORS_OPEN_LABEL_UNSPECIFIED', DOORS_OPEN = 'DOORS_OPEN', doorsOpen = 'doorsOpen', GATES_OPEN = 'GATES_OPEN', gatesOpen = 'gatesOpen' }
 
 	export interface EventReservationInfo {
 
@@ -1538,9 +1538,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTicketClassConfirmationCodeLabel { CONFIRMATION_CODE_LABEL_UNSPECIFIED = 0, CONFIRMATION_CODE = 1, confirmationCode = 2, CONFIRMATION_NUMBER = 3, confirmationNumber = 4, ORDER_NUMBER = 5, orderNumber = 6, RESERVATION_NUMBER = 7, reservationNumber = 8 }
+	export enum EventTicketClassConfirmationCodeLabel { CONFIRMATION_CODE_LABEL_UNSPECIFIED = 'CONFIRMATION_CODE_LABEL_UNSPECIFIED', CONFIRMATION_CODE = 'CONFIRMATION_CODE', confirmationCode = 'confirmationCode', CONFIRMATION_NUMBER = 'CONFIRMATION_NUMBER', confirmationNumber = 'confirmationNumber', ORDER_NUMBER = 'ORDER_NUMBER', orderNumber = 'orderNumber', RESERVATION_NUMBER = 'RESERVATION_NUMBER', reservationNumber = 'reservationNumber' }
 
-	export enum EventTicketClassGateLabel { GATE_LABEL_UNSPECIFIED = 0, GATE = 1, gate = 2, DOOR = 3, door = 4, ENTRANCE = 5, entrance = 6 }
+	export enum EventTicketClassGateLabel { GATE_LABEL_UNSPECIFIED = 'GATE_LABEL_UNSPECIFIED', GATE = 'GATE', gate = 'gate', DOOR = 'DOOR', door = 'door', ENTRANCE = 'ENTRANCE', entrance = 'entrance' }
 
 	export interface ImageModuleData {
 
@@ -1665,7 +1665,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTicketClassMultipleDevicesAndHoldersAllowedStatus { STATUS_UNSPECIFIED = 0, MULTIPLE_HOLDERS = 1, ONE_USER_ALL_DEVICES = 2, ONE_USER_ONE_DEVICE = 3, multipleHolders = 4, oneUserAllDevices = 5, oneUserOneDevice = 6 }
+	export enum EventTicketClassMultipleDevicesAndHoldersAllowedStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', MULTIPLE_HOLDERS = 'MULTIPLE_HOLDERS', ONE_USER_ALL_DEVICES = 'ONE_USER_ALL_DEVICES', ONE_USER_ONE_DEVICE = 'ONE_USER_ONE_DEVICE', multipleHolders = 'multipleHolders', oneUserAllDevices = 'oneUserAllDevices', oneUserOneDevice = 'oneUserOneDevice' }
 
 	export interface Review {
 		comments?: string | null;
@@ -1680,13 +1680,13 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTicketClassReviewStatus { REVIEW_STATUS_UNSPECIFIED = 0, UNDER_REVIEW = 1, underReview = 2, APPROVED = 3, approved = 4, REJECTED = 5, rejected = 6, DRAFT = 7, draft = 8 }
+	export enum EventTicketClassReviewStatus { REVIEW_STATUS_UNSPECIFIED = 'REVIEW_STATUS_UNSPECIFIED', UNDER_REVIEW = 'UNDER_REVIEW', underReview = 'underReview', APPROVED = 'APPROVED', approved = 'approved', REJECTED = 'REJECTED', rejected = 'rejected', DRAFT = 'DRAFT', draft = 'draft' }
 
-	export enum EventTicketClassRowLabel { ROW_LABEL_UNSPECIFIED = 0, ROW = 1, row = 2 }
+	export enum EventTicketClassRowLabel { ROW_LABEL_UNSPECIFIED = 'ROW_LABEL_UNSPECIFIED', ROW = 'ROW', row = 'row' }
 
-	export enum EventTicketClassSeatLabel { SEAT_LABEL_UNSPECIFIED = 0, SEAT = 1, seat = 2 }
+	export enum EventTicketClassSeatLabel { SEAT_LABEL_UNSPECIFIED = 'SEAT_LABEL_UNSPECIFIED', SEAT = 'SEAT', seat = 'seat' }
 
-	export enum EventTicketClassSectionLabel { SECTION_LABEL_UNSPECIFIED = 0, SECTION = 1, section = 2, THEATER = 3, theater = 4 }
+	export enum EventTicketClassSectionLabel { SECTION_LABEL_UNSPECIFIED = 'SECTION_LABEL_UNSPECIFIED', SECTION = 'SECTION', section = 'section', THEATER = 'THEATER', theater = 'theater' }
 
 	export interface SecurityAnimation {
 
@@ -1705,7 +1705,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SecurityAnimationAnimationType { ANIMATION_UNSPECIFIED = 0, FOIL_SHIMMER = 1, foilShimmer = 2 }
+	export enum SecurityAnimationAnimationType { ANIMATION_UNSPECIFIED = 'ANIMATION_UNSPECIFIED', FOIL_SHIMMER = 'FOIL_SHIMMER', foilShimmer = 'foilShimmer' }
 
 
 	/** Data for Text module. All fields are optional. Header will be displayed if available, different types of bodies will be concatenated if they are defined. */
@@ -1763,7 +1763,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTicketClassViewUnlockRequirement { VIEW_UNLOCK_REQUIREMENT_UNSPECIFIED = 0, UNLOCK_NOT_REQUIRED = 1, UNLOCK_REQUIRED_TO_VIEW = 2 }
+	export enum EventTicketClassViewUnlockRequirement { VIEW_UNLOCK_REQUIREMENT_UNSPECIFIED = 'VIEW_UNLOCK_REQUIREMENT_UNSPECIFIED', UNLOCK_NOT_REQUIRED = 'UNLOCK_NOT_REQUIRED', UNLOCK_REQUIRED_TO_VIEW = 'UNLOCK_REQUIRED_TO_VIEW' }
 
 	export interface EventTicketClassAddMessageResponse {
 		resource?: EventTicketClass;
@@ -2027,7 +2027,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PassConstraintsScreenshotEligibility { SCREENSHOT_ELIGIBILITY_UNSPECIFIED = 0, ELIGIBLE = 1, INELIGIBLE = 2 }
+	export enum PassConstraintsScreenshotEligibility { SCREENSHOT_ELIGIBILITY_UNSPECIFIED = 'SCREENSHOT_ELIGIBILITY_UNSPECIFIED', ELIGIBLE = 'ELIGIBLE', INELIGIBLE = 'INELIGIBLE' }
 
 	export interface RotatingBarcode {
 
@@ -2136,7 +2136,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RotatingBarcodeTotpDetailsAlgorithm { TOTP_ALGORITHM_UNSPECIFIED = 0, TOTP_SHA1 = 1 }
+	export enum RotatingBarcodeTotpDetailsAlgorithm { TOTP_ALGORITHM_UNSPECIFIED = 'TOTP_ALGORITHM_UNSPECIFIED', TOTP_SHA1 = 'TOTP_SHA1' }
 
 
 	/** Configuration for the key and value length. See https://www.rfc-editor.org/rfc/rfc4226#section-5.3 */
@@ -2166,7 +2166,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTicketObjectState { STATE_UNSPECIFIED = 0, ACTIVE = 1, active = 2, COMPLETED = 3, completed = 4, EXPIRED = 5, expired = 6, INACTIVE = 7, inactive = 8 }
+	export enum EventTicketObjectState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', active = 'active', COMPLETED = 'COMPLETED', completed = 'completed', EXPIRED = 'EXPIRED', expired = 'expired', INACTIVE = 'INACTIVE', inactive = 'inactive' }
 
 	export interface EventTicketObjectAddMessageResponse {
 		resource?: EventTicketObject;
@@ -2471,7 +2471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FlightClassFlightStatus { FLIGHT_STATUS_UNSPECIFIED = 0, SCHEDULED = 1, scheduled = 2, ACTIVE = 3, active = 4, LANDED = 5, landed = 6, CANCELLED = 7, cancelled = 8, REDIRECTED = 9, redirected = 10, DIVERTED = 11, diverted = 12 }
+	export enum FlightClassFlightStatus { FLIGHT_STATUS_UNSPECIFIED = 'FLIGHT_STATUS_UNSPECIFIED', SCHEDULED = 'SCHEDULED', scheduled = 'scheduled', ACTIVE = 'ACTIVE', active = 'active', LANDED = 'LANDED', landed = 'landed', CANCELLED = 'CANCELLED', cancelled = 'cancelled', REDIRECTED = 'REDIRECTED', redirected = 'redirected', DIVERTED = 'DIVERTED', diverted = 'diverted' }
 
 	export interface FlightClassAddMessageResponse {
 		resource?: FlightClass;
@@ -2864,7 +2864,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GenericObjectGenericType { GENERIC_TYPE_UNSPECIFIED = 0, GENERIC_SEASON_PASS = 1, GENERIC_UTILITY_BILLS = 2, GENERIC_PARKING_PASS = 3, GENERIC_VOUCHER = 4, GENERIC_GYM_MEMBERSHIP = 5, GENERIC_LIBRARY_MEMBERSHIP = 6, GENERIC_RESERVATIONS = 7, GENERIC_AUTO_INSURANCE = 8, GENERIC_HOME_INSURANCE = 9, GENERIC_ENTRY_TICKET = 10, GENERIC_RECEIPT = 11, GENERIC_OTHER = 12 }
+	export enum GenericObjectGenericType { GENERIC_TYPE_UNSPECIFIED = 'GENERIC_TYPE_UNSPECIFIED', GENERIC_SEASON_PASS = 'GENERIC_SEASON_PASS', GENERIC_UTILITY_BILLS = 'GENERIC_UTILITY_BILLS', GENERIC_PARKING_PASS = 'GENERIC_PARKING_PASS', GENERIC_VOUCHER = 'GENERIC_VOUCHER', GENERIC_GYM_MEMBERSHIP = 'GENERIC_GYM_MEMBERSHIP', GENERIC_LIBRARY_MEMBERSHIP = 'GENERIC_LIBRARY_MEMBERSHIP', GENERIC_RESERVATIONS = 'GENERIC_RESERVATIONS', GENERIC_AUTO_INSURANCE = 'GENERIC_AUTO_INSURANCE', GENERIC_HOME_INSURANCE = 'GENERIC_HOME_INSURANCE', GENERIC_ENTRY_TICKET = 'GENERIC_ENTRY_TICKET', GENERIC_RECEIPT = 'GENERIC_RECEIPT', GENERIC_OTHER = 'GENERIC_OTHER' }
 
 
 	/** Indicates if the object needs to have notification enabled. We support only one of ExpiryNotification/UpcomingNotification. `expiryNotification` takes precedence over `upcomingNotification`. In other words if `expiryNotification` is set, we ignore the `upcomingNotification` field. */
@@ -3387,7 +3387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IssuerToUserInfoAction { ACTION_UNSPECIFIED = 0, S2AP = 1, s2ap = 2, SIGN_UP = 3, signUp = 4 }
+	export enum IssuerToUserInfoAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', S2AP = 'S2AP', s2ap = 's2ap', SIGN_UP = 'SIGN_UP', signUp = 'signUp' }
 
 	export interface SignUpInfo {
 
@@ -3966,7 +3966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OfferClassRedemptionChannel { REDEMPTION_CHANNEL_UNSPECIFIED = 0, INSTORE = 1, instore = 2, ONLINE = 3, online = 4, BOTH = 5, both = 6, TEMPORARY_PRICE_REDUCTION = 7, temporaryPriceReduction = 8 }
+	export enum OfferClassRedemptionChannel { REDEMPTION_CHANNEL_UNSPECIFIED = 'REDEMPTION_CHANNEL_UNSPECIFIED', INSTORE = 'INSTORE', instore = 'instore', ONLINE = 'ONLINE', online = 'online', BOTH = 'BOTH', both = 'both', TEMPORARY_PRICE_REDUCTION = 'TEMPORARY_PRICE_REDUCTION', temporaryPriceReduction = 'temporaryPriceReduction' }
 
 	export interface OfferObject {
 		appLinkData?: AppLinkData;
@@ -4229,7 +4229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitClassTransitType { TRANSIT_TYPE_UNSPECIFIED = 0, BUS = 1, bus = 2, RAIL = 3, rail = 4, TRAM = 5, tram = 6, FERRY = 7, ferry = 8, OTHER = 9, other = 10 }
+	export enum TransitClassTransitType { TRANSIT_TYPE_UNSPECIFIED = 'TRANSIT_TYPE_UNSPECIFIED', BUS = 'BUS', bus = 'bus', RAIL = 'RAIL', rail = 'rail', TRAM = 'TRAM', tram = 'tram', FERRY = 'FERRY', ferry = 'ferry', OTHER = 'OTHER', other = 'other' }
 
 	export interface TransitObject {
 
@@ -4393,9 +4393,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitObjectConcessionCategory { CONCESSION_CATEGORY_UNSPECIFIED = 0, ADULT = 1, adult = 2, CHILD = 3, child = 4, SENIOR = 5, senior = 6 }
+	export enum TransitObjectConcessionCategory { CONCESSION_CATEGORY_UNSPECIFIED = 'CONCESSION_CATEGORY_UNSPECIFIED', ADULT = 'ADULT', adult = 'adult', CHILD = 'CHILD', child = 'child', SENIOR = 'SENIOR', senior = 'senior' }
 
-	export enum TransitObjectPassengerType { PASSENGER_TYPE_UNSPECIFIED = 0, SINGLE_PASSENGER = 1, singlePassenger = 2, MULTIPLE_PASSENGERS = 3, multiplePassengers = 4 }
+	export enum TransitObjectPassengerType { PASSENGER_TYPE_UNSPECIFIED = 'PASSENGER_TYPE_UNSPECIFIED', SINGLE_PASSENGER = 'SINGLE_PASSENGER', singlePassenger = 'singlePassenger', MULTIPLE_PASSENGERS = 'MULTIPLE_PASSENGERS', multiplePassengers = 'multiplePassengers' }
 
 	export interface PurchaseDetails {
 
@@ -4550,7 +4550,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TicketSeatFareClass { FARE_CLASS_UNSPECIFIED = 0, ECONOMY = 1, economy = 2, FIRST = 3, first = 4, BUSINESS = 5, business = 6 }
+	export enum TicketSeatFareClass { FARE_CLASS_UNSPECIFIED = 'FARE_CLASS_UNSPECIFIED', ECONOMY = 'ECONOMY', economy = 'economy', FIRST = 'FIRST', first = 'first', BUSINESS = 'BUSINESS', business = 'business' }
 
 	export interface TicketRestrictions {
 		otherRestrictions?: LocalizedString;
@@ -4566,9 +4566,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransitObjectTicketStatus { TICKET_STATUS_UNSPECIFIED = 0, USED = 1, used = 2, REFUNDED = 3, refunded = 4, EXCHANGED = 5, exchanged = 6 }
+	export enum TransitObjectTicketStatus { TICKET_STATUS_UNSPECIFIED = 'TICKET_STATUS_UNSPECIFIED', USED = 'USED', used = 'used', REFUNDED = 'REFUNDED', refunded = 'refunded', EXCHANGED = 'EXCHANGED', exchanged = 'exchanged' }
 
-	export enum TransitObjectTripType { TRIP_TYPE_UNSPECIFIED = 0, ROUND_TRIP = 1, roundTrip = 2, ONE_WAY = 3, oneWay = 4 }
+	export enum TransitObjectTripType { TRIP_TYPE_UNSPECIFIED = 'TRIP_TYPE_UNSPECIFIED', ROUND_TRIP = 'ROUND_TRIP', roundTrip = 'roundTrip', ONE_WAY = 'ONE_WAY', oneWay = 'oneWay' }
 
 	export interface JwtResource {
 
@@ -4821,7 +4821,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaReferenceType { PATH = 0, BLOB_REF = 1, INLINE = 2, GET_MEDIA = 3, COMPOSITE_MEDIA = 4, BIGSTORE_REF = 5, DIFF_VERSION_RESPONSE = 6, DIFF_CHECKSUMS_RESPONSE = 7, DIFF_DOWNLOAD_RESPONSE = 8, DIFF_UPLOAD_REQUEST = 9, DIFF_UPLOAD_RESPONSE = 10, COSMO_BINARY_REFERENCE = 11, ARBITRARY_BYTES = 12 }
+	export enum MediaReferenceType { PATH = 'PATH', BLOB_REF = 'BLOB_REF', INLINE = 'INLINE', GET_MEDIA = 'GET_MEDIA', COMPOSITE_MEDIA = 'COMPOSITE_MEDIA', BIGSTORE_REF = 'BIGSTORE_REF', DIFF_VERSION_RESPONSE = 'DIFF_VERSION_RESPONSE', DIFF_CHECKSUMS_RESPONSE = 'DIFF_CHECKSUMS_RESPONSE', DIFF_DOWNLOAD_RESPONSE = 'DIFF_DOWNLOAD_RESPONSE', DIFF_UPLOAD_REQUEST = 'DIFF_UPLOAD_REQUEST', DIFF_UPLOAD_RESPONSE = 'DIFF_UPLOAD_RESPONSE', COSMO_BINARY_REFERENCE = 'COSMO_BINARY_REFERENCE', ARBITRARY_BYTES = 'ARBITRARY_BYTES' }
 
 
 	/** Extra information added to operations that support Scotty media requests. */
@@ -4900,7 +4900,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MediaRequestInfoNotificationType { START = 0, PROGRESS = 1, END = 2, RESPONSE_SENT = 3, ERROR = 4 }
+	export enum MediaRequestInfoNotificationType { START = 'START', PROGRESS = 'PROGRESS', END = 'END', RESPONSE_SENT = 'RESPONSE_SENT', ERROR = 'ERROR' }
 
 	export interface ModifyLinkedOfferObjects {
 
@@ -5003,7 +5003,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionRole { ROLE_UNSPECIFIED = 0, OWNER = 1, owner = 2, READER = 3, reader = 4, WRITER = 5, writer = 6 }
+	export enum PermissionRole { ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED', OWNER = 'OWNER', owner = 'owner', READER = 'READER', reader = 'reader', WRITER = 'WRITER', writer = 'writer' }
 
 	export interface Permissions {
 

@@ -163,7 +163,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplicationState { CREATING = 0, DELETING = 1, ACTIVE = 2, CREATE_FAILED = 3, DELETE_FAILED = 4 }
+	export enum ApplicationState { CREATING = 'CREATING', DELETING = 'DELETING', ACTIVE = 'ACTIVE', CREATE_FAILED = 'CREATE_FAILED', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface TagMap {
 	}

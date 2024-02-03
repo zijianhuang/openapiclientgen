@@ -301,7 +301,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterType { TERM_MATCH = 0 }
+	export enum FilterType { TERM_MATCH = 'TERM_MATCH' }
 
 	export interface ListPriceListsResponse {
 		PriceLists?: Array<PriceList>;
@@ -440,15 +440,15 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeServicesX_Amz_Target { 'AWSPriceListService.DescribeServices' = 0 }
+	export enum DescribeServicesX_Amz_Target { 'AWSPriceListService.DescribeServices' = 'AWSPriceListService.DescribeServices' }
 
-	export enum GetAttributeValuesX_Amz_Target { 'AWSPriceListService.GetAttributeValues' = 0 }
+	export enum GetAttributeValuesX_Amz_Target { 'AWSPriceListService.GetAttributeValues' = 'AWSPriceListService.GetAttributeValues' }
 
-	export enum GetPriceListFileUrlX_Amz_Target { 'AWSPriceListService.GetPriceListFileUrl' = 0 }
+	export enum GetPriceListFileUrlX_Amz_Target { 'AWSPriceListService.GetPriceListFileUrl' = 'AWSPriceListService.GetPriceListFileUrl' }
 
-	export enum GetProductsX_Amz_Target { 'AWSPriceListService.GetProducts' = 0 }
+	export enum GetProductsX_Amz_Target { 'AWSPriceListService.GetProducts' = 'AWSPriceListService.GetProducts' }
 
-	export enum ListPriceListsX_Amz_Target { 'AWSPriceListService.ListPriceLists' = 0 }
+	export enum ListPriceListsX_Amz_Target { 'AWSPriceListService.ListPriceLists' = 'AWSPriceListService.ListPriceLists' }
 
 }
 

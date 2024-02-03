@@ -348,7 +348,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TableDataImportJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3 }
+	export enum TableDataImportJobStatus { SUBMITTED = 'SUBMITTED', IN_PROGRESS = 'IN_PROGRESS', COMPLETED = 'COMPLETED', FAILED = 'FAILED' }
 
 
 	/** The metadata associated with the table data import job that was submitted. */
@@ -471,7 +471,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportDataCharacterEncoding { 'UTF-8' = 0, 'US-ASCII' = 1, 'ISO-8859-1' = 2, 'UTF-16BE' = 3, 'UTF-16LE' = 4, 'UTF-16' = 5 }
+	export enum ImportDataCharacterEncoding { 'UTF-8' = 'UTF-8', 'US-ASCII' = 'US-ASCII', 'ISO-8859-1' = 'ISO-8859-1', 'UTF-16BE' = 'UTF-16BE', 'UTF-16LE' = 'UTF-16LE', 'UTF-16' = 'UTF-16' }
 
 
 	/** An object that has details about the source of the data that was submitted for import. */
@@ -507,7 +507,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { ACCESS_DENIED = 0, INVALID_URL_ERROR = 1, INVALID_IMPORT_OPTIONS_ERROR = 2, INVALID_TABLE_ID_ERROR = 3, INVALID_TABLE_COLUMN_ID_ERROR = 4, TABLE_NOT_FOUND_ERROR = 5, FILE_EMPTY_ERROR = 6, INVALID_FILE_TYPE_ERROR = 7, FILE_PARSING_ERROR = 8, FILE_SIZE_LIMIT_ERROR = 9, FILE_NOT_FOUND_ERROR = 10, UNKNOWN_ERROR = 11, RESOURCE_NOT_FOUND_ERROR = 12, SYSTEM_LIMIT_ERROR = 13 }
+	export enum ErrorCode { ACCESS_DENIED = 'ACCESS_DENIED', INVALID_URL_ERROR = 'INVALID_URL_ERROR', INVALID_IMPORT_OPTIONS_ERROR = 'INVALID_IMPORT_OPTIONS_ERROR', INVALID_TABLE_ID_ERROR = 'INVALID_TABLE_ID_ERROR', INVALID_TABLE_COLUMN_ID_ERROR = 'INVALID_TABLE_COLUMN_ID_ERROR', TABLE_NOT_FOUND_ERROR = 'TABLE_NOT_FOUND_ERROR', FILE_EMPTY_ERROR = 'FILE_EMPTY_ERROR', INVALID_FILE_TYPE_ERROR = 'INVALID_FILE_TYPE_ERROR', FILE_PARSING_ERROR = 'FILE_PARSING_ERROR', FILE_SIZE_LIMIT_ERROR = 'FILE_SIZE_LIMIT_ERROR', FILE_NOT_FOUND_ERROR = 'FILE_NOT_FOUND_ERROR', UNKNOWN_ERROR = 'UNKNOWN_ERROR', RESOURCE_NOT_FOUND_ERROR = 'RESOURCE_NOT_FOUND_ERROR', SYSTEM_LIMIT_ERROR = 'SYSTEM_LIMIT_ERROR' }
 
 	export interface GetScreenDataResult {
 
@@ -642,7 +642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Format { AUTO = 0, NUMBER = 1, CURRENCY = 2, DATE = 3, TIME = 4, DATE_TIME = 5, PERCENTAGE = 6, TEXT = 7, ACCOUNTING = 8, CONTACT = 9, ROWLINK = 10, ROWSET = 11 }
+	export enum Format { AUTO = 'AUTO', NUMBER = 'NUMBER', CURRENCY = 'CURRENCY', DATE = 'DATE', TIME = 'TIME', DATE_TIME = 'DATE_TIME', PERCENTAGE = 'PERCENTAGE', TEXT = 'TEXT', ACCOUNTING = 'ACCOUNTING', CONTACT = 'CONTACT', ROWLINK = 'ROWLINK', ROWSET = 'ROWSET' }
 
 	export interface ListTableRowsResult {
 
@@ -1064,7 +1064,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportSourceDataFormat { DELIMITED_TEXT = 0 }
+	export enum ImportSourceDataFormat { DELIMITED_TEXT = 'DELIMITED_TEXT' }
 
 	export interface InvokeScreenAutomationRequest {
 		variables?: VariableValueMap;
@@ -1242,7 +1242,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpsertAction { UPDATED = 0, APPENDED = 1 }
+	export enum UpsertAction { UPDATED = 'UPDATED', APPENDED = 'APPENDED' }
 
 
 	/**  An object that represents the result of a single upsert row request.  */

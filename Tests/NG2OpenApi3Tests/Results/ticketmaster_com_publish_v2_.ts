@@ -338,7 +338,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImageRatio { '16_9' = 0, '3_2' = 1, '4_3' = 2 }
+	export enum ImageRatio { '16_9' = '16_9', '3_2' = '3_2', '4_3' = '4_3' }
 
 
 	/** Relationship */
@@ -382,7 +382,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttractionType { event = 0, venue = 1, attraction = 2 }
+	export enum AttractionType { event = 'event', venue = 'venue', attraction = 'attraction' }
 
 
 	/** All Attraction's extensions */
@@ -531,9 +531,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeOp { add = 0, remove = 1, replace = 2, move = 3, copy = 4, test = 5 }
+	export enum ChangeOp { add = 'add', remove = 'remove', replace = 'replace', move = 'move', copy = 'copy', test = 'test' }
 
-	export enum AugmentationDataRelatedEntityType { event = 0, attraction = 1, venue = 2 }
+	export enum AugmentationDataRelatedEntityType { event = 'event', attraction = 'attraction', venue = 'venue' }
 
 	export interface Chronology {
 		zone?: DateTimeZone;
@@ -854,7 +854,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EntitlementSource { ticketmaster = 0 }
+	export enum EntitlementSource { ticketmaster = 'ticketmaster' }
 
 	export interface EntityChanges {
 		changes?: Array<string>;
@@ -1130,7 +1130,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventStatusCode { onsale = 0, offsale = 1, canceled = 2, postponed = 3, rescheduled = 4 }
+	export enum EventStatusCode { onsale = 'onsale', offsale = 'offsale', canceled = 'canceled', postponed = 'postponed', rescheduled = 'rescheduled' }
 
 
 	/** Location */
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PriceRangeType { standard = 0 }
+	export enum PriceRangeType { standard = 'standard' }
 
 
 	/** Promoter */
@@ -1754,7 +1754,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TwitterHandle { '@a Twitter handle' = 0 }
+	export enum TwitterHandle { '@a Twitter handle' = '@a Twitter handle' }
 
 
 	/** All Event's extensions */
@@ -2008,7 +2008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum IngestionResultStatus { Error = 0, SuccessWarning = 1, Success = 2 }
+	export enum IngestionResultStatus { Error = 'Error', SuccessWarning = 'SuccessWarning', Success = 'Success' }
 
 
 	/** This class defines an entitlement data on the Publish API */

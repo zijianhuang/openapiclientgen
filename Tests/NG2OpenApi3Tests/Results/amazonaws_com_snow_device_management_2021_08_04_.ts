@@ -184,7 +184,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UnlockState { UNLOCKED = 0, LOCKED = 1, UNLOCKING = 2 }
+	export enum UnlockState { UNLOCKED = 'UNLOCKED', LOCKED = 'LOCKED', UNLOCKING = 'UNLOCKING' }
 
 
 	/** The details about the physical network interface for the device. */
@@ -221,9 +221,9 @@ export namespace MyNS {
 
 	}
 
-	export enum IpAddressAssignment { DHCP = 0, STATIC = 1 }
+	export enum IpAddressAssignment { DHCP = 'DHCP', STATIC = 'STATIC' }
 
-	export enum PhysicalConnectorType { RJ45 = 0, SFP_PLUS = 1, QSFP = 2, RJ45_2 = 3, WIFI = 4 }
+	export enum PhysicalConnectorType { RJ45 = 'RJ45', SFP_PLUS = 'SFP_PLUS', QSFP = 'QSFP', RJ45_2 = 'RJ45_2', WIFI = 'WIFI' }
 
 
 	/** Information about the software on the device. */
@@ -378,7 +378,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachmentStatus { ATTACHING = 0, ATTACHED = 1, DETACHING = 2, DETACHED = 3 }
+	export enum AttachmentStatus { ATTACHING = 'ATTACHING', ATTACHED = 'ATTACHED', DETACHING = 'DETACHING', DETACHED = 'DETACHED' }
 
 
 	/** The options for how a device's CPU is configured. */
@@ -440,7 +440,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InstanceStateName { PENDING = 0, RUNNING = 1, SHUTTING_DOWN = 2, TERMINATED = 3, STOPPING = 4, STOPPED = 5 }
+	export enum InstanceStateName { PENDING = 'PENDING', RUNNING = 'RUNNING', SHUTTING_DOWN = 'SHUTTING_DOWN', TERMINATED = 'TERMINATED', STOPPING = 'STOPPING', STOPPED = 'STOPPED' }
 
 	export interface DescribeExecutionOutput {
 		executionId?: string;
@@ -470,7 +470,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionState { QUEUED = 0, IN_PROGRESS = 1, CANCELED = 2, FAILED = 3, SUCCEEDED = 4, REJECTED = 5, TIMED_OUT = 6 }
+	export enum ExecutionState { QUEUED = 'QUEUED', IN_PROGRESS = 'IN_PROGRESS', CANCELED = 'CANCELED', FAILED = 'FAILED', SUCCEEDED = 'SUCCEEDED', REJECTED = 'REJECTED', TIMED_OUT = 'TIMED_OUT' }
 
 	export interface DescribeTaskOutput {
 		completedAt?: Date;
@@ -505,7 +505,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TaskState { IN_PROGRESS = 0, CANCELED = 1, COMPLETED = 2 }
+	export enum TaskState { IN_PROGRESS = 'IN_PROGRESS', CANCELED = 'CANCELED', COMPLETED = 'COMPLETED' }
 
 	export interface ListDeviceResourcesOutput {
 		nextToken?: string;

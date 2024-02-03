@@ -51,9 +51,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, 'custom-resource' = 7, comprehend = 8, lambda = 9, cassandra = 10, kafka = 11, elasticache = 12, neptune = 13 }
+	export enum ServiceNamespace { ecs = 'ecs', elasticmapreduce = 'elasticmapreduce', ec2 = 'ec2', appstream = 'appstream', dynamodb = 'dynamodb', rds = 'rds', sagemaker = 'sagemaker', 'custom-resource' = 'custom-resource', comprehend = 'comprehend', lambda = 'lambda', cassandra = 'cassandra', kafka = 'kafka', elasticache = 'elasticache', neptune = 'neptune' }
 
-	export enum ScalableDimension { 'ecs:service:DesiredCount' = 0, 'ec2:spot-fleet-request:TargetCapacity' = 1, 'elasticmapreduce:instancegroup:InstanceCount' = 2, 'appstream:fleet:DesiredCapacity' = 3, 'dynamodb:table:ReadCapacityUnits' = 4, 'dynamodb:table:WriteCapacityUnits' = 5, 'dynamodb:index:ReadCapacityUnits' = 6, 'dynamodb:index:WriteCapacityUnits' = 7, 'rds:cluster:ReadReplicaCount' = 8, 'sagemaker:variant:DesiredInstanceCount' = 9, 'custom-resource:ResourceType:Property' = 10, 'comprehend:document-classifier-endpoint:DesiredInferenceUnits' = 11, 'comprehend:entity-recognizer-endpoint:DesiredInferenceUnits' = 12, 'lambda:function:ProvisionedConcurrency' = 13, 'cassandra:table:ReadCapacityUnits' = 14, 'cassandra:table:WriteCapacityUnits' = 15, 'kafka:broker-storage:VolumeSize' = 16, 'elasticache:replication-group:NodeGroups' = 17, 'elasticache:replication-group:Replicas' = 18, 'neptune:cluster:ReadReplicaCount' = 19, 'sagemaker:variant:DesiredProvisionedConcurrency' = 20 }
+	export enum ScalableDimension { 'ecs:service:DesiredCount' = 'ecs:service:DesiredCount', 'ec2:spot-fleet-request:TargetCapacity' = 'ec2:spot-fleet-request:TargetCapacity', 'elasticmapreduce:instancegroup:InstanceCount' = 'elasticmapreduce:instancegroup:InstanceCount', 'appstream:fleet:DesiredCapacity' = 'appstream:fleet:DesiredCapacity', 'dynamodb:table:ReadCapacityUnits' = 'dynamodb:table:ReadCapacityUnits', 'dynamodb:table:WriteCapacityUnits' = 'dynamodb:table:WriteCapacityUnits', 'dynamodb:index:ReadCapacityUnits' = 'dynamodb:index:ReadCapacityUnits', 'dynamodb:index:WriteCapacityUnits' = 'dynamodb:index:WriteCapacityUnits', 'rds:cluster:ReadReplicaCount' = 'rds:cluster:ReadReplicaCount', 'sagemaker:variant:DesiredInstanceCount' = 'sagemaker:variant:DesiredInstanceCount', 'custom-resource:ResourceType:Property' = 'custom-resource:ResourceType:Property', 'comprehend:document-classifier-endpoint:DesiredInferenceUnits' = 'comprehend:document-classifier-endpoint:DesiredInferenceUnits', 'comprehend:entity-recognizer-endpoint:DesiredInferenceUnits' = 'comprehend:entity-recognizer-endpoint:DesiredInferenceUnits', 'lambda:function:ProvisionedConcurrency' = 'lambda:function:ProvisionedConcurrency', 'cassandra:table:ReadCapacityUnits' = 'cassandra:table:ReadCapacityUnits', 'cassandra:table:WriteCapacityUnits' = 'cassandra:table:WriteCapacityUnits', 'kafka:broker-storage:VolumeSize' = 'kafka:broker-storage:VolumeSize', 'elasticache:replication-group:NodeGroups' = 'elasticache:replication-group:NodeGroups', 'elasticache:replication-group:Replicas' = 'elasticache:replication-group:Replicas', 'neptune:cluster:ReadReplicaCount' = 'neptune:cluster:ReadReplicaCount', 'sagemaker:variant:DesiredProvisionedConcurrency' = 'sagemaker:variant:DesiredProvisionedConcurrency' }
 
 	export interface ValidationException {
 	}
@@ -419,7 +419,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingActivityStatusCode { Pending = 0, InProgress = 1, Successful = 2, Overridden = 3, Unfulfilled = 4, Failed = 5 }
+	export enum ScalingActivityStatusCode { Pending = 'Pending', InProgress = 'InProgress', Successful = 'Successful', Overridden = 'Overridden', Unfulfilled = 'Unfulfilled', Failed = 'Failed' }
 
 
 	/** Describes the reason for an activity that isn't scaled (<i>not scaled activity</i>), in machine-readable format. For help interpreting the not scaled reason details, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>. */
@@ -563,7 +563,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyType { StepScaling = 0, TargetTrackingScaling = 1 }
+	export enum PolicyType { StepScaling = 'StepScaling', TargetTrackingScaling = 'TargetTrackingScaling' }
 
 
 	/** <p>Represents a step scaling policy configuration to use with Application Auto Scaling.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
@@ -592,7 +592,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AdjustmentType { ChangeInCapacity = 0, PercentChangeInCapacity = 1, ExactCapacity = 2 }
+	export enum AdjustmentType { ChangeInCapacity = 'ChangeInCapacity', PercentChangeInCapacity = 'PercentChangeInCapacity', ExactCapacity = 'ExactCapacity' }
 
 
 	/** <p>Represents a step adjustment for a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. </p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>To initiate the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of <code>0</code> and an upper bound of <code>10</code>.</p> </li> <li> <p>To initiate the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of <code>-10</code> and an upper bound of <code>0</code>.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul> */
@@ -621,7 +621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricAggregationType { Average = 0, Minimum = 1, Maximum = 2 }
+	export enum MetricAggregationType { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum' }
 
 
 	/** <p>Represents a target tracking scaling policy configuration to use with Application Auto Scaling.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target tracking scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
@@ -679,7 +679,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricType { DynamoDBReadCapacityUtilization = 0, DynamoDBWriteCapacityUtilization = 1, ALBRequestCountPerTarget = 2, RDSReaderAverageCPUUtilization = 3, RDSReaderAverageDatabaseConnections = 4, EC2SpotFleetRequestAverageCPUUtilization = 5, EC2SpotFleetRequestAverageNetworkIn = 6, EC2SpotFleetRequestAverageNetworkOut = 7, SageMakerVariantInvocationsPerInstance = 8, ECSServiceAverageCPUUtilization = 9, ECSServiceAverageMemoryUtilization = 10, AppStreamAverageCapacityUtilization = 11, ComprehendInferenceUtilization = 12, LambdaProvisionedConcurrencyUtilization = 13, CassandraReadCapacityUtilization = 14, CassandraWriteCapacityUtilization = 15, KafkaBrokerStorageUtilization = 16, ElastiCachePrimaryEngineCPUUtilization = 17, ElastiCacheReplicaEngineCPUUtilization = 18, ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage = 19, NeptuneReaderAverageCPUUtilization = 20, SageMakerVariantProvisionedConcurrencyUtilization = 21, ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage = 22 }
+	export enum MetricType { DynamoDBReadCapacityUtilization = 'DynamoDBReadCapacityUtilization', DynamoDBWriteCapacityUtilization = 'DynamoDBWriteCapacityUtilization', ALBRequestCountPerTarget = 'ALBRequestCountPerTarget', RDSReaderAverageCPUUtilization = 'RDSReaderAverageCPUUtilization', RDSReaderAverageDatabaseConnections = 'RDSReaderAverageDatabaseConnections', EC2SpotFleetRequestAverageCPUUtilization = 'EC2SpotFleetRequestAverageCPUUtilization', EC2SpotFleetRequestAverageNetworkIn = 'EC2SpotFleetRequestAverageNetworkIn', EC2SpotFleetRequestAverageNetworkOut = 'EC2SpotFleetRequestAverageNetworkOut', SageMakerVariantInvocationsPerInstance = 'SageMakerVariantInvocationsPerInstance', ECSServiceAverageCPUUtilization = 'ECSServiceAverageCPUUtilization', ECSServiceAverageMemoryUtilization = 'ECSServiceAverageMemoryUtilization', AppStreamAverageCapacityUtilization = 'AppStreamAverageCapacityUtilization', ComprehendInferenceUtilization = 'ComprehendInferenceUtilization', LambdaProvisionedConcurrencyUtilization = 'LambdaProvisionedConcurrencyUtilization', CassandraReadCapacityUtilization = 'CassandraReadCapacityUtilization', CassandraWriteCapacityUtilization = 'CassandraWriteCapacityUtilization', KafkaBrokerStorageUtilization = 'KafkaBrokerStorageUtilization', ElastiCachePrimaryEngineCPUUtilization = 'ElastiCachePrimaryEngineCPUUtilization', ElastiCacheReplicaEngineCPUUtilization = 'ElastiCacheReplicaEngineCPUUtilization', ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage = 'ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage', NeptuneReaderAverageCPUUtilization = 'NeptuneReaderAverageCPUUtilization', SageMakerVariantProvisionedConcurrencyUtilization = 'SageMakerVariantProvisionedConcurrencyUtilization', ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage = 'ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage' }
 
 
 	/** <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases. </p> </li> </ul> <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
@@ -737,7 +737,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricStatistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }
+	export enum MetricStatistic { Average = 'Average', Minimum = 'Minimum', Maximum = 'Maximum', SampleCount = 'SampleCount', Sum = 'Sum' }
 
 
 	/** <p>The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp.</p> <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking-metric-math.html">Create a target tracking scaling policy for Application Auto Scaling using metric math</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
@@ -1483,31 +1483,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DeleteScalingPolicyX_Amz_Target { 'AnyScaleFrontendService.DeleteScalingPolicy' = 0 }
+	export enum DeleteScalingPolicyX_Amz_Target { 'AnyScaleFrontendService.DeleteScalingPolicy' = 'AnyScaleFrontendService.DeleteScalingPolicy' }
 
-	export enum DeleteScheduledActionX_Amz_Target { 'AnyScaleFrontendService.DeleteScheduledAction' = 0 }
+	export enum DeleteScheduledActionX_Amz_Target { 'AnyScaleFrontendService.DeleteScheduledAction' = 'AnyScaleFrontendService.DeleteScheduledAction' }
 
-	export enum DeregisterScalableTargetX_Amz_Target { 'AnyScaleFrontendService.DeregisterScalableTarget' = 0 }
+	export enum DeregisterScalableTargetX_Amz_Target { 'AnyScaleFrontendService.DeregisterScalableTarget' = 'AnyScaleFrontendService.DeregisterScalableTarget' }
 
-	export enum DescribeScalableTargetsX_Amz_Target { 'AnyScaleFrontendService.DescribeScalableTargets' = 0 }
+	export enum DescribeScalableTargetsX_Amz_Target { 'AnyScaleFrontendService.DescribeScalableTargets' = 'AnyScaleFrontendService.DescribeScalableTargets' }
 
-	export enum DescribeScalingActivitiesX_Amz_Target { 'AnyScaleFrontendService.DescribeScalingActivities' = 0 }
+	export enum DescribeScalingActivitiesX_Amz_Target { 'AnyScaleFrontendService.DescribeScalingActivities' = 'AnyScaleFrontendService.DescribeScalingActivities' }
 
-	export enum DescribeScalingPoliciesX_Amz_Target { 'AnyScaleFrontendService.DescribeScalingPolicies' = 0 }
+	export enum DescribeScalingPoliciesX_Amz_Target { 'AnyScaleFrontendService.DescribeScalingPolicies' = 'AnyScaleFrontendService.DescribeScalingPolicies' }
 
-	export enum DescribeScheduledActionsX_Amz_Target { 'AnyScaleFrontendService.DescribeScheduledActions' = 0 }
+	export enum DescribeScheduledActionsX_Amz_Target { 'AnyScaleFrontendService.DescribeScheduledActions' = 'AnyScaleFrontendService.DescribeScheduledActions' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AnyScaleFrontendService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AnyScaleFrontendService.ListTagsForResource' = 'AnyScaleFrontendService.ListTagsForResource' }
 
-	export enum PutScalingPolicyX_Amz_Target { 'AnyScaleFrontendService.PutScalingPolicy' = 0 }
+	export enum PutScalingPolicyX_Amz_Target { 'AnyScaleFrontendService.PutScalingPolicy' = 'AnyScaleFrontendService.PutScalingPolicy' }
 
-	export enum PutScheduledActionX_Amz_Target { 'AnyScaleFrontendService.PutScheduledAction' = 0 }
+	export enum PutScheduledActionX_Amz_Target { 'AnyScaleFrontendService.PutScheduledAction' = 'AnyScaleFrontendService.PutScheduledAction' }
 
-	export enum RegisterScalableTargetX_Amz_Target { 'AnyScaleFrontendService.RegisterScalableTarget' = 0 }
+	export enum RegisterScalableTargetX_Amz_Target { 'AnyScaleFrontendService.RegisterScalableTarget' = 'AnyScaleFrontendService.RegisterScalableTarget' }
 
-	export enum TagResourceX_Amz_Target { 'AnyScaleFrontendService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AnyScaleFrontendService.TagResource' = 'AnyScaleFrontendService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AnyScaleFrontendService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AnyScaleFrontendService.UntagResource' = 'AnyScaleFrontendService.UntagResource' }
 
 }
 

@@ -62,9 +62,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetLatestNewsLanguage { US = 0, TW = 1, JP = 2 }
+	export enum GetLatestNewsLanguage { US = 'US', TW = 'TW', JP = 'JP' }
 
-	export enum GetLatestNewsCategory { business = 0, finance = 1, economics = 2, politics = 3, society = 4, entertainment = 5, fun = 6, gossip = 7, sports = 8, lifestyle = 9, technology = 10, local = 11, world = 12, international = 13, global = 14, military = 15 }
+	export enum GetLatestNewsCategory { business = 'business', finance = 'finance', economics = 'economics', politics = 'politics', society = 'society', entertainment = 'entertainment', fun = 'fun', gossip = 'gossip', sports = 'sports', lifestyle = 'lifestyle', technology = 'technology', local = 'local', world = 'world', international = 'international', global = 'global', military = 'military' }
 
 }
 

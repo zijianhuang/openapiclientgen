@@ -134,7 +134,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WeekDayMetricsDay { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
+	export enum WeekDayMetricsDay { DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED', MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 
 	/** Insights for calls made to a location. */
@@ -167,7 +167,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BusinessCallsInsightsMetricType { METRIC_TYPE_UNSPECIFIED = 0, AGGREGATE_COUNT = 1 }
+	export enum BusinessCallsInsightsMetricType { METRIC_TYPE_UNSPECIFIED = 'METRIC_TYPE_UNSPECIFIED', AGGREGATE_COUNT = 'AGGREGATE_COUNT' }
 
 
 	/** Business calls settings for a location. */
@@ -204,7 +204,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BusinessCallsSettingsCallsState { CALLS_STATE_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2 }
+	export enum BusinessCallsSettingsCallsState { CALLS_STATE_UNSPECIFIED = 'CALLS_STATE_UNSPECIFIED', ENABLED = 'ENABLED', DISABLED = 'DISABLED' }
 
 
 	/** Response message for ListBusinessCallsInsights. */

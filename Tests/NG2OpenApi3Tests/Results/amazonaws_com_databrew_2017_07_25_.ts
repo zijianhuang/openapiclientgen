@@ -314,9 +314,9 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderedBy { LAST_MODIFIED_DATE = 0 }
+	export enum OrderedBy { LAST_MODIFIED_DATE = 'LAST_MODIFIED_DATE' }
 
-	export enum Order { DESCENDING = 0, ASCENDING = 1 }
+	export enum Order { DESCENDING = 'DESCENDING', ASCENDING = 'ASCENDING' }
 
 
 	/** A structure that map names of parameters used in the Amazon S3 path of a dataset to their definitions. A definition includes parameter type and conditions. */
@@ -516,9 +516,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ValidationMode { CHECK_ALL = 0 }
+	export enum ValidationMode { CHECK_ALL = 'CHECK_ALL' }
 
-	export enum SampleMode { FULL_DATASET = 0, CUSTOM_ROWS = 1 }
+	export enum SampleMode { FULL_DATASET = 'FULL_DATASET', CUSTOM_ROWS = 'CUSTOM_ROWS' }
 
 	export interface CreateProjectResponse {
 
@@ -537,7 +537,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SampleType { FIRST_N = 0, LAST_N = 1, RANDOM = 2 }
+	export enum SampleType { FIRST_N = 'FIRST_N', LAST_N = 'LAST_N', RANDOM = 'RANDOM' }
 
 	export interface InternalServerException {
 	}
@@ -685,9 +685,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CompressionFormat { GZIP = 0, LZ4 = 1, SNAPPY = 2, BZIP2 = 3, DEFLATE = 4, LZO = 5, BROTLI = 6, ZSTD = 7, ZLIB = 8 }
+	export enum CompressionFormat { GZIP = 'GZIP', LZ4 = 'LZ4', SNAPPY = 'SNAPPY', BZIP2 = 'BZIP2', DEFLATE = 'DEFLATE', LZO = 'LZO', BROTLI = 'BROTLI', ZSTD = 'ZSTD', ZLIB = 'ZLIB' }
 
-	export enum OutputFormat { CSV = 0, JSON = 1, PARQUET = 2, GLUEPARQUET = 3, AVRO = 4, ORC = 5, XML = 6, TABLEAUHYPER = 7 }
+	export enum OutputFormat { CSV = 'CSV', JSON = 'JSON', PARQUET = 'PARQUET', GLUEPARQUET = 'GLUEPARQUET', AVRO = 'AVRO', ORC = 'ORC', XML = 'XML', TABLEAUHYPER = 'TABLEAUHYPER' }
 
 
 	/** Represents a set of options that define the structure of comma-separated (CSV) job output. */
@@ -823,7 +823,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DatabaseOutputMode { NEW_TABLE = 0 }
+	export enum DatabaseOutputMode { NEW_TABLE = 'NEW_TABLE' }
 
 	export interface CreateRulesetResponse {
 
@@ -903,9 +903,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ThresholdType { GREATER_THAN_OR_EQUAL = 0, LESS_THAN_OR_EQUAL = 1, GREATER_THAN = 2, LESS_THAN = 3 }
+	export enum ThresholdType { GREATER_THAN_OR_EQUAL = 'GREATER_THAN_OR_EQUAL', LESS_THAN_OR_EQUAL = 'LESS_THAN_OR_EQUAL', GREATER_THAN = 'GREATER_THAN', LESS_THAN = 'LESS_THAN' }
 
-	export enum ThresholdUnit { COUNT = 0, PERCENTAGE = 1 }
+	export enum ThresholdUnit { COUNT = 'COUNT', PERCENTAGE = 'PERCENTAGE' }
 
 	export interface CreateScheduleResponse {
 
@@ -1082,7 +1082,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InputFormat { CSV = 0, JSON = 1, PARQUET = 2, EXCEL = 3, ORC = 4 }
+	export enum InputFormat { CSV = 'CSV', JSON = 'JSON', PARQUET = 'PARQUET', EXCEL = 'EXCEL', ORC = 'ORC' }
 
 
 	/** Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input. */
@@ -1119,7 +1119,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Source { S3 = 0, 'DATA-CATALOG' = 1, DATABASE = 2 }
+	export enum Source { S3 = 'S3', 'DATA-CATALOG' = 'DATA-CATALOG', DATABASE = 'DATABASE' }
 
 
 	/** Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset. */
@@ -1220,11 +1220,11 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionMode { 'SSE-KMS' = 0, 'SSE-S3' = 1 }
+	export enum EncryptionMode { 'SSE-KMS' = 'SSE-KMS', 'SSE-S3' = 'SSE-S3' }
 
-	export enum JobType { PROFILE = 0, RECIPE = 1 }
+	export enum JobType { PROFILE = 'PROFILE', RECIPE = 'RECIPE' }
 
-	export enum LogSubscription { ENABLE = 0, DISABLE = 1 }
+	export enum LogSubscription { ENABLE = 'ENABLE', DISABLE = 'DISABLE' }
 
 
 	/** Configuration for profile jobs. Configuration can be used to select columns, do evaluations, and override default parameters of evaluations. When configuration is undefined, the profile job will apply default settings to all supported columns.  */
@@ -1347,7 +1347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobRunState { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3, SUCCEEDED = 4, FAILED = 5, TIMEOUT = 6 }
+	export enum JobRunState { STARTING = 'STARTING', RUNNING = 'RUNNING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED', TIMEOUT = 'TIMEOUT' }
 
 	export interface DescribeProjectResponse {
 		CreateDate?: Date;
@@ -1427,7 +1427,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SessionStatus { ASSIGNED = 0, FAILED = 1, INITIALIZING = 2, PROVISIONING = 3, READY = 4, RECYCLING = 5, ROTATING = 6, TERMINATED = 7, TERMINATING = 8, UPDATING = 9 }
+	export enum SessionStatus { ASSIGNED = 'ASSIGNED', FAILED = 'FAILED', INITIALIZING = 'INITIALIZING', PROVISIONING = 'PROVISIONING', READY = 'READY', RECYCLING = 'RECYCLING', ROTATING = 'ROTATING', TERMINATED = 'TERMINATED', TERMINATING = 'TERMINATING', UPDATING = 'UPDATING' }
 
 	export interface DescribeRecipeResponse {
 		CreatedBy?: string;
@@ -2127,7 +2127,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyticsMode { ENABLE = 0, DISABLE = 1 }
+	export enum AnalyticsMode { ENABLE = 'ENABLE', DISABLE = 'DISABLE' }
 
 	export interface StartJobRunResponse {
 
@@ -2606,7 +2606,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterType { Datetime = 0, Number = 1, String = 2 }
+	export enum ParameterType { Datetime = 'Datetime', Number = 'Number', String = 'String' }
 
 
 	/** Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a dataset. */

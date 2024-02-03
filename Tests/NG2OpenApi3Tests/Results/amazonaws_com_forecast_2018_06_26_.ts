@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OptimizationMetric { WAPE = 0, RMSE = 1, AverageWeightedQuantileLoss = 2, MASE = 3, MAPE = 4 }
+	export enum OptimizationMetric { WAPE = 'WAPE', RMSE = 'RMSE', AverageWeightedQuantileLoss = 'AverageWeightedQuantileLoss', MASE = 'MASE', MAPE = 'MAPE' }
 
 
 	/** <p>The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li> </ul> */
@@ -251,9 +251,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Month { JANUARY = 0, FEBRUARY = 1, MARCH = 2, APRIL = 3, MAY = 4, JUNE = 5, JULY = 6, AUGUST = 7, SEPTEMBER = 8, OCTOBER = 9, NOVEMBER = 10, DECEMBER = 11 }
+	export enum Month { JANUARY = 'JANUARY', FEBRUARY = 'FEBRUARY', MARCH = 'MARCH', APRIL = 'APRIL', MAY = 'MAY', JUNE = 'JUNE', JULY = 'JULY', AUGUST = 'AUGUST', SEPTEMBER = 'SEPTEMBER', OCTOBER = 'OCTOBER', NOVEMBER = 'NOVEMBER', DECEMBER = 'DECEMBER' }
 
-	export enum DayOfWeek { MONDAY = 0, TUESDAY = 1, WEDNESDAY = 2, THURSDAY = 3, FRIDAY = 4, SATURDAY = 5, SUNDAY = 6 }
+	export enum DayOfWeek { MONDAY = 'MONDAY', TUESDAY = 'TUESDAY', WEDNESDAY = 'WEDNESDAY', THURSDAY = 'THURSDAY', FRIDAY = 'FRIDAY', SATURDAY = 'SATURDAY', SUNDAY = 'SUNDAY' }
 
 	export interface InvalidInputException {
 	}
@@ -357,9 +357,9 @@ export namespace MyNS {
 
 	}
 
-	export enum Domain { RETAIL = 0, CUSTOM = 1, INVENTORY_PLANNING = 2, EC2_CAPACITY = 3, WORK_FORCE = 4, WEB_TRAFFIC = 5, METRICS = 6 }
+	export enum Domain { RETAIL = 'RETAIL', CUSTOM = 'CUSTOM', INVENTORY_PLANNING = 'INVENTORY_PLANNING', EC2_CAPACITY = 'EC2_CAPACITY', WORK_FORCE = 'WORK_FORCE', WEB_TRAFFIC = 'WEB_TRAFFIC', METRICS = 'METRICS' }
 
-	export enum DatasetType { TARGET_TIME_SERIES = 0, RELATED_TIME_SERIES = 1, ITEM_METADATA = 2 }
+	export enum DatasetType { TARGET_TIME_SERIES = 'TARGET_TIME_SERIES', RELATED_TIME_SERIES = 'RELATED_TIME_SERIES', ITEM_METADATA = 'ITEM_METADATA' }
 
 
 	/** Defines the fields of a dataset. */
@@ -396,7 +396,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeType { string = 0, integer = 1, float = 2, timestamp = 3, geolocation = 4 }
+	export enum AttributeType { string = 'string', integer = 'integer', float = 'float', timestamp = 'timestamp', geolocation = 'geolocation' }
 
 	export interface CreateDatasetGroupResponse {
 		DatasetGroupArn?: string;
@@ -544,7 +544,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ImportMode { FULL = 0, INCREMENTAL = 1 }
+	export enum ImportMode { FULL = 'FULL', INCREMENTAL = 'INCREMENTAL' }
 
 	export interface CreateExplainabilityResponse {
 		ExplainabilityArn?: string;
@@ -630,7 +630,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeSeriesGranularity { ALL = 0, SPECIFIC = 1 }
+	export enum TimeSeriesGranularity { ALL = 'ALL', SPECIFIC = 'SPECIFIC' }
 
 	export interface CreateExplainabilityExportResponse {
 		ExplainabilityExportArn?: string;
@@ -920,7 +920,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoMLOverrideStrategy { LatencyOptimized = 0, AccuracyOptimized = 1 }
+	export enum AutoMLOverrideStrategy { LatencyOptimized = 'LatencyOptimized', AccuracyOptimized = 'AccuracyOptimized' }
 
 	export interface TrainingParameters {
 	}
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingType { Auto = 0, Linear = 1, Logarithmic = 2, ReverseLogarithmic = 3 }
+	export enum ScalingType { Auto = 'Auto', Linear = 'Linear', Logarithmic = 'Logarithmic', ReverseLogarithmic = 'ReverseLogarithmic' }
 
 
 	/** Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object. */
@@ -1203,7 +1203,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeaturizationMethodName { filling = 0 }
+	export enum FeaturizationMethodName { filling = 'filling' }
 
 	export interface FeaturizationMethodParameters {
 	}
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Operation { ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3 }
+	export enum Operation { ADD = 'ADD', SUBTRACT = 'SUBTRACT', MULTIPLY = 'MULTIPLY', DIVIDE = 'DIVIDE' }
 
 
 	/** Creates a subset of items within an attribute that are modified. For example, you can use this operation to create a subset of items that cost $5 or less. To do this, you specify <code>"AttributeName": "price"</code>, <code>"AttributeValue": "5"</code>, and <code>"Condition": "LESS_THAN"</code>. Pair this operation with the <a>Action</a> operation within the <a>CreateWhatIfForecastRequest$TimeSeriesTransformations</a> operation to define how the attribute is modified. */
@@ -1429,7 +1429,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Condition { EQUALS = 0, NOT_EQUALS = 1, LESS_THAN = 2, GREATER_THAN = 3 }
+	export enum Condition { EQUALS = 'EQUALS', NOT_EQUALS = 'NOT_EQUALS', LESS_THAN = 'LESS_THAN', GREATER_THAN = 'GREATER_THAN' }
 
 
 	/** A replacement dataset is a modified version of the baseline related time series that contains only the values that you want to include in a what-if forecast. The replacement dataset must contain the forecast dimensions and item identifiers in the baseline related time series as well as at least 1 changed time series. This dataset is merged with the baseline related time series to create a transformed dataset that is used for the what-if forecast. */
@@ -1812,7 +1812,7 @@ export namespace MyNS {
 
 	}
 
-	export enum State { Active = 0, Deleted = 1 }
+	export enum State { Active = 'Active', Deleted = 'Deleted' }
 
 
 	/** Provides information about the Explainability resource. */
@@ -2811,7 +2811,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EvaluationType { SUMMARY = 0, COMPUTED = 1 }
+	export enum EvaluationType { SUMMARY = 'SUMMARY', COMPUTED = 'COMPUTED' }
 
 
 	/** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object. */
@@ -3069,7 +3069,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterConditionString { IS = 0, IS_NOT = 1 }
+	export enum FilterConditionString { IS = 'IS', IS_NOT = 'IS_NOT' }
 
 	export interface ListDatasetsResponse {
 		Datasets?: Array<DatasetSummary>;
@@ -4092,7 +4092,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimePointGranularity { ALL = 0, SPECIFIC = 1 }
+	export enum TimePointGranularity { ALL = 'ALL', SPECIFIC = 'SPECIFIC' }
 
 
 	/** Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation. */
@@ -4745,131 +4745,131 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateAutoPredictorX_Amz_Target { 'AmazonForecast.CreateAutoPredictor' = 0 }
+	export enum CreateAutoPredictorX_Amz_Target { 'AmazonForecast.CreateAutoPredictor' = 'AmazonForecast.CreateAutoPredictor' }
 
-	export enum CreateDatasetX_Amz_Target { 'AmazonForecast.CreateDataset' = 0 }
+	export enum CreateDatasetX_Amz_Target { 'AmazonForecast.CreateDataset' = 'AmazonForecast.CreateDataset' }
 
-	export enum CreateDatasetGroupX_Amz_Target { 'AmazonForecast.CreateDatasetGroup' = 0 }
+	export enum CreateDatasetGroupX_Amz_Target { 'AmazonForecast.CreateDatasetGroup' = 'AmazonForecast.CreateDatasetGroup' }
 
-	export enum CreateDatasetImportJobX_Amz_Target { 'AmazonForecast.CreateDatasetImportJob' = 0 }
+	export enum CreateDatasetImportJobX_Amz_Target { 'AmazonForecast.CreateDatasetImportJob' = 'AmazonForecast.CreateDatasetImportJob' }
 
-	export enum CreateExplainabilityX_Amz_Target { 'AmazonForecast.CreateExplainability' = 0 }
+	export enum CreateExplainabilityX_Amz_Target { 'AmazonForecast.CreateExplainability' = 'AmazonForecast.CreateExplainability' }
 
-	export enum CreateExplainabilityExportX_Amz_Target { 'AmazonForecast.CreateExplainabilityExport' = 0 }
+	export enum CreateExplainabilityExportX_Amz_Target { 'AmazonForecast.CreateExplainabilityExport' = 'AmazonForecast.CreateExplainabilityExport' }
 
-	export enum CreateForecastX_Amz_Target { 'AmazonForecast.CreateForecast' = 0 }
+	export enum CreateForecastX_Amz_Target { 'AmazonForecast.CreateForecast' = 'AmazonForecast.CreateForecast' }
 
-	export enum CreateForecastExportJobX_Amz_Target { 'AmazonForecast.CreateForecastExportJob' = 0 }
+	export enum CreateForecastExportJobX_Amz_Target { 'AmazonForecast.CreateForecastExportJob' = 'AmazonForecast.CreateForecastExportJob' }
 
-	export enum CreateMonitorX_Amz_Target { 'AmazonForecast.CreateMonitor' = 0 }
+	export enum CreateMonitorX_Amz_Target { 'AmazonForecast.CreateMonitor' = 'AmazonForecast.CreateMonitor' }
 
-	export enum CreatePredictorX_Amz_Target { 'AmazonForecast.CreatePredictor' = 0 }
+	export enum CreatePredictorX_Amz_Target { 'AmazonForecast.CreatePredictor' = 'AmazonForecast.CreatePredictor' }
 
-	export enum CreatePredictorBacktestExportJobX_Amz_Target { 'AmazonForecast.CreatePredictorBacktestExportJob' = 0 }
+	export enum CreatePredictorBacktestExportJobX_Amz_Target { 'AmazonForecast.CreatePredictorBacktestExportJob' = 'AmazonForecast.CreatePredictorBacktestExportJob' }
 
-	export enum CreateWhatIfAnalysisX_Amz_Target { 'AmazonForecast.CreateWhatIfAnalysis' = 0 }
+	export enum CreateWhatIfAnalysisX_Amz_Target { 'AmazonForecast.CreateWhatIfAnalysis' = 'AmazonForecast.CreateWhatIfAnalysis' }
 
-	export enum CreateWhatIfForecastX_Amz_Target { 'AmazonForecast.CreateWhatIfForecast' = 0 }
+	export enum CreateWhatIfForecastX_Amz_Target { 'AmazonForecast.CreateWhatIfForecast' = 'AmazonForecast.CreateWhatIfForecast' }
 
-	export enum CreateWhatIfForecastExportX_Amz_Target { 'AmazonForecast.CreateWhatIfForecastExport' = 0 }
+	export enum CreateWhatIfForecastExportX_Amz_Target { 'AmazonForecast.CreateWhatIfForecastExport' = 'AmazonForecast.CreateWhatIfForecastExport' }
 
-	export enum DeleteDatasetX_Amz_Target { 'AmazonForecast.DeleteDataset' = 0 }
+	export enum DeleteDatasetX_Amz_Target { 'AmazonForecast.DeleteDataset' = 'AmazonForecast.DeleteDataset' }
 
-	export enum DeleteDatasetGroupX_Amz_Target { 'AmazonForecast.DeleteDatasetGroup' = 0 }
+	export enum DeleteDatasetGroupX_Amz_Target { 'AmazonForecast.DeleteDatasetGroup' = 'AmazonForecast.DeleteDatasetGroup' }
 
-	export enum DeleteDatasetImportJobX_Amz_Target { 'AmazonForecast.DeleteDatasetImportJob' = 0 }
+	export enum DeleteDatasetImportJobX_Amz_Target { 'AmazonForecast.DeleteDatasetImportJob' = 'AmazonForecast.DeleteDatasetImportJob' }
 
-	export enum DeleteExplainabilityX_Amz_Target { 'AmazonForecast.DeleteExplainability' = 0 }
+	export enum DeleteExplainabilityX_Amz_Target { 'AmazonForecast.DeleteExplainability' = 'AmazonForecast.DeleteExplainability' }
 
-	export enum DeleteExplainabilityExportX_Amz_Target { 'AmazonForecast.DeleteExplainabilityExport' = 0 }
+	export enum DeleteExplainabilityExportX_Amz_Target { 'AmazonForecast.DeleteExplainabilityExport' = 'AmazonForecast.DeleteExplainabilityExport' }
 
-	export enum DeleteForecastX_Amz_Target { 'AmazonForecast.DeleteForecast' = 0 }
+	export enum DeleteForecastX_Amz_Target { 'AmazonForecast.DeleteForecast' = 'AmazonForecast.DeleteForecast' }
 
-	export enum DeleteForecastExportJobX_Amz_Target { 'AmazonForecast.DeleteForecastExportJob' = 0 }
+	export enum DeleteForecastExportJobX_Amz_Target { 'AmazonForecast.DeleteForecastExportJob' = 'AmazonForecast.DeleteForecastExportJob' }
 
-	export enum DeleteMonitorX_Amz_Target { 'AmazonForecast.DeleteMonitor' = 0 }
+	export enum DeleteMonitorX_Amz_Target { 'AmazonForecast.DeleteMonitor' = 'AmazonForecast.DeleteMonitor' }
 
-	export enum DeletePredictorX_Amz_Target { 'AmazonForecast.DeletePredictor' = 0 }
+	export enum DeletePredictorX_Amz_Target { 'AmazonForecast.DeletePredictor' = 'AmazonForecast.DeletePredictor' }
 
-	export enum DeletePredictorBacktestExportJobX_Amz_Target { 'AmazonForecast.DeletePredictorBacktestExportJob' = 0 }
+	export enum DeletePredictorBacktestExportJobX_Amz_Target { 'AmazonForecast.DeletePredictorBacktestExportJob' = 'AmazonForecast.DeletePredictorBacktestExportJob' }
 
-	export enum DeleteResourceTreeX_Amz_Target { 'AmazonForecast.DeleteResourceTree' = 0 }
+	export enum DeleteResourceTreeX_Amz_Target { 'AmazonForecast.DeleteResourceTree' = 'AmazonForecast.DeleteResourceTree' }
 
-	export enum DeleteWhatIfAnalysisX_Amz_Target { 'AmazonForecast.DeleteWhatIfAnalysis' = 0 }
+	export enum DeleteWhatIfAnalysisX_Amz_Target { 'AmazonForecast.DeleteWhatIfAnalysis' = 'AmazonForecast.DeleteWhatIfAnalysis' }
 
-	export enum DeleteWhatIfForecastX_Amz_Target { 'AmazonForecast.DeleteWhatIfForecast' = 0 }
+	export enum DeleteWhatIfForecastX_Amz_Target { 'AmazonForecast.DeleteWhatIfForecast' = 'AmazonForecast.DeleteWhatIfForecast' }
 
-	export enum DeleteWhatIfForecastExportX_Amz_Target { 'AmazonForecast.DeleteWhatIfForecastExport' = 0 }
+	export enum DeleteWhatIfForecastExportX_Amz_Target { 'AmazonForecast.DeleteWhatIfForecastExport' = 'AmazonForecast.DeleteWhatIfForecastExport' }
 
-	export enum DescribeAutoPredictorX_Amz_Target { 'AmazonForecast.DescribeAutoPredictor' = 0 }
+	export enum DescribeAutoPredictorX_Amz_Target { 'AmazonForecast.DescribeAutoPredictor' = 'AmazonForecast.DescribeAutoPredictor' }
 
-	export enum DescribeDatasetX_Amz_Target { 'AmazonForecast.DescribeDataset' = 0 }
+	export enum DescribeDatasetX_Amz_Target { 'AmazonForecast.DescribeDataset' = 'AmazonForecast.DescribeDataset' }
 
-	export enum DescribeDatasetGroupX_Amz_Target { 'AmazonForecast.DescribeDatasetGroup' = 0 }
+	export enum DescribeDatasetGroupX_Amz_Target { 'AmazonForecast.DescribeDatasetGroup' = 'AmazonForecast.DescribeDatasetGroup' }
 
-	export enum DescribeDatasetImportJobX_Amz_Target { 'AmazonForecast.DescribeDatasetImportJob' = 0 }
+	export enum DescribeDatasetImportJobX_Amz_Target { 'AmazonForecast.DescribeDatasetImportJob' = 'AmazonForecast.DescribeDatasetImportJob' }
 
-	export enum DescribeExplainabilityX_Amz_Target { 'AmazonForecast.DescribeExplainability' = 0 }
+	export enum DescribeExplainabilityX_Amz_Target { 'AmazonForecast.DescribeExplainability' = 'AmazonForecast.DescribeExplainability' }
 
-	export enum DescribeExplainabilityExportX_Amz_Target { 'AmazonForecast.DescribeExplainabilityExport' = 0 }
+	export enum DescribeExplainabilityExportX_Amz_Target { 'AmazonForecast.DescribeExplainabilityExport' = 'AmazonForecast.DescribeExplainabilityExport' }
 
-	export enum DescribeForecastX_Amz_Target { 'AmazonForecast.DescribeForecast' = 0 }
+	export enum DescribeForecastX_Amz_Target { 'AmazonForecast.DescribeForecast' = 'AmazonForecast.DescribeForecast' }
 
-	export enum DescribeForecastExportJobX_Amz_Target { 'AmazonForecast.DescribeForecastExportJob' = 0 }
+	export enum DescribeForecastExportJobX_Amz_Target { 'AmazonForecast.DescribeForecastExportJob' = 'AmazonForecast.DescribeForecastExportJob' }
 
-	export enum DescribeMonitorX_Amz_Target { 'AmazonForecast.DescribeMonitor' = 0 }
+	export enum DescribeMonitorX_Amz_Target { 'AmazonForecast.DescribeMonitor' = 'AmazonForecast.DescribeMonitor' }
 
-	export enum DescribePredictorX_Amz_Target { 'AmazonForecast.DescribePredictor' = 0 }
+	export enum DescribePredictorX_Amz_Target { 'AmazonForecast.DescribePredictor' = 'AmazonForecast.DescribePredictor' }
 
-	export enum DescribePredictorBacktestExportJobX_Amz_Target { 'AmazonForecast.DescribePredictorBacktestExportJob' = 0 }
+	export enum DescribePredictorBacktestExportJobX_Amz_Target { 'AmazonForecast.DescribePredictorBacktestExportJob' = 'AmazonForecast.DescribePredictorBacktestExportJob' }
 
-	export enum DescribeWhatIfAnalysisX_Amz_Target { 'AmazonForecast.DescribeWhatIfAnalysis' = 0 }
+	export enum DescribeWhatIfAnalysisX_Amz_Target { 'AmazonForecast.DescribeWhatIfAnalysis' = 'AmazonForecast.DescribeWhatIfAnalysis' }
 
-	export enum DescribeWhatIfForecastX_Amz_Target { 'AmazonForecast.DescribeWhatIfForecast' = 0 }
+	export enum DescribeWhatIfForecastX_Amz_Target { 'AmazonForecast.DescribeWhatIfForecast' = 'AmazonForecast.DescribeWhatIfForecast' }
 
-	export enum DescribeWhatIfForecastExportX_Amz_Target { 'AmazonForecast.DescribeWhatIfForecastExport' = 0 }
+	export enum DescribeWhatIfForecastExportX_Amz_Target { 'AmazonForecast.DescribeWhatIfForecastExport' = 'AmazonForecast.DescribeWhatIfForecastExport' }
 
-	export enum GetAccuracyMetricsX_Amz_Target { 'AmazonForecast.GetAccuracyMetrics' = 0 }
+	export enum GetAccuracyMetricsX_Amz_Target { 'AmazonForecast.GetAccuracyMetrics' = 'AmazonForecast.GetAccuracyMetrics' }
 
-	export enum ListDatasetGroupsX_Amz_Target { 'AmazonForecast.ListDatasetGroups' = 0 }
+	export enum ListDatasetGroupsX_Amz_Target { 'AmazonForecast.ListDatasetGroups' = 'AmazonForecast.ListDatasetGroups' }
 
-	export enum ListDatasetImportJobsX_Amz_Target { 'AmazonForecast.ListDatasetImportJobs' = 0 }
+	export enum ListDatasetImportJobsX_Amz_Target { 'AmazonForecast.ListDatasetImportJobs' = 'AmazonForecast.ListDatasetImportJobs' }
 
-	export enum ListDatasetsX_Amz_Target { 'AmazonForecast.ListDatasets' = 0 }
+	export enum ListDatasetsX_Amz_Target { 'AmazonForecast.ListDatasets' = 'AmazonForecast.ListDatasets' }
 
-	export enum ListExplainabilitiesX_Amz_Target { 'AmazonForecast.ListExplainabilities' = 0 }
+	export enum ListExplainabilitiesX_Amz_Target { 'AmazonForecast.ListExplainabilities' = 'AmazonForecast.ListExplainabilities' }
 
-	export enum ListExplainabilityExportsX_Amz_Target { 'AmazonForecast.ListExplainabilityExports' = 0 }
+	export enum ListExplainabilityExportsX_Amz_Target { 'AmazonForecast.ListExplainabilityExports' = 'AmazonForecast.ListExplainabilityExports' }
 
-	export enum ListForecastExportJobsX_Amz_Target { 'AmazonForecast.ListForecastExportJobs' = 0 }
+	export enum ListForecastExportJobsX_Amz_Target { 'AmazonForecast.ListForecastExportJobs' = 'AmazonForecast.ListForecastExportJobs' }
 
-	export enum ListForecastsX_Amz_Target { 'AmazonForecast.ListForecasts' = 0 }
+	export enum ListForecastsX_Amz_Target { 'AmazonForecast.ListForecasts' = 'AmazonForecast.ListForecasts' }
 
-	export enum ListMonitorEvaluationsX_Amz_Target { 'AmazonForecast.ListMonitorEvaluations' = 0 }
+	export enum ListMonitorEvaluationsX_Amz_Target { 'AmazonForecast.ListMonitorEvaluations' = 'AmazonForecast.ListMonitorEvaluations' }
 
-	export enum ListMonitorsX_Amz_Target { 'AmazonForecast.ListMonitors' = 0 }
+	export enum ListMonitorsX_Amz_Target { 'AmazonForecast.ListMonitors' = 'AmazonForecast.ListMonitors' }
 
-	export enum ListPredictorBacktestExportJobsX_Amz_Target { 'AmazonForecast.ListPredictorBacktestExportJobs' = 0 }
+	export enum ListPredictorBacktestExportJobsX_Amz_Target { 'AmazonForecast.ListPredictorBacktestExportJobs' = 'AmazonForecast.ListPredictorBacktestExportJobs' }
 
-	export enum ListPredictorsX_Amz_Target { 'AmazonForecast.ListPredictors' = 0 }
+	export enum ListPredictorsX_Amz_Target { 'AmazonForecast.ListPredictors' = 'AmazonForecast.ListPredictors' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AmazonForecast.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonForecast.ListTagsForResource' = 'AmazonForecast.ListTagsForResource' }
 
-	export enum ListWhatIfAnalysesX_Amz_Target { 'AmazonForecast.ListWhatIfAnalyses' = 0 }
+	export enum ListWhatIfAnalysesX_Amz_Target { 'AmazonForecast.ListWhatIfAnalyses' = 'AmazonForecast.ListWhatIfAnalyses' }
 
-	export enum ListWhatIfForecastExportsX_Amz_Target { 'AmazonForecast.ListWhatIfForecastExports' = 0 }
+	export enum ListWhatIfForecastExportsX_Amz_Target { 'AmazonForecast.ListWhatIfForecastExports' = 'AmazonForecast.ListWhatIfForecastExports' }
 
-	export enum ListWhatIfForecastsX_Amz_Target { 'AmazonForecast.ListWhatIfForecasts' = 0 }
+	export enum ListWhatIfForecastsX_Amz_Target { 'AmazonForecast.ListWhatIfForecasts' = 'AmazonForecast.ListWhatIfForecasts' }
 
-	export enum ResumeResourceX_Amz_Target { 'AmazonForecast.ResumeResource' = 0 }
+	export enum ResumeResourceX_Amz_Target { 'AmazonForecast.ResumeResource' = 'AmazonForecast.ResumeResource' }
 
-	export enum StopResourceX_Amz_Target { 'AmazonForecast.StopResource' = 0 }
+	export enum StopResourceX_Amz_Target { 'AmazonForecast.StopResource' = 'AmazonForecast.StopResource' }
 
-	export enum TagResourceX_Amz_Target { 'AmazonForecast.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonForecast.TagResource' = 'AmazonForecast.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AmazonForecast.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonForecast.UntagResource' = 'AmazonForecast.UntagResource' }
 
-	export enum UpdateDatasetGroupX_Amz_Target { 'AmazonForecast.UpdateDatasetGroup' = 0 }
+	export enum UpdateDatasetGroupX_Amz_Target { 'AmazonForecast.UpdateDatasetGroup' = 'AmazonForecast.UpdateDatasetGroup' }
 
 }
 

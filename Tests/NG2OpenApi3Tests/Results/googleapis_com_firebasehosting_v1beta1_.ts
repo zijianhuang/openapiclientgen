@@ -234,9 +234,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DnsRecordRequiredAction { NONE = 0, ADD = 1, REMOVE = 2 }
+	export enum DnsRecordRequiredAction { NONE = 'NONE', ADD = 'ADD', REMOVE = 'REMOVE' }
 
-	export enum DnsRecordType { TYPE_UNSPECIFIED = 0, A = 1, CNAME = 2, TXT = 3, AAAA = 4, CAA = 5 }
+	export enum DnsRecordType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', A = 'A', CNAME = 'CNAME', TXT = 'TXT', AAAA = 'AAAA', CAA = 'CAA' }
 
 
 	/** A file you can add to your existing, non-Hosting hosting service that confirms your intent to allow Hosting's Certificate Authorities to create an SSL certificate for your domain. */
@@ -331,9 +331,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CertificateState { CERT_STATE_UNSPECIFIED = 0, CERT_PREPARING = 1, CERT_VALIDATING = 2, CERT_PROPAGATING = 3, CERT_ACTIVE = 4, CERT_EXPIRING_SOON = 5, CERT_EXPIRED = 6 }
+	export enum CertificateState { CERT_STATE_UNSPECIFIED = 'CERT_STATE_UNSPECIFIED', CERT_PREPARING = 'CERT_PREPARING', CERT_VALIDATING = 'CERT_VALIDATING', CERT_PROPAGATING = 'CERT_PROPAGATING', CERT_ACTIVE = 'CERT_ACTIVE', CERT_EXPIRING_SOON = 'CERT_EXPIRING_SOON', CERT_EXPIRED = 'CERT_EXPIRED' }
 
-	export enum CertificateType { TYPE_UNSPECIFIED = 0, TEMPORARY = 1, GROUPED = 2, PROJECT_GROUPED = 3, DEDICATED = 4 }
+	export enum CertificateType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TEMPORARY = 'TEMPORARY', GROUPED = 'GROUPED', PROJECT_GROUPED = 'PROJECT_GROUPED', DEDICATED = 'DEDICATED' }
 
 
 	/** A `Channel` represents a stream of releases for a site. All sites have a default `live` channel that serves content to the Firebase-provided subdomains and any connected custom domains. */
@@ -456,7 +456,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReleaseType { TYPE_UNSPECIFIED = 0, DEPLOY = 1, ROLLBACK = 2, SITE_DISABLE = 3 }
+	export enum ReleaseType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DEPLOY = 'DEPLOY', ROLLBACK = 'ROLLBACK', SITE_DISABLE = 'SITE_DISABLE' }
 
 
 	/** A `Version` is a configuration and a collection of static files which determine how a site is displayed. */
@@ -587,7 +587,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServingConfigAppAssociation { AUTO = 0, NONE = 1 }
+	export enum ServingConfigAppAssociation { AUTO = 'AUTO', NONE = 'NONE' }
 
 
 	/** A [`Header`](https://firebase.google.com/docs/hosting/full-config#headers) specifies a URL pattern that, if matched to the request URL path, triggers Hosting to apply the specified custom response headers. */
@@ -781,9 +781,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServingConfigTrailingSlashBehavior { TRAILING_SLASH_BEHAVIOR_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
+	export enum ServingConfigTrailingSlashBehavior { TRAILING_SLASH_BEHAVIOR_UNSPECIFIED = 'TRAILING_SLASH_BEHAVIOR_UNSPECIFIED', ADD = 'ADD', REMOVE = 'REMOVE' }
 
-	export enum VersionStatus { VERSION_STATUS_UNSPECIFIED = 0, CREATED = 1, FINALIZED = 2, DELETED = 3, ABANDONED = 4, EXPIRED = 5, CLONING = 6 }
+	export enum VersionStatus { VERSION_STATUS_UNSPECIFIED = 'VERSION_STATUS_UNSPECIFIED', CREATED = 'CREATED', FINALIZED = 'FINALIZED', DELETED = 'DELETED', ABANDONED = 'ABANDONED', EXPIRED = 'EXPIRED', CLONING = 'CLONING' }
 
 	export interface CloneVersionRequest {
 
@@ -946,9 +946,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomDomainHostState { HOST_STATE_UNSPECIFIED = 0, HOST_UNHOSTED = 1, HOST_UNREACHABLE = 2, HOST_MISMATCH = 3, HOST_CONFLICT = 4, HOST_ACTIVE = 5 }
+	export enum CustomDomainHostState { HOST_STATE_UNSPECIFIED = 'HOST_STATE_UNSPECIFIED', HOST_UNHOSTED = 'HOST_UNHOSTED', HOST_UNREACHABLE = 'HOST_UNREACHABLE', HOST_MISMATCH = 'HOST_MISMATCH', HOST_CONFLICT = 'HOST_CONFLICT', HOST_ACTIVE = 'HOST_ACTIVE' }
 
-	export enum CustomDomainOwnershipState { OWNERSHIP_STATE_UNSPECIFIED = 0, OWNERSHIP_MISSING = 1, OWNERSHIP_UNREACHABLE = 2, OWNERSHIP_MISMATCH = 3, OWNERSHIP_CONFLICT = 4, OWNERSHIP_PENDING = 5, OWNERSHIP_ACTIVE = 6 }
+	export enum CustomDomainOwnershipState { OWNERSHIP_STATE_UNSPECIFIED = 'OWNERSHIP_STATE_UNSPECIFIED', OWNERSHIP_MISSING = 'OWNERSHIP_MISSING', OWNERSHIP_UNREACHABLE = 'OWNERSHIP_UNREACHABLE', OWNERSHIP_MISMATCH = 'OWNERSHIP_MISMATCH', OWNERSHIP_CONFLICT = 'OWNERSHIP_CONFLICT', OWNERSHIP_PENDING = 'OWNERSHIP_PENDING', OWNERSHIP_ACTIVE = 'OWNERSHIP_ACTIVE' }
 
 
 	/** Metadata associated with a`CustomDomain` operation. */
@@ -1024,7 +1024,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LiveMigrationStepState { STATE_UNSPECIFIED = 0, PREPARING = 1, PENDING = 2, INCOMPLETE = 3, PROCESSING = 4, COMPLETE = 5 }
+	export enum LiveMigrationStepState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', PREPARING = 'PREPARING', PENDING = 'PENDING', INCOMPLETE = 'INCOMPLETE', PROCESSING = 'PROCESSING', COMPLETE = 'COMPLETE' }
 
 
 	/** The intended behavior and status information of a domain. */
@@ -1102,7 +1102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainRedirectType { REDIRECT_TYPE_UNSPECIFIED = 0, MOVED_PERMANENTLY = 1 }
+	export enum DomainRedirectType { REDIRECT_TYPE_UNSPECIFIED = 'REDIRECT_TYPE_UNSPECIFIED', MOVED_PERMANENTLY = 'MOVED_PERMANENTLY' }
 
 
 	/** The current certificate provisioning status information for a domain. */
@@ -1154,11 +1154,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainProvisioningCertStatus { CERT_STATUS_UNSPECIFIED = 0, CERT_PENDING = 1, CERT_MISSING = 2, CERT_PROCESSING = 3, CERT_PROPAGATING = 4, CERT_ACTIVE = 5, CERT_ERROR = 6 }
+	export enum DomainProvisioningCertStatus { CERT_STATUS_UNSPECIFIED = 'CERT_STATUS_UNSPECIFIED', CERT_PENDING = 'CERT_PENDING', CERT_MISSING = 'CERT_MISSING', CERT_PROCESSING = 'CERT_PROCESSING', CERT_PROPAGATING = 'CERT_PROPAGATING', CERT_ACTIVE = 'CERT_ACTIVE', CERT_ERROR = 'CERT_ERROR' }
 
-	export enum DomainProvisioningDnsStatus { DNS_STATUS_UNSPECIFIED = 0, DNS_PENDING = 1, DNS_MISSING = 2, DNS_PARTIAL_MATCH = 3, DNS_MATCH = 4, DNS_EXTRANEOUS_MATCH = 5 }
+	export enum DomainProvisioningDnsStatus { DNS_STATUS_UNSPECIFIED = 'DNS_STATUS_UNSPECIFIED', DNS_PENDING = 'DNS_PENDING', DNS_MISSING = 'DNS_MISSING', DNS_PARTIAL_MATCH = 'DNS_PARTIAL_MATCH', DNS_MATCH = 'DNS_MATCH', DNS_EXTRANEOUS_MATCH = 'DNS_EXTRANEOUS_MATCH' }
 
-	export enum DomainStatus { DOMAIN_STATUS_UNSPECIFIED = 0, DOMAIN_CHANGE_PENDING = 1, DOMAIN_ACTIVE = 2, DOMAIN_VERIFICATION_REQUIRED = 3, DOMAIN_VERIFICATION_LOST = 4 }
+	export enum DomainStatus { DOMAIN_STATUS_UNSPECIFIED = 'DOMAIN_STATUS_UNSPECIFIED', DOMAIN_CHANGE_PENDING = 'DOMAIN_CHANGE_PENDING', DOMAIN_ACTIVE = 'DOMAIN_ACTIVE', DOMAIN_VERIFICATION_REQUIRED = 'DOMAIN_VERIFICATION_REQUIRED', DOMAIN_VERIFICATION_LOST = 'DOMAIN_VERIFICATION_LOST' }
 
 
 	/** A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } */
@@ -1400,7 +1400,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SiteType { TYPE_UNSPECIFIED = 0, DEFAULT_SITE = 1, USER_SITE = 2 }
+	export enum SiteType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', DEFAULT_SITE = 'DEFAULT_SITE', USER_SITE = 'USER_SITE' }
 
 	export interface ListVersionFilesResponse {
 
@@ -1457,7 +1457,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VersionFileStatus { STATUS_UNSPECIFIED = 0, EXPECTED = 1, ACTIVE = 2 }
+	export enum VersionFileStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', EXPECTED = 'EXPECTED', ACTIVE = 'ACTIVE' }
 
 	export interface ListVersionsResponse {
 

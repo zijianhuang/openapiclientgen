@@ -37,7 +37,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4 }
+	export enum ErrorCode { ResourceNotFoundException = 'ResourceNotFoundException', InvalidRequestException = 'InvalidRequestException', InternalFailureException = 'InternalFailureException', ServiceUnavailableException = 'ServiceUnavailableException', ThrottlingException = 'ThrottlingException' }
 
 
 	/** Information needed to acknowledge the alarm. */
@@ -667,7 +667,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlarmStateName { DISABLED = 0, NORMAL = 1, ACTIVE = 2, ACKNOWLEDGED = 3, SNOOZE_DISABLED = 4, LATCHED = 5 }
+	export enum AlarmStateName { DISABLED = 'DISABLED', NORMAL = 'NORMAL', ACTIVE = 'ACTIVE', ACKNOWLEDGED = 'ACKNOWLEDGED', SNOOZE_DISABLED = 'SNOOZE_DISABLED', LATCHED = 'LATCHED' }
 
 
 	/** Information needed to evaluate data. */
@@ -707,7 +707,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComparisonOperator { GREATER = 0, GREATER_OR_EQUAL = 1, LESS = 2, LESS_OR_EQUAL = 3, EQUAL = 4, NOT_EQUAL = 5 }
+	export enum ComparisonOperator { GREATER = 'GREATER', GREATER_OR_EQUAL = 'GREATER_OR_EQUAL', LESS = 'LESS', LESS_OR_EQUAL = 'LESS_OR_EQUAL', EQUAL = 'EQUAL', NOT_EQUAL = 'NOT_EQUAL' }
 
 
 	/** Contains information about the action that you can take to respond to the alarm. */
@@ -731,7 +731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomerActionName { SNOOZE = 0, ENABLE = 1, DISABLE = 2, ACKNOWLEDGE = 3, RESET = 4 }
+	export enum CustomerActionName { SNOOZE = 'SNOOZE', ENABLE = 'ENABLE', DISABLE = 'DISABLE', ACKNOWLEDGE = 'ACKNOWLEDGE', RESET = 'RESET' }
 
 
 	/** Contains the configuration information of a snooze action. */
@@ -839,7 +839,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { STATE_CHANGE = 0 }
+	export enum EventType { STATE_CHANGE = 'STATE_CHANGE' }
 
 
 	/** Contains the configuration information of alarm state changes. */
@@ -858,7 +858,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerType { SNOOZE_TIMEOUT = 0 }
+	export enum TriggerType { SNOOZE_TIMEOUT = 'SNOOZE_TIMEOUT' }
 
 	export interface ResourceNotFoundException {
 	}

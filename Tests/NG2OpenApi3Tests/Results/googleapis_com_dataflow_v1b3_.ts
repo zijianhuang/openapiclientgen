@@ -310,7 +310,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoscalingEventEventType { TYPE_UNKNOWN = 0, TARGET_NUM_WORKERS_CHANGED = 1, CURRENT_NUM_WORKERS_CHANGED = 2, ACTUATION_FAILURE = 3, NO_CHANGE = 4 }
+	export enum AutoscalingEventEventType { TYPE_UNKNOWN = 'TYPE_UNKNOWN', TARGET_NUM_WORKERS_CHANGED = 'TARGET_NUM_WORKERS_CHANGED', CURRENT_NUM_WORKERS_CHANGED = 'CURRENT_NUM_WORKERS_CHANGED', ACTUATION_FAILURE = 'ACTUATION_FAILURE', NO_CHANGE = 'NO_CHANGE' }
 
 
 	/** Settings for WorkerPool autoscaling. */
@@ -340,7 +340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AutoscalingSettingsAlgorithm { AUTOSCALING_ALGORITHM_UNKNOWN = 0, AUTOSCALING_ALGORITHM_NONE = 1, AUTOSCALING_ALGORITHM_BASIC = 2 }
+	export enum AutoscalingSettingsAlgorithm { AUTOSCALING_ALGORITHM_UNKNOWN = 'AUTOSCALING_ALGORITHM_UNKNOWN', AUTOSCALING_ALGORITHM_NONE = 'AUTOSCALING_ALGORITHM_NONE', AUTOSCALING_ALGORITHM_BASIC = 'AUTOSCALING_ALGORITHM_BASIC' }
 
 
 	/** Exponential buckets where the growth factor between buckets is `2**(2**-scale)`. e.g. for `scale=1` growth factor is `2**(2**(-1))=sqrt(2)`. `n` buckets will have the following boundaries. - 0th: [0, gf) - i in [1, n-1]: [gf^(i), gf^(i+1)) */
@@ -1119,9 +1119,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FlexTemplateRuntimeEnvironmentFlexrsGoal { FLEXRS_UNSPECIFIED = 0, FLEXRS_SPEED_OPTIMIZED = 1, FLEXRS_COST_OPTIMIZED = 2 }
+	export enum FlexTemplateRuntimeEnvironmentFlexrsGoal { FLEXRS_UNSPECIFIED = 'FLEXRS_UNSPECIFIED', FLEXRS_SPEED_OPTIMIZED = 'FLEXRS_SPEED_OPTIMIZED', FLEXRS_COST_OPTIMIZED = 'FLEXRS_COST_OPTIMIZED' }
 
-	export enum FlexTemplateRuntimeEnvironmentIpConfiguration { WORKER_IP_UNSPECIFIED = 0, WORKER_IP_PUBLIC = 1, WORKER_IP_PRIVATE = 2 }
+	export enum FlexTemplateRuntimeEnvironmentIpConfiguration { WORKER_IP_UNSPECIFIED = 'WORKER_IP_UNSPECIFIED', WORKER_IP_PUBLIC = 'WORKER_IP_PUBLIC', WORKER_IP_PRIVATE = 'WORKER_IP_PRIVATE' }
 
 
 	/** Metadata describing a template. */
@@ -1275,7 +1275,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterMetadataParamType { DEFAULT = 0, TEXT = 1, GCS_READ_BUCKET = 2, GCS_WRITE_BUCKET = 3, GCS_READ_FILE = 4, GCS_WRITE_FILE = 5, GCS_READ_FOLDER = 6, GCS_WRITE_FOLDER = 7, PUBSUB_TOPIC = 8, PUBSUB_SUBSCRIPTION = 9, BIGQUERY_TABLE = 10, JAVASCRIPT_UDF_FILE = 11, SERVICE_ACCOUNT = 12, MACHINE_TYPE = 13, KMS_KEY_NAME = 14, WORKER_REGION = 15, WORKER_ZONE = 16, BOOLEAN = 17, ENUM = 18, NUMBER = 19 }
+	export enum ParameterMetadataParamType { DEFAULT = 'DEFAULT', TEXT = 'TEXT', GCS_READ_BUCKET = 'GCS_READ_BUCKET', GCS_WRITE_BUCKET = 'GCS_WRITE_BUCKET', GCS_READ_FILE = 'GCS_READ_FILE', GCS_WRITE_FILE = 'GCS_WRITE_FILE', GCS_READ_FOLDER = 'GCS_READ_FOLDER', GCS_WRITE_FOLDER = 'GCS_WRITE_FOLDER', PUBSUB_TOPIC = 'PUBSUB_TOPIC', PUBSUB_SUBSCRIPTION = 'PUBSUB_SUBSCRIPTION', BIGQUERY_TABLE = 'BIGQUERY_TABLE', JAVASCRIPT_UDF_FILE = 'JAVASCRIPT_UDF_FILE', SERVICE_ACCOUNT = 'SERVICE_ACCOUNT', MACHINE_TYPE = 'MACHINE_TYPE', KMS_KEY_NAME = 'KMS_KEY_NAME', WORKER_REGION = 'WORKER_REGION', WORKER_ZONE = 'WORKER_ZONE', BOOLEAN = 'BOOLEAN', ENUM = 'ENUM', NUMBER = 'NUMBER' }
 
 
 	/** SDK Information. */
@@ -1305,7 +1305,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SDKInfoLanguage { UNKNOWN = 0, JAVA = 1, PYTHON = 2, GO = 3 }
+	export enum SDKInfoLanguage { UNKNOWN = 'UNKNOWN', JAVA = 'JAVA', PYTHON = 'PYTHON', GO = 'GO' }
 
 
 	/** CounterMetadata includes all static non-name non-value counter attributes. */
@@ -1349,9 +1349,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CounterMetadataKind { INVALID = 0, SUM = 1, MAX = 2, MIN = 3, MEAN = 4, OR = 5, AND = 6, SET = 7, DISTRIBUTION = 8, LATEST_VALUE = 9 }
+	export enum CounterMetadataKind { INVALID = 'INVALID', SUM = 'SUM', MAX = 'MAX', MIN = 'MIN', MEAN = 'MEAN', OR = 'OR', AND = 'AND', SET = 'SET', DISTRIBUTION = 'DISTRIBUTION', LATEST_VALUE = 'LATEST_VALUE' }
 
-	export enum CounterMetadataStandardUnits { BYTES = 0, BYTES_PER_SEC = 1, MILLISECONDS = 2, MICROSECONDS = 3, NANOSECONDS = 4, TIMESTAMP_MSEC = 5, TIMESTAMP_USEC = 6, TIMESTAMP_NSEC = 7 }
+	export enum CounterMetadataStandardUnits { BYTES = 'BYTES', BYTES_PER_SEC = 'BYTES_PER_SEC', MILLISECONDS = 'MILLISECONDS', MICROSECONDS = 'MICROSECONDS', NANOSECONDS = 'NANOSECONDS', TIMESTAMP_MSEC = 'TIMESTAMP_MSEC', TIMESTAMP_USEC = 'TIMESTAMP_USEC', TIMESTAMP_NSEC = 'TIMESTAMP_NSEC' }
 
 
 	/** Identifies a counter within a per-job namespace. Counters whose structured names are the same get merged into a single value for the job. */
@@ -1437,9 +1437,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CounterStructuredNameOrigin { SYSTEM = 0, USER = 1 }
+	export enum CounterStructuredNameOrigin { SYSTEM = 'SYSTEM', USER = 'USER' }
 
-	export enum CounterStructuredNamePortion { ALL = 0, KEY = 1, VALUE = 2 }
+	export enum CounterStructuredNamePortion { ALL = 'ALL', KEY = 'KEY', VALUE = 'VALUE' }
 
 
 	/** A single message which encapsulates structured name and metadata for a given counter. */
@@ -2215,7 +2215,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DerivedSourceDerivationMode { SOURCE_DERIVATION_MODE_UNKNOWN = 0, SOURCE_DERIVATION_MODE_INDEPENDENT = 1, SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT = 2, SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT = 3 }
+	export enum DerivedSourceDerivationMode { SOURCE_DERIVATION_MODE_UNKNOWN = 'SOURCE_DERIVATION_MODE_UNKNOWN', SOURCE_DERIVATION_MODE_INDEPENDENT = 'SOURCE_DERIVATION_MODE_INDEPENDENT', SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT = 'SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT', SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT = 'SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT' }
 
 
 	/** A source that records can be read and decoded from. */
@@ -2577,9 +2577,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnvironmentShuffleMode { SHUFFLE_MODE_UNSPECIFIED = 0, VM_BASED = 1, SERVICE_BASED = 2 }
+	export enum EnvironmentShuffleMode { SHUFFLE_MODE_UNSPECIFIED = 'SHUFFLE_MODE_UNSPECIFIED', VM_BASED = 'VM_BASED', SERVICE_BASED = 'SERVICE_BASED' }
 
-	export enum EnvironmentStreamingMode { STREAMING_MODE_UNSPECIFIED = 0, STREAMING_MODE_EXACTLY_ONCE = 1, STREAMING_MODE_AT_LEAST_ONCE = 2 }
+	export enum EnvironmentStreamingMode { STREAMING_MODE_UNSPECIFIED = 'STREAMING_MODE_UNSPECIFIED', STREAMING_MODE_EXACTLY_ONCE = 'STREAMING_MODE_EXACTLY_ONCE', STREAMING_MODE_AT_LEAST_ONCE = 'STREAMING_MODE_AT_LEAST_ONCE' }
 
 
 	/** Describes one particular pool of Cloud Dataflow workers to be instantiated by the Cloud Dataflow service in order to perform the computations required by a job. Note that a workflow job may use multiple pools, in order to match the various computational requirements of the various stages of the job. */
@@ -2729,7 +2729,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkerPoolDefaultPackageSet { DEFAULT_PACKAGE_SET_UNKNOWN = 0, DEFAULT_PACKAGE_SET_NONE = 1, DEFAULT_PACKAGE_SET_JAVA = 2, DEFAULT_PACKAGE_SET_PYTHON = 3 }
+	export enum WorkerPoolDefaultPackageSet { DEFAULT_PACKAGE_SET_UNKNOWN = 'DEFAULT_PACKAGE_SET_UNKNOWN', DEFAULT_PACKAGE_SET_NONE = 'DEFAULT_PACKAGE_SET_NONE', DEFAULT_PACKAGE_SET_JAVA = 'DEFAULT_PACKAGE_SET_JAVA', DEFAULT_PACKAGE_SET_PYTHON = 'DEFAULT_PACKAGE_SET_PYTHON' }
 
 
 	/** The packages that must be installed in order for a worker to run the steps of the Cloud Dataflow job that will be assigned to its worker pool. This is the mechanism by which the Cloud Dataflow SDK causes code to be loaded onto the workers. For example, the Cloud Dataflow Java SDK might use this to install jars containing the user's code and all of the various dependencies (libraries, data files, etc.) required in order for that code to run. */
@@ -2992,7 +2992,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkerPoolTeardownPolicy { TEARDOWN_POLICY_UNKNOWN = 0, TEARDOWN_ALWAYS = 1, TEARDOWN_ON_SUCCESS = 2, TEARDOWN_NEVER = 3 }
+	export enum WorkerPoolTeardownPolicy { TEARDOWN_POLICY_UNKNOWN = 'TEARDOWN_POLICY_UNKNOWN', TEARDOWN_ALWAYS = 'TEARDOWN_ALWAYS', TEARDOWN_ON_SUCCESS = 'TEARDOWN_ON_SUCCESS', TEARDOWN_NEVER = 'TEARDOWN_NEVER' }
 
 
 	/** A message describing the state of a particular execution stage. */
@@ -3029,7 +3029,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStageStateExecutionStageState { JOB_STATE_UNKNOWN = 0, JOB_STATE_STOPPED = 1, JOB_STATE_RUNNING = 2, JOB_STATE_DONE = 3, JOB_STATE_FAILED = 4, JOB_STATE_CANCELLED = 5, JOB_STATE_UPDATED = 6, JOB_STATE_DRAINING = 7, JOB_STATE_DRAINED = 8, JOB_STATE_PENDING = 9, JOB_STATE_CANCELLING = 10, JOB_STATE_QUEUED = 11, JOB_STATE_RESOURCE_CLEANING_UP = 12 }
+	export enum ExecutionStageStateExecutionStageState { JOB_STATE_UNKNOWN = 'JOB_STATE_UNKNOWN', JOB_STATE_STOPPED = 'JOB_STATE_STOPPED', JOB_STATE_RUNNING = 'JOB_STATE_RUNNING', JOB_STATE_DONE = 'JOB_STATE_DONE', JOB_STATE_FAILED = 'JOB_STATE_FAILED', JOB_STATE_CANCELLED = 'JOB_STATE_CANCELLED', JOB_STATE_UPDATED = 'JOB_STATE_UPDATED', JOB_STATE_DRAINING = 'JOB_STATE_DRAINING', JOB_STATE_DRAINED = 'JOB_STATE_DRAINED', JOB_STATE_PENDING = 'JOB_STATE_PENDING', JOB_STATE_CANCELLING = 'JOB_STATE_CANCELLING', JOB_STATE_QUEUED = 'JOB_STATE_QUEUED', JOB_STATE_RESOURCE_CLEANING_UP = 'JOB_STATE_RESOURCE_CLEANING_UP' }
 
 
 	/** Description of the composing transforms, names/ids, and input/outputs of a stage of execution. Some composing transforms and sources may have been generated by the Dataflow service during execution planning. */
@@ -3123,7 +3123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExecutionStageSummaryKind { UNKNOWN_KIND = 0, PAR_DO_KIND = 1, GROUP_BY_KEY_KIND = 2, FLATTEN_KIND = 3, READ_KIND = 4, WRITE_KIND = 5, CONSTANT_KIND = 6, SINGLETON_KIND = 7, SHUFFLE_KIND = 8 }
+	export enum ExecutionStageSummaryKind { UNKNOWN_KIND = 'UNKNOWN_KIND', PAR_DO_KIND = 'PAR_DO_KIND', GROUP_BY_KEY_KIND = 'GROUP_BY_KEY_KIND', FLATTEN_KIND = 'FLATTEN_KIND', READ_KIND = 'READ_KIND', WRITE_KIND = 'WRITE_KIND', CONSTANT_KIND = 'CONSTANT_KIND', SINGLETON_KIND = 'SINGLETON_KIND', SHUFFLE_KIND = 'SHUFFLE_KIND' }
 
 
 	/** Indicates which [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) failed to respond to a request for data. */
@@ -3349,7 +3349,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetTemplateResponseTemplateType { UNKNOWN = 0, LEGACY = 1, FLEX = 2 }
+	export enum GetTemplateResponseTemplateType { UNKNOWN = 'UNKNOWN', LEGACY = 'LEGACY', FLEX = 'FLEX' }
 
 
 	/** Information useful for debugging a hot key detection. */
@@ -3850,11 +3850,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SdkBugSeverity { SEVERITY_UNSPECIFIED = 0, NOTICE = 1, WARNING = 2, SEVERE = 3 }
+	export enum SdkBugSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', NOTICE = 'NOTICE', WARNING = 'WARNING', SEVERE = 'SEVERE' }
 
-	export enum SdkBugType { TYPE_UNSPECIFIED = 0, GENERAL = 1, PERFORMANCE = 2, DATALOSS = 3 }
+	export enum SdkBugType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', GENERAL = 'GENERAL', PERFORMANCE = 'PERFORMANCE', DATALOSS = 'DATALOSS' }
 
-	export enum SdkVersionSdkSupportStatus { UNKNOWN = 0, SUPPORTED = 1, STALE = 2, DEPRECATED = 3, UNSUPPORTED = 4 }
+	export enum SdkVersionSdkSupportStatus { UNKNOWN = 'UNKNOWN', SUPPORTED = 'SUPPORTED', STALE = 'STALE', DEPRECATED = 'DEPRECATED', UNSUPPORTED = 'UNSUPPORTED' }
 
 
 	/** Metadata for a Spanner connector used by the job. */
@@ -4035,7 +4035,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobType { JOB_TYPE_UNKNOWN = 0, JOB_TYPE_BATCH = 1, JOB_TYPE_STREAMING = 2 }
+	export enum JobType { JOB_TYPE_UNKNOWN = 'JOB_TYPE_UNKNOWN', JOB_TYPE_BATCH = 'JOB_TYPE_BATCH', JOB_TYPE_STREAMING = 'JOB_TYPE_STREAMING' }
 
 
 	/** Information about the execution of a job. */
@@ -4286,7 +4286,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StageSummaryState { EXECUTION_STATE_UNKNOWN = 0, EXECUTION_STATE_NOT_STARTED = 1, EXECUTION_STATE_RUNNING = 2, EXECUTION_STATE_SUCCEEDED = 3, EXECUTION_STATE_FAILED = 4, EXECUTION_STATE_CANCELLED = 5 }
+	export enum StageSummaryState { EXECUTION_STATE_UNKNOWN = 'EXECUTION_STATE_UNKNOWN', EXECUTION_STATE_NOT_STARTED = 'EXECUTION_STATE_NOT_STARTED', EXECUTION_STATE_RUNNING = 'EXECUTION_STATE_RUNNING', EXECUTION_STATE_SUCCEEDED = 'EXECUTION_STATE_SUCCEEDED', EXECUTION_STATE_FAILED = 'EXECUTION_STATE_FAILED', EXECUTION_STATE_CANCELLED = 'EXECUTION_STATE_CANCELLED' }
 
 
 	/** Summarized straggler identification details. */
@@ -4475,7 +4475,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobMessageMessageImportance { JOB_MESSAGE_IMPORTANCE_UNKNOWN = 0, JOB_MESSAGE_DEBUG = 1, JOB_MESSAGE_DETAILED = 2, JOB_MESSAGE_BASIC = 3, JOB_MESSAGE_WARNING = 4, JOB_MESSAGE_ERROR = 5 }
+	export enum JobMessageMessageImportance { JOB_MESSAGE_IMPORTANCE_UNKNOWN = 'JOB_MESSAGE_IMPORTANCE_UNKNOWN', JOB_MESSAGE_DEBUG = 'JOB_MESSAGE_DEBUG', JOB_MESSAGE_DETAILED = 'JOB_MESSAGE_DETAILED', JOB_MESSAGE_BASIC = 'JOB_MESSAGE_BASIC', JOB_MESSAGE_WARNING = 'JOB_MESSAGE_WARNING', JOB_MESSAGE_ERROR = 'JOB_MESSAGE_ERROR' }
 
 
 	/** JobMetrics contains a collection of metrics describing the detailed progress of a Dataflow job. Metrics correspond to user-defined and system-defined metrics in the job. For more information, see [Dataflow job metrics] (https://cloud.google.com/dataflow/docs/guides/using-monitoring-intf). This resource captures only the most recent values of each metric; time-series data can be queried for them (under the same metric names) from Cloud Monitoring. */
@@ -5445,7 +5445,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StreamingComputationTaskTaskType { STREAMING_COMPUTATION_TASK_UNKNOWN = 0, STREAMING_COMPUTATION_TASK_STOP = 1, STREAMING_COMPUTATION_TASK_START = 2 }
+	export enum StreamingComputationTaskTaskType { STREAMING_COMPUTATION_TASK_UNKNOWN = 'STREAMING_COMPUTATION_TASK_UNKNOWN', STREAMING_COMPUTATION_TASK_STOP = 'STREAMING_COMPUTATION_TASK_STOP', STREAMING_COMPUTATION_TASK_START = 'STREAMING_COMPUTATION_TASK_START' }
 
 
 	/** A task that carries configuration information for streaming computations. */
@@ -5847,7 +5847,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SnapshotState { UNKNOWN_SNAPSHOT_STATE = 0, PENDING = 1, RUNNING = 2, READY = 3, FAILED = 4, DELETED = 5 }
+	export enum SnapshotState { UNKNOWN_SNAPSHOT_STATE = 'UNKNOWN_SNAPSHOT_STATE', PENDING = 'PENDING', RUNNING = 'RUNNING', READY = 'READY', FAILED = 'FAILED', DELETED = 'DELETED' }
 
 
 	/** Information about the memory usage of a worker or a container within a worker. */
@@ -6247,7 +6247,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceSplitResponseOutcome { SOURCE_SPLIT_OUTCOME_UNKNOWN = 0, SOURCE_SPLIT_OUTCOME_USE_CURRENT = 1, SOURCE_SPLIT_OUTCOME_SPLITTING_HAPPENED = 2 }
+	export enum SourceSplitResponseOutcome { SOURCE_SPLIT_OUTCOME_UNKNOWN = 'SOURCE_SPLIT_OUTCOME_UNKNOWN', SOURCE_SPLIT_OUTCOME_USE_CURRENT = 'SOURCE_SPLIT_OUTCOME_USE_CURRENT', SOURCE_SPLIT_OUTCOME_SPLITTING_HAPPENED = 'SOURCE_SPLIT_OUTCOME_SPLITTING_HAPPENED' }
 
 
 	/** Response from a request to report the status of WorkItems. */
@@ -6423,7 +6423,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SendDebugCaptureRequestDataFormat { DATA_FORMAT_UNSPECIFIED = 0, RAW = 1, JSON = 2, ZLIB = 3, BROTLI = 4 }
+	export enum SendDebugCaptureRequestDataFormat { DATA_FORMAT_UNSPECIFIED = 'DATA_FORMAT_UNSPECIFIED', RAW = 'RAW', JSON = 'JSON', ZLIB = 'ZLIB', BROTLI = 'BROTLI' }
 
 
 	/** Response to a send capture request. nothing */
@@ -6668,7 +6668,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkerLifecycleEventEvent { UNKNOWN_EVENT = 0, OS_START = 1, CONTAINER_START = 2, NETWORK_UP = 3, STAGING_FILES_DOWNLOAD_START = 4, STAGING_FILES_DOWNLOAD_FINISH = 5, SDK_INSTALL_START = 6, SDK_INSTALL_FINISH = 7 }
+	export enum WorkerLifecycleEventEvent { UNKNOWN_EVENT = 'UNKNOWN_EVENT', OS_START = 'OS_START', CONTAINER_START = 'CONTAINER_START', NETWORK_UP = 'NETWORK_UP', STAGING_FILES_DOWNLOAD_START = 'STAGING_FILES_DOWNLOAD_START', STAGING_FILES_DOWNLOAD_FINISH = 'STAGING_FILES_DOWNLOAD_FINISH', SDK_INSTALL_START = 'SDK_INSTALL_START', SDK_INSTALL_FINISH = 'SDK_INSTALL_FINISH' }
 
 
 	/** A message code is used to report status and error messages to the service. The message codes are intended to be machine readable. The service will take care of translating these into user understandable messages if necessary. Example use cases: 1. Worker processes reporting successful startup. 2. Worker processes reporting specific errors (e.g. package staging failure). */
@@ -7518,11 +7518,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Dataflow_projects_jobs_listFilter { UNKNOWN = 0, ALL = 1, TERMINATED = 2, ACTIVE = 3 }
+	export enum Dataflow_projects_jobs_listFilter { UNKNOWN = 'UNKNOWN', ALL = 'ALL', TERMINATED = 'TERMINATED', ACTIVE = 'ACTIVE' }
 
-	export enum Dataflow_projects_jobs_listView { JOB_VIEW_UNKNOWN = 0, JOB_VIEW_SUMMARY = 1, JOB_VIEW_ALL = 2, JOB_VIEW_DESCRIPTION = 3 }
+	export enum Dataflow_projects_jobs_listView { JOB_VIEW_UNKNOWN = 'JOB_VIEW_UNKNOWN', JOB_VIEW_SUMMARY = 'JOB_VIEW_SUMMARY', JOB_VIEW_ALL = 'JOB_VIEW_ALL', JOB_VIEW_DESCRIPTION = 'JOB_VIEW_DESCRIPTION' }
 
-	export enum Dataflow_projects_locations_templates_getView { METADATA_ONLY = 0 }
+	export enum Dataflow_projects_locations_templates_getView { METADATA_ONLY = 'METADATA_ONLY' }
 
 }
 

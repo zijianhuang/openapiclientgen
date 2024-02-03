@@ -263,9 +263,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetCountriesSort { key = 0, label = 1 }
+	export enum GetCountriesSort { key = 'key', label = 'label' }
 
-	export enum GetCountriesOrder { ascending = 0, descending = 1 }
+	export enum GetCountriesOrder { ascending = 'ascending', descending = 'descending' }
 
 }
 

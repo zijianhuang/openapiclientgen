@@ -64,7 +64,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityParametersType { 'Microsoft.StorageSync/storageSyncServices' = 0 }
+	export enum CheckNameAvailabilityParametersType { 'Microsoft.StorageSync/storageSyncServices' = 'Microsoft.StorageSync/storageSyncServices' }
 
 
 	/** The CheckNameAvailability operation response. */
@@ -101,7 +101,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CheckNameAvailabilityResultReason { Invalid = 0, AlreadyExists = 1 }
+	export enum CheckNameAvailabilityResultReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** Cloud Endpoint object. */
@@ -275,11 +275,11 @@ export namespace MyNS {
 
 
 	/** Type of the Feature Status */
-	export enum FeatureStatus { on = 0, off = 1 }
+	export enum FeatureStatus { on = 'on', off = 'off' }
 
 
 	/** Type of the Operation Direction */
-	export enum OperationDirection { do = 0, undo = 1, cancel = 2 }
+	export enum OperationDirection { do = 'do', undo = 'undo', cancel = 'cancel' }
 
 
 	/** The operation supported by storage sync. */
@@ -745,7 +745,7 @@ export namespace MyNS {
 
 
 	/** Type of the ProgressType */
-	export enum ProgressType { none = 0, initialize = 1, download = 2, upload = 3, recall = 4 }
+	export enum ProgressType { none = 'none', initialize = 'initialize', download = 'download', upload = 'upload', recall = 'recall' }
 
 
 	/** The parameters used when calling recall action on server endpoint. */
@@ -1257,7 +1257,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerEndpointCloudTieringStatusHealth { Healthy = 0, Error = 1 }
+	export enum ServerEndpointCloudTieringStatusHealth { Healthy = 'Healthy', Error = 'Error' }
 
 
 	/** Server endpoint recall status object. */
@@ -1411,7 +1411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerEndpointSyncStatusCombinedHealth { Healthy = 0, Error = 1, SyncBlockedForRestore = 2, SyncBlockedForChangeDetectionPostRestore = 3, NoActivity = 4 }
+	export enum ServerEndpointSyncStatusCombinedHealth { Healthy = 'Healthy', Error = 'Error', SyncBlockedForRestore = 'SyncBlockedForRestore', SyncBlockedForChangeDetectionPostRestore = 'SyncBlockedForChangeDetectionPostRestore', NoActivity = 'NoActivity' }
 
 
 	/** Sync Session status object. */
@@ -1623,9 +1623,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerEndpointSyncStatusOfflineDataTransferStatus { InProgress = 0, Stopping = 1, NotRunning = 2, Complete = 3 }
+	export enum ServerEndpointSyncStatusOfflineDataTransferStatus { InProgress = 'InProgress', Stopping = 'Stopping', NotRunning = 'NotRunning', Complete = 'Complete' }
 
-	export enum ServerEndpointSyncStatusSyncActivity { Upload = 0, Download = 1, UploadAndDownload = 2 }
+	export enum ServerEndpointSyncStatusSyncActivity { Upload = 'Upload', Download = 'Download', UploadAndDownload = 'UploadAndDownload' }
 
 
 	/** Array of ServerEndpoint */
@@ -1646,7 +1646,7 @@ export namespace MyNS {
 
 
 	/** Type of the cloud tiering health state */
-	export enum ServerEndpointCloudTieringHealthState { Healthy = 0, Error = 1 }
+	export enum ServerEndpointCloudTieringHealthState { Healthy = 'Healthy', Error = 'Error' }
 
 
 	/** The parameters used when creating a server endpoint. */
@@ -1753,15 +1753,15 @@ export namespace MyNS {
 
 
 	/** Type of the Health state */
-	export enum ServerEndpointOfflineDataTransferState { InProgress = 0, Stopping = 1, NotRunning = 2, Complete = 3 }
+	export enum ServerEndpointOfflineDataTransferState { InProgress = 'InProgress', Stopping = 'Stopping', NotRunning = 'NotRunning', Complete = 'Complete' }
 
 
 	/** Type of the sync activity state */
-	export enum ServerEndpointSyncActivityState { Upload = 0, Download = 1, UploadAndDownload = 2 }
+	export enum ServerEndpointSyncActivityState { Upload = 'Upload', Download = 'Download', UploadAndDownload = 'UploadAndDownload' }
 
 
 	/** Type of the sync health state */
-	export enum ServerEndpointSyncHealthState { Healthy = 0, Error = 1, SyncBlockedForRestore = 2, SyncBlockedForChangeDetectionPostRestore = 3, NoActivity = 4 }
+	export enum ServerEndpointSyncHealthState { Healthy = 'Healthy', Error = 'Error', SyncBlockedForRestore = 'SyncBlockedForRestore', SyncBlockedForChangeDetectionPostRestore = 'SyncBlockedForChangeDetectionPostRestore', NoActivity = 'NoActivity' }
 
 
 	/** Parameters for updating an Server Endpoint. */
@@ -2047,7 +2047,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubscriptionStateState { Registered = 0, Unregistered = 1, Warned = 2, Suspended = 3, Deleted = 4 }
+	export enum SubscriptionStateState { Registered = 'Registered', Unregistered = 'Unregistered', Warned = 'Warned', Suspended = 'Suspended', Deleted = 'Deleted' }
 
 
 	/** Sync Group object. */
@@ -2187,7 +2187,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TriggerChangeDetectionParametersChangeDetectionMode { Default = 0, Recursive = 1 }
+	export enum TriggerChangeDetectionParametersChangeDetectionMode { Default = 'Default', Recursive = 'Recursive' }
 
 
 	/** Trigger Rollover Request. */
@@ -2276,7 +2276,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkflowPropertiesStatus { active = 0, expired = 1, succeeded = 2, aborted = 3, failed = 4 }
+	export enum WorkflowPropertiesStatus { active = 'active', expired = 'expired', succeeded = 'succeeded', aborted = 'aborted', failed = 'failed' }
 
 
 	/** Array of Workflow */
@@ -2297,7 +2297,7 @@ export namespace MyNS {
 
 
 	/** Type of the Workflow Status */
-	export enum WorkflowStatus { active = 0, expired = 1, succeeded = 2, aborted = 3, failed = 4 }
+	export enum WorkflowStatus { active = 'active', expired = 'expired', succeeded = 'succeeded', aborted = 'aborted', failed = 'failed' }
 
 	@Injectable()
 	export class MyClient {

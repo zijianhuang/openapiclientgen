@@ -79,7 +79,7 @@ export namespace MyNS {
 
 
 	/** Represents a protocol type. */
-	export enum ProtocolType { WEBSOCKET = 0, HTTP = 1 }
+	export enum ProtocolType { WEBSOCKET = 'WEBSOCKET', HTTP = 'HTTP' }
 
 
 	/** Represents a collection of tags associated with the resource. */
@@ -198,7 +198,7 @@ export namespace MyNS {
 
 
 	/** The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs). */
-	export enum AuthorizerType { REQUEST = 0, JWT = 1 }
+	export enum AuthorizerType { REQUEST = 'REQUEST', JWT = 'JWT' }
 
 
 	/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
@@ -248,7 +248,7 @@ export namespace MyNS {
 
 
 	/** Represents a deployment status. */
-	export enum DeploymentStatus { PENDING = 0, FAILED = 1, DEPLOYED = 2 }
+	export enum DeploymentStatus { PENDING = 'PENDING', FAILED = 'FAILED', DEPLOYED = 'DEPLOYED' }
 
 	export interface CreateDomainNameResponse {
 		ApiMappingSelectionExpression?: string;
@@ -315,15 +315,15 @@ export namespace MyNS {
 
 
 	/** The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated. */
-	export enum DomainNameStatus { AVAILABLE = 0, UPDATING = 1, PENDING_CERTIFICATE_REIMPORT = 2, PENDING_OWNERSHIP_VERIFICATION = 3 }
+	export enum DomainNameStatus { AVAILABLE = 'AVAILABLE', UPDATING = 'UPDATING', PENDING_CERTIFICATE_REIMPORT = 'PENDING_CERTIFICATE_REIMPORT', PENDING_OWNERSHIP_VERIFICATION = 'PENDING_OWNERSHIP_VERIFICATION' }
 
 
 	/** Represents an endpoint type. */
-	export enum EndpointType { REGIONAL = 0, EDGE = 1 }
+	export enum EndpointType { REGIONAL = 'REGIONAL', EDGE = 'EDGE' }
 
 
 	/** The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2. */
-	export enum SecurityPolicy { TLS_1_0 = 0, TLS_1_2 = 1 }
+	export enum SecurityPolicy { TLS_1_0 = 'TLS_1_0', TLS_1_2 = 'TLS_1_2' }
 
 	export interface MutualTlsAuthentication {
 		TruststoreUri?: string;
@@ -416,19 +416,19 @@ export namespace MyNS {
 
 
 	/** Represents a connection type. */
-	export enum ConnectionType { INTERNET = 0, VPC_LINK = 1 }
+	export enum ConnectionType { INTERNET = 'INTERNET', VPC_LINK = 'VPC_LINK' }
 
 
 	/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-	export enum ContentHandlingStrategy { CONVERT_TO_BINARY = 0, CONVERT_TO_TEXT = 1 }
+	export enum ContentHandlingStrategy { CONVERT_TO_BINARY = 'CONVERT_TO_BINARY', CONVERT_TO_TEXT = 'CONVERT_TO_TEXT' }
 
 
 	/** Represents an API method integration type. */
-	export enum IntegrationType { AWS = 0, HTTP = 1, MOCK = 2, HTTP_PROXY = 3, AWS_PROXY = 4 }
+	export enum IntegrationType { AWS = 'AWS', HTTP = 'HTTP', MOCK = 'MOCK', HTTP_PROXY = 'HTTP_PROXY', AWS_PROXY = 'AWS_PROXY' }
 
 
 	/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-	export enum PassthroughBehavior { WHEN_NO_MATCH = 0, NEVER = 1, WHEN_NO_TEMPLATES = 2 }
+	export enum PassthroughBehavior { WHEN_NO_MATCH = 'WHEN_NO_MATCH', NEVER = 'NEVER', WHEN_NO_TEMPLATES = 'WHEN_NO_TEMPLATES' }
 
 
 	/**
@@ -597,7 +597,7 @@ export namespace MyNS {
 
 
 	/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. */
-	export enum AuthorizationType { NONE = 0, AWS_IAM = 1, CUSTOM = 2, JWT = 3 }
+	export enum AuthorizationType { NONE = 'NONE', AWS_IAM = 'AWS_IAM', CUSTOM = 'CUSTOM', JWT = 'JWT' }
 
 
 	/** The route models. */
@@ -758,7 +758,7 @@ export namespace MyNS {
 
 
 	/** The logging level. */
-	export enum LoggingLevel { ERROR = 0, INFO = 1, OFF = 2 }
+	export enum LoggingLevel { ERROR = 'ERROR', INFO = 'INFO', OFF = 'OFF' }
 
 
 	/** The route settings map. */
@@ -821,11 +821,11 @@ export namespace MyNS {
 
 
 	/** The status of the VPC link. */
-	export enum VpcLinkStatus { PENDING = 0, AVAILABLE = 1, DELETING = 2, FAILED = 3, INACTIVE = 4 }
+	export enum VpcLinkStatus { PENDING = 'PENDING', AVAILABLE = 'AVAILABLE', DELETING = 'DELETING', FAILED = 'FAILED', INACTIVE = 'INACTIVE' }
 
 
 	/** The version of the VPC link. */
-	export enum VpcLinkVersion { V2 = 0 }
+	export enum VpcLinkVersion { V2 = 'V2' }
 
 	export interface DeleteVpcLinkResponse {
 	}

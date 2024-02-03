@@ -60,7 +60,7 @@ export namespace MyNS {
 
 
 	/** <p>The deployment status of a resource. Status can be one of the following:</p> <p>PENDING: Amazon Route 53 Application Recovery Controller is creating the resource.</p> <p>DEPLOYED: The resource is deployed and ready to use.</p> <p>PENDING_DELETION: Amazon Route 53 Application Recovery Controller is deleting the resource.</p> */
-	export enum Status { PENDING = 0, DEPLOYED = 1, PENDING_DELETION = 2 }
+	export enum Status { PENDING = 'PENDING', DEPLOYED = 'DEPLOYED', PENDING_DELETION = 'PENDING_DELETION' }
 
 	export interface ValidationException {
 	}
@@ -316,7 +316,7 @@ export namespace MyNS {
 
 
 	/** <p>An enumerated type that determines how the evaluated rules are processed. RuleType can be one of the following:</p> <p>ATLEAST - At least N routing controls must be set. You specify N as the Threshold in the rule configuration.</p> <p>AND - All routing controls must be set. This is a shortcut for "At least N," where N is the total number of controls in the rule.</p> <p>OR - Any control must be set. This is a shortcut for "At least N," where N is 1.</p> */
-	export enum RuleType { ATLEAST = 0, AND = 1, OR = 2 }
+	export enum RuleType { ATLEAST = 'ATLEAST', AND = 'AND', OR = 'OR' }
 
 
 	/** <p>A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p> <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p> */

@@ -122,13 +122,13 @@ export namespace MyNS {
 
 	}
 
-	export enum AEAssessmentAEAssessment1AssessmentCode { Excluded = 0, EligibleJobHolder = 1, NonEligibleJobHolder = 2, EntitledWorker = 3 }
+	export enum AEAssessmentAEAssessment1AssessmentCode { Excluded = 'Excluded', EligibleJobHolder = 'EligibleJobHolder', NonEligibleJobHolder = 'NonEligibleJobHolder', EntitledWorker = 'EntitledWorker' }
 
-	export enum AEAssessmentAEAssessment1AssessmentEvent { NonEnrolmentEvent = 0, AutomaticEnrolment = 1, OptIn = 2, VoluntaryJoiner = 3, ContractualEnrolment = 4 }
+	export enum AEAssessmentAEAssessment1AssessmentEvent { NonEnrolmentEvent = 'NonEnrolmentEvent', AutomaticEnrolment = 'AutomaticEnrolment', OptIn = 'OptIn', VoluntaryJoiner = 'VoluntaryJoiner', ContractualEnrolment = 'ContractualEnrolment' }
 
-	export enum AEAssessmentAEAssessment1AssessmentOverride { None = 0, OptOut = 1, OptIn = 2, VoluntaryJoiner = 3, ContractualPension = 4, CeasedMembership = 5, Leaver = 6, Excluded = 7 }
+	export enum AEAssessmentAEAssessment1AssessmentOverride { None = 'None', OptOut = 'OptOut', OptIn = 'OptIn', VoluntaryJoiner = 'VoluntaryJoiner', ContractualPension = 'ContractualPension', CeasedMembership = 'CeasedMembership', Leaver = 'Leaver', Excluded = 'Excluded' }
 
-	export enum AEAssessmentAEAssessment1AssessmentResult { Inconclusive = 0, NoChange = 1, Enrol = 2, Exit = 3 }
+	export enum AEAssessmentAEAssessment1AssessmentResult { Inconclusive = 'Inconclusive', NoChange = 'NoChange', Enrol = 'Enrol', Exit = 'Exit' }
 
 	export interface ApplicationSecret {
 		ApplicationSecret1?: ApplicationSecretApplicationSecret1;
@@ -371,9 +371,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CisInstructionCisInstruction1PayFrequency { Monthly = 0, Weekly = 1 }
+	export enum CisInstructionCisInstruction1PayFrequency { Monthly = 'Monthly', Weekly = 'Weekly' }
 
-	export enum CisInstructionCisInstruction1UOM { NotSet = 0, Minute = 1, Hour = 2, Day = 3, Week = 4, Month = 5, Year = 6, Unit = 7 }
+	export enum CisInstructionCisInstruction1UOM { NotSet = 'NotSet', Minute = 'Minute', Hour = 'Hour', Day = 'Day', Week = 'Week', Month = 'Month', Year = 'Year', Unit = 'Unit' }
 
 	export interface CisJobInstructionBase {
 		CisJobInstructionBase1?: CisJobInstructionBaseCisJobInstructionBase1;
@@ -608,7 +608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CisLineCisLine1TaxTreatment { Taxable = 0, NonTaxable = 1, Notional = 2, Materials = 3 }
+	export enum CisLineCisLine1TaxTreatment { Taxable = 'Taxable', NonTaxable = 'NonTaxable', Notional = 'Notional', Materials = 'Materials' }
 
 	export interface CisLineType {
 		CisLineType1?: CisLineTypeCisLineType1;
@@ -759,7 +759,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CisTransactionCisTransaction1CisMessageType { Verification = 0, Return = 1 }
+	export enum CisTransactionCisTransaction1CisMessageType { Verification = 'Verification', Return = 'Return' }
 
 	export interface CisTransactionCisTransaction1EmployerCore {
 
@@ -792,7 +792,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CisTransactionCisTransaction1TransactionStatus { New = 0, RequestGenerated = 1, CompletedWithError = 2, CompletedWithSuccess = 3, TimeOut = 4 }
+	export enum CisTransactionCisTransaction1TransactionStatus { New = 'New', RequestGenerated = 'RequestGenerated', CompletedWithError = 'CompletedWithError', CompletedWithSuccess = 'CompletedWithSuccess', TimeOut = 'TimeOut' }
 
 	export interface Commentary {
 		Commentary1?: CommentaryCommentary1;
@@ -1123,7 +1123,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DpsMessageDpsMessage1MessageStatus { Retrieved = 0, Applied = 1, Unresolved = 2, Ignored = 3, Information = 4 }
+	export enum DpsMessageDpsMessage1MessageStatus { Retrieved = 'Retrieved', Applied = 'Applied', Unresolved = 'Unresolved', Ignored = 'Ignored', Information = 'Information' }
 
 	export interface Employee {
 		Employee1?: EmployeeEmployee1;
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeEmployee1AEExclusionReasonCode { OtherNotKnown = 0, NotAWorker = 1, NotUKWorker = 2, TemporaryUKWorker = 3, OutsideAgeRange = 4, SingleEmployeeDirector = 5, CeasedMembershipWithin12Months = 6, CeasedMembershipBeyond12Months = 7, WorkerWULSWithin12Month = 8, WorkerWULSBeyond12Month = 9, WorkerInNoticePeriod = 10, WorkerTaxProtection = 11 }
+	export enum EmployeeEmployee1AEExclusionReasonCode { OtherNotKnown = 'OtherNotKnown', NotAWorker = 'NotAWorker', NotUKWorker = 'NotUKWorker', TemporaryUKWorker = 'TemporaryUKWorker', OutsideAgeRange = 'OutsideAgeRange', SingleEmployeeDirector = 'SingleEmployeeDirector', CeasedMembershipWithin12Months = 'CeasedMembershipWithin12Months', CeasedMembershipBeyond12Months = 'CeasedMembershipBeyond12Months', WorkerWULSWithin12Month = 'WorkerWULSWithin12Month', WorkerWULSBeyond12Month = 'WorkerWULSBeyond12Month', WorkerInNoticePeriod = 'WorkerInNoticePeriod', WorkerTaxProtection = 'WorkerTaxProtection' }
 
 	export interface EmployeeEmployee1Address {
 
@@ -1596,13 +1596,13 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeEmployee1Gender { Unknown = 0, Male = 1, Female = 2 }
+	export enum EmployeeEmployee1Gender { Unknown = 'Unknown', Male = 'Male', Female = 'Female' }
 
-	export enum EmployeeEmployee1LeaverReason { Resigned = 0, Dismissed = 1, Redundant = 2, Retired = 3, Deceased = 4, LegalCustody = 5, Other = 6 }
+	export enum EmployeeEmployee1LeaverReason { Resigned = 'Resigned', Dismissed = 'Dismissed', Redundant = 'Redundant', Retired = 'Retired', Deceased = 'Deceased', LegalCustody = 'LegalCustody', Other = 'Other' }
 
-	export enum EmployeeEmployee1MaritalStatus { NotSet = 0, Single = 1, Married = 2, Divorced = 3, Widowed = 4 }
+	export enum EmployeeEmployee1MaritalStatus { NotSet = 'NotSet', Single = 'Single', Married = 'Married', Divorced = 'Divorced', Widowed = 'Widowed' }
 
-	export enum EmployeeEmployee1NicLiability { HasOtherJob = 0, IsFemaleEntitledToReducedRate = 1, IsNotLiable = 2, IsContractedOut = 3, IsFullyLiable = 4, IsApprentice = 5, LeaverBeyond6Weeks = 6, PaymentAfterLeavingIrregular = 7, IsFreePortWorker = 8, IsNotLiableForEmployerNi = 9 }
+	export enum EmployeeEmployee1NicLiability { HasOtherJob = 'HasOtherJob', IsFemaleEntitledToReducedRate = 'IsFemaleEntitledToReducedRate', IsNotLiable = 'IsNotLiable', IsContractedOut = 'IsContractedOut', IsFullyLiable = 'IsFullyLiable', IsApprentice = 'IsApprentice', LeaverBeyond6Weeks = 'LeaverBeyond6Weeks', PaymentAfterLeavingIrregular = 'PaymentAfterLeavingIrregular', IsFreePortWorker = 'IsFreePortWorker', IsNotLiableForEmployerNi = 'IsNotLiableForEmployerNi' }
 
 	export interface EmployeeEmployee1PaySchedule {
 
@@ -1635,19 +1635,19 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeEmployee1PaymentMethod { NotSet = 0, Cash = 1, Cheque = 2, BACS = 3, FasterPayments = 4, Other = 5 }
+	export enum EmployeeEmployee1PaymentMethod { NotSet = 'NotSet', Cash = 'Cash', Cheque = 'Cheque', BACS = 'BACS', FasterPayments = 'FasterPayments', Other = 'Other' }
 
-	export enum EmployeeEmployee1Region { NotSet = 0, England = 1, Scotland = 2, Wales = 3 }
+	export enum EmployeeEmployee1Region { NotSet = 'NotSet', England = 'England', Scotland = 'Scotland', Wales = 'Wales' }
 
-	export enum EmployeeEmployee1RuleExclusions { None = 0, NiMissingPayInstructionRule = 1, TaxMissingPayInstructionRule = 2, TaxCodeUpliftRule = 3, NiSetExpectedLetterRule = 4, NiDateOfBirthChangeRetrospectiveCRule = 5, NiDefermentStatusChangeRule = 6, NiEndContractedOutTransferRule = 7, PaymentAfterLeavingTaxCodeRule = 8, LeaverEndInstructionsRule = 9, P45StudentLoanInstructionRule = 10, P45TaxInstructionRule = 11, P45YtdTaxRule = 12, YtdInstructionRule = 13, TaxCodeRegionChangeRule = 14, AutoEnrolmentStatusChangeRule = 15, EmployeeDeceasedRule = 16, BenefitInstructionAutoEndRule = 17 }
+	export enum EmployeeEmployee1RuleExclusions { None = 'None', NiMissingPayInstructionRule = 'NiMissingPayInstructionRule', TaxMissingPayInstructionRule = 'TaxMissingPayInstructionRule', TaxCodeUpliftRule = 'TaxCodeUpliftRule', NiSetExpectedLetterRule = 'NiSetExpectedLetterRule', NiDateOfBirthChangeRetrospectiveCRule = 'NiDateOfBirthChangeRetrospectiveCRule', NiDefermentStatusChangeRule = 'NiDefermentStatusChangeRule', NiEndContractedOutTransferRule = 'NiEndContractedOutTransferRule', PaymentAfterLeavingTaxCodeRule = 'PaymentAfterLeavingTaxCodeRule', LeaverEndInstructionsRule = 'LeaverEndInstructionsRule', P45StudentLoanInstructionRule = 'P45StudentLoanInstructionRule', P45TaxInstructionRule = 'P45TaxInstructionRule', P45YtdTaxRule = 'P45YtdTaxRule', YtdInstructionRule = 'YtdInstructionRule', TaxCodeRegionChangeRule = 'TaxCodeRegionChangeRule', AutoEnrolmentStatusChangeRule = 'AutoEnrolmentStatusChangeRule', EmployeeDeceasedRule = 'EmployeeDeceasedRule', BenefitInstructionAutoEndRule = 'BenefitInstructionAutoEndRule' }
 
-	export enum EmployeeEmployee1Seconded { NotSet = 0, Stay183DaysOrMore = 1, StayLessThan183Days = 2, InOutUk = 3 }
+	export enum EmployeeEmployee1Seconded { NotSet = 'NotSet', Stay183DaysOrMore = 'Stay183DaysOrMore', StayLessThan183Days = 'StayLessThan183Days', InOutUk = 'InOutUk' }
 
-	export enum EmployeeEmployee1StarterDeclaration { PreviouslyReported = 0, A = 1, B = 2, C = 3 }
+	export enum EmployeeEmployee1StarterDeclaration { PreviouslyReported = 'PreviouslyReported', A = 'A', B = 'B', C = 'C' }
 
-	export enum EmployeeEmployee1Territory { UnitedKingdom = 0 }
+	export enum EmployeeEmployee1Territory { UnitedKingdom = 'UnitedKingdom' }
 
-	export enum EmployeeEmployee1WorkingWeek { None = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, AllWeekDays = 6, Saturday = 7, Sunday = 8, AllDays = 9 }
+	export enum EmployeeEmployee1WorkingWeek { None = 'None', Monday = 'Monday', Tuesday = 'Tuesday', Wednesday = 'Wednesday', Thursday = 'Thursday', Friday = 'Friday', AllWeekDays = 'AllWeekDays', Saturday = 'Saturday', Sunday = 'Sunday', AllDays = 'AllDays' }
 
 	export interface EmployeeSecret {
 		EmployeeSecret1?: EmployeeSecretEmployeeSecret1;
@@ -1968,7 +1968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployeeSummaryEmployeeSummary1TaxBasis { Cumulative = 0, Week1Month1 = 1 }
+	export enum EmployeeSummaryEmployeeSummary1TaxBasis { Cumulative = 'Cumulative', Week1Month1 = 'Week1Month1' }
 
 	export interface Employer {
 		Employer1?: EmployerEmployer1;
@@ -2565,9 +2565,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EmployerEmployer1HmrcSettingsSender { Employer = 0, Individual = 1, Company = 2, Agent = 3, Bureau = 4, Partnership = 5, Trust = 6, Government = 7, ActingInCapacity = 8, Other = 9 }
+	export enum EmployerEmployer1HmrcSettingsSender { Employer = 'Employer', Individual = 'Individual', Company = 'Company', Agent = 'Agent', Bureau = 'Bureau', Partnership = 'Partnership', Trust = 'Trust', Government = 'Government', ActingInCapacity = 'ActingInCapacity', Other = 'Other' }
 
-	export enum EmployerEmployer1HmrcSettingsStateAidSector { Agriculture = 0, FisheriesAquaculture = 1, RoadTransport = 2, Industrial = 3, NotApplicable = 4 }
+	export enum EmployerEmployer1HmrcSettingsStateAidSector { Agriculture = 'Agriculture', FisheriesAquaculture = 'FisheriesAquaculture', RoadTransport = 'RoadTransport', Industrial = 'Industrial', NotApplicable = 'NotApplicable' }
 
 	export interface EmployerSecret {
 		EmployerSecret1?: EmployerSecretEmployerSecret1;
@@ -2712,7 +2712,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ErrorModelErrorModel1ErrorCategory { General = 0, NotFound = 1, NotAuthorised = 2, ValidationFailure = 3 }
+	export enum ErrorModelErrorModel1ErrorCategory { General = 'General', NotFound = 'NotFound', NotAuthorised = 'NotAuthorised', ValidationFailure = 'ValidationFailure' }
 
 	export interface ErrorModelErrorModel1Errors {
 		Error?: Array<string>;
@@ -2991,7 +2991,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobInfoJobInfo1JobStatus { New = 0, Pending = 1, InProgress = 2, Success = 3, Failed = 4, OnHold = 5 }
+	export enum JobInfoJobInfo1JobStatus { New = 'New', Pending = 'Pending', InProgress = 'InProgress', Success = 'Success', Failed = 'Failed', OnHold = 'OnHold' }
 
 	export interface JournalExpressionDataTable {
 		JournalExpressionDataTable1?: JournalExpressionDataTableJournalExpressionDataTable1;
@@ -3105,7 +3105,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JournalInstructionJournalInstruction1AccountingType { Credit = 0, Debit = 1 }
+	export enum JournalInstructionJournalInstruction1AccountingType { Credit = 'Credit', Debit = 'Debit' }
 
 	export interface JournalLine {
 		JournalLine1?: JournalLineJournalLine1;
@@ -3245,7 +3245,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JournalLineJournalLine1PayFrequency { Weekly = 0, Monthly = 1, TwoWeekly = 2, FourWeekly = 3, Yearly = 4 }
+	export enum JournalLineJournalLine1PayFrequency { Weekly = 'Weekly', Monthly = 'Monthly', TwoWeekly = 'TwoWeekly', FourWeekly = 'FourWeekly', Yearly = 'Yearly' }
 
 	export interface JournalLineJournalLine1PayRun {
 
@@ -3612,7 +3612,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PayCodePayCode1Type { NotSet = 0, Payment = 1, Deduction = 2 }
+	export enum PayCodePayCode1Type { NotSet = 'NotSet', Payment = 'Payment', Deduction = 'Deduction' }
 
 	export interface PayInstruction {
 		PayInstruction1?: PayInstructionPayInstruction1;
@@ -4299,7 +4299,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PensionPension1Certification { NotSet = 0, Set1 = 1, Set2 = 2, Set3 = 3 }
+	export enum PensionPension1Certification { NotSet = 'NotSet', Set1 = 'Set1', Set2 = 'Set2', Set3 = 'Set3' }
 
 	export interface PensionPension1PensionablePayCodes {
 		PayCode?: Array<string>;
@@ -4312,7 +4312,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PensionPension1ProRataMethod { NotSet = 0, Annual260Days = 1, Annual365Days = 2, AnnualQualifyingDays = 3, DaysPerCalendarMonth = 4, DaysPerTaxPeriod = 5, WorkingDaysPerCalendarMonth = 6, WeekDaysPerCalendarMonth = 7 }
+	export enum PensionPension1ProRataMethod { NotSet = 'NotSet', Annual260Days = 'Annual260Days', Annual365Days = 'Annual365Days', AnnualQualifyingDays = 'AnnualQualifyingDays', DaysPerCalendarMonth = 'DaysPerCalendarMonth', DaysPerTaxPeriod = 'DaysPerTaxPeriod', WorkingDaysPerCalendarMonth = 'WorkingDaysPerCalendarMonth', WeekDaysPerCalendarMonth = 'WeekDaysPerCalendarMonth' }
 
 	export interface PensionPension1QualifyingPayCodes {
 		PayCode?: Array<string>;
@@ -4325,9 +4325,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PensionPension1RasRoundingOverride { NotSet = 0, PennyUp = 1, PennyDown = 2, Bankers = 3, FiveUp = 4, FiveDown = 5, Floor = 6, Ceiling = 7 }
+	export enum PensionPension1RasRoundingOverride { NotSet = 'NotSet', PennyUp = 'PennyUp', PennyDown = 'PennyDown', Bankers = 'Bankers', FiveUp = 'FiveUp', FiveDown = 'FiveDown', Floor = 'Floor', Ceiling = 'Ceiling' }
 
-	export enum PensionPension1TaxationMethod { NotSet = 0, NetBased = 1, ReliefAtSource = 2, TaxReliefExcluded = 3 }
+	export enum PensionPension1TaxationMethod { NotSet = 'NotSet', NetBased = 'NetBased', ReliefAtSource = 'ReliefAtSource', TaxReliefExcluded = 'TaxReliefExcluded' }
 
 	export interface Permission {
 		Permission1?: PermissionPermission1;
@@ -4385,9 +4385,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionPermission1Policy { Allow = 0, Deny = 1 }
+	export enum PermissionPermission1Policy { Allow = 'Allow', Deny = 'Deny' }
 
-	export enum PermissionPermission1Verbs { Read = 0, Write = 1, Delete = 2, All = 3 }
+	export enum PermissionPermission1Verbs { Read = 'Read', Write = 'Write', Delete = 'Delete', All = 'All' }
 
 	export interface Query {
 		Query1?: QueryQuery1;
@@ -4615,7 +4615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryQuery1GroupsGroupOutput_Output { Element = 0, Attribute = 1, Variable = 2, VariableSum = 3, VariableAppend = 4, VariablePrepend = 5, ElementDatePart = 6, InnerText = 7 }
+	export enum QueryQuery1GroupsGroupOutput_Output { Element = 'Element', Attribute = 'Attribute', Variable = 'Variable', VariableSum = 'VariableSum', VariableAppend = 'VariableAppend', VariablePrepend = 'VariablePrepend', ElementDatePart = 'ElementDatePart', InnerText = 'InnerText' }
 
 	export interface QueryQuery1Variables {
 		QueryQuery1VariablesVariable?: Array<QueryQuery1VariablesVariable>;
@@ -5246,7 +5246,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RtiJobInstructionRtiJobInstruction1LateReason { A = 0, B = 1, C = 2, D = 3, F = 4, G = 5, H = 6 }
+	export enum RtiJobInstructionRtiJobInstruction1LateReason { A = 'A', B = 'B', C = 'C', D = 'D', F = 'F', G = 'G', H = 'H' }
 
 	export interface RtiJobInstructionRtiJobInstruction1PaySchedule {
 
@@ -5741,9 +5741,9 @@ export namespace MyNS {
 
 	}
 
-	export enum SubContractorSubContractor1BusinessType { SoleTrader = 0, Company = 1, Partnership = 2, Trust = 3 }
+	export enum SubContractorSubContractor1BusinessType { SoleTrader = 'SoleTrader', Company = 'Company', Partnership = 'Partnership', Trust = 'Trust' }
 
-	export enum SubContractorSubContractor1TaxationStatus { Unmatched = 0, Net = 1, Gross = 2 }
+	export enum SubContractorSubContractor1TaxationStatus { Unmatched = 'Unmatched', Net = 'Net', Gross = 'Gross' }
 
 	export interface Tag {
 		Tag1?: TagTag1;
@@ -5960,7 +5960,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ThirdPartyTransactionThirdPartyTransaction1TransactionStatus { Unknown = 0, Success = 1, Failure = 2 }
+	export enum ThirdPartyTransactionThirdPartyTransaction1TransactionStatus { Unknown = 'Unknown', Success = 'Success', Failure = 'Failure' }
 
 	export interface TransformDefinition {
 		TransformDefinition1?: TransformDefinitionTransformDefinition1;

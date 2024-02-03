@@ -211,7 +211,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceNameAvailabilityReason { Invalid = 0, AlreadyExists = 1 }
+	export enum ResourceNameAvailabilityReason { Invalid = 'Invalid', AlreadyExists = 'AlreadyExists' }
 
 
 	/** Resource name availability request content. */
@@ -266,7 +266,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceNameAvailabilityRequestType { 'Microsoft.NetApp/netAppAccounts' = 0, 'Microsoft.NetApp/netAppAccounts/capacityPools' = 1, 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' = 2, 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' = 3 }
+	export enum ResourceNameAvailabilityRequestType { 'Microsoft.NetApp/netAppAccounts' = 'Microsoft.NetApp/netAppAccounts', 'Microsoft.NetApp/netAppAccounts/capacityPools' = 'Microsoft.NetApp/netAppAccounts/capacityPools', 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' = 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes', 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' = 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' }
 
 
 	/** One property of operation, include metric specifications. */
@@ -530,7 +530,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PoolPropertiesServiceLevel { Standard = 0, Premium = 1, Ultra = 2 }
+	export enum PoolPropertiesServiceLevel { Standard = 'Standard', Premium = 'Premium', Ultra = 'Ultra' }
 
 
 	/** Tags are a list of key-value pairs that describe the resource */
@@ -1024,9 +1024,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationObjectEndpointType { src = 0, dst = 1 }
+	export enum ReplicationObjectEndpointType { src = 'src', dst = 'dst' }
 
-	export enum ReplicationObjectReplicationSchedule { _10minutely = 0, hourly = 1, daily = 2, weekly = 3, monthly = 4 }
+	export enum ReplicationObjectReplicationSchedule { _10minutely = '_10minutely', hourly = 'hourly', daily = 'daily', weekly = 'weekly', monthly = 'monthly' }
 
 
 	/** Replication status */
@@ -1077,9 +1077,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationStatusMirrorState { Uninitialized = 0, Mirrored = 1, Broken = 2 }
+	export enum ReplicationStatusMirrorState { Uninitialized = 'Uninitialized', Mirrored = 'Mirrored', Broken = 'Broken' }
 
-	export enum ReplicationStatusRelationshipStatus { Idle = 0, Transferring = 1 }
+	export enum ReplicationStatusRelationshipStatus { Idle = 'Idle', Transferring = 'Transferring' }
 
 
 	/** Snapshot of a Volume */

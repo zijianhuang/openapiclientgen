@@ -238,7 +238,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentParametersOsVersionValue { '12.04.5-LTS' = 0, '14.04.2-LTS' = 1, _15_10 = 2 }
+	export enum DeploymentParametersOsVersionValue { '12.04.5-LTS' = '12.04.5-LTS', '14.04.2-LTS' = '14.04.2-LTS', _15_10 = '15.10' }
 
 
 	/** Deployment properties. */
@@ -274,7 +274,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentPropertiesMode { Incremental = 0 }
+	export enum DeploymentPropertiesMode { Incremental = 'Incremental' }
 
 
 	/** Deployment properties with additional details. */
@@ -351,7 +351,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeploymentPropertiesExtendedMode { Incremental = 0, Complete = 1 }
+	export enum DeploymentPropertiesExtendedMode { Incremental = 'Incremental', Complete = 'Complete' }
 
 
 	/** Resource provider information. */
@@ -486,7 +486,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TemplateLinkUri { 'https://raw.githubusercontent.com/stankovski/azure-rest-api-specs/master/arm-compute/quickstart-templates/vm-simple-linux.json' = 0 }
+	export enum TemplateLinkUri { 'https://raw.githubusercontent.com/stankovski/azure-rest-api-specs/master/arm-compute/quickstart-templates/vm-simple-linux.json' = 'https://raw.githubusercontent.com/stankovski/azure-rest-api-specs/master/arm-compute/quickstart-templates/vm-simple-linux.json' }
 
 	@Injectable()
 	export class MyClient {

@@ -30,7 +30,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoutingControlState { On = 0, Off = 1 }
+	export enum RoutingControlState { On = 'On', Off = 'Off' }
 
 	export interface GetRoutingControlStateRequest {
 
@@ -324,13 +324,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetRoutingControlStateX_Amz_Target { 'ToggleCustomerAPI.GetRoutingControlState' = 0 }
+	export enum GetRoutingControlStateX_Amz_Target { 'ToggleCustomerAPI.GetRoutingControlState' = 'ToggleCustomerAPI.GetRoutingControlState' }
 
-	export enum ListRoutingControlsX_Amz_Target { 'ToggleCustomerAPI.ListRoutingControls' = 0 }
+	export enum ListRoutingControlsX_Amz_Target { 'ToggleCustomerAPI.ListRoutingControls' = 'ToggleCustomerAPI.ListRoutingControls' }
 
-	export enum UpdateRoutingControlStateX_Amz_Target { 'ToggleCustomerAPI.UpdateRoutingControlState' = 0 }
+	export enum UpdateRoutingControlStateX_Amz_Target { 'ToggleCustomerAPI.UpdateRoutingControlState' = 'ToggleCustomerAPI.UpdateRoutingControlState' }
 
-	export enum UpdateRoutingControlStatesX_Amz_Target { 'ToggleCustomerAPI.UpdateRoutingControlStates' = 0 }
+	export enum UpdateRoutingControlStatesX_Amz_Target { 'ToggleCustomerAPI.UpdateRoutingControlStates' = 'ToggleCustomerAPI.UpdateRoutingControlStates' }
 
 }
 

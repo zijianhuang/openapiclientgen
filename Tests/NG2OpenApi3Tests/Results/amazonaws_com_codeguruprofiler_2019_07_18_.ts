@@ -60,7 +60,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventPublisher { AnomalyDetection = 0 }
+	export enum EventPublisher { AnomalyDetection = 'AnomalyDetection' }
 
 	export interface ServiceQuotaExceededException {
 	}
@@ -241,9 +241,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricType { AggregatedRelativeTotalTime = 0 }
+	export enum MetricType { AggregatedRelativeTotalTime = 'AggregatedRelativeTotalTime' }
 
-	export enum AggregationPeriod { PT5M = 0, PT1H = 1, P1D = 2 }
+	export enum AggregationPeriod { PT5M = 'PT5M', PT1H = 'PT1H', P1D = 'P1D' }
 
 	export interface UnprocessedEndTimeMap {
 	}
@@ -381,7 +381,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ComputePlatform { Default = 0, AWSLambda = 1 }
+	export enum ComputePlatform { Default = 'Default', AWSLambda = 'AWSLambda' }
 
 
 	/**  Profiling status includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile.  */
@@ -701,7 +701,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FeedbackType { Positive = 0, Negative = 1 }
+	export enum FeedbackType { Positive = 'Positive', Negative = 'Negative' }
 
 
 	/**  Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame.  */
@@ -1061,7 +1061,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionGroup { agentPermissions = 0 }
+	export enum ActionGroup { agentPermissions = 'agentPermissions' }
 
 
 	/** The structure representing the AddNotificationChannelsRequest. */
@@ -1080,7 +1080,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AgentParameterField { SamplingIntervalInMilliseconds = 0, ReportingIntervalInMilliseconds = 1, MinimumTimeForReportingInMilliseconds = 2, MemoryUsageLimitPercent = 3, MaxStackDepth = 4 }
+	export enum AgentParameterField { SamplingIntervalInMilliseconds = 'SamplingIntervalInMilliseconds', ReportingIntervalInMilliseconds = 'ReportingIntervalInMilliseconds', MinimumTimeForReportingInMilliseconds = 'MinimumTimeForReportingInMilliseconds', MemoryUsageLimitPercent = 'MemoryUsageLimitPercent', MaxStackDepth = 'MaxStackDepth' }
 
 
 	/** The structure representing the BatchGetFrameMetricDataRequest. */
@@ -1263,7 +1263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OrderBy { TimestampDescending = 0, TimestampAscending = 1 }
+	export enum OrderBy { TimestampDescending = 'TimestampDescending', TimestampAscending = 'TimestampAscending' }
 
 
 	/** The structure representing the listProfileTimesRequest. */
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetadataField { ComputePlatform = 0, AgentId = 1, AwsRequestId = 2, ExecutionEnvironment = 3, LambdaFunctionArn = 4, LambdaMemoryLimitInMB = 5, LambdaRemainingTimeInMilliseconds = 6, LambdaTimeGapBetweenInvokesInMilliseconds = 7, LambdaPreviousExecutionTimeInMilliseconds = 8 }
+	export enum MetadataField { ComputePlatform = 'ComputePlatform', AgentId = 'AgentId', AwsRequestId = 'AwsRequestId', ExecutionEnvironment = 'ExecutionEnvironment', LambdaFunctionArn = 'LambdaFunctionArn', LambdaMemoryLimitInMB = 'LambdaMemoryLimitInMB', LambdaRemainingTimeInMilliseconds = 'LambdaRemainingTimeInMilliseconds', LambdaTimeGapBetweenInvokesInMilliseconds = 'LambdaTimeGapBetweenInvokesInMilliseconds', LambdaPreviousExecutionTimeInMilliseconds = 'LambdaPreviousExecutionTimeInMilliseconds' }
 
 
 	/** The structure representing the postAgentProfileRequest. */

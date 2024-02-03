@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BasicLevelCombiningFunction { AND = 0, OR = 1 }
+	export enum BasicLevelCombiningFunction { AND = 'AND', OR = 'OR' }
 
 
 	/** A condition necessary for an `AccessLevel` to be granted. The Condition is an AND over its fields. So a Condition is true if: 1) the request IP is from one of the listed subnetworks AND 2) the originating device complies with the listed device policy AND 3) all listed access levels are granted AND 4) the request was sent at a time allowed by the DateTimeRestriction. */
@@ -199,7 +199,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OsConstraintOsType { OS_UNSPECIFIED = 0, DESKTOP_MAC = 1, DESKTOP_WINDOWS = 2, DESKTOP_LINUX = 3, DESKTOP_CHROME_OS = 4, ANDROID = 5, IOS = 6 }
+	export enum OsConstraintOsType { OS_UNSPECIFIED = 'OS_UNSPECIFIED', DESKTOP_MAC = 'DESKTOP_MAC', DESKTOP_WINDOWS = 'DESKTOP_WINDOWS', DESKTOP_LINUX = 'DESKTOP_LINUX', DESKTOP_CHROME_OS = 'DESKTOP_CHROME_OS', ANDROID = 'ANDROID', IOS = 'IOS' }
 
 
 	/** `CustomLevel` is an `AccessLevel` using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request. See CEL spec at: https://github.com/google/cel-spec */
@@ -412,7 +412,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 0, PERIMETER_TYPE_BRIDGE = 1 }
+	export enum ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 'PERIMETER_TYPE_REGULAR', PERIMETER_TYPE_BRIDGE = 'PERIMETER_TYPE_BRIDGE' }
 
 
 	/** `ServicePerimeterConfig` specifies a set of Google Cloud resources that describe specific Service Perimeter configuration. */
@@ -647,7 +647,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Accesscontextmanager_operations_getAccessLevelFormat { LEVEL_FORMAT_UNSPECIFIED = 0, AS_DEFINED = 1, CEL = 2 }
+	export enum Accesscontextmanager_operations_getAccessLevelFormat { LEVEL_FORMAT_UNSPECIFIED = 'LEVEL_FORMAT_UNSPECIFIED', AS_DEFINED = 'AS_DEFINED', CEL = 'CEL' }
 
 }
 

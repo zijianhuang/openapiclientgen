@@ -253,11 +253,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SyncMemberPropertiesDatabaseType { AzureSqlDatabase = 0, SqlServerDatabase = 1 }
+	export enum SyncMemberPropertiesDatabaseType { AzureSqlDatabase = 'AzureSqlDatabase', SqlServerDatabase = 'SqlServerDatabase' }
 
-	export enum SyncMemberPropertiesSyncDirection { Bidirectional = 0, OneWayMemberToHub = 1, OneWayHubToMember = 2 }
+	export enum SyncMemberPropertiesSyncDirection { Bidirectional = 'Bidirectional', OneWayMemberToHub = 'OneWayMemberToHub', OneWayHubToMember = 'OneWayHubToMember' }
 
-	export enum SyncMemberPropertiesSyncState { SyncInProgress = 0, SyncSucceeded = 1, SyncFailed = 2, DisabledTombstoneCleanup = 3, DisabledBackupRestore = 4, SyncSucceededWithWarnings = 5, SyncCancelling = 6, SyncCancelled = 7, UnProvisioned = 8, Provisioning = 9, Provisioned = 10, ProvisionFailed = 11, DeProvisioning = 12, DeProvisioned = 13, DeProvisionFailed = 14, Reprovisioning = 15, ReprovisionFailed = 16, UnReprovisioned = 17 }
+	export enum SyncMemberPropertiesSyncState { SyncInProgress = 'SyncInProgress', SyncSucceeded = 'SyncSucceeded', SyncFailed = 'SyncFailed', DisabledTombstoneCleanup = 'DisabledTombstoneCleanup', DisabledBackupRestore = 'DisabledBackupRestore', SyncSucceededWithWarnings = 'SyncSucceededWithWarnings', SyncCancelling = 'SyncCancelling', SyncCancelled = 'SyncCancelled', UnProvisioned = 'UnProvisioned', Provisioning = 'Provisioning', Provisioned = 'Provisioned', ProvisionFailed = 'ProvisionFailed', DeProvisioning = 'DeProvisioning', DeProvisioned = 'DeProvisioned', DeProvisionFailed = 'DeProvisionFailed', Reprovisioning = 'Reprovisioning', ReprovisionFailed = 'ReprovisionFailed', UnReprovisioned = 'UnReprovisioned' }
 
 
 	/** A list of Azure SQL Database sync members. */

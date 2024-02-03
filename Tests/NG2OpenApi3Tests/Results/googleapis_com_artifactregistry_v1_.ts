@@ -59,7 +59,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AptArtifactPackageType { PACKAGE_TYPE_UNSPECIFIED = 0, BINARY = 1, SOURCE = 2 }
+	export enum AptArtifactPackageType { PACKAGE_TYPE_UNSPECIFIED = 'PACKAGE_TYPE_UNSPECIFIED', BINARY = 'BINARY', SOURCE = 'SOURCE' }
 
 
 	/** Configuration for an Apt remote repository. */
@@ -106,7 +106,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryPublicRepositoryRepositoryBase { REPOSITORY_BASE_UNSPECIFIED = 0, DEBIAN = 1, UBUNTU = 2, DEBIAN_SNAPSHOT = 3 }
+	export enum GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryPublicRepositoryRepositoryBase { REPOSITORY_BASE_UNSPECIFIED = 'REPOSITORY_BASE_UNSPECIFIED', DEBIAN = 'DEBIAN', UBUNTU = 'UBUNTU', DEBIAN_SNAPSHOT = 'DEBIAN_SNAPSHOT' }
 
 
 	/** The metadata of an LRO from deleting multiple versions. */
@@ -252,7 +252,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CleanupPolicyAction { ACTION_UNSPECIFIED = 0, DELETE = 1, KEEP = 2 }
+	export enum CleanupPolicyAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', DELETE = 'DELETE', KEEP = 'KEEP' }
 
 
 	/** CleanupPolicyCondition is a set of conditions attached to a CleanupPolicy. If multiple entries are set, all must be satisfied for the condition to be satisfied. */
@@ -298,7 +298,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CleanupPolicyConditionTagState { TAG_STATE_UNSPECIFIED = 0, TAGGED = 1, UNTAGGED = 2, ANY = 3 }
+	export enum CleanupPolicyConditionTagState { TAG_STATE_UNSPECIFIED = 'TAG_STATE_UNSPECIFIED', TAGGED = 'TAGGED', UNTAGGED = 'UNTAGGED', ANY = 'ANY' }
 
 
 	/** CleanupPolicyMostRecentVersions is an alternate condition of a CleanupPolicy for retaining a minimum number of versions. */
@@ -411,7 +411,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DockerRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 0, DOCKER_HUB = 1 }
+	export enum DockerRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 'PUBLIC_REPOSITORY_UNSPECIFIED', DOCKER_HUB = 'DOCKER_HUB' }
 
 
 	/** DockerRepositoryConfig is docker related repository details. Provides additional configuration details for repositories of the docker format type. */
@@ -612,7 +612,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HashType { HASH_TYPE_UNSPECIFIED = 0, SHA256 = 1, MD5 = 2 }
+	export enum HashType { HASH_TYPE_UNSPECIFIED = 'HASH_TYPE_UNSPECIFIED', SHA256 = 'SHA256', MD5 = 'MD5' }
 
 
 	/** Publicly available Yum repositories constructed from a common repository base and a custom repository path. */
@@ -642,7 +642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryPublicRepositoryRepositoryBase { REPOSITORY_BASE_UNSPECIFIED = 0, CENTOS = 1, CENTOS_DEBUG = 2, CENTOS_VAULT = 3, CENTOS_STREAM = 4, ROCKY = 5, EPEL = 6 }
+	export enum GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryPublicRepositoryRepositoryBase { REPOSITORY_BASE_UNSPECIFIED = 'REPOSITORY_BASE_UNSPECIFIED', CENTOS = 'CENTOS', CENTOS_DEBUG = 'CENTOS_DEBUG', CENTOS_VAULT = 'CENTOS_VAULT', CENTOS_STREAM = 'CENTOS_STREAM', ROCKY = 'ROCKY', EPEL = 'EPEL' }
 
 
 	/** Error information explaining why a package was not imported. */
@@ -1594,7 +1594,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RepositoryFormat { FORMAT_UNSPECIFIED = 0, DOCKER = 1, MAVEN = 2, NPM = 3, APT = 4, YUM = 5, GOOGET = 6, PYTHON = 7, KFP = 8, GO = 9 }
+	export enum RepositoryFormat { FORMAT_UNSPECIFIED = 'FORMAT_UNSPECIFIED', DOCKER = 'DOCKER', MAVEN = 'MAVEN', NPM = 'NPM', APT = 'APT', YUM = 'YUM', GOOGET = 'GOOGET', PYTHON = 'PYTHON', KFP = 'KFP', GO = 'GO' }
 
 
 	/** MavenRepositoryConfig is maven related repository details. Provides additional configuration details for repositories of the maven format type. */
@@ -1624,9 +1624,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MavenRepositoryConfigVersionPolicy { VERSION_POLICY_UNSPECIFIED = 0, RELEASE = 1, SNAPSHOT = 2 }
+	export enum MavenRepositoryConfigVersionPolicy { VERSION_POLICY_UNSPECIFIED = 'VERSION_POLICY_UNSPECIFIED', RELEASE = 'RELEASE', SNAPSHOT = 'SNAPSHOT' }
 
-	export enum RepositoryMode { MODE_UNSPECIFIED = 0, STANDARD_REPOSITORY = 1, VIRTUAL_REPOSITORY = 2, REMOTE_REPOSITORY = 3 }
+	export enum RepositoryMode { MODE_UNSPECIFIED = 'MODE_UNSPECIFIED', STANDARD_REPOSITORY = 'STANDARD_REPOSITORY', VIRTUAL_REPOSITORY = 'VIRTUAL_REPOSITORY', REMOTE_REPOSITORY = 'REMOTE_REPOSITORY' }
 
 
 	/** Remote repository configuration. */
@@ -1691,7 +1691,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MavenRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 0, MAVEN_CENTRAL = 1 }
+	export enum MavenRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 'PUBLIC_REPOSITORY_UNSPECIFIED', MAVEN_CENTRAL = 'MAVEN_CENTRAL' }
 
 
 	/** Configuration for a Npm remote repository. */
@@ -1714,7 +1714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NpmRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 0, NPMJS = 1 }
+	export enum NpmRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 'PUBLIC_REPOSITORY_UNSPECIFIED', NPMJS = 'NPMJS' }
 
 
 	/** Configuration for a Python remote repository. */
@@ -1737,7 +1737,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PythonRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 0, PYPI = 1 }
+	export enum PythonRepositoryPublicRepository { PUBLIC_REPOSITORY_UNSPECIFIED = 'PUBLIC_REPOSITORY_UNSPECIFIED', PYPI = 'PYPI' }
 
 
 	/** The credentials to access the remote repository. */
@@ -2099,7 +2099,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProjectSettingsLegacyRedirectionState { REDIRECTION_STATE_UNSPECIFIED = 0, REDIRECTION_FROM_GCR_IO_DISABLED = 1, REDIRECTION_FROM_GCR_IO_ENABLED = 2, REDIRECTION_FROM_GCR_IO_FINALIZED = 3 }
+	export enum ProjectSettingsLegacyRedirectionState { REDIRECTION_STATE_UNSPECIFIED = 'REDIRECTION_STATE_UNSPECIFIED', REDIRECTION_FROM_GCR_IO_DISABLED = 'REDIRECTION_FROM_GCR_IO_DISABLED', REDIRECTION_FROM_GCR_IO_ENABLED = 'REDIRECTION_FROM_GCR_IO_ENABLED', REDIRECTION_FROM_GCR_IO_FINALIZED = 'REDIRECTION_FROM_GCR_IO_FINALIZED' }
 
 
 	/** Request message for `SetIamPolicy` method. */
@@ -2466,7 +2466,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VPCSCConfigVpcscPolicy { VPCSC_POLICY_UNSPECIFIED = 0, DENY = 1, ALLOW = 2 }
+	export enum VPCSCConfigVpcscPolicy { VPCSC_POLICY_UNSPECIFIED = 'VPCSC_POLICY_UNSPECIFIED', DENY = 'DENY', ALLOW = 'ALLOW' }
 
 	@Injectable()
 	export class MyClient {
@@ -2727,7 +2727,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Artifactregistry_projects_locations_repositories_pythonPackages_getView { VERSION_VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum Artifactregistry_projects_locations_repositories_pythonPackages_getView { VERSION_VIEW_UNSPECIFIED = 'VERSION_VIEW_UNSPECIFIED', BASIC = 'BASIC', FULL = 'FULL' }
 
 }
 

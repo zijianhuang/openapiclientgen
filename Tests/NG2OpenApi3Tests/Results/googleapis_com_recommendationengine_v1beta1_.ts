@@ -219,7 +219,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfigEventItemLevel { CATALOG_ITEM_LEVEL_UNSPECIFIED = 0, VARIANT = 1, MASTER = 2 }
+	export enum GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfigEventItemLevel { CATALOG_ITEM_LEVEL_UNSPECIFIED = 'CATALOG_ITEM_LEVEL_UNSPECIFIED', VARIANT = 'VARIANT', MASTER = 'MASTER' }
 
 
 	/** The inline source for the input config for ImportCatalogItems method. */
@@ -527,7 +527,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommendationengineV1beta1ProductCatalogItemStockState { STOCK_STATE_UNSPECIFIED = 0, IN_STOCK = 1, OUT_OF_STOCK = 2, PREORDER = 3, BACKORDER = 4 }
+	export enum GoogleCloudRecommendationengineV1beta1ProductCatalogItemStockState { STOCK_STATE_UNSPECIFIED = 'STOCK_STATE_UNSPECIFIED', IN_STOCK = 'IN_STOCK', OUT_OF_STOCK = 'OUT_OF_STOCK', PREORDER = 'PREORDER', BACKORDER = 'BACKORDER' }
 
 
 	/** Request message for the `CreatePredictionApiKeyRegistration` method. */
@@ -781,7 +781,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommendationengineV1beta1UserEventEventSource { EVENT_SOURCE_UNSPECIFIED = 0, AUTOML = 1, ECOMMERCE = 2, BATCH_UPLOAD = 3 }
+	export enum GoogleCloudRecommendationengineV1beta1UserEventEventSource { EVENT_SOURCE_UNSPECIFIED = 'EVENT_SOURCE_UNSPECIFIED', AUTOML = 'AUTOML', ECOMMERCE = 'ECOMMERCE', BATCH_UPLOAD = 'BATCH_UPLOAD' }
 
 
 	/** ProductEventDetail captures user event information specific to retail products. */
@@ -1522,7 +1522,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleCloudRecommendationengineV1beta1RejoinUserEventsRequestUserEventRejoinScope { USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 0, JOINED_EVENTS = 1, UNJOINED_EVENTS = 2 }
+	export enum GoogleCloudRecommendationengineV1beta1RejoinUserEventsRequestUserEventRejoinScope { USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 'USER_EVENT_REJOIN_SCOPE_UNSPECIFIED', JOINED_EVENTS = 'JOINED_EVENTS', UNJOINED_EVENTS = 'UNJOINED_EVENTS' }
 
 
 	/** Response message for RejoinUserEvents method. */

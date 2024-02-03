@@ -25,7 +25,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CompileLatex_compiler { pdflatex = 0, lualatex = 1 }
+	export enum CompileLatex_compiler { pdflatex = 'pdflatex', lualatex = 'lualatex' }
 
 }
 

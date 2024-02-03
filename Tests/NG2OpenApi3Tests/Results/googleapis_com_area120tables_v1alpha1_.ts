@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateRowRequestView { VIEW_UNSPECIFIED = 0, COLUMN_ID_VIEW = 1 }
+	export enum CreateRowRequestView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', COLUMN_ID_VIEW = 'COLUMN_ID_VIEW' }
 
 
 	/** Response message for TablesService.BatchCreateRows. */

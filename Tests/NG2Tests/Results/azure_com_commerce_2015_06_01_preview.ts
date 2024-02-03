@@ -218,7 +218,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OfferTermInfoName { 'Recurring Charge' = 0, 'Monetary Commitment' = 1, 'Monetary Credit' = 2 }
+	export enum OfferTermInfoName { 'Recurring Charge' = 'Recurring Charge', 'Monetary Commitment' = 'Monetary Commitment', 'Monetary Credit' = 'Monetary Credit' }
 
 
 	/** Parameters that are used in the odata $filter query parameter for providing RateCard information. */
@@ -540,7 +540,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum UsageAggregates_ListAggregationGranularity { Daily = 0, Hourly = 1 }
+	export enum UsageAggregates_ListAggregationGranularity { Daily = 'Daily', Hourly = 'Hourly' }
 
 }
 

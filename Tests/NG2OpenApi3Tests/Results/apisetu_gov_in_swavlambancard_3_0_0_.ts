@@ -1309,7 +1309,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DpicrPostBodyFormat { pdf = 0 }
+	export enum DpicrPostBodyFormat { pdf = 'pdf' }
 
 	export interface GovidPostBody {
 		certificateParameters?: GovidPostBodyCertificateParameters;
@@ -1385,7 +1385,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GovidPostBodyFormat { xml = 0, pdf = 1 }
+	export enum GovidPostBodyFormat { xml = 'xml', pdf = 'pdf' }
 
 }
 

@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RescoreExecutionPlanStatus { CREATING = 0, UPDATING = 1, ACTIVE = 2, DELETING = 3, FAILED = 4 }
+	export enum RescoreExecutionPlanStatus { CREATING = 'CREATING', UPDATING = 'UPDATING', ACTIVE = 'ACTIVE', DELETING = 'DELETING', FAILED = 'FAILED' }
 
 	export interface DescribeRescoreExecutionPlanRequest {
 
@@ -636,23 +636,23 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.CreateRescoreExecutionPlan' = 0 }
+	export enum CreateRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.CreateRescoreExecutionPlan' = 'AWSKendraRerankingFrontendService.CreateRescoreExecutionPlan' }
 
-	export enum DeleteRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.DeleteRescoreExecutionPlan' = 0 }
+	export enum DeleteRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.DeleteRescoreExecutionPlan' = 'AWSKendraRerankingFrontendService.DeleteRescoreExecutionPlan' }
 
-	export enum DescribeRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.DescribeRescoreExecutionPlan' = 0 }
+	export enum DescribeRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.DescribeRescoreExecutionPlan' = 'AWSKendraRerankingFrontendService.DescribeRescoreExecutionPlan' }
 
-	export enum ListRescoreExecutionPlansX_Amz_Target { 'AWSKendraRerankingFrontendService.ListRescoreExecutionPlans' = 0 }
+	export enum ListRescoreExecutionPlansX_Amz_Target { 'AWSKendraRerankingFrontendService.ListRescoreExecutionPlans' = 'AWSKendraRerankingFrontendService.ListRescoreExecutionPlans' }
 
-	export enum ListTagsForResourceX_Amz_Target { 'AWSKendraRerankingFrontendService.ListTagsForResource' = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSKendraRerankingFrontendService.ListTagsForResource' = 'AWSKendraRerankingFrontendService.ListTagsForResource' }
 
-	export enum RescoreX_Amz_Target { 'AWSKendraRerankingFrontendService.Rescore' = 0 }
+	export enum RescoreX_Amz_Target { 'AWSKendraRerankingFrontendService.Rescore' = 'AWSKendraRerankingFrontendService.Rescore' }
 
-	export enum TagResourceX_Amz_Target { 'AWSKendraRerankingFrontendService.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSKendraRerankingFrontendService.TagResource' = 'AWSKendraRerankingFrontendService.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AWSKendraRerankingFrontendService.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSKendraRerankingFrontendService.UntagResource' = 'AWSKendraRerankingFrontendService.UntagResource' }
 
-	export enum UpdateRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.UpdateRescoreExecutionPlan' = 0 }
+	export enum UpdateRescoreExecutionPlanX_Amz_Target { 'AWSKendraRerankingFrontendService.UpdateRescoreExecutionPlan' = 'AWSKendraRerankingFrontendService.UpdateRescoreExecutionPlan' }
 
 }
 

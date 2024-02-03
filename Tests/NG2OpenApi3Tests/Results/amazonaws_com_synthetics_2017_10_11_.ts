@@ -213,9 +213,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CanaryState { CREATING = 0, READY = 1, STARTING = 2, RUNNING = 3, UPDATING = 4, STOPPING = 5, STOPPED = 6, ERROR = 7, DELETING = 8 }
+	export enum CanaryState { CREATING = 'CREATING', READY = 'READY', STARTING = 'STARTING', RUNNING = 'RUNNING', UPDATING = 'UPDATING', STOPPING = 'STOPPING', STOPPED = 'STOPPED', ERROR = 'ERROR', DELETING = 'DELETING' }
 
-	export enum CanaryStateReasonCode { INVALID_PERMISSIONS = 0, CREATE_PENDING = 1, CREATE_IN_PROGRESS = 2, CREATE_FAILED = 3, UPDATE_PENDING = 4, UPDATE_IN_PROGRESS = 5, UPDATE_COMPLETE = 6, ROLLBACK_COMPLETE = 7, ROLLBACK_FAILED = 8, DELETE_IN_PROGRESS = 9, DELETE_FAILED = 10, SYNC_DELETE_IN_PROGRESS = 11 }
+	export enum CanaryStateReasonCode { INVALID_PERMISSIONS = 'INVALID_PERMISSIONS', CREATE_PENDING = 'CREATE_PENDING', CREATE_IN_PROGRESS = 'CREATE_IN_PROGRESS', CREATE_FAILED = 'CREATE_FAILED', UPDATE_PENDING = 'UPDATE_PENDING', UPDATE_IN_PROGRESS = 'UPDATE_IN_PROGRESS', UPDATE_COMPLETE = 'UPDATE_COMPLETE', ROLLBACK_COMPLETE = 'ROLLBACK_COMPLETE', ROLLBACK_FAILED = 'ROLLBACK_FAILED', DELETE_IN_PROGRESS = 'DELETE_IN_PROGRESS', DELETE_FAILED = 'DELETE_FAILED', SYNC_DELETE_IN_PROGRESS = 'SYNC_DELETE_IN_PROGRESS' }
 
 
 	/** This structure contains information about when the canary was created and modified. */
@@ -347,7 +347,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionMode { SSE_S3 = 0, SSE_KMS = 1 }
+	export enum EncryptionMode { SSE_S3 = 'SSE_S3', SSE_KMS = 'SSE_KMS' }
 
 	export interface EnvironmentVariablesMap {
 	}
@@ -524,9 +524,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CanaryRunState { RUNNING = 0, PASSED = 1, FAILED = 2 }
+	export enum CanaryRunState { RUNNING = 'RUNNING', PASSED = 'PASSED', FAILED = 'FAILED' }
 
-	export enum CanaryRunStateReasonCode { CANARY_FAILURE = 0, EXECUTION_FAILURE = 1 }
+	export enum CanaryRunStateReasonCode { CANARY_FAILURE = 'CANARY_FAILURE', EXECUTION_FAILURE = 'EXECUTION_FAILURE' }
 
 
 	/** This structure contains the start and end times of a single canary run. */

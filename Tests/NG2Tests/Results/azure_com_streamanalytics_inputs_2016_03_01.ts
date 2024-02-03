@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CsvSerializationPropertiesEncoding { UTF8 = 0 }
+	export enum CsvSerializationPropertiesEncoding { UTF8 = 'UTF8' }
 
 
 	/** Condition applicable to the resource, or to the job overall, that warrant customer attention. */
@@ -285,7 +285,7 @@ export namespace MyNS {
 
 
 	/** Specifies the encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. */
-	export enum Encoding { UTF8 = 0 }
+	export enum Encoding { UTF8 = 'UTF8' }
 
 
 	/** Describes the error that occurred. */
@@ -529,7 +529,7 @@ export namespace MyNS {
 
 
 	/** Specifies the format of the JSON the output will be written in. The currently supported values are 'lineSeparated' indicating the output will be formatted by having each JSON object separated by a new line and 'array' indicating the output will be formatted as an array of JSON objects. */
-	export enum JsonOutputSerializationFormat { LineSeparated = 0, Array = 1 }
+	export enum JsonOutputSerializationFormat { LineSeparated = 'LineSeparated', Array = 'Array' }
 
 
 	/** Describes how data from an input is serialized or how data is serialized when written to an output in JSON format. */

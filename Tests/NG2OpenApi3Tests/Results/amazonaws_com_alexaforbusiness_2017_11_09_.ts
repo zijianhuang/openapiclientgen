@@ -379,7 +379,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BusinessReportFormat { CSV = 0, CSV_ZIP = 1 }
+	export enum BusinessReportFormat { CSV = 'CSV', CSV_ZIP = 'CSV_ZIP' }
 
 
 	/** The content range of the report. */
@@ -402,7 +402,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BusinessReportInterval { ONE_DAY = 0, ONE_WEEK = 1, THIRTY_DAYS = 2 }
+	export enum BusinessReportInterval { ONE_DAY = 'ONE_DAY', ONE_WEEK = 'ONE_WEEK', THIRTY_DAYS = 'THIRTY_DAYS' }
 
 
 	/** The recurrence of the reports. */
@@ -467,7 +467,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConferenceProviderType { CHIME = 0, BLUEJEANS = 1, FUZE = 2, GOOGLE_HANGOUTS = 3, POLYCOM = 4, RINGCENTRAL = 5, SKYPE_FOR_BUSINESS = 6, WEBEX = 7, ZOOM = 8, CUSTOM = 9 }
+	export enum ConferenceProviderType { CHIME = 'CHIME', BLUEJEANS = 'BLUEJEANS', FUZE = 'FUZE', GOOGLE_HANGOUTS = 'GOOGLE_HANGOUTS', POLYCOM = 'POLYCOM', RINGCENTRAL = 'RINGCENTRAL', SKYPE_FOR_BUSINESS = 'SKYPE_FOR_BUSINESS', WEBEX = 'WEBEX', ZOOM = 'ZOOM', CUSTOM = 'CUSTOM' }
 
 
 	/** The IP endpoint and protocol for calling. */
@@ -497,7 +497,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CommsProtocol { SIP = 0, SIPS = 1, H323 = 2 }
+	export enum CommsProtocol { SIP = 'SIP', SIPS = 'SIPS', H323 = 'H323' }
 
 
 	/** The information for public switched telephone network (PSTN) conferencing. */
@@ -562,7 +562,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RequirePin { YES = 0, NO = 1, OPTIONAL = 2 }
+	export enum RequirePin { YES = 'YES', NO = 'NO', OPTIONAL = 'OPTIONAL' }
 
 	export interface CreateContactResponse {
 		ContactArn?: string;
@@ -788,9 +788,9 @@ export namespace MyNS {
 
 	}
 
-	export enum NetworkSecurityType { OPEN = 0, WEP = 1, WPA_PSK = 2, WPA2_PSK = 3, WPA2_ENTERPRISE = 4 }
+	export enum NetworkSecurityType { OPEN = 'OPEN', WEP = 'WEP', WPA_PSK = 'WPA_PSK', WPA2_PSK = 'WPA2_PSK', WPA2_ENTERPRISE = 'WPA2_ENTERPRISE' }
 
-	export enum NetworkEapMethod { EAP_TLS = 0 }
+	export enum NetworkEapMethod { EAP_TLS = 'EAP_TLS' }
 
 	export interface InvalidCertificateAuthorityException {
 	}
@@ -897,11 +897,11 @@ export namespace MyNS {
 
 	}
 
-	export enum DistanceUnit { METRIC = 0, IMPERIAL = 1 }
+	export enum DistanceUnit { METRIC = 'METRIC', IMPERIAL = 'IMPERIAL' }
 
-	export enum TemperatureUnit { FAHRENHEIT = 0, CELSIUS = 1 }
+	export enum TemperatureUnit { FAHRENHEIT = 'FAHRENHEIT', CELSIUS = 'CELSIUS' }
 
-	export enum WakeWord { ALEXA = 0, AMAZON = 1, ECHO = 2, COMPUTER = 3 }
+	export enum WakeWord { ALEXA = 'ALEXA', AMAZON = 'AMAZON', ECHO = 'ECHO', COMPUTER = 'COMPUTER' }
 
 
 	/** Creates meeting room settings of a room profile. */
@@ -957,7 +957,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EndOfMeetingReminderType { ANNOUNCEMENT_TIME_CHECK = 0, ANNOUNCEMENT_VARIABLE_TIME_LEFT = 1, CHIME = 2, KNOCK = 3 }
+	export enum EndOfMeetingReminderType { ANNOUNCEMENT_TIME_CHECK = 'ANNOUNCEMENT_TIME_CHECK', ANNOUNCEMENT_VARIABLE_TIME_LEFT = 'ANNOUNCEMENT_VARIABLE_TIME_LEFT', CHIME = 'CHIME', KNOCK = 'KNOCK' }
 
 
 	/** Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available. */
@@ -1334,7 +1334,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceUsageType { VOICE = 0 }
+	export enum DeviceUsageType { VOICE = 'VOICE' }
 
 	export interface DeleteGatewayGroupResponse {
 	}
@@ -1986,7 +1986,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceStatus { READY = 0, PENDING = 1, WAS_OFFLINE = 2, DEREGISTERED = 3, FAILED = 4 }
+	export enum DeviceStatus { READY = 'READY', PENDING = 'PENDING', WAS_OFFLINE = 'WAS_OFFLINE', DEREGISTERED = 'DEREGISTERED', FAILED = 'FAILED' }
 
 
 	/** Detailed information about a device's status. */
@@ -2029,11 +2029,11 @@ export namespace MyNS {
 
 	}
 
-	export enum Feature { BLUETOOTH = 0, VOLUME = 1, NOTIFICATIONS = 2, LISTS = 3, SKILLS = 4, NETWORK_PROFILE = 5, SETTINGS = 6, ALL = 7 }
+	export enum Feature { BLUETOOTH = 'BLUETOOTH', VOLUME = 'VOLUME', NOTIFICATIONS = 'NOTIFICATIONS', LISTS = 'LISTS', SKILLS = 'SKILLS', NETWORK_PROFILE = 'NETWORK_PROFILE', SETTINGS = 'SETTINGS', ALL = 'ALL' }
 
-	export enum DeviceStatusDetailCode { DEVICE_SOFTWARE_UPDATE_NEEDED = 0, DEVICE_WAS_OFFLINE = 1, CREDENTIALS_ACCESS_FAILURE = 2, TLS_VERSION_MISMATCH = 3, ASSOCIATION_REJECTION = 4, AUTHENTICATION_FAILURE = 5, DHCP_FAILURE = 6, INTERNET_UNAVAILABLE = 7, DNS_FAILURE = 8, UNKNOWN_FAILURE = 9, CERTIFICATE_ISSUING_LIMIT_EXCEEDED = 10, INVALID_CERTIFICATE_AUTHORITY = 11, NETWORK_PROFILE_NOT_FOUND = 12, INVALID_PASSWORD_STATE = 13, PASSWORD_NOT_FOUND = 14, PASSWORD_MANAGER_ACCESS_DENIED = 15, CERTIFICATE_AUTHORITY_ACCESS_DENIED = 16 }
+	export enum DeviceStatusDetailCode { DEVICE_SOFTWARE_UPDATE_NEEDED = 'DEVICE_SOFTWARE_UPDATE_NEEDED', DEVICE_WAS_OFFLINE = 'DEVICE_WAS_OFFLINE', CREDENTIALS_ACCESS_FAILURE = 'CREDENTIALS_ACCESS_FAILURE', TLS_VERSION_MISMATCH = 'TLS_VERSION_MISMATCH', ASSOCIATION_REJECTION = 'ASSOCIATION_REJECTION', AUTHENTICATION_FAILURE = 'AUTHENTICATION_FAILURE', DHCP_FAILURE = 'DHCP_FAILURE', INTERNET_UNAVAILABLE = 'INTERNET_UNAVAILABLE', DNS_FAILURE = 'DNS_FAILURE', UNKNOWN_FAILURE = 'UNKNOWN_FAILURE', CERTIFICATE_ISSUING_LIMIT_EXCEEDED = 'CERTIFICATE_ISSUING_LIMIT_EXCEEDED', INVALID_CERTIFICATE_AUTHORITY = 'INVALID_CERTIFICATE_AUTHORITY', NETWORK_PROFILE_NOT_FOUND = 'NETWORK_PROFILE_NOT_FOUND', INVALID_PASSWORD_STATE = 'INVALID_PASSWORD_STATE', PASSWORD_NOT_FOUND = 'PASSWORD_NOT_FOUND', PASSWORD_MANAGER_ACCESS_DENIED = 'PASSWORD_MANAGER_ACCESS_DENIED', CERTIFICATE_AUTHORITY_ACCESS_DENIED = 'CERTIFICATE_AUTHORITY_ACCESS_DENIED' }
 
-	export enum ConnectionStatus { ONLINE = 0, OFFLINE = 1 }
+	export enum ConnectionStatus { ONLINE = 'ONLINE', OFFLINE = 'OFFLINE' }
 
 
 	/** Detailed information about a device's network profile. */
@@ -2703,9 +2703,9 @@ export namespace MyNS {
 
 	}
 
-	export enum BusinessReportStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2 }
+	export enum BusinessReportStatus { RUNNING = 'RUNNING', SUCCEEDED = 'SUCCEEDED', FAILED = 'FAILED' }
 
-	export enum BusinessReportFailureCode { ACCESS_DENIED = 0, NO_SUCH_BUCKET = 1, INTERNAL_FAILURE = 2 }
+	export enum BusinessReportFailureCode { ACCESS_DENIED = 'ACCESS_DENIED', NO_SUCH_BUCKET = 'NO_SUCH_BUCKET', INTERNAL_FAILURE = 'INTERNAL_FAILURE' }
 
 
 	/** The S3 location of the output reports. */
@@ -2810,7 +2810,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DeviceEventType { CONNECTION_STATUS = 0, DEVICE_STATUS = 1 }
+	export enum DeviceEventType { CONNECTION_STATUS = 'CONNECTION_STATUS', DEVICE_STATUS = 'DEVICE_STATUS' }
 
 	export interface ListDeviceEventsRequest {
 
@@ -2996,9 +2996,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EnablementType { ENABLED = 0, PENDING = 1 }
+	export enum EnablementType { ENABLED = 'ENABLED', PENDING = 'PENDING' }
 
-	export enum SkillType { PUBLIC = 0, PRIVATE = 1 }
+	export enum SkillType { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE' }
 
 	export interface ListSkillsRequest {
 		SkillGroupArn?: string;
@@ -3025,7 +3025,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SkillTypeFilter { PUBLIC = 0, PRIVATE = 1, ALL = 2 }
+	export enum SkillTypeFilter { PUBLIC = 'PUBLIC', PRIVATE = 'PRIVATE', ALL = 'ALL' }
 
 	export interface ListSkillsStoreCategoriesResponse {
 		CategoryList?: Array<Category>;
@@ -3722,7 +3722,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortValue { ASC = 0, DESC = 1 }
+	export enum SortValue { ASC = 'ASC', DESC = 'DESC' }
 
 	export interface SearchContactsResponse {
 		Contacts?: Array<ContactData>;
@@ -4196,7 +4196,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnrollmentStatus { INITIALIZED = 0, PENDING = 1, REGISTERED = 2, DISASSOCIATING = 3, DEREGISTERING = 4 }
+	export enum EnrollmentStatus { INITIALIZED = 'INITIALIZED', PENDING = 'PENDING', REGISTERED = 'REGISTERED', DISASSOCIATING = 'DISASSOCIATING', DEREGISTERING = 'DEREGISTERING' }
 
 	export interface SearchUsersRequest {
 		NextToken?: string;
@@ -4300,7 +4300,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Locale { 'en-US' = 0 }
+	export enum Locale { 'en-US' = 'en-US' }
 
 
 	/** The SSML message. For more information, see <a href="https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html">SSML Reference</a>. */
@@ -5031,7 +5031,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EnablementTypeFilter { ENABLED = 0, PENDING = 1 }
+	export enum EnablementTypeFilter { ENABLED = 'ENABLED', PENDING = 'PENDING' }
 
 	@Injectable()
 	export class MyClient {
@@ -5912,191 +5912,191 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ApproveSkillX_Amz_Target { 'AlexaForBusiness.ApproveSkill' = 0 }
+	export enum ApproveSkillX_Amz_Target { 'AlexaForBusiness.ApproveSkill' = 'AlexaForBusiness.ApproveSkill' }
 
-	export enum AssociateContactWithAddressBookX_Amz_Target { 'AlexaForBusiness.AssociateContactWithAddressBook' = 0 }
+	export enum AssociateContactWithAddressBookX_Amz_Target { 'AlexaForBusiness.AssociateContactWithAddressBook' = 'AlexaForBusiness.AssociateContactWithAddressBook' }
 
-	export enum AssociateDeviceWithNetworkProfileX_Amz_Target { 'AlexaForBusiness.AssociateDeviceWithNetworkProfile' = 0 }
+	export enum AssociateDeviceWithNetworkProfileX_Amz_Target { 'AlexaForBusiness.AssociateDeviceWithNetworkProfile' = 'AlexaForBusiness.AssociateDeviceWithNetworkProfile' }
 
-	export enum AssociateDeviceWithRoomX_Amz_Target { 'AlexaForBusiness.AssociateDeviceWithRoom' = 0 }
+	export enum AssociateDeviceWithRoomX_Amz_Target { 'AlexaForBusiness.AssociateDeviceWithRoom' = 'AlexaForBusiness.AssociateDeviceWithRoom' }
 
-	export enum AssociateSkillGroupWithRoomX_Amz_Target { 'AlexaForBusiness.AssociateSkillGroupWithRoom' = 0 }
+	export enum AssociateSkillGroupWithRoomX_Amz_Target { 'AlexaForBusiness.AssociateSkillGroupWithRoom' = 'AlexaForBusiness.AssociateSkillGroupWithRoom' }
 
-	export enum AssociateSkillWithSkillGroupX_Amz_Target { 'AlexaForBusiness.AssociateSkillWithSkillGroup' = 0 }
+	export enum AssociateSkillWithSkillGroupX_Amz_Target { 'AlexaForBusiness.AssociateSkillWithSkillGroup' = 'AlexaForBusiness.AssociateSkillWithSkillGroup' }
 
-	export enum AssociateSkillWithUsersX_Amz_Target { 'AlexaForBusiness.AssociateSkillWithUsers' = 0 }
+	export enum AssociateSkillWithUsersX_Amz_Target { 'AlexaForBusiness.AssociateSkillWithUsers' = 'AlexaForBusiness.AssociateSkillWithUsers' }
 
-	export enum CreateAddressBookX_Amz_Target { 'AlexaForBusiness.CreateAddressBook' = 0 }
+	export enum CreateAddressBookX_Amz_Target { 'AlexaForBusiness.CreateAddressBook' = 'AlexaForBusiness.CreateAddressBook' }
 
-	export enum CreateBusinessReportScheduleX_Amz_Target { 'AlexaForBusiness.CreateBusinessReportSchedule' = 0 }
+	export enum CreateBusinessReportScheduleX_Amz_Target { 'AlexaForBusiness.CreateBusinessReportSchedule' = 'AlexaForBusiness.CreateBusinessReportSchedule' }
 
-	export enum CreateConferenceProviderX_Amz_Target { 'AlexaForBusiness.CreateConferenceProvider' = 0 }
+	export enum CreateConferenceProviderX_Amz_Target { 'AlexaForBusiness.CreateConferenceProvider' = 'AlexaForBusiness.CreateConferenceProvider' }
 
-	export enum CreateContactX_Amz_Target { 'AlexaForBusiness.CreateContact' = 0 }
+	export enum CreateContactX_Amz_Target { 'AlexaForBusiness.CreateContact' = 'AlexaForBusiness.CreateContact' }
 
-	export enum CreateGatewayGroupX_Amz_Target { 'AlexaForBusiness.CreateGatewayGroup' = 0 }
+	export enum CreateGatewayGroupX_Amz_Target { 'AlexaForBusiness.CreateGatewayGroup' = 'AlexaForBusiness.CreateGatewayGroup' }
 
-	export enum CreateNetworkProfileX_Amz_Target { 'AlexaForBusiness.CreateNetworkProfile' = 0 }
+	export enum CreateNetworkProfileX_Amz_Target { 'AlexaForBusiness.CreateNetworkProfile' = 'AlexaForBusiness.CreateNetworkProfile' }
 
-	export enum CreateProfileX_Amz_Target { 'AlexaForBusiness.CreateProfile' = 0 }
+	export enum CreateProfileX_Amz_Target { 'AlexaForBusiness.CreateProfile' = 'AlexaForBusiness.CreateProfile' }
 
-	export enum CreateRoomX_Amz_Target { 'AlexaForBusiness.CreateRoom' = 0 }
+	export enum CreateRoomX_Amz_Target { 'AlexaForBusiness.CreateRoom' = 'AlexaForBusiness.CreateRoom' }
 
-	export enum CreateSkillGroupX_Amz_Target { 'AlexaForBusiness.CreateSkillGroup' = 0 }
+	export enum CreateSkillGroupX_Amz_Target { 'AlexaForBusiness.CreateSkillGroup' = 'AlexaForBusiness.CreateSkillGroup' }
 
-	export enum CreateUserX_Amz_Target { 'AlexaForBusiness.CreateUser' = 0 }
+	export enum CreateUserX_Amz_Target { 'AlexaForBusiness.CreateUser' = 'AlexaForBusiness.CreateUser' }
 
-	export enum DeleteAddressBookX_Amz_Target { 'AlexaForBusiness.DeleteAddressBook' = 0 }
+	export enum DeleteAddressBookX_Amz_Target { 'AlexaForBusiness.DeleteAddressBook' = 'AlexaForBusiness.DeleteAddressBook' }
 
-	export enum DeleteBusinessReportScheduleX_Amz_Target { 'AlexaForBusiness.DeleteBusinessReportSchedule' = 0 }
+	export enum DeleteBusinessReportScheduleX_Amz_Target { 'AlexaForBusiness.DeleteBusinessReportSchedule' = 'AlexaForBusiness.DeleteBusinessReportSchedule' }
 
-	export enum DeleteConferenceProviderX_Amz_Target { 'AlexaForBusiness.DeleteConferenceProvider' = 0 }
+	export enum DeleteConferenceProviderX_Amz_Target { 'AlexaForBusiness.DeleteConferenceProvider' = 'AlexaForBusiness.DeleteConferenceProvider' }
 
-	export enum DeleteContactX_Amz_Target { 'AlexaForBusiness.DeleteContact' = 0 }
+	export enum DeleteContactX_Amz_Target { 'AlexaForBusiness.DeleteContact' = 'AlexaForBusiness.DeleteContact' }
 
-	export enum DeleteDeviceX_Amz_Target { 'AlexaForBusiness.DeleteDevice' = 0 }
+	export enum DeleteDeviceX_Amz_Target { 'AlexaForBusiness.DeleteDevice' = 'AlexaForBusiness.DeleteDevice' }
 
-	export enum DeleteDeviceUsageDataX_Amz_Target { 'AlexaForBusiness.DeleteDeviceUsageData' = 0 }
+	export enum DeleteDeviceUsageDataX_Amz_Target { 'AlexaForBusiness.DeleteDeviceUsageData' = 'AlexaForBusiness.DeleteDeviceUsageData' }
 
-	export enum DeleteGatewayGroupX_Amz_Target { 'AlexaForBusiness.DeleteGatewayGroup' = 0 }
+	export enum DeleteGatewayGroupX_Amz_Target { 'AlexaForBusiness.DeleteGatewayGroup' = 'AlexaForBusiness.DeleteGatewayGroup' }
 
-	export enum DeleteNetworkProfileX_Amz_Target { 'AlexaForBusiness.DeleteNetworkProfile' = 0 }
+	export enum DeleteNetworkProfileX_Amz_Target { 'AlexaForBusiness.DeleteNetworkProfile' = 'AlexaForBusiness.DeleteNetworkProfile' }
 
-	export enum DeleteProfileX_Amz_Target { 'AlexaForBusiness.DeleteProfile' = 0 }
+	export enum DeleteProfileX_Amz_Target { 'AlexaForBusiness.DeleteProfile' = 'AlexaForBusiness.DeleteProfile' }
 
-	export enum DeleteRoomX_Amz_Target { 'AlexaForBusiness.DeleteRoom' = 0 }
+	export enum DeleteRoomX_Amz_Target { 'AlexaForBusiness.DeleteRoom' = 'AlexaForBusiness.DeleteRoom' }
 
-	export enum DeleteRoomSkillParameterX_Amz_Target { 'AlexaForBusiness.DeleteRoomSkillParameter' = 0 }
+	export enum DeleteRoomSkillParameterX_Amz_Target { 'AlexaForBusiness.DeleteRoomSkillParameter' = 'AlexaForBusiness.DeleteRoomSkillParameter' }
 
-	export enum DeleteSkillAuthorizationX_Amz_Target { 'AlexaForBusiness.DeleteSkillAuthorization' = 0 }
+	export enum DeleteSkillAuthorizationX_Amz_Target { 'AlexaForBusiness.DeleteSkillAuthorization' = 'AlexaForBusiness.DeleteSkillAuthorization' }
 
-	export enum DeleteSkillGroupX_Amz_Target { 'AlexaForBusiness.DeleteSkillGroup' = 0 }
+	export enum DeleteSkillGroupX_Amz_Target { 'AlexaForBusiness.DeleteSkillGroup' = 'AlexaForBusiness.DeleteSkillGroup' }
 
-	export enum DeleteUserX_Amz_Target { 'AlexaForBusiness.DeleteUser' = 0 }
+	export enum DeleteUserX_Amz_Target { 'AlexaForBusiness.DeleteUser' = 'AlexaForBusiness.DeleteUser' }
 
-	export enum DisassociateContactFromAddressBookX_Amz_Target { 'AlexaForBusiness.DisassociateContactFromAddressBook' = 0 }
+	export enum DisassociateContactFromAddressBookX_Amz_Target { 'AlexaForBusiness.DisassociateContactFromAddressBook' = 'AlexaForBusiness.DisassociateContactFromAddressBook' }
 
-	export enum DisassociateDeviceFromRoomX_Amz_Target { 'AlexaForBusiness.DisassociateDeviceFromRoom' = 0 }
+	export enum DisassociateDeviceFromRoomX_Amz_Target { 'AlexaForBusiness.DisassociateDeviceFromRoom' = 'AlexaForBusiness.DisassociateDeviceFromRoom' }
 
-	export enum DisassociateSkillFromSkillGroupX_Amz_Target { 'AlexaForBusiness.DisassociateSkillFromSkillGroup' = 0 }
+	export enum DisassociateSkillFromSkillGroupX_Amz_Target { 'AlexaForBusiness.DisassociateSkillFromSkillGroup' = 'AlexaForBusiness.DisassociateSkillFromSkillGroup' }
 
-	export enum DisassociateSkillFromUsersX_Amz_Target { 'AlexaForBusiness.DisassociateSkillFromUsers' = 0 }
+	export enum DisassociateSkillFromUsersX_Amz_Target { 'AlexaForBusiness.DisassociateSkillFromUsers' = 'AlexaForBusiness.DisassociateSkillFromUsers' }
 
-	export enum DisassociateSkillGroupFromRoomX_Amz_Target { 'AlexaForBusiness.DisassociateSkillGroupFromRoom' = 0 }
+	export enum DisassociateSkillGroupFromRoomX_Amz_Target { 'AlexaForBusiness.DisassociateSkillGroupFromRoom' = 'AlexaForBusiness.DisassociateSkillGroupFromRoom' }
 
-	export enum ForgetSmartHomeAppliancesX_Amz_Target { 'AlexaForBusiness.ForgetSmartHomeAppliances' = 0 }
+	export enum ForgetSmartHomeAppliancesX_Amz_Target { 'AlexaForBusiness.ForgetSmartHomeAppliances' = 'AlexaForBusiness.ForgetSmartHomeAppliances' }
 
-	export enum GetAddressBookX_Amz_Target { 'AlexaForBusiness.GetAddressBook' = 0 }
+	export enum GetAddressBookX_Amz_Target { 'AlexaForBusiness.GetAddressBook' = 'AlexaForBusiness.GetAddressBook' }
 
-	export enum GetConferencePreferenceX_Amz_Target { 'AlexaForBusiness.GetConferencePreference' = 0 }
+	export enum GetConferencePreferenceX_Amz_Target { 'AlexaForBusiness.GetConferencePreference' = 'AlexaForBusiness.GetConferencePreference' }
 
-	export enum GetConferenceProviderX_Amz_Target { 'AlexaForBusiness.GetConferenceProvider' = 0 }
+	export enum GetConferenceProviderX_Amz_Target { 'AlexaForBusiness.GetConferenceProvider' = 'AlexaForBusiness.GetConferenceProvider' }
 
-	export enum GetContactX_Amz_Target { 'AlexaForBusiness.GetContact' = 0 }
+	export enum GetContactX_Amz_Target { 'AlexaForBusiness.GetContact' = 'AlexaForBusiness.GetContact' }
 
-	export enum GetDeviceX_Amz_Target { 'AlexaForBusiness.GetDevice' = 0 }
+	export enum GetDeviceX_Amz_Target { 'AlexaForBusiness.GetDevice' = 'AlexaForBusiness.GetDevice' }
 
-	export enum GetGatewayX_Amz_Target { 'AlexaForBusiness.GetGateway' = 0 }
+	export enum GetGatewayX_Amz_Target { 'AlexaForBusiness.GetGateway' = 'AlexaForBusiness.GetGateway' }
 
-	export enum GetGatewayGroupX_Amz_Target { 'AlexaForBusiness.GetGatewayGroup' = 0 }
+	export enum GetGatewayGroupX_Amz_Target { 'AlexaForBusiness.GetGatewayGroup' = 'AlexaForBusiness.GetGatewayGroup' }
 
-	export enum GetInvitationConfigurationX_Amz_Target { 'AlexaForBusiness.GetInvitationConfiguration' = 0 }
+	export enum GetInvitationConfigurationX_Amz_Target { 'AlexaForBusiness.GetInvitationConfiguration' = 'AlexaForBusiness.GetInvitationConfiguration' }
 
-	export enum GetNetworkProfileX_Amz_Target { 'AlexaForBusiness.GetNetworkProfile' = 0 }
+	export enum GetNetworkProfileX_Amz_Target { 'AlexaForBusiness.GetNetworkProfile' = 'AlexaForBusiness.GetNetworkProfile' }
 
-	export enum GetProfileX_Amz_Target { 'AlexaForBusiness.GetProfile' = 0 }
+	export enum GetProfileX_Amz_Target { 'AlexaForBusiness.GetProfile' = 'AlexaForBusiness.GetProfile' }
 
-	export enum GetRoomX_Amz_Target { 'AlexaForBusiness.GetRoom' = 0 }
+	export enum GetRoomX_Amz_Target { 'AlexaForBusiness.GetRoom' = 'AlexaForBusiness.GetRoom' }
 
-	export enum GetRoomSkillParameterX_Amz_Target { 'AlexaForBusiness.GetRoomSkillParameter' = 0 }
+	export enum GetRoomSkillParameterX_Amz_Target { 'AlexaForBusiness.GetRoomSkillParameter' = 'AlexaForBusiness.GetRoomSkillParameter' }
 
-	export enum GetSkillGroupX_Amz_Target { 'AlexaForBusiness.GetSkillGroup' = 0 }
+	export enum GetSkillGroupX_Amz_Target { 'AlexaForBusiness.GetSkillGroup' = 'AlexaForBusiness.GetSkillGroup' }
 
-	export enum ListBusinessReportSchedulesX_Amz_Target { 'AlexaForBusiness.ListBusinessReportSchedules' = 0 }
+	export enum ListBusinessReportSchedulesX_Amz_Target { 'AlexaForBusiness.ListBusinessReportSchedules' = 'AlexaForBusiness.ListBusinessReportSchedules' }
 
-	export enum ListConferenceProvidersX_Amz_Target { 'AlexaForBusiness.ListConferenceProviders' = 0 }
+	export enum ListConferenceProvidersX_Amz_Target { 'AlexaForBusiness.ListConferenceProviders' = 'AlexaForBusiness.ListConferenceProviders' }
 
-	export enum ListDeviceEventsX_Amz_Target { 'AlexaForBusiness.ListDeviceEvents' = 0 }
+	export enum ListDeviceEventsX_Amz_Target { 'AlexaForBusiness.ListDeviceEvents' = 'AlexaForBusiness.ListDeviceEvents' }
 
-	export enum ListGatewayGroupsX_Amz_Target { 'AlexaForBusiness.ListGatewayGroups' = 0 }
+	export enum ListGatewayGroupsX_Amz_Target { 'AlexaForBusiness.ListGatewayGroups' = 'AlexaForBusiness.ListGatewayGroups' }
 
-	export enum ListGatewaysX_Amz_Target { 'AlexaForBusiness.ListGateways' = 0 }
+	export enum ListGatewaysX_Amz_Target { 'AlexaForBusiness.ListGateways' = 'AlexaForBusiness.ListGateways' }
 
-	export enum ListSkillsX_Amz_Target { 'AlexaForBusiness.ListSkills' = 0 }
+	export enum ListSkillsX_Amz_Target { 'AlexaForBusiness.ListSkills' = 'AlexaForBusiness.ListSkills' }
 
-	export enum ListSkillsStoreCategoriesX_Amz_Target { 'AlexaForBusiness.ListSkillsStoreCategories' = 0 }
+	export enum ListSkillsStoreCategoriesX_Amz_Target { 'AlexaForBusiness.ListSkillsStoreCategories' = 'AlexaForBusiness.ListSkillsStoreCategories' }
 
-	export enum ListSkillsStoreSkillsByCategoryX_Amz_Target { 'AlexaForBusiness.ListSkillsStoreSkillsByCategory' = 0 }
+	export enum ListSkillsStoreSkillsByCategoryX_Amz_Target { 'AlexaForBusiness.ListSkillsStoreSkillsByCategory' = 'AlexaForBusiness.ListSkillsStoreSkillsByCategory' }
 
-	export enum ListSmartHomeAppliancesX_Amz_Target { 'AlexaForBusiness.ListSmartHomeAppliances' = 0 }
+	export enum ListSmartHomeAppliancesX_Amz_Target { 'AlexaForBusiness.ListSmartHomeAppliances' = 'AlexaForBusiness.ListSmartHomeAppliances' }
 
-	export enum ListTagsX_Amz_Target { 'AlexaForBusiness.ListTags' = 0 }
+	export enum ListTagsX_Amz_Target { 'AlexaForBusiness.ListTags' = 'AlexaForBusiness.ListTags' }
 
-	export enum PutConferencePreferenceX_Amz_Target { 'AlexaForBusiness.PutConferencePreference' = 0 }
+	export enum PutConferencePreferenceX_Amz_Target { 'AlexaForBusiness.PutConferencePreference' = 'AlexaForBusiness.PutConferencePreference' }
 
-	export enum PutInvitationConfigurationX_Amz_Target { 'AlexaForBusiness.PutInvitationConfiguration' = 0 }
+	export enum PutInvitationConfigurationX_Amz_Target { 'AlexaForBusiness.PutInvitationConfiguration' = 'AlexaForBusiness.PutInvitationConfiguration' }
 
-	export enum PutRoomSkillParameterX_Amz_Target { 'AlexaForBusiness.PutRoomSkillParameter' = 0 }
+	export enum PutRoomSkillParameterX_Amz_Target { 'AlexaForBusiness.PutRoomSkillParameter' = 'AlexaForBusiness.PutRoomSkillParameter' }
 
-	export enum PutSkillAuthorizationX_Amz_Target { 'AlexaForBusiness.PutSkillAuthorization' = 0 }
+	export enum PutSkillAuthorizationX_Amz_Target { 'AlexaForBusiness.PutSkillAuthorization' = 'AlexaForBusiness.PutSkillAuthorization' }
 
-	export enum RegisterAVSDeviceX_Amz_Target { 'AlexaForBusiness.RegisterAVSDevice' = 0 }
+	export enum RegisterAVSDeviceX_Amz_Target { 'AlexaForBusiness.RegisterAVSDevice' = 'AlexaForBusiness.RegisterAVSDevice' }
 
-	export enum RejectSkillX_Amz_Target { 'AlexaForBusiness.RejectSkill' = 0 }
+	export enum RejectSkillX_Amz_Target { 'AlexaForBusiness.RejectSkill' = 'AlexaForBusiness.RejectSkill' }
 
-	export enum ResolveRoomX_Amz_Target { 'AlexaForBusiness.ResolveRoom' = 0 }
+	export enum ResolveRoomX_Amz_Target { 'AlexaForBusiness.ResolveRoom' = 'AlexaForBusiness.ResolveRoom' }
 
-	export enum RevokeInvitationX_Amz_Target { 'AlexaForBusiness.RevokeInvitation' = 0 }
+	export enum RevokeInvitationX_Amz_Target { 'AlexaForBusiness.RevokeInvitation' = 'AlexaForBusiness.RevokeInvitation' }
 
-	export enum SearchAddressBooksX_Amz_Target { 'AlexaForBusiness.SearchAddressBooks' = 0 }
+	export enum SearchAddressBooksX_Amz_Target { 'AlexaForBusiness.SearchAddressBooks' = 'AlexaForBusiness.SearchAddressBooks' }
 
-	export enum SearchContactsX_Amz_Target { 'AlexaForBusiness.SearchContacts' = 0 }
+	export enum SearchContactsX_Amz_Target { 'AlexaForBusiness.SearchContacts' = 'AlexaForBusiness.SearchContacts' }
 
-	export enum SearchDevicesX_Amz_Target { 'AlexaForBusiness.SearchDevices' = 0 }
+	export enum SearchDevicesX_Amz_Target { 'AlexaForBusiness.SearchDevices' = 'AlexaForBusiness.SearchDevices' }
 
-	export enum SearchNetworkProfilesX_Amz_Target { 'AlexaForBusiness.SearchNetworkProfiles' = 0 }
+	export enum SearchNetworkProfilesX_Amz_Target { 'AlexaForBusiness.SearchNetworkProfiles' = 'AlexaForBusiness.SearchNetworkProfiles' }
 
-	export enum SearchProfilesX_Amz_Target { 'AlexaForBusiness.SearchProfiles' = 0 }
+	export enum SearchProfilesX_Amz_Target { 'AlexaForBusiness.SearchProfiles' = 'AlexaForBusiness.SearchProfiles' }
 
-	export enum SearchRoomsX_Amz_Target { 'AlexaForBusiness.SearchRooms' = 0 }
+	export enum SearchRoomsX_Amz_Target { 'AlexaForBusiness.SearchRooms' = 'AlexaForBusiness.SearchRooms' }
 
-	export enum SearchSkillGroupsX_Amz_Target { 'AlexaForBusiness.SearchSkillGroups' = 0 }
+	export enum SearchSkillGroupsX_Amz_Target { 'AlexaForBusiness.SearchSkillGroups' = 'AlexaForBusiness.SearchSkillGroups' }
 
-	export enum SearchUsersX_Amz_Target { 'AlexaForBusiness.SearchUsers' = 0 }
+	export enum SearchUsersX_Amz_Target { 'AlexaForBusiness.SearchUsers' = 'AlexaForBusiness.SearchUsers' }
 
-	export enum SendAnnouncementX_Amz_Target { 'AlexaForBusiness.SendAnnouncement' = 0 }
+	export enum SendAnnouncementX_Amz_Target { 'AlexaForBusiness.SendAnnouncement' = 'AlexaForBusiness.SendAnnouncement' }
 
-	export enum SendInvitationX_Amz_Target { 'AlexaForBusiness.SendInvitation' = 0 }
+	export enum SendInvitationX_Amz_Target { 'AlexaForBusiness.SendInvitation' = 'AlexaForBusiness.SendInvitation' }
 
-	export enum StartDeviceSyncX_Amz_Target { 'AlexaForBusiness.StartDeviceSync' = 0 }
+	export enum StartDeviceSyncX_Amz_Target { 'AlexaForBusiness.StartDeviceSync' = 'AlexaForBusiness.StartDeviceSync' }
 
-	export enum StartSmartHomeApplianceDiscoveryX_Amz_Target { 'AlexaForBusiness.StartSmartHomeApplianceDiscovery' = 0 }
+	export enum StartSmartHomeApplianceDiscoveryX_Amz_Target { 'AlexaForBusiness.StartSmartHomeApplianceDiscovery' = 'AlexaForBusiness.StartSmartHomeApplianceDiscovery' }
 
-	export enum TagResourceX_Amz_Target { 'AlexaForBusiness.TagResource' = 0 }
+	export enum TagResourceX_Amz_Target { 'AlexaForBusiness.TagResource' = 'AlexaForBusiness.TagResource' }
 
-	export enum UntagResourceX_Amz_Target { 'AlexaForBusiness.UntagResource' = 0 }
+	export enum UntagResourceX_Amz_Target { 'AlexaForBusiness.UntagResource' = 'AlexaForBusiness.UntagResource' }
 
-	export enum UpdateAddressBookX_Amz_Target { 'AlexaForBusiness.UpdateAddressBook' = 0 }
+	export enum UpdateAddressBookX_Amz_Target { 'AlexaForBusiness.UpdateAddressBook' = 'AlexaForBusiness.UpdateAddressBook' }
 
-	export enum UpdateBusinessReportScheduleX_Amz_Target { 'AlexaForBusiness.UpdateBusinessReportSchedule' = 0 }
+	export enum UpdateBusinessReportScheduleX_Amz_Target { 'AlexaForBusiness.UpdateBusinessReportSchedule' = 'AlexaForBusiness.UpdateBusinessReportSchedule' }
 
-	export enum UpdateConferenceProviderX_Amz_Target { 'AlexaForBusiness.UpdateConferenceProvider' = 0 }
+	export enum UpdateConferenceProviderX_Amz_Target { 'AlexaForBusiness.UpdateConferenceProvider' = 'AlexaForBusiness.UpdateConferenceProvider' }
 
-	export enum UpdateContactX_Amz_Target { 'AlexaForBusiness.UpdateContact' = 0 }
+	export enum UpdateContactX_Amz_Target { 'AlexaForBusiness.UpdateContact' = 'AlexaForBusiness.UpdateContact' }
 
-	export enum UpdateDeviceX_Amz_Target { 'AlexaForBusiness.UpdateDevice' = 0 }
+	export enum UpdateDeviceX_Amz_Target { 'AlexaForBusiness.UpdateDevice' = 'AlexaForBusiness.UpdateDevice' }
 
-	export enum UpdateGatewayX_Amz_Target { 'AlexaForBusiness.UpdateGateway' = 0 }
+	export enum UpdateGatewayX_Amz_Target { 'AlexaForBusiness.UpdateGateway' = 'AlexaForBusiness.UpdateGateway' }
 
-	export enum UpdateGatewayGroupX_Amz_Target { 'AlexaForBusiness.UpdateGatewayGroup' = 0 }
+	export enum UpdateGatewayGroupX_Amz_Target { 'AlexaForBusiness.UpdateGatewayGroup' = 'AlexaForBusiness.UpdateGatewayGroup' }
 
-	export enum UpdateNetworkProfileX_Amz_Target { 'AlexaForBusiness.UpdateNetworkProfile' = 0 }
+	export enum UpdateNetworkProfileX_Amz_Target { 'AlexaForBusiness.UpdateNetworkProfile' = 'AlexaForBusiness.UpdateNetworkProfile' }
 
-	export enum UpdateProfileX_Amz_Target { 'AlexaForBusiness.UpdateProfile' = 0 }
+	export enum UpdateProfileX_Amz_Target { 'AlexaForBusiness.UpdateProfile' = 'AlexaForBusiness.UpdateProfile' }
 
-	export enum UpdateRoomX_Amz_Target { 'AlexaForBusiness.UpdateRoom' = 0 }
+	export enum UpdateRoomX_Amz_Target { 'AlexaForBusiness.UpdateRoom' = 'AlexaForBusiness.UpdateRoom' }
 
-	export enum UpdateSkillGroupX_Amz_Target { 'AlexaForBusiness.UpdateSkillGroup' = 0 }
+	export enum UpdateSkillGroupX_Amz_Target { 'AlexaForBusiness.UpdateSkillGroup' = 'AlexaForBusiness.UpdateSkillGroup' }
 
 }
 

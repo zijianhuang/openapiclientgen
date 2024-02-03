@@ -133,7 +133,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
+	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED', ADMIN_READ = 'ADMIN_READ', DATA_WRITE = 'DATA_WRITE', DATA_READ = 'DATA_READ' }
 
 
 	/** Audit log information specific to Cloud IAM. This message is serialized as an `Any` type in the `ServiceData` message of an `AuditLog` message. */
@@ -207,7 +207,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BindingDeltaAction { ACTION_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
+	export enum BindingDeltaAction { ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED', ADD = 'ADD', REMOVE = 'REMOVE' }
 
 
 	/** Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information. */
@@ -403,7 +403,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RoleStage { ALPHA = 0, BETA = 1, GA = 2, DEPRECATED = 3, DISABLED = 4, EAP = 5 }
+	export enum RoleStage { ALPHA = 'ALPHA', BETA = 'BETA', GA = 'GA', DEPRECATED = 'DEPRECATED', DISABLED = 'DISABLED', EAP = 'EAP' }
 
 
 	/** The service account key create request. */
@@ -433,9 +433,9 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateServiceAccountKeyRequestKeyAlgorithm { KEY_ALG_UNSPECIFIED = 0, KEY_ALG_RSA_1024 = 1, KEY_ALG_RSA_2048 = 2 }
+	export enum CreateServiceAccountKeyRequestKeyAlgorithm { KEY_ALG_UNSPECIFIED = 'KEY_ALG_UNSPECIFIED', KEY_ALG_RSA_1024 = 'KEY_ALG_RSA_1024', KEY_ALG_RSA_2048 = 'KEY_ALG_RSA_2048' }
 
-	export enum CreateServiceAccountKeyRequestPrivateKeyType { TYPE_UNSPECIFIED = 0, TYPE_PKCS12_FILE = 1, TYPE_GOOGLE_CREDENTIALS_FILE = 2 }
+	export enum CreateServiceAccountKeyRequestPrivateKeyType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', TYPE_PKCS12_FILE = 'TYPE_PKCS12_FILE', TYPE_GOOGLE_CREDENTIALS_FILE = 'TYPE_GOOGLE_CREDENTIALS_FILE' }
 
 
 	/** The service account create request. */
@@ -763,9 +763,9 @@ export namespace MyNS {
 
 	}
 
-	export enum GoogleIamAdminV1WorkforcePoolProviderOidcWebSsoConfigAssertionClaimsBehavior { ASSERTION_CLAIMS_BEHAVIOR_UNSPECIFIED = 0, MERGE_USER_INFO_OVER_ID_TOKEN_CLAIMS = 1, ONLY_ID_TOKEN_CLAIMS = 2 }
+	export enum GoogleIamAdminV1WorkforcePoolProviderOidcWebSsoConfigAssertionClaimsBehavior { ASSERTION_CLAIMS_BEHAVIOR_UNSPECIFIED = 'ASSERTION_CLAIMS_BEHAVIOR_UNSPECIFIED', MERGE_USER_INFO_OVER_ID_TOKEN_CLAIMS = 'MERGE_USER_INFO_OVER_ID_TOKEN_CLAIMS', ONLY_ID_TOKEN_CLAIMS = 'ONLY_ID_TOKEN_CLAIMS' }
 
-	export enum GoogleIamAdminV1WorkforcePoolProviderOidcWebSsoConfigResponseType { RESPONSE_TYPE_UNSPECIFIED = 0, CODE = 1, ID_TOKEN = 2 }
+	export enum GoogleIamAdminV1WorkforcePoolProviderOidcWebSsoConfigResponseType { RESPONSE_TYPE_UNSPECIFIED = 'RESPONSE_TYPE_UNSPECIFIED', CODE = 'CODE', ID_TOKEN = 'ID_TOKEN' }
 
 
 	/** Represents a SAML identity provider. */
@@ -837,9 +837,9 @@ export namespace MyNS {
 
 	}
 
-	export enum KeyDataFormat { KEY_FORMAT_UNSPECIFIED = 0, RSA_X509_PEM = 1 }
+	export enum KeyDataFormat { KEY_FORMAT_UNSPECIFIED = 'KEY_FORMAT_UNSPECIFIED', RSA_X509_PEM = 'RSA_X509_PEM' }
 
-	export enum KeyDataKeySpec { KEY_SPEC_UNSPECIFIED = 0, RSA_2048 = 1, RSA_3072 = 2, RSA_4096 = 3 }
+	export enum KeyDataKeySpec { KEY_SPEC_UNSPECIFIED = 'KEY_SPEC_UNSPECIFIED', RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096' }
 
 
 	/** The request to lint a Cloud IAM policy object. */
@@ -938,9 +938,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LintResultLevel { LEVEL_UNSPECIFIED = 0, CONDITION = 1 }
+	export enum LintResultLevel { LEVEL_UNSPECIFIED = 'LEVEL_UNSPECIFIED', CONDITION = 'CONDITION' }
 
-	export enum LintResultSeverity { SEVERITY_UNSPECIFIED = 0, ERROR = 1, WARNING = 2, NOTICE = 3, INFO = 4, DEPRECATED = 5 }
+	export enum LintResultSeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', ERROR = 'ERROR', WARNING = 'WARNING', NOTICE = 'NOTICE', INFO = 'INFO', DEPRECATED = 'DEPRECATED' }
 
 
 	/** The response containing the roles defined under a resource. */
@@ -1067,9 +1067,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceAccountKeyKeyOrigin { ORIGIN_UNSPECIFIED = 0, USER_PROVIDED = 1, GOOGLE_PROVIDED = 2 }
+	export enum ServiceAccountKeyKeyOrigin { ORIGIN_UNSPECIFIED = 'ORIGIN_UNSPECIFIED', USER_PROVIDED = 'USER_PROVIDED', GOOGLE_PROVIDED = 'GOOGLE_PROVIDED' }
 
-	export enum ServiceAccountKeyKeyType { KEY_TYPE_UNSPECIFIED = 0, USER_MANAGED = 1, SYSTEM_MANAGED = 2 }
+	export enum ServiceAccountKeyKeyType { KEY_TYPE_UNSPECIFIED = 'KEY_TYPE_UNSPECIFIED', USER_MANAGED = 'USER_MANAGED', SYSTEM_MANAGED = 'SYSTEM_MANAGED' }
 
 
 	/** The service account list response. */
@@ -1164,9 +1164,9 @@ export namespace MyNS {
 
 	}
 
-	export enum WorkforcePoolProviderKeyState { STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETED = 2 }
+	export enum WorkforcePoolProviderKeyState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', ACTIVE = 'ACTIVE', DELETED = 'DELETED' }
 
-	export enum WorkforcePoolProviderKeyUse { KEY_USE_UNSPECIFIED = 0, ENCRYPTION = 1 }
+	export enum WorkforcePoolProviderKeyUse { KEY_USE_UNSPECIFIED = 'KEY_USE_UNSPECIFIED', ENCRYPTION = 'ENCRYPTION' }
 
 
 	/** Response message for ListWorkforcePoolProviders. */
@@ -1894,9 +1894,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PermissionCustomRolesSupportLevel { SUPPORTED = 0, TESTING = 1, NOT_SUPPORTED = 2 }
+	export enum PermissionCustomRolesSupportLevel { SUPPORTED = 'SUPPORTED', TESTING = 'TESTING', NOT_SUPPORTED = 'NOT_SUPPORTED' }
 
-	export enum PermissionStage { ALPHA = 0, BETA = 1, GA = 2, DEPRECATED = 3 }
+	export enum PermissionStage { ALPHA = 'ALPHA', BETA = 'BETA', GA = 'GA', DEPRECATED = 'DEPRECATED' }
 
 
 	/** An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** ``` { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve@example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } ``` **YAML example:** ``` bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 ``` For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/). */
@@ -2008,7 +2008,7 @@ export namespace MyNS {
 
 	}
 
-	export enum QueryGrantableRolesRequestView { BASIC = 0, FULL = 1 }
+	export enum QueryGrantableRolesRequestView { BASIC = 'BASIC', FULL = 'FULL' }
 
 
 	/** The grantable role query response. */
@@ -2784,7 +2784,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Iam_roles_getPublicKeyType { TYPE_NONE = 0, TYPE_X509_PEM_FILE = 1, TYPE_RAW_PUBLIC_KEY = 2 }
+	export enum Iam_roles_getPublicKeyType { TYPE_NONE = 'TYPE_NONE', TYPE_X509_PEM_FILE = 'TYPE_X509_PEM_FILE', TYPE_RAW_PUBLIC_KEY = 'TYPE_RAW_PUBLIC_KEY' }
 
 }
 

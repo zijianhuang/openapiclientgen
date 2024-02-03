@@ -1451,37 +1451,37 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddAttachmentsToSetX_Amz_Target { 'AWSSupport_20130415.AddAttachmentsToSet' = 0 }
+	export enum AddAttachmentsToSetX_Amz_Target { 'AWSSupport_20130415.AddAttachmentsToSet' = 'AWSSupport_20130415.AddAttachmentsToSet' }
 
-	export enum AddCommunicationToCaseX_Amz_Target { 'AWSSupport_20130415.AddCommunicationToCase' = 0 }
+	export enum AddCommunicationToCaseX_Amz_Target { 'AWSSupport_20130415.AddCommunicationToCase' = 'AWSSupport_20130415.AddCommunicationToCase' }
 
-	export enum CreateCaseX_Amz_Target { 'AWSSupport_20130415.CreateCase' = 0 }
+	export enum CreateCaseX_Amz_Target { 'AWSSupport_20130415.CreateCase' = 'AWSSupport_20130415.CreateCase' }
 
-	export enum DescribeAttachmentX_Amz_Target { 'AWSSupport_20130415.DescribeAttachment' = 0 }
+	export enum DescribeAttachmentX_Amz_Target { 'AWSSupport_20130415.DescribeAttachment' = 'AWSSupport_20130415.DescribeAttachment' }
 
-	export enum DescribeCasesX_Amz_Target { 'AWSSupport_20130415.DescribeCases' = 0 }
+	export enum DescribeCasesX_Amz_Target { 'AWSSupport_20130415.DescribeCases' = 'AWSSupport_20130415.DescribeCases' }
 
-	export enum DescribeCommunicationsX_Amz_Target { 'AWSSupport_20130415.DescribeCommunications' = 0 }
+	export enum DescribeCommunicationsX_Amz_Target { 'AWSSupport_20130415.DescribeCommunications' = 'AWSSupport_20130415.DescribeCommunications' }
 
-	export enum DescribeCreateCaseOptionsX_Amz_Target { 'AWSSupport_20130415.DescribeCreateCaseOptions' = 0 }
+	export enum DescribeCreateCaseOptionsX_Amz_Target { 'AWSSupport_20130415.DescribeCreateCaseOptions' = 'AWSSupport_20130415.DescribeCreateCaseOptions' }
 
-	export enum DescribeServicesX_Amz_Target { 'AWSSupport_20130415.DescribeServices' = 0 }
+	export enum DescribeServicesX_Amz_Target { 'AWSSupport_20130415.DescribeServices' = 'AWSSupport_20130415.DescribeServices' }
 
-	export enum DescribeSeverityLevelsX_Amz_Target { 'AWSSupport_20130415.DescribeSeverityLevels' = 0 }
+	export enum DescribeSeverityLevelsX_Amz_Target { 'AWSSupport_20130415.DescribeSeverityLevels' = 'AWSSupport_20130415.DescribeSeverityLevels' }
 
-	export enum DescribeSupportedLanguagesX_Amz_Target { 'AWSSupport_20130415.DescribeSupportedLanguages' = 0 }
+	export enum DescribeSupportedLanguagesX_Amz_Target { 'AWSSupport_20130415.DescribeSupportedLanguages' = 'AWSSupport_20130415.DescribeSupportedLanguages' }
 
-	export enum DescribeTrustedAdvisorCheckRefreshStatusesX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckRefreshStatuses' = 0 }
+	export enum DescribeTrustedAdvisorCheckRefreshStatusesX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckRefreshStatuses' = 'AWSSupport_20130415.DescribeTrustedAdvisorCheckRefreshStatuses' }
 
-	export enum DescribeTrustedAdvisorCheckResultX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckResult' = 0 }
+	export enum DescribeTrustedAdvisorCheckResultX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckResult' = 'AWSSupport_20130415.DescribeTrustedAdvisorCheckResult' }
 
-	export enum DescribeTrustedAdvisorCheckSummariesX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries' = 0 }
+	export enum DescribeTrustedAdvisorCheckSummariesX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries' = 'AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries' }
 
-	export enum DescribeTrustedAdvisorChecksX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorChecks' = 0 }
+	export enum DescribeTrustedAdvisorChecksX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorChecks' = 'AWSSupport_20130415.DescribeTrustedAdvisorChecks' }
 
-	export enum RefreshTrustedAdvisorCheckX_Amz_Target { 'AWSSupport_20130415.RefreshTrustedAdvisorCheck' = 0 }
+	export enum RefreshTrustedAdvisorCheckX_Amz_Target { 'AWSSupport_20130415.RefreshTrustedAdvisorCheck' = 'AWSSupport_20130415.RefreshTrustedAdvisorCheck' }
 
-	export enum ResolveCaseX_Amz_Target { 'AWSSupport_20130415.ResolveCase' = 0 }
+	export enum ResolveCaseX_Amz_Target { 'AWSSupport_20130415.ResolveCase' = 'AWSSupport_20130415.ResolveCase' }
 
 }
 

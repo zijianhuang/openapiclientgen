@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationSettingsStatus { Enabled = 0, Disabled = 1 }
+	export enum NotificationSettingsStatus { Enabled = 'Enabled', Disabled = 'Disabled' }
 
 
 	/** Properties of a weekly schedule. */
@@ -1186,7 +1186,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ArtifactSourcePropertiesSourceType { VsoGit = 0, GitHub = 1 }
+	export enum ArtifactSourcePropertiesSourceType { VsoGit = 'VsoGit', GitHub = 'GitHub' }
 
 
 	/** Properties of an artifact source. */
@@ -1355,7 +1355,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttachNewDataDiskOptionsDiskType { Standard = 0, Premium = 1, StandardSSD = 2 }
+	export enum AttachNewDataDiskOptionsDiskType { Standard = 'Standard', Premium = 'Premium', StandardSSD = 'StandardSSD' }
 
 
 	/** Properties to attach new disk to the Virtual Machine. */
@@ -2017,7 +2017,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomImagePropertiesCustomOsType { Windows = 0, Linux = 1, None = 2 }
+	export enum CustomImagePropertiesCustomOsType { Windows = 'Windows', Linux = 'Linux', None = 'None' }
 
 
 	/** Properties for creating a custom image from a virtual machine. */
@@ -2067,7 +2067,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LinuxOsInfoLinuxOsState { NonDeprovisioned = 0, DeprovisionRequested = 1, DeprovisionApplied = 2 }
+	export enum LinuxOsInfoLinuxOsState { NonDeprovisioned = 'NonDeprovisioned', DeprovisionRequested = 'DeprovisionRequested', DeprovisionApplied = 'DeprovisionApplied' }
 
 
 	/** Information about a Windows OS. */
@@ -2090,7 +2090,7 @@ export namespace MyNS {
 
 	}
 
-	export enum WindowsOsInfoWindowsOsState { NonSysprepped = 0, SysprepRequested = 1, SysprepApplied = 2 }
+	export enum WindowsOsInfoWindowsOsState { NonSysprepped = 'NonSysprepped', SysprepRequested = 'SysprepRequested', SysprepApplied = 'SysprepApplied' }
 
 
 	/** A custom image. */
@@ -2392,7 +2392,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataDiskPropertiesHostCaching { None = 0, ReadOnly = 1, ReadWrite = 2 }
+	export enum DataDiskPropertiesHostCaching { None = 'None', ReadOnly = 'ReadOnly', ReadWrite = 'ReadWrite' }
 
 
 	/** Request body for adding a new or existing data disk to a virtual machine. */
@@ -3009,7 +3009,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventEventName { AutoShutdown = 0, Cost = 1 }
+	export enum EventEventName { AutoShutdown = 'AutoShutdown', Cost = 'Cost' }
 
 
 	/** An event to be notified for. */
@@ -3620,7 +3620,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InboundNatRuleTransportProtocol { Tcp = 0, Udp = 1 }
+	export enum InboundNatRuleTransportProtocol { Tcp = 'Tcp', Udp = 'Udp' }
 
 
 	/** Properties for creating a schedule. */
@@ -3714,7 +3714,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabVirtualMachineCreationParameterPropertiesVirtualMachineCreationSource { FromCustomImage = 0, FromGalleryImage = 1, FromSharedGalleryImage = 2 }
+	export enum LabVirtualMachineCreationParameterPropertiesVirtualMachineCreationSource { FromCustomImage = 'FromCustomImage', FromGalleryImage = 'FromGalleryImage', FromSharedGalleryImage = 'FromSharedGalleryImage' }
 
 
 	/** Information about a VM from which a formula is to be created. */
@@ -4502,7 +4502,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GenerateArmTemplateRequestFileUploadOptions { UploadFilesAndGenerateSasTokens = 0, None = 1 }
+	export enum GenerateArmTemplateRequestFileUploadOptions { UploadFilesAndGenerateSasTokens = 'UploadFilesAndGenerateSasTokens', None = 'None' }
 
 
 	/** Information about an artifact's parameter. */
@@ -4870,9 +4870,9 @@ export namespace MyNS {
 
 	}
 
-	export enum LabPropertiesEnvironmentPermission { Reader = 0, Contributor = 1 }
+	export enum LabPropertiesEnvironmentPermission { Reader = 'Reader', Contributor = 'Contributor' }
 
-	export enum LabPropertiesPremiumDataDisks { Disabled = 0, Enabled = 1 }
+	export enum LabPropertiesPremiumDataDisks { Disabled = 'Disabled', Enabled = 'Enabled' }
 
 
 	/** Properties of a lab's support banner */
@@ -5074,7 +5074,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabCostDetailsPropertiesCostType { Unavailable = 0, Reported = 1, Projected = 2 }
+	export enum LabCostDetailsPropertiesCostType { Unavailable = 'Unavailable', Reported = 'Reported', Projected = 'Projected' }
 
 
 	/** The properties of the cost summary. */
@@ -5226,7 +5226,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TargetCostPropertiesCycleType { CalendarMonth = 0, Custom = 1 }
+	export enum TargetCostPropertiesCycleType { CalendarMonth = 'CalendarMonth', Custom = 'Custom' }
 
 
 	/** A lab. */
@@ -6224,7 +6224,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationResultStatusCode { Continue = 0, SwitchingProtocols = 1, OK = 2, Created = 3, Accepted = 4, NonAuthoritativeInformation = 5, NoContent = 6, ResetContent = 7, PartialContent = 8, MultipleChoices = 9, MovedPermanently = 10, Redirect = 11, SeeOther = 12, NotModified = 13, UseProxy = 14, Unused = 15, TemporaryRedirect = 16, BadRequest = 17, Unauthorized = 18, PaymentRequired = 19, Forbidden = 20, NotFound = 21, MethodNotAllowed = 22, NotAcceptable = 23, ProxyAuthenticationRequired = 24, RequestTimeout = 25, Conflict = 26, Gone = 27, LengthRequired = 28, PreconditionFailed = 29, RequestEntityTooLarge = 30, RequestUriTooLong = 31, UnsupportedMediaType = 32, RequestedRangeNotSatisfiable = 33, ExpectationFailed = 34, UpgradeRequired = 35, InternalServerError = 36, NotImplemented = 37, BadGateway = 38, ServiceUnavailable = 39, GatewayTimeout = 40, HttpVersionNotSupported = 41 }
+	export enum OperationResultStatusCode { Continue = 'Continue', SwitchingProtocols = 'SwitchingProtocols', OK = 'OK', Created = 'Created', Accepted = 'Accepted', NonAuthoritativeInformation = 'NonAuthoritativeInformation', NoContent = 'NoContent', ResetContent = 'ResetContent', PartialContent = 'PartialContent', MultipleChoices = 'MultipleChoices', MovedPermanently = 'MovedPermanently', Redirect = 'Redirect', SeeOther = 'SeeOther', NotModified = 'NotModified', UseProxy = 'UseProxy', Unused = 'Unused', TemporaryRedirect = 'TemporaryRedirect', BadRequest = 'BadRequest', Unauthorized = 'Unauthorized', PaymentRequired = 'PaymentRequired', Forbidden = 'Forbidden', NotFound = 'NotFound', MethodNotAllowed = 'MethodNotAllowed', NotAcceptable = 'NotAcceptable', ProxyAuthenticationRequired = 'ProxyAuthenticationRequired', RequestTimeout = 'RequestTimeout', Conflict = 'Conflict', Gone = 'Gone', LengthRequired = 'LengthRequired', PreconditionFailed = 'PreconditionFailed', RequestEntityTooLarge = 'RequestEntityTooLarge', RequestUriTooLong = 'RequestUriTooLong', UnsupportedMediaType = 'UnsupportedMediaType', RequestedRangeNotSatisfiable = 'RequestedRangeNotSatisfiable', ExpectationFailed = 'ExpectationFailed', UpgradeRequired = 'UpgradeRequired', InternalServerError = 'InternalServerError', NotImplemented = 'NotImplemented', BadGateway = 'BadGateway', ServiceUnavailable = 'ServiceUnavailable', GatewayTimeout = 'GatewayTimeout', HttpVersionNotSupported = 'HttpVersionNotSupported' }
 
 
 	/** A Policy. */
@@ -6323,9 +6323,9 @@ export namespace MyNS {
 
 	}
 
-	export enum PolicyPropertiesEvaluatorType { AllowedValuesPolicy = 0, MaxValuePolicy = 1 }
+	export enum PolicyPropertiesEvaluatorType { AllowedValuesPolicy = 'AllowedValuesPolicy', MaxValuePolicy = 'MaxValuePolicy' }
 
-	export enum PolicyPropertiesFactName { UserOwnedLabVmCount = 0, UserOwnedLabPremiumVmCount = 1, LabVmCount = 2, LabPremiumVmCount = 3, LabVmSize = 4, GalleryImage = 5, UserOwnedLabVmCountInSubnet = 6, LabTargetCost = 7, EnvironmentTemplate = 8, ScheduleEditPermission = 9 }
+	export enum PolicyPropertiesFactName { UserOwnedLabVmCount = 'UserOwnedLabVmCount', UserOwnedLabPremiumVmCount = 'UserOwnedLabPremiumVmCount', LabVmCount = 'LabVmCount', LabPremiumVmCount = 'LabPremiumVmCount', LabVmSize = 'LabVmSize', GalleryImage = 'GalleryImage', UserOwnedLabVmCountInSubnet = 'UserOwnedLabVmCountInSubnet', LabTargetCost = 'LabTargetCost', EnvironmentTemplate = 'EnvironmentTemplate', ScheduleEditPermission = 'ScheduleEditPermission' }
 
 
 	/** A Policy. */
@@ -7055,7 +7055,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SubnetAllowPublicIp { Default = 0, Deny = 1, Allow = 2 }
+	export enum SubnetAllowPublicIp { Default = 'Default', Deny = 'Deny', Allow = 'Allow' }
 
 
 	/** Subnet information. */

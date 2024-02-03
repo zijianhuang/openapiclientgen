@@ -140,7 +140,7 @@ export namespace MyNS {
 	 *             <p>The state of the Apache Kafka cluster.</p>
 	 *          
 	 */
-	export enum ClusterState { ACTIVE = 0, CREATING = 1, DELETING = 2, FAILED = 3, HEALING = 4, MAINTENANCE = 5, REBOOTING_BROKER = 6, UPDATING = 7 }
+	export enum ClusterState { ACTIVE = 'ACTIVE', CREATING = 'CREATING', DELETING = 'DELETING', FAILED = 'FAILED', HEALING = 'HEALING', MAINTENANCE = 'MAINTENANCE', REBOOTING_BROKER = 'REBOOTING_BROKER', UPDATING = 'UPDATING' }
 
 
 	/**
@@ -148,7 +148,7 @@ export namespace MyNS {
 	 *          <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 	 *          
 	 */
-	export enum BrokerAZDistribution { DEFAULT = 0 }
+	export enum BrokerAZDistribution { DEFAULT = 'DEFAULT' }
 
 
 	/**
@@ -551,7 +551,7 @@ export namespace MyNS {
 	 *             <p>Client-broker encryption in transit setting.</p>
 	 *          
 	 */
-	export enum ClientBroker { TLS = 0, TLS_PLAINTEXT = 1, PLAINTEXT = 2 }
+	export enum ClientBroker { TLS = 'TLS', TLS_PLAINTEXT = 'TLS_PLAINTEXT', PLAINTEXT = 'PLAINTEXT' }
 
 
 	/**
@@ -742,7 +742,7 @@ export namespace MyNS {
 	 *             <p>The type of cluster.</p>
 	 *          
 	 */
-	export enum ClusterType { PROVISIONED = 0, SERVERLESS = 1 }
+	export enum ClusterType { PROVISIONED = 'PROVISIONED', SERVERLESS = 'SERVERLESS' }
 
 
 	/**
@@ -865,7 +865,7 @@ export namespace MyNS {
 	 *             <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 	 *          
 	 */
-	export enum EnhancedMonitoring { DEFAULT = 0, PER_BROKER = 1, PER_TOPIC_PER_BROKER = 2, PER_TOPIC_PER_PARTITION = 3 }
+	export enum EnhancedMonitoring { DEFAULT = 'DEFAULT', PER_BROKER = 'PER_BROKER', PER_TOPIC_PER_BROKER = 'PER_TOPIC_PER_BROKER', PER_TOPIC_PER_PARTITION = 'PER_TOPIC_PER_PARTITION' }
 
 
 	/**
@@ -905,7 +905,7 @@ export namespace MyNS {
 
 
 	/** Controls storage mode for various supported storage tiers. */
-	export enum StorageMode { LOCAL = 0, TIERED = 1 }
+	export enum StorageMode { LOCAL = 'LOCAL', TIERED = 'TIERED' }
 
 
 	/**
@@ -1038,7 +1038,7 @@ export namespace MyNS {
 	 *             <p>The state of a configuration.</p>
 	 *          
 	 */
-	export enum ConfigurationState { ACTIVE = 0, DELETING = 1, DELETE_FAILED = 2 }
+	export enum ConfigurationState { ACTIVE = 'ACTIVE', DELETING = 'DELETING', DELETE_FAILED = 'DELETE_FAILED' }
 
 	export interface CreateVpcConnectionResponse {
 		VpcConnectionArn?: string;
@@ -1073,7 +1073,7 @@ export namespace MyNS {
 	 *             <p>The state of a VPC connection.</p>
 	 *          
 	 */
-	export enum VpcConnectionState { CREATING = 0, AVAILABLE = 1, INACTIVE = 2, DEACTIVATING = 3, DELETING = 4, FAILED = 5, REJECTED = 6, REJECTING = 7 }
+	export enum VpcConnectionState { CREATING = 'CREATING', AVAILABLE = 'AVAILABLE', INACTIVE = 'INACTIVE', DEACTIVATING = 'DEACTIVATING', DELETING = 'DELETING', FAILED = 'FAILED', REJECTED = 'REJECTED', REJECTING = 'REJECTING' }
 
 	export interface __mapOf__string {
 	}
@@ -1750,7 +1750,7 @@ export namespace MyNS {
 	 *             <p>The identity type of the requester that calls the API operation.</p>
 	 *          
 	 */
-	export enum UserIdentityType { AWSACCOUNT = 0, AWSSERVICE = 1 }
+	export enum UserIdentityType { AWSACCOUNT = 'AWSACCOUNT', AWSSERVICE = 'AWSSERVICE' }
 
 	export interface DescribeClusterOperationV2Response {
 		ClusterOperationInfo?: ClusterOperationV2;
@@ -2272,7 +2272,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KafkaVersionStatus { ACTIVE = 0, DEPRECATED = 1 }
+	export enum KafkaVersionStatus { ACTIVE = 'ACTIVE', DEPRECATED = 'DEPRECATED' }
 
 	export interface ListNodesResponse {
 		NextToken?: string;
@@ -2361,7 +2361,7 @@ export namespace MyNS {
 	 *             <p>The broker or Zookeeper node.</p>
 	 *          
 	 */
-	export enum NodeType { BROKER = 0 }
+	export enum NodeType { BROKER = 'BROKER' }
 
 
 	/**

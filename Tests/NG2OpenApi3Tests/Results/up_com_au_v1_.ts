@@ -263,7 +263,7 @@ export namespace MyNS {
 	 * Specifies the type of bank account. Currently returned values are `SAVER`
 	 * and `TRANSACTIONAL`.
 	 */
-	export enum AccountTypeEnum { SAVER = 0, TRANSACTIONAL = 1 }
+	export enum AccountTypeEnum { SAVER = 'SAVER', TRANSACTIONAL = 'TRANSACTIONAL' }
 
 
 	/**
@@ -2558,7 +2558,7 @@ export namespace MyNS {
 	 * Specifies the structure under which a bank account is owned. Currently
 	 * returned values are `INDIVIDUAL` and `JOINT`.
 	 */
-	export enum OwnershipTypeEnum { INDIVIDUAL = 0, JOINT = 1 }
+	export enum OwnershipTypeEnum { INDIVIDUAL = 'INDIVIDUAL', JOINT = 'JOINT' }
 
 
 	/**
@@ -2668,7 +2668,7 @@ export namespace MyNS {
 	 * held, its account’s `availableBalance` is affected. When a transaction is
 	 * settled, its account’s `currentBalance` is affected.
 	 */
-	export enum TransactionStatusEnum { HELD = 0, SETTLED = 1 }
+	export enum TransactionStatusEnum { HELD = 'HELD', SETTLED = 'SETTLED' }
 
 
 	/**
@@ -2730,7 +2730,7 @@ export namespace MyNS {
 	 * - **`BAD_RESPONSE_CODE`**: The event was delivered to the webhook URL
 	 *   but a non-`200` response was received.
 	 */
-	export enum WebhookDeliveryStatusEnum { DELIVERED = 0, UNDELIVERABLE = 1, BAD_RESPONSE_CODE = 2 }
+	export enum WebhookDeliveryStatusEnum { DELIVERED = 'DELIVERED', UNDELIVERABLE = 'UNDELIVERABLE', BAD_RESPONSE_CODE = 'BAD_RESPONSE_CODE' }
 
 
 	/**
@@ -3016,7 +3016,7 @@ export namespace MyNS {
 	 * action to take in response to the event, such as which relationships to
 	 * expect.
 	 */
-	export enum WebhookEventTypeEnum { TRANSACTION_CREATED = 0, TRANSACTION_SETTLED = 1, TRANSACTION_DELETED = 2, PING = 3 }
+	export enum WebhookEventTypeEnum { TRANSACTION_CREATED = 'TRANSACTION_CREATED', TRANSACTION_SETTLED = 'TRANSACTION_SETTLED', TRANSACTION_DELETED = 'TRANSACTION_DELETED', PING = 'PING' }
 
 	@Injectable()
 	export class MyClient {

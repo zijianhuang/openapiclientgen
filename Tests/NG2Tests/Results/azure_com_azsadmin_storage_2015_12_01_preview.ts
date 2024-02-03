@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Aggregate type. */
-	export enum AggregateType { None = 0, Average = 1, Total = 2, Minimum = 3, Maximum = 4, Last = 5 }
+	export enum AggregateType { None = 'None', Average = 'Average', Total = 'Total', Minimum = 'Minimum', Maximum = 'Maximum', Last = 'Last' }
 
 
 	/** Contains the localized display information for this particular operation / action. */
@@ -51,7 +51,7 @@ export namespace MyNS {
 
 
 	/** Current health status. */
-	export enum HealthStatus { Unknown = 0, Healthy = 1, Warning = 2, Critical = 3 }
+	export enum HealthStatus { Unknown = 'Unknown', Healthy = 'Healthy', Warning = 'Warning', Critical = 'Critical' }
 
 
 	/** Localizable string. */
@@ -129,7 +129,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricMetricUnit { Count = 0, Bytes = 1, Seconds = 2, CountPerSecond = 3, BytesPerSecond = 4 }
+	export enum MetricMetricUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 
 	/** Metric value. */
@@ -306,7 +306,7 @@ export namespace MyNS {
 
 
 	/** Metric unit. */
-	export enum MetricUnit { Count = 0, Bytes = 1, Seconds = 2, CountPerSecond = 3, BytesPerSecond = 4 }
+	export enum MetricUnit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond' }
 
 
 	/** Describes the supported REST operation. */

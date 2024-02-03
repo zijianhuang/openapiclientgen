@@ -41,9 +41,9 @@ export namespace MyNS {
 
 	}
 
-	export enum AggregationCrossSeriesReducer { REDUCE_NONE = 0, REDUCE_MEAN = 1, REDUCE_MIN = 2, REDUCE_MAX = 3, REDUCE_SUM = 4, REDUCE_STDDEV = 5, REDUCE_COUNT = 6, REDUCE_COUNT_TRUE = 7, REDUCE_COUNT_FALSE = 8, REDUCE_FRACTION_TRUE = 9, REDUCE_PERCENTILE_99 = 10, REDUCE_PERCENTILE_95 = 11, REDUCE_PERCENTILE_50 = 12, REDUCE_PERCENTILE_05 = 13 }
+	export enum AggregationCrossSeriesReducer { REDUCE_NONE = 'REDUCE_NONE', REDUCE_MEAN = 'REDUCE_MEAN', REDUCE_MIN = 'REDUCE_MIN', REDUCE_MAX = 'REDUCE_MAX', REDUCE_SUM = 'REDUCE_SUM', REDUCE_STDDEV = 'REDUCE_STDDEV', REDUCE_COUNT = 'REDUCE_COUNT', REDUCE_COUNT_TRUE = 'REDUCE_COUNT_TRUE', REDUCE_COUNT_FALSE = 'REDUCE_COUNT_FALSE', REDUCE_FRACTION_TRUE = 'REDUCE_FRACTION_TRUE', REDUCE_PERCENTILE_99 = 'REDUCE_PERCENTILE_99', REDUCE_PERCENTILE_95 = 'REDUCE_PERCENTILE_95', REDUCE_PERCENTILE_50 = 'REDUCE_PERCENTILE_50', REDUCE_PERCENTILE_05 = 'REDUCE_PERCENTILE_05' }
 
-	export enum AggregationPerSeriesAligner { ALIGN_NONE = 0, ALIGN_DELTA = 1, ALIGN_RATE = 2, ALIGN_INTERPOLATE = 3, ALIGN_NEXT_OLDER = 4, ALIGN_MIN = 5, ALIGN_MAX = 6, ALIGN_MEAN = 7, ALIGN_COUNT = 8, ALIGN_SUM = 9, ALIGN_STDDEV = 10, ALIGN_COUNT_TRUE = 11, ALIGN_COUNT_FALSE = 12, ALIGN_FRACTION_TRUE = 13, ALIGN_PERCENTILE_99 = 14, ALIGN_PERCENTILE_95 = 15, ALIGN_PERCENTILE_50 = 16, ALIGN_PERCENTILE_05 = 17, ALIGN_PERCENT_CHANGE = 18 }
+	export enum AggregationPerSeriesAligner { ALIGN_NONE = 'ALIGN_NONE', ALIGN_DELTA = 'ALIGN_DELTA', ALIGN_RATE = 'ALIGN_RATE', ALIGN_INTERPOLATE = 'ALIGN_INTERPOLATE', ALIGN_NEXT_OLDER = 'ALIGN_NEXT_OLDER', ALIGN_MIN = 'ALIGN_MIN', ALIGN_MAX = 'ALIGN_MAX', ALIGN_MEAN = 'ALIGN_MEAN', ALIGN_COUNT = 'ALIGN_COUNT', ALIGN_SUM = 'ALIGN_SUM', ALIGN_STDDEV = 'ALIGN_STDDEV', ALIGN_COUNT_TRUE = 'ALIGN_COUNT_TRUE', ALIGN_COUNT_FALSE = 'ALIGN_COUNT_FALSE', ALIGN_FRACTION_TRUE = 'ALIGN_FRACTION_TRUE', ALIGN_PERCENTILE_99 = 'ALIGN_PERCENTILE_99', ALIGN_PERCENTILE_95 = 'ALIGN_PERCENTILE_95', ALIGN_PERCENTILE_50 = 'ALIGN_PERCENTILE_50', ALIGN_PERCENTILE_05 = 'ALIGN_PERCENTILE_05', ALIGN_PERCENT_CHANGE = 'ALIGN_PERCENT_CHANGE' }
 
 
 	/** A description of the conditions under which some aspect of your system is considered to be "unhealthy" and the ways to notify people or services about this state. For an overview of alert policies, see Introduction to Alerting (https://cloud.google.com/monitoring/alerts/). */
@@ -194,7 +194,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertPolicyCombiner { COMBINE_UNSPECIFIED = 0, AND = 1, OR = 2, AND_WITH_MATCHING_RESOURCE = 3 }
+	export enum AlertPolicyCombiner { COMBINE_UNSPECIFIED = 'COMBINE_UNSPECIFIED', AND = 'AND', OR = 'OR', AND_WITH_MATCHING_RESOURCE = 'AND_WITH_MATCHING_RESOURCE' }
 
 
 	/** A condition is a true/false test that determines when an alerting policy should open an incident. If a condition evaluates to true, it signifies that something is wrong. */
@@ -367,7 +367,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitoringQueryLanguageConditionEvaluationMissingData { EVALUATION_MISSING_DATA_UNSPECIFIED = 0, EVALUATION_MISSING_DATA_INACTIVE = 1, EVALUATION_MISSING_DATA_ACTIVE = 2, EVALUATION_MISSING_DATA_NO_OP = 3 }
+	export enum MonitoringQueryLanguageConditionEvaluationMissingData { EVALUATION_MISSING_DATA_UNSPECIFIED = 'EVALUATION_MISSING_DATA_UNSPECIFIED', EVALUATION_MISSING_DATA_INACTIVE = 'EVALUATION_MISSING_DATA_INACTIVE', EVALUATION_MISSING_DATA_ACTIVE = 'EVALUATION_MISSING_DATA_ACTIVE', EVALUATION_MISSING_DATA_NO_OP = 'EVALUATION_MISSING_DATA_NO_OP' }
 
 
 	/** A condition type that allows alert policies to be defined using Prometheus Query Language (PromQL) (https://prometheus.io/docs/prometheus/latest/querying/basics/).The PrometheusQueryLanguageCondition message contains information from a Prometheus alerting rule and its associated rule group.A Prometheus alerting rule is described here (https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/). The semantics of a Prometheus alerting rule is described here (https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/#rule).A Prometheus rule group is described here (https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/). The semantics of a Prometheus rule group is described here (https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/#rule_group).Because Cloud Alerting has no representation of a Prometheus rule group resource, we must embed the information of the parent rule group inside each of the conditions that refer to it. We must also update the contents of all Prometheus alerts in case the information of their rule group changes.The PrometheusQueryLanguageCondition protocol buffer combines the information of the corresponding rule group and alerting rule. The structure of the PrometheusQueryLanguageCondition protocol buffer does NOT mimic the structure of the Prometheus rule group and alerting rule YAML declarations. The PrometheusQueryLanguageCondition protocol buffer may change in the future to support future rule group and/or alerting rule features. There are no new such features at the present time (2023-06-26). */
@@ -493,7 +493,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricThresholdComparison { COMPARISON_UNSPECIFIED = 0, COMPARISON_GT = 1, COMPARISON_GE = 2, COMPARISON_LT = 3, COMPARISON_LE = 4, COMPARISON_EQ = 5, COMPARISON_NE = 6 }
+	export enum MetricThresholdComparison { COMPARISON_UNSPECIFIED = 'COMPARISON_UNSPECIFIED', COMPARISON_GT = 'COMPARISON_GT', COMPARISON_GE = 'COMPARISON_GE', COMPARISON_LT = 'COMPARISON_LT', COMPARISON_LE = 'COMPARISON_LE', COMPARISON_EQ = 'COMPARISON_EQ', COMPARISON_NE = 'COMPARISON_NE' }
 
 
 	/** Options used when forecasting the time series and testing the predicted value against the threshold. */
@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertPolicySeverity { SEVERITY_UNSPECIFIED = 0, CRITICAL = 1, ERROR = 2, WARNING = 3 }
+	export enum AlertPolicySeverity { SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED', CRITICAL = 'CRITICAL', ERROR = 'ERROR', WARNING = 'WARNING' }
 
 
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
@@ -1254,7 +1254,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CollectdValueDataSourceType { UNSPECIFIED_DATA_SOURCE_TYPE = 0, GAUGE = 1, COUNTER = 2, DERIVE = 3, ABSOLUTE = 4 }
+	export enum CollectdValueDataSourceType { UNSPECIFIED_DATA_SOURCE_TYPE = 'UNSPECIFIED_DATA_SOURCE_TYPE', GAUGE = 'GAUGE', COUNTER = 'COUNTER', DERIVE = 'DERIVE', ABSOLUTE = 'ABSOLUTE' }
 
 
 	/** Describes the error status for payloads that were not written. */
@@ -1366,9 +1366,9 @@ export namespace MyNS {
 
 	}
 
-	export enum JsonPathMatcherJsonMatcher { JSON_PATH_MATCHER_OPTION_UNSPECIFIED = 0, EXACT_MATCH = 1, REGEX_MATCH = 2 }
+	export enum JsonPathMatcherJsonMatcher { JSON_PATH_MATCHER_OPTION_UNSPECIFIED = 'JSON_PATH_MATCHER_OPTION_UNSPECIFIED', EXACT_MATCH = 'EXACT_MATCH', REGEX_MATCH = 'REGEX_MATCH' }
 
-	export enum ContentMatcherMatcher { CONTENT_MATCHER_OPTION_UNSPECIFIED = 0, CONTAINS_STRING = 1, NOT_CONTAINS_STRING = 2, MATCHES_REGEX = 3, NOT_MATCHES_REGEX = 4, MATCHES_JSON_PATH = 5, NOT_MATCHES_JSON_PATH = 6 }
+	export enum ContentMatcherMatcher { CONTENT_MATCHER_OPTION_UNSPECIFIED = 'CONTENT_MATCHER_OPTION_UNSPECIFIED', CONTAINS_STRING = 'CONTAINS_STRING', NOT_CONTAINS_STRING = 'NOT_CONTAINS_STRING', MATCHES_REGEX = 'MATCHES_REGEX', NOT_MATCHES_REGEX = 'NOT_MATCHES_REGEX', MATCHES_JSON_PATH = 'MATCHES_JSON_PATH', NOT_MATCHES_JSON_PATH = 'NOT_MATCHES_JSON_PATH' }
 
 
 	/** The CreateCollectdTimeSeries request. */
@@ -1592,7 +1592,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeSeriesMetricKind { METRIC_KIND_UNSPECIFIED = 0, GAUGE = 1, DELTA = 2, CUMULATIVE = 3 }
+	export enum TimeSeriesMetricKind { METRIC_KIND_UNSPECIFIED = 'METRIC_KIND_UNSPECIFIED', GAUGE = 'GAUGE', DELTA = 'DELTA', CUMULATIVE = 'CUMULATIVE' }
 
 
 	/** A single data point in a time series. */
@@ -1642,7 +1642,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TimeSeriesValueType { VALUE_TYPE_UNSPECIFIED = 0, BOOL = 1, INT64 = 2, DOUBLE = 3, STRING = 4, DISTRIBUTION = 5, MONEY = 6 }
+	export enum TimeSeriesValueType { VALUE_TYPE_UNSPECIFIED = 'VALUE_TYPE_UNSPECIFIED', BOOL = 'BOOL', INT64 = 'INT64', DOUBLE = 'DOUBLE', STRING = 'STRING', DISTRIBUTION = 'DISTRIBUTION', MONEY = 'MONEY' }
 
 
 	/** Criteria specific to the AlertPolicys that this Snooze applies to. The Snooze will suppress alerts that come from one of the AlertPolicys whose names are supplied. */
@@ -1842,9 +1842,9 @@ export namespace MyNS {
 
 	}
 
-	export enum FieldCardinality { CARDINALITY_UNKNOWN = 0, CARDINALITY_OPTIONAL = 1, CARDINALITY_REQUIRED = 2, CARDINALITY_REPEATED = 3 }
+	export enum FieldCardinality { CARDINALITY_UNKNOWN = 'CARDINALITY_UNKNOWN', CARDINALITY_OPTIONAL = 'CARDINALITY_OPTIONAL', CARDINALITY_REQUIRED = 'CARDINALITY_REQUIRED', CARDINALITY_REPEATED = 'CARDINALITY_REPEATED' }
 
-	export enum FieldKind { TYPE_UNKNOWN = 0, TYPE_DOUBLE = 1, TYPE_FLOAT = 2, TYPE_INT64 = 3, TYPE_UINT64 = 4, TYPE_INT32 = 5, TYPE_FIXED64 = 6, TYPE_FIXED32 = 7, TYPE_BOOL = 8, TYPE_STRING = 9, TYPE_GROUP = 10, TYPE_MESSAGE = 11, TYPE_BYTES = 12, TYPE_UINT32 = 13, TYPE_ENUM = 14, TYPE_SFIXED32 = 15, TYPE_SFIXED64 = 16, TYPE_SINT32 = 17, TYPE_SINT64 = 18 }
+	export enum FieldKind { TYPE_UNKNOWN = 'TYPE_UNKNOWN', TYPE_DOUBLE = 'TYPE_DOUBLE', TYPE_FLOAT = 'TYPE_FLOAT', TYPE_INT64 = 'TYPE_INT64', TYPE_UINT64 = 'TYPE_UINT64', TYPE_INT32 = 'TYPE_INT32', TYPE_FIXED64 = 'TYPE_FIXED64', TYPE_FIXED32 = 'TYPE_FIXED32', TYPE_BOOL = 'TYPE_BOOL', TYPE_STRING = 'TYPE_STRING', TYPE_GROUP = 'TYPE_GROUP', TYPE_MESSAGE = 'TYPE_MESSAGE', TYPE_BYTES = 'TYPE_BYTES', TYPE_UINT32 = 'TYPE_UINT32', TYPE_ENUM = 'TYPE_ENUM', TYPE_SFIXED32 = 'TYPE_SFIXED32', TYPE_SFIXED64 = 'TYPE_SFIXED64', TYPE_SINT32 = 'TYPE_SINT32', TYPE_SINT64 = 'TYPE_SINT64' }
 
 
 	/** A protocol buffer option, which can be attached to a message, field, enumeration, etc. */
@@ -2240,9 +2240,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseStatusCodeStatusClass { STATUS_CLASS_UNSPECIFIED = 0, STATUS_CLASS_1XX = 1, STATUS_CLASS_2XX = 2, STATUS_CLASS_3XX = 3, STATUS_CLASS_4XX = 4, STATUS_CLASS_5XX = 5, STATUS_CLASS_ANY = 6 }
+	export enum ResponseStatusCodeStatusClass { STATUS_CLASS_UNSPECIFIED = 'STATUS_CLASS_UNSPECIFIED', STATUS_CLASS_1XX = 'STATUS_CLASS_1XX', STATUS_CLASS_2XX = 'STATUS_CLASS_2XX', STATUS_CLASS_3XX = 'STATUS_CLASS_3XX', STATUS_CLASS_4XX = 'STATUS_CLASS_4XX', STATUS_CLASS_5XX = 'STATUS_CLASS_5XX', STATUS_CLASS_ANY = 'STATUS_CLASS_ANY' }
 
-	export enum HttpCheckContentType { TYPE_UNSPECIFIED = 0, URL_ENCODED = 1, USER_PROVIDED = 2 }
+	export enum HttpCheckContentType { TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED', URL_ENCODED = 'URL_ENCODED', USER_PROVIDED = 'USER_PROVIDED' }
 
 
 	/** Information involved in sending ICMP pings alongside public HTTP/TCP checks. For HTTP, the pings are performed for each part of the redirect chain. */
@@ -2265,7 +2265,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpCheckRequestMethod { METHOD_UNSPECIFIED = 0, GET = 1, POST = 2 }
+	export enum HttpCheckRequestMethod { METHOD_UNSPECIFIED = 'METHOD_UNSPECIFIED', GET = 'GET', POST = 'POST' }
 
 
 	/** An internal checker allows Uptime checks to run on private/internal GCP resources. */
@@ -2323,7 +2323,7 @@ export namespace MyNS {
 
 	}
 
-	export enum InternalCheckerState { UNSPECIFIED = 0, CREATING = 1, RUNNING = 2 }
+	export enum InternalCheckerState { UNSPECIFIED = 'UNSPECIFIED', CREATING = 'CREATING', RUNNING = 'RUNNING' }
 
 
 	/** Canonical service scoped to an Istio mesh. Anthos clusters running ASM >= 1.6.8 will have their services ingested as this type. */
@@ -2395,7 +2395,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LabelDescriptorValueType { STRING = 0, BOOL = 1, INT64 = 2 }
+	export enum LabelDescriptorValueType { STRING = 'STRING', BOOL = 'BOOL', INT64 = 'INT64' }
 
 
 	/** A label value. */
@@ -2621,7 +2621,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDescriptorLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 0, UNIMPLEMENTED = 1, PRELAUNCH = 2, EARLY_ACCESS = 3, ALPHA = 4, BETA = 5, GA = 6, DEPRECATED = 7 }
+	export enum MetricDescriptorLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 'LAUNCH_STAGE_UNSPECIFIED', UNIMPLEMENTED = 'UNIMPLEMENTED', PRELAUNCH = 'PRELAUNCH', EARLY_ACCESS = 'EARLY_ACCESS', ALPHA = 'ALPHA', BETA = 'BETA', GA = 'GA', DEPRECATED = 'DEPRECATED' }
 
 
 	/** Additional annotations that can be used to guide the usage of a metric. */
@@ -2920,7 +2920,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NotificationChannelVerificationStatus { VERIFICATION_STATUS_UNSPECIFIED = 0, UNVERIFIED = 1, VERIFIED = 2 }
+	export enum NotificationChannelVerificationStatus { VERIFICATION_STATUS_UNSPECIFIED = 'VERIFICATION_STATUS_UNSPECIFIED', UNVERIFIED = 'UNVERIFIED', VERIFIED = 'VERIFIED' }
 
 
 	/** The ListServiceLevelObjectives response. */
@@ -3005,7 +3005,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServiceLevelObjectiveCalendarPeriod { CALENDAR_PERIOD_UNSPECIFIED = 0, DAY = 1, WEEK = 2, FORTNIGHT = 3, MONTH = 4, QUARTER = 5, HALF = 6, YEAR = 7 }
+	export enum ServiceLevelObjectiveCalendarPeriod { CALENDAR_PERIOD_UNSPECIFIED = 'CALENDAR_PERIOD_UNSPECIFIED', DAY = 'DAY', WEEK = 'WEEK', FORTNIGHT = 'FORTNIGHT', MONTH = 'MONTH', QUARTER = 'QUARTER', HALF = 'HALF', YEAR = 'YEAR' }
 
 
 	/** A Service-Level Indicator (SLI) describes the "performance" of a service. For some services, the SLI is well-defined. In such cases, the SLI can be described easily by referencing the well-known SLI and providing the needed parameters. Alternatively, a "custom" SLI can be defined with a query to the underlying metric store. An SLI is defined to be good_service / total_service over any queried time interval. The value of performance always falls into the range 0 <= performance <= 1. A custom SLI describes how to compute this ratio, whether this is by dividing values from a pair of time series, cutting a Distribution into good and bad counts, or counting time windows in which the service complies with a criterion. For separation of concerns, a single Service-Level Indicator measures performance for only one aspect of service quality, such as fraction of successful queries or fast-enough queries. */
@@ -3534,7 +3534,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UptimeCheckConfigCheckerType { CHECKER_TYPE_UNSPECIFIED = 0, STATIC_IP_CHECKERS = 1, VPC_CHECKERS = 2 }
+	export enum UptimeCheckConfigCheckerType { CHECKER_TYPE_UNSPECIFIED = 'CHECKER_TYPE_UNSPECIFIED', STATIC_IP_CHECKERS = 'STATIC_IP_CHECKERS', VPC_CHECKERS = 'VPC_CHECKERS' }
 
 
 	/** The resource submessage for group checks. It can be used instead of a monitored resource, when multiple resources are being monitored. */
@@ -3564,7 +3564,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceGroupResourceType { RESOURCE_TYPE_UNSPECIFIED = 0, INSTANCE = 1, AWS_ELB_LOAD_BALANCER = 2 }
+	export enum ResourceGroupResourceType { RESOURCE_TYPE_UNSPECIFIED = 'RESOURCE_TYPE_UNSPECIFIED', INSTANCE = 'INSTANCE', AWS_ELB_LOAD_BALANCER = 'AWS_ELB_LOAD_BALANCER' }
 
 
 	/** Describes a Synthetic Monitor to be invoked by Uptime. */
@@ -3666,7 +3666,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UptimeCheckIpRegion { REGION_UNSPECIFIED = 0, USA = 1, EUROPE = 2, SOUTH_AMERICA = 3, ASIA_PACIFIC = 4, USA_OREGON = 5, USA_IOWA = 6, USA_VIRGINIA = 7 }
+	export enum UptimeCheckIpRegion { REGION_UNSPECIFIED = 'REGION_UNSPECIFIED', USA = 'USA', EUROPE = 'EUROPE', SOUTH_AMERICA = 'SOUTH_AMERICA', ASIA_PACIFIC = 'ASIA_PACIFIC', USA_OREGON = 'USA_OREGON', USA_IOWA = 'USA_IOWA', USA_VIRGINIA = 'USA_VIRGINIA' }
 
 
 	/** Contains metadata for longrunning operation for the edit Metrics Scope endpoints. */
@@ -3703,7 +3703,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OperationMetadataState { STATE_UNSPECIFIED = 0, CREATED = 1, RUNNING = 2, DONE = 3, CANCELLED = 4 }
+	export enum OperationMetadataState { STATE_UNSPECIFIED = 'STATE_UNSPECIFIED', CREATED = 'CREATED', RUNNING = 'RUNNING', DONE = 'DONE', CANCELLED = 'CANCELLED' }
 
 
 	/** A point's value columns and time interval. Each point has one or more point values corresponding to the entries in point_descriptors field in the TimeSeriesDescriptor associated with this object. */
@@ -3975,7 +3975,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TypeSyntax { SYNTAX_PROTO2 = 0, SYNTAX_PROTO3 = 1, SYNTAX_EDITIONS = 2 }
+	export enum TypeSyntax { SYNTAX_PROTO2 = 'SYNTAX_PROTO2', SYNTAX_PROTO3 = 'SYNTAX_PROTO3', SYNTAX_EDITIONS = 'SYNTAX_EDITIONS' }
 
 
 	/** The VerifyNotificationChannel request. */
@@ -4386,9 +4386,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum Monitoring_services_serviceLevelObjectives_getView { VIEW_UNSPECIFIED = 0, FULL = 1, EXPLICIT = 2 }
+	export enum Monitoring_services_serviceLevelObjectives_getView { VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED', FULL = 'FULL', EXPLICIT = 'EXPLICIT' }
 
-	export enum Monitoring_projects_timeSeries_listView { FULL = 0, HEADERS = 1 }
+	export enum Monitoring_projects_timeSeries_listView { FULL = 'FULL', HEADERS = 'HEADERS' }
 
 }
 

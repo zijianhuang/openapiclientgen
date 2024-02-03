@@ -124,9 +124,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeStatus { PREPARING = 0, APPLYING = 1, SUCCEEDED = 2, CANCELLED = 3, FAILED = 4 }
+	export enum ChangeStatus { PREPARING = 'PREPARING', APPLYING = 'APPLYING', SUCCEEDED = 'SUCCEEDED', CANCELLED = 'CANCELLED', FAILED = 'FAILED' }
 
-	export enum FailureCode { CLIENT_ERROR = 0, SERVER_FAULT = 1 }
+	export enum FailureCode { CLIENT_ERROR = 'CLIENT_ERROR', SERVER_FAULT = 'SERVER_FAULT' }
 
 
 	/** This object is a container for common summary information about the change. The summary doesn't contain the whole change structure. */
@@ -313,7 +313,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
+	export enum SortOrder { ASCENDING = 'ASCENDING', DESCENDING = 'DESCENDING' }
 
 	export interface ListEntitiesResponse {
 		EntitySummaryList?: Array<EntitySummary>;
@@ -589,7 +589,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OwnershipType { SELF = 0, SHARED = 1 }
+	export enum OwnershipType { SELF = 'SELF', SHARED = 'SHARED' }
 
 	export interface ListEntitiesRequest {
 

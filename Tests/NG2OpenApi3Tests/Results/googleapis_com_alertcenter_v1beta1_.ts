@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AbuseDetectedVariationType { ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED = 0, DRIVE_ABUSIVE_CONTENT = 1, LIMITED_DISABLE = 2 }
+	export enum AbuseDetectedVariationType { ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED = 'ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED', DRIVE_ABUSIVE_CONTENT = 'DRIVE_ABUSIVE_CONTENT', LIMITED_DISABLE = 'LIMITED_DISABLE' }
 
 
 	/** Alert that is triggered when Google support requests to access customer data. */
@@ -201,7 +201,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountSuspensionDetailsAbuseReason { ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED = 0, TOS_VIOLATION = 1, SPAM = 2, PHISHING = 3, TRAFFIC_PUMPING = 4, FRAUD = 5, NUMBER_HARVESTING = 6, PAYMENTS_FRAUD = 7, UNWANTED_CONTENT = 8 }
+	export enum AccountSuspensionDetailsAbuseReason { ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED = 'ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED', TOS_VIOLATION = 'TOS_VIOLATION', SPAM = 'SPAM', PHISHING = 'PHISHING', TRAFFIC_PUMPING = 'TRAFFIC_PUMPING', FRAUD = 'FRAUD', NUMBER_HARVESTING = 'NUMBER_HARVESTING', PAYMENTS_FRAUD = 'PAYMENTS_FRAUD', UNWANTED_CONTENT = 'UNWANTED_CONTENT' }
 
 
 	/** A warning that the customer's account is about to be suspended. */
@@ -234,7 +234,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AccountSuspensionWarningState { ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED = 0, WARNING = 1, SUSPENDED = 2, APPEAL_APPROVED = 3, APPEAL_SUBMITTED = 4 }
+	export enum AccountSuspensionWarningState { ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED = 'ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED', WARNING = 'WARNING', SUSPENDED = 'SUSPENDED', APPEAL_APPROVED = 'APPEAL_APPROVED', APPEAL_SUBMITTED = 'APPEAL_SUBMITTED' }
 
 
 	/** Alerts for user account warning events. */
@@ -612,7 +612,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AlertFeedbackType { ALERT_FEEDBACK_TYPE_UNSPECIFIED = 0, NOT_USEFUL = 1, SOMEWHAT_USEFUL = 2, VERY_USEFUL = 3 }
+	export enum AlertFeedbackType { ALERT_FEEDBACK_TYPE_UNSPECIFIED = 'ALERT_FEEDBACK_TYPE_UNSPECIFIED', NOT_USEFUL = 'NOT_USEFUL', SOMEWHAT_USEFUL = 'SOMEWHAT_USEFUL', VERY_USEFUL = 'VERY_USEFUL' }
 
 
 	/** The explanation message associated with "APNS certificate is expiring soon" and "APNS certificate has expired" alerts. */
@@ -808,7 +808,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AppsOutageStatus { STATUS_UNSPECIFIED = 0, NEW = 1, ONGOING = 2, RESOLVED = 3, FALSE_POSITIVE = 4, PARTIALLY_RESOLVED = 5, MERGED = 6, DOWNGRADED = 7 }
+	export enum AppsOutageStatus { STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED', NEW = 'NEW', ONGOING = 'ONGOING', RESOLVED = 'RESOLVED', FALSE_POSITIVE = 'FALSE_POSITIVE', PARTIALLY_RESOLVED = 'PARTIALLY_RESOLVED', MERGED = 'MERGED', DOWNGRADED = 'DOWNGRADED' }
 
 
 	/** Attachment with application-specific information about an alert. */
@@ -1202,7 +1202,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudPubsubTopicPayloadFormat { PAYLOAD_FORMAT_UNSPECIFIED = 0, JSON = 1 }
+	export enum CloudPubsubTopicPayloadFormat { PAYLOAD_FORMAT_UNSPECIFIED = 'PAYLOAD_FORMAT_UNSPECIFIED', JSON = 'JSON' }
 
 
 	/** A mobile device compromised alert. Derived from audit logs. */
@@ -1364,7 +1364,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleViolationInfoDataSource { DATA_SOURCE_UNSPECIFIED = 0, DRIVE = 1 }
+	export enum RuleViolationInfoDataSource { DATA_SOURCE_UNSPECIFIED = 'DATA_SOURCE_UNSPECIFIED', DRIVE = 'DRIVE' }
 
 
 	/** Proto that contains match information from the condition part of the rule. */
@@ -1491,7 +1491,7 @@ export namespace MyNS {
 
 	}
 
-	export enum RuleViolationInfoTrigger { TRIGGER_UNSPECIFIED = 0, DRIVE_SHARE = 1 }
+	export enum RuleViolationInfoTrigger { TRIGGER_UNSPECIFIED = 'TRIGGER_UNSPECIFIED', DRIVE_SHARE = 'DRIVE_SHARE' }
 
 
 	/** A takeout operation for the entire domain was initiated by an admin. Derived from audit logs. */
@@ -1661,7 +1661,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MailPhishingSystemActionType { SYSTEM_ACTION_TYPE_UNSPECIFIED = 0, NO_OPERATION = 1, REMOVED_FROM_INBOX = 2 }
+	export enum MailPhishingSystemActionType { SYSTEM_ACTION_TYPE_UNSPECIFIED = 'SYSTEM_ACTION_TYPE_UNSPECIFIED', NO_OPERATION = 'NO_OPERATION', REMOVED_FROM_INBOX = 'REMOVED_FROM_INBOX' }
 
 
 	/** Alert Created by the MSA team for communications necessary for continued use of Google Workspace Products. */
@@ -2130,9 +2130,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransferErrorEntityType { TRANSFER_ENTITY_TYPE_UNSPECIFIED = 0, TRANSFER_AUTO_ATTENDANT = 1, TRANSFER_RING_GROUP = 2, TRANSFER_USER = 3 }
+	export enum TransferErrorEntityType { TRANSFER_ENTITY_TYPE_UNSPECIFIED = 'TRANSFER_ENTITY_TYPE_UNSPECIFIED', TRANSFER_AUTO_ATTENDANT = 'TRANSFER_AUTO_ATTENDANT', TRANSFER_RING_GROUP = 'TRANSFER_RING_GROUP', TRANSFER_USER = 'TRANSFER_USER' }
 
-	export enum TransferErrorInvalidReason { TRANSFER_INVALID_REASON_UNSPECIFIED = 0, TRANSFER_TARGET_DELETED = 1, UNLICENSED = 2, SUSPENDED = 3, NO_PHONE_NUMBER = 4 }
+	export enum TransferErrorInvalidReason { TRANSFER_INVALID_REASON_UNSPECIFIED = 'TRANSFER_INVALID_REASON_UNSPECIFIED', TRANSFER_TARGET_DELETED = 'TRANSFER_TARGET_DELETED', UNLICENSED = 'UNLICENSED', SUSPENDED = 'SUSPENDED', NO_PHONE_NUMBER = 'NO_PHONE_NUMBER' }
 
 
 	/** Error related to transferring or forwarding a phone call. */
@@ -2237,7 +2237,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceMisconfigurationEntityType { ENTITY_TYPE_UNSPECIFIED = 0, AUTO_ATTENDANT = 1, RING_GROUP = 2 }
+	export enum VoiceMisconfigurationEntityType { ENTITY_TYPE_UNSPECIFIED = 'ENTITY_TYPE_UNSPECIFIED', AUTO_ATTENDANT = 'AUTO_ATTENDANT', RING_GROUP = 'RING_GROUP' }
 
 
 	/** Issue(s) with sending to voicemail. */
@@ -2284,7 +2284,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoicemailRecipientErrorInvalidReason { EMAIL_INVALID_REASON_UNSPECIFIED = 0, OUT_OF_QUOTA = 1, RECIPIENT_DELETED = 2 }
+	export enum VoicemailRecipientErrorInvalidReason { EMAIL_INVALID_REASON_UNSPECIFIED = 'EMAIL_INVALID_REASON_UNSPECIFIED', OUT_OF_QUOTA = 'OUT_OF_QUOTA', RECIPIENT_DELETED = 'RECIPIENT_DELETED' }
 
 	@Injectable()
 	export class MyClient {
