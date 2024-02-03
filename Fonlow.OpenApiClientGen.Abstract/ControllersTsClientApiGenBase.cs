@@ -131,7 +131,14 @@ namespace Fonlow.CodeDom.Web.Ts
 
 					string containerClassName = nameComposer.GetContainerName(op.Value, p.Key);
 					CodeTypeDeclaration existingClass = LookupExistingClass(containerClassName);
-					existingClass.Members.Add(apiFunction);
+					if (settings.SortTypesMembersAndMethods)
+					{
+						existingClass.Members.InsertIntoSortedList(apiFunction);
+					}
+					else
+					{
+						existingClass.Members.Add(apiFunction);
+					}
 				}
 			}
 

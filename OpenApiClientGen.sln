@@ -56,8 +56,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidateClientApi", "Tests\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TsTestHelpers", "Tests\TsTestHelpers\TsTestHelpers.csproj", "{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetWebApi6", "PetWebApi6\PetWebApi6.csproj", "{051C0D17-DAD0-432C-9FF8-EB333E22564C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoClientApiTextJson", "Tests\DemoClientApiTextJson\DemoClientApiTextJson.csproj", "{8EFAF35D-AD99-4932-803D-7EB6CC18B933}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwagApiTestsTextJson", "Tests\SwagApiTestsTextJson\SwagApiTestsTextJson.csproj", "{EF4ED355-9EE6-40C7-B323-746122A838D5}"
@@ -162,10 +160,6 @@ Global
 		{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}.Release|Any CPU.Build.0 = Release|Any CPU
-		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EFAF35D-AD99-4932-803D-7EB6CC18B933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8EFAF35D-AD99-4932-803D-7EB6CC18B933}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EFAF35D-AD99-4932-803D-7EB6CC18B933}.Release|Any CPU.ActiveCfg = Release|Any CPU

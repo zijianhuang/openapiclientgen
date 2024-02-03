@@ -6,11 +6,14 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace Fonlow.OpenApiClientGen.CS
 {
@@ -174,8 +177,15 @@ namespace Fonlow.OpenApiClientGen.CS
 
 					string containerClassName = nameComposer.GetContainerName(op.Value, p.Key);
 					CodeTypeDeclaration existingClass = LookupExistingClass(containerClassName);
+					if (settings.SortTypesMembersAndMethods)
+					{
+						existingClass.Members.InsertIntoSortedList(apiFunction);
+					}
+					else
+					{
+						existingClass.Members.Add(apiFunction);
+					}
 
-					existingClass.Members.Add(apiFunction);
 					if (settings.GenerateBothAsyncAndSync)
 					{
 						ClientApiFunctionGen functionGen2 = new();
@@ -189,6 +199,11 @@ namespace Fonlow.OpenApiClientGen.CS
 				CreateDummyOfEnsureSuccessStatusCodeEx();
 			}
 		}
+
+		//void InsertMemberByOrder(CodeTypeMemberCollection collection, CodeTypeMember m)
+		//{
+		//	collection.InsertIntoSortedList(m);
+		//}
 
 		string[] GetContainerClassNames(OpenApiPaths paths)
 		{
@@ -353,6 +368,5 @@ namespace EnsureSuccessStatusCodeExDummy
 	
 }";
 	}
-
 
 }

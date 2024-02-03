@@ -64,7 +64,7 @@ namespace IntegrationTests
 		[Fact]
 		public async Task TestFindPets()
 		{
-			Pet[] aa = await api.FindPetsByStatusAsync(new PetStatus[] { PetStatus.sold, PetStatus.pending });
+			Pet[] aa = await api.FindPetsByStatusAsync(PetStatus.sold);
 			Assert.Equal(3, aa.Length);
 		}
 

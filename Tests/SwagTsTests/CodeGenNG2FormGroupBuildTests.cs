@@ -64,7 +64,7 @@ namespace SwagTests
 				ContainerClassName = "MyClient",
 				ActionNameStrategy = ActionNameStrategy.MethodQueryParameters,
 				ContainerNameStrategy = ContainerNameStrategy.Path,
-			
+
 			});
 		}
 
@@ -74,12 +74,12 @@ namespace SwagTests
 		[Fact]
 		public void TestPetWithGodContainerAndPathAction_NoBuild()
 		{
-			helper.GenerateAndAssert("SwagMock\\pet.yaml" , "NG2FormGroupResults\\PetGodClass.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock\\pet.yaml", "NG2FormGroupResults\\PetGodClass.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.PathMethodQueryParameters,
 				ContainerNameStrategy = ContainerNameStrategy.None,
-			
+
 			});
 		}
 
@@ -102,13 +102,27 @@ namespace SwagTests
 			helper.GenerateAndAssertBuild("SwagMock\\petStore.yaml", "NG2FormGroupResults\\PetStore.txt");
 		}
 
+		[Fact]
+		public void TestPetStoreSorted()
+		{
+			helper.GenerateAndAssertBuild("SwagMock\\petStore.yaml", "NG2FormGroupResults\\PetStoreSorted.txt", new Settings() // based my mySettings
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "MyClient", //the TestBed requires this containerClassName
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				DataAnnotationsToComments = true,
+				SortTypesMembersAndMethods = true,
+			});
+		}
+
 		/// <summary>
 		/// With settings and with different containerClassName. Thus no build
 		/// </summary>
 		[Fact]
 		public void TestPetStoreExpanded()
 		{
-			helper.GenerateAndAssert("SwagMock\\petStoreExpanded.yaml" , "NG2FormGroupResults\\PetStoreExpanded.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock\\petStoreExpanded.yaml", "NG2FormGroupResults\\PetStoreExpanded.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
@@ -122,12 +136,12 @@ namespace SwagTests
 		[Fact]
 		public void TestUspto()
 		{
-			helper.GenerateAndAssert("SwagMock\\uspto.yaml" , "NG2FormGroupResults\\Uspto.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock\\uspto.yaml", "NG2FormGroupResults\\Uspto.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
-				
+
 
 			});
 		}

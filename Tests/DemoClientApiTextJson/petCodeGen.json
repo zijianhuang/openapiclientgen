@@ -2,7 +2,7 @@
 	"ClientNamespace": "My.Pet.Client",
 	"ClientLibraryProjectFolderName": "",
 	"ContainerClassName": "PetClient",
-	"ClientLibraryFileName": "PetAuto.cs",
+	"ClientLibraryFileName": "PetStoreAuto.cs",
 	"ActionNameStrategy": 4,
 	"UseEnsureSuccessStatusCodeEx": true,
 	"DecorateDataModelWithDataContract": true,

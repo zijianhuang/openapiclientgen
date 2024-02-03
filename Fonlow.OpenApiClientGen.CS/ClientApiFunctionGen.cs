@@ -354,7 +354,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				if (settings.UseSystemTextJson)
 				{
 					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);"));
-					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var content = new System.Net.HttpStringContent(contentJson, System.Text.Encoding.UTF8, ""application/json"");"));
+					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, ""application/json"");"));
 				}
 				else
 				{

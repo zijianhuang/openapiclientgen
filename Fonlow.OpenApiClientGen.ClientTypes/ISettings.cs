@@ -36,5 +36,6 @@
 		bool UseNullableReferenceType { get; set; }
 		bool UsePascalCase { get; set; }
 		bool UseSystemTextJson { get; set; }
+		bool SortTypesMembersAndMethods { get; set; }
 	}
 }

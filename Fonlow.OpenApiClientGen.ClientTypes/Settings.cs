@@ -237,6 +237,11 @@
 		public bool DotsToNamespaces { get; set; }
 
 		/// <summary>
+		/// When generating codes, sort types, member properties and methods by alphabetic order.
+		/// </summary>
+		public bool SortTypesMembersAndMethods { get; set; }
+
+		/// <summary>
 		/// Meta for plugins that generate TypeScript/JavaScript codes.
 		/// </summary>
 		public JSPlugin[] Plugins { get; set; }

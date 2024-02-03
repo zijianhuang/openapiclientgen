@@ -18,149 +18,77 @@ namespace My.Pet.Client
 	
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
+	public class Address
+	{
+		
+		[System.Runtime.Serialization.DataMember(Name="city")]
+		public string City { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="state")]
+		public string State { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="street")]
+		public string Street { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="zip")]
+		public string Zip { get; set; }
+	}
+	
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class ApiResponse
 	{
 		
 		[System.Runtime.Serialization.DataMember(Name="code")]
 		public System.Nullable<System.Int32> Code { get; set; }
 		
-		[System.Runtime.Serialization.DataMember(Name="type")]
-		public string Type { get; set; }
-		
 		[System.Runtime.Serialization.DataMember(Name="message")]
 		public string Message { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Cat : Pet
-	{
 		
-		/// <summary>
-		/// The measured skill for hunting
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
-		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum CatHuntingSkill
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		clueless = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		lazy = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		adventurous = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		aggressive = 3,
+		[System.Runtime.Serialization.DataMember(Name="type")]
+		public string Type { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Category
 	{
 		
-		/// <summary>
-		/// Category ID
-		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
-		/// <summary>
-		/// Category name
-		/// Min length: 1
-		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public string Name { get; set; }
-		
-		/// <summary>
-		/// Test Sub Category
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="sub")]
-		public CategorySub Sub { get; set; }
 	}
 	
-	public class CategorySub
-	{
-		
-		/// <summary>
-		/// Dumb Property
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="prop1")]
-		public string Prop1 { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Dog : Pet
+	public class Customer
 	{
 		
-		/// <summary>
-		/// The size of the pack the dog is from
-		/// Required
-		/// Minimum: 1
-		/// </summary>
-		[System.ComponentModel.DefaultValue(1)]
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="packSize")]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public int PackSize { get; set; } = 1;
-	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class HoneyBee : Pet
-	{
+		[System.Runtime.Serialization.DataMember(Name="address")]
+		public Address[] Address { get; set; }
 		
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
-		public double HoneyPerDay { get; set; }
+		[System.Runtime.Serialization.DataMember(Name="id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="username")]
+		public string Username { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Order
 	{
 		
-		/// <summary>
-		/// Order ID
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="complete")]
+		public System.Nullable<System.Boolean> Complete { get; set; }
+		
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
-		/// <summary>
-		/// Pet ID
-		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="petId")]
 		public System.Nullable<System.Int64> PetId { get; set; }
 		
-		/// <summary>
-		/// Minimum: 1
-		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="quantity")]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
-		/// <summary>
-		/// Estimated ship date
-		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="shipDate")]
 		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
 		
@@ -169,18 +97,6 @@ namespace My.Pet.Client
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="status")]
 		public System.Nullable<OrderStatus> Status { get; set; }
-		
-		/// <summary>
-		/// Indicates whenever order was completed or not
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="complete")]
-		public System.Nullable<System.Boolean> Complete { get; set; }
-		
-		/// <summary>
-		/// Unique Request Id
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="requestId")]
-		public string RequestId { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
@@ -201,20 +117,13 @@ namespace My.Pet.Client
 	public class Pet
 	{
 		
-		/// <summary>
-		/// Pet ID
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="category")]
+		public Category Category { get; set; }
+		
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
-		/// Categories this pet belongs to
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="category")]
-		public Category Category { get; set; }
-		
-		/// <summary>
-		/// The name given to a pet
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -222,56 +131,20 @@ namespace My.Pet.Client
 		public string Name { get; set; }
 		
 		/// <summary>
-		/// The list of URL to a cute photos featuring pet
 		/// Required
-		/// Maximum items: 20
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="photoUrls")]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
 		public string[] PhotoUrls { get; set; }
 		
-		[System.Runtime.Serialization.DataMember(Name="friend")]
-		public Pet Friend { get; set; }
-		
 		/// <summary>
-		/// Tags attached to the pet
-		/// Minimum items: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public Tag[] Tags { get; set; }
-		
-		/// <summary>
-		/// Pet status in the store
+		/// pet status in the store
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="status")]
 		public System.Nullable<PetStatus> Status { get; set; }
 		
-		/// <summary>
-		/// Type of a pet
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="petType")]
-		public string PetType { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Tag
-	{
-		
-		/// <summary>
-		/// Tag ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Tag name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string Name { get; set; }
+		[System.Runtime.Serialization.DataMember(Name="tags")]
+		public Tag[] Tags { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
@@ -289,65 +162,43 @@ namespace My.Pet.Client
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class User
+	public class Tag
 	{
 		
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
-		[System.Runtime.Serialization.DataMember(Name="pet")]
-		public Pet Pet { get; set; }
+		[System.Runtime.Serialization.DataMember(Name="name")]
+		public string Name { get; set; }
+	}
+	
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
+	public class User
+	{
 		
-		/// <summary>
-		/// User supplied username
-		/// Min length: 4
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="username")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		public string Username { get; set; }
-		
-		/// <summary>
-		/// User first name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="firstName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string FirstName { get; set; }
-		
-		/// <summary>
-		/// User last name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="lastName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string LastName { get; set; }
-		
-		/// <summary>
-		/// User email address
-		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		public string Email { get; set; }
 		
-		/// <summary>
-		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
-		/// Min length: 8
-		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="firstName")]
+		public string FirstName { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="lastName")]
+		public string LastName { get; set; }
+		
 		[System.Runtime.Serialization.DataMember(Name="password")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/")]
 		public string Password { get; set; }
 		
-		/// <summary>
-		/// User phone number in international format
-		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phone")]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/^\+(?:[0-9]-?){6,14}[0-9]$/")]
 		public string Phone { get; set; }
 		
+		[System.Runtime.Serialization.DataMember(Name="username")]
+		public string Username { get; set; }
+		
 		/// <summary>
-		/// User status
+		/// User Status
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="userStatus")]
 		public System.Nullable<System.Int32> UserStatus { get; set; }
@@ -374,11 +225,12 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// Add a new pet to the store
-		/// Add new pet to the store inventory.
+		/// Add a new pet to the store
 		/// AddPet pet
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task AddPetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="requestBody">Create a new pet in the store</param>
+		/// <returns>Successful operation</returns>
+		public async Task<Pet> AddPetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pet";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -389,70 +241,6 @@ namespace My.Pet.Client
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Update an existing pet
-		/// UpdatePet pet
-		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Find pet by ID
-		/// Returns a single pet
-		/// GetPetById pet/{petId}
-		/// </summary>
-		/// <param name="petId">ID of pet to return</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet> GetPetByIdAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/"+petId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -474,10 +262,12 @@ namespace My.Pet.Client
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
 		/// Deletes a pet
+		/// delete a pet
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
@@ -510,9 +300,9 @@ namespace My.Pet.Client
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
+			var requestUri = "pet/findByStatus?status=" + status;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -574,6 +364,155 @@ namespace My.Pet.Client
 		}
 		
 		/// <summary>
+		/// Find pet by ID
+		/// Returns a single pet
+		/// GetPetById pet/{petId}
+		/// </summary>
+		/// <param name="petId">ID of pet to return</param>
+		/// <returns>successful operation</returns>
+		public async Task<Pet> GetPetByIdAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "pet/"+petId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update an existing pet
+		/// Update an existing pet by Id
+		/// UpdatePet pet
+		/// </summary>
+		/// <param name="requestBody">Update an existent pet in the store</param>
+		/// <returns>Successful operation</returns>
+		public async Task<Pet> UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "pet";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a pet in the store with form data
+		/// UpdatePetWithForm pet/{petId}
+		/// </summary>
+		/// <param name="petId">ID of pet that needs to be updated</param>
+		/// <param name="name">Name of pet that needs to be updated</param>
+		/// <param name="status">Status of pet that needs to be updated</param>
+		public async Task UpdatePetWithFormAsync(long petId, string name, string status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "pet/"+petId+"?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+	}
+	
+	public partial class StoreClient
+	{
+		
+		private System.Net.Http.HttpClient httpClient;
+		
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public StoreClient(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
+		{
+			if (httpClient == null)
+				throw new ArgumentNullException("Null HttpClient.", "httpClient");
+
+			if (httpClient.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "httpClient");
+
+			this.httpClient = httpClient;
+			this.jsonSerializerSettings = jsonSerializerSettings;
+		}
+		
+		/// <summary>
+		/// Delete purchase order by ID
+		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
+		/// DeleteOrder store/order/{orderId}
+		/// </summary>
+		/// <param name="orderId">ID of the order that needs to be deleted</param>
+		public async Task DeleteOrderAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "store/order/"+orderId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Returns pet inventories by status
 		/// Returns a map of status codes to quantities
 		/// GetInventory store/inventory
@@ -608,10 +547,45 @@ namespace My.Pet.Client
 		}
 		
 		/// <summary>
+		/// Find purchase order by ID
+		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
+		/// GetOrderById store/order/{orderId}
+		/// </summary>
+		/// <param name="orderId">ID of order that needs to be fetched</param>
+		/// <returns>successful operation</returns>
+		public async Task<Order> GetOrderByIdAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "store/order/"+orderId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Order>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Place an order for a pet
+		/// Place a new order in the store
 		/// PlaceOrder store/order
 		/// </summary>
-		/// <param name="requestBody">order placed for purchasing the pet</param>
 		/// <returns>successful operation</returns>
 		public async Task<Order> PlaceOrderAsync(Order requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -647,68 +621,25 @@ namespace My.Pet.Client
 			}
 			}
 		}
+	}
+	
+	public partial class UserClient
+	{
 		
-		/// <summary>
-		/// Find purchase order by ID
-		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
-		/// GetOrderById store/order/{orderId}
-		/// </summary>
-		/// <param name="orderId">ID of pet that needs to be fetched</param>
-		/// <returns>successful operation</returns>
-		public async Task<Order> GetOrderByIdAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order/"+orderId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Order>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
+		private System.Net.Http.HttpClient httpClient;
 		
-		/// <summary>
-		/// Delete purchase order by ID
-		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-		/// DeleteOrder store/order/{orderId}
-		/// </summary>
-		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public async Task DeleteOrderAsync(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public UserClient(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
 		{
-			var requestUri = "store/order/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
+			if (httpClient == null)
+				throw new ArgumentNullException("Null HttpClient.", "httpClient");
 
-			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
+			if (httpClient.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "httpClient");
+
+			this.httpClient = httpClient;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -747,50 +678,15 @@ namespace My.Pet.Client
 		}
 		
 		/// <summary>
-		/// Get user by user name
-		/// GetUserByName user/{username}
+		/// Creates list of users with given input array
+		/// Creates list of users with given input array
+		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
-		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
-		/// <returns>successful operation</returns>
-		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>Successful operation</returns>
+		public async Task<User> CreateUsersWithListInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<User>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Updated user
-		/// This can only be done by the logged in user.
-		/// UpdateUser user/{username}
-		/// </summary>
-		/// <param name="username">name that need to be deleted</param>
-		/// <param name="requestBody">Updated user object</param>
-		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
+			var requestUri = "user/createWithList";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
@@ -807,6 +703,12 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<User>(jsonReader);
+				}
 			}
 			finally
 			{
@@ -845,21 +747,16 @@ namespace My.Pet.Client
 		}
 		
 		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithArrayInput user/createWithArray
+		/// Get user by user name
+		/// GetUserByName user/{username}
 		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithArrayInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
+		/// <returns>successful operation</returns>
+		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/createWithArray";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -869,45 +766,16 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<User>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithListInput user/createWithList
-		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithListInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/createWithList";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -968,6 +836,42 @@ namespace My.Pet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update user
+		/// This can only be done by the logged in user.
+		/// UpdateUser user/{username}
+		/// </summary>
+		/// <param name="username">name that need to be deleted</param>
+		/// <param name="requestBody">Update an existent user in the store</param>
+		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}

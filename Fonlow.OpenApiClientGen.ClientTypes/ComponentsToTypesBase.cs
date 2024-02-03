@@ -74,6 +74,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return writer.ToString();
 		}
 
+		/// <summary>
+		/// And the namespaces and the components will be sorted by alphabetic order.
+		/// </summary>
+		/// <param name="components"></param>
 		public void CreateCodeDomForComponents(OpenApiComponents components)
 		{
 			if (components == null)
@@ -81,7 +85,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			ComponentsSchemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
+			ComponentsSchemas = components.Schemas;
 			if (components.RequestBodies != null)
 			{
 				var stronglyTypedRequestBodies = ExtractRequestBodiesOfApplicationJson(components.RequestBodies);
@@ -101,7 +105,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				var groupedComponentsSchemas = ComponentsSchemas
 					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
-					.OrderBy(k => k.Key);
+					.OrderBy(k => k.Key); // always sort namespaces if there are multiple ones
 				//var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
 				foreach (var groupedTypes in groupedComponentsSchemas)
 				{
@@ -113,7 +117,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					AddNamespaceDeclarationIfNotExist(classNamespaceText);
 
-					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
+					IEnumerable<KeyValuePair<string, OpenApiSchema>> schemaListOfNamespace = settings.SortTypesMembersAndMethods ? groupedTypes.OrderBy(t => t.Key) : groupedTypes;
+					foreach (var kv in schemaListOfNamespace)
 					{
 						AddTypeToCodeDom(kv.Key, kv.Value);
 					}
@@ -121,7 +126,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
+				IEnumerable<KeyValuePair<string, OpenApiSchema>> schemaList = settings.SortTypesMembersAndMethods ? ComponentsSchemas.OrderBy(t => t.Key) : ComponentsSchemas;
+				foreach (KeyValuePair<string, OpenApiSchema> item in schemaList)
 				{
 					var existingType = FindCodeTypeDeclarationInNamespaces(Renamer.RefineTypeName(item.Key, null), null);
 					if (existingType == null)
@@ -173,7 +179,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
-			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
+			IEnumerable<KeyValuePair<string, OpenApiSchema>> propertyList = settings.SortTypesMembersAndMethods ? schema.Properties.OrderBy(d => d.Key) : schema.Properties;
+			foreach (KeyValuePair<string, OpenApiSchema> p in propertyList)
 			{
 				AddProperty(p.Key, p.Value, typeDeclaration, schema, currentTypeName, ns);
 			}

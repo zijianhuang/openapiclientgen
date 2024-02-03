@@ -21,13 +21,13 @@ namespace MyNamespace
 		/// <param name="accept_Language">The language you prefer for messages. Supported values are en-AU, en-CA, en-GB, en-US</param>
 		/// <param name="cookieParam">Some cookie</param>
 		[HttpPost, Route("pet")]
-		public async Task<IActionResult> AddPet([FromBody] Pet body)//, [FromHeader(Name = "Accept-Language")] string accept_Language, long cookieParam)
+		public async Task<Pet> AddPet([FromBody] Pet body)//, [FromHeader(Name = "Accept-Language")] string accept_Language, long cookieParam)
 		{
 			long key = PetData.Instance.GetCurrentMax();
 			body.Id = key;
 			PetData.Instance.Dic.TryAdd(key, body);
 			Response.Headers.Add("transaction-id", Request.Headers["transaction-id"]);
-			return Ok(body.Name + " " + Request.Headers["transaction-id"]);
+			return body;
 		}
 
 		/// <summary>Update an existing pet</summary>
@@ -91,9 +91,9 @@ namespace MyNamespace
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
 		[HttpGet, Route("pet/findByStatus")]
-		public async Task<ActionResult<System.Collections.Generic.ICollection<Pet>>> FindPetsByStatus([FromQuery] System.Collections.Generic.IEnumerable<PetStatus> status)
+		public async Task<ActionResult<System.Collections.Generic.ICollection<Pet>>> FindPetsByStatus([FromQuery] PetStatus status)
 		{
-			return PetData.Instance.Dic.Values.Where(d => status.Contains(d.Status)).ToArray();
+			return PetData.Instance.Dic.Values.Where(d => status==d.Status).ToArray();
 		}
 
 		/// <summary>Finds Pets by tags</summary>
@@ -210,32 +210,6 @@ namespace MyNamespace
 		}
 
 	}
-
-	[System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-	public partial class ApiResponse
-	{
-		[Newtonsoft.Json.JsonProperty("code", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-		public int Code { get; set; }
-
-		[Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-		public string Type { get; set; }
-
-		[Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-		public string Message { get; set; }
-
-		private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-		[Newtonsoft.Json.JsonExtensionData]
-		public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-		{
-			get { return _additionalProperties; }
-			set { _additionalProperties = value; }
-		}
-
-
-	}
-
-
 
 	[System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
 	[System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple = true)]
@@ -371,255 +345,193 @@ namespace MyNamespace
 		}
 	}
 
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	public class Cat : Pet
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
+	public class Address
 	{
 
-		/// <summary>
-		/// The measured skill for hunting
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
+		[System.Runtime.Serialization.DataMember(Name = "street")]
+		public string Street { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "city")]
+		public string City { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "state")]
+		public string State { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "zip")]
+		public string Zip { get; set; }
 	}
 
-	public enum CatHuntingSkill
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
+	public class ApiResponse
 	{
 
-		clueless = 0,
+		[System.Runtime.Serialization.DataMember(Name = "code")]
+		public System.Nullable<System.Int32> Code { get; set; }
 
-		lazy = 1,
+		[System.Runtime.Serialization.DataMember(Name = "type")]
+		public string Type { get; set; }
 
-		adventurous = 2,
-
-		aggressive = 3,
+		[System.Runtime.Serialization.DataMember(Name = "message")]
+		public string Message { get; set; }
 	}
 
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
 	public class Category
 	{
 
-		/// <summary>
-		/// Category ID
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 
-		/// <summary>
-		/// Category name
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
-
-		/// <summary>
-		/// Test Sub Category
-		/// </summary>
-		public string Sub { get; set; }
 	}
 
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	public class Dog : Pet
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
+	public class Customer
 	{
 
-		/// <summary>
-		/// The size of the pack the dog is from
-		/// Minimum: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public int PackSize { get; set; } = 1;
+		[System.Runtime.Serialization.DataMember(Name = "id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "username")]
+		public string Username { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "address")]
+		public Address[] Address { get; set; }
 	}
 
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	public class HoneyBee : Pet
-	{
-
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public float HoneyPerDay { get; set; }
-	}
-
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
 	public class Order
 	{
 
-		/// <summary>
-		/// Order ID
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 
-		/// <summary>
-		/// Pet ID
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "petId")]
 		public System.Nullable<System.Int64> PetId { get; set; }
 
-		/// <summary>
-		/// Minimum: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		[System.Runtime.Serialization.DataMember(Name = "quantity")]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 
-		/// <summary>
-		/// Estimated ship date
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "shipDate")]
 		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
 
 		/// <summary>
 		/// Order Status
 		/// </summary>
-		public OrderStatus Status { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "status")]
+		public System.Nullable<OrderStatus> Status { get; set; }
 
-		/// <summary>
-		/// Indicates whenever order was completed or not
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "complete")]
 		public System.Nullable<System.Boolean> Complete { get; set; }
-
-		/// <summary>
-		/// Unique Request Id
-		/// </summary>
-		public string RequestId { get; set; }
 	}
 
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
 	public enum OrderStatus
 	{
 
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		placed = 0,
 
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approved = 1,
 
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 2,
 	}
 
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
 	public class Pet
 	{
 
-		/// <summary>
-		/// Pet ID
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 
 		/// <summary>
-		/// Categories this pet belongs to
-		/// </summary>
-		public string Category { get; set; }
-
-		/// <summary>
-		/// The name given to a pet
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
 
+		[System.Runtime.Serialization.DataMember(Name = "category")]
+		public Category Category { get; set; }
+
 		/// <summary>
-		/// The list of URL to a cute photos featuring pet
-		/// Maximum items: 20
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.Runtime.Serialization.DataMember(Name = "photoUrls")]
 		public string[] PhotoUrls { get; set; }
 
-		public string Friend { get; set; }
-
-		/// <summary>
-		/// Tags attached to the pet
-		/// Minimum items: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.Runtime.Serialization.DataMember(Name = "tags")]
 		public Tag[] Tags { get; set; }
 
 		/// <summary>
-		/// Pet status in the store
+		/// pet status in the store
 		/// </summary>
-		public PetStatus Status { get; set; }
-
-		/// <summary>
-		/// Type of a pet
-		/// </summary>
-		public string PetType { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "status")]
+		public System.Nullable<PetStatus> Status { get; set; }
 	}
 
-	public enum PetStatus
-	{
-
-		available = 0,
-
-		pending = 1,
-
-		sold = 2,
-	}
-
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
 	public class Tag
 	{
 
-		/// <summary>
-		/// Tag ID
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 
-		/// <summary>
-		/// Tag name
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
 	}
 
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
+	public enum PetStatus
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		available = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		pending = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		sold = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "http://pet.domain/2020/03")]
 	public class User
 	{
 
+		[System.Runtime.Serialization.DataMember(Name = "id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 
-		public string Pet { get; set; }
-
-		/// <summary>
-		/// User supplied username
-		/// Min length: 4
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 4)]
+		[System.Runtime.Serialization.DataMember(Name = "username")]
 		public string Username { get; set; }
 
-		/// <summary>
-		/// User first name
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+		[System.Runtime.Serialization.DataMember(Name = "firstName")]
 		public string FirstName { get; set; }
 
-		/// <summary>
-		/// User last name
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+		[System.Runtime.Serialization.DataMember(Name = "lastName")]
 		public string LastName { get; set; }
 
-		/// <summary>
-		/// User email address
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "email")]
 		public string Email { get; set; }
 
-		/// <summary>
-		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
-		/// Min length: 8
-		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 8)]
+		[System.Runtime.Serialization.DataMember(Name = "password")]
 		public string Password { get; set; }
 
-		/// <summary>
-		/// User phone number in international format
-		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "phone")]
 		public string Phone { get; set; }
 
 		/// <summary>
-		/// User status
+		/// User Status
 		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "userStatus")]
 		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
+
 
 	[System.CodeDom.Compiler.GeneratedCode("NSwag", "13.3.0.0 (NJsonSchema v10.1.11.0 (Newtonsoft.Json v12.0.0.0))")]
 	public partial class FileParameter
