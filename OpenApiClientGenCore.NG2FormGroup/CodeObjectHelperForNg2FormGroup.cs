@@ -106,14 +106,14 @@ namespace Fonlow.TypeScriptCodeDom
 			var name = e.Name;
 			var typeParametersExpression = GetTypeParametersExpression(e);
 			var baseTypesExpression = GetBaseTypeExpression(e);
-			if (typeOfType == "interface")
+			if (typeOfType == TypeOfType.IsInterface)
 			{
 				var extendsExpression = $"{typeParametersExpression}{baseTypesExpression}";
 				var isGeneric = extendsExpression.Contains("<");
 				var formPropertiesSuffix = isGeneric ? String.Empty : "FormProperties";
 				var extendsExpressionForNg = extendsExpression == String.Empty ? String.Empty : $"{extendsExpression}{formPropertiesSuffix}";
 				var formGroupInterface = $"{name}FormProperties";
-				w.Write($"{o.IndentString}{accessModifier}{typeOfType} {formGroupInterface}{extendsExpressionForNg} {{");
+				w.Write($"{o.IndentString}{accessModifier}{GetTypeOfTypeText(e)} {formGroupInterface}{extendsExpressionForNg} {{");
 				WriteAngularFormTypeMembersAndCloseBracing(e, w, o);
 			}
 			else
@@ -140,7 +140,7 @@ namespace Fonlow.TypeScriptCodeDom
 			var name = e.Name;
 			var typeParametersExpression = GetTypeParametersExpression(e);
 			var baseTypesExpression = GetBaseTypeExpression(e);
-			if (typeOfType == "interface")
+			if (typeOfType == TypeOfType.IsInterface)
 			{
 				var extendsExpression = $"{typeParametersExpression}{baseTypesExpression}";
 				var isGeneric = extendsExpression.Contains("<");
