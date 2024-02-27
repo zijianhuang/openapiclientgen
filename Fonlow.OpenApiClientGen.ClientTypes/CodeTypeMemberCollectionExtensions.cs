@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	/// <summary>
-	/// 
+	/// In-place sorting
 	/// Inspired by Jackson Dunstan, http://JacksonDunstan.com/articles/3189.
 	/// </summary>
 	public static class CodeTypeMemberCollectionExtensions
@@ -57,6 +57,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					endIndex = middleIndex;
 				}
 			}
+
 			list.Insert(startIndex, value);
 		}
 	}

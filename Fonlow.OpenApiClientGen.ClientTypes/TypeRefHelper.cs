@@ -11,58 +11,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public static class TypeRefHelper
 	{
-		///// <summary>
-		///// Translate OpenApiMediaType content to CodeTypeReference
-		///// </summary>
-		///// <param name="content"></param>
-		///// <returns></returns>
-		//public static CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content, bool dotsToNamespaces)
-		//{
-		//	if (content.Schema == null)
-		//	{
-		//		throw new ArgumentException("Content has no Schema", nameof(content));
-		//	}
-
-		//	string schemaType = content.Schema.Type;
-		//	if (schemaType != null)
-		//	{
-		//		if (schemaType == "array") // for array
-		//		{
-		//			OpenApiSchema arrayItemsSchema = content.Schema.Items;
-		//			if (arrayItemsSchema.Reference != null) //array of custom type
-		//			{
-		//				string ns = dotsToNamespaces ? NameFunc.GetNamespaceOfClassName(arrayItemsSchema.Reference.Id) : string.Empty;
-		//				string arrayTypeName = NameFunc.RefineTypeName(arrayItemsSchema.Reference.Id, ns, dotsToNamespaces);
-		//				CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(CombineNamespaceWithClassName(ns, arrayTypeName), 1);
-		//				return arrayCodeTypeReference;
-		//			}
-		//			else
-		//			{
-		//				string arrayType = arrayItemsSchema.Type;
-		//				Type clrType = PrimitiveSwaggerTypeToClrType(arrayType, null);
-		//				CodeTypeReference arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
-		//				return arrayCodeTypeReference;
-		//			}
-		//		}
-		//		else if (content.Schema.Enum.Count == 0) // for primitive type
-		//		{
-		//			Type simpleType = PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
-		//			CodeTypeReference codeTypeReference = new(simpleType);
-		//			return codeTypeReference;
-		//		}
-		//		else if (content.Schema.Enum.Count > 0)
-		//		{
-		//			var refinedTypeName = NameFunc.RefineTypeName(content.Schema.Type, content.Schema.Format);
-		//			schemaType = refinedTypeName;
-		//		}
-
-		//		string schemaFormat = content.Schema.Format;
-		//		return new CodeTypeReference(PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));
-		//	}
-
-		//	return null;
-		//}
-
 		/// <summary>
 		/// https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md
 		/// https://swagger.io/specification/
@@ -86,6 +34,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return basicClrTypeDic.TryGetValue(type, out _);
 		}
 
+		/// <summary>
+		/// Primitive Swagger Type To Ts Type. Used only for array.
+		/// </summary>
+		/// <param name="type"></param>
+		/// <param name="format"></param>
+		/// <returns></returns>
 		public static string PrimitiveSwaggerTypeToTsType(string type, string format)
 		{
 			string key = type + (String.IsNullOrEmpty(format) ? String.Empty : ("_" + format));

@@ -149,7 +149,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								Trace.TraceInformation($"TypeAliasDic.Add({refId}, {newTypeName}[]) -- generated: {newTypeName}");
 							}
 						}
-						else if (!String.IsNullOrEmpty(schema.Items.Type)) // add type alias as something like "using Code_frequency_stat = int[];"
+						else if (!String.IsNullOrEmpty(schema.Items.Type))
 						{
 							if (TypeAliasDic.TryGet(schema.Items.Type, out string itemsTypeAlias))
 							{

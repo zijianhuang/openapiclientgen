@@ -14,7 +14,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			KeywordsHashSet = new HashSet<string>();
 		}
 
-		protected HashSet<string> KeywordsHashSet;
+		protected HashSet<string> KeywordsHashSet { get; set; }
 
 		public bool IsKeyword(string s)
 		{
@@ -54,9 +54,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return dotsToNamespaces ? r : r.Replace(".", string.Empty);
 		}
 
+		/// <summary>
+		/// Enum member names from def may be invalid in C# and TS, as many definitions use wide variety of symbols as enum names.
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="settings"></param>
+		/// <returns></returns>
 		public string RefineEnumMemberName(string s, ISettings settings = null)
 		{
 #if DEBUG
+			//test bed
 			if (s == "-1")
 			{
 				Debug.WriteLine("ccc");

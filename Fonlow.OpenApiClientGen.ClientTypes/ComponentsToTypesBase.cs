@@ -38,7 +38,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public List<CodeNamespace> ClassNamespaces { get; private set; } = new List<CodeNamespace>();
 
-		public TypeAliasDic TypeAliasDic { get; private set; }
+		protected TypeAliasDic TypeAliasDic { get; private set; }
 
 		protected void RegisterSchemaRefIdToBeAdded(string t)
 		{
