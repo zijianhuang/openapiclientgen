@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Linq;
 using System.Collections.Generic;
+using Fonlow.Poco2Client;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -32,9 +33,12 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		readonly IRenamer renamer;
 
+		readonly IDictionary<Type, string> dotNetTypeCommentDic;
+
 		protected ClientApiTsFunctionGenAbstract()
 		{
 			renamer = new TypeScriptRenamer();
+			dotNetTypeCommentDic = DotNetTypeCommentGenerator.Get();
 		}
 
 		public CodeMemberMethod CreateApiFunction(ISettings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
@@ -153,6 +157,14 @@ namespace Fonlow.CodeDom.Web.Ts
 					if (funky)
 					{
 						Trace.TraceWarning($"param {TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}  {item.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+					}
+				}
+				else
+				{
+					bool paramTypeCommentExists = dotNetTypeCommentDic.TryGetValue(item.ParameterDescriptor.ParameterType, out string paramTypeComment);
+					if (paramTypeCommentExists)
+					{
+						builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {paramTypeComment}");
 					}
 				}
 			}

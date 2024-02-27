@@ -25,6 +25,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/Values/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} Success
 		 */
 		ValuesGetById(id: number): Observable<string> {
@@ -33,6 +34,7 @@ export namespace MyNS {
 
 		/**
 		 * Put api/Values/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ValuesPutById(id: number, requestBody: string): Observable<HttpResponse<string>> {
@@ -41,6 +43,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/Values/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ValuesDeleteById(id: number): Observable<HttpResponse<string>> {

@@ -24,6 +24,8 @@ namespace SwagTests
 
 		/** Type of a pet */
 		petType?: string | null;
+
+		/** Type: DateOnly */
 		BirthDate?: Date | null;
 
 		/** The id of a pet */
@@ -36,6 +38,8 @@ namespace SwagTests
 
 		/** Type of a pet */
 		petType: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		BirthDate: FormControl<Date | null | undefined>,
 
 		/** The id of a pet */
@@ -65,7 +69,7 @@ namespace SwagTests
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Category name
@@ -76,7 +80,7 @@ namespace SwagTests
 	export interface CategoryFormProperties {
 
 		/** Category ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Category name
@@ -86,7 +90,7 @@ namespace SwagTests
 	}
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -102,6 +106,8 @@ namespace SwagTests
 
 		/** Type of a pet */
 		petType?: string | null;
+
+		/** Type: DateOnly */
 		BirthDate?: Date | null;
 
 		/** The id of a pet */
@@ -114,6 +120,8 @@ namespace SwagTests
 
 		/** Type of a pet */
 		petType: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		BirthDate: FormControl<Date | null | undefined>,
 
 		/** The id of a pet */
@@ -348,7 +356,7 @@ namespace SwagTests
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -359,7 +367,7 @@ namespace SwagTests
 	export interface TagFormProperties {
 
 		/** Tag ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Tag name
@@ -369,7 +377,7 @@ namespace SwagTests
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -450,7 +458,7 @@ namespace SwagTests
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -461,7 +469,7 @@ namespace SwagTests
 	export interface TagFormProperties {
 
 		/** Tag ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Tag name
@@ -471,7 +479,7 @@ namespace SwagTests
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -569,7 +577,7 @@ export namespace MyNS {
 		dateDict?: {[id: string]: Date };
 		intDict?: {[id: string]: number };
 		int32Dict?: {[id: string]: number };
-		int64Dict?: {[id: string]: number };
+		int64Dict?: {[id: string]: string };
 		floatDict?: {[id: string]: number };
 		doubleDict?: {[id: string]: number };
 		numberDict?: {[id: string]: number };
@@ -583,7 +591,7 @@ export namespace MyNS {
 		dateDict: FormControl<{[id: string]: Date } | null | undefined>,
 		intDict: FormControl<{[id: string]: number } | null | undefined>,
 		int32Dict: FormControl<{[id: string]: number } | null | undefined>,
-		int64Dict: FormControl<{[id: string]: number } | null | undefined>,
+		int64Dict: FormControl<{[id: string]: string } | null | undefined>,
 		floatDict: FormControl<{[id: string]: number } | null | undefined>,
 		doubleDict: FormControl<{[id: string]: number } | null | undefined>,
 		numberDict: FormControl<{[id: string]: number } | null | undefined>,
@@ -596,7 +604,7 @@ export namespace MyNS {
 			dateDict: new FormControl<{[id: string]: Date } | null | undefined>(undefined),
 			intDict: new FormControl<{[id: string]: number } | null | undefined>(undefined),
 			int32Dict: new FormControl<{[id: string]: number } | null | undefined>(undefined),
-			int64Dict: new FormControl<{[id: string]: number } | null | undefined>(undefined),
+			int64Dict: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			floatDict: new FormControl<{[id: string]: number } | null | undefined>(undefined),
 			doubleDict: new FormControl<{[id: string]: number } | null | undefined>(undefined),
 			numberDict: new FormControl<{[id: string]: number } | null | undefined>(undefined),
@@ -609,7 +617,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -620,7 +628,7 @@ export namespace MyNS {
 	export interface TagFormProperties {
 
 		/** Tag ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Tag name
@@ -630,7 +638,7 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 

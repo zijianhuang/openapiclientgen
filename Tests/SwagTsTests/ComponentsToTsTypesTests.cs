@@ -24,6 +24,8 @@ namespace SwagTests
 
 		/** Type of a pet */
 		petType?: string | null;
+
+		/** Type: DateOnly */
 		BirthDate?: Date | null;
 
 		/** The id of a pet */
@@ -44,7 +46,7 @@ namespace SwagTests
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Category name
@@ -63,6 +65,8 @@ namespace SwagTests
 
 		/** Type of a pet */
 		petType?: string | null;
+
+		/** Type: DateOnly */
 		BirthDate?: Date | null;
 
 		/** The id of a pet */
@@ -209,7 +213,7 @@ namespace SwagTests
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -263,7 +267,7 @@ namespace SwagTests
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -327,7 +331,7 @@ export namespace MyNS {
 		dateDict?: {[id: string]: Date };
 		intDict?: {[id: string]: number };
 		int32Dict?: {[id: string]: number };
-		int64Dict?: {[id: string]: number };
+		int64Dict?: {[id: string]: string };
 		floatDict?: {[id: string]: number };
 		doubleDict?: {[id: string]: number };
 		numberDict?: {[id: string]: number };
@@ -338,7 +342,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Tag name */
 		name?: string | null;
