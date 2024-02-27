@@ -510,12 +510,20 @@ export namespace MyNS {
 	}
 
 	export interface AccountsReceivable {
+
+		/** Type: double */
 		Outstanding?: number | null;
+
+		/** Type: double */
 		Overdue?: number | null;
 	}
 
 	export interface AccountsPayable {
+
+		/** Type: double */
 		Outstanding?: number | null;
+
+		/** Type: double */
 		Overdue?: number | null;
 	}
 

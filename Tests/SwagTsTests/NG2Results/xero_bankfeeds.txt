@@ -126,6 +126,8 @@ export namespace MyNS {
 		endBalance?: EndBalance;
 		statementLines?: Array<StatementLine>;
 		errors?: Array<Error>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statementLineCount?: number | null;
 	}
 
@@ -147,6 +149,8 @@ export namespace MyNS {
 
 	/** The StartBalance plus all the Statement Line Amounts should be equal to the EndBalance Amount. */
 	export interface EndBalance {
+
+		/** Type: double */
 		amount?: number | null;
 
 		/** If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer. */

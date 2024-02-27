@@ -150,9 +150,13 @@ export namespace MyNS {
 	}
 
 	export interface AnnotationsSummaryLayers {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount?: number | null;
 		layerId?: string | null;
 		limitType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount?: number | null;
 		updated?: Date | null;
 	}
@@ -400,6 +404,8 @@ export namespace MyNS {
 
 		/** Resorce type. */
 		kind?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalClusters?: number | null;
 	}
 
@@ -407,6 +413,8 @@ export namespace MyNS {
 		banner_with_content_container?: DiscoveryclustersClustersBanner_with_content_container;
 		subTitle?: string | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalVolumes?: number | null;
 		uid?: string | null;
 		volumes?: Array<Volume>;
@@ -639,16 +647,22 @@ export namespace MyNS {
 	}
 
 	export interface VolumeSaleInfoOffersListPrice {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 	}
 
 	export interface VolumeSaleInfoOffersRentalDuration {
+
+		/** Type: double */
 		count?: number | null;
 		unit?: string | null;
 	}
 
 	export interface VolumeSaleInfoOffersRetailPrice {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 	}
@@ -723,8 +737,12 @@ export namespace MyNS {
 	}
 
 	export interface VolumeUserInfoCopy {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount?: number | null;
 		limitType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount?: number | null;
 		updated?: Date | null;
 	}
@@ -987,6 +1005,8 @@ export namespace MyNS {
 
 	export interface VolumeseriesinfoVolumeSeriesIssue {
 		issueDisplayNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issueOrderNumber?: number | null;
 	}
 
@@ -1081,12 +1101,20 @@ export namespace MyNS {
 	}
 
 	export interface GeolayerdataGeoViewportHi {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 
 	export interface GeolayerdataGeoViewportLo {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 

@@ -4,11 +4,15 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ApiResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		type?: string | null;
 		message?: string | null;
 	}
 	export interface ApiResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -38,7 +42,7 @@ export namespace MyNS {
 	}
 	export function CreateCatFormGroup() {
 		return new FormGroup<CatFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -52,7 +56,7 @@ export namespace MyNS {
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Category name */
 		name?: string | null;
@@ -63,14 +67,14 @@ export namespace MyNS {
 	export interface CategoryFormProperties {
 
 		/** Category ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Category name */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -109,7 +113,7 @@ export namespace MyNS {
 	}
 	export function CreateDogFormGroup() {
 		return new FormGroup<DogFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -134,7 +138,7 @@ export namespace MyNS {
 	}
 	export function CreateHoneyBeeFormGroup() {
 		return new FormGroup<HoneyBeeFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -146,10 +150,12 @@ export namespace MyNS {
 	export interface Order {
 
 		/** Order ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Pet ID */
-		petId?: number | null;
+		petId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantity?: number | null;
 
 		/** Estimated ship date */
@@ -167,10 +173,12 @@ export namespace MyNS {
 	export interface OrderFormProperties {
 
 		/** Order ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Pet ID */
-		petId: FormControl<number | null | undefined>,
+		petId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Estimated ship date */
@@ -187,8 +195,8 @@ export namespace MyNS {
 	}
 	export function CreateOrderFormGroup() {
 		return new FormGroup<OrderFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
-			petId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			petId: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			shipDate: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<OrderStatus | null | undefined>(undefined),
@@ -203,7 +211,7 @@ export namespace MyNS {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Categories this pet belongs to */
 		category?: Category;
@@ -227,7 +235,7 @@ export namespace MyNS {
 	export interface PetFormProperties {
 
 		/** Pet ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The name given to a pet */
 		name: FormControl<string | null | undefined>,
@@ -240,7 +248,7 @@ export namespace MyNS {
 	}
 	export function CreatePetFormGroup() {
 		return new FormGroup<PetFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -251,7 +259,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Tag name */
 		name?: string | null;
@@ -259,14 +267,14 @@ export namespace MyNS {
 	export interface TagFormProperties {
 
 		/** Tag ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Tag name */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -275,7 +283,9 @@ export namespace MyNS {
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		pet?: Pet;
 
 		/** User supplied username */
@@ -300,7 +310,9 @@ export namespace MyNS {
 		userStatus?: number | null;
 	}
 	export interface UserFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 
 		/** User supplied username */
 		username: FormControl<string | null | undefined>,
@@ -325,7 +337,7 @@ export namespace MyNS {
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			username: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
 			firstName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			lastName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -367,20 +379,20 @@ export namespace MyNS {
 		 * Find pet by ID
 		 * Returns a single pet
 		 * Get pet/{petId}
-		 * @param {number} petId ID of pet to return
+		 * @param {string} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		Pet_petIdGet(petId: number): Observable<Pet> {
+		Pet_petIdGet(petId: string): Observable<Pet> {
 			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, {});
 		}
 
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
 		 * @return {void} 
 		 */
-		Pet_petIdDelete(petId: number): Observable<HttpResponse<string>> {
+		Pet_petIdDelete(petId: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
 		}
 
@@ -430,10 +442,10 @@ export namespace MyNS {
 		 * Find purchase order by ID
 		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 		 * Get store/order/{orderId}
-		 * @param {number} orderId ID of pet that needs to be fetched
+		 * @param {string} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		StoreOrder_orderIdGet(orderId: number): Observable<Order> {
+		StoreOrder_orderIdGet(orderId: string): Observable<Order> {
 			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, {});
 		}
 

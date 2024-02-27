@@ -19,7 +19,7 @@ export namespace MyNS {
 	}
 	export function CreateCatFormGroup() {
 		return new FormGroup<CatFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -33,7 +33,7 @@ export namespace MyNS {
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Category name */
 		name?: string | null;
@@ -44,14 +44,14 @@ export namespace MyNS {
 	export interface CategoryFormProperties {
 
 		/** Category ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Category name */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -90,7 +90,7 @@ export namespace MyNS {
 	}
 	export function CreateDogFormGroup() {
 		return new FormGroup<DogFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -115,7 +115,7 @@ export namespace MyNS {
 	}
 	export function CreateHoneyBeeFormGroup() {
 		return new FormGroup<HoneyBeeFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -127,7 +127,7 @@ export namespace MyNS {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Categories this pet belongs to */
 		category?: Category;
@@ -151,7 +151,7 @@ export namespace MyNS {
 	export interface PetFormProperties {
 
 		/** Pet ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** The name given to a pet */
 		name: FormControl<string | null | undefined>,
@@ -164,7 +164,7 @@ export namespace MyNS {
 	}
 	export function CreatePetFormGroup() {
 		return new FormGroup<PetFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
@@ -175,7 +175,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Tag name */
 		name?: string | null;
@@ -183,14 +183,14 @@ export namespace MyNS {
 	export interface TagFormProperties {
 
 		/** Tag ID */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Tag name */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 

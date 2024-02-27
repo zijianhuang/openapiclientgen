@@ -159,6 +159,8 @@ export namespace MyNS {
 	}
 
 	export interface EpisodeResponseType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		vaccineCode: string;
 		vaccineDose?: string | null;
@@ -370,6 +372,8 @@ export namespace MyNS {
 	}
 
 	export interface EpisodeType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		vaccineCode: string;
 		vaccineDose?: string | null;
@@ -378,6 +382,8 @@ export namespace MyNS {
 	}
 
 	export interface EncounterType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		claimSequenceNumber?: string | null;
 		episodes: Array<EpisodeType>;
@@ -391,6 +397,8 @@ export namespace MyNS {
 	}
 
 	export interface EncounterResponseType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		claimSequenceNumber: string;
 		episodes: Array<EpisodeResponseType>;

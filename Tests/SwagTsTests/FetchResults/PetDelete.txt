@@ -6,10 +6,10 @@ export namespace MyNS {
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number): Promise<Response> {
+		DeletePet(petId: string): Promise<Response> {
 			return fetch(this.baseUri + 'pet/' + petId, { method: 'delete' });
 		}
 	}

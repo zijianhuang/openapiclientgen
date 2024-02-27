@@ -4,15 +4,31 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Pagination {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemCount?: number | null;
 	}
 	export interface PaginationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {

@@ -1,6 +1,8 @@
 ///<reference path="HttpClient.ts" />
 export namespace MyNS {
 	export interface ApiResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		type?: string | null;
 		message?: string | null;
@@ -22,7 +24,7 @@ export namespace MyNS {
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Category name
@@ -66,10 +68,10 @@ export namespace MyNS {
 	export interface Order {
 
 		/** Order ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Pet ID */
-		petId?: number | null;
+		petId?: string | null;
 
 		/** Minimum: 1 */
 		quantity?: number | null;
@@ -92,7 +94,7 @@ export namespace MyNS {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Categories this pet belongs to */
 		category?: Category;
@@ -127,7 +129,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -139,7 +141,9 @@ export namespace MyNS {
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		pet?: Pet;
 
 		/**
@@ -205,20 +209,20 @@ export namespace MyNS {
 		 * Find pet by ID
 		 * Returns a single pet
 		 * Get pet/{petId}
-		 * @param {number} petId ID of pet to return
+		 * @param {string} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: number, callback: (data : Pet) => any) {
+		GetPetById(petId: string, callback: (data : Pet) => any) {
 			this.httpClient.get(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
 		}
 
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, callback: (data : void) => any) {
+		DeletePet(petId: string, callback: (data : void) => any) {
 			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
 		}
 
@@ -273,10 +277,10 @@ export namespace MyNS {
 		 * Find purchase order by ID
 		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 		 * Get store/order/{orderId}
-		 * @param {number} orderId ID of pet that needs to be fetched
+		 * @param {string} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: number, callback: (data : Order) => any) {
+		GetOrderById(orderId: string, callback: (data : Order) => any) {
 			this.httpClient.get(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode);
 		}
 

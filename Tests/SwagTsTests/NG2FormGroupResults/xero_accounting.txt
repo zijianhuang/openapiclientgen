@@ -1102,11 +1102,19 @@ export namespace MyNS {
 	}
 
 	export interface AccountsReceivable {
+
+		/** Type: double */
 		Outstanding?: number | null;
+
+		/** Type: double */
 		Overdue?: number | null;
 	}
 	export interface AccountsReceivableFormProperties {
+
+		/** Type: double */
 		Outstanding: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Overdue: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountsReceivableFormGroup() {
@@ -1118,11 +1126,19 @@ export namespace MyNS {
 	}
 
 	export interface AccountsPayable {
+
+		/** Type: double */
 		Outstanding?: number | null;
+
+		/** Type: double */
 		Overdue?: number | null;
 	}
 	export interface AccountsPayableFormProperties {
+
+		/** Type: double */
 		Outstanding: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Overdue: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountsPayableFormGroup() {

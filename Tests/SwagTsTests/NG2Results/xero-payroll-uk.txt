@@ -3,9 +3,17 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Pagination {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemCount?: number | null;
 	}
 

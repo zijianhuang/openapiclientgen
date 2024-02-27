@@ -10,10 +10,10 @@ export namespace MyNS {
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number): Observable<HttpResponse<string>> {
+		DeletePet(petId: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
 		}
 	}

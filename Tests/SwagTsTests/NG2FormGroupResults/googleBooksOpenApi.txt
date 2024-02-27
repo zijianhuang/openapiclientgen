@@ -343,16 +343,24 @@ export namespace MyNS {
 	}
 
 	export interface AnnotationsSummaryLayers {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount?: number | null;
 		layerId?: string | null;
 		limitType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount?: number | null;
 		updated?: Date | null;
 	}
 	export interface AnnotationsSummaryLayersFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount: FormControl<number | null | undefined>,
 		layerId: FormControl<string | null | undefined>,
 		limitType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount: FormControl<number | null | undefined>,
 		updated: FormControl<Date | null | undefined>,
 	}
@@ -991,12 +999,16 @@ export namespace MyNS {
 
 		/** Resorce type. */
 		kind?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalClusters?: number | null;
 	}
 	export interface DiscoveryclustersFormProperties {
 
 		/** Resorce type. */
 		kind: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalClusters: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscoveryclustersFormGroup() {
@@ -1011,6 +1023,8 @@ export namespace MyNS {
 		banner_with_content_container?: DiscoveryclustersClustersBanner_with_content_container;
 		subTitle?: string | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalVolumes?: number | null;
 		uid?: string | null;
 		volumes?: Array<Volume>;
@@ -1018,6 +1032,8 @@ export namespace MyNS {
 	export interface DiscoveryclustersClustersFormProperties {
 		subTitle: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalVolumes: FormControl<number | null | undefined>,
 		uid: FormControl<string | null | undefined>,
 	}
@@ -1534,10 +1550,14 @@ export namespace MyNS {
 	}
 
 	export interface VolumeSaleInfoOffersListPrice {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 	}
 	export interface VolumeSaleInfoOffersListPriceFormProperties {
+
+		/** Type: double */
 		amountInMicros: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 	}
@@ -1550,10 +1570,14 @@ export namespace MyNS {
 	}
 
 	export interface VolumeSaleInfoOffersRentalDuration {
+
+		/** Type: double */
 		count?: number | null;
 		unit?: string | null;
 	}
 	export interface VolumeSaleInfoOffersRentalDurationFormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 		unit: FormControl<string | null | undefined>,
 	}
@@ -1566,10 +1590,14 @@ export namespace MyNS {
 	}
 
 	export interface VolumeSaleInfoOffersRetailPrice {
+
+		/** Type: double */
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 	}
 	export interface VolumeSaleInfoOffersRetailPriceFormProperties {
+
+		/** Type: double */
 		amountInMicros: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 	}
@@ -1736,14 +1764,22 @@ export namespace MyNS {
 	}
 
 	export interface VolumeUserInfoCopy {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount?: number | null;
 		limitType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount?: number | null;
 		updated?: Date | null;
 	}
 	export interface VolumeUserInfoCopyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allowedCharacterCount: FormControl<number | null | undefined>,
 		limitType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		remainingCharacterCount: FormControl<number | null | undefined>,
 		updated: FormControl<Date | null | undefined>,
 	}
@@ -2365,10 +2401,14 @@ export namespace MyNS {
 
 	export interface VolumeseriesinfoVolumeSeriesIssue {
 		issueDisplayNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issueOrderNumber?: number | null;
 	}
 	export interface VolumeseriesinfoVolumeSeriesIssueFormProperties {
 		issueDisplayNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		issueOrderNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateVolumeseriesinfoVolumeSeriesIssueFormGroup() {
@@ -2591,11 +2631,19 @@ export namespace MyNS {
 	}
 
 	export interface GeolayerdataGeoViewportHi {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface GeolayerdataGeoViewportHiFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeolayerdataGeoViewportHiFormGroup() {
@@ -2607,11 +2655,19 @@ export namespace MyNS {
 	}
 
 	export interface GeolayerdataGeoViewportLo {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface GeolayerdataGeoViewportLoFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeolayerdataGeoViewportLoFormGroup() {

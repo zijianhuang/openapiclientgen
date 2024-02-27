@@ -352,10 +352,14 @@ export namespace MyNS {
 	}
 
 	export interface Get_collectionsReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires?: number | null;
 		schema?: {[id: string]: any };
 	}
 	export interface Get_collectionsReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires: FormControl<number | null | undefined>,
 		schema: FormControl<{[id: string]: any } | null | undefined>,
 	}
@@ -417,10 +421,14 @@ export namespace MyNS {
 	}
 
 	export interface Get_collectionReturnData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires?: number | null;
 		schema?: {[id: string]: any };
 	}
 	export interface Get_collectionReturnDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache_expires: FormControl<number | null | undefined>,
 		schema: FormControl<{[id: string]: any } | null | undefined>,
 	}

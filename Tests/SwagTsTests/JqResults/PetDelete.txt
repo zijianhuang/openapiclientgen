@@ -7,10 +7,10 @@ export namespace MyNS {
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, callback: (data : void) => any) {
+		DeletePet(petId: string, callback: (data : void) => any) {
 			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
 		}
 	}

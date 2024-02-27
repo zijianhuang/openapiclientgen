@@ -24,9 +24,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			this.jsOutput = jsOutput;
 			renamer = new TypeScriptRenamer();
+			dotNetTypeCommentDic = DotNetTypeCommentGenerator.Get();
 		}
 
 		readonly IRenamer renamer;
+
+		readonly IDictionary<Type, string> dotNetTypeCommentDic;
 
 		protected override IRenamer Renamer => renamer;
 
@@ -388,7 +391,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired);
-					SetClientPropertyTypeInfo(clientProperty, false, false);
+					SetClientPropertyTypeInfo(clientProperty, false, false, simpleType);
 				}
 				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for string enum
 				{
@@ -493,13 +496,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}).ToArray();
 		}
 
-		void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray)
+		void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray, Type clrPrimitiveType=null)
 		{
-			p.Type.UserData.Add("FieldTypeInfo",
+			p.Type.UserData.Add(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo,
 			new FieldTypeInfo
 			{
 				IsComplex = isComplex,
 				IsArray = isArray,
+				ClrType = clrPrimitiveType
 			});
 		}
 
@@ -566,6 +570,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (!string.IsNullOrEmpty(typeComment))
 				{
 					property.Comments.Add(new CodeCommentStatement(typeComment, true));
+				}
+			}
+
+			if (property.Comments.Count==0){
+				var fieldTypeInfo = property.Type.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo;
+				if (fieldTypeInfo!=null && fieldTypeInfo.ClrType!=null && dotNetTypeCommentDic.TryGetValue(fieldTypeInfo.ClrType, out string ctm))
+				{
+					property.Comments.Add(new CodeCommentStatement(ctm, true));
 				}
 			}
 		}

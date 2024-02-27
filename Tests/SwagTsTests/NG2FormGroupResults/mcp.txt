@@ -6,10 +6,14 @@ export namespace MyNS {
 	export interface BBSReportRequestType {
 		payeeProvider: ProviderType;
 		claimId?: string | null;
+
+		/** Type: DateOnly */
 		lodgementDate?: Date | null;
 	}
 	export interface BBSReportRequestTypeFormProperties {
 		claimId: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		lodgementDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateBBSReportRequestTypeFormGroup() {
@@ -51,11 +55,15 @@ export namespace MyNS {
 
 	export interface PaymentRunType {
 		payerName?: string | null;
+
+		/** Type: DateOnly */
 		runDate?: Date | null;
 		runNumber?: string | null;
 	}
 	export interface PaymentRunTypeFormProperties {
 		payerName: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		runDate: FormControl<Date | null | undefined>,
 		runNumber: FormControl<string | null | undefined>,
 	}
@@ -110,6 +118,8 @@ export namespace MyNS {
 		chargeAmount?: string | null;
 		claimChannelCode?: string | null;
 		claimId?: string | null;
+
+		/** Type: DateOnly */
 		lodgementDate?: Date | null;
 		transactionId?: string | null;
 	}
@@ -119,6 +129,8 @@ export namespace MyNS {
 		chargeAmount: FormControl<string | null | undefined>,
 		claimChannelCode: FormControl<string | null | undefined>,
 		claimId: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		lodgementDate: FormControl<Date | null | undefined>,
 		transactionId: FormControl<string | null | undefined>,
 	}
@@ -209,10 +221,14 @@ export namespace MyNS {
 		patient?: MembershipStatusType;
 		service?: Array<ServiceResponseType>;
 		id?: string | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 	}
 	export interface MedicalEventResponseTypeFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateMedicalEventResponseTypeFormGroup() {
@@ -227,9 +243,13 @@ export namespace MyNS {
 		status?: StatusType;
 		currentMembership?: MembershipType;
 		currentMember?: IdentityType;
+
+		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 	export interface MembershipStatusTypeFormProperties {
+
+		/** Type: DateOnly */
 		processDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateMembershipStatusTypeFormGroup() {
@@ -240,10 +260,14 @@ export namespace MyNS {
 	}
 
 	export interface StatusType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		text?: string | null;
 	}
 	export interface StatusTypeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -272,6 +296,8 @@ export namespace MyNS {
 	}
 
 	export interface IdentityType {
+
+		/** Type: DateOnly */
 		dateOfBirth?: Date | null;
 		familyName?: string | null;
 		givenName?: string | null;
@@ -279,6 +305,8 @@ export namespace MyNS {
 		sex?: string | null;
 	}
 	export interface IdentityTypeFormProperties {
+
+		/** Type: DateOnly */
 		dateOfBirth: FormControl<Date | null | undefined>,
 		familyName: FormControl<string | null | undefined>,
 		givenName: FormControl<string | null | undefined>,
@@ -360,8 +388,12 @@ export namespace MyNS {
 
 	export interface BBSMedicalEventType {
 		id: string;
+
+		/** Type: DateOnly */
 		authorisationDate: Date;
 		createDateTime: Date;
+
+		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 		patient: MedicarePatientType;
@@ -372,8 +404,12 @@ export namespace MyNS {
 	}
 	export interface BBSMedicalEventTypeFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		authorisationDate: FormControl<Date | null | undefined>,
 		createDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		medicalEventDate: FormControl<Date | null | undefined>,
 		medicalEventTime: FormControl<string | null | undefined>,
 		referralOverrideCode: FormControl<string | null | undefined>,
@@ -405,6 +441,8 @@ export namespace MyNS {
 	}
 
 	export interface ReferralType {
+
+		/** Type: DateOnly */
 		issueDate: Date;
 		period?: string | null;
 		periodCode?: string | null;
@@ -412,6 +450,8 @@ export namespace MyNS {
 		typeCode: string;
 	}
 	export interface ReferralTypeFormProperties {
+
+		/** Type: DateOnly */
 		issueDate: FormControl<Date | null | undefined>,
 		period: FormControl<string | null | undefined>,
 		periodCode: FormControl<string | null | undefined>,
@@ -540,9 +580,15 @@ export namespace MyNS {
 	export interface VAAMedicalEventType {
 		id: string;
 		acceptedDisability?: AcceptedDisabilityType;
+
+		/** Type: DateOnly */
 		authorisationDate: Date;
+
+		/** Type: DateOnly */
 		breakInEpisodeEndDate?: Date | null;
 		breakInEpisodeOfCareNumber?: string | null;
+
+		/** Type: DateOnly */
 		breakInEpisodeStartDate?: Date | null;
 		numberOfCNCHours?: string | null;
 		numberOfCNCVisits?: string | null;
@@ -550,6 +596,8 @@ export namespace MyNS {
 		numberOfENHours?: string | null;
 		numberOfENVisits?: string | null;
 		facilityId?: string | null;
+
+		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 		numberOfNSSHours?: string | null;
@@ -564,9 +612,15 @@ export namespace MyNS {
 	}
 	export interface VAAMedicalEventTypeFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		authorisationDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		breakInEpisodeEndDate: FormControl<Date | null | undefined>,
 		breakInEpisodeOfCareNumber: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		breakInEpisodeStartDate: FormControl<Date | null | undefined>,
 		numberOfCNCHours: FormControl<string | null | undefined>,
 		numberOfCNCVisits: FormControl<string | null | undefined>,
@@ -574,6 +628,8 @@ export namespace MyNS {
 		numberOfENHours: FormControl<string | null | undefined>,
 		numberOfENVisits: FormControl<string | null | undefined>,
 		facilityId: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		medicalEventDate: FormControl<Date | null | undefined>,
 		medicalEventTime: FormControl<string | null | undefined>,
 		numberOfNSSHours: FormControl<string | null | undefined>,
@@ -627,9 +683,15 @@ export namespace MyNS {
 	export interface VAAServiceType {
 		id: string;
 		accountReferenceNumber?: string | null;
+
+		/** Type: DateOnly */
 		admissionDate?: Date | null;
 		chargeAmount?: string | null;
+
+		/** Type: DateOnly */
 		dischargeDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distanceKilometres?: number | null;
 		duplicateServiceOverrideInd?: string | null;
 		itemNumber: string;
@@ -648,9 +710,15 @@ export namespace MyNS {
 	export interface VAAServiceTypeFormProperties {
 		id: FormControl<string | null | undefined>,
 		accountReferenceNumber: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		admissionDate: FormControl<Date | null | undefined>,
 		chargeAmount: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		dischargeDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distanceKilometres: FormControl<number | null | undefined>,
 		duplicateServiceOverrideInd: FormControl<string | null | undefined>,
 		itemNumber: FormControl<string | null | undefined>,
@@ -797,9 +865,13 @@ export namespace MyNS {
 
 	export interface DVAMedicalEventType {
 		id: string;
+
+		/** Type: DateOnly */
 		authorisationDate: Date;
 		createDateTime: Date;
 		facilityId?: string | null;
+
+		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 		referralOverrideCode?: string | null;
@@ -812,9 +884,13 @@ export namespace MyNS {
 	}
 	export interface DVAMedicalEventTypeFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		authorisationDate: FormControl<Date | null | undefined>,
 		createDateTime: FormControl<Date | null | undefined>,
 		facilityId: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		medicalEventDate: FormControl<Date | null | undefined>,
 		medicalEventTime: FormControl<string | null | undefined>,
 		referralOverrideCode: FormControl<string | null | undefined>,
@@ -838,10 +914,14 @@ export namespace MyNS {
 
 	export interface DVAServiceType extends ServiceType {
 		accountReferenceNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distanceKilometres?: number | null;
 	}
 	export interface DVAServiceTypeFormProperties extends ServiceTypeFormProperties {
 		accountReferenceNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distanceKilometres: FormControl<number | null | undefined>,
 	}
 	export function CreateDVAServiceTypeFormGroup() {
@@ -889,10 +969,14 @@ export namespace MyNS {
 	export interface DVAReportRequestType {
 		payeeProvider: ProviderType;
 		claimId?: string | null;
+
+		/** Type: DateOnly */
 		lodgementDate?: Date | null;
 	}
 	export interface DVAReportRequestTypeFormProperties {
 		claimId: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		lodgementDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDVAReportRequestTypeFormGroup() {
@@ -958,10 +1042,14 @@ export namespace MyNS {
 		patient?: VeteranMembershipStatusType;
 		service?: Array<DVAServiceAssessmentType>;
 		id?: string | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 	}
 	export interface DVAMedicalEventAssessmentTypeFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDVAMedicalEventAssessmentTypeFormGroup() {
@@ -976,9 +1064,13 @@ export namespace MyNS {
 		currentMembership?: VeteranMembershipResponseType;
 		currentMember?: IdentityType;
 		status?: StatusType;
+
+		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 	export interface VeteranMembershipStatusTypeFormProperties {
+
+		/** Type: DateOnly */
 		processDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateVeteranMembershipStatusTypeFormGroup() {
@@ -1037,10 +1129,14 @@ export namespace MyNS {
 	}
 
 	export interface EnterpriseConcessionVerificationRequestType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 		concessionVerificationRequest: Array<ReferenceConcessionVerificationRequestType>;
 	}
 	export interface EnterpriseConcessionVerificationRequestTypeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseConcessionVerificationRequestTypeFormGroup() {
@@ -1066,9 +1162,13 @@ export namespace MyNS {
 
 	export interface ConcessionVerificationRequestType {
 		patient: MedicarePatientType;
+
+		/** Type: DateOnly */
 		dateOfService?: Date | null;
 	}
 	export interface ConcessionVerificationRequestTypeFormProperties {
+
+		/** Type: DateOnly */
 		dateOfService: FormControl<Date | null | undefined>,
 	}
 	export function CreateConcessionVerificationRequestTypeFormGroup() {
@@ -1119,9 +1219,13 @@ export namespace MyNS {
 
 	export interface ConcessionStatusType {
 		status?: StatusType;
+
+		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 	export interface ConcessionStatusTypeFormProperties {
+
+		/** Type: DateOnly */
 		processDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateConcessionStatusTypeFormGroup() {
@@ -1132,10 +1236,14 @@ export namespace MyNS {
 	}
 
 	export interface EnterprisePatientVerificationRequestType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 		patientVerificationRequest: Array<ReferencePatientVerificationRequestType>;
 	}
 	export interface EnterprisePatientVerificationRequestTypeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterprisePatientVerificationRequestTypeFormGroup() {
@@ -1163,10 +1271,14 @@ export namespace MyNS {
 	export interface PatientVerificationRequestType {
 		patient: FundPatientType;
 		provider?: ProviderType;
+
+		/** Type: DateOnly */
 		dateOfService?: Date | null;
 		typeCode: string;
 	}
 	export interface PatientVerificationRequestTypeFormProperties {
+
+		/** Type: DateOnly */
 		dateOfService: FormControl<Date | null | undefined>,
 		typeCode: FormControl<string | null | undefined>,
 	}
@@ -1253,9 +1365,13 @@ export namespace MyNS {
 		status?: StatusType;
 		currentMembership?: FundMembershipType;
 		currentMember?: IdentityType;
+
+		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 	export interface FundMembershipStatusTypeFormProperties {
+
+		/** Type: DateOnly */
 		processDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateFundMembershipStatusTypeFormGroup() {
@@ -1266,10 +1382,14 @@ export namespace MyNS {
 	}
 
 	export interface EnterpriseVeteranVerificationRequestType {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 		veteranVerificationRequest: Array<ReferenceVeteranVerificationRequestType>;
 	}
 	export interface EnterpriseVeteranVerificationRequestTypeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseVeteranVerificationRequestTypeFormGroup() {
@@ -1363,6 +1483,8 @@ export namespace MyNS {
 		accountPaidInd: string;
 		accountReferenceId?: string | null;
 		submissionAuthorityInd: string;
+
+		/** Type: DateOnly */
 		authorisationDate: Date;
 	}
 	export interface PatientClaimInteractiveTypeFormProperties {
@@ -1370,6 +1492,8 @@ export namespace MyNS {
 		accountPaidInd: FormControl<string | null | undefined>,
 		accountReferenceId: FormControl<string | null | undefined>,
 		submissionAuthorityInd: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		authorisationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePatientClaimInteractiveTypeFormGroup() {
@@ -1386,11 +1510,15 @@ export namespace MyNS {
 	export interface PCIMedicalEventType {
 		service: Array<PCIServiceType>;
 		id: string;
+
+		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 	}
 	export interface PCIMedicalEventTypeFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		medicalEventDate: FormControl<Date | null | undefined>,
 		medicalEventTime: FormControl<string | null | undefined>,
 	}
@@ -1516,10 +1644,14 @@ export namespace MyNS {
 
 	export interface PCIMedicalEventResponseType {
 		service?: Array<ServiceResponseType>;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		id?: string | null;
 	}
 	export interface PCIMedicalEventResponseTypeFormProperties {
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		id: FormControl<string | null | undefined>,
 	}

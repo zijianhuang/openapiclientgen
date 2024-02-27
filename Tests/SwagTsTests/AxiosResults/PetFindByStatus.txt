@@ -14,7 +14,7 @@ export namespace MyNS {
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Category name */
 		name?: string | null;
@@ -48,7 +48,7 @@ export namespace MyNS {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Categories this pet belongs to */
 		category?: Category;
@@ -73,7 +73,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Tag name */
 		name?: string | null;

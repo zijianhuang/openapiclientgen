@@ -8,10 +8,10 @@ export namespace MyNS {
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number): Promise<AxiosResponse<string>> {
+		DeletePet(petId: string): Promise<AxiosResponse<string>> {
 			return Axios.delete(this.baseUri + 'pet/' + petId, { responseType: 'text' });
 		}
 	}

@@ -1,5 +1,7 @@
 export namespace MyNS {
 	export interface ApiResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		type?: string | null;
 		message?: string | null;
@@ -21,7 +23,7 @@ export namespace MyNS {
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Category name
@@ -65,10 +67,10 @@ export namespace MyNS {
 	export interface Order {
 
 		/** Order ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Pet ID */
-		petId?: number | null;
+		petId?: string | null;
 
 		/** Minimum: 1.0 */
 		quantity?: number | null;
@@ -91,7 +93,7 @@ export namespace MyNS {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Categories this pet belongs to */
 		category?: Category;
@@ -126,7 +128,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -138,7 +140,9 @@ export namespace MyNS {
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		pet?: Pet;
 
 		/**
@@ -202,20 +206,20 @@ export namespace MyNS {
 		 * Find pet by ID
 		 * Returns a single pet
 		 * Get pet/{petId}
-		 * @param {number} petId ID of pet to return
+		 * @param {string} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: number): Promise<Pet> {
+		GetPetById(petId: string): Promise<Pet> {
 			return fetch(this.baseUri + 'pet/' + petId, { method: 'get' }).then(d => d.json());
 		}
 
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number): Promise<Response> {
+		DeletePet(petId: string): Promise<Response> {
 			return fetch(this.baseUri + 'pet/' + petId, { method: 'delete' });
 		}
 
@@ -270,10 +274,10 @@ export namespace MyNS {
 		 * Find purchase order by ID
 		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 		 * Get store/order/{orderId}
-		 * @param {number} orderId ID of pet that needs to be fetched
+		 * @param {string} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: number): Promise<Order> {
+		GetOrderById(orderId: string): Promise<Order> {
 			return fetch(this.baseUri + 'store/order/' + orderId, { method: 'get' }).then(d => d.json());
 		}
 
